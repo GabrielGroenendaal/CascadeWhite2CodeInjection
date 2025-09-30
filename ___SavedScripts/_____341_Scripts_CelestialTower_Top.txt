@@ -1,0 +1,127 @@
+import messages.script.Msg0553.MSGID;
+
+import event.Battle;
+import event.actors.Actor;
+import event.actors.Player;
+import event.dialogs.Message;
+import player.TrainerCard;
+import pokescript.vm.Math;
+import pokescript.vm.StackCtrl;
+import pokescript.vm.VM;
+import system.EventFlags;
+import system.EventWorks;
+import system.Input;
+import system.Runtime;
+import system.Sound;
+
+public class MainEvents {
+	public static void main_1() { // @ 0x1c
+	}
+
+	public static void main_2() { // @ 0x1e
+		int v33;
+		int v34;
+
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		if (EventWorks.Get(16622) != 4) {
+			if (EventWorks.Get(16622) < 5) {
+				goto LABEL_0111;
+			}
+			Message.Actor(1024, 1, 0, 0);
+			Input.LastKeyWait();
+			Message.CloseAll();
+			goto LABEL_0111;
+		}
+		Message.Actor(1024, 0, 0, 0);
+		Message.CloseAll();
+		Battle.CallTrainerBattle(460, 0, 0);
+		sub_0117();
+		Message.Actor(1024, 1, 0, 0);
+		Message.WaitAdvance();
+		Message.CloseAll();
+		EventWorks.Set(16622, 5);
+		EventFlags.Set(823);
+		EventFlags.Set(824);
+		EventFlags.Set(825);
+		EventFlags.Set(826);
+		Player.GetGPos(v33, v34);
+		if (v33 != 12 || v34 != 10) {
+			Actor.WalkRoute(2, 12, 10, 1, 8, 0);
+			Actor.WaitActionFinish();
+			Actor.WalkRoute(2, 11, 16, 1, 8, 1);
+			Actor.WaitActionFinish();
+			goto LABEL_00d6;
+		}
+		Actor.WalkRoute(2, 11, 16, 1, 8, 1);
+		Actor.WaitActionFinish();
+
+		LABEL_00d6:
+		Actor.WalkRoute(2, 11, 19, 1, 8, 1);
+		Actor.WaitActionFinish();
+		Actor.Hide(2);
+
+		LABEL_0111:
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_3() {
+		// something to make the player turn around.
+
+		if (TrainerCard.HasBadge(5) && EventFlags.Get(2289) == 0) {
+			Actor.PauseAll();
+			ShowExclamationMark(0);
+			Actor.WaitActionFinish();
+			TurnWest(255);
+			Message.System(2, 2);
+			Message.CloseAll();
+			WalkSouthOneTile(255);
+			Actor.WaitActionFinish();
+			Runtime.FinishSubEvents();
+			Actor.UnpauseAll();
+		}
+	}
+
+	static void sub_0117() { // @ 0x117
+		int v16;
+
+		v16 = Battle.IsTrainerVictory();
+		if (v16 != 1) {
+			Battle.CallTrainerLose();
+			return;
+		}
+		Battle.EndTrainerBattle();
+	}
+
+	
+	static meta void ShowExclamationMark(int npcId) : VActionSequence {
+		Action004b(1);
+	}
+
+	
+	static meta void TurnSouth(int npcId) : VActionSequence {
+		Action0021(1);
+	}
+
+	static meta void WalkSouthOneTile(int npcId) : VActionSequence {
+		Action000d(1);
+	}
+	
+	static meta void TurnWest(int npcId) : VActionSequence {
+		Action0022(1);
+	}
+	static native void Action000c(int amount) : 0xc;
+	static native void Action000d(int amount) : 0xd;
+	static native void Action000e(int amount) : 0xe;
+	static native void Action000f(int amount) : 0xf;
+	static native void Action0011(int amount) : 0x11;
+	static native void Action0013(int amount) : 0x13;
+	static native void Action0020(int amount) : 0x20;
+	static native void Action0021(int amount) : 0x21;
+	static native void Action0022(int amount) : 0x22;
+	static native void Action0023(int amount) : 0x23;
+	static native void Action004b(int amount) : 0x4b;
+
+}

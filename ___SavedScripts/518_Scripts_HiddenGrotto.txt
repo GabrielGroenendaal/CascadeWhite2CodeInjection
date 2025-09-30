@@ -1,0 +1,193 @@
+import messages.script.Msg0402.MSGID;
+
+import Base;
+import event.Battle;
+import event.HiddenHollow;
+import event.ObjInit;
+import event.actors.Actor;
+import event.dialogs.Message;
+import event.funfest.Funfest;
+import player.Records;
+import pokescript.vm.Math;
+import pokescript.vm.StackCtrl;
+import pokescript.vm.VM;
+import system.EventFlags;
+import system.EventWorks;
+import system.Runtime;
+import system.Sound;
+
+public class MainEvents {
+	public static void main_1() { // @ 0x1e
+		int v17;
+		int v32;
+		int v33;
+		int v34;
+		int v35;
+		int v36;
+		int v37;
+
+		Actor.PauseAll();
+
+		v33 = HiddenHollow.GetParam(0); // Pokemon Species
+		v32 = HiddenHollow.GetParam(1); // Pokemon Level
+		v34 = HiddenHollow.GetParam(2); // Pokemon Forme
+		v35 = HiddenHollow.GetParam(3); // Grotto Type
+        
+		v36 |= 8;
+		v36 |= 16;
+		v36 |= 128;
+		v36 |= 512;
+		if (v35 != 1) {
+			v36 |= 32;
+			goto LABEL_009f;
+		}
+		v36 |= 64;
+
+		LABEL_009f:
+		Funfest.Broadcast(29, v33);
+		if (v33 != 590 && v33 != 591) {
+			Actor.FacePlayer();
+			goto LABEL_00e0;
+		}
+		ActionSequence_0228(v17);
+		Actor.WaitActionFinish();
+		v36 |= 1024;
+
+		LABEL_00e0:
+		Battle.CallWildBattleEx(v33, v32, v34, v36);
+		v37 = Battle.IsWildVictory();
+		if (v37 != 1) {
+			Battle.CallWildLose();
+			goto LABEL_010f;
+		}
+		Actor.Hide(224);
+		Battle.EndWildBattle();
+
+		LABEL_010f:
+		HiddenHollow.Reset();
+		v37 = 0;
+		v36 = 0;
+		v35 = 0;
+		v34 = 0;
+		v33 = 0;
+		v32 = 0;
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_2() { // @ 0x13b
+		int v38;
+
+		Actor.PauseAll();
+		v38 = HiddenHollow.GetParam(4);
+		Actor.Hide(224);
+		Global2807(v38, 1);
+		HiddenHollow.Reset();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_3() { // @ 0x17b
+		int v39;
+
+		Actor.PauseAll();
+		v39 = HiddenHollow.GetParam(5);
+		Global2807(v39, 1);
+		HiddenHollow.Reset();
+		EventFlags.Clear(2431);
+		ObjInit.SetProxyGPos(0, 15, 0, 31);
+		Records.Add(44, 1);
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_4() { // @ 0x1cb
+		HiddenHollow.CreateEvents();
+		sub_01dd();
+	}
+
+	public static void main_5() { // @ 0x20e
+		Actor.PauseAll();
+		ActionSequence_0230(255);
+		Actor.WaitActionFinish();
+		Sound.SEPlay(1369);
+        HiddenHollow.Reset();
+		HiddenHollow.WarpOut();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_6() { // @ 0x23c
+		Actor.PauseAll();
+		EventFlags.Set(2641);
+		Base.CMD_2C5(27);
+		Actor.New(15, 26, 0, 251, 249, 0);
+		Actor.WalkRoute(251, 14, 14, 1, 8, 1);
+		Runtime.Sleep(10);
+		Actor.WalkRoute(255, 15, 14, 1, 8, 1);
+		Actor.WaitActionFinish();
+		ActionSequence_02d8(251);
+		Actor.WaitActionFinish();
+		Message.ActorEx(1024, 0, 251, 0, 0);
+		Message.CloseAll();
+		ActionSequence_02f0(251);
+		Runtime.Sleep(8);
+		ActionSequence_02e8(255);
+		Actor.WaitActionFinish();
+		Message.ActorEx(1024, 1, 251, 0, 0);
+		Message.CloseAll();
+		Actor.WalkRoute(251, 15, 23, 1, 8, 1);
+		Runtime.Sleep(25);
+		ActionSequence_02e0(255);
+		Actor.WaitActionFinish();
+		Actor.Hide(251);
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_7() { // @ 0x1d5
+		sub_01dd();
+	}
+
+	static void sub_01dd() { // @ 0x1dd
+		int v40;
+		v40 = HiddenHollow.GetParam(6);
+		if (v40 == 1) {
+			ObjInit.SetProxyGPos(0, 15, 0, 12);
+		}
+	}
+
+	static meta void ActionSequence_0228(int npcId) : VActionSequence {
+		Action0031(2);
+	}
+
+	static meta void ActionSequence_0230(int npcId) : VActionSequence {
+		Action0021(1);
+		Action0001(1);
+	}
+
+	static meta void ActionSequence_02d8(int npcId) : VActionSequence {
+		Action0020(1);
+	}
+
+	static meta void ActionSequence_02e0(int npcId) : VActionSequence {
+		Action0021(1);
+	}
+
+	static meta void ActionSequence_02e8(int npcId) : VActionSequence {
+		Action0022(1);
+	}
+
+	static meta void ActionSequence_02f0(int npcId) : VActionSequence {
+		Action0023(1);
+	}
+
+	static meta void Global2807(int a1, int a2) : VGlobalCall[2807];
+
+	static native void Action0001(int amount) : 0x1;
+	static native void Action0020(int amount) : 0x20;
+	static native void Action0021(int amount) : 0x21;
+	static native void Action0022(int amount) : 0x22;
+	static native void Action0023(int amount) : 0x23;
+	static native void Action0031(int amount) : 0x31;
+}

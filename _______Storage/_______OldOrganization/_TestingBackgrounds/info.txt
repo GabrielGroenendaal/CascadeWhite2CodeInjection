@@ -1,0 +1,31 @@
+BtlvCameraHandle *__fastcall BtlvCamera_Create(int a1, HeapID a2)
+{
+  BtlvCameraHandle *v4; // r4
+
+  v4 = GFL_HeapAllocate(a2, 0xB8u, 1, "btlv_camera.c", 0x56u);
+  v4->wordB4 = a2;
+  v4->dword0 = a1;
+  v4->pg3dcamera4 = GFL_G3DCameraCreate(
+                      G3DCAM_PROJECTION_PERSPECTIVE,
+                      921,
+                      3991,
+                      5530,
+                      0,
+                      4096,
+                      0x200000,
+                      0,
+                      &position,
+                      &upVector,
+                      &target,
+                      a2);
+  sub_21DEC5C(v4);
+  GFL_G3DCameraFlush(v4->pg3dcamera4);
+  BtlvCamera_GetDefaultCameraPosition(&v4->field_18, &v4->field_24);
+  return v4;
+}
+
+749	NNSG3DAnimation	0000001C	Auto	struct 
+{fx32 NowFrame;fx32 dword4;NNSG3DResAnm *ResAnimation;void *VTable;NNSG3DAnimation *Next;NNSG3DResTex *Textures;u8 Priority;u8 TargetCount;u16 TargetInfo[1];}
+
+468	G3DAnim	0000000C	Auto	struct __attribute__((aligned(4))) {u16 Magic;u16 _padMagic;NNSG3DAnimation *m_NNSAnimation;G3DResource *AnimRes;}
+

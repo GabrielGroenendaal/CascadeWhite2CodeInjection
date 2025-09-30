@@ -1,0 +1,122 @@
+import messages.script.Msg0239.MSGID;
+
+
+import Base;
+import event.Battle;
+import event.EVCamera;
+import event.ObjInit;
+import event.actors.Actor;
+import event.actors.Player;
+import event.app.PokeApp;
+import event.dialogs.Message;
+import event.dialogs.YesNoWin;
+import event.funfest.Funfest;
+import player.TrainerCard;
+import pokemon.PokeParty;
+import pokescript.vm.Math;
+import pokescript.vm.StackCtrl;
+import pokescript.vm.VM;
+import system.EventFlags;
+import system.EventWorks;
+import system.Field;
+import system.Input;
+import system.Runtime;
+import system.Sound;
+import system.text.WordSet;
+
+
+public class MainEvents {
+	public static void main_1(){
+		int v0;
+		
+		Actor.PauseAll();
+		
+		if (TrainerCard.HasBadge(5) && EventFlags.Get(1528) == 0) {
+			ShowExclamationMark(0);
+			Actor.WaitActionFinish();
+			TurnWest(255);
+			Message.ActorEx(1024, 2, 2, 0, 0);
+			Message.CloseAll();
+			WalkSouthOneTile(255);
+			Actor.WaitActionFinish();
+			goto LABEL_Cleanup;
+		}
+
+		ShowExclamationMark(2);
+		Actor.WaitActionFinish();
+		TurnWest(255);
+		Actor.WaitActionFinish();
+		Message.ActorEx(1024, 0, 2, 0, 0);
+		Message.CloseAll();
+		
+		Battle.CallTrainerBattle(8, 0, 0);
+		v0 = Battle.IsTrainerVictory();
+		if (v0 == 0) {
+			Battle.CallTrainerLose();
+		}
+		Battle.EndTrainerBattle();
+		Message.ActorEx(1024, 1, 2, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseAll();
+		EventWorks.Set(16525, 1);
+
+		LABEL_Cleanup:
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_2() {
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 1, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	
+	public static void main_3() {
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Sound.PVPlay(505, 0);
+		Message.Actor(1024, 3, 0, 0);
+		Sound.PVWait();
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+	
+	
+	static meta void ShowExclamationMark(int npcId) : VActionSequence {
+		Action004b(1);
+	}
+
+	
+	static meta void TurnSouth(int npcId) : VActionSequence {
+		Action0021(1);
+	}
+
+	static meta void WalkSouthOneTile(int npcId) : VActionSequence {
+		Action000d(1);
+	}
+	
+	static meta void TurnWest(int npcId) : VActionSequence {
+		Action0022(1);
+	}
+	static native void Action000c(int amount) : 0xc;
+	static native void Action000d(int amount) : 0xd;
+	static native void Action000e(int amount) : 0xe;
+	static native void Action000f(int amount) : 0xf;
+	static native void Action0011(int amount) : 0x11;
+	static native void Action0013(int amount) : 0x13;
+	static native void Action0020(int amount) : 0x20;
+	static native void Action0021(int amount) : 0x21;
+	static native void Action0022(int amount) : 0x22;
+	static native void Action0023(int amount) : 0x23;
+	static native void Action004b(int amount) : 0x4b;
+
+}

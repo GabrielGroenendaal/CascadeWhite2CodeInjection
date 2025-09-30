@@ -1,0 +1,74 @@
+import messages.script.Msg0240.MSGID;
+
+import event.Battle;
+import event.actors.Actor;
+import event.dialogs.Message;
+import event.dialogs.YesNoWin;
+import pokescript.vm.Math;
+import pokescript.vm.StackCtrl;
+import pokescript.vm.VM;
+import system.EventFlags;
+import system.EventWorks;
+import system.Runtime;
+import system.Sound;
+
+public class MainEvents {
+	public static void main_1() { // @ 0x6
+		int v16;
+        int v7;
+        int v0;
+
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Sound.PVPlay(637, 0);
+		if (EventFlags.Get(404)) {
+			Message.System(6, 2);
+			Sound.PVWait();
+			Message.WaitAdvance();
+			Message.CloseInfo();
+			goto LABEL_00c4;
+		}
+        Message.System(0, 0);
+        Sound.PVWait();
+        Message.WaitAdvance();
+           Message.CloseSystem();
+        Message.System(1, 0);
+        v7 = YesNoWin.Show();
+        Message.CloseSystem();
+
+        if (v7 != 0){
+            Message.System(2, 0);
+            Message.WaitAdvance();
+               Message.CloseSystem();
+            goto LABEL_00c4;
+        }
+		Message.Spiked(3, 2);
+		Message.WaitAdvance();
+		Message.CloseSystem();
+		Battle.CallTrainerBattle(634, 0, 0);
+		v0 = Battle.IsTrainerVictory();
+		if (v0 == 0) {
+			Battle.CallTrainerLose();
+		}
+		EventFlags.Set(928);
+		EventFlags.Set(404);
+		EventFlags.Set(516);
+		EventWorks.Set(16525, 2);
+		Battle.EndTrainerBattle();
+
+		Message.System(4, 0);
+		Message.WaitAdvance();
+		   Message.CloseSystem();
+		Global2805(270, 1);
+		Message.System(5, 0);
+		Message.WaitAdvance();
+		   Message.CloseSystem();
+		
+		LABEL_00c4:
+		Message.CloseSystem();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+    
+	static meta void Global2805(int a1, int a2) : VGlobalCall[2805];
+}

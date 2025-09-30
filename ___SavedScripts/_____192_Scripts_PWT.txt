@@ -1,0 +1,565 @@
+import messages.script.Msg0250.MSGID;
+
+import Base;
+import event.Battle;
+import event.Effects;
+import event.Trainer;
+import event.actors.Actor;
+import event.actors.Player;
+import pokemon.PokeParty;
+import event.dialogs.Message;
+import pokescript.vm.Math;
+import pokescript.vm.StackCtrl;
+import pokescript.vm.VM;
+import system.EventFlags;
+import system.EventWorks;
+import system.Field;
+import system.Input;
+import system.Runtime;
+import system.Sound;
+import system.text.WordSet;
+
+public class MainEvents {
+	public static void main_1() { // @ 0x362
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 13, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_2() { // @ 0x37e
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 14, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_3() { // @ 0x39a
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 15, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_4() { // @ 0x3b6
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 16, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_5() { // @ 0x3d2
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 17, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_6() { // @ 0x3ee
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 18, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_7() { // @ 0x40a
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 19, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+    public static void main_8() { // @ 0x93
+		Actor.PauseAll();
+		Actor.WalkRoute(255, 15, 25, 1, 8, 1);
+		Runtime.Sleep(8);
+		EventFlags.Clear(891);
+		Sound.SEPlay(1369);
+		Actor.Show(5);
+		Sound.SEWait();
+		Actor.WaitActionFinish();
+		WalkNorth(255); // Walk Uo 
+		WalkNorthThenEastThenNorth(5); // Walk Up 
+		Actor.WaitActionFinish();
+		Message.ActorEx(1024, 0, 13, 0, 0);
+		Message.CloseAll();
+		TurnEast(14); // Cheren turns East
+		Actor.WaitActionFinish();
+		Message.ActorEx(1024, 1, 14, 0, 0);
+		Message.CloseAll();
+		TurnWest(13); // Clay turns to Cheren
+		Actor.WaitActionFinish();
+		Message.ActorEx(1024, 2, 13, 0, 0);
+		Message.CloseAll();
+		Message.ActorEx(1024, 4, 14, 0, 0);
+		Message.CloseAll();
+
+		// Hugh interjects, refusing to go with the group
+		WordSet.LoadRivalName(1);
+		TurnSouth(14);
+		Message.ActorEx(1024, 22, 5, 0, 0);
+		Message.CloseAll();
+
+		// Cheren asks a quick question
+		ShowQuestionMark(14);
+		TurnSouth(14);
+		Actor.WaitActionFinish();
+		Message.ActorEx(1024, 23, 14, 0, 0);
+		Message.CloseAll();
+
+		// Hugh says he can't waste time and runs out of the PWT
+		WordSet.LoadRivalName(1);
+		Message.ActorEx(1024, 24, 5, 0, 0);
+		Message.CloseAll();
+		RunSouth(5);
+		Runtime.Sleep(8);
+		WalkSouthTwoTiles(14);
+		Runtime.Sleep(8);
+		TurnSouth(13);
+		Actor.WaitActionFinish();
+		Actor.Hide(5);
+
+		// Cheren follows behind
+		Message.ActorEx(1024, 25, 14, 0, 0);
+		Message.CloseAll();
+		WalkSouth(14);
+		Runtime.Sleep(8);
+		Message.ActorEx(1024, 26, 13, 0, 0);
+		Actor.WaitActionFinish();
+		Actor.Hide(14);
+		Message.CloseAll();
+		goto Label_FinishScript;
+
+
+		// Clay complains about the youngsters
+
+
+
+		WalkOneTileNorth(14); // Cheren walks one tile north
+		Runtime.Sleep(8);
+		TurnNorth(13); // Clay turns North to look at Cheren
+		WordSet.LoadRivalName(1);
+		Message.ActorEx(1024, 5, 5, 0, 0);
+		Message.CloseAll();
+		TurnWest(5); // Hugh turns west to you
+		Runtime.Sleep(3);
+		TurnEast(255);  you turn east to Hugh
+		Actor.WaitActionFinish();
+		WordSet.LoadPlayerName(0);
+		Message.ActorEx(1024, 6, 5, 0, 0);
+		Message.CloseAll();
+		GoNorthThenWestThenTurnNorth(5);
+		Runtime.Sleep(8);
+		TurnNorth(255);
+		Actor.WaitActionFinish();
+		Runtime.Sleep(30);
+		WalkNorthWalkEastTurnWestWait8fWalkWestWalkSouth(0);
+		Runtime.Sleep(16);
+		WalkOneTileNorth(14);
+		WalkNorth5(5);
+		Actor.WaitActionFinish();
+
+		Label_FinishScript:
+		Actor.Hide(14);
+		Actor.Hide(5);
+		EventFlags.Set(892);
+		EventFlags.Set(891);
+		EventFlags.Set(2441);
+		Base.CMD_262(2, 1);
+		Base.CMD_262(1, 13);
+		Field.SetMapReplace(4, 1, 1);
+		Field.SetMapReplace(3, 0, 0);
+		EventFlags.Set(894);
+		EventFlags.Set(893);
+		EventFlags.Set(892);
+		EventFlags.Set(891);
+		EventFlags.Clear(890);
+		EventWorks.Set(16582, 2);
+		EventWorks.Set(16452, 0);
+		EventWorks.Set(16470, 1);
+		EventFlags.Clear(2441);
+		EventFlags.Clear(1001);
+		Base.CMD_262(1, 14);
+		Base.CMD_262(2, 2);
+		EventWorks.Set(16693, 2);
+		Actor.Show(17);
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_9() { // @ 0x4a
+		if (EventWorks.Get(16693) != 1) {
+			return;
+		}
+		EventFlags.Clear(892);
+		EventFlags.Clear(891);
+		Actor.Show(14);
+		Actor.Show(5);
+		Actor.SetGPos(13, 15, 0, 11, 0);
+		Actor.SetGPos(14, 14, 0, 11, 0);
+		Actor.SetGPos(5, 14, 0, 9, 1);
+	}
+
+	public static void main_10() { // @ 0x2e6
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 3, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_11() { // @ 0x302
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 10, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_12() { // @ 0x1bf
+		Actor.PauseAll();
+		Actor.WalkRoute(255, 15, 9, 1, 8, 0);
+		Actor.WaitActionFinish();
+		Message.ActorEx(1024, 7, 13, 0, 0);
+		Message.CloseAll();
+		EventFlags.Clear(894);
+		Actor.Show(16);
+		WalkNorth5TurnWest(16);
+		Runtime.Sleep(32);
+		TurnEast(255);
+		TurnEast(13);
+		Runtime.Sleep(3);
+		TurnEast(5);
+		TurnEast(14);
+		Actor.WaitActionFinish();
+		WordSet.LoadPlayerName(0);
+		Message.ActorEx(1024, 8, 16, 0, 0);
+		Message.CloseAll();
+		WalkSouth6Tiles(16);
+		Runtime.Sleep(24);
+		TurnNorth(13);
+		Runtime.Sleep(3);
+		TurnSouth(255);
+		Runtime.Sleep(3);
+		TurnSouth(5);
+		TurnNorth(14);
+		Actor.WaitActionFinish();
+		Message.ActorEx(1024, 9, 13, 0, 0);
+		Message.CloseAll();
+		Actor.WalkRoute(13, 15, 19, 1, 8, 1);
+		Runtime.Sleep(8);
+		TurnSouth(14);
+		Actor.WaitActionFinish();
+		Actor.Hide(16);
+		Actor.Hide(13);
+		Field.SetMapReplace(4, 1, 1);
+		Field.SetMapReplace(3, 0, 0);
+		EventFlags.Set(894);
+		EventFlags.Set(893);
+		EventFlags.Set(892);
+		EventFlags.Set(891);
+		EventFlags.Clear(890);
+		EventWorks.Set(16582, 2);
+		EventWorks.Set(16452, 0);
+		EventFlags.Clear(2441);
+		EventFlags.Clear(1001);
+		Base.CMD_262(1, 14);
+		Base.CMD_262(2, 2);
+		EventWorks.Set(16693, 2);
+		Actor.Show(17);
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_13() { // @ 0x31e
+		Actor.PauseAll();
+		WordSet.LoadPlayerName(0);
+		WordSet.LoadRivalName(1);
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 12, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_14() { // @ 0x340
+		Actor.PauseAll();
+		WordSet.LoadPlayerName(0);
+		WordSet.LoadRivalName(1);
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 11, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_15() { // @ 0x426
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 20, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_16() { // @ 0x45e
+		int v0;
+		int v1;
+
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Global10110(253, 2);
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_17() { // @ 0x48c
+		int v0;
+		int v1;
+
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Global10110(254, 1);
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_18() { // @ 0x442
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 21, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	
+	public static void main_19() { // @ 0x442
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Message.Actor(1024, 27, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_20() { // @ 0x442
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Message.Actor(1024, 28, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_21() { // @ 0x442
+		int v33; 
+		int v34;
+		int v0;
+		int v1;
+		
+		Actor.PauseAll();
+		ShowExclamationMark(17);
+		Actor.WaitActionFinish();
+		Player.GetGPos(v33, v34);
+		Sound.BGMPlay(1238);
+		Actor.WalkRoute(17, v33, 21, 1, 8, 1);
+		Actor.WaitActionFinish();
+		TurnSouth(17);
+		TurnNorth(255);
+		Actor.WaitActionFinish();
+		Message.ActorEx(1024, 29, 17, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Battle.CallTrainerBattle(739, 0, 0);
+		Battle.EndTrainerBattle();
+		v0 = Battle.IsTrainerVictory();
+		if (v0 == 1) {
+			Message.ActorEx(1024, 30, 17, 0, 0);
+			Input.LastKeyWait();
+			goto Label_PostBattle;
+		}
+		PokeParty.RecoverAll();
+		Message.ActorEx(1024, 31, 17, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+
+		Label_PostBattle:
+		Message.ActorEx(1024, 32, 17, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Global2805(1,1);
+		
+		Message.ActorEx(1024, 33, 17, 0, 0);
+		Input.LastKeyWait();
+		EventWorks.Set(16470, 0);
+		Field.PlayMapBGM();
+		Message.CloseAll();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	static meta void TurnEast(int npcId) : VActionSequence {
+		Action0023(1);
+	}
+
+	static meta void TurnWest(int npcId) : VActionSequence {
+		Action0022(1);
+	}
+
+	static meta void TurnNorth(int npcId) : VActionSequence {
+		Action0020(1);
+	}
+
+	static meta void TurnSouth(int npcId) : VActionSequence {
+		Action0021(1);
+	}
+
+	static meta void WalkNorth(int npcId) : VActionSequence {
+		Action000c(11);
+	}
+
+	static meta void WalkOneTileNorth(int npcId) : VActionSequence {
+		Action000c(5);
+	}
+
+	static meta void WalkNorthWalkEastTurnWestWait8fWalkWestWalkSouth(int npcId) : VActionSequence {
+		Action000c(1);
+		Action000f(1);
+		Action0022(1);
+		Action003f(6);
+		Action000e(1);
+		Action000d(1);
+	}
+
+	static meta void WalkNorthThenEastThenNorth(int npcId) : VActionSequence {
+		Action000c(11);
+		Action000f(1);
+		Action000c(1);
+	}
+
+	static meta void GoNorthThenWestThenTurnNorth(int npcId) : VActionSequence {
+		Action000c(6);
+		Action000e(2);
+		Action0020(1);
+	}
+
+	static meta void WalkNorth5(int npcId) : VActionSequence {
+		Action000c(5);
+	}
+
+	static meta void WalkNorth5TurnWest(int npcId) : VActionSequence {
+		Action000c(5);
+		Action0022(1);
+	}
+
+	static meta void WalkSouth6Tiles(int npcId) : VActionSequence {
+		Action000d(6);
+	}
+
+	static meta void ShowQuestionMark(int npcId) : VActionSequence {
+		Action009f(1);
+	}
+
+	static meta void RunSouth(int npcId) : VActionSequence {
+		Action0015(10);
+	}
+
+	static meta void WalkSouth(int npcId) : VActionSequence {
+		Action0011(8);
+	}
+
+	static meta void WalkSouthTwoTiles(int npcId) : VActionSequence {
+		Action000d(2);
+	}
+	
+
+	static meta void ShowExclamationMark(int npcId) : VActionSequence {
+		Action004b(1);
+	}
+
+	static meta void Global2805(int a1, int a2) : VGlobalCall[2805];
+	static meta void Global10110(int a1, int a2) : VGlobalCall[10110];
+
+	static native void Action0015(int amount) : 0x15; 
+	static native void Action000c(int amount) : 0xc;
+	static native void Action000d(int amount) : 0xd;
+	static native void Action0011(int amount) : 0x11;
+	static native void Action000e(int amount) : 0xe;
+	static native void Action000f(int amount) : 0xf;
+	static native void Action0020(int amount) : 0x20;
+	static native void Action0021(int amount) : 0x21;
+	static native void Action0022(int amount) : 0x22;
+	static native void Action0023(int amount) : 0x23;
+	static native void Action003f(int amount) : 0x3f;
+	static native void Action004b(int amount) : 0x4b;
+	static native void Action009f(int amount) : 0x9f;
+}
+
+
+
+Add a single trigger zone with SpawnFlag 16470 = 1 to x14y22
+Move Colress to x20y20
+
+22: (Hugh 1)
+23: (Cheren 1)
+24: (Hugh 2)
+25: (Cheren 2)
+26: (Clay Final)
+27: (Ace Trainer A)
+28: (Ace Trainer B)
+29: (Colress introduction)
+30: (Colress Post Victory)
+31: (Colress Post Loss)
+32: (Colress gives Life Orb)
+33: (Colress Says Goodbye)
+
+
+
+

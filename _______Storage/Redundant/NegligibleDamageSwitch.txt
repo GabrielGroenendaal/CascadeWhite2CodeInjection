@@ -1,0 +1,82 @@
+// Return value of 0 = no switch out
+// Return value of 1 = switch out
+
+bool AlternateSwitchConditions(BtlClientWk *work, BattleMon *attackingMon, BattleMon *defendingMon)
+    {
+        __int16 ExistFrontPokePos; // r0
+        unsigned int pokeCount;
+        u8 opposingPokePos[5];
+        BattleMon *defender;
+        ServerFlow *flow;
+        unsigned int k;
+
+        flow = BattleServer_GetServerFlow(work->mainModule->server);
+        ExistFrontPokePos = Handler_GetExistFrontPokePos(flow, attackingMon->ID);
+        pokeCount = Handler_ExpandPokeID(flow, ExistFrontPokePos | 0x100, opposingPokePos);
+        int turnCount = attackingMon->TurnCount;
+        int damage = 0;
+        bool switchout = 0;
+        
+        for (k = 0; k < pokeCount; (k + 1))
+        {
+            int i = 0;
+            defender = Handler_GetBattleMon(flow, opposingPokePos[k]);
+            int MoveCount = BattleMon_GetMoveCount(attackingMon);
+            int currentHp = defender->CurrentHP;
+            int moveDamage = 0;
+            do
+            {
+                moveDamage = Handler_SimulationDamage(flow,
+                                                      BattleMon_GetID(attackingMon),
+                                                      BattleMon_GetID(defender),
+                                                      Move_GetID(attackingMon, i), false, false);
+                
+                /* Check for a OHKO or 2HKO */
+                if ((moveDamage * 2) >= currentHp)
+                {
+                    return 0;
+                }
+                else
+                {
+                    damage = (moveDamage > damage) ? moveDamage : damage;
+                }
+                i++;
+            } while (i < MoveCount);
+            
+
+            /* Begin going through Negligible Damage checks from most to least negliglibe */
+            if ((damage * 10) < defender->MaxHP)
+            {
+                if (turnCount >= 2)
+                {
+                    switchout = (RandomInRange(1, 100) < (10 + (turnCount * 2))) ? 1 : switchout;
+                }
+            }
+
+            /* Moderately Negligible Damage */
+            else if ((damage * 8) < defender->MaxHP)
+            {
+                if (turnCount >= 3)
+                {
+
+                    switchout = ((RandomInRange(1, 100) < (5 + turnCount))) ? 1 : switchout;
+                }
+            }
+
+            /* Mildly Negligible Damage */
+            else if ((damage * 4) < defender->MaxHP)
+            {
+                if (turnCount >= 5)
+                {
+                    switchout = ((RandomInRange(1, 100) < (1 + turnCount))) ? 1 : switchout;
+                }
+            }
+
+            /* If the attacker can deal at least 25% damage to one of the combatants on the field, they won't switch out, even if they can't deal that much damage to the other combatant.*/
+            else
+            {
+                return 0;
+            }
+        }
+        return switchout;
+    }

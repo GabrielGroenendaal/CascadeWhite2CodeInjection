@@ -1,0 +1,107 @@
+
+Relic Passage
+    -- Flags --
+
+    -- Events --
+
+
+Relic Castle
+    -- Flags --
+        520: 
+            Used for all the Unown
+
+    -- Events --
+        16525:
+            Used for all the trigger values 
+
+Guidance Chamber'
+    -- Flags --
+        520:
+            Used to store the initial Rood position
+        
+        517: 
+            Used to store the secondary Rood position
+        
+
+    
+    -- Events --
+        16450:
+            Used for most of the major logic for the entire Cobalion encounter 
+        
+        16451:
+            Used to store the outcome of the Cobalion battle!
+
+
+Hugh Chargestone Cave  
+    -- Flags --
+        518:
+            Used for Hugh's appearance
+
+    -- Events --
+        16452:
+            Used for the trigger for Hugh's battle
+
+
+PWT
+    -- Flags --
+        890:
+            Used for Colress's model
+    
+    -- Events --
+        16470:
+            Used for Colress's trigger value
+
+
+
+Lenora Relic Castle Above 
+    -- Flags --
+        527:
+            Lenora encounter
+        
+        528:
+            Lenora presence
+
+
+    -- Events --
+        16526:  
+            Lenora Event
+        
+        16734:
+            Check for Trick Room Warning
+        
+
+
+Join Avenue Gauntlet
+    -- Flags --
+
+    -- Events --
+
+
+Chargestone Cave Gauntlet
+    -- Flags --
+
+    -- Events --
+
+
+Driftveil Drawbridge Gauntlet 
+    -- Flags --
+
+    -- Events --
+
+
+Flocessy Town Gift
+    -- Flags --
+
+    -- Events --
+
+
+Aspertia City
+    -- Events --
+        16415:
+            Stores whether or not the critical hit toggle is applied
+        
+        16431:
+            Stores whether not the initial Mom dialog about the wii has been played 
+        
+        16433:
+            Stores whether or not the IV maximizer toggle is applied.

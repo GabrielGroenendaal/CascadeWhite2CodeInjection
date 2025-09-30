@@ -1,0 +1,208 @@
+import messages.script.Msg0604.MSGID;
+
+import Base;
+import event.Battle;
+import event.actors.Actor;
+import event.actors.Player;
+import event.dialogs.Message;
+import pokemon.PokeParty;
+import pokescript.vm.Math;
+import pokescript.vm.StackCtrl;
+import pokescript.vm.VM;
+import system.EventFlags;
+import system.EventWorks;
+import system.Input;
+import system.Runtime;
+import system.Field;
+import system.Sound;
+import system.text.WordSet;
+
+public class MainEvents {
+	public static void main_1() { // @ 0x28
+		Actor.PauseAll();
+		Base.CMD_17A(36);
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_2() { // @ 0x134
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 3, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_3() { // @ 0x150
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 4, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_4() { // @ 0x16c
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 5, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_5() { // @ 0x34
+		int v0;
+		int v1;
+		int v33;
+		int v34;
+		int v35;
+		int v36;
+
+		Actor.PauseAll();
+		Player.GetGPos(v33, v34);
+		ShowExclamationMark(0);
+		Runtime.Sleep(4);
+		ActionSequence_01c8(255);
+		Actor.WaitActionFinish();
+		if (v34 != 4) {
+			Message.Info(0, 1);
+			goto LABEL_007c;
+		}
+		Message.ActorEx(1024, 0, 0, 0, 0);
+
+		LABEL_007c:
+		Message.CloseAll();
+		if (v34 == 4) {
+			goto LABEL_009f;
+		}
+		Actor.WalkRoute(255, 13, 4, 1, 8, 1);
+
+		LABEL_009f:
+		Actor.WaitActionFinish();
+		v35 = 0;
+		v35 = PokeParty.GetPkmCount(1);
+		v36 = 0;
+		v36 = PokeParty.GetMemberByType(2);
+		WordSet.LoadPartyPokeSpecies(0, v36);
+		WordSet.LoadNumber(1, v35, 1);
+		if (v35 != 1) {
+			Message.ActorEx(1024, 2, 0, 0, 0);
+			goto LABEL_00f6;
+		}
+		Message.ActorEx(1024, 1, 0, 0, 0);
+
+		LABEL_00f6:
+		Message.CloseAll();
+		Global2805(15, 30);
+		Message.ActorEx(1024, 3, 0, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseAll();
+		EventWorks.Set(16721, 1);
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_6() {
+		int v33;
+		int v34;
+		int v0;
+		
+		Actor.PauseAll();
+		
+		if (EventWorks.Get(16432) == 0) {
+			WordSet.LoadPokeSpecies(3, 499);
+		} else if (EventWorks.Get(16432) == 1) {
+			WordSet.LoadPokeSpecies(3, 502);
+		} else {
+			WordSet.LoadPokeSpecies(3, 496);
+		}
+		WordSet.LoadPlayerName(0);
+		WordSet.LoadRivalName(1);
+		Player.GetGPos(v33, v34);
+		Actor.New(1, 5, 3, 251, 291, 0);
+				Sound.BGMPlay(1237);
+		ShowExclamationMark(251);
+		Actor.WaitActionFinish();
+		Actor.WalkRoute(251, 5, v34, 1, 8, 1);
+		TurnWest(255);
+		Actor.WaitActionFinish();
+		Message.ActorEx(1024, 6, 251, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseAll();
+
+		// 16432 stores a value corresponding with your starter of choice
+		if (EventWorks.Get(16432) == 0) {
+			Battle.CallTrainerBattle(166, 0, 0);
+		} else if (EventWorks.Get(16432) == 1) {
+			Battle.CallTrainerBattle(167, 0, 0);
+		} else {
+			Battle.CallTrainerBattle(168, 0, 0);
+		}
+		// 166, 167, 168 refer to the ids of different trainers that are loaded depending on your starter
+
+		Battle.EndTrainerBattle();
+		v0 = Battle.IsTrainerVictory();
+
+		if (v0 != 1) {
+			Battle.CallTrainerLose();
+		}
+		WordSet.LoadPlayerName(0);
+		WordSet.LoadRivalName(1);
+		Message.ActorEx(1024, 7, 251, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		RunWest(251);
+		Runtime.Sleep(20);
+		Sound.SEPlay(1369);
+		Actor.Hide(251);
+		Field.PlayMapBGM();
+		EventWorks.Set(16759, 1);
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	static meta void ActionSequence_01c8(int npcId) : VActionSequence {
+		Action0020(1);
+	}
+
+	static meta void ShowExclamationMark(int npcId) : VActionSequence {
+		Action004b(1);
+	}
+
+	static meta void TurnEast(int npcId) : VActionSequence {
+		Action0023(1);
+	}
+
+	static meta void RunWest(int npcId) : VActionSequence {
+		Action0012(5);
+	}
+
+		static meta void TurnWest(int npcId) : VActionSequence {
+		Action0022(1);
+	}
+
+	static meta void Global2805(int a1, int a2) : VGlobalCall[2805];
+
+	static native void Action0015(int amount) : 0x15; 
+	static native void Action000c(int amount) : 0xc;
+	static native void Action000d(int amount) : 0xd;
+	static native void Action0011(int amount) : 0x11;
+	static native void Action000e(int amount) : 0xe;
+	static native void Action0012(int amount) : 0x12;
+	static native void Action000f(int amount) : 0xf;
+	static native void Action0020(int amount) : 0x20;
+	static native void Action0021(int amount) : 0x21;
+	static native void Action0022(int amount) : 0x22;
+	static native void Action0023(int amount) : 0x23;
+	static native void Action003f(int amount) : 0x3f;
+	static native void Action004b(int amount) : 0x4b;
+	static native void Action009f(int amount) : 0x9f;
+}
