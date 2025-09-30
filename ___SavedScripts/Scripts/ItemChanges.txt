@@ -1,0 +1,412 @@
+
+
+
+
+   
+
+Script_001:  (Route 19)
+    Water Stone -> Flame Orb
+    ItemID: 273
+
+Script_002: (Relic Castle Upper Floors)
+    Nest Ball -> TM18: Scorching Sands
+    ItemID: 345
+
+Script_003: (Route 20)
+    Paralyz Heal -> Muscle Band
+    ItemID: 266
+
+Script_004: (Route 20)
+    Pokeball -> Silk Scarf
+    ItemID: 251
+
+Script_005: (Route 20)
+    Antidote -> Miracle Seed
+    ItemID: 239
+
+Script_006: (Route 20)
+    Dire Hit -> TM63: Brutal Swing
+    ItemID: 390
+
+Script_008: (Pledge Grove)
+    Max Revive -> 10x Berry Juice
+    ItemID: 43
+
+Script_009: (Route 20)
+    Great Ball -> Mystic Water
+    ItemID: 243
+
+Script_010: (Relic Castle Upper Floors)
+    Sticky Barb -> TM16: Light Screen
+    ItemID: 343
+
+Script_011: (Pledge Grove)
+    X-Speed -> TM94: Rock Smash
+    ItemID: 619
+
+Script_013: (Flocessy Ranch)
+    Pokeball -> Quick Claw
+    ItemID: 217
+
+Script_014: (Flocessy Ranch)
+    X-Attack -> Wiseglasses
+    ItemID: 267
+
+Script_015: (Flocessy Ranch)
+    Potion -> TM59: Incinerate
+    ItemID: 386
+
+Script_016: (Virbank City)
+    Rare Candy -> TM50 Water Pulse
+    ItemID: 377
+
+Script_017: (Virbank Complex Outside)
+    Silk Scarf -> TM88: Pluck
+    ItemID: 415
+
+Script_019: (Virbank Complex Outside)
+    X Accuracy -> Silverpowder
+    ItemID: 222
+
+Script_020: (Virbank Complex Inside)
+    Super Potion -> TM47: Low Sweep
+    ItemID: 374
+
+Script_021: (Virbank Complex Inside)
+    TM46: Thief -> TM95: Snarl
+    ItemID: 620
+
+Script_023: (Castelia Battle Company)
+    Guard Spec -> Light Ball
+    ItemID: 236
+
+Script_024: (Castelia Battle Company)
+    Ether -> Thick Club
+    ItemID: 258
+
+Script_028: (Castleia Park)
+    TM06: Magical Leaf
+    ItemID: 333
+
+Script_029: (Castelia Sewers)
+    ??? -> TwistedSpoon
+    ItemID: 248
+
+Script_030: (Relic Passage Upper Floors)
+    Repel -> TM33: Reflect
+    ItemID: 360
+
+Script_031: (Castelia Sewers)
+    Leftovers -> TM54 Breaking Swipe
+    ItemID: 381
+
+Script_032: (Castelia Sewers)
+    ??? -> BlackGlasses
+    ItemID: 240
+
+Script_034: (Route 16)
+    X SpA -> TM08: Dizzy Punch
+    ItemID: 335
+
+Script_035: (Route 16)
+    X SpD -> Normal Gem x3
+    ItemID: 564
+
+Script_036: (Route 16)
+    Pearl -> TM49: Snore
+    ItemID: 376
+
+Script_037: (Castelia Sewers)
+    Heart Scale -> Black Sludge
+    ItemID: 281
+
+Script_038: (Lostlorn Forest)
+    Black Sludge -> Passho Berry x2
+    ItemID: 185
+
+Script_039: (Lostlorn Forest)
+    TM41 Torment -> Rindo Berry x3
+    ItemID: 187
+
+Script_040: (Relic Passage)
+    Hard Stone 
+    ItemID: 238
+
+
+Script_047: (Route 4)
+    Stardust -> TM40: Aerial Ace
+    ItemID: 367
+
+Script_048: (Desert Resort)
+    TM28: Dig
+    ItemID: 355
+
+Script_050: (Route 4)
+    ??? -> Light Clay
+    ItemID: 269
+
+Script_053: (Route 4)
+    Mystic Water -> Sharp Beak
+    ItemID: 244
+
+Script_054: (Desert Resort)
+    Red Shard -> TM15: Psycho Cut
+    ItemID: 342
+
+Script_055: (Lostlorn Forest)
+    Blue Shard -> Wacan Berry x2
+    ItemID: 186
+
+Script_056: (Lostlorn Forest)
+    Yellow Shard -> Shuca Berry x2 
+    ItemID: 191
+
+Script_057: (Desert Resort)
+    Max Ether -> TM84: Endure
+    ItemID: 411
+
+Script_058: (Desert Resort)
+    Green Shard -> 15x Rowap Berry
+    ItemID: 212
+
+Script_059: (Desert Resort)
+    Stardust -> 15x Jaboca Berry
+    ItemID: 211
+
+Script_060: (Lostlorn Forest)
+    Heart Scale -> Coba Berry x2
+    ItemID: 192
+
+Script_061: (Lostlorn Forest)
+    Nugget -> Haban Berry x2
+    ItemID: 197
+
+Script_062: (Nimbasa City)
+    Paralyz Heal -> NeverMeltIce
+    ItemID: 246
+
+Script_065: (Lostlorn Forest)
+    Ultra Ball -> TM19: Giga Drain 
+    ItemID: 346
+
+Script_066: (Lostlorn Forest)
+    Rare Candy -> TM48 Mystical Fire
+    ItemID: 375
+
+Script_067: (Lostlorn Forest)
+    Net Ball -> Occa Berry x2
+    ItemID: 184
+
+Script_068: (Route 5)
+    Super Repel -> TM84: Poison Jab
+    ItemID: 411
+
+Script_069: (Route 5)
+    Hyper Potion -> Spell Tag
+    ItemID: 247
+
+Script_070: (Driftveil City)
+    Calcium -> TM90: Draining Kiss
+    ItemID: 417
+
+Script_072: (Route 6)
+    Moon Stone -> TM57: Weather Ball
+    ItemID: 384
+
+Script_073: (Route 6)
+    Elixir -> TM55 Scald
+    ItemID: 382
+
+Script_223:  (Route 19)
+    PP Up -> Static Orb
+    ItemID: 223
+
+Script_224: (Flocessy Town)
+    TM17: Hidden Force
+    ItemID: 344
+
+Script_229: (Lostlorn Forest)
+    ??? -> Roseli Berry x2
+    ItemID: 206
+
+Script_231:  (Route 19)
+    -> Stress Tester
+    ItemID: 257
+
+Script_288: (Lostlorn Forest)
+    Yellow Shard -> Big Root
+    ItemID: 296
+
+Script_290: (Route 5)
+    Upgrade -> TM21: Aurora Beam
+    ItemID: 348
+
+Script_299: (Route 4)
+    Relic Gold -> TM78: Bulldoze
+    ItemID: 405
+
+Script_300: (Route 16)
+    ??? -> Absorb Bulb x3
+    ItemID: 545
+
+Script_301: (Driftveil Drawbridge)
+    ??? -> Focus Sash x2 
+    ItemID: 275
+
+Script_302: (Route 4)
+    Calcium -> Protective Gear
+    ItemID: 228
+
+Script_323:  (Route 19)
+    Potion -> Toxic Orb
+    ItemID: 272
+
+Script_324: (Virbank City)
+    Flame Plate -> TM04 Shock Wave
+    ItemID: 331
+
+Script_325: (Virbank City)
+    Zap Plate -> Poison Barb
+    ItemID: 245
+
+Script_326: (Virbank City)
+    Meadow Plate -> Expert Belt
+    ItemID: 268
+
+Script_327: (Relic Passage)
+    Relic Silver -> Metal Coat
+    ItemID: 233
+
+Script_328: (Virbank Complex Inside)
+    Fist Plate -> Magnet
+    ItemID: 242
+
+Script_329: (Virbank Complex Inside)
+    Toxic Plate -> TM39: Rock Tomb
+    ItemID: 366
+
+Script_330: (Virbank Complex Inside)
+    Relic Vase -> Charcoal
+    ItemID: 249
+
+Script_331: (Pokestar Gate)
+    Sky Plate -> Black Belt
+    ItemID: 241
+
+Script_332: (Pokestar Gate)
+    Mind Plate -> TM65: Shadow Claw
+    ItemID: 392
+
+Script_333: (Liberty Island)
+    Insect Plate -> TM89: U-Turn
+    ItemID: 416
+
+Script_334: (Liberty Island)
+    ??? -> Leftovers
+    ItemID: 234
+
+Script_335: (Route 4)
+    Icicle Plate -> DeepseasScale
+    ItemID: 227
+
+Script_336: (Route 4)
+    Draed Plate -> DeepseaTooth
+    ItemID: 226
+
+Script_337: (Relic Passage)
+    Iron Plate -> Fire Stones x 10
+    ItemID: 82
+
+Script_338: (Relic Passage)
+    Relic Copper -> Water Stones x 10
+    ItemID: 84
+
+Script_339: (Relic Passage)
+    ??? -> Leaf Stones x 10
+    ItemID: 85
+
+Script_340: (Relic Passage)
+    ??? -> Thunder Stones x 10
+    ItemID: 83
+
+Script_341: (Relic Passage)
+    ??? -> Dawn Stones x10
+    ItemID: 109
+
+Script_342: (Relic Passage)
+    ??? -> Moon Stone x10
+    ItemID: 81
+
+Script_343: (Relic Passage)
+    ??? -> Sun Stones x10
+    ItemID: 80
+
+Script_344: (Relic Passage)
+    ??? -> Shiny Stones x 10
+    ItemID: 107
+
+Script_345: (Relic Passage)
+    ??? -> Dusk Stones x10
+    ItemID: 108
+
+Script_346: (Lostlorn Forest)
+    Relic Gold -> Yache Berry x2
+    ItemID: 188
+
+Script_347: (Lostlorn Forest)
+    Relic Gold -> Babiri Berry x2
+    ItemID: 199
+
+Script_348: (Lostlorn Forest)
+    Relic Gold -> Colbur Berry x2
+    ItemID: 198
+
+Script_349: (Lostlorn Forest)
+    Relic Statue -> Kasib Berry x2
+    ItemID: 196
+
+Script_350: (Lostlorn Forest)
+    Relic Copper -> Payapa Berry x2 
+    ItemID: 193
+
+Script_351: (Lostlorn Forest)
+    Relic Copper -> Kebia Berry x2
+    ItemID: 190
+
+Script_352: (Lostlorn Forest)
+    Relic Silver -> Chilan Berry x2
+    ItemID: 200
+
+Script_353: (Lostlorn Forest)
+    Relic Silver -> Tanga Berry x2
+    ItemID: 194
+
+Script_354: (Lostlorn Forest)
+    Relic Gold -> Chople Berry x2
+    ItemID: 189
+
+Script_355: (Lostlorn Forest)
+    Relic Gold -> Charti Berry x2
+    ItemID: 195
+
+Script_357: (Driftveil City)
+    Relic Vase -> Red Shard x 20
+    ItemID: 72
+
+Script_358: (Driftveil City)
+    Relic Band -> TM85: Grass Knot
+    ItemID: 412
+
+Script_383: (Relic Passage)
+    Escape Rope -> TM80 Rock Slide
+    ItemID: 407
+
+
+
+
+
+
+
+
+
+
