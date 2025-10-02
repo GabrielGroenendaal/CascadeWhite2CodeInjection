@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "frostscriptcommandsbw2.h": "c",
+        "movementcommands.h": "c"
+    }
+}

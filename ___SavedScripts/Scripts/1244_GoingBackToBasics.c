@@ -5,18 +5,12 @@ void Sequence0()
 {
 	LockAll();
 	Sequence10();
-	// Sequence12();
+	Sequence12();
 	SetVarEqVal(0x8024, 0);
 	SetVarEqVal(0x8025, 0);
 	SetVarEqVal(0x8026, 0);
 	SetVarEqVal(0x8020, 0);
 	SetVarEqVal(0x8021, 0);
-	SetVarEqVal(0x8031, 0);
-	SetVarEqVal(0x8032, 0);
-	SetVarEqVal(0x8033, 0);
-	SetVarEqVal(0x8034, 0);
-	Sequence16();
-	Sequence17();
 	SetVarFlagStatus(2411, 0x8025);
 	SetVarFlagStatus(2402, 0x8026);
 	SetVarFlagStatus(2400, 0x8022);
@@ -25,213 +19,210 @@ void Sequence0()
 	SetWordPlayerName(0);
 	EventGreyMessage(0, 2);
 
-label_PCIsOpen: ;
+label32: ;
 	StackPushVar(0x8020);
 	StackPushConst(0);
 	StackCompare(1);
-	if (255) goto label_exitPC;
+	if (255) goto label0;
 	PlaySound(1372);
 	EventGreyMessage(1, 2);
-
-
 	SetupDialogueSelection(31, 1, 0, 1, 0x8024);
 	SetVarFlagStatus(2401, 0x8028);
 	Compare(0x8028, 1);
 	if (0) goto label1;
-
-
-	// Some kind of series of checks to figure out which of the "X PC" messages there are
-
-	StackPushVar(0x8034);
-	StackPushConst(0);
-	StackCompare(1);
-	if (255) goto label_checkRepel;
-
-
 	StackPushVar(0x8025);
 	StackPushConst(0);
 	StackCompare(1);
 	if (255) goto label2;
-	AddDialogueOption(2, 0xFFFF, 2); // Someone's PC
+	AddDialogueOption(2, 0xFFFF, 2);
 	goto label1;
 
 label2: ;
-	AddDialogueOption(3, 0xFFFF, 3); // Amanita PC
+	AddDialogueOption(3, 0xFFFF, 3);
 
 label1: ;
-
-	// If we're in a pokemon center, we're going to skip all this extra stuff
-	StackPushVar(0x8032);
-	StackPushConst(1);
-	StackCompare(1);
-	if (255) goto label_checkRepel;
-
-
 	SetWordPlayerName(0);
-	AddDialogueOption(4, 77, 4); // Trainer's PC
-	
-	// Some kind of professor check
+	AddDialogueOption(4, 0xFFFF, 4);
 	StackPushVar(0x8026);
 	StackPushConst(1);
 	StackCompare(1);
-	if (255) goto label_checkRepel;
-	AddDialogueOption(5, 78, 5); // Professor's PC
-
-
-
-
-label_checkRepel: ;
+	if (255) goto label3;
+	AddDialogueOption(5, 0xFFFF, 5);
 	SetVarFlagStatus(3063, 0x8028);
 	Compare(0x8028, 1);
-	if (1) goto label_repelEnabled;
-	goto label_repelDisabled;
+	if (1) goto label4;
+	goto label5;
 
-label_repelDisabled: ;
-	AddDialogueOption(42, 80, 42);
-	goto  label_checkChampion;
+label5: ;
+	AddDialogueOption(42, 0xFFFF, 42);
+	goto label6;
 
-label_repelEnabled: ;
-	AddDialogueOption(59, 79, 59);
-	goto  label_checkChampion;
+label4: ;
+	AddDialogueOption(59, 0xFFFF, 42);
+	goto label6;
 
+label6: ;
+	Storec0xD3(0x8028);
+	Compare(0x8028, 337);
+	if (1) goto label7;
+	Compare(0x8028, 345);
+	if (1) goto label7;
+	Compare(0x8028, 368);
+	if (1) goto label7;
+	Compare(0x8028, 448);
+	if (1) goto label7;
+	Compare(0x8028, 456);
+	if (1) goto label7;
+	Compare(0x8028, 107);
+	if (1) goto label7;
+	Compare(0x8028, 113);
+	if (1) goto label7;
+	Compare(0x8028, 198);
+	if (1) goto label7;
+	Compare(0x8028, 199);
+	if (1) goto label7;
+	Compare(0x8028, 205);
+	if (1) goto label7;
+	Compare(0x8028, 206);
+	if (1) goto label7;
+	Compare(0x8028, 439);
+	if (1) goto label7;
+	Compare(0x8028, 444);
+	if (1) goto label7;
+	Compare(0x8028, 445);
+	if (1) goto label7;
+	Compare(0x8028, 446);
+	if (1) goto label7;
+	Compare(0x8028, 96);
+	if (1) goto label8;
+	Compare(0x8028, 331);
+	if (1) goto label8;
+	goto label3;
 
+label7: ;
+	SetVarEqVal(0x8027, 2);
+	goto label3;
 
-label_checkChampion: ;
-	StackPushVar(0x8032);
-	StackPushConst(1);
-	StackCompare(1);
-	if (255) goto label_Help_SwitchOff;
+label8: ;
+	SetVarEqVal(0x8027, 5);
+	goto label3;
 
-	StackPushVar(0x8034);
-	StackPushConst(1);
-	StackCompare(1);
-	if (255) goto label_Help_SwitchOff;
-
+label3: ;
 	StackPushVar(0x8022);
 	StackPushConst(1);
 	StackCompare(1);
-	if (255) goto label_Help_SwitchOff;
-	AddDialogueOption(6, 83, 6);
+	if (255) goto label9;
+	AddDialogueOption(6, 0xFFFF, 6);
 
-
-label_Help_SwitchOff: ;
-	AddDialogueOption(7, 81, 7);
-	AddDialogueOption(8, 82, 8);
+label9: ;
+	AddDialogueOption(7, 0xFFFF, 7);
+	AddDialogueOption(8, 0xFFFF, 8);
 	ShowDialogueSelection2();
 	CloseEventGreyMessage();
 	ReturnAfterDelay(3);
-
-
 	Compare(0x8024, 2);
-	if (1) goto label_optionA_openPC;
-	goto label_optionB_check;
+	if (1) goto label10;
+	goto label11;
 
-
-label_optionA_openPC: ;
+label10: ;
 	Sequence1();
-	goto label_returnToPC;
+	goto label12;
 
-label_optionB_check: ;
+label11: ;
 	Compare(0x8024, 3);
-	if (1) goto label_optionB_openPC;
-	goto label_optionC_check;
+	if (1) goto label13;
+	goto label14;
 
-label_optionB_openPC: ;
+label13: ;
 	Sequence1();
-	goto label_returnToPC;
+	goto label12;
 
-label_optionC_check: ;
+label14: ;
 	Compare(0x8024, 4);
-	if (1) goto label_optionC_mailbox;
-	goto label_optionD_check;
+	if (1) goto label15;
+	goto label16;
 
-label_optionC_mailbox: ;
+label15: ;
 	Sequence2();
-	goto label_returnToPC;
+	goto label12;
 
-label_optionD_check: ;
+label16: ;
 	Compare(0x8024, 42);
-	if (1) goto label_optionD_toggleRepel;
-	Compare(0x8024, 59);
-	if (1) goto label_optionD_toggleRepel;
-	goto label_optionE_check;
+	if (1) goto label17;
+	goto label18;
 
-label_optionD_toggleRepel: ;
+label17: ;
 	Sequence8();
-	goto label_returnToPC;
+	goto label12;
 
-
-	
-label_optionE_check: ;
+label18: ;
 	Compare(0x8024, 5);
-	if (1) goto label_optionE_callProfessor;
-	goto label_optionF_check;
+	if (1) goto label19;
+	goto label20;
 
-label_optionE_callProfessor: ;
+label19: ;
 	Sequence3();
-	goto label_returnToPC;
+	goto label12;
 
-label_optionF_check: ;
+label20: ;
 	Compare(0x8024, 6);
-	if (1) goto label_optionF_HallOfFame;
-	goto label_optionG_check;
+	if (1) goto label21;
+	goto label22;
 
-label_optionF_HallOfFame: ;
+label21: ;
 	Sequence4();
-	goto label_returnToPC;
+	goto label12;
 
-label_optionG_check: ;
+label22: ;
 	Compare(0x8024, 75);
-	if (1) goto label_optionG_toggleweather;
-	goto label_optionH_check;
+	if (1) goto label23;
+	goto label24;
 
-label_optionG_toggleweather: ;
+label23: ;
 	Sequence14();
-	goto label_returnToPC;
+	goto label12;
 
-	
-
-label_optionH_check: ;
+label24: ;
 	Compare(0x8024, 7);
-	if (1) goto label_optionH_accessHelp;
-	goto label_optionI_check;
+	if (1) goto label25;
+	goto label26;
 
-label_optionH_accessHelp: ;
+label25: ;
 	Sequence5();
-	goto label_returnToPC;
+	goto label12;
 
-label_optionI_check: ;
+label26: ;
 	Compare(0x8024, 8);
-	if (1) goto label_optionI_exitPC;
-	goto label_input1_check;
+	if (1) goto label27;
+	goto label28;
 
-label_optionI_exitPC: ;
+label27: ;
 	SetVarEqVal(0x8020, 1);
-	goto label_returnToPC;
+	goto label12;
 
-label_input1_check: ;
+label28: ;
 	Compare(0x8024, 0xFFFE);
-	if (1) goto label_input1_exitPC;
-	goto label_input2_check;
+	if (1) goto label29;
+	goto label30;
 
-label_input1_exitPC: ;
+label29: ;
 	SetVarEqVal(0x8020, 1);
-	goto label_returnToPC;
+	goto label12;
 
-label_input2_check: ;
+label30: ;
 	Compare(0x8024, 0xFFFD);
-	if (1) goto label_input2_exitPC;
-	goto label_returnToPC;
+	if (1) goto label31;
+	goto label12;
 
-label_input2_exitPC: ;
+label31: ;
 	SetVarEqVal(0x8020, 1);
 	SetVarEqVal(0x8021, 1);
-	goto label_returnToPC;
+	goto label12;
 
-label_returnToPC: ;
-	goto label_PCIsOpen;
+label12: ;
+	goto label32;
 
-label_exitPC: ;
+label0: ;
 	PlaySound(1373);
 	SetVarEqVal(0x8026, 0);
 	SetVarEqVal(0x8025, 0);
@@ -298,9 +289,11 @@ label64: ;
 	AddDialogueOption(18, 24, 18);
 	AddDialogueOption(43, 44, 43);
 	AddDialogueOption(45, 46, 45);
+	// AddDialogueOption(71, 72, 71);
 	SetVarFlagStatus(124, 0x802B);
 	Compare(0x802B, 1);
 	if (0) goto label36;
+	// AddDialogueOption(47, 48, 47);
 
 label36: ;
 	AddDialogueOption(19, 25, 19);
@@ -763,43 +756,74 @@ label91: ;
 
 void Sequence12()
 {
-// 	// League Checks
-// 	Storec0xD3(0x8027);
-// 	Compare(0x8027, 137);
-// 	if (1) goto label90;
-// 	Storec0xD3(0x8027);
-// 	Compare(0x8027, 138);
-// 	if (1) goto label90;
-// 	Storec0xD3(0x8027);
-// 	Compare(0x8027, 139);
-// 	if (1) goto label90;
-// 	Storec0xD3(0x8027);
-// 	Compare(0x8027, 140);
-// 	if (1) goto label90;
-// 	Storec0xD3(0x8027);
-// 	Compare(0x8027, 141);
-// 	if (1) goto label90;
-// 	Storec0xD3(0x8027);
-// 	Compare(0x8027, 142);
-// 	if (1) goto label90;
-// 	Storec0xD3(0x8027);
-// 	Compare(0x8027, 143);
-// 	if (1) goto label90;
-// 	Storec0xD3(0x8027);
-// 	Compare(0x8027, 144);
-// 	if (1) goto label90;
-	
+	Storec0xD3(0x8027);
+	Compare(0x8027, 137);
+	if (1) goto label90;
+	Storec0xD3(0x8027);
+	Compare(0x8027, 138);
+	if (1) goto label90;
+	Storec0xD3(0x8027);
+	Compare(0x8027, 139);
+	if (1) goto label90;
+	Storec0xD3(0x8027);
+	Compare(0x8027, 140);
+	if (1) goto label90;
+	Storec0xD3(0x8027);
+	Compare(0x8027, 141);
+	if (1) goto label90;
+	Storec0xD3(0x8027);
+	Compare(0x8027, 142);
+	if (1) goto label90;
+	Storec0xD3(0x8027);
+	Compare(0x8027, 143);
+	if (1) goto label90;
+	Storec0xD3(0x8027);
+	Compare(0x8027, 144);
+	if (1) goto label90;
 
+    // ChargestoneCave
+	Storec0xD3(0x8031);
+	Compare(0x8031, 195);
+	if (1) goto label_isGauntlet;
+	Storec0xD3(0x8031);
+	Compare(0x8031, 196);
+	if (1) goto label_isGauntlet;
+	Storec0xD3(0x8031);
+	Compare(0x8031, 197);
+	if (1) goto label_isGauntlet;
 
-// label90: ;
-// 	EventGreyMessage(68, 2);
-// 	CloseEventGreyMessage();
-// 	UnlockAll();
-// 	End();
+	// DriftveilDrawbridge
+	Storec0xD3(0x8031);
+	Compare(0x8031, 253);
+	if (1) goto label_isGauntlet;
+
+	// JoinAvenue
+	Storec0xD3(0x8031);
+	Compare(0x8031, 490);
+	if (1) goto label_isGauntlet;
+
+label_end: ;
+	Return();
+    
+label_isGauntlet: ;
+    SetVarFlagStatus(522, 0x8024);
+    Compare(0x8024, 1);
+	if (0) goto label_end;
+	EventGreyMessage(68, 2);
+	CloseEventGreyMessage();
+	UnlockAll();
+	End();	
+
+label90: ;
+	EventGreyMessage(68, 2);
+	CloseEventGreyMessage();
+	UnlockAll();
+	End();
 }
 
 void Sequence13()
 {
+	EventGreyMessage(69, 2);
 	Return();
 }
 
@@ -837,179 +861,4 @@ label94: ;
 	SetFlag(3062);
 	SetWeather(5, 5);
 	Return();
-}
-
-void Sequence16() 
-{
-	// Aspertia City
-	Storec0xD3(0x8031);
-	Compare(0x8031, 435);
-	if (1) goto label_isPokemonCenter;
-
-	// Floccessy City
-	Storec0xD3(0x8031);
-	Compare(0x8031, 443);
-	if (1) goto label_isPokemonCenter;
-
-	// Virbank City
-	Storec0xD3(0x8031);
-	Compare(0x8031, 454);
-	if (1) goto label_isPokemonCenter;
-
-	// Castelia City
-	Storec0xD3(0x8031);
-	Compare(0x8031, 41);
-	if (1) goto label_isPokemonCenter;
-
-	// Nimbasa City
-	Storec0xD3(0x8031);
-	Compare(0x8031, 65);
-	if (1) goto label_isPokemonCenter;
-
-	// Driftveil City
-	Storec0xD3(0x8031);
-	Compare(0x8031, 99);
-	if (1) goto label_isPokemonCenter;
-
-	// PWT 2
-	Storec0xD3(0x8031);
-	Compare(0x8031, 192);
-	if (1) goto label_isPokemonCenter;
-
-	// Mistralton City
-	Storec0xD3(0x8031);
-	Compare(0x8031, 109);
-	if (1) goto label_isPokemonCenter;
-
-	// Lentimas Town
-	Storec0xD3(0x8031);
-	Compare(0x8031, 460);
-	if (1) goto label_isPokemonCenter;
-
-	// Undella Town
-	Storec0xD3(0x8031);
-	Compare(0x8031, 413);
-	if (1) goto label_isPokemonCenter;
-
-	// Lacunosa Town
-	Storec0xD3(0x8031);
-	Compare(0x8031, 407);
-	if (1) goto label_isPokemonCenter;
-
-	// Opelucid Town
-	Storec0xD3(0x8031);
-	Compare(0x8031, 122);
-	if (1) goto label_isPokemonCenter;
-
-	// Icirrus Town
-	Storec0xD3(0x8031);
-	Compare(0x8031, 115);
-	if (1) goto label_isPokemonCenter;
-
-	// Nacrene Town
-	Storec0xD3(0x8031);
-	Compare(0x8031, 20);
-	if (1) goto label_isPokemonCenter;
-
-	// Striaton Town
-	Storec0xD3(0x8031);
-	Compare(0x8031, 8);
-	if (1) goto label_isPokemonCenter;
-
-	// Accumula Town
-	Storec0xD3(0x8031);
-	Compare(0x8031, 398);
-	if (1) goto label_isPokemonCenter;
-
-
-	// Humilau Town
-	Storec0xD3(0x8031);
-	Compare(0x8031, 472);
-	if (1) goto label_isPokemonCenter;
-
-	// Pokemon League PC
-	Storec0xD3(0x8031);
-	Compare(0x8031, 146);
-	if (1) goto label_isPokemonCenter;
-
-	goto label_endPokemonCenterCheck;
-
-	label_isPokemonCenter: ;
-		SetVarEqVal(0x8032, 1);
-		Return();
-
-	label_endPokemonCenterCheck: ;
-		SetVarEqVal(0x8032, 0);
-		Return();
-}
-
-
-void Sequence17() {
-
-	// League Checks
-	Storec0xD3(0x8027);
-	Compare(0x8027, 137);
-	if (1) goto label_CannotUse;
-	Storec0xD3(0x8027);
-	Compare(0x8027, 138);
-	if (1) goto label_CannotUse;
-	Storec0xD3(0x8027);
-	Compare(0x8027, 139);
-	if (1) goto label_CannotUse;
-	Storec0xD3(0x8027);
-	Compare(0x8027, 140);
-	if (1) goto label_CannotUse;
-	Storec0xD3(0x8027);
-	Compare(0x8027, 141);
-	if (1) goto label_CannotUse;
-	Storec0xD3(0x8027);
-	Compare(0x8027, 142);
-	if (1) goto label_CannotUse;
-	Storec0xD3(0x8027);
-	Compare(0x8027, 143);
-	if (1) goto label_CannotUse;
-	Storec0xD3(0x8027);
-	Compare(0x8027, 144);
-	if (1) goto label_CannotUse;
-
-
-	// ChargestoneCave
-	Storec0xD3(0x8031);
-	Compare(0x8031, 195);
-	if (1) goto label_isChargeStoneCave;
-	Storec0xD3(0x8031);
-	Compare(0x8031, 196);
-	if (1) goto label_isChargeStoneCave;
-	Storec0xD3(0x8031);
-	Compare(0x8031, 197);
-	if (1) goto label_isChargeStoneCave;
-
-	// DriftveilDrawbridge
-	Storec0xD3(0x8031);
-	Compare(0x8031, 253);
-	if (1) goto label_isDriftveilDrawbridge;
-
-	// JoinAvenue
-	Storec0xD3(0x8031);
-	Compare(0x8031, 490);
-	if (1) goto label_isJoinAvenue;
-	
-	goto label_endLocationCheck;
-
-	label_isChargeStoneCave: ;
-		
-
-	label_isDriftveilDrawbridge: ;
-		
-
-	label_isJoinAvenue: ;
-		
-	
-	label_CannotUse: ;
-		SetVarEqVal(0x8034, 1);
-		Return();
-	
-	label_endLocationCheck: ;
-		SetVarEqVal(0x8034, 0);
-		Return();
 }

@@ -158,7 +158,7 @@ extern "C"
 
         //k::Printf("\nzoneID is %d", zoneId);
         
-        if (!ANIMATED_BACKGROUNDS_ENABLED){
+        if (ANIMATED_BACKGROUNDS_ENABLED){
             zoneIdToUse = (IsInArray(zoneId)) ? 445 : zoneId; // Checks to see if we're overwriting the lighting
         } else {
             zoneIdToUse = zoneId;

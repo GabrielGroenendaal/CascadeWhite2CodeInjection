@@ -9,36 +9,36 @@
     */
 
 /* Field Effects */
-"C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\_Github_CascadeWhite\arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi\bin\arm-none-eabi-g++.exe"  -r -mthumb -march=armv5t -Os A_CoreBattle/A1_FieldEffects.cpp -Iswan-master -o ______Output/A1_FieldEffects.elf
+"C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____Github_CascadeWhite\arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi\bin\arm-none-eabi-g++.exe"  -r -mthumb -march=armv5t -Os A_CoreBattle/A1_FieldEffects.cpp -Iswan-master -o ______Output/A1_FieldEffects.elf
 
 /* AI Changes */
-"C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\_Github_CascadeWhite\arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi\bin\arm-none-eabi-g++.exe"  -r -mthumb -march=armv5t -Os A_CoreBattle/A2_AIChanges.cpp -Iswan-master -o ______Output/A2_AIChanges.elf
+"C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____Github_CascadeWhite\arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi\bin\arm-none-eabi-g++.exe"  -r -mthumb -march=armv5t -Os A_CoreBattle/A2_AIChanges.cpp -Iswan-master -o ______Output/A2_AIChanges.elf
 
 /* Item Changes */
-"C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\_Github_CascadeWhite\arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi\bin\arm-none-eabi-g++.exe"  -r -mthumb -march=armv5t -Os A_CoreBattle/A3_ItemChanges.cpp -Iswan-master -o ______Output/A3_ItemChanges.elf
+"C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____Github_CascadeWhite\arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi\bin\arm-none-eabi-g++.exe"  -r -mthumb -march=armv5t -Os A_CoreBattle/A3_ItemChanges.cpp -Iswan-master -o ______Output/A3_ItemChanges.elf
 
 
 /* Ability Changes */
-"C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\_Github_CascadeWhite\arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi\bin\arm-none-eabi-g++.exe"  -r -mthumb -march=armv5t -Os A_CoreBattle/A4_AbilityChanges.cpp -Iswan-master -o ______Output/A4_AbilityChanges.elf
+"C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____Github_CascadeWhite\arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi\bin\arm-none-eabi-g++.exe"  -r -mthumb -march=armv5t -Os A_CoreBattle/A4_AbilityChanges.cpp -Iswan-master -o ______Output/A4_AbilityChanges.elf
 
 
 /* Move Changes */
-"C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\_Github_CascadeWhite\arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi\bin\arm-none-eabi-g++.exe"  -r -mthumb -march=armv5t -Os A_CoreBattle/A5_MoveChanges.cpp -Iswan-master -o ______Output/A5_MoveChanges.elf
+"C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____Github_CascadeWhite\arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi\bin\arm-none-eabi-g++.exe"  -r -mthumb -march=armv5t -Os A_CoreBattle/A5_MoveChanges.cpp -Iswan-master -o ______Output/A5_MoveChanges.elf
 
 /* Side Effect Changes */
-"C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\_Github_CascadeWhite\arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi\bin\arm-none-eabi-g++.exe"  -r -mthumb -march=armv5t -Os A_CoreBattle/A6_SideEffectChanges.cpp -Iswan-master -o ______Output/A6_SideEffectChanges.elf
+"C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____Github_CascadeWhite\arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi\bin\arm-none-eabi-g++.exe"  -r -mthumb -march=armv5t -Os A_CoreBattle/A6_SideEffectChanges.cpp -Iswan-master -o ______Output/A6_SideEffectChanges.elf
 
 
 /* Dynamic Speed */
-"C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\_Github_CascadeWhite\arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi\bin\arm-none-eabi-g++.exe"  -r -mthumb -march=armv5t -Os A_CoreBattle/A7_DynamicSpeed.cpp -Iswan-master -o ______Output/A7_DynamicSpeed.elf
+"C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____Github_CascadeWhite\arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi\bin\arm-none-eabi-g++.exe"  -r -mthumb -march=armv5t -Os A_CoreBattle/A7_DynamicSpeed.cpp -Iswan-master -o ______Output/A7_DynamicSpeed.elf
 
 
 /* Imported Abilities */
-"C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\_Github_CascadeWhite\arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi\bin\arm-none-eabi-g++.exe"  -r -mthumb -march=armv5t -Os A_CoreBattle/A8_ImportedAbilities.cpp -Iswan-master -o ______Output/A8_ImportedAbilities.elf
+"C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____Github_CascadeWhite\arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi\bin\arm-none-eabi-g++.exe"  -r -mthumb -march=armv5t -Os A_CoreBattle/A8_ImportedAbilities.cpp -Iswan-master -o ______Output/A8_ImportedAbilities.elf
 
 
 /* Damage Calc */
-"C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\_Github_CascadeWhite\arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi\bin\arm-none-eabi-g++.exe"  -r -mthumb -march=armv5t -Os A_CoreBattle/A9_DamageCalc.cpp -Iswan-master -o ______Output/A9_DamageCalc.elf
+"C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____Github_CascadeWhite\arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi\bin\arm-none-eabi-g++.exe"  -r -mthumb -march=armv5t -Os A_CoreBattle/A9_DamageCalc.cpp -Iswan-master -o ______Output/A9_DamageCalc.elf
 
 
 
@@ -52,10 +52,10 @@
 
 
 /* Backgrounds B1 */
-"C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\_Github_CascadeWhite\arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi\bin\arm-none-eabi-g++.exe"  -r -mthumb -march=armv5t -Os B_Background/B1_Backgrounds.cpp -Iswan-master -o ______Output/B1_Backgrounds.elf
+"C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____Github_CascadeWhite\arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi\bin\arm-none-eabi-g++.exe"  -r -mthumb -march=armv5t -Os B_Background/B1_Backgrounds.cpp -Iswan-master -o ______Output/B1_Backgrounds.elf
 
 /* Backgrounds B2 */
-"C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\_Github_CascadeWhite\arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi\bin\arm-none-eabi-g++.exe"  -r -mthumb -march=armv5t -Os B_Background/B2_Backgrounds.cpp -Iswan-master -o ______Output/B2_Backgrounds.elf
+"C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____Github_CascadeWhite\arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi\bin\arm-none-eabi-g++.exe"  -r -mthumb -march=armv5t -Os B_Background/B2_Backgrounds.cpp -Iswan-master -o ______Output/B2_Backgrounds.elf
 
 
     /*
@@ -68,15 +68,15 @@
 
 
 /* Legendary Encounter C1 */
-"C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\_Github_CascadeWhite\arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi\bin\arm-none-eabi-g++.exe"  -r -mthumb -march=armv5t -Os C_LegendaryEncounter/C1_LegendaryEncounter.cpp -Iswan-master -o ______Output/C1_LegendaryEncounter.elf
+"C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____Github_CascadeWhite\arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi\bin\arm-none-eabi-g++.exe"  -r -mthumb -march=armv5t -Os C_LegendaryEncounter/C1_LegendaryEncounter.cpp -Iswan-master -o ______Output/C1_LegendaryEncounter.elf
 
 
 /* Legendary Encounter C2 */
-"C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\_Github_CascadeWhite\arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi\bin\arm-none-eabi-g++.exe"  -r -mthumb -march=armv5t -Os C_LegendaryEncounter/C2_LegendaryEncounter.cpp -Iswan-master -o ______Output/C2_LegendaryEncounter.elf
+"C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____Github_CascadeWhite\arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi\bin\arm-none-eabi-g++.exe"  -r -mthumb -march=armv5t -Os C_LegendaryEncounter/C2_LegendaryEncounter.cpp -Iswan-master -o ______Output/C2_LegendaryEncounter.elf
 
 
 /* Legendary Encounter C3 */
-"C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\_Github_CascadeWhite\arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi\bin\arm-none-eabi-g++.exe"  -r -mthumb -march=armv5t -Os C_LegendaryEncounter/C3_LegendaryEncounter.cpp -Iswan-master -o ______Output/C3_LegendaryEncounter.elf
+"C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____Github_CascadeWhite\arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi\bin\arm-none-eabi-g++.exe"  -r -mthumb -march=armv5t -Os C_LegendaryEncounter/C3_LegendaryEncounter.cpp -Iswan-master -o ______Output/C3_LegendaryEncounter.elf
 
 
 
@@ -90,15 +90,15 @@
     */
 
 /* Bag Overlay */
-"C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\_Github_CascadeWhite\arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi\bin\arm-none-eabi-g++.exe"  -r -mthumb -march=armv5t -Os D_NonBattleItemChanges/D1_BagOverlays.cpp -Iswan-master -o ______Output/D1_BagOverlays.elf
+"C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____Github_CascadeWhite\arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi\bin\arm-none-eabi-g++.exe"  -r -mthumb -march=armv5t -Os D_NonBattleItemChanges/D1_BagOverlays.cpp -Iswan-master -o ______Output/D1_BagOverlays.elf
 
 
 /* Field Overlay */
-"C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\_Github_CascadeWhite\arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi\bin\arm-none-eabi-g++.exe"  -r -mthumb -march=armv5t -Os D_NonBattleItemChanges/D2_FieldOverlays.cpp -Iswan-master -o ______Output/D2_FieldOverlays.elf
+"C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____Github_CascadeWhite\arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi\bin\arm-none-eabi-g++.exe"  -r -mthumb -march=armv5t -Os D_NonBattleItemChanges/D2_FieldOverlays.cpp -Iswan-master -o ______Output/D2_FieldOverlays.elf
 
 
 /* Overlay 142 */
-"C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\_Github_CascadeWhite\arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi\bin\arm-none-eabi-g++.exe"  -r -mthumb -march=armv5t -Os D_NonBattleItemChanges/D3_overlay142.cpp -Iswan-master -o ______Output/D3_overlay142.elf
+"C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____Github_CascadeWhite\arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi\bin\arm-none-eabi-g++.exe"  -r -mthumb -march=armv5t -Os D_NonBattleItemChanges/D3_overlay142.cpp -Iswan-master -o ______Output/D3_overlay142.elf
 
 
 

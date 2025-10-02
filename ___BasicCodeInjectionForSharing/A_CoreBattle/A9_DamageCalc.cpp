@@ -11,6 +11,7 @@ STRUCT_DECLARE(GameData)
 
 // uses ESDB_For_LegendaryPokemon3.yml
 
+#pragma region Definitions
 bool IsEqual(int a1, int a2)
 {
     char *c1 = (char *)&a1;
@@ -29,10 +30,24 @@ unsigned short int &LOWORD(unsigned int &x)
     return *(reinterpret_cast<unsigned short int *>(&x) + 0);
 }
 
+
+extern "C" u32 SearchArray(const u32 *const arr, const u32 arrSize, const u32 value)
+{
+    for (u32 i = 0; i < arrSize; ++i)
+    {
+        if (arr[i] == value)
+        {
+            return 1;
+        }
+    }
+    return 0;
+}
+#define SEARCH_ARRAY(arr, value) SearchArray(arr, ARRAY_COUNT(arr), value)
+
+
 extern "C"
 {
 
-#pragma region Definitions
     struct SWAN_ALIGNED(4) m_record
     {
         u32 Turn;
@@ -49,6 +64,10 @@ extern "C"
         BTL_STYLE_DOUBLE = 1,
         BTL_STYLE_TRIPLE = 2,
         BTL_STYLE_ROTATION = 3
+    };
+
+    const u32 teraItems[17] = {
+        215, 298, 299, 300, 301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 313
     };
 
     struct MoveRecord
@@ -1758,7 +1777,7 @@ extern "C"
         CONDITION_KNOCKED_DOWN = 0x1F,
         CONDITION_TERA = 0x20,
         CONDITION_SKY_DROP = 0x21,
-        CONDITION_ACCURACY_UP = 0x22,
+        CONDITION_TELEKINESIS = 0x22,
         CONDITION_AQUA_RING = 0x23,
         CONDITION_24 = 0x24,
     };
@@ -2211,6 +2230,10 @@ extern "C"
         Personal_SpecialTutor4 = 0x2F,
     };
 
+#pragma endregion
+
+
+#pragma region Functions
     extern void MoveEvent_ForceRemoveItemFromBattleMon(BattleMon *a1, int a2);
     extern int MoveEvent_AddItem(BattleMon *a1, int a2, int a3);
     extern u32 PML_MoveGetCategory(int wazaId);
@@ -2250,6 +2273,16 @@ extern "C"
     extern u32 BattleEventVar_SetRewriteOnceValue(BattleEventVar a1, int a2);
     extern bool PML_MoveIsAlwaysCrit(int wazaId);
     extern bool BattleMon_GetConditionFlag(BattleMon *a1, ConditionFlag a2);
+
+    bool HasMoldBreaker(BattleMon *a1)
+    {
+        return (BattleMon_GetValue(a1, VALUE_EFFECTIVE_ABILITY) == ABIL104_MOLD_BREAKER || BattleMon_GetValue(a1, VALUE_EFFECTIVE_ABILITY) == ABIL163_TURBOBLAZE || BattleMon_GetValue(a1, VALUE_EFFECTIVE_ABILITY) == ABIL164_TERAVOLT);
+    }
+    extern bool BattleMon_CheckIfMoveCondition(BattleMon *a1, MoveCondition a2);
+    extern int Move_GetID(BattleMon *a1, int a2);
+    extern u8 PML_MoveGetType(int a1);
+    extern u32 PML_PersonalGetParamSingle(u16 species, u16 form, PersonalField field);
+    extern int splitTypeCore(BattleMon *a1, u8 *a2, u8 *a3);
 
 #pragma endregion
 
@@ -2426,15 +2459,14 @@ extern "C"
             // ADD
             // Overcoat / Utility Umbrella Logic
             //
+            if (DefendingMon->HeldItem == 544 || (!HasMoldBreaker(AttackingMon) && BattleMon_GetValue(DefendingMon, VALUE_EFFECTIVE_ABILITY) == ABIL142_OVERCOAT)){
+                weatherDmgRatio == 4096;
+            }
 
             if (weatherDmgRatio != 4096)
             {
                 fxDamage = fixed_round(fxDamage, weatherDmgRatio);
             }
-
-            // ADD
-            // Multiscale Logic
-            //
 
             if (criticalFlag)
             {
@@ -2467,26 +2499,46 @@ extern "C"
             moveType = (PokeType)MoveParam->moveType;
             if (moveType != TYPE_NULL)
             {
-                if (BattleMon_GetValue(AttackingMon, VALUE_EFFECTIVE_ABILITY) == ABIL145_SAVANT)
+
+                int ratio;
+                if (BattleMon_CheckIfMoveCondition(AttackingMon, CONDITION_TERA) || SEARCH_ARRAY(teraItems, AttackingMon->HeldItem)){
+                    int teraType = PML_MoveGetType(Move_GetID(AttackingMon, 0));
+                    int type1 = PML_PersonalGetParamSingle(AttackingMon->Species, AttackingMon->Form, Personal_Type1);
+                    int type2 = PML_PersonalGetParamSingle(AttackingMon->Species, AttackingMon->Form, Personal_Type2);
+                    if ((moveType == type1 && moveType == teraType) && (moveType == type2 && moveType == teraType)){
+                        ratio = (BattleMon_GetValue(AttackingMon, VALUE_EFFECTIVE_ABILITY) == ABIL091_ADAPTABILITY) ? 9216 : 8192;
+                        fxDamage = fixed_round(fxDamage, ratio);
+                    }
+                    else if (moveType == teraType && BattleMon_GetValue(AttackingMon, VALUE_EFFECTIVE_ABILITY) == ABIL091_ADAPTABILITY){
+                        ratio = 8192;
+                        fxDamage = fixed_round(fxDamage, ratio);
+                    }
+                    else if (moveType == type1 || moveType == type2 || moveType == teraType){
+                        ratio = 6144;
+                        fxDamage = fixed_round(fxDamage, ratio);
+                    } else {
+                        ratio = 4096;
+                    }
+                } 
+                else if (BattleMon_GetValue(AttackingMon, VALUE_EFFECTIVE_ABILITY) == ABIL145_SAVANT)
                 {
                     if (ServerEvent_SameTypeAttackBonus(a1, AttackingMon, moveType) == 4096)
                     {
-                        fxDamage = fixed_round(fxDamage, 6144);
+                        ratio = 6144;
+                        fxDamage = fixed_round(fxDamage, ratio);
                     }
                     else
                     {
-                        v22 = ServerEvent_SameTypeAttackBonus(a1, AttackingMon, moveType);
-                        fxDamage = fixed_round(fxDamage, v22);
+                        ratio = ServerEvent_SameTypeAttackBonus(a1, AttackingMon, moveType);
+                        fxDamage = fixed_round(fxDamage, ratio);
                     }
+                    k::Printf("\nThe savant ratio is %d\n", ratio);
                 }
                 else
                 {
                     v22 = ServerEvent_SameTypeAttackBonus(a1, AttackingMon, moveType);
                     fxDamage = fixed_round(fxDamage, v22);
                 }
-                // ADD
-                // TERASTALIZATION LOGIC
-                //
             }
 
             v23 = TypeEffectivenessPowerMod(fxDamage, TypeEffectiveness);
@@ -2521,7 +2573,10 @@ extern "C"
 
         BattleEvent_CallHandlers(a1, EVENT_MOVE_DAMAGE_PROCESSING_END);
         BattleEventVar_Pop();
-
+        
+        if (MoveParam->MoveID == MOVE247_SHADOW_BALL ){
+            k::Printf("\nShadow Ball's damage is %d\n", Value);
+        }
         *destDamage = Value;
         return v29;
     }
@@ -3089,7 +3144,7 @@ extern "C"
         {1, ABIL045_SAND_STREAM, ABIL146_SAND_RUSH, ABIL146_SAND_RUSH},        // PK409_RAMPARDOS = 0x199,
         {1, ABIL045_SAND_STREAM, ABIL045_SAND_STREAM, ABIL045_SAND_STREAM},    // PK410_SHIELDON = 0x19A,
         {1, ABIL045_SAND_STREAM, ABIL045_SAND_STREAM, ABIL045_SAND_STREAM},    // PK411_BASTIODON = 0x19B,
-        {1, ABIL107_ANTICIPATION, ABIL107_ANTICIPATION, ABIL107_ANTICIPATION}, //   PK412_BURMY = 0x19C,
+        {1, ABIL107_ANTICIPATION, ABIL050_RUN_AWAY, ABIL050_RUN_AWAY}, //   PK412_BURMY = 0x19C,
         {1, ABIL107_ANTICIPATION, ABIL107_ANTICIPATION, ABIL107_ANTICIPATION}, //   PK413_WORMADAM = 0x19D,
         {1, ABIL107_ANTICIPATION, ABIL107_ANTICIPATION, ABIL107_ANTICIPATION}, //   PK414_MOTHIM = 0x19E,
         {0, ABIL001_STENCH, ABIL001_STENCH, ABIL001_STENCH},                   // PK415_COMBEE = 0x19F,

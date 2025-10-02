@@ -39,6 +39,9 @@ public class MainEvents {
 		int v18;
 		int v0;
 		
+		if (EventWorks.Get(16452) == 1){
+			goto Label_ResetGauntlet;
+		} 
 		Actor.PauseAll();
 		
 		if (EventWorks.Get(16432) == 0) {
@@ -158,6 +161,11 @@ public class MainEvents {
 		EventWorks.Set(16452, 1);
 		Runtime.FinishSubEvents();
 		Actor.UnpauseAll();
+
+		Label_ResetGauntlet:
+		if (EventFlags.Get(522)){
+				EventFlags.Clear(522);
+		}
 	}
 
 	static meta void WalkOneTileWest(int npcID) : VActionSequence {

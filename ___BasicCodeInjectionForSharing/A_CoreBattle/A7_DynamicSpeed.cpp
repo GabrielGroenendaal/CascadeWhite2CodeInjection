@@ -513,7 +513,7 @@ extern "C" int THUMB_BRANCH_ServerFlow_ActOrderProcMain(ServerFlow *serverFlow, 
             return serverFlow->numActOrder;
         }
 
-        u32 faintedCount = j_j_FaintRecord_GetCount_1(&serverFlow->faintRecord, 0);
+        u32 faintedCount = j_j_FaintRecord_GetCount(&serverFlow->faintRecord, 0);
         if (Handler_IsPosOpenForRevivedMon(serverFlow) || faintedCount)
         {
             ServerFlow_ReqChangePokeForServer(serverFlow, (unsigned __int8 *)&serverFlow->field_4CE);

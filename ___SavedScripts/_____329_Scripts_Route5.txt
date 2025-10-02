@@ -594,6 +594,9 @@ public class MainEvents {
 	}
 
 	public static void main_24() { // @ 0x78
+
+		EventFlags.Clear(523);
+		EventFlags.Clear(522);
 		EventFlags.Clear(1583); // Linebacker Jonah
 		EventFlags.Clear(1585); // Linebacker Dan
 		EventFlags.Clear(1534); // Striker Roberto

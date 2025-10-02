@@ -125,6 +125,7 @@ public class MainEvents {
             EventFlags.Clear(2264);
             EventFlags.Clear(2065);
             EventFlags.Clear(2067);
+			EventFlags.Set(522);
 			Field.ChangeMapQuicksand(196, 44, 48);
 			goto Label_Cleanup;
 		}
@@ -234,6 +235,13 @@ public class MainEvents {
 		Actor.UnpauseAll();
 	
 	}
+
+	public static void main_9() { // @ 0x1e
+		if (EventFlags.Get(522)){
+			EventFlags.Clear(522);
+		}
+	}
+
 	
 	static meta void ActionSequence_01d8(int npcId) : VActionSequence {
 		Action0023(1);

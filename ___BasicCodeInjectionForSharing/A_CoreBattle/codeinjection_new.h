@@ -583,5 +583,9 @@ extern u32 PML_PersonalGetParam(PersonalData *personal, PersonalField field);
 extern void SCQueue_AddCommon(void *a1, int a2, ...);
 extern void BattleField_TurnCheck(void* a1, ServerFlow *a2);
 extern void* TurnCheckCallback_Field;
+extern int HandlerThunderFlyCheck(int a1, int a2, int a3);
+extern void CommonStatDropGuardCheck(ServerFlow *serverFlow, u32 pokemonSlot, u32 *work, u32 moveEffect);
+
+
 
 C_DECL_END

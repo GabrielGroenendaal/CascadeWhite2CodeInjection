@@ -2797,20 +2797,20 @@ extern "C"
         }
     }
 
-    void THUMB_BRANCH_BattleMon_TurnCheck(BattleMon *a1)
-    {
-        bool didMoveFail = BattleMon_GetTurnFlag(a1, TURNFLAG_MOVEFAILED);
-        sys_memset(a1->TurnFlag, 0, 2u);
-        if (a1->TurnCount < 9999u)
-        {
-            ++a1->TurnCount;
-        }
-        if (didMoveFail)
-        {
-            TurnFlag_Set(a1, TURNFLAG_MOVEFAILEDLASTTURN);
-        }
-        MoveDamageRec_ClearTurn(a1);
-    }
+    // void THUMB_BRANCH_BattleMon_TurnCheck(BattleMon *a1)
+    // {
+    //     bool didMoveFail = BattleMon_GetTurnFlag(a1, TURNFLAG_MOVEFAILED);
+    //     sys_memset(a1->TurnFlag, 0, 2u);
+    //     if (a1->TurnCount < 9999u)
+    //     {
+    //         ++a1->TurnCount;
+    //     }
+    //     if (didMoveFail)
+    //     {
+    //         TurnFlag_Set(a1, TURNFLAG_MOVEFAILEDLASTTURN);
+    //     }
+    //     MoveDamageRec_ClearTurn(a1);
+    // }
 
     void THUMB_BRANCH_ServerEvent_CheckMoveExecuteFail(ServerFlow *a1, BattleMon *a2, int a3, int a4)
     {

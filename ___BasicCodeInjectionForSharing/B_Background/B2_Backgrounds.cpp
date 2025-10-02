@@ -3,7 +3,6 @@
 
 #define ANIMATED_BACKGROUNDS_ENABLED 0
 
-
 #pragma region defintions
 extern u32 g_GameBeaconSys;
 STRUCT_DECLARE(GameData)
@@ -177,6 +176,7 @@ extern "C"
         NIGHT = 0x4,
     };
 #pragma endregion
+
 #pragma region ZoneIdToBackgroundID
     const int ZoneIdToBackgroundID[615] = {
         9,  // 0 Black City
@@ -796,6 +796,7 @@ extern "C"
         29, // 614 Pledge Grove
     };
 #pragma endregion
+
 #pragma region ExternalFunctions
     extern int BtlSetup_Reset(void *a1);
     extern void SaveBtlFieldStatus(BattleFieldStatus *status, void *gameData, void *field);
@@ -869,6 +870,7 @@ extern "C"
     {
         if (!ANIMATED_BACKGROUNDS_ENABLED)
         {
+            k::Printf("\nCheck values\n");
             return;
         }
 
@@ -1017,7 +1019,75 @@ extern "C"
         //     return;
         // }
     }
+    struct PkmBufferChunk
+    {
+        char RawData[32];
+    };
 
+    struct PkmBuffer
+    {
+        PkmBufferChunk Chunks[4];
+    };
+
+    struct SWAN_ALIGNED(4) BoxPkm
+    {
+        u32 pid;
+        u16 SanityFlags;
+        u16 checksum;
+        PkmBuffer ContentBuffer;
+    };
+
+    struct MailData
+    {
+        u32 TID;
+        _BYTE TrainerGender;
+        _BYTE Region;
+        _BYTE GameVersion;
+        _BYTE byte7;
+        char StringContent[16];
+        __int16 field_18;
+        __int16 field_1A;
+        __int16 field_1C;
+        _WORD word1E;
+        int field_20;
+        int field_24;
+        int field_28;
+        int field_2C;
+        int field_30;
+        int field_34;
+    };
+
+    struct PartyPkm
+    {
+        BoxPkm Base;
+        u32 StatusCond;
+        u8 Level;
+        u8 field_8D;
+        u16 NowHP;
+        u16 MaxHP;
+        u16 ATK;
+        u16 DEF;
+        u16 SPE;
+        u16 SPA;
+        u16 SPD;
+        MailData Mail;
+        u32 field_D4;
+        u32 field_D8;
+    };
+    struct PokeParty
+    {
+        u32 PokemonCapacity;
+        u32 PokemonCount;
+        PartyPkm Pokemon[6];
+        u8 PresentMemberBits;
+        u8 _pad1;
+        u16 _pad2;
+    };
+
+    extern int howManyPokesAreAbleToFight(PokeParty *pPartyBlk);
+    extern PokeParty *GameData_GetParty(void *data);
+
+#pragma region settingupTrainers
     /*
 
         --------------------------------------------------------------------------------------------------
@@ -1059,7 +1129,7 @@ extern "C"
         {
             fieldStatus.BattleBGID = foe1TrId;
         }
-        // k::Printf("\nfieldstatus zone id is %d and the trainer id is %d\n", fieldStatus.BattleBGID, foe1TrId);
+        k::Printf("\nfieldstatus zone id is %d and the trainer id is %d\n", fieldStatus.BattleBGID, foe1TrId);
         if (style <= BTL_STYLE_ROTATION)
         {
             if (style == BTL_STYLE_SINGLE)
@@ -1073,24 +1143,39 @@ extern "C"
                     BtlSetup_SetTrainer1v1Single(setup, m_GameData, &fieldStatus, foe1TrId, heapId);
                 }
             }
-            if (style == BTL_STYLE_DOUBLE)
+            else
             {
-                if (allyTrId)
+                if (style == BTL_STYLE_DOUBLE && allyTrId)
                 {
                     BtlSetup_SetTrainer2v2(setup, m_GameData, &fieldStatus, allyTrId, foe1TrId, foe2TrId, heapId);
                 }
                 else
                 {
-                    BtlSetup_SetTrainer1v1Double(setup, m_GameData, &fieldStatus, foe1TrId, heapId);
+                    k::Printf("\nIt's not a double or a tag battle");
+
+                    if (howManyPokesAreAbleToFight(GameData_GetParty(m_GameData)) < 2)
+                    {
+                        k::Printf("\nThere aren't enough Pokemon to fight for a double battle. We only have %d", howManyPokesAreAbleToFight(GameData_GetParty(m_GameData)));
+                        BtlSetup_SetTrainer1v1Single(setup, m_GameData, &fieldStatus, foe1TrId, heapId);
+                    }
+                    else
+                    {
+                        if (style == BTL_STYLE_DOUBLE)
+                        {
+
+                            BtlSetup_SetTrainer1v1Double(setup, m_GameData, &fieldStatus, foe1TrId, heapId);
+                        }
+
+                        if (style == BTL_STYLE_TRIPLE)
+                        {
+                            BtlSetup_SetTrainer3v3(setup, m_GameData, &fieldStatus, foe1TrId, heapId);
+                        }
+                        if (style == BTL_STYLE_ROTATION)
+                        {
+                            BtlSetup_SetTrainerRotation(setup, m_GameData, &fieldStatus, foe1TrId, heapId);
+                        }
+                    }
                 }
-            }
-            if (style == BTL_STYLE_TRIPLE)
-            {
-                BtlSetup_SetTrainer3v3(setup, m_GameData, &fieldStatus, foe1TrId, heapId);
-            }
-            if (style == BTL_STYLE_ROTATION)
-            {
-                BtlSetup_SetTrainerRotation(setup, m_GameData, &fieldStatus, foe1TrId, heapId);
             }
         }
     }
@@ -1113,8 +1198,8 @@ extern "C"
 
         PlayerStateZoneID = Field_GetPlayerStateZoneID(field);
         player = Field_GetPlayer(field);
-        // status->BattleBGID = GetZoneBattleBGID(PlayerStateZoneID);
-        status->BattleBGID = ZoneIdToBackgroundID[PlayerStateZoneID];
+        status->BattleBGID = GetZoneBattleBGID(PlayerStateZoneID);
+        // status->BattleBGID = ZoneIdToBackgroundID[PlayerStateZoneID];
         TileTypeUnder = FieldPlayer_GetTileTypeUnder(player);
         TileClass = GetTileClass(TileTypeUnder);
         status->BattlePedestalID = GetTileEncountType(TileClass);
@@ -1125,7 +1210,7 @@ extern "C"
         status->BtlWeather = ConvFieldWeatherToBtl(field);
         status->Season = GameData_GetSeason(gameData);
 
-        if (!ANIMATED_BACKGROUNDS_ENABLED)
+        if (ANIMATED_BACKGROUNDS_ENABLED)
         {
             if (PlayerStateZoneID == 446    // Route 20
                 || PlayerStateZoneID == 445 // Flocessy Ranch
@@ -1185,5 +1270,276 @@ extern "C"
                 // Chargestone Cave
             }
         }
+    }
+
+#pragma endregion
+
+#pragma region DoubleBattleFix
+    enum FieldBattleType
+    {
+        FLD_BTLTYPE_SINGLE = 0x0,
+        FLD_BTLTYPE_DOUBLE_SEPARATE = 0x1,
+        FLD_BTLTYPE_DOUBLE_UNIFIED = 0x2,
+        FLD_BTLTYPE_DOUBLE_MULTI = 0x3,
+    };
+
+    struct FieldScriptTrainerSetup
+    {
+        void *TrainerActor;
+        int ClashDistance;
+        int ClashDirection;
+        int SCRID;
+        int TrainerID;
+        FieldBattleType BattleType;
+    };
+
+    struct SWAN_ALIGNED(4) GameEvent
+    {
+        GameEvent *ReturnEvent;
+        void *Callback;
+        u32 EventState;
+        void *EventData;
+        void *m_GameSystem;
+    };
+
+    struct FieldActorResGroup
+    {
+        u16 Res1;
+        u16 Res2;
+        u16 Animations[3];
+    };
+
+    struct FieldActorConfig
+    {
+        u16 UID;
+        u8 EntityType;
+        u8 SceneNodeType;
+        u8 EnableShadow;
+        u8 FootprintType;
+        u8 EnableReflections;
+        u8 BillboardSize;
+        u8 SpriteAtlasSize;
+        u8 SpriteControllerType;
+        u8 Gender;
+        u8 CollWidth;
+        u8 CollHeight;
+        s8 WPosOffsetX;
+        s8 WPosOffsetY;
+        s8 WPosOffsetZ;
+        FieldActorResGroup RscIndices;
+        u16 Padding;
+    };
+
+    struct GPosXYZ
+    {
+        u16 X;
+        s16 Y;
+        u16 Z;
+    };
+
+    struct ActorPositionRail
+    {
+        void *m_RailUnit;
+        RailPosition m_RailPosition;
+        int field_C;
+    };
+
+    struct FieldActor
+    {
+        u32 Flags;
+        u32 MovementFlags;
+        u16 ActorUID;
+        u16 ZoneID;
+        u16 ModelID;
+        u16 MoveCode;
+        u16 EvType;
+        u16 SpawnFlag;
+        u16 SCRID;
+        u16 DefaultDir;
+        u16 FaceDir;
+        u16 MotionDir;
+        u16 LastFaceDir;
+        u16 LastMotionDir;
+        u16 Param0;
+        u16 Param1;
+        u16 Param2;
+        u16 NextAcmd;
+        u16 AcmdState;
+        u16 field_2A;
+        s16 AreaW;
+        s16 AreaH;
+        GPosXYZ DefaultGPos;
+        GPosXYZ InitGPos;
+        GPosXYZ GPos;
+        s16 field_42;
+        VecFx32 WPos;
+        VecFx32 WPosOffset;
+        int field_5C;
+        int field_60;
+        int field_64;
+        int field_68;
+        int field_6C;
+        int field_70;
+        TileType CurrentTileUnder;
+        TileType CurrentTileUnderOrigY;
+        u8 CollisionWidth;
+        u8 CollisionHeight;
+        s8 ModelPosOffsetX;
+        s8 ModelPosOffsetY;
+        s8 ModelPosOffsetZ;
+        u8 ShadowGroup;
+        u16 _padShadowGroup;
+        void *m_TCB;
+        void *m_ActorSystem;
+        void *MoveCodeVTable;
+        void *SceneNodeVTable;
+        ActorPositionRail DefaultRailPos;
+        ActorPositionRail RailPos;
+        int field_B4;
+        int field_B8;
+        int field_BC;
+        int field_C0;
+        int field_C4;
+        int field_C8;
+        char field_CC[24];
+        FieldActorConfig m_Config;
+    };
+
+    unsigned short int &
+    LOWORD(unsigned int &x)
+    {
+        return *(reinterpret_cast<unsigned short int *>(&x) + 0);
+    }
+
+    extern int sub_2182FD0(void *a1);
+    extern GameEvent *CreateTrainerClashEvent(void *field, void *trainerActor);
+    extern int EventTrainerEye_FindClashActor(void *field, void *exclude, void *setup);
+    extern void *Field_GetGameSystem(void *field);
+    extern GameData *GSYS_GetGameData(void *gsys);
+    extern u32 sub_21A6584(void *actor);
+    extern BattleStyle getBattleType(u16 trId);
+    extern int GetNowFollowerAllyTrID(GameData *gameData);
+    extern void SetupTrainerClashSlot(void *event, int trainerSlot, FieldScriptTrainerSetup *setup);
+    extern FieldActor *sub_21A6614(void *a1, int a2);
+    extern void InitFieldScriptTrainerSetup(
+        FieldScriptTrainerSetup *setup,
+        void *a2,
+        u16 pClashDist,
+        u16 pClashDir);
+
+    // void *THUMB_BRANCH_EventTrainerEye_CheckAll(void *field)
+    // {
+    //     GameEvent *v2;                       // r6
+    //     void *GameSystem;                    // r0
+    //     GameData *GameData;                  // r7
+    //     void *v5;                            // r0
+    //     unsigned int partyPkmCount;          // r4
+    //     BattleStyle BattleType;              // r0
+    //     GameEvent *TrainerClashEvent;        // r0
+    //     FieldBattleType v9;                  // r4
+    //     GameEvent *v10;                      // r0
+    //     int trSlot;                          // r1
+    //     FieldScriptTrainerSetup *p_setupTr1; // r2
+    //     FieldActor *v13;                           // r0
+    //     FieldScriptTrainerSetup setupTr1;    // [sp+0h] [bp-48h] BYREF
+    //     FieldScriptTrainerSetup setupTr2;    // [sp+18h] [bp-30h] BYREF
+
+    //     v2 = 0;
+    //     GameSystem = Field_GetGameSystem(field);
+    //     GameData = GSYS_GetGameData(GameSystem);
+
+    //     if (EventTrainerEye_FindClashActor(field, 0, &setupTr2) == 1)
+    //     {
+    //         v5 = Field_GetGameSystem(field);
+    //         partyPkmCount = sub_2182FD0(v5);
+    //         if (sub_21A6584(setupTr2.TrainerActor))
+    //         {
+    //             BattleType = BTL_STYLE_SINGLE;
+    //         }
+    //         else
+    //         {
+    //             BattleType = getBattleType(setupTr2.TrainerID);
+    //         }
+    //         if (BattleType == BTL_STYLE_SINGLE)
+    //         {
+    //             if (partyPkmCount && GetNowFollowerAllyTrID(GameData) && EventTrainerEye_FindClashActor(field, setupTr2.TrainerActor, &setupTr1) == 1)
+    //             {
+    //                 TrainerClashEvent = CreateTrainerClashEvent(field, setupTr2.TrainerActor);
+    //                 v2 = TrainerClashEvent;
+    //                 v9 = FLD_BTLTYPE_DOUBLE_MULTI;
+    //             LABEL_10:
+    //                 setupTr2.BattleType = v9;
+    //                 SetupTrainerClashSlot(TrainerClashEvent, 0, &setupTr2);
+    //                 setupTr1.BattleType = v9;
+    //                 v10 = v2;
+    //                 trSlot = 1;
+    //                 p_setupTr1 = &setupTr1;
+    //             LABEL_21:
+    //                 SetupTrainerClashSlot(v10, trSlot, p_setupTr1);
+    //                 // k::Printf("\nWe're going to do a bunch of diagnostics here\ntrSlot is %d\np_setupTr1 is %d and %d and %d and %d and %d and %d\nv10 is %d and %d and %d and %d and %d", trSlot, p_setupTr1, p_setupTr1->BattleType, p_setupTr1->ClashDirection, p_setupTr1->ClashDistance, p_setupTr1->TrainerActor, p_setupTr1->TrainerID, v10, v10->Callback, v10->EventData, v10->EventState, v10->m_GameSystem);
+    //                 k::Printf("\nv2 = %d", v2);
+    //                 return v2;
+    //             }
+    //             if (partyPkmCount >= 2 && EventTrainerEye_FindClashActor(field, setupTr2.TrainerActor, &setupTr1))
+    //             {
+    //                 TrainerClashEvent = CreateTrainerClashEvent(field, setupTr2.TrainerActor);
+    //                 v2 = TrainerClashEvent;
+    //                 v9 = FLD_BTLTYPE_DOUBLE_UNIFIED;
+    //                 goto LABEL_10;
+    //             }
+    //         LABEL_20:
+    //             v10 = CreateTrainerClashEvent(field, setupTr2.TrainerActor);
+    //             trSlot = 0;
+    //             v2 = v10;
+    //             setupTr2.BattleType = FLD_BTLTYPE_SINGLE;
+    //             p_setupTr1 = &setupTr2;
+    //             goto LABEL_21;
+    //         }
+    //         if (BattleType == BTL_STYLE_DOUBLE)
+    //         {
+    //             if (partyPkmCount)
+    //             {
+    //                 v13 = sub_21A6614(setupTr2.TrainerActor, LOWORD((unsigned int&)setupTr2.TrainerID));
+    //                 InitFieldScriptTrainerSetup(&setupTr1, v13, setupTr2.ClashDistance, setupTr2.ClashDirection);
+    //                 TrainerClashEvent = CreateTrainerClashEvent(field, setupTr2.TrainerActor);
+    //                 v2 = TrainerClashEvent;
+    //                 v9 = FLD_BTLTYPE_DOUBLE_SEPARATE;
+    //                 goto LABEL_10;
+    //             }
+    //         }
+    //         else if ((unsigned int)(BattleType - 2) <= 1 && partyPkmCount)
+    //         {
+    //             goto LABEL_20;
+    //         }
+    //     }
+    //     return v2;
+    // }
+    
+    extern u32 PokeParty_GetParam(PartyPkm *pPkm, int field, void *extra);
+    extern PartyPkm *PokeParty_GetPkm(PokeParty *party, int slot);
+    extern u32 PokeParty_GetPkmCount(PokeParty *pPartyBlk);
+
+    int THUMB_BRANCH_sub_2182FD0(void *a1)
+    {
+        GameData *GameData;      // r0
+        signed __int32 PkmCount; // r7
+        int v3;                  // r4
+        int i;                   // r5
+        PartyPkm *Pkm;           // r6
+        PokeParty *party;        // [sp+0h] [bp-18h]
+
+        GameData = GSYS_GetGameData(a1);
+        party = GameData_GetParty(GameData);
+        PkmCount = PokeParty_GetPkmCount(party);
+        v3 = 0;
+        for (i = 0; v3 < PkmCount; ++v3)
+        {
+            Pkm = PokeParty_GetPkm(party, v3);
+            if (!PokeParty_GetParam(Pkm, 0x4C, 0) && PokeParty_GetParam(Pkm, 0xA0, 0))
+            {
+                ++i;
+            }
+        }
+        return (i == 1) ? 3 : i;
     }
 }

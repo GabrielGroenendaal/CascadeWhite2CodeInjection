@@ -643,6 +643,7 @@ public class MainEvents {
 		EventFlags.Clear(1768);
 		EventFlags.Clear(1770);
 		EventFlags.Clear(1771);
+		EventFlag.Clear(522);
 		goto LABEL_FINISHED;
 
 		LABEL_INTRODUCTION:
@@ -713,6 +714,7 @@ public class MainEvents {
 		Message.CloseAll();
 		EventWorks.Set(16731, 1);
 		EventWorks.Set(16732, 1);
+		EventFlags.Set(522);
 		Runtime.FinishSubEvents();
 		Actor.UnpauseAll();
 	}
@@ -757,7 +759,7 @@ public class MainEvents {
 		Input.LastKeyWait();
 		Message.CloseAll();
 
-		Global2805(30, 1);
+		Global2805(423, 1);
 		
 		Message.ActorEx(1024, 66, 5, 0, 0);
 		Input.LastKeyWait();
@@ -768,6 +770,7 @@ public class MainEvents {
 		Message.System(67, 1);
 		Input.LastKeyWait();
 		Message.CloseAll();
+		EventFlags.Clear(522);
 		EventWorks.Set(16732, 0);
 		EventWorks.Set(16731, 1);
 		EventWorks.Set(16733, 1);

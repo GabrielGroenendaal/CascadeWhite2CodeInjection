@@ -793,6 +793,7 @@ label90: ;
 
 void Sequence13()
 {
+	EventGreyMessage(69, 2);
 	Return();
 }
 

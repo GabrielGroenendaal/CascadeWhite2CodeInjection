@@ -87,15 +87,15 @@ extern "C"
 #pragma endregion
 
 #pragma region Power
-    
-     /*
 
-        --------------------------------------------------------------------------------------------------
-        ------------------------------------ GET ATTACK POWER --------------------------------------------
-        --------------------------------------------------------------------------------------------------
+    /*
 
-        Here's where we hard code the effects of Foul Play, Body Press.
-    */
+       --------------------------------------------------------------------------------------------------
+       ------------------------------------ GET ATTACK POWER --------------------------------------------
+       --------------------------------------------------------------------------------------------------
+
+       Here's where we hard code the effects of Foul Play, Body Press.
+   */
 
     int THUMB_BRANCH_SAFESTACK_ServerEvent_GetAttackPower(
         ServerFlow *a1,
@@ -192,7 +192,6 @@ extern "C"
         BattleEventVar_Pop();
         return v16;
     }
-
 
     /*
 
@@ -301,7 +300,6 @@ extern "C"
         return fixed_round(v16, v17);
     }
 
-
     /*
 
         --------------------------------------------------------------------------------------------------
@@ -368,7 +366,31 @@ extern "C"
         return result;
     }
 
-    #pragma endregion
+#pragma endregion
+
+    extern u32 PokeParty_PkmDecryptCheck(PartyPkm *pPkm);
+    extern u32 PokeParty_GetParamCore(PartyPkm *pkm, PkmField field, void *extra);
+    extern void PokeParty_PkmEncrypt(PartyPkm *pPkm);
 
 
+    extern "C" u32 checkEVFlags(u32 param)
+    {
+        EventWorkSave *eventWork = GameData_GetEventWork(GAME_DATA);
+        u16 *lvl_cap_ptr = EventWork_GetWkPtr(eventWork, 16434);
+        return *lvl_cap_ptr;
+    }
+
+    extern "C" u32 THUMB_BRANCH_PokeParty_GetParam(PartyPkm *pPkm, PkmField field, void *extra)
+    {
+        u32 ParamCore; // r4
+
+        PokeParty_PkmDecryptCheck(pPkm);
+        ParamCore = PokeParty_GetParamCore(pPkm, field, extra);
+        PokeParty_PkmEncrypt(pPkm);
+        if (field == PF_EvATK || field == PF_EvDEF || field == PF_EvHP || field == PF_EvSPA || field == PF_EvSPD || field == PF_EvSPE)
+        {
+            ParamCore = ParamCore * checkEVFlags(ParamCore);
+        }
+        return ParamCore;
+    }
 }

@@ -1,0 +1,129 @@
+
+
+
+/* Text File 18 */
+
+1291: 
+    [VAR PKNICK(0)]'s [VAR ITEM2(1)]\nprevent its stats from being lowered. 
+1292: 
+    The wild [VAR PKNICK(0)]'s [VAR ITEM2(1)]\nprevent its stats from being lowered.  
+1293: 
+    The foe's [VAR PKNICK(0)]'s [VAR ITEM2(1)]\nprevent its stats from being lowered.  
+
+1294: 
+    [VAR PKNICK(0)] terastallized\ninto the [VAR TYPE(1)] type!
+1295: 
+    The wild [VAR PKNICK(0)] terastallized\ninto the [VAR TYPE(1)] type!
+1296: 
+    The foe's [VAR PKNICK(0)] terastallized\ninto the [VAR TYPE(1)] type!
+
+
+
+/* Text File 19 */ 
+
+240: 
+    Neutralizing gas filled the area.
+
+241: 
+    The effects of the neutralizing gas\nwore off!
+
+
+
+/* Game Text 479 */
+Add in all the global PC text changes. I think most of them are already loaded on the Testing Build
+but make the following edits.
+
+    0:
+        [VAR TRNAME(0)] booted up the PokéHelper.\c
+    
+    1:
+        Bzzzzt-\nWhat can I help you with?
+    
+
+
+
+Scripts For:
+    194
+    195
+    196
+    329
+    190
+    253
+
+
+253:
+    Entity 63 (the Pokeball) becomes 
+        Model: 95
+        Script: 29
+        Spawnflag: 523
+        Orientation: West
+    
+    Entity 71 
+        Model: 59
+        Script: 27
+        Orientation: South
+    
+    Entity 71:
+        Model: 59
+        Script: 28
+        Orientation: North
+
+    Trigger Entity 1 
+        Move to 
+            X 88
+            Z 44 
+    
+    New Trigger Entity 2
+        X 167
+        Y 46
+        Script 26
+        Spawn Flag: 16787, 0
+        Width 1
+        Height 3
+    
+
+    Attach SpawnFlag 523 to everything on this map
+
+    Text: 
+        31:
+            The Driftveil Drawbridge gauntlet\nhas begun!
+        32:
+            Crowds block the way back.
+        33:
+            Come on, MOVE!\nPUSH THROUGH!\c\nOVERCOME!
+        34:
+            ANOTHER SET OF DRILLS!\nYOUR FOOTWORK IS SLOPPY!
+        35:
+            Please coach, we can't keep going...
+        36:
+            I DO NOT ACCEPT THAT!
+        37:
+            I know your strength, I've guided your\ntraining.\c\nYou know in your heart you are\ncapable of more!
+        38:
+            You must shatter the weakness within\nyourself, and prevail over your foes with\c\nthe force of your conviction!
+        39:
+            If not for yourself, for your\nallies- er- teammates!
+        40:
+            He's right. We can't let the team down.
+        41:
+            My fans, my Pokémon... they rely\non me... they BELIEVE in me!
+        42:
+            YES COACH!\c\nOF COURSE COACH!\c\nWE HAVE THE POWER INSIDE COACH!
+        43:
+            Excellent.\nNow, for another round of-  
+        44:
+            Greetings, trainer!\nMy name is Marshall, and I'm the new head\c\ncoach for the Nimbasa City Voltorbs...\c\n...and the Nimabasa City Luxrays...\nand the Blitzles...
+        45: 
+            To be frank, all the big teams had a\npretty terrible season and asked for\c\nmy help.
+        46: 
+            It's been... an adjustment.\nI'm not too familiar with sports, and\c\ntraining people is much more difficult\nthan training Pokémon. 
+        47: 
+            But the stadium is a battlefield like any\nother, and battle is something with\c\nwhich I am intimately familiar.
+        48:
+            I can see you are the same!\c\nI watched your battles from afar: good\nform and excellent fundamentals.\c\nThe team is sure to have learned\nsomething from you.\c\nAs thanks, and as an apology for\ndisrupting your crossing, take these.
+        49:
+            It is time for us to return to Nimbasa.\nMay your strength serve you well on your\c\njourney, trainer.
+        50:
+            Can't give up... gotta get stronger!
+        51:    
+            One... two... three... four...\c\nOne... two... three... four... 

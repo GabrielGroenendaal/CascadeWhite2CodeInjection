@@ -5,9 +5,12 @@
 #include "settings.h"
 #include "swantypes.h"
 
-extern "C" u32 SearchArray(const u32* const arr, const u32 arrSize, const u32 value) {
-    for (u32 i = 0; i < arrSize; ++i) {
-        if (arr[i] == value) {
+extern "C" u32 SearchArray(const u32 *const arr, const u32 arrSize, const u32 value)
+{
+    for (u32 i = 0; i < arrSize; ++i)
+    {
+        if (arr[i] == value)
+        {
             return 1;
         }
     }
@@ -17,29 +20,44 @@ extern "C" u32 SearchArray(const u32* const arr, const u32 arrSize, const u32 va
 
 #pragma region BattleFieldSetup
 
+// struct BattleField
+// {
+//     int Weather;
+//     int WeatherTurns;
+//     BattleEventItem *battleEventItems[8];
+//     ConditionData conditionData[8];
+//     u32 TurnCount[8];
+//     u32 DependPokeID[8][6];
+//     u32 DependPokeCount[8];
+//     u32 EffectEnableFlags[8];
+// };
+
 struct BattleFieldExt
 {
-    WeatherID weather;
-    BattleEventItem *battleEventItems[FIELD_EFFECT_AMOUNT];
-    ConditionData conditionData[FIELD_EFFECT_AMOUNT];
-    u32 turnCount[FIELD_EFFECT_AMOUNT];
-    u32 dependPokeID[FIELD_EFFECT_AMOUNT][6];
-    u32 dependPokeCount[FIELD_EFFECT_AMOUNT];
-    u32 effectEnableFlags[FIELD_EFFECT_AMOUNT];
+    // WeatherID weather;
+    // BattleEventItem *battleEventItems[FIELD_EFFECT_AMOUNT];
+    // ConditionData conditionData[FIELD_EFFECT_AMOUNT];
+    // u32 turnCount[FIELD_EFFECT_AMOUNT];
+    // u32 dependPokeID[FIELD_EFFECT_AMOUNT][6];
+    // u32 dependPokeCount[FIELD_EFFECT_AMOUNT];
+    // u32 effectEnableFlags[FIELD_EFFECT_AMOUNT];
 
     // Stores the damage a Substitute takes each action
     // - Reset in [ServerControl_DamageRoot] & [CommonEmergencyExitCheck]
     // - Set in [BattleMon_AddSubstituteDamage]
     // - Used in [CommonEmergencyExitCheck]
     u32 actionSubstituteDamage[31];
-    u8 firstTurnMons[6] = {31};
+    // u8 firstTurnMons[6] = {31};
     // Tracks which Emergency Exit Pok�mon should switch after the move is over
     // - Used in [CommonEmergencyExitCheck] & [HandlerEmergencyExitSwitch]
     u32 emergencyExitFlag;
 
+    u32 BerserkFlag;
+
     u8 neutralizingGasMons;
+    u32 Test;
 };
-BattleFieldExt *g_BattleField;
+BattleFieldExt *g_BattleVars;
 
 u8 endTurnSwitchFlag = 0;
 
@@ -58,61 +76,113 @@ extern "C" void ResetEndTurnSwitchFlag()
 
 extern "C" u32 BattleField_GetSubstituteDamage(u32 battleSlot)
 {
-    return g_BattleField->actionSubstituteDamage[battleSlot];
+    return g_BattleVars->actionSubstituteDamage[battleSlot];
 }
 extern "C" void BattleField_SetSubstituteDamage(u32 battleSlot, u32 value)
 {
-    g_BattleField->actionSubstituteDamage[battleSlot] = value;
+    g_BattleVars->actionSubstituteDamage[battleSlot] = value;
+}
+
+extern "C" b32 BattleField_CheckBerserkFlag(u32 battleSlot)
+{
+    return (g_BattleVars->emergencyExitFlag >> battleSlot) & 1;
+}
+extern "C" void BattleField_SetBerserkFlag(u32 battleSlot)
+{
+    g_BattleVars->emergencyExitFlag |= (1 << battleSlot);
+}
+extern "C" void BattleField_ResetBerserkFlag(u32 battleSlot)
+{
+    g_BattleVars->emergencyExitFlag &= ~(1 << battleSlot);
 }
 
 extern "C" b32 BattleField_CheckEmergencyExitFlag(u32 battleSlot)
 {
-    return (g_BattleField->emergencyExitFlag >> battleSlot) & 1;
+    return (g_BattleVars->emergencyExitFlag >> battleSlot) & 1;
 }
 extern "C" void BattleField_SetEmergencyExitFlag(u32 battleSlot)
 {
-    g_BattleField->emergencyExitFlag |= (1 << battleSlot);
+    g_BattleVars->emergencyExitFlag |= (1 << battleSlot);
 }
 extern "C" void BattleField_ResetEmergencyExitFlag(u32 battleSlot)
 {
-    g_BattleField->emergencyExitFlag &= ~(1 << battleSlot);
+    g_BattleVars->emergencyExitFlag &= ~(1 << battleSlot);
 }
 
 extern "C" u32 BattleField_GetNeutralizingGasMons()
 {
-    return g_BattleField->neutralizingGasMons;
+    return g_BattleVars->neutralizingGasMons;
 }
 extern "C" void BattleField_AddNeutralizingGasMon()
 {
-    ++g_BattleField->neutralizingGasMons;
+    ++g_BattleVars->neutralizingGasMons;
 }
 extern "C" void BattleField_RemoveNeutralizingGasMon()
 {
-    --g_BattleField->neutralizingGasMons;
+    --g_BattleVars->neutralizingGasMons;
 }
 
-extern "C" b32 SwitchedInThisTurn(ServerFlow *serverFlow, BattleMon *battleMon)
+extern "C" void BattleField_InitCore(BattleField *a1, int a2);
+extern "C" void *GFL_HeapAllocate(HeapID heapId, u32 size, b32 calloc, const char *sourceFile, u16 lineNo);
+// extern "C" b32 SwitchedInThisTurn(ServerFlow *serverFlow, BattleMon *battleMon)
+// {
+//     if (serverFlow->turnCount == 0)
+//     {
+//         for (u8 i = 0; i < 6; ++i)
+//         {
+//             if (g_BattleField->firstTurnMons[i] == battleMon->ID)
+//             {
+//                 // A Pok�mon that started the battle doesn't count as just switched in
+//                 return 0;
+//             }
+//         }
+//     }
+//     return !battleMon->TurnCount;
+// }
+
+extern "C" BattleField *THUMB_BRANCH_BattleField_Init(HeapID a1)
 {
-    if (serverFlow->turnCount == 0)
+    BattleField *v1;
+
+    if (!g_BattleVars)
     {
-        for (u8 i = 0; i < 6; ++i)
-        {
-            if (g_BattleField->firstTurnMons[i] == battleMon->ID)
-            {
-                // A Pok�mon that started the battle doesn't count as just switched in
-                return 0;
-            }
-        }
+        g_BattleVars = (BattleFieldExt *)GFL_HeapAllocate(a1, sizeof(BattleFieldExt), 1, "btl_field.c", 0x10Cu);
+        g_BattleVars->neutralizingGasMons = 0;
+        g_BattleVars->emergencyExitFlag = 0;
+        g_BattleVars->BerserkFlag = 0;
+        g_BattleVars->Test = 5;
+        sys_memset(g_BattleVars->actionSubstituteDamage, 0, 31 * sizeof(u32));
     }
-    return !battleMon->TurnCount;
+    v1 = (BattleField *)GFL_HeapAllocate(a1, 0x168u, 1, "btl_field.c", 0x10Cu);
+    BattleField_InitCore(v1, 0);
+    return v1;
+}
+
+extern "C" void GFL_HeapFree(void *heap);
+
+extern "C" void THUMB_BRANCH_BattleField_Free(void *battleField)
+{
+    if (g_BattleVars)
+    {
+        GFL_HeapFree(g_BattleVars);
+        g_BattleVars = nullptr;
+    }
+    GFL_HeapFree(battleField);
 }
 
 #pragma endregion
 
-
 #pragma region Berserk
 
 extern "C" void HandlerBerserk(BattleEventItem *item, ServerFlow *serverFlow, u32 pokemonSlot, u32 *work)
+{
+    if (pokemonSlot = BattleEventVar_GetValue(VAR_MON_ID))
+    {
+        BattleField_ResetBerserkFlag(pokemonSlot);
+    }
+}
+
+extern "C" void HandlerBerserkSwitchIn(BattleEventItem *item, ServerFlow *serverFlow, u32 pokemonSlot, u32 *work)
 {
     u32 targetCount = BattleEventVar_GetValue(VAR_TARGET_COUNT);
     for (u8 i = 0; i < targetCount; ++i)
@@ -130,7 +200,7 @@ extern "C" void HandlerBerserk(BattleEventItem *item, ServerFlow *serverFlow, u3
             u32 beforeDmgHPPercent = (beforeDmgHP * 100) / maxHP;
             if (beforeDmgHPPercent >= 50)
             {
-                if (currentHPPercent < 50)
+                if (currentHPPercent < 50 && !BattleField_CheckBerserkFlag(pokemonSlot))
                 {
                     BattleHandler_PushRun(serverFlow, EFFECT_ABILITYPOPUPIN, pokemonSlot);
 
@@ -153,6 +223,8 @@ extern "C" void HandlerBerserk(BattleEventItem *item, ServerFlow *serverFlow, u3
                     BattleHandler_PopWork(serverFlow, stageChange);
 
                     BattleHandler_PushRun(serverFlow, EFFECT_ABILITYPOPUPOUT, pokemonSlot);
+
+                    BattleField_SetBerserkFlag(pokemonSlot);
                 }
             }
 
@@ -160,8 +232,10 @@ extern "C" void HandlerBerserk(BattleEventItem *item, ServerFlow *serverFlow, u3
         }
     }
 }
+
 BattleEventHandlerTableEntry BerserkHandlers[]{
     {EVENT_DAMAGE_PROCESSING_END_HIT_2, (BattleEventHandler)HandlerBerserk},
+    {EVENT_SWITCH_IN, (BattleEventHandler)HandlerBerserkSwitchIn},
 };
 
 extern "C" BattleEventHandlerTableEntry *THUMB_BRANCH_EventAddPoisonPoint(u32 *handlerAmount)
@@ -171,7 +245,6 @@ extern "C" BattleEventHandlerTableEntry *THUMB_BRANCH_EventAddPoisonPoint(u32 *h
 }
 
 #pragma endregion
-
 
 #pragma region EmergencyExit
 
@@ -283,11 +356,10 @@ extern "C" BattleEventHandlerTableEntry *THUMB_BRANCH_EventAddRunAway(u32 *handl
 
 #pragma endregion
 
-
 #pragma region NeutralizingGas
 
-#define BATTLE_NEUTRALIZING_GAS_START_MSGID 221
-#define BATTLE_NEUTRALIZING_GAS_END_MSGID 222
+#define BATTLE_NEUTRALIZING_GAS_START_MSGID 240
+#define BATTLE_NEUTRALIZING_GAS_END_MSGID 241
 
 AbilID abilityCantBeNeutralized[] = {
     ABIL121_MULTITYPE,
@@ -295,9 +367,10 @@ AbilID abilityCantBeNeutralized[] = {
 
 };
 
-extern "C" b32 AbilityCantBeNeutralized(AbilID ability) {
-    return SEARCH_ARRAY((const u32*)abilityCantBeNeutralized, ability); }
-
+extern "C" b32 AbilityCantBeNeutralized(AbilID ability)
+{
+    return SEARCH_ARRAY((const u32 *)abilityCantBeNeutralized, ability);
+}
 
 extern "C" void ServerEvent_AbilityNullified(ServerFlow *a1, BattleMon *a2);
 extern "C" void ServerEvent_AbilityNullifyCured(ServerFlow *serverFlow, BattleMon *battleMon)
@@ -321,14 +394,14 @@ extern "C" bool THUMB_BRANCH_SAFESTACK_BattleMon_CheckIfMoveCondition(BattleMon 
         return true;
     }
 
-    if (a2 == CONDITION_GASTROACID && 
+    if (a2 == CONDITION_GASTROACID &&
         BattleField_GetNeutralizingGasMons() &&
-        !AbilityCantBeNeutralized((AbilID)BattleMon_GetValue(a1, VALUE_ABILITY))) {
+        !AbilityCantBeNeutralized((AbilID)BattleMon_GetValue(a1, VALUE_ABILITY)))
+    {
         return 1;
     }
- 
+
     return (a1->Conditions[a2] & 7) != 0;
-    
 }
 
 extern "C" void NeutralizingGasEnd(ServerFlow *serverFlow, u32 pokemonSlot)
@@ -437,16 +510,14 @@ extern "C" BattleEventHandlerTableEntry *EventAddNeutralizingGas(u32 *handlerAmo
 
 #pragma endregion
 
-
 #pragma region DynamicSpeed
 
 #define ACTION_ORDER_GET_PRIO(actionOrder, idx) (actionOrder[idx].field_8 >> 16) & 0x3FFFFF
 #define ACTION_ORDER_GET_SPECIAL_PRIO(actionOrder, idx) ((actionOrder[idx].field_8 >> 13) & 0x7)
 
-
-extern "C" u32 CommonGetAllyPos(ServerFlow *serverFlow, u32 battlePos);
+// extern "C" u32 CommonGetAllyPos(ServerFlow *serverFlow, u32 battlePos);
 extern "C" ActionOrderWork *GetExtraActionOrder(u32 actionIdx);
-extern "C" b32 IsCenterInTripleBattle(u32 battlePos);
+extern "C" b32 IsPosInCenterTripleBattle(u32 battlePos);
 extern void sys_memset16(u16 value, void *ptr, size_t size);
 extern void *sys_memcpy16(const void *src, void *dst, size_t size);
 extern void sys_memset32(u32 value, void *ptr, size_t size);
@@ -676,47 +747,46 @@ extern "C" u32 THUMB_BRANCH_BattleHandler_SendLast(ServerFlow *serverFlow, Handl
 // - Set in [HandlerEmergencyExitSwitchEnd]
 // - Reset & used in [ServerFlow_ActOrderProcMain]
 
-
-extern "C" u32 CommonGetAllyPos(ServerFlow *serverFlow, u32 battlePos)
-{
-    BattleStyle battleStyle = (BattleStyle)BtlSetup_GetBattleStyle(serverFlow->mainModule);
-    if (battleStyle != BTL_STYLE_DOUBLE && battleStyle != BTL_STYLE_TRIPLE)
-    {
-        return 6;
-    }
-
-    u8 isEnemy = battlePos & 1;
-    if (isEnemy)
-    {
-        battlePos -= 1;
-    }
-
-    u32 allyPos = 0;
-    if (battleStyle != BTL_STYLE_TRIPLE)
-    {
-        if (battlePos == 0)
-        {
-            allyPos = 2;
-        }
-        else
-        {
-            allyPos = 0;
-        }
-    }
-    else
-    {
-        if (IsCenterInTripleBattle(battlePos))
-        {
-            allyPos = BattleRandom(2) * 4;
-        }
-        else
-        {
-            allyPos = 2;
-        }
-    }
-
-    return allyPos + isEnemy;
-}
+// extern "C" u32 CommonGetAllyPos(ServerFlow *serverFlow, u32 battlePos)
+// {
+//     BattleStyle battleStyle = (BattleStyle)BtlSetup_GetBattleStyle(serverFlow->mainModule);
+//     if (battleStyle != BTL_STYLE_DOUBLE && battleStyle != BTL_STYLE_TRIPLE)
+//     {
+//         return 6;
+//     }
+//
+//     u8 isEnemy = battlePos & 1;
+//     if (isEnemy)
+//     {
+//         battlePos -= 1;
+//     }
+//
+//     u32 allyPos = 0;
+//     if (battleStyle != BTL_STYLE_TRIPLE)
+//     {
+//         if (battlePos == 0)
+//         {
+//             allyPos = 2;
+//         }
+//         else
+//         {
+//             allyPos = 0;
+//         }
+//     }
+//     else
+//     {
+//         if (IsPosInCenterTripleBattle(battlePos))
+//         {
+//             allyPos = BattleRandom(2) * 4;
+//         }
+//         else
+//         {
+//             allyPos = 2;
+//         }
+//     }
+//
+//     return allyPos + isEnemy;
+// }
 
 // Stores data of extra action generated by Dancer, Instruct...
 // - Set in [HandlerDancerCheckMove]
@@ -736,6 +806,8 @@ extern "C" ActionOrderWork *GetExtraActionOrder(u32 actionIdx)
     return extraActionOrder + actionIdx;
 }
 
+extern "C" void sub_219FB7C(ServerFlow *a1, ActionOrderWork *a2, unsigned int a3);
+
 // Defines if an extra action is taking place
 // - Set and reset in [ServerFlow_ActOrderProcMain]
 u8 extraActionFlag = 0;
@@ -753,8 +825,18 @@ extern "C" void ResetExtraActionFlag()
     extraActionFlag = 0;
 }
 extern "C" void Turnflag_Clear(BattleMon *battleMon, TurnFlag flag);
+extern "C" int FaintRecord_GetCount(FaintRecord *a1, unsigned int turn);
 
-extern "C" int THUMB_BRANCH_ServerFlow_ActOrderProcMain(ServerFlow *serverFlow, u32 currentActionIdx)
+
+extern "C" int getFaintCount(FaintRecord *a1, unsigned int turn){
+    if (turn >= 4){
+        return 0;
+    } else {
+        return a1->turnRecord[turn].count;
+    }
+
+}
+extern "C" int THUMB_BRANCH_SAFESTACK_ServerFlow_ActOrderProcMain(ServerFlow *serverFlow, u32 currentActionIdx)
 {
     u32 procAction = 0;
     ActionOrderWork *actionOrderWork = serverFlow->actionOrderWork;
@@ -794,7 +876,7 @@ extern "C" int THUMB_BRANCH_ServerFlow_ActOrderProcMain(ServerFlow *serverFlow, 
             if (procAction == 6 && action != 6)
             {
                 ServerControl_CheckActivation(serverFlow);
-                SortActionOrderBySpeed(serverFlow, currentActionOrder, (u32)serverFlow->numActOrder - currentActionIdx);
+                sub_219FB7C(serverFlow, currentActionOrder, (u32)serverFlow->numActOrder - currentActionIdx);
             }
         }
 
@@ -893,7 +975,6 @@ extern "C" int THUMB_BRANCH_ServerFlow_ActOrderProcMain(ServerFlow *serverFlow, 
             return serverFlow->numActOrder;
         }
 
-
         if (CheckEndTurnSwitchFlag())
         {
             ResetEndTurnSwitchFlag();
@@ -905,7 +986,7 @@ extern "C" int THUMB_BRANCH_ServerFlow_ActOrderProcMain(ServerFlow *serverFlow, 
             return serverFlow->numActOrder;
         }
 
-        u32 faintedCount = j_j_FaintRecord_GetCount_1(&serverFlow->faintRecord, 0);
+        u32 faintedCount = getFaintCount(&serverFlow->faintRecord, 0);
         if (Handler_IsPosOpenForRevivedMon(serverFlow) || faintedCount)
         {
             ServerFlow_ReqChangePokeForServer(serverFlow, (unsigned __int8 *)&serverFlow->field_4CE);
@@ -919,8 +1000,9 @@ extern "C" int THUMB_BRANCH_ServerFlow_ActOrderProcMain(ServerFlow *serverFlow, 
     return serverFlow->numActOrder;
 }
 
+// j_j_FaintRecord_GetCount_1
+// SortActionOrderBySpeed
 #pragma endregion
-
 
 #pragma region EVMods
 
@@ -941,7 +1023,8 @@ STRUCT_DECLARE(GameData)
 extern "C" EventWorkSave *GameData_GetEventWork(void *gameData);
 extern "C" u16 *EventWork_GetWkPtr(EventWorkSave *eventWork, int swkId);
 
-extern "C" u32 checkEVFlags(u32 param){
+extern "C" u32 checkEVFlags(u32 param)
+{
     EventWorkSave *eventWork = GameData_GetEventWork(GAME_DATA);
     u16 *lvl_cap_ptr = EventWork_GetWkPtr(eventWork, 16434);
     return *lvl_cap_ptr;
@@ -949,15 +1032,28 @@ extern "C" u32 checkEVFlags(u32 param){
 
 extern "C" u32 THUMB_BRANCH_PokeParty_GetParam(PartyPkm *pPkm, PkmField field, void *extra)
 {
-  u32 ParamCore; // r4
+    u32 ParamCore; // r4
 
-  PokeParty_PkmDecryptCheck(pPkm);
-  ParamCore = PokeParty_GetParamCore(pPkm, field, extra);
-  PokeParty_PkmEncrypt(pPkm);
-  if (field == PF_EvATK || field == PF_EvDEF || field == PF_EvHP || field == PF_EvSPA || field == PF_EvSPD || field == PF_EvSPE){
-    ParamCore = ParamCore * checkEVFlags(ParamCore);
-  }
-  return ParamCore;
+    PokeParty_PkmDecryptCheck(pPkm);
+    ParamCore = PokeParty_GetParamCore(pPkm, field, extra);
+    PokeParty_PkmEncrypt(pPkm);
+    if (field == PF_EvATK || field == PF_EvDEF || field == PF_EvHP || field == PF_EvSPA || field == PF_EvSPD || field == PF_EvSPE)
+    {
+        ParamCore = ParamCore * checkEVFlags(ParamCore);
+    }
+    return ParamCore;
 }
+
+#pragma endregion
+
+#pragma region Field Effect Stuff
+
+/*
+
+    ----------------------------------------------------------------------------------------------------
+    ---------------------------------- COMBINED FIELD EFFECT CHANGES  ----------------------------------
+    ----------------------------------------------------------------------------------------------------
+
+*/
 
 #pragma endregion

@@ -200,6 +200,7 @@ public class MainEvents {
 			EventFlags.Clear(2059);
 			EventFlags.Clear(2261);
 			EventFlags.Clear(2074);
+			EventFlags.Set(522);
 		}
 		Field.ChangeMapQuicksand(195, 14, 27);
 		Runtime.FinishSubEvents();
@@ -211,6 +212,9 @@ public class MainEvents {
 
 		if (EventFlags.Get(521) == 0) { 
 			EventFlags.Set(521);
+		}
+		if (EventFlags.Get(522) == 1){
+			EventFlags.Clear(522);
 		}
 		
 		Field.ChangeMapQuicksand(195, 59, 14);
