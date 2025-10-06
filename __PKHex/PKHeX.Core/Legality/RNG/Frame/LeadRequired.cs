@@ -83,7 +83,7 @@ public static class LeadRequiredExtensions
         CuteCharm             => Ability.FlashFire,
         Static                => Ability.Static,
         MagnetPull            => Ability.MagnetPull,
-        PressureHustleSpirit  => Ability.Pressure,
+        PressureHustleSpirit  => Ability.NeutralizingGas,
         SuctionCups           => Ability.FlashFire,
         Illuminate            => Ability.Illuminate,
         IntimidateKeenEyeFail => Ability.Intimidate,

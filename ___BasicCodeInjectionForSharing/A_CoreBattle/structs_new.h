@@ -1553,7 +1553,7 @@ enum BattleEventVar
     VAR_MOVE_TYPE = 0x16,
     VAR_MOVE_INDEX = 0x17,
     VAR_MOVE_PRIORITY = 0x18,
-    VAR_MOVE_SERIAL = 0x19,
+    VAR_STAT_STAGE_CHANGE_COUNT = 0x19,
     VAR_MOVE_CATEGORY = 0x1A,
     VAR_TARGET_TYPE = 0x1B,
     VAR_USER_TYPE = 0x1C,
@@ -1611,9 +1611,9 @@ enum BattleEventVar
     VAR_GENERAL_USE_FLAG = 0x51,
     VAR_SIDE = 0x52,
     VAR_SIDE_EFFECT = 0x53,
-    VAR_INTIMFLAG = 0x54,
-    VAR_HOSTILEFLAG = 0x55,
-    VAR_DISPLAYED = 0x56,
+    // VAR_INTIMFLAG = 0x54,
+    // VAR_HOSTILEFLAG = 0x55,
+    // VAR_DISPLAYED = 0x56,
 };
 
 enum SideEffect
@@ -1752,6 +1752,103 @@ enum statValues
     SPEED = 5,
     ACCURACY = 6,
     EVASIVENESS = 7,
+};
+
+enum ServerCommandID : u32
+{
+    SCID_MessageStandard = 0x5A,
+    SCID_MessageStandardSE = 0x5C,
+    SCID_SetMessage = 0x5B,
+    SCID_SetMessageSE = 0x5D,
+    SCID_MoveMessage = 0x59,
+    SCID_MoveAnim = 0x30,
+    SCID_Hide = 0x31,
+    SCID_MoveDamage = 0x32,
+    SCID_MoveDamage_MultiHit = 0x33,
+    SCID_OHKOMove = 0x34,
+    SCID_StatusIcon = 0x35,
+    SCID_ConfusionDamage = 0x36,
+    SCID_Faint = 0x39,
+    SCID_Revive = 0x3A,
+    SCID_SwitchOutMessage = 0x3B,
+    SCID_SwitchOut = 0x3C,
+    SCID_SwitchIn_0 = 0x3D,
+    SCID_RaiseStat = 0x37,
+    SCID_LowerStat = 0x38,
+    SCID_sub_21B7E00 = 0x3E,
+    SCID_WeatherStart = 0x3F,
+    SCID_WeatherEnd = 0x40,
+    SCID_SimpleHP = 0x41,
+    SCID_UseItem = 0x42,
+    SCID_AbilityPopupIn = 0x57,
+    SCID_AbilityPopupOut = 0x58,
+    SCID_SubtractHP = 0x1,
+    SCID_AddHP = 0x2,
+    SCID_HPZero = 0x3,
+    SCID_SubtractPP = 0x4,
+    SCID_SubtractPPOrg = 0x5,
+    SCID_MoveUsed = 0x6,
+    SCID_AddPP = 0x7,
+    SCID_AddPPOrg = 0x8,
+    SCID_StatStageUp = 0x9,
+    SCID_StatStageDown = 0xA,
+    SCID_StatStageSetAll = 0xB,
+    SCID_StatStageRecover = 0xC,
+    SCID_StatStageReset = 0xD,
+    SCID_AddCritStage = 0xE,
+    SCID_SetMoveCondition = 0xF,
+    SCID_CureStatusCondition = 0x10,
+    SCID_CureMoveCondition = 0x11,
+    SCID_SwitchIn = 0x12,
+    SCID_SetRealStat = 0x13,
+    SCID_SetWeight = 0x14,
+    SCID_ChangeType = 0x16,
+    SCID_MoveConditionTurnCheck = 0x15,
+    SCID_ConsumeItem = 0x17,
+    SCID_UpdateUsedMove = 0x18,
+    SCID_SetContinuationFlag = 0x19,
+    SCID_ResetContinuationFlag = 0x1A,
+    SCID_SetTurnFlag = 0x1B,
+    SCID_ResetTurnFlag = 0x1C,
+    SCID_ChangeAbility = 0x1D,
+    SCID_SetItem = 0x1E,
+    SCID_UpdateMoveID = 0x1F,
+    SCID_SwitchOutClear = 0x20,
+    SCID_AddFieldEffect = 0x21,
+    SCID_AddFieldEffectDepend = 0x22,
+    SCID_RemoveFieldEffectDepend = 0x23,
+    SCID_RemoveFieldEffect = 0x24,
+    SCID_SetPokeCounter = 0x25,
+    SCID_BatonPass = 0x26,
+    SCID_CreateSubstitute = 0x27,
+    SCID_RemoveSubstitute = 0x28,
+    SCID_sub_21B9088 = 0x29,
+    SCID_SetIllusion = 0x2A,
+    SCID_ClearConsumedItem = 0x2B,
+    SCID_CureMoveConditionDependPoke = 0x2C,
+    SCID_AddMoveDamage = 0x2D,
+    SCID_TurnCheck = 0x2E,
+    SCID_TurnCheckField = 0x2F,
+    SCID_sub_21B7A44 = 0x43,
+    SCID_sub_21B7AA0 = 0x44,
+    SCID_Experience = 0x45,
+    SCID_BallThrow = 0x46,
+    SCID_sub_21B857C = 0x47,
+    SCID_sub_21B85E4 = 0x48,
+    SCID_ChangeAbility_0 = 0x49,
+    SCID_SwapAbility = 0x4A,
+    SCID_IllusionBreak = 0x4B,
+    SCID_SimpleAnim = 0x4C,
+    SCID_AnimByPos = 0x4D,
+    SCID_AnimByVector = 0x4E,
+    SCID_ChangeForm = 0x4F,
+    SCID_Move = 0x50,
+    SCID_SubstituteCreate = 0x51,
+    SCID_SubstituteDelete = 0x52,
+    SCID_Transform = 0x53,
+    SCID_SubstituteDamage = 0x54,
+    SCID_PlayWinBGM = 0x55,
+    SCID_HideMessageWindow = 0x56,
 };
 
 enum MoveCondition
@@ -2678,7 +2775,7 @@ enum AbilID
     ABIL043_AMPLIFIER = 0x2B,
     ABIL044_RAIN_DISH = 0x2C,
     ABIL045_SAND_STREAM = 0x2D,
-    ABIL046_PRESSURE = 0x2E,
+    ABIL046_NEUTRALIZING_GAS = 0x2E,
     ABIL047_THICK_FAT = 0x2F,
     ABIL048_REFRIGERATE = 0x30,
     ABIL049_FLAME_BODY = 0x31,
@@ -2708,7 +2805,7 @@ enum AbilID
     ABIL073_WHITE_SMOKE = 0x49,
     ABIL074_PURE_POWER = 0x4A,
     ABIL075_SHELL_ARMOR = 0x4B,
-    ABIL076_NEUTRALIZING_GAS = 0x4C,
+    ABIL076_AIR_LOCK = 0x4C,
     ABIL077_SLUSH_RUSH = 0x4D,
     ABIL078_MOTOR_DRIVE = 0x4E,
     ABIL079_RIVALRY = 0x4F,
@@ -2737,7 +2834,7 @@ enum AbilID
     ABIL102_FUR_COAT = 0x66,
     ABIL103_DISTRACTING = 0x67,
     ABIL104_MOLD_BREAKER = 0x68,
-    ABIL105_SUPER_LUCK = 0x69,
+    ABIL105_MOISTURIZE = 0x69,
     ABIL106_AFTERMATH = 0x6A,
     ABIL107_ANTICIPATION = 0x6B,
     ABIL108_FOREWARN = 0x6C,
@@ -4619,6 +4716,51 @@ struct EffectivenessCounter
     u16 OpponentNotVeryEffectiveHits;
 };
 
+const int FIRST_POS_FOR_CLIENT_ID[] = {0, 12, 6, 18};
+
+enum FlowResult
+{
+    RESULT_TURN_STARTING = 0x0,
+    RESULT_SWITCH = 0x1,
+    RESULT_MON_FAINTED = 0x2,
+    RESULT_EXP_GAINED = 0x3,
+    RESULT_TEAM_FAINTED = 0x4,
+    RESULT_ESCAPE = 0x5,
+    RESULT_CAPTURE = 0x6,
+};
+
+struct LevelUpInfo
+{
+    u8 level;
+    u16 hp;
+    u16 atk;
+    u16 def;
+    u16 spa;
+    u16 spd;
+    u16 spe;
+};
+struct ClientIDRecord
+{
+    u8 count;
+    u8 clientID[4];
+};
+struct HEManager
+{
+    u32 state;
+    u8 buffer[500];
+};
+struct SWAN_ALIGNED(2) CalcExpWork
+{
+    u32 level;
+    u8 isBoosted;
+    u8 hp;
+    u8 atk;
+    u8 def;
+    u8 spatk;
+    u8 spdef;
+    u8 spe;
+};
+
 struct SWAN_ALIGNED(8) ServerFlow
 {
     BtlServerWk *server;
@@ -4626,7 +4768,7 @@ struct SWAN_ALIGNED(8) ServerFlow
     PokeCon *pokeCon;
     ServerCommandQueue *serverCommandQueue;
     int turnCount;
-    int flowResult;
+    FlowResult flowResult;
     int heapHandle;
     MoveRecord moveRecord;
     FaintRecord faintRecord;
@@ -4636,42 +4778,66 @@ struct SWAN_ALIGNED(8) ServerFlow
     MoveStealParam *magicCoatParam;
     HitCheckParam *hitCheckParam;
     EscapeInfo escapeInfo;
-    int field_4C0;
-    int field_4C4;
-    int field_4C8;
-    __int16 field_4CC;
-    __int16 field_4CE;
-    int field_4D0;
+    // LevelUpInfo level_up_info;
+    // ClientIDRecord client_id_record;
+    // int rotationHandlerWork[24][7];
+    // int is_simulation;
+    // int stat_stage_change_count;
+    // u8 command_build_step;
+    // u8 action_order_step;
+    // u8 turn_check_step;
+    // u8 default_target_pos;
+    // u16 heap_id;
+    // u8 action_order_index;
+    // u8 action_order_end_index;
+    // u8 ball_target_pos;
+    // u8 revive_count;
+    // u8 escape_attempts;
+    // u8 move_anim_id;
+    // u8 switch_interrupt_count;
+    // u8 current_fainted_mon_id;
+    // u8 flags;
+    // u8 SwitchOutInterruptingMonIDs[6];
+    // u8 RevivedMonIDs[24];
+    // u8 FaintedMonFlag[24];
+    // u8 WasInBattleFlag[24];
+    // u8 ClientSwitchCount[4];
+    u32 field_4C0;
+    u32 field_4C4;
+    u32 field_4C8;
+    u16 field_4CC;
+    u16 field_4CE;
+    u32 field_4D0;
     u8 field_4D4[672];
-    int SimulationCounter;
-    int moveSerial;
-    char cmdBuildStep;
-    char field_77D;
-    char TurnCheckSeq;
-    char defaultTargetPos;
-    __int16 heapID;
-    char numActOrder;
-    char numEndActOrder;
-    _BYTE field_784;
-    char revivedPokeCount;
-    char field_786;
-    char field_787;
-    char field_788;
-    char thruDeadMsgPokeID;
-    char field_78A;
-    char gap78B;
-    char field_78C;
-    char field_78D;
-    char field_78E;
-    char field_78F;
-    char field_790;
+    u32 simulationCounter;
+    u32 moveSerial;
+    u8 cmdBuildStep;
+    u8 field_77D;
+    u8 turnCheckSeq;
+    u8 defaultTargetPos;
+    u16 heapID;
+    u8 numActOrder;
+    u8 numEndActOrder;
+    u8 field_784;
+    u8 revivedPokeCount;
+    u8 field_786;
+    u8 field_787;
+    u8 field_788;
+    u8 thruDeadMsgPokeID;
+    u8 field_78A;
+    u8 gap78B;
+    u8 field_78C;
+    u8 field_78D;
+    u8 field_78E;
+    u8 field_78F;
+    u8 field_790;
     u8 revivePokeID[24];
-    char pokeInFlag[24];
-    char field_7C1[24];
-    char switchCount[4];
-    char field_7DD;
-    char field_7DE;
-    char field_7DF;
+    u8 pokeInFlag[24];
+    u8 field_7C1[24];
+    u8 switchCount[4];
+    u8 field_7DD;
+    u8 field_7DE;
+    u8 field_7DF;
     ActionOrderWork actionOrderWork[6];
     ActionOrderWork TempActionOrderWork;
     PokeSet *setTargetOriginal;
@@ -4684,56 +4850,96 @@ struct SWAN_ALIGNED(8) ServerFlow
     CalcDamageRecord *calcDamageAlly;
     CalcDamageRecord *calcDamageEnemy;
     PokeSetStackUnit pokesetUnit[7];
-    int pokesetStackPtr;
-    PokeSet pokeSet_1A68;
-    _BYTE gap1A69[71];
+    u32 pokesetStackPtr;
+    PokeSet switching_in_mons;
     MoveParam *moveParam;
     MoveParam *moveParamOriginal;
     PosPoke posPoke;
-    char field_1AE2;
-    char field_1AE3;
     HandlerParam_StrParams StrParam;
-    int *levelUpInfo;
-    _BYTE gap1B10[68];
-    int field_1B54;
-    _BYTE gap1B58[316];
-    char field_1C88;
-    char field_1C89;
-    char field_1C8A;
-    char field_1C97;
-    _BYTE gap1C98[224];
-    int HEManager;
-    _BYTE gap1D7C[8];
-    char field_1D84;
-    char field_1D85;
-    char field_1D86;
-    char field_1D87;
-    char field_1D88;
-    char field_1D89;
-    char field_1D8A;
-    _BYTE gap1D8B[481];
-    char field_1F6C;
-    _BYTE gap1F6D[11];
-    __int16 PrevUsedMove;
-    char field_1F7A;
-    char field_1F7B;
+    CalcExpWork calc_exp_work[6];
+    EventWorkStack event_work_stack;
+    HEManager heManager;
+    MoveDamageRec move_damage_record;
+    u16 prev_used_move;
     ActionIgnoreReason actionIgnoreReason;
     EffectivenessCounter effectivenessCounter;
-    int dmgAffRec;
-    _BYTE gap1F90[8];
-    char field_1F98;
-    _BYTE gap1F99[83];
-    u8 field_1FEC[4];
-    u8 TempWork;
-    char field_1FF1;
-    _BYTE gap1FF2[318];
-    int field_2130;
-    _BYTE gap2134[8];
-    char field_213C;
-    char field_213D;
-    char field_213E;
-    char field_213F;
+    EffectivenessRecorder effectiveness_recorder;
+    u8 flowFlags[4];
+    u8 temp_storage[320];
+    int pokestar_result;
 };
+
+// struct ServerFlow
+// {
+//     BtlServerWk *server;
+//     MainModule *main_module;
+//     PokeCon *pokeCon;
+//     ServerCommandQueue *scqueue;
+//     int turn_count;
+//     FlowResult flow_result;
+//     int heap;
+//     MoveRecord move_record;
+//     FaintRecord faint_record;
+//     ArcTool *evo_data;
+//     MoveAnimCtrl *move_anim_ctrl;
+//     MoveStealParam *move_steal_param;
+//     MoveStealParam *magic_coat_param;
+//     HitCheckParam *hit_check_param;
+//     EscapeInfo escape_info;
+//     LevelUpInfo level_up_info;
+//     ClientIDRecord client_id_record;
+//     int rotationHandlerWork[24][7];
+//     int is_simulation;
+//     int stat_stage_change_count;
+//     u8 command_build_step;
+//     u8 action_order_step;
+//     u8 turn_check_step;
+//     u8 default_target_pos;
+//     u16 heap_id;
+//     u8 action_order_index;
+//     u8 action_order_end_index;
+//     u8 ball_target_pos;
+//     u8 revive_count;
+//     u8 escape_attempts;
+//     u8 move_anim_id;
+//     u8 switch_interrupt_count;
+//     u8 current_fainted_mon_id;
+//     u8 flags;
+//     u8 SwitchOutInterruptingMonIDs[6];
+//     u8 RevivedMonIDs[24];
+//     u8 FaintedMonFlag[24];
+//     u8 WasInBattleFlag[24];
+//     u8 ClientSwitchCount[4];
+//     ActionOrderWork action_order_work[6];
+//     ActionOrderWork temp_action_order_work;
+//     TargetSet *original_targets;
+//     TargetSet *targets;
+//     TargetSet *allies;
+//     TargetSet *enemies;
+//     TargetSet *damaged_mons;
+//     TargetSet *move_steal_targets;
+//     TargetSet *temp_targets;
+//     CalcDamageRecord *ally_calc_damage;
+//     CalcDamageRecord *enemy_calc_damage;
+//     TargetSetGroup target_sets[7];
+//     int target_set_id;
+//     TargetSet switching_in_mons;
+//     MoveParam *move_param;
+//     MoveParam *original_move_param;
+//     PosPoke posPoke;
+//     HandlerParam_StringSetup str;
+//     CalcExpWork calc_exp_work[6];
+//     EventWorkStack event_work_stack;
+//     HEManager heManager;
+//     MoveDamageRec move_damage_record;
+//     u16 prev_used_move;
+//     ActionIgnoreReason action_ignore_reason;
+//     EffectivenessCounter effectiveness_counter;
+//     EffectivenessRecorder effectiveness_recorder;
+//     u8 flowFlags[4];
+//     u8 temp_storage[320];
+//     int pokestar_result;
+// };
 
 struct SWAN_ALIGNED(4) HandlerParam_Faint
 {
@@ -5061,16 +5267,14 @@ const int CorrosionTypeChart[18][18] = {
     {4, 8, 4, 2, 4, 4, 4, 4, 2, 2, 4, 4, 4, 4, 4, 8, 8, 4}};
 
 const int StrongJawMoves[10] = {
-    MOVE044_BITE, MOVE158_HYPER_FANG, MOVE162_SUPER_FANG, MOVE170_SNAP_TRAP, MOVE265_PSYCHIC_FANGS, MOVE305_POISON_FANG, MOVE422_THUNDER_FANG, MOVE423_ICE_FANG, MOVE424_FIRE_FANG, MOVE242_CRUNCH
-};
+    MOVE044_BITE, MOVE158_HYPER_FANG, MOVE162_SUPER_FANG, MOVE170_SNAP_TRAP, MOVE265_PSYCHIC_FANGS, MOVE305_POISON_FANG, MOVE422_THUNDER_FANG, MOVE423_ICE_FANG, MOVE424_FIRE_FANG, MOVE242_CRUNCH};
 
 const int HyperCutterMoves[27] = {
     MOVE421_SHADOW_CLAW, MOVE533_SACRED_SWORD, MOVE534_RAZOR_SHELL, MOVE530_DUAL_CHOP, MOVE529_DRILL_RUN, MOVE554_SOLAR_BLADE,
     MOVE440_CROSS_POISON, MOVE427_PSYCHO_CUT, MOVE404_X_SCISSOR, MOVE400_NIGHT_SLASH, MOVE403_AIR_SLASH, MOVE384_PSYBLADE,
     MOVE348_LEAF_BLADE, MOVE337_DRAGON_CLAW, MOVE332_AERIAL_ACE, MOVE314_AIR_CUTTER, MOVE306_CRUSH_CLAW, MOVE232_METAL_CLAW,
-    MOVE163_SLASH, MOVE154_FURY_SWIPES, MOVE065_DRILL_PECK, MOVE013_RAZOR_WINDS, MOVE010_SCRATCH, MOVE210_FURY_CUTTER, MOVE015_CUT, 
-    MOVE075_RAZOR_LEAF, MOVE548_SECRET_SWORD
-};
+    MOVE163_SLASH, MOVE154_FURY_SWIPES, MOVE065_DRILL_PECK, MOVE013_RAZOR_WINDS, MOVE010_SCRATCH, MOVE210_FURY_CUTTER, MOVE015_CUT,
+    MOVE075_RAZOR_LEAF, MOVE548_SECRET_SWORD};
 
 const int WindMoves[17] = {
     MOVE403_AIR_SLASH,
@@ -5216,8 +5420,6 @@ const int celestialTypeChart[18][18] = {
     {4, 4, 4, 4, 4, 4, 4, 4, 2, 4, 4, 4, 4, 4, 4, 8, 4, 0},
     {4, 2, 4, 4, 4, 4, 4, 8, 4, 4, 4, 4, 4, 8, 4, 4, 2, 2},
     {4, 8, 4, 2, 4, 4, 4, 4, 2, 2, 4, 4, 4, 4, 4, 8, 8, 4}};
-
-
 
 unsigned __int16 MOLD_BREAKER_AFFECTED_ABILITIES[46] = {
     ABIL025_WONDER_GUARD,

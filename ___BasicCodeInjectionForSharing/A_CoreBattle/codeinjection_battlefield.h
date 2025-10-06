@@ -113,7 +113,7 @@ extern bool MainModule_IsAllyMonID(unsigned int a1, unsigned int a2);
 extern unsigned int DivideMaxHPZeroCheck(BattleMon *a1, unsigned int a2);
 extern int PML_ItemIsBerry(u16 itemId);
 extern void HandlerUturn(BattleEventItem *a1, ServerFlow *a2, unsigned int a3);
-extern int g_GameBeaconSys;
+extern u32 g_GameBeaconSys;
 extern int Handler_GetTurnCounter(ServerFlow *a1);
 extern int g_ZoneDataSystem;
 extern void HandlerToxicOrbUseTemp(int a1, ServerFlow *a2, u8 a3);
@@ -286,8 +286,8 @@ extern bool ServerControl_CheckFloating(ServerFlow *a1, BattleMon *a2, int a3);
 // Battle Field Expansion
 extern void j_PokeSet_SeekStart(PokeSet *a1);
 extern BattleMon *j_PokeSet_SeekNext(PokeSet *a1);
-extern unsigned int  HEManager_PushState(unsigned int *a1);
-extern void HEManager_PopState(_DWORD *result, int a2);
+extern unsigned int  HEManager_PushState(HEManager *a1);
+extern void HEManager_PopState(HEManager *result, int a2);
 extern void HandlerFieldWeather();
 extern int HandlerFieldTrickRoom();
 extern int HandlerFieldWonderRoom();
@@ -338,8 +338,8 @@ extern int BattleAction_GetAction(BattleActionParam **a1);
 extern int ServerControl_TurnCheck(ServerFlow *a1);
 extern bool ServerControl_CheckMatchup(ServerFlow *a1);
 extern int j_j_DeadRec_GetCount_1(FaintRecord *a1, unsigned int turn);
-extern int ServerFlow_ReqChangePokeForServer(ServerFlow *a1, _BYTE *a2);
-extern unsigned int ServerDisplay_IllusionSet(ServerFlow *a1, unsigned __int8 *a2);
+extern int ServerFlow_ReqChangePokeForServer(ServerFlow *a1, u16 *a2);
+extern unsigned int ServerDisplay_IllusionSet(ServerFlow *a1, u16 *a2);
 extern int Handler_IsPosOpenForRevivedMon(ServerFlow *a1);
 extern void ServerControl_CheckActivation(ServerFlow *a1);
 extern void sub_219FB7C(ServerFlow *a1, ActionOrderWork *a2, unsigned int a3);
@@ -348,5 +348,6 @@ extern int ServerControl_CheckExpGet(ServerFlow *a1);
 extern bool CheckHPDebug(BattleMon *a1);
 extern bool ActionOrder_InterruptReserve(ServerFlow *a1, int a2);
 extern int ActionOrder_SendToLast(ServerFlow *a1, int a2);
+extern bool ServerControl_ChangeWeatherCheck(ServerFlow *a1, unsigned int a2, int a3);
 
 C_DECL_END

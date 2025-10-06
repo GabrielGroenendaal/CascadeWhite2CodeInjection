@@ -124,21 +124,6 @@ extern "C" void BattleField_RemoveNeutralizingGasMon()
 
 extern "C" void BattleField_InitCore(BattleField *a1, int a2);
 extern "C" void *GFL_HeapAllocate(HeapID heapId, u32 size, b32 calloc, const char *sourceFile, u16 lineNo);
-// extern "C" b32 SwitchedInThisTurn(ServerFlow *serverFlow, BattleMon *battleMon)
-// {
-//     if (serverFlow->turnCount == 0)
-//     {
-//         for (u8 i = 0; i < 6; ++i)
-//         {
-//             if (g_BattleField->firstTurnMons[i] == battleMon->ID)
-//             {
-//                 // A Pok�mon that started the battle doesn't count as just switched in
-//                 return 0;
-//             }
-//         }
-//     }
-//     return !battleMon->TurnCount;
-// }
 
 extern "C" BattleField *THUMB_BRANCH_BattleField_Init(HeapID a1)
 {
@@ -172,17 +157,251 @@ extern "C" void THUMB_BRANCH_BattleField_Free(void *battleField)
 
 #pragma endregion
 
+#pragma region TryImplementingTheseAndSeeWHatHappens
+
+extern "C" void ServerDisplay_SimpleHP(ServerFlow *a1, BattleMon *a2, int a3, int a4);
+extern "C" void TurnFlag_Set(BattleMon *a1, TurnFlag a2);
+extern "C" void BattleHandler_StrClear(HandlerParam_StrParams *a1);
+extern "C" int ServerControl_CheckFainted(ServerFlow *a1, BattleMon *a2);
+extern "C" void BattleMon_CureMoveCondition(BattleMon *a1, MoveCondition a2);
+extern "C" int CureStatusCondition(BattleMon *a1);
+extern "C" int AddConditionCheckFailOverwrite(ServerFlow *a1, BattleMon *a2, MoveCondition a3, ConditionData a4, char a5);
+extern "C" void AddConditionCheckFailStandard(ServerFlow *a1, BattleMon *a2, int a3, unsigned int a4);
+extern "C" int ServerEvent_MoveConditionCheckFail(ServerFlow *a1, BattleMon *a2, BattleMon *a3, int a4);
+extern "C" void ServerEvent_AddConditionFailed(ServerFlow *a1, BattleMon *a2, BattleMon *a3, int a4);
+extern "C" void PokeSet_SeekStart(PokeSet *a1);
+extern "C" BattleMon *PokeSet_SeekNext(PokeSet *a1);
+
+// Called when the ability of a Pokemon stops being nullifyed [ServerControl_CureCondition]
+extern "C" void ServerEvent_AbilityNullifyCured(ServerFlow *serverFlow, BattleMon *battleMon)
+{
+    BattleEventVar_Push();
+    u32 currentSlot = BattleMon_GetID(battleMon);
+    BattleEventVar_SetConstValue(VAR_MON_ID, currentSlot);
+    // Abilities with an effect when given also activate when they stop being nullifyed
+    BattleEvent_CallHandlers(serverFlow, EVENT_AFTER_ABILITY_CHANGE);
+    BattleEventVar_Pop();
+}
+
+// Called after receiving simple damage (status, recoil, items...) [ServerControl_SimpleDamageCore]
+extern "C" void ServerEvent_SimpleDamageReaction(ServerFlow *serverFlow, BattleMon *battleMon, u32 damage)
+{
+    u32 HEID = HEManager_PushState(&serverFlow->heManager);
+
+    BattleEventVar_Push();
+    SET_UP_NEW_EVENT;
+    u32 currentSlot = BattleMon_GetID(battleMon);
+    BattleEventVar_SetConstValue(NEW_VAR_MON_ID, currentSlot);
+    BattleEventVar_SetConstValue(VAR_DAMAGE, damage);
+    BattleEvent_CallHandlers(serverFlow, EVENT_CHECK_ITEM_REACTION);
+    BattleEventVar_Pop();
+
+    HEManager_PopState(&serverFlow->heManager, HEID);
+}
+
+extern "C" b32 THUMB_BRANCH_ServerControl_SimpleDamageCore(ServerFlow *serverFlow, BattleMon *battleMon, int damage, HandlerParam_StrParams *str)
+{
+    int damageToDeal = -damage;
+    if (!damageToDeal)
+    {
+        return 0;
+    }
+
+    ServerDisplay_SimpleHP(serverFlow, battleMon, damageToDeal, 1);
+    TurnFlag_Set(battleMon, TURNFLAG_DAMAGED);
+    if (str)
+    {
+        BattleHandler_SetString(serverFlow, str);
+        BattleHandler_StrClear(str);
+    }
+
+    ServerControl_CheckItemReaction(serverFlow, battleMon, 1);
+    // Call to new event
+    ServerEvent_SimpleDamageReaction(serverFlow, battleMon, damage);
+    if (ServerControl_CheckFainted(serverFlow, battleMon))
+    {
+        ServerControl_CheckMatchup(serverFlow);
+    }
+
+    return 1;
+}
+
+extern "C" int checkPosPoke(PosPoke a1, int pokemonslot)
+{
+    unsigned int i;
+    PosPokeState v3;
+    for (i = 0; i < 6; i++)
+    {
+        v3 = a1.state[i];
+        if (v3.fEnable && v3.existPokeID == pokemonslot)
+        {
+            return i;
+        }
+    }
+    return 6;
+}
+
+// Neutralizing Gas - Added event when an ability stops being nullyfied (EVENT_AFTER_ABILITY_CHANGE)
+extern "C" void THUMB_BRANCH_ServerControl_CureCondition(ServerFlow *serverFlow, BattleMon *battleMon, MoveCondition condition, ConditionData *prevCondition)
+{
+    if (condition)
+    {
+        u32 pokemonSlot = BattleMon_GetID(battleMon);
+        if (prevCondition)
+        {
+            *prevCondition = BattleMon_GetMoveCondition(battleMon, condition);
+        }
+        if (condition >= CONDITION_CONFUSION)
+        {
+            BattleMon_CureMoveCondition(battleMon, condition);
+            if (condition == CONDITION_GASTROACID)
+            {
+                // Call server event when ability nullify is over
+                ServerEvent_AbilityNullifyCured(serverFlow, battleMon);
+            }
+            ServerDisplay_AddCommon(serverFlow->serverCommandQueue, SCID_CureMoveCondition, pokemonSlot, condition);
+        }
+        else
+        {
+            CureStatusCondition(battleMon);
+            ServerDisplay_AddCommon(serverFlow->serverCommandQueue, SCID_CureStatusCondition, pokemonSlot);
+            if (checkPosPoke(serverFlow->posPoke, pokemonSlot) != 6)
+            {
+                ServerDisplay_AddCommon(serverFlow->serverCommandQueue, SCID_StatusIcon, pokemonSlot, 0);
+            }
+        }
+    }
+}
+
+extern "C" u32 THUMB_BRANCH_SAFESTACK_ServerControl_AddConditionCheckFail(ServerFlow *serverFlow, BattleMon *defendingMon, BattleMon *attackingMon, MoveCondition condition, ConditionData condData, u8 overrideMode, u32 almost)
+{
+    u32 failStatus = AddConditionCheckFailOverwrite(serverFlow, defendingMon, condition, condData, overrideMode);
+
+    if (condition == CONDITION_GASTROACID &&
+        (defendingMon->Conditions[condition]) == 0)
+    {
+
+        switch (failStatus)
+        {
+        case 0:
+            // Gastro Acid fails agains certain abilities
+            if (BattleMon_GetValue(defendingMon, VALUE_ABILITY) == ABIL046_NEUTRALIZING_GAS)
+            {
+                failStatus = 3;
+            }
+            break;
+        case 1:
+            // Gastro Acid should not fail if the condition is already detected
+            // only because the Pok�mon is affected by Neutralizing Gas
+            failStatus = 0;
+            break;
+        }
+    }
+
+    if (failStatus)
+    {
+        if (almost)
+        {
+            AddConditionCheckFailStandard(serverFlow, defendingMon, failStatus, condition);
+        }
+        return 1;
+    }
+    else
+    {
+        u32 HEID = HEManager_PushState(&serverFlow->heManager);
+        u32 failFlag = ServerEvent_MoveConditionCheckFail(serverFlow, attackingMon, defendingMon, condition);
+        // Added new state to force the fail
+        if ((failFlag && almost) || failFlag == FORCE_FAIL_MESSAGE)
+        {
+            ServerEvent_AddConditionFailed(serverFlow, defendingMon, attackingMon, condition);
+            // This disables the default fail message
+            serverFlow->field_78A |= 0x10u;
+        }
+        HEManager_PopState(&serverFlow->heManager, HEID);
+        return failFlag;
+    }
+}
+
+extern "C" void P_SeekStart(PokeSet p)
+{
+    p.getIdx = 0;
+}
+
+extern "C" BattleMon* P_SeekNext(PokeSet p)
+{
+    unsigned int getIdx; // r3
+
+    getIdx = p.getIdx;
+    if (getIdx >= p.count)
+    {
+        return 0;
+    }
+    ++p.getIdx;
+    return p.battleMon[getIdx];
+}
+extern "C" void ServerEvent_SwitchInPriority(ServerFlow *serverFlow)
+{
+    PokeSet* set = (PokeSet *)((int)serverFlow + 0x1A68);
+    PokeSet_SeekStart(set);
+    for (BattleMon *currentMon = PokeSet_SeekNext(set); currentMon; currentMon = PokeSet_SeekNext(set))
+    {
+        u32 HEID = HEManager_PushState(&serverFlow->heManager);
+        u32 currentSlot = BattleMon_GetID(currentMon);
+        BattleEventVar_Push();
+        SET_UP_NEW_EVENT;
+        BattleEventVar_SetConstValue(NEW_VAR_MON_ID, currentSlot);
+        BattleEvent_CallHandlers(serverFlow, EVENT_ENDURE);
+        BattleEventVar_Pop();
+        HEManager_PopState(&serverFlow->heManager, HEID);
+    }
+}
+
+// Neutralizing Gas - Add server event that activates before every other switch-in event
+extern "C" void THUMB_BRANCH_ServerEvent_AfterSwitchInPrevious(ServerFlow *serverFlow)
+{
+    // Add an event that triggers before every other switch in event
+    ServerEvent_SwitchInPriority(serverFlow);
+
+    BattleEventVar_Push();
+    BattleEvent_CallHandlers(serverFlow, EVENT_SWITCH_IN_PREVIOUS);
+    BattleEventVar_Pop();
+}
+
+// Emergency Exit - Store damage taken by the substitute to acuratelly calculate HP when hit
+extern "C" b32 THUMB_BRANCH_BattleMon_AddSubstituteDamage(BattleMon *battleMon, u32 *damage)
+{
+    b32 result;
+
+    u32 substituteHP = battleMon->SubstituteHP;
+    if (substituteHP > *damage)
+    {
+        battleMon->SubstituteHP = substituteHP - *damage;
+        result = 0;
+    }
+    else
+    {
+        *damage = substituteHP;
+        battleMon->SubstituteHP = 0;
+        result = 1;
+    }
+
+    u32 substituteDamage = BattleField_GetSubstituteDamage(battleMon->ID) + *damage;
+    BattleField_SetSubstituteDamage(battleMon->ID, substituteDamage);
+    return result;
+}
+
 #pragma region Berserk
 
-extern "C" void HandlerBerserk(BattleEventItem *item, ServerFlow *serverFlow, u32 pokemonSlot, u32 *work)
+extern "C" void HandlerBerserkSwitchIn(BattleEventItem *item, ServerFlow *serverFlow, u32 pokemonSlot, u32 *work)
 {
     if (pokemonSlot = BattleEventVar_GetValue(VAR_MON_ID))
     {
         BattleField_ResetBerserkFlag(pokemonSlot);
     }
 }
+extern "C" u32 div32(u32 numerator, u32 denominator);
 
-extern "C" void HandlerBerserkSwitchIn(BattleEventItem *item, ServerFlow *serverFlow, u32 pokemonSlot, u32 *work)
+extern "C" void HandlerBerserk(BattleEventItem *item, ServerFlow *serverFlow, u32 pokemonSlot, u32 *work)
 {
     u32 targetCount = BattleEventVar_GetValue(VAR_TARGET_COUNT);
     for (u8 i = 0; i < targetCount; ++i)
@@ -190,14 +409,16 @@ extern "C" void HandlerBerserkSwitchIn(BattleEventItem *item, ServerFlow *server
         u32 targetSlot = BattleEventVar_GetValue((BattleEventVar)(VAR_TARGET_MON_ID + i));
         if (pokemonSlot == targetSlot)
         {
+
             BattleMon *currentMon = Handler_GetBattleMon(serverFlow, pokemonSlot);
             u32 maxHP = BattleMon_GetValue(currentMon, VALUE_MAX_HP);
 
             u32 currentHP = BattleMon_GetValue(currentMon, VALUE_CURRENT_HP);
-            u32 currentHPPercent = (currentHP * 100) / maxHP;
+
+            u32 currentHPPercent = div32(currentHP * 100, maxHP);
 
             u32 beforeDmgHP = currentHP + BattleEventVar_GetValue(VAR_DAMAGE) - BattleField_GetSubstituteDamage(pokemonSlot);
-            u32 beforeDmgHPPercent = (beforeDmgHP * 100) / maxHP;
+            u32 beforeDmgHPPercent = div32(beforeDmgHP * 100, maxHP); //(beforeDmgHP * 100) / maxHP;
             if (beforeDmgHPPercent >= 50)
             {
                 if (currentHPPercent < 50 && !BattleField_CheckBerserkFlag(pokemonSlot))
@@ -362,8 +583,8 @@ extern "C" BattleEventHandlerTableEntry *THUMB_BRANCH_EventAddRunAway(u32 *handl
 #define BATTLE_NEUTRALIZING_GAS_END_MSGID 241
 
 AbilID abilityCantBeNeutralized[] = {
-    ABIL121_MULTITYPE,
-    ABIL076_NEUTRALIZING_GAS
+    ABIL046_NEUTRALIZING_GAS,
+    ABIL121_MULTITYPE
 
 };
 
@@ -373,15 +594,6 @@ extern "C" b32 AbilityCantBeNeutralized(AbilID ability)
 }
 
 extern "C" void ServerEvent_AbilityNullified(ServerFlow *a1, BattleMon *a2);
-extern "C" void ServerEvent_AbilityNullifyCured(ServerFlow *serverFlow, BattleMon *battleMon)
-{
-    BattleEventVar_Push();
-    u32 currentSlot = BattleMon_GetID(battleMon);
-    BattleEventVar_SetConstValue(VAR_MON_ID, currentSlot);
-    // Abilities with an effect when given also activate when they stop being nullifyed
-    BattleEvent_CallHandlers(serverFlow, EVENT_AFTER_ABILITY_CHANGE);
-    BattleEventVar_Pop();
-}
 
 extern "C" bool THUMB_BRANCH_SAFESTACK_BattleMon_CheckIfMoveCondition(BattleMon *a1, MoveCondition a2)
 {
@@ -406,11 +618,13 @@ extern "C" bool THUMB_BRANCH_SAFESTACK_BattleMon_CheckIfMoveCondition(BattleMon 
 
 extern "C" void NeutralizingGasEnd(ServerFlow *serverFlow, u32 pokemonSlot)
 {
+    k::Printf("\nWe are in the end neutralizing function");
     BattleField_RemoveNeutralizingGasMon();
-
+    k::Printf("\nThe number of neutralizing mons after this switch is %d\n", BattleField_GetNeutralizingGasMons());
     // Only trigger the nullify cured events if there are no more Neutralizing Gas Pok�mon
     if (BattleField_GetNeutralizingGasMons() == 0)
     {
+        k::Printf("\nIn we go!");   
         HandlerParam_Message *message;
         message = (HandlerParam_Message *)BattleHandler_PushWork(serverFlow, EFFECT_MESSAGE, pokemonSlot);
         BattleHandler_StrSetup(&message->str, 1u, BATTLE_NEUTRALIZING_GAS_END_MSGID);
@@ -436,6 +650,8 @@ extern "C" void NeutralizingGasEnd(ServerFlow *serverFlow, u32 pokemonSlot)
 }
 extern "C" void HandlerNeutralizingGasStart(BattleEventItem *item, ServerFlow *serverFlow, u32 pokemonSlot, u32 *work)
 {
+    k::Printf("\n\nNeutralizingGasStart");
+    
     if (IS_NOT_NEW_EVENT)
         return;
 
@@ -468,7 +684,7 @@ extern "C" void HandlerNeutralizingGasStart(BattleEventItem *item, ServerFlow *s
                         // Neutralizing Gas can't be neutralized by another Nutralizing Gas
                         // but since it can be neutralized by Gastro Acid it has a EVENT_ABILITY_NULLIFIED event
                         // and thus we have to make an special case here
-                        if (BattleMon_GetValue(affectedMon, VALUE_ABILITY) != ABIL076_NEUTRALIZING_GAS)
+                        if (BattleMon_GetValue(affectedMon, VALUE_ABILITY) != ABIL046_NEUTRALIZING_GAS)
                         {
                             ServerEvent_AbilityNullified(serverFlow, affectedMon);
                         }
@@ -502,8 +718,9 @@ BattleEventHandlerTableEntry NeutralizingGasHandlers[]{
     {EVENT_ABILITY_NULLIFIED, (BattleEventHandler)HandlerNeutralizingGasEnd},
     {EVENT_NOTIFY_FAINTED, (BattleEventHandler)HandlerNeutralizingGasEndFainted},
 };
-extern "C" BattleEventHandlerTableEntry *EventAddNeutralizingGas(u32 *handlerAmount)
+extern "C" BattleEventHandlerTableEntry *THUMB_BRANCH_EventAddPressure(u32 *handlerAmount)
 {
+    k::Printf("\n\nAre we loading the handlers even?\n\n");
     *handlerAmount = ARRAY_COUNT(NeutralizingGasHandlers);
     return NeutralizingGasHandlers;
 }
@@ -531,7 +748,7 @@ extern const void *sys_memcpy(const void *src, void *dst, u32 size);
 extern s32 sys_memcmp(const void *src1, const void *src2, size_t size);
 extern const void *sys_memcpy_fast(const void *src, void *dst, size_t size);
 extern const void *sys_memcpy_ex(const void *src, void *dst, s32 size);
-extern "C" u32 j_j_FaintRecord_GetCount_1(FaintRecord *faintRecord, u32 turn);
+// extern "C" u32 j_j_FaintRecord_GetCount_1(FaintRecord *faintRecord, u32 turn);
 extern "C" void SortActionOrderBySpeed(ServerFlow *serverFlow, ActionOrderWork *actionOrder, u32 remainingActions);
 
 u8 interruptActionFlag = 0;
@@ -827,19 +1044,24 @@ extern "C" void ResetExtraActionFlag()
 extern "C" void Turnflag_Clear(BattleMon *battleMon, TurnFlag flag);
 extern "C" int FaintRecord_GetCount(FaintRecord *a1, unsigned int turn);
 
-
-extern "C" int getFaintCount(FaintRecord *a1, unsigned int turn){
-    if (turn >= 4){
+extern "C" int getFaintCount(FaintRecord *a1, unsigned int turn)
+{
+    if (turn >= 4)
+    {
         return 0;
-    } else {
+    }
+    else
+    {
         return a1->turnRecord[turn].count;
     }
-
 }
+
 extern "C" int THUMB_BRANCH_SAFESTACK_ServerFlow_ActOrderProcMain(ServerFlow *serverFlow, u32 currentActionIdx)
 {
     u32 procAction = 0;
     ActionOrderWork *actionOrderWork = serverFlow->actionOrderWork;
+
+    k::Printf("\n\n====SERVERFLOW_ACTORDERPROCMAIN===\n\n\nThe serverFlow result is %d\n", serverFlow->flowResult);
 
     for (u8 i = 0; i < 6; ++i)
     {
@@ -908,7 +1130,7 @@ extern "C" int THUMB_BRANCH_SAFESTACK_ServerFlow_ActOrderProcMain(ServerFlow *se
         // Stop the turn if the battle ends
         if (matchup)
         {
-            serverFlow->flowResult = 4;
+            serverFlow->flowResult = (FlowResult)4;
             // Don't advance an action if we have an extra action
             if (isExtraAction)
             {
@@ -937,7 +1159,7 @@ extern "C" int THUMB_BRANCH_SAFESTACK_ServerFlow_ActOrderProcMain(ServerFlow *se
         // Stop the turn if a Pok�mon died but the battle is not over
         if (getExp)
         {
-            serverFlow->flowResult = 3;
+            serverFlow->flowResult = (FlowResult)3;
             // Don't advance an action if we have an extra action
             if (isExtraAction)
             {
@@ -964,14 +1186,14 @@ extern "C" int THUMB_BRANCH_SAFESTACK_ServerFlow_ActOrderProcMain(ServerFlow *se
         // Battle is over
         if (ServerControl_CheckMatchup(serverFlow))
         {
-            serverFlow->flowResult = 4;
+            serverFlow->flowResult = (FlowResult)4;
             return serverFlow->numActOrder;
         }
 
         // A Pok�mon fainted during the TurnCheck
         if (turnCheck)
         {
-            serverFlow->flowResult = 3;
+            serverFlow->flowResult = (FlowResult)3;
             return serverFlow->numActOrder;
         }
 
@@ -980,22 +1202,22 @@ extern "C" int THUMB_BRANCH_SAFESTACK_ServerFlow_ActOrderProcMain(ServerFlow *se
             ResetEndTurnSwitchFlag();
 
             // Skip TurnCheck if a Pok�mon has to enter the battle during the TurnCheck
-            serverFlow->TurnCheckSeq = 7;
+            serverFlow->turnCheckSeq = (FlowResult)7;
 
-            serverFlow->flowResult = 1;
+            serverFlow->flowResult = (FlowResult)1;
             return serverFlow->numActOrder;
         }
 
         u32 faintedCount = getFaintCount(&serverFlow->faintRecord, 0);
         if (Handler_IsPosOpenForRevivedMon(serverFlow) || faintedCount)
         {
-            ServerFlow_ReqChangePokeForServer(serverFlow, (unsigned __int8 *)&serverFlow->field_4CE);
-            ServerDisplay_IllusionSet(serverFlow, (unsigned __int8 *)&serverFlow->field_4CE);
-            serverFlow->flowResult = 2;
+            ServerFlow_ReqChangePokeForServer(serverFlow, &serverFlow->field_4CE);
+            ServerDisplay_IllusionSet(serverFlow, &serverFlow->field_4CE);
+            serverFlow->flowResult = (FlowResult)2;
             return serverFlow->numActOrder;
         }
 
-        serverFlow->flowResult = 0;
+        serverFlow->flowResult = (FlowResult)0;
     }
     return serverFlow->numActOrder;
 }

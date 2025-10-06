@@ -1519,6 +1519,7 @@ extern "C"
     extern PartyPkm *PokeParty_GetPkm(PokeParty *party, int slot);
     extern u32 PokeParty_GetPkmCount(PokeParty *pPartyBlk);
 
+    /* Some fuck ass function only called in EventTrainerEye_CheckAll to count the number of Pokemon that can battle */
     int THUMB_BRANCH_sub_2182FD0(void *a1)
     {
         GameData *GameData;      // r0

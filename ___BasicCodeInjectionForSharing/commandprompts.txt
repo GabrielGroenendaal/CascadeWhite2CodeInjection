@@ -15,7 +15,7 @@
 "C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____Github_CascadeWhite\arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi\bin\arm-none-eabi-g++.exe"  -r -mthumb -march=armv5t -Os A_CoreBattle/A2_AIChanges.cpp -Iswan-master -o ______Output/A2_AIChanges.elf
 
 /* Item Changes */
-"C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____Github_CascadeWhite\arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi\bin\arm-none-eabi-g++.exe"  -r -mthumb -march=armv5t -Os A_CoreBattle/A3_ItemChanges.cpp -Iswan-master -o ______Output/A3_ItemChanges.elf
+"C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____Github_CascadeWhite\arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi\bin\arm-none-eabi-g++.exe"  -r -mthumb -mlong-calls -march=armv5t -Os A_CoreBattle/A3_ItemChanges.cpp -Iswan-master -o ______Output/A3_ItemChanges.elf
 
 
 /* Ability Changes */
@@ -34,11 +34,15 @@
 
 
 /* Imported Abilities */
-"C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____Github_CascadeWhite\arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi\bin\arm-none-eabi-g++.exe"  -r -mthumb -march=armv5t -Os A_CoreBattle/A8_ImportedAbilities.cpp -Iswan-master -o ______Output/A8_ImportedAbilities.elf
+"C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____Github_CascadeWhite\arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi\bin\arm-none-eabi-g++.exe"  -r -mthumb -mlong-calls -march=armv5t -Os A_CoreBattle/A8_ImportedAbilities.cpp -Iswan-master -o ______Output/A8_ImportedAbilities.elf
 
 
 /* Damage Calc */
 "C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____Github_CascadeWhite\arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi\bin\arm-none-eabi-g++.exe"  -r -mthumb -march=armv5t -Os A_CoreBattle/A9_DamageCalc.cpp -Iswan-master -o ______Output/A9_DamageCalc.elf
+
+
+/* Illusion Check */
+"C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____Github_CascadeWhite\arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi\bin\arm-none-eabi-g++.exe"  -r -mthumb -march=armv5t -Os A_CoreBattle/A11_Illusion.cpp -Iswan-master -o ______Output/A11_Illusion.elf
 
 
 

@@ -7,7 +7,7 @@ Relic Passage
 
 Relic Castle
     -- Flags --
-        520: 
+        516: 
             Used for all the Unown
 
     -- Events --
@@ -73,8 +73,16 @@ Lenora Relic Castle Above
 
 Join Avenue Gauntlet
     -- Flags --
-
+    
     -- Events --
+        16730: 
+            Had Initial conversation
+        16731:
+            Gauntlet is Initiated
+        16732:
+            Barrier is Up
+        16733:
+            Gauntlet is Complete
 
 
 Chargestone Cave Gauntlet
@@ -87,6 +95,12 @@ Driftveil Drawbridge Gauntlet
     -- Flags --
 
     -- Events --
+        16789:
+            Stores whether you already talked to the Cheerleaders
+        16787: 
+            Stores whether you've completed the Driftveil Drawbridge Gauntlet
+        16786:
+            Spawn Flag for the final trigger area 
 
 
 Flocessy Town Gift
@@ -105,3 +119,20 @@ Aspertia City
         
         16433:
             Stores whether or not the IV maximizer toggle is applied.
+        
+        16434:
+            Stores whether pokemon reward EVs
+        
+        16435:
+            Stores whether PP variance is used 
+        
+        16437:
+            Stores whether limited tms are used 
+        
+        16436:
+            Stores whether the AI uses advanced switches
+        
+    -- Flags --
+        524 / 525:
+            Used as spawn flags for NPCs for "Vanilla Trainer Placements"
+

@@ -429,7 +429,7 @@ extern "C" int THUMB_BRANCH_ServerFlow_ActOrderProcMain(ServerFlow *serverFlow, 
         }
 
         u32 getExp = ServerControl_CheckExpGet(serverFlow);
-        b32 matchup = ServerControl_CheckMatchup(serverFlow);
+        b32 matchup = ServerControl_TurnCheck(serverFlow);
 
         // Stop the turn if the battle ends
         if (matchup)

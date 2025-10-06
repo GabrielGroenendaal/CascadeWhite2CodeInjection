@@ -4,12 +4,18 @@
 extern u32 g_GameBeaconSys;
 STRUCT_DECLARE(GameData)
 #define GAME_DATA *(GameData **)(g_GameBeaconSys + 4)
-
+#define STAT_CHANGE_INTIMIDATE_FLAG 0x80000000
+#define STAT_CHANGE_HOSTILE_FLAG 0x40000000
+#define STAT_CHANGE_OPPORTUNIST_FLAG 0x20000000
+#define STAT_CHANGE_PARTING_SHOT_FLAG 0x10000000
 // Uses esdb_newBattle.yml
 
-extern "C" int SearchArray(const int* const arr, const u32 arrSize, const u32 value) {
-    for (u32 i = 0; i < arrSize; ++i) {
-        if (arr[i] == value) {
+extern "C" int SearchArray(const int *const arr, const u32 arrSize, const u32 value)
+{
+    for (u32 i = 0; i < arrSize; ++i)
+    {
+        if (arr[i] == value)
+        {
             return 1;
         }
     }
@@ -22,7 +28,6 @@ extern "C"
 
 #pragma region helpers
 
-    
     int checkHigher(int a1, int a2)
     {
         if (a1 < a2)
@@ -37,7 +42,6 @@ extern "C"
         BattleEventType triggerValue;
         ABILITY_HANDLER_FUNC function;
     } ABILITY_TRIGGERTABLE;
-
 
     bool overrideContact(BattleMon *a1, MoveID a2)
     {
@@ -87,7 +91,7 @@ extern "C"
 
 #pragma endregion
 
-/*
+    /*
 
 
 
@@ -97,7 +101,7 @@ extern "C"
 
 
 
-*/
+    */
 
 #pragma region Heatproof
 
@@ -118,14 +122,52 @@ extern "C"
     }
 #pragma endregion
 
-
 #pragma region Scrappy
+
+    extern "C" b32 THUMB_BRANCH_SAFESTACK_ServerEvent_CheckStatStageChangeSuccess(ServerFlow *serverFlow, BattleMon *affectedMon, StatStage statStage, u32 attackingSlot, int volume, u32 moveSerial)
+    {
+        BattleEventVar_Push();
+        u32 affectedSlot = BattleMon_GetID(affectedMon);
+        BattleEventVar_SetConstValue(VAR_MON_ID, affectedSlot);
+        BattleEventVar_SetConstValue(VAR_ATTACKING_MON, attackingSlot);
+        BattleEventVar_SetConstValue(VAR_MOVE_EFFECT, statStage);
+        BattleEventVar_SetConstValue(VAR_VOLUME, volume);
+        BattleEventVar_SetValue(VAR_INTIMFLAG, (moveSerial & STAT_CHANGE_INTIMIDATE_FLAG) != 0); // Intimidate Flag
+        BattleEventVar_SetValue(VAR_HOSTILEFLAG, (moveSerial & STAT_CHANGE_HOSTILE_FLAG) != 0);  // Mirror Armor Flag
+        // BattleEventVar_SetValue(VAR_OPPORTUNIST_FLAG, (moveSerial & STAT_CHANGE_OPPORTUNIST_FLAG) != 0);   // Opportunist Flag
+        // BattleEventVar_SetValue(VAR_PARTING_SHOT_FLAG, (moveSerial & STAT_CHANGE_PARTING_SHOT_FLAG) != 0); // Parting Shot Flag
+        BattleEventVar_SetConstValue(VAR_STAT_STAGE_CHANGE_COUNT, moveSerial & 0x0FFFFFFF);
+        BattleEventVar_SetRewriteOnceValue(VAR_MOVE_FAIL_FLAG, 0);
+        BattleEvent_CallHandlers(serverFlow, EVENT_STAT_STAGE_CHANGE_LAST_CHECK);
+        u32 failFlag = BattleEventVar_GetValue(VAR_MOVE_FAIL_FLAG);
+        BattleEventVar_Pop();
+
+        if (!failFlag)
+        {
+            return 1;
+        }
+        return 0;
+    }
+
+    extern "C" void THUMB_BRANCH_ServerEvent_StatStageChangeFail(ServerFlow *serverFlow, BattleMon *currentMon, u32 moveSerial)
+    {
+        BattleEventVar_Push();
+        u32 currentSlot = BattleMon_GetID(currentMon);
+        BattleEventVar_SetConstValue(VAR_MON_ID, currentSlot);
+        BattleEventVar_SetConstValue(VAR_INTIMFLAG, (moveSerial & STAT_CHANGE_INTIMIDATE_FLAG) != 0); // Intimidate Flag
+        BattleEventVar_SetConstValue(VAR_HOSTILEFLAG, (moveSerial & STAT_CHANGE_HOSTILE_FLAG) != 0);  // Mirror Armor Flag
+        // BattleEventVar_SetConstValue(VAR_OPPORTUNIST_FLAG, (moveSerial & STAT_CHANGE_OPPORTUNIST_FLAG) != 0);   // Opportunist Flag
+        // BattleEventVar_SetConstValue(VAR_PARTING_SHOT_FLAG, (moveSerial & STAT_CHANGE_PARTING_SHOT_FLAG) != 0); // Parting Shot Flag
+        BattleEventVar_SetConstValue(VAR_STAT_STAGE_CHANGE_COUNT, moveSerial & 0x0FFFFFFF);
+        BattleEvent_CallHandlers(serverFlow, EVENT_STAT_STAGE_CHANGE_FAIL);
+        BattleEventVar_Pop();
+    }
 
     void HandlerIntimidateCheck(int a1, int a2, int a3, int *a4)
     {
         if (a3 == BattleEventVar_GetValue(VAR_MON_ID))
         {
-            if (BattleEventVar_GetValue(VAR_INTIMFLAG) == 1)
+            if (BattleEventVar_GetValue(VAR_INTIMFLAG))
             {
 
                 if (BattleEventVar_GetValue(VAR_VOLUME) < 0)
@@ -137,9 +179,22 @@ extern "C"
         }
     }
 
-    void HandlerIntimidateGuard(int a1, ServerFlow *a2, int a3, int *a4)
+    void HandlerIntimidateGuard(int a1, ServerFlow *a2, int pokemonSlot, int *a4)
     {
-        CommonStatDropGuardMessage(a2, a3, a4, 1240);
+        if (pokemonSlot == BattleEventVar_GetValue(VAR_MON_ID) && BattleEventVar_GetValue(VAR_INTIMFLAG))
+        {
+            BattleEventVar_RewriteValue(VAR_MOVE_FAIL_FLAG, 1);
+
+            BattleHandler_PushRun(a2, EFFECT_ABILITYPOPUPIN, pokemonSlot);
+
+            HandlerParam_Message *message;
+            message = (HandlerParam_Message *)BattleHandler_PushWork(a2, EFFECT_MESSAGE, pokemonSlot);
+            BattleHandler_StrSetup(&message->str, 2u, 201);
+            BattleHandler_AddArg(&message->str, pokemonSlot);
+            BattleHandler_PopWork(a2, message);
+
+            BattleHandler_PushRun(a2, EFFECT_ABILITYPOPUPOUT, pokemonSlot);
+        }
     }
 
     void THUMB_BRANCH_CommonStatDropGuardCheck(int a1, int a2, int *a3, int a4)
@@ -161,7 +216,7 @@ extern "C"
         {
             Value = BattleEventVar_GetValue(VAR_ATTACKING_MON);
             // k::Printf("Defiant Handler: The INTIM flag is %d\nAnd the Hostile flag is %d\n", BattleEventVar_GetValue(VAR_INTIMFLAG), BattleEventVar_GetValue(VAR_HOSTILEFLAG));
-            if ((BattleEventVar_GetValue(VAR_INTIMFLAG) == 1 || BattleEventVar_GetValue(VAR_HOSTILEFLAG) == 1 || !MainModule_IsAllyMonID(a3, Value)) && BattleEventVar_GetValue(VAR_VOLUME) < 0)
+            if ((BattleEventVar_GetValue(VAR_INTIMFLAG) || BattleEventVar_GetValue(VAR_HOSTILEFLAG) || !MainModule_IsAllyMonID(a3, Value)) && BattleEventVar_GetValue(VAR_VOLUME) < 0)
             {
                 v13 = (HandlerParam_ChangeStatStage *)BattleHandler_PushWork(a2, EFFECT_CHANGESTATSTAGE, a3);
                 v13->header.flags |= 0x800000u;
@@ -188,42 +243,35 @@ extern "C"
 
 #pragma endregion
 
-
 #pragma region Colossal
 
 #pragma endregion
-
 
 #pragma region Unaware
 
 #pragma endregion
 
-
 #pragma region Filter/Solid Rock
 
 #pragma endregion
 
-
 #pragma region HeavyMetal
 
-#pragma endregion 
-
+#pragma endregion
 
 #pragma region LightMetal
 
 #pragma endregion
 
-
 #pragma region MoldBreaker
 
 #pragma endregion
 
-
-#pragma region SandForce 
+#pragma region SandForce
     ABILITY_TRIGGERTABLE SandForceHandlers[] = {
         {EVENT_CALC_SPEED, (ABILITY_HANDLER_FUNC)HandlerSandRush},              // 41
         {EVENT_WEATHER_REACTION, (ABILITY_HANDLER_FUNC)HandlerSandVeilWeather}, // 41
-        {EVENT_MOVE_POWER, (ABILITY_HANDLER_FUNC)HandlerSandVeilWeather}}; // EDit
+        {EVENT_MOVE_POWER, (ABILITY_HANDLER_FUNC)HandlerSandVeilWeather}};      // EDit
 
     ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddSandForce(_DWORD *a1)
     {
@@ -232,21 +280,17 @@ extern "C"
     }
 #pragma endregion
 
-
 #pragma region CloudNine
 
 #pragma endregion
-
 
 #pragma region Reckless
 
 #pragma endregion
 
-
 #pragma region FurCoat
 
 #pragma endregion
-
 
 #pragma region Normalize
 
@@ -274,36 +318,25 @@ extern "C"
 
 #pragma endregion
 
-
 #pragma region PinchAbilites
 
-
 #pragma endregion
-
 
 #pragma region Infiltrator
 
-
 #pragma endregion
-
 
 #pragma region Merciless
 
-
 #pragma endregion
-
 
 #pragma region StrongJaw
 
-
 #pragma endregion
-
 
 #pragma region Truant
 
-
 #pragma endregion
-
 
 #pragma region Overcoat
 
@@ -342,9 +375,7 @@ extern "C"
 
 #pragma endregion
 
-
-/*
-
+    /*
 
 
 
@@ -355,11 +386,8 @@ extern "C"
 
 
 
-*/
 
-
-
-
+    */
 
 #pragma region HandlerOverwrites
 
@@ -440,9 +468,8 @@ extern "C"
         return result;
     }
 
-
     /* INTIMIDATE */
-     void THUMB_BRANCH_HandlerIntimidate(int a1, ServerFlow *a2, int a3)
+    void THUMB_BRANCH_HandlerIntimidate(int a1, ServerFlow *a2, int a3)
     {
         u8 *TempWork;                     // r4
         unsigned int NumTargets;          // r5
@@ -473,6 +500,7 @@ extern "C"
                     v9 = TempWork[v8];
                     v10 = (char *)(v7 + v8++);
                 }
+                v7->pad = STAT_CHANGE_INTIMIDATE_FLAG;
                 BattleHandler_PopWork(a2, v7);
                 BattleHandler_PushRun(a2, EFFECT_ABILITYPOPUPOUT, a3);
             }
@@ -601,6 +629,7 @@ extern "C"
                     v8->fMoveAnimation = 1;
                     v8->rankType = STATSTAGE_SPEED;
                     v8->rankVolume = -1;
+                    v8->pad = STAT_CHANGE_HOSTILE_FLAG;
                     BattleHandler_PopWork(a2, v8);
                     BattleHandler_PushRun(a2, EFFECT_ABILITYPOPUPOUT, (int)a3);
                 }
@@ -751,9 +780,8 @@ extern "C"
 
 #pragma endregion
 
-
 #pragma region ChangedRedirectAbilites
-    
+
     void HandlerNewLightningRod(int a1, ServerFlow *a2, int a3)
     {
         if (CommonDamageRecoverCheck(a2, a3, TYPE_ELECTRIC))
@@ -765,7 +793,6 @@ extern "C"
     ABILITY_TRIGGERTABLE LightningRodHandlers[] = {
         {EVENT_ABILITY_CHECK_NO_EFFECT, (ABILITY_HANDLER_FUNC)HandlerNewLightningRod}, // 22
     };
-
 
     ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddLightningRod(_DWORD *a1)
     {
@@ -792,7 +819,6 @@ extern "C"
     }
 
 #pragma endregion
-
 
 #pragma region Forewarn
 
@@ -837,7 +863,6 @@ extern "C"
 
 #pragma endregion
 
-    
 #pragma region WellBakedBody
     void HandlerWellBakedBody(int a1, ServerFlow *a2, int a3)
     {
@@ -846,7 +871,7 @@ extern "C"
             CommonTypeNoEffectRankUp(a2, a3, STATSTAGE_DEFENSE, 2);
         }
     }
-    
+
     ABILITY_TRIGGERTABLE WellBakedBodyHandlers[] = {
         {EVENT_ABILITY_CHECK_NO_EFFECT, (ABILITY_HANDLER_FUNC)HandlerWellBakedBody}, // 22
     };
@@ -857,8 +882,7 @@ extern "C"
         return WellBakedBodyHandlers;
     }
 
-#pragma endregion 
-
+#pragma endregion
 
 #pragma region Amplifier
     void HandlerAmplifier(int a1, int a2, int a3)
@@ -887,7 +911,6 @@ extern "C"
 
 #pragma endregion
 
-
 #pragma region IceScales
     void HandlerIceScales(int a1, int a2, int a3)
     {
@@ -913,7 +936,6 @@ extern "C"
     }
 
 #pragma endregion
-
 
 #pragma region Rivalry
 
@@ -974,7 +996,6 @@ extern "C"
 
 #pragma endregion
 
-
 #pragma region Distracting
 
     void HandlerDistracting(int a1, ServerFlow *a2, int a3)
@@ -1005,6 +1026,7 @@ extern "C"
                     v9 = TempWork[v8];
                     v10 = (char *)v7 + v8++;
                 }
+                v7->pad = STAT_CHANGE_HOSTILE_FLAG;
                 BattleHandler_PopWork(a2, v7);
                 BattleHandler_PushRun(a2, EFFECT_ABILITYPOPUPOUT, a3);
             }
@@ -1022,7 +1044,6 @@ extern "C"
     }
 
 #pragma endregion
-
 
 #pragma region CoOpAbilities
 
@@ -1048,7 +1069,6 @@ extern "C"
     }
 
 #pragma endregion
-
 
 #pragma region NewHealer
 
@@ -1110,7 +1130,6 @@ extern "C"
 
 #pragma endregion
 
-
 #pragma region ToughClaws
     // Tough Claws
     void HandlerToughClaws(int a1, int a2, int a3)
@@ -1126,7 +1145,7 @@ extern "C"
             }
         }
     }
-    
+
     ABILITY_TRIGGERTABLE ToughClawsHandlers[] = {
         {EVENT_MOVE_POWER, (ABILITY_HANDLER_FUNC)HandlerToughClaws}, // 6
     };
@@ -1137,7 +1156,6 @@ extern "C"
         return ToughClawsHandlers;
     }
 #pragma endregion
-
 
 #pragma region SlushRush
 
@@ -1156,7 +1174,7 @@ extern "C"
             BattleEventVar_MulValue(VAR_MOVE_POWER_RATIO, 2048);
         }
     }
-    
+
     ABILITY_TRIGGERTABLE SlushRushHandlers[] = {
         {EVENT_CALC_SPEED, (ABILITY_HANDLER_FUNC)HandlerSlushRush},              // 7
         {EVENT_WEATHER_REACTION, (ABILITY_HANDLER_FUNC)HandlerSnowCloakWeather}, // 8
@@ -1176,7 +1194,6 @@ extern "C"
 
 #pragma endregion
 
-
 #pragma region ThickFat
     ABILITY_TRIGGERTABLE ThickFatHandlers[] = {
         {EVENT_ATTACKER_POWER, (ABILITY_HANDLER_FUNC)HandlerThickFat},           // 9
@@ -1189,7 +1206,6 @@ extern "C"
         return ThickFatHandlers;
     }
 #pragma endregion
-
 
 #pragma region PreStatusAbilities
 
@@ -1328,7 +1344,6 @@ extern "C"
         }
     }
 
-
     ABILITY_TRIGGERTABLE MarvelScaleHandlers[] = {
         {EVENT_DEFENDER_GUARD, (ABILITY_HANDLER_FUNC)HandlerMarvelScale},         // 27
         {EVENT_SWITCH_IN, (ABILITY_HANDLER_FUNC)HandlerPreStatusMarvelScaleOnAI}, // 28
@@ -1400,7 +1415,6 @@ extern "C"
 
 #pragma endregion
 
-
 #pragma region Fluffy
 
     void HandlerFluffy(int a1, ServerFlow *a2, int a3)
@@ -1450,7 +1464,6 @@ extern "C"
 
 #pragma endregion
 
-    
 #pragma region Corrosion
     int HandlerCorrosion(int a1, ServerFlow *a2, int a3)
     {
@@ -1476,7 +1489,6 @@ extern "C"
 
 #pragma endregion
 
-
 #pragma region RainDish
 
     ABILITY_TRIGGERTABLE RainDishHandlers[] = {
@@ -1493,8 +1505,7 @@ extern "C"
         return RainDishHandlers;
     }
 
-#pragma endregion 
-
+#pragma endregion
 
 #pragma region StrongBody
 
@@ -1512,7 +1523,6 @@ extern "C"
     }
 
 #pragma endregion
-
 
 #pragma region DrySkin
 
@@ -1536,7 +1546,7 @@ extern "C"
         {EVENT_MOVE_POWER, (ABILITY_HANDLER_FUNC)HandlerDrySkinDamage},             // 39
         {EVENT_ABILITY_CHECK_NO_EFFECT, (ABILITY_HANDLER_FUNC)HandlerDrySkinCheck}, // 40
     };
-    
+
     ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddDrySkin(_DWORD *a1)
     {
         *a1 = 3;
@@ -1544,7 +1554,6 @@ extern "C"
     }
 
 #pragma endregion
-
 
 #pragma region NewPickup
 
@@ -1590,7 +1599,6 @@ extern "C"
 
 #pragma endregion
 
-
 #pragma region SwiftSwim
     void HandlerSwiftSwimResist(int a1, int a2, int a3)
     {
@@ -1599,7 +1607,7 @@ extern "C"
             BattleEventVar_MulValue(VAR_MOVE_POWER_RATIO, 2048);
         }
     }
-    
+
     ABILITY_TRIGGERTABLE SwiftSwimHandlers[] = {
         {EVENT_CALC_SPEED, (ABILITY_HANDLER_FUNC)HandlerSwiftSwim},
         {EVENT_MOVE_POWER, (ABILITY_HANDLER_FUNC)HandlerSwiftSwimResist} // 41
@@ -1611,8 +1619,7 @@ extern "C"
         return SwiftSwimHandlers;
     }
 
-#pragma endregion 
-
+#pragma endregion
 
 #pragma region SandRush
     void HandlerSandRushResist(int a1, int a2, int a3)
@@ -1622,9 +1629,9 @@ extern "C"
             BattleEventVar_MulValue(VAR_MOVE_POWER_RATIO, 2048);
         }
     }
-    
+
     ABILITY_TRIGGERTABLE SandRushHandlers[] = {
-        {EVENT_CALC_SPEED, (ABILITY_HANDLER_FUNC)HandlerSandRush}, // FIX THIS
+        {EVENT_CALC_SPEED, (ABILITY_HANDLER_FUNC)HandlerSandRush},              // FIX THIS
         {EVENT_WEATHER_REACTION, (ABILITY_HANDLER_FUNC)HandlerSandVeilWeather}, // 41
         {EVENT_MOVE_POWER, (ABILITY_HANDLER_FUNC)HandlerSandRushResist}};
 
@@ -1633,44 +1640,48 @@ extern "C"
         *a1 = 3;
         return SandRushHandlers;
     }
-#pragma endregion 
-
+#pragma endregion
 
 #pragma region Rattled
 
-    void HandlerRattledIntimidate(int a1, ServerFlow *a2, int a3)
+    void HandlerRattledIntimidateCheck(BattleEventItem *item, ServerFlow *serverFlow, u32 pokemonSlot, u32 *work)
+    {
+        if (pokemonSlot == BattleEventVar_GetValue(VAR_MON_ID) && BattleEventVar_GetValue(VAR_INTIMFLAG))
+        {
+            work[0] = 1;
+        }
+    }
+
+    void HandlerRattledIntimidate(int a1, ServerFlow *a2, int a3, u32 *work)
     {
         int Value;                         // r0
         HandlerParam_ChangeStatStage *v13; // r0
 
-        if (a3 == BattleEventVar_GetValue(VAR_MON_ID))
+        k::Printf("\nThis is a rattled ability check for intimidate");
+        if (a3 == BattleEventVar_GetValue(VAR_MON_ID) && work[0])
         {
-
-            if (BattleEventVar_GetValue(VAR_INTIMFLAG) == 1)
-            {
                 v13 = (HandlerParam_ChangeStatStage *)BattleHandler_PushWork(a2, EFFECT_CHANGESTATSTAGE, a3);
                 v13->header.flags |= 0x800000u;
                 v13->rankType = STATSTAGE_SPEED;
-                v13->rankVolume = 1;
+                v13->rankVolume = 3;
                 v13->fMoveAnimation = 1;
                 v13->poke_cnt = 1;
                 v13->pokeID[0] = a3;
                 BattleHandler_PopWork(a2, v13);
-            }
         }
     }
     ABILITY_TRIGGERTABLE RattledHandlers[] = {
         {EVENT_MOVE_DAMAGE_REACTION_1, (ABILITY_HANDLER_FUNC)HandlerRattled}, // 22
+         {EVENT_STAT_STAGE_CHANGE_LAST_CHECK,  (ABILITY_HANDLER_FUNC)HandlerRattledIntimidateCheck},
         {EVENT_STAT_STAGE_CHANGE_APPLIED, (ABILITY_HANDLER_FUNC)HandlerRattledIntimidate}};
 
     ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddRattled(_DWORD *a1)
     {
-        *a1 = 2;
+        *a1 = 3;
         return RattledHandlers;
     }
 
 #pragma endregion
-
 
 #pragma region InnerFocus
 
@@ -1692,18 +1703,17 @@ extern "C"
 
     ABILITY_TRIGGERTABLE InnerFocusHandlers[] = {
         {EVENT_FLINCH_CHECK, (ABILITY_HANDLER_FUNC)HandlerInnerFocus}, // 22
-        {EVENT_STAT_STAGE_CHANGE_LAST_CHECK, (ABILITY_HANDLER_FUNC)HandlerIntimidateCheck},
-        {EVENT_STAT_STAGE_CHANGE_FAIL, (ABILITY_HANDLER_FUNC)HandlerIntimidateGuard},
+       //{EVENT_STAT_STAGE_CHANGE_LAST_CHECK, (ABILITY_HANDLER_FUNC)HandlerIntimidateCheck},
+        //{EVENT_STAT_STAGE_CHANGE_FAIL, (ABILITY_HANDLER_FUNC)HandlerIntimidateGuard},
         {EVENT_CHECK_TYPE_EFFECTIVENESS, (ABILITY_HANDLER_FUNC)HandlerInnerFocusAttack}};
 
     ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddInnerFocus(_DWORD *a1)
     {
-        *a1 = 4;
+        *a1 = 2;
         return InnerFocusHandlers;
     }
 
 #pragma endregion
-
 
 #pragma region ThunderArmor
 
@@ -1727,7 +1737,6 @@ extern "C"
 
 #pragma endregion
 
-
 #pragma region Bulletproof
 
     void HandlerBulletproof(int a1, ServerFlow *a2, int a3)
@@ -1735,7 +1744,7 @@ extern "C"
         HandlerParam_Message *v9;
         if (a3 == BattleEventVar_GetValue(VAR_DEFENDING_MON) && a3 != BattleEventVar_GetValue(VAR_ATTACKING_MON))
         {
-            if (SEARCH_ARRAY(BulletproofMoves,BattleEventVar_GetValue(VAR_MOVE_ID)))
+            if (SEARCH_ARRAY(BulletproofMoves, BattleEventVar_GetValue(VAR_MOVE_ID)))
             {
                 BattleEventVar_RewriteValue(VAR_NO_EFFECT_FLAG, 1);
 
@@ -1760,7 +1769,6 @@ extern "C"
     }
 
 #pragma endregion
-
 
 #pragma region WindRider
     /*
@@ -1816,7 +1824,6 @@ extern "C"
 
 #pragma endregion
 
-
 #pragma region QuickDraw
 
     /*
@@ -1865,7 +1872,6 @@ extern "C"
     }
 
 #pragma endregion
-
 
 #pragma region Stakeout
 
@@ -1934,7 +1940,6 @@ extern "C"
     }
 
 #pragma endregion
-
 
 #pragma region Pickpocket
     /*
@@ -2009,7 +2014,6 @@ extern "C"
 
 #pragma endregion
 
-
 #pragma region -AteAbilities
 
     /*
@@ -2050,6 +2054,43 @@ extern "C"
         return PixilateHandlers;
     }
 
+    /*
+
+        --------------------------------------------------------------------------------------------------
+        --------------------------------------- HYDRATE --------------------------------------------------
+        --------------------------------------------------------------------------------------------------
+
+    */
+    void HandlerHydrateType(int a1, int a2, int a3)
+    {
+        if (a3 == BattleEventVar_GetValue(VAR_MON_ID))
+        {
+            if (BattleEventVar_GetValue(VAR_MOVE_TYPE) == TYPE_NORMAL)
+            {
+                BattleEventVar_RewriteValue(VAR_MOVE_TYPE, TYPE_WATER);
+            }
+        }
+    }
+    // void HandlerAtePower(int a1, int a2, int a3)
+    // {
+    //     if (a3 == BattleEventVar_GetValue(VAR_ATTACKING_MON))
+    //     {
+    //         if (PML_MoveGetType(BattleEventVar_GetValue(VAR_MOVE_ID)) == TYPE_NORMAL) // physical
+    //         {
+    //             BattleEventVar_MulValue(VAR_RATIO, 4915); // 20% boost
+    //         }
+    //     }
+    // }
+
+    ABILITY_TRIGGERTABLE HydrateHandlers[] = {
+        {EVENT_MOVE_PARAM, (ABILITY_HANDLER_FUNC)HandlerHydrateType}, // 22
+        {EVENT_ATTACKER_POWER, (ABILITY_HANDLER_FUNC)HandlerAtePower}};
+
+    ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddHydration(_DWORD *a1)
+    {
+        *a1 = 2;
+        return HydrateHandlers;
+    }
     /*
 
         --------------------------------------------------------------------------------------------------
@@ -2132,7 +2173,6 @@ extern "C"
     }
 
 #pragma endregion
-
 
 #pragma region Anticipation
 
@@ -2425,7 +2465,6 @@ extern "C"
 
 #pragma endregion
 
-
 #pragma region Savant
 
     void HandlerSavant(int a1, ServerFlow *serverFlow, int pokemonSlot)
@@ -2464,7 +2503,6 @@ extern "C"
     }
 
 #pragma endregion
-
 
 #pragma region Trace
 
@@ -2564,7 +2602,6 @@ extern "C"
 
 #pragma endregion
 
-
 #pragma region ShadowTag
 
     int THUMB_BRANCH_SAFESTACK_HandlerShadowTag(int a1, ServerFlow *a2, unsigned int a3, int a4)
@@ -2608,7 +2645,6 @@ extern "C"
 
 #pragma endregion
 
-
 #pragma region Justified
     void HandlerJustifiedDefense(int a1, int a2, int a3)
     {
@@ -2637,7 +2673,6 @@ extern "C"
 
 #pragma endregion
 
-
 #pragma region Analytic
     void THUMB_BRANCH_HandlerAnalytic(int a1, ServerFlow *a2, int a3)
     {
@@ -2656,7 +2691,6 @@ extern "C"
     }
 
 #pragma endregion
-
 
 #pragma region AngerPoint
 
@@ -3099,7 +3133,6 @@ extern "C"
     }
 
 #pragma endregion
-
 
 #pragma region WIP
 

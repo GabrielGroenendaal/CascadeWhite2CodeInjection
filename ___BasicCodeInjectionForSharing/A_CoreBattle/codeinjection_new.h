@@ -35,6 +35,9 @@ bool IsEqual(int a1, int a2)
 //     return *(reinterpret_cast<u16*>(&x) + 0);
 // }
 
+#define VAR_INTIMFLAG VAR_GENERAL_USE_FLAG
+#define VAR_HOSTILEFLAG VAR_MAGIC_COAT_FLAG
+
 C_DECL_BEGIN
 
 // STUFF FOR FIELD EFFECTS
@@ -540,7 +543,6 @@ extern PartyPkm *BattleMon_GetViewSrcData(BattleMon *a1);
 extern void BattleMon_SetIllusion(BattleMon *result, PartyPkm *a2);
 extern void BattleMon_RemoveIllusion(BattleMon *result);
 extern PartyPkm *BattleMon_GetSrcData(BattleMon *a1);
-extern unsigned int PersonalPickBestMonToSwitchInto(BtlClientWk *a1, u8 *a2, unsigned int a3, BattleMon *a4, int flag);
 extern int MainModule_BattlePosToClientID(MainModule *a1, int a2);
 extern BattleMon *SwitchAI_DetermineOpponent(void *a1, __int16 a2);
 extern unsigned int MainModule_GetClientPokePos(MainModule *a1, int clientID, int partyIndex);
@@ -585,7 +587,7 @@ extern void BattleField_TurnCheck(void* a1, ServerFlow *a2);
 extern void* TurnCheckCallback_Field;
 extern int HandlerThunderFlyCheck(int a1, int a2, int a3);
 extern void CommonStatDropGuardCheck(ServerFlow *serverFlow, u32 pokemonSlot, u32 *work, u32 moveEffect);
-
+extern bool ServerControl_ChangeWeatherCheck(ServerFlow *a1, unsigned int a2, int a3); 
 
 
 C_DECL_END

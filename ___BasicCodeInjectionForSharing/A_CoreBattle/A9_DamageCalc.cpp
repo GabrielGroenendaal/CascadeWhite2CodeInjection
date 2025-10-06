@@ -1829,7 +1829,7 @@ extern "C"
         ABIL043_AMPLIFIER = 0x2B,
         ABIL044_RAIN_DISH = 0x2C,
         ABIL045_SAND_STREAM = 0x2D,
-        ABIL046_PRESSURE = 0x2E,
+        ABIL046_NEUTRALIZING_GAS = 0x2E,
         ABIL047_THICK_FAT = 0x2F,
         ABIL048_REFRIGERATE = 0x30,
         ABIL049_FLAME_BODY = 0x31,
@@ -1859,7 +1859,7 @@ extern "C"
         ABIL073_WHITE_SMOKE = 0x49,
         ABIL074_PURE_POWER = 0x4A,
         ABIL075_SHELL_ARMOR = 0x4B,
-        ABIL076_NEUTRALIZING_GAS = 0x4C,
+        ABIL076_AIR_LOCK = 0x4C,
         ABIL077_SLUSH_RUSH = 0x4D,
         ABIL078_MOTOR_DRIVE = 0x4E,
         ABIL079_RIVALRY = 0x4F,
@@ -1888,7 +1888,7 @@ extern "C"
         ABIL102_FUR_COAT = 0x66,
         ABIL103_DISTRACTING = 0x67,
         ABIL104_MOLD_BREAKER = 0x68,
-        ABIL105_SUPER_LUCK = 0x69,
+        ABIL105_MOISTURIZE = 0x69,
         ABIL106_AFTERMATH = 0x6A,
         ABIL107_ANTICIPATION = 0x6B,
         ABIL108_FOREWARN = 0x6C,
@@ -2876,7 +2876,7 @@ extern "C"
         {0, ABIL001_STENCH, ABIL001_STENCH, ABIL001_STENCH},                   // PK147_DRATINI = 0x93,
         {0, ABIL001_STENCH, ABIL001_STENCH, ABIL001_STENCH},                   // PK148_DRAGONAIR = 0x94,
         {0, ABIL001_STENCH, ABIL001_STENCH, ABIL001_STENCH},                   // PK149_DRAGONITE = 0x95,
-        {1, ABIL104_MOLD_BREAKER, ABIL127_UNNERVE, ABIL076_NEUTRALIZING_GAS},  // PK150_MEWTWO = 0x96,
+        {1, ABIL104_MOLD_BREAKER, ABIL127_UNNERVE, ABIL076_AIR_LOCK},  // PK150_MEWTWO = 0x96,
         {0, ABIL001_STENCH, ABIL001_STENCH, ABIL001_STENCH},                   // PK151_MEW = 0x97,
 
         // JOHTO
@@ -3417,10 +3417,12 @@ extern "C"
                 if (movePP < 5)
                 {
                     PokeParty_SetParam(pkm, (PkmField)(v6 + 58), movePP + RandomInRange(1u, 2u));
+                    k::Printf("\nThe PP for move %d is %d", PokeParty_GetParam(pkm, (PkmField)(v6 + 58), 0));
                 }
                 else
                 {
                     PokeParty_SetParam(pkm, (PkmField)(v6 + 58), movePP + RandomInRange(1u, 4u));
+                    k::Printf("\nThe PP for move %d is %d", PokeParty_GetParam(pkm, (PkmField)(v6 + 58), 0));
                 }
 
                 RandomInRange(1u, 4u);
@@ -3431,37 +3433,74 @@ extern "C"
 
         PokeParty_SetParam(pkm, PF_Happiness, v5);
         PokeParty_SetParam(pkm, PF_Forme, data);
-        if ((genderAndAbil & 0xF0) == 48)
-        {
+        // if ((genderAndAbil & 0xF0) == 48)
+        // {
+        //     PokeParty_SetHiddenAbil(pkm, species, data);
+        // }
+        if ((genderAndAbil & 0xF0) == 16){
+            k::Printf("\nCheck Ability 1 for Pokemon %d", species);
+            ParamSingle = PML_PersonalGetParamSingle(species, data, Personal_Abil1);
+            PokeParty_SetParam(pkm, PF_Ability, ParamSingle);
+        }
+        else if ((genderAndAbil & 0xF0) == 32){
+            k::Printf("\nCheck Ability 2 for Pokemon %d", species);
+            ParamSingle = PML_PersonalGetParamSingle(species, data, Personal_Abil2);
+            PokeParty_SetParam(pkm, PF_Ability, ParamSingle);
+        }
+        else if ((genderAndAbil & 0xF0) == 48){
+            k::Printf("\nCheck Ability 3 for Pokemon %d", species);
             PokeParty_SetHiddenAbil(pkm, species, data);
         }
-        else if ((genderAndAbil & 0xF0) != 0)
-        {
-            // k::Printf("\ngenderAndAbil == %d\n The whitelisted value is %d and the abil id is %d", (genderAndAbil & 0xF0), WhiteListedPokemon[species].whiteListed, WhiteListedPokemon[species].abilID4);
-
-            if ((genderAndAbil & 0xF0) == 64 && WhiteListedPokemon[species].whiteListed)
-            {
-                PokeParty_SetParam(pkm, PF_Ability, WhiteListedPokemon[species].abilID4);
-            }
-            if ((genderAndAbil & 0xF0) == 80 && WhiteListedPokemon[species].whiteListed)
-            {
-                PokeParty_SetParam(pkm, PF_Ability, WhiteListedPokemon[species].abilID5);
-            }
-            else if ((genderAndAbil & 0xF0) == 96 && WhiteListedPokemon[species].whiteListed)
-            {
-                PokeParty_SetParam(pkm, PF_Ability, WhiteListedPokemon[species].abilID6);
-            }
-            else
-            {
-                v7 = Personal_Abil1;
-                if (PML_PersonalGetParamSingle(species, data, Personal_Abil2) && (genderAndAbil & 0xF0) == 32)
-                {
-                    v7 = Personal_Abil2;
-                }
-                ParamSingle = PML_PersonalGetParamSingle(species, data, v7);
-                PokeParty_SetParam(pkm, PF_Ability, ParamSingle);
-            }
+        else if ((genderAndAbil & 0xF0) == 64){
+            k::Printf("\nCheck Ability 4 for Pokemon %d", species);
+            PokeParty_SetParam(pkm, PF_Ability, WhiteListedPokemon[species].abilID4);
         }
+        else if ((genderAndAbil & 0xF0) == 80){
+            k::Printf("\nCheck Ability 5 for Pokemon %d", species);
+            PokeParty_SetParam(pkm, PF_Ability, WhiteListedPokemon[species].abilID5);
+        }
+        else if ((genderAndAbil & 0xF0) == 96){
+            k::Printf("\nCheck Ability 6 for Pokemon %d", species);
+            PokeParty_SetParam(pkm, PF_Ability, WhiteListedPokemon[species].abilID6);
+        }
+        else {
+            k::Printf("\nCheck Ability default for Pokemon %d", species);
+            ParamSingle = PML_PersonalGetParamSingle(species, data, Personal_Abil1);
+            PokeParty_SetParam(pkm, PF_Ability, ParamSingle);
+        }
+
+        //  if ((genderAndAbil & 0xF0) != 0)
+        // {
+        //     k::Printf("\ngenderAndAbil == %d\n The whitelisted value is %d and the abil id is %d", (genderAndAbil & 0xF0), WhiteListedPokemon[species].whiteListed, WhiteListedPokemon[species].abilID4);
+
+        //     if ((genderAndAbil & 0xF0) == 64 && WhiteListedPokemon[species].whiteListed)
+        //     {
+        //         k::Printf("\nCheck Ability 4 for Pokemon %d", species);
+
+        //         PokeParty_SetParam(pkm, PF_Ability, WhiteListedPokemon[species].abilID4);
+        //     }
+        //     if ((genderAndAbil & 0xF0) == 80 && WhiteListedPokemon[species].whiteListed)
+        //     {
+        //         k::Printf("\nCheck Ability 5 for Pokemon %d", species);
+        //         PokeParty_SetParam(pkm, PF_Ability, WhiteListedPokemon[species].abilID5);
+        //     }
+        //     else if ((genderAndAbil & 0xF0) == 96 && WhiteListedPokemon[species].whiteListed)
+        //     {
+        //         k::Printf("\nCheck Ability 6 for Pokemon %d", species);
+        //         PokeParty_SetParam(pkm, PF_Ability, WhiteListedPokemon[species].abilID6);
+        //     }
+        //     else
+        //     {
+        //         k::Printf("\nCheck Ability vanilla for Pokemon %d", species);
+        //         v7 = Personal_Abil1;
+        //         if (PML_PersonalGetParamSingle(species, data, Personal_Abil2) && (genderAndAbil & 0xF0) == 32)
+        //         {
+        //             v7 = Personal_Abil2;
+        //         }
+        //         ParamSingle = PML_PersonalGetParamSingle(species, data, v7);
+        //         PokeParty_SetParam(pkm, PF_Ability, ParamSingle);
+        //     }
+        // }
 
         // ADD
         // SHINY LOGIC

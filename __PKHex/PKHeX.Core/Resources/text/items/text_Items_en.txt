@@ -45,7 +45,7 @@ Berry Juice
 Sacred Ash
 HP Up
 Protein
-Iron
+Unusual Candy
 Carbos
 Calcium
 Rare Candy
@@ -291,7 +291,7 @@ Assault Vest
 Fairy Gem
 Weakness Policy
 CLRS Booster
-Safety Gear
+Safety Goggles
 Proto Booster
 Shed Shell
 Big Root

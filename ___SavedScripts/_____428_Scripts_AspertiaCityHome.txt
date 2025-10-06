@@ -485,6 +485,54 @@
 				goto LABEL_MENU;
 			}
 
+			if (v35 == 6) {
+				Message.CloseAll();
+
+				if (EventFlags.Get(525) && !EventFlags.Get(524)){
+					// Default Settings
+					Message.System(114, 2);
+
+				} else if (EventFlags.Get(524) && !EventFlags.Get(525)){
+					// Vanilla Trainer Placements
+					Message.System(115, 2);
+				} else {
+					Message.System(118, 2);
+					Input.LastKeyWait();
+					goto LABEL_MENU;
+				}
+
+				Input.LastKeyWait();
+				v37 = YesNoWin.Show();
+				if (v37 == 1) {
+					Message.CloseAll();
+					Message.System(59, 2);
+					Input.LastKeyWait();
+					goto LABEL_MENU;
+				}
+				Message.CloseAll();
+
+				if (EventFlags.Get(525) && !EventFlags.Get(524)){
+					// Default Settings
+					Message.System(116, 2);
+					Input.LastKeyWait();
+					EventFlags.Clear(525);
+					EventFlags.Set(524);
+				} else if (EventFlags.Get(524) && !EventFlags.Get(525)){
+					// Vanilla Trainer Placements
+					Message.System(117, 2);
+					Input.LastKeyWait();
+					EventFlags.Clear(524);
+					EventFlags.Set(525);
+				} else {
+					Message.System(118, 2);
+					Input.LastKeyWait();
+					goto LABEL_MENU;
+				}
+				Message.System(61, 2);
+				Input.LastKeyWait();
+				goto LABEL_MENU;
+			}
+
 			if (v35 == 7) {
 				Message.CloseAll();
 				Message.System(109, 2);
@@ -536,6 +584,10 @@
 					Input.LastKeyWait();
 					EventWorks.Set(16437, 0);
 				}
+				if (EventFlags.Get(524)) {
+					EventFlags.Clear(524);
+					EventFlags.Set(525);
+				}
 				
 				Message.CloseAll();
 				Message.System(61, 2);
@@ -543,13 +595,6 @@
 				goto LABEL_MENU;
 			}
 			
-			if (v35 == 6) {
-				Message.CloseAll();
-				Message.System(56, 2);
-				Input.LastKeyWait();
-				Message.CloseAll();
-				goto LABEL_EXIT;
-			}
 			LABEL_EXIT:
 			Runtime.FinishSubEvents();
 			Actor.UnpauseAll();
@@ -785,6 +830,8 @@
 			Input.LastKeyWait();
 			Message.CloseAll();
 			EventWorks.Set(16431, 1);
+			EventFlags.Clear(524);
+			EventFlags.Set(525);
 			Runtime.FinishSubEvents();
 			Actor.UnpauseAll();
 		}

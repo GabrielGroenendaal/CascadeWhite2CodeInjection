@@ -6,7 +6,6 @@
 
 // Uses esdb_newBattle.yml
 
-
 // extern "C" int THUMB_BRANCH_TrainerInfo_GetRegion(UnityTowerVisitor *a1)
 // {
 //   return a1->field_1A;
@@ -95,11 +94,11 @@ extern "C"
     {
         bool failFlag = 0;
 
-        PokeSet *pokeSet = &serverFlow->pokeSet_1A68;
+        PokeSet *pokeSet = &serverFlow->switching_in_mons;
         j_PokeSet_SeekStart(pokeSet);
         for (BattleMon *currentMon = j_PokeSet_SeekNext(pokeSet); currentMon; currentMon = j_PokeSet_SeekNext(pokeSet))
         {
-            int v4 = HEManager_PushState((unsigned int *)&serverFlow->HEManager);
+            int v4 = HEManager_PushState(&serverFlow->heManager);
 
             if (!BattleMon_IsFainted(currentMon))
             {
@@ -118,18 +117,18 @@ extern "C"
                 BattleEventVar_Pop();
             }
 
-            HEManager_PopState((unsigned int *)&serverFlow->HEManager, v4);
+            HEManager_PopState(&serverFlow->heManager, v4);
         }
 
         return !failFlag;
     }
     void ServerEvent_ChangeTerrainAfter(ServerFlow *serverFlow, int terrain)
     {
-        PokeSet *pokeSet = &serverFlow->pokeSet_1A68;
+        PokeSet *pokeSet = &serverFlow->switching_in_mons;
         j_PokeSet_SeekStart(pokeSet);
         for (BattleMon *currentMon = j_PokeSet_SeekNext(pokeSet); currentMon; currentMon = j_PokeSet_SeekNext(pokeSet))
         {
-            int v4 = HEManager_PushState((unsigned int *)&serverFlow->HEManager);
+            int v4 = HEManager_PushState(&serverFlow->heManager);
 
             if (!BattleMon_IsFainted(currentMon))
             {
@@ -142,7 +141,7 @@ extern "C"
                 BattleEventVar_Pop();
             }
 
-            HEManager_PopState((unsigned int *)&serverFlow->HEManager, v4);
+            HEManager_PopState(&serverFlow->heManager, v4);
         }
     }
     int ServerEvent_GetTerrain(ServerFlow *serverFlow)
@@ -368,14 +367,14 @@ extern "C"
                 v7->sickCode = CONDITION_SLEEP;
                 v7->poke_cnt = 1;
                 v7->pokeID[0] = pokemonSlot;
-               // k::Printf("TERRAIN CURE\n");
+                // k::Printf("TERRAIN CURE\n");
                 BattleHandler_PopWork(serverFlow, v7);
             }
         }
     }
     void HandlerElectricTerrainCheckSleep(BattleEventItem *a1, ServerFlow *serverFlow, int pokemonSlot, int *work)
     {
-       // k::Printf("HandlerElectricTerrainEndSleep\n");
+        // k::Printf("HandlerElectricTerrainEndSleep\n");
         if (BattleField_GetTerrain() != TERRAIN_ELECTRIC)
             return;
 
@@ -483,7 +482,7 @@ extern "C"
             return;
 
         int currentMon = BattleEventVar_GetValue(VAR_DEFENDING_MON);
-        //k::Printf("PREVENT PRIO -> TERRAIN: %d | ATTACKER: %d | DEFENDER: %d\n", BattleField_GetTerrain(), BattleEventVar_GetValue(VAR_ATTACKING_MON), currentMon);
+        // k::Printf("PREVENT PRIO -> TERRAIN: %d | ATTACKER: %d | DEFENDER: %d\n", BattleField_GetTerrain(), BattleEventVar_GetValue(VAR_ATTACKING_MON), currentMon);
         if (currentMon == BattleEventVar_GetValue(VAR_ATTACKING_MON))
             return;
 
@@ -500,10 +499,10 @@ extern "C"
 
             int priority = (action_order[orderIdx].field_8 >> 16) & 0x3FFFFF;
             priority -= 7;
-           // k::Printf("PRIO: %d\n", priority);
+            // k::Printf("PRIO: %d\n", priority);
             int special_priority = ((action_order[orderIdx].field_8 >> 13) & 0x7); // special priority takes into account item & ability prio boosts (1 = no added prio)
             special_priority -= 1;
-           // k::Printf("SPECIAL PRIO: %d\n", special_priority);
+            // k::Printf("SPECIAL PRIO: %d\n", special_priority);
             priority += special_priority;
 
             if (priority > 0)
@@ -912,7 +911,7 @@ extern "C"
     void THUMB_BRANCH_ServerControl_FieldEffectEnd(ServerFlow *serverFlow, BattleFieldEffect fieldEffect)
     {
         int msgID = -1;
-        //k::Printf("END FIELD EFFECT: %d\n", fieldEffect);
+        // k::Printf("END FIELD EFFECT: %d\n", fieldEffect);
         if (fieldEffect <= FLDEFF_TERRAIN)
         {
             switch (fieldEffect)
@@ -936,7 +935,7 @@ extern "C"
                 break;
             }
         }
-        //k::Printf("MSG ID: %d\n", msgID);
+        // k::Printf("MSG ID: %d\n", msgID);
         if (msgID >= 0)
         {
             ServerDisplay_AddMessageImpl(serverFlow->serverCommandQueue, 90, msgID, 0xFFFF0000);
@@ -989,7 +988,7 @@ extern "C"
             if (grounded)
             {
                 ServerDisplay_AddMessageImpl(serverFlow->serverCommandQueue, 91, 1083, pokemonIDs[i], -65536);
-              //  k::Printf("GRAVITY TEXT\n");
+                //  k::Printf("GRAVITY TEXT\n");
                 ServerEvent_GroundedByGravity(serverFlow, battleMon);
             }
         }
@@ -1062,7 +1061,8 @@ extern "C"
             // if (DoesItemPreventHazardEffects(BattleMon_GetHeldItem(currentMon))) // Heavy-Duty Boots check
             //     return;
 
-            if (BattleMon_GetHeldItem(currentMon) == IT0228_PROTECTIVE_GEAR || BattleMon_GetValue(currentMon, VALUE_EFFECTIVE_ABILITY) == ABIL142_OVERCOAT){
+            if (BattleMon_GetHeldItem(currentMon) == IT0228_PROTECTIVE_GEAR || BattleMon_GetValue(currentMon, VALUE_EFFECTIVE_ABILITY) == ABIL142_OVERCOAT)
+            {
                 return;
             }
 
@@ -1126,9 +1126,10 @@ extern "C"
             }
             else
             {
-                           if (BattleMon_GetHeldItem(currentMon) == IT0228_PROTECTIVE_GEAR || BattleMon_GetValue(currentMon, VALUE_EFFECTIVE_ABILITY) == ABIL142_OVERCOAT){
-                return;
-            }
+                if (BattleMon_GetHeldItem(currentMon) == IT0228_PROTECTIVE_GEAR || BattleMon_GetValue(currentMon, VALUE_EFFECTIVE_ABILITY) == ABIL142_OVERCOAT)
+                {
+                    return;
+                }
 
                 v10 = (HandlerParam_AddCondition *)BattleHandler_PushWork(serverFlow, EFFECT_ADDCONDITION, 31);
                 v10->sickID = CONDITION_POISON;
@@ -1165,7 +1166,8 @@ extern "C"
         if (currentSide == GetSideFromMonID(currentSlot))
         {
             BattleMon *currentMon = Handler_GetBattleMon(serverFlow, currentSlot);
-                        if (BattleMon_GetHeldItem(currentMon) == IT0228_PROTECTIVE_GEAR || BattleMon_GetValue(currentMon, VALUE_EFFECTIVE_ABILITY) == ABIL142_OVERCOAT){
+            if (BattleMon_GetHeldItem(currentMon) == IT0228_PROTECTIVE_GEAR || BattleMon_GetValue(currentMon, VALUE_EFFECTIVE_ABILITY) == ABIL142_OVERCOAT)
+            {
                 return;
             }
 
@@ -1248,12 +1250,12 @@ extern "C"
         HandlerParam_Message *bhwork;
         HandlerParam_ChangeStatStage *v6;
 
-        
         int currentSlot = BattleEventVar_GetValue(VAR_MON_ID);
         if (currentSide == GetSideFromMonID(currentSlot))
         {
             BattleMon *currentMon = Handler_GetBattleMon(serverFlow, currentSlot);
-                        if (BattleMon_GetHeldItem(currentMon) == IT0228_PROTECTIVE_GEAR || BattleMon_GetValue(currentMon, VALUE_EFFECTIVE_ABILITY) == ABIL142_OVERCOAT){
+            if (BattleMon_GetHeldItem(currentMon) == IT0228_PROTECTIVE_GEAR || BattleMon_GetValue(currentMon, VALUE_EFFECTIVE_ABILITY) == ABIL142_OVERCOAT)
+            {
                 return;
             }
 
@@ -1272,6 +1274,7 @@ extern "C"
             v3->fMoveAnimation = 1;
             v3->rankType = STATSTAGE_SPEED;
             v3->rankVolume = -1;
+            v3->pad = 0x40000000;
             BattleHandler_PopWork(serverFlow, v3);
 
             // if (currentMon->Ability == ABIL128_DEFIANT)
@@ -1340,7 +1343,7 @@ extern "C"
     {
         HandlerParam_ChangeStatStage *v3;
         HandlerParam_ChangeStatStage *v6;
-        
+
         int currentSlot = BattleEventVar_GetValue(VAR_MON_ID);
         if (currentSide == GetSideFromMonID(currentSlot))
         {
@@ -1355,6 +1358,7 @@ extern "C"
             v3->fMoveAnimation = 1;
             v3->rankType = GetHighestStat(currentMon);
             v3->rankVolume = -2;
+            v3->pad = 0x40000000;
             BattleHandler_PopWork(serverFlow, v3);
 
             // if (currentMon->Ability == ABIL128_DEFIANT)
@@ -1639,7 +1643,7 @@ extern "C"
 
         if (currentSlot == BattleEventVar_GetValue(VAR_ATTACKING_MON))
         {
-         //   k::Printf("\n\nThis code is active!\n\n");
+            //   k::Printf("\n\nThis code is active!\n\n");
             BattleMon *currentMon = Handler_GetBattleMon(serverFlow, currentSlot);
             if (BattleMon_CheckIfMoveCondition(currentMon, CONDITION_LEECHSEED))
             {
@@ -1755,6 +1759,166 @@ extern "C"
         if (v4 >= 0)
         {
             ServerDisplay_AddMessageImpl(a1->serverCommandQueue, 90, v4, a3);
+        }
+    }
+
+    extern void BattleField_EndWeather(BattleField *a1);
+    extern int BtlvCore_WaitMessage(BtlvCore *a1);
+    extern void BtlvCore_StartMessageStandard(BtlvCore *a1, int a2, _DWORD *a3);
+    extern int BattleField_TurnCheckWeather();
+    extern void ServerControl_ChangeWeatherAfter(ServerFlow *a1, int a2);
+    extern int CalcWeatherDamage(BattleMon *a1, int a2);
+    extern int ServerEvent_CheckWeatherReaction(ServerFlow *a1, BattleMon *a2, int a3);
+    extern void ServerDisplay_WeatherDamage(ServerFlow *a1, BattleMon *r1_0, int a3, int a4);
+    extern int ServerControl_CheckFainted(ServerFlow *a1, BattleMon *a2);
+    extern void ServerControl_ViewEffect(ServerFlow *a1, int a2, int a3, int a4, int a5, unsigned __int16 a6);
+    extern void j_j_PokeSet_SeekStart_6(PokeSet *a1);
+    extern BattleMon *j_j_PokeSet_SeekNext_12(PokeSet *a1);
+    extern bool ServerControl_ChangeWeatherCheck(ServerFlow *a1, unsigned int a2, int a3);
+    extern int BattleField_GetWeatherTurns();
+
+    u8 weather;
+    int THUMB_BRANCH_ServerControl_ChangeWeather(ServerFlow *a1, unsigned int a2, int a3)
+    {
+        if (a2 == 10)
+        {
+            weather = 0;
+            return 0;
+        }
+        if (a3 == 5)
+        {
+            a3 = 4;
+        }
+        if (!ServerControl_ChangeWeatherCheck(a1, a2, a3))
+        {
+            return 0;
+        }
+        if (a3 == 255)
+        {
+            weather = a2;
+        }
+        ServerControl_ChangeWeatherCore(a1, a2, a3);
+        return 1;
+    }
+
+    bool THUMB_BRANCH_ServerControl_ChangeWeatherCheck(ServerFlow *a1, unsigned int a2, int a3)
+    {
+        if(a3 == 255){
+            weather = a2;
+        }
+        if (a2 >= 5)
+        {
+            return 0;
+        }
+        return a2 != BattleField_GetWeather() || a3 == 255 && BattleField_GetWeatherTurns() != 255;
+    }
+
+    int PersonalServerEvent_CheckWeatherReaction(ServerFlow *a1, BattleMon *a2, int weatherType, int weatherDamage)
+    {
+        int v3;    // r3
+        int ID;    // r0
+        int v8;    // r5
+        int Value; // r7
+        int v10;   // r4
+        int v12;   // [sp+0h] [bp-18h]
+
+        BattleEventVar_Push();
+        ID = BattleMon_GetID(a2);
+        BattleEventVar_SetConstValue(VAR_MON_ID, ID);
+        BattleEventVar_SetConstValue(VAR_WEATHER, weatherType);
+        v8 = 0;
+        BattleEventVar_SetRewriteOnceValue(VAR_MOVE_FAIL_FLAG, 0);
+        BattleEventVar_SetValue(VAR_DAMAGE, weatherDamage);
+        BattleEvent_CallHandlers(a1, EVENT_WEATHER_REACTION);
+        Value = BattleEventVar_GetValue(VAR_DAMAGE);
+        v10 = BattleEventVar_GetValue(VAR_MOVE_FAIL_FLAG);
+        BattleEventVar_Pop();
+        if (!v10)
+        {
+            return Value;
+        }
+        return v8;
+    }
+
+    int THUMB_BRANCH_ServerControl_TurnCheckWeather(ServerFlow *a1, PokeSet *a2)
+    {
+        int v3;         // r2
+        int Weather;    // r6
+        BattleMon *mon; // r4
+        int v7;         // r7
+        int v8;         // r3
+        BattleMon *v9;  // r0
+        int v11;        // [sp+Ch] [bp-1Ch]
+
+        v3 = BattleField_TurnCheckWeather();
+        if (v3)
+        {
+            ServerDisplay_AddCommon(a1->serverCommandQueue, 64, v3);
+            if (weather)
+            {
+                ServerDisplay_AddCommon(a1->serverCommandQueue, 63, weather, 255);
+            }
+            ServerControl_ChangeWeatherAfter(a1, 0);
+            return 0;
+            //}
+        }
+        else
+        {
+            // MAYBE REMOVE
+                // v11 = 0;
+                // Weather = ServerEvent_GetWeather(a1);
+                // j_j_PokeSet_SeekStart_6(a2);
+                // _12 = j_j_PokeSet_SeekNext_12(a2);
+                // if (_12)
+                // {
+                //     do
+                //     {
+                //     k::Printf("The dead mon is %d", _12->ID);
+                //     if (!BattleMon_IsFainted(_12) && !BattleMon_GetConditionFlag(_12, CONDITIONFLAG_DIG) && !BattleMon_GetConditionFlag(_12, CONDITIONFLAG_DIVE))
+                //     {
+                //         v7 = HEManager_PushState(&a1->heManager);
+                //         CalcWeatherDamage(_12, Weather);
+                //         v8 = ServerEvent_CheckWeatherReaction(a1, _12, Weather);
+                //         if (v8)
+                //         {
+                //             ServerDisplay_WeatherDamage(a1, _12, Weather, v8);
+                //             v11 = 1;
+                //         }
+                //         HEManager_PopState(&a1->heManager, v7);
+                //         // ServerControl_CheckFainted(a1, _12);
+                //     }
+                //     v9 = j_j_PokeSet_SeekNext_12(a2);
+                //     _12 = v9;
+                // } while (v9);
+                // }
+                // if (v11)
+                // {
+                //     ServerControl_ViewEffect(a1, 597, 6, 6, 0, 0);
+                // }
+            
+            Weather = ServerEvent_GetWeather(a1);
+            j_j_PokeSet_SeekStart_6(a2);
+            for (mon = j_j_PokeSet_SeekNext_12(a2); mon; mon = j_j_PokeSet_SeekNext_12(a2))
+            {
+                if (!BattleMon_IsFainted(mon) && !BattleMon_GetConditionFlag(mon, CONDITIONFLAG_DIG) && !BattleMon_GetConditionFlag(mon, CONDITIONFLAG_DIVE))
+                {
+                    v7 = HEManager_PushState(&a1->heManager);
+                    int v10 = CalcWeatherDamage(mon, Weather);
+                    v8 = PersonalServerEvent_CheckWeatherReaction(a1, mon, Weather, v10);
+                    if (v8)
+                    {
+                        ServerDisplay_WeatherDamage(a1, mon, Weather, v8);
+                        v11 = 1;
+                    }
+                    HEManager_PopState(&a1->heManager, v7);
+                    ServerControl_CheckFainted(a1, mon);
+                }
+            }
+            if (v11)
+            {
+                ServerControl_ViewEffect(a1, 597, 6, 6, 0, 0);
+            }
+            return ServerControl_CheckExpGet(a1);
         }
     }
 }

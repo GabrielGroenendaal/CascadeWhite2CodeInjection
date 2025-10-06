@@ -1,7 +1,16 @@
 
 
 
-
+Relic Passage Stones   
+    337
+    338
+    339
+    340
+    341
+    342
+    343
+    344
+    345
    
 
 Script_001:  (Route 19)
@@ -89,8 +98,8 @@ Script_028: (Castleia Park)
     ItemID: 333
 
 Script_029: (Castelia Sewers)
-    ??? -> TwistedSpoon
-    ItemID: 248
+    ??? -> BlackGlasses
+    ItemID: 240
 
 Script_030: (Relic Passage Upper Floors)
     Repel -> TM33: Reflect
@@ -101,8 +110,8 @@ Script_031: (Castelia Sewers)
     ItemID: 381
 
 Script_032: (Castelia Sewers)
-    ??? -> BlackGlasses
-    ItemID: 240
+    ??? -> TwistedSpoon
+    ItemID: 248
 
 Script_034: (Route 16)
     X SpA -> TM08: Dizzy Punch
@@ -125,7 +134,7 @@ Script_038: (Lostlorn Forest)
     ItemID: 185
 
 Script_039: (Lostlorn Forest)
-    TM41 Torment -> Rindo Berry x3
+    TM41 Torment -> Rindo Berry x2
     ItemID: 187
 
 Script_040: (Relic Passage)
@@ -286,8 +295,8 @@ Script_329: (Virbank Complex Inside)
     ItemID: 366
 
 Script_330: (Virbank Complex Inside)
-    Relic Vase -> Charcoal
-    ItemID: 249
+    Relic Vase -> Normal Gem
+    ItemID: 564
 
 Script_331: (Pokestar Gate)
     Sky Plate -> Black Belt

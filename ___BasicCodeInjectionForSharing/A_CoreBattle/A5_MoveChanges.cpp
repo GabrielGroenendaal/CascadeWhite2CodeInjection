@@ -43,74 +43,31 @@ extern "C"
         MOVE_HANDLER_FUNC function;
     } MOVE_TRIGGERTABLE;
 
-
 #pragma region WIP
-
 
     /* Refresh */
 
-
     /* Aqua Ring */
-
-
 
     /* Recycle */
 
-
     /* Charge */
-
-
 
     /* Magic Coat */
 
-
     /* Safeguard  */
-
 
     /* Mist */
 
-
     /* Mean Look */
-
 
     /* Block */
 
-
     /* Helping Hand */
-
 
     /* Focus Punch */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #pragma endregion
-
-
 
 #pragma region overwrites
 
@@ -132,6 +89,14 @@ extern "C"
             return BattleEventVar_RewriteValue(VAR_EFFECT_CHANCE, 10);
         }
         return result;
+    }
+
+    void THUMB_BRANCH_HandlerHelpingHandPower(int a1, int a2, int a3, _DWORD *a4)
+    {
+        if (*a4 == BattleEventVar_GetValue(VAR_ATTACKING_MON))
+        {
+            BattleEventVar_MulValue(VAR_MOVE_POWER_RATIO, 8192);
+        }
     }
 
     int THUMB_BRANCH_HandlerElectroBall(int a1, ServerFlow *a2, int a3)
@@ -550,7 +515,6 @@ extern "C"
 
 #pragma endregion
 
-
 #pragma region WeatherMoves
 
     void HandlerSolarBeamPowerNew(int a1, int a2, int a3)
@@ -735,7 +699,6 @@ extern "C"
 
 #pragma endregion
 
-
 #pragma region chargeMoves
 
     void HandlerMeteorBeam(int a1, ServerFlow *a2, unsigned int *a3)
@@ -803,7 +766,6 @@ extern "C"
     }
 
 #pragma endregion
-
 
 #pragma region TypeEffectiveness
 
@@ -899,7 +861,6 @@ extern "C"
     }
 
 #pragma endregion
-
 
 #pragma region SwallowStockpile
 
@@ -1031,7 +992,6 @@ extern "C"
 
 #pragma endregion
 
-
 #pragma region StickyWeb
 
     void HandlerStickyWeb(int a1, ServerFlow *a2, unsigned int a3, int a4)
@@ -1059,7 +1019,6 @@ extern "C"
     }
 
 #pragma endregion
-
 
 #pragma region PivotMoves
 
@@ -1105,7 +1064,6 @@ extern "C"
     }
 
 #pragma endregion
-
 
 #pragma region ProtectMoves
 
@@ -1177,7 +1135,6 @@ extern "C"
 
 #pragma endregion
 
-
 #pragma region Howl
 
     void HandlerHowlIncreaseStats(int a1, ServerFlow *a2, unsigned int a3)
@@ -1248,7 +1205,6 @@ extern "C"
 
 #pragma endregion
 
-
 #pragma region NaturalGift
 
     int NewHandlerNaturalGiftPower(int a1, ServerFlow *a2, int a3)
@@ -1314,7 +1270,6 @@ extern "C"
 
 #pragma endregion
 
-
 #pragma region StompingTantrumAndClones
 
     int StompingTantrumHandler(int a1, ServerFlow *a2, int a3)
@@ -1360,7 +1315,6 @@ extern "C"
     }
 
 #pragma endregion
-
 
 #pragma region PollenPuff
 
@@ -1420,7 +1374,6 @@ extern "C"
 
 #pragma endregion
 
-
 #pragma region TeeterDance
 
     void HandlerTeeterDanceSpeedBoost(int a1, ServerFlow *a2, int a3)
@@ -1456,7 +1409,6 @@ extern "C"
 
 #pragma endregion
 
-
 #pragma region Recharge
 
     void HandlerRecharge(int a1, ServerFlow *a2, int a3)
@@ -1490,7 +1442,6 @@ extern "C"
     }
 
 #pragma endregion
-
 
 #pragma region ScaleShot
     void HandlerScaleShotEnd(int a1, ServerFlow *a2, int a3)
@@ -1537,7 +1488,6 @@ extern "C"
 
 #pragma endregion
 
-
 #pragma region Torment
     MOVE_TRIGGERTABLE TormentHandlers[] = {
         {EVENT_MOVE_CONDITION_PARAM, (MOVE_HANDLER_FUNC)HandlerLeechSeed},
@@ -1550,7 +1500,6 @@ extern "C"
     }
 
 #pragma endregion
-
 
 #pragma region KnockOff
 
@@ -1587,7 +1536,6 @@ extern "C"
         return KnockOffHandlers;
     }
 #pragma endregion
-
 
 #pragma region WeakenedSpAMoves
 
@@ -1634,7 +1582,6 @@ extern "C"
     }
 
 #pragma endregion
-
 
 #pragma region status
 
@@ -1692,7 +1639,6 @@ extern "C"
     }
 
 #pragma endregion
-
 
 #pragma region ImpossibeMoves
 
@@ -1936,7 +1882,6 @@ extern "C"
 
 #pragma endregion
 
-
 #pragma region TwoTurnMoves
 
     int HandlerSwitchOutInterruptStart(int a1, ServerFlow *a2, unsigned int a3, int a4)
@@ -2069,7 +2014,6 @@ extern "C"
 
 #pragma endregion
 
-
 #pragma region MiscMoves
     void THUMB_BRANCH_HandlerWaterPledgeCheck(BattleEventItem *a1, ServerFlow *serverFlow, int pokeId, _DWORD *work)
     {
@@ -2121,7 +2065,6 @@ extern "C"
     }
 
 #pragma endregion
-
 
 #pragma region WIPBindHandlers
 

@@ -368,29 +368,4 @@ extern "C"
 
 #pragma endregion
 
-    extern u32 PokeParty_PkmDecryptCheck(PartyPkm *pPkm);
-    extern u32 PokeParty_GetParamCore(PartyPkm *pkm, PkmField field, void *extra);
-    extern void PokeParty_PkmEncrypt(PartyPkm *pPkm);
-
-
-    extern "C" u32 checkEVFlags(u32 param)
-    {
-        EventWorkSave *eventWork = GameData_GetEventWork(GAME_DATA);
-        u16 *lvl_cap_ptr = EventWork_GetWkPtr(eventWork, 16434);
-        return *lvl_cap_ptr;
-    }
-
-    extern "C" u32 THUMB_BRANCH_PokeParty_GetParam(PartyPkm *pPkm, PkmField field, void *extra)
-    {
-        u32 ParamCore; // r4
-
-        PokeParty_PkmDecryptCheck(pPkm);
-        ParamCore = PokeParty_GetParamCore(pPkm, field, extra);
-        PokeParty_PkmEncrypt(pPkm);
-        if (field == PF_EvATK || field == PF_EvDEF || field == PF_EvHP || field == PF_EvSPA || field == PF_EvSPD || field == PF_EvSPE)
-        {
-            ParamCore = ParamCore * checkEVFlags(ParamCore);
-        }
-        return ParamCore;
-    }
 }

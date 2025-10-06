@@ -184,6 +184,7 @@ extern "C"
             HandlerParam_Message *message = (HandlerParam_Message *)BattleHandler_PushWork(serverFlow, EFFECT_MESSAGE, pokemonSlot);
             BattleHandler_StrSetup(&message->str, 2u, 1291);
             BattleHandler_AddArg(&message->str, pokemonSlot);
+            BattleHandler_AddArg(&message->str, BattleEventItem_GetSubID(item));
             BattleHandler_PopWork(serverFlow, message);
         }
         *work = 0;
@@ -192,9 +193,9 @@ extern "C"
         {EVENT_STAT_STAGE_CHANGE_LAST_CHECK, (ITEM_HANDLER_FUNC)HandlerClearAmuletCheck},
         {EVENT_STAT_STAGE_CHANGE_FAIL, (ITEM_HANDLER_FUNC)HandlerClearAmuletMessage},
     };
-    ITEM_TRIGGERTABLE *EventAddClearAmulet(u32 *handlerAmount)
+    ITEM_TRIGGERTABLE *THUMB_BRANCH_EventAddDestinyKnot(u32 *handlerAmount)
     {
-        *handlerAmount = 3;
+        *handlerAmount = 2;
         return ClearAmuletHandlers;
     }
 
@@ -223,7 +224,7 @@ extern "C"
             }
         }
     }
-    
+
     int HandlerFocusBandAfter(BattleEventItem *a1, ServerFlow *a2, int a3, int **a4)
     {
         int result;                   // r0
@@ -255,6 +256,11 @@ extern "C"
         *a1 = 2;
         return FocusBandHandlers;
     }
+
+
+
+#pragma region EjectPack
+
     /*
 
         --------------------------------------------------------------------------------------------------
@@ -263,47 +269,199 @@ extern "C"
 
     */
 
+    //  void HandlerEjectPackActionEnd(BattleEventItem *item, ServerFlow *serverFlow, u32 pokemonSlot, u32 *work)
+    // {
+    //     k::Printf("\nHandlerEjectPackEnd 1: var id is %d, pokemon ID = %d and switchout = %d\n", BattleEventVar_GetValue(VAR_MON_ID), pokemonSlot, work[0]);
+    //     if (pokemonSlot == BattleEventVar_GetValue(VAR_MON_ID) && work[0] == 1)
+    //     {
+    //         k::Printf("\nHandlerEjectPackEnd 2\n");
+    //         work[0] = 0;
+    //         // switch
+    //         if (Handler_GetFightEnableBenchPokeNum(serverFlow, pokemonSlot) && Handler_CheckReservedMemberChangeAction(serverFlow))
+    //         {
+    //             k::Printf("\nHandlerEjectPackEnd 3\n");
+    //             ItemEvent_PushRun(item, serverFlow, pokemonSlot);
+    //         }
+    //     }
+    // }
+
+    u8 *switchout;
+
+
+    // /* Triggered by EVENT_STAT_STAGE_CHANGE_APPLIED */
+    // void HandlerEjectPackStatCheck(BattleEventItem *item, ServerFlow *serverFlow, u32 pokemonSlot, u32 *work)
+    // {
+    //     if (pokemonSlot == BattleEventVar_GetValue(VAR_MON_ID) &&
+    //         BattleEventVar_GetValue(VAR_VOLUME) < 0)
+    //     {
+    //         work[0] = 1;
+    //         // if (Handler_GetFightEnableBenchPokeNum(serverFlow, pokemonSlot) && Handler_CheckReservedMemberChangeAction(serverFlow))
+    //         // {
+    //         //     ItemEvent_PushRun(item, serverFlow, pokemonSlot);
+    //         // }
+    //     }
+    // }
+
+    // /* Triggered By EVENT_USE_ITEM */
+    // void HandlerEjectPackUse(BattleEventItem *item, ServerFlow *serverFlow, u32 pokemonSlot, u32 *work)
+    // {
+    //     if (pokemonSlot == BattleEventVar_GetValue(VAR_MON_ID))
+    //     {
+    //         HandlerParam_Switch *switchOut;
+    //         switchOut = (HandlerParam_Switch *)BattleHandler_PushWork(serverFlow, EFFECT_SWITCH, pokemonSlot);
+    //         switchOut->pokeID = pokemonSlot;
+    //         BattleHandler_PopWork(serverFlow, switchOut);
+    //     }
+    // }
+
+    // ITEM_TRIGGERTABLE EjectPackHandlers[] = {
+    //     {EVENT_STAT_STAGE_CHANGE_APPLIED, (ITEM_HANDLER_FUNC)HandlerEjectPackStatCheck},
+    //     {EVENT_ACTION_PROCESSING_END, (ITEM_HANDLER_FUNC)HandlerEjectPackActionEnd},
+    //     {EVENT_USE_ITEM, (ITEM_HANDLER_FUNC)HandlerEjectPackUse},
+    // };
+
+    // extern bool ServerControl_CheckMatchup(ServerFlow *a1);
+    // extern bool Handler_IsMonInSkyDrop(ServerFlow* a1, int a2);
+    // extern int  ServerControl_SwitchOut(ServerFlow *a1, BattleMon *a2, int a3);
+    // extern unsigned int MainModule_PokeIDToPokePos(MainModule *a1, PokeCon *a2, unsigned int a3);
+    // extern void BattleServer_RequestChangePokemon(BtlServerWk *result, int a2);
+
+    // int THUMB_BRANCH_BattleHandler_Switch(ServerFlow *a1, HandlerParam_Switch *a2)
+    // {
+    //     BattleMon *BattleMon; // r6
+    //     int v5;               // r0
+    //     int result;           // r0
+    //     k::Printf("\n\n===BATTLEHANDLER_SWITCH===\na2->pokeID = %d\n\n", a2->pokeID);
+
+    //     BattleMon = PokeCon_GetBattleMon(a1->pokeCon, a2->pokeID);
+    //     if (ServerControl_CheckMatchup(a1))
+    //     {
+    //         k::Printf("\nWe hit ServerControl_ShouldBattleEnd\n");
+    //         return 0;
+    //     }
+    //     if (Handler_IsMonInSkyDrop(a1, a2->pokeID))
+    //     {
+    //         k::Printf("\nWe hit Handler_IsMonInSkyDrop\n");
+    //         return 0;
+    //     }
+    //     if (a1->flowResult)
+    //     {
+    //         k::Printf("\nWe hit ServerFlow->FlowResult\n");
+    //         return 0;
+    //     }
+    //     BattleHandler_SetString(a1, &a2->preStr);
+    //     if (!ServerControl_SwitchOut(a1, BattleMon, a2->fIntrDisable))
+    //     {
+    //         k::Printf("\nWe hit !ServerControl_SwitchOut()\n");
+    //         return 0;
+    //     }
+    //     k::Printf("\nWe made it all the way to the end\n");
+    //     v5 = MainModule_PokeIDToPokePos(a1->mainModule, a1->pokeCon, a2->pokeID);
+    //     BattleServer_RequestChangePokemon(a1->server, v5);
+    //     k::Printf("\nWe requested a switch\n");
+    //     BattleHandler_SetString(a1, &a2->exStr);
+    //     result = 1;
+    //     a1->flowResult = RESULT_SWITCH;
+    //     return result;
+    // }
+
     void HandlerEjectPackStatCheck(BattleEventItem *item, ServerFlow *serverFlow, u32 pokemonSlot, u32 *work)
     {
-        if (pokemonSlot == BattleEventVar_GetValue(VAR_MON_ID) &&
-            BattleEventVar_GetValue(VAR_VOLUME) < 0)
+        k::Printf("\n\n====HandlerEjectPackStatCheck=====\nThe Pokemon Slot is %d\nThe VAR Mon ID is %d\nThe work is %d\nThe volume is %d\nThe item id is %d\n\n", pokemonSlot, BattleEventVar_GetValue(VAR_MON_ID), switchout[pokemonSlot], BattleEventVar_GetValue(VAR_VOLUME), item->subID);
+        if (BattleEventVar_GetValue(VAR_VOLUME) < 0)
         {
-            work[0] = 1;
+            switchout[BattleEventVar_GetValue(VAR_MON_ID)] = 1;
         }
     }
     void HandlerEjectPackActionEnd(BattleEventItem *item, ServerFlow *serverFlow, u32 pokemonSlot, u32 *work)
     {
-        if (pokemonSlot == BattleEventVar_GetValue(VAR_MON_ID) &&
-            work[0] == 1)
+        k::Printf("\n\n====HandlerEjectPackActionEnd=====\nThe Pokemon Slot is %d\nThe VAR Mon ID is %d\nThe work is %d\n\n", pokemonSlot, BattleEventVar_GetValue(VAR_MON_ID), switchout[pokemonSlot]);
+
+        if (
+            // pokemonSlot == BattleEventVar_GetValue(VAR_MON_ID) &&
+            switchout[pokemonSlot] == 1)
         {
-            work[0] = 0;
+            k::Printf("\nWe have gotten into the EjectPackEndFunction\n");
+            switchout[pokemonSlot] = 0;
             if (Handler_GetFightEnableBenchPokeNum(serverFlow, pokemonSlot) && Handler_CheckReservedMemberChangeAction(serverFlow))
             {
                 ItemEvent_PushRun(item, serverFlow, pokemonSlot);
             }
         }
     }
+    void HandlerEjectPackSwitchInEnd(BattleEventItem *item, ServerFlow *serverFlow, u32 pokemonSlot, u32 *work)
+    {
+        BattleMon *mon = Handler_GetBattleMon(serverFlow, pokemonSlot);
+        k::Printf("\n\n====HandlerEjectPackSwitchInEnd=====\nThe Pokemon Slot is %d of species %d\nThe Item ID is %d\n\n", pokemonSlot, mon->Species, item->subID);
+
+        if (switchout[pokemonSlot])
+        {
+            k::Printf("\nWe're in, lets see if this causes a softlock");
+            switchout[pokemonSlot] = 0;
+            if (Handler_GetFightEnableBenchPokeNum(serverFlow, pokemonSlot) && Handler_CheckReservedMemberChangeAction(serverFlow))
+            {
+                k::Printf("\nDid we get to the Push Run?");
+                ItemEvent_PushRun(item, serverFlow, pokemonSlot);
+            }
+        }
+        // if (pokemonSlot == BattleEventVar_GetValue(VAR_MON_ID) &&
+        //    switchout[pokemonSlot] == 1)
+        // {
+        //     k::Printf("\nWe have gotten into the EjectPackEndFunction\n");
+        //     switchout[pokemonSlot] = 0;
+        //     if (Handler_GetFightEnableBenchPokeNum(serverFlow, pokemonSlot) && Handler_CheckReservedMemberChangeAction(serverFlow))
+        //     {
+        //         ItemEvent_PushRun(item, serverFlow, pokemonSlot);
+        //     }
+        // }
+    }
+
+    extern void ServerControl_Switch(ServerFlow *a1, BattleMon *a2, int partyIndex);
+    extern int PokeCon_FindPoke(PokeCon *a1, int a2, int a3);
+
     void HandlerEjectPackUse(BattleEventItem *item, ServerFlow *serverFlow, u32 pokemonSlot, u32 *work)
     {
+        k::Printf("\n\n====HandlerEjectPackUse=====\nThe Pokemon Slot is %d\nThe VAR Mon ID is %d\nThe work is %d\n\n", pokemonSlot, BattleEventVar_GetValue(VAR_MON_ID), work[0]);
+
         if (pokemonSlot == BattleEventVar_GetValue(VAR_MON_ID))
         {
             HandlerParam_Switch *switchOut;
             switchOut = (HandlerParam_Switch *)BattleHandler_PushWork(serverFlow, EFFECT_SWITCH, pokemonSlot);
             switchOut->pokeID = pokemonSlot;
             BattleHandler_PopWork(serverFlow, switchOut);
+
+            // BattleMon* mon = Handler_GetBattleMon(serverFlow, pokemonSlot);
+            // int v6 = MainModule_PokeIDToClientID(mon->ID);
+            // int partyIndex = PokeCon_FindPoke(serverFlow->pokeCon, v6, mon->ID);
+            // ServerControl_Switch(serverFlow, mon, 2);
+
+            // sub_219EB24(serverFlow->server, 0, 0, 0);
         }
     }
     ITEM_TRIGGERTABLE EjectPackHandlers[] = {
         {EVENT_STAT_STAGE_CHANGE_APPLIED, (ITEM_HANDLER_FUNC)HandlerEjectPackStatCheck},
         {EVENT_ACTION_PROCESSING_END, (ITEM_HANDLER_FUNC)HandlerEjectPackActionEnd},
+        {EVENT_AFTER_LAST_SWITCHIN, (ITEM_HANDLER_FUNC)HandlerEjectPackSwitchInEnd},
         {EVENT_USE_ITEM, (ITEM_HANDLER_FUNC)HandlerEjectPackUse},
     };
-    extern "C" ITEM_TRIGGERTABLE *THUMB_BRANCH_EventAddFloatStone(u32 *handlerAmount)
+    ITEM_TRIGGERTABLE *THUMB_BRANCH_EventAddFloatStone(u32 *handlerAmount)
     {
-        *handlerAmount = 3;
+        *handlerAmount = 4;
         return EjectPackHandlers;
     }
 
+
+
+
+#pragma endregion
+
+
+
+
+
+
+
+#pragma region WeatherStuff
     /*
 
         --------------------------------------------------------------------------------------------------
@@ -329,38 +487,7 @@ extern "C"
         return ProtectiveGearHandlers;
     }
 
-#pragma endregion
 
-    /*
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    */
-
-#pragma region WeatherMoves
 
     void HandlerSolarBeamPowerNew(int a1, int a2, int a3)
     {
@@ -1113,14 +1240,37 @@ extern "C"
         }
     }
 
+    void HandlerSafetyGogglesMessage(ServerFlow *a1, int a2, int *a3, __int16 a4)
+    {
+        int Value;                // r7
+        HandlerParam_Message *v9; // [sp+4h] [bp-1Ch]
+
+        if (a2 == BattleEventVar_GetValue(VAR_MON_ID) && *a3)
+        {
+            Value = BattleEventVar_GetValue(VAR_STAT_STAGE_CHANGE_COUNT);
+            if (!Value || a3[1] != Value)
+            {
+                // BattleHandler_PushRun(a1, EFFECT_ABILITY_POPUP_ADD, a2);
+                v9 = (HandlerParam_Message *)BattleHandler_PushWork(a1, EFFECT_MESSAGE, a2);
+                BattleHandler_StrSetup(&v9->str, 2u, 1297);
+                BattleHandler_AddArg(&v9->str, a2);
+                BattleHandler_PopWork(a1, v9);
+                // BattleHandler_PushRun(a1, EFFECT_ABILITY_POPUP_REMOVE, a2);
+                a3[1] = Value;
+            }
+            *a3 = 0;
+        }
+    };
+
     ITEM_TRIGGERTABLE SafetyGogglesHandlers[] = {
         {EVENT_ABILITY_CHECK_NO_EFFECT, (ITEM_HANDLER_FUNC)HandlerOvercoatPowders},
         {EVENT_WEATHER_REACTION, (ITEM_HANDLER_FUNC)HandlerOvercoat},
-    };
+        {EVENT_STAT_STAGE_CHANGE_LAST_CHECK, (ITEM_HANDLER_FUNC)HandlerKeenEyeCheck},
+        {EVENT_STAT_STAGE_CHANGE_FAIL, (ITEM_HANDLER_FUNC)HandlerSafetyGogglesMessage}};
 
     ITEM_TRIGGERTABLE *THUMB_BRANCH_EventAddPowerAnklet(_DWORD *a1)
     {
-        *a1 = 2;
+        *a1 = 4;
         return SafetyGogglesHandlers;
     }
 
@@ -2300,6 +2450,27 @@ extern "C"
         a1->Speed = PokeParty_GetParam(a2, PF_SPE, 0);
     }
 
+    MoveCondition BATON_PASS_INHERITED_CONDITIONS[] = {
+        CONDITION_CONFUSION, CONDITION_HEALBLOCK, CONDITION_GASTROACID, CONDITION_LEECHSEED,
+        CONDITION_EMBARGO, CONDITION_PERISHSONG, CONDITION_INGRAIN, CONDITION_BLOCK,
+        CONDITION_LOCKON, CONDITION_FLOATING, CONDITION_CURSE, CONDITION_AQUARING
+
+    };
+
+    extern int THUMB_BRANCH_SAFESTACK_Condition_CheckIfBatonPassInherited(int a1)
+    {
+        unsigned int i; // r3
+
+        for (i = 0; i < 12; ++i)
+        {
+            if (a1 == BATON_PASS_INHERITED_CONDITIONS[i])
+            {
+                return 1;
+            }
+        }
+        return 0;
+    }
+
     // Overwritten to remove the unintended effects of overwriting the CONDITION_ACCURACY_UP effect
     bool THUMB_BRANCH_ServerEvent_CheckHit(ServerFlow *a1, BattleMon *a2, BattleMon *a3, MoveParam *a4)
     {
@@ -2372,78 +2543,60 @@ extern "C"
         return BattleRandom(0x64u) < v18;
     }
 
-    extern bool j_j_PosPoke_IsExist(PosPoke *a1, int a2);
+    extern bool PosPoke_IsExist(PosPoke *a1, int a2);
     extern void BattleMon_ChangePokeType(BattleMon *a1, int a2);
 
-    // int checkPosPokeHelper(PosPoke *a1, int a2)
-    // {
-    //     int pos;
-    //     unsigned int i;   // r4
-    //     PosPokeState *v3; // r3
+    bool checkPosPoke(PosPoke a1, int a2)
+    {
+        int check;
+        unsigned int i;
+        PosPokeState v3;
 
-    //     for (i = 0; i < 6; ++i)
-    //     {
-    //         v3 = &a1->state[i];
-    //         k::Printf("\nenable is %d and existPokeID is %d", v3->fEnable, v3->existPokeID);
-    //         if (v3->fEnable && a2 == v3->existPokeID)
-    //         {
-    //             return i;
-    //         }
-    //     }
-    //     return 6;
-    // }
-    // bool checkPosPoke(PosPoke *a1, int a2)
-    // {
+        for (i = 0; i < 6; i++)
+        {
+            v3 = a1.state[i];
+            if (v3.fEnable && (a2 == v3.existPokeID))
+            {
+                check = i;
+                break;
+            }
+        }
+        return check != 6;
+    }
 
-    //     return checkPosPokeHelper(a1, a2) != 6;
-    // }
+    int THUMB_BRANCH_SAFESTACK_BattleHandler_ChangeType(ServerFlow *a1, HandlerParam_ChangeType *a2)
+    {
+        BattleMon *BattleMon; // r6
+        int Species;          // r0
+        int Type1;            // r0
 
-    // extern int splitTypeCore(BattleMon *a1, u8 *a2, u8 *a3);
+        if (!checkPosPoke(a1->posPoke, a2->monID))
+        {
+            return 0;
+        }
 
-    // int THUMB_BRANCH_SAFESTACK_BattleHandler_ChangeType(ServerFlow *a1, HandlerParam_ChangeType *a2)
-    // {
-    //     BattleMon *BattleMon; // r6
-    //     int Species;          // r0
-    //     int Type1;            // r0
-
-    //     k::Printf("\nCheck A!");
-    //     if (!j_j_PosPoke_IsExist(&a1->posPoke, a2->monID))
-    //     {
-    //         k::Printf("\nCheck B!, mon ID = %d and helper returns %d", j_j_PosPoke_IsExist(&a1->posPoke, a2->monID), j_j_PosPoke_IsExist(&a1->posPoke, a2->monID));
-    //         return 0;
-    //     }
-
-    //     BattleMon = PokeCon_GetBattleMon(a1->pokeCon, a2->monID);
-    //     k::Printf("\nCheck C!");
-    //     if (BattleMon_CheckIfMoveCondition(BattleMon, CONDITION_TERA))
-    //     {
-    //         k::Printf("\nCheck D!");
-    //         k::Printf("\nWe're a tera mon, silly!");
-    //         return 0;
-    //     }
-    //     if (BattleMon_IsFainted(BattleMon))
-    //     {
-    //         return 0;
-    //     }
-    //     Species = BattleMon_GetSpecies(BattleMon);
-    //     if (Species == PK493_ARCEUS)
-    //     {
-    //         return 0;
-    //     }
-    //     ServerDisplay_AddCommon(a1->serverCommandQueue, 22, a2->monID, a2->nextType);
-    //     BattleMon_ChangePokeType(BattleMon, a2->nextType);
-    //     if (!a2->pad && PokeTypePair_IsMonotype(a2->nextType))
-    //     {
-    //         k::Printf("\nCheck E!");
-    //         Type1 = PokeTypePair_GetType1(a2->nextType);
-    //         u8 v9;
-    //         u8 v10;
-    //         splitTypeCore(BattleMon, &v9, &v10);
-    //         k::Printf("\nThe type is %d, but the actual types are %d and %d", Type1, v9, v10);
-    //         ServerDisplay_AddMessageImpl(a1->serverCommandQueue, 91, 896, a2->monID, Type1, -65536); // 896: [VAR PKNICK(0)] transformed\ninto the [VAR TYPE(1)] type!
-    //     }
-    //     return 1;
-    // }
+        BattleMon = PokeCon_GetBattleMon(a1->pokeCon, a2->monID);
+        if (BattleMon_CheckIfMoveCondition(BattleMon, CONDITION_TERA))
+        {
+            return 0;
+        }
+        if (BattleMon_IsFainted(BattleMon))
+        {
+            return 0;
+        }
+        Species = BattleMon_GetSpecies(BattleMon);
+        if (Species == PK493_ARCEUS)
+        {
+            return 0;
+        }
+        ServerDisplay_AddCommon(a1->serverCommandQueue, 22, a2->monID, a2->nextType);
+        BattleMon_ChangePokeType(BattleMon, a2->nextType);
+        if (!a2->pad && PokeTypePair_IsMonotype(a2->nextType))
+        {
+            ServerDisplay_AddMessageImpl(a1->serverCommandQueue, 91, 896, a2->monID, Type1, -65536); // 896: [VAR PKNICK(0)] transformed\ninto the [VAR TYPE(1)] type!
+        }
+        return 1;
+    }
 
     int PersonalCondition_CheckFloating(ServerFlow *a1, BattleMon *a2)
     {

@@ -44,7 +44,7 @@ Magnet Pull
 Amplifier
 Rain Dish
 Sand Stream
-Pressure
+Neutralizing Gas
 Thick Fat
 Refrigerate
 Flame Body
@@ -74,7 +74,7 @@ Vital Spirit
 White Smoke
 Pure Power
 Shell Armor
-Neutralizing Gas
+Air Lock
 Slush Rush
 Motor Drive
 Rivalry
@@ -103,7 +103,7 @@ Technician
 Fur Coat
 Distracting
 Mold Breaker
-Super Luck
+Moisturize
 Aftermath
 Anticipation
 Forewarn
