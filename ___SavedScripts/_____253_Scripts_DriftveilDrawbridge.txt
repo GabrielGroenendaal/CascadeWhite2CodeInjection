@@ -657,6 +657,7 @@ public class MainEvents {
 		ShowExclamationMark(63);
 		ActionSequence_0a23(63);
 		Actor.WaitActionFinish();
+
 		Message.ActorEx(1024, 44, 63, 0, 0);
 		Input.LastKeyWait();
 		Message.CloseAll();
@@ -842,6 +843,10 @@ public class MainEvents {
 
 	static meta void ActionSequence_WalkLeft6Paces(int npcId) : VActionSequence {
 		Action000e(6);
+	}
+
+	static meta void ActionSequence_WalkRight2Paces(int npcId) : VActionSequence {
+		Action000f(2);
 	}
 
 	

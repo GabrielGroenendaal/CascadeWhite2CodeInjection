@@ -6,146 +6,269 @@ STRUCT_DECLARE(GameData)
 #define GAME_DATA *(GameData **)(g_GameBeaconSys + 4)
 
 // Uses esdb_newBattle.yml
-extern "C" int BattleMon_CanBattle(BattleMon *a1);
-extern "C" int sub_219C424(MainModule *a1, int a2);
-extern "C" unsigned int BattleMon_IsIllusionEnabled(BattleMon *a1);
-extern "C" PartyPkm *BattleMon_GetViewSrcData(BattleMon *a1);
-extern "C" void BattleMon_SetIllusion(BattleMon *result, PartyPkm *a2);
-extern "C" void BattleMon_RemoveIllusion(BattleMon *result);
-extern "C" PartyPkm *BattleMon_GetSrcData(BattleMon *a1);
-// extern "C" unsigned int PersonalPickBestMonToSwitchInto(BtlClientWk *a1, u8 *a2, unsigned int a3, BattleMon *a4, int flag);
-extern "C" int MainModule_BattlePosToClientID(MainModule *a1, int a2);
-extern "C" BattleMon *SwitchAI_DetermineOpponent(void *a1, __int16 a2);
-extern "C" unsigned int MainModule_GetClientPokePos(MainModule *a1, int clientID, int partyIndex);
-// extern "C" BattleMon *PokeCon_GetBattleMon(void *a1, int a2);
-extern "C" int SwitchAI_CheckReserve(BtlClientWk *a1, int a2);
-extern "C" int GetNumBattleReadyPartyMons(BtlClientWk *a1, u8 *a2);
-extern "C" int MainModule_PokeIDToClientID(int a1);
+
+
+#pragma region functionDefinitions
+// extern "C" bool IsEqual(int a1, int a2)
+// {
+//     char *c1 = (char *)&a1;
+//     char *c2 = (char *)&a2;
+
+//     for (u16 i = 0; i < 4; ++i)
+//     {
+//         if (c1[i] != c2[i])
+//             return false;
+//     }
+//     return true;
+// }
+// unsigned short int &HIWORD(unsigned int &x)
+// {
+//     return *(reinterpret_cast<unsigned short int *>(&x) + 1);
+// }
+// extern "C" int Handler_PokeIDToPokePos(ServerFlow *a1, unsigned int a2);
+// extern BattleParty *BattleClient_GetActParty(BtlClientWk *a1);
+// extern "C" int Move_GetID(BattleMon *a1, int a2);
+// extern "C" int BattleMon_GetMoveCount(BattleMon *a1);
+// extern "C" int BattleMon_CanBattle(BattleMon *a1);
+// extern "C" int sub_219C424(MainModule *a1, int a2);
+// extern "C" unsigned int BattleMon_IsIllusionEnabled(BattleMon *a1);
+// extern "C" PartyPkm *BattleMon_GetViewSrcData(BattleMon *a1);
+// extern "C" void BattleMon_SetIllusion(BattleMon *result, PartyPkm *a2);
+// extern "C" void BattleMon_RemoveIllusion(BattleMon *result);
+// extern "C" PartyPkm *BattleMon_GetSrcData(BattleMon *a1);
+// extern "C" int MainModule_BattlePosToClientID(MainModule *a1, int a2);
+// extern "C" BattleMon *SwitchAI_DetermineOpponent(void *a1, __int16 a2);
+// extern "C" unsigned int MainModule_GetClientPokePos(MainModule *a1, int clientID, int partyIndex);
+// extern "C" int SwitchAI_CheckReserve(BtlClientWk *a1, int a2);
+// extern "C" int GetNumBattleReadyPartyMons(BtlClientWk *a1, u8 *a2);
+// extern "C" int MainModule_PokeIDToClientID(int a1);
+// extern "C" void BattleField_TurnCheck(void* a1, ServerFlow *a2);
+// extern "C" void* TurnCheckCallback_Field;
+// extern "C" void *ServerDisplay_AddCommon(ServerCommandQueue *a1, int a2, ...);
+// extern "C" int BattleMon_GetValue(BattleMon *a1, BattleMonValue a2);
+// extern "C" EventWorkSave *GameData_GetEventWork(void *gameData);
+// extern "C" u16 *EventWork_GetWkPtr(EventWorkSave *eventWork, int swkId);
+// extern PlayerState *GameData_GetPlayerState(GameData *gameData);
+// extern BtlSetup *MainModule_GetBtlSetup(MainModule *a1);
+// extern int PlayerState_GetZoneID(PlayerState *a1);
+// extern int PokeTypePair_GetType1(int a1);
+// extern int PokeTypePair_GetType2(int a1);
+// extern bool PokeTypePair_IsMonotype(int a1);
+// extern TypeEffectiveness GetTypeEffectiveness(int a1, int a2);
+// extern int GetTypeEffectivenessVsMon(int a1, int a2);
+// extern int GetTypeEffectivenessMultiplier(int a1, int a2);
+// extern unsigned int BattleEventVar_SetRewriteOnceValue(BattleEventVar a1, int a2);
+// extern int BattleEventVar_RewriteValue(BattleEventVar a1, int a2);
+// extern int BattleEventVar_Push();
+// extern int BattleEventVar_Pop();
+// extern int BattleMon_GetID(BattleMon *a1);
+// extern unsigned int BattleEventVar_SetConstValue(BattleEventVar a1, int a2);
+// extern int j_j_Condition_CheckUnaffectedByType(ServerFlow *a1, BattleMon *a2);
+// extern int BattleEventVar_GetValue(BattleEventVar a1);
+// extern int BattleEvent_CallHandlers(ServerFlow *a1, BattleEventType a2);
+// extern HandlerParam_Header *BattleHandler_PushWork(ServerFlow *a1, BattleHandlerEffect a2, int a3);
+// extern void BattleHandler_PopWork(ServerFlow *a1, void *a2);
+// extern void BattleHandler_PushRun(ServerFlow *a1, BattleHandlerEffect a2, int a3);
+// extern bool BattleMon_IsFullHP(BattleMon *a1);
+// extern int BattleHandler_AddArg(HandlerParam_StrParams *result, int a2);
+// extern void BattleHandler_StrSetup(HandlerParam_StrParams *result, unsigned __int8 a2, __int16 a3);
+// extern ConditionData Condition_MakePermanent();
+// extern ConditionData BattleMon_GetMoveCondition(BattleMon *a1, MoveCondition a2);
+// extern bool ServerControl_ChangeWeatherCheck(ServerFlow *a1, unsigned int a2, int a3); 
+// extern BattleFieldStatus *BtlSetup_GetFieldStatus(MainModule *a1);
+// extern int ServerControl_ChangeWeather(ServerFlow *a1, unsigned int a2, int a3);
+// extern int ServerControl_ChangeWeatherCore(ServerFlow *a1, int a2, int a3);
+// extern int ServerControl_FieldEffectCore(ServerFlow *a1, int a2, ConditionData a3, int a4);
+// extern SVCL_WORK *BattleServer_GetClientWork(BtlServerWk *a1, int a2);
+// extern int ServerControl_AfterSwitchIn(ServerFlow *a1);
+// extern int ServerControl_SwitchInCore(ServerFlow *a1, int a2, unsigned int a3, int a4);
+// extern BattleMon *BattleParty_GetPartyMember(BattleParty *a1, unsigned int a2);
+// extern bool BattleMon_IsFainted(BattleMon *a1);
+// extern int BattleMon_GetHeldItem(BattleMon *a1);
+// extern int BtlSetup_GetBattleStyle(MainModule *a1);
+// extern FaintRecord *Handler_GetFaintRecord(ServerFlow *a1);
+// extern void MainModule_RegisterPokedexSeenFlag(MainModule *a1, int a2, int a3);
+// extern int j_j_FaintRecord_GetCount(FaintRecord *a1, unsigned int turn);
+// extern int j_j_FaintRecord_GetPokeID(FaintRecord *a1, unsigned int a2, unsigned int a3);
+// extern bool MainModule_IsAllyMonID(unsigned int a1, unsigned int a2);
+// extern int BattleMon_GetHPRatio(BattleMon *a1);
+// extern int Handler_CalculateSpeed(ServerFlow *a1, BattleMon *a2, int a3);
+// extern bool BattleMon_CheckIfMoveCondition(BattleMon *a1, MoveCondition a2);
+// extern int ServerEvent_GetWeather(ServerFlow *a1);
+// extern int Handler_GetPrevUsedMove(ServerFlow *a1);
+// extern unsigned int RandomInRange(unsigned int a1, unsigned int a2);
+// extern MoveCondition BattleMon_GetStatus(BattleMon *a1);
+// extern bool BattleMon_HasType(BattleMon *a1, Types a2);
+// extern bool BattleMon_GetConditionFlag(BattleMon *a1, ConditionFlag a2);
+// extern int BattleMon_GetPreviousMoveID(BattleMon *a1);
+// extern int BattleMon_GetPreviousMove(BattleMon *a1);
+// extern bool BattleMon_GetTurnFlag(BattleMon *a1, TurnFlag a2);
+// extern int PML_ItemIsBerry(u16 itemId);
+// extern u32 div32(u32 numerator, u32 denominator);
+// extern bool HandlerCommon_CheckIfCanStealPokeItem(ServerFlow *a1, unsigned int a2, int a3);
+// extern BattleMon *PokeCon_GetBattleMon(void *a1, int a2);
+// extern bool PML_MoveIsDamaging(int id);
+// extern BattleMon *MainModule_GetIllusionDisguise(MainModule *a1, int a2, int a3);
+// extern int Handler_SimulationEffectivenessCore(ServerFlow *a1, int a2, int a3, int a4);
+// extern void ServerEvent_GetMoveParam(ServerFlow *a1, int a2, int a3, MoveParam *a4);
+// extern int j_j_IsNotAllowedCopycatMove(int a1);
+// extern int ItemGetParam(u16 a1, ItemField a2);
+// extern int Handler_GetBattleTerrain(ServerFlow *a1);
+// extern int BattleMon_GetPokeType(BattleMon *a1);
+// extern bool Handler_IsSideEffectActive(ServerFlow *a1, int a2, int a3);
+// extern bool GetSideFromMonID(unsigned int a1);
+// extern int Move_GetPP(BattleMon *a1, unsigned int a2);
+// extern u16 PML_MoveGetBasePower(int id);
+// extern int ServerEvent_CalcDamage(
+//     ServerFlow *a1,
+//     BattleMon *AttackingMon,
+//     BattleMon *DefendingMon,
+//     MoveParam *MoveParam,
+//     int TypeEffectiveness,
+//     int targetDmgRatio,
+//     int criticalFlag,
+//     int BattleDebugMode,
+//     _WORD *destDamage);
+// extern u8 PML_MoveGetType(int a1);
+// extern bool getMoveFlag(int a1, MoveFlag a2);
+// extern ServerFlow *BattleServer_GetServerFlow(BtlServerWk *a1);
+// extern int BattleField_GetWeather();
+// extern BattleMon *BattleParty_GetMonData(BattleParty *a1, unsigned int a2);
+// extern int BattleRandom(unsigned int a1);
+// extern int CheckIfMonToSwitchToWithSEMove(BtlClientWk *a1, BattleMon *a2, int Effectiveness);
+// extern int Condition_GetParam(ConditionData a1);
+// extern int Move_SearchIndex(BattleMon *a1, int a2);
+// extern int Handler_GetExistFrontPokePos(ServerFlow *a1, int a2);
+// extern int Handler_SimulationDamage(ServerFlow *a1, int a2, int a3, int a4, bool a5, bool a6);
+// extern BattleMon *Handler_GetBattleMon(ServerFlow *a1, int a2);
+// extern int Handler_ExpandPokeID(ServerFlow *a1, __int16 a2, u8 *a3);
+#pragma endregion 
+
 
 extern "C"
 {
 
 #pragma region DamageCalcStateTracking
 
-    //     struct keyPair
-    //     {
-    //         u32 dirty;
-    //         u32 value;
-    //     };
+    struct keyPair
+    {
+        u32 dirty;
+        u32 value;
+    };
 
-    //     keyPair calcTable[6][6][4] = {
-    //         {{{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-    //          {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-    //          {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-    //          {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-    //          {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-    //          {{0, 0}, {0, 0}, {0, 0}, {0, 0}}},
-    //         {{{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-    //          {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-    //          {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-    //          {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-    //          {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-    //          {{0, 0}, {0, 0}, {0, 0}, {0, 0}}},
-    //         {{{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-    //          {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-    //          {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-    //          {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-    //          {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-    //          {{0, 0}, {0, 0}, {0, 0}, {0, 0}}},
-    //         {{{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-    //          {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-    //          {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-    //          {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-    //          {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-    //          {{0, 0}, {0, 0}, {0, 0}, {0, 0}}},
-    //         {{{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-    //          {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-    //          {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-    //          {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-    //          {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-    //          {{0, 0}, {0, 0}, {0, 0}, {0, 0}}},
-    //         {{{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-    //          {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-    //          {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-    //          {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-    //          {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-    //          {{0, 0}, {0, 0}, {0, 0}, {0, 0}}},
-    //     };
+    keyPair calcTable[6][6][4] = {
+        {{{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+         {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+         {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+         {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+         {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+         {{0, 0}, {0, 0}, {0, 0}, {0, 0}}},
+        {{{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+         {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+         {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+         {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+         {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+         {{0, 0}, {0, 0}, {0, 0}, {0, 0}}},
+        {{{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+         {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+         {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+         {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+         {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+         {{0, 0}, {0, 0}, {0, 0}, {0, 0}}},
+        {{{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+         {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+         {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+         {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+         {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+         {{0, 0}, {0, 0}, {0, 0}, {0, 0}}},
+        {{{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+         {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+         {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+         {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+         {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+         {{0, 0}, {0, 0}, {0, 0}, {0, 0}}},
+        {{{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+         {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+         {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+         {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+         {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+         {{0, 0}, {0, 0}, {0, 0}, {0, 0}}},
+    };
 
-    //     int NumOfCalcs = 0;
-    //     int NumOfCalcsAvoided = 0;
+    int NumOfCalcs = 0;
+    int NumOfCalcsAvoided = 0;
 
-    //     void resetCalcTable()
-    //     {
-    //         for (int i = 0; i < 6; i++)
-    //         {
-    //             for (int k = 0; k < 6; k++)
-    //             {
-    //                 for (int j = 0; j < 4; j++)
-    //                 {
-    //                     calcTable[i][k][j].dirty = 0;
-    //                     calcTable[i][k][j].value = 0;
-    //                 }
-    //             }
-    //         }
-    //         k::Printf("\nThe number of calcs performed this turn was %d and the number of calcs avoided was %d\n", NumOfCalcs, NumOfCalcsAvoided);
-    //         NumOfCalcs = 0;
-    //         NumOfCalcsAvoided = 0;
-    //     }
+    void resetCalcTable()
+    {
+        for (int i = 0; i < 6; i++)
+        {
+            for (int k = 0; k < 6; k++)
+            {
+                for (int j = 0; j < 4; j++)
+                {
+                    calcTable[i][k][j].dirty = 0;
+                    calcTable[i][k][j].value = 0;
+                }
+            }
+        }
+        k::Printf("\nThe number of calcs performed this turn was %d and the number of calcs avoided was %d\n", NumOfCalcs, NumOfCalcsAvoided);
+        NumOfCalcs = 0;
+        NumOfCalcsAvoided = 0;
+    }
 
-    //     u8 GetMovePos(BattleMon *mon, MoveID move)
-    //     {
-    //         int movecount = BattleMon_GetMoveCount(mon);
-    //         int count = 0;
-    //         if (movecount)
-    //         {
-    //             do
-    //             {
-    //                 if (Move_GetID(mon, count) == move)
-    //                 {
-    //                     return count;
-    //                 }
-    //             } while (count < movecount);
-    //         }
-    //         return 5;
-    //     }
+    u8 GetMovePos(BattleMon *mon, MoveID move)
+    {
+        int movecount = BattleMon_GetMoveCount(mon);
+        int count = 0;
+        if (movecount)
+        {
+            do
+            {
+                if (Move_GetID(mon, count) == move)
+                {
+                    return count;
+                }
+            } while (count < movecount);
+        }
+        return 5;
+    }
 
-    //     u32 checkCalcTable(ServerFlow *flow, BattleMon *attacker, BattleMon *defender, MoveID move)
-    //     {
-    //         int index1 = Handler_PokeIDToPokePos(flow, attacker->ID);
-    //         int index2 = Handler_PokeIDToPokePos(flow, defender->ID);
-    //         int index3 = GetMovePos(attacker, move);
+    u32 checkCalcTable(ServerFlow *flow, BattleMon *attacker, BattleMon *defender, MoveID move)
+    {
+        int index1 = Handler_PokeIDToPokePos(flow, attacker->ID);
+        int index2 = Handler_PokeIDToPokePos(flow, defender->ID);
+        int index3 = GetMovePos(attacker, move);
 
-    //         if (index3 > 4)
-    //         {
-    //             return 0;
-    //         }
+        if (index3 > 4)
+        {
+            return 0;
+        }
 
-    //         NumOfCalcs++;
-    //         if (calcTable[index1][index2][index3].dirty == 1)
-    //         {
-    //             NumOfCalcsAvoided++;
-    //             return calcTable[index1][index2][index3].value;
-    //         }
-    //         return 0;
-    //     }
+        NumOfCalcs++;
+        if (calcTable[index1][index2][index3].dirty == 1)
+        {
+            NumOfCalcsAvoided++;
+            return calcTable[index1][index2][index3].value;
+        }
+        return 0;
+    }
 
-    //     void saveToCalcTable(ServerFlow *flow, BattleMon *attacker, BattleMon *defender, MoveID move, u32 damage)
-    //     {
-    //         int index1 = Handler_PokeIDToPokePos(flow, attacker->ID);
-    //         int index2 = Handler_PokeIDToPokePos(flow, defender->ID);
-    //         int index3 = GetMovePos(attacker, move);
+    void saveToCalcTable(ServerFlow *flow, BattleMon *attacker, BattleMon *defender, MoveID move, u32 damage)
+    {
+        int index1 = Handler_PokeIDToPokePos(flow, attacker->ID);
+        int index2 = Handler_PokeIDToPokePos(flow, defender->ID);
+        int index3 = GetMovePos(attacker, move);
 
-    //         calcTable[index1][index2][index3].dirty = 1;
-    //         calcTable[index1][index2][index3].value = damage;
-    //     }
+        calcTable[index1][index2][index3].dirty = 1;
+        calcTable[index1][index2][index3].value = damage;
+    }
 
-    //     void THUMB_BRANCH_ServerControl_TurnCheckField(ServerFlow *a1)
-    //     {
-    //         resetCalcTable();
-    //         BattleField_TurnCheck(TurnCheckCallback_Field, a1);
-    //         ServerDisplay_AddCommon(a1->serverCommandQueue, 47, 0);
-    //     }
+    void THUMB_BRANCH_ServerControl_TurnCheckField(ServerFlow *a1)
+    {
+        resetCalcTable();
+        BattleField_TurnCheck(TurnCheckCallback_Field, a1);
+        ServerDisplay_AddCommon(a1->serverCommandQueue, 47, 0);
+    }
 
 #pragma endregion
 
@@ -190,9 +313,6 @@ extern "C"
     {
         EventWorkSave *eventWork = GameData_GetEventWork(GAME_DATA);
         u16 *lvl_cap_ptr = EventWork_GetWkPtr(eventWork, 16415);
-
-        // k::Printf("Current crit setting is %d\n", *lvl_cap_ptr);
-
         return *lvl_cap_ptr;
     }
 
@@ -457,7 +577,6 @@ extern "C"
         BattleEventVar_SetConstValue(VAR_MOVE_TYPE, a4);
         BattleEventVar_SetRewriteOnceValue(VAR_NO_TYPE_EFFECTIVENESS, 0);
         BattleEventVar_SetRewriteOnceValue(VAR_SET_TYPE_EFFECTIVENESS, 0);
-        // j_j_BTL_SICKEVENT_CheckNotEffectByType(a1, a3);
         j_j_Condition_CheckUnaffectedByType(a1, a3);
         BattleEvent_CallHandlers(a1, EVENT_CHECK_TYPE_EFFECTIVENESS);
         Value = BattleEventVar_GetValue(VAR_NO_TYPE_EFFECTIVENESS);
@@ -465,13 +584,10 @@ extern "C"
         BattleEventVar_Pop();
         if (v11 >= 2)
         {
-            // //k::printf("\nMon 1 Type 1 is %d\nMon 1 Type 2 is %d\nMon 2 Type 1 is %d\nMon 2 Type 2 is %d\na4 = %d", PokeTypePair_GetType1(BattleMon_GetPokeType(a2)), PokeTypePair_GetType2(BattleMon_GetPokeType(a2)), PokeTypePair_GetType1(BattleMon_GetPokeType(a3)), PokeTypePair_GetType2(BattleMon_GetPokeType(a3)), a4);
-            // //k::printf("\n\nTypeEffectiveness is %d\na4 is %d\nActualType is %d\na5 as int is %d\nv11 is %d\n\n", GetTypeEffectivenessAltered(a4, ActualType), a4, ActualType, (int)a5, v11);
             return (TypeEffectiveness)GetTypeEffectivenessAltered(a4, a5);
         }
         else if (v11)
         {
-            // //k::printf("\nWe're in here\n");
             return EFFECTIVENESS_1;
         }
         result = PersonalGetTypeEffectiveness(a4, a5);
@@ -633,8 +749,9 @@ extern "C"
                 CreateSpikes(0, a1, 0, 0, 0, 15, Permanent, 208);
             }
 
-            if (trainerId == 4){
-                 CreateSpikes(0, a1, 0, 0, 0, 14, Condition_MakePermanent(), 208);
+            if (trainerId == 4)
+            {
+                CreateSpikes(0, a1, 0, 0, 0, 14, Condition_MakePermanent(), 210);
             }
         }
 
@@ -753,701 +870,704 @@ extern "C"
         return false;
     }
 
-    // int CheckRatio(ServerFlow *a1, BattleMon *AttackingMon, BattleMon *DefendingMon, int MoveID)
-    // {
-    //     // Reversal and Flail
-    //     if (MoveID == MOVE175_FLAIL || MoveID == MOVE179_REVERSAL)
-    //     {
-    //         int Value;
-    //         Value = BattleMon_GetHPRatio(AttackingMon);
-    //         if (Value == 409600)
-    //         {
-    //             return 4096;
-    //         }
-    //         else if (Value < 409600 && Value >= 281600)
-    //         {
-    //             return 8192;
-    //         }
-    //         else if (Value < 281600 && Value >= 145000)
-    //         {
-    //             return 16384;
-    //         }
-    //         else if (Value < 145000 && Value >= 85300)
-    //         {
-    //             return 32768;
-    //         }
-    //         else if (Value < 85300 && Value >= 42700)
-    //         {
-    //             return 40960;
-    //         }
-    //         else if (Value < 42700 && Value >= 17100)
-    //         {
-    //             return 61440;
-    //         }
-    //         else
-    //         {
-    //             return 81920;
-    //         }
-    //     }
-    //     // Water Spout and Eruption
-    //     if (MoveID == MOVE323_WATER_SPOUT || MoveID == MOVE284_ERUPTION)
-    //     {
-    //         int Value;
-    //         Value = BattleMon_GetHPRatio(AttackingMon);
-    //         if (Value == 409600)
-    //         {
-    //             return 4096;
-    //         }
-    //         else if (Value < 409600 && Value >= 384000)
-    //         {
-    //             return 3840;
-    //         }
-    //         else if (Value < 384000 && Value >= 358400)
-    //         {
-    //             return 3584;
-    //         }
-    //         else if (Value < 358400 && Value >= 332800)
-    //         {
-    //             return 3328;
-    //         }
-    //         else if (Value < 332800 && Value >= 307200)
-    //         {
-    //             return 3072;
-    //         }
-    //         else if (Value < 307200 && Value >= 281600)
-    //         {
-    //             return 2816;
-    //         }
-    //         else if (Value < 281600 && Value >= 256000)
-    //         {
-    //             return 2560;
-    //         }
-    //         else if (Value < 256000 && Value >= 230400)
-    //         {
-    //             return 2304;
-    //         }
-    //         else if (Value < 230400 && Value >= 204800)
-    //         {
-    //             return 2408;
-    //         }
-    //         else
-    //         {
-    //             return 0;
-    //         }
-    //     }
-    //     // Electro Ball
-    //     if (MoveID == MOVE486_ELECTRO_BALL)
-    //     {
-    //         if (Handler_CalculateSpeed(a1, AttackingMon, 0) > Handler_CalculateSpeed(a1, DefendingMon, 0))
-    //         {
-    //             return 8192;
-    //         }
-    //     }
-    //     // Gyro Ball
-    //     if (MoveID == MOVE360_GYRO_BALL)
-    //     {
-    //         if (Handler_CalculateSpeed(a1, AttackingMon, 0) < Handler_CalculateSpeed(a1, DefendingMon, 0))
-    //         {
-    //             return 8192;
-    //         }
-    //     }
-    //     // //k::print("\nCheck #1");
-    //     if (MoveID == MOVE474_VENOSHOCK)
-    //     {
-    //         if (BattleMon_CheckIfMoveCondition(DefendingMon, CONDITION_POISON))
-    //         {
-    //             return 8192;
-    //         }
-    //     }
-    //     /* Add checks here for Utility Umbrella and Overcoat */
-    //     if (MoveID == MOVE076_SOLAR_BEAM || MoveID == MOVE554_SOLAR_BLADE)
-    //     {
-    //         if (ServerEvent_GetWeather(a1) != WEATHER_SUN && AttackingMon->HeldItem != IT0271_POWER_HERB && BattleMon_GetValue(AttackingMon, VALUE_EFFECTIVE_ABILITY) != ABIL034_CHLOROPHYLL && BattleMon_GetValue(AttackingMon, VALUE_EFFECTIVE_ABILITY) != ABIL094_SOLAR_POWER && BattleMon_GetValue(AttackingMon, VALUE_EFFECTIVE_ABILITY) != ABIL122_FLOWER_GIFT)
-    //         {
-    //             return 0;
-    //         }
-    //         else
-    //         {
-    //             if (BattleMon_GetValue(AttackingMon, VALUE_EFFECTIVE_ABILITY) == ABIL142_OVERCOAT || AttackingMon->HeldItem == IT0544_UTILITY_UMBRELLA)
-    //             {
-    //                 return 0;
-    //             }
-    //         }
-    //     }
-    //     //  Skull Bash and Meteor Beam and Sky Attack
-    //     if (MoveID == MOVE130_SKULL_BASH || MoveID == MOVE553_METEOR_BEAM || MoveID == MOVE143_SKY_ATTACK)
-    //     {
-    //         if (AttackingMon->HeldItem != IT0271_POWER_HERB)
-    //         {
-    //             if (RandomInRange(0, 100) > 60)
-    //             {
-    //                 return 0;
-    //             }
-    //         }
-    //     }
-    //     // Electro Shot
-    //     /* Add check here for Utility Umbrella or Overcoat */
-    //     if (MoveID == MOVE193_ELECTRO_SHOT)
-    //     {
-    //         if (ServerEvent_GetWeather(a1) != 2 && AttackingMon->HeldItem != IT0271_POWER_HERB)
-    //         {
-    //             return 0;
-    //         }
-    //         else
-    //         {
-    //             if (BattleMon_GetValue(AttackingMon, VALUE_EFFECTIVE_ABILITY) == ABIL142_OVERCOAT || AttackingMon->HeldItem == IT0544_UTILITY_UMBRELLA)
-    //             {
-    //                 return 0;
-    //             }
-    //         }
-    //     }
-    //     //  Hex, Beat Up, Infernal Parade, Barb Barrage
-    //     if (MoveID == MOVE169_INFERNAL_PARADE || MoveID == MOVE272_BARB_BARRAGE || MoveID == MOVE251_BEAT_UP || MoveID == MOVE506_HEX || MoveID == MOVE244_BITTER_MALICE)
-    //     {
-    //         if (BattleMon_GetStatus(DefendingMon))
-    //         {
-    //             return 8192;
-    //         }
-    //     }
-    //     //  Acrobatics
-    //     if (MoveID == MOVE512_ACROBATICS)
-    //     {
-    //         if (!AttackingMon->HeldItem || AttackingMon->HeldItem == IT0556_FLYING_GEM)
-    //         {
-    //             return 8192;
-    //         }
-    //     }
-    //     //  All 2 hit moves
-    //     if (MoveID == MOVE003_DOUBLE_SLAP || MoveID == MOVE022_VINE_WHIPS || MoveID == MOVE458_DOUBLE_HIT || MoveID == MOVE024_DOUBLE_KICK || MoveID == MOVE011_DUAL_WINGBEAT || MoveID == MOVE041_TWINEEDLE || MoveID == MOVE155_BONEMERANG || MoveID == MOVE544_GEAR_GRIND || MoveID == MOVE530_DUAL_CHOP)
-    //     {
-    //         return 8192;
-    //     }
-    //     //  All 3 hit moves
-    //     if (MoveID == MOVE167_TRIPLE_KICK || MoveID == MOVE471_TRIPLE_DIVE || MoveID == MOVE470_TRIPLE_AXEL || MoveID == MOVE161_TRI_ATTACK)
-    //     {
-    //         return 12288;
-    //     }
-    //     //  Brine
-    //     if (MoveID == MOVE362_BRINE)
-    //     {
-    //         if (BattleMon_GetHPRatio(DefendingMon) <= 204800)
-    //         {
-    //             return 8192;
-    //         }
-    //         else
-    //         {
-    //             return 4096;
-    //         }
-    //     }
-    //     if (MoveID == MOVE514_RETALIATE)
-    //     {
-    //         if (checkRetaliate(a1, AttackingMon->ID, 1u))
-    //         {
-    //             return 8192;
-    //         }
-    //     }
-    //     // First Impression
-    //     if (MoveID == MOVE373_1ST_IMPRESSION)
-    //     {
-    //         if (BattleMon_GetConditionFlag(AttackingMon, CONDITIONFLAG_ACTIONDONE))
-    //         {
-    //             return 0;
-    //         }
-    //     }
-    //     //  Facade
-    //     if (MoveID == MOVE263_FACADE)
-    //     {
-    //         if (BattleMon_GetStatus(AttackingMon))
-    //         {
-    //             return 8192;
-    //         }
-    //     }
-    //     //  Wake Up Slap and Dream Eater
-    //     if (MoveID == MOVE358_WAKE_UP_SLAP || MoveID == MOVE138_DREAM_EATER)
-    //     {
-    //         if (BattleMon_CheckIfMoveCondition(DefendingMon, CONDITION_SLEEP))
-    //         {
-    //             return 8192;
-    //         }
-    //     }
-    //     //  All multihit moves
-    //     if (MoveID == MOVE004_COMET_PUNCH || MoveID == MOVE013_RAZOR_WINDS || MoveID == MOVE042_PIN_MISSILE ||
-    //         MoveID == MOVE131_SPIKE_CANNON || MoveID == MOVE140_BARRAGE || MoveID == MOVE154_FURY_SWIPES || MoveID == MOVE198_BONE_RUSH ||
-    //         MoveID == MOVE292_ARM_THRUST || MoveID == MOVE331_BULLET_SEED || MoveID == MOVE333_ICICLE_SPEAR || MoveID == MOVE350_ROCK_BLAST ||
-    //         MoveID == MOVE541_TAIL_SLAP || MoveID == MOVE378_SCALE_SHOT)
-    //     {
-    //         if (BattleMon_GetValue(AttackingMon, VALUE_EFFECTIVE_ABILITY) == ABIL092_SKILL_LINK)
-    //         {
-    //             return 20480;
-    //         }
-    //         else if (AttackingMon->HeldItem == IT0317_LOADED_DICE || AttackingMon->HeldItem == IT0312_TERA_DICE)
-    //         {
-    //             return 16384;
-    //         }
-    //         else
-    //         {
-    //             return 8192;
-    //         }
-    //     }
-    //     // Hyper Beam
-    //     if (MoveID == MOVE063_HYPER_BEAM)
-    //     {
-    //         if (BattleMon_GetPreviousMove(AttackingMon) == MOVE063_HYPER_BEAM && !BattleMon_GetTurnFlag(AttackingMon, TURNFLAG_MOVEFAILEDLASTTURN))
-    //         {
-    //             return 0;
-    //         }
-    //     }
-    //     // Giga Impact
-    //     if (MoveID == MOVE416_GIGA_IMPACT)
-    //     {
-    //         if (BattleMon_GetPreviousMove(AttackingMon) == MOVE416_GIGA_IMPACT && !BattleMon_GetTurnFlag(AttackingMon, TURNFLAG_MOVEFAILEDLASTTURN))
-    //         {
-    //             return 0;
-    //         }
-    //     }
-    //     // Stomping Tantrum / Uproar / Seething Chill / Thrash / Temper Flare
-    //     if (MoveID == MOVE493_STOMPIN_TANTRUM || MoveID == MOVE253_UPROAR || MoveID == MOVE288_GRUDGE || MoveID == MOVE218_TEMPER_FLARE || MoveID == MOVE220_SEETHING_COLD || MoveID == MOVE037_THRASH)
-    //     {
-    //         if (BattleMon_GetTurnFlag(AttackingMon, TURNFLAG_MOVEFAILEDLASTTURN))
-    //         {
-    //             return 8192;
-    //         }
-    //     }
-    //     // Weather Ball / Weather Crash
-    //     if (MoveID == MOVE311_WEATHER_BALL || MoveID == MOVE271_WEATHER_CRASH)
-    //     {
-    //         if (AttackingMon->HeldItem != IT0544_UTILITY_UMBRELLA && BattleMon_GetValue(AttackingMon, VALUE_EFFECTIVE_ABILITY) != ABIL142_OVERCOAT && ServerEvent_GetWeather(a1) > 0)
-    //         {
-    //             if (ServerEvent_GetWeather(a1) > 0 || BattleMon_GetValue(AttackingMon, VALUE_EFFECTIVE_ABILITY) == ABIL034_CHLOROPHYLL && BattleMon_GetValue(AttackingMon, VALUE_EFFECTIVE_ABILITY) == ABIL094_SOLAR_POWER && BattleMon_GetValue(AttackingMon, VALUE_EFFECTIVE_ABILITY) == ABIL122_FLOWER_GIFT)
-    //             {
-    //                 return 8192;
-    //             }
-    //         }
-    //     }
-    //     // Payback, Revenge, and Avalanche
-    //     if (MoveID == MOVE371_PAYBACK || MoveID == MOVE279_REVENGE || MoveID == MOVE419_AVALANCHE)
-    //     {
-    //         if (Handler_CalculateSpeed(a1, AttackingMon, 0) < Handler_CalculateSpeed(a1, DefendingMon, 0))
-    //         {
-    //             return 8192;
-    //         }
-    //     }
-    //     // Spit Up
-    //     if (MoveID == MOVE255_SPIT_UP)
-    //     {
-    //         if (!PML_ItemIsBerry(AttackingMon->HeldItem))
-    //         {
-    //             return 0;
-    //         }
-    //     }
-    //     if (MoveID == MOVE282_KNOCK_OFF)
-    //     {
-    //         if (BattleMon_GetHeldItem(DefendingMon) && !HandlerCommon_CheckIfCanStealPokeItem(a1, AttackingMon->ID, DefendingMon->ID))
-    //         {
-    //             return 6144;
-    //         }
-    //     }
-    //     if (MoveID == MOVE478_POWER_TRIP || MoveID == MOVE500_STORED_POWER)
-    //     {
-    //         int total;
-    //         int temp;
-    //         total = 0;
-    //         for (int i = 0; i < 7; ++i)
-    //         {
-    //             temp = BattleMon_GetValue(AttackingMon, BattleMonValues[i]) - 6;
-    //             if (temp > 0)
-    //             {
-    //                 total += temp;
-    //             }
-    //         }
-    //         if (total)
-    //         {
-    //             return 4096 + (2048 * total);
-    //         }
-    //     }
-    //     return 4096;
-    // }
+    int CheckRatio(ServerFlow *a1, BattleMon *AttackingMon, BattleMon *DefendingMon, int MoveID)
+    {
+        // Reversal and Flail
+        if (MoveID == MOVE175_FLAIL || MoveID == MOVE179_REVERSAL)
+        {
+            int Value;
+            Value = BattleMon_GetHPRatio(AttackingMon);
+            if (Value == 409600)
+            {
+                return 4096;
+            }
+            else if (Value < 409600 && Value >= 281600)
+            {
+                return 8192;
+            }
+            else if (Value < 281600 && Value >= 145000)
+            {
+                return 16384;
+            }
+            else if (Value < 145000 && Value >= 85300)
+            {
+                return 32768;
+            }
+            else if (Value < 85300 && Value >= 42700)
+            {
+                return 40960;
+            }
+            else if (Value < 42700 && Value >= 17100)
+            {
+                return 61440;
+            }
+            else
+            {
+                return 81920;
+            }
+        }
+        // Water Spout and Eruption
+        if (MoveID == MOVE323_WATER_SPOUT || MoveID == MOVE284_ERUPTION)
+        {
+            int Value;
+            Value = BattleMon_GetHPRatio(AttackingMon);
+            if (Value == 409600)
+            {
+                return 4096;
+            }
+            else if (Value < 409600 && Value >= 384000)
+            {
+                return 3840;
+            }
+            else if (Value < 384000 && Value >= 358400)
+            {
+                return 3584;
+            }
+            else if (Value < 358400 && Value >= 332800)
+            {
+                return 3328;
+            }
+            else if (Value < 332800 && Value >= 307200)
+            {
+                return 3072;
+            }
+            else if (Value < 307200 && Value >= 281600)
+            {
+                return 2816;
+            }
+            else if (Value < 281600 && Value >= 256000)
+            {
+                return 2560;
+            }
+            else if (Value < 256000 && Value >= 230400)
+            {
+                return 2304;
+            }
+            else if (Value < 230400 && Value >= 204800)
+            {
+                return 2408;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+        // Electro Ball
+        if (MoveID == MOVE486_ELECTRO_BALL)
+        {
+            if (Handler_CalculateSpeed(a1, AttackingMon, 0) > Handler_CalculateSpeed(a1, DefendingMon, 0))
+            {
+                return 8192;
+            }
+        }
+        // Gyro Ball
+        if (MoveID == MOVE360_GYRO_BALL)
+        {
+            if (Handler_CalculateSpeed(a1, AttackingMon, 0) < Handler_CalculateSpeed(a1, DefendingMon, 0))
+            {
+                return 8192;
+            }
+        }
+        // //k::print("\nCheck #1");
+        if (MoveID == MOVE474_VENOSHOCK)
+        {
+            if (BattleMon_CheckIfMoveCondition(DefendingMon, CONDITION_POISON))
+            {
+                return 8192;
+            }
+        }
+        /* Add checks here for Utility Umbrella and Overcoat */
+        if (MoveID == MOVE076_SOLAR_BEAM || MoveID == MOVE554_SOLAR_BLADE)
+        {
+            if (ServerEvent_GetWeather(a1) != WEATHER_SUN && AttackingMon->HeldItem != IT0271_POWER_HERB && BattleMon_GetValue(AttackingMon, VALUE_EFFECTIVE_ABILITY) != ABIL034_CHLOROPHYLL && BattleMon_GetValue(AttackingMon, VALUE_EFFECTIVE_ABILITY) != ABIL094_SOLAR_POWER && BattleMon_GetValue(AttackingMon, VALUE_EFFECTIVE_ABILITY) != ABIL122_FLOWER_GIFT)
+            {
+                return 0;
+            }
+            else
+            {
+                if (BattleMon_GetValue(AttackingMon, VALUE_EFFECTIVE_ABILITY) == ABIL142_OVERCOAT || AttackingMon->HeldItem == IT0544_UTILITY_UMBRELLA)
+                {
+                    return 0;
+                }
+            }
+        }
+        //  Skull Bash and Meteor Beam and Sky Attack
+        if (MoveID == MOVE130_SKULL_BASH || MoveID == MOVE553_METEOR_BEAM || MoveID == MOVE143_SKY_ATTACK)
+        {
+            if (AttackingMon->HeldItem != IT0271_POWER_HERB)
+            {
+                if (RandomInRange(0, 100) > 60)
+                {
+                    return 0;
+                }
+            }
+        }
+        // Electro Shot
+        /* Add check here for Utility Umbrella or Overcoat */
+        if (MoveID == MOVE193_ELECTRO_SHOT)
+        {
+            if (ServerEvent_GetWeather(a1) != 2 && AttackingMon->HeldItem != IT0271_POWER_HERB)
+            {
+                return 0;
+            }
+            else
+            {
+                if (BattleMon_GetValue(AttackingMon, VALUE_EFFECTIVE_ABILITY) == ABIL142_OVERCOAT || AttackingMon->HeldItem == IT0544_UTILITY_UMBRELLA)
+                {
+                    return 0;
+                }
+            }
+        }
+        //  Hex, Beat Up, Infernal Parade, Barb Barrage
+        if (MoveID == MOVE169_INFERNAL_PARADE || MoveID == MOVE272_BARB_BARRAGE || MoveID == MOVE251_BEAT_UP || MoveID == MOVE506_HEX || MoveID == MOVE244_BITTER_MALICE)
+        {
+            if (BattleMon_GetStatus(DefendingMon))
+            {
+                return 8192;
+            }
+        }
+        //  Acrobatics
+        if (MoveID == MOVE512_ACROBATICS)
+        {
+            if (!AttackingMon->HeldItem || AttackingMon->HeldItem == IT0556_FLYING_GEM)
+            {
+                return 8192;
+            }
+        }
+        //  All 2 hit moves
+        if (MoveID == MOVE003_DOUBLE_SLAP || MoveID == MOVE022_VINE_WHIPS || MoveID == MOVE458_DOUBLE_HIT || MoveID == MOVE024_DOUBLE_KICK || MoveID == MOVE011_DUAL_WINGBEAT || MoveID == MOVE041_TWINEEDLE || MoveID == MOVE155_BONEMERANG || MoveID == MOVE544_GEAR_GRIND || MoveID == MOVE530_DUAL_CHOP)
+        {
+            return 8192;
+        }
+        //  All 3 hit moves
+        if (MoveID == MOVE167_TRIPLE_KICK || MoveID == MOVE471_TRIPLE_DIVE || MoveID == MOVE470_TRIPLE_AXEL || MoveID == MOVE161_TRI_ATTACK)
+        {
+            return 12288;
+        }
+        //  Brine
+        if (MoveID == MOVE362_BRINE)
+        {
+            if (BattleMon_GetHPRatio(DefendingMon) <= 204800)
+            {
+                return 8192;
+            }
+            else
+            {
+                return 4096;
+            }
+        }
+        if (MoveID == MOVE514_RETALIATE)
+        {
+            if (checkRetaliate(a1, AttackingMon->ID, 1u))
+            {
+                return 8192;
+            }
+        }
+        // First Impression
+        if (MoveID == MOVE373_1ST_IMPRESSION)
+        {
+            if (BattleMon_GetConditionFlag(AttackingMon, CONDITIONFLAG_ACTIONDONE))
+            {
+                return 0;
+            }
+        }
+        //  Facade
+        if (MoveID == MOVE263_FACADE)
+        {
+            if (BattleMon_GetStatus(AttackingMon))
+            {
+                return 8192;
+            }
+        }
+        //  Wake Up Slap and Dream Eater
+        if (MoveID == MOVE358_WAKE_UP_SLAP || MoveID == MOVE138_DREAM_EATER)
+        {
+            if (BattleMon_CheckIfMoveCondition(DefendingMon, CONDITION_SLEEP))
+            {
+                return 8192;
+            }
+        }
+        //  All multihit moves
+        if (MoveID == MOVE004_COMET_PUNCH || MoveID == MOVE013_RAZOR_WINDS || MoveID == MOVE042_PIN_MISSILE ||
+            MoveID == MOVE131_SPIKE_CANNON || MoveID == MOVE140_BARRAGE || MoveID == MOVE154_FURY_SWIPES || MoveID == MOVE198_BONE_RUSH ||
+            MoveID == MOVE292_ARM_THRUST || MoveID == MOVE331_BULLET_SEED || MoveID == MOVE333_ICICLE_SPEAR || MoveID == MOVE350_ROCK_BLAST ||
+            MoveID == MOVE541_TAIL_SLAP || MoveID == MOVE378_SCALE_SHOT)
+        {
+            if (BattleMon_GetValue(AttackingMon, VALUE_EFFECTIVE_ABILITY) == ABIL092_SKILL_LINK)
+            {
+                return 20480;
+            }
+            else if (AttackingMon->HeldItem == IT0317_LOADED_DICE || AttackingMon->HeldItem == IT0312_TERA_DICE)
+            {
+                return 16384;
+            }
+            else
+            {
+                return 8192;
+            }
+        }
+        // Hyper Beam
+        if (MoveID == MOVE063_HYPER_BEAM)
+        {
+            if (BattleMon_GetPreviousMove(AttackingMon) == MOVE063_HYPER_BEAM && !BattleMon_GetTurnFlag(AttackingMon, TURNFLAG_MOVEFAILEDLASTTURN))
+            {
+                return 0;
+            }
+        }
+        // Giga Impact
+        if (MoveID == MOVE416_GIGA_IMPACT)
+        {
+            if (BattleMon_GetPreviousMove(AttackingMon) == MOVE416_GIGA_IMPACT && !BattleMon_GetTurnFlag(AttackingMon, TURNFLAG_MOVEFAILEDLASTTURN))
+            {
+                return 0;
+            }
+        }
+        // Stomping Tantrum / Uproar / Seething Chill / Thrash / Temper Flare
+        if (MoveID == MOVE493_STOMPIN_TANTRUM || MoveID == MOVE253_UPROAR || MoveID == MOVE288_GRUDGE || MoveID == MOVE218_TEMPER_FLARE || MoveID == MOVE220_SEETHING_COLD || MoveID == MOVE037_THRASH)
+        {
+            if (BattleMon_GetTurnFlag(AttackingMon, TURNFLAG_MOVEFAILEDLASTTURN))
+            {
+                return 8192;
+            }
+        }
+        // Weather Ball / Weather Crash
+        if (MoveID == MOVE311_WEATHER_BALL || MoveID == MOVE271_WEATHER_CRASH)
+        {
+            if (AttackingMon->HeldItem != IT0544_UTILITY_UMBRELLA && BattleMon_GetValue(AttackingMon, VALUE_EFFECTIVE_ABILITY) != ABIL142_OVERCOAT && ServerEvent_GetWeather(a1) > 0)
+            {
+                if (ServerEvent_GetWeather(a1) > 0 || BattleMon_GetValue(AttackingMon, VALUE_EFFECTIVE_ABILITY) == ABIL034_CHLOROPHYLL && BattleMon_GetValue(AttackingMon, VALUE_EFFECTIVE_ABILITY) == ABIL094_SOLAR_POWER && BattleMon_GetValue(AttackingMon, VALUE_EFFECTIVE_ABILITY) == ABIL122_FLOWER_GIFT)
+                {
+                    return 8192;
+                }
+            }
+        }
+        // Payback, Revenge, and Avalanche
+        if (MoveID == MOVE371_PAYBACK || MoveID == MOVE279_REVENGE || MoveID == MOVE419_AVALANCHE)
+        {
+            if (Handler_CalculateSpeed(a1, AttackingMon, 0) < Handler_CalculateSpeed(a1, DefendingMon, 0))
+            {
+                return 8192;
+            }
+        }
+        // Spit Up
+        if (MoveID == MOVE255_SPIT_UP)
+        {
+            if (!PML_ItemIsBerry(AttackingMon->HeldItem))
+            {
+                return 0;
+            }
+        }
+        if (MoveID == MOVE282_KNOCK_OFF)
+        {
+            if (BattleMon_GetHeldItem(DefendingMon) && !HandlerCommon_CheckIfCanStealPokeItem(a1, AttackingMon->ID, DefendingMon->ID))
+            {
+                return 6144;
+            }
+        }
+        if (MoveID == MOVE478_POWER_TRIP || MoveID == MOVE500_STORED_POWER)
+        {
+            int total;
+            int temp;
+            total = 0;
+            for (int i = 0; i < 7; ++i)
+            {
+                temp = BattleMon_GetValue(AttackingMon, BattleMonValues[i]) - 6;
+                if (temp > 0)
+                {
+                    total += temp;
+                }
+            }
+            if (total)
+            {
+                return 4096 + (2048 * total);
+            }
+        }
+        return 4096;
+    }
 
 #pragma endregion
 
 #pragma region SimulationDamage
-    //     int THUMB_BRANCH_SAFESTACK_Handler_SimulationDamage(ServerFlow *a1, int a2, int a3, int a4, bool isSimulation, bool something)
-    //     {
-    //         int TypeEffectiveness;   // r6
-    //         BattleMon *DefendingMon; // [sp+14h] [bp-34h]
-    //         BattleMon *AttackingMon; // [sp+18h] [bp-30h]
-    //         __int16 moveParam[20];
-    //         unsigned __int16 v12; // [sp+1Ch] [bp-2Ch] BYREF
-    //         int v14;              // [sp+48h] [bp+0h]
-    //         int v15;              // [sp+4Ch] [bp+4h]
-    //         int v16;
-    //         unsigned int ratio;
-    //         int critFlag;
-    //         int v17;
-    //         int isMoldBreaker;
-    //         int a4check;
+    int THUMB_BRANCH_SAFESTACK_Handler_SimulationDamage(ServerFlow *a1, int a2, int a3, int a4, bool isSimulation, bool something)
+    {
+        int TypeEffectiveness;   // r6
+        BattleMon *DefendingMon; // [sp+14h] [bp-34h]
+        BattleMon *AttackingMon; // [sp+18h] [bp-30h]
+        __int16 moveParam[20];
+        unsigned __int16 v12; // [sp+1Ch] [bp-2Ch] BYREF
+        int v14;              // [sp+48h] [bp+0h]
+        int v15;              // [sp+4Ch] [bp+4h]
+        int v16;
+        unsigned int ratio;
+        int critFlag;
+        int v17;
+        int isMoldBreaker;
+        int a4check;
+        int a4check2;
 
-    //         AttackingMon = PokeCon_GetBattleMon(a1->pokeCon, a2);
-    //         DefendingMon = PokeCon_GetBattleMon(a1->pokeCon, a3);
+        AttackingMon = PokeCon_GetBattleMon(a1->pokeCon, a2);
+        DefendingMon = PokeCon_GetBattleMon(a1->pokeCon, a3);
 
-    //         if (!a4)
-    //         {
-    //             return 0;
-    //         }
+        if (!a4)
+        {
+            return 0;
+        }
 
-    //         v12 = checkCalcTable(a1, AttackingMon, DefendingMon, (MoveID)a4);
-    //         if (v12)
-    //         {
-    //             return v12;
-    //         }
+        v12 = checkCalcTable(a1, AttackingMon, DefendingMon, (MoveID)a4);
+        if (v12)
+        {
+            return v12;
+        }
 
-    //         isMoldBreaker = HasMoldBreaker(AttackingMon);
+        isMoldBreaker = HasMoldBreaker(AttackingMon);
 
-    //         // Checks for Static Damage Moves
-    //         if (a4 == MOVE101_NIGHT_SHADE && !BattleMon_HasType(DefendingMon, TYPE_NORMAL))
-    //         {
-    //             return AttackingMon->Level;
-    //         }
-    //         else if (a4 == MOVE069_SEISMIC_TOSS && (!BattleMon_HasType(DefendingMon, TYPE_GHOST) || BattleMon_GetValue(AttackingMon, VALUE_EFFECTIVE_ABILITY) == ABIL113_SCRAPPY))
-    //         {
-    //             return AttackingMon->Level;
-    //         }
-    //         else if (a4 == MOVE149_PSYWAVE && (!BattleMon_HasType(DefendingMon, TYPE_DARK) || BattleMon_GetValue(AttackingMon, VALUE_EFFECTIVE_ABILITY) == ABIL039_INNER_FOCUS))
-    //         {
-    //             return AttackingMon->Level;
-    //         }
-    //         else if (a4 == MOVE162_SUPER_FANG && (!BattleMon_HasType(DefendingMon, TYPE_GHOST) || BattleMon_GetValue(AttackingMon, VALUE_EFFECTIVE_ABILITY) == ABIL113_SCRAPPY))
-    //         {
-    //             int losthealth = DefendingMon->CurrentHP / 2u;
-    //             if (!losthealth)
-    //             {
-    //                 losthealth = 1;
-    //             }
-    //             if (BattleMon_GetValue(AttackingMon, VALUE_EFFECTIVE_ABILITY) == ABIL093_STRONG_JAW)
-    //             {
-    //                 return (losthealth + DefendingMon->CurrentHP / 4u);
-    //             }
-    //             else
-    //             {
-    //                 return losthealth;
-    //             }
-    //         }
-    //         else
-    //         {
-    //             a4check = a4;
-    //         }
+        // Checks for Static Damage Moves
+        if (a4 == MOVE101_NIGHT_SHADE && !BattleMon_HasType(DefendingMon, TYPE_NORMAL))
+        {
+            return AttackingMon->Level;
+        }
+        else if (a4 == MOVE069_SEISMIC_TOSS && (!BattleMon_HasType(DefendingMon, TYPE_GHOST) || BattleMon_GetValue(AttackingMon, VALUE_EFFECTIVE_ABILITY) == ABIL113_SCRAPPY))
+        {
+            return AttackingMon->Level;
+        }
+        else if (a4 == MOVE149_PSYWAVE && (!BattleMon_HasType(DefendingMon, TYPE_DARK) || BattleMon_GetValue(AttackingMon, VALUE_EFFECTIVE_ABILITY) == ABIL039_INNER_FOCUS))
+        {
+            return AttackingMon->Level;
+        }
+        else if (a4 == MOVE162_SUPER_FANG && (!BattleMon_HasType(DefendingMon, TYPE_GHOST) || BattleMon_GetValue(AttackingMon, VALUE_EFFECTIVE_ABILITY) == ABIL113_SCRAPPY))
+        {
+            int losthealth = DefendingMon->CurrentHP / 2u;
+            if (!losthealth)
+            {
+                losthealth = 1;
+            }
+            if (BattleMon_GetValue(AttackingMon, VALUE_EFFECTIVE_ABILITY) == ABIL093_STRONG_JAW)
+            {
+                return (losthealth + div32(DefendingMon->CurrentHP, 4u));
+            }
+            else
+            {
+                return losthealth;
+            }
+        }
+        else
+        {
+            a4check = a4;
+        }
 
-    //         if (!PML_MoveIsDamaging(a4))
-    //         {
-    //             int actualMove;
+        if (!PML_MoveIsDamaging(a4))
+        {
+            int actualMove;
 
-    //             // Copycat
-    //             if (a4 == MOVE383_COPYCAT && (BattleMon_GetValue(AttackingMon, VALUE_EFFECTIVE_ABILITY) == ABIL158_PRANKSTER || AttackingMon->HeldItem == IT0136_TRICKSTER_HERB || (Handler_CalculateSpeed(a1, AttackingMon, 0) > Handler_CalculateSpeed(a1, DefendingMon, 0))))
-    //             {
-    //                 actualMove = Handler_GetPrevUsedMove(a1);
-    //                 if (actualMove && !j_j_IsNotAllowedCopycatMove(actualMove))
-    //                 {
-    //                     a4check = actualMove;
-    //                 }
-    //                 else
-    //                 {
-    //                     return 0;
-    //                 }
-    //             }
-    //             // Nature Power
-    //             else if (a4 == MOVE267_NATURE_POWER)
-    //             {
-    //                 int BattleTerrain = Handler_GetBattleTerrain(a1);
+            // Copycat
+            if (a4 == MOVE383_COPYCAT && (BattleMon_GetValue(AttackingMon, VALUE_EFFECTIVE_ABILITY) == ABIL158_PRANKSTER || AttackingMon->HeldItem == IT0136_TRICKSTER_HERB || (Handler_CalculateSpeed(a1, AttackingMon, 0) > Handler_CalculateSpeed(a1, DefendingMon, 0))))
+            {
+                actualMove = Handler_GetPrevUsedMove(a1);
+                if (actualMove && !j_j_IsNotAllowedCopycatMove(actualMove))
+                {
+                    a4check = actualMove;
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+            // Nature Power
+            else if (a4 == MOVE267_NATURE_POWER)
+            {
+                int BattleTerrain = Handler_GetBattleTerrain(a1);
 
-    //                 // //k::printf("\n\nThe Battle Terrain is %d\n\n", BattleTerrain);
+                // //k::printf("\n\nThe Battle Terrain is %d\n\n", BattleTerrain);
 
-    //                 if (BattleTerrain == 5u)
-    //                 {
-    //                     a4check = 402;
-    //                 }
-    //                 else if (BattleTerrain == 11u)
-    //                 {
-    //                     a4check = 89;
-    //                 }
-    //                 else if (BattleTerrain == 0xCu)
-    //                 {
-    //                     a4check = 56;
-    //                 }
-    //                 else if (BattleTerrain == 7u)
-    //                 {
-    //                     a4check = 59;
-    //                 }
-    //                 else if (BattleTerrain == 9u)
-    //                 {
-    //                     a4check = 426;
-    //                 }
-    //                 else if (BattleTerrain == 0xAu)
-    //                 {
-    //                     a4check = 157;
-    //                 }
-    //                 else if (BattleTerrain == 0xDu)
-    //                 {
-    //                     a4check = 58;
-    //                 }
-    //                 else
-    //                 {
-    //                     a4check = 161;
-    //                 }
-    //             }
-    //             else
-    //             {
-    //                 return 0;
-    //             }
-    //         }
+                if (BattleTerrain == 5u)
+                {
+                    a4check = 402;
+                }
+                else if (BattleTerrain == 11u)
+                {
+                    a4check = 89;
+                }
+                else if (BattleTerrain == 0xCu)
+                {
+                    a4check = 56;
+                }
+                else if (BattleTerrain == 7u)
+                {
+                    a4check = 59;
+                }
+                else if (BattleTerrain == 9u)
+                {
+                    a4check = 426;
+                }
+                else if (BattleTerrain == 0xAu)
+                {
+                    a4check = 157;
+                }
+                else if (BattleTerrain == 0xDu)
+                {
+                    a4check = 58;
+                }
+                else
+                {
+                    a4check = 161;
+                }
+            }
+            else
+            {
+                return 0;
+            }
+        }
 
-    //         ++a1->SimulationCounter;
+        ++a1->simulationCounter;
 
-    //         if (BattleMon_IsIllusionEnabled(DefendingMon))
-    //         {
-    //             DefendingMon = MainModule_GetIllusionDisguise(a1->mainModule, (int)a1->pokeCon, (int)DefendingMon);
-    //         }
+        if (BattleMon_IsIllusionEnabled(DefendingMon))
+        {
+            DefendingMon = MainModule_GetIllusionDisguise(a1->mainModule, (int)a1->pokeCon, (int)DefendingMon);
+        }
+        TypeEffectiveness = Handler_SimulationEffectivenessCore(a1, a2, a3, a4check2);
+        ratio = CheckRatio(a1, AttackingMon, DefendingMon, a4check);
+        ServerEvent_GetMoveParam(a1, a4check, (int)AttackingMon, (MoveParam *)moveParam);
 
-    //         TypeEffectiveness = Handler_SimulationEffectivenessCore(a1, a2, a3, a4check);
-    //         ratio = CheckRatio(a1, AttackingMon, DefendingMon, a4check);
-    //         ServerEvent_GetMoveParam(a1, a4check, (int)AttackingMon, (MoveParam *)moveParam);
+        if (a4check == MOVE165_STRUGGLE)
+        {
+            ((MoveParam *)moveParam)->moveType = 17;
+        }
+        int fakemove;
+        if ((a4check == MOVE311_WEATHER_BALL || a4check == MOVE271_WEATHER_CRASH) && (BattleMon_GetHeldItem(AttackingMon) != IT0544_UTILITY_UMBRELLA || BattleMon_GetValue(AttackingMon, VALUE_EFFECTIVE_ABILITY) == ABIL142_OVERCOAT))
+        {
+            v17 = ServerEvent_GetWeather(a1);
+            if (v17 == 1)
+            {
+                fakemove = MOVE053_FLAMETHROWER;
+                ((MoveParam *)moveParam)->moveType = TYPE_FIRE;
+            }
+            else if (v17 == 2)
+            {
+                fakemove = MOVE057_SURF;
+                ((MoveParam *)moveParam)->moveType = TYPE_WATER;
+            }
+            else if (v17 == 3)
+            {
+                fakemove = MOVE058_ICE_BEAM;
+                ((MoveParam *)moveParam)->moveType = TYPE_ICE;
+            }
+            else if (v17 == 4)
+            {
+                fakemove = MOVE157_ROCK_SLIDE;
+                ((MoveParam *)moveParam)->moveType = TYPE_ROCK;
+            }
+        }
 
-    //         if (a4check == MOVE165_STRUGGLE)
-    //         {
-    //             ((MoveParam *)moveParam)->moveType = 17;
-    //         }
-    //         if ((a4check == MOVE311_WEATHER_BALL || a4check == MOVE271_WEATHER_CRASH) && (BattleMon_GetHeldItem(AttackingMon) != IT0544_UTILITY_UMBRELLA || BattleMon_GetValue(AttackingMon, VALUE_EFFECTIVE_ABILITY) == ABIL142_OVERCOAT))
-    //         {
-    //             v17 = ServerEvent_GetWeather(a1);
-    //             if (v17 == 1)
-    //             {
-    //                 TypeEffectiveness = Handler_SimulationEffectivenessCore(a1, a2, a3, MOVE053_FLAMETHROWER);
-    //                 ((MoveParam *)moveParam)->moveType = TYPE_FIRE;
-    //             }
-    //             else if (v17 == 2)
-    //             {
-    //                 TypeEffectiveness = Handler_SimulationEffectivenessCore(a1, a2, a3, MOVE057_SURF);
-    //                 ((MoveParam *)moveParam)->moveType = TYPE_WATER;
-    //             }
-    //             else if (v17 == 3)
-    //             {
-    //                 TypeEffectiveness = Handler_SimulationEffectivenessCore(a1, a2, a3, MOVE058_ICE_BEAM);
-    //                 ((MoveParam *)moveParam)->moveType = TYPE_ICE;
-    //             }
-    //             else if (v17 == 4)
-    //             {
-    //                 TypeEffectiveness = Handler_SimulationEffectivenessCore(a1, a2, a3, MOVE408_POWER_GEM);
-    //                 ((MoveParam *)moveParam)->moveType = TYPE_ROCK;
-    //             }
-    //         }
+        if (a4check == MOVE363_NATURAL_GIFT)
+        {
+            if (PML_ItemIsBerry(BattleMon_GetHeldItem(AttackingMon)))
+            {
+                Types Type = (Types)ItemGetParam(BattleMon_GetHeldItem(AttackingMon), ITSTAT_NATURAL_GIFT_TYPE);
 
-    //         if (a4check == MOVE363_NATURAL_GIFT)
-    //         {
-    //             if (PML_ItemIsBerry(BattleMon_GetHeldItem(AttackingMon)))
-    //             {
-    //                 Types Type = (Types)ItemGetParam(BattleMon_GetHeldItem(AttackingMon), ITSTAT_NATURAL_GIFT_TYPE);
-    //                 if (IsEqual(Type, TYPE_FIGHTING))
-    //                 {
-    //                     TypeEffectiveness = Handler_SimulationEffectivenessCore(a1, a2, a3, MOVE280_BRICK_BREAK);
-    //                 }
-    //                 else if (IsEqual(Type, TYPE_FLYING))
-    //                 {
-    //                     TypeEffectiveness = Handler_SimulationEffectivenessCore(a1, a2, a3, MOVE332_AERIAL_ACE);
-    //                 }
-    //                 else if (IsEqual(Type, TYPE_FAIRY))
-    //                 {
-    //                     TypeEffectiveness = Handler_SimulationEffectivenessCore(a1, a2, a3, MOVE066_SUBMISSION);
-    //                 }
-    //                 else if (IsEqual(Type, TYPE_FIRE))
-    //                 {
-    //                     TypeEffectiveness = Handler_SimulationEffectivenessCore(a1, a2, a3, MOVE053_FLAMETHROWER);
-    //                 }
-    //                 else if (IsEqual(Type, TYPE_WATER))
-    //                 {
-    //                     TypeEffectiveness = Handler_SimulationEffectivenessCore(a1, a2, a3, MOVE057_SURF);
-    //                 }
-    //                 else if (IsEqual(Type, TYPE_ELECTRIC))
-    //                 {
-    //                     TypeEffectiveness = Handler_SimulationEffectivenessCore(a1, a2, a3, MOVE085_THUNDERBOLT);
-    //                 }
-    //                 else if (IsEqual(Type, TYPE_ROCK))
-    //                 {
-    //                     TypeEffectiveness = Handler_SimulationEffectivenessCore(a1, a2, a3, MOVE408_POWER_GEM);
-    //                 }
-    //                 else if (IsEqual(Type, TYPE_GROUND))
-    //                 {
-    //                     TypeEffectiveness = Handler_SimulationEffectivenessCore(a1, a2, a3, MOVE089_EARTHQUAKE);
-    //                 }
-    //                 else if (IsEqual(Type, TYPE_STEEL))
-    //                 {
-    //                     TypeEffectiveness = Handler_SimulationEffectivenessCore(a1, a2, a3, MOVE360_GYRO_BALL);
-    //                 }
-    //                 else if (IsEqual(Type, TYPE_DRAGON))
-    //                 {
-    //                     TypeEffectiveness = Handler_SimulationEffectivenessCore(a1, a2, a3, MOVE337_DRAGON_CLAW);
-    //                 }
-    //                 else if (IsEqual(Type, TYPE_ICE))
-    //                 {
-    //                     TypeEffectiveness = Handler_SimulationEffectivenessCore(a1, a2, a3, MOVE058_ICE_BEAM);
-    //                 }
-    //                 else if (IsEqual(Type, TYPE_BUG))
-    //                 {
-    //                     TypeEffectiveness = Handler_SimulationEffectivenessCore(a1, a2, a3, MOVE404_X_SCISSOR);
-    //                 }
-    //                 else if (IsEqual(Type, TYPE_POISON))
-    //                 {
-    //                     TypeEffectiveness = Handler_SimulationEffectivenessCore(a1, a2, a3, MOVE440_CROSS_POISON);
-    //                 }
-    //                 else if (IsEqual(Type, TYPE_PSYCHIC))
-    //                 {
-    //                     TypeEffectiveness = Handler_SimulationEffectivenessCore(a1, a2, a3, MOVE060_PSYBEAM);
-    //                 }
-    //                 else if (IsEqual(Type, TYPE_GHOST))
-    //                 {
-    //                     TypeEffectiveness = Handler_SimulationEffectivenessCore(a1, a2, a3, MOVE421_SHADOW_CLAW);
-    //                 }
-    //                 else if (IsEqual(Type, TYPE_DARK))
-    //                 {
-    //                     TypeEffectiveness = Handler_SimulationEffectivenessCore(a1, a2, a3, MOVE282_KNOCK_OFF);
-    //                 }
-    //                 else if (IsEqual(Type, TYPE_GRASS))
-    //                 {
-    //                     TypeEffectiveness = Handler_SimulationEffectivenessCore(a1, a2, a3, MOVE202_GIGA_DRAIN);
-    //                 }
-    //                 ((MoveParam *)moveParam)->moveType = ItemGetParam(BattleMon_GetHeldItem(AttackingMon), ITSTAT_NATURAL_GIFT_TYPE);
+                if (IsEqual(Type, TYPE_FIGHTING))
+                {
+                    fakemove = MOVE280_BRICK_BREAK;
+                }
+                else if (IsEqual(Type, TYPE_FLYING))
+                {
+                    fakemove = MOVE332_AERIAL_ACE;
+                }
+                else if (IsEqual(Type, TYPE_FAIRY))
+                {
+                    fakemove = MOVE296_MOONBLAST;
+                }
+                else if (IsEqual(Type, TYPE_FIRE))
+                {
+                    fakemove = MOVE053_FLAMETHROWER;
+                }
+                else if (IsEqual(Type, TYPE_WATER))
+                {
+                    fakemove = MOVE057_SURF;
+                }
+                else if (IsEqual(Type, TYPE_ELECTRIC))
+                {
+                    fakemove = MOVE085_THUNDERBOLT;
+                }
+                else if (IsEqual(Type, TYPE_ROCK))
+                {
+                    fakemove = MOVE157_ROCK_SLIDE;
+                }
+                else if (IsEqual(Type, TYPE_GROUND))
+                {
+                    fakemove = MOVE089_EARTHQUAKE;
+                }
+                else if (IsEqual(Type, TYPE_STEEL))
+                {
+                    fakemove = MOVE360_GYRO_BALL;
+                }
+                else if (IsEqual(Type, TYPE_DRAGON))
+                {
+                    fakemove = MOVE337_DRAGON_CLAW;
+                }
+                else if (IsEqual(Type, TYPE_ICE))
+                {
+                    fakemove = MOVE058_ICE_BEAM;
+                }
+                else if (IsEqual(Type, TYPE_BUG))
+                {
+                    fakemove = MOVE405_BUG_BUZZ;
+                }
+                else if (IsEqual(Type, TYPE_POISON))
+                {
+                    fakemove = MOVE440_CROSS_POISON;
+                }
+                else if (IsEqual(Type, TYPE_PSYCHIC))
+                {
+                    fakemove = MOVE060_PSYBEAM;
+                }
+                else if (IsEqual(Type, TYPE_GHOST))
+                {
+                    fakemove = MOVE247_SHADOW_BALL;
+                }
+                else if (IsEqual(Type, TYPE_DARK))
+                {
+                    fakemove = MOVE242_CRUNCH;
+                }
+                else if (IsEqual(Type, TYPE_GRASS))
+                {
+                    fakemove = MOVE379_PETAL_BLIZZARD;
+                }
+                ((MoveParam *)moveParam)->moveType = Type;
 
-    //                 if (90 == ItemGetParam(BattleMon_GetHeldItem(AttackingMon), ITSTAT_NATURAL_GIFT_POWER))
-    //                 {
-    //                     ratio = 4608;
-    //                 }
-    //                 if (100 == ItemGetParam(BattleMon_GetHeldItem(AttackingMon), ITSTAT_NATURAL_GIFT_POWER))
-    //                 {
-    //                     ratio = 5120;
-    //                 }
-    //             }
-    //         }
-    //         if (a4check == MOVE546_TECHNO_BLAST)
-    //         {
-    //             if (AttackingMon->HeldItem == IT0119_CHILL_DRIVE)
-    //             {
-    //                 TypeEffectiveness = Handler_SimulationEffectivenessCore(a1, a2, a3, MOVE058_ICE_BEAM);
-    //                 ((MoveParam *)moveParam)->moveType = TYPE_ICE;
-    //             }
-    //             if (AttackingMon->HeldItem == IT0116_DOUSE_DRIVE)
-    //             {
-    //                 TypeEffectiveness = Handler_SimulationEffectivenessCore(a1, a2, a3, MOVE056_HYDRO_PUMP);
-    //                 ((MoveParam *)moveParam)->moveType = TYPE_WATER;
-    //             }
-    //             if (AttackingMon->HeldItem == IT0118_BURN_DRIVE)
-    //             {
-    //                 TypeEffectiveness = Handler_SimulationEffectivenessCore(a1, a2, a3, MOVE083_FIRE_SPIN);
-    //                 ((MoveParam *)moveParam)->moveType = TYPE_FIRE;
-    //             }
-    //             if (AttackingMon->HeldItem == IT0117_SHOCK_DRIVE)
-    //             {
-    //                 TypeEffectiveness = Handler_SimulationEffectivenessCore(a1, a2, a3, MOVE085_THUNDERBOLT);
-    //                 ((MoveParam *)moveParam)->moveType = TYPE_ELECTRIC;
-    //             }
-    //         }
-    //         if (a4check == MOVE327_SKY_UPPERCUT || a4check == MOVE357_FREEZE_DRY)
-    //         {
-    //             TypeEffectiveness = GetTypeEffectivenessVsMonAltered(((MoveParam *)moveParam)->moveType, BattleMon_GetPokeType(DefendingMon));
-    //         }
+                if (90 == ItemGetParam(BattleMon_GetHeldItem(AttackingMon), ITSTAT_NATURAL_GIFT_POWER))
+                {
+                    ratio = 4608;
+                }
+                if (100 == ItemGetParam(BattleMon_GetHeldItem(AttackingMon), ITSTAT_NATURAL_GIFT_POWER))
+                {
+                    ratio = 5120;
+                }
+            }
+        }
+        if (a4check == MOVE546_TECHNO_BLAST)
+        {
+            if (AttackingMon->HeldItem == IT0119_CHILL_DRIVE)
+            {
+                fakemove = MOVE058_ICE_BEAM;
+                ((MoveParam *)moveParam)->moveType = TYPE_ICE;
+            }
+            if (AttackingMon->HeldItem == IT0116_DOUSE_DRIVE)
+            {
+                fakemove = MOVE057_SURF;
+                ((MoveParam *)moveParam)->moveType = TYPE_WATER;
+            }
+            if (AttackingMon->HeldItem == IT0118_BURN_DRIVE)
+            {
+                fakemove = MOVE053_FLAMETHROWER;
+                ((MoveParam *)moveParam)->moveType = TYPE_FIRE;
+            }
+            if (AttackingMon->HeldItem == IT0117_SHOCK_DRIVE)
+            {
+                fakemove = MOVE085_THUNDERBOLT;
+                ((MoveParam *)moveParam)->moveType = TYPE_ELECTRIC;
+            }
+        }
+        TypeEffectiveness = Handler_SimulationEffectivenessCore(a1, a2, a3, fakemove);
+        if (a4check == MOVE327_SKY_UPPERCUT || a4check == MOVE357_FREEZE_DRY)
+        {
+            TypeEffectiveness = GetTypeEffectivenessVsMonAltered(((MoveParam *)moveParam)->moveType, BattleMon_GetPokeType(DefendingMon));
+        }
 
-    //         if (a4check == MOVE533_SACRED_SWORD || a4check == MOVE547_RELIC_SONG)
-    //         {
-    //             TypeEffectiveness = GetTypeEffectivenessVsMonAlteredSacredSword(((MoveParam *)moveParam)->moveType, BattleMon_GetPokeType(DefendingMon));
-    //         }
+        if (a4check == MOVE533_SACRED_SWORD || a4check == MOVE547_RELIC_SONG)
+        {
+            TypeEffectiveness = GetTypeEffectivenessVsMonAlteredSacredSword(((MoveParam *)moveParam)->moveType, BattleMon_GetPokeType(DefendingMon));
+        }
 
-    //         if (a4check == MOVE498_CHIP_AWAY)
-    //         {
-    //             TypeEffectiveness = 3;
-    //         }
+        if (a4check == MOVE498_CHIP_AWAY)
+        {
+            TypeEffectiveness = 3;
+        }
 
-    //         if (!isMoldBreaker)
-    //         {
-    //             if (((MoveParam *)moveParam)->moveType == TYPE_FIRE && BattleMon_GetValue(DefendingMon, VALUE_EFFECTIVE_ABILITY) == ABIL021_WELL_BAKED_BODY)
-    //             {
-    //                 ratio = 0;
-    //             }
-    //             if ((BattleMon_GetValue(DefendingMon, VALUE_EFFECTIVE_ABILITY) == ABIL015_THUNDER_ARMOR || BattleMon_GetValue(DefendingMon, VALUE_EFFECTIVE_ABILITY) == ABIL031_LIGHTNING_ROD) && ((MoveParam *)moveParam)->moveType == TYPE_ELECTRIC)
-    //             {
-    //                 ratio = 0;
-    //             }
-    //             if ((BattleMon_GetValue(DefendingMon, VALUE_EFFECTIVE_ABILITY) == ABIL114_STORM_DRAIN || BattleMon_GetValue(DefendingMon, VALUE_EFFECTIVE_ABILITY) == ABIL087_DRY_SKIN) && ((MoveParam *)moveParam)->moveType == TYPE_WATER)
-    //             {
-    //                 ratio = 0;
-    //             }
-    //             if ((BattleMon_GetValue(DefendingMon, VALUE_EFFECTIVE_ABILITY) == ABIL157_SAP_SIPPER || BattleMon_GetValue(DefendingMon, VALUE_EFFECTIVE_ABILITY) == ABIL087_DRY_SKIN) && ((MoveParam *)moveParam)->moveType == TYPE_GRASS)
-    //             {
-    //                 ratio = 0;
-    //             }
-    //             if ((BattleMon_GetValue(DefendingMon, VALUE_EFFECTIVE_ABILITY) == ABIL026_LEVITATE || BattleMon_GetValue(DefendingMon, VALUE_EFFECTIVE_ABILITY) == ABIL087_DRY_SKIN) && ((MoveParam *)moveParam)->moveType == TYPE_GROUND)
-    //             {
-    //                 ratio = 0;
-    //             }
-    //             if (BattleMon_GetValue(DefendingMon, VALUE_EFFECTIVE_ABILITY) == ABIL006_BULLETPROOF && isInArray(a4check, 0))
-    //             {
-    //                 ratio = 0;
-    //             }
-    //             if (BattleMon_GetValue(DefendingMon, VALUE_EFFECTIVE_ABILITY) == ABIL051_WIND_RIDER && isInArray(a4check, 1))
-    //             {
-    //                 ratio = 0;
-    //             }
-    //         }
+        if (!isMoldBreaker)
+        {
+            if (((MoveParam *)moveParam)->moveType == TYPE_FIRE && BattleMon_GetValue(DefendingMon, VALUE_EFFECTIVE_ABILITY) == ABIL021_WELL_BAKED_BODY)
+            {
+                ratio = 0;
+            }
+            if ((BattleMon_GetValue(DefendingMon, VALUE_EFFECTIVE_ABILITY) == ABIL015_THUNDER_ARMOR || BattleMon_GetValue(DefendingMon, VALUE_EFFECTIVE_ABILITY) == ABIL031_LIGHTNING_ROD) && ((MoveParam *)moveParam)->moveType == TYPE_ELECTRIC)
+            {
+                ratio = 0;
+            }
+            if ((BattleMon_GetValue(DefendingMon, VALUE_EFFECTIVE_ABILITY) == ABIL114_STORM_DRAIN || BattleMon_GetValue(DefendingMon, VALUE_EFFECTIVE_ABILITY) == ABIL087_DRY_SKIN) && ((MoveParam *)moveParam)->moveType == TYPE_WATER)
+            {
+                ratio = 0;
+            }
+            if ((BattleMon_GetValue(DefendingMon, VALUE_EFFECTIVE_ABILITY) == ABIL157_SAP_SIPPER || BattleMon_GetValue(DefendingMon, VALUE_EFFECTIVE_ABILITY) == ABIL087_DRY_SKIN) && ((MoveParam *)moveParam)->moveType == TYPE_GRASS)
+            {
+                ratio = 0;
+            }
+            if ((BattleMon_GetValue(DefendingMon, VALUE_EFFECTIVE_ABILITY) == ABIL026_LEVITATE || BattleMon_GetValue(DefendingMon, VALUE_EFFECTIVE_ABILITY) == ABIL087_DRY_SKIN) && ((MoveParam *)moveParam)->moveType == TYPE_GROUND)
+            {
+                ratio = 0;
+            }
+            if (BattleMon_GetValue(DefendingMon, VALUE_EFFECTIVE_ABILITY) == ABIL006_BULLETPROOF && isInArray(a4check, 0))
+            {
+                ratio = 0;
+            }
+            if (BattleMon_GetValue(DefendingMon, VALUE_EFFECTIVE_ABILITY) == ABIL051_WIND_RIDER && isInArray(a4check, 1))
+            {
+                ratio = 0;
+            }
+        }
 
-    //         if (a4check == MOVE006_PAY_DAY || a4check == MOVE524_FROST_BREATH || a4check == MOVE440_CROSS_POISON || a4check == MOVE346_WICKED_BLOW || a4check == MOVE190_OCTAZOOKA || a4check == MOVE480_STORM_THROW || a4check == MOVE163_SLASH)
-    //         {
-    //             if (BattleMon_GetConditionFlag(DefendingMon, CONDITIONFLAG_DEFENSECURL))
-    //             {
-    //                 critFlag = 0;
-    //             }
-    //             else if (Handler_IsSideEffectActive(a1, GetSideFromMonID(BattleEventVar_GetValue(VAR_DEFENDING_MON)), 5))
-    //             {
-    //                 critFlag = 0;
-    //             }
-    //             else if (BattleMon_GetValue(DefendingMon, VALUE_EFFECTIVE_ABILITY) == ABIL004_BATTLE_ARMOR || BattleMon_GetValue(DefendingMon, VALUE_EFFECTIVE_ABILITY) == ABIL075_SHELL_ARMOR)
-    //             {
-    //                 if (!isMoldBreaker)
-    //                 {
-    //                     critFlag = 0;
-    //                 }
-    //                 else
-    //                 {
-    //                     critFlag = 1;
-    //                 }
-    //             }
-    //             critFlag = 1;
-    //         }
-    //         else
-    //         {
-    //             critFlag = 0;
-    //         }
+        if (a4check == MOVE006_PAY_DAY || a4check == MOVE524_FROST_BREATH || a4check == MOVE440_CROSS_POISON || a4check == MOVE346_WICKED_BLOW || a4check == MOVE190_OCTAZOOKA || a4check == MOVE480_STORM_THROW || a4check == MOVE163_SLASH)
+        {
+            if (BattleMon_GetConditionFlag(DefendingMon, CONDITIONFLAG_DEFENSECURL))
+            {
+                critFlag = 0;
+            }
+            else if (Handler_IsSideEffectActive(a1, GetSideFromMonID(BattleEventVar_GetValue(VAR_DEFENDING_MON)), 5))
+            {
+                critFlag = 0;
+            }
+            else if (BattleMon_GetValue(DefendingMon, VALUE_EFFECTIVE_ABILITY) == ABIL004_BATTLE_ARMOR || BattleMon_GetValue(DefendingMon, VALUE_EFFECTIVE_ABILITY) == ABIL075_SHELL_ARMOR)
+            {
+                if (!isMoldBreaker)
+                {
+                    critFlag = 0;
+                }
+                else
+                {
+                    critFlag = 1;
+                }
+            }
+            critFlag = 1;
+        }
+        else
+        {
+            critFlag = 0;
+        }
 
-    //         ServerEvent_CalcDamage(
-    //             a1,
-    //             AttackingMon,
-    //             DefendingMon,
-    //             (MoveParam *)moveParam,
-    //             TypeEffectiveness,
-    //             ratio,
-    //             critFlag,
-    //             isSimulation,
-    //             &v12);
-    //         --a1->SimulationCounter;
+        ServerEvent_CalcDamage(
+            a1,
+            AttackingMon,
+            DefendingMon,
+            (MoveParam *)moveParam,
+            TypeEffectiveness,
+            ratio,
+            critFlag,
+            isSimulation,
+            &v12);
+        --a1->simulationCounter;
 
-    //         /* Store v12 somewhere here, using the turnCount, attackerId, defenderId and move as your keys */
-    //         saveToCalcTable(a1, AttackingMon, DefendingMon, (MoveID)a4, v12);
+        /* Store v12 somewhere here, using the turnCount, attackerId, defenderId and move as your keys */
+        saveToCalcTable(a1, AttackingMon, DefendingMon, (MoveID)a4, v12);
 
-    //         if (a4check == MOVE228_PURSUIT && (v12 * 2) >= DefendingMon->CurrentHP)
-    //         {
-    //             if (RandomInRange(1, 100) >= 75)
-    //             {
-    //                 v12 *= 2;
-    //             }
-    //         }
+        if (a4check == MOVE228_PURSUIT && (v12 * 2) >= DefendingMon->CurrentHP)
+        {
+            if (RandomInRange(1, 100) >= 75)
+            {
+                v12 *= 2;
+            }
+        }
 
-    //         return v12;
-    //     }
+        return v12;
+    }
 
 #pragma endregion
 
@@ -2629,427 +2749,427 @@ extern "C"
 
     //     */
 
-    //     bool AlternateSwitchConditions(BtlClientWk *work, BattleMon *attackingMon, BattleMon *defendingMon)
-    //     {
-    //         __int16 ExistFrontPokePos; // r0
-    //         unsigned int pokeCount;
-    //         u8 opposingPokePos[5];
-    //         BattleMon *defender;
-    //         ServerFlow *flow;
-    //         unsigned int k;
+        bool AlternateSwitchConditions(BtlClientWk *work, BattleMon *attackingMon, BattleMon *defendingMon)
+        {
+            __int16 ExistFrontPokePos; // r0
+            unsigned int pokeCount;
+            u8 opposingPokePos[5];
+            BattleMon *defender;
+            ServerFlow *flow;
+            unsigned int k;
 
-    //         flow = BattleServer_GetServerFlow(work->mainModule->server);
-    //         ExistFrontPokePos = Handler_GetExistFrontPokePos(flow, attackingMon->ID);
-    //         pokeCount = Handler_ExpandPokeID(flow, ExistFrontPokePos | 0x100, opposingPokePos);
-    //         int turnCount = attackingMon->TurnCount;
-    //         int damage = 0;
-    //         bool switchout = 0;
+            flow = BattleServer_GetServerFlow(work->mainModule->server);
+            ExistFrontPokePos = Handler_GetExistFrontPokePos(flow, attackingMon->ID);
+            pokeCount = Handler_ExpandPokeID(flow, ExistFrontPokePos | 0x100, opposingPokePos);
+            int turnCount = attackingMon->TurnCount;
+            int damage = 0;
+            bool switchout = 0;
 
-    //         k::Printf("\n\nMidBattleSwitchAI: Debug Point 1: We have entered the function and will determine whether or not our outgoing damage is sufficient\n\n-----------\n\n");
+            k::Printf("\n\nMidBattleSwitchAI: Debug Point 1: We have entered the function and will determine whether or not our outgoing damage is sufficient\n\n-----------\n\n");
 
-    //         for (k = 0; k < pokeCount; (k + 1))
-    //         {
-    //             int i = 0;
-    //             defender = Handler_GetBattleMon(flow, opposingPokePos[k]);
-    //             int MoveCount = BattleMon_GetMoveCount(attackingMon);
-    //             int currentHp = defender->CurrentHP;
-    //             int moveDamage = 0;
-    //             k::Printf("\nMidBattleSwitchAI: Debug Point 2 for Loop %d: We are checking the user's damage output vs %d\n", k, defender->Species);
-    //             do
-    //             {
+            for (k = 0; k < pokeCount; (k + 1))
+            {
+                int i = 0;
+                defender = Handler_GetBattleMon(flow, opposingPokePos[k]);
+                int MoveCount = BattleMon_GetMoveCount(attackingMon);
+                int currentHp = defender->CurrentHP;
+                int moveDamage = 0;
+                k::Printf("\nMidBattleSwitchAI: Debug Point 2 for Loop %d: We are checking the user's damage output vs %d\n", k, defender->Species);
+                do
+                {
 
-    //                 moveDamage = Handler_SimulationDamage(flow,
-    //                                                       BattleMon_GetID(attackingMon),
-    //                                                       BattleMon_GetID(defender),
-    //                                                       Move_GetID(attackingMon, i), false, false);
+                    moveDamage = Handler_SimulationDamage(flow,
+                                                          BattleMon_GetID(attackingMon),
+                                                          BattleMon_GetID(defender),
+                                                          Move_GetID(attackingMon, i), false, false);
 
-    //                 k::Printf("\nMidBattleSwitchAI: Debug Point 3 for Loop %d:: The damage of move %d is %d\n", k, Move_GetID(attackingMon, i), damage);
+                    k::Printf("\nMidBattleSwitchAI: Debug Point 3 for Loop %d:: The damage of move %d is %d\n", k, Move_GetID(attackingMon, i), damage);
 
-    //                 if ((moveDamage * 2) >= currentHp)
-    //                 {
-    //                     k::Printf("\nMidBattleSwitchAI: Debug Point 4 for Loop %d:: We have confirmed that move %d has a OHKO or 2HKO vs enemy %d.\n", k, Move_GetID(attackingMon, i), defender->Species);
-    //                     return 0;
-    //                 }
-    //                 else
-    //                 {
-    //                     k::Printf("\nMidBattleSwitchAI: Debug Point 5 for Loop %d:: We have confirmed that move %d doesn't deal a OHKO or 2HKO\nWe will now check if it is higher than the highest damage recorded yet\n", k, Move_GetID(attackingMon, i));
+                    if ((moveDamage * 2) >= currentHp)
+                    {
+                        k::Printf("\nMidBattleSwitchAI: Debug Point 4 for Loop %d:: We have confirmed that move %d has a OHKO or 2HKO vs enemy %d.\n", k, Move_GetID(attackingMon, i), defender->Species);
+                        return 0;
+                    }
+                    else
+                    {
+                        k::Printf("\nMidBattleSwitchAI: Debug Point 5 for Loop %d:: We have confirmed that move %d doesn't deal a OHKO or 2HKO\nWe will now check if it is higher than the highest damage recorded yet\n", k, Move_GetID(attackingMon, i));
 
-    //                     if (moveDamage > damage)
-    //                     {
-    //                         k::Printf("\nMidBattleSwitchAI: Debug Point 5 for Loop %d: move %d is now our highest damage yet\n", k, moveDamage);
-    //                         damage = moveDamage;
-    //                     }
-    //                 }
-    //                 i++;
-    //             } while (i < MoveCount);
+                        if (moveDamage > damage)
+                        {
+                            k::Printf("\nMidBattleSwitchAI: Debug Point 5 for Loop %d: move %d is now our highest damage yet\n", k, moveDamage);
+                            damage = moveDamage;
+                        }
+                    }
+                    i++;
+                } while (i < MoveCount);
 
-    //             if ((damage * 10) < defender->MaxHP)
-    //             {
-    //                 k::Printf("\nMidBattleSwitchAI: Debug Point 6a for Loop %d: We deal less than 10%\n", k);
+                if ((damage * 10) < defender->MaxHP)
+                {
+                    k::Printf("\nMidBattleSwitchAI: Debug Point 6a for Loop %d: We deal less than 10%\n", k);
 
-    //                 if (turnCount >= 2)
-    //                 {
-    //                     if (RandomInRange(1, 100) < (10 + (turnCount * 2)))
-    //                     {
-    //                         switchout = 1;
-    //                     }
-    //                 }
-    //             }
+                    if (turnCount >= 2)
+                    {
+                        if (RandomInRange(1, 100) < (10 + (turnCount * 2)))
+                        {
+                            switchout = 1;
+                        }
+                    }
+                }
 
-    //             /* Moderately Negliglbe Damage */
-    //             else if ((damage * 8) < defender->MaxHP)
-    //             {
-    //                 if (turnCount >= 3)
-    //                 {
-    //                     if (RandomInRange(1, 100) < (5 + turnCount))
-    //                     {
-    //                         switchout = 1;
-    //                     }
-    //                 }
-    //             }
+                /* Moderately Negliglbe Damage */
+                else if ((damage * 8) < defender->MaxHP)
+                {
+                    if (turnCount >= 3)
+                    {
+                        if (RandomInRange(1, 100) < (5 + turnCount))
+                        {
+                            switchout = 1;
+                        }
+                    }
+                }
 
-    //             /* Mildly Negliglbe Damage */
-    //             else if ((damage * 4) < defender->MaxHP)
-    //             {
-    //                 k::Printf("\nMidBattleSwitchAI: Debug Point 6c for Loop %d:: We have confirmed that move %d has a OHKO or 2HKO vs enemy %d.\n", k, Move_GetID(attackingMon, i), defender->Species);
-    //                 if (turnCount >= 4)
-    //                 {
-    //                     if (RandomInRange(1, 100) < (1 + turnCount))
-    //                     {
-    //                         switchout = 1;
-    //                     }
-    //                 }
-    //             }
+                /* Mildly Negliglbe Damage */
+                else if ((damage * 4) < defender->MaxHP)
+                {
+                    k::Printf("\nMidBattleSwitchAI: Debug Point 6c for Loop %d:: We have confirmed that move %d has a OHKO or 2HKO vs enemy %d.\n", k, Move_GetID(attackingMon, i), defender->Species);
+                    if (turnCount >= 4)
+                    {
+                        if (RandomInRange(1, 100) < (1 + turnCount))
+                        {
+                            switchout = 1;
+                        }
+                    }
+                }
 
-    //             /* If the attacker can deal at least 25% damage to one of the combatants on the field, they won't switch out, even if they can't deal that much damage to the other combatant.*/
-    //             else
-    //             {
-    //                 k::Printf("\nMidBattleSwitchAI: Debug Point 7 for Loop %d: Our move deals more than 25% maximum health but less than 50%.\nNo change of switchout\n", k, Move_GetID(attackingMon, i), defender->Species);
+                /* If the attacker can deal at least 25% damage to one of the combatants on the field, they won't switch out, even if they can't deal that much damage to the other combatant.*/
+                else
+                {
+                    k::Printf("\nMidBattleSwitchAI: Debug Point 7 for Loop %d: Our move deals more than 25% maximum health but less than 50%.\nNo change of switchout\n", k, Move_GetID(attackingMon, i), defender->Species);
 
-    //                 return 0;
-    //             }
-    //         }
-    //         k::Printf("\nMidBattleSwitchAI: Debug Point 8: If negligible damage to both pokemon, chance at a switch out. If at least 25 percent to one of them, no chance. Switchout is %d\n", switchout);
+                    return 0;
+                }
+            }
+            k::Printf("\nMidBattleSwitchAI: Debug Point 8: If negligible damage to both pokemon, chance at a switch out. If at least 25 percent to one of them, no chance. Switchout is %d\n", switchout);
 
-    //         return switchout;
-    //     }
+            return switchout;
+        }
 
-    //     bool THUMB_BRANCH_SAFESTACK_ShouldSwitchIfChoicedIntoIneffectiveMove(BtlClientWk *work, BattleMon *attackingMon, BattleMon *defendingMon)
-    //     {
-    //         ConditionData MoveCondition; // r0
-    //         int Param;                   // r0
-    //         int TypeEffectiveness;
-    //         bool IsDamaging; // r6
-    //         int PokeType;    // r0
-    //         __int64 v10;     // kr00_8
-    //         bool result;     // r0
-    //         __int64 v12;     // r0
-    //         __int64 v13;     // kr08_8
-    //         __int64 v14;     // kr10_8
-    //         int moveID;      // [sp+0h] [bp-28h]
-    //         int temp;
-    //         int Type; // [sp+4h] [bp-24h]
+        bool THUMB_BRANCH_SAFESTACK_ShouldSwitchIfChoicedIntoIneffectiveMove(BtlClientWk *work, BattleMon *attackingMon, BattleMon *defendingMon)
+        {
+            ConditionData MoveCondition; // r0
+            int Param;                   // r0
+            int TypeEffectiveness;
+            bool IsDamaging; // r6
+            int PokeType;    // r0
+            __int64 v10;     // kr00_8
+            bool result;     // r0
+            __int64 v12;     // r0
+            __int64 v13;     // kr08_8
+            __int64 v14;     // kr10_8
+            int moveID;      // [sp+0h] [bp-28h]
+            int temp;
+            int Type; // [sp+4h] [bp-24h]
 
-    //         /* Encore and Choice Item Check */
-    //         if (!BattleMon_CheckIfMoveCondition(attackingMon, CONDITION_CHOICELOCK) && !BattleMon_CheckIfMoveCondition(attackingMon, CONDITION_ENCORE))
-    //         {
-    //             // If the two conditions this function is defined for are not relevant, switch to the other one.
-    //             return AlternateSwitchConditions(work, attackingMon, defendingMon);
-    //         }
+            /* Encore and Choice Item Check */
+            if (!BattleMon_CheckIfMoveCondition(attackingMon, CONDITION_CHOICELOCK) && !BattleMon_CheckIfMoveCondition(attackingMon, CONDITION_ENCORE))
+            {
+                // If the two conditions this function is defined for are not relevant, switch to the other one.
+                return AlternateSwitchConditions(work, attackingMon, defendingMon);
+            }
 
-    //         if (BattleMon_CheckIfMoveCondition(attackingMon, CONDITION_CHOICELOCK))
-    //         {
-    //             MoveCondition = BattleMon_GetMoveCondition(attackingMon, CONDITION_CHOICELOCK);
-    //             Param = Condition_GetParam(MoveCondition);
-    //         }
-    //         else if (BattleMon_CheckIfMoveCondition(attackingMon, CONDITION_ENCORE))
-    //         {
-    //             MoveCondition = BattleMon_GetMoveCondition(attackingMon, CONDITION_ENCORE);
-    //             Param = Condition_GetParam(MoveCondition);
-    //         }
+            if (BattleMon_CheckIfMoveCondition(attackingMon, CONDITION_CHOICELOCK))
+            {
+                MoveCondition = BattleMon_GetMoveCondition(attackingMon, CONDITION_CHOICELOCK);
+                Param = Condition_GetParam(MoveCondition);
+            }
+            else if (BattleMon_CheckIfMoveCondition(attackingMon, CONDITION_ENCORE))
+            {
+                MoveCondition = BattleMon_GetMoveCondition(attackingMon, CONDITION_ENCORE);
+                Param = Condition_GetParam(MoveCondition);
+            }
 
-    //         /* Set up Variables */
-    //         moveID = Param;
+            /* Set up Variables */
+            moveID = Param;
 
-    //         if (!Param)
-    //         {
-    //             return 0;
-    //         }
+            if (!Param)
+            {
+                return 0;
+            }
 
-    //         /* Torment Checks */
-    //         if (BattleMon_CheckIfMoveCondition(attackingMon, CONDITION_TORMENT))
-    //         {
-    //             return 1;
-    //         }
+            /* Torment Checks */
+            if (BattleMon_CheckIfMoveCondition(attackingMon, CONDITION_TORMENT))
+            {
+                return 1;
+            }
 
-    //         /* Disable Checks */
-    //         if (BattleMon_CheckIfMoveCondition(attackingMon, CONDITION_DISABLEMOVE))
-    //         {
-    //             ConditionData MoveConditionData = BattleMon_GetMoveCondition(attackingMon, CONDITION_DISABLEMOVE);
-    //             if (moveID == Condition_GetParam(MoveConditionData))
-    //             {
-    //                 return 1;
-    //             }
-    //         }
+            /* Disable Checks */
+            if (BattleMon_CheckIfMoveCondition(attackingMon, CONDITION_DISABLEMOVE))
+            {
+                ConditionData MoveConditionData = BattleMon_GetMoveCondition(attackingMon, CONDITION_DISABLEMOVE);
+                if (moveID == Condition_GetParam(MoveConditionData))
+                {
+                    return 1;
+                }
+            }
 
-    //         /* PP Checks */
-    //         if (!Move_GetPP(attackingMon, Move_SearchIndex(attackingMon, moveID)))
-    //         {
-    //             return 1;
-    //         }
+            /* PP Checks */
+            if (!Move_GetPP(attackingMon, Move_SearchIndex(attackingMon, moveID)))
+            {
+                return 1;
+            }
 
-    //         /* Nature Power Check */
-    //         if (moveID == MOVE267_NATURE_POWER)
-    //         {
-    //             int BattleTerrain = Handler_GetBattleTerrain(BattleServer_GetServerFlow(work->mainModule->server));
+            /* Nature Power Check */
+            if (moveID == MOVE267_NATURE_POWER)
+            {
+                int BattleTerrain = Handler_GetBattleTerrain(BattleServer_GetServerFlow(work->mainModule->server));
 
-    //             // //k::printf("\n\nThe Battle Terrain is %d\n\n", BattleTerrain);
+                // //k::printf("\n\nThe Battle Terrain is %d\n\n", BattleTerrain);
 
-    //             if (BattleTerrain == 5u)
-    //             {
-    //                 moveID = 402;
-    //             }
-    //             else if (BattleTerrain == 11u)
-    //             {
-    //                 moveID = 89;
-    //             }
-    //             else if (BattleTerrain == 0xCu)
-    //             {
-    //                 moveID = 56;
-    //             }
-    //             else if (BattleTerrain == 7u)
-    //             {
-    //                 moveID = 59;
-    //             }
-    //             else if (BattleTerrain == 9u)
-    //             {
-    //                 moveID = 426;
-    //             }
-    //             else if (BattleTerrain == 0xAu)
-    //             {
-    //                 moveID = 157;
-    //             }
-    //             else if (BattleTerrain == 0xDu)
-    //             {
-    //                 moveID = 58;
-    //             }
-    //             else
-    //             {
-    //                 moveID = 161;
-    //             }
-    //         }
+                if (BattleTerrain == 5u)
+                {
+                    moveID = 402;
+                }
+                else if (BattleTerrain == 11u)
+                {
+                    moveID = 89;
+                }
+                else if (BattleTerrain == 0xCu)
+                {
+                    moveID = 56;
+                }
+                else if (BattleTerrain == 7u)
+                {
+                    moveID = 59;
+                }
+                else if (BattleTerrain == 9u)
+                {
+                    moveID = 426;
+                }
+                else if (BattleTerrain == 0xAu)
+                {
+                    moveID = 157;
+                }
+                else if (BattleTerrain == 0xDu)
+                {
+                    moveID = 58;
+                }
+                else
+                {
+                    moveID = 161;
+                }
+            }
 
-    //         /* Copycat Check */
-    //         /* Checks for the move that copycat would call and if they have priority from abilities or items */
-    //         if (moveID == MOVE383_COPYCAT && BattleMon_GetValue(attackingMon, VALUE_EFFECTIVE_ABILITY) == ABIL158_PRANKSTER)
-    //         {
-    //             int actualMove = Handler_GetPrevUsedMove(BattleServer_GetServerFlow(work->mainModule->server));
-    //             if (actualMove && !j_j_IsNotAllowedCopycatMove(actualMove))
-    //             {
-    //                 moveID = actualMove;
-    //             }
-    //         }
+            /* Copycat Check */
+            /* Checks for the move that copycat would call and if they have priority from abilities or items */
+            if (moveID == MOVE383_COPYCAT && BattleMon_GetValue(attackingMon, VALUE_EFFECTIVE_ABILITY) == ABIL158_PRANKSTER)
+            {
+                int actualMove = Handler_GetPrevUsedMove(BattleServer_GetServerFlow(work->mainModule->server));
+                if (actualMove && !j_j_IsNotAllowedCopycatMove(actualMove))
+                {
+                    moveID = actualMove;
+                }
+            }
 
-    //         /* Updating Variables with any stuff that might have changed from move replacing Moves */
-    //         IsDamaging = PML_MoveIsDamaging(Param);
-    //         Type = PML_MoveGetType(moveID);
-    //         PokeType = BattleMon_GetPokeType(defendingMon);
-    //         if (!IsDamaging)
-    //         {
-    //             return 1;
-    //         }
+            /* Updating Variables with any stuff that might have changed from move replacing Moves */
+            IsDamaging = PML_MoveIsDamaging(Param);
+            Type = PML_MoveGetType(moveID);
+            PokeType = BattleMon_GetPokeType(defendingMon);
+            if (!IsDamaging)
+            {
+                return 1;
+            }
 
-    //         /* Natural Gift Check */
-    //         if (moveID == MOVE363_NATURAL_GIFT && PML_ItemIsBerry(BattleMon_GetHeldItem(attackingMon)))
-    //         {
-    //             Type = ItemGetParam(BattleMon_GetHeldItem(attackingMon), ITSTAT_NATURAL_GIFT_TYPE);
-    //         }
+            /* Natural Gift Check */
+            if (moveID == MOVE363_NATURAL_GIFT && PML_ItemIsBerry(BattleMon_GetHeldItem(attackingMon)))
+            {
+                Type = ItemGetParam(BattleMon_GetHeldItem(attackingMon), ITSTAT_NATURAL_GIFT_TYPE);
+            }
 
-    //         if (BattleMon_GetValue(attackingMon, VALUE_EFFECTIVE_ABILITY) == ABIL040_PIXILATE && Type == TYPE_NORMAL)
-    //         {
-    //             Type = TYPE_FAIRY;
-    //         }
-    //         if (BattleMon_GetValue(attackingMon, VALUE_EFFECTIVE_ABILITY) == ABIL048_REFRIGERATE && Type == TYPE_NORMAL)
-    //         {
-    //             Type = TYPE_ICE;
-    //         }
-    //         if (BattleMon_GetValue(attackingMon, VALUE_EFFECTIVE_ABILITY) == ABIL012_GALVANIZE && Type == TYPE_NORMAL)
-    //         {
-    //             Type = TYPE_ELECTRIC;
-    //         }
-    //         if (BattleMon_GetValue(attackingMon, VALUE_EFFECTIVE_ABILITY) == ABIL060_AERILATE && Type == TYPE_NORMAL)
-    //         {
-    //             Type = TYPE_FLYING;
-    //         }
-    //         if (BattleMon_GetValue(attackingMon, VALUE_EFFECTIVE_ABILITY) == ABIL096_NORMALIZE)
-    //         {
-    //             Type = TYPE_NORMAL;
-    //         }
+            if (BattleMon_GetValue(attackingMon, VALUE_EFFECTIVE_ABILITY) == ABIL040_PIXILATE && Type == TYPE_NORMAL)
+            {
+                Type = TYPE_FAIRY;
+            }
+            if (BattleMon_GetValue(attackingMon, VALUE_EFFECTIVE_ABILITY) == ABIL048_REFRIGERATE && Type == TYPE_NORMAL)
+            {
+                Type = TYPE_ICE;
+            }
+            if (BattleMon_GetValue(attackingMon, VALUE_EFFECTIVE_ABILITY) == ABIL012_GALVANIZE && Type == TYPE_NORMAL)
+            {
+                Type = TYPE_ELECTRIC;
+            }
+            if (BattleMon_GetValue(attackingMon, VALUE_EFFECTIVE_ABILITY) == ABIL060_AERILATE && Type == TYPE_NORMAL)
+            {
+                Type = TYPE_FLYING;
+            }
+            if (BattleMon_GetValue(attackingMon, VALUE_EFFECTIVE_ABILITY) == ABIL096_NORMALIZE)
+            {
+                Type = TYPE_NORMAL;
+            }
 
-    //         /* Alternate Type Effectiveness Checks */
-    //         if (moveID == MOVE327_SKY_UPPERCUT || moveID == MOVE357_FREEZE_DRY || BattleMon_GetValue(attackingMon, VALUE_EFFECTIVE_ABILITY) == ABIL007_CORROSION)
-    //         {
-    //             TypeEffectiveness = GetTypeEffectivenessVsMonAltered(Type, PokeType);
-    //         }
-    //         else if (moveID == MOVE533_SACRED_SWORD || BattleMon_GetValue(attackingMon, VALUE_EFFECTIVE_ABILITY) == ABIL039_INNER_FOCUS || BattleMon_GetValue(attackingMon, VALUE_EFFECTIVE_ABILITY) == ABIL096_NORMALIZE || BattleMon_GetValue(attackingMon, VALUE_EFFECTIVE_ABILITY) == ABIL113_SCRAPPY)
-    //         {
-    //             TypeEffectiveness = GetTypeEffectivenessVsMonAlteredSacredSword(Type, PokeType);
-    //         }
-    //         else if (moveID == MOVE498_CHIP_AWAY)
-    //         {
-    //             TypeEffectiveness = 3;
-    //         }
-    //         else
-    //         {
-    //             TypeEffectiveness = GetTypeEffectivenessVsMon(Type, PokeType);
-    //         }
+            /* Alternate Type Effectiveness Checks */
+            if (moveID == MOVE327_SKY_UPPERCUT || moveID == MOVE357_FREEZE_DRY || BattleMon_GetValue(attackingMon, VALUE_EFFECTIVE_ABILITY) == ABIL007_CORROSION)
+            {
+                TypeEffectiveness = GetTypeEffectivenessVsMonAltered(Type, PokeType);
+            }
+            else if (moveID == MOVE533_SACRED_SWORD || BattleMon_GetValue(attackingMon, VALUE_EFFECTIVE_ABILITY) == ABIL039_INNER_FOCUS || BattleMon_GetValue(attackingMon, VALUE_EFFECTIVE_ABILITY) == ABIL096_NORMALIZE || BattleMon_GetValue(attackingMon, VALUE_EFFECTIVE_ABILITY) == ABIL113_SCRAPPY)
+            {
+                TypeEffectiveness = GetTypeEffectivenessVsMonAlteredSacredSword(Type, PokeType);
+            }
+            else if (moveID == MOVE498_CHIP_AWAY)
+            {
+                TypeEffectiveness = 3;
+            }
+            else
+            {
+                TypeEffectiveness = GetTypeEffectivenessVsMon(Type, PokeType);
+            }
 
-    //         /*
+            /*
 
-    //             ------------------------------------ CORE ENCORE / CHOICE LOGIC ----------------------------------------
+                ------------------------------------ CORE ENCORE / CHOICE LOGIC ----------------------------------------
 
-    //             Right now we have a naive solution that only checks for effectiveness. Ideally, we're going to have a check
-    //             here that checks for damage output in general. We don't want the AI switching out when they see a kill, even
-    //             if the move they're using is 4x resisted.
+                Right now we have a naive solution that only checks for effectiveness. Ideally, we're going to have a check
+                here that checks for damage output in general. We don't want the AI switching out when they see a kill, even
+                if the move they're using is 4x resisted.
 
-    //             [EFFECTIVNESS CHECKS]
-    //                 - If the move has 0 effectiveness whatsoever, it will switch to any other pokemon that can at least
-    //                 deal damage.
+                [EFFECTIVNESS CHECKS]
+                    - If the move has 0 effectiveness whatsoever, it will switch to any other pokemon that can at least
+                    deal damage.
 
-    //                 - If the move is 4x resisted, it will switch to any other pokemon that can deal at least 0.5x damage.
-    //                     (For pokemon with tinted lens, it will use the 2x resisted logic instead)
+                    - If the move is 4x resisted, it will switch to any other pokemon that can deal at least 0.5x damage.
+                        (For pokemon with tinted lens, it will use the 2x resisted logic instead)
 
-    //                 - If the move is 2x resisted, it will switch to any pokemon with a super effective move.
-    //                 If there are only allies with neutral moves, it's only a 25% chance.
-    //                     (For pokemon with tinted lens, it will not switch at all)
+                    - If the move is 2x resisted, it will switch to any pokemon with a super effective move.
+                    If there are only allies with neutral moves, it's only a 25% chance.
+                        (For pokemon with tinted lens, it will not switch at all)
 
-    //             -
+                -
 
-    //             [DAMAGE CALC CHECKS]
-    //                 - If the move has a killing blow, stay in.
+                [DAMAGE CALC CHECKS]
+                    - If the move has a killing blow, stay in.
 
-    //                 - The move has a 2HKO, stay in.
+                    - The move has a 2HKO, stay in.
 
-    //                 - If the move deals 25% or less damage and neither of the previous two conditions are applicable, 70% chance to switch
+                    - If the move deals 25% or less damage and neither of the previous two conditions are applicable, 70% chance to switch
 
-    //                 - If the move deals 0% damage due to no effectiveness, guaranteed switch out if any other pokemon has a move.
+                    - If the move deals 0% damage due to no effectiveness, guaranteed switch out if any other pokemon has a move.
 
-    //         */
+            */
 
-    //         int moveDamage = Handler_SimulationDamage(BattleServer_GetServerFlow(work->mainModule->server),
-    //                                                   BattleMon_GetID(attackingMon),
-    //                                                   BattleMon_GetID(defendingMon),
-    //                                                   Move_GetID(attackingMon, moveID), false, false);
+            int moveDamage = Handler_SimulationDamage(BattleServer_GetServerFlow(work->mainModule->server),
+                                                      BattleMon_GetID(attackingMon),
+                                                      BattleMon_GetID(defendingMon),
+                                                      Move_GetID(attackingMon, moveID), false, false);
 
-    //         if (moveDamage == 0)
-    //         {
-    //             if (CheckIfMonToSwitchToWithSEMove(work, defendingMon, 1))
-    //             {
-    //                 return 1;
-    //             }
-    //             return 0;
-    //         }
-    //         if ((moveDamage * 2) <= defendingMon->CurrentHP)
-    //         {
-    //             return 0;
-    //         }
+            if (moveDamage == 0)
+            {
+                if (CheckIfMonToSwitchToWithSEMove(work, defendingMon, 1))
+                {
+                    return 1;
+                }
+                return 0;
+            }
+            if ((moveDamage * 2) <= defendingMon->CurrentHP)
+            {
+                return 0;
+            }
 
-    //         if ((moveDamage * 10) <= defendingMon->MaxHP)
-    //         {
-    //             if (CheckIfMonToSwitchToWithSEMove(work, defendingMon, 1))
-    //             {
-    //                 return 1;
-    //             }
-    //             return 0;
-    //         }
-    //         else if ((moveDamage * 5) <= defendingMon->MaxHP)
-    //         {
-    //             if (CheckIfMonToSwitchToWithSEMove(work, defendingMon, 1))
-    //             {
-    //                 if (RandomInRange(1, 100) >= 25)
-    //                 {
-    //                     return 1;
-    //                 }
-    //                 return 0;
-    //             }
-    //             return 0;
-    //         }
-    //         else if ((moveDamage * 3) <= defendingMon->MaxHP)
-    //         {
-    //             if (CheckIfMonToSwitchToWithSEMove(work, defendingMon, 1))
-    //             {
-    //                 if (RandomInRange(1, 100) >= 40)
-    //                 {
-    //                     return 1;
-    //                 }
-    //                 return 0;
-    //             }
-    //             return 0;
-    //         }
-    //         else
-    //         {
-    //             return 0;
-    //         }
+            if ((moveDamage * 10) <= defendingMon->MaxHP)
+            {
+                if (CheckIfMonToSwitchToWithSEMove(work, defendingMon, 1))
+                {
+                    return 1;
+                }
+                return 0;
+            }
+            else if ((moveDamage * 5) <= defendingMon->MaxHP)
+            {
+                if (CheckIfMonToSwitchToWithSEMove(work, defendingMon, 1))
+                {
+                    if (RandomInRange(1, 100) >= 25)
+                    {
+                        return 1;
+                    }
+                    return 0;
+                }
+                return 0;
+            }
+            else if ((moveDamage * 3) <= defendingMon->MaxHP)
+            {
+                if (CheckIfMonToSwitchToWithSEMove(work, defendingMon, 1))
+                {
+                    if (RandomInRange(1, 100) >= 40)
+                    {
+                        return 1;
+                    }
+                    return 0;
+                }
+                return 0;
+            }
+            else
+            {
+                return 0;
+            }
 
-    //         // if (TypeEffectiveness == 0 || (!HasMoldBreaker(attackingMon) && CheckIfImmuneAbility(Type, moveID, defendingMon)))
-    //         // {
-    //         //     // Will always switch if there's another pokemon that can deal some damage
-    //         //     if (CheckIfMonToSwitchToWithSEMove(work, defendingMon, 1))
-    //         //     {
-    //         //         return 1;
-    //         //     }
-    //         //     return 0;
-    //         // }
-    //         // // If the move is 4x resisted
-    //         // else if (TypeEffectiveness == 1)
-    //         // {
-    //         //     // Will switch so long as there's anotehr pokemon that can deal better damage
+            // if (TypeEffectiveness == 0 || (!HasMoldBreaker(attackingMon) && CheckIfImmuneAbility(Type, moveID, defendingMon)))
+            // {
+            //     // Will always switch if there's another pokemon that can deal some damage
+            //     if (CheckIfMonToSwitchToWithSEMove(work, defendingMon, 1))
+            //     {
+            //         return 1;
+            //     }
+            //     return 0;
+            // }
+            // // If the move is 4x resisted
+            // else if (TypeEffectiveness == 1)
+            // {
+            //     // Will switch so long as there's anotehr pokemon that can deal better damage
 
-    //         //     if (BattleMon_GetValue(attackingMon, VALUE_EFFECTIVE_ABILITY) == ABIL110_TENACITY)
-    //         //     {
-    //         //         if (CheckIfMonToSwitchToWithSEMove(work, defendingMon, 4))
-    //         //         {
-    //         //             return 1;
-    //         //         }
-    //         //         if (CheckIfMonToSwitchToWithSEMove(work, defendingMon, 3))
-    //         //         {
-    //         //             if (RandomInRange(1, 100) >= 25)
-    //         //             {
-    //         //                 return 1;
-    //         //             }
-    //         //         }
-    //         //         return 0;
-    //         //     }
-    //         //     if (CheckIfMonToSwitchToWithSEMove(work, defendingMon, 2))
-    //         //     {
-    //         //         return 1;
-    //         //     }
-    //         //     return 0;
-    //         // }
-    //         // // If the move is 2x resisted
-    //         // else if (TypeEffectiveness == 2)
-    //         // {
-    //         //     // If the pokemon has tinted lens, it doesn't care about .5x resist
-    //         //     if (BattleMon_GetValue(attackingMon, VALUE_EFFECTIVE_ABILITY) == ABIL110_TENACITY)
-    //         //     {
-    //         //         return 0;
-    //         //     }
-    //         //     // If another pokemon in the party has a super effective move, guaranteed switch
-    //         //     if (CheckIfMonToSwitchToWithSEMove(work, defendingMon, 4))
-    //         //     {
-    //         //         return 1;
-    //         //     }
-    //         //     // If the best another pokemon in the party has is a neutral move, 50% chance to switch
-    //         //     if (CheckIfMonToSwitchToWithSEMove(work, defendingMon, 3))
-    //         //     {
-    //         //         if (RandomInRange(1, 100) >= 25)
-    //         //         {
-    //         //             return 1;
-    //         //         }
-    //         //     }
-    //         // }
-    //         // return 0;
-    //     }
+            //     if (BattleMon_GetValue(attackingMon, VALUE_EFFECTIVE_ABILITY) == ABIL110_TENACITY)
+            //     {
+            //         if (CheckIfMonToSwitchToWithSEMove(work, defendingMon, 4))
+            //         {
+            //             return 1;
+            //         }
+            //         if (CheckIfMonToSwitchToWithSEMove(work, defendingMon, 3))
+            //         {
+            //             if (RandomInRange(1, 100) >= 25)
+            //             {
+            //                 return 1;
+            //             }
+            //         }
+            //         return 0;
+            //     }
+            //     if (CheckIfMonToSwitchToWithSEMove(work, defendingMon, 2))
+            //     {
+            //         return 1;
+            //     }
+            //     return 0;
+            // }
+            // // If the move is 2x resisted
+            // else if (TypeEffectiveness == 2)
+            // {
+            //     // If the pokemon has tinted lens, it doesn't care about .5x resist
+            //     if (BattleMon_GetValue(attackingMon, VALUE_EFFECTIVE_ABILITY) == ABIL110_TENACITY)
+            //     {
+            //         return 0;
+            //     }
+            //     // If another pokemon in the party has a super effective move, guaranteed switch
+            //     if (CheckIfMonToSwitchToWithSEMove(work, defendingMon, 4))
+            //     {
+            //         return 1;
+            //     }
+            //     // If the best another pokemon in the party has is a neutral move, 50% chance to switch
+            //     if (CheckIfMonToSwitchToWithSEMove(work, defendingMon, 3))
+            //     {
+            //         if (RandomInRange(1, 100) >= 25)
+            //         {
+            //             return 1;
+            //         }
+            //     }
+            // }
+            // return 0;
+        }
 
 #pragma endregion
 

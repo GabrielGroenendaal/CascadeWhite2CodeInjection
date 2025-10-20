@@ -215,7 +215,7 @@ extern "C"
             BattleMon = Handler_GetBattleMon(a2, a3);
             if (BattleMon_IsFullHP(BattleMon))
             {
-                BattleEventVar_MulValue(VAR_RATIO, 2048);
+                BattleEventVar_MulValue(VAR_RATIO, 4096);
                 *a4 = 1;
             }
             else
@@ -257,8 +257,6 @@ extern "C"
         return FocusBandHandlers;
     }
 
-
-
 #pragma region EjectPack
 
     /*
@@ -269,44 +267,50 @@ extern "C"
 
     */
 
-    //  void HandlerEjectPackActionEnd(BattleEventItem *item, ServerFlow *serverFlow, u32 pokemonSlot, u32 *work)
+    // u8* switchout;
+
+    //  void HandlerEjectPackReset(BattleEventItem *item, ServerFlow *serverFlow, u32 pokemonSlot, u32 *work)
     // {
-    //     k::Printf("\nHandlerEjectPackEnd 1: var id is %d, pokemon ID = %d and switchout = %d\n", BattleEventVar_GetValue(VAR_MON_ID), pokemonSlot, work[0]);
-    //     if (pokemonSlot == BattleEventVar_GetValue(VAR_MON_ID) && work[0] == 1)
+        
+    //     switchout[pokemonSlot] = 0;
+    // }
+
+    // void HandlerEjectPackStatCheck(BattleEventItem *item, ServerFlow *serverFlow, u32 pokemonSlot, u32 *work)
+    // {
+        
+    //     k::Printf("\n\n====HandlerEjectPackStatCheck=====\nThe Pokemon Slot is %d\nThe VAR Mon ID is %d\nThe work is %d\nThe volume is %d\nThe flowResult is %d", pokemonSlot, BattleEventVar_GetValue(VAR_MON_ID), work[0], BattleEventVar_GetValue(VAR_VOLUME), serverFlow->flowResult);
+    //     if (pokemonSlot == BattleEventVar_GetValue(VAR_MON_ID) && BattleEventVar_GetValue(VAR_VOLUME) < 0)
     //     {
-    //         k::Printf("\nHandlerEjectPackEnd 2\n");
-    //         work[0] = 0;
-    //         // switch
+    //         k::Printf("\nRESULT: The Eject Pack Should Trigger\n\n");
+    //         switchout[pokemonSlot] = 1;
+    //         //work[0] = 1;
+    //     }
+    // }
+
+    // void HandlerEjectPackActionEnd(BattleEventItem *item, ServerFlow *serverFlow, u32 pokemonSlot, u32 *work)
+    // {
+    //     k::Printf("\n\n====HandlerEjectPackActionEnd=====\nThe Pokemon Slot is %d\nThe VAR Mon ID is %d\nThe work is %d", pokemonSlot, BattleEventVar_GetValue(VAR_MON_ID), work[0]);
+    //     if (switchout[pokemonSlot] == 1)
+    //     {
+    //         k::Printf("\nRESULT: The Eject Pack Should Trigger\n\n");
+    //         switchout[pokemonSlot] = 0;
+            
     //         if (Handler_GetFightEnableBenchPokeNum(serverFlow, pokemonSlot) && Handler_CheckReservedMemberChangeAction(serverFlow))
     //         {
-    //             k::Printf("\nHandlerEjectPackEnd 3\n");
+    //             k::Printf("\nUSE THE ITEM USE THE ITEM\n\n");
     //             ItemEvent_PushRun(item, serverFlow, pokemonSlot);
     //         }
     //     }
     // }
 
-    u8 *switchout;
-
-
-    // /* Triggered by EVENT_STAT_STAGE_CHANGE_APPLIED */
-    // void HandlerEjectPackStatCheck(BattleEventItem *item, ServerFlow *serverFlow, u32 pokemonSlot, u32 *work)
-    // {
-    //     if (pokemonSlot == BattleEventVar_GetValue(VAR_MON_ID) &&
-    //         BattleEventVar_GetValue(VAR_VOLUME) < 0)
-    //     {
-    //         work[0] = 1;
-    //         // if (Handler_GetFightEnableBenchPokeNum(serverFlow, pokemonSlot) && Handler_CheckReservedMemberChangeAction(serverFlow))
-    //         // {
-    //         //     ItemEvent_PushRun(item, serverFlow, pokemonSlot);
-    //         // }
-    //     }
-    // }
-
-    // /* Triggered By EVENT_USE_ITEM */
     // void HandlerEjectPackUse(BattleEventItem *item, ServerFlow *serverFlow, u32 pokemonSlot, u32 *work)
     // {
+    //     k::Printf("\n\n====HandlerEjectPackUse=====\nThe Pokemon Slot is %d\nThe VAR Mon ID is %d\nThe work is %d", pokemonSlot, BattleEventVar_GetValue(VAR_MON_ID), work[0]);
+
     //     if (pokemonSlot == BattleEventVar_GetValue(VAR_MON_ID))
     //     {
+    //         k::Printf("\nRESULT: The Eject Button has triggered\n\n");
+
     //         HandlerParam_Switch *switchOut;
     //         switchOut = (HandlerParam_Switch *)BattleHandler_PushWork(serverFlow, EFFECT_SWITCH, pokemonSlot);
     //         switchOut->pokeID = pokemonSlot;
@@ -315,151 +319,19 @@ extern "C"
     // }
 
     // ITEM_TRIGGERTABLE EjectPackHandlers[] = {
+    //     {EVENT_BEFORE_ATTACKS, (ITEM_HANDLER_FUNC)HandlerEjectPackReset},
     //     {EVENT_STAT_STAGE_CHANGE_APPLIED, (ITEM_HANDLER_FUNC)HandlerEjectPackStatCheck},
     //     {EVENT_ACTION_PROCESSING_END, (ITEM_HANDLER_FUNC)HandlerEjectPackActionEnd},
+    //     //{EVENT_AFTER_LAST_SWITCHIN, (ITEM_HANDLER_FUNC)HandlerEjectPackActionEnd},
     //     {EVENT_USE_ITEM, (ITEM_HANDLER_FUNC)HandlerEjectPackUse},
     // };
-
-    // extern bool ServerControl_CheckMatchup(ServerFlow *a1);
-    // extern bool Handler_IsMonInSkyDrop(ServerFlow* a1, int a2);
-    // extern int  ServerControl_SwitchOut(ServerFlow *a1, BattleMon *a2, int a3);
-    // extern unsigned int MainModule_PokeIDToPokePos(MainModule *a1, PokeCon *a2, unsigned int a3);
-    // extern void BattleServer_RequestChangePokemon(BtlServerWk *result, int a2);
-
-    // int THUMB_BRANCH_BattleHandler_Switch(ServerFlow *a1, HandlerParam_Switch *a2)
+    // ITEM_TRIGGERTABLE *THUMB_BRANCH_EventAddFloatStone(u32 *handlerAmount)
     // {
-    //     BattleMon *BattleMon; // r6
-    //     int v5;               // r0
-    //     int result;           // r0
-    //     k::Printf("\n\n===BATTLEHANDLER_SWITCH===\na2->pokeID = %d\n\n", a2->pokeID);
-
-    //     BattleMon = PokeCon_GetBattleMon(a1->pokeCon, a2->pokeID);
-    //     if (ServerControl_CheckMatchup(a1))
-    //     {
-    //         k::Printf("\nWe hit ServerControl_ShouldBattleEnd\n");
-    //         return 0;
-    //     }
-    //     if (Handler_IsMonInSkyDrop(a1, a2->pokeID))
-    //     {
-    //         k::Printf("\nWe hit Handler_IsMonInSkyDrop\n");
-    //         return 0;
-    //     }
-    //     if (a1->flowResult)
-    //     {
-    //         k::Printf("\nWe hit ServerFlow->FlowResult\n");
-    //         return 0;
-    //     }
-    //     BattleHandler_SetString(a1, &a2->preStr);
-    //     if (!ServerControl_SwitchOut(a1, BattleMon, a2->fIntrDisable))
-    //     {
-    //         k::Printf("\nWe hit !ServerControl_SwitchOut()\n");
-    //         return 0;
-    //     }
-    //     k::Printf("\nWe made it all the way to the end\n");
-    //     v5 = MainModule_PokeIDToPokePos(a1->mainModule, a1->pokeCon, a2->pokeID);
-    //     BattleServer_RequestChangePokemon(a1->server, v5);
-    //     k::Printf("\nWe requested a switch\n");
-    //     BattleHandler_SetString(a1, &a2->exStr);
-    //     result = 1;
-    //     a1->flowResult = RESULT_SWITCH;
-    //     return result;
+    //     *handlerAmount = 4;
+    //     return EjectPackHandlers;
     // }
 
-    void HandlerEjectPackStatCheck(BattleEventItem *item, ServerFlow *serverFlow, u32 pokemonSlot, u32 *work)
-    {
-        k::Printf("\n\n====HandlerEjectPackStatCheck=====\nThe Pokemon Slot is %d\nThe VAR Mon ID is %d\nThe work is %d\nThe volume is %d\nThe item id is %d\n\n", pokemonSlot, BattleEventVar_GetValue(VAR_MON_ID), switchout[pokemonSlot], BattleEventVar_GetValue(VAR_VOLUME), item->subID);
-        if (BattleEventVar_GetValue(VAR_VOLUME) < 0)
-        {
-            switchout[BattleEventVar_GetValue(VAR_MON_ID)] = 1;
-        }
-    }
-    void HandlerEjectPackActionEnd(BattleEventItem *item, ServerFlow *serverFlow, u32 pokemonSlot, u32 *work)
-    {
-        k::Printf("\n\n====HandlerEjectPackActionEnd=====\nThe Pokemon Slot is %d\nThe VAR Mon ID is %d\nThe work is %d\n\n", pokemonSlot, BattleEventVar_GetValue(VAR_MON_ID), switchout[pokemonSlot]);
-
-        if (
-            // pokemonSlot == BattleEventVar_GetValue(VAR_MON_ID) &&
-            switchout[pokemonSlot] == 1)
-        {
-            k::Printf("\nWe have gotten into the EjectPackEndFunction\n");
-            switchout[pokemonSlot] = 0;
-            if (Handler_GetFightEnableBenchPokeNum(serverFlow, pokemonSlot) && Handler_CheckReservedMemberChangeAction(serverFlow))
-            {
-                ItemEvent_PushRun(item, serverFlow, pokemonSlot);
-            }
-        }
-    }
-    void HandlerEjectPackSwitchInEnd(BattleEventItem *item, ServerFlow *serverFlow, u32 pokemonSlot, u32 *work)
-    {
-        BattleMon *mon = Handler_GetBattleMon(serverFlow, pokemonSlot);
-        k::Printf("\n\n====HandlerEjectPackSwitchInEnd=====\nThe Pokemon Slot is %d of species %d\nThe Item ID is %d\n\n", pokemonSlot, mon->Species, item->subID);
-
-        if (switchout[pokemonSlot])
-        {
-            k::Printf("\nWe're in, lets see if this causes a softlock");
-            switchout[pokemonSlot] = 0;
-            if (Handler_GetFightEnableBenchPokeNum(serverFlow, pokemonSlot) && Handler_CheckReservedMemberChangeAction(serverFlow))
-            {
-                k::Printf("\nDid we get to the Push Run?");
-                ItemEvent_PushRun(item, serverFlow, pokemonSlot);
-            }
-        }
-        // if (pokemonSlot == BattleEventVar_GetValue(VAR_MON_ID) &&
-        //    switchout[pokemonSlot] == 1)
-        // {
-        //     k::Printf("\nWe have gotten into the EjectPackEndFunction\n");
-        //     switchout[pokemonSlot] = 0;
-        //     if (Handler_GetFightEnableBenchPokeNum(serverFlow, pokemonSlot) && Handler_CheckReservedMemberChangeAction(serverFlow))
-        //     {
-        //         ItemEvent_PushRun(item, serverFlow, pokemonSlot);
-        //     }
-        // }
-    }
-
-    extern void ServerControl_Switch(ServerFlow *a1, BattleMon *a2, int partyIndex);
-    extern int PokeCon_FindPoke(PokeCon *a1, int a2, int a3);
-
-    void HandlerEjectPackUse(BattleEventItem *item, ServerFlow *serverFlow, u32 pokemonSlot, u32 *work)
-    {
-        k::Printf("\n\n====HandlerEjectPackUse=====\nThe Pokemon Slot is %d\nThe VAR Mon ID is %d\nThe work is %d\n\n", pokemonSlot, BattleEventVar_GetValue(VAR_MON_ID), work[0]);
-
-        if (pokemonSlot == BattleEventVar_GetValue(VAR_MON_ID))
-        {
-            HandlerParam_Switch *switchOut;
-            switchOut = (HandlerParam_Switch *)BattleHandler_PushWork(serverFlow, EFFECT_SWITCH, pokemonSlot);
-            switchOut->pokeID = pokemonSlot;
-            BattleHandler_PopWork(serverFlow, switchOut);
-
-            // BattleMon* mon = Handler_GetBattleMon(serverFlow, pokemonSlot);
-            // int v6 = MainModule_PokeIDToClientID(mon->ID);
-            // int partyIndex = PokeCon_FindPoke(serverFlow->pokeCon, v6, mon->ID);
-            // ServerControl_Switch(serverFlow, mon, 2);
-
-            // sub_219EB24(serverFlow->server, 0, 0, 0);
-        }
-    }
-    ITEM_TRIGGERTABLE EjectPackHandlers[] = {
-        {EVENT_STAT_STAGE_CHANGE_APPLIED, (ITEM_HANDLER_FUNC)HandlerEjectPackStatCheck},
-        {EVENT_ACTION_PROCESSING_END, (ITEM_HANDLER_FUNC)HandlerEjectPackActionEnd},
-        {EVENT_AFTER_LAST_SWITCHIN, (ITEM_HANDLER_FUNC)HandlerEjectPackSwitchInEnd},
-        {EVENT_USE_ITEM, (ITEM_HANDLER_FUNC)HandlerEjectPackUse},
-    };
-    ITEM_TRIGGERTABLE *THUMB_BRANCH_EventAddFloatStone(u32 *handlerAmount)
-    {
-        *handlerAmount = 4;
-        return EjectPackHandlers;
-    }
-
-
-
-
 #pragma endregion
-
-
-
-
-
-
 
 #pragma region WeatherStuff
     /*
@@ -486,8 +358,6 @@ extern "C"
         *a1 = 3;
         return ProtectiveGearHandlers;
     }
-
-
 
     void HandlerSolarBeamPowerNew(int a1, int a2, int a3)
     {
@@ -2412,6 +2282,7 @@ extern "C"
         int v4;          // r2
         unsigned int v5; // r5
         int isTera;
+       // int isGastroAcid;
         v2 = 0;
         if (!a2)
         {
@@ -2420,6 +2291,7 @@ extern "C"
         Conditions = a1->Conditions;
 
         isTera = a1->Conditions[CONDITION_TERA];
+        //isGastroAcid = a1->Conditions[CONDITION_GASTROACID];
         do
         {
             v4 = v2;
@@ -2431,6 +2303,7 @@ extern "C"
         if (isTera)
         {
             a1->Conditions[CONDITION_TERA] = isTera;
+          //  a1->Conditions[CONDITION_GASTROACID] = isGastroAcid;
         }
         sys_memset(a1->MoveConditionCounter, 0, 0x24u);
     }

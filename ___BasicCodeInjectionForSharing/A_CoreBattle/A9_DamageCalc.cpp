@@ -2273,7 +2273,7 @@ extern "C"
     extern u32 BattleEventVar_SetRewriteOnceValue(BattleEventVar a1, int a2);
     extern bool PML_MoveIsAlwaysCrit(int wazaId);
     extern bool BattleMon_GetConditionFlag(BattleMon *a1, ConditionFlag a2);
-
+    extern bool BattleMon_IsFullHP(BattleMon *a1);
     bool HasMoldBreaker(BattleMon *a1)
     {
         return (BattleMon_GetValue(a1, VALUE_EFFECTIVE_ABILITY) == ABIL104_MOLD_BREAKER || BattleMon_GetValue(a1, VALUE_EFFECTIVE_ABILITY) == ABIL163_TURBOBLAZE || BattleMon_GetValue(a1, VALUE_EFFECTIVE_ABILITY) == ABIL164_TERAVOLT);
@@ -2420,6 +2420,7 @@ extern "C"
         int Category;          // [sp+10h] [bp-20h]
         int power;             // [sp+14h] [bp-1Ch]
         int attack;            // [sp+18h] [bp-18h]
+        int personalTypeEffectiveness;
 
         Category = PML_MoveGetCategory(MoveParam->MoveID);
         v29 = 0;
@@ -2556,6 +2557,12 @@ extern "C"
                 // k::Printf("\nBecause of Overheat, the new power of this move is %d\n\n", v23);
             }
 
+            if ((DefendingMon->HeldItem == 0xE6 || BattleMon_GetValue(DefendingMon, VALUE_EFFECTIVE_ABILITY) == ABIL136_MAJESTIC_WARD)
+                && BattleMon_IsFullHP(DefendingMon)
+            ){
+                v23 = 50 * v23 / 100u;
+            }
+            
             if (!v23)
             {
                 v23 = 1;
@@ -2807,8 +2814,8 @@ extern "C"
         {1, ABIL070_DROUGHT, ABIL070_DROUGHT, ABIL070_DROUGHT},                // PK078_RAPIDASH = 0x4E,
         {1, ABIL002_DRIZZLE, ABIL086_SIMPLE, ABIL086_SIMPLE},                  // PK079_SLOWPOKE = 0x4F,
         {1, ABIL002_DRIZZLE, ABIL086_SIMPLE, ABIL086_SIMPLE},                  // PK080_SLOWBRO = 0x50,
-        {1, ABIL058_MINUS, ABIL057_PLUS, ABIL057_PLUS},                        // PK0{0, ABIL001_STENCH, ABIL001_STENCH, ABIL001_STENCH},_MAGNEMITE = 0x51,
-        {1, ABIL058_MINUS, ABIL057_PLUS, ABIL057_PLUS},                        // PK082_MAGNETON = 0x52,
+        {1, ABIL058_MINUS, ABIL057_PLUS, ABIL026_LEVITATE},                        // PK0{0, ABIL001_STENCH, ABIL001_STENCH, ABIL001_STENCH},_MAGNEMITE = 0x51,
+        {1, ABIL058_MINUS, ABIL057_PLUS, ABIL026_LEVITATE},                        // PK082_MAGNETON = 0x52,
         {1, ABIL020_QUICK_DRAW, ABIL020_QUICK_DRAW, ABIL020_QUICK_DRAW},       // PK083_FARFETCH_D = 0x53,
         {1, ABIL045_SAND_STREAM, ABIL141_MOODY, ABIL008_SAND_VEIL},            // PK084_DODUO = 0x54,
         {1, ABIL045_SAND_STREAM, ABIL141_MOODY, ABIL008_SAND_VEIL},            // PK085_DODRIO = 0x55,
@@ -3194,7 +3201,7 @@ extern "C"
         {1, ABIL117_SNOW_WARNING, ABIL077_SLUSH_RUSH, ABIL081_SNOW_CLOAK},     //   PK459_SNOVER = 0x1CB,
         {1, ABIL117_SNOW_WARNING, ABIL077_SLUSH_RUSH, ABIL081_SNOW_CLOAK},     //   PK460_ABOMASNOW = 0x1CC,
         {1, ABIL088_EXPLOIT, ABIL117_SNOW_WARNING, ABIL081_SNOW_CLOAK},        // PK461_WEAVILE = 0x1CD,
-        {1, ABIL058_MINUS, ABIL057_PLUS, ABIL057_PLUS},                        // PK462_MAGNEZONE = 0x1CE,
+        {1, ABIL058_MINUS, ABIL057_PLUS, ABIL026_LEVITATE},                        // PK462_MAGNEZONE = 0x1CE,
         {1, ABIL001_STENCH, ABIL001_STENCH, ABIL001_STENCH},                   // PK463_LICKILICKY = 0x1CF,
         {1, ABIL045_SAND_STREAM, ABIL038_BERSERK, ABIL038_BERSERK},            // PK464_RHYPERIOR = 0x1D0,
         {1, ABIL034_CHLOROPHYLL, ABIL034_CHLOROPHYLL, ABIL034_CHLOROPHYLL},    // PK460,TANGROWTH = 0x1D1,

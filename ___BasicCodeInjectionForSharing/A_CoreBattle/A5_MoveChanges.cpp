@@ -43,30 +43,283 @@ extern "C"
         MOVE_HANDLER_FUNC function;
     } MOVE_TRIGGERTABLE;
 
-#pragma region WIP
+#pragma region HealingMoves
 
     /* Refresh */
+    void THUMB_BRANCH_HandlerRefresh(int a1, ServerFlow *a2, unsigned int *a3)
+    {
+        BattleMon *BattleMon;           // r0
+        MoveCondition Status;           // r0
+        MoveCondition v7;               // r4
+        HandlerParam_CureCondition *v8; // r0
+        HandlerParam_RecoverHP *v9;
+
+        if ((int)a3 == BattleEventVar_GetValue(VAR_ATTACKING_MON))
+        {
+            BattleMon = Handler_GetBattleMon(a2, (int)a3);
+            Status = BattleMon_GetStatus(BattleMon);
+            v7 = Status;
+            if (Status == CONDITION_POISON || Status == CONDITION_PARALYSIS || Status == CONDITION_BURN)
+            {
+                v8 = (HandlerParam_CureCondition *)BattleHandler_PushWork(a2, EFFECT_CURE_STATUS, (int)a3);
+                v8->sickCode = v7;
+                v8->pokeID[0] = (int)a3;
+                v8->poke_cnt = 1;
+                BattleHandler_PopWork(a2, v8);
+            }
+
+            if (!BattleMon_IsFullHP(BattleMon))
+            {
+                v9 = (HandlerParam_RecoverHP *)BattleHandler_PushWork(a2, EFFECT_RECOVERHP, (int)a3);
+                v9->pokeID = (int)a3;
+                v9->recoverHP = DivideMaxHPZeroCheck(BattleMon, 4u);
+                BattleHandler_StrSetup(&v9->exStr, 2u, 387);
+                BattleHandler_AddArg(&v9->exStr, (int)a3);
+                BattleHandler_PopWork(a2, v9);
+            }
+        }
+    }
 
     /* Aqua Ring */
+    void THUMB_BRANCH_HandlerAquaRing(int a1, ServerFlow *a2, int a3)
+    {
+        BattleMon *BattleMon;          // r0
+        HandlerParam_AddCondition *v6; // r4
+        HandlerParam_RecoverHP *v8;
+
+        if (a3 == BattleEventVar_GetValue(VAR_ATTACKING_MON))
+        {
+            BattleMon = Handler_GetBattleMon(a2, a3);
+            if (!BattleMon_CheckIfMoveCondition(BattleMon, CONDITION_AQUARING))
+            {
+                v6 = (HandlerParam_AddCondition *)BattleHandler_PushWork(a2, EFFECT_ADDCONDITION, a3);
+                v6->sickID = CONDITION_AQUARING;
+                v6->sickCont = Condition_MakePermanent();
+                v6->pokeID = a3;
+                BattleHandler_StrSetup(&v6->exStr, 2u, 601);
+                BattleHandler_AddArg(&v6->exStr, a3);
+                BattleHandler_PopWork(a2, v6);
+            }
+            if (!BattleMon_IsFullHP(BattleMon))
+            {
+                v8 = (HandlerParam_RecoverHP *)BattleHandler_PushWork(a2, EFFECT_RECOVERHP, (int)a3);
+                v8->pokeID = (int)a3;
+                v8->recoverHP = DivideMaxHPZeroCheck(BattleMon, 4u);
+                BattleHandler_StrSetup(&v8->exStr, 2u, 387);
+                BattleHandler_AddArg(&v8->exStr, (int)a3);
+                BattleHandler_PopWork(a2, v8);
+            }
+        }
+    }
 
     /* Recycle */
+    void THUMB_BRANCH_HandlerRecycle(int a1, ServerFlow *a2, unsigned int *a3)
+    {
+        BattleMon *BattleMon;     // r4
+        int UsedItem;             // r7
+        HandlerParam_SetItem *v7; // r4
+        HandlerParam_RecoverHP *v8;
+
+        if ((int)a3 == BattleEventVar_GetValue(VAR_ATTACKING_MON))
+        {
+            BattleMon = Handler_GetBattleMon(a2, (int)a3);
+            if (BattleMon_GetHeldItem(BattleMon) == IT_NULL)
+            {
+                UsedItem = BattleMon_GetUsedItem(BattleMon);
+                if (UsedItem)
+                {
+                    v7 = (HandlerParam_SetItem *)BattleHandler_PushWork(a2, EFFECT_SET_HELD_ITEM, (int)a3);
+                    v7->itemID = UsedItem;
+                    v7->pokeID = (int)a3;
+                    v7->fClearConsume = 1;
+                    BattleHandler_StrSetup(&v7->exStr, 2u, 733);
+                    BattleHandler_AddArg(&v7->exStr, (int)a3);
+                    BattleHandler_AddArg(&v7->exStr, UsedItem);
+                    BattleHandler_PopWork(a2, v7);
+                }
+            }
+            if (!BattleMon_IsFullHP(BattleMon))
+            {
+                v8 = (HandlerParam_RecoverHP *)BattleHandler_PushWork(a2, EFFECT_RECOVERHP, (int)a3);
+                v8->pokeID = (int)a3;
+                v8->recoverHP = DivideMaxHPZeroCheck(BattleMon, 4u);
+                BattleHandler_StrSetup(&v8->exStr, 2u, 387);
+                BattleHandler_AddArg(&v8->exStr, (int)a3);
+                BattleHandler_PopWork(a2, v8);
+            }
+        }
+    }
 
     /* Charge */
+    void THUMB_BRANCH_HandlerChargePower(int a1, int a2, int a3, int *a4)
+    {
+        if (*a4 == 2 && a3 == BattleEventVar_GetValue(VAR_ATTACKING_MON) && BattleEventVar_GetValue(VAR_MOVE_TYPE) == 12)
+        {
+            k::Printf("\nWe are testing if charge is actually working properly!");
+            BattleEventVar_MulValue(VAR_MOVE_POWER_RATIO, 0x2000);
+        }
+    }
+#pragma endregion
 
+#pragma region MagicCoat
     /* Magic Coat */
+    void HandlerMagicCoat(int a1, ServerFlow *a2, unsigned int *a3)
+    {
+        u8 Value;                       // r6
+        HandlerParam_ChangeAbility *v6; // r4
 
+        if ((int)a3 == BattleEventVar_GetValue(VAR_ATTACKING_MON))
+        {
+            Value = BattleEventVar_GetValue(VAR_TARGET_MON_ID);
+            v6 = (HandlerParam_ChangeAbility *)BattleHandler_PushWork(a2, EFFECT_CHANGEABILITY, (int)a3);
+            v6->pokeID = Value;
+            v6->abilityID = 0x9C;
+            BattleHandler_StrSetup(&v6->exStr, 2u, 405);
+            BattleHandler_AddArg(&v6->exStr, v6->pokeID);
+            BattleHandler_AddArg(&v6->exStr, v6->abilityID);
+            BattleHandler_PopWork(a2, v6);
+        }
+    }
+
+    MOVE_TRIGGERTABLE MagicCoatHandlers[] = {
+        {EVENT_UNCATEGORIZED_MOVE, (MOVE_HANDLER_FUNC)HandlerMagicCoat},
+    };
+
+    MOVE_TRIGGERTABLE *THUMB_BRANCH_EventAddMagicCoat(_DWORD *a1)
+    {
+        *a1 = 1;
+        return MagicCoatHandlers;
+    }
+#pragma endregion
+
+#pragma region SideEffects
     /* Safeguard  */
+    void THUMB_BRANCH_HandlerSafeguard(int a1, ServerFlow *a2, unsigned int a3, int a4)
+    {
+        bool SideFromMonID; // r4
+        ConditionData v8;   // r0
 
+        SideFromMonID = GetSideFromMonID(a3);
+        v8.raw = Condition_MakeTurn(8).raw;
+        CommonCreateSideEffect(a1, a2, a3, a4, SideFromMonID, 2, v8.raw, 132);
+    }
     /* Mist */
+    void THUMB_BRANCH_HandlerMist(int a1, ServerFlow *a2, unsigned int a3, int a4)
+    {
+        bool SideFromMonID; // r4
+        ConditionData v8;   // r0
 
-    /* Mean Look */
+        SideFromMonID = GetSideFromMonID(a3);
+        v8.raw = Condition_MakeTurn(8).raw;
+        CommonCreateSideEffect(a1, a2, a3, a4, SideFromMonID, 3, v8.raw, 132);
+    }
+#pragma endregion
 
-    /* Block */
+#pragma region TrappingMoves
+    /* Mean Look and Block */
+    void THUMB_BRANCH_HandlerSpiderWeb(int a1, ServerFlow *a2, int a3)
+    {
+        int Value;                     // r6
+        BattleMon *BattleMon;          // r0
+        HandlerParam_AddCondition *v7; // r4
+        HandlerParam_ChangeStatStage *v8;
+        StatStage statStage;
 
+        if (a3 == BattleEventVar_GetValue(VAR_ATTACKING_MON))
+        {
+            Value = BattleEventVar_GetValue(VAR_TARGET_MON_ID);
+            BattleMon = Handler_GetBattleMon(a2, Value);
+            if (!BattleMon_CheckIfMoveCondition(BattleMon, CONDITION_BLOCK))
+            {
+                v7 = (HandlerParam_AddCondition *)BattleHandler_PushWork(a2, EFFECT_ADDCONDITION, a3);
+                v7->pokeID = Value;
+                v7->sickID = CONDITION_BLOCK;
+                v7->sickCont = ConditionData_MakePoke(a3);
+                BattleHandler_StrSetup(&v7->exStr, 2u, 872);
+                BattleHandler_AddArg(&v7->exStr, Value);
+                BattleHandler_PopWork(a2, v7);
+            }
+            statStage = (BattleEventVar_GetValue(VAR_MOVE_ID) == MOVE335_BLOCK) ? STATSTAGE_DEFENSE : STATSTAGE_SPECIAL_DEFENSE;
+            if (BattleMon_IsStatChangeValid(BattleMon, statStage, -1))
+            {
+                v8 = (HandlerParam_ChangeStatStage *)BattleHandler_PushWork(a2, EFFECT_CHANGESTATSTAGE, (int)a3);
+                v8->poke_cnt = 1;
+                v8->pokeID[0] = a3;
+                v8->rankType = statStage;
+                v8->rankVolume = -1;
+                v8->fMoveAnimation = 1;
+                BattleHandler_PopWork(a2, v8);
+            }
+        }
+    }
+#pragma endregion
+
+#pragma region HelpingHand
     /* Helping Hand */
+    void THUMB_BRANCH_HandlerHelpingHandPower(int a1, int a2, int a3, _DWORD *a4)
+    {
+        if (*a4 == BattleEventVar_GetValue(VAR_ATTACKING_MON))
+        {
+            BattleEventVar_MulValue(VAR_MOVE_POWER_RATIO, 8192);
+        }
+    }
+#pragma endregion
 
+#pragma region FocusPunch
     /* Focus Punch */
+    void HandlerFocusPunchPower(int a1, ServerFlow *a2, int a3)
+    {
+        int Value;                // r6
+        HandlerParam_Message *v6; // r4
 
+        if ((int)a3 == BattleEventVar_GetValue(VAR_ATTACKING_MON))
+        {
+            if (CommonCounterStart(a2, a3, 0, 0))
+            {
+                Value = 75;
+            }
+            else
+            {
+                Value = 150;
+            }
+            BattleEventVar_RewriteValue(VAR_MOVE_POWER, Value);
+        }
+    }
+    void HandlerFocusPunch(int a1, ServerFlow *a2, unsigned int a3)
+    {
+        HandlerParam_SetTurnFlag *v5;  // r0
+        BattleMon *BattleMon;          // r0
+        HandlerParam_AddAnimation *v7; // r6
+        HandlerParam_Message *v8;      // r6
+
+        if (a3 == BattleEventVar_GetValue(VAR_MON_ID))
+        {
+            BattleMon = Handler_GetBattleMon(a2, a3);
+            if (!BattleMon_IsHiding(BattleMon))
+            {
+                v7 = (HandlerParam_AddAnimation *)BattleHandler_PushWork(a2, EFFECT_ADD_ANIMATION, a3);
+                v7->animNo = 626;
+                v7->pos_from = Handler_PokeIDToPokePos(a2, a3);
+                v7->pos_to = 6;
+                v7->fMsgWinVanish = 1;
+                BattleHandler_PopWork(a2, v7);
+            }
+            v8 = (HandlerParam_Message *)BattleHandler_PushWork(a2, EFFECT_MESSAGE, a3);
+            BattleHandler_StrSetup(&v8->str, 2u, 616);
+            BattleHandler_AddArg(&v8->str, a3);
+            BattleHandler_PopWork(a2, v8);
+        }
+    }
+
+    MOVE_TRIGGERTABLE FocusPunchHandlers[] = {
+        {EVENT_BEFORE_ATTACKS, (MOVE_HANDLER_FUNC)HandlerFocusPunch},
+        {EVENT_MOVE_BASE_POWER, (MOVE_HANDLER_FUNC)HandlerFocusPunchPower}};
+
+    MOVE_TRIGGERTABLE *THUMB_BRANCH_EventAddFocusPunch(_DWORD *a1)
+    {
+        *a1 = 2;
+        return FocusPunchHandlers;
+    }
 #pragma endregion
 
 #pragma region overwrites
@@ -89,14 +342,6 @@ extern "C"
             return BattleEventVar_RewriteValue(VAR_EFFECT_CHANCE, 10);
         }
         return result;
-    }
-
-    void THUMB_BRANCH_HandlerHelpingHandPower(int a1, int a2, int a3, _DWORD *a4)
-    {
-        if (*a4 == BattleEventVar_GetValue(VAR_ATTACKING_MON))
-        {
-            BattleEventVar_MulValue(VAR_MOVE_POWER_RATIO, 8192);
-        }
     }
 
     int THUMB_BRANCH_HandlerElectroBall(int a1, ServerFlow *a2, int a3)
@@ -359,8 +604,8 @@ extern "C"
             }
 
             flowsub_CheckPokeHideAvoid(a1, v14, battleMon, a1->PokeSetTemp);
-            flowsub_CheckNoEffect_TypeAffinity(a1, (MoveParam *)v14, battleMon, a1->PokeSetTemp, &a1->dmgAffRec);
-            flowsub_CheckNoEffect_Protect(a1, v14, battleMon, a1->PokeSetTemp, &a1->dmgAffRec);
+            flowsub_CheckNoEffect_TypeAffinity(a1, (MoveParam *)v14, battleMon, a1->PokeSetTemp, &a1->effectiveness_recorder);
+            flowsub_CheckNoEffect_Protect(a1, v14, battleMon, a1->PokeSetTemp, a1->effectiveness_recorder.effectiveness);
             flowsub_CheckWazaAvoid(a1, v14, battleMon, a1->PokeSetTemp);
             j_j_PokeSet_IsRemovedAll_4(a1->PokeSetTemp);
 
@@ -383,7 +628,7 @@ extern "C"
                 MoveAnimCtrl_Init(moveAnimCtrl);
                 MoveAnimCtrl_Setup(a1->moveAnimContr, a1, battleMon, a1->PokeSetTemp);
                 a1->moveAnimContr->effectIndex = 1;
-                ServerControl_DamageRoot(a1, (MoveParam *)v14, battleMon, a1->PokeSetTemp, &a1->dmgAffRec, 1);
+                ServerControl_DamageRoot(a1, (MoveParam *)v14, battleMon, a1->PokeSetTemp, a1->effectiveness_recorder.effectiveness, 1);
                 v9 = a1->moveAnimContr;
                 v10 = v9->flags & 1;
                 v9->MoveID = MoveID;
@@ -695,6 +940,51 @@ extern "C"
     {
         *a1 = 2;
         return ElectroShotHandlers;
+    }
+
+    int HandlerThunderRainCheck(ServerFlow *a1, int a2, int a3)
+    {
+        int result; // r0
+        BattleMon *mon;
+        result = BattleEventVar_GetValue(VAR_ATTACKING_MON);
+        if (a3 == result)
+        {
+            mon = Handler_GetBattleMon(a1, a3);
+            result = Handler_GetWeather(a2);
+            if (result == 2 && mon->HeldItem != IT0544_UTILITY_UMBRELLA && BattleMon_GetValue(mon, VALUE_EFFECTIVE_ABILITY) != ABIL142_OVERCOAT)
+            {
+                return BattleEventVar_RewriteValue(VAR_GENERAL_USE_FLAG, 1);
+            }
+        }
+        return result;
+    }
+
+    int HandlerThunderSunCheck(ServerFlow *a1, int a2, int a3)
+    {
+        int result; // r0
+        BattleMon *mon;
+        result = BattleEventVar_GetValue(VAR_ATTACKING_MON);
+        if (a3 == result)
+        {
+            mon = Handler_GetBattleMon(a1, a3);
+
+            result = Handler_GetWeather(a2);
+            if (result == 1 && mon->HeldItem != IT0544_UTILITY_UMBRELLA && BattleMon_GetValue(mon, VALUE_EFFECTIVE_ABILITY) != ABIL142_OVERCOAT)
+            {
+                return BattleEventVar_RewriteValue(VAR_ACCURACY, 50);
+            }
+        }
+        return result;
+    }
+
+    MOVE_TRIGGERTABLE ThunderHandlers[] = {
+        {EVENT_CHECK_HIDING, (MOVE_HANDLER_FUNC)HandlerThunderFlyCheck},
+        {EVENT_BYPASS_ACCURACY_CHECK, (MOVE_HANDLER_FUNC)HandlerThunderRainCheck},
+        {EVENT_MOVE_ACCURACY, (MOVE_HANDLER_FUNC)HandlerThunderSunCheck}};
+    MOVE_TRIGGERTABLE *THUMB_BRANCH_EventAddThunder(_DWORD *a1)
+    {
+        *a1 = 3;
+        return ThunderHandlers;
     }
 
 #pragma endregion
@@ -1541,7 +1831,6 @@ extern "C"
 
     void HandlerOverheatRecharge(int a1, ServerFlow *a2, int a3)
     {
-
         BattleMon *mon;
         HandlerParam_Message *message;
         int MoveID;
@@ -1585,52 +1874,52 @@ extern "C"
 
 #pragma region status
 
-    MoveTarget THUMB_BRANCH_DetermineCurseTargetData(BattleMon *a1)
-    {
-        return TARGET_OTHER_SELECT;
-    }
+    // MoveTarget THUMB_BRANCH_DetermineCurseTargetData(BattleMon *a1)
+    // {
+    //     return TARGET_OTHER_SELECT;
+    // }
 
-    void THUMB_BRANCH_HandlerCurse(int a1, ServerFlow *a2, int a3)
-    {
-        char effectIndex;                  // r6
-        int Value;                         // r7
-        HandlerParam_AddCondition *v7;     // r6
-        HandlerParam_ChangeHP *v8;         // r6
-        HandlerParam_ChangeStatStage *v9;  // r0
-        HandlerParam_ChangeStatStage *v10; // r0
-        HandlerParam_ChangeStatStage *v11; // r0
-        BattleMon *BattleMon;              // [sp+0h] [bp-20h]
+    // void THUMB_BRANCH_HandlerCurse(int a1, ServerFlow *a2, int a3)
+    // {
+    //     char effectIndex;                  // r6
+    //     int Value;                         // r7
+    //     HandlerParam_AddCondition *v7;     // r6
+    //     HandlerParam_ChangeHP *v8;         // r6
+    //     HandlerParam_ChangeStatStage *v9;  // r0
+    //     HandlerParam_ChangeStatStage *v10; // r0
+    //     HandlerParam_ChangeStatStage *v11; // r0
+    //     BattleMon *BattleMon;              // [sp+0h] [bp-20h]
 
-        if (a3 == BattleEventVar_GetValue(VAR_ATTACKING_MON))
-        {
-            BattleMon = Handler_GetBattleMon(a2, a3);
+    //     if (a3 == BattleEventVar_GetValue(VAR_ATTACKING_MON))
+    //     {
+    //         BattleMon = Handler_GetBattleMon(a2, a3);
 
-            if (BattleMon_GetValue(BattleMon, VALUE_CURRENT_HP) > 0)
-            {
-                Value = BattleEventVar_GetValue(VAR_TARGET_MON_ID);
-                if (Value != 31)
-                {
-                    v7 = (HandlerParam_AddCondition *)BattleHandler_PushWork(a2, EFFECT_ADDCONDITION, a3);
-                    v7->pokeID = Value;
-                    v7->sickID = CONDITION_CURSE;
-                    v7->sickCont = Condition_MakePermanent();
-                    BattleHandler_StrSetup(&v7->exStr, 2u, 1064);
-                    BattleHandler_AddArg(&v7->exStr, a3);
-                    BattleHandler_AddArg(&v7->exStr, Value);
-                    BattleHandler_PopWork(a2, v7);
-                    v8 = (HandlerParam_ChangeHP *)BattleHandler_PushWork(a2, EFFECT_CHANGEHP, a3);
-                    v8->pokeID[0] = a3;
-                    v8->volume[0] = -DivideMaxHPZeroCheck(BattleMon, 2u);
-                    v8->poke_cnt = 1;
-                    v8->header.flags |= 0x1000000u;
-                    BattleHandler_PopWork(a2, v8);
-                }
-            }
-            effectIndex = 1;
+    //         if (BattleMon_GetValue(BattleMon, VALUE_CURRENT_HP) > 0)
+    //         {
+    //             Value = BattleEventVar_GetValue(VAR_TARGET_MON_ID);
+    //             if (Value != 31)
+    //             {
+    //                 v7 = (HandlerParam_AddCondition *)BattleHandler_PushWork(a2, EFFECT_ADDCONDITION, a3);
+    //                 v7->pokeID = Value;
+    //                 v7->sickID = CONDITION_CURSE;
+    //                 v7->sickCont = Condition_MakePermanent();
+    //                 BattleHandler_StrSetup(&v7->exStr, 2u, 1064);
+    //                 BattleHandler_AddArg(&v7->exStr, a3);
+    //                 BattleHandler_AddArg(&v7->exStr, Value);
+    //                 BattleHandler_PopWork(a2, v7);
+    //                 v8 = (HandlerParam_ChangeHP *)BattleHandler_PushWork(a2, EFFECT_CHANGEHP, a3);
+    //                 v8->pokeID[0] = a3;
+    //                 v8->volume[0] = -DivideMaxHPZeroCheck(BattleMon, 2u);
+    //                 v8->poke_cnt = 1;
+    //                 v8->header.flags |= 0x1000000u;
+    //                 BattleHandler_PopWork(a2, v8);
+    //             }
+    //         }
+    //         effectIndex = 1;
 
-            Handler_SetMoveEffectIndex(a2, effectIndex);
-        }
-    }
+    //         Handler_SetMoveEffectIndex(a2, effectIndex);
+    //     }
+    // }
 
     int THUMB_BRANCH_HandlerAttractCheckFail(int a1, ServerFlow *a2, int a3)
     {
@@ -1731,6 +2020,21 @@ extern "C"
                 }
                 return 1;
             }
+
+            // k::Printf("\n\nLets see if this works, condition accuracy is %d\n",a2->Conditions[CONDITION_ACCURACYUP]);
+            if (a2->Conditions[CONDITION_ACCURACYUP] == 1 && PML_MoveIsDamaging(move))
+            {
+                // k::Printf("\nit worked\n\n");
+                if (strparam)
+                {
+                    Btlv_StringParam_Setup(strparam, 2, 571);
+                    v12 = BattleMon_GetID(a2);
+                    Btlv_StringParam_AddArg(strparam, v12);
+                    Btlv_StringParam_AddArg(strparam, move);
+                }
+                return 1;
+            }
+
             if (BattleMon_CheckIfMoveCondition(a2, CONDITION_TORMENT) && move == BattleMon_GetPreviousMove(a2))
             {
                 if (strparam)
@@ -2159,150 +2463,5 @@ extern "C"
             return;
         }
     };
-    // void THUMB_BRANCH_HandlerSonicBoom(ServerFlow *a1, BattleMon *a2, unsigned int a3)
-    // {
-    //     int Param_1;             // r0
-    //     int v5;                  // r5
-    //     int v6;                  // r6
-    //     int v7;                  // r6
-    //     HandlerParam_Damage *v8; // r4
-    //     BattleMon *v9;           // r0
-    //     unsigned int v10;        // r1
-    //     ConditionData v13;       // [sp+8h] [bp-20h]
-
-    //     if (j_j_BattleMon_IsFainted_7(a2))
-    //     {
-    //         return;
-    //     }
-    //     v13 = j_j_GetConditionContinuationParam_1(a2, CONDITION_BIND);
-    //     Param_1 = j_j_Condition_GetParam_1(v13);
-    //     v6 = -1;
-
-    //     if (IsEqual(Param_1, MOVE463_MAGMA_STORM))
-    //     {
-    //         v6 = 633;
-    //     }
-    //     else if (IsEqual(Param_1, MOVE250_WHIRLPOOL))
-    //     {
-    //         v6 = 635;
-    //     }
-    //     else if (IsEqual(Param_1, MOVE083_FIRE_SPIN))
-    //     {
-    //         v6 = 632;
-    //     }
-    //     else if (IsEqual(Param_1, MOVE020_BIND))
-    //     {
-    //         v6 = 630;
-    //     }
-    //     else if (IsEqual(Param_1, MOVE128_CLAMP))
-    //     {
-    //         v6 = 634;
-    //     }
-    //     else if (IsEqual(Param_1, MOVE328_SAND_TOMB))
-    //     {
-    //         v6 = 636;
-    //     }
-    //     else if (IsEqual(Param_1, MOVE035_WRAP))
-    //     {
-    //         v6 = 631;
-    //     }
-    //     else if (IsEqual(Param_1, MOVE132_INFESTATION))
-    //     {
-    //         v6 = 679;
-    //     }
-    //     else if (IsEqual(Param_1, MOVE012_GUILLOTINE))
-    //     {
-    //         v6 = 680;
-    //     }
-    //     else if (IsEqual(Param_1, MOVE032_HORN_DRILL))
-    //     {
-    //         v6 = 681;
-    //     }
-    //     else if (IsEqual(Param_1, MOVE090_FISSURE))
-    //     {
-    //         v6 = 682;
-    //     }
-    //     else if (IsEqual(Param_1, MOVE170_SNAP_TRAP))
-    //     {
-    //         v6 = 683;
-    //     }
-    //     else if (IsEqual(Param_1, MOVE286_IMPRISON))
-    //     {
-    //         v6 = 684;
-    //     }
-    //     else if (IsEqual(Param_1, MOVE171_NIGHTMARE))
-    //     {
-    //         v6 = 685;
-    //     }
-    //     else if (IsEqual(Param_1, MOVE264_ALLURING_VOICE))
-    //     {
-    //         v6 = 686;
-    //     }
-    //     else
-    //     {
-    //     }
-    //     // if (Param_1 > MOVE128_CLAMP)
-    //     // {
-    //     //     if (Param_1 > MOVE328_SAND_TOMB)
-    //     //     {
-    //     //         if (Param_1 == MOVE463_MAGMA_STORM)
-    //     //         {
-    //     //             v6 = 633;
-    //     //         }
-    //     //         goto LABEL_24;
-    //     //     }
-    //     //     if (Param_1 < MOVE328_SAND_TOMB)
-    //     //     {
-    //     //         if (Param_1 == MOVE250_WHIRLPOOL)
-    //     //         {
-    //     //             v6 = 635;
-    //     //         }
-    //     //         goto LABEL_24;
-    //     //     }
-    //     //     v7 = 159;
-    //     //     goto LABEL_23;
-    //     // }
-    //     // if (Param_1 >= MOVE128_CLAMP)
-    //     // {
-    //     //     v6 = 634;
-    //     //     goto LABEL_24;
-    //     // }
-    //     // if (Param_1 <= MOVE035_WRAP)
-    //     // {
-    //     //     if (Param_1 < MOVE035_WRAP)
-    //     //     {
-    //     //         if (Param_1 == MOVE020_BIND)
-    //     //         {
-    //     //             v6 = 630;
-    //     //         }
-    //     //     }
-    //     //     else
-    //     //     {
-    //     //         v6 = 631;
-    //     //     }
-    //     //     goto LABEL_24;
-    //     // }
-    //     // if (Param_1 == MOVE083_FIRE_SPIN)
-    //     // {
-    //     //     v7 = 158;
-    //     // LABEL_23:
-    //     //     v6 = 4 * v7;
-    //     // }
-    //     // LABEL_24:
-    //     v8 = (HandlerParam_Damage *)j_j_BattleHandler_PushWork_21(a1, EFFECT_DAMAGE, a3);
-    //     v8->pokeID = a3;
-    //     v8->damage = j_j_DivideMaxHPZeroCheck_5(a2, (j_j_Condition_GetFlag(v13)) ? 8 : 10);
-    //     if (v6 != -1)
-    //     {
-    //         v8->flags |= 2u;
-    //         v8->effectNo = v6;
-    //         v8->posFrom = j_j_Handler_PokeIDToPokePos_3(a1, a3);
-    //         v8->posTo = 6;
-    //     }
-    //     j_j_BattleHandler_StrSetup_14(&v8->exStr.ID, 2u, 372);
-    //     j_j_BattleHandler_AddArg_16(&v8->exStr, a3);
-    //     j_j_BattleHandler_AddArg_17(&v8->exStr, v5);
-    //     j_j_BattleHandler_PopWork_21(a1, v8);
-    // }
 #pragma endregion
 }

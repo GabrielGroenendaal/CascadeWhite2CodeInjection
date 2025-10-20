@@ -102,6 +102,15 @@ extern "C"
 
 
     */
+#pragma region Multiscale
+
+    // Heatproof
+    void THUMB_BRANCH_HandlerMultiscale(int a1, int a2, int a3)
+    {
+        return;
+    }
+
+#pragma endregion
 
 #pragma region Heatproof
 
@@ -120,6 +129,7 @@ extern "C"
             }
         }
     }
+
 #pragma endregion
 
 #pragma region Scrappy
@@ -232,8 +242,8 @@ extern "C"
 
     ABILITY_TRIGGERTABLE ScrappyHandlers[] = {
         {EVENT_CHECK_TYPE_EFFECTIVENESS, (ABILITY_HANDLER_FUNC)HandlerScrappy}, // 22
-        {EVENT_STAT_STAGE_CHANGE_LAST_CHECK, (ABILITY_HANDLER_FUNC)HandlerIntimidateCheck},
-        {EVENT_STAT_STAGE_CHANGE_FAIL, (ABILITY_HANDLER_FUNC)HandlerIntimidateGuard}};
+        {EVENT_STAT_STAGE_CHANGE_LAST_CHECK, (ABILITY_HANDLER_FUNC)HandlerHyperCutterCheck},
+        {EVENT_STAT_STAGE_CHANGE_FAIL, (ABILITY_HANDLER_FUNC)HandlerHyperCutterGuard}};
 
     ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddScrappy(_DWORD *a1)
     {
@@ -244,98 +254,434 @@ extern "C"
 #pragma endregion
 
 #pragma region Colossal
+    int THUMB_BRANCH_ServerControl_IsGuaranteedHit(ServerFlow *a1, BattleMon *a2, BattleMon *a3)
+    {
+        int ID;                    // r0
+        int v8;                    // r0
+        int ConditionAffectedMove; // r4
 
+        ID = BattleMon_GetID(a2);
+        if (sub_21A2EA0(&a1->posPoke, a1->mainModule, ID) && (BattleMon_GetValue(a2, VALUE_EFFECTIVE_ABILITY) == ABIL099_NO_GUARD || BattleMon_GetValue(a2, VALUE_EFFECTIVE_ABILITY) == ABIL080_COLOSSAL))
+        {
+            return 1;
+        }
+        v8 = BattleMon_GetID(a3);
+        if (sub_21A2EB0(&a1->posPoke, a1->mainModule, v8) && (BattleMon_GetValue(a3, VALUE_EFFECTIVE_ABILITY) == 99 || BattleMon_GetValue(a2, VALUE_EFFECTIVE_ABILITY) == ABIL080_COLOSSAL))
+        {
+            return 1;
+        }
+        if (BattleMon_CheckIfMoveCondition(a2, CONDITION_MUSTHIT))
+        {
+            return 1;
+        }
+        if (BattleMon_CheckIfMoveCondition(a2, CONDITION_LOCKON))
+        {
+            ConditionAffectedMove = BattleMon_GetConditionAffectedMove(a2, CONDITION_LOCKON);
+            if (ConditionAffectedMove == BattleMon_GetID(a3))
+            {
+                return 1;
+            }
+        }
+        return 0;
+    }
+
+    void ColossalDefense(int a1, ServerFlow *a2, int a3)
+    {
+        if (a3 == BattleEventVar_GetValue(VAR_DEFENDING_MON))
+        {
+            BattleEventVar_MulValue(VAR_MOVE_POWER_RATIO, 3072);
+        }
+    }
+
+    ABILITY_TRIGGERTABLE ColossalHandlers[] = {
+        {EVENT_MOVE_DAMAGE_PROCESSING_2, (ABILITY_HANDLER_FUNC)ColossalDefense}, // 41
+    };
+
+    ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddSteadfast(_DWORD *a1)
+    {
+        *a1 = 1;
+        return ColossalHandlers;
+    }
 #pragma endregion
 
-#pragma region Unaware
-
-#pragma endregion
+    // #pragma region Unaware
+    //     ABILITY_TRIGGERTABLE UnawareHandlers[] = {
+    //         {EVENT_MOVE_ACCURACY_STAGE, (ABILITY_HANDLER_FUNC)HandlerUnawareHitRank}, // 41
+    //         {EVENT_BEFORE_ATTACKER_POWER, (ABILITY_HANDLER_FUNC)HandlerUnawareAttackRank},
+    //         {EVENT_BEFORE_DEFENDER_GUARD, (ABILITY_HANDLER_FUNC)HandlerUnawareDefenseRank},
+    //         {EVENT_ADD_CONDITION_CHECK_FAIL, (ABILITY_HANDLER_FUNC)HandlerOblivious},
+    //         {EVENT_ADD_CONDITION_FAIL, (ABILITY_HANDLER_FUNC)HandlerAddStatusFailedCommon},
+    //         {EVENT_AFTER_ABILITY_CHANGE, (ABILITY_HANDLER_FUNC)HandlerObliviousCureStatus},
+    //         {EVENT_ABILITY_CHECK_NO_EFFECT, (ABILITY_HANDLER_FUNC)HandlerObliviousNoEffectCheck},
+    //         {EVENT_ACTION_PROCESSING_END, (ABILITY_HANDLER_FUNC)HandlerObliviousActionEnd},
+    //     };
+    //     ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddUnaware(_DWORD *a1)
+    //     {
+    //         *a1 = 8;
+    //         return UnawareHandlers;
+    //     }
+    // #pragma endregion
 
 #pragma region Filter/Solid Rock
+    void THUMB_BRANCH_HandlerSolidRock(int a1, int a2, int a3)
+    {
+        int Value; // r0
 
+        if (a3 == BattleEventVar_GetValue(VAR_DEFENDING_MON))
+        {
+            Value = BattleEventVar_GetValue(VAR_TYPE_EFFECTIVENESS);
+            if (Value == EFFECTIVENESS_2)
+            {
+                BattleEventVar_MulValue(VAR_RATIO, 3072);
+            }
+            else if (Value == EFFECTIVENESS_4)
+            {
+                BattleEventVar_MulValue(VAR_RATIO, 2304);
+            }
+            else
+            {
+                BattleEventVar_MulValue(VAR_RATIO, 4096);
+            }
+        }
+    }
 #pragma endregion
 
 #pragma region HeavyMetal
+    void HandlerHeavyMetalDefense(int a1, int a2, int a3)
+    {
+        if (a3 == BattleEventVar_GetValue(VAR_DEFENDING_MON))
+        {
+            if (BattleEventVar_GetValue(VAR_MOVE_CATEGORY) == 1)
+            {
+                BattleEventVar_MulValue(VAR_MOVE_POWER_RATIO, 6144);
+            }
+        }
+    }
 
+    void HandlerHeavyMetalSpeed(int a1, int a2, int a3)
+    {
+        if (a3 == BattleEventVar_GetValue(VAR_MON_ID)) // hail
+        {
+            BattleEventVar_MulValue(VAR_RATIO, 2730);
+        }
+    }
+
+    ABILITY_TRIGGERTABLE HeavyMetalHandlers[] = {
+        {EVENT_DEFENDER_GUARD, (ABILITY_HANDLER_FUNC)HandlerHeavyMetalDefense}, // 22
+        {EVENT_CALC_SPEED, (ABILITY_HANDLER_FUNC)HandlerHeavyMetalSpeed},
+        {EVENT_WEIGHT_RATIO, (ABILITY_HANDLER_FUNC)HandlerHeavyMetal},
+    };
+
+    ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddHeavyMetal(_DWORD *a1)
+    {
+        *a1 = 3;
+        return HeavyMetalHandlers;
+    }
 #pragma endregion
 
 #pragma region LightMetal
+    void HandlerLightMetalDefense(int a1, int a2, int a3)
+    {
+        if (a3 == BattleEventVar_GetValue(VAR_DEFENDING_MON))
+        {
+            if (BattleEventVar_GetValue(VAR_MOVE_CATEGORY) == 1)
+            {
+                BattleEventVar_MulValue(VAR_MOVE_POWER_RATIO, 2730);
+            }
+        }
+    }
 
+    void HandlerLightMetalSpeed(int a1, int a2, int a3)
+    {
+        if (a3 == BattleEventVar_GetValue(VAR_MON_ID)) // hail
+        {
+            BattleEventVar_MulValue(VAR_RATIO, 6144);
+        }
+    }
+
+    ABILITY_TRIGGERTABLE LightMetalHandlers[] = {
+        {EVENT_DEFENDER_GUARD, (ABILITY_HANDLER_FUNC)HandlerLightMetalDefense}, // 22
+        {EVENT_CALC_SPEED, (ABILITY_HANDLER_FUNC)HandlerLightMetalSpeed},
+        {EVENT_WEIGHT_RATIO, (ABILITY_HANDLER_FUNC)HandlerLightMetal},
+    };
+
+    ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddLightMetal(_DWORD *a1)
+    {
+        *a1 = 3;
+        return LightMetalHandlers;
+    }
 #pragma endregion
 
 #pragma region MoldBreaker
+    void HandlerMoldBreakerPower(int a1, int a2, int a3)
+    {
+        if (a3 == BattleEventVar_GetValue(VAR_ATTACKING_MON))
+        {
+            BattleEventVar_MulValue(VAR_MOVE_POWER_RATIO, 4505);
+        }
+    }
 
+    ABILITY_TRIGGERTABLE MoldBreakerHandlers[] = {
+        {EVENT_SWITCH_IN, (ABILITY_HANDLER_FUNC)HandlerMoldBreakerSwitchIn}, // 22
+        {EVENT_AFTER_ABILITY_CHANGE, (ABILITY_HANDLER_FUNC)HandlerMoldBreakerSwitchIn},
+        {EVENT_MOVE_SEQUENCE_START, (ABILITY_HANDLER_FUNC)HandlerMoldBreakerStart},
+        {EVENT_MOVE_SEQUENCE_END, (ABILITY_HANDLER_FUNC)HandlerMoldBreakerEnd},
+        {EVENT_ABILITY_NULLIFIED, (ABILITY_HANDLER_FUNC)HandlerMoldBreakerConfirm},
+        {EVENT_MOVE_POWER, (ABILITY_HANDLER_FUNC)HandlerMoldBreakerPower}, // 6
+    };
+
+    ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddMoldBreaker(_DWORD *a1)
+    {
+        *a1 = 6;
+        return MoldBreakerHandlers;
+    }
 #pragma endregion
 
 #pragma region SandForce
-    ABILITY_TRIGGERTABLE SandForceHandlers[] = {
-        {EVENT_CALC_SPEED, (ABILITY_HANDLER_FUNC)HandlerSandRush},              // 41
-        {EVENT_WEATHER_REACTION, (ABILITY_HANDLER_FUNC)HandlerSandVeilWeather}, // 41
-        {EVENT_MOVE_POWER, (ABILITY_HANDLER_FUNC)HandlerSandVeilWeather}};      // EDit
-
-    ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddSandForce(_DWORD *a1)
+    void THUMB_BRANCH_HandlerSandForce(int a1, int a2, int a3)
     {
-        *a1 = 3;
-        return SandForceHandlers;
+        int Value; // r0
+
+        if (a3 == BattleEventVar_GetValue(VAR_ATTACKING_MON))
+        {
+            Value = BattleEventVar_GetValue(VAR_MOVE_TYPE);
+            if (Value == 4 || Value == 5 || Value == 8)
+            {
+                if (Handler_GetWeather(a2) == 4)
+                {
+                    BattleEventVar_MulValue(VAR_MOVE_POWER_RATIO, 5734);
+                }
+                else
+                {
+                    BattleEventVar_MulValue(VAR_MOVE_POWER_RATIO, 4915);
+                }
+            }
+        }
     }
 #pragma endregion
 
 #pragma region CloudNine
 
+    void HandlerAirLockAccuracy(int a1, int a2, unsigned int a3)
+    {
+        BattleEventVar_MulValue(VAR_RATIO, 4915);
+    }
+
+    ABILITY_TRIGGERTABLE AirLockHandlers[] = {
+        {EVENT_SWITCH_IN, (ABILITY_HANDLER_FUNC)HandlerAirLockSwitchIn}, // 22
+        {EVENT_WEATHER_CHECK, (ABILITY_HANDLER_FUNC)HandlerAirLockChangeWeather},
+        {EVENT_MOVE_ACCURACY, (ABILITY_HANDLER_FUNC)HandlerAirLockAccuracy},
+    };
+
+    ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddAirLock(_DWORD *a1)
+    {
+        *a1 = 3;
+        return AirLockHandlers;
+    }
 #pragma endregion
 
 #pragma region Reckless
+    void THUMB_BRANCH_HandlerReckless(int a1, int a2, int a3)
+    {
+        int Value; // r4
 
+        if (a3 == BattleEventVar_GetValue(VAR_ATTACKING_MON))
+        {
+            Value = BattleEventVar_GetValue(VAR_MOVE_ID);
+            if (PML_MoveGetParam(Value, MVDATA_RECOIL_NEG) || Value == MOVE153_EXPLOSION || Value == MOVE120_SELF_DESTRUCT || Value == MOVE026_JUMP_KICK || Value == MOVE136_HIGH_JUMP_KICK)
+            {
+                BattleEventVar_MulValue(VAR_MOVE_POWER_RATIO, 4915);
+            }
+        }
+    }
 #pragma endregion
 
 #pragma region FurCoat
-
-#pragma endregion
-
-#pragma region Normalize
-
-    void HandlerNormalizePower(int a1, int a2, int a3)
+    void HanderFurCoat(int a1, ServerFlow *a2, int a3)
     {
-        if (a3 == BattleEventVar_GetValue(VAR_ATTACKING_MON))
+        int result; // r0
+        int Value;  // r0
+
+        result = BattleEventVar_GetValue(VAR_DEFENDING_MON);
+        if (a3 == result)
         {
-            if (PML_MoveGetType(BattleEventVar_GetValue(VAR_MOVE_ID)) == TYPE_NORMAL) // physical
+            Value = BattleEventVar_GetValue(VAR_MOVE_ID);
+
+            if (PML_MoveGetCategory(Value) == 1)
             {
-                BattleEventVar_MulValue(VAR_RATIO, 5325); // 20% boost
+                BattleEventVar_MulValue(VAR_RATIO, 2048);
             }
         }
     }
 
-    ABILITY_TRIGGERTABLE NormalizeHandlers[] = {
-        {EVENT_MOVE_PARAM, (ABILITY_HANDLER_FUNC)HandlerNormalize},             // 22
-        {EVENT_CHECK_TYPE_EFFECTIVENESS, (ABILITY_HANDLER_FUNC)HandlerScrappy}, // 22
-        {EVENT_ATTACKER_POWER, (ABILITY_HANDLER_FUNC)HandlerNormalizePower}};
+    ABILITY_TRIGGERTABLE FurCoatHandlers[] = {
+        {EVENT_MOVE_DAMAGE_PROCESSING_2, (ABILITY_HANDLER_FUNC)HanderFurCoat},   // 22
+        {EVENT_WEATHER_REACTION, (ABILITY_HANDLER_FUNC)HandlerSnowCloakWeather}, // 23
+    };
 
-    ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddNormalize(_DWORD *a1)
+    ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddLeafGuard(_DWORD *a1)
     {
-        *a1 = 3;
-        return NormalizeHandlers;
+        *a1 = 2;
+        return FurCoatHandlers;
     }
+#pragma endregion
+
+#pragma region Normalize
+
+    // void HandlerNormalizePower(int a1, int a2, int a3)
+    // {
+    //     // if (a3 == BattleEventVar_GetValue(VAR_ATTACKING_MON))
+    //     // {
+    //     //     if (PML_MoveGetType(BattleEventVar_GetValue(VAR_MOVE_ID)) == TYPE_NORMAL) // physical
+    //     //     {
+    //     //         BattleEventVar_MulValue(VAR_RATIO, 5325); // 20% boost
+    //     //     }
+    //     // }
+    //     if (BattleEventVar_GetValue(VAR_MOVE_TYPE) != TYPE_NORMAL)
+    //     {
+    //         BattleEventVar_RewriteValue(VAR_MOVE_TYPE, TYPE_NORMAL);
+    //     }
+    // }
+
+    // ABILITY_TRIGGERTABLE NormalizeHandlers[] = {
+    //     {EVENT_MOVE_PARAM, (ABILITY_HANDLER_FUNC)HandlerNormalize},             // 22
+    //     // {EVENT_CHECK_TYPE_EFFECTIVENESS, (ABILITY_HANDLER_FUNC)HandlerScrappy}, // 22
+    //    //  {EVENT_ATTACKER_POWER, (ABILITY_HANDLER_FUNC)HandlerNormalizePower}
+    // };
+
+    // ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddNormalize(_DWORD *a1)
+    // {
+    //     *a1 = 1;
+    //     return NormalizeHandlers;
+    // }
 
 #pragma endregion
 
 #pragma region PinchAbilites
+    void THUMB_BRANCH_CommonLowHPBoostAbility(ServerFlow *a1, int a2, int a3)
+    {
+        BattleMon *BattleMon; // r6
+        unsigned int v7;      // r5
 
+        if (a2 == BattleEventVar_GetValue(VAR_ATTACKING_MON))
+        {
+            BattleMon = Handler_GetBattleMon(a1, a2);
+            v7 = DivideMaxHp(BattleMon, 3u);
+            if (BattleMon_GetValue(BattleMon, VALUE_CURRENT_HP) <= v7 && a3 == BattleEventVar_GetValue(VAR_MOVE_TYPE))
+            {
+                BattleEventVar_MulValue(VAR_RATIO, 6144);
+            }
+            else
+            {
+                BattleEventVar_MulValue(VAR_RATIO, 5120);
+            }
+        }
+    }
 #pragma endregion
 
 #pragma region Infiltrator
+    void HandlerInfiltratorPower(int a1, int a2, int a3)
+    {
+        if (a3 == BattleEventVar_GetValue(VAR_ATTACKING_MON) && BattleEventVar_GetValue(VAR_TYPE_EFFECTIVENESS) > 3)
+        {
+            BattleEventVar_MulValue(VAR_MOVE_POWER_RATIO, 4505);
+        }
+    }
 
+    ABILITY_TRIGGERTABLE InfiltratorHandlers[] = {
+        {EVENT_MOVE_SEQUENCE_START, (ABILITY_HANDLER_FUNC)HandlerInfiltratorStart},
+        {EVENT_MOVE_SEQUENCE_END, (ABILITY_HANDLER_FUNC)HandlerInfiltratorEnd},
+        {EVENT_MOVE_DAMAGE_PROCESSING_2, (ABILITY_HANDLER_FUNC)HandlerInfiltratorPower}, // 6
+    };
+
+    ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddInfiltrator(_DWORD *a1)
+    {
+        *a1 = 3;
+        return InfiltratorHandlers;
+    }
 #pragma endregion
 
 #pragma region Merciless
+    void MercilessOffense(int a1, ServerFlow *a2, int a3)
+    {
+        BattleMon *defendingMon; // r5
+        if (a3 == BattleEventVar_GetValue(VAR_ATTACKING_MON))
+        {
+            defendingMon = Handler_GetBattleMon(a2, BattleEventVar_GetValue(VAR_DEFENDING_MON));
+            if (BattleMon_GetStatus(defendingMon))
+            {
+                BattleEventVar_MulValue(VAR_MOVE_POWER_RATIO, 5120);
+            }
+        }
+    }
 
+    void MercilessDefense(int a1, ServerFlow *a2, int a3)
+    {
+        BattleMon *attackingMon; // r4
+        if (a3 == BattleEventVar_GetValue(VAR_DEFENDING_MON))
+        {
+            attackingMon = Handler_GetBattleMon(a2, BattleEventVar_GetValue(VAR_ATTACKING_MON));
+            if (BattleMon_GetStatus(attackingMon))
+            {
+                BattleEventVar_MulValue(VAR_MOVE_POWER_RATIO, 3072);
+            }
+        }
+    }
+
+    ABILITY_TRIGGERTABLE MercilessHandlers[] = {
+        {EVENT_MOVE_POWER, (ABILITY_HANDLER_FUNC)MercilessOffense},               // 41
+        {EVENT_MOVE_DAMAGE_PROCESSING_2, (ABILITY_HANDLER_FUNC)MercilessDefense}, // 41
+    };
+
+    ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddWaterVeil(_DWORD *a1)
+    {
+        *a1 = 2;
+        return MercilessHandlers;
+    }
 #pragma endregion
 
 #pragma region StrongJaw
-
+    void HandlerStrongJaw(BattleEventItem *item, ServerFlow *serverFlow, u32 pokemonSlot, u32 *work)
+    {
+        if (pokemonSlot == BattleEventVar_GetValue(VAR_ATTACKING_MON))
+        {
+            MoveID moveID = (MoveID)BattleEventVar_GetValue(VAR_MOVE_ID);
+            if (SEARCH_ARRAY(StrongJawMoves, moveID))
+            {
+                BattleEventVar_MulValue(VAR_MOVE_POWER_RATIO, 6144);
+            }
+        }
+    }
+    ABILITY_TRIGGERTABLE StrongJawHandlers[]{
+        {EVENT_MOVE_POWER, (ABILITY_HANDLER_FUNC)HandlerStrongJaw},
+    };
+    extern "C" ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddHydration(u32 *handlerAmount)
+    {
+        *handlerAmount = 1;
+        return StrongJawHandlers;
+    }
 #pragma endregion
 
 #pragma region Truant
-
+    void THUMB_BRANCH_HandlerTruant(int a1, int a2, int a3, _DWORD *a4)
+    {
+        if (a3 == BattleEventVar_GetValue(VAR_MON_ID))
+        {
+            BattleMon *mon = Handler_GetBattleMon((ServerFlow *)a1, a3);
+            if (*a4)
+            {
+                if (PML_MoveGetCategory(BattleEventVar_GetValue(VAR_MOVE_ID)))
+                {
+                    a4[1] = BattleEventVar_RewriteValue(VAR_FAIL_CAUSE, MOVEFAIL_ABILITY);
+                }
+                *a4 = 0;
+            }
+            else
+            {
+                *a4 = 1;
+            }
+        }
+    }
 #pragma endregion
 
 #pragma region Overcoat
@@ -1186,7 +1532,7 @@ extern "C"
         {EVENT_ACTION_PROCESSING_END, (ABILITY_HANDLER_FUNC)HandlerMagmaArmorActionEnd},
     };
 
-    ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddHeavyMetal(_DWORD *a1)
+    ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddTangledFeet(_DWORD *a1)
     {
         *a1 = 8;
         return SlushRushHandlers;
@@ -1646,9 +1992,16 @@ extern "C"
 
     void HandlerRattledIntimidateCheck(BattleEventItem *item, ServerFlow *serverFlow, u32 pokemonSlot, u32 *work)
     {
-        if (pokemonSlot == BattleEventVar_GetValue(VAR_MON_ID) && BattleEventVar_GetValue(VAR_INTIMFLAG))
+        if (pokemonSlot == BattleEventVar_GetValue(VAR_MON_ID))
         {
-            work[0] = 1;
+            if (BattleEventVar_GetValue(VAR_INTIMFLAG))
+            {
+                work[0] = 1;
+            }
+            else
+            {
+                work[0] = 0;
+            }
         }
     }
 
@@ -1656,23 +2009,21 @@ extern "C"
     {
         int Value;                         // r0
         HandlerParam_ChangeStatStage *v13; // r0
-
-        k::Printf("\nThis is a rattled ability check for intimidate");
         if (a3 == BattleEventVar_GetValue(VAR_MON_ID) && work[0])
         {
-                v13 = (HandlerParam_ChangeStatStage *)BattleHandler_PushWork(a2, EFFECT_CHANGESTATSTAGE, a3);
-                v13->header.flags |= 0x800000u;
-                v13->rankType = STATSTAGE_SPEED;
-                v13->rankVolume = 3;
-                v13->fMoveAnimation = 1;
-                v13->poke_cnt = 1;
-                v13->pokeID[0] = a3;
-                BattleHandler_PopWork(a2, v13);
+            v13 = (HandlerParam_ChangeStatStage *)BattleHandler_PushWork(a2, EFFECT_CHANGESTATSTAGE, a3);
+            v13->header.flags |= 0x800000u;
+            v13->rankType = STATSTAGE_SPEED;
+            v13->rankVolume = 3;
+            v13->fMoveAnimation = 1;
+            v13->poke_cnt = 1;
+            v13->pokeID[0] = a3;
+            BattleHandler_PopWork(a2, v13);
         }
     }
     ABILITY_TRIGGERTABLE RattledHandlers[] = {
         {EVENT_MOVE_DAMAGE_REACTION_1, (ABILITY_HANDLER_FUNC)HandlerRattled}, // 22
-         {EVENT_STAT_STAGE_CHANGE_LAST_CHECK,  (ABILITY_HANDLER_FUNC)HandlerRattledIntimidateCheck},
+        {EVENT_STAT_STAGE_CHANGE_LAST_CHECK, (ABILITY_HANDLER_FUNC)HandlerRattledIntimidateCheck},
         {EVENT_STAT_STAGE_CHANGE_APPLIED, (ABILITY_HANDLER_FUNC)HandlerRattledIntimidate}};
 
     ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddRattled(_DWORD *a1)
@@ -1703,13 +2054,13 @@ extern "C"
 
     ABILITY_TRIGGERTABLE InnerFocusHandlers[] = {
         {EVENT_FLINCH_CHECK, (ABILITY_HANDLER_FUNC)HandlerInnerFocus}, // 22
-       //{EVENT_STAT_STAGE_CHANGE_LAST_CHECK, (ABILITY_HANDLER_FUNC)HandlerIntimidateCheck},
-        //{EVENT_STAT_STAGE_CHANGE_FAIL, (ABILITY_HANDLER_FUNC)HandlerIntimidateGuard},
+        {EVENT_STAT_STAGE_CHANGE_LAST_CHECK, (ABILITY_HANDLER_FUNC)HandlerIntimidateCheck},
+        {EVENT_STAT_STAGE_CHANGE_FAIL, (ABILITY_HANDLER_FUNC)HandlerIntimidateGuard},
         {EVENT_CHECK_TYPE_EFFECTIVENESS, (ABILITY_HANDLER_FUNC)HandlerInnerFocusAttack}};
 
     ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddInnerFocus(_DWORD *a1)
     {
-        *a1 = 2;
+        *a1 = 4;
         return InnerFocusHandlers;
     }
 
@@ -2025,6 +2376,7 @@ extern "C"
     */
     void HandlerPixilateType(int a1, int a2, int a3)
     {
+        k::Printf("\n\nThis is called with pokemonslot %d\n\n", a3, BattleEventVar_GetValue(VAR_MON_ID));
         if (a3 == BattleEventVar_GetValue(VAR_MON_ID))
         {
             if (BattleEventVar_GetValue(VAR_MOVE_TYPE) == TYPE_NORMAL)
@@ -2071,22 +2423,12 @@ extern "C"
             }
         }
     }
-    // void HandlerAtePower(int a1, int a2, int a3)
-    // {
-    //     if (a3 == BattleEventVar_GetValue(VAR_ATTACKING_MON))
-    //     {
-    //         if (PML_MoveGetType(BattleEventVar_GetValue(VAR_MOVE_ID)) == TYPE_NORMAL) // physical
-    //         {
-    //             BattleEventVar_MulValue(VAR_RATIO, 4915); // 20% boost
-    //         }
-    //     }
-    // }
 
     ABILITY_TRIGGERTABLE HydrateHandlers[] = {
         {EVENT_MOVE_PARAM, (ABILITY_HANDLER_FUNC)HandlerHydrateType}, // 22
         {EVENT_ATTACKER_POWER, (ABILITY_HANDLER_FUNC)HandlerAtePower}};
 
-    ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddHydration(_DWORD *a1)
+    ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddSuperLuck(_DWORD *a1)
     {
         *a1 = 2;
         return HydrateHandlers;

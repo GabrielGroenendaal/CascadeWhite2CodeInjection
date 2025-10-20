@@ -1019,6 +1019,155 @@ extern "C"
         }
     }
 
+#pragma region MistHandlers
+    void HandlerSideMistStatusCheckFail(int a1, int a2, int a3, int *a4)
+    {
+        unsigned int Value_11; // r6
+        int MoveCondition;     // r5
+
+        Value_11 = BattleEventVar_GetValue(VAR_DEFENDING_MON);
+        if (a3 == (Value_11 >= 12) && Value_11 != BattleEventVar_GetValue(VAR_ATTACKING_MON))
+        {
+            MoveCondition = BattleEventVar_GetValue(VAR_CONDITION_ID);
+            if ((MoveCondition < 7) || MoveCondition == 14)
+            {
+                *a4 = BattleEventVar_RewriteValue(VAR_MOVE_FAIL_FLAG, 1);
+            }
+        }
+    }
+
+    void HandlerSideMistStatusFailMessage(int a1, ServerFlow *a2, int a3, int *a4)
+    {
+        int Value_14;             // r7
+        HandlerParam_Message *v7; // r4
+
+        if (*a4)
+        {
+            Value_14 = BattleEventVar_GetValue(VAR_DEFENDING_MON);
+            v7 = (HandlerParam_Message *)BattleHandler_PushWork(a2, EFFECT_MESSAGE, Value_14);
+            BattleHandler_StrSetup(&v7->str, 2u, 839);
+            BattleHandler_AddArg(&v7->str, Value_14);
+            BattleHandler_PopWork(a2, v7);
+            *a4 = 0;
+        }
+    }
+
+    void HandlerSideMistStatChangeFailMessage(int a1, ServerFlow *a2, int a3, int *a4)
+    {
+        int Value_18;             // r4
+        HandlerParam_Message *v7; // r6
+        int Value_19;             // [sp+0h] [bp-18h]
+
+        if (*a4)
+        {
+            Value_18 = BattleEventVar_GetValue(VAR_STAT_STAGE_CHANGE_COUNT);
+            if (!Value_18 || a4[1] != Value_18)
+            {
+                Value_19 = BattleEventVar_GetValue(VAR_MON_ID);
+                v7 = (HandlerParam_Message*)BattleHandler_PushWork(a2, EFFECT_MESSAGE, Value_19);
+                BattleHandler_StrSetup(&v7->str, 2u, 839);
+                BattleHandler_AddArg(&v7->str, Value_19);
+                BattleHandler_PopWork(a2, v7);
+                a4[1] = Value_18;
+            }
+            *a4 = 0;
+        }
+    }
+
+    void HandlerSideMistStatChangeCheckFail(int a1, int a2, int a3, int *a4)
+    {
+        unsigned int Value_15; // r6
+
+        Value_15 = BattleEventVar_GetValue(VAR_MON_ID);
+        if (a3 == (Value_15 >= 12) && BattleEventVar_GetValue(VAR_VOLUME) < 0 && Value_15 != BattleEventVar_GetValue(VAR_ATTACKING_MON))
+        {
+            *a4 = BattleEventVar_RewriteValue(VAR_MOVE_FAIL_FLAG, 1);
+        }
+    }
+
+#pragma endregion
+
+
+#pragma region Safeguard
+    void HandlerSideSafeguardStatusCheckFail(int a1, int a2, int a3, int *a4)
+    {
+        unsigned int Value_11; // r6
+        int MoveCondition;     // r5
+
+        Value_11 = BattleEventVar_GetValue(VAR_DEFENDING_MON);
+        if (a3 == (Value_11 >= 12) && Value_11 != BattleEventVar_GetValue(VAR_ATTACKING_MON))
+        {
+            MoveCondition = BattleEventVar_GetValue(VAR_CONDITION_ID);
+            if ((MoveCondition < 7) || MoveCondition == 14)
+            {
+                *a4 = BattleEventVar_RewriteValue(VAR_MOVE_FAIL_FLAG, 1);
+            }
+        }
+    }
+
+    void HandlerSideSafeguardStatusFailMessage(int a1, ServerFlow *a2, int a3, int *a4)
+    {
+        int Value_14;             // r7
+        HandlerParam_Message *v7; // r4
+
+        if (*a4)
+        {
+            Value_14 = BattleEventVar_GetValue(VAR_DEFENDING_MON);
+            v7 = (HandlerParam_Message *)BattleHandler_PushWork(a2, EFFECT_MESSAGE, Value_14);
+            BattleHandler_StrSetup(&v7->str, 2u, 839);
+            BattleHandler_AddArg(&v7->str, Value_14);
+            BattleHandler_PopWork(a2, v7);
+            *a4 = 0;
+        }
+    }
+
+    void HandlerSideSafeguardStatChangeFailMessage(int a1, ServerFlow *a2, int a3, int *a4)
+    {
+        int Value_18;             // r4
+        HandlerParam_Message *v7; // r6
+        int Value_19;             // [sp+0h] [bp-18h]
+
+        if (*a4)
+        {
+            Value_18 = BattleEventVar_GetValue(VAR_STAT_STAGE_CHANGE_COUNT);
+            if (!Value_18 || a4[1] != Value_18)
+            {
+                Value_19 = BattleEventVar_GetValue(VAR_MON_ID);
+                v7 = (HandlerParam_Message*)BattleHandler_PushWork(a2, EFFECT_MESSAGE, Value_19);
+                BattleHandler_StrSetup(&v7->str, 2u, 839);
+                BattleHandler_AddArg(&v7->str, Value_19);
+                BattleHandler_PopWork(a2, v7);
+                a4[1] = Value_18;
+            }
+            *a4 = 0;
+        }
+    }
+
+    void HandlerSideSafeguardStatChangeCheckFail(int a1, int a2, int a3, int *a4)
+    {
+        unsigned int Value_15; // r6
+
+        Value_15 = BattleEventVar_GetValue(VAR_MON_ID);
+        if (a3 == (Value_15 >= 12) && BattleEventVar_GetValue(VAR_VOLUME) < 0 && Value_15 != BattleEventVar_GetValue(VAR_ATTACKING_MON))
+        {
+            *a4 = BattleEventVar_RewriteValue(VAR_MOVE_FAIL_FLAG, 1);
+        }
+    }
+#pragma endregion
+
+    BattleEventHandlerTableEntry MistHandlers[] = {
+        {EVENT_ADD_CONDITION_CHECK_FAIL, (BattleEventHandler)HandlerSideMistStatusCheckFail}, // Rapid Spin implementation is in HandlerRapidSpin
+        {EVENT_ADD_CONDITION_FAIL, (BattleEventHandler)HandlerSideMistStatusFailMessage},
+        {EVENT_STAT_STAGE_CHANGE_LAST_CHECK, (BattleEventHandler)HandlerSideMistStatChangeFailMessage},
+        {EVENT_STAT_STAGE_CHANGE_FAIL, (BattleEventHandler)HandlerSideMistStatChangeCheckFail},
+    };
+    BattleEventHandlerTableEntry SafeguardHandlers[] = {
+        {EVENT_ADD_CONDITION_CHECK_FAIL, (BattleEventHandler)HandlerSideSafeguardStatusCheckFail}, // Rapid Spin implementation is in HandlerRapidSpin
+        {EVENT_ADD_CONDITION_FAIL, (BattleEventHandler)HandlerSideSafeguardStatusFailMessage},
+        {EVENT_STAT_STAGE_CHANGE_LAST_CHECK, (BattleEventHandler)HandlerSideSafeguardStatChangeFailMessage},
+        {EVENT_STAT_STAGE_CHANGE_FAIL, (BattleEventHandler)HandlerSideSafeguardStatChangeCheckFail},
+    };
+
     BattleEventHandlerTableEntry *EventAddSideReflect(int *a1)
     {
         *a1 = 1;
@@ -1031,13 +1180,13 @@ extern "C"
     }
     BattleEventHandlerTableEntry *EventAddSideSafeguard(int *a1)
     {
-        *a1 = 2;
-        return (BattleEventHandlerTableEntry *)0x689D8D0;
+        *a1 = 4;
+        return (BattleEventHandlerTableEntry *)SafeguardHandlers;
     }
     BattleEventHandlerTableEntry *EventAddSideMist(int *a1)
     {
-        *a1 = 2;
-        return (BattleEventHandlerTableEntry *)0x689D8E0;
+        *a1 = 4;
+        return (BattleEventHandlerTableEntry *)MistHandlers;
     }
     BattleEventHandlerTableEntry *EventAddSideTailwind(int *a1)
     {
@@ -1399,7 +1548,7 @@ extern "C"
         {SIDEEFF_RAINBOW, EventAddSideRainbow, 1},
         {SIDEEFF_SEA_OF_FIRE, EventAddSideSeaOfFire, 1},
         {SIDEEFF_SWAMP, EventAddSideSwamp, 1},
-        {SIDEEFF_STICKY_WEB, EventAddSideStickyWeb, 1},
+        {SIDEEFF_STICKYWEB, EventAddSideStickyWeb, 1},
         {SIDEEFF_OPPRESSIVE, EventAddSideOppressive, 1}};
 
     int *SideEffectEvent_AddItem(int currentSide, SideEffect effect, ConditionData condData)
@@ -1666,7 +1815,7 @@ extern "C"
             bool isSpikesActive = BattleSideStatus_IsEffectActive(currentSlotSide, SIDEEFF_SPIKES);
             bool isToxSpikesActive = BattleSideStatus_IsEffectActive(currentSlotSide, SIDEEFF_TOXIC_SPIKES);
             bool isStealthRocksActive = BattleSideStatus_IsEffectActive(currentSlotSide, SIDEEFF_STEALTH_ROCK);
-            bool isStickyWebActive = BattleSideStatus_IsEffectActive(currentSlotSide, (SideEffect)SIDEEFF_STICKY_WEB);
+            bool isStickyWebActive = BattleSideStatus_IsEffectActive(currentSlotSide, (SideEffect)SIDEEFF_STICKYWEB);
             if (isSpikesActive || isToxSpikesActive || isStealthRocksActive || isStickyWebActive)
             {
                 v10 = (HandlerParam_RemoveSideEffect *)BattleHandler_PushWork(serverFlow, EFFECT_REMOVE_SIDE_EFFECT, currentSlot);
@@ -1803,7 +1952,8 @@ extern "C"
 
     bool THUMB_BRANCH_ServerControl_ChangeWeatherCheck(ServerFlow *a1, unsigned int a2, int a3)
     {
-        if(a3 == 255){
+        if (a3 == 255)
+        {
             weather = a2;
         }
         if (a2 >= 5)
@@ -1865,37 +2015,37 @@ extern "C"
         else
         {
             // MAYBE REMOVE
-                // v11 = 0;
-                // Weather = ServerEvent_GetWeather(a1);
-                // j_j_PokeSet_SeekStart_6(a2);
-                // _12 = j_j_PokeSet_SeekNext_12(a2);
-                // if (_12)
-                // {
-                //     do
-                //     {
-                //     k::Printf("The dead mon is %d", _12->ID);
-                //     if (!BattleMon_IsFainted(_12) && !BattleMon_GetConditionFlag(_12, CONDITIONFLAG_DIG) && !BattleMon_GetConditionFlag(_12, CONDITIONFLAG_DIVE))
-                //     {
-                //         v7 = HEManager_PushState(&a1->heManager);
-                //         CalcWeatherDamage(_12, Weather);
-                //         v8 = ServerEvent_CheckWeatherReaction(a1, _12, Weather);
-                //         if (v8)
-                //         {
-                //             ServerDisplay_WeatherDamage(a1, _12, Weather, v8);
-                //             v11 = 1;
-                //         }
-                //         HEManager_PopState(&a1->heManager, v7);
-                //         // ServerControl_CheckFainted(a1, _12);
-                //     }
-                //     v9 = j_j_PokeSet_SeekNext_12(a2);
-                //     _12 = v9;
-                // } while (v9);
-                // }
-                // if (v11)
-                // {
-                //     ServerControl_ViewEffect(a1, 597, 6, 6, 0, 0);
-                // }
-            
+            // v11 = 0;
+            // Weather = ServerEvent_GetWeather(a1);
+            // j_j_PokeSet_SeekStart_6(a2);
+            // _12 = j_j_PokeSet_SeekNext_12(a2);
+            // if (_12)
+            // {
+            //     do
+            //     {
+            //     k::Printf("The dead mon is %d", _12->ID);
+            //     if (!BattleMon_IsFainted(_12) && !BattleMon_GetConditionFlag(_12, CONDITIONFLAG_DIG) && !BattleMon_GetConditionFlag(_12, CONDITIONFLAG_DIVE))
+            //     {
+            //         v7 = HEManager_PushState(&a1->heManager);
+            //         CalcWeatherDamage(_12, Weather);
+            //         v8 = ServerEvent_CheckWeatherReaction(a1, _12, Weather);
+            //         if (v8)
+            //         {
+            //             ServerDisplay_WeatherDamage(a1, _12, Weather, v8);
+            //             v11 = 1;
+            //         }
+            //         HEManager_PopState(&a1->heManager, v7);
+            //         // ServerControl_CheckFainted(a1, _12);
+            //     }
+            //     v9 = j_j_PokeSet_SeekNext_12(a2);
+            //     _12 = v9;
+            // } while (v9);
+            // }
+            // if (v11)
+            // {
+            //     ServerControl_ViewEffect(a1, 597, 6, 6, 0, 0);
+            // }
+
             Weather = ServerEvent_GetWeather(a1);
             j_j_PokeSet_SeekStart_6(a2);
             for (mon = j_j_PokeSet_SeekNext_12(a2); mon; mon = j_j_PokeSet_SeekNext_12(a2))

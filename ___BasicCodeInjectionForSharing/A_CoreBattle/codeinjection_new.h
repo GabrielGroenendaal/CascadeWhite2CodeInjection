@@ -229,6 +229,12 @@ extern int BattleField_GetWeather();
 extern void *PML_ItemReadDataFile(unsigned int a1, int a2, HeapID a3);
 extern void HandlerLightBallUseTemp(int a1, ServerFlow *a2, unsigned int *a3);
 extern ConditionData MakeBasicStatus(MoveCondition a1);
+extern ConditionData Condition_MakeTurn(int turns);
+extern ConditionData ConditionData_MakePoke(int a1);
+extern bool BattleMon_IsHiding(BattleMon *a1);
+extern u32 div32(u32 numerator, u32 denominator);
+extern int CommonCounterStart(ServerFlow *a1, int a2, int a3, int a4);
+
 // extern int PokeList_GetEVsAppliedAfterLimit(int a1, int a2, int a3, int a4);
 // extern void ApplyHeal(PartyPkm *a1, int a2, unsigned int a3, int a4);
 // extern int CheckPPGain(PartyPkm *a1, int a2, int a3);
@@ -512,7 +518,7 @@ extern void flowsub_CheckNoEffect_TypeAffinity(
     MoveParam *a2,
     BattleMon *attacker,
     PokeSet *targets,
-    int *effrec);
+    EffectivenessRecorder *effrec);
 extern void flowsub_CheckNoEffect_Protect(ServerFlow *a1, __int16 *a2, BattleMon *a3, PokeSet *a4, int *a5);
 extern void flowsub_CheckWazaAvoid(ServerFlow *a1, __int16 *a2, BattleMon *a3, PokeSet *a4);
 extern void MoveAnimCtrl_Init(MoveAnimCtrl *result);
@@ -588,6 +594,28 @@ extern void* TurnCheckCallback_Field;
 extern int HandlerThunderFlyCheck(int a1, int a2, int a3);
 extern void CommonStatDropGuardCheck(ServerFlow *serverFlow, u32 pokemonSlot, u32 *work, u32 moveEffect);
 extern bool ServerControl_ChangeWeatherCheck(ServerFlow *a1, unsigned int a2, int a3); 
+extern void HandlerMoldBreakerSwitchIn(int a1, ServerFlow *a2, unsigned int *a3);
+extern void HandlerMoldBreakerStart(BattleEventItem *a1, int a2, int a3, int *a4);
+extern void HandlerMoldBreakerEnd(BattleEventItem *a1, int a2, int a3, int *a4);
+extern int HandlerMoldBreakerConfirm(int a1, int a2, int a3, int *a4);
+extern unsigned int DivideMaxHp(BattleMon *a1, unsigned int a2);
+extern void HandlerInfiltratorStart(BattleEventItem *a1, int a2, int a3);
+extern void  HandlerInfiltratorEnd(BattleEventItem *a1, int a2, int a3);
+extern void HandlerLightMetal(int a1, int a2, int a3);
+extern void HandlerHeavyMetal(int a1, int a2, int a3);
+extern void HandlerAirLockSwitchIn(int a1, ServerFlow *a2, unsigned int *a3);
+extern int  HandlerAirLockChangeWeather();
+extern int sub_21A2EA0(PosPoke *a1, MainModule *a2, int a3);
+extern int sub_21A2EB0(PosPoke *a1, MainModule *a2, int a3);
+extern void  HandlerHyperCutterGuard(int a1, ServerFlow *a2, int a3, int *a4);
+extern void HandlerHyperCutterCheck(int a1, int a2, int a3, int *a4);
+extern void HandlerOblivious(int a1, int a2, int a3, int *a4);
+extern void  HandlerObliviousActionEnd(int a1, ServerFlow *a2, int a3);
+extern void HandlerObliviousCureStatus(int a1, ServerFlow *a2, unsigned int *a3);
+extern void HandlerObliviousNoEffectCheck(int a1, ServerFlow *a2, int a3);
+extern void HandlerUnawareHitRank(int a1, int a2, int a3);
+extern int HandlerUnawareAttackRank(int a1, int a2, int a3);
+extern int HandlerUnawareDefenseRank(int a1, int a2, int a3);
 
 
 C_DECL_END
