@@ -55,8 +55,11 @@ PWT
 
 Lenora Relic Castle Above 
     -- Flags --
+        526:
+            Initial Dialogue with Lenora
+        
         527:
-            Lenora encounter
+            Got a Fossil From Lenora
         
         528:
             Lenora presence

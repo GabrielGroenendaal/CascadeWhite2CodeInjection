@@ -159,6 +159,12 @@ public class MainEvents {
 		Message.ActorEx(1024, 7, 251, 0, 0);
 		Input.LastKeyWait();
 		Message.CloseActor();
+		Global2805(268, 1);
+		WordSet.LoadPlayerName(0);
+		WordSet.LoadRivalName(1);
+		Message.ActorEx(1024, 8, 251, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
 		RunWest(251);
 		Runtime.Sleep(20);
 		Sound.SEPlay(1369);

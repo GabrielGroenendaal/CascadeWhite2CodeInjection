@@ -759,7 +759,7 @@ public class MainEvents {
 		Input.LastKeyWait();
 		Message.CloseAll();
 
-		Global2805(423, 1);
+		Global2805(158, 10);
 		
 		Message.ActorEx(1024, 66, 5, 0, 0);
 		Input.LastKeyWait();

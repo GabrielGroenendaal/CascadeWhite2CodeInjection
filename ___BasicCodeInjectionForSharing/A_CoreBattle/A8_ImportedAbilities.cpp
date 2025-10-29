@@ -20,6 +20,8 @@ extern "C" u32 SearchArray(const u32 *const arr, const u32 arrSize, const u32 va
 
 #pragma region BattleFieldSetup
 
+u8 entryTurn = 0;
+
 struct BattleFieldExt
 {
     u32 actionSubstituteDamage[31];
@@ -106,7 +108,7 @@ extern "C" void *GFL_HeapAllocate(HeapID heapId, u32 size, b32 calloc, const cha
 extern "C" BattleField *THUMB_BRANCH_BattleField_Init(HeapID a1)
 {
     BattleField *v1;
-
+    entryTurn = 0;
     if (!g_BattleVars)
     {
         g_BattleVars = (BattleFieldExt *)GFL_HeapAllocate(a1, sizeof(BattleFieldExt), 1, "btl_field.c", 0x10Cu);
@@ -122,19 +124,19 @@ extern "C" BattleField *THUMB_BRANCH_BattleField_Init(HeapID a1)
     return v1;
 }
 
-extern "C" void BattleField_ResetParentalBondFlag()
-{
-    return;
-}
+// extern "C" void BattleField_ResetParentalBondFlag()
+// {
+//     return;
+// }
 
-extern "C" b32 ParentalBondCheck(ServerFlow *serverFlow, MoveID moveID, BattleMon *attackingMon, PokeSet *targetSet)
-{
-    return 0;
-}
-extern "C" void BattleField_SetParentalBondFlag()
-{
-    return;
-}
+// extern "C" b32 ParentalBondCheck(ServerFlow *serverFlow, MoveID moveID, BattleMon *attackingMon, PokeSet *targetSet)
+// {
+//     return 0;
+// }
+// extern "C" void BattleField_SetParentalBondFlag()
+// {
+//     return;
+// }
 
 extern "C" int ServerEvent_CheckMultihitHits(ServerFlow *a1, BattleMon *a2, int a3, HitCheckParam *a4);
 extern "C" void THUMB_BRANCH_LINK_ServerControl_DamageRoot_0x36(ServerFlow *serverFlow, BattleMon *attackingMon, MoveID moveID, HitCheckParam *hitCheckParam)
@@ -144,19 +146,19 @@ extern "C" void THUMB_BRANCH_LINK_ServerControl_DamageRoot_0x36(ServerFlow *serv
     // Reset any substitute damage recorded
     sys_memset(g_BattleVars->actionSubstituteDamage, 0, 31 * sizeof(u32));
 
-    // Reset Parental Bond flag
-    BattleField_ResetParentalBondFlag();
-    if (!serverFlow->hitCheckParam->fMultiHitMove && ParentalBondCheck(serverFlow, moveID, attackingMon, serverFlow->setTargetOriginal))
-    {
-        // I use [serverFlow->setTargetOriginal] so that Parental Bond takes into account
-        // all original targets even if they had Immunities of if the move missed
-        serverFlow->hitCheckParam->countMax = 2;
-        serverFlow->hitCheckParam->fCheckEveryTime = 0;
-        serverFlow->hitCheckParam->fMultiHitMove = 1;
+    // // Reset Parental Bond flag
+    // BattleField_ResetParentalBondFlag();
+    // if (!serverFlow->hitCheckParam->fMultiHitMove && ParentalBondCheck(serverFlow, moveID, attackingMon, serverFlow->setTargetOriginal))
+    // {
+    //     // I use [serverFlow->setTargetOriginal] so that Parental Bond takes into account
+    //     // all original targets even if they had Immunities of if the move missed
+    //     serverFlow->hitCheckParam->countMax = 2;
+    //     serverFlow->hitCheckParam->fCheckEveryTime = 0;
+    //     serverFlow->hitCheckParam->fMultiHitMove = 1;
 
-        // Set the Parental Bond flag so that the second hit has to deal less damage, used in [HandlerParentalBondPower]
-        BattleField_SetParentalBondFlag();
-    }
+    //     // Set the Parental Bond flag so that the second hit has to deal less damage, used in [HandlerParentalBondPower]
+    //     BattleField_SetParentalBondFlag();
+    // }
 }
 
 extern "C" void GFL_HeapFree(void *heap);
@@ -493,10 +495,10 @@ extern "C" void CommonEmergencyExitCheck(ServerFlow *serverFlow, u32 currentSlot
     u32 maxHP = BattleMon_GetValue(currentMon, VALUE_MAX_HP);
 
     u32 currentHP = BattleMon_GetValue(currentMon, VALUE_CURRENT_HP);
-    u32 currentHPPercent = (currentHP * 100) / maxHP;
+    u32 currentHPPercent = div32((currentHP * 100), maxHP);
 
     u32 beforeDmgHP = currentHP + BattleEventVar_GetValue(VAR_DAMAGE) - BattleField_GetSubstituteDamage(currentSlot);
-    u32 beforeDmgHPPercent = (beforeDmgHP * 100) / maxHP;
+    u32 beforeDmgHPPercent = div32((beforeDmgHP * 100), maxHP);
 
     k::Printf("MAX HP: %d \n", maxHP);
     k::Printf("CURRENT HP: %d \n", currentHP);
@@ -528,9 +530,9 @@ extern "C" void HandlerEmergencyExitDamageCheck(BattleEventItem *item, ServerFlo
             if (BattleField_CheckEmergencyExitFlag(pokemonSlot))
             {
                 BattleField_ResetEmergencyExitFlag(pokemonSlot);
-#if EMERGENCY_EXIT_DEBUG
-                DPRINTF("EE SWITCH -> SLOT: %d\n", pokemonSlot);
-#endif
+
+                k::Printf("EE SWITCH -> SLOT: %d\n", pokemonSlot);
+
                 BattleHandler_PushRun(serverFlow, EFFECT_ABILITYPOPUPIN, pokemonSlot);
 
                 HandlerParam_Switch *switchOut;
@@ -550,9 +552,9 @@ extern "C" void HandlerEmergencyExitSimpleCheck(BattleEventItem *item, ServerFlo
 
     if (pokemonSlot == BattleEventVar_GetValue(NEW_VAR_MON_ID))
     {
-#if EMERGENCY_EXIT_DEBUG
-        DPRINTF("EE SIMPLE -> SLOT: %d\n", pokemonSlot);
-#endif
+
+        k::Printf("EE SIMPLE -> SLOT: %d\n", pokemonSlot);
+
         CommonEmergencyExitCheck(serverFlow, pokemonSlot);
     }
 }
@@ -561,9 +563,9 @@ extern "C" void HandlerEmergencyExitSwitchEnd(BattleEventItem *item, ServerFlow 
     if (BattleField_CheckEmergencyExitFlag(pokemonSlot))
     {
         BattleField_ResetEmergencyExitFlag(pokemonSlot);
-#if EMERGENCY_EXIT_DEBUG
-        DPRINTF("EE SWITCH END -> SLOT: %d\n", pokemonSlot);
-#endif
+
+        k::Printf("EE SWITCH END -> SLOT: %d\n", pokemonSlot);
+
         if (Handler_GetFightEnableBenchPokeNum(serverFlow, pokemonSlot) && Handler_CheckReservedMemberChangeAction(serverFlow))
         {
 
@@ -603,7 +605,6 @@ extern "C" BattleEventHandlerTableEntry *THUMB_BRANCH_EventAddRunAway(u32 *handl
 AbilID abilityCantBeNeutralized[] = {
     ABIL046_NEUTRALIZING_GAS,
     ABIL121_MULTITYPE
-
 };
 
 extern "C" b32 AbilityCantBeNeutralized(AbilID ability)
@@ -615,10 +616,11 @@ extern "C" void ServerEvent_AbilityNullified(ServerFlow *a1, BattleMon *a2);
 
 extern "C" bool THUMB_BRANCH_SAFESTACK_BattleMon_CheckIfMoveCondition(BattleMon *a1, MoveCondition a2)
 {
-    // if (a1->HeldItem == 289 && a2 == CONDITION_TAUNT)
-    // {
-    //     return true;
-    // }
+    if (a1->HeldItem == 289 && a2 == CONDITION_TAUNT)
+    {
+        return true;
+    }
+
     if (a2 == CONDITION_BLOCK && ((a1->Conditions[CONDITION_CURSE] & 7) != 0))
     {
         return true;
@@ -636,13 +638,10 @@ extern "C" bool THUMB_BRANCH_SAFESTACK_BattleMon_CheckIfMoveCondition(BattleMon 
 
 extern "C" void NeutralizingGasEnd(ServerFlow *serverFlow, u32 pokemonSlot)
 {
-    k::Printf("\nWe are in the end neutralizing function");
     BattleField_RemoveNeutralizingGasMon();
-    k::Printf("\nThe number of neutralizing mons after this switch is %d\n", BattleField_GetNeutralizingGasMons());
     // Only trigger the nullify cured events if there are no more Neutralizing Gas Pok�mon
     if (BattleField_GetNeutralizingGasMons() == 0)
     {
-        k::Printf("\nIn we go!");
         HandlerParam_Message *message;
         message = (HandlerParam_Message *)BattleHandler_PushWork(serverFlow, EFFECT_MESSAGE, pokemonSlot);
         BattleHandler_StrSetup(&message->str, 1u, BATTLE_NEUTRALIZING_GAS_END_MSGID);
@@ -668,8 +667,6 @@ extern "C" void NeutralizingGasEnd(ServerFlow *serverFlow, u32 pokemonSlot)
 }
 extern "C" void HandlerNeutralizingGasStart(BattleEventItem *item, ServerFlow *serverFlow, u32 pokemonSlot, u32 *work)
 {
-    k::Printf("\n\nNeutralizingGasStart");
-
     if (IS_NOT_NEW_EVENT)
         return;
 
@@ -738,7 +735,6 @@ BattleEventHandlerTableEntry NeutralizingGasHandlers[]{
 };
 extern "C" BattleEventHandlerTableEntry *THUMB_BRANCH_EventAddPressure(u32 *handlerAmount)
 {
-    k::Printf("\n\nAre we loading the handlers even?\n\n");
     *handlerAmount = ARRAY_COUNT(NeutralizingGasHandlers);
     return NeutralizingGasHandlers;
 }
@@ -746,185 +742,138 @@ extern "C" BattleEventHandlerTableEntry *THUMB_BRANCH_EventAddPressure(u32 *hand
 #pragma endregion
 
 #pragma region AlteredEntryTurnProcessing
-// extern "C" u32 CommonGetAllyPos(ServerFlow *serverFlow, u32 battlePos)
-// {
-//     BattleStyle battleStyle = (BattleStyle)BtlSetup_GetBattleStyle(serverFlow->mainModule);
-//     if (battleStyle != BTL_STYLE_DOUBLE && battleStyle != BTL_STYLE_TRIPLE)
-//     {
-//         return 6;
-//     }
-//
-//     u8 isEnemy = battlePos & 1;
-//     if (isEnemy)
-//     {
-//         battlePos -= 1;
-//     }
-//
-//     u32 allyPos = 0;
-//     if (battleStyle != BTL_STYLE_TRIPLE)
-//     {
-//         if (battlePos == 0)
-//         {
-//             allyPos = 2;
-//         }
-//         else
-//         {
-//             allyPos = 0;
-//         }
-//     }
-//     else
-//     {
-//         if (IsPosInCenterTripleBattle(battlePos))
-//         {
-//             allyPos = BattleRandom(2) * 4;
-//         }
-//         else
-//         {
-//             allyPos = 2;
-//         }
-//     }
-//
-//     return allyPos + isEnemy;
-// }
 
 // Stores data of extra action generated by Dancer, Instruct...
 // - Set in [HandlerDancerCheckMove]
 // - Reset and used in [ServerFlow_ActOrderProcMain]
 
-// struct FRONT_POKE_SEEK_WORK
-// {
-//     u8 clientIdx;
-//     u8 pokeIdx;
-//     u8 endFlag;
-//     u8 unk;
-// };
+struct FRONT_POKE_SEEK_WORK
+{
+    u8 clientIdx;
+    u8 pokeIdx;
+    u8 endFlag;
+    u8 unk;
+};
 
-// u8 entryTurn = 0;
-// u8 entryOver = 0;
-// extern "C" void FRONT_POKE_SEEK_InitWork(FRONT_POKE_SEEK_WORK *frontSet, ServerFlow *serverFlow);
-// extern "C" b32 FRONT_POKE_SEEK_GetNext(FRONT_POKE_SEEK_WORK *frontSet, ServerFlow *serverFlow, BattleMon **battleMon);
-// extern "C" void PokeSet_Clear(PokeSet *pokeSet);
-// extern "C" void ServerEvent_ActProcEnd(ServerFlow *serverFlow, BattleMon *currentMon, u32 action);
-// extern "C" void ServerEvent_AfterSwitchInPrevious(ServerFlow *serverFlow);
-// extern "C" void ServerEvent_SwitchIn(ServerFlow *serverFlow, BattleMon *battleMon);
-// extern "C" void ServerEvent_AfterLastSwitchIn(ServerFlow *serverFlow);
-// extern "C" void PokeSet_Add(PokeSet *pokeSet, BattleMon *battleMon);
-// extern "C" u32 PokeSet_SortBySpeed(PokeSet *pokeSet, ServerFlow *serverFlow);
 
-// extern "C" bool ProcessEntryTurn(ServerFlow *serverFlow)
-// {
-//     k::Printf("\n\n====PROCESS ENTRY TURN===\nserverFlow->flowerResult = %d\n\n", serverFlow->flowResult);
+extern "C" void FRONT_POKE_SEEK_InitWork(FRONT_POKE_SEEK_WORK *frontSet, ServerFlow *serverFlow);
+extern "C" b32 FRONT_POKE_SEEK_GetNext(FRONT_POKE_SEEK_WORK *frontSet, ServerFlow *serverFlow, BattleMon **battleMon);
+extern "C" void PokeSet_Clear(PokeSet *pokeSet);
+extern "C" void ServerEvent_ActProcEnd(ServerFlow *serverFlow, BattleMon *currentMon, u32 action);
+extern "C" void ServerEvent_AfterSwitchInPrevious(ServerFlow *serverFlow);
+extern "C" void ServerEvent_SwitchIn(ServerFlow *serverFlow, BattleMon *battleMon);
+extern "C" void ServerEvent_AfterLastSwitchIn(ServerFlow *serverFlow);
+extern "C" void PokeSet_Add(PokeSet *pokeSet, BattleMon *battleMon);
+extern "C" u32 PokeSet_SortBySpeed(PokeSet *pokeSet, ServerFlow *serverFlow);
 
-//     if (entryOver == 1){
-//         return false;
-//     }
-//     PokeSet_Clear(&serverFlow->switching_in_mons);
-//     FRONT_POKE_SEEK_WORK seekWork[6];
-//     FRONT_POKE_SEEK_InitWork(seekWork, serverFlow);
-//     BattleMon *battleMon;
-//     u8 startMons[31] = {0};
+extern "C" bool ProcessEntryTurn(ServerFlow *serverFlow)
+{
+     serverFlow->field_78A &= ~8u;
+    PokeSet_Clear(&serverFlow->switching_in_mons);
 
-//     while (FRONT_POKE_SEEK_GetNext(seekWork, serverFlow, &battleMon))
-//     {
-//         PokeSet_Add(&serverFlow->switching_in_mons, battleMon);
-//         k::Printf("\nWe are adding %d\n", BattleMon_GetID(battleMon));
-//         startMons[BattleMon_GetID(battleMon)] = 1;
-//         serverFlow->field_7C1[BattleMon_GetID(battleMon)] = 0;
-//     }
+    FRONT_POKE_SEEK_WORK seekWork[6];
+    FRONT_POKE_SEEK_InitWork(seekWork, serverFlow);
 
-//     PokeSet_SortBySpeed(&serverFlow->switching_in_mons, serverFlow);
-//     u32 HEID = HEManager_PushState(&serverFlow->heManager);
-//     ServerEvent_AfterSwitchInPrevious(serverFlow);
-//     HEManager_PopState(&serverFlow->heManager, HEID);
-//     PokeSet_SeekStart(&serverFlow->switching_in_mons);
-//     for (battleMon = PokeSet_SeekNext(&serverFlow->switching_in_mons); battleMon; battleMon = PokeSet_SeekNext(&serverFlow->switching_in_mons))
-//     {
-//         // Check the entry Pokémon array
-//         u8 entryIdx = 0;
-//         for (; entryIdx < 31; ++entryIdx)
-//         {
-//             u8 entry = g_BattleVars->entrySlots[entryIdx];
-//             u8 slot = BattleMon_GetID(battleMon);
-//             if (entry == slot)
-//             {
-//                 // Don't process already processed Pokémon
-//                 entryIdx = 0xFF;
-//                 break;
-//             }
-//             if (entry == 31)
-//             {
-//                 // Store the new Pokémon so it's no longer processed
-//                 k::Printf("\nSwitching in, the slot is %d and the pokemon is %d\nlets check this value %d\n", slot, battleMon->Species, startMons[slot]);
-//                 g_BattleVars->entrySlots[entryIdx] = slot;
-//                 break;
-//             }
-//         }
-//         // if (entryIdx == 0xFF)
-//         // {
-//         //     continue;
-//         // }
-//         k::Printf("\nProcessing the Switch in for %d", BattleMon_GetID(battleMon));
-//         HEID = HEManager_PushState(&serverFlow->heManager);
-//         ServerEvent_SwitchIn(serverFlow, battleMon);
-//         HEManager_PopState(&serverFlow->heManager, HEID);
-//         HEID = HEManager_PushState(&serverFlow->heManager);
-//         ServerEvent_ActProcEnd(serverFlow, battleMon, 0);
-//         HEManager_PopState(&serverFlow->heManager, HEID);
-//         u32 getExp = ServerControl_CheckExpGet(serverFlow);
-//         b32 matchup = ServerControl_CheckMatchup(serverFlow);
-//         // Stop the entry turn if the battle ends
-//         if (matchup)
-//         {
-//             serverFlow->flowResult = (FlowResult)4;
-//             return false;
-//         }
-//         // Stop the entry turn if a new Pokémon has to enter the battle
-//         if (serverFlow->flowResult == 6 || serverFlow->flowResult == 1)
-//         {
-//             k::Printf("\n\nWe have triggered another switch?\n");
-//             return false;
-//         }
-//         // Stop the entry turn if a Pokémon died but the battle is not over
-//         if (getExp)
-//         {
-//             serverFlow->flowResult = (FlowResult)3;
-//             return false;
-//         }
-//         k::Printf("5 Lets see if we get out here\n");
-//     }
-//             k::Printf("6 Lets see if we get out here\n");
+    BattleMon* battleMon;
+    while (FRONT_POKE_SEEK_GetNext(seekWork, serverFlow, &battleMon)) {
+        PokeSet_Add(&serverFlow->switching_in_mons, battleMon);
+        serverFlow->field_7C1[BattleMon_GetID(battleMon)] = 0;
+    }
 
-//     HEID = HEManager_PushState(&serverFlow->heManager);
-//     ServerEvent_AfterLastSwitchIn(serverFlow);
-//     HEManager_PopState(&serverFlow->heManager, HEID);
-//     // Finish the entry turn
-//     serverFlow->flowResult = (FlowResult)0;
-//             k::Printf("7 Lets see if we get out here\n");
+    PokeSet_SortBySpeed(&serverFlow->switching_in_mons, serverFlow);
+    u32 HEID = HEManager_PushState(&serverFlow->heManager);
+    ServerEvent_AfterSwitchInPrevious(serverFlow);
+    HEManager_PopState(&serverFlow->heManager, HEID);
 
-//     return true;
-// }
+    PokeSet_SeekStart(&serverFlow->switching_in_mons);
+    for (battleMon = PokeSet_SeekNext(&serverFlow->switching_in_mons); battleMon; battleMon = PokeSet_SeekNext(&serverFlow->switching_in_mons)) {
 
-// extern "C" bool BattleClient_SubProc_UI_SelectAction(BtlClientWk *btlClient, unsigned int *state);
-// extern "C" bool sub_21B22AC(BtlClientWk *a1, unsigned int *a2);
-// extern "C" bool sub_21B2258(BtlClientWk *a1, unsigned int *a2);
-// extern "C" unsigned int MainModule_IsCompetitorScenarioMode(MainModule *a1);
+        // Check the entry Pok�mon array
+        u8 entryIdx = 0;
+        for (; entryIdx < 31; ++entryIdx) {
+            u8 entry = g_BattleVars->entrySlots[entryIdx];
+            u8 slot = BattleMon_GetID(battleMon);
 
-// extern "C" bool THUMB_BRANCH_sub_21B23F8(BtlClientWk *btlClient, unsigned int *a2, int a3, int a4)
-// {
-//     // k::Printf("\nSUBPROC_UI_SELECTACTION\nentryTurn = %d\n\n\n", entryTurn);
-//     if (entryTurn != 0)
-//     {
-//         if (MainModule_IsCompetitorScenarioMode(btlClient->mainModule) == 1)
-//         {
-//             return sub_21B22AC(btlClient, a2);
-//         }
-//         else
-//         {
-//             return BattleClient_SubProc_UI_SelectAction(btlClient, a2);
-//         }
-//     }
-//     return 1;
-// }
+            if (entry == slot) {
+                // Don't process already processed Pok�mon
+                entryIdx = 0xFF;
+                break;
+            }
+            if (entry == 31) {
+                // Store the new Pok�mon so it's no longer processed
+                g_BattleVars->entrySlots[entryIdx] = slot;
+                break;
+            }
+        }
+        if (entryIdx == 0xFF) {
+            continue;
+        }
+
+        HEID = HEManager_PushState(&serverFlow->heManager);
+        ServerEvent_SwitchIn(serverFlow, battleMon);
+        HEManager_PopState(&serverFlow->heManager, HEID);
+
+        HEID = HEManager_PushState(&serverFlow->heManager);
+        ServerEvent_ActProcEnd(serverFlow, battleMon, 0);
+        HEManager_PopState(&serverFlow->heManager, HEID);
+
+        u32 getExp = ServerControl_CheckExpGet(serverFlow);
+        b32 matchup = ServerControl_CheckMatchup(serverFlow);
+
+        // Stop the entry turn if the battle ends
+        if (matchup) {
+            serverFlow->flowResult = (FlowResult)4;
+            return false;
+        }
+
+        // Stop the entry turn if a new Pok�mon has to enter the battle
+        if (serverFlow->flowResult == 6 || serverFlow->flowResult == 1) {
+            return false;
+        }
+
+        // Stop the entry turn if a Pok�mon died but the battle is not over
+        if (getExp) {
+            serverFlow->flowResult = (FlowResult)3;
+            return false;
+        }
+    }
+
+    HEID = HEManager_PushState(&serverFlow->heManager);
+    ServerEvent_AfterLastSwitchIn(serverFlow);
+    HEManager_PopState(&serverFlow->heManager, HEID);
+
+    // Finish the entry turn
+    serverFlow->flowResult = (FlowResult)0;
+    return true;
+}
+
+extern "C" void THUMB_BRANCH_LINK_ServerControl_ActOrderProc_OnlyPokeIn_0x82(ServerFlow* serverFlow) {
+    if (entryTurn != 0) {
+        ServerControl_AfterSwitchIn(serverFlow);
+    }
+}
+
+extern "C" bool BattleClient_SubProc_UI_SelectAction(BtlClientWk *btlClient, unsigned int *state);
+extern "C" bool sub_21B22AC(BtlClientWk *a1, unsigned int *a2);
+extern "C" bool sub_21B2258(BtlClientWk *a1, unsigned int *a2);
+extern "C" unsigned int MainModule_IsCompetitorScenarioMode(MainModule *a1);
+
+extern "C" bool THUMB_BRANCH_sub_21B23F8(BtlClientWk *btlClient, unsigned int *a2, int a3, int a4)
+{
+    // k::Printf("\nSUBPROC_UI_SELECTACTION\nentryTurn = %d\n\n\n", entryTurn);
+    if (entryTurn != 0)
+    {
+        if (MainModule_IsCompetitorScenarioMode(btlClient->mainModule) == 1)
+        {
+            return sub_21B22AC(btlClient, a2);
+        }
+        else
+        {
+            return BattleClient_SubProc_UI_SelectAction(btlClient, a2);
+        }
+    }
+    return 1;
+}
 
 
 
@@ -935,7 +884,6 @@ extern "C" BattleEventHandlerTableEntry *THUMB_BRANCH_EventAddPressure(u32 *hand
 #define ACTION_ORDER_GET_PRIO(actionOrder, idx) (actionOrder[idx].field_8 >> 16) & 0x3FFFFF
 #define ACTION_ORDER_GET_SPECIAL_PRIO(actionOrder, idx) ((actionOrder[idx].field_8 >> 13) & 0x7)
 
-// extern "C" u32 CommonGetAllyPos(ServerFlow *serverFlow, u32 battlePos);
 extern "C" ActionOrderWork *GetExtraActionOrder(u32 actionIdx);
 extern "C" b32 IsPosInCenterTripleBattle(u32 battlePos);
 extern void sys_memset16(u16 value, void *ptr, size_t size);
@@ -951,7 +899,6 @@ extern const void *sys_memcpy(const void *src, void *dst, u32 size);
 extern s32 sys_memcmp(const void *src1, const void *src2, size_t size);
 extern const void *sys_memcpy_fast(const void *src, void *dst, size_t size);
 extern const void *sys_memcpy_ex(const void *src, void *dst, s32 size);
-// extern "C" u32 j_j_FaintRecord_GetCount_1(FaintRecord *faintRecord, u32 turn);
 extern "C" void SortActionOrderBySpeed(ServerFlow *serverFlow, ActionOrderWork *actionOrder, u32 remainingActions);
 
 u8 interruptActionFlag = 0;
@@ -1216,15 +1163,14 @@ extern "C" int THUMB_BRANCH_SAFESTACK_ServerFlow_ActOrderProcMain(ServerFlow *se
 
     // k::Printf("\n\n====SERVERFLOW_ACTORDERPROCMAIN===\n\n\nThe serverFlow result is %d\n", serverFlow->flowResult);
 
-    // if (entryTurn == 0)
-    // {
-    //     // k::Printf("We are getting into process entry turn\n\n");
-    //     if (ProcessEntryTurn(serverFlow))
-    //     {
-    //         entryTurn = 1;
-    //     }
-    //     return 0;
-    // }
+    if (entryTurn == 0)
+    {
+        if (ProcessEntryTurn(serverFlow))
+        {
+            entryTurn = 1;
+        }
+        return 0;
+    }
 
     for (u8 i = 0; i < 6; ++i)
     {
@@ -1385,8 +1331,6 @@ extern "C" int THUMB_BRANCH_SAFESTACK_ServerFlow_ActOrderProcMain(ServerFlow *se
     return serverFlow->numActOrder;
 }
 
-// j_j_FaintRecord_GetCount_1
-// SortActionOrderBySpeed
 #pragma endregion
 
 #pragma region EVMods

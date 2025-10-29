@@ -69,6 +69,8 @@ public class MainEvents {
 		Message.CloseAll();
 		ActionSequence_07a0(5);
 		Actor.WaitActionFinish();
+		Global2805(47, 1);
+		Global2805(50, 1);
 		Message.ActorEx(1024, 7, 5, 0, 0);
 		Message.CloseAll();
 		sub_0205();
@@ -245,6 +247,7 @@ public class MainEvents {
 
 		Actor.PauseAll();
 		EventFlags.Clear(738);
+		Actor.Hide(1);
 		Actor.Show(8);
 		WordSet.LoadPlayerName(0);
 		Message.Info(25, 2);
@@ -272,7 +275,7 @@ public class MainEvents {
 		Message.CloseAll();
 		ActionSequence_0768(8);
 		Actor.WaitActionFinish();
-		Global2805(155, 10);
+		Global2805(149, 3);
 		ActionSequence_05b0(8);
 		Actor.WaitActionFinish();
 		WordSet.LoadPlayerName(0);

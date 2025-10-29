@@ -29,14 +29,15 @@ unsigned short int &LOWORD(unsigned int &x)
     return *(reinterpret_cast<unsigned short int *>(&x) + 0);
 }
 
-
 int ZoneIDsNowWithLighting[] = {
-    489
-};
+    489};
 
-bool IsInArray(int value){
-    for (int i = 0; i < 1; i++){
-        if (ZoneIDsNowWithLighting[i] == value){
+bool IsInArray(int value)
+{
+    for (int i = 0; i < 1; i++)
+    {
+        if (ZoneIDsNowWithLighting[i] == value)
+        {
             return true;
         }
     };
@@ -45,8 +46,28 @@ bool IsInArray(int value){
 
 extern "C"
 {
-     
-    enum 	PlayerExState	 {FLD_PLAYER_EXSTATE_NONE = 0x0,FLD_PLAYER_EXSTATE_CYCLING = 0x1,FLD_PLAYER_EXSTATE_SURF = 0x2,FLD_PLAYER_EXSTATE_DIVE = 0x3,};
+    struct EventWorkSave
+    {
+        u16 Works[431];
+        u8 FlagBytes[383];
+        u8 CanRespawnHiddenItems;
+    };
+
+    extern EventWorkSave *GameData_GetEventWork(void *gameData);
+    extern u16 *EventWork_GetWkPtr(EventWorkSave *eventWork, int swkId);
+    u32 GetBackgroundsSetting()
+    {
+        EventWorkSave *eventWork = GameData_GetEventWork(GAME_DATA);
+        u16 *lvl_cap_ptr = EventWork_GetWkPtr(eventWork, 16435);
+        return *lvl_cap_ptr;
+    }
+    enum PlayerExState
+    {
+        FLD_PLAYER_EXSTATE_NONE = 0x0,
+        FLD_PLAYER_EXSTATE_CYCLING = 0x1,
+        FLD_PLAYER_EXSTATE_SURF = 0x2,
+        FLD_PLAYER_EXSTATE_DIVE = 0x3,
+    };
 
     struct RTCTime
     {
@@ -70,7 +91,12 @@ extern "C"
     typedef u16 fxangle;
     typedef s32 fx32;
 
-    struct 	VecFx32	 {fx32 x;fx32 y;fx32 z;};
+    struct VecFx32
+    {
+        fx32 x;
+        fx32 y;
+        fx32 z;
+    };
 
     struct PlayerState
     {
@@ -92,9 +118,22 @@ extern "C"
         int field_3C;
         PlayerExState ExState;
     };
-    struct 	FieldPosition	 {VecFx32 Vector;RailPosition Rail;};
-    struct 	ZoneSpawnInfo	{u32 ChangeType;u16 ZoneID;u16 WarpID;u16 WarpDir;u16 PosWeightBits;b32 IsRail;FieldPosition Pos;};
-        extern int GetTileClass(TileType result);
+    struct FieldPosition
+    {
+        VecFx32 Vector;
+        RailPosition Rail;
+    };
+    struct ZoneSpawnInfo
+    {
+        u32 ChangeType;
+        u16 ZoneID;
+        u16 WarpID;
+        u16 WarpDir;
+        u16 PosWeightBits;
+        b32 IsRail;
+        FieldPosition Pos;
+    };
+    extern int GetTileClass(TileType result);
     extern TileType FieldPlayer_GetTileTypeUnder(void *player);
     extern void RTC_GetCachedTime(RTCTime *time);
     extern int GetTileEncountType(int tileClass);
@@ -103,22 +142,53 @@ extern "C"
     extern u16 Field_GetPlayerStateZoneID(void *field);
     extern int ConvFieldWeatherToBtl(void *field);
     extern int GameData_GetSeason(void *gameData);
-    extern PlayerState * GameData_GetPlayerState(void *gameData);
-    extern VecFx32 * PlayerState_GetWPos(PlayerState *playerState);
+    extern PlayerState *GameData_GetPlayerState(void *gameData);
+    extern VecFx32 *PlayerState_GetWPos(PlayerState *playerState);
     extern void vecfx_normalize(const VecFx32 *vec, VecFx32 *normalized);
-    extern void  FieldPlayer_GetWPos(void *player, VecFx32 *dest);
-    struct AreaData {u16 Buildings;u16 Textures;u8 SrtAnime;u8 PatAnime;u8 IsExterior;u8 Lights;u8 EdgeColorTableId;u8 BbdMdlColors;};
+    extern void FieldPlayer_GetWPos(void *player, VecFx32 *dest);
+    struct AreaData
+    {
+        u16 Buildings;
+        u16 Textures;
+        u8 SrtAnime;
+        u8 PatAnime;
+        u8 IsExterior;
+        u8 Lights;
+        u8 EdgeColorTableId;
+        u8 BbdMdlColors;
+    };
     typedef u16 GXColor;
-    struct 	VecFx16	 {__int16 x;__int16 y;__int16 z;};
-    struct 	FieldLightInfo	 {u16 DayPart;s16 MinutesOffs;u8 LightIsEnabled[4];GXColor LightColors[4];VecFx16 LightPositions[4];GXColor GXDiffuse;GXColor GXAmbient;GXColor GXSpecular;GXColor GXEmission;GXColor GXFogColor;GXColor ClearColor;};
-    struct 	FieldLightData	 {FieldLightInfo Entries[16];};
+    struct VecFx16
+    {
+        __int16 x;
+        __int16 y;
+        __int16 z;
+    };
+    struct FieldLightInfo
+    {
+        u16 DayPart;
+        s16 MinutesOffs;
+        u8 LightIsEnabled[4];
+        GXColor LightColors[4];
+        VecFx16 LightPositions[4];
+        GXColor GXDiffuse;
+        GXColor GXAmbient;
+        GXColor GXSpecular;
+        GXColor GXEmission;
+        GXColor GXFogColor;
+        GXColor ClearColor;
+    };
+    struct FieldLightData
+    {
+        FieldLightInfo Entries[16];
+    };
     extern int sub_201991C(int a1);
-    extern FieldLightData* Normalize060File(int arcId, u16 datId, u32 *pEntryCount, HeapID heapId);
+    extern FieldLightData *Normalize060File(int arcId, u16 datId, u32 *pEntryCount, HeapID heapId);
     extern int GetZoneStaticLightDataIndex(u16 zoneId);
     extern b32 AreaData_HasSeasons(u16 areaID);
     extern u32 ZoneData_GetAreaID(int zoneId);
-    extern AreaData* AreaData_Create(HeapID heapId, u16 areaId, u16 areaSeasonShift);
-    extern int  AreaData_GetLightsID(AreaData *ad);
+    extern AreaData *AreaData_Create(HeapID heapId, u16 areaId, u16 areaSeasonShift);
+    extern int AreaData_GetLightsID(AreaData *ad);
     extern void AreaData_Free(AreaData *ad);
     extern void sub_201998C(
         FieldLightData *lights,
@@ -147,23 +217,26 @@ extern "C"
         u16 v10;                      // r0
         int ZoneStaticLightDataIndex; // r0
         int zoneIdToUse;
-        u16 v12;                      // r6
-        u16 AreaID;                   // r0
-        HeapID v14;                   // r4
-        u16 v15;                      // r0
-        AreaData *v16;                // r5
-        u16 LightsID;                 // r0
-        int v18;                      // [sp+4h] [bp-1Ch]
-        u32 pEntryCount[6];           // [sp+8h] [bp-18h] BYREF
+        u16 v12;            // r6
+        u16 AreaID;         // r0
+        HeapID v14;         // r4
+        u16 v15;            // r0
+        AreaData *v16;      // r5
+        u16 LightsID;       // r0
+        int v18;            // [sp+4h] [bp-1Ch]
+        u32 pEntryCount[6]; // [sp+8h] [bp-18h] BYREF
 
-        //k::Printf("\nzoneID is %d", zoneId);
-        
-        if (ANIMATED_BACKGROUNDS_ENABLED){
+        // k::Printf("\nzoneID is %d", zoneId);
+
+        if (GetBackgroundsSetting())
+        {
             zoneIdToUse = (IsInArray(zoneId)) ? 445 : zoneId; // Checks to see if we're overwriting the lighting
-        } else {
+        }
+        else
+        {
             zoneIdToUse = zoneId;
         }
-        //k::Printf("\nzoneIDToUse is %d", zoneIdToUse);
+        // k::Printf("\nzoneIDToUse is %d", zoneIdToUse);
         v8 = 60 * minutes;
         v9 = 0;
         v18 = 3600 * hours;
@@ -174,7 +247,7 @@ extern "C"
         //     VecFx32* vec = PlayerState_GetWPos(playerstate);
         //     //k::Printf("\nx is %d\ny is %d\nz is %d\n", vec->x, vec->y, vec->z);
         // }
-        
+
         if (a4)
         {
             v10 = sub_201991C(a4);

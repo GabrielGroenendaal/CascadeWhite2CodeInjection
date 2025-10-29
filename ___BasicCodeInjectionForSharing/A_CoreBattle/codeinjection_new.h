@@ -459,7 +459,7 @@ extern int Move_IsUsable(BattleMon *a1, int a2);
 extern u32 BattleField_CheckFieldEffectCore(BattleField *a1, BattleFieldEffect a2);
 extern int BattleField_CheckImprisonCore(BattleField *a1, PokeCon *a2, BattleMon *a3, int a4);
 extern int BattleMon_GetConditionAffectedMove(BattleMon *a1, MoveCondition a2);
-
+extern void PokeSet_Remove(PokeSet *a1, BattleMon *a2);
 extern void HandlerKnockOff(int a1, ServerFlow *r1_0, unsigned int a3);
 extern bool HandlerCommon_CheckIfCanStealPokeItem(ServerFlow *a1, unsigned int a2, int a3);
 extern void HandlerNormalize(int a1, int a2, int a3);
@@ -469,6 +469,7 @@ extern int Handler_CheckEvolution(ServerFlow *a1, int a2);
 extern int HandlerLeechSeed(int a1, ServerFlow *a2, int a3);
 extern void HandlerJustified(int a1, ServerFlow *a2, unsigned int *a3);
 extern int ServerEvent_CheckHiding(ServerFlow *a1, BattleMon *a2, BattleMon *a3);
+extern void BattleEventItem_Remove(BattleEventItem *a1);
 extern void ServerDisplay_MoveAvoid(ServerFlow *a1, BattleMon *a2);
 extern int ServerEvent_CheckMoveDamageEffectiveness(
     ServerFlow *a1,

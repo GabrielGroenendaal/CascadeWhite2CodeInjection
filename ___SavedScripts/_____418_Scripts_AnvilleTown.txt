@@ -1,0 +1,1047 @@
+import messages.script.Msg0647.MSGID;
+
+import Base;
+import event.EVCamera;
+import event.StaticProp;
+import event.actors.Actor;
+import event.actors.Player;
+import event.app.AppCall;
+import event.dialogs.ListMenu;
+import event.dialogs.Message;
+import event.dialogs.YesNoWin;
+import event.funfest.Funfest;
+import player.Bag;
+import pokescript.vm.Math;
+import pokescript.vm.StackCtrl;
+import pokescript.vm.VM;
+import system.EventFlags;
+import system.EventWorks;
+import system.Fade;
+import system.Field;
+import system.Game;
+import system.Input;
+import system.RTC;
+import system.Runtime;
+import system.Sound;
+import system.text.WordSet;
+
+public class MainEvents {
+	public static void main_1() { // @ 0x137
+		int v16;
+
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		EVCamera.Init();
+		EVCamera.Unbind();
+		EVCamera.MoveTo(1.2714844f, 0.0f, 237.0f, 408.0f, 80.01929f, 592.0f, 15);
+		EVCamera.Wait();
+		if (EventWorks.Get(16738) != 0 || EventFlags.Get(261)) {
+			if (EventWorks.Get(16738) == 0) {
+				goto LABEL_01b5;
+			}
+			Message.Actor(1024, 7, 0, 0);
+			goto LABEL_01bf;
+		}
+		Message.Actor(1024, 8, 0, 0);
+		Message.CloseAll();
+		goto LABEL_0257;
+
+		LABEL_01b5:
+		Message.Actor(1024, 9, 0, 0);
+
+		LABEL_01bf:
+		v16 = YesNoWin.Show();
+		if (v16 != 0) {
+			if (EventWorks.Get(16738) == 0) {
+				goto LABEL_024b;
+			}
+			Message.Actor(1024, 12, 0, 0);
+			goto LABEL_0255;
+		}
+		if (EventWorks.Get(16738) == 0) {
+			Message.Actor(1024, 11, 0, 0);
+			goto LABEL_0203;
+		}
+		Message.Actor(1024, 10, 0, 0);
+
+		LABEL_0203:
+		Message.CloseAll();
+		sub_0267();
+		if (EventFlags.Get(261)) {
+			goto LABEL_0257;
+		}
+		EventFlags.Set(261);
+
+		LABEL_0222:
+		goto LABEL_0257;
+
+		LABEL_024b:
+		Message.Actor(1024, 13, 0, 0);
+
+		LABEL_0255:
+		Message.CloseAll();
+
+		LABEL_0257:
+		EVCamera.MoveToDefault(15);
+		EVCamera.Wait();
+		EVCamera.Rebind();
+		EVCamera.End();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_2() { // @ 0xb6b
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Info(0, 2);
+		Input.LastKeyWait();
+		Message.CloseAll();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_3() { // @ 0x5a
+		int v16;
+
+		EventFlags.Set(680);
+		EventFlags.Set(681);
+		if (EventWorks.Get(16738) == 0) {
+			goto LABEL_00a4;
+		}
+		v16 = RTC.GetDayOfWeek();
+		if (v16 != 6 && v16 != 0) {
+			goto LABEL_00a4;
+		}
+		EventFlags.Clear(680);
+		EventFlags.Clear(681);
+
+		LABEL_00a4:
+		if (EventWorks.Get(16738) != 9 && EventWorks.Get(16738) != 10) {
+			return;
+		}
+		EventFlags.Clear(680);
+	}
+
+	public static void main_4() { // @ 0xcd
+		int v16;
+
+		if (EventWorks.Get(16738) != 0) {
+			Base.CMD_221(EventWorks.Get(16738), v16);
+			StaticProp.ChangeMdlID(8, 24, 25, v16);
+			return;
+		}
+		StaticProp.SetVisible(8, 24, 25, 0);
+	}
+
+	public static void main_5() { // @ 0x102
+		int v16;
+
+		if (EventWorks.Get(16738) != 0) {
+			Base.CMD_221(EventWorks.Get(16738), v16);
+			StaticProp.ChangeMdlID(8, 24, 25, v16);
+			return;
+		}
+		StaticProp.SetVisible(8, 24, 25, 0);
+	}
+
+	public static void main_6() { // @ 0xd42
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Message.Info(88, 2);
+		Message.CloseAll();
+		Fade.OutBlackQ();
+		Fade.Wait();
+		Field.Close();
+		AppCall.CallPokedexDiploma(2, 0);
+		Field.Open();
+		Fade.InBlackQ();
+		Fade.Wait();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_7() { // @ 0xd67
+		Actor.PauseAll();
+		Funfest.Broadcast(17, 0);
+		Sound.SEPlay(1351);
+		Message.PlaceSign(87, 1);
+		Message.ClosePlaceSign();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_8() { // @ 0xd81
+		int v16;
+
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 47, 0, 0);
+		v16 = YesNoWin.Show();
+		if (v16 != 0) {
+			Message.Actor(1024, 49, 0, 0);
+			Input.LastKeyWait();
+			Message.CloseAll();
+			goto LABEL_0e5a;
+		}
+		Message.Actor(1024, 48, 0, 0);
+		Message.CloseAll();
+		v16 = Player.GetDirection();
+		if (v16 != 0) {
+			if (v16 != 1) {
+				goto LABEL_0e0c;
+			}
+			ActionSequence_0f9c(255);
+			Runtime.Sleep(24);
+			ActionSequence_0fb8(2);
+			Actor.WaitActionFinish();
+			goto LABEL_0e22;
+		}
+		ActionSequence_0f90(255);
+		Actor.WaitActionFinish();
+		goto LABEL_0e22;
+
+		LABEL_0e0c:
+		ActionSequence_0fac(255);
+		Runtime.Sleep(8);
+		ActionSequence_0fb8(2);
+		Actor.WaitActionFinish();
+
+		LABEL_0e22:
+		Runtime.Sleep(16);
+		Runtime.ReserveScript(10342);
+		Fade.OutBlackQ();
+		Fade.Wait();
+		Runtime.Sleep(15);
+		Sound.SEPlay(1971);
+		Runtime.Sleep(30);
+		Field.ChangeMap(74, 16, 0, 14, 1);
+
+		LABEL_0e5a:
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_9() { // @ 0xb82
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 86, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_10() { // @ 0xb9e
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 79, 0, 0);
+		Message.CloseAll();
+		ActionSequence_0f80(4);
+		Actor.WaitActionFinish();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_11() { // @ 0xbc2
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 77, 0, 0);
+		Message.CloseAll();
+		ActionSequence_0f88(5);
+		Actor.WaitActionFinish();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_12() { // @ 0xbe6
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 74, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_13() { // @ 0xc02
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 75, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_14() { // @ 0xc1e
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 76, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_15() { // @ 0xc3a
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 78, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_16() { // @ 0xc56
+		int v16;
+
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		v16 = RTC.GetDayOfWeek();
+		if (v16 != 6 && v16 != 0) {
+			Message.Actor(1024, 80, 0, 0);
+			goto LABEL_0cc2;
+		}
+		if (EventWorks.Get(16738) != 0) {
+			Message.Actor(1024, 81, 0, 0);
+			goto LABEL_0cc2;
+		}
+		Message.Actor(1024, 82, 0, 0);
+
+		LABEL_0cc2:
+		Input.LastKeyWait();
+		Message.CloseAll();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_17() { // @ 0xccc
+		int v16;
+
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		if (EventWorks.Get(16738) != 0) {
+			v16 = RTC.GetDayOfWeek();
+			if (v16 != 6 && v16 != 0) {
+				goto LABEL_0d2e;
+			}
+			Message.Actor(1024, 84, 0, 0);
+			goto LABEL_0d38;
+		}
+		Message.Actor(1024, 85, 0, 0);
+		goto LABEL_0d38;
+
+		LABEL_0d2e:
+		Message.Actor(1024, 83, 0, 0);
+
+		LABEL_0d38:
+		Input.LastKeyWait();
+		Message.CloseAll();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_18() { // @ 0x70d
+		int v16;
+		int v33;
+		int v34;
+		int v35;
+		int v36;
+		int v37;
+
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		v34 = 78;
+		v36 = 2;
+		v33 = 28;
+		v35 = 1;
+		WordSet.LoadItemNameEx(0, v34, v36, 0);
+		WordSet.LoadNumber(1, v36, 2);
+		WordSet.LoadItemNameEx(2, v33, v35, 0);
+		WordSet.LoadNumber(3, v35, 2);
+		if (EventWorks.Get(16395) == 111) {
+			Message.Actor(1024, 52, 0, 0);
+			goto LABEL_077e;
+		}
+		Message.Actor(1024, 51, 0, 0);
+		EventWorks.Set(16395, 111);
+
+		LABEL_077e:
+		v16 = YesNoWin.Show();
+		if (v16 != 0) {
+			Message.Actor(1024, 54, 0, 0);
+			goto LABEL_0830;
+		}
+		sub_083a();
+		WordSet.LoadItemName(0, v34);
+		WordSet.LoadItemName(2, v33);
+		if (v37 == 0) {
+			Message.Actor(1024, 56, 0, 0);
+			goto LABEL_0830;
+		}
+
+		LABEL_07c8:
+		if (v37 == 1) {
+			Message.Actor(1024, 57, 0, 0);
+			goto LABEL_0830;
+		}
+
+		LABEL_07eb:
+		Message.Actor(1024, 53, 0, 0);
+		Message.CloseAll();
+		sub_0898();
+		Message.Actor(1024, 55, 0, 0);
+		if (EventFlags.Get(2453)) {
+			goto LABEL_0830;
+		}
+		sub_0b1e();
+
+		LABEL_0820:
+
+		LABEL_0830:
+		Input.LastKeyWait();
+		Message.CloseAll();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_19() { // @ 0x8c4
+		int v16;
+		int v33;
+		int v34;
+		int v35;
+		int v36;
+		int v37;
+
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		v34 = 91;
+		v36 = 1;
+		v33 = 51;
+		v35 = 1;
+		WordSet.LoadItemNameEx(0, v34, v36, 0);
+		WordSet.LoadNumber(1, v36, 2);
+		WordSet.LoadItemNameEx(2, v33, v35, 0);
+		WordSet.LoadNumber(3, v35, 2);
+		if (EventWorks.Get(16396) == 111) {
+			Message.Actor(1024, 59, 0, 0);
+			goto LABEL_0935;
+		}
+		Message.Actor(1024, 58, 0, 0);
+		EventWorks.Set(16396, 111);
+
+		LABEL_0935:
+		v16 = YesNoWin.Show();
+		if (v16 != 0) {
+			Message.Actor(1024, 61, 0, 0);
+			goto LABEL_09e7;
+		}
+		sub_083a();
+		WordSet.LoadItemName(0, v34);
+		WordSet.LoadItemName(2, v33);
+		if (v37 == 0) {
+			Message.Actor(1024, 63, 0, 0);
+			goto LABEL_09e7;
+		}
+
+		LABEL_097f:
+		if (v37 == 1) {
+			Message.Actor(1024, 64, 0, 0);
+			goto LABEL_09e7;
+		}
+
+		LABEL_09a2:
+		Message.Actor(1024, 60, 0, 0);
+		Message.CloseAll();
+		sub_0898();
+		Message.Actor(1024, 62, 0, 0);
+		if (EventFlags.Get(2453)) {
+			goto LABEL_09e7;
+		}
+		sub_0b1e();
+
+		LABEL_09d7:
+
+		LABEL_09e7:
+		Input.LastKeyWait();
+		Message.CloseAll();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_20() { // @ 0x9f1
+		int v16;
+		int v33;
+		int v34;
+		int v35;
+		int v36;
+		int v37;
+
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		v34 = 4;
+		v36 = 20;
+		v33 = 23;
+		v35 = 1;
+		WordSet.LoadItemNameEx(0, v34, v36, 0);
+		WordSet.LoadNumber(1, v36, 2);
+		WordSet.LoadItemNameEx(2, v33, v35, 0);
+		WordSet.LoadNumber(3, v35, 2);
+		if (EventWorks.Get(16397) == 111) {
+			Message.Actor(1024, 68, 0, 0);
+			goto LABEL_0a62;
+		}
+		Message.Actor(1024, 67, 0, 0);
+		EventWorks.Set(16397, 111);
+
+		LABEL_0a62:
+		v16 = YesNoWin.Show();
+		if (v16 != 0) {
+			Message.Actor(1024, 70, 0, 0);
+			goto LABEL_0b14;
+		}
+		sub_083a();
+		WordSet.LoadItemName(0, v34);
+		WordSet.LoadItemName(2, v33);
+		if (v37 == 0) {
+			Message.Actor(1024, 72, 0, 0);
+			goto LABEL_0b14;
+		}
+
+		LABEL_0aac:
+		if (v37 == 1) {
+			Message.Actor(1024, 73, 0, 0);
+			goto LABEL_0b14;
+		}
+
+		LABEL_0acf:
+		Message.Actor(1024, 69, 0, 0);
+		Message.CloseAll();
+		sub_0898();
+		Message.Actor(1024, 71, 0, 0);
+		if (EventFlags.Get(2453)) {
+			goto LABEL_0b14;
+		}
+		sub_0b1e();
+
+		LABEL_0b04:
+
+		LABEL_0b14:
+		Input.LastKeyWait();
+		Message.CloseAll();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_21() { // @ 0xe60
+		int v0;
+		int v1;
+
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		if (EventFlags.Get(365) || !EventFlags.Get(866)) {
+			if (EventFlags.Get(365) || EventFlags.Get(866)) {
+				goto LABEL_0f33;
+			}
+			Message.Actor(1024, 2, 0, 0);
+			Message.WaitAdvance();
+			Message.CloseAll();
+			Global2805(213, 1);
+			Message.Actor(1024, 3, 0, 0);
+			Input.LastKeyWait();
+			Message.CloseAll();
+			EventFlags.Set(365);
+			goto LABEL_0f54;
+		}
+		Message.Actor(1024, 1, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseAll();
+		if (!EventFlags.Get(864) || !EventFlags.Get(865)) {
+			goto LABEL_0f54;
+		}
+		EventFlags.Clear(864);
+		EventFlags.Clear(865);
+
+		LABEL_0ec4:
+		goto LABEL_0f54;
+
+		LABEL_0f33:
+		if (!EventFlags.Get(365)) {
+			goto LABEL_0f54;
+		}
+		Message.Actor(1024, 3, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseAll();
+
+		LABEL_0f54:
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_22() { // @ 0xf5a
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Sound.PVPlay(511, 0);
+		Message.Actor(1024, 4, 0, 0);
+		Sound.PVWait();
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+    public static void main_23() { // @ 0xf5a
+        int v5;
+        int v10;
+        int v0;
+        int v4;
+
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Sound.PVPlay(511, 0);
+
+        if (EventFlags.Get(529)){
+            Message.Actor(1024, 104, 2, 0);
+			Input.LastKeyWait();
+			Message.CloseAll();
+			v5 = 1;
+			goto LABEL_EXOTICSTONE;
+        }
+		Message.Actor(1024, 89, 2, 0);
+		Sound.PVWait();
+		Input.LastKeyWait();
+        v5 = 0;
+		
+		LABEL_EXOTICSTONE:
+		if (v5 == 0) {
+			ListMenu.InitRightAnchor(31, 5, 0, 1, v4);
+			ListMenu.AddItem(90, 65535, 0);
+			ListMenu.AddItem(91, 65535, 1);
+			ListMenu.AddItem(92, 65535, 2);
+			ListMenu.AddItem(98, 65535, 3);
+            ListMenu.AddItem(93, 65535, 4);
+            ListMenu.AddItem(94, 65535, 5);
+            ListMenu.AddItem(95, 65535, 6);
+            ListMenu.AddItem(96, 65535, 7);
+            ListMenu.AddItem(97, 65535, 8);
+            ListMenu.AddItem(99, 65535, 9);
+			ListMenu.ShowDialog();
+
+            if (v4 == 9){
+                Message.Actor(1024, 103, 2, 0);
+			    Input.LastKeyWait();
+			    Message.CloseAll();
+			    v5 = 1;
+			    goto LABEL_EXOTICSTONE;
+            }
+            else if (v4 >= 0 && v4 < 9){
+                if (v4 == 0){
+                    v10 = 82;
+                }
+                if (v4 == 1){
+                    v10 = 84;
+                }
+                if (v4 == 2){
+                    v10 = 85;
+                }
+                if (v4 == 3){
+                    v10 = 84;
+                }
+                if (v4 == 4){
+                    v10 = 81;
+                }
+                if (v4 == 5){
+                    v10 = 80;
+                }
+                if (v4 == 6){
+                    v10 = 107;
+                }
+                if (v4 == 7){
+                    v10 = 109;
+                }
+                if (v4 == 8){
+                    v10 = 108;
+                }
+                WordSet.LoadItemName(0, v10);
+                Message.Actor(1024, 100, 2, 0);
+			    v0 = YesNoWin.Show();
+				if (v0 == 0) {
+					Message.Actor(1024, 102, 2, 0);
+					Message.CloseAll();
+					Global2805(v10, 1);
+					EventFlags.Set(529);
+					Message.Actor(1024, 104, 2, 0);
+					Input.LastKeyWait();
+					Message.CloseAll();
+					v5 = 1;
+					goto LABEL_EXOTICSTONE;
+				}
+                Message.Actor(1024, 101, 2, 0);
+				goto LABEL_EXOTICSTONE;
+            }
+            else {
+                Message.Actor(1024, 103, 2, 0);
+			    Input.LastKeyWait();
+			    Message.CloseAll();
+			    v5 = 1;
+			    goto LABEL_EXOTICSTONE;
+            }
+		}
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	static void sub_0267() { // @ 0x267
+		int v32;
+
+		v32 = 0;
+		Message.SetAutoscrolls(1);
+		Fade.FadeEx(3, 0, 16, 4);
+		Fade.FadeExWait();
+		EVCamera.MoveTo(1.6152344f, -1.34375f, 237.0f, 367.0f, 71.69507f, 475.0f, 1);
+		EVCamera.Wait();
+		EVCamera.MoveTo(1.6152344f, 0.96875f, 237.0f, 438.0f, 71.69507f, 475.0f, 160);
+		Fade.FadeEx(3, 16, 0, 4);
+		Fade.FadeExWait();
+		v32 = 14;
+		v32 += EventWorks.Get(16738);
+		Message.Info(v32, 1);
+		if (EventWorks.Get(16738) == 0) {
+			Runtime.Sleep(30);
+			goto LABEL_03f2;
+		}
+
+		LABEL_02e9:
+		if (EventWorks.Get(16738) == 1) {
+			Runtime.Sleep(25);
+			goto LABEL_03f2;
+		}
+
+		LABEL_0306:
+		if (EventWorks.Get(16738) == 2) {
+			Runtime.Sleep(25);
+			goto LABEL_03f2;
+		}
+
+		LABEL_0323:
+		if (EventWorks.Get(16738) == 3) {
+			Runtime.Sleep(30);
+			goto LABEL_03f2;
+		}
+
+		LABEL_0340:
+		if (EventWorks.Get(16738) == 4) {
+			Runtime.Sleep(30);
+			goto LABEL_03f2;
+		}
+
+		LABEL_035d:
+		if (EventWorks.Get(16738) == 5) {
+			Runtime.Sleep(30);
+			goto LABEL_03f2;
+		}
+
+		LABEL_037a:
+		if (EventWorks.Get(16738) == 6) {
+			Runtime.Sleep(30);
+			goto LABEL_03f2;
+		}
+
+		LABEL_0397:
+		if (EventWorks.Get(16738) == 7) {
+			Runtime.Sleep(30);
+			goto LABEL_03f2;
+		}
+
+		LABEL_03b4:
+		if (EventWorks.Get(16738) == 8) {
+			Runtime.Sleep(45);
+			goto LABEL_03f2;
+		}
+
+		LABEL_03d1:
+		if (EventWorks.Get(16738) == 9) {
+			Runtime.Sleep(55);
+			goto LABEL_03f2;
+		}
+
+		LABEL_03ee:
+		Runtime.Sleep(55);
+
+		LABEL_03f2:
+		Fade.FadeEx(3, 0, 16, 4);
+		Fade.FadeExWait();
+		Message.CloseAll();
+		EVCamera.MoveTo(1.7089844f, 2.34375f, 237.0f, 436.0f, 71.69507f, 474.41406f, 1);
+		EVCamera.Wait();
+		EVCamera.MoveTo(1.7089844f, 2.34375f, 237.0f, 436.0f, 71.69507f, 298.0f, 180);
+		Fade.FadeEx(3, 16, 0, 4);
+		Fade.FadeExWait();
+		v32 = 25;
+		v32 += EventWorks.Get(16738);
+		Message.Info(v32, 1);
+		if (EventWorks.Get(16738) == 0) {
+			Runtime.Sleep(30);
+			goto LABEL_0575;
+		}
+
+		LABEL_046c:
+		if (EventWorks.Get(16738) == 1) {
+			Runtime.Sleep(80);
+			goto LABEL_0575;
+		}
+
+		LABEL_0489:
+		if (EventWorks.Get(16738) == 2) {
+			Runtime.Sleep(30);
+			goto LABEL_0575;
+		}
+
+		LABEL_04a6:
+		if (EventWorks.Get(16738) == 3) {
+			Runtime.Sleep(30);
+			goto LABEL_0575;
+		}
+
+		LABEL_04c3:
+		if (EventWorks.Get(16738) == 4) {
+			Runtime.Sleep(30);
+			goto LABEL_0575;
+		}
+
+		LABEL_04e0:
+		if (EventWorks.Get(16738) == 5) {
+			Runtime.Sleep(30);
+			goto LABEL_0575;
+		}
+
+		LABEL_04fd:
+		if (EventWorks.Get(16738) == 6) {
+			Runtime.Sleep(30);
+			goto LABEL_0575;
+		}
+
+		LABEL_051a:
+		if (EventWorks.Get(16738) == 7) {
+			Runtime.Sleep(30);
+			goto LABEL_0575;
+		}
+
+		LABEL_0537:
+		if (EventWorks.Get(16738) == 8) {
+			Runtime.Sleep(35);
+			goto LABEL_0575;
+		}
+
+		LABEL_0554:
+		if (EventWorks.Get(16738) == 9) {
+			Runtime.Sleep(35);
+			goto LABEL_0575;
+		}
+
+		LABEL_0571:
+		Runtime.Sleep(45);
+
+		LABEL_0575:
+		if (EventWorks.Get(16738) == 0) {
+			goto LABEL_0697;
+		}
+		if (EventWorks.Get(16738) == 1) {
+			goto LABEL_05a1;
+		}
+		goto LABEL_05ab;
+
+		LABEL_0588:
+		goto LABEL_0697;
+
+		LABEL_05a1:
+		EventFlags.Set(2678);
+		goto LABEL_0697;
+
+		LABEL_05ab:
+		if (EventWorks.Get(16738) == 2) {
+			EventFlags.Set(2679);
+			goto LABEL_0697;
+		}
+
+		LABEL_05c8:
+		if (EventWorks.Get(16738) == 3) {
+			EventFlags.Set(2680);
+			goto LABEL_0697;
+		}
+
+		LABEL_05e5:
+		if (EventWorks.Get(16738) == 4) {
+			EventFlags.Set(2681);
+			goto LABEL_0697;
+		}
+
+		LABEL_0602:
+		if (EventWorks.Get(16738) == 5) {
+			EventFlags.Set(2682);
+			goto LABEL_0697;
+		}
+
+		LABEL_061f:
+		if (EventWorks.Get(16738) == 6) {
+			EventFlags.Set(2683);
+			goto LABEL_0697;
+		}
+
+		LABEL_063c:
+		if (EventWorks.Get(16738) == 7) {
+			EventFlags.Set(2684);
+			goto LABEL_0697;
+		}
+
+		LABEL_0659:
+		if (EventWorks.Get(16738) == 8) {
+			EventFlags.Set(2685);
+			goto LABEL_0697;
+		}
+
+		LABEL_0676:
+		if (EventWorks.Get(16738) == 9) {
+			EventFlags.Set(2686);
+			goto LABEL_0697;
+		}
+
+		LABEL_0693:
+		EventFlags.Set(2687);
+
+		LABEL_0697:
+		Fade.FadeEx(3, 0, 16, 4);
+		Fade.FadeExWait();
+		Message.CloseAll();
+		EVCamera.MoveTo(1.2714844f, 0.0f, 237.0f, 408.0f, 80.01929f, 592.0f, 1);
+		EVCamera.Wait();
+		Fade.FadeEx(3, 16, 0, 4);
+		Fade.FadeExWait();
+		Message.SetAutoscrolls(0);
+		v32 = 36;
+		v32 += EventWorks.Get(16738);
+		Message.Actor(1024, v32, 0, 0);
+		Message.CloseAll();
+		v32 = 0;
+	}
+
+	static void sub_083a() { // @ 0x83a
+		int v16;
+		int v33;
+		int v34;
+		int v35;
+		int v36;
+		int v37;
+
+		v16 = Bag.CheckItemCount(v34, v36);
+		if (v16 != 0) {
+			v16 = Bag.CheckSpace(v33, v35);
+			if (v16 != 0) {
+				v16 = Bag.TakeItem(v34, v36);
+				v16 = Bag.GiveItem(v33, v35);
+				v37 = 2;
+				return;
+			}
+			v37 = 1;
+			return;
+		}
+		v37 = 0;
+		return;
+	}
+
+	static void sub_0898() { // @ 0x898
+		int v33;
+		int v34;
+		int v35;
+		int v36;
+
+		WordSet.LoadItemNameEx(0, v34, v36, 0);
+		WordSet.LoadItemNameEx(2, v33, v35, 0);
+		Sound.MEPlay(1302);
+		Message.System(50, 0);
+		Sound.MEWait();
+		Message.WaitAdvance();
+		Message.CloseAll();
+		WordSet.LoadItemName(0, v34);
+		WordSet.LoadItemName(2, v33);
+	}
+
+	static void sub_0b1e() { // @ 0xb1e
+		int v38;
+
+		Message.WaitAdvance();
+		Message.CloseAll();
+		v38 = 0;
+		v38 = Game.GetVersion();
+		Sound.SEPlay(1908);
+		if (v38 != 23) {
+			Base.CMD_275(0, 12, 0);
+			Message.System(66, 0);
+			goto LABEL_0b63;
+		}
+		Base.CMD_275(0, 11, 0);
+		Message.System(65, 0);
+
+		LABEL_0b63:
+		Sound.SEWait();
+		EventFlags.Set(2453);
+	}
+
+	static meta void ActionSequence_0f80(int npcId) : VActionSequence {
+		Action0020(1);
+	}
+
+	static meta void ActionSequence_0f88(int npcId) : VActionSequence {
+		Action0022(1);
+	}
+
+	static meta void ActionSequence_0f90(int npcId) : VActionSequence {
+		Action000d(1);
+		Action0023(1);
+	}
+
+	static meta void ActionSequence_0f9c(int npcId) : VActionSequence {
+		Action000e(1);
+		Action000d(3);
+		Action000f(1);
+	}
+
+	static meta void ActionSequence_0fac(int npcId) : VActionSequence {
+		Action000d(2);
+		Action000f(1);
+	}
+
+	static meta void ActionSequence_0fb8(int npcId) : VActionSequence {
+		Action0021(1);
+	}
+
+	static meta void Global2805(int a1, int a2) : VGlobalCall[2805];
+
+	static native void Action000d(int amount) : 0xd;
+	static native void Action000e(int amount) : 0xe;
+	static native void Action000f(int amount) : 0xf;
+	static native void Action0020(int amount) : 0x20;
+	static native void Action0021(int amount) : 0x21;
+	static native void Action0022(int amount) : 0x22;
+	static native void Action0023(int amount) : 0x23;
+}

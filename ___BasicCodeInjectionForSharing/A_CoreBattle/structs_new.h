@@ -29,6 +29,8 @@ STRUCT_DECLARE(BtlvCore)
 
 const int dword_2199900 = 0x2199900;
 
+#pragma region enums
+
 enum BtlSetupFlag
 {
     BTL_SETUP_FLAG_FISHING = 0x1,
@@ -39,6 +41,17 @@ enum BtlSetupFlag
     BTL_SETUP_FLAG_NPOKE = 0x2000,
     BTL_SETUP_FLAG_PHENOMENON = 0x4000,
     BTL_SETUP_FLAG_NO_CATCH_KYUREM = 0x10000,
+};
+
+enum FlowResult
+{
+    RESULT_TURN_STARTING = 0x0,
+    RESULT_SWITCH = 0x1,
+    RESULT_MON_FAINTED = 0x2,
+    RESULT_EXP_GAINED = 0x3,
+    RESULT_TEAM_FAINTED = 0x4,
+    RESULT_ESCAPE = 0x5,
+    RESULT_CAPTURE = 0x6,
 };
 
 enum TurnFlag
@@ -3337,26 +3350,9 @@ enum PersonalField
     Personal_SpecialTutor3 = 0x2E,
     Personal_SpecialTutor4 = 0x2F,
 };
+#pragma endregion
 
-// typedef void *(*BattleEventHandler)();
-
-// struct HandlerTable
-// {
-//     BattleEventType EventType;
-//     BattleEventHandler Handler;
-// };
-// typedef HandlerTable *(*AbilityEventAddFunc)(int *);
-// typedef HandlerTable *(*ItemEventAddFunc)(int *);
-// typedef HandlerTable *(*MoveEventAddFunc)(int *a1);
-
-struct SWAN_ALIGNED(2) StrBuf
-{
-    u16 CharCapacity;
-    u16 CharCount;
-    u32 Magic;
-    __int16 String[];
-};
-
+#pragma region Standalones
 struct ZoneSpawnInfo
 {
     u32 ChangeType;
@@ -3367,30 +3363,106 @@ struct ZoneSpawnInfo
     b32 IsRail;
     char Pos[12];
 };
-struct TrainerBattleSetup
+struct ItemBattleStats
 {
-    _DWORD TrID;
-    _DWORD TrClass;
-    _DWORD TrAIBits;
-    u16 TrItems[4];
-    StrBuf *TrainerName;
-    __int16 field_18[4];
-    __int16 field_20[4];
+    u8 CureInflict;
+    u8 Boost[4];
+    u8 FunctionFlags0;
+    u8 FunctionFlags1;
+    char EVHP;
+    char EVATK;
+    char EVDEF;
+    char EVSPE;
+    char EVSPA;
+    char EVSPD;
+    u8 HealAmount;
+    u8 PPGain;
+    char Friendship1;
+    char Friendship2;
+    char Friendship3;
+    char field_1F;
+    char field_20;
+};
+struct ItemData
+{
+    u16 Price;
+    u8 HeldEffect;
+    u8 HeldArgument;
+    u8 NaturalGiftEffect;
+    u8 FlingEffect;
+    u8 FlingPower;
+    u8 NaturalGiftPower;
+    u16 Packed;
+    u8 EffectField;
+    u8 EffectBattle;
+    u8 HasBattleStats;
+    u8 ItemClass;
+    u8 Consumable;
+    u8 SortIndex;
+    ItemBattleStats BattleStats;
 };
 
-struct EffectivenessRecorder
+#pragma endregion
+
+#pragma region UsedAcrossMultiple
+struct PersonalData
 {
-    int effectiveness[24];
+    u8 BaseHP;
+    u8 BaseATK;
+    u8 BaseDEF;
+    u8 BaseSPE;
+    u8 BaseSPA;
+    u8 BaseSPD;
+    u8 Type1;
+    u8 Type2;
+    u8 CaptureRate;
+    u8 EvoStage;
+    u16 EVYield;
+    u16 WildItem50;
+    u16 WildItem5;
+    u16 WildItem1;
+    u8 GenderProb;
+    u8 EggHappiness;
+    u8 BaseHappiness;
+    u8 ExpGroup;
+    u8 EggGroup1;
+    u8 EggGroup2;
+    u8 Abil1;
+    u8 Abil2;
+    u8 AbilHidden;
+    u8 EscapeRate;
+    u16 FormeDataOffs;
+    u16 FormeSpriteOffs;
+    u8 FormeCount;
+    u8 Color;
+    u16 BaseEXP;
+    u16 HeightCm;
+    u16 WeightCg;
+    int TMHM1;
+    int TMHM2;
+    int TMHM3;
+    int TMHM4;
+    int TypeTutors;
+    int SpecialTutors[4];
 };
 
-// struct ConditionData
-// {
-//     unsigned __int32 status : 3;
-//     unsigned __int32 turncount : 3;
-//     unsigned __int32 field7 : 3;
-//     unsigned __int32 param : 3;
-//     unsigned __int32 rest : 20;
-// };
+
+struct MoveAnimCtrl
+{
+    unsigned __int16 MoveID;
+    unsigned __int8 attackerPos;
+    unsigned __int8 targetPos;
+    unsigned __int8 effectIndex;
+    unsigned __int8 flags;
+    unsigned __int16 subEff;
+};
+struct SWAN_ALIGNED(2) StrBuf
+{
+    u16 CharCapacity;
+    u16 CharCount;
+    u32 Magic;
+    __int16 String[];
+};
 
 struct ConditionData_PokeTurn
 {
@@ -3437,53 +3509,16 @@ union SWAN_ALIGNED(4) ConditionData
     ConditionData_Turn *turn;
 };
 
-struct PersonalData
-{
-    u8 BaseHP;
-    u8 BaseATK;
-    u8 BaseDEF;
-    u8 BaseSPE;
-    u8 BaseSPA;
-    u8 BaseSPD;
-    u8 Type1;
-    u8 Type2;
-    u8 CaptureRate;
-    u8 EvoStage;
-    u16 EVYield;
-    u16 WildItem50;
-    u16 WildItem5;
-    u16 WildItem1;
-    u8 GenderProb;
-    u8 EggHappiness;
-    u8 BaseHappiness;
-    u8 ExpGroup;
-    u8 EggGroup1;
-    u8 EggGroup2;
-    u8 Abil1;
-    u8 Abil2;
-    u8 AbilHidden;
-    u8 EscapeRate;
-    u16 FormeDataOffs;
-    u16 FormeSpriteOffs;
-    u8 FormeCount;
-    u8 Color;
-    u16 BaseEXP;
-    u16 HeightCm;
-    u16 WeightCg;
-    int TMHM1;
-    int TMHM2;
-    int TMHM3;
-    int TMHM4;
-    int TypeTutors;
-    int SpecialTutors[4];
-};
-
 struct EscapeInfo
 {
     u32 count;
     u8 clientID[4];
 };
 
+
+#pragma endregion 
+
+#pragma region BattleMon
 struct SWAN_ALIGNED(2) MoveCore
 {
     u16 MoveID;
@@ -3500,77 +3535,6 @@ struct MoveSet
     u8 fLinked;
 };
 
-struct Btlv_StringParam
-{
-    u16 strID;
-    u8 wait;
-    u8 strTypeAndArgCount;
-    int args[8];
-};
-
-struct MoveAnimCtrl
-{
-    unsigned __int16 MoveID;
-    unsigned __int8 attackerPos;
-    unsigned __int8 targetPos;
-    unsigned __int8 effectIndex;
-    unsigned __int8 flags;
-    unsigned __int16 subEff;
-};
-
-struct ItemBattleStats
-{
-    u8 CureInflict;
-    u8 Boost[4];
-    u8 FunctionFlags0;
-    u8 FunctionFlags1;
-    char EVHP;
-    char EVATK;
-    char EVDEF;
-    char EVSPE;
-    char EVSPA;
-    char EVSPD;
-    u8 HealAmount;
-    u8 PPGain;
-    char Friendship1;
-    char Friendship2;
-    char Friendship3;
-    char field_1F;
-    char field_20;
-};
-
-struct EventWorkStack
-{
-    u8 work[512];
-    u16 size[16];
-    u32 sp;
-};
-
-struct EventWorkSave
-{
-    u16 Works[431];
-    u8 FlagBytes[383];
-    u8 CanRespawnHiddenItems;
-};
-
-struct ItemData
-{
-    u16 Price;
-    u8 HeldEffect;
-    u8 HeldArgument;
-    u8 NaturalGiftEffect;
-    u8 FlingEffect;
-    u8 FlingPower;
-    u8 NaturalGiftPower;
-    u16 Packed;
-    u8 EffectField;
-    u8 EffectBattle;
-    u8 HasBattleStats;
-    u8 ItemClass;
-    u8 Consumable;
-    u8 SortIndex;
-    ItemBattleStats BattleStats;
-};
 struct StatStageParam
 {
     u8 AttackStage;
@@ -3716,16 +3680,9 @@ struct SWAN_ALIGNED(4) BattleMon
     char comboPokeID;
     char field_1F7;
 };
+#pragma endregion
 
-struct PokeSelectResult
-{
-    u8 selIdx[3];
-    u8 outPokeIdx[3];
-    u8 count;
-    char field_7;
-    char fCancel;
-};
-
+#pragma region MainModule and BattlefieldStuff
 struct SWAN_ALIGNED(4) BattleEventItem
 {
     BattleEventItem *prev;
@@ -3817,74 +3774,15 @@ struct PokeCon
     BattleMon *activePokeParam[24];
     int fForServer;
 };
-struct BattleAction_Default
+struct TrainerBattleSetup
 {
-    unsigned __int32 actionType : 4;
-    unsigned __int32 param : 28;
-};
-struct BattleAction_Fight
-{
-    unsigned __int32 actionType : 4;
-    unsigned __int32 targetPos : 3;
-    unsigned __int32 moveID : 19;
-    unsigned __int32 moveInfoFlag : 1;
-    unsigned __int32 pad : 5;
-};
-struct BattleAction_Item
-{
-    unsigned __int32 actionType : 4;
-    unsigned __int32 targetIdx : 3;
-    unsigned __int32 itemID : 16;
-    unsigned __int32 param : 8;
-    unsigned __int32 pad : 1;
-};
-struct BattleAction_Switch
-{
-    unsigned __int32 actionType : 4;
-    unsigned __int32 posIdx : 3;
-    unsigned __int32 memberIdx : 3;
-    unsigned __int32 depleteFlag : 1;
-    unsigned __int32 pad : 21;
-};
-struct BattleAction_Run
-{
-    unsigned __int32 actionType : 4;
-    unsigned __int32 pad : 28;
-};
-
-struct BattleAction_Shift
-{
-    unsigned __int32 actionType : 4;
-    unsigned __int32 shift : 28;
-};
-
-struct BattleAction_Rotate
-{
-    unsigned __int32 actionType : 4;
-    unsigned __int32 rotation : 3;
-    unsigned __int32 pad : 3;
-    unsigned __int32 unkFlag : 1;
-    unsigned __int32 pad2 : 21;
-};
-
-// union BattleActionParam
-// {
-//     BattleAction_Fight Attack;
-//     BattleAction_Item Item;
-//     BattleAction_Switch Switch;
-//     BattleAction_Run Run;
-//     BattleAction_Default Default;
-// };
-
-union BattleActionParam
-{
-    BattleAction_Default Default;
-    BattleAction_Fight Attack;
-    BattleAction_Item Item;
-    BattleAction_Switch Switch;
-    BattleAction_Run Run;
-    BattleAction_Shift Shift;
-    BattleAction_Rotate Rotate;
+    _DWORD TrID;
+    _DWORD TrClass;
+    _DWORD TrAIBits;
+    u16 TrItems[4];
+    StrBuf *TrainerName;
+    __int16 field_18[4];
+    __int16 field_20[4];
 };
 
 struct SWAN_ALIGNED(4) BtlSetup
@@ -4063,6 +3961,79 @@ struct SWAN_ALIGNED(32) MainModule
     int pokestarScriptHeapPtr;
     int field_47C;
 };
+#pragma endregion
+
+#pragma region Btlv Stuff
+struct PokeSelectResult
+{
+    u8 selIdx[3];
+    u8 outPokeIdx[3];
+    u8 count;
+    char field_7;
+    char fCancel;
+};
+
+struct BattleAction_Default
+{
+    unsigned __int32 actionType : 4;
+    unsigned __int32 param : 28;
+};
+struct BattleAction_Fight
+{
+    unsigned __int32 actionType : 4;
+    unsigned __int32 targetPos : 3;
+    unsigned __int32 moveID : 19;
+    unsigned __int32 moveInfoFlag : 1;
+    unsigned __int32 pad : 5;
+};
+struct BattleAction_Item
+{
+    unsigned __int32 actionType : 4;
+    unsigned __int32 targetIdx : 3;
+    unsigned __int32 itemID : 16;
+    unsigned __int32 param : 8;
+    unsigned __int32 pad : 1;
+};
+struct BattleAction_Switch
+{
+    unsigned __int32 actionType : 4;
+    unsigned __int32 posIdx : 3;
+    unsigned __int32 memberIdx : 3;
+    unsigned __int32 depleteFlag : 1;
+    unsigned __int32 pad : 21;
+};
+struct BattleAction_Run
+{
+    unsigned __int32 actionType : 4;
+    unsigned __int32 pad : 28;
+};
+
+struct BattleAction_Shift
+{
+    unsigned __int32 actionType : 4;
+    unsigned __int32 shift : 28;
+};
+
+struct BattleAction_Rotate
+{
+    unsigned __int32 actionType : 4;
+    unsigned __int32 rotation : 3;
+    unsigned __int32 pad : 3;
+    unsigned __int32 unkFlag : 1;
+    unsigned __int32 pad2 : 21;
+};
+
+union BattleActionParam
+{
+    BattleAction_Default Default;
+    BattleAction_Fight Attack;
+    BattleAction_Item Item;
+    BattleAction_Switch Switch;
+    BattleAction_Run Run;
+    BattleAction_Shift Shift;
+    BattleAction_Rotate Rotate;
+};
+
 struct BtlvInput_VsRecorder
 {
     int field_0;
@@ -4070,6 +4041,15 @@ struct BtlvInput_VsRecorder
     int field_8;
     int field_C;
 };
+
+struct Btlv_StringParam
+{
+    u16 strID;
+    u8 wait;
+    u8 strTypeAndArgCount;
+    int args[8];
+};
+
 
 struct SWAN_PACKED SWAN_ALIGNED(1) BottomScreenMenuData
 {
@@ -4300,211 +4280,19 @@ struct SWAN_PACKED SWAN_ALIGNED(2) BtlvCore
     HeapID heapID;
 };
 
-struct ServerCommandQueue
-{
-    u32 writePtr;
-    u32 readPtr;
-    u8 buffer[3000];
-};
+#pragma endregion
 
-struct SVCL_WORK
-{
-    int adapter;
-    BattleParty *party;
-    u8 byte8;
-    u8 byte9;
-    u8 byteA;
-    u8 id;
-};
-
-struct FaintRecordUnit
-{
-    u8 count;
-    u8 fExpChecked[24];
-    u8 FaintPokeID[24];
-};
-
-struct FaintRecord
-{
-    FaintRecordUnit turnRecord[4];
-};
-
+#pragma region HandlerParam_Structs
 struct HandlerParam_Header
 {
     u32 flags;
 };
-struct SWAN_ALIGNED(4) HandlerParam_ChangeType
-{
-    HandlerParam_Header header;
-    u16 nextType;
-    u8 monID;
-    u8 pad;
-};
-
-struct SWAN_ALIGNED(4) HandlerParam_DelayMoveDamage
-{
-    HandlerParam_Header header;
-    u8 attackerID;
-    u8 targetID;
-    __int16 MoveID;
-};
-
-// struct HandlerParam_Header
-// {
-//     unsigned __int32 paramType : 8;
-//     unsigned __int32 monID : 5;
-//     unsigned __int32 size : 10;
-//     unsigned __int32 fDisableAbilityPopups : 1;
-//     unsigned __int32 fDisableExecution1 : 1;
-//     unsigned __int32 fDisableExecution2 : 1;
-//     unsigned __int32 isHostile : 1;
-//     unsigned __int32 pad : 5;
-// };
-
-struct SWAN_ALIGNED(2) HandlerParam_SetCounter
-{
-    HandlerParam_Header header;
-    u8 pokeID;
-    Counter counterID;
-    u8 value;
-};
-
 struct SWAN_ALIGNED(4) HandlerParam_StrParams
 {
     u16 ID;
     int type;
     int args[8];
 };
-
-struct SWAN_ALIGNED(4) HandlerParam_Switch
-{
-    HandlerParam_Header header;
-    HandlerParam_StrParams preStr;
-    HandlerParam_StrParams exStr;
-    u8 pokeID;
-    char fIntrDisable;
-};
-
-struct HandlerParam_ChangeHP
-{
-    HandlerParam_Header header;
-    u8 poke_cnt;
-    u8 fEffectDisable;
-    u8 fItemReactionDisable;
-    u8 pokeID[6];
-    u32 volume[6];
-    u32 damageCause;
-};
-
-struct HandlerParam_ChangeStatStage
-{
-    HandlerParam_Header header;
-    StatStage rankType;
-    u32 pad;
-    s8 rankVolume;
-    u8 pad2;
-    u8 fMoveAnimation;
-    u8 poke_cnt;
-    u8 pokeID[6];
-    HandlerParam_StrParams exStr;
-    // u8 isHostile;
-};
-
-struct HandlerParam_AddSideEffect
-{
-    HandlerParam_Header header;
-    u32 effect;
-    ConditionData cont;
-    u8 side;
-    HandlerParam_StrParams exStr;
-};
-
-struct HandlerParam_Message
-{
-    HandlerParam_Header header;
-    HandlerParam_StrParams str;
-};
-
-struct HandlerParam_Transform
-{
-    HandlerParam_Header header;
-    u8 pokeID;
-    HandlerParam_StrParams exStr;
-};
-
-struct MoveParam
-{
-    unsigned __int16 MoveID;
-    unsigned __int16 OriginalMoveID;
-    unsigned __int16 userType;
-    unsigned __int8 moveType;
-    char damageType;
-    int category;
-    MoveTarget targetType;
-    int flags;
-};
-
-struct ZoneData
-{
-    char MapType;
-    u8 NPCInfoCacheIdx;
-    u16 AreaID;
-    u16 MatrixID;
-    u16 ScriptsID;
-    u16 LevelScriptsID;
-    u16 TextsID;
-    u16 BGMSpr;
-    u16 BGMSum;
-    u16 BGMAut;
-    u16 BGMWin;
-    u16 EncID;
-    u16 EntitiesID;
-    u16 ParentZoneID;
-    u16 LocNameInfo;
-    u16 EnvFlags;
-    u16 Flags1BattleBGMapTransition;
-    u16 MatrixCamBounds;
-    u16 NameIcon;
-    int FlyX;
-    int FlyY;
-    int FlyZ;
-};
-
-struct ZoneDataSystem
-{
-    int *ZoneDataArc;
-    ZoneData CurrentZone;
-    u16 CurrentZoneID;
-    __int16 _padCurrentZoneID;
-    void *FogIndex;
-    void *StaticLights;
-    u16 FogIndexSize;
-    u8 StaticLightsSize;
-    u8 FlashIndexSize;
-    void *FlashIndex;
-    u8 EnableVersionSpecificZone[3];
-    u8 EnableVersionSpecificArea[3];
-    u16 Padding;
-};
-
-// struct PartyPkm
-// {
-//     BoxPkm Base;
-//     u32 StatusCond;
-//     u8 Level;
-//     u8 field_8D;
-//     u16 NowHP;
-//     u16 MaxHP;
-//     u16 ATK;
-//     u16 DEF;
-//     u16 SPE;
-//     u16 SPA;
-//     u16 SPD;
-//     MailData Mail;
-//     u32 field_D4;
-//     u32 field_D8;
-// };
-
 struct HandlerParam_SwapItem
 {
     HandlerParam_Header header;
@@ -4581,6 +4369,274 @@ struct HandlerParam_RecoverHP
     u8 fFailCheckThru;
     HandlerParam_StrParams exStr;
 };
+
+
+struct SWAN_ALIGNED(4) HandlerParam_ChangeType
+{
+    HandlerParam_Header header;
+    u16 nextType;
+    u8 monID;
+    u8 pad;
+};
+
+struct SWAN_ALIGNED(4) HandlerParam_DelayMoveDamage
+{
+    HandlerParam_Header header;
+    u8 attackerID;
+    u8 targetID;
+    __int16 MoveID;
+};
+
+
+struct SWAN_ALIGNED(2) HandlerParam_SetCounter
+{
+    HandlerParam_Header header;
+    u8 pokeID;
+    Counter counterID;
+    u8 value;
+};
+
+
+struct SWAN_ALIGNED(4) HandlerParam_Switch
+{
+    HandlerParam_Header header;
+    HandlerParam_StrParams preStr;
+    HandlerParam_StrParams exStr;
+    u8 pokeID;
+    char fIntrDisable;
+};
+
+struct HandlerParam_ChangeHP
+{
+    HandlerParam_Header header;
+    u8 poke_cnt;
+    u8 fEffectDisable;
+    u8 fItemReactionDisable;
+    u8 pokeID[6];
+    u32 volume[6];
+    u32 damageCause;
+};
+
+struct HandlerParam_ChangeStatStage
+{
+    HandlerParam_Header header;
+    StatStage rankType;
+    u32 pad;
+    s8 rankVolume;
+    u8 pad2;
+    u8 fMoveAnimation;
+    u8 poke_cnt;
+    u8 pokeID[6];
+    HandlerParam_StrParams exStr;
+    // u8 isHostile;
+};
+
+struct HandlerParam_AddSideEffect
+{
+    HandlerParam_Header header;
+    u32 effect;
+    ConditionData cont;
+    u8 side;
+    HandlerParam_StrParams exStr;
+};
+
+struct HandlerParam_Message
+{
+    HandlerParam_Header header;
+    HandlerParam_StrParams str;
+};
+
+struct HandlerParam_Transform
+{
+    HandlerParam_Header header;
+    u8 pokeID;
+    HandlerParam_StrParams exStr;
+};
+
+struct SWAN_ALIGNED(4) HandlerParam_Faint
+{
+    HandlerParam_Header header;
+    u8 pokeID;
+    char flags;
+    char field_6;
+    char field_7;
+    HandlerParam_StrParams exStr;
+};
+
+struct HandlerParam_ActivateItem
+{
+    HandlerParam_Header header;
+    u8 pokeID;
+    u8 bAteKinomi;
+    u16 itemID;
+};
+
+struct SWAN_ALIGNED(4) HandlerParam_RemoveSideEffect
+{
+    HandlerParam_Header header;
+    u8 flags[3];
+    u8 side;
+};
+
+struct SWAN_ALIGNED(4) HandlerParam_SetConditionFlag
+{
+    HandlerParam_Header header;
+    ConditionFlag flag;
+    u8 monID;
+};
+
+struct SWAN_ALIGNED(4) HandlerParam_SetTurnFlag
+{
+    HandlerParam_Header header;
+    TurnFlag flag;
+    u8 pokeID;
+};
+
+struct SWAN_ALIGNED(4) HandlerParam_ChangeWeather
+{
+    HandlerParam_Header header;
+    u8 weather;
+    u8 turnCount;
+    u8 fAirLock;
+    u8 pad;
+    HandlerParam_StrParams strParam;
+};
+
+struct HandlerParam_UseHeldItem
+{
+    HandlerParam_Header header;
+    unsigned __int32 fAllowAtFullHP : 1;
+    unsigned __int32 fAllowOnFaintedMons : 1;
+    unsigned __int32 pad : 30;
+};
+
+struct HandlerParam_SetItem
+{
+    HandlerParam_Header header;
+    u16 itemID;
+    u8 pokeID;
+    u8 fClearConsume;
+    u8 fClearConsumeOtherPoke;
+    u8 clearConsumePokeID;
+    u8 fCallConsumedEvent;
+    HandlerParam_StrParams exStr;
+};
+
+struct HandlerParam_AddAnimation
+{
+    HandlerParam_Header header;
+    u16 animNo;
+    u8 pos_from;
+    u8 pos_to;
+    u16 reservedQuePos;
+    u8 fQueReserve;
+    u8 fMsgWinVanish;
+    HandlerParam_StrParams exStr;
+};
+
+#pragma endregion
+
+#pragma region ServerFlow
+struct EventWorkStack
+{
+    u8 work[512];
+    u16 size[16];
+    u32 sp;
+};
+
+struct EventWorkSave
+{
+    u16 Works[431];
+    u8 FlagBytes[383];
+    u8 CanRespawnHiddenItems;
+};
+
+
+struct ServerCommandQueue
+{
+    u32 writePtr;
+    u32 readPtr;
+    u8 buffer[3000];
+};
+
+struct SVCL_WORK
+{
+    int adapter;
+    BattleParty *party;
+    u8 byte8;
+    u8 byte9;
+    u8 byteA;
+    u8 id;
+};
+
+struct FaintRecordUnit
+{
+    u8 count;
+    u8 fExpChecked[24];
+    u8 FaintPokeID[24];
+};
+
+struct FaintRecord
+{
+    FaintRecordUnit turnRecord[4];
+};
+
+
+struct MoveParam
+{
+    unsigned __int16 MoveID;
+    unsigned __int16 OriginalMoveID;
+    unsigned __int16 userType;
+    unsigned __int8 moveType;
+    char damageType;
+    int category;
+    MoveTarget targetType;
+    int flags;
+};
+
+struct ZoneData
+{
+    char MapType;
+    u8 NPCInfoCacheIdx;
+    u16 AreaID;
+    u16 MatrixID;
+    u16 ScriptsID;
+    u16 LevelScriptsID;
+    u16 TextsID;
+    u16 BGMSpr;
+    u16 BGMSum;
+    u16 BGMAut;
+    u16 BGMWin;
+    u16 EncID;
+    u16 EntitiesID;
+    u16 ParentZoneID;
+    u16 LocNameInfo;
+    u16 EnvFlags;
+    u16 Flags1BattleBGMapTransition;
+    u16 MatrixCamBounds;
+    u16 NameIcon;
+    int FlyX;
+    int FlyY;
+    int FlyZ;
+};
+
+struct ZoneDataSystem
+{
+    int *ZoneDataArc;
+    ZoneData CurrentZone;
+    u16 CurrentZoneID;
+    __int16 _padCurrentZoneID;
+    void *FogIndex;
+    void *StaticLights;
+    u16 FogIndexSize;
+    u8 StaticLightsSize;
+    u8 FlashIndexSize;
+    void *FlashIndex;
+    u8 EnableVersionSpecificZone[3];
+    u8 EnableVersionSpecificArea[3];
+    u16 Padding;
+};
+
 
 struct SWAN_ALIGNED(4) m_record
 {
@@ -4715,18 +4771,9 @@ struct EffectivenessCounter
     u16 OpponentSuperEffectiveHits;
     u16 OpponentNotVeryEffectiveHits;
 };
-
-const int FIRST_POS_FOR_CLIENT_ID[] = {0, 12, 6, 18};
-
-enum FlowResult
+struct EffectivenessRecorder
 {
-    RESULT_TURN_STARTING = 0x0,
-    RESULT_SWITCH = 0x1,
-    RESULT_MON_FAINTED = 0x2,
-    RESULT_EXP_GAINED = 0x3,
-    RESULT_TEAM_FAINTED = 0x4,
-    RESULT_ESCAPE = 0x5,
-    RESULT_CAPTURE = 0x6,
+    int effectiveness[24];
 };
 
 struct LevelUpInfo
@@ -4869,159 +4916,9 @@ struct SWAN_ALIGNED(8) ServerFlow
     int pokestar_result;
 };
 
-// struct ServerFlow
-// {
-//     BtlServerWk *server;
-//     MainModule *main_module;
-//     PokeCon *pokeCon;
-//     ServerCommandQueue *scqueue;
-//     int turn_count;
-//     FlowResult flow_result;
-//     int heap;
-//     MoveRecord move_record;
-//     FaintRecord faint_record;
-//     ArcTool *evo_data;
-//     MoveAnimCtrl *move_anim_ctrl;
-//     MoveStealParam *move_steal_param;
-//     MoveStealParam *magic_coat_param;
-//     HitCheckParam *hit_check_param;
-//     EscapeInfo escape_info;
-//     LevelUpInfo level_up_info;
-//     ClientIDRecord client_id_record;
-//     int rotationHandlerWork[24][7];
-//     int is_simulation;
-//     int stat_stage_change_count;
-//     u8 command_build_step;
-//     u8 action_order_step;
-//     u8 turn_check_step;
-//     u8 default_target_pos;
-//     u16 heap_id;
-//     u8 action_order_index;
-//     u8 action_order_end_index;
-//     u8 ball_target_pos;
-//     u8 revive_count;
-//     u8 escape_attempts;
-//     u8 move_anim_id;
-//     u8 switch_interrupt_count;
-//     u8 current_fainted_mon_id;
-//     u8 flags;
-//     u8 SwitchOutInterruptingMonIDs[6];
-//     u8 RevivedMonIDs[24];
-//     u8 FaintedMonFlag[24];
-//     u8 WasInBattleFlag[24];
-//     u8 ClientSwitchCount[4];
-//     ActionOrderWork action_order_work[6];
-//     ActionOrderWork temp_action_order_work;
-//     TargetSet *original_targets;
-//     TargetSet *targets;
-//     TargetSet *allies;
-//     TargetSet *enemies;
-//     TargetSet *damaged_mons;
-//     TargetSet *move_steal_targets;
-//     TargetSet *temp_targets;
-//     CalcDamageRecord *ally_calc_damage;
-//     CalcDamageRecord *enemy_calc_damage;
-//     TargetSetGroup target_sets[7];
-//     int target_set_id;
-//     TargetSet switching_in_mons;
-//     MoveParam *move_param;
-//     MoveParam *original_move_param;
-//     PosPoke posPoke;
-//     HandlerParam_StringSetup str;
-//     CalcExpWork calc_exp_work[6];
-//     EventWorkStack event_work_stack;
-//     HEManager heManager;
-//     MoveDamageRec move_damage_record;
-//     u16 prev_used_move;
-//     ActionIgnoreReason action_ignore_reason;
-//     EffectivenessCounter effectiveness_counter;
-//     EffectivenessRecorder effectiveness_recorder;
-//     u8 flowFlags[4];
-//     u8 temp_storage[320];
-//     int pokestar_result;
-// };
+#pragma endregion 
 
-struct SWAN_ALIGNED(4) HandlerParam_Faint
-{
-    HandlerParam_Header header;
-    u8 pokeID;
-    char flags;
-    char field_6;
-    char field_7;
-    HandlerParam_StrParams exStr;
-};
-
-struct HandlerParam_ActivateItem
-{
-    HandlerParam_Header header;
-    u8 pokeID;
-    u8 bAteKinomi;
-    u16 itemID;
-};
-
-struct SWAN_ALIGNED(4) HandlerParam_RemoveSideEffect
-{
-    HandlerParam_Header header;
-    u8 flags[3];
-    u8 side;
-};
-
-struct SWAN_ALIGNED(4) HandlerParam_SetConditionFlag
-{
-    HandlerParam_Header header;
-    ConditionFlag flag;
-    u8 monID;
-};
-
-struct SWAN_ALIGNED(4) HandlerParam_SetTurnFlag
-{
-    HandlerParam_Header header;
-    TurnFlag flag;
-    u8 pokeID;
-};
-
-struct SWAN_ALIGNED(4) HandlerParam_ChangeWeather
-{
-    HandlerParam_Header header;
-    u8 weather;
-    u8 turnCount;
-    u8 fAirLock;
-    u8 pad;
-    HandlerParam_StrParams strParam;
-};
-
-struct HandlerParam_UseHeldItem
-{
-    HandlerParam_Header header;
-    unsigned __int32 fAllowAtFullHP : 1;
-    unsigned __int32 fAllowOnFaintedMons : 1;
-    unsigned __int32 pad : 30;
-};
-
-struct HandlerParam_SetItem
-{
-    HandlerParam_Header header;
-    u16 itemID;
-    u8 pokeID;
-    u8 fClearConsume;
-    u8 fClearConsumeOtherPoke;
-    u8 clearConsumePokeID;
-    u8 fCallConsumedEvent;
-    HandlerParam_StrParams exStr;
-};
-
-struct HandlerParam_AddAnimation
-{
-    HandlerParam_Header header;
-    u16 animNo;
-    u8 pos_from;
-    u8 pos_to;
-    u16 reservedQuePos;
-    u8 fQueReserve;
-    u8 fMsgWinVanish;
-    HandlerParam_StrParams exStr;
-};
-
+#pragma region TrainerAI
 struct SWAN_ALIGNED(8) TrainerAIEnv
 {
     char aiState;
@@ -5075,253 +4972,83 @@ struct SWAN_ALIGNED(8) TrainerAIEnv
     int seededRandom;
     _QWORD time;
 };
+#pragma endregion
 
-const BattleMonValue BattleMonValues[8] = {
-    VALUE_ATTACK_STAGE, VALUE_DEFENSE_STAGE, VALUE_SPEED_STAGE, VALUE_SPECIAL_ATTACK_STAGE, VALUE_SPECIAL_DEFENSE_STAGE, VALUE_ACCURACY_STAGE, VALUE_EVASION_STAGE, VALUE_NULL};
 
-//
-//
-//    BATTLE FIELD EXPANSION
-//
-//
-//
-// enum Terrain
-// {
-//     TERRAIN_NULL = 0,
-//     TERRAIN_ELECTRIC = 1,
-//     TERRAIN_GRASSY = 2,
-//     TERRAIN_MISTY = 3,
-//     TERRAIN_PSYCHIC = 4,
-// };
 
-// enum FieldEffect
-// {
-//     FLDEFF_WEATHER = 0x0,
-//     FLDEFF_TRICK_ROOM = 0x1,
-//     FLDEFF_GRAVITY = 0x2,
-//     FLDEFF_IMPRISON = 0x3,
-//     FLDEFF_WATER_SPORT = 0x4,
-//     FLDEFF_MUD_SPORT = 0x5,
-//     FLDEFF_WONDER_ROOM = 0x6,
-//     FLDEFF_MAGIC_ROOM = 0x7,
-// };
-
-// enum BattleEventPriority
-// {
-//     EVENTPRI_MOVE_DEFAULT = 0x0,
-//     EVENTPRI_POS_DEFAULT = 0x1,
-//     EVENTPRI_SIDE_DEFAULT = 0x2,
-//     EVENTPRI_FIELD_DEFAULT = 0x3,
-//     EVENTPRI_ABILITY_POISON_TOUCH = 0x4,
-//     EVENTPRI_ABILITY_DEFAULT = 0x5,
-//     EVENTPRI_ITEM_DEFAULT = 0x6,
-//     EVENTPRI_ABILITY_STALL = 0x7,
-//     EVENTPRI_MAX = 0x8,
-// };
-
-// struct HandlerParam_RemoveFieldEffect
-// {
-//     HandlerParam_Header header;
-//     BattleFieldEffect effect;
-// };
-
-// struct SWAN_ALIGNED(4) HandlerParam_AddFieldEffect
-// {
-//     HandlerParam_Header header;
-//     BattleFieldEffect effect;
-//     ConditionData cont;
-//     u8 fAddDependPoke;
-//     char field_D;
-//     char field_E;
-//     char field_F;
-//     HandlerParam_StrParams exStr;
-// };
-
-// struct BattleSideCondition
-// {
-//     BattleEventItem *BattleEventItem;
-//     ConditionData conditionData;
-//     int TurnCounter;
-//     int Count;
-// };
-
-// struct BattleSideStatus
-// {
-//     BattleSideCondition Conditions[14];
-// };
-
-// struct BattleSideManager
-// {
-//     BattleSideStatus Sides[2];
-// };
-
-// // struct FIELD_TRIGGERTABLE
-// // {
-// //     BattleEventType triggerValue;
-// //     FIELD_HANDLER_FUNC function;
-// // };
-
-// typedef void (*BattleEventHandler)(BattleEventItem *item, ServerFlow *ServerFlow, int pokemonID, int *work);
-// typedef BattleEventHandlerTableEntry *(*FieldEffectEventAddFunc)(int *);
-
-// struct BattleEventHandlerTableEntry
-// {
-//     BattleEventType EventType;
-//     BattleEventHandler Handler;
-// };
-
-// struct FieldEffectEventAddTable
-// {
-//     FieldEffect effect;
-//     FieldEffectEventAddFunc func;
-// };
-
-// struct BattleSideCondition
-// {
-//     BattleEventItem* BattleEventItem;
-//     ConditionData conditionData;
-//     int TurnCounter;
-//     int Count;
-// };
-
-// enum SideEffect
-// {
-//     SIDEEFF_REFLECT = 0x0,
-//     SIDEEFF_LIGHT_SCREEN = 0x1,
-//     SIDEEFF_SAFEGUARD = 0x2,
-//     SIDEEFF_MIST = 0x3,
-//     SIDEEFF_TAILWIND = 0x4,
-//     SIDEEFF_LUCKY_CHANT = 0x5,
-//     SIDEEFF_SPIKES = 0x6,
-//     SIDEEFF_TOXIC_SPIKES = 0x7,
-//     SIDEEFF_STEALTH_ROCK = 0x8,
-//     SIDEEFF_WIDE_GUARD = 0x9,
-//     SIDEEFF_QUICK_GUARD = 0xA,
-//     SIDEEFF_RAINBOW = 0xB,
-//     SIDEEFF_SEA_OF_FIRE = 0xC,
-//     SIDEEFF_SWAMP = 0xD,
-// };
-
-// typedef BattleEventHandlerTableEntry* (*SideEffectEventAddFunc)(int*);
-
-// struct SideEffectEventAddTable
-// {
-//     // actual data-type -> enum SideEffect
-//     int sideEffect;
-//     SideEffectEventAddFunc func;
-//     int maxCount;
-// };
-
-// struct HandlerParam_AddSideEffect
-// {
-//     HandlerParam_Header header;
-//     SideEffect effect;
-//     ConditionData cont;
-//     u8 side;
-//     HandlerParam_StrParams exStr;
-// };
-
+#pragma region TypeCharts
 //
 // TYPE CHARTS
-//
-const int FreezeDryTypeChart[18][18] = {{4, 4, 4, 4, 4, 2, 4, 0, 2, 4, 4, 4, 4, 4, 4, 4, 4, 4}, {8, 4, 2, 2, 4, 8, 2, 0, 8, 4, 4, 4, 4, 2, 8, 4, 8, 2}, {4, 8, 4, 4, 4, 2, 8, 4, 2, 4, 4, 8, 2, 4, 4, 4, 4, 4}, {4, 4, 4, 2, 2, 2, 4, 2, 0, 4, 4, 8, 4, 4, 4, 4, 4, 8}, {4, 4, 0, 8, 4, 8, 2, 4, 8, 8, 4, 2, 8, 4, 4, 4, 4, 4}, {4, 2, 8, 4, 2, 4, 8, 4, 2, 8, 4, 4, 4, 4, 8, 4, 4, 4}, {4, 2, 2, 2, 4, 4, 4, 2, 2, 2, 4, 8, 4, 8, 4, 4, 8, 2}, {0, 4, 4, 4, 4, 4, 4, 8, 4, 4, 4, 4, 4, 8, 4, 4, 2, 4}, {4, 4, 4, 4, 4, 8, 4, 4, 2, 2, 2, 4, 2, 4, 8, 4, 4, 8}, {4, 4, 4, 4, 4, 2, 8, 4, 8, 2, 2, 8, 4, 4, 8, 2, 4, 4}, {4, 4, 4, 4, 8, 8, 4, 4, 4, 8, 2, 2, 4, 4, 4, 2, 4, 4}, {4, 4, 2, 2, 8, 8, 2, 4, 2, 2, 8, 2, 4, 4, 4, 2, 4, 4}, {4, 4, 8, 4, 0, 4, 4, 4, 4, 4, 8, 2, 2, 4, 4, 2, 4, 4}, {4, 8, 4, 8, 4, 4, 4, 4, 2, 4, 4, 4, 4, 2, 4, 4, 0, 4}, {4, 4, 8, 4, 8, 4, 4, 4, 2, 2, 8, 8, 4, 4, 2, 8, 4, 4}, {4, 4, 4, 4, 4, 4, 4, 4, 2, 4, 4, 4, 4, 4, 4, 8, 4, 0}, {4, 2, 4, 4, 4, 4, 4, 8, 4, 4, 4, 4, 4, 8, 4, 4, 2, 2}, {4, 8, 4, 2, 4, 4, 4, 4, 2, 2, 4, 4, 4, 4, 4, 8, 8, 4}};
+// 
 
-const int SkyUppercutTypeChart[18][18] = {
-    {4, 4, 4, 4, 4, 2, 4, 0, 2, 4, 4, 4, 4, 4, 4, 4, 4, 4},
-    {8, 4, 8, 2, 4, 8, 2, 0, 8, 4, 4, 4, 4, 2, 8, 4, 8, 2},
-    {4, 8, 4, 4, 4, 2, 8, 4, 2, 4, 4, 8, 2, 4, 4, 4, 4, 4},
-    {4, 4, 4, 2, 2, 2, 4, 2, 0, 4, 4, 8, 4, 4, 4, 4, 4, 8},
-    {4, 4, 0, 8, 4, 8, 2, 4, 8, 8, 4, 2, 8, 4, 4, 4, 4, 4},
-    {4, 2, 8, 4, 2, 4, 8, 4, 2, 8, 4, 4, 4, 4, 8, 4, 4, 4},
-    {4, 2, 2, 2, 4, 4, 4, 2, 2, 2, 4, 8, 4, 8, 4, 4, 8, 2},
-    {0, 4, 4, 4, 4, 4, 4, 8, 4, 4, 4, 4, 4, 8, 4, 4, 2, 4},
-    {4, 4, 4, 4, 4, 8, 4, 4, 2, 2, 2, 4, 2, 4, 8, 4, 4, 8},
-    {4, 4, 4, 4, 4, 2, 8, 4, 8, 2, 2, 8, 4, 4, 8, 2, 4, 4},
-    {4, 4, 4, 4, 8, 8, 4, 4, 4, 8, 2, 2, 4, 4, 4, 2, 4, 4},
-    {4, 4, 2, 2, 8, 8, 2, 4, 2, 2, 8, 2, 4, 4, 4, 2, 4, 4},
-    {4, 4, 8, 4, 0, 4, 4, 4, 4, 4, 8, 2, 2, 4, 4, 2, 4, 4},
-    {4, 8, 4, 8, 4, 4, 4, 4, 2, 4, 4, 4, 4, 2, 4, 4, 0, 4},
-    {4, 4, 8, 4, 8, 4, 4, 4, 2, 2, 2, 8, 4, 4, 2, 8, 4, 4},
-    {4, 4, 4, 4, 4, 4, 4, 4, 2, 4, 4, 4, 4, 4, 4, 8, 4, 0},
-    {4, 2, 4, 4, 4, 4, 4, 8, 4, 4, 4, 4, 4, 8, 4, 4, 2, 2},
-    {4, 8, 4, 2, 4, 4, 4, 4, 2, 2, 4, 4, 4, 4, 4, 8, 8, 4}};
+// These changes should save a total of 8892 bytes. 
 
-const int CorrosionTypeChart[18][18] = {
-    {4, 4, 4, 4, 4, 2, 4, 0, 2, 4, 4, 4, 4, 4, 4, 4, 4, 4},
-    {8, 4, 2, 2, 4, 8, 2, 0, 8, 4, 4, 4, 4, 2, 8, 4, 8, 2},
-    {4, 8, 4, 4, 4, 2, 8, 4, 2, 4, 4, 8, 2, 4, 4, 4, 4, 4},
-    {4, 4, 4, 2, 2, 2, 4, 2, 8, 4, 4, 8, 4, 4, 4, 4, 4, 8},
-    {4, 4, 0, 8, 4, 8, 2, 4, 8, 8, 4, 2, 8, 4, 4, 4, 4, 4},
-    {4, 2, 8, 4, 2, 4, 8, 4, 2, 8, 4, 4, 4, 4, 8, 4, 4, 4},
-    {4, 2, 2, 2, 4, 4, 4, 2, 2, 2, 4, 8, 4, 8, 4, 4, 8, 2},
-    {0, 4, 4, 4, 4, 4, 4, 8, 4, 4, 4, 4, 4, 8, 4, 4, 2, 4},
-    {4, 4, 4, 4, 4, 8, 4, 4, 2, 2, 2, 4, 2, 4, 8, 4, 4, 8},
-    {4, 4, 4, 4, 4, 2, 8, 4, 8, 2, 2, 8, 4, 4, 8, 2, 4, 4},
-    {4, 4, 4, 4, 8, 8, 4, 4, 4, 8, 2, 2, 4, 4, 4, 2, 4, 4},
-    {4, 4, 2, 2, 8, 8, 2, 4, 2, 2, 8, 2, 4, 4, 4, 2, 4, 4},
-    {4, 4, 8, 4, 0, 4, 4, 4, 4, 4, 8, 2, 2, 4, 4, 2, 4, 4},
-    {4, 8, 4, 8, 4, 4, 4, 4, 2, 4, 4, 4, 4, 2, 4, 4, 0, 4},
-    {4, 4, 8, 4, 8, 4, 4, 4, 2, 2, 2, 8, 4, 4, 2, 8, 4, 4},
-    {4, 4, 4, 4, 4, 4, 4, 4, 2, 4, 4, 4, 4, 4, 4, 8, 4, 0},
-    {4, 2, 4, 4, 4, 4, 4, 8, 4, 4, 4, 4, 4, 8, 4, 4, 2, 2},
-    {4, 8, 4, 2, 4, 4, 4, 4, 2, 2, 4, 4, 4, 4, 4, 8, 8, 4}};
+// Should be saving 1278 bytes
+const u8 FreezeDryTypeChart[18] = {
+    // {4, 4, 4, 4, 4, 2, 4, 0, 2, 4, 4, 4, 4, 4, 4, 4, 4, 4}, 
+    // {8, 4, 2, 2, 4, 8, 2, 0, 8, 4, 4, 4, 4, 2, 8, 4, 8, 2}, 
+    // {4, 8, 4, 4, 4, 2, 8, 4, 2, 4, 4, 8, 2, 4, 4, 4, 4, 4}, 
+    // {4, 4, 4, 2, 2, 2, 4, 2, 0, 4, 4, 8, 4, 4, 4, 4, 4, 8}, 
+    // {4, 4, 0, 8, 4, 8, 2, 4, 8, 8, 4, 2, 8, 4, 4, 4, 4, 4}, 
+    // {4, 2, 8, 4, 2, 4, 8, 4, 2, 8, 4, 4, 4, 4, 8, 4, 4, 4}, 
+    // {4, 2, 2, 2, 4, 4, 4, 2, 2, 2, 4, 8, 4, 8, 4, 4, 8, 2}, 
+    // {0, 4, 4, 4, 4, 4, 4, 8, 4, 4, 4, 4, 4, 8, 4, 4, 2, 4}, 
+    // {4, 4, 4, 4, 4, 8, 4, 4, 2, 2, 2, 4, 2, 4, 8, 4, 4, 8}, 
+    // {4, 4, 4, 4, 4, 2, 8, 4, 8, 2, 2, 8, 4, 4, 8, 2, 4, 4}, 
+    // {4, 4, 4, 4, 8, 8, 4, 4, 4, 8, 2, 2, 4, 4, 4, 2, 4, 4}, 
+    // {4, 4, 2, 2, 8, 8, 2, 4, 2, 2, 8, 2, 4, 4, 4, 2, 4, 4}, 
+    // {4, 4, 8, 4, 0, 4, 4, 4, 4, 4, 8, 2, 2, 4, 4, 2, 4, 4}, 
+    // {4, 8, 4, 8, 4, 4, 4, 4, 2, 4, 4, 4, 4, 2, 4, 4, 0, 4}, 
+    4, 4, 8, 4, 8, 4, 4, 4, 2, 2, 8, 8, 4, 4, 2, 8, 4, 4}; 
+    // {4, 4, 4, 4, 4, 4, 4, 4, 2, 4, 4, 4, 4, 4, 4, 8, 4, 0}, 
+    // {4, 2, 4, 4, 4, 4, 4, 8, 4, 4, 4, 4, 4, 8, 4, 4, 2, 2}, 
+    // {4, 8, 4, 2, 4, 4, 4, 4, 2, 2, 4, 4, 4, 4, 4, 8, 8, 4}
+    //};
 
-const int StrongJawMoves[10] = {
-    MOVE044_BITE, MOVE158_HYPER_FANG, MOVE162_SUPER_FANG, MOVE170_SNAP_TRAP, MOVE265_PSYCHIC_FANGS, MOVE305_POISON_FANG, MOVE422_THUNDER_FANG, MOVE423_ICE_FANG, MOVE424_FIRE_FANG, MOVE242_CRUNCH};
+// Should be saving 1278 bytes
+const u8 SkyUppercutTypeChart[18] = {
+    //{4, 4, 4, 4, 4, 2, 4, 0, 2, 4, 4, 4, 4, 4, 4, 4, 4, 4},
+    8, 4, 8, 2, 4, 8, 2, 0, 8, 4, 4, 4, 4, 2, 8, 4, 8, 2};
+    // {4, 8, 4, 4, 4, 2, 8, 4, 2, 4, 4, 8, 2, 4, 4, 4, 4, 4},
+    // {4, 4, 4, 2, 2, 2, 4, 2, 0, 4, 4, 8, 4, 4, 4, 4, 4, 8},
+    // {4, 4, 0, 8, 4, 8, 2, 4, 8, 8, 4, 2, 8, 4, 4, 4, 4, 4},
+    // {4, 2, 8, 4, 2, 4, 8, 4, 2, 8, 4, 4, 4, 4, 8, 4, 4, 4},
+    // {4, 2, 2, 2, 4, 4, 4, 2, 2, 2, 4, 8, 4, 8, 4, 4, 8, 2},
+    // {0, 4, 4, 4, 4, 4, 4, 8, 4, 4, 4, 4, 4, 8, 4, 4, 2, 4},
+    // {4, 4, 4, 4, 4, 8, 4, 4, 2, 2, 2, 4, 2, 4, 8, 4, 4, 8},
+    // {4, 4, 4, 4, 4, 2, 8, 4, 8, 2, 2, 8, 4, 4, 8, 2, 4, 4},
+    // {4, 4, 4, 4, 8, 8, 4, 4, 4, 8, 2, 2, 4, 4, 4, 2, 4, 4},
+    // {4, 4, 2, 2, 8, 8, 2, 4, 2, 2, 8, 2, 4, 4, 4, 2, 4, 4},
+    // {4, 4, 8, 4, 0, 4, 4, 4, 4, 4, 8, 2, 2, 4, 4, 2, 4, 4},
+    // {4, 8, 4, 8, 4, 4, 4, 4, 2, 4, 4, 4, 4, 2, 4, 4, 0, 4},
+    // {4, 4, 8, 4, 8, 4, 4, 4, 2, 2, 2, 8, 4, 4, 2, 8, 4, 4},
+    // {4, 4, 4, 4, 4, 4, 4, 4, 2, 4, 4, 4, 4, 4, 4, 8, 4, 0},
+    // {4, 2, 4, 4, 4, 4, 4, 8, 4, 4, 4, 4, 4, 8, 4, 4, 2, 2},
+    //{4, 8, 4, 2, 4, 4, 4, 4, 2, 2, 4, 4, 4, 4, 4, 8, 8, 4}};
 
-const int HyperCutterMoves[27] = {
-    MOVE421_SHADOW_CLAW, MOVE533_SACRED_SWORD, MOVE534_RAZOR_SHELL, MOVE530_DUAL_CHOP, MOVE529_DRILL_RUN, MOVE554_SOLAR_BLADE,
-    MOVE440_CROSS_POISON, MOVE427_PSYCHO_CUT, MOVE404_X_SCISSOR, MOVE400_NIGHT_SLASH, MOVE403_AIR_SLASH, MOVE384_PSYBLADE,
-    MOVE348_LEAF_BLADE, MOVE337_DRAGON_CLAW, MOVE332_AERIAL_ACE, MOVE314_AIR_CUTTER, MOVE306_CRUSH_CLAW, MOVE232_METAL_CLAW,
-    MOVE163_SLASH, MOVE154_FURY_SWIPES, MOVE065_DRILL_PECK, MOVE013_RAZOR_WINDS, MOVE010_SCRATCH, MOVE210_FURY_CUTTER, MOVE015_CUT,
-    MOVE075_RAZOR_LEAF, MOVE548_SECRET_SWORD};
+// Should be saving 1278 bytes
+const u8 CorrosionTypeChart[18] = {
+    // {4, 4, 4, 4, 4, 2, 4, 0, 2, 4, 4, 4, 4, 4, 4, 4, 4, 4},
+    // {8, 4, 2, 2, 4, 8, 2, 0, 8, 4, 4, 4, 4, 2, 8, 4, 8, 2},
+    // {4, 8, 4, 4, 4, 2, 8, 4, 2, 4, 4, 8, 2, 4, 4, 4, 4, 4},
+        4, 4, 4, 2, 2, 2, 4, 2, 8, 4, 4, 8, 4, 4, 4, 4, 4, 8};
+    // {4, 4, 0, 8, 4, 8, 2, 4, 8, 8, 4, 2, 8, 4, 4, 4, 4, 4},
+    // {4, 2, 8, 4, 2, 4, 8, 4, 2, 8, 4, 4, 4, 4, 8, 4, 4, 4},
+    // {4, 2, 2, 2, 4, 4, 4, 2, 2, 2, 4, 8, 4, 8, 4, 4, 8, 2},
+    // {0, 4, 4, 4, 4, 4, 4, 8, 4, 4, 4, 4, 4, 8, 4, 4, 2, 4},
+    // {4, 4, 4, 4, 4, 8, 4, 4, 2, 2, 2, 4, 2, 4, 8, 4, 4, 8},
+    // {4, 4, 4, 4, 4, 2, 8, 4, 8, 2, 2, 8, 4, 4, 8, 2, 4, 4},
+    // {4, 4, 4, 4, 8, 8, 4, 4, 4, 8, 2, 2, 4, 4, 4, 2, 4, 4},
+    // {4, 4, 2, 2, 8, 8, 2, 4, 2, 2, 8, 2, 4, 4, 4, 2, 4, 4},
+    // {4, 4, 8, 4, 0, 4, 4, 4, 4, 4, 8, 2, 2, 4, 4, 2, 4, 4},
+    // {4, 8, 4, 8, 4, 4, 4, 4, 2, 4, 4, 4, 4, 2, 4, 4, 0, 4},
+    // {4, 4, 8, 4, 8, 4, 4, 4, 2, 2, 2, 8, 4, 4, 2, 8, 4, 4},
+    // {4, 4, 4, 4, 4, 4, 4, 4, 2, 4, 4, 4, 4, 4, 4, 8, 4, 0},
+    // {4, 2, 4, 4, 4, 4, 4, 8, 4, 4, 4, 4, 4, 8, 4, 4, 2, 2},
+    // {4, 8, 4, 2, 4, 4, 4, 4, 2, 2, 4, 4, 4, 4, 4, 8, 8, 4}};
 
-const int WindMoves[17] = {
-    MOVE403_AIR_SLASH,
-    MOVE542_HURRICANE,
-    MOVE257_HEAT_WAVE,
-    MOVE466_OMINOUS_WIND,
-    MOVE318_SILVER_WIND,
-    MOVE016_GUST,
-    MOVE059_BLIZZARD,
-    MOVE379_PETAL_BLIZZARD,
-    MOVE511_FAIRY_WIND,
-    MOVE180_DIAMOND_STORM,
-    MOVE013_RAZOR_WINDS,
-    MOVE177_AEROBLAST,
-    MOVE196_ICY_WIND,
-    MOVE366_TAILWIND,
-    MOVE239_TWISTER,
-    MOVE018_WHIRLWIND,
-    MOVE314_AIR_CUTTER};
 
-const int BulletproofMoves[21] = {
-    MOVE491_ACID_SPRAY,
-    MOVE396_AURA_SPHERE,
-    MOVE140_BARRAGE,
-    MOVE331_BULLET_SEED,
-    MOVE121_EGG_BOMB,
-    MOVE486_ELECTRO_BALL,
-    MOVE412_ENERGY_BALL,
-    MOVE411_FOCUS_BLAST,
-    MOVE360_GYRO_BALL,
-    MOVE301_BOOMBURST,
-    MOVE443_MAGNET_BOMB,
-    MOVE426_MUD_BOMB,
-    MOVE190_OCTAZOOKA,
-    MOVE461_POLLEN_PUFF,
-    MOVE350_ROCK_BLAST,
-    MOVE439_ROCK_WRECKER,
-    MOVE402_SEED_BOMB,
-    MOVE247_SHADOW_BALL,
-    MOVE188_SLUDGE_BOMB,
-    MOVE311_WEATHER_BALL,
-    MOVE192_ZAP_CANNON};
-
-const int FLAIL_POWER_TABLE[6] = {
-    0xC80001, 0x960004, 0x640009, 0x500010, 0x280020, 0x140030};
-
-const int normalTypeChart[18][18] = {
+const u8 normalTypeChart[18][18] = {
     {4, 4, 4, 4, 4, 2, 4, 0, 2, 4, 4, 4, 4, 4, 4, 4, 4, 4},
     {8, 4, 2, 2, 4, 8, 2, 0, 8, 4, 4, 4, 4, 2, 8, 4, 8, 2},
     {4, 8, 4, 4, 4, 2, 8, 4, 2, 4, 4, 8, 2, 4, 4, 4, 4, 4},
@@ -5341,87 +5068,96 @@ const int normalTypeChart[18][18] = {
     {4, 2, 4, 4, 4, 4, 4, 8, 4, 4, 4, 4, 4, 8, 4, 4, 2, 2},
     {4, 8, 4, 2, 4, 4, 4, 4, 2, 2, 4, 4, 4, 4, 4, 8, 8, 4}};
 
-const int SacredSwordTypeChart[18][18] = {
-    {4, 4, 4, 4, 4, 2, 4, 4, 2, 4, 4, 4, 4, 4, 4, 4, 4, 4},
-    {8, 4, 2, 2, 4, 8, 2, 4, 8, 4, 4, 4, 4, 2, 8, 4, 8, 2},
-    {4, 8, 4, 4, 4, 2, 8, 4, 2, 4, 4, 8, 2, 4, 4, 4, 4, 4},
-    {4, 4, 4, 2, 2, 2, 4, 2, 0, 4, 4, 8, 4, 4, 4, 4, 4, 8},
-    {4, 4, 0, 8, 4, 8, 2, 4, 8, 8, 4, 2, 8, 4, 4, 4, 4, 4},
-    {4, 2, 8, 4, 2, 4, 8, 4, 2, 8, 4, 4, 4, 4, 8, 4, 4, 4},
-    {4, 2, 2, 2, 4, 4, 4, 2, 2, 2, 4, 8, 4, 8, 4, 4, 8, 2},
-    {0, 4, 4, 4, 4, 4, 4, 8, 4, 4, 4, 4, 4, 8, 4, 4, 2, 4},
-    {4, 4, 4, 4, 4, 8, 4, 4, 2, 2, 2, 4, 2, 4, 8, 4, 4, 8},
-    {4, 4, 4, 4, 4, 2, 8, 4, 8, 2, 2, 8, 4, 4, 8, 2, 4, 4},
-    {4, 4, 4, 4, 8, 8, 4, 4, 4, 8, 2, 2, 4, 4, 4, 2, 4, 4},
-    {4, 4, 2, 2, 8, 8, 2, 4, 2, 2, 8, 2, 4, 4, 4, 2, 4, 4},
-    {4, 4, 8, 4, 0, 4, 4, 4, 4, 4, 8, 2, 2, 4, 4, 2, 4, 4},
-    {4, 8, 4, 8, 4, 4, 4, 4, 2, 4, 4, 4, 4, 2, 4, 4, 4, 4},
-    {4, 4, 8, 4, 8, 4, 4, 4, 2, 2, 2, 8, 4, 4, 2, 8, 4, 4},
-    {4, 4, 4, 4, 4, 4, 4, 4, 2, 4, 4, 4, 4, 4, 4, 8, 4, 0},
-    {4, 2, 4, 4, 4, 4, 4, 8, 4, 4, 4, 4, 4, 8, 4, 4, 2, 2},
-    {4, 8, 4, 2, 4, 4, 4, 4, 2, 2, 4, 4, 4, 4, 4, 8, 8, 4}};
+// Should be savinng 1260 bytes
+const u8 SacredSwordTypeChart[2][18] = {
+    {4, 4, 4, 4, 4, 2, 4, 4, 2, 4, 4, 4, 4, 4, 4, 4, 4, 4}, // Normal
+    {8, 4, 2, 2, 4, 8, 2, 4, 8, 4, 4, 4, 4, 2, 8, 4, 8, 2}}; // Fighting
+    //{4, 8, 4, 4, 4, 2, 8, 4, 2, 4, 4, 8, 2, 4, 4, 4, 4, 4},
+    //{4, 4, 4, 2, 2, 2, 4, 2, 0, 4, 4, 8, 4, 4, 4, 4, 4, 8},
+    //{4, 4, 0, 8, 4, 8, 2, 4, 8, 8, 4, 2, 8, 4, 4, 4, 4, 4},
+    //{4, 2, 8, 4, 2, 4, 8, 4, 2, 8, 4, 4, 4, 4, 8, 4, 4, 4},
+    //{4, 2, 2, 2, 4, 4, 4, 2, 2, 2, 4, 8, 4, 8, 4, 4, 8, 2},
+    //{0, 4, 4, 4, 4, 4, 4, 8, 4, 4, 4, 4, 4, 8, 4, 4, 2, 4},
+    //{4, 4, 4, 4, 4, 8, 4, 4, 2, 2, 2, 4, 2, 4, 8, 4, 4, 8},
+    //{4, 4, 4, 4, 4, 2, 8, 4, 8, 2, 2, 8, 4, 4, 8, 2, 4, 4},
+    //{4, 4, 4, 4, 8, 8, 4, 4, 4, 8, 2, 2, 4, 4, 4, 2, 4, 4},
+    //{4, 4, 2, 2, 8, 8, 2, 4, 2, 2, 8, 2, 4, 4, 4, 2, 4, 4},
+    //{4, 4, 8, 4, 0, 4, 4, 4, 4, 4, 8, 2, 2, 4, 4, 2, 4, 4},
+    //{4, 8, 4, 8, 4, 4, 4, 4, 2, 4, 4, 4, 4, 2, 4, 4, 4, 4},
+    //{4, 4, 8, 4, 8, 4, 4, 4, 2, 2, 2, 8, 4, 4, 2, 8, 4, 4},
+    //{4, 4, 4, 4, 4, 4, 4, 4, 2, 4, 4, 4, 4, 4, 4, 8, 4, 0},
+    //{4, 2, 4, 4, 4, 4, 4, 8, 4, 4, 4, 4, 4, 8, 4, 4, 2, 2},
+    //{4, 8, 4, 2, 4, 4, 4, 4, 2, 2, 4, 4, 4, 4, 4, 8, 8, 4}
 
-const int chargestoneTypeChart[18][18] = {
-    {4, 4, 4, 4, 4, 2, 4, 0, 2, 4, 4, 4, 4, 4, 4, 4, 4, 4},
-    {8, 4, 2, 2, 4, 8, 2, 0, 8, 4, 4, 4, 4, 2, 8, 4, 8, 2},
-    {4, 8, 4, 4, 4, 2, 8, 4, 2, 4, 4, 8, 2, 4, 4, 4, 4, 4},
-    {4, 4, 4, 2, 2, 2, 4, 2, 0, 4, 4, 8, 4, 4, 4, 4, 4, 8},
-    {4, 4, 0, 8, 4, 8, 2, 4, 8, 8, 4, 2, 8, 4, 4, 4, 4, 4},
-    {4, 2, 8, 4, 2, 4, 8, 4, 2, 8, 4, 4, 4, 4, 8, 4, 4, 4},
-    {4, 2, 2, 2, 4, 4, 4, 2, 2, 2, 4, 8, 4, 8, 4, 4, 8, 2},
-    {0, 4, 4, 4, 4, 4, 4, 8, 4, 4, 4, 4, 4, 8, 4, 4, 2, 4},
-    {4, 4, 4, 4, 4, 8, 4, 4, 2, 2, 2, 4, 2, 4, 8, 4, 4, 8},
-    {4, 4, 4, 4, 4, 2, 8, 4, 8, 2, 2, 8, 4, 4, 8, 2, 4, 4},
-    {4, 4, 4, 4, 8, 8, 4, 4, 4, 8, 2, 2, 4, 4, 4, 2, 4, 4},
-    {4, 4, 2, 2, 8, 8, 2, 4, 2, 2, 8, 2, 4, 4, 4, 2, 4, 4},
-    {4, 4, 8, 4, 2, 4, 4, 4, 4, 4, 8, 2, 2, 4, 4, 2, 4, 4},
-    {4, 8, 4, 8, 4, 4, 4, 4, 2, 4, 4, 4, 4, 2, 4, 4, 0, 4},
-    {4, 4, 8, 4, 8, 4, 4, 4, 2, 2, 2, 8, 4, 4, 2, 8, 4, 4},
-    {4, 4, 4, 4, 4, 4, 4, 4, 2, 4, 4, 4, 4, 4, 4, 8, 4, 0},
-    {4, 2, 4, 4, 4, 4, 4, 8, 4, 4, 4, 4, 4, 8, 4, 4, 2, 2},
-    {4, 8, 4, 2, 4, 4, 4, 4, 2, 2, 4, 4, 4, 4, 4, 8, 8, 4}};
+// Should be saving 1278 bytes
+const u8 chargestoneTypeChart[18] = {
+    // {4, 4, 4, 4, 4, 2, 4, 0, 2, 4, 4, 4, 4, 4, 4, 4, 4, 4},
+    // {8, 4, 2, 2, 4, 8, 2, 0, 8, 4, 4, 4, 4, 2, 8, 4, 8, 2},
+    // {4, 8, 4, 4, 4, 2, 8, 4, 2, 4, 4, 8, 2, 4, 4, 4, 4, 4},
+    // {4, 4, 4, 2, 2, 2, 4, 2, 0, 4, 4, 8, 4, 4, 4, 4, 4, 8},
+    // {4, 4, 0, 8, 4, 8, 2, 4, 8, 8, 4, 2, 8, 4, 4, 4, 4, 4},
+    // {4, 2, 8, 4, 2, 4, 8, 4, 2, 8, 4, 4, 4, 4, 8, 4, 4, 4},
+    // {4, 2, 2, 2, 4, 4, 4, 2, 2, 2, 4, 8, 4, 8, 4, 4, 8, 2},
+    // {0, 4, 4, 4, 4, 4, 4, 8, 4, 4, 4, 4, 4, 8, 4, 4, 2, 4},
+    // {4, 4, 4, 4, 4, 8, 4, 4, 2, 2, 2, 4, 2, 4, 8, 4, 4, 8},
+    // {4, 4, 4, 4, 4, 2, 8, 4, 8, 2, 2, 8, 4, 4, 8, 2, 4, 4},
+    // {4, 4, 4, 4, 8, 8, 4, 4, 4, 8, 2, 2, 4, 4, 4, 2, 4, 4},
+    // {4, 4, 2, 2, 8, 8, 2, 4, 2, 2, 8, 2, 4, 4, 4, 2, 4, 4},
+    4, 4, 8, 4, 2, 4, 4, 4, 4, 4, 8, 2, 2, 4, 4, 2, 4, 4};
+    // {4, 8, 4, 8, 4, 4, 4, 4, 2, 4, 4, 4, 4, 2, 4, 4, 0, 4},
+    // {4, 4, 8, 4, 8, 4, 4, 4, 2, 2, 2, 8, 4, 4, 2, 8, 4, 4},
+    // {4, 4, 4, 4, 4, 4, 4, 4, 2, 4, 4, 4, 4, 4, 4, 8, 4, 0},
+    // {4, 2, 4, 4, 4, 4, 4, 8, 4, 4, 4, 4, 4, 8, 4, 4, 2, 2},
+    // {4, 8, 4, 2, 4, 4, 4, 4, 2, 2, 4, 4, 4, 4, 4, 8, 8, 4}};
 
-const int opelucidTypeChart[18][18] = {
-    {4, 4, 4, 4, 4, 2, 4, 0, 2, 4, 4, 4, 4, 4, 4, 4, 4, 4},
-    {8, 4, 2, 2, 4, 8, 2, 2, 8, 4, 4, 4, 4, 2, 8, 4, 8, 2},
-    {4, 8, 4, 4, 4, 2, 8, 4, 2, 4, 4, 8, 2, 4, 4, 4, 4, 4},
-    {4, 4, 4, 2, 2, 2, 4, 2, 0, 4, 4, 8, 4, 4, 4, 4, 4, 8},
-    {4, 4, 0, 8, 4, 8, 2, 4, 8, 8, 4, 2, 8, 4, 4, 4, 4, 4},
-    {4, 2, 8, 4, 2, 4, 8, 4, 2, 8, 4, 4, 4, 4, 8, 4, 4, 4},
-    {4, 2, 2, 2, 4, 4, 4, 2, 2, 2, 4, 8, 4, 8, 4, 4, 8, 2},
-    {0, 4, 4, 4, 4, 4, 4, 8, 4, 4, 4, 4, 4, 8, 4, 4, 2, 4},
-    {4, 4, 4, 4, 4, 8, 4, 4, 2, 2, 2, 4, 2, 4, 8, 4, 4, 8},
-    {4, 4, 4, 4, 4, 2, 8, 4, 8, 2, 2, 8, 4, 4, 8, 2, 4, 4},
-    {4, 4, 4, 4, 8, 8, 4, 4, 4, 8, 2, 2, 4, 4, 4, 2, 4, 4},
-    {4, 4, 2, 2, 8, 8, 2, 4, 2, 2, 8, 2, 4, 4, 4, 2, 4, 4},
-    {4, 4, 8, 4, 0, 4, 4, 4, 4, 4, 8, 2, 2, 4, 4, 2, 4, 4},
-    {4, 8, 4, 8, 4, 4, 4, 4, 2, 4, 4, 4, 4, 2, 4, 4, 0, 4},
-    {4, 4, 8, 4, 8, 4, 4, 4, 2, 2, 2, 8, 4, 4, 2, 8, 4, 4},
-    {4, 4, 4, 4, 4, 4, 4, 4, 2, 4, 4, 4, 4, 4, 4, 8, 4, 2},
-    {4, 2, 4, 4, 4, 4, 4, 8, 4, 4, 4, 4, 4, 8, 4, 4, 2, 2},
-    {4, 8, 4, 2, 4, 4, 4, 4, 2, 2, 4, 4, 4, 4, 4, 8, 8, 4}};
+// Should be savinng 1260 bytes
+const u8 opelucidTypeChart[2][18] = {
+    //{4, 4, 4, 4, 4, 2, 4, 0, 2, 4, 4, 4, 4, 4, 4, 4, 4, 4},
+    {8, 4, 2, 2, 4, 8, 2, 2, 8, 4, 4, 4, 4, 2, 8, 4, 8, 2}, // Fighting
+    //{4, 8, 4, 4, 4, 2, 8, 4, 2, 4, 4, 8, 2, 4, 4, 4, 4, 4},
+    //{4, 4, 4, 2, 2, 2, 4, 2, 0, 4, 4, 8, 4, 4, 4, 4, 4, 8},
+    //{4, 4, 0, 8, 4, 8, 2, 4, 8, 8, 4, 2, 8, 4, 4, 4, 4, 4},
+    //{4, 2, 8, 4, 2, 4, 8, 4, 2, 8, 4, 4, 4, 4, 8, 4, 4, 4},
+    //{4, 2, 2, 2, 4, 4, 4, 2, 2, 2, 4, 8, 4, 8, 4, 4, 8, 2},
+    //{0, 4, 4, 4, 4, 4, 4, 8, 4, 4, 4, 4, 4, 8, 4, 4, 2, 4},
+    //{4, 4, 4, 4, 4, 8, 4, 4, 2, 2, 2, 4, 2, 4, 8, 4, 4, 8},
+    //{4, 4, 4, 4, 4, 2, 8, 4, 8, 2, 2, 8, 4, 4, 8, 2, 4, 4},
+    //{4, 4, 4, 4, 8, 8, 4, 4, 4, 8, 2, 2, 4, 4, 4, 2, 4, 4},
+    //{4, 4, 2, 2, 8, 8, 2, 4, 2, 2, 8, 2, 4, 4, 4, 2, 4, 4},
+    //{4, 4, 8, 4, 0, 4, 4, 4, 4, 4, 8, 2, 2, 4, 4, 2, 4, 4},
+    //{4, 8, 4, 8, 4, 4, 4, 4, 2, 4, 4, 4, 4, 2, 4, 4, 0, 4},
+    //{4, 4, 8, 4, 8, 4, 4, 4, 2, 2, 2, 8, 4, 4, 2, 8, 4, 4},
+    {4, 4, 4, 4, 4, 4, 4, 4, 2, 4, 4, 4, 4, 4, 4, 8, 4, 2}, // Dragon
+    //{4, 2, 4, 4, 4, 4, 4, 8, 4, 4, 4, 4, 4, 8, 4, 4, 2, 2},
+    //{4, 8, 4, 2, 4, 4, 4, 4, 2, 2, 4, 4, 4, 4, 4, 8, 8, 4}
+    };
 
-const int celestialTypeChart[18][18] = {
-    {4, 4, 4, 4, 4, 2, 4, 0, 2, 4, 4, 4, 4, 4, 4, 4, 4, 4},
-    {8, 4, 2, 2, 4, 8, 2, 0, 8, 4, 4, 4, 4, 2, 8, 4, 8, 2},
-    {4, 8, 4, 4, 4, 2, 8, 4, 2, 4, 4, 8, 2, 4, 4, 4, 4, 4},
-    {4, 4, 4, 2, 2, 2, 4, 2, 0, 4, 4, 8, 4, 4, 4, 4, 4, 8},
-    {4, 4, 0, 8, 4, 8, 2, 4, 8, 8, 4, 2, 8, 4, 4, 4, 4, 4},
-    {4, 2, 8, 4, 2, 4, 8, 4, 2, 8, 4, 4, 4, 4, 8, 4, 4, 4},
-    {4, 2, 2, 2, 4, 4, 4, 2, 2, 2, 4, 8, 4, 8, 4, 4, 8, 2},
-    {2, 4, 4, 4, 4, 4, 4, 8, 4, 4, 4, 4, 4, 8, 4, 4, 2, 4},
-    {4, 4, 4, 4, 4, 8, 4, 4, 2, 2, 2, 4, 2, 4, 8, 4, 4, 8},
-    {4, 4, 4, 4, 4, 2, 8, 4, 8, 2, 2, 8, 4, 4, 8, 2, 4, 4},
-    {4, 4, 4, 4, 8, 8, 4, 4, 4, 8, 2, 2, 4, 4, 4, 2, 4, 4},
-    {4, 4, 2, 2, 8, 8, 2, 4, 2, 2, 8, 2, 4, 4, 4, 2, 4, 4},
-    {4, 4, 8, 4, 0, 4, 4, 4, 4, 4, 8, 2, 2, 4, 4, 2, 4, 4},
-    {4, 8, 4, 8, 4, 4, 4, 4, 2, 4, 4, 4, 4, 2, 4, 4, 2, 4},
-    {4, 4, 8, 4, 8, 4, 4, 4, 2, 2, 2, 8, 4, 4, 2, 8, 4, 4},
-    {4, 4, 4, 4, 4, 4, 4, 4, 2, 4, 4, 4, 4, 4, 4, 8, 4, 0},
-    {4, 2, 4, 4, 4, 4, 4, 8, 4, 4, 4, 4, 4, 8, 4, 4, 2, 2},
-    {4, 8, 4, 2, 4, 4, 4, 4, 2, 2, 4, 4, 4, 4, 4, 8, 8, 4}};
+// Should be savinng 1260 bytes
+const u8 celestialTypeChart[2][18] = {
+    //{4, 4, 4, 4, 4, 2, 4, 0, 2, 4, 4, 4, 4, 4, 4, 4, 4, 4},
+    //{8, 4, 2, 2, 4, 8, 2, 0, 8, 4, 4, 4, 4, 2, 8, 4, 8, 2},
+    //{4, 8, 4, 4, 4, 2, 8, 4, 2, 4, 4, 8, 2, 4, 4, 4, 4, 4},
+    //{4, 4, 4, 2, 2, 2, 4, 2, 0, 4, 4, 8, 4, 4, 4, 4, 4, 8},
+    //{4, 4, 0, 8, 4, 8, 2, 4, 8, 8, 4, 2, 8, 4, 4, 4, 4, 4},
+    //{4, 2, 8, 4, 2, 4, 8, 4, 2, 8, 4, 4, 4, 4, 8, 4, 4, 4},
+    //{4, 2, 2, 2, 4, 4, 4, 2, 2, 2, 4, 8, 4, 8, 4, 4, 8, 2},
+    {2, 4, 4, 4, 4, 4, 4, 8, 4, 4, 4, 4, 4, 8, 4, 4, 2, 4}, // Ghost
+    //{4, 4, 4, 4, 4, 8, 4, 4, 2, 2, 2, 4, 2, 4, 8, 4, 4, 8},
+    //{4, 4, 4, 4, 4, 2, 8, 4, 8, 2, 2, 8, 4, 4, 8, 2, 4, 4},
+    //{4, 4, 4, 4, 8, 8, 4, 4, 4, 8, 2, 2, 4, 4, 4, 2, 4, 4},
+    //{4, 4, 2, 2, 8, 8, 2, 4, 2, 2, 8, 2, 4, 4, 4, 2, 4, 4},
+    //{4, 4, 8, 4, 0, 4, 4, 4, 4, 4, 8, 2, 2, 4, 4, 2, 4, 4},
+    {4, 8, 4, 8, 4, 4, 4, 4, 2, 4, 4, 4, 4, 2, 4, 4, 2, 4}, // Psychic
+    //{4, 4, 8, 4, 8, 4, 4, 4, 2, 2, 2, 8, 4, 4, 2, 8, 4, 4},
+    //{4, 4, 4, 4, 4, 4, 4, 4, 2, 4, 4, 4, 4, 4, 4, 8, 4, 0},
+    //{4, 2, 4, 4, 4, 4, 4, 8, 4, 4, 4, 4, 4, 8, 4, 4, 2, 2},
+    //{4, 8, 4, 2, 4, 4, 4, 4, 2, 2, 4, 4, 4, 4, 4, 8, 8, 4}
+    };
 
-unsigned __int16 MOLD_BREAKER_AFFECTED_ABILITIES[46] = {
+#pragma endregion 
+
+#pragma region ConstLists
+unsigned __int16 MOLD_BREAKER_AFFECTED_ABILITIES[47] = {
     ABIL025_WONDER_GUARD,
     ABIL043_AMPLIFIER,
     ABIL026_LEVITATE,
@@ -5467,95 +5203,64 @@ unsigned __int16 MOLD_BREAKER_AFFECTED_ABILITIES[46] = {
     ABIL122_FLOWER_GIFT,
     ABIL134_HEAVY_METAL,
     ABIL135_LIGHT_METAL,
-    ABIL080_COLOSSAL};
-// struct SaveControl
-// {
-//     u8 Status;
-//     u8 SaveDataAlreadyPresent;
-//     u8 byte2;
-//     u8 field_3[9];
-//     u32 field_C;
-//     char *SaveData;
-//     u32 SaveExtra[21];
-//     u32 dword68;
-// };
+    ABIL080_COLOSSAL,
+    ABIL113_SCRAPPY};
 
-// struct PlayerState
-// {
-//     u16 ZoneID;
-//     char VecPos;
-//     char RailPos;
-//     char RotationAngle;
-//     u8 field_1A;
-//     u8 IsPosRail;
-//     u16 NowOBJCODE;
-//     __int16 field_1E;
-//     int field_20;
-//     int field_24;
-//     int field_28;
-//     int field_2C;
-//     int field_30;
-//     int field_34;
-//     int field_38;
-//     int field_3C;
-//     char ExState;
-// };
+const u32 StrongJawMoves[10] = {
+    MOVE044_BITE, MOVE158_HYPER_FANG, MOVE162_SUPER_FANG, MOVE170_SNAP_TRAP, MOVE265_PSYCHIC_FANGS, MOVE305_POISON_FANG, MOVE422_THUNDER_FANG, MOVE423_ICE_FANG, MOVE424_FIRE_FANG, MOVE242_CRUNCH};
 
-// struct ZoneSpawnInfo
-// {
-//     u32 ChangeType;
-//     u16 ZoneID;
-//     u16 WarpID;
-//     u16 WarpDir;
-//     u16 PosWeightBits;
-//     b32 IsRail;
-//     char Pos;
-// };
+const u32 HyperCutterMoves[27] = {
+    MOVE421_SHADOW_CLAW, MOVE533_SACRED_SWORD, MOVE534_RAZOR_SHELL, MOVE530_DUAL_CHOP, MOVE529_DRILL_RUN, MOVE554_SOLAR_BLADE,
+    MOVE440_CROSS_POISON, MOVE427_PSYCHO_CUT, MOVE404_X_SCISSOR, MOVE400_NIGHT_SLASH, MOVE403_AIR_SLASH, MOVE384_PSYBLADE,
+    MOVE348_LEAF_BLADE, MOVE337_DRAGON_CLAW, MOVE332_AERIAL_ACE, MOVE314_AIR_CUTTER, MOVE306_CRUSH_CLAW, MOVE232_METAL_CLAW,
+    MOVE163_SLASH, MOVE154_FURY_SWIPES, MOVE065_DRILL_PECK, MOVE013_RAZOR_WINDS, MOVE010_SCRATCH, MOVE210_FURY_CUTTER, MOVE015_CUT,
+    MOVE075_RAZOR_LEAF, MOVE548_SECRET_SWORD};
 
-// struct GameData
-// {
-//     SaveControl *m_SaveControl;
-//     u8 field_4[272];
-//     PlayerState m_PlayerState;
-//     char *m_EventData;
-//     char *m_PlayerSaveData;
-//     ZoneSpawnInfo *NowZoneSpawnInfo;
-//     ZoneSpawnInfo *WarpRememberZoneInfo;
-//     ZoneSpawnInfo *NextSpawnZone;
-//     ZoneSpawnInfo *EscapeRopeZone;
-//     ZoneSpawnInfo EntralinkParentSpawnInfo;
-//     void *m_MyItemSave;
-//     char *m_Bag;
-//     char *m_Party;
-//     void *dword198;
-//     char *m_BoxSaveAccessor;
-//     void *dword1A0;
-//     char *m_BGMInfo;
-//     char *m_ActorSystem;
-//     char *m_EventWork;
-//     char *m_MapMatrix;
-//     char *m_FieldSoundSystem;
-//     BattleFieldStatus *m_FieldStatus;
-//     char LastBattleResult;
-//     u8 PauseEvents;
-//     char field_1C1;
-//     u8 field_1C2;
-//     char field_1C3;
-//     u32 TotalStepsTaken;
-//     u8 NaturalSeason;
-//     u8 NowWeather;
-//     u8 LastFieldSubscreen;
-//     u8 byte1CB;
-//     u8 byte1CC;
-//     char byte1CD;
-//     u8 SkipFrameCounter;
-//     u8 Is30FPSMode;
-//     u16 field_1D0;
-//     u8 ForceSeasonSync;
-//     char field_1D3;
-//     char field_1D4[76];
-//     char *m_EncountState;
-//     char char224;
-//     char gap225[3];
-//     char m_GimmickState;
-// };
+const u32 WindMoves[17] = {
+    MOVE403_AIR_SLASH,
+    MOVE542_HURRICANE,
+    MOVE257_HEAT_WAVE,
+    MOVE466_OMINOUS_WIND,
+    MOVE318_SILVER_WIND,
+    MOVE016_GUST,
+    MOVE059_BLIZZARD,
+    MOVE379_PETAL_BLIZZARD,
+    MOVE511_FAIRY_WIND,
+    MOVE180_DIAMOND_STORM,
+    MOVE013_RAZOR_WINDS,
+    MOVE177_AEROBLAST,
+    MOVE196_ICY_WIND,
+    MOVE366_TAILWIND,
+    MOVE239_TWISTER,
+    MOVE018_WHIRLWIND,
+    MOVE314_AIR_CUTTER};
+
+const u32 BulletproofMoves[21] = {
+    MOVE491_ACID_SPRAY,
+    MOVE396_AURA_SPHERE,
+    MOVE140_BARRAGE,
+    MOVE331_BULLET_SEED,
+    MOVE121_EGG_BOMB,
+    MOVE486_ELECTRO_BALL,
+    MOVE412_ENERGY_BALL,
+    MOVE411_FOCUS_BLAST,
+    MOVE360_GYRO_BALL,
+    MOVE301_BOOMBURST,
+    MOVE443_MAGNET_BOMB,
+    MOVE426_MUD_BOMB,
+    MOVE190_OCTAZOOKA,
+    MOVE461_POLLEN_PUFF,
+    MOVE350_ROCK_BLAST,
+    MOVE439_ROCK_WRECKER,
+    MOVE402_SEED_BOMB,
+    MOVE247_SHADOW_BALL,
+    MOVE188_SLUDGE_BOMB,
+    MOVE311_WEATHER_BALL,
+    MOVE192_ZAP_CANNON};
+
+const int FLAIL_POWER_TABLE[6] = {
+    0xC80001, 0x960004, 0x640009, 0x500010, 0x280020, 0x140030};
+const BattleMonValue BattleMonValues[8] = {
+    VALUE_ATTACK_STAGE, VALUE_DEFENSE_STAGE, VALUE_SPEED_STAGE, VALUE_SPECIAL_ATTACK_STAGE, VALUE_SPECIAL_DEFENSE_STAGE, VALUE_ACCURACY_STAGE, VALUE_EVASION_STAGE, VALUE_NULL};
+const u8 FIRST_POS_FOR_CLIENT_ID[] = {0, 12, 6, 18};
+#pragma endregion

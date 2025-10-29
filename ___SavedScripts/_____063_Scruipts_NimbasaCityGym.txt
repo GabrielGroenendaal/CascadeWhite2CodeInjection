@@ -21,6 +21,8 @@ import system.Runtime;
 import system.Sound;
 import system.text.WordSet;
 
+
+
 public class MainEvents {
 	public static void main_1() { // @ 0x23c
 		int v8;
@@ -674,7 +676,7 @@ public class MainEvents {
 		Message.ActorEx(1024, 3, 4, 2, 0);
 		Message.CloseActor();
 		Base.CMD_25F(0);
-		Global2805(400, 1);
+		Global2805(399, 1);
 		Base.CMD_25F(2);
 		Message.ActorEx(1024, 4, 4, 2, 0);
 		Message.WaitAdvance();
@@ -686,6 +688,7 @@ public class MainEvents {
 		Base.CMD_25F(0);
 		EventFlags.Set(2417);
 		EventFlags.Set(264);
+		EventFlags.Set(528);
 		EventWorks.Set(16540, 1);
 		EventWorks.Set(16576, 1);
 		EventFlags.Clear(761);

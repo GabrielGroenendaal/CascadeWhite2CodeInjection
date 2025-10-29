@@ -1,11 +1,14 @@
 #include "codeinjection_new.h"
 #include "kPrint.h"
 
+#define VAR_PARTING_SHOT_FLAG VAR_DELAY_ATTACK_FLAG
+
 // Uses esdb_NewBattle.yml
 
 extern "C"
 {
 
+#pragma region HelperFunctions
     bool checkIfConsumableItem(int a1)
     {
         return (PML_ItemIsBerry(a1) ||
@@ -37,12 +40,212 @@ extern "C"
                 a1 == IT0302_TERA_SASH);
     }
 
+    void ChangeStats(ServerFlow *serverFlow, int pokemonSlot, int pokemonChanged, StatStage statStage, u8 rankVolume, u8 fMoveAnimation)
+    {
+        HandlerParam_ChangeStatStage *statChange = (HandlerParam_ChangeStatStage *)BattleHandler_PushWork(serverFlow, EFFECT_CHANGESTATSTAGE, pokemonSlot);
+        statChange->poke_cnt = 1;
+        statChange->pokeID[0] = pokemonChanged;
+        statChange->rankType = statStage;
+        statChange->rankVolume = rankVolume;
+        statChange->fMoveAnimation = fMoveAnimation;
+        BattleHandler_PopWork(serverFlow, statChange);
+    }
+
+    void SendMessage(ServerFlow *serverFlow, int PokemonSlot, int targetSlot, int messageId, int secondArg)
+    {
+        HandlerParam_Message *message = (HandlerParam_Message *)BattleHandler_PushWork(serverFlow, EFFECT_MESSAGE, PokemonSlot);
+        BattleHandler_StrSetup(&message->str, 2u, messageId);
+        BattleHandler_AddArg(&message->str, targetSlot);
+        if (secondArg)
+        {
+            BattleHandler_AddArg(&message->str, secondArg);
+        }
+        BattleHandler_PopWork(serverFlow, message);
+    }
     typedef struct
     {
         BattleEventType triggerValue;
         MOVE_HANDLER_FUNC function;
     } MOVE_TRIGGERTABLE;
+#pragma endregion
 
+#pragma region PivotingMoves
+    void HandlerPartingShotCheck(BattleEventItem *item, ServerFlow *serverFlow, u32 pokemonSlot, u32 *work)
+    {
+        if (pokemonSlot == BattleEventVar_GetValue(VAR_ATTACKING_MON))
+        {
+            BattleEventVar_RewriteValue(VAR_DELAY_ATTACK_FLAG, 1);
+        }
+    }
+    void HandlerPartingShotApply(BattleEventItem *item, ServerFlow *serverFlow, u32 pokemonSlot, u32 *work)
+    {
+        if (pokemonSlot == BattleEventVar_GetValue(VAR_ATTACKING_MON) ||
+            pokemonSlot == BattleEventVar_GetValue(VAR_MON_ID))
+        {
+            work[0] = 1;
+        }
+    }
+    void HandlerPartingShotFail(BattleEventItem *item, ServerFlow *serverFlow, u32 pokemonSlot, u32 *work)
+    {
+        if (BattleEventVar_GetValue(VAR_DELAY_ATTACK_FLAG))
+        {
+            work[0] = 1;
+        }
+    }
+    void HandlerPartingShot(BattleEventItem *item, ServerFlow *serverFlow, u32 pokemonSlot, u32 *work)
+    {
+        if (pokemonSlot == BattleEventVar_GetValue(VAR_MON_ID) &&
+            work[0] == 1)
+        {
+            if (Handler_GetFightEnableBenchPokeNum(serverFlow, pokemonSlot) && Handler_CheckReservedMemberChangeAction(serverFlow))
+            {
+
+                HandlerParam_Switch *switchOut;
+                switchOut = (HandlerParam_Switch *)BattleHandler_PushWork(serverFlow, EFFECT_SWITCH, pokemonSlot);
+                switchOut->pokeID = pokemonSlot;
+                BattleHandler_PopWork(serverFlow, switchOut);
+            }
+        }
+    }
+    MOVE_TRIGGERTABLE PartingShotHandlers[]{
+        {EVENT_STAT_STAGE_CHANGE_LAST_CHECK, (MOVE_HANDLER_FUNC)HandlerPartingShotCheck},
+        {EVENT_STAT_STAGE_CHANGE_APPLIED, (MOVE_HANDLER_FUNC)HandlerPartingShotApply},
+        {EVENT_STAT_STAGE_CHANGE_FAIL, (MOVE_HANDLER_FUNC)HandlerPartingShotFail},
+        {EVENT_MOVE_SEQUENCE_END, (MOVE_HANDLER_FUNC)HandlerPartingShot},
+    };
+    MOVE_TRIGGERTABLE *THUMB_BRANCH_EventAddLockOn(u32 *handlerAmount)
+    {
+        *handlerAmount = 4;
+        return PartingShotHandlers;
+    }
+
+    void HandlerTeleportEffect(int a1, ServerFlow *a2, int a3)
+    {
+        // HandlerParam_Message *v5; // r5
+        HandlerParam_Switch *v7; // r0
+
+        if (a3 == BattleEventVar_GetValue(VAR_ATTACKING_MON) && Handler_GetFightEnableBenchPokeNum(a2, a3))
+        {
+            if (Handler_CheckReservedMemberChangeAction(a2))
+            {
+                // v5 = (HandlerParam_Message *)BattleHandler_PushWork(a2, EFFECT_MESSAGE, a3);
+                // BattleHandler_StrSetup(&v5->str, 2u, 767);
+                // BattleHandler_AddArg(&v5->str, a3);
+                // BattleHandler_PopWork(a2, v5);
+                SendMessage(a2, a3, a3, 767, 0);
+                v7 = (HandlerParam_Switch *)BattleHandler_PushWork(a2, EFFECT_SWITCH, a3);
+                v7->pokeID = a3;
+                v7->fIntrDisable = 1;
+                BattleHandler_PopWork(a2, v7);
+            }
+        }
+    }
+
+    MOVE_TRIGGERTABLE TeleportHandlers[] = {
+        {EVENT_UNCATEGORIZED_MOVE, (MOVE_HANDLER_FUNC)HandlerTeleportEffect},
+    };
+
+    MOVE_TRIGGERTABLE *THUMB_BRANCH_EventAddTeleport(_DWORD *a1)
+    {
+        *a1 = 1;
+        return TeleportHandlers;
+    }
+
+    // MOVE_TRIGGERTABLE PartingShotHandlers[] = {
+    //     {EVENT_DAMAGE_PROCESSING_END_HIT_3, (MOVE_HANDLER_FUNC)HandlerUturn},
+    // };
+
+    // MOVE_TRIGGERTABLE *THUMB_BRANCH_EventAddLockOn(_DWORD *a1)
+    // {
+    //     *a1 = 1;
+    //     return PartingShotHandlers;
+    // }
+
+#pragma endregion
+
+#pragma region HealingWish
+    void THUMB_BRANCH_SAFESTACK_HandlerPosHealingWish(BattleEventItem *a1, ServerFlow *a2, int a3)
+    {
+        unsigned int Value_5;           // r4
+        BattleMon *PokeParam_2;         // r7
+        bool v6;                        // r6
+        HandlerParam_AddAnimation *v7;  // r6
+        HandlerParam_RecoverHP *v8;     // r6
+        HandlerParam_CureCondition *v9; // r0
+
+        HandlerParam_ChangeStatStage *v55;
+        HandlerParam_ChangeStatStage *v66;
+        HandlerParam_ChangeStatStage *v77;
+        HandlerParam_ChangeStatStage *v88;
+        HandlerParam_ChangeStatStage *v99;
+        __int16 BattleMonStat_1; // [sp+8h] [bp-18h]
+
+        Value_5 = BattleEventVar_GetValue(VAR_MON_ID);
+        if (a3 == Handler_PokeIDToPokePos(a2, Value_5))
+        {
+            PokeParam_2 = Handler_GetBattleMon(a2, Value_5);
+            v7 = (HandlerParam_AddAnimation *)BattleHandler_PushWork(a2, EFFECT_ADD_ANIMATION, Value_5);
+            v7->animNo = 639;
+            v7->pos_from = a3;
+            v7->pos_to = 6;
+            BattleHandler_StrSetup(&v7->exStr, 2u, 697);
+            BattleHandler_AddArg(&v7->exStr, Value_5);
+            BattleHandler_PopWork(a2, v7);
+            if (!BattleMon_IsFullHP(PokeParam_2))
+            {
+                v8 = (HandlerParam_RecoverHP *)BattleHandler_PushWork(a2, EFFECT_RECOVERHP, Value_5);
+                v8->pokeID = Value_5;
+                BattleMonStat_1 = BattleMon_GetValue(PokeParam_2, VALUE_MAX_HP);
+                v8->recoverHP = BattleMonStat_1 - BattleMon_GetValue(PokeParam_2, VALUE_CURRENT_HP);
+                BattleHandler_PopWork(a2, v8);
+            }
+            if (BattleMon_GetStatus(PokeParam_2))
+            {
+                v9 = (HandlerParam_CureCondition *)BattleHandler_PushWork(a2, EFFECT_CURE_STATUS, Value_5);
+                v9->poke_cnt = 1;
+                v9->pokeID[0] = Value_5;
+                v9->sickCode = CONDITION_24;
+                BattleHandler_PopWork(a2, v9);
+            }
+            v55 = (HandlerParam_ChangeStatStage *)BattleHandler_PushWork(a2, EFFECT_CHANGESTATSTAGE, (int)Value_5);
+            v55->poke_cnt = 1;
+            v55->pokeID[0] = (int)Value_5;
+            v55->rankType = STATSTAGE_ATTACK;
+            v55->rankVolume = 1;
+            BattleHandler_PopWork(a2, v55);
+            v66 = (HandlerParam_ChangeStatStage *)BattleHandler_PushWork(a2, EFFECT_CHANGESTATSTAGE, (int)Value_5);
+            v66->poke_cnt = 1;
+            v66->pokeID[0] = (int)Value_5;
+            v66->rankType = STATSTAGE_DEFENSE;
+            v66->rankVolume = 1;
+            v66->fMoveAnimation = 1;
+            BattleHandler_PopWork(a2, v66);
+            v77 = (HandlerParam_ChangeStatStage *)BattleHandler_PushWork(a2, EFFECT_CHANGESTATSTAGE, (int)Value_5);
+            v77->poke_cnt = 1;
+            v77->pokeID[0] = (int)Value_5;
+            v77->rankType = STATSTAGE_SPECIAL_ATTACK;
+            v77->rankVolume = 1;
+            v77->fMoveAnimation = 1;
+            BattleHandler_PopWork(a2, v77);
+            v88 = (HandlerParam_ChangeStatStage *)BattleHandler_PushWork(a2, EFFECT_CHANGESTATSTAGE, (int)Value_5);
+            v88->poke_cnt = 1;
+            v88->pokeID[0] = (int)Value_5;
+            v88->rankType = STATSTAGE_SPECIAL_DEFENSE;
+            v88->rankVolume = 1;
+            v88->fMoveAnimation = 1;
+            BattleHandler_PopWork(a2, v88);
+            v99 = (HandlerParam_ChangeStatStage *)BattleHandler_PushWork(a2, EFFECT_CHANGESTATSTAGE, (int)Value_5);
+            v99->poke_cnt = 1;
+            v99->pokeID[0] = (int)Value_5;
+            v99->rankType = STATSTAGE_SPEED;
+            v99->rankVolume = 1;
+            v99->fMoveAnimation = 1;
+            BattleHandler_PopWork(a2, v99);
+            BattleEventItem_Remove(a1);
+        }
+    }
+
+#pragma endregion
 #pragma region HealingMoves
 
     /* Refresh */
@@ -222,7 +425,7 @@ extern "C"
         int Value;                     // r6
         BattleMon *BattleMon;          // r0
         HandlerParam_AddCondition *v7; // r4
-        HandlerParam_ChangeStatStage *v8;
+        // HandlerParam_ChangeStatStage *v8;
         StatStage statStage;
 
         if (a3 == BattleEventVar_GetValue(VAR_ATTACKING_MON))
@@ -242,13 +445,14 @@ extern "C"
             statStage = (BattleEventVar_GetValue(VAR_MOVE_ID) == MOVE335_BLOCK) ? STATSTAGE_DEFENSE : STATSTAGE_SPECIAL_DEFENSE;
             if (BattleMon_IsStatChangeValid(BattleMon, statStage, -1))
             {
-                v8 = (HandlerParam_ChangeStatStage *)BattleHandler_PushWork(a2, EFFECT_CHANGESTATSTAGE, (int)a3);
-                v8->poke_cnt = 1;
-                v8->pokeID[0] = a3;
-                v8->rankType = statStage;
-                v8->rankVolume = -1;
-                v8->fMoveAnimation = 1;
-                BattleHandler_PopWork(a2, v8);
+                // v8 = (HandlerParam_ChangeStatStage *)BattleHandler_PushWork(a2, EFFECT_CHANGESTATSTAGE, (int)a3);
+                // v8->poke_cnt = 1;
+                // v8->pokeID[0] = a3;
+                // v8->rankType = statStage;
+                // v8->rankVolume = -1;
+                // v8->fMoveAnimation = 1;
+                // BattleHandler_PopWork(a2, v8);
+                ChangeStats(a2, (int)a3, (int)a3, statStage, -1, 1);
             }
         }
     }
@@ -269,8 +473,8 @@ extern "C"
     /* Focus Punch */
     void HandlerFocusPunchPower(int a1, ServerFlow *a2, int a3)
     {
-        int Value;                // r6
-        HandlerParam_Message *v6; // r4
+        int Value; // r6
+        // HandlerParam_Message *v6; // r4
 
         if ((int)a3 == BattleEventVar_GetValue(VAR_ATTACKING_MON))
         {
@@ -282,15 +486,15 @@ extern "C"
             {
                 Value = 150;
             }
+            k::Printf("\n\n====FOCUS PUNCH POWER HANDLER====\nCommonCounterStart returns %d\nOur new BP is %d\n==============================\n\n", CommonCounterStart(a2, a3, 0, 0), Value);
             BattleEventVar_RewriteValue(VAR_MOVE_POWER, Value);
         }
     }
     void HandlerFocusPunch(int a1, ServerFlow *a2, unsigned int a3)
     {
-        HandlerParam_SetTurnFlag *v5;  // r0
         BattleMon *BattleMon;          // r0
         HandlerParam_AddAnimation *v7; // r6
-        HandlerParam_Message *v8;      // r6
+        // HandlerParam_Message *v8;      // r6
 
         if (a3 == BattleEventVar_GetValue(VAR_MON_ID))
         {
@@ -304,10 +508,11 @@ extern "C"
                 v7->fMsgWinVanish = 1;
                 BattleHandler_PopWork(a2, v7);
             }
-            v8 = (HandlerParam_Message *)BattleHandler_PushWork(a2, EFFECT_MESSAGE, a3);
-            BattleHandler_StrSetup(&v8->str, 2u, 616);
-            BattleHandler_AddArg(&v8->str, a3);
-            BattleHandler_PopWork(a2, v8);
+            SendMessage(a2, a3, a3, 616, 0);
+            // v8 = (HandlerParam_Message *)BattleHandler_PushWork(a2, EFFECT_MESSAGE, a3);
+            // BattleHandler_StrSetup(&v8->str, 2u, 616);
+            // BattleHandler_AddArg(&v8->str, a3);
+            // BattleHandler_PopWork(a2, v8);
         }
     }
 
@@ -505,7 +710,7 @@ extern "C"
     void THUMB_BRANCH_HandlerDefenseCurl(int a1, ServerFlow *a2, unsigned int *a3)
     {
         HandlerParam_SetConditionFlag *v5; // r0
-        HandlerParam_Message *v6;
+        // HandlerParam_Message *v6;
         int messageId;
 
         if ((int)a3 == BattleEventVar_GetValue(VAR_MON_ID))
@@ -523,12 +728,11 @@ extern "C"
             {
                 messageId = 1273;
             }
-
-            k::Printf("\nWe made it into this handler at least?\n");
-            v6 = (HandlerParam_Message *)BattleHandler_PushWork(a2, EFFECT_MESSAGE, (int)a3);
-            BattleHandler_StrSetup(&v6->str, 2u, messageId);
-            BattleHandler_AddArg(&v6->str, (int)a3);
-            BattleHandler_PopWork(a2, v6);
+            SendMessage(a2, (int)a3, (int)a3, messageId, 0);
+            // v6 = (HandlerParam_Message *)BattleHandler_PushWork(a2, EFFECT_MESSAGE, (int)a3);
+            // BattleHandler_StrSetup(&v6->str, 2u, messageId);
+            // BattleHandler_AddArg(&v6->str, (int)a3);
+            // BattleHandler_PopWork(a2, v6);
 
             v5 = (HandlerParam_SetConditionFlag *)BattleHandler_PushWork(a2, EFFECT_SET_CONDITION_FLAG, (int)a3);
             v5->monID = (int)a3;
@@ -539,28 +743,31 @@ extern "C"
 
     void THUMB_BRANCH_HandlerSkullBash(int a1, ServerFlow *a2, unsigned int *a3)
     {
-        HandlerParam_Message *v5;         // r6
-        HandlerParam_ChangeStatStage *v6; // r0
+        // HandlerParam_Message *v5;         // r6
+        // HandlerParam_ChangeStatStage *v6; // r0
 
         if ((int)a3 == BattleEventVar_GetValue(VAR_ATTACKING_MON))
         {
-            v5 = (HandlerParam_Message *)BattleHandler_PushWork(a2, EFFECT_MESSAGE, (int)a3);
-            BattleHandler_StrSetup(&v5->str, 2u, 556);
-            BattleHandler_AddArg(&v5->str, (int)a3);
-            BattleHandler_PopWork(a2, v5);
-            v6 = (HandlerParam_ChangeStatStage *)BattleHandler_PushWork(a2, EFFECT_CHANGESTATSTAGE, (int)a3);
-            v6->poke_cnt = 1;
-            v6->pokeID[0] = (int)a3;
-            v6->rankType = STATSTAGE_DEFENSE;
-            v6->rankVolume = 1;
-            v6->fMoveAnimation = 1;
-            BattleHandler_PopWork(a2, v6);
-            v6 = (HandlerParam_ChangeStatStage *)BattleHandler_PushWork(a2, EFFECT_CHANGESTATSTAGE, (int)a3);
-            v6->poke_cnt = 1;
-            v6->pokeID[0] = (int)a3;
-            v6->rankType = STATSTAGE_ATTACK;
-            v6->rankVolume = 1;
-            BattleHandler_PopWork(a2, v6);
+            // v5 = (HandlerParam_Message *)BattleHandler_PushWork(a2, EFFECT_MESSAGE, (int)a3);
+            // BattleHandler_StrSetup(&v5->str, 2u, 556);
+            // BattleHandler_AddArg(&v5->str, (int)a3);
+            // BattleHandler_PopWork(a2, v5);
+            SendMessage(a2, (int)a3, (int)a3, 556, 0);
+            ChangeStats(a2, (int)a3, (int)a3, STATSTAGE_ATTACK, 1, 1);
+            ChangeStats(a2, (int)a3, (int)a3, STATSTAGE_DEFENSE, 1, 1);
+            // v6 = (HandlerParam_ChangeStatStage *)BattleHandler_PushWork(a2, EFFECT_CHANGESTATSTAGE, (int)a3);
+            // v6->poke_cnt = 1;
+            // v6->pokeID[0] = (int)a3;
+            // v6->rankType = STATSTAGE_DEFENSE;
+            // v6->rankVolume = 1;
+            // v6->fMoveAnimation = 1;
+            // BattleHandler_PopWork(a2, v6);
+            // v6 = (HandlerParam_ChangeStatStage *)BattleHandler_PushWork(a2, EFFECT_CHANGESTATSTAGE, (int)a3);
+            // v6->poke_cnt = 1;
+            // v6->pokeID[0] = (int)a3;
+            // v6->rankType = STATSTAGE_ATTACK;
+            // v6->rankVolume = 1;
+            // BattleHandler_PopWork(a2, v6);
         }
     }
 
@@ -690,17 +897,18 @@ extern "C"
         int Value;                  // r6
         BattleMon *BattleMon;       // r7
         HandlerParam_RecoverHP *v9; // r5
-        HandlerParam_Message *message;
+        // HandlerParam_Message *message;
         if ((int)a3 == BattleEventVar_GetValue(VAR_ATTACKING_MON) && *a4)
         {
             Value = BattleEventVar_GetValue(VAR_DEFENDING_MON);
             BattleMon = Handler_GetBattleMon(a2, Value);
             if (BattleMon_IsFullHP(BattleMon))
             {
-                message = (HandlerParam_Message *)BattleHandler_PushWork(a2, EFFECT_MESSAGE, (int)a3);
-                BattleHandler_StrSetup(&message->str, 2u, 210);
-                BattleHandler_AddArg(&message->str, Value);
-                BattleHandler_PopWork(a2, message);
+                SendMessage(a2, (int)a3, Value, 210, 0);
+                // message = (HandlerParam_Message *)BattleHandler_PushWork(a2, EFFECT_MESSAGE, (int)a3);
+                // BattleHandler_StrSetup(&message->str, 2u, 210);
+                // BattleHandler_AddArg(&message->str, Value);
+                // BattleHandler_PopWork(a2, message);
             }
             else
             {
@@ -768,8 +976,8 @@ extern "C"
         if (a3 == BattleEventVar_GetValue(VAR_ATTACKING_MON))
         {
             attackingMon = Handler_GetBattleMon((ServerFlow *)a2, a3);
-
-            if (BattleMon_GetValue(attackingMon, VALUE_EFFECTIVE_ABILITY) != 34 && BattleMon_GetValue(attackingMon, VALUE_EFFECTIVE_ABILITY) != 94 && BattleMon_GetValue(attackingMon, VALUE_EFFECTIVE_ABILITY) != 122 && (Handler_GetWeather(a2) - 2) <= 2u)
+            AbilID abil = (AbilID)BattleMon_GetValue(attackingMon, VALUE_EFFECTIVE_ABILITY);
+            if (abil != ABIL034_CHLOROPHYLL && abil != 94 && abil != 122 && (Handler_GetWeather(a2) - 2) <= 2u)
             {
                 BattleEventVar_MulValue(VAR_MOVE_POWER_RATIO, 2048);
             }
@@ -784,10 +992,10 @@ extern "C"
         if (a3 == BattleEventVar_GetValue(VAR_ATTACKING_MON))
         {
             attackingMon = Handler_GetBattleMon((ServerFlow *)a2, a3);
-
-            if (Handler_GetWeather(a2) == 1 || BattleMon_GetValue(attackingMon, VALUE_EFFECTIVE_ABILITY) == 34 || BattleMon_GetValue(attackingMon, VALUE_EFFECTIVE_ABILITY) == 94 || BattleMon_GetValue(attackingMon, VALUE_EFFECTIVE_ABILITY) == 122)
+            AbilID abil = (AbilID)BattleMon_GetValue(attackingMon, VALUE_EFFECTIVE_ABILITY);
+            if (Handler_GetWeather(a2) == 1 || abil == 34 || abil == 94 || abil == 122)
             {
-                if (BattleMon_GetValue(attackingMon, VALUE_EFFECTIVE_ABILITY) != ABIL142_OVERCOAT && attackingMon->HeldItem != IT0544_UTILITY_UMBRELLA)
+                if (abil != ABIL142_OVERCOAT && attackingMon->HeldItem != IT0544_UTILITY_UMBRELLA)
                 {
                     return BattleEventVar_RewriteValue(VAR_GENERAL_USE_FLAG, 1);
                 }
@@ -806,9 +1014,10 @@ extern "C"
         {
             attackingMon = Handler_GetBattleMon((ServerFlow *)a2, a3);
             result = Handler_GetWeather(a2);
-            if (result == 1 || BattleMon_GetValue(attackingMon, VALUE_EFFECTIVE_ABILITY) == 34 || BattleMon_GetValue(attackingMon, VALUE_EFFECTIVE_ABILITY) == 94 || BattleMon_GetValue(attackingMon, VALUE_EFFECTIVE_ABILITY) == 122)
+            AbilID abil = (AbilID)BattleMon_GetValue(attackingMon, VALUE_EFFECTIVE_ABILITY);
+            if (result == 1 || abil == 34 || abil == 94 || abil == 122)
             {
-                if (BattleMon_GetValue(attackingMon, VALUE_EFFECTIVE_ABILITY) != ABIL142_OVERCOAT && attackingMon->HeldItem != IT0544_UTILITY_UMBRELLA)
+                if (abil != ABIL142_OVERCOAT && attackingMon->HeldItem != IT0544_UTILITY_UMBRELLA)
                 {
                     Value = BattleEventVar_GetValue(VAR_VOLUME);
                     if (Value == 1)
@@ -834,10 +1043,10 @@ extern "C"
         {
             attackingMon = Handler_GetBattleMon((ServerFlow *)a2, a3);
             Weather = Handler_GetWeather(a2);
-
-            if (Weather == 1 || BattleMon_GetValue(attackingMon, VALUE_EFFECTIVE_ABILITY) == 34 || BattleMon_GetValue(attackingMon, VALUE_EFFECTIVE_ABILITY) == 94 || BattleMon_GetValue(attackingMon, VALUE_EFFECTIVE_ABILITY) == 122)
+            AbilID abil = (AbilID)BattleMon_GetValue(attackingMon, VALUE_EFFECTIVE_ABILITY);
+            if (Weather == 1 || abil == 34 || abil == 94 || abil == 122)
             {
-                if (BattleMon_GetValue(attackingMon, VALUE_EFFECTIVE_ABILITY) != ABIL142_OVERCOAT && attackingMon->HeldItem != IT0544_UTILITY_UMBRELLA)
+                if (abil != ABIL142_OVERCOAT && attackingMon->HeldItem != IT0544_UTILITY_UMBRELLA)
                 {
                     v7 = 2732;
                 }
@@ -912,22 +1121,24 @@ extern "C"
 
     void HandlerElectroShotCharge(int a1, ServerFlow *a2, unsigned int *a3)
     {
-        HandlerParam_Message *v5;         // r6
-        HandlerParam_ChangeStatStage *v6; // r0
+        // HandlerParam_Message *v5;         // r6
+        // HandlerParam_ChangeStatStage *v6; // r0
 
         if ((int)a3 == BattleEventVar_GetValue(VAR_ATTACKING_MON))
         {
-            v5 = (HandlerParam_Message *)BattleHandler_PushWork(a2, EFFECT_MESSAGE, (int)a3);
-            BattleHandler_StrSetup(&v5->str, 2u, 866);
-            BattleHandler_AddArg(&v5->str, (int)a3);
-            BattleHandler_PopWork(a2, v5);
-            v6 = (HandlerParam_ChangeStatStage *)BattleHandler_PushWork(a2, EFFECT_CHANGESTATSTAGE, (int)a3);
-            v6->poke_cnt = 1;
-            v6->pokeID[0] = (int)a3;
-            v6->rankType = STATSTAGE_SPECIAL_ATTACK;
-            v6->rankVolume = 1;
-            v6->fMoveAnimation = 1;
-            BattleHandler_PopWork(a2, v6);
+            // v5 = (HandlerParam_Message *)BattleHandler_PushWork(a2, EFFECT_MESSAGE, (int)a3);
+            // BattleHandler_StrSetup(&v5->str, 2u, 866);
+            // BattleHandler_AddArg(&v5->str, (int)a3);
+            // BattleHandler_PopWork(a2, v5);
+            SendMessage(a2, (int)a3, (int)a3, 866, 0);
+            ChangeStats(a2, (int)a3, (int)a3, STATSTAGE_SPECIAL_ATTACK, 1, 1);
+            // v6 = (HandlerParam_ChangeStatStage *)BattleHandler_PushWork(a2, EFFECT_CHANGESTATSTAGE, (int)a3);
+            // v6->poke_cnt = 1;
+            // v6->pokeID[0] = (int)a3;
+            // v6->rankType = STATSTAGE_SPECIAL_ATTACK;
+            // v6->rankVolume = 1;
+            // v6->fMoveAnimation = 1;
+            // BattleHandler_PopWork(a2, v6);
         }
     }
 
@@ -993,22 +1204,24 @@ extern "C"
 
     void HandlerMeteorBeam(int a1, ServerFlow *a2, unsigned int *a3)
     {
-        HandlerParam_Message *v5;         // r6
-        HandlerParam_ChangeStatStage *v6; // r0
+        // HandlerParam_Message *v5;         // r6
+        // HandlerParam_ChangeStatStage *v6; // r0
 
         if ((int)a3 == BattleEventVar_GetValue(VAR_ATTACKING_MON))
         {
-            v5 = (HandlerParam_Message *)BattleHandler_PushWork(a2, EFFECT_MESSAGE, (int)a3);
-            BattleHandler_StrSetup(&v5->str, 2u, 863);
-            BattleHandler_AddArg(&v5->str, (int)a3);
-            BattleHandler_PopWork(a2, v5);
-            v6 = (HandlerParam_ChangeStatStage *)BattleHandler_PushWork(a2, EFFECT_CHANGESTATSTAGE, (int)a3);
-            v6->poke_cnt = 1;
-            v6->pokeID[0] = (int)a3;
-            v6->rankType = STATSTAGE_SPECIAL_ATTACK;
-            v6->rankVolume = 1;
-            v6->fMoveAnimation = 1;
-            BattleHandler_PopWork(a2, v6);
+            // v5 = (HandlerParam_Message *)BattleHandler_PushWork(a2, EFFECT_MESSAGE, (int)a3);
+            // BattleHandler_StrSetup(&v5->str, 2u, 863);
+            // BattleHandler_AddArg(&v5->str, (int)a3);
+            // BattleHandler_PopWork(a2, v5);
+            SendMessage(a2, (int)a3, (int)a3, 863, 0);
+            ChangeStats(a2, (int)a3, (int)a3, STATSTAGE_SPECIAL_ATTACK, 1, 1);
+            // v6 = (HandlerParam_ChangeStatStage *)BattleHandler_PushWork(a2, EFFECT_CHANGESTATSTAGE, (int)a3);
+            // v6->poke_cnt = 1;
+            // v6->pokeID[0] = (int)a3;
+            // v6->rankType = STATSTAGE_SPECIAL_ATTACK;
+            // v6->rankVolume = 1;
+            // v6->fMoveAnimation = 1;
+            // BattleHandler_PopWork(a2, v6);
         }
     }
 
@@ -1016,22 +1229,24 @@ extern "C"
     void HandlerSkyAttack(int a1, ServerFlow *a2, unsigned int *a3)
     {
         // k::Printf("\nAre we inside?\n");
-        HandlerParam_Message *v5;         // r6
-        HandlerParam_ChangeStatStage *v6; // r0
+        // HandlerParam_Message *v5;         // r6
+        // HandlerParam_ChangeStatStage *v6; // r0
 
         if ((int)a3 == BattleEventVar_GetValue(VAR_ATTACKING_MON))
         {
-            v5 = (HandlerParam_Message *)BattleHandler_PushWork(a2, EFFECT_MESSAGE, (int)a3);
-            BattleHandler_StrSetup(&v5->str, 2u, 550);
-            BattleHandler_AddArg(&v5->str, (int)a3);
-            BattleHandler_PopWork(a2, v5);
-            v6 = (HandlerParam_ChangeStatStage *)BattleHandler_PushWork(a2, EFFECT_CHANGESTATSTAGE, (int)a3);
-            v6->poke_cnt = 1;
-            v6->pokeID[0] = (int)a3;
-            v6->rankType = STATSTAGE_ATTACK;
-            v6->rankVolume = 1;
-            v6->fMoveAnimation = 1;
-            BattleHandler_PopWork(a2, v6);
+            // v5 = (HandlerParam_Message *)BattleHandler_PushWork(a2, EFFECT_MESSAGE, (int)a3);
+            // BattleHandler_StrSetup(&v5->str, 2u, 550);
+            // BattleHandler_AddArg(&v5->str, (int)a3);
+            // BattleHandler_PopWork(a2, v5);
+            SendMessage(a2, (int)a3, (int)a3, 550, 0);
+            ChangeStats(a2, (int)a3, (int)a3, STATSTAGE_ATTACK, 1, 1);
+            // v6 = (HandlerParam_ChangeStatStage *)BattleHandler_PushWork(a2, EFFECT_CHANGESTATSTAGE, (int)a3);
+            // v6->poke_cnt = 1;
+            // v6->pokeID[0] = (int)a3;
+            // v6->rankType = STATSTAGE_ATTACK;
+            // v6->rankVolume = 1;
+            // v6->fMoveAnimation = 1;
+            // BattleHandler_PopWork(a2, v6);
         }
     }
 
@@ -1211,9 +1426,9 @@ extern "C"
 
     void HandlerSwallowEnd(int a1, ServerFlow *a2, int a3, int *a4)
     {
-        BattleMon *PokeParam;     // r0
-        HandlerParam_Header *v8;  // r0
-        HandlerParam_Message *v7; // r4
+        BattleMon *PokeParam;    // r0
+        HandlerParam_Header *v8; // r0
+        // HandlerParam_Message *v7; // r4
         HandlerParam_ActivateItem *v9;
 
         u16 HeldItem;
@@ -1225,11 +1440,12 @@ extern "C"
 
             if (PML_ItemIsBerry(HeldItem))
             {
-                v7 = (HandlerParam_Message *)BattleHandler_PushWork(a2, EFFECT_MESSAGE, a3);
-                BattleHandler_StrSetup(&v7->str, 2u, 1159);
-                BattleHandler_AddArg(&v7->str, a3);
-                BattleHandler_AddArg(&v7->str, HeldItem);
-                BattleHandler_PopWork(a2, v7);
+                // v7 = (HandlerParam_Message *)BattleHandler_PushWork(a2, EFFECT_MESSAGE, a3);
+                // BattleHandler_StrSetup(&v7->str, 2u, 1159);
+                // BattleHandler_AddArg(&v7->str, a3);
+                // BattleHandler_AddArg(&v7->str, HeldItem);
+                // BattleHandler_PopWork(a2, v7);
+                SendMessage(a2, a3, a3, 1159, HeldItem);
 
                 v9 = (HandlerParam_ActivateItem *)BattleHandler_PushWork(a2, EFFECT_ACTIVATEITEM, a3);
                 v9->header.flags |= 0x1000000u;
@@ -1310,51 +1526,6 @@ extern "C"
 
 #pragma endregion
 
-#pragma region PivotMoves
-
-    void HandlerTeleportEffect(int a1, ServerFlow *a2, int a3)
-    {
-        HandlerParam_Message *v5; // r5
-        HandlerParam_Switch *v7;  // r0
-
-        if (a3 == BattleEventVar_GetValue(VAR_ATTACKING_MON) && Handler_GetFightEnableBenchPokeNum(a2, a3))
-        {
-            if (Handler_CheckReservedMemberChangeAction(a2))
-            {
-                v5 = (HandlerParam_Message *)BattleHandler_PushWork(a2, EFFECT_MESSAGE, a3);
-                BattleHandler_StrSetup(&v5->str, 2u, 767);
-                BattleHandler_AddArg(&v5->str, a3);
-                BattleHandler_PopWork(a2, v5);
-                v7 = (HandlerParam_Switch *)BattleHandler_PushWork(a2, EFFECT_SWITCH, a3);
-                v7->pokeID = a3;
-                v7->fIntrDisable = 1;
-                BattleHandler_PopWork(a2, v7);
-            }
-        }
-    }
-
-    MOVE_TRIGGERTABLE TeleportHandlers[] = {
-        {EVENT_UNCATEGORIZED_MOVE, (MOVE_HANDLER_FUNC)HandlerTeleportEffect},
-    };
-
-    MOVE_TRIGGERTABLE PartingShotHandlers[] = {
-        {EVENT_DAMAGE_PROCESSING_END_HIT_3, (MOVE_HANDLER_FUNC)HandlerUturn},
-    };
-
-    MOVE_TRIGGERTABLE *THUMB_BRANCH_EventAddTeleport(_DWORD *a1)
-    {
-        *a1 = 1;
-        return TeleportHandlers;
-    }
-
-    MOVE_TRIGGERTABLE *THUMB_BRANCH_EventAddLockOn(_DWORD *a1)
-    {
-        *a1 = 1;
-        return PartingShotHandlers;
-    }
-
-#pragma endregion
-
 #pragma region ProtectMoves
 
     MoveID NEW_PROTECT_COUNTER_MOVES[9] = {
@@ -1375,7 +1546,7 @@ extern "C"
             v7 = 0;
             while (PreviousMoveID != NEW_PROTECT_COUNTER_MOVES[v7])
             {
-                if (++v7 >= 7)
+                if (++v7 >= 9)
                 {
                     v8 = (HandlerParam_SetCounter *)BattleHandler_PushWork(a2, EFFECT_COUNTER, (int)a3);
                     v8->pokeID = (int)a3;
@@ -1429,27 +1600,29 @@ extern "C"
 
     void HandlerHowlIncreaseStats(int a1, ServerFlow *a2, unsigned int a3)
     {
-        HandlerParam_ChangeStatStage *atkBoost;
-        HandlerParam_ChangeStatStage *spABoost;
+        // HandlerParam_ChangeStatStage *atkBoost;
+        // HandlerParam_ChangeStatStage *spABoost;
         HandlerParam_Message *message;
         int i;
         i = 0;
         if ((int)a3 == BattleEventVar_GetValue(VAR_ATTACKING_MON))
         {
-            atkBoost = (HandlerParam_ChangeStatStage *)BattleHandler_PushWork(a2, EFFECT_CHANGESTATSTAGE, a3);
-            atkBoost->poke_cnt = 1;
-            atkBoost->pokeID[0] = a3;
-            atkBoost->rankType = STATSTAGE_ATTACK;
-            atkBoost->rankVolume = 1;
-            atkBoost->fMoveAnimation = 1;
-            BattleHandler_PopWork(a2, atkBoost);
-            spABoost = (HandlerParam_ChangeStatStage *)BattleHandler_PushWork(a2, EFFECT_CHANGESTATSTAGE, a3);
-            spABoost->poke_cnt = 1;
-            spABoost->pokeID[0] = a3;
-            spABoost->rankType = STATSTAGE_SPECIAL_ATTACK;
-            spABoost->rankVolume = 1;
-            spABoost->fMoveAnimation = 1;
-            BattleHandler_PopWork(a2, spABoost);
+            ChangeStats(a2, (int)a3, (int)a3, STATSTAGE_ATTACK, 1, 1);
+            ChangeStats(a2, (int)a3, (int)a3, STATSTAGE_SPECIAL_ATTACK, 1, 1);
+            // atkBoost = (HandlerParam_ChangeStatStage *)BattleHandler_PushWork(a2, EFFECT_CHANGESTATSTAGE, a3);
+            // atkBoost->poke_cnt = 1;
+            // atkBoost->pokeID[0] = a3;
+            // atkBoost->rankType = STATSTAGE_ATTACK;
+            // atkBoost->rankVolume = 1;
+            // atkBoost->fMoveAnimation = 1;
+            // BattleHandler_PopWork(a2, atkBoost);
+            // spABoost = (HandlerParam_ChangeStatStage *)BattleHandler_PushWork(a2, EFFECT_CHANGESTATSTAGE, a3);
+            // spABoost->poke_cnt = 1;
+            // spABoost->pokeID[0] = a3;
+            // spABoost->rankType = STATSTAGE_SPECIAL_ATTACK;
+            // spABoost->rankVolume = 1;
+            // spABoost->fMoveAnimation = 1;
+            // BattleHandler_PopWork(a2, spABoost);
             u8 *TempWork;              // r4
             unsigned int NumTargets;   // r5
             __int16 ExistFrontPokePos; // [sp+0h] [bp-18h]
@@ -1460,24 +1633,28 @@ extern "C"
             NumTargets = Handler_ExpandPokeID(a2, ExistFrontPokePos | 0x400, TempWork);
             while (i < NumTargets)
             {
-                message = (HandlerParam_Message *)BattleHandler_PushWork(a2, EFFECT_MESSAGE, a3);
-                BattleHandler_StrSetup(&message->str, 2u, 1231);
-                BattleHandler_AddArg(&message->str, TempWork[i]);
-                BattleHandler_PopWork(a2, message);
-                atkBoost = (HandlerParam_ChangeStatStage *)BattleHandler_PushWork(a2, EFFECT_CHANGESTATSTAGE, a3);
-                atkBoost->poke_cnt = 1;
-                atkBoost->pokeID[0] = TempWork[i];
-                atkBoost->rankType = STATSTAGE_ATTACK;
-                atkBoost->rankVolume = 1;
-                atkBoost->fMoveAnimation = 1;
-                BattleHandler_PopWork(a2, atkBoost);
-                spABoost = (HandlerParam_ChangeStatStage *)BattleHandler_PushWork(a2, EFFECT_CHANGESTATSTAGE, a3);
-                spABoost->poke_cnt = 1;
-                spABoost->pokeID[0] = TempWork[i];
-                spABoost->rankType = STATSTAGE_SPECIAL_ATTACK;
-                spABoost->rankVolume = 1;
-                spABoost->fMoveAnimation = 1;
-                BattleHandler_PopWork(a2, spABoost);
+                // message = (HandlerParam_Message *)BattleHandler_PushWork(a2, EFFECT_MESSAGE, a3);
+                // BattleHandler_StrSetup(&message->str, 2u, 1231);
+                // BattleHandler_AddArg(&message->str, TempWork[i]);
+                // BattleHandler_PopWork(a2, message);
+                SendMessage(a2, (int)a3, TempWork[i], 1231, 0);
+                ChangeStats(a2, (int)a3, TempWork[i], STATSTAGE_ATTACK, 1, 1);
+                ChangeStats(a2, (int)a3, TempWork[i], STATSTAGE_SPECIAL_ATTACK, 1, 1);
+
+                // atkBoost = (HandlerParam_ChangeStatStage *)BattleHandler_PushWork(a2, EFFECT_CHANGESTATSTAGE, a3);
+                // atkBoost->poke_cnt = 1;
+                // atkBoost->pokeID[0] = TempWork[i];
+                // atkBoost->rankType = STATSTAGE_ATTACK;
+                // atkBoost->rankVolume = 1;
+                // atkBoost->fMoveAnimation = 1;
+                // BattleHandler_PopWork(a2, atkBoost);
+                // spABoost = (HandlerParam_ChangeStatStage *)BattleHandler_PushWork(a2, EFFECT_CHANGESTATSTAGE, a3);
+                // spABoost->poke_cnt = 1;
+                // spABoost->pokeID[0] = TempWork[i];
+                // spABoost->rankType = STATSTAGE_SPECIAL_ATTACK;
+                // spABoost->rankVolume = 1;
+                // spABoost->fMoveAnimation = 1;
+                // BattleHandler_PopWork(a2, spABoost);
                 i++;
             }
         }
@@ -1626,17 +1803,18 @@ extern "C"
         int Value;                  // r6
         BattleMon *BattleMon;       // r7
         HandlerParam_RecoverHP *v9; // r5
-        HandlerParam_Message *message;
+        // HandlerParam_Message *message;
         if ((int)a3 == BattleEventVar_GetValue(VAR_ATTACKING_MON) && *a4)
         {
             Value = BattleEventVar_GetValue(VAR_DEFENDING_MON);
             BattleMon = Handler_GetBattleMon(a2, Value);
             if (BattleMon_IsFullHP(BattleMon))
             {
-                message = (HandlerParam_Message *)BattleHandler_PushWork(a2, EFFECT_MESSAGE, (int)a3);
-                BattleHandler_StrSetup(&message->str, 2u, 210);
-                BattleHandler_AddArg(&message->str, Value);
-                BattleHandler_PopWork(a2, message);
+                SendMessage(a2, (int)a3, Value, 210, 0);
+                // message = (HandlerParam_Message *)BattleHandler_PushWork(a2, EFFECT_MESSAGE, (int)a3);
+                // BattleHandler_StrSetup(&message->str, 2u, 210);
+                // BattleHandler_AddArg(&message->str, Value);
+                // BattleHandler_PopWork(a2, message);
             }
             else
             {
@@ -1670,19 +1848,20 @@ extern "C"
     {
 
         BattleMon *mon;
-        HandlerParam_ChangeStatStage *speedBoost;
+        // HandlerParam_ChangeStatStage *speedBoost;
 
         if (a3 == BattleEventVar_GetValue(VAR_MON_ID))
         {
             if (BattleMon_IsStatChangeValid(Handler_GetBattleMon(a2, a3), VALUE_SPEED_STAGE, 1))
             {
-                speedBoost = (HandlerParam_ChangeStatStage *)BattleHandler_PushWork(a2, EFFECT_CHANGESTATSTAGE, (int)a3);
-                speedBoost->poke_cnt = 1;
-                speedBoost->pokeID[0] = a3;
-                speedBoost->rankType = STATSTAGE_SPEED;
-                speedBoost->rankVolume = 1;
-                speedBoost->fMoveAnimation = 1;
-                BattleHandler_PopWork(a2, speedBoost);
+                ChangeStats(a2, a3, a3, STATSTAGE_SPEED, 1, 1);
+                // speedBoost = (HandlerParam_ChangeStatStage *)BattleHandler_PushWork(a2, EFFECT_CHANGESTATSTAGE, (int)a3);
+                // speedBoost->poke_cnt = 1;
+                // speedBoost->pokeID[0] = a3;
+                // speedBoost->rankType = STATSTAGE_SPEED;
+                // speedBoost->rankVolume = 1;
+                // speedBoost->fMoveAnimation = 1;
+                // BattleHandler_PopWork(a2, speedBoost);
             }
         }
     }
@@ -1705,7 +1884,7 @@ extern "C"
     {
 
         BattleMon *mon;
-        HandlerParam_Message *message;
+        // HandlerParam_Message *message;
 
         if (a3 == BattleEventVar_GetValue(VAR_ATTACKING_MON))
         {
@@ -1713,10 +1892,11 @@ extern "C"
 
             if (!BattleMon_GetTurnFlag(mon, TURNFLAG_MOVEFAILED))
             {
-                message = (HandlerParam_Message *)BattleHandler_PushWork(a2, EFFECT_MESSAGE, (int)a3);
-                BattleHandler_StrSetup(&message->str, 2u, 1249);
-                BattleHandler_AddArg(&message->str, a3);
-                BattleHandler_PopWork(a2, message);
+                SendMessage(a2, (int)a3, (int)a3, 1249, 0);
+                // message = (HandlerParam_Message *)BattleHandler_PushWork(a2, EFFECT_MESSAGE, (int)a3);
+                // BattleHandler_StrSetup(&message->str, 2u, 1249);
+                // BattleHandler_AddArg(&message->str, a3);
+                // BattleHandler_PopWork(a2, message);
             }
         }
     }
@@ -1738,8 +1918,8 @@ extern "C"
     {
 
         BattleMon *mon;
-        HandlerParam_ChangeStatStage *defense;
-        HandlerParam_ChangeStatStage *speed;
+        // HandlerParam_ChangeStatStage *defense;
+        // HandlerParam_ChangeStatStage *speed;
 
         if (a3 == BattleEventVar_GetValue(VAR_ATTACKING_MON))
         {
@@ -1747,20 +1927,22 @@ extern "C"
 
             if (BattleMon_IsStatChangeValid(mon, VALUE_DEFENSE_STAGE, -1) || BattleMon_IsStatChangeValid(mon, VALUE_SPEED_STAGE, 1))
             {
-                defense = (HandlerParam_ChangeStatStage *)BattleHandler_PushWork(a2, EFFECT_CHANGESTATSTAGE, a3);
-                defense->poke_cnt = 1;
-                defense->pokeID[0] = a3;
-                defense->fMoveAnimation = 1;
-                defense->rankType = STATSTAGE_DEFENSE;
-                defense->rankVolume = -1;
-                BattleHandler_PopWork(a2, defense);
-                speed = (HandlerParam_ChangeStatStage *)BattleHandler_PushWork(a2, EFFECT_CHANGESTATSTAGE, a3);
-                speed->poke_cnt = 1;
-                speed->pokeID[0] = a3;
-                speed->fMoveAnimation = 1;
-                speed->rankType = STATSTAGE_SPEED;
-                speed->rankVolume = 1;
-                BattleHandler_PopWork(a2, speed);
+                ChangeStats(a2, a3, a3, STATSTAGE_DEFENSE, -1, 1);
+                ChangeStats(a2, a3, a3, STATSTAGE_SPEED, 1, 1);
+                // defense = (HandlerParam_ChangeStatStage *)BattleHandler_PushWork(a2, EFFECT_CHANGESTATSTAGE, a3);
+                // defense->poke_cnt = 1;
+                // defense->pokeID[0] = a3;
+                // defense->fMoveAnimation = 1;
+                // defense->rankType = STATSTAGE_DEFENSE;
+                // defense->rankVolume = -1;
+                // BattleHandler_PopWork(a2, defense);
+                // speed = (HandlerParam_ChangeStatStage *)BattleHandler_PushWork(a2, EFFECT_CHANGESTATSTAGE, a3);
+                // speed->poke_cnt = 1;
+                // speed->pokeID[0] = a3;
+                // speed->fMoveAnimation = 1;
+                // speed->rankType = STATSTAGE_SPEED;
+                // speed->rankVolume = 1;
+                // BattleHandler_PopWork(a2, speed);
             }
         }
     }
@@ -1832,30 +2014,35 @@ extern "C"
     void HandlerOverheatRecharge(int a1, ServerFlow *a2, int a3)
     {
         BattleMon *mon;
-        HandlerParam_Message *message;
+        // HandlerParam_Message *message;
         int MoveID;
+        int MessageId;
         if (a3 == BattleEventVar_GetValue(VAR_MON_ID))
         {
             mon = Handler_GetBattleMon(a2, a3);
             MoveID = BattleEventVar_GetValue(VAR_MOVE_ID);
             if (!BattleMon_GetTurnFlag(mon, TURNFLAG_MOVEFAILED))
             {
-                message = (HandlerParam_Message *)BattleHandler_PushWork(a2, EFFECT_MESSAGE, (int)a3);
+                // message = (HandlerParam_Message *)BattleHandler_PushWork(a2, EFFECT_MESSAGE, (int)a3);
 
                 if (MoveID == MOVE315_OVERHEAT)
                 {
-                    BattleHandler_StrSetup(&message->str, 2u, 1252);
+                    MessageId = 1252;
+                    // BattleHandler_StrSetup(&message->str, 2u, 1252);
                 }
                 else if (MoveID == MOVE434_DRACO_METEOR || MoveID == MOVE437_LEAF_STORM)
                 {
-                    BattleHandler_StrSetup(&message->str, 2u, 1267);
+                    MessageId = 1267;
+                    // BattleHandler_StrSetup(&message->str, 2u, 1267);
                 }
                 else
                 {
-                    BattleHandler_StrSetup(&message->str, 2u, 1255);
+                    MessageId = 1255;
+                    // BattleHandler_StrSetup(&message->str, 2u, 1255);
                 }
-                BattleHandler_AddArg(&message->str, a3);
-                BattleHandler_PopWork(a2, message);
+                SendMessage(a2, (int)a3, (int)a3, MessageId, 0);
+                // BattleHandler_AddArg(&message->str, a3);
+                // BattleHandler_PopWork(a2, message);
             }
         }
     }
@@ -1929,7 +2116,7 @@ extern "C"
 
 #pragma endregion
 
-#pragma region ImpossibeMoves
+#pragma region ImpossibleMoves
 
     int THUMB_BRANCH_IsUnselectableMove(BtlClientWk *a1, BattleMon *a2, int move, Btlv_StringParam *strparam)
     {
@@ -2194,7 +2381,7 @@ extern "C"
         unsigned int Value; // r6
         int v8[6];          // [sp+0h] [bp-18h] BYREF
         BattleMon *attacker;
-        HandlerParam_Message *message;
+        // HandlerParam_Message *message;
         int messageId;
         v8[1] = a4;
 
@@ -2234,10 +2421,11 @@ extern "C"
                         {
                             messageId = 1285;
                         }
-                        message = (HandlerParam_Message *)BattleHandler_PushWork(a2, EFFECT_MESSAGE, (int)a3);
-                        BattleHandler_StrSetup(&message->str, 2u, messageId);
-                        BattleHandler_AddArg(&message->str, Value);
-                        BattleHandler_PopWork(a2, message);
+                        SendMessage(a2, (int)a3, Value, messageId, 0);
+                        // message = (HandlerParam_Message *)BattleHandler_PushWork(a2, EFFECT_MESSAGE, (int)a3);
+                        // BattleHandler_StrSetup(&message->str, 2u, messageId);
+                        // BattleHandler_AddArg(&message->str, Value);
+                        // BattleHandler_PopWork(a2, message);
                         return Handler_AddSwitchOutInterrupt((int)a2, a3);
                     }
                 }

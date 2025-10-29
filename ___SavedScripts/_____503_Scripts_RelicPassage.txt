@@ -1,0 +1,131 @@
+import messages.script.Msg0375.MSGID;
+
+import Base;
+import event.EVCamera;
+import event.StaticProp;
+import event.actors.Actor;
+import event.actors.Player;
+import event.app.AppCall;
+import event.dialogs.ListMenu;
+import event.dialogs.Message;
+import event.dialogs.YesNoWin;
+import event.funfest.Funfest;
+import player.Bag;
+import pokescript.vm.Math;
+import pokescript.vm.StackCtrl;
+import pokescript.vm.VM;
+import system.EventFlags;
+import system.EventWorks;
+import system.Fade;
+import system.Field;
+import system.Game;
+import system.Input;
+import system.RTC;
+import system.Runtime;
+import system.Sound;
+import system.text.WordSet;
+
+public class MainEvents {
+	public static void main_1() { // @ 0x6
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Message.System(0, 1);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		EventWorks.Set(16735, 1);
+		Actor.UnpauseAll();
+	}
+
+    public static void main_2() {
+         int v5;
+        int v10;
+        int v0;
+        int v4;
+
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Sound.PVPlay(511, 0);
+
+        if (EventFlags.Get(530)){
+            Message.Actor(1024, 13, 2, 0);
+			Input.LastKeyWait();
+			Message.CloseAll();
+			v5 = 1;
+			goto LABEL_EXOTICSTONE;
+        }
+		Message.Actor(1024, 9, 2, 0);
+		Sound.PVWait();
+		Input.LastKeyWait();
+        v5 = 0;
+		
+		LABEL_EXOTICSTONE:
+		if (v5 == 0) {
+			ListMenu.InitRightAnchor(31, 5, 0, 1, v4);
+			ListMenu.AddItem(1, 65535, 0);
+			ListMenu.AddItem(2, 65535, 1);
+			ListMenu.AddItem(3, 65535, 2);
+			ListMenu.AddItem(4, 65535, 3);
+            ListMenu.AddItem(5, 65535, 4);
+            ListMenu.AddItem(6, 65535, 5);
+            ListMenu.AddItem(7, 65535, 6);
+			ListMenu.ShowDialog();
+
+            if (v4 == 6){
+                Message.Actor(1024, 8, 2, 0);
+			    Input.LastKeyWait();
+			    Message.CloseAll();
+			    v5 = 1;
+			    goto LABEL_EXOTICSTONE;
+            }
+            else if (v4 < 7 && v4 >= 0) {
+                if (v4 == 0){
+                    v10 = 82;
+                }
+                if (v4 == 1){
+                    v10 = 84;
+                }
+                if (v4 == 2){
+                    v10 = 85;
+                }
+                if (v4 == 3){
+                    v10 = 84;
+                }
+                if (v4 == 4){
+                    v10 = 81;
+                }
+                if (v4 == 5){
+                    v10 = 80;
+                }
+                WordSet.LoadItemName(0, v10);
+                Message.Actor(1024, 10, 2, 0);
+			    v0 = YesNoWin.Show();
+				if (v0 == 0) {
+					Message.Actor(1024, 12, 2, 0);
+					Message.CloseAll();
+					Global2805(v10, 1);
+					EventFlags.Set(530);
+					Message.Actor(1024, 13, 2, 0);
+					Input.LastKeyWait();
+					Message.CloseAll();
+					v5 = 1;
+					goto LABEL_EXOTICSTONE;
+				}
+                Message.Actor(1024, 11, 2, 0);
+				goto LABEL_EXOTICSTONE;
+            } else {
+                 Message.Actor(1024, 8, 2, 0);
+			    Input.LastKeyWait();
+			    Message.CloseAll();
+			    v5 = 1;
+			    goto LABEL_EXOTICSTONE;
+            }
+		}
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
+
+    static meta void Global2805(int a1, int a2) : VGlobalCall[2805];
+}

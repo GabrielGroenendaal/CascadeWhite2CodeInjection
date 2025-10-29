@@ -275,61 +275,61 @@ extern "C"
     //     switchout[pokemonSlot] = 0;
     // }
 
-    // void HandlerEjectPackStatCheck(BattleEventItem *item, ServerFlow *serverFlow, u32 pokemonSlot, u32 *work)
-    // {
+    void HandlerEjectPackStatCheck(BattleEventItem *item, ServerFlow *serverFlow, u32 pokemonSlot, u32 *work)
+    {
         
-    //     k::Printf("\n\n====HandlerEjectPackStatCheck=====\nThe Pokemon Slot is %d\nThe VAR Mon ID is %d\nThe work is %d\nThe volume is %d\nThe flowResult is %d", pokemonSlot, BattleEventVar_GetValue(VAR_MON_ID), work[0], BattleEventVar_GetValue(VAR_VOLUME), serverFlow->flowResult);
-    //     if (pokemonSlot == BattleEventVar_GetValue(VAR_MON_ID) && BattleEventVar_GetValue(VAR_VOLUME) < 0)
-    //     {
-    //         k::Printf("\nRESULT: The Eject Pack Should Trigger\n\n");
-    //         switchout[pokemonSlot] = 1;
-    //         //work[0] = 1;
-    //     }
-    // }
+        //k::Printf("\n\n====HandlerEjectPackStatCheck=====\nThe Pokemon Slot is %d\nThe VAR Mon ID is %d\nThe work is %d\nThe volume is %d\nThe flowResult is %d", pokemonSlot, BattleEventVar_GetValue(VAR_MON_ID), work[0], BattleEventVar_GetValue(VAR_VOLUME), serverFlow->flowResult);
+        if (pokemonSlot == BattleEventVar_GetValue(VAR_MON_ID) && BattleEventVar_GetValue(VAR_VOLUME) < 0)
+        {
+            //k::Printf("\nRESULT: The Eject Pack Should Trigger\n\n");
+            //switchout[pokemonSlot] = 1;
+            work[0] = 1;
+        }
+    }
 
-    // void HandlerEjectPackActionEnd(BattleEventItem *item, ServerFlow *serverFlow, u32 pokemonSlot, u32 *work)
-    // {
-    //     k::Printf("\n\n====HandlerEjectPackActionEnd=====\nThe Pokemon Slot is %d\nThe VAR Mon ID is %d\nThe work is %d", pokemonSlot, BattleEventVar_GetValue(VAR_MON_ID), work[0]);
-    //     if (switchout[pokemonSlot] == 1)
-    //     {
-    //         k::Printf("\nRESULT: The Eject Pack Should Trigger\n\n");
-    //         switchout[pokemonSlot] = 0;
+    void HandlerEjectPackActionEnd(BattleEventItem *item, ServerFlow *serverFlow, u32 pokemonSlot, u32 *work)
+    {
+        //k::Printf("\n\n====HandlerEjectPackActionEnd=====\nThe Pokemon Slot is %d\nThe VAR Mon ID is %d\nThe work is %d", pokemonSlot, BattleEventVar_GetValue(VAR_MON_ID), work[0]);
+        if (work[0] == 1)
+        {
+            //k::Printf("\nRESULT: The Eject Pack Should Trigger\n\n");
+            work[0] = 0;
             
-    //         if (Handler_GetFightEnableBenchPokeNum(serverFlow, pokemonSlot) && Handler_CheckReservedMemberChangeAction(serverFlow))
-    //         {
-    //             k::Printf("\nUSE THE ITEM USE THE ITEM\n\n");
-    //             ItemEvent_PushRun(item, serverFlow, pokemonSlot);
-    //         }
-    //     }
-    // }
+            if (Handler_GetFightEnableBenchPokeNum(serverFlow, pokemonSlot) && Handler_CheckReservedMemberChangeAction(serverFlow))
+            {
+                //k::Printf("\nUSE THE ITEM USE THE ITEM\n\n");
+                ItemEvent_PushRun(item, serverFlow, pokemonSlot);
+            }
+        }
+    }
 
-    // void HandlerEjectPackUse(BattleEventItem *item, ServerFlow *serverFlow, u32 pokemonSlot, u32 *work)
-    // {
-    //     k::Printf("\n\n====HandlerEjectPackUse=====\nThe Pokemon Slot is %d\nThe VAR Mon ID is %d\nThe work is %d", pokemonSlot, BattleEventVar_GetValue(VAR_MON_ID), work[0]);
+    void HandlerEjectPackUse(BattleEventItem *item, ServerFlow *serverFlow, u32 pokemonSlot, u32 *work)
+    {
+        //k::Printf("\n\n====HandlerEjectPackUse=====\nThe Pokemon Slot is %d\nThe VAR Mon ID is %d\nThe work is %d", pokemonSlot, BattleEventVar_GetValue(VAR_MON_ID), work[0]);
 
-    //     if (pokemonSlot == BattleEventVar_GetValue(VAR_MON_ID))
-    //     {
-    //         k::Printf("\nRESULT: The Eject Button has triggered\n\n");
+        if (pokemonSlot == BattleEventVar_GetValue(VAR_MON_ID))
+        {
+            //k::Printf("\nRESULT: The Eject Button has triggered\n\n");
 
-    //         HandlerParam_Switch *switchOut;
-    //         switchOut = (HandlerParam_Switch *)BattleHandler_PushWork(serverFlow, EFFECT_SWITCH, pokemonSlot);
-    //         switchOut->pokeID = pokemonSlot;
-    //         BattleHandler_PopWork(serverFlow, switchOut);
-    //     }
-    // }
+            HandlerParam_Switch *switchOut;
+            switchOut = (HandlerParam_Switch *)BattleHandler_PushWork(serverFlow, EFFECT_SWITCH, pokemonSlot);
+            switchOut->pokeID = pokemonSlot;
+            BattleHandler_PopWork(serverFlow, switchOut);
+        }
+    }
 
-    // ITEM_TRIGGERTABLE EjectPackHandlers[] = {
-    //     {EVENT_BEFORE_ATTACKS, (ITEM_HANDLER_FUNC)HandlerEjectPackReset},
-    //     {EVENT_STAT_STAGE_CHANGE_APPLIED, (ITEM_HANDLER_FUNC)HandlerEjectPackStatCheck},
-    //     {EVENT_ACTION_PROCESSING_END, (ITEM_HANDLER_FUNC)HandlerEjectPackActionEnd},
-    //     //{EVENT_AFTER_LAST_SWITCHIN, (ITEM_HANDLER_FUNC)HandlerEjectPackActionEnd},
-    //     {EVENT_USE_ITEM, (ITEM_HANDLER_FUNC)HandlerEjectPackUse},
-    // };
-    // ITEM_TRIGGERTABLE *THUMB_BRANCH_EventAddFloatStone(u32 *handlerAmount)
-    // {
-    //     *handlerAmount = 4;
-    //     return EjectPackHandlers;
-    // }
+    ITEM_TRIGGERTABLE EjectPackHandlers[] = {
+        //{EVENT_BEFORE_ATTACKS, (ITEM_HANDLER_FUNC)HandlerEjectPackReset},
+        {EVENT_STAT_STAGE_CHANGE_APPLIED, (ITEM_HANDLER_FUNC)HandlerEjectPackStatCheck},
+        {EVENT_ACTION_PROCESSING_END, (ITEM_HANDLER_FUNC)HandlerEjectPackActionEnd},
+        //{EVENT_AFTER_LAST_SWITCHIN, (ITEM_HANDLER_FUNC)HandlerEjectPackActionEnd},
+        {EVENT_USE_ITEM, (ITEM_HANDLER_FUNC)HandlerEjectPackUse},
+    };
+    ITEM_TRIGGERTABLE *THUMB_BRANCH_EventAddFloatStone(u32 *handlerAmount)
+    {
+        *handlerAmount = 3;
+        return EjectPackHandlers;
+    }
 
 #pragma endregion
 
@@ -359,234 +359,7 @@ extern "C"
         return ProtectiveGearHandlers;
     }
 
-    void HandlerSolarBeamPowerNew(int a1, int a2, int a3)
-    {
-        BattleMon *attackingMon;
-        if (a3 == BattleEventVar_GetValue(VAR_ATTACKING_MON))
-        {
-            attackingMon = Handler_GetBattleMon((ServerFlow *)a2, a3);
-
-            if (BattleMon_GetValue(attackingMon, VALUE_EFFECTIVE_ABILITY) != 34 && BattleMon_GetValue(attackingMon, VALUE_EFFECTIVE_ABILITY) != 94 && BattleMon_GetValue(attackingMon, VALUE_EFFECTIVE_ABILITY) != 122 && (Handler_GetWeather(a2) - 2) <= 2u)
-            {
-                BattleEventVar_MulValue(VAR_MOVE_POWER_RATIO, 2048);
-            }
-        }
-    }
-
-    int HandlerSolarBeamSunCheckNew(int a1, int a2, int a3)
-    {
-        int result; // r0
-        BattleMon *attackingMon;
-
-        if (a3 == BattleEventVar_GetValue(VAR_ATTACKING_MON))
-        {
-            attackingMon = Handler_GetBattleMon((ServerFlow *)a2, a3);
-
-            if (Handler_GetWeather(a2) == 1 || BattleMon_GetValue(attackingMon, VALUE_EFFECTIVE_ABILITY) == 34 || BattleMon_GetValue(attackingMon, VALUE_EFFECTIVE_ABILITY) == 94 || BattleMon_GetValue(attackingMon, VALUE_EFFECTIVE_ABILITY) == 122)
-            {
-                if (BattleMon_GetValue(attackingMon, VALUE_EFFECTIVE_ABILITY) != ABIL142_OVERCOAT && attackingMon->HeldItem != IT0544_UTILITY_UMBRELLA)
-                {
-                    return BattleEventVar_RewriteValue(VAR_GENERAL_USE_FLAG, 1);
-                }
-            }
-        }
-        return result;
-    }
-
-    int HandlerGrowthNew(int a1, int a2, int a3)
-    {
-        int result; // r0
-        int Value;  // r1
-        BattleMon *attackingMon;
-
-        if (a3 == BattleEventVar_GetValue(VAR_ATTACKING_MON))
-        {
-            attackingMon = Handler_GetBattleMon((ServerFlow *)a2, a3);
-            result = Handler_GetWeather(a2);
-            if (result == 1 || BattleMon_GetValue(attackingMon, VALUE_EFFECTIVE_ABILITY) == 34 || BattleMon_GetValue(attackingMon, VALUE_EFFECTIVE_ABILITY) == 94 || BattleMon_GetValue(attackingMon, VALUE_EFFECTIVE_ABILITY) == 122)
-            {
-                if (BattleMon_GetValue(attackingMon, VALUE_EFFECTIVE_ABILITY) != ABIL142_OVERCOAT && attackingMon->HeldItem != IT0544_UTILITY_UMBRELLA)
-                {
-                    Value = BattleEventVar_GetValue(VAR_VOLUME);
-                    if (Value == 1)
-                    {
-                        Value = 2;
-                    }
-                    return BattleEventVar_RewriteValue(VAR_VOLUME, Value);
-                }
-            }
-        }
-        return result;
-    }
-
-    int HandlerSynthesis(int a1, int a2, int a3)
-    {
-        int result;           // r0
-        unsigned int Weather; // r0
-        int v7;               // r1
-        BattleMon *attackingMon;
-
-        result = BattleEventVar_GetValue(VAR_MON_ID);
-        if (a3 == BattleEventVar_GetValue(VAR_MON_ID))
-        {
-            attackingMon = Handler_GetBattleMon((ServerFlow *)a2, a3);
-            Weather = Handler_GetWeather(a2);
-
-            if (Weather == 1 || BattleMon_GetValue(attackingMon, VALUE_EFFECTIVE_ABILITY) == 34 || BattleMon_GetValue(attackingMon, VALUE_EFFECTIVE_ABILITY) == 94 || BattleMon_GetValue(attackingMon, VALUE_EFFECTIVE_ABILITY) == 122)
-            {
-                if (BattleMon_GetValue(attackingMon, VALUE_EFFECTIVE_ABILITY) != ABIL142_OVERCOAT && attackingMon->HeldItem != IT0544_UTILITY_UMBRELLA)
-                {
-                    v7 = 2732;
-                }
-            }
-            else if (Weather == 2 || Weather == 3 || Weather == 4)
-            {
-                v7 = 1024;
-            }
-            else
-            {
-                v7 = 2048;
-            }
-            return BattleEventVar_RewriteValue(VAR_RATIO, v7);
-        }
-        return result;
-    }
-    typedef struct
-    {
-        BattleEventType triggerValue;
-        MOVE_HANDLER_FUNC function;
-    } MOVE_TRIGGERTABLE;
-    MOVE_TRIGGERTABLE SolarBeamHandlers[] = {
-        {EVENT_CHECK_CHARGE_UP_SKIP, (MOVE_HANDLER_FUNC)HandlerSolarBeamSunCheckNew},
-        {EVENT_CHARGE_UP_START, (MOVE_HANDLER_FUNC)HandlerSolarBeamCharge},
-        {EVENT_MOVE_POWER, (MOVE_HANDLER_FUNC)HandlerSolarBeamPowerNew}};
-
-    MOVE_TRIGGERTABLE SynthesisHandlers[] = {
-        {EVENT_RECOVER_HP, (MOVE_HANDLER_FUNC)HandlerSynthesis},
-    };
-
-    MOVE_TRIGGERTABLE GrowthHandlers[] = {
-        {EVENT_GET_STAT_STAGE_CHANGE_VALUE, (MOVE_HANDLER_FUNC)HandlerGrowthNew},
-    };
-
-    MOVE_TRIGGERTABLE *THUMB_BRANCH_EventAddSolarBeam(_DWORD *a1)
-    {
-        *a1 = 3;
-        return SolarBeamHandlers;
-    }
-
-    MOVE_TRIGGERTABLE *THUMB_BRANCH_EventAddSynthesis(_DWORD *a1)
-    {
-        *a1 = 1;
-        return SynthesisHandlers;
-    }
-
-    MOVE_TRIGGERTABLE *THUMB_BRANCH_EventAddGrowth(_DWORD *a1)
-    {
-        *a1 = 1;
-        return GrowthHandlers;
-    }
-
-    /*
-
-        --------------------------------------------------------------------------------------------------
-        ------------------------------------ ELECTRO SHOT ------------------------------------------------
-        --------------------------------------------------------------------------------------------------
-
-    */
-
-    int HandlerElectroShotRain(int a1, int a2, int a3)
-    {
-        int result; // r0
-
-        result = BattleEventVar_GetValue(VAR_ATTACKING_MON);
-        if (a3 == result)
-        {
-            result = Handler_GetWeather(a2);
-            if (result == 2)
-            {
-                return BattleEventVar_RewriteValue(VAR_GENERAL_USE_FLAG, 1);
-            }
-        }
-        return result;
-    }
-
-    void HandlerElectroShotCharge(int a1, ServerFlow *a2, unsigned int *a3)
-    {
-        HandlerParam_Message *v5;         // r6
-        HandlerParam_ChangeStatStage *v6; // r0
-
-        if ((int)a3 == BattleEventVar_GetValue(VAR_ATTACKING_MON))
-        {
-            v5 = (HandlerParam_Message *)BattleHandler_PushWork(a2, EFFECT_MESSAGE, (int)a3);
-            BattleHandler_StrSetup(&v5->str, 2u, 866);
-            BattleHandler_AddArg(&v5->str, (int)a3);
-            BattleHandler_PopWork(a2, v5);
-            v6 = (HandlerParam_ChangeStatStage *)BattleHandler_PushWork(a2, EFFECT_CHANGESTATSTAGE, (int)a3);
-            v6->poke_cnt = 1;
-            v6->pokeID[0] = (int)a3;
-            v6->rankType = STATSTAGE_SPECIAL_ATTACK;
-            v6->rankVolume = 1;
-            v6->fMoveAnimation = 1;
-            BattleHandler_PopWork(a2, v6);
-        }
-    }
-
-    MOVE_TRIGGERTABLE ElectroShotHandlers[] = {
-        {EVENT_CHECK_CHARGE_UP_SKIP, (MOVE_HANDLER_FUNC)HandlerElectroShotRain},
-        {EVENT_CHARGE_UP_START_DONE, (MOVE_HANDLER_FUNC)HandlerElectroShotCharge},
-    };
-
-    MOVE_TRIGGERTABLE *THUMB_BRANCH_EventAddForesight(_DWORD *a1)
-    {
-        *a1 = 2;
-        return ElectroShotHandlers;
-    }
-
-    int HandlerThunderRainCheck(ServerFlow *a1, int a2, int a3)
-    {
-        int result; // r0
-        BattleMon *mon;
-        result = BattleEventVar_GetValue(VAR_ATTACKING_MON);
-        if (a3 == result)
-        {
-            mon = Handler_GetBattleMon(a1, a3);
-            result = Handler_GetWeather(a2);
-            if (result == 2 && mon->HeldItem != IT0544_UTILITY_UMBRELLA && BattleMon_GetValue(mon, VALUE_EFFECTIVE_ABILITY) != ABIL142_OVERCOAT)
-            {
-                return BattleEventVar_RewriteValue(VAR_GENERAL_USE_FLAG, 1);
-            }
-        }
-        return result;
-    }
-
-    int HandlerThunderSunCheck(ServerFlow *a1, int a2, int a3)
-    {
-        int result; // r0
-        BattleMon *mon;
-        result = BattleEventVar_GetValue(VAR_ATTACKING_MON);
-        if (a3 == result)
-        {
-            mon = Handler_GetBattleMon(a1, a3);
-
-            result = Handler_GetWeather(a2);
-            if (result == 1 && mon->HeldItem != IT0544_UTILITY_UMBRELLA && BattleMon_GetValue(mon, VALUE_EFFECTIVE_ABILITY) != ABIL142_OVERCOAT)
-            {
-                return BattleEventVar_RewriteValue(VAR_ACCURACY, 50);
-            }
-        }
-        return result;
-    }
-
-    MOVE_TRIGGERTABLE ThunderHandlers[] = {
-        {EVENT_CHECK_HIDING, (MOVE_HANDLER_FUNC)HandlerThunderFlyCheck},
-        {EVENT_BYPASS_ACCURACY_CHECK, (MOVE_HANDLER_FUNC)HandlerThunderRainCheck},
-        {EVENT_MOVE_ACCURACY, (MOVE_HANDLER_FUNC)HandlerThunderSunCheck}};
-    MOVE_TRIGGERTABLE *THUMB_BRANCH_EventAddThunder(_DWORD *a1)
-    {
-        *a1 = 3;
-        return ThunderHandlers;
-    }
+   
 
 #pragma endregion
 

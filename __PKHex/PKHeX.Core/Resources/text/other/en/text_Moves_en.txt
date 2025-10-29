@@ -203,7 +203,7 @@ Sandstorm
 Giga Drain
 Endure
 Charm
-Accelerock
+Rollout
 Body Press
 Swagger
 Milk Drink
@@ -477,7 +477,7 @@ Autotomize
 Rage Powder
 Telekinesis
 Power Trip
-Smack Down
+Accelerock
 Storm Throw
 Flame Burst
 Sludge Wave

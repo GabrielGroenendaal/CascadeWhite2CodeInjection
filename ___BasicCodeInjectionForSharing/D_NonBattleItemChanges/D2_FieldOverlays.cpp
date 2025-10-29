@@ -56,13 +56,13 @@ extern "C"
         }
     }
 
-     /*
+    /*
 
-        --------------------------------------------------------------------------------------------------
-        -------------------- FIX THE SHOP PURCHASING MECHANICS FOR LIMITED TMS ---------------------------
-        --------------------------------------------------------------------------------------------------
+       --------------------------------------------------------------------------------------------------
+       -------------------- FIX THE SHOP PURCHASING MECHANICS FOR LIMITED TMS ---------------------------
+       --------------------------------------------------------------------------------------------------
 
-    */
+   */
 
     extern u32 ShopUI_GetBalance(ShopUIWork *ui);
     extern u32 BagSave_CheckAvailItemSpace(BagSaveData *pItemBlk, u16 item_idx, u16 quantity, HeapID heapId);
@@ -466,6 +466,149 @@ extern "C"
 
 #pragma endregion
 
+#pragma region HMOverhaul
+
+    enum PlayerMoveStatus
+    {
+        FLD_PLAYER_MVSTATUS_STAND = 0x0,
+        FLD_PLAYER_MVSTATUS_MOVE = 0x1,
+        FLD_PLAYER_MVSTATUS_TURN = 0x2,
+    };
+    enum PlayerActionStatus
+    {
+        FLD_PLAYER_ACTSTATUS_IDLE = 0x0,
+        FLD_PLAYER_ACTSTATUS_BEGIN = 0x1,
+        FLD_PLAYER_ACTSTATUS_PERFORMING = 0x2,
+        FLD_PLAYER_ACTSTATUS_FINISHED = 0x3,
+    };
+    enum FieldInteractFlag
+    {
+        FLD_INTERACT_KEY_A_DOWN = 0x1,
+        FLD_INTERACT_KEY_X_DOWN = 0x2,
+        FLD_INTERACT_PLAYER_STEP_MARK = 0x4,
+        FLD_INTERACT_PLAYER_STEP_BEGIN = 0x8,
+        FLD_INTERACT_PLAYER_ACT_FINISHED = 0x10,
+        FLD_INTERACT_PLAYER_MOVE_TURNING = 0x20,
+        FLD_INTERACT_KEY_IN_MOVE_DIR = 0x40,
+        FLD_INTERACT_KEY_Y_DOWN = 0x80,
+        FLD_INTERACT_KEY_AXY_DOWN = 0x100,
+        FLD_INTERACT_PLAYER_MOVE_VERTICAL_ONLY = 0x400,
+        FLD_INTERACT_PLAYER_MOVE_NONE = 0x800,
+    };
+    enum 	Direction {DIR_UP = 0x0,DIR_DOWN = 0x1,DIR_LEFT = 0x2,DIR_RIGHT = 0x3,DIR_ANY = 0x8,DIR_NONE = 0x9};
+
+    struct TileType
+    {
+        u16 Class;
+        u16 Flags;
+    };
+
+    struct SpecialTileScript
+    {
+        b32(*RecognitionFunc)(int);
+        u16 Direction;
+        u16 SCRID;
+    };
+
+    struct FieldEventCheckData
+    {
+        u32 FieldmapHeapID;
+        void *m_GameSys;
+        GameData *m_GameData;
+        void *Entities;
+        u16 ZoneID;
+        void *Fieldmap;
+        void *Player;
+        PlayerActionStatus m_PlayerActionStatus;
+        PlayerMoveStatus m_PlayerMoveStatus;
+        Direction PlayerDirection;
+        u16 ReserveSCRID;
+        u32 NewPressedKeys;
+        u32 HeldKeys;
+        u16 InputPlayerMoveDir;
+        void *PlayerPos;
+        TileType TileUnderPlayer;
+        FieldInteractFlag Flags;
+    };
+
+    extern b32 GameData_IsForceSeasonSync(GameData *gameData);
+    extern TileType FieldPlayer_GetTileTypeUnder(void *player);
+    extern TileType FieldPlayer_GetTileTypeInDir(void *player, Direction dir);
+    extern int GetTileClass(TileType result);
+    extern int sub_2018C64(int a1);
+    extern int  CheckSurfHeightAllow(void *player, unsigned __int16 dir);
+    extern int GameData_FindPartyPkmByMove(GameData *gameData, u16 move);
+    extern b32 EventWork_FlagGet(EventWorkSave *eventWork, int eventBitNum);
+    extern b32 CheckCanInteractWaterfall(void *player, TileType tileUnder, TileType tileInDir);
+
+    SpecialTileScript* SPECIAL_TILE_SCRIPTS = (SpecialTileScript*)0x21CA878;
+
+
+    u32 GetSurfSetting()
+    {
+        EventWorkSave *eventWork = GameData_GetEventWork(GAME_DATA);
+        k::Printf("\nCHECKING FOR SURF????\n");
+        u32 surfSetting = EventWork_FlagGet(eventWork, 2439);
+        return surfSetting;
+    }
+
+
+    int THUMB_BRANCH_CheckFieldEnvInteraction(FieldEventCheckData *wk)
+    {
+        int TileClass;                        // r6
+        unsigned int i;                       // r4
+        SpecialTileScript *specialTileScript; // r1
+        int Direction;                        // r2
+        TileType tileInDir;                   // [sp+0h] [bp-20h]
+        TileType tileUnder;                   // [sp+4h] [bp-1Ch]
+        k::Printf("\n\n===CheckFieldEnvInteraction===   Check 1");
+        if (GameData_IsForceSeasonSync(wk->m_GameData))
+        {
+            k::Printf("\n===CheckFieldEnvInteraction===   Check 2");
+            return 0xFFFF;
+        }
+        k::Printf("\n===CheckFieldEnvInteraction===   Check 3");
+        tileUnder = FieldPlayer_GetTileTypeUnder(wk->Player);
+        tileInDir = FieldPlayer_GetTileTypeInDir(wk->Player,  wk->PlayerDirection);
+        TileClass = GetTileClass(tileInDir);
+        k::Printf("\n===CheckFieldEnvInteraction===   Check 4");
+        for (i = 0; i < 0xD; ++i)
+        {
+            k::Printf("\n===CheckFieldEnvInteraction===   Check 5A-%d", i);
+            specialTileScript = &SPECIAL_TILE_SCRIPTS[i];
+            Direction = specialTileScript->Direction;
+            if ((wk->PlayerDirection == Direction || Direction == 9) && specialTileScript->RecognitionFunc(TileClass))
+            {
+                k::Printf("\n===CheckFieldEnvInteraction===   Check 5B-%d", i);
+                return SPECIAL_TILE_SCRIPTS[i].SCRID;
+            }
+        }
+        k::Printf("\n===CheckFieldEnvInteraction===   Check 6");
+        if (!sub_2018C64(wk->ZoneID) || GameData_IsForceSeasonSync(wk->m_GameData))
+        {
+            k::Printf("\n===CheckFieldEnvInteraction===   Check 7");
+            return 0xFFFF;
+        }
+        k::Printf("\n===CheckFieldEnvInteraction===   Check 8\nCheckSurfHeightAllow=%d\nGetSurfSetting=%d", CheckSurfHeightAllow(wk->Player, wk->PlayerDirection), GetSurfSetting());
+        if (CheckSurfHeightAllow(wk->Player, wk->PlayerDirection) && 
+            GetSurfSetting()
+            //GameData_FindPartyPkmByMove(wk->m_GameData, MOVE057_SURF) != 6
+        )
+        {
+            k::Printf("\n===CheckFieldEnvInteraction===   Check 9");
+            return 10002;
+        }
+        k::Printf("\n===CheckFieldEnvInteraction===   Check 10");
+        if (CheckCanInteractWaterfall(wk->Player, tileUnder, tileInDir))
+        {
+            k::Printf("\n===CheckFieldEnvInteraction===   Check 11");
+            return 10006;
+        }
+        k::Printf("\n===CheckFieldEnvInteraction===   Check 12\n\n\n");
+        return 0xFFFF;
+    }
+
+#pragma endregion
 #pragma region SomeKindOfEncounterEffectController
     // struct TrClassBattleBGOverride
     // {
@@ -580,7 +723,6 @@ extern "C"
     //     encEff->RenderFunc = ENC_EFFECT_CONTROLLERS[v6].RenderFunc;
     // };
 #pragma endregion
-
 
 #pragma region WIPStuff
     // void THUMB_BRANCH_SAFESTACK_createEggPkm(PartyPkm *newPkm, EggPkm *eggPkm, void *pTrainerInfo, u16 location, HeapID heapId)
@@ -867,5 +1009,4 @@ extern "C"
     //     event->IsTrialHouseBattle = 0;
     // };
 #pragma endregion
-
 }

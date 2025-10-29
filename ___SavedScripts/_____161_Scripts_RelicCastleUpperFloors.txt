@@ -1,0 +1,404 @@
+import messages.script.Msg0219.MSGID;
+
+import event.Battle;
+import event.actors.Actor;
+import event.actors.Player;
+import event.dialogs.ListMenu;
+import event.dialogs.Message;
+import event.dialogs.YesNoWin;
+import pokescript.vm.Math;
+import pokescript.vm.StackCtrl;
+import pokescript.vm.VM;
+import system.EventFlags;
+import system.EventWorks;
+import system.Input;
+import system.Runtime;
+import system.Sound;
+import system.text.WordSet;
+
+public class MainEvents {
+	public static void main_1() { // @ 0xe
+		int v0;
+		int v7;
+	
+		int v8;
+		int v9;
+		int v10;
+		int battleOutcome;
+
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		ActionSequence_08da(7);
+		ActionSequence_08e2(7);
+		Actor.WaitActionFinish();
+		Message.ActorEx(1024, 20, 7, 2, 0);
+		Input.LastKeyWait();
+		Message.CloseAll();
+		Player.GetGPos(v9, v10);
+		Actor.WalkRoute(7, v9, v10 - 1, 1, 8, 1);
+		Actor.WaitActionFinish();
+		ActionSequence_08e2(7);
+		Actor.WaitActionFinish();
+		Message.ActorEx(1024, 14, 7, 2, 0);
+		Input.LastKeyWait();
+		Message.CloseAll();
+		ActionSequence_08ea(7);
+		Actor.WaitActionFinish();
+		Message.ActorEx(1024, 15, 7, 2, 0);
+		Input.LastKeyWait();
+		Message.CloseAll();
+		ActionSequence_08e2(7);
+		Actor.WaitActionFinish();
+		Message.ActorEx(1024, 16, 7, 2, 0);
+		Input.LastKeyWait();
+		Message.CloseAll();
+		ActionSequence_08da(7);
+		Actor.WaitActionFinish();
+		Message.ActorEx(1024, 17, 7, 2, 0);
+		Input.LastKeyWait();
+		Message.CloseAll();
+		WordSet.LoadPlayerName(0);
+		Message.ActorEx(1024, 18, 7, 2, 0);
+		Input.LastKeyWait();
+		Message.CloseAll();
+		
+		Message.ActorEx(1024, 19, 7, 2, 0);
+		EventFlags.Set(526);
+		EventWorks.Set(16526, 1);
+
+		/* INSERT BATTLE HERE */
+		v0 = YesNoWin.Show();
+		if (v0 == 0) {
+			Message.ActorEx(1024, 21, 7, 2, 0);
+			Message.CloseAll();
+			Battle.CallTrainerBattle(790, 0, 0);
+			battleOutcome = Battle.IsTrainerVictory();
+			if (battleOutcome == 0) {
+				Battle.CallTrainerLose();
+			}
+			Message.ActorEx(1024, 23, 7, 2, 0);
+			EventWorks.Set(16526, 2);
+			v8 = 0;
+			goto LABEL_FOSSILGIFT;
+		}
+		Message.ActorEx(1024, 22, 7, 2, 0);
+		Input.LastKeyWait();
+		Message.CloseAll();
+		v8 = 1;
+
+		LABEL_FOSSILGIFT:
+		if (v8 == 0) {
+			ListMenu.InitRightAnchor(31, 5, 0, 1, v7);
+			ListMenu.AddItem(5, 65535, 0);
+			ListMenu.AddItem(6, 65535, 1);
+			ListMenu.AddItem(7, 65535, 2);
+			ListMenu.AddItem(8, 65535, 3);
+			ListMenu.ShowDialog();
+			if (v7 == 0) {
+				Message.ActorEx(1024, 9, 7, 2, 0);
+				v0 = YesNoWin.Show();
+				if (v0 == 0) {
+					Message.ActorEx(1024, 1, 7, 2, 0);
+					Message.CloseAll();
+					Global2805(572, 1);
+					EventFlags.Set(527);
+					Message.ActorEx(1024, 4, 7, 2, 0);
+					Input.LastKeyWait();
+					Message.CloseAll();
+					v8 = 1;
+					goto LABEL_FOSSILGIFT;
+				}
+				Message.ActorEx(1024, 12, 7, 2, 0);
+				goto LABEL_FOSSILGIFT;
+			}
+			if (v7 == 1) {
+				Message.ActorEx(1024, 10, 7, 2, 0);
+				v0 = YesNoWin.Show();
+				if (v0 == 0) {
+					Message.ActorEx(1024, 2, 7, 2, 0);
+					Message.CloseAll();
+					Global2805(99, 1);
+					EventFlags.Set(527);
+					Message.ActorEx(1024, 4, 7, 2, 0);
+					Input.LastKeyWait();
+					Message.CloseAll();
+					v8 = 1;
+					goto LABEL_FOSSILGIFT;
+				}
+				Message.ActorEx(1024, 12, 7, 2, 0);
+				goto LABEL_FOSSILGIFT;
+			}
+			if (v7 == 2) {
+				Message.ActorEx(1024, 11, 7, 2, 0);
+				v0 = YesNoWin.Show();
+				if (v0 == 0) {
+					Message.ActorEx(1024, 3, 7, 2, 0);
+					Message.CloseAll();
+					Global2805(100, 1);
+					EventFlags.Set(527);
+					Message.ActorEx(1024, 4, 7, 2, 0);
+					Input.LastKeyWait();
+					Message.CloseAll();
+					v8 = 1;
+					goto LABEL_FOSSILGIFT;
+				}
+				Message.ActorEx(1024, 12, 7, 2, 0);
+				goto LABEL_FOSSILGIFT;
+			}
+			if (v7 == 3) {
+				Message.ActorEx(1024, 13, 7, 2, 0);
+				Input.LastKeyWait();
+				Message.CloseAll();
+				v8 = 1;
+				goto LABEL_FOSSILGIFT;
+			}
+			Message.ActorEx(1024, 13, 7, 2, 0);
+			Input.LastKeyWait();
+			Message.CloseAll();
+			v8 = 1;
+			goto LABEL_FOSSILGIFT;
+		}
+		v0 = 0;
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_2() { // @ 0x3a7
+		int v0;
+		int v4;
+		int v5;
+
+		int battleOutcome2;
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		v0 = EventFlags.Get(527);
+		if (v0 == 1) {
+			Message.ActorEx(1024, 4, 7, 2, 0);
+			Input.LastKeyWait();
+			Message.CloseAll();
+			goto LABEL_0634;
+		}
+		if (EventWorks.Get(16526) != 2) {
+			Message.ActorEx(1024, 19, 7, 2, 0);
+			v0 = YesNoWin.Show();
+			if (v0 == 0) {
+				Message.ActorEx(1024, 21, 7, 2, 0);
+				Message.CloseAll();
+				Battle.CallTrainerBattle(790, 0, 0);
+				battleOutcome2 = Battle.IsTrainerVictory();
+				if (battleOutcome2 == 0) {
+					Battle.CallTrainerLose();
+				}
+				Message.ActorEx(1024, 23, 7, 2, 0);
+				EventWorks.Set(16526, 2);
+				v5 = 0;
+				goto LABEL_FOSSILGIFT;
+			}
+		}
+		Message.ActorEx(1024, 22, 7, 2, 0);
+		Input.LastKeyWait();
+		Message.CloseAll();
+		v5 = 1;
+
+		LABEL_GIFTFOSSIL_AGAIN:
+		if (v5 == 0) {
+			ListMenu.InitRightAnchor(31, 5, 0, 1, v4);
+			ListMenu.AddItem(5, 65535, 0);
+			ListMenu.AddItem(6, 65535, 1);
+			ListMenu.AddItem(7, 65535, 2);
+			ListMenu.AddItem(8, 65535, 3);
+			ListMenu.ShowDialog();
+			if (v4 == 0) {
+				Message.ActorEx(1024, 9, 7, 2, 0);
+				v0 = YesNoWin.Show();
+				if (v0 == 0) {
+					Message.ActorEx(1024, 1, 7, 2, 0);
+					Message.CloseAll();
+					Global2805(572, 1);
+					EventFlags.Set(527);
+					Message.ActorEx(1024, 4, 7, 2, 0);
+					Input.LastKeyWait();
+					Message.CloseAll();
+					v5 = 1;
+					goto LABEL_GIFTFOSSIL_AGAIN;
+				}
+				Message.ActorEx(1024, 12, 7, 2, 0);
+				goto LABEL_GIFTFOSSIL_AGAIN;
+			}
+			if (v4 == 1) {
+				Message.ActorEx(1024, 10, 7, 2, 0);
+				v0 = YesNoWin.Show();
+				if (v0 == 0) {
+					Message.ActorEx(1024, 2, 7, 2, 0);
+					Message.CloseAll();
+					Global2805(99, 1);
+					EventFlags.Set(527);
+					Message.ActorEx(1024, 4, 7, 2, 0);
+					Input.LastKeyWait();
+					Message.CloseAll();
+					v5 = 1;
+					goto LABEL_GIFTFOSSIL_AGAIN;
+				}
+				Message.ActorEx(1024, 12, 7, 2, 0);
+				goto LABEL_GIFTFOSSIL_AGAIN;
+			}
+			if (v4 == 2) {
+				Message.ActorEx(1024, 11, 7, 2, 0);
+				v0 = YesNoWin.Show();
+				if (v0 == 0) {
+					Message.ActorEx(1024, 3, 7, 2, 0);
+					Message.CloseAll();
+					Global2805(100, 1);
+					EventFlags.Set(527);
+					Message.ActorEx(1024, 4, 7, 2, 0);
+					Input.LastKeyWait();
+					Message.CloseAll();
+					v5 = 1;
+					goto LABEL_GIFTFOSSIL_AGAIN;
+				}
+				Message.ActorEx(1024, 12, 7, 2, 0);
+				goto LABEL_GIFTFOSSIL_AGAIN;
+
+			}
+			Message.ActorEx(1024, 13, 7, 2, 0);
+			Input.LastKeyWait();
+			Message.CloseAll();
+			v5 = 1;
+			goto LABEL_GIFTFOSSIL_AGAIN;
+		}
+		LABEL_0634:
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+		v0 = 0;
+	}
+
+	public static void main_3() { // @ 0x640
+		int v0;
+		int v4;
+		int v5;
+		int battleOutcome3;
+		
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		v0 = EventFlags.Get(527);
+		if (v0 == 1) {
+			Message.ActorEx(1024, 4, 7, 2, 0);
+			Input.LastKeyWait();
+			Message.CloseAll();
+			goto LABEL_0634;
+		}
+		if (EventWorks.Get(16526) != 2) {
+			Message.ActorEx(1024, 19, 7, 2, 0);
+			v0 = YesNoWin.Show();
+			if (v0 == 0) {
+				Message.ActorEx(1024, 21, 7, 2, 0);
+				Message.CloseAll();
+				Battle.CallTrainerBattle(790, 0, 0);
+				battleOutcome3 = Battle.IsTrainerVictory();
+				if (battleOutcome3 == 0) {
+					Battle.CallTrainerLose();
+				}
+				Message.ActorEx(1024, 23, 7, 2, 0);
+				EventWorks.Set(16526, 2);
+				v5 = 0;
+				goto LABEL_FOSSILGIFT;
+			}
+		}
+		Message.ActorEx(1024, 22, 7, 2, 0);
+		Input.LastKeyWait();
+		Message.CloseAll();
+		v5 = 1;
+		
+		LABEL_GIFTFOSSIL_AGAIN:
+		if (v5 == 0) {
+			ListMenu.InitRightAnchor(31, 5, 0, 1, v4);
+			ListMenu.AddItem(5, 65535, 0);
+			ListMenu.AddItem(6, 65535, 1);
+			ListMenu.AddItem(7, 65535, 2);
+			ListMenu.AddItem(8, 65535, 3);
+			ListMenu.ShowDialog();
+			if (v4 == 0) {
+				Message.ActorEx(1024, 9, 7, 2, 0);
+				v0 = YesNoWin.Show();
+				if (v0 == 0) {
+					Message.ActorEx(1024, 1, 7, 2, 0);
+					Message.CloseAll();
+					Global2805(572, 1);
+					EventFlags.Set(527);
+					Message.ActorEx(1024, 4, 7, 2, 0);
+					Input.LastKeyWait();
+					Message.CloseAll();
+					v5 = 1;
+					goto LABEL_GIFTFOSSIL_AGAIN;
+				}
+				Message.ActorEx(1024, 12, 7, 2, 0);
+				goto LABEL_GIFTFOSSIL_AGAIN;
+			}
+			if (v4 == 1) {
+				Message.ActorEx(1024, 10, 7, 2, 0);
+				v0 = YesNoWin.Show();
+				if (v0 == 0) {
+					Message.ActorEx(1024, 2, 7, 2, 0);
+					Message.CloseAll();
+					Global2805(99, 1);
+					EventFlags.Set(527);
+					Message.ActorEx(1024, 4, 7, 2, 0);
+					Input.LastKeyWait();
+					Message.CloseAll();
+					v5 = 1;
+					goto LABEL_GIFTFOSSIL_AGAIN;
+				}
+				Message.ActorEx(1024, 12, 7, 2, 0);
+				goto LABEL_GIFTFOSSIL_AGAIN;
+			}
+			if (v4 == 2) {
+				Message.ActorEx(1024, 11, 7, 2, 0);
+				v0 = YesNoWin.Show();
+				if (v0 == 0) {
+					Message.ActorEx(1024, 3, 7, 2, 0);
+					Message.CloseAll();
+					Global2805(100, 1);
+					EventFlags.Set(527);
+					Message.ActorEx(1024, 4, 7, 2, 0);
+					Input.LastKeyWait();
+					Message.CloseAll();
+					v5 = 1;
+					goto LABEL_GIFTFOSSIL_AGAIN;
+				}
+				Message.ActorEx(1024, 12, 7, 2, 0);
+				goto LABEL_GIFTFOSSIL_AGAIN;
+
+			}
+			Message.ActorEx(1024, 13, 7, 2, 0);
+			Input.LastKeyWait();
+			Message.CloseAll();
+			v5 = 1;
+			goto LABEL_GIFTFOSSIL_AGAIN;
+		}
+		LABEL_0634:
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+		v0 = 0;
+	}
+
+	static meta void ActionSequence_08da(int npcId) : VActionSequence {
+		Action004b(1);
+	}
+
+	static meta void ActionSequence_08e2(int npcId) : VActionSequence {
+		Action0021(1);
+	}
+
+	static meta void ActionSequence_08ea(int npcId) : VActionSequence {
+		Action0023(1);
+	}
+
+	static meta void Global2805(int a1, int a2) : VGlobalCall[2805];
+
+	static native void Action0021(int amount) : 0x21;
+	static native void Action0023(int amount) : 0x23;
+	static native void Action004b(int amount) : 0x4b;
+}

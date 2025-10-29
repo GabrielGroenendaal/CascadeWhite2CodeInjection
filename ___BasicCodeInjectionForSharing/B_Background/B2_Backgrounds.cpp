@@ -13,6 +13,22 @@ STRUCT_DECLARE(GameData)
 
 extern "C"
 {
+    struct EventWorkSave
+    {
+        u16 Works[431];
+        u8 FlagBytes[383];
+        u8 CanRespawnHiddenItems;
+    };
+
+    extern EventWorkSave *GameData_GetEventWork(void *gameData);
+    extern u16 *EventWork_GetWkPtr(EventWorkSave *eventWork, int swkId);
+    u32 GetBackgroundsSetting()
+    {
+        EventWorkSave *eventWork = GameData_GetEventWork(GAME_DATA);
+        u16 *lvl_cap_ptr = EventWork_GetWkPtr(eventWork, 16435);
+        return *lvl_cap_ptr;
+    }
+
     struct WildEncSlot
     {
         u16 IdAndForme;
@@ -616,7 +632,7 @@ extern "C"
         9,  // 434 Aspertia City Interior
         27, // 435 Asperita City Pokemon Center
         9,  // 436 Asperita City Gym
-        73, // 437 Route 19
+        22, // 437 Route 19
         9,  // 438 Aspertia Gate
         3,  // 439 Floccessy Town
         28, // 440 Alder's House
@@ -868,9 +884,8 @@ extern "C"
     */
     void modifyFieldStatus(BattleFieldStatus *fieldStatus, int foe1TrID, BattleStyle style)
     {
-        if (!ANIMATED_BACKGROUNDS_ENABLED)
+        if (!GetBackgroundsSetting())
         {
-            k::Printf("\nCheck values\n");
             return;
         }
 
@@ -1125,11 +1140,10 @@ extern "C"
         trClass = TrainerData_GetParam(foe1TrId, TR_CLASS);
         fieldStatus.BattleBGID = CheckOverridenTrainerBattleBG(trClass, fieldStatus.BattleBGID);
         modifyFieldStatus(&fieldStatus, foe1TrId, style);
-        if (foe1TrId >= 21 && foe1TrId <= 82)
-        {
-            fieldStatus.BattleBGID = foe1TrId;
-        }
-        k::Printf("\nfieldstatus zone id is %d and the trainer id is %d\n", fieldStatus.BattleBGID, foe1TrId);
+        // if (foe1TrId >= 21 && foe1TrId <= 82)
+        // {
+        //     fieldStatus.BattleBGID = foe1TrId;
+        // }
         if (style <= BTL_STYLE_ROTATION)
         {
             if (style == BTL_STYLE_SINGLE)
@@ -1151,11 +1165,9 @@ extern "C"
                 }
                 else
                 {
-                    k::Printf("\nIt's not a double or a tag battle");
 
                     if (howManyPokesAreAbleToFight(GameData_GetParty(m_GameData)) < 2)
                     {
-                        k::Printf("\nThere aren't enough Pokemon to fight for a double battle. We only have %d", howManyPokesAreAbleToFight(GameData_GetParty(m_GameData)));
                         BtlSetup_SetTrainer1v1Single(setup, m_GameData, &fieldStatus, foe1TrId, heapId);
                     }
                     else
@@ -1199,7 +1211,9 @@ extern "C"
         PlayerStateZoneID = Field_GetPlayerStateZoneID(field);
         player = Field_GetPlayer(field);
         status->BattleBGID = GetZoneBattleBGID(PlayerStateZoneID);
-        // status->BattleBGID = ZoneIdToBackgroundID[PlayerStateZoneID];
+        if (GetBackgroundsSetting()){
+            status->BattleBGID = ZoneIdToBackgroundID[PlayerStateZoneID];
+        }
         TileTypeUnder = FieldPlayer_GetTileTypeUnder(player);
         TileClass = GetTileClass(TileTypeUnder);
         status->BattlePedestalID = GetTileEncountType(TileClass);
@@ -1210,7 +1224,7 @@ extern "C"
         status->BtlWeather = ConvFieldWeatherToBtl(field);
         status->Season = GameData_GetSeason(gameData);
 
-        if (ANIMATED_BACKGROUNDS_ENABLED)
+        if (GetBackgroundsSetting())
         {
             if (PlayerStateZoneID == 446    // Route 20
                 || PlayerStateZoneID == 445 // Flocessy Ranch
@@ -1427,93 +1441,7 @@ extern "C"
         u16 pClashDist,
         u16 pClashDir);
 
-    // void *THUMB_BRANCH_EventTrainerEye_CheckAll(void *field)
-    // {
-    //     GameEvent *v2;                       // r6
-    //     void *GameSystem;                    // r0
-    //     GameData *GameData;                  // r7
-    //     void *v5;                            // r0
-    //     unsigned int partyPkmCount;          // r4
-    //     BattleStyle BattleType;              // r0
-    //     GameEvent *TrainerClashEvent;        // r0
-    //     FieldBattleType v9;                  // r4
-    //     GameEvent *v10;                      // r0
-    //     int trSlot;                          // r1
-    //     FieldScriptTrainerSetup *p_setupTr1; // r2
-    //     FieldActor *v13;                           // r0
-    //     FieldScriptTrainerSetup setupTr1;    // [sp+0h] [bp-48h] BYREF
-    //     FieldScriptTrainerSetup setupTr2;    // [sp+18h] [bp-30h] BYREF
-
-    //     v2 = 0;
-    //     GameSystem = Field_GetGameSystem(field);
-    //     GameData = GSYS_GetGameData(GameSystem);
-
-    //     if (EventTrainerEye_FindClashActor(field, 0, &setupTr2) == 1)
-    //     {
-    //         v5 = Field_GetGameSystem(field);
-    //         partyPkmCount = sub_2182FD0(v5);
-    //         if (sub_21A6584(setupTr2.TrainerActor))
-    //         {
-    //             BattleType = BTL_STYLE_SINGLE;
-    //         }
-    //         else
-    //         {
-    //             BattleType = getBattleType(setupTr2.TrainerID);
-    //         }
-    //         if (BattleType == BTL_STYLE_SINGLE)
-    //         {
-    //             if (partyPkmCount && GetNowFollowerAllyTrID(GameData) && EventTrainerEye_FindClashActor(field, setupTr2.TrainerActor, &setupTr1) == 1)
-    //             {
-    //                 TrainerClashEvent = CreateTrainerClashEvent(field, setupTr2.TrainerActor);
-    //                 v2 = TrainerClashEvent;
-    //                 v9 = FLD_BTLTYPE_DOUBLE_MULTI;
-    //             LABEL_10:
-    //                 setupTr2.BattleType = v9;
-    //                 SetupTrainerClashSlot(TrainerClashEvent, 0, &setupTr2);
-    //                 setupTr1.BattleType = v9;
-    //                 v10 = v2;
-    //                 trSlot = 1;
-    //                 p_setupTr1 = &setupTr1;
-    //             LABEL_21:
-    //                 SetupTrainerClashSlot(v10, trSlot, p_setupTr1);
-    //                 // k::Printf("\nWe're going to do a bunch of diagnostics here\ntrSlot is %d\np_setupTr1 is %d and %d and %d and %d and %d and %d\nv10 is %d and %d and %d and %d and %d", trSlot, p_setupTr1, p_setupTr1->BattleType, p_setupTr1->ClashDirection, p_setupTr1->ClashDistance, p_setupTr1->TrainerActor, p_setupTr1->TrainerID, v10, v10->Callback, v10->EventData, v10->EventState, v10->m_GameSystem);
-    //                 k::Printf("\nv2 = %d", v2);
-    //                 return v2;
-    //             }
-    //             if (partyPkmCount >= 2 && EventTrainerEye_FindClashActor(field, setupTr2.TrainerActor, &setupTr1))
-    //             {
-    //                 TrainerClashEvent = CreateTrainerClashEvent(field, setupTr2.TrainerActor);
-    //                 v2 = TrainerClashEvent;
-    //                 v9 = FLD_BTLTYPE_DOUBLE_UNIFIED;
-    //                 goto LABEL_10;
-    //             }
-    //         LABEL_20:
-    //             v10 = CreateTrainerClashEvent(field, setupTr2.TrainerActor);
-    //             trSlot = 0;
-    //             v2 = v10;
-    //             setupTr2.BattleType = FLD_BTLTYPE_SINGLE;
-    //             p_setupTr1 = &setupTr2;
-    //             goto LABEL_21;
-    //         }
-    //         if (BattleType == BTL_STYLE_DOUBLE)
-    //         {
-    //             if (partyPkmCount)
-    //             {
-    //                 v13 = sub_21A6614(setupTr2.TrainerActor, LOWORD((unsigned int&)setupTr2.TrainerID));
-    //                 InitFieldScriptTrainerSetup(&setupTr1, v13, setupTr2.ClashDistance, setupTr2.ClashDirection);
-    //                 TrainerClashEvent = CreateTrainerClashEvent(field, setupTr2.TrainerActor);
-    //                 v2 = TrainerClashEvent;
-    //                 v9 = FLD_BTLTYPE_DOUBLE_SEPARATE;
-    //                 goto LABEL_10;
-    //             }
-    //         }
-    //         else if ((unsigned int)(BattleType - 2) <= 1 && partyPkmCount)
-    //         {
-    //             goto LABEL_20;
-    //         }
-    //     }
-    //     return v2;
-    // }
+   
     
     extern u32 PokeParty_GetParam(PartyPkm *pPkm, int field, void *extra);
     extern PartyPkm *PokeParty_GetPkm(PokeParty *party, int slot);

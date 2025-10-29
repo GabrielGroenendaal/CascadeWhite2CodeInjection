@@ -326,20 +326,17 @@ extern "C"
         playerState = GameData_GetPlayerState(*(GameData **)(g_GameBeaconSys + 4));
         zoneId = PlayerState_GetZoneID(playerState);
 
-        /* Chargestone Cave*/
-        if (zoneId == 607 || zoneId == 195 || zoneId == 196 || zoneId == 197)
+       if ((a1 == TYPE_ELECTRIC) && (zoneId == 607 || zoneId == 195 || zoneId == 196 || zoneId == 197))
         {
-            v3 = chargestoneTypeChart[a1][a2];
+            v3 = chargestoneTypeChart[a2];
         }
-        /* Celestial Tower*/
-        else if (zoneId == 339 || zoneId == 338 || zoneId == 340 || zoneId == 341 || zoneId == 462 || (zoneId >= 510 && zoneId <= 514) || (zoneId >= 569 && zoneId <= 572))
+        else if ((a1 == TYPE_GHOST || a1 == TYPE_PSYCHIC) && (zoneId == 339 || zoneId == 338 || zoneId == 340 || zoneId == 341 || zoneId == 462 || (zoneId >= 510 && zoneId <= 514) || (zoneId >= 569 && zoneId <= 572)))
         {
-            v3 = celestialTypeChart[a1][a2];
+            v3 = celestialTypeChart[(a1 == TYPE_GHOST ? 0 : 1)][a2];
         }
-        /* Opelucid Gym */
-        else if (zoneId == 121)
+        else if ((a1 == TYPE_FIGHTING || a1 == TYPE_DRAGON) && (zoneId == 121))
         {
-            v3 = opelucidTypeChart[a1][a2];
+            v3 = opelucidTypeChart[(a1 == TYPE_FIGHTING ? 0 : 1)][a2];
         }
         else
         {

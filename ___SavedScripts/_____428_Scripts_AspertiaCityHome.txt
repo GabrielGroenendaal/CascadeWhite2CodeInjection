@@ -383,14 +383,14 @@
 				goto LABEL_MENU;
 			}
 
-			// Enemy PP Variance
+			// Animated Backgrounds
 			if (v35 == 3) {
 				Message.CloseAll();
 
 				if (EventWorks.Get(16435) == 0) {
-					Message.System(96, 2);
+					Message.System(119, 2);
 				} else {
-					Message.System(97, 2);
+					Message.System(120, 2);
 				}
 				Input.LastKeyWait();
 
@@ -404,11 +404,11 @@
 				
 				Message.CloseAll();
 				if (EventWorks.Get(16435) == 0) {
-					Message.System(99, 2);
+					Message.System(121, 2);
 					Input.LastKeyWait();
 					EventWorks.Set(16435, 1);
 				} else {
-					Message.System(98, 2);
+					Message.System(122, 2);
 					Input.LastKeyWait();
 					EventWorks.Set(16435, 0);
 				}
@@ -533,7 +533,7 @@
 				goto LABEL_MENU;
 			}
 
-			if (v35 == 7) {
+			if (v35 == 8) {
 				Message.CloseAll();
 				Message.System(109, 2);
 				Input.LastKeyWait();
@@ -548,37 +548,37 @@
 				
 				Message.CloseAll();
 				
-				if (EventWorks.Get(16415) != 1) {
+				if (EventWorks.Get(16415) != 0) {
 					Message.CloseAll();
 					Message.System(67, 2);
 					Input.LastKeyWait();
 					EventWorks.Set(16415, 0);
 				}
-				if (EventWorks.Get(16433) != 1) {
+				if (EventWorks.Get(16433) != 0) {
 					Message.CloseAll();
 					Message.System(72, 2);
 					Input.LastKeyWait();
 					EventWorks.Set(16433, 0);
 				}
-				if (EventWorks.Get(16434) != 1) {
+				if (EventWorks.Get(16434) != 0) {
 					Message.CloseAll();
 					Message.System(87, 2);
 					Input.LastKeyWait();
 					EventWorks.Set(16434, 0);
 				}
-				if (EventWorks.Get(16435) != 1) {
+				if (EventWorks.Get(16435) != 0) {
 					Message.CloseAll();
-					Message.System(98, 2);
+					Message.System(122, 2);
 					Input.LastKeyWait();
 					EventWorks.Set(16435, 0);
 				}
-				if (EventWorks.Get(16436) != 1) {
+				if (EventWorks.Get(16436) != 0) {
 					Message.CloseAll();
 					Message.System(103, 2);
 					Input.LastKeyWait();
 					EventWorks.Set(16436, 0);
 				}
-				if (EventWorks.Get(16437) != 1) {
+				if (EventWorks.Get(16437) != 0) {
 					Message.CloseAll();
 					Message.System(107, 2);
 					Input.LastKeyWait();

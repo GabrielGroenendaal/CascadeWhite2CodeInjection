@@ -509,12 +509,16 @@ public class MainEvents {
 		if (v8 == 0) {
 			PokeApp.CallRename(v5, 1);
 		}
+		Message.Actor(1024, 35, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseAll();
+		Global2805(216, 1);
 
 		LABEL_093d:
 		EventFlags.Set(2374);
 
 		LABEL_AlreadyReceivedEgg:
-		Message.Actor(1024, 35, 0, 0);
+		Message.Actor(1024, 43, 0, 0);
 		Input.LastKeyWait();
 		Message.CloseAll();
 

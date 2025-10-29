@@ -234,7 +234,7 @@ import messages.script.Msg0315.MSGID;
 		Actor.WaitActionFinish();
 		Message.ActorEx(1024, 18, 0, 0, 0);
 		Message.CloseAll();
-		Global2805(216, 1);
+		Global2805(155, 10);
 		WordSet.LoadRivalName(1);
 		Message.ActorEx(1024, 19, 0, 0, 0);
 		Message.CloseAll();
