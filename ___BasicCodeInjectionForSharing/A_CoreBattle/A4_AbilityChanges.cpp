@@ -952,43 +952,42 @@ extern "C"
 
 #pragma region Intimidate
     /* INTIMIDATE */
-    void THUMB_BRANCH_HandlerIntimidate(int a1, ServerFlow *a2, int a3)
-    {
-        u8 *TempWork;                     // r4
-        unsigned int NumTargets;          // r5
-        HandlerParam_ChangeStatStage *v7; // r1
-        unsigned int v8;                  // r3
-        unsigned int v88;
-        u8 v9;                     // r2
-        char *v10;                 // r0
-        __int16 ExistFrontPokePos; // [sp+0h] [bp-18h]
+    // void THUMB_BRANCH_HandlerIntimidate(int a1, ServerFlow *a2, int a3)
+    // {
+    //     u8 *TempWork;                     // r4
+    //     unsigned int NumTargets;          // r5
+    //     HandlerParam_ChangeStatStage *v7; // r1
+    //     unsigned int v8;                  // r3
+    //     unsigned int v88;
+    //     u8 v9;                     // r2
+    //     char *v10;                 // r0
+    //     __int16 ExistFrontPokePos; // [sp+0h] [bp-18h]
 
-        if (a3 == BattleEventVar_GetValue(VAR_MON_ID))
-        {
-            ExistFrontPokePos = Handler_GetExistFrontPokePos(a2, a3);
-            TempWork = Handler_GetTempWork(a2);
-            NumTargets = Handler_ExpandPokeID(a2, ExistFrontPokePos | 0x100, TempWork);
-            if (NumTargets)
-            {
-                BattleHandler_PushRun(a2, EFFECT_ABILITYPOPUPIN, a3);
+    //     if (a3 == BattleEventVar_GetValue(VAR_MON_ID))
+    //     {
+    //         ExistFrontPokePos = Handler_GetExistFrontPokePos(a2, a3);
+    //         TempWork = Handler_GetTempWork(a2);
+    //         NumTargets = Handler_ExpandPokeID(a2, ExistFrontPokePos | 0x100, TempWork);
+    //         if (NumTargets)
+    //         {
+    //             BattleHandler_PushRun(a2, EFFECT_ABILITYPOPUPIN, a3);
 
-                v7 = (HandlerParam_ChangeStatStage *)BattleHandler_PushWork(a2, EFFECT_CHANGESTATSTAGE, a3);
-                v7->header.flags |= 0x08000000;
-                v7->rankType = STATSTAGE_ATTACK;
-                v7->rankVolume = -1;
-                v7->fMoveAnimation = 1;
-                v8 = 0;
-                for (v7->poke_cnt = NumTargets; v8 < NumTargets; v10[16] = v9)
-                {
-                    v9 = TempWork[v8];
-                    v10 = (char *)(v7 + v8++);
-                }
-                v7->pad = STAT_CHANGE_INTIMIDATE_FLAG;
-                BattleHandler_PopWork(a2, v7);
-                BattleHandler_PushRun(a2, EFFECT_ABILITYPOPUPOUT, a3);
-            }
-        }
-    }
+    //             v7 = (HandlerParam_ChangeStatStage *)BattleHandler_PushWork(a2, EFFECT_CHANGESTATSTAGE, a3);
+    //             // v7->header.flags |= 0x08000000;
+    //             v7->rankType = STATSTAGE_ATTACK;
+    //             v7->rankVolume = -1;
+    //             v7->fMoveAnimation = 1;
+    //             v7->poke_cnt = NumTargets;
+    //             for (u8 frontCurrent = 0; frontCurrent < NumTargets; ++frontCurrent)
+    //             {
+    //                 v7->pokeID[frontCurrent] = TempWork[frontCurrent];
+    //             }
+    //             v7->pad = STAT_CHANGE_INTIMIDATE_FLAG;
+    //             BattleHandler_PopWork(a2, v7);
+    //             BattleHandler_PushRun(a2, EFFECT_ABILITYPOPUPOUT, a3);
+    //         }
+    //     }
+    // }
 #pragma endregion
 
 #pragma region Regenerator
@@ -1354,7 +1353,7 @@ extern "C"
     void HandlerDistracting(int a1, ServerFlow *a2, int a3)
     {
         u8 *TempWork;                     // r4
-        unsigned int v6;                  // r5
+        unsigned int NumTargets;          // r5
         HandlerParam_ChangeStatStage *v7; // r1
         unsigned int v8;                  // r3
         char v9;                          // r2
@@ -1363,25 +1362,29 @@ extern "C"
 
         if (a3 == BattleEventVar_GetValue(VAR_MON_ID))
         {
-            ExistFrontPokePos = Handler_GetExistFrontPokePos(a2, a3);
-            TempWork = Handler_GetTempWork(a2);
-            v6 = Handler_ExpandPokeID(a2, ExistFrontPokePos | 0x100, TempWork);
-            if (v6)
+            if (a3 == BattleEventVar_GetValue(VAR_MON_ID))
             {
-                BattleHandler_PushRun(a2, EFFECT_ABILITYPOPUPIN, a3);
-                v7 = (HandlerParam_ChangeStatStage *)BattleHandler_PushWork(a2, EFFECT_CHANGESTATSTAGE, a3);
-                v7->rankType = STATSTAGE_EVASION;
-                v7->rankVolume = -1;
-                v7->fMoveAnimation = 1;
-                v8 = 0;
-                for (v7->poke_cnt = v6; v8 < v6; v10[16] = v9)
+                ExistFrontPokePos = Handler_GetExistFrontPokePos(a2, a3);
+                TempWork = Handler_GetTempWork(a2);
+                NumTargets = Handler_ExpandPokeID(a2, ExistFrontPokePos | 0x100, TempWork);
+                if (NumTargets)
                 {
-                    v9 = TempWork[v8];
-                    v10 = (char *)v7 + v8++;
+                    BattleHandler_PushRun(a2, EFFECT_ABILITYPOPUPIN, a3);
+
+                    v7 = (HandlerParam_ChangeStatStage *)BattleHandler_PushWork(a2, EFFECT_CHANGESTATSTAGE, a3);
+                    // v7->header.flags |= 0x08000000;
+                    v7->rankType = STATSTAGE_EVASION;
+                    v7->rankVolume = -1;
+                    v7->fMoveAnimation = 1;
+                    v7->poke_cnt = NumTargets;
+                    for (u8 frontCurrent = 0; frontCurrent < NumTargets; ++frontCurrent)
+                    {
+                        v7->pokeID[frontCurrent] = TempWork[frontCurrent];
+                    }
+                    v7->pad = VAR_HOSTILEFLAG;
+                    BattleHandler_PopWork(a2, v7);
+                    BattleHandler_PushRun(a2, EFFECT_ABILITYPOPUPOUT, a3);
                 }
-                v7->pad = STAT_CHANGE_HOSTILE_FLAG;
-                BattleHandler_PopWork(a2, v7);
-                BattleHandler_PushRun(a2, EFFECT_ABILITYPOPUPOUT, a3);
             }
         }
     }
@@ -2825,8 +2828,10 @@ extern "C"
 
     void HandlerSavant(int a1, ServerFlow *serverFlow, int pokemonSlot)
     {
+        k::Printf("\nChecking for pokemonSlot %d\n", pokemonSlot);
         if (pokemonSlot == BattleEventVar_GetValue(VAR_MON_ID))
         {
+            k::Printf("\nCheck 1\n");
             BattleMon *currentMon = Handler_GetBattleMon(serverFlow, pokemonSlot);
 
             MoveParam params;
@@ -2835,6 +2840,7 @@ extern "C"
             if (params.moveType != TYPE_NONE &&
                 params.moveType != BattleMon_GetPokeType(currentMon))
             {
+                k::Printf("\nCheck 2\n");
                 BattleHandler_PushRun(serverFlow, EFFECT_ABILITYPOPUPIN, pokemonSlot);
 
                 HandlerParam_ChangeType *changeType;
@@ -2849,7 +2855,7 @@ extern "C"
     }
 
     ABILITY_TRIGGERTABLE SavantHandlers[] = {
-        {EVENT_MOVE_EXECUTE_CHECK2, (ABILITY_HANDLER_FUNC)HandlerAnticipation}, // 22
+        {EVENT_MOVE_EXECUTE_CHECK2, (ABILITY_HANDLER_FUNC)HandlerSavant}, // 22
     };
 
     ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddBigPecks(_DWORD *a1)
@@ -2862,7 +2868,7 @@ extern "C"
 
 #pragma region Trace
 
-    void THUMB_BRANCH_HandleTrace(int a1, ServerFlow *a2, unsigned int tracePokemonID, _DWORD *a4)
+    void THUMB_BRANCH_SAFESTACK_HandlerTrace(int a1, ServerFlow *a2, unsigned int tracePokemonID, _DWORD *a4)
     {
         int tracePokemonSlot; // r5
         unsigned int Value;
@@ -2872,8 +2878,8 @@ extern "C"
         u8 v9;                     // r7
         unsigned int i;
         unsigned int pokeCount;
-        int traceAbilityId;
-        int traceAbilityPokemonId;
+        int traceAbilityId = 0;
+        int traceAbilityPokemonId = 0;
         u8 opposingPokePos[5];
         BattleMon *traceVictim;          // r5
         BattleMon *traceUser;            // r0
@@ -2893,11 +2899,12 @@ extern "C"
             pokeCount = Handler_ExpandPokeID(a2, ExistFrontPokePos | 0x400, opposingPokePos);
             if (pokeCount)
             {
-                for (i = 0; i < pokeCount; (i + 1))
+                for (i = 0; i < pokeCount; i++)
                 {
-                    if (!(Handler_GetBattleStyle(a2) != BTL_STYLE_TRIPLE || IsPosInRangeTripleBattle(ExistFrontPokePos, tracePokemonSlot))){
-                        continue;
-                    }
+                    // if (!(Handler_GetBattleStyle(a2) != BTL_STYLE_TRIPLE || IsPosInRangeTripleBattle(ExistFrontPokePos, tracePokemonSlot)))
+                    // {
+                    //     continue;
+                    // }
                     traceVictim = Handler_GetBattleMon(a2, opposingPokePos[i]);
                     traceAbilityId = BattleMon_GetValue(traceVictim, VALUE_ABILITY);
                     if (!j_j_IsTraceFailAbility(traceAbilityId))
@@ -2906,9 +2913,8 @@ extern "C"
                     }
                 }
             }
-
             /* NOW CHECK DIRECTLY ACROSS */
-            else
+            if (!(traceAbilityId && traceAbilityPokemonId))
             {
                 opposingPokeSlot = sub_219C508(Handler_GetBattleStyle(a2), tracePokemonSlot);
                 oppposingPokeID = Handler_PokePosToPokeID(a2, opposingPokeSlot);
@@ -2916,7 +2922,6 @@ extern "C"
                 traceAbilityId = BattleMon_GetValue(traceVictim, VALUE_ABILITY);
                 if (j_j_IsTraceFailAbility(traceAbilityId))
                 {
-
                     /* IF THE DIRECT ACROSS MON DOESN"T WORK, TRY ANY FOE */
                     ExistFrontPokePos = Handler_GetExistFrontPokePos(a2, (int)tracePokemonID);
                     pokeCount = Handler_ExpandPokeID(a2, ExistFrontPokePos | 0x100, opposingPokePos);
@@ -2947,7 +2952,7 @@ extern "C"
         }
         // Called when another pokemon switches in and the trace pokemon did not trace an ability yet
         // This new logic SHOULD work with ally pokemon but we need to test this
-        
+
         // else if (!MainModule_IsAllyMonID(Value, tracePokemonID) && *a4 == 1)
         else if (*a4 == 1)
         {
@@ -3517,6 +3522,25 @@ extern "C"
 }
 
 #pragma region TheWholeUI
+struct MsgFileEntry
+{
+    int Offset;
+    u16 CharCount;
+    u16 Padding;
+};
+
+struct SWAN_ALIGNED(4) MsgData
+{
+    void *FileHandle;
+    int RawData;
+    MsgFileEntry CurrentEntry;
+    int MsgOfsInArc;
+    ArcTool *MsgArc;
+    __int16 HeapID;
+    u8 LanguageId;
+    u8 IsAllPreload;
+};
+
 struct PokestarChoiceData
 {
     void *font;
@@ -3531,8 +3555,8 @@ struct PokestarChoiceData
 struct SWAN_PACKED SWAN_ALIGNED(1) BattlePokeListData
 {
     void *gameData;
-    void *pokeParty;
-    void *AllyPokeParty;
+    PokeParty *pokeParty;
+    PokeParty *AllyPokeParty;
     void *Font;
     HeapID heapID;
     __int16 field_12;
@@ -3677,7 +3701,7 @@ struct PokeListMain
     char field_1E9A;
     char field_1E9B;
     void *GFLFont;
-    void *MsgData;
+    MsgData *msgData;
     void *WordSetSystem;
     void *StrBuf;
     void *PrintSys;
@@ -3749,9 +3773,9 @@ extern "C" int PML_MoveGetMaxPP(int wazaId, unsigned int ppUpStage);
 extern "C" bool PML_MoveIsAlwaysHit(int wazaId);
 extern "C" int sub_202D8EC(PartyPkm *a1);
 extern "C" int BattleClient_GetMyID(void *a1);
-extern "C" void *MainModule_GetPokeParty(void *a1, int a2);
+extern "C" PokeParty *MainModule_GetPokeParty(void *a1, int a2);
 extern "C" int MainModule_IsCompetitiveBattleType(void *a1);
-extern "C" void *MainModule_GetAllyPokeParty(void *a1, char a2);
+extern "C" PokeParty *MainModule_GetAllyPokeParty(void *a1, char a2);
 extern "C" int sub_219C86C(void *a1, char a2);
 extern "C" int MainModule_CheckNumFrontPos(void *a1, char a2);
 extern "C" char *sub_689B7C8(void *a1);
@@ -3762,6 +3786,53 @@ extern "C" int sub_21CF250(BtlvCore *a1);
 extern "C" InputButton GCTX_HIDGetHeldKeys();
 extern "C" int MainModule_IsPartnerBattle(MainModule *a1);
 
+u8 *enteredBattle;
+
+extern "C" void findBattleMon(BtlvCore *a1, PokeParty *a2, int clientId)
+{
+    BattleParty party = a1->pokeCon->party[clientId];
+    k::Printf("\n\n===FIND BATTLEMON===\n");
+
+    /* WILD BATTLES */
+    if (a1->mainModule->btlSetup->btlType == 0)
+    {
+        for (int j = 0; j < party.memberCount; j++)
+        {
+            if (party.mons[j]->partySrc->Base.pid == a2->Pokemon[j].Base.pid)
+            {
+                a2->Pokemon[j].field_D8 = 2;
+            }
+        }
+        return;
+    };
+
+    for (int i = 0; i < party.memberCount; i++)
+    {
+        if (party.mons[i]->partySrc->Base.pid == a2->Pokemon[i].Base.pid)
+        {
+            if (party.mons[i]->AppearedTurn == 10000)
+            {
+                a2->Pokemon[i].field_D8 = 1;
+            }
+            else
+            {
+                a2->Pokemon[i].field_D8 = 0;
+            }
+            if (party.mons[i]->Ability == ABIL149_ILLUSION)
+            {
+                for (int j = 0; j < party.memberCount; j++)
+                {
+                    if (party.mons[j]->partySrc->Base.pid == a2->Pokemon[j].Base.pid)
+                    {
+                        a2->Pokemon[j].field_D4 = 1;
+                    }
+                }
+                break;
+            }
+        }
+    }
+}
+
 extern "C" void THUMB_BRANCH_SAFESTACK_StartBottomScreenMenu(BtlvCore *a1, BattlePokeListData *a2, int a3, char a4, __int16 a5)
 {
     int v9;                  // r0
@@ -3771,9 +3842,11 @@ extern "C" void THUMB_BRANCH_SAFESTACK_StartBottomScreenMenu(BtlvCore *a1, Battl
     int isRightBumper = (GCTX_HIDGetHeldKeys() & 256);
     int isLeftBumper = (GCTX_HIDGetHeldKeys() & 512);
 
-    k::Printf("\n\n====STARTBOTTOMSCREENMENU=======\na3 = %d\na4 = %d\na5 = %d\n\n", a3, a4, a5);
-
-    if (isLeftBumper)
+    if (a3 != 0)
+    {
+        v12 = BattleClient_GetMyID(a1->client);
+    }
+    else if (isLeftBumper)
     {
         v12 = (MainModule_IsPartnerBattle(a1->mainModule)) ? 3 : 1;
     }
@@ -3785,11 +3858,11 @@ extern "C" void THUMB_BRANCH_SAFESTACK_StartBottomScreenMenu(BtlvCore *a1, Battl
     {
         v12 = BattleClient_GetMyID(a1->client);
     }
-    //  k::Printf("\n====STARTBOTTOMSCREENMENU======= v12 = %d", v12);
     a2->pokeParty = MainModule_GetPokeParty(a1->mainModule, v12);
-    // k::Printf("\n====STARTBOTTOMSCREENMENU======= Check 2");
+    if (v12 != BattleClient_GetMyID(a1->client)){
+        findBattleMon(a1, a2->pokeParty, v12);
+    }
     v9 = a3 != 3 && MainModule_IsCompetitiveBattleType(a1->mainModule);
-    // k::Printf("\n====STARTBOTTOMSCREENMENU======= Check 3");
     a2->IsBagDisabled = v9;
     if (v9)
     {
@@ -3801,7 +3874,6 @@ extern "C" void THUMB_BRANCH_SAFESTACK_StartBottomScreenMenu(BtlvCore *a1, Battl
         IsAllyInMultiBattle = 0;
         a2->AllyPokeParty = 0;
     }
-    // k::Printf("\n====STARTBOTTOMSCREENMENU======= Check 4");
     a2->ListMode = a3;
     a2->AllyClientID = IsAllyInMultiBattle;
     if (BtlSetup_GetBattleStyle(a1->mainModule) == BTL_STYLE_ROTATION)
@@ -3820,17 +3892,15 @@ extern "C" void THUMB_BRANCH_SAFESTACK_StartBottomScreenMenu(BtlvCore *a1, Battl
     {
         v11 = 0;
     }
-    // k::Printf("\n====STARTBOTTOMSCREENMENU======= Check 5");
     if (isLeftBumper || isRightBumper)
     {
         a2->field_3C = 1;
-    } else {
+    }
+    else
+    {
         a2->field_3C = 0;
     }
-    // else
-    // {
-    //     a2->field_3C = (MainModule_IsPartnerBattle(a1->mainModule)) ? 1 : 0;
-    // }
+
     a2->SelectedMon = v11;
     a2->InfoPokeIndex = a4;
     a2->IsSelectedMonTrapped = a5;
@@ -3846,7 +3916,6 @@ extern "C" void THUMB_BRANCH_SAFESTACK_StartBottomScreenMenu(BtlvCore *a1, Battl
     a2->SoundEffectFlag = sub_21CF250(a1);
     a2->CommErrorFlag = 0;
     a2->EndFlag = 0;
-    // k::Printf("\n====STARTBOTTOMSCREENMENU======= Check 8");
 }
 
 extern "C" u32 GetScanSetting()
@@ -3874,11 +3943,15 @@ extern "C" void THUMB_BRANCH_SAFESTACK_PokeList_LoadPokeData(PokeListMain *a1, P
         a3->Species = PokeParty_GetParam(a2, PF_Species, 0);
         if (a3->Species)
         {
-            a3->Forme = PokeParty_GetParam(a3->partyPkm, PF_Forme, 0);
-
+            // a3->Species = 201; // (a2->field_D8 == 1 && isEnemy && !GetScanSetting()) ? 201 : a3->Species;
+            // a3->Forme = (a2->field_D8 == 1) ? 0:
             isEnemy = a1->pokeListSetupData->field_3C;
 
-            if (isEnemy) // && !GetScanSetting())
+            a3->Species = (a2->field_D8 == 1 && isEnemy && !GetScanSetting()) ? 0 : a3->Species;
+            a3->Species = (a2->field_D4 == 1) ? 0 : a3->Species;
+            a3->Forme = PokeParty_GetParam(a3->partyPkm, PF_Forme, 0);
+
+            if (isEnemy && !GetScanSetting()) // && !GetScanSetting())
             {
                 a3->Attack = PML_PersonalGetParamSingle(a3->Species, a3->Forme, Personal_ATK);
                 a3->Defense = PML_PersonalGetParamSingle(a3->Species, a3->Forme, Personal_DEF);
@@ -3930,8 +4003,8 @@ extern "C" void THUMB_BRANCH_SAFESTACK_PokeList_LoadPokeData(PokeListMain *a1, P
 
                 // currentPP = PokeParty_GetParam(a3->partyPkm, (PkmField)(i + 58), 0);
                 // maxPP =  PML_MoveGetParam(v9->MoveID, MVDATA_BASEPP) + 3;
-                int missingPP = PokeParty_GetParam(a3->partyPkm, (PkmField)(i + 58), 0) < ( PML_MoveGetParam(PokeParty_GetParam(a3->partyPkm, (PkmField)(i + 54), 0), MVDATA_BASEPP) + 3);
-                if (isEnemy && !missingPP)// && !(PokeParty_GetParam(a3->partyPkm, (PkmField)(i + 58), 0) < (PML_MoveGetParam(v9->MoveID, MVDATA_BASEPP) + 3)))
+                int missingPP = PokeParty_GetParam(a3->partyPkm, (PkmField)(i + 58), 0) < (PML_MoveGetParam(PokeParty_GetParam(a3->partyPkm, (PkmField)(i + 54), 0), MVDATA_BASEPP) + ((a2->field_D8==2) ? 0 : 3));
+                if (isEnemy && !missingPP && !GetScanSetting()) // && !(PokeParty_GetParam(a3->partyPkm, (PkmField)(i + 58), 0) < (PML_MoveGetParam(v9->MoveID, MVDATA_BASEPP) + 3)))
                 {
                     continue;
                 }
@@ -3971,5 +4044,190 @@ extern "C" void THUMB_BRANCH_SAFESTACK_PokeList_LoadPokeData(PokeListMain *a1, P
         a3->Species = 0;
     }
 }
+#pragma endregion
+
+#pragma region SCan GUI
+
+extern "C" int sub_21FA27C(PokeListMain *a1, unsigned int a2);
+extern "C" int PokeList_IsAlreadyInBattle(PokeListMain *a1, int a2);
+extern "C" int PokeList_IsEgg(PokeListMain *a1);
+extern "C" int PokeList_IsAlreadySelectedForSwitchIn(PokeListMain *a1, int a2);
+extern "C" int PokeList_DetermineSwitchInFailCause(PokeListMain *a1);
+extern "C" StrBuf *GFL_MsgDataLoadStrbufNew(MsgData *msgData, int msgId);
+extern "C" void GFL_WordSetFormatStrbuf(void *wordSet, StrBuf *dest, StrBuf *source);
+extern "C" void loadPokemonNicknameToStrbuf(void *a1, int a2, PartyPkm *a3);
+extern "C" void GFL_StrBufFree(StrBuf *pStrbuf);
+
+extern "C" int THUMB_BRANCH_SAFESTACK_PokeList_DetermineSwitchInFailCause(PokeListMain *a1)
+{
+    int SelectedMonID; // r0
+    PokeListData *v3;  // r5
+
+    SelectedMonID = PokeList_GetSelectedMonID(a1, a1->pokeListSetupData->SelectedMon);
+    v3 = &a1->pokeListData[SelectedMonID];
+    if (a1->pokeListSetupData->field_3C)
+    {
+        return 7;
+    }
+    if (sub_21FA27C(a1, SelectedMonID))
+    {
+        return 1;
+    }
+    if (!v3->CurrentHP)
+    {
+        return 2;
+    }
+    if (PokeList_IsAlreadyInBattle(a1, a1->pokeListSetupData->SelectedMon))
+    {
+        return 3;
+    }
+    if (PokeList_IsEgg(a1))
+    {
+        return 5;
+    }
+    if (PokeList_IsAlreadySelectedForSwitchIn(a1, a1->pokeListSetupData->SelectedMon) == 1)
+    {
+        return 4;
+    }
+    if (a1->pokeListSetupData->IsSelectedMonTrapped)
+    {
+        return 6;
+    }
+    return 0;
+}
+
+extern "C" int THUMB_BRANCH_SAFESTACK_PokeList_LoadSwitchInFailMessage(PokeListMain *a1)
+{
+    StrBuf *StrbufNew; // r7
+    int SelectedMonID; // r6
+    unsigned int v4;   // r0
+    int v5;            // r1
+    MsgData *msgdata;  // r0
+    int v7;            // r1
+    MsgData *v8;       // r0
+
+    SelectedMonID = PokeList_GetSelectedMonID(a1, a1->pokeListSetupData->SelectedMon);
+    v4 = PokeList_DetermineSwitchInFailCause(a1);
+    if (v4 <= 7)
+    {
+        if (v4 == 0)
+        {
+            return 1;
+        }
+        else if (v4 == 1)
+        {
+            v5 = 90;
+            msgdata = a1->msgData;
+            goto LABEL_4;
+        }
+        else if (v4 == 2)
+        {
+            v7 = 87;
+            v8 = a1->msgData;
+            goto LABEL_6;
+        }
+        else if (v4 == 3)
+        {
+            v7 = 86;
+            v8 = a1->msgData;
+            goto LABEL_6;
+        }
+        else if (v4 == 4)
+        {
+            v7 = 103;
+            v8 = a1->msgData;
+            goto LABEL_6;
+        }
+        else if (v4 == 7)
+        {
+            v5 = 108;
+            msgdata = a1->msgData;
+            goto LABEL_4;
+        }
+        else if (v4 == 5)
+        {
+            v5 = 89;
+            msgdata = a1->msgData;
+        LABEL_4:
+            StrbufNew = GFL_MsgDataLoadStrbufNew(msgdata, v5);
+        }
+        else if (v4 == 6)
+        {
+            SelectedMonID = a1->pokeListSetupData->InfoPokeIndex;
+            v7 = 88;
+            v8 = a1->msgData;
+        LABEL_6:
+            StrbufNew = GFL_MsgDataLoadStrbufNew(v8, v7);
+            loadPokemonNicknameToStrbuf(a1->WordSetSystem, 0, a1->pokeListData[SelectedMonID].partyPkm);
+        }
+        else if (v4 == 7)
+        {
+        }
+        else
+        {
+        }
+    }
+    GFL_WordSetFormatStrbuf(a1->WordSetSystem, (StrBuf *)a1->StrBuf, StrbufNew);
+    GFL_StrBufFree(StrbufNew);
+    return 0;
+}
+
+#pragma endregion
+
+#pragma region testing
+// struct BtlvEffectSetupParam
+// {
+//     BattleStyle battleStyle;
+//     BtlType btlType;
+//     BattleFieldStatus bfs;
+//     u16 tr_type[4];
+//     bool isMultiBattle;
+//     BtlvScu *scu;
+//     MainModule *mainModule;
+//     u16 pokestar;
+//     u16 pokestar_field;
+//     bool pwt_final;
+// };
+
+// struct BtlvEffectMain
+// {
+//     void *TCBManager;
+//     void *field_4;
+//     void *tcbs[32];
+//     int tcbCallback[32];
+//     int tcbGroups[32];
+//     void *EffVM;
+//     void *PalAnm;
+//     void *btlvMcss;
+//     void *btlvStageHandle;
+//     void *btlvFieldHandle;
+//     void *btlvCameraHandle;
+//     void *clact;
+//     void *btlvGauge;
+//     void *ballGaugeWork[2];
+//     void *btlvTimer;
+//     void *btlvBG;
+//     void *VTCB;
+//     BtlvEffectSetupParam SetupParam;
+//     int IsScriptVMRunning;
+//     int Flags;
+//     HeapID heapID;
+//     __int16 field_1FA;
+//     int trainerBGMChangeFlag;
+//     int trainerIndex[8];
+//     int ShownAbilities[6];
+//     _BYTE gap238[8];
+//     int CameraMovementType;
+//     int IsScreenStateUnchangedThisFrame;
+//     int FramesSinceAction;
+//     int FramesBeforeCameraIdleMovement;
+//     int CameraMovementAnimID;
+// };
+
+// extern "C" void BtlvMcss_Add(void *a1, PartyPkm *a2, int a3);
+// extern "C" void THUMB_BRANCH_BtlvEffect_AddMon(PartyPkm *a1, int a2)
+// {
+//     BtlvMcss_Add(((BtlvEffectMain *)0x21F4280)->btlvMcss, a1, a2);
+// }
 
 #pragma endregion

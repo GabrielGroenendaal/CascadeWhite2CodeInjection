@@ -452,7 +452,7 @@ extern "C"
                 // v8->rankVolume = -1;
                 // v8->fMoveAnimation = 1;
                 // BattleHandler_PopWork(a2, v8);
-                ChangeStats(a2, (int)a3, (int)a3, statStage, -1, 1);
+                ChangeStats(a2, Value, Value, statStage, -1, 1);
             }
         }
     }
@@ -1325,11 +1325,9 @@ extern "C"
         result = BattleEventVar_GetValue(VAR_ATTACKING_MON);
         if (a3 == result)
         {
-            result = BattleEventVar_GetValue(VAR_POKE_TYPE);
-            if (result == TYPE_GHOST)
-            {
+            
                 return BattleEventVar_RewriteValue(VAR_SET_TYPE_EFFECTIVENESS, 1);
-            }
+            
         }
         return result;
     }
@@ -2118,6 +2116,8 @@ extern "C"
 
 #pragma region ImpossibleMoves
 
+    extern BattleEventItem* BattleEvent_SeekItem(BattleEventItemType a1, int a2);
+
     int THUMB_BRANCH_IsUnselectableMove(BtlClientWk *a1, BattleMon *a2, int move, Btlv_StringParam *strparam)
     {
         ConditionData MoveCondition; // r0
@@ -2208,19 +2208,18 @@ extern "C"
                 return 1;
             }
 
-            // k::Printf("\n\nLets see if this works, condition accuracy is %d\n",a2->Conditions[CONDITION_ACCURACYUP]);
-            if (a2->Conditions[CONDITION_ACCURACYUP] == 1 && PML_MoveIsDamaging(move))
-            {
-                // k::Printf("\nit worked\n\n");
-                if (strparam)
-                {
-                    Btlv_StringParam_Setup(strparam, 2, 571);
-                    v12 = BattleMon_GetID(a2);
-                    Btlv_StringParam_AddArg(strparam, v12);
-                    Btlv_StringParam_AddArg(strparam, move);
-                }
-                return 1;
-            }
+            // // k::Printf("\n\nLets see if this works, condition accuracy is %d\n",a2->Conditions[CONDITION_ACCURACYUP]);
+            // if (BattleMon_GetValue(a2, VALUE_EFFECTIVE_ABILITY) == ABIL054_TRUANT && PML_MoveIsDamaging(move))
+            // {
+            //     BattleEventItem* abil = BattleEvent_SeekItem(EVENTITEM_ABILITY, a2->ID);
+            //     if (abil && abil->work[0]){
+            //         Btlv_StringParam_Setup(strparam, 2, 571);
+            //         v12 = BattleMon_GetID(a2);
+            //         Btlv_StringParam_AddArg(strparam, v12);
+            //         Btlv_StringParam_AddArg(strparam, move);
+            //     }
+            //     return 1;
+            // }
 
             if (BattleMon_CheckIfMoveCondition(a2, CONDITION_TORMENT) && move == BattleMon_GetPreviousMove(a2))
             {

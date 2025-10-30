@@ -2239,7 +2239,7 @@ extern "C"
         BattleMon_ChangePokeType(BattleMon, a2->nextType);
         if (!a2->pad && PokeTypePair_IsMonotype(a2->nextType))
         {
-            ServerDisplay_AddMessageImpl(a1->serverCommandQueue, 91, 896, a2->monID, Type1, -65536); // 896: [VAR PKNICK(0)] transformed\ninto the [VAR TYPE(1)] type!
+            ServerDisplay_AddMessageImpl(a1->serverCommandQueue, 91, 896, a2->monID, PokeTypePair_GetType1(a2->nextType), -65536); // 896: [VAR PKNICK(0)] transformed\ninto the [VAR TYPE(1)] type!
         }
         return 1;
     }

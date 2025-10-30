@@ -590,6 +590,7 @@ extern "C"
             BattleHandler_StrSetup(&bhwork->str, 1u, 203);
             BattleHandler_PopWork(a1, bhwork);
             ServerControl_FieldEffectCore(a1, 1, Condition_MakePermanent(), 0);
+
         }
 
         // Chargestone Cave
@@ -723,7 +724,6 @@ extern "C"
         v12 = 0;
         serverCommandQueue->readPtr = 0;
         v12 = HandleFieldEffects(a1);
-        v12 = 1;
 
         /* Some kind of initialization of the damage calc cache would be good here */
         // resetCalcTable();
@@ -1482,7 +1482,7 @@ extern "C"
             TypeEffectiveness,
             ratio,
             critFlag,
-            isSimulation,
+            1,
             &v12);
         --a1->simulationCounter;
         // k::Printf("\n===SimulationDamage===Check17");
@@ -1979,43 +1979,9 @@ extern "C"
                                 BasePower = PML_MoveGetBasePower(ID);
 
                                 // Weather Ball Checks
-                                if (ID == MOVE311_WEATHER_BALL || ID == MOVE271_WEATHER_CRASH)
-                                {
-                                    if (atkAbility != ABIL142_OVERCOAT && MonData->HeldItem != IT0544_UTILITY_UMBRELLA)
-                                    {
-
-                                        v18 = BattleField_GetWeather();
-
-                                        if (v18 != 0)
-                                        {
-                                            BasePower = 100;
-                                        }
-                                        if (v18 == 1 || atkAbility == ABIL094_SOLAR_POWER || atkAbility == ABIL034_CHLOROPHYLL || atkAbility == ABIL122_FLOWER_GIFT)
-                                        {
-
-                                            BasePower = 100;
-                                            Type = TYPE_FIRE;
-                                        }
-                                        else if (v18 == 2)
-                                        {
-                                            Type = TYPE_WATER;
-                                        }
-                                        else if (v18 == 3)
-                                        {
-                                            Type = TYPE_ICE;
-                                        }
-                                        else if (v18 == 4)
-                                        {
-                                            Type = TYPE_ROCK;
-                                        }
-                                    }
-                                }
-
                                 if (ID == MOVE267_NATURE_POWER)
                                 {
-
                                     int BattleTerrain = Handler_GetBattleTerrain(BattleServer_GetServerFlow(a1->mainModule->server));
-
                                     // //k::printf("\n\nThe Battle Terrain is %d\n\n", BattleTerrain);
 
                                     if (BattleTerrain == 5u)
@@ -2052,54 +2018,96 @@ extern "C"
                                     }
                                 }
 
-                                if (ID == MOVE363_NATURAL_GIFT && PML_ItemIsBerry(BattleMon_GetHeldItem(MonData)))
-                                {
-
-                                    Type = ItemGetParam(BattleMon_GetHeldItem(MonData), ITSTAT_NATURAL_GIFT_TYPE);
-
-                                    BasePower = ItemGetParam(BattleMon_GetHeldItem(MonData), ITSTAT_NATURAL_GIFT_POWER);
-                                }
-
+                         
                                 if (atkAbility == ABIL012_GALVANIZE && Type == TYPE_NORMAL)
                                 {
                                     Type = TYPE_ELECTRIC;
                                     BasePower = fixed_round(BasePower, 4505);
                                 }
-
                                 if (atkAbility == ABIL105_MOISTURIZE && Type == TYPE_NORMAL)
                                 {
                                     Type = TYPE_WATER;
                                     BasePower = fixed_round(BasePower, 4505);
                                 }
-
                                 if (atkAbility == ABIL048_REFRIGERATE && Type == TYPE_NORMAL)
                                 {
                                     Type = TYPE_ICE;
                                     BasePower = fixed_round(BasePower, 4505);
                                 }
-
                                 if (atkAbility == ABIL060_AERILATE && Type == TYPE_NORMAL)
                                 {
                                     Type = TYPE_FLYING;
                                     BasePower = fixed_round(BasePower, 4505);
                                 }
-
                                 if (atkAbility == ABIL040_PIXILATE && Type == TYPE_NORMAL)
                                 {
                                     Type = TYPE_FAIRY;
                                     BasePower = fixed_round(BasePower, 4505);
                                 }
-
                                 if (atkAbility == ABIL096_NORMALIZE && Type == TYPE_NORMAL)
                                 {
                                     Type = TYPE_NORMAL;
                                 }
-                                // //k::printf("\nBase Power from %d is %d, and the Type is %d\n", ID, BasePower, Type);
-
-                                // if (BasePower < 0xA)
-                                // {
-                                //     BasePower = 60;
+                                // if (HasMoldBreaker(MonData) && defAbility == ABIL096_NORMALIZE){
+                                //     Type = TYPE_NORMAL;
                                 // }
+
+                                if (ID == MOVE363_NATURAL_GIFT && PML_ItemIsBerry(BattleMon_GetHeldItem(MonData)))
+                                {
+                                    Type = ItemGetParam(BattleMon_GetHeldItem(MonData), ITSTAT_NATURAL_GIFT_TYPE);
+                                    BasePower = ItemGetParam(BattleMon_GetHeldItem(MonData), ITSTAT_NATURAL_GIFT_POWER);
+                                }
+
+                                // Weather Ball Checks
+                                if (ID == MOVE311_WEATHER_BALL || ID == MOVE271_WEATHER_CRASH)
+                                {
+                                    if (atkAbility != ABIL142_OVERCOAT && MonData->HeldItem != IT0544_UTILITY_UMBRELLA)
+                                    {
+
+                                        v18 = BattleField_GetWeather();
+                                        if (v18 != 0)
+                                        {
+                                            BasePower = 100;
+                                        }
+                                        if (v18 == 1 || atkAbility == ABIL094_SOLAR_POWER || atkAbility == ABIL034_CHLOROPHYLL || atkAbility == ABIL122_FLOWER_GIFT)
+                                        {
+                                            BasePower = 100;
+                                            Type = TYPE_FIRE;
+                                        }
+                                        else if (v18 == 2)
+                                        {
+                                            Type = TYPE_WATER;
+                                        }
+                                        else if (v18 == 3)
+                                        {
+                                            Type = TYPE_ICE;
+                                        }
+                                        else if (v18 == 4)
+                                        {
+                                            Type = TYPE_ROCK;
+                                        }
+                                    }
+                                }
+
+                                if (ID == MOVE546_TECHNO_BLAST) {
+									if (MonData->HeldItem == IT0119_CHILL_DRIVE)
+									{
+										Type = TYPE_ICE;
+									}
+									if (MonData->HeldItem == IT0116_DOUSE_DRIVE)
+									{
+										Type = TYPE_WATER;
+									}
+									if (MonData->HeldItem == IT0118_BURN_DRIVE)
+									{
+										Type = TYPE_FIRE;
+									}
+									if (MonData->HeldItem == IT0117_SHOCK_DRIVE)
+									{
+										Type = TYPE_ELECTRIC;
+									}
+								}
+
 
                                 if (ID == MOVE327_SKY_UPPERCUT || ID == MOVE357_FREEZE_DRY || atkAbility == ABIL007_CORROSION)
                                 {
@@ -2274,39 +2282,12 @@ extern "C"
                                 // k:Printf("\nBase Power from %d is %d\n", ID, BasePower);
 
                                 // Weather Ball Checks
-                                if (ID == MOVE311_WEATHER_BALL || ID == MOVE271_WEATHER_CRASH)
-                                {
-                                    if (atkAbility != ABIL142_OVERCOAT && MonData->HeldItem != IT0544_UTILITY_UMBRELLA)
-                                    {
-
-                                        v18 = BattleField_GetWeather();
-                                        if (v18 != 0)
-                                        {
-                                            BasePower = 100;
-                                        }
-                                        if (v18 == 1 || atkAbility == ABIL094_SOLAR_POWER || atkAbility == ABIL034_CHLOROPHYLL || atkAbility == ABIL122_FLOWER_GIFT)
-                                        {
-                                            BasePower = 100;
-                                            Type = TYPE_FIRE;
-                                        }
-                                        else if (v18 == 2)
-                                        {
-                                            Type = TYPE_WATER;
-                                        }
-                                        else if (v18 == 3)
-                                        {
-                                            Type = TYPE_ICE;
-                                        }
-                                        else if (v18 == 4)
-                                        {
-                                            Type = TYPE_ROCK;
-                                        }
-                                    }
-                                }
-
+                                
                                 if (ID == MOVE267_NATURE_POWER)
                                 {
+
                                     int BattleTerrain = Handler_GetBattleTerrain(BattleServer_GetServerFlow(a1->mainModule->server));
+
                                     // //k::printf("\n\nThe Battle Terrain is %d\n\n", BattleTerrain);
 
                                     if (BattleTerrain == 5u)
@@ -2343,40 +2324,104 @@ extern "C"
                                     }
                                 }
 
-                                if (ID == MOVE363_NATURAL_GIFT && PML_ItemIsBerry(BattleMon_GetHeldItem(MonData)))
-                                {
-                                    Type = ItemGetParam(BattleMon_GetHeldItem(MonData), ITSTAT_NATURAL_GIFT_TYPE);
-                                    BasePower = ItemGetParam(BattleMon_GetHeldItem(MonData), ITSTAT_NATURAL_GIFT_POWER);
-                                }
                                 if (atkAbility == ABIL012_GALVANIZE && Type == TYPE_NORMAL)
                                 {
                                     Type = TYPE_ELECTRIC;
                                     BasePower = fixed_round(BasePower, 4505);
                                 }
+
                                 if (atkAbility == ABIL105_MOISTURIZE && Type == TYPE_NORMAL)
                                 {
                                     Type = TYPE_WATER;
                                     BasePower = fixed_round(BasePower, 4505);
                                 }
+
                                 if (atkAbility == ABIL048_REFRIGERATE && Type == TYPE_NORMAL)
                                 {
                                     Type = TYPE_ICE;
                                     BasePower = fixed_round(BasePower, 4505);
                                 }
+
                                 if (atkAbility == ABIL060_AERILATE && Type == TYPE_NORMAL)
                                 {
                                     Type = TYPE_FLYING;
                                     BasePower = fixed_round(BasePower, 4505);
                                 }
+
                                 if (atkAbility == ABIL040_PIXILATE && Type == TYPE_NORMAL)
                                 {
                                     Type = TYPE_FAIRY;
                                     BasePower = fixed_round(BasePower, 4505);
                                 }
+
                                 if (atkAbility == ABIL096_NORMALIZE && Type == TYPE_NORMAL)
                                 {
                                     Type = TYPE_NORMAL;
                                 }
+
+                                // if (HasMoldBreaker(MonData) && defAbility == ABIL096_NORMALIZE){
+                                //     Type = TYPE_NORMAL;
+                                // }
+
+                                if (ID == MOVE311_WEATHER_BALL || ID == MOVE271_WEATHER_CRASH)
+                                {
+                                    if (atkAbility != ABIL142_OVERCOAT && MonData->HeldItem != IT0544_UTILITY_UMBRELLA)
+                                    {
+
+                                        v18 = BattleField_GetWeather();
+
+                                        if (v18 != 0)
+                                        {
+                                            BasePower = 100;
+                                        }
+                                        if (v18 == 1 || atkAbility == ABIL094_SOLAR_POWER || atkAbility == ABIL034_CHLOROPHYLL || atkAbility == ABIL122_FLOWER_GIFT)
+                                        {
+
+                                            BasePower = 100;
+                                            Type = TYPE_FIRE;
+                                        }
+                                        else if (v18 == 2)
+                                        {
+                                            Type = TYPE_WATER;
+                                        }
+                                        else if (v18 == 3)
+                                        {
+                                            Type = TYPE_ICE;
+                                        }
+                                        else if (v18 == 4)
+                                        {
+                                            Type = TYPE_ROCK;
+                                        }
+                                    }
+                                }
+
+
+                                if (ID == MOVE363_NATURAL_GIFT && PML_ItemIsBerry(BattleMon_GetHeldItem(MonData)))
+                                {
+
+                                    Type = ItemGetParam(BattleMon_GetHeldItem(MonData), ITSTAT_NATURAL_GIFT_TYPE);
+
+                                    BasePower = ItemGetParam(BattleMon_GetHeldItem(MonData), ITSTAT_NATURAL_GIFT_POWER);
+                                }
+
+                                if (ID == MOVE546_TECHNO_BLAST) {
+									if (MonData->HeldItem == IT0119_CHILL_DRIVE)
+									{
+										Type = TYPE_ICE;
+									}
+									if (MonData->HeldItem == IT0116_DOUSE_DRIVE)
+									{
+										Type = TYPE_WATER;
+									}
+									if (MonData->HeldItem == IT0118_BURN_DRIVE)
+									{
+										Type = TYPE_FIRE;
+									}
+									if (MonData->HeldItem == IT0117_SHOCK_DRIVE)
+									{
+										Type = TYPE_ELECTRIC;
+									}
+								}
                                 if (ID == MOVE327_SKY_UPPERCUT || ID == MOVE357_FREEZE_DRY || atkAbility == ABIL007_CORROSION)
                                 {
                                     TypeEffectivenessVsMon = GetTypeEffectivenessVsMonAltered(Type, PokeType);
@@ -2571,7 +2616,7 @@ extern "C"
                     moveDamage = Handler_SimulationDamage(flow,
                                                           BattleMon_GetID(attackingMon),
                                                           BattleMon_GetID(defender),
-                                                          Move_GetID(attackingMon, i), false, false);
+                                                          Move_GetID(attackingMon, i), true, false);
                 }
 
                 //k::Printf("\nMidBattleSwitchAI: Debug Point 3 for Loop %d:: The damage of move %d is %d\n", k, Move_GetID(attackingMon, i), damage);
@@ -2715,56 +2760,56 @@ extern "C"
         }
 
         /* Nature Power Check */
-        if (moveID == MOVE267_NATURE_POWER)
-        {
-            int BattleTerrain = Handler_GetBattleTerrain(BattleServer_GetServerFlow(work->mainModule->server));
+        // if (moveID == MOVE267_NATURE_POWER)
+        // {
+        //     int BattleTerrain = Handler_GetBattleTerrain(BattleServer_GetServerFlow(work->mainModule->server));
 
-            // //k::printf("\n\nThe Battle Terrain is %d\n\n", BattleTerrain);
+        //     // //k::printf("\n\nThe Battle Terrain is %d\n\n", BattleTerrain);
 
-            if (BattleTerrain == 5u)
-            {
-                moveID = 402;
-            }
-            else if (BattleTerrain == 11u)
-            {
-                moveID = 89;
-            }
-            else if (BattleTerrain == 0xCu)
-            {
-                moveID = 56;
-            }
-            else if (BattleTerrain == 7u)
-            {
-                moveID = 59;
-            }
-            else if (BattleTerrain == 9u)
-            {
-                moveID = 426;
-            }
-            else if (BattleTerrain == 0xAu)
-            {
-                moveID = 157;
-            }
-            else if (BattleTerrain == 0xDu)
-            {
-                moveID = 58;
-            }
-            else
-            {
-                moveID = 161;
-            }
-        }
+        //     if (BattleTerrain == 5u)
+        //     {
+        //         moveID = 402;
+        //     }
+        //     else if (BattleTerrain == 11u)
+        //     {
+        //         moveID = 89;
+        //     }
+        //     else if (BattleTerrain == 0xCu)
+        //     {
+        //         moveID = 56;
+        //     }
+        //     else if (BattleTerrain == 7u)
+        //     {
+        //         moveID = 59;
+        //     }
+        //     else if (BattleTerrain == 9u)
+        //     {
+        //         moveID = 426;
+        //     }
+        //     else if (BattleTerrain == 0xAu)
+        //     {
+        //         moveID = 157;
+        //     }
+        //     else if (BattleTerrain == 0xDu)
+        //     {
+        //         moveID = 58;
+        //     }
+        //     else
+        //     {
+        //         moveID = 161;
+        //     }
+        // }
 
         /* Copycat Check */
         /* Checks for the move that copycat would call and if they have priority from abilities or items */
-        if (moveID == MOVE383_COPYCAT && atkAbility == ABIL158_PRANKSTER)
-        {
-            int actualMove = Handler_GetPrevUsedMove(BattleServer_GetServerFlow(work->mainModule->server));
-            if (actualMove && !j_j_IsNotAllowedCopycatMove(actualMove))
-            {
-                moveID = actualMove;
-            }
-        }
+        // if (moveID == MOVE383_COPYCAT && atkAbility == ABIL158_PRANKSTER)
+        // {
+        //     int actualMove = Handler_GetPrevUsedMove(BattleServer_GetServerFlow(work->mainModule->server));
+        //     if (actualMove && !j_j_IsNotAllowedCopycatMove(actualMove))
+        //     {
+        //         moveID = actualMove;
+        //     }
+        // }
 
         /* Updating Variables with any stuff that might have changed from move replacing Moves */
         IsDamaging = PML_MoveIsDamaging(Param);
@@ -2776,49 +2821,49 @@ extern "C"
         }
 
         /* Natural Gift Check */
-        if (moveID == MOVE363_NATURAL_GIFT && PML_ItemIsBerry(BattleMon_GetHeldItem(attackingMon)))
-        {
-            Type = ItemGetParam(BattleMon_GetHeldItem(attackingMon), ITSTAT_NATURAL_GIFT_TYPE);
-        }
+        // if (moveID == MOVE363_NATURAL_GIFT && PML_ItemIsBerry(BattleMon_GetHeldItem(attackingMon)))
+        // {
+        //     Type = ItemGetParam(BattleMon_GetHeldItem(attackingMon), ITSTAT_NATURAL_GIFT_TYPE);
+        // }
 
-        if (atkAbility == ABIL040_PIXILATE && Type == TYPE_NORMAL)
-        {
-            Type = TYPE_FAIRY;
-        }
-        if (atkAbility == ABIL048_REFRIGERATE && Type == TYPE_NORMAL)
-        {
-            Type = TYPE_ICE;
-        }
-        if (atkAbility == ABIL012_GALVANIZE && Type == TYPE_NORMAL)
-        {
-            Type = TYPE_ELECTRIC;
-        }
-        if (atkAbility == ABIL060_AERILATE && Type == TYPE_NORMAL)
-        {
-            Type = TYPE_FLYING;
-        }
-        if (atkAbility == ABIL096_NORMALIZE)
-        {
-            Type = TYPE_NORMAL;
-        }
+        // if (atkAbility == ABIL040_PIXILATE && Type == TYPE_NORMAL)
+        // {
+        //     Type = TYPE_FAIRY;
+        // }
+        // if (atkAbility == ABIL048_REFRIGERATE && Type == TYPE_NORMAL)
+        // {
+        //     Type = TYPE_ICE;
+        // }
+        // if (atkAbility == ABIL012_GALVANIZE && Type == TYPE_NORMAL)
+        // {
+        //     Type = TYPE_ELECTRIC;
+        // }
+        // if (atkAbility == ABIL060_AERILATE && Type == TYPE_NORMAL)
+        // {
+        //     Type = TYPE_FLYING;
+        // }
+        // if (atkAbility == ABIL096_NORMALIZE)
+        // {
+        //     Type = TYPE_NORMAL;
+        // }
 
-        /* Alternate Type Effectiveness Checks */
-        if (moveID == MOVE327_SKY_UPPERCUT || moveID == MOVE357_FREEZE_DRY || atkAbility == ABIL007_CORROSION)
-        {
-            TypeEffectiveness = GetTypeEffectivenessVsMonAltered(Type, PokeType);
-        }
-        else if (moveID == MOVE533_SACRED_SWORD || atkAbility == ABIL039_INNER_FOCUS || atkAbility == ABIL096_NORMALIZE || atkAbility == ABIL113_SCRAPPY)
-        {
-            TypeEffectiveness = GetTypeEffectivenessVsMonAlteredSacredSword(Type, PokeType);
-        }
-        else if (moveID == MOVE498_CHIP_AWAY)
-        {
-            TypeEffectiveness = 3;
-        }
-        else
-        {
-            TypeEffectiveness = GetTypeEffectivenessVsMon(Type, PokeType);
-        }
+        // /* Alternate Type Effectiveness Checks */
+        // if (moveID == MOVE327_SKY_UPPERCUT || moveID == MOVE357_FREEZE_DRY || atkAbility == ABIL007_CORROSION)
+        // {
+        //     TypeEffectiveness = GetTypeEffectivenessVsMonAltered(Type, PokeType);
+        // }
+        // else if (moveID == MOVE533_SACRED_SWORD || atkAbility == ABIL039_INNER_FOCUS || atkAbility == ABIL096_NORMALIZE || atkAbility == ABIL113_SCRAPPY)
+        // {
+        //     TypeEffectiveness = GetTypeEffectivenessVsMonAlteredSacredSword(Type, PokeType);
+        // }
+        // else if (moveID == MOVE498_CHIP_AWAY)
+        // {
+        //     TypeEffectiveness = 3;
+        // }
+        // else
+        // {
+        //     TypeEffectiveness = GetTypeEffectivenessVsMon(Type, PokeType);
+        // }
 
         /*
 
@@ -2857,7 +2902,7 @@ extern "C"
             moveDamage = Handler_SimulationDamage(BattleServer_GetServerFlow(work->mainModule->server),
                                                   BattleMon_GetID(attackingMon),
                                                   BattleMon_GetID(defendingMon),
-                                                  Move_GetID(attackingMon, moveID), false, false);
+                                                  Move_GetID(attackingMon, moveID), true, false);
         }
 
         if (moveDamage == 0)

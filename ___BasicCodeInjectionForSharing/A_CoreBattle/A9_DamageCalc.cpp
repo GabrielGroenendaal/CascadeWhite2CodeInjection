@@ -1,9 +1,7 @@
 #include "swantypes.h"
 #include "kPrint.h"
 
-
 // uses ESDB_A9.yml
-
 
 #pragma region Definitions
 
@@ -32,7 +30,6 @@ unsigned short int &LOWORD(unsigned int &x)
 {
     return *(reinterpret_cast<unsigned short int *>(&x) + 0);
 }
-
 
 extern "C" u32 SearchArray(const u16 *const arr, const u32 arrSize, const u32 value)
 {
@@ -201,11 +198,9 @@ extern "C"
         BTL_RESULT_6 = 0x6,
     };
 
-
-
     enum MoveID
 #ifdef __cplusplus
-    : u32
+        : u32
 #endif
     {
         MOVE_NULL = 0x0,
@@ -793,7 +788,7 @@ extern "C"
         TYPE_FAIRY = 0x11, // 17
         TYPE_NULL = 0x12,  // 18
     };
-enum BattleEventType
+    enum BattleEventType
     {
         EVENT_NULL = 0x0,
         EVENT_ACTION_PROCESSING_START = 0x1,
@@ -986,7 +981,6 @@ enum BattleEventType
         TURNFLAG_USINGFLING = 0xF,
     };
 
-    
     enum BattleMonValue
     {
         VALUE_NULL = 0x0,
@@ -1511,11 +1505,9 @@ enum BattleEventType
         u8 PokeID;
         u8 fEffective;
     };
- 
 
     const u16 teraItems[17] = {
-        215, 298, 299, 300, 301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 313
-    };
+        215, 298, 299, 300, 301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 313};
 
     struct MoveRecord
     {
@@ -1990,8 +1982,6 @@ enum BattleEventType
         u8 clientID[4];
     };
 
-    
-
     struct MoveAnimCtrl
     {
         unsigned __int16 moveID;
@@ -2247,11 +2237,10 @@ enum BattleEventType
         u8 CanRespawnHiddenItems;
     };
 
-
 #pragma endregion
 
-#pragma region ExtraAbilities 
-struct FourthAbility
+#pragma region ExtraAbilities
+    struct FourthAbility
     {
         u8 whiteListed;
         AbilID abilID4;
@@ -2342,8 +2331,8 @@ struct FourthAbility
         {1, ABIL070_DROUGHT, ABIL070_DROUGHT, ABIL070_DROUGHT},                // PK078_RAPIDASH = 0x4E,
         {1, ABIL002_DRIZZLE, ABIL086_SIMPLE, ABIL086_SIMPLE},                  // PK079_SLOWPOKE = 0x4F,
         {1, ABIL002_DRIZZLE, ABIL086_SIMPLE, ABIL086_SIMPLE},                  // PK080_SLOWBRO = 0x50,
-        {1, ABIL058_MINUS, ABIL057_PLUS, ABIL026_LEVITATE},                        // PK0{0, ABIL001_STENCH, ABIL001_STENCH, ABIL001_STENCH},_MAGNEMITE = 0x51,
-        {1, ABIL058_MINUS, ABIL057_PLUS, ABIL026_LEVITATE},                        // PK082_MAGNETON = 0x52,
+        {1, ABIL058_MINUS, ABIL057_PLUS, ABIL026_LEVITATE},                    // PK0{0, ABIL001_STENCH, ABIL001_STENCH, ABIL001_STENCH},_MAGNEMITE = 0x51,
+        {1, ABIL058_MINUS, ABIL057_PLUS, ABIL026_LEVITATE},                    // PK082_MAGNETON = 0x52,
         {1, ABIL020_QUICK_DRAW, ABIL020_QUICK_DRAW, ABIL020_QUICK_DRAW},       // PK083_FARFETCH_D = 0x53,
         {1, ABIL045_SAND_STREAM, ABIL141_MOODY, ABIL008_SAND_VEIL},            // PK084_DODUO = 0x54,
         {1, ABIL045_SAND_STREAM, ABIL141_MOODY, ABIL008_SAND_VEIL},            // PK085_DODRIO = 0x55,
@@ -2411,7 +2400,7 @@ struct FourthAbility
         {0, ABIL001_STENCH, ABIL001_STENCH, ABIL001_STENCH},                   // PK147_DRATINI = 0x93,
         {0, ABIL001_STENCH, ABIL001_STENCH, ABIL001_STENCH},                   // PK148_DRAGONAIR = 0x94,
         {0, ABIL001_STENCH, ABIL001_STENCH, ABIL001_STENCH},                   // PK149_DRAGONITE = 0x95,
-        {1, ABIL104_MOLD_BREAKER, ABIL127_UNNERVE, ABIL076_AIR_LOCK},  // PK150_MEWTWO = 0x96,
+        {1, ABIL104_MOLD_BREAKER, ABIL127_UNNERVE, ABIL076_AIR_LOCK},          // PK150_MEWTWO = 0x96,
         {0, ABIL001_STENCH, ABIL001_STENCH, ABIL001_STENCH},                   // PK151_MEW = 0x97,
 
         // JOHTO
@@ -2679,7 +2668,7 @@ struct FourthAbility
         {1, ABIL045_SAND_STREAM, ABIL146_SAND_RUSH, ABIL146_SAND_RUSH},        // PK409_RAMPARDOS = 0x199,
         {1, ABIL045_SAND_STREAM, ABIL045_SAND_STREAM, ABIL045_SAND_STREAM},    // PK410_SHIELDON = 0x19A,
         {1, ABIL045_SAND_STREAM, ABIL045_SAND_STREAM, ABIL045_SAND_STREAM},    // PK411_BASTIODON = 0x19B,
-        {1, ABIL107_ANTICIPATION, ABIL050_RUN_AWAY, ABIL050_RUN_AWAY}, //   PK412_BURMY = 0x19C,
+        {1, ABIL107_ANTICIPATION, ABIL050_RUN_AWAY, ABIL050_RUN_AWAY},         //   PK412_BURMY = 0x19C,
         {1, ABIL107_ANTICIPATION, ABIL107_ANTICIPATION, ABIL107_ANTICIPATION}, //   PK413_WORMADAM = 0x19D,
         {1, ABIL107_ANTICIPATION, ABIL107_ANTICIPATION, ABIL107_ANTICIPATION}, //   PK414_MOTHIM = 0x19E,
         {0, ABIL001_STENCH, ABIL001_STENCH, ABIL001_STENCH},                   // PK415_COMBEE = 0x19F,
@@ -2729,7 +2718,7 @@ struct FourthAbility
         {1, ABIL117_SNOW_WARNING, ABIL077_SLUSH_RUSH, ABIL081_SNOW_CLOAK},     //   PK459_SNOVER = 0x1CB,
         {1, ABIL117_SNOW_WARNING, ABIL077_SLUSH_RUSH, ABIL081_SNOW_CLOAK},     //   PK460_ABOMASNOW = 0x1CC,
         {1, ABIL088_EXPLOIT, ABIL117_SNOW_WARNING, ABIL081_SNOW_CLOAK},        // PK461_WEAVILE = 0x1CD,
-        {1, ABIL058_MINUS, ABIL057_PLUS, ABIL026_LEVITATE},                        // PK462_MAGNEZONE = 0x1CE,
+        {1, ABIL058_MINUS, ABIL057_PLUS, ABIL026_LEVITATE},                    // PK462_MAGNEZONE = 0x1CE,
         {1, ABIL001_STENCH, ABIL001_STENCH, ABIL001_STENCH},                   // PK463_LICKILICKY = 0x1CF,
         {1, ABIL045_SAND_STREAM, ABIL038_BERSERK, ABIL038_BERSERK},            // PK464_RHYPERIOR = 0x1D0,
         {1, ABIL034_CHLOROPHYLL, ABIL034_CHLOROPHYLL, ABIL034_CHLOROPHYLL},    // PK460,TANGROWTH = 0x1D1,
@@ -2921,7 +2910,7 @@ struct FourthAbility
         {0, ABIL001_STENCH, ABIL001_STENCH, ABIL001_STENCH},                   // PK649_GENESECT = 0x289,
         {0, ABIL001_STENCH, ABIL001_STENCH, ABIL001_STENCH},                   // MONSNO_MAX = 0x28A,
     };
-#pragma endregion 
+#pragma endregion
 
 #pragma region Functions
     extern void MoveEvent_ForceRemoveItemFromBattleMon(BattleMon *a1, int a2);
@@ -3085,6 +3074,42 @@ struct FourthAbility
         --------------------------------------------------------------------------------------------------
 
     */
+    extern int BattleMon_HasType(BattleMon *a1, PokeType a2);
+
+    int handleNormalize(BattleMon *attackingMon, BattleMon *defendingMon, MoveParam *MoveParam, int TypeEffectiveness)
+    {
+
+        int moveId = MoveParam->MoveID;
+
+        if (moveId == MOVE363_NATURAL_GIFT || moveId == MOVE311_WEATHER_BALL || moveId == MOVE271_WEATHER_CRASH || moveId == MOVE546_TECHNO_BLAST)
+        {
+            return TypeEffectiveness;
+        }
+
+        if (!HasMoldBreaker(attackingMon) && BattleMon_GetValue(defendingMon, VALUE_EFFECTIVE_ABILITY) == ABIL096_NORMALIZE)
+        {
+            k::Printf("\nWe are in here NORMALIZE NORMALIZE\n");
+            MoveParam->moveType = TYPE_NORMAL;
+
+            if (moveId == MOVE498_CHIP_AWAY)
+            {
+                return 3;
+            }
+
+            if (BattleMon_HasType(defendingMon, TYPE_GHOST) && BattleMon_GetValue(attackingMon, VALUE_EFFECTIVE_ABILITY) != ABIL113_SCRAPPY && moveId != MOVE533_SACRED_SWORD && moveId != MOVE547_RELIC_SONG)
+            {
+                return 0;
+            }
+
+            if (BattleMon_HasType(defendingMon, TYPE_ROCK) && BattleMon_HasType(defendingMon, TYPE_STEEL))
+            {
+                return (BattleMon_HasType(defendingMon, TYPE_STEEL) && BattleMon_HasType(defendingMon, TYPE_ROCK)) ? 1 : 2;
+            }
+
+            return 3;
+        }
+        return TypeEffectiveness;
+    }
 
     int THUMB_BRANCH_SAFESTACK_ServerEvent_CalcDamage(
         ServerFlow *a1,
@@ -3116,8 +3141,10 @@ struct FourthAbility
         int Category;          // [sp+10h] [bp-20h]
         int power;             // [sp+14h] [bp-1Ch]
         int attack;            // [sp+18h] [bp-18h]
-        int personalTypeEffectiveness;
 
+        if (!BattleDebugMode){
+            k::Printf("\nWe are actually calcing damage for Pokemon %d's attack against Pokemon %d using move %d\n", AttackingMon->Species, DefendingMon->Species, MoveParam->MoveID);
+        }
         Category = PML_MoveGetCategory(MoveParam->MoveID);
         v29 = 0;
         BattleEventVar_Push();
@@ -3156,7 +3183,8 @@ struct FourthAbility
             // ADD
             // Overcoat / Utility Umbrella Logic
             //
-            if (DefendingMon->HeldItem == 544 || (!HasMoldBreaker(AttackingMon) && BattleMon_GetValue(DefendingMon, VALUE_EFFECTIVE_ABILITY) == ABIL142_OVERCOAT)){
+            if (DefendingMon->HeldItem == 544 || (!HasMoldBreaker(AttackingMon) && BattleMon_GetValue(DefendingMon, VALUE_EFFECTIVE_ABILITY) == ABIL142_OVERCOAT))
+            {
                 weatherDmgRatio == 4096;
             }
 
@@ -3171,7 +3199,7 @@ struct FourthAbility
                 if (GetCritSetting() == 1 && MoveParam->MoveID != MOVE480_STORM_THROW && MoveParam->MoveID != MOVE524_FROST_BREATH && MoveParam->MoveID != MOVE006_PAY_DAY && MoveParam->MoveID != MOVE190_OCTAZOOKA && MoveParam->MoveID != MOVE346_WICKED_BLOW && MoveParam->MoveID != MOVE163_SLASH && MoveParam->MoveID != MOVE440_CROSS_POISON)
                 {
                     fxDamage = fxDamage * 3;
-                    fxDamage = fxDamage >> 2;
+                    fxDamage = fxDamage >> 1;
                 }
                 else
                 {
@@ -3198,25 +3226,31 @@ struct FourthAbility
             {
 
                 int ratio;
-                if (BattleMon_CheckIfMoveCondition(AttackingMon, CONDITION_TERA) || SEARCH_ARRAY(teraItems, AttackingMon->HeldItem)){
+                if (BattleMon_CheckIfMoveCondition(AttackingMon, CONDITION_TERA) || SEARCH_ARRAY(teraItems, AttackingMon->HeldItem))
+                {
                     int teraType = PML_MoveGetType(Move_GetID(AttackingMon, 0));
                     int type1 = PML_PersonalGetParamSingle(AttackingMon->Species, AttackingMon->Form, Personal_Type1);
                     int type2 = PML_PersonalGetParamSingle(AttackingMon->Species, AttackingMon->Form, Personal_Type2);
-                    if ((moveType == type1 && moveType == teraType) && (moveType == type2 && moveType == teraType)){
+                    if ((moveType == type1 && moveType == teraType) && (moveType == type2 && moveType == teraType))
+                    {
                         ratio = (BattleMon_GetValue(AttackingMon, VALUE_EFFECTIVE_ABILITY) == ABIL091_ADAPTABILITY) ? 9216 : 8192;
                         fxDamage = fixed_round(fxDamage, ratio);
                     }
-                    else if (moveType == teraType && BattleMon_GetValue(AttackingMon, VALUE_EFFECTIVE_ABILITY) == ABIL091_ADAPTABILITY){
+                    else if (moveType == teraType && BattleMon_GetValue(AttackingMon, VALUE_EFFECTIVE_ABILITY) == ABIL091_ADAPTABILITY)
+                    {
                         ratio = 8192;
                         fxDamage = fixed_round(fxDamage, ratio);
                     }
-                    else if (moveType == type1 || moveType == type2 || moveType == teraType){
+                    else if (moveType == type1 || moveType == type2 || moveType == teraType)
+                    {
                         ratio = 6144;
                         fxDamage = fixed_round(fxDamage, ratio);
-                    } else {
+                    }
+                    else
+                    {
                         ratio = 4096;
                     }
-                } 
+                }
                 else if (BattleMon_GetValue(AttackingMon, VALUE_EFFECTIVE_ABILITY) == ABIL145_SAVANT)
                 {
                     if (ServerEvent_SameTypeAttackBonus(a1, AttackingMon, moveType) == 4096)
@@ -3239,7 +3273,6 @@ struct FourthAbility
             }
 
             v23 = TypeEffectivenessPowerMod(fxDamage, TypeEffectiveness);
-
             if (Category == 1 && BattleMon_GetStatus(AttackingMon) == CONDITION_BURN && BattleMon_GetValue(AttackingMon, VALUE_EFFECTIVE_ABILITY) != ABIL062_GUTS)
             {
 
@@ -3253,12 +3286,11 @@ struct FourthAbility
                 // k::Printf("\nBecause of Overheat, the new power of this move is %d\n\n", v23);
             }
 
-            if ((DefendingMon->HeldItem == 0xE6 || BattleMon_GetValue(DefendingMon, VALUE_EFFECTIVE_ABILITY) == ABIL136_MAJESTIC_WARD)
-                && BattleMon_IsFullHP(DefendingMon)
-            ){
+            if ((DefendingMon->HeldItem == 0xE6 || BattleMon_GetValue(DefendingMon, VALUE_EFFECTIVE_ABILITY) == ABIL136_MAJESTIC_WARD) && BattleMon_IsFullHP(DefendingMon))
+            {
                 v23 = 50 * v23 / 100u;
             }
-            
+
             if (!v23)
             {
                 v23 = 1;
@@ -3276,10 +3308,6 @@ struct FourthAbility
 
         BattleEvent_CallHandlers(a1, EVENT_MOVE_DAMAGE_PROCESSING_END);
         BattleEventVar_Pop();
-        
-        if (MoveParam->MoveID == MOVE247_SHADOW_BALL ){
-            k::Printf("\nShadow Ball's damage is %d\n", Value);
-        }
         *destDamage = Value;
         return v29;
     }
@@ -3404,7 +3432,7 @@ struct FourthAbility
 #pragma endregion
 
 #pragma region ExpandedTrainerPokemon
-
+    extern u32 __aeabi_idiv(s32 numer, s32 denom);
 
     u32 GetPPSetting()
     {
@@ -3444,55 +3472,106 @@ struct FourthAbility
             //         PokeParty_SetParam(pkm, (PkmField)(v6 + 58), movePP + RandomInRange(1u, 4u));
             //     }
             // } else {
-                movePP = PokeParty_GetParam(pkm, (PkmField)(v6 + 58), 0);
-                PokeParty_SetParam(pkm, (PkmField)(v6 + 58), movePP + 3u);
+            movePP = PokeParty_GetParam(pkm, (PkmField)(v6 + 58), 0);
+            PokeParty_SetParam(pkm, (PkmField)(v6 + 58), movePP + 3u);
             //}
-           
+
             ++v6;
         } while (v6 < 4);
 
         PokeParty_SetParam(pkm, PF_Happiness, v5);
         PokeParty_SetParam(pkm, PF_Forme, data);
 
-        if ((genderAndAbil & 0xF0) == 16){
+        if ((genderAndAbil & 0xF0) == 16)
+        {
             ParamSingle = PML_PersonalGetParamSingle(species, data, Personal_Abil1);
             PokeParty_SetParam(pkm, PF_Ability, ParamSingle);
         }
-        else if ((genderAndAbil & 0xF0) == 32){
+        else if ((genderAndAbil & 0xF0) == 32)
+        {
             ParamSingle = PML_PersonalGetParamSingle(species, data, Personal_Abil2);
             PokeParty_SetParam(pkm, PF_Ability, ParamSingle);
         }
-        else if ((genderAndAbil & 0xF0) == 48){
+        else if ((genderAndAbil & 0xF0) == 48)
+        {
             PokeParty_SetHiddenAbil(pkm, species, data);
         }
-        else if ((genderAndAbil & 0xF0) == 64){
+        else if ((genderAndAbil & 0xF0) == 64)
+        {
             PokeParty_SetParam(pkm, PF_Ability, WhiteListedPokemon[species].abilID4);
         }
-        else if ((genderAndAbil & 0xF0) == 80){
+        else if ((genderAndAbil & 0xF0) == 80)
+        {
             PokeParty_SetParam(pkm, PF_Ability, WhiteListedPokemon[species].abilID5);
         }
-        else if ((genderAndAbil & 0xF0) == 96){
+        else if ((genderAndAbil & 0xF0) == 96)
+        {
             PokeParty_SetParam(pkm, PF_Ability, WhiteListedPokemon[species].abilID6);
         }
-        else {
+        else
+        {
             ParamSingle = PML_PersonalGetParamSingle(species, data, Personal_Abil1);
             PokeParty_SetParam(pkm, PF_Ability, ParamSingle);
         }
 
-        // ADD
-        // SHINY LOGIC
-        /* Trainer Pokeballs */
-        
-
-        /* Trainer Shiny Pokemon */
-        u32 result = PokeParty_GetParam(pkm, PF_PID, 0);
-        result |= 0x80000000;
-        PokeParty_SetParam(pkm, PF_PID, result);
-
-        PokeParty_GetParam(pkm, PF_PID, 0);
-        PokeParty_SetNature(pkm, v9);
+        v9 = PokeParty_GetParam(pkm, PF_PID, 0);
+        // k::Printf("\nNature is %d\n\n", __aeabi_idiv((v9 & 0xFF), 25)); // , (v9 & 0xFF) % 25, v9 % 25);
+        PokeParty_SetNature(pkm, __aeabi_idiv((v9 & 0xFF), 25));
     }
 
 #pragma endregion
 
+#pragma region PID
+    // extern u32 PML_PersonalGetParam(void *personal, PersonalField field);
+    // extern void PML_PersonalFree(void *personal);
+    // extern void * PML_PersonalLoad(u16 species, u16 form, HeapID heapId);
+
+    // void THUMB_BRANCH_SAFESTACK_TrainerUtil_CalcBasePID(u16 species, u16 form, u8 abilAndSex, u32 *dest, HeapID heapId)
+    // {
+    //     int v6;           // r6
+    //     int v7;           // r4
+    //     void *v8; // r0
+    //     void *v9; // r7
+    //     u32 Param;        // r0
+    //     u32 v11;          // r0
+    //     k::Printf("\n====CALC BASE PID===Check 1");
+    //     v6 = abilAndSex & 0xF;
+    //     v7 = (abilAndSex & 0xF0) >> 4;
+    //     if (abilAndSex)
+    //     {
+    //         k::Printf("\n====CALC BASE PID===Check 2");
+    //         v8 = PML_PersonalLoad(species, form, heapId);
+    //         k::Printf("\n====CALC BASE PID===Check 3");
+    //         v9 = v8;
+    //         if (v6)
+    //         {
+    //             k::Printf("\n====CALC BASE PID===Check 4");
+    //             Param = PML_PersonalGetParam(v8, Personal_GenderProb);
+    //             k::Printf("\n====CALC BASE PID===Check 5");
+    //             *dest = Param;
+    //             if (v6 == 1)
+    //             {
+    //                 v11 = Param + 2;
+    //             }
+    //             else
+    //             {
+    //                 v11 = Param - 2;
+    //             }
+    //             *dest = v11;
+    //         }
+    //         if (v7 == 1)
+    //         {
+    //             *dest &= ~1u;
+    //         }
+    //         else if (v7 > 1)
+    //         {
+    //             *dest |= 1u;
+    //         }
+    //         k::Printf("\n====CALC BASE PID===Check 6");
+    //         PML_PersonalFree(v9);
+    //         k::Printf("\n====CALC BASE PID===Check 7");
+    //     }
+    // }
+
+#pragma endregion
 }

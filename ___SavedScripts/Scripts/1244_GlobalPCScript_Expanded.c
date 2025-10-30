@@ -3,8 +3,15 @@
 
 void Sequence0()
 {
+	
+	SetVarFlagStatus(732, 0x8024);
+	Compare(0x8024, 1);
+	if (1) goto label_gotPokeHelper;
+	End();
+
+label_gotPokeHelper: ;
 	LockAll();
-	Sequence10();
+	// Sequence10();
 	Sequence12();
 	Sequence16();
 
@@ -146,10 +153,12 @@ label3: ;
 
 label9: ;
 	// New Options
+	goto label_DisablingFlight;
 	AddDialogueOption(86, 0xFFFF, 86);
-	// Flight
+
+label_DisablingFlight: ;
 	AddDialogueOption(87, 0xFFFF, 87);
-	
+
 	AddDialogueOption(7, 0xFFFF, 7);
 	AddDialogueOption(8, 0xFFFF, 8);
 	ShowDialogueSelection2();
@@ -996,12 +1005,12 @@ label_skipFlocessy: ;
 label_skipVirbank: ;
 
 // // ======== CASTELIA CITY ======== */
-// 	SetVarFlagStatus(0x8030, 748);
-// 	Compare(0x8030, 1);
-// 	if (1) goto label_skipCastelia;
-// 	AddDialogueOption(91, 0xFFFF, 28);
+	SetVarFlagStatus(748, 0x8030);
+	Compare(0x8030, 0);
+	if (1) goto label_skipCastelia;
+	AddDialogueOption(91, 0xFFFF, 28);
 
-// label_skipCastelia: ;
+label_skipCastelia: ;
 
 // ======== JOIN AVENUE ======== */
 	Compare(16733, 0);
@@ -1032,15 +1041,15 @@ label_skipDriftveil: ;
 label_skipPWT: ;
 
 // // ======== MISTRALTON CITY ======== */
-// 	SetVarFlagStatus(0x8030, 521);
-// 	Compare(0x8030, 0);
-// 	if (1) goto label_skipMistralton;
-// 	AddDialogueOption(96, 0xFFFF, 107);
+	SetVarFlagStatus(521, 0x8030);
+	Compare(0x8030, 0);
+	if (1) goto label_skipMistralton;
+	AddDialogueOption(96, 0xFFFF, 107);
 
-// label_skipMistralton: ;
+label_skipMistralton: ;
 
 // ======== LENTIMAS TOWN ======== */
-	SetVarFlagStatus(0x8030, 777);
+	SetVarFlagStatus(777, 0x8030);
 	Compare(0x8030, 0);
 	if (1) goto label_skipLentimas;
 	AddDialogueOption(97, 0xFFFF, 458);
@@ -1090,7 +1099,12 @@ label_letsFly: ;
 
 label_mapAspertia: ;
 	c0x28A(427, 1);
-	Return();
+	SetVarEqVal(0x8026, 0);
+	SetVarEqVal(0x8025, 0);
+	SetVarEqVal(0x8024, 0);
+	WaitMoment();
+	UnlockAll();
+	End();
 	
 label_mapFlocessy: ;
 	c0x28A(439, 1);
@@ -1569,7 +1583,7 @@ label87_options: ;
 //*/
 label82_options: ;
 	Compare(0x8004, 6);
-	if (5) goto label88_options;
+	if (5) goto label_BattleScan_1;
 	CloseAllMessageBoxes();
 	SetVarFlagStatus(525, 0x8000);
 	StackPushVar(0x8000);
@@ -1672,6 +1686,54 @@ label97_options: ;
 	goto label49_options;
 
 
+
+//
+
+//  BATTLE SCAN
+
+//
+
+label_BattleScan_1: ;
+	Compare(0x8004, 9);
+	if (5) goto label88_options;
+	CloseAllMessageBoxes();
+	Compare(16438, 0);
+	if (5) goto label_BattleScan_2;
+	EventGreyMessage(160, 2);
+	goto label_BattleScan_3;
+
+label_BattleScan_2: ;
+	EventGreyMessage(161, 2);
+
+label_BattleScan_3: ;
+	WaitForButton();
+	YesNoBox(0x8000);
+	SetVarEqVar(0x8006, 0x8000);
+	Compare(0x8006, 1);
+	if (5) goto label_BattleScan_4;
+	CloseAllMessageBoxes();
+	EventGreyMessage(116, 2);
+	WaitForButton();
+	goto label49_options;
+
+label_BattleScan_4: ;
+	CloseAllMessageBoxes();
+	Compare(16438, 0);
+	if (5) goto label_BattleScan_5;
+	EventGreyMessage(162, 2);
+	WaitForButton();
+	SetVarEqVar2(16438, 1);
+	goto label_BattleScan_6;
+
+label_BattleScan_5: ;
+	EventGreyMessage(163, 2);
+	WaitForButton();
+	SetVarEqVar2(16438, 0);
+
+label_BattleScan_6: ;
+	EventGreyMessage(119, 2);
+	WaitForButton();
+	goto label49_options;
 // 
 
 //	RESTORE DEFAULTS
@@ -1744,9 +1806,20 @@ label106_options: ;
 label107_options: ;
 	SetVarFlagStatus(524, 0x8000);
 	Compare(0x8000, 0);
-	if (1) goto label108;
+	if (1) goto label108_optionsa;
+	CloseAllMessageBoxes();
+	EventGreyMessage(157, 2);
+	WaitForButton();
 	ClearFlag(524);
 	SetFlag(525);
+
+label108_optionsa: ;
+	Compare(16438, 0);
+	if (1) goto label108;
+	CloseAllMessageBoxes();
+	EventGreyMessage(162, 2);
+	WaitForButton();
+	SetVarEqVar2(16438, 0);
 
 label108: ;
 	CloseAllMessageBoxes();
