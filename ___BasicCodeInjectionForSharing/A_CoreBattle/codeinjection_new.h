@@ -47,6 +47,7 @@ extern PlayerState *GameData_GetPlayerState(GameData *gameData);
 extern BtlSetup *MainModule_GetBtlSetup(MainModule *a1);
 extern int PlayerState_GetZoneID(PlayerState *a1);
 extern int BattleEventVar_GetValue(BattleEventVar a1);
+extern ConditionData  Condition_MakeSetTurns(int a1);
 extern void HandlerDig(int a1, ServerFlow *a2, unsigned int *a3);
 extern void HandlerDive(int a1, ServerFlow *a2, unsigned int *a3);
 extern void HandlerBounce(int a1, ServerFlow *a2, unsigned int *a3);

@@ -689,6 +689,9 @@ public class MainEvents {
 		EventFlags.Set(2417);
 		EventFlags.Set(264);
 		EventFlags.Set(528);
+		if (EventWorks.Get(16526) == 0){
+			EventWorks.Set(16526, 1);
+		}
 		EventWorks.Set(16540, 1);
 		EventWorks.Set(16576, 1);
 		EventFlags.Clear(761);

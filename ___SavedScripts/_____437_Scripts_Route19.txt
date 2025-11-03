@@ -43,16 +43,18 @@ public class MainEvents {
 		Message.CloseAll();
 		Player.GetGPos(v33, v34);
 		EVCamera.MoveTo(2.3652344f, 0.0f, 237.0f, 984.0f, 16.003662f, 11144.0f, 72);
-		ActionSequence_0250(5);
-		ActionSequence_0258(255);
+		ActionSequence_0720(5);
+		ActionSequence_0728(255);
 		Actor.WaitActionFinish();
 		EVCamera.Wait();
-		Battle.CallCaptureDemo();
+		ActionSequence_0734(5);
+		Actor.WaitActionFinish();
 		EVCamera.Init();
 		EVCamera.Unbind();
 		EVCamera.MoveTo(2.3652344f, 0.0f, 237.0f, 984.0f, 16.003662f, 11144.0f, 1);
 		EVCamera.Wait();
-		Battle.EndWildBattle();
+
+		
 		EVCamera.MoveToDefault(32);
 		Actor.WalkRoute(5, 58, 696, 1, 8, 1);
 		Actor.WaitActionFinish();
@@ -69,13 +71,14 @@ public class MainEvents {
 		Message.CloseAll();
 		ActionSequence_07a0(5);
 		Actor.WaitActionFinish();
-		Global2805(47, 1);
+	
 		Global2805(50, 1);
+		Global2805(47, 1);
 		Message.ActorEx(1024, 7, 5, 0, 0);
 		Message.CloseAll();
 		sub_0205();
 		EventWorks.Set(16547, 1);
-        Actor.Hide(8);
+       	 Actor.Hide(8);
 		EventFlags.Set(987);
 		EventFlags.Clear(739);
 		EventFlags.Set(744);
@@ -94,6 +97,7 @@ public class MainEvents {
 		int v35;
 
 		Actor.PauseAll();
+		Actor.Hide(8);
 		Message.Info(8, 1);
 		Message.CloseAll();
 		EVCamera.Init();
@@ -419,6 +423,19 @@ public class MainEvents {
 		Action000c(1);
 		Action0022(1);
 	}
+	static meta void ActionSequence_0720(int npcId) : VActionSequence {
+		Action000f(8);
+	}
+
+	static meta void ActionSequence_0728(int npcId) : VActionSequence {
+		Action000c(2);
+		Action000f(3);
+	}
+
+	static meta void ActionSequence_0734(int npcId) : VActionSequence {
+		Action004b(1);
+		Action0022(1);
+	}
 
 	static meta void ActionSequence_0464(int npcId) : VActionSequence {
 		Action000f(7);
@@ -482,5 +499,6 @@ public class MainEvents {
 	static native void Action0023(int amount) : 0x23;
 	static native void Action003a(int amount) : 0x3a;
 	static native void Action003f(int amount) : 0x3f;
+	static native void Action004b(int amount) : 0x4b;
 	static native void Action0064(int amount) : 0x64;
 }

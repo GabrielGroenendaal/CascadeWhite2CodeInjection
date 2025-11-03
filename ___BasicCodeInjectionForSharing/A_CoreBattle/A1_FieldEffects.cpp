@@ -20,7 +20,7 @@ extern "C"
 
         playerState = GameData_GetPlayerState(*(GameData **)(g_GameBeaconSys + 4));
         zoneId = PlayerState_GetZoneID(playerState);
-        if (zoneId == 439 && Handler_CheckFloating(a1, a2))
+        if (zoneId == 108 && Handler_CheckFloating(a1, a2))
         {
             // k::Printf("\nSkyla's Wind is Blowing\n");
             return 6144;
@@ -300,69 +300,195 @@ extern "C"
         return fixed_round(v16, v17);
     }
 
-    /*
-
-        --------------------------------------------------------------------------------------------------
-        ------------------------------------ GET TYPE EFFECTIVENSS ---------------------------------------
-        --------------------------------------------------------------------------------------------------
-
-        Checks for altered type effectiveness based on zone.
-
-    */
-    TypeEffectiveness THUMB_BRANCH_GetTypeEffectiveness(int a1, int a2)
-    {
-        TypeEffectiveness result;
-        PlayerState *playerState;
-        int typeChart[18][18];
-        int zoneId;
-        unsigned int v3;
-
-        if (a1 == 18 || a2 == 18)
-        {
-            result = EFFECTIVENESS_1;
-            return result;
-        }
-
-        playerState = GameData_GetPlayerState(*(GameData **)(g_GameBeaconSys + 4));
-        zoneId = PlayerState_GetZoneID(playerState);
-
-       if ((a1 == TYPE_ELECTRIC) && (zoneId == 607 || zoneId == 195 || zoneId == 196 || zoneId == 197))
-        {
-            v3 = chargestoneTypeChart[a2];
-        }
-        else if ((a1 == TYPE_GHOST || a1 == TYPE_PSYCHIC) && (zoneId == 339 || zoneId == 338 || zoneId == 340 || zoneId == 341 || zoneId == 462 || (zoneId >= 510 && zoneId <= 514) || (zoneId >= 569 && zoneId <= 572)))
-        {
-            v3 = celestialTypeChart[(a1 == TYPE_GHOST ? 0 : 1)][a2];
-        }
-        else if ((a1 == TYPE_FIGHTING || a1 == TYPE_DRAGON) && (zoneId == 121))
-        {
-            v3 = opelucidTypeChart[(a1 == TYPE_FIGHTING ? 0 : 1)][a2];
-        }
-        else
-        {
-            v3 = normalTypeChart[a1][a2];
-        }
-
-        switch (v3)
-        {
-        case 0:
-            result = EFFECTIVENESS_IMMUNE;
-            break;
-        case 2:
-            result = EFFECTIVENESS_1_2;
-            break;
-        case 4:
-            result = EFFECTIVENESS_1;
-            break;
-        case 8:
-            result = EFFECTIVENESS_2;
-            break;
-        default:
-            result = EFFECTIVENESS_1;
-        }
-        return result;
-    }
-
 #pragma endregion
 
+
+#pragma region NewUIChanges
+enum BottomScreenMenuState
+{
+    STATE_WAITING = 0x0,
+    STATE_FIGHT = 0x1,
+    STATE_MOVE_SELECT = 0x2,
+    STATE_TARGET_SELECT = 0x3,
+    STATE_YESNO = 0x4,
+    STATE_ROTATION = 0x5,
+    STATE_RECORD_PLAYBACK = 0x6,
+    STATE_ENTREE_CATCH = 0x7,
+};
+struct 	BtlvInput_ClActObj	{void *obj;s16 x;s16 y;};
+
+struct SWAN_PACKED SWAN_ALIGNED(2) BtlvFingerCursorHandle
+{
+    void *dword0;
+    void *field_4;
+    void *dword8;
+    _DWORD dwordC;
+    _DWORD dword10;
+    _DWORD dword14;
+    int field_18;
+    int field_1C;
+    int field_20;
+    int field_24;
+    int field_28;
+    _WORD HeapID;
+};
+
+struct BtlvInput_DirectionParam
+{
+    char field_0;
+    u8 status;
+    u16 pad;
+    u16 HP;
+    u16 MaxHP;
+    int field_8;
+};
+
+struct BtlvInput
+{
+    TCBManager *tcbManager;
+    int tcbData;
+    void *TCBArray[8];
+    void (*TCBCallbacks[8])(void *);
+    ArcTool *UIGraphicsNarcPtr;
+    GameData *gameData;
+    BattleStyle battleStyle;
+    BtlType BattleType;
+    BottomScreenMenuState MenuState;
+    void *msgData;
+    BtlvFingerCursorHandle *FingerCursor;
+    PalAnm *palAnm;
+    unsigned int Flags;
+    int Flags2;
+    int TouchpadUsed;
+    BtlvInput_DirectionParam field_74[6];
+    BtlvInput_DirectionParam field_BC[6];
+    int UIExtraIconsNCGR;
+    int UIExtraIconsNCLR;
+    int UIPokeballIconNCER;
+    int UIButtonSelectCursorNCGR;
+    int UIButtonSelectCursorNCER;
+    void *BallIconClAct;
+    BtlvInput_ClActObj PlayerBallIcons[6];
+    BtlvInput_ClActObj EnemyBallIcons[6];
+    void *CursorClAct;
+    BtlvInput_ClActObj cursor[6];
+    int MonIconNCGRs[3];
+    int UIMonIconsNCLR;
+    int UIMonIconsNCER;
+    void *MonIconClAct;
+    BtlvInput_ClActObj MonIconObj[3];
+    int MoveTypeIconNCGRs[4];
+    int MoveTypeIconNCLR;
+    int MoveTypeIconNCER;
+    void *MoveTypeClAct;
+    void *MoveTypeObjs[4];
+    void *WeatherClAct;
+    void *WeatherObj[2];
+    void *StruggleClAct;
+    void *StruggleObj;
+    int field_220;
+    int AudienceNCLR;
+    int AudienceNCER;
+    void *field_22C;
+    void *AudienceObj[22];
+    int AudienceFlag;
+    void *PokestarTheaterBGPalette;
+    void *PokestarTheaterPersonPalette;
+    int AudiencePaletteMode;
+    int AudienceTimer;
+    int AudienceAnimID;
+    int AudienceLoopNum;
+    int AudiencePaletteFlag;
+    GFLFont *font;
+    void *BmpWin1;
+    void *Bitmap1;
+    void *BmpWin2;
+    void *Bitmap2;
+    void *mainLoop;
+    int mainLoopTCBFlag;
+    HeapID heapID;
+    u8 SelectedButtonPos[3][8];
+    u8 IsButtonEnabled[8];
+    u8 DoesSlotHaveMove[4];
+    u16 SelectedMoves[3];
+    u16 MoveIDs[4];
+    u8 *cursorMode;
+    int ActiveMonViewPos;
+    int ViewPos;
+    int IsTransformed;
+    u16 BagPalette[16];
+    char multiBattleMode;
+    char IsPokestar;
+    u8 NumAudienceMembers;
+    char field_32B;
+    int AudienceBit;
+    BattleMon *ActiveMons[3];
+    int field_33C[3][4];
+};
+
+int THUMB_BRANCH_BtlvInput_ChangeUIFileIDForPokestar(int result, BtlvInput *a2)
+{
+    k::Printf("\n\n===BtlvInput_ChangeUIFileIDForPokestar===\nresult is %d and a2->isPokeStar is %d\n\n", result, a2->IsPokestar);
+    if (a2->IsPokestar)
+    {
+        result += 134;
+    }
+    return result;
+}
+
+extern int BtlvEffectMain_GetBattleMode();
+extern int BtlvInput_ChangeUIFileIDForBattleMode(int result, BtlvInput *a2);
+
+int THUMB_BRANCH_BtlvInput_GetFightScreenButtonNSCRFileID(BtlvInput *a1)
+{
+  u8 v2; // zf
+  BattleStyle battleStyle; // r0
+
+  v2 = a1->Flags << 27 >> 31 == 0;
+  battleStyle = a1->battleStyle;
+  k::Printf("\n\n===BtlvInput_GetFightScreenButtonNSCRFileID===\nv2 is %d\nbattleStyle = %d\na1->ActiveMonViewPos is %d\n\n", v2, battleStyle, a1->ActiveMonViewPos);
+  if ( v2 )
+  {
+    if ( battleStyle == BTL_STYLE_TRIPLE )
+    {
+      if ( BtlvEffectMain_GetBattleMode() == 1 )
+      {
+        if ( a1->ActiveMonViewPos != 4 )
+        {
+          return BtlvInput_ChangeUIFileIDForBattleMode(363, a1);
+        }
+        return BtlvInput_ChangeUIFileIDForBattleMode(369, a1);
+      }
+      if ( a1->ActiveMonViewPos != 4 )
+      {
+        return BtlvInput_ChangeUIFileIDForBattleMode(362, a1);
+      }
+    }
+    else if ( BtlvEffectMain_GetBattleMode() == 1 )
+    {
+      return BtlvInput_ChangeUIFileIDForBattleMode(369, a1);
+    }
+    return BtlvInput_ChangeUIFileIDForBattleMode(361, a1);
+  }
+  if ( battleStyle != BTL_STYLE_TRIPLE || a1->ActiveMonViewPos == 4 )
+  {
+    if ( BtlvEffectMain_GetBattleMode() == 1 )
+    {
+      return BtlvInput_ChangeUIFileIDForBattleMode(370, a1);
+    }
+    else
+    {
+      return BtlvInput_ChangeUIFileIDForBattleMode(364, a1);
+    }
+  }
+  else if ( BtlvEffectMain_GetBattleMode() == 1 )
+  {
+    return BtlvInput_ChangeUIFileIDForBattleMode(371, a1);
+  }
+  else
+  {
+    return BtlvInput_ChangeUIFileIDForBattleMode(365, a1);
+  }
+}
+#pragma endregion
 }

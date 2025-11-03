@@ -164,7 +164,7 @@ extern "C"
         EventWorkSave *eventWork = GameData_GetEventWork(GAME_DATA);
         u16 *lvl_cap_ptr = EventWork_GetWkPtr(eventWork, 16433);
 
-        // k::Printf("Current IV setting is %d\n", *lvl_cap_ptr);
+        // // k::Printf("Current IV setting is %d\n", *lvl_cap_ptr);
 
         return *lvl_cap_ptr;
     }
@@ -547,7 +547,6 @@ extern "C"
     u32 GetSurfSetting()
     {
         EventWorkSave *eventWork = GameData_GetEventWork(GAME_DATA);
-        k::Printf("\nCHECKING FOR SURF????\n");
         u32 surfSetting = EventWork_FlagGet(eventWork, 2439);
         return surfSetting;
     }
@@ -561,50 +560,49 @@ extern "C"
         int Direction;                        // r2
         TileType tileInDir;                   // [sp+0h] [bp-20h]
         TileType tileUnder;                   // [sp+4h] [bp-1Ch]
-        k::Printf("\n\n===CheckFieldEnvInteraction===   Check 1");
         if (GameData_IsForceSeasonSync(wk->m_GameData))
         {
-            k::Printf("\n===CheckFieldEnvInteraction===   Check 2");
+            // k::Printf("\n===CheckFieldEnvInteraction===   Check 2");
             return 0xFFFF;
         }
-        k::Printf("\n===CheckFieldEnvInteraction===   Check 3");
+        // k::Printf("\n===CheckFieldEnvInteraction===   Check 3");
         tileUnder = FieldPlayer_GetTileTypeUnder(wk->Player);
         tileInDir = FieldPlayer_GetTileTypeInDir(wk->Player,  wk->PlayerDirection);
         TileClass = GetTileClass(tileInDir);
-        k::Printf("\n===CheckFieldEnvInteraction===   Check 4");
+        // k::Printf("\n===CheckFieldEnvInteraction===   Check 4");
         for (i = 0; i < 0xD; ++i)
         {
-            k::Printf("\n===CheckFieldEnvInteraction===   Check 5A-%d", i);
+            // k::Printf("\n===CheckFieldEnvInteraction===   Check 5A-%d", i);
             specialTileScript = &SPECIAL_TILE_SCRIPTS[i];
             Direction = specialTileScript->Direction;
             if ((wk->PlayerDirection == Direction || Direction == 9) && specialTileScript->RecognitionFunc(TileClass))
             {
-                k::Printf("\n===CheckFieldEnvInteraction===   Check 5B-%d", i);
+                // k::Printf("\n===CheckFieldEnvInteraction===   Check 5B-%d", i);
                 return SPECIAL_TILE_SCRIPTS[i].SCRID;
             }
         }
-        k::Printf("\n===CheckFieldEnvInteraction===   Check 6");
+        // k::Printf("\n===CheckFieldEnvInteraction===   Check 6");
         if (!sub_2018C64(wk->ZoneID) || GameData_IsForceSeasonSync(wk->m_GameData))
         {
-            k::Printf("\n===CheckFieldEnvInteraction===   Check 7");
+            // k::Printf("\n===CheckFieldEnvInteraction===   Check 7");
             return 0xFFFF;
         }
-        k::Printf("\n===CheckFieldEnvInteraction===   Check 8\nCheckSurfHeightAllow=%d\nGetSurfSetting=%d", CheckSurfHeightAllow(wk->Player, wk->PlayerDirection), GetSurfSetting());
+        // k::Printf("\n===CheckFieldEnvInteraction===   Check 8\nCheckSurfHeightAllow=%d\nGetSurfSetting=%d", CheckSurfHeightAllow(wk->Player, wk->PlayerDirection), GetSurfSetting());
         if (CheckSurfHeightAllow(wk->Player, wk->PlayerDirection) && 
             GetSurfSetting()
             //GameData_FindPartyPkmByMove(wk->m_GameData, MOVE057_SURF) != 6
         )
         {
-            k::Printf("\n===CheckFieldEnvInteraction===   Check 9");
+            // k::Printf("\n===CheckFieldEnvInteraction===   Check 9");
             return 10002;
         }
-        k::Printf("\n===CheckFieldEnvInteraction===   Check 10");
+        // k::Printf("\n===CheckFieldEnvInteraction===   Check 10");
         if (CheckCanInteractWaterfall(wk->Player, tileUnder, tileInDir))
         {
-            k::Printf("\n===CheckFieldEnvInteraction===   Check 11");
+            // k::Printf("\n===CheckFieldEnvInteraction===   Check 11");
             return 10006;
         }
-        k::Printf("\n===CheckFieldEnvInteraction===   Check 12\n\n\n");
+        // k::Printf("\n===CheckFieldEnvInteraction===   Check 12\n\n\n");
         return 0xFFFF;
     }
 
@@ -994,7 +992,7 @@ extern "C"
 
     // void THUMB_BRANCH_EventBattleCall_Setup(EventBattleCall *event, void *gsys, BtlSetup *btlSetup)
     // {
-    //     k::Printf("\nThe battle id is %d\n", btlSetup->TrainerSetups[1]->TrID);
+    //     // k::Printf("\nThe battle id is %d\n", btlSetup->TrainerSetups[1]->TrID);
 
     //     if (btlSetup->TrainerSetups[1]->TrID == 491 ||  btlSetup->TrainerSetups[1]->TrID == 507 || btlSetup->TrainerSetups[1]->TrID == 508 || btlSetup->TrainerSetups[1]->TrID == 509){
     //         event->EncEffID = 35;

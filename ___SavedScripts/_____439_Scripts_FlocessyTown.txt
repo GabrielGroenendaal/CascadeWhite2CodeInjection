@@ -363,6 +363,7 @@ public class MainEvents {
 		Pokedex.EnableHabitatList();
 		Message.ActorEx(1024, 26, 251, 0, 0);
 		Message.ActorEx(1024, 27, 251, 0, 0);
+		goto LABEL_04ee;
 		v16 = YesNoWin.Show();
 		if (v16 != 0) {
 			goto LABEL_04ee;
@@ -621,7 +622,8 @@ public class MainEvents {
 	static meta void ActionSequence_0734(int npcId) : VActionSequence {
 		Action009f(1);
 	}
-
+	
+	static meta void Global2805(int a1, int a2) : VGlobalCall[2805];
 
 	static native void Action000c(int amount) : 0xc;
 	static native void Action000f(int amount) : 0xf;

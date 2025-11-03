@@ -257,6 +257,61 @@ extern "C"
         return FocusBandHandlers;
     }
 
+#pragma region WhiteHerb
+    uint8_t getOverheatByte(BattleMon *a1)
+    {
+        return *((uint8_t *)a1 + 0xEA);
+    }
+    void setOverheatByte(BattleMon *a1, int a2)
+    {
+        *((uint8_t *)a1 + 0xEA) = a2;
+    }
+
+    extern bool BattleMon_AreStatsLowered(BattleMon *a1);
+
+    void THUMB_BRANCH_HandlerWhiteHerbReaction(BattleEventItem *a1, ServerFlow *a2, int a3)
+    {
+        BattleMon *BattleMon; // r0
+
+        BattleMon = Handler_GetBattleMon(a2, a3);
+        if (BattleMon_AreStatsLowered(BattleMon))
+        {
+            ItemEvent_PushRun(a1, a2, a3);
+        }
+        if (getOverheatByte(BattleMon))
+        {
+            ItemEvent_PushRun(a1, a2, a3);
+        }
+    }
+
+    void THUMB_BRANCH_HandlerWhiteHerbUse(BattleEventItem *a1, ServerFlow *a2, unsigned int *a3)
+    {
+        HandlerParam_RestoreStatStage *v6; // r0
+        HandlerParam_Message *v7;          // r4
+        int SubID;                         // r0
+        BattleMon *BattleMon;
+        
+        if ((int)a3 == BattleEventVar_GetValue(VAR_MON_ID))
+        {
+            BattleMon = Handler_GetBattleMon(a2, (int)a3);
+            if (BattleMon_AreStatsLowered(BattleMon)){
+                v6 = (HandlerParam_RestoreStatStage*)BattleHandler_PushWork(a2, EFFECT_RESTORESTATSTAGE, (int)a3);
+                v6->monID = (int)a3;
+                BattleHandler_PopWork(a2, v6);
+            }
+            if(getOverheatByte(BattleMon)){
+                setOverheatByte(BattleMon, 0);
+            }
+            v7 = (HandlerParam_Message *) BattleHandler_PushWork(a2, EFFECT_MESSAGE, (int)a3);
+            BattleHandler_StrSetup(&v7->str, 2u, 1010);
+            BattleHandler_AddArg(&v7->str, (int)a3);
+            SubID = BattleEventItem_GetSubID(a1);
+            BattleHandler_AddArg(&v7->str, SubID);
+            BattleHandler_PopWork(a2, v7);
+        }
+    }
+
+#pragma endregion
 #pragma region EjectPack
 
     /*
@@ -271,33 +326,42 @@ extern "C"
 
     //  void HandlerEjectPackReset(BattleEventItem *item, ServerFlow *serverFlow, u32 pokemonSlot, u32 *work)
     // {
-        
+
     //     switchout[pokemonSlot] = 0;
     // }
 
+
     void HandlerEjectPackStatCheck(BattleEventItem *item, ServerFlow *serverFlow, u32 pokemonSlot, u32 *work)
     {
-        
-        //k::Printf("\n\n====HandlerEjectPackStatCheck=====\nThe Pokemon Slot is %d\nThe VAR Mon ID is %d\nThe work is %d\nThe volume is %d\nThe flowResult is %d", pokemonSlot, BattleEventVar_GetValue(VAR_MON_ID), work[0], BattleEventVar_GetValue(VAR_VOLUME), serverFlow->flowResult);
-        if (pokemonSlot == BattleEventVar_GetValue(VAR_MON_ID) && BattleEventVar_GetValue(VAR_VOLUME) < 0)
+
+        // k::Printf("\n\n====HandlerEjectPackStatCheck=====\nThe Pokemon Slot is %d\nThe VAR Mon ID is %d\nThe work is %d\nThe volume is %d\nThe flowResult is %d", pokemonSlot, BattleEventVar_GetValue(VAR_MON_ID), work[0], BattleEventVar_GetValue(VAR_VOLUME), serverFlow->flowResult);
+        if (pokemonSlot == BattleEventVar_GetValue(VAR_MON_ID) && BattleEventVar_GetValue(VAR_VOLUME) < 0 )
         {
-            //k::Printf("\nRESULT: The Eject Pack Should Trigger\n\n");
-            //switchout[pokemonSlot] = 1;
+            // k::Printf("\nRESULT: The Eject Pack Should Trigger\n\n");
+            // switchout[pokemonSlot] = 1;
             work[0] = 1;
         }
     }
 
     void HandlerEjectPackActionEnd(BattleEventItem *item, ServerFlow *serverFlow, u32 pokemonSlot, u32 *work)
     {
-        //k::Printf("\n\n====HandlerEjectPackActionEnd=====\nThe Pokemon Slot is %d\nThe VAR Mon ID is %d\nThe work is %d", pokemonSlot, BattleEventVar_GetValue(VAR_MON_ID), work[0]);
+        // k::Printf("\n\n====HandlerEjectPackActionEnd=====\nThe Pokemon Slot is %d\nThe VAR Mon ID is %d\nThe work is %d", pokemonSlot, BattleEventVar_GetValue(VAR_MON_ID), work[0]);
         if (work[0] == 1)
         {
-            //k::Printf("\nRESULT: The Eject Pack Should Trigger\n\n");
+            // k::Printf("\nRESULT: The Eject Pack Should Trigger\n\n");
             work[0] = 0;
-            
+            setOverheatByte(Handler_GetBattleMon(serverFlow, pokemonSlot), 0);
             if (Handler_GetFightEnableBenchPokeNum(serverFlow, pokemonSlot) && Handler_CheckReservedMemberChangeAction(serverFlow))
             {
-                //k::Printf("\nUSE THE ITEM USE THE ITEM\n\n");
+                // k::Printf("\nUSE THE ITEM USE THE ITEM\n\n");
+                ItemEvent_PushRun(item, serverFlow, pokemonSlot);
+            }
+        }
+        if (pokemonSlot == BattleEventVar_GetValue(VAR_MON_ID) && getOverheatByte(Handler_GetBattleMon(serverFlow, pokemonSlot))){
+            setOverheatByte(Handler_GetBattleMon(serverFlow, pokemonSlot), 0);
+            if (Handler_GetFightEnableBenchPokeNum(serverFlow, pokemonSlot) && Handler_CheckReservedMemberChangeAction(serverFlow))
+            {
+                // k::Printf("\nUSE THE ITEM USE THE ITEM\n\n");
                 ItemEvent_PushRun(item, serverFlow, pokemonSlot);
             }
         }
@@ -305,11 +369,11 @@ extern "C"
 
     void HandlerEjectPackUse(BattleEventItem *item, ServerFlow *serverFlow, u32 pokemonSlot, u32 *work)
     {
-        //k::Printf("\n\n====HandlerEjectPackUse=====\nThe Pokemon Slot is %d\nThe VAR Mon ID is %d\nThe work is %d", pokemonSlot, BattleEventVar_GetValue(VAR_MON_ID), work[0]);
+        // k::Printf("\n\n====HandlerEjectPackUse=====\nThe Pokemon Slot is %d\nThe VAR Mon ID is %d\nThe work is %d", pokemonSlot, BattleEventVar_GetValue(VAR_MON_ID), work[0]);
 
         if (pokemonSlot == BattleEventVar_GetValue(VAR_MON_ID))
         {
-            //k::Printf("\nRESULT: The Eject Button has triggered\n\n");
+            // k::Printf("\nRESULT: The Eject Button has triggered\n\n");
 
             HandlerParam_Switch *switchOut;
             switchOut = (HandlerParam_Switch *)BattleHandler_PushWork(serverFlow, EFFECT_SWITCH, pokemonSlot);
@@ -358,8 +422,6 @@ extern "C"
         *a1 = 3;
         return ProtectiveGearHandlers;
     }
-
-   
 
 #pragma endregion
 
@@ -2055,7 +2117,7 @@ extern "C"
         int v4;          // r2
         unsigned int v5; // r5
         int isTera;
-       // int isGastroAcid;
+        // int isGastroAcid;
         v2 = 0;
         if (!a2)
         {
@@ -2064,7 +2126,7 @@ extern "C"
         Conditions = a1->Conditions;
 
         isTera = a1->Conditions[CONDITION_TERA];
-        //isGastroAcid = a1->Conditions[CONDITION_GASTROACID];
+        // isGastroAcid = a1->Conditions[CONDITION_GASTROACID];
         do
         {
             v4 = v2;
@@ -2076,7 +2138,7 @@ extern "C"
         if (isTera)
         {
             a1->Conditions[CONDITION_TERA] = isTera;
-          //  a1->Conditions[CONDITION_GASTROACID] = isGastroAcid;
+            //  a1->Conditions[CONDITION_GASTROACID] = isGastroAcid;
         }
         sys_memset(a1->MoveConditionCounter, 0, 0x24u);
     }

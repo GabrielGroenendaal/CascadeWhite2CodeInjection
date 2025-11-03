@@ -11,6 +11,7 @@ void Sequence0()
 
 label_gotPokeHelper: ;
 	LockAll();
+
 	// Sequence10();
 	Sequence12();
 	Sequence16();
@@ -153,7 +154,12 @@ label3: ;
 
 label9: ;
 	// New Options
-	goto label_DisablingFlight;
+	// goto label_DisablingFlight;
+	SetVarEqVar(0x8022, 16723);
+	StackPushVar(0x8022);
+	StackPushConst(1);
+	StackCompare(2);
+	if (255) goto label_DisablingFlight;
 	AddDialogueOption(86, 0xFFFF, 86);
 
 label_DisablingFlight: ;
@@ -196,6 +202,7 @@ label16: ;
 	goto label18;
 
 label17: ;
+
 	Sequence8();
 	goto label12;
 
@@ -271,6 +278,10 @@ label33a: ;
 label34a: ;
 	// Insert outcome of activating the taxi service here
 	Sequence17();
+
+	// // c0x28A(427, 1);
+	// // SetVarEqVal(0x8020, 1);
+	// EventGreyMessage(5, 2);
 	goto label12;
 
 label35a: ;
@@ -279,6 +290,8 @@ label35a: ;
 	goto label12;
 
 label36a: ;
+// c0x28A(427, 1);
+// SetVarEqVal(0x8020, 1);
 	Sequence18();
 	// Insert Outcome of Starting the Edit Settings Here
 	goto label12;	
@@ -295,6 +308,8 @@ label0: ;
 	WaitMoment();
 	UnlockAll();
 	End();
+
+
 }
 
 void Sequence1()
@@ -358,7 +373,7 @@ label64: ;
 	SetVarFlagStatus(124, 0x802B);
 	Compare(0x802B, 1);
 	if (0) goto label36;
-	// AddDialogueOption(47, 48, 47);
+	AddDialogueOption(47, 48, 47);
 
 label36: ;
 	AddDialogueOption(19, 25, 19);
@@ -977,8 +992,14 @@ label_isPokemonCenter: ;
 void Sequence17()
 {
 	PlaySound(1351);
+	SetVarEqVal(0x8034, 0);
 
 label_travelOptions: ;
+	StackPushVar(0x8034);
+	StackPushConst(0);
+	StackCompare(1);
+	if (255) goto label_goBack;
+
 	EventGreyMessage(102, 2);
 	WaitForButton();
 	
@@ -1056,25 +1077,33 @@ label_skipMistralton: ;
 
 label_skipLentimas: ;
 
-	AddDialogueOption(112, 0xFFFF, 1);
-	ShowDialogueSelection();
-
+	AddDialogueOption(112, 0xFFFF, 112);
+	ShowDialogueSelection2();
+	CloseEventGreyMessage();
+	ReturnAfterDelay(3);
 
 // Checking the values 
 	Compare(0x8029, 0);
-	if (1) goto label_goBack;
+	if (1) goto label_returnToMenu;
 	Compare(0x8029, 0xFFFE);
-	if (1) goto label_goBack;
+	if (1) goto label_returnToMenu;
+	Compare(0x8029, 112);
+	if (1) goto label_returnToMenu;
 	EventGreyMessage(101, 2);
 	YesNoBox(0x8000);
 	SetVarEqVar(0x8006, 0x8000);
 	Compare(0x8006, 1);
 	if (5) goto label_letsFly;
-	CloseAllMessageBoxes();
+	goto label_travelOptions;
+
+label_returnToMenu: ;
+	SetVarEqVal(0x8034, 1);
 	goto label_travelOptions;
 
 label_letsFly: ;
+	CloseAllMessageBoxes();
 	SetVarEqVal(0x8020, 1);
+	SetVarEqVal(0x8034, 1);
 	Compare(0x8029, 427);
 	if (1) goto label_mapAspertia;
 	Compare(0x8029, 439);
@@ -1099,62 +1128,47 @@ label_letsFly: ;
 
 label_mapAspertia: ;
 	c0x28A(427, 1);
-	SetVarEqVal(0x8026, 0);
-	SetVarEqVal(0x8025, 0);
-	SetVarEqVal(0x8024, 0);
-	WaitMoment();
-	UnlockAll();
-	End();
+	goto label_travelOptions;
 	
 label_mapFlocessy: ;
 	c0x28A(439, 1);
-	Return();
+	goto label_travelOptions;
 	
 label_mapVirbank: ;
 	c0x28A(448, 1);
-	Return();
+	goto label_travelOptions;
 	
 label_mapCastelia: ;
-	//c0x28A(28, 1);
 	RailWarp(28, 3, 8, 8, 1);
-	Return();
+	//c0x28A(37, 1);
+	goto label_travelOptions;
 	
 label_mapJoinAvenue: ;
 	c0x28A(551, 1);
-	Return();
+	goto label_travelOptions;
 	
 label_mapNimbasa: ;
 	c0x28A(62, 1);
-	Return();
+	goto label_travelOptions;
 	
 label_mapDriftveil: ;
 	c0x28A(96, 1);
-	Return();
+	goto label_travelOptions;
 	
 label_mapPWT: ;
 	c0x28A(191, 1);
-	Return();
+	goto label_travelOptions;
 	
 label_mapMistralton: ;
 	c0x28A(107, 1);
-	Return();
+	goto label_travelOptions;
 	
 label_mapLentimas: ;
 	c0x28A(458, 1);
-	Return();
+	goto label_travelOptions;
 
-label_timetoleave: ;
-	MapChangeWarp(458, 634, 306, 2);
-	SetVarEqVal(0x8020, 1);
-	Return();
-
-label_timetoleave_rail: ;
-	RailWarp(28, 3, 8, 2, 3);
-	SetVarEqVal(0x8020, 1);
-	Return();
 
 label_goBack: ;
-	EventGreyMessage(1, 2);
 	Return();
 	// // ======== UNDELLA TOWN ======== */
 	// 	SetVarFlagStatus(0x8030, XXXX);
@@ -1210,7 +1224,7 @@ label49_options: ;
 	AddDialogueOption(112, 0xFFFF, 7);
 	// Restore Defaults
 	AddDialogueOption(113, 0xFFFF, 8);
-	ShowDialogueSelection();
+	ShowDialogueSelection2();
 
 
 //
@@ -1218,7 +1232,7 @@ label49_options: ;
 
 	Compare(0x8004, 0);
 	if (5) goto label45_options;
-	CloseAllMessageBoxes();
+	// CloseAllMessageBoxes();
 	Compare(0x401F, 0);
 	if (5) goto label46_options;
 	EventGreyMessage(114, 2);
@@ -1233,14 +1247,14 @@ label47_options: ;
 	SetVarEqVar(0x8006, 0x8000);
 	Compare(0x8006, 1);
 	if (5) goto label48_options;
-	CloseAllMessageBoxes();
+	// CloseAllMessageBoxes();
 	EventGreyMessage(116, 2);
 	WaitForButton();
 	goto label49_options;
 
 // Toggling the Critical Hit Settings
 label48_options: ;
-	CloseAllMessageBoxes();
+	// CloseAllMessageBoxes();
 	Compare(0x401F, 0);
 	if (5) goto label50_options;
 	EventGreyMessage(117, 2);
@@ -1268,7 +1282,7 @@ label51_options: ;
 label45_options: ;
 	Compare(0x8004, 1);
 	if (5) goto label52_options;
-	CloseAllMessageBoxes();
+	// CloseAllMessageBoxes();
 	Compare(0x4031, 0);
 	if (5) goto label53_options;
 	EventGreyMessage(120, 2);
@@ -1289,10 +1303,10 @@ label54_options: ;
 	AddDialogueOption(126, 0xFFFF, 1);
 	AddDialogueOption(127, 0xFFFF, 2);
 	AddDialogueOption(112, 0xFFFF, 3);
-	ShowDialogueSelection();
+	ShowDialogueSelection2();
 	Compare(0x8006, 0);
 	if (5) goto label56_options;
-	CloseAllMessageBoxes();
+	// CloseAllMessageBoxes();
 	EventGreyMessage(123, 2);
 	WaitForButton();
 	SetVarEqVar2(0x4031, 0);
@@ -1303,7 +1317,7 @@ label54_options: ;
 label56_options: ;
 	Compare(0x8006, 1);
 	if (5) goto label57_options;
-	CloseAllMessageBoxes();
+	// CloseAllMessageBoxes();
 	EventGreyMessage(128, 2);
 	WaitForButton();
 	SetVarEqVar2(0x4031, 1);
@@ -1314,7 +1328,7 @@ label56_options: ;
 label57_options: ;
 	Compare(0x8006, 2);
 	if (5) goto label58_options;
-	CloseAllMessageBoxes();
+	// CloseAllMessageBoxes();
 	EventGreyMessage(122, 2);
 	WaitForButton();
 	SetVarEqVar2(0x4031, 2);
@@ -1325,13 +1339,13 @@ label57_options: ;
 label58_options: ;
 	Compare(0x8006, 3);
 	if (5) goto label59_options;
-	CloseAllMessageBoxes();
+	// CloseAllMessageBoxes();
 	EventGreyMessage(116, 2);
 	WaitForButton();
 	goto label49_options;
 
 label59_options: ;
-	CloseAllMessageBoxes();
+	// CloseAllMessageBoxes();
 	EventGreyMessage(119, 2);
 	WaitForButton();
 	goto label49_options;
@@ -1345,7 +1359,7 @@ label59_options: ;
 label52_options: ;
 	Compare(0x8004, 2);
 	if (5) goto label60_options;
-	CloseAllMessageBoxes();
+	// CloseAllMessageBoxes();
 	Compare(0x4032, 0);
 	if (5) goto label61_options;
 	EventGreyMessage(129, 2);
@@ -1373,10 +1387,10 @@ label62_options: ;
 	AddDialogueOption(135, 0xFFFF, 2);
 	AddDialogueOption(136, 0xFFFF, 3);
 	AddDialogueOption(112, 0xFFFF, 4);
-	ShowDialogueSelection();
+	ShowDialogueSelection2();
 	Compare(0x8006, 0);
 	if (5) goto label65_options;
-	CloseAllMessageBoxes();
+	// CloseAllMessageBoxes();
 	EventGreyMessage(137, 2);
 	WaitForButton();
 	SetVarEqVar2(0x4032, 0);
@@ -1387,7 +1401,7 @@ label62_options: ;
 label65_options: ;
 	Compare(0x8006, 1);
 	if (5) goto label66_options;
-	CloseAllMessageBoxes();
+	// CloseAllMessageBoxes();
 	EventGreyMessage(138, 2);
 	WaitForButton();
 	SetVarEqVar2(0x4032, 1);
@@ -1398,7 +1412,7 @@ label65_options: ;
 label66_options: ;
 	Compare(0x8006, 2);
 	if (5) goto label67_options;
-	CloseAllMessageBoxes();
+	// CloseAllMessageBoxes();
 	EventGreyMessage(139, 2);
 	WaitForButton();
 	SetVarEqVar2(0x4032, 2);
@@ -1409,7 +1423,7 @@ label66_options: ;
 label67_options: ;
 	Compare(0x8006, 3);
 	if (5) goto label68_options;
-	CloseAllMessageBoxes();
+	// CloseAllMessageBoxes();
 	EventGreyMessage(140, 2);
 	WaitForButton();
 	SetVarEqVar2(0x4032, 4);
@@ -1420,13 +1434,13 @@ label67_options: ;
 label68_options: ;
 	Compare(0x8006, 4);
 	if (5) goto label69_options;
-	CloseAllMessageBoxes();
+	// CloseAllMessageBoxes();
 	EventGreyMessage(116, 2);
 	WaitForButton();
 	goto label49_options;
 
 label69_options: ;
-	CloseAllMessageBoxes();
+	// CloseAllMessageBoxes();
 	EventGreyMessage(119, 2);
 	WaitForButton();
 	goto label49_options;
@@ -1439,7 +1453,7 @@ label69_options: ;
 label60_options: ;
 	Compare(0x8004, 3);
 	if (5) goto label70_options;
-	CloseAllMessageBoxes();
+	// CloseAllMessageBoxes();
 	Compare(0x4033, 0);
 	if (5) goto label71_options;
 	EventGreyMessage(142, 2);
@@ -1454,13 +1468,13 @@ label72_options: ;
 	SetVarEqVar(0x8006, 0x8000);
 	Compare(0x8006, 1);
 	if (5) goto label73_options;
-	CloseAllMessageBoxes();
+	// CloseAllMessageBoxes();
 	EventGreyMessage(116, 2);
 	WaitForButton();
 	goto label49_options;
 
 label73_options: ;
-	CloseAllMessageBoxes();
+	// CloseAllMessageBoxes();
 	Compare(0x4033, 0);
 	if (5) goto label74_options;
 	EventGreyMessage(144, 2);
@@ -1487,7 +1501,7 @@ label75_options: ;
 label70_options: ;
 	Compare(0x8004, 4);
 	if (5) goto label76_options;
-	CloseAllMessageBoxes();
+	// CloseAllMessageBoxes();
 	Compare(0x4034, 0);
 	if (5) goto label77_options;
 	EventGreyMessage(146, 2);
@@ -1502,13 +1516,13 @@ label78_options: ;
 	SetVarEqVar(0x8006, 0x8000);
 	Compare(0x8006, 1);
 	if (5) goto label79_options;
-	CloseAllMessageBoxes();
+	// CloseAllMessageBoxes();
 	EventGreyMessage(116, 2);
 	WaitForButton();
 	goto label49_options;
 
 label79_options: ;
-	CloseAllMessageBoxes();
+	// CloseAllMessageBoxes();
 	Compare(0x4034, 0);
 	if (5) goto label80_options;
 	EventGreyMessage(149, 2);
@@ -1536,7 +1550,7 @@ label81_options: ;
 label76_options: ;
 	Compare(0x8004, 5);
 	if (5) goto label82_options;
-	CloseAllMessageBoxes();
+	// CloseAllMessageBoxes();
 	Compare(0x4035, 0);
 	if (5) goto label83_options;
 	EventGreyMessage(150, 2);
@@ -1551,13 +1565,13 @@ label84_options: ;
 	SetVarEqVar(0x8006, 0x8000);
 	Compare(0x8006, 1);
 	if (5) goto label85_options;
-	CloseAllMessageBoxes();
+	// CloseAllMessageBoxes();
 	EventGreyMessage(61, 2);
 	WaitForButton();
 	goto label49_options;
 
 label85_options: ;
-	CloseAllMessageBoxes();
+	// CloseAllMessageBoxes();
 	Compare(0x4035, 0);
 	if (5) goto label86_options;
 	EventGreyMessage(153, 2);
@@ -1584,7 +1598,7 @@ label87_options: ;
 label82_options: ;
 	Compare(0x8004, 6);
 	if (5) goto label_BattleScan_1;
-	CloseAllMessageBoxes();
+	// CloseAllMessageBoxes();
 	SetVarFlagStatus(525, 0x8000);
 	StackPushVar(0x8000);
 	SetVarFlagStatus(524, 0x8000);
@@ -1629,13 +1643,13 @@ label91_options: ;
 	SetVarEqVar(0x8006, 0x8000);
 	Compare(0x8006, 1);
 	if (5) goto label94_options;
-	CloseAllMessageBoxes();
+	// CloseAllMessageBoxes();
 	EventGreyMessage(116, 2);
 	WaitForButton();
 	goto label49_options;
 
 label94_options: ;
-	CloseAllMessageBoxes();
+	// CloseAllMessageBoxes();
 	SetVarFlagStatus(525, 0x8000);
 	StackPushVar(0x8000);
 	SetVarFlagStatus(524, 0x8000);
@@ -1696,7 +1710,7 @@ label97_options: ;
 label_BattleScan_1: ;
 	Compare(0x8004, 9);
 	if (5) goto label88_options;
-	CloseAllMessageBoxes();
+	// CloseAllMessageBoxes();
 	Compare(16438, 0);
 	if (5) goto label_BattleScan_2;
 	EventGreyMessage(160, 2);
@@ -1711,13 +1725,13 @@ label_BattleScan_3: ;
 	SetVarEqVar(0x8006, 0x8000);
 	Compare(0x8006, 1);
 	if (5) goto label_BattleScan_4;
-	CloseAllMessageBoxes();
+	// CloseAllMessageBoxes();
 	EventGreyMessage(116, 2);
 	WaitForButton();
 	goto label49_options;
 
 label_BattleScan_4: ;
-	CloseAllMessageBoxes();
+	// CloseAllMessageBoxes();
 	Compare(16438, 0);
 	if (5) goto label_BattleScan_5;
 	EventGreyMessage(162, 2);
@@ -1742,23 +1756,23 @@ label_BattleScan_6: ;
 label88_options: ;
 	Compare(0x8004, 8);
 	if (5) goto label100_options;
-	CloseAllMessageBoxes();
+	// CloseAllMessageBoxes();
 	EventGreyMessage(159, 2);
 	WaitForButton();
 	YesNoBox(0x8000);
 	SetVarEqVar(0x8006, 0x8000);
 	Compare(0x8006, 1);
 	if (5) goto label101_options;
-	CloseAllMessageBoxes();
+	// CloseAllMessageBoxes();
 	EventGreyMessage(116, 2);
 	WaitForButton();
 	goto label49_options;
 
 label101_options: ;
-	CloseAllMessageBoxes();
+	// CloseAllMessageBoxes();
 	Compare(0x401F, 0);
 	if (1) goto label102_options;
-	CloseAllMessageBoxes();
+	// CloseAllMessageBoxes();
 	EventGreyMessage(118, 2);
 	WaitForButton();
 	SetVarEqVar2(0x401F, 0);
@@ -1766,7 +1780,7 @@ label101_options: ;
 label102_options: ;
 	Compare(0x4031, 0);
 	if (1) goto label103_options;
-	CloseAllMessageBoxes();
+	// CloseAllMessageBoxes();
 	EventGreyMessage(123, 2);
 	WaitForButton();
 	SetVarEqVar2(0x4031, 0);
@@ -1774,7 +1788,7 @@ label102_options: ;
 label103_options: ;
 	Compare(0x4032, 0);
 	if (1) goto label104_options;
-	CloseAllMessageBoxes();
+	// CloseAllMessageBoxes();
 	EventGreyMessage(137, 2);
 	WaitForButton();
 	SetVarEqVar2(0x4032, 0);
@@ -1782,7 +1796,7 @@ label103_options: ;
 label104_options: ;
 	Compare(0x4033, 0);
 	if (1) goto label105_options;
-	CloseAllMessageBoxes();
+	// CloseAllMessageBoxes();
 	EventGreyMessage(145, 2);
 	WaitForButton();
 	SetVarEqVar2(0x4033, 0);
@@ -1790,7 +1804,7 @@ label104_options: ;
 label105_options: ;
 	Compare(0x4034, 0);
 	if (1) goto label106_options;
-	CloseAllMessageBoxes();
+	// CloseAllMessageBoxes();
 	EventGreyMessage(148, 2);
 	WaitForButton();
 	SetVarEqVar2(0x4034, 0);
@@ -1798,7 +1812,7 @@ label105_options: ;
 label106_options: ;
 	Compare(0x4035, 0);
 	if (1) goto label107_options;
-	CloseAllMessageBoxes();
+	// CloseAllMessageBoxes();
 	EventGreyMessage(152, 2);
 	WaitForButton();
 	SetVarEqVar2(0x4035, 0);
@@ -1807,7 +1821,7 @@ label107_options: ;
 	SetVarFlagStatus(524, 0x8000);
 	Compare(0x8000, 0);
 	if (1) goto label108_optionsa;
-	CloseAllMessageBoxes();
+	// CloseAllMessageBoxes();
 	EventGreyMessage(157, 2);
 	WaitForButton();
 	ClearFlag(524);
@@ -1816,20 +1830,19 @@ label107_options: ;
 label108_optionsa: ;
 	Compare(16438, 0);
 	if (1) goto label108;
-	CloseAllMessageBoxes();
+	// CloseAllMessageBoxes();
 	EventGreyMessage(162, 2);
 	WaitForButton();
 	SetVarEqVar2(16438, 0);
 
 label108: ;
-	CloseAllMessageBoxes();
+	// CloseAllMessageBoxes();
 	EventGreyMessage(119, 2);
 	WaitForButton();
 	goto label49_options;
 
 label100_options: ;
 	WaitMoment();
-	UnlockAll();
 	SetVarEqVal(0x8000, 0);
 	Return();
 }

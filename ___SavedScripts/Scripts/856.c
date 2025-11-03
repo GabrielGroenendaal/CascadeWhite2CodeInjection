@@ -1,5 +1,6 @@
 #include "ScriptHeaders/FrostScriptCommandsBW2.h"
 #include "ScriptHeaders/MovementCommands.h"
+#include "ScriptHeaders/CommandOverlay65.h"
 
 void Sequence0()
 {

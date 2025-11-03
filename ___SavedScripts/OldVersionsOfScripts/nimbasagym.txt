@@ -1,0 +1,1409 @@
+import messages.script.Msg0073.MSGID;
+
+import Base;
+import event.Battle;
+import event.EVCamera;
+import event.Effects;
+import event.Trainer;
+import event.actors.Actor;
+import event.actors.Player;
+import event.dialogs.Message;
+import player.TrainerCard;
+import pokescript.vm.Math;
+import pokescript.vm.StackCtrl;
+import pokescript.vm.VM;
+import system.EventFlags;
+import system.EventWorks;
+import system.Fade;
+import system.Game;
+import system.Input;
+import system.Runtime;
+import system.Sound;
+import system.text.WordSet;
+
+public class MainEvents {
+	public static void main_1() { // @ 0x3a
+		int v0;
+		int v4;
+
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		v0 = TrainerCard.HasBadge(3);
+		v4 = v0;
+		if (v4 == 0) {
+			sub_0104();
+			v4 = v4;
+			goto LABEL_00f8;
+		}
+		v0 = EventFlags.Get(2400);
+		if (v0 == 0) {
+			if (EventWorks.Get(16385) == 1) {
+				goto LABEL_0087;
+			}
+			goto LABEL_00af;
+		}
+		Message.Actor(1024, 9, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		goto LABEL_00f8;
+
+		LABEL_0087:
+		Message.Actor(1024, 8, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		goto LABEL_00f8;
+
+		LABEL_00af:
+		v0 = EventFlags.Get(760);
+		if (v0 == 0) {
+			Message.Actor(1024, 5, 0, 0);
+			Input.LastKeyWait();
+			Message.CloseActor();
+			goto LABEL_00f8;
+		}
+		Message.Actor(1024, 6, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+
+		LABEL_00f8:
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+		v0 = 0;
+	}
+
+	public static void main_2() { // @ 0x2aa
+		int v0;
+
+		v0 = EventFlags.Get(264);
+		if (v0 == 0) {
+			v0 = 1;
+			goto LABEL_02cf;
+		}
+		v0 = 0;
+
+		LABEL_02cf:
+		if (v0 == 0) {
+			EventWorks.Set(16539, 0);
+			Base.CMD_25A(0);
+			v0 = 0;
+			return;
+			goto LABEL_030d;
+		}
+		if (EventWorks.Get(16539) == 0) {
+			Base.CMD_25A(0);
+			v0 = 0;
+			return;
+			goto LABEL_02fb;
+		}
+
+		LABEL_030d:
+		if (EventWorks.Get(16539) == 1) {
+			Base.CMD_25A(1);
+			v0 = 0;
+			return;
+			goto LABEL_0345;
+		}
+		if (EventWorks.Get(16539) == 2) {
+			Base.CMD_25A(2);
+			v0 = 0;
+			return;
+			goto LABEL_0339;
+		}
+
+		LABEL_0345:
+		if (EventWorks.Get(16539) == 3) {
+			Base.CMD_25A(3);
+			v0 = 0;
+			return;
+			goto LABEL_037d;
+		}
+		if (EventWorks.Get(16539) == 4) {
+			Base.CMD_25A(4);
+			v0 = 0;
+			return;
+			goto LABEL_0371;
+		}
+
+		LABEL_037d:
+		Base.CMD_25A(0);
+		v0 = 0;
+	}
+
+	public static void main_3() { // @ 0x389
+		int v0;
+
+		if (EventWorks.Get(16539) == 0) {
+			v0 = 0;
+			return;
+			goto LABEL_03c5;
+		}
+		if (EventWorks.Get(16539) == 1) {
+			Actor.SetGPos(2, 9, 6, 2, 3);
+			v0 = 0;
+			return;
+			goto LABEL_03bd;
+		}
+
+		LABEL_03c5:
+		if (EventWorks.Get(16539) == 2) {
+			Actor.SetGPos(2, 9, 6, 2, 3);
+			Actor.SetGPos(3, 9, 6, 3, 3);
+			v0 = 0;
+			return;
+			goto LABEL_043d;
+		}
+		if (EventWorks.Get(16539) == 3) {
+			Actor.SetGPos(2, 9, 6, 2, 3);
+			Actor.SetGPos(3, 9, 6, 3, 3);
+			Actor.SetGPos(0, 21, 6, 2, 2);
+			Actor.SetGPos(4, 15, 6, 4, 1);
+			v0 = 0;
+			return;
+			goto LABEL_041d;
+		}
+
+		LABEL_043d:
+		if (EventWorks.Get(16539) == 4) {
+			Actor.SetGPos(2, 9, 6, 2, 3);
+			Actor.SetGPos(3, 9, 6, 3, 3);
+			Actor.SetGPos(0, 21, 6, 2, 2);
+			Actor.SetGPos(4, 15, 6, 4, 1);
+			v0 = 0;
+			return;
+		}
+		v0 = 0;
+		return;
+	}
+
+	public static void main_4() { // @ 0x48a
+		int v0;
+		int v4;
+		int v5;
+		int v6;
+
+		Actor.PauseAll();
+		Base.CMD_25C(1, 2, 0);
+		Runtime.Sleep(16);
+		v0 = EventFlags.Get(264);
+		if (v0 == 0) {
+			Trainer.PlayBGMPush(207);
+			ActionSequence_10a2(2);
+			Actor.WaitActionFinish();
+			v5 = 0;
+			v6 = 0;
+			Player.GetGPos(v5, v6);
+			if (v5 != 14) {
+				goto LABEL_04f8;
+			}
+			ActionSequence_10aa(2);
+			Actor.WaitActionFinish();
+			goto LABEL_053c;
+		}
+		ActionSequence_1076(2);
+		Actor.WaitActionFinish();
+		goto LABEL_0573;
+
+		LABEL_04f8:
+		if (v5 != 15) {
+			if (v5 != 16) {
+				goto LABEL_0532;
+			}
+			ActionSequence_110a(2);
+			Actor.WaitActionFinish();
+			goto LABEL_053c;
+		}
+		ActionSequence_10de(2);
+		Actor.WaitActionFinish();
+		goto LABEL_053c;
+
+		LABEL_0532:
+		ActionSequence_10de(2);
+		Actor.WaitActionFinish();
+
+		LABEL_053c:
+		Message.ActorEx(1024, 10, 2, 0, 0);
+		Message.CloseActor();
+		Battle.CallTrainerBattle(207, 0, 0);
+		v0 = Battle.IsTrainerVictory();
+		v4 = v0;
+		if (v4 == 1) {
+			Battle.EndTrainerBattle();
+			goto LABEL_0573;
+		}
+		Battle.CallTrainerLose();
+
+		LABEL_0573:
+		Base.CMD_25C(0, 2, 0);
+		Base.CMD_25F(1);
+		Base.CMD_25D(1);
+		Base.CMD_25F(0);
+		v0 = EventFlags.Get(264);
+		if (v0 == 0) {
+			if (v5 != 14) {
+				goto LABEL_05c7;
+			}
+			ActionSequence_1182(2);
+			Actor.WaitActionFinish();
+			goto LABEL_060b;
+		}
+		ActionSequence_113e(2);
+		Actor.WaitActionFinish();
+		goto LABEL_060b;
+
+		LABEL_05c7:
+		if (v5 != 15) {
+			if (v5 != 16) {
+				goto LABEL_0601;
+			}
+			ActionSequence_11ca(2);
+			Actor.WaitActionFinish();
+			goto LABEL_060b;
+		}
+		ActionSequence_113e(2);
+		Actor.WaitActionFinish();
+		goto LABEL_060b;
+
+		LABEL_0601:
+		ActionSequence_113e(2);
+		Actor.WaitActionFinish();
+
+		LABEL_060b:
+		Actor.SetGPos(2, 9, 6, 2, 3);
+		EventWorks.Set(16539, 1);
+		v6 = 0;
+		v5 = 0;
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+		v0 = 0;
+	}
+
+	public static void main_5() { // @ 0x635
+		int v0;
+		int v4;
+		int v5;
+		int v6;
+
+		Actor.PauseAll();
+		Base.CMD_25C(1, 3, 0);
+		Runtime.Sleep(16);
+		v0 = EventFlags.Get(264);
+		if (v0 == 0) {
+			Trainer.PlayBGMPush(208);
+			ActionSequence_10a2(3);
+			Actor.WaitActionFinish();
+			v5 = 0;
+			v6 = 0;
+			Player.GetGPos(v5, v6);
+			if (v5 != 14) {
+				goto LABEL_06a3;
+			}
+			ActionSequence_125a(3);
+			Actor.WaitActionFinish();
+			goto LABEL_06e7;
+		}
+		ActionSequence_1212(3);
+		Actor.WaitActionFinish();
+		goto LABEL_071e;
+
+		LABEL_06a3:
+		if (v5 != 15) {
+			if (v5 != 16) {
+				goto LABEL_06dd;
+			}
+			ActionSequence_12f2(3);
+			Actor.WaitActionFinish();
+			goto LABEL_06e7;
+		}
+		ActionSequence_12aa(3);
+		Actor.WaitActionFinish();
+		goto LABEL_06e7;
+
+		LABEL_06dd:
+		ActionSequence_12aa(3);
+		Actor.WaitActionFinish();
+
+		LABEL_06e7:
+		Message.ActorEx(1024, 13, 3, 0, 0);
+		Message.CloseActor();
+		Battle.CallTrainerBattle(208, 0, 0);
+		v0 = Battle.IsTrainerVictory();
+		v4 = v0;
+		if (v4 == 1) {
+			Battle.EndTrainerBattle();
+			goto LABEL_071e;
+		}
+		Battle.CallTrainerLose();
+
+		LABEL_071e:
+		Base.CMD_25C(0, 3, 0);
+		Base.CMD_25F(1);
+		Base.CMD_25D(2);
+		Base.CMD_25F(0);
+		v0 = EventFlags.Get(264);
+		if (v0 == 0) {
+			if (v5 != 14) {
+				goto LABEL_0772;
+			}
+			ActionSequence_1182(3);
+			Actor.WaitActionFinish();
+			goto LABEL_07b6;
+		}
+		ActionSequence_113e(3);
+		Actor.WaitActionFinish();
+		goto LABEL_07b6;
+
+		LABEL_0772:
+		if (v5 != 15) {
+			if (v5 != 16) {
+				goto LABEL_07ac;
+			}
+			ActionSequence_11ca(3);
+			Actor.WaitActionFinish();
+			goto LABEL_07b6;
+		}
+		ActionSequence_113e(3);
+		Actor.WaitActionFinish();
+		goto LABEL_07b6;
+
+		LABEL_07ac:
+		ActionSequence_113e(3);
+		Actor.WaitActionFinish();
+
+		LABEL_07b6:
+		Actor.SetGPos(3, 9, 6, 3, 3);
+		EventWorks.Set(16539, 2);
+		v6 = 0;
+		v5 = 0;
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+		v0 = 0;
+	}
+
+	public static void main_6() { // @ 0x7e0
+		int v0;
+		int v4;
+		int v5;
+		int v6;
+
+		Actor.PauseAll();
+		Base.CMD_25C(1, 0, 0);
+		Runtime.Sleep(16);
+		v0 = EventFlags.Get(264);
+		if (v0 == 0) {
+			Trainer.PlayBGMPush(209);
+			ActionSequence_10a2(0);
+			Actor.WaitActionFinish();
+			v5 = 0;
+			v6 = 0;
+			Player.GetGPos(v5, v6);
+			if (v5 != 14) {
+				goto LABEL_084e;
+			}
+			ActionSequence_13ce(0);
+			Actor.WaitActionFinish();
+			goto LABEL_0892;
+		}
+		ActionSequence_1342(0);
+		Actor.WaitActionFinish();
+		goto LABEL_092a;
+
+		LABEL_084e:
+		if (v5 != 15) {
+			if (v5 != 16) {
+				goto LABEL_0888;
+			}
+			ActionSequence_1496(0);
+			Actor.WaitActionFinish();
+			goto LABEL_0892;
+		}
+		ActionSequence_1436(0);
+		Actor.WaitActionFinish();
+		goto LABEL_0892;
+
+		LABEL_0888:
+		ActionSequence_1436(0);
+		Actor.WaitActionFinish();
+
+		LABEL_0892:
+		Message.ActorEx(1024, 16, 0, 0, 0);
+		Message.CloseActor();
+		Battle.CallTrainerBattle(209, 0, 0);
+		v0 = Battle.IsTrainerVictory();
+		v4 = v0;
+		if (v4 == 1) {
+			Battle.EndTrainerBattle();
+			goto LABEL_08c9;
+		}
+		Battle.CallTrainerLose();
+
+		LABEL_08c9:
+		if (v5 != 14) {
+			if (v5 != 15) {
+				goto LABEL_0903;
+			}
+			ActionSequence_113e(0);
+			Actor.WaitActionFinish();
+			goto LABEL_092a;
+		}
+		ActionSequence_1182(0);
+		Actor.WaitActionFinish();
+		goto LABEL_092a;
+
+		LABEL_0903:
+		if (v5 != 16) {
+			ActionSequence_113e(0);
+			Actor.WaitActionFinish();
+			goto LABEL_092a;
+		}
+		ActionSequence_11ca(0);
+		Actor.WaitActionFinish();
+
+		LABEL_092a:
+		Base.CMD_25C(0, 0, 0);
+		Actor.SetGPos(0, 21, 6, 2, 2);
+		sub_0980();
+		v6 = v6;
+		v5 = v5;
+		v4 = v4;
+		Sound.BGMAmbienceResume();
+		EventWorks.Set(16539, 3);
+		EventFlags.Set(2429);
+		v6 = 0;
+		v5 = 0;
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+		v0 = 0;
+	}
+
+	public static void main_7() { // @ 0xa7e
+		int v0;
+
+		Actor.PauseAll();
+		v0 = EventFlags.Get(264);
+		if (v0 == 0) {
+			Sound.SEPlay(1351);
+			Actor.FacePlayer();
+			Message.Actor(1024, 11, 0, 0);
+			Input.LastKeyWait();
+			Message.CloseActor();
+			goto LABEL_0ac1;
+		}
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 12, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+
+		LABEL_0ac1:
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+		v0 = 0;
+	}
+
+	public static void main_8() { // @ 0xacd
+		int v0;
+
+		Actor.PauseAll();
+		v0 = EventFlags.Get(264);
+		if (v0 == 0) {
+			Sound.SEPlay(1351);
+			Actor.FacePlayer();
+			Message.Actor(1024, 14, 0, 0);
+			Input.LastKeyWait();
+			Message.CloseActor();
+			goto LABEL_0b10;
+		}
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 15, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+
+		LABEL_0b10:
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+		v0 = 0;
+	}
+
+	public static void main_9() { // @ 0xb1c
+		int v0;
+
+		Actor.PauseAll();
+		v0 = EventFlags.Get(264);
+		if (v0 == 0) {
+			Sound.SEPlay(1351);
+			Actor.FacePlayer();
+			Message.Actor(1024, 17, 0, 0);
+			Input.LastKeyWait();
+			Message.CloseActor();
+			goto LABEL_0b5f;
+		}
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 18, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+
+		LABEL_0b5f:
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+		v0 = 0;
+	}
+
+	public static void main_10() { // @ 0xb6b
+		int v0;
+		int v1;
+		int v4;
+		int v5;
+		int v6;
+		int v7;
+		int v8;
+
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		v0 = TrainerCard.HasBadge(3);
+		v6 = v0;
+		if (v6 == 0) {
+			v0 = EventFlags.Get(110);
+			if (v0 == 0) {
+				goto LABEL_0bc7;
+			}
+			Message.Actor(1024, 20, 0, 0);
+			Input.LastKeyWait();
+			Message.CloseActor();
+			goto LABEL_0c19;
+		}
+		Message.Actor(1024, 21, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		goto LABEL_0c19;
+
+		LABEL_0bc7:
+		Message.Actor(1024, 19, 0, 0);
+		Message.CloseActor();
+		v7 = 30;
+		v8 = 1;
+		v0 = v7;
+		v1 = v8;
+		Global2805(v4, v5, v6);
+		Message.Actor(1024, 20, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		EventFlags.Set(110);
+
+		LABEL_0c19:
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+		v0 = 0;
+	}
+
+	public static void main_11() { // @ 0xc25
+		int v0;
+		int v4;
+
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		WordSet.LoadPlayerName(0);
+		WordSet.LoadRivalName(1);
+		v0 = TrainerCard.HasBadge(3);
+		v4 = v0;
+		if (v4 == 0) {
+			Message.Info(22, 2);
+			goto LABEL_0c7e;
+		}
+		v0 = EventFlags.Get(2478);
+		if (v0 == 0) {
+			Message.Info(23, 2);
+			goto LABEL_0c7e;
+		}
+
+		LABEL_0c79:
+		Message.Info(24, 2);
+
+		LABEL_0c7e:
+		Input.LastKeyWait();
+		Message.CloseAll();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+		v0 = 0;
+	}
+
+	public static void main_12() { // @ 0xc8e
+		int v0;
+
+		Actor.PauseAll();
+		sub_0ca2();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+		v0 = 0;
+	}
+
+	public static void main_13() { // @ 0xf31
+		int v0;
+		int v4;
+
+		v0 = Base.FieldGetContinueFlag();
+		v4 = v0;
+		if (v4 == 1) {
+			Base.CMD_25B();
+			goto LABEL_0f50;
+		}
+
+		LABEL_0f50:
+		if (EventWorks.Get(16539) == 3) {
+			v0 = EventFlags.Get(264);
+			if (v0 == 0) {
+				goto LABEL_0f84;
+			}
+			v0 = 0;
+			goto LABEL_0f8a;
+		}
+		v0 = 0;
+		return;
+
+		LABEL_0f84:
+		v0 = 1;
+
+		LABEL_0f8a:
+		if (v0 == 0) {
+			Base.CMD_25F(6);
+			v0 = 0;
+			return;
+		}
+		v0 = 0;
+		return;
+	}
+
+	public static void main_14() { // @ 0xfab
+		int v0;
+		int v1;
+		int v4;
+		int v5;
+		int v6;
+		int v7;
+		int v8;
+		int v9;
+
+		Actor.PauseAll();
+		v6 = 0;
+		v7 = 0;
+		Player.GetGPos(v6, v7);
+		ActionSequence_1592(1);
+		Actor.WaitActionFinish();
+		Actor.WalkRoute(1, v6, 58, 0, 8, 0);
+		Actor.WaitActionFinish();
+		ActionSequence_159a(1);
+		Actor.WaitActionFinish();
+		Message.ActorEx(1024, 19, 1, 0, 0);
+		Message.CloseAll();
+		v8 = 546;
+		v9 = 3;
+		v0 = v8;
+		v1 = v9;
+		Global2805(v4, v5, v6, v7);
+		Message.ActorEx(1024, 20, 1, 0, 0);
+		Message.WaitAdvance();
+		Message.CloseAll();
+		Actor.WalkRoute(1, 17, 58, 0, 8, 1);
+		Actor.WaitActionFinish();
+		ActionSequence_159a(1);
+		Actor.WaitActionFinish();
+		EventFlags.Set(110);
+		EventWorks.Set(16706, 1);
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+		v0 = 0;
+	}
+
+	static void sub_0104() { // @ 0x104
+		int v0;
+		int v1;
+		int v4;
+		int v5;
+		int v6;
+		int v7;
+		int v8;
+		int v9;
+		int v10;
+
+		Message.ActorEx(1024, 0, 4, 2, 0);
+		Message.CloseActor();
+		v7 = 0;
+		v0 = Game.GetDifficulty();
+		v7 = v0;
+		if (v7 == 2) {
+			Battle.CallTrainerBattle(767, 0, 0);
+			goto LABEL_0145;
+		}
+		Battle.CallTrainerBattle(153, 0, 0);
+
+		LABEL_0145:
+		v7 = 0;
+		v0 = Battle.IsTrainerVictory();
+		v6 = v0;
+		if (v6 == 1) {
+			EVCamera.Init();
+			EVCamera.Unbind();
+			EVCamera.MoveTo(0.8964844f, 0.0f, 237.0f, 248.0f, 104.011475f, 63.0f, 1);
+			EVCamera.Wait();
+			ActionSequence_106e(2);
+			ActionSequence_106e(3);
+			ActionSequence_106e(0);
+			Actor.WaitActionFinish();
+			Base.CMD_25F(4);
+			Base.CMD_25F(5);
+			Battle.EndTrainerBattle();
+			goto LABEL_01ac;
+		}
+		Battle.CallTrainerLose();
+
+		LABEL_01ac:
+		Message.ActorEx(1024, 1, 4, 2, 0);
+		Message.CloseActor();
+		TrainerCard.SaveGymVictoryParty(3);
+		TrainerCard.AddBadge(3);
+		Sound.MEPlay(1306);
+		v8 = 0;
+		v0 = TrainerCard.GetSex();
+		v8 = v0;
+		if (v8 == 0) {
+			Effects.Play(6);
+			goto LABEL_01f1;
+		}
+		Effects.Play(58);
+
+		LABEL_01f1:
+		Sound.MEWait();
+		v8 = 0;
+		Base.CMD_25F(2);
+		WordSet.LoadPlayerName(0);
+		Message.System(2, 2);
+		Message.CloseSystem();
+		Message.ActorEx(1024, 3, 4, 2, 0);
+		Message.CloseActor();
+		Base.CMD_25F(0);
+		v9 = 400;
+		v10 = 1;
+		v0 = v9;
+		v1 = v10;
+		Global2805(v4, v5, v6, v7, v8);
+		Base.CMD_25F(2);
+		Message.ActorEx(1024, 4, 4, 2, 0);
+		Message.WaitAdvance();
+		Message.CloseActor();
+		EVCamera.MoveToDefault(30);
+		EVCamera.Wait();
+		EVCamera.Rebind();
+		EVCamera.End();
+		Base.CMD_25F(0);
+		EventFlags.Set(2417);
+		EventFlags.Set(264);
+		EventWorks.Set(16540, 1);
+		EventWorks.Set(16576, 1);
+		EventFlags.Clear(761);
+		EventFlags.Clear(762);
+		Base.CMD_262(1, 6);
+		v0 = 0;
+	}
+
+	static void sub_0980() { // @ 0x980
+		int v0;
+
+		EVCamera.Init();
+		EVCamera.Unbind();
+		Sound.BGMFadeOutAll(90);
+		EVCamera.MoveTo(0.8964844f, 0.0f, 237.0f, 248.0f, 104.011475f, 63.0f, 70);
+		EVCamera.Wait();
+		Sound.BGMPlay(1097);
+		Base.CMD_25C(1, 4, 3);
+		Runtime.Sleep(12);
+		Base.CMD_25C(1, 4, 1);
+		Runtime.Sleep(12);
+		Base.CMD_25C(1, 4, 2);
+		Runtime.Sleep(12);
+		ActionSequence_14fe(4);
+		Actor.WaitActionFinish();
+		Base.CMD_25F(3);
+		Fade.FadeEx(12, 0, 16, 2);
+		Fade.FadeExWait();
+		Fade.FadeEx(12, 16, 0, 2);
+		Runtime.Sleep(4);
+		Fade.FadeExWait();
+		Fade.FadeEx(12, 0, 16, 2);
+		Fade.FadeExWait();
+		Fade.FadeEx(12, 16, 0, 2);
+		Fade.FadeExWait();
+		Base.CMD_25C(0, 4, 3);
+		Base.CMD_25C(0, 4, 1);
+		Base.CMD_25C(0, 4, 2);
+		v0 = EventFlags.Get(264);
+		if (v0 == 0) {
+			v0 = 1;
+			goto LABEL_0a49;
+		}
+		v0 = 0;
+
+		LABEL_0a49:
+		if (v0 == 0) {
+			Base.CMD_25F(5);
+			goto LABEL_0a60;
+		}
+
+		LABEL_0a60:
+		Base.CMD_25F(1);
+		Base.CMD_25D(3);
+		Base.CMD_25F(0);
+		EVCamera.MoveToDefault(90);
+		EVCamera.Wait();
+		EVCamera.Rebind();
+		EVCamera.End();
+		v0 = 0;
+	}
+
+	static void sub_0ca2() { // @ 0xca2
+		int v0;
+		int v4;
+		int v5;
+
+		WordSet.LoadPlayerName(0);
+		Actor.SetGPos(2, 14, 3, 24, 1);
+		Actor.SetGPos(3, 15, 3, 24, 1);
+		Actor.SetGPos(0, 16, 3, 24, 1);
+		Actor.SetGPos(4, 15, 3, 26, 1);
+		ActionSequence_150a(2);
+		ActionSequence_150a(3);
+		ActionSequence_150a(0);
+		ActionSequence_150a(4);
+		Actor.WaitActionFinish();
+		ActionSequence_1512(255);
+		Actor.WaitActionFinish();
+		Message.ActorEx(1024, 7, 4, 0, 0);
+		Message.CloseActor();
+		v4 = 0;
+		v5 = 0;
+		Player.GetGPos(v4, v5);
+		if (v4 != 14) {
+			if (v4 != 15) {
+				goto LABEL_0d73;
+			}
+			ActionSequence_153a(4);
+			Runtime.Sleep(24);
+			ActionSequence_154a(255);
+			Actor.WaitActionFinish();
+			goto LABEL_0db2;
+		}
+		ActionSequence_151a(4);
+		Runtime.Sleep(16);
+		ActionSequence_1532(255);
+		Actor.WaitActionFinish();
+		goto LABEL_0db2;
+
+		LABEL_0d73:
+		if (v4 != 16) {
+			ActionSequence_1552(4);
+			Runtime.Sleep(24);
+			ActionSequence_156a(255);
+			Actor.WaitActionFinish();
+			goto LABEL_0db2;
+		}
+		ActionSequence_1552(4);
+		Runtime.Sleep(16);
+		ActionSequence_156a(255);
+		Actor.WaitActionFinish();
+
+		LABEL_0db2:
+		Base.CMD_25F(2);
+		Message.Multi(25, 3, 5, 1);
+		Runtime.Sleep(10);
+		Message.Multi(26, 19, 8, 2);
+		Runtime.Sleep(10);
+		Message.Multi(27, 2, 15, 3);
+		Runtime.Sleep(30);
+		Message.CloseWin(1);
+		Runtime.Sleep(5);
+		Message.CloseWin(2);
+		Runtime.Sleep(5);
+		Message.CloseWin(3);
+		Sound.SEWait();
+		ActionSequence_1572(2);
+		ActionSequence_1572(3);
+		ActionSequence_1572(0);
+		Actor.WaitActionFinish();
+		ActionSequence_157a(255);
+		Runtime.Sleep(4);
+		ActionSequence_157a(2);
+		ActionSequence_157a(3);
+		ActionSequence_157a(0);
+		ActionSequence_157a(4);
+		Message.Multi(28, 22, 6, 1);
+		Runtime.Sleep(10);
+		Message.Multi(29, 2, 9, 2);
+		Runtime.Sleep(10);
+		Message.Multi(30, 19, 13, 3);
+		Runtime.Sleep(30);
+		Message.CloseWin(1);
+		Runtime.Sleep(5);
+		Message.CloseWin(2);
+		Runtime.Sleep(5);
+		Message.CloseWin(3);
+		Actor.WaitActionFinish();
+		if (v4 != 14) {
+			if (v4 != 15) {
+				goto LABEL_0ec6;
+			}
+			ActionSequence_158a(4);
+			ActionSequence_1582(255);
+			Actor.WaitActionFinish();
+			goto LABEL_0efd;
+		}
+		ActionSequence_1582(4);
+		ActionSequence_158a(255);
+		Actor.WaitActionFinish();
+		goto LABEL_0efd;
+
+		LABEL_0ec6:
+		if (v4 != 16) {
+			ActionSequence_158a(4);
+			ActionSequence_1582(255);
+			Actor.WaitActionFinish();
+			goto LABEL_0efd;
+		}
+		ActionSequence_158a(4);
+		ActionSequence_1582(255);
+		Actor.WaitActionFinish();
+
+		LABEL_0efd:
+		Message.ActorEx(1024, 8, 4, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Base.CMD_25F(0);
+		EventWorks.Set(16540, 2);
+		EventWorks.Set(16385, 1);
+		v5 = 0;
+		v4 = 0;
+		v0 = 0;
+	}
+
+	static meta void ActionSequence_106e(int npcId) : VActionSequence {
+		Action0001(1);
+	}
+
+	static meta void ActionSequence_1076(int npcId) : VActionSequence {
+		Action0002(1);
+		Action0000(1);
+		Action0003(1);
+		Action0001(1);
+		Action0002(1);
+		Action0000(1);
+		Action0003(1);
+		Action0001(1);
+		Action003d(1);
+		Action000d(2);
+	}
+
+	static meta void ActionSequence_10a2(int npcId) : VActionSequence {
+		Action00bd(1);
+	}
+
+	static meta void ActionSequence_10aa(int npcId) : VActionSequence {
+		Action0002(1);
+		Action0000(1);
+		Action0003(1);
+		Action0001(1);
+		Action0002(1);
+		Action0000(1);
+		Action0003(1);
+		Action0001(1);
+		Action003d(1);
+		Action000d(2);
+		Action000e(1);
+		Action000d(1);
+	}
+
+	static meta void ActionSequence_10de(int npcId) : VActionSequence {
+		Action0002(1);
+		Action0000(1);
+		Action0003(1);
+		Action0001(1);
+		Action0002(1);
+		Action0000(1);
+		Action0003(1);
+		Action0001(1);
+		Action003d(1);
+		Action000d(3);
+	}
+
+	static meta void ActionSequence_110a(int npcId) : VActionSequence {
+		Action0002(1);
+		Action0000(1);
+		Action0003(1);
+		Action0001(1);
+		Action0002(1);
+		Action0000(1);
+		Action0003(1);
+		Action0001(1);
+		Action003d(1);
+		Action000d(2);
+		Action000f(1);
+		Action000d(1);
+	}
+
+	static meta void ActionSequence_113e(int npcId) : VActionSequence {
+		Action000c(1);
+		Action0001(1);
+		Action003d(1);
+		Action0003(1);
+		Action003d(1);
+		Action0000(1);
+		Action003d(1);
+		Action0002(1);
+		Action003d(1);
+		Action0001(1);
+		Action003d(1);
+		Action0003(1);
+		Action003d(1);
+		Action0000(1);
+		Action003d(1);
+		Action000c(8);
+	}
+
+	static meta void ActionSequence_1182(int npcId) : VActionSequence {
+		Action000c(1);
+		Action000f(1);
+		Action0001(1);
+		Action003d(1);
+		Action0003(1);
+		Action003d(1);
+		Action0000(1);
+		Action003d(1);
+		Action0002(1);
+		Action003d(1);
+		Action0001(1);
+		Action003d(1);
+		Action0003(1);
+		Action003d(1);
+		Action0000(1);
+		Action003d(1);
+		Action000c(8);
+	}
+
+	static meta void ActionSequence_11ca(int npcId) : VActionSequence {
+		Action000c(1);
+		Action000e(1);
+		Action0001(1);
+		Action003d(1);
+		Action0003(1);
+		Action003d(1);
+		Action0000(1);
+		Action003d(1);
+		Action0002(1);
+		Action003d(1);
+		Action0001(1);
+		Action003d(1);
+		Action0003(1);
+		Action003d(1);
+		Action0000(1);
+		Action003d(1);
+		Action000c(8);
+	}
+
+	static meta void ActionSequence_1212(int npcId) : VActionSequence {
+		Action000f(1);
+		Action000d(1);
+		Action000e(2);
+		Action000c(1);
+		Action000f(1);
+		Action003d(1);
+		Action0001(1);
+		Action0002(1);
+		Action0000(1);
+		Action0003(1);
+		Action0001(1);
+		Action0002(1);
+		Action0000(1);
+		Action0003(1);
+		Action0001(1);
+		Action003d(1);
+		Action000d(2);
+	}
+
+	static meta void ActionSequence_125a(int npcId) : VActionSequence {
+		Action000f(1);
+		Action000d(1);
+		Action000e(2);
+		Action000c(1);
+		Action000f(1);
+		Action003d(1);
+		Action0001(1);
+		Action0002(1);
+		Action0000(1);
+		Action0003(1);
+		Action0001(1);
+		Action0002(1);
+		Action0000(1);
+		Action0003(1);
+		Action0001(1);
+		Action003d(1);
+		Action000d(2);
+		Action000e(1);
+		Action000d(1);
+	}
+
+	static meta void ActionSequence_12aa(int npcId) : VActionSequence {
+		Action000f(1);
+		Action000d(1);
+		Action000e(2);
+		Action000c(1);
+		Action000f(1);
+		Action003d(1);
+		Action0001(1);
+		Action0002(1);
+		Action0000(1);
+		Action0003(1);
+		Action0001(1);
+		Action0002(1);
+		Action0000(1);
+		Action0003(1);
+		Action0001(1);
+		Action003d(1);
+		Action000d(3);
+	}
+
+	static meta void ActionSequence_12f2(int npcId) : VActionSequence {
+		Action000f(1);
+		Action000d(1);
+		Action000e(2);
+		Action000c(1);
+		Action000f(1);
+		Action003d(1);
+		Action0001(1);
+		Action0002(1);
+		Action0000(1);
+		Action0003(1);
+		Action0001(1);
+		Action0002(1);
+		Action0000(1);
+		Action0003(1);
+		Action0001(1);
+		Action003d(1);
+		Action000d(2);
+		Action000f(1);
+		Action000d(1);
+	}
+
+	static meta void ActionSequence_1342(int npcId) : VActionSequence {
+		Action0009(1);
+		Action0002(1);
+		Action0000(1);
+		Action0003(1);
+		Action0001(1);
+		Action0002(1);
+		Action0000(1);
+		Action0003(1);
+		Action0001(1);
+		Action003d(1);
+		Action0047(1);
+		Action000c(1);
+		Action0048(1);
+		Action0002(1);
+		Action0000(1);
+		Action0003(1);
+		Action0001(1);
+		Action0002(1);
+		Action0000(1);
+		Action0003(1);
+		Action0001(1);
+		Action003d(1);
+		Action000d(2);
+		Action0003(1);
+		Action003d(1);
+		Action0000(1);
+		Action003d(1);
+		Action0002(1);
+		Action003d(1);
+		Action0001(1);
+		Action003d(1);
+		Action0003(1);
+		Action003d(1);
+		Action000c(10);
+	}
+
+	static meta void ActionSequence_13ce(int npcId) : VActionSequence {
+		Action0009(1);
+		Action0002(1);
+		Action0000(1);
+		Action0003(1);
+		Action0001(1);
+		Action0002(1);
+		Action0000(1);
+		Action0003(1);
+		Action0001(1);
+		Action003d(1);
+		Action0047(1);
+		Action000c(1);
+		Action0048(1);
+		Action0002(1);
+		Action0000(1);
+		Action0003(1);
+		Action0001(1);
+		Action0002(1);
+		Action0000(1);
+		Action0003(1);
+		Action0001(1);
+		Action003d(1);
+		Action000d(2);
+		Action000e(1);
+		Action000d(1);
+	}
+
+	static meta void ActionSequence_1436(int npcId) : VActionSequence {
+		Action0009(1);
+		Action0002(1);
+		Action0000(1);
+		Action0003(1);
+		Action0001(1);
+		Action0002(1);
+		Action0000(1);
+		Action0003(1);
+		Action0001(1);
+		Action003d(1);
+		Action0047(1);
+		Action000c(1);
+		Action0048(1);
+		Action0002(1);
+		Action0000(1);
+		Action0003(1);
+		Action0001(1);
+		Action0002(1);
+		Action0000(1);
+		Action0003(1);
+		Action0001(1);
+		Action003d(1);
+		Action000d(3);
+	}
+
+	static meta void ActionSequence_1496(int npcId) : VActionSequence {
+		Action0009(1);
+		Action0002(1);
+		Action0000(1);
+		Action0003(1);
+		Action0001(1);
+		Action0002(1);
+		Action0000(1);
+		Action0003(1);
+		Action0001(1);
+		Action003d(1);
+		Action0047(1);
+		Action000c(1);
+		Action0048(1);
+		Action0002(1);
+		Action0000(1);
+		Action0003(1);
+		Action0001(1);
+		Action0002(1);
+		Action0000(1);
+		Action0003(1);
+		Action0001(1);
+		Action003d(1);
+		Action000d(2);
+		Action000f(1);
+		Action000d(1);
+	}
+
+	static meta void ActionSequence_14fe(int npcId) : VActionSequence {
+		Action000d(1);
+		Action0064(1);
+	}
+
+	static meta void ActionSequence_150a(int npcId) : VActionSequence {
+		Action000d(8);
+	}
+
+	static meta void ActionSequence_1512(int npcId) : VActionSequence {
+		Action0020(1);
+	}
+
+	static meta void ActionSequence_151a(int npcId) : VActionSequence {
+		Action000d(1);
+		Action0022(1);
+		Action0047(1);
+		Action000f(1);
+		Action0048(1);
+	}
+
+	static meta void ActionSequence_1532(int npcId) : VActionSequence {
+		Action000f(1);
+	}
+
+	static meta void ActionSequence_153a(int npcId) : VActionSequence {
+		Action000e(1);
+		Action000d(1);
+		Action0023(1);
+	}
+
+	static meta void ActionSequence_154a(int npcId) : VActionSequence {
+		Action0022(1);
+	}
+
+	static meta void ActionSequence_1552(int npcId) : VActionSequence {
+		Action000d(1);
+		Action0023(1);
+		Action0047(1);
+		Action000e(1);
+		Action0048(1);
+	}
+
+	static meta void ActionSequence_156a(int npcId) : VActionSequence {
+		Action000e(1);
+	}
+
+	static meta void ActionSequence_1572(int npcId) : VActionSequence {
+		Action000d(1);
+	}
+
+	static meta void ActionSequence_157a(int npcId) : VActionSequence {
+		Action000d(18);
+	}
+
+	static meta void ActionSequence_1582(int npcId) : VActionSequence {
+		Action0022(1);
+	}
+
+	static meta void ActionSequence_158a(int npcId) : VActionSequence {
+		Action0023(1);
+	}
+
+	static meta void ActionSequence_1592(int npcId) : VActionSequence {
+		Action004b(1);
+	}
+
+	static meta void ActionSequence_159a(int npcId) : VActionSequence {
+		Action0021(1);
+	}
+
+	static meta void Global2805(int a1, int a2, int a3) : VGlobalCall[2805];
+	static meta void Global2805(int a1, int a2, int a3, int a4) : VGlobalCall[2805];
+	static meta void Global2805(int a1, int a2, int a3, int a4, int a5) : VGlobalCall[2805];
+
+	static native void Action0000(int amount) : 0x0;
+	static native void Action0001(int amount) : 0x1;
+	static native void Action0002(int amount) : 0x2;
+	static native void Action0003(int amount) : 0x3;
+	static native void Action0009(int amount) : 0x9;
+	static native void Action000c(int amount) : 0xc;
+	static native void Action000d(int amount) : 0xd;
+	static native void Action000e(int amount) : 0xe;
+	static native void Action000f(int amount) : 0xf;
+	static native void Action0020(int amount) : 0x20;
+	static native void Action0021(int amount) : 0x21;
+	static native void Action0022(int amount) : 0x22;
+	static native void Action0023(int amount) : 0x23;
+	static native void Action003d(int amount) : 0x3d;
+	static native void Action0047(int amount) : 0x47;
+	static native void Action0048(int amount) : 0x48;
+	static native void Action004b(int amount) : 0x4b;
+	static native void Action0064(int amount) : 0x64;
+	static native void Action00bd(int amount) : 0xbd;
+}

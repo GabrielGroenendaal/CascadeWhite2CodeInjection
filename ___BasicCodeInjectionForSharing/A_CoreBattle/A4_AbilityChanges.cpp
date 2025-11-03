@@ -10,7 +10,9 @@ STRUCT_DECLARE(GameData)
 #define STAT_CHANGE_PARTING_SHOT_FLAG 0x10000000
 // Uses esdb_newBattle.yml
 
-extern "C" int SearchArray(const u32 *const arr, const u32 arrSize, const u32 value)
+#pragma region definitions
+
+extern "C" int SearchArray(const u16 *const arr, const u32 arrSize, const u32 value)
 {
     for (u32 i = 0; i < arrSize; ++i)
     {
@@ -22,6 +24,119 @@ extern "C" int SearchArray(const u32 *const arr, const u32 arrSize, const u32 va
     return 0;
 }
 #define SEARCH_ARRAY(arr, value) SearchArray(arr, ARRAY_COUNT(arr), value)
+
+const u16 StrongJawMoves[11] = {
+    MOVE044_BITE,
+    MOVE158_HYPER_FANG,
+    MOVE162_SUPER_FANG,
+    MOVE170_SNAP_TRAP,
+    MOVE265_PSYCHIC_FANGS,
+    MOVE305_POISON_FANG,
+    MOVE422_THUNDER_FANG,
+    MOVE423_ICE_FANG,
+    MOVE424_FIRE_FANG,
+    MOVE242_CRUNCH,
+    MOVE030_DEVOUR};
+
+const u16 WindMoves[17] = {
+    MOVE403_AIR_SLASH,
+    MOVE542_HURRICANE,
+    MOVE257_HEAT_WAVE,
+    MOVE466_OMINOUS_WIND,
+    MOVE318_SILVER_WIND,
+    MOVE016_GUST,
+    MOVE059_BLIZZARD,
+    MOVE379_PETAL_BLIZZARD,
+    MOVE511_FAIRY_WIND,
+    MOVE180_DIAMOND_STORM,
+    MOVE013_RAZOR_WINDS,
+    MOVE177_AEROBLAST,
+    MOVE196_ICY_WIND,
+    MOVE366_TAILWIND,
+    MOVE239_TWISTER,
+    MOVE018_WHIRLWIND,
+    MOVE314_AIR_CUTTER};
+
+unsigned __int16 MOLD_BREAKER_AFFECTED_ABILITIES[47] = {
+    ABIL025_WONDER_GUARD,
+    ABIL043_AMPLIFIER,
+    ABIL026_LEVITATE,
+    ABIL008_SAND_VEIL,
+    ABIL081_SNOW_CLOAK,
+    ABIL011_WATER_ABSORB,
+    ABIL004_BATTLE_ARMOR,
+    ABIL031_LIGHTNING_ROD,
+    ABIL114_STORM_DRAIN,
+    ABIL075_SHELL_ARMOR,
+    ABIL109_UNAWARE,
+    ABIL021_WELL_BAKED_BODY,
+    ABIL086_SIMPLE,
+    ABIL077_SLUSH_RUSH,
+    ABIL116_SOLID_ROCK,
+    ABIL111_FILTER,
+    ABIL018_FLASH_FIRE,
+    ABIL078_MOTOR_DRIVE,
+    ABIL063_MARVEL_SCALE,
+    ABIL047_THICK_FAT,
+    ABIL085_HEATPROOF,
+    ABIL073_WHITE_SMOKE,
+    ABIL029_STRONG_BODY,
+    ABIL051_WIND_RIDER,
+    ABIL052_HYPER_CUTTER,
+    ABIL039_INNER_FOCUS,
+    ABIL019_RESILIENT,
+    ABIL005_STURDY,
+    ABIL006_BULLETPROOF,
+    ABIL102_FUR_COAT,
+    ABIL015_THUNDER_ARMOR,
+    ABIL072_VITAL_SPIRIT,
+    ABIL017_FLUFFY,
+    ABIL126_CONTRARY,
+    ABIL132_FRIEND_GUARD,
+    ABIL136_MAJESTIC_WARD,
+    ABIL140_PERMAFROST,
+    ABIL147_WONDER_SKIN,
+    ABIL156_MAGIC_BOUNCE,
+    ABIL157_SAP_SIPPER,
+    ABIL010_VOLT_ABSORB,
+    ABIL087_DRY_SKIN,
+    ABIL122_FLOWER_GIFT,
+    ABIL134_HEAVY_METAL,
+    ABIL135_LIGHT_METAL,
+    ABIL080_COLOSSAL,
+    ABIL113_SCRAPPY};
+
+const u16 HyperCutterMoves[27] = {
+    MOVE421_SHADOW_CLAW, MOVE533_SACRED_SWORD, MOVE534_RAZOR_SHELL, MOVE530_DUAL_CHOP, MOVE529_DRILL_RUN, MOVE554_SOLAR_BLADE,
+    MOVE440_CROSS_POISON, MOVE427_PSYCHO_CUT, MOVE404_X_SCISSOR, MOVE400_NIGHT_SLASH, MOVE403_AIR_SLASH, MOVE384_PSYBLADE,
+    MOVE348_LEAF_BLADE, MOVE337_DRAGON_CLAW, MOVE332_AERIAL_ACE, MOVE314_AIR_CUTTER, MOVE306_CRUSH_CLAW, MOVE232_METAL_CLAW,
+    MOVE163_SLASH, MOVE154_FURY_SWIPES, MOVE065_DRILL_PECK, MOVE013_RAZOR_WINDS, MOVE010_SCRATCH, MOVE210_FURY_CUTTER, MOVE015_CUT,
+    MOVE075_RAZOR_LEAF, MOVE548_SECRET_SWORD};
+
+const u16 BulletproofMoves[21] = {
+    MOVE491_ACID_SPRAY,
+    MOVE396_AURA_SPHERE,
+    MOVE140_BARRAGE,
+    MOVE331_BULLET_SEED,
+    MOVE121_EGG_BOMB,
+    MOVE486_ELECTRO_BALL,
+    MOVE412_ENERGY_BALL,
+    MOVE411_FOCUS_BLAST,
+    MOVE360_GYRO_BALL,
+    MOVE301_BOOMBURST,
+    MOVE443_MAGNET_BOMB,
+    MOVE426_MUD_BOMB,
+    MOVE190_OCTAZOOKA,
+    MOVE461_POLLEN_PUFF,
+    MOVE350_ROCK_BLAST,
+    MOVE439_ROCK_WRECKER,
+    MOVE402_SEED_BOMB,
+    MOVE247_SHADOW_BALL,
+    MOVE188_SLUDGE_BOMB,
+    MOVE311_WEATHER_BALL,
+    MOVE192_ZAP_CANNON};
+
+#pragma endregion
 
 extern "C"
 {
@@ -77,6 +192,31 @@ extern "C"
                 a1 == IT0256_BLUNDER_POLICY ||
                 a1 == IT0305_TERA_W_POLICY ||
                 a1 == IT0302_TERA_SASH);
+    }
+
+    uint8_t getTruantByte(BattleMon *a1)
+    {
+        return *((uint8_t *)a1 + 0xE9);
+    }
+    void setTruantByte(BattleMon *a1, int a2)
+    {
+        *((uint8_t *)a1 + 0xE9) = 1;
+    }
+    uint8_t getOverheatByte(BattleMon *a1)
+    {
+        return *((uint8_t *)a1 + 0xEA);
+    }
+    void setOverheatByte(BattleMon *a1, int a2)
+    {
+        *((uint8_t *)a1 + 0xEA) = a2;
+    }
+    uint8_t getOverheatLastTurnByte(BattleMon *a1)
+    {
+        return *((uint8_t *)a1 + 0xEB);
+    }
+    void setOverheatLastTurnByte(BattleMon *a1, int a2)
+    {
+        *((uint8_t *)a1 + 0xEB) = a2;
     }
 
 #pragma endregion
@@ -408,7 +548,7 @@ extern "C"
             return 1;
         }
         v8 = BattleMon_GetID(a3);
-        if (sub_21A2EB0(&a1->posPoke, a1->mainModule, v8) && (BattleMon_GetValue(a3, VALUE_EFFECTIVE_ABILITY) == 99 || BattleMon_GetValue(a2, VALUE_EFFECTIVE_ABILITY) == ABIL080_COLOSSAL))
+        if (sub_21A2EB0(&a1->posPoke, a1->mainModule, v8) && (BattleMon_GetValue(a3, VALUE_EFFECTIVE_ABILITY) == ABIL099_NO_GUARD || BattleMon_GetValue(a2, VALUE_EFFECTIVE_ABILITY) == ABIL080_COLOSSAL))
         {
             return 1;
         }
@@ -671,32 +811,40 @@ extern "C"
 
 #pragma region Normalize
 
-    // void HandlerNormalizePower(int a1, int a2, int a3)
-    // {
-    //     // if (a3 == BattleEventVar_GetValue(VAR_ATTACKING_MON))
-    //     // {
-    //     //     if (PML_MoveGetType(BattleEventVar_GetValue(VAR_MOVE_ID)) == TYPE_NORMAL) // physical
-    //     //     {
-    //     //         BattleEventVar_MulValue(VAR_RATIO, 5325); // 20% boost
-    //     //     }
-    //     // }
-    //     if (BattleEventVar_GetValue(VAR_MOVE_TYPE) != TYPE_NORMAL)
-    //     {
-    //         BattleEventVar_RewriteValue(VAR_MOVE_TYPE, TYPE_NORMAL);
-    //     }
-    // }
+    void HandlerNormalizePower(int a1, int a2, int a3)
+    {
+        if (a3 == BattleEventVar_GetValue(VAR_ATTACKING_MON))
+        {
+            if (PML_MoveGetType(BattleEventVar_GetValue(VAR_MOVE_ID)) == TYPE_NORMAL) // physical
+            {
+                BattleEventVar_MulValue(VAR_RATIO, 5325); // 20% boost
+            }
+        }
+        // if (BattleEventVar_GetValue(VAR_MOVE_TYPE) != TYPE_NORMAL)
+        // {
+        //     BattleEventVar_RewriteValue(VAR_MOVE_TYPE, TYPE_NORMAL);
+        // }
+    }
+    void HandlerNormalizeEffectiveness(int a1, ServerFlow *a2, int a3)
+    {
+        if (a3 == BattleEventVar_GetValue(VAR_ATTACKING_MON))
+        {
+            BattleEventVar_RewriteValue(VAR_SET_TYPE_EFFECTIVENESS, 1);
+        }
+    }
 
-    // ABILITY_TRIGGERTABLE NormalizeHandlers[] = {
-    //     {EVENT_MOVE_PARAM, (ABILITY_HANDLER_FUNC)HandlerNormalize},             // 22
-    //     // {EVENT_CHECK_TYPE_EFFECTIVENESS, (ABILITY_HANDLER_FUNC)HandlerScrappy}, // 22
-    //    //  {EVENT_ATTACKER_POWER, (ABILITY_HANDLER_FUNC)HandlerNormalizePower}
-    // };
+    ABILITY_TRIGGERTABLE NormalizeHandlers[] = {
+        {EVENT_MOVE_PARAM, (ABILITY_HANDLER_FUNC)HandlerNormalize}, // 22
+        {EVENT_ATTACKER_POWER, (ABILITY_HANDLER_FUNC)HandlerNormalizePower},
+        {EVENT_CHECK_TYPE_EFFECTIVENESS, (ABILITY_HANDLER_FUNC)HandlerNormalizeEffectiveness},
 
-    // ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddNormalize(_DWORD *a1)
-    // {
-    //     *a1 = 1;
-    //     return NormalizeHandlers;
-    // }
+    };
+
+    ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddNormalize(_DWORD *a1)
+    {
+        *a1 = 3;
+        return NormalizeHandlers;
+    }
 
 #pragma endregion
 
@@ -789,7 +937,7 @@ extern "C"
         if (pokemonSlot == BattleEventVar_GetValue(VAR_ATTACKING_MON))
         {
             MoveID moveID = (MoveID)BattleEventVar_GetValue(VAR_MOVE_ID);
-            if (SEARCH_ARRAY((const u32 *)StrongJawMoves, moveID))
+            if (SEARCH_ARRAY(StrongJawMoves, moveID))
             {
                 BattleEventVar_MulValue(VAR_MOVE_POWER_RATIO, 6144);
             }
@@ -818,10 +966,12 @@ extern "C"
                 {
                     a4[1] = BattleEventVar_RewriteValue(VAR_FAIL_CAUSE, MOVEFAIL_ABILITY);
                 }
+                setTruantByte(mon, 0);
                 *a4 = 0;
             }
             else
             {
+                setTruantByte(mon, 1);
                 *a4 = 1;
             }
         }
@@ -933,61 +1083,56 @@ extern "C"
 
 #pragma region Stench
     /* STENCH */
-    int THUMB_BRANCH_HandlerStench(int a1, int a2, int a3)
+    void THUMB_BRANCH_HandlerStench(int a1, int a2, int a3)
     {
-        int result; // r0
-
-        result = BattleEventVar_GetValue(VAR_ATTACKING_MON);
-        if (a3 == result)
+        if (a3 == BattleEventVar_GetValue(VAR_ATTACKING_MON))
         {
-            result = BattleEventVar_GetValue(VAR_DEFAULT_EFFECT_CHANCE);
-            if (!result)
+            if (!BattleEventVar_GetValue(VAR_DEFAULT_EFFECT_CHANCE))
             {
-                return BattleEventVar_RewriteValue(VAR_EFFECT_CHANCE, 20);
+                BattleEventVar_RewriteValue(VAR_EFFECT_CHANCE, 20);
             }
         }
-        return result;
     }
 #pragma endregion
 
 #pragma region Intimidate
     /* INTIMIDATE */
-    // void THUMB_BRANCH_HandlerIntimidate(int a1, ServerFlow *a2, int a3)
-    // {
-    //     u8 *TempWork;                     // r4
-    //     unsigned int NumTargets;          // r5
-    //     HandlerParam_ChangeStatStage *v7; // r1
-    //     unsigned int v8;                  // r3
-    //     unsigned int v88;
-    //     u8 v9;                     // r2
-    //     char *v10;                 // r0
-    //     __int16 ExistFrontPokePos; // [sp+0h] [bp-18h]
+    void THUMB_BRANCH_HandlerIntimidate(int a1, ServerFlow *a2, int a3)
+    {
+        u8 *TempWork;                     // r4
+        unsigned int NumTargets;          // r5
+        HandlerParam_ChangeStatStage *v7; // r1
+        unsigned int v8;                  // r3
+        unsigned int v88;
+        u8 v9;                     // r2
+        char *v10;                 // r0
+        __int16 ExistFrontPokePos; // [sp+0h] [bp-18h]
 
-    //     if (a3 == BattleEventVar_GetValue(VAR_MON_ID))
-    //     {
-    //         ExistFrontPokePos = Handler_GetExistFrontPokePos(a2, a3);
-    //         TempWork = Handler_GetTempWork(a2);
-    //         NumTargets = Handler_ExpandPokeID(a2, ExistFrontPokePos | 0x100, TempWork);
-    //         if (NumTargets)
-    //         {
-    //             BattleHandler_PushRun(a2, EFFECT_ABILITYPOPUPIN, a3);
+        if (a3 == BattleEventVar_GetValue(VAR_MON_ID))
+        {
+            ExistFrontPokePos = Handler_GetExistFrontPokePos(a2, a3);
+            TempWork = Handler_GetTempWork(a2);
+            NumTargets = Handler_ExpandPokeID(a2, ExistFrontPokePos | 0x100, TempWork);
+            if (NumTargets)
+            {
+                BattleHandler_PushRun(a2, EFFECT_ABILITYPOPUPIN, a3);
 
-    //             v7 = (HandlerParam_ChangeStatStage *)BattleHandler_PushWork(a2, EFFECT_CHANGESTATSTAGE, a3);
-    //             // v7->header.flags |= 0x08000000;
-    //             v7->rankType = STATSTAGE_ATTACK;
-    //             v7->rankVolume = -1;
-    //             v7->fMoveAnimation = 1;
-    //             v7->poke_cnt = NumTargets;
-    //             for (u8 frontCurrent = 0; frontCurrent < NumTargets; ++frontCurrent)
-    //             {
-    //                 v7->pokeID[frontCurrent] = TempWork[frontCurrent];
-    //             }
-    //             v7->pad = STAT_CHANGE_INTIMIDATE_FLAG;
-    //             BattleHandler_PopWork(a2, v7);
-    //             BattleHandler_PushRun(a2, EFFECT_ABILITYPOPUPOUT, a3);
-    //         }
-    //     }
-    // }
+                v7 = (HandlerParam_ChangeStatStage *)BattleHandler_PushWork(a2, EFFECT_CHANGESTATSTAGE, a3);
+                // v7->header.flags |= 0x08000000;
+                v7->rankType = STATSTAGE_ATTACK;
+                v7->rankVolume = -1;
+                v7->fMoveAnimation = 1;
+                v7->poke_cnt = NumTargets;
+                for (u8 frontCurrent = 0; frontCurrent < NumTargets; ++frontCurrent)
+                {
+                    v7->pokeID[frontCurrent] = TempWork[frontCurrent];
+                }
+                v7->pad = STAT_CHANGE_INTIMIDATE_FLAG;
+                BattleHandler_PopWork(a2, v7);
+                BattleHandler_PushRun(a2, EFFECT_ABILITYPOPUPOUT, a3);
+            }
+        }
+    }
 #pragma endregion
 
 #pragma region Regenerator
@@ -1239,12 +1384,9 @@ extern "C"
 #pragma region Amplifier
     void HandlerAmplifier(int a1, int a2, int a3)
     {
-        int result; // r0
-        result = BattleEventVar_GetValue(VAR_ATTACKING_MON);
-        if (a3 == result)
+        if (a3 == BattleEventVar_GetValue(VAR_ATTACKING_MON))
         {
-            int MoveID = BattleEventVar_GetValue(VAR_MOVE_ID);
-            if (getMoveFlag(MoveID, FLAG_SOUND))
+            if (getMoveFlag(BattleEventVar_GetValue(VAR_MOVE_ID), FLAG_SOUND))
             {
                 BattleEventVar_MulValue(VAR_MOVE_POWER_RATIO, 5324);
             }
@@ -1266,13 +1408,8 @@ extern "C"
 #pragma region IceScales
     void HandlerIceScales(int a1, int a2, int a3)
     {
-        int result; // r0
-
-        result = BattleEventVar_GetValue(VAR_DEFENDING_MON);
-        if (a3 == result && PML_MoveGetCategory(BattleEventVar_GetValue(VAR_MOVE_ID)) == 2)
+        if (a3 == BattleEventVar_GetValue(VAR_DEFENDING_MON) && PML_MoveGetCategory(BattleEventVar_GetValue(VAR_MOVE_ID)) == 2)
         {
-            // k::Printf("\n\n isFire is %d\nratio is %d\nisFire times Ratio is %d\n\n", isFire, ratio, isFire * ratio);
-
             BattleEventVar_MulValue(VAR_RATIO, 2048);
         }
     }
@@ -1821,16 +1958,12 @@ extern "C"
 #pragma endregion
 
 #pragma region Corrosion
-    int HandlerCorrosion(int a1, ServerFlow *a2, int a3)
+    void HandlerCorrosion(int a1, ServerFlow *a2, int a3)
     {
-        int result;
-
-        result = BattleEventVar_GetValue(VAR_ATTACKING_MON);
-        if (a3 == result && BattleEventVar_GetValue(VAR_MOVE_TYPE) == TYPE_POISON)
+        if (a3 == BattleEventVar_GetValue(VAR_ATTACKING_MON) && BattleEventVar_GetValue(VAR_MOVE_TYPE) == TYPE_POISON && BattleEventVar_GetValue(VAR_POKE_TYPE) == TYPE_STEEL)
         {
-            return BattleEventVar_RewriteValue(VAR_SET_TYPE_EFFECTIVENESS, 4);
+            BattleEventVar_RewriteValue(VAR_SET_TYPE_EFFECTIVENESS, 2);
         }
-        return result;
     }
 
     ABILITY_TRIGGERTABLE CorrosionHandlers[] = {
@@ -1884,13 +2017,9 @@ extern "C"
 
     void HandlerDrySkinDamage(int a1, int a2, int a3)
     {
-        int result; // r0
-
-        result = BattleEventVar_GetValue(VAR_DEFENDING_MON);
-        if (a3 == result)
+        if (a3 == BattleEventVar_GetValue(VAR_DEFENDING_MON))
         {
-            result = BattleEventVar_GetValue(VAR_MOVE_TYPE);
-            if (result == 9)
+            if (BattleEventVar_GetValue(VAR_MOVE_TYPE) == 9)
             {
                 BattleEventVar_MulValue(VAR_MOVE_POWER_RATIO, 8192);
             }
@@ -2021,6 +2150,7 @@ extern "C"
         HandlerParam_ChangeStatStage *v13; // r0
         if (a3 == BattleEventVar_GetValue(VAR_MON_ID) && work[0])
         {
+            work[0] = 0;
             v13 = (HandlerParam_ChangeStatStage *)BattleHandler_PushWork(a2, EFFECT_CHANGESTATSTAGE, a3);
             v13->header.flags |= 0x800000u;
             v13->rankType = STATSTAGE_SPEED;
@@ -2046,20 +2176,15 @@ extern "C"
 
 #pragma region InnerFocus
 
-    int HandlerInnerFocusAttack(int a1, int a2, int a3)
+    void HandlerInnerFocusAttack(int a1, int a2, int a3)
     {
-        int result; // r0
-
-        result = BattleEventVar_GetValue(VAR_ATTACKING_MON);
-        if (a3 == result)
+        if (a3 == BattleEventVar_GetValue(VAR_ATTACKING_MON))
         {
-            result = BattleEventVar_GetValue(VAR_POKE_TYPE);
-            if (result == TYPE_DARK)
+            if (BattleEventVar_GetValue(VAR_POKE_TYPE) == TYPE_DARK)
             {
-                return BattleEventVar_RewriteValue(VAR_NO_TYPE_EFFECTIVENESS, 1);
+                BattleEventVar_RewriteValue(VAR_NO_TYPE_EFFECTIVENESS, 1);
             }
         }
-        return result;
     }
 
     ABILITY_TRIGGERTABLE InnerFocusHandlers[] = {
@@ -2105,7 +2230,7 @@ extern "C"
         HandlerParam_Message *v9;
         if (a3 == BattleEventVar_GetValue(VAR_DEFENDING_MON) && a3 != BattleEventVar_GetValue(VAR_ATTACKING_MON))
         {
-            if (SEARCH_ARRAY((const u32 *)BulletproofMoves, BattleEventVar_GetValue(VAR_MOVE_ID)))
+            if (SEARCH_ARRAY(BulletproofMoves, BattleEventVar_GetValue(VAR_MOVE_ID)))
             {
                 BattleEventVar_RewriteValue(VAR_NO_EFFECT_FLAG, 1);
 
@@ -2166,7 +2291,7 @@ extern "C"
         HandlerParam_Message *v9;
         if (a3 == BattleEventVar_GetValue(VAR_DEFENDING_MON) && a3 != BattleEventVar_GetValue(VAR_ATTACKING_MON))
         {
-            if (SEARCH_ARRAY((const u32 *)WindMoves, BattleEventVar_GetValue(VAR_MOVE_ID)))
+            if (SEARCH_ARRAY(WindMoves, BattleEventVar_GetValue(VAR_MOVE_ID)))
             {
                 BattleEventVar_RewriteValue(VAR_NO_EFFECT_FLAG, 1);
                 CommonTypeNoEffectRankUp(a2, a3, STATSTAGE_ATTACK, 1);
@@ -2349,7 +2474,7 @@ extern "C"
                                 setItem = (HandlerParam_SetItem *)BattleHandler_PushWork(serverFlow, EFFECT_SET_HELD_ITEM, pokemonSlot);
                                 setItem->pokeID = targetSlot;
                                 setItem->itemID = 0;
-                                BattleHandler_StrSetup(&setItem->exStr, 2u, 1300); // Change the Text for this!
+                                BattleHandler_StrSetup(&setItem->exStr, 2u, 1050); // Change the Text for this!
                                 BattleHandler_AddArg(&setItem->exStr, pokemonSlot);
                                 BattleHandler_AddArg(&setItem->exStr, targetSlot);
                                 BattleHandler_AddArg(&setItem->exStr, BattleMon_GetHeldItem(targetMon));
@@ -2518,6 +2643,7 @@ extern "C"
     ABILITY_TRIGGERTABLE GalvanizeHandlers[] = {
         {EVENT_MOVE_PARAM, (ABILITY_HANDLER_FUNC)HandlerGalvanizeType}, // 22
         {EVENT_ATTACKER_POWER, (ABILITY_HANDLER_FUNC)HandlerAtePower}};
+
     ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddOblivious(_DWORD *a1)
     {
         *a1 = 2;
@@ -2527,6 +2653,25 @@ extern "C"
 #pragma endregion
 
 #pragma region Anticipation
+    const u8 normalTypeChart[18][18] = {
+        {4, 4, 4, 4, 4, 2, 4, 0, 2, 4, 4, 4, 4, 4, 4, 4, 4, 4},
+        {8, 4, 2, 2, 4, 8, 2, 0, 8, 4, 4, 4, 4, 2, 8, 4, 8, 2},
+        {4, 8, 4, 4, 4, 2, 8, 4, 2, 4, 4, 8, 2, 4, 4, 4, 4, 4},
+        {4, 4, 4, 2, 2, 2, 4, 2, 0, 4, 4, 8, 4, 4, 4, 4, 4, 8},
+        {4, 4, 0, 8, 4, 8, 2, 4, 8, 8, 4, 2, 8, 4, 4, 4, 4, 4},
+        {4, 2, 8, 4, 2, 4, 8, 4, 2, 8, 4, 4, 4, 4, 8, 4, 4, 4},
+        {4, 2, 2, 2, 4, 4, 4, 2, 2, 2, 4, 8, 4, 8, 4, 4, 8, 2},
+        {0, 4, 4, 4, 4, 4, 4, 8, 4, 4, 4, 4, 4, 8, 4, 4, 2, 4},
+        {4, 4, 4, 4, 4, 8, 4, 4, 2, 2, 2, 4, 2, 4, 8, 4, 4, 8},
+        {4, 4, 4, 4, 4, 2, 8, 4, 8, 2, 2, 8, 4, 4, 8, 2, 4, 4},
+        {4, 4, 4, 4, 8, 8, 4, 4, 4, 8, 2, 2, 4, 4, 4, 2, 4, 4},
+        {4, 4, 2, 2, 8, 8, 2, 4, 2, 2, 8, 2, 4, 4, 4, 2, 4, 4},
+        {4, 4, 8, 4, 0, 4, 4, 4, 4, 4, 8, 2, 2, 4, 4, 2, 4, 4},
+        {4, 8, 4, 8, 4, 4, 4, 4, 2, 4, 4, 4, 4, 2, 4, 4, 0, 4},
+        {4, 4, 8, 4, 8, 4, 4, 4, 2, 2, 2, 8, 4, 4, 2, 8, 4, 4},
+        {4, 4, 4, 4, 4, 4, 4, 4, 2, 4, 4, 4, 4, 4, 4, 8, 4, 0},
+        {4, 2, 4, 4, 4, 4, 4, 8, 4, 4, 4, 4, 4, 8, 4, 4, 2, 2},
+        {4, 8, 4, 2, 4, 4, 4, 4, 2, 2, 4, 4, 4, 4, 4, 8, 8, 4}};
 
     int GetTypeEffectivenessAlteredSacredSword(int a1, int a2)
     {
@@ -2539,14 +2684,13 @@ extern "C"
             return result;
         }
 
-        if (a1 == TYPE_FIGHTING)
+        if ((a1 == TYPE_NORMAL || a1 == TYPE_FIGHTING) && a2 == TYPE_GHOST)
         {
-            v3 = SacredSwordTypeChart[1][a2];
-            // //k::printf("\nFreezeDryChart entered\nv3 = %d\na1 = %d\na2 = %d\n\n", v3, a1, a2);
+            v3 = 4;
         }
         else
         {
-            v3 = normalTypeChart[0][a2];
+            v3 = normalTypeChart[a1][a2];
         }
 
         switch (v3)
@@ -2583,32 +2727,28 @@ extern "C"
             result = EFFECTIVENESS_1;
             return result;
         }
-
-        if (a1 == TYPE_ICE)
+        if (a1 == TYPE_ICE && a2 == TYPE_WATER)
         {
-            v3 = FreezeDryTypeChart[a2];
-            // //k::printf("\nFreezeDryChart entered\nv3 = %d\na1 = %d\na2 = %d\n\n", v3, a1, a2);
+            v3 = 8;
+        }
+        if (a1 == TYPE_POISON && a2 == TYPE_STEEL)
+        {
+            v3 = 8;
         }
         else if (a1 == TYPE_FIGHTING)
         {
             if (a2 == TYPE_FLYING)
             {
-                v3 = SkyUppercutTypeChart[a2];
+                v3 = 8;
             }
-            if (zoneId == 121)
+            if (zoneId == 121 && a2 == TYPE_GHOST)
             {
-                v3 = opelucidTypeChart[0][a2];
+                v3 = 4;
             }
             else
             {
                 v3 = normalTypeChart[a1][a2];
             }
-            // //k::printf("\nSkyUppercutChart entered\nv3 = %d\na1 = %d\na2 = %d\n\n", v3, a1, a2);
-        }
-
-        else if (a1 == TYPE_POISON)
-        {
-            v3 = CorrosionTypeChart[a2];
         }
         else
         {
@@ -3446,7 +3586,7 @@ extern "C"
 
     void THUMB_BRANCH_BattleMon_TurnCheck(BattleMon *a1)
     {
-        bool didMoveFail = BattleMon_GetTurnFlag(a1, TURNFLAG_MOVEFAILED);
+        u8 didMoveFail = BattleMon_GetTurnFlag(a1, TURNFLAG_MOVEFAILED);
         sys_memset(a1->TurnFlag, 0, 2u);
         if (a1->TurnCount < 9999u)
         {
@@ -3456,6 +3596,9 @@ extern "C"
         {
             TurnFlag_Set(a1, TURNFLAG_MOVEFAILEDLASTTURN);
         }
+        setOverheatLastTurnByte(a1, (getOverheatByte(a1)) ? 1 : 0);
+        setOverheatByte(a1, 0);
+
         MoveDamageRec_ClearTurn(a1);
     }
 
@@ -3859,7 +4002,8 @@ extern "C" void THUMB_BRANCH_SAFESTACK_StartBottomScreenMenu(BtlvCore *a1, Battl
         v12 = BattleClient_GetMyID(a1->client);
     }
     a2->pokeParty = MainModule_GetPokeParty(a1->mainModule, v12);
-    if (v12 != BattleClient_GetMyID(a1->client)){
+    if (v12 != BattleClient_GetMyID(a1->client))
+    {
         findBattleMon(a1, a2->pokeParty, v12);
     }
     v9 = a3 != 3 && MainModule_IsCompetitiveBattleType(a1->mainModule);
@@ -4003,7 +4147,7 @@ extern "C" void THUMB_BRANCH_SAFESTACK_PokeList_LoadPokeData(PokeListMain *a1, P
 
                 // currentPP = PokeParty_GetParam(a3->partyPkm, (PkmField)(i + 58), 0);
                 // maxPP =  PML_MoveGetParam(v9->MoveID, MVDATA_BASEPP) + 3;
-                int missingPP = PokeParty_GetParam(a3->partyPkm, (PkmField)(i + 58), 0) < (PML_MoveGetParam(PokeParty_GetParam(a3->partyPkm, (PkmField)(i + 54), 0), MVDATA_BASEPP) + ((a2->field_D8==2) ? 0 : 3));
+                int missingPP = PokeParty_GetParam(a3->partyPkm, (PkmField)(i + 58), 0) < (PML_MoveGetParam(PokeParty_GetParam(a3->partyPkm, (PkmField)(i + 54), 0), MVDATA_BASEPP) + ((a2->field_D8 == 2) ? 0 : 3));
                 if (isEnemy && !missingPP && !GetScanSetting()) // && !(PokeParty_GetParam(a3->partyPkm, (PkmField)(i + 58), 0) < (PML_MoveGetParam(v9->MoveID, MVDATA_BASEPP) + 3)))
                 {
                     continue;
@@ -4175,59 +4319,7 @@ extern "C" int THUMB_BRANCH_SAFESTACK_PokeList_LoadSwitchInFailMessage(PokeListM
 #pragma endregion
 
 #pragma region testing
-// struct BtlvEffectSetupParam
-// {
-//     BattleStyle battleStyle;
-//     BtlType btlType;
-//     BattleFieldStatus bfs;
-//     u16 tr_type[4];
-//     bool isMultiBattle;
-//     BtlvScu *scu;
-//     MainModule *mainModule;
-//     u16 pokestar;
-//     u16 pokestar_field;
-//     bool pwt_final;
-// };
 
-// struct BtlvEffectMain
-// {
-//     void *TCBManager;
-//     void *field_4;
-//     void *tcbs[32];
-//     int tcbCallback[32];
-//     int tcbGroups[32];
-//     void *EffVM;
-//     void *PalAnm;
-//     void *btlvMcss;
-//     void *btlvStageHandle;
-//     void *btlvFieldHandle;
-//     void *btlvCameraHandle;
-//     void *clact;
-//     void *btlvGauge;
-//     void *ballGaugeWork[2];
-//     void *btlvTimer;
-//     void *btlvBG;
-//     void *VTCB;
-//     BtlvEffectSetupParam SetupParam;
-//     int IsScriptVMRunning;
-//     int Flags;
-//     HeapID heapID;
-//     __int16 field_1FA;
-//     int trainerBGMChangeFlag;
-//     int trainerIndex[8];
-//     int ShownAbilities[6];
-//     _BYTE gap238[8];
-//     int CameraMovementType;
-//     int IsScreenStateUnchangedThisFrame;
-//     int FramesSinceAction;
-//     int FramesBeforeCameraIdleMovement;
-//     int CameraMovementAnimID;
-// };
 
-// extern "C" void BtlvMcss_Add(void *a1, PartyPkm *a2, int a3);
-// extern "C" void THUMB_BRANCH_BtlvEffect_AddMon(PartyPkm *a1, int a2)
-// {
-//     BtlvMcss_Add(((BtlvEffectMain *)0x21F4280)->btlvMcss, a1, a2);
-// }
 
 #pragma endregion
