@@ -1,0 +1,19 @@
+	GetSpecies(attacker)
+	JumpIfStoredEQ(species.reshiram, &address_0x0020)
+	JumpIfStoredEQ(species.zekrom, &address_0x0020)
+	Jump(&address_0x004C)
+
+address_0x0020:
+	GetTurnCount()
+	JumpIfStoredNE(0, &address_0x004C)
+	JumpIfMoveEQ(move.fusion_bolt, &address_0x0046)
+	JumpIfMoveEQ(move.fusion_flare, &address_0x0046)
+	Jump(&address_0x004C)
+
+address_0x0046:
+	AddToScore(10)
+
+address_0x004C:
+	EndScript()
+
+	0x0000 [0]

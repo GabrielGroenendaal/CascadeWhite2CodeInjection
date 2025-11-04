@@ -1,0 +1,114 @@
+	JumpIfTargetIsAlly(&address_0x0148)
+	GetPartyReserveCount(attacker)
+	JumpIfStoredEQ(0, &address_0x0148)
+	CalcMoveDamage(false)
+	JumpIfStoredNE(no_damage, &address_0x0148)
+	JumpIfHasMoveWithEffect(attacker, move_ef.baton_pass, &address_0x003E)
+	JumpIfRandLT(80, &address_0x0148)
+
+address_0x003E:
+	JumpIfMoveEQ(move.swords_dance, &address_0x008A)
+	JumpIfMoveEQ(move.dragon_dance, &address_0x008A)
+	JumpIfMoveEQ(move.calm_mind, &address_0x008A)
+	JumpIfMoveEQ(move.nasty_plot, &address_0x008A)
+	JumpIfMoveEffectEQ(move_ef.protect, &address_0x00AA)
+	JumpIfMoveEQ(move.baton_pass, &address_0x00CE)
+	JumpIfRandLT(20, &address_0x0148)
+	AddToScore(3)
+
+address_0x008A:
+	GetTurnCount()
+	JumpIfStoredEQ(0, &address_0x01AA)
+	JumpIfHealthLT(attacker, 60, &address_0x017A)
+	Jump(&address_0x0192)
+
+address_0x00AA:
+	GetPreviousMove(attacker)
+	JumpIfStoredIsInList(&data_address_0x00C2, &address_0x0152)
+	AddToScore(2)
+	EndScript()
+
+
+data_address_0x00C2:
+	move.protect
+	move.detect
+	END
+
+address_0x00CE:
+	GetTurnCount()
+	JumpIfStoredEQ(0, &address_0x0152)
+	JumpIfStatStageGT(attacker, atk, +2, &address_0x01A2)
+	JumpIfStatStageGT(attacker, atk, +1, &address_0x019A)
+	JumpIfStatStageGT(attacker, atk, +0, &address_0x0192)
+	JumpIfStatStageGT(attacker, spa, +2, &address_0x01A2)
+	JumpIfStatStageGT(attacker, spa, +1, &address_0x019A)
+	JumpIfStatStageGT(attacker, spa, +0, &address_0x0192)
+	EndScript()
+
+
+address_0x0148:
+	EndScript()
+
+	0x0004 [4]
+	0xFFFF [65535]
+	0xFFFF [65535]
+	0x004D [77]
+
+address_0x0152:
+	AddToScore(-2)
+	EndScript()
+
+	0x0004 [4]
+	0xFFFD [65533]
+	0xFFFF [65535]
+	0x004D [77]
+	0x0004 [4]
+	0xFFFB [65531]
+	0xFFFF [65535]
+	0x004D [77]
+	0x0004 [4]
+	0xFFFA [65530]
+	0xFFFF [65535]
+	0x004D [77]
+	0x0004 [4]
+	0xFFF8 [65528]
+	0xFFFF [65535]
+	0x004D [77]
+
+address_0x017A:
+	AddToScore(-10)
+	EndScript()
+
+	0x0004 [4]
+	0xFFF4 [65524]
+	0xFFFF [65535]
+	0x004D [77]
+	0x0004 [4]
+	0xFFE2 [65506]
+	0xFFFF [65535]
+	0x004D [77]
+
+address_0x0192:
+	AddToScore(1)
+	EndScript()
+
+
+address_0x019A:
+	AddToScore(2)
+	EndScript()
+
+
+address_0x01A2:
+	AddToScore(3)
+	EndScript()
+
+
+address_0x01AA:
+	AddToScore(5)
+	EndScript()
+
+	0x0004 [4]
+	0x000A [10]
+	0x0000 [0]
+	0x004D [77]
+	0x0000 [0]

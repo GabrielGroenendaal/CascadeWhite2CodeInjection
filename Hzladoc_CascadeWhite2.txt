@@ -1,0 +1,405 @@
+Hzla Calc:
+The calc needs to be updated to account for a lot of new stuff:
+	Core Mechanics:
+		IMPORTANT:
+		CRITS:
+			Crits are currently a toggle between 1.5x crits and 2x crits. 
+			This applies to all moves except the autocrit moves, which will always deal the 2x damage. 
+			A toggle for this on the calc would be appreciated.
+		
+		FOURTH ABILITY:
+			Pokemon can have a 4th, 5th, and 6th ability indicated in their TRPoke. If they do, a table is checked to see if they have a fourth ability, and if they don't it defaults to their 1st ability.
+			
+			Pokemon with a fourth ability (and what that ability corresponds to) can be found on the following spreadsheet: https://docs.google.com/spreadsheets/d/1cq0mFDn4iubsSAQSuGZeZ-p0CIn3YzCt05bVXKjIlkE/edit?usp=sharing
+	
+	Move Functionality:
+		"Electro Ball" is 55 BP and deals double damage if the user has a higher speed stat than the target
+		"Gyro Ball" is 55 BP and deals double damage if the user has a lower speed stat than the target
+		"Spit Up" does not have variable BP, and instead consumes the user's berry.
+		"Hidden Power" does not have variable BP
+		"Sky Uppercut" deals SE damage to flying types
+		"Sacred Sword" deals neutral damage to Ghost types
+		"Relic Song" deals neutral damage to Ghost types
+		"Natural Gift" is 80 BP normal type and does not fail with no held berry, nor does it consume the held berry.
+		"Natural Gift" powers are also updated to later gen values!
+		"Stored Power" and Power Trip are 50 BP and gain 25 BP per stat boost
+		"Present" is Ice Type and now functions like Pollen Puff.
+		"Chip Away" always deals neutral damage.
+		"Torment" is a damaging move that applies the Torment status
+		"Grudge" is a damaging move. It can double in power (Stomping Tantrum effect)
+		"Uproar" now has the stomping tantrum effect, and can double in power. 
+		"Thrash" now has the stomping tantrum effect, and can double in power. 
+		"Ingrain" is a damaging move
+		"Knock Off" now functions like generation 6 and onwards.
+		"Curse" cannot effect Normal Types
+		"Façade" now properly ignores the attack drop from burn
+		"Dream Eater" can damage awake targets
+		"Explosion" and Self Destruct always critically hit.
+		"Focus Punch" no longer fails if damaged while charging, but instead deals half damage.
+		"Helping Hand" is now a 2x damage boost. 
+		"Cross Poison" always crits.
+		"Slash" always crits.
+		"Future Sight" benefits from abilities and non-consumable items when triggered while the user is off the battlefield.
+		"Safeguard" and "Mist" are combined into the same effect.
+		"Dragon Rage" is now a 50 BP special dragon move, 10% flinch chance.
+		"Mirror Move" now functions like Metal Burst.
+		"Recycle", "Refresh", "Charge", and "Aqua Ring" now all heal 25% maximum health in addition to their normal effects.
+
+		"Seething Cold" is a new move that has the effect of Stomping Tantrum
+		"Sparkle" is renamed Flash, and is now a damaging move
+		"Hidden Force" is a new move that has the same effect as Hidden Power but is Physical
+		"Concuss" is a new physical psychic move that has a small chance to confuse.
+		"Weather Crash" is a new physical normal move with the same effect as Weather Ball.
+		"Scorching Swarm" is a new special bug spread move with 120 BP and a 10% chance to burn.
+
+	
+	Ability Functionality:
+		"Anticipation" reduces the accuracy of super effective attacks against the user by 50%.
+		
+		"Illusion" now gives the Pokemon a chance to interrupt the standard switch order, taking the place (and the apperance) of the pokemon that should've switched in.
+		
+		"Stench" is now a 20% flinch chance.
+		
+		"Aftermath" now deals damage to all Pokemon on the field equal to 33% of their maximum health, and triggers off of any moves. 
+		
+		"Overcoat" blocks damage from weather, hazards, and all contact effects. This includes the effects of Utility Umbrella (blocking the damage boost / reduction of weather)
+		
+		"Iron Fist" boosts damage by 30% and blocks punching moves from making contact
+		
+		"Forewarn" reduces damage taken by critical hits by 25% for the Pokemon and their allies.
+		
+		"Slush Rush" reduces damage taken by Ice types moves by 50%
+		
+		"Swift Swim" reduces damage taken by Water type moves by 50%
+		
+		"Sand Force" increases damage dealt by Rock, Steel, and Ground moves by 20%. Bonus is doubled in Sandstorm.
+		
+		"Sand Rush" reduces damage taken by Rock type moves by 50%
+		
+		"Soundproof", renamed Amplifier, boosts damage dealt by Sound moves by 30%. Still provides immunity to Sound moves. 
+		
+		"Heatproof" reduces damage taken by Fire moves by 75% and prevents burns.
+		
+		"Ice Body" heals the user for 12% in hail, 6% out of hail
+		
+		"Corrosion" makes Poison moves super effective on steel types
+		
+		"Dry Skin" increases fire damage taken by 100%
+		
+		"Toxic Boost" reduces Poison damage taken by 50%, from moves or status.
+
+		"Distracting" is a new ability, and reduces Evasion by one stage on switch in (like Intimidate)
+		
+		"Permafrost" is a new ability, reducing damage taken by special attacks by 50%
+		
+		"Thunder Armor" is a new ability, which is an electric immunity that raises Attack by one stage when hit by Electric moves.
+
+		"Inner Focus" allows Psychic moves to damage dark types
+		
+		"Rivalry" increases damage dealt to and reduces damage taken from Pokemon that share a type with the user by 33%
+		
+		"Healer" causes the pokemon and its allies to heal 1/16 every round 
+		
+		"Justified" reduces the damage taken by dark type moves by 50%
+		
+		"Scrappy" prevents Attack Drops.
+		
+		"Light Metal" boosts Speed by 50% and reduces Defense by 33%
+		
+		"Heavy Metal" boosts Defense by 50% and reduces Speed by 33%
+		
+		"Cloud Nine" now increases accuracy of all moves on the field by 1.2x while active.
+		
+		"Unaware" is now combined with Oblivious and Own Tempo.
+		
+		"Filter" and "Solid Rock" now reduce the effectiveness multiplier from 2x to 1.5x. This makes 2x effective moves the same as normal, but makes 4x effective moves only 2.25x effective. 
+		
+		"Normalize" makes all outgoing and incoming attacks Normal-type.
+		
+		"Pure Power" now doubles Special Attack.
+		
+		"Reckless" now effects Explosion and Self Destruct. 
+		
+		"Anger Point" increases damage and speed by 50% if the user's move failed on the previous turn
+		
+		"Mold Breaker", "Teravolt", and "Turboblaze" all also boost damage by 1.1x in addition to their normal effects.
+
+		"Infiltrator" boosts the damage of super effective moves by 20% and allows them to bypass barriers.
+
+		"Run Away" prevents the user from being trapped and switches them out automatically when reduced below 50% health.
+
+		"Merciless" increases damage dealt to and reduces damage taken from Pokemon suffering from status by 25%.
+
+		"Hyper Cutter" boosts the damage of slicing, cutting, and claw attacks by 30% and blocks Attack drops.
+
+		"Torrent" boosts Water moves by 25%. Boost is doubled to 50% when below 1/3 health.
+
+		"Blaze" boosts Fire moves by 25%. Boost is doubled to 50% when below 1/3 health.
+
+		"Overgrow" boosts Grass moves by 25%. Boost is doubled to 50% when below 1/3 health.
+
+		"Swarm" boosts Bug moves by 25%. Boost is doubled to 50% when below 1/3 health.
+
+		"Ballistics" is a new ability that boosts bomb, bullet, and ball moves by 20% and makes them target all adjacent foes. 
+
+		"Colossal" is a new ability that reduces damage taken by 25% but prevents the user from avoiding any move. 
+
+	
+	Item Functionality:
+		CLRS Booster, Proto Booster, and Mysterious Device are items that boost Attack and Special Attack by one stage on switch in.
+		Proto Armor and CLRS Armor are items that boost Defense and Special Defense by one stage on switch in
+		CLRS Accelerator and Proto Accelerator are items that boost Speed by two stages on switch in
+		CLRS Invention is an item that boosts all stats except evasion and accuracy by one stage on switch in
+		Safety Gear is an item with the combined effects of Safety Goggles, Heavy Duty Boosts, Protective Pads, and Utility Umbrella.
+		Stick now doubles Farfetch'd's attack
+		Light Ball now doubles Eevee's Attack and Special Attack
+		Heat Rock, Damp Rock, Smooth Rock and Icy Rock now set their respective weathers permanently on switch in.
+
+		===IMPORTANT===
+		All the Plate Items have been replaced with "Tera X" items. These items mimic the functionality of the X item they replicate, but also transform their holder into the type of the move in their first move slot on switch in. 
+
+		While transformed into this type, they cannot have their type changed by any other ability or move, they receive stab on both their current type and their original typings. If both types are the same, they are boosted by 2x up from 1.5x. If the pokemon has adaptabiliy, it only works for the Tera Type with 1.5x becoming 2x and 2x becoming 2.25x.
+					298: Flame Plate -> Tera Specs (Choice Specs /w Tera Type Change) ***
+					299: Splash Plate -> Tera C-Band (Choice Band /w Tera Type Change) ***
+					300: Zap Plate -> Tera Scarf (Choice Scarf /w Tera Type Change) ***
+					301: Meadow Plate -> Tera Orb (Life Orb /w Tera Type Change) ***
+					302: Iclcle Plate -> Tera Sash (Focus Sash /w Tera Type Change) ***
+					303: Fist Plate -> Tera F-Band (Focus Band /w Tera Type Change) ***
+					304: Toxic Plate -> Tera Claw (Quick Claw /w Tera Type Change) ***
+					305: Earth Plate -> Tera W-Policy (Weakness Policy /w Tera Type Change) ***
+					306: Sky Plate -> Tera B-Policy (Blunder Policy /w Tera Type Change) ***
+					307: Mind Plate -> Tera Powder (Brightpowder /w Tera Type Change) ***
+					308: Insect Plate -> Tera Vest (Assault Vest /w Tera Type Change) ***
+					309: Stone Plate -> Tera Insurance (Attack Insurance /w Tera Type Change) ***
+					310: Spooky Plate -> Tera Belt (Expert Belt /w Tera Type Change) ***
+					311: Draco Plate -> Tera Leftovers (Leftovers /w Tera Type Change) ***
+					312: Dread Plate -> Tera Dice (Loaded Dice /w Tera Type Change) ***
+					313: Iron Plate -> Tera K-Rock (King's Rock /w Tera Type Change) ***
+
+	
+	Switch In Logic:
+		The AI is capable of seeing the correct BP for moves when determining switch order, taking into account relevant factors for the effectiveness and base power of the move.
+			§ The correct BP for knock off depending on if the target is holding an item
+			§ The correct BP for acrobatics depending on if the user is holding an item. Sees max power if the held item is a flying gem.
+			§ The correct BP for Electro Ball, doubling if the user is faster than the target
+			§ The correct BP for Gyro ball, doubling if the user is slower than the target.
+			§ The correct BP for Venoshock, doubling if the target is poisoned
+			§ The correct BP for Barb Barrage, Beat Up, Hex, Infernal Parade and Bitter Malice: doubling in BP if the target is afflicted with volatile status
+			§ The predicted BP for Avalanche, Payback, and Revenge, using the doubles power if the user is slower than the target.
+			§ The correct BP for multi-hit moves. Uses the minimum number of hits possible (2 for Tail Slap, for example). Accounts for Skill Link and Loaded Dice. 
+			§ The correct effective BP for autocrit moves, doubling their BP. Boosted by another 50% if the user has sniper, and not boosted at all if the target has battle or shell armor (if the Pokemon doesn't have Mold Breaker / Turboblaze / Teravolt)
+				There is also a check for Lucky Chant and for the Defense Curl conditionflag.
+			§ The correct BP for retaliate
+			§ The correct BP for Wake Up Slap and Dream Eater, doubling their BP vs. sleeping targetgs
+			§ Modified BP for Solar Beam and Solar Blade; these moves are seen as 0 BP if outside of sunlight, not holding a power herb, or the user does not have the ability chlorophyll, flower gift, or solar power. 
+			§ Modified BP for Electro Shot; if the user does not have a power herb and it's not raining, halves the BP
+			§ The correct BP for Flail, Water Spout, Eruption and Reversal
+			§ The correct type and BP for Natural Gift based on the user's held berry. If no berry is held, treats it as 80 BP normal.
+			§ The correct type and BP for weather ball depending on the weather.
+			§ Accounts for abilities that change the types of moves, such as Galvanize or Refrigerate, and their increase to a move's base power.
+			§ Sees the correct move that would be called for Nature Power, and its associate BP and effectiveness
+		The AI treats the BP for Explosion and Self-Destruct as 0.
+		The AI Accounts for STAB when determining the BP of a move. Pokemon with Savant (renamed Protean) will see STAB on all their moves.
+		The AI accounts for Technician when determining the BP of a move
+		The AI can see the correct effectiveness for abilities and moves that bypass the traditional type chart:
+			§ Chip Away
+			§ Sacred Sword
+			§ Freeze Dry
+			§ Sky Uppercut
+			§ Corrosion
+			§ Scrappy
+			§ Inner Focus
+		The AI accounts for abilities that provide pseudo "resistances" or super effectiveness unless the Pokemon has Mold Breaker, Teravolt or Turboblaze.
+			§ Tenacity (Tinted Lens)
+			§ Thick Fat
+			§ Heatproof (now reduces fire damage by 75%)
+			§ Slush Rush (now reduces ice damage by 50%)
+			§ Swift Swim (now reduces water damage by 50%)
+			§ Sand Force and Sand Rush (now reduces Rock damage by 50%)
+			§ Justified (now reduces Dark damage by 50%)
+			§ Toxic Boost (now reduces Poison Damage by 50%)
+			§ Dry Skin (now increases Fire Damage taken by 100%)
+		The AI Accounts for all immunity abilities if the pokemon who's attacks are being checked for switch in does not have mold breaker, teravolt or turbolaze:1
+			§ Water: Storm Drain, Water Absorb, Dry Skin
+			§ Ground: Levitate
+			§ Fire: Flash Fire, Well Baked Body
+			§ Electric: Volt Absorb, Lightning Rod, Motor Drive, Thunder Armor
+			§ Grass: Sap Sipper
+			§ Amplifier: Sound-based Moves
+			§ Wind Rider: Wind based moves
+				□ Wind Moves now includes Fairy Wind, Ominous Wind, Silver Wind, Air Slash, and Diamond Storm
+			§ Bulletproof: Bullet and bomb moves
+		
+			
+	A full list of Ability Replacements
+		  6: Damp -> Bulletproof
+		  7: Limber -> Corrosion
+		 12: Oblivious -> Galvanize
+		 15: Insomnia -> Thunder Armor ***
+		 16: Color Change -> Ballistics ***
+		 17: Immunity -> Fluffy
+		 20: Own Tempo -> Quick Draw
+		 21: Suction Cups -> Well Baked Body
+		 38: Poison Point -> Berserk
+		 40: Magma Armor -> Pixilate
+		 41: Water Veil -> Merciless
+		 43: Soundproof -> Amplifier ***
+		 48: Early Bird -> Refrigerate
+		 51: Keen Eye -> Wind Rider	
+		 56: Cute Charm -> Gooey
+		 60: Sticky Hold -> Aerilate
+		 76: Air Lock -> Neutralizing Gas
+		 77: Tangled Feet -> Slush Rush
+		 80: Steadfast -> Colossal ***
+		 93: Hydration -> Strong Jaw
+		100: Stall -> Tough Claws		 
+		102: Leaf Guard -> Fur Coat
+		103: Klutz -> Distracting ***
+		119: Frisk -> Stakeout		
+		140: Telepathy -> Permafrost ***
+		145: Big Pecks -> Savant (renamed Protean) ***
+
+
+	A full list of Ability Renames:
+		 14: Compound Eyes -> Keen Senses
+		 19: Shield Dust -> Resilient
+		 29: Clear Body -> Strong Body
+		 69: Rock Head -> Determined
+		 88: Download -> Exploit
+		110: Tinted Lens -> Tenacity
+		136: Multiscale -> Majestic Ward
+		139: Harvest -> Gourmand
+		148: Analytic -> Patient
+		152: Mummy -> Contagious
+		162: Victory Star -> Illumination
+
+	A full list of Item Replacements
+		112: Griseous Orb -> Throat Spray
+		135: Adamant Orb -> Fairy Dust
+		136: Lustrous Orb -> Trickster Herb ***
+		160: Wiki Berry -> Maranga Berry
+		162: Aguav Berry -> Kee Berry
+		206: Lansat Berry -> Roseli Berry
+		215: Macho Brace -> Tera Badge (Mascot Badge /w Tera Type Change) ***
+		223: Amulet Coin -> Static Orb ***
+		225: Soul Dew -> Mascot Badge
+		228: Smoke Ball -> Protective Gear *** (combines Heavy Duty Boots and Protective Pads)
+		254: Sea Incense -> Proto Armor ***
+		255: Lax Incense -> Attack Insurance ***
+		256: Lucky Punch -> Blunder Policy ***
+		257: Metal Powder -> Stress Tester *** 
+		274: Quick Powder -> Mysterious Device ***
+		280: Destiny Knot -> Clear Amulet 
+		286: Grip Claw -> CLRS Armor ***
+		289: Power Bracer -> Assault Vest
+		290: Power Belt -> Fairy Gem
+		291: Power Lens -> Weakness Policy
+		292: Power Band -> CLRS Booster ***
+		293: Power Anklet -> Safety Goggles
+		294: Power Weight -> Proto Booster *** 
+		298: Flame Plate -> Tera Specs (Choice Specs /w Tera Type Change) ***
+		299: Splash Plate -> Tera C-Band (Choice Band /w Tera Type Change) ***
+		300: Zap Plate -> Tera Scarf (Choice Scarf /w Tera Type Change) ***
+		301: Meadow Plate -> Tera Orb (Life Orb /w Tera Type Change) ***
+		302: Iclcle Plate -> Tera Sash (Focus Sash /w Tera Type Change) ***
+		303: Fist Plate -> Tera F-Band (Focus Band /w Tera Type Change) ***
+		304: Toxic Plate -> Tera Claw (Quick Claw /w Tera Type Change) ***
+		305: Earth Plate -> Tera W-Policy (Weakness Policy /w Tera Type Change) ***
+		306: Sky Plate -> Tera B-Policy (Blunder Policy /w Tera Type Change) ***
+		307: Mind Plate -> Tera Powder (Brightpowder /w Tera Type Change) ***
+		308: Insect Plate -> Tera Vest (Assault Vest /w Tera Type Change) ***
+		309: Stone Plate -> Tera Insurance (Attack Insurance /w Tera Type Change) ***
+		310: Spooky Plate -> Tera Belt (Expert Belt /w Tera Type Change) ***
+		311: Draco Plate -> Tera Leftovers (Leftovers /w Tera Type Change) ***
+		312: Dread Plate -> Tera Dice (Loaded Dice /w Tera Type Change) ***
+		313: Iron Plate -> Tera K-Rock (King's Rock /w Tera Type Change) ***
+		314: Odd Incense -> CLRS Invention ***
+		315: Rock Incense -> Proto Accelerator ***
+		317: Wave Incense -> Loaded Dice 
+		318: Rose Incense -> CLRS Accelerator ***
+		539: Float Stone -> Eject Pack
+		543: Ring Target -> Covert Cloak
+		544: Binding Band -> Utility Umbrella
+
+
+	A full list of Move Replacements
+	      1: Pound -> Concuss ***
+	     11: Vise Grip -> Dual Wingbeat
+	     13: Razor Wind -> Razor Winds ***
+	     21: Slam -> Brutal Swing
+	     25: Mega Kick -> High Horsepower
+	     27: Rolling Kick -> Headlong Rush
+	     31: Fury Attack -> Fire Lash
+	     49: Sonicboom -> Scorching Swarm
+	     51: Acid -> Parabolic Zap ***
+	     51: Parabolic Charge -> Parabolic Zap ***
+	    102: Mimic -> Psychic Noise
+	    110: Withdraw -> Breaking Swipe
+	    117: Bide -> Hidden Force
+	    132: Constrict -> Infestation
+	    134: Kinesis -> Lunge
+	    144: Transform -> Phantom Strike ***
+	    145: Bubble -> Chilling Water
+	    148: Flash -> Sparkle ***
+	    150: Splash -> Play Rough
+	    159: Sharpen -> Nuzzle
+	    160: Conversion -> Flip Turn
+	    169: Spider Web -> Infernal Parade
+	    170: Mind Reader -> Snap Trap
+	    176: Conversion 2 -> Spin Out
+	    180: Spite -> Diamond Storm
+	    186: Sweet Kiss -> Draining Kiss
+	    193: Foresight -> Electro Shot
+	    199: Lock-on -> Parting Shot
+	    205: Rollout -> Accelerock
+	    206: False Swipe -> Body Press
+	    218: Frustration -> Temper Flare
+	    220: Pain Split -> Seething Cold ***
+	    221: Sacred Fire -> Mystical Fire
+	    222: Magnitude -> Sticky Web
+	    244: Psych Up -> Bitter Malice
+	    262: Memento -> Obstruct
+	    265: Smelling Salts -> Psychic Fangs
+	    271: Trick -> Weather Crash ***
+	    272: Role Play -> Barb Barrage
+	    289: Snatch -> Victory Dance
+	    293: Camouflage -> Trop Kick
+	    295: Luster Purge -> Dazzling Gleam
+	    296: Mist Ball -> Moonblast
+	    300: Mud Sport -> Esper Wing
+	    301: Ice Ball > Boomburst
+	    316: Odor Sleuth -> Eerie Impulse
+	    346: Water Sport -> Wicked Blow
+		357: Miracle Eye -> Freeze Dry
+		364: Feint -> Confide
+		373: Embargo -> First Impression
+		373: 1st Impression -> First Impression
+		376: Trump Card -> Spiky Shield
+		377: Heal Block -> Alluring Voice
+		378: Wring Out -> Scale Shot
+		379: Power Trick -> Petal Blizzard
+		384: Power Swap -> Psyblade
+		385: Guard Swap -> Clanging Scales
+		386: Punishment -> Wave Crash
+		449: Judgement -> Spirit Break
+		459: Roar of Time -> Starburst ***
+		460: Spacial Rend -> Steel Beam 
+		461: Lunar Dance -> Pollen Puff
+		462: Crush Grip -> Silk Trap
+		470: Guard Split -> Triple Axel
+		471: Power Split -> Triple Dive
+		472: Wonder Room -> Liquidation
+		478: Magic Room -> Power Trip
+		485: Synchronoise -> Scorching Sands
+		493: Simple Beam -> Stompin Tantrum
+		493: Stomping Tantrum -> Stompin Tantrum
+		495: After You -> Ice Hammer
+		496: Round -> Disarming Voice
+		511: Quash -> Fairy Wind
+		550: Bolt Strike -> Zing Zap
+		553: Freeze Shock -> Meteor Beam
+		554: Ice Burn -> Solar Blade
+		558: Fusion Flare -> Skitter Smack
+		559: Fusion Bolt -> Baneful Bunker
+
+

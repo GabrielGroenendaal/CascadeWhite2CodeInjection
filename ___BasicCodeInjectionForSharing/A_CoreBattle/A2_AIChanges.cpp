@@ -1768,18 +1768,18 @@ extern "C"
             }
 
             // Filter and Solid Rock
-            if ((defAbility == ABIL111_FILTER || defAbility == ABIL116_SOLID_ROCK) && TypeEffectivenessVsMon > 3)
-            {
-                if (TypeEffectivenessVsMon == 4)
-                {
-                    value = (value >> 1) + (value >> 2);
-                }
-                else
-                {
-                    value = (value >> 1) + (value >> 2);
-                    value = (value >> 1) + (value >> 2);
-                }
-            }
+            // if ((defAbility == ABIL111_FILTER || defAbility == ABIL116_SOLID_ROCK) && TypeEffectivenessVsMon > 3)
+            // {
+            //     if (TypeEffectivenessVsMon == 4)
+            //     {
+            //         value = (value >> 1) + (value >> 2);
+            //     }
+            //     else
+            //     {
+            //         value = (value >> 1) + (value >> 2);
+            //         value = (value >> 1) + (value >> 2);
+            //     }
+            // }
 
             if ((defAbility == ABIL110_TENACITY) && TypeEffectivenessVsMon < 3)
             {

@@ -696,6 +696,10 @@ extern "C"
 #pragma endregion
 
 #pragma region MoldBreaker
+
+    bool THUMB_BRANCH_HandlerMoldBreakerSKipCheck(int a1, int a2, BattleEventType a3, int a4, unsigned __int16 a5){
+        return a3 == EVENT_MOVE_SEQUENCE_END && SEARCH_ARRAY(MOLD_BREAKER_AFFECTED_ABILITIES, a5);
+    }
     void HandlerMoldBreakerPower(int a1, int a2, int a3)
     {
         if (a3 == BattleEventVar_GetValue(VAR_ATTACKING_MON))
@@ -3130,9 +3134,8 @@ extern "C"
 
 #pragma endregion
 
-#pragma region ShadowTag
-
-    int THUMB_BRANCH_SAFESTACK_HandlerShadowTag(int a1, ServerFlow *a2, unsigned int a3, int a4)
+#pragma region BadDreams
+    int HandlerBadDreamsTrapping(int a1, ServerFlow *a2, unsigned int a3, int a4)
     {
         unsigned __int8 Value;     // r0
         int result;                // r0
@@ -3140,7 +3143,7 @@ extern "C"
         unsigned int NumTargets;   // r6
         unsigned int v10;          // r4
         BattleMon *BattleMon;      // r0
-        u8 v12[5];                 // [sp+0h] [bp-18h] BYREF
+        unsigned char v12[24];              // [sp+0h] [bp-18h] BYREF
 
         *v12 = a4;
         Value = BattleEventVar_GetValue(VAR_MON_ID);
@@ -3152,16 +3155,19 @@ extern "C"
             v10 = 0;
             if (NumTargets)
             {
-                while (v10 < NumTargets)
+                while (1)
                 {
                     BattleMon = Handler_GetBattleMon(a2, v12[v10]);
-                    if (BattleMon_GetValue(BattleMon, VALUE_EFFECTIVE_ABILITY) == ABIL023_SHADOW_TAG || BattleMon_HasType(BattleMon, TYPE_NORMAL) || BattleMon_HasType(BattleMon, TYPE_GHOST))
+                    if (!BattleMon_CheckIfMoveCondition(BattleMon, CONDITION_SLEEP) || BattleMon_HasType(BattleMon, TYPE_NORMAL))
                     {
-                        return result;
+                        break;
                     }
-                    v10++;
+                    v10 = (v10 + 1);
+                    if (v10 >= NumTargets)
+                    {
+                        return BattleEventVar_RewriteValue(VAR_MOVE_FAIL_FLAG, 1);
+                    }
                 }
-                return BattleEventVar_RewriteValue(VAR_MOVE_FAIL_FLAG, 1);
             }
             else
             {
@@ -3170,6 +3176,102 @@ extern "C"
         }
         return result;
     }
+
+    ABILITY_TRIGGERTABLE BadDreamsHandlers[] = {
+        {EVENT_TURN_CHECK_END, (ABILITY_HANDLER_FUNC)HandlerBadDreams}, // 22
+        {EVENT_PREVENT_RUN, (ABILITY_HANDLER_FUNC)HandlerBadDreamsTrapping},  // 22
+    };
+
+    ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddBadDreams(_DWORD *a1)
+    {
+        *a1 = 2;
+        return BadDreamsHandlers;
+    }
+
+#pragma endregion
+
+#pragma region ShadowTag
+
+    int THUMB_BRANCH_SAFESTACK_HandlerShadowTag(int a1, ServerFlow *a2, unsigned int a3, int a4)
+    {
+        unsigned __int8 Value;     // r0
+        int result;                // r0
+        __int16 ExistFrontPokePos; // r0
+        unsigned int NumTargets;   // r6
+        unsigned int v10;          // r4
+        BattleMon *BattleMon;      // r0
+        unsigned char v12[24];              // [sp+0h] [bp-18h] BYREF
+
+        *v12 = a4;
+        Value = BattleEventVar_GetValue(VAR_MON_ID);
+        result = MainModule_IsAllyMonID(Value, a3);
+        if (!result)
+        {
+            ExistFrontPokePos = Handler_GetExistFrontPokePos(a2, a3);
+            NumTargets = Handler_ExpandPokeID(a2, ExistFrontPokePos | 0x100, v12);
+            v10 = 0;
+            if (NumTargets)
+            {
+                while (1)
+                {
+                    BattleMon = Handler_GetBattleMon(a2, v12[v10]);
+                    result = BattleMon_GetValue(BattleMon, VALUE_EFFECTIVE_ABILITY);
+                    if (result == 23 || BattleMon_HasType(BattleMon, TYPE_NORMAL) || BattleMon_HasType(BattleMon, TYPE_GHOST))
+                    {
+                        break;
+                    }
+                    v10 = (v10 + 1);
+                    if (v10 >= NumTargets)
+                    {
+                        return BattleEventVar_RewriteValue(VAR_MOVE_FAIL_FLAG, 1);
+                    }
+                }
+            }
+            else
+            {
+                return BattleEventVar_RewriteValue(VAR_MOVE_FAIL_FLAG, 1);
+            }
+        }
+        return result;
+    }
+    // int THUMB_BRANCH_SAFESTACK_HandlerShadowTag(int a1, ServerFlow *a2, unsigned int a3, int a4)
+    // {
+    //     unsigned __int8 Value;     // r0
+    //     int result;                // r0
+    //     __int16 ExistFrontPokePos; // r0
+    //     unsigned int NumTargets;   // r6
+    //     unsigned int v10;          // r4
+    //     BattleMon *BattleMon;      // r0
+    //     u8 v12[5];                 // [sp+0h] [bp-18h] BYREF
+
+    //     *v12 = a4;
+    //     Value = BattleEventVar_GetValue(VAR_MON_ID);
+    //     result = MainModule_IsAllyMonID(Value, a3);
+    //     if (!result)
+    //     {
+    //         ExistFrontPokePos = Handler_GetExistFrontPokePos(a2, a3);
+    //         NumTargets = Handler_ExpandPokeID(a2, ExistFrontPokePos | 0x100, v12);
+    //         v10 = 0;
+    //         if (NumTargets)
+    //         {
+    //             while (v10 < NumTargets)
+    //             {
+    //                 BattleMon = Handler_GetBattleMon(a2, v12[v10]);
+    //                 if (BattleMon_GetValue(BattleMon, VALUE_EFFECTIVE_ABILITY) == ABIL023_SHADOW_TAG || BattleMon_HasType(BattleMon, TYPE_NORMAL) || BattleMon_HasType(BattleMon, TYPE_GHOST))
+    //                 {
+    //                     return result;
+    //                 }
+    //                 v10++;
+    //             }
+    //             return BattleEventVar_RewriteValue(VAR_MOVE_FAIL_FLAG, 1);
+    //         }
+    //         else
+    //         {
+    //             return BattleEventVar_RewriteValue(VAR_MOVE_FAIL_FLAG, 1);
+    //         }
+    //     }
+    //     return result;
+    // }
 
 #pragma endregion
 
@@ -4319,7 +4421,5 @@ extern "C" int THUMB_BRANCH_SAFESTACK_PokeList_LoadSwitchInFailMessage(PokeListM
 #pragma endregion
 
 #pragma region testing
-
-
 
 #pragma endregion
