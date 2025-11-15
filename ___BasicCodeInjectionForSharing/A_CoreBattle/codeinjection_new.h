@@ -41,6 +41,7 @@ bool IsEqual(int a1, int a2)
 C_DECL_BEGIN
 
 // STUFF FOR FIELD EFFECTS
+extern void HandlerBadDreams(int a1, ServerFlow *a2, unsigned int *a3, int a4);
 extern bool BattleMon_IsStatChangeValid(BattleMon *a1, unsigned int a2, int a3);
 extern bool Handler_IsSimulationMode(ServerFlow *a1);
 extern PlayerState *GameData_GetPlayerState(GameData *gameData);
@@ -618,6 +619,10 @@ extern void HandlerObliviousNoEffectCheck(int a1, ServerFlow *a2, int a3);
 extern void HandlerUnawareHitRank(int a1, int a2, int a3);
 extern int HandlerUnawareAttackRank(int a1, int a2, int a3);
 extern int HandlerUnawareDefenseRank(int a1, int a2, int a3);
+extern void HandlerOwnTempoActionEnd(int a1, ServerFlow *a2, int a3);
+extern void HandlerOwnTempoAddStatusFailed(int a1, ServerFlow *a2, int a3, int *a4);
+extern void HandlerOwnTempoCureStatus(int a1, ServerFlow *a2, unsigned int *a3);
+extern void HandlerOwnTempoStatus(int a1, int a2, int a3, int *a4);
 
 
 C_DECL_END

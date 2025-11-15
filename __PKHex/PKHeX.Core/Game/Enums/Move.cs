@@ -35,7 +35,7 @@ public enum Move : ushort
     HeadlongRush,
     SandAttack,
     Headbutt,
-    HornAttack,
+    Devour,
     FireLash,
     HornDrill,
     Tackle,

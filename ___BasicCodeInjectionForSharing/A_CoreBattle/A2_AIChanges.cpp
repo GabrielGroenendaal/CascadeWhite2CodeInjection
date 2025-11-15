@@ -1685,7 +1685,7 @@ extern "C"
             --------------------------------- DAMAGE CALC ------------------------------------
             ----------------------------------------------------------------------------------
         */
-       
+
         ServerEvent_CalcDamage(
             a1,
             AttackingMon,
@@ -3261,14 +3261,13 @@ extern "C"
 
 #pragma region AIScriptFunctions
 
-    //     /*
+    /*
 
-    //         --------------------------------------------------------------------------------------------------
-    //         --------------------------------------- GUESS ABILITY --------------------------------------------
-    //         --------------------------------------------------------------------------------------------------
-
-    //         This function checks to see what the Pokemon's ability is, and isn't fooled by anything.
-
+        --------------------------------------------------------------------------------------------------
+        --------------------------------------- GUESS ABILITY --------------------------------------------
+        --------------------------------------------------------------------------------------------------
+          This function checks to see what the Pokemon's ability is, and isn't fooled by anything.
+    */
     int THUMB_BRANCH_SAFESTACK_GuessAbility(TrainerAIEnv *a1, int a2, int a3)
     {
         BattleMon *BattleMonFromBattlePos; // r6
@@ -3281,348 +3280,361 @@ extern "C"
         return BattleMon_GetValue(BattleMonFromBattlePos, VALUE_EFFECTIVE_ABILITY);
     }
 
-    //         --------------------------------------------------------------------------------------------------
-    //         --------------------------- CHECK MOVE CATEGORIES (FOR STATUS) -----------------------------------
-    //         --------------------------------------------------------------------------------------------------
+    /*
+        --------------------------------------------------------------------------------------------------
+        --------------------------- CHECK MOVE CATEGORIES (FOR STATUS) -----------------------------------
+        --------------------------------------------------------------------------------------------------
 
-    //         This function checks to see what a pokemon's primarily move category is. It first
-    //             - checks the last move they used
-    //             - if there is no last move, checks to see if all the moves they have are of the same category
-    //             - if that's not true, then it checks what their current raw Attack vs Special Attack looks like
+        This function checks to see what a pokemon's primarily move category is. It first
+            - checks the last move they used
+            - if there is no last move, checks to see if all the moves they have are of the same category
+            - if that's not true, then it checks what their current raw Attack vs Special Attack looks like
 
-    //     */
+    */
 
-    //     int CheckTargetMoves(BattleMon *a1)
-    //     {
-    //         int MoveCount;
-    //         int LoopMoveID;
-    //         int LoopMoveCategory;
-    //         int LoopMoveCategoryCheck;
-    //         int i;
+    int CheckTargetMoves(BattleMon *a1)
+    {
+        int MoveCount;
+        int LoopMoveID;
+        int LoopMoveCategory;
+        int LoopMoveCategoryCheck;
+        int i;
 
-    //         MoveCount = BattleMon_GetMoveCount(a1);
-    //         LoopMoveCategoryCheck = 0;
-    //         do
-    //         {
-    //             LoopMoveID = Move_GetID(a1, i);
-    //             LoopMoveCategory = PML_MoveGetParam(LoopMoveID, MVDATA_CATEGORY);
-    //             if (!LoopMoveCategoryCheck && !PML_MoveIsDamaging(LoopMoveID) && Move_GetPP(a1, i))
-    //             {
-    //                 LoopMoveCategoryCheck = LoopMoveCategory;
-    //             }
+        MoveCount = BattleMon_GetMoveCount(a1);
+        LoopMoveCategoryCheck = 0;
+        do
+        {
+            LoopMoveID = Move_GetID(a1, i);
+            LoopMoveCategory = PML_MoveGetParam(LoopMoveID, MVDATA_CATEGORY);
+            if (!LoopMoveCategoryCheck && !PML_MoveIsDamaging(LoopMoveID) && Move_GetPP(a1, i))
+            {
+                LoopMoveCategoryCheck = LoopMoveCategory;
+            }
 
-    //             if (LoopMoveCategory != LoopMoveCategoryCheck)
-    //             {
+            if (LoopMoveCategory != LoopMoveCategoryCheck)
+            {
 
-    //                 if (BattleMon_GetValue(a1, VALUE_ATTACK_STAT) >= BattleMon_GetValue(a1, VALUE_SPECIAL_ATTACK_STAT))
-    //                 {
-    //                     return 1;
-    //                 }
-    //                 else
-    //                 {
-    //                     return 2;
-    //                 }
-    //             }
-    //             i++;
-    //         } while (i < MoveCount);
-    //         return LoopMoveCategoryCheck;
-    //     }
+                if (BattleMon_GetValue(a1, VALUE_ATTACK_STAT) >= BattleMon_GetValue(a1, VALUE_SPECIAL_ATTACK_STAT))
+                {
+                    return 1;
+                }
+                else
+                {
+                    return 2;
+                }
+            }
+            i++;
+        } while (i < MoveCount);
+        return LoopMoveCategoryCheck;
+    }
 
-    //     int THUMB_BRANCH_AI094_GetPreviousMoveCategory(void *a1, TrainerAIEnv *a2)
-    //     {
-    //         int PreviousMoveID; // r1
-    //         int LoopMoveID;
-    //         int LoopMoveCategory;
-    //         u32 LoopMoveCategoryCheck;
+    int THUMB_BRANCH_AI094_GetPreviousMoveCategory(void *a1, TrainerAIEnv *a2)
+    {
+        int PreviousMoveID; // r1
+        int LoopMoveID;
+        int LoopMoveCategory;
+        u32 LoopMoveCategoryCheck;
 
-    //         k::Printf("\n\n--------\n\nWe are in the AI Function for checking the target's previous move category, which has been updated to check their general offensive bent.\n\n-----------\n\n");
-    //         PreviousMoveID = BattleMon_GetPreviousMoveID(a2->defender);
-    //         if (PreviousMoveID && !PML_MoveIsDamaging(PreviousMoveID))
-    //         {
-    //             a2->param = AIGetMoveParam(a2, PreviousMoveID, MVDATA_CATEGORY);
-    //         }
-    //         else
-    //         {
-    //             a2->param = CheckTargetMoves(a2->defender);
-    //         }
+        k::Printf("\n\n--------\n\nWe are in the AI Function for checking the target's previous move category, which has been updated to check their general offensive bent.\n\n-----------\n\n");
+        PreviousMoveID = BattleMon_GetPreviousMoveID(a2->defender);
+        if (PreviousMoveID && !PML_MoveIsDamaging(PreviousMoveID))
+        {
+            a2->param = AIGetMoveParam(a2, PreviousMoveID, MVDATA_CATEGORY);
+        }
+        else
+        {
+            a2->param = CheckTargetMoves(a2->defender);
+        }
 
-    //         return a2->result;
-    //     }
+        return a2->result;
+    }
 
-    //     /*
+    /*
 
-    //         --------------------------------------------------------------------------------------------------
-    //         -------------------------- CHECK FOR KILLING BLOWS (FOR SETUP) -----------------------------------
-    //         --------------------------------------------------------------------------------------------------
+        --------------------------------------------------------------------------------------------------
+        -------------------------- CHECK FOR KILLING BLOWS (FOR SETUP) -----------------------------------
+        --------------------------------------------------------------------------------------------------
 
-    //         Checks each pokemon in front of them to see if they can kill them with any of their moves.
-    //         If the target is faster than the user, and the setup move they're using doesn't boost speed past the
-    //         target, then checks for even 50% damage.
+        Checks each pokemon in front of them to see if they can kill them with any of their moves.
+        If the target is faster than the user, and the setup move they're using doesn't boost speed past the
+        target, then checks for even 50% damage.
 
-    //     */
+        Originally:
+            AI072_Nop
 
-    //     int multiplySpeed(int moveID, int speed)
-    //     {
-    //         if (moveID == MOVE097_AGILITY || moveID == MOVE504_SHELL_SMASH || moveID == MOVE475_AUTOTOMIZE || moveID == MOVE397_ROCK_POLISH || moveID == MOVE366_TAILWIND || moveID == MOVE508_SHIFT_GEAR)
-    //         {
-    //             return speed * 2;
-    //         }
-    //         else if (moveID == MOVE289_VICTORY_DANCE || moveID == MOVE483_QUIVER_DANCE || moveID == MOVE349_DRAGON_DANCE || moveID == MOVE488_FLAME_CHARGE || moveID == MOVE104_DOUBLE_TEAM)
-    //         {
-    //             return speed * 1.5;
-    //         }
-    //         else
-    //         {
-    //             return speed;
-    //         }
-    //     }
+    */
 
-    //     int THUMB_BRANCH_AI072_Nop(void *a1, TrainerAIEnv *a2)
-    //     {
-    //         __int16 ExistFrontPokePos; // r0
-    //         unsigned int pokeCount;
-    //         BattleMon *defender;
-    //         u8 opposingPokePos[5];
-    //         unsigned int k;
+    int multiplySpeed(int moveID, int speed)
+    {
+        if (moveID == MOVE097_AGILITY || moveID == MOVE504_SHELL_SMASH || moveID == MOVE475_AUTOTOMIZE || moveID == MOVE397_ROCK_POLISH || moveID == MOVE366_TAILWIND || moveID == MOVE508_SHIFT_GEAR)
+        {
+            return speed * 2;
+        }
+        else if (moveID == MOVE289_VICTORY_DANCE || moveID == MOVE483_QUIVER_DANCE || moveID == MOVE349_DRAGON_DANCE || moveID == MOVE488_FLAME_CHARGE || moveID == MOVE104_DOUBLE_TEAM)
+        {
+            return speed * 1.5;
+        }
+        else
+        {
+            return speed;
+        }
+    }
 
-    //         ExistFrontPokePos = Handler_GetExistFrontPokePos(a2->serverFlow, (int)a2->attacker->ID);
-    //         pokeCount = Handler_ExpandPokeID(a2->serverFlow, ExistFrontPokePos | 0x100, opposingPokePos);
+    int THUMB_BRANCH_AI072_WillUserFaint_Setup(void *a1, TrainerAIEnv *a2)
+    {
+        __int16 ExistFrontPokePos; // r0
+        unsigned int pokeCount;
+        BattleMon *defender;
+        u8 opposingPokePos[5];
+        unsigned int k;
 
-    //         k::Printf("\n\n--------\n\nWe are in the AI Function for checking target's possible damage when using a set up move.\n\n-----------\n\n");
-    //         for (k = 0; k < pokeCount; (k + 1))
-    //         {
-    //             int i = 0;
-    //             defender = Handler_GetBattleMon(a2->serverFlow, opposingPokePos[k]);
-    //             int MoveCount = BattleMon_GetMoveCount(defender);
-    //             int currentHp = BattleMon_GetValue(a2->attacker, VALUE_CURRENT_HP);
-    //             k::Printf("\nCheck %d\n", k);
-    //             do
-    //             {
-    //                 int damage = Handler_SimulationDamage(a2->serverFlow,
-    //                                                       BattleMon_GetID(defender),
-    //                                                       BattleMon_GetID(a2->attacker),
-    //                                                       Move_GetID(defender, i), false, false);
+        ExistFrontPokePos = Handler_GetExistFrontPokePos(a2->serverFlow, (int)a2->attacker->ID);
+        pokeCount = Handler_ExpandPokeID(a2->serverFlow, ExistFrontPokePos | 0x100, opposingPokePos);
 
-    //                 // If the target is faster the the Pokemon using the set up move, doubles the damage
-    //                 // now checking for a 2HKO
-    //                 if (Handler_CalculateSpeed(a2->serverFlow, defender, 1) > multiplySpeed(a2->moveID, Handler_CalculateSpeed(a2->serverFlow, a2->attacker, 1)))
-    //                 {
-    //                     damage *= 2;
-    //                 }
+        k::Printf("\n\n--------\n\nWe are in the AI Function for checking target's possible damage when using a set up move.\n\n-----------\n\n");
+        for (k = 0; k < pokeCount; (k + 1))
+        {
+            int i = 0;
+            defender = Handler_GetBattleMon(a2->serverFlow, opposingPokePos[k]);
+            int MoveCount = BattleMon_GetMoveCount(defender);
+            int currentHp = BattleMon_GetValue(a2->attacker, VALUE_CURRENT_HP);
+            k::Printf("\nCheck %d\n", k);
+            do
+            {
+                int damage = Handler_SimulationDamage(a2->serverFlow,
+                                                      BattleMon_GetID(defender),
+                                                      BattleMon_GetID(a2->attacker),
+                                                      Move_GetID(defender, i), false, false);
 
-    //                 // If currentHP is less than or equal to damage, performs the jump
-    //                 if (AIConditionalJump(a1, 6, currentHp, damage))
-    //                 {
-    //                     k = pokeCount;
-    //                     break;
-    //                 }
+                // If the target is faster the the Pokemon using the set up move, doubles the damage
+                // now checking for a 2HKO
+                if (Handler_CalculateSpeed(a2->serverFlow, defender, 1) > multiplySpeed(a2->moveID, Handler_CalculateSpeed(a2->serverFlow, a2->attacker, 1)))
+                {
+                    damage *= 2;
+                }
 
-    //                 // Else, incremenets and checks the next move.
-    //                 i++;
-    //             } while (i < MoveCount);
-    //         }
-    //         return a2->result;
-    //     }
+                // If currentHP is less than or equal to damage, performs the jump
+                if (AIConditionalJump(a1, 6, currentHp, damage))
+                {
+                    k = pokeCount;
+                    break;
+                }
 
-    //     /*
+                // Else, incremenets and checks the next move.
+                i++;
+            } while (i < MoveCount);
+        }
+        return a2->result;
+    }
 
-    //         --------------------------------------------------------------------------------------------------
-    //         -------------------------- CHECK FOR KILLING BLOWS (FOR PRIORITY) --------------------------------
-    //         --------------------------------------------------------------------------------------------------
+    /*
 
-    //         Checks each pokemon in front of them to see if they can kill them with any of their moves.
-    //         This is used to increase the score for priority moves if the user is slower than the target.
+        --------------------------------------------------------------------------------------------------
+        -------------------------- CHECK FOR KILLING BLOWS (FOR PRIORITY) --------------------------------
+        --------------------------------------------------------------------------------------------------
 
-    //     */
+        Checks each pokemon in front of them to see if they can kill them with any of their moves.
+        This is used to increase the score for priority moves if the user is slower than the target.
 
-    //     int THUMB_BRANCH_AI104_Nop(void *a1, TrainerAIEnv *a2)
-    //     {
+        Originally:
+            AI104_Nop
+    */
 
-    //         __int16 ExistFrontPokePos; // r0
-    //         unsigned int pokeCount;
-    //         BattleMon *defender;
-    //         u8 opposingPokePos[5];
-    //         unsigned int k;
+    int THUMB_BRANCH_AI104_CheckDamageForPriority(void *a1, TrainerAIEnv *a2)
+    {
 
-    //         int moveId = a2->moveID;
+        __int16 ExistFrontPokePos; // r0
+        unsigned int pokeCount;
+        BattleMon *defender;
+        u8 opposingPokePos[5];
+        unsigned int k;
 
-    //         ExistFrontPokePos = Handler_GetExistFrontPokePos(a2->serverFlow, (int)a2->attacker->ID);
-    //         pokeCount = Handler_ExpandPokeID(a2->serverFlow, ExistFrontPokePos | 0x100, opposingPokePos);
-    //         k::Printf("\n\n--------\n\nWe are in the AI Function for checking target's possible damage when using a priority move.\n\n-----------\n\n");
-    //         for (k = 0; k < pokeCount; (k + 1))
-    //         {
-    //             int i = 0;
-    //             defender = Handler_GetBattleMon(a2->serverFlow, opposingPokePos[k]);
-    //             int MoveCount = BattleMon_GetMoveCount(defender);
-    //             int currentHp = BattleMon_GetValue(a2->attacker, VALUE_CURRENT_HP);
-    //             k::Printf("\nCheck %d\n", k);
-    //             do
-    //             {
-    //                 int damage = Handler_SimulationDamage(a2->serverFlow,
-    //                                                       BattleMon_GetID(defender),
-    //                                                       BattleMon_GetID(a2->attacker),
-    //                                                       Move_GetID(defender, i), false, false);
+        int moveId = a2->moveID;
 
-    //                 // If currentHP is less than or equal to damage, performs the jump
-    //                 if (AIConditionalJump(a1, 6, currentHp, damage))
-    //                 {
-    //                     k = pokeCount;
-    //                     break;
-    //                 }
+        ExistFrontPokePos = Handler_GetExistFrontPokePos(a2->serverFlow, (int)a2->attacker->ID);
+        pokeCount = Handler_ExpandPokeID(a2->serverFlow, ExistFrontPokePos | 0x100, opposingPokePos);
+        k::Printf("\n\n--------\n\nWe are in the AI Function for checking target's possible damage when using a priority move.\n\n-----------\n\n");
+        for (k = 0; k < pokeCount; (k + 1))
+        {
+            int i = 0;
+            defender = Handler_GetBattleMon(a2->serverFlow, opposingPokePos[k]);
+            int MoveCount = BattleMon_GetMoveCount(defender);
+            int currentHp = BattleMon_GetValue(a2->attacker, VALUE_CURRENT_HP);
+            k::Printf("\nCheck %d\n", k);
+            do
+            {
+                int damage = Handler_SimulationDamage(a2->serverFlow,
+                                                      BattleMon_GetID(defender),
+                                                      BattleMon_GetID(a2->attacker),
+                                                      Move_GetID(defender, i), false, false);
 
-    //                 // Else, incremenets and checks the next move.
-    //                 i++;
-    //             } while (i < MoveCount);
-    //         }
-    //         return a2->result;
-    //     }
+                // If currentHP is less than or equal to damage, performs the jump
+                if (AIConditionalJump(a1, 6, currentHp, damage))
+                {
+                    k = pokeCount;
+                    break;
+                }
 
-    //     /*
+                // Else, incremenets and checks the next move.
+                i++;
+            } while (i < MoveCount);
+        }
+        return a2->result;
+    }
 
-    //         --------------------------------------------------------------------------------------------------
-    //         ------------------------- CHECK ENEMY DAMAGE OUTPUT (FOR SETUP) ----------------------------------
-    //         --------------------------------------------------------------------------------------------------
+    /*
 
-    //         Checks each pokemon in front of them to see if they can deal meaningful damage (33% of maximum health).
-    //         This is used to potential increase the score for setup moves vs. enemies that cannot really hurt them.
-    //     */
+        --------------------------------------------------------------------------------------------------
+        ------------------------- CHECK ENEMY DAMAGE OUTPUT (FOR SETUP) ----------------------------------
+        --------------------------------------------------------------------------------------------------
 
-    //     int THUMB_BRANCH_AI060_Nop(void *a1, TrainerAIEnv *a2)
-    //     {
-    //         __int16 ExistFrontPokePos; // r0
-    //         unsigned int pokeCount;
-    //         u8 opposingPokePos[5];
-    //         BattleMon *defender;
-    //         unsigned int k;
+        Checks each pokemon in front of them to see if they can deal meaningful damage (33% of maximum health).
+        This is used to potential increase the score for setup moves vs. enemies that cannot really hurt them.
 
-    //         ExistFrontPokePos = Handler_GetExistFrontPokePos(a2->serverFlow, (int)a2->attacker->ID);
-    //         pokeCount = Handler_ExpandPokeID(a2->serverFlow, ExistFrontPokePos | 0x100, opposingPokePos);
+        Originally:
+            AI060_Nop
+    */
+    int THUMB_BRANCH_AI060_TargetDealsNegligibleDamage_Setup(void *a1, TrainerAIEnv *a2)
+    {
+        __int16 ExistFrontPokePos; // r0
+        unsigned int pokeCount;
+        u8 opposingPokePos[5];
+        BattleMon *defender;
+        unsigned int k = 0x3C;
+        ExistFrontPokePos = Handler_GetExistFrontPokePos(a2->serverFlow, (int)a2->attacker->ID);
+        pokeCount = Handler_ExpandPokeID(a2->serverFlow, ExistFrontPokePos | 0x100, opposingPokePos);
 
-    //         k::Printf("\n\n--------\n\nWe are in the AI Function for checking target's possible damage when using a set up move for negligible damage.\n\n-----------\n\n");
-    //         for (k = 0; k < pokeCount; (k + 1))
-    //         {
-    //             int i = 0;
-    //             defender = Handler_GetBattleMon(a2->serverFlow, opposingPokePos[k]);
-    //             int MoveCount = BattleMon_GetMoveCount(defender);
-    //             // int currentHp = BattleMon_GetValue(a2->attacker, VALUE_CURRENT_HP);
-    //             int currentHp = DivideMaxHPZeroCheck(a2->attacker, 3u);
-    //             k::Printf("\nCheck %d\n", k);
-    //             do
-    //             {
-    //                 int damage = Handler_SimulationDamage(a2->serverFlow,
-    //                                                       BattleMon_GetID(defender),
-    //                                                       BattleMon_GetID(a2->attacker),
-    //                                                       Move_GetID(defender, i), false, false);
+        k::Printf("\n\n--------\n\nWe are in the AI Function for checking target's possible damage when using a set up move for negligible damage.\n\n-----------\n\n");
+        for (k = 0; k < pokeCount; (k + 1))
+        {
+            int i = 0;
+            defender = Handler_GetBattleMon(a2->serverFlow, opposingPokePos[k]);
+            int MoveCount = BattleMon_GetMoveCount(defender);
+            // int currentHp = BattleMon_GetValue(a2->attacker, VALUE_CURRENT_HP);
+            int currentHp = DivideMaxHPZeroCheck(a2->attacker, 3u);
+            k::Printf("\nCheck %d\n", k);
+            do
+            {
+                int damage = Handler_SimulationDamage(a2->serverFlow,
+                                                      BattleMon_GetID(defender),
+                                                      BattleMon_GetID(a2->attacker),
+                                                      Move_GetID(defender, i), false, false);
 
-    //                 // If currentHP is less than or equal to damage, performs the jump
-    //                 if (AIConditionalJump(a1, 6, currentHp, damage))
-    //                 {
-    //                     k = pokeCount;
-    //                     break;
-    //                 }
+                // If currentHP is less than or equal to damage, performs the jump
+                if (AIConditionalJump(a1, 6, currentHp, damage))
+                {
+                    k = pokeCount;
+                    break;
+                }
 
-    //                 // Else, incremenets and checks the next move.
-    //                 i++;
-    //             } while (i < MoveCount);
-    //         }
-    //         return a2->result;
-    //     }
+                // Else, incremenets and checks the next move.
+                i++;
+            } while (i < MoveCount);
+        }
+        return a2->result;
+    }
 
-    //     /*
+    /*
 
-    //         --------------------------------------------------------------------------------------------------
-    //         ------------------------- CHECK ENEMY DAMAGE OUTPUT (FOR DEBUFFS) --------------------------------
-    //         --------------------------------------------------------------------------------------------------
+        --------------------------------------------------------------------------------------------------
+        ------------------------- CHECK ENEMY DAMAGE OUTPUT (FOR DEBUFFS) --------------------------------
+        --------------------------------------------------------------------------------------------------
 
-    //         Checks to see if the target in front of them can deal meaningful damage.
-    //         25% is the current arbitrary point set at which the AI will stop bothering with debuffing moves.
-    //         Iterates through each move the target has and calcs against the user.
-    //     */
+        Checks to see if the target in front of them can deal meaningful damage.
+        25% is the current arbitrary point set at which the AI will stop bothering with debuffing moves.
+        Iterates through each move the target has and calcs against the user.
 
-    //     int THUMB_BRANCH_AI062_Nop(void *a1, TrainerAIEnv *a2)
-    //     {
-    //         int i = 0;
-    //         int MoveCount = BattleMon_GetMoveCount(a2->defender);
-    //         int currentHp = DivideMaxHPZeroCheck(a2->attacker, 4u);
-    //         // BattleMon_GetValue(a2->attacker, VALUE_CURRENT_HP);
-    //         k::Printf("\n\n--------\n\nWe are in the AI Function for checking user's possible damage when using debuff moves.\n\n-----------\n\n");
-    //         do
-    //         {
-    //             k::Printf("\nCheck %d\n", i);
-    //             int damage = Handler_SimulationDamage(a2->serverFlow,
-    //                                                   BattleMon_GetID(a2->defender),
-    //                                                   BattleMon_GetID(a2->attacker),
-    //                                                   Move_GetID(a2->defender, i), false, false);
+        Originally:
+            AI062_Nop
+    */
+    int THUMB_BRANCH_AI062_CheckEnemyDamageOutput_Debuffs(void *a1, TrainerAIEnv *a2)
+    {
+        int i = 0;
+        int MoveCount = BattleMon_GetMoveCount(a2->defender);
+        int currentHp = DivideMaxHPZeroCheck(a2->attacker, 4u);
+        // BattleMon_GetValue(a2->attacker, VALUE_CURRENT_HP);
+        k::Printf("\n\n--------\n\nWe are in the AI Function for checking user's possible damage when using debuff moves.\n\n-----------\n\n");
+        do
+        {
+            k::Printf("\nCheck %d\n", i);
+            int damage = Handler_SimulationDamage(a2->serverFlow,
+                                                  BattleMon_GetID(a2->defender),
+                                                  BattleMon_GetID(a2->attacker),
+                                                  Move_GetID(a2->defender, i), false, false);
 
-    //             // If currentHP is less than or equal to damage, performs the jump
-    //             if (AIConditionalJump(a1, 6, currentHp, damage))
-    //             {
-    //                 break;
-    //             }
+            // If currentHP is less than or equal to damage, performs the jump
+            if (AIConditionalJump(a1, 6, currentHp, damage))
+            {
+                break;
+            }
 
-    //             // Else, incremenets and checks the next move.
-    //             i++;
-    //         } while (i < MoveCount);
+            // Else, incremenets and checks the next move.
+            i++;
+        } while (i < MoveCount);
 
-    //         return a2->result;
-    //     }
+        return a2->result;
+    }
 
-    //     /*
+    /*
 
-    //         --------------------------------------------------------------------------------------------------
-    //         ------------------------------------ CHECK SLEEP TURNS -------------------------------------------
-    //         --------------------------------------------------------------------------------------------------
+        --------------------------------------------------------------------------------------------------
+        ------------------------------------ CHECK SLEEP TURNS -------------------------------------------
+        --------------------------------------------------------------------------------------------------
 
-    //         Checks to see if the number of remaining sleep turns is greater than one.
-    //         Used for Sleep Talk, Snore, etc.
-    //     */
+        Checks to see if the number of remaining sleep turns is greater than one.
+        Used for Sleep Talk, Snore, etc.
 
-    //     int THUMB_BRANCH_AI102_Nop(void *a1, TrainerAIEnv *a2)
-    //     {
-    //         BattleMon *attacker;
-    //         attacker = a2->attacker;
-    //         k::Printf("\n\n--------\n\nWe are in the AI Function for checking user's remaining sleep turns.\n\n-----------\n\n");
-    //         if (BattleMon_CheckIfMoveCondition(attacker, CONDITION_SLEEP))
-    //         {
-    //             // checks that param 3 is less than param 4
-    //             AIConditionalJump(a1, 0, attacker->MoveConditionCounter[CONDITION_SLEEP] + 1, Condition_GetTurnMax(&attacker->Conditions[CONDITION_SLEEP]));
-    //         }
-    //         return a2->result;
-    //     }
+        Originally:
+            AI102_Nop
+    */
+    int THUMB_BRANCH_AI102_CheckRemainingSleepTurns(void *a1, TrainerAIEnv *a2)
+    {
+        BattleMon *attacker;
+        attacker = a2->attacker;
+        k::Printf("\n\n--------\n\nWe are in the AI Function for checking user's remaining sleep turns.\n\n-----------\n\n");
+        if (BattleMon_CheckIfMoveCondition(attacker, CONDITION_SLEEP))
+        {
+            // checks that param 3 is less than param 4
+            AIConditionalJump(a1, 0, attacker->MoveConditionCounter[CONDITION_SLEEP] + 1, Condition_GetTurnMax(&attacker->Conditions[CONDITION_SLEEP]));
+        }
+        return a2->result;
+    }
 
-    //     /*
+    /*
 
-    //         --------------------------------------------------------------------------------------------------
-    //         ----------------------------- CHECK SPEED AGAINST MULTIPLES --------------------------------------
-    //         --------------------------------------------------------------------------------------------------
+        --------------------------------------------------------------------------------------------------
+        ----------------------------- CHECK SPEED AGAINST MULTIPLES --------------------------------------
+        --------------------------------------------------------------------------------------------------
 
-    //         This function checks the speed of every enemy pokemon on the field, rather than just the one in front of them.
-    //     */
+        This function checks the speed of every enemy pokemon on the field, rather than just the one in front of them.
 
-    //     int THUMB_BRANCH_AI103_Nop(void *a1, TrainerAIEnv *a2)
-    //     {
-    //         __int16 ExistFrontPokePos; // r0
-    //         unsigned int pokeCount;
-    //         u8 opposingPokePos[5];
-    //         BattleMon *defender;
-    //         unsigned int k;
+        Originally: 
+            AI103_Nop
+    */
+    int THUMB_BRANCH_AI103_CheckAllPokemonSpeed(void *a1, TrainerAIEnv *a2)
+    {
+        __int16 ExistFrontPokePos; // r0
+        unsigned int pokeCount;
+        u8 opposingPokePos[5];
+        BattleMon *defender;
+        unsigned int k;
 
-    //         ExistFrontPokePos = Handler_GetExistFrontPokePos(a2->serverFlow, (int)a2->attacker->ID);
-    //         pokeCount = Handler_ExpandPokeID(a2->serverFlow, ExistFrontPokePos | 0x100, opposingPokePos);
-    //         k::Printf("\n\n--------\n\nWe are in the AI Function for checking user's speed against multiple enemies.\n\n-----------\n\n");
-    //         for (k = 0; k < pokeCount; (k + 1))
-    //         {
-    //             k::Printf("\nCheck %d\n", k);
-    //             int i = 0;
-    //             defender = Handler_GetBattleMon(a2->serverFlow, opposingPokePos[k]);
+        ExistFrontPokePos = Handler_GetExistFrontPokePos(a2->serverFlow, (int)a2->attacker->ID);
+        pokeCount = Handler_ExpandPokeID(a2->serverFlow, ExistFrontPokePos | 0x100, opposingPokePos);
+        k::Printf("\n\n--------\n\nWe are in the AI Function for checking user's speed against multiple enemies.\n\n-----------\n\n");
+        for (k = 0; k < pokeCount; (k + 1))
+        {
+            k::Printf("\nCheck %d\n", k);
+            int i = 0;
+            defender = Handler_GetBattleMon(a2->serverFlow, opposingPokePos[k]);
 
-    //             if (Handler_CalculateSpeed(a2->serverFlow, defender, 1) > Handler_CalculateSpeed(a2->serverFlow, a2->attacker, 1))
-    //             {
-    //                 AIConditionalJump(a1, 0, 1, 2);
-    //             }
-    //         }
-    //         return a2->result;
-    //     }
+            if (Handler_CalculateSpeed(a2->serverFlow, defender, 1) > Handler_CalculateSpeed(a2->serverFlow, a2->attacker, 1))
+            {
+                AIConditionalJump(a1, 0, 1, 2);
+            }
+        }
+        return a2->result;
+    }
 
 #pragma endregion
 
