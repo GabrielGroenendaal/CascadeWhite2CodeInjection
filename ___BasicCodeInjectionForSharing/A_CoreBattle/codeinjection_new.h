@@ -623,6 +623,6 @@ extern void HandlerOwnTempoActionEnd(int a1, ServerFlow *a2, int a3);
 extern void HandlerOwnTempoAddStatusFailed(int a1, ServerFlow *a2, int a3, int *a4);
 extern void HandlerOwnTempoCureStatus(int a1, ServerFlow *a2, unsigned int *a3);
 extern void HandlerOwnTempoStatus(int a1, int a2, int a3, int *a4);
-
-
+extern u8 PokeParty_GetNature(PartyPkm *pPkm);
+extern u16 adjustStatForNature(u16 nature, u16 statValue, int stat);
 C_DECL_END

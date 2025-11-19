@@ -592,23 +592,24 @@ extern "C"
     }
 
 #pragma endregion
-#pragma region Unaware
 
-    ABILITY_TRIGGERTABLE UnawareHandlers[] = {
-        {EVENT_MOVE_ACCURACY_STAGE, (ABILITY_HANDLER_FUNC)HandlerUnawareHitRank}, // 41
-        {EVENT_BEFORE_ATTACKER_POWER, (ABILITY_HANDLER_FUNC)HandlerUnawareAttackRank},
-        {EVENT_BEFORE_DEFENDER_GUARD, (ABILITY_HANDLER_FUNC)HandlerUnawareDefenseRank},
-        {EVENT_ADD_CONDITION_CHECK_FAIL, (ABILITY_HANDLER_FUNC)HandlerOwnTempoStatus},
-        {EVENT_ADD_CONDITION_FAIL, (ABILITY_HANDLER_FUNC)HandlerOwnTempoAddStatusFailed},
-        {EVENT_AFTER_ABILITY_CHANGE, (ABILITY_HANDLER_FUNC)HandlerOwnTempoCureStatus},
-        {EVENT_ACTION_PROCESSING_END, (ABILITY_HANDLER_FUNC)HandlerOwnTempoActionEnd},
-    };
-    ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddUnaware(_DWORD *a1)
-    {
-        *a1 = 7;
-        return UnawareHandlers;
-    }
-#pragma endregion
+// #pragma region Unaware
+
+//     ABILITY_TRIGGERTABLE UnawareHandlers[] = {
+//         {EVENT_MOVE_ACCURACY_STAGE, (ABILITY_HANDLER_FUNC)HandlerUnawareHitRank}, // 41
+//         {EVENT_BEFORE_ATTACKER_POWER, (ABILITY_HANDLER_FUNC)HandlerUnawareAttackRank},
+//         {EVENT_BEFORE_DEFENDER_GUARD, (ABILITY_HANDLER_FUNC)HandlerUnawareDefenseRank},
+//         {EVENT_ADD_CONDITION_CHECK_FAIL, (ABILITY_HANDLER_FUNC)HandlerOwnTempoStatus},
+//         {EVENT_ADD_CONDITION_FAIL, (ABILITY_HANDLER_FUNC)HandlerOwnTempoAddStatusFailed},
+//         {EVENT_AFTER_ABILITY_CHANGE, (ABILITY_HANDLER_FUNC)HandlerOwnTempoCureStatus},
+//         {EVENT_ACTION_PROCESSING_END, (ABILITY_HANDLER_FUNC)HandlerOwnTempoActionEnd},
+//     };
+//     ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddUnaware(_DWORD *a1)
+//     {
+//         *a1 = 7;
+//         return UnawareHandlers;
+//     }
+// #pragma endregion
 
 #pragma region Filter/Solid Rock
     void THUMB_BRANCH_HandlerSolidRock(int a1, int a2, int a3)

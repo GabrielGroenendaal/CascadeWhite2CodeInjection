@@ -302,6 +302,117 @@ extern "C"
 
 #pragma endregion
 
+#pragma region ShedinjaFix
+    void THUMB_BRANCH_PokeParty_RecalcStatsCore(PartyPkm *pPkm)
+    {
+        u32 Param;           // r6
+        signed __int32 v3;   // r7
+        signed __int32 v4;   // r5
+        u32 v5;              // r0
+        u16 v6;              // r5
+        u16 Nature;          // r0
+        u32 v8;              // r0
+        u16 v9;              // r5
+        u16 v10;             // r0
+        u32 v11;             // r0
+        u16 v12;             // r5
+        u16 v13;             // r0
+        u32 v14;             // r0
+        u16 v15;             // r5
+        u16 v16;             // r0
+        u32 v17;             // r0
+        u16 v18;             // r5
+        u16 v19;             // r0
+        u32 v20;             // r0
+        signed __int32 data; // [sp+0h] [bp-58h]
+        PersonalData *BW2;   // [sp+4h] [bp-54h]
+        u32 v23;             // [sp+8h] [bp-50h]
+        signed __int32 v24;  // [sp+Ch] [bp-4Ch]
+        signed __int32 v25;  // [sp+10h] [bp-48h]
+        signed __int32 v26;  // [sp+14h] [bp-44h]
+        signed __int32 v27;  // [sp+18h] [bp-40h]
+        signed __int32 v28;  // [sp+1Ch] [bp-3Ch]
+        u32 v29;             // [sp+20h] [bp-38h]
+        u32 v30;             // [sp+24h] [bp-34h]
+        u32 v31;             // [sp+28h] [bp-30h]
+        u32 v32;             // [sp+2Ch] [bp-2Ch]
+        u32 v33;             // [sp+30h] [bp-28h]
+        u32 v34;             // [sp+34h] [bp-24h]
+        u32 v35;             // [sp+38h] [bp-20h]
+        u16 v36;             // [sp+40h] [bp-18h]
+
+        Param = PokeParty_GetParam(pPkm, PF_Level, 0);
+        v34 = PokeParty_GetParam(pPkm, PF_MaxHP, 0);
+        v3 = PokeParty_GetParam(pPkm, PF_NowHP, 0);
+        v35 = PokeParty_GetParam(pPkm, PF_IvHP, 0);
+        v4 = PokeParty_GetParam(pPkm, PF_EvHP, 0);
+        v33 = PokeParty_GetParam(pPkm, PF_IvATK, 0);
+        v28 = PokeParty_GetParam(pPkm, PF_EvATK, 0);
+        v32 = PokeParty_GetParam(pPkm, PF_IvDEF, 0);
+        v27 = PokeParty_GetParam(pPkm, PF_EvDEF, 0);
+        v31 = PokeParty_GetParam(pPkm, PF_IvSPE, 0);
+        v26 = PokeParty_GetParam(pPkm, PF_EvSPE, 0);
+        v30 = PokeParty_GetParam(pPkm, PF_IvSPA, 0);
+        v25 = PokeParty_GetParam(pPkm, PF_EvSPA, 0);
+        v29 = PokeParty_GetParam(pPkm, PF_IvSPD, 0);
+        v24 = PokeParty_GetParam(pPkm, PF_EvSPD, 0);
+        v36 = PokeParty_GetParam(pPkm, PF_Forme, 0);
+        v23 = PokeParty_GetParam(pPkm, PF_Species, 0);
+        BW2 = PML_PersonalLoadBW2(v23, v36);
+        if (v23 == 292)
+        {
+            v5 = 1;
+        }
+        else
+        {
+            v5 = Param + ((v4 / 4 + v35 + 2 * BW2->BaseHP) * Param) / 100 + 10;
+        }
+        data = v5;
+        PokeParty_SetParam(pPkm, PF_MaxHP, v5);
+        v6 = ((v28 / 4 + v33 + 2 * BW2->BaseATK) * Param) / 100 + 5;
+        Nature = PokeParty_GetNature(pPkm);
+        v8 = adjustStatForNature(Nature, v6, 1);
+        PokeParty_SetParam(pPkm, PF_ATK, v8);
+        v9 = ((v27 / 4 + v32 + 2 * BW2->BaseDEF) * Param) / 100 + 5;
+        v10 = PokeParty_GetNature(pPkm);
+        v11 = adjustStatForNature(v10, v9, 2);
+        PokeParty_SetParam(pPkm, PF_DEF, v11);
+        v12 = ((v26 / 4 + v31 + 2 * BW2->BaseSPE) * Param) / 100 + 5;
+        v13 = PokeParty_GetNature(pPkm);
+        v14 = adjustStatForNature(v13, v12, 5);
+        PokeParty_SetParam(pPkm, PF_SPE, v14);
+        v15 = ((v25 / 4 + v30 + 2 * BW2->BaseSPA) * Param) / 100 + 5;
+        v16 = PokeParty_GetNature(pPkm);
+        v17 = adjustStatForNature(v16, v15, 3);
+        PokeParty_SetParam(pPkm, PF_SPA, v17);
+        v18 = ((v24 / 4 + v29 + 2 * BW2->BaseSPD) * Param) / 100 + 5;
+        v19 = PokeParty_GetNature(pPkm);
+        v20 = adjustStatForNature(v19, v18, 4);
+        PokeParty_SetParam(pPkm, PF_SPD, v20);
+        if (v3 || !v34)
+        {
+            if (v3)
+            {
+                if ((data - v34) >= 0)
+                {
+                    v3 += data - v34;
+                }
+                else if (v3 > data)
+                {
+                    v3 = data;
+                }
+            }
+            else
+            {
+                v3 = data;
+            }
+        }
+        if (v3)
+        {
+            PokeParty_SetParam(pPkm, PF_NowHP, v3);
+        }
+    }
+#pragma end region
 #pragma region NewUIChanges
     enum BottomScreenMenuState
     {

@@ -1,0 +1,136 @@
+	JumpIfTargetIsAlly(&EndOfScriptEnd)
+	GetMove()
+	JumpIfStoredIsInList(&setup_moves, &setup_moves_script)
+	JumpIfStoredIsInList(&setup_moves_speed, &setup_moves_speed_script)
+	JumpIfStoredIsInList(&debuff_moves, &debuff_moves_script)
+	JumpIfStoredIsInList(&debuff_moves_save, &debuff_moves_save_script)
+	JumpIfMoveEffectEQ(move_ef.increased_priority, &address_Priority)
+
+setup_moves_script:
+	JumpIfUserWillFaint(&deprioritize_address)
+	JumpIfUserWillTakeLowDamage(&high_chance_to_prioritize)
+	EndScript()
+
+setup_moves_speed_script:
+	JumpNumber104(&deprioritize_address)
+	JumpIfUserWillTakeLowDamage(&high_chance_to_prioritize)
+	EndScript()
+
+
+debuff_moves_script:
+	JumpIfUserWillFaint(&high_chance_to_deprioritize)
+	JumpIfUserWillTakeLowDamageFromTarget(&high_chance_to_deprioritize)
+	EndScript()
+
+debuff_moves_save_script:
+	JumpCompareSpeed(GT, &debuff_compareSpeed)
+	JumpIfRandLT(102, &debuff_compareSpeed)
+	AddToScore(-2)
+
+debuff_compareSpeed:
+	JumpIfUserWillTakeLowDamageFromTarget(&high_chance_to_deprioritize)
+	EndScript()
+
+
+address_Priority:
+	JumpIfUserWillFaint(&priorityCheckSpeed)
+	EndScript()
+
+priorityCheckSpeed:
+	JumpNumber103(&priorityPrioritize)
+	EndScript()
+
+priorityPrioritize:
+	JumpIfRandLT(39, &EndOfScriptEnd)
+	AddToScore(10)
+	EndScript()
+
+
+high_chance_to_deprioritize:
+	JumpIfRandLT(204, &EndOfScriptEnd)
+	AddToScore(-2)
+	EndScript()
+
+high_chance_to_prioritize:
+	JumpIfRandLT(128, &EndOfScriptEnd)
+	AddToScore(2)
+	EndScript()
+
+deprioritize_address:
+	AddToScore(-10)
+	EndScript()
+
+EndOfScriptEnd:
+	EndScript()
+
+
+
+setup_moves:
+	move.swords_dance
+	move.growth
+	move.nasty_plot
+	move.calm_mind
+	move.work_up
+	move.howl
+	move.acupressure
+	move.hone_claws
+	move.meditate
+	move.focus_energy
+	move.amnesia
+	move.iron_defense
+	move.cosmic_power
+	move.cotton_guard
+	move.stockpile
+	move.bulk_up
+	move.belly_drum
+	move.coil 
+	move.barrier
+	move.acid_armor
+	move.defend_order
+	move.defense_curl
+	move.harden
+	move.minimize
+	move.tail_glow
+	END
+
+setup_moves_speed:
+	move.victory_dance
+	move.quiver_dance
+	move.dragon_dance
+	move.double_team
+	move.flame_charge
+	move.shift_gear
+	move.shell_smash
+	move.agility
+	move.rock_polish
+	move.autotomize
+	move.tailwind
+	END
+
+debuff_moves:
+	move.fake_tears
+	move.screech
+	move.leer
+	move.scary_face
+	move.string_shot
+	move.cotton_spore
+	move.sweet_scent
+	move.tail_whip
+	move.metal_sound
+	END
+
+debuff_moves_save:
+	move.charm
+	move.captivate
+	move.confide
+	move.growl
+	move.teeter_dance
+	move.tickle
+	move.smokescreen
+	move.eerie_impulse
+	move.feather_dance
+	move.confuse_ray
+	move.supersonic
+	move.swagger
+	move.flatter
+	END
