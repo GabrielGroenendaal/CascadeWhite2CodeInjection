@@ -348,13 +348,14 @@ address_0x055E:
 
 
 Label_0x0560:
-	JumpIfHasMoveWithEffect(attacker, move_ef.wake-up_slap, &address_0x05E2)
+	JumpIfHasMoveWithEffect(attacker, move_ef.dream_eater, &address_0x05E2)
 	JumpIfHasMoveWithEffect(attacker, move_ef.nightmare, &address_0x05E2)
 	JumpIfHasMoveWithEffect(defender, move_ef.sleep_talk, &address_0x05C6)
 	JumpIfHasMoveWithEffect(defender, move_ef.magic_coat, &address_0x05CC)
 	JumpIfHasMoveWithEffect(defender, move_ef.snore, &address_0x05CC)
 	GetAbilityGuess(defender)
 	JumpIfStoredEQ(ability.no_guard, &address_0x05E2)
+	JumpIfStoredEQ(ability.refrigerate, &address_0x05CC)
 	Jump(&address_0x05F2)
 
 address_0x05C6:
@@ -473,7 +474,7 @@ data_address_0x07BC:
 	move.sing
 	move.grass_whistle
 	move.shadow_punch
-	move.scorching_sands
+	move.sand_attack
 	move.smokescreen
 	move.toxic
 	move.guillotine
@@ -502,14 +503,14 @@ data_address_0x07BC:
 	move.swagger
 	move.torment
 	move.flatter
-	move.trick
+	move.weather_crash
 	move.superpower
 	move.skill_swap
 	move.psycho_shift
 	move.psyblade
 	move.clanging_scales
 	move.sucker_punch
-	move.boomburst
+	move.heart_swap
 	move.switcheroo
 	move.captivate
 	move.dark_void
@@ -1393,7 +1394,7 @@ address_0x1AD2:
 
 
 Label_0x1AD4:
-	JumpIfDoesNotHaveMove(attacker, move.alluring_voice, &address_0x1AF2)
+	JumpIfDoesNotHaveMove(attacker, move.focus_punch, &address_0x1AF2)
 	JumpIfRandLT(96, &address_0x1AF2)
 	AddToScore(1)
 
@@ -1690,13 +1691,8 @@ address_0x1FE0:
 
 
 Label_0x1FE2:
-	JumpNumber102(&Label_Sleeping)
+	JumpIfHasCondition(attacker, cond.sleep, &address_0x5DAC)
 	AddToScore(-5)
-	EndScript()
-
-
-Label_Sleeping:
-	AddToScore(10)
 	EndScript()
 
 
@@ -1800,6 +1796,35 @@ data_address_0x212E:
 	END
 
 Label_0x2196:
+	GetType(attacker_type1)
+	JumpIfStoredEQ(type.ghost, &address_0x2254)
+	GetType(attacker_type2)
+	JumpIfStoredEQ(type.ghost, &address_0x2254)
+	JumpIfStatStageGT(attacker, def, +3, &address_0x2268)
+	JumpIfHasMove(attacker, move.gyro_ball, &address_0x21EA)
+	JumpIfHasMove(attacker, move.trick_room, &address_0x21EA)
+	Jump(&address_0x21FA)
+
+address_0x21EA:
+	JumpIfRandLT(32, &address_0x220A)
+	AddToScore(1)
+
+address_0x21FA:
+	JumpIfRandLT(128, &address_0x220A)
+	AddToScore(1)
+
+address_0x220A:
+	JumpIfStatStageGT(attacker, def, +1, &address_0x2268)
+	JumpIfRandLT(128, &address_0x222C)
+	AddToScore(1)
+
+address_0x222C:
+	JumpIfStatStageGT(attacker, def, +0, &address_0x2268)
+	JumpIfRandLT(128, &address_0x2268)
+	AddToScore(1)
+	Jump(&address_0x2268)
+
+address_0x2254:
 	JumpIfHealthGT(attacker, 80, &address_0x2268)
 	AddToScore(-1)
 
@@ -1808,10 +1833,7 @@ address_0x2268:
 
 
 Label_0x226A:
-	JumpIfHasMove(defender, move.fly, &address_0x228C)
-	JumpIfHasMove(defender, move.dive, &address_0x228C)
-	JumpIfHasMove(defender, move.dig, &address_0x228C)
-	JumpIfHasMove(defender, move.bounce, &address_0x228C)
+	JumpIfHasMove(defender, move.confide, &address_0x228C)
 	JumpIfHasMove(defender, move.shadow_force, &address_0x228C)
 	Jump(&address_0x229C)
 
@@ -1821,7 +1843,7 @@ address_0x228C:
 
 address_0x229C:
 	GetProtectCount(attacker)
-	JumpIfStoredGT(0, &address_0x2400)
+	JumpIfStoredGT(1, &address_0x2400)
 	JumpIfBadlyPoisoned(attacker, &address_0x23F2)
 	JumpIfHasCondition(attacker, cond.curse, &address_0x23F2)
 	JumpIfHasCondition(attacker, cond.perish_song, &address_0x23F2)
@@ -1871,6 +1893,7 @@ address_0x2406:
 Label_0x2408:
 	JumpIfRandLT(128, &address_0x244A)
 	AddToScore(1)
+	JumpIfHasMove(attacker, move.roar, &address_0x243A)
 	JumpIfHasMove(attacker, move.whirlwind, &address_0x243A)
 	Jump(&address_0x244A)
 
@@ -2002,7 +2025,7 @@ address_0x26B6:
 	GetAbilityGuess(attacker)
 	JumpIfStoredEQ(ability.rain_dish, &address_0x2718)
 	JumpIfStoredEQ(ability.dry_skin, &address_0x2718)
-	JumpIfStoredNE(ability.hydration, &address_0x272A)
+	JumpIfStoredNE(ability.strong_jaw, &address_0x272A)
 	JumpIfHasAnyStatus(attacker, &address_0x2718)
 	Jump(&address_0x272A)
 
@@ -2025,7 +2048,7 @@ Label_0x272C:
 	JumpIfStoredEQ(weather.sand, &address_0x2784)
 	GetAbilityGuess(attacker)
 	JumpIfStoredEQ(ability.flower_gift, &address_0x2784)
-	JumpIfStoredNE(ability.leaf_guard, &address_0x2796)
+	JumpIfStoredNE(ability.fur_coat, &address_0x2796)
 	JumpIfHasAnyStatus(attacker, &address_0x2784)
 	Jump(&address_0x2796)
 
@@ -2447,7 +2470,7 @@ address_0x2FA0:
 	GetHeldItemEffect(defender)
 	JumpIfStoredIsInList(&data_address_0x3212, &address_0x2E52)
 	GetAbilityGuess(defender)
-	JumpIfStoredEQ(ability.water_veil, &address_0x3018)
+	JumpIfStoredEQ(ability.merciless, &address_0x3018)
 	JumpIfStoredEQ(ability.magic_guard, &address_0x3018)
 	JumpIfStoredEQ(ability.flare_boost, &address_0x3018)
 	JumpIfHasAnyStatus(defender, &address_0x3018)
@@ -2461,7 +2484,7 @@ address_0x2FA0:
 
 address_0x3018:
 	GetAbilityGuess(attacker)
-	JumpIfStoredEQ(ability.water_veil, &address_0x2E52)
+	JumpIfStoredEQ(ability.merciless, &address_0x2E52)
 	JumpIfStoredEQ(ability.magic_guard, &address_0x2E52)
 	JumpIfStoredEQ(ability.distracting, &address_0x5D5C)
 	JumpIfStoredEQ(ability.flare_boost, &address_0x2E52)
@@ -2640,7 +2663,7 @@ data_address_0x32B0:
 data_address_0x3314:
 	ability.shadow_tag
 	ability.arena_trap
-	ability.telepathy
+	ability.permafrost
 	ability.friend_guard
 	ability.own_tempo
 	END
@@ -2976,6 +2999,20 @@ address_0x38FC:
 
 
 Label_0x38FE:
+	JumpIfEffectivenessEQ(0x, &address_0x3930)
+	JumpIfEffectivenessEQ(1/2x, &address_0x3930)
+	JumpIfEffectivenessEQ(1/4x, &address_0x3930)
+	JumpIfHasCondition(defender, cond.sleep, &address_0x393C)
+	Jump(&address_0x3942)
+
+address_0x3930:
+	AddToScore(-1)
+	Jump(&address_0x3942)
+
+address_0x393C:
+	AddToScore(1)
+
+address_0x3942:
 	EndScript()
 
 
@@ -3177,13 +3214,9 @@ address_0x3CF0:
 
 
 Label_0x3CF2:
-	JumpIfMoveEQ(move.parting_shot, &LabelPivot)
-	JumpIfMoveEQ(move.teleport, &LabelPivot)
 	JumpIfEffectivenessEQ(0x, &address_0x3D2C)
 	JumpIfEffectivenessEQ(1/4x, &address_0x3D2C)
 	JumpIfEffectivenessEQ(1/2x, &address_0x3D2C)
-
-LabelPivot:
 	GetPartyReserveCount(attacker)
 	JumpIfStoredEQ(0, &address_0x3DCE)
 	JumpIfHasSuperEffectiveMove(&address_0x3D38)
@@ -3648,7 +3681,7 @@ data_address_0x4714:
 	move.sing
 	move.grass_whistle
 	move.shadow_punch
-	move.scorching_sands
+	move.sand_attack
 	move.smokescreen
 	move.toxic
 	move.guillotine
@@ -3677,14 +3710,14 @@ data_address_0x4714:
 	move.swagger
 	move.torment
 	move.flatter
-	move.trick
+	move.weather_crash
 	move.superpower
 	move.skill_swap
 	move.psycho_shift
 	move.psyblade
 	move.clanging_scales
 	move.sucker_punch
-	move.boomburst
+	move.heart_swap
 	move.switcheroo
 	move.captivate
 	move.dark_void
@@ -3906,7 +3939,7 @@ address_0x4BF8:
 Label_0x4BFA:
 	JumpIfRandLT(128, &address_0x4C3C)
 	AddToScore(1)
-	JumpIfHasMove(attacker, move.stomping_tantrum, &address_0x4C2C)
+	JumpIfHasMove(attacker, move.roar, &address_0x4C2C)
 	JumpIfHasMove(attacker, move.whirlwind, &address_0x4C2C)
 	Jump(&address_0x4C3C)
 
@@ -4102,7 +4135,7 @@ address_0x500A:
 Label_0x500C:
 	JumpIfRandLT(128, &address_0x504E)
 	AddToScore(1)
-	JumpIfHasMove(attacker, move.stomping_tantrum, &address_0x503E)
+	JumpIfHasMove(attacker, move.roar, &address_0x503E)
 	JumpIfHasMove(attacker, move.whirlwind, &address_0x503E)
 	Jump(&address_0x504E)
 

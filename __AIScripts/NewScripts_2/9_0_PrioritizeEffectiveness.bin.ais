@@ -1,161 +1,82 @@
 	JumpIfTargetIsAlly(&address_0x0756)
+	JumpIfMoveEQ(move.fissure, &address_0x002A)
+	JumpIfMoveEQ(move.horn_drill, &address_0x002A)
 	CalcMoveDamage(false)
-	JumpIfStoredEQ(no_damage, &checkPowderImmunity)
+	JumpIfStoredEQ(no_damage, &address_0x0148)
 
 address_0x002A:
-	JumpIfEffectivenessEQ(0x, &deprioritizeBy10)
+	JumpIfEffectivenessEQ(0x, &address_0x235E)
 	GetAbilityGuess(attacker)
-	JumpIfStoredEQ(ability.mold_breaker, &checkPowderImmunity)
+	JumpIfStoredEQ(ability.mold_breaker, &address_0x0148)
 	GetAbilityGuess(defender)
-	JumpIfStoredEQ(ability.volt_absorb, &checkElectricImmunity)
-	JumpIfStoredEQ(ability.motor_drive, &checkElectricImmunity)
-	JumpIfStoredEQ(ability.lightning_rod, &checkElectricImmunity)
-	JumpIfStoredEQ(ability.thunder_armor, &checkElectricImmunity)
-	JumpIfStoredEQ(ability.water_absorb, &checkWaterImmunity1)
-	JumpIfStoredEQ(ability.storm_drain, &checkWaterImmunity1)
-	JumpIfStoredEQ(ability.flash_fire, &checkFireImmunnity)
-	JumpIfStoredEQ(ability.well_baked_body, &checkFireImmunnity)
-	JumpIfStoredEQ(ability.wonder_guard, &checkWonderGuard)
-	JumpIfStoredEQ(ability.levitate, &checkGroundImmunity)
-	JumpIfStoredEQ(ability.dry_skin, &checkWaterImmunity2)
-	JumpIfStoredEQ(ability.sap_sipper, &checkGrassImmunity)
-	Jump(&checkPowderImmunity)
+	JumpIfStoredEQ(ability.volt_absorb, &address_0x00AA)
+	JumpIfStoredEQ(ability.motor_drive, &address_0x00AA)
+	JumpIfStoredEQ(ability.lightning_rod, &address_0x00AA)
+	JumpIfStoredEQ(ability.water_absorb, &address_0x00C0)
+	JumpIfStoredEQ(ability.flash_fire, &address_0x00D6)
+	JumpIfStoredEQ(ability.wonder_guard, &address_0x00EC)
+	JumpIfStoredEQ(ability.levitate, &address_0x0106)
+	JumpIfStoredEQ(ability.levitate, &address_0x011C)
+	JumpIfStoredEQ(ability.sap_sipper, &address_0x0132)
+	Jump(&address_0x0148)
 
-checkElectricImmunity:
+address_0x00AA:
 	GetType(move_type)
-	JumpIfStoredEQ(type.electric, &deprioritizeBy12)
-	Jump(&checkPowderImmunity)
+	JumpIfStoredEQ(type.electric, &address_0x2366)
+	Jump(&address_0x0148)
 
-checkWaterImmunity1:
+address_0x00C0:
 	GetType(move_type)
-	JumpIfStoredEQ(type.water, &deprioritizeBy12)
-	Jump(&checkPowderImmunity)
+	JumpIfStoredEQ(type.water, &address_0x2366)
+	Jump(&address_0x0148)
 
-checkFireImmunnity:
+address_0x00D6:
 	GetType(move_type)
-	JumpIfStoredEQ(type.fire, &deprioritizeBy12)
-	Jump(&checkPowderImmunity)
+	JumpIfStoredEQ(type.fire, &address_0x2366)
+	Jump(&address_0x0148)
 
-checkWonderGuard:
-	JumpIfEffectivenessEQ(2x, &checkPowderImmunity)
-	JumpIfEffectivenessEQ(4x, &checkPowderImmunity)
-	Jump(&deprioritizeBy12)
+address_0x00EC:
+	JumpIfEffectivenessEQ(2x, &address_0x0148)
+	JumpIfEffectivenessEQ(4x, &address_0x0148)
+	Jump(&address_0x2366)
 
-checkGroundImmunity:
+address_0x0106:
 	GetType(move_type)
-	JumpIfStoredEQ(type.ground, &deprioritizeBy12)
-	Jump(&checkPowderImmunity)
+	JumpIfStoredEQ(type.ground, &address_0x2366)
+	Jump(&address_0x0148)
 
-checkWaterImmunity2:
+address_0x011C:
 	GetType(move_type)
-	JumpIfStoredEQ(type.water, &deprioritizeBy12)
-	Jump(&checkPowderImmunity)
+	JumpIfStoredEQ(type.water, &address_0x2366)
+	Jump(&address_0x0148)
 
-checkGrassImmunity:
+address_0x0132:
 	GetType(move_type)
-	JumpIfStoredEQ(type.grass, &deprioritizeBy12)
-	Jump(&checkPowderImmunity)
+	JumpIfStoredEQ(type.grass, &address_0x2366)
+	Jump(&address_0x0148)
 
-checkPowderImmunity:
+address_0x0148:
 	GetAbilityGuess(defender)
-	JumpIfStoredNE(ability.overcoat, &checkPowderImmunity2)
+	JumpIfStoredNE(ability.amplifier, &address_0x01FE)
 	GetAbilityGuess(attacker)
-	JumpIfStoredEQ(ability.mold_breaker, &moveOnToMoveEffects)
-	JumpIfMoveEQ(move.sleep_powder, &deprioritizeBy10)
-	JumpIfMoveEQ(move.poison_powder, &deprioritizeBy10)
-	JumpIfMoveEQ(move.stun_spore, &deprioritizeBy10)
-	JumpIfMoveEQ(move.spore, &deprioritizeBy10)
-	JumpIfMoveEQ(move.cotton_spore, &deprioritizeBy10)
-	JumpIfMoveEQ(move.rage_powder, &deprioritizeBy10)
+	JumpIfStoredEQ(ability.mold_breaker, &address_0x01FE)
+	JumpIfMoveEQ(move.growl, &address_0x235E)
+	JumpIfMoveEQ(move.roar, &address_0x235E)
+	JumpIfMoveEQ(move.sing, &address_0x235E)
+	JumpIfMoveEQ(move.supersonic, &address_0x235E)
+	JumpIfMoveEQ(move.screech, &address_0x235E)
+	JumpIfMoveEQ(move.snore, &address_0x235E)
+	JumpIfMoveEQ(move.uproar, &address_0x235E)
+	JumpIfMoveEQ(move.metal_sound, &address_0x235E)
+	JumpIfMoveEQ(move.grass_whistle, &address_0x235E)
+	JumpIfMoveEQ(move.bug_buzz, &address_0x235E)
+	JumpIfMoveEQ(move.chatter, &address_0x235E)
+	JumpIfMoveEQ(move.disarming_voice, &address_0x235E)
+	JumpIfMoveEQ(move.echoed_voice, &address_0x235E)
+	JumpIfMoveEQ(move.relic_song, &address_0x235E)
+	JumpIfMoveEQ(move.snarl, &address_0x235E)
 
-checkPowderImmunity2:
-	GetHeldItem(defender)
-	JumpIfStoredNE(item.power_anklet, &checkSoundImmunity)
-	JumpIfMoveEQ(move.sleep_powder, &deprioritizeBy10)
-	JumpIfMoveEQ(move.poison_powder, &deprioritizeBy10)
-	JumpIfMoveEQ(move.stun_spore, &deprioritizeBy10)
-	JumpIfMoveEQ(move.spore, &deprioritizeBy10)
-	JumpIfMoveEQ(move.cotton_spore, &deprioritizeBy10)
-	JumpIfMoveEQ(move.rage_powder, &deprioritizeBy10)
-
-
-checkSoundImmunity:
-	GetAbilityGuess(defender)
-	JumpIfStoredNE(ability.amplifier, &checkWindImmunity)
-	GetAbilityGuess(attacker)
-	JumpIfStoredEQ(ability.mold_breaker, &moveOnToMoveEffects)
-	JumpIfMoveEQ(move.growl, &deprioritizeBy10)
-	JumpIfMoveEQ(move.clanging_scales, &deprioritizeBy10)
-	JumpIfMoveEQ(move.alluring_voice, &deprioritizeBy10)
-	JumpIfMoveEQ(move.confide, &deprioritizeBy10)
-	JumpIfMoveEQ(move.sing, &deprioritizeBy10)
-	JumpIfMoveEQ(move.supersonic, &deprioritizeBy10)
-	JumpIfMoveEQ(move.psychic_noise, &deprioritizeBy10)
-	JumpIfMoveEQ(move.astonish, &deprioritizeBy10)
-	JumpIfMoveEQ(move.screech, &deprioritizeBy10)
-	JumpIfMoveEQ(move.snore, &deprioritizeBy10)
-	JumpIfMoveEQ(move.uproar, &deprioritizeBy10)
-	JumpIfMoveEQ(move.metal_sound, &deprioritizeBy10)
-	JumpIfMoveEQ(move.grass_whistle, &deprioritizeBy10)
-	JumpIfMoveEQ(move.bug_buzz, &deprioritizeBy10)
-	JumpIfMoveEQ(move.chatter, &deprioritizeBy10)
-	JumpIfMoveEQ(move.disarming_voice, &deprioritizeBy10)
-	JumpIfMoveEQ(move.echoed_voice, &deprioritizeBy10)
-	JumpIfMoveEQ(move.relic_song, &deprioritizeBy10)
-	JumpIfMoveEQ(move.snarl, &deprioritizeBy10)
-
-checkWindImmunity:
-	GetAbilityGuess(defender)
-	JumpIfStoredNE(ability.wind_rider, &checkBombImmunity)
-	GetAbilityGuess(attacker)
-	JumpIfStoredEQ(ability.mold_breaker, &moveOnToMoveEffects)
-	JumpIfMoveEQ(move.icy_wind, &deprioritizeBy10)
-	JumpIfMoveEQ(move.air_slash, &deprioritizeBy10)
-	JumpIfMoveEQ(move.hurricane, &deprioritizeBy10)
-	JumpIfMoveEQ(move.heat_wave, &deprioritizeBy10)
-	JumpIfMoveEQ(move.ominous_wind, &deprioritizeBy10)
-	JumpIfMoveEQ(move.silver_wind, &deprioritizeBy10)
-	JumpIfMoveEQ(move.gust, &deprioritizeBy10)
-	JumpIfMoveEQ(move.fairy_wind, &deprioritizeBy10)
-	JumpIfMoveEQ(move.diamond_storm, &deprioritizeBy10)
-	JumpIfMoveEQ(move.razor_winds, &deprioritizeBy10)
-	JumpIfMoveEQ(move.aeroblast, &deprioritizeBy10)
-	JumpIfMoveEQ(move.twister, &deprioritizeBy10)
-	JumpIfMoveEQ(move.whirlwind, &deprioritizeBy10)
-	JumpIfMoveEQ(move.air_cutter, &deprioritizeBy10)
-	JumpIfMoveEQ(move.petal_blizzard, &deprioritizeBy10)
-
-
-checkBombImmunity:
-	GetAbilityGuess(defender)
-	JumpIfStoredNE(ability.bulletproof, &moveOnToMoveEffects)
-	GetAbilityGuess(attacker)
-	JumpIfStoredEQ(ability.mold_breaker, &moveOnToMoveEffects)
-	JumpIfMoveEQ(move.acid_spray, &deprioritizeBy10)
-	JumpIfMoveEQ(move.aura_sphere, &deprioritizeBy10)
-	JumpIfMoveEQ(move.barrage, &deprioritizeBy10)
-	JumpIfMoveEQ(move.bullet_seed, &deprioritizeBy10)
-	JumpIfMoveEQ(move.egg_bomb, &deprioritizeBy10)
-	JumpIfMoveEQ(move.electro_ball, &deprioritizeBy10)
-	JumpIfMoveEQ(move.energy_ball, &deprioritizeBy10)
-	JumpIfMoveEQ(move.focus_blast, &deprioritizeBy10)
-	JumpIfMoveEQ(move.gyro_ball, &deprioritizeBy10)
-	JumpIfMoveEQ(move.ice_ball, &deprioritizeBy10)
-	JumpIfMoveEQ(move.magnet_bomb, &deprioritizeBy10)
-	JumpIfMoveEQ(move.mud_bomb, &deprioritizeBy10)
-	JumpIfMoveEQ(move.octazooka, &deprioritizeBy10)
-	JumpIfMoveEQ(move.pollen_puff, &deprioritizeBy10)
-	JumpIfMoveEQ(move.rock_blast, &deprioritizeBy10)
-	JumpIfMoveEQ(move.rock_wrecker, &deprioritizeBy10)
-	JumpIfMoveEQ(move.searing_shot, &deprioritizeBy10)
-	JumpIfMoveEQ(move.seed_bomb, &deprioritizeBy10)
-	JumpIfMoveEQ(move.shadow_ball, &deprioritizeBy10)
-	JumpIfMoveEQ(move.sludge_bomb, &deprioritizeBy10)
-	JumpIfMoveEQ(move.weather_ball, &deprioritizeBy10)
-	JumpIfMoveEQ(move.zap_cannon, &deprioritizeBy10)
-
-
-moveOnToMoveEffects:
+address_0x01FE:
 	JumpTable(move_effect, 337, &data_address_0x020E)
 	EndScript()
 
@@ -505,29 +426,38 @@ address_0x0756:
 
 
 Label_0x0758:
-	JumpIfHasAnyStatus(defender, &deprioritizeBy10)
-	JumpIfHasSideCondition(defender, side_cond.safeguard, &deprioritizeBy10)
+	JumpIfHasAnyStatus(defender, &address_0x235E)
+	JumpIfHasSideCondition(defender, side_cond.safeguard, &address_0x235E)
 	GetAbilityGuess(defender)
-	JumpIfStoredEQ(ability.vital_spirit, &deprioritizeBy10)
-	JumpIfStoredEQ(ability.magic_bounce, &deprioritizeBy10)
-	JumpIfHeldItemEQ(defender, item.lum_berry, &HighChanceToDeprioritizeBy10)
-	JumpIfHeldItemEQ(defender, item.chesto_berry, &HighChanceToDeprioritizeBy10)
+	JumpIfStoredEQ(ability.thunder_armor, &address_0x235E)
+	JumpIfStoredEQ(ability.vital_spirit, &address_0x235E)
+	JumpIfStoredEQ(ability.magic_bounce, &address_0x235E)
 	EndScript()
 
 
 Label_0x0796:
-	JumpIfEffectivenessEQ(0x, &deprioritizeBy10)
-	GetPartyReserveCount(attacker)
-	JumpIfStoredNE(0, &endScriptExplosion)
-	GetPartyReserveCount(defender)
-	JumpIfStoredNE(0, &deprioritizeBy10)
-	Jump(&deprioritizeBy1)
+	JumpIfEffectivenessEQ(0x, &address_0x235E)
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.mold_breaker, &address_0x07C0)
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.bulletproof, &address_0x235E)
 
-endScriptExplosion:
+address_0x07C0:
+	GetPartyReserveCount(attacker)
+	JumpIfStoredNE(0, &address_0x07E6)
+	GetPartyReserveCount(defender)
+	JumpIfStoredNE(0, &address_0x235E)
+	Jump(&address_0x232E)
+
+address_0x07E6:
 	EndScript()
 
 
 Label_0x07E8:
+	JumpIfHasCondition(defender, cond.nightmare, &address_0x235E)
+	JumpIfNotCondition(defender, cond_flag.charge, &address_0x2356)
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.magic_guard, &address_0x235E)
 	EndScript()
 
 
@@ -599,7 +529,7 @@ Label_0x095C:
 	GetAbilityGuess(attacker)
 	JumpIfStoredEQ(ability.mold_breaker, &address_0x0A84)
 	GetAbilityGuess(defender)
-	JumpIfStoredEQ(ability.big_pecks, &address_0x235E)
+	JumpIfStoredEQ(ability.savant, &address_0x235E)
 	Jump(&address_0x0A84)
 
 Label_0x0994:
@@ -625,6 +555,8 @@ Label_0x09FA:
 	JumpIfStoredEQ(ability.no_guard, &address_0x235E)
 	GetAbilityGuess(attacker)
 	JumpIfStoredEQ(ability.mold_breaker, &address_0x0A84)
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.wind_rider, &address_0x235E)
 	Jump(&address_0x0A84)
 
 Label_0x0A52:
@@ -643,8 +575,6 @@ address_0x0A84:
 	JumpIfStoredEQ(ability.strong_body, &address_0x235E)
 	JumpIfStoredEQ(ability.white_smoke, &address_0x235E)
 	JumpIfStoredEQ(ability.magic_bounce, &address_0x2366)
-	JumpIfHeldItemEQ(defender, item.white_herb, &HighChanceToDeprioritizeBy10)
-
 
 address_0x0AC8:
 	EndScript()
@@ -677,6 +607,7 @@ Label_0x0BCE:
 	GetAbilityGuess(attacker)
 	JumpIfStoredEQ(ability.mold_breaker, &address_0x0C08)
 	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.well_baked_body, &address_0x235E)
 	JumpIfStoredEQ(ability.magic_bounce, &address_0x2366)
 
 address_0x0C08:
@@ -699,27 +630,26 @@ Label_0x0C20:
 	JumpIfStoredEQ(type.steel, &address_0x235E)
 	JumpIfStoredEQ(type.poison, &address_0x235E)
 	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.fluffy, &address_0x235E)
 	JumpIfStoredEQ(ability.magic_guard, &address_0x235E)
 	JumpIfStoredEQ(ability.poison_heal, &address_0x235E)
 	GetAbilityGuess(attacker)
 	JumpIfStoredEQ(ability.mold_breaker, &address_0x0CAE)
 	GetAbilityGuess(defender)
 	JumpIfStoredEQ(ability.magic_bounce, &address_0x2366)
-	JumpIfStoredNE(ability.leaf_guard, &address_0x0CAE)
+	JumpIfStoredNE(ability.fur_coat, &address_0x0CAE)
 	GetWeather()
 	JumpIfStoredEQ(weather.sun, &address_0x235E)
 
 address_0x0CAE:
 	GetAbilityGuess(defender)
-	JumpIfStoredNE(ability.hydration, &address_0x0CCA)
+	JumpIfStoredNE(ability.strong_jaw, &address_0x0CCA)
 	GetWeather()
 	JumpIfStoredEQ(weather.rain, &address_0x235E)
 
 address_0x0CCA:
 	JumpIfHasAnyStatus(defender, &address_0x235E)
 	JumpIfHasSideCondition(defender, side_cond.safeguard, &address_0x235E)
-	JumpIfHeldItemEQ(defender, item.lum_berry, &HighChanceToDeprioritizeBy10)
-	JumpIfHeldItemEQ(defender, item.pecha_berry, &HighChanceToDeprioritizeBy10)
 	EndScript()
 
 
@@ -741,17 +671,10 @@ address_0x0D1E:
 
 
 Label_0x0D2A:
-	JumpIfHasSideCondition(defender, side_cond.sticky_web, &deprioritizeBy10)
-	GetPartyReserveCount(defender)
-	JumpIfStoredEQ(0, &deprioritizeBy10)
 	GetAbilityGuess(attacker)
-	JumpIfStoredEQ(ability.mold_breaker, &address_0x0D8E)
+	JumpIfStoredEQ(ability.mold_breaker, &Label_0x0D4A)
 	GetAbilityGuess(defender)
-	JumpIfStoredEQ(ability.magic_bounce, &deprioritizeBy12)
-
-address_0x0D8E:
-	EndScript()
-
+	JumpIfStoredEQ(ability.levitate, &address_0x235E)
 
 Label_0x0D4A:
 	JumpIfEffectivenessEQ(0x, &address_0x235E)
@@ -786,8 +709,6 @@ Label_0x0DB0:
 	JumpIfStoredEQ(ability.mold_breaker, &address_0x0DFC)
 	GetAbilityGuess(defender)
 	JumpIfStoredEQ(ability.magic_bounce, &address_0x2366)
-	JumpIfHeldItemEQ(defender, item.lum_berry, &HighChanceToDeprioritizeBy10)
-	JumpIfHeldItemEQ(defender, item.persim_berry, &HighChanceToDeprioritizeBy10)
 
 address_0x0DFC:
 	EndScript()
@@ -800,10 +721,9 @@ Label_0x0DFE:
 
 Label_0x0E0E:
 	JumpIfEffectivenessEQ(0x, &address_0x235E)
-	GetType(defender_type1)
-	JumpIfStoredEQ(type.electric, &deprioritizeBy10)
-	GetType(defender_type2)
-	JumpIfStoredEQ(type.electric, &deprioritizeBy10)
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.corrosion, &address_0x235E)
+	JumpIfStoredEQ(ability.magic_guard, &address_0x235E)
 	GetAbilityGuess(attacker)
 	JumpIfStoredEQ(ability.mold_breaker, &address_0x0E76)
 	JumpIfMoveEQ(move.thunder_wave, &address_0x0E52)
@@ -818,8 +738,6 @@ address_0x0E52:
 address_0x0E76:
 	JumpIfHasAnyStatus(defender, &address_0x235E)
 	JumpIfHasSideCondition(defender, side_cond.safeguard, &address_0x235E)
-	JumpIfHeldItemEQ(defender, item.lum_berry, &HighChanceToDeprioritizeBy10)
-	JumpIfHeldItemEQ(defender, item.cheri_berry, &HighChanceToDeprioritizeBy10)
 	EndScript()
 
 
@@ -889,6 +807,16 @@ address_0x0FC2:
 
 
 Label_0x0FC4:
+	GetType(attacker_type1)
+	JumpIfStoredEQ(type.ghost, &address_0x100A)
+	GetType(attacker_type2)
+	JumpIfStoredEQ(type.ghost, &address_0x100A)
+	JumpIfStatStageEQ(attacker, atk, +6, &address_0x235E)
+	JumpIfStatStageEQ(attacker, def, +6, &address_0x2356)
+	EndScript()
+
+
+address_0x100A:
 	JumpIfHasCondition(defender, cond.curse, &address_0x235E)
 	GetAbilityGuess(defender)
 	JumpIfStoredEQ(ability.magic_guard, &address_0x235E)
@@ -932,16 +860,32 @@ Label_0x10B0:
 
 
 Label_0x10BE:
-	JumpIfHasCondition(defender, cond.infatuation, &deprioritizeBy10)
-	JumpIfHeldItemEQ(defender, item.mental_herb, &HighChanceToDeprioritizeBy10)
-	GetAbilityGuess(attacker)
-	JumpIfStoredEQ(ability.mold_breaker, &address_0x1148)
+	JumpIfHasCondition(defender, cond.infatuation, &address_0x235E)
 	GetAbilityGuess(defender)
-	JumpIfStoredEQ(ability.magic_bounce, &deprioritizeBy12)
+	JumpIfStoredEQ(ability.galvanize, &address_0x235E)
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.mold_breaker, &address_0x10FC)
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.magic_bounce, &address_0x2366)
+
+address_0x10FC:
+	GetGender(attacker)
+	JumpIfStoredEQ(male, &address_0x111C)
+	JumpIfStoredEQ(female, &address_0x1132)
+	Jump(&address_0x235E)
+
+address_0x111C:
+	GetGender(defender)
+	JumpIfStoredEQ(female, &address_0x1148)
+	Jump(&address_0x235E)
+
+address_0x1132:
+	GetGender(defender)
+	JumpIfStoredEQ(male, &address_0x1148)
+	Jump(&address_0x235E)
 
 address_0x1148:
 	EndScript()
-
 
 
 Label_0x114A:
@@ -975,9 +919,9 @@ Label_0x11CA:
 Label_0x11DC:
 	GetAbilityGuess(attacker)
 	JumpIfStoredEQ(ability.swift_swim, &address_0x1210)
-	JumpIfStoredEQ(ability.hydration, &address_0x1210)
+	JumpIfStoredEQ(ability.strong_jaw, &address_0x1210)
 	GetAbilityGuess(defender)
-	JumpIfStoredNE(ability.hydration, &address_0x1210)
+	JumpIfStoredNE(ability.strong_jaw, &address_0x1210)
 	JumpIfHasAnyStatus(defender, &address_0x2356)
 
 address_0x1210:
@@ -1004,16 +948,15 @@ Label_0x1238:
 
 
 Label_0x124A:
-	GetHeldItem(attacker)
-	JumpIfStoredIsNotInList(&data_address_0x159C, &deprioritizeBy10)
-	JumpIfStatStageEQ(attacker, def, +6, &address_0x235E)
-	JumpIfStatStageEQ(attacker, spd, +6, &address_0x2356)
+	GetStockpileCount(attacker)
+	JumpIfStoredEQ(3, &address_0x235E)
 	EndScript()
 
 
 Label_0x125C:
-	GetHeldItem(attacker)
-	JumpIfStoredIsNotInList(&data_address_0x159C, &deprioritizeBy10)
+	JumpIfEffectivenessEQ(0x, &address_0x235E)
+	GetStockpileCount(attacker)
+	JumpIfStoredEQ(0, &address_0x235E)
 	JumpIfMoveEffectEQ(move_ef.swallow, &Label_0x0C0A)
 	EndScript()
 
@@ -1037,7 +980,7 @@ address_0x12BE:
 
 Label_0x12C0:
 	GetAbilityGuess(defender)
-	JumpIfStoredEQ(ability.water_veil, &address_0x235E)
+	JumpIfStoredEQ(ability.merciless, &address_0x235E)
 	JumpIfStoredEQ(ability.magic_guard, &address_0x235E)
 	JumpIfHasAnyStatus(defender, &address_0x235E)
 	GetType(defender_type1)
@@ -1049,8 +992,6 @@ Label_0x12C0:
 	JumpIfStoredEQ(ability.mold_breaker, &address_0x1332)
 	GetAbilityGuess(defender)
 	JumpIfStoredEQ(ability.magic_bounce, &address_0x2366)
-	JumpIfHeldItemEQ(defender, item.lum_berry, &HighChanceToDeprioritizeBy10)
-	JumpIfHeldItemEQ(defender, item.rawst_berry, &HighChanceToDeprioritizeBy10)
 
 address_0x1332:
 	EndScript()
@@ -1074,6 +1015,8 @@ Label_0x1352:
 
 
 Label_0x1360:
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.aerilate, &address_0x235E)
 	GetHeldItem(defender)
 	JumpIfStoredEQ(item.none, &address_0x235E)
 	EndScript()
@@ -1124,7 +1067,6 @@ Label_0x13F8:
 address_0x143C:
 	JumpIfStatStageEQ(defender, atk, -6, &address_0x235E)
 	JumpIfStatStageEQ(defender, def, -6, &address_0x2356)
-	JumpIfHeldItemEQ(defender, item.white_herb, &HighChanceToDeprioritizeBy10)
 	EndScript()
 
 
@@ -1209,9 +1151,9 @@ data_address_0x159C:
 	item.lum_berry
 	item.sitrus_berry
 	item.figy_berry
-	item.wiki_berry
+	item.maranga_berry
 	item.mago_berry
-	item.aguav_berry
+	item.kee_berry
 	item.iapapa_berry
 	item.razz_berry
 	item.bluk_berry
@@ -1284,11 +1226,11 @@ Label_0x16BA:
 Label_0x173A:
 	JumpIfEffectivenessEQ(0x, &address_0x235E)
 	GetAbilityGuess(defender)
-	JumpIfStoredEQ(ability.stall, &address_0x235E)
+	JumpIfStoredEQ(ability.tough_claws, &address_0x235E)
 	GetHeldItemEffect(defender)
 	JumpIfStoredEQ(item_ef.move_last, &address_0x235E)
 	GetAbilityGuess(attacker)
-	JumpIfStoredEQ(ability.stall, &address_0x178E)
+	JumpIfStoredEQ(ability.tough_claws, &address_0x178E)
 	GetHeldItemEffect(attacker)
 	JumpIfStoredEQ(item_ef.move_last, &address_0x178E)
 	JumpCompareSpeed(LT, &address_0x235E)
@@ -1337,6 +1279,7 @@ address_0x182C:
 	JumpIfStoredEQ(type.poison, &address_0x18AE)
 	JumpIfStoredEQ(type.steel, &address_0x18AE)
 	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.fluffy, &address_0x18AE)
 	JumpIfStoredEQ(ability.poison_heal, &address_0x18AE)
 	JumpIfStoredEQ(ability.magic_guard, &address_0x18AE)
 	EndScript()
@@ -1352,6 +1295,8 @@ address_0x18AE:
 	JumpIfStoredEQ(type.poison, &address_0x2346)
 	JumpIfStoredEQ(type.steel, &address_0x2346)
 	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.distracting, &address_0x2346)
+	JumpIfStoredEQ(ability.fluffy, &address_0x2346)
 	JumpIfStoredEQ(ability.poison_heal, &address_0x2346)
 	JumpIfStoredEQ(ability.magic_guard, &address_0x2346)
 	JumpIfStoredEQ(ability.guts, &address_0x2346)
@@ -1367,7 +1312,7 @@ address_0x1934:
 	JumpIfStoredEQ(type.fire, &address_0x1988)
 	GetAbilityGuess(defender)
 	JumpIfStoredEQ(ability.magic_guard, &address_0x1988)
-	JumpIfStoredEQ(ability.water_veil, &address_0x1988)
+	JumpIfStoredEQ(ability.merciless, &address_0x1988)
 	EndScript()
 
 
@@ -1379,8 +1324,9 @@ address_0x1988:
 	GetType(attacker_type2)
 	JumpIfStoredEQ(type.fire, &address_0x2346)
 	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.distracting, &address_0x2346)
 	JumpIfStoredEQ(ability.magic_guard, &address_0x2346)
-	JumpIfStoredEQ(ability.water_veil, &address_0x2346)
+	JumpIfStoredEQ(ability.merciless, &address_0x2346)
 	JumpIfStoredEQ(ability.guts, &address_0x2346)
 	EndScript()
 
@@ -1432,10 +1378,9 @@ address_0x1AB2:
 	JumpIfStoredEQ(type.poison, &address_0x235E)
 	JumpIfStoredEQ(type.steel, &address_0x235E)
 	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.fluffy, &address_0x235E)
 	JumpIfStoredEQ(ability.poison_heal, &address_0x235E)
 	JumpIfStoredEQ(ability.magic_guard, &address_0x235E)
-	JumpIfHeldItemEQ(defender, item.lum_berry, &HighChanceToDeprioritizeBy10)
-	JumpIfHeldItemEQ(defender, item.pecha_berry, &HighChanceToDeprioritizeBy10)
 	Jump(&address_0x1B70)
 
 address_0x1B20:
@@ -1445,14 +1390,12 @@ address_0x1B20:
 	JumpIfStoredEQ(type.fire, &address_0x235E)
 	GetAbilityGuess(defender)
 	JumpIfStoredEQ(ability.magic_guard, &address_0x235E)
-	JumpIfStoredEQ(ability.water_veil, &address_0x235E)
-	JumpIfHeldItemEQ(defender, item.lum_berry, &HighChanceToDeprioritizeBy10)
-	JumpIfHeldItemEQ(defender, item.rawst_berry, &HighChanceToDeprioritizeBy10)
+	JumpIfStoredEQ(ability.merciless, &address_0x235E)
 	Jump(&address_0x1B70)
 
 address_0x1B60:
-	JumpIfHeldItemEQ(defender, item.lum_berry, &HighChanceToDeprioritizeBy10)
-	JumpIfHeldItemEQ(defender, item.cheri_berry, &HighChanceToDeprioritizeBy10)
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.corrosion, &address_0x235E)
 
 address_0x1B70:
 	EndScript()
@@ -1482,7 +1425,7 @@ Label_0x1BB2:
 	JumpIfStoredEQ(ability.defeatist, &address_0x235E)
 	JumpIfStoredEQ(ability.slow_start, &address_0x235E)
 	JumpIfStoredEQ(ability.stench, &address_0x235E)
-	JumpIfStoredEQ(ability.permafrost, &address_0x235E)
+	JumpIfStoredEQ(ability.run_away, &address_0x235E)
 	JumpIfStoredEQ(ability.pickup, &address_0x235E)
 	JumpIfStoredEQ(ability.honey_gather, &address_0x235E)
 	GetAbilityGuess(attacker)
@@ -1547,6 +1490,7 @@ Label_0x1CDC:
 	GetAbilityGuess(defender)
 	JumpIfStoredEQ(ability.truant, &address_0x235E)
 	JumpIfStoredEQ(ability.defeatist, &address_0x235E)
+	JumpIfStoredEQ(ability.thunder_armor, &address_0x235E)
 	JumpIfStoredEQ(ability.vital_spirit, &address_0x235E)
 	JumpIfStoredEQ(ability.multitype, &address_0x235E)
 	JumpIfNotCondition(defender, cond_flag.charge, &address_0x1D64)
@@ -1627,11 +1571,28 @@ Label_0x1EAE:
 	GetAbilityGuess(attacker)
 	JumpIfStoredEQ(ability.mold_breaker, &address_0x1EFC)
 	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.galvanize, &address_0x235E)
 	JumpIfStoredEQ(ability.strong_body, &address_0x235E)
 	JumpIfStoredEQ(ability.white_smoke, &address_0x235E)
 	JumpIfStoredEQ(ability.magic_bounce, &address_0x2366)
 
 address_0x1EFC:
+	GetGender(attacker)
+	JumpIfStoredEQ(male, &address_0x1F1C)
+	JumpIfStoredEQ(female, &address_0x1F32)
+	Jump(&address_0x235E)
+
+address_0x1F1C:
+	GetGender(defender)
+	JumpIfStoredEQ(female, &address_0x1F48)
+	Jump(&address_0x235E)
+
+address_0x1F32:
+	GetGender(defender)
+	JumpIfStoredEQ(male, &address_0x1F48)
+	Jump(&address_0x235E)
+
+address_0x1F48:
 	JumpIfStatStageLT(defender, spa, -5, &address_0x235E)
 	EndScript()
 
@@ -1967,41 +1928,6 @@ Label_0x232A:
 
 
 Label_0x232C:
-	EndScript()
-
-
-deprioritizeBy1:
-	AddToScore(-1)
-	EndScript()
-
-deprioritizeBy5:
-	AddToScore(-5)
-	EndScript()
-
-
-deprioritizeBy6:
-	AddToScore(-6)
-	EndScript()
-
-
-deprioritizeBy8:
-	AddToScore(-8)
-	EndScript()
-
-
-deprioritizeBy10:
-	AddToScore(-10)
-	EndScript()
-
-HighChanceToDeprioritizeBy10:
-	JumpIfRandLT(230, &DeprioritizeEndScript)
-	AddToScore(-10)
-
-DeprioritizeEndScript:
-	EndScript()
-
-deprioritizeBy12:
-	AddToScore(-12)
 	EndScript()
 
 
