@@ -1,0 +1,46 @@
+	JumpIfTargetIsAlly(&address_0x0022)
+	GetMoveEffect()
+	JumpIfStoredIsNotInList(&data_address_0x0024, &address_0x0022)
+	JumpIfRandLT(128, &address_0x0022)
+	AddToScore(2)
+
+address_0x0022:
+	EndScript()
+
+
+data_address_0x0024:
+	move_ef.target_slp
+	move_ef.target_atk-1
+	move_ef.target_def-1
+	move_ef.target_acc-1
+	move_ef.target_eva-1
+	move_ef.target_confusion
+	move_ef.target_atk-2
+	move_ef.target_def-2
+	move_ef.target_spe-2
+	move_ef.target_spd-2
+	move_ef.target_psn
+	move_ef.target_par
+	move_ef.leech_seed
+	move_ef.encore
+	move_ef.spite
+	move_ef.spikes
+	move_ef.swagger
+	move_ef.attract
+	move_ef.torment
+	move_ef.flatter
+	move_ef.will-o-wisp
+	move_ef.nature_power
+	move_ef.yawn
+	move_ef.knock_off
+	move_ef.imprison
+	move_ef.secret_power
+	move_ef.teeter_dance
+	move_ef.target_atk_def-1
+	move_ef.camouflage
+	move_ef.embargo
+	move_ef.psycho_shift
+	move_ef.toxic_spikes
+	move_ef.defog
+	move_ef.captivate
+	END
