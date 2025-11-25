@@ -351,7 +351,7 @@ import messages.script.Msg0315.MSGID;
 		Actor.WaitActionFinish();
 		Sound.SEWait();
 		Actor.Hide(251);
-		Global2805(337, 1);
+		Global2805(337, 3);
 		Message.ActorEx(1024, 31, 16, 5, 0);
 		Message.CloseAll();
 		EVCamera.MoveToDefault(32);

@@ -3447,7 +3447,6 @@ struct PersonalData
     int SpecialTutors[4];
 };
 
-
 struct MoveAnimCtrl
 {
     unsigned __int16 MoveID;
@@ -3516,8 +3515,7 @@ struct EscapeInfo
     u8 clientID[4];
 };
 
-
-#pragma endregion 
+#pragma endregion
 
 #pragma region BattleMon
 struct SWAN_ALIGNED(2) MoveCore
@@ -4051,7 +4049,6 @@ struct Btlv_StringParam
     int args[8];
 };
 
-
 struct SWAN_PACKED SWAN_ALIGNED(1) BottomScreenMenuData
 {
     int field_0;
@@ -4281,8 +4278,6 @@ struct SWAN_PACKED SWAN_ALIGNED(2) BtlvCore
     HeapID heapID;
 };
 
-
-
 #pragma endregion
 
 #pragma region HandlerParam_Structs
@@ -4291,7 +4286,11 @@ struct HandlerParam_Header
     u32 flags;
 };
 
-struct 	HandlerParam_RestoreStatStage {HandlerParam_Header header;u8 monID;};
+struct HandlerParam_RestoreStatStage
+{
+    HandlerParam_Header header;
+    u8 monID;
+};
 
 struct SWAN_ALIGNED(4) HandlerParam_StrParams
 {
@@ -4376,7 +4375,6 @@ struct HandlerParam_RecoverHP
     HandlerParam_StrParams exStr;
 };
 
-
 struct SWAN_ALIGNED(4) HandlerParam_ChangeType
 {
     HandlerParam_Header header;
@@ -4393,7 +4391,6 @@ struct SWAN_ALIGNED(4) HandlerParam_DelayMoveDamage
     __int16 MoveID;
 };
 
-
 struct SWAN_ALIGNED(2) HandlerParam_SetCounter
 {
     HandlerParam_Header header;
@@ -4401,7 +4398,6 @@ struct SWAN_ALIGNED(2) HandlerParam_SetCounter
     Counter counterID;
     u8 value;
 };
-
 
 struct SWAN_ALIGNED(4) HandlerParam_Switch
 {
@@ -4557,7 +4553,6 @@ struct EventWorkSave
     u8 CanRespawnHiddenItems;
 };
 
-
 struct ServerCommandQueue
 {
     u32 writePtr;
@@ -4586,7 +4581,6 @@ struct FaintRecord
 {
     FaintRecordUnit turnRecord[4];
 };
-
 
 struct MoveParam
 {
@@ -4642,7 +4636,6 @@ struct ZoneDataSystem
     u8 EnableVersionSpecificArea[3];
     u16 Padding;
 };
-
 
 struct SWAN_ALIGNED(4) m_record
 {
@@ -4922,7 +4915,7 @@ struct SWAN_ALIGNED(8) ServerFlow
     int pokestar_result;
 };
 
-#pragma endregion 
+#pragma endregion
 
 #pragma region TrainerAI
 struct SWAN_ALIGNED(8) TrainerAIEnv
@@ -4978,36 +4971,97 @@ struct SWAN_ALIGNED(8) TrainerAIEnv
     int seededRandom;
     _QWORD time;
 };
+
+struct 	ServerClientWork {int adapter;BattleParty *party;u8 partyCount;u8 numBattlePositions;u8 isLocalClient;u8 id;};
+struct 	ServerClientAction {BattleActionParam param[4][3];u8 count[4];};
+struct 	RandSet	 {unsigned __int64 seed;unsigned __int64 mul;unsigned __int64 add;};
+struct 	BtlRecTool	 {u8 writePtr;u8 clientBit;u8 numClients;u8 flags;u8 buffer[60];};
+struct 	ResultContext	 {u16 clientID;u16 resultCode;};
+
+struct SWAN_ALIGNED(4) BtlServerWk
+{
+    u32 field_0;
+    u32 field_4;
+    u8 field_8;
+    u8 field_9;
+    u8 field_A;
+    u8 field_B;
+    u8* mainModule;
+    u32 pokeCon;
+    SVCL_WORK client[4];
+    ServerFlow* serverFlow;
+    u32 serverTurnState;
+    u32 field_4C;
+    u32 field_50;
+    u32 field_54;
+    u32 field_58;
+    u32 field_5C;
+    u32 field_60;
+    u32 field_64;
+    u8 field_68;
+    u8 gap69;
+    u8 gap6A[62];
+    u16 field_A8;
+    u16 field_AA;
+    StrBuf* field_AC;
+    EscapeInfo* escapeInfo;
+    u32 clientAction;
+    u8 gapB8[40];
+    u32 field_E0;
+    u8 field_E4[4];
+    u32 field_E8;
+    u8 nextEnemyForSwitchMode;
+    u8 field_ED;
+    u8 field_EE;
+    u8 field_EF;
+    u32 field_F0;
+    u8 gapF4[3004];
+    u8* field_CB0;
+    u8 field_CB4;
+    u8 field_CB5;
+    u8 field_CB6;
+    u8 field_CB7;
+    u8 field_CB8;
+    u8 field_CB9;
+    u8 field_CBA;
+    u8 field_CBB;
+    u8 field_CBC;
+    u8 field_CBD;
+    u8 field_CBE;
+    u8 field_CBF;
+    HeapID heapID;
+    u8 field_CC2;
+    u8 field_CC3;
+};
+
 #pragma endregion
-
-
 
 #pragma region TypeCharts
 //
 // TYPE CHARTS
-// 
+//
 
-// These changes should save a total of 8892 bytes. 
+// These changes should save a total of 8892 bytes.
 
 // // Should be saving 1278 bytes
 // const u8 FreezeDryTypeChart[18] = {
-//     // {4, 4, 4, 4, 4, 2, 4, 0, 2, 4, 4, 4, 4, 4, 4, 4, 4, 4}, 
-//     // {8, 4, 2, 2, 4, 8, 2, 0, 8, 4, 4, 4, 4, 2, 8, 4, 8, 2}, 
-//     // {4, 8, 4, 4, 4, 2, 8, 4, 2, 4, 4, 8, 2, 4, 4, 4, 4, 4}, 
-//     // {4, 4, 4, 2, 2, 2, 4, 2, 0, 4, 4, 8, 4, 4, 4, 4, 4, 8}, 
-//     // {4, 4, 0, 8, 4, 8, 2, 4, 8, 8, 4, 2, 8, 4, 4, 4, 4, 4}, 
-//     // {4, 2, 8, 4, 2, 4, 8, 4, 2, 8, 4, 4, 4, 4, 8, 4, 4, 4}, 
-//     // {4, 2, 2, 2, 4, 4, 4, 2, 2, 2, 4, 8, 4, 8, 4, 4, 8, 2}, 
-//     // {0, 4, 4, 4, 4, 4, 4, 8, 4, 4, 4, 4, 4, 8, 4, 4, 2, 4}, 
-//     // {4, 4, 4, 4, 4, 8, 4, 4, 2, 2, 2, 4, 2, 4, 8, 4, 4, 8}, 
-//     // {4, 4, 4, 4, 4, 2, 8, 4, 8, 2, 2, 8, 4, 4, 8, 2, 4, 4}, 
-//     // {4, 4, 4, 4, 8, 8, 4, 4, 4, 8, 2, 2, 4, 4, 4, 2, 4, 4}, 
-//     // {4, 4, 2, 2, 8, 8, 2, 4, 2, 2, 8, 2, 4, 4, 4, 2, 4, 4}, 
-//     // {4, 4, 8, 4, 0, 4, 4, 4, 4, 4, 8, 2, 2, 4, 4, 2, 4, 4}, 
-//     // {4, 8, 4, 8, 4, 4, 4, 4, 2, 4, 4, 4, 4, 2, 4, 4, 0, 4}, 
-//     4, 4, 8, 4, 8, 4, 4, 4, 2, 2, 8, 8, 4, 4, 2, 8, 4, 4}; 
-//     // {4, 4, 4, 4, 4, 4, 4, 4, 2, 4, 4, 4, 4, 4, 4, 8, 4, 0}, 
-//     // {4, 2, 4, 4, 4, 4, 4, 8, 4, 4, 4, 4, 4, 8, 4, 4, 2, 2}, 
+//     // {4, 4, 4, 4, 4, 2, 4, 0, 2, 4, 4, 4, 4, 4, 4, 4, 4, 4},
+//     // {8, 4, 2, 2, 4, 8, 2, 0, 8, 4, 4, 4, 4, 2, 8, 4, 8, 2},
+//     // {4, 8, 4, 4, 4, 2, 8, 4, 2, 4, 4, 8, 2, 4, 4, 4, 4, 4},
+//     // {4, 4, 4, 2, 2, 2, 4, 2, 0, 4, 4, 8, 4, 4, 4, 4, 4, 8},
+//     // {4, 4, 0, 8, 4, 8, 2, 4, 8, 8, 4, 2, 8, 4, 4, 4, 4, 4},
+//     // {4, 2, 8, 4, 2, 4, 8, 4, 2, 8, 4, 4, 4, 4, 8, 4, 4, 4},
+//     // {4, 2, 2, 2, 4, 4, 4, 2, 2, 2, 4, 8, 4, 8, 4, 4, 8, 2},
+//     // {0, 4, 4, 4, 4, 4, 4, 8, 4, 4, 4, 4, 4, 8, 4, 4, 2, 4},
+//     // {4, 4, 4, 4, 4, 8, 4, 4, 2, 2, 2, 4, 2, 4, 8, 4, 4, 8},
+//     // {4, 4, 4, 4, 4, 2, 8, 4, 8, 2, 2, 8, 4, 4, 8, 2, 4, 4},
+//     // {4, 4, 4, 4, 8, 8, 4, 4, 4, 8, 2, 2, 4, 4, 4, 2, 4, 4},
+//     // {4, 4, 2, 2, 8, 8, 2, 4, 2, 2, 8, 2, 4, 4, 4, 2, 4, 4},
+//     // {4, 4, 8, 4, 0, 4, 4, 4, 4, 4, 8, 2, 2, 4, 4, 2, 4, 4},
+//     // {4, 8, 4, 8, 4, 4, 4, 4, 2, 4, 4, 4, 4, 2, 4, 4, 0, 4},
+//     4, 4, 8, 4, 8, 4, 4, 4, 2, 2, 8, 8, 4, 4, 2, 8, 4, 4};
+//     // {4, 4, 4, 4, 4, 4, 4, 4, 2, 4, 4, 4, 4, 4, 4, 8, 4, 0},
+//     // {4, 2, 4, 4, 4, 4, 4, 8, 4, 4, 4, 4, 4, 8, 4, 4, 2, 2},
 //     // {4, 8, 4, 2, 4, 4, 4, 4, 2, 2, 4, 4, 4, 4, 4, 8, 8, 4}
 //     //};
 
@@ -5052,7 +5106,6 @@ struct SWAN_ALIGNED(8) TrainerAIEnv
 //     // {4, 4, 4, 4, 4, 4, 4, 4, 2, 4, 4, 4, 4, 4, 4, 8, 4, 0},
 //     // {4, 2, 4, 4, 4, 4, 4, 8, 4, 4, 4, 4, 4, 8, 4, 4, 2, 2},
 //     // {4, 8, 4, 2, 4, 4, 4, 4, 2, 2, 4, 4, 4, 4, 4, 8, 8, 4}};
-
 
 // const u8 normalTypeChart[18][18] = {
 //     {4, 4, 4, 4, 4, 2, 4, 0, 2, 4, 4, 4, 4, 4, 4, 4, 4, 4},
@@ -5160,4 +5213,4 @@ struct SWAN_ALIGNED(8) TrainerAIEnv
 //     //{4, 8, 4, 2, 4, 4, 4, 4, 2, 2, 4, 4, 4, 4, 4, 8, 8, 4}
 //     };
 
-#pragma endregion 
+#pragma endregion

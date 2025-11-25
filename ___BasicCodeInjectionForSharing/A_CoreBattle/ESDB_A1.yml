@@ -97384,13 +97384,13 @@ Symbols:
   - Name: loc_2180AE8
     Segment: 0xe
     Address: 0x2180ae9
-  - Name: AI060_Nop
+  - Name: AI060_TargetDealsNegligibleDamage_Setup
     Segment: 0xe
     Address: 0x2180aed
   - Name: AI061_RoamerFlee
     Segment: 0xe
     Address: 0x2180af5
-  - Name: AI062_Nop
+  - Name: AI062_CheckEnemyDamageOutput_Debuffs
     Segment: 0xe
     Address: 0x2180b0d
   - Name: AI063_Nop
@@ -97456,7 +97456,7 @@ Symbols:
   - Name: loc_2180C1C
     Segment: 0xe
     Address: 0x2180c1d
-  - Name: AI072_Nop
+  - Name: AI072_WillUserFaint_Setup
     Segment: 0xe
     Address: 0x2180c39
   - Name: AI073_GetMovePower
@@ -97750,13 +97750,13 @@ Symbols:
   - Name: loc_2181462
     Segment: 0xe
     Address: 0x2181463
-  - Name: AI102_Nop
+  - Name: AI102_CheckRemainingSleepTurns
     Segment: 0xe
     Address: 0x2181471
-  - Name: AI103_Nop
+  - Name: AI103_CheckAllPokemonSpeed
     Segment: 0xe
     Address: 0x2181479
-  - Name: AI104_Nop
+  - Name: AI104_CheckDamageForPriority
     Segment: 0xe
     Address: 0x2181481
   - Name: AI105_CalcMoveDamageWithPartner
@@ -101278,7 +101278,7 @@ Symbols:
   - Name: BattleServer_ChangeSequence
     Segment: 0x5
     Address: 0x219e631
-  - Name: sub_219E638
+  - Name: BattleServer_SetDefaultSequence
     Segment: 0x5
     Address: 0x219e639
   - Name: dword_219E640
@@ -101287,7 +101287,7 @@ Symbols:
   - Name: off_219E644
     Segment: 0x5
     Address: 0x219e645
-  - Name: sub_219E648
+  - Name: BtlServer_StartBattleSequence
     Segment: 0x5
     Address: 0x219e649
   - Name: jpt_219E65E
@@ -101467,7 +101467,7 @@ Symbols:
   - Name: dword_219E938
     Segment: 0x5
     Address: 0x219e939
-  - Name: sub_219E93C
+  - Name: BtlServer_FaintSequence
     Segment: 0x5
     Address: 0x219e93d
   - Name: loc_219E94A

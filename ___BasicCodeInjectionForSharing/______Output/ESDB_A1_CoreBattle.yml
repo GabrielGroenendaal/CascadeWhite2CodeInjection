@@ -101278,7 +101278,7 @@ Symbols:
   - Name: BattleServer_ChangeSequence
     Segment: 0x5
     Address: 0x219e631
-  - Name: sub_219E638
+  - Name: BattleServer_SetDefaultSequence
     Segment: 0x5
     Address: 0x219e639
   - Name: dword_219E640
@@ -101287,7 +101287,7 @@ Symbols:
   - Name: off_219E644
     Segment: 0x5
     Address: 0x219e645
-  - Name: sub_219E648
+  - Name: BtlServer_StartBattleSequence
     Segment: 0x5
     Address: 0x219e649
   - Name: jpt_219E65E
@@ -101467,7 +101467,7 @@ Symbols:
   - Name: dword_219E938
     Segment: 0x5
     Address: 0x219e939
-  - Name: sub_219E93C
+  - Name: BtlServer_FaintSequence
     Segment: 0x5
     Address: 0x219e93d
   - Name: loc_219E94A
@@ -166558,4 +166558,3 @@ Symbols:
   - Name: VRAM_I
     Segment: 0x10
     Address: 0x68a0000
-

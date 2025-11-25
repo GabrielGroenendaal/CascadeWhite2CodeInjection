@@ -85,7 +85,7 @@ public class MainEvents {
 		Message.CloseSystem();
 		Message.ActorEx(1024, 3, 7, 0, 0);
 		Message.CloseActor();
-		Global2805(414, 1);
+		Global2805(353, 1);
 		Trainer.FlagGet(319);
 		Trainer.FlagGet(320);
 		Trainer.FlagGet(321);

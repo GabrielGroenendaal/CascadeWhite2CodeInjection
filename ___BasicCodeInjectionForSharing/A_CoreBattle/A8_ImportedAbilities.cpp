@@ -746,143 +746,126 @@ extern "C" BattleEventHandlerTableEntry *THUMB_BRANCH_EventAddPressure(u32 *hand
 // - Set in [HandlerDancerCheckMove]
 // - Reset and used in [ServerFlow_ActOrderProcMain]
 
-struct FRONT_POKE_SEEK_WORK
-{
-    u8 clientIdx;
-    u8 pokeIdx;
-    u8 endFlag;
-    u8 unk;
-};
 
-extern "C" void FRONT_POKE_SEEK_InitWork(FRONT_POKE_SEEK_WORK *frontSet, ServerFlow *serverFlow);
-extern "C" b32 FRONT_POKE_SEEK_GetNext(FRONT_POKE_SEEK_WORK *frontSet, ServerFlow *serverFlow, BattleMon **battleMon);
-extern "C" void PokeSet_Clear(PokeSet *pokeSet);
-extern "C" void ServerEvent_ActProcEnd(ServerFlow *serverFlow, BattleMon *currentMon, u32 action);
-extern "C" void ServerEvent_AfterSwitchInPrevious(ServerFlow *serverFlow);
-extern "C" void ServerEvent_SwitchIn(ServerFlow *serverFlow, BattleMon *battleMon);
-extern "C" void ServerEvent_AfterLastSwitchIn(ServerFlow *serverFlow);
-extern "C" void PokeSet_Add(PokeSet *pokeSet, BattleMon *battleMon);
-extern "C" u32 PokeSet_SortBySpeed(PokeSet *pokeSet, ServerFlow *serverFlow);
+// extern "C" bool ProcessEntryTurn(ServerFlow *serverFlow)
+// {
+//     serverFlow->field_78A &= ~8u;
+//     PokeSet_Clear(&serverFlow->switching_in_mons);
 
-extern "C" bool ProcessEntryTurn(ServerFlow *serverFlow)
-{
-    serverFlow->field_78A &= ~8u;
-    PokeSet_Clear(&serverFlow->switching_in_mons);
+//     FRONT_POKE_SEEK_WORK seekWork[6];
+//     FRONT_POKE_SEEK_InitWork(seekWork, serverFlow);
 
-    FRONT_POKE_SEEK_WORK seekWork[6];
-    FRONT_POKE_SEEK_InitWork(seekWork, serverFlow);
+//     BattleMon *battleMon;
+//     while (FRONT_POKE_SEEK_GetNext(seekWork, serverFlow, &battleMon))
+//     {
+//         PokeSet_Add(&serverFlow->switching_in_mons, battleMon);
+//         serverFlow->field_7C1[BattleMon_GetID(battleMon)] = 0;
+//     }
 
-    BattleMon *battleMon;
-    while (FRONT_POKE_SEEK_GetNext(seekWork, serverFlow, &battleMon))
-    {
-        PokeSet_Add(&serverFlow->switching_in_mons, battleMon);
-        serverFlow->field_7C1[BattleMon_GetID(battleMon)] = 0;
-    }
+//     PokeSet_SortBySpeed(&serverFlow->switching_in_mons, serverFlow);
+//     u32 HEID = HEManager_PushState(&serverFlow->heManager);
+//     ServerEvent_AfterSwitchInPrevious(serverFlow);
+//     HEManager_PopState(&serverFlow->heManager, HEID);
 
-    PokeSet_SortBySpeed(&serverFlow->switching_in_mons, serverFlow);
-    u32 HEID = HEManager_PushState(&serverFlow->heManager);
-    ServerEvent_AfterSwitchInPrevious(serverFlow);
-    HEManager_PopState(&serverFlow->heManager, HEID);
+//     PokeSet_SeekStart(&serverFlow->switching_in_mons);
+//     for (battleMon = PokeSet_SeekNext(&serverFlow->switching_in_mons); battleMon; battleMon = PokeSet_SeekNext(&serverFlow->switching_in_mons))
+//     {
 
-    PokeSet_SeekStart(&serverFlow->switching_in_mons);
-    for (battleMon = PokeSet_SeekNext(&serverFlow->switching_in_mons); battleMon; battleMon = PokeSet_SeekNext(&serverFlow->switching_in_mons))
-    {
+//         // Check the entry Pok�mon array
+//         u8 entryIdx = 0;
+//         for (; entryIdx < 31; ++entryIdx)
+//         {
+//             u8 entry = g_BattleVars->entrySlots[entryIdx];
+//             u8 slot = BattleMon_GetID(battleMon);
 
-        // Check the entry Pok�mon array
-        u8 entryIdx = 0;
-        for (; entryIdx < 31; ++entryIdx)
-        {
-            u8 entry = g_BattleVars->entrySlots[entryIdx];
-            u8 slot = BattleMon_GetID(battleMon);
+//             if (entry == slot)
+//             {
+//                 // Don't process already processed Pok�mon
+//                 entryIdx = 0xFF;
+//                 break;
+//             }
+//             if (entry == 31)
+//             {
+//                 // Store the new Pok�mon so it's no longer processed
+//                 g_BattleVars->entrySlots[entryIdx] = slot;
+//                 break;
+//             }
+//         }
+//         if (entryIdx == 0xFF)
+//         {
+//             continue;
+//         }
 
-            if (entry == slot)
-            {
-                // Don't process already processed Pok�mon
-                entryIdx = 0xFF;
-                break;
-            }
-            if (entry == 31)
-            {
-                // Store the new Pok�mon so it's no longer processed
-                g_BattleVars->entrySlots[entryIdx] = slot;
-                break;
-            }
-        }
-        if (entryIdx == 0xFF)
-        {
-            continue;
-        }
+//         HEID = HEManager_PushState(&serverFlow->heManager);
+//         ServerEvent_SwitchIn(serverFlow, battleMon);
+//         HEManager_PopState(&serverFlow->heManager, HEID);
 
-        HEID = HEManager_PushState(&serverFlow->heManager);
-        ServerEvent_SwitchIn(serverFlow, battleMon);
-        HEManager_PopState(&serverFlow->heManager, HEID);
+//         HEID = HEManager_PushState(&serverFlow->heManager);
+//         ServerEvent_ActProcEnd(serverFlow, battleMon, 0);
+//         HEManager_PopState(&serverFlow->heManager, HEID);
 
-        HEID = HEManager_PushState(&serverFlow->heManager);
-        ServerEvent_ActProcEnd(serverFlow, battleMon, 0);
-        HEManager_PopState(&serverFlow->heManager, HEID);
+//         u32 getExp = ServerControl_CheckExpGet(serverFlow);
+//         b32 matchup = ServerControl_CheckMatchup(serverFlow);
 
-        u32 getExp = ServerControl_CheckExpGet(serverFlow);
-        b32 matchup = ServerControl_CheckMatchup(serverFlow);
+//         // Stop the entry turn if the battle ends
+//         if (matchup)
+//         {
+//             serverFlow->flowResult = (FlowResult)4;
+//             return false;
+//         }
 
-        // Stop the entry turn if the battle ends
-        if (matchup)
-        {
-            serverFlow->flowResult = (FlowResult)4;
-            return false;
-        }
+//         // Stop the entry turn if a new Pok�mon has to enter the battle
+//         if (serverFlow->flowResult == 6 || serverFlow->flowResult == 1)
+//         {
+//             return false;
+//         }
 
-        // Stop the entry turn if a new Pok�mon has to enter the battle
-        if (serverFlow->flowResult == 6 || serverFlow->flowResult == 1)
-        {
-            return false;
-        }
+//         // Stop the entry turn if a Pok�mon died but the battle is not over
+//         if (getExp)
+//         {
+//             serverFlow->flowResult = (FlowResult)3;
+//             return false;
+//         }
+//     }
 
-        // Stop the entry turn if a Pok�mon died but the battle is not over
-        if (getExp)
-        {
-            serverFlow->flowResult = (FlowResult)3;
-            return false;
-        }
-    }
+//     HEID = HEManager_PushState(&serverFlow->heManager);
+//     ServerEvent_AfterLastSwitchIn(serverFlow);
+//     HEManager_PopState(&serverFlow->heManager, HEID);
 
-    HEID = HEManager_PushState(&serverFlow->heManager);
-    ServerEvent_AfterLastSwitchIn(serverFlow);
-    HEManager_PopState(&serverFlow->heManager, HEID);
+//     // Finish the entry turn
+//     serverFlow->flowResult = (FlowResult)0;
+//     return true;
+// }
 
-    // Finish the entry turn
-    serverFlow->flowResult = (FlowResult)0;
-    return true;
-}
+// extern "C" void THUMB_BRANCH_LINK_ServerControl_ActOrderProc_OnlyPokeIn_0x82(ServerFlow *serverFlow)
+// {
+//     if (entryTurn != 0)
+//     {
+//         ServerControl_AfterSwitchIn(serverFlow);
+//     }
+// }
 
-extern "C" void THUMB_BRANCH_LINK_ServerControl_ActOrderProc_OnlyPokeIn_0x82(ServerFlow *serverFlow)
-{
-    if (entryTurn != 0)
-    {
-        ServerControl_AfterSwitchIn(serverFlow);
-    }
-}
+// extern "C" bool BattleClient_SubProc_UI_SelectAction(BtlClientWk *btlClient, unsigned int *state);
+// extern "C" bool sub_21B22AC(BtlClientWk *a1, unsigned int *a2);
+// extern "C" bool sub_21B2258(BtlClientWk *a1, unsigned int *a2);
+// extern "C" unsigned int MainModule_IsCompetitorScenarioMode(MainModule *a1);
 
-extern "C" bool BattleClient_SubProc_UI_SelectAction(BtlClientWk *btlClient, unsigned int *state);
-extern "C" bool sub_21B22AC(BtlClientWk *a1, unsigned int *a2);
-extern "C" bool sub_21B2258(BtlClientWk *a1, unsigned int *a2);
-extern "C" unsigned int MainModule_IsCompetitorScenarioMode(MainModule *a1);
-
-extern "C" bool THUMB_BRANCH_sub_21B23F8(BtlClientWk *btlClient, unsigned int *a2, int a3, int a4)
-{
-    // k::Printf("\nSUBPROC_UI_SELECTACTION\nentryTurn = %d\n\n\n", entryTurn);
-    if (entryTurn != 0)
-    {
-        if (MainModule_IsCompetitorScenarioMode(btlClient->mainModule) == 1)
-        {
-            return sub_21B22AC(btlClient, a2);
-        }
-        else
-        {
-            return BattleClient_SubProc_UI_SelectAction(btlClient, a2);
-        }
-    }
-    return 1;
-}
+// extern "C" bool THUMB_BRANCH_sub_21B23F8(BtlClientWk *btlClient, unsigned int *a2, int a3, int a4)
+// {
+//     // k::Printf("\nSUBPROC_UI_SELECTACTION\nentryTurn = %d\n\n\n", entryTurn);
+//     if (entryTurn != 0)
+//     {
+//         if (MainModule_IsCompetitorScenarioMode(btlClient->mainModule) == 1)
+//         {
+//             return sub_21B22AC(btlClient, a2);
+//         }
+//         else
+//         {
+//             return BattleClient_SubProc_UI_SelectAction(btlClient, a2);
+//         }
+//     }
+//     return 1;
+// }
 
 #pragma endregion
 
@@ -1169,14 +1152,14 @@ extern "C" int THUMB_BRANCH_SAFESTACK_ServerFlow_ActOrderProcMain(ServerFlow *se
 
     // k::Printf("\n\n====SERVERFLOW_ACTORDERPROCMAIN===\n\n\nThe serverFlow result is %d\n", serverFlow->flowResult);
 
-    if (entryTurn == 0)
-    {
-        if (ProcessEntryTurn(serverFlow))
-        {
-            entryTurn = 1;
-        }
-        return 0;
-    }
+    // if (entryTurn == 0)
+    // {
+    //     if (ProcessEntryTurn(serverFlow))
+    //     {
+    //         entryTurn = 1;
+    //     }
+    //     return 0;
+    // }
 
     for (u8 i = 0; i < 6; ++i)
     {
@@ -1339,6 +1322,154 @@ extern "C" int THUMB_BRANCH_SAFESTACK_ServerFlow_ActOrderProcMain(ServerFlow *se
 
 #pragma endregion
 
+#pragma region EjectButton
+
+struct FRONT_POKE_SEEK_WORK
+{
+    u8 clientIdx;
+    u8 pokeIdx;
+    u8 endFlag;
+    u8 unk;
+};
+
+extern "C" void FRONT_POKE_SEEK_InitWork(FRONT_POKE_SEEK_WORK *frontSet, ServerFlow *serverFlow);
+extern "C" b32 FRONT_POKE_SEEK_GetNext(FRONT_POKE_SEEK_WORK *frontSet, ServerFlow *serverFlow, BattleMon **battleMon);
+extern "C" void PokeSet_Clear(PokeSet *pokeSet);
+extern "C" void ServerEvent_ActProcEnd(ServerFlow *serverFlow, BattleMon *currentMon, u32 action);
+extern "C" void ServerEvent_AfterSwitchInPrevious(ServerFlow *serverFlow);
+extern "C" void ServerEvent_SwitchIn(ServerFlow *serverFlow, BattleMon *battleMon);
+extern "C" void ServerEvent_AfterLastSwitchIn(ServerFlow *serverFlow);
+extern "C" void PokeSet_Add(PokeSet *pokeSet, BattleMon *battleMon);
+extern "C" u32 PokeSet_SortBySpeed(PokeSet *pokeSet, ServerFlow *serverFlow);
+extern "C" u32 ServerControl_ActOrderProc_OnlyPokeIn(ServerFlow* serverFlow, u32* clientAction);
+extern "C" BtlServerWk* BattleServer_InitChangePokemonReq(BtlServerWk* result);
+extern "C" void BattleEventVar_CheckStackCleared();
+
+extern "C" u32 ServerFlow_SwitchEndTurn(ServerFlow *serverFlow, u32 *clientAction)
+{
+    serverFlow->flowResult = (FlowResult)0;
+    serverFlow->serverCommandQueue->writePtr = 0;
+    serverFlow->serverCommandQueue->readPtr = 0;
+
+    // Reset switch flag (used in Handler_CheckReservedMemberChangeAction)
+    serverFlow->field_78A &= ~8u;
+
+    if (serverFlow->cmdBuildStep ||
+        (BattleServer_InitChangePokemonReq(serverFlow->server),
+         BattleEventVar_CheckStackCleared(),
+         serverFlow->field_77D = 0,
+         serverFlow->cmdBuildStep = 1,
+         !ServerControl_ActOrderProc_OnlyPokeIn(serverFlow, clientAction)))
+    {
+
+        FRONT_POKE_SEEK_WORK seekWork[6];
+        FRONT_POKE_SEEK_InitWork(seekWork, serverFlow);
+
+        BattleMon *battleMon;
+        while (FRONT_POKE_SEEK_GetNext(seekWork, serverFlow, &battleMon))
+        {
+            ServerEvent_ActProcEnd(serverFlow, battleMon, 0);
+            if (serverFlow->flowResult == 1)
+            {
+                return 1;
+            }
+        }
+    }
+    return 0;
+}
+
+extern "C" u32 sub_219F214(BtlServerWk *btlServer);
+extern "C" u32 sub_219DF90(MainModule *mainModule);
+extern "C" void sub_219F0EC(BtlServerWk *btlServer);
+extern "C" bool sub_219F06C(BtlServerWk *btlServer, u8, u8);
+extern "C" void sub_219F168(BtlServerWk *server, u16 cmdID, u8 *data, u32 dataSize);
+extern "C" bool BattleServer_IsWaitingClientReply(BtlServerWk *btlServer);
+#define SEQUENCE_FUNCTION(name) u32(*name)(BtlServerWk* btlServer, u32* statePtr)
+extern "C" void BattleServer_ChangeSequence(BtlServerWk* btlServer, SEQUENCE_FUNCTION(sequence));
+extern "C" void BattleServer_SetDefaultSequence(BtlServerWk* btlServer);
+extern "C" BtlServerWk* BattleServer_InitChangePokemonReq(BtlServerWk* result);
+
+
+extern "C" u32 BtlServer_EndTurnSequence(BtlServerWk *btlServer, u32 *state)
+{
+    switch (*state)
+    {
+    case 0:
+        sub_219F168(btlServer, 6, &btlServer->field_CB4, btlServer->field_CBA);
+        *state = 1;
+        break;
+    case 1:
+        if (!BattleServer_IsWaitingClientReply(btlServer))
+        {
+            return 0;
+        }
+        sub_219F214(btlServer);
+        if (sub_219DF90((MainModule *)btlServer->mainModule))
+        {
+            BattleServer_ChangeSequence(btlServer, (SEQUENCE_FUNCTION())0x219ECC5); // BtlServer_EndMatchSequence
+        }
+        else
+        {
+            sub_219F0EC(btlServer);
+            if (!sub_219F06C(btlServer, 2u, 0))
+            {
+                *state = 3;
+            }
+            else
+            {
+                *state = 2;
+            }
+        }
+        break;
+    case 2:
+        if (!BattleServer_IsWaitingClientReply(btlServer))
+        {
+            return 0;
+        }
+        sub_219F214(btlServer);
+        *state = 3;
+        return 0;
+    case 3:
+        sub_219F214(btlServer);
+        btlServer->serverFlow->cmdBuildStep = 0;
+        *state = 4;
+    case 4:
+        btlServer->serverTurnState = ServerFlow_SwitchEndTurn(btlServer->serverFlow, &btlServer->clientAction);
+        sub_219F168(btlServer, 8, btlServer->field_CB0 + 8, *btlServer->field_CB0);
+        *state = 5;
+        break;
+    case 5:
+        if (!BattleServer_IsWaitingClientReply(btlServer))
+        {
+            return 0;
+        }
+        sub_219F214(btlServer);
+        switch (btlServer->serverTurnState)
+        {
+        case 1:
+            *state = 0;
+            break;
+        default:
+            BattleServer_SetDefaultSequence(btlServer);
+            break;
+        }
+        break;
+    }
+
+    return 0;
+}
+
+extern "C" void THUMB_BRANCH_LINK_BtlServer_StartBattleSequence_0x9C(BtlServerWk *btlServer)
+{
+    BattleServer_ChangeSequence(btlServer, BtlServer_EndTurnSequence);
+}
+
+extern "C" void THUMB_BRANCH_LINK_BtlServer_FaintSequence_0x136(BtlServerWk *btlServer)
+{
+    BattleServer_ChangeSequence(btlServer, BtlServer_EndTurnSequence);
+}
+#pragma endregion
+
 #pragma region EVMods
 
 /*
@@ -1433,8 +1564,6 @@ extern "C" int THUMB_BRANCH_ScaleExpGainedByLevel(BattleMon *monGainingExp, unsi
 #pragma endregion
 
 #pragma region BattleScan
-
-
 
 #pragma endregion
 #pragma region Field Effect Stuff

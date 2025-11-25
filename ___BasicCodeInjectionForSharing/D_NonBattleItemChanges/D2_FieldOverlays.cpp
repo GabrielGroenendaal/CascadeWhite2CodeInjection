@@ -722,6 +722,8 @@ extern "C"
     // };
 #pragma endregion
 
+
+
 #pragma region WIPStuff
     // void THUMB_BRANCH_SAFESTACK_createEggPkm(PartyPkm *newPkm, EggPkm *eggPkm, void *pTrainerInfo, u16 location, HeapID heapId)
     // {
@@ -1008,3 +1010,64 @@ extern "C"
     // };
 #pragma endregion
 }
+
+#pragma region NewScriptCommands
+    extern "C" bool BagSave_AddItem(BagSaveData *bag, u16 itemId, u16 quantity, HeapID heapId);
+    extern "C" u32 PML_UtilGetPkmLvExp(u16 species, u16 form, int level);
+
+  
+
+   extern "C"  int RemoteItems(void *vm, void *env) {
+        GameData* gameData;
+        PokeParty* party;
+        PartyPkm* pkm;
+        u8 pokeCount; 
+        HeapID heap = FieldScriptEnv_GetHeapID(env);
+        gameData = FieldScriptEnv_GetGameData(env);
+        party = GameData_GetParty(gameData);
+        pokeCount = PokeParty_GetPkmCount(party);
+
+        for (int i = 0; i < pokeCount; i++){
+            pkm = PokeParty_GetPkm(party, i);
+
+            if (PokeParty_GetParam(pkm, PF_Item, 0)){
+                BagSave_AddItem(GameData_GetBag(gameData), PokeParty_GetParam(pkm, PF_Item, 0), 1, heap);
+                PokeParty_SetParam(pkm, PF_Item, 0);
+            }
+        }
+        return 0;
+    }
+
+    extern "C" int EdgeExp(void *vm, void *env){
+        GameData* gameData;
+        PokeParty* party;
+        PartyPkm* pkm;
+        u8 pokeCount; 
+        int species;
+        int form;
+        int level;
+        u32 PkmLvExp;
+        gameData = FieldScriptEnv_GetGameData(env);
+        party = GameData_GetParty(gameData);
+        pokeCount = PokeParty_GetPkmCount(party);
+
+        for (int i = 0; i < pokeCount; i++){
+            pkm = PokeParty_GetPkm(party, i);
+            level = PokeParty_GetParam(pkm, PF_Level, 0);
+            species = PokeParty_GetParam(pkm, PF_Species, 0);
+            form = PokeParty_GetParam(pkm, PF_Forme, 0);
+            PkmLvExp = PML_UtilGetPkmLvExp(species, form, (level + 1)) - 1; // Gets the EXp needed to be current level + 1
+            PokeParty_SetParam(pkm, PF_Experience, PkmLvExp);
+            PokeParty_RecalcStats(pkm);
+        }
+        return 0;
+    }
+    // Replaces 133
+    extern "C" void* FULL_COPY_12_0x0216BA44 = (void*)RemoteItems;
+    // Replaces 135
+    extern "C" void* FULL_COPY_12_0x0216BA4C = (void*)EdgeExp;
+    // Replaces 00 in the EV_CMD_PERM array
+    extern "C" u8 FULL_COPY_EVCMD_PERM_TABLE_0x132 = 7;
+    extern "C" u8 FULL_COPY_EVCMD_PERM_TABLE_0x134 = 7;
+
+#pragma endregion

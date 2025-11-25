@@ -982,8 +982,11 @@ extern "C"
             }
             else
             {
-                setTruantByte(mon, 1);
-                *a4 = 1;
+                if (PML_MoveGetCategory(BattleEventVar_GetValue(VAR_MOVE_ID)))
+                {
+                    setTruantByte(mon, 1);
+                	*a4 = 1;
+                }
             }
         }
     }
