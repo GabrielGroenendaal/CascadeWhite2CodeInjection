@@ -1026,7 +1026,6 @@ extern "C"
         gameData = FieldScriptEnv_GetGameData(env);
         party = GameData_GetParty(gameData);
         pokeCount = PokeParty_GetPkmCount(party);
-
         for (int i = 0; i < pokeCount; i++){
             pkm = PokeParty_GetPkm(party, i);
 

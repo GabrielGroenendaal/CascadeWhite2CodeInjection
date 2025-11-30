@@ -1,0 +1,113 @@
+	JumpIfTargetIsAlly(&address_EndScript)
+	JumpIfTargetWillFaint(false, &address_LogicForKillingBlow)
+	CalcMoveDamage(false)
+	JumpIfStoredEQ(not_strongest, &address_ReduceScoreBy1)
+	JumpIfMoveEffectEQ(move_ef.explosion, &address_ReduceScorePotentially)
+	JumpIfMoveEffectEQ(move_ef.focus_punch, &address_ReduceScorePotentially)
+	JumpIfMoveEffectEQ(move_ef.sucker_punch, &address_ReduceScorePotentially)
+	Jump(&address_CheckIfSuperEffective)
+
+address_ReduceScorePotentially:
+	JumpIfRandLT(51, &address_CheckIfSuperEffective)
+	AddToScore(-2)
+
+address_CheckIfSuperEffective:
+	JumpIfEffectivenessEQ(2x, &address_IfSuperEffectivePotentiallyRaiseScore)
+    JumpIfEffectivenessEQ(4x, &address_IfSuperEffectivePotentiallyRaiseScore)
+	EndScript()
+
+
+address_IfSuperEffectivePotentiallyRaiseScore:
+	JumpIfRandLT(80, &address_EndScript)
+	AddToScore(2)
+	EndScript()
+
+
+address_LogicForKillingBlow:
+	JumpIfMoveEffectEQ(move_ef.explosion, &address_EndScript)
+	JumpIfMoveEffectEQ(move_ef.focus_punch, &address_VolatileLogic)
+	JumpIfMoveEffectEQ(move_ef.sucker_punch, &address_VolatileLogic)
+	JumpIfMoveEffectEQ(move_ef.future_sight, &address_VolatileLogic)
+	JumpIfMoveEffectEQ(move_ef.increased_priority, &address_PriorityCalculation)
+	Jump(&address_0x00C0)
+
+address_VolatileLogic:
+	JumpIfRandLT(170, &address_EndScript)
+	Jump(&address_0x00C0)
+
+address_AddTwoToScore:
+	AddToScore(2)
+
+address_0x00C0:
+	AddToScore(4)
+
+address_EndScript:
+	EndScript()
+
+// Apple
+
+address_PriorityCalculation:
+    JumpIfUserIsSlowerThanAllEnemies(&address_PriorityEnd)
+    JumpIfRandLT(217, &address_PriorityEnd)
+    EndScript()
+    
+address_PriorityEnd:
+    AddToScore(6)
+    EndScript()
+
+address_ReduceScoreBy1:
+	AddToScore(-1)
+	EndScript()
+
+	0x0004 [4]
+	0xFFFE [65534]
+	0xFFFF [65535]
+	0x004D [77]
+	0x0004 [4]
+	0xFFFD [65533]
+	0xFFFF [65535]
+	0x004D [77]
+	0x0004 [4]
+	0xFFFB [65531]
+	0xFFFF [65535]
+	0x004D [77]
+	0x0004 [4]
+	0xFFFA [65530]
+	0xFFFF [65535]
+	0x004D [77]
+	0x0004 [4]
+	0xFFF8 [65528]
+	0xFFFF [65535]
+	0x004D [77]
+	0x0004 [4]
+	0xFFF6 [65526]
+	0xFFFF [65535]
+	0x004D [77]
+	0x0004 [4]
+	0xFFF4 [65524]
+	0xFFFF [65535]
+	0x004D [77]
+	0x0004 [4]
+	0xFFE2 [65506]
+	0xFFFF [65535]
+	0x004D [77]
+	0x0004 [4]
+	0x0001 [1]
+	0x0000 [0]
+	0x004D [77]
+	0x0004 [4]
+	0x0002 [2]
+	0x0000 [0]
+	0x004D [77]
+	0x0004 [4]
+	0x0003 [3]
+	0x0000 [0]
+	0x004D [77]
+	0x0004 [4]
+	0x0005 [5]
+	0x0000 [0]
+	0x004D [77]
+	0x0004 [4]
+	0x000A [10]
+	0x0000 [0]
+	0x004D [77]

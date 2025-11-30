@@ -1,427 +1,477 @@
-	JumpIfTargetIsAlly(&address_0x055E)
-	JumpTable(move_effect, 337, &data_address_0x0016)
+	JumpIfTargetIsAlly(&endScript_1)
+	JumpTable(move_effect, 337, &data_address_moveEffects)
 	EndScript()
 
 
-data_address_0x0016:
-	move_ef.dmg => &address_0x055E
-	move_ef.target_slp => &Label_0x0560
-	move_ef.dmg_target_psn => &address_0x055E
-	move_ef.dmg_target_absorb => &Label_0x05F4
-	move_ef.dmg_target_brn => &address_0x055E
-	move_ef.dmg_target_frz => &address_0x055E
-	move_ef.dmg_target_par => &address_0x055E
-	move_ef.explosion => &Label_0x063A
-	move_ef.dream_eater => &Label_0x06F0
-	move_ef.mirror_move => &Label_0x076A
-	move_ef.user_atk+1 => &Label_0x0884
-	move_ef.user_def+1 => &Label_0x0906
-	move_ef.user_spe+1 => &Label_0x09D8
-	move_ef.user_spa+1 => &Label_0x0AA2
-	move_ef.user_spd+1 => &Label_0x0B24
-	move_ef.user_acc+1 => &Label_0x0BD8
-	move_ef.user_eva+1 => &Label_0x0C10
-	move_ef.no_miss => &Label_0x0F3E
-	move_ef.target_atk-1 => &Label_0x0FA4
-	move_ef.target_def-1 => &Label_0x1040
-	move_ef.target_spe-1 => &Label_0x10EE
-	move_ef.target_spa-1 => &Label_0x1116
-	move_ef.target_spd-1 => &Label_0x11BA
-	move_ef.target_acc-1 => &Label_0x1200
-	move_ef.target_eva-1 => &Label_0x1334
-	move_ef.haze => &Label_0x137A
-	move_ef.bide => &Label_0x1520
-	move_ef.thrash => &address_0x055E
-	move_ef.force_switch => &Label_0x1536
-	move_ef.multi-strike_2-5 => &address_0x055E
-	move_ef.conversion => &Label_0x15F8
-	move_ef.dmg_flinch => &address_0x055E
-	move_ef.heal_50 => &Label_0x1650
-	move_ef.target_tox => &Label_0x16F4
-	move_ef.dmg_money => &address_0x055E
-	move_ef.light_screen => &Label_0x176A
-	move_ef.tri_attack => &address_0x055E
-	move_ef.rest => &Label_0x17C8
-	move_ef.ohko => &Label_0x187A
-	move_ef.razor_wind => &Label_0x29D0
-	move_ef.direct_half => &Label_0x188C
-	move_ef.direct_40 => &address_0x055E
-	move_ef.dmg_trap => &Label_0x18A2
-	move_ef.increased_crit => &Label_0x18EE
-	move_ef.multi-strike_2 => &address_0x055E
-	move_ef.jump_kick => &address_0x055E
-	move_ef.mist => &address_0x055E
-	move_ef.focus_energy => &address_0x055E
-	move_ef.dmg_recoil_25 => &Label_0x5054
-	move_ef.target_confusion => &Label_0x195A
-	move_ef.user_atk+2 => &Label_0x0884
-	move_ef.user_def+2 => &Label_0x0906
-	move_ef.user_spe+2 => &Label_0x09D8
-	move_ef.user_spa+2 => &Label_0x0AA2
-	move_ef.user_spd+2 => &Label_0x0B24
-	move_ef.user_acc+2 => &Label_0x0BD8
-	move_ef.user_eva+2 => &Label_0x0C10
-	move_ef.transform => &address_0x055E
-	move_ef.target_atk-2 => &Label_0x0FA4
-	move_ef.target_def-2 => &Label_0x1040
-	move_ef.target_spe-2 => &Label_0x10EE
-	move_ef.target_spa-2 => &Label_0x1116
-	move_ef.target_spd-2 => &Label_0x11BA
-	move_ef.target_acc-2 => &Label_0x1200
-	move_ef.target_eva-2 => &Label_0x1334
-	move_ef.reflect => &Label_0x19DA
-	move_ef.target_psn => &Label_0x1A38
-	move_ef.target_par => &Label_0x1A5C
-	move_ef.dmg_target_atk-1 => &address_0x055E
-	move_ef.dmg_target_def-1 => &address_0x055E
-	move_ef.dmg_target_spe-1 => &Label_0x1086
-	move_ef.dmg_target_spa-1 => &address_0x055E
-	move_ef.dmg_target_spd-1 => &address_0x055E
-	move_ef.dmg_target_acc-1 => &address_0x055E
-	move_ef.dmg_target_eva-1 => &address_0x055E
-	move_ef.sky_attack => &Label_0x29D0
-	move_ef.dmg_target_confuse => &address_0x055E
-	move_ef.twineedle => &address_0x055E
-	move_ef.vital_throw => &Label_0x1A92
-	move_ef.substitute => &Label_0x1AD4
-	move_ef.recharge => &Label_0x1BEE
-	move_ef.rage => &address_0x055E
-	move_ef.mimic => &address_0x055E
-	move_ef.metronome => &address_0x055E
-	move_ef.leech_seed => &Label_0x16F4
-	move_ef.splash => &address_0x055E
-	move_ef.disable => &Label_0x1C66
-	move_ef.direct_level => &address_0x055E
-	move_ef.psywave => &address_0x055E
-	move_ef.counter => &Label_0x1CA0
-	move_ef.encore => &Label_0x1DE0
-	move_ef.pain_split => &Label_0x1F74
-	move_ef.snore => &Label_0x1FC8
-	move_ef.conversion_2 => &address_0x055E
-	move_ef.mind_reader => &Label_0x1FD0
-	move_ef.sketch => &address_0x055E
-	move_ef.unknown_0x0060 => &address_0x055E
-	move_ef.sleep_talk => &Label_0x1FE2
-	move_ef.destiny_bond => &Label_0x1FF8
-	move_ef.flail => &Label_0x2064
-	move_ef.spite => &address_0x055E
-	move_ef.false_swipe => &address_0x055E
-	move_ef.team_heal => &Label_0x20E4
-	move_ef.increased_priority => &address_0x055E
-	move_ef.triple_kick => &address_0x055E
-	move_ef.theif => &Label_0x2100
-	move_ef.spider_web => &Label_0x18A2
-	move_ef.nightmare => &address_0x055E
-	move_ef.minimize => &Label_0x0C10
-	move_ef.curse => &Label_0x2196
-	move_ef.unknown_0x006e => &address_0x055E
-	move_ef.protect => &Label_0x226A
-	move_ef.spikes => &Label_0x2408
-	move_ef.foresight => &Label_0x244C
-	move_ef.perish_song => &address_0x055E
-	move_ef.sandstorm => &address_0x055E
-	move_ef.endure => &Label_0x24A6
-	move_ef.rollout => &address_0x055E
-	move_ef.swagger => &Label_0x193C
-	move_ef.fury_cutter => &address_0x055E
-	move_ef.attract => &address_0x055E
-	move_ef.return => &address_0x055E
-	move_ef.present => &address_0x055E
-	move_ef.frustration => &address_0x055E
-	move_ef.safeguard => &address_0x055E
-	move_ef.flame_wheel => &address_0x055E
-	move_ef.magnitude => &address_0x055E
-	move_ef.baton_pass => &Label_0x24E0
-	move_ef.pursuit => &Label_0x2616
-	move_ef.rapid_spin => &address_0x055E
-	move_ef.direct_30 => &address_0x055E
-	move_ef.unknown_0x0083 => &address_0x055E
-	move_ef.morning_sun => &Label_0x1624
-	move_ef.unknown0x0085 => &Label_0x1624
-	move_ef.unknown0x0086 => &Label_0x1624
-	move_ef.hidden_power => &address_0x055E
-	move_ef.rain_dance => &Label_0x269C
-	move_ef.sunny_day => &Label_0x272C
-	move_ef.dmg_user_def+1 => &address_0x055E
-	move_ef.dmg_user_atk+1 => &address_0x055E
-	move_ef.ancient_power => &address_0x055E
-	move_ef.unknown_0x008d => &address_0x055E
-	move_ef.belly_drum => &Label_0x2798
-	move_ef.psych_up => &Label_0x27B4
-	move_ef.mirror_coat => &Label_0x2894
-	move_ef.skull_bash => &Label_0x29D0
-	move_ef.twister => &address_0x055E
-	move_ef.earthquake => &address_0x055E
-	move_ef.future_sight => &address_0x055E
-	move_ef.gust => &address_0x055E
-	move_ef.stomp => &address_0x055E
-	move_ef.solar_beam => &Label_0x29D0
-	move_ef.thunder => &Label_0x2A66
-	move_ef.teleport => &address_0x055E
-	move_ef.beat_up => &address_0x055E
-	move_ef.fly => &Label_0x2AB8
-	move_ef.defense_curl => &address_0x055E
-	move_ef.unknown_0x009d => &Label_0x1650
-	move_ef.fake_out => &Label_0x2C1E
-	move_ef.uproar => &address_0x055E
-	move_ef.stockpile => &Label_0x2C26
-	move_ef.spit_up => &Label_0x2C8A
-	move_ef.swallow => &Label_0x1650
-	move_ef.unknown_0x00a3 => &address_0x055E
-	move_ef.hail => &Label_0x2CAC
-	move_ef.torment => &address_0x055E
-	move_ef.flatter => &Label_0x194A
-	move_ef.will-o-wisp => &address_0x055E
-	move_ef.memento => &Label_0x063A
-	move_ef.facade => &Label_0x2D1E
-	move_ef.focus_punch => &Label_0x2D5A
-	move_ef.smelling_salts => &Label_0x2DFE
-	move_ef.follow_me => &address_0x055E
-	move_ef.nature_power => &address_0x055E
-	move_ef.charge_electric => &address_0x055E
-	move_ef.taunt => &address_0x055E
-	move_ef.helping_hand => &address_0x055E
-	move_ef.trick => &Label_0x2E1A
-	move_ef.roleplay => &Label_0x3256
-	move_ef.wish => &address_0x055E
-	move_ef.assist => &address_0x055E
-	move_ef.ingrain => &Label_0x332C
-	move_ef.dmg_user_atk_def-1 => &Label_0x332E
-	move_ef.magic_coat => &Label_0x3392
-	move_ef.recycle => &Label_0x33F2
-	move_ef.revenge => &Label_0x3430
-	move_ef.brick_break => &Label_0x3478
-	move_ef.yawn => &address_0x055E
-	move_ef.knock_off => &Label_0x34A2
-	move_ef.endeavor => &Label_0x34E2
-	move_ef.dmg_user_hp_pct => &Label_0x3536
-	move_ef.skill_swap => &Label_0x3256
-	move_ef.imprison => &Label_0x35C6
-	move_ef.refresh => &Label_0x35E8
-	move_ef.grudge => &address_0x055E
-	move_ef.snatch => &Label_0x3604
-	move_ef.low_kick => &address_0x055E
-	move_ef.secret_power => &address_0x055E
-	move_ef.dmg_recoil_33 => &Label_0x5054
-	move_ef.teeter_dance => &address_0x055E
-	move_ef.dmg_target_brn_highcrit => &Label_0x18EE
-	move_ef.mud_sport => &Label_0x36D0
-	move_ef.dmg_target_tox => &address_0x055E
-	move_ef.weather_ball => &address_0x055E
-	move_ef.dmg_user_spa-2 => &Label_0x3718
-	move_ef.target_atk_def-1 => &Label_0x1040
-	move_ef.user_def_spd+1 => &Label_0x0B24
-	move_ef.sky_uppercut => &address_0x055E
-	move_ef.user_atk_def+1 => &Label_0x0906
-	move_ef.dmg_target_psn_highcrit => &Label_0x18EE
-	move_ef.water_sport => &Label_0x37B2
-	move_ef.user_spa_spd+1 => &Label_0x0B24
-	move_ef.user_atk_spe+1 => &Label_0x37FA
-	move_ef.camouflage => &address_0x055E
-	move_ef.roost => &Label_0x1650
-	move_ef.gravity => &Label_0x383A
-	move_ef.miracle_eye => &Label_0x38A8
-	move_ef.wake-up_slap => &Label_0x38FE
-	move_ef.dmg_user_spe-1 => &Label_0x3944
-	move_ef.gyro_ball => &Label_0x3982
-	move_ef.healing_wish => &Label_0x509A
-	move_ef.brine => &Label_0x3984
-	move_ef.natural_gift => &address_0x055E
-	move_ef.feint => &Label_0x39D4
-	move_ef.pluck => &Label_0x3B18
-	move_ef.tailwind => &Label_0x3B74
-	move_ef.acupressure => &Label_0x3BC2
-	move_ef.metal_burst => &Label_0x3C06
-	move_ef.dmg_user_switch => &Label_0x3CF2
-	move_ef.dmg_user_def_spd-1 => &Label_0x3DD0
-	move_ef.payback => &Label_0x3E22
-	move_ef.assurance => &Label_0x3E72
-	move_ef.embargo => &Label_0x3EF4
-	move_ef.fling => &Label_0x3F06
-	move_ef.psycho_shift => &Label_0x3FE0
-	move_ef.trump_card => &Label_0x400A
-	move_ef.heal_block => &Label_0x40E6
-	move_ef.dmg_target_hp_pct => &Label_0x41E8
-	move_ef.power_trick => &Label_0x426A
-	move_ef.gastro_acid => &Label_0x4500
-	move_ef.lucky_chant => &Label_0x45CC
-	move_ef.me_first => &Label_0x4628
-	move_ef.copycat => &Label_0x4690
-	move_ef.power_swap => &Label_0x47D4
-	move_ef.guard_swap => &Label_0x4934
-	move_ef.punishment => &Label_0x4A94
-	move_ef.last_resort => &Label_0x4B32
-	move_ef.worry_seed => &Label_0x4B74
-	move_ef.sucker_punch => &Label_0x4BBE
-	move_ef.toxic_spikes => &Label_0x4BFA
-	move_ef.heart_swap => &Label_0x4C3E
-	move_ef.aqua_ring => &Label_0x4D3A
-	move_ef.magnet_rise => &Label_0x4D5A
-	move_ef.flare_blitz => &Label_0x5054
-	move_ef.struggle => &address_0x055E
-	move_ef.dive => &Label_0x2AB8
-	move_ef.dig => &Label_0x2AB8
-	move_ef.surf => &address_0x055E
-	move_ef.defog => &Label_0x4DD8
-	move_ef.trick_room => &Label_0x4EF0
-	move_ef.blizzard => &Label_0x4F42
-	move_ef.whirlpool => &address_0x055E
-	move_ef.volt_tackle => &Label_0x5054
-	move_ef.bounce => &Label_0x2AB8
-	move_ef.unknown_0x0108 => &address_0x055E
-	move_ef.captivate => &Label_0x4F8C
-	move_ef.stealth_rock => &Label_0x500C
-	move_ef.chatter => &address_0x055E
-	move_ef.judgment => &address_0x055E
-	move_ef.dmg_recoil_50 => &Label_0x5054
-	move_ef.lunar_dance => &Label_0x509A
-	move_ef.dmg_target_spd-2 => &address_0x055E
-	move_ef.shadow_force => &Label_0x2AE0
-	move_ef.dmg_target_brn_flinch => &address_0x055E
-	move_ef.dmg_target_frz_flinch => &address_0x055E
-	move_ef.dmg_target_par_flinch => &address_0x055E
-	move_ef.dmg_user_spa+1 => &address_0x055E
-	move_ef.user_atk_acc+1 => &Label_0x514C
-	move_ef.wide_guard => &Label_0x5184
-	move_ef.guard_split => &Label_0x5186
-	move_ef.power_split => &Label_0x5358
-	move_ef.wonder_room => &Label_0x5536
-	move_ef.dmg_physical => &Label_0x5538
-	move_ef.venoshock => &Label_0x553A
-	move_ef.autotomize => &Label_0x09BA
-	move_ef.telekinesis => &Label_0x553C
-	move_ef.magic_room => &Label_0x55A0
-	move_ef.smack_down => &Label_0x55FC
-	move_ef.dmg_alwayscrit => &Label_0x5652
-	move_ef.flame_burst => &Label_0x56B6
-	move_ef.user_spa_spd_spe+2 => &Label_0x56B8
-	move_ef.heavy_slam => &Label_0x56F8
-	move_ef.synchronoise => &Label_0x56FA
-	move_ef.electro_ball => &Label_0x56FC
-	move_ef.soak => &Label_0x5754
-	move_ef.dmg_user_spe+1 => &Label_0x5756
-	move_ef.acid_spray => &Label_0x57A6
-	move_ef.foul_play => &Label_0x57E2
-	move_ef.simple_beam => &Label_0x42DE
-	move_ef.entrainment => &Label_0x57E4
-	move_ef.after_you => &Label_0x57F6
-	move_ef.round => &Label_0x57F8
-	move_ef.echoed_voice => &Label_0x57FA
-	move_ef.chip_away => &Label_0x57FC
-	move_ef.clear_smog => &Label_0x5850
-	move_ef.stored_power => &Label_0x58D2
-	move_ef.quick_guard => &Label_0x5A5C
-	move_ef.ally_switch => &Label_0x5A84
-	move_ef.shell_smash => &Label_0x5A86
-	move_ef.heal_pulse => &Label_0x5AB8
-	move_ef.hex => &Label_0x5ABA
-	move_ef.sky_drop => &Label_0x2B1E
-	move_ef.user_spe+2_atk+1 => &Label_0x5ABC
-	move_ef.dmg_force_switch => &Label_0x1536
-	move_ef.incinerate => &Label_0x5AFC
-	move_ef.quash => &Label_0x5B1A
-	move_ef.growth => &Label_0x5B1C
-	move_ef.acrobatics => &Label_0x5B3C
-	move_ef.reflect_type => &Label_0x5B90
-	move_ef.retaliate => &Label_0x5C26
-	move_ef.final_gambit => &Label_0x5C28
-	move_ef.user_spa+3 => &Label_0x0AA2
-	move_ef.user_atk_def_acc+1 => &Label_0x0906
-	move_ef.bestow => &Label_0x5C66
-	move_ef.water_pledge => &Label_0x5C68
-	move_ef.fire_pledge => &Label_0x5C6A
-	move_ef.grass_pledge => &Label_0x5C6C
-	move_ef.work_up => &Label_0x5C6E
-	move_ef.cotton_guard => &Label_0x0AA2
-	move_ef.relic_song => &Label_0x5D18
-	move_ef.glaciate => &Label_0x5D1A
-	move_ef.freeze_shock => &Label_0x29D0
-	move_ef.ice_burn => &Label_0x29D0
+data_address_moveEffects:
+	move_ef.dmg => &endScript_1
+	move_ef.target_slp => &Label_ApplySleep
+	move_ef.dmg_target_psn => &endScript_1
+	move_ef.dmg_target_absorb => &Label_DmgAbsorb
+	move_ef.dmg_target_brn => &endScript_1
+	move_ef.dmg_target_frz => &endScript_1
+	move_ef.dmg_target_par => &endScript_1
+	move_ef.explosion => &Label_Explosion
+	move_ef.dream_eater => &Label_DreamEater
+	move_ef.mirror_move => &Label_MirrorMove
+	move_ef.user_atk+1 => &Label_RaiseUserAttack
+	move_ef.user_def+1 => &Label_RaiseUserDefense
+	move_ef.user_spe+1 => &Label_RaiseUserSpeed
+	move_ef.user_spa+1 => &Label_RaiseUserSpecialAttack
+	move_ef.user_spd+1 => &Label_RaiseUserSpecialDefense
+	move_ef.user_acc+1 => &Label_RaiseUserAccuracy
+	move_ef.user_eva+1 => &Label_RaiseUserEvasion
+	move_ef.no_miss => &Label_CannotMiss
+	move_ef.target_atk-1 => &Label_LowerTargetAttack
+	move_ef.target_def-1 => &Label_LowerTargetDefense
+	move_ef.target_spe-1 => &Label_LowerTargetSpeed
+	move_ef.target_spa-1 => &Label_LowerTargetSpecialAttack
+	move_ef.target_spd-1 => &Label_LowerTargetSpecialDefense
+	move_ef.target_acc-1 => &Label_LowerTargetAccuracy
+	move_ef.target_eva-1 => &Label-LowerTargetEvasion
+	move_ef.haze => &Label_NeutralizeStats
+	move_ef.bide => &endScript_1
+	move_ef.thrash => &endScript_1
+	move_ef.force_switch => &endScript_1
+	move_ef.multi-strike_2-5 => &endScript_1
+	move_ef.conversion => &endScript_1
+	move_ef.dmg_flinch => &endScript_1
+	move_ef.heal_50 => &Label_Heal50
+	move_ef.target_tox => &Label_ApplyPoison
+	move_ef.dmg_money => &endScript_1
+	move_ef.light_screen => &Label_LightScreen
+	move_ef.tri_attack => &endScript_1
+	move_ef.rest => &Label_Rest
+	move_ef.ohko => &endScript_1
+	move_ef.razor_wind => &endScript_1
+	move_ef.direct_half => &Label_DirectHalf
+	move_ef.direct_40 => &endScript_1
+	move_ef.dmg_trap => &Label_Binding
+	move_ef.increased_crit => &Label_IncreaseCrit
+	move_ef.multi-strike_2 => &endScript_1
+	move_ef.jump_kick => &endScript_1
+	move_ef.mist => &endScript_1
+	move_ef.focus_energy => &endScript_1
+	move_ef.dmg_recoil_25 => &Label_Recoil25
+	move_ef.target_confusion => &Label_ApplyConfusion
+	move_ef.user_atk+2 => &Label_RaiseUserAttack
+	move_ef.user_def+2 => &Label_RaiseUserDefense
+	move_ef.user_spe+2 => &Label_RaiseUserSpeed
+	move_ef.user_spa+2 => &Label_RaiseUserSpecialAttack
+	move_ef.user_spd+2 => &Label_RaiseUserSpecialDefense
+	move_ef.user_acc+2 => &Label_RaiseUserAccuracy
+	move_ef.user_eva+2 => &Label_RaiseUserEvasion
+	move_ef.transform => &endScript_1
+	move_ef.target_atk-2 => &Label_LowerTargetAttack
+	move_ef.target_def-2 => &Label_LowerTargetDefense
+	move_ef.target_spe-2 => &Label_LowerTargetSpeed
+	move_ef.target_spa-2 => &Label_LowerTargetSpecialAttack
+	move_ef.target_spd-2 => &Label_LowerTargetSpecialDefense
+	move_ef.target_acc-2 => &Label_LowerTargetAccuracy
+	move_ef.target_eva-2 => &Label-LowerTargetEvasion
+	move_ef.reflect => &Label_Reflect
+	move_ef.target_psn => &Label_TargetPsn
+	move_ef.target_par => &Label_TargetPar
+	move_ef.dmg_target_atk-1 => &endScript_1
+	move_ef.dmg_target_def-1 => &endScript_1
+	move_ef.dmg_target_spe-1 => &Label_LowersTargetSpeedWithDamage
+	move_ef.dmg_target_spa-1 => &endScript_1
+	move_ef.dmg_target_spd-1 => &endScript_1
+	move_ef.dmg_target_acc-1 => &endScript_1
+	move_ef.dmg_target_eva-1 => &endScript_1
+	move_ef.sky_attack => &Label_ChargeMoves
+	move_ef.dmg_target_confuse => &endScript_1
+	move_ef.twineedle => &endScript_1
+	move_ef.vital_throw => &endScript_1
+	move_ef.substitute => &Label_Substitute
+	move_ef.recharge => &Label_Recharge
+	move_ef.rage => &endScript_1
+	move_ef.mimic => &endScript_1
+	move_ef.metronome => &endScript_1
+	move_ef.leech_seed => &Label_ApplyPoison
+	move_ef.splash => &endScript_1
+	move_ef.disable => &Label_Disable
+	move_ef.direct_level => &endScript_1
+	move_ef.psywave => &endScript_1
+	move_ef.counter => &Label_Counter
+	move_ef.encore => &Label_Encore
+	move_ef.pain_split => &endScript_1
+	move_ef.snore => &Label_SleepTalk
+	move_ef.conversion_2 => &endScript_1
+	move_ef.mind_reader => &endScript_1
+	move_ef.sketch => &endScript_1
+	move_ef.unknown_0x0060 => &endScript_1
+	move_ef.sleep_talk => &Label_SleepTalk
+	move_ef.destiny_bond => &Label_DestinyBond
+	move_ef.flail => &Label_Flail
+	move_ef.spite => &endScript_1
+	move_ef.false_swipe => &endScript_1
+	move_ef.team_heal => &Label_TeamHeal
+	move_ef.increased_priority => &endScript_1
+	move_ef.triple_kick => &endScript_1
+	move_ef.theif => &endScript_1
+	move_ef.spider_web => &Label_Binding
+	move_ef.nightmare => &endScript_1
+	move_ef.minimize => &Label_RaiseUserEvasion
+	move_ef.curse => &Label_Curse
+	move_ef.unknown_0x006e => &endScript_1
+	move_ef.protect => &Label_Protect
+	move_ef.spikes => &Label_Spikes
+	move_ef.foresight => &endScript_1
+	move_ef.perish_song => &endScript_1
+	move_ef.sandstorm => &endScript_1
+	move_ef.endure => &Label_Endure
+	move_ef.rollout => &endScript_1
+	move_ef.swagger => &Label_Swagger
+	move_ef.fury_cutter => &endScript_1
+	move_ef.attract => &endScript_1
+	move_ef.return => &endScript_1
+	move_ef.present => &endScript_1
+	move_ef.frustration => &endScript_1
+	move_ef.safeguard => &endScript_1
+	move_ef.flame_wheel => &endScript_1
+	move_ef.magnitude => &endScript_1
+	move_ef.baton_pass => &Label_BatonPass
+	move_ef.pursuit => &Label_Pursuit
+	move_ef.rapid_spin => &endScript_1
+	move_ef.direct_30 => &endScript_1
+	move_ef.unknown_0x0083 => &endScript_1
+	move_ef.morning_sun => &Label_MorningSun
+	move_ef.unknown0x0085 => &Label_MorningSun
+	move_ef.unknown0x0086 => &Label_MorningSun
+	move_ef.hidden_power => &endScript_1
+	move_ef.rain_dance => &Label_RainDance
+	move_ef.sunny_day => &Label_SunnyDay
+	move_ef.dmg_user_def+1 => &endScript_1
+	move_ef.dmg_user_atk+1 => &endScript_1
+	move_ef.ancient_power => &endScript_1
+	move_ef.unknown_0x008d => &endScript_1
+	move_ef.belly_drum => &Label_BellyDrum
+	move_ef.psych_up => &Label_PsychUp
+	move_ef.mirror_coat => &Label_MirrorCoat
+	move_ef.skull_bash => &Label_ChargeMoves
+	move_ef.twister => &endScript_1
+	move_ef.earthquake => &endScript_1
+	move_ef.future_sight => &endScript_1
+	move_ef.gust => &endScript_1
+	move_ef.stomp => &endScript_1
+	move_ef.solar_beam => &Label_ChargeMoves
+	move_ef.thunder => &Label_Thunder
+	move_ef.teleport => &endScript_1
+	move_ef.beat_up => &endScript_1
+	move_ef.fly => &Label_InvulnerableTurns
+	move_ef.defense_curl => &endScript_1
+	move_ef.unknown_0x009d => &Label_Heal50
+	move_ef.fake_out => &Label_FakeOut
+	move_ef.uproar => &endScript_1
+	move_ef.stockpile => &Label_Stockpile
+	move_ef.spit_up => &Label_SpitUp
+	move_ef.swallow => &Label_Heal50
+	move_ef.unknown_0x00a3 => &endScript_1
+	move_ef.hail => &Label_Hail
+	move_ef.torment => &endScript_1
+	move_ef.flatter => &Label_Flatter
+	move_ef.will-o-wisp => &endScript_1
+	move_ef.memento => &Label_Explosion
+	move_ef.facade => &Label_Facade
+	move_ef.focus_punch => &Label_FocusPunch
+	move_ef.smelling_salts => &endScript_1
+	move_ef.follow_me => &endScript_1
+	move_ef.nature_power => &endScript_1
+	move_ef.charge_electric => &endScript_1
+	move_ef.taunt => &endScript_1
+	move_ef.helping_hand => &endScript_1
+	move_ef.trick => &Label_Trick
+	move_ef.roleplay => &Label_CopyAblity
+	move_ef.wish => &endScript_1
+	move_ef.assist => &endScript_1
+	move_ef.ingrain => &endScript_1
+	move_ef.dmg_user_atk_def-1 => &Label_Superpower
+	move_ef.magic_coat => &Label_MagicCoat
+	move_ef.recycle => &Label_Recycle
+	move_ef.revenge => &Label_Revenge
+	move_ef.brick_break => &Label_BrickBreak
+	move_ef.yawn => &endScript_1
+	move_ef.knock_off => &Label_KnockOff
+	move_ef.endeavor => &Label_Endeavor
+	move_ef.dmg_user_hp_pct => &Label_Dmg_user_Hp_Pct
+	move_ef.skill_swap => &Label_CopyAblity
+	move_ef.imprison => &endScript_1
+	move_ef.refresh => &Label_Refresh
+	move_ef.grudge => &endScript_1
+	move_ef.snatch => &endScript_1
+	move_ef.low_kick => &endScript_1
+	move_ef.secret_power => &endScript_1
+	move_ef.dmg_recoil_33 => &Label_Recoil25
+	move_ef.teeter_dance => &endScript_1
+	move_ef.dmg_target_brn_highcrit => &Label_IncreaseCrit
+	move_ef.mud_sport => &endScript_1
+	move_ef.dmg_target_tox => &endScript_1
+	move_ef.weather_ball => &endScript_1
+	move_ef.dmg_user_spa-2 => &Label_HarshlyLowersSpecialAttackMoves
+	move_ef.target_atk_def-1 => &Label_LowerTargetDefense
+	move_ef.user_def_spd+1 => &Label_RaiseUserSpecialDefense
+	move_ef.sky_uppercut => &endScript_1
+	move_ef.user_atk_def+1 => &Label_RaiseUserDefense
+	move_ef.dmg_target_psn_highcrit => &Label_IncreaseCrit
+	move_ef.water_sport => &endScript_1
+	move_ef.user_spa_spd+1 => &Label_RaiseUserSpecialDefense
+	move_ef.user_atk_spe+1 => &Label_RaiseUsersAttackAndSpeed
+	move_ef.camouflage => &endScript_1
+	move_ef.roost => &Label_Heal50
+	move_ef.gravity => &Label_Gravity
+	move_ef.miracle_eye => &endScript_1
+	move_ef.wake-up_slap => &Label_WakeUpSlap
+	move_ef.dmg_user_spe-1 => &Label_HammerArm
+	move_ef.gyro_ball => &Label_GyroBall
+	move_ef.healing_wish => &Label_HealingWish
+	move_ef.brine => &Label_Brine
+	move_ef.natural_gift => &endScript_1
+	move_ef.feint => &endScript_1
+	move_ef.pluck => &Label_Pluck
+	move_ef.tailwind => &Label_Tailwind
+	move_ef.acupressure => &Label_Acupressure
+	move_ef.metal_burst => &Label_MetalBurst
+	move_ef.dmg_user_switch => &Label_U_Turn
+	move_ef.dmg_user_def_spd-1 => &Label_CloseCombat
+	move_ef.payback => &Label_Payback
+	move_ef.assurance => &Label_Assurance
+	move_ef.embargo => &endScript_1
+	move_ef.fling => &Label_Fling
+	move_ef.psycho_shift => &Label_PsychoShift
+	move_ef.trump_card => &endScript_1
+	move_ef.heal_block => &endScript_1
+	move_ef.dmg_target_hp_pct => &Label_Dmg_Target_HP_PCT
+	move_ef.power_trick => &endScript_1
+	move_ef.gastro_acid => &Label_GastroAcid
+	move_ef.lucky_chant => &Label_LuckyChant
+	move_ef.me_first => &Label_Me_First
+	move_ef.copycat => &Label_CopyCat
+	move_ef.power_swap => &endScript_1
+	move_ef.guard_swap => &endScript_1
+	move_ef.punishment => &endScript_1
+	move_ef.last_resort => &Label_LastResort
+	move_ef.worry_seed => &Label_WorrySeed
+	move_ef.sucker_punch => &Label_SuckerPunch
+	move_ef.toxic_spikes => &Label_ToxicSpikes
+	move_ef.heart_swap => &Label_HeartSwap
+	move_ef.aqua_ring => &Label_AquaRing
+	move_ef.magnet_rise => &Label_MagnetRise
+	move_ef.flare_blitz => &Label_Recoil25
+	move_ef.struggle => &endScript_1
+	move_ef.dive => &Label_InvulnerableTurns
+	move_ef.dig => &Label_InvulnerableTurns
+	move_ef.surf => &endScript_1
+	move_ef.defog => &Label_Defog
+	move_ef.trick_room => &Label_TrickRoom
+	move_ef.blizzard => &Label_Blizzard
+	move_ef.whirlpool => &endScript_1
+	move_ef.volt_tackle => &Label_Recoil25
+	move_ef.bounce => &Label_InvulnerableTurns
+	move_ef.unknown_0x0108 => &endScript_1
+	move_ef.captivate => &Label_Captivate
+	move_ef.stealth_rock => &Label_StealthRock
+	move_ef.chatter => &endScript_1
+	move_ef.judgment => &endScript_1
+	move_ef.dmg_recoil_50 => &Label_Recoil25
+	move_ef.lunar_dance => &Label_HealingWish
+	move_ef.dmg_target_spd-2 => &endScript_1
+	move_ef.shadow_force => &Label_ShadowForce
+	move_ef.dmg_target_brn_flinch => &endScript_1
+	move_ef.dmg_target_frz_flinch => &endScript_1
+	move_ef.dmg_target_par_flinch => &endScript_1
+	move_ef.dmg_user_spa+1 => &endScript_1
+	move_ef.user_atk_acc+1 => &Label_HoneClaws
+	move_ef.wide_guard => &Label_WideGuard
+	move_ef.guard_split => &endScript_1
+	move_ef.power_split => &endScript_1
+	move_ef.wonder_room => &endScript_1
+	move_ef.dmg_physical => &Label_Dmg_Physical
+	move_ef.venoshock => &Label_Venoshock
+	move_ef.autotomize => &Label_Automatize
+	move_ef.telekinesis => &endScript_1
+	move_ef.magic_room => &endScript_1
+	move_ef.smack_down => &endScript_1
+	move_ef.dmg_alwayscrit => &Label_AlwaysCrit
+	move_ef.flame_burst => &Label_FlameBurst
+	move_ef.user_spa_spd_spe+2 => &Label_QuiverDance
+	move_ef.heavy_slam => &Label_HeavySlam
+	move_ef.synchronoise => &endScript_1
+	move_ef.electro_ball => &Label_ElectroBall
+	move_ef.soak => &Label_Soak
+	move_ef.dmg_user_spe+1 => &Label_FlameCharge
+	move_ef.acid_spray => &Label_AcidSpray
+	move_ef.foul_play => &Label_FoulPlay
+	move_ef.simple_beam => &Label_SimpleBeam
+	move_ef.entrainment => &Label_Entrainment
+	move_ef.after_you => &endScript_1
+	move_ef.round => &endScript_1
+	move_ef.echoed_voice => &Label_EchoedVoice
+	move_ef.chip_away => &Label_ChipAway
+	move_ef.clear_smog => &Label_ClearSmog
+	move_ef.stored_power => &Label_StoredPower
+	move_ef.quick_guard => &Label_QuickGuard
+	move_ef.ally_switch => &Label_AllySwitch
+	move_ef.shell_smash => &Label_ShellSmash
+	move_ef.heal_pulse => &Label_HealPulse
+	move_ef.hex => &Label_hex
+	move_ef.sky_drop => &Label_SkyDrop
+	move_ef.user_spe+2_atk+1 => &Label_ShiftGear
+	move_ef.dmg_force_switch => &Label_DragonTail
+	move_ef.incinerate => &Label_incinerate
+	move_ef.quash => &endScript_1
+	move_ef.growth => &Label_growth
+	move_ef.acrobatics => &Label_Acrobatics
+	move_ef.reflect_type => &Label_ReflectType
+	move_ef.retaliate => &Label_Retaliate
+	move_ef.final_gambit => &Label_FinalGambit
+	move_ef.user_spa+3 => &Label_RaiseUserSpecialAttack
+	move_ef.user_atk_def_acc+1 => &Label_RaiseUserDefense
+	move_ef.bestow => &endScript_1
+	move_ef.water_pledge => &Label_WaterPledge
+	move_ef.fire_pledge => &Label_FirePledge
+	move_ef.grass_pledge => &Label_GrassPledge
+	move_ef.work_up => &Label_WorkUp
+	move_ef.cotton_guard => &Label_RaiseUserSpecialAttack
+	move_ef.relic_song => &Label_RelicSong
+	move_ef.glaciate => &Label_Glaciate
+	move_ef.freeze_shock => &Label_ChargeMoves
+	move_ef.ice_burn => &Label_ChargeMoves
 	move_ef.unknown_0x014d => &Label_0x5D42
-	move_ef.v-create => &address_0x055E
-	move_ef.fusion_flare => &address_0x055E
-	move_ef.fusion_bolt => &address_0x055E
-	move_ef.hurricane => &Label_0x2A66
+	move_ef.v-create => &endScript_1
+	move_ef.fusion_flare => &endScript_1
+	move_ef.fusion_bolt => &endScript_1
+	move_ef.hurricane => &Label_Thunder
 
-address_0x055E:
+endScript_1:
 	EndScript()
 
 
-Label_0x0560:
-	JumpIfHasMoveWithEffect(attacker, move_ef.wake-up_slap, &address_0x05E2)
-	JumpIfHasMoveWithEffect(attacker, move_ef.nightmare, &address_0x05E2)
-	JumpIfHasMoveWithEffect(defender, move_ef.sleep_talk, &address_0x05C6)
-	JumpIfHasMoveWithEffect(defender, move_ef.magic_coat, &address_0x05CC)
-	JumpIfHasMoveWithEffect(defender, move_ef.snore, &address_0x05CC)
+
+
+
+/*   SLEEP   */
+
+Label_ApplySleep:
+	JumpIfHasMoveWithEffect(attacker, move_ef.dream_eater, &Label_ApplySleepAddScore)
+	JumpIfHasMoveWithEffect(attacker, move_ef.nightmare, &Label_ApplySleepAddScore)
+	JumpIfHasMoveWithEffect(attacker, move_ef.wake-up_slap, &Label_ApplySleepAddScore)
+	JumpIfHasMoveWithEffect(defender, move_ef.sleep_talk, &Label_SleepReduceScore)
+	JumpIfHasMoveWithEffect(defender, move_ef.magic_coat, &Label_ApplySleepRandomReduceScore)
+	JumpIfHasMoveWithEffect(defender, move_ef.snore, &Label_ApplySleepRandomReduceScore)
 	GetAbilityGuess(defender)
-	JumpIfStoredEQ(ability.no_guard, &address_0x05E2)
-	Jump(&address_0x05F2)
+	JumpIfStoredEQ(ability.no_guard, &Label_ApplySleepAddScore)
+	JumpIfStoredEQ(ability.shed_skin, &Label_ApplySleepRandomReduceScore)
+	Jump(&endScript_2)
 
-address_0x05C6:
+Label_SleepReduceScore:
 	AddToScore(-1)
 
-address_0x05CC:
-	JumpIfRandLT(128, &address_0x05F2)
+Label_ApplySleepRandomReduceScore:
+	JumpIfRandLT(128, &endScript_2)
 	AddToScore(-1)
-	Jump(&address_0x05F2)
+	Jump(&endScript_2)
 
-address_0x05E2:
-	JumpIfRandLT(128, &address_0x05F2)
+Label_ApplySleepAddScore:
+	JumpIfRandLT(128, &endScript_2)
 	AddToScore(1)
 
-address_0x05F2:
+endScript_2:
 	EndScript()
 
 
-Label_0x05F4:
-	JumpIfEffectivenessEQ(0x, &address_0x0628)
-	JumpIfEffectivenessEQ(1/2x, &address_0x0628)
-	JumpIfEffectivenessEQ(1/4x, &address_0x0628)
-	GetAbilityGuess(defender)
-	JumpIfStoredEQ(ability.liquid_ooze, &address_0x0628)
-	Jump(&address_0x0638)
 
-address_0x0628:
-	JumpIfRandLT(50, &address_0x0638)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*   DAMAGE ABSORB   */
+
+Label_DmgAbsorb:
+	JumpIfEffectivenessEQ(0x, &Label_DmgAbsorbHighChanceToReduce)
+	JumpIfEffectivenessEQ(1/2x, &Label_DmgAbsorbHighChanceToReduce)
+	JumpIfEffectivenessEQ(1/4x, &Label_DmgAbsorbHighChanceToReduce)
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.liquid_ooze, &Label_DmgAbsorbHighChanceToReduce)
+	Jump(&endScript_3)
+
+Label_DmgAbsorbHighChanceToReduce:
+	JumpIfRandLT(50, &endScript_3)
 	AddToScore(-3)
 
-address_0x0638:
+endScript_3:
 	EndScript()
 
 
-Label_0x063A:
-	JumpIfStatStageLT(defender, eva, +1, &address_0x0674)
+
+
+
+
+
+
+
+
+
+
+
+/*   EXPLOSION   */
+
+Label_Explosion:
+	JumpIfStatStageLT(defender, eva, +1, &ExplosionCheck1)
 	AddToScore(-1)
-	JumpIfStatStageLT(defender, eva, +4, &address_0x0674)
-	JumpIfRandLT(128, &address_0x0674)
+	JumpIfStatStageLT(defender, eva, +4, &ExplosionCheck1)
+	JumpIfRandLT(128, &ExplosionCheck1)
 	AddToScore(-1)
 
-address_0x0674:
-	JumpIfHealthLT(attacker, 80, &address_0x069C)
-	JumpCompareSpeed(GT, &address_0x069C)
-	JumpIfRandSeedLT(50, &address_0x06EE)
-	Jump(&address_0x5D54)
+ExplosionCheck1:
+	JumpIfHealthLT(attacker, 80, &ExplosionCheck2)
+	JumpCompareSpeed(GT, &ExplosionCheck2)
+	JumpIfRandSeedLT(50, &endScript_4)
+	Jump(&deprioritizeBy3)
 
-address_0x069C:
-	JumpIfHealthGT(attacker, 50, &address_0x06DE)
-	JumpIfRandSeedGT(128, &address_0x06BA)
+ExplosionCheck2:
+	JumpIfHealthGT(attacker, 50, &ExplosionCheck4)
+	JumpIfRandSeedGT(128, &ExplosionCheck3)
 	AddToScore(1)
 
-address_0x06BA:
-	JumpIfHealthGT(attacker, 30, &address_0x06EE)
-	JumpIfRandSeedGT(128, &address_0x06EE)
+ExplosionCheck3:
+	JumpIfHealthGT(attacker, 30, &endScript_4)
+	JumpIfRandSeedGT(128, &endScript_4)
 	AddToScore(1)
-	Jump(&address_0x06EE)
+	Jump(&endScript_4)
 
-address_0x06DE:
-	JumpIfRandSeedLT(50, &address_0x06EE)
+ExplosionCheck4:
+	JumpIfRandSeedLT(50, &endScript_4)
 	AddToScore(-1)
 
-address_0x06EE:
+endScript_4:
 	EndScript()
 
 
-Label_0x06F0:
+
+
+
+
+
+
+
+
+
+
+/*   DREAM EATER   */
+//outdated
+
+Label_DreamEater:
 	JumpIfEffectivenessEQ(0x, &address_0x0748)
 	JumpIfEffectivenessEQ(1/4x, &address_0x0758)
 	JumpIfEffectivenessEQ(1/2x, &address_0x0758)
@@ -447,7 +497,23 @@ address_0x0768:
 	EndScript()
 
 
-Label_0x076A:
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*   MIRROR MOVE (redundant)   */
+//outdated
+
+Label_MirrorMove:
 	JumpCompareSpeed(GT, &address_0x079A)
 	GetPreviousMove(defender)
 	JumpIfStoredIsNotInList(&data_address_0x07BC, &address_0x079A)
@@ -473,7 +539,7 @@ data_address_0x07BC:
 	move.sing
 	move.grass_whistle
 	move.shadow_punch
-	move.scorching_sands
+	move.sand_attack
 	move.smokescreen
 	move.toxic
 	move.guillotine
@@ -502,14 +568,14 @@ data_address_0x07BC:
 	move.swagger
 	move.torment
 	move.flatter
-	move.trick
+	move.weather_crash
 	move.superpower
 	move.skill_swap
 	move.psycho_shift
 	move.psyblade
 	move.clanging_scales
 	move.sucker_punch
-	move.boomburst
+	move.heart_swap
 	move.switcheroo
 	move.captivate
 	move.dark_void
@@ -517,7 +583,22 @@ data_address_0x07BC:
 	move.snarl
 	END
 
-Label_0x0884:
+
+
+
+
+
+
+
+
+
+
+
+/*   RAISE USER ATTACK   */
+
+Label_RaiseUserAttack:
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.unaware, &address_0x08FE)
 	JumpIfStatStageLT(attacker, atk, +3, &address_0x08AC)
 	JumpIfRandLT(100, &address_0x08D8)
 	AddToScore(-1)
@@ -543,7 +624,25 @@ address_0x0904:
 	EndScript()
 
 
-Label_0x0906:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*   RAISE USER DEFENSE   */
+
+Label_RaiseUserDefense:
 	JumpIfStatStageLT(attacker, def, +3, &address_0x092E)
 	JumpIfRandLT(100, &address_0x0954)
 	AddToScore(-1)
@@ -563,9 +662,6 @@ address_0x095A:
 
 address_0x0972:
 	JumpIfHealthLT(attacker, 40, &address_0x09B2)
-	GetPreviousMove(defender)
-	GetPowerOfStoredMove()
-	JumpIfStoredEQ(0, &address_0x09A8)
 	GetLastPreviousCategory()
 	JumpIfStoredEQ(special, &address_0x09B2)
 	JumpIfRandLT(60, &address_0x09B8)
@@ -580,12 +676,19 @@ address_0x09B8:
 	EndScript()
 
 
-Label_0x09BA:
-	JumpIfHasNoMovesWithEffect(defender, move_ef.low_kick, &Label_0x09D8)
-	JumpIfRandLT(60, &Label_0x09D8)
+
+
+
+
+
+/*   RAISE USER SPEED   */
+
+Label_Automatize:
+	JumpIfHasNoMovesWithEffect(defender, move_ef.low_kick, &Label_RaiseUserSpeed)
+	JumpIfRandLT(60, &Label_RaiseUserSpeed)
 	AddToScore(1)
 
-Label_0x09D8:
+Label_RaiseUserSpeed:
 	JumpCompareSpeed(GT, &address_0x09EE)
 	AddToScore(-3)
 	Jump(&address_0x0AA0)
@@ -615,7 +718,21 @@ address_0x0AA0:
 	EndScript()
 
 
-Label_0x0AA2:
+
+
+
+
+
+
+
+
+
+
+
+
+/*   RAISE USER SPECIAL ATTACK   */
+
+Label_RaiseUserSpecialAttack:
 	JumpIfStatStageLT(attacker, spa, +3, &address_0x0ACA)
 	JumpIfRandLT(100, &address_0x0AF6)
 	AddToScore(-1)
@@ -641,7 +758,15 @@ address_0x0B22:
 	EndScript()
 
 
-Label_0x0B24:
+
+
+
+
+
+
+/*   RAISE USER SPECIAL DEFENSE   */
+
+Label_RaiseUserSpecialDefense:
 	JumpIfStatStageLT(attacker, spd, +3, &address_0x0B4C)
 	JumpIfRandLT(100, &address_0x0B78)
 	AddToScore(-1)
@@ -661,9 +786,6 @@ address_0x0B78:
 
 address_0x0B90:
 	JumpIfHealthLT(attacker, 40, &address_0x0BD0)
-	GetPreviousMove(defender)
-	GetPowerOfStoredMove()
-	JumpIfStoredEQ(0, &address_0x0BC6)
 	GetLastPreviousCategory()
 	JumpIfStoredEQ(physical, &address_0x0BD0)
 	JumpIfRandLT(60, &address_0x0BD6)
@@ -678,7 +800,20 @@ address_0x0BD6:
 	EndScript()
 
 
-Label_0x0BD8:
+
+
+
+
+
+
+
+
+
+
+
+/*   RAISE USER ACCURACY   */
+
+Label_RaiseUserAccuracy:
 	JumpIfStatStageLT(attacker, acc, +3, &address_0x0BFA)
 	JumpIfRandLT(50, &address_0x0BFA)
 	AddToScore(-2)
@@ -691,7 +826,20 @@ address_0x0C0E:
 	EndScript()
 
 
-Label_0x0C10:
+
+
+
+
+
+
+
+
+
+
+
+/*   RAISE USER EVASION   */
+
+Label_RaiseUserEvasion:
 	GetAbilityGuess(attacker)
 	JumpIfStoredEQ(ability.no_guard, &address_0x0F36)
 	GetAbilityGuess(defender)
@@ -699,10 +847,18 @@ Label_0x0C10:
 	GetPreviousMove(defender)
 	GetEffectOfStoredMove()
 	JumpIfStoredEQ(move_ef.no_miss, &address_0x0F36)
-	JumpIfStoredEQ(move_ef.trump_card, &address_0x0F36)
-	JumpIfStoredEQ(move_ef.shadow_force, &address_0x0F36)
+	JumpIfHasMove(defender, move.fly, &address_0x0F36)
+	JumpIfHasMove(defender, move.dive, &address_0x0F36)
+	JumpIfHasMove(defender, move.dig, &address_0x0F36)
+	JumpIfHasMove(defender, move.bounce, &address_0x0F36)
+	JumpIfHasMove(defender, move.shadow_force, &address_0x0F36)
+	JumpIfHasMove(defender, move.telekinesis, &address_0x0F36)
+	JumpIfHasMove(defender, move.defog, &address_0x0F36)
+	JumpIfHasMove(defender, move.brutal_swing, &address_0x0F36)
+	JumpIfHasMove(defender, move.retaliate, &address_0x0F36)
+	JumpIfHasMove(defender, move.scary_face, &address_0x0F36)
+	JumpIfHasMove(defender, move.sweet_scent, &address_0x0F36)
 	JumpIfHasCondition(attacker, cond.curse, &address_0x0F36)
-	JumpIfHasCondition(attacker, cond.foresight, &address_0x0F36)
 	GetWeather()
 	JumpIfStoredNE(weather.rain, &address_0x0C90)
 	GetPreviousMove(defender)
@@ -745,8 +901,6 @@ address_0x0D6A:
 	AddToScore(-1)
 
 address_0x0D7A:
-	JumpIfHasCondition(attacker, cond.ingrain, &address_0x0DCE)
-	JumpIfNotCondition(attacker, ERROR [0x00000023], &address_0x0DCE)
 	JumpIfHeldItemEQ(attacker, item.leftovers, &address_0x0DCE)
 	JumpIfStoredNE(ability.drizzle, &address_0x0DDE)
 	GetAbilityGuess(attacker)
@@ -809,7 +963,21 @@ address_0x0F3C:
 	EndScript()
 
 
-Label_0x0F3E:
+
+
+
+
+
+
+
+
+
+
+
+
+/*   CANNOT MISS   */
+
+Label_CannotMiss:
 	JumpIfStatStageGT(defender, eva, +4, &address_0x0F8C)
 	JumpIfStatStageLT(attacker, acc, -4, &address_0x0F8C)
 	JumpIfStatStageGT(defender, eva, +2, &address_0x0F92)
@@ -827,7 +995,18 @@ address_0x0FA2:
 	EndScript()
 
 
-Label_0x0FA4:
+
+
+
+
+
+
+
+
+
+/*   LOWER ENEMY ATTACK   */
+
+Label_LowerTargetAttack:
 	JumpIfStatStageEQ(defender, atk, +0, &address_0x0FF2)
 	AddToScore(-1)
 	JumpIfHealthGT(attacker, 90, &address_0x0FD0)
@@ -866,7 +1045,14 @@ address_0x1022:
 	0xFFFF [65535]
 	0xFFFF [65535]
 
-Label_0x1040:
+
+
+
+
+
+/*   LOWER ENEMY DEFENSE   */
+
+Label_LowerTargetDefense:
 	JumpIfHealthLT(attacker, 70, &address_0x1060)
 	JumpIfStatStageGT(defender, def, -3, &address_0x1070)
 
@@ -882,25 +1068,44 @@ address_0x1084:
 	EndScript()
 
 
-Label_0x1086:
+
+
+
+
+/*   LOWER ENEMY SPEED   */
+
+Label_LowersTargetSpeedWithDamage:
 	JumpIfEffectivenessEQ(0x, &address_0x10EC)
-	JumpIfMoveEQ(move.icy_wind, &Label_0x10EE)
-	JumpIfMoveEQ(move.rock_tomb, &Label_0x10EE)
-	JumpIfMoveEQ(move.mud_shot, &Label_0x10EE)
-	JumpIfMoveEQ(move.low_sweep, &Label_0x10EE)
-	JumpIfMoveEQ(move.electroweb, &Label_0x10EE)
-	JumpIfMoveEQ(move.bulldoze, &Label_0x10EE)
-	JumpIfMoveEQ(move.glaciate, &Label_0x10EE)
+	JumpIfMoveEQ(move.icy_wind, &Label_SpeedLoweringAIMoves)
+	JumpIfMoveEQ(move.heavy_slam, &Label_SpeedLoweringAIMoves)
+	JumpIfMoveEQ(move.heat_crash, &Label_SpeedLoweringAIMoves)
+	JumpIfMoveEQ(move.cotton_spore, &Label_SpeedLoweringAIMoves)
+	JumpIfMoveEQ(move.rock_tomb, &Label_SpeedLoweringAIMoves)
+	JumpIfMoveEQ(move.mud_shot, &Label_SpeedLoweringAIMoves)
+	JumpIfMoveEQ(move.low_sweep, &Label_SpeedLoweringAIMoves)
+	JumpIfMoveEQ(move.electroweb, &Label_SpeedLoweringAIMoves)
+	JumpIfMoveEQ(move.bulldoze, &Label_SpeedLoweringAIMoves)
+	JumpIfMoveEQ(move.glaciate, &Label_SpeedLoweringAIMoves)
 	JumpIfEffectivenessEQ(1/4x, &address_0x10EC)
 	JumpIfEffectivenessEQ(1/2x, &address_0x10EC)
 	EndScript()
 
-
 address_0x10EC:
 	EndScript()
 
+Label_SpeedLoweringAIMoves:
+	JumpCompareSpeed(GT, &address_IcyWindRandBoost)
+	Jump(&endScript_IcyWind)
 
-Label_0x10EE:
+address_IcyWindRandBoost:
+	JumpIfRandLT(100, &endScript_IcyWind)
+	AddToScore(2)
+
+endScript_IcyWind:
+	EndScript()
+
+
+Label_LowerTargetSpeed:
 	JumpCompareSpeed(GT, &address_0x1104)
 	AddToScore(-3)
 	Jump(&address_0x1114)
@@ -913,7 +1118,19 @@ address_0x1114:
 	EndScript()
 
 
-Label_0x1116:
+
+
+
+
+
+
+
+
+
+
+/*   LOWER ENEMY SPECIAL ATTACK   */
+
+Label_LowerTargetSpecialAttack:
 	JumpIfStatStageEQ(defender, spa, +0, &address_0x1164)
 	AddToScore(-1)
 	JumpIfHealthGT(attacker, 90, &address_0x1142)
@@ -956,7 +1173,21 @@ address_0x1194:
 	0xFFFF [65535]
 	0xFFFF [65535]
 
-Label_0x11BA:
+
+
+
+
+
+
+
+
+
+
+
+
+/*   LOWER ENEMY SPECIAL DEFENSE   */
+
+Label_LowerTargetSpecialDefense:
 	JumpIfHealthLT(attacker, 70, &address_0x11DA)
 	JumpIfStatStageGT(defender, spd, -3, &address_0x11EA)
 
@@ -972,7 +1203,27 @@ address_0x11FE:
 	EndScript()
 
 
-Label_0x1200:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*   LOWER ENEMY ACCURACY   */
+
+Label_LowerTargetAccuracy:
 	JumpIfHealthLT(attacker, 70, &address_0x121C)
 	JumpIfHealthGT(defender, 70, &address_0x122C)
 
@@ -991,18 +1242,18 @@ address_0x124E:
 	AddToScore(2)
 
 address_0x1268:
-	JumpIfNotCondition(defender, ERROR [0x00000012], &address_0x1286)
+	JumpIfNotCondition(defender, cond.leech_seed, &address_0x1286)
 	JumpIfRandLT(70, &address_0x1286)
 	AddToScore(2)
 
 address_0x1286:
-	JumpIfNotCondition(attacker, ERROR [0x00000015], &address_0x12AA)
+	JumpIfNotCondition(attacker, cond.ingrain, &address_0x12AA)
 	JumpIfRandLT(128, &address_0x12C8)
 	AddToScore(1)
 	Jump(&address_0x12C8)
 
 address_0x12AA:
-	JumpIfNotCondition(attacker, ERROR [0x00000023], &address_0x12C8)
+	JumpIfNotCondition(attacker, cond.aqua_ring, &address_0x12C8)
 	JumpIfRandLT(128, &address_0x12C8)
 	AddToScore(1)
 
@@ -1025,7 +1276,19 @@ address_0x1332:
 	EndScript()
 
 
-Label_0x1334:
+
+
+
+
+
+
+
+
+
+
+/*   LOWER ENEMY EVASION   */
+
+Label-LowerTargetEvasion:
 	JumpIfHealthLT(attacker, 70, &address_0x1354)
 	JumpIfStatStageGT(defender, eva, -3, &address_0x1364)
 
@@ -1041,7 +1304,21 @@ address_0x1378:
 	EndScript()
 
 
-Label_0x137A:
+
+
+
+
+
+
+
+
+
+
+
+
+/*   NEUTRALIZE STATS   */
+
+Label_NeutralizeStats:
 	JumpIfStatStageGT(attacker, atk, +2, &address_0x1434)
 	JumpIfStatStageGT(attacker, def, +2, &address_0x1434)
 	JumpIfStatStageGT(attacker, spa, +2, &address_0x1434)
@@ -1080,7 +1357,6 @@ address_0x150E:
 address_0x151E:
 	EndScript()
 
-
 Label_0x1520:
 	JumpIfHealthGT(attacker, 90, &address_0x1534)
 	AddToScore(-2)
@@ -1089,7 +1365,20 @@ address_0x1534:
 	EndScript()
 
 
-Label_0x1536:
+
+
+
+
+
+
+
+
+
+
+
+/*   PHASE ENEMIES   */
+
+Label_DragonTail:
 	GetPokeTurnCount(defender)
 	JumpIfStoredGT(ability.speed_boost, &address_0x15D6)
 	JumpIfHasSideCondition(defender, side_cond.spikes, &address_0x15E6)
@@ -1114,7 +1403,6 @@ address_0x15E6:
 address_0x15F6:
 	EndScript()
 
-
 Label_0x15F8:
 	JumpIfHealthGT(attacker, 90, &address_0x160C)
 	AddToScore(-2)
@@ -1122,23 +1410,31 @@ Label_0x15F8:
 address_0x160C:
 	GetTurnCount()
 	JumpIfStoredEQ(0, &address_0x1622)
-	JumpIfRandLT(200, &address_0x5D4C)
+	JumpIfRandLT(200, &deprioritizeBy2)
 
 address_0x1622:
 	EndScript()
 
 
-Label_0x1624:
+
+
+
+
+
+
+/*   MORNING SUN   */
+
+Label_MorningSun:
 	GetWeather()
 	JumpIfStoredEQ(weather.hail, &address_0x164A)
 	JumpIfStoredEQ(weather.rain, &address_0x164A)
 	JumpIfStoredEQ(weather.sand, &address_0x164A)
-	Jump(&Label_0x1650)
+	Jump(&Label_Heal50)
 
 address_0x164A:
 	AddToScore(-2)
 
-Label_0x1650:
+Label_Heal50:
 	JumpIfHealthEQ(attacker, 100, &address_0x169A)
 	JumpCompareSpeed(GT, &address_0x16A6)
 	AddToScore(-8)
@@ -1169,7 +1465,26 @@ address_0x16F2:
 	EndScript()
 
 
-Label_0x16F4:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*   APPLY POISON   */
+
+Label_ApplyPoison:
 	JumpIfNoDamagingMove(&address_0x1736)
 	JumpIfHealthGT(attacker, 50, &address_0x1718)
 	JumpIfRandLT(50, &address_0x1718)
@@ -1181,6 +1496,8 @@ address_0x1718:
 	AddToScore(-3)
 
 address_0x1736:
+	JumpIfHasMoveWithEffect(attacker, move_ef.venoshock, &address_0x1758)
+	JumpIfHasMoveWithEffect(attacker, move_ef.hex, &address_0x1758)
 	JumpIfHasMoveWithEffect(attacker, move_ef.user_spd+1, &address_0x1758)
 	JumpIfHasMoveWithEffect(attacker, move_ef.protect, &address_0x1758)
 	Jump(&address_0x1768)
@@ -1193,7 +1510,19 @@ address_0x1768:
 	EndScript()
 
 
-Label_0x176A:
+
+
+
+
+
+
+
+
+
+
+/*   LIGHT SCREEN   */
+
+Label_LightScreen:
 	JumpIfHealthLT(attacker, 50, &address_0x17B6)
 	JumpIfHealthLT(attacker, 90, &address_0x1796)
 	JumpIfRandLT(30, &address_0x1796)
@@ -1213,7 +1542,17 @@ address_0x17C6:
 	EndScript()
 
 
-Label_0x17C8:
+
+
+
+
+
+
+
+
+/*   REST   */
+
+Label_Rest:
 	JumpCompareSpeed(GT, &address_0x181E)
 	JumpIfHealthNE(attacker, 100, &address_0x17EC)
 	AddToScore(-8)
@@ -1248,7 +1587,6 @@ address_0x1868:
 address_0x1878:
 	EndScript()
 
-
 Label_0x187A:
 	JumpIfRandLT(192, &address_0x188A)
 	AddToScore(1)
@@ -1257,7 +1595,20 @@ address_0x188A:
 	EndScript()
 
 
-Label_0x188C:
+
+
+
+
+
+
+
+
+
+
+
+/*   HALVE ENEMY HP   */
+
+Label_DirectHalf:
 	JumpIfHealthGT(defender, 60, &address_0x18A0)
 	AddToScore(-1)
 
@@ -1265,7 +1616,20 @@ address_0x18A0:
 	EndScript()
 
 
-Label_0x18A2:
+
+
+
+
+
+
+
+
+
+
+
+/*   BINDING MOVES   */
+
+Label_Binding:
 	JumpIfBadlyPoisoned(defender, &address_0x18DC)
 	JumpIfHasCondition(defender, cond.curse, &address_0x18DC)
 	JumpIfHasCondition(defender, cond.perish_song, &address_0x18DC)
@@ -1280,7 +1644,17 @@ address_0x18EC:
 	EndScript()
 
 
-Label_0x18EE:
+
+
+
+
+
+
+
+
+/*   INCREASED CRIT MOVES   */
+
+Label_IncreaseCrit:
 	JumpIfEffectivenessEQ(0x, &address_0x193A)
 	JumpIfEffectivenessEQ(1/4x, &address_0x193A)
 	JumpIfEffectivenessEQ(1/2x, &address_0x193A)
@@ -1296,14 +1670,23 @@ address_0x193A:
 	EndScript()
 
 
-Label_0x193C:
-	JumpIfHasMove(attacker, move.bitter_malice, &address_0x19A2)
 
-Label_0x194A:
-	JumpIfRandLT(128, &Label_0x195A)
+
+
+
+
+
+
+/*   SWAGGER AND FLATTER   */
+
+Label_Swagger:
+	JumpIfHasMove(attacker, move.heart_swap, &address_0x19A2)
+
+Label_Flatter:
+	JumpIfRandLT(128, &Label_ApplyConfusion)
 	AddToScore(1)
 
-Label_0x195A:
+Label_ApplyConfusion:
 	JumpIfHealthGT(defender, 70, &address_0x19A0)
 	JumpIfRandLT(128, &address_0x1978)
 	AddToScore(-1)
@@ -1333,7 +1716,18 @@ address_0x19D8:
 	EndScript()
 
 
-Label_0x19DA:
+
+
+
+
+
+
+
+
+
+/*   REFLECT   */
+
+Label_Reflect:
 	JumpIfHealthLT(attacker, 50, &address_0x1A26)
 	JumpIfHealthLT(attacker, 90, &address_0x1A06)
 	JumpIfRandLT(30, &address_0x1A06)
@@ -1353,7 +1747,17 @@ address_0x1A36:
 	EndScript()
 
 
-Label_0x1A38:
+
+
+
+
+
+
+
+
+/*   POISON FANG   */
+
+Label_TargetPsn:
 	JumpIfHealthLT(attacker, 50, &address_0x1A54)
 	JumpIfHealthGT(defender, 50, &address_0x1A5A)
 
@@ -1364,7 +1768,20 @@ address_0x1A5A:
 	EndScript()
 
 
-Label_0x1A5C:
+
+
+
+
+
+
+
+
+
+
+
+/*   PARALYSIS   */
+
+Label_TargetPar:
 	JumpCompareSpeed(GT, &address_0x1A80)
 	JumpIfHealthGT(attacker, 70, &address_0x1A90)
 	AddToScore(-1)
@@ -1378,7 +1795,18 @@ address_0x1A90:
 	EndScript()
 
 
-Label_0x1A92:
+
+
+
+
+
+
+
+
+
+/*   VITAL THROW   */
+
+Label_VitalThrow:
 	JumpCompareSpeed(GT, &address_0x1AD2)
 	JumpIfHealthGT(attacker, 60, &address_0x1AD2)
 	JumpIfHealthLT(attacker, 40, &address_0x1AC2)
@@ -1392,8 +1820,16 @@ address_0x1AD2:
 	EndScript()
 
 
-Label_0x1AD4:
-	JumpIfDoesNotHaveMove(attacker, move.alluring_voice, &address_0x1AF2)
+
+
+
+
+
+
+/*   SUBSTITUTE   */
+
+Label_Substitute:
+	JumpIfDoesNotHaveMove(attacker, move.focus_punch, &address_0x1AF2)
 	JumpIfRandLT(96, &address_0x1AF2)
 	AddToScore(1)
 
@@ -1444,7 +1880,17 @@ address_0x1BEC:
 	EndScript()
 
 
-Label_0x1BEE:
+
+
+
+
+
+////////// LEFT OFF HERE 
+
+
+/*   RECHARGE   */
+
+Label_Recharge:
 	JumpIfEffectivenessEQ(0x, &address_0x1C5E)
 	JumpIfEffectivenessEQ(1/4x, &address_0x1C5E)
 	JumpIfEffectivenessEQ(1/2x, &address_0x1C5E)
@@ -1469,7 +1915,21 @@ address_0x1C64:
 	EndScript()
 
 
-Label_0x1C66:
+
+
+
+
+
+
+
+
+
+
+
+
+/*   DISABLE   */
+
+Label_Disable:
 	JumpCompareSpeed(GT, &address_0x1C9E)
 	GetPreviousMove(defender)
 	GetPowerOfStoredMove()
@@ -1485,7 +1945,18 @@ address_0x1C9E:
 	EndScript()
 
 
-Label_0x1CA0:
+
+
+
+
+
+
+
+
+
+/*   COUNTER   */
+
+Label_Counter:
 	JumpIfHasCondition(defender, cond.sleep, &address_0x1DB0)
 	JumpIfHasCondition(defender, cond.infatuation, &address_0x1DB0)
 	JumpIfHasCondition(defender, cond.confusion, &address_0x1DB0)
@@ -1553,7 +2024,23 @@ data_address_0x1DB8:
 	type.steel
 	END
 
-Label_0x1DE0:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*   ENCORE   */
+
+Label_Encore:
 	JumpIfHasCondition(defender, cond.disable, &address_0x1E0A)
 	JumpCompareSpeed(GT, &address_0x1E20)
 	GetPreviousMove(defender)
@@ -1676,12 +2163,31 @@ address_0x1FC6:
 	EndScript()
 
 
-Label_0x1FC8:
+
+
+
+
+
+/*   SNORE   */
+
+Label_Snore:
 	AddToScore(2)
 	EndScript()
 
 
-Label_0x1FD0:
+
+
+
+
+
+
+
+
+
+
+/*   MIND READER   */
+
+Label_MindReader:
 	JumpIfRandLT(128, &address_0x1FE0)
 	AddToScore(2)
 
@@ -1689,18 +2195,36 @@ address_0x1FE0:
 	EndScript()
 
 
-Label_0x1FE2:
-	JumpNumber102(&Label_Sleeping)
+
+
+
+
+
+
+
+
+/*   SLEEP TALK   */
+
+Label_SleepTalk:
+	JumpIfHasCondition(attacker, cond.sleep, &Label_SleepTalkPriority)
 	AddToScore(-5)
 	EndScript()
 
+Label_SleepTalkPriority:
+	JumpIfUserAboutToWakeUp(&deprioritizeBy10)
+	Jump(&prioritizeBy10)
 
-Label_Sleeping:
-	AddToScore(10)
-	EndScript()
 
 
-Label_0x1FF8:
+
+
+
+
+
+
+/*   DESTINY BOND   */
+
+Label_DestinyBond:
 	AddToScore(-1)
 	JumpCompareSpeed(GT, &address_0x2062)
 	JumpIfHealthGT(attacker, 70, &address_0x2062)
@@ -1721,7 +2245,21 @@ address_0x2062:
 	EndScript()
 
 
-Label_0x2064:
+
+
+
+
+
+
+
+
+
+
+
+/*   FLAIL   */
+//outdated 
+
+Label_Flail:
 	JumpCompareSpeed(GT, &address_0x209E)
 	JumpIfHealthGT(attacker, 33, &address_0x20DC)
 	JumpIfHealthGT(attacker, 20, &address_0x20E2)
@@ -1748,7 +2286,19 @@ address_0x20E2:
 	EndScript()
 
 
-Label_0x20E4:
+
+
+
+
+
+
+
+
+
+
+/*   AROMATHERAPY   */
+
+Label_TeamHeal:
 	JumpIfHasAnyStatus(attacker, &address_0x20FE)
 	JumpIfPartyHasStatus(cond.paralysis, &address_0x20FE)
 	AddToScore(-5)
@@ -1757,7 +2307,18 @@ address_0x20FE:
 	EndScript()
 
 
-Label_0x2100:
+
+
+
+
+
+
+
+
+/*   THIEF   */
+//outdated
+
+Label_Thief:
 	GetHeldItemEffect(defender)
 	JumpIfStoredIsNotInList(&data_address_0x212E, &address_0x2126)
 	JumpIfRandLT(50, &address_0x212C)
@@ -1799,7 +2360,47 @@ data_address_0x212E:
 	item_ef.black_sludge
 	END
 
-Label_0x2196:
+
+
+
+
+
+
+
+
+
+/*   CURSE   */
+
+Label_Curse:
+	GetType(attacker_type1)
+	JumpIfStoredEQ(type.ghost, &address_0x2254)
+	GetType(attacker_type2)
+	JumpIfStoredEQ(type.ghost, &address_0x2254)
+	JumpIfStatStageGT(attacker, def, +3, &address_0x2268)
+	JumpIfHasMove(attacker, move.gyro_ball, &address_0x21EA)
+	JumpIfHasMove(attacker, move.trick_room, &address_0x21EA)
+	Jump(&address_0x21FA)
+
+address_0x21EA:
+	JumpIfRandLT(32, &address_0x220A)
+	AddToScore(1)
+
+address_0x21FA:
+	JumpIfRandLT(128, &address_0x220A)
+	AddToScore(1)
+
+address_0x220A:
+	JumpIfStatStageGT(attacker, def, +1, &address_0x2268)
+	JumpIfRandLT(128, &address_0x222C)
+	AddToScore(1)
+
+address_0x222C:
+	JumpIfStatStageGT(attacker, def, +0, &address_0x2268)
+	JumpIfRandLT(128, &address_0x2268)
+	AddToScore(1)
+	Jump(&address_0x2268)
+
+address_0x2254:
 	JumpIfHealthGT(attacker, 80, &address_0x2268)
 	AddToScore(-1)
 
@@ -1807,11 +2408,24 @@ address_0x2268:
 	EndScript()
 
 
-Label_0x226A:
-	JumpIfHasMove(defender, move.fly, &address_0x228C)
-	JumpIfHasMove(defender, move.dive, &address_0x228C)
+
+
+
+
+
+
+
+
+
+
+
+/*   PROTECT   */
+
+Label_Protect:
 	JumpIfHasMove(defender, move.dig, &address_0x228C)
 	JumpIfHasMove(defender, move.bounce, &address_0x228C)
+	JumpIfHasMove(defender, move.fly, &address_0x228C)
+	JumpIfHasMove(defender, move.dive, &address_0x228C)
 	JumpIfHasMove(defender, move.shadow_force, &address_0x228C)
 	Jump(&address_0x229C)
 
@@ -1868,9 +2482,24 @@ address_0x2406:
 	EndScript()
 
 
-Label_0x2408:
+
+
+
+
+
+
+
+
+
+
+
+
+/*   SPIKES   */
+
+Label_Spikes:
 	JumpIfRandLT(128, &address_0x244A)
 	AddToScore(1)
+	JumpIfHasMove(attacker, move.roar, &address_0x243A)
 	JumpIfHasMove(attacker, move.whirlwind, &address_0x243A)
 	Jump(&address_0x244A)
 
@@ -1882,7 +2511,16 @@ address_0x244A:
 	EndScript()
 
 
-Label_0x244C:
+
+
+
+
+
+
+
+/*   FORESIGHT   */
+
+Label_Foresight:
 	GetType(attacker_type1)
 	JumpIfStoredEQ(type.ghost, &address_0x248A)
 	GetType(attacker_type2)
@@ -1902,7 +2540,17 @@ address_0x24A4:
 	EndScript()
 
 
-Label_0x24A6:
+
+
+
+
+
+
+
+
+/*   ENDURE   */
+
+Label_Endure:
 	JumpIfHealthLT(attacker, 4, &address_0x24C2)
 	JumpIfHealthLT(attacker, 35, &address_0x24CE)
 
@@ -1918,7 +2566,20 @@ address_0x24DE:
 	EndScript()
 
 
-Label_0x24E0:
+
+
+
+
+
+
+
+
+
+
+
+/*   BATON PASS   */
+
+Label_BatonPass:
 	JumpIfStatStageGT(attacker, atk, +2, &address_0x2540)
 	JumpIfStatStageGT(attacker, def, +2, &address_0x2540)
 	JumpIfStatStageGT(attacker, spa, +2, &address_0x2540)
@@ -1962,7 +2623,17 @@ address_0x2614:
 	EndScript()
 
 
-Label_0x2616:
+
+
+
+
+
+
+
+
+/*   PURSUIT   */
+
+Label_Pursuit:
 	StoreIsFirstTurn(attacker)
 	JumpIfStoredNE(false, &address_0x266C)
 	GetType(defender_type1)
@@ -1988,7 +2659,19 @@ address_0x269A:
 	EndScript()
 
 
-Label_0x269C:
+
+
+
+
+
+
+
+
+
+
+/*   RAIN DANCE   */
+
+Label_RainDance:
 	JumpCompareSpeed(LT, &address_0x26B6)
 	GetAbilityGuess(attacker)
 	JumpIfStoredEQ(ability.swift_swim, &address_0x2718)
@@ -2002,7 +2685,7 @@ address_0x26B6:
 	GetAbilityGuess(attacker)
 	JumpIfStoredEQ(ability.rain_dish, &address_0x2718)
 	JumpIfStoredEQ(ability.dry_skin, &address_0x2718)
-	JumpIfStoredNE(ability.hydration, &address_0x272A)
+	JumpIfStoredNE(ability.strong_jaw, &address_0x272A)
 	JumpIfHasAnyStatus(attacker, &address_0x2718)
 	Jump(&address_0x272A)
 
@@ -2017,7 +2700,16 @@ address_0x272A:
 	EndScript()
 
 
-Label_0x272C:
+
+
+
+
+
+
+
+/*   SUNNY DAY   */
+
+Label_SunnyDay:
 	JumpIfHealthLT(attacker, 40, &address_0x2790)
 	GetWeather()
 	JumpIfStoredEQ(weather.hail, &address_0x2784)
@@ -2025,7 +2717,7 @@ Label_0x272C:
 	JumpIfStoredEQ(weather.sand, &address_0x2784)
 	GetAbilityGuess(attacker)
 	JumpIfStoredEQ(ability.flower_gift, &address_0x2784)
-	JumpIfStoredNE(ability.leaf_guard, &address_0x2796)
+	JumpIfStoredNE(ability.fur_coat, &address_0x2796)
 	JumpIfHasAnyStatus(attacker, &address_0x2784)
 	Jump(&address_0x2796)
 
@@ -2040,7 +2732,14 @@ address_0x2796:
 	EndScript()
 
 
-Label_0x2798:
+
+
+
+
+
+/*   BELLY DRUM   */
+
+Label_BellyDrum:
 	JumpIfHealthLT(attacker, 90, &address_0x27AC)
 	Jump(&address_0x27B2)
 
@@ -2051,7 +2750,18 @@ address_0x27B2:
 	EndScript()
 
 
-Label_0x27B4:
+
+
+
+
+
+
+
+
+
+/*   PSYCH UP   */
+
+Label_PsychUp:
 	JumpIfStatStageGT(defender, atk, +2, &address_0x2814)
 	JumpIfStatStageGT(defender, def, +2, &address_0x2814)
 	JumpIfStatStageGT(defender, spa, +2, &address_0x2814)
@@ -2083,7 +2793,18 @@ address_0x2892:
 	EndScript()
 
 
-Label_0x2894:
+
+
+
+
+
+
+
+
+
+/*   MIRROR COAT   */
+
+Label_MirrorCoat:
 	JumpIfHasCondition(defender, cond.sleep, &address_0x29A4)
 	JumpIfHasCondition(defender, cond.infatuation, &address_0x29A4)
 	JumpIfHasCondition(defender, cond.confusion, &address_0x29A4)
@@ -2150,7 +2871,20 @@ data_address_0x29AC:
 	type.dark
 	END
 
-Label_0x29D0:
+
+
+
+
+
+
+
+
+
+
+
+/*   CHARGE MOVES   */
+
+Label_ChargeMoves:
 	JumpIfEffectivenessEQ(0x, &address_0x2A5E)
 	JumpIfEffectivenessEQ(1/4x, &address_0x2A5E)
 	JumpIfEffectivenessEQ(1/2x, &address_0x2A5E)
@@ -2184,7 +2918,21 @@ address_0x2A64:
 	EndScript()
 
 
-Label_0x2A66:
+
+
+
+
+
+
+
+
+
+
+
+
+/*   THUNDER   */
+
+Label_Thunder:
 	JumpIfEffectivenessEQ(0x, &address_0x2AA6)
 	JumpIfEffectivenessEQ(1/2x, &address_0x2AA6)
 	JumpIfEffectivenessEQ(1/4x, &address_0x2AA6)
@@ -2202,24 +2950,42 @@ address_0x2AB6:
 	EndScript()
 
 
-Label_0x2AB8:
+
+
+
+
+
+
+
+/*   DIG/DIVE   */
+
+Label_InvulnerableTurns:
 	JumpIfHeldItemEQ(attacker, item.power_herb, &address_0x2A2A)
-	JumpIfHasNoMovesWithEffect(defender, move_ef.protect, &Label_0x2AE0)
+	JumpIfHasNoMovesWithEffect(defender, move_ef.protect, &Label_ShadowForce)
 	AddToScore(-1)
 	Jump(&address_0x2C04)
 
-Label_0x2AE0:
+Label_ShadowForce:
 	JumpIfEffectivenessEQ(0x, &address_0x2C06)
 	JumpIfEffectivenessEQ(1/4x, &address_0x2C06)
 	JumpIfEffectivenessEQ(1/2x, &address_0x2C06)
 	JumpIfHeldItemEQ(attacker, item.power_herb, &address_0x2B12)
-	Jump(&Label_0x2B1E)
+	Jump(&Label_SkyDrop)
 
 address_0x2B12:
 	AddToScore(1)
 	Jump(&address_0x2C04)
 
-Label_0x2B1E:
+
+
+
+
+
+
+
+/*   SKY DROP   */
+
+Label_SkyDrop:
 	JumpCompareSpeed(LT, &address_0x2B44)
 	JumpIfHealthGT(attacker, 24, &address_0x2B44)
 	JumpIfHeldItemEQ(attacker, item.custap_berry, &address_0x2BF4)
@@ -2266,19 +3032,44 @@ address_0x2C06:
 	AddToScore(1)
 	EndScript()
 
-
 data_address_0x2C0E:
 	type.ground
 	type.rock
 	type.steel
 	END
 
-Label_0x2C1E:
+
+
+
+
+
+
+
+
+
+
+
+
+/*   FAKE OUT   */
+
+Label_FakeOut:
 	AddToScore(2)
 	EndScript()
 
 
-Label_0x2C26:
+
+
+
+
+
+
+
+
+
+
+/*   STOCKPILE   */
+
+Label_Stockpile:
 	JumpIfHealthNE(attacker, 100, &address_0x2C52)
 	JumpIfHasMoveWithEffect(attacker, move_ef.baton_pass, &address_0x2C4C)
 	JumpIfRandLT(128, &address_0x2C52)
@@ -2301,7 +3092,15 @@ address_0x2C88:
 	EndScript()
 
 
-Label_0x2C8A:
+
+
+
+
+
+
+/*   SPIT UP   */
+
+Label_SpitUp:
 	GetStockpileCount(attacker)
 	JumpIfStoredLT(2, &address_0x2CAA)
 	JumpIfRandLT(80, &address_0x2CAA)
@@ -2311,7 +3110,18 @@ address_0x2CAA:
 	EndScript()
 
 
-Label_0x2CAC:
+
+
+
+
+
+
+
+
+
+/*   HAIL   */
+
+Label_Hail:
 	JumpIfHealthLT(attacker, 40, &address_0x2D16)
 	GetWeather()
 	JumpIfStoredEQ(weather.sun, &address_0x2CE0)
@@ -2337,7 +3147,19 @@ address_0x2D1C:
 	EndScript()
 
 
-Label_0x2D1E:
+
+
+
+
+
+
+
+
+
+
+/*   FACADE   */
+
+Label_Facade:
 	JumpIfHasCondition(defender, cond.poison, &address_0x2D52)
 	JumpIfHasCondition(defender, cond.burn, &address_0x2D52)
 	JumpIfHasCondition(defender, cond.paralysis, &address_0x2D52)
@@ -2350,13 +3172,22 @@ address_0x2D58:
 	EndScript()
 
 
-Label_0x2D5A:
+
+
+
+
+
+
+
+/*   FOCUS PUNCH   */
+
+Label_FocusPunch:
 	JumpIfEffectivenessEQ(0x, &address_0x2DE0)
 	JumpIfEffectivenessEQ(1/4x, &address_0x2DE0)
 	JumpIfEffectivenessEQ(1/2x, &address_0x2DE0)
-	JumpIfHasSubstitute(attacker, &address_0x5D94)
-	JumpIfHasCondition(defender, cond.sleep, &address_0x5D94)
-	JumpIfHasCondition(defender, cond.yawn, &address_0x5D94)
+	JumpIfHasSubstitute(attacker, &prioritizeBy2)
+	JumpIfHasCondition(defender, cond.sleep, &prioritizeBy2)
+	JumpIfHasCondition(defender, cond.yawn, &prioritizeBy2)
 	JumpIfHasCondition(defender, cond.infatuation, &address_0x2DEC)
 	JumpIfHasCondition(defender, cond.confusion, &address_0x2DEC)
 	StoreIsFirstTurn(attacker)
@@ -2377,7 +3208,15 @@ address_0x2DFC:
 	EndScript()
 
 
-Label_0x2DFE:
+
+
+
+
+
+
+/*   SMELLING SALTS   */
+
+Label_SmellingSalts:
 	JumpIfHasCondition(defender, cond.paralysis, &address_0x2E12)
 	Jump(&address_0x2E18)
 
@@ -2388,7 +3227,17 @@ address_0x2E18:
 	EndScript()
 
 
-Label_0x2E1A:
+
+
+
+
+
+
+
+
+/*   SWITCHEROO   */
+
+Label_Trick:
 	GetHeldItemEffect(attacker)
 	JumpIfStoredIsInList(&data_address_0x316A, &address_0x2E5E)
 	JumpIfStoredIsInList(&data_address_0x31A2, &address_0x2E7A)
@@ -2447,7 +3296,7 @@ address_0x2FA0:
 	GetHeldItemEffect(defender)
 	JumpIfStoredIsInList(&data_address_0x3212, &address_0x2E52)
 	GetAbilityGuess(defender)
-	JumpIfStoredEQ(ability.water_veil, &address_0x3018)
+	JumpIfStoredEQ(ability.merciless, &address_0x3018)
 	JumpIfStoredEQ(ability.magic_guard, &address_0x3018)
 	JumpIfStoredEQ(ability.flare_boost, &address_0x3018)
 	JumpIfHasAnyStatus(defender, &address_0x3018)
@@ -2461,9 +3310,9 @@ address_0x2FA0:
 
 address_0x3018:
 	GetAbilityGuess(attacker)
-	JumpIfStoredEQ(ability.water_veil, &address_0x2E52)
+	JumpIfStoredEQ(ability.merciless, &address_0x2E52)
 	JumpIfStoredEQ(ability.magic_guard, &address_0x2E52)
-	JumpIfStoredEQ(ability.distracting, &address_0x5D5C)
+	JumpIfStoredEQ(ability.distracting, &deprioritizeBy5)
 	JumpIfStoredEQ(ability.flare_boost, &address_0x2E52)
 	JumpIfHasAnyStatus(attacker, &address_0x2E52)
 	JumpIfHasSideCondition(attacker, side_cond.safeguard, &address_0x2E52)
@@ -2588,7 +3437,16 @@ data_address_0x3212:
 	item_ef.black_sludge
 	END
 
-Label_0x3256:
+
+
+
+
+
+
+
+/*   ABILITY COPY   */
+
+Label_CopyAblity:
 	GetAbilityGuess(attacker)
 	JumpIfStoredIsInList(&data_address_0x32B0, &address_0x3292)
 	GetAbilityGuess(defender)
@@ -2640,7 +3498,7 @@ data_address_0x32B0:
 data_address_0x3314:
 	ability.shadow_tag
 	ability.arena_trap
-	ability.telepathy
+	ability.permafrost
 	ability.friend_guard
 	ability.own_tempo
 	END
@@ -2649,7 +3507,19 @@ Label_0x332C:
 	EndScript()
 
 
-Label_0x332E:
+
+
+
+
+
+
+
+
+
+
+/*   SUPERPOWER   */
+
+Label_Superpower:
 	JumpIfEffectivenessEQ(0x, &address_0x338A)
 	JumpIfEffectivenessEQ(1/4x, &address_0x338A)
 	JumpIfEffectivenessEQ(1/2x, &address_0x338A)
@@ -2668,7 +3538,20 @@ address_0x3390:
 	EndScript()
 
 
-Label_0x3392:
+
+
+
+
+
+
+
+
+
+
+
+/*   MAGIC COAT   */
+
+Label_MagicCoat:
 	JumpIfHealthGT(defender, 30, &address_0x33B0)
 	JumpIfRandLT(100, &address_0x33B0)
 	AddToScore(-1)
@@ -2689,7 +3572,17 @@ address_0x33F0:
 	EndScript()
 
 
-Label_0x33F2:
+
+
+
+
+
+
+
+
+/*   RECYCLE   */
+
+Label_Recycle:
 	GetUsedItem(attacker)
 	JumpIfStoredIsNotInList(&data_address_0x3420, &address_0x3418)
 	JumpIfRandLT(50, &address_0x341E)
@@ -2709,7 +3602,20 @@ data_address_0x3420:
 	item.starf_berry
 	END
 
-Label_0x3430:
+
+
+
+
+
+
+
+
+
+
+
+/*   REVENGE   */
+
+Label_Revenge:
 	JumpIfHasCondition(defender, cond.sleep, &address_0x3470)
 	JumpIfHasCondition(defender, cond.infatuation, &address_0x3470)
 	JumpIfHasCondition(defender, cond.confusion, &address_0x3470)
@@ -2724,7 +3630,15 @@ address_0x3476:
 	EndScript()
 
 
-Label_0x3478:
+
+
+
+
+
+
+/*   BRICK BREAK   */
+
+Label_BrickBreak:
 	JumpIfHasSideCondition(defender, side_cond.reflect, &address_0x349A)
 	JumpIfHasSideCondition(defender, side_cond.light_screen, &address_0x349A)
 	Jump(&address_0x34A0)
@@ -2736,9 +3650,17 @@ address_0x34A0:
 	EndScript()
 
 
-Label_0x34A2:
+
+
+
+
+
+
+/*   KNOCK OFF   */
+
+Label_KnockOff:
 	GetAbilityGuess(defender)
-	JumpIfStoredEQ(ability.gourmand, &address_0x5D5C)
+	JumpIfStoredEQ(ability.gourmand, &deprioritizeBy5)
 	JumpIfHealthLT(defender, 30, &address_0x34E0)
 	StoreIsFirstTurn(attacker)
 	JumpIfStoredGT(false, &address_0x34E0)
@@ -2749,7 +3671,18 @@ address_0x34E0:
 	EndScript()
 
 
-Label_0x34E2:
+
+
+
+
+
+
+
+
+
+/*   ENDEAVOR   */
+
+Label_Endeavor:
 	JumpIfHealthLT(defender, 70, &address_0x352E)
 	JumpCompareSpeed(GT, &address_0x3514)
 	JumpIfHealthGT(attacker, 40, &address_0x352E)
@@ -2768,7 +3701,15 @@ address_0x3534:
 	EndScript()
 
 
-Label_0x3536:
+
+
+
+
+
+
+/*   HI JUMP KICK?   */
+
+Label_Dmg_user_Hp_Pct:
 	JumpIfEffectivenessEQ(0x, &address_0x35BE)
 	JumpIfEffectivenessEQ(1/4x, &address_0x35BE)
 	JumpIfEffectivenessEQ(1/2x, &address_0x35BE)
@@ -2797,7 +3738,16 @@ address_0x35C4:
 	EndScript()
 
 
-Label_0x35C6:
+
+
+
+
+
+
+
+/*   IMPRISON   */
+
+Label_Imprison:
 	StoreIsFirstTurn(attacker)
 	JumpIfStoredGT(false, &address_0x35E6)
 	JumpIfRandLT(100, &address_0x35E6)
@@ -2807,7 +3757,19 @@ address_0x35E6:
 	EndScript()
 
 
-Label_0x35E8:
+
+
+
+
+
+
+
+
+
+
+/*   REFRESH   */
+
+Label_Refresh:
 	JumpIfHealthLT(defender, 50, &address_0x35FC)
 	Jump(&address_0x3602)
 
@@ -2818,7 +3780,18 @@ address_0x3602:
 	EndScript()
 
 
-Label_0x3604:
+
+
+
+
+
+
+
+
+
+/*   SNATCH   */
+
+Label_Snatch:
 	StoreIsFirstTurn(attacker)
 	JumpIfStoredEQ(true, &address_0x3692)
 	JumpIfRandLT(30, &address_0x36CE)
@@ -2853,7 +3826,19 @@ address_0x36CE:
 	EndScript()
 
 
-Label_0x36D0:
+
+
+
+
+
+
+
+
+
+
+/*   MUD SPORT   */
+
+Label_MudSport:
 	JumpIfHealthLT(attacker, 50, &address_0x3710)
 	GetType(defender_type1)
 	JumpIfStoredEQ(type.electric, &address_0x3704)
@@ -2872,7 +3857,15 @@ address_0x3716:
 	EndScript()
 
 
-Label_0x3718:
+
+
+
+
+
+
+/*   OVERHEAT AND THE LIKE   */
+
+Label_HarshlyLowersSpecialAttackMoves:
 	JumpIfEffectivenessEQ(0x, &address_0x37AA)
 	GetAbilityGuess(attacker)
 	JumpIfStoredEQ(ability.contrary, &address_0x3764)
@@ -2900,7 +3893,17 @@ address_0x37B0:
 	EndScript()
 
 
-Label_0x37B2:
+
+
+
+
+
+
+
+
+/*   WATER SPORT   */
+
+Label_WaterSport:
 	JumpIfHealthLT(attacker, 50, &address_0x37F2)
 	GetType(defender_type1)
 	JumpIfStoredEQ(type.fire, &address_0x37E6)
@@ -2919,7 +3922,18 @@ address_0x37F8:
 	EndScript()
 
 
-Label_0x37FA:
+
+
+
+
+
+
+
+
+
+/*   DRAGON DANCE   */
+
+Label_RaiseUsersAttackAndSpeed:
 	JumpCompareSpeed(GT, &address_0x3828)
 	JumpIfHealthGT(attacker, 50, &address_0x3838)
 	JumpIfRandLT(50, &address_0x3838)
@@ -2934,7 +3948,21 @@ address_0x3838:
 	EndScript()
 
 
-Label_0x383A:
+
+
+
+
+
+
+
+
+
+
+
+
+/*   GRAVITY   */
+
+Label_Gravity:
 	GetAbilityGuess(defender)
 	JumpIfStoredEQ(ability.levitate, &address_0x3896)
 	JumpIfHasCondition(defender, cond.floating, &address_0x3896)
@@ -2954,6 +3982,17 @@ address_0x38A6:
 	EndScript()
 
 
+
+
+
+
+
+
+
+
+
+/*   MIRACLE EYE   */
+
 Label_0x38A8:
 	GetType(defender_type1)
 	JumpIfStoredEQ(type.dark, &address_0x38E2)
@@ -2962,7 +4001,6 @@ Label_0x38A8:
 	JumpIfStatStageGT(defender, eva, +2, &address_0x38EC)
 	AddToScore(-2)
 	EndScript()
-
 
 address_0x38E2:
 	JumpIfRandLT(80, &address_0x38FC)
@@ -2975,11 +4013,44 @@ address_0x38FC:
 	EndScript()
 
 
-Label_0x38FE:
+
+
+
+
+
+
+
+
+/*   WAKE UP SLAP   */
+
+Label_WakeUpSlap:
+	JumpIfEffectivenessEQ(0x, &address_0x3930)
+	JumpIfEffectivenessEQ(1/2x, &address_0x3930)
+	JumpIfEffectivenessEQ(1/4x, &address_0x3930)
+	JumpIfHasCondition(defender, cond.sleep, &address_0x393C)
+	Jump(&address_0x3942)
+
+address_0x3930:
+	AddToScore(-1)
+	Jump(&address_0x3942)
+
+address_0x393C:
+	AddToScore(1)
+
+address_0x3942:
 	EndScript()
 
 
-Label_0x3944:
+
+
+
+
+
+
+
+/*   HAMMER ARM   */
+
+Label_HammerArm:
 	JumpIfEffectivenessEQ(0x, &address_0x3972)
 	JumpIfEffectivenessEQ(1/2x, &address_0x3972)
 	JumpIfEffectivenessEQ(1/4x, &address_0x3972)
@@ -2998,11 +4069,19 @@ address_0x3980:
 	EndScript()
 
 
-Label_0x3982:
+Label_GyroBall:
 	EndScript()
 
 
-Label_0x3984:
+
+
+
+
+
+
+/*   BRINE   */
+
+Label_Brine:
 	JumpIfEffectivenessEQ(0x, &address_0x39CC)
 	JumpIfEffectivenessEQ(1/2x, &address_0x39CC)
 	JumpIfEffectivenessEQ(1/4x, &address_0x39CC)
@@ -3019,7 +4098,15 @@ address_0x39D2:
 	EndScript()
 
 
-Label_0x39D4:
+
+
+
+
+
+
+/*   FEINT   */
+
+Label_Feint:
 	JumpIfHasMoveWithEffect(defender, move_ef.protect, &address_0x39F2)
 	JumpIfRandLT(64, &address_0x39F2)
 	Jump(&address_0x3B0A)
@@ -3079,7 +4166,17 @@ data_address_0x3B0C:
 	item_ef.black_sludge
 	END
 
-Label_0x3B18:
+
+
+
+
+
+
+
+
+/*   PLUCK   */
+
+Label_Pluck:
 	JumpIfEffectivenessEQ(0x, &address_0x3B6C)
 	JumpIfEffectivenessEQ(1/2x, &address_0x3B6C)
 	JumpIfEffectivenessEQ(1/4x, &address_0x3B6C)
@@ -3100,7 +4197,15 @@ address_0x3B72:
 	EndScript()
 
 
-Label_0x3B74:
+
+
+
+
+
+
+/*   TAILWIND   */
+
+Label_Tailwind:
 	JumpIfRandLT(64, &address_0x3BC0)
 	JumpCompareSpeed(LT, &address_0x3BBA)
 	JumpIfHealthLT(attacker, 31, &address_0x3BBA)
@@ -3118,7 +4223,16 @@ address_0x3BC0:
 	EndScript()
 
 
-Label_0x3BC2:
+
+
+
+
+
+
+
+/*   ACUUPRESSURE   */
+
+Label_Acupressure:
 	JumpIfHealthLT(attacker, 51, &address_0x3BFE)
 	JumpIfHealthGT(attacker, 90, &address_0x3BE8)
 	JumpIfRandLT(128, &address_0x3C04)
@@ -3135,7 +4249,18 @@ address_0x3C04:
 	EndScript()
 
 
-Label_0x3C06:
+
+
+
+
+
+
+
+
+
+/*   METAL BURST   */
+
+Label_MetalBurst:
 	JumpIfHasCondition(defender, cond.sleep, &address_0x3CEA)
 	JumpIfHasCondition(defender, cond.infatuation, &address_0x3CEA)
 	JumpIfHasCondition(defender, cond.confusion, &address_0x3CEA)
@@ -3176,14 +4301,21 @@ address_0x3CF0:
 	EndScript()
 
 
-Label_0x3CF2:
-	JumpIfMoveEQ(move.parting_shot, &LabelPivot)
-	JumpIfMoveEQ(move.teleport, &LabelPivot)
+
+
+
+
+
+
+
+
+
+/*   U-TURN   */
+
+Label_U_Turn:
 	JumpIfEffectivenessEQ(0x, &address_0x3D2C)
 	JumpIfEffectivenessEQ(1/4x, &address_0x3D2C)
 	JumpIfEffectivenessEQ(1/2x, &address_0x3D2C)
-
-LabelPivot:
 	GetPartyReserveCount(attacker)
 	JumpIfStoredEQ(0, &address_0x3DCE)
 	JumpIfHasSuperEffectiveMove(&address_0x3D38)
@@ -3228,7 +4360,19 @@ address_0x3DCE:
 	EndScript()
 
 
-Label_0x3DD0:
+
+
+
+
+
+
+
+
+
+
+/*   CLOSE COMBAT   */
+
+Label_CloseCombat:
 	JumpIfEffectivenessEQ(0x, &address_0x3E1A)
 	JumpIfEffectivenessEQ(1/4x, &address_0x3E1A)
 	JumpIfEffectivenessEQ(1/2x, &address_0x3E1A)
@@ -3246,7 +4390,17 @@ address_0x3E20:
 	EndScript()
 
 
-Label_0x3E22:
+
+
+
+
+
+
+
+
+/*   PAYBACK   */
+
+Label_Payback:
 	JumpIfEffectivenessEQ(0x, &address_0x3E6A)
 	JumpIfEffectivenessEQ(1/2x, &address_0x3E6A)
 	JumpIfEffectivenessEQ(1/4x, &address_0x3E6A)
@@ -3256,7 +4410,6 @@ Label_0x3E22:
 	AddToScore(1)
 	EndScript()
 
-
 address_0x3E6A:
 	AddToScore(-1)
 
@@ -3264,7 +4417,17 @@ address_0x3E70:
 	EndScript()
 
 
-Label_0x3E72:
+
+
+
+
+
+
+
+
+/*   ASSURANCE   */
+
+Label_Assurance:
 	JumpIfEffectivenessEQ(0x, &address_0x3ECA)
 	JumpIfEffectivenessEQ(1/2x, &address_0x3ECA)
 	JumpIfEffectivenessEQ(1/4x, &address_0x3ECA)
@@ -3287,7 +4450,6 @@ address_0x3ED6:
 address_0x3EE6:
 	EndScript()
 
-
 data_address_0x3EE8:
 	item.jaboca_berry
 	item.rowap_berry
@@ -3301,7 +4463,25 @@ address_0x3F04:
 	EndScript()
 
 
-Label_0x3F06:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*   FLING   */
+
+Label_Fling:
 	JumpIfEffectivenessEQ(0x, &address_0x3FB0)
 	JumpIfEffectivenessEQ(1/2x, &address_0x3FB0)
 	JumpIfEffectivenessEQ(1/4x, &address_0x3FB0)
@@ -3340,7 +4520,6 @@ address_0x3FB0:
 address_0x3FC6:
 	EndScript()
 
-
 data_address_0x3FC8:
 	item_ef.increase_flinch
 	item_ef.increase_poison
@@ -3349,8 +4528,21 @@ data_address_0x3FC8:
 	item_ef.light_ball
 	END
 
-Label_0x3FE0:
-	JumpIfHasNoStatus(attacker, &address_0x5D74)
+
+
+
+
+
+
+
+
+
+
+
+/*   PSYCHO SHIFT   */
+
+Label_PsychoShift:
+	JumpIfHasNoStatus(attacker, &deprioritizeBy10)
 	JumpIfRandLT(128, &address_0x4008)
 	JumpIfHealthLT(defender, 30, &address_0x4008)
 	AddToScore(1)
@@ -3359,7 +4551,20 @@ address_0x4008:
 	EndScript()
 
 
-Label_0x400A:
+
+
+
+
+
+
+
+
+
+
+
+/*   TRUMP CARD   */
+
+TrumpCardLabel:
 	JumpIfEffectivenessEQ(0x, &address_0x40DE)
 	JumpIfEffectivenessEQ(1/2x, &address_0x40DE)
 	JumpIfEffectivenessEQ(1/4x, &address_0x40DE)
@@ -3398,6 +4603,17 @@ address_0x40E4:
 	EndScript()
 
 
+
+
+
+
+
+
+
+
+
+/*   HEAL BLOCK   */
+
 Label_0x40E6:
 	JumpIfHasMoveWithEffect(defender, move_ef.dream_eater, &address_0x41D6)
 	JumpIfHasMoveWithEffect(defender, move_ef.heal_50, &address_0x41D6)
@@ -3426,7 +4642,15 @@ address_0x41E6:
 	EndScript()
 
 
-Label_0x41E8:
+
+
+
+
+
+
+/*   SOMETHING? NOT SURE   */
+
+Label_Dmg_Target_HP_PCT:
 	JumpIfEffectivenessEQ(0x, &address_0x4262)
 	JumpIfEffectivenessEQ(1/2x, &address_0x4262)
 	JumpIfEffectivenessEQ(1/4x, &address_0x4262)
@@ -3454,11 +4678,31 @@ address_0x4268:
 	EndScript()
 
 
-Label_0x426A:
+
+
+
+
+
+
+/*   POWER TRICK   */
+
+PowerTrickLabel:
 	JumpIfHealthGT(attacker, 90, &address_0x429A)
 	JumpIfHealthGT(attacker, 60, &address_0x42B0)
-	JumpIfHealthGT(attacker, 30, &address_0x42C6)
-	Jump(&address_0x5D4C)
+	JumpIfHealthGT(attack
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	er, 30, &address_0x42C6)
+	Jump(&deprioritizeBy2)
 
 address_0x429A:
 	JumpIfRandLT(96, &address_0x42DC)
@@ -3479,7 +4723,19 @@ address_0x42DC:
 	EndScript()
 
 
-Label_0x42DE:
+
+
+
+
+
+
+
+
+
+
+/*   ABILITY CHANGING   */
+
+Label_SimpleBeam:
 	JumpIfHasMoveWithEffect(defender, move_ef.user_atk+1, &address_0x456C)
 	JumpIfHasMoveWithEffect(defender, move_ef.user_def+1, &address_0x456C)
 	JumpIfHasMoveWithEffect(defender, move_ef.user_spe+1, &address_0x456C)
@@ -3520,7 +4776,7 @@ Label_0x42DE:
 	JumpIfHasMoveWithEffect(attacker, move_ef.target_acc-2, &address_0x4578)
 	JumpIfHasMoveWithEffect(attacker, move_ef.target_eva-2, &address_0x4578)
 
-Label_0x4500:
+Label_GastroAcid:
 	GetAbilityGuess(attacker)
 	JumpIfStoredIsInList(&data_address_0x458A, &address_0x4578)
 	JumpIfRandLT(64, &address_0x4588)
@@ -3569,7 +4825,25 @@ data_address_0x458A:
 	0xC016 [49174]
 	0xFFFF [65535]
 
-Label_0x45CC:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*   LUCKY CHANT   */
+
+Label_LuckyChant:
 	JumpIfHealthLT(attacker, 70, &address_0x4620)
 	JumpIfHasMoveWithEffect(defender, move_ef.increased_crit, &address_0x4614)
 	JumpIfHasMoveWithEffect(defender, move_ef.dmg_target_brn_highcrit, &address_0x4614)
@@ -3588,7 +4862,22 @@ address_0x4626:
 	EndScript()
 
 
-Label_0x4628:
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*   ME FIRST   */
+
+Label_Me_First:
 	JumpCompareSpeed(GT, &address_0x4688)
 	JumpIfLastMoveGTStrongest(defender, false, &address_0x4646)
 	Jump(&address_0x4656)
@@ -3615,7 +4904,20 @@ address_0x468E:
 	EndScript()
 
 
-Label_0x4690:
+
+
+
+
+
+
+
+
+
+
+
+/*   COPYCAT   */
+
+Label_CopyCat:
 	JumpCompareSpeed(GT, &address_0x46E4)
 	JumpIfLastMoveGTStrongest(defender, false, &address_0x46CE)
 	GetPreviousMove(defender)
@@ -3648,7 +4950,7 @@ data_address_0x4714:
 	move.sing
 	move.grass_whistle
 	move.shadow_punch
-	move.scorching_sands
+	move.sand_attack
 	move.smokescreen
 	move.toxic
 	move.guillotine
@@ -3677,18 +4979,26 @@ data_address_0x4714:
 	move.swagger
 	move.torment
 	move.flatter
-	move.trick
+	move.weather_crash
 	move.superpower
 	move.skill_swap
 	move.psycho_shift
 	move.psyblade
 	move.clanging_scales
 	move.sucker_punch
-	move.boomburst
+	move.heart_swap
 	move.switcheroo
 	move.captivate
 	move.dark_void
 	END
+
+
+
+
+
+
+
+/*   POWER SWAP   */
 
 Label_0x47D4:
 	GetStatDiff(defender, atk)
@@ -3755,6 +5065,14 @@ address_0x4932:
 	EndScript()
 
 
+
+
+
+
+
+
+/*   GUARD SWAP   */
+
 Label_0x4934:
 	GetStatDiff(defender, def)
 	JumpIfStoredGT(3, &address_0x496C)
@@ -3820,6 +5138,18 @@ address_0x4A92:
 	EndScript()
 
 
+
+
+
+
+
+
+
+
+
+
+/*   PUNISHMENT   */
+
 Label_0x4A94:
 	JumpIfEffectivenessEQ(0x, &address_0x4B30)
 	JumpIfEffectivenessEQ(1/2x, &address_0x4B30)
@@ -3852,7 +5182,21 @@ address_0x4B30:
 	EndScript()
 
 
-Label_0x4B32:
+
+
+
+
+
+
+
+
+
+
+
+
+/*   LAST RESORT   */
+
+Label_LastResort:
 	JumpIfEffectivenessEQ(0x, &address_0x4B60)
 	JumpIfEffectivenessEQ(1/2x, &address_0x4B60)
 	JumpIfEffectivenessEQ(1/4x, &address_0x4B60)
@@ -3870,7 +5214,17 @@ address_0x4B72:
 	EndScript()
 
 
-Label_0x4B74:
+
+
+
+
+
+
+
+
+/*   WORRY SEED   */
+
+Label_WorrySeed:
 	JumpIfDoesNotHaveMove(defender, move.rest, &address_0x4B88)
 	AddToScore(1)
 
@@ -3888,7 +5242,19 @@ address_0x4BBC:
 	EndScript()
 
 
-Label_0x4BBE:
+
+
+
+
+
+
+
+
+
+
+/*   SUCKER PUNCH   */
+
+Label_SuckerPunch:
 	JumpIfEffectivenessEQ(0x, &address_0x4BF2)
 	JumpIfEffectivenessEQ(1/2x, &address_0x4BF2)
 	JumpIfEffectivenessEQ(1/4x, &address_0x4BF2)
@@ -3903,10 +5269,18 @@ address_0x4BF8:
 	EndScript()
 
 
-Label_0x4BFA:
+
+
+
+
+
+
+/*   TOXIC SPIKES   */
+
+Label_ToxicSpikes:
 	JumpIfRandLT(128, &address_0x4C3C)
 	AddToScore(1)
-	JumpIfHasMove(attacker, move.stomping_tantrum, &address_0x4C2C)
+	JumpIfHasMove(attacker, move.roar, &address_0x4C2C)
 	JumpIfHasMove(attacker, move.whirlwind, &address_0x4C2C)
 	Jump(&address_0x4C3C)
 
@@ -3918,7 +5292,15 @@ address_0x4C3C:
 	EndScript()
 
 
-Label_0x4C3E:
+
+
+
+
+
+
+/*   HEART SWAP   */
+
+Label_HeartSwap:
 	JumpIfStatStageGT(defender, atk, +1, &address_0x4CAC)
 	JumpIfStatStageGT(defender, def, +1, &address_0x4CAC)
 	JumpIfStatStageGT(defender, spa, +1, &address_0x4CAC)
@@ -3944,7 +5326,6 @@ address_0x4D2A:
 	AddToScore(1)
 	EndScript()
 
-
 address_0x4D32:
 	AddToScore(-2)
 
@@ -3952,7 +5333,14 @@ address_0x4D38:
 	EndScript()
 
 
-Label_0x4D3A:
+
+
+
+
+
+/*   AQUA RING   */
+
+Label_AquaRing:
 	JumpIfHealthLT(attacker, 50, &address_0x4D58)
 	JumpIfRandLT(128, &address_0x4D58)
 	AddToScore(1)
@@ -3961,7 +5349,18 @@ address_0x4D58:
 	EndScript()
 
 
-Label_0x4D5A:
+
+
+
+
+
+
+
+
+
+/*   MAGNET RISE   */
+
+Label_MagnetRise:
 	JumpIfHealthLT(attacker, 50, &address_0x4DCE)
 	JumpIfHasMove(defender, move.earthquake, &address_0x4D98)
 	JumpIfHasMove(defender, move.earth_power, &address_0x4D98)
@@ -3989,7 +5388,16 @@ address_0x4DCE:
 	0x004D [77]
 	0x004D [77]
 
-Label_0x4DD8:
+
+
+
+
+
+
+
+/*   DEFOG   */
+
+Label_Defog:
 	JumpIfHasSideCondition(defender, side_cond.light_screen, &address_0x4E24)
 	JumpIfHasSideCondition(defender, side_cond.reflect, &address_0x4E24)
 	JumpIfHasSideCondition(defender, side_cond.spikes, &address_0x4E88)
@@ -4036,7 +5444,20 @@ address_0x4EEE:
 	EndScript()
 
 
-Label_0x4EF0:
+
+
+
+
+
+
+
+
+
+
+
+/*   TRICK ROOM   */
+
+Label_TrickRoom:
 	GetBattleStyle()
 	JumpIfStoredEQ(double_battle, &address_0x4F40)
 	JumpIfHealthGT(attacker, 30, &address_0x4F1A)
@@ -4056,7 +5477,18 @@ address_0x4F40:
 	EndScript()
 
 
-Label_0x4F42:
+
+
+
+
+
+
+
+
+
+/*   BLIZZARD   */
+
+Label_Blizzard:
 	JumpIfEffectivenessEQ(0x, &address_0x4F78)
 	JumpIfEffectivenessEQ(1/2x, &address_0x4F78)
 	JumpIfEffectivenessEQ(1/4x, &address_0x4F78)
@@ -4074,7 +5506,21 @@ address_0x4F88:
 
 	0x004D [77]
 
-Label_0x4F8C:
+
+
+
+
+
+
+
+
+
+
+
+
+/*   CAPTIVATE   */
+
+Label_Captivate:
 	JumpIfStatStageEQ(defender, spa, +0, &address_0x4FDA)
 	AddToScore(-1)
 	JumpIfHealthGT(attacker, 90, &address_0x4FB8)
@@ -4099,10 +5545,19 @@ address_0x500A:
 	EndScript()
 
 
-Label_0x500C:
+
+
+
+
+
+
+
+/*   STEALTH ROCK   */
+
+Label_StealthRock:
 	JumpIfRandLT(128, &address_0x504E)
 	AddToScore(1)
-	JumpIfHasMove(attacker, move.stomping_tantrum, &address_0x503E)
+	JumpIfHasMove(attacker, move.roar, &address_0x503E)
 	JumpIfHasMove(attacker, move.whirlwind, &address_0x503E)
 	Jump(&address_0x504E)
 
@@ -4116,7 +5571,14 @@ address_0x504E:
 	0x004D [77]
 	0x004D [77]
 
-Label_0x5054:
+
+
+
+
+
+/*   RECOIL 25   */
+
+Label_Recoil25:
 	JumpIfEffectivenessEQ(0x, &address_0x5098)
 	JumpIfEffectivenessEQ(1/2x, &address_0x5098)
 	JumpIfEffectivenessEQ(1/4x, &address_0x5098)
@@ -4132,11 +5594,17 @@ address_0x5098:
 	EndScript()
 
 
-Label_0x509A:
+
+
+
+
+/*   HEALING WISH   */
+
+Label_HealingWish:
 	JumpIfHealthLT(attacker, 80, &address_0x50C2)
 	JumpCompareSpeed(GT, &address_0x50C2)
 	JumpIfRandLT(192, &address_0x514A)
-	Jump(&address_0x5D5C)
+	Jump(&deprioritizeBy5)
 
 address_0x50C2:
 	JumpIfHealthGT(attacker, 50, &address_0x513A)
@@ -4168,7 +5636,16 @@ address_0x514A:
 	EndScript()
 
 
-Label_0x514C:
+
+
+
+
+
+
+
+/*   HONE CLAWS   */
+
+Label_HoneClaws:
 	JumpIfStatStageLT(attacker, acc, +3, &address_0x516E)
 	JumpIfRandLT(50, &address_0x516E)
 	AddToScore(-2)
@@ -4181,9 +5658,28 @@ address_0x5182:
 	EndScript()
 
 
-Label_0x5184:
+
+
+
+
+
+
+/*   WIDE GUARD   */
+
+Label_WideGuard:
 	EndScript()
 
+
+
+
+
+
+
+
+
+
+
+/*   GUARD SPLIT   */
 
 Label_0x5186:
 	StoreIsFirstTurn(attacker)
@@ -4212,7 +5708,7 @@ address_0x5222:
 
 address_0x525C:
 	GetBattleStyle()
-	JumpIfStoredEQ(single_battle, &address_0x5D74)
+	JumpIfStoredEQ(single_battle, &deprioritizeBy10)
 	Jump(&address_0x528A)
 
 address_0x526E:
@@ -4282,6 +5778,16 @@ data_address_0x5304:
 	species.virizion
 	END
 
+
+
+
+
+
+
+
+
+/*   POWER SPLIT   */
+
 Label_0x5358:
 	StoreIsFirstTurn(attacker)
 	JumpIfStoredNE(false, &address_0x5456)
@@ -4309,7 +5815,7 @@ address_0x53F4:
 
 address_0x542E:
 	GetBattleStyle()
-	JumpIfStoredEQ(single_battle, &address_0x5D74)
+	JumpIfStoredEQ(single_battle, &deprioritizeBy10)
 	Jump(&address_0x545C)
 
 address_0x5440:
@@ -4386,13 +5892,33 @@ Label_0x5536:
 	EndScript()
 
 
-Label_0x5538:
+
+
+
+
+
+/*   DMG PHYSICAL   */
+
+Label_Dmg_Physical:
 	EndScript()
 
 
-Label_0x553A:
+Label_Venoshock:
 	EndScript()
 
+
+
+
+
+
+
+
+
+
+
+
+
+/*   TELEKINESIS   */
 
 Label_0x553C:
 	JumpIfStatStageLT(attacker, acc, +3, &address_0x555E)
@@ -4413,6 +5939,20 @@ address_0x559E:
 	EndScript()
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+/*   MAGIC ROOM   */
+
 Label_0x55A0:
 	JumpIfHeldItemEQ(attacker, item.none, &address_0x55EA)
 	JumpIfHeldItemEQ(defender, item.leftovers, &address_0x55EA)
@@ -4429,6 +5969,19 @@ address_0x55EA:
 address_0x55FA:
 	EndScript()
 
+
+
+
+
+
+
+
+
+
+
+
+
+/*   SMACK DOWN   */
 
 Label_0x55FC:
 	GetAbilityGuess(defender)
@@ -4448,7 +6001,13 @@ address_0x5650:
 	EndScript()
 
 
-Label_0x5652:
+
+
+
+
+/*   ALWAYS CRIT   */
+
+Label_AlwaysCrit:
 	JumpIfEffectivenessEQ(0x, &address_0x56B4)
 	JumpIfEffectivenessEQ(1/4x, &address_0x56B4)
 	JumpIfEffectivenessEQ(1/2x, &address_0x56B4)
@@ -4467,11 +6026,21 @@ address_0x56B4:
 	EndScript()
 
 
-Label_0x56B6:
+Label_FlameBurst:
 	EndScript()
 
 
-Label_0x56B8:
+
+
+
+
+
+
+
+
+/*   QUIVER DANCE   */
+
+Label_QuiverDance:
 	JumpCompareSpeed(GT, &address_0x56E6)
 	JumpIfHealthGT(attacker, 50, &address_0x56F6)
 	JumpIfRandLT(50, &address_0x56F6)
@@ -4486,15 +6055,24 @@ address_0x56F6:
 	EndScript()
 
 
-Label_0x56F8:
+Label_HeavySlam:
 	EndScript()
 
 
-Label_0x56FA:
+Label_Synchronoise:
 	EndScript()
 
 
-Label_0x56FC:
+
+
+
+
+
+
+
+/*   ELECTRO BALL   */
+
+Label_ElectroBall:
 	JumpIfEffectivenessEQ(0x, &address_0x5752)
 	JumpIfEffectivenessEQ(1/4x, &address_0x5752)
 	JumpIfEffectivenessEQ(1/2x, &address_0x5752)
@@ -4511,11 +6089,20 @@ address_0x5752:
 	EndScript()
 
 
-Label_0x5754:
+Label_Soak:
 	EndScript()
 
 
-Label_0x5756:
+
+
+
+
+
+
+
+/*   FLAME CHARGE   */
+
+Label_FlameCharge:
 	JumpIfEffectivenessEQ(0x, &address_0x57A4)
 	JumpIfEffectivenessEQ(1/4x, &address_0x57A4)
 	JumpIfEffectivenessEQ(1/2x, &address_0x57A4)
@@ -4532,7 +6119,13 @@ address_0x57A4:
 	EndScript()
 
 
-Label_0x57A6:
+
+
+
+
+/*   ACID SPRAY   */
+
+Label_AcidSpray:
 	JumpIfStatStageGT(defender, spd, -1, &address_0x57E0)
 	JumpIfStatStageGT(defender, spd, -3, &address_0x57D0)
 	AddToScore(-1)
@@ -4545,11 +6138,30 @@ address_0x57E0:
 	EndScript()
 
 
-Label_0x57E2:
+
+
+
+
+
+
+/*   FOUL PLAY   */
+
+Label_FoulPlay:
 	EndScript()
 
 
-Label_0x57E4:
+
+
+
+
+
+
+
+
+
+/*   ENTRAINMENT   */
+
+Label_Entrainment:
 	JumpIfRandLT(128, &address_0x57F4)
 	AddToScore(1)
 
@@ -4557,19 +6169,29 @@ address_0x57F4:
 	EndScript()
 
 
-Label_0x57F6:
+
+
+
+
+
+
+
+
+
+
+Label_AfterYou:
 	EndScript()
 
 
-Label_0x57F8:
+Label_Round:
 	EndScript()
 
 
-Label_0x57FA:
+Label_EchoedVoice:
 	EndScript()
 
 
-Label_0x57FC:
+Label_ChipAway:
 	JumpIfEffectivenessEQ(0x, &address_0x584E)
 	JumpIfEffectivenessEQ(1/4x, &address_0x584E)
 	JumpIfEffectivenessEQ(1/2x, &address_0x584E)
@@ -4582,7 +6204,17 @@ address_0x584E:
 	EndScript()
 
 
-Label_0x5850:
+
+
+
+
+
+
+
+
+/*   CLEAR SMOG   */
+
+Label_ClearSmog:
 	JumpIfStatStageGT(defender, atk, +2, &address_0x58C0)
 	JumpIfStatStageGT(defender, def, +2, &address_0x58C0)
 	JumpIfStatStageGT(defender, spa, +2, &address_0x58C0)
@@ -4600,7 +6232,24 @@ address_0x58D0:
 	EndScript()
 
 
-Label_0x58D2:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*   STORED POWER   */
+
+Label_StoredPower:
 	JumpIfEffectivenessEQ(0x, &address_0x584E)
 	JumpIfEffectivenessEQ(1/4x, &address_0x584E)
 	JumpIfEffectivenessEQ(1/2x, &address_0x584E)
@@ -4638,7 +6287,19 @@ address_0x5A5A:
 	EndScript()
 
 
-Label_0x5A5C:
+
+
+
+
+
+
+
+
+
+
+/*   QUICK GUARD   */
+
+Label_QuickGuard:
 	StoreIsFirstTurn(defender)
 	JumpIfStoredEQ(false, &address_0x5A72)
 	AddToScore(-1)
@@ -4651,11 +6312,20 @@ address_0x5A82:
 	EndScript()
 
 
-Label_0x5A84:
+Label_AllySwitch:
 	EndScript()
 
 
-Label_0x5A86:
+
+
+
+
+
+
+
+/*   SHELL SMASH   */
+
+Label_ShellSmash:
 	JumpIfStatStageLT(attacker, def, +0, &address_0x5AB0)
 	JumpIfStatStageLT(attacker, spd, +0, &address_0x5AB0)
 	Jump(&address_0x5AB6)
@@ -4667,15 +6337,32 @@ address_0x5AB6:
 	EndScript()
 
 
-Label_0x5AB8:
+
+
+
+
+
+
+
+Label_HealPulse:
+	EndScript()
+
+Label_hex:
 	EndScript()
 
 
-Label_0x5ABA:
-	EndScript()
 
 
-Label_0x5ABC:
+
+
+
+
+
+
+
+/*   SHIFT GEAR   */
+
+Label_ShiftGear:
 	JumpCompareSpeed(GT, &address_0x5AEA)
 	JumpIfHealthGT(attacker, 50, &address_0x5AFA)
 	JumpIfRandLT(50, &address_0x5AFA)
@@ -4690,7 +6377,16 @@ address_0x5AFA:
 	EndScript()
 
 
-Label_0x5AFC:
+
+
+
+
+
+
+
+/*   INCINERATE   */
+
+Label_incinerate:
 	GetTurnCount()
 	JumpIfStoredNE(0, &address_0x5B18)
 	JumpIfRandLT(50, &address_0x5B18)
@@ -4704,7 +6400,17 @@ Label_0x5B1A:
 	EndScript()
 
 
-Label_0x5B1C:
+
+
+
+
+
+
+
+
+/*   GROWTH   */
+
+Label_growth:
 	JumpIfHealthGT(attacker, 70, &address_0x5B3A)
 	JumpIfRandLT(50, &address_0x5B3A)
 	AddToScore(-1)
@@ -4713,7 +6419,15 @@ address_0x5B3A:
 	EndScript()
 
 
-Label_0x5B3C:
+
+
+
+
+
+
+/*   ACROBATICS   */
+
+Label_Acrobatics:
 	JumpIfEffectivenessEQ(0x, &address_0x5B68)
 	JumpIfEffectivenessEQ(1/4x, &address_0x5B68)
 	JumpIfEffectivenessEQ(1/2x, &address_0x5B68)
@@ -4732,7 +6446,19 @@ address_0x5B8E:
 	EndScript()
 
 
-Label_0x5B90:
+
+
+
+
+
+
+
+
+
+
+/*   REFLECT TYPE   */
+
+Label_ReflectType:
 	GetType(attacker_type1)
 	JumpIfStoredIsInList(&data_address_0x5BF2, &address_0x5BE0)
 	JumpIfStoredIsInList(&data_address_0x5C1A, &address_0x5BCA)
@@ -4771,11 +6497,31 @@ data_address_0x5C1A:
 	type.dragon
 	END
 
-Label_0x5C26:
+
+
+
+
+
+
+
+
+
+Label_Retaliate:
 	EndScript()
 
 
-Label_0x5C28:
+
+
+
+
+
+
+
+
+
+/*   FINAL GAMBIT   */
+
+Label_FinalGambit:
 	JumpIfHasSubstitute(defender, &address_0x5C5E)
 	JumpIfHasSuperEffectiveMove(&address_0x5C5E)
 	JumpIfHealthLT(defender, 40, &address_0x5C5E)
@@ -4793,19 +6539,27 @@ Label_0x5C66:
 	EndScript()
 
 
-Label_0x5C68:
+Label_WaterPledge:
 	EndScript()
 
 
-Label_0x5C6A:
+Label_FirePledge:
 	EndScript()
 
 
-Label_0x5C6C:
+Label_GrassPledge:
 	EndScript()
 
 
-Label_0x5C6E:
+
+
+
+
+
+
+/*   WORK UP   */
+
+Label_WorkUp:
 	JumpIfStatStageLT(attacker, atk, +3, &address_0x5C96)
 	JumpIfRandLT(100, &address_0x5CE4)
 	AddToScore(-1)
@@ -4837,11 +6591,39 @@ address_0x5D16:
 	EndScript()
 
 
-Label_0x5D18:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Label_RelicSong:
 	EndScript()
 
 
-Label_0x5D1A:
+
+
+
+
+
+
+
+
+
+
+
+
+/*   GLACIATE   */
+
+Label_Glaciate:
 	JumpCompareSpeed(GT, &address_0x5D30)
 	AddToScore(-1)
 	Jump(&address_0x5D40)
@@ -4862,17 +6644,29 @@ Label_0x5D42:
 	0xFFFF [65535]
 	0x004D [77]
 
-address_0x5D4C:
+
+
+
+
+
+
+
+
+
+
+
+
+deprioritizeBy2:
 	AddToScore(-2)
 	EndScript()
 
 
-address_0x5D54:
+deprioritizeBy3:
 	AddToScore(-3)
 	EndScript()
 
 
-address_0x5D5C:
+deprioritizeBy5:
 	AddToScore(-5)
 	EndScript()
 
@@ -4885,7 +6679,7 @@ address_0x5D5C:
 	0xFFFF [65535]
 	0x004D [77]
 
-address_0x5D74:
+deprioritizeBy10:
 	AddToScore(-10)
 	EndScript()
 
@@ -4902,7 +6696,7 @@ address_0x5D74:
 	0x0000 [0]
 	0x004D [77]
 
-address_0x5D94:
+prioritizeBy2:
 	AddToScore(2)
 	EndScript()
 
@@ -4915,7 +6709,6 @@ address_0x5D94:
 	0x0000 [0]
 	0x004D [77]
 
-address_0x5DAC:
+prioritizeBy10:
 	AddToScore(10)
 	EndScript()
-

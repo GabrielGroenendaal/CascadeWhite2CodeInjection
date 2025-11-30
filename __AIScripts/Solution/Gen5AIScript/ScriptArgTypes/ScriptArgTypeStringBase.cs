@@ -54,7 +54,7 @@ public abstract class ScriptArgTypeStringBase(string name) : ScriptArgType(name)
         var alphaIndex = Array.BinarySearch(SortedValueIdNames, idStr);
         if (alphaIndex > -1 && alphaIndex < AlphaToId.Length)
             return (uint)AlphaToId[alphaIndex];
-
+        Console.WriteLine("The String that throws the error is" + str);
         return FromErrorStr(str);
     }
 
