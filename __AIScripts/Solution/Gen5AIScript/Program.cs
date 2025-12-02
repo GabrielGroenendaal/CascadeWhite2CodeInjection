@@ -313,6 +313,7 @@ byte[] WriteBinFile(string[] lines)
             throw new Exception();
 
         var closeParaIndex = line.IndexOf(')');
+        Console.WriteLine("the offending line is " + fullLine);
         if (closeParaIndex == -1)
             throw new Exception();
 
