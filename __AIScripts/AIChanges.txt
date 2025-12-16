@@ -1,0 +1,520 @@
+
+
+//    PRIORITIZE EFFECTIVENESS 
+
+    Effectiveness:
+        AI has been updated to properly see immunities for types, sound, bullet, powders, wind, etc.
+
+
+    Sleep:
+        The AI checks for Mist, which causes it to Reduce Score by 10
+        The AI checks for Shed Skin, which gives a high chance to reduce Score by 10 
+        The AI checks for Lum Berry and Chesto Berry, which gives a high chance to reduce Score by 10 unless the attacker has Unnerve.
+
+
+    Dream Eater:
+        No longer has any specific AI behavior.
+
+
+    Stat Lowering (Attack):
+        Now checks for defiant, which reduces score by 10
+        Now checks for Scrappy, which reduces score by 10
+        Now Checks for Hyper Cutter, which reduces score by 10
+        
+    Stat Lowering (General):
+        Now checks for Contrary, which reduces score by 12 
+        Now checks for unaware, which reduces score by 12 
+        Now checks for Safeguard, which reduces score by 10 
+        Now checks for white herb, which has a high chance to reduce score by 10 unless the user has Unnerve 
+
+    Apply Poison: 
+        Now checks for Shed Skin, which reduces score by 10 
+        Now checks for Mist, which reduces score by 10 
+        Now checks for Lum Berry and Pecha Berry, which has a high chance to reduce score by 10 unless the user has unnerve 
+
+
+    Mist / Safeguard:
+        Now check for the other field effect before using (since they do the same thing now)
+
+
+    Apply Confusion:
+        Now checks for Mist, which reduces score by 10 
+        Now checks if the defender has the Psychic type, reducing score by 10 (Psychic types cannot be connfused anymore)
+        Now checks for lum berry and persim berry, which has a high chance to reduce score by 10 unless the user has Unnerve 
+
+
+    Apply Paralysis:
+        Now checks for Marvel Scale, Guts, Quick Feet, reducing score by 10 
+        Now checks for Mist, which reduces score by 10
+        Now checks for lum berry and cheri berry, which has a high chance to reduce score by 10 unless the user has Unnerve 
+
+
+
+
+    Block / Mean Look:
+        Now checks for if the defender has Run Away, reducing score by 12 if so 
+        Now checks if the defender has Shed Shell, reduding score by 12 if so.
+
+
+    Curse:
+        For Ghost type effect, now checks if the target has the Normal type, reducing score by 10 if so.
+
+
+    Attract:
+        No longer has a gender check.
+        Now checks for Mental herb, which gives a high chance to reduce score by 10 unless the user has unnerve.
+
+
+    Stockpile / Spit Up / Swalllow:
+        Now properly checks to see if the user is holding a berry, reducing score by 10 if not. 
+        If the user is holding a stat-raising berry, much higher chance of getting a +2 to Score 
+
+
+    Will-o-Wisp 
+        Now checks for Mist, reducing score by 10 if so 
+        Now accounts for Heatproof, Rain Dish, Well Baked Body
+        Now checks for lum berry and rawst berry, which has a high chance to reduce score by 10 unless the user has Unnerve 
+
+
+    Knock Off:
+        No longer deprioritizes Knock Off if the target isn't holding an item. 
+
+    Healing Wish:
+        No longer heavily deprioritizes this move if there isn't a damaged or status'd pokemon in the party.
+        This is to account for the new functionality which provides an Omniboost to the incoming pokemon.
+
+    Fling / Psycho Shift:
+        Accounts for all the changes in status immunities mentioned above.
+
+    Gastro Acid: 
+        Much More likely to go for Gastro Acid to nullify an immmunity to one of the user's types. 
+
+    Captivate:
+        No longer has a gender check.
+        Now checks for white herb, which has a high chance to reduce score by 10 unless the user has Unnerve 
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//    EVALUATE DAMAGE 
+
+    Priority:
+        If the AI sees kill with Priority, it only receives a boost to the score if its slower than all enemies on the field. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//    EXPERT 
+
+    Explosion
+        Now receives a -1 to score if at full health. 
+    
+
+    Stat Raising Moves:
+        Checks if the enemy has Unaware, which reduces the score by 2 
+
+    Stat Lowering Moves:
+        Checks if the target has Unaware, which reduces the score by 2.
+
+    Speed Lowering Attacks:
+        Damaging moves that lower speed no longer have a score reduction if faster than the target.
+        They can still receive a situational +2 to Score if slower than the target, however. 
+    
+    Protect 
+        Checks to see if the opposing Pokemon has Dig, Bounce, Shadow Force, Fly, or Dive. If so has a 50% chance to reduce score by 2 
+        Can no longer double-protect. 
+    
+
+    Endure
+        No longer uses Health Thresholds to impact chance to use move. 
+        Will only ever use endure if it sees an incoming attack that has a KO. 
+        Additional chance to use endure if the AI is holding a pinch berry, has flail, or reversal.
+
+    Charge Moves:
+        No score bonus for Solarbeam in Sun. Rejoice! 
+        Sky Attack, Skull Bash, Electro Shot and Meteor Beam now check if the user will be one shot by the enemy pokemon (and doesn't have a power herb), reducing score by 12 if so
+        If the user takes 33% or less damage from the opposing pokemon however, has a 75% chance to increase score by 2. 
+    
+    Spit Up
+        Has a small chance to increase score by 1 if holding a stat boosting berry. 
+    
+    Revenge / Payback / Avalanche:
+        These moves now all function like Payback, getting a damage boost when the user moves second. 
+        They no longer have a situational chance to raise score. 
+    
+    High Jump Kick
+        Move has its score reduced by 2 90% of the time if the pokemon it is fighting has the move protect. 
+
+    Overheat: 
+        These moves are no longer dissuaded on low health users. 
+    
+    Brine / Payback:
+        All AI scoring removed. 
+
+    Magnet Rise: 
+        Has a higher chance of using the move if the opposing pokemon has a Ground move and the move-user belongs to any of the following species:
+            	species.magnezone
+                species.magnemite
+                species.magneton
+                species.electrode
+                species.voltorb
+                species.bastiodon
+                species.shieldon
+                species.garbodor
+                species.trubbish
+                species.magby
+                species.magmortar
+                species.magmar
+                species.probopass
+                species.corsola
+                species.roggenrola
+                species.boldore
+                species.gigalith
+                species.magcargo
+                species.slugma
+                species.heatmor
+                species.klinklang
+                species.klang
+                species.klink
+                species.muk
+                species.grimer
+                species.manectric
+                species.electrike
+                species.plusle
+                species.beldum 
+                species.metang 
+                species.metagross
+                species.ampharos
+                species.steelix
+                species.stunfisk
+
+    Captivate:
+        No longer cares about gender. 
+        No longer cares about the category of the last move used. Instead evaluates if the pokemon in front of them is a primarily physical or special attacker. 
+    
+    Electro Ball 
+    Chip Away
+        No longer has any AI associated with it.
+    
+
+
+
+
+
+
+
+
+
+
+
+
+//   EVALUATE STATUS 
+
+    There is new logic for each of the following groups of moves 
+
+    setup_moves:
+        move.swords_dance
+        move.growth
+        move.nasty_plot
+        move.calm_mind
+        move.work_up
+        move.howl
+        move.acupressure
+        move.hone_claws
+        move.meditate
+        move.focus_energy
+        move.amnesia
+        move.iron_defense
+        move.cosmic_power
+        move.cotton_guard
+        move.stockpile
+        move.bulk_up
+        move.belly_drum
+        move.coil 
+        move.barrier
+        move.acid_armor
+        move.defend_order
+        move.defense_curl
+        move.harden
+        move.minimize
+        move.tail_glow
+        END
+
+    If any enemy on the field sees a OHKO against the User and the User is FASTER than them, then they reduce score by 10
+    Again, only if the user is FASTER. If slower, the AI might still go for set up. 
+
+
+
+
+    setup_moves_speed:
+        move.victory_dance
+        move.quiver_dance
+        move.dragon_dance
+        move.double_team
+        move.flame_charge
+        move.shift_gear
+        move.shell_smash
+        move.agility
+        move.rock_polish
+        move.autotomize
+        move.tailwind
+        END
+
+    If any enemy on the field sees a 2HKO vs. the user and the user would NOT be faster than all enemies after performing their setup move, 
+    reduces score by 10. 
+
+
+
+    debuff_moves:
+        move.fake_tears
+        move.screech
+        move.leer
+        move.scary_face
+        move.string_shot
+        move.sweet_scent
+        move.tail_whip
+        move.metal_sound
+        END
+
+    If any enemy sees a OHKO vs. the user, deprioritized by 10.
+    If no enemy on the field can deal more than 25% damage to the user, high chance to reduce score by 10.
+
+
+
+    debuff_moves_where_speed_matters:
+        move.charm
+        move.captivate
+        move.confide
+        move.growl
+        move.tickle
+        move.smokescreen
+        move.eerie_impulse
+        move.feather_dance
+        END
+
+    If the user doesn't have prankster and is slower than their target, has a moderate chance to reduce these moves' score by 2. 
+    If no enemy on the field can deal more than 25% damage to the user, high chance to reduce score by 10.
+
+
+
+
+    debuff_moves_that_apply_status:
+        move.confuse_ray
+        move.supersonic
+        move.swagger
+        move.flatter
+        move.teeter_dance
+        move.attract
+        END
+
+    If the user doesn't have prankster and is slower than their target, moderate chance of reducing score by 10. 
+
+
+
+
+
+
+    Priority:
+        If any enemy on the field sees a OHKO into the user and is faster than the user, has a very high chance to increase the score by 10. 
+
+
+    Substitute:
+        The AI can now properly see substitute and what moves will and won't have an effect.
+
+
+
+
+
+
+
+//   DOUBLES 
+
+
+    Hail:
+        Now checks for ice body, slush rush, and snow cloak for a chance to increase score.
+
+    Sandstorm:
+        Now checks for Sand Force, Sand Veil, and Sand Rush for a chance to increase the score 
+
+    Follow Me:
+        Has a high (45%) chance to increase the score by 3 if the user takes negligible damage (25% or less) from opposing Pokemon on the field. 
+
+    Earthquake:
+        Now not guaranteed to increase score if ally Pokemon are flying types, levitating, or floating. About a 50% chance to increase score by 2 instead.
+        Also checks to see the if the ally has Healer, Plus, Minus, Friend Guard, or Forewarn: with a high chance to increase score if so.
+
+
+    Helping Hand:
+        Now checks to see if the ally Pokemon already had a kill on a Pokemon on the field with a non-spread move. Deprioritizes by 10 if so. 
+        Now checks to see fi the ally Pokemon has the move Helping Hand. If so, deprioritizes by 10.
+
+
+    Electric Type Moves
+        Discharge:
+            Now checks to see if the defender's ally pokemon have Thunder Armor, Volt Absorb, Motor Drive, or Lightning Rod, with a high chance to deprioritize the move by 8 if they do.
+            Now checks to see if the attacker's ally has Thunder Armor, Volt Absorb, Motor Drive, or Lightning Rod with a high chance to add 3 to score if they do.
+            Also checks to see the if the ally has Healer, Plus, Minus, Friend Guard, or Forewarn: with a high chance to increase score if so.
+
+        Spread Electric Moves:
+            The AI will check if the defender's ally has Thunder Armor, Volt Absorb, Motor Drive, or Lightning Rod before using them. With a high chance to deprioriitze if so.
+
+        Galvanize:
+            If the attacker has galvanize, it will perform the spread electric checks for any spread Normal moves as well.
+
+
+    Water Type Moves
+        Surf:
+            Now checks to see if the defender's ally pokemon have Dry Skin, Water Absorb, or Storm Drain, with a high chance to deprioritize the move by 8 if they do.
+            Now checks to see if the attacker's ally has Dry Skin, Water Absorb, or Storm Drain with a high chance to add 3 to score if they do.
+            Also checks to see the if the ally has Healer, Plus, Minus, Friend Guard, or Forewarn: with a high chance to increase score if so.
+
+        Spread Water Moves:
+            The AI will check if the defender's ally has Dry Skin, Water Absorb, or Storm Drain before using them. With a high chance to deprioriitze if so.
+
+        Moisturize:
+            If the attacker has Moisturize, it will perform the spread water checks for any spread Normal moves as well.
+
+
+    Fire Type Moves 
+        Removed the random flash fire check that adds a +1 Score. This should already be accounted for in the damage calc.
+
+        Lava Plume:
+            Now checks to see if the defender's ally has Well Baked Body or Flash Fire, with a high chance to reduce score if so
+            Now checks to see if the attacker's ally has well baked body or flash fire, with a high chance to increase score if so
+            Also checks to see the if the ally has Heatproof, Healer, Plus, Minus, Friend Guard, or Forewarn: with a high chance to increase score if so.
+
+        
+    Grass Type Moves 
+        Petal Blizzard 
+            Checks to see if defender ally has Sap Sipper. High Chance to deprioritize if so
+            Checks to see if ally has Amplifier, Healer, Plus, Minus, Friend Guard, or Forewarn: with a high chance to increase score if so.
+
+
+    Normal Type Moves:
+        Boomburst
+            Checks to see if ally has Amplifier, Healer, Plus, Minus, Friend Guard, or Forewarn: with a high chance to increase score if so.
+
+
+    Wide Guard:
+        Instead of checking the previously used move, now checks the current moves of the defender and the defender ally.
+        Updated to account for all the new spread moves.
+
+
+
+
+
+    Targeting Allies 
+
+        Electric Moves:
+            It is possible for the AI to target into an ally with Thunder Armor or Lightning Rod if they dont't have a mold breaker ability 
+            and their Attack or Special Attack (respectively) is less than +2
+            The AI will not target into an ally pokemon if it sees foes deal damage greater than 60% into it.
+            It is no longer possible for the AI to target sideways into Volt Absorb
+
+        Water Moves:
+            It is possible for the AI to target into an ally with Storm Drain if their SpA boost stage is less than 2.
+            The AI will not target into an ally pokemon if it sees foes deal damage greater than 60% into it.
+            It is no longer possible for the AI to target sideways into Water Absorb or Dry Skin.
+
+        Dark Moves
+            If an ally Pokemon has justified, and the attacker deals less than 25% damage into it with their dark type move, chance to increase score by 1
+            Fury Swipes gets a +3 score instead.
+            The AI will not target into an ally pokemon if it sees foes deal damage greater than 60% into it.
+        
+        Weakness Policy
+            If an ally has a Weakness Policy and the attacker's move is super effective, it will check two things:
+                - The AI will not target into an ally pokemon if it sees foes deal damage greater than 60% into it.
+                - Does my SE attack deal more than 33% damage to this ally Pokemon. If so, deprioritize.
+
+
+        Entrainment
+            The logic for Role Play has been placed onto Entrainment instead 
+
+            There are two lists of great abilities.
+            
+            If the defender already has one of the abilities in list_A, deprioritizes
+            If the defender does not have an ability in list_A and the user does, high chance to prioritize 
+            If neither, then check if the defender already has one of the abilities in list_B. If so, deprioritizes 
+            If the defender does not have an ability in list_B and the user does, high chance to prioritize 
+            In either case, if not yet deprioritized, the AI will check incoming damage on the defender. If it is higher than 60%, deprioritizes. 
+                list_A:
+                    ability.permafrost
+                    ability.friend_guard
+                    ability.speed_boost
+                    ability.intimidate
+                    ability.pure_power
+                    ability.huge_power
+                    ability.fur_coat
+                    ability.anticipation
+                    ability.cursed_body
+                    ability.moody
+                    ability.plus
+                    ability.minus
+                    ability.aftermath
+                    END
+
+                list_B:
+                    ability.solar_power
+                    ability.dry_skin
+                    ability.motor_drive
+                    ability.rain_dish
+                    ability.huge_power
+                    ability.chlorophyll
+                    ability.swift_swim
+                    ability.ice_body
+                    ability.sand_rush
+                    ability.sand_veil
+                    ability.snow_cloak
+                    END
+
+        Thunder Wave, Will-o-Wisp, Poisoning Moves 
+            The AI can no longer side-target these moves into their allies under any condition.
+        
+
+        Swagger 
+            Will now also check for Mist as well as Safeguard (since they do the same thing)
+            Will now check to see incoming damage on that slot. If it's higher than 60%, will not use.
+        
+
+        Switcheroo / Fling / Bestow 
+            The AI can no longer side-target these moves into their allies under any condition.
+
+
+        Acupressure 
+            Now checks to see incoming damage on the ally slot, if it's greater than 60%, deprioritized from targeting it
+
+        Heal Pulse
+            Now checks to see if the ally slot is taking more than 60% damage from attacks. If so, deprioritizes.
+        

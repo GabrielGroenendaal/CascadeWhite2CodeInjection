@@ -397,7 +397,7 @@ extern "C"
     {
         if (*a4 == 2 && a3 == BattleEventVar_GetValue(VAR_ATTACKING_MON) && BattleEventVar_GetValue(VAR_MOVE_TYPE) == 12)
         {
-            k::Printf("\nWe are testing if charge is actually working properly!");
+            // k::Printf("\nWe are testing if charge is actually working properly!");
             BattleEventVar_MulValue(VAR_MOVE_POWER_RATIO, 0x2000);
         }
     }
@@ -2066,15 +2066,15 @@ extern "C"
 
             if (BattleMon_GetValue(a2, VALUE_EFFECTIVE_ABILITY) == ABIL054_TRUANT)
             {
-                k::Printf("\n\n=== TESTING TRUANT 1 === getTruantByte = %d", getTruantByte(a2));
+                // k::Printf("\n\n=== TESTING TRUANT 1 === getTruantByte = %d", getTruantByte(a2));
             }
 
             if (BattleMon_GetValue(a2, VALUE_EFFECTIVE_ABILITY) == ABIL054_TRUANT && getTruantByte(a2) && PML_MoveIsDamaging(move))
             {
-                k::Printf("\n\n=== TESTING TRUANT 2 === getTruantByte = %d", getTruantByte(a2));
+                // k::Printf("\n\n=== TESTING TRUANT 2 === getTruantByte = %d", getTruantByte(a2));
                 if (strparam)
                 {
-                    k::Printf("\n\n=== TESTING TRUANT 3 === getTruantByte = %d", getTruantByte(a2));
+                    // k::Printf("\n\n=== TESTING TRUANT 3 === getTruantByte = %d", getTruantByte(a2));
                     Btlv_StringParam_Setup(strparam, 2, 571);
                     v12 = BattleMon_GetID(a2);
                     Btlv_StringParam_AddArg(strparam, v12);

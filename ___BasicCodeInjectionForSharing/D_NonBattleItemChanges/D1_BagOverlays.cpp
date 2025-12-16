@@ -18,7 +18,8 @@ extern "C" u32 getTMSetting()
 
     EventWorkSave *eventWork = GameData_GetEventWork(GAME_DATA);
     u16 *lvl_cap_ptr = EventWork_GetWkPtr(eventWork, 16437);
-    return *lvl_cap_ptr;
+    return 1;
+    //return *lvl_cap_ptr;
 }
 extern "C" u32 THUMB_BRANCH_PML_ItemGetMaxStorageCount(u16 itemIdx)
 {

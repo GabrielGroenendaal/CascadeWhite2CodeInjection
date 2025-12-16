@@ -1332,17 +1332,22 @@ label49_options: ;
 	// Trainer Placements
 	AddDialogueOption(106, 0xFFFF, 6);
 	// Wild Pokemon EVs
-	AddDialogueOption(107, 0xFFFF, 2);
+	// AddDialogueOption(107, 0xFFFF, 2);
 	// Animated Backgrounds
 	AddDialogueOption(108, 0xFFFF, 3);
 	// Advanced Enemy Switch In Logic
 	AddDialogueOption(109, 0xFFFF, 4);
-	// Limited TMs
-	AddDialogueOption(110, 0xFFFF, 5);
+	
+    // Limited TMs
+	// AddDialogueOption(110, 0xFFFF, 5);
+
 	// Battle Scan
 	AddDialogueOption(111, 0xFFFF, 9);
-	// Anti-Yap Options
-	AddDialogueOption(164, 0xFFFF, 10);
+	
+    // Anti-Yap Options
+	// AddDialogueOption(164, 0xFFFF, 10);
+
+
 	// Quit
 	AddDialogueOption(112, 0xFFFF, 7);
 	// Restore Defaults
@@ -1903,7 +1908,7 @@ label_AntiYap_3: ;
 
 label_AntiYap_4: ;
 	// CloseAllMessageBoxes();
-	Compare(16438, 0);
+	Compare(16439, 0);
 	if (5) goto label_AntiYap_5;
 	EventGreyMessage(167, 2);
 	WaitForButton();
@@ -1913,7 +1918,7 @@ label_AntiYap_4: ;
 label_AntiYap_5: ;
 	EventGreyMessage(168, 2);
 	WaitForButton();
-	SetVarEqVar2(16438, 0);
+	SetVarEqVar2(16439, 0);
 
 label_AntiYap_6: ;
 	EventGreyMessage(119, 2);
@@ -1984,12 +1989,12 @@ label105_options: ;
 	SetVarEqVar2(0x4034, 0);
 
 label106_options: ;
-	Compare(0x4035, 0);
-	if (1) goto label107_options;
-	// CloseAllMessageBoxes();
-	EventGreyMessage(152, 2);
-	WaitForButton();
-	SetVarEqVar2(0x4035, 0);
+	// Compare(0x4035, 0);
+	// if (1) goto label107_options;
+	// // CloseAllMessageBoxes();
+	// EventGreyMessage(152, 2);
+	// WaitForButton();
+	// SetVarEqVar2(0x4035, 0);
 
 label107_options: ;
 	SetVarFlagStatus(524, 0x8000);
@@ -2002,12 +2007,12 @@ label107_options: ;
 	SetFlag(525);
 
 label108_optionsa: ;
-	Compare(16438, 0);
-	if (1) goto label109_optoions;
-	// CloseAllMessageBoxes();
-	EventGreyMessage(162, 2);
-	WaitForButton();
-	SetVarEqVar2(16438, 0);
+	// Compare(16438, 0);
+	// if (1) goto label109_optoions;
+	// // CloseAllMessageBoxes();
+	// EventGreyMessage(162, 2);
+	// WaitForButton();
+	// SetVarEqVar2(16438, 0);
 
 label109_optoions: ;
 	Compare(16439, 0);
@@ -2031,6 +2036,7 @@ label100_options: ;
 }
 
 /* REMOVE ALL ITEMS FROM POKEMON SCRIPT */
+/* REPLACE WITH 133 */
 void Sequence19(){
     PC_131();
 	EventGreyMessage(69, 2);
@@ -2039,6 +2045,7 @@ void Sequence19(){
 }
 
 /* EDGE POKEMON SCRIPT */
+/* REPLACE WITH 135 */
 void Sequence20()
 {
     PC_131();

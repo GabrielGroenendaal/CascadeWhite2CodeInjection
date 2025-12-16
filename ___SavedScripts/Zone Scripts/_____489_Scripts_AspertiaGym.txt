@@ -425,7 +425,7 @@ public class MainEvents {
 		Message.CloseSystem();
 		Message.Actor(1024, 8, 0, 0);
 		Message.CloseActor();
-		Global2805(354, 1);
+		Global2805(394, 1);
 		Message.Actor(1024, 9, 0, 0);
 		Message.Actor(1024, 10, 0, 0);
 		Input.LastKeyWait();

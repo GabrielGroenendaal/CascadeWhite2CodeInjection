@@ -8,7 +8,7 @@ public class ScriptArgTypeAbility(string name = "ability") : ScriptArgTypeString
     [
         "Null", "Stench", "Drizzle", "Speed Boost", "Battle Armor", "Sturdy", "Bulletproof", "Corrosion", "Sand Veil", "Static", // 00
         "Volt Absorb", "Water Absorb", "Galvanize", "Cloud Nine", "Keen Senses", "Thunder Armor", "Ballistics", "Fluffy", "Flash Fire", "Resilient", // 10
-        "Own Tempo", "Well Baked Body", "Intimidate", "Shadow Tag", "Rough Skin", "Wonder Guard", "Levitate", "Effect Spore", "Synchronize", "Strong Body", // 20
+        "Quick Draw", "Well Baked Body", "Intimidate", "Shadow Tag", "Rough Skin", "Wonder Guard", "Levitate", "Effect Spore", "Synchronize", "Strong Body", // 20
         "Natural Cure", "Lightning Rod", "Serene Grace", "Swift Swim", "Chlorophyll", "Illuminate", "Trace", "Huge Power", "Berserk", "Inner Focus", // 30
         "Pixilate", "Merciless", "Magnet Pull", "Amplifier", "Rain Dish", "Sand Stream", "Pressure", "Thick Fat", "Refrigerate", "Flame Body", // 40
         "Run Away", "Wind Rider", "Hyper Cutter", "Pickup", "Truant", "Hustle", "Gooey", "Plus", "Minus", "Forecast", // 50
@@ -16,7 +16,7 @@ public class ScriptArgTypeAbility(string name = "ability") : ScriptArgTypeString
         "Drought", "Arena Trap", "Vital Spirit", "White Smoke", "Pure Power", "Shell Armor", "Neutraliziing Gas", "Slush Rush", "Motor Drive", "Rivalry", // 70
         "Colossal", "Snow Cloak", "Gluttony", "Anger Point", "Unburden", "Heatproof", "Simple", "Dry Skin", "Exploit", "Iron Fist", // 80
         "Poison Heal", "Adaptability", "Skill Link", "Strong Jaw", "Solar Power", "Quick Feet", "Normalize", "Sniper", "Magic Guard", "No Guard", // 90
-        "Tough Claws", "Technician", "Fur Coat", "Distracting", "Mold Breaker", "Super Luck", "Aftermath", "Anticipation", "Forewarn", "Unaware", // 100
+        "Tough Claws", "Technician", "Fur Coat", "Distracting", "Mold Breaker", "Moisturize", "Aftermath", "Anticipation", "Forewarn", "Unaware", // 100
         "Tenacity", "Filter", "Slow Start", "Scrappy", "Storm Drain", "Ice Body", "Solid Rock", "Snow Warning", "Honey Gather", "Frisk", // 110
         "Reckless", "Multitype", "Flower Gift", "Bad Dreams", "Pickpocket", "Sheer Force", "Contrary", "Unnerve", "Defiant", "Defeatist", // 120
         "Cursed Body", "Healer", "Friend Guard", "Weak Armor", "Heavy Metal", "Light Metal", "Majestic Ward", "Toxic Boost", "Flare Boost", "Gourmand", // 130

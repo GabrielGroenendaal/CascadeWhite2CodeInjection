@@ -34,6 +34,7 @@ public class ScriptLineData(int offset, string str) : ScriptLine(offset)
         // Default interpretation: 0x###### (#)
 
         var hexStartIndex = Str.IndexOf("0x", StringComparison.Ordinal);
+        
         if (hexStartIndex == -1)
             throw new FormatException();
 

@@ -2982,10 +2982,10 @@ extern "C"
 
     void HandlerSavant(int a1, ServerFlow *serverFlow, int pokemonSlot)
     {
-        k::Printf("\nChecking for pokemonSlot %d\n", pokemonSlot);
+        //k::Printf("\nChecking for pokemonSlot %d\n", pokemonSlot);
         if (pokemonSlot == BattleEventVar_GetValue(VAR_MON_ID))
         {
-            k::Printf("\nCheck 1\n");
+            //k::Printf("\nCheck 1\n");
             BattleMon *currentMon = Handler_GetBattleMon(serverFlow, pokemonSlot);
 
             MoveParam params;
@@ -2994,7 +2994,7 @@ extern "C"
             if (params.moveType != TYPE_NONE &&
                 params.moveType != BattleMon_GetPokeType(currentMon))
             {
-                k::Printf("\nCheck 2\n");
+               // k::Printf("\nCheck 2\n");
                 BattleHandler_PushRun(serverFlow, EFFECT_ABILITYPOPUPIN, pokemonSlot);
 
                 HandlerParam_ChangeType *changeType;
@@ -4049,7 +4049,7 @@ u8 *enteredBattle;
 extern "C" void findBattleMon(BtlvCore *a1, PokeParty *a2, int clientId)
 {
     BattleParty party = a1->pokeCon->party[clientId];
-    k::Printf("\n\n===FIND BATTLEMON===\n");
+    // k::Printf("\n\n===FIND BATTLEMON===\n");
 
     /* WILD BATTLES */
     if (a1->mainModule->btlSetup->btlType == 0)

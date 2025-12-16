@@ -303,7 +303,9 @@ extern "C"
 #pragma endregion
 
 #pragma region ShedinjaFix
-    void THUMB_BRANCH_PokeParty_RecalcStatsCore(PartyPkm *pPkm)
+    extern int __aeabi_idiv(s32 a1, s32 a2);
+
+    void THUMB_BRANCH_SAFESTACK_PokeParty_RecalcStatsCore(PartyPkm *pPkm)
     {
         u32 Param;           // r6
         signed __int32 v3;   // r7
@@ -359,33 +361,32 @@ extern "C"
         v36 = PokeParty_GetParam(pPkm, PF_Forme, 0);
         v23 = PokeParty_GetParam(pPkm, PF_Species, 0);
         BW2 = PML_PersonalLoadBW2(v23, v36);
-        if (v23 == 292)
-        {
-            v5 = 1;
-        }
-        else
-        {
-            v5 = Param + ((v4 / 4 + v35 + 2 * BW2->BaseHP) * Param) / 100 + 10;
-        }
+        v5 = Param + __aeabi_idiv(((__aeabi_idiv(v4, 4) + v35 + 2 * BW2->BaseHP) * Param), 100) + 10;
         data = v5;
         PokeParty_SetParam(pPkm, PF_MaxHP, v5);
-        v6 = ((v28 / 4 + v33 + 2 * BW2->BaseATK) * Param) / 100 + 5;
+        //v6 = ((v28 / 4 + v33 + 2 * BW2->BaseATK) * Param) / 100 + 5;
+        v6 = __aeabi_idiv(((__aeabi_idiv(v28, 4) + v33 + 2 * BW2->BaseATK) * Param), 100) + 5;
         Nature = PokeParty_GetNature(pPkm);
         v8 = adjustStatForNature(Nature, v6, 1);
         PokeParty_SetParam(pPkm, PF_ATK, v8);
-        v9 = ((v27 / 4 + v32 + 2 * BW2->BaseDEF) * Param) / 100 + 5;
+        //v9 = ((v27 / 4 + v32 + 2 * BW2->BaseDEF) * Param) / 100 + 5;
+        v9 = __aeabi_idiv(((__aeabi_idiv(v27, 4) + v32 + 2 * BW2->BaseDEF) * Param), 100) + 5;
         v10 = PokeParty_GetNature(pPkm);
         v11 = adjustStatForNature(v10, v9, 2);
         PokeParty_SetParam(pPkm, PF_DEF, v11);
-        v12 = ((v26 / 4 + v31 + 2 * BW2->BaseSPE) * Param) / 100 + 5;
+        v12 = __aeabi_idiv(((__aeabi_idiv(v26, 4) + v31 + 2 * BW2->BaseSPE) * Param), 100) + 5;
+        //v12 = ((v26 / 4 + v31 + 2 * BW2->BaseSPE) * Param) / 100 + 5;
         v13 = PokeParty_GetNature(pPkm);
         v14 = adjustStatForNature(v13, v12, 5);
         PokeParty_SetParam(pPkm, PF_SPE, v14);
-        v15 = ((v25 / 4 + v30 + 2 * BW2->BaseSPA) * Param) / 100 + 5;
+        v15 = __aeabi_idiv(((__aeabi_idiv(v25, 4) + v30 + 2 * BW2->BaseSPA) * Param), 100) + 5;
+
+        //v15 = ((v25 / 4 + v30 + 2 * BW2->BaseSPA) * Param) / 100 + 5;
         v16 = PokeParty_GetNature(pPkm);
         v17 = adjustStatForNature(v16, v15, 3);
         PokeParty_SetParam(pPkm, PF_SPA, v17);
-        v18 = ((v24 / 4 + v29 + 2 * BW2->BaseSPD) * Param) / 100 + 5;
+        //v15 = __aeabi_fdiv(((__aeabi_fdiv(v25, 4) + v30 + 2 * BW2->BaseSPA) * Param), 100) + 5;
+        v18 = __aeabi_idiv(((__aeabi_idiv(v24, 4) + v29 + 2 * BW2->BaseSPD) * Param), 100) + 5;
         v19 = PokeParty_GetNature(pPkm);
         v20 = adjustStatForNature(v19, v18, 4);
         PokeParty_SetParam(pPkm, PF_SPD, v20);
@@ -414,132 +415,132 @@ extern "C"
     }
 #pragma end region
 #pragma region NewUIChanges
-    enum BottomScreenMenuState
-    {
-        STATE_WAITING = 0x0,
-        STATE_FIGHT = 0x1,
-        STATE_MOVE_SELECT = 0x2,
-        STATE_TARGET_SELECT = 0x3,
-        STATE_YESNO = 0x4,
-        STATE_ROTATION = 0x5,
-        STATE_RECORD_PLAYBACK = 0x6,
-        STATE_ENTREE_CATCH = 0x7,
-    };
-    struct BtlvInput_ClActObj
-    {
-        void *obj;
-        s16 x;
-        s16 y;
-    };
+    // enum BottomScreenMenuState
+    // {
+    //     STATE_WAITING = 0x0,
+    //     STATE_FIGHT = 0x1,
+    //     STATE_MOVE_SELECT = 0x2,
+    //     STATE_TARGET_SELECT = 0x3,
+    //     STATE_YESNO = 0x4,
+    //     STATE_ROTATION = 0x5,
+    //     STATE_RECORD_PLAYBACK = 0x6,
+    //     STATE_ENTREE_CATCH = 0x7,
+    // };
+    // struct BtlvInput_ClActObj
+    // {
+    //     void *obj;
+    //     s16 x;
+    //     s16 y;
+    // };
 
-    struct SWAN_PACKED SWAN_ALIGNED(2) BtlvFingerCursorHandle
-    {
-        void *dword0;
-        void *field_4;
-        void *dword8;
-        _DWORD dwordC;
-        _DWORD dword10;
-        _DWORD dword14;
-        int field_18;
-        int field_1C;
-        int field_20;
-        int field_24;
-        int field_28;
-        _WORD HeapID;
-    };
+    // struct SWAN_PACKED SWAN_ALIGNED(2) BtlvFingerCursorHandle
+    // {
+    //     void *dword0;
+    //     void *field_4;
+    //     void *dword8;
+    //     _DWORD dwordC;
+    //     _DWORD dword10;
+    //     _DWORD dword14;
+    //     int field_18;
+    //     int field_1C;
+    //     int field_20;
+    //     int field_24;
+    //     int field_28;
+    //     _WORD HeapID;
+    // };
 
-    struct BtlvInput_DirectionParam
-    {
-        char field_0;
-        u8 status;
-        u16 pad;
-        u16 HP;
-        u16 MaxHP;
-        int field_8;
-    };
+    // struct BtlvInput_DirectionParam
+    // {
+    //     char field_0;
+    //     u8 status;
+    //     u16 pad;
+    //     u16 HP;
+    //     u16 MaxHP;
+    //     int field_8;
+    // };
 
-    struct BtlvInput
-    {
-        TCBManager *tcbManager;
-        int tcbData;
-        void *TCBArray[8];
-        void (*TCBCallbacks[8])(void *);
-        ArcTool *UIGraphicsNarcPtr;
-        GameData *gameData;
-        BattleStyle battleStyle;
-        BtlType BattleType;
-        BottomScreenMenuState MenuState;
-        void *msgData;
-        BtlvFingerCursorHandle *FingerCursor;
-        PalAnm *palAnm;
-        unsigned int Flags;
-        int Flags2;
-        int TouchpadUsed;
-        BtlvInput_DirectionParam field_74[6];
-        BtlvInput_DirectionParam field_BC[6];
-        int UIExtraIconsNCGR;
-        int UIExtraIconsNCLR;
-        int UIPokeballIconNCER;
-        int UIButtonSelectCursorNCGR;
-        int UIButtonSelectCursorNCER;
-        void *BallIconClAct;
-        BtlvInput_ClActObj PlayerBallIcons[6];
-        BtlvInput_ClActObj EnemyBallIcons[6];
-        void *CursorClAct;
-        BtlvInput_ClActObj cursor[6];
-        int MonIconNCGRs[3];
-        int UIMonIconsNCLR;
-        int UIMonIconsNCER;
-        void *MonIconClAct;
-        BtlvInput_ClActObj MonIconObj[3];
-        int MoveTypeIconNCGRs[4];
-        int MoveTypeIconNCLR;
-        int MoveTypeIconNCER;
-        void *MoveTypeClAct;
-        void *MoveTypeObjs[4];
-        void *WeatherClAct;
-        void *WeatherObj[2];
-        void *StruggleClAct;
-        void *StruggleObj;
-        int field_220;
-        int AudienceNCLR;
-        int AudienceNCER;
-        void *field_22C;
-        void *AudienceObj[22];
-        int AudienceFlag;
-        void *PokestarTheaterBGPalette;
-        void *PokestarTheaterPersonPalette;
-        int AudiencePaletteMode;
-        int AudienceTimer;
-        int AudienceAnimID;
-        int AudienceLoopNum;
-        int AudiencePaletteFlag;
-        GFLFont *font;
-        void *BmpWin1;
-        void *Bitmap1;
-        void *BmpWin2;
-        void *Bitmap2;
-        void *mainLoop;
-        int mainLoopTCBFlag;
-        HeapID heapID;
-        u8 SelectedButtonPos[3][8];
-        u8 IsButtonEnabled[8];
-        u8 DoesSlotHaveMove[4];
-        u16 SelectedMoves[3];
-        u16 MoveIDs[4];
-        u8 *cursorMode;
-        int ActiveMonViewPos;
-        int ViewPos;
-        int IsTransformed;
-        u16 BagPalette[16];
-        char multiBattleMode;
-        char IsPokestar;
-        u8 NumAudienceMembers;
-        char field_32B;
-        int AudienceBit;
-        BattleMon *ActiveMons[3];
-        int field_33C[3][4];
-    };
+    // struct BtlvInput
+    // {
+    //     TCBManager *tcbManager;
+    //     int tcbData;
+    //     void *TCBArray[8];
+    //     void (*TCBCallbacks[8])(void *);
+    //     ArcTool *UIGraphicsNarcPtr;
+    //     GameData *gameData;
+    //     BattleStyle battleStyle;
+    //     BtlType BattleType;
+    //     BottomScreenMenuState MenuState;
+    //     void *msgData;
+    //     BtlvFingerCursorHandle *FingerCursor;
+    //     PalAnm *palAnm;
+    //     unsigned int Flags;
+    //     int Flags2;
+    //     int TouchpadUsed;
+    //     BtlvInput_DirectionParam field_74[6];
+    //     BtlvInput_DirectionParam field_BC[6];
+    //     int UIExtraIconsNCGR;
+    //     int UIExtraIconsNCLR;
+    //     int UIPokeballIconNCER;
+    //     int UIButtonSelectCursorNCGR;
+    //     int UIButtonSelectCursorNCER;
+    //     void *BallIconClAct;
+    //     BtlvInput_ClActObj PlayerBallIcons[6];
+    //     BtlvInput_ClActObj EnemyBallIcons[6];
+    //     void *CursorClAct;
+    //     BtlvInput_ClActObj cursor[6];
+    //     int MonIconNCGRs[3];
+    //     int UIMonIconsNCLR;
+    //     int UIMonIconsNCER;
+    //     void *MonIconClAct;
+    //     BtlvInput_ClActObj MonIconObj[3];
+    //     int MoveTypeIconNCGRs[4];
+    //     int MoveTypeIconNCLR;
+    //     int MoveTypeIconNCER;
+    //     void *MoveTypeClAct;
+    //     void *MoveTypeObjs[4];
+    //     void *WeatherClAct;
+    //     void *WeatherObj[2];
+    //     void *StruggleClAct;
+    //     void *StruggleObj;
+    //     int field_220;
+    //     int AudienceNCLR;
+    //     int AudienceNCER;
+    //     void *field_22C;
+    //     void *AudienceObj[22];
+    //     int AudienceFlag;
+    //     void *PokestarTheaterBGPalette;
+    //     void *PokestarTheaterPersonPalette;
+    //     int AudiencePaletteMode;
+    //     int AudienceTimer;
+    //     int AudienceAnimID;
+    //     int AudienceLoopNum;
+    //     int AudiencePaletteFlag;
+    //     GFLFont *font;
+    //     void *BmpWin1;
+    //     void *Bitmap1;
+    //     void *BmpWin2;
+    //     void *Bitmap2;
+    //     void *mainLoop;
+    //     int mainLoopTCBFlag;
+    //     HeapID heapID;
+    //     u8 SelectedButtonPos[3][8];
+    //     u8 IsButtonEnabled[8];
+    //     u8 DoesSlotHaveMove[4];
+    //     u16 SelectedMoves[3];
+    //     u16 MoveIDs[4];
+    //     u8 *cursorMode;
+    //     int ActiveMonViewPos;
+    //     int ViewPos;
+    //     int IsTransformed;
+    //     u16 BagPalette[16];
+    //     char multiBattleMode;
+    //     char IsPokestar;
+    //     u8 NumAudienceMembers;
+    //     char field_32B;
+    //     int AudienceBit;
+    //     BattleMon *ActiveMons[3];
+    //     int field_33C[3][4];
+    // };
 
     // int THUMB_BRANCH_BtlvInput_ChangeUIFileIDForPokestar(int result, BtlvInput *a2)
     // {

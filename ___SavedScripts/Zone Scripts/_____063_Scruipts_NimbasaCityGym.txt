@@ -676,7 +676,7 @@ public class MainEvents {
 		Message.ActorEx(1024, 3, 4, 2, 0);
 		Message.CloseActor();
 		Base.CMD_25F(0);
-		Global2805(399, 1);
+		Global2805(400, 1);
 		Base.CMD_25F(2);
 		Message.ActorEx(1024, 4, 4, 2, 0);
 		Message.WaitAdvance();

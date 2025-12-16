@@ -308,12 +308,12 @@ byte[] WriteBinFile(string[] lines)
 
         var funcName = line[..openParaIndex].Trim();
         var scriptFunc = scriptFuncLibrary.GetScriptFunc(funcName);
-
+        Console.WriteLine("the offending line is " + line);
         if (scriptFunc == null)
             throw new Exception();
 
         var closeParaIndex = line.IndexOf(')');
-        Console.WriteLine("the offending line is " + fullLine);
+      
         if (closeParaIndex == -1)
             throw new Exception();
 

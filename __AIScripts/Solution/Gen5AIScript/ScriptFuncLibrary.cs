@@ -59,7 +59,7 @@ public class ScriptFuncLibrary
             new ScriptFuncGetMove(), // 0x28
             new ScriptFuncGetMoveEffect(), // 0x29
             new ScriptFuncGetAbilityGuess(), // 0x2A
-            null!, // 0x2B   AI043
+            new ScriptFuncCheckEnemyDamageIntoAlly()!, // 0x2B   AI043
             new ScriptFuncJumpIfEffectivenessEQ(), // 0x2C
             new ScriptFuncJumpIfPartyHasStatus(), // 0x2D
             new ScriptFuncJumpIfPartyNoStatus(), // 0x2E
@@ -87,7 +87,7 @@ public class ScriptFuncLibrary
              new ScriptFuncJumpIfUserWillTakeLowDamage_Debuffs(), // 0x3E
 
             // AI063
-            null!, // 0x3F This was used to trigger the Safari Zone "{POKÉMON} is watching carefully" message
+            new ScriptFuncCheckOwnDamageIntoAlly(), // 0x3F This was used to trigger the Safari Zone "{POKÉMON} is watching carefully" message
 
             // 0x40
             new ScriptFuncGetHeldItem(), // 0x40

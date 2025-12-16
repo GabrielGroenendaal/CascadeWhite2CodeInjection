@@ -41,8 +41,10 @@ bool IsEqual(int a1, int a2)
 C_DECL_BEGIN
 
 // STUFF FOR FIELD EFFECTS
+extern void BattleEventItem_DetachSkipCheckHandler(BattleEventItem *result);
 extern void HandlerBadDreams(int a1, ServerFlow *a2, unsigned int *a3, int a4);
 extern bool BattleMon_IsStatChangeValid(BattleMon *a1, unsigned int a2, int a3);
+extern u8 GetBattlePosFromCommandArg(TrainerAIEnv *env, unsigned int a2);
 extern bool Handler_IsSimulationMode(ServerFlow *a1);
 extern PlayerState *GameData_GetPlayerState(GameData *gameData);
 extern BtlSetup *MainModule_GetBtlSetup(MainModule *a1);

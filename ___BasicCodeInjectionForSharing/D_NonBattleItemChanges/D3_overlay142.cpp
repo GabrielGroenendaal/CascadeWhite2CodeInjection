@@ -134,7 +134,8 @@ extern "C" u32 getTMSetting()
 
     EventWorkSave *eventWork = GameData_GetEventWork(GAME_DATA);
     u16 *lvl_cap_ptr = GetSaveWkPtr(eventWork, 16437);
-    return *lvl_cap_ptr;
+    return 1;
+    //return *lvl_cap_ptr;
 }
 
 bool isItemHM(int id)

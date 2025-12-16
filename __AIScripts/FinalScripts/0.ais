@@ -1,0 +1,3337 @@
+	JumpIfTargetIsAlly(&endScript_1)
+	CalcMoveDamage(false)
+	JumpIfStoredEQ(no_damage, &checkPowderImmunity)
+
+address_StartProcessing:
+	JumpIfEffectivenessEQ(0x, &deprioritizeBy10)
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.mold_breaker, &checkPowderImmunity)
+	JumpIfStoredEQ(ability.turboblaze, &checkPowderImmunity)
+	JumpIfStoredEQ(ability.teravolt, &checkPowderImmunity)
+	GetHeldItem(attacker)
+	JumpIfStoredNE(item.ability_drill, &checkPowderImmunity)
+	JumpIfStoredNE(item.tera_drill, &checkPowderImmunity)
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.volt_absorb, &checkElectricImmunity)
+	JumpIfStoredEQ(ability.motor_drive, &checkElectricImmunity)
+	JumpIfStoredEQ(ability.lightning_rod, &checkElectricImmunity)
+	JumpIfStoredEQ(ability.thunder_armor, &checkElectricImmunity)
+	JumpIfStoredEQ(ability.water_absorb, &checkWaterImmunity)
+	JumpIfStoredEQ(ability.storm_drain, &checkWaterImmunity)
+	JumpIfStoredEQ(ability.flash_fire, &checkFireImmunity)
+	JumpIfStoredEQ(ability.well_baked_body, &checkFireImmunity)
+	JumpIfStoredEQ(ability.wonder_guard, &checkWonderGuard)
+	JumpIfStoredEQ(ability.levitate, &checkGroundImmunity)
+	JumpIfStoredEQ(ability.dry_skin, &checkWaterImmunity)
+	JumpIfStoredEQ(ability.sap_sipper, &checkGrassImmunity)
+	Jump(&checkPowderImmunity)
+
+checkElectricImmunity:
+	GetType(move_type)
+	JumpIfStoredEQ(type.electric, &deprioritizeBy12)
+	Jump(&checkPowderImmunity)
+
+checkWaterImmunity:
+	GetType(move_type)
+	JumpIfStoredEQ(type.water, &deprioritizeBy12)
+	Jump(&checkPowderImmunity)
+
+checkFireImmunity:
+	GetType(move_type)
+	JumpIfStoredEQ(type.fire, &deprioritizeBy12)
+	Jump(&checkPowderImmunity)
+
+checkWonderGuard:
+	JumpIfEffectivenessEQ(2x, &checkPowderImmunity)
+	JumpIfEffectivenessEQ(4x, &checkPowderImmunity)
+	Jump(&deprioritizeBy12)
+
+checkGroundImmunity:
+	GetType(move_type)
+	JumpIfStoredEQ(type.ground, &deprioritizeBy12)
+	Jump(&checkPowderImmunity)
+
+checkGrassImmunity:
+	GetType(move_type)
+	JumpIfStoredEQ(type.grass, &deprioritizeBy12)
+	Jump(&checkPowderImmunity)
+
+checkPowderImmunity:
+	GetAbilityGuess(defender)
+	JumpIfStoredNE(ability.overcoat, &checkPowderImmunity2)
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.mold_breaker, &checkPowderImmunity2)
+	JumpIfStoredEQ(ability.turboblaze, &checkPowderImmunity2)
+	JumpIfStoredEQ(ability.teravolt, &checkPowderImmunity2)
+	GetHeldItem(attacker)
+	JumpIfStoredNE(item.ability_drill, &checkPowderImmunity2)
+	JumpIfStoredNE(item.tera_drill, &checkPowderImmunity2)
+	JumpIfMoveEQ(move.sleep_powder, &deprioritizeBy10)
+	JumpIfMoveEQ(move.poison_powder, &deprioritizeBy10)
+	JumpIfMoveEQ(move.stun_spore, &deprioritizeBy10)
+	JumpIfMoveEQ(move.spore, &deprioritizeBy10)
+	JumpIfMoveEQ(move.cotton_spore, &deprioritizeBy10)
+	JumpIfMoveEQ(move.rage_powder, &deprioritizeBy10)
+
+checkPowderImmunity2:
+	GetHeldItem(defender)
+	JumpIfStoredNE(item.safety_goggles, &checkSoundImmunity)
+	JumpIfMoveEQ(move.sleep_powder, &deprioritizeBy10)
+	JumpIfMoveEQ(move.poison_powder, &deprioritizeBy10)
+	JumpIfMoveEQ(move.stun_spore, &deprioritizeBy10)
+	JumpIfMoveEQ(move.spore, &deprioritizeBy10)
+	JumpIfMoveEQ(move.cotton_spore, &deprioritizeBy10)
+	JumpIfMoveEQ(move.rage_powder, &deprioritizeBy10)
+
+checkSoundImmunity:
+	GetAbilityGuess(defender)
+	JumpIfStoredNE(ability.amplifier, &checkWindImmunity)
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.mold_breaker, &moveOnToMoveEffects)
+	JumpIfStoredEQ(ability.turboblaze, &moveOnToMoveEffects)
+	JumpIfStoredEQ(ability.teravolt, &moveOnToMoveEffects)
+	GetHeldItem(attacker)
+	JumpIfStoredNE(item.ability_drill, &moveOnToMoveEffects)
+	JumpIfStoredNE(item.tera_drill, &moveOnToMoveEffects)
+	JumpIfMoveEQ(move.growl, &deprioritizeBy10)
+	JumpIfMoveEQ(move.roar, &deprioritizeBy10)
+	JumpIfMoveEQ(move.sing, &deprioritizeBy10)
+	JumpIfMoveEQ(move.supersonic, &deprioritizeBy10)
+	JumpIfMoveEQ(move.screech, &deprioritizeBy10)
+	JumpIfMoveEQ(move.snore, &deprioritizeBy10)
+	JumpIfMoveEQ(move.uproar, &deprioritizeBy10)
+	JumpIfMoveEQ(move.metal_sound, &deprioritizeBy10)
+	JumpIfMoveEQ(move.grass_whistle, &deprioritizeBy10)
+	JumpIfMoveEQ(move.bug_buzz, &deprioritizeBy10)
+	JumpIfMoveEQ(move.chatter, &deprioritizeBy10)
+	JumpIfMoveEQ(move.disarming_voice, &deprioritizeBy10)
+	JumpIfMoveEQ(move.echoed_voice, &deprioritizeBy10)
+	JumpIfMoveEQ(move.relic_song, &deprioritizeBy10)
+	JumpIfMoveEQ(move.clanging_scales, &deprioritizeBy10)
+	JumpIfMoveEQ(move.alluring_voice, &deprioritizeBy10)
+	JumpIfMoveEQ(move.torment, &deprioritizeBy10)
+	JumpIfMoveEQ(move.hyper_voice, &deprioritizeBy10)
+	JumpIfMoveEQ(move.boomburst, &deprioritizeBy10)
+	JumpIfMoveEQ(move.psychic_noise, &deprioritizeBy10)
+	JumpIfMoveEQ(move.snarl, &deprioritizeBy10)
+	JumpIfMoveEQ(move.confide, &deprioritizeBy10)
+	JumpIfMoveEQ(move.astonish, &deprioritizeBy10)
+
+checkWindImmunity:
+	GetAbilityGuess(defender)
+	JumpIfStoredNE(ability.wind_rider, &checkBombImmunity)
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.mold_breaker, &moveOnToMoveEffects)
+	JumpIfStoredEQ(ability.turboblaze, &moveOnToMoveEffects)
+	JumpIfStoredEQ(ability.teravolt, &moveOnToMoveEffects)
+	GetHeldItem(attacker)
+	JumpIfStoredNE(item.ability_drill, &moveOnToMoveEffects)
+	JumpIfStoredNE(item.tera_drill, &moveOnToMoveEffects)
+	JumpIfMoveEQ(move.icy_wind, &deprioritizeBy10)
+	JumpIfMoveEQ(move.air_slash, &deprioritizeBy10)
+	JumpIfMoveEQ(move.hurricane, &deprioritizeBy10)
+	JumpIfMoveEQ(move.heat_wave, &deprioritizeBy10)
+	JumpIfMoveEQ(move.ominous_wind, &deprioritizeBy10)
+	JumpIfMoveEQ(move.silver_wind, &deprioritizeBy10)
+	JumpIfMoveEQ(move.gust, &deprioritizeBy10)
+	JumpIfMoveEQ(move.fairy_wind, &deprioritizeBy10)
+	JumpIfMoveEQ(move.diamond_storm, &deprioritizeBy10)
+	JumpIfMoveEQ(move.razor_winds, &deprioritizeBy10)
+	JumpIfMoveEQ(move.aeroblast, &deprioritizeBy10)
+	JumpIfMoveEQ(move.twister, &deprioritizeBy10)
+	JumpIfMoveEQ(move.whirlwind, &deprioritizeBy10)
+	JumpIfMoveEQ(move.air_cutter, &deprioritizeBy10)
+	JumpIfMoveEQ(move.petal_blizzard, &deprioritizeBy10)
+ 
+checkBombImmunity:
+	GetAbilityGuess(defender)
+	JumpIfStoredNE(ability.bulletproof, &moveOnToMoveEffects)
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.mold_breaker, &moveOnToMoveEffects)
+	JumpIfStoredEQ(ability.turboblaze, &moveOnToMoveEffects)
+	JumpIfStoredEQ(ability.teravolt, &moveOnToMoveEffects)
+	GetHeldItem(attacker)
+	JumpIfStoredNE(item.ability_drill, &moveOnToMoveEffects)
+	JumpIfStoredNE(item.tera_drill, &moveOnToMoveEffects)
+	JumpIfMoveEQ(move.acid_spray, &deprioritizeBy10)
+	JumpIfMoveEQ(move.aura_sphere, &deprioritizeBy10)
+	JumpIfMoveEQ(move.barrage, &deprioritizeBy10)
+	JumpIfMoveEQ(move.bullet_seed, &deprioritizeBy10)
+	JumpIfMoveEQ(move.egg_bomb, &deprioritizeBy10)
+	JumpIfMoveEQ(move.electro_ball, &deprioritizeBy10)
+	JumpIfMoveEQ(move.energy_ball, &deprioritizeBy10)
+	JumpIfMoveEQ(move.focus_blast, &deprioritizeBy10)
+	JumpIfMoveEQ(move.gyro_ball, &deprioritizeBy10)
+	JumpIfMoveEQ(move.magnet_bomb, &deprioritizeBy10)
+	JumpIfMoveEQ(move.mud_bomb, &deprioritizeBy10)
+	JumpIfMoveEQ(move.octazooka, &deprioritizeBy10)
+	JumpIfMoveEQ(move.pollen_puff, &deprioritizeBy10)
+	JumpIfMoveEQ(move.rock_blast, &deprioritizeBy10)
+	JumpIfMoveEQ(move.rock_wrecker, &deprioritizeBy10)
+	JumpIfMoveEQ(move.searing_shot, &deprioritizeBy10)
+	JumpIfMoveEQ(move.seed_bomb, &deprioritizeBy10)
+	JumpIfMoveEQ(move.shadow_ball, &deprioritizeBy10)
+	JumpIfMoveEQ(move.sludge_bomb, &deprioritizeBy10)
+	JumpIfMoveEQ(move.weather_ball, &deprioritizeBy10)
+	JumpIfMoveEQ(move.zap_cannon, &deprioritizeBy10)
+
+moveOnToMoveEffects:
+	JumpTable(move_effect, 337, &data_address_MoveEffects)
+	EndScript()
+
+
+
+data_address_MoveEffects:
+	move_ef.dmg => &endScript_1
+	move_ef.target_slp => &Label_ApplySleep
+	move_ef.dmg_target_psn => &endScript_1
+	move_ef.dmg_target_absorb => &endScript_1
+	move_ef.dmg_target_brn => &endScript_1
+	move_ef.dmg_target_frz => &endScript_1
+	move_ef.dmg_target_par => &endScript_1
+	move_ef.explosion => &Label_ExplosionLogic
+	move_ef.dream_eater => &Label_DreamEater
+	move_ef.mirror_move => &endScript_1
+	move_ef.user_atk+1 => &Label_RaiseAttack
+	move_ef.user_def+1 => &Label_RaiseDefense
+	move_ef.user_spe+1 => &Label_RaiseSpeed
+	move_ef.user_spa+1 => &Label_RaiseSpecialAttack
+	move_ef.user_spd+1 => &Label_RaiseSpecialDefense
+	move_ef.user_acc+1 => &Label_RaiseAccuracy
+	move_ef.user_eva+1 => &Label_RaiseEvasion
+	move_ef.no_miss => &endScript_1
+	move_ef.target_atk-1 => &Label_LowerEnemyAttack
+	move_ef.target_def-1 => &Label_LowerEnemyDefense
+	move_ef.target_spe-1 => &Label_LowerEnemySpeed
+	move_ef.target_spa-1 => &Label_LowerEnemySpecialAttack
+	move_ef.target_spd-1 => &Label_LowerEnemySpecialDefense
+	move_ef.target_acc-1 => &Label_LowerEnemyAccuracy
+	move_ef.target_eva-1 => &Label_LowerEnemyEvasion
+	move_ef.haze => &Label_StatNeutralizing
+	move_ef.bide => &Label_CheckForDamage
+	move_ef.thrash => &endScript_1
+	move_ef.force_switch => &Label_PhasingMoves
+	move_ef.multi-strike_2-5 => &endScript_1
+	move_ef.conversion => &endScript_1
+	move_ef.dmg_flinch => &endScript_1
+	move_ef.heal_50 => &Label_HealingForHealth
+	move_ef.target_tox => &Label_ApplyPoisonToEnemy
+	move_ef.dmg_money => &endScript_1
+	move_ef.light_screen => &Label_LightScreen
+	move_ef.tri_attack => &endScript_1
+	move_ef.rest => &endScript_1
+	move_ef.ohko => &Label_OHKOMoves
+	move_ef.razor_wind => &Label_CheckForDamage
+	move_ef.direct_half => &Label_CheckForDamage
+	move_ef.direct_40 => &Label_CheckForDamage
+	move_ef.dmg_trap => &endScript_1
+	move_ef.increased_crit => &endScript_1
+	move_ef.multi-strike_2 => &endScript_1
+	move_ef.jump_kick => &endScript_1
+	move_ef.mist => &Label_Mist
+	move_ef.focus_energy => &Label_FocusEnergy
+	move_ef.dmg_recoil_25 => &endScript_1
+	move_ef.target_confusion => &Label_ConfusionApply
+	move_ef.user_atk+2 => &Label_RaiseAttack
+	move_ef.user_def+2 => &Label_RaiseDefense
+	move_ef.user_spe+2 => &Label_RaiseSpeed
+	move_ef.user_spa+2 => &Label_RaiseSpecialAttack
+	move_ef.user_spd+2 => &Label_RaiseSpecialDefense
+	move_ef.user_acc+2 => &Label_RaiseAccuracy
+	move_ef.user_eva+2 => &Label_RaiseEvasion
+	move_ef.transform => &endScript_1
+	move_ef.target_atk-2 => &Label_LowerEnemyAttack
+	move_ef.target_def-2 => &Label_LowerEnemyDefense
+	move_ef.target_spe-2 => &Label_LowerEnemySpeed
+	move_ef.target_spa-2 => &Label_LowerEnemySpecialAttack
+	move_ef.target_spd-2 => &Label_LowerEnemySpecialDefense
+	move_ef.target_acc-2 => &Label_LowerEnemyAccuracy
+	move_ef.target_eva-2 => &Label_LowerEnemyEvasion
+	move_ef.reflect => &Label_Reflect
+	move_ef.target_psn => &Label_ApplyPoisonToEnemy
+	move_ef.target_par => &Label_Paralysis
+	move_ef.dmg_target_atk-1 => &endScript_1
+	move_ef.dmg_target_def-1 => &endScript_1
+	move_ef.dmg_target_spe-1 => &endScript_1
+	move_ef.dmg_target_spa-1 => &endScript_1
+	move_ef.dmg_target_spd-1 => &endScript_1
+	move_ef.dmg_target_acc-1 => &endScript_1
+	move_ef.dmg_target_eva-1 => &endScript_1
+	move_ef.sky_attack => &endScript_1
+	move_ef.dmg_target_confuse => &endScript_1
+	move_ef.twineedle => &endScript_1
+	move_ef.vital_throw => &endScript_1
+	move_ef.substitute => &Label_Substitute
+	move_ef.recharge => &Label_CheckForDamage
+	move_ef.rage => &endScript_1
+	move_ef.mimic => &endScript_1
+	move_ef.metronome => &endScript_1
+	move_ef.leech_seed => &Label_LeechSeed
+	move_ef.splash => &endScript_1
+	move_ef.disable => &Label_Disable
+	move_ef.direct_level => &Label_CheckForDamage
+	move_ef.psywave => &Label_CheckForDamage
+	move_ef.counter => &Label_CheckForDamage
+	move_ef.encore => &Label_Encore
+	move_ef.pain_split => &endScript_1
+	move_ef.snore => &endScript_1
+	move_ef.conversion_2 => &endScript_1
+	move_ef.mind_reader => &Label_LockOn
+	move_ef.sketch => &Label_ForSketchAndSnore
+	move_ef.unknown_0x0060 => &endScript_1
+	move_ef.sleep_talk => &endScript_1
+	move_ef.destiny_bond => &endScript_1
+	move_ef.flail => &Label_CheckForDamage
+	move_ef.spite => &endScript_1
+	move_ef.false_swipe => &endScript_1
+	move_ef.team_heal => &endScript_1
+	move_ef.increased_priority => &endScript_1
+	move_ef.triple_kick => &endScript_1
+	move_ef.theif => &endScript_1
+	move_ef.spider_web => &Label_Block
+	move_ef.nightmare => &Label_Nightmare
+	move_ef.minimize => &Label_RaiseEvasion
+	move_ef.curse => &Label_Curse
+	move_ef.unknown_0x006e => &endScript_1
+	move_ef.protect => &endScript_1
+	move_ef.spikes => &Label_Spikes
+	move_ef.foresight => &Label_Foresight
+	move_ef.perish_song => &Label_PerishSong
+	move_ef.sandstorm => &Label_Sandstorm
+	move_ef.endure => &endScript_1
+	move_ef.rollout => &endScript_1
+	move_ef.swagger => &Label_ConfusionApply
+	move_ef.fury_cutter => &endScript_1
+	move_ef.attract => &Label_Attract
+	move_ef.return => &Label_CheckForDamage
+	move_ef.present => &Label_CheckForDamage
+	move_ef.frustration => &Label_CheckForDamage
+	move_ef.safeguard => &Label_Safeguard
+	move_ef.flame_wheel => &endScript_1
+	move_ef.magnitude => &Label_StickyWebs
+	move_ef.baton_pass => &Label_BatonPass
+	move_ef.pursuit => &endScript_1
+	move_ef.rapid_spin => &endScript_1
+	move_ef.direct_30 => &Label_CheckForDamage
+	move_ef.unknown_0x0083 => &endScript_1
+	move_ef.morning_sun => &Label_HealingForHealth
+	move_ef.unknown0x0085 => &Label_HealingForHealth
+	move_ef.unknown0x0086 => &Label_HealingForHealth
+	move_ef.hidden_power => &Label_CheckForDamage
+	move_ef.rain_dance => &Label_RainDance
+	move_ef.sunny_day => &Label_SunnyDay
+	move_ef.dmg_user_def+1 => &endScript_1
+	move_ef.dmg_user_atk+1 => &endScript_1
+	move_ef.ancient_power => &endScript_1
+	move_ef.unknown_0x008d => &endScript_1
+	move_ef.belly_drum => &Label_BellyDrum
+	move_ef.psych_up => &Label_StatNeutralizing
+	move_ef.mirror_coat => &Label_CheckForDamage
+	move_ef.skull_bash => &Label_CheckForDamage
+	move_ef.twister => &endScript_1
+	move_ef.earthquake => &endScript_1
+	move_ef.future_sight => &Label_FutureSight
+	move_ef.gust => &endScript_1
+	move_ef.stomp => &endScript_1
+	move_ef.solar_beam => &endScript_1
+	move_ef.thunder => &endScript_1
+	move_ef.teleport => &deprioritizeBy10
+	move_ef.beat_up => &endScript_1
+	move_ef.fly => &endScript_1
+	move_ef.defense_curl => &Label_RaiseDefense
+	move_ef.unknown_0x009d => &Label_HealingForHealth
+	move_ef.fake_out => &Label_FakeOut
+	move_ef.uproar => &endScript_1
+	move_ef.stockpile => &Label_Stockpile
+	move_ef.spit_up => &Label_SpitUpAndSwallow
+	move_ef.swallow => &Label_SpitUpAndSwallow
+	move_ef.unknown_0x00a3 => &endScript_1
+	move_ef.hail => &Label_Hail
+	move_ef.torment => &Label_Torment
+	move_ef.flatter => &Label_ConfusionApply
+	move_ef.will-o-wisp => &Label_WillOWisp
+	move_ef.memento => &Label_Memento
+	move_ef.facade => &endScript_1
+	move_ef.focus_punch => &Label_CheckForDamage
+	move_ef.smelling_salts => &endScript_1
+	move_ef.follow_me => &Label_FollowMe
+	move_ef.nature_power => &endScript_1
+	move_ef.charge_electric => &endScript_1
+	move_ef.taunt => &Label_Taunt
+	move_ef.helping_hand => &Label_HelpingHand
+	move_ef.trick => &Label_Trick
+	move_ef.roleplay => &endScript_1
+	move_ef.wish => &endScript_1
+	move_ef.assist => &endScript_1
+	move_ef.ingrain => &Label_Ingrain
+	move_ef.dmg_user_atk_def-1 => &Label_CheckForDamage
+	move_ef.magic_coat => &endScript_1
+	move_ef.recycle => &Label_Recycle
+	move_ef.revenge => &endScript_1
+	move_ef.brick_break => &endScript_1
+	move_ef.yawn => &Label_ApplySleep
+	move_ef.knock_off => &Label_KnockOff
+	move_ef.endeavor => &Label_CheckForDamage
+	move_ef.dmg_user_hp_pct => &endScript_1
+	move_ef.skill_swap => &endScript_1
+	move_ef.imprison => &Label_Imprison
+	move_ef.refresh => &Label_Refresh
+	move_ef.grudge => &endScript_1
+	move_ef.snatch => &endScript_1
+	move_ef.low_kick => &Label_CheckForDamage
+	move_ef.secret_power => &endScript_1
+	move_ef.dmg_recoil_33 => &endScript_1
+	move_ef.teeter_dance => &endScript_1
+	move_ef.dmg_target_brn_highcrit => &endScript_1
+	move_ef.mud_sport => &Label_0x13EC
+	move_ef.dmg_target_tox => &endScript_1
+	move_ef.weather_ball => &endScript_1
+	move_ef.dmg_user_spa-2 => &endScript_1
+	move_ef.target_atk_def-1 => &Label_Tickle
+	move_ef.user_def_spd+1 => &Label_CosmicPower
+	move_ef.sky_uppercut => &endScript_1
+	move_ef.user_atk_def+1 => &Label_BulkUp
+	move_ef.dmg_target_psn_highcrit => &endScript_1
+	move_ef.water_sport => &Label_WaterSport
+	move_ef.user_spa_spd+1 => &Label_CalmMind
+	move_ef.user_atk_spe+1 => &Label_DragonDance
+	move_ef.camouflage => &Label_Camouflage
+	move_ef.roost => &Label_HealingForHealth
+	move_ef.gravity => &Label_Gravity
+	move_ef.miracle_eye => &Label_MiracleEye
+	move_ef.wake-up_slap => &endScript_1
+	move_ef.dmg_user_spe-1 => &endScript_1
+	move_ef.gyro_ball => &Label_CheckForDamage
+	move_ef.healing_wish => &Label_HealingWish
+	move_ef.brine => &endScript_1
+	move_ef.natural_gift => &Label_NaturalGift
+	move_ef.feint => &endScript_1
+	move_ef.pluck => &endScript_1
+	move_ef.tailwind => &Label_Tailwind
+	move_ef.acupressure => &Label_Acupressure
+	move_ef.metal_burst => &Label_MetalBurst
+	move_ef.dmg_user_switch => &endScript_1
+	move_ef.dmg_user_def_spd-1 => &endScript_1
+	move_ef.payback => &endScript_1
+	move_ef.assurance => &endScript_1
+	move_ef.embargo => &Label_Embargo
+	move_ef.fling => &Label_Fling
+	move_ef.psycho_shift => &Label_PsychoShift
+	move_ef.trump_card => &Label_CheckForDamage
+	move_ef.heal_block => &Label_HealBlock
+	move_ef.dmg_target_hp_pct => &Label_CheckForDamage
+	move_ef.power_trick => &Label_PowerTrick
+	move_ef.gastro_acid => &Label_GastroAcid
+	move_ef.lucky_chant => &Label_LuckyChant
+	move_ef.me_first => &endScript_1
+	move_ef.copycat => &Label_Copycat
+	move_ef.power_swap => &Label_PowerSwap
+	move_ef.guard_swap => &Label_0x1C9A
+	move_ef.punishment => &Label_CheckForDamage
+	move_ef.last_resort => &Label_LastResort
+	move_ef.worry_seed => &Label_WorrySeed
+	move_ef.sucker_punch => &endScript_1
+	move_ef.toxic_spikes => &Label_ToxicSpikes
+	move_ef.heart_swap => &Label_StatNeutralizing
+	move_ef.aqua_ring => &Label_AquaRing
+	move_ef.magnet_rise => &Label_MagnetRise
+	move_ef.flare_blitz => &endScript_1
+	move_ef.struggle => &endScript_1
+	move_ef.dive => &endScript_1
+	move_ef.dig => &endScript_1
+	move_ef.surf => &endScript_1
+	move_ef.defog => &Label_Defog
+	move_ef.trick_room => &Label_TrickRoom
+	move_ef.blizzard => &endScript_1
+	move_ef.whirlpool => &endScript_1
+	move_ef.volt_tackle => &endScript_1
+	move_ef.bounce => &endScript_1
+	move_ef.unknown_0x0108 => &endScript_1
+	move_ef.captivate => &Label_Captivate
+	move_ef.stealth_rock => &Label_StealthRock
+	move_ef.chatter => &endScript_1
+	move_ef.judgment => &endScript_1
+	move_ef.dmg_recoil_50 => &endScript_1
+	move_ef.lunar_dance => &Label_LunarDance
+	move_ef.dmg_target_spd-2 => &endScript_1
+	move_ef.shadow_force => &endScript_1
+	move_ef.dmg_target_brn_flinch => &endScript_1
+	move_ef.dmg_target_frz_flinch => &endScript_1
+	move_ef.dmg_target_par_flinch => &endScript_1
+	move_ef.dmg_user_spa+1 => &endScript_1
+	move_ef.user_atk_acc+1 => &Label_HoneClaws
+	move_ef.wide_guard => &Label_WideGuard
+	move_ef.guard_split => &Label_GuardSplit
+	move_ef.power_split => &Label_PowerSplit
+	move_ef.wonder_room => &Label_WonderRoom
+	move_ef.dmg_physical => &Label_DamagePhysical
+	move_ef.venoshock => &Label_Venoshock
+	move_ef.autotomize => &Label_Automatize
+	move_ef.telekinesis => &Label_Telekinesis
+	move_ef.magic_room => &Label_MagicRoom
+	move_ef.smack_down => &Label_SmackDown
+	move_ef.dmg_alwayscrit => &Label_AlwaysCrit
+	move_ef.flame_burst => &Label_FlameBurst
+	move_ef.user_spa_spd_spe+2 => &Label_ShellSmash
+	move_ef.heavy_slam => &Label_HeavySlam
+	move_ef.synchronoise => &Label_Synchronoise
+	move_ef.electro_ball => &Label_ElectroBall
+	move_ef.soak => &Label_Soak
+	move_ef.dmg_user_spe+1 => &Label_FlameCharge
+	move_ef.acid_spray => &Label_AcidSpray
+	move_ef.foul_play => &Label_FoulPlay
+	move_ef.simple_beam => &Label_SimpleBeam
+	move_ef.entrainment => &Label_Entrainment
+	move_ef.after_you => &Label_AfterYou
+	move_ef.round => &Label_Round
+	move_ef.echoed_voice => &Label_0x219E
+	move_ef.chip_away => &Label_0x21A0
+	move_ef.clear_smog => &Label_0x21A2
+	move_ef.stored_power => &Label_0x21A4
+	move_ef.quick_guard => &Label_0x21A6
+	move_ef.ally_switch => &Label_AllySwitch
+	move_ef.shell_smash => &Label_ActualShellSmash
+	move_ef.heal_pulse => &Label_0x21EE
+	move_ef.hex => &Label_0x21FC
+	move_ef.sky_drop => &Label_0x21FE
+	move_ef.user_spe+2_atk+1 => &Label_ShiftGear
+	move_ef.dmg_force_switch => &Label_0x2226
+	move_ef.incinerate => &Label_0x2228
+	move_ef.quash => &Label_Quash
+	move_ef.growth => &Label_Growth
+	move_ef.acrobatics => &Label_0x225E
+	move_ef.reflect_type => &Label_0x2260
+	move_ef.retaliate => &Label_0x2262
+	move_ef.final_gambit => &Label_FinalGambit
+	move_ef.user_spa+3 => &Label_0x228C
+	move_ef.user_atk_def_acc+1 => &Label_Coil
+	move_ef.bestow => &Label_Bestow
+	move_ef.water_pledge => &Label_0x22E4
+	move_ef.fire_pledge => &Label_0x22E6
+	move_ef.grass_pledge => &Label_0x22E8
+	move_ef.work_up => &Label_WorkUp
+	move_ef.cotton_guard => &Label_CottonGuard
+	move_ef.relic_song => &Label_0x2324
+	move_ef.glaciate => &Label_0x2326
+	move_ef.freeze_shock => &Label_0x2328
+	move_ef.ice_burn => &Label_0x232A
+	move_ef.unknown_0x014d => &Label_0x232C
+	move_ef.v-create => &endScript_1
+	move_ef.fusion_flare => &endScript_1
+	move_ef.fusion_bolt => &endScript_1
+	move_ef.hurricane => &endScript_1
+
+endScript_1:
+	EndScript()
+
+
+
+
+
+//  SLEEP LOGIC 
+
+
+Label_ApplySleep:
+	JumpIfHasAnyStatus(defender, &deprioritizeBy10)
+	JumpIfHasSideCondition(defender, side_cond.safeguard, &deprioritizeBy10)
+	JumpIfHasSideCondition(defender, side_cond.mist, &deprioritizeBy10)
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.mold_breaker, &Label_SleepCheckItems)
+	JumpIfStoredEQ(ability.turboblaze, &Label_SleepCheckItems)
+	JumpIfStoredEQ(ability.teravolt, &Label_SleepCheckItems)
+	GetHeldItem(attacker)
+	JumpIfStoredNE(item.ability_drill, &Label_SleepCheckItems)
+	JumpIfStoredNE(item.tera_drill, &Label_SleepCheckItems)
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.magic_bounce, &deprioritizeBy10)
+	JumpIfStoredEQ(ability.vital_spirit, &deprioritizeBy10)
+	
+
+Label_SleepCheckItems:
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.shed_skin, &HighChanceToDeprioritizeBy10)
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.unnerve, &endScript_2)
+	JumpIfHeldItemEQ(defender, item.lum_berry, &HighChanceToDeprioritizeBy10)
+	JumpIfHeldItemEQ(defender, item.chesto_berry, &HighChanceToDeprioritizeBy10)
+	EndScript()
+
+endScript_2:
+	EndScript()
+
+
+
+
+
+//  EXPLOSION LOGIC 
+
+
+Label_ExplosionLogic:
+	JumpIfEffectivenessEQ(0x, &deprioritizeBy10)
+	GetPartyReserveCount(attacker)
+	JumpIfStoredNE(0, &endScriptExplosion)
+	GetPartyReserveCount(defender)
+	JumpIfStoredNE(0, &deprioritizeBy10)
+	Jump(&deprioritizeBy1)
+
+endScriptExplosion:
+	EndScript()
+
+
+
+
+//   NIGHTMARE   
+
+Label_Nightmare:
+	JumpIfHasCondition(defender, cond.nightmare, &deprioritizeBy10)
+	JumpIfNotCondition(defender, cond_flag.charge, &deprioritizeBy8)
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.magic_guard, &deprioritizeBy10)
+	EndScript()
+
+
+
+//   DREAM EATER   
+
+Label_DreamEater:
+	JumpIfNotCondition(defender, cond_flag.charge, &deprioritizeBy8)
+	JumpIfEffectivenessEQ(0x, &deprioritizeBy10)
+	EndScript()
+
+
+Label_BellyDrum:
+	JumpIfHealthLT(attacker, 51, &deprioritizeBy10)
+
+
+
+
+//   STAT RAISING   
+
+Label_RaiseAttack:
+	JumpIfStatStageEQ(attacker, atk, +6, &deprioritizeBy10)
+	EndScript()
+
+
+Label_RaiseDefense:
+	JumpIfStatStageEQ(attacker, def, +6, &deprioritizeBy10)
+	EndScript()
+
+
+Label_RaiseSpeed:
+	JumpIfFieldEffectEQ(field_ef.trick_room, &deprioritizeBy10)
+	JumpIfStatStageEQ(attacker, spe, +6, &deprioritizeBy10)
+	EndScript()
+
+
+Label_RaiseSpecialAttack:
+	JumpIfStatStageEQ(attacker, spa, +6, &deprioritizeBy10)
+	EndScript()
+
+
+Label_RaiseSpecialDefense:
+	JumpIfStatStageEQ(attacker, spd, +6, &deprioritizeBy10)
+	EndScript()
+
+
+Label_RaiseAccuracy:
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.no_guard, &deprioritizeBy10)
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.no_guard, &deprioritizeBy10)
+	JumpIfStatStageEQ(attacker, acc, +6, &deprioritizeBy10)
+	EndScript()
+
+
+Label_RaiseEvasion:
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.no_guard, &deprioritizeBy10)
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.no_guard, &deprioritizeBy10)
+	JumpIfStatStageEQ(attacker, eva, +6, &deprioritizeBy10)
+	EndScript()
+
+
+//   STAT LOWERING   
+
+Label_LowerEnemyAttack:
+	JumpIfStatStageEQ(defender, atk, -6, &deprioritizeBy10)
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.defiant, &deprioritizeBy12)
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.mold_breaker, &Label_CheckForStatBlockingAbilitiesAndItems)
+	JumpIfStoredEQ(ability.turboblaze, &Label_CheckForStatBlockingAbilitiesAndItems)
+	JumpIfStoredEQ(ability.teravolt, &Label_CheckForStatBlockingAbilitiesAndItems)
+	GetHeldItem(attacker)
+	JumpIfStoredNE(item.ability_drill, &Label_CheckForStatBlockingAbilitiesAndItems)
+	JumpIfStoredNE(item.tera_drill, &Label_CheckForStatBlockingAbilitiesAndItems)
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.hyper_cutter, &deprioritizeBy10)
+	JumpIfStoredEQ(ability.scrappy, &deprioritizeBy10)
+	Jump(&Label_CheckForStatBlockingAbilitiesAndItems)
+
+Label_LowerEnemyDefense:
+	JumpIfStatStageEQ(defender, def, -6, &deprioritizeBy10)
+	Jump(&Label_CheckForStatBlockingAbilitiesAndItems)
+
+Label_LowerEnemySpeed:
+	JumpIfFieldEffectEQ(field_ef.trick_room, &deprioritizeBy10)
+	JumpIfStatStageEQ(defender, spe, -6, &deprioritizeBy10)
+	GetPokeHasAbility(defender, ability.speed_boost)
+	JumpIfStoredEQ(true, &deprioritizeBy10)
+	Jump(&Label_CheckForStatBlockingAbilitiesAndItems)
+
+Label_LowerEnemySpecialAttack:
+	JumpIfStatStageEQ(defender, spa, -6, &deprioritizeBy10)
+	Jump(&Label_CheckForStatBlockingAbilitiesAndItems)
+
+Label_LowerEnemySpecialDefense:
+	JumpIfStatStageEQ(defender, spd, -6, &deprioritizeBy10)
+	Jump(&Label_CheckForStatBlockingAbilitiesAndItems)
+
+Label_LowerEnemyAccuracy:
+	JumpIfStatStageEQ(defender, acc, -6, &deprioritizeBy10)
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.no_guard, &deprioritizeBy10)
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.no_guard, &deprioritizeBy10)
+	Jump(&Label_CheckForStatBlockingAbilitiesAndItems)
+
+Label_LowerEnemyEvasion:
+	JumpIfStatStageEQ(defender, eva, -6, &deprioritizeBy10)
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.no_guard, &deprioritizeBy10)
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.no_guard, &deprioritizeBy10)
+
+Label_CheckForStatBlockingAbilitiesAndItems:
+	JumpIfHasSideCondition(defender, side_cond.safeguard, &deprioritizeBy10)
+	JumpIfHasSideCondition(defender, side_cond.mist, &deprioritizeBy10)
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.contrary, &deprioritizeBy12)
+	JumpIfStoredEQ(ability.defiant, &deprioritizeBy12)
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.mold_breaker, &endScript_3)
+	JumpIfStoredEQ(ability.turboblaze, &endScript_3)
+	JumpIfStoredEQ(ability.teravolt, &endScript_3)
+	GetHeldItem(attacker)
+	JumpIfStoredNE(item.ability_drill, &endScript_3)
+	JumpIfStoredNE(item.tera_drill, &endScript_3)
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.strong_body, &deprioritizeBy10)
+	JumpIfStoredEQ(ability.white_smoke, &deprioritizeBy10)
+	JumpIfStoredEQ(ability.magic_bounce, &deprioritizeBy12)
+	JumpIfStoredEQ(ability.unaware, &deprioritizeBy12)
+	
+endScript_3:
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.unnerve, &endScript_3a)
+	JumpIfHeldItemEQ(defender, item.white_herb, &HighChanceToDeprioritizeBy10)
+
+endScript_3a:
+	EndScript()
+
+
+
+//   STAT NEUTRALIZING   
+
+Label_StatNeutralizing:
+	JumpIfStatStageLT(attacker, atk, +0, &endScript_4)
+	JumpIfStatStageLT(attacker, def, +0, &endScript_4)
+	JumpIfStatStageLT(attacker, spe, +0, &endScript_4)
+	JumpIfStatStageLT(attacker, spa, +0, &endScript_4)
+	JumpIfStatStageLT(attacker, spd, +0, &endScript_4)
+	JumpIfStatStageLT(attacker, acc, +0, &endScript_4)
+	JumpIfStatStageLT(attacker, eva, +0, &endScript_4)
+	JumpIfStatStageGT(defender, atk, +0, &endScript_4)
+	JumpIfStatStageGT(defender, def, +0, &endScript_4)
+	JumpIfStatStageGT(defender, spe, +0, &endScript_4)
+	JumpIfStatStageGT(defender, spa, +0, &endScript_4)
+	JumpIfStatStageGT(defender, spd, +0, &endScript_4)
+	JumpIfStatStageGT(defender, acc, +0, &endScript_4)
+	JumpIfStatStageGT(defender, eva, +0, &endScript_4)
+	Jump(&deprioritizeBy10)
+
+endScript_4:
+	EndScript()
+
+
+
+
+
+//   PHASING   
+
+Label_PhasingMoves:
+	GetPartyReserveCount(defender)
+	JumpIfStoredEQ(0, &deprioritizeBy10)
+	EndScript()
+
+
+
+
+//   HEALING   
+
+Label_HealingForHealth:
+	JumpIfHealthNE(attacker, 100, &endScript_5)
+	AddToScore(-8)
+
+endScript_5:
+	EndScript()
+
+
+
+
+
+
+//   POISON   
+
+Label_ApplyPoisonToEnemy:
+	GetType(defender_type1)
+	JumpIfStoredEQ(type.steel, &deprioritizeBy10)
+	JumpIfStoredEQ(type.poison, &deprioritizeBy10)
+	GetType(defender_type2)
+	JumpIfStoredEQ(type.steel, &deprioritizeBy10)
+	JumpIfStoredEQ(type.poison, &deprioritizeBy10)
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.toxic_boost, &deprioritizeBy10)
+	JumpIfStoredEQ(ability.magic_guard, &deprioritizeBy10)
+	JumpIfStoredEQ(ability.poison_heal, &deprioritizeBy10)
+	JumpIfStoredEQ(ability.shed_skin, &deprioritizeBy10)
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.mold_breaker, &Label_ApplyPoisonChecks)
+	JumpIfStoredEQ(ability.turboblaze, &Label_ApplyPoisonChecks)
+	JumpIfStoredEQ(ability.teravolt, &Label_ApplyPoisonChecks)
+	GetHeldItem(attacker)
+	JumpIfStoredNE(item.ability_drill, &Label_ApplyPoisonChecks)
+	JumpIfStoredNE(item.tera_drill, &Label_ApplyPoisonChecks)
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.magic_bounce, &deprioritizeBy12)
+
+Label_ApplyPoisonChecks:
+	JumpIfHasAnyStatus(defender, &deprioritizeBy10)
+	JumpIfHasSideCondition(defender, side_cond.safeguard, &deprioritizeBy10)
+	JumpIfHasSideCondition(defender, side_cond.mist, &deprioritizeBy10)
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.unnerve, &endScript_6)
+	JumpIfHeldItemEQ(defender, item.lum_berry, &HighChanceToDeprioritizeBy10)
+	JumpIfHeldItemEQ(defender, item.pecha_berry, &HighChanceToDeprioritizeBy10)
+
+endScript_6:
+	EndScript()
+
+
+
+
+
+
+
+//   LIGHT SCREEN   
+
+Label_LightScreen:
+	JumpIfHasSideCondition(attacker, side_cond.light_screen, &deprioritizeBy8)
+	EndScript()
+
+
+
+
+
+
+//   OHKO MOVES   
+
+Label_OHKOMoves:
+	JumpIfEffectivenessEQ(0x, &deprioritizeBy10)
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.mold_breaker, &Label_OHKOChecks)
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.sturdy, &deprioritizeBy10)
+
+Label_OHKOChecks:
+	JumpCompareLevel(GT, &deprioritizeBy10)
+	EndScript()
+
+
+
+
+
+
+//   STICKY WEBS   
+
+Label_StickyWebs:
+	JumpIfHasSideCondition(defender, side_cond.sticky_web, &deprioritizeBy10)
+	GetPartyReserveCount(defender)
+	JumpIfStoredEQ(0, &deprioritizeBy10)
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.mold_breaker, &endScript_7)
+	JumpIfStoredEQ(ability.turboblaze, &endScript_7)
+	JumpIfStoredEQ(ability.teravolt, &endScript_7)
+	GetHeldItem(attacker)
+	JumpIfStoredNE(item.ability_drill, &endScript_7)
+	JumpIfStoredNE(item.tera_drill, &endScript_7)
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.magic_bounce, &deprioritizeBy12)
+
+endScript_7:
+	EndScript()
+
+
+
+
+
+
+
+
+//   MIST   
+
+Label_Mist:
+	JumpIfHasSideCondition(attacker, side_cond.mist, &deprioritizeBy8)
+	JumpIfHasSideCondition(attacker, side_cond.safeguard, &deprioritizeBy8)
+	EndScript()
+
+
+
+
+
+
+//   FOCUS ENERGY   
+
+Label_FocusEnergy:
+	JumpIfHasConditionFlag(attacker, cond_flag.focus_energy, &deprioritizeBy10)
+	EndScript()
+
+
+
+
+//   CONFUSION   
+
+Label_ConfusionApply:
+	JumpIfHasCondition(defender, cond.confusion, &deprioritizeBy5)
+	JumpIfHasSideCondition(defender, side_cond.safeguard, &deprioritizeBy10)
+	JumpIfHasSideCondition(defender, side_cond.mist, &deprioritizeBy10)
+	GetType(defender_type1)
+	JumpIfStoredEQ(type.psychic, &deprioritizeBy10)
+	GetType(defender_type2)
+	JumpIfStoredEQ(type.psychic, &deprioritizeBy10)
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.unaware, &deprioritizeBy10)
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.mold_breaker, &endScript_8)
+	JumpIfStoredEQ(ability.teravolt, &endScript_8)
+	JumpIfStoredEQ(ability.turboblaze, &endScript_8)
+	GetHeldItem(attacker)
+	JumpIfStoredNE(item.ability_drill, &endScript_8)
+	JumpIfStoredNE(item.tera_drill, &endScript_8)
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.magic_bounce, &deprioritizeBy12)
+
+endScript_8:
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.unnerve, &endScript_8a)
+	JumpIfHeldItemEQ(defender, item.lum_berry, &HighChanceToDeprioritizeBy10)
+	JumpIfHeldItemEQ(defender, item.persim_berry, &HighChanceToDeprioritizeBy10)
+
+endScript_8a:
+	EndScript()
+
+
+
+
+
+
+//   REFLECT   
+
+Label_Reflect:
+	JumpIfHasSideCondition(attacker, side_cond.reflect, &deprioritizeBy8)
+	EndScript()
+
+
+
+
+
+
+
+
+
+//   CHECK FOR DAMAGE   
+
+Label_CheckForDamage:
+	JumpIfEffectivenessEQ(0x, &deprioritizeBy10)
+	GetAbilityGuess(defender)
+	JumpIfStoredNE(ability.wonder_guard, &endScript_9)
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.mold_breaker, &endScript_9)
+	JumpIfStoredEQ(ability.teravolt, &endScript_9)
+	JumpIfStoredEQ(ability.turboblaze, &endScript_9)
+	GetHeldItem(attacker)
+	JumpIfStoredNE(item.ability_drill, &endScript_9)
+	JumpIfStoredNE(item.tera_drill, &endScript_9)
+	JumpIfEffectivenessEQ(2x, &endScript_9)
+	JumpIfEffectivenessEQ(4x, &endScript_9)
+	Jump(&deprioritizeBy10)
+
+endScript_9:
+	EndScript()
+
+
+
+
+
+
+
+
+
+//   PARALYSIS   
+
+Label_Paralysis:
+	JumpIfEffectivenessEQ(0x, &deprioritizeBy10)
+	GetType(defender_type1)
+	JumpIfStoredEQ(type.electric, &deprioritizeBy10)
+	GetType(defender_type2)
+	JumpIfStoredEQ(type.electric, &deprioritizeBy10)
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.marvel_scale, &deprioritizeBy10)
+	JumpIfStoredEQ(ability.guts, &deprioritizeBy10)
+	JumpIfStoredEQ(ability.quick_feet, &deprioritizeBy10)
+	JumpIfStoredEQ(ability.magic_guard, &deprioritizeBy10)
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.mold_breaker, &Label_ParalysisChecks2)
+	JumpIfStoredEQ(ability.turboblaze, &Label_ParalysisChecks2)
+	JumpIfStoredEQ(ability.teravolt, &Label_ParalysisChecks2)
+	GetHeldItem(attacker)
+	JumpIfStoredNE(item.ability_drill, &Label_ParalysisChecks2)
+	JumpIfStoredNE(item.tera_drill, &Label_ParalysisChecks2)
+	JumpIfMoveEQ(move.thunder_wave, &Label_ThunderWaveCheck)
+	Jump(&Label_ParalysisChecks2)
+
+Label_ThunderWaveCheck:
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.motor_drive, &deprioritizeBy10)
+	JumpIfStoredEQ(ability.volt_absorb, &deprioritizeBy10)
+	JumpIfStoredEQ(ability.lightning_rod, &deprioritizeBy10)
+	JumpIfStoredEQ(ability.thunder_armor, &deprioritizeBy10)
+	JumpIfStoredEQ(ability.magic_bounce, &deprioritizeBy12)
+
+Label_ParalysisChecks2:
+	JumpIfHasAnyStatus(defender, &deprioritizeBy10)
+	JumpIfHasSideCondition(defender, side_cond.safeguard, &deprioritizeBy10)
+	JumpIfHasSideCondition(defender, side_cond.mist, &deprioritizeBy10)
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.unnerve, &endScript_10)
+	JumpIfHeldItemEQ(defender, item.lum_berry, &HighChanceToDeprioritizeBy10)
+	JumpIfHeldItemEQ(defender, item.cheri_berry, &HighChanceToDeprioritizeBy10)
+
+endScript_10:
+	EndScript()
+
+
+
+
+
+
+
+
+
+//   SUBSTITUTE   
+
+Label_Substitute:
+	JumpIfHasSubstitute(attacker, &deprioritizeBy8)
+	JumpIfHealthLT(attacker, 26, &deprioritizeBy10)
+	EndScript()
+
+
+
+
+
+
+
+//   LEECH SEED   
+
+Label_LeechSeed:
+	JumpIfHasCondition(defender, cond.leech_seed, &deprioritizeBy10)
+	GetType(defender_type1)
+	JumpIfStoredEQ(type.grass, &deprioritizeBy10)
+	GetType(defender_type2)
+	JumpIfStoredEQ(type.grass, &deprioritizeBy10)
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.magic_guard, &deprioritizeBy10)
+	JumpIfStoredEQ(ability.magic_bounce, &deprioritizeBy12)
+	EndScript()
+
+
+
+
+
+
+
+
+
+//   DISABLE   
+
+Label_Disable:
+	JumpIfHasCondition(defender, cond.disable, &deprioritizeBy8)
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.mold_breaker, &endScript_11)
+	JumpIfStoredEQ(ability.teravolt, &endScript_11)
+	JumpIfStoredEQ(ability.turboblaze, &endScript_11)
+	GetHeldItem(attacker)
+	JumpIfStoredNE(item.ability_drill, &endScript_11)
+	JumpIfStoredNE(item.tera_drill, &endScript_11)
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.magic_bounce, &deprioritizeBy12)
+
+endScript_11:
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.unnerve, &endScript_11a)
+	JumpIfHeldItemEQ(defender, item.mental_herb, &HighChanceToDeprioritizeBy10)
+
+endScript_11a:
+	EndScript()
+
+
+
+
+
+
+
+
+
+//   ENCORE   
+
+Label_Encore:
+	JumpIfHasCondition(defender, cond.encore, &deprioritizeBy8)
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.mold_breaker, &endScript_12)
+	JumpIfStoredEQ(ability.teravolt, &endScript_12)
+	JumpIfStoredEQ(ability.turboblaze, &endScript_12)
+	GetHeldItem(attacker)
+	JumpIfStoredNE(item.ability_drill, &endScript_12)
+	JumpIfStoredNE(item.tera_drill, &endScript_12)
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.magic_bounce, &deprioritizeBy12)
+
+endScript_12:
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.unnerve, &endScript_12a)
+	JumpIfHeldItemEQ(defender, item.mental_herb, &HighChanceToDeprioritizeBy10)
+
+endScript_12a:
+	EndScript()
+
+
+
+
+
+
+
+//   SKETCH AND SNORE   
+
+Label_ForSketchAndSnore:
+	JumpIfNotCondition(attacker, cond_flag.charge, &deprioritizeBy8)
+	EndScript()
+
+
+
+
+
+
+
+//   MIND READER   
+
+Label_LockOn:
+	JumpIfHasCondition(defender, cond.lock-on, &deprioritizeBy10)
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.no_guard, &deprioritizeBy10)
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.no_guard, &deprioritizeBy10)
+	EndScript()
+
+
+
+
+
+
+
+
+//   BLOCK / MEANLOOK   
+
+Label_Block:
+	JumpIfHasCondition(defender, cond.block, &deprioritizeBy10)
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.run_away, &deprioritizeBy12)
+	JumpIfHeldItemEQ(defender, item.shed_shell, &deprioritizeBy12)
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.mold_breaker, &endScript_13)
+	JumpIfStoredEQ(ability.teravolt, &endScript_13)
+	JumpIfStoredEQ(ability.turboblaze, &endScript_13)
+	GetHeldItem(attacker)
+	JumpIfStoredNE(item.ability_drill, &endScript_13)
+	JumpIfStoredNE(item.tera_drill, &endScript_13)
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.magic_bounce, &deprioritizeBy12)
+
+endScript_13:
+	EndScript()
+
+
+
+
+
+
+
+
+
+//   CURSE   
+
+Label_Curse:
+	GetType(attacker_type1)
+	JumpIfStoredEQ(type.ghost, &Label_GhostCurseEffect)
+	GetType(attacker_type2)
+	JumpIfStoredEQ(type.ghost, &Label_GhostCurseEffect)
+	JumpIfStatStageEQ(attacker, atk, +6, &deprioritizeBy10)
+	JumpIfStatStageEQ(attacker, def, +6, &deprioritizeBy8)
+	EndScript()
+
+
+Label_GhostCurseEffect:
+	JumpIfHasCondition(defender, cond.curse, &deprioritizeBy10)
+	GetType(defender_type1)
+	JumpIfStoredEQ(type.normal, &deprioritizeBy10)
+	GetType(defender_type2)
+	JumpIfStoredEQ(type.normal, &deprioritizeBy10)
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.magic_guard, &deprioritizeBy10)
+	EndScript()
+
+
+
+
+
+
+
+
+
+
+//   SPIKES   
+
+Label_Spikes:
+	GetSideStatusLevel(defender, side_cond.spikes)
+	JumpIfStoredEQ(3, &deprioritizeBy10)
+	GetPartyReserveCount(defender)
+	JumpIfStoredEQ(0, &deprioritizeBy10)
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.mold_breaker, &endScript_14)
+	JumpIfStoredEQ(ability.teravolt, &endScript_14)
+	JumpIfStoredEQ(ability.turboblaze, &endScript_14)
+	GetHeldItem(attacker)
+	JumpIfStoredNE(item.ability_drill, &endScript_14)
+	JumpIfStoredNE(item.tera_drill, &endScript_14)
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.magic_bounce, &deprioritizeBy12)
+
+endScript_14:
+	EndScript()
+
+
+
+
+
+
+
+
+
+//   FORESIGHT   
+
+Label_Foresight:
+	JumpIfHasCondition(defender, cond.foresight, &deprioritizeBy10)
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.mold_breaker, &endScript_15)
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.magic_bounce, &deprioritizeBy12)
+
+endScript_15:
+	EndScript()
+
+
+
+
+
+
+
+
+
+//   PERISH SONG   
+
+Label_PerishSong:
+	JumpIfHasCondition(defender, cond.perish_song, &deprioritizeBy10)
+	EndScript()
+
+
+
+
+
+
+
+
+
+//   SANDSTORM   
+
+Label_Sandstorm:
+	GetWeather()
+	JumpIfStoredEQ(weather.sand, &deprioritizeBy8)
+	EndScript()
+
+
+
+
+
+
+
+
+
+
+
+//   ATTRACT   
+
+Label_Attract:
+	JumpIfHasCondition(defender, cond.infatuation, &deprioritizeBy10)
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.mold_breaker, &endScript_16)
+	JumpIfStoredEQ(ability.turboblaze, &endScript_16)
+	JumpIfStoredEQ(ability.teravolt, &endScript_16)
+	GetHeldItem(attacker)
+	JumpIfStoredNE(item.ability_drill, &endScript_16)
+	JumpIfStoredNE(item.tera_drill, &endScript_16)
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.magic_bounce, &deprioritizeBy12)
+
+endScript_16:
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.unnerve, &endScript_16a)
+	JumpIfHeldItemEQ(defender, item.mental_herb, &HighChanceToDeprioritizeBy10)
+
+endScript_16a:
+	EndScript()
+
+
+
+
+
+
+
+
+
+
+//   SAFEGUARD   
+
+Label_Safeguard:
+	JumpIfHasSideCondition(attacker, side_cond.safeguard, &deprioritizeBy8)
+	JumpIfHasSideCondition(attacker, side_cond.mist, &deprioritizeBy8)
+	EndScript()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//   MEMENTO - Unused   
+
+Label_Memento:
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.contrary, &deprioritizeBy12)
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.mold_breaker, &Label_MementoStatCheck)
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.strong_body, &deprioritizeBy10)
+	JumpIfStoredEQ(ability.white_smoke, &deprioritizeBy10)
+
+Label_MementoStatCheck:
+	JumpIfStatStageEQ(defender, atk, -6, &deprioritizeBy10)
+	JumpIfStatStageEQ(defender, spa, -6, &deprioritizeBy8)
+	GetPartyReserveCount(attacker)
+	JumpIfStoredEQ(0, &deprioritizeBy10)
+	EndScript()
+
+
+
+
+
+
+
+
+
+
+//   BATON PASS   
+
+Label_BatonPass:
+	GetPartyReserveCount(attacker)
+	JumpIfStoredEQ(0, &deprioritizeBy10)
+	EndScript()
+
+
+
+
+
+
+
+
+//   RAIN DANCE   
+
+Label_RainDance:
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.swift_swim, &Label_ShouldChangeWeatherRain)
+	JumpIfStoredEQ(ability.dry_skin, &Label_ShouldChangeWeatherRain)
+	GetAbilityGuess(defender)
+	JumpIfStoredNE(ability.dry_skin, &Label_ShouldChangeWeatherRain)
+
+Label_ShouldChangeWeatherRain:
+	GetWeather()
+	JumpIfStoredEQ(weather.rain, &deprioritizeBy8)
+	EndScript()
+
+
+
+
+
+
+
+
+
+
+
+//   SUNNY DAY   
+
+Label_SunnyDay:
+	GetWeather()
+	JumpIfStoredEQ(weather.sun, &deprioritizeBy8)
+	EndScript()
+
+
+
+
+
+
+
+
+
+
+
+
+
+//   FUTURE SIGHT   
+
+Label_FutureSight:
+	JumpIfAttackForeseen(defender, &deprioritizeBy12)
+	EndScript()
+
+
+
+
+
+
+
+
+
+
+//   FAKE OUT   
+
+Label_FakeOut:
+	StoreIsFirstTurn(attacker)
+	JumpIfStoredEQ(false, &deprioritizeBy10)
+	EndScript()
+
+
+
+
+
+
+
+
+
+
+//   STOCKPILE, SPIT UP, & SWALLOW  
+
+Label_Stockpile:
+	GetHeldItem(attacker)
+	JumpIfStoredIsNotInList(&array_Berries, &deprioritizeBy10)
+	JumpIfStatStageEQ(attacker, def, +6, &deprioritizeBy10)
+	JumpIfStatStageEQ(attacker, spd, +6, &deprioritizeBy10)
+	JumpIfStoredIsInList(&array_StatBerries, &Label_StatBerryCheck);
+	EndScript()
+
+Label_SpitUpAndSwallow:
+	GetHeldItem(attacker)
+	JumpIfStoredIsNotInList(&array_Berries, &deprioritizeBy10)
+	JumpIfMoveEffectEQ(move_ef.swallow, &Label_SwallowHealing)
+	JumpIfStoredIsInList(&array_StatBerries, &Label_StatBerryCheck);
+	EndScript()
+
+Label_SwallowHealing:
+	JumpIfHealthNE(attacker, 100, &endScript_5)
+	JumpIfStoredIsInList(&array_StatBerries, &Label_StatBerryCheck);
+	AddToScore(-8)
+	EndScript();
+
+Label_StatBerryCheck:
+	JumpIfRandGT(230, &DeprioritizeEndScript)
+	AddToScore(+2)
+	EndScript();
+
+
+
+
+
+
+
+
+
+
+
+
+//   HAIL   
+
+Label_Hail:
+	GetWeather()
+	JumpIfStoredEQ(weather.hail, &deprioritizeBy8)
+	EndScript()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//   TORMENT   
+
+Label_Torment:
+	JumpIfHasCondition(defender, cond.torment, &deprioritizeBy10)
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.mold_breaker, &endScript_17)
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.magic_bounce, &deprioritizeBy12)
+
+endScript_17:
+	EndScript()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//   WILL-O-WISP   
+
+Label_WillOWisp:
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.guts, &deprioritizeBy10)
+	JumpIfStoredEQ(ability.magic_guard, &deprioritizeBy10)
+	JumpIfHasAnyStatus(defender, &deprioritizeBy10)
+	GetType(defender_type1)
+	JumpIfStoredEQ(type.fire, &deprioritizeBy10)
+	GetType(defender_type2)
+	JumpIfStoredEQ(type.fire, &deprioritizeBy10)
+	JumpIfHasSideCondition(defender, side_cond.safeguard, &deprioritizeBy10)
+	JumpIfHasSideCondition(defender, side_cond.mist, &deprioritizeBy10)
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.mold_breaker, &endScript_18)
+	JumpIfStoredEQ(ability.turboblaze, &endScript_18)
+	JumpIfStoredEQ(ability.teravolt, &endScript_18)
+	GetHeldItem(attacker)
+	JumpIfStoredNE(item.ability_drill, &endScript_18)
+	JumpIfStoredNE(item.tera_drill, &endScript_18)
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.magic_bounce, &deprioritizeBy12)
+	JumpIfStoredEQ(ability.flash_fire, &deprioritizeBy12)
+	JumpIfStoredEQ(ability.well_baked_body, &deprioritizeBy12)
+	JumpIfStoredEQ(ability.heatproof, &deprioritizeBy12)
+	JumpIfStoredEQ(ability.rain_dish, &deprioritizeBy12)
+	
+
+endScript_18:
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.unnerve, &endScript_18a)
+	JumpIfHeldItemEQ(defender, item.lum_berry, &HighChanceToDeprioritizeBy10)
+	JumpIfHeldItemEQ(defender, item.rawst_berry, &HighChanceToDeprioritizeBy10)
+
+endScript_18a:
+	EndScript()
+
+
+
+
+
+
+
+
+
+
+
+
+
+//   FOLLOW ME   
+
+Label_FollowMe:
+	GetBattleStyle()
+	JumpIfStoredEQ(single_battle, &deprioritizeBy10)
+	EndScript()
+
+
+
+
+
+
+
+
+
+
+
+//   TAUNT   
+
+Label_Taunt:
+	JumpIfHasCondition(defender, cond.taunt, &deprioritizeBy10)
+	EndScript()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//   HELPING HAND   
+
+Label_HelpingHand:
+	GetBattleStyle()
+	JumpIfStoredEQ(single_battle, &deprioritizeBy10)
+	EndScript()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//   TRICK   
+
+Label_Trick:
+	GetHeldItem(defender)
+	JumpIfStoredEQ(item.none, &deprioritizeBy10)
+	EndScript()
+
+
+
+
+
+
+
+
+//   KNOCK OFF   
+
+Label_KnockOff:
+	GetHeldItem(defender)
+	JumpIfStoredEQ(item.none, &endScript_19)
+	JumpIfRandGT(180, &prioritizeBy2)
+
+endScript_19:
+	EndScript()
+
+
+
+
+
+
+//   INGRAIN   
+
+Label_Ingrain:
+	JumpIfHasCondition(attacker, cond.ingrain, &deprioritizeBy10)
+	EndScript()
+
+
+
+
+
+
+
+
+
+
+
+//   RECYCLE   
+
+Label_Recycle:
+	GetUsedItem(attacker)
+	JumpIfStoredEQ(item.none, &deprioritizeBy10)
+	EndScript()
+
+
+
+
+
+
+
+
+
+
+//   IMPRISON   
+
+Label_Imprison:
+	JumpIfFieldEffectEQ(field_ef.imprison, &deprioritizeBy10)
+	EndScript()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//   REFRESH   
+
+Label_Refresh:
+	JumpIfHasCondition(attacker, cond.poison, &endScript_20)
+	JumpIfBadlyPoisoned(attacker, &endScript_20)
+	JumpIfHasCondition(attacker, cond.paralysis, &endScript_20)
+	JumpIfHasCondition(attacker, cond.burn, &endScript_20)
+	Jump(&deprioritizeBy10)
+
+endScript_20:
+	EndScript()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//   MUD SPORT   
+
+Label_0x13EC:
+	JumpIfFieldEffectEQ(field_ef.mud_sport, &deprioritizeBy10)
+	EndScript()
+
+
+
+
+
+
+
+
+//   TICKLE   
+
+Label_Tickle:
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.contrary, &deprioritizeBy12)
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.mold_breaker, &Label_TickleStatChecks)
+	JumpIfStoredEQ(ability.turboblaze, &Label_TickleStatChecks)
+	JumpIfStoredEQ(ability.teravolt, &Label_TickleStatChecks)
+	GetHeldItem(attacker)
+	JumpIfStoredNE(item.ability_drill, &Label_TickleStatChecks)
+	JumpIfStoredNE(item.tera_drill, &Label_TickleStatChecks)
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.strong_body, &deprioritizeBy10)
+	JumpIfStoredEQ(ability.white_smoke, &deprioritizeBy10)
+	JumpIfStoredEQ(ability.magic_bounce, &deprioritizeBy12)
+	JumpIfStoredEQ(ability.hyper_cutter, &deprioritizeBy12)
+	JumpIfStoredEQ(ability.scrappy, &deprioritizeBy12)
+	JumpIfStoredEQ(ability.unaware, &deprioritizeBy12)
+	GetAbilityGuess(attacker)
+	
+
+Label_TickleStatChecks:
+	JumpIfStatStageEQ(defender, atk, -6, &deprioritizeBy10)
+	JumpIfStatStageEQ(defender, def, -6, &deprioritizeBy8)
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.unnerve, &endScript_Tickle)
+	JumpIfHeldItemEQ(defender, item.white_herb, &HighChanceToDeprioritizeBy10)
+
+endScript_Tickle:
+	EndScript()
+
+
+
+
+
+
+
+
+
+//   COSMIC POWER   
+
+Label_CosmicPower:
+	JumpIfStatStageEQ(attacker, def, +6, &deprioritizeBy10)
+	JumpIfStatStageEQ(attacker, spd, +6, &deprioritizeBy8)
+	EndScript()
+
+
+
+
+
+
+
+
+
+
+
+//   BULK UP   
+
+Label_BulkUp:
+	JumpIfStatStageEQ(attacker, atk, +6, &deprioritizeBy10)
+	JumpIfStatStageEQ(attacker, def, +6, &deprioritizeBy8)
+	EndScript()
+
+
+
+
+
+
+
+
+
+
+
+//   WATER SPORT   
+
+Label_WaterSport:
+	JumpIfFieldEffectEQ(field_ef.water_sport, &deprioritizeBy10)
+	EndScript()
+
+
+
+
+
+
+
+
+
+
+
+
+
+//   CALM MIND   
+
+Label_CalmMind:
+	JumpIfStatStageEQ(attacker, spa, +6, &deprioritizeBy10)
+	JumpIfStatStageEQ(attacker, spd, +6, &deprioritizeBy8)
+	EndScript()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//   DRAGON DANCE   
+
+Label_DragonDance:
+	JumpIfFieldEffectEQ(field_ef.trick_room, &deprioritizeBy10)
+	JumpIfStatStageEQ(attacker, atk, +6, &deprioritizeBy10)
+	JumpIfStatStageEQ(attacker, spe, +6, &deprioritizeBy8)
+	EndScript()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//   CAMOUFLAGE  
+
+Label_Camouflage:
+	EndScript()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//   GRAVITY   
+
+Label_Gravity:
+	JumpIfFieldEffectEQ(field_ef.gravity, &deprioritizeBy10)
+	EndScript()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//   MIRACLE EYE   
+
+Label_MiracleEye:
+	JumpIfHasCondition(defender, cond.foresight, &deprioritizeBy10)
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.mold_breaker, &endScript_21)
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.magic_bounce, &deprioritizeBy12)
+
+endScript_21:
+	EndScript()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//   HEALING WISH   
+
+Label_HealingWish:
+	AddToScore(-20)
+	GetPartyReserveCount(attacker)
+	JumpIfStoredEQ(0, &deprioritizeBy10)
+	JumpIfPartyHasStatus(cond.paralysis, &endScript_22)
+	JumpIfPartyHasDamage(attacker, &endScript_22)
+	EndScript()
+
+endScript_22:
+	AddToScore(10)
+	EndScript()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//   NATURAL GIFT   
+
+Label_NaturalGift:
+	GetHeldItem(attacker)
+	JumpIfStoredIsNotInList(&array_Berries, &deprioritizeBy10)
+	JumpIfEffectivenessEQ(0x, &deprioritizeBy10)
+	EndScript()
+
+
+array_Berries:
+	item.cheri_berry
+	item.chesto_berry
+	item.pecha_berry
+	item.rawst_berry
+	item.aspear_berry
+	item.leppa_berry
+	item.oran_berry
+	item.persim_berry
+	item.lum_berry
+	item.sitrus_berry
+	item.figy_berry
+	item.mago_berry
+	item.iapapa_berry
+	item.razz_berry
+	item.bluk_berry
+	item.nanab_berry
+	item.wepear_berry
+	item.pinap_berry
+	item.pomeg_berry
+	item.kelpsy_berry
+	item.qualot_berry
+	item.hondew_berry
+	item.grepa_berry
+	item.tamato_berry
+	item.cornn_berry
+	item.magost_berry
+	item.rabuta_berry
+	item.nomel_berry
+	item.spelon_berry
+	item.pamtre_berry
+	item.watmel_berry
+	item.durin_berry
+	item.belue_berry
+	item.occa_berry
+	item.passho_berry
+	item.wacan_berry
+	item.rindo_berry
+	item.yache_berry
+	item.chople_berry
+	item.kebia_berry
+	item.shuca_berry
+	item.coba_berry
+	item.payapa_berry
+	item.tanga_berry
+	item.charti_berry
+	item.kasib_berry
+	item.haban_berry
+	item.colbur_berry
+	item.babiri_berry
+	item.chilan_berry
+	item.liechi_berry
+	item.ganlon_berry
+	item.salac_berry
+	item.petaya_berry
+	item.apicot_berry
+	item.roseli_berry
+	item.starf_berry
+	item.enigma_berry
+	item.micle_berry
+	item.custap_berry
+	item.jaboca_berry
+	item.rowap_berry
+	item.kee_berry
+	item.maranga_berry
+	END
+
+array_StatBerries:
+	item.liechi_berry
+	item.ganlon_berry
+	item.salac_berry
+	item.petaya_berry
+	item.apicot_berry
+	item.roseli_berry
+	item.starf_berry
+	item.kee_berry
+	item.maranga_berry
+	END
+
+
+
+
+
+
+
+
+
+
+
+
+//   TAILWIND   
+
+Label_Tailwind:
+	JumpIfFieldEffectEQ(field_ef.trick_room, &deprioritizeBy8)
+	JumpIfHasSideCondition(attacker, side_cond.tailwind, &deprioritizeBy10)
+	GetBattleStyle()
+	JumpIfStoredEQ(single_battle, &endScript_23)
+	JumpIfRandGT(200, &prioritizeBy2)
+
+endScript_23:
+	EndScript()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//   ACUPRESSURE   
+
+Label_Acupressure:
+	JumpIfStatStageEQ(attacker, atk, +6, &deprioritizeBy10)
+	JumpIfStatStageEQ(attacker, def, +6, &deprioritizeBy10)
+	JumpIfStatStageEQ(attacker, spe, +6, &deprioritizeBy10)
+	JumpIfStatStageEQ(attacker, spa, +6, &deprioritizeBy10)
+	JumpIfStatStageEQ(attacker, spd, +6, &deprioritizeBy10)
+	JumpIfStatStageEQ(attacker, eva, +6, &deprioritizeBy10)
+	JumpIfStatStageEQ(attacker, acc, +6, &deprioritizeBy10)
+	EndScript()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//   METAL BURST   
+
+Label_MetalBurst:
+	JumpIfEffectivenessEQ(0x, &deprioritizeBy10)
+	GetHeldItemEffect(defender)
+	JumpIfStoredEQ(item_ef.move_last, &deprioritizeBy10)
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.sturdy, &endScript_24)
+	GetHeldItemEffect(attacker)
+	JumpIfStoredEQ(item_ef.move_last, &endScript_24)
+
+endScript_24:
+	EndScript()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//   EMBARGO   
+
+Label_Embargo:
+	JumpIfHasCondition(defender, cond.embargo, &deprioritizeBy10)
+	GetUsedItem(defender)
+	JumpIfStoredEQ(item.none, &endScript_25)
+	GetBattleType()
+	JumpIfStoredEQ(net_multi_vs_ai, &deprioritizeBy10)
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.mold_breaker, &endScript_25)
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.magic_bounce, &deprioritizeBy12)
+
+endScript_25:
+	EndScript()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//   FLING   
+
+Label_Fling:
+	JumpIfEffectivenessEQ(0x, &deprioritizeBy10)
+	GetFlingPower(attacker_type1)
+	JumpIfStoredLT(10, &deprioritizeBy10)
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.multitype, &deprioritizeBy10)
+	GetHeldItemEffect(attacker)
+	JumpIfStoredIsInList(&items_poison, &Label_FlingToxicOrb)
+	JumpIfStoredIsInList(&items_fire, &Label_FlingBurningItem)
+	JumpIfStoredIsInList(&items_paralysis, &Label_FlingParalyzeItem)
+	EndScript()
+
+
+Label_FlingToxicOrb:
+	JumpIfHasSideCondition(defender, side_cond.safeguard, &Label_FlingToxicOrbAttackerChecks)
+	JumpIfHasSideCondition(defender, side_cond.mist, &Label_FlingToxicOrbAttackerChecks)
+	JumpIfHasAnyStatus(defender, &Label_FlingToxicOrbAttackerChecks)
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.poison_heal, &Label_FlingToxicOrbAttackerChecks)
+	GetType(defender_type1)
+	JumpIfStoredEQ(type.poison, &Label_FlingToxicOrbAttackerChecks)
+	JumpIfStoredEQ(type.steel, &Label_FlingToxicOrbAttackerChecks)
+	GetType(defender_type2)
+	JumpIfStoredEQ(type.poison, &Label_FlingToxicOrbAttackerChecks)
+	JumpIfStoredEQ(type.steel, &Label_FlingToxicOrbAttackerChecks)
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.toxic_boost, &Label_FlingToxicOrbAttackerChecks)
+	JumpIfStoredEQ(ability.poison_heal, &Label_FlingToxicOrbAttackerChecks)
+	JumpIfStoredEQ(ability.magic_guard, &Label_FlingToxicOrbAttackerChecks)
+	JumpIfStoredEQ(ability.guts, &Label_FlingToxicOrbAttackerChecks)
+	EndScript()
+
+
+Label_FlingToxicOrbAttackerChecks:
+	JumpIfHasSideCondition(attacker, side_cond.safeguard, &deprioritizeBy5)
+	JumpIfHasSideCondition(attacker, side_cond.mist, &deprioritizeBy5)
+	JumpIfHasAnyStatus(attacker, &deprioritizeBy5)
+	GetType(attacker_type1)
+	JumpIfStoredEQ(type.poison, &deprioritizeBy5)
+	JumpIfStoredEQ(type.steel, &deprioritizeBy5)
+	GetType(attacker_type2)
+	JumpIfStoredEQ(type.poison, &deprioritizeBy5)
+	JumpIfStoredEQ(type.steel, &deprioritizeBy5)
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.toxic_boost, &deprioritizeBy5)
+	JumpIfStoredEQ(ability.poison_heal, &deprioritizeBy5)
+	JumpIfStoredEQ(ability.magic_guard, &deprioritizeBy5)
+	JumpIfStoredEQ(ability.guts, &deprioritizeBy5)
+	EndScript()
+
+
+Label_FlingBurningItem:
+	JumpIfHasSideCondition(defender, side_cond.safeguard, &Label_FlingBurningItemAttackerChecks)
+	JumpIfHasSideCondition(defender, side_cond.mist, &Label_FlingBurningItemAttackerChecks)
+	JumpIfHasAnyStatus(defender, &Label_FlingBurningItemAttackerChecks)
+	GetType(defender_type1)
+	JumpIfStoredEQ(type.fire, &Label_FlingBurningItemAttackerChecks)
+	GetType(defender_type2)
+	JumpIfStoredEQ(type.fire, &Label_FlingBurningItemAttackerChecks)
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.heatproof, &Label_FlingBurningItemAttackerChecks)
+	JumpIfStoredEQ(ability.magic_guard, &Label_FlingBurningItemAttackerChecks)
+	JumpIfStoredEQ(ability.flare_boost, &Label_FlingBurningItemAttackerChecks)
+	JumpIfStoredEQ(ability.guts, &Label_FlingBurningItemAttackerChecks)
+	JumpIfStoredEQ(ability.rain_dish, &Label_FlingBurningItemAttackerChecks)
+	JumpIfHeldItemEQ(defender, item.lum_berry, &HighChanceToDeprioritizeBy10)
+	JumpIfHeldItemEQ(defender, item.pecha_berry, &HighChanceToDeprioritizeBy10)
+	EndScript()
+
+
+Label_FlingBurningItemAttackerChecks:
+	JumpIfHasSideCondition(attacker, side_cond.safeguard, &deprioritizeBy5)
+	JumpIfHasAnyStatus(attacker, &deprioritizeBy5)
+	GetType(attacker_type1)
+	JumpIfStoredEQ(type.fire, &deprioritizeBy5)
+	GetType(attacker_type2)
+	JumpIfStoredEQ(type.fire, &deprioritizeBy5)
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.heatproof, &deprioritizeBy5)
+	JumpIfStoredEQ(ability.magic_guard, &deprioritizeBy5)
+	JumpIfStoredEQ(ability.flare_boost, &deprioritizeBy5)
+	JumpIfStoredEQ(ability.guts, &deprioritizeBy5)
+	JumpIfHeldItemEQ(defender, item.lum_berry, &HighChanceToDeprioritizeBy10)
+	JumpIfHeldItemEQ(defender, item.rawst_berry, &HighChanceToDeprioritizeBy10)
+	EndScript()
+
+
+Label_FlingParalyzeItem:
+	JumpIfHasSideCondition(defender, side_cond.safeguard, &deprioritizeBy5)
+	JumpIfHasSideCondition(defender, side_cond.mist, &deprioritizeBy5)
+	JumpIfHasAnyStatus(defender, &deprioritizeBy5)
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.marvel_scale, &deprioritizeBy5)
+	JumpIfStoredEQ(ability.quick_feet, &deprioritizeBy5)
+	JumpIfHeldItemEQ(defender, item.lum_berry, &HighChanceToDeprioritizeBy10)
+	JumpIfHeldItemEQ(defender, item.cheri_berry, &HighChanceToDeprioritizeBy10)
+	EndScript()
+
+
+items_poison:
+	item_ef.toxic_orb
+	item_ef.increase_poison
+	END
+
+items_fire:
+	item_ef.flame_orb
+	END
+
+items_paralysis:
+	item_ef.light_ball
+	END
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//   PSYCHO SHIFT   
+
+Label_PsychoShift:
+	JumpIfHasNoStatus(attacker, &deprioritizeBy10)
+	JumpIfHasAnyStatus(defender, &deprioritizeBy10)
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.mold_breaker, &Label_PsychoShiftStatusChecks)
+	JumpIfStoredEQ(ability.turboblaze, &Label_PsychoShiftStatusChecks)
+	JumpIfStoredEQ(ability.teravolt, &Label_PsychoShiftStatusChecks)
+	GetHeldItem(attacker)
+	JumpIfStoredNE(item.ability_drill, &Label_PsychoShiftStatusChecks)
+	JumpIfStoredNE(item.tera_drill, &Label_PsychoShiftStatusChecks)
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.magic_bounce, &deprioritizeBy10)
+
+Label_PsychoShiftStatusChecks:
+	JumpIfHasSideCondition(defender, side_cond.safeguard, &deprioritizeBy10)
+	JumpIfHasSideCondition(defender, side_cond.mist, &deprioritizeBy10)
+	JumpIfHasCondition(attacker, cond.poison, &Label_PsychoShiftPoison)
+	JumpIfBadlyPoisoned(attacker, &Label_PsychoShiftPoison)
+	JumpIfHasCondition(attacker, cond.burn, &Label_PsychoShiftBurn)
+	JumpIfHasCondition(attacker, cond.paralysis, &Label_PsychoShiftParalysis)
+	Jump(&endScript_26)
+
+Label_PsychoShiftPoison:
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.poison_heal, &deprioritizeBy10)
+	GetType(defender_type1)
+	JumpIfStoredEQ(type.poison, &deprioritizeBy10)
+	JumpIfStoredEQ(type.steel, &deprioritizeBy10)
+	GetType(defender_type2)
+	JumpIfStoredEQ(type.poison, &deprioritizeBy10)
+	JumpIfStoredEQ(type.steel, &deprioritizeBy10)
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.toxic_boost, &deprioritizeBy10)
+	JumpIfStoredEQ(ability.poison_heal, &deprioritizeBy10)
+	JumpIfStoredEQ(ability.magic_guard, &deprioritizeBy10)
+	JumpIfHeldItemEQ(defender, item.lum_berry, &HighChanceToDeprioritizeBy10)
+	JumpIfHeldItemEQ(defender, item.pecha_berry, &HighChanceToDeprioritizeBy10)
+	Jump(&endScript_26)
+
+Label_PsychoShiftBurn:
+	GetType(defender_type1)
+	JumpIfStoredEQ(type.fire, &deprioritizeBy10)
+	GetType(defender_type2)
+	JumpIfStoredEQ(type.fire, &deprioritizeBy10)
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.magic_guard, &deprioritizeBy10)
+	JumpIfStoredEQ(ability.heatproof, &deprioritizeBy10)
+	JumpIfStoredEQ(ability.guts, &deprioritizeBy10)
+	JumpIfStoredEQ(ability.flare_boost, &deprioritizeBy10)
+	JumpIfStoredEQ(ability.rain_dish, &deprioritizeBy10)
+	JumpIfHeldItemEQ(defender, item.lum_berry, &HighChanceToDeprioritizeBy10)
+	JumpIfHeldItemEQ(defender, item.rawst_berry, &HighChanceToDeprioritizeBy10)
+	Jump(&endScript_26)
+
+Label_PsychoShiftParalysis:
+	JumpIfHeldItemEQ(defender, item.lum_berry, &HighChanceToDeprioritizeBy10)
+	JumpIfHeldItemEQ(defender, item.cheri_berry, &HighChanceToDeprioritizeBy10)
+
+endScript_26:
+	EndScript()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//   HEAL BLOCK   
+
+Label_HealBlock:
+	JumpIfHasCondition(defender, cond.heal_block, &deprioritizeBy10)
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.mold_breaker, &endScript_27)
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.magic_bounce, &deprioritizeBy12)
+
+endScript_27:
+	EndScript()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//   POWER TRICK   
+
+Label_PowerTrick:
+	JumpIfHasConditionFlag(attacker, cond_flag.power_trick, &deprioritizeBy10)
+	EndScript()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//   GASTRO ACID   
+
+Label_GastroAcid:
+	JumpIfHasCondition(defender, cond.gastro_acid, &deprioritizeBy10)
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.multitype, &deprioritizeBy10)
+	JumpIfStoredEQ(ability.truant, &deprioritizeBy10)
+	JumpIfStoredEQ(ability.defeatist, &deprioritizeBy10)
+	JumpIfStoredEQ(ability.slow_start, &deprioritizeBy10)
+	JumpIfStoredEQ(ability.stench, &deprioritizeBy10)
+	JumpIfStoredEQ(ability.honey_gather, &deprioritizeBy10)
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.poison_heal, &Label_PrioritizeGastroAcid)
+	JumpIfStoredEQ(ability.guts, &Label_PrioritizeGastroAcid)
+	JumpIfStoredEQ(ability.sheer_force, &Label_PrioritizeGastroAcid)
+	JumpIfStoredEQ(ability.adaptability, &Label_PrioritizeGastroAcid)
+	JumpIfStoredEQ(ability.huge_power, &Label_PrioritizeGastroAcid)
+	JumpIfStoredEQ(ability.pure_power, &Label_PrioritizeGastroAcid)
+	JumpIfStoredEQ(ability.storm_drain, &Label_PrioritizeGastroAcidWaterImmunities)
+	JumpIfStoredEQ(ability.water_absorb, &Label_PrioritizeGastroAcidWaterImmunities)
+	JumpIfStoredEQ(ability.dry_skin, &Label_PrioritizeGastroAcidWaterImmunities)
+	JumpIfStoredEQ(ability.flash_fire, &Label_PrioritizeGastroAcidFireImmunities)
+	JumpIfStoredEQ(ability.well_baked_body, &Label_PrioritizeGastroAcidFireImmunities)
+	JumpIfStoredEQ(ability.lightning_rod, &Label_PrioritizeGastroAcidElectricImmunities)
+	JumpIfStoredEQ(ability.volt_absorb, &Label_PrioritizeGastroAcidElectricImmunities)
+	JumpIfStoredEQ(ability.thunder_armor, &Label_PrioritizeGastroAcidElectricImmunities)
+	JumpIfStoredEQ(ability.motor_drive, &Label_PrioritizeGastroAcidElectricImmunities)
+	JumpIfStoredEQ(ability.levitate, &Label_PrioritizeGastroAcidGroundImmunities)
+	JumpIfStoredEQ(ability.sap_sipper, &Label_PrioritizeGastroAcidGrassImmunities)
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.mold_breaker, &endScript_28)
+	JumpIfStoredEQ(ability.turboblaze, &endScript_28)
+	JumpIfStoredEQ(ability.teravolt, &endScript_28)
+	GetHeldItem(attacker)
+	JumpIfStoredNE(item.ability_drill, &endScript_28)
+	JumpIfStoredNE(item.tera_drill, &endScript_28)
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.magic_bounce, &deprioritizeBy12)
+	Jump(&endScript_28)
+
+Label_PrioritizeGastroAcidWaterImmunities:
+	GetType(attacker_type1)
+	JumpIfStoredEQ(type.water, &Label_PrioritizeGastroAcid)
+	GetType(attacker_type2)
+	JumpIfStoredEQ(type.water, &Label_PrioritizeGastroAcid)
+	Jump(&endScript_28)
+
+Label_PrioritizeGastroAcidGroundImmunities:
+	GetType(attacker_type1)
+	JumpIfStoredEQ(type.ground, &Label_PrioritizeGastroAcid)
+	GetType(attacker_type2)
+	JumpIfStoredEQ(type.ground, &Label_PrioritizeGastroAcid)
+	Jump(&endScript_28)
+
+Label_PrioritizeGastroAcidFireImmunities:
+	GetType(attacker_type1)
+	JumpIfStoredEQ(type.fire, &Label_PrioritizeGastroAcid)
+	GetType(attacker_type2)
+	JumpIfStoredEQ(type.fire, &Label_PrioritizeGastroAcid)
+	Jump(&endScript_28)
+
+Label_PrioritizeGastroAcidElectricImmunities:
+	GetType(attacker_type1)
+	JumpIfStoredEQ(type.electric, &Label_PrioritizeGastroAcid)
+	GetType(attacker_type2)
+	JumpIfStoredEQ(type.electric, &Label_PrioritizeGastroAcid)
+	Jump(&endScript_28)
+
+Label_PrioritizeGastroAcidGrassImmunities:
+	GetType(attacker_type1)
+	JumpIfStoredEQ(type.grass, &Label_PrioritizeGastroAcid)
+	GetType(attacker_type2)
+	JumpIfStoredEQ(type.grass, &Label_PrioritizeGastroAcid)
+	Jump(&endScript_28)
+
+Label_PrioritizeGastroAcid:
+	JumpIfRandGT(100, &endScript_28);
+	AddToScore(2)
+
+endScript_28:
+	EndScript()
+
+
+
+
+
+
+
+
+
+//   LUCKY CHANT   
+
+Label_LuckyChant:
+	JumpIfHasSideCondition(attacker, side_cond.lucky_chant, &deprioritizeBy10)
+	EndScript()
+
+
+
+
+
+
+
+
+
+//   COPYCAT   
+
+Label_Copycat:
+	GetTurnCount()
+	JumpIfStoredNE(0, &endScript_29)
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.prankster, &endScript_29)
+	JumpCompareSpeed(GT, &endScript_29)
+	JumpCompareSpeed(LT, &deprioritizeBy10)
+
+endScript_29:
+	EndScript()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//   POWER SWAP   
+
+Label_PowerSwap:
+	GetStatDiff(defender, atk)
+	JumpIfStoredLT(1, &Label_PowerSwap2)
+	Jump(&endScript_30)
+
+Label_PowerSwap2:
+	GetStatDiff(defender, spa)
+	JumpIfStoredLT(1, &deprioritizeBy10)
+
+endScript_30:
+	EndScript()
+
+
+
+
+//   GUARD SWAP   
+
+Label_0x1C9A:
+	GetStatDiff(defender, def)
+	JumpIfStoredLT(1, &address_0x1CB4)
+	Jump(&address_0x1CC8)
+
+address_0x1CB4:
+	GetStatDiff(defender, spd)
+	JumpIfStoredLT(1, &deprioritizeBy10)
+
+address_0x1CC8:
+	EndScript()
+
+
+
+
+
+
+
+
+
+
+
+
+//   LAST RESORT   
+
+Label_LastResort:
+	JumpIfCanUseLastResort(attacker, &endScript_31)
+	AddToScore(-10)
+
+endScript_31:
+	EndScript()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//   WORRY SEED   
+
+Label_WorrySeed:
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.truant, &deprioritizeBy10)
+	JumpIfStoredEQ(ability.defeatist, &deprioritizeBy10)
+	JumpIfStoredEQ(ability.thunder_armor, &deprioritizeBy10)
+	JumpIfStoredEQ(ability.vital_spirit, &deprioritizeBy10)
+	JumpIfStoredEQ(ability.multitype, &deprioritizeBy10)
+	JumpIfNotCondition(defender, cond_flag.charge, &endScript_32)
+	JumpIfHasMove(defender, move.sleep_talk, &endScript_32)
+	JumpIfHasMove(defender, move.snore, &endScript_32)
+	AddToScore(-10)
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.mold_breaker, &endScript_32)
+	JumpIfStoredEQ(ability.turboblaze, &endScript_32)
+	JumpIfStoredEQ(ability.teravolt, &endScript_32)
+	GetHeldItem(attacker)
+	JumpIfStoredNE(item.ability_drill, &endScript_32)
+	JumpIfStoredNE(item.tera_drill, &endScript_32)
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.magic_bounce, &deprioritizeBy12)
+
+endScript_32:
+	EndScript()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//   TOXIC SPIKES   
+
+Label_ToxicSpikes:
+	GetSideStatusLevel(defender, side_cond.toxic_spikes)
+	JumpIfStoredEQ(2, &deprioritizeBy10)
+	GetPartyReserveCount(defender)
+	JumpIfStoredEQ(0, &deprioritizeBy10)
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.mold_breaker, &endScript_33)
+	JumpIfStoredEQ(ability.turboblaze, &endScript_33)
+	JumpIfStoredEQ(ability.teravolt, &endScript_33)
+	GetHeldItem(attacker)
+	JumpIfStoredNE(item.ability_drill, &endScript_33)
+	JumpIfStoredNE(item.tera_drill, &endScript_33)
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.magic_bounce, &deprioritizeBy12)
+
+endScript_33:
+	EndScript()
+
+
+
+
+
+
+
+
+
+
+//   AQUA RING   
+
+Label_AquaRing:
+	JumpIfHasCondition(attacker, cond.aqua_ring, &deprioritizeBy10)
+	EndScript()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//   MAGNET RISE   
+
+Label_MagnetRise:
+	JumpIfHasCondition(attacker, cond.floating, &deprioritizeBy10)
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.levitate, &deprioritizeBy10)
+	GetType(attacker_type1)
+	JumpIfStoredEQ(type.flying, &deprioritizeBy10)
+	GetType(attacker_type2)
+	JumpIfStoredEQ(type.flying, &deprioritizeBy10)
+	EndScript()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//   DEFOG   
+
+Label_Defog:
+	JumpIfStatStageNE(defender, eva, -6, &endScript_34)
+	JumpIfHasSideCondition(defender, side_cond.light_screen, &endScript_34)
+	JumpIfHasSideCondition(defender, side_cond.reflect, &endScript_34)
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.mold_breaker, &Label_DefogCheck2)
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.magic_bounce, &deprioritizeBy12)
+
+Label_DefogCheck2:
+	GetWeather()
+	JumpIfStoredEQ(weather.none, &endScript_34)
+	GetPartyReserveCount(defender)
+	JumpIfStoredEQ(0, &deprioritizeBy10)
+	JumpIfHasSideCondition(defender, side_cond.spikes, &endScript_34)
+	JumpIfHasSideCondition(defender, side_cond.stealth_rock, &endScript_34)
+	JumpIfHasSideCondition(defender, side_cond.toxic_spikes, &endScript_34)
+	Jump(&deprioritizeBy10)
+
+endScript_34:
+	EndScript()
+
+
+
+
+
+
+
+
+
+
+
+
+
+//   TRICK ROOM   
+
+Label_TrickRoom:
+	JumpCompareSpeed(LT, &deprioritizeBy10)
+	JumpCompareSpeed(EQ, &deprioritizeBy10)
+	EndScript()
+
+
+
+
+
+
+
+
+
+
+
+//   CAPTIVATE   
+
+Label_Captivate:
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.contrary, &deprioritizeBy12)
+	JumpIfStoredEQ(ability.defiant, &deprioritizeBy12)
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.mold_breaker, &Label_CaptivateEndScript)
+	JumpIfStoredEQ(ability.turboblaze, &Label_CaptivateEndScript)
+	JumpIfStoredEQ(ability.teravolt, &Label_CaptivateEndScript)
+	GetHeldItem(attacker)
+	JumpIfStoredNE(item.ability_drill, &Label_CaptivateEndScript)
+	JumpIfStoredNE(item.tera_drill, &Label_CaptivateEndScript)
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.strong_body, &deprioritizeBy10)
+	JumpIfStoredEQ(ability.white_smoke, &deprioritizeBy10)
+	JumpIfStoredEQ(ability.magic_bounce, &deprioritizeBy12)
+	
+
+Label_CaptivateEndScript:
+	JumpIfHeldItemEQ(defender, item.white_herb, &HighChanceToDeprioritizeBy10)
+	JumpIfStatStageLT(defender, spa, -5, &deprioritizeBy10)
+	EndScript()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//   STEALTH ROCK   
+
+Label_StealthRock:
+	JumpIfHasSideCondition(defender, side_cond.stealth_rock, &deprioritizeBy10)
+	GetPartyReserveCount(defender)
+	JumpIfStoredEQ(0, &deprioritizeBy10)
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.mold_breaker, &endScript_35)
+	JumpIfStoredEQ(ability.teravolt, &endScript_35)
+	JumpIfStoredEQ(ability.turboblaze, &endScript_35)
+	GetHeldItem(attacker)
+	JumpIfStoredNE(item.ability_drill, &endScript_35)
+	JumpIfStoredNE(item.tera_drill, &endScript_35)
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.magic_bounce, &deprioritizeBy12)
+
+endScript_35:
+	EndScript()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//   LUNAR DANCE   
+
+Label_LunarDance:
+	AddToScore(-20)
+	GetPartyReserveCount(attacker)
+	JumpIfStoredEQ(0, &deprioritizeBy10)
+	JumpIfPartyHasDamage(attacker, &endScript_36)
+	JumpIfPartyHasStatus(cond.paralysis, &endScript_36)
+	JumpIfPartyHasReducedPP(attacker, &endScript_36)
+	Jump(&deprioritizeBy10)
+
+endScript_36:
+	EndScript()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//   HONE CLAWS   
+
+Label_HoneClaws:
+	GetAbilityGuess(attacker)
+	JumpIfStoredNE(ability.simple, &Label_AttackAccuracyCheck)
+	JumpIfStatStageGT(attacker, atk, +2, &deprioritizeBy10)
+	JumpIfStatStageGT(attacker, acc, +2, &deprioritizeBy8)
+
+Label_AttackAccuracyCheck:
+	JumpIfStatStageEQ(attacker, atk, +6, &deprioritizeBy10)
+	JumpIfStatStageEQ(attacker, acc, +6, &deprioritizeBy8)
+	EndScript()
+
+
+
+
+
+
+
+
+
+
+//   WIDE GUARD   
+
+Label_WideGuard:
+	GetBattleStyle()
+	JumpIfStoredEQ(single_battle, &deprioritizeBy10)
+	EndScript()
+
+
+
+
+
+
+
+
+
+
+Label_GuardSplit:
+	EndScript()
+
+
+Label_PowerSplit:
+	EndScript()
+
+
+Label_WonderRoom:
+	JumpIfFieldEffectEQ(field_ef.wonder_room, &deprioritizeBy10)
+	EndScript()
+
+
+Label_DamagePhysical:
+	EndScript()
+
+
+Label_Venoshock:
+	EndScript()
+
+
+Label_Automatize:
+	JumpIfStatStageEQ(attacker, spe, +6, &deprioritizeBy10)
+	EndScript()
+
+
+Label_Telekinesis:
+	JumpIfHasCondition(defender, cond.telekinesis, &deprioritizeBy10)
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.mold_breaker, &endScript_37)
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.magic_bounce, &deprioritizeBy12)
+
+endScript_37:
+	EndScript()
+
+
+Label_MagicRoom:
+	JumpIfFieldEffectEQ(field_ef.magic_room, &deprioritizeBy10)
+	EndScript()
+
+
+Label_SmackDown:
+	EndScript()
+
+
+Label_AlwaysCrit:
+	EndScript()
+
+
+Label_FlameBurst:
+	EndScript()
+
+
+Label_ShellSmash:
+	JumpIfStatStageEQ(attacker, atk, +6, &deprioritizeBy10)
+	JumpIfStatStageEQ(attacker, def, +6, &deprioritizeBy8)
+	JumpIfStatStageEQ(attacker, spe, +6, &deprioritizeBy6)
+	EndScript()
+
+
+Label_HeavySlam:
+	EndScript()
+
+
+Label_Synchronoise:
+	EndScript()
+
+
+Label_ElectroBall:
+	EndScript()
+
+
+Label_Soak:
+	GetType(defender_type1)
+	JumpIfStoredNE(type.water, &endScript_38)
+	GetType(defender_type2)
+	JumpIfStoredEQ(type.water, &deprioritizeBy10)
+
+endScript_38:
+	EndScript()
+
+
+Label_FlameCharge:
+	EndScript()
+
+
+Label_AcidSpray:
+	EndScript()
+
+
+Label_FoulPlay:
+	EndScript()
+
+
+Label_SimpleBeam:
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.multitype, &deprioritizeBy10)
+	JumpIfStoredEQ(ability.truant, &deprioritizeBy10)
+	JumpIfStoredEQ(ability.defeatist, &deprioritizeBy10)
+	JumpIfStoredEQ(ability.slow_start, &deprioritizeBy10)
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.mold_breaker, &endScript_39)
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.magic_bounce, &deprioritizeBy12)
+
+endScript_39:
+	EndScript()
+
+
+Label_Entrainment:
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.mold_breaker, &endScript_40)
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.magic_bounce, &deprioritizeBy12)
+
+endScript_40:
+	EndScript()
+
+
+Label_AfterYou:
+	GetBattleStyle()
+	JumpIfStoredEQ(single_battle, &deprioritizeBy10)
+	EndScript()
+
+
+Label_Round:
+	GetBattleStyle()
+	JumpIfStoredEQ(single_battle, &deprioritizeBy10)
+	EndScript()
+
+
+Label_0x219E:
+	EndScript()
+
+
+Label_0x21A0:
+	EndScript()
+
+
+Label_0x21A2:
+	EndScript()
+
+
+Label_0x21A4:
+	EndScript()
+
+
+Label_0x21A6:
+	EndScript()
+
+
+Label_AllySwitch:
+	GetBattleStyle()
+	JumpIfStoredEQ(single_battle, &deprioritizeBy10)
+	EndScript()
+
+
+Label_ActualShellSmash:
+	JumpIfStatStageEQ(attacker, atk, +6, &deprioritizeBy10)
+	JumpIfStatStageEQ(attacker, spa, +6, &deprioritizeBy8)
+	JumpIfStatStageEQ(attacker, spe, +6, &deprioritizeBy6)
+	EndScript()
+
+
+Label_0x21EE:
+	GetBattleStyle()
+	JumpIfStoredEQ(single_battle, &deprioritizeBy10)
+	EndScript()
+
+
+Label_0x21FC:
+	EndScript()
+
+
+Label_0x21FE:
+	EndScript()
+
+
+Label_ShiftGear:
+	JumpIfStatStageEQ(attacker, atk, +6, &deprioritizeBy10)
+	JumpIfStatStageEQ(attacker, spe, +6, &deprioritizeBy8)
+	EndScript()
+
+
+Label_0x2226:
+	EndScript()
+
+
+Label_0x2228:
+	EndScript()
+
+
+Label_Quash:
+	GetBattleStyle()
+	JumpIfStoredEQ(single_battle, &deprioritizeBy10)
+	EndScript()
+
+
+Label_Growth:
+	JumpIfStatStageEQ(attacker, atk, +6, &deprioritizeBy10)
+	JumpIfStatStageEQ(attacker, spa, +6, &deprioritizeBy8)
+	EndScript()
+
+
+Label_0x225E:
+	EndScript()
+
+
+Label_0x2260:
+	EndScript()
+
+
+Label_0x2262:
+	EndScript()
+
+
+Label_FinalGambit:
+	GetPartyReserveCount(attacker)
+	JumpIfStoredNE(0, &address_0x228A)
+	GetPartyReserveCount(defender)
+	JumpIfStoredNE(0, &deprioritizeBy10)
+	Jump(&deprioritizeBy1)
+
+address_0x228A:
+	EndScript()
+
+
+Label_0x228C:
+	EndScript()
+
+
+Label_Coil:
+	JumpIfStatStageEQ(attacker, atk, +6, &deprioritizeBy10)
+	JumpIfStatStageEQ(attacker, def, +6, &deprioritizeBy8)
+	JumpIfStatStageEQ(attacker, acc, +6, &deprioritizeBy6)
+	EndScript()
+
+
+Label_Bestow:
+	GetHeldItem(defender)
+	JumpIfStoredNE(item.none, &deprioritizeBy10)
+	GetBattleStyle()
+	JumpIfStoredEQ(single_battle, &deprioritizeBy10)
+	EndScript()
+
+
+Label_0x22E4:
+	EndScript()
+
+
+Label_0x22E6:
+	EndScript()
+
+
+Label_0x22E8:
+	EndScript()
+
+
+Label_WorkUp:
+	JumpIfStatStageEQ(attacker, atk, +6, &deprioritizeBy10)
+	JumpIfStatStageEQ(attacker, spa, +6, &deprioritizeBy8)
+	EndScript()
+
+
+Label_CottonGuard:
+	JumpIfStatStageEQ(attacker, def, +6, &deprioritizeBy10)
+	EndScript()
+
+
+Label_0x2324:
+	EndScript()
+
+
+Label_0x2326:
+	EndScript()
+
+
+Label_0x2328:
+	EndScript()
+
+
+Label_0x232A:
+	EndScript()
+
+
+Label_0x232C:
+	EndScript()
+
+
+prioritizeBy2:
+	AddToScore(2)
+	EndScript()
+
+deprioritizeBy1:
+	AddToScore(-1)
+	EndScript()
+
+	0x0004 [4]
+	0xFFFE [65534]
+	0xFFFF [65535]
+	0x004D [77]
+	0x0004 [4]
+	0xFFFD [65533]
+	0xFFFF [65535]
+	0x004D [77]
+
+deprioritizeBy5:
+	AddToScore(-5)
+	EndScript()
+
+
+deprioritizeBy6:
+	AddToScore(-6)
+	EndScript()
+
+
+deprioritizeBy8:
+	AddToScore(-8)
+	EndScript()
+
+
+deprioritizeBy10:
+	AddToScore(-10)
+	EndScript()
+
+HighChanceToDeprioritizeBy10:
+	JumpIfRandLT(230, &DeprioritizeEndScript)
+	AddToScore(-10)
+
+DeprioritizeEndScript:
+	EndScript()
+
+deprioritizeBy12:
+	AddToScore(-12)
+	EndScript()
+
+	0x0004 [4]
+	0xFFE2 [65506]
+	0xFFFF [65535]
+	0x004D [77]
+	0x0004 [4]
+	0x0001 [1]
+	0x0000 [0]
+	0x004D [77]
+	0x0004 [4]
+	0x0002 [2]
+	0x0000 [0]
+	0x004D [77]
+	0x0004 [4]
+	0x0003 [3]
+	0x0000 [0]
+	0x004D [77]
+	0x0004 [4]
+	0x0005 [5]
+	0x0000 [0]
+	0x004D [77]
+	0x0004 [4]
+	0x000A [10]
+	0x0000 [0]
+	0x004D [77]
+	0x0000 [0]

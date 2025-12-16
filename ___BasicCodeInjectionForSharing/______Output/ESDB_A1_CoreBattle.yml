@@ -97183,7 +97183,7 @@ Symbols:
   - Name: AI042_GuessAbility
     Segment: 0xe
     Address: 0x218066d
-  - Name: AI043_Nop
+  - Name: AI043_CheckEnemyDamageIntoAlly
     Segment: 0xe
     Address: 0x2180691
   - Name: AI044_GetMoveEffectiveness
@@ -97393,7 +97393,7 @@ Symbols:
   - Name: AI062_CheckEnemyDamageOutput_Debuffs
     Segment: 0xe
     Address: 0x2180b0d
-  - Name: AI063_Nop
+  - Name: AI063_CheckOwnDamageIntoAlly
     Segment: 0xe
     Address: 0x2180b15
   - Name: AI064_GetHeldItem

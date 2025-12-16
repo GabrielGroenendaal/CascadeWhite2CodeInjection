@@ -73,11 +73,11 @@ void Sequence5()
 	End();
 }
 
-/* TM15 Psycho Cut - Route 20 */
+/* TM63 Brutal Swing - Route 20 */
 void Sequence6()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 342);
+	SetVarEqVal(0x800C, 390);
 	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
@@ -133,12 +133,12 @@ void Sequence10()
 	End();
 }
 
-/* TM94 Rock Smash x3 - Pledge Grove */
+/* TM94 Rock Smash - Pledge Grove */
 void Sequence11()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 619);
-	SetVarEqVal(0x800D, 2);
+	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -193,19 +193,19 @@ void Sequence15()
 	End();
 }
 
-/* TM50 Water Pulse x3 - Virbank City */
+/* TM50 Water Pulse - Virbank City */
 void Sequence16()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 377);
-	SetVarEqVal(0x800D, 3);
+	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
 	End();
 }
 
-/* TM88 Pluck x3 - Virbank Complex (Outside)*/
+/* TM88 Pluck - Virbank Complex (Outside)*/
 void Sequence17()
 {
 	LockAll();
@@ -217,12 +217,14 @@ void Sequence17()
 	End();
 }
 
+
+// REMOVE THIS
 /* ROUTE 6 - TM23 Icy Wind (x3) */
 void Sequence18()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 350);
-	SetVarEqVal(0x800D, 3);
+	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -253,7 +255,7 @@ void Sequence20()
 	End();
 }
 
-/* TM95: Low Sweep - Virbank Complex (Inside) */
+/* TM95: Snarl - Virbank Complex (Inside) */
 void Sequence21()
 {
 	LockAll();
@@ -265,12 +267,12 @@ void Sequence21()
 	End();
 }
 
-/* CHARGESTONE CAVE 194 - Heart Scale (x2) */
+/* CHARGESTONE CAVE 194 - Heart Scale */
 void Sequence22()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 93);
-	SetVarEqVal(0x800D, 2);
+	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -370,7 +372,7 @@ void Sequence30()
 	End();
 }
 
-/* TM54 Breaking Swipe x 2 - Castelia Sewers */
+/* TM54 Breaking Swipe - Castelia Sewers */
 void Sequence31()
 {
 	LockAll();
@@ -405,12 +407,12 @@ void Sequence33()
 	End();
 }
 
-/* TM08: Dizzy Punch x5 - Route 16 */
+/* TM08: Dizzy Punch - Route 16 */
 void Sequence34()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 335);
-	SetVarEqVal(0x800D, 5);
+	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -538,12 +540,12 @@ void Sequence44()
 }
 
 
-/* RELIC PASSAGE WEST - TM91 Flash Cannon (x2) */
+/* RELIC PASSAGE WEST - TM91 Flash Cannon */
 void Sequence45()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 418);
-	SetVarEqVal(0x800D, 2);
+	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -642,11 +644,11 @@ void Sequence53()
 	End();
 }
 
-/* TM03 Psyshock - Desert Resort (Inside) */
+/* TM15 Psycho Cut - Desert Resort (Inside) */
 void Sequence54()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 330);
+	SetVarEqVal(0x800C, 342);
 	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
@@ -777,7 +779,7 @@ void Sequence65()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 346);
-	SetVarEqVal(0x800D, 3);
+	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -946,7 +948,7 @@ void Sequence79()
 	End();
 }
 
-/* MISTRALTON CAVE - TM07 Drain Punch (x1) */
+/* MISTRALTON CAVE - TM07 Drain Punch */
 void Sequence80()
 {
 	LockAll();
@@ -1024,12 +1026,12 @@ void Sequence86()
 	End();
 }
 
-/* Clay Tunnel - TM71: Stone Edge (x2) */
+/* Clay Tunnel - TM71: Rock Climb */
 void Sequence87()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 398);
-	SetVarEqVal(0x800D, 2);
+	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -1058,36 +1060,36 @@ void Sequence89()
 	End();
 }
 
-/* CHARGESTONE CAVE - TM66 Power Gem (x5 )*/
+/* CHARGESTONE CAVE - TM66 Power Gem*/
 void Sequence90()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 393);
-	SetVarEqVal(0x800D, 5);
+	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
 	End();
 }
 
-/* CHARGESTONE CAVE - TM93 Wild Charge (x3) */
+/* CHARGESTONE CAVE - TM72 Volt Switch */
 void Sequence91()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 618);
-	SetVarEqVal(0x800D, 3);
+	SetVarEqVal(0x800C, 399);
+	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
 	End();
 }
 
-/* CHARGESTONE CAVE - TM77 Bug Buzz (x3) */
+/* CHARGESTONE CAVE - TM77 Bug Buzz */
 void Sequence92()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 404);
-	SetVarEqVal(0x800D, 3);
+	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -1106,7 +1108,7 @@ void Sequence93()
 	End();
 }
 
-/* CHARGESTONE CAVE - TM36 Sludge Bomb (x1) */
+/* CHARGESTONE CAVE - TM36 Sludge Bomb */
 void Sequence94()
 {
 	LockAll();
@@ -1183,7 +1185,7 @@ void Sequence100()
 	UnlockAll();
 	End();
 }
-/* ROUTE 7 - TM51: Ally Switch (x1) */
+/* ROUTE 7 - TM51: Ally Switch  */
 void Sequence101()
 {
 	LockAll();
@@ -1195,19 +1197,19 @@ void Sequence101()
 	End();
 }
 
-/* ROUTE 7 - TM32 Dazzling Gleam (x3) */
+/* ROUTE 7 - TM32 Dazzling Gleam */
 void Sequence102()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 359);
-	SetVarEqVal(0x800D, 3);
+	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
 	End();
 }
 
-/* ROUTE 7 - TM89: U-Turn (x1) */
+/* ROUTE 7 - TM89: U-Turn */
 void Sequence103()
 {
 	LockAll();
@@ -1219,11 +1221,11 @@ void Sequence103()
 	End();
 }
 
-/* ROUTE 7 - TM43: Heat Wave (x1) */
+/* ROUTE 7 - TM03: Psyshock */
 void Sequence104()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 370);
+	SetVarEqVal(0x800C, 330);
 	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
@@ -1231,19 +1233,19 @@ void Sequence104()
 	End();
 }
 
-/* CELESTIAL ROOFTOP - Petaya Berry (x3) */
+/* CELESTIAL ROOFTOP - Petaya Berry (x5) */
 void Sequence105()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 204);
-	SetVarEqVal(0x800D, 3);
+	SetVarEqVal(0x800D, 5);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
 	End();
 }
 
-/* CELESTIAL TOWER - TM61 Will o WIsp (x1) */
+/* CELESTIAL TOWER - TM61 Will o WIsp */
 void Sequence106()
 {
 	LockAll();
@@ -1255,12 +1257,12 @@ void Sequence106()
 	End();
 }
 
-/* CELESTIAL TOWER - TM29 Psychic (x2) */
+/* CELESTIAL TOWER - TM29 Psychic */
 void Sequence107()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 359);
-	SetVarEqVal(0x800D, 2);
+	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -1279,7 +1281,7 @@ void Sequence108()
 	End();
 }
 
-/* CELESTIAL TOWER - Heart Scale (x2) */
+/* CELESTIAL TOWER - Heart Scale */
 void Sequence109()
 {
 	LockAll();
@@ -1291,10 +1293,11 @@ void Sequence109()
 	End();
 }
 
+/* CELESTIAL TOWER - SHADOW BALL */
 void Sequence110()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 82);
+	SetVarEqVal(0x800C, 357);
 	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
@@ -3417,11 +3420,11 @@ void Sequence301()
 	End();
 }
 
-/* TM31 Brick Break - Route 4 */
+/* TM27 Return - Route 4 */
 void Sequence302()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 358);
+	SetVarEqVal(0x800C, 354);
 	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
@@ -3733,7 +3736,7 @@ void Sequence329()
 	End();
 }
 
-/* Normal Gem x1 - Virbank Complex (Inside) */
+/* Normal Gem x2 - Virbank Complex (Inside) */
 void Sequence330()
 {
 	LockAll();
@@ -3773,8 +3776,8 @@ void Sequence332()
 void Sequence333()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 351);
-	SetVarEqVal(0x800D, 2);
+	SetVarEqVal(0x800C, 416);
+	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -4045,17 +4048,18 @@ void Sequence355()
 	End();
 }
 
-/* RELIC CASTLE - TM30 Shadow Ball (x2) */
+/* RELIC CASTLE - TM37 Hex */
 void Sequence356()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 357);
-	SetVarEqVal(0x800D, 2);
+	SetVarEqVal(0x800C, 364);
+	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
 	End();
 }
+
 
 /* Red Shard x 20 - Driftveil City */
 void Sequence357()
@@ -4659,4 +4663,3 @@ void Routine3()
 	SetVarEqVal(0x8010, 0);
 	Return();
 }
-

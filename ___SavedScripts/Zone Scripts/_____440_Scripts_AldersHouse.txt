@@ -133,7 +133,7 @@ public class MainEvents {
 		Message.ActorEx(1024, 46, 2, 0, 0);
 		Input.LastKeyWait();
 		Message.CloseAll();
-		Global2805(394, 2);
+		Global2805(344, 1);
 		Message.ActorEx(1024, 13, 2, 0, 0);
 		Input.LastKeyWait();
 		Message.CloseAll();

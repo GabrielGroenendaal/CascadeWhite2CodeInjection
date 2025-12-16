@@ -85,7 +85,7 @@ extern "C"
                   PML_PersonalGetParam(bw2, Personal_SPD) +
                   PML_PersonalGetParam(bw2, Personal_SPE);
 
-        k::Printf("\nThe total bst calculated is %d\n", bst);
+       // k::Printf("\nThe total bst calculated is %d\n", bst);
 
         if (bst < 400)
         {
@@ -290,19 +290,21 @@ extern "C"
         HandlerParam_Message *v7;          // r4
         int SubID;                         // r0
         BattleMon *BattleMon;
-        
+
         if ((int)a3 == BattleEventVar_GetValue(VAR_MON_ID))
         {
             BattleMon = Handler_GetBattleMon(a2, (int)a3);
-            if (BattleMon_AreStatsLowered(BattleMon)){
-                v6 = (HandlerParam_RestoreStatStage*)BattleHandler_PushWork(a2, EFFECT_RESTORESTATSTAGE, (int)a3);
+            if (BattleMon_AreStatsLowered(BattleMon))
+            {
+                v6 = (HandlerParam_RestoreStatStage *)BattleHandler_PushWork(a2, EFFECT_RESTORESTATSTAGE, (int)a3);
                 v6->monID = (int)a3;
                 BattleHandler_PopWork(a2, v6);
             }
-            if(getOverheatByte(BattleMon)){
+            if (getOverheatByte(BattleMon))
+            {
                 setOverheatByte(BattleMon, 0);
             }
-            v7 = (HandlerParam_Message *) BattleHandler_PushWork(a2, EFFECT_MESSAGE, (int)a3);
+            v7 = (HandlerParam_Message *)BattleHandler_PushWork(a2, EFFECT_MESSAGE, (int)a3);
             BattleHandler_StrSetup(&v7->str, 2u, 1010);
             BattleHandler_AddArg(&v7->str, (int)a3);
             SubID = BattleEventItem_GetSubID(a1);
@@ -330,12 +332,11 @@ extern "C"
     //     switchout[pokemonSlot] = 0;
     // }
 
-
     void HandlerEjectPackStatCheck(BattleEventItem *item, ServerFlow *serverFlow, u32 pokemonSlot, u32 *work)
     {
 
         // k::Printf("\n\n====HandlerEjectPackStatCheck=====\nThe Pokemon Slot is %d\nThe VAR Mon ID is %d\nThe work is %d\nThe volume is %d\nThe flowResult is %d", pokemonSlot, BattleEventVar_GetValue(VAR_MON_ID), work[0], BattleEventVar_GetValue(VAR_VOLUME), serverFlow->flowResult);
-        if (pokemonSlot == BattleEventVar_GetValue(VAR_MON_ID) && BattleEventVar_GetValue(VAR_VOLUME) < 0 )
+        if (pokemonSlot == BattleEventVar_GetValue(VAR_MON_ID) && BattleEventVar_GetValue(VAR_VOLUME) < 0)
         {
             // k::Printf("\nRESULT: The Eject Pack Should Trigger\n\n");
             // switchout[pokemonSlot] = 1;
@@ -357,7 +358,8 @@ extern "C"
                 ItemEvent_PushRun(item, serverFlow, pokemonSlot);
             }
         }
-        if (pokemonSlot == BattleEventVar_GetValue(VAR_MON_ID) && getOverheatByte(Handler_GetBattleMon(serverFlow, pokemonSlot))){
+        if (pokemonSlot == BattleEventVar_GetValue(VAR_MON_ID) && getOverheatByte(Handler_GetBattleMon(serverFlow, pokemonSlot)))
+        {
             setOverheatByte(Handler_GetBattleMon(serverFlow, pokemonSlot), 0);
             if (Handler_GetFightEnableBenchPokeNum(serverFlow, pokemonSlot) && Handler_CheckReservedMemberChangeAction(serverFlow))
             {
@@ -1246,7 +1248,7 @@ extern "C"
         {
             PokeParam = Handler_GetBattleMon(a2, a3);
 
-            k::Printf("\n\nThe pokemon's sex is %d\n\n", PokeParam->Sex);
+           // k::Printf("\n\nThe pokemon's sex is %d\n\n", PokeParam->Sex);
             v1 = (HandlerParam_Damage *)BattleHandler_PushWork(a2, EFFECT_DAMAGE, a3);
             v1->pokeID = a3;
             v1->damage = BattleMon_GetValue(PokeParam, VALUE_CURRENT_HP) - 1;
@@ -1276,58 +1278,103 @@ extern "C"
        --------------------------------------------------------------------------------------------------
 
     */
+        // void HandlerStaticOrb(BattleEventItem *a1, ServerFlow *a2, unsigned int *a3)
+        // {
+        //     HandlerParam_AddCondition *v6; // r4
+        //     int SubID;                     // r0
+        //     if ((int)a3 == BattleEventVar_GetValue(VAR_MON_ID))
+        //     {
+        //         v6 = (HandlerParam_AddCondition *)BattleHandler_PushWork(a2, EFFECT_ADDCONDITION, (int)a3);
+        //         v6->sickID = CONDITION_PARALYSIS;
+        //         v6->sickCont = MakeBasicStatus(CONDITION_PARALYSIS);
+        //         v6->fAlmost = 0;
+        //         v6->pokeID = (int)a3;
+        //         v6->exStr.args[0] = BattleEventItem_GetSubID(a1);
+        //         BattleHandler_StrSetup(&v6->exStr, 2u, 273);
+        //         BattleHandler_AddArg(&v6->exStr, (int)a3);
+        //         BattleHandler_PopWork(a2, v6);
+        //     }
+        // }
+        // void HandlerStaticOrbWild(BattleEventItem *a1, ServerFlow *a2, int a3)
+        // {
+        //     HandlerParam_AddCondition *v6; // r4
+        //     int SubID;                     // r0
+        //     if (a3 == BattleEventVar_GetValue(VAR_MON_ID) && checkIfWildBattle(a2))
+        //     {
+        //         v6 = (HandlerParam_AddCondition *)BattleHandler_PushWork(a2, EFFECT_ADDCONDITION, a3);
+        //         v6->sickID = CONDITION_PARALYSIS;
+        //         v6->sickCont = MakeBasicStatus(CONDITION_PARALYSIS);
+        //         v6->fAlmost = 0;
+        //         v6->pokeID = a3;
+        //         v6->exStr.args[0] = BattleEventItem_GetSubID(a1);
+        //         BattleHandler_StrSetup(&v6->exStr, 2u, 273);
+        //         BattleHandler_AddArg(&v6->exStr, a3);
+        //         BattleHandler_PopWork(a2, v6);
+        //     }
+        // }
+        // ITEM_TRIGGERTABLE StaticOrbHandlers[] = {
+        //     {EVENT_TURN_CHECK_END, (ITEM_HANDLER_FUNC)HandlerStaticOrb},
+        //     {EVENT_SWITCH_IN, (ITEM_HANDLER_FUNC)HandlerStaticOrbWild},
+        //     {EVENT_USE_ITEM_TEMP, (ITEM_HANDLER_FUNC)HandlerLightBallUseTemp},
+        //     {EVENT_SKIP_RUN_CALC, (ITEM_HANDLER_FUNC)HandlerSmokeBall},
+        //     {EVENT_RUN_EXIT_MESSAGE, (ITEM_HANDLER_FUNC)HandlerSmokeBallMessage}
+        // };
+        // ITEM_TRIGGERTABLE *THUMB_BRANCH_EventAddAmuletCoin(_DWORD *a1)
+        // {
+        //     *a1 = 5;
+        //     return StaticOrbHandlers;
+        // }
 
-    void HandlerStaticOrb(BattleEventItem *a1, ServerFlow *a2, unsigned int *a3)
+    
+    /*
+
+       --------------------------------------------------------------------------------------------------
+       -------------------------------------- ABILITY DRILL ---------------------------------------------
+       --------------------------------------------------------------------------------------------------
+
+    */
+
+    void HandlerAbilityDrillSwitchIn(int a1, ServerFlow *a2, int a3)
     {
-        HandlerParam_AddCondition *v6; // r4
-        int SubID;                     // r0
-
-        if ((int)a3 == BattleEventVar_GetValue(VAR_MON_ID))
+        HandlerParam_Message *v5; // r7
+        if (a3 == BattleEventVar_GetValue(VAR_MON_ID))
         {
-            v6 = (HandlerParam_AddCondition *)BattleHandler_PushWork(a2, EFFECT_ADDCONDITION, (int)a3);
-            v6->sickID = CONDITION_PARALYSIS;
-            v6->sickCont = MakeBasicStatus(CONDITION_PARALYSIS);
-            v6->fAlmost = 0;
-            v6->pokeID = (int)a3;
-            v6->exStr.args[0] = BattleEventItem_GetSubID(a1);
-            BattleHandler_StrSetup(&v6->exStr, 2u, 273);
-            BattleHandler_AddArg(&v6->exStr, (int)a3);
-            BattleHandler_PopWork(a2, v6);
+            v5 = (HandlerParam_Message*) BattleHandler_PushWork(a2, EFFECT_MESSAGE, a3);
+            BattleHandler_StrSetup(&v5->str, 2u, 1306);
+            BattleHandler_AddArg(&v5->str, a3);
+            BattleHandler_PopWork(a2, v5);
         }
     }
 
-    void HandlerStaticOrbWild(BattleEventItem *a1, ServerFlow *a2, int a3)
+    void HandlerAbilityDrillItemChange(BattleEventItem *a1, ServerFlow *a2, u8 a3, int *a4)
     {
-        HandlerParam_AddCondition *v6; // r4
-        int SubID;                     // r0
-
-        if (a3 == BattleEventVar_GetValue(VAR_MON_ID) && checkIfWildBattle(a2))
+        int result; // r4
+        if (a3 == BattleEventVar_GetValue(VAR_MON_ID))
         {
-            v6 = (HandlerParam_AddCondition *)BattleHandler_PushWork(a2, EFFECT_ADDCONDITION, a3);
-            v6->sickID = CONDITION_PARALYSIS;
-            v6->sickCont = MakeBasicStatus(CONDITION_PARALYSIS);
-            v6->fAlmost = 0;
-            v6->pokeID = a3;
-            v6->exStr.args[0] = BattleEventItem_GetSubID(a1);
-            BattleHandler_StrSetup(&v6->exStr, 2u, 273);
-            BattleHandler_AddArg(&v6->exStr, a3);
-            BattleHandler_PopWork(a2, v6);
+            result = *a4;
+            if (*a4 == 1)
+            {
+                BattleEventItem_DetachSkipCheckHandler(a1);
+                result = 0;
+                *a4 = 0;
+            }
         }
     }
 
-    ITEM_TRIGGERTABLE StaticOrbHandlers[] = {
-        {EVENT_TURN_CHECK_END, (ITEM_HANDLER_FUNC)HandlerStaticOrb},
-        {EVENT_SWITCH_IN, (ITEM_HANDLER_FUNC)HandlerStaticOrbWild},
-        {EVENT_USE_ITEM_TEMP, (ITEM_HANDLER_FUNC)HandlerLightBallUseTemp},
-        {EVENT_SKIP_RUN_CALC, (ITEM_HANDLER_FUNC)HandlerSmokeBall},
-        {EVENT_RUN_EXIT_MESSAGE, (ITEM_HANDLER_FUNC)HandlerSmokeBallMessage}};
+    ITEM_TRIGGERTABLE AbilityDrillHandlers[] = { // 24
+        {EVENT_SWITCH_IN, (ITEM_HANDLER_FUNC)HandlerAbilityDrillSwitchIn},
+        {EVENT_MOVE_SEQUENCE_START, (ITEM_HANDLER_FUNC)HandlerMoldBreakerStart},
+        {EVENT_MOVE_SEQUENCE_END, (ITEM_HANDLER_FUNC)HandlerMoldBreakerEnd},
+        {EVENT_HELD_ITEM_DECIDE, (ITEM_HANDLER_FUNC)HandlerAbilityDrillItemChange},
+    };
 
     ITEM_TRIGGERTABLE *THUMB_BRANCH_EventAddAmuletCoin(_DWORD *a1)
     {
-        *a1 = 5;
-        return StaticOrbHandlers;
+        *a1 = 4;
+        return AbilityDrillHandlers;
     }
 
+int a = 0x9A;
 #pragma endregion
 
     /*
@@ -2636,14 +2683,18 @@ extern "C"
 
     */
 
-    ITEM_TRIGGERTABLE TeraExpertBeltHandlers[] = {
-        {EVENT_MOVE_DAMAGE_PROCESSING_2, (ITEM_HANDLER_FUNC)HandlerAttackInsuranceUse}, // 24
-        {EVENT_BEFORE_ATTACKS, (ITEM_HANDLER_FUNC)HandlerTera}};
+    ITEM_TRIGGERTABLE TeraDrillHandlers[] = { // 24
+        {EVENT_SWITCH_IN, (ITEM_HANDLER_FUNC)HandlerAbilityDrillSwitchIn},
+        {EVENT_MOVE_SEQUENCE_START, (ITEM_HANDLER_FUNC)HandlerMoldBreakerStart},
+        {EVENT_MOVE_SEQUENCE_END, (ITEM_HANDLER_FUNC)HandlerMoldBreakerEnd},
+        {EVENT_HELD_ITEM_DECIDE, (ITEM_HANDLER_FUNC)HandlerAbilityDrillItemChange},
+        {EVENT_BEFORE_ATTACKS, (ITEM_HANDLER_FUNC)HandlerTera},
+    };
 
     ITEM_TRIGGERTABLE *THUMB_BRANCH_EventAddSpookyPlate(_DWORD *a1)
     {
-        *a1 = 2;
-        return TeraExpertBeltHandlers;
+        *a1 = 5;
+        return TeraDrillHandlers;
     }
 
     /*

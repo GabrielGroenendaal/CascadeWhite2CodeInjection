@@ -1,0 +1,44 @@
+AI60
+JumpIfUserWillTakeLowDamage_Setup()
+
+
+AI62
+JumpIfUserWillTakeLowDamage_Debuffs()
+
+
+AI72
+JumpIfUserWillFaint_Setup()
+
+
+AI102
+JumpIfUserAboutToWakeUp()
+
+
+AI103
+JumpIfUserIsSlowerThanAllEnemies()
+
+
+AI104
+JumpIfUserWillFaint_Priority()
+
+
+
+
+
+NEW
+
+JumpIfAIDoesLittleDamageToAlly()
+
+Will check to see the damage output into an ally Pokemon. We might be able to feed 
+in a specific health ratio to check for 
+
+
+
+JumpIfAllyTakesNegligibleDamageFromFoes()
+
+Will check to see if the foes opposing the target slot can see more than 60% damage into it.
+
+
+
+
+Change Own Tempo for Quick Draw in the ability names 

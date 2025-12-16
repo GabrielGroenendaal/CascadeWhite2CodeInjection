@@ -16,6 +16,7 @@ public abstract partial class ScriptArgType(string name)
     
     protected static uint FromErrorStr(string str)
     {
+        Console.WriteLine("the offending var is " + str);
         if (!str.StartsWith("ERROR [0x"))
             throw new Exception();
 
