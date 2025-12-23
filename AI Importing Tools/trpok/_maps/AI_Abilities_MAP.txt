@@ -1,0 +1,678 @@
+	Pokémon	Abil 1		Abil 2		Abil 3 (HA)		Abil 4 (AI Only)		Abil 5 (AI Only)		Abil 6 (AI Only)	
+
+
+
+1	Bulbasaur	Resilient		Overgrow		Thick Fat		Drought		Chlorophyll		Flower Gift	
+2	Ivysaur	Resilient		Overgrow		Thick Fat		Drought		Chlorophyll		Flower Gift	
+3	Venusaur	Resilient		Overgrow		Thick Fat		Drought		Chlorophyll		Flower Gift	
+4	Charmander	Flash Fire		Blaze		Tough Claws		Drought		Intimidate		Turboblaze	
+5	Charmeleon	Flash Fire		Blaze		Tough Claws		Drought		Intimidate		Turboblaze	
+6	Charizard	Levitate		Blaze		Tough Claws		Drought		Intimidate		Turboblaze	
+7	Squirtle	Shell Armor		Torrent		Rain Dish		Drizzle		Quick Draw		Ballistics	
+8	Wartortle	Shell Armor		Torrent		Rain Dish		Drizzle		Quick Draw		Ballistics	
+9	Blastoise	Shell Armor		Torrent		Determined		Drizzle		Quick Draw		Ballistics	
+10	Caterpie	Resilient		Keen Senses		Swarm		Anticipation		Serene Grace		Serene Grace	
+11	Metapod	Resilient		Battle Armor		Swarm		Anticipation		Serene Grace		Serene Grace	
+12	Butterfree	Keen Senses		Tenacity		Swarm		Anticipation		Serene Grace		Serene Grace	
+13	Weedle	Resilient		Poison Point		Swarm		Sniper		Anticipation		Anticipation	
+14	Kakuna	Resilient		Battle Armor		Swarm		Sniper		Anticipation		Anticipation	
+15	Beedrill	Levitate		Adaptability		Swarm		Sniper		Anticipation		Anticipation	
+16	Pidgey	No Guard		Quick Feet		Aerilate		Serene Grace		Serene Grace		Serene Grace	
+17	Pidgeotto	No Guard		Quick Feet		Aerilate		Serene Grace		Serene Grace		Serene Grace	
+18	Pidgeot	No Guard		Quick Feet		Aerilate		Serene Grace		Serene Grace		Serene Grace	
+19	Rattata	Adaptability		Guts		Guts		?		?		?	
+20	Raticate	Adaptability		Guts		Guts		?		?		?	
+21	Spearow	Intimidate		Defiant		Defiant		Sniper		Sniper		Sniper	
+22	Fearow	Intimidate		Hustle		Hustle		Sniper		Sniper		Sniper	
+23	Ekans	Intimidate		Sheer Force		Regenerator		Stakeout		Arena Trap		Stench	
+24	Arbok	Intimidate		Sheer Force		Regenerator		Stakeout		Arena Trap		Stench	
+172	Pichu	Thunder Armor		Static		Galvanize		Plus		Minus		Minus	
+25	Pikachu	Thunder Armor		Static		Galvanize		Plus		Minus		Minus	
+26	Raichu	Teravolt		Sheer Force		Galvanize		Plus		Minus		Minus	
+27	Sandshrew	Rough Skin		Sand Force		Sand Force		Sand Stream		Sand Veil  		Sand Veil  	
+28	Sandslash	Rough Skin		Sand Force		Sand Force		Sand Stream		Sand Veil  		Sand Veil  	
+29	Nidoran-F	Rivalry		Sheer Force		Thick Fat		Sand Stream		Sand Veil  		Anger Point	
+30	Nidorina	Rivalry		Sheer Force		Thick Fat		Sand Stream		Sand Veil  		Anger Point	
+31	Nidoqueen	Battle Armor		Sheer Force		Thick Fat		Sand Stream		Sand Veil  		Anger Point	
+32	Nidoran-M	Rivalry		Sheer Force		Exploit		Sand Stream		Sand Veil  		Anger Point	
+33	Nidorino	Rivalry		Sheer Force		Exploit		Sand Stream		Sand Veil  		Anger Point	
+34	Nidoking	Sturdy		Sheer Force		Exploit		Sand Stream		Sand Veil  		Anger Point	
+173	Cleffa	Magic Guard		Unaware		Friend Guard		Simple		Simple		Simple	
+35	Clefairy	Magic Guard		Unaware		Friend Guard		Simple		Simple		Simple	
+36	Clefable	Magic Guard		Unaware		Friend Guard		Simple		Simple		Simple	
+37	Vulpix	Flash Fire		Unnerve		Serene Grace		Drought		Illusion		Illusion	
+38	Ninetales	Flash Fire		Unnerve		Serene Grace		Drought		Illusion		Illusion	
+174	Igglybuff	Pixilate		Magic Bounce		Flare Boost		Moody		Fluffy		Simple	
+39	Jigglybuff	Pixilate		Magic Bounce		Flare Boost		Moody		Fluffy		Simple	
+40	Wigglytuff	Pixilate		Magic Bounce		Flare Boost		Moody		Fluffy		Simple	
+41	Zubat	Infiltrator		Keen Senses		Super Luck		Shadow Tag		Stakeout		Anticipation	
+42	Golbat	Infiltrator		Keen Senses		Super Luck		Shadow Tag		Stakeout		Anticipation	
+169	Crobat	Infiltrator		Keen Senses		Sniper		Shadow Tag		Stakeout		Anticipation	
+43	Oddish	Chlorophyll		Solar Power		Effect Spore		Stench		Effect Spore		Drought	
+44	Gloom	Chlorophyll		Solar Power		Effect Spore		Stench		Effect Spore		Drought	
+45	Vileplume	Chlorophyll		Solar Power		Merciless		Stench		Effect Spore		Drought	
+182	Bellossom	Chlorophyll		Hustle		Flower Gift		Effect Spore		Drought		Flower Gift	
+46	Paras	Dry Skin		Contagious		Tough Claws		Effect Spore		Stakeout		Shadow Tag	
+47	Parasect	Dry Skin		Contagious		Tough Claws		Effect Spore		Stakeout		Shadow Tag	
+48	Venonat	Poison Heal		Tenacity		Keen Senses		Anticipation		Anticipation		Anticipation	
+49	Venomoth	Poison Heal		Tenacity		Keen Senses		Anticipation		Anticipation		Anticipation	
+50	Diglett	Sand Force		Unnerve		Infiltrator		Stakeout		Arena Trap		Sand Veil	
+51	Dugtrio	Sand Force		Unnerve		Infiltrator		Stakeout		Arena Trap		Sand Veil	
+52	Meowth	Pickup		Technician		Exploit		Pickpocket		Anticipation		Anticipation	
+53	Persian	Pickup		Sniper		Exploit		Pickpocket		Anticipation		Anticipation	
+54	Psyduck	Swift Swim		Berserk		Cloud Nine		Drizzle		Anticipation		Trace	
+55	Golduck	Swift Swim		Determined		Tough Claws		Drizzle		Anticipation		Trace	
+56	Mankey	Defiant		Tenacity		Berserk		Hustle		Anger Point		Moody	
+57	Primeape	Defiant		Tenacity		Berserk		Hustle		Anger Point		Moody	
+58	Growlithe	Intimidate		Flash Fire		Justified		Drought		Drought		Drought	
+59	Arcanine	Intimidate		Determined		Justified		Drought		Drought		Drought	
+60	Poliwag	Water Absorb		Swift Swim		Torrent		Drizzle		Drizzle		Drizzle	
+61	Poliwhirl	Water Absorb		Swift Swim		Torrent		Drizzle		Drizzle		Drizzle	
+62	Poliwrath	Water Absorb		Swift Swim		Torrent		Drizzle		Drizzle		Drizzle	
+186	Politoed	Distracting		Water Absorb		Torrent		Drizzle		Drizzle		Drizzle	
+63	Abra	Magic Guard		Synchronize		Inner Focus		Anticipation		Illusion		Savant	
+64	Kadabra	Magic Guard		Synchronize		Inner Focus		Anticipation		Illusion		Savant	
+65	Alakazam	Magic Guard		Trace		Inner Focus		Anticipation		Illusion		Savant	
+66	Machop	Guts		No Guard		Strong Body		Mold Breaker		Mold Breaker		Mold Breaker	
+67	Machoke	Guts		No Guard		Strong Body		Mold Breaker		Mold Breaker		Mold Breaker	
+68	Machamp	Guts		No Guard		Strong Body		Mold Breaker		Mold Breaker		Mold Breaker	
+69	Bellsprout	Chlorophyll		Corrosion		No Guard		Stench		Stakeout		Arena Trap	
+70	Weepinbell	Chlorophyll		Corrosion		No Guard		Stench		Stakeout		Arena Trap	
+71	Victreebell	Chlorophyll		Corrosion		No Guard		Stench		Stakeout		Arena Trap	
+72	Tentacool	Merciless		Strong Body		Corrosion		Drizzle		Stakeout		Arena Trap	
+73	Tentacruel	Merciless		Strong Body		Corrosion		Drizzle		Stakeout		Arena Trap	
+74	Geodude	Sturdy		Determined		Solid Rock		Aftermath		Sand Stream		Sand Veil	
+75	Graveler	Sturdy		Determined		Solid Rock		Aftermath		Sand Stream		Sand Veil	
+76	Golem	Sturdy		Determined		Solid Rock		Aftermath		Sand Stream		Sand Veil	
+77	Ponyta	Flash Fire		Blaze		Run Away		Drought		Hustle		Serene Grace	
+78	Rapidash	Flash Fire		Majestic Ward		Run Away		Drought		Hustle		Serene Grace	
+79	Slowpoke	Rain Dish		Regenerator		Unaware		Drizzle		Simple		Simple	
+80	Slowbro	Shell Armor		Regenerator		Unaware		Drizzle		Simple		Simple	
+199	Slowking	Regenerator		Shell Armor		Inner Focus		Drizzle		Simple		Simple	
+81	Magnemite	Sturdy		Magnet Pull		Light Metal		Minus		Plus		Levitate	
+82	Magneton	Sturdy		Patient		Light Metal		Minus		Plus		Levitate	
+462	Magnezone	Sturdy		Patient		Light Metal		Minus		Plus		Levitate	
+83	Farfetch'd	Hyper Cutter		Rattled		Defiant		Quick Draw		Hustle		Hustle	
+84	Doduo	Run Away		Tough Claws		Sand Rush		Sand Stream		Moody		Sand Veil	
+85	Dodrio	Run Away		Tough Claws		Sand Rush		Sand Stream		Moody		Sand Veil	
+86	Seel	Keen Senses		Swift Swim		Lightning-Rod		Snow Warning		Slush Rush		Snow Cloak	
+87	Dewgong	Keen Senses		Swift Swim		Lightning-Rod		Snow Warning		Slush Rush		Snow Cloak	
+88	Grimer	Strong Body		Gooey		Water Absorb		Stench		Poison Touch		Poison Touch	
+89	Muk	Strong Body		Gooey		Water Absorb		Stench		Poison Touch		Poison Touch	
+90	Shellder	Shell Armor		Skill Link		Bulletproof		Quick Draw		Aftermath		Snow Warning	
+91	Cloyster	Shell Armor		Skill Link		Bulletproof		Quick Draw		Aftermath		Snow Warning	
+92	Gastly	Levitate		Unnerve		Neutralizing Gas		Shadow Tag		Illusion		Stench	
+93	Haunter	Levitate		Unnerve		Neutralizing Gas		Shadow Tag		Illusion		Stench	
+94	Gengar	Levitate		Unnerve		Neutralizing Gas		Shadow Tag		Illusion		Stench	
+95	Onix	Sturdy		Sand Force		Weak Armor		Sand Stream		Sand Rush		Sand Veil	
+209	Steelix	Sturdy		Sheer Force		Heatproof		Sand Stream		Sand Rush		Colossal	
+96	Drowzee	Bad Dreams		Merciless		Inner Focus		Shadow Tag		Illusion		Illusion	
+97	Hypno	Bad Dreams		Merciless		Inner Focus		Shadow Tag		Illusion		Illusion	
+98	Krabby	Shell Armor		Sheer Force		Sturdy		Drizzle		Drizzle		Drizzle	
+99	Kingler	Shell Armor		Sheer Force		Sturdy		Drizzle		Drizzle		Drizzle	
+100	Voltorb	Reckless		Volt Absorb		Ballistics		Plus		Minus		Aftermath	
+101	Electrode	Reckless		Volt Absorb		Ballistics		Plus		Minus		Aftermath	
+102	Exeggcute	Chlorophyll		Berserk		Gourmand		Moody		Aftermath		Overcoat	
+103	Exeggutor	Chlorophyll		Berserk		Gourmand		Moody		Aftermath		Overcoat	
+104	Cubone	Battle Armor		Sturdy		Justified		Quick Draw		Sand Stream		Overcoat	
+105	Marowak	Battle Armor		Sturdy		Justified		Quick Draw		Sand Stream		Overcoat	
+106	Hitmonlee	Reckless		Unburden		Quick Feet		Hustle		Strong Body		Strong Body	
+107	Hitmonchan	Iron Fist		Guts		Battle Armor		Hustle		Strong Body		Strong Body	
+237	Hitmontop	Intimidate		Technician		Speed Boost		Hustle		Strong Body		Strong Body	
+236	Tyrogue	Defiant		Justified		Hustle		Hustle		Strong Body		Strong Body	
+108	Lickitung	Regenerator		Gourmand		Cloud Nine		Stench		Stench		Stench	
+463	Lickilicky	Regenerator		Gourmand		Cloud Nine		Stench		Stench		Stench	
+109	Koffing	Levitate		Neutralizing Gas		Neutralizing Gas		Aftermath		Quick Draw		Stench	
+110	Weezing	Levitate		Neutralizing Gas		Neutralizing Gas		Aftermath		Quick Draw		Stench	
+111	Rhyhorn	Solid Rock		Determined		Sturdy		Sand Stream		Berserk		Berserk	
+112	Rhydon	Solid Rock		Determined		Sturdy		Sand Stream		Berserk		Berserk	
+464	Rhyperior	Solid Rock		Determined		Bulletproof		Sand Stream		Berserk		Berserk	
+440	Happiny	Natural Cure		Serene Grace		Healer		Huge Power		Huge Power		Huge Power	
+113	Chansey	Natural Cure		Serene Grace		Healer		Huge Power		Huge Power		Huge Power	
+242	Blissey	Natural Cure		Serene Grace		Healer		Huge Power		Huge Power		Huge Power	
+114	Tangela	Regenerator		Gooey		Overgrow		Chlorophyll		Thick Fat		Thick Fat	
+465	Tangrowth	Regenerator		Gooey		Overgrow		Chlorophyll		Thick Fat		Thick Fat	
+115	Kangaskhan	Scrappy		Tough Claws		Anger Point		Hustle		Hustle		Hustle	
+116	Horsea	Sniper		Marvel Scale		Swift Swim		Drizzle		Quick Draw		Serene Grace	
+117	Seadra	Sniper		Marvel Scale		Swift Swim		Drizzle		Quick Draw		Serene Grace	
+230	Kingdra	Sniper		Marvel Scale		Swift Swim		Drizzle		Quick Draw		Serene Grace	
+118	Goldeen	Motor Drive		Sap Sipper		Moisturize		Drizzle		Drizzle		Drizzle	
+119	Seaking	Motor Drive		Sap Sipper		Moisturize		Drizzle		Drizzle		Drizzle	
+120	Staryu	Illumination		Regenerator		Mold Breaker		Drizzle		Patient		Swift Swim	
+121	Starmie	Illumination		Regenerator		Mold Breaker		Drizzle		Patient		Swift Swim	
+439	Mime Jr.	Filter		Technician		Distracting		Savant		Moody		Illusion	
+122	Mr. Mime	Filter		Technician		Distracting		Savant		Moody		Illusion	
+123	Scyther	Technician		Swarm		Weak Armor		Strong Body		Sturdy		Sturdy	
+212	Scizor	Technician		Swarm		Light Metal		Strong Body		Sturdy		Sturdy	
+238	Smoochum	Majestic Ward		Dry Skin		Distracting		Snow Warning		Illusion		Snow Cloak	
+124	Jynx	Majestic Ward		Dry Skin		Distracting		Snow Warning		Illusion		Snow Cloak	
+239	Elekid	Static		Teravolt		Galvanize		Minus		Anger Point		Plus	
+125	Electabuzz	Static		Teravolt		Galvanize		Minus		Anger Point		Plus	
+466	Electivire	Motor Drive		Teravolt		Galvanize		Minus		Anger Point		Plus	
+240	Magby	No Guard		Turboblaze		Ballistics		Quick Draw		Drought		Aftermath	
+126	Magmar	No Guard		Turboblaze		Ballistics		Quick Draw		Drought		Aftermath	
+467	Magmortar	No Guard		Turboblaze		Ballistics		Quick Draw		Drought		Aftermath	
+127	Pinsir	Mold Breaker		Hyper Cutter		Sturdy		Sand Stream		Intimidate		Intimidate	
+128	Tauros	Intimidate		Sheer Force		Anger Point		Moody		Berserk		Hustle	
+129	Magikarp	Run Away		Rain Dish		Rain Dish		Berserk		Drizzle		Swift Swim	
+130	Gyarados	Intimidate		Mold Breaker		Mold Breaker		Berserk		Drizzle		Swift Swim	
+131	Lapras	Shell Armor		Ice Body		Refrigerate		Snow Warning		Snow Cloak		Filter	
+132	Ditto	Imposter		Imposter		Imposter		?		?		?	
+133	Eevee	Adaptability		Fluffy		Savant		Anticipation		Moody		Moody	
+134	Vaporeon	Water Absorb		Moisturize		Marvel Scale		Anticipation		Drizzle		Drizzle	
+135	Jolteon	Lightningrod		Galvanize		Tenacity		Anticipation		Plus		Minus	
+136	Flareon	Flash Fire		Guts		Fur Coat		Anticipation		Drought		Drought	
+196	Espeon	Chlorophyll		Magic Bounce		Solar Power		Anticipation		Illusion		Inner Focus	
+197	Umbreon	Patient		Magic Guard		Illumination		Anticipation		Stakeout		Illusion	
+470	Leafeon	Sap Sipper		Tenacity		Chlorophyll		Anticipation		Drought		Flower Gift	
+471	Glaceon	Permafrost		Majestic Ward		Slush Rush		Anticipation		Snow Warning		Snow Cloak	
+137	Porygon	Trace		Exploit		Normalize		Levitate		Levitate		Levitate	
+233	Porygon2	Trace		Exploit		Normalize		Levitate		Levitate		Levitate	
+474	Porygon-Z	Adaptability		Exploit		Normalize		Levitate		Levitate		Levitate	
+138	Omanyte	Shell Armor		Weak Armor		Rough Skin		Swift Swim		Sturdy		Sturdy	
+139	Omastar	Shell Armor		Weak Armor		Rough Skin		Swift Swim		Sturdy		Sturdy	
+140	Kabuto	Skill Link		Battle Armor		Swift Swim		?		?		?	
+141	Kabutops	Skill Link		Battle Armor		Swift Swim		?		?		?	
+142	Aerodactyl	Tough Claws		Unnerve		Determined		Sand Stream		Sand Veil		Intimidate	
+446	Munchlax	Thick Fat		Unaware		Scrappy		Normalize		Normalize		Normalize	
+143	Snorlax	Thick Fat		Unaware		Scrappy		Normalize		Normalize		Normalize	
+144	Articuno	Ice Body		Ice Body		Ice Body		Snow Warning		Snow Cloak		Snow Cloak	
+145	Moltres	Turboblaze		Turboblaze		Turboblaze		Drought		Drought		Drought	
+146	Zapdos	Lightningrod		Lightningrod		Lightningrod		Drizzle		Drizzle		Drizzle	
+147	Dratini	Marvel Scale		Shed Skin		Majestic Ward		?		?		?	
+148	Dragonair	Marvel Scale		Shed Skin		Majestic Ward		?		?		?	
+149	Dragonite	Marvel Scale		Resilient		Majestic Ward		?		?		?	
+150	Mewtwo	Inner Focus		Inner Focus		Inner Focus		Mold Breaker		Unnerve		Neutralizing Gas	
+151	Mew	Synchronize		Synchronize		Synchronize		Mold Breaker		Unnerve		Neutralizing Gas	
+152	Chikorita	Overgrow		Healer		Natural Cure		Flower Gift		Serene Grace		Serene Grace	
+153	Bayleef	Overgrow		Healer		Natural Cure		Flower Gift		Serene Grace		Serene Grace	
+154	Meganium	Overgrow		Healer		Flower Gift		Flower Gift		Serene Grace		Serene Grace	
+155	Cyndaquil	Blaze		Flash Fire		Turboblaze		Drought		Sand Stream		Sand Rush	
+156	Quilava	Blaze		Flash Fire		Turboblaze		Drought		Sand Stream		Sand Rush	
+157	Typhlosion	Blaze		Flash Fire		Turboblaze		Drought		Sand Stream		Sand Rush	
+158	Totodile	Torrent		Rough Skin		Sheer Force		Drizzle		Stakeout		Intimidate	
+159	Croconaw	Torrent		Rough Skin		Sheer Force		Drizzle		Stakeout		Intimidate	
+160	Feraligatr	Torrent		Rough Skin		Sheer Force		Drizzle		Stakeout		Intimidate	
+161	Sentret	Adaptability		Run Away		Scrappy		Stakeout		Stakeout		Stakeout	
+162	Furret	Adaptability		Run Away		Scrappy		Stakeout		Stakeout		Stakeout	
+163	Hoothoot	Keen Senses		Overcoat		Tenacity		Stakeout		Illusion		Shadow Tag	
+164	Noctowl	Keen Senses		Overcoat		Tenacity		Stakeout		Illusion		Shadow Tag	
+165	Ledyba	Iron Fist		Levitate		Rattled		?		?		?	
+166	Ledian	Iron Fist		Levitate		Rattled		?		?		?	
+167	Spinarak	Patient		Toxic Boost		Infiltrator		Stakeout		Arena Trap		Arena Trap	
+168	Ariados	Patient		Toxic Boost		Infiltrator		Stakeout		Arena Trap		Arena Trap	
+170	Chinchou	Illumination		Volt Absorb		Water Absorb		Drizzle		Minus		Plus	
+171	Lanturn	Illumination		Volt Absorb		Water Absorb		Drizzle		Minus		Plus	
+175	Togepi	Serene Grace		Friend Guard		Natural Cure		Healer		Healer		Healer	
+176	Togetic	Serene Grace		Friend Guard		Natural Cure		Healer		Healer		Healer	
+468	Togekiss	Serene Grace		Friend Guard		Natural Cure		Healer		Healer		Healer	
+177	Natu	Forewarn		Patient		Magic Bounce		Illusion		Trace		Trace	
+178	Xatu	Forewarn		Patient		Magic Bounce		Illusion		Trace		Trace	
+179	Mareep	Illumination		Static		Overcoat		Plus		Fluffy		Minus	
+180	Flaffy	Illumination		Static		Overcoat		Plus		Fluffy		Minus	
+181	Ampharos	Illumination		Mold Breaker		Overcoat		Plus		Fluffy		Minus	
+298	Azurill	Huge Power		Sap Sipper		Sap Sipper		?		?		?	
+183	Marill	Huge Power		Sap Sipper		Sap Sipper		?		?		?	
+184	Azumarill	Huge Power		Sap Sipper		Sap Sipper		?		?		?	
+438	Bonsly	Rattled		Prankster		Sap Sipper		Sand Stream		Stakeout		Hustle	
+185	Sudowoodo	Determined		Prankster		Sap Sipper		Sand Stream		Stakeout		Hustle	
+187	Hoppip	Prankster		Sap Sipper		Wind Rider		Drought		Simple		Hustle	
+188	Skiploom	Prankster		Sap Sipper		Wind Rider		Drought		Simple		Hustle	
+189	Jumpluff	Skill Link		Sap Sipper		Wind Rider		Drought		Simple		Hustle	
+190	Aipom	Technician		Speed Boost		Skill Link		?		?		?	
+424	Ambipom	Technician		Speed Boost		Skill Link		?		?		?	
+191	Sunkern	Flash Fire		Solar Power		Chlorophyll		Drought		Drought		Drought	
+192	Sunflora	Flash Fire		Solar Power		Chlorophyll		Drought		Drought		Drought	
+193	Yanma	Speed Boost		Tenacity		Keen Senses		?		?		?	
+469	Yanmega	Speed Boost		Tenacity		Keen Senses		?		?		?	
+194	Wooper	Water Absorb		Unaware		Gooey		Drizzle		Simple		Simple	
+195	Quagsire	Water Absorb		Unaware		Gooey		Drizzle		Simple		Simple	
+198	Murkrow	Distracting		Prankster		Pickpocket		Stakeout		Moxie		Moxie	
+430	Honchkrow	Distracting		Exploit		Pickpocket		Stakeout		Moxie		Moxie	
+200	Misdreavus	Levitate		Levitate		Levitate		Illusion		Shadow Tag		Shadow Tag	
+429	Mismagius	Levitate		Levitate		Levitate		Illusion		Shadow Tag		Shadow Tag	
+201	Unown	Levitate		Levitate		Levitate		Illusion		Shadow Tag		Shadow Tag	
+360	Wynaut	Regenerator		Regenerator		Regenerator		Shadow Tag		Shadow Tag		Shadow Tag	
+202	Wobbufett	Regenerator		Regenerator		Regenerator		Shadow Tag		Shadow Tag		Shadow Tag	
+203	Girafirig	Sap Sipper		Rattled		Quick Feet		Moody		Moody		Moody	
+204	Pineco	Battle Armor		Skill Link		Bulletproof		Aftermath		Quick Draw		Ballistics	
+205	Forretress	Battle Armor		Skill Link		Bulletproof		Aftermath		Quick Draw		Sturdy	
+206	Dunsparce	Serene Grace		Shed Skin		Run Away		Sand Stream		Sand Veil		Sand Veil	
+207	Gligar	Poison Heal		Tough Claws		Wind Rider		Sand Stream		Sand Veil		Sand Veil	
+472	Gliscor	Poison Heal		Tough Claws		Wind Rider		Sand Stream		Sand Veil		Sand Veil	
+209	Snubbul	Intimidate		Quick Feet		Hustle		Guts		Moody		Anger Point	
+210	Granbull	Intimidate		Quick Feet		Hustle		Guts		Moody		Anger Point	
+211	Qwilfish	Intimidate		Iron Barbs		Swift Swim		Drizzle		Aftermath		Quick Draw	
+213	Shuckle	Gourmand		Contrary		Shell Armor		Sand Stream		Moody		Moody	
+214	Heracross	Skill Link		Guts		Moxie		?		?		?	
+215	Sneasel	Skill Link		Pickpocket		Exploit		Technician		Snow Warning		Snow Cloak	
+461	Weavile	Skill Link		Pickpocket		Exploit		Technician		Snow Warning		Snow Cloak	
+216	Teddiursa	Guts		Quick Feet		Vital Spirit		Sand Stream		Hustle		Hustle	
+217	Ursaring	Guts		Quick Feet		Anger Point		Sand Stream		Hustle		Hustle	
+218	Slugma	Gooey		Solid Rock		Water Absorb		Aftermath		Dry Skin		Drought	
+219	Magcargo	Gooey		Solid Rock		Water Absorb		Aftermath		Dry Skin		Drought	
+220	Swinub	Thick Fat		Ice Body		Berserk		Snow Warning		Snow Cloak		Anger Point	
+221	Piloswine	Thick Fat		Ice Body		Berserk		Snow Warning		Snow Cloak		Anger Point	
+473	Mamoswine	Thick Fat		Ice Body		Berserk		Snow Warning		Snow Cloak		Anger Point	
+222	Corsola	Rough Skin		Regenerator		Water Absorb		Sand Stream		Dry Skin		Hustle	
+223	Remoraid	Adaptability		Sniper		Ballistics		Stakeout		Quick Draw		Moody	
+224	Octillery	Mold Breaker		Sniper		Ballistics		Stakeout		Quick Draw		Moody	
+225	Delibird	Pickup		Refrigerate		Permafrost		Levitate		Moody		Snow Cloak	
+458	Mantyke	Water Absorb		Rain Dish		Swift Swim		Drizzle		Drizzle		Drizzle	
+226	Mantine	Water Absorb		Rain Dish		Swift Swim		Drizzle		Drizzle		Drizzle	
+227	Skarmory	Tenacity		Weak Armor		Sturdy		Thunder Armor		Sand Veil		Sand Veil	
+228	Houndour	Berserk		Flash Fire		Unnerve		Turboblaze		Intimidate		Solar Power	
+229	Houndoom	Berserk		Flash Fire		Unnerve		Turboblaze		Intimidate		Solar Power	
+231	Phanpy	Battle Armor		Speed Boost		Pickup		Sand Stream		Sand Veil		Sturdy 	
+232	Donphan	Battle Armor		Speed Boost		Pickup		Sand Stream		Sand Veil		Sturdy 	
+234	Stantler	Unnerve		Sap Sipper		Slush Rush		Intimidate		Illusion		Shadow Tag	
+235	Smeargle	Savant		Savant		Savant		Moody		Moody		Moody	
+241	Miltank	Scrappy		Thick Fat		Healer		?		?		?	
+243	Raikou	Majestic Ward		Majestic Ward		Majestic Ward		?		?		?	
+244	Entei	Majestic Ward		Majestic Ward		Majestic Ward		?		?		?	
+245	Suicune	Majestic Ward		Majestic Ward		Majestic Ward		?		?		?	
+246	Larvitar	Guts		Battle Armor		Berserk		Sand Stream		Solid Rock		Solid Rock	
+247	Pupitar	Shed Skin		Battle Armor		Berserk		Sand Stream		Solid Rock		Solid Rock	
+248	Tyranitar	Guts		Battle Armor		Berserk		Sand Stream		Solid Rock		Solid Rock	
+249	Lugia	Majestic Ward		Majestic Ward		Majestic Ward		?		?		?	
+250	Ho-Oh	Majestic Ward		Majestic Ward		Regenerator		?		?		?	
+251	Celebi	Natural Cure		Natural Cure		Natural Cure		?		?		?	
+252	Treecko	Overgrow		Unburden		Technician		Anticipation		Sniper		Solar Power	
+253	Grovyle	Hyper Cutter		Unburden		Technician		Anticipation		Sniper		Solar Power	
+254	Sceptile	Hyper Cutter		Unburden		Exploit		Anticipation		Sniper		Solar Power	
+255	Torchic	Blaze		Quick Feet		Flash Fire		Speed Boost		Drought		Hustle	
+256	Combusken	Blaze		Quick Feet		Flash Fire		Speed Boost		Drought		Hustle	
+257	Blaziken	Blaze		Quick Feet		Determined		Speed Boost		Drought		Hustle	
+258	Mudkip	Torrent		Forewarn		Swift Swim		Drizzle		Sand Stream		Anticipation	
+259	Marshtomp	Torrent		Forewarn		Swift Swim		Drizzle		Sand Stream		Anticipation	
+260	Swampert	Sheer Force		Forewarn		Swift Swim		Drizzle		Sand Stream		Anticipation	
+261	Poochyena	Intimidate		Strong Jaw		Moxie		Stakeout		Stakeout		Stakeout	
+262	Mightyena	Intimidate		Strong Jaw		Moxie		Stakeout		Stakeout		Stakeout	
+263	Zigzagoon	Tough Claws		Pickup		Speed Boost 		?		?		?	
+264	Linoone	Tough Claws		Pickup		Speed Boost 		?		?		?	
+265	Wurmple	Poison Point		Resilient		Shed Skin		Anticipation		Anticipation		Anticipation	
+266	Silcoon	Battle Armor		Resilient		Shed Skin		Anticipation		Anticipation		Anticipation	
+267	Beautifly	Chlorophyll		Majestic Ward		Rivalry		Anticipation		Serene Grace		Serene Grace	
+268	Cascoon	Battle Armor		Resilient		Shed Skin		Anticipation		Anticipation		Anticipation	
+269	Dustox	Contagious		Merciless		Marvel Scale		Anticipation		Anticipation		Anticipation	
+270	Lotad	Swift Swim		Torrent		Rain Dish		Drizzle		Drizzle		Drizzle	
+271	Lombre	Swift Swim		Torrent		Rain Dish		Drizzle		Drizzle		Drizzle	
+272	Ludicolo	Swift Swim		Torrent		Distracting		Drizzle		Drizzle		Drizzle	
+273	Seedot	Sturdy		Shell Armor		Chlorophyll		Drought		Aftermath		Anticipation	
+274	Nuzleaf	Technician		Pickpocket		Chlorophyll		Drought		Aftermath		Anticipation	
+275	Shiftry	Wind Rider		Pickpocket		Chlorophyll		Drought		Aftermath		Anticipation	
+276	Tailow	Guts		Thunder Armor		Thunder Armor		?		?		?	
+277	Swellow	Guts		Thunder Armor		Thunder Armor		?		?		?	
+278	Wingull	Pickup		Torrent		Marvel Scale		Drizzle		Drizzle		Drizzle	
+279	Pelipper	Pickup		Torrent		Marvel Scale		Drizzle		Drizzle		Drizzle	
+280	Ralts	Trace		Synchronize		Pixilate		Illusion		Anticipation		Anticipation	
+281	Kirlia	Trace		Synchronize		Pixilate		Illusion		Anticipation		Anticipation	
+282	Gardevoir	Trace		Friend Guard		Pixilate		Illusion		Anticipation		Anticipation	
+475	Gallade	Hyper Cutter		Majestic Ward		Justified		Illusion		Friend Guard		Quick Draw	
+283	Surskit	Swift Swim		Rain Dish		Rain Dish		Drizzle		Drizzle		Drizzle	
+284	Masquerain	Intimidate		Distracting		Distracting		Drizzle		Drizzle		Drizzle	
+285	Shroomish	Technician		Poison Heal		Overgrow		Stench		Effect Spore		Effect Spore	
+286	Breloom	Technician		Poison Heal		Overgrow		Stench		Effect Spore		Effect Spore	
+287	Slakoth	Slow Start		Truant		Truant		Guts		Strong Body		Unaware	
+288	Vigoroth	Hustle		Vital Spirit		Vital Spirit		Guts		Strong Body		Unaware	
+289	Slaking	Slow Start		Truant		Truant		Guts		Strong Body		Unaware	
+290	Nincada	Keen Senses		Stakeout		Stakeout		Stakeout		Sniper		Sniper	
+291	Ninjask	Speed Boost		Infiltrator		Infiltrator		Stakeout		Sniper		Sniper	
+292	Shedinja	Sturdy		Magic Guard		Magic Guard		Stakeout		Sniper		Wonder Guard	
+293	Whismur	Scrappy		Amplifier		Rattled		Moody		Anger Point		Anger Point	
+294	Loudred	Scrappy		Amplifier		Berserk		Moody		Anger Point		Anger Point	
+295	Exploud	Scrappy		Amplifier		Berserk		Moody		Anger Point		Anger Point	
+296	Makuhita	Thick Fat		Sheer Force		Guts		Scrappy		Scrappy		Scrappy	
+297	Hariyama	Thick Fat		Sheer Force		Guts		Scrappy		Scrappy		Scrappy	
+299	Nosepass	Magnet Pull		Static		Sand Force		Sand Stream		Sand Stream		Sand Stream	
+476	Probopass	Levitate		Sturdy		Sand Force		Sand Stream		Sand Stream		Sand Stream	
+300	Skitty	Normalize		Hustle		Magic Guard		Moody		Fur Coat		Fur Coat	
+301	Delcatty	Normalize		Hustle		Magic Guard		Moody		Fur Coat		Fur Coat	
+302	Sableye	Magic Bounce		Hyper Cutter		Exploit		Stakeout		Shadow Tag		Shadow Tag	
+303	Mawile	Intimidate		Sheer Force		Distracting		Huge Power		Arena Trap		Arena Trap	
+304	Aron	Determined		Sturdy		Filter		?		?		?	
+305	Lairon	Determined		Sturdy		Filter		?		?		?	
+306	Aggron	Determined		Sturdy		Filter		?		?		?	
+307	Meditite	Huge Power		Huge Power		Huge Power		?		?		?	
+308	Medicham	Huge Power		Huge Power		Huge Power		?		?		?	
+309	Electrike	Intimidate		Static		Thunder Armor		Plus		Minus		Minus	
+310	Manectric	Intimidate		Strong Jaw		Thunder Armor		Plus		Minus		Minus	
+311	Plusle	Volt Absorb		Friend Guard		Friend Guard		Plus		Minus		Minus	
+312	Minun	Motor Drive		Distracting		Distracting		Minus		Plus		Plus	
+313	Volbeat	Illumination		Prankster		Magic Guard		Plus		Minus		Minus	
+314	Illumise	Tenacity		Pixilate		Magic Guard		Minus		Plus		Plus	
+406	Budew	Serene Grace		Natural Cure		Chlorophyll		?		?		?	
+315	Roselia	Serene Grace		Natural Cure		Chlorophyll		?		?		?	
+407	Roserade	Serene Grace		Majestic Ward		Chlorophyll		?		?		?	
+316	Gulpin	Gooey		Corrosion		Gourmand		Stench		Stench		Stench	
+317	Swalot	Gooey		Corrosion		Gourmand		Stench		Stench		Stench	
+318	Carvanha	Speed Boost		Strong Jaw		Unnerve		Drizzle		Drizzle		Drizzle	
+319	Sharpedo	Speed Boost		Strong Jaw		Unnerve		Drizzle		Drizzle		Drizzle	
+320	Wailmer	Moisturize		Moisturize		Moisturize		Drizzle		Drizzle		Drizzle	
+321	Wailord	Truant		Truant		Truant		Drizzle		Moisturize		Colossal	
+322	Numel	Sheer Force		Resilient		Solid Rock		Aftermath		Simple		Drought	
+323	Camerupt	Sheer Force		Resilient		Solid Rock		Aftermath		Simple		Drought	
+324	Torkoal	Shell Armor		Shell Armor		Shell Armor		Aftermath		Simple		Drought	
+325	Spoink	Hustle		Thick Fat		Magic Guard		Moody		Trace		Trace	
+326	Grumpig	Hustle		Thick Fat		Magic Guard		Moody		Trace		Trace	
+327	Spinda	Hustle		Contrary		Scrappy		Moody		Moody		Moody	
+328	Trapinch	Sheer Force		Hyper Cutter		Arena Trap		Sand Stream		Sand Rush		Sand Veil	
+329	Vibrava	Tenacity		Keen Senses		Amplifier		Sand Stream		Sand Rush		Sand Veil	
+330	Flygon	Tenacity		Keen Senses		Amplifier		Sand Stream		Sand Rush		Sand Veil	
+331	Cacnea	Water Absorb		Sand Rush		Sand Rush		Stakeout		Sand Veil		Sand Veil	
+332	Cacturne	Water Absorb		Sand Rush		Sand Rush		Stakeout		Sand Veil		Sand Veil	
+333	Swablu	Natural Cure		Pixilate		Cloud Nine		Fluffy		Overcoat		Overcoat	
+334	Altaria	Levitate		Pixilate		Cloud Nine		Fluffy		Overcoat		Overcoat	
+335	Zangoose	Toxic Boost		Poison Heal		Merciless		?		?		?	
+336	Seviper	Infiltrator		Strong Jaw		Exploit		?		?		?	
+337	Lunatone	Levitate		Solid Rock		Magic Bounce		Sand Stream		Wonder Guard		Wonder Guard	
+338	Solrock	Levitate		Solar Power		Chlorophyll		Drought		Wonder Guard		Wonder Guard	
+339	Barboach	Adaptability		Moisturize		Gourmand		Drizzle		Sand Stream		Sand Stream	
+340	Whiscash	Adaptability		Moisturize		Gourmand		Drizzle		Sand Stream		Sand Stream	
+341	Corphish	Adaptability		Shell Armor		Weak Armor		Drizzle		Drizzle		Drizzle	
+342	Crawdaunt	Adaptability		Shell Armor		Weak Armor		Drizzle		Drizzle		Drizzle	
+343	Baltoy	Levitate		Well-Baked Body		Heavy Metal		Sand Stream		Speed Boost		Arena Trap	
+344	Claydol	Levitate		Well-Baked Body		Heavy Metal		Sand Stream		Speed Boost		Arena Trap	
+345	Lileep	Storm Drain		Patient		Poison Heal		Sand Stream		Stakeout		Sand Veil	
+346	Cradily	Storm Drain		Patient		Poison Heal		Sand Stream		Stakeout		Sand Veil	
+347	Anorith	Battle Armor		Weak Armor		Water Absorb		Swift Swim		Sand Stream		Sand Veil	
+348	Armaldo	Battle Armor		Weak Armor		Water Absorb		Swift Swim		Sand Stream		Sand Veil	
+349	Feebas	Adaptability		Swift Swim		Rain Dish		Drizzle		Serene Grace		Serene Grace	
+350	Milotic	Shed Skin		Marvel Scale		Majestic Ward		Drizzle		Serene Grace		Serene Grace	
+351	Castform	Forecast		Aerilate		Cloud Nine		?		?		?	
+698	Castform-Rainy	Forecast		Rain Dish		Cloud Nine		?		?		?	
+699	Castform-Snowy	Forecast		Ice Body		Cloud Nine		?		?		?	
+697	Castform-Sunny	Forecast		Solar Power		Cloud Nine		?		?		?	
+352	Kecleon	Adaptability		Shed Skin		Savant		Shadow Tag		Anticipation		Illusion	
+353	Shuppet	Prankster		Hustle		Levitate		Shadow Tag		Anticipation		Illusion	
+354	Banette	Prankster		Hustle		Anger Point		Shadow Tag		Anticipation		Illusion	
+355	Duskull	Pressure		Levitate		Levitate		Shadow Tag		Anticipation		Illusion	
+356	Dusclops	Iron Fist		Cursed Body		Cursed Body		Shadow Tag		Anticipation		Illusion	
+477	Dusknoir	Patient		Forewarn		Forewarn		Shadow Tag		Anticipation		Illusion	
+357	Tropius	Overgrow		Gourmand		Chlorophyll		?		?		?	
+433	Chingling	Levitate		Pixilate		Pixilate		?		?		?	
+358	Chimecho	Levitate		Pixilate		Pixilate		?		?		?	
+359	Absol	Justified		Forewarn		Tough Claws		Anticipation		Stakeout		Sniper	
+361	Snorunt	Inner Focus		Ice Body		Rattled		Sturdy		Moody		Snow Warning	
+362	Glalie	Levitate		Refrigerate		Determined		Sturdy		Moody		Aftermath	
+478	Froslass	Levitate		Ice Body		Serene Grace		Snow Cloak		Snow Warning		Illusion	
+363	Spheal	Ice Body		Resilient		Thick Fat		Snow Warning		Snow Cloak		Fur Coat	
+364	Sealeo	Ice Body		Resilient		Thick Fat		Snow Warning		Snow Cloak		Fur Coat	
+365	Walrein	Ice Body		Resilient		Thick Fat		Snow Warning		Snow Cloak		Fur Coat	
+366	Clamperl	Shell Armor		Battle Armor		Torrent		Drizzle		Drizzle		Drizzle	
+367	Huntail	Illumination		Shell Armor		Volt Absorb		Drizzle		Swift Swim		Swift Swim	
+368	Gorebyss	Shell Armor		Corrosion		Majestic Ward		Drizzle		Swift Swim		Swift Swim	
+369	Relicanth	Battle Armor		Determined		Swift Swim		Sand Stream		Drizzle		Drizzle	
+370	Luvdisc	Friend Guard		Water Absorb		Swift Swim		Drizzle		Drizzle		Drizzle	
+371	Bagon	Sheer Force		Hustle		Determined		Moxie		Aerilate		Aerilate	
+372	Shelgon	Shell Armor		Strong Body		Solid Rock		Moxie		Aerilate		Aerilate	
+373	Salamence	Intimidate		Berserk		Determined		Moxie		Aerilate		Aerilate	
+374	Beldum	Tough Claws		Strong Body		Light Metal		Speed Boost		Heavy Metal		Heavy Metal	
+375	Metang	Tough Claws		Strong Body		Light Metal		Speed Boost		Heavy Metal		Heavy Metal	
+376	Metagross	Tough Claws		Strong Body		Light Metal		Speed Boost		Heavy Metal		Heavy Metal	
+377	Regirock	Regenerator		Regenerator		Solid Rock		?		?		?	
+378	Regice	Heatproof		Heatproof		Ice Body		?		?		?	
+379	Registeel	Well Baked Body		Well Baked Body		Heavy Metal		?		?		?	
+380	Latios	Levitate		Levitate		Levitate		?		?		?	
+381	Latias	Levitate		Levitate		Levitate		?		?		?	
+382	Kyogre	Drizzle		Drizzle		Drizzle		?		?		?	
+383	Groudon	Drought		Drought		Drought		?		?		?	
+384	Rayquaza	Cloud Nine		Cloud Nine		Cloud Nine		?		?		?	
+385	Jirachi	Serene Grace		Serene Grace		Serene Grace		?		?		?	
+386	Deoxys	Infiltrator		Infiltrator		Infiltrator		?		?		?	
+387	Turtwig	Shell Armor		Overgrow		Solid Rock		Sturdy		Thick Fat		Intimidate	
+388	Grotle	Shell Armor		Overgrow		Solid Rock		Sturdy		Thick Fat		Intimidate	
+389	Torterra	Shell Armor		Determined		Solid Rock		Sturdy		Thick Fat		Intimidate	
+390	Chimchar	Iron Fist		Blaze		Flame Body		Drought		Anticipation		Anticipation	
+391	Monferno	Iron Fist		Blaze		Flame Body		Drought		Anticipation		Anticipation	
+392	Infernape	Iron Fist		Blaze		Exploit		Drought		Anticipation		Anticipation	
+393	Piplup	Rivalry		Torrent		Slush Rush		Lightningrod		Drizzle		Snow Cloak	
+394	Prinplup	Rivalry		Torrent		Slush Rush		Lightningrod		Drizzle		Snow Cloak	
+395	Empoleon	Rivalry		Torrent		Slush Rush		Lightningrod		Drizzle		Snow Cloak	
+396	Starly	Intimidate		Reckless		Reckless		Hustle		Hustle		Hustle	
+397	Staravia	Intimidate		Reckless		Reckless		Hustle		Hustle		Hustle	
+398	Staraptor	Intimidate		Reckless		Reckless		Hustle		Hustle		Hustle	
+399	Bidoof	Huge Power		Huge Power		Huge Power		Simple		Simple		Simple	
+400	Bibarel	Huge Power		Huge Power		Huge Power		Simple		Simple		Simple	
+401	Kricketot	Amplifier		Technician		Savant		?		?		?	
+402	Kricketune	Amplifier		Technician		Savant		?		?		?	
+403	Shinx	Intimidate		Guts		Rivalry		Stakeout		Plus		Minus	
+404	Luxio	Intimidate		Guts		Rivalry		Stakeout		Plus		Minus	
+405	Luxray	Intimidate		Guts		Rivalry		Stakeout		Plus		Minus	
+408	Cranidos	Mold Breaker		Resilient		Sheer Force		Sand Stream		Sturdy		Sand Rush	
+409	Rampardos	Mold Breaker		Resilient		Sheer Force		Sand Stream		Sturdy		Sand Rush	
+410	Shieldon	Determined		Battle Armor		Bulletproof		Sand Stream		Sturdy		Solid Rock	
+411	Bastiodon	Determined		Battle Armor		Bulletproof		Sand Stream		Sturdy		Solid Rock	
+412	Burmy	Run Away		Swarm		Overcoat		Anticipation		Sturdy		Sturdy	
+413	Wormadam	Battle Armor		Battle Armor		Overcoat		Anticipation		Sturdy		Sturdy	
+688	Wormadam-Sandy	Battle Armor		Battle Armor		Overcoat		Anticipation		Sturdy		Sturdy	
+689	Wormadam-Trash	Battle Armor		Battle Armor		Overcoat		Anticipation		Sturdy		Sturdy	
+414	Mothim	Pickpocket		Tenacity		Wind Rider		Anticipation		Anticipation		Anticipation	
+415	Combee	Swarm		Friend Guard		Hustle		Intimidate		Intimidate		Intimidate	
+416	Vespiquen	Unnerve		Majestic Ward		Filter		Intimidate		Intimidate		Intimidate	
+417	Pachirisu	Prankster		Pickup		Run Away		Plus		Minus		Fur Coat	
+418	Buizel	Reckless		Technician		Swift Swim		Drizzle		Drizzle		Drizzle	
+419	Floatzel	Reckless		Technician		Swift Swim		Drizzle		Drizzle		Drizzle	
+420	Cherubi	Chlorophyll		Chlorophyll		Chlorophyll		?		?		?	
+421	Cherrim	Flower Gift		Flower Gift		Flower Gift		?		?		?	
+422	Shellos 	Storm Drain		Sand Force		Sand Force		Drizzle		Sand Stream		Sand Stream	
+423	Gastrodon	Storm Drain		Sand Force		Sand Force		Drizzle		Sand Stream		Sand Stream	
+652	Shellos-East	Sap Sipper		Gooey		Gooey		Drizzle		Sand Stream		Sand Stream	
+653	Gastrodon-East	Sap Sipper		Gooey		Gooey		Drizzle		Sand Stream		Sand Stream	
+425	Drifloon	Flare Boost		Unburden		Aerilate		Aftermath		Wind Rider		Lightning Rod	
+426	Drifblim	Flare Boost		Unburden		Aerilate		Aftermath		Wind Rider		Lightning Rod	
+427	Buneary	Scrappy		Hustle		Fluffy		Moody		Fluffy		Fluffy	
+428	Lopunny	Scrappy		Hustle		Fluffy		Moody		Fluffy		Fluffy	
+431	Glameow	Majestic Ward		Wonder Skin		Run Away		Moody		Anticipation		Anticipation	
+432	Purugly	Skill Link		Defiant		Thick Fat		Moody		Anticipation		Anticipation	
+434	Stunky	Flare Boost		Neutralizing Gas		Intimidate		Aftermath		Stench		Quick Draw	
+435	Skuntank	Flare Boost		Neutralizing Gas		Intimidate		Aftermath		Stench		Quick Draw	
+436	Bronzor	Levitate		Heatproof		Heavy Metal		Drizzle		Drizzle		Drizzle	
+437	Bronzong	Levitate		Heatproof		Heavy Metal		Drizzle		Drizzle		Drizzle	
+441	Chatot	Trace		Amplifier		Distracting		Moody		Moody		Moody	
+442	Spiritomb	Merciless		Infiltrator		Magic Guard		Illusion		Shadow Tag		Prankster	
+443	Gible	Rough Skin		Strong Body		Mold Breaker		Sand Veil		Sand Stream		Sand Force	
+444	Gabite	Rough Skin		Strong Body		Mold Breaker		Sand Veil		Sand Stream		Sand Force	
+445	Garchomp	Rough Skin		Strong Body		Mold Breaker		Sand Veil		Sand Stream		Sand Force	
+447	Riolu	Prankster		Scrappy		Adaptability		?		?		?	
+448	Lucario	Trace		Skill Link		Exploit		?		?		?	
+449	Hippopotas	Rough Skin		Strong Jaw		Intimidate		Sand Veil		Sand Stream		Sand Stream	
+450	Hippowdon	Rough Skin		Strong Jaw		Intimidate		Sand Veil		Sand Stream		Sand Stream	
+451	Skorupi	Battle Armor		Tough Claws		Sniper		?		?		?	
+452	Drapion	Battle Armor		Tough Claws		Sniper		?		?		?	
+453	Croagunk	Dry Skin		Exploit		Exploit		Swift Swim		Anticipation		Anticipation	
+454	Toxicroak	Dry Skin		Exploit		Exploit		Swift Swim		Anticipation		Anticipation	
+455	Carnivine	Levitate		Patient		Strong Jaw		Arena Trap		Stakeout		Stakeout	
+456	Finneon	Swift Swim		Illumination		Storm Drain		Drizzle		Drizzle		Drizzle	
+457	Lumineon	Swift Swim		Illumination		Storm Drain		Drizzle		Drizzle		Drizzle	
+459	Snover	Ice Body		Resilient		Filter		Snow Warning		Slush Rush		Snow Cloak	
+460	Abomasnow	Ice Body		Resilient		Filter		Snow Warning		Slush Rush		Snow Cloak	
+479	Rotom	Levitate		Galvanize		Galvanize		Illusion		Plus		Shadow Tag	
+695	Rotom-Fan	Motor Drive		Aerilate		Aerilate		Illusion		Plus		Shadow Tag	
+693	Rotom-Wash	Levitate		Moisturize		Moisturize		Illusion		Plus		Shadow Tag	
+694	Rotom-Frost	Levitate		Refrigerate		Refrigerate		Illusion		Plus		Shadow Tag	
+692	Rotom-Heat	Levitate		Turboblaze		Turboblaze		Illusion		Plus		Shadow Tag	
+696	Rotom-Mow	Levitate		Speed Boost		Speed Boost		Illusion		Plus		Shadow Tag	
+480	Uxie	Levitate		Levitate		Levitate		?		?		?	
+481	Mesprit	Levitate		Levitate		Levitate		?		?		?	
+482	Azelf	Levitate		Levitate		Levitate		?		?		?	
+483	Dialga	Patient		Patient		Patient		?		?		?	
+484	Palkia	Marvel Scale		Marvel Scale		Marvel Scale		?		?		?	
+485	Heatran	Flash Fire		Flash Fire		Flash Fire		?		?		?	
+486	Regigias	Slow Start		Slow Start		Slow Start		?		?		?	
+487	Giratina	Cursed Body		Cursed Body		Cursed Body		?		?		?	
+691	Giratina-Origin	Levitate		Levitate		Levitate		?		?		?	
+488	Cresselia	Levitate		Levitate		Levitate		?		?		?	
+489	Phione	Moisturize		Moisturize		Moisturize		?		?		?	
+490	Manaphy	Moisturize		Moisturize		Moisturize		?		?		?	
+491	Darkrai	Bad Dreams		Bad Dreams		Bad Dreams		?		?		?	
+492	Shaymin	Natural Cure		Natural Cure		Natural Cure		?		?		?	
+690	Shaymin-Sky	Serene Grace		Serene Grace		Serene Grace		?		?		?	
+493	Arceus	Multitype		Multitype		Multitype		?		?		?	
+494	Victini	Illumination		Illumination		Illumination		Contrary		Contrary		Contrary	
+495	Snivy	Adaptability		Adaptability		Contrary		Anticipation		Anticipation		Anticipation	
+496	Servine	Adaptability		Adaptability		Contrary		Anticipation		Anticipation		Anticipation	
+497	Serperior	Adaptability		Adaptability		Contrary		Anticipation		Anticipation		Anticipation	
+498	Tepig	Intimidate		Intimidate		Sheer Force		Drought		Drought		Drought	
+499	Pignite	Intimidate		Intimidate		Sheer Force		Drought		Drought		Drought	
+500	Emboar	Intimidate		Intimidate		Determined		Drought		Drought		Drought	
+501	Oshawott	Shell Armor		Shell Armor		Hyper Cutter		Drizzle		Quick Draw		Defiant	
+502	Dewott	Shell Armor		Shell Armor		Hyper Cutter		Drizzle		Quick Draw		Defiant	
+503	Samurott	Shell Armor		Shell Armor		Hyper Cutter		Drizzle		Quick Draw		Defiant	
+504	Patrat	Illumination		Patient		Forewarn		Anticipation		Stakeout		Stakeout	
+505	Watchog	Illumination		Patient		Forewarn		Anticipation		Stakeout		Stakeout	
+506	Lillipup	Intimidate		Scrappy		Fluffy		Slush Rush		Scrappy		Sand Rush	
+507	Herdier	Intimidate		Scrappy		Fluffy		Slush Rush		Scrappy		Sand Rush	
+508	Stoutland	Intimidate		Scrappy		Fluffy		Slush Rush		Scrappy		Sand Rush	
+509	Purrloin	Pickup		Exploit		Pickpocket		Moody		Prankster		Sniper	
+510	Liepard	Pickup		Exploit		Pickpocket		Moody		Prankster		Sniper	
+511	Pansage	Overgrow		Gluttony		Unburden		Anticipation		Anticipation		Anticipation	
+512	Simisage	Overgrow		Gourmand		Unburden		Anticipation		Anticipation		Anticipation	
+513	Pansear	Blaze		Gluttony		Unburden		Drought		Drought		Drought	
+514	Simisear	Blaze		Gourmand		Unburden		Drought		Drought		Drought	
+515	Panpour	Torrent		Gluttony		Unburden		Drizzle		Drizzle		Drizzle	
+516	Simipour	Torrent		Gourmand		Unburden		Drizzle		Drizzle		Drizzle	
+517	Munna	Forewarn		Magic Bounce		Vital Spirit		Trace		Bad Dreams		Illusion	
+518	Musharna	Forewarn		Magic Bounce		Neutralizing Gas		Trace		Bad Dreams		Illusion	
+519	Pidove	Rivalry		Resilient		Unburden		Sniper		Sniper		Sniper	
+520	Tranquil	Rivalry		Resilient		Unburden		Sniper		Sniper		Sniper	
+521	Unfezant	Rivalry		Resilient		Unburden		Sniper		Sniper		Sniper	
+522	Blitzle	Sap Sipper		Lightning-Rod		Motor Drive		Plus		Minus		Minus	
+523	Zebstrika	Sap Sipper		Reckless		Determined		Plus		Minus		Minus	
+524	Roggenrola	Sturdy		Chlorophyll		Sand Force		Sand Stream		Drought		Aftermath	
+525	Boldore	Sturdy		Chlorophyll		Sand Force		Sand Stream		Drought		Aftermath	
+526	Gigalith	Sturdy		Chlorophyll		Sand Force		Sand Stream		Drought		Aftermath	
+527	Woobat	Keen Senses		Amplifier		Friend Guard		Moody		Simple		Simple	
+528	Swoobat	Keen Senses		Amplifier		Friend Guard		Moody		Simple		Simple	
+529	Drilbur	Mold Breaker		Sand Force		Sturdy		Sand Veil		Sand Stream		Sand Rush	
+530	Excadrill	Mold Breaker		Sand Force		Sturdy		Sand Veil		Sand Stream		Sand Rush	
+531	Audino	Regenerator		Healer		Poison Heal		?		?		?	
+532	Timburr	Guts		Iron Fist		Sheer Force		?		?		?	
+533	Gurdurr	Guts		Iron Fist		Sheer Force		?		?		?	
+534	Conkeldurr	Guts		Determined		Solid Rock		?		?		?	
+535	Tympole	Gooey		Dry Skin		Swift Swim		Anticipation		Poison Touch		Poison Touch	
+536	Palplitoad	Gooey		Dry Skin		Swift Swim		Anticipation		Poison Touch		Poison Touch	
+537	Seismitoad	Gooey		Dry Skin		Swift Swim		Anticipation		Poison Touch		Poison Touch	
+538	Throh	Patient		Rivalry		Mold Breaker		Anticipation		Strong Body		Strong Body	
+539	Sawk	Sturdy		Quick Feet		Mold Breaker		Anticipation		Strong Body		Strong Body	
+540	Sewaddle	Overcoat		Resilient		Swarm		Anticipation		Chlorophyll		Arena Trap	
+541	Swadloon	Overcoat		Regenerator		Swarm		Anticipation		Chlorophyll		Arena Trap	
+542	Leavanny	Overcoat		Regenerator		Savant (Protean)		Anticipation		Chlorophyll		Arena Trap	
+543	Venipede	Speed Boost		Tenacity		Strong Body		Poison Touch		Poison Touch		Poison Touch	
+544	Whirlipede	Speed Boost		Tenacity		Strong Body		Poison Touch		Poison Touch		Poison Touch	
+545	Scolipede	Speed Boost		Tenacity		Strong Body		Poison Touch		Poison Touch		Poison Touch	
+546	Cottonee	Prankster		Fluffy		Effect Spore		Wind Rider		Wind Rider		Wind Rider	
+547	Whimsicott	Prankster		Fluffy		Merciless		Wind Rider		Wind Rider		Wind Rider	
+548	Petilil	Chlorophyll		Overgrow		Quick Feet		?		?		?	
+549	Lilligant	Chlorophyll		Overgrow		Quick Feet		?		?		?	
+550	Basculin-RedStripe	Swift Swim		Adaptability		Mold Breaker		Drizzle		Drizzle		Drizzle	
+700	Basculin-BlueStripe	Determined		Adaptability		Anger Point		Drizzle		Drizzle		Drizzle	
+551	Sandile	Intimidate		Anger Point		Tenacity		Stakeout		Sand Stream		Anger Point	
+552	Krokorok	Intimidate		Anger Point		Tenacity		Stakeout		Sand Stream		Anger Point	
+553	Krookadile	Intimidate		Anger Point		Tenacity		Stakeout		Sand Stream		Anger Point	
+554	Darumaka	Hustle		Flame Body		Vital Spirit		Drought		Run Away		Run Away	
+555	Darmanitan	Sheer Force		Turboblaze		Inner Focus		Drought		Zen Mode		Zen Mode	
+701	Darmanitan-Zen	Sheer Force		Solid Rock		Inner Focus		Sand Stream		Zen Mode		Zen Mode	
+556	Maractus	Water Absorb		Heatproof		Sand Rush		Sand Veil		Chlorophyll		Sand Stream	
+557	Dwebble	Shed Skin		Shell Armor		Solid Rock		Sand Stream		Weak Armor		Sturdy	
+558	Crustle	Shed Skin		Shell Armor		Solid Rock		Sand Stream		Weak Armor		Sturdy	
+559	Scraggy	Intimidate		Shed Skin		Bulletproof		Quick Draw		Moxie		Moxie	
+560	Scrafty	Intimidate		Shed Skin		Bulletproof		Quick Draw		Moxie		Moxie	
+561	Sigilyph	Magic Guard		Tenacity		Sand Rush		Illusion		Sand Veil		Sand Veil	
+562	Yamask	Contagious		Sand Force		Cursed Body		Sand Stream		Illusion		Shadow Tag	
+563	Cofagrigus	Contagious		Sand Force		Merciless		Sand Stream		Illusion		Shadow Tag	
+564	Tirtouga	Solid Rock		Shell Armor		Swift Swim		Sand Stream		Drizzle		Sturdy	
+565	Carracosta	Solid Rock		Shell Armor		Swift Swim		Sand Stream		Drizzle		Sturdy	
+566	Archen	Unnerve		Vital Spirit		Quick Feet		Intimidate		Berserk		Hustle	
+567	Archeops	Unnerve		Vital Spirit		Quick Feet		intimidate		Berserk		Hustle	
+568	Trubbish	Rough Skin		Weak Armor		Contagious		Stench		Aftermath		Aftermath	
+569	Garbodor	Rough Skin		Weak Armor		Contagious		Stench		Aftermath		Aftermath	
+570	Zorua	Prankster		Infiltrator		Infiltrator		Stakeout		Illusion		Illusion	
+571	Zoroark	Exploit		Infiltrator		Infiltrator		Stakeout		Illusion		Illusion	
+572	Mincinno	Skill Link		Fur Coat		Fur Coat		Prankster		Prankster		Prankster	
+573	Cincinno	Skill Link		Fur Coat		Fur Coat		Prankster		Prankster		Prankster	
+574	Gothitta	Patient		Forewarn		Magic Bounce		Shadow Tag		Illusion		Anticipation	
+575	Gothorita	Patient		Forewarn		Magic Bounce		Shadow Tag		Illusion		Anticipation	
+576	Gothitelle	Patient		Forewarn		Magic Bounce		Shadow Tag		Illusion		Anticipation	
+577	Solosis	Gooey		Magic Guard		Regenerator		Trace		Inner Focus		Inner Focus	
+578	Duosion	Gooey		Magic Guard		Regenerator		Trace		Inner Focus		Inner Focus	
+579	Reuniclus	Gooey		Magic Guard		Regenerator		Trace		Inner Focus		Inner Focus	
+580	Ducklett	Keen Senses		Serene Grace		Rain Dish		Drizzle		Snow Cloak		Snow Cloak	
+581	Swanna	Keen Senses		Serene Grace		Ice Body		Snow Warning		Snow Cloak		Snow Cloak	
+582	Vanillite	Weak Armor		Ice Body		Refrigerate		Snow Warning		Snow Cloak		Aftermath	
+583	Vanillish	Weak Armor		Ice Body		Refrigerate		Snow Warning		Snow Cloak		Aftermath	
+584	Vanilluxe	Weak Armor		Ice Body		Refrigerate		Snow Warning		Snow Cloak		Aftermath	
+585	Deerling	Sap Sipper		Chlorophyll		Serene Grace		?		?		?	
+586	Sawsbuck	Majestic Ward		Chlorophyll		Serene Grace		?		?		?	
+654	Sawsbuck-Summer	Sap Sipper		Rivalry		Reckless		?		?		?	
+655	Sawsbuck-Autumn	Shed Skin		Resilient		Unaware		?		?		?	
+656	Sawsbuck-Winter	Slush Rush		Skill Link		Fur Coat		?		?		?	
+587	Emolga	No Guard		Motor Drive		Wind Rider		Plus		Minus		Minus	
+588	Karrablast	Swarm		Battle Armor		No Guard		Anticipation		Anticipation		Anticipation	
+589	Escavalier	Swarm		Shell Armor		Justified		Anticipation		Anticipation		Anticipation	
+590	Foongus	Regenerator		Contagious		Prankster  		Stakeout		Effect Spore		Effect Spore	
+591	Amoongus	Regenerator		Contagious		Prankster  		Stakeout		Effect Spore		Effect Spore	
+592	Frillish	Water Absorb		Merciless		Cursed Body		Drizzle		Shadow Tag		Shadow Tag	
+593	Jellicent	Water Absorb		Merciless		Gourmand		Drizzle		Shadow Tag		Shadow Tag	
+594	Alomomola	Healer		Natural Cure		Regenerator		Drizzle		Drizzle		Drizzle	
+595	Joltik	Keen Senses		Technician		Unnerve		Arena Trap		Stakeout		Plus	
+596	Galvantula	Keen Senses		Technician		Unnerve		Arena Trap		Stakeout		Plus	
+597	Ferroseed	Iron Barbs		Iron Barbs		Iron Barbs		Aftermath		Anticipation		Anticipation	
+598	Ferrothorn	Iron Barbs		Iron Barbs		Iron Barbs		Aftermath		Anticipation		Anticipation	
+599	Klink	Light Metal		Heavy Metal		Motor Drive		Levitate		Plus		Minus	
+600	Klang	Light Metal		Heavy Metal		Motor Drive		Levitate		Plus		Minus	
+601	Klinklang	Light Metal		Heavy Metal		Motor Drive		Levitate		Plus		Minus	
+602	Tynamo	Levitate		Swift Swim		Swift Swim		Stakeout		Plus		Minus	
+603	Eelektrik	Levitate		Swift Swim		Swift Swim		Stakeout		Plus		Minus	
+604	Eelektross	Levitate		Swift Swim		Swift Swim		Stakeout		Plus		Minus	
+605	Elgyem	Patient		Levitate		Inner Focus		Illusion		Plus		Minus	
+606	Beheeyem	Patient		Levitate		Inner Focus		Illusion		Plus		Minus	
+607	Litwick	Flash Fire		Illumination		Infiltrator		Illusion		Shadow Tag		Drought	
+608	Lampent	Flash Fire		Illumination		Infiltrator		Illusion		Shadow Tag		Drought	
+609	Chandelure	Flash Fire		Illumination		Infiltrator		Illusion		Shadow Tag		Drought	
+610	Axew	Mold Breaker		Rivalry		Unnerve		Tenacity		Sturdy		Anger Point	
+611	Fraxure	Mold Breaker		Rivalry		Unnerve		Tenacity		Sturdy		Anger Point	
+612	Haxorus	Mold Breaker		Rivalry		Hyper Cutter		Tenacity		Sturdy		Anger Point	
+613	Cubchoo	Rattled		Sheer Force		Swift Swim		Slush Rush		Snow Warning		Snow Cloak	
+614	Beartic	Fluffy		Sheer Force		Swift Swim		Slush Rush		Snow Warning		Snow Cloak	
+615	Cryogonal	Levitate		Ice Body		Sturdy		Aftermath		Snow Warning		Snow Cloak	
+616	Shelmet	Shell Armor		Swarm		Dry Skin		Anticipation		Anticipation		Anticipation	
+617	Accelgor	Infiltrator		Swarm		Dry Skin		Anticipation		Anticipation		Anticipation	
+618	Stunfisk	Dry Skin		Patient		Cloud Nine		Sand Veil		Sand Stream		Sand Stream	
+619	Mienfoo	Reckless		Keen Senses		Regenerator		Anticipation		Strong Body		Strong Body	
+620	Mienshao	Reckless		Keen Senses		Regenerator		Anticipation		Strong Body		Strong Body	
+621	Druddigon	Battle Armor		Sheer Force		Rough Skin		Strong Body		Solid Rock		Solid Rock	
+622	Golett	Weak Armor		No Guard		Well Baked Body		Sand Stream		Iron Fist		Aftermath	
+623	Golurk	Weak Armor		No Guard		Well Baked Body		Sand Stream		Iron Fist		Aftermath	
+624	Pawniard	Defiant		Hyper Cutter		Heavy Metal		Speed Boost		Stakeout		Stakeout	
+625	Bisharp	Defiant		Hyper Cutter		Heavy Metal		Speed Boost		Stakeout		Stakeout	
+626	Bouffalant	Reckless		Sap Sipper		Guts		?		?		?	
+627	Rufflet	Hustle		Justified		Defiant		?		?		?	
+628	Braviary	Hustle		Justified		Defiant		?		?		?	
+629	Vullaby	Overcoat		Rough Skin		Pickup		Stakeout		Stakeout		Stakeout	
+630	Mandibuzz	Overcoat		Rough Skin		Pickup		Stakeout		Stakeout		Stakeout	
+631	Heatmor	Flash Fire		Tough Claws		White Smoke		Arena Trap		Drought		Stakeout	
+632	Durant	Hustle		Swarm		Heatproof		Stakeout		Arena Trap		Heatproof	
+633	Deino	Hustle		Berserk		Reckless		Moody		Moody		Moody	
+634	Zweilous	Hustle		Berserk		Reckless		Moody		Moody		Moody	
+635	Hydreigon	Levitate		Berserk		Reckless		Moody		Moody		Moody	
+636	Larvesta	Swarm		Blaze		Flame Body		Drought		Drought		Drought	
+637	Volcarona	Swarm		Blaze		Illumination		Drought		Drought		Drought	
+638	Cobalion	Intimidate		Justified		Majestic Ward		Anticipation		Anticipation		Anticipation	
+639	Terrakion	Justified		Justified		Majestic Ward		Anticipation		Anticipation		Anticipation	
+640	Virizion	Justified		Justified		Majestic Ward		Anticipation		Anticipation		Anticipation	
+647	Keldeo	Justified		Justified		Majestic Ward		Anticipation		Anticipation		Anticipation	
+641	Tornadus	Prankster		Prankster		Defiant		?		?		?	
+706	Tornadus-Therian	Regenerator		Regenerator		Defiant		?		?		?	
+642	Thundurus	Prankster		Prankster		Defiant		?		?		?	
+707	Thundurus-Therian	Volt Absorb		Volt Absorb		Defiant		?		?		?	
+645	Landorus	Sand Force		Sand Force		Sheer Force		?		?		?	
+708	Landorus-Therian	Intimidate		Intimidate		Defiant		?		?		?	
+643	Reshiram	Turboblaze		Turboblaze		Defiant		?		?		?	
+644	Zekrom	Teravolt		Teravolt		Teravolt		?		?		?	
+646	Kyurem	Ice Body		Refrigerate		Permafrost		?		?		?	
+704	Kyurem-Black	Ice Body		Refrigerate		Permafrost		?		?		?	
+705	Kyurem-White	Ice Body		Refrigerate		Permafrost		?		?		?	
+648	Meloetta	Serene Grace		Serene Grace		Serene Grace		?		?		?	
+702	Meloetta-Pirouette	Serene Grace		Serene Grace		Serene Grace		?		?		?	
+649	Genesect	Exploit		Exploit		Exploit		?		?		?	

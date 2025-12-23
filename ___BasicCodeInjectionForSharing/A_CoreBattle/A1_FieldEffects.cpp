@@ -153,23 +153,23 @@ extern "C"
             RealStat = BattleMon_GetValue(AttackingMon, v8);
         }
 
-        // If we're using body press and it's hailing, we get a boostie.
-        if (v8 == VALUE_DEFENSE_STAGE && BattleMon_HasType(AttackingMon, TYPE_ICE) && ServerEvent_GetWeather(a1) == 3)
-        {
-            RealStat = (unsigned __int16)fixed_round(RealStat, 6144);
-        }
-        if (v8 == VALUE_DEFENSE_STAGE && AttackingMon->HeldItem == IT0538_EVIOLITE && Handler_CheckEvolution(a1, ID))
-        {
-            RealStat = (unsigned __int16)fixed_round(RealStat, 6144);
-        }
-        if (v8 == VALUE_DEFENSE_STAGE && (AttackingMon->HeldItem == IT0225_MASCOT_BADGE || AttackingMon->HeldItem == IT0215_TERA_BADGE))
-        {
-            RealStat = (unsigned __int16)fixed_round(RealStat, 8192);
-        }
-        if (v8 == VALUE_DEFENSE_STAGE && BattleMon_GetValue(AttackingMon, VALUE_EFFECTIVE_ABILITY) == ABIL063_MARVEL_SCALE && BattleMon_GetStatus(AttackingMon))
-        {
-            RealStat = (unsigned __int16)fixed_round(RealStat, 6144);
-        }
+        // // If we're using body press and it's hailing, we get a boostie.
+        // if (v8 == VALUE_DEFENSE_STAGE && BattleMon_HasType(AttackingMon, TYPE_ICE) && ServerEvent_GetWeather(a1) == 3)
+        // {
+        //     RealStat = (unsigned __int16)fixed_round(RealStat, 6144);
+        // }
+        // if (v8 == VALUE_DEFENSE_STAGE && AttackingMon->HeldItem == IT0538_EVIOLITE && Handler_CheckEvolution(a1, ID))
+        // {
+        //     RealStat = (unsigned __int16)fixed_round(RealStat, 6144);
+        // }
+        // if (v8 == VALUE_DEFENSE_STAGE && (AttackingMon->HeldItem == IT0225_MASCOT_BADGE || AttackingMon->HeldItem == IT0215_TERA_BADGE))
+        // {
+        //     RealStat = (unsigned __int16)fixed_round(RealStat, 8192);
+        // }
+        // if (v8 == VALUE_DEFENSE_STAGE && BattleMon_GetValue(AttackingMon, VALUE_EFFECTIVE_ABILITY) == ABIL063_MARVEL_SCALE && BattleMon_GetStatus(AttackingMon))
+        // {
+        //     RealStat = (unsigned __int16)fixed_round(RealStat, 6144);
+        // }
 
         v13 = RealStat;
 

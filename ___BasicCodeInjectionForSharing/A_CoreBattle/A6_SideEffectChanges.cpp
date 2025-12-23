@@ -1506,7 +1506,7 @@ extern "C"
             v3->pokeID[0] = currentSlot;
             v3->fMoveAnimation = 1;
             v3->rankType = GetHighestStat(currentMon);
-            v3->rankVolume = -2;
+            v3->rankVolume = -1;
             v3->pad = 0x40000000;
             BattleHandler_PopWork(serverFlow, v3);
 

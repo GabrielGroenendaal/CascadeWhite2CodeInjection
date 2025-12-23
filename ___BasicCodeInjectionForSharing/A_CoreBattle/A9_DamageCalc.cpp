@@ -1,5 +1,6 @@
 #include "swantypes.h"
 #include "kPrint.h"
+#include "settings.h"
 
 // uses ESDB_A9.yml
 
@@ -408,7 +409,7 @@ extern "C"
         MOVE202_GIGA_DRAIN = 0xCA,
         MOVE203_ENDURE = 0xCB,
         MOVE204_CHARM = 0xCC,
-        MOVE205_ACCELROCK = 0xCD,
+        MOVE205_ROLLOUT = 0xCD,
         MOVE206_BODY_PRESS = 0xCE,
         MOVE207_SWAGGER = 0xCF,
         MOVE208_MILK_DRINK = 0xD0,
@@ -682,7 +683,7 @@ extern "C"
         MOVE476_RAGE_POWDER = 0x1DC,
         MOVE477_TELEKINESIS = 0x1DD,
         MOVE478_POWER_TRIP = 0x1DE,
-        MOVE479_SMACK_DOWN = 0x1DF,
+        MOVE479_ACCELEROCK = 0x1DF,
         MOVE480_STORM_THROW = 0x1E0,
         MOVE481_FLAME_BURST = 0x1E1,
         MOVE482_SLUDGE_WAVE = 0x1E2,
@@ -3139,8 +3140,8 @@ enum ItemID
         {1, ABIL106_AFTERMATH, ABIL045_SAND_STREAM, ABIL008_SAND_VEIL},        // PK074_GEODUDE = 0x4A,
         {1, ABIL106_AFTERMATH, ABIL045_SAND_STREAM, ABIL008_SAND_VEIL},        // PK075_GRAVELER = 0x4B,
         {1, ABIL106_AFTERMATH, ABIL045_SAND_STREAM, ABIL008_SAND_VEIL},        // PK076_GOLEM = 0x4C,
-        {1, ABIL070_DROUGHT, ABIL055_HUSTLE, ABIL055_HUSTLE},                // PK077_PONYTA = 0x4D,
-        {1, ABIL070_DROUGHT, ABIL055_HUSTLE, ABIL055_HUSTLE},                // PK078_RAPIDASH = 0x4E,
+        {1, ABIL070_DROUGHT, ABIL055_HUSTLE, ABIL032_SERENE_GRACE},                // PK077_PONYTA = 0x4D,
+        {1, ABIL070_DROUGHT, ABIL055_HUSTLE, ABIL032_SERENE_GRACE},                // PK078_RAPIDASH = 0x4E,
         {1, ABIL002_DRIZZLE, ABIL086_SIMPLE, ABIL086_SIMPLE},                  // PK079_SLOWPOKE = 0x4F,
         {1, ABIL002_DRIZZLE, ABIL086_SIMPLE, ABIL086_SIMPLE},                  // PK080_SLOWBRO = 0x50,
         {1, ABIL058_MINUS, ABIL057_PLUS, ABIL026_LEVITATE},                    // PK0{0, ABIL001_STENCH, ABIL001_STENCH, ABIL001_STENCH},_MAGNEMITE = 0x51,
@@ -3182,8 +3183,8 @@ enum ItemID
         {1, ABIL002_DRIZZLE, ABIL020_QUICK_DRAW, ABIL032_SERENE_GRACE},          // PK117_SEADRA = 0x75,
         {1, ABIL002_DRIZZLE, ABIL002_DRIZZLE, ABIL002_DRIZZLE},                // PK118_GOLDEEN = 0x76,
         {1, ABIL002_DRIZZLE, ABIL002_DRIZZLE, ABIL002_DRIZZLE},                // PK119_SEAKING = 0x77,
-        {1, ABIL002_DRIZZLE, ABIL149_ILLUSION, ABIL033_SWIFT_SWIM},            // PK120_STARYU = 0x78,
-        {1, ABIL002_DRIZZLE, ABIL149_ILLUSION, ABIL033_SWIFT_SWIM},            // PK121_STARMIE = 0x79,
+        {1, ABIL002_DRIZZLE, ABIL148_PATIENT, ABIL033_SWIFT_SWIM},            // PK120_STARYU = 0x78,
+        {1, ABIL002_DRIZZLE, ABIL148_PATIENT, ABIL033_SWIFT_SWIM},            // PK121_STARMIE = 0x79,
         {1, ABIL145_SAVANT, ABIL141_MOODY, ABIL149_ILLUSION},            // PK122_MR_MIME = 0x7A,
         {1, ABIL029_STRONG_BODY, ABIL005_STURDY, ABIL005_STURDY},                   // PK123_SCYTHER = 0x7B,
         {1, ABIL117_SNOW_WARNING, ABIL149_ILLUSION, ABIL081_SNOW_CLOAK},       // PK124_JYNX = 0x7C,
@@ -3199,7 +3200,7 @@ enum ItemID
         {1, ABIL107_ANTICIPATION, ABIL002_DRIZZLE, ABIL002_DRIZZLE},           // PK134_VAPOREON = 0x86,
         {1, ABIL107_ANTICIPATION, ABIL057_PLUS, ABIL058_MINUS},                // PK135_JOLTEON = 0x87,
         {1, ABIL107_ANTICIPATION, ABIL070_DROUGHT, ABIL070_DROUGHT},           // PK136_FLAREON = 0x88,
-        {0, ABIL001_STENCH, ABIL001_STENCH, ABIL001_STENCH},                   // PK137_PORYGON = 0x89,
+        {1, ABIL026_LEVITATE, ABIL026_LEVITATE, ABIL026_LEVITATE},                   // PK137_PORYGON = 0x89,
         {1, ABIL033_SWIFT_SWIM, ABIL005_STURDY, ABIL005_STURDY},               // PK138_OMANYTE = 0x8A,
         {1, ABIL033_SWIFT_SWIM, ABIL005_STURDY, ABIL005_STURDY},               // PK139_OMASTAR = 0x8B,
         {0, ABIL001_STENCH, ABIL001_STENCH, ABIL001_STENCH},                   // PK140_KABUTO = 0x8C,
@@ -3268,8 +3269,8 @@ enum ItemID
         {1, ABIL149_ILLUSION, ABIL023_SHADOW_TAG, ABIL023_SHADOW_TAG},      // PK201_UNOWN = 0xC9,
         {1, ABIL023_SHADOW_TAG, ABIL023_SHADOW_TAG, ABIL023_SHADOW_TAG},    // PK202_WOBBUFFET = 0xCA,
         {1, ABIL141_MOODY, ABIL141_MOODY, ABIL141_MOODY},                   // PK203_GIRAFARIG = 0xCB,
-        {1, ABIL106_AFTERMATH, ABIL020_QUICK_DRAW, ABIL016_BALLISTICS},     // PK204_PINECO = 0xCC,
-        {1, ABIL106_AFTERMATH, ABIL020_QUICK_DRAW, ABIL016_BALLISTICS},     // PK205_FORRETRESS = 0xCD,
+        {1, ABIL106_AFTERMATH, ABIL020_QUICK_DRAW, ABIL005_STURDY},     // PK204_PINECO = 0xCC,
+        {1, ABIL106_AFTERMATH, ABIL020_QUICK_DRAW, ABIL005_STURDY},     // PK205_FORRETRESS = 0xCD,
         {1, ABIL045_SAND_STREAM, ABIL008_SAND_VEIL, ABIL008_SAND_VEIL},     // PK206_DUNSPARCE = 0xCE,
         {1, ABIL045_SAND_STREAM, ABIL008_SAND_VEIL, ABIL008_SAND_VEIL},     // PK207_GLIGAR = 0xCF,
         {1, ABIL045_SAND_STREAM, ABIL146_SAND_RUSH, ABIL080_COLOSSAL},     // PK208_STEELIX = 0xD{0, ABIL001_STENCH, ABIL001_STENCH, ABIL001_STENCH},
@@ -3279,7 +3280,7 @@ enum ItemID
         {1, ABIL029_STRONG_BODY, ABIL005_STURDY, ABIL005_STURDY},                // PK212_SCIZOR = 0xD4,
         {1, ABIL045_SAND_STREAM, ABIL141_MOODY, ABIL141_MOODY},             // PK213_SHUCKLE = 0xD5,
         {0, ABIL001_STENCH, ABIL001_STENCH, ABIL001_STENCH},                // PK214_HERACROSS = 0xD6,
-        {1, ABIL088_EXPLOIT, ABIL117_SNOW_WARNING, ABIL081_SNOW_CLOAK},     // PK215_SNEASEL = 0xD7,
+        {1, ABIL101_TECHNICIAN, ABIL117_SNOW_WARNING, ABIL081_SNOW_CLOAK},     // PK215_SNEASEL = 0xD7,
         {1, ABIL045_SAND_STREAM, ABIL055_HUSTLE, ABIL055_HUSTLE}, // PK216_TEDDIURSA = 0xD8,
         {1, ABIL045_SAND_STREAM, ABIL055_HUSTLE, ABIL055_HUSTLE}, // PK217_URSARING = 0xD9,
         {1, ABIL106_AFTERMATH, ABIL087_DRY_SKIN, ABIL070_DROUGHT},          // PK218_SLUGMA = 0xDA,
@@ -3292,12 +3293,12 @@ enum ItemID
         {1, ABIL026_LEVITATE, ABIL141_MOODY, ABIL081_SNOW_CLOAK},       // PK225_DELIBIRD = 0xE{0, ABIL001_STENCH, ABIL001_STENCH, ABIL001_STENCH},
         {0, ABIL002_DRIZZLE, ABIL001_STENCH, ABIL001_STENCH},               // PK226_MANTINE = 0xE2,
         {1, ABIL015_THUNDER_ARMOR, ABIL008_SAND_VEIL, ABIL008_SAND_VEIL},   // PK227_SKARMORY = 0xE3,
-        {1, ABIL070_DROUGHT, ABIL022_INTIMIDATE, ABIL094_SOLAR_POWER},      // PK228_HOUNDOUR = 0xE4,
-        {1, ABIL070_DROUGHT, ABIL022_INTIMIDATE, ABIL094_SOLAR_POWER},      // PK229_HOUNDOOM = 0xE5,
+        {1, ABIL163_TURBOBLAZE, ABIL022_INTIMIDATE, ABIL094_SOLAR_POWER},      // PK228_HOUNDOUR = 0xE4,
+        {1, ABIL163_TURBOBLAZE, ABIL022_INTIMIDATE, ABIL094_SOLAR_POWER},      // PK229_HOUNDOOM = 0xE5,
         {1, ABIL002_DRIZZLE, ABIL020_QUICK_DRAW, ABIL032_SERENE_GRACE},       // PK230_KINGDRA = 0xE6,
         {1, ABIL045_SAND_STREAM, ABIL008_SAND_VEIL, ABIL005_STURDY},     // PK231_PHANPY = 0xE7,
         {1, ABIL045_SAND_STREAM, ABIL008_SAND_VEIL, ABIL005_STURDY},     // PK232_DONPHAN = 0xE8,
-        {0, ABIL001_STENCH, ABIL001_STENCH, ABIL001_STENCH},                // PK233_PORYGON2 = 0xE9,
+        {1, ABIL026_LEVITATE, ABIL026_LEVITATE, ABIL026_LEVITATE},                // PK233_PORYGON2 = 0xE9,
         {1, ABIL022_INTIMIDATE, ABIL149_ILLUSION, ABIL023_SHADOW_TAG},      // PK234_STANTLER = 0xEA,
         {1, ABIL141_MOODY, ABIL141_MOODY, ABIL141_MOODY},                   // PK235_SMEARGLE = 0xEB,
         {1, ABIL055_HUSTLE, ABIL029_STRONG_BODY, ABIL029_STRONG_BODY},                // PK236_TYROGUE = 0xEC,
@@ -3529,7 +3530,7 @@ enum ItemID
         {1, ABIL002_DRIZZLE, ABIL002_DRIZZLE, ABIL002_DRIZZLE},                // PK458_MANTYKE = 0x1CA,
         {1, ABIL117_SNOW_WARNING, ABIL077_SLUSH_RUSH, ABIL081_SNOW_CLOAK},     //   PK459_SNOVER = 0x1CB,
         {1, ABIL117_SNOW_WARNING, ABIL077_SLUSH_RUSH, ABIL081_SNOW_CLOAK},     //   PK460_ABOMASNOW = 0x1CC,
-        {1, ABIL088_EXPLOIT, ABIL117_SNOW_WARNING, ABIL081_SNOW_CLOAK},        // PK461_WEAVILE = 0x1CD,
+        {1, ABIL101_TECHNICIAN, ABIL117_SNOW_WARNING, ABIL081_SNOW_CLOAK},        // PK461_WEAVILE = 0x1CD,
         {1, ABIL058_MINUS, ABIL057_PLUS, ABIL026_LEVITATE},                    // PK462_MAGNEZONE = 0x1CE,
         {1, ABIL001_STENCH, ABIL001_STENCH, ABIL001_STENCH},                   // PK463_LICKILICKY = 0x1CF,
         {1, ABIL045_SAND_STREAM, ABIL038_BERSERK, ABIL038_BERSERK},            // PK464_RHYPERIOR = 0x1D0,
@@ -3542,7 +3543,7 @@ enum ItemID
         {1, ABIL107_ANTICIPATION, ABIL117_SNOW_WARNING, ABIL081_SNOW_CLOAK},   //   PK471_GLACEON = 0x1D7,
         {1, ABIL045_SAND_STREAM, ABIL008_SAND_VEIL, ABIL008_SAND_VEIL},        // PK472_GLISCOR = 0x1D8,
         {1, ABIL117_SNOW_WARNING, ABIL081_SNOW_CLOAK, ABIL083_ANGER_POINT},    //  PK473_MAMOSWINE = 0x1D9,
-        {0, ABIL001_STENCH, ABIL001_STENCH, ABIL001_STENCH},                   //  PK474_PORYGON_Z = 0x1DA,
+        {1, ABIL026_LEVITATE, ABIL026_LEVITATE, ABIL026_LEVITATE},                   //  PK474_PORYGON_Z = 0x1DA,
         {1, ABIL149_ILLUSION, ABIL132_FRIEND_GUARD, ABIL020_QUICK_DRAW},       //   PK475_GALLADE = 0x1DB,
         {1, ABIL045_SAND_STREAM, ABIL045_SAND_STREAM, ABIL045_SAND_STREAM},    //   PK476_PROBOPASS = 0x1DC,
         {1, ABIL023_SHADOW_TAG, ABIL107_ANTICIPATION, ABIL149_ILLUSION},       //   PK477_DUSKNOIR = 0x1DD,
@@ -3574,8 +3575,8 @@ enum ItemID
         {1, ABIL002_DRIZZLE, ABIL020_QUICK_DRAW, ABIL128_DEFIANT},          // PK501_OSHAWOTT = 0x1F5,
         {1, ABIL002_DRIZZLE, ABIL020_QUICK_DRAW, ABIL128_DEFIANT},          // PK502_DEWOTT = 0x1F6,
         {1, ABIL002_DRIZZLE, ABIL020_QUICK_DRAW, ABIL128_DEFIANT},          // PK503_SAMUROTT = 0x1F7,
-        {1, ABIL107_ANTICIPATION, ABIL107_ANTICIPATION, ABIL107_ANTICIPATION}, // PK504_PATRAT = 0x1F8,
-        {1, ABIL107_ANTICIPATION, ABIL107_ANTICIPATION, ABIL107_ANTICIPATION}, // PK505_WATCHOG = 0x1F9,
+        {1, ABIL107_ANTICIPATION, ABIL119_STAKEOUT, ABIL119_STAKEOUT}, // PK504_PATRAT = 0x1F8,
+        {1, ABIL107_ANTICIPATION, ABIL119_STAKEOUT, ABIL119_STAKEOUT}, // PK505_WATCHOG = 0x1F9,
         {1, ABIL077_SLUSH_RUSH, ABIL113_SCRAPPY, ABIL146_SAND_RUSH},             // PK506_LILLIPUP = 0x1FA,
         {1, ABIL077_SLUSH_RUSH, ABIL113_SCRAPPY, ABIL146_SAND_RUSH},             // PK507_HERDIER = 0x1FB,
         {1, ABIL077_SLUSH_RUSH, ABIL113_SCRAPPY, ABIL146_SAND_RUSH},             // PK508_STOUTLAND = 0x1FC,
@@ -3587,8 +3588,8 @@ enum ItemID
         {1, ABIL070_DROUGHT, ABIL070_DROUGHT, ABIL070_DROUGHT},                // PK514_SIMISEAR = 0x202,
         {1, ABIL002_DRIZZLE, ABIL002_DRIZZLE, ABIL002_DRIZZLE},                // PK515_PANPOUR = 0x203,
         {1, ABIL002_DRIZZLE, ABIL002_DRIZZLE, ABIL002_DRIZZLE},                // PK516_SIMIPOUR = 0x204,
-        {1, ABIL039_INNER_FOCUS, ABIL036_TRACE, ABIL149_ILLUSION},            // PK517_MUNNA = 0x205,
-        {1, ABIL039_INNER_FOCUS, ABIL036_TRACE, ABIL149_ILLUSION},            // PK518_MUSHARNA = 0x206,
+        {1, ABIL036_TRACE, ABIL123_BAD_DREAMS, ABIL149_ILLUSION},            // PK517_MUNNA = 0x205,
+        {1, ABIL036_TRACE, ABIL123_BAD_DREAMS, ABIL149_ILLUSION},            // PK518_MUSHARNA = 0x206,
         {1, ABIL097_SNIPER, ABIL097_SNIPER, ABIL097_SNIPER},                   // PK519_PIDOVE = 0x207,
         {1, ABIL097_SNIPER, ABIL097_SNIPER, ABIL097_SNIPER},                   // PK520_TRANQUILL = 0x208,
         {1, ABIL097_SNIPER, ABIL097_SNIPER, ABIL097_SNIPER},                   // PK521_UNFEZANT = 0x209,
@@ -3627,8 +3628,8 @@ enum ItemID
         {1, ABIL070_DROUGHT, ABIL050_RUN_AWAY, ABIL050_RUN_AWAY},              // PK554_DARUMAKA = 0x22A,
         {1, ABIL070_DROUGHT, ABIL161_ZEN_MODE, ABIL161_ZEN_MODE},              // PK555_DARMANITAN = 0x22B,
         {1, ABIL008_SAND_VEIL, ABIL034_CHLOROPHYLL, ABIL045_SAND_STREAM},      // PK556_MARACTUS = 0x22C,
-        {1, ABIL045_SAND_STREAM, ABIL045_SAND_STREAM, ABIL045_SAND_STREAM},    // PK557_DWEBBLE = 0x22D,
-        {1, ABIL045_SAND_STREAM, ABIL045_SAND_STREAM, ABIL045_SAND_STREAM},    // PK558_CRUSTLE = 0x22E,
+        {1, ABIL045_SAND_STREAM, ABIL133_WEAK_ARMOR, ABIL005_STURDY},    // PK557_DWEBBLE = 0x22D,
+        {1, ABIL045_SAND_STREAM, ABIL133_WEAK_ARMOR, ABIL005_STURDY},    // PK558_CRUSTLE = 0x22E,
         {1, ABIL020_QUICK_DRAW, ABIL153_MOXIE, ABIL153_MOXIE},                 // PK559_SCRAGGY = 0x22F,
         {1, ABIL020_QUICK_DRAW, ABIL153_MOXIE, ABIL153_MOXIE},                 // PK560_SCRAFTY = 0x23{0, ABIL001_STENCH, ABIL001_STENCH, ABIL001_STENCH},
         {1, ABIL149_ILLUSION, ABIL008_SAND_VEIL, ABIL008_SAND_VEIL},           // PK5{0, ABIL001_STENCH, ABIL001_STENCH, ABIL001_STENCH},_SIGILYPH = 0x231,
@@ -3636,8 +3637,8 @@ enum ItemID
         {1, ABIL045_SAND_STREAM, ABIL149_ILLUSION, ABIL023_SHADOW_TAG},        // PK563_COFAGRIGUS = 0x233,
         {1, ABIL045_SAND_STREAM, ABIL002_DRIZZLE, ABIL005_STURDY},            // PK564_TIRTOUGA = 0x234,
         {1, ABIL045_SAND_STREAM, ABIL002_DRIZZLE, ABIL005_STURDY},            // PK565_CARRACOSTA = 0x235,
-        {1, ABIL045_SAND_STREAM, ABIL038_BERSERK, ABIL055_HUSTLE},    // PK566_ARCHEN = 0x236,
-        {1, ABIL045_SAND_STREAM, ABIL038_BERSERK, ABIL055_HUSTLE},    // PK567_ARCHEOPS = 0x237,
+        {1, ABIL022_INTIMIDATE, ABIL038_BERSERK, ABIL055_HUSTLE},    // PK566_ARCHEN = 0x236,
+        {1, ABIL022_INTIMIDATE, ABIL038_BERSERK, ABIL055_HUSTLE},    // PK567_ARCHEOPS = 0x237,
         {1, ABIL001_STENCH, ABIL106_AFTERMATH, ABIL106_AFTERMATH},             // PK568_TRUBBISH = 0x238,
         {1, ABIL001_STENCH, ABIL106_AFTERMATH, ABIL106_AFTERMATH},             // PK569_GARBODOR = 0x239,
         {1, ABIL119_STAKEOUT, ABIL149_ILLUSION, ABIL149_ILLUSION},             // PK570_ZORUA = 0x23A,
@@ -3691,7 +3692,7 @@ enum ItemID
         {1, ABIL008_SAND_VEIL, ABIL045_SAND_STREAM, ABIL045_SAND_STREAM},      // PK618_STUNFISK = 0x26A,
         {1, ABIL107_ANTICIPATION, ABIL029_STRONG_BODY, ABIL029_STRONG_BODY},   // PK619_MIENFOO = 0x26B,
         {1, ABIL107_ANTICIPATION, ABIL029_STRONG_BODY, ABIL029_STRONG_BODY},   // PK620_MIENSHAO = 0x26C,
-        {1, ABIL029_STRONG_BODY, ABIL029_STRONG_BODY, ABIL029_STRONG_BODY},    // PK621_DRUDDIGON = 0x26D,
+        {1, ABIL029_STRONG_BODY, ABIL116_SOLID_ROCK, ABIL116_SOLID_ROCK},    // PK621_DRUDDIGON = 0x26D,
         {1, ABIL045_SAND_STREAM, ABIL089_IRON_FIST, ABIL106_AFTERMATH},        // PK622_GOLETT = 0x26E,
         {1, ABIL045_SAND_STREAM, ABIL089_IRON_FIST, ABIL106_AFTERMATH},        // PK623_GOLURK = 0x26F,
         {1, ABIL003_SPEED_BOOST, ABIL119_STAKEOUT, ABIL119_STAKEOUT},          //  PK6{0, ABIL001_STENCH, ABIL001_STENCH, ABIL001_STENCH},_PAWNIARD = 0x270,
@@ -3948,36 +3949,29 @@ enum ItemID
             defense = ServerEvent_GetTargetDefenses(a1, AttackingMon, DefendingMon, moveParam, criticalFlag);
             level = BattleMon_GetValue(AttackingMon, VALUE_LEVEL);
             v16 = CalcBaseDamage(power, attack, level, defense);
-            if (!BattleDebugMode){
-                // k::Printf("\n\nmove is %d\n===ServerEvent_CalcDamage 1 Base Damage===damage is %d", moveParam->MoveID, v16);
-            }
+#if DEBUGGING_DAMAGECALC && DEBUGGING_ALL
+                k::Printf("\n\nmove is %d\n===ServerEvent_CalcDamage 1 Base Damage===damage is %d", moveParam->MoveID, v16);
+#endif
             fxDamage = v16;
             if (targetDmgRatio != 4096)
             {
                 fxDamage = fixed_round(v16, targetDmgRatio);
             }
-            if (!BattleDebugMode){
-                //k::Printf("\n\n===ServerEvent_CalcDamage 2 Ratio===damage is %d", fxDamage);
-            }
+#if DEBUGGING_DAMAGECALC && DEBUGGING_ALL
+                k::Printf("\n\n===ServerEvent_CalcDamage 2 Ratio===damage is %d", fxDamage);
+#endif
 
             Weather = ServerEvent_GetWeather(a1);
             weatherDmgRatio = WeatherPowerMod(Weather, moveParam->moveType);
 
-            // ADD
-            // Overcoat / Utility Umbrella Logic
-            //
-            if (DefendingMon->HeldItem == IT0544_UTILITY_UMBRELLA || (!HasMoldBreaker(AttackingMon) && BattleMon_GetValue(DefendingMon, VALUE_EFFECTIVE_ABILITY) == ABIL142_OVERCOAT))
-            {
-                weatherDmgRatio == 4096;
-            }
 
             if (weatherDmgRatio != 4096)
             {
                 fxDamage = fixed_round(fxDamage, weatherDmgRatio);
             }
-            if (!BattleDebugMode){
-                //k::Printf("\n\n===ServerEvent_CalcDamage 3 Weather===damage is %d", fxDamage);
-            }
+#if DEBUGGING_DAMAGECALC && DEBUGGING_ALL
+                k::Printf("\n\n===ServerEvent_CalcDamage 3 Weather===damage is %d", fxDamage);
+#endif
             if (criticalFlag)
             {
 
@@ -3993,11 +3987,12 @@ enum ItemID
                     fxDamage *= 2;
                 }
             }
-            if (!BattleDebugMode){
-                //k::Printf("\n\n===ServerEvent_CalcDamage 4 Crits===damage is %d", fxDamage);
-            }
+#if DEBUGGING_DAMAGECALC && DEBUGGING_ALL
+                k::Printf("\n\n===ServerEvent_CalcDamage 4 Crits===damage is %d", fxDamage);
+#endif
             if (!MainModule_GetDebugFlag() && ServerFlow_IsNotPokestarBattle(a1))
             {
+
                 if (BattleDebugMode)
                 {
                     damageRoll = 85;
@@ -4006,12 +4001,16 @@ enum ItemID
                 {
                     damageRoll = (100 - BattleRandom(16u));
                 }
+#if DEBUGGING_DAMAGECALC && DEBUGGING_ALL
+                 damageRoll = 100;
+#endif 
 
+                damageRoll = 100;
                 fxDamage = damageRoll * fxDamage / 100;
             }
-            if (!BattleDebugMode){
-                //k::Printf("\n\n===ServerEvent_CalcDamage 5 Damage Roll===damage is %d", fxDamage);
-            }
+#if DEBUGGING_DAMAGECALC && DEBUGGING_ALL
+                k::Printf("\n\n===ServerEvent_CalcDamage 5 Damage Roll===damage is %d", fxDamage);
+#endif
             moveType = (PokeType)moveParam->moveType;
             if (moveType != TYPE_NULL)
             {
@@ -4061,19 +4060,21 @@ enum ItemID
                     fxDamage = fixed_round(fxDamage, v22);
                 }
             }
-            if (!BattleDebugMode){
-                //k::Printf("\n\n===ServerEvent_CalcDamage 6 STAB===damage is %d", fxDamage);
-            }
+#if DEBUGGING_DAMAGECALC && DEBUGGING_ALL
+                k::Printf("\n\n===ServerEvent_CalcDamage 6 STAB===damage is %d", fxDamage);
+#endif
             v23 = TypeEffectivenessPowerMod(fxDamage, TypeEffectiveness);
-            if (!BattleDebugMode){
-                //k::Printf("\n\n===ServerEvent_CalcDamage 7 TypeEffectiveness===damage is %d, type effectiveness for move %d is %d", v23, moveParam->MoveID, TypeEffectiveness);
-            }
+#if DEBUGGING_DAMAGECALC && DEBUGGING_ALL
+                k::Printf("\n\n===ServerEvent_CalcDamage 7 TypeEffectiveness===damage is %d, type effectiveness for move %d is %d", v23, moveParam->MoveID, TypeEffectiveness);
+#endif
             /* OLD OVERHEAT LOGIC */
-            // if (Category == 1 && BattleMon_GetStatus(AttackingMon) == CONDITION_BURN && BattleMon_GetValue(AttackingMon, VALUE_EFFECTIVE_ABILITY) != ABIL062_GUTS)
-            // {
+            if (Category == 1 && BattleMon_GetStatus(AttackingMon) == CONDITION_BURN && BattleMon_GetValue(AttackingMon, VALUE_EFFECTIVE_ABILITY) != ABIL062_GUTS)
+            {
 
-            //     v23 = 50 * v23 / 100u;
-            // }
+                v23 = 50 * v23 / 100u;
+            }
+
+
             if (Category == 2 && getOverheatLastTurnByte(AttackingMon))
             {
                 v23 = (BattleMon_GetValue(AttackingMon, VALUE_EFFECTIVE_ABILITY) == ABIL126_CONTRARY) ? v23 + (v23 >> 1) : (v23 >> 1);
@@ -4084,9 +4085,9 @@ enum ItemID
             {
                 v23 = 50 * v23 / 100u;
             }
-            if (!BattleDebugMode){
-                //k::Printf("\n\n===ServerEvent_CalcDamage 8 Overheat/Focus Band===damage is %d", v23);
-            }
+#if DEBUGGING_DAMAGECALC && DEBUGGING_ALL
+                k::Printf("\n\n===ServerEvent_CalcDamage 8 Overheat/Focus Band===damage is %d", v23);
+#endif
             if (!v23)
             {
                 v23 = 1;
@@ -4099,17 +4100,17 @@ enum ItemID
             v25 = BattleEventVar_GetValue(VAR_DAMAGE);
 
             LOWORD(Value) = fixed_round(v25, v24);
-            if (!BattleDebugMode){
-                //k::Printf("\n\n===ServerEvent_CalcDamage 9 Final FixedRound===damage is %d", Value);
-            }
+#if DEBUGGING_DAMAGECALC && DEBUGGING_ALL
+                k::Printf("\n\n===ServerEvent_CalcDamage 9 Final FixedRound===damage is %d", Value);
+#endif
         }
 
         BattleEvent_CallHandlers(a1, EVENT_MOVE_DAMAGE_PROCESSING_END);
         BattleEventVar_Pop();
         *destDamage = Value;
-        if (!BattleDebugMode){
-                //k::Printf("\n\n===ServerEvent_CalcDamage 10 Final FixedRound===damage is %d", Value);
-            }
+#if DEBUGGING_DAMAGECALC && DEBUGGING_ALL
+                k::Printf("\n\n===ServerEvent_CalcDamage 10 Final FixedRound===damage is %d", Value);
+#endif
         return v29;
     }
 
@@ -4252,6 +4253,7 @@ enum ItemID
         data = forme;
         v5 = 255;
         v6 = 0;
+        int v = 0x3A;
         species = PokeParty_GetParam(pkm, PF_Species, 0);
 
         do
@@ -4271,7 +4273,9 @@ enum ItemID
             //     }
             // } else {
             movePP = PokeParty_GetParam(pkm, (PkmField)(v6 + 58), 0);
-            PokeParty_SetParam(pkm, (PkmField)(v6 + 58), movePP + 3u);
+            if (PokeParty_GetParam(pkm, (PkmField)(v6 + 54), 0) != MOVE270_HELPING_HAND){
+                PokeParty_SetParam(pkm, (PkmField)(v6 + 58), movePP + 3u);
+            }
             //}
 
             ++v6;

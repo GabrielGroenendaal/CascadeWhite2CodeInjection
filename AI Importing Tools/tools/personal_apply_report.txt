@@ -1,0 +1,677 @@
+Updated 1 (#1 Bulbasaur): type1 -> Grass	Poison
+Updated 4 (#4 Charmander): type1 -> Fire
+Updated 7 (#7 Squirtle): type1 -> Water
+Updated 10 (#10 Caterpie): type1 -> Bug
+Updated 13 (#13 Weedle): type1 -> Bug	Poison
+Updated 16 (#16 Pidgey): type1 -> Flying
+Updated 19 (#19 Rattata): type1 -> Normal
+Updated 21 (#21 Spearow): type1 -> Dark	Flying
+Updated 23 (#23 Ekans): type1 -> Poison	Dragon
+Updated 172 (#172 Pichu): type1 -> Electric
+Updated 27 (#27 Sandshrew): type1 -> Ground
+Updated 29 (#29 Nidoran-F): type1 -> Poison
+Updated 32 (#32 Nidoran-M): type1 -> Poison
+Updated 173 (#173 Cleffa): type1 -> Fairy
+Updated 37 (#37 Vulpix): type1 -> Fire	Fairy
+Updated 174 (#174 Igglybuff): type1 -> Fairy	Flying
+Updated 41 (#41 Zubat): type1 -> Poison	Flying
+Updated 43 (#43 Oddish): type1 -> Fairy	Poison
+Updated 182 (#182 Bellossom): type1 -> Fairy	Grass
+Updated 46 (#46 Paras): type1 -> Bug	Ghost
+Updated 48 (#48 Venonat): type1 -> Bug	Psychic
+Updated 50 (#50 Diglett): type1 -> Ground
+Updated 52 (#52 Meowth): type1 -> Normal	Steel
+Updated 54 (#54 Psyduck): type1 -> Water	Psychic
+Updated 56 (#56 Mankey): type1 -> Fighting
+Updated 58 (#58 Growlithe): type1 -> Fire	Normal
+Updated 60 (#60 Poliwag): type1 -> Water
+Updated 186 (#186 Politoed): type1 -> Water	Normal
+Updated 63 (#63 Abra): type1 -> Psychic
+Updated 66 (#66 Machop): type1 -> Fighting
+Updated 69 (#69 Bellsprout): type1 -> Grass	Poison
+Updated 72 (#72 Tentacool): type1 -> Water	Poison
+Updated 74 (#74 Geodude): type1 -> Rock	Ground
+Updated 77 (#77 Ponyta): type1 -> Fire
+Updated 79 (#79 Slowpoke): type1 -> Water	Psychic
+Updated 81 (#81 Magnemite): type1 -> Steel	Electric
+Updated 83 (#83 Farfetch'd): type1 -> Flying	Fighting
+Updated 84 (#84 Doduo): type1 -> Flying	Ground
+Updated 86 (#86 Seel): type1 -> Water
+Updated 88 (#88 Grimer): type1 -> Poison
+Updated 90 (#90 Shellder): type1 -> Water
+Updated 92 (#92 Gastly): type1 -> Ghost	Poison
+Updated 95 (#95 Onix): type1 -> Rock	Ground
+Updated 96 (#96 Drowzee): type1 -> Psychic	Poison
+Updated 98 (#98 Krabby): type1 -> Water	Bug
+Updated 100 (#100 Voltorb): type1 -> Electric	Steel
+Updated 102 (#102 Exeggcute): type1 -> Grass	Psychic
+Updated 104 (#104 Cubone): type1 -> Ground
+Updated 106 (#106 Hitmonlee): type1 -> Fighting
+Updated 236 (#236 Tyrogue): type1 -> Fighting
+Updated 108 (#108 Lickitung): type1 -> Normal
+Updated 109 (#109 Koffing): type1 -> Poison	Fire
+Updated 111 (#111 Rhyhorn): type1 -> Rock	Ground
+Updated 440 (#440 Happiny): type1 -> Normal
+Updated 114 (#114 Tangela): type1 -> Grass
+Updated 115 (#115 Kangaskhan): type1 -> Normal	Dragon
+Updated 116 (#116 Horsea): type1 -> Water	Dragon
+Updated 118 (#118 Goldeen): type1 -> Water
+Updated 120 (#120 Staryu): type1 -> Water	Psychic
+Updated 439 (#439 Mime Jr.): type1 -> Psychic	Fairy
+Updated 123 (#123 Scyther): type1 -> Bug	Flying
+Updated 238 (#238 Smoochum): type1 -> Ice	Psychic
+Updated 239 (#239 Elekid): type1 -> Electric	Fighting
+Updated 240 (#240 Magby): type1 -> Fire	Poison
+Updated 127 (#127 Pinsir): type1 -> Bug	Ground
+Updated 128 (#128 Tauros): type1 -> Normal
+Updated 129 (#129 Magikarp): type1 -> Water
+Updated 131 (#131 Lapras): type1 -> Ice	Dragon
+Updated 132 (#132 Ditto): type1 -> Normal
+Updated 133 (#133 Eevee): type1 -> Normal
+Updated 134 (#134 Vaporeon): type1 -> Water
+Updated 196 (#196 Espeon): type1 -> Psychic
+Updated 470 (#470 Leafeon): type1 -> Grass
+Updated 137 (#137 Porygon): type1 -> Normal	Electric
+Updated 138 (#138 Omanyte): type1 -> Rock	Water
+Updated 140 (#140 Kabuto): type1 -> Rock	Water
+Updated 142 (#142 Aerodactyl): type1 -> Rock	Flying
+Updated 446 (#446 Munchlax): type1 -> Normal
+Updated 144 (#144 Articuno): type1 -> Ice	Flying
+Updated 147 (#147 Dratini): type1 -> Dragon
+Updated 150 (#150 Mewtwo): type1 -> Psychic
+Updated 5 (#5 Charmeleon): type1 -> Fire	Dragon
+Updated 8 (#8 Wartortle): type1 -> Water	Steel
+Updated 11 (#11 Metapod): type1 -> Bug
+Updated 14 (#14 Kakuna): type1 -> Bug	Poison
+Updated 17 (#17 Pidgeotto): type1 -> Flying
+Updated 20 (#20 Raticate): type1 -> Normal
+Updated 22 (#22 Fearow): type1 -> Dark	Flying
+Updated 24 (#24 Arbok): type1 -> Poison	Dragon
+Updated 25 (#25 Pikachu): type1 -> Electric
+Updated 28 (#28 Sandslash): type1 -> Ground
+Updated 30 (#30 Nidorina): type1 -> Poison
+Updated 33 (#33 Nidorino): type1 -> Poison
+Updated 35 (#35 Clefairy): type1 -> Fairy
+Updated 38 (#38 Ninetales): type1 -> Fire	Fairy
+Updated 39 (#39 Jigglypuff): type1 -> Fairy	Flying
+Updated 42 (#42 Golbat): type1 -> Poison	Flying
+Updated 44 (#44 Gloom): type1 -> Fairy	Poison
+Updated 47 (#47 Parasect): type1 -> Bug	Ghost
+Updated 49 (#49 Venomoth): type1 -> Bug	Psychic
+Updated 51 (#51 Dugtrio): type1 -> Ground
+Updated 53 (#53 Persian): type1 -> Normal	Steel
+Updated 55 (#55 Golduck): type1 -> Water	Psychic
+Updated 57 (#57 Primeape): type1 -> Fighting
+Updated 59 (#59 Arcanine): type1 -> Fire	Normal
+Updated 61 (#61 Poliwhirl): type1 -> Water	Fighting
+Updated 64 (#64 Kadabra): type1 -> Psychic
+Updated 67 (#67 Machoke): type1 -> Fighting
+Updated 70 (#70 Weepinbell): type1 -> Grass	Poison
+Updated 73 (#73 Tentacruel): type1 -> Water	Poison
+Updated 75 (#75 Graveler): type1 -> Rock	Ground
+Updated 78 (#78 Rapidash): type1 -> Fire	Fairy
+Updated 80 (#80 Slowbro): type1 -> Water	Psychic
+Updated 82 (#82 Magneton): type1 -> Steel	Electric
+Updated 85 (#85 Dodrio): type1 -> Flying	Ground
+Updated 87 (#87 Dewgong): type1 -> Water	Ice
+Updated 89 (#89 Muk): type1 -> Poison
+Updated 91 (#91 Cloyster): type1 -> Water	Ice
+Updated 93 (#93 Haunter): type1 -> Ghost	Poison
+Updated 208 (#209 Steelix): type1 -> Steel	Ground
+Updated 97 (#97 Hypno): type1 -> Psychic	Poison
+Updated 99 (#99 Kingler): type1 -> Water	Bug
+Updated 101 (#101 Electrode): type1 -> Electric	Steel
+Updated 103 (#103 Exeggutor): type1 -> Grass	Psychic
+Updated 105 (#105 Marowak): type1 -> Ground	Ghost
+Updated 107 (#107 Hitmonchan): type1 -> Fighting
+Updated 463 (#463 Lickilicky): type1 -> Normal	Poison
+Updated 110 (#110 Weezing): type1 -> Poison	Fire
+Updated 112 (#112 Rhydon): type1 -> Rock	Ground
+Updated 113 (#113 Chansey): type1 -> Normal
+Updated 465 (#465 Tangrowth): type1 -> Grass
+Updated 117 (#117 Seadra): type1 -> Water	Dragon
+Updated 119 (#119 Seaking): type1 -> Water
+Updated 121 (#121 Starmie): type1 -> Water	Psychic
+Updated 122 (#122 Mr. Mime): type1 -> Psychic	Fairy
+Updated 212 (#212 Scizor): type1 -> Bug	Steel
+Updated 124 (#124 Jynx): type1 -> Ice	Psychic
+Updated 125 (#125 Electabuzz): type1 -> Electric	Fighting
+Updated 126 (#126 Magmar): type1 -> Fire	Poison
+Updated 130 (#130 Gyarados): type1 -> Water	Flying
+Updated 135 (#135 Jolteon): type1 -> Electric
+Updated 197 (#197 Umbreon): type1 -> Dark
+Updated 471 (#471 Glaceon): type1 -> Ice
+Updated 233 (#233 Porygon2): type1 -> Normal	Electric
+Updated 139 (#139 Omastar): type1 -> Rock	Water
+Updated 141 (#141 Kabutops): type1 -> Rock	Water
+Updated 143 (#143 Snorlax): type1 -> Normal
+Updated 145 (#145 Zapdos): type1 -> Electric	Flying
+Updated 148 (#148 Dragonair): type1 -> Dragon
+Updated 151 (#151 Mew): type1 -> Psychic
+Updated 3 (#3 Venusaur): type1 -> Grass	Poison
+Updated 6 (#6 Charizard): type1 -> Fire	Dragon
+Updated 9 (#9 Blastoise): type1 -> Water	Steel
+Updated 12 (#12 Butterfree): type1 -> Bug	Flying
+Updated 15 (#15 Beedrill): type1 -> Bug	Poison
+Updated 18 (#18 Pidgeot): type1 -> Flying
+Updated 26 (#26 Raichu): type1 -> Electric	Ground
+Updated 31 (#31 Nidoqueen): type1 -> Poison	Ground
+Updated 34 (#34 Nidoking): type1 -> Poison	Ground
+Updated 36 (#36 Clefable): type1 -> Fairy
+Updated 40 (#40 Wigglytuff): type1 -> Fairy	Flying
+Updated 169 (#169 Crobat): type1 -> Poison	Flying
+Updated 45 (#45 Vileplume): type1 -> Fairy	Poison
+Updated 62 (#62 Poliwrath): type1 -> Water	Fighting
+Updated 65 (#65 Alakazam): type1 -> Psychic
+Updated 68 (#68 Machamp): type1 -> Fighting
+Updated 71 (#71 Victreebel): type1 -> Grass	Poison
+Updated 76 (#76 Golem): type1 -> Rock	Ground
+Updated 199 (#199 Slowking): type1 -> Dragon	Psychic
+Updated 462 (#462 Magnezone): type1 -> Steel	Electric
+Updated 94 (#94 Gengar): type1 -> Ghost	Poison
+Updated 237 (#237 Hitmontop): type1 -> Fighting
+Updated 464 (#464 Rhyperior): type1 -> Rock	Dragon
+Updated 242 (#242 Blissey): type1 -> Normal
+Updated 230 (#230 Kingdra): type1 -> Water	Dragon
+Updated 466 (#466 Electivire): type1 -> Electric	Fighting
+Updated 467 (#467 Magmortar): type1 -> Fire	Poison
+Updated 136 (#136 Flareon): type1 -> Fire
+Updated 474 (#474 Porygon-Z): type1 -> Normal	Electric
+Updated 146 (#146 Moltres): type1 -> Fire	Flying
+Updated 149 (#149 Dragonite): type1 -> Dragon	Flying
+Updated 152 (#152 Chikorita): type1 -> Grass
+Updated 155 (#155 Cyndaquil): type1 -> Fire
+Updated 158 (#158 Totodile): type1 -> Water
+Updated 161 (#161 Sentret): type1 -> Normal
+Updated 163 (#163 Hoothoot): type1 -> Ghost	Flying
+Updated 165 (#165 Ledyba): type1 -> Bug	Fighting
+Updated 167 (#167 Spinarak): type1 -> Bug	Dark
+Updated 170 (#170 Chinchou): type1 -> Water	Electric
+Updated 175 (#175 Togepi): type1 -> Fairy
+Updated 177 (#177 Natu): type1 -> Psychic	Flying
+Updated 179 (#179 Mareep): type1 -> Electric	Dragon
+Updated 298 (#298 Azurill): type1 -> Normal	Fairy
+Updated 438 (#438 Bonsly): type1 -> Rock	Grass
+Updated 187 (#187 Hoppip): type1 -> Grass	Flying
+Updated 190 (#190 Aipom): type1 -> Normal
+Updated 191 (#191 Sunkern): type1 -> Grass	Fire
+Updated 193 (#193 Yanma): type1 -> Bug	Flying
+Updated 194 (#194 Wooper): type1 -> Water	Ground
+Updated 198 (#198 Murkrow): type1 -> Dark	Flying
+Updated 200 (#200 Misdreavus): type1 -> Ghost	Fairy
+Updated 201 (#201 Unown): type1 -> Psychic	Ghost
+Updated 360 (#360 Wynaut): type1 -> Psychic
+Updated 203 (#203 Girafarig): type1 -> Fairy	Dark
+Updated 204 (#204 Pineco): type1 -> Bug
+Updated 206 (#206 Dunsparce): type1 -> Ground	Fairy
+Updated 207 (#207 Gligar): type1 -> Ground	Flying
+Updated 209 (#209 Snubbull): type1 -> Fairy	Fighting
+Updated 211 (#211 Qwilfish): type1 -> Water	Poison
+Updated 213 (#213 Shuckle): type1 -> Bug	Rock
+Updated 214 (#214 Heracross): type1 -> Bug	Fighting
+Updated 215 (#215 Sneasel): type1 -> Ice	Dark
+Updated 216 (#216 Teddiursa): type1 -> Normal	Ground
+Updated 218 (#218 Slugma): type1 -> Fire	Rock
+Updated 220 (#220 Swinub): type1 -> Ice	Ground
+Updated 222 (#222 Corsola): type1 -> Poison	Rock
+Updated 223 (#223 Remoraid): type1 -> Water
+Updated 225 (#225 Delibird): type1 -> Ice	Fairy
+Updated 458 (#458 Mantyke): type1 -> Water	Flying
+Updated 227 (#227 Skarmory): type1 -> Steel	Flying
+Updated 228 (#228 Houndour): type1 -> Dark	Fire
+Updated 231 (#231 Phanpy): type1 -> Ground
+Updated 234 (#234 Stantler): type1 -> Normal	Ghost
+Updated 235 (#235 Smeargle): type1 -> Normal
+Updated 241 (#241 Miltank): type1 -> Normal
+Updated 243 (#243 Raikou): type1 -> Electric
+Updated 246 (#246 Larvitar): type1 -> Rock	Ground
+Updated 249 (#249 Lugia): type1 -> Psychic	Flying
+Updated 251 (#251 Celebi): type1 -> Grass	Psychic
+Updated 153 (#153 Bayleef): type1 -> Grass	Fairy
+Updated 156 (#156 Quilava): type1 -> Fire	Ground
+Updated 159 (#159 Croconaw): type1 -> Water	Dragon
+Updated 162 (#162 Furret): type1 -> Normal
+Updated 164 (#164 Noctowl): type1 -> Ghost	Flying
+Updated 166 (#166 Ledian): type1 -> Bug	Fighting
+Updated 168 (#168 Ariados): type1 -> Bug	Dark
+Updated 171 (#171 Lanturn): type1 -> Water	Electric
+Updated 176 (#176 Togetic): type1 -> Fairy	Flying
+Updated 178 (#178 Xatu): type1 -> Psychic	Flying
+Updated 180 (#180 Flaaffy): type1 -> Electric	Dragon
+Updated 183 (#183 Marill): type1 -> Water	Fairy
+Updated 185 (#185 Sudowoodo): type1 -> Rock	Grass
+Updated 188 (#188 Skiploom): type1 -> Grass	Flying
+Updated 424 (#424 Ambipom): type1 -> Normal
+Updated 192 (#192 Sunflora): type1 -> Grass	Fire
+Updated 469 (#469 Yanmega): type1 -> Bug	Flying
+Updated 195 (#195 Quagsire): type1 -> Water	Ground
+Updated 430 (#430 Honchkrow): type1 -> Dark	Flying
+Updated 429 (#429 Mismagius): type1 -> Ghost	Fairy
+Updated 202 (#202 Wobbuffet): type1 -> Psychic
+Updated 205 (#205 Forretress): type1 -> Bug	Steel
+Updated 472 (#472 Gliscor): type1 -> Ground	Flying
+Updated 210 (#210 Granbull): type1 -> Fairy	Fighting
+Updated 461 (#461 Weavile): type1 -> Ice	Dark
+Updated 217 (#217 Ursaring): type1 -> Normal	Ground
+Updated 219 (#219 Magcargo): type1 -> Fire	Rock
+Updated 221 (#221 Piloswine): type1 -> Ice	Ground
+Updated 224 (#224 Octillery): type1 -> Water	Fire
+Updated 226 (#226 Mantine): type1 -> Water	Flying
+Updated 229 (#229 Houndoom): type1 -> Dark	Fire
+Updated 232 (#232 Donphan): type1 -> Ground
+Updated 244 (#244 Entei): type1 -> Fire
+Updated 247 (#247 Pupitar): type1 -> Rock	Ground
+Updated 250 (#250 Ho-Oh): type1 -> Fire	Flying
+Updated 154 (#154 Meganium): type1 -> Grass	Fairy
+Updated 157 (#157 Typhlosion): type1 -> Fire	Ground
+Updated 160 (#160 Feraligatr): type1 -> Water	Dragon
+Updated 468 (#468 Togekiss): type1 -> Fairy	Flying
+Updated 181 (#181 Ampharos): type1 -> Electric	Dragon
+Updated 184 (#184 Azumarill): type1 -> Water	Fairy
+Updated 189 (#189 Jumpluff): type1 -> Grass	Flying
+Updated 473 (#473 Mamoswine): type1 -> Ice	Ground
+Updated 245 (#245 Suicune): type1 -> Water
+Updated 248 (#248 Tyranitar): type1 -> Rock	Dark
+Updated 252 (#252 Treecko): type1 -> Grass
+Updated 255 (#255 Torchic): type1 -> Fire
+Updated 258 (#258 Mudkip): type1 -> Water
+Updated 261 (#261 Poochyena): type1 -> Dark
+Updated 263 (#263 Zigzagoon): type1 -> Normal
+Updated 265 (#265 Wurmple): type1 -> Bug
+Updated 268 (#268 Cascoon): type1 -> Bug	Poison
+Updated 270 (#270 Lotad): type1 -> Water	Grass
+Updated 273 (#273 Seedot): type1 -> Grass
+Updated 276 (#276 Taillow): type1 -> Normal	Flying
+Updated 278 (#278 Wingull): type1 -> Water	Flying
+Updated 280 (#280 Ralts): type1 -> Psychic	Fairy
+Updated 475 (#475 Gallade): type1 -> Psychic	Fighting
+Updated 283 (#283 Surskit): type1 -> Bug	Water
+Updated 285 (#285 Shroomish): type1 -> Grass
+Updated 287 (#287 Slakoth): type1 -> Normal
+Updated 290 (#290 Nincada): type1 -> Bug	Ground
+Updated 293 (#293 Whismur): type1 -> Normal
+Updated 296 (#296 Makuhita): type1 -> Fighting
+Updated 299 (#299 Nosepass): type1 -> Rock
+Updated 300 (#300 Skitty): type1 -> Normal	Fairy
+Updated 302 (#302 Sableye): type1 -> Dark	Ghost
+Updated 303 (#303 Mawile): type1 -> Steel	Fairy
+Updated 304 (#304 Aron): type1 -> Steel
+Updated 307 (#307 Meditite): type1 -> Fighting	Psychic
+Updated 309 (#309 Electrike): type1 -> Electric
+Updated 311 (#311 Plusle): type1 -> Electric	Fire
+Updated 312 (#312 Minun): type1 -> Electric	Ice
+Updated 313 (#313 Volbeat): type1 -> Bug	Electric
+Updated 314 (#314 Illumise): type1 -> Bug	Fairy
+Updated 406 (#406 Budew): type1 -> Grass	Poison
+Updated 316 (#316 Gulpin): type1 -> Poison
+Updated 318 (#318 Carvanha): type1 -> Water	Dark
+Updated 320 (#320 Wailmer): type1 -> Water
+Updated 322 (#322 Numel): type1 -> Fire	Ground
+Updated 324 (#324 Torkoal): type1 -> Fire
+Updated 325 (#325 Spoink): type1 -> Psychic	Dark
+Updated 327 (#327 Spinda): type1 -> Normal	Psychic
+Updated 328 (#328 Trapinch): type1 -> Bug	Ground
+Updated 331 (#331 Cacnea): type1 -> Grass	Ghost
+Updated 333 (#333 Swablu): type1 -> Fairy	Flying
+Updated 335 (#335 Zangoose): type1 -> Normal
+Updated 336 (#336 Seviper): type1 -> Poison	Dark
+Updated 337 (#337 Lunatone): type1 -> Rock	Fairy
+Updated 338 (#338 Solrock): type1 -> Rock	Fire
+Updated 339 (#339 Barboach): type1 -> Water	Ground
+Updated 341 (#341 Corphish): type1 -> Water
+Updated 343 (#343 Baltoy): type1 -> Ground	Psychic
+Updated 345 (#345 Lileep): type1 -> Rock	Grass
+Updated 347 (#347 Anorith): type1 -> Rock	Bug
+Updated 349 (#349 Feebas): type1 -> Water
+Updated 351 (#351 Castform): type1 -> Flying
+Updated 352 (#352 Kecleon): type1 -> Dragon	Ghost
+Updated 353 (#353 Shuppet): type1 -> Ghost	Normal
+Updated 355 (#355 Duskull): type1 -> Ghost
+Updated 357 (#357 Tropius): type1 -> Grass	Flying
+Updated 433 (#433 Chingling): type1 -> Fairy	Steel
+Updated 359 (#359 Absol): type1 -> Dark	Fairy
+Updated 361 (#361 Snorunt): type1 -> Ice
+Updated 478 (#478 Froslass): type1 -> Ice	Ghost
+Updated 363 (#363 Spheal): type1 -> Ice	Water
+Updated 366 (#366 Clamperl): type1 -> Water
+Updated 369 (#369 Relicanth): type1 -> Rock	Ghost
+Updated 370 (#370 Luvdisc): type1 -> Water	Fairy
+Updated 371 (#371 Bagon): type1 -> Dragon
+Updated 374 (#374 Beldum): type1 -> Steel	Psychic
+Updated 377 (#377 Regirock): type1 -> Rock
+Updated 380 (#380 Latias): type1 -> Dragon	Psychic
+Updated 382 (#382 Kyogre): type1 -> Water
+Updated 385 (#385 Jirachi): type1 -> Steel	Fairy
+Updated 386 (#386 Deoxys): type1 -> Psychic
+Updated 686 (#686 Deoxys-Defense): type1 -> Psychic
+Updated 253 (#253 Grovyle): type1 -> Grass	Dragon
+Updated 256 (#256 Combusken): type1 -> Fire	Flying
+Updated 259 (#259 Marshtomp): type1 -> Water	Ground
+Updated 262 (#262 Mightyena): type1 -> Dark
+Updated 264 (#264 Linoone): type1 -> Normal
+Updated 266 (#266 Silcoon): type1 -> Bug	Fairy
+Updated 269 (#269 Dustox): type1 -> Bug	Poison
+Updated 271 (#271 Lombre): type1 -> Water	Grass
+Updated 274 (#274 Nuzleaf): type1 -> Grass	Dark
+Updated 277 (#277 Swellow): type1 -> Normal	Flying
+Updated 279 (#279 Pelipper): type1 -> Water	Flying
+Updated 281 (#281 Kirlia): type1 -> Psychic	Fairy
+Updated 284 (#284 Masquerain): type1 -> Bug	Water
+Updated 286 (#286 Breloom): type1 -> Grass	Fighting
+Updated 288 (#288 Vigoroth): type1 -> Normal
+Updated 291 (#291 Ninjask): type1 -> Bug	Flying
+Updated 294 (#294 Loudred): type1 -> Normal
+Updated 297 (#297 Hariyama): type1 -> Fighting
+Updated 476 (#476 Probopass): type1 -> Rock	Steel
+Updated 301 (#301 Delcatty): type1 -> Normal	Fairy
+Updated 305 (#305 Lairon): type1 -> Steel	Dragon
+Updated 308 (#308 Medicham): type1 -> Fighting	Psychic
+Updated 310 (#310 Manectric): type1 -> Electric
+Updated 315 (#315 Roselia): type1 -> Grass	Poison
+Updated 317 (#317 Swalot): type1 -> Poison
+Updated 319 (#319 Sharpedo): type1 -> Water	Dark
+Updated 321 (#321 Wailord): type1 -> Water
+Updated 323 (#323 Camerupt): type1 -> Fire	Ground
+Updated 326 (#326 Grumpig): type1 -> Psychic	Dark
+Updated 329 (#329 Vibrava): type1 -> Bug	Dragon
+Updated 332 (#332 Cacturne): type1 -> Grass	Ghost
+Updated 334 (#334 Altaria): type1 -> Fairy	Dragon
+Updated 340 (#340 Whiscash): type1 -> Water	Ground
+Updated 342 (#342 Crawdaunt): type1 -> Water	Dark
+Updated 344 (#344 Claydol): type1 -> Ground	Psychic
+Updated 346 (#346 Cradily): type1 -> Rock	Grass
+Updated 348 (#348 Armaldo): type1 -> Rock	Bug
+Updated 350 (#350 Milotic): type1 -> Water	Fairy
+Updated 698 (#698 Castform-Rainy): type1 -> Flying	Water
+Updated 354 (#354 Banette): type1 -> Ghost	Normal
+Updated 356 (#356 Dusclops): type1 -> Ghost
+Updated 358 (#358 Chimecho): type1 -> Fairy	Steel
+Updated 362 (#362 Glalie): type1 -> Ice	Rock
+Updated 364 (#364 Sealeo): type1 -> Ice	Water
+Updated 367 (#367 Huntail): type1 -> Dragon	Electric
+Updated 372 (#372 Shelgon): type1 -> Dragon
+Updated 375 (#375 Metang): type1 -> Steel	Psychic
+Updated 378 (#378 Regice): type1 -> Ice
+Updated 381 (#381 Latios): type1 -> Dragon	Psychic
+Updated 383 (#383 Groudon): type1 -> Ground
+Updated 687 (#687 Deoxys-Speed): type1 -> Psychic
+Updated 254 (#254 Sceptile): type1 -> Grass	Dragon
+Updated 257 (#257 Blaziken): type1 -> Fire	Flying
+Updated 260 (#260 Swampert): type1 -> Water	Ground
+Updated 267 (#267 Beautifly): type1 -> Bug	Fairy
+Updated 272 (#272 Ludicolo): type1 -> Water	Grass
+Updated 275 (#275 Shiftry): type1 -> Grass	Dark
+Updated 282 (#282 Gardevoir): type1 -> Psychic	Fairy
+Updated 289 (#289 Slaking): type1 -> Normal
+Updated 292 (#292 Shedinja): type1 -> Bug	Ghost
+Updated 295 (#295 Exploud): type1 -> Normal
+Updated 306 (#306 Aggron): type1 -> Steel	Dragon
+Updated 407 (#407 Roserade): type1 -> Grass	Poison
+Updated 330 (#330 Flygon): type1 -> Bug	Dragon
+Updated 699 (#699 Castform-Snowy): type1 -> Flying	Ice
+Updated 477 (#477 Dusknoir): type1 -> Ghost	Fighting
+Updated 365 (#365 Walrein): type1 -> Ice	Water
+Updated 368 (#368 Gorebyss): type1 -> Dragon	Poison
+Updated 373 (#373 Salamence): type1 -> Dragon	Flying
+Updated 376 (#376 Metagross): type1 -> Steel	Psychic
+Updated 379 (#379 Registeel): type1 -> Steel
+Updated 384 (#384 Rayquaza): type1 -> Dragon	Flying
+Updated 685 (#685 Deoxys-Attack): type1 -> Psychic
+Updated 387 (#387 Turtwig): type1 -> Grass
+Updated 390 (#390 Chimchar): type1 -> Fire
+Updated 393 (#393 Piplup): type1 -> Water
+Updated 396 (#396 Starly): type1 -> Flying	Normal
+Updated 399 (#399 Bidoof): type1 -> Normal
+Updated 401 (#401 Kricketot): type1 -> Bug	Normal
+Updated 403 (#403 Shinx): type1 -> Electric	Dark
+Updated 408 (#408 Cranidos): type1 -> Rock	Dragon
+Updated 410 (#410 Shieldon): type1 -> Steel	Rock
+Updated 412 (#412 Burmy): type1 -> Bug
+Updated 688 (#688 Wormadam-Sandy): type1 -> Bug	Ground
+Updated 414 (#414 Mothim): type1 -> Bug	Flying
+Updated 415 (#415 Combee): type1 -> Bug	Flying
+Updated 417 (#417 Pachirisu): type1 -> Electric	Fairy
+Updated 418 (#418 Buizel): type1 -> Water	Normal
+Updated 420 (#420 Cherubi): type1 -> Grass	Fire
+Updated 422 (#422 Shellos): type1 -> Water	Ground
+Updated 655 (#652 Shellos-East): type1 -> Water	Grass
+Updated 425 (#425 Drifloon): type1 -> Ghost	Flying
+Updated 427 (#427 Buneary): type1 -> Normal	Fighting
+Updated 431 (#431 Glameow): type1 -> Normal	Dark
+Updated 434 (#434 Stunky): type1 -> Poison	Dark
+Updated 436 (#436 Bronzor): type1 -> Steel	Psychic
+Updated 441 (#441 Chatot): type1 -> Normal	Flying
+Updated 442 (#442 Spiritomb): type1 -> Ghost	Dark
+Updated 443 (#443 Gible): type1 -> Ground	Dragon
+Updated 447 (#447 Riolu): type1 -> Fighting
+Updated 449 (#449 Hippopotas): type1 -> Ground
+Updated 451 (#451 Skorupi): type1 -> Poison	Bug
+Updated 453 (#453 Croagunk): type1 -> Poison	Fighting
+Updated 455 (#455 Carnivine): type1 -> Grass	Steel
+Updated 456 (#456 Finneon): type1 -> Water
+Updated 459 (#459 Snover): type1 -> Grass	Ice
+Updated 480 (#480 Uxie): type1 -> Psychic	Fairy
+Updated 483 (#483 Dialga): type1 -> Steel	Dragon
+Updated 485 (#485 Heatran): type1 -> Fire	Steel
+Updated 486 (#486 Regigigas): type1 -> Normal
+Updated 487 (#487 Giratina): type1 -> Ghost	Dragon
+Updated 488 (#488 Cresselia): type1 -> Fairy
+Updated 489 (#489 Phione): type1 -> Water
+Updated 491 (#491 Darkrai): type1 -> Dark
+Updated 492 (#492 Shaymin): type1 -> Grass
+Updated 493 (#493 Arceus): type1 -> Normal
+Updated 388 (#388 Grotle): type1 -> Grass	Ground
+Updated 391 (#391 Monferno): type1 -> Fire	Fighting
+Updated 394 (#394 Prinplup): type1 -> Water
+Updated 397 (#397 Staravia): type1 -> Flying	Normal
+Updated 400 (#400 Bibarel): type1 -> Normal	Water
+Updated 402 (#402 Kricketune): type1 -> Bug	Normal
+Updated 404 (#404 Luxio): type1 -> Electric	Dark
+Updated 409 (#409 Rampardos): type1 -> Rock	Dragon
+Updated 411 (#411 Bastiodon): type1 -> Steel	Rock
+Updated 413 (#413 Wormadam): type1 -> Bug	Grass
+Updated 689 (#689 Wormadam-Trash): type1 -> Bug	Steel
+Updated 416 (#416 Vespiquen): type1 -> Bug	Flying
+Updated 419 (#419 Floatzel): type1 -> Water	Normal
+Updated 421 (#421 Cherrim): type1 -> Grass	Fire
+Updated 423 (#423 Gastrodon): type1 -> Water	Ground
+Updated 656 (#653 Gastrodon-East): type1 -> Water	Grass
+Updated 428 (#428 Lopunny): type1 -> Normal	Fighting
+Updated 432 (#432 Purugly): type1 -> Normal	Dark
+Updated 435 (#435 Skuntank): type1 -> Poison	Dark
+Updated 437 (#437 Bronzong): type1 -> Steel	Psychic
+Updated 444 (#444 Gabite): type1 -> Ground	Dragon
+Updated 448 (#448 Lucario): type1 -> Fighting	Steel
+Updated 450 (#450 Hippowdon): type1 -> Ground
+Updated 452 (#452 Drapion): type1 -> Poison	Dark
+Updated 454 (#454 Toxicroak): type1 -> Poison	Fighting
+Updated 457 (#457 Lumineon): type1 -> Water	Electric
+Updated 460 (#460 Abomasnow): type1 -> Grass	Ice
+Updated 695 (#695 Rotom-Fan): type1 -> Electric	Flying
+Updated 481 (#481 Mesprit): type1 -> Psychic	Fairy
+Updated 484 (#484 Palkia): type1 -> Water	Dragon
+Updated 691 (#691 Giratina-Origin): type1 -> Ghost	Dragon
+Updated 490 (#490 Manaphy): type1 -> Water
+Updated 690 (#690 Shaymin-Sky): type1 -> Grass	Flying
+Updated 389 (#389 Torterra): type1 -> Grass	Ground
+Updated 392 (#392 Infernape): type1 -> Fire	Fighting
+Updated 395 (#395 Empoleon): type1 -> Water	Steel
+Updated 398 (#398 Staraptor): type1 -> Flying	Fighting
+Updated 405 (#405 Luxray): type1 -> Electric	Dark
+Updated 445 (#445 Garchomp): type1 -> Ground	Dragon
+Updated 693 (#693 Rotom-Wash): type1 -> Electric	Water
+Updated 482 (#482 Azelf): type1 -> Psychic	Fairy
+Updated 494 (#494 Victini): type1 -> Psychic	Fire
+Updated 495 (#495 Snivy): type1 -> Grass
+Updated 498 (#498 Tepig): type1 -> Fire
+Updated 501 (#501 Oshawott): type1 -> Water
+Updated 504 (#504 Patrat): type1 -> Normal
+Updated 506 (#506 Lillipup): type1 -> Normal
+Updated 509 (#509 Purrloin): type1 -> Dark
+Updated 511 (#511 Pansage): type1 -> Grass
+Updated 513 (#513 Pansear): type1 -> Fire
+Updated 515 (#515 Panpour): type1 -> Water
+Updated 517 (#517 Munna): type1 -> Psychic	Fairy
+Updated 519 (#519 Pidove): type1 -> Normal	Flying
+Updated 522 (#522 Blitzle): type1 -> Electric	Dark
+Updated 524 (#524 Roggenrola): type1 -> Rock
+Updated 527 (#527 Woobat): type1 -> Fairy	Flying
+Updated 529 (#529 Drilbur): type1 -> Ground
+Updated 531 (#531 Audino): type1 -> Normal	Fairy
+Updated 532 (#532 Timburr): type1 -> Fighting
+Updated 535 (#535 Tympole): type1 -> Poison	Ground
+Updated 538 (#538 Throh): type1 -> Fighting	Ground
+Updated 539 (#539 Sawk): type1 -> Fighting	Normal
+Updated 540 (#540 Sewaddle): type1 -> Bug	Grass
+Updated 543 (#543 Venipede): type1 -> Bug	Poison
+Updated 546 (#546 Cottonee): type1 -> Grass	Fairy
+Updated 548 (#548 Petilil): type1 -> Grass
+Updated 550 (#550 Basculin): type1 -> Water	Ghost
+Updated 551 (#551 Sandile): type1 -> Ground	Dark
+Updated 554 (#554 Darumaka): type1 -> Fire
+Updated 556 (#556 Maractus): type1 -> Grass	Ground
+Updated 557 (#557 Dwebble): type1 -> Bug	Rock
+Updated 559 (#559 Scraggy): type1 -> Dark	Fighting
+Updated 561 (#561 Sigilyph): type1 -> Psychic	Flying
+Updated 562 (#562 Yamask): type1 -> Ghost	Steel
+Updated 564 (#564 Tirtouga): type1 -> Water	Rock
+Updated 566 (#566 Archen): type1 -> Rock	Flying
+Updated 568 (#568 Trubbish): type1 -> Poison	Steel
+Updated 570 (#570 Zorua): type1 -> Dark
+Updated 572 (#572 Minccino): type1 -> Normal
+Updated 574 (#574 Gothita): type1 -> Psychic	Dark
+Updated 577 (#577 Solosis): type1 -> Psychic
+Updated 580 (#580 Ducklett): type1 -> Water	Flying
+Updated 582 (#582 Vanillite): type1 -> Ice	Poison
+Updated 585 (#585 Deerling): type1 -> Grass	Normal
+Updated 587 (#587 Emolga): type1 -> Electric	Flying
+Updated 588 (#588 Karrablast): type1 -> Bug
+Updated 590 (#590 Foongus): type1 -> Grass	Poison
+Updated 592 (#592 Frillish): type1 -> Water	Ghost
+Updated 594 (#594 Alomomola): type1 -> Water
+Updated 595 (#595 Joltik): type1 -> Bug	Electric
+Updated 597 (#597 Ferroseed): type1 -> Grass	Steel
+Updated 599 (#599 Klink): type1 -> Steel
+Updated 602 (#602 Tynamo): type1 -> Electric
+Updated 605 (#605 Elgyem): type1 -> Psychic	Electric
+Updated 607 (#607 Litwick): type1 -> Ghost	Fire
+Updated 610 (#610 Axew): type1 -> Dragon
+Updated 613 (#613 Cubchoo): type1 -> Ice
+Updated 615 (#615 Cryogonal): type1 -> Ice	Steel
+Updated 616 (#616 Shelmet): type1 -> Bug
+Updated 618 (#618 Stunfisk): type1 -> Ground	Electric
+Updated 619 (#619 Mienfoo): type1 -> Fighting
+Updated 621 (#621 Druddigon): type1 -> Dragon
+Updated 622 (#622 Golett): type1 -> Ground	Ghost
+Updated 624 (#624 Pawniard): type1 -> Dark	Steel
+Updated 626 (#626 Bouffalant): type1 -> Normal	Ground
+Updated 627 (#627 Rufflet): type1 -> Normal	Flying
+Updated 629 (#629 Vullaby): type1 -> Dark	Flying
+Updated 631 (#631 Heatmor): type1 -> Fire	Steel
+Updated 632 (#632 Durant): type1 -> Bug	Steel
+Updated 633 (#633 Deino): type1 -> Dark	Dragon
+Updated 636 (#636 Larvesta): type1 -> Bug	Fire
+Updated 638 (#638 Cobalion): type1 -> Steel	Fighting
+Updated 641 (#641 Tornadus): type1 -> Flying
+Updated 642 (#642 Thundurus): type1 -> Electric	Flying
+Updated 643 (#643 Reshiram): type1 -> Dragon	Fire
+Updated 645 (#645 Landorus): type1 -> Ground	Flying
+Updated 646 (#646 Kyurem): type1 -> Dragon	Ice
+Updated 647 (#647 Keldeo): type1 -> Water	Fighting
+Updated 648 (#648 Meloetta): type1 -> Normal	Psychic
+Updated 649 (#649 Genesect): type1 -> Bug	Steel
+Updated 496 (#496 Servine): type1 -> Grass	Electric
+Updated 499 (#499 Pignite): type1 -> Fire	Dark
+Updated 502 (#502 Dewott): type1 -> Water	Fighting
+Updated 505 (#505 Watchog): type1 -> Normal
+Updated 507 (#507 Herdier): type1 -> Normal
+Updated 510 (#510 Liepard): type1 -> Dark
+Updated 512 (#512 Simisage): type1 -> Grass
+Updated 514 (#514 Simisear): type1 -> Fire
+Updated 516 (#516 Simipour): type1 -> Water
+Updated 518 (#518 Musharna): type1 -> Psychic	Fairy
+Updated 520 (#520 Tranquill): type1 -> Normal	Flying
+Updated 523 (#523 Zebstrika): type1 -> Electric	Dark
+Updated 525 (#525 Boldore): type1 -> Rock
+Updated 528 (#528 Swoobat): type1 -> Fairy	Flying
+Updated 530 (#530 Excadrill): type1 -> Ground	Steel
+Updated 533 (#533 Gurdurr): type1 -> Fighting	Steel
+Updated 536 (#536 Palpitoad): type1 -> Poison	Ground
+Updated 541 (#541 Swadloon): type1 -> Bug	Grass
+Updated 544 (#544 Whirlipede): type1 -> Bug	Poison
+Updated 547 (#547 Whimsicott): type1 -> Grass	Fairy
+Updated 549 (#549 Lilligant): type1 -> Grass	Fighting
+Updated 700 (#700 Basculin-BlueStripe): type1 -> Water	Ghost
+Updated 552 (#552 Krokorok): type1 -> Ground	Dark
+Updated 555 (#555 Darmanitan): type1 -> Fire	Psychic
+Updated 558 (#558 Crustle): type1 -> Bug	Rock
+Updated 560 (#560 Scrafty): type1 -> Dark	Fighting
+Updated 563 (#563 Cofagrigus): type1 -> Ghost	Steel
+Updated 565 (#565 Carracosta): type1 -> Water	Rock
+Updated 567 (#567 Archeops): type1 -> Rock	Flying
+Updated 569 (#569 Garbodor): type1 -> Poison	Steel
+Updated 571 (#571 Zoroark): type1 -> Dark
+Updated 573 (#573 Cinccino): type1 -> Normal
+Updated 575 (#575 Gothorita): type1 -> Psychic	Dark
+Updated 578 (#578 Duosion): type1 -> Psychic
+Updated 581 (#581 Swanna): type1 -> Ice	Flying
+Updated 583 (#583 Vanillish): type1 -> Ice	Poison
+Updated 586 (#586 Sawsbuck): type1 -> Grass	Normal
+Updated 653 (#655 Sawsbuck-Autumn): type1 -> Grass	Ghost
+Updated 589 (#589 Escavalier): type1 -> Bug	Steel
+Updated 591 (#591 Amoonguss): type1 -> Grass	Poison
+Updated 593 (#593 Jellicent): type1 -> Water	Ghost
+Updated 596 (#596 Galvantula): type1 -> Bug	Electric
+Updated 598 (#598 Ferrothorn): type1 -> Grass	Steel
+Updated 600 (#600 Klang): type1 -> Steel
+Updated 603 (#603 Eelektrik): type1 -> Electric	Poison
+Updated 606 (#606 Beheeyem): type1 -> Psychic	Electric
+Updated 608 (#608 Lampent): type1 -> Ghost	Fire
+Updated 611 (#611 Fraxure): type1 -> Dragon	Fighting
+Updated 614 (#614 Beartic): type1 -> Ice	Fighting
+Updated 617 (#617 Accelgor): type1 -> Bug	Dark
+Updated 620 (#620 Mienshao): type1 -> Fighting
+Updated 623 (#623 Golurk): type1 -> Ground	Ghost
+Updated 625 (#625 Bisharp): type1 -> Dark	Steel
+Updated 628 (#628 Braviary): type1 -> Normal	Flying
+Updated 630 (#630 Mandibuzz): type1 -> Dark	Flying
+Updated 634 (#634 Zweilous): type1 -> Dark	Dragon
+Updated 637 (#637 Volcarona): type1 -> Bug	Fire
+Updated 639 (#639 Terrakion): type1 -> Rock	Fighting
+Updated 706 (#706 Tornadus-Therian): type1 -> Flying
+Updated 707 (#707 Thundurus-Therian): type1 -> Electric	Flying
+Updated 644 (#644 Zekrom): type1 -> Dragon	Electric
+Updated 708 (#708 Landorus-Therian): type1 -> Ground	Flying
+Updated 704 (#704 Kyurem-Black): type1 -> Dragon	Ice
+Updated 702 (#702 Meloetta-Pirouette): type1 -> Normal	Fighting
+Updated 497 (#497 Serperior): type1 -> Grass	Electric
+Updated 500 (#500 Emboar): type1 -> Fire	Dark
+Updated 503 (#503 Samurott): type1 -> Water	Fighting
+Updated 508 (#508 Stoutland): type1 -> Normal
+Updated 521 (#521 Unfezant): type1 -> Normal	Flying
+Updated 526 (#526 Gigalith): type1 -> Rock
+Updated 534 (#534 Conkeldurr): type1 -> Fighting	Rock
+Updated 537 (#537 Seismitoad): type1 -> Poison	Ground
+Updated 542 (#542 Leavanny): type1 -> Bug	Grass
+Updated 545 (#545 Scolipede): type1 -> Bug	Poison
+Updated 553 (#553 Krookodile): type1 -> Ground	Dark
+Updated 701 (#701 Darmanitan-Zen): type1 -> Rock	Psychic
+Updated 576 (#576 Gothitelle): type1 -> Psychic	Dark
+Updated 579 (#579 Reuniclus): type1 -> Psychic
+Updated 584 (#584 Vanilluxe): type1 -> Ice	Poison
+Updated 652 (#654 Sawsbuck-Summer): type1 -> Grass	Ground
+Updated 654 (#656 Sawsbuck-Winter): type1 -> Grass	Ice
+Updated 601 (#601 Klinklang): type1 -> Steel
+Updated 604 (#604 Eelektross): type1 -> Electric	Poison
+Updated 609 (#609 Chandelure): type1 -> Ghost	Fire
+Updated 612 (#612 Haxorus): type1 -> Dragon	Fighting
+Updated 635 (#635 Hydreigon): type1 -> Dark	Dragon
+Updated 640 (#640 Virizion): type1 -> Grass	Fighting
+Updated 703 (#705 Kyurem-White): type1 -> Dragon	Ice
+
+Updated: 670, Skipped(no changes): 4, Missing: 4
+Missing entries:
+# 2 Ivysaur
+Type	#697 Castform-Sunny
+#479 Rotom-Base
+#426 Driblim

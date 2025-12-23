@@ -85,11 +85,11 @@ void Sequence6()
 	End();
 }
 
-
+/* IRON BALL - Relic Passage */
 void Sequence7()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 99);
+	SetVarEqVal(0x800C, 278);
 	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
@@ -598,12 +598,12 @@ void Sequence49()
 	End();
 }
 
-/* Light Clay - Route 4*/
+/* Figy Berry x10 - Route 4*/
 void Sequence50()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 269);
-	SetVarEqVal(0x800D, 1);
+	SetVarEqVal(0x800C, 159);
+	SetVarEqVal(0x800D, 10);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -846,10 +846,11 @@ void Sequence70()
 	End();
 }
 
+/* Heart Scale - Pokemon World Tournament */
 void Sequence71()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 51);
+	SetVarEqVal(0x800C, 93);
 	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
@@ -1060,11 +1061,11 @@ void Sequence89()
 	End();
 }
 
-/* CHARGESTONE CAVE - TM66 Power Gem*/
+/* CHARGESTONE CAVE - TM21 Aurora Beam */
 void Sequence90()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 393);
+	SetVarEqVal(0x800C, 348);
 	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
@@ -3269,11 +3270,11 @@ void Sequence288()
 	End();
 }
 
-/* TM21 Aurora Beam - Route 5 */
+/* TM61 Power Gem - Route 5 */
 void Sequence289()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 10);
+	SetVarEqVal(0x800C, 393);
 	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
@@ -3432,10 +3433,11 @@ void Sequence302()
 	End();
 }
 
+/* HEART SCALE - Route 7*/
 void Sequence303()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 270);
+	SetVarEqVal(0x800C, 93);
 	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();

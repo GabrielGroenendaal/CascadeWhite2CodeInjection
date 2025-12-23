@@ -22,7 +22,7 @@ public class BreedTests
     [InlineData( C, Igglybuff, 0, FeintAttack, Concuss, Flamethrower, Sing)]
     [InlineData( B, Heracross, 0, Megahorn, NightSlash, CloseCombat, StoneEdge)]
     [InlineData( B, Heracross, 0, Concuss, Megahorn, Counter, Reversal)]
-    [InlineData( B, Heracross, 0, HornAttack, Endure, Megahorn, TakeDown)]
+    [InlineData( B, Heracross, 0, Tackle, Endure, Megahorn, TakeDown)]
     [InlineData( B, Heracross, 0, Endure, Megahorn, FocusPunch, Concuss)]
     [InlineData( B, Heracross, 0, Megahorn, Reversal, Bulldoze, Fling)]
     [InlineData( X, Growlithe, 0, Bite, Roar, FlareBlitz, MorningSun)]

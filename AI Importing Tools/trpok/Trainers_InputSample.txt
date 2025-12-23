@@ -1,0 +1,22 @@
+
+ Youngster Pedro		
+            Sentret	Hoothoot	Phanpy	Slakoth		
+	Item	Chople Berry	Leftovers	Normal Gem	Berry Juice	
+	Level	12	12	12	13	
+	Nature	Calm	Mild	Gentle	Relaxed	
+	Ability	Adaptability	Overcoat	Battle Armor	Truant	
+	Move 1	Secret Power	Astonish	Bulldoze	Secret Power	
+	Move 2	Quick Attack	Glare	Take Down	Work Up	
+	Move 3	Bite	Air Cutter	Rock Throw	Slack Off	
+	Move 4	Flame Charge	Icy Wind	Curse	Fury Swipes	
+						
+ Lass Serena (2x)		
+            Meowth	Snubbull	Gothita	Staravia	
+	Item	Focus Sash	Muscle Band	Wise Glasses	Berry Juice	
+	Level	12	12	13	13	
+	Nature	Mild	Lonely	Hardy	Careful	
+	Ability	Technician	Intimidate	Magic Bounce	Intimidate	
+	Move 1	Swift	Covet	Telekinesis	Pluck	
+	Move 2	Pursuit	Low Sweep	Snarl	Secret Power	
+	Move 3	Fake Out	Attract	Disarming Voice	Quick Attack	
+	Move 4	Metal Sound	Secret Power	Fake Out	Karate Chop	

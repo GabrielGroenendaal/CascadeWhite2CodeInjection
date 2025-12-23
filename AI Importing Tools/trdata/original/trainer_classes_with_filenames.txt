@@ -1,0 +1,814 @@
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\0.json: PkMn Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\1.json: Smasher
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\2.json: Linebacker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\3.json: Smasher
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\4.json: PkMn Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\5.json: PkMn Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\6.json: PkMn Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\7.json: Worker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\8.json: Hoopster
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\9.json: Hoopster
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\10.json: Clerk  F
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\11.json: Waiter
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\12.json: Waitress
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\13.json: Cosplayer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\14.json: Striker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\15.json: Roughneck
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\16.json: School Kid
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\17.json: Youngster
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\18.json: Fisherman
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\19.json: Clerk  M
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\20.json: Clerk  M
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\21.json: Backers
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\22.json: Backers
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\23.json: Backers
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\24.json: Backers
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\25.json: Backers
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\26.json: Linebacker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\27.json: PkMn Ranger
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\28.json: PkMn Ranger
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\29.json: Infielder
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\30.json: Infielder
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\31.json: Ace Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\32.json: Ace Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\33.json: Lass
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\34.json: Rich Boy
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\35.json: Lady
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\36.json: Socialite
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\37.json: Gentleman
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\38.json: Elite Four
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\39.json: Elite Four
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\40.json: Elite Four
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\41.json: Elite Four
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\42.json: Veteran
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\43.json: Ace Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\44.json: Ace Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\45.json: Ace Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\46.json: Rich Boy
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\47.json: Lass
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\48.json: Cosplayer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\49.json: Smasher
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\50.json: Smasher
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\51.json: Smasher
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\52.json: Smasher
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\53.json: Infielder
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\54.json: Infielder
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\55.json: Infielder
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\56.json: Infielder
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\57.json: Infielder
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\58.json: Striker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\59.json: Cosplayer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\60.json: Guy in Suit
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\61.json: Girl in Suit
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\62.json: Striker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\63.json: Linebacker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\64.json: Linebacker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\65.json: Linebacker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\66.json: Linebacker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\67.json: Linebacker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\68.json: Hoopster
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\69.json: Hoopster
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\70.json: Hoopster
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\71.json: Hoopster
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\72.json: Hoopster
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\73.json: Backers
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\74.json: Backers
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\75.json: Backers
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\76.json: Backers
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\77.json: Backers
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\78.json: Backers
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\79.json: Backers
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\80.json: Backers
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\81.json: Backers
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\82.json: Backers
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\83.json: Backers
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\84.json: Backers
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\85.json: Backers
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\86.json: Backers
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\87.json: Backers
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\88.json: Lass
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\89.json: School Kid
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\90.json: School Kid
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\91.json: Ace Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\92.json: Ace Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\93.json: Veteran
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\94.json: Veteran
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\95.json: PkMn Breeder
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\96.json: PkMn Breeder
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\97.json: Waiter
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\98.json: Waitress
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\99.json: Scientist
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\100.json: Scientist
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\101.json: Lady
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\102.json: Rich Boy
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\103.json: Socialite
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\104.json: Gentleman
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\105.json: Black Belt
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\106.json: Battle Girl
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\107.json: Pokefan
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\108.json: Pokefan
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\109.json: Pilot
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\110.json: Worker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\111.json: Baker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\112.json: Nursery Aide
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\113.json: Clerk  M
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\114.json: Clerk  F
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\115.json: Janitor
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\116.json: Backpacker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\117.json: Backpacker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\118.json: Doctor
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\119.json: Nurse
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\120.json: Psychic
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\121.json: Psychic
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\122.json: Depot Agent
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\123.json: Dancer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\124.json: Musician
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\125.json: Harlequin
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\126.json: Artist
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\127.json: Policeman
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\128.json: Maid
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\129.json: Parasol Lady
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\130.json: Hiker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\131.json: Preschooler
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\132.json: Preschooler
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\133.json: Ace Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\134.json: Ace Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\135.json: Scientist
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\136.json: Hiker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\137.json: Preschooler
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\138.json: Dancer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\139.json: Waitress
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\140.json: GAME FREAK
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\141.json: Maid
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\142.json: Veteran
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\143.json: Elite Four
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\144.json: Elite Four
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\145.json: Elite Four
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\146.json: Elite Four
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\147.json: Lady
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\148.json: Lady
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\149.json: Pilot
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\150.json: Pilot
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\151.json: Pilot
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\152.json: Pilot
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\153.json: Leader
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\154.json: Leader
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\155.json: Leader
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\156.json: Leader
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\157.json: Leader
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\158.json: Leader
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\159.json: Leader
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\160.json: Leader
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\161.json: PkMn Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\162.json: PkMn Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\163.json: PkMn Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\164.json: Youngster
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\165.json: Lass
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\166.json: PkMn Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\167.json: PkMn Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\168.json: PkMn Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\169.json: School Kid
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\170.json: School Kid
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\171.json: Youngster
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\172.json: Lass
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\173.json: Preschooler
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\174.json: Preschooler
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\175.json: Twins
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\176.json: Nursery Aide
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\177.json: Gentleman
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\178.json: Roughneck
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\179.json: Guitarist
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\180.json: Youngster
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\181.json: Lass
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\182.json: Janitor
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\183.json: Boss Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\184.json: Boss Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\185.json: Boss Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\186.json: Boss Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\187.json: Boss Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\188.json: Boss Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\189.json: Boss Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\190.json: Boss Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\191.json: Boss Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\192.json: Boss Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\193.json: Boss Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\194.json: Boss Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\195.json: Boss Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\196.json: Boss Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\197.json: Boss Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\198.json: Boss Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\199.json: Boss Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\200.json: Boss Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\201.json: Rival
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\202.json: Rival
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\203.json: Worker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\204.json: Worker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\205.json: Worker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\206.json: Hiker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\207.json: Beauty
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\208.json: Beauty
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\209.json: Beauty
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\210.json: Fisherman
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\211.json: Fisherman
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\212.json: Policeman
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\213.json: Backpacker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\214.json: Policeman
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\215.json: Policeman
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\216.json: Roughneck
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\217.json: Roughneck
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\218.json: Biker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\219.json: Biker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\220.json: Hooligans
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\221.json: Rich Boy
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\222.json: Backpacker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\223.json: Backpacker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\224.json: Pokefan
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\225.json: Pokefan
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\226.json: Twins
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\227.json: Linebacker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\228.json: Linebacker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\229.json: Linebacker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\230.json: Linebacker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\231.json: Linebacker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\232.json: Infielder
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\233.json: Infielder
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\234.json: Infielder
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\235.json: Infielder
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\236.json: Infielder
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\237.json: Striker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\238.json: Striker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\239.json: Striker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\240.json: Striker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\241.json: Striker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\242.json: Hoopster
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\243.json: Hoopster
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\244.json: Hoopster
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\245.json: Hoopster
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\246.json: Hoopster
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\247.json: Smasher
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\248.json: Cosplayer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\249.json: Smasher
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\250.json: Smasher
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\251.json: Cosplayer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\252.json: Backers
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\253.json: Baker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\254.json: Artist
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\255.json: Dancer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\256.json: Musician
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\257.json: Backers
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\258.json: Backpacker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\259.json: Backpacker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\260.json: Cyclist
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\261.json: Cyclist
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\262.json: Depot Agent
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\263.json: Scientist
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\264.json: Scientist
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\265.json: School Kid
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\266.json: School Kid
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\267.json: Parasol Lady
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\268.json: Parasol Lady
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\269.json: Lass
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\270.json: Youngster
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\271.json: Nursery Aide
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\272.json: Preschooler
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\273.json: Preschooler
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\274.json: Twins
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\275.json: Harlequin
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\276.json: Harlequin
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\277.json: Gentleman
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\278.json: Socialite
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\279.json: Ace Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\280.json: Ace Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\281.json: Black Belt
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\282.json: Battle Girl
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\283.json: Fisherman
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\284.json: Youngster
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\285.json: Backpacker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\286.json: Fisherman
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\287.json: Fisherman
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\288.json: Fisherman
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\289.json: Fisherman
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\290.json: Parasol Lady
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\291.json: Backers
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\292.json: PkMn Ranger
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\293.json: PkMn Ranger
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\294.json: PkMn Ranger
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\295.json: PkMn Ranger
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\296.json: PkMn Breeder
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\297.json: PkMn Ranger
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\298.json: PkMn Ranger
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\299.json: PkMn Breeder
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\300.json: Black Belt
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\301.json: Battle Girl
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\302.json: PkMn Breeder
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\303.json: PkMn Breeder
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\304.json: PkMn Ranger
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\305.json: PkMn Ranger
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\306.json: Backpacker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\307.json: Backpacker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\308.json: Swimmer  M
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\309.json: Swimmer  F
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\310.json: Swimmer  M
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\311.json: Swimmer  F
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\312.json: Fisherman
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\313.json: Ace Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\314.json: Swimmer  M
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\315.json: Swimmer  M
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\316.json: Swimmer  M
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\317.json: Swimmer  F
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\318.json: Swimmer  F
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\319.json: Worker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\320.json: Worker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\321.json: Worker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\322.json: Worker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\323.json: Worker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\324.json: Worker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\325.json: Worker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\326.json: Black Belt
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\327.json: Doctor
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\328.json: Hooligans
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\329.json: Roughneck
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\330.json: Roughneck
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\331.json: Biker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\332.json: Pilot
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\333.json: PkMn Breeder
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\334.json: Hiker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\335.json: Baker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\336.json: Youngster
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\337.json: Lass
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\338.json: Artist
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\339.json: Motorcyclist
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\340.json: Motorcyclist
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\341.json: Champion
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\342.json: Team Plasma
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\343.json: Team Plasma
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\344.json: Team Plasma
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\345.json: Team Plasma
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\346.json: PkMn Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\347.json: Team Plasma
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\348.json: Team Plasma
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\349.json: Fisherman
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\350.json: Ace Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\351.json: Ace Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\352.json: Ace Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\353.json: Ace Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\354.json: Ace Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\355.json: Ace Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\356.json: Team Plasma
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\357.json: GAME FREAK
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\358.json: Team Plasma
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\359.json: Team Plasma
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\360.json: PkMn Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\361.json: PkMn Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\362.json: PkMn Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\363.json: PkMn Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\364.json: PkMn Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\365.json: PkMn Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\366.json: Motorcyclist
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\367.json: Motorcyclist
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\368.json: PkMn Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\369.json: PkMn Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\370.json: PkMn Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\371.json: PkMn Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\372.json: Team Plasma
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\373.json: Team Plasma
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\374.json: Team Plasma
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\375.json: Team Plasma
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\376.json: Team Plasma
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\377.json: Team Plasma
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\378.json: PkMn Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\379.json: PkMn Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\380.json: PkMn Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\381.json: Veteran
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\382.json: Veteran
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\383.json: Veteran
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\384.json: Veteran
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\385.json: Veteran
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\386.json: PkMn Ranger
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\387.json: PkMn Ranger
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\388.json: PkMn Ranger
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\389.json: PkMn Ranger
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\390.json: Backpacker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\391.json: Psychic
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\392.json: Youngster
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\393.json: School Kid
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\394.json: School Kid
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\395.json: Nursery Aide
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\396.json: Preschooler
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\397.json: Preschooler
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\398.json: Preschooler
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\399.json: Fisherman
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\400.json: Fisherman
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\401.json: Youngster
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\402.json: Lass
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\403.json: Veteran
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\404.json: Veteran
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\405.json: Backpacker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\406.json: Backpacker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\407.json: Youngster
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\408.json: Lass
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\409.json: PkMn Ranger
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\410.json: PkMn Ranger
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\411.json: Ace Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\412.json: Ace Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\413.json: Ace Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\414.json: Fisherman
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\415.json: Swimmer  M
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\416.json: Swimmer  M
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\417.json: Swimmer  F
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\418.json: Swimmer  F
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\419.json: Hiker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\420.json: Veteran
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\421.json: Veteran
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\422.json: Veteran
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\423.json: Veteran
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\424.json: Black Belt
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\425.json: Battle Girl
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\426.json: Team Plasma
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\427.json: Team Plasma
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\428.json: Team Plasma
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\429.json: Team Plasma
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\430.json: Team Plasma
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\431.json: Team Plasma
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\432.json: Team Plasma
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\433.json: Team Plasma
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\434.json: Team Plasma
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\435.json: Team Plasma
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\436.json: Team Plasma
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\437.json: Team Plasma
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\438.json: Team Plasma
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\439.json: Team Plasma
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\440.json: Team Plasma
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\441.json: Team Plasma
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\442.json: Team Plasma
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\443.json: Team Plasma
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\444.json: Team Plasma
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\445.json: Team Plasma
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\446.json: Team Plasma
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\447.json: Team Plasma
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\448.json: Team Plasma
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\449.json: Team Plasma
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\450.json: Team Plasma
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\451.json: Team Plasma
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\452.json: Team Plasma
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\453.json: Team Plasma
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\454.json: Team Plasma
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\455.json: School Kid
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\456.json: PkMn Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\457.json: Waitress
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\458.json: Nursery Aide
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\459.json: Clerk  F
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\460.json: Maid
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\461.json: Janitor
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\462.json: Janitor
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\463.json: Scientist
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\464.json: Scientist
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\465.json: Worker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\466.json: Worker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\467.json: Cyclist
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\468.json: Cyclist
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\469.json: Black Belt
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\470.json: Battle Girl
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\471.json: Black Belt
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\472.json: Battle Girl
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\473.json: PkMn Ranger
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\474.json: PkMn Ranger
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\475.json: Hiker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\476.json: Hiker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\477.json: Black Belt
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\478.json: Battle Girl
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\479.json: Ace Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\480.json: Ace Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\481.json: Black Belt
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\482.json: Battle Girl
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\483.json: PkMn Ranger
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\484.json: PkMn Ranger
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\485.json: Ace Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\486.json: Ace Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\487.json: PkMn Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\488.json: PkMn Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\489.json: PkMn Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\490.json: Worker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\491.json: Guardian of Unova
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\492.json: Worker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\493.json: Sinnoh Leader
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\494.json: PkMn Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\495.json: PkMn Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\496.json: PkMn Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\497.json: Team Plasma
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\498.json: Team Plasma
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\499.json: Team Plasma
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\500.json: Team Plasma
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\501.json: Clerk  M
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\502.json: Clerk  M
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\503.json: School Kid
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\504.json: Boss Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\505.json: Boss Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\506.json: Worker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\507.json: Worker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\508.json: PkMn Ranger
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\509.json: PkMn Ranger
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\510.json: Psychic
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\511.json: Psychic
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\512.json: Psychic
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\513.json: Backpacker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\514.json: Backpacker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\515.json: PkMn Ranger
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\516.json: PkMn Ranger
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\517.json: PkMn Ranger
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\518.json: PkMn Ranger
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\519.json: Ace Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\520.json: Ace Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\521.json: Hiker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\522.json: Hiker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\523.json: Black Belt
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\524.json: Battle Girl
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\525.json: Worker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\526.json: Worker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\527.json: Worker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\528.json: Worker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\529.json: Worker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\530.json: Hiker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\531.json: Hiker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\532.json: Veteran
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\533.json: Veteran
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\534.json: Veteran
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\535.json: Veteran
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\536.json: Champion
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\537.json: Guitarist
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\538.json: Guitarist
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\539.json: Hiker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\540.json: Hiker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\541.json: Scientist
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\542.json: Scientist
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\543.json: PkMn Ranger
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\544.json: PkMn Ranger
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\545.json: Ace Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\546.json: Ace Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\547.json: Ace Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\548.json: Ace Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\549.json: Pokefan
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\550.json: Pokefan
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\551.json: Gentleman
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\552.json: Socialite
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\553.json: Psychic
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\554.json: Psychic
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\555.json: Scientist
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\556.json: PkMn Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\557.json: PkMn Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\558.json: PkMn Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\559.json: Youngster
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\560.json: Twins
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\561.json: Hiker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\562.json: Hiker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\563.json: Backpacker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\564.json: Backpacker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\565.json: Backpacker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\566.json: Backpacker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\567.json: Scientist
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\568.json: Scientist
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\569.json: Psychic
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\570.json: Psychic
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\571.json: Youngster
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\572.json: Lass
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\573.json: Parasol Lady
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\574.json: Parasol Lady
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\575.json: Fisherman
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\576.json: Fisherman
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\577.json: Fisherman
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\578.json: PkMn Ranger
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\579.json: PkMn Ranger
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\580.json: Black Belt
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\581.json: Team Plasma
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\582.json: PkMn Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\583.json: Team Plasma
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\584.json: Team Plasma
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\585.json: Team Plasma
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\586.json: Team Plasma
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\587.json: Team Plasma
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\588.json: PkMn Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\589.json: PkMn Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\590.json: PkMn Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\591.json: GAME FREAK
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\592.json: GAME FREAK
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\593.json: PkMn Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\594.json: Ace Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\595.json: Psychic
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\596.json: Ace Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\597.json: Psychic
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\598.json: Ace Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\599.json: Ace Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\600.json: Veteran
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\601.json: Doctor
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\602.json: Ace Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\603.json: Ace Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\604.json: Veteran
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\605.json: Veteran
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\606.json: Ace Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\607.json: Black Belt
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\608.json: Ace Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\609.json: Battle Girl
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\610.json: Ace Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\611.json: Ace Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\612.json: Veteran
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\613.json: Backpacker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\614.json: Veteran
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\615.json: Veteran
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\616.json: no data
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\617.json: no data
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\618.json: no data
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\619.json: no data
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\620.json: no data
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\621.json: Rich Boy
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\622.json: Youngster
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\623.json: Clerk  M
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\624.json: Ace Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\625.json: Ace Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\626.json: Lass
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\627.json: Rich Boy
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\628.json: Lady
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\629.json: Socialite
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\630.json: Gentleman
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\631.json: Maid
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\632.json: PkMn Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\633.json: School Kid
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\634.json: Old Statue
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\635.json: Ace Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\636.json: Ace Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\637.json: Black Belt
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\638.json: Battle Girl
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\639.json: PkMn Ranger
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\640.json: PkMn Ranger
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\641.json: PkMn Ranger
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\642.json: PkMn Ranger
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\643.json: Veteran
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\644.json: Veteran
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\645.json: Youngster
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\646.json: Youngster
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\647.json: Nursery Aide
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\648.json: Preschooler
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\649.json: Preschooler
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\650.json: Preschooler
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\651.json: Twins
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\652.json: Pokefan
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\653.json: Pokefan
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\654.json: Scientist
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\655.json: Backpacker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\656.json: Backpacker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\657.json: Veteran
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\658.json: PkMn Ranger
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\659.json: PkMn Ranger
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\660.json: Nursery Aide
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\661.json: Gentleman
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\662.json: Backpacker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\663.json: Backpacker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\664.json: Backpacker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\665.json: Backpacker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\666.json: PkMn Ranger
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\667.json: PkMn Ranger
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\668.json: Psychic
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\669.json: Psychic
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\670.json: Nurse
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\671.json: Doctor
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\672.json: Doctor
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\673.json: Nurse
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\674.json: Hiker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\675.json: Battle Girl
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\676.json: Battle Girl
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\677.json: Black Belt
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\678.json: Black Belt
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\679.json: Doctor
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\680.json: Hiker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\681.json: Hiker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\682.json: Ace Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\683.json: Ace Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\684.json: PkMn Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\685.json: PkMn Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\686.json: PkMn Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\687.json: Team Plasma
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\688.json: Team Plasma
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\689.json: Team Plasma
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\690.json: Team Plasma
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\691.json: Clerk  F
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\692.json: Clerk  M
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\693.json: PkMn Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\694.json: PkMn Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\695.json: PkMn Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\696.json: PkMn Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\697.json: PkMn Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\698.json: PkMn Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\699.json: Lass
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\700.json: Lass
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\701.json: PkMn Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\702.json: PkMn Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\703.json: PkMn Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\704.json: Team Plasma
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\705.json: Team Plasma
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\706.json: PkMn Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\707.json: PkMn Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\708.json: PkMn Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\709.json: PkMn Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\710.json: PkMn Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\711.json: PkMn Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\712.json: Black Belt
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\713.json: Black Belt
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\714.json: Black Belt
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\715.json: Black Belt
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\716.json: Black Belt
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\717.json: Black Belt
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\718.json: Ace Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\719.json: Ace Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\720.json: Ace Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\721.json: Ace Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\722.json: Ace Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\723.json: Ace Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\724.json: Team Plasma
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\725.json: Nurse
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\726.json: Hoopster
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\727.json: Smasher
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\728.json: Smasher
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\729.json: Hoopster
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\730.json: Black Belt
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\731.json: Battle Girl
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\732.json: Subway Boss
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\733.json: Subway Boss
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\734.json: Harlequin
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\735.json: Harlequin
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\736.json: Harlequin
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\737.json: Harlequin
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\738.json: Lass
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\739.json: Team Plasma
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\740.json: School Kid
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\741.json: Hiker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\742.json: Beauty
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\743.json: Dancer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\744.json: Beauty
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\745.json: Youngster
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\746.json: Youngster
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\747.json: School Kid
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\748.json: School Kid
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\749.json: School Kid
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\750.json: School Kid
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\751.json: Team Plasma
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\752.json: PkMn Breeder
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\753.json: Backers
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\754.json: Roughneck
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\755.json: Dancer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\756.json: Guitarist
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\757.json: Veteran
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\758.json: Veteran
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\759.json: Veteran
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\760.json: Veteran
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\761.json: Veteran
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\762.json: Veteran
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\763.json: Team Plasma
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\764.json: Kanto Leader
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\765.json: Kanto Leader
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\766.json: Kanto Leader
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\767.json: Kanto Leader
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\768.json: Kanto Leader
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\769.json: Kanto Leader
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\770.json: Kanto Leader
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\771.json: Kanto Leader
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\772.json: Rival
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\773.json: Rival
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\774.json: Rival
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\775.json: Rival
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\776.json: Rival
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\777.json: Red
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\778.json: Blue
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\779.json: Elite Four
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\780.json: Elite Four
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\781.json: Champion
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\782.json: PkMn Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\783.json: PkMn Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\784.json: PkMn Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\785.json: PkMn Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\786.json: Ace Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\787.json: Ace Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\788.json: Backpacker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\789.json: Backpacker
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\790.json: Nursery Aide
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\791.json: Preschooler
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\792.json: Youngster
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\793.json: Lass
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\794.json: PkMn Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\795.json: PkMn Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\796.json: PkMn Trainer
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\797.json: Team Plasma
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\798.json: Team Plasma
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\799.json: Team Plasma
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\800.json: Team Plasma
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\801.json: Team Plasma
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\802.json: Team Plasma
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\803.json: Nursery Aide
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\804.json: Beauty
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\805.json: Clerk  M
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\806.json: Guitarist
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\807.json: Team Plasma
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\808.json: Team Plasma
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\809.json: Team Plasma
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\810.json: Team Plasma
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\811.json: Doctor
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\812.json: Team Plasma
+C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____GitHub_CascadeWhite\AI Importing Tools\trdata\original\813.json: PkMn Trainer

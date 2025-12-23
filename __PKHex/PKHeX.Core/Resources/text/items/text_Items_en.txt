@@ -221,7 +221,7 @@ Mental Herb
 Choice Band
 King’s Rock
 Silver Powder
-Static Orb
+Ability Drill
 Cleanse Tag
 Mascot Badge
 Deep Sea Tooth
@@ -308,7 +308,7 @@ Tera B-Policy
 Tera Powder
 Tera Vest
 Tera Insurance
-Tera Belt
+Tera Drill
 Tera Leftovers
 Tera Dice
 Tera K-Rock

@@ -1,0 +1,918 @@
+Common files: 208
+Only in original: 539
+Only in edited: 15
+
+File: 13.json
+OK: structures match
+
+File: 14.json
+-- Section: raw
+  Only in original: ability_2, form_2, item_id_2, ivs_2, level_2, move_1_2, move_2_2, move_3_2, move_4_2, padding_2, species_id_2
+-- Section: readable
+  Only in original: ability_2, form_2, gender_2, item_id_2, ivs_2, level_2, move_1_2, move_2_2, move_3_2, move_4_2, padding_2, species_id_2
+
+File: 147.json
+OK: structures match
+
+File: 148.json
+OK: structures match
+
+File: 149.json
+-- Section: raw
+  Only in edited: ability_1, ability_2, ability_3, ability_4, form_1, form_2, form_3, form_4, item_id_0, item_id_1, item_id_2, item_id_3, item_id_4, ivs_1, ivs_2, ivs_3, ivs_4, level_1, level_2, level_3, level_4, move_1_0, move_1_1, move_1_2, move_1_3, move_1_4, move_2_0, move_2_1, move_2_2, move_2_3, move_2_4, move_3_0, move_3_1, move_3_2, move_3_3, move_3_4, move_4_0, move_4_1, move_4_2, move_4_3, move_4_4, padding_1, padding_2, padding_3, padding_4, species_id_1, species_id_2, species_id_3, species_id_4
+-- Section: readable
+  Only in edited: ability_1, ability_2, ability_3, ability_4, form_1, form_2, form_3, form_4, gender_1, gender_2, gender_3, gender_4, item_id_0, item_id_1, item_id_2, item_id_3, item_id_4, ivs_1, ivs_2, ivs_3, ivs_4, level_1, level_2, level_3, level_4, move_1_0, move_1_1, move_1_2, move_1_3, move_1_4, move_2_0, move_2_1, move_2_2, move_2_3, move_2_4, move_3_0, move_3_1, move_3_2, move_3_3, move_3_4, move_4_0, move_4_1, move_4_2, move_4_3, move_4_4, padding_1, padding_2, padding_3, padding_4, species_id_1, species_id_2, species_id_3, species_id_4
+
+File: 150.json
+-- Section: raw
+  Only in edited: ability_1, ability_2, ability_3, ability_4, form_1, form_2, form_3, form_4, item_id_0, item_id_1, item_id_2, item_id_3, item_id_4, ivs_1, ivs_2, ivs_3, ivs_4, level_1, level_2, level_3, level_4, move_1_0, move_1_1, move_1_2, move_1_3, move_1_4, move_2_0, move_2_1, move_2_2, move_2_3, move_2_4, move_3_0, move_3_1, move_3_2, move_3_3, move_3_4, move_4_0, move_4_1, move_4_2, move_4_3, move_4_4, padding_1, padding_2, padding_3, padding_4, species_id_1, species_id_2, species_id_3, species_id_4
+-- Section: readable
+  Only in edited: ability_1, ability_2, ability_3, ability_4, form_1, form_2, form_3, form_4, gender_1, gender_2, gender_3, gender_4, item_id_0, item_id_1, item_id_2, item_id_3, item_id_4, ivs_1, ivs_2, ivs_3, ivs_4, level_1, level_2, level_3, level_4, move_1_0, move_1_1, move_1_2, move_1_3, move_1_4, move_2_0, move_2_1, move_2_2, move_2_3, move_2_4, move_3_0, move_3_1, move_3_2, move_3_3, move_3_4, move_4_0, move_4_1, move_4_2, move_4_3, move_4_4, padding_1, padding_2, padding_3, padding_4, species_id_1, species_id_2, species_id_3, species_id_4
+
+File: 151.json
+-- Section: raw
+  Only in edited: ability_1, ability_2, ability_3, ability_4, form_1, form_2, form_3, form_4, item_id_0, item_id_1, item_id_2, item_id_3, item_id_4, ivs_1, ivs_2, ivs_3, ivs_4, level_1, level_2, level_3, level_4, move_1_0, move_1_1, move_1_2, move_1_3, move_1_4, move_2_0, move_2_1, move_2_2, move_2_3, move_2_4, move_3_0, move_3_1, move_3_2, move_3_3, move_3_4, move_4_0, move_4_1, move_4_2, move_4_3, move_4_4, padding_1, padding_2, padding_3, padding_4, species_id_1, species_id_2, species_id_3, species_id_4
+-- Section: readable
+  Only in edited: ability_1, ability_2, ability_3, ability_4, form_1, form_2, form_3, form_4, gender_1, gender_2, gender_3, gender_4, item_id_0, item_id_1, item_id_2, item_id_3, item_id_4, ivs_1, ivs_2, ivs_3, ivs_4, level_1, level_2, level_3, level_4, move_1_0, move_1_1, move_1_2, move_1_3, move_1_4, move_2_0, move_2_1, move_2_2, move_2_3, move_2_4, move_3_0, move_3_1, move_3_2, move_3_3, move_3_4, move_4_0, move_4_1, move_4_2, move_4_3, move_4_4, padding_1, padding_2, padding_3, padding_4, species_id_1, species_id_2, species_id_3, species_id_4
+
+File: 152.json
+-- Section: raw
+  Only in edited: ability_2, ability_3, ability_4, ability_5, form_2, form_3, form_4, form_5, item_id_0, item_id_1, item_id_2, item_id_3, item_id_4, item_id_5, ivs_2, ivs_3, ivs_4, ivs_5, level_2, level_3, level_4, level_5, move_1_0, move_1_1, move_1_2, move_1_3, move_1_4, move_1_5, move_2_0, move_2_1, move_2_2, move_2_3, move_2_4, move_2_5, move_3_0, move_3_1, move_3_2, move_3_3, move_3_4, move_3_5, move_4_0, move_4_1, move_4_2, move_4_3, move_4_4, move_4_5, padding_2, padding_3, padding_4, padding_5, species_id_2, species_id_3, species_id_4, species_id_5
+-- Section: readable
+  Only in edited: ability_2, ability_3, ability_4, ability_5, form_2, form_3, form_4, form_5, gender_2, gender_3, gender_4, gender_5, item_id_0, item_id_1, item_id_2, item_id_3, item_id_4, item_id_5, ivs_2, ivs_3, ivs_4, ivs_5, level_2, level_3, level_4, level_5, move_1_0, move_1_1, move_1_2, move_1_3, move_1_4, move_1_5, move_2_0, move_2_1, move_2_2, move_2_3, move_2_4, move_2_5, move_3_0, move_3_1, move_3_2, move_3_3, move_3_4, move_3_5, move_4_0, move_4_1, move_4_2, move_4_3, move_4_4, move_4_5, padding_2, padding_3, padding_4, padding_5, species_id_2, species_id_3, species_id_4, species_id_5
+
+File: 153.json
+OK: structures match
+
+File: 154.json
+OK: structures match
+
+File: 155.json
+-- Section: raw
+  Only in edited: ability_3, ability_4, ability_5, form_3, form_4, form_5, item_id_3, item_id_4, item_id_5, ivs_3, ivs_4, ivs_5, level_3, level_4, level_5, move_1_3, move_1_4, move_1_5, move_2_3, move_2_4, move_2_5, move_3_3, move_3_4, move_3_5, move_4_3, move_4_4, move_4_5, padding_3, padding_4, padding_5, species_id_3, species_id_4, species_id_5
+-- Section: readable
+  Only in edited: ability_3, ability_4, ability_5, form_3, form_4, form_5, gender_3, gender_4, gender_5, item_id_3, item_id_4, item_id_5, ivs_3, ivs_4, ivs_5, level_3, level_4, level_5, move_1_3, move_1_4, move_1_5, move_2_3, move_2_4, move_2_5, move_3_3, move_3_4, move_3_5, move_4_3, move_4_4, move_4_5, padding_3, padding_4, padding_5, species_id_3, species_id_4, species_id_5
+
+File: 156.json
+OK: structures match
+
+File: 157.json
+OK: structures match
+
+File: 158.json
+OK: structures match
+
+File: 16.json
+-- Section: raw
+  Only in edited: item_id_0, item_id_1, item_id_2, item_id_3
+-- Section: readable
+  Only in edited: item_id_0, item_id_1, item_id_2, item_id_3
+
+File: 164.json
+OK: structures match
+
+File: 165.json
+-- Section: raw
+  Only in edited: item_id_0, item_id_1, item_id_2
+-- Section: readable
+  Only in edited: item_id_0, item_id_1, item_id_2
+
+File: 166.json
+-- Section: raw
+  Only in edited: item_id_0, item_id_1, item_id_2, item_id_3
+-- Section: readable
+  Only in edited: item_id_0, item_id_1, item_id_2, item_id_3
+
+File: 167.json
+-- Section: raw
+  Only in edited: item_id_0, item_id_1, item_id_2, item_id_3
+-- Section: readable
+  Only in edited: item_id_0, item_id_1, item_id_2, item_id_3
+
+File: 168.json
+-- Section: raw
+  Only in edited: item_id_0, item_id_1, item_id_2, item_id_3
+-- Section: readable
+  Only in edited: item_id_0, item_id_1, item_id_2, item_id_3
+
+File: 169.json
+OK: structures match
+
+File: 170.json
+OK: structures match
+
+File: 171.json
+OK: structures match
+
+File: 172.json
+OK: structures match
+
+File: 173.json
+OK: structures match
+
+File: 174.json
+OK: structures match
+
+File: 175.json
+OK: structures match
+
+File: 176.json
+-- Section: raw
+  Only in edited: ability_4, form_4, item_id_0, item_id_1, item_id_2, item_id_3, item_id_4, ivs_4, level_4, move_1_4, move_2_4, move_3_4, move_4_4, padding_4, species_id_4
+-- Section: readable
+  Only in edited: ability_4, form_4, gender_4, item_id_0, item_id_1, item_id_2, item_id_3, item_id_4, ivs_4, level_4, move_1_4, move_2_4, move_3_4, move_4_4, padding_4, species_id_4
+
+File: 178.json
+OK: structures match
+
+File: 179.json
+OK: structures match
+
+File: 180.json
+-- Section: raw
+  Only in edited: item_id_0, item_id_1, item_id_2, item_id_3
+-- Section: readable
+  Only in edited: item_id_0, item_id_1, item_id_2, item_id_3
+
+File: 181.json
+-- Section: raw
+  Only in edited: item_id_0, item_id_1, item_id_2, item_id_3
+-- Section: readable
+  Only in edited: item_id_0, item_id_1, item_id_2, item_id_3
+
+File: 182.json
+-- Section: raw
+  Only in edited: item_id_0, item_id_1, item_id_2, item_id_3
+-- Section: readable
+  Only in edited: item_id_0, item_id_1, item_id_2, item_id_3
+
+File: 203.json
+OK: structures match
+
+File: 204.json
+OK: structures match
+
+File: 205.json
+OK: structures match
+
+File: 206.json
+-- Section: raw
+  Only in edited: item_id_0, item_id_1, item_id_2, item_id_3
+-- Section: readable
+  Only in edited: item_id_0, item_id_1, item_id_2, item_id_3
+
+File: 207.json
+OK: structures match
+
+File: 208.json
+OK: structures match
+
+File: 209.json
+OK: structures match
+
+File: 210.json
+OK: structures match
+
+File: 211.json
+OK: structures match
+
+File: 214.json
+OK: structures match
+
+File: 215.json
+-- Section: raw
+  Only in edited: ability_1, ability_2, ability_3, form_1, form_2, form_3, item_id_0, item_id_1, item_id_2, item_id_3, ivs_1, ivs_2, ivs_3, level_1, level_2, level_3, move_1_1, move_1_2, move_1_3, move_2_1, move_2_2, move_2_3, move_3_1, move_3_2, move_3_3, move_4_1, move_4_2, move_4_3, padding_1, padding_2, padding_3, species_id_1, species_id_2, species_id_3
+-- Section: readable
+  Only in edited: ability_1, ability_2, ability_3, form_1, form_2, form_3, gender_1, gender_2, gender_3, item_id_0, item_id_1, item_id_2, item_id_3, ivs_1, ivs_2, ivs_3, level_1, level_2, level_3, move_1_1, move_1_2, move_1_3, move_2_1, move_2_2, move_2_3, move_3_1, move_3_2, move_3_3, move_4_1, move_4_2, move_4_3, padding_1, padding_2, padding_3, species_id_1, species_id_2, species_id_3
+
+File: 217.json
+-- Section: raw
+  Only in edited: item_id_0, item_id_1, item_id_2
+-- Section: readable
+  Only in edited: item_id_0, item_id_1, item_id_2
+
+File: 221.json
+OK: structures match
+
+File: 222.json
+-- Section: raw
+  Only in edited: item_id_0, item_id_1
+-- Section: readable
+  Only in edited: item_id_0, item_id_1
+
+File: 223.json
+-- Section: raw
+  Only in edited: item_id_0, item_id_1
+-- Section: readable
+  Only in edited: item_id_0, item_id_1
+
+File: 224.json
+OK: structures match
+
+File: 225.json
+-- Section: raw
+  Only in edited: item_id_0, item_id_1, item_id_2
+-- Section: readable
+  Only in edited: item_id_0, item_id_1, item_id_2
+
+File: 226.json
+OK: structures match
+
+File: 248.json
+OK: structures match
+
+File: 249.json
+OK: structures match
+
+File: 251.json
+OK: structures match
+
+File: 252.json
+-- Section: raw
+  Only in edited: item_id_0, item_id_1, item_id_2, item_id_3
+-- Section: readable
+  Only in edited: item_id_0, item_id_1, item_id_2, item_id_3
+
+File: 253.json
+OK: structures match
+
+File: 254.json
+-- Section: raw
+  Only in edited: item_id_0, item_id_1, item_id_2
+-- Section: readable
+  Only in edited: item_id_0, item_id_1, item_id_2
+
+File: 255.json
+OK: structures match
+
+File: 256.json
+OK: structures match
+
+File: 257.json
+OK: structures match
+
+File: 260.json
+-- Section: raw
+  Only in edited: item_id_0, item_id_1, item_id_2
+-- Section: readable
+  Only in edited: item_id_0, item_id_1, item_id_2
+
+File: 261.json
+-- Section: raw
+  Only in edited: item_id_0, item_id_1, item_id_2
+-- Section: readable
+  Only in edited: item_id_0, item_id_1, item_id_2
+
+File: 262.json
+OK: structures match
+
+File: 263.json
+-- Section: raw
+  Only in edited: ability_1, ability_2, form_1, form_2, item_id_0, item_id_1, item_id_2, ivs_1, ivs_2, level_1, level_2, move_1_0, move_1_1, move_1_2, move_2_0, move_2_1, move_2_2, move_3_0, move_3_1, move_3_2, move_4_0, move_4_1, move_4_2, padding_1, padding_2, species_id_1, species_id_2
+-- Section: readable
+  Only in edited: ability_1, ability_2, form_1, form_2, gender_1, gender_2, item_id_0, item_id_1, item_id_2, ivs_1, ivs_2, level_1, level_2, move_1_0, move_1_1, move_1_2, move_2_0, move_2_1, move_2_2, move_3_0, move_3_1, move_3_2, move_4_0, move_4_1, move_4_2, padding_1, padding_2, species_id_1, species_id_2
+
+File: 264.json
+-- Section: raw
+  Only in edited: ability_2, form_2, item_id_0, item_id_1, item_id_2, ivs_2, level_2, move_1_0, move_1_1, move_1_2, move_2_0, move_2_1, move_2_2, move_3_0, move_3_1, move_3_2, move_4_0, move_4_1, move_4_2, padding_2, species_id_2
+-- Section: readable
+  Only in edited: ability_2, form_2, gender_2, item_id_0, item_id_1, item_id_2, ivs_2, level_2, move_1_0, move_1_1, move_1_2, move_2_0, move_2_1, move_2_2, move_3_0, move_3_1, move_3_2, move_4_0, move_4_1, move_4_2, padding_2, species_id_2
+
+File: 265.json
+-- Section: raw
+  Only in edited: ability_2, form_2, item_id_0, item_id_1, item_id_2, ivs_2, level_2, move_1_0, move_1_1, move_1_2, move_2_0, move_2_1, move_2_2, move_3_0, move_3_1, move_3_2, move_4_0, move_4_1, move_4_2, padding_2, species_id_2
+-- Section: readable
+  Only in edited: ability_2, form_2, gender_2, item_id_0, item_id_1, item_id_2, ivs_2, level_2, move_1_0, move_1_1, move_1_2, move_2_0, move_2_1, move_2_2, move_3_0, move_3_1, move_3_2, move_4_0, move_4_1, move_4_2, padding_2, species_id_2
+
+File: 266.json
+-- Section: raw
+  Only in edited: ability_2, form_2, item_id_0, item_id_1, item_id_2, ivs_2, level_2, move_1_0, move_1_1, move_1_2, move_2_0, move_2_1, move_2_2, move_3_0, move_3_1, move_3_2, move_4_0, move_4_1, move_4_2, padding_2, species_id_2
+-- Section: readable
+  Only in edited: ability_2, form_2, gender_2, item_id_0, item_id_1, item_id_2, ivs_2, level_2, move_1_0, move_1_1, move_1_2, move_2_0, move_2_1, move_2_2, move_3_0, move_3_1, move_3_2, move_4_0, move_4_1, move_4_2, padding_2, species_id_2
+
+File: 267.json
+OK: structures match
+
+File: 268.json
+-- Section: raw
+  Only in edited: ability_1, ability_2, ability_3, form_1, form_2, form_3, item_id_0, item_id_1, item_id_2, item_id_3, ivs_1, ivs_2, ivs_3, level_1, level_2, level_3, move_1_1, move_1_2, move_1_3, move_2_1, move_2_2, move_2_3, move_3_1, move_3_2, move_3_3, move_4_1, move_4_2, move_4_3, padding_1, padding_2, padding_3, species_id_1, species_id_2, species_id_3
+-- Section: readable
+  Only in edited: ability_1, ability_2, ability_3, form_1, form_2, form_3, gender_1, gender_2, gender_3, item_id_0, item_id_1, item_id_2, item_id_3, ivs_1, ivs_2, ivs_3, level_1, level_2, level_3, move_1_1, move_1_2, move_1_3, move_2_1, move_2_2, move_2_3, move_3_1, move_3_2, move_3_3, move_4_1, move_4_2, move_4_3, padding_1, padding_2, padding_3, species_id_1, species_id_2, species_id_3
+
+File: 271.json
+-- Section: raw
+  Only in edited: ability_2, ability_3, form_2, form_3, item_id_0, item_id_1, item_id_2, item_id_3, ivs_2, ivs_3, level_2, level_3, move_1_0, move_1_1, move_1_2, move_1_3, move_2_0, move_2_1, move_2_2, move_2_3, move_3_0, move_3_1, move_3_2, move_3_3, move_4_0, move_4_1, move_4_2, move_4_3, padding_2, padding_3, species_id_2, species_id_3
+-- Section: readable
+  Only in edited: ability_2, ability_3, form_2, form_3, gender_2, gender_3, item_id_0, item_id_1, item_id_2, item_id_3, ivs_2, ivs_3, level_2, level_3, move_1_0, move_1_1, move_1_2, move_1_3, move_2_0, move_2_1, move_2_2, move_2_3, move_3_0, move_3_1, move_3_2, move_3_3, move_4_0, move_4_1, move_4_2, move_4_3, padding_2, padding_3, species_id_2, species_id_3
+
+File: 272.json
+-- Section: raw
+  Only in edited: ability_1, ability_2, form_1, form_2, item_id_0, item_id_1, item_id_2, ivs_1, ivs_2, level_1, level_2, move_1_0, move_1_1, move_1_2, move_2_0, move_2_1, move_2_2, move_3_0, move_3_1, move_3_2, move_4_0, move_4_1, move_4_2, padding_1, padding_2, species_id_1, species_id_2
+-- Section: readable
+  Only in edited: ability_1, ability_2, form_1, form_2, gender_1, gender_2, item_id_0, item_id_1, item_id_2, ivs_1, ivs_2, level_1, level_2, move_1_0, move_1_1, move_1_2, move_2_0, move_2_1, move_2_2, move_3_0, move_3_1, move_3_2, move_4_0, move_4_1, move_4_2, padding_1, padding_2, species_id_1, species_id_2
+
+File: 273.json
+-- Section: raw
+  Only in edited: ability_1, ability_2, form_1, form_2, item_id_0, item_id_1, item_id_2, ivs_1, ivs_2, level_1, level_2, move_1_0, move_1_1, move_1_2, move_2_0, move_2_1, move_2_2, move_3_0, move_3_1, move_3_2, move_4_0, move_4_1, move_4_2, padding_1, padding_2, species_id_1, species_id_2
+-- Section: readable
+  Only in edited: ability_1, ability_2, form_1, form_2, gender_1, gender_2, item_id_0, item_id_1, item_id_2, ivs_1, ivs_2, level_1, level_2, move_1_0, move_1_1, move_1_2, move_2_0, move_2_1, move_2_2, move_3_0, move_3_1, move_3_2, move_4_0, move_4_1, move_4_2, padding_1, padding_2, species_id_1, species_id_2
+
+File: 274.json
+-- Section: raw
+  Only in edited: ability_2, ability_3, ability_4, form_2, form_3, form_4, item_id_0, item_id_1, item_id_2, item_id_3, item_id_4, ivs_2, ivs_3, ivs_4, level_2, level_3, level_4, move_1_0, move_1_1, move_1_2, move_1_3, move_1_4, move_2_0, move_2_1, move_2_2, move_2_3, move_2_4, move_3_0, move_3_1, move_3_2, move_3_3, move_3_4, move_4_0, move_4_1, move_4_2, move_4_3, move_4_4, padding_2, padding_3, padding_4, species_id_2, species_id_3, species_id_4
+-- Section: readable
+  Only in edited: ability_2, ability_3, ability_4, form_2, form_3, form_4, gender_2, gender_3, gender_4, item_id_0, item_id_1, item_id_2, item_id_3, item_id_4, ivs_2, ivs_3, ivs_4, level_2, level_3, level_4, move_1_0, move_1_1, move_1_2, move_1_3, move_1_4, move_2_0, move_2_1, move_2_2, move_2_3, move_2_4, move_3_0, move_3_1, move_3_2, move_3_3, move_3_4, move_4_0, move_4_1, move_4_2, move_4_3, move_4_4, padding_2, padding_3, padding_4, species_id_2, species_id_3, species_id_4
+
+File: 275.json
+-- Section: raw
+  Only in edited: ability_1, form_1, item_id_0, item_id_1, ivs_1, level_1, move_1_0, move_1_1, move_2_0, move_2_1, move_3_0, move_3_1, move_4_0, move_4_1, padding_1, species_id_1
+-- Section: readable
+  Only in edited: ability_1, form_1, gender_1, item_id_0, item_id_1, ivs_1, level_1, move_1_0, move_1_1, move_2_0, move_2_1, move_3_0, move_3_1, move_4_0, move_4_1, padding_1, species_id_1
+
+File: 276.json
+-- Section: raw
+  Only in edited: ability_1, form_1, item_id_0, item_id_1, ivs_1, level_1, move_1_0, move_1_1, move_2_0, move_2_1, move_3_0, move_3_1, move_4_0, move_4_1, padding_1, species_id_1
+-- Section: readable
+  Only in edited: ability_1, form_1, gender_1, item_id_0, item_id_1, ivs_1, level_1, move_1_0, move_1_1, move_2_0, move_2_1, move_3_0, move_3_1, move_4_0, move_4_1, padding_1, species_id_1
+
+File: 292.json
+-- Section: raw
+  Only in edited: ability_2, ability_3, ability_4, form_2, form_3, form_4, item_id_0, item_id_1, item_id_2, item_id_3, item_id_4, ivs_2, ivs_3, ivs_4, level_2, level_3, level_4, move_1_0, move_1_1, move_1_2, move_1_3, move_1_4, move_2_0, move_2_1, move_2_2, move_2_3, move_2_4, move_3_0, move_3_1, move_3_2, move_3_3, move_3_4, move_4_0, move_4_1, move_4_2, move_4_3, move_4_4, padding_2, padding_3, padding_4, species_id_2, species_id_3, species_id_4
+-- Section: readable
+  Only in edited: ability_2, ability_3, ability_4, form_2, form_3, form_4, gender_2, gender_3, gender_4, item_id_0, item_id_1, item_id_2, item_id_3, item_id_4, ivs_2, ivs_3, ivs_4, level_2, level_3, level_4, move_1_0, move_1_1, move_1_2, move_1_3, move_1_4, move_2_0, move_2_1, move_2_2, move_2_3, move_2_4, move_3_0, move_3_1, move_3_2, move_3_3, move_3_4, move_4_0, move_4_1, move_4_2, move_4_3, move_4_4, padding_2, padding_3, padding_4, species_id_2, species_id_3, species_id_4
+
+File: 293.json
+OK: structures match
+
+File: 297.json
+OK: structures match
+
+File: 298.json
+OK: structures match
+
+File: 319.json
+OK: structures match
+
+File: 320.json
+OK: structures match
+
+File: 321.json
+OK: structures match
+
+File: 322.json
+OK: structures match
+
+File: 323.json
+OK: structures match
+
+File: 324.json
+OK: structures match
+
+File: 325.json
+OK: structures match
+
+File: 332.json
+-- Section: raw
+  Only in edited: ability_2, ability_3, ability_4, form_2, form_3, form_4, item_id_0, item_id_1, item_id_2, item_id_3, item_id_4, ivs_2, ivs_3, ivs_4, level_2, level_3, level_4, move_1_0, move_1_1, move_1_2, move_1_3, move_1_4, move_2_0, move_2_1, move_2_2, move_2_3, move_2_4, move_3_0, move_3_1, move_3_2, move_3_3, move_3_4, move_4_0, move_4_1, move_4_2, move_4_3, move_4_4, padding_2, padding_3, padding_4, species_id_2, species_id_3, species_id_4
+-- Section: readable
+  Only in edited: ability_2, ability_3, ability_4, form_2, form_3, form_4, gender_2, gender_3, gender_4, item_id_0, item_id_1, item_id_2, item_id_3, item_id_4, ivs_2, ivs_3, ivs_4, level_2, level_3, level_4, move_1_0, move_1_1, move_1_2, move_1_3, move_1_4, move_2_0, move_2_1, move_2_2, move_2_3, move_2_4, move_3_0, move_3_1, move_3_2, move_3_3, move_3_4, move_4_0, move_4_1, move_4_2, move_4_3, move_4_4, padding_2, padding_3, padding_4, species_id_2, species_id_3, species_id_4
+
+File: 342.json
+OK: structures match
+
+File: 346.json
+OK: structures match
+
+File: 356.json
+OK: structures match
+
+File: 358.json
+OK: structures match
+
+File: 359.json
+OK: structures match
+
+File: 360.json
+OK: structures match
+
+File: 361.json
+OK: structures match
+
+File: 362.json
+OK: structures match
+
+File: 363.json
+OK: structures match
+
+File: 364.json
+OK: structures match
+
+File: 365.json
+OK: structures match
+
+File: 366.json
+OK: structures match
+
+File: 367.json
+-- Section: raw
+  Only in edited: ability_3, ability_4, form_3, form_4, item_id_0, item_id_1, item_id_2, item_id_3, item_id_4, ivs_3, ivs_4, level_3, level_4, move_1_0, move_1_1, move_1_2, move_1_3, move_1_4, move_2_0, move_2_1, move_2_2, move_2_3, move_2_4, move_3_0, move_3_1, move_3_2, move_3_3, move_3_4, move_4_0, move_4_1, move_4_2, move_4_3, move_4_4, padding_3, padding_4, species_id_3, species_id_4
+-- Section: readable
+  Only in edited: ability_3, ability_4, form_3, form_4, gender_3, gender_4, item_id_0, item_id_1, item_id_2, item_id_3, item_id_4, ivs_3, ivs_4, level_3, level_4, move_1_0, move_1_1, move_1_2, move_1_3, move_1_4, move_2_0, move_2_1, move_2_2, move_2_3, move_2_4, move_3_0, move_3_1, move_3_2, move_3_3, move_3_4, move_4_0, move_4_1, move_4_2, move_4_3, move_4_4, padding_3, padding_4, species_id_3, species_id_4
+
+File: 368.json
+-- Section: raw
+  Only in edited: ability_3, form_3, item_id_0, item_id_1, item_id_2, item_id_3, ivs_3, level_3, move_1_0, move_1_1, move_1_2, move_1_3, move_2_0, move_2_1, move_2_2, move_2_3, move_3_0, move_3_1, move_3_2, move_3_3, move_4_0, move_4_1, move_4_2, move_4_3, padding_3, species_id_3
+-- Section: readable
+  Only in edited: ability_3, form_3, gender_3, item_id_0, item_id_1, item_id_2, item_id_3, ivs_3, level_3, move_1_0, move_1_1, move_1_2, move_1_3, move_2_0, move_2_1, move_2_2, move_2_3, move_3_0, move_3_1, move_3_2, move_3_3, move_4_0, move_4_1, move_4_2, move_4_3, padding_3, species_id_3
+
+File: 369.json
+-- Section: raw
+  Only in edited: ability_3, form_3, item_id_0, item_id_1, item_id_2, item_id_3, ivs_3, level_3, move_1_0, move_1_1, move_1_2, move_1_3, move_2_0, move_2_1, move_2_2, move_2_3, move_3_0, move_3_1, move_3_2, move_3_3, move_4_0, move_4_1, move_4_2, move_4_3, padding_3, species_id_3
+-- Section: readable
+  Only in edited: ability_3, form_3, gender_3, item_id_0, item_id_1, item_id_2, item_id_3, ivs_3, level_3, move_1_0, move_1_1, move_1_2, move_1_3, move_2_0, move_2_1, move_2_2, move_2_3, move_3_0, move_3_1, move_3_2, move_3_3, move_4_0, move_4_1, move_4_2, move_4_3, padding_3, species_id_3
+
+File: 370.json
+-- Section: raw
+  Only in edited: ability_3, form_3, item_id_0, item_id_1, item_id_2, item_id_3, ivs_3, level_3, move_1_0, move_1_1, move_1_2, move_1_3, move_2_0, move_2_1, move_2_2, move_2_3, move_3_0, move_3_1, move_3_2, move_3_3, move_4_0, move_4_1, move_4_2, move_4_3, padding_3, species_id_3
+-- Section: readable
+  Only in edited: ability_3, form_3, gender_3, item_id_0, item_id_1, item_id_2, item_id_3, ivs_3, level_3, move_1_0, move_1_1, move_1_2, move_1_3, move_2_0, move_2_1, move_2_2, move_2_3, move_3_0, move_3_1, move_3_2, move_3_3, move_4_0, move_4_1, move_4_2, move_4_3, padding_3, species_id_3
+
+File: 371.json
+-- Section: raw
+  Only in edited: ability_3, form_3, item_id_0, item_id_1, item_id_2, item_id_3, ivs_3, level_3, move_1_3, move_2_3, move_3_3, move_4_3, padding_3, species_id_3
+-- Section: readable
+  Only in edited: ability_3, form_3, gender_3, item_id_0, item_id_1, item_id_2, item_id_3, ivs_3, level_3, move_1_3, move_2_3, move_3_3, move_4_3, padding_3, species_id_3
+
+File: 372.json
+-- Section: raw
+  Only in edited: ability_1, ability_2, ability_3, form_1, form_2, form_3, item_id_0, item_id_1, item_id_2, item_id_3, ivs_1, ivs_2, ivs_3, level_1, level_2, level_3, move_1_0, move_1_1, move_1_2, move_1_3, move_2_0, move_2_1, move_2_2, move_2_3, move_3_0, move_3_1, move_3_2, move_3_3, move_4_0, move_4_1, move_4_2, move_4_3, padding_1, padding_2, padding_3, species_id_1, species_id_2, species_id_3
+-- Section: readable
+  Only in edited: ability_1, ability_2, ability_3, form_1, form_2, form_3, gender_1, gender_2, gender_3, item_id_0, item_id_1, item_id_2, item_id_3, ivs_1, ivs_2, ivs_3, level_1, level_2, level_3, move_1_0, move_1_1, move_1_2, move_1_3, move_2_0, move_2_1, move_2_2, move_2_3, move_3_0, move_3_1, move_3_2, move_3_3, move_4_0, move_4_1, move_4_2, move_4_3, padding_1, padding_2, padding_3, species_id_1, species_id_2, species_id_3
+
+File: 373.json
+-- Section: raw
+  Only in edited: ability_1, ability_2, ability_3, form_1, form_2, form_3, item_id_0, item_id_1, item_id_2, item_id_3, ivs_1, ivs_2, ivs_3, level_1, level_2, level_3, move_1_0, move_1_1, move_1_2, move_1_3, move_2_0, move_2_1, move_2_2, move_2_3, move_3_0, move_3_1, move_3_2, move_3_3, move_4_0, move_4_1, move_4_2, move_4_3, padding_1, padding_2, padding_3, species_id_1, species_id_2, species_id_3
+-- Section: readable
+  Only in edited: ability_1, ability_2, ability_3, form_1, form_2, form_3, gender_1, gender_2, gender_3, item_id_0, item_id_1, item_id_2, item_id_3, ivs_1, ivs_2, ivs_3, level_1, level_2, level_3, move_1_0, move_1_1, move_1_2, move_1_3, move_2_0, move_2_1, move_2_2, move_2_3, move_3_0, move_3_1, move_3_2, move_3_3, move_4_0, move_4_1, move_4_2, move_4_3, padding_1, padding_2, padding_3, species_id_1, species_id_2, species_id_3
+
+File: 374.json
+-- Section: raw
+  Only in edited: ability_2, form_2, item_id_0, item_id_1, item_id_2, ivs_2, level_2, move_1_0, move_1_1, move_1_2, move_2_0, move_2_1, move_2_2, move_3_0, move_3_1, move_3_2, move_4_0, move_4_1, move_4_2, padding_2, species_id_2
+-- Section: readable
+  Only in edited: ability_2, form_2, gender_2, item_id_0, item_id_1, item_id_2, ivs_2, level_2, move_1_0, move_1_1, move_1_2, move_2_0, move_2_1, move_2_2, move_3_0, move_3_1, move_3_2, move_4_0, move_4_1, move_4_2, padding_2, species_id_2
+
+File: 375.json
+-- Section: raw
+  Only in edited: ability_2, form_2, item_id_0, item_id_1, item_id_2, ivs_2, level_2, move_1_0, move_1_1, move_1_2, move_2_0, move_2_1, move_2_2, move_3_0, move_3_1, move_3_2, move_4_0, move_4_1, move_4_2, padding_2, species_id_2
+-- Section: readable
+  Only in edited: ability_2, form_2, gender_2, item_id_0, item_id_1, item_id_2, ivs_2, level_2, move_1_0, move_1_1, move_1_2, move_2_0, move_2_1, move_2_2, move_3_0, move_3_1, move_3_2, move_4_0, move_4_1, move_4_2, padding_2, species_id_2
+
+File: 376.json
+-- Section: raw
+  Only in edited: ability_2, form_2, item_id_0, item_id_1, item_id_2, ivs_2, level_2, move_1_0, move_1_1, move_1_2, move_2_0, move_2_1, move_2_2, move_3_0, move_3_1, move_3_2, move_4_0, move_4_1, move_4_2, padding_2, species_id_2
+-- Section: readable
+  Only in edited: ability_2, form_2, gender_2, item_id_0, item_id_1, item_id_2, ivs_2, level_2, move_1_0, move_1_1, move_1_2, move_2_0, move_2_1, move_2_2, move_3_0, move_3_1, move_3_2, move_4_0, move_4_1, move_4_2, padding_2, species_id_2
+
+File: 377.json
+-- Section: raw
+  Only in edited: ability_2, form_2, item_id_0, item_id_1, item_id_2, ivs_2, level_2, move_1_0, move_1_1, move_1_2, move_2_0, move_2_1, move_2_2, move_3_0, move_3_1, move_3_2, move_4_0, move_4_1, move_4_2, padding_2, species_id_2
+-- Section: readable
+  Only in edited: ability_2, form_2, gender_2, item_id_0, item_id_1, item_id_2, ivs_2, level_2, move_1_0, move_1_1, move_1_2, move_2_0, move_2_1, move_2_2, move_3_0, move_3_1, move_3_2, move_4_0, move_4_1, move_4_2, padding_2, species_id_2
+
+File: 392.json
+-- Section: raw
+  Only in edited: item_id_0, item_id_1, item_id_2
+-- Section: readable
+  Only in edited: item_id_0, item_id_1, item_id_2
+
+File: 413.json
+-- Section: raw
+  Only in edited: ability_3, form_3, item_id_0, item_id_1, item_id_2, item_id_3, ivs_3, level_3, move_1_0, move_1_1, move_1_2, move_1_3, move_2_0, move_2_1, move_2_2, move_2_3, move_3_0, move_3_1, move_3_2, move_3_3, move_4_0, move_4_1, move_4_2, move_4_3, padding_3, species_id_3
+-- Section: readable
+  Only in edited: ability_3, form_3, gender_3, item_id_0, item_id_1, item_id_2, item_id_3, ivs_3, level_3, move_1_0, move_1_1, move_1_2, move_1_3, move_2_0, move_2_1, move_2_2, move_2_3, move_3_0, move_3_1, move_3_2, move_3_3, move_4_0, move_4_1, move_4_2, move_4_3, padding_3, species_id_3
+
+File: 461.json
+OK: structures match
+
+File: 462.json
+OK: structures match
+
+File: 463.json
+OK: structures match
+
+File: 464.json
+OK: structures match
+
+File: 465.json
+OK: structures match
+
+File: 466.json
+OK: structures match
+
+File: 48.json
+OK: structures match
+
+File: 487.json
+-- Section: raw
+  Only in edited: ability_2, ability_3, ability_4, ability_5, form_2, form_3, form_4, form_5, item_id_0, item_id_1, item_id_2, item_id_3, item_id_4, item_id_5, ivs_2, ivs_3, ivs_4, ivs_5, level_2, level_3, level_4, level_5, move_1_0, move_1_1, move_1_2, move_1_3, move_1_4, move_1_5, move_2_0, move_2_1, move_2_2, move_2_3, move_2_4, move_2_5, move_3_0, move_3_1, move_3_2, move_3_3, move_3_4, move_3_5, move_4_0, move_4_1, move_4_2, move_4_3, move_4_4, move_4_5, padding_2, padding_3, padding_4, padding_5, species_id_2, species_id_3, species_id_4, species_id_5
+-- Section: readable
+  Only in edited: ability_2, ability_3, ability_4, ability_5, form_2, form_3, form_4, form_5, gender_2, gender_3, gender_4, gender_5, item_id_0, item_id_1, item_id_2, item_id_3, item_id_4, item_id_5, ivs_2, ivs_3, ivs_4, ivs_5, level_2, level_3, level_4, level_5, move_1_0, move_1_1, move_1_2, move_1_3, move_1_4, move_1_5, move_2_0, move_2_1, move_2_2, move_2_3, move_2_4, move_2_5, move_3_0, move_3_1, move_3_2, move_3_3, move_3_4, move_3_5, move_4_0, move_4_1, move_4_2, move_4_3, move_4_4, move_4_5, padding_2, padding_3, padding_4, padding_5, species_id_2, species_id_3, species_id_4, species_id_5
+
+File: 488.json
+-- Section: raw
+  Only in edited: ability_2, ability_3, ability_4, ability_5, form_2, form_3, form_4, form_5, item_id_0, item_id_1, item_id_2, item_id_3, item_id_4, item_id_5, ivs_2, ivs_3, ivs_4, ivs_5, level_2, level_3, level_4, level_5, move_1_0, move_1_1, move_1_2, move_1_3, move_1_4, move_1_5, move_2_0, move_2_1, move_2_2, move_2_3, move_2_4, move_2_5, move_3_0, move_3_1, move_3_2, move_3_3, move_3_4, move_3_5, move_4_0, move_4_1, move_4_2, move_4_3, move_4_4, move_4_5, padding_2, padding_3, padding_4, padding_5, species_id_2, species_id_3, species_id_4, species_id_5
+-- Section: readable
+  Only in edited: ability_2, ability_3, ability_4, ability_5, form_2, form_3, form_4, form_5, gender_2, gender_3, gender_4, gender_5, item_id_0, item_id_1, item_id_2, item_id_3, item_id_4, item_id_5, ivs_2, ivs_3, ivs_4, ivs_5, level_2, level_3, level_4, level_5, move_1_0, move_1_1, move_1_2, move_1_3, move_1_4, move_1_5, move_2_0, move_2_1, move_2_2, move_2_3, move_2_4, move_2_5, move_3_0, move_3_1, move_3_2, move_3_3, move_3_4, move_3_5, move_4_0, move_4_1, move_4_2, move_4_3, move_4_4, move_4_5, padding_2, padding_3, padding_4, padding_5, species_id_2, species_id_3, species_id_4, species_id_5
+
+File: 489.json
+-- Section: raw
+  Only in edited: ability_2, ability_3, ability_4, ability_5, form_2, form_3, form_4, form_5, item_id_0, item_id_1, item_id_2, item_id_3, item_id_4, item_id_5, ivs_2, ivs_3, ivs_4, ivs_5, level_2, level_3, level_4, level_5, move_1_0, move_1_1, move_1_2, move_1_3, move_1_4, move_1_5, move_2_0, move_2_1, move_2_2, move_2_3, move_2_4, move_2_5, move_3_0, move_3_1, move_3_2, move_3_3, move_3_4, move_3_5, move_4_0, move_4_1, move_4_2, move_4_3, move_4_4, move_4_5, padding_2, padding_3, padding_4, padding_5, species_id_2, species_id_3, species_id_4, species_id_5
+-- Section: readable
+  Only in edited: ability_2, ability_3, ability_4, ability_5, form_2, form_3, form_4, form_5, gender_2, gender_3, gender_4, gender_5, item_id_0, item_id_1, item_id_2, item_id_3, item_id_4, item_id_5, ivs_2, ivs_3, ivs_4, ivs_5, level_2, level_3, level_4, level_5, move_1_0, move_1_1, move_1_2, move_1_3, move_1_4, move_1_5, move_2_0, move_2_1, move_2_2, move_2_3, move_2_4, move_2_5, move_3_0, move_3_1, move_3_2, move_3_3, move_3_4, move_3_5, move_4_0, move_4_1, move_4_2, move_4_3, move_4_4, move_4_5, padding_2, padding_3, padding_4, padding_5, species_id_2, species_id_3, species_id_4, species_id_5
+
+File: 491.json
+-- Section: raw
+  Only in edited: ability_4, ability_5, form_4, form_5, item_id_0, item_id_1, item_id_2, item_id_3, item_id_4, item_id_5, ivs_4, ivs_5, level_4, level_5, move_1_0, move_1_1, move_1_2, move_1_3, move_1_4, move_1_5, move_2_0, move_2_1, move_2_2, move_2_3, move_2_4, move_2_5, move_3_0, move_3_1, move_3_2, move_3_3, move_3_4, move_3_5, move_4_0, move_4_1, move_4_2, move_4_3, move_4_4, move_4_5, padding_4, padding_5, species_id_4, species_id_5
+-- Section: readable
+  Only in edited: ability_4, ability_5, form_4, form_5, gender_4, gender_5, item_id_0, item_id_1, item_id_2, item_id_3, item_id_4, item_id_5, ivs_4, ivs_5, level_4, level_5, move_1_0, move_1_1, move_1_2, move_1_3, move_1_4, move_1_5, move_2_0, move_2_1, move_2_2, move_2_3, move_2_4, move_2_5, move_3_0, move_3_1, move_3_2, move_3_3, move_3_4, move_3_5, move_4_0, move_4_1, move_4_2, move_4_3, move_4_4, move_4_5, padding_4, padding_5, species_id_4, species_id_5
+
+File: 493.json
+-- Section: raw
+  Only in edited: ability_4, form_4, item_id_0, item_id_1, item_id_2, item_id_3, item_id_4, ivs_4, level_4, move_1_4, move_2_4, move_3_4, move_4_4, padding_4, species_id_4
+-- Section: readable
+  Only in edited: ability_4, form_4, gender_4, item_id_0, item_id_1, item_id_2, item_id_3, item_id_4, ivs_4, level_4, move_1_4, move_2_4, move_3_4, move_4_4, padding_4, species_id_4
+
+File: 50.json
+OK: structures match
+
+File: 501.json
+OK: structures match
+
+File: 502.json
+OK: structures match
+
+File: 503.json
+OK: structures match
+
+File: 510.json
+OK: structures match
+
+File: 511.json
+OK: structures match
+
+File: 512.json
+-- Section: raw
+  Only in edited: ability_3, form_3, item_id_3, ivs_3, level_3, move_1_3, move_2_3, move_3_3, move_4_3, padding_3, species_id_3
+-- Section: readable
+  Only in edited: ability_3, form_3, gender_3, item_id_3, ivs_3, level_3, move_1_3, move_2_3, move_3_3, move_4_3, padding_3, species_id_3
+
+File: 527.json
+-- Section: raw
+  Only in edited: item_id_0, item_id_1, item_id_2, item_id_3
+-- Section: readable
+  Only in edited: item_id_0, item_id_1, item_id_2, item_id_3
+
+File: 537.json
+-- Section: raw
+  Only in edited: ability_1, ability_2, ability_3, form_1, form_2, form_3, item_id_0, item_id_1, item_id_2, item_id_3, ivs_1, ivs_2, ivs_3, level_1, level_2, level_3, move_1_0, move_1_1, move_1_2, move_1_3, move_2_0, move_2_1, move_2_2, move_2_3, move_3_0, move_3_1, move_3_2, move_3_3, move_4_0, move_4_1, move_4_2, move_4_3, padding_1, padding_2, padding_3, species_id_1, species_id_2, species_id_3
+-- Section: readable
+  Only in edited: ability_1, ability_2, ability_3, form_1, form_2, form_3, gender_1, gender_2, gender_3, item_id_0, item_id_1, item_id_2, item_id_3, ivs_1, ivs_2, ivs_3, level_1, level_2, level_3, move_1_0, move_1_1, move_1_2, move_1_3, move_2_0, move_2_1, move_2_2, move_2_3, move_3_0, move_3_1, move_3_2, move_3_3, move_4_0, move_4_1, move_4_2, move_4_3, padding_1, padding_2, padding_3, species_id_1, species_id_2, species_id_3
+
+File: 539.json
+-- Section: raw
+  Only in edited: ability_2, ability_3, form_2, form_3, item_id_0, item_id_1, item_id_2, item_id_3, ivs_2, ivs_3, level_2, level_3, move_1_0, move_1_1, move_1_2, move_1_3, move_2_0, move_2_1, move_2_2, move_2_3, move_3_0, move_3_1, move_3_2, move_3_3, move_4_0, move_4_1, move_4_2, move_4_3, padding_2, padding_3, species_id_2, species_id_3
+-- Section: readable
+  Only in edited: ability_2, ability_3, form_2, form_3, gender_2, gender_3, item_id_0, item_id_1, item_id_2, item_id_3, ivs_2, ivs_3, level_2, level_3, move_1_0, move_1_1, move_1_2, move_1_3, move_2_0, move_2_1, move_2_2, move_2_3, move_3_0, move_3_1, move_3_2, move_3_3, move_4_0, move_4_1, move_4_2, move_4_3, padding_2, padding_3, species_id_2, species_id_3
+
+File: 541.json
+-- Section: raw
+  Only in edited: ability_1, ability_2, ability_3, form_1, form_2, form_3, item_id_0, item_id_1, item_id_2, item_id_3, ivs_1, ivs_2, ivs_3, level_1, level_2, level_3, move_1_0, move_1_1, move_1_2, move_1_3, move_2_0, move_2_1, move_2_2, move_2_3, move_3_0, move_3_1, move_3_2, move_3_3, move_4_0, move_4_1, move_4_2, move_4_3, padding_1, padding_2, padding_3, species_id_1, species_id_2, species_id_3
+-- Section: readable
+  Only in edited: ability_1, ability_2, ability_3, form_1, form_2, form_3, gender_1, gender_2, gender_3, item_id_0, item_id_1, item_id_2, item_id_3, ivs_1, ivs_2, ivs_3, level_1, level_2, level_3, move_1_0, move_1_1, move_1_2, move_1_3, move_2_0, move_2_1, move_2_2, move_2_3, move_3_0, move_3_1, move_3_2, move_3_3, move_4_0, move_4_1, move_4_2, move_4_3, padding_1, padding_2, padding_3, species_id_1, species_id_2, species_id_3
+
+File: 542.json
+-- Section: raw
+  Only in edited: ability_2, ability_3, form_2, form_3, item_id_0, item_id_1, item_id_2, item_id_3, ivs_2, ivs_3, level_2, level_3, move_1_0, move_1_1, move_1_2, move_1_3, move_2_0, move_2_1, move_2_2, move_2_3, move_3_0, move_3_1, move_3_2, move_3_3, move_4_0, move_4_1, move_4_2, move_4_3, padding_2, padding_3, species_id_2, species_id_3
+-- Section: readable
+  Only in edited: ability_2, ability_3, form_2, form_3, gender_2, gender_3, item_id_0, item_id_1, item_id_2, item_id_3, ivs_2, ivs_3, level_2, level_3, move_1_0, move_1_1, move_1_2, move_1_3, move_2_0, move_2_1, move_2_2, move_2_3, move_3_0, move_3_1, move_3_2, move_3_3, move_4_0, move_4_1, move_4_2, move_4_3, padding_2, padding_3, species_id_2, species_id_3
+
+File: 543.json
+-- Section: raw
+  Only in edited: ability_2, ability_3, form_2, form_3, item_id_0, item_id_1, item_id_2, item_id_3, ivs_2, ivs_3, level_2, level_3, move_1_0, move_1_1, move_1_2, move_1_3, move_2_0, move_2_1, move_2_2, move_2_3, move_3_0, move_3_1, move_3_2, move_3_3, move_4_0, move_4_1, move_4_2, move_4_3, padding_2, padding_3, species_id_2, species_id_3
+-- Section: readable
+  Only in edited: ability_2, ability_3, form_2, form_3, gender_2, gender_3, item_id_0, item_id_1, item_id_2, item_id_3, ivs_2, ivs_3, level_2, level_3, move_1_0, move_1_1, move_1_2, move_1_3, move_2_0, move_2_1, move_2_2, move_2_3, move_3_0, move_3_1, move_3_2, move_3_3, move_4_0, move_4_1, move_4_2, move_4_3, padding_2, padding_3, species_id_2, species_id_3
+
+File: 544.json
+-- Section: raw
+  Only in edited: ability_1, ability_2, ability_3, form_1, form_2, form_3, item_id_0, item_id_1, item_id_2, item_id_3, ivs_1, ivs_2, ivs_3, level_1, level_2, level_3, move_1_0, move_1_1, move_1_2, move_1_3, move_2_0, move_2_1, move_2_2, move_2_3, move_3_0, move_3_1, move_3_2, move_3_3, move_4_0, move_4_1, move_4_2, move_4_3, padding_1, padding_2, padding_3, species_id_1, species_id_2, species_id_3
+-- Section: readable
+  Only in edited: ability_1, ability_2, ability_3, form_1, form_2, form_3, gender_1, gender_2, gender_3, item_id_0, item_id_1, item_id_2, item_id_3, ivs_1, ivs_2, ivs_3, level_1, level_2, level_3, move_1_0, move_1_1, move_1_2, move_1_3, move_2_0, move_2_1, move_2_2, move_2_3, move_3_0, move_3_1, move_3_2, move_3_3, move_4_0, move_4_1, move_4_2, move_4_3, padding_1, padding_2, padding_3, species_id_1, species_id_2, species_id_3
+
+File: 545.json
+-- Section: raw
+  Only in edited: ability_3, form_3, item_id_0, item_id_1, item_id_2, item_id_3, ivs_3, level_3, move_1_0, move_1_1, move_1_2, move_1_3, move_2_0, move_2_1, move_2_2, move_2_3, move_3_0, move_3_1, move_3_2, move_3_3, move_4_0, move_4_1, move_4_2, move_4_3, padding_3, species_id_3
+-- Section: readable
+  Only in edited: ability_3, form_3, gender_3, item_id_0, item_id_1, item_id_2, item_id_3, ivs_3, level_3, move_1_0, move_1_1, move_1_2, move_1_3, move_2_0, move_2_1, move_2_2, move_2_3, move_3_0, move_3_1, move_3_2, move_3_3, move_4_0, move_4_1, move_4_2, move_4_3, padding_3, species_id_3
+
+File: 547.json
+-- Section: raw
+  Only in edited: ability_2, ability_3, form_2, form_3, item_id_0, item_id_1, item_id_2, item_id_3, ivs_2, ivs_3, level_2, level_3, move_1_0, move_1_1, move_1_2, move_1_3, move_2_0, move_2_1, move_2_2, move_2_3, move_3_0, move_3_1, move_3_2, move_3_3, move_4_0, move_4_1, move_4_2, move_4_3, padding_2, padding_3, species_id_2, species_id_3
+-- Section: readable
+  Only in edited: ability_2, ability_3, form_2, form_3, gender_2, gender_3, item_id_0, item_id_1, item_id_2, item_id_3, ivs_2, ivs_3, level_2, level_3, move_1_0, move_1_1, move_1_2, move_1_3, move_2_0, move_2_1, move_2_2, move_2_3, move_3_0, move_3_1, move_3_2, move_3_3, move_4_0, move_4_1, move_4_2, move_4_3, padding_2, padding_3, species_id_2, species_id_3
+
+File: 548.json
+-- Section: raw
+  Only in edited: ability_2, ability_3, form_2, form_3, item_id_0, item_id_1, item_id_2, item_id_3, ivs_2, ivs_3, level_2, level_3, move_1_0, move_1_1, move_1_2, move_1_3, move_2_0, move_2_1, move_2_2, move_2_3, move_3_0, move_3_1, move_3_2, move_3_3, move_4_0, move_4_1, move_4_2, move_4_3, padding_2, padding_3, species_id_2, species_id_3
+-- Section: readable
+  Only in edited: ability_2, ability_3, form_2, form_3, gender_2, gender_3, item_id_0, item_id_1, item_id_2, item_id_3, ivs_2, ivs_3, level_2, level_3, move_1_0, move_1_1, move_1_2, move_1_3, move_2_0, move_2_1, move_2_2, move_2_3, move_3_0, move_3_1, move_3_2, move_3_3, move_4_0, move_4_1, move_4_2, move_4_3, padding_2, padding_3, species_id_2, species_id_3
+
+File: 549.json
+-- Section: raw
+  Only in edited: ability_1, ability_2, ability_3, form_1, form_2, form_3, item_id_0, item_id_1, item_id_2, item_id_3, ivs_1, ivs_2, ivs_3, level_1, level_2, level_3, move_1_0, move_1_1, move_1_2, move_1_3, move_2_0, move_2_1, move_2_2, move_2_3, move_3_0, move_3_1, move_3_2, move_3_3, move_4_0, move_4_1, move_4_2, move_4_3, padding_1, padding_2, padding_3, species_id_1, species_id_2, species_id_3
+-- Section: readable
+  Only in edited: ability_1, ability_2, ability_3, form_1, form_2, form_3, gender_1, gender_2, gender_3, item_id_0, item_id_1, item_id_2, item_id_3, ivs_1, ivs_2, ivs_3, level_1, level_2, level_3, move_1_0, move_1_1, move_1_2, move_1_3, move_2_0, move_2_1, move_2_2, move_2_3, move_3_0, move_3_1, move_3_2, move_3_3, move_4_0, move_4_1, move_4_2, move_4_3, padding_1, padding_2, padding_3, species_id_1, species_id_2, species_id_3
+
+File: 550.json
+-- Section: raw
+  Only in edited: ability_1, ability_2, ability_3, form_1, form_2, form_3, item_id_0, item_id_1, item_id_2, item_id_3, ivs_1, ivs_2, ivs_3, level_1, level_2, level_3, move_1_0, move_1_1, move_1_2, move_1_3, move_2_0, move_2_1, move_2_2, move_2_3, move_3_0, move_3_1, move_3_2, move_3_3, move_4_0, move_4_1, move_4_2, move_4_3, padding_1, padding_2, padding_3, species_id_1, species_id_2, species_id_3
+-- Section: readable
+  Only in edited: ability_1, ability_2, ability_3, form_1, form_2, form_3, gender_1, gender_2, gender_3, item_id_0, item_id_1, item_id_2, item_id_3, ivs_1, ivs_2, ivs_3, level_1, level_2, level_3, move_1_0, move_1_1, move_1_2, move_1_3, move_2_0, move_2_1, move_2_2, move_2_3, move_3_0, move_3_1, move_3_2, move_3_3, move_4_0, move_4_1, move_4_2, move_4_3, padding_1, padding_2, padding_3, species_id_1, species_id_2, species_id_3
+
+File: 551.json
+-- Section: raw
+  Only in edited: ability_1, ability_2, ability_3, form_1, form_2, form_3, item_id_0, item_id_1, item_id_2, item_id_3, ivs_1, ivs_2, ivs_3, level_1, level_2, level_3, move_1_0, move_1_1, move_1_2, move_1_3, move_2_0, move_2_1, move_2_2, move_2_3, move_3_0, move_3_1, move_3_2, move_3_3, move_4_0, move_4_1, move_4_2, move_4_3, padding_1, padding_2, padding_3, species_id_1, species_id_2, species_id_3
+-- Section: readable
+  Only in edited: ability_1, ability_2, ability_3, form_1, form_2, form_3, gender_1, gender_2, gender_3, item_id_0, item_id_1, item_id_2, item_id_3, ivs_1, ivs_2, ivs_3, level_1, level_2, level_3, move_1_0, move_1_1, move_1_2, move_1_3, move_2_0, move_2_1, move_2_2, move_2_3, move_3_0, move_3_1, move_3_2, move_3_3, move_4_0, move_4_1, move_4_2, move_4_3, padding_1, padding_2, padding_3, species_id_1, species_id_2, species_id_3
+
+File: 552.json
+-- Section: raw
+  Only in edited: ability_1, ability_2, ability_3, ability_4, form_1, form_2, form_3, form_4, item_id_0, item_id_1, item_id_2, item_id_3, item_id_4, ivs_1, ivs_2, ivs_3, ivs_4, level_1, level_2, level_3, level_4, move_1_0, move_1_1, move_1_2, move_1_3, move_1_4, move_2_0, move_2_1, move_2_2, move_2_3, move_2_4, move_3_0, move_3_1, move_3_2, move_3_3, move_3_4, move_4_0, move_4_1, move_4_2, move_4_3, move_4_4, padding_1, padding_2, padding_3, padding_4, species_id_1, species_id_2, species_id_3, species_id_4
+-- Section: readable
+  Only in edited: ability_1, ability_2, ability_3, ability_4, form_1, form_2, form_3, form_4, gender_1, gender_2, gender_3, gender_4, item_id_0, item_id_1, item_id_2, item_id_3, item_id_4, ivs_1, ivs_2, ivs_3, ivs_4, level_1, level_2, level_3, level_4, move_1_0, move_1_1, move_1_2, move_1_3, move_1_4, move_2_0, move_2_1, move_2_2, move_2_3, move_2_4, move_3_0, move_3_1, move_3_2, move_3_3, move_3_4, move_4_0, move_4_1, move_4_2, move_4_3, move_4_4, padding_1, padding_2, padding_3, padding_4, species_id_1, species_id_2, species_id_3, species_id_4
+
+File: 553.json
+-- Section: raw
+  Only in edited: ability_1, form_1, item_id_0, item_id_1, ivs_1, level_1, move_1_0, move_1_1, move_2_0, move_2_1, move_3_0, move_3_1, move_4_0, move_4_1, padding_1, species_id_1
+-- Section: readable
+  Only in edited: ability_1, form_1, gender_1, item_id_0, item_id_1, ivs_1, level_1, move_1_0, move_1_1, move_2_0, move_2_1, move_3_0, move_3_1, move_4_0, move_4_1, padding_1, species_id_1
+
+File: 554.json
+-- Section: raw
+  Only in edited: ability_1, form_1, item_id_0, item_id_1, ivs_1, level_1, move_1_0, move_1_1, move_2_0, move_2_1, move_3_0, move_3_1, move_4_0, move_4_1, padding_1, species_id_1
+-- Section: readable
+  Only in edited: ability_1, form_1, gender_1, item_id_0, item_id_1, ivs_1, level_1, move_1_0, move_1_1, move_2_0, move_2_1, move_3_0, move_3_1, move_4_0, move_4_1, padding_1, species_id_1
+
+File: 555.json
+OK: structures match
+
+File: 556.json
+OK: structures match
+
+File: 557.json
+OK: structures match
+
+File: 558.json
+OK: structures match
+
+File: 56.json
+-- Section: raw
+  Only in edited: ability_1, ability_2, form_1, form_2, item_id_1, item_id_2, ivs_1, ivs_2, level_1, level_2, move_1_1, move_1_2, move_2_1, move_2_2, move_3_1, move_3_2, move_4_1, move_4_2, padding_1, padding_2, species_id_1, species_id_2
+-- Section: readable
+  Only in edited: ability_1, ability_2, form_1, form_2, gender_1, gender_2, item_id_1, item_id_2, ivs_1, ivs_2, level_1, level_2, move_1_1, move_1_2, move_2_1, move_2_2, move_3_1, move_3_2, move_4_1, move_4_2, padding_1, padding_2, species_id_1, species_id_2
+
+File: 561.json
+-- Section: raw
+  Only in edited: ability_2, ability_3, form_2, form_3, item_id_0, item_id_1, item_id_2, item_id_3, ivs_2, ivs_3, level_2, level_3, move_1_0, move_1_1, move_1_2, move_1_3, move_2_0, move_2_1, move_2_2, move_2_3, move_3_0, move_3_1, move_3_2, move_3_3, move_4_0, move_4_1, move_4_2, move_4_3, padding_2, padding_3, species_id_2, species_id_3
+-- Section: readable
+  Only in edited: ability_2, ability_3, form_2, form_3, gender_2, gender_3, item_id_0, item_id_1, item_id_2, item_id_3, ivs_2, ivs_3, level_2, level_3, move_1_0, move_1_1, move_1_2, move_1_3, move_2_0, move_2_1, move_2_2, move_2_3, move_3_0, move_3_1, move_3_2, move_3_3, move_4_0, move_4_1, move_4_2, move_4_3, padding_2, padding_3, species_id_2, species_id_3
+
+File: 562.json
+-- Section: raw
+  Only in edited: ability_2, ability_3, form_2, form_3, item_id_0, item_id_1, item_id_2, item_id_3, ivs_2, ivs_3, level_2, level_3, move_1_0, move_1_1, move_1_2, move_1_3, move_2_0, move_2_1, move_2_2, move_2_3, move_3_0, move_3_1, move_3_2, move_3_3, move_4_0, move_4_1, move_4_2, move_4_3, padding_2, padding_3, species_id_2, species_id_3
+-- Section: readable
+  Only in edited: ability_2, ability_3, form_2, form_3, gender_2, gender_3, item_id_0, item_id_1, item_id_2, item_id_3, ivs_2, ivs_3, level_2, level_3, move_1_0, move_1_1, move_1_2, move_1_3, move_2_0, move_2_1, move_2_2, move_2_3, move_3_0, move_3_1, move_3_2, move_3_3, move_4_0, move_4_1, move_4_2, move_4_3, padding_2, padding_3, species_id_2, species_id_3
+
+File: 563.json
+OK: structures match
+
+File: 564.json
+-- Section: raw
+  Only in edited: ability_1, form_1, item_id_0, item_id_1, ivs_1, level_1, move_1_0, move_1_1, move_2_0, move_2_1, move_3_0, move_3_1, move_4_0, move_4_1, padding_1, species_id_1
+-- Section: readable
+  Only in edited: ability_1, form_1, gender_1, item_id_0, item_id_1, ivs_1, level_1, move_1_0, move_1_1, move_2_0, move_2_1, move_3_0, move_3_1, move_4_0, move_4_1, padding_1, species_id_1
+
+File: 565.json
+-- Section: raw
+  Only in edited: ability_1, ability_2, ability_3, form_1, form_2, form_3, item_id_0, item_id_1, item_id_2, item_id_3, ivs_1, ivs_2, ivs_3, level_1, level_2, level_3, move_1_0, move_1_1, move_1_2, move_1_3, move_2_0, move_2_1, move_2_2, move_2_3, move_3_0, move_3_1, move_3_2, move_3_3, move_4_0, move_4_1, move_4_2, move_4_3, padding_1, padding_2, padding_3, species_id_1, species_id_2, species_id_3
+-- Section: readable
+  Only in edited: ability_1, ability_2, ability_3, form_1, form_2, form_3, gender_1, gender_2, gender_3, item_id_0, item_id_1, item_id_2, item_id_3, ivs_1, ivs_2, ivs_3, level_1, level_2, level_3, move_1_0, move_1_1, move_1_2, move_1_3, move_2_0, move_2_1, move_2_2, move_2_3, move_3_0, move_3_1, move_3_2, move_3_3, move_4_0, move_4_1, move_4_2, move_4_3, padding_1, padding_2, padding_3, species_id_1, species_id_2, species_id_3
+
+File: 566.json
+-- Section: raw
+  Only in edited: ability_1, form_1, item_id_0, item_id_1, ivs_1, level_1, move_1_0, move_1_1, move_2_0, move_2_1, move_3_0, move_3_1, move_4_0, move_4_1, padding_1, species_id_1
+-- Section: readable
+  Only in edited: ability_1, form_1, gender_1, item_id_0, item_id_1, ivs_1, level_1, move_1_0, move_1_1, move_2_0, move_2_1, move_3_0, move_3_1, move_4_0, move_4_1, padding_1, species_id_1
+
+File: 567.json
+OK: structures match
+
+File: 568.json
+OK: structures match
+
+File: 569.json
+-- Section: raw
+  Only in edited: ability_1, form_1, item_id_0, item_id_1, ivs_1, level_1, move_1_0, move_1_1, move_2_0, move_2_1, move_3_0, move_3_1, move_4_0, move_4_1, padding_1, species_id_1
+-- Section: readable
+  Only in edited: ability_1, form_1, gender_1, item_id_0, item_id_1, ivs_1, level_1, move_1_0, move_1_1, move_2_0, move_2_1, move_3_0, move_3_1, move_4_0, move_4_1, padding_1, species_id_1
+
+File: 57.json
+OK: structures match
+
+File: 570.json
+-- Section: raw
+  Only in edited: item_id_0, item_id_1, move_1_0, move_1_1, move_2_0, move_2_1, move_3_0, move_3_1, move_4_0, move_4_1
+-- Section: readable
+  Only in edited: item_id_0, item_id_1, move_1_0, move_1_1, move_2_0, move_2_1, move_3_0, move_3_1, move_4_0, move_4_1
+
+File: 58.json
+OK: structures match
+
+File: 588.json
+OK: structures match
+
+File: 589.json
+OK: structures match
+
+File: 59.json
+OK: structures match
+
+File: 590.json
+OK: structures match
+
+File: 593.json
+-- Section: raw
+  Only in edited: ability_2, ability_3, ability_4, form_2, form_3, form_4, item_id_0, item_id_1, item_id_2, item_id_3, item_id_4, ivs_2, ivs_3, ivs_4, level_2, level_3, level_4, move_1_0, move_1_1, move_1_2, move_1_3, move_1_4, move_2_0, move_2_1, move_2_2, move_2_3, move_2_4, move_3_0, move_3_1, move_3_2, move_3_3, move_3_4, move_4_0, move_4_1, move_4_2, move_4_3, move_4_4, padding_2, padding_3, padding_4, species_id_2, species_id_3, species_id_4
+-- Section: readable
+  Only in edited: ability_2, ability_3, ability_4, form_2, form_3, form_4, gender_2, gender_3, gender_4, item_id_0, item_id_1, item_id_2, item_id_3, item_id_4, ivs_2, ivs_3, ivs_4, level_2, level_3, level_4, move_1_0, move_1_1, move_1_2, move_1_3, move_1_4, move_2_0, move_2_1, move_2_2, move_2_3, move_2_4, move_3_0, move_3_1, move_3_2, move_3_3, move_3_4, move_4_0, move_4_1, move_4_2, move_4_3, move_4_4, padding_2, padding_3, padding_4, species_id_2, species_id_3, species_id_4
+
+File: 60.json
+OK: structures match
+
+File: 61.json
+OK: structures match
+
+File: 621.json
+OK: structures match
+
+File: 63.json
+OK: structures match
+
+File: 634.json
+-- Section: raw
+  Only in edited: ability_3, ability_4, form_3, form_4, item_id_0, item_id_1, item_id_2, item_id_3, item_id_4, ivs_3, ivs_4, level_3, level_4, move_1_0, move_1_1, move_1_2, move_1_3, move_1_4, move_2_0, move_2_1, move_2_2, move_2_3, move_2_4, move_3_0, move_3_1, move_3_2, move_3_3, move_3_4, move_4_0, move_4_1, move_4_2, move_4_3, move_4_4, padding_3, padding_4, species_id_3, species_id_4
+-- Section: readable
+  Only in edited: ability_3, ability_4, form_3, form_4, gender_3, gender_4, item_id_0, item_id_1, item_id_2, item_id_3, item_id_4, ivs_3, ivs_4, level_3, level_4, move_1_0, move_1_1, move_1_2, move_1_3, move_1_4, move_2_0, move_2_1, move_2_2, move_2_3, move_2_4, move_3_0, move_3_1, move_3_2, move_3_3, move_3_4, move_4_0, move_4_1, move_4_2, move_4_3, move_4_4, padding_3, padding_4, species_id_3, species_id_4
+
+File: 65.json
+OK: structures match
+
+File: 663.json
+-- Section: raw
+  Only in edited: item_id_0, item_id_1
+-- Section: readable
+  Only in edited: item_id_0, item_id_1
+
+File: 664.json
+-- Section: raw
+  Only in edited: item_id_0, item_id_1
+-- Section: readable
+  Only in edited: item_id_0, item_id_1
+
+File: 666.json
+OK: structures match
+
+File: 667.json
+-- Section: raw
+  Only in edited: item_id_0, item_id_1, item_id_2
+-- Section: readable
+  Only in edited: item_id_0, item_id_1, item_id_2
+
+File: 668.json
+OK: structures match
+
+File: 669.json
+OK: structures match
+
+File: 670.json
+OK: structures match
+
+File: 671.json
+-- Section: raw
+  Only in edited: ability_2, ability_3, form_2, form_3, item_id_0, item_id_1, item_id_2, item_id_3, ivs_2, ivs_3, level_2, level_3, move_1_0, move_1_1, move_1_2, move_1_3, move_2_0, move_2_1, move_2_2, move_2_3, move_3_0, move_3_1, move_3_2, move_3_3, move_4_0, move_4_1, move_4_2, move_4_3, padding_2, padding_3, species_id_2, species_id_3
+-- Section: readable
+  Only in edited: ability_2, ability_3, form_2, form_3, gender_2, gender_3, item_id_0, item_id_1, item_id_2, item_id_3, ivs_2, ivs_3, level_2, level_3, move_1_0, move_1_1, move_1_2, move_1_3, move_2_0, move_2_1, move_2_2, move_2_3, move_3_0, move_3_1, move_3_2, move_3_3, move_4_0, move_4_1, move_4_2, move_4_3, padding_2, padding_3, species_id_2, species_id_3
+
+File: 679.json
+OK: structures match
+
+File: 68.json
+OK: structures match
+
+File: 680.json
+-- Section: raw
+  Only in edited: ability_1, form_1, item_id_0, item_id_1, ivs_1, level_1, move_1_0, move_1_1, move_2_0, move_2_1, move_3_0, move_3_1, move_4_0, move_4_1, padding_1, species_id_1
+-- Section: readable
+  Only in edited: ability_1, form_1, gender_1, item_id_0, item_id_1, ivs_1, level_1, move_1_0, move_1_1, move_2_0, move_2_1, move_3_0, move_3_1, move_4_0, move_4_1, padding_1, species_id_1
+
+File: 681.json
+-- Section: raw
+  Only in edited: ability_1, form_1, item_id_0, item_id_1, ivs_1, level_1, move_1_0, move_1_1, move_2_0, move_2_1, move_3_0, move_3_1, move_4_0, move_4_1, padding_1, species_id_1
+-- Section: readable
+  Only in edited: ability_1, form_1, gender_1, item_id_0, item_id_1, ivs_1, level_1, move_1_0, move_1_1, move_2_0, move_2_1, move_3_0, move_3_1, move_4_0, move_4_1, padding_1, species_id_1
+
+File: 682.json
+-- Section: raw
+  Only in edited: ability_2, ability_3, form_2, form_3, item_id_0, item_id_1, item_id_2, item_id_3, ivs_2, ivs_3, level_2, level_3, move_1_0, move_1_1, move_1_2, move_1_3, move_2_0, move_2_1, move_2_2, move_2_3, move_3_0, move_3_1, move_3_2, move_3_3, move_4_0, move_4_1, move_4_2, move_4_3, padding_2, padding_3, species_id_2, species_id_3
+-- Section: readable
+  Only in edited: ability_2, ability_3, form_2, form_3, gender_2, gender_3, item_id_0, item_id_1, item_id_2, item_id_3, ivs_2, ivs_3, level_2, level_3, move_1_0, move_1_1, move_1_2, move_1_3, move_2_0, move_2_1, move_2_2, move_2_3, move_3_0, move_3_1, move_3_2, move_3_3, move_4_0, move_4_1, move_4_2, move_4_3, padding_2, padding_3, species_id_2, species_id_3
+
+File: 683.json
+-- Section: raw
+  Only in edited: ability_2, ability_3, form_2, form_3, item_id_0, item_id_1, item_id_2, item_id_3, ivs_2, ivs_3, level_2, level_3, move_1_0, move_1_1, move_1_2, move_1_3, move_2_0, move_2_1, move_2_2, move_2_3, move_3_0, move_3_1, move_3_2, move_3_3, move_4_0, move_4_1, move_4_2, move_4_3, padding_2, padding_3, species_id_2, species_id_3
+-- Section: readable
+  Only in edited: ability_2, ability_3, form_2, form_3, gender_2, gender_3, item_id_0, item_id_1, item_id_2, item_id_3, ivs_2, ivs_3, level_2, level_3, move_1_0, move_1_1, move_1_2, move_1_3, move_2_0, move_2_1, move_2_2, move_2_3, move_3_0, move_3_1, move_3_2, move_3_3, move_4_0, move_4_1, move_4_2, move_4_3, padding_2, padding_3, species_id_2, species_id_3
+
+File: 690.json
+OK: structures match
+
+File: 691.json
+OK: structures match
+
+File: 692.json
+OK: structures match
+
+File: 71.json
+OK: structures match
+
+File: 732.json
+OK: structures match
+
+File: 733.json
+OK: structures match
+
+File: 734.json
+OK: structures match
+
+File: 735.json
+OK: structures match
+
+File: 736.json
+OK: structures match
+
+File: 737.json
+OK: structures match
+
+File: 738.json
+OK: structures match
+
+File: 739.json
+-- Section: raw
+  Only in edited: ability_2, ability_3, ability_4, ability_5, form_2, form_3, form_4, form_5, item_id_0, item_id_1, item_id_2, item_id_3, item_id_4, item_id_5, ivs_2, ivs_3, ivs_4, ivs_5, level_2, level_3, level_4, level_5, move_1_0, move_1_1, move_1_2, move_1_3, move_1_4, move_1_5, move_2_0, move_2_1, move_2_2, move_2_3, move_2_4, move_2_5, move_3_0, move_3_1, move_3_2, move_3_3, move_3_4, move_3_5, move_4_0, move_4_1, move_4_2, move_4_3, move_4_4, move_4_5, padding_2, padding_3, padding_4, padding_5, species_id_2, species_id_3, species_id_4, species_id_5
+-- Section: readable
+  Only in edited: ability_2, ability_3, ability_4, ability_5, form_2, form_3, form_4, form_5, gender_2, gender_3, gender_4, gender_5, item_id_0, item_id_1, item_id_2, item_id_3, item_id_4, item_id_5, ivs_2, ivs_3, ivs_4, ivs_5, level_2, level_3, level_4, level_5, move_1_0, move_1_1, move_1_2, move_1_3, move_1_4, move_1_5, move_2_0, move_2_1, move_2_2, move_2_3, move_2_4, move_2_5, move_3_0, move_3_1, move_3_2, move_3_3, move_3_4, move_3_5, move_4_0, move_4_1, move_4_2, move_4_3, move_4_4, move_4_5, padding_2, padding_3, padding_4, padding_5, species_id_2, species_id_3, species_id_4, species_id_5
+
+File: 740.json
+-- Section: raw
+  Only in edited: ability_2, ability_3, form_2, form_3, item_id_0, item_id_1, item_id_2, item_id_3, ivs_2, ivs_3, level_2, level_3, move_1_0, move_1_1, move_1_2, move_1_3, move_2_0, move_2_1, move_2_2, move_2_3, move_3_0, move_3_1, move_3_2, move_3_3, move_4_0, move_4_1, move_4_2, move_4_3, padding_2, padding_3, species_id_2, species_id_3
+-- Section: readable
+  Only in edited: ability_2, ability_3, form_2, form_3, gender_2, gender_3, item_id_0, item_id_1, item_id_2, item_id_3, ivs_2, ivs_3, level_2, level_3, move_1_0, move_1_1, move_1_2, move_1_3, move_2_0, move_2_1, move_2_2, move_2_3, move_3_0, move_3_1, move_3_2, move_3_3, move_4_0, move_4_1, move_4_2, move_4_3, padding_2, padding_3, species_id_2, species_id_3
+
+File: 741.json
+-- Section: raw
+  Only in edited: ability_2, ability_3, form_2, form_3, item_id_0, item_id_1, item_id_2, item_id_3, ivs_2, ivs_3, level_2, level_3, move_1_0, move_1_1, move_1_2, move_1_3, move_2_0, move_2_1, move_2_2, move_2_3, move_3_0, move_3_1, move_3_2, move_3_3, move_4_0, move_4_1, move_4_2, move_4_3, padding_2, padding_3, species_id_2, species_id_3
+-- Section: readable
+  Only in edited: ability_2, ability_3, form_2, form_3, gender_2, gender_3, item_id_0, item_id_1, item_id_2, item_id_3, ivs_2, ivs_3, level_2, level_3, move_1_0, move_1_1, move_1_2, move_1_3, move_2_0, move_2_1, move_2_2, move_2_3, move_3_0, move_3_1, move_3_2, move_3_3, move_4_0, move_4_1, move_4_2, move_4_3, padding_2, padding_3, species_id_2, species_id_3
+
+File: 742.json
+-- Section: raw
+  Only in edited: ability_2, ability_3, form_2, form_3, item_id_0, item_id_1, item_id_2, item_id_3, ivs_2, ivs_3, level_2, level_3, move_1_0, move_1_1, move_1_2, move_1_3, move_2_0, move_2_1, move_2_2, move_2_3, move_3_0, move_3_1, move_3_2, move_3_3, move_4_0, move_4_1, move_4_2, move_4_3, padding_2, padding_3, species_id_2, species_id_3
+-- Section: readable
+  Only in edited: ability_2, ability_3, form_2, form_3, gender_2, gender_3, item_id_0, item_id_1, item_id_2, item_id_3, ivs_2, ivs_3, level_2, level_3, move_1_0, move_1_1, move_1_2, move_1_3, move_2_0, move_2_1, move_2_2, move_2_3, move_3_0, move_3_1, move_3_2, move_3_3, move_4_0, move_4_1, move_4_2, move_4_3, padding_2, padding_3, species_id_2, species_id_3
+
+File: 743.json
+-- Section: raw
+  Only in edited: ability_2, ability_3, form_2, form_3, item_id_0, item_id_1, item_id_2, item_id_3, ivs_2, ivs_3, level_2, level_3, move_1_0, move_1_1, move_1_2, move_1_3, move_2_0, move_2_1, move_2_2, move_2_3, move_3_0, move_3_1, move_3_2, move_3_3, move_4_0, move_4_1, move_4_2, move_4_3, padding_2, padding_3, species_id_2, species_id_3
+-- Section: readable
+  Only in edited: ability_2, ability_3, form_2, form_3, gender_2, gender_3, item_id_0, item_id_1, item_id_2, item_id_3, ivs_2, ivs_3, level_2, level_3, move_1_0, move_1_1, move_1_2, move_1_3, move_2_0, move_2_1, move_2_2, move_2_3, move_3_0, move_3_1, move_3_2, move_3_3, move_4_0, move_4_1, move_4_2, move_4_3, padding_2, padding_3, species_id_2, species_id_3
+
+File: 744.json
+-- Section: raw
+  Only in edited: ability_2, ability_3, form_2, form_3, item_id_0, item_id_1, item_id_2, item_id_3, ivs_2, ivs_3, level_2, level_3, move_1_0, move_1_1, move_1_2, move_1_3, move_2_0, move_2_1, move_2_2, move_2_3, move_3_0, move_3_1, move_3_2, move_3_3, move_4_0, move_4_1, move_4_2, move_4_3, padding_2, padding_3, species_id_2, species_id_3
+-- Section: readable
+  Only in edited: ability_2, ability_3, form_2, form_3, gender_2, gender_3, item_id_0, item_id_1, item_id_2, item_id_3, ivs_2, ivs_3, level_2, level_3, move_1_0, move_1_1, move_1_2, move_1_3, move_2_0, move_2_1, move_2_2, move_2_3, move_3_0, move_3_1, move_3_2, move_3_3, move_4_0, move_4_1, move_4_2, move_4_3, padding_2, padding_3, species_id_2, species_id_3
+
+File: 745.json
+OK: structures match
+
+File: 746.json
+OK: structures match

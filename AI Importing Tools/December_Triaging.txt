@@ -1,0 +1,203 @@
+
+
+/*         
+	
+	-----------------------------------------------------------------------------------------------------------------------------------------
+	-------------------------------------------------- WHAT I WANNA DO TODAY ---------------------------------------------------------------- 
+	-----------------------------------------------------------------------------------------------------------------------------------------       
+
+*/
+
+
+====================================================================================================================================================
+/*   IMPLEMENTATION   */
+
+	[ Create a new Baseline Project ]
+		- So we fucked up and lost all of the narc progress of the last two weeks. The first step to fixing this is seeing what we can recover. 
+		- Create a new Baseline CTRMap Project.
+			- Take our current "Ultimate" Project and export. 
+			- Extract the rom.
+			- Replace the arm9 and y9 with the ones found in Testing_Extracted. These should be free of code injection but have the fairy changes. 
+			- In the Baseline_Extracted folder, delete the code injection, patches, pmc, and overlay_344. 
+			- Make a CTRMap project based on this extracted rom. 
+			- Export the project and confirm that it opens up both in Pokeweb and in MelonDS / Desmume. 
+		- Update the Baseline Project
+			- We're going to find the most up to date versions of all the narcs we can here.
+			- Move Permissions:
+				- We have the file already separated out. We can simply overwrite it in the base project. 
+			- Scripts 
+				- The only one I'm not sure of is the item script. Just re-import it to be safe. 
+			- Moves 
+				-  We have projects that should at least have up to the changes before this current round
+				-  Tbh we should also have ones that have stuff like Devour being healing_wish
+				-  Markers / Things to Look for:
+					- Is Barb Barrage spread?
+					- Does Icy Wind have the AI flag 
+			- Personal 
+				- We have projects that at least did stuff like all the ability and stat changes 
+				- We will still need to validate it, but this is a good starting point. 
+				- The testing build we sent our mac should at least have this. 
+			- Overlay_167
+				- We already have it. Just compress it and insert it into the extracted rom.
+		- Validate Existing Data
+			- These fields should still be intact, but we want to verify by checking for recent changes. 
+			- Entities / Area Scripts 
+				- Look at the level scripts for Rival Hugh in 194
+				- Look at the level scripts for Mistralton Gym in 108
+				- Look at the level scripts for Nimbasa Gym in 64
+			- Text Changes 
+				- Look at the trainer names in 383
+				- Look at the trainer class names in 382 
+				- Look at the text for Shadow Claw in 402
+			- AI Scripts 
+				- Replace the AI Scripts with the vanilla ones. Until we implement code injection these won't work_up
+				- Store the most up to date AI Scripts
+		- Export our new baseline project.
+	
+
+	[ Reimplement all our Data Entry ]
+	There is a truly disgusting amount of data entry we need to redo now, and a lot we need to revalidate. 
+	Listed in order of least to most annoying 
+		
+		- Item Updates 
+			- This is comprised of essentially just updating the natural gift powers. Simply open the json folder in VSCode and..
+				- "Natural Gift Power: 80" -> "Natural Gift Power: 100"
+				- "Natural Gift Power: 60" -> "Natural Gift Power: 80"
+				- "Natural Gift Power: 70" -> "Natural Gift Power: 90"
+		
+		- Mart Updates 
+			- This is annoying but should be pretty short. 
+			- We can start by "zeroing" out all the marts and then go from there. 
+		
+		- TM Updates 
+			- This is a very simple json to update. 
+		
+		- Learnset Updates 
+			- Luckily, we now have a script that should do this automatically. 
+			- We can even update it to take "Castform" and make copies of it for "Castform-Sunny" "Castform-Snowy" "Castform-Rainy" and then the same thing for Rotom
+			- There is some light validation we should do but this should be pretty simple.
+		
+		- Evolution Changes Updates 
+			- Evolutions are pretty simply but I didn't store the information is a super easy to do way. 
+			- Keep one tab open on vanilla fishbowl w2 and one on ours.
+			- Just go through each mon and update accordingly. We didn't really change that much besides adding stone evolutions to some mons and moving around some levels. 
+		
+		- Move Updates 
+			- From what I saw, this is mostly up to date. 
+			- Even so, we need to go through and check each of these one by one to be 100% certain. 
+			- This will also give us a chance to set up the new ai flags we want to use. 
+			- Stuff to Double Check 
+				- Devour now recovers 50% healing 
+				- Barb Barrage is still a spread move. 
+				- Stone Edge is not a spread move
+				- Power Whip is a spread move 
+				- Return is 102 BP
+				- Icy Wind, Glaciate, Rock Tomb, Bulldoze, Electroweb, Heavy Slam, Heat Crash have the "deals damage and lowers speed" AI Flag. 
+				- Baneful Bunker and co are all set up properly. 
+		
+		- Encounter Updates 
+			- I think the fastest way to do this is probably going to a script 
+			- Export the docs, this will be our format.
+			- Input all the relevant data and fix all the levels. 
+			- The only thing this won't do is forms, so we'll need to make a note of every encounter where forms are relevant.
+				- Wormadam
+				- Castform
+				- Darmanitan 
+				- Sawsbuck 
+				- Gastrodon 
+				- Shellos 
+				- Rotom 
+		
+		- Personal Updates 
+			- I think it might take a bit of effort but we can probably make a script that imports this as well.
+			- Set up the sheet
+				- Fix all the form numbers for pokemon with alternate personals
+					- Deoxys
+					- Giratina
+					- Shaymin
+					- Keldeo 
+					- Landorus 
+					- Tornadus
+					- Thundurus 
+					- Shellos 
+					- Gastrodon 
+					- Sawsbuck 
+					- Wormadam
+					- Rotom 
+					- Kyurem 
+					- Darmanitan 
+					- Meloetta 
+					- Basculin 
+					- Castform 
+				- Make a copy of the pokedex page and copy the leftmost column between each pokemon.
+			- Create Maps 
+				- Input the most up to date text narc into Frost's Editor and dump the ability names 
+				- Index them and store that as a .txt file. 
+			- Make a new directory for json editing.
+				- Learnsets 
+				- Personals 
+				- Encounters 
+				- Items 
+			- From here let copilot do most of the work i think. I think the  main things we need to watch out for are 
+				- It does not care about any number that ends with a + or - and it does not care about the total field 
+				- It does not care about Evolution changes 
+				- It should check that the number next to the Pokemon name lines up with it's place in the MAP 
+				- Troubleshoot from here .
+		
+		- Trainer Updates 
+			- This is going to be the most miserable step of everything. 
+			- Set up all our map files:
+				- Trainer Names to Trpok / TrData MAP
+					- Update all the Trainer classes for relevant trainers. There were a bunch in Celestial Tower and Chargestone Cave that needed to be fixed.
+						- Hugh Rival Fight 
+						- Colress Fight 
+						- Bianca Fight 
+						- Volkner Fight
+						- Sabrina Fight 
+						- Beauty Stella 
+						- Beauty 
+						- Old Statue 
+						- Cobalion
+						- Dancer Kidd 
+						- Hiker Jameson
+						- Beauty Monika
+						- School Kid Janice 
+						- School Kid Dwight 
+						- Ace Trainer Lydon 
+					- Have Copilot make a list with each line being the trainer class of the json file. 
+					- Use frost's editor to dump the text file for the trainer names
+					- Line those both up in a sheet and then copy them to a new file that indexes each trainer based on their class + name. 
+				- Item Names to Item ID MAP 
+					- Dump from Frost Editor 
+				- Move Names to Move ID MAP 
+					- Dump from Frost editor 
+				- Ability Names to Ability ID MAP 
+					- Dump fromm Frost's editor 
+				- Pokemon Ability to Pokemon Ability ID Maps
+					- Dump from the spreadsheet
+			- Begin setting up the script:
+				- The script should take the trainer's name and cross reference is with the Trainer Name MAP to figure out which ID json it should be editing. 
+				- Trainer AI Flags 
+					- Set AI Flags 0, 1, 2, 3
+					- If the trainer's name has a (2x), set the Battle Type to doubles and add the Doubles AI Flag 
+					- If the trainer's name has a (3x), set the Battle Type to Triples and add the Doubles AI Flag. 
+					- If the trainer's name has a (Left) or (Right) add the Doubles AI Flag. 
+				- Trainer Items
+					- Make sure all Items are zero'd out. 
+				- Ability
+					- Pokemon Abilities, read the Ability name then check the Pokemon Ability to Ability Index MAP. If it's not there, throw up an error. 
+				- Items
+					- Read the Item name then map it using the Item ID Map 
+				- Move Names
+					- Use the Move Names to Move ID Map to map the indexes. 
+				- Gender
+					- Set to default 
+					- We will manually go through and update everything that should be set female for pre-status 
+				- Nature 
+					- Read the Nature.
+					- Navigate to "localhost::9292/trainers/trainer_id/pokemon_index/natures/255" 
+					- If you can find the string "255 IVs: Nature" then set the IVs to 255. 
+					- If you cannot, decrement to 254 and check again. 
+
+
+

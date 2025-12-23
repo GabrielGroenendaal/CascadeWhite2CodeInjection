@@ -1,0 +1,81 @@
+
+
+
+
+I need a script that will accept an input like that defined in "___InputData/Trainers_InputSample.txt" and convert it into two json files for "trpok" and "trdata" fitting the format of the json filies in "trdata/original/166.json" and "trpok/original/166.json".
+
+
+There are several points in this process where you will need to reference what strings are Moves, Ablities, Pokemon names, and Items and then what those values correpsond to ID wise. You will need to reference the map files stored in "___MAPS" directory.
+
+There are two types of input we need to process. The first is 
+For each block of input, there should be a 
+    Trainer Name (Modifier)
+    One to Six Pokemon Names 
+    Item: <One to six strings representing the Pokemon's held item. If this field is missing, set all Items to None>
+    Level: <One to six integers representing the Pokemon's level>
+    Nature: <One to six strings representing a Pokemon nature>
+    Ability: <One to six strings representing the Pokemon's ability>
+    Move 1: <One to six strings representing the Pokemon's first move>
+    Move 2: <One to six strings representing the Pokemon's second move>
+    Move 3: <One to six strings representing the Pokemon's third move>
+    Move 4:  <One to six strings representing the Pokemon's fourth move>
+
+
+Each string will be separated by a space. However, many items, moves, and abilities are multiple words long. If you've finished reading a word and it doesn't match their respective field, you can move one space forward and see if, with the next word, it does. If it doesn't, or there is no other word on the line, throw an error.
+
+Trainer Name: 
+This will be comprised of a Trainer Class and a Name. "Cosplayer Janice" for example. You can determine the ID of this trainer by checking that string against the file in ___MAPS/Trainers.txt.
+The trainer's ID determines what the json output file for both trdata and trpok will be called: "1.json" for example. 
+
+Pokemon Name:
+This will be used to populate the species ID among other things. Reference the file at ___MAPS/Pokemon.txt
+
+Item: 
+Reference the ___MAPS/Items.txt file to check what each Item is and to see what ItemID it has. 
+If the Item row is not present, set the item for all Pokemon on the team to 0. 
+
+Level: 
+A simple integer, but make sure it is never below 1 or above 100.
+
+Ability: 
+Reference the ___MAPS/Ability.txt file first to make sure the listed ability exists. 
+Then you'll reference AI_Abilities_MAP.txt to determine the index of that ability for a specific Pokemon using its name.
+The index starts at 1, not 0, after the Pokemon's name in the row. For example, Bulbasaur's Ability 1 is Resilient.
+In the json file we store this as a multiple of 16.  Ability 1 is 16, ability 2 is 32, ability 5 is 80. 
+
+Move 1 / Move 2 / Move 3 / Move 4:
+For all of these, simply check the text file in ___MAPS/moves to determine the move's readable name and the move's storable id for the json. If a move isn't found, write an error calling it out and move on.
+
+
+Nature: 
+Nature is not stored directly on the json file. Instead it is used to calculate the IVs field.  
+If the Nature is listed as "Varies", set the IV to 255.
+It not, to determine what the IV score is, navigate to "localhost::9292/trainers/trainer_id/pokemon_index/natures/255". 
+Search the page for a string that matches "255 IVs: <insert nature string>". If you find it, then 255 is our iv value. 
+If we don't, repeat the check one less "254 IVs: <insert nature string>". Repeat until you get a match and then store the IV number that hit it. 
+
+
+Gender:
+Always set to default.
+
+With all of this information we should be able to produce a json file fitting the format indiciated by our samples. 
+
+We want to save all json files by the aforementioned name to ./Trainers/trpok/Edited/
+
+
+
+
+
+
+Things we'll need to fix.
+    Specified genders for pokemon that rely on it for prestatus 
+        Elesa Milotic
+        Volkner Luxray
+    
+    Anything involing forms 
+        Rotom 
+        Castform 
+        Darmanitan 
+        Sawsbuck 
+    
+    

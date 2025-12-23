@@ -82,31 +82,31 @@ extern "C"
         if (pokemonSlot == BattleEventVar_GetValue(VAR_ATTACKING_MON))
         {
             Value = BattleEventVar_GetValue(VAR_TARGET_COUNT);
-            for (i = 0; i < Value; ++i)
-            {
-                v7 = BattleEventVar_GetValue((BattleEventVar)(i + 6));
-                BattleMon = Handler_GetBattleMon(serverFlow, v7);
-                if (BattleMon_IsFainted(BattleMon))
-                {
-                    BattleMon = Handler_GetBattleMon(serverFlow, pokemonSlot);
-                    if (!BattleMon_IsFullHP(BattleMon))
-                    {
-                        v9 = (HandlerParam_RecoverHP *)BattleHandler_PushWork(serverFlow, EFFECT_RECOVERHP, pokemonSlot);
-                        v9->pokeID = pokemonSlot;
-                        unsigned int healing = DivideMaxHPZeroCheck(BattleMon, 4u);
-                        unsigned int maxHP = BattleMon_GetValue(BattleMon, VALUE_MAX_HP);
-                        unsigned int healingValue = maxHP - BattleMon_GetValue(BattleMon, VALUE_CURRENT_HP);
-                        if (healing > healingValue)
-                        {
-                            healing = healingValue;
-                        }
-                        v9->recoverHP = healing;
-                        BattleHandler_StrSetup(&v9->exStr, 2u, 1303);
-                        BattleHandler_AddArg(&v9->exStr, pokemonSlot);
-                        BattleHandler_PopWork(serverFlow, v9);
-                    }
-                }
-            }
+            // for (i = 0; i < Value; ++i)
+            // {
+            //     v7 = BattleEventVar_GetValue((BattleEventVar)(i + 6));
+            //     BattleMon = Handler_GetBattleMon(serverFlow, v7);
+            //     if (BattleMon_IsFainted(BattleMon))
+            //     {
+            //         BattleMon = Handler_GetBattleMon(serverFlow, pokemonSlot);
+            //         if (!BattleMon_IsFullHP(BattleMon))
+            //         {
+            //             v9 = (HandlerParam_RecoverHP *)BattleHandler_PushWork(serverFlow, EFFECT_RECOVERHP, pokemonSlot);
+            //             v9->pokeID = pokemonSlot;
+            //             unsigned int healing = DivideMaxHPZeroCheck(BattleMon, 4u);
+            //             unsigned int maxHP = BattleMon_GetValue(BattleMon, VALUE_MAX_HP);
+            //             unsigned int healingValue = maxHP - BattleMon_GetValue(BattleMon, VALUE_CURRENT_HP);
+            //             if (healing > healingValue)
+            //             {
+            //                 healing = healingValue;
+            //             }
+            //             v9->recoverHP = healing;
+            //             BattleHandler_StrSetup(&v9->exStr, 2u, 1303);
+            //             BattleHandler_AddArg(&v9->exStr, pokemonSlot);
+            //             BattleHandler_PopWork(serverFlow, v9);
+            //         }
+            //     }
+            // }
         }
     }
 
@@ -600,7 +600,7 @@ extern "C"
                 }
                 v7 = (HandlerParam_AddCondition *)BattleHandler_PushWork(a2, EFFECT_ADDCONDITION, a3);
                 v7->sickID = CONDITION_TAUNT;
-                v7->sickCont = Condition_MakePermanent();//(v5);
+                v7->sickCont = Condition_MakePermanent(); //(v5);
                 v7->pokeID = Value;
                 BattleHandler_PopWork(a2, v7);
             }
@@ -835,7 +835,7 @@ extern "C"
             //  WHERE WE"RE GOING TO MODIFY THE CODE TO ADD THE HANDLERS
             if (Handler_GetExistFrontPokePos(a1, a2->attackerID) == 6)
             {
-                if (!checkIfConsumableItem(BattleMon_GetHeldItem(battleMon)))
+                if (BattleMon_GetHeldItem(battleMon) != IT0270_LIFE_ORB && BattleMon_GetHeldItem(battleMon) != IT0301_TERA_ORB && !checkIfConsumableItem(BattleMon_GetHeldItem(battleMon)))
                 {
                     ItemEvent_AddItem(battleMon);
                 }
@@ -851,7 +851,7 @@ extern "C"
             if (j_j_PokeSet_IsRemovedAll_4(a1->PokeSetTemp))
             {
                 // Remove the handlers before the turn statement
-                if (!checkIfConsumableItem(BattleMon_GetHeldItem(battleMon)))
+                if (BattleMon_GetHeldItem(battleMon) != IT0270_LIFE_ORB && BattleMon_GetHeldItem(battleMon) != IT0301_TERA_ORB && !checkIfConsumableItem(BattleMon_GetHeldItem(battleMon)))
                 {
                     ItemEvent_RemoveItem(battleMon);
                 }
@@ -989,6 +989,75 @@ extern "C"
 
 #pragma region WeatherMoves
 
+    int THUMB_BRANCH_HandlerWeatherBallPower(int a1, int a2, int a3)
+    {
+        BattleMon *attackingMon;
+        int result; // r0
+        int Value;  // r0
+
+        result = BattleEventVar_GetValue(VAR_ATTACKING_MON);
+        if (a3 == result)
+        {
+            attackingMon = Handler_GetBattleMon((ServerFlow *)a2, a3);
+            result = Handler_GetWeather(a2);
+            AbilID abil = (AbilID)BattleMon_GetValue(attackingMon, VALUE_EFFECTIVE_ABILITY);
+            if (result || abil == 34 || abil == 94 || abil == 122)
+            {
+                Value = BattleEventVar_GetValue(VAR_MOVE_POWER);
+                return BattleEventVar_RewriteValue(VAR_MOVE_POWER, 2 * Value);
+            }
+        }
+        return result;
+    }
+
+    void THUMB_BRANCH_HandlerWeatherBallType(int a1, int a2, int a3)
+    {
+        unsigned int Weather; // r5
+        int Value;            // r1
+        char v6;              // r4
+        BattleMon *attackingMon;
+        if (a3 == BattleEventVar_GetValue(VAR_MON_ID))
+        {
+            Weather = Handler_GetWeather(a2);
+            attackingMon = Handler_GetBattleMon((ServerFlow *)a2, a3);
+            AbilID abil = (AbilID)BattleMon_GetValue(attackingMon, VALUE_EFFECTIVE_ABILITY);
+            Value = BattleEventVar_GetValue(VAR_MOVE_TYPE);
+            v6 = 0;
+
+            if (abil == 34 || abil == 94 || abil == 122)
+            {
+                Value = 9;
+                v6 = 1;
+            }
+            else if (Weather == 1)
+            {
+                Value = 9;
+                v6 = 1;
+            }
+            else if (Weather == 2)
+            {
+                Value = 10;
+                v6 = 4;
+            }
+            else if (Weather == 3)
+            {
+                Value = 14;
+                v6 = 2;
+            }
+            else if (Weather == 4)
+            {
+                Value = 5;
+                v6 = 3;
+            }
+            else
+            {
+            }
+
+            BattleEventVar_RewriteValue(VAR_MOVE_TYPE, Value);
+            Handler_SetMoveEffectIndex((ServerFlow *)a2, v6);
+        }
+    }
+
     void HandlerSolarBeamPowerNew(int a1, int a2, int a3)
     {
         BattleMon *attackingMon;
@@ -1014,10 +1083,8 @@ extern "C"
             AbilID abil = (AbilID)BattleMon_GetValue(attackingMon, VALUE_EFFECTIVE_ABILITY);
             if (Handler_GetWeather(a2) == 1 || abil == 34 || abil == 94 || abil == 122)
             {
-                if (abil != ABIL142_OVERCOAT && attackingMon->HeldItem != IT0544_UTILITY_UMBRELLA)
-                {
-                    return BattleEventVar_RewriteValue(VAR_GENERAL_USE_FLAG, 1);
-                }
+
+                return BattleEventVar_RewriteValue(VAR_GENERAL_USE_FLAG, 1);
             }
         }
         return result;
@@ -1036,15 +1103,13 @@ extern "C"
             AbilID abil = (AbilID)BattleMon_GetValue(attackingMon, VALUE_EFFECTIVE_ABILITY);
             if (result == 1 || abil == 34 || abil == 94 || abil == 122)
             {
-                if (abil != ABIL142_OVERCOAT && attackingMon->HeldItem != IT0544_UTILITY_UMBRELLA)
+
+                Value = BattleEventVar_GetValue(VAR_VOLUME);
+                if (Value == 1)
                 {
-                    Value = BattleEventVar_GetValue(VAR_VOLUME);
-                    if (Value == 1)
-                    {
-                        Value = 2;
-                    }
-                    return BattleEventVar_RewriteValue(VAR_VOLUME, Value);
+                    Value = 2;
                 }
+                return BattleEventVar_RewriteValue(VAR_VOLUME, Value);
             }
         }
         return result;
@@ -1065,10 +1130,8 @@ extern "C"
             AbilID abil = (AbilID)BattleMon_GetValue(attackingMon, VALUE_EFFECTIVE_ABILITY);
             if (Weather == 1 || abil == 34 || abil == 94 || abil == 122)
             {
-                if (abil != ABIL142_OVERCOAT && attackingMon->HeldItem != IT0544_UTILITY_UMBRELLA)
-                {
-                    v7 = 2732;
-                }
+
+                v7 = 2732;
             }
             else if (Weather == 2 || Weather == 3 || Weather == 4)
             {
@@ -1162,7 +1225,7 @@ extern "C"
         {
             mon = Handler_GetBattleMon(a1, a3);
             result = Handler_GetWeather(a2);
-            if (result == 2 && mon->HeldItem != IT0544_UTILITY_UMBRELLA && BattleMon_GetValue(mon, VALUE_EFFECTIVE_ABILITY) != ABIL142_OVERCOAT)
+            if (result == 2)
             {
                 return BattleEventVar_RewriteValue(VAR_GENERAL_USE_FLAG, 1);
             }
@@ -1180,7 +1243,7 @@ extern "C"
             mon = Handler_GetBattleMon(a1, a3);
 
             result = Handler_GetWeather(a2);
-            if (result == 1 && mon->HeldItem != IT0544_UTILITY_UMBRELLA && BattleMon_GetValue(mon, VALUE_EFFECTIVE_ABILITY) != ABIL142_OVERCOAT)
+            if (result == 1)
             {
                 return BattleEventVar_RewriteValue(VAR_ACCURACY, 50);
             }

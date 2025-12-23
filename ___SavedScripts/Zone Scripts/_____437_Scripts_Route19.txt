@@ -9,6 +9,7 @@ import event.dialogs.Message;
 import event.dialogs.YesNoWin;
 import event.funfest.Funfest;
 import pokemon.PokeParty;
+import pokemon.Pokedex;
 import pokescript.vm.Math;
 import pokescript.vm.StackCtrl;
 import pokescript.vm.VM;
@@ -74,6 +75,7 @@ public class MainEvents {
 	
 		Global2805(50, 1);
 		Global2805(47, 1);
+		Pokedex.EnableNational();
 		Message.ActorEx(1024, 7, 5, 0, 0);
 		Message.CloseAll();
 		sub_0205();

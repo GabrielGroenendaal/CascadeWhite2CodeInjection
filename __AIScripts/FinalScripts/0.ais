@@ -2907,15 +2907,6 @@ endScript_35:
 //   LUNAR DANCE   
 
 Label_LunarDance:
-	AddToScore(-20)
-	GetPartyReserveCount(attacker)
-	JumpIfStoredEQ(0, &deprioritizeBy10)
-	JumpIfPartyHasDamage(attacker, &endScript_36)
-	JumpIfPartyHasStatus(cond.paralysis, &endScript_36)
-	JumpIfPartyHasReducedPP(attacker, &endScript_36)
-	Jump(&deprioritizeBy10)
-
-endScript_36:
 	EndScript()
 
 

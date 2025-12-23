@@ -1,0 +1,2736 @@
+
+
+ Youngster Terrell		
+            Patrat	Pidove
+	Level	8	8
+	Nature	Naive	Jolly
+	Ability	Patient	Resilient
+	Move 1	Tackle	Quick Attack
+	Move 2	Leer	Pluck
+	Move 3	Pursuit	Sand Attack
+	Move 4	Bite	Mud-Slap
+
+
+ Lass Isabel (2x)		
+            Purrloin	Igglybuff	Marill
+	Level	8	8	9
+	Nature	Mild	Serious	Lonely
+	Ability	Pickup	Aerilate	Huge Power
+	Move 1	Fury Swipes	Swift	Chilling Water
+	Move 2	Tail Slap	Metronome	Disarming Voice
+	Move 3	Assist	Heart Stamp	Metronome
+	Move 4	Charm	Work Up	Tackle
+
+
+ Youngster Petey		
+            Mankey	Teddiursa	Silcoon
+	Level	9	9	10
+	Nature	Hasty	Gentle	Rash
+	Ability	Defiant	Vital Spirit	Resilient
+	Move 1	Karate Chop	Tackle	Struggle Bug
+	Move 2	Low Kick	Stomp	Iron Defense
+	Move 3	Fury Swipes	Sand Attack	Disarming Voice
+	Move 4	Covet	Pursuit	Poison Sting
+
+
+
+
+ Lass Molly		
+            Cleffa	Smoochum	Torchic	Budew
+	Level	9	9	9	10
+	Nature	Hasty	Modest	Adamant	Rash
+	Ability	Magic Guard	Dry Skin	Speed Boost	Serene Grace
+	Move 1	Disarming Voice	Icy Wind	Flame Wheel	Absorb
+	Move 2	Metronome	Confusion	Pluck	Acid Spray
+	Move 3	Magical Leaf	Fake Out	Mud-Slap	Leech Seed
+	Move 4	Water Pulse	Captivate	Detect	Stun Spore
+
+
+ Janitor Orville (2x)		
+            Trubbish	Minccino	Scraggy	Grimer
+	Level	9	9	10	10
+	Nature	Modest	Serious	Rash	Careful
+	Ability	Weak Armor	Fur Coat	Intimidate	Water Absorb
+	Move 1	Cut	Swift	Karate Chop	Brutal Swing
+	Move 2	Sludge	Work Up	Assurance	Shadow Sneak
+	Move 3	Poison Gas	Disarming Voice	Screech	Sludge
+	Move 4	Rock Throw	Pursuit	Headbutt	Toxic
+					
+ Youngster Kenny		
+            Elekid	Bagon	Totodile	Oddish
+	Level	10	10	10	10
+	Nature	Gentle	Adamant	Serious	Bold
+	Ability	Motor Drive	Sheer Force	Rough Skin	Chlorophyll
+	Move 1	Nuzzle	Dragon Rage	Bite	Acid Spray
+	Move 2	Karate Chop	Ember	Aqua Jet	Disarming Voice
+	Move 3	Swift	Rock Throw	Screech	Absorb
+	Move 4	Light Screen	Headbutt	Metal Claw	Stun Spore
+					
+					
+					
+
+
+
+
+
+Kanto Leader Brock		
+            Geodude	Vulpix	Croagunk	Happiny	Bonsly		
+	Item	Custap Berry	Berry Juice	Expert Belt	Chople Berry	Berry Juice
+	Level	14	13	13	13	14
+	Nature	Adamant	Relaxed	Naive	Mild	Quiet
+	Ability	Sturdy	Drought	Exploit	Huge Power	Prankster
+	Move 1	Bulldoze	Incinerate	Venoshock	Secret Power	Rock Tomb
+	Move 2	Rock Tomb	Disarming Voice	Low Sweep	Rock Smash	Razor Leaf
+	Move 3	Thunderpunch	Night Shade	Mud Shot	Brutal Swing	Copycat
+	Move 4	Rock Smash	Will-o-Wisp	Icy Wind	Rock Throw	Rock Smash
+
+
+ Youngster Pedro		
+            Sentret	Hoothoot	Phanpy	Slakoth		
+	Item	Chople Berry	Leftovers	Normal Gem	Berry Juice	
+	Level	12	12	12	13	
+	Nature	Calm	Mild	Gentle	Relaxed	
+	Ability	Adaptability	Overcoat	Battle Armor	Truant	
+	Move 1	Secret Power	Astonish	Bulldoze	Secret Power	
+	Move 2	Quick Attack	Glare	Take Down	Work Up	
+	Move 3	Bite	Air Cutter	Rock Throw	Slack Off	
+	Move 4	Flame Charge	Icy Wind	Curse	Fury Swipes	
+						
+ Lass Serena (2x)		
+            Meowth	Snubbull	Gothita	Staravia	
+	Item	Focus Sash	Muscle Band	Wise Glasses	Berry Juice	
+	Level	12	12	13	13	
+	Nature	Mild	Lonely	Hardy	Careful	
+	Ability	Technician	Intimidate	Magic Bounce	Intimidate	
+	Move 1	Swift	Covet	Telekinesis	Pluck	
+	Move 2	Pursuit	Low Sweep	Snarl	Secret Power	
+	Move 3	Fake Out	Attract	Disarming Voice	Quick Attack	
+	Move 4	Metal Sound	Secret Power	Fake Out	Karate Chop	
+						
+						
+Leader Cheren		
+            Skitty	Oshawott	Snivy	Tepig	Herdier			
+	Item	Berry Juice	Rindo Berry	Occa Berry	Passho Berry	Berry Juice
+	Level	14	13	13	13	15
+	Nature	Docile	Docile	Serious	Sassy	Naughty
+	Ability	Hustle	Defiant	Adaptability	Sheer Force	Intimidate
+	Move 1	Secret Power	Surf	Leaf Blade	Flamethrower	Secret Power
+	Move 2	Covet	Aqua Jet	Secret Power	Bite	Lick
+	Move 3	Work Up	Rock Smash	Shock Wave	Secret Power	Quick Attack
+	Move 4	Fake Out	Secret Power	Work Up	Stomp	Work Up
+
+
+Hiker Jerome		
+            Nosepass	Yamask	Vullaby	Sandshrew	
+	Level	15	15	15	16	
+	Nature	Impish	Docile	Lax	Lonely	
+	Ability	Sand Stream	Shadow Tag	Overcoat	Sand Force	
+	Move 1	Rock Slide	Metal Sound	Pluck	Bone Club	
+	Move 2	Electroweb	Hex	Faint Attack	Rock Throw	
+	Move 3	Mud Shot	Scorching Sands	Bone Rush	Cut	
+	Move 4	Thunder Wave	Will-o-Wisp	Roost	Rock Smash	
+						
+						
+Preschooler Albert		
+            Snorunt	Snover	Buneary	Prinplup	
+	Level	15	15	15	16	
+	Nature	Sassy	Serious	Brave	Docile	
+	Ability	Snow Warning	Filter	Fluffy	Slush Rush	
+	Move 1	Icy Wind	Razor Leaf	Headbutt	Brine	
+	Move 2	Super Fang	Pin Missile	Low Sweep	Icicle Spear	
+	Move 3	Mirror Coat	Ice Shard	Ice Beam	Pluck	
+	Move 4	Headbutt	Icy Wind	Fake Out	Metal Claw	
+						
+						
+Preschooler Lin		
+            Slugma	Sunkern	Roggenrola	Quilava	
+	Level	15	15	15	16	
+	Nature	Naughty	Relaxed	Bold	Bashful	
+	Ability	Drought	Solar Power	Chlorophyll	Blaze	
+	Move 1	Flame Burst	Mega Drain	Sparkle	Incinerate	
+	Move 2	Sparkle	Flame Wheel	Incinerate	Bulldoze	
+	Move 3	Mud Shot	Leech Seed	Disarming Voice	Swift	
+	Move 4	Will-o-Wisp	Secret Power	Electroweb	Reversal	
+						
+						
+Nursery Aide Kimya		
+            Luvdisc	Pikachu	Combee	Munchlax	Grotle
+	Level	16	16	16	16	17
+	Nature	Mild	Bold	Bashful	Brave	Bashful
+	Ability	Water Absorb	Galvanize	Swarm	Thick Fat	Solid Rock
+	Move 1	Chilling Water	Shock Wave	Struggle Bug	Headbutt	Ingrain
+	Move 2	Disarming Voice	Swift	Air Cutter	Ice Beam	Bulldoze
+	Move 3	Flip Turn	Grass Knot	Sparkle	Flamethrower	Rock Tomb
+	Move 4	Charm	Draining Kiss	Barb Barrage	Thunderbolt	Synthesis
+						
+						
+Twins Lia & Lily (2x)		
+            MIMEJR.	Bonsly	Murkrow	Misdreavus			
+	Level	17	17	18	18	
+	Nature	Jolly	Jolly	Relaxed	Hardy	
+	Ability	Technician	Prankster	Prankster	Levitate	
+	Move 1	Fake Out	Rock Slide	Pluck	Disarming Voice	
+	Move 2	Concuss	Thunder Wave	Beat Up	Hex	
+	Move 3	Heart Stamp	Bullet Seed	Will-o-Wisp	Magical Leaf	
+	Move 4	Reflect	Light Screen	Icy Wind	Thunder Wave	
+
+
+
+
+
+
+Scientist Bryce		
+            Kadabra	Porygon	Ferroseed	Drifloon
+    Item    None None None Eviolite
+	Level	19	19	19	19
+	Nature	Rash	Gentle	Bold	Serious
+	Ability	Magic Guard	Normalize	Iron Barbs	Flare Boost
+	Move 1	Telekinesis	Shock Wave	Bullet Seed	Ominous Wind
+	Move 2	Shock Wave	Swift	Spike Cannon	Air Cutter
+	Move 3	Light Screen	Recover	Shock Wave	Shock Wave
+	Move 4	Reflect	Thunder Wave	Explosion	Flame Burst
+
+
+Kanto Leader Misty (2x)		
+            Psyduck	Poliwhirl	Togetic	Azumarill	Corsola
+	Item	Eviolite	Focus Sash	Eviolite	Cell Battery	Shuca Berry
+	Level	20	20	21	21	22
+	Nature	Docile	Rash	Hardy	Lax	Bold
+	Ability	Swift Swim	Drizzle	Friend Guard	Sap Sipper	Water Absorb
+	Move 1	Telekinesis	Water Pulse	Air Cutter	Dizzy Punch	Rock Blast
+	Move 2	Water Pulse	Drain Punch	Disarming Voice	Brine	Barb Barrage
+	Move 3	Uproar	Mud Bomb	Roost	Secret Power	Barrage
+	Move 4	Calm Mind	Fake Out	Water Pulse	Work Up	Recover
+
+
+Youngster Waylon		
+            Monferno	Spoink	Kricketune	Gligar
+	Level	17	17	17	18
+	Nature	Gentle	Serious	Naughty	Bold
+	Ability	Blaze	Hustle	Technician	Tough Claws
+	Move 1	Mach Punch	Concuss	Rapid Spin	Wing Attack
+	Move 2	Flame Burst	Pursuit	Struggle Bug	Bone Club
+	Move 3	Fake Out	Bounce	Mega Drain	Night Slash
+	Move 4	Force Palm	Confuse Ray	Mud-Slap	Metal Claw
+
+
+Youngster Masahiro		
+            Lickitung	Grovyle	Luxio	Dustox
+	Item    Chople Berry None None None
+    Level	17	17	17	18
+	Nature	Lonely	Careful	Gentle	Rash
+	Ability	Gourmand	Hyper Cutter	Guts	Merciless
+	Move 1	Body Slam	Razor Leaf	Beat Up	Struggle Bug
+	Move 2	Lick	Breaking Swipe	Spark	Venoshock
+	Move 3	Thunder Wave	Cut	Bulk Up	Psybeam
+	Move 4	Natural Gift	U-Turn	Headbutt	Toxic
+					
+					
+Worker Isaac (2x)		
+            Magnemite	Magby	Timburr	Cranidos
+	Item	Red Card	Poison Gem	Berry Juice	Eviolite
+	Level	18	18	19	19
+	Nature	Quiet	Naive	Lonely	Naive
+	Ability	Sturdy	Turboblaze	Solid Rock	Sheer Force
+	Move 1	Shock Wave	Poison Gas	Drain Punch	Rock Tomb
+	Move 2	Mirror Shot	Smog	Ice Punch	Breaking Swipe
+	Move 3	Light Screen	Fire Punch	Scary Face	Fire Blast
+	Move 4	Volt Switch	Drain Punch	Mach Punch	Headbutt
+
+
+Worker Mitchell (2x)		
+            Marshtomp	Elgyem	Klink	Archen	
+	Item	Leftovers	Twisted Spoon	Metal Coat	Eviolite	
+	Level	18	18	19	19	
+	Nature	Timid	Sassy	Lonely	Careful	
+	Ability	Torrent	Levitate	Levitate	Unnerve	
+	Move 1	Bulldoze	Telekinesis	Metal Claw	Pluck	
+	Move 2	Scald	Signal Beam	Double Hit	Rock Tomb	
+	Move 3	Icy Wind	Supersonic	Rock Smash	Flame Burst	
+	Move 4	Rock Smash	Spark	Shift Gear	Rock Smash	
+						
+Worker Nathan (2x)		
+            Stunky	Combusken	Graveler	Beldum	
+	Item	Air Balloon	Charcoal	Rock Gem	Eviolite	
+	Level	18	18	19	19	
+	Nature	Quirky	Adamant	Naive	Brave	
+	Ability	Flare Boost	Speed Boost	Sturdy	Tough Claws	
+	Move 1	Venoshock	Incinerate	Rock Slide	Metal Claw	
+	Move 2	Incinerate	Double Kick	Bone Club	Take Down	
+	Move 3	Snarl	Pluck	Accelerock	Rock Smash	
+	Move 4	Icy Wind	Detect	Rock Smash	Bullet Punch				
+						
+						
+Lass Daya (3x)		
+            Pidgeotto	Bayleef	Nidorina	Flaaffy	Gothorita
+    Item    None None None None Eviolite
+	Level	18	18	18	19	19
+	Nature	Rash	Lonely	Brave	Quiet	Quiet
+	Ability	Quick Feet	Overgrow	Sheer Force	Static	Patient
+	Move 1	Dual Wingbeat	Bullet Seed	Poison Fang	Electroweb	Telekinesis
+	Move 2	Aurora Beam	Dazzling Gleam	Body Slam	Breaking Swipe	Snarl
+	Move 3	Shock Wave	Reflect	Pin Missile	Sparkle	Protect
+	Move 4	Attract	Sweet Scent	Captivate	Cotton Guard	Fake Out
+
+
+Roughneck Nicky		
+            Eelektrik	Croconaw	Weepinbell	Primeape	Beedrill	
+	Item	Black Sludge	Mystic Water	Eviolite	Dark Gem	Muscle Band	
+	Level	19	20	20	20	21	
+	Nature	Modest	Hardy	Rash	Relaxed	Rash	
+	Ability	Levitate	Torrent	Corrosion	Defiant	Levitate	
+	Move 1	Parabolic Zap	Barrage	Razor Leaf	Vital Throw	Bug Bite	
+	Move 2	Leech Life	Scale Shot	Poison Fang	Beat Up	Barb Barrage	
+	Move 3	Water Pulse	Beat Up	Swords Dance	Rage	Toxic	
+	Move 4	Toxic Spikes	Glare	Sleep Powder	Pursuit	Reversal	
+							
+Guitarist Billy Jo (2x)		
+            Krokorok	Gloom	Vigoroth	Voltorb	Golbat	
+	Item	Red Card	Wise Glasses	Berry Juice	Air Balloon	Poison Gem	
+	Level	19	19	20	20	21	
+	Nature	Lonely	Serious	Quiet	Bold	Serious	
+	Ability	Intimidate	Effect Spore	Vital Spirit	Volt Absorb	Infiltrator	
+	Move 1	Bone Club	Venoshock	Secret Power	Shock Wave	Venoshock	
+	Move 2	Beat Up	Poison Gas	Poison Fang	Magnet Bomb	Air Cutter	
+	Move 3	Rock Tomb	Disarming Voice	Beat Up	Light Screen	Confuse Ray	
+	Move 4	Parting Shot	Mega Drain	Follow Me	Gyro Ball	Bite	
+							
+							
+Leader Roxie		
+            Qwilfish	Loudred	Rotom	Koffing	Mightyena	Whirlipede
+	Item	Red Card	Metronome	Leftovers	Eviolite	Poison Gem	Eviolite
+	Level	20	22	21	22	22	23
+	Nature	Mild	Rash	Timid	Docile	Quiet	Rash
+	Ability	Intimidate	Scrappy	Levitate	Levitate	Intimidate	Tenacity
+	Move 1	Scald	Uproar	Hex	Infernal Parade	Beat Up	Twineedle
+	Move 2	Venoshock	None	Telekinesis	Smog	Pursuit	Barb Barrage
+	Move 3	Toxic Spikes	None	Thunder Wave	Gyro Ball	Poison Fang	U-turn
+	Move 4	Flail	None	Electroweb	Will-o-Wisp	Hyper Voice	Heal Order
+
+
+
+
+Pokefan Norbert		
+            Furret	Granbull	Noctowl	Lanturn	Dunsparce	
+	Item	Chesto Berry	Muscle Band	Wise Glasses	Leftovers	Lum Berry	
+	Level	25	25	25	25	26	
+	Nature	Relaxed	Mild	Bashful	Quiet	Bashful	
+	Ability	Adaptability	Intimidate	Keen Senses	Volt Absorb	Serene Grace	
+	Move 1	Secret Power	Vital Throw	Hex	Shock Wave	Scorching Sands	
+	Move 2	Charm	Dizzy Punch 	Air Cutter	Water Pulse	Dizzy Punch	
+	Move 3	Brutal Swing	Headbutt	Hypnosis	Charge	Body Slam	
+	Move 4	Rest	Bite	Icy Wind	Thunder Wave	Roost	
+							
+							
+							
+Fisherman Andrew		
+            Clamperl	Dwebble	Carvanha	Lumineon			
+    Item    DeepSeaScale Eviolite None None
+	Level	25	25	25	26		
+	Nature	Quiet	Sassy	Docile	Bold		
+	Ability	Battle Armor	Weak Armor	Strong Jaw	Swift Swim		
+	Move 1	Iron Defense	X-Scissor	Crunch	BubbleBeam		
+	Move 2	Recover	Rock Slide	Psychic Fangs	Parabolic Zap		
+	Move 3	Clamp	Razor Shell	Ice Fang	Air Slash		
+	Move 4	Dazzling Gleam	Shell Smash	Surf	Rain Dance		
+		Holding DeepSeaScale	Has Eviolite				
+							
+							
+Fisherman Hubert		
+            Clamperl	Wormadam	Corsola	Mantine		
+    Item    DeepSeaTooth None None None
+	Level	25	25	25	26		
+	Nature	Rash	Docile	Hardy	Rash		
+	Ability	Battle Armor	Battle Armor	Rough Skin	Water Absorb		
+	Move 1	Water Pulse	Bulldoze	Poison Jab	BubbleBeam		
+	Move 2	Aurora Beam	Bug Bite	Rock Tomb	Air Cutter		
+	Move 3	AncientPower	Rock Tomb	Whirlpool	Signal Beam		
+	Move 4	Dazzling Gleam	Ingrain	Recover	Confuse Ray		
+		Holding DeepSeaTooth					
+							
+
+
+Janitor Felix		
+            Shellos	Wormadam	Raticate	Swalot
+    Item    Eviolite None None None
+	Level	25	25	25	25
+	Nature	Lax	Timid	Lonely	Timid
+	Ability	Storm Drain	Battle Armor	Adaptability	Corrosion
+	Move 1	Muddy Water	Psychic	Hyper Fang	Venoshock
+	Move 2	Mud Bomb	Silver Wind	Quick Attack	Seed Bomb
+	Move 3	Sludge Bomb	Metal Burst	Dig	Bulldoze
+	Move 4	Spikes	Heal Order	Sand Attack	Toxic		
+			
+Worker Zack		
+            Bibarel	Haunter	Gabite	Machoke
+	Item    None None None Eviolite
+	Level	25	25	25	25
+	Nature	Serious	Lax	Naughty	Rash
+	Ability	Huge Power	Shadow Tag	Rough Skin	No Guard
+	Move 1	Barrage	Hex	Bulldoze	Cross Chop
+	Move 2	Headbutt	Sludge	Breaking Swipe	Payback
+	Move 3	Aqua Jet	Bitter Malice	Rock Tomb	Seismic Toss
+	Move 4	Amnesia	Psychic	Swords Dance	Body Slam
+
+
+Scientist Clarke		
+            Whimsicott	Kadabra	Spinda	Manectric
+	Item    None Eviolite None None
+	Level	25	25	25	25
+	Nature	Sassy	Quirky	Hardy	Rash
+	Ability	Prankster	Magic Guard	Contrary	Intimidate
+	Move 1	Magical Leaf	Dream Eater	Uproar	Discharge
+	Move 2	Dizzy Punch	Hypnosis	Dizzy Punch	Charge
+	Move 3	Acrobatics	Dazzling Gleam	Psybeam	Bite
+	Move 4	Parting Shot	Mystical Fire	Fake Out	Dig
+	
+					
+Scientist Caroline		
+            Butterfree	Watchog	Unown	Audino
+	Type 1	Bug	Normal	Psychic	Normal
+	Type 2	Flying		Ghost	Fairy
+	Level	25	25	25	25
+	Nature	Sassy	Sassy	Timid	Hasty
+	Ability	Tenacity	Patient	Levitate	Poison Heal
+	Move 1	Signal Beam	Hyper Fang	Psychic Noise	Double-Edge
+	Move 2	Air Cutter	Faint Attack	Magical Leaf	Draining Kiss
+	Move 3	Giga Drain	Hypnosis	Healing Wish	Toxic
+	Move 4	Sleep Powder	Dream Eater	Shadow Ball	Recover
+
+
+
+
+Worker Scott (2x)		
+            Swoobat	Gurdurr	Magmar	Zweilous	Rhydon
+	Item	Sitrus Berry	Shuca Berry	Air Balloon	Eviolite	Passho Berry
+	Level	25	27	27	27	28
+	Nature	Brave	Sassy	Naive	Hasty	Relaxed
+	Ability	Friend Guard	Iron Fist	Turboblaze	Hustle	Solid Rock
+	Move 1	Acrobatics	Drain Punch	Flame Burst	Devour	Rock Blast
+	Move 2	U-Turn	Bullet Punch	Poison Jab	Brutal Swing	Bone Rush
+	Move 3	Dazzling Gleam	Mach Punch	Brick Break	Rock Slide	Natural Gift
+	Move 4	Hypnosis	Scary Face	Smokescreen	Thunder Fang	Rock Smash
+						
+						
+Janitor Brady (2x)		
+            Cinccino	Golbat	Lairon	Rotom	Skuntank
+	Item	Muscle Band	Scope Lens	Berry Juice	Miracle Seed	Black Sludge
+	Level	27	27	27	27	28
+	Nature	Bashful	Impish	Hasty	Mild	Naive
+	Ability	Skill Link	Sniper	Sturdy	Levitate	Stench
+	Move 1	Secret Power	Dual Wingbeat	Metal Claw	Electroweb	Flame Burst
+	Move 2	Bullet Seed	Poison Fang	Dragonbreath	Leaf Tornado	Snarl
+	Move 3	U-turn	Giga Drain	Water Pulse	Volt Switch	Poison Gas
+	Move 4	Thunder Wave	U-turn	Shock Wave	Icy Wind	Venoshock
+
+
+Scientist Terrance		
+            Porygon2	Hitmontop	Probopass	Duosion
+	Item    None None None Eviolite
+	Level	28	28	28	29
+	Nature	Bold	Docile	Brave	Quiet
+	Ability	Trace	Intimidate	Sand Force	Magic Guard
+	Move 1	Facade	Vital Throw	Power Gem	Psybeam
+	Move 2	Parabolic Zap	Faint Attack	Magnet Bomb	Shadow Ball
+	Move 3	Psybeam	Bullet Punch	Shock Wave	Signal Beam
+	Move 4	Recover	Block	Magnet Rise	Calm Mind
+					
+Scientist Lumina		
+            Torkoal	Munchlax	Amoonguss	Quagsire
+	Item    None Eviolite None None
+	Level	28	28	28	29
+	Nature	Relaxed	Timid	Lonely	Modest
+	Ability	Shell Armor	Thick Fat	Contagious	Water Absorb
+	Move 1	Flame Burst	Rest	Giga Drain	Waterfall
+	Move 2	Body Slam	Sleep Talk	Venoshock	Bulldoze
+	Move 3	Poison Gas	Rage	Night Shade	Curse
+	Move 4	Stompin Tantrum	Payback	Sleep Powder	Recover		
+
+
+
+Backpacker Kendall	
+            Exeggutor	Magcargo	Azumarill	Hariyama
+	Level	29	29	29	29
+	Nature	Adamant	Brave	Naive	Lonely
+	Ability	Berserk	Gooey	Huge Power	Sheer Force
+	Move 1	Seed Bomb	Sparkle	Dizzy Punch	Vital Throw
+	Move 2	Dream Eater	Flame Burst	BubbleBeam	Rock Slide
+	Move 3	Stompin Tantrum	Scald	Rock Smash	Body Slam
+	Move 4	Sleep Powder	Recover	Work Up	Beat Up
+
+
+
+Clerk Clemens		
+            Charmeleon	Boldore	Camerupt	Sunflora
+	Item	Eviolite	Rock Gem	Charcoal	Shell Bell
+	Level	27	27	27	28
+	Nature	Hasty	Naive	Quiet	Modest
+	Ability	Drought	Chlorophyll	Sheer Force	Solar Power
+	Move 1	Temper Flare	Power Gem	Flame Wheel	Magical Leaf
+	Move 2	Devour	Flame Burst	Bulldoze	Incinerate
+	Move 3	Metal Claw	Shock Wave	Rock Tomb	Nature Power
+	Move 4	ThunderPunch	Scorching Sands	Secret Power	Synthesis
+					
+Clerk Britney 
+            Vanillish	Delcatty	Sealeo	Piloswine
+	Item	Eviolite	Babiri Berry	Leftovers	Rock Gem
+	Level	27	27	27	28
+	Nature	Bashful	Careful	Lonely	Naughty
+	Ability	Snow Warning	Magic Guard	Ice Body	Snow Cloak
+	Move 1	Aurora Beam	Draining Kiss	Brine	Mud Bomb
+	Move 2	Dazzling Gleam	Retaliate	Aurora Beam	Ice Fang
+	Move 3	Selfdestruct	Work Up	Slack Off	Rock Slide
+	Move 4	Sludge	Baton Pass	Body Slam	Rock Smash
+
+
+
+
+Clerk Gilligan 		
+            Marshtomp	Cacnea	Crustle	Sandslash	
+	Item	Rindo Berry	Life Orb	Leftovers	Muscle Band
+	Level	27	27	27	28
+	Nature	Lonely	Rash	Lax	Modest
+	Ability	Sand Stream	Sand Rush	Shed Skin	Sand Force
+	Move 1	Muddy Water	Shadow Ball	Skitter Smack	Bulldoze
+	Move 2	Mud Bomb	Needle Arm	Rock Blast	Rock Tomb
+	Move 3	Metal Burst	Weather Ball	Toxic	Metal Claw
+	Move 4	Stealth Rock	Growth	Block	Pin Missile
+					
+Clerk Warren		
+            Wailmer	Seadra	Ludicolo	Parasect
+	Item	Damp Rock	Eviolite	Shell Bell	Big Root
+	Level	27	27	27	28
+	Nature	Quiet	Brave	Lax	Bold
+	Ability	Moisturize	Swift Swim	Swift Swim	Dry Skin
+	Move 1	Body Slam	Dragonbreath	Water Pulse	Leech Life
+	Move 2	Stompin Tantrum	Bubblebeam	Mega Drain	Leech Seed
+	Move 3	Rollout	Poison Jab	ThunderPunch	Razor Shell
+	Move 4	Icy Wind	Body Slam	Teeter Dance	Spore
+
+
+School Kid Neil (3x)		
+            Simisage	Simipour	Simisear	Eevee	Pikachu		
+	Item	Occa Berry	Rindo Berry	Passho Berry	Light Ball	Light Ball
+	Level	29	29	29	30	30
+	Nature	Quiet	Calm	Hardy	Modest	Serious
+	Ability	Overgrow	Torrent	Blaze	Adaptability	Galvanize
+	Move 1	Vine Whip	Scald	Fire Punch	Body Slam	Uproar
+	Move 2	Crunch	Aurora Beam	Scorching Sands	Double Kick	Water Pulse
+	Move 3	Natural Gift	Natural Gift	Natural Gift	Shadow Ball	Grass Knot
+	Move 4	Follow Me	Helping Hand	Sweet Scent 	Play Rough	Fake Out
+
+
+
+Kanto Leader Lt. Surge		
+            Forretress	Electabuzz	Electrode	Krookodile	Octillery	Raichu
+	Item	Occa Berry	Eviolite	Normal Gem	Blunder Policy	Wacan Berry	Life Orb
+	Level	29	30	30	30	30	31
+	Nature	Calm	Relaxed	Relaxed	Lonely	Bashful	Timid
+	Ability	Skill Link	Galvanize	Aftermath	Intimidate	Sniper	Teravolt
+	Move 1	Spike Cannon	Facade	Discharge	Stompin Tantrum	BubbleBeam	Discharge
+	Move 2	Pin Missile	Drain Punch	Double-Edge	Crunch	Flame Burst	Mud Bomb
+	Move 3	Bullet Seed	Ice Punch	Magnet Bomb	Thunder Fang	Aurora Beam	Strength
+	Move 4	Rock Blast	Bulk Up	Rollout	Pursuit	Natural Gift	Surf
+
+
+Harlequin Clarence (2x)		
+            Venomoth	Armaldo	Lilligant	Beautifly			
+	Item	Covert Cloak	Passho Berry	Miracle Seed	Bug Gem		
+	Level	28	28	29	29		
+	Nature	Mild	Lonely	Modest	Modest		
+	Ability	Tenacity	Weak Armor	Quick Feet	Majestic Ward		
+	Move 1	Signal Beam	Rock Slide	Sleep Powder	Draining Kiss		
+	Move 2	Dream Eater	Skitter Smack	Force Palm	Silver Wind		
+	Move 3	Sleep Powder	Natural Gift	Leaf Tornado	Attract		
+	Move 4	Reflect	Accelerock	Draining Kiss	Quiver Dance		
+				Pre-Paralyzed			
+							
+Harlequin Jack (2x)		
+            MR.MIME	Masquerain	Vespiquen	Pinsir			
+	Item	Muscle Band	Wise Glasses	Charti Berry	Liechi Berry		
+	Level	28	28	29	29		
+	Nature	Adamant	Naughty	Jolly	Lax		
+	Ability	Technician	Intimidate	Majestic Ward	Sturdy		
+	Move 1	Fake Out	Bubblebeam	X-Scissor	Bone Club		
+	Move 2	Concuss	Signal Beam	Aerial Ace	Rock Tomb		
+	Move 3	Heart Stamp	Air Cutter	Heal Order	Natural Gift		
+	Move 4	Low Sweep	Icy Wind	Natural Gift	Vital Throw		
+							
+Harlequin Gary (2x)		
+            Volbeat	Crawdaunt	Scyther	Illumise		
+	Item	Leftovers	Mystic Water	Eviolite	Choice Band		
+	Level	28	28	29	29		
+	Nature	Mild	Sassy	Hardy	Bashful		
+	Ability	Prankster	Adaptability	Technician	Tenacity		
+	Move 1	Thunderbolt	Aqua Jet	Bug Bite	Dizzy Punch		
+	Move 2	Silver Wind	Razor Shell	Wing Attack	Skitter Smack		
+	Move 3	Sweet Scent	Night Slash	Cut			
+	Move 4	Moonlight	X-Scissor	Swords Dance			
+							
+Harlequin Anders		
+            Yanmega	Cradily	Ledian	Smeargle	Durant	
+	Item	Wise Glasses	Leftovers	Focus Band	Expert Belt	Rock Gem	
+	Level	29	29	29	30	30	
+	Nature	Docile	Naughty	Naughty	Naughty	Bold	
+	Ability	Speed Boost	Patient	Iron Fist	Savant	Heatproof	
+	Move 1	Air Cutter	Power Gem	Sky Uppercut	Glaciate	Metal Claw	
+	Move 2	Signal Beam	Giga Drain	U-turn	Fire Lash	Skitter Smack	
+	Move 3	Giga Drain	Recover	Ice Punch	Dazzling Gleam	Rock Slide	
+	Move 4	Power Gem	Sludge	ThunderPunch	Lunge	Crunch	
+							
+							
+Leader Burgh (2x)		
+            Kingler	Galvantula	Escavalier	Gliscor	Omastar	Leavanny
+	Item	Wacan Berry	Wise Glasses	Occa Berry	Bug Gem	Rindo Berry	Focus Sash
+	Level	31	31	31	30	30	32
+	Nature	Mild	Serious	Sassy	Bold	Bashful	Impish
+	Ability	Sheer Force	Technician	Swarm	Poison Heal	Weak Armor	Savant
+	Move 1	Razor Shell	Electroweb	Lunge	Bone Club	Brine	Leaf Blade
+	Move 2	Skitter Smack	Icy Wind	Metal Claw	Aerial Ace	Icy Wind	Helping Hand
+	Move 3	Rock Slide	Struggle Bug	1st Impression	Tailwind	AncientPower	Double Kick
+	Move 4	Natural Gift	Sticky Web	Natural Gift	Lunge	Signal Beam	Return
+
+
+
+Twins Tara & Val (2x)		
+            Jellicent	Pachirisu	Delibird	Kangaskhan
+	Level	33	33	34	34
+	Nature	Hardy	Rash	Jolly	Adamant
+	Ability	Water Absorb	Prankster	Refrigerate	Tough Claws
+	Move 1	Brine	Shock Wave	Doubleslap	Take Down
+	Move 2	Hex	Dazzling Gleam	Hyper Voice	Breaking Swipe
+	Move 3	Toxic	Thunder Wave	Air Cutter	Drain Punch
+	Move 4	Bitter Malice	Attract	Fake Out	Faint Attack
+
+
+Rich Boy Keenan		
+            Arcanine	Whiscash	Luxray			
+	Level	34	34	35		
+	Nature	Modest	Naughty	Calm		
+	Ability	Intimidate	Adaptability	Guts		
+	Move 1	Flame Burst	Stompin Tantrum	Thunder Fang		
+	Move 2	Take Down	Waterfall	Faint Attack		
+	Move 3	Crunch	Flip Turn	Fire Fang		
+	Move 4	Thunder Fang	Thunderbolt	Ice Fang		
+	
+						
+Pokefan Sachiko	
+            Delcatty	Leafeon	Starmie			
+	Level	34	34	35		
+	Nature	Quiet	Hardy	Serious		
+	Ability	Normalize	Tenacity	Illumination		
+	Move 1	Doubleslap	Trop Kick	Bubblebeam		
+	Move 2	Sucker Punch	Swords Dance	Aurora Beam		
+	Move 3	U-Turn	Grasswhistle	Psybeam		
+	Move 4	Fake Out	Rock Slide	Hypnosis		
+						
+Policeman Dell (3x)		
+            Stoutland	Noctowl	Gallade			
+	Level	34	34	34		
+	Nature	Lonely	Modest	Jolly		
+	Ability	Intimidate	Overcoat	Friend Guard		
+	Move 1	Take Down	Hyper Voice	Psycho Cut		
+	Move 2	Fire Fang	Grudge	Drain Punch		
+	Move 3	Ice Fang	Air Slash	Leaf Blade		
+	Move 4	Thunder Fang	Roost	Rock Slide		
+						
+						
+Backpacker Rachel (Left)		
+            Beedrill	Pelipper				
+	Level	34	35			
+	Nature	Lax	Serious			
+	Ability	Levitate	Torrent			
+	Move 1	Leech Life	Brine			
+	Move 2	Poison Jab	Air Slash			
+	Move 3	Drill Run	Roost			
+	Move 4	Knock Off	Supersonic			
+
+
+Backpacker Roland (Right)		
+            Hippowdon	Breloom					
+	Level	34	35			
+	Nature	Naive	Adamant			
+	Ability	Rough Skin	Technician			
+	Move 1	Earthquake	Bullet Seed			
+	Move 2	Rock Slide	Arm Thrust			
+	Move 3	Thunder Fang	Comet Punch			
+	Move 4	Slack Off	Spore			
+						
+						
+						
+Lady Lina		
+            Lapras	Cinccino	Altaria	Swanna	
+	Item	Red Card	Silk Scarf	Leftovers	Charti Berry	
+	Level	35	35	35	36	
+	Nature	Modest	Bold	Sassy	Modest	
+	Ability	Snow Warning	Fur Coat	Overcoat	Serene Grace	
+	Move 1	Aurora Beam	Double Hit	Draining Kiss	Chatter	
+	Move 2	Dragonbreath	Doubleslap	Dragonbreath	Aurora Beam	
+	Move 3	Flip Turn	Faint Attack	Bulldoze	Scald	
+	Move 4	Body Press	U-Turn	Cotton Guard	Roost	
+						
+						
+						
+
+
+
+
+
+PkMn Ranger Jaden (2x)		
+            Carracosta	Mandibuzz	Shelgon	Maractus
+	Type 2	Rock	Flying		Ground
+	Item	Ice Gem	Leftovers	Eviolite	Yache Berry
+	Level	35	35	36	36
+	Nature	Naughty	Hardy	Lonely	Hasty
+	Ability	Solid Rock	Overcoat	Strong Body	Sand Rush
+	Move 1	Razor Shell	Knock Off	Dragon Tail	Scorching Sands
+	Move 2	Rock Slide	Dual Wingbeat	Gyro Ball	Needle Arm
+	Move 3	Avalanche	Steel Wing	Temper Flare	Scald
+	Move 4	Flip Turn	U-turn	Body Press	Natural Gift
+					
+					
+PkMn Ranger Anja		
+            Sudowoodo	Dodrio	Armaldo	
+	Level	35	35	35	
+	Nature	Rash	Hasty	Lonely	
+	Ability	Prankster	Tough Claws	Water Absorb	
+	Move 1	Rock Climb	Aerial Ace	Rock Slide	
+	Move 2	Ingrain	Submission	X-Scissor	
+	Move 3	Hammer Arm	Stompin Tantrum	Razor Shell	
+	Move 4	Thunder Wave	Rock Slide	Dragon Dance	
+					
+					
+Psychic Tommy (3x)		
+            Sigilyph	Golurk	Chimecho	
+	Level	35	35	35	
+	Nature	Careful	Modest	Docile	
+	Ability	Magic Guard	Weak Armor	Levitate	
+	Move 1	Esper Wing	Shadow Punch	Moonblast	
+	Move 2	Weather Ball	Bulldoze	Flash Cannon	
+	Move 3	Air Slash	Rock Slide	Recover	
+	Move 4	Scorching Sands	Dizzy Punch	Weather Ball	
+					
+					
+Psychic Perry		
+            Musharna	Stantler	Claydol	
+	Item	Safety Goggles	None	None	
+	Level	35	35	36	
+	Nature	Bashful	Sassy	Docile	
+	Ability	Neutralizing Gas	Illusion	Levitate	
+	Move 1	Draining Kiss	Retaliate	Scorching Sands	
+	Move 2	Dream Eater	Grudge	Extrasensory	
+	Move 3	Shadow Ball	Dream Eater	Mystical Fire	
+	Move 4	Light Screen	Reflect	Spin Out	
+					
+					
+					
+Backpacker Tami (Right)		
+            Clefable	Shuckle			
+	Level	35	36		
+	Nature	Bashful	Sassy		
+	Ability	Magic Guard	Strong Body		
+	Move 1	Draining Kiss	Scorching Sands		
+	Move 2	Thunderbolt	Weather Ball		
+	Move 3	Ice Beam	Signal Beam		
+	Move 4	Thunder Wave	Toxic		
+
+Backpacker Sam (Left)		
+            Camerupt	Cacturne			
+	Level	35	36		
+	Nature	Hardy	Hardy		
+	Ability	Solid Rock	Sand Veil		
+	Move 1	Rock Slide	Needle Arm		
+	Move 2	Blaze Kick	Shadow Punch		
+	Move 3	Scorching Sands	Barb Barrage		
+	Move 4	Smog	Substitute		
+					
+					
+Psychic Future		
+            Grumpig	Marowak	Lucario	Lunatone
+	Item	Life Orb	Thick Club	Focus Sash	Absorb Bulb
+	Level	36	36	37	37
+	Nature	Hasty	Sassy	Hardy	Hardy
+	Ability	Magic Guard	Battle Armor	Exploit	Solid Rock
+	Move 1	Faint Attack	Bulldoze	Force Palm	Mystical Fire
+	Move 2	Psycho Cut	Shadow Claw	Metal Claw	AncientPower
+	Move 3	Dizzy Punch	Rock Tomb	Dark Pulse	Calm Mind
+	Move 4	Foul Play	Shadow Sneak	Extremespeed	Recover
+
+
+
+
+Psychic Low		
+			Xatu	Medicham	Mawile	Slowking
+	Level	35	35	36	36
+	Nature	Calm	Hasty	Adamant	Modest
+	Ability	Patient	Huge Power	Sheer Force	Shell Armor
+	Move 1	Esper Wing	Psycho Cut	Play Rough	Dragon Tail
+	Move 2	Air Cutter	Aura Sphere	Metal Claw	Zen Headbutt
+	Move 3	Mystical Fire	Shadow Ball	Thunder Fang	Curse
+	Move 4	Ominous Wind	Light Screen	Rock Slide	Slack Off
+					
+					
+Psychic Dua (3x)		
+			Girafarig	Hypno	Relicanth	Cofagrigus
+	Level	35	35	35	36
+	Nature	Serious	Naughty	Impish	Brave
+	Ability	Sap Sipper	Bad Dreams	Battle Armor	Contagious
+	Move 1	Dazzling Gleam	Dream Eater	Rock Slide	Hex
+	Move 2	Crunch	Smog	Shadow Claw	Mirror Shot
+	Move 3	Double Kick	Sweet Scent	Waterfall	Mystical Fire
+	Move 4	Hypnosis	Hypnosis	Soak	Scorching Sands
+					
+					
+					
+
+Nursery Aide Lenora		
+            Stoutland	Wigglytuff	Bastiodon	Watchog
+	Item	Sitrus Berry	Fairy Dust	Liechi Berry	Normal Gem
+	Level	35	36	36	37
+	Nature	Quiet	Quirky	Rash	Lonely
+	Ability	Thick Fat	Aerilate	Determined	Stakeout
+	Move 1	Headbutt	Retaliate	Head Smash	Retaliate
+	Move 2	Crunch	Ice Beam	Double-Edge	Thrash
+	Move 3	Yawn	Doubleslap	Natural Gift	Strength
+	Move 4	Slack Off	Flamethrower	Endure	Hypnosis
+
+
+
+Cosplayer Cassie		
+            Jumpluff	Banette	Flareon		
+	Item	Focus Sash	Muscle Band	Assault Vest	
+	Level	35	35	35	
+	Nature	Modest	Docile	Sassy	
+	Ability	Skill Link	Prankster	Fur Coat	
+	Move 1	Sleep Powder	Body Slam	Fire Fang	
+	Move 2	Razor Winds	Shadow Claw	Thunder Fang	
+	Move 3	Bullet Seed	Dizzy Punch	Take Down	
+	Move 4	U-Turn	Will-o-Wisp	Crunch	
+				
+					
+Cosplayer Jared		
+            Metang	Manectric	Sawk	
+	Item	Eviolite	Shuca Berry	Salac Berry	
+	Level	35	35	35	
+	Nature	Gentle	Brave	Bashful	
+	Ability	Tough Claws	Intimidate	Sturdy	
+	Move 1	Meteor Mash	Thunder Fang	Strength	
+	Move 2	Zen Headbutt	Fire Fang	Double Hit	
+	Move 3	Explosion	Ice Fang	Fire Punch	
+	Move 4	Hammer Arm	Crunch	Flail	
+					
+					
+Guy in Suit Larry (Left)		
+            Ditto	MR.MIME			
+	Item	Red Card	Dark Gem		
+	Level	35	36		
+	Nature	Naive	Bashful		
+	Ability	Imposter	Technician		
+	Move 1	Me First	Heart Stamp		
+	Move 2	None	Zen Headbutt		
+	Move 3	None	Low Sweep		
+	Move 4	None	Pursuit		
+
+Girl in Suit Donna (Right)		
+            Kecleon	Spinda			
+	Item	Muscle Band	Colbur Berry		
+	Level	35	36		
+	Nature	Lax	Bashful		
+	Ability	Savant	Hustle		
+	Move 1	Fake Out	Fake Out		
+	Move 2	Drain Punch	Dizzy Punch		
+	Move 3	Ice Punch	Extrasensory		
+	Move 4	Sucker Punch	Faint Attack		
+					
+					
+Cosplayer Amy		
+            Clefable	Solrock	Starmie	
+	Item	Trickster Herb	Focus Sash	Wise Glasses	
+	Level	36	36	37	
+	Nature	Impish	Serious	Jolly	
+	Ability	Magic Guard	Levitate	Mold Breaker	
+	Move 1	Fairy Wind	Power Gem	Bubblebeam	
+	Move 2	Magical Leaf	Mystical Fire	Psybeam	
+	Move 3	Cosmic Power	Psyshock	Recover	
+	Move 4	Body Press	Rock Polish	Calm Mind	
+				
+					
+Cosplayer Anders		
+			Mienshao	Cryogonal	Emboar	
+	Item	Dark Gem	Starf Berry	Charcoal	
+	Level	36	36	37	
+	Nature	Adamant	Hasty	Calm	
+	Ability	Reckless	Sturdy	Intimidate	
+	Move 1	Jump Kick	Freeze-Dry	Flamethrower	
+	Move 2	Knock Off	Flash Cannon	Payback	
+	Move 3	Pursuit	Power Gem	Slack Off	
+	Move 4	U-Turn	Baton Pass	Work Up	
+					
+					
+Cosplayer Miriam		
+            Gengar	Masquerain	Gothitelle	Mismagius
+	Item	Spell Tag	Fairy Gem	Sitrus Berry	Wise Glasses
+	Level	37	37	37	37
+	Nature	Sassy	Quiet	Lax	Quiet
+	Ability	Neutralizing Gas	Intimidate	Shadow Tag	Levitate
+	Move 1	Hex	BubbleBeam	Psybeam	Dazzling Gleam
+	Move 2	Sludge	Signal Beam	Torment	Ominous Wind
+	Move 3	Destiny Bond	Dazzling Gleam	Force Palm	Mystical Fire
+	Move 4	Will-o-Wisp	Quiver Dance	Shock Wave	Power Gem
+
+
+Subway Boss Ingo		
+            Eelektross	Skarmory
+	Item	Blunder Policy	Flying Gem
+	Level	39	40
+	Nature	Hardy	Brave
+	Ability	Levitate	Sturdy
+	Move 1	Thunderbolt	Sky Drop
+	Move 2	Flamethrower	Iron Head
+	Move 3	Sludge Bomb	Swords Dance
+	Move 4	Muddy Water	Night Slash
+
+
+Subway Boss Emmet		
+            Pinsir	Chandelure
+	Item	Focus Sash	Passho Berry
+	Level	39	40
+	Nature	Careful	Careful
+	Ability	Mold Breaker	Shadow Tag
+	Move 1	Drill Run	Shadow Ball
+	Move 2	Lunge	Flame Burst
+	Move 3	Superpower	Energy Ball
+	Move 4	Rock Climb	Smog
+
+
+
+Baker Jenn		
+            Simisear	Tropius	Lickilicky	Rotom
+	Item	Shuca Berry	Rock Gem	Lum Berry	Charti Berry
+	Level	36	36	37	37
+	Nature	Timid	Lonely	Relaxed	Modest
+	Ability	Drought	Chlorophyll	Gourmand	Levitate
+	Move 1	Fire Lash	Giga Drain	Wrap	Flamethrower
+	Move 2	Thunderpunch	Air Cutter	Body Slam	Discharge
+	Move 3	Seed Bomb	Flame Burst	Rest	Leaf Tornado
+	Move 4	U-turn	AncientPower	Flamethrower	Aurora Beam
+					
+					
+PkMn Ranger Lois		
+            Unfezant	Rapidash	Venusaur	
+	Level	36	36	36	
+    Item    Sitrus Berry None None
+	Nature	Impish	Gentle	Adamant	
+	Ability	Unburden	Serene Grace	Thick Fat	
+	Move 1	Body Slam	Blaze Kick	Gunk Shot	
+	Move 2	Acrobatics	Moonblast	Power Whip	
+	Move 3	Brick Break	Iron Head	Earthquake	
+	Move 4	Swords Dance	Horn Leech	Sleep Powder	
+		Has Sitrus Brry			
+					
+Artist Horton (3x)		
+            Smeargle	Muk	Kecleon	
+	Level	36	36	36	
+	Nature	Gentle	Docile	Gentle	
+	Ability	Savant	Gooey	Adaptability	
+	Move 1	Iron Tail	Poison Jab	Shadow Claw	
+	Move 2	Muddy Water	Crunch	Dual Chop	
+	Move 3	Heat Wave	Fire Fang	Crush Claw	
+	Move 4	Blizzard	Sucker Punch	Shadow Sneak	
+
+
+Depot Agent Hank		
+            Donphan	Klang	Scolipede	Onix	
+	Item	Brightpowder	Eviolite	Muscle Band	Focus Sash	
+	Level	36	36	37	37	
+	Nature	Sassy	Hardy	Careful	Jolly	
+	Ability	Sand Stream	Levitate	Strong Body	Sand Force	
+	Move 1	Bulldoze	Gear Grind	Lunge	Rock Slide	
+	Move 2	Spin Out	Zing Zap	Strength	Bulldoze	
+	Move 3	Rollout	Seed Bomb	Poison Jab	Iron Head	
+	Move 4	Spikes	Shift Gear	Rollout	Rock Smash	
+						
+						
+Cyclist Hector (3x)		
+            Jolteon	Vaporeon	Flareon						
+	Level	36	36	36		
+	Nature	Serious	Modest	Timid		
+	Ability	Lightningrod	Water Absorb	Flash Fire		
+	Move 1	Thunderbolt	BubbleBeam	Temper Flare		
+	Move 2	Signal Beam	Aurora Beam	Body Slam		
+	Move 3	Extremespeed	Wide Guard	Iron Tail		
+	Move 4	Spiky Shield	Hyper Voice	Cotton Guard		
+					
+						
+Cyclist Krissa (3x)		
+            Umbreon	Espeon	Glaceon			
+	Level	36	36	36		
+	Nature	Quiet	Serious	Jolly		
+	Ability	Patient	Magic Bounce	Majestic Ward		
+	Move 1	Dark Pulse	Esper Wing	Glaciate		
+	Move 2	Psychic	Protect	Water Pulse		
+	Move 3	Foul Play	Dazzling Gleam	Hyper Voice		
+	Move 4	Follow Me	Force Palm	Grass Knot		
+						
+						
+Backers Stu & Art (2x)		
+            Heracross	Rotom	Vanilluxe	Slaking		
+	Level	36	36	36	36	
+	Nature	Impish	Calm	Brave	Hardy	
+	Ability	Guts	Levitate	Weak Armor	Slow Start	
+	Move 1	X-Scissor	Shock Wave	Glaciate	Body Slam	
+	Move 2	Drain Punch	Air Cutter	Sludge	Crunch	
+	Move 3	Rock Tomb	Leaf Tornado	Water Pulse	Slack Off	
+	Move 4	Revenge	Water Pulse	Sweet Scent	Skill Swap	
+			
+						
+Roughneck Silvester		
+            Scrafty	Garbodor	Cloyster		
+	Level	36	36	36		
+	Nature	Brave	Impish	Brave		
+	Ability	Intimidate	Weak Armor	Shell Armor		
+	Move 1	Crunch	Metal Claw	Clamp		
+	Move 2	Brick Break	Poison Jab	Ice Beam		
+	Move 3	Poison Jab	Knock Off	Spin Out		
+	Move 4	Stone Edge	Shift Gear	Explosion		
+
+
+
+PkMn Ranger Serenity		
+            Huntail	Tangrowth	Stunfisk	Poliwrath
+	Item	Water Gem	Sitrus Berry	Leftovers	Loaded Dice
+	Level	37	37	37	38
+	Nature	Quiet	Rash	Bashful	Impish
+	Ability	Drizzle	Thick Fat	Dry Skin	Swift Swim
+	Move 1	Waterfall	Giga Drain	Discharge	Brick Break
+	Move 2	Thunder Fang	Water Pulse	Stompin Tantrum	Barrage
+	Move 3	Devour	AncientPower	Muddy Water	Ice Punch
+	Move 4	Flip Turn	Sludge	Sludge Wave	Poison Jab
+					
+					
+					
+PkMn Ranger Forrest (3x)		
+            Exeggutor	Mothim	Swampert	
+	Item    Tanga Berry None None
+	Level	36	36	36	
+	Nature	Careful	Mild	Quiet	
+	Ability	Gourmand	Pickpocket	Sheer Force	
+	Move 1	Wood Hammer	Dual Wingbeat	Muddy Water	
+	Move 2	Flame Burst	Fake Out	Bulldoze	
+	Move 3	Extrasensory	Lunge	Rock Slide	
+	Move 4	Follow Me	Sleep Powder	Ice Punch	
+		
+
+Kanto Leader Erika		
+            Ninetales	Beautifly	Cherrim	Victreebel	Nidoqueen	Vileplume
+	Item	Charcoal	Focus Sash	Coba Berry	Expert Belt	Blunder Policy	Shell Bell
+	Level	39	39	39	39	39	40
+	Nature	Lax	Bold	Bold	Docile	Modest	Relaxed
+	Ability	Drought	Chlorophyll	Flower Gift	Arena Trap	Sheer Force	Chlorophyll
+	Move 1	Mystical Fire	Moonblast	Petal Blizzard	Poison Jab	Sludge Bomb	Fairy Wind
+	Move 2	Solarbeam	Bug Buzz	Weather Ball	Sleep Powder	Earth Power	Mystical Fire
+	Move 3	Psychic	Solarbeam	Double-Edge	Rock Climb	Flamethrower	Solarbeam
+	Move 4	Moonblast	U-turn	U-turn	Weather Crash	Solarbeam	Attract
+
+
+
+Rich Boy Rolan		
+            Plusle	Volbeat	Staraptor	Porygon-Z
+	Item	Expert Belt	Charti Berry	Brightpowder	Shuca Berry
+	Level	37	37	37	38
+	Nature	Bold	Bold	Hardy	Sassy
+	Ability	Volt Absorb	Illumination	Intimidate	Adaptability
+	Move 1	Fire Pledge	Bug Buzz	Aerial Ace	Psybeam
+	Move 2	Thunderbolt	Thunder	Rock Smash	Charge Beam
+	Move 3	Water Pledge	Moonlight	Crush Claw	Signal Beam
+	Move 4	Grass Pledge	Tail Glow	Quick Attack	Aurora Beam
+					
+					
+Lady Colette (2x)		
+            Gardevoir	Minun	Electrode	Raichu
+	Item	Wise Glasses	Leftovers	Air Balloon	Electric Gem
+	Level	37	37	38	38
+	Nature	Quirky	Brave	Timid	Relaxed
+	Ability	Trace	Motor Drive	Lightningrod	Sheer Force
+	Move 1	Dazzling Gleam	Frost Breath	Discharge	Discharge
+	Move 2	Force Palm	Discharge	Spin Out	Scorching Sands
+	Move 3	Shock Wave	Fake Out	Energy Ball	Focus Punch
+	Move 4	Calm Mind	Fire Pledge	Light Screen	Play Rough
+
+
+
+Beauty Nikola (2x)		
+            Roserade	Manectric	Electivire	Jynx		
+	Item	Covert Cloak	Clear Amulet	Air Balloon	Electric Gem		
+	Level	37	37	38	38		
+	Nature	Naive	Lax	Rash	Calm		
+	Ability	Serene Grace	Strong Jaw	Teravolt	Majestic Ward		
+	Move 1	Sludge	Thunder Fang	Thunderbolt	Aurora Beam		
+	Move 2	Petal Dance	Devour	Ice Punch	Extrasensory		
+	Move 3	Sleep Powder	Ice Fang	Fire Punch	Attract		
+	Move 4	Extrasensory	Rock Smash	Drain Punch	Thunderbolt		
+							
+							
+Beauty Fleming (3x)		
+            Ampharos	Dewgong	Magnezone	Serperior			
+	Item	Blunder Policy	Expert Belt	Starf Berry	Wise Glasses		
+	Level	37	37	37	38		
+	Nature	Lax	Mild	Serious	Bashful		
+	Ability	Illumination	Lightningrod	Sturdy	Adaptability		
+	Move 1	Parabolic Zap	Aurora Beam	Discharge	Discharge		
+	Move 2	Dual Chop	Thunderbolt	Bug Buzz	Leaf Tornado		
+	Move 3	Power Gem	BubbleBeam	Light Screen	Flamethrower		
+	Move 4	Signal Beam	Fake Out	Magnet Bomb	Dragon Pulse		
+							
+							
+Beauty Ampère		
+            Jolteon	Gorebyss	Pachirisu	Lanturn	Emolga	
+	Item	Air Balloon	Electric Gem	Brightpowder	Leftovers	Focus Sash	
+	Level	38	38	38	38	39	
+	Nature	Serious	Rash	Bashful	Rash	Serious	
+	Ability	Tenacity	Majestic Ward	Run Away	Illumination	No Guard	
+	Move 1	Discharge	Twister	Charge Beam	Thunder	Thunder	
+	Move 2	Volt Switch	Sludge Bomb	Dazzling Gleam	Hydro Pump	Air Slash	
+	Move 3	Aurora Beam	Thunderbolt	Volt Switch	Ice Beam	Volt Switch	
+	Move 4	Uproar	Flip Turn	Super Fang	Thunder Wave	Energy Ball	
+							
+							
+Leader Elesa (2x)		
+            Plusle	Minun	Glaceon	Milotic	Lopunny	Zebstrika
+	Item	Focus Sash	Air Balloon	Electric Gem	Wacan Berry	Chople Berry	Focus Band
+	Level	40	40	39	39	39	41
+	Nature	Mild	Mild	Brave	Quiet	Serious	Naughty
+	Ability	Plus	Minus	Permafrost	Marvel Scale	Hustle	Determined
+	Move 1	Hyper Voice	Glaciate	Aurora Beam	Scald	Retaliate	Zap Cannon
+	Move 2	Fire Pledge	Water Pledge	Charge Beam	Draining Kiss	Vital Throw	Night Daze
+	Move 3	Grass Pledge	Psychic Noise	Extrasensory	Follow Me	ThunderPunch	Close Combat
+	Move 4	Dazzling Gleam	Fake Out	Light Screen	Natural Gift	Shadow Punch	Thrash
+
+
+
+Motorcyclist Charles1 (3x)		
+            Yanmega	Basculin	Krookodile	Machamp	Arbok
+	Item	Choice Specs	Blunder Policy	Red Card	Roseli Berry	Life Orb
+	Level	41	41	41	42	42
+	Nature	Naive	Sassy	Bold	Rash	Hasty
+	Ability	Tenacity	Adaptability	Intimidate	No Guard	Sheer Force
+	Move 1	Air Cutter	Muddy Water	Drill Run	Cross Chop	Dragon Claw
+	Move 2	Signal Beam	Shadow Ball	Crunch	Thunder	Poison Jab
+	Move 3	None	Strength	Fire Fang	Fire Blast	Strength
+	Move 4	None	Ice Beam	Rock Climb	Blizzard	Crunch
+
+Motorcyclist Charles2 (3x)		
+            Yanmega	Basculin	Krookodile	Machamp	Arbok
+	Item	Choice Specs	Blunder Policy	Red Card	Roseli Berry	Life Orb
+	Level	41	41	41	42	42
+	Nature	Naive	Sassy	Bold	Rash	Hasty
+	Ability	Tenacity	Adaptability	Intimidate	No Guard	Sheer Force
+	Move 1	Air Cutter	Muddy Water	Drill Run	Cross Chop	Dragon Claw
+	Move 2	Signal Beam	Shadow Ball	Crunch	Thunder	Poison Jab
+	Move 3	None	Strength	Fire Fang	Fire Blast	Strength
+	Move 4	None	Ice Beam	Rock Climb	Blizzard	Crunch
+
+Linebacker JonahGauntlet		
+            Samurott	Druddigon	Nidoking
+	Item	Sitrus Berry	Rocky Helmet	Life Orb
+	Level	39	39	39
+	Nature	Sassy	Docile	Bold
+	Ability	Hyper Cutter	Rough Skin	Sheer Force
+	Move 1	Razor Shell	Dragon Claw	Poison Jab
+	Move 2	Double Kick	Poison Fang	Bulldoze
+	Move 3	Aqua Jet	Rock Tomb	Lunge
+	Move 4	Lunge	Amnesia	Ice Punch
+				
+				
+Linebacker DanGauntlet	
+            Emboar	Piloswine	Hariyama
+	Item	Sitrus Berry	Eviolite	Life Orb
+	Level	39	39	39
+	Nature	Naive	Naughty	Adamant
+	Ability	Intimidate	Thick Fat	Sheer Force
+	Move 1	Fire Punch	Ice Beam	Rock Smash
+	Move 2	Crunch	Earthquake	Rock Slide
+	Move 3	Slack Off	AncientPower	Iron Head
+	Move 4	Will-o-Wisp	Strength	Ice Punch
+				
+				
+Striker RobertoGauntlet (Left)		
+            Blaziken	Electrode	
+	Item	Focus Sash	Air Balloon	
+	Level	39	40	
+	Nature	Careful	Jolly	
+	Ability	Speed Boost	Volt Absorb	
+	Move 1	Acrobatics	Zing Zap	
+	Move 2	Reversal	Flash Cannon	
+	Move 3	Thunderpunch	Double-Edge	
+	Move 4	Blaze Kick	Signal Beam	
+
+Striker MarcoGauntlet (Right)		
+            Hitmonlee	Sceptile	
+	Item	Normal Gem	Yache Berry	
+	Level	39	40	
+	Nature	Lax	Calm	
+	Ability	Unburden	Exploit	
+	Move 1	Fake Out	Giga Drain	
+	Move 2	Acrobatics	Dual Chop	
+	Move 3	Double Kick	Double Kick	
+	Move 4	Double-Edge	Natural Gift	
+				
+				
+Smasher ElenaGauntlet		
+            Ambipom	Weavile	Farfetch'd
+	Item	Muscle Band	Focus Sash	Stick
+	Level	40	40	40
+	Nature	Rash	Lonely	Naive
+	Ability	Technician	Exploit	Defiant
+	Move 1	Fake Out	Dark Pulse	Brick Break
+	Move 2	Dual Chop	Ice Punch	Air Slash
+	Move 3	Doubleslap	Ice Shard	Leaf Tornado
+	Move 4	Double Kick	Power Gem	Torment
+				
+				
+Smasher AspenGauntlet		
+            Shiftry	Mienshao	Galvantula
+	Item	Tanga Berry	Flying Gem	Wise Glasses
+	Level	40	40	40
+	Nature	Mild	Careful	Bold
+	Ability	Wind Rider	Reckless	Technician
+	Move 1	Leaf Blade	Jump Kick	Electroweb
+	Move 2	Knock Off	Psyshock	Struggle Bug
+	Move 3	Air Slash	Acrobatics	Mega Drain
+	Move 4	Tailwind	Double-Edge	Mud Shot
+				
+				
+Doctor HeathGauntlet		
+            Alomomola	Reuniclus	Miltank
+	Item	Assault Vest	Leftovers	Lum Berry
+	Level	40	40	40
+	Nature	Adamant	Bold	Lax
+	Ability	Regenerator	Magic Guard	Scrappy
+	Move 1	Waterfall	Psyshock	Body Slam
+	Move 2	Flip Turn	Shadow Ball	Strength
+	Move 3	Avalanche	Thunder Wave	Milk Drink
+	Move 4	Knock Off	Recover	Curse
+			
+				
+Nurse MariahGauntlet		
+            Chimecho	Leavanny	Chansey
+	Item	Occa Berry	Focus Sash	Eviolite
+	Level	40	40	40
+	Nature	Brave	Modest	Jolly
+	Ability	Pixilate	Arena Trap	Huge Power
+	Move 1	Hyper Voice	Vine Whip	Body Slam
+	Move 2	Flash Cannon	Twineedle	Brutal Swing
+	Move 3	Power Gem	Double Kick	Toxic
+	Move 4	Air Slash	Dual Chop	Softboiled
+				
+				
+Hoopster LamarcusGauntlet (Left)		
+            Primeape	MR.MIME
+	Item	Focus Sash	Brightpowder	
+	Level	40	41	
+	Nature	Quirky	Lax	
+	Ability	Tenacity	Filter	
+	Move 1	Cross Chop	Doubleslap	
+	Move 2	Thrash	Zen Headbutt	
+	Move 3	Reversal	Mega Punch	
+	Move 4	Screech	Screech	
+
+
+Hoopster BobbyGauntlet (Right)		
+            Victreebel	Electivire	
+	Item	Poison Gem	Blunder Policy	
+	Level	40	41	
+	Nature		Varies	Modest
+	Ability	Corrosion	Galvanize	
+	Move 1	Leaf Blade	Hyper Voice	
+	Move 2	Poison Jab	Flamethrower	
+	Move 3	Crunch	Focus Punch	
+	Move 4	Sleep Powder	Quick Attack	
+				
+
+Infielder AlexGauntlet		
+            Houndoom	Garbodor	Throh
+	Item	Blackglasses	Normal Gem	Leftovers
+	Level	40	40	41
+	Nature	Docile	Relaxed	Relaxed
+	Ability	Unnerve	Stench	Patient
+	Move 1	Fire Lash	Spin Out	Circle Throw
+	Move 2	Dark Pulse	Poison Jab	Earthquake
+	Move 3	Thunder Fang	Autotomize	Rock Slide
+	Move 4	Smog	Explosion	Ice Punch
+			
+				
+Infielder ConnorGauntlet		
+            Hitmonchan	Forretress	Marowak
+	Item	Muscle Band	Custap Berry	Thick Club
+	Level	40	40	41
+	Nature	Lonely	Lonely	Lonely
+	Ability	Iron Fist	Sturdy	Battle Armor
+	Move 1	Sky Uppercut	Gyro Ball	Drill Run
+	Move 2	Fire Punch	Steamroller	Shadow Punch
+	Move 3	ThunderPunch	Rollout	Shadow Sneak
+	Move 4	Ice Punch	Selfdestruct	Temper Flare
+
+
+
+
+
+Dancer Brian		
+            Spinda	Scizor	Bellossom	Hitmontop		
+	Level	42	42	42	43	
+	Nature	Bashful	Sassy	Quiet	Brave	
+	Ability	Contrary	Technician	Hustle	Technician	
+	Move 1	Crush Claw	Bullet Punch	Trop Kick	Double Kick	
+	Move 2	Hammer Arm	U-Turn	Dizzy Punch	Spin Out	
+	Move 3	Spin Out	Iron Head	Acrobatics	Fake Out	
+	Move 4	Psychic	Swords Dance	Teeter Dance	Double Hit	
+						
+						
+Backers Ava & Aya (2x)		
+            Lopunny	Braviary	Exploud	Togekiss	
+	Level	41	41	42	42	
+	Nature	Hasty	Rash	Quiet	Quirky	
+	Ability	Scrappy	Defiant	Scrappy	Serene Grace	
+	Move 1	Fake Out	Thrash	Hyper Voice	Air Slash	
+	Move 2	Rage	Dual Wingbeat	Flamethrower	Water Pulse	
+	Move 3	Brick Break	Rock Slide	Ice Beam	Draining Kiss	
+	Move 4	Attract	Retaliate	Bug Buzz	Roost	
+						
+						
+Musician Preston (3x)		
+            Maractus	Chatot	Feraligatr	Kricketune	
+	Level	41	41	41	42	
+	Nature	Serious	Naive	Sassy	Docile	
+	Ability	Heatproof	Amplifier	Sheer Force	Savant	
+	Move 1	Petal Dance	Hyper Voice	Muddy Water	Acrobatics	
+	Move 2	Mud Bomb	Chatter	Dragon Claw	Poison Jab	
+	Move 3	Hyper Voice	Psychic Noise	Rock Slide	Mud Bomb	
+	Move 4	Fiery Dance	Torment	Earthquake	Shadow Ball	
+						
+						
+						
+PkMn Trainer Rood (2x)		
+            Swoobat	Tauros	Darmanitan	Zoroark	Dusknoir
+	Item	Life Orb	Assault Vest	Fire Gem	Focus Sash	Ghost Gem
+	Level	43	43	43	43	44
+	Nature	Rash	Bashful	Adamant	Timid	Bold
+	Ability	Keen Senses	Intimidate	Sheer Force	Exploit	Shadow Tag
+	Move 1	Hurricane	Rage	Flare Blitz	Knock Off	Shadow Punch
+	Move 2	Moonblast	Thrash	Zen Headbutt	Dark Pulse	Drain Punch
+	Move 3	Iron Tail	Close Combat	Protect	Sludge Bomb	Ice Punch
+	Move 4	Hypnosis	Aqua Tail	Hammer Arm	Flamethrower	Fire Punch
+
+
+
+
+Kanto Leader Janine (2x)		
+            Drapion	Glalie	Noctowl	Weezing	Samurott	Crobat
+	Item	Air Balloon	Focus Sash	Charti Berry	Quick Claw	Water Gem	Covert Cloak
+	Level	43	43	44	44	44	45
+	Nature	Gentle	Bold	Quirky	Modest	Brave	Modest
+	Ability	Tough Claws	Determined	Keen Senses	Levitate	Hyper Cutter	Sniper
+	Move 1	Cross Poison	Head Smash	Shadow Ball	Heat Wave	Sacred Sword	Cross Poison
+	Move 2	Knock Off	Sheer Cold	Air Slash	Thunderbolt	Aqua Tail	Air Slash
+	Move 3	Power Whip	Superpower	Blizzard	Body Press	X-Scissor	Aura Sphere
+	Move 4	Toxic Spikes	Spikes	Hypnosis	Gyro Ball	Night Slash	Dark Pulse
+
+
+
+
+Parasol Lady Nicole (2x)		
+            Luvdisc	Carnivine	Seismitoad	Castform	Lumineon
+	Item	Water Gem	Chople Berry	Life Orb	Wacan Berry	Focus Sash
+	Level	42	42	42	42	43
+	Nature	Hardy	Gentle	Impish	Rash	Calm
+	Ability	Friend Guard	Patient	Dry Skin	Forecast	Swift Swim
+	Move 1	Moonblast	Ingrain	Poison Jab	Scald	Weather Ball
+	Move 2	Hydro Cannon	Iron Head	Muddy Water	Aurora Beam	Thunder
+	Move 3	U-Turn	Scary Face	Mud Bomb	Thunderbolt	Ice Beam
+	Move 4	Lovely Kiss	Weather Ball	Drain Punch	Air Slash	Dazzling Gleam
+						
+						
+Worker Victor		
+            Rotom	Abomasnow	Sealeo	Beartic	
+	Item    None None Eviolite None
+    Level	42	42	42	43	
+	Nature	Bold	Naughty	Hasty	Lonely	
+	Ability	Levitate	Filter	Ice Body	Swift Swim	
+	Move 1	Glaciate	Ingrain	Dive	Icicle Crash	
+	Move 2	Discharge	Ice Punch	Avalanche	Strength	
+	Move 3	Scald	Water Pulse	Body Slam	Waterfall	
+	Move 4	Volt Switch	Recover	Slack Off	Rock Slide	
+				Has Eviolite		
+
+
+
+
+
+
+
+Worker Noel		
+            Cradily	Magcargo	Lairon	Typhlosion	Aerodactyl	
+	Item	Chople Berry	Air Balloon	Eviolite	Petaya Berry	Muscle Band	
+	Level	42	42	42	42	43	
+	Nature	Mild	Brave	Modest	Gentle	Naughty	
+	Ability	Patient	Water Absorb	Determined	Blaze	Tough Claws	
+	Move 1	Weather Ball	Lava Plume	Rock Wrecker	Flamethrower	Dual Wingbeat	
+	Move 2	Giga Drain	AncientPower	Outrage	Mud Bomb	Rock Climb	
+	Move 3	Recover	Rollout	Thunder	Endure	Steel Wing	
+	Move 4	Earth Power	Selfdestruct	Blizzard	U-Turn	Crunch	
+							
+							
+
+Worker Tavarius (Right)		
+            Gigalith	Steelix						
+	Item	Wise Glasses	Assault Vest				
+	Level	42	43				
+	Nature	Gentle	Jolly				
+	Ability	Sturdy	Sheer Force				
+	Move 1	Weather Ball	Iron Tail				
+	Move 2	Flash Cannon	Fire Fang				
+	Move 3	Thunderbolt	Crunch				
+	Move 4	Energy Ball	Thunder Fang				
+
+Worker Niel (Left)		
+            Mawile	Cacturne							
+	Item	Shuca Berry	Ground Gem				
+	Level	42	43				
+	Nature	Naughty	Bold				
+	Ability	Sheer Force	Sand Rush				
+	Move 1	Play Rough	Needle Arm				
+	Move 2	Iron Head	Phantom Strike				
+	Move 3	Ice Beam	Sand Tomb				
+	Move 4	Fire Blast	Sludge Bomb				
+							
+							
+Worker Tibor (3x)		
+            Golem	Dodrio	Darmanitan-Zen	Cofagrigus			
+	Item	Quick Claw	Focus Sash	Absorb Bulb	Colbur Berry		
+	Level	42	42	42	43		
+	Nature	Hasty	Relaxed	Calm	Brave		
+	Ability	Sturdy	Sand Rush	Turboblaze	Sand Force		
+	Move 1	Rock Climb	Drill Run	Power Gem	Magnet Bomb		
+	Move 2	Drill Run	Drill Peck	Dream Eater	Scorching Sands		
+	Move 3	Gyro Ball	Flail	Mystical Fire	Power Gem		
+	Move 4	Brick Break	Blaze Kick	Aura Sphere	Grudge		
+							
+							
+Worker Pasqual		
+            Nidoqueen	Lunatone	Sudowoodo	Skarmory	Gabite	
+	Item	Life Orb	Power Herb	Hard Stone	Cell Battery	Eviolite	
+	Level	43	43	43	43	44	
+	Nature	Quirky	Relaxed	Serious	Sassy	Timid	
+	Ability	Sheer Force	Solid Rock	Determined	Sturdy	Sand Veil	
+	Move 1	Sludge Bomb	Moonblast	Head Smash	Dual Wingbeat	Temper Flare	
+	Move 2	Flamethrower	Mystical Fire	Wood Hammer	Steel Wing	Dual Chop	
+	Move 3	Ice Beam	Meteor Beam	Hammer Arm	Rock Slide	Drill Run	
+	Move 4	Thunderbolt	Ice Beam	Double-Edge	Drill Run	Swords Dance	
+							
+							
+Worker Maynard (Right)		
+            Sandslash	Mamoswine	Torterra					
+	Item	Steel Gem	Brightpowder	Yache Berry			
+	Level	43	44	45			
+	Nature	Serious	Bashful	Quiet			
+	Ability	Sand Force	Berserk	Solid Rock			
+	Move 1	Earthquake	Bulldoze	Ingrain			
+	Move 2	Rock Climb	Rock Tomb	Earthquake			
+	Move 3	Spin Out	Freeze-Dry	Avalanche			
+	Move 4	Steamroller	Strength	Recover			
+
+Worker Friedrich (Left)		
+            Archeops	Magnezone	Sigilyph				
+	Item	Sitrus Berry	Blunder Policy	Life Orb			
+	Level	43	44	45			
+	Nature	Jolly	Impish	Jolly			
+	Ability	Unnerve	Levitate	Magic Guard			
+	Move 1	Rock Slide	Discharge	Psyshock			
+	Move 2	Dual Wingbeat	Bug Buzz	Air Slash			
+	Move 3	Dragon Pulse	Aurora Beam	Weather Ball			
+	Move 4	Fire Fang	Light Screen	Energy Ball			
+							
+							
+Leader Clay		
+            Dugtrio	Electrode	Armaldo	Rhydon	Conkeldurr	Excadrill			
+	Item	Focus Sash	Air Balloon	Life Orb	Eviolite	Chople Berry	Focus Band
+	Level	44	44	44	45	45	46
+	Nature	Gentle	Bashful	Lax	Hardy	Hasty	Docile
+	Ability	Sand Force	Aftermath	Water Absorb	Solid Rock	Determined	Sand Rush
+	Move 1	Earthquake	Volt Tackle	Leech Life	Horn Drill	Head Smash	Earthquake
+	Move 2	Close Combat	Double-Edge	Power Whip	Drill Run	Superpower	Iron Head
+	Move 3	Stone Edge	Flash Cannon	Aqua Tail	Brick Break	Earthquake	Rock Climb
+	Move 4	Iron Head	Explosion	Rock Climb	Lunge	Slack Off	Steamroller
+
+
+
+
+
+
+
+
+Backpacker Eileen		
+            Walrein	Camerupt		
+	Level	48	48		
+	Nature	Gentle	Mild		
+	Ability	Thick Fat	Sheer Force		
+	Move 1	Icicle Crash	Heat Wave		
+	Move 2	Liquidation	Earth Power		
+	Move 3	Crunch	Yawn		
+	Move 4	Psychic Fangs	Uproar		
+
+Backpacker Randall (Right)		
+            Tangrowth	Druddigon		
+	Level	48	48		
+	Nature	Hasty	Careful		
+	Ability	Overgrow	Rough Skin		
+	Move 1	Energy Ball	Devour		
+	Move 2	Sludge Bomb	Temper Flare		
+	Move 3	Helping Hand	Iron Head		
+	Move 4	Focus Blast	Rock Climb		
+					
+					
+ Hiker Keith		
+            Golem	Parasect	Crustle	Solrock
+	Item	None	None	None	Brightpowder
+	Level	47	47	47	48
+	Nature	Brave	Adamant	Bold	Quirky
+	Ability	Sturdy	Stakeout	Shed Skin	Levitate
+	Move 1	Rock Slide	Leech Life	Rock Climb	Shadow Ball
+	Move 2	Earthquake	Ingrain	U-Turn	Earth Power
+	Move 3	Focus Punch	Protect	Toxic	Flame Burst
+	Move 4	Double-Edge	Spore	Rest	Psychic
+					
+					
+ Hiker Tobias		
+            Forretress	Cradily	Bronzong	Blastoise
+	Item	None	None	None	Iron Ball
+	Level	47	47	47	48
+	Nature	Careful	Timid	Calm	Serious
+	Ability	Skill Link	Storm Drain	Levitate	Determined
+	Move 1	Pin Missile	Diamond Storm	Psychic Noise	Wave Crash
+	Move 2	Icicle Spear	Energy Ball	Weather Ball	Gyro Ball
+	Move 3	Rock Blast	Scorching Sands	Flash Cannon	Double-Edge
+	Move 4	Barrage	Stealth Rock	Rain Dance	Block
+					
+					
+ Backpacker Annie		
+            Donphan	Steelix	Crawdaunt	Maractus
+	Item	Steel Gem	None	None	Iron Ball
+	Level	47	47	47	48
+	Nature	Rash	Docile	Rash	Bashful
+	Ability	Pickup	Heatproof	Adaptability	Storm Drain
+	Move 1	Spin Out	Iron Tail	Surf	Needle Arm
+	Move 2	Drill Run	Earthquake	Dark Pulse	Earthquake
+	Move 3	Rollout	Dragon Rush	Zen Headbutt	ThunderPunch
+	Move 4	Seed Bomb	Crunch	Waterfall	Swords Dance
+
+
+Psychic Tully (Right)		
+            Xatu	Beheeyem
+	Item	Rock Gem	Life Orb
+	Level	49	50
+	Nature	Gentle	Mild
+	Ability	Magic Bounce	Levitate
+	Move 1	Psychic Noise	Discharge
+	Move 2	Air Slash 	Energy Ball
+	Move 3	AncientPower	Ice Beam
+	Move 4	Light Screen	Shadow Ball
+
+
+Psychic Ena (Left)		
+            Claydol	Marowak
+	Item	Assault Vest	Thick Club
+	Level	49	50
+	Nature	Naive	Brave
+	Ability	Heavy Metal	Sturdy
+	Move 1	Earthquake	Earthquake
+	Move 2	Grudge	Rock Slide
+	Move 3	Ice Beam	Lunge
+	Move 4	Body Press	Brick Break
+
+
+
+Policeman Neagle		
+            Farfetch'd	Muk	Hariyama	Poliwrath	
+	Item	Stick	None	None	None	
+	Level	48	48	48	48	
+	Nature	Jolly	Hardy	Lonely	Jolly	
+	Ability	Rattled	Water Absorb	Thick Fat	Swift Swim	
+	Move 1	Hurricane	Dive	Focus Punch	Hydro Pump	
+	Move 2	Sacred Sword	Poison Jab	Wave Crash	Sky Uppercut	
+	Move 3	Leaf Tornado	Block	Body Slam	Lunge	
+	Move 4	Weather Ball	Payback	Bullet Punch	Hypnosis	
+						
+						
+Parasol Lady Tihana		
+            Masquerain	Seadra	Wailord	Dewgong	
+	Item	None	Eviolite	None	None	
+	Level	48	48	48	48	
+	Nature	Serious	Bold	Docile	Lonely	
+	Ability	Intimidate	Sniper	Truant	Swift Swim	
+	Move 1	Silver Wind	Octazooka	Water Spout	Ice Beam	
+	Move 2	Scald	Outrage	Surf	Freeze-Dry	
+	Move 3	Energy Ball	Seething Cold	Hyper Voice	Surf	
+	Move 4	Quiver Dance	Flip Turn	Yawn	Supersonic	
+						
+						
+						
+Scientist Jacques (Right)		
+            Golduck	Reuniclus	Bronzong		
+	Level	47	47	48		
+	Nature	Hasty	Naughty	Quiet		
+	Ability	Determined	Gooey	Heavy Metal		
+	Move 1	Wave Crash	Psychic	Flash Cannon		
+	Move 2	Psychic	Thunder	Weather Ball		
+	Move 3	Fake Out	Shadow Ball	Body Press		
+	Move 4	Double-Edge	Follow Me	Rock Slide		
+
+
+Scientist Marissa (Left)		
+            Toxicroak	Golbat	Qwilfish		
+	Item    None Eviolite None	
+	Level	47	47	48		
+	Nature	Jolly	Rash	Sassy		
+	Ability	Swift Swim	Sniper	Intimidate		
+	Move 1	Close Combat	Hurricane	Hydro Pump		
+	Move 2	Sludge Bomb	Cross Poison	Poison Jab		
+	Move 3	Muddy Water	Tailwind	Crunch		
+	Move 4	Mud Bomb	Dark Pulse	Destiny Bond		
+			Has Eviolite			
+						
+						
+PkMn Ranger Richard		
+            Leavanny	Sawsbuck-Winter	Victreebel	Rotom	Ludicolo
+	Level	48	48	48	48	49
+	Nature	Adamant	Lax	Hasty	Mild	Gentle
+	Ability	Savant	Skill Link	Corrosion	Galvanize	Swift Swim
+	Move 1	Sticky Web	Icicle Spear	Power Whip	Thunder	Scald
+	Move 2	Fake Out	Bullet Seed	Poison Jab	Leaf Storm	Energy Ball
+	Move 3	Knock Off	Barrage	Weather Crash	Stored Power	Ice Beam
+	Move 4	Liquidation	Bone Rush	Knock Off	Protect	Hyper Voice
+						
+						
+						
+School Kid Mara (Left)		
+            Gardevoir	Altaria	Azumarill			
+	Item	Big Root	Babiri Berry	Kebia Berry		
+	Level	47	48	49		
+	Nature	Bold	Lonely	Jolly		
+	Ability	Trace	Levitate	Huge Power		
+	Move 1	Dream Eater	Hurricane	Dive		
+	Move 2	Draining Kiss	Thunder	Aqua Jet		
+	Move 3	Aura Sphere	Moonblast	Zen Headbutt		
+	Move 4	Water Pulse	Weather Crash	Return		
+
+
+School Kid Alvin (Right)		
+            Dragonair	Feraligatr	Gorebyss		
+	Item	Eviolite	Assault Vest	Water Gem		
+	Level	47	48	49		
+	Nature	Quirky	Naughty	Jolly		
+	Ability	Majestic Ward	Intimidate	Swift Swim		
+	Move 1	Draco Meteor	Iron Tail	Muddy Water		
+	Move 2	Hurricane	Liquidation	Sludge Bomb		
+	Move 3	Weather Ball	Crunch	Dragon Pulse		
+	Move 4	Icy Wind	Ice Punch	Hypnosis		
+
+
+
+Ace Trainer Geoff (2x)		
+            Cacturne	Typhlosion	Rampardos	Probopass
+	Item	Smooth Rock	Charcoal	Assault Vest	Tera Leftovers
+	Level	50	50	50	51
+	Nature	Mild	Mild	Naughty	Quiet
+	Ability	Sand Rush	Turboblaze	Sheer Force	Sand Force
+	Move 1	Leaf Storm	Eruption	Rock Climb	Earth Power
+	Move 2	Phantom Strike	Flamethrower	Fire Punch	Flash Cannon
+	Move 3	Weather Crash	Scorching Sands	ThunderPunch	AncientPower
+	Move 4	Spikes	Protect	Ice Punch	Thunder Wave
+
+
+
+Hiker Shelby (Left)		
+            Kabutops	Armaldo
+	Level	50	51
+	Nature	Adamant	Docile
+	Ability	Skill Link	Water Absorb
+	Move 1	Rock Blast	Rock Slide
+	Move 2	Aqua Tail	Leech Life
+	Move 3	Fury Swipes	Superpower
+	Move 4	Bone Rush	Dragon Dance
+
+Hiker Jebediah (Right)		
+            Skarmory	Durant
+	Level	50	51
+	Nature	Mild	Docile
+	Ability	Sturdy	Hustle
+	Move 1	Acrobatics	Iron Head
+	Move 2	Drill Run	Lunge
+	Move 3	Sand Attack	Stompin Tantrum
+	Move 4	Body Press	Rock Climb
+
+
+
+					
+					
+					
+					
+Ace Trainer Belle		
+            Heatmor	Ninjask	Lopunny	Lucario
+	Item	Air Balloon	Loaded Dice	Silk Scarf	Tera Orb
+	Level	51	51	51	52
+	Nature	Hardy	Brave	Calm	Bashful
+	Ability	Tough Claws	Speed Boost	Scrappy	Trace
+	Move 1	Fire Lash	Razor Winds	Fake Out	Extremespeed
+	Move 2	Iron Head	Fury Swipes	Last Resort	Aura Sphere
+	Move 3	Zen Headbutt	Pin Missile	None	Iron Tail
+	Move 4	Obstruct	Substitute	None	Detect
+
+
+
+Guardian of Unova Cobalion		
+            Empoleon	Nidoqueen	Skarmory	Sawk	Bastiodon	Cobalion
+	Item	Chople Berry	Life Orb	Loaded Dice	Muscle Band	Assault Vest	Shell Bell
+	Level	52	52	52	52	52	60
+	Nature	Naughty	Jolly	Relaxed	Relaxed	Careful	Hardy
+	Ability	Torrent	Sheer Force	Sturdy	Quick Feet	Solid Rock	Intimidate
+	Move 1	Surf	Sludge Bomb	Razor Winds	Retaliate	Rock Wrecker	Sacred Sword
+	Move 2	Hurricane	Earth Power	Spike Cannon	Strength	Body Press	Flash Cannon
+	Move 3	Ice Beam	Flamethrower	Fury Swipes	U-Turn	Counter	AncientPower
+	Move 4	Earthquake	Ice Beam	Spikes	Knock Off	Dragon Tail	Work Up
+
+
+
+Guitarist Anna (2x)		
+            Mightyena	Luxray	Exploud	Houndoom
+	Item	Electric Gem	Black Glasses	Metronome	Charcoal
+	Level	48	48	48	48
+	Nature	Jolly	Naive	Rash	Rash
+	Ability	Strong Jaw	Intimidate	Anger Point	Turboblaze
+	Move 1	Crunch	Howl	Uproar	Heat Wave
+	Move 2	Thunder Fang	Payback	 None	Crunch
+	Move 3	Psychic Fangs	Thunderbolt	  None	Thunder Fang
+	Move 4	Ice Fang	Iron Tail	None	Energy Ball
+		
+					
+Dancer Kidd (2x)		
+            Hitmontop	Granbull	Plusle	Scrafty
+	Item	Steel Gem	Clear Amulet	Magnet	Roseli Berry
+	Level	48	48	48	48
+	Nature	Quiet	Jolly	Docile	Naive
+	Ability	Technician	Intimidate	Volt Absorb	Bulletproof
+	Move 1	Double Kick	Play Rough	Thunderbolt	Head Smash
+	Move 2	Spin Out	Strength	Flamethrower	Payback
+	Move 3	Brutal Swing	ThunderPunch	Dazzling Gleam	Revenge
+	Move 4	Fake Out	Bulk Up	Light Screen	Fake Out
+					
+					
+					
+Hiker Otto		
+            Carracosta	Probopass	Sandslash	Gigalith
+	Item	White Herb	Power Herb	Loaded Dice	Electric Gem
+	Level	48	48	48	49
+	Nature	Brave	Naughty	Docile	Hasty
+	Ability	Shell Armor	Sturdy	Sand Force	Chlorophyll
+	Move 1	Rock Slide	Electro Shot	Bone Rush	AncientPower
+	Move 2	Surf	Flash Cannon	Rock Blast	Charge Beam
+	Move 3	Knock Off	Meteor Beam	Spike Cannon	Solarbeam
+	Move 4	Shell Smash	Volt Switch	Sandstorm	Earth Power
+				
+					
+Hiker Jameson		
+            Flareon	Camerupt	Golurk	Magmar
+	Item	Fire Gem	Trickster Herb	Assault Vest	Eviolite
+	Level	48	48	48	49
+	Nature	Careful	Quirky	Rash	Docile
+	Ability	Flash Fire	Solid Rock	Well Baked Body	No Guard
+	Move 1	Flare Blitz	Lava Plume	Stompin Tantrum	Fire Spin
+	Move 2	Superpower	Earthquake	Shadow Punch	Sludge Wave
+	Move 3	Wild Charge	AncientPower	Heat Crash	Thunder
+	Move 4	Double-Edge	Stealth Rock	ThunderPunch	DynamicPunch
+					
+					
+					
+PkMn Ranger Louis		
+            Galvantula	Huntail	Forretress	Vespiquen
+	Item	Charti Berry	Water Gem	Electric Gem	Weakness Policy
+	Level	49	49	49	50
+	Nature	Sassy	Naughty	Quiet	Rash
+	Ability	Keen Senses	Illumination	Battle Armor	Unnerve
+	Move 1	Thunder	Dragon Rush	Zap Cannon	Attack Order
+	Move 2	Scorching Swarm	Wild Charge	Flash Cannon	Whirlwind
+	Move 3	Energy Ball	Aqua Tail	Bug Buzz	Roost
+	Move 4	Sludge Bomb	Iron Tail	Explosion	Defend Order
+					
+					
+					
+Scientist Ronald		
+            Jynx	Cryogonal	Magnezone	Glaceon
+	Item	Red Card	Wise Glasses	Life Orb	Electric Gem
+	Level	50	50	50	50
+	Nature	Lax	Rash	Jolly	Timid
+	Ability	Majestic Ward	Levitate	Light Metal	Permafrost
+	Move 1	Ice Beam	Blizzard	Discharge	Ice Beam
+	Move 2	Psychic	Thunderbolt	Energy Ball	Charge Beam
+	Move 3	Lovely Kiss	Flash Cannon	Earth Power	Calm Mind
+	Move 4	Surf	Mean Look	Selfdestruct	Recover
+				
+					
+Scientist Lumi		
+            Beheeyem	Grumpig	Mismagius	Espeon
+	Item	Psychic Gem	Toxic Orb	Leftovers	Electric Gem
+	Level	50	50	50	50
+	Nature	Docile	Docile	Serious	Lonely
+	Ability	Inner Focus	Magic Guard	Illusion	Chlorophyll
+	Move 1	Thunderbolt	Crunch	Dazzling Gleam	Psyshock
+	Move 2	Psychic	Zen Headbutt	Shadow Ball	Zap Cannon
+	Move 3	Recover	Facade	Thunderbolt	Solarbeam
+	Move 4	Cosmic Power	Psycho Shift	Hypnosis	Shadow Ball
+
+
+Doctor Kit (3x)		
+            Kangaskhan	Blissey	Bellossom	Audino
+	Type 1	Normal	Normal	Grass	Normal
+	Type 2	Dragon		Fairy	Fairy
+	Item	Covert Cloak	Chople Berry	Flying Gem	Life Orb
+	Level	50	50	50	50
+	Nature	Impish	Hasty	Careful	Docile
+	Ability	Scrappy	Healer	Flower Gift	Poison Heal
+	Move 1	Retaliate	Giga Impact	Petal Blizzard	Psychic
+	Move 2	Hammer Arm	Superpower	Acrobatics	Thunder
+	Move 3	Seismic Toss	Protect	Sunny Day	Fire Blast
+	Move 4	Block	Helping Hand	Weather Ball	Blizzard
+
+					
+PkMn Ranger Briana (3x)		
+            Sceptile	Serperior	Nidoqueen	Sawsbuck
+	Item	Cell Battery	Magnet	Electric Gem	Rock Gem
+	Level	50	50	50	50
+	Nature	Lonely	Rash	Serious	Adamant
+	Ability	Unburden	Adaptability	Sheer Force	Serene Grace
+	Move 1	Leaf Blade	Discharge	Focus Blast	Body Slam
+	Move 2	ThunderPunch	Leaf Tornado	Stompin Tantrum	Iron Head
+	Move 3	Acrobatics	Thunderbolt	Ice Beam	Zen Headbutt
+	Move 4	Dragon Claw	Glare	Thunder	Rock Slide
+					
+					
+					
+Beauty Stella		
+            Pidgeot	Swellow	Kingdra	Emolga
+	Item	Assault Vest	Electric Gem	Leftovers	Brightpowder
+	Level	50	50	50	50
+	Nature	Sassy	Quirky	Bashful	Careful
+	Ability	Aerilate	Guts	Swift Swim	Motor Drive
+	Move 1	Uproar	Extremespeed	Scald	Discharge
+	Move 2	Thunder	Steel Wing	Dragon Rush	Air Slash
+	Move 3	Focus Blast	Drill Peck	Ice Beam	Iron Tail
+	Move 4	Fire Blast	Volt Tackle	Rain Dance	Play Rough
+	
+					
+Beauty Monika		
+            Clefable	Togekiss	Gallade	Pachirisu
+	Item	Trickster Herb	Leftovers	Blunder Policy	Weakness Policy
+	Level	50	50	50	50
+	Nature	Timid	Naughty	Naive	Impish
+	Ability	Unaware	Serene Grace	Hyper Cutter	Prankster
+	Move 1	Thunder	Air Slash	Close Combat	Discharge
+	Move 2	Fire Blast	AncientPower	Psycho Cut	Dazzling Gleam
+	Move 3	Blizzard	Charge Beam	Attract	Charm
+	Move 4	Stealth Rock	Thunder Wave	Night Slash	Captivate
+					
+					
+					
+Ace Trainer Shaye		
+            Mamoswine	Zebstrika	Krookodile	Stunfisk
+	Item	Leftovers	Normal Gem	Muscle Band	Quick Claw
+	Level	50	50	51	51
+	Nature	Docile	Lonely	Docile	Gentle
+	Ability	Berserk	Reckless	Intimidate	Dry Skin
+	Move 1	Earth Power	Wild Charge	Wicked Blow	Zing Zap
+	Move 2	Freeze-Dry	Double-Edge	Thunder Fang	Earth Power
+	Move 3	Rock Slide	Temper Flare	Swagger	Liquidation
+	Move 4	Thrash	Protect	Psychic Fangs	Gunk Shot
+					
+					
+Ace Trainer Vicki		
+            Rotom	Illumise	Kecleon	Gengar
+	Item	Electric Gem	Focus Sash	Attack Insurance	Wise Glasses
+	Level	50	50	51	51
+	Nature	Mild	Gentle	Quirky	Hasty
+	Ability	Galvanize	Pixilate	Savant	Levitate
+	Move 1	Hyper Voice	Fake Out	ThunderPunch	Shadow Ball
+	Move 2	Ominous Wind	Return	Drain Punch	Thunder
+	Move 3	Energy Ball	Helping Hand	Sucker Punch	Sludge Bomb
+	Move 4	Confuse Ray	Zing Zap	Protect	Destiny Bond
+
+
+School Kid Dwight		
+            Floatzel	Whiscash	Pikachu	Lanturn
+	Item	Wacan Berry	Ability Drill	Light Ball	Wise Glasses
+	Level	50	50	50	50
+	Nature	Jolly	Adamant	Naive	Quiet
+	Ability	Technician	Adaptability	Galvanize	Volt Absorb
+	Move 1	Chilling Water	Earthquake	Extremespeed	Thunder
+	Move 2	Tail Slap	Muddy Water	Thunderbolt	Hydro Pump
+	Move 3	Natural Gift	Volt Tackle	Surf	Blizzard
+	Move 4	Flip Turn	Swagger	Present	Thunder Wave
+					
+					
+School Kid Janice		
+            Excadrill	Ferrothorn	Eelektross	Scizor
+	Item	Liechi Berry	Assault Vest	Expert Belt	Flying Gem
+	Level	50	50	50	50
+	Nature	Gentle	Relaxed	Hardy	Quirky
+	Ability	Sturdy	Iron Barbs	Levitate	Light Metal
+	Move 1	Drill Run	Power Whip	Thunderbolt	Lunge
+	Move 2	Iron Head	Thunder	Aqua Tail	Rock Slide
+	Move 3	Rock Slide	Heavy Slam	Giga Drain	Acrobatics
+	Move 4	X-Scissor	Knock Off	Crunch	Substitute
+
+
+Sinnoh Leader Volkner		
+            Jolteon	Octillery	Luxray	Ambipom	Electivire
+	Item	Ability Drill	Air Balloon	Focus Band	Starf Berry	Assault Vest
+	Level	51	50	51	50	52
+	Nature	Serious	Modest	Brave	Quirky	Lonely
+	Ability	Tenacity	Sniper	Guts	Speed Boost	Galvanize
+	Move 1	Thunderbolt	Octazooka	Thunder Fang	Double-Edge	Double-Edge
+	Move 2	Volt Switch	Charge Beam	Sucker Punch	Natural Gift	Quick Attack
+	Move 3	Protect	Flamethrower	Crunch	Substitute	Temper Flare
+	Move 4	Shadow Ball	Sludge Bomb	Ice Fang	Baton Pass	Focus Blast
+
+						
+						
+
+
+
+
+Ace Trainer Lydon (2x)		
+            Lapras	Dewgong	Noctowl	Beartic
+	Type 1	Ice	Water	Ghost	Fairy
+	Type 2	Dragon	Ice	Flying	
+	Item	Icy Rock	Wise Glasses	Ice Gem	Tera Rock
+	Level	51	51	51	52
+	Nature	Calm	Bashful	Sassy	Modest
+	Ability	Refrigerate	Keen Senses	Overcoat	Slush Rush
+	Move 1	Hyper Voice	Freeze-Dry	Shadow Ball	Play Rough
+	Move 2	Hydro Pump	Water Pulse	Blizzard	Hammer Arm
+	Move 3	Thunderbolt	Thunder	Psychic	Ice Hammer
+	Move 4	Sing	Safeguard	Moonblast	Night Slash
+					
+					
+Ace Trainer Mary (2x)		
+            Rapidash	Druddigon	Gigalith	Magmortar
+	Item	Electric Gem	Life Orb	Shuca Berry	Tera F-Band
+	Level	51	51	51	52
+	Nature	Impish	Naughty	Gentle	Jolly
+	Ability	Drought	Sheer Force	Chlorophyll	No Guard
+	Move 1	Flare Blitz	Dragon Rush	Power Gem	Thunder
+	Move 2	Wild Charge	Fire Punch	Thunderbolt	Focus Blast
+	Move 3	Starburst	ThunderPunch	Solarbeam	Solarbeam
+	Move 4	Protect	Stealth Rock	Weather Ball	Flamethrower
+
+
+
+
+Preschooler Greg (Left)		
+            Totodile	Chimchar	Bulbasaur					
+	Item	Mascot Badge	Mascot Badge	Mascot Badge		
+	Level	51	51	51		
+	Nature	Rash	Modest	Bashful		
+	Ability	Torrent	Blaze	Overgrow		
+	Move 1	Muddy Water	Flamethrower	Energy Ball		
+	Move 2	Return	Fake Out	Sludge Bomb		
+	Move 3	Crunch	Endure	Earth Power		
+	Move 4	Ice Fang	Hyper Voice	Sleep Powder		
+
+Preschooler Chrissy (Right)		
+            Charmander	Treecko	Piplup		
+	Item	Mascot Badge	Mascot Badge	Mascot Badge		
+	Level	51	51	51		
+	Nature	Lonely	Hasty	Timid		
+	Ability	Blaze	Overgrow	Torrent		
+	Move 1	Overheat	Energy Ball	Scald		
+	Move 2	Dragon Claw	Drain Punch	Steel Wing		
+	Move 3	Return	Knock Off	Dual Wingbeat		
+	Move 4	Will-o-Wisp	Iron Tail	Ice Beam		
+						
+						
+						
+Nursery Aide Hollie (3x)		
+            Igglybuff	Miltank	Pichu	Cleffa	
+	Item	Mascot Badge	None	Mascot Badge	Mascot Badge	
+	Level	48	52	48	48	
+	Nature	Lonely	Adamant	Brave	Naive	
+	Ability	Magic Bounce	Healer	Thunder Armor	Friend Guard	
+	Move 1	Doubleslap	Body Slam	Discharge	Moonblast	
+	Move 2	Flamethrower	Helping Hand	Fake Out	Psychic	
+	Move 3	Thunderbolt	Captivate	Draining Kiss	Meteor Mash	
+	Move 4	Hyper Voice	Charm	Surf	Milk Drink	
+						
+						
+						
+Harlequin Pat (Left)		
+            MIMEJR.	Smeargle			
+	Item	Mascot Badge	None			
+	Level	50	50			
+	Nature	Bold	Bashful			
+	Ability	Technician	Savant			
+	Move 1	Doubleslap	Scorching Swarm			
+	Move 2	Zen Headbutt	Triple Axel			
+	Move 3	Fake Out	Draco Meteor			
+	Move 4	Low Sweep	Thunder			
+
+Harlequin Ian (Right)		
+            Spheal	Conkeldurr			
+	Item	Mascot Badge	None			
+	Level	50	50			
+	Nature	Gentle	Relaxed			
+	Ability	Ice Body	Determined			
+	Move 1	Avalanche	Rock Wrecker			
+	Move 2	Aqua Tail	Drain Punch			
+	Move 3	Spin Out	Mach Punch			
+	Move 4	Yawn	Knock Off			
+						
+						
+Twins Sola & Ana (2x)		
+            Jumpluff	Mawile	Granbull	Delibird	Azumarill
+	Level	50	50	50	51	51
+	Nature	Impish	Bashful	Adamant	Bashful	Serious
+	Ability	Wind Rider	Intimidate	Hustle	Refrigerate	Huge Power
+	Move 1	Acrobatics	Swords Dance	Play Rough	Fake Out	Waterfall
+	Move 2	Sleep Powder	Iron Tail	Brick Break	Last Resort	Focus Punch
+	Move 3	Tailwind	Strength	Retaliate		Dizzy Punch
+	Move 4	Captivate	Rock Slide	Crunch		Return
+
+
+Socialite Grace		
+            Lilligant	Chandelure	Chimecho	Starmie	Persian	
+	Item	Focus Sash	Ghost Gem	Blunder Policy	Life Orb	Scope Lens	
+	Level	52	52	52	52	52	
+	Nature	Timid	Lax	Timid	Serious	Quirky	
+	Ability	Chlorophyll	Shadow Tag	Pixilate	Patient	Sniper	
+	Move 1	Teeter Dance	Shadow Ball	Uproar	Surf	Iron Tail	
+	Move 2	Stored Power	Psychic	Hypnosis	Psychic	Crush Claw	
+	Move 3	Quiver Dance	Calm Mind	Inferno	Future Sight	Night Slash	
+	Move 4	Solarbeam	Mystical Fire	Blizzard	Ice Beam	U-Turn	
+							
+							
+Gentleman Daniel	
+            Absol	Dusclops	Grumpig	Shedinja			
+	Level	51	51	51	52		
+	Nature	Naughty	Bold	Mild	Lonely		
+	Ability	Tough Claws	Patient	Hustle	Sturdy		
+	Move 1	Knock Off	Shadow Punch	Zen Headbutt	Scorching Swarm		
+	Move 2	Play Rough	Ice Hammer	Shadow Punch	Shadow Force		
+	Move 3	Psyblade	Drain Punch	Confuse Ray	Earth Power		
+	Move 4	Superpower	Bulk Up	Sucker Punch	Curse		
+							
+							
+Pokefan Jude		
+            Purugly	Spinda	Umbreon	Stantler		
+	Level	51	51	51	52		
+	Nature	Bold	Quirky	Jolly	Naive		
+	Ability	Skill Link	Contrary	Magic Guard	Illusion		
+	Move 1	Fury Swipes	Close Combat	Night Daze	Retaliate		
+	Move 2	Tail Slap	Spin Out	Psychic	Shadow Force		
+	Move 3	Attract	Ice Hammer	Counter	Psycho Boost		
+	Move 4	Hypnosis	Stored Power	Nasty Plot	Work Up		
+							
+							
+Pokefan Georgia	
+            Clefable	Reuniclus	Delcatty	Drifblim		
+	Level	51	51	51	52		
+	Nature	Careful	Jolly	Lonely	Quiet		
+	Ability	Unaware	Magic Guard	Normalize	Flare Boost		
+	Move 1	Moonblast	Psystrike	Fake Out	Ominous Wind		
+	Move 2	Shadow Ball	Focus Blast	Sucker Punch	Dream Eater		
+	Move 3	Psychic	Reflect Type	U-Turn	Hypnosis		
+	Move 4	Healing Wish	Recover	Ice Beam	Heat Wave		
+							
+							
+Psychic Micki (Left)		
+            Ninetales	Bronzong						
+	Level	51	52				
+	Nature	Calm	Lax				
+	Ability	Serene Grace	Levitate				
+	Move 1	Searing Shot	Psycho Boost				
+	Move 2	Dazzling Gleam	Spin Out				
+	Move 3	Extrasensory	Boomburst				
+	Move 4	Ominous Wind	Helping Hand				
+
+Psychic Joyce (Right)		
+            Gothitelle	Banette						
+	Level	51	52				
+	Nature	Rash	Brave				
+	Ability	Forewarn	Shadow Tag				
+	Move 1	Fake Out	Retaliate				
+	Move 2	Psystrike	Shadow Force				
+	Move 3	Follow Me	Sucker Punch				
+	Move 4	Aura Sphere	Destiny Bond				
+							
+							
+							
+Kanto Leader Sabrina		
+            Hypno	Banette	Sigilyph	Musharna	Marowak	Alakazam
+	Item	Brightpowder	Colbur Berry	Choice Specs	Leftovers	Thick Club	Tera Focus Sash
+	Level	53	52	53	53	52	54
+	Nature	Bold	Jolly	Naughty	Docile	Serious	Hardy
+	Ability	Bad Dreams	Hustle	Tenacity	Magic Bounce	Quick Draw	Magic Guard
+	Move 1	Dark Void	Shadow Force	Psychic	Cosmic Power	Drill Run	Psychic
+	Move 2	Dream Eater	Crush Claw	Aeroblast	Fairy Wind	Phantom Strike	Focus Blast
+	Move 3	Sludge Wave	Pursuit	 None	Stored Power	Temper Flare	Zap Cannon
+	Move 4	Parting Shot	Play Rough	 None	Moonlight	Focus Punch	Detect
+
+
+
+
+Pilot Flynn (2x)		
+            Magnezone	Gliscor	Altaria	Yanmega	Klinklang	
+	Item	Occa Berry	Life Orb	Leftovers	Throat Spray	Chople Berry	
+	Level	51	51	51	51	52	
+	Nature	Serious	Jolly	Naughty	Rash	Sassy	
+	Ability	Levitate	Poison Heal	Levitate	Tenacity	Levitate	
+	Move 1	Flash Cannon	Earthquake	Fairy Wind	Bug Buzz	Giga Impact	
+	Move 2	Thunderbolt	Sky Drop	Dragon Rush	Air Slash	Zap Cannon	
+	Move 3	Thunder Wave	Rock Slide	Earthquake	Dragon Pulse	Brick Break	
+	Move 4	Supersonic	Protect	Hurricane	Psychic Noise	Steamroller	
+			Pre-Poisoned				
+							
+							
+Pilot Winslow		
+            Vanilluxe	Golduck	Rotom	Empoleon	Castform	
+	Item	Air Balloon	Safety Goggles	Wise Glasses	Leftovers	Charti Berry	
+	Level	52	52	52	52	52	
+	Nature	Naughty	Hasty	Timid	Modest	Mild	
+	Ability	Snow Warning	Determined	Levitate	Snow Cloak	Forecast	
+	Move 1	Blizzard	Wave Crash	Blizzard	Steel Wing	Weather Ball	
+	Move 2	Swagger	Weather Crash	Discharge	Waterfall	Heat Wave	
+	Move 3	Mirror Coat	Psychic	Volt Switch	Drill Peck	Surf	
+	Move 4	Gunk Shot	Superpower	Will-o-Wisp	Swords Dance	Thunderbolt	
+							
+							
+Pilot Elron (3x)		
+            Pidgeot	Electrode	Mandibuzz	Glalie	Pelipper	
+	Item	Wise Glasses	Fighting Gem	Loaded Dice	Choice Band	Mystic Water	
+	Level	51	51	51	52	52	
+	Nature	Mild	Bashful	Adamant	Relaxed	Bold	
+	Ability	No Guard	Reckless	Rough Skin	Levitate	Torrent	
+	Move 1	Hurricane	Electro Ball	Bone Rush	Rock Wrecker	Water Spout	
+	Move 2	Blizzard	Spin Out	Rock Blast	Triple Axel	Hydro Pump	
+	Move 3	Roost	Superpower	Razor Winds	Switcheroo	Hurricane	
+	Move 4	FeatherDance	Magnet Rise	Knock Off	Earthquake	Ice Beam	
+							
+							
+Pilot Ewing		
+            Claydol	Lunatone	Dodrio	Flygon	Aerodactyl	
+	Item	Smooth Rock	Weakness Policy	Muscle Band	Safety Goggles	Rock Gem	
+	Level	52	52	52	52	53	
+	Nature	Naive	Relaxed	Rash	Hasty	Lax	
+	Ability	Levitate	Levitate	Sand Veil	Amplifier	Intimidate	
+	Move 1	Weather Ball	AncientPower	Drill Peck	Bug Buzz	Head Smash	
+	Move 2	Earth Power	Fairy Wind	Drill Run	Clanging Scales	Dual Wingbeat	
+	Move 3	Psychic	Stored Power	Head Smash	Earthquake	U-Turn	
+	Move 4	Spikes	Mystical Fire	Thrash	Boomburst	Aqua Tail	
+							
+							
+Pilot Chase		
+            Emolga	Drifblim	Charizard	Togekiss	Machamp	Braviary
+	Item	Flying Gem	Life Orb	Fire Gem	Leftovers	Air Balloon	Wacan Berry
+	Level	53	53	53	53	53	53
+	Nature	Docile	Careful	Rash	Gentle	Sassy	Adamant
+	Ability	Wind Rider	Aerilate	Levitate	Serene Grace	No Guard	Hustle
+	Move 1	Acrobatics	Double-Edge	Flare Blitz	Air Slash	DynamicPunch	Crush Claw
+	Move 2	Volt Tackle	Substitute	Dragon Rush 	AncientPower	Stone Edge	Fly
+	Move 3	Charm	U-Turn	Acrobatics	Aura Sphere	Bullet Punch	Rock Slide
+	Move 4	U-Turn	Explosion	Earthquake	Roost	Knock Off	Superpower
+							
+							
+							
+Leader Skyla (2x)		
+            Empoleon	Staraptor	Skarmory	Archeops	Blaziken	Swanna
+	Item	Air Balloon	Brightpowder	Wacan Berry	Starf Berry	Focus Sash	Tera Focus Band
+	Level	54	54	54	54	54	55
+	Nature	Calm	Gentle	Naughty	Modest	Lonely	Quirky
+	Ability	Lightningrod	Reckless	Tenacity	Intimidate	Determined	Serene Grace
+	Move 1	Muddy Water	Superpower	Dual Wingbeat	Head Smash	Brave Bird	Hurricane
+	Move 2	Blizzard	Brave Bird	Steel Wing	Hurricane	Overheat	Blizzard
+	Move 3	Flash Cannon	Double-Edge	Earthquake	Substitute	Close Combat	Scald
+	Move 4	Earth Power	U-turn	Natural Gift	Heat Wave	Earthquake	Detect
+
+
+
+
+
+
+PkMn Trainer RivalFlocessyTepig	
+            Woobat	Deerling	Seel	Tepig	
+	Level	9	10	10	11
+	Nature	Rash	Gentle	Impish	Hardy
+	Ability	Keen Senses	Sap Sipper	Lightningrod	Intimidate
+	Move 1	Heart Stamp	Tackle	Icy Wind	Flame Wheel
+	Move 2	Wing Attack	Razor Leaf	Fake Out	Faint Attack
+	Move 3	Confusion	Leech Seed	Chilling Water	Headbutt
+	Move 4	Supersonic	Stomp	Mud-Slap	Rock Throw
+
+
+PkMn Trainer RivalFlocessyOshawott	
+            Doduo	Growlithe	Petilil	Oshawott			
+	Level	9	10	10	11
+	Nature	Timid	Hardy	Docile	Sassy
+	Ability	Tough Claws	Intimidate	Chlorophyll	Shell Armor
+	Move 1	Stomp	Incinerate	Mega Drain	Barrage
+	Move 2	Pluck	Lick	Swift	Karate Chop
+	Move 3	Assurance	Tackle	Sleep Powder	Icy Wind
+	Move 4	Quick Attack	Work Up	Leech Seed	Aqua Jet
+					
+PkMn Trainer RivalFlocessySnivy	
+            Spearow	Buizel	Darumaka	Snivy					
+	Level	9	10	10	11
+	Nature	Hasty	Quirky	Naive	Serious
+	Ability	Intimidate	Technician	Vital Spirit	Adaptability
+	Move 1	Pursuit	Tackle	Flame Charge	Mega Drain
+	Move 2	Pluck	Water Gun	Tackle	Mud Shot
+	Move 3	Screech	Mud-Slap	Rock Throw	Swift
+	Move 4	Quick Attack	Vacuum Wave	Yawn	Electroweb
+
+
+
+
+
+School Kid SeymourWater		
+            Krabby	Barboach	Panpour
+	Item	Oran Berry	Oran Berry	Petaya Berry
+	Level	12	12	12
+	Nature	Careful	Naughty	Quiet
+	Ability	Sheer Force	Adaptability	Gluttony
+	Move 1	Aqua Jet	Barrage	Water Pulse
+	Move 2	Bug Bite	Mud Shot	Disarming Voice
+	Move 3	Headbutt	Disable	Acrobatics
+	Move 4	Stomp	Supersonic	Mud Shot
+				
+School Kid SeymourGrass		
+            Lileep	Lotad	Pansage
+	Item	Oran Berry	Oran Berry	Petaya Berry
+	Level	12	12	12
+	Nature	Calm	Jolly	Rash
+	Ability	Water Absorb	Swift Swim	Gluttony
+	Move 1	Sparkle	Rain Dance	Magical Leaf
+	Move 2	Leech Seed	Water Pulse	Disarming Voice
+	Move 3	Mega Drain	Mega Drain	Acrobatics
+	Move 4	Confuse Ray	Astonish	Mud Shot
+				
+School Kid SeymourFire	
+            Cherubi	Houndour	Pansear
+	Item	Oran Berry	Oran Berry	Petaya Berry
+	Level	12	12	12
+	Nature	Sassy	Timid	Sassy
+	Ability	Chlorophyll	Unnerve	Gluttony
+	Move 1	Flame Wheel	Bite	Incinerate
+	Move 2	Razor Leaf	Incinerate	Disarming Voice
+	Move 3	Sunny Day	Will-o-Wisp	Acrobatics
+	Move 4	Covet	Clear Smog	Mud Shot
+
+
+
+School Kid CassieFire
+            Cherubi	Houndour	Pansear
+	Item	Oran Berry	Oran Berry	Petaya Berry
+	Level	12	12	12
+	Nature	Lonely	Hasty	Sassy
+	Ability	Chlorophyll	Unnerve	Gluttony
+	Move 1	Flame Wheel	Bite	Incinerate
+	Move 2	Razor Leaf	Incinerate	Disarming Voice
+	Move 3	Sunny Day	Will-o-Wisp	Acrobatics
+	Move 4	Covet	Clear Smog	Mud Shot
+				
+School Kid CassieWater		
+            Krabby	Barboach	Panpour
+	Item	Oran Berry	Oran Berry	Petaya Berry
+	Level	12	12	12
+	Nature	Impish	Modest	Careful
+	Ability	Sheer Force	Adaptability	Gluttony
+	Move 1	Aqua Jet	Barrage	Water Pulse
+	Move 2	Bug Bite	Mud Shot	Disarming Voice
+	Move 3	Headbutt	Disable	Acrobatics
+	Move 4	Stomp	Supersonic	Mud Shot
+				
+School Kid CassieGrass	
+            Lileep	Lotad	Pansage
+	Item	Oran Berry	Oran Berry	Petaya Berry
+	Level	12	12	12
+	Nature	Hasty	Docile	Calm
+	Ability	Water Absorb	Swift Swim	Gluttony
+	Move 1	Sparkle	Rain Dance	Magical Leaf
+	Move 2	Leech Seed	Water Pulse	Disarming Voice
+	Move 3	Mega Drain	Mega Drain	Acrobatics
+	Move 4	Confuse Ray	Astonish	Mud Shot
+
+
+
+
+
+PkMn Trainer RivalVirbankTepig	
+            Tranquill	Ivysaur	Clamperl	Vibrava	Pignite
+	Level	17	17	17	18	19
+	Item	Berry Juice	Big Root	Rindo Berry	Clear Amulet	Berry Juice
+	Nature	Serious	Quirky	Lax	Docile	Hasty
+	Ability	Unburden	Overgrow	Shell Armor	Keen Senses	Intimidate
+	Move 1	Aerial Ace	Mega Drain	Brine	Struggle Bug	Fire Fang
+	Move 2	Facade	Venoshock	Sparkle	Breaking Swipe	Beat Up
+	Move 3	Acrobatics	Sleep Powder	Icy Wind	Mud Shot	Rock Tomb
+	Move 4	Faint Attack	Leech Seed	Aqua Ring	Wing Attack	Bulldoze
+						
+PkMn Trainer RivalVirbankOshawott
+            Tranquill	Charmeleon	Tangela	Vibrava	Dewott
+	Level	17	17	17	18	19
+	Item	Berry Juice	Muscle Band	Occa Berry	Clear Amulet	Berry Juice
+	Nature	Hasty	Lax	Mild	Bashful	Impish
+	Ability	Unburden	Blaze	Gooey	Keen Senses	Hyper Cutter
+	Move 1	Aerial Ace	Breaking Swipe	Mega Drain	Struggle Bug	Razor Shell
+	Move 2	Facade	Flame Burst	Sludge	Breaking Swipe	Revenge
+	Move 3	Acrobatics	Metal Claw	Mud Shot	Mud Shot	Night Slash
+	Move 4	Faint Attack	Bite	Sleep Powder	Wing Attack	Retaliate
+						
+PkMn Trainer RivalVirbankSnivy
+            Tranquill	Wartortle	Ponyta	Vibrava	Servine			
+	Level	17	17	17	18	19
+	Item	Berry Juice	Leftovers	Passho Berry	Clear Amulet	Berry Juice
+	Nature	Careful	Impish	Modest	Docile	Hardy
+	Ability	Unburden	Torrent	Flash Fire	Keen Senses	Adaptability
+	Move 1	Aerial Ace	Barrage	Flamethrower	Struggle Bug	Leaf Tornado
+	Move 2	Facade	Metal Claw	Bulldoze	Breaking Swipe	Shock Wave
+	Move 3	Acrobatics	Icy Wind	Take Down	Mud Shot	Glare
+	Move 4	Faint Attack	Yawn	Work Up	Wing Attack	Leech Seed
+
+
+
+Team Plasma GruntVirbank1		
+            Liepard	Mothim	Linoone	Seaking
+	Item	Dark Gem	Charti Berry	Lum Berry	Wacan Berry
+	Level	24	24	24	25
+	Nature	Adamant	Lonely	Gentle	Quirky
+	Ability	Exploit	Tenacity	Tough Claws	Sap Sipper
+	Move 1	Crunch	Signal Beam	Headbutt	Waterfall
+	Move 2	Torment	Air Slash	Fury Swipes	Take Down
+	Move 3	Draining Kiss	Bullet Seed	Covet	Supersonic
+	Move 4	Parting Shot	Double Team	Sand Attack	Faint Attack
+					
+Team Plasma GruntVirbank2 (2x)		
+            Sneasel	Arbok	Lampent	Ariados
+	Item	Focus Sash	Black Sludge	Red Card	Enigma Berry
+	Level	24	24	25	25
+	Nature	Bold	Docile	Naive	Hardy
+	Ability	Technician	Sheer Force	Shadow Tag	Patient
+	Move 1	Icy Wind	Breaking Swipe	Will-o-Wisp	Bug Bite
+	Move 2	Snarl	Poison Tail	Infernal Parade	Assurance
+	Move 3	Fake Out	Glare	Hex	Sludge Bomb
+	Move 4	Chilling Water	Body Slam	Protect	Psychic
+
+
+
+
+
+
+
+
+
+
+
+PkMn Trainer RivalServineSewers (Right)		
+            Servine	Vibrava	Gligar	Eelektrik	
+	Item	Eviolite	Eviolite	Eviolite	Eviolite
+	Level	28	27	27	27
+	Nature	Quirky	Varies	Varies	Varies
+	Ability	Adaptability	Tenacity	Poison Heal	Levitate
+	Move 1	Leaf Tornado	Signal Beam	Bone Club	Thunder Fang
+	Move 2	Shock Wave	Dragonbreath	Aerial Ace	Sludge
+	Move 3	Giga Drain	Scorching Sands	Tailwind	Return
+	Move 4	Return	Return	Return	Draining Kiss
+
+
+PkMn Trainer RivalPigniteSewers	(Right)	
+            Pignite	Vibrava	Gligar	Eelektrik	
+	Item	Eviolite	Eviolite	Eviolite	Eviolite
+	Level	28	27	27	27
+	Nature	Hasty	Varies	Varies	Varies
+	Ability	Sheer Force	Tenacity	Poison Heal	Levitate
+	Move 1	Flamethrower	Signal Beam	Bone Club	Thunder Fang
+	Move 2	Beat Up	Dragonbreath	Aerial Ace	Sludge
+	Move 3	Drain Punch	Scorching Sands	Tailwind	Return
+	Move 4	Return	Return	Return	Draining Kiss
+
+
+PkMn Trainer RivalDewottSewers	(Right)	
+            Dewott	Vibrava	Gligar	Eelektrik		
+	Item	Eviolite	Eviolite	Eviolite	Eviolite
+	Level	28	27	27	27
+	Nature	Impish	Varies	Varies	Varies
+	Ability	Hyper Cutter	Tenacity	Poison Heal	Levitate
+	Move 1	Razor Shell	Signal Beam	Bone Club	Thunder Fang
+	Move 2	Aqua Jet	Dragonbreath	Aerial Ace	Sludge
+	Move 3	Return	Scorching Sands	Tailwind	Return
+	Move 4	Double Kick	Return	Return	Draining Kiss
+
+
+
+
+Team Plasma GruntSewers1 (Left)		
+            Houndoom	Fraxure	Zangoose
+	Item	Berry Juice	Roseli Berry	Clear Amulet
+	Level	26	27	28
+	Nature	Lax	Serious	Careful
+	Ability	Berserk	Mold Breaker	Poison Heal
+	Move 1	Incinerate	Breaking Swipe	Retaliate
+	Move 2	Snarl	Rock Smash	Protect
+	Move 3	Thunder Fang	Rock Slide	Night Slash
+	Move 4	Substitute	Swords Dance	Vital Throw
+
+
+Team Plasma GruntSewers2 (Right)		
+            Golduck	Fearow	Seviper
+	Item	Berry Juice	Dark Gem	Shuca Berry
+	Level	26	27	28
+	Nature	Serious	Modest	Adamant
+	Ability	Determined	Hustle	Exploit
+	Move 1	Barrage	Brutal Swing	Venoshock
+	Move 2	Psybeam	Aerial Ace	Night Slash
+	Move 3	Fake Out	Pursuit	Flame Burst
+	Move 4	Submission	X-Scissor	Mega Drain
+
+
+Rival BengaRoute4 (2x)		
+            Aerodactyl	Dusclops	Bronzong	Druddigon	Bouffalant
+	Item	Lum Berry	Eviolite	Trickster Herb	Weakness Policy	Quick Claw
+	Level	36	36	36	36	37
+	Nature	Serious	Mild	Bashful	Modest	Timid
+	Ability	Intimidate	Iron Fist	Levitate	Solid Rock	Sap Sipper
+	Move 1	Rock Slide	Shadow Punch	Gyro Ball	Devour	Rage
+	Move 2	Dual Wingbeat	Ice Punch	Psyshock	Poison Jab	Zen Headbutt
+	Move 3	Fire Fang	Hammer Arm	Light Screen	Rock Climb	Wild Charge
+	Move 4	Strength	Block	Reflect	Fire Punch	Drill Run
+
+
+
+Team Plasma ColressRoute4
+            Magneton	Rotom	Boldore	Beheeyem	Porygon2
+	Item	Eviolite	Expert Belt	Eviolite	Colbur Berry	Eviolite
+	Level	32	32	32	32	33
+	Nature	Lax	Gentle	Hasty	Quirky	Careful
+	Ability	Levitate	Levitate	Sand Force	Levitate	Levitate
+	Move 1	Discharge	BubbleBeam	AncientPower	Extrasensory	Discharge
+	Move 2	Flash Cannon	Flame Burst	Flash Cannon	Charge Beam	Ice Beam
+	Move 3	Techno Blast	Discharge	Parabolic Zap	Magical Leaf	Psychic
+	Move 4	Volt Switch	Aurora Beam	Selfdestruct	Volt Switch	Recover
+
+
+Rival BengaRanch (2x)		
+            Bronzor	Seedot	Larvesta	Gible	
+	Level	12	12	13	13
+	Nature	Relaxed	Quirky	Timid	Gentle
+	Ability	Levitate	Shell Armor	Flame Body	Rough Skin
+	Move 1	Confusion	Fake Out	Flame Charge	Breaking Swipe
+	Move 2	Metal Sound	Leaf Tornado	Struggle Bug	Stomp
+	Move 3	Water Pulse	Stun Spore	Electroweb	Secret Power
+	Move 4	Magical Leaf	Torment	Mega Drain	Incinerate
+
+
+
+PkMn Trainer NateSamurott (Left)			
+            Samurott	Pidgeot	
+	Item	Sitrus Berry	Expert Belt
+	Level	38	37
+	Nature  Varies  Varies
+    Ability	Shell Armor	No Guard
+	Move 1	Sacred Sword	Air Slash
+	Move 2	Razor Shell	Flame Burst
+	Move 3	Aqua Jet	Water Pulse
+	Move 4	Zen Headbutt	Aurora Beam
+
+
+PkMn Trainer RosaSamurott (Left)			
+            Samurott	Pidgeot	
+	Item	Sitrus Berry	Expert Belt
+	Level	38	37
+	Nature  Varies  Varies
+    Ability	Shell Armor	No Guard
+	Move 1	Sacred Sword	Air Slash
+	Move 2	Razor Shell	Flame Burst
+	Move 3	Aqua Jet	Water Pulse
+	Move 4	Zen Headbutt	Aurora Beam
+
+
+PkMn Trainer NateSerperior (Left)		
+            Serperior	Pidgeot
+	Item	Sitrus Berry	Expert Belt
+	Level	38	37
+    Nature  Varies Varies
+	Ability	Adaptability	No Guard
+	Move 1	Giga Drain	Air Slash
+	Move 2	Thunderbolt	Flame Burst
+	Move 3	Flamethrower	Water Pulse
+	Move 4	Dragon Pulse	Aurora Beam
+
+
+
+PkMn Trainer RosaSerperior (Left)	
+            Serperior	Pidgeot
+	Item	Sitrus Berry	Expert Belt
+	Level	38	37
+    Nature  Varies Varies
+	Ability	Adaptability	No Guard
+	Move 1	Giga Drain	Air Slash
+	Move 2	Thunderbolt	Flame Burst
+	Move 3	Flamethrower	Water Pulse
+	Move 4	Dragon Pulse	Aurora Beam
+
+
+PkMn Trainer NateEmboar (Left)		
+            Emboar	Pidgeot	
+	Item	Sitrus Berry	Expert Belt
+	Level	38	37
+    Nature  Varies Varies
+	Ability	Intimidate	No Guard
+	Move 1	Fire Fang	Air Slash
+	Move 2	Crunch	Flame Burst
+	Move 3	Drill Run	Water Pulse
+	Move 4	Brick Break	Aurora Beam
+
+PkMn Trainer RosaEmboar (Left)		
+            Emboar	Pidgeot	
+	Item	Sitrus Berry	Expert Belt
+	Level	38	37
+    Nature  Varies Varies
+	Ability	Intimidate	No Guard
+	Move 1	Fire Fang	Air Slash
+	Move 2	Crunch	Flame Burst
+	Move 3	Drill Run	Water Pulse
+	Move 4	Brick Break	Aurora Beam
+
+Team Plasma ClayGrunt1 (2x)		
+            Rampardos	Qwilfish	Ursaring	Granbull
+	Item	Chople Berry	Brightpowder	Attack Insurance	Muscle Band
+	Level	39	39	40	40
+	Nature	Bold	Rash	Calm	Rash
+	Ability	Sheer Force	Intimidate	Guts	Hustle
+	Move 1	Rock Slide	Triple Dive	Secret Power	Vital Throw
+	Move 2	Zen Headbutt	Poison Jab	Stompin Tantrum	Dizzy Punch
+	Move 3	Strength	Ice Fang	Night Slash	Rock Slide
+	Move 4	Head Charge	Lunge	Rock Tomb	Ice Fang
+
+
+Team Plasma ClayGrunt2		
+            Ninjask	Toxicroak	Heatmor	Sableye
+	Item	Sharp Beak	Expert Belt	Dark Gem	Mysterious Device
+	Level	39	39	39	40
+	Nature	Timid	Naive	Mild	Lax
+	Ability	Speed Boost	Exploit	Tough Claws	Magic Guard
+	Move 1	Aerial Ace	Strength	Lava Plume	Shadow Punch
+	Move 2	Skitter Smack	Sludge Bomb	Iron Head	Dark Pulse
+	Move 3	Substitute	Attract	Crunch	Power Gem
+	Move 4	Spin Out	Sucker Punch	Sucker Punch	Brick Break
+
+
+
+PWT Colress (2x)		
+            Klinklang	Rotom	Metagross	Manectric	Magnezone	Porygon-Z
+	Item	Life Orb	Proto Booster	Shuca Berry	Assault Vest	Chill Drive	Proto Accelerator
+	Level	46	46	46	47	47	48
+	Nature	Timid	Careful	Calm	Gentle	Timid	Adamant
+	Ability	Light Metal	Galvanize	Tough Claws	Intimidate	Levitate	Adaptability
+	Move 1	Gear Grind	Shock Wave	Iron Head	Volt Tackle	Thunderbolt	Wild Charge
+	Move 2	High Horsepower	Double-Edge	Zen Headbutt	Strength	Psychic Noise	Psychic
+	Move 3	Zing Zap	Water Pulse	Brick Break	Overheat	Techno Blast	Ice Beam
+	Move 4	Heat Crash	Telekinesis	ThunderPunch	Psychic Fangs	Energy Ball	Rage
+
+
+
+OLd Statue		
+            Cofagrigus	Regice	Registeel	Regirock	Darmanitan
+	Item	Eject Button	Life Orb	Leftovers	Assault Vest	Wise Glasses
+	Level	50	50	50	50	51
+	Nature	Modest	Jolly	Quiet	Lax	Hardy
+	Ability	Shadow Tag	Ice Body	Heatproof	Solid Rock	Sheer Force
+	Move 1	Hyper Beam	Ice Beam	Steel Beam	Stone Edge	AncientPower
+	Move 2	Shadow Ball	Aura Sphere	Seismic Toss	Strength	Psyshock
+	Move 3	Destiny Bond	Thunderbolt	Recover	Ice Hammer	Flamethrower
+	Move 4	Will-o-Wisp	AncientPower	Zap Cannon	Earthquake	Scorching Sands
+
+
+
+Team Plasma FrigateGrunt1		
+            Shiftry	Primeape	Raticate	Nidoking
+	Item	Focus Band	Brightpowder	Shell Bell	Proto Accelerator
+	Level	46	46	46	46
+	Nature	Careful	Bashful	Brave	Mild
+	Ability	Pickpocket	Anger Point	Guts	Sturdy
+	Move 1	Fake Out	DynamicPunch	Double-Edge	Sludge Wave
+	Move 2	U-Turn	Stompin Tantrum	Crunch	Earthquake
+	Move 3	Leaf Blade	Temper Flare	Leech Life	Ice Punch
+	Move 4	Sucker Punch	Thrash	Quick Attack	Outrage
+
+
+
+Team Plasma FrigateGrunt2	
+            Arbok	Weavile	Chandelure	Ariados
+	Item	Liechi Berry	Covert Cloak	Proto Armor	Quick Claw
+	Level	46	46	46	46
+	Nature	Jolly	Bashful	Bashful	Quirky
+	Ability	Intimidate	Technician	Flash Fire	Stakeout
+	Move 1	Dragon Rush	Ice Shard	Mystical Fire	1st Impression
+	Move 2	Iron Tail	Icy Wind	Psychic	Sucker Punch
+	Move 3	Aqua Tail	Snarl	Smog	Lunge
+	Move 4	Stockpile	Low Sweep	Protect	Crunch
+
+
+
+Team Plasma GruntFrigate3 (Left)		
+            Seviper	Fearow	Golduck
+	Item	Air Balloon	Muscle Band	Proto Armor
+	Level	47	47	47
+	Nature	Timid	Modest	Adamant
+	Ability	Strong Jaw	Hustle	Tough Claws
+	Move 1	Poison Fang	Brave Bird	Liquidation
+	Move 2	Fire Fang	Faint Attack	Psychic
+	Move 3	Ice Fang	Drill Run	Ice Beam
+	Move 4	Thunder Fang	Screech	Aqua Jet
+
+
+Team Plasma GruntFrigate4 (Right)		
+            Kingler	Relicanth	Weezing
+	Item	Clear Amulet	Leftovers	Proto Booster
+	Level	47	47	47
+	Nature	Naive	Bold	Bashful
+	Ability	Sheer Force	Determined	Levitate
+	Move 1	Crabhammer	Rock Wrecker	Gunk Shot
+	Move 2	Rock Climb	Wave Crash	Flamethrower
+	Move 3	Strength	Body Press	Thunderbolt
+	Move 4	Iron Head	Head Charge	Gyro Ball
+
+
+
+Team Plasma GruntFrigate5 (Left)		
+            Mothim	Seaking	Linoone
+	Item	Loaded Dice	Rindo Berry	Proto Booster
+	Level	47	47	47
+	Nature	Relaxed	Careful	Adamant
+	Ability	Wind Rider	Motor Drive	Tough Claws
+	Move 1	Razor Winds	Waterfall	Superpower
+	Move 2	Bullet Seed	Seismic Toss	Play Rough
+	Move 3	Tailwind	Megahorn	Shadow Claw
+	Move 4	Lunge	Helping Hand	Detect
+
+
+Team Plasma GruntFrigate6 (Right)		
+            Houndoom	Fraxure	Zangoose
+	Item	Poison Gem	Eviolite	Proto Accelerator
+	Level	47	47	47
+	Nature	Gentle	Bashful	Impish
+	Ability	Unnerve	Mold Breaker	Poison Heal
+	Move 1	Heat Wave	Dragon Rush	Crush Claw
+	Move 2	Torment	1st Impression	Knock Off
+	Move 3	Will-o-Wisp	Cross Chop	Toxic
+	Move 4	Smog	Dragon Dance	Obstruct
+
+
+
+PkMn Trainer FrigateCheren (Right)		
+            Stoutland	Clefable	Kecleon	Dodrio
+	Item	Sitrus Berry	Sitrus Berry	Sitrus Berry	Sitrus Berry
+	Level	48	47	47	47
+	Nature	Bashful	Docile	Docile	Serious
+	Ability	Scrappy	Friend Guard	Adaptability	Tough Claws
+	Move 1	Return	Moonblast	Shadow Claw	Drill Run
+	Move 2	Crunch	Flamethrower	Devour	Aerial Ace
+	Move 3	Howl	Ice Beam	Shadow Sneak	Jump Kick
+	Move 4	Strength	Thunderbolt	Crush Claw	Blaze Kick
+
+
+
+PkMn Trainer RivalSerperior (Right)	
+            Serperior	Unfezant	Flygon	Eelektross
+	Item	Sitrus Berry	Sitrus Berry	Sitrus Berry	Sitrus Berry
+	Level	50	49	48	48
+	Nature	Naive	Varies	Varies	Varies
+	Ability	Adaptability	Unburden	Amplifier	Levitate
+	Move 1	Thunderbolt	Acrobatics	Bug Buzz	Thunderpunch
+	Move 2	Energy Ball	Crush Claw	Dragon Claw	Sludge Bomb
+	Move 3	Flamethrower	Quick Attack	Scorching Sands	Knock Off
+	Move 4	Dragon Pulse	Dual Wingbeat	Fire Punch	Giga Drain
+
+
+PkMn Trainer RivalSamurott	(Right)	
+            Samurott	Unfezant	Flygon	Eelektross
+	Item	Sitrus Berry	Sitrus Berry	Sitrus Berry	Sitrus Berry
+	Level	50	49	48	48
+	Nature	Relaxed	Varies	Varies	Varies
+	Ability	Hyper Cutter	Unburden	Amplifier	Levitate
+	Move 1	Razor Shell	Acrobatics	Bug Buzz	Thunderpunch
+	Move 2	Sacred Sword	Crush Claw	Dragon Claw	Sludge Bomb
+	Move 3	Megahorn	Quick Attack	Scorching Sands	Knock Off
+	Move 4	Night Slash	Dual Wingbeat	Fire Punch	Giga Drain
+
+
+PkMn Trainer RivalEmboar	(Right)	
+            Emboar	Unfezant	Flygon	Eelektross
+	Item	Sitrus Berry	Sitrus Berry	Sitrus Berry	Sitrus Berry
+	Level	50	49	48	48
+	Nature	Gentle	Varies	Varies	Varies
+	Ability	Determined	Unburden	Amplifier	Levitate
+	Move 1	Flare Blitz	Acrobatics	Bug Buzz	Thunderpunch
+	Move 2	Crunch	Crush Claw	Dragon Claw	Sludge Bomb
+	Move 3	Rock Climb	Quick Attack	Scorching Sands	Knock Off
+	Move 4	Hammer Arm	Dual Wingbeat	Fire Punch	Giga Drain
+
+
+
+
+
+PkMn Trainer RivalChargestoneEmboar		
+            Unfezant	Venusaur	Slowbro	Flygon	Eelektross	Emboar			
+	Item	Power Herb	Starf Berry	Assault Vest	Silverpowder	Black Sludge	Focus Band
+	Level	50	49	49	50	50	51
+	Nature	Varies Varies Varies Varies Varies Varies 				
+	Ability	Unburden	Overgrow	Regenerator	Keen Senses	Levitate	Determined
+	Move 1	Sky Attack	Leaf Storm	Aqua Tail	Dragon Rush	Zing Zap	Flare Blitz
+	Move 2	Acrobatics	Gunk Shot	Zen Headbutt	Infestation	Poison Jab	Night Daze
+	Move 3	Return	Sleep Powder	Body Press	Earthquake	Leech Life	Rock Wrecker
+	Move 4	U-Turn	Earthquake	Flip Turn	Sing	Coil	Superpower
+						
+
+PkMn Trainer RivalChargestoneSamurott		
+            Unfezant	Charizard	Tangrowth	Flygon	Eelektross	Samurott				
+	Item	Power Herb	Starf Berry	Assault Vest	Silverpowder	Black Sludge	Focus Band
+	Level	50	49	49	50	50	51
+	Nature	Gentle	Hasty	Bashful	Modest	Docile	Bashful
+	Ability	Unburden	Blaze	Thick Fat	Keen Senses	Levitate	Hyper Cutter
+	Move 1	Sky Attack	Overheat	Giga Drain	Dragon Rush	Zing Zap	Sacred Sword
+	Move 2	Acrobatics	Draco Meteor	Focus Punch	Infestation	Poison Jab	Razor Shell
+	Move 3	Return	Fire Lash	Fire Punch	Earthquake	Leech Life	Night Slash
+	Move 4	U-Turn	ThunderPunch	AncientPower	Sing	Coil	Swords Dance
+							
+
+PkMn Trainer RivalChargestoneSerperior		
+            Unfezant	Blastoise	Rapidash	Flygon	Eelektross	Serperior												
+	Item	Power Herb	Starf Berry	Assault Vest	Silverpowder	Black Sludge	Focus Band
+	Level	50	49	49	50	50	51
+	Nature	Gentle	Quiet	Quirky	Naive	Bashful	Lax
+	Ability	Unburden	Torrent	Serene Grace	Keen Senses	Levitate	Adaptability
+	Move 1	Sky Attack	Spin Out	Fire Lash	Dragon Rush	Zing Zap	Grass Pledge
+	Move 2	Acrobatics	Hydro Pump	Dazzling Gleam	Infestation	Poison Jab	Electro Ball
+	Move 3	Return	Body Press	Iron Head	Earthquake	Leech Life	Volt Switch
+	Move 4	U-Turn	Iron Defense	High Horsepower	Sing	Coil	Draco Meteor
+
+
+
+PkMn Trainer BiancaChargestone 	
+            Cinccino	Escavalier	Mienshao	Musharna	Emboar
+	Item	Silk Scarf	Occa Berry	Sitrus Berry	Zoom Lens	Blunder Policy
+	Level	49	49	51	51	52
+	Nature	Quirky	Brave	Serious	Bold	Lax
+	Ability	Skill Link	Swarm	Anticipation	Neutralizing Gas	Intimidate
+	Move 1	Tail Slap	1st Impression	Aura Sphere	Psystrike	Power Trip
+	Move 2	Comet Punch	Heavy Slam	Knock Off	Moonblast	Sucker Punch
+	Move 3	U-Turn	Megahorn	Double-Edge	Focus Blast	Fire Lash
+	Move 4	Attract	U-Turn	Pursuit	Thunder	Bulk Up

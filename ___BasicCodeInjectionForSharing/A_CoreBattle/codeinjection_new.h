@@ -41,6 +41,17 @@ bool IsEqual(int a1, int a2)
 C_DECL_BEGIN
 
 // STUFF FOR FIELD EFFECTS
+extern bool DoesMonHaveShadowTag(int a1, BattleMon *a2);
+extern bool IsMonTrappedByArenaTrap(BtlClientWk *a1, BattleMon *a2);
+extern bool IsMonSteelType(int a1, int a2);
+extern int MainModule_ExpandExistPokeID(
+        MainModule *a1,
+        PokeCon *a2,
+        __int16 currentPosWithTargetType,
+        char *ids);
+extern void CommonDamageReact(BattleEventItem *a1, ServerFlow *a2, unsigned int *a3, unsigned int a4, int a5);
+extern int GetNumMonsOnField(BattleStyle a1, int a2);
+extern int BattleParty_GetPartyCount(BattleParty *a1);
 extern void BattleEventItem_DetachSkipCheckHandler(BattleEventItem *result);
 extern void HandlerBadDreams(int a1, ServerFlow *a2, unsigned int *a3, int a4);
 extern bool BattleMon_IsStatChangeValid(BattleMon *a1, unsigned int a2, int a3);
@@ -49,6 +60,7 @@ extern bool Handler_IsSimulationMode(ServerFlow *a1);
 extern PlayerState *GameData_GetPlayerState(GameData *gameData);
 extern BtlSetup *MainModule_GetBtlSetup(MainModule *a1);
 extern int PlayerState_GetZoneID(PlayerState *a1);
+extern unsigned int MainModule_PokeIDToPokePos(MainModule *a1, PokeCon *a2, unsigned int a3);
 extern int BattleEventVar_GetValue(BattleEventVar a1);
 extern ConditionData  Condition_MakeSetTurns(int a1);
 extern void HandlerDig(int a1, ServerFlow *a2, unsigned int *a3);
@@ -164,6 +176,7 @@ extern int HandlerOvercoat(int a1, int a2, int a3);
 extern void HandlerFriendGuard(int a1, int a2, unsigned int a3);
 extern void HandlerTelepathy(int a1, ServerFlow *a2, unsigned int a3);
 extern int Handler_GetWeather(int a1);
+extern void VM_Jump(ScriptVM *vm, u8 *address);
 extern void HandlerPlusMinus(int a1, ServerFlow *a2, unsigned int a3, u8 *a4, int a5, int a6, int a7, int a8);
 extern int HandlerHealer(int a1, ServerFlow *a2, unsigned int a3, int a4);
 extern void BattleEventVar_MulValue(BattleEventVar a1, int a2);
@@ -238,6 +251,7 @@ extern ConditionData ConditionData_MakePoke(int a1);
 extern bool BattleMon_IsHiding(BattleMon *a1);
 extern u32 div32(u32 numerator, u32 denominator);
 extern int CommonCounterStart(ServerFlow *a1, int a2, int a3, int a4);
+extern int HandlerHeatproofStatus(int a1, int a2, int a3);
 
 // extern int PokeList_GetEVsAppliedAfterLimit(int a1, int a2, int a3, int a4);
 // extern void ApplyHeal(PartyPkm *a1, int a2, unsigned int a3, int a4);
@@ -475,6 +489,7 @@ extern void HandlerJustified(int a1, ServerFlow *a2, unsigned int *a3);
 extern int ServerEvent_CheckHiding(ServerFlow *a1, BattleMon *a2, BattleMon *a3);
 extern void BattleEventItem_Remove(BattleEventItem *a1);
 extern void ServerDisplay_MoveAvoid(ServerFlow *a1, BattleMon *a2);
+extern void MoveEvent_RemoveItem(BattleMon *a1, int a2);
 extern int ServerEvent_CheckMoveDamageEffectiveness(
     ServerFlow *a1,
     BattleMon *a2,
@@ -495,7 +510,7 @@ extern int MainModule_GetPlayerClientID(MainModule *a1);
 extern u32 AIGetMoveParam(TrainerAIEnv *a1, int a2, MoveField a3);
 extern u32 VM_Read32(void *vm);
 extern int Handler_SimulationDamage(ServerFlow *a1, int a2, int a3, int a4, bool a5, bool a6);
-extern int AIConditionalJump(void *a1, unsigned int condition, int param1, int param2);
+extern int AIConditionalJump(void *a1, unsigned int condition, int param1, int param2, int dest);
 
 // SHADOW TAG
 extern bool PokeTypePair_HasType(int a1, Types a2);

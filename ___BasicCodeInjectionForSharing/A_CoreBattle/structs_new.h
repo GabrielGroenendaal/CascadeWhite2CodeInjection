@@ -287,7 +287,7 @@ enum MoveID
     MOVE202_GIGA_DRAIN = 0xCA,
     MOVE203_ENDURE = 0xCB,
     MOVE204_CHARM = 0xCC,
-    MOVE205_ACCELROCK = 0xCD,
+    MOVE205_ROLLOUT = 0xCD,
     MOVE206_BODY_PRESS = 0xCE,
     MOVE207_SWAGGER = 0xCF,
     MOVE208_MILK_DRINK = 0xD0,
@@ -561,7 +561,7 @@ enum MoveID
     MOVE476_RAGE_POWDER = 0x1DC,
     MOVE477_TELEKINESIS = 0x1DD,
     MOVE478_POWER_TRIP = 0x1DE,
-    MOVE479_SMACK_DOWN = 0x1DF,
+    MOVE479_ACCELEROCK = 0x1DF,
     MOVE480_STORM_THROW = 0x1E0,
     MOVE481_FLAME_BURST = 0x1E1,
     MOVE482_SLUDGE_WAVE = 0x1E2,
@@ -4972,11 +4972,39 @@ struct SWAN_ALIGNED(8) TrainerAIEnv
     _QWORD time;
 };
 
-struct 	ServerClientWork {int adapter;BattleParty *party;u8 partyCount;u8 numBattlePositions;u8 isLocalClient;u8 id;};
-struct 	ServerClientAction {BattleActionParam param[4][3];u8 count[4];};
-struct 	RandSet	 {unsigned __int64 seed;unsigned __int64 mul;unsigned __int64 add;};
-struct 	BtlRecTool	 {u8 writePtr;u8 clientBit;u8 numClients;u8 flags;u8 buffer[60];};
-struct 	ResultContext	 {u16 clientID;u16 resultCode;};
+struct ServerClientWork
+{
+    int adapter;
+    BattleParty *party;
+    u8 partyCount;
+    u8 numBattlePositions;
+    u8 isLocalClient;
+    u8 id;
+};
+struct ServerClientAction
+{
+    BattleActionParam param[4][3];
+    u8 count[4];
+};
+struct RandSet
+{
+    unsigned __int64 seed;
+    unsigned __int64 mul;
+    unsigned __int64 add;
+};
+struct BtlRecTool
+{
+    u8 writePtr;
+    u8 clientBit;
+    u8 numClients;
+    u8 flags;
+    u8 buffer[60];
+};
+struct ResultContext
+{
+    u16 clientID;
+    u16 resultCode;
+};
 
 struct SWAN_ALIGNED(4) BtlServerWk
 {
@@ -4986,10 +5014,10 @@ struct SWAN_ALIGNED(4) BtlServerWk
     u8 field_9;
     u8 field_A;
     u8 field_B;
-    u8* mainModule;
+    u8 *mainModule;
     u32 pokeCon;
     SVCL_WORK client[4];
-    ServerFlow* serverFlow;
+    ServerFlow *serverFlow;
     u32 serverTurnState;
     u32 field_4C;
     u32 field_50;
@@ -5003,8 +5031,8 @@ struct SWAN_ALIGNED(4) BtlServerWk
     u8 gap6A[62];
     u16 field_A8;
     u16 field_AA;
-    StrBuf* field_AC;
-    EscapeInfo* escapeInfo;
+    StrBuf *field_AC;
+    EscapeInfo *escapeInfo;
     u32 clientAction;
     u8 gapB8[40];
     u32 field_E0;
@@ -5016,7 +5044,7 @@ struct SWAN_ALIGNED(4) BtlServerWk
     u8 field_EF;
     u32 field_F0;
     u8 gapF4[3004];
-    u8* field_CB0;
+    u8 *field_CB0;
     u8 field_CB4;
     u8 field_CB5;
     u8 field_CB6;
@@ -5032,6 +5060,26 @@ struct SWAN_ALIGNED(4) BtlServerWk
     HeapID heapID;
     u8 field_CC2;
     u8 field_CC3;
+};
+struct 	ScriptPlugin	 {void *CommandSet;u32 CommandSetSize;u32 CommandNoOffset;};
+
+struct 	ScriptVMSetup	 {u16 StackCapacity;u16 VMVarCount;void *CommandSet;u32 CommandSetSize;ScriptPlugin Plugin;};
+
+struct ScriptVM
+{
+    ScriptVMSetup Setup;
+    u8 StackIndex;
+    u8 State;
+    u8 CPSR;
+    u8 _padCPSR;
+    void *NativeFunc;
+    u8 *PC;
+    u32 *Stack;
+    u32 *VMVars;
+    void *Env;
+    void *CallbackVerifier;
+    void *m_GameSystem;
+    u8 *ExecFile;
 };
 
 #pragma endregion

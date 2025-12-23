@@ -34,8 +34,6 @@ Label_QuarterEffectivenessMoves:
 	Jump(&Label_StaticDamageFunctions)
 
 Label_StaticDamageFunctions:
-	CalcDamageWithPartner(false)
-	JumpIfStoredNE(is_strongest, &Label_MoveLogicStage2)
 	JumpIfMoveEffectEQ(move_ef.explosion, &address_MoveDealsNoDamage)
 	JumpIfMoveEffectEQ(move_ef.increased_priority, &address_IncreaseScoreLikelyBy1)
 	JumpIfRandLT(128, &Label_MoveLogicStage2)

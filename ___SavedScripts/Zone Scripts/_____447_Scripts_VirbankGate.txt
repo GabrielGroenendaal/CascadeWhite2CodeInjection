@@ -140,11 +140,14 @@ public class MainEvents {
 
 		// 16432 stores a value corresponding with your starter of choice
 		if (EventWorks.Get(16432) == 0) {
-			Battle.CallTrainerBattle(166, 0, 0);
+			// Tepig Team
+			Battle.CallTrainerBattle(556, 0, 0);
 		} else if (EventWorks.Get(16432) == 1) {
-			Battle.CallTrainerBattle(167, 0, 0);
+			// Oshawott Team
+			Battle.CallTrainerBattle(558, 0, 0);
 		} else {
-			Battle.CallTrainerBattle(168, 0, 0);
+			// Snivy Team
+			Battle.CallTrainerBattle(557, 0, 0);
 		}
 		// 166, 167, 168 refer to the ids of different trainers that are loaded depending on your starter
 

@@ -499,15 +499,15 @@ extern "C" void CommonEmergencyExitCheck(ServerFlow *serverFlow, u32 currentSlot
 
     u32 beforeDmgHP = currentHP + BattleEventVar_GetValue(VAR_DAMAGE) - BattleField_GetSubstituteDamage(currentSlot);
     u32 beforeDmgHPPercent = div32((beforeDmgHP * 100), maxHP);
-
-   // k::Printf("MAX HP: %d \n", maxHP);
-    //k::Printf("CURRENT HP: %d \n", currentHP);
-    //k::Printf("DAMAGE: %d \n", BattleEventVar_GetValue(VAR_DAMAGE));
-    //k::Printf("SUBSTITUTE DAMAGE: %d \n", BattleField_GetSubstituteDamage(currentSlot));
-    //k::Printf("BEFORE HP: %d \n", beforeDmgHP);
-    //k::Printf("BEFORE HP PERCENT: %d \n", beforeDmgHPPercent);
-    //k::Printf("CURRENT HP PERCENT: %d \n", currentHPPercent);
-
+#if DEBUGGING_DYNAMICSPEED && DEBUGGING_ALL
+   k::Printf("MAX HP: %d \n", maxHP);
+    k::Printf("CURRENT HP: %d \n", currentHP);
+    k::Printf("DAMAGE: %d \n", BattleEventVar_GetValue(VAR_DAMAGE));
+    k::Printf("SUBSTITUTE DAMAGE: %d \n", BattleField_GetSubstituteDamage(currentSlot));
+    k::Printf("BEFORE HP: %d \n", beforeDmgHP);
+    k::Printf("BEFORE HP PERCENT: %d \n", beforeDmgHPPercent);
+    k::Printf("CURRENT HP PERCENT: %d \n", currentHPPercent);
+#endif
     if (beforeDmgHPPercent >= 50 &&
         currentHPPercent < 50)
     {
@@ -530,9 +530,9 @@ extern "C" void HandlerEmergencyExitDamageCheck(BattleEventItem *item, ServerFlo
             if (BattleField_CheckEmergencyExitFlag(pokemonSlot))
             {
                 BattleField_ResetEmergencyExitFlag(pokemonSlot);
-
-                //k::Printf("EE SWITCH -> SLOT: %d\n", pokemonSlot);
-
+#if DEBUGGING_DYNAMICSPEED && DEBUGGING_ALL
+                k::Printf("EE SWITCH -> SLOT: %d\n", pokemonSlot);
+#endif
                 BattleHandler_PushRun(serverFlow, EFFECT_ABILITYPOPUPIN, pokemonSlot);
 
                 HandlerParam_Switch *switchOut;
@@ -552,9 +552,9 @@ extern "C" void HandlerEmergencyExitSimpleCheck(BattleEventItem *item, ServerFlo
 
     if (pokemonSlot == BattleEventVar_GetValue(NEW_VAR_MON_ID))
     {
-
-        //k::Printf("EE SIMPLE -> SLOT: %d\n", pokemonSlot);
-
+#if DEBUGGING_DYNAMICSPEED && DEBUGGING_ALL
+        k::Printf("EE SIMPLE -> SLOT: %d\n", pokemonSlot);
+#endif
         CommonEmergencyExitCheck(serverFlow, pokemonSlot);
     }
 }
@@ -563,9 +563,9 @@ extern "C" void HandlerEmergencyExitSwitchEnd(BattleEventItem *item, ServerFlow 
     if (BattleField_CheckEmergencyExitFlag(pokemonSlot))
     {
         BattleField_ResetEmergencyExitFlag(pokemonSlot);
-
-        //k::Printf("EE SWITCH END -> SLOT: %d\n", pokemonSlot);
-
+#if DEBUGGING_DYNAMICSPEED && DEBUGGING_ALL
+        k::Printf("EE SWITCH END -> SLOT: %d\n", pokemonSlot);
+#endif
         if (Handler_GetFightEnableBenchPokeNum(serverFlow, pokemonSlot) && Handler_CheckReservedMemberChangeAction(serverFlow))
         {
 
@@ -615,7 +615,7 @@ extern "C" void ServerEvent_AbilityNullified(ServerFlow *a1, BattleMon *a2);
 
 extern "C" bool THUMB_BRANCH_SAFESTACK_BattleMon_CheckIfMoveCondition(BattleMon *a1, MoveCondition a2)
 {
-    if (a1->HeldItem == 289 && a2 == CONDITION_TAUNT)
+    if (a1->HeldItem == IT0289_ASSAULT_VEST && a2 == CONDITION_TAUNT)
     {
         return true;
     }
@@ -939,6 +939,19 @@ extern "C" void SwapPokemonOrder(ActionOrderWork *actionOrder, u16 *speedStats, 
     eventPriority[slowIdx] = bufferEventPriority;
 }
 
+extern "C" void THUMB_BRANCH_ServerEvent_BeforeAttacks(ServerFlow *a1, BattleMon *a2, int a3)
+{
+  int ID; // r0
+
+  k::Printf("Dynamic Speed - Before Attacks Event\n");
+  BattleEventVar_Push();
+  ID = BattleMon_GetID(a2);
+  BattleEventVar_SetValue(VAR_MON_ID, ID);
+  BattleEventVar_SetValue(VAR_MOVE_ID, a3);
+  BattleEvent_CallHandlers(a1, EVENT_BEFORE_ATTACKS);
+  BattleEventVar_Pop();
+}
+
 extern "C" void PokeSet_SortBySpeedDynamic(ServerFlow *serverFlow, ActionOrderWork *actionOrder, u8 firstIdx, u8 turnStart)
 {
     // Skip the Pok�mons that have already moved.
@@ -1150,8 +1163,9 @@ extern "C" int THUMB_BRANCH_SAFESTACK_ServerFlow_ActOrderProcMain(ServerFlow *se
     u32 procAction = 0;
     ActionOrderWork *actionOrderWork = serverFlow->actionOrderWork;
 
-    // k::Printf("\n\n====SERVERFLOW_ACTORDERPROCMAIN===\n\n\nThe serverFlow result is %d\n", serverFlow->flowResult);
-
+#if DEBUGGING_DYNAMICSPEED && DEBUGGING_ALL
+    k::Printf("\n\n====SERVERFLOW_ACTORDERPROCMAIN===\n\n\nThe serverFlow result is %d\n", serverFlow->flowResult);
+#endif
     // if (entryTurn == 0)
     // {
     //     if (ProcessEntryTurn(serverFlow))

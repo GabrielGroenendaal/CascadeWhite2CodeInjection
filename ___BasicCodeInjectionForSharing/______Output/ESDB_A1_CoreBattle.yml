@@ -97195,7 +97195,7 @@ Symbols:
   - Name: AI045_IfPartyMonStatused
     Segment: 0xe
     Address: 0x21806ed
-  - Name: AI046_IfNoStatusInParty
+  - Name: AI046_CheckDamageForPriority
     Segment: 0xe
     Address: 0x21806fd
   - Name: sub_218070C
@@ -97408,7 +97408,7 @@ Symbols:
   - Name: loc_2180B6A
     Segment: 0xe
     Address: 0x2180b6b
-  - Name: AI066_GetSex
+  - Name: AI066_CheckEnemyDamageOutput_Debuffs
     Segment: 0xe
     Address: 0x2180b75
   - Name: loc_2180B88
@@ -97435,7 +97435,7 @@ Symbols:
   - Name: locret_2180BC8
     Segment: 0xe
     Address: 0x2180bc9
-  - Name: AI068_GetStockpileCount
+  - Name: AI068_CheckRemainingSleepTurns
     Segment: 0xe
     Address: 0x2180bcd
   - Name: loc_2180BD0
@@ -97615,7 +97615,7 @@ Symbols:
   - Name: loc_2180FD2
     Segment: 0xe
     Address: 0x2180fd3
-  - Name: AI089_IfPartyMonPPDecreased
+  - Name: AI089_CheckAllPokemonSpeed
     Segment: 0xe
     Address: 0x2180fdd
   - Name: loc_2180FE8
@@ -97672,7 +97672,7 @@ Symbols:
   - Name: loc_21811D6
     Segment: 0xe
     Address: 0x21811d7
-  - Name: AI096_GetSlowStartTurn
+  - Name: AI096_CheckOwnDamageIntoAlly
     Segment: 0xe
     Address: 0x21811dd
   - Name: AI097_IfPartyMonDoesMoreDamage
@@ -97723,7 +97723,7 @@ Symbols:
   - Name: loc_21813C2
     Segment: 0xe
     Address: 0x21813c3
-  - Name: AI100_GetPositiveStatStageTotal
+  - Name: AI100_TargetDealsNegligibleDamage_Setup
     Segment: 0xe
     Address: 0x21813cd
   - Name: loc_21813E6
@@ -97759,7 +97759,7 @@ Symbols:
   - Name: AI104_CheckDamageForPriority
     Segment: 0xe
     Address: 0x2181481
-  - Name: AI105_CalcMoveDamageWithPartner
+  - Name: AI105_WillUserFaint_Setup
     Segment: 0xe
     Address: 0x2181489
   - Name: loc_21814B8
@@ -98008,7 +98008,7 @@ Symbols:
   - Name: off_2181ACC
     Segment: 0xe
     Address: 0x2181acd
-  - Name: sub_2181AD0
+  - Name: checkReservePokemonDamage
     Segment: 0xe
     Address: 0x2181ad1
   - Name: loc_2181AFA

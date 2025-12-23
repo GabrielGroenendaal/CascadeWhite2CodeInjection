@@ -860,8 +860,8 @@ const int WhiteListedPokemon[651]{
     1, // PK115_KANGASKHAN = 0x73,
     1, // PK116_HORSEA = 0x74,
     1, // PK117_SEADRA = 0x75,
-    0, // PK118_GOLDEEN = 0x76,
-    0, // PK119_SEAKING = 0x77,
+    1, // PK118_GOLDEEN = 0x76,
+    1, // PK119_SEAKING = 0x77,
     1, // PK120_STARYU = 0x78,
     1, // PK121_STARMIE = 0x79,
     1, // PK122_MR_MIME = 0x7A,
@@ -1041,7 +1041,7 @@ const int WhiteListedPokemon[651]{
     1, // PK296_MAKUHITA = 0x128,
     1, // PK297_HARIYAMA = 0x129,
     0, // PK298_AZURILL = 0x12A,
-    0, // PK299_NOSEPASS = 0x12B,
+    1, // PK299_NOSEPASS = 0x12B,
     1, // PK300_SKITTY = 0x12C,
     1, // PK301_DELCATTY = 0x12D,
     1, // PK302_SABLEYE = 0x12E,
@@ -1218,7 +1218,7 @@ const int WhiteListedPokemon[651]{
     1, //  PK473_MAMOSWINE = 0x1D9,
     1, //  PK474_PORYGON_Z = 0x1DA,
     1, //   PK475_GALLADE = 0x1DB,
-    0, //   PK476_PROBOPASS = 0x1DC,
+    1, //   PK476_PROBOPASS = 0x1DC,
     1, //   PK477_DUSKNOIR = 0x1DD,
     1, //    PK478_FROSLASS = 0x1DE,
     0, //    PK479_ROTOM = 0x1DF,
@@ -1395,6 +1395,7 @@ const int WhiteListedPokemon[651]{
     0, // MONSNO_MAX = 0x28A,
 };
 
+int i = 0x61;
 enum AbilLock
 {
     ABIL_0 = 0x0,

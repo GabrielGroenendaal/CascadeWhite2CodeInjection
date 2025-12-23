@@ -1,0 +1,368 @@
+
+
+
+
+Pichu -> Pikachu 
+    Evolves at level 18
+
+Pikachu -> Raichu 
+    Evolves at Level 50 
+
+Ekans -> Arbok
+    Evolves at Level 24 
+
+Igglybuff -> Jigglypuff
+    Evolves at Level 18 
+
+Jigglypuff -> Wigglytuff 
+    Also evolves at level 42
+
+Cleffa -> Clefairy 
+    Evolves at Level 18
+
+Clefairy -> Clefable 
+    Also evolves at level 42
+
+Slowpoke -> Slowbro 
+    Evolves at level 37
+
+Ponyta -> Rapidash 
+    Evolves at level 40
+    Can Also Evolve with a Fire Stone 
+
+
+Nidorino -> Nidoqueen 
+    lso evolves at level 42
+
+Nidorino -> Nidoking 
+    Also evolves at level 42
+
+Vulpix -> Ninetales 
+    Also evolves at level 50 
+
+Golbat -> Crobat  (NEW)
+    Also evolves at level 50
+    Also evolves with a Dusk Stone
+
+
+Gloom -> Vileplume 
+    Also evolves at level 50 
+
+
+Venonat -> Venomoth
+    Also evolves at level 26
+
+
+Mankey -> Primeape 
+    Also evolves at level 18 
+
+
+Growlithe -> Arcanine 
+    Also evolves at level 42
+
+Poliwhirl -> Poliwrath 
+    Also evolves at level 42
+
+
+Machoke -> Machamp
+    Evolves at level 42 
+
+Kadabra -> Alakazam 
+    Evolves at level 42
+
+Weepingbell -> Victreebell 
+    Evolves at level 42 
+
+Graveler -> Golem 
+    Also evolves at level 42
+
+Magneton -> Magnezone 
+    Evolves at level 50 
+
+
+Grimer -> Muk 
+    Evolves at level 38
+
+
+Shellder -> Cloyster 
+    Evolves at level 42
+
+
+Haunter -> Gengar 
+    Evolves at level 42
+
+
+
+
+Voltorb -> Electrode 
+    Evolves at level 35
+
+
+Exeggcute -> Exeggutor
+    Evolves at level 42 
+
+
+Lickitung -> Lickilicky
+    Evolves at level 33
+
+
+
+Koffing -> Weezing 
+    Evolves at Level 35
+    Also Evolves with a Fire Stone 
+
+
+
+Staryu / Starmie 
+    Also evolves at level 42
+
+Electabuzz -> Electivire 
+    Also evolves at level 50 
+
+Magmar -> Magmortar 
+    Also evolves at levle 50
+
+
+Munchlax -> Snorlax 
+    Also evolves at level 42
+
+
+Dragonair -> Dragonite 
+    Evolves at level 60 
+
+
+Togetic -> Togekiss 
+    Also evolves at level 50 
+
+Yanma -> Yanmega (NEW)
+    Evolves with Ancient Power 
+
+Wooper -> Quagsire 
+    Evolvves at level 20
+
+
+Murkrow -> Honchkrow 
+    Evolves at level 50 
+
+Misdreavus -> Mismagius 
+    Evolves at level 50 
+
+
+Pineco -> Forretress 
+    Evolves at level 41 
+
+
+Gligar -> Gliscor 
+    Evolves at level 38 
+
+
+Sneasel -> Weavile
+    Evolves at Level 50
+    Evolves with a Duskstone 
+
+
+
+Piloswine -> Mamoswine 
+    Evolves at level 50 
+
+
+Lombre -> Ludicolo 
+    Evolves at level 42 
+
+
+Nuzleaf -> Shiftry 
+    Evolves at level 42
+
+
+Surskit -> Masquerain 
+    Evolves at Level 28 
+
+
+Nincada -> Shedinja 
+    Evolves with a dusk Stone
+
+Skitty -> Delcatty 
+    Also evolves at level 35
+
+
+
+
+Lairon -> Aggron 
+    Evolves at level 60 
+
+Roselia -> Roserade
+    Also evolves at level 50 
+
+
+Swablu -> Altaria (NEW)
+    Evolves at level 35
+
+Baltoy -> Claydol (NEW)
+    Evolves at level 36
+
+
+Dusclops -> Dusknoir 
+    Evolves at level 60
+
+
+Spheal -> Sealeo 
+    Evolves at level 30 
+
+Sealeo -> Walrein 
+    Evolves at level 60 
+
+
+Bagon -> Shelgon
+    Evolves at level 30 
+
+
+Shelgon -> Salamence 
+    Evolves at level 60 
+
+
+Beldum -> Metang 
+    Evolves at level 30 
+
+
+Metang -> Metagross 
+    Evolves at level 60 
+
+
+Luxio -> Luxray 
+    Evolves at level 42 
+    Also evolves with a Thunder Stone 
+
+
+Combee -> Vespiquen 
+    Evolves at level 42 
+    Also evolves with a Shiny Stone 
+
+Burmy
+    Evolves with Leaf Stone into Wormadam
+    Evolves with Fire Stone into Wormadam 
+    Evolves with Shiny Stone into Wormadam (NEW)
+    Evolves with Dawn stone into Mothim (NEW)
+
+Buneary -> Lopunny
+    Evolves at level 33
+
+
+Gible -> Gabite 
+    Evolves at level 30 
+
+
+Gabite -> garchomp 
+    Evolves at level 60 
+
+
+Riolu -> Lucario 
+    Evolves at level 33
+
+Croagunk -> Toxicroak
+    Evolves at level 37
+
+
+
+Finneon -> Lumineon
+    Evolves at level 21
+
+
+Snover -> Abomasnow 
+    Evolves at level 40
+
+
+Pansage -> Simisage 
+    Evolves at level 20 
+
+
+Pansear -> Simisear 
+    Evolves at level 20 
+
+
+Panpour -> Simipour 
+    Evolves at level 20 
+
+Munna -> Musharna
+    Also evolves at level 42
+
+
+Gurdurr -> Conkeldurr
+    Evolves at level 50 
+
+
+Cottonee -> Whimsicott 
+    Also evolves at level 35
+
+
+Petilil -> Lilligant 
+    Also evolves at level 35 
+
+Darumaka -> Darmanitan (NEW)
+    Evolves at level 35 
+
+
+ 
+Yamask -> Cofagrigus (NEW)
+    Evolves at level 34
+
+
+Trubbish -> Garbodor (NEW)
+    Evolves at level 36
+
+
+Minccino -> Cincinno (NEW)
+    Also evolves at level 35
+
+
+Duosion -> Reuniclus 
+    Evolves at level 41
+
+
+Vanillish -> Vanilluxe
+    Evolves at level 40 
+
+
+Deerling 
+    Evolves into Sawsbuck with Leaf Stone
+    Evolves into Sawsbuck with Dusk Stone 
+    Evolves into Sawsbuck with Shiny Stone 
+    Evolves into Sawsbuck with Fire Stone 
+
+
+Karrablast -> Escavalier 
+    Evolves at level 40 
+
+
+Klang -> Klinklang 
+    Evolves at level 50 
+
+Eelektrik -> Eelektross 
+    Also evolves at level 42 
+
+Lampent -> Chandelure 
+    Also evolves at level 50 
+
+
+Axew -> Fraxure
+    Evolves at level 30 
+
+
+Fraxure -> Haxorus 
+    Evolves at level 60 
+
+
+Shelmet -> Accelgor 
+    Evolves at level 40 
+
+
+Mienfoo -> Mienshao 
+    Evolves at level 39 
+
+
+Deino -> Zweilous 
+    Evolves at level 24 
+
+
+Zweilous -> Hydreigon 
+    Evolves at level 60 
+

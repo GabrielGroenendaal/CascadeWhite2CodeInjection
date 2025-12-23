@@ -1,0 +1,75 @@
+I need a script that will accept an input like that defined in "___InputData/Trainers_InputSample.txt" and convert it into a json files for "trdata" 
+fitting the format of the json files in "trdata/original/166.json"
+
+
+There are several points in this process where you will need to reference what strings values correspond to ID wise. 
+You will need to reference the map files stored in "___MAPS" directory.
+
+
+For each block of input, there should be a 
+    Trainer Name (Modifier)
+    One to Six Pokemon Names 
+    Item: <One to six strings representing the Pokemon's held item. If this field is missing, set all Items to None>
+    Level: <One to six integers representing the Pokemon's level>
+    Nature: <One to six strings representing a Pokemon nature>
+    Ability: <One to six strings representing the Pokemon's ability>
+    Move 1: <One to six strings representing the Pokemon's first move>
+    Move 2: <One to six strings representing the Pokemon's second move>
+    Move 3: <One to six strings representing the Pokemon's third move>
+    Move 4:  <One to six strings representing the Pokemon's fourth move>
+
+
+Each string will be separated by a space. However, many items, moves, and abilities are multiple words long. 
+If you've finished reading a word and it doesn't match their respective field, you can move one space forward and see if, with the next word, it does. 
+If it doesn't, or there is no other word on the line, throw an error.
+
+Trainer Name: 
+This will be comprised of a Trainer Class and a Name. "Cosplayer Janice" for example. You can determine the ID of this trainer by checking that string against the file in ___MAPS/Trainers.txt.
+The trainer's ID determines what the json output file for both trdata and trpok will be called: "1.json" for example. 
+
+There is also an "ai" field that must be populated. 
+For every single json we produce, we will be setting  "Prioritize Effectiveness", "Evaluate Attacks", "Expert", "Prioritize Status" to 1. 
+
+
+(Modifier):
+If after the trainer name you encounter a paranthesis, that's a modifier. Consult the following table for instructions 
+
+    (2x): This is a double battle. In the trdata json we will set the battle_type to 1 and the readable to "Doubles" We will toggle the "Double Battle" AI flag. 
+
+    (3x): This is a triple battle. In the trdata json we will set the battle_type to 2 and readable to "Triples". We will toggle the "Double Button" AI flag on.
+    
+    (Left): This is a tag battle. In the trdata json we will set the battle_type to 0 and readable to "Singles". We will toggle the "Double Button" AI flag on.
+
+    (Right): This is a tag battle. In the trdata json we will set the battle_type to 0 and readable to "Singles". We will toggle the "Double Button" AI flag on.
+
+
+
+"num_pokemon" will depend on the number of pokemon for the trainer in the input data.
+"heal" is always 0.
+"money" will be the same as the "money" field of /Trainers/trdata/original/<trainerId>.json 
+"reward_item" will be the same as the "reward_item" field of /Trainers/trdata/original/<trainerId>.json 
+"template" will be the same as the "Partner" field of /Trainers/trdata/original/<trainerId>.json 
+"class" will be the same as the "class" field of /Trainers/trdata/original/<trainerId>.json 
+"item_0" will always be 0 or "None"
+"item_1" will always be 0 or "None"
+"item_2" will always be 0 or "None"
+"item_3" will always be 0 or "None"
+"has_items" will always be 0
+"has_moves" will always be 1
+"Prioritize Effectiveness" will always be 1
+"Evaluate Attacks" will always be 1
+"Expert" will always be 1
+"Prioritize Status" will always be 1
+"Risky Attacks" will always be 0
+"Prioritize Damage" will always be 0
+"Partner" will be 1 if the "Partner" field of /Trainers/trdata/original/<trainerId>.json is 1
+"Double Battle" will be 1 if the Trainer Name had a (Modifier)
+"Prioritize Healing" will always be 0
+"Utilize Weather" will always be 0
+"Harassment" will always be 0
+"Roaming Pokemon" will be 1 if the "Partner" field of /Trainers/trdata/original/<trainerId>.json is 1
+"Safari Zone" will be 1 if the "Partner" field of /Trainers/trdata/original/<trainerId>.json is 1
+"Catching Demo" will be 1 if the "Partner" field of /Trainers/trdata/original/<trainerId>.json is 1
+"ai" in raw will always be 15 unless the "Double Battle" ai flag is on, then it will be 135
+"ai" in readable will always be 5 unless the "Double Battle" ai flag is on, then it will be 135
+"battle_type_0" is 0 for singles, 1 for doubles, and 2 for triples. Which we set it to will depend on the modifier, and if no modifier, it's Singles.

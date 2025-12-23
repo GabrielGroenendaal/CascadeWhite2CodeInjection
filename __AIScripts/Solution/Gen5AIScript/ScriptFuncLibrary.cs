@@ -59,10 +59,10 @@ public class ScriptFuncLibrary
             new ScriptFuncGetMove(), // 0x28
             new ScriptFuncGetMoveEffect(), // 0x29
             new ScriptFuncGetAbilityGuess(), // 0x2A
-            new ScriptFuncCheckEnemyDamageIntoAlly()!, // 0x2B   AI043
+            null!, // 0x2B   AI043
             new ScriptFuncJumpIfEffectivenessEQ(), // 0x2C
             new ScriptFuncJumpIfPartyHasStatus(), // 0x2D
-            new ScriptFuncJumpIfPartyNoStatus(), // 0x2E
+            new ScriptFuncJumpIfUserWillFaint_Priority(), // 0x2E
             new ScriptFuncGetWeather(), // 0x2F
 
             // 0x30
@@ -80,27 +80,27 @@ public class ScriptFuncLibrary
             new ScriptFuncJumpIfHasNoMovesWithEffect(), // 0x3B
 
 
-            new ScriptFuncJumpIfUserWillTakeLowDamage_Setup(), // 0x3C
+            null!, // 0x3C
             new ScriptFuncFlee(), // 0x3D
             
 
-             new ScriptFuncJumpIfUserWillTakeLowDamage_Debuffs(), // 0x3E
+            null!, // 0x3E
 
             // AI063
-            new ScriptFuncCheckOwnDamageIntoAlly(), // 0x3F This was used to trigger the Safari Zone "{POKÉMON} is watching carefully" message
+            null!, // 0x3F This was used to trigger the Safari Zone "{POKÉMON} is watching carefully" message
 
             // 0x40
             new ScriptFuncGetHeldItem(), // 0x40
             new ScriptFuncGetHeldItemEffect(), // 0x41
-            new ScriptFuncGetGender(), // 0x42
+            new ScriptFuncJumpIfUserWillTakeLowDamage_Debuffs(), // 0x42
             new ScriptFuncStoreIsFirstTurn(), // 0x43
-            new ScriptFuncGetStockpileCount(), // 0x44
+            new ScriptFuncJumpIfUserAboutToWakeUp(), // 0x44
             new ScriptFuncGetBattleStyle(), // 0x45
             new ScriptFuncGetBattleType(), // 0x46
             new ScriptFuncGetUsedItem(), // 0x47
             
-
-            new ScriptFuncJumpIfUserWillFaint_Setup(), // 0x48
+            null!,
+            //new ScriptFuncJumpIfUserWillFaint_Setup(), // 0x48
 
             new ScriptFuncGetPowerOfStoredMove(), // 0x49
             new ScriptFuncGetEffectOfStoredMove(), // 0x4A
@@ -120,7 +120,7 @@ public class ScriptFuncLibrary
             new ScriptFuncJumpIfFieldEffectEQ(), // 0x56
             new ScriptFuncGetSideStatusLevel(), // 0x57
             new ScriptFuncJumpIfPartyHasDamage(), // 0x58
-            new ScriptFuncJumpIfPartyHasReducedPP(), // 0x59
+            new ScriptFuncJumpIfUserIsSlowerThanAllEnemies(), // 0x59
             new ScriptFuncGetFlingPower(), // 0x5A
             new ScriptFuncGetMovePP(), // 0x5B
             new ScriptFuncJumpIfCanUseLastResort(), // 0x5C
@@ -129,19 +129,24 @@ public class ScriptFuncLibrary
             new ScriptFuncGetPosInTurnOrder(), // 0x5F
 
             // 0x60
-            new ScriptFuncGetPokeTurnCount(), // 0x60
+            new ScriptFuncCheckOwnDamageIntoAlly(), // 0x60 NEW 
+            // new ScriptFuncGetPokeTurnCount(), // 0x60
             new ScriptFuncJumpIfReservedHasStrongerMove(), // 0x61
             new ScriptFuncJumpIfHasSuperEffectiveMove(), // 0x62
             new ScriptFuncJumpIfLastMoveGTStrongest(), // 0x63
-            new ScriptFuncGetPositiveStatStageTotal(), // 0x64
+            new ScriptFuncJumpIfUserWillTakeLowDamage_Setup(), // 0x64 NEW
+            //new ScriptFuncGetPositiveStatStageTotal(), // 0x64
             new ScriptFuncGetStatDiff(), // 0x65
-            new ScriptFuncJumpIfUserAboutToWakeUp(), // 0x66
-            new ScriptFuncJumpIfUserIsSlowerThanAllEnemies(), // 0x67
-            new ScriptFuncJumpIfUserWillFaint_Priority(), // 0x68
+            null!,
+            //new ScriptFuncJumpIfUserAboutToWakeUp(), // 0x66
+            null!, // 0x67
+            null!,
+            //new ScriptFuncJumpIfUserWillFaint_Priority(), // 0x68
             //null!,
             //null!,
             //null!,
-            new ScriptFuncCalcDamageWithPartner(), // 0x69
+            new ScriptFuncJumpIfUserWillFaint_Setup(), // 0x69 NEW
+            // new ScriptFuncCalcDamageWithPartner(), // 0x69
             new ScriptFuncJumpIfIsFainted(), // 0x6A
             new ScriptFuncJumpIfIsNotFainted(), // 0x6B
             new ScriptFuncGetAbility(), // 0x6C

@@ -19,9 +19,6 @@ endScript_1:
 
 
 
-
-
-
 // SETUP MOVES LOGIC
 // Checks to see if the user will faint from the opposing pokemon. If the 
 // user is slower and gets 2HKOd, also likely to deprioritize. 
@@ -40,7 +37,7 @@ setup_moves_script:
 debuff_moves_script:
 	JumpIfUserWillFaint_Priority(attacker, &high_chance_to_deprioritize)
 	JumpIfUserWillTakeLowDamage_Debuffs(&high_chance_to_deprioritize)
-	EndScript()
+	Jump(&endOfTheScript)
 
 
 
@@ -49,14 +46,14 @@ debuff_moves_script:
 // DEBUFF MOVES THAT ARE WAY WORSE IF SLOWER 
 debuff_moves_save_script:
 	GetAbilityGuess(attacker)
-	JumpIfStoredEQ(ability.prankster, &EndOfScriptEnd)
+	JumpIfStoredEQ(ability.prankster, &debuff_compareSpeed)
 	JumpCompareSpeed(GT, &debuff_compareSpeed)
 	JumpIfRandLT(102, &debuff_compareSpeed)
 	AddToScore(-2)
 
 debuff_compareSpeed:
 	JumpIfUserWillTakeLowDamage_Debuffs(&high_chance_to_deprioritize)
-	EndScript()
+	Jump(&endOfTheScript)
 
 
 
@@ -67,9 +64,9 @@ debuff_compareSpeed:
 // DEBUFF MOVES THAT ARE WAY WORSE IF SLOWER 
 debuff_moves_status_script:
 	GetAbilityGuess(attacker)
-	JumpIfStoredEQ(ability.prankster, &EndOfScriptEnd)
-	JumpCompareSpeed(GT, &EndOfScriptEnd)
-	JumpIfRandLT(102, &EndOfScriptEnd)
+	JumpIfStoredEQ(ability.prankster, &endOfTheScript)
+	JumpCompareSpeed(GT, &endOfTheScript)
+	JumpIfRandLT(102, &endOfTheScript)
 	AddToScore(-2)
 	EndScript()
 
@@ -89,8 +86,8 @@ priorityCheckSpeed:
 	EndScript()
 
 priorityPrioritize:
-	JumpIfRandLT(39, &EndOfScriptEnd)
-	AddToScore(10)
+	JumpIfRandLT(100, &endOfTheScript)
+	AddToScore(12)
 	EndScript()
 
 
@@ -101,21 +98,29 @@ priorityPrioritize:
 
 // HELPERS
 high_chance_to_deprioritize:
-	JumpIfRandLT(204, &EndOfScriptEnd)
+	GetAbilityGuess(attacker)
+	JumpIfRandLT(204, &endOfTheScript)
 	AddToScore(-2)
 	EndScript()
 
 high_chance_to_prioritize:
-	JumpIfRandLT(128, &EndOfScriptEnd)
+	GetAbilityGuess(attacker)
+	JumpIfRandLT(128, &endOfTheScript)
 	AddToScore(2)
 	EndScript()
 
 deprioritize_address:
+	GetAbilityGuess(attacker)
 	AddToScore(-10)
 	EndScript()
 
-EndOfScriptEnd:
+endOfTheScript:
+	GetAbilityGuess(attacker)
 	EndScript()
+
+
+
+
 
 setup_moves:
 	move.swords_dance

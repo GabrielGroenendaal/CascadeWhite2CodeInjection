@@ -70,10 +70,13 @@ public class MainEvents {
 		Message.CloseAll();
 
 		if (EventWorks.Get(16432) == 0) {
+			// Emboar Team
 			Battle.CallTrainerBattle(487, 0, 0);
 		} else if (EventWorks.Get(16432) == 1) {
+			// Samurott Team
 			Battle.CallTrainerBattle(488, 0, 0);
 		} else {
+			// Serperior Team
 			Battle.CallTrainerBattle(489, 0, 0);
 		}
 

@@ -1,0 +1,814 @@
+PkMn Trainer
+Smasher
+Linebacker
+Smasher
+PkMn Trainer
+PkMn Trainer
+PkMn Trainer
+Worker
+Hoopster
+Hoopster
+Clerk  F
+Waiter
+Waitress
+Cosplayer
+Striker
+Roughneck
+School Kid
+Youngster
+Fisherman
+Clerk  M
+Clerk  M
+Backers
+Backers
+Backers
+Backers
+Backers
+Linebacker
+PkMn Ranger
+PkMn Ranger
+Infielder
+Infielder
+Ace Trainer
+Ace Trainer
+Lass
+Rich Boy
+Lady
+Socialite
+Gentleman
+Elite Four
+Elite Four
+Elite Four
+Elite Four
+Veteran
+Ace Trainer
+Ace Trainer
+Ace Trainer
+Rich Boy
+Lass
+Cosplayer
+Smasher
+Smasher
+Smasher
+Smasher
+Infielder
+Infielder
+Infielder
+Infielder
+Infielder
+Striker
+Cosplayer
+Guy in Suit
+Girl in Suit
+Striker
+Linebacker
+Linebacker
+Linebacker
+Linebacker
+Linebacker
+Hoopster
+Hoopster
+Hoopster
+Hoopster
+Hoopster
+Backers
+Backers
+Backers
+Backers
+Backers
+Backers
+Backers
+Backers
+Backers
+Backers
+Backers
+Backers
+Backers
+Backers
+Backers
+Lass
+School Kid
+School Kid
+Ace Trainer
+Ace Trainer
+Veteran
+Veteran
+PkMn Breeder
+PkMn Breeder
+Waiter
+Waitress
+Scientist
+Scientist
+Lady
+Rich Boy
+Socialite
+Gentleman
+Black Belt
+Battle Girl
+Pokefan
+Pokefan
+Pilot
+Worker
+Baker
+Nursery Aide
+Clerk  M
+Clerk  F
+Janitor
+Backpacker
+Backpacker
+Doctor
+Nurse
+Psychic
+Psychic
+Depot Agent
+Dancer
+Musician
+Harlequin
+Artist
+Policeman
+Maid
+Parasol Lady
+Hiker
+Preschooler
+Preschooler
+Ace Trainer
+Ace Trainer
+Scientist
+Hiker
+Preschooler
+Dancer
+Waitress
+GAME FREAK
+Maid
+Veteran
+Elite Four
+Elite Four
+Elite Four
+Elite Four
+Lady
+Lady
+Pilot
+Pilot
+Pilot
+Pilot
+Leader
+Leader
+Leader
+Leader
+Leader
+Leader
+Leader
+Leader
+PkMn Trainer
+PkMn Trainer
+PkMn Trainer
+Youngster
+Lass
+PkMn Trainer
+PkMn Trainer
+PkMn Trainer
+School Kid
+School Kid
+Youngster
+Lass
+Preschooler
+Preschooler
+Twins
+Nursery Aide
+Gentleman
+Roughneck
+Guitarist
+Youngster
+Lass
+Janitor
+Boss Trainer
+Boss Trainer
+Boss Trainer
+Boss Trainer
+Boss Trainer
+Boss Trainer
+Boss Trainer
+Boss Trainer
+Boss Trainer
+Boss Trainer
+Boss Trainer
+Boss Trainer
+Boss Trainer
+Boss Trainer
+Boss Trainer
+Boss Trainer
+Boss Trainer
+Boss Trainer
+Rival
+Rival
+Worker
+Worker
+Worker
+Hiker
+Beauty
+Beauty
+Beauty
+Fisherman
+Fisherman
+Policeman
+Backpacker
+Policeman
+Policeman
+Roughneck
+Roughneck
+Biker
+Biker
+Hooligans
+Rich Boy
+Backpacker
+Backpacker
+Pokefan
+Pokefan
+Twins
+Linebacker
+Linebacker
+Linebacker
+Linebacker
+Linebacker
+Infielder
+Infielder
+Infielder
+Infielder
+Infielder
+Striker
+Striker
+Striker
+Striker
+Striker
+Hoopster
+Hoopster
+Hoopster
+Hoopster
+Hoopster
+Smasher
+Cosplayer
+Smasher
+Smasher
+Cosplayer
+Backers
+Baker
+Artist
+Dancer
+Musician
+Backers
+Backpacker
+Backpacker
+Cyclist
+Cyclist
+Depot Agent
+Scientist
+Scientist
+School Kid
+School Kid
+Parasol Lady
+Parasol Lady
+Lass
+Youngster
+Nursery Aide
+Preschooler
+Preschooler
+Twins
+Harlequin
+Harlequin
+Gentleman
+Socialite
+Ace Trainer
+Ace Trainer
+Black Belt
+Battle Girl
+Fisherman
+Youngster
+Backpacker
+Fisherman
+Fisherman
+Fisherman
+Fisherman
+Parasol Lady
+Backers
+PkMn Ranger
+PkMn Ranger
+PkMn Ranger
+PkMn Ranger
+PkMn Breeder
+PkMn Ranger
+PkMn Ranger
+PkMn Breeder
+Black Belt
+Battle Girl
+PkMn Breeder
+PkMn Breeder
+PkMn Ranger
+PkMn Ranger
+Backpacker
+Backpacker
+Swimmer  M
+Swimmer  F
+Swimmer  M
+Swimmer  F
+Fisherman
+Ace Trainer
+Swimmer  M
+Swimmer  M
+Swimmer  M
+Swimmer  F
+Swimmer  F
+Worker
+Worker
+Worker
+Worker
+Worker
+Worker
+Worker
+Black Belt
+Doctor
+Hooligans
+Roughneck
+Roughneck
+Biker
+Pilot
+PkMn Breeder
+Hiker
+Baker
+Youngster
+Lass
+Artist
+Motorcyclist
+Motorcyclist
+Champion
+Team Plasma
+Team Plasma
+Team Plasma
+Team Plasma
+PkMn Trainer
+Team Plasma
+Team Plasma
+Fisherman
+Ace Trainer
+Ace Trainer
+Ace Trainer
+Ace Trainer
+Ace Trainer
+Ace Trainer
+Team Plasma
+GAME FREAK
+Team Plasma
+Team Plasma
+PkMn Trainer
+PkMn Trainer
+PkMn Trainer
+PkMn Trainer
+PkMn Trainer
+PkMn Trainer
+Motorcyclist
+Motorcyclist
+PkMn Trainer
+PkMn Trainer
+PkMn Trainer
+PkMn Trainer
+Team Plasma
+Team Plasma
+Team Plasma
+Team Plasma
+Team Plasma
+Team Plasma
+PkMn Trainer
+PkMn Trainer
+PkMn Trainer
+Veteran
+Veteran
+Veteran
+Veteran
+Veteran
+PkMn Ranger
+PkMn Ranger
+PkMn Ranger
+PkMn Ranger
+Backpacker
+Psychic
+Youngster
+School Kid
+School Kid
+Nursery Aide
+Preschooler
+Preschooler
+Preschooler
+Fisherman
+Fisherman
+Youngster
+Lass
+Veteran
+Veteran
+Backpacker
+Backpacker
+Youngster
+Lass
+PkMn Ranger
+PkMn Ranger
+Ace Trainer
+Ace Trainer
+Ace Trainer
+Fisherman
+Swimmer  M
+Swimmer  M
+Swimmer  F
+Swimmer  F
+Hiker
+Veteran
+Veteran
+Veteran
+Veteran
+Black Belt
+Battle Girl
+Team Plasma
+Team Plasma
+Team Plasma
+Team Plasma
+Team Plasma
+Team Plasma
+Team Plasma
+Team Plasma
+Team Plasma
+Team Plasma
+Team Plasma
+Team Plasma
+Team Plasma
+Team Plasma
+Team Plasma
+Team Plasma
+Team Plasma
+Team Plasma
+Team Plasma
+Team Plasma
+Team Plasma
+Team Plasma
+Team Plasma
+Team Plasma
+Team Plasma
+Team Plasma
+Team Plasma
+Team Plasma
+Team Plasma
+School Kid
+PkMn Trainer
+Waitress
+Nursery Aide
+Clerk  F
+Maid
+Janitor
+Janitor
+Scientist
+Scientist
+Worker
+Worker
+Cyclist
+Cyclist
+Black Belt
+Battle Girl
+Black Belt
+Battle Girl
+PkMn Ranger
+PkMn Ranger
+Hiker
+Hiker
+Black Belt
+Battle Girl
+Ace Trainer
+Ace Trainer
+Black Belt
+Battle Girl
+PkMn Ranger
+PkMn Ranger
+Ace Trainer
+Ace Trainer
+PkMn Trainer
+PkMn Trainer
+PkMn Trainer
+Worker
+Guardian of Unova
+Worker
+Sinnoh Leader
+PkMn Trainer
+PkMn Trainer
+PkMn Trainer
+Team Plasma
+Team Plasma
+Team Plasma
+Team Plasma
+Clerk  M
+Clerk  M
+School Kid
+Boss Trainer
+Boss Trainer
+Worker
+Worker
+PkMn Ranger
+PkMn Ranger
+Psychic
+Psychic
+Psychic
+Backpacker
+Backpacker
+PkMn Ranger
+PkMn Ranger
+PkMn Ranger
+PkMn Ranger
+Ace Trainer
+Ace Trainer
+Hiker
+Hiker
+Black Belt
+Battle Girl
+Worker
+Worker
+Worker
+Worker
+Worker
+Hiker
+Hiker
+Veteran
+Veteran
+Veteran
+Veteran
+Champion
+Guitarist
+Guitarist
+Hiker
+Hiker
+Scientist
+Scientist
+PkMn Ranger
+PkMn Ranger
+Ace Trainer
+Ace Trainer
+Ace Trainer
+Ace Trainer
+Pokefan
+Pokefan
+Gentleman
+Socialite
+Psychic
+Psychic
+Scientist
+PkMn Trainer
+PkMn Trainer
+PkMn Trainer
+Youngster
+Twins
+Hiker
+Hiker
+Backpacker
+Backpacker
+Backpacker
+Backpacker
+Scientist
+Scientist
+Psychic
+Psychic
+Youngster
+Lass
+Parasol Lady
+Parasol Lady
+Fisherman
+Fisherman
+Fisherman
+PkMn Ranger
+PkMn Ranger
+Black Belt
+Team Plasma
+PkMn Trainer
+Team Plasma
+Team Plasma
+Team Plasma
+Team Plasma
+Team Plasma
+PkMn Trainer
+PkMn Trainer
+PkMn Trainer
+GAME FREAK
+GAME FREAK
+PkMn Trainer
+Ace Trainer
+Psychic
+Ace Trainer
+Psychic
+Ace Trainer
+Ace Trainer
+Veteran
+Doctor
+Ace Trainer
+Ace Trainer
+Veteran
+Veteran
+Ace Trainer
+Black Belt
+Ace Trainer
+Battle Girl
+Ace Trainer
+Ace Trainer
+Veteran
+Backpacker
+Veteran
+Veteran
+no data
+no data
+no data
+no data
+no data
+Rich Boy
+Youngster
+Clerk  M
+Ace Trainer
+Ace Trainer
+Lass
+Rich Boy
+Lady
+Socialite
+Gentleman
+Maid
+PkMn Trainer
+School Kid
+Old Statue
+Ace Trainer
+Ace Trainer
+Black Belt
+Battle Girl
+PkMn Ranger
+PkMn Ranger
+PkMn Ranger
+PkMn Ranger
+Veteran
+Veteran
+Youngster
+Youngster
+Nursery Aide
+Preschooler
+Preschooler
+Preschooler
+Twins
+Pokefan
+Pokefan
+Scientist
+Backpacker
+Backpacker
+Veteran
+PkMn Ranger
+PkMn Ranger
+Nursery Aide
+Gentleman
+Backpacker
+Backpacker
+Backpacker
+Backpacker
+PkMn Ranger
+PkMn Ranger
+Psychic
+Psychic
+Nurse
+Doctor
+Doctor
+Nurse
+Hiker
+Battle Girl
+Battle Girl
+Black Belt
+Black Belt
+Doctor
+Hiker
+Hiker
+Ace Trainer
+Ace Trainer
+PkMn Trainer
+PkMn Trainer
+PkMn Trainer
+Team Plasma
+Team Plasma
+Team Plasma
+Team Plasma
+Clerk  F
+Clerk  M
+PkMn Trainer
+PkMn Trainer
+PkMn Trainer
+PkMn Trainer
+PkMn Trainer
+PkMn Trainer
+Lass
+Lass
+PkMn Trainer
+PkMn Trainer
+PkMn Trainer
+Team Plasma
+Team Plasma
+PkMn Trainer
+PkMn Trainer
+PkMn Trainer
+PkMn Trainer
+PkMn Trainer
+PkMn Trainer
+Black Belt
+Black Belt
+Black Belt
+Black Belt
+Black Belt
+Black Belt
+Ace Trainer
+Ace Trainer
+Ace Trainer
+Ace Trainer
+Ace Trainer
+Ace Trainer
+Team Plasma
+Nurse
+Hoopster
+Smasher
+Smasher
+Hoopster
+Black Belt
+Battle Girl
+Subway Boss
+Subway Boss
+Harlequin
+Harlequin
+Harlequin
+Harlequin
+Lass
+Team Plasma
+School Kid
+Hiker
+Beauty
+Dancer
+Beauty
+Youngster
+Youngster
+School Kid
+School Kid
+School Kid
+School Kid
+Team Plasma
+PkMn Breeder
+Backers
+Roughneck
+Dancer
+Guitarist
+Veteran
+Veteran
+Veteran
+Veteran
+Veteran
+Veteran
+Team Plasma
+Kanto Leader
+Kanto Leader
+Kanto Leader
+Kanto Leader
+Kanto Leader
+Kanto Leader
+Kanto Leader
+Kanto Leader
+Rival
+Rival
+Rival
+Rival
+Rival
+Red
+Blue
+Elite Four
+Elite Four
+Champion
+PkMn Trainer
+PkMn Trainer
+PkMn Trainer
+PkMn Trainer
+Ace Trainer
+Ace Trainer
+Backpacker
+Backpacker
+Nursery Aide
+Preschooler
+Youngster
+Lass
+PkMn Trainer
+PkMn Trainer
+PkMn Trainer
+Team Plasma
+Team Plasma
+Team Plasma
+Team Plasma
+Team Plasma
+Team Plasma
+Nursery Aide
+Beauty
+Clerk  M
+Guitarist
+Team Plasma
+Team Plasma
+Team Plasma
+Team Plasma
+Doctor
+Team Plasma
+PkMn Trainer

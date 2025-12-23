@@ -1,0 +1,1508 @@
+=== 1.json ===
+Only in final (nested): raw.lvl_learned_14, raw.lvl_learned_15, raw.move_id_14, raw.move_id_15, readable.lvl_learned_14, readable.lvl_learned_15, readable.move_id_14, readable.move_id_14_index, readable.move_id_15, readable.move_id_15_index
+
+=== 100.json ===
+Only in final (nested): raw.lvl_learned_16, raw.lvl_learned_17, raw.move_id_16, raw.move_id_17, readable.lvl_learned_16, readable.lvl_learned_17, readable.move_id_16, readable.move_id_16_index, readable.move_id_17, readable.move_id_17_index
+
+=== 101.json ===
+Only in final (nested): raw.lvl_learned_21, raw.lvl_learned_22, raw.lvl_learned_23, raw.lvl_learned_24, raw.move_id_21, raw.move_id_22, raw.move_id_23, raw.move_id_24, readable.lvl_learned_21, readable.lvl_learned_22, readable.lvl_learned_23, readable.lvl_learned_24, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index, readable.move_id_23, readable.move_id_23_index, readable.move_id_24, readable.move_id_24_index
+
+=== 102.json ===
+Only in final (nested): raw.lvl_learned_19, raw.move_id_19, readable.lvl_learned_19, readable.move_id_19, readable.move_id_19_index
+
+=== 103.json ===
+Only in final (nested): raw.lvl_learned_21, raw.lvl_learned_22, raw.lvl_learned_23, raw.move_id_21, raw.move_id_22, raw.move_id_23, readable.lvl_learned_21, readable.lvl_learned_22, readable.lvl_learned_23, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index, readable.move_id_23, readable.move_id_23_index
+
+=== 105.json ===
+Only in final (nested): raw.lvl_learned_21, raw.move_id_21, readable.lvl_learned_21, readable.move_id_21, readable.move_id_21_index
+
+=== 106.json ===
+Only in final (nested): raw.lvl_learned_22, raw.move_id_22, readable.lvl_learned_22, readable.move_id_22, readable.move_id_22_index
+
+=== 107.json ===
+Only in final (nested): raw.lvl_learned_22, raw.lvl_learned_23, raw.lvl_learned_24, raw.move_id_22, raw.move_id_23, raw.move_id_24, readable.lvl_learned_22, readable.lvl_learned_23, readable.lvl_learned_24, readable.move_id_22, readable.move_id_22_index, readable.move_id_23, readable.move_id_23_index, readable.move_id_24, readable.move_id_24_index
+
+=== 108.json ===
+Only in final (nested): raw.lvl_learned_18, raw.move_id_18, readable.lvl_learned_18, readable.move_id_18, readable.move_id_18_index
+
+=== 110.json ===
+Only in final (nested): raw.lvl_learned_19, raw.move_id_19, readable.lvl_learned_19, readable.move_id_19, readable.move_id_19_index
+
+=== 111.json ===
+Only in final (nested): raw.lvl_learned_18, raw.move_id_18, readable.lvl_learned_18, readable.move_id_18, readable.move_id_18_index
+
+=== 112.json ===
+Only in final (nested): raw.lvl_learned_18, raw.lvl_learned_19, raw.lvl_learned_20, raw.lvl_learned_21, raw.move_id_18, raw.move_id_19, raw.move_id_20, raw.move_id_21, readable.lvl_learned_18, readable.lvl_learned_19, readable.lvl_learned_20, readable.lvl_learned_21, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index
+
+=== 114.json ===
+Only in final (nested): raw.lvl_learned_20, raw.move_id_20, readable.lvl_learned_20, readable.move_id_20, readable.move_id_20_index
+
+=== 116.json ===
+Only in final (nested): raw.lvl_learned_16, raw.move_id_16, readable.lvl_learned_16, readable.move_id_16, readable.move_id_16_index
+
+=== 117.json ===
+Only in final (nested): raw.lvl_learned_18, raw.lvl_learned_19, raw.lvl_learned_20, raw.move_id_18, raw.move_id_19, raw.move_id_20, readable.lvl_learned_18, readable.lvl_learned_19, readable.lvl_learned_20, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index
+
+=== 12.json ===
+Only in original (nested): raw.lvl_learned_19, raw.move_id_19, readable.lvl_learned_19, readable.move_id_19, readable.move_id_19_index
+
+=== 120.json ===
+Only in final (nested): raw.lvl_learned_21, raw.lvl_learned_22, raw.lvl_learned_23, raw.move_id_21, raw.move_id_22, raw.move_id_23, readable.lvl_learned_21, readable.lvl_learned_22, readable.lvl_learned_23, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index, readable.move_id_23, readable.move_id_23_index
+
+=== 121.json ===
+Only in final (nested): raw.lvl_learned_21, raw.lvl_learned_22, raw.lvl_learned_23, raw.move_id_21, raw.move_id_22, raw.move_id_23, readable.lvl_learned_21, readable.lvl_learned_22, readable.lvl_learned_23, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index, readable.move_id_23, readable.move_id_23_index
+
+=== 122.json ===
+Only in final (nested): raw.lvl_learned_23, raw.move_id_23, readable.lvl_learned_23, readable.move_id_23, readable.move_id_23_index
+
+=== 123.json ===
+Only in final (nested): raw.lvl_learned_20, raw.move_id_20, readable.lvl_learned_20, readable.move_id_20, readable.move_id_20_index
+
+=== 124.json ===
+Only in final (nested): raw.lvl_learned_19, raw.move_id_19, readable.lvl_learned_19, readable.move_id_19, readable.move_id_19_index
+
+=== 125.json ===
+Only in original (nested): raw.lvl_learned_17, raw.move_id_17, readable.lvl_learned_17, readable.move_id_17, readable.move_id_17_index
+
+=== 127.json ===
+Only in final (nested): raw.lvl_learned_20, raw.lvl_learned_21, raw.move_id_20, raw.move_id_21, readable.lvl_learned_20, readable.lvl_learned_21, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index
+
+=== 128.json ===
+Only in final (nested): raw.lvl_learned_20, raw.move_id_20, readable.lvl_learned_20, readable.move_id_20, readable.move_id_20_index
+
+=== 130.json ===
+Only in final (nested): raw.lvl_learned_19, raw.move_id_19, readable.lvl_learned_19, readable.move_id_19, readable.move_id_19_index
+
+=== 131.json ===
+Only in final (nested): raw.lvl_learned_22, raw.lvl_learned_23, raw.move_id_22, raw.move_id_23, readable.lvl_learned_22, readable.lvl_learned_23, readable.move_id_22, readable.move_id_22_index, readable.move_id_23, readable.move_id_23_index
+
+=== 133.json ===
+Only in final (nested): raw.lvl_learned_16, raw.lvl_learned_17, raw.move_id_16, raw.move_id_17, readable.lvl_learned_16, readable.lvl_learned_17, readable.move_id_16, readable.move_id_16_index, readable.move_id_17, readable.move_id_17_index
+
+=== 134.json ===
+Only in final (nested): raw.lvl_learned_18, raw.lvl_learned_19, raw.move_id_18, raw.move_id_19, readable.lvl_learned_18, readable.lvl_learned_19, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index
+
+=== 135.json ===
+Only in final (nested): raw.lvl_learned_18, raw.lvl_learned_19, raw.move_id_18, raw.move_id_19, readable.lvl_learned_18, readable.lvl_learned_19, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index
+
+=== 136.json ===
+Only in final (nested): raw.lvl_learned_18, raw.lvl_learned_19, raw.move_id_18, raw.move_id_19, readable.lvl_learned_18, readable.lvl_learned_19, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index
+
+=== 139.json ===
+Only in final (nested): raw.lvl_learned_17, raw.lvl_learned_18, raw.move_id_17, raw.move_id_18, readable.lvl_learned_17, readable.lvl_learned_18, readable.move_id_17, readable.move_id_17_index, readable.move_id_18, readable.move_id_18_index
+
+=== 140.json ===
+Only in final (nested): raw.lvl_learned_16, raw.lvl_learned_17, raw.lvl_learned_18, raw.move_id_16, raw.move_id_17, raw.move_id_18, readable.lvl_learned_16, readable.lvl_learned_17, readable.lvl_learned_18, readable.move_id_16, readable.move_id_16_index, readable.move_id_17, readable.move_id_17_index, readable.move_id_18, readable.move_id_18_index
+
+=== 141.json ===
+Only in final (nested): raw.lvl_learned_20, raw.lvl_learned_21, raw.lvl_learned_22, raw.move_id_20, raw.move_id_21, raw.move_id_22, readable.lvl_learned_20, readable.lvl_learned_21, readable.lvl_learned_22, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index
+
+=== 142.json ===
+Only in final (nested): raw.lvl_learned_21, raw.move_id_21, readable.lvl_learned_21, readable.move_id_21, readable.move_id_21_index
+
+=== 143.json ===
+Only in final (nested): raw.lvl_learned_20, raw.lvl_learned_21, raw.lvl_learned_22, raw.move_id_20, raw.move_id_21, raw.move_id_22, readable.lvl_learned_20, readable.lvl_learned_21, readable.lvl_learned_22, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index
+
+=== 144.json ===
+Only in original (nested): raw.lvl_learned_14, raw.move_id_14, readable.lvl_learned_14, readable.move_id_14, readable.move_id_14_index
+
+=== 145.json ===
+Only in original (nested): raw.lvl_learned_14, raw.move_id_14, readable.lvl_learned_14, readable.move_id_14, readable.move_id_14_index
+
+=== 146.json ===
+Only in original (nested): raw.lvl_learned_14, raw.move_id_14, readable.lvl_learned_14, readable.move_id_14, readable.move_id_14_index
+
+=== 148.json ===
+Only in final (nested): raw.lvl_learned_16, raw.move_id_16, readable.lvl_learned_16, readable.move_id_16, readable.move_id_16_index
+
+=== 149.json ===
+Only in final (nested): raw.lvl_learned_21, raw.move_id_21, readable.lvl_learned_21, readable.move_id_21, readable.move_id_21_index
+
+=== 15.json ===
+Only in final (nested): raw.lvl_learned_15, raw.move_id_15, readable.lvl_learned_15, readable.move_id_15, readable.move_id_15_index
+
+=== 153.json ===
+Only in final (nested): raw.lvl_learned_19, raw.move_id_19, readable.lvl_learned_19, readable.move_id_19, readable.move_id_19_index
+
+=== 154.json ===
+Only in final (nested): raw.lvl_learned_21, raw.move_id_21, readable.lvl_learned_21, readable.move_id_21, readable.move_id_21_index
+
+=== 155.json ===
+Only in final (nested): raw.lvl_learned_15, raw.lvl_learned_16, raw.move_id_15, raw.move_id_16, readable.lvl_learned_15, readable.lvl_learned_16, readable.move_id_15, readable.move_id_15_index, readable.move_id_16, readable.move_id_16_index
+
+=== 156.json ===
+Only in final (nested): raw.lvl_learned_16, raw.lvl_learned_17, raw.move_id_16, raw.move_id_17, readable.lvl_learned_16, readable.lvl_learned_17, readable.move_id_16, readable.move_id_16_index, readable.move_id_17, readable.move_id_17_index
+
+=== 157.json ===
+Only in final (nested): raw.lvl_learned_18, raw.lvl_learned_19, raw.lvl_learned_20, raw.move_id_18, raw.move_id_19, raw.move_id_20, readable.lvl_learned_18, readable.lvl_learned_19, readable.lvl_learned_20, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index
+
+=== 16.json ===
+Only in final (nested): raw.lvl_learned_16, raw.lvl_learned_17, raw.lvl_learned_18, raw.move_id_16, raw.move_id_17, raw.move_id_18, readable.lvl_learned_16, readable.lvl_learned_17, readable.lvl_learned_18, readable.move_id_16, readable.move_id_16_index, readable.move_id_17, readable.move_id_17_index, readable.move_id_18, readable.move_id_18_index
+
+=== 161.json ===
+Only in final (nested): raw.lvl_learned_14, raw.lvl_learned_15, raw.move_id_14, raw.move_id_15, readable.lvl_learned_14, readable.lvl_learned_15, readable.move_id_14, readable.move_id_14_index, readable.move_id_15, readable.move_id_15_index
+
+=== 162.json ===
+Only in final (nested): raw.lvl_learned_18, raw.lvl_learned_19, raw.move_id_18, raw.move_id_19, readable.lvl_learned_18, readable.lvl_learned_19, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index
+
+=== 163.json ===
+Only in final (nested): raw.lvl_learned_17, raw.move_id_17, readable.lvl_learned_17, readable.move_id_17, readable.move_id_17_index
+
+=== 164.json ===
+Only in final (nested): raw.lvl_learned_20, raw.lvl_learned_21, raw.move_id_20, raw.move_id_21, readable.lvl_learned_20, readable.lvl_learned_21, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index
+
+=== 165.json ===
+Only in final (nested): raw.lvl_learned_18, raw.lvl_learned_19, raw.lvl_learned_20, raw.move_id_18, raw.move_id_19, raw.move_id_20, readable.lvl_learned_18, readable.lvl_learned_19, readable.lvl_learned_20, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index
+
+=== 166.json ===
+Only in final (nested): raw.lvl_learned_21, raw.lvl_learned_22, raw.lvl_learned_23, raw.move_id_21, raw.move_id_22, raw.move_id_23, readable.lvl_learned_21, readable.lvl_learned_22, readable.lvl_learned_23, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index, readable.move_id_23, readable.move_id_23_index
+
+=== 169.json ===
+Only in final (nested): raw.lvl_learned_22, raw.lvl_learned_23, raw.lvl_learned_24, raw.move_id_22, raw.move_id_23, raw.move_id_24, readable.lvl_learned_22, readable.lvl_learned_23, readable.lvl_learned_24, readable.move_id_22, readable.move_id_22_index, readable.move_id_23, readable.move_id_23_index, readable.move_id_24, readable.move_id_24_index
+
+=== 17.json ===
+Only in final (nested): raw.lvl_learned_16, raw.lvl_learned_17, raw.lvl_learned_18, raw.move_id_16, raw.move_id_17, raw.move_id_18, readable.lvl_learned_16, readable.lvl_learned_17, readable.lvl_learned_18, readable.move_id_16, readable.move_id_16_index, readable.move_id_17, readable.move_id_17_index, readable.move_id_18, readable.move_id_18_index
+
+=== 170.json ===
+Only in final (nested): raw.lvl_learned_15, raw.lvl_learned_16, raw.move_id_15, raw.move_id_16, readable.lvl_learned_15, readable.lvl_learned_16, readable.move_id_15, readable.move_id_15_index, readable.move_id_16, readable.move_id_16_index
+
+=== 171.json ===
+Only in final (nested): raw.lvl_learned_20, raw.lvl_learned_21, raw.move_id_20, raw.move_id_21, readable.lvl_learned_20, readable.lvl_learned_21, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index
+
+=== 172.json ===
+Only in final (nested): raw.lvl_learned_10, raw.lvl_learned_6, raw.lvl_learned_7, raw.lvl_learned_8, raw.lvl_learned_9, raw.move_id_10, raw.move_id_6, raw.move_id_7, raw.move_id_8, raw.move_id_9, readable.lvl_learned_10, readable.lvl_learned_6, readable.lvl_learned_7, readable.lvl_learned_8, readable.lvl_learned_9, readable.move_id_10, readable.move_id_10_index, readable.move_id_6, readable.move_id_6_index, readable.move_id_7, readable.move_id_7_index, readable.move_id_8, readable.move_id_8_index, readable.move_id_9, readable.move_id_9_index
+
+=== 173.json ===
+Only in final (nested): raw.lvl_learned_10, raw.lvl_learned_11, raw.lvl_learned_7, raw.lvl_learned_8, raw.lvl_learned_9, raw.move_id_10, raw.move_id_11, raw.move_id_7, raw.move_id_8, raw.move_id_9, readable.lvl_learned_10, readable.lvl_learned_11, readable.lvl_learned_7, readable.lvl_learned_8, readable.lvl_learned_9, readable.move_id_10, readable.move_id_10_index, readable.move_id_11, readable.move_id_11_index, readable.move_id_7, readable.move_id_7_index, readable.move_id_8, readable.move_id_8_index, readable.move_id_9, readable.move_id_9_index
+
+=== 174.json ===
+Only in final (nested): raw.lvl_learned_10, raw.lvl_learned_11, raw.lvl_learned_12, raw.lvl_learned_13, raw.lvl_learned_14, raw.lvl_learned_15, raw.lvl_learned_16, raw.lvl_learned_17, raw.lvl_learned_18, raw.lvl_learned_19, raw.lvl_learned_20, raw.lvl_learned_21, raw.lvl_learned_22, raw.lvl_learned_7, raw.lvl_learned_8, raw.lvl_learned_9, raw.move_id_10, raw.move_id_11, raw.move_id_12, raw.move_id_13, raw.move_id_14, raw.move_id_15, raw.move_id_16, raw.move_id_17, raw.move_id_18, raw.move_id_19, raw.move_id_20, raw.move_id_21, raw.move_id_22, raw.move_id_7, raw.move_id_8, raw.move_id_9, readable.lvl_learned_10, readable.lvl_learned_11, readable.lvl_learned_12, readable.lvl_learned_13, readable.lvl_learned_14, readable.lvl_learned_15, readable.lvl_learned_16, readable.lvl_learned_17, readable.lvl_learned_18, readable.lvl_learned_19, readable.lvl_learned_20, readable.lvl_learned_21, readable.lvl_learned_22, readable.lvl_learned_7, readable.lvl_learned_8, readable.lvl_learned_9, readable.move_id_10, readable.move_id_10_index, readable.move_id_11, readable.move_id_11_index, readable.move_id_12, readable.move_id_12_index, readable.move_id_13, readable.move_id_13_index, readable.move_id_14, readable.move_id_14_index, readable.move_id_15, readable.move_id_15_index, readable.move_id_16, readable.move_id_16_index, readable.move_id_17, readable.move_id_17_index, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index, readable.move_id_7, readable.move_id_7_index, readable.move_id_8, readable.move_id_8_index, readable.move_id_9, readable.move_id_9_index
+
+=== 175.json ===
+Only in original (nested): raw.lvl_learned_14, raw.move_id_14, readable.lvl_learned_14, readable.move_id_14, readable.move_id_14_index
+
+=== 177.json ===
+Only in final (nested): raw.lvl_learned_16, raw.lvl_learned_17, raw.lvl_learned_18, raw.lvl_learned_19, raw.move_id_16, raw.move_id_17, raw.move_id_18, raw.move_id_19, readable.lvl_learned_16, readable.lvl_learned_17, readable.lvl_learned_18, readable.lvl_learned_19, readable.move_id_16, readable.move_id_16_index, readable.move_id_17, readable.move_id_17_index, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index
+
+=== 178.json ===
+Only in final (nested): raw.lvl_learned_18, raw.lvl_learned_19, raw.lvl_learned_20, raw.lvl_learned_21, raw.move_id_18, raw.move_id_19, raw.move_id_20, raw.move_id_21, readable.lvl_learned_18, readable.lvl_learned_19, readable.lvl_learned_20, readable.lvl_learned_21, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index
+
+=== 179.json ===
+Only in final (nested): raw.lvl_learned_15, raw.move_id_15, readable.lvl_learned_15, readable.move_id_15, readable.move_id_15_index
+
+=== 18.json ===
+Only in final (nested): raw.lvl_learned_19, raw.lvl_learned_20, raw.lvl_learned_21, raw.lvl_learned_22, raw.move_id_19, raw.move_id_20, raw.move_id_21, raw.move_id_22, readable.lvl_learned_19, readable.lvl_learned_20, readable.lvl_learned_21, readable.lvl_learned_22, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index
+
+=== 180.json ===
+Only in final (nested): raw.lvl_learned_18, raw.move_id_18, readable.lvl_learned_18, readable.move_id_18, readable.move_id_18_index
+
+=== 181.json ===
+Only in final (nested): raw.lvl_learned_23, raw.move_id_23, readable.lvl_learned_23, readable.move_id_23, readable.move_id_23_index
+
+=== 182.json ===
+Only in final (nested): raw.lvl_learned_21, raw.lvl_learned_22, raw.lvl_learned_23, raw.lvl_learned_24, raw.move_id_21, raw.move_id_22, raw.move_id_23, raw.move_id_24, readable.lvl_learned_21, readable.lvl_learned_22, readable.lvl_learned_23, readable.lvl_learned_24, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index, readable.move_id_23, readable.move_id_23_index, readable.move_id_24, readable.move_id_24_index
+
+=== 183.json ===
+Only in final (nested): raw.lvl_learned_20, raw.lvl_learned_21, raw.lvl_learned_22, raw.move_id_20, raw.move_id_21, raw.move_id_22, readable.lvl_learned_20, readable.lvl_learned_21, readable.lvl_learned_22, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index
+
+=== 184.json ===
+Only in final (nested): raw.lvl_learned_22, raw.lvl_learned_23, raw.lvl_learned_24, raw.move_id_22, raw.move_id_23, raw.move_id_24, readable.lvl_learned_22, readable.lvl_learned_23, readable.lvl_learned_24, readable.move_id_22, readable.move_id_22_index, readable.move_id_23, readable.move_id_23_index, readable.move_id_24, readable.move_id_24_index
+
+=== 185.json ===
+Only in final (nested): raw.lvl_learned_21, raw.lvl_learned_22, raw.lvl_learned_23, raw.move_id_21, raw.move_id_22, raw.move_id_23, readable.lvl_learned_21, readable.lvl_learned_22, readable.lvl_learned_23, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index, readable.move_id_23, readable.move_id_23_index
+
+=== 186.json ===
+Only in final (nested): raw.lvl_learned_21, raw.move_id_21, readable.lvl_learned_21, readable.move_id_21, readable.move_id_21_index
+
+=== 187.json ===
+Only in final (nested): raw.lvl_learned_18, raw.move_id_18, readable.lvl_learned_18, readable.move_id_18, readable.move_id_18_index
+
+=== 189.json ===
+Only in final (nested): raw.lvl_learned_22, raw.move_id_22, readable.lvl_learned_22, readable.move_id_22, readable.move_id_22_index
+
+=== 19.json ===
+Only in final (nested): raw.lvl_learned_17, raw.move_id_17, readable.lvl_learned_17, readable.move_id_17, readable.move_id_17_index
+
+=== 191.json ===
+Only in final (nested): raw.lvl_learned_16, raw.lvl_learned_17, raw.move_id_16, raw.move_id_17, readable.lvl_learned_16, readable.lvl_learned_17, readable.move_id_16, readable.move_id_16_index, readable.move_id_17, readable.move_id_17_index
+
+=== 192.json ===
+Only in final (nested): raw.lvl_learned_18, raw.lvl_learned_19, raw.move_id_18, raw.move_id_19, readable.lvl_learned_18, readable.lvl_learned_19, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index
+
+=== 193.json ===
+Only in final (nested): raw.lvl_learned_16, raw.lvl_learned_17, raw.move_id_16, raw.move_id_17, readable.lvl_learned_16, readable.lvl_learned_17, readable.move_id_16, readable.move_id_16_index, readable.move_id_17, readable.move_id_17_index
+
+=== 194.json ===
+Only in final (nested): raw.lvl_learned_13, raw.lvl_learned_14, raw.lvl_learned_15, raw.move_id_13, raw.move_id_14, raw.move_id_15, readable.lvl_learned_13, readable.lvl_learned_14, readable.lvl_learned_15, readable.move_id_13, readable.move_id_13_index, readable.move_id_14, readable.move_id_14_index, readable.move_id_15, readable.move_id_15_index
+
+=== 195.json ===
+Only in final (nested): raw.lvl_learned_18, raw.lvl_learned_19, raw.lvl_learned_20, raw.move_id_18, raw.move_id_19, raw.move_id_20, readable.lvl_learned_18, readable.lvl_learned_19, readable.lvl_learned_20, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index
+
+=== 196.json ===
+Only in final (nested): raw.lvl_learned_18, raw.lvl_learned_19, raw.move_id_18, raw.move_id_19, readable.lvl_learned_18, readable.lvl_learned_19, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index
+
+=== 197.json ===
+Only in final (nested): raw.lvl_learned_18, raw.lvl_learned_19, raw.move_id_18, raw.move_id_19, readable.lvl_learned_18, readable.lvl_learned_19, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index
+
+=== 198.json ===
+Only in final (nested): raw.lvl_learned_18, raw.lvl_learned_19, raw.lvl_learned_20, raw.move_id_18, raw.move_id_19, raw.move_id_20, readable.lvl_learned_18, readable.lvl_learned_19, readable.lvl_learned_20, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index
+
+=== 199.json ===
+Only in final (nested): raw.lvl_learned_18, raw.lvl_learned_19, raw.move_id_18, raw.move_id_19, readable.lvl_learned_18, readable.lvl_learned_19, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index
+
+=== 2.json ===
+Only in final (nested): raw.lvl_learned_17, raw.lvl_learned_18, raw.lvl_learned_19, raw.lvl_learned_20, raw.move_id_17, raw.move_id_18, raw.move_id_19, raw.move_id_20, readable.lvl_learned_17, readable.lvl_learned_18, readable.lvl_learned_19, readable.lvl_learned_20, readable.move_id_17, readable.move_id_17_index, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index
+
+=== 20.json ===
+Only in final (nested): raw.lvl_learned_19, raw.move_id_19, readable.lvl_learned_19, readable.move_id_19, readable.move_id_19_index
+
+=== 200.json ===
+Only in final (nested): raw.lvl_learned_17, raw.lvl_learned_18, raw.move_id_17, raw.move_id_18, readable.lvl_learned_17, readable.lvl_learned_18, readable.move_id_17, readable.move_id_17_index, readable.move_id_18, readable.move_id_18_index
+
+=== 203.json ===
+Only in final (nested): raw.lvl_learned_21, raw.lvl_learned_22, raw.lvl_learned_23, raw.move_id_21, raw.move_id_22, raw.move_id_23, readable.lvl_learned_21, readable.lvl_learned_22, readable.lvl_learned_23, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index, readable.move_id_23, readable.move_id_23_index
+
+=== 205.json ===
+Only in final (nested): raw.lvl_learned_21, raw.lvl_learned_22, raw.lvl_learned_23, raw.move_id_21, raw.move_id_22, raw.move_id_23, readable.lvl_learned_21, readable.lvl_learned_22, readable.lvl_learned_23, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index, readable.move_id_23, readable.move_id_23_index
+
+=== 206.json ===
+Only in final (nested): raw.lvl_learned_22, raw.lvl_learned_23, raw.move_id_22, raw.move_id_23, readable.lvl_learned_22, readable.lvl_learned_23, readable.move_id_22, readable.move_id_22_index, readable.move_id_23, readable.move_id_23_index
+
+=== 207.json ===
+Only in final (nested): raw.lvl_learned_18, raw.lvl_learned_19, raw.lvl_learned_20, raw.move_id_18, raw.move_id_19, raw.move_id_20, readable.lvl_learned_18, readable.lvl_learned_19, readable.lvl_learned_20, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index
+
+=== 208.json ===
+Only in final (nested): raw.lvl_learned_21, raw.lvl_learned_22, raw.move_id_21, raw.move_id_22, readable.lvl_learned_21, readable.lvl_learned_22, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index
+
+=== 209.json ===
+Only in final (nested): raw.lvl_learned_18, raw.move_id_18, readable.lvl_learned_18, readable.move_id_18, readable.move_id_18_index
+
+=== 21.json ===
+Only in final (nested): raw.lvl_learned_20, raw.move_id_20, readable.lvl_learned_20, readable.move_id_20, readable.move_id_20_index
+
+=== 210.json ===
+Only in final (nested): raw.lvl_learned_23, raw.move_id_23, readable.lvl_learned_23, readable.move_id_23, readable.move_id_23_index
+
+=== 211.json ===
+Only in final (nested): raw.lvl_learned_19, raw.lvl_learned_20, raw.lvl_learned_21, raw.lvl_learned_22, raw.move_id_19, raw.move_id_20, raw.move_id_21, raw.move_id_22, readable.lvl_learned_19, readable.lvl_learned_20, readable.lvl_learned_21, readable.lvl_learned_22, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index
+
+=== 212.json ===
+Only in final (nested): raw.lvl_learned_20, raw.move_id_20, readable.lvl_learned_20, readable.move_id_20, readable.move_id_20_index
+
+=== 213.json ===
+Only in final (nested): raw.lvl_learned_18, raw.move_id_18, readable.lvl_learned_18, readable.move_id_18, readable.move_id_18_index
+
+=== 214.json ===
+Only in final (nested): raw.lvl_learned_20, raw.lvl_learned_21, raw.move_id_20, raw.move_id_21, readable.lvl_learned_20, readable.lvl_learned_21, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index
+
+=== 216.json ===
+Only in final (nested): raw.lvl_learned_18, raw.lvl_learned_19, raw.move_id_18, raw.move_id_19, readable.lvl_learned_18, readable.lvl_learned_19, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index
+
+=== 217.json ===
+Only in final (nested): raw.lvl_learned_22, raw.lvl_learned_23, raw.move_id_22, raw.move_id_23, readable.lvl_learned_22, readable.lvl_learned_23, readable.move_id_22, readable.move_id_22_index, readable.move_id_23, readable.move_id_23_index
+
+=== 218.json ===
+Only in final (nested): raw.lvl_learned_17, raw.lvl_learned_18, raw.move_id_17, raw.move_id_18, readable.lvl_learned_17, readable.lvl_learned_18, readable.move_id_17, readable.move_id_17_index, readable.move_id_18, readable.move_id_18_index
+
+=== 219.json ===
+Only in final (nested): raw.lvl_learned_21, raw.move_id_21, readable.lvl_learned_21, readable.move_id_21, readable.move_id_21_index
+
+=== 22.json ===
+Only in final (nested): raw.lvl_learned_20, raw.move_id_20, readable.lvl_learned_20, readable.move_id_20, readable.move_id_20_index
+
+=== 220.json ===
+Only in final (nested): raw.lvl_learned_15, raw.lvl_learned_16, raw.move_id_15, raw.move_id_16, readable.lvl_learned_15, readable.lvl_learned_16, readable.move_id_15, readable.move_id_15_index, readable.move_id_16, readable.move_id_16_index
+
+=== 221.json ===
+Only in final (nested): raw.lvl_learned_18, raw.lvl_learned_19, raw.move_id_18, raw.move_id_19, readable.lvl_learned_18, readable.lvl_learned_19, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index
+
+=== 222.json ===
+Only in final (nested): raw.lvl_learned_20, raw.lvl_learned_21, raw.lvl_learned_22, raw.move_id_20, raw.move_id_21, raw.move_id_22, readable.lvl_learned_20, readable.lvl_learned_21, readable.lvl_learned_22, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index
+
+=== 223.json ===
+Only in final (nested): raw.lvl_learned_19, raw.move_id_19, readable.lvl_learned_19, readable.move_id_19, readable.move_id_19_index
+
+=== 224.json ===
+Only in final (nested): raw.lvl_learned_22, raw.lvl_learned_23, raw.lvl_learned_24, raw.move_id_22, raw.move_id_23, raw.move_id_24, readable.lvl_learned_22, readable.lvl_learned_23, readable.lvl_learned_24, readable.move_id_22, readable.move_id_22_index, readable.move_id_23, readable.move_id_23_index, readable.move_id_24, readable.move_id_24_index
+
+=== 225.json ===
+Only in final (nested): raw.lvl_learned_18, raw.lvl_learned_19, raw.lvl_learned_20, raw.move_id_18, raw.move_id_19, raw.move_id_20, readable.lvl_learned_18, readable.lvl_learned_19, readable.lvl_learned_20, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index
+
+=== 227.json ===
+Only in final (nested): raw.lvl_learned_18, raw.move_id_18, readable.lvl_learned_18, readable.move_id_18, readable.move_id_18_index
+
+=== 228.json ===
+Only in final (nested): raw.lvl_learned_18, raw.move_id_18, readable.lvl_learned_18, readable.move_id_18, readable.move_id_18_index
+
+=== 229.json ===
+Only in final (nested): raw.lvl_learned_20, raw.lvl_learned_21, raw.lvl_learned_22, raw.lvl_learned_23, raw.move_id_20, raw.move_id_21, raw.move_id_22, raw.move_id_23, readable.lvl_learned_20, readable.lvl_learned_21, readable.lvl_learned_22, readable.lvl_learned_23, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index, readable.move_id_23, readable.move_id_23_index
+
+=== 23.json ===
+Only in final (nested): raw.lvl_learned_18, raw.lvl_learned_19, raw.move_id_18, raw.move_id_19, readable.lvl_learned_18, readable.lvl_learned_19, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index
+
+=== 230.json ===
+Only in final (nested): raw.lvl_learned_20, raw.lvl_learned_21, raw.lvl_learned_22, raw.lvl_learned_23, raw.lvl_learned_24, raw.move_id_20, raw.move_id_21, raw.move_id_22, raw.move_id_23, raw.move_id_24, readable.lvl_learned_20, readable.lvl_learned_21, readable.lvl_learned_22, readable.lvl_learned_23, readable.lvl_learned_24, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index, readable.move_id_23, readable.move_id_23_index, readable.move_id_24, readable.move_id_24_index
+
+=== 231.json ===
+Only in final (nested): raw.lvl_learned_17, raw.lvl_learned_18, raw.lvl_learned_19, raw.move_id_17, raw.move_id_18, raw.move_id_19, readable.lvl_learned_17, readable.lvl_learned_18, readable.lvl_learned_19, readable.move_id_17, readable.move_id_17_index, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index
+
+=== 232.json ===
+Only in final (nested): raw.lvl_learned_19, raw.lvl_learned_20, raw.lvl_learned_21, raw.move_id_19, raw.move_id_20, raw.move_id_21, readable.lvl_learned_19, readable.lvl_learned_20, readable.lvl_learned_21, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index
+
+=== 234.json ===
+Only in final (nested): raw.lvl_learned_24, raw.move_id_24, readable.lvl_learned_24, readable.move_id_24, readable.move_id_24_index
+
+=== 236.json ===
+Only in original (nested): raw.lvl_learned_11, raw.lvl_learned_12, raw.move_id_11, raw.move_id_12, readable.lvl_learned_11, readable.lvl_learned_12, readable.move_id_11, readable.move_id_11_index, readable.move_id_12, readable.move_id_12_index
+
+=== 237.json ===
+Only in final (nested): raw.lvl_learned_22, raw.move_id_22, readable.lvl_learned_22, readable.move_id_22, readable.move_id_22_index
+
+=== 238.json ===
+Only in final (nested): raw.lvl_learned_16, raw.move_id_16, readable.lvl_learned_16, readable.move_id_16, readable.move_id_16_index
+
+=== 239.json ===
+Only in original (nested): raw.lvl_learned_16, raw.lvl_learned_17, raw.move_id_16, raw.move_id_17, readable.lvl_learned_16, readable.lvl_learned_17, readable.move_id_16, readable.move_id_16_index, readable.move_id_17, readable.move_id_17_index
+
+=== 24.json ===
+Only in final (nested): raw.lvl_learned_22, raw.lvl_learned_23, raw.move_id_22, raw.move_id_23, readable.lvl_learned_22, readable.lvl_learned_23, readable.move_id_22, readable.move_id_22_index, readable.move_id_23, readable.move_id_23_index
+
+=== 241.json ===
+Only in final (nested): raw.lvl_learned_20, raw.move_id_20, readable.lvl_learned_20, readable.move_id_20, readable.move_id_20_index
+
+=== 242.json ===
+Only in final (nested): raw.lvl_learned_19, raw.move_id_19, readable.lvl_learned_19, readable.move_id_19, readable.move_id_19_index
+
+=== 25.json ===
+Only in final (nested): raw.lvl_learned_21, raw.move_id_21, readable.lvl_learned_21, readable.move_id_21, readable.move_id_21_index
+
+=== 252.json ===
+Only in final (nested): raw.lvl_learned_16, raw.move_id_16, readable.lvl_learned_16, readable.move_id_16, readable.move_id_16_index
+
+=== 253.json ===
+Only in final (nested): raw.lvl_learned_18, raw.move_id_18, readable.lvl_learned_18, readable.move_id_18, readable.move_id_18_index
+
+=== 254.json ===
+Only in final (nested): raw.lvl_learned_22, raw.move_id_22, readable.lvl_learned_22, readable.move_id_22, readable.move_id_22_index
+
+=== 255.json ===
+Only in final (nested): raw.lvl_learned_14, raw.lvl_learned_15, raw.move_id_14, raw.move_id_15, readable.lvl_learned_14, readable.lvl_learned_15, readable.move_id_14, readable.move_id_14_index, readable.move_id_15, readable.move_id_15_index
+
+=== 256.json ===
+Only in final (nested): raw.lvl_learned_16, raw.lvl_learned_17, raw.move_id_16, raw.move_id_17, readable.lvl_learned_16, readable.lvl_learned_17, readable.move_id_16, readable.move_id_16_index, readable.move_id_17, readable.move_id_17_index
+
+=== 257.json ===
+Only in final (nested): raw.lvl_learned_21, raw.lvl_learned_22, raw.move_id_21, raw.move_id_22, readable.lvl_learned_21, readable.lvl_learned_22, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index
+
+=== 26.json ===
+Only in final (nested): raw.lvl_learned_21, raw.move_id_21, readable.lvl_learned_21, readable.move_id_21, readable.move_id_21_index
+
+=== 260.json ===
+Only in final (nested): raw.lvl_learned_20, raw.move_id_20, readable.lvl_learned_20, readable.move_id_20, readable.move_id_20_index
+
+=== 263.json ===
+Only in final (nested): raw.lvl_learned_14, raw.move_id_14, readable.lvl_learned_14, readable.move_id_14, readable.move_id_14_index
+
+=== 264.json ===
+Only in final (nested): raw.lvl_learned_19, raw.move_id_19, readable.lvl_learned_19, readable.move_id_19, readable.move_id_19_index
+
+=== 267.json ===
+Only in final (nested): raw.lvl_learned_17, raw.move_id_17, readable.lvl_learned_17, readable.move_id_17, readable.move_id_17_index
+
+=== 269.json ===
+Only in final (nested): raw.lvl_learned_17, raw.move_id_17, readable.lvl_learned_17, readable.move_id_17, readable.move_id_17_index
+
+=== 274.json ===
+Only in final (nested): raw.lvl_learned_16, raw.move_id_16, readable.lvl_learned_16, readable.move_id_16, readable.move_id_16_index
+
+=== 275.json ===
+Only in final (nested): raw.lvl_learned_20, raw.lvl_learned_21, raw.lvl_learned_22, raw.move_id_20, raw.move_id_21, raw.move_id_22, readable.lvl_learned_20, readable.lvl_learned_21, readable.lvl_learned_22, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index
+
+=== 276.json ===
+Only in final (nested): raw.lvl_learned_15, raw.move_id_15, readable.lvl_learned_15, readable.move_id_15, readable.move_id_15_index
+
+=== 277.json ===
+Only in final (nested): raw.lvl_learned_19, raw.move_id_19, readable.lvl_learned_19, readable.move_id_19, readable.move_id_19_index
+
+=== 278.json ===
+Only in final (nested): raw.lvl_learned_16, raw.lvl_learned_17, raw.lvl_learned_18, raw.lvl_learned_19, raw.move_id_16, raw.move_id_17, raw.move_id_18, raw.move_id_19, readable.lvl_learned_16, readable.lvl_learned_17, readable.lvl_learned_18, readable.lvl_learned_19, readable.move_id_16, readable.move_id_16_index, readable.move_id_17, readable.move_id_17_index, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index
+
+=== 279.json ===
+Only in final (nested): raw.lvl_learned_19, raw.lvl_learned_20, raw.lvl_learned_21, raw.lvl_learned_22, raw.lvl_learned_23, raw.move_id_19, raw.move_id_20, raw.move_id_21, raw.move_id_22, raw.move_id_23, readable.lvl_learned_19, readable.lvl_learned_20, readable.lvl_learned_21, readable.lvl_learned_22, readable.lvl_learned_23, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index, readable.move_id_23, readable.move_id_23_index
+
+=== 28.json ===
+Only in final (nested): raw.lvl_learned_20, raw.move_id_20, readable.lvl_learned_20, readable.move_id_20, readable.move_id_20_index
+
+=== 280.json ===
+Only in final (nested): raw.lvl_learned_15, raw.lvl_learned_16, raw.move_id_15, raw.move_id_16, readable.lvl_learned_15, readable.lvl_learned_16, readable.move_id_15, readable.move_id_15_index, readable.move_id_16, readable.move_id_16_index
+
+=== 281.json ===
+Only in final (nested): raw.lvl_learned_16, raw.lvl_learned_17, raw.lvl_learned_18, raw.move_id_16, raw.move_id_17, raw.move_id_18, readable.lvl_learned_16, readable.lvl_learned_17, readable.lvl_learned_18, readable.move_id_16, readable.move_id_16_index, readable.move_id_17, readable.move_id_17_index, readable.move_id_18, readable.move_id_18_index
+
+=== 282.json ===
+Only in final (nested): raw.lvl_learned_19, raw.lvl_learned_20, raw.lvl_learned_21, raw.lvl_learned_22, raw.lvl_learned_23, raw.lvl_learned_24, raw.move_id_19, raw.move_id_20, raw.move_id_21, raw.move_id_22, raw.move_id_23, raw.move_id_24, readable.lvl_learned_19, readable.lvl_learned_20, readable.lvl_learned_21, readable.lvl_learned_22, readable.lvl_learned_23, readable.lvl_learned_24, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index, readable.move_id_23, readable.move_id_23_index, readable.move_id_24, readable.move_id_24_index
+
+=== 284.json ===
+Only in final (nested): raw.lvl_learned_22, raw.lvl_learned_23, raw.move_id_22, raw.move_id_23, readable.lvl_learned_22, readable.lvl_learned_23, readable.move_id_22, readable.move_id_22_index, readable.move_id_23, readable.move_id_23_index
+
+=== 285.json ===
+Only in final (nested): raw.lvl_learned_12, raw.move_id_12, readable.lvl_learned_12, readable.move_id_12, readable.move_id_12_index
+
+=== 286.json ===
+Only in final (nested): raw.lvl_learned_21, raw.lvl_learned_22, raw.lvl_learned_23, raw.move_id_21, raw.move_id_22, raw.move_id_23, readable.lvl_learned_21, readable.lvl_learned_22, readable.lvl_learned_23, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index, readable.move_id_23, readable.move_id_23_index
+
+=== 289.json ===
+Only in final (nested): raw.lvl_learned_20, raw.move_id_20, readable.lvl_learned_20, readable.move_id_20, readable.move_id_20_index
+
+=== 29.json ===
+Only in final (nested): raw.lvl_learned_14, raw.move_id_14, readable.lvl_learned_14, readable.move_id_14, readable.move_id_14_index
+
+=== 291.json ===
+Only in final (nested): raw.lvl_learned_13, raw.lvl_learned_14, raw.lvl_learned_15, raw.move_id_13, raw.move_id_14, raw.move_id_15, readable.lvl_learned_13, readable.lvl_learned_14, readable.lvl_learned_15, readable.move_id_13, readable.move_id_13_index, readable.move_id_14, readable.move_id_14_index, readable.move_id_15, readable.move_id_15_index
+
+=== 292.json ===
+Only in final (nested): raw.lvl_learned_13, raw.lvl_learned_14, raw.lvl_learned_15, raw.move_id_13, raw.move_id_14, raw.move_id_15, readable.lvl_learned_13, readable.lvl_learned_14, readable.lvl_learned_15, readable.move_id_13, readable.move_id_13_index, readable.move_id_14, readable.move_id_14_index, readable.move_id_15, readable.move_id_15_index
+
+=== 293.json ===
+Only in final (nested): raw.lvl_learned_15, raw.move_id_15, readable.lvl_learned_15, readable.move_id_15, readable.move_id_15_index
+
+=== 294.json ===
+Only in final (nested): raw.lvl_learned_18, raw.lvl_learned_19, raw.lvl_learned_20, raw.move_id_18, raw.move_id_19, raw.move_id_20, readable.lvl_learned_18, readable.lvl_learned_19, readable.lvl_learned_20, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index
+
+=== 295.json ===
+Only in final (nested): raw.lvl_learned_20, raw.lvl_learned_21, raw.lvl_learned_22, raw.move_id_20, raw.move_id_21, raw.move_id_22, readable.lvl_learned_20, readable.lvl_learned_21, readable.lvl_learned_22, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index
+
+=== 296.json ===
+Only in final (nested): raw.lvl_learned_12, raw.move_id_12, readable.lvl_learned_12, readable.move_id_12, readable.move_id_12_index
+
+=== 297.json ===
+Only in final (nested): raw.lvl_learned_18, raw.lvl_learned_19, raw.lvl_learned_20, raw.move_id_18, raw.move_id_19, raw.move_id_20, readable.lvl_learned_18, readable.lvl_learned_19, readable.lvl_learned_20, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index
+
+=== 298.json ===
+Only in original (nested): raw.lvl_learned_10, raw.move_id_10, readable.lvl_learned_10, readable.move_id_10, readable.move_id_10_index
+
+=== 299.json ===
+Only in final (nested): raw.lvl_learned_17, raw.move_id_17, readable.lvl_learned_17, readable.move_id_17, readable.move_id_17_index
+
+=== 3.json ===
+Only in final (nested): raw.lvl_learned_23, raw.lvl_learned_24, raw.move_id_23, raw.move_id_24, readable.lvl_learned_23, readable.lvl_learned_24, readable.move_id_23, readable.move_id_23_index, readable.move_id_24, readable.move_id_24_index
+
+=== 30.json ===
+Only in final (nested): raw.lvl_learned_15, raw.move_id_15, readable.lvl_learned_15, readable.move_id_15, readable.move_id_15_index
+
+=== 300.json ===
+Only in final (nested): raw.lvl_learned_18, raw.lvl_learned_19, raw.lvl_learned_20, raw.move_id_18, raw.move_id_19, raw.move_id_20, readable.lvl_learned_18, readable.lvl_learned_19, readable.lvl_learned_20, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index
+
+=== 301.json ===
+Only in final (nested): raw.lvl_learned_20, raw.lvl_learned_21, raw.lvl_learned_22, raw.lvl_learned_23, raw.move_id_20, raw.move_id_21, raw.move_id_22, raw.move_id_23, readable.lvl_learned_20, readable.lvl_learned_21, readable.lvl_learned_22, readable.lvl_learned_23, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index, readable.move_id_23, readable.move_id_23_index
+
+=== 302.json ===
+Only in final (nested): raw.lvl_learned_19, raw.lvl_learned_20, raw.lvl_learned_21, raw.lvl_learned_22, raw.move_id_19, raw.move_id_20, raw.move_id_21, raw.move_id_22, readable.lvl_learned_19, readable.lvl_learned_20, readable.lvl_learned_21, readable.lvl_learned_22, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index
+
+=== 303.json ===
+Only in final (nested): raw.lvl_learned_22, raw.move_id_22, readable.lvl_learned_22, readable.move_id_22, readable.move_id_22_index
+
+=== 304.json ===
+Only in final (nested): raw.lvl_learned_16, raw.move_id_16, readable.lvl_learned_16, readable.move_id_16, readable.move_id_16_index
+
+=== 305.json ===
+Only in final (nested): raw.lvl_learned_18, raw.lvl_learned_19, raw.move_id_18, raw.move_id_19, readable.lvl_learned_18, readable.lvl_learned_19, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index
+
+=== 306.json ===
+Only in final (nested): raw.lvl_learned_22, raw.move_id_22, readable.lvl_learned_22, readable.move_id_22, readable.move_id_22_index
+
+=== 307.json ===
+Only in final (nested): raw.lvl_learned_16, raw.move_id_16, readable.lvl_learned_16, readable.move_id_16, readable.move_id_16_index
+
+=== 308.json ===
+Only in final (nested): raw.lvl_learned_21, raw.lvl_learned_22, raw.lvl_learned_23, raw.move_id_21, raw.move_id_22, raw.move_id_23, readable.lvl_learned_21, readable.lvl_learned_22, readable.lvl_learned_23, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index, readable.move_id_23, readable.move_id_23_index
+
+=== 309.json ===
+Only in final (nested): raw.lvl_learned_18, raw.move_id_18, readable.lvl_learned_18, readable.move_id_18, readable.move_id_18_index
+
+=== 31.json ===
+Only in final (nested): raw.lvl_learned_19, raw.move_id_19, readable.lvl_learned_19, readable.move_id_19, readable.move_id_19_index
+
+=== 310.json ===
+Only in final (nested): raw.lvl_learned_21, raw.lvl_learned_22, raw.lvl_learned_23, raw.move_id_21, raw.move_id_22, raw.move_id_23, readable.lvl_learned_21, readable.lvl_learned_22, readable.lvl_learned_23, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index, readable.move_id_23, readable.move_id_23_index
+
+=== 311.json ===
+Only in final (nested): raw.lvl_learned_21, raw.move_id_21, readable.lvl_learned_21, readable.move_id_21, readable.move_id_21_index
+
+=== 312.json ===
+Only in final (nested): raw.lvl_learned_21, raw.move_id_21, readable.lvl_learned_21, readable.move_id_21, readable.move_id_21_index
+
+=== 313.json ===
+Only in final (nested): raw.lvl_learned_18, raw.lvl_learned_19, raw.lvl_learned_20, raw.lvl_learned_21, raw.move_id_18, raw.move_id_19, raw.move_id_20, raw.move_id_21, readable.lvl_learned_18, readable.lvl_learned_19, readable.lvl_learned_20, readable.lvl_learned_21, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index
+
+=== 314.json ===
+Only in final (nested): raw.lvl_learned_19, raw.lvl_learned_20, raw.lvl_learned_21, raw.move_id_19, raw.move_id_20, raw.move_id_21, readable.lvl_learned_19, readable.lvl_learned_20, readable.lvl_learned_21, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index
+
+=== 315.json ===
+Only in final (nested): raw.lvl_learned_14, raw.lvl_learned_15, raw.move_id_14, raw.move_id_15, readable.lvl_learned_14, readable.lvl_learned_15, readable.move_id_14, readable.move_id_14_index, readable.move_id_15, readable.move_id_15_index
+
+=== 316.json ===
+Only in final (nested): raw.lvl_learned_15, raw.lvl_learned_16, raw.move_id_15, raw.move_id_16, readable.lvl_learned_15, readable.lvl_learned_16, readable.move_id_15, readable.move_id_15_index, readable.move_id_16, readable.move_id_16_index
+
+=== 317.json ===
+Only in final (nested): raw.lvl_learned_18, raw.lvl_learned_19, raw.lvl_learned_20, raw.move_id_18, raw.move_id_19, raw.move_id_20, readable.lvl_learned_18, readable.lvl_learned_19, readable.lvl_learned_20, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index
+
+=== 318.json ===
+Only in final (nested): raw.lvl_learned_14, raw.lvl_learned_15, raw.move_id_14, raw.move_id_15, readable.lvl_learned_14, readable.lvl_learned_15, readable.move_id_14, readable.move_id_14_index, readable.move_id_15, readable.move_id_15_index
+
+=== 319.json ===
+Only in final (nested): raw.lvl_learned_17, raw.lvl_learned_18, raw.lvl_learned_19, raw.lvl_learned_20, raw.move_id_17, raw.move_id_18, raw.move_id_19, raw.move_id_20, readable.lvl_learned_17, readable.lvl_learned_18, readable.lvl_learned_19, readable.lvl_learned_20, readable.move_id_17, readable.move_id_17_index, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index
+
+=== 32.json ===
+Only in final (nested): raw.lvl_learned_14, raw.move_id_14, readable.lvl_learned_14, readable.move_id_14, readable.move_id_14_index
+
+=== 320.json ===
+Only in final (nested): raw.lvl_learned_16, raw.lvl_learned_17, raw.lvl_learned_18, raw.lvl_learned_19, raw.lvl_learned_20, raw.lvl_learned_21, raw.move_id_16, raw.move_id_17, raw.move_id_18, raw.move_id_19, raw.move_id_20, raw.move_id_21, readable.lvl_learned_16, readable.lvl_learned_17, readable.lvl_learned_18, readable.lvl_learned_19, readable.lvl_learned_20, readable.lvl_learned_21, readable.move_id_16, readable.move_id_16_index, readable.move_id_17, readable.move_id_17_index, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index
+
+=== 321.json ===
+Only in final (nested): raw.lvl_learned_17, raw.lvl_learned_18, raw.lvl_learned_19, raw.lvl_learned_20, raw.lvl_learned_21, raw.lvl_learned_22, raw.move_id_17, raw.move_id_18, raw.move_id_19, raw.move_id_20, raw.move_id_21, raw.move_id_22, readable.lvl_learned_17, readable.lvl_learned_18, readable.lvl_learned_19, readable.lvl_learned_20, readable.lvl_learned_21, readable.lvl_learned_22, readable.move_id_17, readable.move_id_17_index, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index
+
+=== 322.json ===
+Only in final (nested): raw.lvl_learned_18, raw.lvl_learned_19, raw.lvl_learned_20, raw.move_id_18, raw.move_id_19, raw.move_id_20, readable.lvl_learned_18, readable.lvl_learned_19, readable.lvl_learned_20, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index
+
+=== 323.json ===
+Only in final (nested): raw.lvl_learned_20, raw.lvl_learned_21, raw.lvl_learned_22, raw.lvl_learned_23, raw.lvl_learned_24, raw.move_id_20, raw.move_id_21, raw.move_id_22, raw.move_id_23, raw.move_id_24, readable.lvl_learned_20, readable.lvl_learned_21, readable.lvl_learned_22, readable.lvl_learned_23, readable.lvl_learned_24, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index, readable.move_id_23, readable.move_id_23_index, readable.move_id_24, readable.move_id_24_index
+
+=== 324.json ===
+Only in final (nested): raw.lvl_learned_18, raw.lvl_learned_19, raw.lvl_learned_20, raw.move_id_18, raw.move_id_19, raw.move_id_20, readable.lvl_learned_18, readable.lvl_learned_19, readable.lvl_learned_20, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index
+
+=== 325.json ===
+Only in final (nested): raw.lvl_learned_12, raw.lvl_learned_13, raw.lvl_learned_14, raw.move_id_12, raw.move_id_13, raw.move_id_14, readable.lvl_learned_12, readable.lvl_learned_13, readable.lvl_learned_14, readable.move_id_12, readable.move_id_12_index, readable.move_id_13, readable.move_id_13_index, readable.move_id_14, readable.move_id_14_index
+
+=== 326.json ===
+Only in final (nested): raw.lvl_learned_17, raw.lvl_learned_18, raw.lvl_learned_19, raw.lvl_learned_20, raw.lvl_learned_21, raw.lvl_learned_22, raw.move_id_17, raw.move_id_18, raw.move_id_19, raw.move_id_20, raw.move_id_21, raw.move_id_22, readable.lvl_learned_17, readable.lvl_learned_18, readable.lvl_learned_19, readable.lvl_learned_20, readable.lvl_learned_21, readable.lvl_learned_22, readable.move_id_17, readable.move_id_17_index, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index
+
+=== 327.json ===
+Only in final (nested): raw.lvl_learned_20, raw.lvl_learned_21, raw.lvl_learned_22, raw.lvl_learned_23, raw.move_id_20, raw.move_id_21, raw.move_id_22, raw.move_id_23, readable.lvl_learned_20, readable.lvl_learned_21, readable.lvl_learned_22, readable.lvl_learned_23, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index, readable.move_id_23, readable.move_id_23_index
+
+=== 328.json ===
+Only in final (nested): raw.lvl_learned_13, raw.move_id_13, readable.lvl_learned_13, readable.move_id_13, readable.move_id_13_index
+
+=== 329.json ===
+Only in final (nested): raw.lvl_learned_18, raw.lvl_learned_19, raw.move_id_18, raw.move_id_19, readable.lvl_learned_18, readable.lvl_learned_19, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index
+
+=== 33.json ===
+Only in final (nested): raw.lvl_learned_15, raw.move_id_15, readable.lvl_learned_15, readable.move_id_15, readable.move_id_15_index
+
+=== 330.json ===
+Only in final (nested): raw.lvl_learned_22, raw.lvl_learned_23, raw.move_id_22, raw.move_id_23, readable.lvl_learned_22, readable.lvl_learned_23, readable.move_id_22, readable.move_id_22_index, readable.move_id_23, readable.move_id_23_index
+
+=== 331.json ===
+Only in final (nested): raw.lvl_learned_16, raw.move_id_16, readable.lvl_learned_16, readable.move_id_16, readable.move_id_16_index
+
+=== 332.json ===
+Only in final (nested): raw.lvl_learned_20, raw.lvl_learned_21, raw.lvl_learned_22, raw.move_id_20, raw.move_id_21, raw.move_id_22, readable.lvl_learned_20, readable.lvl_learned_21, readable.lvl_learned_22, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index
+
+=== 333.json ===
+Only in final (nested): raw.lvl_learned_17, raw.lvl_learned_18, raw.lvl_learned_19, raw.lvl_learned_20, raw.move_id_17, raw.move_id_18, raw.move_id_19, raw.move_id_20, readable.lvl_learned_17, readable.lvl_learned_18, readable.lvl_learned_19, readable.lvl_learned_20, readable.move_id_17, readable.move_id_17_index, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index
+
+=== 334.json ===
+Only in final (nested): raw.lvl_learned_20, raw.lvl_learned_21, raw.lvl_learned_22, raw.lvl_learned_23, raw.move_id_20, raw.move_id_21, raw.move_id_22, raw.move_id_23, readable.lvl_learned_20, readable.lvl_learned_21, readable.lvl_learned_22, readable.lvl_learned_23, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index, readable.move_id_23, readable.move_id_23_index
+
+=== 335.json ===
+Only in final (nested): raw.lvl_learned_18, raw.lvl_learned_19, raw.lvl_learned_20, raw.lvl_learned_21, raw.move_id_18, raw.move_id_19, raw.move_id_20, raw.move_id_21, readable.lvl_learned_18, readable.lvl_learned_19, readable.lvl_learned_20, readable.lvl_learned_21, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index
+
+=== 336.json ===
+Only in final (nested): raw.lvl_learned_21, raw.lvl_learned_22, raw.lvl_learned_23, raw.move_id_21, raw.move_id_22, raw.move_id_23, readable.lvl_learned_21, readable.lvl_learned_22, readable.lvl_learned_23, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index, readable.move_id_23, readable.move_id_23_index
+
+=== 337.json ===
+Only in final (nested): raw.lvl_learned_21, raw.lvl_learned_22, raw.lvl_learned_23, raw.move_id_21, raw.move_id_22, raw.move_id_23, readable.lvl_learned_21, readable.lvl_learned_22, readable.lvl_learned_23, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index, readable.move_id_23, readable.move_id_23_index
+
+=== 338.json ===
+Only in final (nested): raw.lvl_learned_21, raw.lvl_learned_22, raw.lvl_learned_23, raw.move_id_21, raw.move_id_22, raw.move_id_23, readable.lvl_learned_21, readable.lvl_learned_22, readable.lvl_learned_23, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index, readable.move_id_23, readable.move_id_23_index
+
+=== 339.json ===
+Only in final (nested): raw.lvl_learned_14, raw.move_id_14, readable.lvl_learned_14, readable.move_id_14, readable.move_id_14_index
+
+=== 34.json ===
+Only in final (nested): raw.lvl_learned_19, raw.move_id_19, readable.lvl_learned_19, readable.move_id_19, readable.move_id_19_index
+
+=== 340.json ===
+Only in final (nested): raw.lvl_learned_20, raw.lvl_learned_21, raw.lvl_learned_22, raw.lvl_learned_23, raw.lvl_learned_24, raw.move_id_20, raw.move_id_21, raw.move_id_22, raw.move_id_23, raw.move_id_24, readable.lvl_learned_20, readable.lvl_learned_21, readable.lvl_learned_22, readable.lvl_learned_23, readable.lvl_learned_24, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index, readable.move_id_23, readable.move_id_23_index, readable.move_id_24, readable.move_id_24_index
+
+=== 342.json ===
+Only in final (nested): raw.lvl_learned_20, raw.lvl_learned_21, raw.lvl_learned_22, raw.move_id_20, raw.move_id_21, raw.move_id_22, readable.lvl_learned_20, readable.lvl_learned_21, readable.lvl_learned_22, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index
+
+=== 343.json ===
+Only in final (nested): raw.lvl_learned_17, raw.move_id_17, readable.lvl_learned_17, readable.move_id_17, readable.move_id_17_index
+
+=== 344.json ===
+Only in final (nested): raw.lvl_learned_19, raw.move_id_19, readable.lvl_learned_19, readable.move_id_19, readable.move_id_19_index
+
+=== 346.json ===
+Only in final (nested): raw.lvl_learned_19, raw.lvl_learned_20, raw.lvl_learned_21, raw.move_id_19, raw.move_id_20, raw.move_id_21, readable.lvl_learned_19, readable.lvl_learned_20, readable.lvl_learned_21, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index
+
+=== 348.json ===
+Only in final (nested): raw.lvl_learned_20, raw.lvl_learned_21, raw.lvl_learned_22, raw.move_id_20, raw.move_id_21, raw.move_id_22, readable.lvl_learned_20, readable.lvl_learned_21, readable.lvl_learned_22, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index
+
+=== 349.json ===
+Only in final (nested): raw.lvl_learned_7, raw.move_id_7, readable.lvl_learned_7, readable.move_id_7, readable.move_id_7_index
+
+=== 35.json ===
+Only in final (nested): raw.lvl_learned_17, raw.move_id_17, readable.lvl_learned_17, readable.move_id_17, readable.move_id_17_index
+
+=== 350.json ===
+Only in final (nested): raw.lvl_learned_18, raw.lvl_learned_19, raw.lvl_learned_20, raw.lvl_learned_21, raw.lvl_learned_22, raw.lvl_learned_23, raw.move_id_18, raw.move_id_19, raw.move_id_20, raw.move_id_21, raw.move_id_22, raw.move_id_23, readable.lvl_learned_18, readable.lvl_learned_19, readable.lvl_learned_20, readable.lvl_learned_21, readable.lvl_learned_22, readable.lvl_learned_23, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index, readable.move_id_23, readable.move_id_23_index
+
+=== 351.json ===
+Only in final (nested): raw.lvl_learned_22, raw.lvl_learned_23, raw.move_id_22, raw.move_id_23, readable.lvl_learned_22, readable.lvl_learned_23, readable.move_id_22, readable.move_id_22_index, readable.move_id_23, readable.move_id_23_index
+
+=== 352.json ===
+Only in final (nested): raw.lvl_learned_20, raw.lvl_learned_21, raw.lvl_learned_22, raw.move_id_20, raw.move_id_21, raw.move_id_22, readable.lvl_learned_20, readable.lvl_learned_21, readable.lvl_learned_22, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index
+
+=== 354.json ===
+Only in final (nested): raw.lvl_learned_21, raw.lvl_learned_22, raw.lvl_learned_23, raw.move_id_21, raw.move_id_22, raw.move_id_23, readable.lvl_learned_21, readable.lvl_learned_22, readable.lvl_learned_23, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index, readable.move_id_23, readable.move_id_23_index
+
+=== 355.json ===
+Only in final (nested): raw.lvl_learned_14, raw.move_id_14, readable.lvl_learned_14, readable.move_id_14, readable.move_id_14_index
+
+=== 356.json ===
+Only in final (nested): raw.lvl_learned_18, raw.move_id_18, readable.lvl_learned_18, readable.move_id_18, readable.move_id_18_index
+
+=== 357.json ===
+Only in final (nested): raw.lvl_learned_22, raw.move_id_22, readable.lvl_learned_22, readable.move_id_22, readable.move_id_22_index
+
+=== 358.json ===
+Only in final (nested): raw.lvl_learned_18, raw.lvl_learned_19, raw.lvl_learned_20, raw.lvl_learned_21, raw.lvl_learned_22, raw.move_id_18, raw.move_id_19, raw.move_id_20, raw.move_id_21, raw.move_id_22, readable.lvl_learned_18, readable.lvl_learned_19, readable.lvl_learned_20, readable.lvl_learned_21, readable.lvl_learned_22, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index
+
+=== 359.json ===
+Only in final (nested): raw.lvl_learned_20, raw.lvl_learned_21, raw.lvl_learned_22, raw.move_id_20, raw.move_id_21, raw.move_id_22, readable.lvl_learned_20, readable.lvl_learned_21, readable.lvl_learned_22, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index
+
+=== 36.json ===
+Only in final (nested): raw.lvl_learned_20, raw.lvl_learned_21, raw.move_id_20, raw.move_id_21, readable.lvl_learned_20, readable.lvl_learned_21, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index
+
+=== 362.json ===
+Only in final (nested): raw.lvl_learned_18, raw.lvl_learned_19, raw.lvl_learned_20, raw.move_id_18, raw.move_id_19, raw.move_id_20, readable.lvl_learned_18, readable.lvl_learned_19, readable.lvl_learned_20, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index
+
+=== 363.json ===
+Only in final (nested): raw.lvl_learned_18, raw.lvl_learned_19, raw.move_id_18, raw.move_id_19, readable.lvl_learned_18, readable.lvl_learned_19, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index
+
+=== 364.json ===
+Only in final (nested): raw.lvl_learned_18, raw.lvl_learned_19, raw.move_id_18, raw.move_id_19, readable.lvl_learned_18, readable.lvl_learned_19, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index
+
+=== 365.json ===
+Only in final (nested): raw.lvl_learned_20, raw.lvl_learned_21, raw.lvl_learned_22, raw.lvl_learned_23, raw.lvl_learned_24, raw.move_id_20, raw.move_id_21, raw.move_id_22, raw.move_id_23, raw.move_id_24, readable.lvl_learned_20, readable.lvl_learned_21, readable.lvl_learned_22, readable.lvl_learned_23, readable.lvl_learned_24, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index, readable.move_id_23, readable.move_id_23_index, readable.move_id_24, readable.move_id_24_index
+
+=== 367.json ===
+Only in final (nested): raw.lvl_learned_19, raw.lvl_learned_20, raw.lvl_learned_21, raw.move_id_19, raw.move_id_20, raw.move_id_21, readable.lvl_learned_19, readable.lvl_learned_20, readable.lvl_learned_21, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index
+
+=== 368.json ===
+Only in final (nested): raw.lvl_learned_19, raw.lvl_learned_20, raw.lvl_learned_21, raw.move_id_19, raw.move_id_20, raw.move_id_21, readable.lvl_learned_19, readable.lvl_learned_20, readable.lvl_learned_21, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index
+
+=== 369.json ===
+Only in final (nested): raw.lvl_learned_18, raw.lvl_learned_19, raw.lvl_learned_20, raw.move_id_18, raw.move_id_19, raw.move_id_20, readable.lvl_learned_18, readable.lvl_learned_19, readable.lvl_learned_20, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index
+
+=== 370.json ===
+Only in final (nested): raw.lvl_learned_18, raw.lvl_learned_19, raw.lvl_learned_20, raw.move_id_18, raw.move_id_19, raw.move_id_20, readable.lvl_learned_18, readable.lvl_learned_19, readable.lvl_learned_20, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index
+
+=== 373.json ===
+Only in final (nested): raw.lvl_learned_22, raw.move_id_22, readable.lvl_learned_22, readable.move_id_22, readable.move_id_22_index
+
+=== 374.json ===
+Only in final (nested): raw.lvl_learned_5, raw.lvl_learned_6, raw.lvl_learned_7, raw.lvl_learned_8, raw.lvl_learned_9, raw.move_id_5, raw.move_id_6, raw.move_id_7, raw.move_id_8, raw.move_id_9, readable.lvl_learned_5, readable.lvl_learned_6, readable.lvl_learned_7, readable.lvl_learned_8, readable.lvl_learned_9, readable.move_id_5, readable.move_id_5_index, readable.move_id_6, readable.move_id_6_index, readable.move_id_7, readable.move_id_7_index, readable.move_id_8, readable.move_id_8_index, readable.move_id_9, readable.move_id_9_index
+
+=== 375.json ===
+Only in final (nested): raw.lvl_learned_16, raw.move_id_16, readable.lvl_learned_16, readable.move_id_16, readable.move_id_16_index
+
+=== 376.json ===
+Only in final (nested): raw.lvl_learned_19, raw.lvl_learned_20, raw.lvl_learned_21, raw.move_id_19, raw.move_id_20, raw.move_id_21, readable.lvl_learned_19, readable.lvl_learned_20, readable.lvl_learned_21, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index
+
+=== 38.json ===
+Only in final (nested): raw.lvl_learned_21, raw.lvl_learned_22, raw.move_id_21, raw.move_id_22, readable.lvl_learned_21, readable.lvl_learned_22, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index
+
+=== 388.json ===
+Only in final (nested): raw.lvl_learned_17, raw.move_id_17, readable.lvl_learned_17, readable.move_id_17, readable.move_id_17_index
+
+=== 389.json ===
+Only in final (nested): raw.lvl_learned_21, raw.lvl_learned_22, raw.move_id_21, raw.move_id_22, readable.lvl_learned_21, readable.lvl_learned_22, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index
+
+=== 39.json ===
+Only in final (nested): raw.lvl_learned_19, raw.lvl_learned_20, raw.lvl_learned_21, raw.lvl_learned_22, raw.lvl_learned_23, raw.lvl_learned_24, raw.move_id_19, raw.move_id_20, raw.move_id_21, raw.move_id_22, raw.move_id_23, raw.move_id_24, readable.lvl_learned_19, readable.lvl_learned_20, readable.lvl_learned_21, readable.lvl_learned_22, readable.lvl_learned_23, readable.lvl_learned_24, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index, readable.move_id_23, readable.move_id_23_index, readable.move_id_24, readable.move_id_24_index
+
+=== 390.json ===
+Only in final (nested): raw.lvl_learned_14, raw.move_id_14, readable.lvl_learned_14, readable.move_id_14, readable.move_id_14_index
+
+=== 391.json ===
+Only in final (nested): raw.lvl_learned_18, raw.lvl_learned_19, raw.move_id_18, raw.move_id_19, readable.lvl_learned_18, readable.lvl_learned_19, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index
+
+=== 392.json ===
+Only in final (nested): raw.lvl_learned_22, raw.lvl_learned_23, raw.move_id_22, raw.move_id_23, readable.lvl_learned_22, readable.lvl_learned_23, readable.move_id_22, readable.move_id_22_index, readable.move_id_23, readable.move_id_23_index
+
+=== 394.json ===
+Only in final (nested): raw.lvl_learned_18, raw.move_id_18, readable.lvl_learned_18, readable.move_id_18, readable.move_id_18_index
+
+=== 395.json ===
+Only in final (nested): raw.lvl_learned_21, raw.move_id_21, readable.lvl_learned_21, readable.move_id_21, readable.move_id_21_index
+
+=== 4.json ===
+Only in final (nested): raw.lvl_learned_19, raw.lvl_learned_20, raw.move_id_19, raw.move_id_20, readable.lvl_learned_19, readable.lvl_learned_20, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index
+
+=== 40.json ===
+Only in final (nested): raw.lvl_learned_22, raw.lvl_learned_23, raw.lvl_learned_24, raw.move_id_22, raw.move_id_23, raw.move_id_24, readable.lvl_learned_22, readable.lvl_learned_23, readable.lvl_learned_24, readable.move_id_22, readable.move_id_22_index, readable.move_id_23, readable.move_id_23_index, readable.move_id_24, readable.move_id_24_index
+
+=== 401.json ===
+Only in original (nested): raw.lvl_learned_9, raw.move_id_9, readable.lvl_learned_9, readable.move_id_9, readable.move_id_9_index
+
+=== 403.json ===
+Only in final (nested): raw.lvl_learned_16, raw.move_id_16, readable.lvl_learned_16, readable.move_id_16, readable.move_id_16_index
+
+=== 404.json ===
+Only in final (nested): raw.lvl_learned_19, raw.lvl_learned_20, raw.move_id_19, raw.move_id_20, readable.lvl_learned_19, readable.lvl_learned_20, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index
+
+=== 405.json ===
+Only in final (nested): raw.lvl_learned_21, raw.lvl_learned_22, raw.lvl_learned_23, raw.move_id_21, raw.move_id_22, raw.move_id_23, readable.lvl_learned_21, readable.lvl_learned_22, readable.lvl_learned_23, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index, readable.move_id_23, readable.move_id_23_index
+
+=== 406.json ===
+Only in final (nested): raw.lvl_learned_12, raw.lvl_learned_13, raw.move_id_12, raw.move_id_13, readable.lvl_learned_12, readable.lvl_learned_13, readable.move_id_12, readable.move_id_12_index, readable.move_id_13, readable.move_id_13_index
+
+=== 407.json ===
+Only in final (nested): raw.lvl_learned_16, raw.lvl_learned_17, raw.lvl_learned_18, raw.lvl_learned_19, raw.move_id_16, raw.move_id_17, raw.move_id_18, raw.move_id_19, readable.lvl_learned_16, readable.lvl_learned_17, readable.lvl_learned_18, readable.lvl_learned_19, readable.move_id_16, readable.move_id_16_index, readable.move_id_17, readable.move_id_17_index, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index
+
+=== 408.json ===
+Only in final (nested): raw.lvl_learned_15, raw.lvl_learned_16, raw.move_id_15, raw.move_id_16, readable.lvl_learned_15, readable.lvl_learned_16, readable.move_id_15, readable.move_id_15_index, readable.move_id_16, readable.move_id_16_index
+
+=== 409.json ===
+Only in final (nested): raw.lvl_learned_18, raw.lvl_learned_19, raw.lvl_learned_20, raw.move_id_18, raw.move_id_19, raw.move_id_20, readable.lvl_learned_18, readable.lvl_learned_19, readable.lvl_learned_20, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index
+
+=== 411.json ===
+Only in final (nested): raw.lvl_learned_20, raw.lvl_learned_21, raw.move_id_20, raw.move_id_21, readable.lvl_learned_20, readable.lvl_learned_21, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index
+
+=== 416.json ===
+Only in final (nested): raw.lvl_learned_17, raw.lvl_learned_18, raw.lvl_learned_19, raw.lvl_learned_20, raw.move_id_17, raw.move_id_18, raw.move_id_19, raw.move_id_20, readable.lvl_learned_17, readable.lvl_learned_18, readable.lvl_learned_19, readable.lvl_learned_20, readable.move_id_17, readable.move_id_17_index, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index
+
+=== 417.json ===
+Only in final (nested): raw.lvl_learned_18, raw.lvl_learned_19, raw.move_id_18, raw.move_id_19, readable.lvl_learned_18, readable.lvl_learned_19, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index
+
+=== 418.json ===
+Only in original (nested): raw.lvl_learned_14, raw.move_id_14, readable.lvl_learned_14, readable.move_id_14, readable.move_id_14_index
+
+=== 419.json ===
+Only in final (nested): raw.lvl_learned_21, raw.move_id_21, readable.lvl_learned_21, readable.move_id_21, readable.move_id_21_index
+
+=== 42.json ===
+Only in final (nested): raw.lvl_learned_20, raw.move_id_20, readable.lvl_learned_20, readable.move_id_20, readable.move_id_20_index
+
+=== 421.json ===
+Only in final (nested): raw.lvl_learned_21, raw.lvl_learned_22, raw.move_id_21, raw.move_id_22, readable.lvl_learned_21, readable.lvl_learned_22, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index
+
+=== 423.json ===
+Only in final (nested): raw.lvl_learned_20, raw.lvl_learned_21, raw.lvl_learned_22, raw.lvl_learned_23, raw.lvl_learned_24, raw.lvl_learned_25, raw.lvl_learned_26, raw.lvl_learned_27, raw.lvl_learned_28, raw.lvl_learned_29, raw.lvl_learned_30, raw.lvl_learned_31, raw.lvl_learned_32, raw.lvl_learned_33, raw.lvl_learned_34, raw.lvl_learned_35, raw.lvl_learned_36, raw.lvl_learned_37, raw.lvl_learned_38, raw.lvl_learned_39, raw.move_id_20, raw.move_id_21, raw.move_id_22, raw.move_id_23, raw.move_id_24, raw.move_id_25, raw.move_id_26, raw.move_id_27, raw.move_id_28, raw.move_id_29, raw.move_id_30, raw.move_id_31, raw.move_id_32, raw.move_id_33, raw.move_id_34, raw.move_id_35, raw.move_id_36, raw.move_id_37, raw.move_id_38, raw.move_id_39, readable.lvl_learned_20, readable.lvl_learned_21, readable.lvl_learned_22, readable.lvl_learned_23, readable.lvl_learned_24, readable.lvl_learned_25, readable.lvl_learned_26, readable.lvl_learned_27, readable.lvl_learned_28, readable.lvl_learned_29, readable.lvl_learned_30, readable.lvl_learned_31, readable.lvl_learned_32, readable.lvl_learned_33, readable.lvl_learned_34, readable.lvl_learned_35, readable.lvl_learned_36, readable.lvl_learned_37, readable.lvl_learned_38, readable.lvl_learned_39, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index, readable.move_id_23, readable.move_id_23_index, readable.move_id_24, readable.move_id_24_index, readable.move_id_25, readable.move_id_25_index, readable.move_id_26, readable.move_id_26_index, readable.move_id_27, readable.move_id_27_index, readable.move_id_28, readable.move_id_28_index, readable.move_id_29, readable.move_id_29_index, readable.move_id_30, readable.move_id_30_index, readable.move_id_31, readable.move_id_31_index, readable.move_id_32, readable.move_id_32_index, readable.move_id_33, readable.move_id_33_index, readable.move_id_34, readable.move_id_34_index, readable.move_id_35, readable.move_id_35_index, readable.move_id_36, readable.move_id_36_index, readable.move_id_37, readable.move_id_37_index, readable.move_id_38, readable.move_id_38_index, readable.move_id_39, readable.move_id_39_index
+
+=== 425.json ===
+Only in final (nested): raw.lvl_learned_19, raw.move_id_19, readable.lvl_learned_19, readable.move_id_19, readable.move_id_19_index
+
+=== 426.json ===
+Only in final (nested): raw.lvl_learned_22, raw.lvl_learned_23, raw.move_id_22, raw.move_id_23, readable.lvl_learned_22, readable.lvl_learned_23, readable.move_id_22, readable.move_id_22_index, readable.move_id_23, readable.move_id_23_index
+
+=== 428.json ===
+Only in final (nested): raw.lvl_learned_22, raw.lvl_learned_23, raw.move_id_22, raw.move_id_23, readable.lvl_learned_22, readable.lvl_learned_23, readable.move_id_22, readable.move_id_22_index, readable.move_id_23, readable.move_id_23_index
+
+=== 429.json ===
+Only in final (nested): raw.lvl_learned_19, raw.lvl_learned_20, raw.move_id_19, raw.move_id_20, readable.lvl_learned_19, readable.lvl_learned_20, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index
+
+=== 43.json ===
+Only in final (nested): raw.lvl_learned_19, raw.lvl_learned_20, raw.move_id_19, raw.move_id_20, readable.lvl_learned_19, readable.lvl_learned_20, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index
+
+=== 430.json ===
+Only in final (nested): raw.lvl_learned_21, raw.lvl_learned_22, raw.lvl_learned_23, raw.move_id_21, raw.move_id_22, raw.move_id_23, readable.lvl_learned_21, readable.lvl_learned_22, readable.lvl_learned_23, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index, readable.move_id_23, readable.move_id_23_index
+
+=== 431.json ===
+Only in original (nested): raw.lvl_learned_17, raw.move_id_17, readable.lvl_learned_17, readable.move_id_17, readable.move_id_17_index
+
+=== 432.json ===
+Only in final (nested): raw.lvl_learned_22, raw.move_id_22, readable.lvl_learned_22, readable.move_id_22, readable.move_id_22_index
+
+=== 434.json ===
+Only in final (nested): raw.lvl_learned_17, raw.lvl_learned_18, raw.move_id_17, raw.move_id_18, readable.lvl_learned_17, readable.lvl_learned_18, readable.move_id_17, readable.move_id_17_index, readable.move_id_18, readable.move_id_18_index
+
+=== 435.json ===
+Only in final (nested): raw.lvl_learned_21, raw.lvl_learned_22, raw.move_id_21, raw.move_id_22, readable.lvl_learned_21, readable.lvl_learned_22, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index
+
+=== 436.json ===
+Only in final (nested): raw.lvl_learned_16, raw.lvl_learned_17, raw.move_id_16, raw.move_id_17, readable.lvl_learned_16, readable.lvl_learned_17, readable.move_id_16, readable.move_id_16_index, readable.move_id_17, readable.move_id_17_index
+
+=== 437.json ===
+Only in final (nested): raw.lvl_learned_19, raw.lvl_learned_20, raw.lvl_learned_21, raw.move_id_19, raw.move_id_20, raw.move_id_21, readable.lvl_learned_19, readable.lvl_learned_20, readable.lvl_learned_21, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index
+
+=== 438.json ===
+Only in final (nested): raw.lvl_learned_15, raw.lvl_learned_16, raw.move_id_15, raw.move_id_16, readable.lvl_learned_15, readable.lvl_learned_16, readable.move_id_15, readable.move_id_15_index, readable.move_id_16, readable.move_id_16_index
+
+=== 44.json ===
+Only in final (nested): raw.lvl_learned_20, raw.lvl_learned_21, raw.lvl_learned_22, raw.move_id_20, raw.move_id_21, raw.move_id_22, readable.lvl_learned_20, readable.lvl_learned_21, readable.lvl_learned_22, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index
+
+=== 441.json ===
+Only in final (nested): raw.lvl_learned_17, raw.lvl_learned_18, raw.lvl_learned_19, raw.lvl_learned_20, raw.move_id_17, raw.move_id_18, raw.move_id_19, raw.move_id_20, readable.lvl_learned_17, readable.lvl_learned_18, readable.lvl_learned_19, readable.lvl_learned_20, readable.move_id_17, readable.move_id_17_index, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index
+
+=== 442.json ===
+Only in final (nested): raw.lvl_learned_18, raw.lvl_learned_19, raw.lvl_learned_20, raw.move_id_18, raw.move_id_19, raw.move_id_20, readable.lvl_learned_18, readable.lvl_learned_19, readable.lvl_learned_20, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index
+
+=== 443.json ===
+Only in final (nested): raw.lvl_learned_13, raw.move_id_13, readable.lvl_learned_13, readable.move_id_13, readable.move_id_13_index
+
+=== 444.json ===
+Only in final (nested): raw.lvl_learned_17, raw.lvl_learned_18, raw.move_id_17, raw.move_id_18, readable.lvl_learned_17, readable.lvl_learned_18, readable.move_id_17, readable.move_id_17_index, readable.move_id_18, readable.move_id_18_index
+
+=== 445.json ===
+Only in final (nested): raw.lvl_learned_20, raw.lvl_learned_21, raw.move_id_20, raw.move_id_21, readable.lvl_learned_20, readable.lvl_learned_21, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index
+
+=== 446.json ===
+Only in original (nested): raw.lvl_learned_13, raw.lvl_learned_14, raw.lvl_learned_15, raw.lvl_learned_16, raw.move_id_13, raw.move_id_14, raw.move_id_15, raw.move_id_16, readable.lvl_learned_13, readable.lvl_learned_14, readable.lvl_learned_15, readable.lvl_learned_16, readable.move_id_13, readable.move_id_13_index, readable.move_id_14, readable.move_id_14_index, readable.move_id_15, readable.move_id_15_index, readable.move_id_16, readable.move_id_16_index
+
+=== 447.json ===
+Only in final (nested): raw.lvl_learned_16, raw.move_id_16, readable.lvl_learned_16, readable.move_id_16, readable.move_id_16_index
+
+=== 448.json ===
+Only in final (nested): raw.lvl_learned_23, raw.move_id_23, readable.lvl_learned_23, readable.move_id_23, readable.move_id_23_index
+
+=== 449.json ===
+Only in final (nested): raw.lvl_learned_16, raw.move_id_16, readable.lvl_learned_16, readable.move_id_16, readable.move_id_16_index
+
+=== 45.json ===
+Only in final (nested): raw.lvl_learned_22, raw.lvl_learned_23, raw.lvl_learned_24, raw.move_id_22, raw.move_id_23, raw.move_id_24, readable.lvl_learned_22, readable.lvl_learned_23, readable.lvl_learned_24, readable.move_id_22, readable.move_id_22_index, readable.move_id_23, readable.move_id_23_index, readable.move_id_24, readable.move_id_24_index
+
+=== 450.json ===
+Only in final (nested): raw.lvl_learned_20, raw.lvl_learned_21, raw.move_id_20, raw.move_id_21, readable.lvl_learned_20, readable.lvl_learned_21, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index
+
+=== 453.json ===
+Only in final (nested): raw.lvl_learned_18, raw.lvl_learned_19, raw.move_id_18, raw.move_id_19, readable.lvl_learned_18, readable.lvl_learned_19, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index
+
+=== 454.json ===
+Only in final (nested): raw.lvl_learned_21, raw.lvl_learned_22, raw.move_id_21, raw.move_id_22, readable.lvl_learned_21, readable.lvl_learned_22, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index
+
+=== 455.json ===
+Only in original (nested): raw.lvl_learned_23, raw.move_id_23, readable.lvl_learned_23, readable.move_id_23, readable.move_id_23_index
+
+=== 456.json ===
+Only in final (nested): raw.lvl_learned_18, raw.lvl_learned_19, raw.lvl_learned_20, raw.lvl_learned_21, raw.lvl_learned_22, raw.lvl_learned_23, raw.move_id_18, raw.move_id_19, raw.move_id_20, raw.move_id_21, raw.move_id_22, raw.move_id_23, readable.lvl_learned_18, readable.lvl_learned_19, readable.lvl_learned_20, readable.lvl_learned_21, readable.lvl_learned_22, readable.lvl_learned_23, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index, readable.move_id_23, readable.move_id_23_index
+
+=== 457.json ===
+Only in final (nested): raw.lvl_learned_18, raw.lvl_learned_19, raw.lvl_learned_20, raw.lvl_learned_21, raw.lvl_learned_22, raw.lvl_learned_23, raw.move_id_18, raw.move_id_19, raw.move_id_20, raw.move_id_21, raw.move_id_22, raw.move_id_23, readable.lvl_learned_18, readable.lvl_learned_19, readable.lvl_learned_20, readable.lvl_learned_21, readable.lvl_learned_22, readable.lvl_learned_23, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index, readable.move_id_23, readable.move_id_23_index
+
+=== 46.json ===
+Only in final (nested): raw.lvl_learned_15, raw.lvl_learned_16, raw.move_id_15, raw.move_id_16, readable.lvl_learned_15, readable.lvl_learned_16, readable.move_id_15, readable.move_id_15_index, readable.move_id_16, readable.move_id_16_index
+
+=== 461.json ===
+Only in final (nested): raw.lvl_learned_21, raw.move_id_21, readable.lvl_learned_21, readable.move_id_21, readable.move_id_21_index
+
+=== 463.json ===
+Only in final (nested): raw.lvl_learned_21, raw.move_id_21, readable.lvl_learned_21, readable.move_id_21, readable.move_id_21_index
+
+=== 464.json ===
+Only in final (nested): raw.lvl_learned_21, raw.move_id_21, readable.lvl_learned_21, readable.move_id_21, readable.move_id_21_index
+
+=== 465.json ===
+Only in final (nested): raw.lvl_learned_20, raw.move_id_20, readable.lvl_learned_20, readable.move_id_20, readable.move_id_20_index
+
+=== 466.json ===
+Only in final (nested): raw.lvl_learned_20, raw.lvl_learned_21, raw.move_id_20, raw.move_id_21, readable.lvl_learned_20, readable.lvl_learned_21, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index
+
+=== 467.json ===
+Only in final (nested): raw.lvl_learned_21, raw.move_id_21, readable.lvl_learned_21, readable.move_id_21, readable.move_id_21_index
+
+=== 469.json ===
+Only in final (nested): raw.lvl_learned_19, raw.lvl_learned_20, raw.lvl_learned_21, raw.move_id_19, raw.move_id_20, raw.move_id_21, readable.lvl_learned_19, readable.lvl_learned_20, readable.lvl_learned_21, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index
+
+=== 47.json ===
+Only in final (nested): raw.lvl_learned_21, raw.lvl_learned_22, raw.lvl_learned_23, raw.move_id_21, raw.move_id_22, raw.move_id_23, readable.lvl_learned_21, readable.lvl_learned_22, readable.lvl_learned_23, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index, readable.move_id_23, readable.move_id_23_index
+
+=== 470.json ===
+Only in final (nested): raw.lvl_learned_18, raw.lvl_learned_19, raw.move_id_18, raw.move_id_19, readable.lvl_learned_18, readable.lvl_learned_19, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index
+
+=== 471.json ===
+Only in final (nested): raw.lvl_learned_18, raw.lvl_learned_19, raw.move_id_18, raw.move_id_19, readable.lvl_learned_18, readable.lvl_learned_19, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index
+
+=== 472.json ===
+Only in final (nested): raw.lvl_learned_21, raw.lvl_learned_22, raw.lvl_learned_23, raw.move_id_21, raw.move_id_22, raw.move_id_23, readable.lvl_learned_21, readable.lvl_learned_22, readable.lvl_learned_23, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index, readable.move_id_23, readable.move_id_23_index
+
+=== 473.json ===
+Only in final (nested): raw.lvl_learned_20, raw.lvl_learned_21, raw.move_id_20, raw.move_id_21, readable.lvl_learned_20, readable.lvl_learned_21, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index
+
+=== 475.json ===
+Only in final (nested): raw.lvl_learned_20, raw.lvl_learned_21, raw.lvl_learned_22, raw.lvl_learned_23, raw.lvl_learned_24, raw.move_id_20, raw.move_id_21, raw.move_id_22, raw.move_id_23, raw.move_id_24, readable.lvl_learned_20, readable.lvl_learned_21, readable.lvl_learned_22, readable.lvl_learned_23, readable.lvl_learned_24, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index, readable.move_id_23, readable.move_id_23_index, readable.move_id_24, readable.move_id_24_index
+
+=== 476.json ===
+Only in final (nested): raw.lvl_learned_19, raw.lvl_learned_20, raw.lvl_learned_21, raw.move_id_19, raw.move_id_20, raw.move_id_21, readable.lvl_learned_19, readable.lvl_learned_20, readable.lvl_learned_21, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index
+
+=== 477.json ===
+Only in final (nested): raw.lvl_learned_21, raw.move_id_21, readable.lvl_learned_21, readable.move_id_21, readable.move_id_21_index
+
+=== 478.json ===
+Only in final (nested): raw.lvl_learned_18, raw.lvl_learned_19, raw.lvl_learned_20, raw.move_id_18, raw.move_id_19, raw.move_id_20, readable.lvl_learned_18, readable.lvl_learned_19, readable.lvl_learned_20, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index
+
+=== 479.json ===
+Only in original (nested): raw.lvl_learned_24, raw.move_id_24, readable.lvl_learned_24, readable.move_id_24, readable.move_id_24_index
+
+=== 48.json ===
+Only in final (nested): raw.lvl_learned_15, raw.move_id_15, readable.lvl_learned_15, readable.move_id_15, readable.move_id_15_index
+
+=== 483.json ===
+Only in final (nested): raw.lvl_learned_13, raw.move_id_13, readable.lvl_learned_13, readable.move_id_13, readable.move_id_13_index
+
+=== 484.json ===
+Only in final (nested): raw.lvl_learned_13, raw.move_id_13, readable.lvl_learned_13, readable.move_id_13, readable.move_id_13_index
+
+=== 485.json ===
+Only in final (nested): raw.lvl_learned_13, raw.move_id_13, readable.lvl_learned_13, readable.move_id_13, readable.move_id_13_index
+
+=== 487.json ===
+Only in final (nested): raw.lvl_learned_13, raw.move_id_13, readable.lvl_learned_13, readable.move_id_13, readable.move_id_13_index
+
+=== 49.json ===
+Only in final (nested): raw.lvl_learned_21, raw.lvl_learned_22, raw.lvl_learned_23, raw.move_id_21, raw.move_id_22, raw.move_id_23, readable.lvl_learned_21, readable.lvl_learned_22, readable.lvl_learned_23, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index, readable.move_id_23, readable.move_id_23_index
+
+=== 494.json ===
+Only in final (nested): raw.lvl_learned_17, raw.move_id_17, readable.lvl_learned_17, readable.move_id_17, readable.move_id_17_index
+
+=== 496.json ===
+Only in final (nested): raw.lvl_learned_19, raw.move_id_19, readable.lvl_learned_19, readable.move_id_19, readable.move_id_19_index
+
+=== 497.json ===
+Only in final (nested): raw.lvl_learned_23, raw.lvl_learned_24, raw.move_id_23, raw.move_id_24, readable.lvl_learned_23, readable.lvl_learned_24, readable.move_id_23, readable.move_id_23_index, readable.move_id_24, readable.move_id_24_index
+
+=== 499.json ===
+Only in final (nested): raw.lvl_learned_17, raw.move_id_17, readable.lvl_learned_17, readable.move_id_17, readable.move_id_17_index
+
+=== 5.json ===
+Only in final (nested): raw.lvl_learned_19, raw.lvl_learned_20, raw.move_id_19, raw.move_id_20, readable.lvl_learned_19, readable.lvl_learned_20, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index
+
+=== 500.json ===
+Only in final (nested): raw.lvl_learned_22, raw.lvl_learned_23, raw.lvl_learned_24, raw.move_id_22, raw.move_id_23, raw.move_id_24, readable.lvl_learned_22, readable.lvl_learned_23, readable.lvl_learned_24, readable.move_id_22, readable.move_id_22_index, readable.move_id_23, readable.move_id_23_index, readable.move_id_24, readable.move_id_24_index
+
+=== 501.json ===
+Only in final (nested): raw.lvl_learned_15, raw.lvl_learned_16, raw.move_id_15, raw.move_id_16, readable.lvl_learned_15, readable.lvl_learned_16, readable.move_id_15, readable.move_id_15_index, readable.move_id_16, readable.move_id_16_index
+
+=== 502.json ===
+Only in final (nested): raw.lvl_learned_18, raw.lvl_learned_19, raw.move_id_18, raw.move_id_19, readable.lvl_learned_18, readable.lvl_learned_19, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index
+
+=== 503.json ===
+Only in final (nested): raw.lvl_learned_22, raw.lvl_learned_23, raw.move_id_22, raw.move_id_23, readable.lvl_learned_22, readable.lvl_learned_23, readable.move_id_22, readable.move_id_22_index, readable.move_id_23, readable.move_id_23_index
+
+=== 505.json ===
+Only in final (nested): raw.lvl_learned_19, raw.move_id_19, readable.lvl_learned_19, readable.move_id_19, readable.move_id_19_index
+
+=== 508.json ===
+Only in final (nested): raw.lvl_learned_20, raw.move_id_20, readable.lvl_learned_20, readable.move_id_20, readable.move_id_20_index
+
+=== 509.json ===
+Only in final (nested): raw.lvl_learned_21, raw.lvl_learned_22, raw.move_id_21, raw.move_id_22, readable.lvl_learned_21, readable.lvl_learned_22, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index
+
+=== 510.json ===
+Only in final (nested): raw.lvl_learned_21, raw.lvl_learned_22, raw.move_id_21, raw.move_id_22, readable.lvl_learned_21, readable.lvl_learned_22, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index
+
+=== 517.json ===
+Only in final (nested): raw.lvl_learned_19, raw.lvl_learned_20, raw.lvl_learned_21, raw.move_id_19, raw.move_id_20, raw.move_id_21, readable.lvl_learned_19, readable.lvl_learned_20, readable.lvl_learned_21, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index
+
+=== 518.json ===
+Only in final (nested): raw.lvl_learned_23, raw.lvl_learned_24, raw.move_id_23, raw.move_id_24, readable.lvl_learned_23, readable.lvl_learned_24, readable.move_id_23, readable.move_id_23_index, readable.move_id_24, readable.move_id_24_index
+
+=== 521.json ===
+Only in final (nested): raw.lvl_learned_22, raw.move_id_22, readable.lvl_learned_22, readable.move_id_22, readable.move_id_22_index
+
+=== 522.json ===
+Only in final (nested): raw.lvl_learned_17, raw.lvl_learned_18, raw.move_id_17, raw.move_id_18, readable.lvl_learned_17, readable.lvl_learned_18, readable.move_id_17, readable.move_id_17_index, readable.move_id_18, readable.move_id_18_index
+
+=== 523.json ===
+Only in final (nested): raw.lvl_learned_20, raw.lvl_learned_21, raw.lvl_learned_22, raw.lvl_learned_23, raw.move_id_20, raw.move_id_21, raw.move_id_22, raw.move_id_23, readable.lvl_learned_20, readable.lvl_learned_21, readable.lvl_learned_22, readable.lvl_learned_23, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index, readable.move_id_23, readable.move_id_23_index
+
+=== 526.json ===
+Only in final (nested): raw.lvl_learned_20, raw.lvl_learned_21, raw.move_id_20, raw.move_id_21, readable.lvl_learned_20, readable.lvl_learned_21, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index
+
+=== 527.json ===
+Only in final (nested): raw.lvl_learned_15, raw.move_id_15, readable.lvl_learned_15, readable.move_id_15, readable.move_id_15_index
+
+=== 528.json ===
+Only in final (nested): raw.lvl_learned_22, raw.move_id_22, readable.lvl_learned_22, readable.move_id_22, readable.move_id_22_index
+
+=== 529.json ===
+Only in final (nested): raw.lvl_learned_18, raw.move_id_18, readable.lvl_learned_18, readable.move_id_18, readable.move_id_18_index
+
+=== 53.json ===
+Only in final (nested): raw.lvl_learned_23, raw.move_id_23, readable.lvl_learned_23, readable.move_id_23, readable.move_id_23_index
+
+=== 530.json ===
+Only in final (nested): raw.lvl_learned_20, raw.lvl_learned_21, raw.move_id_20, raw.move_id_21, readable.lvl_learned_20, readable.lvl_learned_21, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index
+
+=== 531.json ===
+Only in final (nested): raw.lvl_learned_19, raw.lvl_learned_20, raw.lvl_learned_21, raw.lvl_learned_22, raw.move_id_19, raw.move_id_20, raw.move_id_21, raw.move_id_22, readable.lvl_learned_19, readable.lvl_learned_20, readable.lvl_learned_21, readable.lvl_learned_22, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index
+
+=== 532.json ===
+Only in final (nested): raw.lvl_learned_16, raw.move_id_16, readable.lvl_learned_16, readable.move_id_16, readable.move_id_16_index
+
+=== 533.json ===
+Only in final (nested): raw.lvl_learned_17, raw.move_id_17, readable.lvl_learned_17, readable.move_id_17, readable.move_id_17_index
+
+=== 534.json ===
+Only in final (nested): raw.lvl_learned_20, raw.lvl_learned_21, raw.move_id_20, raw.move_id_21, readable.lvl_learned_20, readable.lvl_learned_21, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index
+
+=== 536.json ===
+Only in final (nested): raw.lvl_learned_19, raw.move_id_19, readable.lvl_learned_19, readable.move_id_19, readable.move_id_19_index
+
+=== 537.json ===
+Only in final (nested): raw.lvl_learned_22, raw.move_id_22, readable.lvl_learned_22, readable.move_id_22, readable.move_id_22_index
+
+=== 538.json ===
+Only in original (nested): raw.lvl_learned_21, raw.move_id_21, readable.lvl_learned_21, readable.move_id_21, readable.move_id_21_index
+
+=== 539.json ===
+Only in original (nested): raw.lvl_learned_21, raw.move_id_21, readable.lvl_learned_21, readable.move_id_21, readable.move_id_21_index
+
+=== 54.json ===
+Only in final (nested): raw.lvl_learned_18, raw.lvl_learned_19, raw.lvl_learned_20, raw.move_id_18, raw.move_id_19, raw.move_id_20, readable.lvl_learned_18, readable.lvl_learned_19, readable.lvl_learned_20, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index
+
+=== 542.json ===
+Only in final (nested): raw.lvl_learned_20, raw.lvl_learned_21, raw.lvl_learned_22, raw.lvl_learned_23, raw.move_id_20, raw.move_id_21, raw.move_id_22, raw.move_id_23, readable.lvl_learned_20, readable.lvl_learned_21, readable.lvl_learned_22, readable.lvl_learned_23, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index, readable.move_id_23, readable.move_id_23_index
+
+=== 545.json ===
+Only in final (nested): raw.lvl_learned_22, raw.move_id_22, readable.lvl_learned_22, readable.move_id_22, readable.move_id_22_index
+
+=== 546.json ===
+Only in final (nested): raw.lvl_learned_19, raw.move_id_19, readable.lvl_learned_19, readable.move_id_19, readable.move_id_19_index
+
+=== 547.json ===
+Only in final (nested): raw.lvl_learned_23, raw.move_id_23, readable.lvl_learned_23, readable.move_id_23, readable.move_id_23_index
+
+=== 549.json ===
+Only in final (nested): raw.lvl_learned_21, raw.lvl_learned_22, raw.lvl_learned_23, raw.move_id_21, raw.move_id_22, raw.move_id_23, readable.lvl_learned_21, readable.lvl_learned_22, readable.lvl_learned_23, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index, readable.move_id_23, readable.move_id_23_index
+
+=== 55.json ===
+Only in final (nested): raw.lvl_learned_22, raw.lvl_learned_23, raw.lvl_learned_24, raw.move_id_22, raw.move_id_23, raw.move_id_24, readable.lvl_learned_22, readable.lvl_learned_23, readable.lvl_learned_24, readable.move_id_22, readable.move_id_22_index, readable.move_id_23, readable.move_id_23_index, readable.move_id_24, readable.move_id_24_index
+
+=== 550.json ===
+Only in final (nested): raw.lvl_learned_19, raw.lvl_learned_20, raw.lvl_learned_21, raw.lvl_learned_22, raw.move_id_19, raw.move_id_20, raw.move_id_21, raw.move_id_22, readable.lvl_learned_19, readable.lvl_learned_20, readable.lvl_learned_21, readable.lvl_learned_22, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index
+
+=== 551.json ===
+Only in final (nested): raw.lvl_learned_17, raw.move_id_17, readable.lvl_learned_17, readable.move_id_17, readable.move_id_17_index
+
+=== 552.json ===
+Only in final (nested): raw.lvl_learned_18, raw.lvl_learned_19, raw.move_id_18, raw.move_id_19, readable.lvl_learned_18, readable.lvl_learned_19, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index
+
+=== 553.json ===
+Only in final (nested): raw.lvl_learned_21, raw.lvl_learned_22, raw.move_id_21, raw.move_id_22, readable.lvl_learned_21, readable.lvl_learned_22, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index
+
+=== 554.json ===
+Only in final (nested): raw.lvl_learned_16, raw.lvl_learned_17, raw.move_id_16, raw.move_id_17, readable.lvl_learned_16, readable.lvl_learned_17, readable.move_id_16, readable.move_id_16_index, readable.move_id_17, readable.move_id_17_index
+
+=== 555.json ===
+Only in final (nested): raw.lvl_learned_18, raw.lvl_learned_19, raw.lvl_learned_20, raw.move_id_18, raw.move_id_19, raw.move_id_20, readable.lvl_learned_18, readable.lvl_learned_19, readable.lvl_learned_20, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index
+
+=== 556.json ===
+Only in final (nested): raw.lvl_learned_20, raw.lvl_learned_21, raw.lvl_learned_22, raw.move_id_20, raw.move_id_21, raw.move_id_22, readable.lvl_learned_20, readable.lvl_learned_21, readable.lvl_learned_22, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index
+
+=== 557.json ===
+Only in final (nested): raw.lvl_learned_18, raw.lvl_learned_19, raw.lvl_learned_20, raw.lvl_learned_21, raw.lvl_learned_22, raw.move_id_18, raw.move_id_19, raw.move_id_20, raw.move_id_21, raw.move_id_22, readable.lvl_learned_18, readable.lvl_learned_19, readable.lvl_learned_20, readable.lvl_learned_21, readable.lvl_learned_22, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index
+
+=== 558.json ===
+Only in final (nested): raw.lvl_learned_19, raw.lvl_learned_20, raw.lvl_learned_21, raw.lvl_learned_22, raw.move_id_19, raw.move_id_20, raw.move_id_21, raw.move_id_22, readable.lvl_learned_19, readable.lvl_learned_20, readable.lvl_learned_21, readable.lvl_learned_22, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index
+
+=== 559.json ===
+Only in final (nested): raw.lvl_learned_17, raw.lvl_learned_18, raw.lvl_learned_19, raw.lvl_learned_20, raw.lvl_learned_21, raw.move_id_17, raw.move_id_18, raw.move_id_19, raw.move_id_20, raw.move_id_21, readable.lvl_learned_17, readable.lvl_learned_18, readable.lvl_learned_19, readable.lvl_learned_20, readable.lvl_learned_21, readable.move_id_17, readable.move_id_17_index, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index
+
+=== 56.json ===
+Only in final (nested): raw.lvl_learned_16, raw.move_id_16, readable.lvl_learned_16, readable.move_id_16, readable.move_id_16_index
+
+=== 560.json ===
+Only in final (nested): raw.lvl_learned_19, raw.lvl_learned_20, raw.lvl_learned_21, raw.move_id_19, raw.move_id_20, raw.move_id_21, readable.lvl_learned_19, readable.lvl_learned_20, readable.lvl_learned_21, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index
+
+=== 561.json ===
+Only in final (nested): raw.lvl_learned_22, raw.lvl_learned_23, raw.move_id_22, raw.move_id_23, readable.lvl_learned_22, readable.lvl_learned_23, readable.move_id_22, readable.move_id_22_index, readable.move_id_23, readable.move_id_23_index
+
+=== 562.json ===
+Only in final (nested): raw.lvl_learned_17, raw.lvl_learned_18, raw.lvl_learned_19, raw.lvl_learned_20, raw.lvl_learned_21, raw.move_id_17, raw.move_id_18, raw.move_id_19, raw.move_id_20, raw.move_id_21, readable.lvl_learned_17, readable.lvl_learned_18, readable.lvl_learned_19, readable.lvl_learned_20, readable.lvl_learned_21, readable.move_id_17, readable.move_id_17_index, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index
+
+=== 563.json ===
+Only in final (nested): raw.lvl_learned_20, raw.lvl_learned_21, raw.move_id_20, raw.move_id_21, readable.lvl_learned_20, readable.lvl_learned_21, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index
+
+=== 564.json ===
+Only in final (nested): raw.lvl_learned_18, raw.lvl_learned_19, raw.lvl_learned_20, raw.lvl_learned_21, raw.move_id_18, raw.move_id_19, raw.move_id_20, raw.move_id_21, readable.lvl_learned_18, readable.lvl_learned_19, readable.lvl_learned_20, readable.lvl_learned_21, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index
+
+=== 565.json ===
+Only in final (nested): raw.lvl_learned_19, raw.lvl_learned_20, raw.lvl_learned_21, raw.move_id_19, raw.move_id_20, raw.move_id_21, readable.lvl_learned_19, readable.lvl_learned_20, readable.lvl_learned_21, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index
+
+=== 566.json ===
+Only in final (nested): raw.lvl_learned_18, raw.lvl_learned_19, raw.move_id_18, raw.move_id_19, readable.lvl_learned_18, readable.lvl_learned_19, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index
+
+=== 567.json ===
+Only in final (nested): raw.lvl_learned_19, raw.lvl_learned_20, raw.move_id_19, raw.move_id_20, readable.lvl_learned_19, readable.lvl_learned_20, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index
+
+=== 568.json ===
+Only in final (nested): raw.lvl_learned_19, raw.move_id_19, readable.lvl_learned_19, readable.move_id_19, readable.move_id_19_index
+
+=== 569.json ===
+Only in final (nested): raw.lvl_learned_21, raw.move_id_21, readable.lvl_learned_21, readable.move_id_21, readable.move_id_21_index
+
+=== 57.json ===
+Only in final (nested): raw.lvl_learned_19, raw.lvl_learned_20, raw.lvl_learned_21, raw.move_id_19, raw.move_id_20, raw.move_id_21, readable.lvl_learned_19, readable.lvl_learned_20, readable.lvl_learned_21, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index
+
+=== 570.json ===
+Only in final (nested): raw.lvl_learned_16, raw.lvl_learned_17, raw.move_id_16, raw.move_id_17, readable.lvl_learned_16, readable.lvl_learned_17, readable.move_id_16, readable.move_id_16_index, readable.move_id_17, readable.move_id_17_index
+
+=== 571.json ===
+Only in final (nested): raw.lvl_learned_19, raw.lvl_learned_20, raw.lvl_learned_21, raw.lvl_learned_22, raw.move_id_19, raw.move_id_20, raw.move_id_21, raw.move_id_22, readable.lvl_learned_19, readable.lvl_learned_20, readable.lvl_learned_21, readable.lvl_learned_22, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index
+
+=== 572.json ===
+Only in final (nested): raw.lvl_learned_20, raw.lvl_learned_21, raw.move_id_20, raw.move_id_21, readable.lvl_learned_20, readable.lvl_learned_21, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index
+
+=== 573.json ===
+Only in final (nested): raw.lvl_learned_21, raw.lvl_learned_22, raw.move_id_21, raw.move_id_22, readable.lvl_learned_21, readable.lvl_learned_22, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index
+
+=== 574.json ===
+Only in final (nested): raw.lvl_learned_16, raw.lvl_learned_17, raw.move_id_16, raw.move_id_17, readable.lvl_learned_16, readable.lvl_learned_17, readable.move_id_16, readable.move_id_16_index, readable.move_id_17, readable.move_id_17_index
+
+=== 575.json ===
+Only in final (nested): raw.lvl_learned_16, raw.lvl_learned_17, raw.move_id_16, raw.move_id_17, readable.lvl_learned_16, readable.lvl_learned_17, readable.move_id_16, readable.move_id_16_index, readable.move_id_17, readable.move_id_17_index
+
+=== 576.json ===
+Only in final (nested): raw.lvl_learned_19, raw.lvl_learned_20, raw.lvl_learned_21, raw.move_id_19, raw.move_id_20, raw.move_id_21, readable.lvl_learned_19, readable.lvl_learned_20, readable.lvl_learned_21, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index
+
+=== 577.json ===
+Only in final (nested): raw.lvl_learned_17, raw.move_id_17, readable.lvl_learned_17, readable.move_id_17, readable.move_id_17_index
+
+=== 578.json ===
+Only in final (nested): raw.lvl_learned_19, raw.lvl_learned_20, raw.move_id_19, raw.move_id_20, readable.lvl_learned_19, readable.lvl_learned_20, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index
+
+=== 579.json ===
+Only in final (nested): raw.lvl_learned_21, raw.lvl_learned_22, raw.move_id_21, raw.move_id_22, readable.lvl_learned_21, readable.lvl_learned_22, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index
+
+=== 58.json ===
+Only in final (nested): raw.lvl_learned_18, raw.lvl_learned_19, raw.move_id_18, raw.move_id_19, readable.lvl_learned_18, readable.lvl_learned_19, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index
+
+=== 580.json ===
+Only in final (nested): raw.lvl_learned_15, raw.lvl_learned_16, raw.move_id_15, raw.move_id_16, readable.lvl_learned_15, readable.lvl_learned_16, readable.move_id_15, readable.move_id_15_index, readable.move_id_16, readable.move_id_16_index
+
+=== 581.json ===
+Only in final (nested): raw.lvl_learned_17, raw.lvl_learned_18, raw.lvl_learned_19, raw.lvl_learned_20, raw.move_id_17, raw.move_id_18, raw.move_id_19, raw.move_id_20, readable.lvl_learned_17, readable.lvl_learned_18, readable.lvl_learned_19, readable.lvl_learned_20, readable.move_id_17, readable.move_id_17_index, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index
+
+=== 582.json ===
+Only in final (nested): raw.lvl_learned_15, raw.lvl_learned_16, raw.move_id_15, raw.move_id_16, readable.lvl_learned_15, readable.lvl_learned_16, readable.move_id_15, readable.move_id_15_index, readable.move_id_16, readable.move_id_16_index
+
+=== 583.json ===
+Only in final (nested): raw.lvl_learned_19, raw.lvl_learned_20, raw.lvl_learned_21, raw.lvl_learned_22, raw.move_id_19, raw.move_id_20, raw.move_id_21, raw.move_id_22, readable.lvl_learned_19, readable.lvl_learned_20, readable.lvl_learned_21, readable.lvl_learned_22, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index
+
+=== 584.json ===
+Only in final (nested): raw.lvl_learned_20, raw.lvl_learned_21, raw.lvl_learned_22, raw.lvl_learned_23, raw.move_id_20, raw.move_id_21, raw.move_id_22, raw.move_id_23, readable.lvl_learned_20, readable.lvl_learned_21, readable.lvl_learned_22, readable.lvl_learned_23, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index, readable.move_id_23, readable.move_id_23_index
+
+=== 585.json ===
+Only in final (nested): raw.lvl_learned_16, raw.move_id_16, readable.lvl_learned_16, readable.move_id_16, readable.move_id_16_index
+
+=== 586.json ===
+Only in final (nested): raw.lvl_learned_21, raw.lvl_learned_22, raw.lvl_learned_23, raw.lvl_learned_24, raw.lvl_learned_25, raw.lvl_learned_26, raw.lvl_learned_27, raw.lvl_learned_28, raw.lvl_learned_29, raw.lvl_learned_30, raw.lvl_learned_31, raw.lvl_learned_32, raw.lvl_learned_33, raw.lvl_learned_34, raw.lvl_learned_35, raw.lvl_learned_36, raw.lvl_learned_37, raw.lvl_learned_38, raw.lvl_learned_39, raw.lvl_learned_40, raw.lvl_learned_41, raw.lvl_learned_42, raw.lvl_learned_43, raw.move_id_21, raw.move_id_22, raw.move_id_23, raw.move_id_24, raw.move_id_25, raw.move_id_26, raw.move_id_27, raw.move_id_28, raw.move_id_29, raw.move_id_30, raw.move_id_31, raw.move_id_32, raw.move_id_33, raw.move_id_34, raw.move_id_35, raw.move_id_36, raw.move_id_37, raw.move_id_38, raw.move_id_39, raw.move_id_40, raw.move_id_41, raw.move_id_42, raw.move_id_43, readable.lvl_learned_21, readable.lvl_learned_22, readable.lvl_learned_23, readable.lvl_learned_24, readable.lvl_learned_25, readable.lvl_learned_26, readable.lvl_learned_27, readable.lvl_learned_28, readable.lvl_learned_29, readable.lvl_learned_30, readable.lvl_learned_31, readable.lvl_learned_32, readable.lvl_learned_33, readable.lvl_learned_34, readable.lvl_learned_35, readable.lvl_learned_36, readable.lvl_learned_37, readable.lvl_learned_38, readable.lvl_learned_39, readable.lvl_learned_40, readable.lvl_learned_41, readable.lvl_learned_42, readable.lvl_learned_43, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index, readable.move_id_23, readable.move_id_23_index, readable.move_id_24, readable.move_id_24_index, readable.move_id_25, readable.move_id_25_index, readable.move_id_26, readable.move_id_26_index, readable.move_id_27, readable.move_id_27_index, readable.move_id_28, readable.move_id_28_index, readable.move_id_29, readable.move_id_29_index, readable.move_id_30, readable.move_id_30_index, readable.move_id_31, readable.move_id_31_index, readable.move_id_32, readable.move_id_32_index, readable.move_id_33, readable.move_id_33_index, readable.move_id_34, readable.move_id_34_index, readable.move_id_35, readable.move_id_35_index, readable.move_id_36, readable.move_id_36_index, readable.move_id_37, readable.move_id_37_index, readable.move_id_38, readable.move_id_38_index, readable.move_id_39, readable.move_id_39_index, readable.move_id_40, readable.move_id_40_index, readable.move_id_41, readable.move_id_41_index, readable.move_id_42, readable.move_id_42_index, readable.move_id_43, readable.move_id_43_index
+
+=== 587.json ===
+Only in final (nested): raw.lvl_learned_20, raw.lvl_learned_21, raw.lvl_learned_22, raw.lvl_learned_23, raw.move_id_20, raw.move_id_21, raw.move_id_22, raw.move_id_23, readable.lvl_learned_20, readable.lvl_learned_21, readable.lvl_learned_22, readable.lvl_learned_23, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index, readable.move_id_23, readable.move_id_23_index
+
+=== 588.json ===
+Only in final (nested): raw.lvl_learned_16, raw.move_id_16, readable.lvl_learned_16, readable.move_id_16, readable.move_id_16_index
+
+=== 589.json ===
+Only in final (nested): raw.lvl_learned_21, raw.lvl_learned_22, raw.move_id_21, raw.move_id_22, readable.lvl_learned_21, readable.lvl_learned_22, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index
+
+=== 59.json ===
+Only in final (nested): raw.lvl_learned_20, raw.lvl_learned_21, raw.move_id_20, raw.move_id_21, readable.lvl_learned_20, readable.lvl_learned_21, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index
+
+=== 590.json ===
+Only in final (nested): raw.lvl_learned_18, raw.lvl_learned_19, raw.lvl_learned_20, raw.move_id_18, raw.move_id_19, raw.move_id_20, readable.lvl_learned_18, readable.lvl_learned_19, readable.lvl_learned_20, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index
+
+=== 591.json ===
+Only in final (nested): raw.lvl_learned_20, raw.lvl_learned_21, raw.lvl_learned_22, raw.move_id_20, raw.move_id_21, raw.move_id_22, readable.lvl_learned_20, readable.lvl_learned_21, readable.lvl_learned_22, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index
+
+=== 592.json ===
+Only in final (nested): raw.lvl_learned_14, raw.lvl_learned_15, raw.lvl_learned_16, raw.move_id_14, raw.move_id_15, raw.move_id_16, readable.lvl_learned_14, readable.lvl_learned_15, readable.lvl_learned_16, readable.move_id_14, readable.move_id_14_index, readable.move_id_15, readable.move_id_15_index, readable.move_id_16, readable.move_id_16_index
+
+=== 593.json ===
+Only in final (nested): raw.lvl_learned_19, raw.lvl_learned_20, raw.lvl_learned_21, raw.lvl_learned_22, raw.move_id_19, raw.move_id_20, raw.move_id_21, raw.move_id_22, readable.lvl_learned_19, readable.lvl_learned_20, readable.lvl_learned_21, readable.lvl_learned_22, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index
+
+=== 594.json ===
+Only in final (nested): raw.lvl_learned_19, raw.lvl_learned_20, raw.lvl_learned_21, raw.lvl_learned_22, raw.lvl_learned_23, raw.lvl_learned_24, raw.move_id_19, raw.move_id_20, raw.move_id_21, raw.move_id_22, raw.move_id_23, raw.move_id_24, readable.lvl_learned_19, readable.lvl_learned_20, readable.lvl_learned_21, readable.lvl_learned_22, readable.lvl_learned_23, readable.lvl_learned_24, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index, readable.move_id_23, readable.move_id_23_index, readable.move_id_24, readable.move_id_24_index
+
+=== 595.json ===
+Only in final (nested): raw.lvl_learned_19, raw.move_id_19, readable.lvl_learned_19, readable.move_id_19, readable.move_id_19_index
+
+=== 596.json ===
+Only in final (nested): raw.lvl_learned_22, raw.move_id_22, readable.lvl_learned_22, readable.move_id_22, readable.move_id_22_index
+
+=== 598.json ===
+Only in original (nested): raw.lvl_learned_19, raw.move_id_19, readable.lvl_learned_19, readable.move_id_19, readable.move_id_19_index
+
+=== 6.json ===
+Only in final (nested): raw.lvl_learned_21, raw.lvl_learned_22, raw.lvl_learned_23, raw.move_id_21, raw.move_id_22, raw.move_id_23, readable.lvl_learned_21, readable.lvl_learned_22, readable.lvl_learned_23, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index, readable.move_id_23, readable.move_id_23_index
+
+=== 600.json ===
+Only in final (nested): raw.lvl_learned_17, raw.move_id_17, readable.lvl_learned_17, readable.move_id_17, readable.move_id_17_index
+
+=== 601.json ===
+Only in final (nested): raw.lvl_learned_20, raw.move_id_20, readable.lvl_learned_20, readable.move_id_20, readable.move_id_20_index
+
+=== 603.json ===
+Only in final (nested): raw.lvl_learned_19, raw.lvl_learned_20, raw.move_id_19, raw.move_id_20, readable.lvl_learned_19, readable.lvl_learned_20, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index
+
+=== 604.json ===
+Only in final (nested): raw.lvl_learned_22, raw.lvl_learned_23, raw.move_id_22, raw.move_id_23, readable.lvl_learned_22, readable.lvl_learned_23, readable.move_id_22, readable.move_id_22_index, readable.move_id_23, readable.move_id_23_index
+
+=== 605.json ===
+Only in final (nested): raw.lvl_learned_19, raw.move_id_19, readable.lvl_learned_19, readable.move_id_19, readable.move_id_19_index
+
+=== 606.json ===
+Only in final (nested): raw.lvl_learned_22, raw.move_id_22, readable.lvl_learned_22, readable.move_id_22, readable.move_id_22_index
+
+=== 607.json ===
+Only in original (nested): raw.lvl_learned_15, raw.lvl_learned_16, raw.move_id_15, raw.move_id_16, readable.lvl_learned_15, readable.lvl_learned_16, readable.move_id_15, readable.move_id_15_index, readable.move_id_16, readable.move_id_16_index
+
+=== 608.json ===
+Only in original (nested): raw.lvl_learned_17, raw.move_id_17, readable.lvl_learned_17, readable.move_id_17, readable.move_id_17_index
+
+=== 609.json ===
+Only in original (nested): raw.lvl_learned_19, raw.move_id_19, readable.lvl_learned_19, readable.move_id_19, readable.move_id_19_index
+
+=== 61.json ===
+Only in final (nested): raw.lvl_learned_16, raw.move_id_16, readable.lvl_learned_16, readable.move_id_16, readable.move_id_16_index
+
+=== 610.json ===
+Only in final (nested): raw.lvl_learned_16, raw.move_id_16, readable.lvl_learned_16, readable.move_id_16, readable.move_id_16_index
+
+=== 611.json ===
+Only in final (nested): raw.lvl_learned_18, raw.lvl_learned_19, raw.move_id_18, raw.move_id_19, readable.lvl_learned_18, readable.lvl_learned_19, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index
+
+=== 612.json ===
+Only in final (nested): raw.lvl_learned_20, raw.lvl_learned_21, raw.lvl_learned_22, raw.move_id_20, raw.move_id_21, raw.move_id_22, readable.lvl_learned_20, readable.lvl_learned_21, readable.lvl_learned_22, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index
+
+=== 613.json ===
+Only in final (nested): raw.lvl_learned_18, raw.lvl_learned_19, raw.lvl_learned_20, raw.lvl_learned_21, raw.move_id_18, raw.move_id_19, raw.move_id_20, raw.move_id_21, readable.lvl_learned_18, readable.lvl_learned_19, readable.lvl_learned_20, readable.lvl_learned_21, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index
+
+=== 614.json ===
+Only in final (nested): raw.lvl_learned_20, raw.lvl_learned_21, raw.lvl_learned_22, raw.lvl_learned_23, raw.lvl_learned_24, raw.move_id_20, raw.move_id_21, raw.move_id_22, raw.move_id_23, raw.move_id_24, readable.lvl_learned_20, readable.lvl_learned_21, readable.lvl_learned_22, readable.lvl_learned_23, readable.lvl_learned_24, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index, readable.move_id_23, readable.move_id_23_index, readable.move_id_24, readable.move_id_24_index
+
+=== 615.json ===
+Only in final (nested): raw.lvl_learned_18, raw.lvl_learned_19, raw.lvl_learned_20, raw.move_id_18, raw.move_id_19, raw.move_id_20, readable.lvl_learned_18, readable.lvl_learned_19, readable.lvl_learned_20, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index
+
+=== 616.json ===
+Only in final (nested): raw.lvl_learned_15, raw.move_id_15, readable.lvl_learned_15, readable.move_id_15, readable.move_id_15_index
+
+=== 617.json ===
+Only in final (nested): raw.lvl_learned_19, raw.lvl_learned_20, raw.move_id_19, raw.move_id_20, readable.lvl_learned_19, readable.lvl_learned_20, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index
+
+=== 618.json ===
+Only in original (nested): raw.lvl_learned_20, raw.move_id_20, readable.lvl_learned_20, readable.move_id_20, readable.move_id_20_index
+
+=== 619.json ===
+Only in final (nested): raw.lvl_learned_16, raw.lvl_learned_17, raw.move_id_16, raw.move_id_17, readable.lvl_learned_16, readable.lvl_learned_17, readable.move_id_16, readable.move_id_16_index, readable.move_id_17, readable.move_id_17_index
+
+=== 62.json ===
+Only in final (nested): raw.lvl_learned_20, raw.lvl_learned_21, raw.move_id_20, raw.move_id_21, readable.lvl_learned_20, readable.lvl_learned_21, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index
+
+=== 620.json ===
+Only in final (nested): raw.lvl_learned_20, raw.lvl_learned_21, raw.move_id_20, raw.move_id_21, readable.lvl_learned_20, readable.lvl_learned_21, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index
+
+=== 622.json ===
+Only in final (nested): raw.lvl_learned_18, raw.lvl_learned_19, raw.lvl_learned_20, raw.move_id_18, raw.move_id_19, raw.move_id_20, readable.lvl_learned_18, readable.lvl_learned_19, readable.lvl_learned_20, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index
+
+=== 623.json ===
+Only in final (nested): raw.lvl_learned_23, raw.move_id_23, readable.lvl_learned_23, readable.move_id_23, readable.move_id_23_index
+
+=== 626.json ===
+Only in final (nested): raw.lvl_learned_20, raw.move_id_20, readable.lvl_learned_20, readable.move_id_20, readable.move_id_20_index
+
+=== 627.json ===
+Only in original (nested): raw.lvl_learned_17, raw.move_id_17, readable.lvl_learned_17, readable.move_id_17, readable.move_id_17_index
+
+=== 628.json ===
+Only in original (nested): raw.lvl_learned_19, raw.move_id_19, readable.lvl_learned_19, readable.move_id_19, readable.move_id_19_index
+
+=== 629.json ===
+Only in final (nested): raw.lvl_learned_17, raw.lvl_learned_18, raw.move_id_17, raw.move_id_18, readable.lvl_learned_17, readable.lvl_learned_18, readable.move_id_17, readable.move_id_17_index, readable.move_id_18, readable.move_id_18_index
+
+=== 630.json ===
+Only in final (nested): raw.lvl_learned_19, raw.lvl_learned_20, raw.move_id_19, raw.move_id_20, readable.lvl_learned_19, readable.lvl_learned_20, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index
+
+=== 631.json ===
+Only in final (nested): raw.lvl_learned_20, raw.lvl_learned_21, raw.lvl_learned_22, raw.move_id_20, raw.move_id_21, raw.move_id_22, readable.lvl_learned_20, readable.lvl_learned_21, readable.lvl_learned_22, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index
+
+=== 632.json ===
+Only in final (nested): raw.lvl_learned_18, raw.lvl_learned_19, raw.lvl_learned_20, raw.move_id_18, raw.move_id_19, raw.move_id_20, readable.lvl_learned_18, readable.lvl_learned_19, readable.lvl_learned_20, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index
+
+=== 635.json ===
+Only in final (nested): raw.lvl_learned_22, raw.lvl_learned_23, raw.move_id_22, raw.move_id_23, readable.lvl_learned_22, readable.lvl_learned_23, readable.move_id_22, readable.move_id_22_index, readable.move_id_23, readable.move_id_23_index
+
+=== 649.json ===
+Only in final (nested): raw.lvl_learned_19, raw.move_id_19, readable.lvl_learned_19, readable.move_id_19, readable.move_id_19_index
+
+=== 65.json ===
+Only in final (nested): raw.lvl_learned_20, raw.lvl_learned_21, raw.move_id_20, raw.move_id_21, readable.lvl_learned_20, readable.lvl_learned_21, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index
+
+=== 652.json ===
+Only in final (nested): raw.lvl_learned_21, raw.move_id_21, readable.lvl_learned_21, readable.move_id_21, readable.move_id_21_index
+
+=== 654.json ===
+Only in final (nested): raw.lvl_learned_21, raw.move_id_21, readable.lvl_learned_21, readable.move_id_21, readable.move_id_21_index
+
+=== 67.json ===
+Only in final (nested): raw.lvl_learned_19, raw.move_id_19, readable.lvl_learned_19, readable.move_id_19, readable.move_id_19_index
+
+=== 68.json ===
+Only in final (nested): raw.lvl_learned_22, raw.move_id_22, readable.lvl_learned_22, readable.move_id_22, readable.move_id_22_index
+
+=== 686.json ===
+Only in original (nested): raw.lvl_learned_14, raw.lvl_learned_15, raw.move_id_14, raw.move_id_15, readable.lvl_learned_14, readable.lvl_learned_15, readable.move_id_14, readable.move_id_14_index, readable.move_id_15, readable.move_id_15_index
+
+=== 69.json ===
+Only in final (nested): raw.lvl_learned_16, raw.move_id_16, readable.lvl_learned_16, readable.move_id_16, readable.move_id_16_index
+
+=== 692.json ===
+Only in original (nested): raw.lvl_learned_24, raw.move_id_24, readable.lvl_learned_24, readable.move_id_24, readable.move_id_24_index
+
+=== 693.json ===
+Only in original (nested): raw.lvl_learned_24, raw.move_id_24, readable.lvl_learned_24, readable.move_id_24, readable.move_id_24_index
+
+=== 694.json ===
+Only in original (nested): raw.lvl_learned_24, raw.move_id_24, readable.lvl_learned_24, readable.move_id_24, readable.move_id_24_index
+
+=== 695.json ===
+Only in original (nested): raw.lvl_learned_24, raw.move_id_24, readable.lvl_learned_24, readable.move_id_24, readable.move_id_24_index
+
+=== 696.json ===
+Only in original (nested): raw.lvl_learned_24, raw.move_id_24, readable.lvl_learned_24, readable.move_id_24, readable.move_id_24_index
+
+=== 697.json ===
+Only in final (nested): raw.lvl_learned_12, raw.lvl_learned_13, raw.lvl_learned_14, raw.lvl_learned_15, raw.lvl_learned_16, raw.lvl_learned_17, raw.lvl_learned_18, raw.lvl_learned_19, raw.lvl_learned_20, raw.lvl_learned_21, raw.lvl_learned_22, raw.lvl_learned_23, raw.move_id_12, raw.move_id_13, raw.move_id_14, raw.move_id_15, raw.move_id_16, raw.move_id_17, raw.move_id_18, raw.move_id_19, raw.move_id_20, raw.move_id_21, raw.move_id_22, raw.move_id_23, readable.lvl_learned_12, readable.lvl_learned_13, readable.lvl_learned_14, readable.lvl_learned_15, readable.lvl_learned_16, readable.lvl_learned_17, readable.lvl_learned_18, readable.lvl_learned_19, readable.lvl_learned_20, readable.lvl_learned_21, readable.lvl_learned_22, readable.lvl_learned_23, readable.move_id_12, readable.move_id_12_index, readable.move_id_13, readable.move_id_13_index, readable.move_id_14, readable.move_id_14_index, readable.move_id_15, readable.move_id_15_index, readable.move_id_16, readable.move_id_16_index, readable.move_id_17, readable.move_id_17_index, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index, readable.move_id_23, readable.move_id_23_index
+
+=== 698.json ===
+Only in final (nested): raw.lvl_learned_12, raw.lvl_learned_13, raw.lvl_learned_14, raw.lvl_learned_15, raw.lvl_learned_16, raw.lvl_learned_17, raw.lvl_learned_18, raw.lvl_learned_19, raw.lvl_learned_20, raw.lvl_learned_21, raw.lvl_learned_22, raw.lvl_learned_23, raw.move_id_12, raw.move_id_13, raw.move_id_14, raw.move_id_15, raw.move_id_16, raw.move_id_17, raw.move_id_18, raw.move_id_19, raw.move_id_20, raw.move_id_21, raw.move_id_22, raw.move_id_23, readable.lvl_learned_12, readable.lvl_learned_13, readable.lvl_learned_14, readable.lvl_learned_15, readable.lvl_learned_16, readable.lvl_learned_17, readable.lvl_learned_18, readable.lvl_learned_19, readable.lvl_learned_20, readable.lvl_learned_21, readable.lvl_learned_22, readable.lvl_learned_23, readable.move_id_12, readable.move_id_12_index, readable.move_id_13, readable.move_id_13_index, readable.move_id_14, readable.move_id_14_index, readable.move_id_15, readable.move_id_15_index, readable.move_id_16, readable.move_id_16_index, readable.move_id_17, readable.move_id_17_index, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index, readable.move_id_23, readable.move_id_23_index
+
+=== 699.json ===
+Only in final (nested): raw.lvl_learned_12, raw.lvl_learned_13, raw.lvl_learned_14, raw.lvl_learned_15, raw.lvl_learned_16, raw.lvl_learned_17, raw.lvl_learned_18, raw.lvl_learned_19, raw.lvl_learned_20, raw.lvl_learned_21, raw.lvl_learned_22, raw.lvl_learned_23, raw.move_id_12, raw.move_id_13, raw.move_id_14, raw.move_id_15, raw.move_id_16, raw.move_id_17, raw.move_id_18, raw.move_id_19, raw.move_id_20, raw.move_id_21, raw.move_id_22, raw.move_id_23, readable.lvl_learned_12, readable.lvl_learned_13, readable.lvl_learned_14, readable.lvl_learned_15, readable.lvl_learned_16, readable.lvl_learned_17, readable.lvl_learned_18, readable.lvl_learned_19, readable.lvl_learned_20, readable.lvl_learned_21, readable.lvl_learned_22, readable.lvl_learned_23, readable.move_id_12, readable.move_id_12_index, readable.move_id_13, readable.move_id_13_index, readable.move_id_14, readable.move_id_14_index, readable.move_id_15, readable.move_id_15_index, readable.move_id_16, readable.move_id_16_index, readable.move_id_17, readable.move_id_17_index, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index, readable.move_id_23, readable.move_id_23_index
+
+=== 7.json ===
+Only in final (nested): raw.lvl_learned_20, raw.lvl_learned_21, raw.move_id_20, raw.move_id_21, readable.lvl_learned_20, readable.lvl_learned_21, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index
+
+=== 70.json ===
+Only in final (nested): raw.lvl_learned_20, raw.move_id_20, readable.lvl_learned_20, readable.move_id_20, readable.move_id_20_index
+
+=== 700.json ===
+Only in final (nested): raw.lvl_learned_19, raw.lvl_learned_20, raw.lvl_learned_21, raw.lvl_learned_22, raw.move_id_19, raw.move_id_20, raw.move_id_21, raw.move_id_22, readable.lvl_learned_19, readable.lvl_learned_20, readable.lvl_learned_21, readable.lvl_learned_22, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index
+
+=== 701.json ===
+Only in final (nested): raw.lvl_learned_18, raw.lvl_learned_19, raw.lvl_learned_20, raw.move_id_18, raw.move_id_19, raw.move_id_20, readable.lvl_learned_18, readable.lvl_learned_19, readable.lvl_learned_20, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index
+
+=== 71.json ===
+Only in final (nested): raw.lvl_learned_21, raw.lvl_learned_22, raw.move_id_21, raw.move_id_22, readable.lvl_learned_21, readable.lvl_learned_22, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index
+
+=== 72.json ===
+Only in final (nested): raw.lvl_learned_16, raw.lvl_learned_17, raw.lvl_learned_18, raw.lvl_learned_19, raw.lvl_learned_20, raw.move_id_16, raw.move_id_17, raw.move_id_18, raw.move_id_19, raw.move_id_20, readable.lvl_learned_16, readable.lvl_learned_17, readable.lvl_learned_18, readable.lvl_learned_19, readable.lvl_learned_20, readable.move_id_16, readable.move_id_16_index, readable.move_id_17, readable.move_id_17_index, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index
+
+=== 73.json ===
+Only in final (nested): raw.lvl_learned_18, raw.lvl_learned_19, raw.lvl_learned_20, raw.lvl_learned_21, raw.lvl_learned_22, raw.move_id_18, raw.move_id_19, raw.move_id_20, raw.move_id_21, raw.move_id_22, readable.lvl_learned_18, readable.lvl_learned_19, readable.lvl_learned_20, readable.lvl_learned_21, readable.lvl_learned_22, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index
+
+=== 74.json ===
+Only in final (nested): raw.lvl_learned_16, raw.lvl_learned_17, raw.move_id_16, raw.move_id_17, readable.lvl_learned_16, readable.lvl_learned_17, readable.move_id_16, readable.move_id_16_index, readable.move_id_17, readable.move_id_17_index
+
+=== 75.json ===
+Only in final (nested): raw.lvl_learned_18, raw.lvl_learned_19, raw.lvl_learned_20, raw.move_id_18, raw.move_id_19, raw.move_id_20, readable.lvl_learned_18, readable.lvl_learned_19, readable.lvl_learned_20, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index, readable.move_id_20, readable.move_id_20_index
+
+=== 76.json ===
+Only in final (nested): raw.lvl_learned_21, raw.lvl_learned_22, raw.lvl_learned_23, raw.move_id_21, raw.move_id_22, raw.move_id_23, readable.lvl_learned_21, readable.lvl_learned_22, readable.lvl_learned_23, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index, readable.move_id_23, readable.move_id_23_index
+
+=== 77.json ===
+Only in final (nested): raw.lvl_learned_19, raw.move_id_19, readable.lvl_learned_19, readable.move_id_19, readable.move_id_19_index
+
+=== 78.json ===
+Only in final (nested): raw.lvl_learned_22, raw.lvl_learned_23, raw.lvl_learned_24, raw.move_id_22, raw.move_id_23, raw.move_id_24, readable.lvl_learned_22, readable.lvl_learned_23, readable.lvl_learned_24, readable.move_id_22, readable.move_id_22_index, readable.move_id_23, readable.move_id_23_index, readable.move_id_24, readable.move_id_24_index
+
+=== 8.json ===
+Only in final (nested): raw.lvl_learned_20, raw.lvl_learned_21, raw.move_id_20, raw.move_id_21, readable.lvl_learned_20, readable.lvl_learned_21, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index
+
+=== 80.json ===
+Only in final (nested): raw.lvl_learned_18, raw.lvl_learned_19, raw.move_id_18, raw.move_id_19, readable.lvl_learned_18, readable.lvl_learned_19, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index
+
+=== 81.json ===
+Only in original (nested): raw.lvl_learned_16, raw.move_id_16, readable.lvl_learned_16, readable.move_id_16, readable.move_id_16_index
+
+=== 83.json ===
+Only in final (nested): raw.lvl_learned_23, raw.lvl_learned_24, raw.lvl_learned_25, raw.move_id_23, raw.move_id_24, raw.move_id_25, readable.lvl_learned_23, readable.lvl_learned_24, readable.lvl_learned_25, readable.move_id_23, readable.move_id_23_index, readable.move_id_24, readable.move_id_24_index, readable.move_id_25, readable.move_id_25_index
+
+=== 84.json ===
+Only in final (nested): raw.lvl_learned_19, raw.move_id_19, readable.lvl_learned_19, readable.move_id_19, readable.move_id_19_index
+
+=== 85.json ===
+Only in final (nested): raw.lvl_learned_21, raw.move_id_21, readable.lvl_learned_21, readable.move_id_21, readable.move_id_21_index
+
+=== 86.json ===
+Only in final (nested): raw.lvl_learned_17, raw.lvl_learned_18, raw.lvl_learned_19, raw.move_id_17, raw.move_id_18, raw.move_id_19, readable.lvl_learned_17, readable.lvl_learned_18, readable.lvl_learned_19, readable.move_id_17, readable.move_id_17_index, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index
+
+=== 87.json ===
+Only in final (nested): raw.lvl_learned_21, raw.lvl_learned_22, raw.lvl_learned_23, raw.lvl_learned_24, raw.lvl_learned_25, raw.move_id_21, raw.move_id_22, raw.move_id_23, raw.move_id_24, raw.move_id_25, readable.lvl_learned_21, readable.lvl_learned_22, readable.lvl_learned_23, readable.lvl_learned_24, readable.lvl_learned_25, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index, readable.move_id_23, readable.move_id_23_index, readable.move_id_24, readable.move_id_24_index, readable.move_id_25, readable.move_id_25_index
+
+=== 89.json ===
+Only in final (nested): raw.lvl_learned_20, raw.lvl_learned_21, raw.move_id_20, raw.move_id_21, readable.lvl_learned_20, readable.lvl_learned_21, readable.move_id_20, readable.move_id_20_index, readable.move_id_21, readable.move_id_21_index
+
+=== 9.json ===
+Only in final (nested): raw.lvl_learned_22, raw.lvl_learned_23, raw.move_id_22, raw.move_id_23, readable.lvl_learned_22, readable.lvl_learned_23, readable.move_id_22, readable.move_id_22_index, readable.move_id_23, readable.move_id_23_index
+
+=== 90.json ===
+Only in final (nested): raw.lvl_learned_16, raw.lvl_learned_17, raw.move_id_16, raw.move_id_17, readable.lvl_learned_16, readable.lvl_learned_17, readable.move_id_16, readable.move_id_16_index, readable.move_id_17, readable.move_id_17_index
+
+=== 91.json ===
+Only in final (nested): raw.lvl_learned_21, raw.lvl_learned_22, raw.lvl_learned_23, raw.move_id_21, raw.move_id_22, raw.move_id_23, readable.lvl_learned_21, readable.lvl_learned_22, readable.lvl_learned_23, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index, readable.move_id_23, readable.move_id_23_index
+
+=== 92.json ===
+Only in final (nested): raw.lvl_learned_17, raw.lvl_learned_18, raw.move_id_17, raw.move_id_18, readable.lvl_learned_17, readable.lvl_learned_18, readable.move_id_17, readable.move_id_17_index, readable.move_id_18, readable.move_id_18_index
+
+=== 93.json ===
+Only in final (nested): raw.lvl_learned_18, raw.lvl_learned_19, raw.move_id_18, raw.move_id_19, readable.lvl_learned_18, readable.lvl_learned_19, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index
+
+=== 94.json ===
+Only in final (nested): raw.lvl_learned_21, raw.lvl_learned_22, raw.move_id_21, raw.move_id_22, readable.lvl_learned_21, readable.lvl_learned_22, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index
+
+=== 95.json ===
+Only in final (nested): raw.lvl_learned_21, raw.lvl_learned_22, raw.move_id_21, raw.move_id_22, readable.lvl_learned_21, readable.lvl_learned_22, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index
+
+=== 96.json ===
+Only in final (nested): raw.lvl_learned_18, raw.lvl_learned_19, raw.move_id_18, raw.move_id_19, readable.lvl_learned_18, readable.lvl_learned_19, readable.move_id_18, readable.move_id_18_index, readable.move_id_19, readable.move_id_19_index
+
+=== 97.json ===
+Only in final (nested): raw.lvl_learned_21, raw.lvl_learned_22, raw.move_id_21, raw.move_id_22, readable.lvl_learned_21, readable.lvl_learned_22, readable.move_id_21, readable.move_id_21_index, readable.move_id_22, readable.move_id_22_index
+
+Files only in Original:
+0.json
+650.json
+651.json
+653.json
+656.json
+657.json
+658.json
+659.json
+660.json
+661.json
+662.json
+663.json
+664.json
+665.json
+666.json
+667.json
+668.json
+669.json
+670.json
+671.json
+672.json
+673.json
+674.json
+675.json
+676.json
+677.json
+678.json
+679.json
+680.json
+681.json
+682.json
+683.json
+684.json
+690.json
+691.json
+702.json
+705.json
+706.json
+707.json
+708.json

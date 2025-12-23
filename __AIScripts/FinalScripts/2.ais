@@ -1222,42 +1222,7 @@ address_0x1534:
 //   PHASE ENEMIES   
 
 Label_DragonTail:
-	GetPokeTurnCount(defender)
-	JumpIfStoredGT(ability.speed_boost, &address_0x15D6)
-	JumpIfHasSideCondition(defender, side_cond.spikes, &address_0x15E6)
-	JumpIfHasSideCondition(defender, side_cond.stealth_rock, &address_0x15E6)
-	JumpIfHasSideCondition(defender, side_cond.toxic_spikes, &address_0x15E6)
-	JumpIfStatStageGT(defender, atk, +2, &address_0x15E6)
-	JumpIfStatStageGT(defender, def, +2, &address_0x15E6)
-	JumpIfStatStageGT(defender, spa, +2, &address_0x15E6)
-	JumpIfStatStageGT(defender, spd, +2, &address_0x15E6)
-	JumpIfStatStageGT(defender, eva, +2, &address_0x15E6)
-	AddToScore(-3)
-	Jump(&address_0x15F6)
-
-address_0x15D6:
-	JumpIfRandLT(64, &address_0x15E6)
-	AddToScore(2)
-
-address_0x15E6:
-	JumpIfRandLT(128, &address_0x15F6)
-	AddToScore(2)
-
-address_0x15F6:
 	EndScript()
-
-Label_0x15F8:
-	JumpIfHealthGT(attacker, 90, &address_0x160C)
-	AddToScore(-2)
-
-address_0x160C:
-	GetTurnCount()
-	JumpIfStoredEQ(0, &address_0x1622)
-	JumpIfRandLT(200, &deprioritizeBy2)
-
-address_0x1622:
-	EndScript()
-
 
 
 
@@ -3985,29 +3950,18 @@ address_0x3CF0:
 
 
 //   U-TURN   
-//   MODIFY
 Label_U_Turn:
 	JumpIfEffectivenessEQ(0x, &address_0x3D2C)
-	JumpIfEffectivenessEQ(1/4x, &address_0x3D2C)
-	JumpIfEffectivenessEQ(1/2x, &address_0x3D2C)
 	GetPartyReserveCount(attacker)
-	JumpIfStoredEQ(0, &address_0x3DCE)
-	JumpIfHasSuperEffectiveMove(&address_0x3D38)
-	Jump(&address_0x3D48)
+	JumpIfStoredEQ(0, &endScript_PivotingMoves)
+	JumpIfReservedHasStrongerMove(false, &address_0x3D68)
+	AddToScore(-2)
+	Jump(&endScript_PivotingMoves)
 
 address_0x3D2C:
-	AddToScore(-1)
-	Jump(&address_0x3DCE)
-
-address_0x3D38:
-	JumpIfRandLT(64, &address_0x3D48)
 	AddToScore(-2)
+	Jump(&endScript_PivotingMoves)
 
-address_0x3D48:
-	JumpIfReservedHasStrongerMove(false, &address_0x3D68)
-	JumpIfRandLT(64, &address_0x3D68)
-	AddToScore(-2)
-	Jump(&address_0x3DCE)
 
 address_0x3D68:
 	JumpIfHealthGT(defender, 70, &address_0x3D94)
@@ -4025,12 +3979,12 @@ address_0x3DA4:
 
 address_0x3DB4:
 	JumpCompareSpeed(LT, &address_0x3DC8)
-	JumpIfRandLT(128, &address_0x3DCE)
+	JumpIfRandLT(128, &endScript_PivotingMoves)
 
 address_0x3DC8:
 	AddToScore(1)
 
-address_0x3DCE:
+endScript_PivotingMoves:
 	EndScript()
 
 
@@ -4798,34 +4752,6 @@ address_0x4A92:
 //   PUNISHMENT   
 //   REDUNDANT
 Label_0x4A94:
-	JumpIfEffectivenessEQ(0x, &address_0x4B30)
-	JumpIfEffectivenessEQ(1/2x, &address_0x4B30)
-	JumpIfEffectivenessEQ(1/4x, &address_0x4B30)
-	GetPositiveStatStageTotal(defender)
-	JumpIfStoredGT(6, &address_0x4AF0)
-	JumpIfStoredGT(5, &address_0x4B00)
-	JumpIfStoredGT(4, &address_0x4B10)
-	JumpIfStoredGT(3, &address_0x4B20)
-	JumpIfStoredGT(2, &address_0x4B20)
-	Jump(&address_0x4B30)
-
-address_0x4AF0:
-	JumpIfRandLT(128, &address_0x4B00)
-	AddToScore(4)
-
-address_0x4B00:
-	JumpIfRandLT(128, &address_0x4B10)
-	AddToScore(3)
-
-address_0x4B10:
-	JumpIfRandLT(128, &address_0x4B20)
-	AddToScore(2)
-
-address_0x4B20:
-	JumpIfRandLT(128, &address_0x4B30)
-	AddToScore(1)
-
-address_0x4B30:
 	EndScript()
 
 
