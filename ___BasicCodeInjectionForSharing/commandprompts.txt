@@ -131,7 +131,7 @@
     */
 
 .\blz.exe -d .\overlay_0167.bin
-.\blz.exe -en .\overlay9_167.bin
+.\blz.exe -en .\overlay_0167.bin
 
 
 

@@ -1826,6 +1826,35 @@ extern "C"
 
 #pragma endregion
 
+#pragma region Explosion
+
+    // void HandlerTeeterDanceSpeedBoost(int a1, ServerFlow *a2, int a3)
+    // {
+    //     BattleMon *mon;
+    //     if (a3 == BattleEventVar_GetValue(VAR_MON_ID))
+    //     {
+    //         if (BattleMon_IsStatChangeValid(Handler_GetBattleMon(a2, a3), VALUE_SPEED_STAGE, 1))
+    //         {
+    //             ChangeStats(a2, a3, a3, STATSTAGE_SPEED, 1, 1);
+    //         }
+    //     }
+    // }
+
+    // MOVE_TRIGGERTABLE ExplosionHandlers[] = {
+    //     {EVENT_DETERMINE_MOVE_DAMAGE, (MOVE_HANDLER_FUNC)HandlerExplosionDamageDetermine},
+    //     {EVENT_MOVE_EXECUTE_START, (MOVE_HANDLER_FUNC)HandlerExplosionStart},
+    //     {EVENT_MOVE_EXECUTE_END, (MOVE_HANDLER_FUNC)HandlerExplosionEnd},
+    // };
+
+    // MOVE_TRIGGERTABLE *THUMB_BRANCH_EventAddGuardSwap(_DWORD *a1)
+    // {
+    //     *a1 = 3;
+    //     return ExplosionHandlers;
+    // }
+
+#pragma endregion
+
+
 #pragma region Recharge
 
     void HandlerRecharge(int a1, ServerFlow *a2, int a3)
@@ -2037,6 +2066,7 @@ extern "C"
     {
         return *((uint8_t *)a1 + 0xE9);
     }
+    
     int THUMB_BRANCH_IsUnselectableMove(BtlClientWk *a1, BattleMon *a2, int move, Btlv_StringParam *strparam)
     {
         ConditionData MoveCondition; // r0
@@ -2127,14 +2157,14 @@ extern "C"
                 return 1;
             }
 
-            if (BattleMon_GetValue(a2, VALUE_EFFECTIVE_ABILITY) == ABIL054_TRUANT)
-            {
-                // k::Printf("\n\n=== TESTING TRUANT 1 === getTruantByte = %d", getTruantByte(a2));
-            }
+            // if (BattleMon_GetValue(a2, VALUE_EFFECTIVE_ABILITY) == ABIL054_TRUANT)
+            // {
+            //     k::Printf("\n\n=== TESTING TRUANT 1 === getTruantByte = %d for Pokemon %d", getTruantByte(a2), a2->Species);
+            // }
 
             if (BattleMon_GetValue(a2, VALUE_EFFECTIVE_ABILITY) == ABIL054_TRUANT && getTruantByte(a2) && PML_MoveIsDamaging(move))
             {
-                // k::Printf("\n\n=== TESTING TRUANT 2 === getTruantByte = %d", getTruantByte(a2));
+                // k::Printf("\n\n=== TESTING TRUANT 2 === getTruantByte = %d for Pokemon %d", getTruantByte(a2), a2->Species);
                 if (strparam)
                 {
                     // k::Printf("\n\n=== TESTING TRUANT 3 === getTruantByte = %d", getTruantByte(a2));

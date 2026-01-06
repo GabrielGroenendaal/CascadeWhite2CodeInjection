@@ -227,6 +227,7 @@ extern "C"
         *((uint8_t *)a1 + 0xEB) = a2;
     }
 
+    
 #pragma endregion
 
 #pragma region Contact
@@ -1056,6 +1057,8 @@ extern "C"
         if (a3 == BattleEventVar_GetValue(VAR_MON_ID))
         {
             BattleMon *mon = Handler_GetBattleMon((ServerFlow *)a1, a3);
+                        // k::Printf("\n\n=== TESTING TRUANT HANDLER === getTruantByte = %d", getTruantByte(mon));
+
             if (*a4)
             {
                 if (PML_MoveGetCategory(BattleEventVar_GetValue(VAR_MOVE_ID)))
@@ -4471,7 +4474,7 @@ extern "C" u32 GetScanSetting()
 {
     EventWorkSave *eventWork = GameData_GetEventWork(GAME_DATA);
     u16 *lvl_cap_ptr = EventWork_GetWkPtr(eventWork, 16438);
-    return 1;
+    return *lvl_cap_ptr;
 }
 extern "C" u32 PML_PersonalGetParamSingle(u16 species, u16 form, PersonalField field);
 

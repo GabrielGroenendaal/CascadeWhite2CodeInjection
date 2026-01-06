@@ -1741,7 +1741,7 @@ extern "C"
         return v12;
     }
 
-#pragma endregion
+#pragma endregionEE
 
 #pragma region SwitchInAIHelpers
 
@@ -2733,17 +2733,11 @@ extern "C"
                                 }
                                 if (BasePower > 0)
                                 {
-                                    k::Printf("\nCheck 1: Base Power at the start is %d", v10);
                                     v10 = checkForBPChanges(MonData, v24, ID, v10, a1);
-                                    k::Printf("\nCheck 2: Base Power at the start is %d", v10);
                                     v10 = checkForTechnician(MonData, ID, v10);
-                                    k::Printf("\nCheck 3: Base Power at the start is %d", v10);
                                     v10 = checkForSTAB(MonData, Type, v10);
-                                    k::Printf("\nCheck 4: Base Power after STAB is %d", v10);
                                     v10 = checkForAbilityAndItemBPChanges(MonData, v24, Type, TypeEffectivenessVsMon, v10);
-                                    k::Printf("\nCheck 5: Base Power after AbilityandItems is %d", v10);
                                     BasePower = HIWORD(v10);
-                                    k::Printf("\nCheck 6: Final Base Power is %d\n\n\n\n", BasePower);
                                 }
                                 if (v23[i] < BasePower)
                                 {

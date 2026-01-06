@@ -773,14 +773,14 @@ extern "C"
 
     void HandlerTricksterHerbPriorityCheck(BattleEventItem *a1, ServerFlow *a2, int a3)
     {
-#if DEBUGGING_ITEMS && DEBUGGING_ALL
-        k::Printf("\n====Trickster Herb Priority Check====\nThe Attacking Mon is %d\nThe Move ID is %d\nThe Move Category is %d\nThe Move Priority is %d\n", BattleEventVar_GetValue(VAR_ATTACKING_MON), BattleEventVar_GetValue(VAR_MOVE_ID), BattleEventVar_GetValue(VAR_MOVE_CATEGORY), BattleEventVar_GetValue(VAR_MOVE_PRIORITY));
-#endif
+// #if DEBUGGING_ITEMS && DEBUGGING_ALL
+        // k::Printf("\n====Trickster Herb Priority Check====\nThe Attacking Mon is %d\nThe Move ID is %d\nThe Move Category is %d\nThe Move Priority is %d\n", BattleEventVar_GetValue(VAR_ATTACKING_MON), BattleEventVar_GetValue(VAR_MOVE_ID), BattleEventVar_GetValue(VAR_MOVE_CATEGORY), BattleEventVar_GetValue(VAR_MOVE_PRIORITY));
+// #endif
         if (a3 == BattleEventVar_GetValue(VAR_ATTACKING_MON) && !PML_MoveGetCategory(BattleEventVar_GetValue(VAR_MOVE_ID)))
         {
-#if DEBUGGING_ITEMS && DEBUGGING_ALL
-            k::Printf("\nRESULT: The Trickster Herb Should Trigger\n\n");       
-#endif
+// #if DEBUGGING_ITEMS && DEBUGGING_ALL
+            // k::Printf("\nRESULT: The Trickster Herb Should Trigger\n\n");       
+// #endif
             if (BattleEventVar_RewriteValue(VAR_MOVE_PRIORITY, BattleEventVar_GetValue(VAR_MOVE_PRIORITY) + 1))
             {
                 ItemEvent_PushRun(a1, a2, a3);
@@ -789,7 +789,7 @@ extern "C"
     }
 
     ITEM_TRIGGERTABLE TricksterHerbHandlers[] = {
-        {EVENT_CHECK_SPECIAL_PRIORITY, (ITEM_HANDLER_FUNC)HandlerTricksterHerbPriorityCheck},
+        {EVENT_GET_MOVE_PRIORITY, (ITEM_HANDLER_FUNC)HandlerTricksterHerbPriorityCheck},
         {EVENT_USE_ITEM, (ITEM_HANDLER_FUNC)HandlerCustapBerryUse}};
 
     ITEM_TRIGGERTABLE *THUMB_BRANCH_EventAddLustrousOrb(_DWORD *a1)

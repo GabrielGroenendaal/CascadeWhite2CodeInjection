@@ -263,6 +263,9 @@ extern int HandlerHeatproofStatus(int a1, int a2, int a3);
 // extern int BattleMon_GetHPRatio(BattleMon *a1);
 
 // New Effects
+extern void HandlerExplosionStart(int a1, ServerFlow *a2, unsigned int *a3);
+extern void  HandlerExplosionEnd(int a1, ServerFlow *a2, unsigned int *a3);
+extern void HandlerExplosionDamageDetermine(int a1, ServerFlow *a2, unsigned int *a3);
 extern void ServerControl_CheckMoveExeSleepCure(ServerFlow *a1, BattleMon *a2);
 extern int ServerEvent_MoveExecuteFail(ServerFlow *a1, BattleMon *a2, int a3, int a4);
 extern int ServerControl_CheckMoveExeFreezeThaw(ServerFlow *a1, BattleMon *a2, int a3);

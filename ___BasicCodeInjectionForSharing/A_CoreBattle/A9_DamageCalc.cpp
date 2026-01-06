@@ -3190,7 +3190,7 @@ enum ItemID
         {1, ABIL117_SNOW_WARNING, ABIL149_ILLUSION, ABIL081_SNOW_CLOAK},       // PK124_JYNX = 0x7C,
         {1, ABIL058_MINUS, ABIL083_ANGER_POINT, ABIL057_PLUS},                 // PK125_ELECTABUZZ = 0x7D,
         {1, ABIL020_QUICK_DRAW, ABIL070_DROUGHT, ABIL106_AFTERMATH},           // PK126_MAGMAR = 0x7E,
-        {1, ABIL045_SAND_STREAM, ABIL022_INTIMIDATE, ABIL022_INTIMIDATE},    // PK127_PINSIR = 0x7F,
+        {1, ABIL045_SAND_STREAM, ABIL022_INTIMIDATE, ABIL055_HUSTLE},    // PK127_PINSIR = 0x7F,
         {1, ABIL141_MOODY, ABIL038_BERSERK, ABIL055_HUSTLE},                  // PK128_TAUROS = 0x8{0, ABIL001_STENCH, ABIL001_STENCH, ABIL001_STENCH},
         {1, ABIL141_MOODY, ABIL002_DRIZZLE, ABIL033_SWIFT_SWIM},               // PK129_MAGIKARP = 0x8{0, ABIL001_STENCH, ABIL001_STENCH, ABIL001_STENCH},
         {1, ABIL141_MOODY, ABIL002_DRIZZLE, ABIL033_SWIFT_SWIM},               // PK130_GYARADOS = 0x82,
@@ -4001,11 +4001,7 @@ enum ItemID
                 {
                     damageRoll = (100 - BattleRandom(16u));
                 }
-#if DEBUGGING_DAMAGECALC && DEBUGGING_ALL
-                 damageRoll = 100;
-#endif 
 
-                damageRoll = 100;
                 fxDamage = damageRoll * fxDamage / 100;
             }
 #if DEBUGGING_DAMAGECALC && DEBUGGING_ALL
@@ -4256,30 +4252,30 @@ enum ItemID
         int v = 0x3A;
         species = PokeParty_GetParam(pkm, PF_Species, 0);
 
-        do
-        {
-            /* Variance PP Setting Implementation */
+        // do
+        // {
+        //     /* Variance PP Setting Implementation */
 
-            // if (GetPPSetting())
-            // {
-            //     movePP = PokeParty_GetParam(pkm, (PkmField)(v6 + 58), 0);
-            //     if (movePP < 5)
-            //     {
-            //         PokeParty_SetParam(pkm, (PkmField)(v6 + 58), movePP + RandomInRange(1u, 2u));
-            //     }
-            //     else
-            //     {
-            //         PokeParty_SetParam(pkm, (PkmField)(v6 + 58), movePP + RandomInRange(1u, 4u));
-            //     }
-            // } else {
-            movePP = PokeParty_GetParam(pkm, (PkmField)(v6 + 58), 0);
-            if (PokeParty_GetParam(pkm, (PkmField)(v6 + 54), 0) != MOVE270_HELPING_HAND){
-                PokeParty_SetParam(pkm, (PkmField)(v6 + 58), movePP + 3u);
-            }
-            //}
+        //     // if (GetPPSetting())
+        //     // {
+        //     //     movePP = PokeParty_GetParam(pkm, (PkmField)(v6 + 58), 0);
+        //     //     if (movePP < 5)
+        //     //     {
+        //     //         PokeParty_SetParam(pkm, (PkmField)(v6 + 58), movePP + RandomInRange(1u, 2u));
+        //     //     }
+        //     //     else
+        //     //     {
+        //     //         PokeParty_SetParam(pkm, (PkmField)(v6 + 58), movePP + RandomInRange(1u, 4u));
+        //     //     }
+        //     // } else {
+        //     movePP = PokeParty_GetParam(pkm, (PkmField)(v6 + 58), 0);
+        //     if (PokeParty_GetParam(pkm, (PkmField)(v6 + 54), 0) != MOVE270_HELPING_HAND){
+        //         PokeParty_SetParam(pkm, (PkmField)(v6 + 58), movePP + 3u);
+        //     }
+        //     //}
 
-            ++v6;
-        } while (v6 < 4);
+        //     ++v6;
+        // } while (v6 < 4);
 
         PokeParty_SetParam(pkm, PF_Happiness, v5);
         PokeParty_SetParam(pkm, PF_Forme, data);

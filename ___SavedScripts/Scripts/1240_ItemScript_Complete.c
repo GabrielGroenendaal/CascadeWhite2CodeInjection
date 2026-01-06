@@ -610,10 +610,11 @@ void Sequence50()
 	End();
 }
 
+/* SHELL BELL - Battle Company */
 void Sequence51()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 265);
+	SetVarEqVal(0x800C, 253);
 	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
