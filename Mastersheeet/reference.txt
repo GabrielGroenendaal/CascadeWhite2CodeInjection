@@ -1,0 +1,1017 @@
+# Blaze Black 2 1.14 Challenge Mode
+
+# Cheren Split (Lvl Cap 14)
+
+## Route 19
+
+!enc Route 19
+
+## Flocessy Town
+Talk to the Mart Assistant to receive an Elemental Monkey.
+
+## Route 20
+
+!enc route 20
+
+!trm terrell/6
+!trm isabel/5
+!trm petey/5
+
+
+## Floccey Ranch
+!enc 45
+
+### Rival Fight
+!trm 166 If chose Snivy
+!trm 167 If chose Tepig
+!trm 168 If chose Oshawott
+
+Talk to the Daycare Woman roaming Floccesy Ranch to receive an Egg
+
+!tr molly/7 
+!trm orville/8
+!trm kenny/8
+
+!trm 884 Gives TM Frustration
+
+
+## Floccessy Town
+
+!trm seymour/pansage/10 Player chose Tepig
+!trm cassie/panpour/10 Player chose Tepig
+
+!trm seymour/pansear/10 Player chose Oshawott
+!trm cassie/pansage/10 Player chose Oshawott
+
+!trm seymour/panpour/10 Player chose Snivy
+!trm cassie/pansear/10 Player chose Snivy
+
+## Aspertia City 
+
+!enc aspertia city
+
+### Trainer School
+
+!tr roxanne/11 Optional: gives 2x berry juice
+
+### Cheren's Gym
+
+!trm pedro/10
+!trm serena/10
+
+!trm cheren/12 Gives TM83 Work Up
+
+# Roxie Split (Lvl Cap 22)
+
+## Route 20
+
+!trm jerome/12
+!trm albert/13
+!trm lin/13
+!trm lia&lily/13
+!trm kimya/14
+
+
+## Virbank City
+
+!enc virbank city
+
+## Virbank Complex
+
+!enc virbank complex
+
+### Inner Complex
+
+!enc inner complex
+
+!tr masahiro/15
+!tr mitchell/15
+!tr nathan/15
+!tr Isaac/15
+!tr waylon/15
+!tr daya/15
+
+## Virbank City
+
+!tr brawly/19 Optional: Gives Meditite egg
+
+
+## Roxie's Gym
+
+!trm nicky/16
+!trm billyjo/17
+!trm roxie/20 Rewards TM09 Venoshock
+
+# Burgh Split (Lvl Cap 27)
+
+## After defeating Roxie, Virbank City
+
+!trm 690
+
+### Route 20
+
+!trm 763
+
+!trm brycen/21 Gives Never Melt Ice
+
+## Route 4 - Pre-Burgh/Castelia Side
+
+!enc route 4
+
+!tr Irene/23
+!tr HUbert/19
+!tr andrew/19
+!tr Braven/20
+
+## Castelia City - Battle Company
+### 47F
+
+!tr Clemens/23
+!tr Warren/23
+!tr gilligan/23
+!tr Britney/23
+
+### 55F
+
+!tr neil/23
+
+## Castelia Sewers
+
+!enc castelia sewers
+
+!tr felix/22
+!tr zack/21
+!tr caroline/21
+!tr scott/22
+!tr heath/21
+
+
+!trm 342 Tag Batle
+!trm 356 Tag Battle
+
+### Your Partner
+!tr Rival/dewott/24 Picked Tepig
+!tr Rival/servine/24 Picked Dewott
+!tr Rival/pignite/24 Picked Snivy
+
+### After Surf is obtained
+
+!tr clarke/42
+!tr brady/43
+
+## Liberty Garden
+
+!enc Castelia Gardens
+
+Victini's Guardian will only battle the player on Challenge mode, before Burgh is defeated.
+
+!tr ???/27
+
+## Relic Passage - Castelia Side
+
+!enc relic passage
+
+!tr lumina/24
+!tr terrance/24
+!tr kendall/24
+
+## Castelia City - Various + Burgh's Gym
+
+### GAMEFREAK Offices - Main Story
+
+!tr nishino/24
+!tr Morimoto/22
+
+### GAMEFREAK Offices - Postgame
+
+!tr Nishino/90
+
+### Café Sonata
+
+!tr wattson/27 Optional: Gives 2x Tanga Berry
+
+### Burgh's Gym
+
+!trm clarence/24
+!trm jack/24
+!trm gary/23
+!tr anders/24
+
+
+!trm Burgh/28
+
+### Accessible after Surf, fought back to back
+
+!tr Ricky/50
+!tr jean-paul/50
+!tr Tina/50
+
+# Elesa Split (Lvl Cap 38)
+
+## Route 4 - Post-Burgh
+
+!trm colress/26 Gives Life Orb
+
+!tr braven/20
+
+!trm rob&sal/26
+!trm neagle/25
+!tr joey/25
+!trm silvester/25
+!tr dell/25
+!trm stanley/25
+!tr sinclair/25
+
+## Desert Resort
+
+!enc desert resort
+
+!tr Mariah/27
+!tr anja/27
+!tr jaden/27
+!tr tommy/28
+!tr future/27
+!tr walt/27
+!tr clara/27
+!tr sam/27
+!tr tami/27
+
+## Relic Caste
+
+!enc relic castle
+
+#### 1F
+!tr perry/27
+!tr dua/27
+!tr low/28
+
+## Nimbasa City
+
+!trm lenora/31 right side
+!trm hawes/31 left side
+
+!tr ingo/32 right side
+!tr emmet/32 left side
+
+### Your Partner
+!tr nate/servine/31
+!tr nate/pignite/31
+!tr nate/dewott/31
+
+!tr rosa/servine/31
+!tr rosa/pignite/31
+!tr rosa/dewott/31
+
+## Big Stadium
+
+!tr flannery/37
+
+## Route 16
+
+!enc route 16
+
+!tr hank/30
+!tr ivan/30
+!tr blossom/31
+!tr hector/30
+!tr stu&art/31
+!tr krissa/30
+
+## Lostlorn Forest
+
+!enc lostlorn forest
+
+!tr galen/33
+!tr forrest/33
+!tr serenity/33
+
+### After Surf and Waterfall
+
+!tr murphy/50
+
+## Route 5
+
+!enc route 5
+
+!tr horton/30
+!tr jenn/30
+!tr ava&aya/30
+!tr brian/31
+!tr lois/33
+
+## Amusement Park
+
+!trm rolan/31
+!trm colette/31
+
+## Elesa's Gym
+
+!trm nikola/33
+!trm fleming/33
+!trm ampre/34
+
+!trm 767
+
+# Clay Split (Lvl Cap 47)
+
+## Driftveil City
+
+!trm 359 fought back to back
+!trm 751 fought back to back
+
+## Route 5
+
+!trm charles/37
+
+!enc 96
+
+## Driftveil City
+
+!trm rood/41
+
+!tr norman/43 Optional: gives 5x sitrus berries, 2x micle berry
+
+!tr charles/41
+
+## Route 6
+
+!enc route 6
+
+!tr april/35
+!trm nicole/35
+!tr mara/35
+!trm jacques/37
+!trm marissa/37
+!trm alvin/35
+!tr tihana/34
+!trm richard/36
+
+## Clay Tunnel
+
+!enc clay tunnel
+
+### Driftveil Side Entrance
+
+!tr teppei/37
+!tr morgann/38
+
+### Mistralton Cave Entrance/Clay Tunnel
+
+!tr manuel/38
+!tr herman/38
+!tr paul/38
+
+### Twist Mountain and Underground Ruins Entrance
+
+!tr leo/38
+!tr maxwell/39
+!tr katie/39
+!tr brand/38
+
+## Clay's Gym
+
+!tr noel/40
+!tr tavarius/40
+!tr niel/40
+!tr maynard/41
+!tr pasqual/41
+!tr friedrich/40
+!tr tibor/40
+
+!trm clay/44 Permanent Sandstorm, Gives TM26 Earthquake
+
+# Skyla Split (Lvl Cap 55)
+
+## Plasma Frigate - First Visit
+
+!trm 372
+!trm 373
+
+!trm 375 Tag
+!trm 374 Tag
+### Your Partner
+!tr cheren/40
+
+!trm 377 Tag
+!trm 376 Tag
+### Your Partner
+!tr Rival/samurott/40
+!tr Rival/serperior/40
+!tr Rival/emboar/40
+
+## Route 6 After Clay/Frigate:
+
+!trm 853
+!trm 854
+!trm 855
+
+## Chargestone Cave
+
+!enc chargestone cave
+
+### 1F
+
+!tr anna/37
+!tr ronald/38
+
+### After PWT/Plasma Frigate
+
+!trm corky/41
+!tr louis/41
+!trm mary/42
+!trm otto/42
+
+### B1F
+
+!trm kit/41
+!trm briana/41
+!trm lumi/41
+!tr mary/42
+
+### B2F
+
+!tr beverly/41
+!tr jeremy/41
+!tr shaye/41
+
+## Relic Passage - Driftveil Side
+
+!enc 83
+!enc 82
+
+### Exit to the PWT
+
+!tr Keith/40
+!tr Eileen/42
+!tr Randall/42
+
+### Middle Room
+
+!tr tobias/42
+!tr tully/42
+!tr annie/40
+!tr ena/41
+
+### Relic Passage Backroom - TM Protectors
+
+!tr melody/70
+!tr nikola/70
+
+## Mistralton Cave
+
+!enc mistralton cave
+
+!tr shelby/41
+!tr jebediah/42
+
+### 2F
+
+!tr geoff/42
+!tr belle/42
+
+## Route 7
+
+!enc route 7
+
+!tr marcus/46
+!tr cody/44
+!trm flo/44
+!trm hollie/46
+!tr greg/46
+!tr chrissy/46
+!trm sola&ana/48
+!tr pat/45
+!tr ian/45
+
+## Celestial Tower
+
+!enc 112
+
+### 2F
+
+!enc 113
+
+!tr joyce/44
+!tr alberta/44
+!tr jude/44
+
+### 3F
+
+!enc 114
+
+!trm georgia/44
+!tr micki/45
+!tr bryce/44
+!tr dixie/45
+
+### 4F
+
+!enc 115
+
+!tr grace/45
+!tr daniel/45
+!tr sarah/47
+
+## Twist Mountain - Mistralton Side
+
+!trm colress/53
+
+## Mistralton City
+
+!tr juan/53 Optional: Gives 2x Air Balloon
+
+## Skyla's Gym
+
+!trm flynn/48
+!tr winslow/48
+!tr elron/48
+!trm ewing/48
+!trm chase/49
+
+!trm 769 Gives TM62 Acrobatics
+
+# Drayden Split (Lvl Cap 64)
+
+## Reversal Mountain
+
+!enc 48
+
+### Outside Region
+
+!tr jeremiah/49
+!tr adelaide/50
+
+### Inside Region
+
+!enc 49
+
+!trm bianca/56
+
+!trm jared/51 Tag
+!trm kumiko/51 Tag
+
+
+!trm ray/51 Tag
+!trm cora/51 Tag
+
+!trm corey/50
+
+!trm Kiyo/51
+!trm Markus/51
+
+!trm eliza/50
+!trm chan/50
+!trm derek/52
+
+### B1F
+
+!enc 50
+
+!tr lewis/50
+
+## Strange House
+
+!enc 61
+
+!tr boone/49
+!tr lynette/49
+
+## Undella Town
+
+!enc undella town
+
+!trm 378
+!trm 379
+!trm 380
+
+## Undella Bay
+
+!enc undella bay
+
+!tr bart/49
+!tr matt/48
+!tr mitzi/48
+!tr tim/48
+!tr summer/50
+!tr arissa/49
+
+## Route 14
+
+!enc route 14
+
+!tr marian/50
+!tr sheldon/50
+!tr glinda/51
+!tr junko/51
+!tr jay/50
+!tr reece/50
+!tr kipp/51
+!tr sid/50
+
+## Abundant Shrine
+
+!enc abundant shrine
+
+!tr wes/51
+!tr rae&ula/51
+!tr lurleen/51
+!tr jaye/51
+
+## Route 13
+
+!enc route 13
+
+!trm wesley/51
+!trm alize/51
+!trm miguel/51
+!tr leroy/52
+!tr vince/51
+!tr laura/51
+!tr laura/51
+!tr damon/53
+!tr jones/52
+!trm dianne/53
+!tr daryl/53
+!tr angi/52 
+
+## Lacunosa Town
+
+!trm zinzolin/54 left side
+!trm 705 right side
+
+### Your Partner
+
+!tr rival/samurott/52
+!tr rival/serperior/52
+!tr rival/emboar/52
+
+## Route 12
+
+!enc route 12
+
+!tr azra/53
+!tr jeriel/53
+!tr cleo&rio/53
+!trm benga/61
+
+## Village Bridge
+
+!enc village bridge
+
+!tr lizzy/54
+!tr amy/54
+!trm karl/54
+!trm stonewall/56
+
+player can choose which one to fight in order to advance
+
+!tr dean/54
+!tr gough/54
+!tr nicolas/54
+!tr derrick/54
+!tr chris/54
+
+## Route 11
+
+!enc route 11
+
+!tr magnolia/55
+!trm crofton/55
+!trm thalia/55
+
+## Opelucid City
+
+!tr winona/62 Optional: Gives access to rotom
+
+## Route 9
+
+!enc route 9
+
+!tr chance/56
+!tr  zeke/56
+!tr reese/55
+!tr  phillip/56
+!tr jim&cas/57
+!tr olwen/56
+!tr lou/56
+
+## Drayden's Gym
+
+!trm lucius/57
+!trm rhona/57
+!trm jerry/57
+!trm denae/58
+!trm ron/58
+
+!trm Drayden/63 Gives TM02 Dragon Claw
+
+# Marlon Split (Lvl Cap 68)
+
+## Opelucid City
+
+!trm 585
+!trm 586
+!trm 587
+
+!trm zinzolin/59
+!trm shadow/bisharp/58
+
+## Seaside Cave
+
+### 1F
+
+!trm rocky/57
+!tr johan/60
+!tr tia/60
+!tr mikiko/60
+!tr drago/60
+
+### B1F
+
+!tr maki/61
+!tr rich/60
+
+
+## Route 21
+
+!enc route 21
+
+!tr braid/61
+!tr kenzo/58
+!tr kyle/60
+!trm kenneth/60
+!trm kaoru/60
+!trm harold/60
+!tr desiree/60
+
+## Route 22
+
+!enc route 22
+
+!trm shel/60
+!trm myra/60
+!tr justin/60
+!tr addison/60
+!tr lowell/60
+!tr lucca/60
+
+## Humilau City
+
+!enc Humilau City
+
+!tr tate/66 Gives TM17 Protect
+!tr liza/66 Gives TM17 Protect
+
+## Marlon's Gym
+
+!trm doyle/61
+!trm melina/61
+!tr santino/61
+!tr jeanne/61
+!trm enzio/61
+!trm sable/61
+
+!trm marlon/poliwrath/63 Perm Rain, Gives TM61 Wave Crash
+
+# Final Split (Lvl Cap 78)
+
+## Plasma Frigate - Second Visit
+
+!tr 500
+
+!trm 798 Left side
+!trm 799 Right Side
+
+### Your Partner
+
+!tr 794
+!tr 795
+!tr 796
+
+### Below Deck
+
+Main Corridor
+
+!tr 801
+!tr 800
+
+Left Hand Rooms
+
+!tr 436
+!tr 451
+
+
+!tr 427
+!tr 442
+
+
+!tr 426
+!tr 441
+
+
+!tr 440
+
+Right Hand Rooms
+
+!tr 428
+!tr 443
+
+
+!tr 437
+!tr 452
+
+
+!tr 429
+!tr 444
+
+### Kyurem Room
+
+!trm zinzolin/63 left side
+!trm 797 right side
+
+Your Partner
+
+!tr 794
+!tr 795
+!tr 796
+
+## Giant Chasm and Plasma Frigate - Third Visit
+
+!enc 32
+
+!tr 724
+
+!tr 807 left side
+!tr 809 right side
+
+### Pipe Section
+
+High Ground
+
+!tr 430
+!tr 445
+
+
+!tr 431
+!tr 446
+
+!tr 810
+!tr 808
+!tr julius/64
+
+Low Ground
+
+!tr 432
+!tr 447
+
+
+!trm 439
+!trm 449
+
+
+!tr 435
+!tr 450
+
+!tr 438
+!tr 453
+
+Past Laser Barrier
+
+
+!trm zinzolin/65
+!trm colress/65
+
+Frigate Control Room
+
+!trm 348
+!trm 498
+!trm 499
+
+## Giant Chasm - Back Caverns
+
+!enc 33
+!enc 34
+!enc 35
+!enc 36
+
+!trm Ghetsis/67
+
+## Route 23
+
+!enc route 23
+
+!trm brenda/65
+!trm grant/66
+!trm don/65
+!trm juliet/65
+!tr luke/66
+!tr steve/65
+!trm lena/66
+!tr tom/66
+!tr benjamin/67
+!tr doug/66
+!tr miki/67
+!tr tiffany/67
+
+## Victory Road
+
+### Ruined Area
+
+!enc 78
+
+!trm al/68
+!trm alia/68
+!trm jamie/69
+!trm billy/69
+
+!tr claude/70 Left Side
+!tr cecile/70 Right Side
+
+### Shaded Grove
+
+ - Trainer layout varies between game version here. 
+ - Ace trainers Beckett and Shelly are absent on Black 2 and instead found in the Lower Mountainside.
+ - Conversely, Ace trainers Beckett and Shelly are fought here on White 2 and are absent from the Lower Mountainside.
+
+!enc 72
+
+!trm chandra/70
+!trm shelly/70
+!trm beckett/70
+
+### Lower Mountainside
+
+!enc 73
+
+!trm shelly/70
+!trm beckett/70
+!trm cathy/69
+!tr logan/69
+!tr mae/69
+!tr pierce/70
+!trm chandra/70
+
+### Connecting Caves I
+
+!enc 74
+
+!trm abraham/70
+
+!trm shanta/71 Left Side
+!trm webster/71 Right Side
+
+!tr eddie/70
+!tr elle/70
+
+
+### Upper Mountainside
+
+!enc 75
+
+!tr martell/70
+!tr chalina/70
+
+### Weather Trainers/Lance
+
+After advancing through Victory Road, the player will encounter Lance - Champion of the Kanto and Johto regions - training a small group of trainers.
+ - Players on Easy Mode can choose if they want to fight the first two trainers. The rest of the trainers and Lance will not fight the player.
+ - Players on Normal Mode will battle the first two trainers. They can then choose to battle the other two trainers. Again, Lance will not fight the player.
+ - Players on Challenge Mode will battle all four trainers and Lance. However, the player will do so in a gauntlet. 
+    - The Hail and Sun trainers are fought back-to-back. The player is healed between battles. Then the Rain and Sand trainers are fought back-to-back. The player is healed between battles. Finally, Lance can be fought.
+	- Prepare for a brutal challenge which will push you to your absolute limits, against all Gen V weather has to throw at you!
+Upon witnessing the initial cutscene, the difficulty of the gauntlet is set. Thus, you should pick your difficulty before you get here!
+ - You cannot change this later!
+
+!trm caroll/72
+!trm elmer/72
+!trm portia/72
+!trm sterling/72
+!trm lance/72
+
+### Connecting Caves II
+
+!enc 77
+
+!tr hugo/70
+
+### Connecting Caves III
+
+!trm 684
+!trm 685
+!trm 686
+
+## The Pokémon League
+
+!trm Shauntal/77
+
+!trm Grimsley/78
+
+!trm Caitlin/77
+
+!trm marshal/77
+
+!trm iris/78
+
+# Finish
+
+

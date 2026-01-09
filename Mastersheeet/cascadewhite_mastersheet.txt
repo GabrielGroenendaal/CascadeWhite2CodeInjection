@@ -1,0 +1,317 @@
+# Cascade White 2
+
+- You can press the START button to use the PokeHelper, which lets you access your PC, heal your Pokemon, pre-apply status, and more.
+- You can also change game settings here for stuff like critical hit damage, wild pokemon IVs, and more.
+- One of these settings is for animated battle backgrounds. Be wary that not all of these are tested and some visual glitches may occur. 
+
+
+# Cheren Split (Level Cap 15)
+
+## Rowdy Pokemon Center
+
+This is a new encounter in the Aspertia Pokemon Center!
+
+!enc 13
+
+
+## Route 19 
+
+!enc 128
+
+
+## Flocessy Town
+
+### Juniper Gift Pokemon 
+Speak to professor Juniper to receive a Pokemon depending on your starter: Wingull, Numel, or Shroomish.
+She will also gift you an Exp. Share!
+
+## Route 20
+
+!enc 129
+
+!trm 164/8
+!trm 165/9
+!trm 392/10
+
+
+
+## Floccey Ranch
+
+!enc 45
+
+### Rival Fight
+!trm 166 If chose Snivy
+!trm 167 If chose Tepig
+!trm 168 If chose Oshawott
+
+### Reward: Icy Wind TM
+
+### Flocessy Ranch Egg 
+Speak to the rancher after defeating Hugh to receive an egg containing one of the following Pokemon:
+- Snover 
+- Elekid 
+- Magby 
+- Gothita 
+- Buneary
+- Zubat 
+- Tympole
+- Drowzee 
+- Igglybuff
+- Glameow 
+- Smoochum
+- Mime. Jr
+
+!tr molly/10
+!trm orville/10
+!trm kenny/10
+
+
+
+### Benga 
+
+!trm 772 Rewards Hidden Power TM 
+
+
+## Alder's House 
+
+!trm 747 Player chose Tepig
+!trm 748 Player chose Tepig
+
+!trm 749 Player chose Oshawott
+!trm 750 Player chose Oshawott
+
+!trm 169 Player chose Snivy
+!trm 170 Player chose Snivy
+
+You can get an encounter after defeating the School Children. 
+You also receive the TM for Hidden Force.
+
+!enc 441
+
+
+## Pledge Grove 
+
+### Brock 
+
+Brock is an optional mini-boss that guards the following: 
+      - A Pledge Grove Encounter 
+      - Berry Juice (5x)
+      - Rock Smash TM 
+He can only be fought before defeating Cheren. This content is locked off afterwards. 
+
+!trm 764
+
+!enc 17
+
+
+## Aspertia Gym 
+
+You receive 3x Chilan Berries upon entering the gym. 
+You can speak to the School Kid inside the school to receive 2x White Herbs.
+
+!trm pedro/13
+!trm serena/13
+
+### Leader Cheren
+!trm cheren/15 Gives Secret Power TM
+
+
+
+
+# Roxie Split (Level Cap 23, Optional Cap 19 for Rival Hugh)
+
+## Route 20 
+
+### Extra Encounter 
+The doubles grass on the east side of Route 20 is intended to be treated as an extra encounter. 
+
+!enc Route 20 
+
+!trm jerome/16
+!trm albert/16
+!trm lin/16
+!trm kimya/17
+!trm lia&lily/18
+
+
+## Virbank Gate 
+
+### Hugh 
+!trm 557 If chose Snivy
+!trm 558 If chose Tepig
+!trm 556 If chose Oshawott
+After defeating Hugh, you gain the ability to Fast Travel using your PokeHelper.
+
+
+## Virbank City 
+
+!enc 4
+
+!trm 555 Rewards Shock Wave TM 
+
+
+### Misty 
+
+Misty is an optional mini-boss that guards the following: 
+      - A Togepi Egg
+      - Clear Amulet
+      - Water Pulse TM 
+She can only be fought before defeating Roxie. This content is locked off afterwards. 
+
+!trm 765
+
+
+## Virbank Complex (Outside)
+
+This is now a unique met location!
+
+!enc 46
+
+
+## Virbank Complex (Inside)
+
+!enc 47
+!tr masahiro/18
+!tr waylon/18
+!tr 738 Rewards TM Rock Tomb
+
+### Eviolite Quest 
+
+Speak to the Foreman to receive a Charcoal and a quest to defeat the three workers. 
+Completing this quest rewards you with an Eviolite. 
+
+!tr mitchell/19
+!tr nathan/19
+!tr Isaac/19
+
+
+
+## Virbank Gym 
+
+You receive 3x Lum Berries upon entering the gym. 
+
+!trm nicky/21
+!trm billyjo/21
+
+### Leader Roxie 
+!trm roxie/23 Rewards TM09 Venoshock
+
+
+
+
+
+# Burgh Split (Level Cap 32, Optional Cap 28 for Sewer Grunts)
+
+## Pokestar Studios 
+There is a new encounter and some items here to find!
+
+!enc 16 
+
+## Plasma Grunts
+
+!trm 690
+
+!trm 763
+
+
+## Route 4 
+
+Route 4 is the first introduction to "Gatekeeper" trainers. 
+These powerful trainers have robust teams with Held Items and dangerous moves. 
+
+### Norbert (Route 4 Gatekeeper)
+!trm 224
+
+!enc 104
+
+!trm 211 (Choose one to fight: Left Side)
+!trm 210 (Choose one to fight: Right Side)
+
+
+## Castelia Sewers 
+
+
+
+### Plasma Grunt Tag Battle 
+
+
+### Worker Scott (Relic Passage Gatekeeper)
+
+### Janiter Brady (Castelia Garden Gatekeeper)
+
+
+
+## Relic Passage 
+
+!enc 
+
+!trm scientist caroline
+!trm scientist male 
+
+!trm backpacker Rewards Rock Slide TM
+
+### Gift Evolution Stone 
+
+
+
+## Castelia Garden 
+
+!enc 
+
+
+
+## Castelia Battle Company 
+
+You receive an Eviolite upon entering the building. 
+If you defeat all the trainers in the Company before defeating Cheren, you receive a gift encounter.
+This egg is one of the following Pokemon: 
+      - Alomomola
+      - Carnivine 
+      - Miltank
+      - Farfetch'd
+      - Tropius
+      - Dunsparce 
+      - Cryogonal 
+      - Emolga 
+      - Tauros
+      - Kecleon
+      - Pinsir 
+      - Heracross 
+
+!trm Clemens / Rewards Zoom Lens 
+!trm Britney / Rewards Mental Herbs (x5)
+!trm Gilligan / Rewards Shell Bell 
+!trm Warren / Rewards TM Struggle Bug
+
+### School Kid Neil 
+
+!trm Neil 
+
+
+
+## Liberty Garden 
+
+### Lt. Surge 
+
+Surge is an optional mini-boss that guards the following: 
+      - A Liberty Garden Encounter
+      - Leftovers
+      - U-Turn TM
+He can only be fought before defeating Burgh. This content is locked off afterwards. 
+
+!trm 766
+
+
+
+
+## Castelia Gym 
+You receive 3 Tanga Berries upon entering this gym. 
+
+!trm clarence/28
+!trm jack/29
+!trm gary/29
+!trm anders/30
+
+
+### Leader Burgh 
+!trm Burgh/32

@@ -2852,33 +2852,33 @@ extern "C"
     //             - If a Future sight is active and the pokemon is healthy, high chance to switch out.
 
     //     */
-    unsigned int THUMB_BRANCH_checkReservePokemonDamage(TrainerAIEnv *a1, BattleMon *attackingMon, BattleMon *defendingMon, int a4)
-    {
-        unsigned int v6; // r6
-        int i;           // r4
-        int v8;          // r0
-        unsigned int v9; // r0
-        int v12;         // [sp+Ch] [bp-1Ch]
-        int ID;          // [sp+10h] [bp-18h]
+    // unsigned int THUMB_BRANCH_checkReservePokemonDamage(TrainerAIEnv *a1, BattleMon *attackingMon, BattleMon *defendingMon, int a4)
+    // {
+    //     unsigned int v6; // r6
+    //     int i;           // r4
+    //     int v8;          // r0
+    //     unsigned int v9; // r0
+    //     int v12;         // [sp+Ch] [bp-1Ch]
+    //     int ID;          // [sp+10h] [bp-18h]
 
-        v6 = 0;
-        ID = BattleMon_GetID(attackingMon);
-        v12 = BattleMon_GetID(defendingMon);
-        AbilityEvent_AddItem(attackingMon);
-        ItemEvent_AddItem(attackingMon);
-        for (i = 0; i < BattleMon_GetMoveCount(attackingMon); ++i)
-        {
-            v8 = Move_GetID(attackingMon, i);
-            v9 = Handler_SimulationDamage(a1->serverFlow, ID, v12, v8, false, false);
-            if (v9 > v6)
-            {
-                v6 = v9;
-            }
-        }
-        AbilityEvent_RemoveItem(attackingMon);
-        ItemEvent_RemoveItem(attackingMon);
-        return v6;
-    }
+    //     v6 = 0;
+    //     ID = BattleMon_GetID(attackingMon);
+    //     v12 = BattleMon_GetID(defendingMon);
+    //     // AbilityEvent_AddItem(attackingMon);
+    //     // ItemEvent_AddItem(attackingMon);
+    //     for (i = 0; i < BattleMon_GetMoveCount(attackingMon); ++i)
+    //     {
+    //         v8 = Move_GetID(attackingMon, i);
+    //         v9 = Handler_SimulationDamage(a1->serverFlow, ID, v12, v8, false, false);
+    //         if (v9 > v6)
+    //         {
+    //             v6 = v9;
+    //         }
+    //     }
+    //     // AbilityEvent_RemoveItem(attackingMon);
+    //     // ItemEvent_RemoveItem(attackingMon);
+    //     return v6;
+    // }
 
 //     unsigned int PersonalCheckReservePokemonDamage(ServerFlow *a1, BattleMon *attackingMon, BattleMon *defendingMon, int a4)
 //     {
