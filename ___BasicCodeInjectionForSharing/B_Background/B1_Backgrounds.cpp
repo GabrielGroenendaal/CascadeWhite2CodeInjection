@@ -30,11 +30,15 @@ unsigned short int &LOWORD(unsigned int &x)
 }
 
 int ZoneIDsNowWithLighting[] = {
-    489};
+    489, 
+    46, 
+    45, 
+    447
+};
 
 bool IsInArray(int value)
 {
-    for (int i = 0; i < 1; i++)
+    for (int i = 0; i < 4; i++)
     {
         if (ZoneIDsNowWithLighting[i] == value)
         {

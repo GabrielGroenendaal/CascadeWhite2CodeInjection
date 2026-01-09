@@ -683,7 +683,7 @@ extern "C"
         9,  // 485 White Treehollow
         9,  // 486 Black Tower
         9,  // 487 White Treehollow
-        56, // 488 Castelia Gym Leader
+        55, // 488 Castelia Gym Leader
         30, // 489 Aspertia Gym
         60, // 490 Join Avenue
         60, // 491 Join Avenue Interior
@@ -1200,7 +1200,7 @@ extern "C"
 
         This functions performs modifications to the background id based on position.
     */
-    void THUMB_BRANCH_SaveBtlFieldStatus(BattleFieldStatus *status, void *gameData, void *field)
+    void THUMB_BRANCH_SAFESTACK_SaveBtlFieldStatus(BattleFieldStatus *status, void *gameData, void *field)
     {
         u16 PlayerStateZoneID;  // r4
         TileType TileTypeUnder; // r0

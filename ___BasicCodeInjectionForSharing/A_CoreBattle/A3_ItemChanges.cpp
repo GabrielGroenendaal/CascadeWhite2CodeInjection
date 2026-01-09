@@ -2222,6 +2222,20 @@ extern "C"
 
 
     */
+
+    void setTruantByte(BattleMon *a1, int a2)
+    {
+        *((uint8_t *)a1 + 0xEC) = a2;
+    }
+    uint8_t getOverheatLastTurnByte(BattleMon *a1)
+    {
+        return *((uint8_t *)a1 + 0xEB);
+    }
+    void setOverheatLastTurnByte(BattleMon *a1, int a2)
+    {
+        *((uint8_t *)a1 + 0xEB) = a2;
+    }
+
     // Add Logic for Not Resetting Tera Flag which is our new terastailization flag
     void THUMB_BRANCH_ClearMoveStatusWork(BattleMon *a1, int a2)
     {
@@ -2230,7 +2244,7 @@ extern "C"
         int v4;          // r2
         unsigned int v5; // r5
         int isTera;
-        // int isGastroAcid;
+        int isGastroAcid;
         v2 = 0;
         if (!a2)
         {
@@ -2239,7 +2253,7 @@ extern "C"
         Conditions = a1->Conditions;
 
         isTera = a1->Conditions[CONDITION_TERA];
-        // isGastroAcid = a1->Conditions[CONDITION_GASTROACID];
+        isGastroAcid = a1->Conditions[CONDITION_GASTROACID];
         do
         {
             v4 = v2;
@@ -2248,10 +2262,21 @@ extern "C"
             Conditions[v4] = (v5 & 0xFFFFFFF8);
         } while (v2 < 0x24);
 
+        if (getOverheatByte(a1))
+        {
+            setOverheatByte(a1, 0);
+        }
+        if (getOverheatLastTurnByte(a1))
+        {
+            setOverheatLastTurnByte(a1, 0);
+        }   
         if (isTera)
         {
             a1->Conditions[CONDITION_TERA] = isTera;
-            //  a1->Conditions[CONDITION_GASTROACID] = isGastroAcid;
+        }
+        if (isGastroAcid)
+        {
+            a1->Conditions[CONDITION_GASTROACID] = isGastroAcid;
         }
         sys_memset(a1->MoveConditionCounter, 0, 0x24u);
     }

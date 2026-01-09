@@ -1,6 +1,6 @@
 #include "codeinjection_new.h"
 #include "kPrint.h"
-
+#include "settings.h"
 #define VAR_PARTING_SHOT_FLAG VAR_DELAY_ATTACK_FLAG
 
 // Uses esdb_NewBattle.yml
@@ -1216,50 +1216,50 @@ extern "C"
         return ElectroShotHandlers;
     }
 
-    int HandlerThunderRainCheck(ServerFlow *a1, int a2, int a3)
-    {
-        int result; // r0
-        BattleMon *mon;
-        result = BattleEventVar_GetValue(VAR_ATTACKING_MON);
-        if (a3 == result)
-        {
-            mon = Handler_GetBattleMon(a1, a3);
-            result = Handler_GetWeather(a2);
-            if (result == 2)
-            {
-                return BattleEventVar_RewriteValue(VAR_GENERAL_USE_FLAG, 1);
-            }
-        }
-        return result;
-    }
+    // int HandlerThunderRainCheck(ServerFlow *a1, int a2, int a3)
+    // {
+    //     int result; // r0
+    //     BattleMon *mon;
+    //     result = BattleEventVar_GetValue(VAR_ATTACKING_MON);
+    //     if (a3 == result)
+    //     {
+    //         mon = Handler_GetBattleMon(a1, a3);
+    //         result = Handler_GetWeather(a2);
+    //         if (result == 2)
+    //         {
+    //             return BattleEventVar_RewriteValue(VAR_GENERAL_USE_FLAG, 1);
+    //         }
+    //     }
+    //     return result;
+    // }
 
-    int HandlerThunderSunCheck(ServerFlow *a1, int a2, int a3)
-    {
-        int result; // r0
-        BattleMon *mon;
-        result = BattleEventVar_GetValue(VAR_ATTACKING_MON);
-        if (a3 == result)
-        {
-            mon = Handler_GetBattleMon(a1, a3);
+    // int HandlerThunderSunCheck(ServerFlow *a1, int a2, int a3)
+    // {
+    //     int result; // r0
+    //     BattleMon *mon;
+    //     result = BattleEventVar_GetValue(VAR_ATTACKING_MON);
+    //     if (a3 == result)
+    //     {
+    //         mon = Handler_GetBattleMon(a1, a3);
 
-            result = Handler_GetWeather(a2);
-            if (result == 1)
-            {
-                return BattleEventVar_RewriteValue(VAR_ACCURACY, 50);
-            }
-        }
-        return result;
-    }
+    //         result = Handler_GetWeather(a2);
+    //         if (result == 1)
+    //         {
+    //             return BattleEventVar_RewriteValue(VAR_ACCURACY, 50);
+    //         }
+    //     }
+    //     return result;
+    // }
 
-    MOVE_TRIGGERTABLE ThunderHandlers[] = {
-        {EVENT_CHECK_HIDING, (MOVE_HANDLER_FUNC)HandlerThunderFlyCheck},
-        {EVENT_BYPASS_ACCURACY_CHECK, (MOVE_HANDLER_FUNC)HandlerThunderRainCheck},
-        {EVENT_MOVE_ACCURACY, (MOVE_HANDLER_FUNC)HandlerThunderSunCheck}};
-    MOVE_TRIGGERTABLE *THUMB_BRANCH_EventAddThunder(_DWORD *a1)
-    {
-        *a1 = 3;
-        return ThunderHandlers;
-    }
+    // MOVE_TRIGGERTABLE ThunderHandlers[] = {
+    //     {EVENT_CHECK_HIDING, (MOVE_HANDLER_FUNC)HandlerThunderFlyCheck},
+    //     {EVENT_BYPASS_ACCURACY_CHECK, (MOVE_HANDLER_FUNC)HandlerThunderRainCheck},
+    //     {EVENT_MOVE_ACCURACY, (MOVE_HANDLER_FUNC)HandlerThunderSunCheck}};
+    // MOVE_TRIGGERTABLE *THUMB_BRANCH_EventAddThunder(_DWORD *a1)
+    // {
+    //     *a1 = 3;
+    //     return ThunderHandlers;
+    // }
 
 #pragma endregion
 
@@ -1378,6 +1378,12 @@ extern "C"
     MOVE_TRIGGERTABLE *THUMB_BRANCH_EventAddRollout(_DWORD *a1)
     {
         *a1 = 1;
+        return ChipAwayHandlers;
+    }
+
+    MOVE_TRIGGERTABLE *THUMB_BRANCH_EventAddReturn(_DWORD *a1)
+    {
+        *a1 = 0;
         return ChipAwayHandlers;
     }
 
@@ -2062,10 +2068,7 @@ extern "C"
 #pragma region ImpossibleMoves
 
     // extern BattleEventItem* BattleEvent_SeekItem(BattleEventItemType a1, int a2);
-    uint8_t getTruantByte(BattleMon *a1)
-    {
-        return *((uint8_t *)a1 + 0xE9);
-    }
+
     
     int THUMB_BRANCH_IsUnselectableMove(BtlClientWk *a1, BattleMon *a2, int move, Btlv_StringParam *strparam)
     {
@@ -2157,18 +2160,12 @@ extern "C"
                 return 1;
             }
 
-            // if (BattleMon_GetValue(a2, VALUE_EFFECTIVE_ABILITY) == ABIL054_TRUANT)
-            // {
-            //     k::Printf("\n\n=== TESTING TRUANT 1 === getTruantByte = %d for Pokemon %d", getTruantByte(a2), a2->Species);
-            // }
-
-            if (BattleMon_GetValue(a2, VALUE_EFFECTIVE_ABILITY) == ABIL054_TRUANT && getTruantByte(a2) && PML_MoveIsDamaging(move))
+            if (BattleMon_GetValue(a2, VALUE_EFFECTIVE_ABILITY) == ABIL054_TRUANT && !BattleMon_GetTurnFlag(a2, TURNFLAG_MOVEFAILEDLASTTURN) && PML_MoveIsDamaging(move) && PML_MoveIsDamaging(BattleMon_GetPreviousMove(a2)))
             {
-                // k::Printf("\n\n=== TESTING TRUANT 2 === getTruantByte = %d for Pokemon %d", getTruantByte(a2), a2->Species);
+
                 if (strparam)
                 {
-                    // k::Printf("\n\n=== TESTING TRUANT 3 === getTruantByte = %d", getTruantByte(a2));
-                    Btlv_StringParam_Setup(strparam, 2, 571);
+                    Btlv_StringParam_Setup(strparam, 2, 1300);
                     v12 = BattleMon_GetID(a2);
                     Btlv_StringParam_AddArg(strparam, v12);
                     Btlv_StringParam_AddArg(strparam, move);
@@ -2321,14 +2318,14 @@ extern "C"
         return 0;
     }
 
-    void null()
-    {
-    }
+
 
 #pragma endregion
 
 #pragma region TwoTurnMoves
-
+    void null()
+    {
+    }
     int HandlerSwitchOutInterruptStart(int a1, ServerFlow *a2, unsigned int a3, int a4)
     {
         int result;         // r0

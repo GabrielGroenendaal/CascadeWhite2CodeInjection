@@ -406,29 +406,32 @@ extern "C"
         if (WhiteListedPokemon[pkmData->Species] == 1)
         {
             random2 = GFL_RandomLCAlt(100u);
+            
+            if (random2 <= 10u){
+                PokeParty_SetHiddenAbil(pPkm, pkmData->Species, pkmData->Forme);
+            }
+            // if (random2 <= 45u)
+            // {
 
-            if (random2 <= 45u)
-            {
-
-                PokeParty_SetParam(pPkm, PF_Ability,
-                                   PML_PersonalGetParam(
-                                       PML_PersonalLoadBW2(pkmData->Species, PokeParty_GetParam(pPkm, PF_Forme, 0)),
-                                       Personal_Abil1));
-            }
-            else if (random2 > 45u && random2 <= 90u)
-            {
-                PokeParty_SetParam(pPkm, PF_Ability,
-                                   PML_PersonalGetParam(
-                                       PML_PersonalLoadBW2(pkmData->Species, PokeParty_GetParam(pPkm, PF_Forme, 0)),
-                                       Personal_Abil2));
-            }
-            else
-            {
-                PokeParty_SetParam(pPkm, PF_Ability,
-                                   PML_PersonalGetParam(
-                                       PML_PersonalLoadBW2(pkmData->Species, PokeParty_GetParam(pPkm, PF_Forme, 0)),
-                                       Personal_AbilH));
-            }
+            //     PokeParty_SetParam(pPkm, PF_Ability,
+            //                        PML_PersonalGetParam(
+            //                            PML_PersonalLoadBW2(pkmData->Species, PokeParty_GetParam(pPkm, PF_Forme, 0)),
+            //                            Personal_Abil1));
+            // }
+            // else if (random2 > 45u && random2 <= 90u)
+            // {
+            //     PokeParty_SetParam(pPkm, PF_Ability,
+            //                        PML_PersonalGetParam(
+            //                            PML_PersonalLoadBW2(pkmData->Species, PokeParty_GetParam(pPkm, PF_Forme, 0)),
+            //                            Personal_Abil2));
+            // }
+            // else
+            // {
+            //     PokeParty_SetParam(pPkm, PF_Ability,
+            //                        PML_PersonalGetParam(
+            //                            PML_PersonalLoadBW2(pkmData->Species, PokeParty_GetParam(pPkm, PF_Forme, 0)),
+            //                            Personal_AbilH));
+            // }
         }
 
         if (pkmData->HiddenAbility)
@@ -1012,7 +1015,8 @@ extern "C"
 }
 
 #pragma region NewScriptCommands
-    extern "C" bool BagSave_AddItem(BagSaveData *bag, u16 itemId, u16 quantity, HeapID heapId);
+    
+extern "C" bool BagSave_AddItem(BagSaveData *bag, u16 itemId, u16 quantity, HeapID heapId);
     extern "C" u32 PML_UtilGetPkmLvExp(u16 species, u16 form, int level);
 
   

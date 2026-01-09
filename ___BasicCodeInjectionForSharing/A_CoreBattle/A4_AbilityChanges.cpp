@@ -202,14 +202,7 @@ extern "C"
                 a1 == IT0302_TERA_SASH);
     }
 
-    uint8_t getTruantByte(BattleMon *a1)
-    {
-        return *((uint8_t *)a1 + 0xE9);
-    }
-    void setTruantByte(BattleMon *a1, int a2)
-    {
-        *((uint8_t *)a1 + 0xE9) = 1;
-    }
+
     uint8_t getOverheatByte(BattleMon *a1)
     {
         return *((uint8_t *)a1 + 0xEA);
@@ -227,7 +220,6 @@ extern "C"
         *((uint8_t *)a1 + 0xEB) = a2;
     }
 
-    
 #pragma endregion
 
 #pragma region Contact
@@ -920,12 +912,16 @@ extern "C"
             v7 = DivideMaxHp(BattleMon, 3u);
             if (BattleMon_GetValue(BattleMon, VALUE_CURRENT_HP) <= v7 && a3 == BattleEventVar_GetValue(VAR_MOVE_TYPE))
             {
+#if DEBUGGING_ABILITIES && DEBUGGING_ALL
                 k::Printf("Pinch Ability Triggered\n");
+#endif
                 BattleEventVar_MulValue(VAR_RATIO, 6144);
             }
             else
             {
+#if DEBUGGING_ABILITIES && DEBUGGING_ALL
                 k::Printf("Pinch Ability Not Triggered\n");
+#endif
                 BattleEventVar_MulValue(VAR_RATIO, 5120);
             }
         }
@@ -1057,22 +1053,18 @@ extern "C"
         if (a3 == BattleEventVar_GetValue(VAR_MON_ID))
         {
             BattleMon *mon = Handler_GetBattleMon((ServerFlow *)a1, a3);
-                        // k::Printf("\n\n=== TESTING TRUANT HANDLER === getTruantByte = %d", getTruantByte(mon));
-
             if (*a4)
             {
                 if (PML_MoveGetCategory(BattleEventVar_GetValue(VAR_MOVE_ID)))
                 {
                     a4[1] = BattleEventVar_RewriteValue(VAR_FAIL_CAUSE, MOVEFAIL_ABILITY);
                 }
-                setTruantByte(mon, 0);
                 *a4 = 0;
             }
             else
             {
                 if (PML_MoveGetCategory(BattleEventVar_GetValue(VAR_MOVE_ID)))
                 {
-                    setTruantByte(mon, 1);
                     *a4 = 1;
                 }
             }
@@ -1295,7 +1287,7 @@ extern "C"
 
 #pragma region Aftermath
     /* Aftermath Buff */
-    void THUMB_BRANCH_HandlerAftermath(int a1, ServerFlow *a2, unsigned int *a3)
+    void THUMB_BRANCH_SAFESTACK_HandlerAftermath(int a1, ServerFlow *a2, unsigned int *a3)
     {
         BattleMon *aftermathMon;  // r0
         unsigned __int16 Value;   // r0
@@ -1309,9 +1301,13 @@ extern "C"
 
         if ((int)a3 == BattleEventVar_GetValue(VAR_DEFENDING_MON))
         {
+
             aftermathMon = Handler_GetBattleMon(a2, (int)a3);
             if (BattleMon_IsFainted(aftermathMon))
             {
+
+                BattleHandler_PushRun(a2, EFFECT_ABILITYPOPUPIN, (int)a3);
+                BattleHandler_PushRun(a2, EFFECT_ABILITYPOPUPOUT, (int)a3);
 
                 HandlerParam_AddAnimation *addAnimation = (HandlerParam_AddAnimation *)BattleHandler_PushWork(a2, EFFECT_ADD_ANIMATION, (int)a3);
                 addAnimation->header.flags |= 0x800000u;
@@ -1321,11 +1317,12 @@ extern "C"
                 BattleHandler_PopWork(a2, addAnimation);
 
                 ExistAdjacentPos = Handler_GetExistFrontPokePos(a2, (int)a3);
+
                 v6 = Handler_ExpandPokeID(a2, ExistAdjacentPos | 0x200, adjacentPos);
 
                 for (i = 0; i < v6; i++)
                 {
-                    explodedMon = Handler_GetPokeParam(a2, adjacentPos[i]);
+                    explodedMon = Handler_GetBattleMon(a2, adjacentPos[i]);
                     v9 = (HandlerParam_Damage *)BattleHandler_PushWork(a2, EFFECT_DAMAGE, (int)a3);
                     v9->pokeID = v7;
                     v9->damage = DivideMaxHPZeroCheck(explodedMon, 3u);
@@ -1575,7 +1572,7 @@ extern "C"
 
             if (PokeTypePair_HasSharedType(v8, v9))
             {
-                BattleEventVar_MulValue(VAR_MOVE_POWER_RATIO, 2730);
+                BattleEventVar_MulValue(VAR_RATIO, 2730);
             }
         }
     }
@@ -2065,11 +2062,18 @@ extern "C"
 
 #pragma region Fluffy
 
+    void HandlerFluffyFire(int a1, ServerFlow *a2, int a3)
+    {
+        if (a3 == BattleEventVar_GetValue(VAR_DEFENDING_MON) && BattleEventVar_GetValue(VAR_MOVE_TYPE) == TYPE_FIRE)
+        {
+            BattleEventVar_MulValue(VAR_MOVE_POWER_RATIO, 8192);
+        }
+    }
+
     void HandlerFluffy(int a1, ServerFlow *a2, int a3)
     {
         int result; // r0
         int Value;  // r0
-        int isFire;
         int ratio;
         BattleMon *attackingMon;
 
@@ -2077,8 +2081,6 @@ extern "C"
         if (a3 == result)
         {
             Value = BattleEventVar_GetValue(VAR_MOVE_ID);
-
-            isFire = (PML_MoveGetType(Value) == TYPE_FIRE) ? 2 : 1;
 
             if (getMoveFlag(Value, FLAG_CONTACT))
             {
@@ -2092,21 +2094,23 @@ extern "C"
                     ratio = 2048;
                 }
             }
-
-            // k::Printf("\n\n isFire is %d\nratio is %d\nisFire times Ratio is %d\n\n", isFire, ratio, isFire * ratio);
-
-            BattleEventVar_MulValue(VAR_RATIO, isFire * ratio);
+            else
+            {
+                ratio = 4096;
+            }
+            BattleEventVar_MulValue(VAR_RATIO, ratio);
         }
     }
 
     ABILITY_TRIGGERTABLE FluffyHandlers[] = {
+        {EVENT_MOVE_POWER, (ABILITY_HANDLER_FUNC)HandlerFluffyFire},
         {EVENT_MOVE_DAMAGE_PROCESSING_2, (ABILITY_HANDLER_FUNC)HandlerFluffy},   // 22
         {EVENT_WEATHER_REACTION, (ABILITY_HANDLER_FUNC)HandlerSnowCloakWeather}, // 23
     };
 
     ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddImmunity(_DWORD *a1)
     {
-        *a1 = 2;
+        *a1 = 3;
         return FluffyHandlers;
     }
 
@@ -4399,7 +4403,7 @@ extern "C" void THUMB_BRANCH_SAFESTACK_StartBottomScreenMenu(BtlvCore *a1, Battl
     }
     else if (isLeftBumper)
     {
-        v12 = (MainModule_IsPartnerBattle(a1->mainModule)) ? 3 : 1;
+        v12 = (MainModule_IsPartnerBattle(a1->mainModule)) ? ((a1->mainModule->btlSetup->btlType == 0) ? 1 : 3) : 1;
     }
     else if (isRightBumper)
     {

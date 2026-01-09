@@ -164,7 +164,7 @@ label9: ;
 	// goto label_DisablingFlight;
 	SetVarEqVar(0x8022, 16759);
 	StackPushVar(0x8022);
-	StackPushConst(1);
+	StackPushConst(0);
 	StackCompare(2);
 	if (255) goto label_DisablingFlight;
 	AddDialogueOption(86, 0xFFFF, 86);

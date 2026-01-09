@@ -303,6 +303,8 @@ extern void BattleEventItem_Remove(BattleEventItem *a1);
 extern ConditionData Condition_MakeTurn(int a1);
 extern int BattleHandler_SetString(ServerFlow *a1, HandlerParam_StrParams *a2);
 extern void  ServerEvent_CheckSideEffectParam(ServerFlow *a1, int a2, int a3, int a4, int *a5);
+extern int PosPoke_GetPokeExistPos(PosPoke *a1, int a2);
+extern bool PosPoke_IsExist(PosPoke *a1, int a2);
 extern BattleEventItem* BattleEvent_AddItem(
         BattleEventItemType EventType,
         __int16 SubID,

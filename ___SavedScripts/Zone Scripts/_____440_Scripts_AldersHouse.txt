@@ -641,6 +641,7 @@ public class MainEvents {
 		Action009f(1);
 	}
 
+	static meta void Global2805(int a1, int a2) : VGlobalCall[2805];
 
 	static native void Action000c(int amount) : 0xc;
 	static native void Action000d(int amount) : 0xd;

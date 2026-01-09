@@ -17,7 +17,7 @@ STRUCT_DECLARE(BtlServerWk)
 STRUCT_DECLARE(BtlClientWk)
 STRUCT_DECLARE(GameData)
 STRUCT_DECLARE(PlayerState)
-STRUCT_DECLARE(PosPoke)
+
 STRUCT_DECLARE(GFLFont)
 STRUCT_DECLARE(TCBManagerEx)
 STRUCT_DECLARE(ArcTool)
@@ -43,7 +43,7 @@ enum BtlSetupFlag
     BTL_SETUP_FLAG_NO_CATCH_KYUREM = 0x10000,
 };
 
-enum FlowResult
+enum FlowResult : u32
 {
     RESULT_TURN_STARTING = 0x0,
     RESULT_SWITCH = 0x1,
@@ -1529,7 +1529,7 @@ enum TypeEffectiveness
     EFFECTIVENESS_2 = 4,
     EFFECTIVENESS_4 = 5
 };
-enum ActionIgnoreReason
+enum ActionIgnoreReason : u32
 {
     REASON_NONE = 0x0,
     REASON_OTHER_MOVE = 0x1,
@@ -3449,12 +3449,12 @@ struct PersonalData
 
 struct MoveAnimCtrl
 {
-    unsigned __int16 MoveID;
-    unsigned __int8 attackerPos;
-    unsigned __int8 targetPos;
-    unsigned __int8 effectIndex;
-    unsigned __int8 flags;
-    unsigned __int16 subEff;
+    u16 MoveID;
+    u8 attackerPos;
+    u8 targetPos;
+    u8 effectIndex;
+    u8 flags;
+    u16 subEff;
 };
 struct SWAN_ALIGNED(2) StrBuf
 {
@@ -4584,14 +4584,14 @@ struct FaintRecord
 
 struct MoveParam
 {
-    unsigned __int16 MoveID;
-    unsigned __int16 OriginalMoveID;
-    unsigned __int16 userType;
-    unsigned __int8 moveType;
-    char damageType;
-    int category;
-    MoveTarget targetType;
-    int flags;
+    u16 MoveID;
+    u16 OriginalMoveID;
+    u16 userType;
+    u8 moveType;
+    u8 damageType;
+    u32 category;
+    u32 targetType;
+    u32 flags;
 };
 
 struct ZoneData
@@ -4668,15 +4668,15 @@ struct HitCheckParam
     char MultiHitEffectiveness;
 };
 
-struct ActionOrderWork
+struct SWAN_ALIGNED(4) ActionOrderWork
 {
     BattleMon *battleMon;
     BattleActionParam *Action;
     u32 field_8;
-    char field_C;
-    char fDone;
-    char field_E;
-    char field_F;
+    u8 field_C;
+    u8 fDone;
+    u8 field_E;
+    u8 field_F;
 };
 
 struct SWAN_ALIGNED(4) PokeSet
@@ -4736,7 +4736,7 @@ struct PokeSetStackUnit
     PokeSet Damaged;
     PokeSet StealTarget;
     PokeSet psetTemp;
-    u64 MoveAnimCtrl;
+    MoveAnimCtrl moveAnimCtr;
     MoveParam moveParam;
     MoveParam MoveParamOriginal;
     HitCheckParam hitCheck;
@@ -4806,6 +4806,199 @@ struct SWAN_ALIGNED(2) CalcExpWork
     u8 spdef;
     u8 spe;
 };
+// struct SWAN_ALIGNED(8) ServerFlow
+// {
+//     BtlServerWk *server;
+//     MainModule *mainModule;
+//     PokeCon *pokeCon;
+//     ServerCommandQueue *serverCommandQueue;
+//     int turn_count;
+//     FlowResult flowResult;
+//     int heapHandle;
+//     MoveRecord moveRecord;
+//     FaintRecord faintRecord;
+//     int **evolutionDataPtr;
+//     MoveAnimCtrl *moveAnimContr;
+//     MoveStealParam *moveStealParam;
+//     MoveStealParam *magicCoatParam;
+//     HitCheckParam *hitCheckParam;
+//     EscapeInfo escapeInfo;
+//         u32 field_4C0;
+//     u32 field_4C4;
+//     u32 field_4C8;
+//     u16 field_4CC;
+//     u16 field_4CE;
+//     u32 field_4D0;
+//     u8 field_4D4[672];
+//     // LevelUpInfo level_up_info;
+//     // ClientIDRecord client_id_record;
+//     // int rotationHandlerWork[24][7];
+//     int simulationCounter;
+//     int moveSerial;
+//     u8 cmdBuildStep;
+//     u8 field_77D;
+//     u8 turnCheckSeq;
+//     u8 defaultTargetPos;
+//     u16 heapID;
+//     u8 numActOrder;
+//     u8 numEndActOrder;
+//     u8 ball_target_pos;
+//     u8 revivedPokeCount;
+//     u8 field_786;
+//     u8 field_787;
+//     u8 field_788;
+//     u8 thruDeadMsgPokeID;
+//     u8 field_78A;
+//     u8 SwitchOutInterruptingMonIDs[6];
+//     u8 RevivedMonIDs[24];
+//     u8 FaintedMonFlag[24];
+//     u8 WasInBattleFlag[24];
+//     u8 ClientSwitchCount[4];
+//     ActionOrderWork actionOrderWork[6];
+//     ActionOrderWork TempActionOrderWork;
+//     PokeSet *setTargetOriginal;
+//     PokeSet *setTarget;
+//     PokeSet *setAlly;
+//     PokeSet *setEnemy;
+//     PokeSet *PokeSetDamaged;
+//     PokeSet *setStealTarget;
+//     PokeSet *PokeSetTemp;
+//     CalcDamageRecord *calcDamageAlly;
+//     CalcDamageRecord *calcDamageEnemy;
+//     PokeSetStackUnit pokesetUnit[7];
+//     int pokesetStackPtr;
+//     PokeSet switching_in_mons;
+//     MoveParam *moveParam;
+//     MoveParam *moveParamOriginal;
+//     PosPoke posPoke;
+//     HandlerParam_StrParams StrParam;
+//     CalcExpWork calc_exp_work[6];
+//     EventWorkStack event_work_stack;
+//     HEManager heManager;
+//     MoveDamageRec move_damage_record;
+//     u16 prev_used_move;
+//     ActionIgnoreReason actionIgnoreReason;
+//     EffectivenessCounter effectivenessCounter;
+//     EffectivenessRecorder effectiveness_recorder;
+//     u8 flowFlags[4];
+//     u8 temp_storage[320];
+//     int pokestar_result;
+// };
+
+// struct SWAN_ALIGNED(8) ServerFlow
+// {
+//     BtlServerWk* server;
+//     MainModule* mainModule;
+//     PokeCon* pokeCon;
+//     ServerCommandQueue* serverCommandQueue;
+//     u32 turnCount;
+//     u32 flowResult;
+//     u32 heapHandle;
+//     MoveRecord moveRecord;
+//     FaintRecord faintRecord;
+//     ArcTool* evolutionDataPtr;
+//     MoveAnimCtrl* moveAnimCtrl;
+//     MoveStealParam* moveStealParam;
+//     MoveStealParam* magicCoatParam;
+//     HitCheckParam* hitCheckParam;
+//     EscapeInfo escapeInfo;
+//     u32 field_4C0;
+//     u32 field_4C4;
+//     u32 field_4C8;
+//     u16 field_4CC;
+//     u16 field_4CE;
+//     u32 field_4D0;
+//     u8 field_4D4[672];
+//     u32 simulationCounter;
+//     u32 moveSerial;
+//     u8 cmdBuildStep;
+//     u8 field_77D;
+//     u8 turnCheckSeq;
+//     u8 defaultTargetPos;
+//     u16 heapID;
+//     u8 numActOrder;
+//     u8 numEndActOrder;
+//     u8 field_784;
+//     u8 revivedPokeCount;
+//     u8 field_786;
+//     u8 field_787;
+//     u8 field_788;
+//     u8 thruDeadMsgPokeID;
+//     u8 field_78A;
+//     u8 gap78B;
+//     u8 field_78C;
+//     u8 field_78D;
+//     u8 field_78E;
+//     u8 field_78F;
+//     u8 field_790;
+//     u8 revivePokeID[24];
+//     u8 pokeInFlag[24];
+//     u8 afterTurnStartSlots[24];
+//     u8 switchCount[4];
+//     u8 field_7DD;
+//     u8 field_7DE;
+//     u8 field_7DF;
+//     ActionOrderWork actionOrderWork[6];
+//     ActionOrderWork tempActionOrderWork;
+//     PokeSet* setTargetOriginal;
+//     PokeSet* setTarget;
+//     PokeSet* setAlly;
+//     PokeSet* setEnemy;
+//     PokeSet* pokeSetDamaged;
+//     PokeSet* setStealTarget;
+//     PokeSet* pokeSetTemp;
+//     CalcDamageRecord* calcDamageAlly;
+//     CalcDamageRecord* calcDamageEnemy;
+//     PokeSetStackUnit pokesetUnit[7];
+//     u32 pokesetStackPtr;
+//     PokeSet currentpokeSet;
+//     MoveParam* moveParam;
+//     MoveParam* moveParamOriginal;
+//     PosPoke posPoke;
+//     u8 field_1AE2;
+//     u8 field_1AE3;
+//     HandlerParam_StrParams strParam;
+//     CalcExpWork* levelUpInfo;
+//     u8 gap1B10[68];
+//     u32 field_1B54;
+//     u8 gap1B58[316];
+//     u8 field_1C88;
+//     u8 field_1C89;
+//     u8 field_1C8A;
+//     u8 field_1C97;
+//     u8 gap1C98[224];
+//     u32 heManager;
+//     u8 gap1D7C[8];
+//     u8 field_1D84;
+//     u8 field_1D85;
+//     u8 field_1D86;
+//     u8 field_1D87;
+//     u8 field_1D88;
+//     u8 field_1D89;
+//     u8 field_1D8A;
+//     u8 gap1D8B[481];
+//     u8 field_1F6C;
+//     u8 gap1F6D[11];
+//     u16 prevUsedMove;
+//     u8 field_1F7A;
+//     u8 field_1F7B;
+//     ActionIgnoreReason actionIgnoreReason;
+//     EffectivenessCounter effectivenessCounter;
+//     u32 dmgAffRec;
+//     u8 gap1F90[8];
+//     u8 field_1F98;
+//     u8 gap1F99[83];
+//     u8 field_1FEC[4];
+//     u8 TempWork;
+//     u8 field_1FF1;
+//     u8 gap1FF2[318];
+//     u32 field_2130;
+//     u8 gap2134[8];
+//     u8 field_213C;
+//     u8 field_213D;
+//     u8 field_213E;
+//     u8 field_213F;
+// };
 
 struct SWAN_ALIGNED(8) ServerFlow
 {
@@ -4818,7 +5011,7 @@ struct SWAN_ALIGNED(8) ServerFlow
     int heapHandle;
     MoveRecord moveRecord;
     FaintRecord faintRecord;
-    int **evolutionDataPtr;
+    ArcTool *evolutionDataPtr;
     MoveAnimCtrl *moveAnimContr;
     MoveStealParam *moveStealParam;
     MoveStealParam *magicCoatParam;
@@ -5061,9 +5254,21 @@ struct SWAN_ALIGNED(4) BtlServerWk
     u8 field_CC2;
     u8 field_CC3;
 };
-struct 	ScriptPlugin	 {void *CommandSet;u32 CommandSetSize;u32 CommandNoOffset;};
+struct ScriptPlugin
+{
+    void *CommandSet;
+    u32 CommandSetSize;
+    u32 CommandNoOffset;
+};
 
-struct 	ScriptVMSetup	 {u16 StackCapacity;u16 VMVarCount;void *CommandSet;u32 CommandSetSize;ScriptPlugin Plugin;};
+struct ScriptVMSetup
+{
+    u16 StackCapacity;
+    u16 VMVarCount;
+    void *CommandSet;
+    u32 CommandSetSize;
+    ScriptPlugin Plugin;
+};
 
 struct ScriptVM
 {

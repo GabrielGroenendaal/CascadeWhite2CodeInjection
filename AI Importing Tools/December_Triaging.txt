@@ -69,13 +69,6 @@
 			- This is annoying but should be pretty short. 
 			- We can start by "zeroing" out all the marts and then go from there. 
 		
-		- TM Updates 
-			- This is a very simple json to update. 
-		
-		- Learnset Updates 
-			- Luckily, we now have a script that should do this automatically. 
-			- We can even update it to take "Castform" and make copies of it for "Castform-Sunny" "Castform-Snowy" "Castform-Rainy" and then the same thing for Rotom
-			- There is some light validation we should do but this should be pretty simple.
 		
 		- Evolution Changes Updates 
 			- Evolutions are pretty simply but I didn't store the information is a super easy to do way. 

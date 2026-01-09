@@ -83,6 +83,14 @@ public class MainEvents {
 		EVCamera.Rebind();
 		EVCamera.End();
 		sub_02c8();
+
+		if (EventWorks.Get(16451) == 2) {
+			Runtime.ReserveScript(2);
+			Field.ChangeMap(610, 15, 0, 61, 0);
+			goto LABEL_028a;
+		}
+
+
 		if (EventWorks.Get(16384) == 0) {
 			Runtime.ReserveScript(2);
 			Field.ChangeMap(609, 15, 0, 61, 0);

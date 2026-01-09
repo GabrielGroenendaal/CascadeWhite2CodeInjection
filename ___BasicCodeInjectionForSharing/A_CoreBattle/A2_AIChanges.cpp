@@ -3709,11 +3709,11 @@ extern "C"
     int THUMB_BRANCH_AI094_GetPreviousMoveCategory(ScriptVM *a1, TrainerAIEnv *a2)
     {
         int LoopMoveCategoryResult;
-#if DEBUGGING_AI && DEBUGGING_ALL
+#if DEBUGGING_ABILITIES && DEBUGGING_ALL
         k::Printf("\n\n--------AI094_GetPreviousMoveCategory-----------\nIs being called for move %d, used by Pokemon %d\n", a2->moveID, a2->attacker->Species);
 #endif
         LoopMoveCategoryResult = CheckTargetMoves(a2->defender);
-#if DEBUGGING_AI && DEBUGGING_ALL
+#if DEBUGGING_ABILITIES && DEBUGGING_ALL
         k::Printf("The defending Pokemon %d is mainly the category %d\n\n", a2->defender->Species, LoopMoveCategoryResult);
 #endif
         a2->param = LoopMoveCategoryResult;

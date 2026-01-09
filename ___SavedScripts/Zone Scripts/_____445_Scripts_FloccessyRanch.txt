@@ -351,7 +351,7 @@ import messages.script.Msg0315.MSGID;
 		Actor.WaitActionFinish();
 		Sound.SEWait();
 		Actor.Hide(251);
-		Global2805(337, 3);
+		Global2805(337, 1);
 		Message.ActorEx(1024, 31, 16, 5, 0);
 		Message.CloseAll();
 		EVCamera.MoveToDefault(32);
@@ -703,7 +703,7 @@ import messages.script.Msg0315.MSGID;
 		Message.System(52, 0);
 		v4 = YesNoWin.Show();
 		Message.CloseSystem();
-		if (v4 == 0) {
+		if (v4 == 1) {
 			Message.Actor(1024, 57, 0, 0);
 			Input.LastKeyWait();
 			Message.CloseAll();

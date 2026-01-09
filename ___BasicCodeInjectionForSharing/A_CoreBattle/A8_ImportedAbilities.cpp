@@ -251,6 +251,7 @@ extern "C" int checkPosPoke(PosPoke a1, int pokemonslot)
     for (i = 0; i < 6; i++)
     {
         v3 = a1.state[i];
+        // k::Printf("PosPoke Slot %d: existPokeID=%d, fEnable=%d\n", i,  v3.existPokeID, v3.fEnable);
         if (v3.fEnable && v3.existPokeID == pokemonslot)
         {
             return i;
@@ -260,7 +261,7 @@ extern "C" int checkPosPoke(PosPoke a1, int pokemonslot)
 }
 
 // Neutralizing Gas - Added event when an ability stops being nullyfied (EVENT_AFTER_ABILITY_CHANGE)
-extern "C" void THUMB_BRANCH_ServerControl_CureCondition(ServerFlow *serverFlow, BattleMon *battleMon, MoveCondition condition, ConditionData *prevCondition)
+extern "C" void THUMB_BRANCH_SAFESTACK_ServerControl_CureCondition(ServerFlow *serverFlow, BattleMon *battleMon, MoveCondition condition, ConditionData *prevCondition)
 {
     if (condition)
     {
@@ -283,8 +284,14 @@ extern "C" void THUMB_BRANCH_ServerControl_CureCondition(ServerFlow *serverFlow,
         {
             CureStatusCondition(battleMon);
             ServerDisplay_AddCommon(serverFlow->serverCommandQueue, SCID_CureStatusCondition, pokemonSlot);
-            if (checkPosPoke(serverFlow->posPoke, pokemonSlot) != 6)
+            int pokemonPos = PosPoke_GetPokeExistPos(&serverFlow->posPoke, pokemonSlot);
+            // k::Printf("Checking status condition for slot %d at pos %d\n", pokemonSlot, pokemonPos);
+            // k::Printf("Trying this out: %d\n", PosPoke_IsExist(&serverFlow->posPoke, pokemonSlot));
+            // k::Printf("Our pospoke function returns %d\n", checkPosPoke(serverFlow->posPoke, pokemonSlot));
+            if (pokemonPos != 6)
             {
+                // k::Printf("Cured status condition for slot %d at pos %d\n", pokemonSlot, pokemonPos);
+
                 ServerDisplay_AddCommon(serverFlow->serverCommandQueue, SCID_StatusIcon, pokemonSlot, 0);
             }
         }
