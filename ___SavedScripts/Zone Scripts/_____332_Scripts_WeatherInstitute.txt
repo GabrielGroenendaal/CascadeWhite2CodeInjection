@@ -1,0 +1,740 @@
+import messages.script.Msg0544.MSGID;
+
+import Base;
+import event.actors.Actor;
+import event.app.PokeApp;
+import event.dialogs.Message;
+import event.dialogs.YesNoWin;
+import player.TrainerCard;
+import pokemon.PokeParty;
+import pokescript.vm.Math;
+import pokescript.vm.StackCtrl;
+import pokescript.vm.VM;
+import system.EventFlags;
+import system.EventWorks;
+import system.Input;
+import system.RTC;
+import system.Runtime;
+import system.Sound;
+import system.System;
+import system.text.WordSet;
+
+public class MainEvents {
+	public static void main_1() { // @ 0x177
+		int v33;
+
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		v33 = 0;
+		v33 = RTC.GetSeason();
+		if (v33 != 0) {
+			if (v33 != 1) {
+				goto LABEL_01c3;
+			}
+			Message.Info(20, 2);
+			goto LABEL_01e6;
+		}
+		Message.Info(19, 2);
+		goto LABEL_01e6;
+
+		LABEL_01c3:
+		if (v33 != 2) {
+			Message.Info(22, 2);
+			goto LABEL_01e6;
+		}
+		Message.Info(21, 2);
+
+		LABEL_01e6:
+		Input.LastKeyWait();
+		Message.CloseAll();
+		v33 = 0;
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_2() { // @ 0x1f6
+		int v34;
+		int v35;
+
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		v34 = 0;
+		v35 = 0;
+		v34 = RTC.GetSeason();
+		if (v34 != 0) {
+			if (v34 != 1) {
+				goto LABEL_0256;
+			}
+			WordSet.LoadNumber(0, EventWorks.Get(16387), 2);
+			Message.Info(24, 2);
+			goto LABEL_0287;
+		}
+		WordSet.LoadNumber(0, EventWorks.Get(16387), 2);
+		Message.Info(23, 2);
+		goto LABEL_0287;
+
+		LABEL_0256:
+		if (v34 != 2) {
+			WordSet.LoadNumber(0, EventWorks.Get(16387), 2);
+			Message.Info(26, 2);
+			goto LABEL_0287;
+		}
+		WordSet.LoadNumber(0, EventWorks.Get(16387), 2);
+		Message.Info(25, 2);
+
+		LABEL_0287:
+		Input.LastKeyWait();
+		Message.CloseAll();
+		v35 = 0;
+		v34 = 0;
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_3() { // @ 0xc7
+		int v0;
+		int v1;
+
+		Actor.PauseAll();
+		Actor.WalkRoute(255, 6, 7, 1, 8, 0);
+		Actor.WaitActionFinish();
+		Message.ActorEx(1024, 0, 0, 0, 0);
+		Message.ActorEx(1024, 1, 0, 0, 0);
+		Message.ActorEx(1024, 2, 0, 0, 0);
+		Message.ActorEx(1024, 3, 0, 0, 0);
+		Message.CloseAll();
+		Actor.WalkRoute(0, 6, 6, 1, 8, 0);
+		Actor.WaitActionFinish();
+		Global2805(422, 1);
+		Message.ActorEx(1024, 4, 0, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseAll();
+		EventFlags.Set(2439);
+		Base.CMD_262(2, 6);
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_4() { // @ 0x15b
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 4, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_5() { // @ 0x3a
+		int v32;
+
+		v32 = 0;
+		v32 = RTC.GetSeason();
+		if (v32 != 0) {
+			if (v32 != 1) {
+				goto LABEL_008e;
+			}
+			EventWorks.Set(16387, System.Random(16));
+			EventWorks.Set(16387, EventWorks.Get(16387) + 19);
+			goto LABEL_00bf;
+		}
+		EventWorks.Set(16387, System.Random(9));
+		EventWorks.Set(16387, EventWorks.Get(16387) + 11);
+		goto LABEL_00bf;
+
+		LABEL_008e:
+		if (v32 != 2) {
+			EventWorks.Set(16387, System.Random(9));
+			EventWorks.Set(16387, EventWorks.Get(16387) + 1);
+			goto LABEL_00bf;
+		}
+		EventWorks.Set(16387, System.Random(9));
+		EventWorks.Set(16387, EventWorks.Get(16387) + 11);
+
+		LABEL_00bf:
+		v32 = 0;
+	}
+
+	public static void main_6() { // @ 0x29d
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 5, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_7() { // @ 0x2b9
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 6, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_8() { // @ 0x2d5
+		int v16;
+
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		if (EventFlags.Get(426)) {
+			Message.ActorEx(1024, 13, 8, 0, 0);
+			Input.LastKeyWait();
+			Message.CloseAll();
+			goto LABEL_0345;
+		}
+		Message.ActorEx(1024, 7, 8, 0, 0);
+		v16 = YesNoWin.Show();
+		if (v16 != 0) {
+			Message.ActorEx(1024, 12, 8, 0, 0);
+			Input.LastKeyWait();
+			Message.CloseAll();
+			goto LABEL_0345;
+		}
+		sub_034b();
+
+		LABEL_0345:
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_9() { // @ 0x4b4
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 18, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_10() { // @ 0x4d0
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Sound.PVPlay(585, 0);
+		Message.Actor(1024, 14, 0, 0);
+		Sound.PVWait();
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_11() { // @ 0x4f4
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Sound.PVPlay(585, 0);
+		Message.Actor(1024, 15, 0, 0);
+		Sound.PVWait();
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_12() { // @ 0x518
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Sound.PVPlay(585, 0);
+		Message.Actor(1024, 16, 0, 0);
+		Sound.PVWait();
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_13() { // @ 0x53c
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Sound.PVPlay(585, 0);
+		Message.Actor(1024, 17, 0, 0);
+		Sound.PVWait();
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_14() { // @ 0x560
+		int v39;
+		int v40;
+		int v41;
+		int v42;
+		int v43;
+		int v44;
+		int v45;
+		int v46;
+		int v47;
+		int v48;
+		int v49;
+		int v50;
+		int v51;
+		int v52;
+		int v53;
+		int v54;
+		int v55;
+		int v56;
+		int v57;
+
+		Actor.PauseAll();
+		v39 = 0;
+		v40 = 0;
+		v41 = 0;
+		v42 = 0;
+		v43 = 0;
+		v44 = 0;
+		v45 = 0;
+		v46 = 0;
+		v47 = 0;
+		v48 = 0;
+		v49 = 0;
+		v50 = 0;
+		v51 = 0;
+		v52 = 0;
+		v53 = 0;
+		v54 = 0;
+		v55 = 0;
+		v56 = 0;
+		v57 = 0;
+		v53 = 1;
+		v54 = 2;
+		v55 = 3;
+		v56 = 4;
+		v57 = 5;
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		TrainerCard.GetBirthDate(v39, v40);
+		RTC.GetDate(v41, v42);
+		if (v41 != v39 || v42 != v40) {
+			goto LABEL_0631;
+		}
+		Message.Actor(1024, 59, 0, 0);
+
+		LABEL_0631:
+		if (v41 != 12 || v42 != 31) {
+			goto LABEL_065e;
+		}
+		Message.Actor(1024, 60, 0, 0);
+
+		LABEL_065e:
+		v43 = PokeParty.GetPkmCount(0);
+
+		LABEL_0664:
+		if (v43 <= v44) {
+			if (v50 != 0 || v51 != 0) {
+				goto LABEL_0b3c;
+			}
+			Message.Actor(1024, 57, 0, 0);
+			Input.LastKeyWait();
+			Message.CloseAll();
+
+			LABEL_0b3c:
+			Runtime.FinishSubEvents();
+			Actor.UnpauseAll();
+			return;
+		}
+		v48 = PokeParty.GetParam(v44, 10);
+		v45 = PokeParty.IsEgg(v44);
+		if (v48 != 70 || v50 != 0 || v45 != 0) {
+			if (v48 != 2 || v50 != 0 || v45 != 0) {
+				goto LABEL_0723;
+			}
+			v52 = v54;
+			WordSet.LoadPartyPokeSpecies(0, v44);
+			WordSet.LoadAbility(2, v48);
+			v50 = 1;
+			goto LABEL_0859;
+		}
+		v52 = v53;
+		WordSet.LoadPartyPokeSpecies(0, v44);
+		WordSet.LoadAbility(2, v48);
+		v50 = 1;
+		goto LABEL_0859;
+
+		LABEL_0723:
+		if (v48 != 117 || v50 != 0 || v45 != 0) {
+			if (v48 != 45 || v50 != 0 || v45 != 0) {
+				goto LABEL_07c1;
+			}
+			v52 = v56;
+			WordSet.LoadPartyPokeSpecies(0, v44);
+			WordSet.LoadAbility(2, v48);
+			v50 = 1;
+			goto LABEL_0859;
+		}
+		v52 = v55;
+		WordSet.LoadPartyPokeSpecies(0, v44);
+		WordSet.LoadAbility(2, v48);
+		v50 = 1;
+		goto LABEL_0859;
+
+		LABEL_07c1:
+		if (v48 != 76 || v50 != 0 || v45 != 0) {
+			if (v48 != 13 || v50 != 0 || v45 != 0) {
+				goto LABEL_0859;
+			}
+			v52 = v57;
+			WordSet.LoadPartyPokeSpecies(0, v44);
+			WordSet.LoadAbility(2, v48);
+			v50 = 1;
+			goto LABEL_0859;
+		}
+		v52 = v57;
+		WordSet.LoadPartyPokeSpecies(0, v44);
+		WordSet.LoadAbility(2, v48);
+		v50 = 1;
+
+		LABEL_0859:
+		if (v50 != 1) {
+			v47 = 0;
+			v46 = PokeParty.GetLearnedMoveCount(v44);
+			goto LABEL_0913;
+		}
+		if (v52 != v53) {
+			if (v52 != v54) {
+				goto LABEL_08aa;
+			}
+			sub_0bf6();
+			goto LABEL_0aff;
+		}
+		sub_0b42();
+		goto LABEL_0aff;
+
+		LABEL_08aa:
+		if (v52 != v55) {
+			if (v52 != v56) {
+				goto LABEL_08e8;
+			}
+			sub_0d5e();
+			goto LABEL_0aff;
+		}
+		sub_0caa();
+		goto LABEL_0aff;
+
+		LABEL_08e8:
+		if (v52 != v57) {
+			goto LABEL_0aff;
+		}
+		sub_0e06();
+
+		LABEL_0901:
+		goto LABEL_0aff;
+
+		LABEL_0913:
+		if (v46 <= v47) {
+			goto LABEL_0aff;
+		}
+		v49 = PokeParty.GetMove(v44, v47);
+		v45 = PokeParty.IsEgg(v44);
+		if (v49 != 241 || v51 != 0 || v45 != 0) {
+			if (v49 != 240 || v51 != 0 || v45 != 0) {
+				goto LABEL_09d2;
+			}
+			v52 = v54;
+			WordSet.LoadPartyPokeSpecies(0, v44);
+			WordSet.LoadMoveName(1, 240);
+			v51 = 1;
+			goto LABEL_0a6a;
+		}
+		v52 = v53;
+		WordSet.LoadPartyPokeSpecies(0, v44);
+		WordSet.LoadMoveName(1, 241);
+		v51 = 1;
+		goto LABEL_0a6a;
+
+		LABEL_09d2:
+		if (v49 != 258 || v51 != 0 || v45 != 0) {
+			if (v49 != 201 || v51 != 0 || v45 != 0) {
+				goto LABEL_0a6a;
+			}
+			v52 = v56;
+			WordSet.LoadPartyPokeSpecies(0, v44);
+			WordSet.LoadMoveName(1, 201);
+			v51 = 1;
+			goto LABEL_0a6a;
+		}
+		v52 = v55;
+		WordSet.LoadPartyPokeSpecies(0, v44);
+		WordSet.LoadMoveName(1, 258);
+		v51 = 1;
+
+		LABEL_0a6a:
+		if (v51 != 1) {
+			goto LABEL_0af3;
+		}
+		if (v52 != v53) {
+			if (v52 != v54) {
+				goto LABEL_0abb;
+			}
+			sub_0bf6();
+			goto LABEL_0af3;
+		}
+		sub_0b42();
+		goto LABEL_0af3;
+
+		LABEL_0abb:
+		if (v52 != v55) {
+			if (v52 != v56) {
+				goto LABEL_0af3;
+			}
+			sub_0d5e();
+			goto LABEL_0af3;
+		}
+		sub_0caa();
+
+		LABEL_0af3:
+		v47 += 1;
+		goto LABEL_0913;
+
+		LABEL_0aff:
+		v44 += 1;
+		goto LABEL_0664;
+	}
+
+	static void sub_034b() { // @ 0x34b
+		int v16;
+		int v36;
+		int v37;
+		int v38;
+
+		v36 = 0;
+		v37 = 0;
+		v38 = 0;
+		v36 = PokeParty.GetPkmCount(0);
+		if (v36 != 6) {
+			Message.ActorEx(1024, 8, 8, 0, 0);
+			Message.CloseAll();
+			v37 = RTC.GetSeason();
+			if (v37 != 0) {
+				goto LABEL_03cb;
+			}
+			v16 = PokeParty.AddPkmEx(585, 0, 30, 3, 2, 0, 0, 4);
+			goto LABEL_044c;
+		}
+		Message.ActorEx(1024, 11, 8, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseAll();
+		goto LABEL_04a0;
+
+		LABEL_03cb:
+		if (v37 != 1) {
+			if (v37 != 2) {
+				goto LABEL_0425;
+			}
+			v16 = PokeParty.AddPkmEx(585, 2, 30, 3, 2, 0, 0, 4);
+			goto LABEL_044c;
+		}
+		v16 = PokeParty.AddPkmEx(585, 1, 30, 3, 2, 0, 0, 4);
+		goto LABEL_044c;
+
+		LABEL_0425:
+		if (v37 != 3) {
+			goto LABEL_044c;
+		}
+		v16 = PokeParty.AddPkmEx(585, 3, 30, 3, 2, 0, 0, 4);
+
+		LABEL_044c:
+		WordSet.LoadPlayerName(0);
+		Sound.MEPlay(1304);
+		Message.System(9, 0);
+		Sound.MEWait();
+		Message.WaitAdvance();
+		Message.System(10, 0);
+		v16 = YesNoWin.Show();
+		if (v16 != 0) {
+			Message.CloseAll();
+			goto LABEL_048c;
+		}
+		Message.CloseAll();
+		v38 = PokeApp.CallRename(v36, 1);
+
+		LABEL_048c:
+		Message.ActorEx(1024, 13, 8, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseAll();
+		EventFlags.Set(426);
+
+		LABEL_04a0:
+		v38 = 0;
+		v37 = 0;
+		v36 = 0;
+	}
+
+	static void sub_0b42() { // @ 0xb42
+		int v44;
+		int v47;
+		int v50;
+		int v51;
+
+		if (v51 != 1) {
+			if (v50 != 1) {
+				goto LABEL_0b86;
+			}
+			Message.Actor(1024, 28, 0, 0);
+			Message.WaitAdvance();
+			goto LABEL_0b86;
+		}
+		Message.Actor(1024, 27, 0, 0);
+		Message.WaitAdvance();
+
+		LABEL_0b86:
+		Message.Actor(1024, 36, 0, 0);
+		Message.WaitAdvance();
+		Message.Actor(1024, 37, 0, 0);
+		Message.WaitAdvance();
+		Message.Actor(1024, 38, 0, 0);
+		Message.WaitAdvance();
+		Message.Actor(1024, 39, 0, 0);
+		Message.WaitAdvance();
+		Message.Actor(1024, 40, 0, 0);
+		Message.WaitAdvance();
+		Message.Actor(1024, 41, 0, 0);
+		Message.WaitAdvance();
+		Message.Actor(1024, 42, 0, 0);
+		Message.WaitAdvance();
+		Message.Actor(1024, 56, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseAll();
+		v44 = 6;
+		v47 = 4;
+	}
+
+	static void sub_0bf6() { // @ 0xbf6
+		int v44;
+		int v47;
+		int v50;
+		int v51;
+
+		if (v51 != 1) {
+			if (v50 != 1) {
+				goto LABEL_0c3a;
+			}
+			Message.Actor(1024, 28, 0, 0);
+			Message.WaitAdvance();
+			goto LABEL_0c3a;
+		}
+		Message.Actor(1024, 27, 0, 0);
+		Message.WaitAdvance();
+
+		LABEL_0c3a:
+		Message.Actor(1024, 29, 0, 0);
+		Message.WaitAdvance();
+		Message.Actor(1024, 30, 0, 0);
+		Message.WaitAdvance();
+		Message.Actor(1024, 31, 0, 0);
+		Message.WaitAdvance();
+		Message.Actor(1024, 32, 0, 0);
+		Message.WaitAdvance();
+		Message.Actor(1024, 33, 0, 0);
+		Message.WaitAdvance();
+		Message.Actor(1024, 34, 0, 0);
+		Message.WaitAdvance();
+		Message.Actor(1024, 35, 0, 0);
+		Message.WaitAdvance();
+		Message.Actor(1024, 56, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseAll();
+		v44 = 6;
+		v47 = 4;
+	}
+
+	static void sub_0caa() { // @ 0xcaa
+		int v44;
+		int v47;
+		int v50;
+		int v51;
+
+		if (v51 != 1) {
+			if (v50 != 1) {
+				goto LABEL_0cee;
+			}
+			Message.Actor(1024, 28, 0, 0);
+			Message.WaitAdvance();
+			goto LABEL_0cee;
+		}
+		Message.Actor(1024, 27, 0, 0);
+		Message.WaitAdvance();
+
+		LABEL_0cee:
+		Message.Actor(1024, 43, 0, 0);
+		Message.WaitAdvance();
+		Message.Actor(1024, 44, 0, 0);
+		Message.WaitAdvance();
+		Message.Actor(1024, 45, 0, 0);
+		Message.WaitAdvance();
+		Message.Actor(1024, 46, 0, 0);
+		Message.WaitAdvance();
+		Message.Actor(1024, 47, 0, 0);
+		Message.WaitAdvance();
+		Message.Actor(1024, 48, 0, 0);
+		Message.WaitAdvance();
+		Message.Actor(1024, 49, 0, 0);
+		Message.WaitAdvance();
+		Message.Actor(1024, 56, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseAll();
+		v44 = 6;
+		v47 = 4;
+	}
+
+	static void sub_0d5e() { // @ 0xd5e
+		int v44;
+		int v47;
+		int v50;
+		int v51;
+
+		if (v51 != 1) {
+			if (v50 != 1) {
+				goto LABEL_0da2;
+			}
+			Message.Actor(1024, 28, 0, 0);
+			Message.WaitAdvance();
+			goto LABEL_0da2;
+		}
+		Message.Actor(1024, 27, 0, 0);
+		Message.WaitAdvance();
+
+		LABEL_0da2:
+		Message.Actor(1024, 50, 0, 0);
+		Message.WaitAdvance();
+		Message.Actor(1024, 51, 0, 0);
+		Message.WaitAdvance();
+		Message.Actor(1024, 52, 0, 0);
+		Message.WaitAdvance();
+		Message.Actor(1024, 53, 0, 0);
+		Message.WaitAdvance();
+		Message.Actor(1024, 54, 0, 0);
+		Message.WaitAdvance();
+		Message.Actor(1024, 55, 0, 0);
+		Message.WaitAdvance();
+		Message.Actor(1024, 56, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseAll();
+		v44 = 6;
+		v47 = 4;
+	}
+
+	static void sub_0e06() { // @ 0xe06
+		int v44;
+
+		Message.Actor(1024, 58, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseAll();
+		v44 = 6;
+	}
+
+	static meta void Global2805(int a1, int a2) : VGlobalCall[2805];
+}

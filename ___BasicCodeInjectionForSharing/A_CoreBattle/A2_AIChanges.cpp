@@ -366,15 +366,23 @@ extern "C"
 
     FieldTypeChanges checkForFieldEffects()
     {
+        #if DEBUGGING_ALL && DEBUGGING_FIELDEFFECTS
+        k::Printf("\nDEBUGGING checkForFieldEffects FUNCTION\n");   
+        #endif
         PlayerState *playerState = GameData_GetPlayerState(*(GameData **)(g_GameBeaconSys + 4));
         int zoneId = PlayerState_GetZoneID(playerState);
-
+        #if DEBUGGING_ALL && DEBUGGING_FIELDEFFECTS
+        k::Printf("\nZONE ID IS: %d\n", zoneId);
+        #endif
         if (zoneId == 121)
         {
             return FIELD_OPELUCID;
         }
         if (zoneId == 607 || zoneId == 195 || zoneId == 196 || zoneId == 197)
         {
+            #if DEBUGGING_ALL && DEBUGGING_FIELDEFFECTS
+            k::Printf("\nCHARGESTONE FIELD DETECTED\n");
+            #endif
             return FIELD_CHARGESTONE;
         }
         if (zoneId == 339 || zoneId == 338 || zoneId == 340 || zoneId == 341 || zoneId == 462 || (zoneId >= 510 && zoneId <= 514) || (zoneId >= 569 && zoneId <= 572))
@@ -719,26 +727,41 @@ extern "C"
         TrainerBattleSetup *currentTrainer;
         int trainerId;
         int trainerClass;
+#if DEBUGGING_ALL && DEBUGGING_FIELDEFFECTS
 
+        k::Printf("\nDEBUGGING FIELD EFFECTS FUNCTION\n");
+#endif
         FieldStatus = BtlSetup_GetFieldStatus(a1->mainModule);
         FieldTypeChanges field = checkForFieldEffects();
-
+#if DEBUGGING_ALL && DEBUGGING_FIELDEFFECTS
+        k::Printf("\nFIELD TYPE RETURNED AS: %d\n", field);
+#endif
         ServerControl_ChangeWeather(a1, 10, 10);
-
+#if DEBUGGING_ALL && DEBUGGING_FIELDEFFECTS
+        k::Printf("\nWEATHER CHECK\n");
+#endif
         // Trick Room Setter
         // Checks ZoneId for Relic Castle, currently
         if (field == FIELD_TRICK_ROOM)
         {
+#if DEBUGGING_ALL && DEBUGGING_FIELDEFFECTS
+        k::Printf("\nDEBUGGING TRICK ROOM FIELD\n");
+#endif
             ServerDisplay_AddCommon(a1->serverCommandQueue, 48, 1, 0, 433, 0, 0);
             bhwork = (HandlerParam_Message *)BattleHandler_PushWork(a1, EFFECT_MESSAGE, 0);
             BattleHandler_StrSetup(&bhwork->str, 1u, 203);
             BattleHandler_PopWork(a1, bhwork);
             ServerControl_FieldEffectCore(a1, 1, Condition_MakePermanent(), 0);
         }
-
+#if DEBUGGING_ALL && DEBUGGING_FIELDEFFECTS
+        k::Printf("\nTRICK ROOM CHECK COMPLETE\n");
+#endif
         // Chargestone Cave
         if (field == FIELD_CHARGESTONE)
         {
+ #if DEBUGGING_ALL && DEBUGGING_FIELDEFFECTS
+        k::Printf("\nDEBUGING CHARGESTONE FIELD\n");
+#endif 
             HandlerParam_AddAnimation *addAnimation = (HandlerParam_AddAnimation *)BattleHandler_PushWork(a1, EFFECT_ADD_ANIMATION, 0);
             addAnimation->animNo = MOVE351_SHOCK_WAVE;
             addAnimation->pos_from = 3;
@@ -747,10 +770,16 @@ extern "C"
             bhwork = (HandlerParam_Message *)BattleHandler_PushWork(a1, EFFECT_MESSAGE, 0);
             BattleHandler_StrSetup(&bhwork->str, 1u, 204);
             BattleHandler_PopWork(a1, bhwork);
+#if DEBUGGING_ALL && DEBUGGING_FIELDEFFECTS
+        k::Printf("\nCHARGESTONE FIELD DIDN't CRASH\n");
+#endif 
         }
         // Celestial Tower
         else if (field == FIELD_CELESTIAL)
         {
+#if DEBUGGING_ALL && DEBUGGING_FIELDEFFECTS
+        k::Printf("\nDEBUGGING CELESTIAL FIELD\n");
+#endif 
             HandlerParam_AddAnimation *addAnimation = (HandlerParam_AddAnimation *)BattleHandler_PushWork(a1, EFFECT_ADD_ANIMATION, 0);
             addAnimation->animNo = MOVE114_HAZE;
             addAnimation->pos_from = 6;
@@ -759,6 +788,9 @@ extern "C"
             bhwork = (HandlerParam_Message *)BattleHandler_PushWork(a1, EFFECT_MESSAGE, 0);
             BattleHandler_StrSetup(&bhwork->str, 1u, 205);
             BattleHandler_PopWork(a1, bhwork);
+#if DEBUGGING_ALL && DEBUGGING_FIELDEFFECTS
+        k::Printf("\nCELESTIAL FIELD DIDN'T CRASH\n");
+#endif 
         }
         // Opelucid Gym
         else if (field == FIELD_OPELUCID)
@@ -785,7 +817,13 @@ extern "C"
             BattleHandler_StrSetup(&bhwork->str, 1u, 207);
             BattleHandler_PopWork(a1, bhwork);
         }
+        else { 
 
+        }
+#if DEBUGGING_ALL && DEBUGGING_FIELDEFFECTS
+        k::Printf("\nCHECKING FOR SPIKES SETUP\n");
+        k::Printf("\nBTL TYPE IS: %d\n", a1->mainModule->btlSetup->btlType);
+#endif
         if (a1->mainModule->btlSetup->btlType != 0)
         {
             trainerSetups = a1->mainModule->btlSetup->TrainerSetups;
@@ -795,9 +833,7 @@ extern "C"
             trainerId = currentTrainer->TrID;
             trainerClass = currentTrainer->TrClass;
 
-#if DEBUGGING_AI && DEBUGGING_ALL
-            k::Printf("\nServerFlow_SetupBeforeFirstTurn: HandleFieldEffects: Trainer ID is %d, Trainer Class is %d\n", trainerId, trainerClass);
-#endif
+
 
             // PreSet Spikes
             // Checks TrainerId
@@ -869,8 +905,13 @@ extern "C"
         serverCommandQueue->writePtr = 0;
         v12 = 0;
         serverCommandQueue->readPtr = 0;
+#if DEBUGGING_ALL && DEBUGGING_FIELDEFFECTS
+        k::Printf("\nSetting up field effects at the start of the battle\n");
+#endif 
         v12 = HandleFieldEffects(a1);
-
+#if DEBUGGING_ALL && DEBUGGING_FIELDEFFECTS
+        k::Printf("\nCheck 1: Setting up field effects at the start of the battle\n");
+#endif 
         /* Some kind of initialization of the damage calc cache would be good here */
         resetCalcTable();
 
@@ -907,6 +948,9 @@ extern "C"
                 }
             }
         }
+#if DEBUGGING_ALL && DEBUGGING_FIELDEFFECTS
+        k::Printf("\nCheck 2: Setting up field effects at the start of the battle\n");
+#endif 
         if (ServerControl_AfterSwitchIn(a1))
         {
             return 1;
@@ -3647,9 +3691,9 @@ extern "C"
     {
         BattleMon *BattleMonFromBattlePos; // r6
 
-#if DEBUGGING_AI && DEBUGGING_ALL
-        k::Printf("\n\n--------SAFESTACK_GuessAbility-----------\nIs being called for Pokemon in position %d on side %d\n", a3, a2);
-#endif
+// #if DEBUGGING_AI && DEBUGGING_ALL
+//         k::Printf("\n\n--------SAFESTACK_GuessAbility-----------\nIs being called for Pokemon in position %d on side %d\n", a3, a2);
+// #endif
         BattleMonFromBattlePos = GetBattleMonFromBattlePos(a1, a3);
         if (BattleMon_CheckIfMoveCondition(BattleMonFromBattlePos, CONDITION_GASTROACID))
         {
@@ -3684,7 +3728,12 @@ extern "C"
         {
             LoopMoveID = Move_GetID(a1, i);
             LoopMoveCategory = PML_MoveGetParam(LoopMoveID, MVDATA_CATEGORY);
-            if (!LoopMoveCategoryCheck && !PML_MoveIsDamaging(LoopMoveID) && Move_GetPP(a1, i))
+            if (!LoopMoveCategory)
+            { 
+                i++;
+                continue;
+            }
+            if (!LoopMoveCategoryCheck && Move_GetPP(a1, i))
             {
                 LoopMoveCategoryCheck = LoopMoveCategory;
             }
@@ -3709,11 +3758,11 @@ extern "C"
     int THUMB_BRANCH_AI094_GetPreviousMoveCategory(ScriptVM *a1, TrainerAIEnv *a2)
     {
         int LoopMoveCategoryResult;
-#if DEBUGGING_ABILITIES && DEBUGGING_ALL
+#if DEBUGGING_AI && DEBUGGING_ALL
         k::Printf("\n\n--------AI094_GetPreviousMoveCategory-----------\nIs being called for move %d, used by Pokemon %d\n", a2->moveID, a2->attacker->Species);
 #endif
         LoopMoveCategoryResult = CheckTargetMoves(a2->defender);
-#if DEBUGGING_ABILITIES && DEBUGGING_ALL
+#if DEBUGGING_AI && DEBUGGING_ALL
         k::Printf("The defending Pokemon %d is mainly the category %d\n\n", a2->defender->Species, LoopMoveCategoryResult);
 #endif
         a2->param = LoopMoveCategoryResult;

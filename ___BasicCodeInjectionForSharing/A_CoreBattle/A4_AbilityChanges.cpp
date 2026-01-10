@@ -4576,7 +4576,7 @@ extern "C" void THUMB_BRANCH_SAFESTACK_PokeList_LoadPokeData(PokeListMain *a1, P
                         v9->MaxPP = PML_MoveGetMaxPP(v9->MoveID, v9->MaxPP);
                         if (isEnemy)
                         {
-                            v9->MaxPP = PML_MoveGetParam(v9->MoveID, MVDATA_BASEPP) + 3;
+                            v9->MaxPP = PML_MoveGetParam(v9->MoveID, MVDATA_BASEPP);
                         }
                         v9->Type = PML_MoveGetParam(v9->MoveID, MVDATA_TYPE);
                         v9->Category = PML_MoveGetParam(v9->MoveID, MVDATA_CATEGORY);

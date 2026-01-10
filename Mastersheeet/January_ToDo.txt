@@ -1,0 +1,279 @@
+
+
+/*         
+	
+	-----------------------------------------------------------------------------------------------------------------------------------------
+	-------------------------------------------------- WHAT I WANNA DO TODAY ---------------------------------------------------------------- 
+	-----------------------------------------------------------------------------------------------------------------------------------------       
+
+*/
+
+
+====================================================================================================================================================
+/*   ISSUES LIST   */
+
+    [ BACKGROUNDS ]
+        - Benga Fight (Flocessy Ranch) doesn't load properly if backgrounds are enabled 
+        - Benga Fight (Route 4) doesn't load properly if backgrounds are enabled 
+        - Misty Fight (Virbank City) doesn't load properly if backgrounds are enabled 
+        - Surge Fight (Liberty Garden) doesn't load properly if backgrounds are enabled 
+        - Castelia Battle Company Backgrounds A and B don't load lighting properly. 
+        - Virbank City background will cause a crash eventually. Too many polygons and colors probably 
+        - Castelia Gym background won't cause a crash but causes color distortions because too many palette items (in doubles anyways)
+        - Route 5, Lostlorn Forest, and Route 16 don't properly adjust backgrounds based on player position.
+        - Route 20 fishing backgrounds weren't working properly. 
+        - Virbank Gym Leader Background was incorrect; it was using the Speaker 
+
+        - General Notes 
+            - I wonder if backgrounds that rely on checking seasons or time crash on mobile because of the bugs that sometimmes occur with checking the most recent time. 
+            - I believe this is responsible for basically all of the savinng bugs as well. 
+    
+    [ SCRIPTING ]
+        - Confirm the following new scripts work 
+            - Lostlorn Forest Berry Dispenser 
+            - Clay Tunnel Gem Dispenser 
+        - Confirm the existing scripts have been fixed 
+            - Virbank Gate Rival 
+            - Fly Anywhere unlocked by Rival Fight 
+            - Ranch Egg Script 
+            - Virbank Complex Quest
+        - Confirm the following areas have encounters 
+            - Alder's House 
+            - Weather Institute 
+        - Replace the Sitrus Berries in Anville Town with Dragon Gems x3
+
+    
+	[ MECHANICS ]
+        - tag Battle Scan 
+            - In a tag battle with wild pokemon figure out which side you need to show. 
+        - Update Unnerve to affect
+            - Leftovers 
+            - Focus Band 
+            - Tera Leftovers 
+            - Tera Focus Band 
+            - Tera Quick Claw 
+            - Quick Claw 
+            - Black Sludge 
+            - Attack Insurance 
+            - Tera Attack Insurance 
+    
+    [ DOCUMENTATION ]
+        - Finish putting together the Cascade White 2 Mastersheet and make sure everything is cosher 
+    
+
+====================================================================================================================================================
+/*   DESIGN   */
+	
+
+    [ LATER SPLIT CONTENT ]
+        - So I have a couple of ideas of how to distribute the content in the later splits of the game to be better paced and make more sense 
+
+        IDEA A:
+            Marlon is not fought until after defeating Team Plasma. 
+            + This is simple and easy to achieve. It removes the weird pacing break that occurs when, while pursuing team plasma, you take a break to beat a gym. 
+            + It also fills out Marlon split which is extremely short.
+            - This does nothing to shorten Drayden split really. 
+            - My current plan for the swords of justice had Cobalion (Skyla), Virizion (Drayden), Terrakion (Marlon), Keldeo (E4). This wouldn't work with Plasma being defeated within Marlon split. 
+                - I could maybe address this by adding Terrakion into the backhalf of Drayden split. This would also work well with splitting Drayden in half. 
+        
+        IDEA B: 
+            Marlon is fought before Drayden. Drayden is the fight that gatekeeps Giant Chasm and the plasma finale. 
+            
+            + This probably has the best pacing. It wouldn't require rewriting any of Marlon's dialogue and then causes the finale to flow well. 
+            - 
+        
+        IDEA C:
+            This can be combined with Idea A, but basically we split Drayden split in two.
+
+            Part A:
+                Reversal Mountain  
+                Strange House (Optional)
+                Route 14 Gauntlet
+                Abundant Shrine 
+                Virizion Side Quest (Optional)
+
+                The player moves from Lentimas to Reversal Mountain to Route 14 to Undella Town. They can optionally pursue Strange House or Virizion from the start of the split.
+                They fight Benga + Alder or some combination thereof in Abundant Shrine which ends this split.
+
+                Encounters:
+                    Lentimas Town 
+                    Strange House (Optional)
+                    Reversal Mountain
+                    Route 14
+                    Undella Town 
+                    Pinwheel Forest (Optional)
+                    Abundant Shrine 
+                
+            Part B:
+                Route 13
+                Lacunosa Town (Zinzolin Fight)
+                Route 12 (just has a gatekeeper boss)
+                Village Bridge Gauntlet 
+                Route 11 (just has one trainer)
+                Terrakion Side Quest 
+                Route 10 (gatekeeper boss)
+                Optional Blaine 
+                Drayden Gym 
+
+                This player moves from Route 13 to Lacunosa Town to Route 12 to the Village Bridge gauntlet to Route 11 to Opelucid City. 
+                Optional content includes Route 12/11 gatekeepers, Blaine, and the terrakion side quest. 
+
+                Encounters:
+                    Route 13
+                    Route 12 (Optional)
+                    Village Bridge
+                    Route 11 (Optional)
+                    Route 10 (Optional)
+                    Mall (Optional)
+                    Twist Mountain (optional)
+                
+            Then Marlon split would have:
+                Opelucid City Battles 
+                Marine Tube 
+                (Optional) Route 22
+                Route 21
+                Seaside Cave 
+                (Optional) Undella Bay 
+                Plasma Frigate Infiltration 
+                Giant Chasm 
+                Marlon Gym 
+
+                Encounters:
+                    Humilau City 
+                    Route 22
+                    Route 21 
+                    Seaside Cave 
+                    Undella Bay 
+                    Plasma Frigate 
+                    Giant Chasm 
+                
+            
+	[ Earmark footage for trailer ]
+		- Setup 
+			- Figure out how to make the PC invisible. 
+			- Find a good backing track 
+		- Scenes
+			- NEW Rivals
+				- Benga Text Box 
+				- Cobalion Battle 
+			- Battles
+				- Castelia Gym Battle 
+				- Elesa Gym Trainer Battle
+				- Roxie Gym Battle 
+				- Clay Gym Battle 
+				- Misty Gym Battle
+			- Catching pokemon in:
+				- Route 6 
+				- Route 20
+				- Virbank Water 
+				- Relic Castle 
+			- Overworld Panning Shots:
+				- Join Avenue 
+				- Driftveil Drawbridge
+				- Charge stone cave 
+			- New Pokemon
+				- Swoobat 
+				- Move use: Sticky Web
+				- Ability Use: Bulletproof triggers 
+				- Move Use: 1st Impression 
+				- Panning over bag with new items 
+			- QOL Options
+				- PC Anywhere
+				- Settings 
+				- Fast Travel 
+ 
+
+    [ # of encounters ]
+
+        Cheren Split (Total: 9, Mandatory: 8, Optional: 1)
+            Starter 
+            Rowdy Pokemon Center 
+            Route 19 
+            Flocessy Town 
+            Route 20 
+            Flocessy Ranch
+            Ranch Egg 
+            Alder's House 
+            Pledge Grove (Optional)
+        
+        Roxie Split (Total: 14, Mandatory: 12, Optional: 2)
+            Route 20-East
+            Virbank City
+            Virbank Complex (Outside)
+            Virbank Complex (Inside)
+            Togepi Egg (Optional)
+
+        Burgh Split (Total: 21, Mandatory: 17, Optional: 4)
+            Pokestar Studios 
+            Castelia Sewers 
+            Route 4 
+            Relic Passage 
+            Castelia Gardens 
+            Castelia Battle Company (Optional)
+            Liberty Garden (Optional)
+
+        Elesa Split (Total: 29, Mandatory: 22, Optional: 7)
+            Desert Resort 
+            Relic Castle 
+            Relic Castle Fossil (Optional)
+            Route 16
+            Route 5
+            Lostlorn Forest 
+            Lostlorn Forest Deep (Optional)
+            Anville Town (Optional)
+
+        Clay Split (Total: 33, Mandatory: 25, Optional: 8)
+            Driftveil Drawbridge 
+            Route 6 
+            Clay Tunnel (Optional)
+            Plasma Sanctuary 
+        
+        Skyla Split (Total: 41, Mandatory: 31, Optional: 10)
+            Weather Institute 
+            Mistralton Cave 
+            Relic Castle (Lower Floors)
+            Guidance Chamber (Optional)
+            Chargestone Cave
+            Route 7 
+            Celestial Tower 
+            Celestial Rooftop (Optional)
+
+        Drayden Split A (Total: 47, Mandatory: 34, Optional: 13)
+            Reversal Mountain 
+            Strange House (Optional)
+            Route 14 
+            Pinwheel Forest (Optional)
+            Undella Town (Optional)
+            Abundant Shrine 
+        
+        Drayden Split B (Total: 54, Mandatory: 39, Optional: 15)
+            Route 13 
+            Route 12 
+            Village Bridge 
+            Route 11 
+            Route 10 
+            Nature Preserve (Optional)
+            Twist Mountain (Optional) 
+
+        Marlon Split (Total: 61, Mandatory: 44, Optional: 17)
+            Humilau Town 
+            Route 21 
+            Route 22
+            Seaside Cave 
+            Undella Bay (Optional)
+            Giant Chasm 
+            Moors of Iccirus (Optional)
+        
+        Elite 4 Split (Total: 64, Mandatory: 46, Optional: 18)
+            Route 23
+            Victory Road
+            Something blocked by Red (Optional)
+
+
+====================================================================================================================================================
+/*   GENERAL   */
+
+
+    General Atomics Anthem Plan Member ID: NCF466W19180 
+
+====================================================================================================================================================

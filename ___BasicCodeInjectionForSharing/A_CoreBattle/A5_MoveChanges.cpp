@@ -443,7 +443,7 @@ extern "C"
 
         SideFromMonID = GetSideFromMonID(a3);
         v8.raw = Condition_MakeTurn(8).raw;
-        CommonCreateSideEffect(a1, a2, a3, a4, SideFromMonID, 2, v8.raw, 132);
+        CommonCreateSideEffect(a1, a2, a3, a4, SideFromMonID, 2, v8.raw, 136);
     }
     /* Mist */
     void THUMB_BRANCH_HandlerMist(int a1, ServerFlow *a2, unsigned int a3, int a4)
@@ -453,7 +453,7 @@ extern "C"
 
         SideFromMonID = GetSideFromMonID(a3);
         v8.raw = Condition_MakeTurn(8).raw;
-        CommonCreateSideEffect(a1, a2, a3, a4, SideFromMonID, 3, v8.raw, 132);
+        CommonCreateSideEffect(a1, a2, a3, a4, SideFromMonID, 3, v8.raw, 136);
     }
 #pragma endregion
 

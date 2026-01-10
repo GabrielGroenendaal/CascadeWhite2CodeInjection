@@ -1014,4 +1014,3 @@ Upon witnessing the initial cutscene, the difficulty of the gauntlet is set. Thu
 
 # Finish
 
-

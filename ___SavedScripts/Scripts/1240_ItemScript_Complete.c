@@ -2564,6 +2564,7 @@ void Sequence224()
 	End();
 }
 
+/* Dragon Gem x3 - Anville Town */
 void Sequence225()
 {
 	LockAll();

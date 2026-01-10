@@ -1,7 +1,7 @@
 
 #include "codeinjection_battlefield.h"
 #include "kPrint.h"
-
+#include "settings.h"
 // FIELD EFFECT EXPANSION
 
 // Uses esdb_newBattle.yml
@@ -1024,10 +1024,15 @@ extern "C"
     {
         unsigned int Value_11; // r6
         int MoveCondition;     // r5
-
+#if DEBUGGING_ALL && DEBUGGING_SIDE_EFFECTS
+        k::Printf("MIST STATUS CHECK FAIL\n");
+#endif
         Value_11 = BattleEventVar_GetValue(VAR_DEFENDING_MON);
         if (a3 == (Value_11 >= 12) && Value_11 != BattleEventVar_GetValue(VAR_ATTACKING_MON))
         {
+#if DEBUGGING_ALL && DEBUGGING_SIDE_EFFECTS
+            k::Printf("MIST STATUS CHECK FAIL PROCESS\n");
+#endif
             MoveCondition = BattleEventVar_GetValue(VAR_CONDITION_ID);
             if ((MoveCondition < 7) || MoveCondition == 14)
             {
@@ -1045,7 +1050,7 @@ extern "C"
         {
             Value_14 = BattleEventVar_GetValue(VAR_DEFENDING_MON);
             v7 = (HandlerParam_Message *)BattleHandler_PushWork(a2, EFFECT_MESSAGE, Value_14);
-            BattleHandler_StrSetup(&v7->str, 2u, 839);
+            BattleHandler_StrSetup(&v7->str, 2u, 842);
             BattleHandler_AddArg(&v7->str, Value_14);
             BattleHandler_PopWork(a2, v7);
             *a4 = 0;
@@ -1057,15 +1062,20 @@ extern "C"
         int Value_18;             // r4
         HandlerParam_Message *v7; // r6
         int Value_19;             // [sp+0h] [bp-18h]
-
+#if DEBUGGING_ALL && DEBUGGING_SIDE_EFFECTS
+        k::Printf("SAFEGUARD STAT CHANGE FAIL MESSAGE\n");
+#endif
         if (*a4)
         {
+#if DEBUGGING_ALL && DEBUGGING_SIDE_EFFECTS
+            k::Printf("SAFEGUARD STAT CHANGE FAIL MESSAGE PROCESS\n");
+#endif
             Value_18 = BattleEventVar_GetValue(VAR_STAT_STAGE_CHANGE_COUNT);
             if (!Value_18 || a4[1] != Value_18)
             {
                 Value_19 = BattleEventVar_GetValue(VAR_MON_ID);
-                v7 = (HandlerParam_Message*)BattleHandler_PushWork(a2, EFFECT_MESSAGE, Value_19);
-                BattleHandler_StrSetup(&v7->str, 2u, 839);
+                v7 = (HandlerParam_Message *)BattleHandler_PushWork(a2, EFFECT_MESSAGE, Value_19);
+                BattleHandler_StrSetup(&v7->str, 2u, 842);
                 BattleHandler_AddArg(&v7->str, Value_19);
                 BattleHandler_PopWork(a2, v7);
                 a4[1] = Value_18;
@@ -1077,16 +1087,20 @@ extern "C"
     void HandlerSideMistStatChangeCheckFail(int a1, int a2, int a3, int *a4)
     {
         unsigned int Value_15; // r6
-
+#if DEBUGGING_ALL && DEBUGGING_SIDE_EFFECTS
+        k::Printf("MIST STAT CHANGE CHECK FAIL\n");
+#endif
         Value_15 = BattleEventVar_GetValue(VAR_MON_ID);
         if (a3 == (Value_15 >= 12) && BattleEventVar_GetValue(VAR_VOLUME) < 0 && Value_15 != BattleEventVar_GetValue(VAR_ATTACKING_MON))
         {
+#if DEBUGGING_ALL && DEBUGGING_SIDE_EFFECTS
+            k::Printf("MIST STAT CHANGE CHECK FAIL PROCESS\n");
+#endif
             *a4 = BattleEventVar_RewriteValue(VAR_MOVE_FAIL_FLAG, 1);
         }
     }
 
 #pragma endregion
-
 
 #pragma region Safeguard
     void HandlerSideSafeguardStatusCheckFail(int a1, int a2, int a3, int *a4)
@@ -1126,14 +1140,19 @@ extern "C"
         int Value_18;             // r4
         HandlerParam_Message *v7; // r6
         int Value_19;             // [sp+0h] [bp-18h]
-
+#if DEBUGGING_ALL && DEBUGGING_SIDE_EFFECTS
+        k::Printf("SAFEGUARD STAT CHANGE FAIL MESSAGE\n");
+#endif
         if (*a4)
         {
+#if DEBUGGING_ALL && DEBUGGING_SIDE_EFFECTS
+            k::Printf("SAFEGUARD STAT CHANGE FAIL MESSAGE PROCESS\n");
+#endif
             Value_18 = BattleEventVar_GetValue(VAR_STAT_STAGE_CHANGE_COUNT);
             if (!Value_18 || a4[1] != Value_18)
             {
                 Value_19 = BattleEventVar_GetValue(VAR_MON_ID);
-                v7 = (HandlerParam_Message*)BattleHandler_PushWork(a2, EFFECT_MESSAGE, Value_19);
+                v7 = (HandlerParam_Message *)BattleHandler_PushWork(a2, EFFECT_MESSAGE, Value_19);
                 BattleHandler_StrSetup(&v7->str, 2u, 839);
                 BattleHandler_AddArg(&v7->str, Value_19);
                 BattleHandler_PopWork(a2, v7);
@@ -1146,10 +1165,15 @@ extern "C"
     void HandlerSideSafeguardStatChangeCheckFail(int a1, int a2, int a3, int *a4)
     {
         unsigned int Value_15; // r6
-
+#if DEBUGGING_ALL && DEBUGGING_SIDE_EFFECTS
+        k::Printf("SAFEGUARD STAT CHANGE CHECK FAIL\n");
+#endif
         Value_15 = BattleEventVar_GetValue(VAR_MON_ID);
         if (a3 == (Value_15 >= 12) && BattleEventVar_GetValue(VAR_VOLUME) < 0 && Value_15 != BattleEventVar_GetValue(VAR_ATTACKING_MON))
         {
+#if DEBUGGING_ALL && DEBUGGING_SIDE_EFFECTS
+            k::Printf("SAFEGUARD STAT CHANGE CHECK FAIL PROCESS\n");
+#endif
             *a4 = BattleEventVar_RewriteValue(VAR_MOVE_FAIL_FLAG, 1);
         }
     }
@@ -1158,14 +1182,14 @@ extern "C"
     BattleEventHandlerTableEntry MistHandlers[] = {
         {EVENT_ADD_CONDITION_CHECK_FAIL, (BattleEventHandler)HandlerSideMistStatusCheckFail}, // Rapid Spin implementation is in HandlerRapidSpin
         {EVENT_ADD_CONDITION_FAIL, (BattleEventHandler)HandlerSideMistStatusFailMessage},
-        {EVENT_STAT_STAGE_CHANGE_LAST_CHECK, (BattleEventHandler)HandlerSideMistStatChangeFailMessage},
-        {EVENT_STAT_STAGE_CHANGE_FAIL, (BattleEventHandler)HandlerSideMistStatChangeCheckFail},
+        {EVENT_STAT_STAGE_CHANGE_LAST_CHECK, (BattleEventHandler)HandlerSideMistStatChangeCheckFail},
+        {EVENT_STAT_STAGE_CHANGE_FAIL, (BattleEventHandler)HandlerSideMistStatChangeFailMessage},
     };
     BattleEventHandlerTableEntry SafeguardHandlers[] = {
         {EVENT_ADD_CONDITION_CHECK_FAIL, (BattleEventHandler)HandlerSideSafeguardStatusCheckFail}, // Rapid Spin implementation is in HandlerRapidSpin
         {EVENT_ADD_CONDITION_FAIL, (BattleEventHandler)HandlerSideSafeguardStatusFailMessage},
-        {EVENT_STAT_STAGE_CHANGE_LAST_CHECK, (BattleEventHandler)HandlerSideSafeguardStatChangeFailMessage},
-        {EVENT_STAT_STAGE_CHANGE_FAIL, (BattleEventHandler)HandlerSideSafeguardStatChangeCheckFail},
+        {EVENT_STAT_STAGE_CHANGE_LAST_CHECK, (BattleEventHandler)HandlerSideSafeguardStatChangeCheckFail},
+        {EVENT_STAT_STAGE_CHANGE_FAIL, (BattleEventHandler)HandlerSideSafeguardStatChangeFailMessage},
     };
 
     BattleEventHandlerTableEntry *EventAddSideReflect(int *a1)
@@ -1186,6 +1210,9 @@ extern "C"
     BattleEventHandlerTableEntry *EventAddSideMist(int *a1)
     {
         *a1 = 4;
+#if DEBUGGING_ALL && DEBUGGING_SIDE_EFFECTS
+        k::Printf("ADDING MIST HANDLERS\n");
+#endif
         return (BattleEventHandlerTableEntry *)MistHandlers;
     }
     BattleEventHandlerTableEntry *EventAddSideTailwind(int *a1)
@@ -1620,13 +1647,13 @@ extern "C"
         int ID;                  // r0
         int SideFromMonID;       // r6
         ConditionData Turn;      // r0
-        int v6;                  // r0
+        int *v6;                 // r0
         HandlerParam_Header *v7; // r4
 
         ID = BattleMon_GetID(a2);
         SideFromMonID = GetSideFromMonID(ID);
         Turn = Condition_MakeTurn(5);
-        SideEffectEvent_AddItem(SideFromMonID, SIDEEFF_MIST, Turn);
+        v6 = SideEffectEvent_AddItem(SideFromMonID, SIDEEFF_MIST, Turn);
         if (!v6)
         {
             return 0;

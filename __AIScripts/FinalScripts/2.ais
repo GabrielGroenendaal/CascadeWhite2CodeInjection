@@ -1774,10 +1774,6 @@ address_0x1CE8:
 	AddToScore(-1)
 
 address_0x1D06:
-	JumpIfHasMove(attacker, move.mirror_coat, &address_0x1D9E)
-	GetPreviousMove(defender)
-	GetPowerOfStoredMove()
-	JumpIfStoredEQ(0, &address_0x1D5E)
 	JumpIfNotTaunted(&address_0x1D3C)
 	JumpIfRandLT(100, &address_0x1D3C)
 	AddToScore(1)
@@ -2491,10 +2487,6 @@ address_0x28DC:
 	AddToScore(-1)
 
 address_0x28FA:
-	JumpIfHasMove(attacker, move.counter, &address_0x2992)
-	GetPreviousMove(defender)
-	GetPowerOfStoredMove()
-	JumpIfStoredEQ(0, &address_0x2952)
 	JumpIfNotTaunted(&address_0x2930)
 	JumpIfRandLT(100, &address_0x2930)
 	AddToScore(1)
