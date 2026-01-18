@@ -1065,7 +1065,10 @@ void Sequence16()
 	Storec0xD3(0x8027);
 	Compare(0x8027, 122);
 	if (1) goto label_isPokemonCenter;
-
+	Storec0xD3(0x8027);
+	Compare(0x8027, 472);
+	if (1) goto label_isPokemonCenter;
+	
 	SetVarEqVal(0x8027, 0);
 	Return();
 

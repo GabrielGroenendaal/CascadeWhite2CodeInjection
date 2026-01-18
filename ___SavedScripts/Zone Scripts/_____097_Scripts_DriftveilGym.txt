@@ -86,6 +86,7 @@ public class MainEvents {
 		Message.ActorEx(1024, 3, 7, 0, 0);
 		Message.CloseActor();
 		Global2805(423, 1);
+		clearGatekeepers();
 		Trainer.FlagGet(319);
 		Trainer.FlagGet(320);
 		Trainer.FlagGet(321);
@@ -880,67 +881,88 @@ public class MainEvents {
 	}
 
 	static void clearGatekeepers(){
-		if (EventFlags.Get(1667)) {
+		// Lady Lina
+		if (!EventFlags.Get(1520 + 147)) {
 			EventFlags.Set(1667);
 		}
-		if (EventFlags.Get(2186)){
+		// Ranger Jaden
+		if (!EventFlags.Get(1520 + 666)){
 			EventFlags.Set(2186);
-		}
-		if (EventFlags.Get(2189)){
+		} 
+		// Psychic Future 
+		if (!EventFlags.Get(1520 + 669)){
 			EventFlags.Set(2189);
 		}
-		if (EventFlags.Get(2184)){
+		// Backpacker Tami
+		if (!EventFlags.Get(1520 + 664)){
 			EventFlags.Set(2184);
 		}
-		if (EventFlags.Get(2185)){
+		// Backpacker Clara
+		if (!EventFlags.Get(1520 + 665)){
 			EventFlags.Set(2185);
 		}
-		if (EventFlags.Get(2187)){
+		// Ranger Anja
+		if (!EventFlags.Get(1520 + 667)){
 			EventFlags.Set(2187);
 		}
-		if (EventFlags.Get(2188)){
+		// Psychic Tommy
+		if (!EventFlags.Get(1520 + 668)){
 			EventFlags.Set(2188);
 		}
-		if (EventFlags.Get(2183)){
+		// Backpacker Sam
+		if (!EventFlags.Get(1520 + 663)){
 			EventFlags.Set(2183);
 		}
-		if (EventFlags.Get(2030)){
+		// Psychic Dua
+		if (!EventFlags.Get(1520 + 510)){
 			EventFlags.Set(2030);
 		}
-		if (EventFlags.Get(2031)){
+		// Psychic Perry
+		if (!EventFlags.Get(1520 + 511)){
 			EventFlags.Set(2031);
 		}
-		if (EventFlags.Get(2032)){
+		// Psychic Low
+		if (!EventFlags.Get(1520 + 512)){
 			EventFlags.Set(2032);
 		}
-		if (EventFlags.Get(1774)){
+		// Artist Horton
+		if (!EventFlags.Get(1520 + 254)){
 			EventFlags.Set(1774);
 		}
-		if (EventFlags.Get(1777)){
+		// Stu and Art
+		if (!EventFlags.Get(1520 + 257)){
 			EventFlags.Set(1777);
 		}
-		if (EventFlags.Get(1745)){
+		// Pokefan Sachiko
+		if (!EventFlags.Get(1520 + 225)){
 			EventFlags.Set(1745);
 		}
-		if (EventFlags.Get(1737)){
+		// Roughneck Silvester
+		if (!EventFlags.Get(1520 + 217)){
 			EventFlags.Set(1737);
 		}
-		if (EventFlags.Get(1782)){
+		// Depot Agent Hank
+		if (!EventFlags.Get(1520 + 262)){
 			EventFlags.Set(1782);
 		}
-		if (EventFlags.Get(1781)){
+		// Cyclist Krissa
+		if (!EventFlags.Get(1520 + 261)){
 			EventFlags.Set(1781);
 		}
-		if (EventFlags.Get(1780)){
+		// Cyclist Hector
+		if (!EventFlags.Get(1520 + 260)){
 			EventFlags.Set(1780);
 		}
-		if (EventFlags.Get(1813)){
+		// Ranger Lois
+		if (!EventFlags.Get(1520 + 293)){
 			EventFlags.Set(1813);
 		}
-		if (EventFlags.Get(1818)){
+		// Ranger Forrest
+		if (!EventFlags.Get(1520 + 298)){
 			EventFlags.Set(1818);
 		}
-		if (EventFlags.Get(1817)){
+		// Ranger Serenity
+		if (!EventFlags.Get(1520 + 297)){
 			EventFlags.Set(1817);
 		}
 	}

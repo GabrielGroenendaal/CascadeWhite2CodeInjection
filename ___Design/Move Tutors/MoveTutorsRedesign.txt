@@ -1,0 +1,231 @@
+
+
+This is an idea I have that would free up a ton of TM slots and also provide some more choices for players. 
+This is especially relevant if I decide I don't want to have limited TMs. 
+
+
+Current Move Tutors: 
+    Driftveil City
+        - Covet (2 Shards)
+        - Bug Bite (2 Shards)
+        - Drill Run (4 Shards)
+        - Bounce (4 Shards)
+        - Signal Beam (4 Shards)
+        - Iron Head (4 Shards)
+        - Super Fang (6 Shards)
+        - Uproar (6 Shards)
+        - Seed Bomb (6 Shards)
+        - Dual Chop (6 Shards)
+        - Low Kick (8 Shards)
+        - Gunk Shot (8 Shards)
+        - Fire Punch (10 Shards)
+        - Thunderpunch (10 shards)
+        - Ice Punch (10 Shards)
+
+    Lentimas Town
+        - Last Resort (2 Shards)
+        - Iron Defense (2 Shards)
+        - Magnet Rise (4 Shards)
+        - Magic Coat (4 Shards)
+        - Block (6 Shards)
+        - Hyper Voice (6 Shards)
+        - Electroweb (6 Shards)
+        - Icy Wind (6 Shards)
+        - Iron Tail (6 Shards)
+        - Aqua Tail (6 Shards)
+        - Earth Power (8 Shards)
+        - Zen Headbutt (8 Shards)
+        - Foul Play (8 Shards)
+        - Superpower (10 Shards)
+        - Gravity (10 Shards)
+        - Dragon Pulse (10 Shards)
+        - Dark Pulse (10 Shards)
+
+    Humilau City: 
+        - Bind (2 Shards)
+        - Snore (2 Shards)
+        - Heal Bell (4 Shards)
+        - Knock Off (4 Shards)
+        - Synthesis (6 Shards)
+        - Roost (6 Shards)
+        - Sky Attack (8 Shards)
+        - Role Play (8 Shards)
+        - Heat Wave (10 Shards)
+        - Giga Drain (10 Shards)
+        - Drain Punch (10 Shards)
+        - Pain Split (10 Shards)
+        - Tailwind (10 shards)
+
+    Nacrene City: 
+        - Worry Seed (6 Shards)
+        - Gastro Acid (6 Shards)
+        - Helping Hand (8 Shards)
+        - After You (8 Shards)
+        - Magic Room (8 Shards)
+        - Wonder Room (8 Shards)
+        - Spite (8 Shards)
+        - Recycle (10 Shards)
+        - Trick (10 Shards)
+        - Stealth Rock (10 Shards)
+        - Outrage (10 Shards)
+        - Endeavor (10 Shards)
+        - Sleep Talk (10 Shards)
+        - Skill Swap (10 Shards)
+        - Snatch (10 Shards)
+
+
+
+The idea is that we're going to take the Nacrene City Tutor and turn them into the Aspertia City tutor. 
+Some of the TMs we would probably turn into tutor moves include: 
+    - Incinerate (replace with 5x Green Shards)
+    - Snarl (replace with 10x Green Shards)
+    - Pluck (replace with Poison Barb)
+    - Icy Wind (replace with 10x Green Shards)
+    - Sparkle (replace with Blackglasses)
+    - Breaking Swipe (repllace with 20x Green Shards)
+
+
+Aspertia City Tutor:
+    - Screech (2 Shards)
+    - Fake Tears (2 Shards)
+    - Sparkle (2 Shards)
+    - Covet (2 Shards)
+    - Bug Bite (4 Shards)
+    - Pluck (4 Shards)
+    - Incinerate (4 Shards)
+    - Icy Wind (6 Shards)
+    - Electroweb (6 Shards)
+    - Snarl (6 Shards)
+    - Breaking Swipe (6 Shards)
+    - Uproar (8 Shards)
+    - Take Down (8 Shards)
+    - Safeguard (10 Shards)
+
+Driftveil City Tutor:
+    - Covet -> Seed Bomb (2 Shards)
+    - Bug Bite -> Skitter Smack (2 Shards)
+    - Drill Run (4 Shards)
+    - Bounce (4 Shards)
+    - Signal Beam (4 Shards)
+    - Iron Head (4 Shards)
+    - Super Fang -> Skill Swap (6 Shards)
+    - Uproar -> Seething Cold (6 Shards)
+    - Seed Bomb -> Psychic Noise (6 Shards)
+    - Dual Chop (6 Shards)
+    - Low Kick (8 Shards)
+    - Gunk Shot -> Cross Poison (8 Shards)
+    - Fire Punch (10 Shards)
+    - Thunderpunch (10 shards)
+    - Ice Punch (10 Shards)
+    - Protect (10 shards)
+
+Lentimas Town Tutor: 
+    - Last Resort -> Explosion (2 Shards)
+    - Iron Defense -> Self Destruct (2 Shards)
+    - Magnet Rise -> Zen Headbutt (4 Shards)
+    - Magic Coat (4 Shards)
+    - Block -> Barrier (6 Shards)
+    - Hyper Voice -> Defense Curl (6 Shards)
+    - Electroweb -> Sweet Scent (6 Shards)
+    - Icy Wind -> Gastro Acid (6 Shards)
+    - Iron Tail (6 Shards)
+    - Aqua Tail (6 Shards)
+    - Earth Power (8 Shards)
+    - Zen Headbutt -> Psyblade (8 Shards)
+    - Foul Play (8 Shards)
+    - Superpower -> Focus Punch (10 Shards)
+    - Gravity (10 Shards)
+    - Dragon Pulse -> Follow Me (10 Shards)
+    - Dark Pulse -> Protect (10 Shards)
+
+
+Humilau City Tutor: 
+    - Bind -> Double-Edge (2 Shards)
+    - Snore -> Heal Pulse (2 Shards)
+    - Heal Bell -> Healing Wish (4 Shards)
+    - Knock Off -> Lucky Chant (4 Shards)
+    - Synthesis (6 Shards)
+    - Roost (6 Shards)
+    - Sky Attack -> Head Smash (8 Shards)
+    - Role Play -> Helping Hand (8 Shards)
+    - Heat Wave -> Overheat (10 Shards)
+    - Giga Drain -> Outrage (10 Shards)
+    - Drain Punch -> Superpower (10 Shards)
+    - Pain Split -> Toxic (10 Shards)
+    - Tailwind -> Rest (10 shards)
+
+
+This would require going over every personal file and updating the move tutor flags accordingly. 
+It would also require figuring out where to edit the move tutor flags. 
+There are probably also some other moves that would work well as move tutor moves that we can add in here. 
+
+
+
+Aspertia City Tutor:
+    - Screech (2 Shards)
+    - Fake Tears (2 Shards)
+    - Sparkle (2 Shards)
+    - Defog (2 Shards)
+    - Chilling Water (4 Shards)
+    - Low Sweep  (4 Shards)
+    - Incinerate (4 Shards)
+    - Icy Wind (6 Shards)
+    - Electroweb (6 Shards)
+    - Snarl (6 Shards)
+    - Breaking Swipe (6 Shards)
+    - Struggle Bug (8 Shards)
+    - Take Down (8 Shards)
+    - Uproar (10 Shards)
+
+Driftveil City Tutor:
+    - Seed Bomb (2 Shards)
+    - Skitter Smack (2 Shards)
+    - Drill Run (4 Shards)
+    - Bounce (4 Shards)
+    - Signal Beam (4 Shards)
+    - Iron Head (4 Shards)
+    - Skill Swap (6 Shards)
+    - Seething Cold (6 Shards)
+    - Psychic Noise (6 Shards)
+    - Dual Chop (6 Shards)
+    - Low Kick (8 Shards)
+    - Cross Poison (8 Shards)
+    - Fire Punch (10 Shards)
+    - Thunderpunch (10 shards)
+    - Ice Punch (10 Shards)
+    - Protect (10 shards)
+
+Lentimas Town Tutor: 
+    - Explosion (2 Shards)
+    - Self Destruct (2 Shards)
+    - Zen Headbutt (4 Shards)
+    - Magic Coat (4 Shards)
+    - Barrier (6 Shards)
+    - Defense Curl (6 Shards)
+    - Sweet Scent (6 Shards)
+    - Gastro Acid (6 Shards)
+    - Iron Tail (6 Shards)
+    - Aqua Tail (6 Shards)
+    - Earth Power (8 Shards)
+    - Psyblade (8 Shards)
+    - Foul Play (8 Shards)
+    - Focus Punch (10 Shards)
+    - Gravity (10 Shards)
+    - Follow Me (10 Shards)
+    - Protect (10 Shards)
+
+
+Humilau City Tutor: 
+    - Double-Edge (2 Shards)
+    - Heal Pulse (2 Shards)
+    - Healing Wish (4 Shards)
+    - Lucky Chant (4 Shards)
+    - Synthesis (6 Shards)
+    - Roost (6 Shards)
+    - Head Smash (8 Shards)
+    - Helping Hand (8 Shards)
+    - Overheat (10 Shards)
+    - Outrage (10 Shards)
+    - Superpower (10 Shards)
+    - Toxic (10 Shards)
+    - Rest (10 shards)

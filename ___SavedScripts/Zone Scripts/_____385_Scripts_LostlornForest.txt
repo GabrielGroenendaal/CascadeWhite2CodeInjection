@@ -216,6 +216,7 @@ public class MainEvents {
         		Bag.GiveItem(199, 2);
         		Bag.GiveItem(200, 2);
         		Bag.GiveItem(206, 2);
+				EventFlags.Set(531);
 		} else {
 			Message.Actor(1024, 11, 0, 0);
 			Sound.PVWait();

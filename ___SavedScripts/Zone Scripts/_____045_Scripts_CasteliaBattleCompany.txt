@@ -1,0 +1,112 @@
+import messages.script.Msg0054.MSGID;
+
+import event.Battle;
+import event.actors.Actor;
+import event.dialogs.Message;
+import pokescript.vm.StackCtrl;
+import pokescript.vm.VM;
+import system.EventFlags;
+import system.EventWorks;
+import system.Input;
+import system.Runtime;
+import system.Sound;
+
+public class MainEvents {
+	public static void main_1() { // @ 0xe
+		int v0;
+		int v1;
+		int v2;
+		int v3;
+		int v4;
+		int v5;
+		int v6;
+
+		Actor.PauseAll();
+		v0 = 232;
+		v1 = 1;
+		v2 = 143;
+		v3 = 0;
+		v4 = 1;
+		v5 = 1;
+		v6 = Runtime.GetTextFile();
+		Global2800(v0, v1, v2, v3, v4, v5, v6);
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_2() { // @ 0x7a
+		int v0;
+		int v1;
+
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		if (EventFlags.Get(210)) {
+			Message.Actor(1024, 4, 0, 0);
+			Input.LastKeyWait();
+			Message.CloseAll();
+			goto LABEL_0103;
+		}
+		Message.Actor(1024, 2, 0, 0);
+		Message.CloseAll();
+		Battle.CallTrainerBattle(501, 0, 0);
+		sub_0109();
+		Message.Actor(1024, 3, 0, 0);
+		Message.WaitAdvance();
+		Message.CloseAll();
+		Global2805(276, 1);
+		Message.Actor(1024, 4, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseAll();
+		EventFlags.Set(210);
+
+		LABEL_0103:
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_3() { // @ 0x12c
+		int v0;
+		int v1;
+
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		if (EventFlags.Get(362)) {
+			Message.Actor(1024, 7, 0, 0);
+			Input.LastKeyWait();
+			Message.CloseAll();
+			goto LABEL_01b5;
+		}
+		Message.Actor(1024, 5, 0, 0);
+		Message.CloseAll();
+		Battle.CallTrainerBattle(502, 0, 0);
+		sub_0109();
+		Message.Actor(1024, 6, 0, 0);
+		Message.WaitAdvance();
+		Message.CloseAll();
+		Global2805(72, 6);
+		Message.Actor(1024, 7, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseAll();
+		EventFlags.Set(362);
+
+		LABEL_01b5:
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	static void sub_0109() { // @ 0x109
+		int v16;
+
+		v16 = Battle.IsTrainerVictory();
+		if (v16 != 1) {
+			Battle.CallTrainerLose();
+			return;
+		}
+		Battle.EndTrainerBattle();
+	}
+
+	static meta void Global2800(int a1, int a2, int a3, int a4, int a5, int a6, int a7) : VGlobalCall[2800];
+	static meta void Global2805(int a1, int a2) : VGlobalCall[2805];
+}

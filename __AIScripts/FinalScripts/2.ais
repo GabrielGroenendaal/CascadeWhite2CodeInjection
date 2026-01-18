@@ -545,7 +545,7 @@ address_0x09A8:
 	JumpIfRandLT(60, &address_0x09B8)
 
 address_0x09B2:
-	AddToScore(-2)
+	AddToScore(-5)
 
 address_0x09B8:
 	EndScript()
@@ -673,7 +673,7 @@ address_0x0BC6:
 	JumpIfRandLT(60, &address_0x0BD6)
 
 address_0x0BD0:
-	AddToScore(-2)
+	AddToScore(-5)
 
 address_0x0BD6:
 	EndScript()
@@ -905,7 +905,6 @@ address_0x0FF2:
 address_0x1006:
 	GetLastPreviousCategory()
 	JumpIfStoredNE(special, &address_0x1022)
-	JumpIfRandLT(128, &address_0x1022)
 	AddToScore(-2)
 
 address_0x1022:
@@ -1017,7 +1016,6 @@ address_0x1164:
 address_0x1178:
 	GetLastPreviousCategory()
 	JumpIfStoredNE(physical, &address_0x1194)
-	JumpIfRandLT(128, &address_0x1194)
 	AddToScore(-2)
 
 address_0x1194:
@@ -1088,16 +1086,16 @@ address_0x124E:
 	AddToScore(2)
 
 address_0x1268:
-	JumpIfRandLT(70, &address_0x1286)
+	JumpIfRandLT(128, &address_0x1286)
 	AddToScore(2)
 
 address_0x1286:
-	JumpIfRandLT(128, &address_0x12C8)
+	JumpIfRandLT(164, &address_0x12C8)
 	AddToScore(1)
 	Jump(&address_0x12C8)
 
 address_0x12AA:
-	JumpIfRandLT(128, &address_0x12C8)
+	JumpIfRandLT(164, &address_0x12C8)
 	AddToScore(1)
 
 address_0x12C8:
@@ -2735,7 +2733,7 @@ data_address_0x2C0E:
 //   FAKE OUT   
 
 Label_FakeOut:
-	AddToScore(2)
+	AddToScore(4)
 	EndScript()
 
 

@@ -5,24 +5,24 @@ Thank you for playing Cascade White! A brief overview of major changes not immed
 ### Mechanics Changes 
 Besides the trainer, encounter, and Pokémon changes displayed in this master sheet, there are countless changes to moves, abilities, and items in Cascade White that go beyond simple BP tweaks, including brand new mechanics altogether. Rivalry now increases damage against and reduces damage taken from Pokémon who share a type. Stockpile, Spitup and Swalllow now consume the user's held berry to activate. Gastro Acid now has +1 Priority, Zap Cannon is a recoil move, Run Away now has the effect of Emergency Exit and COUNTLESS other changes. 
 These changes are all indicated in in-game text, so make sure to read carefully! But also make sure to use the following resources!
-      - The Cascade White Changes (https://docs.google.com/spreadsheets/d/1MQ5JODn_IfyXb26u8rTx2yXfOFiEnTBukeLtgtGJPBw/edit?usp=sharing) sheet documents all changes to Pokémon, Items, Abilities, and Moves. 
-      - The Official Cascade White Mastersheet (https://docs.google.com/spreadsheets/d/1QGKvMsYrywhhnhpLKbTL-kCA0VJZ_zXj-dI2rcTw9ns/edit?usp=sharing) is a version of the mastersheet that includes notation for majorly changed moves, abilities, and items for your convenience. 
+- The Cascade White Changes (https://docs.google.com/spreadsheets/d/1MQ5JODn_IfyXb26u8rTx2yXfOFiEnTBukeLtgtGJPBw/edit?usp=sharing) sheet documents all changes to Pokémon, Items, Abilities, and Moves. 
+- The Official Cascade White Mastersheet (https://docs.google.com/spreadsheets/d/1QGKvMsYrywhhnhpLKbTL-kCA0VJZ_zXj-dI2rcTw9ns/edit?usp=sharing) is a version of the mastersheet that includes notation for majorly changed moves, abilities, and items for your convenience. 
 
 ### AI Changes 
 The AI in Cascade White has been updated to provide a more engaging gameplay experience. These changes are not as extensive as something like Ancestral X, but there have been substantial changes to switch-in AI and moderate changes to AI Scoring for status, setup, and priority moves. 
 A brief overview of the changes is: 
-    - The AI is not guaranteed to go for priority when it sees kill if it's already faster than all Pokémon on the field. 
-    - The AI has a very high chance to use a Priority move when it is not the fastest Pokémon on the field and an enemy Pokémon sees kill on it
-    - The AI is slightly encouraged to go for setup moves when it sees enemy Pokémon deal negligible (25% or less) damage to it.
-    - The AI is heavily discouraged from using setup moves when an enemy Pokémon sees a OHKO on it, or a 2HKO if the enemy mon is faster and the setup move does not increase speed. 
-    - The AI is discouraged from using stat-lowering moves when the target is dealing negligible (25% or less) damage to it.
-    - The AI is heavily discouraged from using status or stat-lowering moves into targets holding the respective curative items. 
-    - The AI no longer receives a negative score with damaging moves that lower speed when they are faster than the target.
-    - When determining BP for Switch AI, the AI is able to account for STAB, move effects that alter BP, moves and abilities that alter type effectiveness (Freeze Dry, Corrosion), abiities that provide resistances and immunities, and abilities that can alter BP such as Technician and Skill Link. 
-    - When simulating damage for moves, the AI can now see the correct damage for moves with variable BP (Hex, Electro Ball, Flail, etc.)
-    - The AI has a very low chance to switch out mid-turn if it is dealing negligible damage to all Pokémon on the field. This chance increases each turn the Pokémon is in battle. 
-    - The AI now has a high chance to switch out mid-turn if it is locked into a move that deals low damage via Encore or Choice Items.
-    A full list of the **AI Changes** is outlined in the **[AI Changes Overview](https://drive.google.com/file/d/1Z2hoQeMt998p8sx8VA0MbgYViWAQwedM/view?usp=sharing)** document. 
+- The AI is not guaranteed to go for priority when it sees kill if it's already faster than all Pokémon on the field. 
+- The AI has a very high chance to use a Priority move when it is not the fastest Pokémon on the field and an enemy Pokémon sees kill on it
+- The AI is slightly encouraged to go for setup moves when it sees enemy Pokémon deal negligible (25% or less) damage to it.
+- The AI is heavily discouraged from using setup moves when an enemy Pokémon sees a OHKO on it, or a 2HKO if the enemy mon is faster and the setup move does not increase speed. 
+- The AI is discouraged from using stat-lowering moves when the target is dealing negligible (25% or less) damage to it.
+- The AI is heavily discouraged from using status or stat-lowering moves into targets holding the respective curative items. 
+- The AI no longer receives a negative score with damaging moves that lower speed when they are faster than the target.
+- When determining BP for Switch AI, the AI is able to account for STAB, move effects that alter BP, moves and abilities that alter type effectiveness (Freeze Dry, Corrosion), abiities that provide resistances and immunities, and abilities that can alter BP such as Technician and Skill Link. 
+- When simulating damage for moves, the AI can now see the correct damage for moves with variable BP (Hex, Electro Ball, Flail, etc.)
+- The AI has a very low chance to switch out mid-turn if it is dealing negligible damage to all Pokémon on the field. This chance increases each turn the Pokémon is in battle. 
+- The AI now has a high chance to switch out mid-turn if it is locked into a move that deals low damage via Encore or Choice Items.
+A full list of the AI Changes is outlined in the AI Changes Overview(https://drive.google.com/file/d/1Z2hoQeMt998p8sx8VA0MbgYViWAQwedM/view?usp=sharing) document. 
 
 ### Quality of Life Improvements
 Many changes have been made to the game to improve quality of life and provide options for customizing the player's gameplay experience. 
@@ -42,7 +42,7 @@ The PokéHelper can be utilized anywhere except for when participating in a Trai
 ### Settings 
 You are now able to customize your gameplay through the Settings Menu in the PokeHelper 
 - Critical Hit Damage (Toggle): Critical Hits deal 2x / 1.5x damage (default: 2x)
-- Animated Backgrounds (Toggle)*: The game does/doesn't use the new animated backgrounds in battle (default: doesn't) Note that these backgrounds are not fully tested and can cause crashes or visual glitches. 
+- Animated Backgrounds (Toggle): The game does/doesn't use the new animated backgrounds in battle (default: doesn't) Note that these backgrounds are not fully tested and can cause crashes or visual glitches. 
 - IV Randomization: when generating IVs for Wild Pokémon, they have random/improved/boosted/perfect IVs. (default: random) "improved" rolls IVs twice and uses the higher total. "boosted" sets three random ivs to 31. "perfect" sets all ivs to 31.
 - EVs: Defeating Pokémon rewards no/1x/2x/4x/8x EVs. (default: no EVs)
 - Advanced Switch AI (Toggle): The AI does/doesn't use the advanced mid-turn switch AI (default: does)
@@ -50,38 +50,38 @@ You are now able to customize your gameplay through the Settings Menu in the Pok
 - Battle Scan Detail (Toggle): The Battle Scan feature reveals partial/complete information about enemy Pokémon. (default: partial) "partial" info displays the Pokémon's ability, base stats, typing, and any moves that have been revealed in battle. It hides items, raw stats, and any team members who have not yet entered battle. "complete" info displays all the above and also raw stat values, held item, all moves, and all Pokémon on the team. 
 
 ### Battle Scan
-The second major quality-of-life improvement is the addition of **Battle Scan**, which allows you to view detailed information about opponent Pokémon and teams in battle. 
+The second major quality-of-life improvement is the addition of Battle Scan, which allows you to view detailed information about opponent Pokémon and teams in battle. 
 In Battle, simply hold the [RIGHT BUMPER] or [LEFT BUMPER] and then Press the Pokémon Button and you can view a summary of the opponent trainer's team. In battles against multiple trainers, [LEFT BUMPER] will examine the left Trainer and [RIGHT BUMPER] will examine the right Trainer.
 Depending on your configured settings (accessed in the PokéHelper), you will be able to view...
-    - Base / Raw Stats 
-    - Typing 
-    - Held Item 
-    - Ability 
-    - Moves 
+- Base / Raw Stats 
+- Typing 
+- Held Item 
+- Ability 
+- Moves 
 ...for all Pokémon in battle. 
 
 ### Miscellaneous
 Other miscellaneous quality-of-life changes include the following: 
-    - HMs are now enabled at specific points in the story when your PokéHelper is upgraded, and you do not require a Pokémon to know the move. 
-    - Rare Candies are now re-usable.
-    - Unusual Candy is a new item that edges your Pokémon to 1 exp of the next level. Reusable.
-    - Stress Tester is a new item that reduces the holder's HP to 1 at the start of battle against a Wild Pokémon. It also guarantees escape from battle. 
-    - +1 Soda and +5 Soda are items found in any PokéMart that heal for 1 and 5 HP respectively. Use this in combination with Stress Tester to predamage.
-    - You can press R in the Pokémon Summary to view IVs and EVs. 
-    - A Psychic in each Pokémon Center will tell you your Pokémon's Hidden Power Type 
+- HMs are now enabled at specific points in the story when your PokéHelper is upgraded, and you do not require a Pokémon to know the move. 
+- Rare Candies are now re-usable.
+- Unusual Candy is a new item that edges your Pokémon to 1 exp of the next level. Reusable.
+- Stress Tester is a new item that reduces the holder's HP to 1 at the start of battle against a Wild Pokémon. It also guarantees escape from battle. 
+- +1 Soda and +5 Soda are items found in any PokéMart that heal for 1 and 5 HP respectively. Use this in combination with Stress Tester to predamage.
+- You can press R in the Pokémon Summary to view IVs and EVs. 
+- A Psychic in each Pokémon Center will tell you your Pokémon's Hidden Power Type 
 
-Bug Reports, resources, discussion, and a forum to provide feedback can be found on the **[Cascade White Discord](https://discord.gg/DTQmDVUPgu)**.
+Bug Reports, resources, discussion, and a forum to provide feedback can be found on the Cascade White Discord (https://discord.gg/DTQmDVUPgu).
 
 
 
 # Cheren Split (Level Cap 15)
 ## Aspertia City 
 Pokémarts sell the following items: 
-    - Pokéball 
-    - Max Potion 
-    - Full Heal 
-    - +1 Soda (heals Pokémon for 1 health)
-    - +5 Soda (heals Pokémon for 1 health)
+- Pokéball 
+- Max Potion 
+- Full Heal 
+- +1 Soda (heals Pokémon for 1 health)
+- +5 Soda (heals Pokémon for 1 health)
 
 Item: Super Rod (given by Clerk when heading to Route 19)
 Item: Pokéball x15 (given by Bianca in the Pokémon Center)
@@ -102,15 +102,15 @@ This is a new encounter in the Aspertia Pokémon Center! It's a unique met locat
 
 ## Route 19 
 Item: Rare Candies (given by Bianca)
-    - Reusable
+- Reusable
 
 Item: Unusual Candies (given by Bianca)
-    - The unusual candy edges your Pokémon within 1 exp of the next level!
-    - Reusable
+- The unusual candy edges your Pokémon within 1 exp of the next level!
+- Reusable
 
 Item: Stress Tester (East side of route)
-      - This item reduces the holder's HP to 1 at the start of battle against a Wild Pokémon.
-    - Very useful for predamaging!
+- This item reduces the holder's HP to 1 at the start of battle against a Wild Pokémon.
+- Very useful for predamaging!
 
 !enc 128
 
@@ -122,9 +122,9 @@ Item: Exp Share (given by Professor Juniper along with the gift Pokémon)
 
 ### Juniper Gift Pokémon 
 Speak to professor Juniper to receive a Pokémon depending on your starter: 
-    - Wingull (if you chose Snivy)
-    - Numel (if you chose Oshawott)
-    - Shroomish (if you chose Tepig)
+- Wingull (if you chose Snivy)
+- Numel (if you chose Oshawott)
+- Shroomish (if you chose Tepig)
 She will also gift you an Exp. Share!
 
 
@@ -211,7 +211,7 @@ You can get an encounter after defeating the School Children.
 Brock is an optional mini-boss that can only be fought before defeating Cheren. 
 This content is locked off afterwards. 
 
-Item: x5 Berry Juice (reward for defeating Brock)
+Item: x10 Berry Juice (reward for defeating Brock)
 Item: TM94 Rock Smash (reward for defeating Brock)
 
 !tr 764/14
@@ -225,6 +225,29 @@ Item: TM94 Rock Smash (reward for defeating Brock)
 Item: 2x White Herb (speak to the School Kid inside the Gym)
 Item: 3x Chilan Berries (given by Gym Guide upon entering)
 Item: TM67 Secret Power (reward for defeating Cheren)
+
+### Trade Encounter
+A Blueberry Academy representative in the classroom will offer to trade any of the player's pokemon. In exchange, the player receives a random starter of the type strong against their own. This trade can ONLY be done before defeating Cheren!
+
+If you choose Snivy 
+- Charmander 
+- Cyndaquil 
+- Torchic 
+- Chimchar 
+
+If you chose Tepig 
+- Squirtle
+- Totodile
+- Mudkip 
+- Piplup 
+
+If you chose Oshawott 
+- Bulbasaur 
+- Chikorita 
+- Treecko 
+- Turtwig
+
+
 
 !trm 171/13
 !trm 172/13
@@ -279,10 +302,10 @@ After defeating Hugh, you gain the ability to Fast Travel using your PokéHelper
 
 ## Virbank City 
 The Virbank City Shop has the following new items for sale:
-    - Lagging Tail 
-    - Flame Orb 
-    - Toxic Orb 
-    - Oran Berries 
+- Lagging Tail 
+- Flame Orb 
+- Toxic Orb 
+- Oran Berries 
 
 Item: Poison Barb (found in front of the gym)
 Item: TM04 Shock Wave (reward for defeating Scientist)
@@ -378,16 +401,16 @@ Item: TM65 Shadow Claw
 There are a number of items you can collect upon arriving at Castelia City.
 
 The Castelia Mart has the following items: 
-    - Cheri Berries
-    - Pecha Berries 
-    - Aspear Berries 
-    - Persim Berries 
-    - Chesto Berries 
-    - Leppa Berries 
-    - King's Rock 
-    - Muscle Band 
-    - Wiseglasses 
-    - Berry Juice 
+- Cheri Berries
+- Pecha Berries 
+- Aspear Berries 
+- Persim Berries 
+- Chesto Berries 
+- Leppa Berries 
+- King's Rock 
+- Muscle Band 
+- Wiseglasses 
+- Berry Juice 
 
 Item: Eviolite (Can be acquired by visiting the Battle Company. No trainers needed to be fought)
 
@@ -482,18 +505,18 @@ Item: Light Ball (found by Clerk Britney)
 
 If you defeat all the trainers in the Company before defeating Burgh, you receive a gift encounter.
 This egg is one of the following Pokémon: 
-      - Alomomola
-      - Carnivine 
-      - Miltank
-      - Farfetch'd
-      - Tropius
-      - Dunsparce 
-      - Cryogonal 
-      - Emolga 
-      - Tauros
-      - Kecleon
-      - Pinsir 
-      - Heracross 
+  - Alomomola
+  - Carnivine 
+  - Miltank
+  - Farfetch'd
+  - Tropius
+  - Dunsparce 
+  - Cryogonal 
+  - Emolga 
+  - Tauros
+  - Kecleon
+  - Pinsir 
+  - Heracross 
 
 !tr 501/28 Rewards Zoom Lens 
 !tr 691/28 Rewards Mental Herbs (x5)
@@ -542,13 +565,13 @@ Item: TM81 X Scissor (reward for beating Burgh)
 
 # Elesa Split (Level Cap 41, Optional Level Cap 37 for Benga)
 Any Pokémart now has the following items: 
-    - Cheri Berries
-    - Pecha Berries 
-    - Aspear Berries 
-    - Persim Berries 
-    - Chesto Berries 
-    - Leppa Berries 
-    - Berry Juice 
+- Cheri Berries
+- Pecha Berries 
+- Aspear Berries 
+- Persim Berries 
+- Chesto Berries 
+- Leppa Berries 
+- Berry Juice 
 
 ## Route 4 
 Item: Safety Goggles (reward from Colress)
@@ -796,6 +819,8 @@ Item: TM73 Thunder Wave (reward for defeating Elesa)
 # Clay Split (Level Cap 46, Optional Level Cap 44 for Rood)
 
 ### Nimbasa City Grunts 
+#### NOTE: "Proto" Items are dangerous devices designed by colress that boost a Pokemon's stats on switch in at the cost of their accuracy. Be careful!
+
 !trm 359/40 (First Fight of Back-to-Back)
 !trm 751/40 (Second Fight of Back-to-Back) 
 
@@ -924,6 +949,9 @@ Item: HM04 Strength (reward for defeating Clay)
 Note: The move tutor for Blast Burn, Frenzy Plant, Hydro Cannon has been removed. 
 Note: The Move Reminder is here!
 Item: Rocky Helmet (found near entrance)
+Item: 5x Heart Scales can be found by the Move Reminder.
+
+### NOTE: "Proto" Items are dangerous devices designed by colress that boost a Pokemon's stats on switch in at the cost of their accuracy. Be careful!
 
 ### Colress 
 !trm 739/48 Rewards 1x Proto Booster
@@ -977,6 +1005,8 @@ This content is locked off afterwards.
 
 
 ## Plasma Frigate 
+#### NOTE: "Proto" Items are dangerous devices designed by colress that boost a Pokemon's stats on switch in at the cost of their accuracy. Be careful!
+
 ### Back to Back
 !trm 372/46 First Fight of Back to Back 
 !trm 374/46 Second Fight of Back to Back 
@@ -1006,13 +1036,18 @@ Item: TM57 Weather Ball (past the Scientist Tag Battle)
 
 !trm 215/48 
 
-!trm 268/48 (guards weather institute)
+!trm 268/48
 
-### Weather Institute 
+### Season Research Lab
 Item: Receive the HM for Surf here 
-Note: This is a new encounter location!
+
+Note: This is a new encounter location, but you must defeat Ranger Audra to access the tiles with encounters at the back of the room.
+
+### Ranger Audra (Research Lab gatekeeper)
+!tr 410
 
 !enc 88 
+
 
 !trm 263/48 Left Side 
 !trm 264/48 Right Side 
@@ -1087,7 +1122,7 @@ There are several crossroads where you can choose one of two trainers to fight t
 
 ### FIELD EFFECT: In Chargestone Cave, Ground types only resist Electric moves.
 
-Item: Heart Scale (found at the entrance)
+Item: Heart Scale x2 (found at the entrance)
 
 !enc 20 
 
@@ -1135,7 +1170,7 @@ Item: x3 Electric Gem (reward for beating Volkner)
 !tr 493/52 Optional, can only be fought within the gauntlet 
 ### Fight #4
 !trm 593/51
-#### End of Gauntlet
+### End of Gauntlet
 
 Item: TM21 Aurora Beam (past Ace Trainer Lydon)
 Item: TM77 Bug Buzz (past Ace Trainer Mary)

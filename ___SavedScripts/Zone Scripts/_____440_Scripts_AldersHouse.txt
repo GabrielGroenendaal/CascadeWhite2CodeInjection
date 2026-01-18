@@ -33,7 +33,7 @@ public class MainEvents {
 
 	public static void main_3() { // @ 0x59
 		int v36;
-
+		int dummy;
 		Actor.PauseAll();
 		ActionSequence_02dc(2);
 		ActionSequence_02ec(255);
@@ -88,7 +88,7 @@ public class MainEvents {
 		Actor.WaitActionFinish();
 		Sound.SEPlay(1391);
 		Sound.SEWait();
-		PokeParty.RecoverAll();
+		dummy = PokeParty.GetEVTotal(0);
 		ActionSequence_0c8c(2);
 		ActionSequence_0c8c(255);
 		Actor.WalkRoute(0, 6, 9, 1, 8, 0);
@@ -129,7 +129,7 @@ public class MainEvents {
 		Message.CloseAll();
 		Sound.SEPlay(1391);
 		Sound.SEWait();
-		PokeParty.RecoverAll();
+		dummy = PokeParty.GetEVTotal(0);
 		Message.ActorEx(1024, 46, 2, 0, 0);
 		Input.LastKeyWait();
 		Message.CloseAll();

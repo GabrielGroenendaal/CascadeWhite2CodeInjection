@@ -144,6 +144,7 @@ const u16 nonStatusProtectMoves[4] = {
     MOVE559_BANEFUL_BUNKER,
     MOVE262_OBSTRUCT};
 
+
 #pragma endregion
 
 extern "C"
@@ -196,10 +197,19 @@ extern "C"
                 a1 == IT0541_AIR_BALLOON ||
                 a1 == IT0136_TRICKSTER_HERB ||
                 a1 == IT0230_FOCUS_BAND ||
+                a1 == IT0299_TERA_C_BAND ||
+                a1 == IT0288_STICKY_BARB || 
+                a1 == IT0273_FLAME_ORB || 
+                a1 == IT0272_TOXIC_ORB ||
                 a1 == IT0306_TERA_B_POLICY ||
                 a1 == IT0256_BLUNDER_POLICY ||
                 a1 == IT0305_TERA_W_POLICY ||
-                a1 == IT0302_TERA_SASH);
+                a1 == IT0302_TERA_SASH ||
+                a1 == IT0304_TERA_CLAW || 
+                a1 == IT0217_QUICK_CLAW || 
+                a1 == IT0281_BLACK_SLUDGE || 
+                a1 == IT0234_LEFTOVERS || 
+                a1 == IT0311_TERA_LEFTOVERS || a1 == IT0255_ATTACK_INSURANCE || a1 == IT0309_TERA_INSURANCE);
     }
 
 
@@ -4355,6 +4365,9 @@ extern "C" void findBattleMon(BtlvCore *a1, PokeParty *a2, int clientId)
         {
             if (party.mons[j]->partySrc->Base.pid == a2->Pokemon[j].Base.pid)
             {
+                #if DEBUGGING_ENCOUNTERS 
+                    k::Printf("Found BattleMon PID: %08X\n", a2->Pokemon[j].Base.pid);
+                #endif 
                 a2->Pokemon[j].field_D8 = 2;
             }
         }
@@ -4572,12 +4585,12 @@ extern "C" void THUMB_BRANCH_SAFESTACK_PokeList_LoadPokeData(PokeListMain *a1, P
                     if (v9->MoveID)
                     {
                         v9->CurrentPP = PokeParty_GetParam(a3->partyPkm, (PkmField)(i + 58), 0);
-                        v9->MaxPP = PokeParty_GetParam(a3->partyPkm, (PkmField)(i + 62), 0);
-                        v9->MaxPP = PML_MoveGetMaxPP(v9->MoveID, v9->MaxPP);
-                        if (isEnemy)
-                        {
-                            v9->MaxPP = PML_MoveGetParam(v9->MoveID, MVDATA_BASEPP);
-                        }
+                        v9->MaxPP = PML_MoveGetParam(PokeParty_GetParam(a3->partyPkm, (PkmField)(i + 54), 0), MVDATA_BASEPP) + ((a2->field_D8 == 2) ? 0 : 3);
+                        // v9->MaxPP = PML_MoveGetMaxPP(v9->MoveID, v9->MaxPP) + 3;
+                        // if (isEnemy)
+                        // {
+                        //     v9->MaxPP = PML_MoveGetParam(v9->MoveID, MVDATA_BASEPP);
+                        // }
                         v9->Type = PML_MoveGetParam(v9->MoveID, MVDATA_TYPE);
                         v9->Category = PML_MoveGetParam(v9->MoveID, MVDATA_CATEGORY);
                         if (PML_MoveIsAlwaysHit(v9->MoveID))

@@ -75,9 +75,25 @@ checkPowderImmunity:
 
 checkPowderImmunity2:
 	GetHeldItem(defender)
-	JumpIfStoredNE(item.safety_goggles, &checkSoundImmunity)
+	JumpIfStoredNE(item.safety_goggles, &checkPowderImmunity3)
 	JumpIfMoveEQ(move.sleep_powder, &deprioritizeBy10)
 	JumpIfMoveEQ(move.poison_powder, &deprioritizeBy10)
+	JumpIfMoveEQ(move.stun_spore, &deprioritizeBy10)
+	JumpIfMoveEQ(move.spore, &deprioritizeBy10)
+	JumpIfMoveEQ(move.cotton_spore, &deprioritizeBy10)
+	JumpIfMoveEQ(move.rage_powder, &deprioritizeBy10)
+
+checkPowderImmunity3:
+	GetAbilityGuess(defender)
+	JumpIfStoredNE(ability.sap_sipper, &checkSoundImmunity)
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.mold_breaker, &checkSoundImmunity)
+	JumpIfStoredEQ(ability.turboblaze, &checkSoundImmunity)
+	JumpIfStoredEQ(ability.teravolt, &checkSoundImmunity)
+	GetHeldItem(attacker)
+	JumpIfStoredNE(item.ability_drill, &checkSoundImmunity)
+	JumpIfStoredNE(item.tera_drill, &checkPowderImmunity2)
+	JumpIfMoveEQ(move.sleep_powder, &deprioritizeBy10)
 	JumpIfMoveEQ(move.stun_spore, &deprioritizeBy10)
 	JumpIfMoveEQ(move.spore, &deprioritizeBy10)
 	JumpIfMoveEQ(move.cotton_spore, &deprioritizeBy10)

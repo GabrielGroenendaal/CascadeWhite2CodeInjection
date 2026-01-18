@@ -218,6 +218,7 @@ public class MainEvents {
 		EventWorks.Set(16585, 1);
 		EventWorks.Set(16586, 1);
 		EventFlags.Set(962);
+		EventFlags.Set(515);
 		Base.CMD_262(2, 5);
 		Base.CMD_262(1, 17);
 		Runtime.FinishSubEvents();

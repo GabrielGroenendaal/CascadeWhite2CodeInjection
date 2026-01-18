@@ -55,7 +55,6 @@ public class MainEvents {
 			goto LABEL_0176;
 		}
 		sub_017c();
-		clearGatekeepers();
 		goto LABEL_0176;
 
 		LABEL_0166:
@@ -134,6 +133,7 @@ public class MainEvents {
 		Message.CloseActor();
 		TrainerCard.SaveGymVictoryParty(2);
 		TrainerCard.AddBadge(2);
+		clearGatekeepers();
 		WordSet.LoadPlayerName(0);
 		Sound.MEPlay(1306);
 		v34 = 0;
@@ -165,10 +165,20 @@ public class MainEvents {
 	}
 
 	static void clearGatekeepers(){
-		if (EventFlags.Get(1696)) {
+		// Nursery Aide Kimya 
+		if (EventFlags.Get(1520 + 176)) {
 			EventFlags.Set(1696);
 		}
-		if (EventFlags.Get(2258)){
+		// Youngster Keita 
+		if (EventFlags.Get(1520 + 645)) {
+			EventFlags.Set(1520 + 645);
+		}
+		// Scientist Bryce 
+		if (EventFlags.Get(1520 + 555)) {
+			EventFlags.Set(1520 + 555);
+		}
+		// Lass Daya 
+		if (EventFlags.Get(1520 + 738)){
 			EventFlags.Set(2258);
 		}
 	}

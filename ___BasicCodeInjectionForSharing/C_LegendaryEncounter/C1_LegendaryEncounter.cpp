@@ -1,15 +1,22 @@
 #include "swantypes.h"
 #include "kPrint.h"
-
+#include "values.h"
 #define _BYTE unsigned char
 #define _WORD unsigned short
 #define _DWORD unsigned int
 #define _QWORD unsigned long
 
-
 // Uses esdb_newBattle.yml
 
-
+/*
+    491 - Cobalion
+    508 - Terrakion
+    507 - Virizion
+    509 - Keldeo
+    506 - Victini
+    674 - Kyurem
+    675 - Kyurem White
+*/
 bool IsEqual(int a1, int a2)
 {
     char *c1 = (char *)&a1;
@@ -866,7 +873,7 @@ extern "C"
         ----------------------------------- SWITCH IN  TEXT LOGIC  ---------------------------------------
         --------------------------------------------------------------------------------------------------
 
-        Determines what text shows up as battles begin and Pokemon enter battle. 
+        Determines what text shows up as battles begin and Pokemon enter battle.
         Text is stored in file 19.
     */
 
@@ -935,13 +942,39 @@ extern "C"
                 trainerClass = a2->mainModule->btlSetup->TrainerSetups[1]->TrClass;
 
                 // Guardians of Unova and Gym Leaders
-                if (trainerId == 491 || trainerId == 507 || trainerId == 508 || trainerId == 509 || trainerClass == 116 || trainerClass == 115 || trainerClass == 113 || trainerClass == 112 || trainerClass == 117 || trainerClass == 115 || trainerClass == 159 || trainerClass == 193 || trainerClass == 80 || trainerClass == 78 || trainerClass == 79 || trainerClass == 81)
+                if (trainerId == VICTINI_ID ||
+                    trainerId == COBALION_ID ||
+                    trainerId == VIRIZION_ID ||
+                    trainerId == TERRAKION_ID ||
+                    trainerId == KELDEO_ID ||
+                    (trainerClass >= 112 && trainerClass <= 126) ||
+                    trainerClass == 135 ||
+                    trainerClass == 89 ||
+                    trainerClass == 193 ||
+                    trainerClass == 159 ||
+                    (trainerClass >= 78 && trainerClass <= 81) ||
+                    trainerClass == 19)
                 {
                     sub_21D4F00(a2->strbuf1, 232, 1u, v4->ClientID, v16);
                 }
                 // Strange Statue
-                else if (trainerId == 634){
+                else if (trainerId == 634)
+                {
                     sub_21D4F00(a2->strbuf1, 233, 1u, v4->ClientID, v16);
+                }
+                // Evil Kyurem- White
+                else if (trainerId == KYUREM_WHITE_ID)
+                {
+                    sub_21D4F00(a2->strbuf1, 251, 1u, v4->ClientID, v16);
+                }
+                else if (trainerId == PLASMA_HORDE_1 || trainerId == PLASMA_HORDE_2 || trainerId == PLASMA_HORDE_3){
+                    sub_21D4F00(a2->strbuf1, 252, 1u, v4->ClientID, v16);
+                }
+                else if (trainerClass == 192){
+                    sub_21D4F00(a2->strbuf1, 254, 1u, v4->ClientID, v16);
+                }
+                else if (trainerId == 676 || trainerId == 677 || trainerId == 678){
+                    sub_21D4F00(a2->strbuf1, 253, 1u, v4->ClientID, v16);
                 }
                 else
                 {
@@ -989,8 +1022,15 @@ extern "C"
                     check = 231;
                 }
                 // Strange Statue
-                else if (trainerId == 634){
+                else if (trainerId == 634)
+                {
                     check = 234;
+                }
+                else if (trainerId == KYUREM_WHITE_ID){
+                    check = 244;
+                }
+                else if (trainerId == VICTINI_ID){
+                    check = 245;
                 }
                 else
                 {
@@ -1015,9 +1055,12 @@ extern "C"
                 trainerClass = a2->mainModule->btlSetup->TrainerSetups[1]->TrClass;
                 // k::Printf("\n\nsub_21 TrainerId is %d and TrainerClass is %d\n", trainerId, trainerClass);
 
-                if ((trainerId == 491 || trainerId == 507 || trainerId == 508 || trainerId == 509 || trainerId == 634) && BattleMon_GetID(ViewSrcData) >=6){
+                if ((trainerId == VICTINI_ID || trainerId == KYUREM_WHITE_ID || trainerId == 491 || trainerId == 507 || trainerId == 508 || trainerId == 509 || trainerId == 634) && BattleMon_GetID(ViewSrcData) >= 6)
+                {
                     check = 676;
-                } else {
+                }
+                else
+                {
                     check = 569;
                 }
 
@@ -1101,6 +1144,4 @@ extern "C"
         }
         return 0;
     }
-
-   
 }

@@ -97,12 +97,12 @@ void Sequence7()
 	End();
 }
 
-/* Berry Juice x5 - Pledge Grove */
+/* Berry Juice x10 - Pledge Grove */
 void Sequence8()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 43);
-	SetVarEqVal(0x800D, 5);
+	SetVarEqVal(0x800D, 10);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -181,12 +181,12 @@ void Sequence14()
 	End();
 }
 
-/* TM59: Incinerate - Flocessy Ranch*/
+/* White Herb x2 - Flocessy Ranch*/
 void Sequence15()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 386);
-	SetVarEqVal(0x800D, 1);
+	SetVarEqVal(0x800C, 214);
+	SetVarEqVal(0x800D, 2);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -205,12 +205,12 @@ void Sequence16()
 	End();
 }
 
-/* TM88 Pluck - Virbank Complex (Outside)*/
+/* Trickster Herb (x2) - Virbank Complex (Outside)*/
 void Sequence17()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 415);
-	SetVarEqVal(0x800D, 1);
+	SetVarEqVal(0x800C, 136);
+	SetVarEqVal(0x800D, 2);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -255,12 +255,12 @@ void Sequence20()
 	End();
 }
 
-/* TM95: Snarl - Virbank Complex (Inside) */
+/* Green Shard (x15) - Virbank Complex (Inside) */
 void Sequence21()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 620);
-	SetVarEqVal(0x800D, 1);
+	SetVarEqVal(0x800C, 75);
+	SetVarEqVal(0x800D, 15);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -272,7 +272,7 @@ void Sequence22()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 93);
-	SetVarEqVal(0x800D, 1);
+	SetVarEqVal(0x800D, 2);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -303,10 +303,11 @@ void Sequence24()
 	End();
 }
 
+/* TM47: Low Sweep - Virbank Complex (Inside) */
 void Sequence25()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 28);
+	SetVarEqVal(0x800C, 374);
 	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
@@ -852,7 +853,7 @@ void Sequence71()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 93);
-	SetVarEqVal(0x800D, 1);
+	SetVarEqVal(0x800D, 5);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -3440,7 +3441,7 @@ void Sequence303()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 93);
-	SetVarEqVal(0x800D, 1);
+	SetVarEqVal(0x800D, 2);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();

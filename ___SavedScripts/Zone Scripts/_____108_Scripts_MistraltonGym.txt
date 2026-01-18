@@ -243,10 +243,45 @@ public class MainEvents {
 		Trainer.FlagGet(152);
 		Trainer.FlagGet(332);
 		EventFlags.Set(2419);
+		clearGatekeepers();
+		
 		EventWorks.Set(16577, 1);
+		
 		EventWorks.Set(16578, EventWorks.Get(16578) + 1);
 	}
-
+	
+	static void clearGatekeepers(){
+		// Cobalion Disable
+		EventFlags.Set(923);
+		// Clears Roods first position
+		if (!EventFlags.Get(520)){
+			EventFlags.Set(520);
+		}
+		// Clears Roods second position
+		if (!EventFlags.Get(517)){
+			EventFlags.Set(517);
+		}
+		// Clears the Event Flag Tracking
+		if (EventWorks.Get(16450) < 7){
+			EventWorks.Set(16450, 7);
+		}
+		// Worker Victor
+		if (!EventFlags.Get(1520 + 527)){
+			EventFlags.Set(1520 + 527);
+		}
+		// Dancer Brian
+		if (!EventFlags.Get(1520 + 255)){
+			EventFlags.Set(1520 + 255);
+		}
+		// Musician Preston
+		if (!EventFlags.Get(1520 + 256)){
+			EventFlags.Set(1520 + 256);
+		}
+		// Backers Ava and Aya
+		if (!EventFlags.Get(1520 + 252)){
+			EventFlags.Set(1520 + 252);
+		}
+	}
 	static void sub_034c() { // @ 0x34c
 		EVCamera.Init();
 		EVCamera.Unbind();

@@ -39,7 +39,7 @@ public class MainEvents {
 		int v18;
 		int v0;
 		
-		if (EventWorks.Get(16452) == 1){
+		if (EventWorks.Get(16449) == 1){
 			goto Label_ResetGauntlet;
 		} 
 		Actor.PauseAll();
@@ -161,7 +161,7 @@ public class MainEvents {
 		Actor.Hide(0);
 		Field.PlayMapBGM();
 		EventFlags.Set(518);
-		EventWorks.Set(16452, 1);
+		EventWorks.Set(16449, 1);
 		Runtime.FinishSubEvents();
 		Actor.UnpauseAll();
 

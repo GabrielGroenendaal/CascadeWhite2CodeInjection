@@ -688,12 +688,9 @@ public class MainEvents {
 		Base.CMD_25F(0);
 		EventFlags.Set(2417);
 		EventFlags.Set(264);
-		EventFlags.Set(528);
-		if (EventWorks.Get(16526) == 0){
-			EventWorks.Set(16526, 1);
-		}
 		EventWorks.Set(16540, 1);
 		EventWorks.Set(16576, 1);
+		clearGatekeepers();
 		EventFlags.Clear(761);
 		EventFlags.Clear(762);
 		Base.CMD_262(1, 6);
@@ -871,23 +868,39 @@ public class MainEvents {
 	}
 
 	static void clearGatekeepers(){
-		if (EventFlags.Get(1986)) {
-			EventFlags.Set(1986);
+		// Clears Lenora 
+		EventFlags.Set(528);
+		if (EventWorks.Get(16526) == 0){
+			EventWorks.Set(16526, 1);
 		}
-		if (EventFlags.Get(1982)){
-			EventFlags.Set(1982);
+
+		// Fisherman Hubert
+		if (!EventFlags.Get(1520 + 210)){
+			EventFlags.Set(1730);
 		}
-		if (EventFlags.Get(2088)){
-			EventFlags.Set(2088);
-		}
-		if (EventFlags.Get(2087)){
-			EventFlags.Set(2087);
-		}
-		if (EventFlags.Get(1731)){
+		// Fisherman Andrew
+		if (!EventFlags.Get(1520 + 211)){
 			EventFlags.Set(1731);
 		}
-		if (EventFlags.Get(1730)){
-			EventFlags.Set(1730);
+		// Janitor Brady
+		if (!EventFlags.Get(1520 + 462)){
+			EventFlags.Set(1982);
+		}
+		// Worker Scott
+		if (!EventFlags.Get(1520 + 466)) {
+			EventFlags.Set(1986);
+		}
+		// Backapcker Randall
+		if (!EventFlags.Get(1520 + 563)){
+			EventFlags.Set(2083);
+		}
+		// Scientist Terrance
+		if (!EventFlags.Get(1520 + 567)){
+			EventFlags.Set(2087);
+		}
+		// Scientist Lumina
+		if (!EventFlags.Get(1520 + 568)){
+			EventFlags.Set(2088);
 		}
 	}
 

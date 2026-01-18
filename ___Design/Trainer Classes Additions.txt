@@ -1,0 +1,65 @@
+=
+/*
+    491 - Cobalion
+    508 - Terrakion
+    507 - Virizion
+    509 - Keldeo
+    506 - Victini
+    674 - Kyurem 
+    675 - Kyurem White
+*/
+
+	0/7/1 (Front Trainer Sprites)
+		Future Being: (232)
+			1488 - 1495
+		
+		Divine Maid (220) = Virizion
+			1424 - 1431
+		
+		UFO (213) = Terrakion
+			1368 - 1375
+		
+		Red Fog (215) = Keldeo
+			1384 - 1391
+
+		Claire (134) - Victini
+			928 - 935
+
+		Juan (144) - Kyurem
+			1008
+
+		Chuck (131) - Kyurem-White
+			904
+		
+
+	0/0/4 (Pokemon Sprites)
+		Cobalion
+			12760
+		
+		Virizion
+			12800
+		Terrakion
+			12780
+Kelde
+
+
+We can maybe use 225/226 for Victini and Kyurem-W. 
+
+Worst case scenario, we can axe Juan and Clair who i am 100% sure we won't use. 
+
+
+
+383 / 485 (Text Narcs to Modify)
+382 trainer names 
+676
+677
+678
+
+
+
+in 0/7/2 
+	16-23: Chili
+	23-31: Cilan 
+	32-39: Cress 
+
+We can simply overwrite these for back sprites. We will need to figure out where the back 

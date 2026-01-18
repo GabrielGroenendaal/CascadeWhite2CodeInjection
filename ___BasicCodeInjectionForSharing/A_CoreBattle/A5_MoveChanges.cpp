@@ -778,7 +778,7 @@ extern "C"
             }
             else if (BattleEventVar_GetValue(VAR_MOVE_ID) == MOVE112_BARRIER)
             {
-                messageId = 1291;
+                messageId = 1309;
             }
             else
             {
@@ -2232,13 +2232,13 @@ extern "C"
         return 0;
     };
 
-    int THUMB_BRANCH_AddConditionCheckFailOverwrite(ServerFlow *a1, BattleMon *a2, MoveCondition a3, int a4, char a5)
+    int THUMB_BRANCH_SAFESTACK_AddConditionCheckFailOverwrite(ServerFlow *a1, BattleMon *a2, MoveCondition a3, int a4, char a5)
     {
         int PokeType; // r6
         int v10;      // r0
         int v11;      // r0
         int v12;      // r0
-
+        // k::Printf("\nCondition ID = %d, newMoveCondition = %d, BattleMon_CheckIfMoveCondition = %d, a5 = %d, BattleMon_GetStatus = %d\n", a3, a5, BattleMon_CheckIfMoveCondition(a2, a3), a5, BattleMon_GetStatus(a2));
         if (BattleMon_CheckIfMoveCondition(a2, a3) && a5 != 2)
         {
             return 1;

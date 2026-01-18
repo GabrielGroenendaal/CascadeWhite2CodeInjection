@@ -1,8 +1,12 @@
 import messages.script.Msg0170.MSGID;
 
+import event.Battle;
+import event.FieldTrade;
 import event.actors.Actor;
+import event.app.PokeApp;
 import event.dialogs.ListMenu;
 import event.dialogs.Message;
+import event.dialogs.YesNoWin;
 import player.TrainerCard;
 import pokescript.vm.Math;
 import pokescript.vm.StackCtrl;
@@ -12,6 +16,7 @@ import system.EventWorks;
 import system.Input;
 import system.Runtime;
 import system.Sound;
+import system.System;
 import system.text.WordSet;
 
 public class MainEvents {
@@ -52,23 +57,57 @@ public class MainEvents {
 	}
 
 	public static void main_4() { // @ 0x88
-        	int v0;
+       	int v0;
 		int v1;
 		int v2;
 		int v3;
 		int v4;
 		int v5;
 		int v6;
+		int yesNo;
 
 		Actor.PauseAll();
-		v0 = 214;
-		v1 = 3;
-		v2 = 269;
-		v3 = 1;
-		v4 = 2;
-		v5 = 2;
-		v6 = Runtime.GetTextFile();
-		Global2800(v0, v1, v2, v3, v4, v5, v6);
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+
+		if (TrainerCard.HasBadge(0) || EventFlags.Get(542)){
+			Message.Actor(1024, 4, 0, 0);
+			Input.LastKeyWait();
+			Message.CloseActor();
+			goto LABEL_EndBerryScript;
+		}
+		Message.Actor(1024, 42, 0, 0);
+		Input.LastKeyWait();
+		yesNo = YesNoWin.Show();
+		Message.CloseAll();
+		if (yesNo != 0){
+			Message.Actor(1024, 43, 0, 0);
+			Input.LastKeyWait();
+			Message.CloseActor();
+			goto LABEL_EndBerryScript;
+		}
+
+		Message.Actor(1024, 44, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+
+		Battle.CallTrainerBattle(633, 0, 0);
+		Battle.EndTrainerBattle();
+		v0 = Battle.IsTrainerVictory();
+		if (v0 != 1) {
+			Battle.CallTrainerLose();
+		}
+		Message.Actor(1024, 1, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Global2805(211, 3);
+		Global2805(212, 3);
+		Message.Actor(1024, 2, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		EventFlags.Set(542);
+
+		LABEL_EndBerryScript:
 		Runtime.FinishSubEvents();
 		Actor.UnpauseAll();
 	}
@@ -190,6 +229,99 @@ public class MainEvents {
 		Runtime.FinishSubEvents();
 		Actor.UnpauseAll();
 	}
+
+	public static void main_9() { // The trades
+		int v16;
+		int v32;
+		int v33;
+		int v34;
+		int starterFlag;
+		int yesNo;
+		int randomNo;
+		
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		starterFlag = EventWorks.Get(16432);
+		
+		if (TrainerCard.HasBadge(0)){ // You have defeated Cheren
+			if (EventFlags.Get(541)){ // You already received a gift Pokemon
+				Message.Actor(1024, (36 + starterFlag), 0, 0);
+				Input.LastKeyWait();
+				Message.CloseActor();
+				goto LABEL_EndGiftScript;
+			} else {                 // You did not receive a gift Pokemon
+				Message.Actor(1024, 35, 0, 0);
+				Input.LastKeyWait();
+				Message.CloseActor();
+				goto LABEL_EndGiftScript;
+			}
+		}
+		if (!EventFlags.Get(540)) { // You have not yet spoken with this NPC
+			Message.Actor(1024, (23 + starterFlag), 0, 0);
+			Input.LastKeyWait();
+			Message.CloseAll();
+			EventFlags.Set(540);
+			goto LABEL_AcceptGiftPokemon;
+		} else {
+			if (EventFlags.Get(541)){
+				Message.Actor(1024, (36 + starterFlag), 0, 0);
+				Input.LastKeyWait();
+				Message.CloseAll();
+				goto LABEL_EndGiftScript;
+			} else {
+				Message.Actor(1024, (28 + starterFlag), 0, 0);
+				Input.LastKeyWait();
+				Message.CloseAll();
+				goto LABEL_AcceptGiftPokemon;
+			}
+		}
+
+		LABEL_AcceptGiftPokemon:
+		Message.System((39 + starterFlag), 0);
+		yesNo = YesNoWin.Show();
+		Message.CloseAll();
+		
+		if (yesNo != 0) { // The player selected no;
+			goto LABEL_RejectGift;
+		}
+		Message.Actor(1024, 27, 0, 0); 
+		Input.LastKeyWait();
+		Message.CloseAll();
+		v32 = 0;
+		v33 = 0;
+		PokeApp.CallPokeSelect(0, v33, v32, 0);
+		if (v33 != 1) {
+			goto LABEL_RejectGift;
+		}
+		Message.Actor(1024, 31, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseAll();
+		randomNo = System.Random(3);
+		FieldTrade.Start(((starterFlag * 4) + randomNo), v32);
+		Message.Actor(1024, (32 + starterFlag), 0, 0);
+		Input.LastKeyWait();
+		Message.CloseAll();
+		EventFlags.Set(541);
+		goto LABEL_EndGiftScript;
+
+		
+		LABEL_RejectGift:
+		Sound.SEPlay(1351);
+		Message.Actor(1024, 26, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		
+		LABEL_EndGiftScript:
+		v34 = 0;
+		v33 = 0;
+		v32 = 0;
+		starterFlag = 0;
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+
+	}
+	static meta void Global2805(int a1, int a2) : VGlobalCall[2805];
 
 	static meta void Global2800(int a1, int a2, int a3, int a4, int a5, int a6, int a7) : VGlobalCall[2800];
 }

@@ -415,6 +415,11 @@ extern "C"
     }
 #pragma end region
 #pragma region NewUIChanges
+
+bool THUMB_BRANCH_IsTrainerOT(BoxPkm *pPkm, void *pTrainerInfo)
+{
+  return 1;
+}
     // enum BottomScreenMenuState
     // {
     //     STATE_WAITING = 0x0,

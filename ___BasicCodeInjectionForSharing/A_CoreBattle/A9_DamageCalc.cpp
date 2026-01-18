@@ -3360,9 +3360,9 @@ enum ItemID
         {1, ABIL119_STAKEOUT, ABIL097_SNIPER, ABIL097_SNIPER},                 // PK290_NINCADA = 0x122,
         {1, ABIL119_STAKEOUT, ABIL097_SNIPER, ABIL097_SNIPER},                 // PK291_NINJASK = 0x123,
         {1, ABIL119_STAKEOUT, ABIL097_SNIPER, ABIL025_WONDER_GUARD},           // PK292_SHEDINJA = 0x124,
-        {1, ABIL141_MOODY, ABIL083_ANGER_POINT, ABIL083_ANGER_POINT},          // PK293_WHISMUR = 0x125,
-        {1, ABIL141_MOODY, ABIL083_ANGER_POINT, ABIL083_ANGER_POINT},          // PK294_LOUDRED = 0x126,
-        {1, ABIL141_MOODY, ABIL083_ANGER_POINT, ABIL083_ANGER_POINT},          // PK295_EXPLOUD = 0x127,
+        {1, ABIL141_MOODY, ABIL083_ANGER_POINT, ABIL113_SCRAPPY},          // PK293_WHISMUR = 0x125,
+        {1, ABIL141_MOODY, ABIL083_ANGER_POINT, ABIL113_SCRAPPY},          // PK294_LOUDRED = 0x126,
+        {1, ABIL141_MOODY, ABIL083_ANGER_POINT, ABIL113_SCRAPPY},          // PK295_EXPLOUD = 0x127,
         {1, ABIL113_SCRAPPY, ABIL113_SCRAPPY, ABIL113_SCRAPPY},                // PK296_MAKUHITA = 0x128,
         {1, ABIL113_SCRAPPY, ABIL113_SCRAPPY, ABIL113_SCRAPPY},                // PK297_HARIYAMA = 0x129,
         {0, ABIL001_STENCH, ABIL001_STENCH, ABIL001_STENCH},                   // PK298_AZURILL = 0x12A,
@@ -4228,7 +4228,7 @@ enum ItemID
 
 #pragma region ExpandedTrainerPokemon
     extern u32 __aeabi_idiv(s32 numer, s32 denom);
-
+    extern s32 mod32(s32 numer, s32 denom);
     u32 GetPPSetting()
     {
         EventWorkSave *eventWork = GameData_GetEventWork(GAME_DATA);
@@ -4236,13 +4236,13 @@ enum ItemID
         return *lvl_cap_ptr;
     }
 
-    void THUMB_BRANCH_TrainerUtil_SetupPkm(u16 trId, PartyPkm *pkm, u16 forme, u8 genderAndAbil)
+    void THUMB_BRANCH_SAFESTACK_TrainerUtil_SetupPkm(u16 trId, PartyPkm *pkm, u16 forme, u8 genderAndAbil)
     {
         u32 v5;           // r7
         int v6;           // r4
         PersonalField v7; // r6
         u32 ParamSingle;  // r0
-        u8 v9;            // r1
+        int v9;            // r1
         u32 data;         // [sp+0h] [bp-20h]
         u16 species;      // [sp+8h] [bp-18h]
         u32 movePP;
@@ -4252,30 +4252,12 @@ enum ItemID
         int v = 0x3A;
         species = PokeParty_GetParam(pkm, PF_Species, 0);
 
-        // do
-        // {
-        //     /* Variance PP Setting Implementation */
-
-        //     // if (GetPPSetting())
-        //     // {
-        //     //     movePP = PokeParty_GetParam(pkm, (PkmField)(v6 + 58), 0);
-        //     //     if (movePP < 5)
-        //     //     {
-        //     //         PokeParty_SetParam(pkm, (PkmField)(v6 + 58), movePP + RandomInRange(1u, 2u));
-        //     //     }
-        //     //     else
-        //     //     {
-        //     //         PokeParty_SetParam(pkm, (PkmField)(v6 + 58), movePP + RandomInRange(1u, 4u));
-        //     //     }
-        //     // } else {
-        //     movePP = PokeParty_GetParam(pkm, (PkmField)(v6 + 58), 0);
-        //     if (PokeParty_GetParam(pkm, (PkmField)(v6 + 54), 0) != MOVE270_HELPING_HAND){
-        //         PokeParty_SetParam(pkm, (PkmField)(v6 + 58), movePP + 3u);
-        //     }
-        //     //}
-
-        //     ++v6;
-        // } while (v6 < 4);
+        do
+        {
+            movePP = PokeParty_GetParam(pkm, (PkmField)(v6 + 58), 0);
+            PokeParty_SetParam(pkm, (PkmField)(v6 + 58), movePP + 3u);
+            ++v6;
+        } while (v6 < 4);
 
         PokeParty_SetParam(pkm, PF_Happiness, v5);
         PokeParty_SetParam(pkm, PF_Forme, data);
@@ -4313,8 +4295,22 @@ enum ItemID
         }
 
         v9 = PokeParty_GetParam(pkm, PF_PID, 0);
-        // k::Printf("\nNature is %d\n\n", __aeabi_idiv((v9 & 0xFF), 25)); // , (v9 & 0xFF) % 25, v9 % 25);
-        PokeParty_SetNature(pkm, __aeabi_idiv((v9 & 0xFF), 25));
+        // // k::Printf("\nNature is %d\n\n", __aeabi_idiv((v9 & 0xFF), 25)); // , (v9 & 0xFF) % 25, v9 % 25);
+        // k::Printf("\n===TrainerUtil_SetupPkm===\nv9 = %d\nv9 >> 8 = %d\n(v9 >> 8) mod 25 = %d\nNature before = %d\npkm->base.pid = %d\n(pkm->base.pid >> 8) = %d\n(pkm->base.pid >> 8) mod 25 = %d\ntest is %d", 
+        //     v9, 
+        //     (v9 >> 8), 
+        //     __aeabi_idiv((v9 >> 8), 25),
+        //     PokeParty_GetParam(pkm, PF_Nature, 0),
+        //     pkm->Base.pid, 
+        //     (pkm->Base.pid >> 8), 
+        //     __aeabi_idiv((pkm->Base.pid >> 8), 25),
+        //     mod32((v9 >> 8), 25)
+        // );
+        // #if DEBUGGING_ALL 
+        //     k::Printf("\n===TrainerUtil_SetupPkm===Nature = %d output of the nature function is %d.  v9 is %d and v9 & 0xFF is %d", PokeParty_GetParam(pkm, PF_Nature, 0), __aeabi_idiv((v9 & 0xFF), 25), v9, (v9 & 0xFF));
+        // #endif
+        PokeParty_SetNature(pkm, mod32((v9 >> 8), 25));
+
     }
 
 #pragma endregion

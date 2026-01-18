@@ -1,12 +1,22 @@
 #include "newitems_support.h"
-
+#include "../A_CoreBattle/settings.h"
 #include "kPrint.h"
-
 extern u32 g_GameBeaconSys;
 STRUCT_DECLARE(GameData)
 #define GAME_DATA *(GameData **)(g_GameBeaconSys + 4)
 #define ARRAY_COUNT(arr) sizeof(arr) / sizeof(arr[0])
-
+extern "C" int SearchArray(const u16 *const arr, const u32 arrSize, const u32 value)
+{
+    for (u32 i = 0; i < arrSize; ++i)
+    {
+        if (arr[i] == value)
+        {
+            return 1;
+        }
+    }
+    return 0;
+}
+#define SEARCH_ARRAY(arr, value) SearchArray(arr, ARRAY_COUNT(arr), value)
 extern "C"
 {
 
@@ -18,43 +28,43 @@ extern "C"
         --------------------------------------------------------------------------------------------------
 
     */
-    void THUMB_BRANCH_sub_21AD5A0(void *a1, int a2, int a3)
-    {
-        ShopUIWork *v4;          // r5
-        int result;              // r0
-        unsigned int BlockWidth; // r6
-        GFLBitmap *Bitmap;       // r0
-        u32 Width;               // r7
-        GFLBitmap *v9;           // r0
-        unsigned int v10;        // r6
-        GFLBitmap *v11;          // r0
-        u32 v12;                 // r7
-        GFLBitmap *v13;          // r0
+    // void THUMB_BRANCH_sub_21AD5A0(void *a1, int a2, int a3)
+    // {
+    //     ShopUIWork *v4;          // r5
+    //     int result;              // r0
+    //     unsigned int BlockWidth; // r6
+    //     GFLBitmap *Bitmap;       // r0
+    //     u32 Width;               // r7
+    //     GFLBitmap *v9;           // r0
+    //     unsigned int v10;        // r6
+    //     GFLBitmap *v11;          // r0
+    //     u32 v12;                 // r7
+    //     GFLBitmap *v13;          // r0
 
-        v4 = sub_2026548(a1);
-        result = -2;
-        if (a2 != -2)
-        {
-            if (BagSave_CheckAmount(v4->Bag, v4->ItemInfo[a2].TagID, 1) && !PML_ItemIsTMHM(v4->ItemInfo[a2].TagID))
-            {
-                BlockWidth = GFL_FontGetBlockWidth(v4->NoneDispStr, v4->m_Font, 0);
-                Bitmap = BmpWin_GetBitmap((BmpWin *)v4->dword194);
-                Width = GFL_BitmapGetWidth(Bitmap);
-                v9 = BmpWin_GetBitmap((BmpWin *)v4->dword194);
-                sub_21AD4CC(v4->dword1D8, v9, Width - BlockWidth, a3, v4->NoneDispStr, v4->m_Font, 12704);
-            }
-            else
-            {
-                WordSetNumber(v4->WordSet, 1, v4->ItemInfo[a2].Price, 5u, 1u, 1);
-                GFL_WordSetFormatStrbuf(v4->WordSet, v4->StrBuff, v4->BalanceDispStr);
-                v10 = GFL_FontGetBlockWidth(v4->StrBuff, v4->m_Font, 0);
-                v11 = BmpWin_GetBitmap((BmpWin *)v4->dword194);
-                v12 = GFL_BitmapGetWidth(v11);
-                v13 = BmpWin_GetBitmap((BmpWin *)v4->dword194);
-                sub_21AD4CC(v4->dword1D8, v13, v12 - v10, a3, v4->StrBuff, v4->m_Font, 12704);
-            }
-        }
-    }
+    //     v4 = sub_2026548(a1);
+    //     result = -2;
+    //     if (a2 != -2)
+    //     {
+    //         if (BagSave_CheckAmount(v4->Bag, v4->ItemInfo[a2].TagID, 1) && !PML_ItemIsTMHM(v4->ItemInfo[a2].TagID))
+    //         {
+    //             BlockWidth = GFL_FontGetBlockWidth(v4->NoneDispStr, v4->m_Font, 0);
+    //             Bitmap = BmpWin_GetBitmap((BmpWin *)v4->dword194);
+    //             Width = GFL_BitmapGetWidth(Bitmap);
+    //             v9 = BmpWin_GetBitmap((BmpWin *)v4->dword194);
+    //             sub_21AD4CC(v4->dword1D8, v9, Width - BlockWidth, a3, v4->NoneDispStr, v4->m_Font, 12704);
+    //         }
+    //         else
+    //         {
+    //             WordSetNumber(v4->WordSet, 1, v4->ItemInfo[a2].Price, 5u, 1u, 1);
+    //             GFL_WordSetFormatStrbuf(v4->WordSet, v4->StrBuff, v4->BalanceDispStr);
+    //             v10 = GFL_FontGetBlockWidth(v4->StrBuff, v4->m_Font, 0);
+    //             v11 = BmpWin_GetBitmap((BmpWin *)v4->dword194);
+    //             v12 = GFL_BitmapGetWidth(v11);
+    //             v13 = BmpWin_GetBitmap((BmpWin *)v4->dword194);
+    //             sub_21AD4CC(v4->dword1D8, v13, v12 - v10, a3, v4->StrBuff, v4->m_Font, 12704);
+    //         }
+    //     }
+    // }
 
     /*
 
@@ -71,87 +81,88 @@ extern "C"
     extern void ShopUI_SetStatusDialogue(ShopUIWork *shop, int msgId, int currencyItemID, int plural);
     extern u32 div32(u32 numerator, u32 denominator);
 
-    u32 THUMB_BRANCH_sub_21AC110(ShopUIWork *shop)
-    {
-        u32 Balance;            // r6
-        bool ItemCountByID;     // r7
-        u32 result;             // r0
-        u32 PurchasedItemPrice; // r0
-        int v6;                 // r1
-        unsigned int v7;        // r0
+    // u32 THUMB_BRANCH_sub_21AC110(ShopUIWork *shop)
+    // {
+    //     u32 Balance;            // r6
+    //     bool ItemCountByID;     // r7
+    //     u32 result;             // r0
+    //     u32 PurchasedItemPrice; // r0
+    //     int v6;                 // r1
+    //     unsigned int v7;        // r0
 
-        Balance = ShopUI_GetBalance(shop);
-        ItemCountByID = BagSave_GetItemCountByID(shop->Bag, shop->PurchasingItemID);
-        if (BagSave_CheckAvailItemSpace(shop->Bag, shop->PurchasingItemID, 1u, shop->heapID))
-        {
-            PurchasedItemPrice = shop->PurchasedItemPrice;
-            if (Balance >= PurchasedItemPrice)
-            {
-                if (Balance >= 2 * PurchasedItemPrice)
-                {
-                    if (shop->SoldItemClass == 2)
-                    {
-                        ShopUI_SetBuyConfirmMessage(shop);
-                        shop->ShopUIState = 12;
-                        result = 6;
-                        shop->ABWaitNextState = 6;
-                    }
-                    else
-                    {
-                        ShopUI_SetStatusDialogue(shop, 4, shop->PurchasingItemID, 0);
-                        shop->ShopUIState = 12;
-                        shop->ABWaitNextState = 2;
-                        v7 = div32(Balance, shop->PurchasedItemPrice); // Balance / shop->PurchasedItemPrice;
-                        shop->PurchasingItemCount = v7;
-                        if (v7 > 0x63)
-                        {
-                            shop->PurchasingItemCount = 99;
-                        }
-                        result = 999;
-                        if (shop->PurchasingItemCount + ItemCountByID > result)
-                        {
-                            result = 999 - ItemCountByID;
-                            shop->PurchasingItemCount = result;
-                        }
-                    }
-                }
-                else
-                {
-                    ShopUI_SetBuyConfirmMessage(shop);
-                    shop->ShopUIState = 12;
-                    result = 5;
-                    shop->ABWaitNextState = 5;
-                }
-            }
-            else
-            {
-                if (shop->Currency)
-                {
-                    v6 = 16;
-                }
-                else
-                {
-                    v6 = 3;
-                }
-                ShopUI_SetStatusDialogue(shop, v6, shop->PurchasingItemID, 0);
-                shop->ShopUIState = 12;
-                result = 4;
-                shop->ABWaitNextState = 4;
-            }
-        }
-        else
-        {
-            ShopUI_SetStatusDialogue(shop, 10, shop->PurchasingItemID, 0);
-            shop->ShopUIState = 12;
-            result = 4;
-            shop->ABWaitNextState = 4;
-        }
-        return result;
-    }
+    //     Balance = ShopUI_GetBalance(shop);
+    //     ItemCountByID = BagSave_GetItemCountByID(shop->Bag, shop->PurchasingItemID);
+    //     if (BagSave_CheckAvailItemSpace(shop->Bag, shop->PurchasingItemID, 1u, shop->heapID))
+    //     {
+    //         PurchasedItemPrice = shop->PurchasedItemPrice;
+    //         if (Balance >= PurchasedItemPrice)
+    //         {
+    //             if (Balance >= 2 * PurchasedItemPrice)
+    //             {
+    //                 if (shop->SoldItemClass == 2)
+    //                 {
+    //                     ShopUI_SetBuyConfirmMessage(shop);
+    //                     shop->ShopUIState = 12;
+    //                     result = 6;
+    //                     shop->ABWaitNextState = 6;
+    //                 }
+    //                 else
+    //                 {
+    //                     ShopUI_SetStatusDialogue(shop, 4, shop->PurchasingItemID, 0);
+    //                     shop->ShopUIState = 12;
+    //                     shop->ABWaitNextState = 2;
+    //                     v7 = div32(Balance, shop->PurchasedItemPrice); // Balance / shop->PurchasedItemPrice;
+    //                     shop->PurchasingItemCount = v7;
+    //                     if (v7 > 0x63)
+    //                     {
+    //                         shop->PurchasingItemCount = 99;
+    //                     }
+    //                     result = 999;
+    //                     if (shop->PurchasingItemCount + ItemCountByID > result)
+    //                     {
+    //                         result = 999 - ItemCountByID;
+    //                         shop->PurchasingItemCount = result;
+    //                     }
+    //                 }
+    //             }
+    //             else
+    //             {
+    //                 ShopUI_SetBuyConfirmMessage(shop);
+    //                 shop->ShopUIState = 12;
+    //                 result = 5;
+    //                 shop->ABWaitNextState = 5;
+    //             }
+    //         }
+    //         else
+    //         {
+    //             if (shop->Currency)
+    //             {
+    //                 v6 = 16;
+    //             }
+    //             else
+    //             {
+    //                 v6 = 3;
+    //             }
+    //             ShopUI_SetStatusDialogue(shop, v6, shop->PurchasingItemID, 0);
+    //             shop->ShopUIState = 12;
+    //             result = 4;
+    //             shop->ABWaitNextState = 4;
+    //         }
+    //     }
+    //     else
+    //     {
+    //         ShopUI_SetStatusDialogue(shop, 10, shop->PurchasingItemID, 0);
+    //         shop->ShopUIState = 12;
+    //         result = 4;
+    //         shop->ABWaitNextState = 4;
+    //     }
+    //     return result;
+    // }
 
 #pragma endregion
 
 #pragma region WildPokemonModifiers
+    extern b32 EventWork_FlagGet(EventWorkSave *eventWork, int eventBitNum);
 
     int THUMB_BRANCH_SAFESTACK_TransformVsPokePartyBySeason(GameData *gameData, PokeParty *party, Season s)
     {
@@ -252,29 +263,11 @@ extern "C"
 
             if (WhiteListedPokemon[species] == 1)
             {
-                random2 = GFL_RandomLCAlt(100u);
+                int random2 = GFL_RandomLCAlt(100u);
 
-                if (random2 <= 45u)
+                if (random2 <= 10u)
                 {
-
-                    PokeParty_SetParam(v9, PF_Ability,
-                                       PML_PersonalGetParam(
-                                           PML_PersonalLoadBW2(species, PokeParty_GetParam(v9, PF_Forme, 0)),
-                                           Personal_Abil1));
-                }
-                else if (random2 > 45u && random2 <= 90u)
-                {
-                    PokeParty_SetParam(v9, PF_Ability,
-                                       PML_PersonalGetParam(
-                                           PML_PersonalLoadBW2(species, PokeParty_GetParam(v9, PF_Forme, 0)),
-                                           Personal_Abil2));
-                }
-                else
-                {
-                    PokeParty_SetParam(v9, PF_Ability,
-                                       PML_PersonalGetParam(
-                                           PML_PersonalLoadBW2(species, PokeParty_GetParam(v9, PF_Forme, 0)),
-                                           Personal_AbilH));
+                    PokeParty_SetHiddenAbil(v9, species, Param);
                 }
             }
 
@@ -406,32 +399,11 @@ extern "C"
         if (WhiteListedPokemon[pkmData->Species] == 1)
         {
             random2 = GFL_RandomLCAlt(100u);
-            
-            if (random2 <= 10u){
+
+            if (random2 <= 10u)
+            {
                 PokeParty_SetHiddenAbil(pPkm, pkmData->Species, pkmData->Forme);
             }
-            // if (random2 <= 45u)
-            // {
-
-            //     PokeParty_SetParam(pPkm, PF_Ability,
-            //                        PML_PersonalGetParam(
-            //                            PML_PersonalLoadBW2(pkmData->Species, PokeParty_GetParam(pPkm, PF_Forme, 0)),
-            //                            Personal_Abil1));
-            // }
-            // else if (random2 > 45u && random2 <= 90u)
-            // {
-            //     PokeParty_SetParam(pPkm, PF_Ability,
-            //                        PML_PersonalGetParam(
-            //                            PML_PersonalLoadBW2(pkmData->Species, PokeParty_GetParam(pPkm, PF_Forme, 0)),
-            //                            Personal_Abil2));
-            // }
-            // else
-            // {
-            //     PokeParty_SetParam(pPkm, PF_Ability,
-            //                        PML_PersonalGetParam(
-            //                            PML_PersonalLoadBW2(pkmData->Species, PokeParty_GetParam(pPkm, PF_Forme, 0)),
-            //                            Personal_AbilH));
-            // }
         }
 
         if (pkmData->HiddenAbility)
@@ -467,8 +439,233 @@ extern "C"
         return result;
     }
 
+    void improveIVs(PartyPkm *pPkm)
+    {
+        // Placeholder for potential future IV improvement logic
+        int ivA;
+        int ivB;
+        int count;
+
+        while (count < 5)
+        {
+            ivA = GFL_RandomMT() >> 27;
+            ivB = GFL_RandomMT() >> 27;
+            if (ivA >= ivB)
+            {
+                PokeParty_SetParam(pPkm, (PkmField)(PF_IvHP + count), ivA);
+            }
+            else
+            {
+                PokeParty_SetParam(pPkm, (PkmField)(PF_IvHP + count), ivB);
+            }
+            count++;
+        }
+        PokeParty_RecalcStats(pPkm);
+    }
+
+    struct GenPokeParam
+    {
+        HeapID HeapID;
+        __int16 field_2;
+        int Species;
+        u32 Forme;
+        u32 Level;
+        int HeldItem;
+        AbilLock AbilLock;
+        GenderSet Gender;
+        ShinyType ShinyType;
+        u32 BallItemID;
+        int HiddenAbility;
+    };
+
+    extern PartyPkm *GameData_MakeBoxPkm(GameData *gameData, GenPokeParam *param);
+
+    int THUMB_BRANCH_SAFESTACK_addPkmToParty(GameData *gameData, GenPokeParam *param)
+    {
+        PokeParty *Party; // r6
+        int Capacity;     // r5
+        PartyPkm *BoxPkm; // r5
+        _DWORD *Pokedex;  // r0
+
+        Party = GameData_GetParty(gameData);
+        Capacity = PokeParty_GetCapacity(Party);
+        if (Capacity <= (int)PokeParty_GetPkmCount(Party))
+        {
+            return 0;
+        }
+        BoxPkm = GameData_MakeBoxPkm(gameData, param);
+        improveIVs(BoxPkm);
+        PokeParty_AddPkm(Party, BoxPkm);
+        Pokedex = (_DWORD *)GameData_GetPokedex(gameData);
+        addPkmToDex(Pokedex, BoxPkm);
+        GFL_HeapFree(BoxPkm);
+        return 1;
+    }
+
 #pragma endregion
 
+#pragma region Wild Battle Encounter Changes
+
+    enum PlayerExState
+    {
+        FLD_PLAYER_EXSTATE_NONE = 0x0,
+        FLD_PLAYER_EXSTATE_CYCLING = 0x1,
+        FLD_PLAYER_EXSTATE_SURF = 0x2,
+        FLD_PLAYER_EXSTATE_DIVE = 0x3,
+    };
+    struct WildEncSlot
+    {
+        u16 IdAndForme;
+        u8 LvMin;
+        u8 LvMax;
+    };
+    struct VecFx32
+    {
+        s32 x;
+        s32 y;
+        s32 z;
+    };
+    struct RailPosition
+    {
+        u16 ComponentID;
+        u8 ComponentIsLine;
+        u8 RailDirection;
+        s16 PosSide;
+        u16 PosFront;
+    };
+    struct PlayerState
+    {
+        u16 ZoneID;
+        VecFx32 VecPos;
+        RailPosition RailPos;
+        u16 RotationAngle;
+        u8 field_1A;
+        u8 IsPosRail;
+        u16 NowOBJCODE;
+        __int16 field_1E;
+        int field_20;
+        int field_24;
+        int field_28;
+        int field_2C;
+        int field_30;
+        int field_34;
+        int field_38;
+        int field_3C;
+        PlayerExState ExState;
+    };
+    struct ToggledEncounters
+    {
+        u16 ZoneID;
+        u16 flagToCheck;
+        u8 enablingValue;
+    };
+    extern void FieldEncount_GenWildPokeParam(EncountManager *mgr, WildEncSlot *src, WildPokemonParam *dest);
+    extern bool FieldEncount_CheckLevelRepelled(EncountManager *mgr, u32 level);
+    extern PlayerState *GameData_GetPlayerState(GameData *gameData);
+    extern int PlayerState_GetZoneID(PlayerState *a1);
+    extern int GetLeaguePokeCenReturnLocationIdx();
+    extern int GetReturnLocationIdx(GameData *a1);
+    extern b32 EventWork_FlagGet(EventWorkSave *eventWork, int eventBitNum);
+    extern void EventWork_FlagReset(EventWorkSave *eventWork, u32 flagId);
+    extern u32 getBadgeCount(void *pTrainerCardData);
+    extern void *getTrainerCardDataBlkAddress(void *pBaseBlk);
+    extern bool isBadgeObtained(void *pTrainerCardData, int badgeNum);
+    ToggledEncounters toggleEncounters[12] = {
+        {613, 16451, 2}, // Cobalion Encounter Enabling
+        {155, 16472, 2}, // Virizion Encounter Enabling
+        {346, 16474, 2}, // Keldeo State Tracking
+        {198, 16476, 2}, // Terrakion State Tracking
+        {199, 16476, 2}, // Terrakion State Tracking
+        {200, 16476, 2}, // Terrakion State Tracking
+        {201, 16476, 2}, // Terrakion State Tracking
+        {202, 16476, 2}, // Terrakion State Tracking
+        {203, 16476, 2}, // Terrakion State Tracking
+        {204, 16476, 2}, // Terrakion State Tracking
+        {298, 16476, 2}, // Terrakion State Tracking
+        {509, 16476, 2}, // Terrakion State Tracking
+    };
+
+    const u16 draydenSplitDisabledEncounterZones[7] = {
+        308, 348, 309, 365, 367, 310, 368};
+
+    const u16 marlonSplitDisabledZones[4] = {
+        515, 516, 240, 463};
+
+    bool isEncounterDisabled(EncountManager *mgr)
+    {
+        PlayerState *playerState = GameData_GetPlayerState(mgr->gameData);
+        int zoneId = PlayerState_GetZoneID(playerState);
+        for (int i = 0; i < ARRAY_COUNT(toggleEncounters); i++)
+        {
+            if (zoneId == toggleEncounters[i].ZoneID)
+            {
+                EventWorkSave *eventWork = GameData_GetEventWork(mgr->gameData);
+                u32 flagValue = EventWork_FlagGet(eventWork, toggleEncounters[i].flagToCheck);
+                if (flagValue == toggleEncounters[i].enablingValue)
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+        }
+        int badgeCount = getBadgeCount(getTrainerCardDataBlkAddress(mgr->gameData));
+
+        if (isBadgeObtained(getTrainerCardDataBlkAddress(mgr->gameData), 6) && SEARCH_ARRAY(draydenSplitDisabledEncounterZones, zoneId))
+        {
+            return true;
+        }
+        if (isBadgeObtained(getTrainerCardDataBlkAddress(mgr->gameData), 7) && SEARCH_ARRAY(marlonSplitDisabledZones, zoneId))
+        {
+            return true;
+        }
+        return false;
+    }
+
+    int THUMB_BRANCH_SAFESTACK_FieldEncount_GenWildsCore(EncountManager *mgr, WildEncSlot *src, WildPokemonParam *dest)
+    {
+        int v4; // r4
+        int v5; // r6
+
+        v4 = 0;
+        v5 = 0;
+
+        if (isEncounterDisabled(mgr))
+        {
+            return 0;
+        }
+        if (mgr->EncountCount)
+        {
+            do
+            {
+                FieldEncount_GenWildPokeParam(mgr, src, &dest[v4]);
+                if (!FieldEncount_CheckLevelRepelled(mgr, dest[v4].Level))
+                {
+                    ++v4;
+                }
+                ++v5;
+            } while (v5 < mgr->EncountCount);
+        }
+        return v4;
+    }
+
+    bool THUMB_BRANCH_IsReturnLocationNonLeaguePokeCen(GameData *a1)
+    {
+        int LeaguePokeCenReturnLocationIdx; // r4
+
+        // Clears a gauntlet in case you lose the battle.
+        if (EventWork_FlagGet(GameData_GetEventWork(a1), 522))
+        {
+            EventWork_FlagReset(GameData_GetEventWork(a1), 523);
+        }
+
+        LeaguePokeCenReturnLocationIdx = GetLeaguePokeCenReturnLocationIdx();
+        return LeaguePokeCenReturnLocationIdx != GetReturnLocationIdx(a1);
+    }
+
+#pragma endregion
 #pragma region HMOverhaul
 
     enum PlayerMoveStatus
@@ -498,7 +695,15 @@ extern "C"
         FLD_INTERACT_PLAYER_MOVE_VERTICAL_ONLY = 0x400,
         FLD_INTERACT_PLAYER_MOVE_NONE = 0x800,
     };
-    enum 	Direction {DIR_UP = 0x0,DIR_DOWN = 0x1,DIR_LEFT = 0x2,DIR_RIGHT = 0x3,DIR_ANY = 0x8,DIR_NONE = 0x9};
+    enum Direction
+    {
+        DIR_UP = 0x0,
+        DIR_DOWN = 0x1,
+        DIR_LEFT = 0x2,
+        DIR_RIGHT = 0x3,
+        DIR_ANY = 0x8,
+        DIR_NONE = 0x9
+    };
 
     struct TileType
     {
@@ -508,7 +713,7 @@ extern "C"
 
     struct SpecialTileScript
     {
-        b32(*RecognitionFunc)(int);
+        b32 (*RecognitionFunc)(int);
         u16 Direction;
         u16 SCRID;
     };
@@ -522,8 +727,8 @@ extern "C"
         u16 ZoneID;
         void *Fieldmap;
         void *Player;
-        PlayerActionStatus m_PlayerActionStatus;
-        PlayerMoveStatus m_PlayerMoveStatus;
+        int m_PlayerActionStatus;
+        int m_PlayerMoveStatus;
         Direction PlayerDirection;
         u16 ReserveSCRID;
         u32 NewPressedKeys;
@@ -539,23 +744,23 @@ extern "C"
     extern TileType FieldPlayer_GetTileTypeInDir(void *player, Direction dir);
     extern int GetTileClass(TileType result);
     extern int sub_2018C64(int a1);
-    extern int  CheckSurfHeightAllow(void *player, unsigned __int16 dir);
+    extern int CheckSurfHeightAllow(void *player, unsigned __int16 dir);
     extern int GameData_FindPartyPkmByMove(GameData *gameData, u16 move);
-    extern b32 EventWork_FlagGet(EventWorkSave *eventWork, int eventBitNum);
     extern b32 CheckCanInteractWaterfall(void *player, TileType tileUnder, TileType tileInDir);
-
-    SpecialTileScript* SPECIAL_TILE_SCRIPTS = (SpecialTileScript*)0x21CA878;
-
-
-    u32 GetSurfSetting()
+    extern bool BagSave_GetItemCountByID(BagSaveData *bag, u16 itemId);
+    SpecialTileScript *SPECIAL_TILE_SCRIPTS = (SpecialTileScript *)0x21CA878;
+    typedef s32 fx32;
+    extern PlayerExState FieldPlayer_GetExState(void *player);
+    extern TileType FieldPlayer_GetTileTypeInDirEx(void *player, Direction dir, fx32 *pYPos);
+    extern bool CheckSurfBeginTiles(TileType a1, u32 a2);
+    u32 GetSurfSetting(FieldEventCheckData *wk)
     {
-        EventWorkSave *eventWork = GameData_GetEventWork(GAME_DATA);
-        u32 surfSetting = EventWork_FlagGet(eventWork, 2439);
-        return surfSetting;
+        BagSaveData *Bag;
+        Bag = GameData_GetBag(wk->m_GameData);
+        return (BagSave_GetItemCountByID(Bag, 422) != 0);
     }
 
-
-    int THUMB_BRANCH_CheckFieldEnvInteraction(FieldEventCheckData *wk)
+    int THUMB_BRANCH_SAFESTACK_CheckFieldEnvInteraction(FieldEventCheckData *wk)
     {
         int TileClass;                        // r6
         unsigned int i;                       // r4
@@ -570,7 +775,7 @@ extern "C"
         }
         // k::Printf("\n===CheckFieldEnvInteraction===   Check 3");
         tileUnder = FieldPlayer_GetTileTypeUnder(wk->Player);
-        tileInDir = FieldPlayer_GetTileTypeInDir(wk->Player,  wk->PlayerDirection);
+        tileInDir = FieldPlayer_GetTileTypeInDir(wk->Player, wk->PlayerDirection);
         TileClass = GetTileClass(tileInDir);
         // k::Printf("\n===CheckFieldEnvInteraction===   Check 4");
         for (i = 0; i < 0xD; ++i)
@@ -590,13 +795,11 @@ extern "C"
             // k::Printf("\n===CheckFieldEnvInteraction===   Check 7");
             return 0xFFFF;
         }
-        // k::Printf("\n===CheckFieldEnvInteraction===   Check 8\nCheckSurfHeightAllow=%d\nGetSurfSetting=%d", CheckSurfHeightAllow(wk->Player, wk->PlayerDirection), GetSurfSetting());
-        if (CheckSurfHeightAllow(wk->Player, wk->PlayerDirection) && 
-            GetSurfSetting()
-            //GameData_FindPartyPkmByMove(wk->m_GameData, MOVE057_SURF) != 6
+        if (CheckSurfHeightAllow(wk->Player, wk->PlayerDirection) &&
+            GetSurfSetting(wk) && wk->ZoneID != 345
+            // GameData_FindPartyPkmByMove(wk->m_GameData, MOVE057_SURF) != 6
         )
         {
-            // k::Printf("\n===CheckFieldEnvInteraction===   Check 9");
             return 10002;
         }
         // k::Printf("\n===CheckFieldEnvInteraction===   Check 10");
@@ -607,6 +810,173 @@ extern "C"
         }
         // k::Printf("\n===CheckFieldEnvInteraction===   Check 12\n\n\n");
         return 0xFFFF;
+    }
+
+    extern void PokeParty_RecoverAll(PokeParty *pParty);
+
+    int personalPokePartyHeal(PokeParty *pParty)
+    {
+        signed __int32 PkmCount; // r6
+        int i;                   // r5
+        PartyPkm *Pkm;           // r4
+        u8 check;
+        PkmCount = PokeParty_GetPkmCount(pParty);
+        for (i = 0; i < PkmCount; ++i)
+        {
+            Pkm = PokeParty_GetPkm(pParty, i);
+            if (PokeParty_GetParam(Pkm, PF_NowHP, 0) != 0)
+            {
+                PokeParty_Recover(Pkm);
+                check = 1;
+            }
+        }
+        return check;
+    }
+
+    // Our new party heal function that doesn't heal fainted pokemon.
+
+    int THUMB_BRANCH_s0112_PokePartyGetEVTotal(void *vm, void *env)
+    {
+        u16 *Var;           // r6
+        int Any;            // r0
+        u16 v6;             // r4
+        GameData *GameData; // r0
+        PokeParty *Party;   // r0
+        PartyPkm *ppPkm;    // [sp+0h] [bp-18h] BYREF
+
+        Var = ScriptReadVar(vm, env);
+        Any = ScriptReadAny(vm, env);
+
+        GameData = FieldScriptEnv_GetGameData(env);
+        Party = GameData_GetParty(GameData);
+        if (!personalPokePartyHeal(Party))
+        {
+            PokeParty_RecoverAll(Party);
+        }
+        *Var = v6;
+        return 0;
+    }
+    enum 	FieldmapCtrlType	 {FLD_MAPCTRL_GRID = 0x0,FLD_MAPCTRL_RAIL = 0x1,FLD_MAPCTRL_HYBRID = 0x2,};
+    struct 	EncData	 {u8 UserData[8];WildEncSlot Slots[56];};
+    struct 	GPosXYZ	{u16 X;s16 Y;u16 Z;};
+    struct 	EncountState {GPosXYZ GPos;u8 EncountRateBlockCounter;u8 EncountRateStepIncrement;u32 EncountRateStepCounter;TileType TileTypeUnder;u16 EncountRate;u16 field_12;u32 field_14;u16 field_18;GPosXYZ RareEncountPos;u32 field_20;u32 field_24;};
+    struct 	EncountSystem	{void *m_Field;void *m_GameSystem;GameData *m_GameData;EncData *m_EncData;void *m_EffectEncountState;};
+    extern EncountState* GameData_GetEncountState(GameData *a1);
+    extern signed int EncSys_IsActive(EncountSystem *encsys);
+    extern void* GetMapMatrixSystem(GameData *pBaseBlk);
+    extern u16 Field_GetPlayerStateZoneID(void *field);
+    extern void* Field_GetPlayer(void *field);
+    extern void* FieldPlayer_GetActor(void *player);
+    extern void CopyActorWPos(void *mmdl, VecFx32 *dest);
+    extern bool RangeCheckChunkCoordinateWorld(void *a1, int a2, int a3);
+    extern int GetZoneIDAtMatrixXZWorld(void *a1, fx32 x, fx32 z);
+    extern FieldmapCtrlType Field_GetResolvedControllerTypeID(void *field);
+    extern bool sub_21A24AC(EncountState *a1, int a2);
+    extern u32 PassPower_ApplyExploringChance(u32 basePhenomenonChance);
+    extern int positionShakingSpot(EncountSystem *encSys, int a2, u8 type);
+    extern void  sub_21A272C(void **a1, int a2);
+    extern void setShakingSpotOff(EncountState *result);
+    bool isPhenoDisabled(EncountSystem *mgr)
+    {
+        PlayerState *playerState = GameData_GetPlayerState(mgr->m_GameData);
+        int zoneId = PlayerState_GetZoneID(playerState);
+        for (int i = 0; i < ARRAY_COUNT(toggleEncounters); i++)
+        {
+            if (zoneId == toggleEncounters[i].ZoneID)
+            {
+                EventWorkSave *eventWork = GameData_GetEventWork(mgr->m_GameData);
+                u32 flagValue = EventWork_FlagGet(eventWork, toggleEncounters[i].flagToCheck);
+                if (flagValue == toggleEncounters[i].enablingValue)
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+        }
+        int badgeCount = getBadgeCount(getTrainerCardDataBlkAddress(mgr->m_GameData));
+
+        if (isBadgeObtained(getTrainerCardDataBlkAddress(mgr->m_GameData), 6) && SEARCH_ARRAY(draydenSplitDisabledEncounterZones, zoneId))
+        {
+            return true;
+        }
+        if (isBadgeObtained(getTrainerCardDataBlkAddress(mgr->m_GameData), 7) && SEARCH_ARRAY(marlonSplitDisabledZones, zoneId))
+        {
+            return true;
+        }
+        return false;
+    }
+
+    void THUMB_BRANCH_SAFESTACK_UpdatePhenomenon(EncountSystem *encSys)
+    {
+        int v2;                          // r6
+        _WORD *m_EffectEncountState;     // r7
+        void *MapMatrixSystem;      // r4
+        void *Player;             // r0
+        void *Actor;               // r0
+        int ZoneIDAtMatrixXZWorld;       // r0
+        void *TrainerCardDataBlkAddress; // r0
+        EncData *m_EncData;              // r1
+        u32 v10;                         // r4
+        EncountState *a1;                // [sp+0h] [bp-28h]
+        int PlayerStateZoneID;           // [sp+4h] [bp-24h]
+        VecFx32 dest;                    // [sp+8h] [bp-20h] BYREF
+
+        v2 = 0;
+        a1 = GameData_GetEncountState(encSys->m_GameData);
+        if (EncSys_IsActive(encSys))
+        {
+            m_EffectEncountState = (unsigned short*)encSys->m_EffectEncountState;
+            MapMatrixSystem = GetMapMatrixSystem(encSys->m_GameData);
+            if (encSys->m_Field)
+            {
+                if (MapMatrixSystem)
+                {
+                    PlayerStateZoneID = Field_GetPlayerStateZoneID(encSys->m_Field);
+                    Player = Field_GetPlayer(encSys->m_Field);
+                    Actor = FieldPlayer_GetActor(Player);
+                    CopyActorWPos(Actor, &dest);
+                    if (RangeCheckChunkCoordinateWorld(MapMatrixSystem, dest.x, dest.z))
+                    {
+                        ZoneIDAtMatrixXZWorld = GetZoneIDAtMatrixXZWorld(MapMatrixSystem, dest.x, dest.z);
+                        if (PlayerStateZoneID != 0xFFFF && ZoneIDAtMatrixXZWorld != 0xFFFF && PlayerStateZoneID == ZoneIDAtMatrixXZWorld)
+                        {
+                            TrainerCardDataBlkAddress = getTrainerCardDataBlkAddress(encSys->m_GameData);
+                            if (isBadgeObtained(TrainerCardDataBlkAddress, 0) && !isPhenoDisabled(encSys) && Field_GetResolvedControllerTypeID(encSys->m_Field) == FLD_MAPCTRL_GRID)
+                            {
+                                m_EncData = encSys->m_EncData;
+                                if (m_EncData->UserData[2])
+                                {
+                                    v2 = 1;
+                                }
+                                if (m_EncData->UserData[4] || m_EncData->UserData[6])
+                                {
+                                    v2 |= 2u;
+                                }
+                                if (v2 && (a1->field_24 & 0xF00) == 0 && sub_21A24AC(a1, (int)m_EffectEncountState))
+                                {
+                                    v10 = PassPower_ApplyExploringChance((unsigned __int16)m_EffectEncountState[733]);
+                                    if (GFL_RandomLCAlt(1000u) < 300 * v10)
+                                    {
+                                        positionShakingSpot(encSys, (int)m_EffectEncountState, v2);
+                                        if (m_EffectEncountState[2])
+                                        {
+                                            sub_21A272C((void **)&encSys->m_Field, (int)m_EffectEncountState);
+                                        }
+                                    }
+                                    else
+                                    {
+                                        setShakingSpotOff(a1);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
 #pragma endregion
@@ -725,9 +1095,118 @@ extern "C"
     // };
 #pragma endregion
 
-
-
 #pragma region WIPStuff
+
+    /*
+
+           --------------------------------------------------------------------------------------------------
+           ---------------------------------- CREATING TRADE POKEMON -----------------------------------------
+           --------------------------------------------------------------------------------------------------
+
+       */
+
+    // void THUMB_BRANCH_EventFieldTrade_CreatePkm(GameData *gameData, HeapID heapId, PartyPkm *pkm, FieldTradePkm *tradePkm)
+    // {
+    //     GenderSet Gender;        // r3
+    //     u32 pid;                 // r0
+    //     StrBuf *Name;            // r7
+    //     u32 IvHP;                // r2
+    //     u32 IvATK;               // r2
+    //     u32 IvDEF;               // r2
+    //     u32 IvSPE;               // r2
+    //     u32 IvSPA;               // r2
+    //     u32 IvSPD;               // r2
+    //     u32 Nature;              // r2
+    //     StrBuf *v17;             // r7
+    //     u16 *GameDataPlayerInfo; // r0
+
+    //     Gender = tradePkm->Gender;
+    //     if (Gender == 255)
+    //     {
+    //         Gender = GENDER_EITHER;
+    //     }
+    //     pid = PML_GenPID(tradePkm->TIDSet, tradePkm->Species, tradePkm->Forme, Gender, tradePkm->AbilLock, SHINY_PREVENT);
+    //     PokeParty_CreatePkm(
+    //         pkm,
+    //         (MonsNo)(unsigned __int16)tradePkm->Species,
+    //         tradePkm->Level,
+    //         tradePkm->TIDSet,
+    //         ABIL_0,
+    //         0xFFFFFFFF,
+    //         pid,
+    //         0);
+    //     PokeParty_SetParam(pkm, PF_Forme, tradePkm->Forme);
+    //     EventFieldTrade_DebugLogPkm(pkm);
+    //     Name = FieldTradeInput_LoadName(heapId, tradePkm->NicknameIndex);
+    //     PokeParty_SetParam(pkm, PF_NicknameStrBuf, (u32)Name);
+    //     GFL_StrBufFree(Name);
+
+    //     if (WhiteListedPokemon[tradePkm->Species] == 1)
+    //     {
+    //         int random2 = GFL_RandomLCAlt(100u);
+
+    //         if (random2 <= 10u)
+    //         {
+    //             PokeParty_SetHiddenAbil(pkm, tradePkm->Species, tradePkm->Forme);
+    //         }
+    //     }
+    //     IvHP = tradePkm->IvHP;
+    //     if (IvHP != 255)
+    //     {
+    //         PokeParty_SetParam(pkm, PF_IvHP, IvHP);
+    //     }
+    //     IvATK = tradePkm->IvATK;
+    //     if (IvATK != 255)
+    //     {
+    //         PokeParty_SetParam(pkm, PF_IvATK, IvATK);
+    //     }
+    //     IvDEF = tradePkm->IvDEF;
+    //     if (IvDEF != 255)
+    //     {
+    //         PokeParty_SetParam(pkm, PF_IvDEF, IvDEF);
+    //     }
+    //     IvSPE = tradePkm->IvSPE;
+    //     if (IvSPE != 255)
+    //     {
+    //         PokeParty_SetParam(pkm, PF_IvSPE, IvSPE);
+    //     }
+    //     IvSPA = tradePkm->IvSPA;
+    //     if (IvSPA != 255)
+    //     {
+    //         PokeParty_SetParam(pkm, PF_IvSPA, IvSPA);
+    //     }
+    //     IvSPD = tradePkm->IvSPD;
+    //     if (IvSPD != 255)
+    //     {
+    //         PokeParty_SetParam(pkm, PF_IvSPD, IvSPD);
+    //     }
+    //     if (tradePkm->AbilLock == ABIL_ANY)
+    //     {
+    //         PokeParty_SetHiddenAbil(pkm, tradePkm->Species, tradePkm->Forme);
+    //     }
+    //     Nature = tradePkm->Nature;
+    //     if (Nature != 255)
+    //     {
+    //         PokeParty_SetParam(pkm, PF_Nature, Nature);
+    //     }
+    //     PokeParty_SetParam(pkm, PF_ContestCool, tradePkm->ContestCool);
+    //     PokeParty_SetParam(pkm, PF_ContestBeauty, tradePkm->ContestBeauty);
+    //     PokeParty_SetParam(pkm, PF_ContestCute, tradePkm->ContestCute);
+    //     PokeParty_SetParam(pkm, PF_ContestSmart, tradePkm->ContestSmart);
+    //     PokeParty_SetParam(pkm, PF_ContestTough, tradePkm->ContestTough);
+    //     PokeParty_SetParam(pkm, PF_Item, tradePkm->HeldItem);
+    //     v17 = FieldTradeInput_LoadName(heapId, tradePkm->OTNameIndex);
+    //     PokeParty_SetParam(pkm, PF_OTNameStrBuf, (u32)v17);
+    //     GFL_StrBufFree(v17);
+    //     PokeParty_SetParam(pkm, PF_TrGender, tradePkm->OTGender);
+    //     PokeParty_SetParam(pkm, PF_Region, tradePkm->OTRegion);
+    //     GameDataPlayerInfo = GetGameDataPlayerInfo(gameData);
+    //     PokeParty_SetupMetData(pkm, PKM_OBTAIN_FIELD_TRADE, GameDataPlayerInfo, 30002u, heapId);
+    //     PokeParty_SetParam(pkm, PF_Happiness, 70u);
+    //     EventFieldTrade_DebugLogPkm(pkm);
+    //     PokeParty_RecalcStats(pkm);
+    // }
+
     // void THUMB_BRANCH_SAFESTACK_createEggPkm(PartyPkm *newPkm, EggPkm *eggPkm, void *pTrainerInfo, u16 location, HeapID heapId)
     // {
     //     int i;             // r4
@@ -1015,62 +1494,65 @@ extern "C"
 }
 
 #pragma region NewScriptCommands
-    
+
 extern "C" bool BagSave_AddItem(BagSaveData *bag, u16 itemId, u16 quantity, HeapID heapId);
-    extern "C" u32 PML_UtilGetPkmLvExp(u16 species, u16 form, int level);
+extern "C" u32 PML_UtilGetPkmLvExp(u16 species, u16 form, int level);
 
-  
+extern "C" int RemoteItems(void *vm, void *env)
+{
+    GameData *gameData;
+    PokeParty *party;
+    PartyPkm *pkm;
+    u8 pokeCount;
+    HeapID heap = FieldScriptEnv_GetHeapID(env);
+    gameData = FieldScriptEnv_GetGameData(env);
+    party = GameData_GetParty(gameData);
+    pokeCount = PokeParty_GetPkmCount(party);
+    for (int i = 0; i < pokeCount; i++)
+    {
+        pkm = PokeParty_GetPkm(party, i);
 
-   extern "C"  int RemoteItems(void *vm, void *env) {
-        GameData* gameData;
-        PokeParty* party;
-        PartyPkm* pkm;
-        u8 pokeCount; 
-        HeapID heap = FieldScriptEnv_GetHeapID(env);
-        gameData = FieldScriptEnv_GetGameData(env);
-        party = GameData_GetParty(gameData);
-        pokeCount = PokeParty_GetPkmCount(party);
-        for (int i = 0; i < pokeCount; i++){
-            pkm = PokeParty_GetPkm(party, i);
-
-            if (PokeParty_GetParam(pkm, PF_Item, 0)){
-                BagSave_AddItem(GameData_GetBag(gameData), PokeParty_GetParam(pkm, PF_Item, 0), 1, heap);
-                PokeParty_SetParam(pkm, PF_Item, 0);
-            }
+        if (PokeParty_GetParam(pkm, PF_Item, 0))
+        {
+            BagSave_AddItem(GameData_GetBag(gameData), PokeParty_GetParam(pkm, PF_Item, 0), 1, heap);
+            PokeParty_SetParam(pkm, PF_Item, 0);
         }
-        return 0;
     }
+    return 0;
+}
 
-    extern "C" int EdgeExp(void *vm, void *env){
-        GameData* gameData;
-        PokeParty* party;
-        PartyPkm* pkm;
-        u8 pokeCount; 
-        int species;
-        int form;
-        int level;
-        u32 PkmLvExp;
-        gameData = FieldScriptEnv_GetGameData(env);
-        party = GameData_GetParty(gameData);
-        pokeCount = PokeParty_GetPkmCount(party);
+extern "C" int EdgeExp(void *vm, void *env)
+{
+    GameData *gameData;
+    PokeParty *party;
+    PartyPkm *pkm;
+    u8 pokeCount;
+    int species;
+    int form;
+    int level;
+    u32 PkmLvExp;
+    gameData = FieldScriptEnv_GetGameData(env);
+    party = GameData_GetParty(gameData);
+    pokeCount = PokeParty_GetPkmCount(party);
 
-        for (int i = 0; i < pokeCount; i++){
-            pkm = PokeParty_GetPkm(party, i);
-            level = PokeParty_GetParam(pkm, PF_Level, 0);
-            species = PokeParty_GetParam(pkm, PF_Species, 0);
-            form = PokeParty_GetParam(pkm, PF_Forme, 0);
-            PkmLvExp = PML_UtilGetPkmLvExp(species, form, (level + 1)) - 1; // Gets the EXp needed to be current level + 1
-            PokeParty_SetParam(pkm, PF_Experience, PkmLvExp);
-            PokeParty_RecalcStats(pkm);
-        }
-        return 0;
+    for (int i = 0; i < pokeCount; i++)
+    {
+        pkm = PokeParty_GetPkm(party, i);
+        level = PokeParty_GetParam(pkm, PF_Level, 0);
+        species = PokeParty_GetParam(pkm, PF_Species, 0);
+        form = PokeParty_GetParam(pkm, PF_Forme, 0);
+        PkmLvExp = PML_UtilGetPkmLvExp(species, form, (level + 1)) - 1; // Gets the EXp needed to be current level + 1
+        PokeParty_SetParam(pkm, PF_Experience, PkmLvExp);
+        PokeParty_RecalcStats(pkm);
     }
-    // Replaces 133
-    extern "C" void* FULL_COPY_12_0x0216BA44 = (void*)RemoteItems;
-    // Replaces 135
-    extern "C" void* FULL_COPY_12_0x0216BA4C = (void*)EdgeExp;
-    // Replaces 00 in the EV_CMD_PERM array
-    extern "C" u8 FULL_COPY_EVCMD_PERM_TABLE_0x132 = 7;
-    extern "C" u8 FULL_COPY_EVCMD_PERM_TABLE_0x134 = 7;
+    return 0;
+}
+// Replaces 133
+extern "C" void *FULL_COPY_12_0x0216BA44 = (void *)RemoteItems;
+// Replaces 135
+extern "C" void *FULL_COPY_12_0x0216BA4C = (void *)EdgeExp;
+// Replaces 00 in the EV_CMD_PERM array
+extern "C" u8 FULL_COPY_EVCMD_PERM_TABLE_0x132 = 7;
+extern "C" u8 FULL_COPY_EVCMD_PERM_TABLE_0x134 = 7;
 
 #pragma endregion

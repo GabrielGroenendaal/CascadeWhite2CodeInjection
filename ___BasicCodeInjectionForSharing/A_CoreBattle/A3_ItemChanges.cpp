@@ -13,6 +13,25 @@ extern "C"
     } ITEM_TRIGGERTABLE;
 
 #pragma region WIPBattleItems
+
+    extern const u16 BERRY_ITEM_IDS[64];
+    
+    int THUMB_BRANCH_PML_ItemIsBerry(u16 itemId)
+    {
+        unsigned int i; // r3
+
+        if (itemId == IT0043_BERRY_JUICE){
+            return 1;
+        }
+        for (i = 0; i < 64; ++i)
+        {
+            if (itemId == BERRY_ITEM_IDS[i])
+            {
+                return 1;
+            }
+        }
+        return 0;
+    }
     /*
 
 
@@ -773,14 +792,14 @@ extern "C"
 
     void HandlerTricksterHerbPriorityCheck(BattleEventItem *a1, ServerFlow *a2, int a3)
     {
-// #if DEBUGGING_ITEMS && DEBUGGING_ALL
+        // #if DEBUGGING_ITEMS && DEBUGGING_ALL
         // k::Printf("\n====Trickster Herb Priority Check====\nThe Attacking Mon is %d\nThe Move ID is %d\nThe Move Category is %d\nThe Move Priority is %d\n", BattleEventVar_GetValue(VAR_ATTACKING_MON), BattleEventVar_GetValue(VAR_MOVE_ID), BattleEventVar_GetValue(VAR_MOVE_CATEGORY), BattleEventVar_GetValue(VAR_MOVE_PRIORITY));
-// #endif
+        // #endif
         if (a3 == BattleEventVar_GetValue(VAR_ATTACKING_MON) && !PML_MoveGetCategory(BattleEventVar_GetValue(VAR_MOVE_ID)))
         {
-// #if DEBUGGING_ITEMS && DEBUGGING_ALL
-            // k::Printf("\nRESULT: The Trickster Herb Should Trigger\n\n");       
-// #endif
+            // #if DEBUGGING_ITEMS && DEBUGGING_ALL
+            // k::Printf("\nRESULT: The Trickster Herb Should Trigger\n\n");
+            // #endif
             if (BattleEventVar_RewriteValue(VAR_MOVE_PRIORITY, BattleEventVar_GetValue(VAR_MOVE_PRIORITY) + 1))
             {
                 ItemEvent_PushRun(a1, a2, a3);
@@ -2269,7 +2288,7 @@ extern "C"
         if (getOverheatLastTurnByte(a1))
         {
             setOverheatLastTurnByte(a1, 0);
-        }   
+        }
         if (isTera)
         {
             a1->Conditions[CONDITION_TERA] = isTera;
@@ -2519,7 +2538,7 @@ extern "C"
             if (BattleMon_CheckIfMoveCondition(mon, CONDITION_TERA))
             {
 #if DEBUGGING_TERA && DEBUGGING_ALL
-                k::Printf("\nPokeID: %d is already Terastallized, so cannot Tera again.", pokemonSlot); 
+                k::Printf("\nPokeID: %d is already Terastallized, so cannot Tera again.", pokemonSlot);
 #endif
                 return;
             }

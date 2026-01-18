@@ -5,7 +5,7 @@ STRUCT_DECLARE(TCBManagerEx)
 STRUCT_DECLARE(ArcTool)
 STRUCT_DECLARE(GameData)
 
-enum EncountFlag
+enum EncountFlag : u32
 {
     ENCFLAG_FISHING = 0x2,
     ENCFLAG_REPEL_ACTIVE = 0x4,
@@ -22,6 +22,14 @@ enum EncountFlag
     ENCFLAG_ELECTRIC_FORCE = 0x2000,
     ENCFLAG_FORCE_HIGHLEVEL_WILD = 0x4000,
     ENCFLAG_ABIL_PREVENTS_LOWLEVEL_ENCOUNT = 0x8000,
+};
+
+enum GenderSet
+{
+    GENDER_MALE = 0x0,
+    GENDER_FEMALE = 0x1,
+    GENDER_EITHER = 0x2,
+    GENDER_MAX = 0x3,
 };
 
 enum PokemonObtainType
@@ -84,6 +92,14 @@ enum PersonalField
     Personal_SpecialTutor2 = 0x2D,
     Personal_SpecialTutor3 = 0x2E,
     Personal_SpecialTutor4 = 0x2F,
+};
+
+enum ShinyType
+{
+    SHINY_PREVENT = 0x0,
+    SHINY_MAKE = 0x1,
+    SHINY_ALLOW = 0x2,
+    SHINY_MAX = 0x3,
 };
 
 enum MonsNo
@@ -965,8 +981,8 @@ const int WhiteListedPokemon[651]{
     1, // PK220_SWINUB = 0xDC,
     1, // PK221_PILOSWINE = 0xDD,
     1, // PK222_CORSOLA = 0xDE,
-    0, // PK223_REMORAID = 0xDF, // NOT IMPLEMENTED YET
-    0, // PK224_OCTILLERY = 0xE0, // NOT IMPLEMENTED YET
+    1, // PK223_REMORAID = 0xDF, // NOT IMPLEMENTED YET
+    1, // PK224_OCTILLERY = 0xE0, // NOT IMPLEMENTED YET
     1, // PK225_DELIBIRD = 0xE1,
     1, // PK226_MANTINE = 0xE2,
     1, // PK227_SKARMORY = 0xE3,
@@ -1314,8 +1330,8 @@ const int WhiteListedPokemon[651]{
     1, // PK569_GARBODOR = 0x239,
     0, // PK570_ZORUA = 0x23A,
     0, // PK571_ZOROARK = 0x23B,
-    0, // PK572_MINCCINO = 0x23C,
-    0, // PK573_CINCCINO = 0x23D,
+    1, // PK572_MINCCINO = 0x23C,
+    1, // PK573_CINCCINO = 0x23D,
     1, // PK574_GOTHITA = 0x23E,
     1, // PK575_GOTHORITA = 0x23F,
     1, // PK576_GOTHITELLE = 0x240,
@@ -1906,8 +1922,8 @@ struct EncountManager
 {
     GameData *gameData;
     EncountSave *SaveDataMng;
-    EncountType EncType;
-    WildEncountClashType ClashType;
+    int EncType;
+    int ClashType;
     int EncountSlotObtainFuncIdx;
     u8 EncountSlotMax;
     u8 EncountCount;
@@ -1921,8 +1937,30 @@ struct EncountManager
     char field_1F;
     u32 PTID;
     int PPlrInfo;
-    EncountFlag Flags;
+    u32 Flags;
 };
+
+// struct EncountManager2
+// {
+//     GameData *GameData;
+//     EncountSave *SaveDataMng;
+//     EncountType EncType;
+//     WildEncountClashType ClashType;
+//     int EncountSlotObtainFuncIdx;
+//     u8 EncountSlotMax;
+//     u8 EncountCount;
+//     __int16 PPkSpecies;
+//     u16 PPkHeldItem;
+//     char PPkIsEgg;
+//     u8 PPkAbility;
+//     char PPkSex;
+//     u8 PPkNature;
+//     u8 FirstAlivePlayerPkLevel;
+//     char field_1F;
+//     u32 PTID;
+//     int PPlrInfo;
+//     EncountFlag Flags;
+// };
 
 struct EventWorkSave
 {
@@ -2037,8 +2075,6 @@ enum TrainerField
     TR_POST_BATTLE_ITEM
 };
 
-
-
 struct SWAN_ALIGNED(4) EggPkm
 {
     u32 Species;
@@ -2057,6 +2093,37 @@ struct SWAN_ALIGNED(4) EggPkm
     b32 ForcedFatherIVs[6];
     b32 ForcedMotherIVs[6];
     int InheritedIVsCount;
+};
+
+struct FieldTradePkm
+{
+    _BYTE gap0[4];
+    _DWORD Species;
+    _DWORD Forme;
+    _DWORD Level;
+    _DWORD IvHP;
+    _DWORD IvATK;
+    _DWORD IvDEF;
+    _DWORD IvSPE;
+    _DWORD IvSPA;
+    _DWORD IvSPD;
+    AbilLock abilLock;
+    _DWORD Nature;
+    GenderSet Gender;
+    _DWORD TIDSet;
+    _DWORD ContestCool;
+    _DWORD ContestBeauty;
+    _DWORD ContestCute;
+    _DWORD ContestSmart;
+    _DWORD ContestTough;
+    _DWORD HeldItem;
+    _DWORD OTGender;
+    _BYTE gap54[4];
+    _DWORD OTRegion;
+    u32 WantedSpecies;
+    u32 WantedSex;
+    _DWORD NicknameIndex;
+    _DWORD OTNameIndex;
 };
 
 // struct WildPokemonParam {

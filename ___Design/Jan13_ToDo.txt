@@ -1,0 +1,518 @@
+
+
+/*         
+	
+	-----------------------------------------------------------------------------------------------------------------------------------------
+	-------------------------------------------------- WHAT I WANNA DO TODAY ---------------------------------------------------------------- 
+	-----------------------------------------------------------------------------------------------------------------------------------------       
+
+*/
+
+
+====================================================================================================================================================
+/*   ISSUES LIST   */
+
+    [ BACKGROUNDS ]
+        - Castelia Battle Company Backgrounds A and B don't load lighting properly. 
+        - Virbank City background will cause a crash eventually. Too many polygons and colors probably 
+        - Castelia Gym background won't cause a crash but causes color distortions because too many palette items (in doubles anyways)
+        - Virbank Gym Leader Background was incorrect; it was using the Speaker 
+    
+    [ SCRIPTING ]
+        - Confirm the following new scripts work 
+            - Lostlorn Forest Berry Dispenser 
+            - Clay Tunnel Gem Dispenser 
+    
+    [ MECHANICS ]
+        - See if we can hack the "Set Met Location" function to set a new unique met location for Route-20 East, Floccessy Town
+    
+
+
+
+
+====================================================================================================================================================
+/*   NEW CONTENT  */
+
+    If I want to lay the groundwork for the later splits, the main task I need to start with is scripting. These are the major scripting tasks for everything up to Drayden himself. 
+        - Things that I would need to research 
+            - Adding a new tag battle partner to the game. I want to do this anyways for Iris and Janine. 
+            - Implementing a new field effect for Abundant Shrine: +20% accuracy to all moves. 
+            - Implementing the new field effect for Virizion; grounded pokemon are leeched on switch in. 
+            - Implementing a new field effect for Plasma Hordes (1/8 damage taken at the end of each turn)
+            - Following trainer logic. How does it work?
+        - Things that I know how to do but would require some effort 
+            - Virizion Scripted Encounter.
+                - We can definitely do a "low-tech" version of this for now that is a simple battle script that uses 2-3 flags. 
+                - We need to remember which trainer class we made virizion. 
+                - We also need to change the spawn flag for the entities blocking the bridge to pinwheel forest, and then also add a new block preventing players from getting to Nacrene city. 
+            - Terrakion Scripted Encounter 
+                - This one would require changing the spawn flag for Marshall, or maybe even adding a little script for when you arrive where Iris asks him to stand aside. 
+                - We would also need to remember what trainer class is terrakion
+            - Abundant Shrine Alder Encounter 
+                - This requires setting up a new trainer class and overwriting one of the old ones. I honestly don't even remember what I overwrote for Cobalion and co. 
+                - We also need to remember how to replace the trainer sprites with Victini's animation, knowledge that I did not write down. 
+                - This also requires figuring out how to add back trainer sprites. We could, in theory, use Hugh here instead. We would also need to commision some art eventually. 
+                - See what happens if we call this with a trainer class that doesn't have a back sprite. Does it freak out? 
+        - Route 14 Gauntlet 
+        - Strange House Gauntlet 
+        - Village Bridge Gauntlet 
+        - Castelia Sewers Rework: 
+            - I think a potentially simple way to achieve this is to simply move the trainers, but this could be complicated with sewers having different maps for different seasons.
+
+    What to do for now: 
+        - Do my formal walk through of Drayden split. Walk through all the maps, noting all the trainer ids and item ids. 
+        - Reconstruct the entities for Reversal Mountain Interior. 
+        - Add in dummy entities and trigger zones for areas. 
+
+
+
+
+
+
+
+
+====================================================================================================================================================
+/*   SPIT BALLING   */
+
+    [ LATER SPLIT CONTENT ]
+        - So I have a couple of ideas of how to distribute the content in the later splits of the game to be better paced and make more sense 
+
+        IDEA A:
+            Marlon is not fought until after defeating Team Plasma. 
+            + This is simple and easy to achieve. It removes the weird pacing break that occurs when, while pursuing team plasma, you take a break to beat a gym. 
+            + It also fills out Marlon split which is extremely short.
+            - This does nothing to shorten Drayden split really. 
+            - My current plan for the swords of justice had Cobalion (Skyla), Virizion (Drayden), Terrakion (Marlon), Keldeo (E4). This wouldn't work with Plasma being defeated within Marlon split. 
+                - I could maybe address this by adding Terrakion into the backhalf of Drayden split. This would also work well with splitting Drayden in half. 
+        
+        IDEA B: 
+            Marlon is fought before Drayden. Drayden is the fight that gatekeeps Giant Chasm and the plasma finale. 
+            
+            + This probably has the best pacing. It wouldn't require rewriting any of Marlon's dialogue and then causes the finale to flow well. 
+            - 
+        
+        IDEA C:
+            This can be combined with Idea A, but basically we split Drayden split in two.
+
+            Part A:
+                Reversal Mountain  
+                Strange House (Optional)
+                Route 14 Gauntlet
+                Abundant Shrine 
+                Virizion Side Quest (Optional)
+
+                The player moves from Lentimas to Reversal Mountain to Route 14 to Undella Town. They can optionally pursue Strange House or Virizion from the start of the split.
+                They fight Benga + Alder or some combination thereof in Abundant Shrine which ends this split.
+
+                Encounters:
+                    Lentimas Town 
+                    Strange House (Optional)
+                    Reversal Mountain
+                    Route 14
+                    Undella Town (Optional)
+                    Pinwheel Forest (Optional)
+                    Abundant Shrine 
+                
+            Part B:
+                Route 13
+                Lacunosa Town (Zinzolin Fight)
+                Route 12 (just has a gatekeeper boss)
+                Village Bridge Gauntlet 
+                Route 11 (just has one trainer)
+                Terrakion Side Quest 
+                Route 10 (gatekeeper boss)
+                Optional Blaine 
+                Drayden Gym 
+
+                This player moves from Route 13 to Lacunosa Town to Route 12 to the Village Bridge gauntlet to Route 11 to Opelucid City. 
+                Optional content includes Route 12/11 gatekeepers, Blaine, and the terrakion side quest. 
+
+                Encounters:
+                    Route 13
+                    Route 12 (Optional)
+                    Village Bridge
+                    Route 11 (Optional)
+                    Route 10 (Optional)
+                    Mall (Optional)
+                    Twist Mountain (optional)
+                
+            Then Marlon split would have:
+                Opelucid City Battles 
+                Marine Tube 
+                (Optional) Route 22
+                Route 21
+                Seaside Cave 
+                (Optional) Undella Bay 
+                Plasma Frigate Infiltration 
+                Giant Chasm 
+                Marlon Gym 
+
+                Encounters:
+                    Humilau City 
+                    Route 22
+                    Route 21 
+                    Seaside Cave 
+                    Undella Bay 
+                    Plasma Frigate 
+                    Giant Chasm 
+                     
+	[ Earmark footage for trailer ]
+		- Setup 
+			- Figure out how to make the PC invisible. 
+			- Find a good backing track 
+		- Scenes
+			- NEW Rivals
+				- Benga Text Box 
+				- Cobalion Battle 
+			- Battles
+				- Castelia Gym Battle 
+				- Elesa Gym Trainer Battle
+				- Roxie Gym Battle 
+				- Clay Gym Battle 
+				- Misty Gym Battle
+			- Catching pokemon in:
+				- Route 6 
+				- Route 20
+				- Virbank Water 
+				- Relic Castle 
+			- Overworld Panning Shots:
+				- Join Avenue 
+				- Driftveil Drawbridge
+				- Charge stone cave 
+			- New Pokemon
+				- Swoobat 
+				- Move use: Sticky Web
+				- Ability Use: Bulletproof triggers 
+				- Move Use: 1st Impression 
+				- Panning over bag with new items 
+			- QOL Options
+				- PC Anywhere
+				- Settings 
+				- Fast Travel 
+
+    [ # of encounters ]
+
+        Cheren Split (Total: 9, Mandatory: 8, Optional: 1)
+            Starter 
+            Rowdy Pokemon Center 
+            Route 19 
+            Flocessy Town 
+            Route 20 
+            Flocessy Ranch
+            Ranch Egg 
+            Alder's House 
+            Pledge Grove (Optional)
+        
+        Roxie Split (Total: 14, Mandatory: 12, Optional: 2)
+            Route 20-East
+            Virbank City
+            Virbank Complex (Outside)
+            Virbank Complex (Inside)
+            Togepi Egg (Optional)
+
+        Burgh Split (Total: 21, Mandatory: 17, Optional: 4)
+            Pokestar Studios 
+            Castelia Sewers 
+            Route 4 
+            Relic Passage 
+            Castelia Gardens 
+            Castelia Battle Company (Optional)
+            Liberty Garden (Optional)
+
+        Elesa Split (Total: 29, Mandatory: 22, Optional: 7)
+            Desert Resort 
+            Relic Castle 
+            Relic Castle Fossil (Optional)
+            Route 16
+            Route 5
+            Lostlorn Forest 
+            Lostlorn Forest Deep (Optional)
+            Anville Town (Optional)
+
+        Clay Split (Total: 33, Mandatory: 25, Optional: 8)
+            Driftveil Drawbridge 
+            Route 6 
+            Clay Tunnel (Optional)
+            Plasma Sanctuary 
+        
+        Skyla Split (Total: 41, Mandatory: 31, Optional: 10)
+            Weather Institute 
+            Mistralton Cave 
+            Relic Castle (Lower Floors)
+            Guidance Chamber (Optional)
+            Chargestone Cave
+            Route 7 
+            Celestial Tower 
+            Celestial Rooftop (Optional)
+
+        Drayden Split A (Total: 48, Mandatory: 35, Optional: 13)
+            Lentimas Town 
+            Reversal Mountain 
+            Strange House (Optional)
+            Route 14 
+            Pinwheel Forest (Optional)
+            Undella Town (Optional)
+            Abundant Shrine 
+        
+        Drayden Split B (Total: 55, Mandatory: 37, Optional: 18)
+            Route 13 
+            Route 12 (Optional)
+            Village Bridge 
+            Route 11 (Optional)
+            Route 9 (Optional)
+            Challenger's Cave (Optional)
+            Twist Mountain (Optional) 
+
+        Marlon Split (Total: 62, Mandatory: 38, Optional: 23)
+            Humilau Town 
+            Route 21 (Optional)
+            Seaside Cave (Optional)
+            Undella Bay (Optional)
+            Moors of Iccirus (Optional)
+        
+        Elite 4 Split (Total: 69, Mandatory: 50, Optional: 19)
+            Route 23
+            Nature Preserve (Optional)
+            Plasma Frigate 
+            Giant Chasm 
+            Deep Giant Chasm
+            Victory Road 
+            Something blocked by Red (Optional)
+        
+        Kyurem Split:
+
+            Route 22
+            Plasma Frigate 
+            Nature Preserve (Optional)
+            Giant Chasm 
+            Deep Giant Chasm 
+        
+        Elite 4 Split: 
+            Route 23 
+            Victory Road 
+            Old Victory Road 
+            Route 10 
+            Something (Optional)
+    
+    [ SPLIT BREAKDOWN ]
+        Cheren Split: 
+            Encounters: (Total: 9, Mandatory: 8, Optional: 1)
+                Mandatory: 8
+                Optional: 1 
+                Total: 9
+            
+            Trainers: (Total: 16, Mandatory: 13, Optional: 3)
+                Mandatory: 13 
+                Optional: 3
+                Total: 16
+        
+
+        Roxie Split: 
+            Encounters: (Total: 14, Mandatory: 12, Optional: 2)
+                Mandatory: 4
+                Optional: 1 
+                Total: 5
+            
+            Trainers: (Total: 34, Mandatory: 21, Optional: 13)
+                Mandatory: 8 
+                Optional: 10
+                Total: 18
+
+
+        Burgh Split: 
+            Encounters: (Total: 21, Mandatory: 17, Optional: 4)
+                Mandatory: 5
+                Optional: 2
+                Total: 7
+            
+            Trainers: (Total: 58, Mandatory: 33, Optional: 25)
+                Mandatory: 12 
+                Optional: 12
+                Total: 24
+        
+
+        Elesa Split: 
+            Encounters: (Total: 29, Mandatory: 22, Optional: 7)
+                Mandatory: 5
+                Optional: 3
+                Total: 8
+             
+            Trainers: (Total: 95, Mandatory: 49, Optional: 46)
+                Mandatory: 16
+                Optional: 21
+                Total: 38 
+
+
+        Clay Split: 
+            Encounters: (Total: 33, Mandatory: 25, Optional: 8)
+                Mandatory: 3
+                Optional: 1
+                Total: 4
+             
+            Trainers: (Total: 116, Mandatory: 65, Optional: 51)
+                Mandatory: 16
+                Optional: 5
+                Total: 23
+
+
+        Skyla Split: 
+            Encounters: (Total: 41, Mandatory: 31, Optional: 10)
+                Mandatory: 6
+                Optional: 2
+                Total: 8
+             
+            Trainers: (Total: 164, Mandatory: 89, Optional: 75)
+                Mandatory: 24
+                Optional: 24
+                Total: 48
+
+
+        Alder Split: 
+            Encounters: (Total: 48, Mandatory: 35, Optional: 13)
+                Mandatory: 4
+                Optional: 3
+                Total: 7
+             
+            Trainers: (Total: 187, Mandatory: 103, Optional: 84)
+                Mandatory: 14
+                    1 (Lentimas Town)
+                    1 (Benga)
+                    5 (Reversal Mountain)
+                    4 (Route 14)
+                    3 (Abundant Shrine)
+                Optional: 9
+                    1 (Strange House)
+                    2 (Reversal Mountain)
+                    1 (Route 14)
+                    2 (Undella Town)
+                    2 (Abundant Shrine)
+                    1 (Pinwheel Forest)
+                Total: 23 
+
+
+        Drayden Split: 
+            Encounters: (Total: 55, Mandatory: 37, Optional: 18)
+                Mandatory: 2
+                Optional: 5
+                Total: 7
+             
+            Trainers: (Total: 215, Mandatory: 122, Optional: 93)
+                Mandatory: 19
+                    5 (Route 13)
+                    1 (Zinzolin)
+                    1 (Route 12)
+                    6 (Village Bridge)
+                    1 (Route 11)
+                    5 (Opelucid Gym)
+                Optional: 9
+                    2 (Route 13)
+                    1 (Twist Mountain)
+                    2 (Route 9)
+                    2 (Village Bridge)
+                    1 (Route 12)
+                    1 (Route 11)
+                Total: 28
+
+
+        Marlon Split: 
+            Encounters: (Total: 60, Mandatory: 38, Optional: 22)
+                Mandatory: 1
+                Optional: 4
+                Total: 5
+             
+            Trainers: (Total: 242, Mandatory: 139, Optional: 103)
+                Mandatory: 17
+                    5 (Opelucid City)
+                    6 (Marine Tube)
+                    6 (Humilau Gym)
+                Optional: 10
+                    4 (Route 21)
+                    2 (Seaside Cavern)
+                    1 (Undella Bay)
+                    2 (Route 22)
+                    1 (Moor of Icirrus)
+                Total: 27
+
+
+        Kyurem Split 
+            Encounters: (Total: 65, Mandatory: 42, Optional: 23)
+                Mandatory: 4
+                Optional: 1
+                Total: 5
+             
+            Trainers: (Total: 278, Mandatory: 159, Optional: 119)
+                Mandatory: 20
+                    6 Grunts (Plasma Frigate)
+                    1 Horde of Grunts (Plasma Frigate)
+                    1 Zinzolin (Plasma Frigate)
+                    6 Grunts (Plasma Frigate)
+                    1 Hoard of Grunts (Plasma Frigate)
+                    1 Zinzolin (Plasma Frigate)
+                    1 Shadow Triad Conclusion (Plasma Frigate)
+                    1 Colress (Plasma Frigate)
+                    1 Ghetsis (Giant Chasm)
+                    1 Kyurem-W (Giant Chasm)
+                Optional: 16
+                    8 Grunts (First Plasma Frigate Infiltration)
+                    8 Grunts (Second Plasma Frigate Infiltration)
+                Total: 36
+
+
+        League Split: 
+            Encounters: (Total: 70, Mandatory: 46, Optional: 24)
+                Mandatory: 4
+                Optional: 1
+                Total: 5
+             
+            Trainers: (Total: 312, Mandatory: 179, Optional: 133)
+                Mandatory: 20
+                    5 (Route 23)
+                    10 (Victory Road)
+                    5 (Pokemon League) 
+                Optional: 14
+                    2 (Route 23)
+                    8 (Victory Road)
+                    4 (PWT)
+                Total: 34
+
+
+
+        *--------------------------------------------------------*
+        |   SPLIT   |    ENCOUNTERS   | | | |      TRAINERS      | 
+        *--------------------------------------------------------*
+        |  Cheren   |  9  |  8  |  1  | | | |  16  |  13  |   3  | 
+        |   Roxie   |  5  |  4  |  1  | | | |  18  |   8  |  10  | 
+        |   Burgh   |  7  |  5  |  2  | | | |  24  |  12  |  12  | 
+        |   Elesa   |  8  |  5  |  3  | | | |  38  |  16  |  21  | 
+        |    Clay   |  4  |  3  |  1  | | | |  23  |  16  |   5  | 
+        |   Skyla   |  8  |  6  |  2  | | | |  48  |  24  |  24  | 
+        |   Alder   |  7  |  4  |  3  | | | |  23  |  14  |   9  | 
+        | Drayden   |  7  |  2  |  5  | | | |  28  |  19  |   9  | 
+        |  Marlon   |  5  |  1  |  4  | | | |  27  |  17  |  10  | 
+        |  Kyurem   |  5  |  4  |  1  | | | |  36  |  20  |  16  | 
+        |  League   |  5  |  4  |  1  | | | |  34  |  20  |  14  | 
+        *--------------------------------------------------------*
+
+        9 | 16 1.778
+        5 | 18 3.6
+        7 | 24 3.42
+        8 | 38 4.75
+        4 | 23 5.75
+        8 | 48 6
+        7 | 23 3.28
+        7 | 28 4
+        5 | 27 5.4
+        5 | 36 7.2
+        5 | 34 6.8
+
+        8 | 13 1.625
+        4 |  8 2
+        5 | 12 2.4
+        5 | 16 3.2
+        3 | 16 5.3
+        6 | 24 4
+        4 | 14 3.5
+        2 | 19 9.5
+        1 | 17 17
+        4 | 20 5
+        4 | 20 5

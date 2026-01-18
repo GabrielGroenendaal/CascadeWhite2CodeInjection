@@ -1,0 +1,157 @@
+
+
+
+
+    
+
+
+
+
+
+        
+
+
+
+
+
+====================================================================================================================================================
+/*   CASTELIA SEWERS   */
+
+    This is a rework of Castelia Sewers to have it function more like my plan for Reversal Mountain. 
+    You will need to explore more of the map, and for each set of trainers you can choose two options 
+    Fight them as a tag battle or fight them as a back-to-back. 
+
+    We will need to change a bunch of warp locations. We also need to walk through the sewers and see what linearity we can impose. 
+
+
+====================================================================================================================================================
+/*   PLASMA FRIGATE   */
+
+    In order to add the "stealing one of the player's pokemon" mechanic into the game we'll need to add or modify the following. 
+
+    A script that iterates over the players party getting a count of non-fainted Pokemon. 
+    It then stores those indexes in an array. 
+    It then uses the count to generate a random value between 0 and the count. 
+    The daycare store script will run on the index indicated in the array for the party.
+    It will store the species of the Pokemon in an EventWork.
+
+    Dialogue wise, we can look into the following dialogues: 
+        Chargestone Hugh 
+        Hugh and Cheren right after the encounter 
+        Bianca in chargestone cave. 
+        Professor Juniper 
+
+
+====================================================================================================================================================
+/*   MON DISTRIBUTION  */
+
+    Mons I would want to use in the early game:
+        Surskit
+        Aipom 
+        Swinub 
+        Spheal 
+        Anorith 
+        Palpitoad 
+        Cottonee 
+        Zorua
+        Joltik 
+        Golett 
+        Pawniard 
+        Shieldon 
+        Gulpin
+
+        Cubone
+        Natu
+        Makuhita
+        Meditite 
+        Swablu
+        Baltoy
+        Anorith
+        Hippopotas
+        Drilbur
+        Axew
+
+
+    Mons I haven't useed yet in the early game:
+        Nidoran 
+        Nidoran-F 
+        Bulbasaur
+        Charmander
+        Squirtle
+        Chikorita 
+        Cyndaquil 
+        Chimchar 
+        Turtwig 
+        Treecko 
+        Mudkip 
+        Zigzagoon
+        Venonat
+        Cubone
+        Goldeen
+        Ledyba
+        Spinarak 
+        Natu
+        Aipom
+        Wooper
+        Pineco
+        Swinub
+        Taillow
+        Wingull
+        Shroomish
+        Numel
+        Ralts
+        Surskit
+        Nincada
+        Makuhita
+        Aron 
+        Meditite 
+        Electrike
+        Gulpin
+        Trapinch
+        Swablu
+        Corphish
+        Baltoy
+        Anorith
+        Shuppet
+        Chingling
+        Spheal
+        Gible
+        Bidoof
+        Kricketot
+        Shieldon
+        Shellos-East
+        Glameow
+        Riolu
+        Hippopotas
+        Skorupi
+        Finneon
+        Munna
+        Blitzle
+        Drilbur
+        Palpitoad
+        Sewaddle
+        Cottonee
+        Petilil
+        Sandile
+        Tirtouga
+        Zorua
+        Solosis 
+        Ducklett
+        Vanillite
+        Karrablast
+        Foongus
+        Shelmet
+        Frillish
+        Joltik
+        Ferroseed
+        Klink
+        Axew
+        Cubchoo
+        Mienfoo
+        Golett
+        Pawniard
+        Rufflet
+        Vullaby
+
+
+====================================================================================================================================================
