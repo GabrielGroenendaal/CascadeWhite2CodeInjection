@@ -124,41 +124,12 @@ extern "C" BattleField *THUMB_BRANCH_BattleField_Init(HeapID a1)
     return v1;
 }
 
-// extern "C" void BattleField_ResetParentalBondFlag()
-// {
-//     return;
-// }
-
-// extern "C" b32 ParentalBondCheck(ServerFlow *serverFlow, MoveID moveID, BattleMon *attackingMon, PokeSet *targetSet)
-// {
-//     return 0;
-// }
-// extern "C" void BattleField_SetParentalBondFlag()
-// {
-//     return;
-// }
 
 extern "C" int ServerEvent_CheckMultihitHits(ServerFlow *a1, BattleMon *a2, int a3, HitCheckParam *a4);
 extern "C" void THUMB_BRANCH_LINK_ServerControl_DamageRoot_0x36(ServerFlow *serverFlow, BattleMon *attackingMon, MoveID moveID, HitCheckParam *hitCheckParam)
 {
     ServerEvent_CheckMultihitHits(serverFlow, attackingMon, moveID, hitCheckParam);
-
-    // Reset any substitute damage recorded
     sys_memset(g_BattleVars->actionSubstituteDamage, 0, 31 * sizeof(u32));
-
-    // // Reset Parental Bond flag
-    // BattleField_ResetParentalBondFlag();
-    // if (!serverFlow->hitCheckParam->fMultiHitMove && ParentalBondCheck(serverFlow, moveID, attackingMon, serverFlow->setTargetOriginal))
-    // {
-    //     // I use [serverFlow->setTargetOriginal] so that Parental Bond takes into account
-    //     // all original targets even if they had Immunities of if the move missed
-    //     serverFlow->hitCheckParam->countMax = 2;
-    //     serverFlow->hitCheckParam->fCheckEveryTime = 0;
-    //     serverFlow->hitCheckParam->fMultiHitMove = 1;
-
-    //     // Set the Parental Bond flag so that the second hit has to deal less damage, used in [HandlerParentalBondPower]
-    //     BattleField_SetParentalBondFlag();
-    // }
 }
 
 extern "C" void GFL_HeapFree(void *heap);
@@ -190,7 +161,7 @@ extern "C" void ServerEvent_AddConditionFailed(ServerFlow *a1, BattleMon *a2, Ba
 extern "C" void PokeSet_SeekStart(PokeSet *a1);
 extern "C" BattleMon *PokeSet_SeekNext(PokeSet *a1);
 
-// Called when the ability of a Pokemon stops being nullifyed [ServerControl_CureCondition]
+//Called when the ability of a Pokemon stops being nullifyed [ServerControl_CureCondition]
 extern "C" void ServerEvent_AbilityNullifyCured(ServerFlow *serverFlow, BattleMon *battleMon)
 {
     BattleEventVar_Push();
@@ -347,23 +318,6 @@ extern "C" u32 THUMB_BRANCH_SAFESTACK_ServerControl_AddConditionCheckFail(Server
     }
 }
 
-extern "C" void P_SeekStart(PokeSet p)
-{
-    p.getIdx = 0;
-}
-
-extern "C" BattleMon *P_SeekNext(PokeSet p)
-{
-    unsigned int getIdx; // r3
-
-    getIdx = p.getIdx;
-    if (getIdx >= p.count)
-    {
-        return 0;
-    }
-    ++p.getIdx;
-    return p.battleMon[getIdx];
-}
 extern "C" void ServerEvent_SwitchInPriority(ServerFlow *serverFlow)
 {
     PokeSet *set = (PokeSet *)((int)serverFlow + 0x1A68);
@@ -950,7 +904,7 @@ extern "C" void THUMB_BRANCH_ServerEvent_BeforeAttacks(ServerFlow *a1, BattleMon
 {
   int ID; // r0
 
-  k::Printf("Dynamic Speed - Before Attacks Event\n");
+//   k::Printf("Dynamic Speed - Before Attacks Event\n");
   BattleEventVar_Push();
   ID = BattleMon_GetID(a2);
   BattleEventVar_SetValue(VAR_MON_ID, ID);
@@ -1582,19 +1536,4 @@ extern "C" void THUMB_BRANCH_LINK_BtlServer_FaintSequence_0x136(BtlServerWk *btl
 //               BattleMon_GetID(monGainingExp), amountOfExpGainedSoFar, monGainingExpLevel, defeatedMonLevel, v10);
 //     return v10;
 // }
-#pragma endregion
-
-#pragma region BattleScan
-
-#pragma endregion
-#pragma region Field Effect Stuff
-
-/*
-
-    ----------------------------------------------------------------------------------------------------
-    ---------------------------------- COMBINED FIELD EFFECT CHANGES  ----------------------------------
-    ----------------------------------------------------------------------------------------------------
-
-*/
-
 #pragma endregion

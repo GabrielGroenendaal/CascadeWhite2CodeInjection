@@ -5287,6 +5287,64 @@ struct ScriptVM
     u8 *ExecFile;
 };
 
+    enum PlayerExState
+    {
+        FLD_PLAYER_EXSTATE_NONE = 0x0,
+        FLD_PLAYER_EXSTATE_CYCLING = 0x1,
+        FLD_PLAYER_EXSTATE_SURF = 0x2,
+        FLD_PLAYER_EXSTATE_DIVE = 0x3,
+    };
+
+    struct RTCTime
+    {
+        u32 Hour;
+        u32 Minute;
+        u32 Second;
+    };
+    struct TileType
+    {
+        u16 Class;
+        u16 Flags;
+    };
+    struct RailPosition
+    {
+        u16 ComponentID;
+        u8 ComponentIsLine;
+        u8 RailDirection;
+        s16 PosSide;
+        u16 PosFront;
+    };
+    typedef u16 fxangle;
+    typedef s32 fx32;
+
+    struct VecFx32
+    {
+        fx32 x;
+        fx32 y;
+        fx32 z;
+    };
+
+    struct PlayerState
+    {
+        u16 ZoneID;
+        VecFx32 VecPos;
+        RailPosition RailPos;
+        fxangle RotationAngle;
+        u8 field_1A;
+        u8 IsPosRail;
+        u16 NowOBJCODE;
+        __int16 field_1E;
+        int field_20;
+        int field_24;
+        int field_28;
+        int field_2C;
+        int field_30;
+        int field_34;
+        int field_38;
+        int field_3C;
+        PlayerExState ExState;
+    };
+    
 #pragma endregion
 
 #pragma region TypeCharts

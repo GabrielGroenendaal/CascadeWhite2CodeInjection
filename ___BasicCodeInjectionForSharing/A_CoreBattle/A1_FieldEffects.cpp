@@ -135,10 +135,15 @@ extern "C"
         BattleEvent_CallHandlers(a1, EVENT_BEFORE_ATTACKER_POWER);
         Value = BattleEventVar_GetValue(VAR_SWAP_POKE_ID);
 
-        if (Value != 31 || a4->MoveID == MOVE492_FOUL_PLAY)
+        if (Value != 31)
         {
             AttackingMon = PokeCon_GetBattleMon(a1->pokeCon, Value);
         }
+
+        if (a4->MoveID == MOVE492_FOUL_PLAY){
+            AttackingMon = PokeCon_GetBattleMon(a1->pokeCon, BattleMon_GetID(DefendingMon));
+        }
+
         if (BattleEventVar_GetValue(VAR_GENERAL_USE_FLAG) != 0)
         {
             RealStat = BattleMon_GetRealStat(AttackingMon, v8);
@@ -173,10 +178,9 @@ extern "C"
 
         v13 = RealStat;
 
-        // if (!Handler_IsSimulationMode(a1))
-        // {
-        //     k::Printf("\n\nThe realstat for the move %d is %d\n\n", a4->MoveID, v13);
-        // }
+        //if (!Handler_IsSimulationMode(a1))
+        //{
+        //}
 
         BattleEventVar_SetConstValue(VAR_MOVE_ID, a4->MoveID);
         BattleEventVar_SetConstValue(VAR_MOVE_TYPE, a4->moveType);
@@ -619,5 +623,46 @@ bool THUMB_BRANCH_IsTrainerOT(BoxPkm *pPkm, void *pTrainerInfo)
     //         return BtlvInput_ChangeUIFileIDForBattleMode(365, a1);
     //     }
     // }
+
 #pragma endregion
 }
+
+    extern "C" void THUMB_BRANCH_SAFESTACK_PML_PkmSetMetParamsEx(BoxPkm *pPkm, u16 location, u16 year, u16 month, u16 day, bool isWild)
+{
+    __int16 v8; // r5
+    u16 alteredLocation;
+
+    alteredLocation = location;
+    // k::Printf("\nSetting Met Params for Pkm %d: Loc %d, Date %d/%d/%d, isWild %d\n", pPkm->pid, location, month, day, year, isWild);
+    if (location == 125    // Route 20
+        || location == 72  // Lostlorn Forest
+        || location == 122 // Floccessy Town
+    )
+    {
+        PlayerState *playerState = GameData_GetPlayerState(*(GameData **)(g_GameBeaconSys + 4));
+        VecFx32 *vec = PlayerState_GetWPos(playerState);
+        int zoneId = PlayerState_GetZoneID(playerState);
+
+        // Route 20
+        if (location == 122 && zoneId == 440)
+        {
+            alteredLocation = 94;
+        }
+        // Route 20
+        if (zoneId == 446 && location == 125 && vec->y <= 0)
+        {
+            alteredLocation = 93;
+        }
+        // Lostlorn Forest
+        if (location == 72 && zoneId == 385 && vec->z <= 1925120)
+        {
+            alteredLocation = 95;
+        }
+    }
+
+    PML_PkmSetParam(pPkm, (PkmField)(isWild + 149), alteredLocation);
+    v8 = (3 * isWild);
+    PML_PkmSetParam(pPkm, (PkmField)(v8 + 143), year);
+    PML_PkmSetParam(pPkm, (PkmField)(v8 + 144), month);
+    PML_PkmSetParam(pPkm, (PkmField)(v8 + 145), day);
+};

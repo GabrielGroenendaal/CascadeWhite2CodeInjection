@@ -1280,13 +1280,17 @@ extern "C"
         HandlerParam_RemoveSideEffect *v9; // r0
         HandlerParam_AddCondition *v10;    // r4
 
+        // k::Printf("TOXIC SPIKES HANDLER\n");
         int currentSlot = BattleEventVar_GetValue(VAR_MON_ID);
         if (currentSide == GetSideFromMonID(currentSlot) && !Handler_CheckFloating(serverFlow, currentSlot))
         {
+            // k::Printf("TOXIC SPIKES HANDLER PROCESS\n");
             BattleMon *currentMon = Handler_GetBattleMon(serverFlow, currentSlot);
             if (BattleMon_HasType(currentMon, TYPE_POISON))
             {
+                // k::Printf("TOXIC SPIKES HANDLER POISON TYPE REMOVE\n");
                 v7 = (HandlerParam_RemoveSideEffect *)BattleHandler_PushWork(serverFlow, EFFECT_REMOVE_SIDE_EFFECT, currentSlot);
+                // k::Printf("TOXIC SPIKES HANDLER POISON TYPE REMOVE 2\n");
                 v7->side = currentSide;
                 v7->flags[0] = 3;
                 for (unsigned int i = 1; i < 3; ++i)
@@ -1299,6 +1303,7 @@ extern "C"
                     v7->flags[1] |= 0x80u;
                 }
                 BattleHandler_PopWork(serverFlow, v7);
+                // k::Printf("TOXIC SPIKES HANDLER POISON TYPE REMOVE DONE\n");
             }
             else
             {
@@ -1771,7 +1776,7 @@ extern "C"
         }
     }
 
-    int THUMB_BRANCH_BattleHandler_RemoveSideEffectCore(ServerFlow *serverFlow, HandlerParam_RemoveSideEffect *params)
+    int THUMB_BRANCH_SAFESTACK_BattleHandler_RemoveSideEffectCore(ServerFlow *serverFlow, HandlerParam_RemoveSideEffect *params)
     {
         unsigned int flagIdx;
         bool effectFlagActive;
@@ -1793,6 +1798,7 @@ extern "C"
                         {
                             if (j_j_SideEvent_RemoveItem(params->side, j))
                             {
+                                // k::Printf("Removing extended side effect %d from side %d\n", j, params->side);
                                 ServerControl_SideEffectEndMessageCore(serverFlow, SIDEEFF_STEALTH_ROCK, params->side);
                                 removedAnEffect = 1;
                             }
@@ -1801,13 +1807,18 @@ extern "C"
                 }
                 else if (j_j_SideEvent_RemoveItem(params->side, i))
                 {
+                    // k::Printf("Removing side effect %d from side %d\n", i, params->side);
                     ServerControl_SideEffectEndMessageCore(serverFlow, i, params->side);
+                    // k::Printf("Removed side effect %d from side %d\n", i, params->side);
                     removedAnEffect = 1;
+                } else {
+                    // k::Printf("Failed to remove side effect %d from side %d\n", i, params->side);
                 }
             }
         }
 
         removeSideEffExtFlags = 0;
+        // k::Printf("Finished removing side effects from side %d\n", params->side);
         return removedAnEffect;
     }
 
@@ -1872,71 +1883,76 @@ extern "C"
         }
     }
 
-    void THUMB_BRANCH_ServerControl_SideEffectEndMessageCore(ServerFlow *a1, unsigned int a2, int a3)
-    {
-        int v4; // r2
+    // void THUMB_BRANCH_SAFESTACK_ServerControl_SideEffectEndMessageCore(ServerFlow *a1, unsigned int a2, int a3)
+    // {
+    //     int v4; // r2
 
-        v4 = -1;
-        if (a2 <= 0xF)
-        {
-            if (IsEqual(a2, 0))
-            {
-                v4 = 126;
-            }
-            else if (IsEqual(a2, 1))
-            {
-                v4 = 130;
-            }
-            else if (IsEqual(a2, 2))
-            {
-                v4 = 134;
-            }
-            else if (IsEqual(a2, 3))
-            {
-                v4 = 138;
-            }
-            else if (IsEqual(a2, 4))
-            {
-                v4 = 142;
-            }
-            else if (IsEqual(a2, 5))
-            {
-                v4 = 146;
-            }
-            else if (IsEqual(a2, 6))
-            {
-                v4 = 150;
-            }
-            else if (IsEqual(a2, 7))
-            {
-                v4 = 154;
-            }
-            else if (IsEqual(a2, 8))
-            {
-                v4 = 158;
-            }
-            else if (IsEqual(a2, 0xB))
-            {
-                v4 = 166;
-            }
-            else if (IsEqual(a2, 0xC))
-            {
-                v4 = 170;
-            }
-            else if (IsEqual(a2, 0xD))
-            {
-                v4 = 174;
-            }
-            else if (IsEqual(a2, 0xE))
-            {
-                v4 = 212;
-            }
-        }
-        if (v4 >= 0)
-        {
-            ServerDisplay_AddMessageImpl(a1->serverCommandQueue, 90, v4, a3);
-        }
-    }
+    //     v4 = -1;
+    //     if (a2 <= 0xF)
+    //     {
+    //         if (IsEqual(a2, 0))
+    //         {
+    //             v4 = 126;
+    //         }
+    //         else if (IsEqual(a2, 1))
+    //         {
+    //             v4 = 130;
+    //         }
+    //         else if (IsEqual(a2, 2))
+    //         {
+    //             v4 = 134;
+    //         }
+    //         else if (IsEqual(a2, 3))
+    //         {
+    //             v4 = 138;
+    //         }
+    //         else if (IsEqual(a2, 4))
+    //         {
+    //             v4 = 142;
+    //         }
+    //         else if (IsEqual(a2, 5))
+    //         {
+    //             v4 = 146;
+    //         }
+    //         else if (IsEqual(a2, 6))
+    //         {
+    //             v4 = 150;
+    //         }
+    //         else if (IsEqual(a2, 7))
+    //         {
+    //             v4 = 154;
+    //         }
+    //         else if (IsEqual(a2, 8))
+    //         {
+    //             v4 = 158;
+    //         }
+    //         else if (IsEqual(a2, 0xB))
+    //         {
+    //             v4 = 166;
+    //         }
+    //         else if (IsEqual(a2, 0xC))
+    //         {
+    //             v4 = 170;
+    //         }
+    //         else if (IsEqual(a2, 0xD))
+    //         {
+    //             v4 = 174;
+    //         }
+    //         else if (IsEqual(a2, 0xE))
+    //         {
+    //             v4 = 212;
+    //         }
+    //         else {
+    //             v4 = 0;
+    //         }
+    //     }
+    //     if (v4 > 0)
+    //     {
+    //         // k::Printf("\nSending side effect end message %d for side %d", v4, a3);
+    //         ServerDisplay_AddMessageImpl(a1->serverCommandQueue, 90, v4, a3);
+    //         // k::Printf("\nMessage sent");
+    //     }
+    // }
 
     extern void BattleField_EndWeather(BattleField *a1);
     extern int BtlvCore_WaitMessage(BtlvCore *a1);

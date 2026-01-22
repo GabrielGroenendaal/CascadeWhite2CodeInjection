@@ -1,0 +1,10 @@
+
+
+Pokemon Cascade White 
+
+Pokemon Cascade White is a comprehensive overhaul and difficulty hack of Pokemon White 2 that strives to breath new life into Unova and the ecosystem of Gen 5 Pokemon games. Cascade White features 
+- A Rebalanced Pokedex: Many new item, ability, and move mechanics have been imported from later generations or are completely new! 
+- New and Imported Mechanics: Many items, abilities, and moves from later gens have been imported into the game such as Gooey or Tough Claws, as well as many brand new move, ability, and item effects!
+- Extensive Quality of Life: Mobile PC, free Party heals, Fast Travel, Infinite Candies, easy exp edging, pre-status, pre-damaging tools. You can view enemy teams in-game, in-battle without having to open the docs using the Battle Scan! There are configurable in-game settings that allow players to shape their preferred gameplay experience; including vanilla trainer placements to make most trainers optional or later gen crit mechanics! 
+- Trainers Galore: (add notes here about the improvements to the AI) Massive improvements to the AI for switch ins, move selection, and damage calculation.
+- Regional Makeover: Explore an Unova with custom animated battle backgrounds for every location and new story events, rival battles, and more. 

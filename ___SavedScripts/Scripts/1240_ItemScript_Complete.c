@@ -349,12 +349,12 @@ void Sequence28()
 	End();
 }
 
-/* BlackGlasses - Castelia Sewers */
+/* Green Shards - Castelia Sewers */
 void Sequence29()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 240);
-	SetVarEqVal(0x800D, 1);
+	SetVarEqVal(0x800C, 75);
+	SetVarEqVal(0x800D, 15);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -373,12 +373,12 @@ void Sequence30()
 	End();
 }
 
-/* TM54 Breaking Swipe - Castelia Sewers */
+/* Mental Herb x5 - Castelia Sewers */
 void Sequence31()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 381);
-	SetVarEqVal(0x800D, 1);
+	SetVarEqVal(0x800C, 219);
+	SetVarEqVal(0x800D, 5);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -397,10 +397,11 @@ void Sequence32()
 	End();
 }
 
+/* STICKY BARB - Sewers */
 void Sequence33()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 421);
+	SetVarEqVal(0x800C, 288);
 	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
@@ -1099,12 +1100,12 @@ void Sequence92()
 	End();
 }
 
-/* CHARGESTONE CAVE - Electric Gem (x3) */
+/* CHARGESTONE CAVE - Electric Gem (x10) */
 void Sequence93()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 550);
-	SetVarEqVal(0x800D, 3);
+	SetVarEqVal(0x800D, 10);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -1123,22 +1124,24 @@ void Sequence94()
 	End();
 }
 
+/* CHARGESTONE CAVE - Wacan Berry (x10) */
 void Sequence95()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 47);
-	SetVarEqVal(0x800D, 1);
+	SetVarEqVal(0x800C, 186);
+	SetVarEqVal(0x800D, 10);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
 	End();
 }
 
+/* MISTRALTON CITY - Red Shards (x30) */
 void Sequence96()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 83);
-	SetVarEqVal(0x800D, 1);
+	SetVarEqVal(0x800C, 72);
+	SetVarEqVal(0x800D, 30);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -2569,7 +2572,19 @@ void Sequence224()
 void Sequence225()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 158);
+	SetVarEqVal(0x800C, 561);
+	SetVarEqVal(0x800D, 3);
+	Sequence400();
+	WaitMoment();
+	UnlockAll();
+	End();
+}
+
+/* Yellow Shard x10 - Celestial Rooftop */
+void Sequence226()
+{
+	LockAll();
+	SetVarEqVal(0x800C, 74);
 	SetVarEqVal(0x800D, 10);
 	Sequence400();
 	WaitMoment();
@@ -2577,33 +2592,24 @@ void Sequence225()
 	End();
 }
 
-void Sequence226()
-{
-	LockAll();
-	SetVarEqVal(0x800C, 75);
-	SetVarEqVal(0x800D, 1);
-	Sequence400();
-	WaitMoment();
-	UnlockAll();
-	End();
-}
-
+/* Yellow Shard x10 - Clay Tunnel */
 void Sequence227()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 93);
-	SetVarEqVal(0x800D, 1);
+	SetVarEqVal(0x800C, 74);
+	SetVarEqVal(0x800D, 10);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
 	End();
 }
 
+/* Yellow Shard x6 - Driftveil City */
 void Sequence228()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 27);
-	SetVarEqVal(0x800D, 1);
+	SetVarEqVal(0x800C, 74);
+	SetVarEqVal(0x800D, 6);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -2622,11 +2628,12 @@ void Sequence229()
 	End();
 }
 
+/* Yellow Shard x6 - Clay Tunnel */
 void Sequence230()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 290);
-	SetVarEqVal(0x800D, 3);
+	SetVarEqVal(0x800C, 74);
+	SetVarEqVal(0x800D, 6);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -2644,6 +2651,7 @@ void Sequence231()
 	UnlockAll();
 	End();
 }
+
 
 void Sequence232()
 {
@@ -2711,10 +2719,11 @@ void Sequence237()
 	End();
 }
 
+/* Data Card Test*/
 void Sequence238()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 246);
+	SetVarEqVal(0x800C, 505);
 	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();

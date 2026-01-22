@@ -47,7 +47,7 @@ debuff_moves_script:
 debuff_moves_save_script:
 	GetAbilityGuess(attacker)
 	JumpIfStoredEQ(ability.prankster, &debuff_compareSpeed)
-	JumpCompareSpeed(GT, &debuff_compareSpeed)
+	JumpCompareSpeed(LT, &debuff_compareSpeed)
 	JumpIfRandLT(102, &debuff_compareSpeed)
 	AddToScore(-2)
 
@@ -65,7 +65,7 @@ debuff_compareSpeed:
 debuff_moves_status_script:
 	GetAbilityGuess(attacker)
 	JumpIfStoredEQ(ability.prankster, &endOfTheScript)
-	JumpCompareSpeed(GT, &endOfTheScript)
+	JumpCompareSpeed(LT, &endOfTheScript)
 	JumpIfRandLT(102, &endOfTheScript)
 	AddToScore(-2)
 	EndScript()
@@ -86,14 +86,16 @@ priorityCheckSpeed:
 	EndScript()
 
 priorityPrioritize:
+	// CalcMoveDamage(false)
+	// JumpIfStoredEQ(no_damage, &deprioritize_address)
 	JumpIfRandLT(100, &endOfTheScript)
-	AddToScore(12)
+	AddToScore(6)
 	EndScript()
 
 
 
 
-
+ 
 
 
 // HELPERS
@@ -182,6 +184,7 @@ debuff_moves_save:
 	move.growl
 	move.tickle
 	move.smokescreen
+	move.sand_attack
 	move.eerie_impulse
 	move.feather_dance
 	END

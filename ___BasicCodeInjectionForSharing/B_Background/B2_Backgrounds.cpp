@@ -1395,15 +1395,16 @@ extern "C"
                     status->BattleBGID = 65;
                 }
 
-                // Lostlorn Forest
-                if (PlayerStateZoneID == 385 && vec->z <= 1925120)
-                {
-                    status->BattleBGID = 67;
-                }
+                // // Lostlorn Forest
+                // if (PlayerStateZoneID == 385 && vec->z <= 1925120)
+                // {
+                //     status->BattleBGID = 67;
+                // }
             }
         }
     }
 
+    
 #pragma endregion
 
 #pragma region DoubleBattleFix

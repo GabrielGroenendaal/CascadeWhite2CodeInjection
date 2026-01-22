@@ -21,6 +21,7 @@ extern "C"
         unsigned int i; // r3
 
         if (itemId == IT0043_BERRY_JUICE){
+            // k::Printf("\n\nThe item is Berry Juice\n\n");
             return 1;
         }
         for (i = 0; i < 64; ++i)

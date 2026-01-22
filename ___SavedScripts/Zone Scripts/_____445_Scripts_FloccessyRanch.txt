@@ -132,7 +132,7 @@ import messages.script.Msg0315.MSGID;
 		Actor.WaitActionFinish();
 		Message.ActorEx(1024, 7, 2, 5, 0);
 		Message.CloseAll();
-		Global2805(75, 15);
+		Global2805(75, 20);
 		Actor.WalkRoute(2, 43, 46, 1, 8, 0);
 		Actor.WaitActionFinish();
 		ActionSequence_0f34(2);

@@ -211,123 +211,123 @@ extern "C"
 
 #pragma region DamageCalcStateTracking
 
-    struct keyPair
-    {
-        u8 dirty;
-        u16 value;
-    };
+//     struct keyPair
+//     {
+//         u8 dirty;
+//         u16 value;
+//     };
 
-    keyPair calcTable[6][6][4] = {
-        {{{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-         {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-         {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-         {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-         {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-         {{0, 0}, {0, 0}, {0, 0}, {0, 0}}},
-        {{{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-         {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-         {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-         {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-         {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-         {{0, 0}, {0, 0}, {0, 0}, {0, 0}}},
-        {{{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-         {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-         {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-         {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-         {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-         {{0, 0}, {0, 0}, {0, 0}, {0, 0}}},
-        {{{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-         {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-         {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-         {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-         {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-         {{0, 0}, {0, 0}, {0, 0}, {0, 0}}},
-        {{{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-         {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-         {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-         {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-         {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-         {{0, 0}, {0, 0}, {0, 0}, {0, 0}}},
-        {{{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-         {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-         {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-         {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-         {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-         {{0, 0}, {0, 0}, {0, 0}, {0, 0}}},
-    };
+//     keyPair calcTable[6][6][4] = {
+//         {{{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+//          {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+//          {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+//          {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+//          {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+//          {{0, 0}, {0, 0}, {0, 0}, {0, 0}}},
+//         {{{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+//          {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+//          {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+//          {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+//          {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+//          {{0, 0}, {0, 0}, {0, 0}, {0, 0}}},
+//         {{{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+//          {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+//          {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+//          {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+//          {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+//          {{0, 0}, {0, 0}, {0, 0}, {0, 0}}},
+//         {{{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+//          {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+//          {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+//          {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+//          {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+//          {{0, 0}, {0, 0}, {0, 0}, {0, 0}}},
+//         {{{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+//          {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+//          {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+//          {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+//          {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+//          {{0, 0}, {0, 0}, {0, 0}, {0, 0}}},
+//         {{{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+//          {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+//          {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+//          {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+//          {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+//          {{0, 0}, {0, 0}, {0, 0}, {0, 0}}},
+//     };
 
-    u16 NumOfCalcs = 0;
-    u16 NumOfCalcsAvoided = 0;
+//     u16 NumOfCalcs = 0;
+//     u16 NumOfCalcsAvoided = 0;
 
-    void resetCalcTable()
-    {
-        for (u8 i = 0; i < 6; i++)
-        {
-            for (u8 k = 0; k < 6; k++)
-            {
-                for (u8 j = 0; j < 4; j++)
-                {
-                    calcTable[i][k][j].dirty = 0;
-                    calcTable[i][k][j].value = 0;
-                }
-            }
-        }
-#if DEBUGGING_DAMAGECALC && DEBUGGING_ALL
-        k::Printf("\nThe number of calcs performed this turn was %d and the number of calcs avoided was %d\n", NumOfCalcs, NumOfCalcsAvoided);
-#endif
-        NumOfCalcs = 0;
-        NumOfCalcsAvoided = 0;
-    }
+//     void resetCalcTable()
+//     {
+//         for (u8 i = 0; i < 6; i++)
+//         {
+//             for (u8 k = 0; k < 6; k++)
+//             {
+//                 for (u8 j = 0; j < 4; j++)
+//                 {
+//                     calcTable[i][k][j].dirty = 0;
+//                     calcTable[i][k][j].value = 0;
+//                 }
+//             }
+//         }
+// #if DEBUGGING_DAMAGECALC && DEBUGGING_ALL
+//         k::Printf("\nThe number of calcs performed this turn was %d and the number of calcs avoided was %d\n", NumOfCalcs, NumOfCalcsAvoided);
+// #endif
+//         NumOfCalcs = 0;
+//         NumOfCalcsAvoided = 0;
+//     }
 
-    u8 GetMovePos(BattleMon *mon, MoveID move)
-    {
-        int movecount = BattleMon_GetMoveCount(mon);
-        int count = 0;
-        if (movecount)
-        {
-            do
-            {
-                if (Move_GetID(mon, count) == move)
-                {
-                    return count;
-                }
-                count++;
-            } while (count < movecount);
-        }
-        return 5;
-    }
+//     u8 GetMovePos(BattleMon *mon, MoveID move)
+//     {
+//         int movecount = BattleMon_GetMoveCount(mon);
+//         int count = 0;
+//         if (movecount)
+//         {
+//             do
+//             {
+//                 if (Move_GetID(mon, count) == move)
+//                 {
+//                     return count;
+//                 }
+//                 count++;
+//             } while (count < movecount);
+//         }
+//         return 5;
+//     }
 
-    u16 checkCalcTable(ServerFlow *flow, BattleMon *attacker, BattleMon *defender, MoveID move)
-    {
-        int index1 = Handler_PokeIDToPokePos(flow, attacker->ID);
-        int index2 = Handler_PokeIDToPokePos(flow, defender->ID);
-        int index3 = GetMovePos(attacker, move);
-        if (index3 > 4)
-        {
-            return 0;
-        }
+//     u16 checkCalcTable(ServerFlow *flow, BattleMon *attacker, BattleMon *defender, MoveID move)
+//     {
+//         int index1 = Handler_PokeIDToPokePos(flow, attacker->ID);
+//         int index2 = Handler_PokeIDToPokePos(flow, defender->ID);
+//         int index3 = GetMovePos(attacker, move);
+//         if (index3 > 4)
+//         {
+//             return 0;
+//         }
 
-        NumOfCalcs++;
-        if (calcTable[index1][index2][index3].dirty == 1)
-        {
-            NumOfCalcsAvoided++;
-            return calcTable[index1][index2][index3].value;
-        }
-        return 0;
-    }
+//         NumOfCalcs++;
+//         if (calcTable[index1][index2][index3].dirty == 1)
+//         {
+//             NumOfCalcsAvoided++;
+//             return calcTable[index1][index2][index3].value;
+//         }
+//         return 0;
+//     }
 
-    void saveToCalcTable(ServerFlow *flow, BattleMon *attacker, BattleMon *defender, MoveID move, u32 damage)
-    {
-        int index1 = Handler_PokeIDToPokePos(flow, attacker->ID);
-        int index2 = Handler_PokeIDToPokePos(flow, defender->ID);
-        int index3 = GetMovePos(attacker, move);
-        calcTable[index1][index2][index3].dirty = 1;
-        calcTable[index1][index2][index3].value = damage;
-    }
+//     void saveToCalcTable(ServerFlow *flow, BattleMon *attacker, BattleMon *defender, MoveID move, u32 damage)
+//     {
+//         int index1 = Handler_PokeIDToPokePos(flow, attacker->ID);
+//         int index2 = Handler_PokeIDToPokePos(flow, defender->ID);
+//         int index3 = GetMovePos(attacker, move);
+//         calcTable[index1][index2][index3].dirty = 1;
+//         calcTable[index1][index2][index3].value = damage;
+//     }
 
     void THUMB_BRANCH_ServerControl_TurnCheckField(ServerFlow *a1)
     {
-        resetCalcTable();
+        // resetCalcTable();
         BattleField_TurnCheck(TurnCheckCallback_Field, a1);
         ServerDisplay_AddCommon(a1->serverCommandQueue, 47, 0);
     }
@@ -916,7 +916,7 @@ extern "C"
         //         k::Printf("\nCheck 1: Setting up field effects at the start of the battle\n");
         // #endif
         /* Some kind of initialization of the damage calc cache would be good here */
-        resetCalcTable();
+        // resetCalcTable();
 
         for (i = 0; i < 4; ++i)
         {
@@ -1768,7 +1768,8 @@ extern "C"
             isSimulation == 0,
             &v12);
         --a1->simulationCounter;
-
+        
+        // k::Printf("\nSimulated Damage for move %d is %d\n", a4check, v12);
         // saveToCalcTable(a1, AttackingMon, DefendingMon, (MoveID)a4, v12);
 
         /*
@@ -3078,14 +3079,14 @@ extern "C"
             do
             {
 
-                moveDamage = checkCalcTable(flow, attackingMon, defender, (MoveID)Move_GetID(attackingMon, i));
-                if (!moveDamage)
-                {
+                // moveDamage = checkCalcTable(flow, attackingMon, defender, (MoveID)Move_GetID(attackingMon, i));
+                // if (!moveDamage)
+                // {
                     moveDamage = Handler_SimulationDamage(flow,
                                                           BattleMon_GetID(attackingMon),
                                                           BattleMon_GetID(defender),
                                                           Move_GetID(attackingMon, i), true, false);
-                }
+                // }
 
                 if ((moveDamage << 1) >= currentHp)
                 {
@@ -3269,14 +3270,14 @@ extern "C"
                 - If the move deals 0% damage due to no effectiveness, guaranteed switch out if any other pokemon has a move.
 
         */
-        int moveDamage = checkCalcTable(BattleServer_GetServerFlow(work->mainModule->server), attackingMon, defendingMon, (MoveID)moveID);
-        if (!moveDamage)
-        {
-            moveDamage = Handler_SimulationDamage(BattleServer_GetServerFlow(work->mainModule->server),
+        // int moveDamage = checkCalcTable(BattleServer_GetServerFlow(work->mainModule->server), attackingMon, defendingMon, (MoveID)moveID);
+        // if (!moveDamage)
+        // {
+          int  moveDamage = Handler_SimulationDamage(BattleServer_GetServerFlow(work->mainModule->server),
                                                   BattleMon_GetID(attackingMon),
                                                   BattleMon_GetID(defendingMon),
                                                   moveID, true, false);
-        }
+        // }
 
 #if DEBUGGING_MIDTURN_SWITCH_AI && DEBUGGING_ALL
         k::Printf("\n\n--------ShouldSwitchIfChoicedIntoIneffectiveMove-----------\nIs being called for move %d, used by Pokemon %d against Pokemon %d, and deals %d damage\n", moveID, attackingMon->Species, defendingMon->Species, moveDamage);

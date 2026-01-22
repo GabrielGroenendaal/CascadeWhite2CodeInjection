@@ -134,7 +134,7 @@
     },
     "Gust": {
       "type": "Flying",
-      "basePower": 40,
+      "basePower": 50,
       "category": "Special",
       "e_id": 149
     },
@@ -470,7 +470,7 @@
     },
     "Psybeam": {
       "type": "Psychic",
-      "basePower": 65,
+      "basePower": 70,
       "category": "Special",
       "e_id": 76,
       "sf": true

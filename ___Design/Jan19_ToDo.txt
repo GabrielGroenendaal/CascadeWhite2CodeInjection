@@ -9,31 +9,220 @@
 */
 
 
+
+
 ====================================================================================================================================================
 /*   ISSUES LIST   */
 
     [ BACKGROUNDS ]
-        - Castelia Battle Company Backgrounds A and B don't load lighting properly. 
-        - Virbank City background will cause a crash eventually. Too many polygons and colors probably 
-        - Castelia Gym background won't cause a crash but causes color distortions because too many palette items (in doubles anyways)
-        - Virbank Gym Leader Background was incorrect; it was using the Speaker 
+        - Now that ability changes isn't breaking things, let's test again with Background changes to see if there is somewhere else we can overwrite the lighting. 
+        
+
+    [ PLAYTESTING ]
+        - Set up the Dynamic Calc Npoint.io endpoint and give it to Hzla to add in.
+    
     
     [ SCRIPTING ]
-        - Confirm the following new scripts work 
-            - Lostlorn Forest Berry Dispenser 
-            - Clay Tunnel Gem Dispenser 
-    
+        - Do castelia sewers. If it's boring, spend tonight implementing the new sewers progression.
+        - Disable Travel in Castelia Sewers, Reversal Mountain
+        - Add a barrier in Castelia Sewers that doesn't go away until you defeat the PLasma Grunts that prevents you from getting to the alleyway. 
+        - Have Hugh reward you with a hardy, lax and gentle mint in the sewers!
+        - Add a trainer in Castelia Allleyway that fights you in exchange for an ability capsule. 
+        - Add a trade to castelia alleyway for one of the three following pokemon: 
+
+
     [ MECHANICS ]
-        - See if we can hack the "Set Met Location" function to set a new unique met location for Route-20 East, Floccessy Town
-    
+        - EndSideEffectMessageCore 
+            - We can also try to use direct address rewrites to get it to work over Swamp
+        - Add ability capsule.
+            - We'll overwrite one of the other EV increasing items, then have it set the nature to the PARAM - 1. 
+            - If it's not separate messages this will be a little more complicateed.
+            - 
+        - Add Mints
+            - We'll overwrite one of the other EV increasing items, then have it set the nature to the PARAM - 1. 
 
 
 
 
 ====================================================================================================================================================
-/*   NEW CONTENT  */
+/*   ITEM ADDITIONS  */
 
-    If I want to lay the groundwork for the later splits, the main task I need to start with is scripting. These are the major scripting tasks for everything up to Drayden himself. 
+
+    I think I've got most of the implementation down, we'll just need to modify the text banks, and modify the items themselves to work properly. 
+    
+    [ NATURE MINTS ] 
+        You acquire a Quirky Mint in Virbank Complex. 
+        Colress gives you a Bashful, Bold, and Careful Mint. 
+        Defeating Sabrina gets you a modest mint (replaces the Yellow Shards)
+        
+        For Mints we can use the Data Cards. Indexes: 505-529 
+        They are unused in the game right now, they're in order, and that should work perfectly fine. 
+
+        0: Hardy
+        1: Lonely
+        2: Brave 
+        3: Adamant 
+        4: Naughty 
+        5: Bold
+        6: Docile 
+        7: Relaxed
+        8: Impish
+        9: Lax 
+        10: Timid 
+        11: Hasty 
+        12: Serious
+        13: Jolly 
+        14: Naive 
+        15: Modest 
+        16: Mild 
+        17: Quiet 
+        18: Bashful 
+        19: Rash 
+        20: Calm 
+        21: Gentle 
+        22: Sassy 
+        23: Careful 
+        24: Quirky 
+
+    [ ABILITY CAPSULES ]
+        For Ability Capsules we'll replace Zinc. 
+
+        An NPC in Burgh split will fight you guarding 2 ability capsules in the Castelia Alleyway. 
+        He won't fight you post Burgh. 
+
+
+        Scrafty 
+        Level: 28
+        Ability: Intimidate 
+        Moves: 
+            - Crunch 
+            - Brick Break 
+            - Fake Out 
+            - Zen Headbutt
+        
+        Beedrill 
+        Level: 28
+        Ability: Adaptability 
+        Moves: 
+            - Poison Jab 
+            - Skitter Smack 
+            - Detect 
+            - Thrash 
+        
+        Toxicroak 
+        Level: 28
+        Ability: Exploit 
+        Moves: 
+            - Force Palm
+            - Poison Jab
+            - Sucker Punch 
+            - Fake Out
+        
+        Hitmonchan 
+        Level: 28
+        Ability: Iron Fist
+        Moves: 
+            Ice Punch
+            Fire Punch 
+            Thunder Punch 
+            Dizzy Punch
+
+
+
+
+====================================================================================================================================================
+/*   BACKGROUNDS  */
+    - Setup DS Dev Environment
+            - We need to install homebrew onto our DS so that we can test our backgrounds on hardware. 
+            - Aphex already provided instructions for how to do this.
+        - Refamiliarize self with workflow 
+            - It has been almost a year since I last worked on the animated backgrounds. It would behoove me to refamiliarize myself with the workflow. 
+            - Especially when it comes to working with maps i've already made
+        - List of Issues
+            - Visual Artifacts 
+                - Route 19 
+                - Route 20 
+                - Flocessy Ranch 
+            - Lack of Domed Skybox
+                - Most of the early game maps  
+            - Lack of Proper Lighting 
+                - Virbank Gate 
+                - Castelia Battle Company 
+            - Crashes 
+                - Virbank City 
+                - Castelia Gyms
+            - Misc.     
+                - Add the water platforms to Virbank City 
+        - Backgrounds to Make 
+            - Earlier Splits: 
+                - Pokestar Studios 
+                - Aspertia Classroom 
+            - Skyla Split: 
+                - PWT (Interior)
+                - Plasma Frigate 
+                - Relic Sanctum 
+                - Seasonal Research Lab 
+                - Guidance Chamber 
+                - Chargestone Cave 
+                - Route 7 
+                - Celestial Tower 
+                - Celestial Rooftop 
+                - Skyla's Gym 
+                - Skyla Leader 
+            - Alder Split: 
+                - Lentimas Town 
+                - Reversal Mountain (exterior)
+                - Strange House 
+                - Reversal Mountain (interior)
+                - Route 14 
+                - Undella Town 
+                - P2 Lab 
+                - Pinwheel Forest 
+                - Abundant Shrine 
+            - Drayden Split: 
+                - Route 13 
+                - Lacunosa Town 
+                - Route 12 
+                - Village Bridge 
+                - Route 11 
+                - Opelucid City 
+                - Route 9 
+                - Challenger's Cave 
+                - Twist Mountain (Interior)
+                - Twist Mountain (exterior)
+                - Opelucid Gym 
+            - Marlon Split 
+                - Opelucid City (frozen)
+                - Marine Tube 
+                - Humilau City 
+                - Route 21
+                - Route 22 
+                - Seaside Cave 
+                - Undella Bay 
+                - Nature Preserve 
+                - Moors of Iccirus 
+                - Humilau Gym 
+            - Kyurem Split 
+                - Plasma Frigate (interior)
+                - Plasma Frigate Core 
+                - Giant Chasm (interior)
+                - Giant Chasm (exterior)
+                - Plasma Frigate (barracks)
+                - Plasma Frigate Colress Room 
+                - Plasma Frigate Shadow Room 
+                - Deep Giant Chasm 
+            - League Split 
+                - Route 23 
+                - Victory Road (Ruins)
+                - Victory Road (Mountains)
+                - Victory Road (interior)
+                - Old Victory Road 
+                - Route 10 
+
+
+====================================================================================================================================================
+/*   SCRIPTING  */
+        If I want to lay the groundwork for the later splits, the main task I need to start with is scripting. These are the major scripting tasks for everything up to Drayden himself. 
         - Things that I would need to research 
             - Adding a new tag battle partner to the game. I want to do this anyways for Iris and Janine. 
             - Implementing a new field effect for Abundant Shrine: +20% accuracy to all moves. 
@@ -58,14 +247,6 @@
         - Village Bridge Gauntlet 
         - Castelia Sewers Rework: 
             - I think a potentially simple way to achieve this is to simply move the trainers, but this could be complicated with sewers having different maps for different seasons.
-
-    What to do for now: 
-        - Do my formal walk through of Drayden split. Walk through all the maps, noting all the trainer ids and item ids. 
-        - Reconstruct the entities for Reversal Mountain Interior. 
-        - Add in dummy entities and trigger zones for areas. 
-
-
-
 
 
 
@@ -516,3 +697,27 @@
         1 | 17 17
         4 | 20 5
         4 | 20 5
+
+    [ TMS ]
+        We made the following TMs redundant: 
+            - Low Sweep 
+            - Icy Wind 
+            - Incinerate 
+            - Snarl 
+            - Struggle Bug 
+            - Pluck 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -159,6 +159,35 @@ extern "C"
     //     return result;
     // }
 
+    extern bool CheckGetPartyPokemon(void *env, int slot, PartyPkm **ppPkm);
+    int THUMB_BRANCH_s0108_PokePartyGetMoveCount(void *vm, void *env)
+    {
+        u16 *dest;       // r7
+        int partyIdx;    // r0
+        u16 v6;          // r5
+        int i;           // r4
+        PartyPkm *ppPkm; // [sp+0h] [bp-18h] BYREF
+
+        dest = ScriptReadVar(vm, env);
+        partyIdx = ScriptReadAny(vm, env);
+        v6 = 0;
+        // k::Printf("Getting move count for party index %d\n", partyIdx);
+        if (CheckGetPartyPokemon(env, partyIdx, &ppPkm))
+        {
+            // k::Printf("Found Pokemon species %d\n", PokeParty_GetParam(ppPkm, PF_Species, 0));
+            for (i = 0; i < 4; ++i)
+            {
+                // k::Printf("Move %d ID is %d\n", i + 1, PokeParty_GetParam(ppPkm, (PkmField)(i + PF_Move1), 0));
+                if (PokeParty_GetParam(ppPkm, (PkmField)(i + PF_Move1), 0))
+                {
+                    ++v6;
+                }
+            }
+        }
+        *dest = v6;
+        return 0;
+    }
+
 #pragma endregion
 
 #pragma region WildPokemonModifiers
@@ -446,6 +475,7 @@ extern "C"
         int ivB;
         int count;
 
+        k::Printf("Improving IVs for species %d\n", PokeParty_GetParam(pPkm, PF_Species, 0));
         while (count < 5)
         {
             ivA = GFL_RandomMT() >> 27;
@@ -856,17 +886,52 @@ extern "C"
         *Var = v6;
         return 0;
     }
-    enum 	FieldmapCtrlType	 {FLD_MAPCTRL_GRID = 0x0,FLD_MAPCTRL_RAIL = 0x1,FLD_MAPCTRL_HYBRID = 0x2,};
-    struct 	EncData	 {u8 UserData[8];WildEncSlot Slots[56];};
-    struct 	GPosXYZ	{u16 X;s16 Y;u16 Z;};
-    struct 	EncountState {GPosXYZ GPos;u8 EncountRateBlockCounter;u8 EncountRateStepIncrement;u32 EncountRateStepCounter;TileType TileTypeUnder;u16 EncountRate;u16 field_12;u32 field_14;u16 field_18;GPosXYZ RareEncountPos;u32 field_20;u32 field_24;};
-    struct 	EncountSystem	{void *m_Field;void *m_GameSystem;GameData *m_GameData;EncData *m_EncData;void *m_EffectEncountState;};
-    extern EncountState* GameData_GetEncountState(GameData *a1);
+    enum FieldmapCtrlType
+    {
+        FLD_MAPCTRL_GRID = 0x0,
+        FLD_MAPCTRL_RAIL = 0x1,
+        FLD_MAPCTRL_HYBRID = 0x2,
+    };
+    struct EncData
+    {
+        u8 UserData[8];
+        WildEncSlot Slots[56];
+    };
+    struct GPosXYZ
+    {
+        u16 X;
+        s16 Y;
+        u16 Z;
+    };
+    struct EncountState
+    {
+        GPosXYZ GPos;
+        u8 EncountRateBlockCounter;
+        u8 EncountRateStepIncrement;
+        u32 EncountRateStepCounter;
+        TileType TileTypeUnder;
+        u16 EncountRate;
+        u16 field_12;
+        u32 field_14;
+        u16 field_18;
+        GPosXYZ RareEncountPos;
+        u32 field_20;
+        u32 field_24;
+    };
+    struct EncountSystem
+    {
+        void *m_Field;
+        void *m_GameSystem;
+        GameData *m_GameData;
+        EncData *m_EncData;
+        void *m_EffectEncountState;
+    };
+    extern EncountState *GameData_GetEncountState(GameData *a1);
     extern signed int EncSys_IsActive(EncountSystem *encsys);
-    extern void* GetMapMatrixSystem(GameData *pBaseBlk);
+    extern void *GetMapMatrixSystem(GameData *pBaseBlk);
     extern u16 Field_GetPlayerStateZoneID(void *field);
-    extern void* Field_GetPlayer(void *field);
-    extern void* FieldPlayer_GetActor(void *player);
+    extern void *Field_GetPlayer(void *field);
+    extern void *FieldPlayer_GetActor(void *player);
     extern void CopyActorWPos(void *mmdl, VecFx32 *dest);
     extern bool RangeCheckChunkCoordinateWorld(void *a1, int a2, int a3);
     extern int GetZoneIDAtMatrixXZWorld(void *a1, fx32 x, fx32 z);
@@ -874,7 +939,7 @@ extern "C"
     extern bool sub_21A24AC(EncountState *a1, int a2);
     extern u32 PassPower_ApplyExploringChance(u32 basePhenomenonChance);
     extern int positionShakingSpot(EncountSystem *encSys, int a2, u8 type);
-    extern void  sub_21A272C(void **a1, int a2);
+    extern void sub_21A272C(void **a1, int a2);
     extern void setShakingSpotOff(EncountState *result);
     bool isPhenoDisabled(EncountSystem *mgr)
     {
@@ -913,9 +978,9 @@ extern "C"
     {
         int v2;                          // r6
         _WORD *m_EffectEncountState;     // r7
-        void *MapMatrixSystem;      // r4
-        void *Player;             // r0
-        void *Actor;               // r0
+        void *MapMatrixSystem;           // r4
+        void *Player;                    // r0
+        void *Actor;                     // r0
         int ZoneIDAtMatrixXZWorld;       // r0
         void *TrainerCardDataBlkAddress; // r0
         EncData *m_EncData;              // r1
@@ -928,7 +993,7 @@ extern "C"
         a1 = GameData_GetEncountState(encSys->m_GameData);
         if (EncSys_IsActive(encSys))
         {
-            m_EffectEncountState = (unsigned short*)encSys->m_EffectEncountState;
+            m_EffectEncountState = (unsigned short *)encSys->m_EffectEncountState;
             MapMatrixSystem = GetMapMatrixSystem(encSys->m_GameData);
             if (encSys->m_Field)
             {

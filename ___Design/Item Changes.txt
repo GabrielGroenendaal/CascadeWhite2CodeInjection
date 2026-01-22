@@ -1,0 +1,29 @@
+
+
+ 48: Carbos -> Ability Capsule     ITSTAT_EV_SPA = 1
+ 52: Zinc -> Ability Patch         ITSTAT_EV_SPA = 2
+505: Data Card 01 -> Hardy Mint    ITSTAT_EV_SPE = 1
+506: Data Card 02 -> Lonely Mint   ITSTAT_EV_SPE = 2
+507: Data Card 03 -> Brave Mint    ITSTAT_EV_SPE = 3
+508: Data Card 04 -> Adamant Mint  ITSTAT_EV_SPE = 4
+509: Data Card 05 -> Naughty Mint  ITSTAT_EV_SPE = 5
+510: Data Card 06 -> Bold Mint     ITSTAT_EV_SPE = 6
+511: Data Card 07 -> Docile Mint   ITSTAT_EV_SPE = 7
+512: Data Card 08 -> Relaxed Mint  ITSTAT_EV_SPE = 8
+513: Data Card 09 -> Impish Mint   ITSTAT_EV_SPE = 9
+514: Data Card 10 -> Lax Mint      ITSTAT_EV_SPE = 10
+515: Data Card 11 -> Timid Mint    ITSTAT_EV_SPE = 11
+516: Data Card 12 -> Hasty Mint    ITSTAT_EV_SPE = 12
+517: Data Card 13 -> Serious Mint  ITSTAT_EV_SPE = 13
+518: Data Card 14 -> Jolly Mint    ITSTAT_EV_SPE = 14
+519: Data Card 15 -> Naive Mint    ITSTAT_EV_SPE = 15
+520: Data Card 16 -> Modest Mint   ITSTAT_EV_SPE = 16
+521: Data Card 17 -> Mild Mint     ITSTAT_EV_SPE = 17
+522: Data Card 18 -> Quiet Mint    ITSTAT_EV_SPE = 18
+523: Data Card 19 -> Bashful Mint  ITSTAT_EV_SPE = 19
+524: Data Card 20 -> Rash Mint     ITSTAT_EV_SPE = 20
+525: Data Card 21 -> Calm Mint     ITSTAT_EV_SPE = 21
+526: Data Card 22 -> Gentle Mint   ITSTAT_EV_SPE = 22
+527: Data Card 23 -> Sassy Mint    ITSTAT_EV_SPE = 23
+528: Data Card 24 -> Careful Mint  ITSTAT_EV_SPE = 24
+529: Data Card 25 -> Quirky Mint   ITSTAT_EV_SPE = 25

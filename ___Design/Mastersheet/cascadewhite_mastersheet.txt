@@ -155,7 +155,7 @@ Item: Muscle Band (found past Lass Isabel)
 
 
 ## Floccesy Ranch
-Item: x15 Green Shards (reward for defeating Rival)
+Item: x20 Green Shards (reward for defeating Rival)
 Item: Quick Claw (found in the south part of the map by fences)
 Item: x10 Oran Berries (given by Hugh after defeating Lass Molly)
 Item: 2x White Herb (found after defeating Janitor Orville)
@@ -454,16 +454,38 @@ These powerful trainers have robust teams with Held Items and dangerous moves.
 
 ## Castelia Sewers 
 Item: Black Sludge (found west of the Plasma Grunts after beating them)
-Item: Twistedspoon (found before the Plasma Grunts)
-Item: Expert Belt (reward for Defeating the Plasma Grunts)
+Item: Enigma Berry x3 (found after the Janitor Tag)
+Item: Twistedspoon (found after the Workers)
+Item: Mental Herb x5 (found after the healthcare tag)
+Item: Green Shards x15 (found after the Clerk tag)
+Item: Sticky Barb (found after the Scientist tag)
+Item: 1x Hardy Mint, 1x Lax Mint, 1x Gentle Mint (reward for Defeating the Plasma Grunts)
 
 !enc 37
 
-!trm 461/25
-!trm 465/25
-!trm 463/25
-!trm 464/25
+#### Note: You can face the next sets of trainers either as tag battles with Hugh or as a back-to-back
 
+### Hugh's Team
+!tr 589/28 Picked Tepig
+!tr 590/28 Picked Dewott
+!tr 588/28 Picked Snivy
+
+!trm 115 (First)
+!trm 461 (Second)
+
+!trm 492 (First)
+!trm 465 (Second)
+
+!trm 601 (First)
+!trm 119 (Second)
+
+!trm 459 (First)
+!trm 492 (Second)
+
+!trm 463 (First)
+!trm 464 (Second)
+
+!tr 100 (Guards Enigma Berries)
 
 ### Plasma Grunt Tag Battle 
 !trm 356/28 Left Side 
@@ -626,10 +648,11 @@ Item: TM28 Dig (Past Lady Lina)
 
 ## Desert Resort (Interior)
 Item: Soft Sand (acquired from the agent in the desert)
-Item: 15x Rowap Berry (acquired by defeating Ranger Anja)
-Item: 15x Jaboca Berry (acquired by defeating Psychic Perry)
+Item: 10x Rowap Berry (acquired by defeating Ranger Anja)
+Item: 10x Jaboca Berry (acquired by defeating Psychic Perry)
 Item: TM15 Psycho Cut (acquired by defeating Psychic Tommy)
 Item: TM83 Endure (acquired by defeating Backpackers Tami and Sam)
+Item: 50x Green Shards (acquired past Ranger Jaiden)
 
 !enc 11
 
@@ -638,11 +661,11 @@ Item: TM83 Endure (acquired by defeating Backpackers Tami and Sam)
 ### Ranger Jaden (Desert Resort Interior Gatekeeper)
 !tr 666/36
 
-!tr 667/35 Guards 15x Rowap Berries 
+!tr 667/35 Guards 18x Rowap Berries 
 
 !tr 668/35 Guards TM15: Psycho Cut
 
-!tr 511/35 Guards 15x Jaboca Berries
+!tr 511/35 Guards 18x Jaboca Berries
 
 !tr 664/36 Right Side, Guards TM83 Endure 
 !tr 663/36 Left Side, Guards TM83 Endure 
@@ -725,7 +748,15 @@ This content is locked off afterwards.
 !tr 365/38 Male & Picked Dewott
 !tr 363/38 Male & Picked Snivy
 
+### Eeveelution Gauntlet 
+You can fight this 8 mon gauntlet of trainers to access a unique trade. You can trade any Pokemon and receive a random eeveelution, so long as they are defeated before Elesa.
 
+!tr 29
+!tr 30
+!tr 49
+!tr 51
+!tr 52
+!tr 53
 
 
 ## Anville Town (only accessible by defeating Ingo and Emmet)
@@ -877,8 +908,9 @@ Item: 2x Focus Sash (Received at the end of the gauntlet)
 Item: Expert Belt (found in the market, vanilla location)
 Item: TM85 Grass Knot (south of Musician Preston)
 Item: TM90 Draining Kiss (Past Backers Ava and Aya)
-Item: x30 Red Shard (inside the Plasma Sanctuary)
+Item: x30 Red Shard (past Dancer Brian)
 Item: Common Evolution Stones (Sold in the Pokémart)
+Item: x6 Yellow Shard (past Dancer Brian)
 
 Herb Shop sells the following items:
       Micle Berry 
@@ -887,7 +919,7 @@ Herb Shop sells the following items:
 
 The Move Tutor is present, past Dancer Brian, and teaches the vanilla moves. 
 
-!tr 255/43 Guards the Move Tutor 
+!tr 255/43 Guards the Move Tutor and shards
 
 !tr 252/42 Guards TM90 Draining Kiss 
 
@@ -905,7 +937,7 @@ You can encounter wild Pokemon in the Plasma Sanctuary!
 Janine is an optional mini-boss that can only be fought before defeating Clay. 
 This content is locked off afterwards. 
 
-!tr 768/45 Rewards 2x Each Gem, TM12 Taunt, Clay Tunnel Encounter 
+!tr 768/45 Rewards 2x Each Gem, TM12 Taunt, Clay Tunnel Encounter, 10x Yellow Shards
 
 
 
@@ -913,6 +945,7 @@ This content is locked off afterwards.
 ## Clay Tunnel (must defeat Janine to access)
 Item: 2x Each Gem (Speak with Sableye)
 Item: TM12 Taunt
+Item: 10x Yellow Shards
 
 !enc 84
 
@@ -1166,7 +1199,8 @@ There are several crossroads where you can choose one of two trainers to fight t
 
 Item: TM36 Sludge Bomb (found before Gauntlet)
 Item: TM72 Volt Switch (reward for beating Volkner)
-Item: x3 Electric Gem (reward for beating Volkner)
+Item: x10 Electric Gem (reward for beating Volkner)
+Item: x10 Wacan Berry (reward for beating Volkner)
 
 ### Fight #1
 !trm 671/50 Choose One (Left)
@@ -1194,6 +1228,9 @@ Item: TM77 Bug Buzz (past Ace Trainer Mary)
 !tr 548/51 Guards TM77 Bug Buzz 
 
 
+## Mistralton City 
+Item: TM48 Mystical Fire 
+Item: Red Shards (x30)
 
 
 ## Route 7 
@@ -1244,7 +1281,7 @@ Item: TM29 Psychic (past Pokéfan Georgia)
 Sabrina is an optional mini-boss that can only be fought before defeating Skyla. 
 This content is locked off afterwards. 
 
-!tr 769/54 Rewards 3x Petaya Berries, TM61 Will-o-Wisp, Covert Cloak, Celestial Rooftop Encounter 
+!tr 769/54 Rewards 3x Petaya Berries, TM61 Will-o-Wisp, Covert Cloak, Celestial Rooftop Encounter, 10x Yellow Shards
 
 
 
@@ -1252,7 +1289,8 @@ This content is locked off afterwards.
 ## Celestial Rooftop (only accessible by beating Sabrina)
 Item: TM61 Will-o-Wisp
 Item: Covert Cloak
-Item: 3x Petaya Berries 
+Item: 5x Petaya Berries 
+Item: 10x Yellow Shards
 
 Note: This is a unique met location for encounters. 
 

@@ -41,6 +41,7 @@ bool IsEqual(int a1, int a2)
 C_DECL_BEGIN
 
 // STUFF FOR FIELD EFFECTS
+extern VecFx32 *PlayerState_GetWPos(PlayerState *playerState);
 extern bool DoesMonHaveShadowTag(int a1, BattleMon *a2);
 extern bool IsMonTrappedByArenaTrap(BtlClientWk *a1, BattleMon *a2);
 extern bool IsMonSteelType(int a1, int a2);

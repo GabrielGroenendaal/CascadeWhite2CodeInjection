@@ -289,7 +289,7 @@ This split begins after defeating Skyla, and has a level cap of 59. Within this 
                 - Earth Power 
                 - Flamethrower 
         
-        [ TRAINERS #1 ]
+        [ TRAINERS #1 : Hikers ]
 
         [ TRAINERS #2 ]
 

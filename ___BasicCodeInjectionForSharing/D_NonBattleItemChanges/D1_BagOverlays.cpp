@@ -19,7 +19,7 @@ extern "C" u32 getTMSetting()
     EventWorkSave *eventWork = GameData_GetEventWork(GAME_DATA);
     u16 *lvl_cap_ptr = EventWork_GetWkPtr(eventWork, 16437);
     return 1;
-    //return *lvl_cap_ptr;
+    // return *lvl_cap_ptr;
 }
 extern "C" u32 THUMB_BRANCH_PML_ItemGetMaxStorageCount(u16 itemIdx)
 {
@@ -34,6 +34,65 @@ extern "C" bool isItemHM(int id)
 
 extern "C"
 {
+
+    enum PersonalField
+#ifdef __cplusplus
+        : u16
+#endif
+    {
+        Personal_HP = 0x0,
+        Personal_ATK = 0x1,
+        Personal_DEF = 0x2,
+        Personal_SPE = 0x3,
+        Personal_SPA = 0x4,
+        Personal_SPD = 0x5,
+        Personal_Type1 = 0x6,
+        Personal_Type2 = 0x7,
+        Personal_CaptureRate = 0x8,
+        Personal_BaseEXP = 0x9,
+        Personal_EvHP = 0xA,
+        Personal_EvATK = 0xB,
+        Personal_EvDEF = 0xC,
+        Personal_EvSPE = 0xD,
+        Personal_EvSPA = 0xE,
+        Personal_EvSPD = 0xF,
+        Personal_Telekinesis = 0x10,
+        Personal_WildItem50 = 0x11,
+        Personal_WildItem5 = 0x12,
+        Personal_WildItem1 = 0x13,
+        Personal_GenderProb = 0x14,
+        Personal_EggHappiness = 0x15,
+        Personal_BaseHappiness = 0x16,
+        Personal_GrowthRate = 0x17,
+        Personal_EggGroup1 = 0x18,
+        Personal_EggGroup2 = 0x19,
+        Personal_Abil1 = 0x1A,
+        Personal_Abil2 = 0x1B,
+        Personal_AbilH = 0x1C,
+        Personal_EscapeRate = 0x1D,
+        Personal_FormeDataOffs = 0x1E,
+        Personal_FormeSpritesOffset = 0x1F,
+        Personal_FormeCount = 0x20,
+        Personal_Color = 0x21,
+        Personal_SpriteFlip = 0x22,
+        Personal_SpriteForme = 0x23,
+        Personal_EvoStage = 0x24,
+        Personal_Height = 0x25,
+        Personal_Weight = 0x26,
+        Personal_TMHM1 = 0x27,
+        Personal_TMHM2 = 0x28,
+        Personal_TMHM3 = 0x29,
+        Personal_TMHM4 = 0x2A,
+        Personal_TypeTutor = 0x2B,
+        Personal_SpecialTutor1 = 0x2C,
+        Personal_SpecialTutor2 = 0x2D,
+        Personal_SpecialTutor3 = 0x2E,
+        Personal_SpecialTutor4 = 0x2F,
+    };
+
+    extern u32 PML_PersonalGetParamSingle(u16 species, u16 form, PersonalField field);
+    extern void PokeParty_SetHiddenAbil(PartyPkm *pPkm, u16 species, u16 forme);
+    /*
 
     /*
 
@@ -72,16 +131,20 @@ extern "C"
 
         v2 = a1->field_28C;
         ItemUseType = v2->ItemUseType;
+        k::Printf("\n--- PokeList_ItemUseMain Called ---\nItemUseType: %d\nItemID: %d\n", ItemUseType, v2->ItemID);
         if (ItemUseType <= 27)
         {
+            k::Printf("\nItemUseType is 27 or less\n");
             if (IsEqual(ItemUseType, 0) || IsEqual(ItemUseType, 6) || IsEqual(ItemUseType, 9) || IsEqual(ItemUseType, 0xE) || IsEqual(ItemUseType, 0x10) || IsEqual(ItemUseType, 0x12) || IsEqual(ItemUseType, 0x15) || IsEqual(ItemUseType, 0x19) || IsEqual(ItemUseType, 0x1B))
             {
+                k::Printf("\nItemUseType matched one of the first set\n");
                 sub_219B1DC(a1);
                 a1->field_D = 2;
                 return;
             }
             else if (IsEqual(ItemUseType, 1))
             {
+                k::Printf("\nItemUseType matched 1\n");
                 a1->field_10C = (int)sub_219FEA8(a1, a1->PokeList_Menu, 0, 22, 21u, 0);
                 sub_219B1DC(a1);
                 a1->field_D = 2;
@@ -89,6 +152,7 @@ extern "C"
             }
             else if (IsEqual(ItemUseType, 3))
             {
+                k::Printf("\nItemUseType matched 3\n");
                 a1->field_14 = 0;
                 sub_219B1DC(a1);
                 a1->field_D = 2;
@@ -96,8 +160,10 @@ extern "C"
             }
             else if (IsEqual(ItemUseType, 5))
             {
+                k::Printf("\nItemUseType matched 5\n");
                 if (PokeList_IsItemSacredAsh(a1, v2->ItemID))
                 {
+                    k::Printf("\nItem is Sacred Ash, checking for fainted Pokemon\n");
                     FaintedPkmSlot = PokeList_GetFaintedPkmSlot(a1);
                     if (FaintedPkmSlot == -1)
                     {
@@ -120,6 +186,7 @@ extern "C"
                 }
                 else if (PokeList_GetItemCountByID(a1, a1->field_28C->ItemID))
                 {
+                    k::Printf("\nItem is not Sacred Ash, but we have more than 0 of the item\n");
                     sub_219B1DC(a1);
                     a1->field_D = 2;
                 }
@@ -134,10 +201,12 @@ extern "C"
                     a1->field_D = a1->field_C;
                     a1->field_C = 0;
                 }
+                k::Printf("\nFinished processing ItemUseType 5\n");
                 return;
             }
             else if (IsEqual(ItemUseType, 7) || IsEqual(ItemUseType, 8))
             {
+
                 a1->SelectedSlot = v2->SelectedSlot;
                 Pkm = PokeParty_GetPkm(v2->pokeParty, v2->SelectedSlot);
                 a1->SelectedPkm = Pkm;
@@ -145,6 +214,7 @@ extern "C"
 
                 if (v6 >= 4)
                 {
+
                     PokeListMessage_CreateWordSetSystem(a1, a1->pokeList_Message);
                     PokeListMessage_LoadMoveNameToStrBuf(a1, a1->pokeList_Message, 1u, a1->field_28C->MoveToLearn);
                     v11 = (void *)sub_219DF48;
@@ -154,6 +224,7 @@ extern "C"
                 }
                 else
                 {
+
                     Param = PokeParty_GetParam(Pkm, (PkmField)(v6 + 54), 0);
                     PokeListMessage_CreateWordSetSystem(a1, a1->pokeList_Message);
                     PokeListMessage_LoadPokemonNicknameToStrBuf(a1, a1->pokeList_Message, 0, a1->SelectedPkm);
@@ -416,6 +487,7 @@ extern "C"
         }
         else if (IsEqual(ItemUseType, 5))
         {
+            int itemId = a1->field_28C->ItemID;
             if (PokeList_IsPPRestoringItem(a1, v2->ItemID))
             {
                 sub_219CF2C(a1);
@@ -451,6 +523,70 @@ extern "C"
                     PokeList_SubItem(a1, a1->field_28C->ItemID);
                 }
                 return;
+            }
+            else if (itemId == 48)
+            {
+                ItemData *DataFile = (ItemData *)PML_ItemReadDataFile(a1->field_28C->ItemID, 0, a1->heapId);
+                int species = PokeParty_GetParam(a1->SelectedPkm, PF_Species, 0);
+                int form = PokeParty_GetParam(a1->SelectedPkm, PF_Forme, 0);
+                int v36 = PML_ItemGetParam(DataFile, ITSTAT_EV_SPA);
+                int currentAbility = PokeParty_GetParam(a1->SelectedPkm, PF_Ability, 0);
+                int abilityHidden = PML_PersonalGetParamSingle(species, form, Personal_AbilH);
+                int ability1 = PML_PersonalGetParamSingle(species, form, Personal_Abil1);
+                int ability2 = PML_PersonalGetParamSingle(species, form, Personal_Abil2);
+
+                // k::Printf("\nUsing Ability Capsule or Ability Patch\n");
+                
+                if (!ability2 || ability1 == ability2)
+                {
+
+                }
+                else
+                {
+                    v5 = PokeList_PrintItemRecoverMessage(a1, 0);
+                    v6 = PokeList_ApplyItemEffect(a1->SelectedPkm, a1->field_28C->ItemID, 0, a1->field_28C->field_40, a1->heapId);
+                    PokeList_SubItem(a1, a1->field_28C->ItemID);
+                    return;
+                }
+            }
+            else if (itemId == 52)
+            {
+                ItemData *DataFile = (ItemData *)PML_ItemReadDataFile(a1->field_28C->ItemID, 0, a1->heapId);
+                int species = PokeParty_GetParam(a1->SelectedPkm, PF_Species, 0);
+                int form = PokeParty_GetParam(a1->SelectedPkm, PF_Forme, 0);
+                int v36 = PML_ItemGetParam(DataFile, ITSTAT_EV_SPA);
+                int currentAbility = PokeParty_GetParam(a1->SelectedPkm, PF_Ability, 0);
+                int abilityHidden = PML_PersonalGetParamSingle(species, form, Personal_AbilH);
+                int ability1 = PML_PersonalGetParamSingle(species, form, Personal_Abil1);
+                int ability2 = PML_PersonalGetParamSingle(species, form, Personal_Abil2);
+
+                if (!abilityHidden || currentAbility == abilityHidden || ability1 == abilityHidden || ability2 == abilityHidden)
+                {
+                }
+                else
+                {
+                    v5 = PokeList_PrintItemRecoverMessage(a1, 0);
+                    v6 = PokeList_ApplyItemEffect(a1->SelectedPkm, a1->field_28C->ItemID, 0, a1->field_28C->field_40, a1->heapId);
+                    PokeList_SubItem(a1, a1->field_28C->ItemID);
+                    return;
+                }
+            }
+            else if (itemId >= 505 && itemId <= 529)
+            {
+                ItemData *DataFile = (ItemData *)PML_ItemReadDataFile(a1->field_28C->ItemID, 0, a1->heapId);
+                int v37 = PML_ItemGetParam(DataFile, ITSTAT_EV_SPE);
+                int currentNature = PokeParty_GetParam(a1->SelectedPkm, PF_Nature, 0);
+
+                if ((v37 - 1) == currentNature)
+                {
+                }
+                else
+                {
+                    v5 = PokeList_PrintItemRecoverMessage(a1, 0);
+                    v6 = PokeList_ApplyItemEffect(a1->SelectedPkm, a1->field_28C->ItemID, 0, a1->field_28C->field_40, a1->heapId);
+                    PokeList_SubItem(a1, a1->field_28C->ItemID);
+                    return;
+                }
             }
             if (a1->field_28C->ItemID == 466 && PokeList_DoesShayminNeedFormeChange(a1))
             {
@@ -661,14 +797,212 @@ extern "C"
         }
     }
 
+    extern void sub_21A0CE8(PokeList *a1, int a2);
+    extern ItemRestoreType PokeList_GetItemRestoreType(unsigned int a1);
+    extern int PokeListPlate_GetCurrentHP(PokeList *a1, PokeList_Plate *a2);
+    extern void sub_21A0678(PokeList *a1);
+    extern void PokeList_PrintRecoverHPMessage(PokeList *a1);
+    extern bool PokeList_DoesPkmHaveParam(PartyPkm *a1, PkmField a2);
+    extern u32 PokeParty_GetLevel(PartyPkm *pPkm);
+    extern void PokeListMessage_WordSetNumber(PokeList *a1, PokeList_Message *a2, int a3, int a4, unsigned __int8 a5);
+    extern void sub_21A0750(PokeList *a1);
+    extern void *GFL_StrBufCreate(int charCount, HeapID heapId);
+    extern int sub_202D2F4(int a1);
+    extern void GFL_StrBufFree(void *pStrbuf);
+    extern void sub_21A0D28(PokeList *a1, int a2, unsigned __int8 a3);
+    extern void sub_219DE58(PokeList *a1);
+    const PkmField word_21A4C9C[6] = {
+        PF_MaxHP,
+        PF_ATK,
+        PF_DEF,
+        PF_SPA,
+        PF_SPD,
+        PF_SPE};
+    ItemRestoreType THUMB_BRANCH_PokeList_PrintItemRecoverMessage(PokeList *a1, u16 a2)
+    {
+        ItemRestoreType itemRestore; // r0
+        int SelectedSlot;            // r1
+        void (*v6)(PokeList *);      // r0
+        __int16 Level;               // r7
+        unsigned int v8;             // r5
+        void *v9;                    // r7
+        PokeList *v10;               // r0
+        int v11;                     // r1
+        int v12;                     // r1
+        PokeList *v13;               // r0
+        int v14;
+        ItemRestoreType v18; // r1
+        unsigned __int8 v15; // r2
+        unsigned __int8 v16; // r5
+                             // [sp+4h] [bp-1Ch]
+
+        itemRestore = PokeList_GetItemRestoreType(a1->field_28C->ItemID);
+        v18 = itemRestore;
+        if (itemRestore <= 29)
+        {
+            if (itemRestore == RESTORETYPE_SACRED_ASH)
+            {
+                SelectedSlot = a1->SelectedSlot;
+                a1->field_C = 10;
+                a1->CurrentHP = PokeListPlate_GetCurrentHP(a1, a1->pokeList_Plate[SelectedSlot]);
+                v6 = sub_21A0678;
+                a1->field_124 = (int)v6;
+                return v18;
+            }
+            else if (itemRestore == RESTORETYPE_RARE_CANDY)
+            {
+                Level = PokeParty_GetLevel(a1->SelectedPkm);
+                PokeListMessage_CreateWordSetSystem(a1, a1->pokeList_Message);
+                v8 = 0;
+                PokeListMessage_LoadPokemonNicknameToStrBuf(a1, a1->pokeList_Message, 0, a1->SelectedPkm);
+                PokeListMessage_WordSetNumber(a1, a1->pokeList_Message, 1, (Level + 1), 3u);
+                PokeList_PrintMessage(a1, 169, 1, (int)sub_21A0750);
+                PokeListMessage_ClearWordSetSystem(a1, a1->pokeList_Message);
+                v9 = GFL_StrBufCreate(12, a1->heapId);
+                PokeParty_GetParam(a1->SelectedPkm, PF_NicknameStrBuf, v9);
+                sub_202D2F4((int)v9);
+                GFL_StrBufFree(v9);
+                do
+                {
+                    a1->field_128[v8] = PokeParty_GetParam(a1->SelectedPkm, word_21A4C9C[v8], 0);
+                    v8 = (v8 + 1);
+                } while (v8 < 6);
+                return v18;
+            }
+            else if (itemRestore == RESTORETYPE_SLEEP)
+            {
+                v10 = a1;
+                v11 = 72;
+                sub_21A0CE8(v10, v11);
+                return v18;
+            }
+            else if (itemRestore == RESTORETYPE_POISON)
+            {
+                v10 = a1;
+                v11 = 72;
+                sub_21A0CE8(v10, v11);
+                return v18;
+            }
+            else if (itemRestore == RESTORETYPE_BURN)
+            {
+                v10 = a1;
+                v11 = 48;
+                sub_21A0CE8(v10, v11);
+                return v18;
+            }
+            else if (itemRestore == RESTORETYPE_FREEZE)
+            {
+                v10 = a1;
+                v11 = 49;
+                sub_21A0CE8(v10, v11);
+                return v18;
+            }
+            else if (itemRestore == RESTORETYPE_PARALYSIS)
+            {
+                v10 = a1;
+                v11 = 47;
+                sub_21A0CE8(v10, v11);
+                return v18;
+            }
+            else if (itemRestore == RESTORETYPE_FULL_HEAL)
+            {
+                v10 = a1;
+                v11 = 52;
+                sub_21A0CE8(v10, v11);
+                return v18;
+            }
+            else if (itemRestore == RESTORETYPE_FULL_RESTORE || itemRestore == RESTORETYPE_REVIVE)
+            {
+                v12 = a1->SelectedSlot;
+                a1->field_C = 10;
+                a1->CurrentHP = PokeListPlate_GetCurrentHP(a1, a1->pokeList_Plate[v12]);
+                v6 = PokeList_PrintRecoverHPMessage;
+            }
+            else if (itemRestore == RESTORETYPE_EV_SPA)
+            {
+                v10 = a1;
+                v11 = 193;
+                sub_21A0CE8(v10, v11);
+                return v18;
+            }
+            else if (itemRestore == RESTORETYPE_EV_SPE)
+            {
+                v10 = a1;
+                v11 = 194;
+                sub_21A0CE8(v10, v11);
+                return v18;
+            }
+            else if (itemRestore == RESTORETYPE_EV_DEF)
+            {
+                v10 = a1;
+                v11 = 192;
+                sub_21A0CE8(v10, v11);
+                return v18;
+            }
+            else if (itemRestore == RESTORETYPE_EV_SPD || itemRestore == RESTORETYPE_EV_HP || itemRestore == RESTORETYPE_EV_ATK)
+            {
+                v13 = a1;
+                v14 = 56;
+                v15 = v18 - 13;
+                sub_21A0D28(v13, v14, v15);
+                return v18;
+            }
+            else if (itemRestore >= RESTORETYPE_EV_HP_DECREASE && itemRestore <= RESTORETYPE_EV_SPD_DECREASE)
+            {
+                v16 = itemRestore - 19;
+                if (PokeList_DoesPkmHaveParam(a1->SelectedPkm, (PkmField)((itemRestore - 19) + 13)))
+                {
+                    if (PokeParty_GetParam(a1->SelectedPkm, PF_Happiness, 0) == 255)
+                    {
+                        v13 = a1;
+                        v14 = 90;
+                    }
+                    else
+                    {
+                        v13 = a1;
+                        v14 = 89;
+                    }
+                }
+                else
+                {
+                    v13 = a1;
+                    v14 = 91;
+                }
+                v15 = v16;
+                sub_21A0D28(v13, v14, v15);
+                return v18;
+            }
+            else if (itemRestore == RESTORETYPE_BOOST_PP_1 || itemRestore == RESTORETYPE_BOOST_PP_MAX)
+            {
+                PokeListMessage_CreateWordSetSystem(a1, a1->pokeList_Message);
+                PokeListMessage_LoadMoveNameToStrBuf(a1, a1->pokeList_Message, 0, a2);
+                PokeList_PrintMessage(a1, 53, 1, (int)sub_219DE58);
+                PokeListMessage_ClearWordSetSystem(a1, a1->pokeList_Message);
+                return v18;
+            }
+            else if (itemRestore == RESTORETYPE_PP_REPLENISH)
+            {
+                v10 = a1;
+                v11 = 50;
+                sub_21A0CE8(v10, v11);
+                return v18;
+            }
+            else
+            {
+                return v18;
+            }
+        }
+        return v18;
+    }
+
     /*
 
-        --------------------------------------------------------------------------------------------------
-        ------------------------------------ APPPLY ITEM EFFECT ------------------------------------------
-        --------------------------------------------------------------------------------------------------
+            --------------------------------------------------------------------------------------------------
+            ------------------------------------ APPPLY ITEM EFFECT ------------------------------------------
+            --------------------------------------------------------------------------------------------------
 
-        Used for the Unusual Candy functions.
-    */
+            Used for the Unusual Candy functions.
+        */
 
     int THUMB_BRANCH_SAFESTACK_PokeList_ApplyItemEffect(PartyPkm *a1, unsigned int a2, int a3, unsigned __int16 a4, int a5)
     {
@@ -716,8 +1050,12 @@ extern "C"
         u32 Param;          // [sp+54h] [bp-34h]
         signed __int32 v50; // [sp+58h] [bp-30h]
 
+        // int v7 = 0x10000;
+        // int PID = PokeParty_GetParam(a1, PF_PID, 0);
+        // k::Printf("\nWe're going to check what the PID is %d\nNow we're going to see what the PID & 0x10000 is %d\nNow we're going to see what the PID ^= 0x10000 is %d", PID, PID & v7, PID ^ v7);
         v30 = a2;
         v6 = 0;
+        // k::Printf("\n--- Applying Item Effect ---\n");
         //  k::Printf("\n111. We have entered the function!\n\nOur Parameters are:\n a1: %d\n\n a2: %d\n\n a3: %d\n\n a4: %d \n\n a5: %d\n\nu16 a5 is %d\n\n", a1, a2, a3, a4, a5, (HeapID)a5);
 
         DataFile = (ItemData *)PML_ItemReadDataFile(a2, 0, (HeapID)a5);
@@ -725,7 +1063,8 @@ extern "C"
         // Checks to see if there are any actual Battle relevant effects for the item
         if (PML_ItemGetParam(DataFile, ITSTAT_HAS_BATTLE_STATS) != 1)
         {
-            //     k::Print("\n3. This means this isn't a battle item!\n");
+
+            // k::Print("\n3. This means this isn't a battle item!\n");
             goto LABEL_85; // Frees up the heap and exits function
         }
 
@@ -903,14 +1242,16 @@ extern "C"
         v47 = PokeParty_GetParam(a1, PF_EvSPA, 0);
         v46 = PokeParty_GetParam(a1, PF_EvSPD, 0);
         v45 = PML_ItemGetParam(DataFile, ITSTAT_FLAG_EVADD_ABOVE100);
+        // k::Printf("\nEVs before applying item:\nHP: %d\nATK: %d\nDEF: %d\nSPE: %d\nSPA: %d\nSPD: %d\n", v43, v41, v39, v38, v47, v46);
+        // k::Printf("\nFor Item ID %d ADDHP Flag is %d and AddHPValue is %d\nAddSPA flag is %d and AddSPA Value is %d\nAddSPE flag is %d and AddSPE Value is %d\n", v30, PML_ItemGetParam(DataFile, ITSTAT_FLAG_EVADD_HP), PML_ItemGetParam(DataFile, ITSTAT_EV_HP), PML_ItemGetParam(DataFile, ITSTAT_FLAG_EVADD_SPA), PML_ItemGetParam(DataFile, ITSTAT_EV_SPA), PML_ItemGetParam(DataFile, ITSTAT_FLAG_EVADD_SPE), PML_ItemGetParam(DataFile, ITSTAT_EV_SPE));
         if (PML_ItemGetParam(DataFile, ITSTAT_FLAG_EVADD_HP))
         {
-            // k::printf("\n19. This increases HP EVs\n");
+            // k::Printf("\n19. This increases HP EVs\n");
             v44 = PML_ItemGetParam(DataFile, ITSTAT_EV_HP);
             if (v44 > 0 && PokeParty_GetParam(a1, PF_Species, 0) == 292)
             {
             LABEL_85:
-                // k::print("\n20. We're at label 85\n");
+                // k::Printf("\n20. We're at label 85\n");
                 GFL_HeapFree(DataFile);
                 return 0;
             }
@@ -964,52 +1305,120 @@ extern "C"
         // STRESS TESTER //
         // We're using Speed EV increasing items for our Stress Tester.
         // We could also check specific value to make sure we're targeting only certain items
-        if (PML_ItemGetParam(DataFile, ITSTAT_FLAG_EVADD_SPE))
+        if (PML_ItemGetParam(DataFile, ITSTAT_FLAG_EVADD_SPD))
         {
-            // k::print("\n24. This increases Speed EVs\n");
-            v35 = PML_ItemGetParam(DataFile, ITSTAT_EV_SPE);
-            PokeParty_SetParam(a1, PF_NowHP, v35);
-            PokeParty_RecalcStats(a1);
-            v6 = 1;
-            if (v35 > 0)
-            {
-                v8 = 1;
-            }
+            // k::Printf("\n24. This increases Special Defense EVs\n");
+            // v35 = PML_ItemGetParam(DataFile, ITSTAT_EV_SPD);
+            // PokeParty_SetParam(a1, PF_NowHP, v35);
+            // PokeParty_RecalcStats(a1);
+            // v6 = 1;
+            // if (v35 > 0)
+            // {
+            //     v8 = 1;
+            // }
         }
 
-        if (PML_ItemGetParam(DataFile, ITSTAT_FLAG_EVADD_SPA))
+        // Ability Capsules and Ability Patches
+        if (PML_ItemGetParam(DataFile, ITSTAT_FLAG_EVADD_SPA) || PML_ItemGetParam(DataFile, ITSTAT_EV_SPA))
         {
-            // k::print("\n25. This increases SpA EVs\n");
+            // k::Printf("\n25. This increases SpA EVs\n");
+            int species = PokeParty_GetParam(a1, PF_Species, 0);
+            int form = PokeParty_GetParam(a1, PF_Forme, 0);
             v36 = PML_ItemGetParam(DataFile, ITSTAT_EV_SPA);
-            v22 = PokeList_GetEVsAppliedAfterLimit(v47, v46 + v38 + v39 + v43 + v41, v36, v45);
-            if (v22 != -1)
+            int currentAbility = PokeParty_GetParam(a1, PF_Ability, 0);
+            if (v36 == 2)
             {
-                v47 = v22;
-                PokeParty_SetParam(a1, PF_EvSPA, v22);
-                PokeParty_RecalcStats(a1);
-                v6 = 1;
+                // k::Printf("\nUsing Ability Patch\n");
+                int abilityHidden = PML_PersonalGetParamSingle(species, form, Personal_AbilH);
+                int ability1 = PML_PersonalGetParamSingle(species, form, Personal_Abil1);
+                int ability2 = PML_PersonalGetParamSingle(species, form, Personal_Abil2);
+                // k::Printf("\nCurrent Ability: %d\nHidden Ability: %d\nAbility 1: %d\nAbility 2: %d\n", currentAbility, abilityHidden, ability1, ability2);
+                if (!abilityHidden)
+                {
+                    v6 = 1;
+                }
+                else if (abilityHidden == ability1)
+                {
+                    v6 = 1;
+                }
+                else if (abilityHidden == ability2)
+                {
+                    v6 = 1;
+                }
+                else if (currentAbility == abilityHidden)
+                {
+                    v6 = 1;
+                }
+                else
+                {
+                    // k::Printf("\nSetting Hidden Ability: %d\n", abilityHidden);
+                    PokeParty_SetHiddenAbil(a1, species, form);
+                    PokeParty_RecalcStats(a1);
+                }
             }
+            else
+            {
+                // k::Printf("\nUsing Ability Capsule\n");
+                int ability1 = PML_PersonalGetParamSingle(species, form, Personal_Abil1);
+                int ability2 = PML_PersonalGetParamSingle(species, form, Personal_Abil2);
+
+                if (!ability2)
+                {
+                    v6 = 1;
+                }
+                else if (ability1 == ability2)
+                {
+                    v6 = 1;
+                }
+                else
+                {
+                    if (ability1 == currentAbility)
+                    {
+                        PokeParty_SetParam(a1, PF_Ability, ability2);
+                        // PokeParty_RecalcStats(a1);
+                        // int PID = PokeParty_GetParam(a1, PF_PID, 0);
+                        // PID |= 0x10000;
+                        // PokeParty_SetParam(a1, PF_PID, PID);
+                        // PokeParty_RecalcStats(a1);
+                    }
+                    else
+                    {
+
+                        PokeParty_SetParam(a1, PF_Ability, ability1);
+                        // PokeParty_RecalcStats(a1);
+                        // int PID = PokeParty_GetParam(a1, PF_PID, 0);
+                        // PID &= 0x10000;
+                        // PokeParty_SetParam(a1, PF_PID, PID);
+                        // PokeParty_RecalcStats(a1);
+                    }
+                }
+            }
+
             if (v36 > 0)
             {
                 v8 = 1;
             }
         }
-        if (PML_ItemGetParam(DataFile, ITSTAT_FLAG_EVADD_SPD))
+
+        // Nature Mints
+        if (PML_ItemGetParam(DataFile, ITSTAT_FLAG_EVADD_SPE) || PML_ItemGetParam(DataFile, ITSTAT_EV_SPE))
         {
-            // k::print("\n26. This increases SpD EVs\n");
-            v37 = PML_ItemGetParam(DataFile, ITSTAT_EV_SPD);
-            v23 = PokeList_GetEVsAppliedAfterLimit(v46, v47 + v38 + v39 + v43 + v41, v37, v45);
-            if (v23 != -1)
+            // k::Printf("\n26. This increases SpD EVs\n");
+            v37 = PML_ItemGetParam(DataFile, ITSTAT_EV_SPE);
+            int currentNature = PokeParty_GetParam(a1, PF_Nature, 0);
+            // k::Printf("\nCurrent Nature: %d\nDesired Nature: %d\n", currentNature, v37 - 1);
+            if (v37 && ((v37 - 1) != currentNature))
             {
-                PokeParty_SetParam(a1, PF_EvSPD, v23);
+                // k::Printf("\nSetting Nature to: %d\n", v37 - 1);
+                PokeParty_SetParam(a1, PF_Nature, (v37 - 1));
                 PokeParty_RecalcStats(a1);
-                v6 = 1;
             }
             if (v37 > 0)
             {
                 v8 = 1;
             }
         }
+
         // k::print("\n27. This increases Speed EVs\n");
         if (!v6 && v8 == 1)
         {

@@ -707,7 +707,7 @@ public class MainEvents {
 		Actor.WaitActionFinish();
 		Message.ActorEx(1024, 94, 7, 0, 0);
 		Message.CloseAll();
-		Actor.New(53, 740, 1, 251, 291, 0);
+		Actor.New(53, 740, 1, 251, 304, 0);
 		Actor.WalkRoute(251, 41, 740, 1, 8, 0);
 		Actor.WaitActionFinish();
 		ActionSequence_1f14(251);

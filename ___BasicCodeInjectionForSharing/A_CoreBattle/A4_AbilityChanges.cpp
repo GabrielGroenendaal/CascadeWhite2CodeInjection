@@ -144,7 +144,6 @@ const u16 nonStatusProtectMoves[4] = {
     MOVE559_BANEFUL_BUNKER,
     MOVE262_OBSTRUCT};
 
-
 #pragma endregion
 
 extern "C"
@@ -198,20 +197,19 @@ extern "C"
                 a1 == IT0136_TRICKSTER_HERB ||
                 a1 == IT0230_FOCUS_BAND ||
                 a1 == IT0299_TERA_C_BAND ||
-                a1 == IT0288_STICKY_BARB || 
-                a1 == IT0273_FLAME_ORB || 
+                a1 == IT0288_STICKY_BARB ||
+                a1 == IT0273_FLAME_ORB ||
                 a1 == IT0272_TOXIC_ORB ||
                 a1 == IT0306_TERA_B_POLICY ||
                 a1 == IT0256_BLUNDER_POLICY ||
                 a1 == IT0305_TERA_W_POLICY ||
                 a1 == IT0302_TERA_SASH ||
-                a1 == IT0304_TERA_CLAW || 
-                a1 == IT0217_QUICK_CLAW || 
-                a1 == IT0281_BLACK_SLUDGE || 
-                a1 == IT0234_LEFTOVERS || 
+                a1 == IT0304_TERA_CLAW ||
+                a1 == IT0217_QUICK_CLAW ||
+                a1 == IT0281_BLACK_SLUDGE ||
+                a1 == IT0234_LEFTOVERS ||
                 a1 == IT0311_TERA_LEFTOVERS || a1 == IT0255_ATTACK_INSURANCE || a1 == IT0309_TERA_INSURANCE);
     }
-
 
     uint8_t getOverheatByte(BattleMon *a1)
     {
@@ -536,16 +534,16 @@ extern "C"
     ABILITY_TRIGGERTABLE ScrappyHandlers[] = {
         {EVENT_CHECK_TYPE_EFFECTIVENESS, (ABILITY_HANDLER_FUNC)HandlerScrappy}, // 22
         {EVENT_STAT_STAGE_CHANGE_LAST_CHECK, (ABILITY_HANDLER_FUNC)HandlerIntimidateCheck},
-        {EVENT_STAT_STAGE_CHANGE_FAIL, (ABILITY_HANDLER_FUNC)HandlerIntimidateGuard}};
+        {EVENT_STAT_STAGE_CHANGE_FAIL, (ABILITY_HANDLER_FUNC)HandlerIntimidateGuard},
 
-    //     {EVENT_STAT_STAGE_CHANGE_LAST_CHECK, (ABILITY_HANDLER_FUNC)HandlerHyperCutterCheck},
+        {EVENT_STAT_STAGE_CHANGE_LAST_CHECK, (ABILITY_HANDLER_FUNC)HandlerHyperCutterCheck},
 
-    //     {EVENT_STAT_STAGE_CHANGE_FAIL, (ABILITY_HANDLER_FUNC)HandlerHyperCutterGuard}
-    // };
+        {EVENT_STAT_STAGE_CHANGE_FAIL, (ABILITY_HANDLER_FUNC)HandlerHyperCutterGuard}
+    };
 
     ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddScrappy(_DWORD *a1)
     {
-        *a1 = 3;
+        *a1 = 5;
         return ScrappyHandlers;
     }
 
@@ -579,53 +577,53 @@ extern "C"
 #pragma endregion
 
 #pragma region Colossal
-    int THUMB_BRANCH_ServerControl_IsGuaranteedHit(ServerFlow *a1, BattleMon *a2, BattleMon *a3)
-    {
-        int ID;                    // r0
-        int v8;                    // r0
-        int ConditionAffectedMove; // r4
-        ID = BattleMon_GetID(a2);
-        if (sub_21A2EA0(&a1->posPoke, a1->mainModule, ID) && (BattleMon_GetValue(a2, VALUE_EFFECTIVE_ABILITY) == ABIL099_NO_GUARD))
-        {
-            return 1;
-        }
-        v8 = BattleMon_GetID(a3);
-        if (sub_21A2EB0(&a1->posPoke, a1->mainModule, v8) && (BattleMon_GetValue(a3, VALUE_EFFECTIVE_ABILITY) == ABIL099_NO_GUARD || BattleMon_GetValue(a3, VALUE_EFFECTIVE_ABILITY) == ABIL080_COLOSSAL))
-        {
-            return 1;
-        }
-        if (BattleMon_CheckIfMoveCondition(a2, CONDITION_MUSTHIT))
-        {
-            return 1;
-        }
-        if (BattleMon_CheckIfMoveCondition(a2, CONDITION_LOCKON))
-        {
-            ConditionAffectedMove = BattleMon_GetConditionAffectedMove(a2, CONDITION_LOCKON);
-            if (ConditionAffectedMove == BattleMon_GetID(a3))
-            {
-                return 1;
-            }
-        }
-        return 0;
-    }
+    // int THUMB_BRANCH_ServerControl_IsGuaranteedHit(ServerFlow *a1, BattleMon *a2, BattleMon *a3)
+    // {
+    //     int ID;                    // r0
+    //     int v8;                    // r0
+    //     int ConditionAffectedMove; // r4
+    //     ID = BattleMon_GetID(a2);
+    //     if (sub_21A2EA0(&a1->posPoke, a1->mainModule, ID) && (BattleMon_GetValue(a2, VALUE_EFFECTIVE_ABILITY) == ABIL099_NO_GUARD))
+    //     {
+    //         return 1;
+    //     }
+    //     v8 = BattleMon_GetID(a3);
+    //     if (sub_21A2EB0(&a1->posPoke, a1->mainModule, v8) && (BattleMon_GetValue(a3, VALUE_EFFECTIVE_ABILITY) == ABIL099_NO_GUARD || BattleMon_GetValue(a3, VALUE_EFFECTIVE_ABILITY) == ABIL080_COLOSSAL))
+    //     {
+    //         return 1;
+    //     }
+    //     if (BattleMon_CheckIfMoveCondition(a2, CONDITION_MUSTHIT))
+    //     {
+    //         return 1;
+    //     }
+    //     if (BattleMon_CheckIfMoveCondition(a2, CONDITION_LOCKON))
+    //     {
+    //         ConditionAffectedMove = BattleMon_GetConditionAffectedMove(a2, CONDITION_LOCKON);
+    //         if (ConditionAffectedMove == BattleMon_GetID(a3))
+    //         {
+    //             return 1;
+    //         }
+    //     }
+    //     return 0;
+    // }
 
-    void ColossalDefense(int a1, ServerFlow *a2, int a3)
-    {
-        if (a3 == BattleEventVar_GetValue(VAR_DEFENDING_MON))
-        {
-            BattleEventVar_MulValue(VAR_RATIO, 3072);
-        }
-    }
+    // void ColossalDefense(int a1, ServerFlow *a2, int a3)
+    // {
+    //     if (a3 == BattleEventVar_GetValue(VAR_DEFENDING_MON))
+    //     {
+    //         BattleEventVar_MulValue(VAR_RATIO, 3072);
+    //     }
+    // }
 
-    ABILITY_TRIGGERTABLE ColossalHandlers[] = {
-        {EVENT_MOVE_DAMAGE_PROCESSING_2, (ABILITY_HANDLER_FUNC)ColossalDefense}, // 41
-    };
+    // ABILITY_TRIGGERTABLE ColossalHandlers[] = {
+    //     {EVENT_MOVE_DAMAGE_PROCESSING_2, (ABILITY_HANDLER_FUNC)ColossalDefense}, // 41
+    // };
 
-    ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddSteadfast(_DWORD *a1)
-    {
-        *a1 = 1;
-        return ColossalHandlers;
-    }
+    // ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddSteadfast(_DWORD *a1)
+    // {
+    //     *a1 = 1;
+    //     return ColossalHandlers;
+    // }
 
 #pragma endregion
 
@@ -676,14 +674,8 @@ extern "C"
     {
         if (a3 == BattleEventVar_GetValue(VAR_DEFENDING_MON))
         {
-#if DEBUGGING_ABILITIES && DEBUGGING_ALL
-            k::Printf("\nHeavy Metal Defense Handler Triggered\n");
-#endif
             if (BattleEventVar_GetValue(VAR_MOVE_CATEGORY) == 1)
             {
-#if DEBUGGING_ABILITIES && DEBUGGING_ALL
-                k::Printf("Heavy Metal Defense Handler: Physical Move Detected, applying boost\n");
-#endif
                 BattleEventVar_MulValue(VAR_RATIO, 6144);
             }
         }
@@ -693,9 +685,6 @@ extern "C"
     {
         if (a3 == BattleEventVar_GetValue(VAR_MON_ID)) // hail
         {
-#if DEBUGGING_ABILITIES && DEBUGGING_ALL
-            k::Printf("\nHeavy Metal Speed Handler Triggered\n");
-#endif
             BattleEventVar_MulValue(VAR_RATIO, 2730);
         }
     }
@@ -720,9 +709,7 @@ extern "C"
         {
             if (BattleEventVar_GetValue(VAR_MOVE_CATEGORY) == 1)
             {
-#if DEBUGGING_ABILITIES && DEBUGGING_ALL
-                k::Printf("Light Metal Defense Handler: Physical Move Detected, applying reduction\n");
-#endif
+
                 BattleEventVar_MulValue(VAR_RATIO, 2730);
             }
         }
@@ -732,9 +719,6 @@ extern "C"
     {
         if (a3 == BattleEventVar_GetValue(VAR_MON_ID)) // hail
         {
-#if DEBUGGING_ABILITIES && DEBUGGING_ALL
-            k::Printf("\nLight Metal Speed Handler Triggered\n");
-#endif
             BattleEventVar_MulValue(VAR_RATIO, 6144);
         }
     }
@@ -754,7 +738,7 @@ extern "C"
 
 #pragma region MoldBreaker
 
-    bool THUMB_BRANCH_HandlerMoldBreakerSKipCheck(int a1, int a2, BattleEventType a3, int a4, unsigned __int16 a5)
+    bool THUMB_BRANCH_HandlerMoldBreakerSkipCheck(int a1, int a2, BattleEventType a3, int a4, unsigned __int16 a5)
     {
         return a3 == EVENT_MOVE_SEQUENCE_END && SEARCH_ARRAY(MOLD_BREAKER_AFFECTED_ABILITIES, a5);
     }
@@ -922,16 +906,10 @@ extern "C"
             v7 = DivideMaxHp(BattleMon, 3u);
             if (BattleMon_GetValue(BattleMon, VALUE_CURRENT_HP) <= v7 && a3 == BattleEventVar_GetValue(VAR_MOVE_TYPE))
             {
-#if DEBUGGING_ABILITIES && DEBUGGING_ALL
-                k::Printf("Pinch Ability Triggered\n");
-#endif
                 BattleEventVar_MulValue(VAR_RATIO, 6144);
             }
             else
             {
-#if DEBUGGING_ABILITIES && DEBUGGING_ALL
-                k::Printf("Pinch Ability Not Triggered\n");
-#endif
                 BattleEventVar_MulValue(VAR_RATIO, 5120);
             }
         }
@@ -969,9 +947,6 @@ extern "C"
             defendingMon = Handler_GetBattleMon(a2, BattleEventVar_GetValue(VAR_DEFENDING_MON));
             if (BattleMon_GetStatus(defendingMon))
             {
-#if DEBUGGING_ABILITIES && DEBUGGING_ALL
-                k::Printf("Merciless Offense Triggered\n");
-#endif
                 BattleEventVar_MulValue(VAR_MOVE_POWER_RATIO, 5120);
             }
         }
@@ -985,9 +960,6 @@ extern "C"
             attackingMon = Handler_GetBattleMon(a2, BattleEventVar_GetValue(VAR_ATTACKING_MON));
             if (BattleMon_GetStatus(attackingMon))
             {
-#if DEBUGGING_ABILITIES && DEBUGGING_ALL
-                k::Printf("Merciless Defense Triggered\n");
-#endif
                 BattleEventVar_MulValue(VAR_RATIO, 3072);
             }
         }
@@ -1164,7 +1136,7 @@ extern "C"
 #pragma region IceBody
 
     /* Ice Body Buff*/
-    int THUMB_BRANCH_SAFESTACK_HandlerIceBody(int a1, ServerFlow *a2, int a3)
+    int HandlerIceBody(int a1, ServerFlow *a2, int a3)
     {
         int result;                 // r0
         BattleMon *PokeParam;       // r7
@@ -1173,17 +1145,26 @@ extern "C"
         result = BattleEventVar_GetValue(VAR_MON_ID);
         if (a3 == result)
         {
-            int recover = (BattleEventVar_GetValue(VAR_WEATHER) == 3) ? 0x8u : 0x10u;
+            int recover = (Handler_GetWeather((int)a2) == 3) ? 0x8u : 0x10u;
             PokeParam = Handler_GetBattleMon(a2, a3);
             v8 = (HandlerParam_RecoverHP *)BattleHandler_PushWork(a2, EFFECT_RECOVERHP, a3);
             v8->header.flags |= 0x800000u;
             v8->pokeID = a3;
             v8->recoverHP = DivideMaxHPZeroCheck(PokeParam, recover);
             BattleHandler_PopWork(a2, v8);
-            return BattleEventVar_RewriteValue(VAR_MOVE_FAIL_FLAG, 1);
         }
-
         return result;
+    }
+
+    ABILITY_TRIGGERTABLE IceBodyHandlers[] = {
+        {EVENT_WEATHER_REACTION, (ABILITY_HANDLER_FUNC)HandlerSnowCloakWeather}, // 22
+        {EVENT_TURN_CHECK_BEGIN, (ABILITY_HANDLER_FUNC)HandlerIceBody},
+    };
+
+    ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddIceBody(_DWORD *a1)
+    {
+        *a1 = 2;
+        return IceBodyHandlers;
     }
 
 #pragma endregion
@@ -1454,9 +1435,6 @@ extern "C"
     {
         if (a3 == BattleEventVar_GetValue(VAR_DEFENDING_MON) && BattleEventVar_GetValue(VAR_CRITICAL_FLAG))
         {
-#if DEBUGGING_ABILITIES && DEBUGGING_ALL
-            k::Printf("\nForewarn New Handler Triggered\n");
-#endif
             BattleEventVar_MulValue(VAR_RATIO, 3072);
         }
     }
@@ -1824,7 +1802,6 @@ extern "C"
 
         if (a3 == BattleEventVar_GetValue(VAR_MON_ID) && a3 >= 6 && !checksIfWildBattle(a2))
         {
-            // k::Printf("\nWe are in, lets see if this works");
             PokeParam = Handler_GetBattleMon(a2, a3);
 
             if (BattleMon_HasType(PokeParam, TYPE_FIRE))
@@ -2217,17 +2194,14 @@ extern "C"
         int UsedItem;
         HandlerParam_SetItem *v8; // r0
 
-        // k::Printf("\nWe are inside the first loop of logic\n");
         if (a3 == BattleEventVar_GetValue(VAR_MON_ID))
         {
-            // k::Printf("\nWe are inside the second loop of logic\n");
 
             BattleMon = Handler_GetBattleMon(a2, a3);
             UsedItem = BattleMon_GetUsedItem(BattleMon);
 
             if (UsedItem && BattleMon_GetHeldItem(BattleMon) == 0)
             {
-                // k::Printf("\nWe are inside the third loop of logic\n");
                 v8 = (HandlerParam_SetItem *)BattleHandler_PushWork(a2, EFFECT_SET_HELD_ITEM, a3);
                 v8->header.flags |= 0x800000u;
                 v8->itemID = UsedItem;
@@ -2680,7 +2654,6 @@ extern "C"
     */
     void HandlerPixilateType(int a1, int a2, int a3)
     {
-        // k::Printf("\n\nThis is called with pokemonslot %d\n\n", a3, BattleEventVar_GetValue(VAR_MON_ID));
         if (a3 == BattleEventVar_GetValue(VAR_MON_ID))
         {
             if (BattleEventVar_GetValue(VAR_MOVE_TYPE) == TYPE_NORMAL)
@@ -2853,42 +2826,10 @@ extern "C"
         FIELD_SUN = 6
     };
 
-    FieldTypeChanges checkForFieldEffects()
-    {
-        PlayerState *playerState = GameData_GetPlayerState(*(GameData **)(g_GameBeaconSys + 4));
-        int zoneId = PlayerState_GetZoneID(playerState);
-
-        if (zoneId == 121)
-        {
-            return FIELD_OPELUCID;
-        }
-        if (zoneId == 607 || zoneId == 195 || zoneId == 196 || zoneId == 197)
-        {
-            return FIELD_CHARGESTONE;
-        }
-        if (zoneId == 339 || zoneId == 338 || zoneId == 340 || zoneId == 341 || zoneId == 462 || (zoneId >= 510 && zoneId <= 514) || (zoneId >= 569 && zoneId <= 572))
-        {
-            return FIELD_CELESTIAL;
-        }
-        if (zoneId == 108)
-        {
-            return FIELD_SKYLA;
-        }
-        if (zoneId == 503 || zoneId == 504 || zoneId == 505 || (zoneId >= 255 && zoneId <= 262) || (zoneId >= 160 && zoneId <= 190))
-        {
-            return FIELD_TRICK_ROOM;
-        }
-        if (zoneId == 537 || zoneId == 538 || zoneId == 539 || zoneId == 540 || zoneId == 541 || zoneId == 542 || zoneId == 461 || zoneId == 376 || zoneId == 589)
-        {
-            return FIELD_SUN;
-        }
-        return FIELD_NONE;
-    };
     int GetTypeEffectivenessAltered(int a1, int a2)
     {
         TypeEffectiveness result;
         int v3;
-        FieldTypeChanges zoneId = checkForFieldEffects();
 
         if (a1 == TYPE_NONE || a2 == TYPE_NONE)
         {
@@ -2968,7 +2909,6 @@ extern "C"
     {
         TypeEffectiveness result;
         int v3;
-        FieldTypeChanges zoneId = checkForFieldEffects();
 
         if (a1 == TYPE_NONE || a2 == TYPE_NONE)
         {
@@ -2984,10 +2924,6 @@ extern "C"
             if (isScrappy)
             {
                 v3 = 4;
-            }
-            else if (zoneId == FIELD_OPELUCID)
-            {
-                v3 = 2;
             }
             else
             {
@@ -3084,8 +3020,6 @@ extern "C"
             if (moveId == MOVE267_NATURE_POWER)
             {
                 int BattleTerrain = Handler_GetBattleTerrain(BattleServer_GetServerFlow(a2->mainModule->server));
-
-                // //k::printf("\n\nThe Battle Terrain is %d\n\n", BattleTerrain);
 
                 if (BattleTerrain == 5u)
                 {
@@ -3219,10 +3153,8 @@ extern "C"
 
     void HandlerSavant(int a1, ServerFlow *serverFlow, int pokemonSlot)
     {
-        // k::Printf("\nChecking for pokemonSlot %d\n", pokemonSlot);
         if (pokemonSlot == BattleEventVar_GetValue(VAR_MON_ID))
         {
-            // k::Printf("\nCheck 1\n");
             BattleMon *currentMon = Handler_GetBattleMon(serverFlow, pokemonSlot);
 
             MoveParam params;
@@ -3231,7 +3163,6 @@ extern "C"
             if (params.moveType != TYPE_NONE &&
                 PokeTypePair_MakeMonotype(params.moveType) != BattleMon_GetPokeType(currentMon))
             {
-                // k::Printf("\nCheck 2\n");
                 if (!BattleMon_CheckIfMoveCondition(currentMon, CONDITION_TERA))
                 {
                     BattleHandler_PushRun(serverFlow, EFFECT_ABILITYPOPUPIN, pokemonSlot);
@@ -3284,36 +3215,43 @@ extern "C"
 
         if (tracePokemonID == Value)
         {
+
             traceAbilityId = 0;
-            traceAbilityPokemonId = 0;
+            traceAbilityPokemonId = 31;
             tracePokemonSlot = Handler_PokeIDToPokePos(a2, tracePokemonID);
 
             /* FIRST CHECK FOR AN ALLY */
             ExistFrontPokePos = Handler_GetExistFrontPokePos(a2, (int)tracePokemonID);
             pokeCount = Handler_ExpandPokeID(a2, ExistFrontPokePos | 0x400, opposingPokePos);
+
             if (pokeCount)
             {
                 for (i = 0; i < pokeCount; i++)
                 {
-                    // if (!(Handler_GetBattleStyle(a2) != BTL_STYLE_TRIPLE || IsPosInRangeTripleBattle(ExistFrontPokePos, tracePokemonSlot)))
-                    // {
-                    //     continue;
-                    // }
+// if (!(Handler_GetBattleStyle(a2) != BTL_STYLE_TRIPLE || IsPosInRangeTripleBattle(ExistFrontPokePos, tracePokemonSlot)))
+// {
+//     continue;
+// }
+
                     traceVictim = Handler_GetBattleMon(a2, opposingPokePos[i]);
                     traceAbilityId = BattleMon_GetValue(traceVictim, VALUE_ABILITY);
                     if (!j_j_IsTraceFailAbility(traceAbilityId))
                     {
+
                         traceAbilityPokemonId = BattleMon_GetID(traceVictim);
                     }
                 }
             }
+
             /* NOW CHECK DIRECTLY ACROSS */
-            if (!(traceAbilityId && traceAbilityPokemonId))
+            if (!(traceAbilityId && (traceAbilityPokemonId != 31)))
             {
+
                 opposingPokeSlot = sub_219C508(Handler_GetBattleStyle(a2), tracePokemonSlot);
                 oppposingPokeID = Handler_PokePosToPokeID(a2, opposingPokeSlot);
                 traceVictim = Handler_GetBattleMon(a2, oppposingPokeID);
                 traceAbilityId = BattleMon_GetValue(traceVictim, VALUE_ABILITY);
+
                 if (j_j_IsTraceFailAbility(traceAbilityId))
                 {
                     /* IF THE DIRECT ACROSS MON DOESN"T WORK, TRY ANY FOE */
@@ -3324,16 +3262,18 @@ extern "C"
                     {
                         if (opposingPokePos[i] != oppposingPokeID)
                         {
+
                             traceVictim = Handler_GetBattleMon(a2, opposingPokePos[i]);
                             traceAbilityId = BattleMon_GetValue(traceVictim, VALUE_ABILITY);
                             if (!j_j_IsTraceFailAbility(traceAbilityId))
                             {
+
                                 traceAbilityPokemonId = BattleMon_GetID(traceVictim);
                                 i = pokeCount;
                             }
                         }
                     }
-                    if (!traceAbilityPokemonId)
+                    if (traceAbilityPokemonId == 31)
                     {
                         *a4 = 1;
                     }
@@ -3350,12 +3290,14 @@ extern "C"
         // else if (!MainModule_IsAllyMonID(Value, tracePokemonID) && *a4 == 1)
         else if (*a4 == 1)
         {
+
             traceAbilityId = 0;
             traceAbilityPokemonId = 0;
             tracePokemonSlot = Handler_PokeIDToPokePos(a2, Value);
             ExistFrontPokePos = Handler_GetExistFrontPokePos(a2, (int)tracePokemonID);
             if (tracePokemonSlot != 6 && (Handler_GetBattleStyle(a2) != BTL_STYLE_TRIPLE || IsPosInRangeTripleBattle(ExistFrontPokePos, tracePokemonSlot)))
             {
+
                 traceVictim = Handler_GetBattleMon(a2, Value);
                 traceAbilityId = BattleMon_GetValue(traceVictim, VALUE_ABILITY);
                 if (!j_j_IsTraceFailAbility(traceAbilityId))
@@ -3365,10 +3307,12 @@ extern "C"
             }
         }
 
-        if (traceAbilityPokemonId && traceAbilityId)
+        if (traceAbilityPokemonId != 31 && traceAbilityId)
         {
+
             if ((int)tracePokemonID != 31)
             {
+
                 v19 = (HandlerParam_ChangeAbility *)BattleHandler_PushWork(a2, EFFECT_CHANGEABILITY, (int)tracePokemonID);
                 v19->pokeID = (int)tracePokemonID;
                 v19->abilityID = traceAbilityId;
@@ -4356,7 +4300,6 @@ u8 *enteredBattle;
 extern "C" void findBattleMon(BtlvCore *a1, PokeParty *a2, int clientId)
 {
     BattleParty party = a1->pokeCon->party[clientId];
-    // k::Printf("\n\n===FIND BATTLEMON===\n");
 
     /* WILD BATTLES */
     if (a1->mainModule->btlSetup->btlType == 0)
@@ -4365,9 +4308,6 @@ extern "C" void findBattleMon(BtlvCore *a1, PokeParty *a2, int clientId)
         {
             if (party.mons[j]->partySrc->Base.pid == a2->Pokemon[j].Base.pid)
             {
-                #if DEBUGGING_ENCOUNTERS 
-                    k::Printf("Found BattleMon PID: %08X\n", a2->Pokemon[j].Base.pid);
-                #endif 
                 a2->Pokemon[j].field_D8 = 2;
             }
         }
@@ -4585,7 +4525,7 @@ extern "C" void THUMB_BRANCH_SAFESTACK_PokeList_LoadPokeData(PokeListMain *a1, P
                     if (v9->MoveID)
                     {
                         v9->CurrentPP = PokeParty_GetParam(a3->partyPkm, (PkmField)(i + 58), 0);
-                        v9->MaxPP = PML_MoveGetParam(PokeParty_GetParam(a3->partyPkm, (PkmField)(i + 54), 0), MVDATA_BASEPP) + ((a2->field_D8 == 2) ? 0 : 3);
+                        v9->MaxPP = PML_MoveGetParam(PokeParty_GetParam(a3->partyPkm, (PkmField)(i + 54), 0), MVDATA_BASEPP) + ((a2->field_D8 == 2 || !isEnemy) ? 0 : 3);
                         // v9->MaxPP = PML_MoveGetMaxPP(v9->MoveID, v9->MaxPP) + 3;
                         // if (isEnemy)
                         // {
@@ -4744,5 +4684,7 @@ extern "C" int THUMB_BRANCH_SAFESTACK_PokeList_LoadSwitchInFailMessage(PokeListM
 #pragma endregion
 
 #pragma region testing
+
+
 
 #pragma endregion

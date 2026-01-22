@@ -1086,16 +1086,11 @@ address_0x124E:
 	AddToScore(2)
 
 address_0x1268:
-	JumpIfRandLT(128, &address_0x1286)
+	JumpIfRandLT(96, &address_0x1286)
 	AddToScore(2)
 
 address_0x1286:
-	JumpIfRandLT(164, &address_0x12C8)
-	AddToScore(1)
-	Jump(&address_0x12C8)
-
-address_0x12AA:
-	JumpIfRandLT(164, &address_0x12C8)
+	JumpIfRandLT(96, &address_0x12C8)
 	AddToScore(1)
 
 address_0x12C8:
