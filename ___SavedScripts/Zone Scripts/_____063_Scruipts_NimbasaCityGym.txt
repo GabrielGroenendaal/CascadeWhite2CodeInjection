@@ -868,6 +868,10 @@ public class MainEvents {
 	}
 
 	static void clearGatekeepers(){
+
+		EventFlags.Set(509);
+		EventWorks.Set(16486, 20);
+
 		// Clears Lenora 
 		EventFlags.Set(528);
 		if (EventWorks.Get(16526) == 0){

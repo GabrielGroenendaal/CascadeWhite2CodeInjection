@@ -1,6 +1,7 @@
 import messages.script.Msg0254.MSGID;
 
 import event.Battle;
+import event.Trainer;
 import event.actors.Actor;
 import event.actors.Player;
 import event.dialogs.Message;
@@ -240,6 +241,48 @@ public class MainEvents {
 		if (EventFlags.Get(522)){
 			EventFlags.Clear(522);
 		}
+	}
+
+	public static void main_10() {
+		int v33;
+		int v34;
+		int isVictory;
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		ShowExclamationMark(19);
+		Actor.WaitActionFinish();
+		Trainer.PlayBGMPush(493);
+		Player.GetGPos(v33, v34);
+		Actor.WalkRoute(19, (v33-1), v34, 1, 8, 0);
+		Actor.WaitActionFinish();
+		Message.ActorEx(1024, 19, 15, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseAll();
+
+		Battle.CallTrainerBattle(493, 0, 0); // REPLACE WITH ROUGHNECK TRAINER ID 
+		isVictory = Battle.IsTrainerVictory();
+		if (isVictory != 1) {
+			Battle.CallTrainerLose();
+		}
+        	Battle.EndTrainerBattle();
+
+        	Message.ActorEx(1024, 19, 16, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseAll();
+		EventWorks.Set(16487, 1);
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_11() { // @ 0x12
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.ActorEx(1024, 19, 16, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseAll();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
 	}
 
 	

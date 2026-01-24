@@ -624,11 +624,12 @@ void Sequence51()
 	End();
 }
 
+/* White Herb (x5) - Castelia Battle Company */
 void Sequence52()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 213);
-	SetVarEqVal(0x800D, 1);
+	SetVarEqVal(0x800C, 214);
+	SetVarEqVal(0x800D, 5);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -945,7 +946,7 @@ void Sequence79()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 74);
-	SetVarEqVal(0x800D, 1);
+	SetVarEqVal(0x800D, 10);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -4298,10 +4299,11 @@ void Sequence375()
 	End();
 }
 
+/* Relaxed Mint - Driftveil Market */
 void Sequence376()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 63);
+	SetVarEqVal(0x800C, 512);
 	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();

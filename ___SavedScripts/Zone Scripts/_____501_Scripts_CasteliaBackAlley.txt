@@ -1,0 +1,307 @@
+import messages.script.Msg0049.MSGID;
+
+import Base;
+import event.Battle;
+import event.Trainer;
+import event.FieldTrade;
+import event.app.PokeApp;
+import event.actors.Actor;
+import event.actors.Player;
+import event.dialogs.Message;
+import event.dialogs.YesNoWin;
+import player.Wallet;
+import pokemon.PokeParty;
+import pokescript.vm.Math;
+import pokescript.vm.StackCtrl;
+import pokescript.vm.VM;
+import event.funfest.Funfest;
+import system.EventFlags;
+import system.EventWorks;
+import system.Input;
+import system.Runtime;
+import system.Field;
+import system.Sound;
+import system.System;
+import system.text.WordSet;
+
+public class MainEvents {
+	public static void main_1() { // @ 0x6
+
+        int playerX; 
+        int playerY;
+        int roughneck_Entity;
+        int isVictory;
+        int actorX; 
+        int actorY;
+
+        roughneck_Entity = 4; // REPLACE WITH ROUGHNECK ENTITY
+
+        Actor.PauseAll();
+        Player.GetGPos(playerX, playerY);
+        Actor.GetGPos(roughneck_Entity, actorX, actorY);
+        Trainer.PlayBGMPush(329); // REPLACE WITH ROUGHNECK CLASS ID 
+        ShowExclamationMark(roughneck_Entity);
+        TurnSouth(roughneck_Entity);
+        Actor.WaitActionFinish();
+        Message.Spiked(12, 2); // REPLACE WITH "HEY!"
+        Message.WaitAdvance();
+        Message.CloseAll();
+
+        Actor.WalkRoute(roughneck_Entity, playerX, playerY - 1, 1, 4, 1);
+        TurnSouth(roughneck_Entity);
+        Actor.WaitActionFinish();
+
+		Message.ActorEx(1024, 13, roughneck_Entity, 0, 0); // REPLACE WITH "You're not from around here, loser.\nGet off our turf!"
+		Input.LastKeyWait();
+		Message.CloseAll();
+
+        Battle.CallTrainerBattle(329, 0, 0); // REPLACE WITH ROUGHNECK TRAINER ID 
+		isVictory = Battle.IsTrainerVictory();
+		if (isVictory != 1) {
+			Battle.CallTrainerLose();
+		}
+        Battle.EndTrainerBattle();
+
+        ShowExclamationMark(roughneck_Entity);
+        Actor.WaitActionFinish();
+		Message.ActorEx(1024, 14, roughneck_Entity, 0, 0); // REPLACE WITH "Damn kid, you're pretty slick!"
+		Input.LastKeyWait();
+        TurnNorth(roughneck_Entity);
+        Message.ActorEx(1024, 15, roughneck_Entity, 0, 0); // REPLACE WITH "Got both my Pokémon and my ego bruised\nup. Heh."
+        Input.LastKeyWait();
+        TurnSouth(roughneck_Entity);
+        Message.ActorEx(1024, 16, roughneck_Entity, 0, 0); // REPLACE WITH "Alright, I'll let you in.\nBut be chill."
+        Input.LastKeyWait();
+        Message.CloseAll();
+        Actor.WalkRoute(roughneck_Entity, 13, 15, 1, 8, 1);
+        TurnEast(roughneck_Entity);
+        Actor.WaitActionFinish();
+		Field.PlayMapBGM();
+		EventWorks.Set(16485, 1);
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+    // Script for Talking to the Roughneck
+	public static void main_2() {
+        Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 17, 0, 0); // REPLACE WITH "We'll be rolling out of here soon enough.\nRoxie's throwing a rager across\nthe river.
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+
+    // The Drug Dealers Script
+    public static void main_3() {
+        int state;
+        int dealer_Entity;
+        int yesNo;
+        int canAfford;
+        dealer_Entity = 5; // Replace with the Entity ID
+        Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+
+        state = EventWorks.Get(16485);
+
+        // hasn't received the item
+        if ((state & 8) == 0){ 
+            Message.Actor(1024, 18, 0, 0); // REPLACE WITH "Hey kid, here to buy?\nI've got the best product in town."
+		    Input.LastKeyWait();
+		    Message.CloseActor();
+            ShowQuestionMark(dealer_Entity);
+            Actor.WaitActionFinish();
+            Message.Actor(1024, 19, 0, 0); // REPLACE WITH "What am I selling?\c\nPokémon [COLOR(2)]Enhancements[COLOR(0)], of course!\c\nI'm sure your Pokémon are great: but, they\ncould be better!\c\nI sell powders, pills, and tonics that will make\nyour lil' buddies big and strong.\c\nYou can't find this stuff at the PokéMart, what\nwith all the regulations and junk. But\r\nEVERYONE is using them these days with how\r\ncompetitive battling has become since\r\nthe Blueberry Academy opened.\c\nHere, I'll give you a free sample!
+		    Input.LastKeyWait();
+		    Message.CloseActor();
+            Global2805(48, 1);
+            Message.Actor(1024, 20, 0, 0); // REPLACE WITH "An Ability Capsule lets you change the ability\nof one of your Pokémon.\c\nIt doesn't work on Pokémon who aren't fully\nevolved, however, or Pokémon that have\r\ntheir Hidden Ability.\c\nNow, let me show you the rest of my stock.\nI've got great deals on IV Enhancers\r\nstarting at just $500,000!"
+		    Input.LastKeyWait();
+		    Message.CloseActor();
+            state = state + 8; 
+            EventWorks.Set(16485, state);
+        } else {
+            Message.Actor(1024, 21, 0, 0); // REPLACE WITH "Want to buy an IV enhancer for $800,000?\nYou know your opponents already have!"
+            yesNo = YesNoWin.Show();
+		    if (yesNo != 0) {
+			    Message.Actor(1024, 22, 0, 0); // REPLACE WITH "No sense in being prideful, kid."
+			    Input.LastKeyWait();
+			    Message.CloseAll();
+			    goto LABEL_EndScriptMain3;
+		    }
+           
+                Message.Actor(1024, 23, 0, 0); // REPLACE WITH "Looks like you can't afford it.\nI'll be here when you can."
+		        Input.LastKeyWait();
+		        Message.CloseActor();
+                goto LABEL_EndScriptMain3;
+            
+        }
+
+        LABEL_EndScriptMain3:
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
+
+    // The Guitarist's Script
+    public static void main_4() {
+        Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 24, 0, 0); // REPLACE WITH "The people of this city are all sheep, man.\nThe system is rigged, so we might as\r\nwell have fun.
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+    
+    // The Trade Script
+    public static void main_5() {
+		int state; 
+		int yesNo; 
+		int randomNo;
+		int v32; 
+		int v33;
+
+          Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+
+		state = EventWorks.Get(16485);
+		if ((state & 4) != 0) {
+			Message.Actor(1024, 29, 0, 0); // REPLACE WITH "This Pokemon is awesome!\c\nI'm already thinking of some sick dance\nmoves they could pull at my next show!\c\nYou're a legend, bro!"
+			Input.LastKeyWait();
+			Message.CloseActor();
+			goto LABEL_EndTradeScript;
+		}
+		if ((state & 2) == 0) {
+			Message.Actor(1024, 25, 0, 0); // REPLACE WITH "We'll be rolling out of here soon enough.\nRoxie's throwing a rager across\nthe river.
+			state = state + 2;
+			EventWorks.Set(16485, state);
+		} else {
+			Message.Actor(1024, 26, 0, 0); // REPLACE WITH "We'll be rolling out of here soon enough.\nRoxie's throwing a rager across\nthe river.
+		}
+		
+		yesNo = YesNoWin.Show();
+
+		if (yesNo != 0) {
+			goto LABEL_RejectTrade;
+		}
+		Message.Actor(1024, 27, 0, 0); // REPLACE WITH "Sick!\nWhich Pokemon do you want to trade?"
+		Input.LastKeyWait();
+		Message.CloseAll();
+		v32 = 0;
+		v33 = 0;
+		PokeApp.CallPokeSelect(0, v33, v32, 0);
+		if (v33 != 1) {
+			goto LABEL_RejectTrade;
+		}
+		Message.Actor(1024, 28, 0, 0); // REPLACE WITH "Alright, let's do it!"
+		Input.LastKeyWait();
+		Message.CloseAll();
+		randomNo = System.Random(2);
+		FieldTrade.Start((12 + randomNo), v32);
+
+		Message.System(31, 2);
+		yesNo = YesNoWin.Show();
+		if (yesNo == 0) {
+			Message.CloseAll();
+			PokeApp.CallRename(v32, 1);
+		} else {
+			Message.CloseAll();
+		}
+
+		Message.Actor(1024, 29, 0, 0); // REPLACE WITH "This Pokemon is awesome!\c\nI'm already thinking of some sick dance\nmoves they could pull at my next show!\c\nYou're a legend, bro!"
+		Input.LastKeyWait();
+		Message.CloseAll();
+		state = EventWorks.Get(16485);
+		state = state + 4;
+		EventWorks.Set(16485, state);
+		goto LABEL_EndTradeScript;
+
+		
+		LABEL_RejectTrade:
+		Sound.SEPlay(1351);
+		Message.Actor(1024, 30, 0, 0); // REPLACE WITH "Awww man."
+		Input.LastKeyWait();
+		Message.CloseActor();
+		
+		LABEL_EndTradeScript:
+		v33 = 0;
+		v32 = 0;
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+
+	static meta void WalkOneTileWest(int npcID) : VActionSequence {
+		Action000e(1);
+	}
+	
+
+	static meta void ActionSequence_01c8(int npcId) : VActionSequence {
+		Action0020(1);
+	}
+
+	static meta void ShowExclamationMark(int npcId) : VActionSequence {
+		Action004b(1);
+	}
+
+	static meta void TurnEast(int npcId) : VActionSequence {
+		Action0023(1);
+	}
+
+	static meta void WalkNorth(int npcID) : VActionSequence {
+		Action000c(2);
+	}
+
+	static meta void RunWest(int npcId) : VActionSequence {
+		Action0012(5);
+	}
+
+		static meta void TurnWest(int npcId) : VActionSequence {
+		Action0022(1);
+	}
+
+	static meta void TurnSouth(int npcId) : VActionSequence {
+		Action0025(1);
+	}
+
+	static meta void ShowEllipses(int npcId) : VActionSequence {
+		Action00a1(1);
+	}
+
+	static meta void TurnNorth(int npcId) : VActionSequence {
+		Action0020(1);
+	}
+
+	static meta void WalkOneTileEast(int npcID) : VActionSequence {
+		Action000f(1);
+	}
+	
+	static meta void ShowQuestionMark(int npcId) : VActionSequence {
+		Action009f(1);
+	}
+	static meta void Global2805(int a1, int a2) : VGlobalCall[2805];
+
+	static native void Action0015(int amount) : 0x15; 
+	static native void Action00a1(int amount) : 0xa1;
+	static native void Action000c(int amount) : 0xc;
+	static native void Action000d(int amount) : 0xd;
+	static native void Action0011(int amount) : 0x11;
+	static native void Action000e(int amount) : 0xe;
+	static native void Action0012(int amount) : 0x12;
+	static native void Action000f(int amount) : 0xf;
+	static native void Action0020(int amount) : 0x20;
+	static native void Action0021(int amount) : 0x21;
+	static native void Action0022(int amount) : 0x22;
+	static native void Action0023(int amount) : 0x23;
+		static native void Action0025(int amount) : 0x25;
+	static native void Action003f(int amount) : 0x3f;
+	static native void Action004b(int amount) : 0x4b;
+	static native void Action009f(int amount) : 0x9f;
+
+}

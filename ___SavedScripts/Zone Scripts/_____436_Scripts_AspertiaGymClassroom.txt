@@ -299,6 +299,17 @@ public class MainEvents {
 		Message.CloseAll();
 		randomNo = System.Random(3);
 		FieldTrade.Start(((starterFlag * 4) + randomNo), v32);
+
+        	Message.System(45, 2); // REPLACE WITH "Do you want to give your new Pokémon\na nickname?"
+        	yesNo = YesNoWin.Show();
+        	if (yesNo == 0) {
+        		Message.CloseAll();
+            	PokeApp.CallRename(v32, 1);
+        	} else {
+        		Message.CloseAll();
+        	}
+
+    
 		Message.Actor(1024, (32 + starterFlag), 0, 0);
 		Input.LastKeyWait();
 		Message.CloseAll();

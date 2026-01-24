@@ -480,7 +480,7 @@ Item: 1x Hardy Mint, 1x Lax Mint, 1x Gentle Mint (reward for Defeating the Plasm
 !trm 119 (Second)
 
 !trm 459 (First)
-!trm 492 (Second)
+!trm 19 (Second)
 
 !trm 463 (First)
 !trm 464 (Second)

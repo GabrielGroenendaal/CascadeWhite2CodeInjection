@@ -167,6 +167,9 @@ label9: ;
 	StackPushConst(0);
 	StackCompare(2);
 	if (255) goto label_DisablingFlight;
+	Storec0xD3(0x8028);
+	Compare(0x8028, 495);
+	if (1) goto label_DisablingFlight;
 	AddDialogueOption(86, 0xFFFF, 86);
 
 label_DisablingFlight: ;
