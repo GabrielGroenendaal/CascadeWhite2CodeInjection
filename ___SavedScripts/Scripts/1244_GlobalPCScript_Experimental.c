@@ -1590,11 +1590,11 @@ label60_options: ;
 	// CloseAllMessageBoxes();
 	Compare(0x4033, 0);
 	if (5) goto label71_options;
-	EventGreyMessage(142, 2);
+	EventGreyMessage(143, 2);
 	goto label72_options;
 
 label71_options: ;
-	EventGreyMessage(143, 2);
+	EventGreyMessage(142, 2);
 
 label72_options: ;
 	WaitForButton();
@@ -1611,13 +1611,13 @@ label73_options: ;
 	// CloseAllMessageBoxes();
 	Compare(0x4033, 0);
 	if (5) goto label74_options;
-	EventGreyMessage(144, 2);
+	EventGreyMessage(145, 2);
 	WaitForButton();
 	SetVarEqVar2(0x4033, 1);
 	goto label75_options;
 
 label74_options: ;
-	EventGreyMessage(145, 2);
+	EventGreyMessage(144, 2);
 	WaitForButton();
 	SetVarEqVar2(0x4033, 0);
 
@@ -1982,7 +1982,7 @@ label104_options: ;
 	Compare(0x4033, 0);
 	if (1) goto label105_options;
 	// CloseAllMessageBoxes();
-	EventGreyMessage(145, 2);
+	EventGreyMessage(144, 2);
 	WaitForButton();
 	SetVarEqVar2(0x4033, 0);
 

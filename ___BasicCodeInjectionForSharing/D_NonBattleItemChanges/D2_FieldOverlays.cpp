@@ -475,7 +475,7 @@ extern "C"
         int ivB;
         int count;
 
-        k::Printf("Improving IVs for species %d\n", PokeParty_GetParam(pPkm, PF_Species, 0));
+        // k::Printf("Improving IVs for species %d\n", PokeParty_GetParam(pPkm, PF_Species, 0));
         while (count < 5)
         {
             ivA = GFL_RandomMT() >> 27;
@@ -788,6 +788,20 @@ extern "C"
         BagSaveData *Bag;
         Bag = GameData_GetBag(wk->m_GameData);
         return (BagSave_GetItemCountByID(Bag, 422) != 0);
+    }
+
+    b32 THUMB_BRANCH_PML_MoveIsHM(u16 moveNum)
+    {
+        //   unsigned int i; // r3
+
+        //   for ( i = 0; i < 6; i = (unsigned __int8)(i + 1) )
+        //   {
+        //     if ( moveNum == (unsigned __int16)TM_MOVE_LIST[i + 92] )
+        //     {
+        //       return 1;
+        //     }
+        //   }
+        return 0;
     }
 
     int THUMB_BRANCH_SAFESTACK_CheckFieldEnvInteraction(FieldEventCheckData *wk)

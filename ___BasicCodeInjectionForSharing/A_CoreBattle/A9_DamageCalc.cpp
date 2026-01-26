@@ -4077,7 +4077,7 @@ enum ItemID
                 //k::Printf("\nBecause of Overheat, the new power of this move is %d\n\n", v23);
             }
 
-            if ((DefendingMon->HeldItem == IT0303_TERA_F_BAND || DefendingMon->HeldItem == IT0230_FOCUS_BAND || BattleMon_GetValue(DefendingMon, VALUE_EFFECTIVE_ABILITY) == ABIL136_MAJESTIC_WARD) && BattleMon_IsFullHP(DefendingMon))
+            if ((BattleMon_GetValue(DefendingMon, VALUE_EFFECTIVE_ABILITY) == ABIL136_MAJESTIC_WARD) && BattleMon_IsFullHP(DefendingMon))
             {
                 v23 = 50 * v23 / 100u;
             }

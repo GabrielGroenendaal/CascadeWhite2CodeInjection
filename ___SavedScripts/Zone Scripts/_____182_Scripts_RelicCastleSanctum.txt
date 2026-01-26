@@ -1,5 +1,6 @@
 import messages.script.Msg0240.MSGID;
 
+import event.EVCamera;
 import event.Battle;
 import event.actors.Actor;
 import event.dialogs.Message;
@@ -25,7 +26,7 @@ public class MainEvents {
 			Message.System(6, 2);
 			Sound.PVWait();
 			Message.WaitAdvance();
-			Message.CloseInfo();
+			Message.CloseAll();
 			goto LABEL_00c4;
 		}
         Message.System(0, 0);
@@ -42,9 +43,13 @@ public class MainEvents {
                Message.CloseSystem();
             goto LABEL_00c4;
         }
+        Runtime.Sleep(32);
+		Sound.SEPlay(2226);
+        EVCamera.Shake(6, 0, 3, 10, 1, 0, 1, 3);
+        Runtime.Sleep(32);
 		Message.Spiked(3, 2);
 		Message.WaitAdvance();
-		Message.CloseSystem();
+		Message.CloseAll();
 		Battle.CallTrainerBattle(634, 0, 0);
 		v0 = Battle.IsTrainerVictory();
 		if (v0 == 0) {
@@ -52,20 +57,20 @@ public class MainEvents {
 		}
 		EventFlags.Set(928);
 		EventFlags.Set(404);
-		EventFlags.Set(516);
 		EventWorks.Set(16525, 2);
+		EventFlags.Set(516);
+
 		Battle.EndTrainerBattle();
 
 		Message.System(4, 0);
 		Message.WaitAdvance();
-		   Message.CloseSystem();
+		Message.CloseSystem();
 		Global2805(270, 1);
 		Message.System(5, 0);
 		Message.WaitAdvance();
-		   Message.CloseSystem();
+		Message.CloseSystem();
 		
 		LABEL_00c4:
-		Message.CloseSystem();
 		Runtime.FinishSubEvents();
 		Actor.UnpauseAll();
 	}

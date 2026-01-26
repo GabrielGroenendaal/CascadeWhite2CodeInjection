@@ -22,6 +22,12 @@ extern "C" u32 SearchArray(const u32 *const arr, const u32 arrSize, const u32 va
 
 u8 entryTurn = 0;
 
+bool checkIfWildBattle(ServerFlow *a1)
+    {
+        return a1->mainModule->btlSetup->btlType == 0;
+}
+
+
 struct BattleFieldExt
 {
     u32 actionSubstituteDamage[31];
@@ -452,6 +458,8 @@ extern "C" BattleEventHandlerTableEntry *THUMB_BRANCH_EventAddPoisonPoint(u32 *h
 
 extern "C" void CommonEmergencyExitCheck(ServerFlow *serverFlow, u32 currentSlot)
 {
+       if (checkIfWildBattle(serverFlow))
+        return;
     BattleMon *currentMon = Handler_GetBattleMon(serverFlow, currentSlot);
     u32 maxHP = BattleMon_GetValue(currentMon, VALUE_MAX_HP);
 
@@ -479,6 +487,8 @@ extern "C" void CommonEmergencyExitCheck(ServerFlow *serverFlow, u32 currentSlot
 }
 extern "C" void HandlerEmergencyExitDamageCheck(BattleEventItem *item, ServerFlow *serverFlow, u32 pokemonSlot, u32 *work)
 {
+       if (checkIfWildBattle(serverFlow))
+        return;
     u32 targetCount = BattleEventVar_GetValue(VAR_TARGET_COUNT);
     for (u32 target = 0; target < targetCount; ++target)
     {
@@ -508,6 +518,8 @@ extern "C" void HandlerEmergencyExitDamageCheck(BattleEventItem *item, ServerFlo
 }
 extern "C" void HandlerEmergencyExitSimpleCheck(BattleEventItem *item, ServerFlow *serverFlow, u32 pokemonSlot, u32 *work)
 {
+    if (checkIfWildBattle(serverFlow))
+        return;
     if (IS_NOT_NEW_EVENT)
         return;
 

@@ -463,25 +463,24 @@ Item: 1x Hardy Mint, 1x Lax Mint, 1x Gentle Mint (reward for Defeating the Plasm
 
 !enc 37
 
-#### Note: You can face the next sets of trainers either as tag battles with Hugh or as a back-to-back
-
 ### Hugh's Team
 !tr 589/28 Picked Tepig
 !tr 590/28 Picked Dewott
 !tr 588/28 Picked Snivy
 
+### Back to Back or Tag
 !trm 115 (First)
 !trm 461 (Second)
-
+### Back to Back or Tag
 !trm 492 (First)
 !trm 465 (Second)
-
+### Back to Back or Tag
 !trm 601 (First)
 !trm 119 (Second)
-
+### Back to Back or Tag
 !trm 459 (First)
 !trm 19 (Second)
-
+### Back to Back or Tag
 !trm 463 (First)
 !trm 464 (Second)
 
@@ -503,6 +502,20 @@ Item: 1x Hardy Mint, 1x Lax Mint, 1x Gentle Mint (reward for Defeating the Plasm
 !tr 462/28 
 
 
+## Castelia Alleyway
+The Trade and Item in this alley are only available before defeating Burgh. Afterwards, they will disappear!
+
+Item: Ability Capsule (speak to right NPC)
+Item: Throat Spray (held by the traded Pokemon)
+
+!tr 329 Gatekeeps the Capsule and Trade
+
+### Trade Encounter
+Speak with the dancer to acquire one of the following Pokemon.
+- Kricketune 
+- Chatot 
+- Spinda 
+These Pokemon are all excellent for Burgh and are all holding a Throat Spray. You cannot take this trade after Burgh is defeated!
 
 
 ## Relic Passage 
@@ -532,10 +545,10 @@ Item: TM06 Magical Leaf
 
 ## Castelia Battle Company 
 Item: Eviolite (Received upon entering the building)
-Item: x5 Mental Herbs (Reward for defeating Clerk Brittany)
+Item: x5 White Herbs (Reward for defeating Clerk Brittany)
 Item: Zoom Lens (Reward for defeating Clerk Clemens)
 Item: Shell Bell (Reward for defeating Clerk Gilligan)
-Item: 6x Red Shards (Reward for Defeating Clerk Warren)
+Item: 10x Red Shards (Reward for Defeating Clerk Warren)
 Item: Thick Club (found on the top floor)
 Item: Light Ball (found by Clerk Britney)
 
@@ -729,6 +742,7 @@ Note: All Join Avenue shops and vendors have been blocked off by the convention.
 The TM Vendor at the Pokémart sells TM50 Water Pulse and TM94: Rock Smash if you didn't already get them from beating Brock / Misty. 
 
 Item: NevermeltIce (found by Ferris Wheel)
+Item: Ability Capsule (reward for the Eevee gauntlet)
 
 ### Fossil Reviver 
 If you acquire a Fossil, they can be revived into an encounter here. 
@@ -751,13 +765,24 @@ This content is locked off afterwards.
 ### Eeveelution Gauntlet 
 You can fight this 8 mon gauntlet of trainers to access a unique trade. You can trade any Pokemon and receive a random eeveelution, so long as they are defeated before Elesa.
 
-!tr 29
-!tr 30
-!tr 49
-!tr 51
-!tr 52
-!tr 53
+!tr 29 (Fight #1)
+!tr 30 (Fight #2)
+!tr 49 (Fight #3)
 
+!tr 51 (Fight #4)
+!tr 52 (Fight #5)
+!tr 53 (Fight #6)
+
+#### Reward
+You get an Ability Capsule and can trade any Pokemon for one of the following random Eeveelutions:
+- Eevee
+- Vaporeon
+- Flareon 
+- Jolteon 
+- Leafeon 
+- Glaceon 
+- Espeon 
+- Umbreon
 
 ## Anville Town (only accessible by defeating Ingo and Emmet)
 Item: Dragon Fang 
@@ -866,8 +891,9 @@ Item: TM73 Thunder Wave (reward for defeating Elesa)
 ### Nimbasa City Grunts 
 #### NOTE: "Proto" Items are dangerous devices designed by colress that boost a Pokemon's stats on switch in at the cost of their accuracy. Be careful!
 
-!trm 359/40 (First Fight of Back-to-Back)
-!trm 751/40 (Second Fight of Back-to-Back) 
+#### These can be fight in either order, but are always back to backs.
+!trm 359/40 (Male Fight of Back-to-Back)
+!trm 751/40 (Female Fight of Back-to-Back) 
 
 ### Charles 
 !trm 340/42 
@@ -911,13 +937,14 @@ Item: TM90 Draining Kiss (Past Backers Ava and Aya)
 Item: x30 Red Shard (past Dancer Brian)
 Item: Common Evolution Stones (Sold in the Pokémart)
 Item: x6 Yellow Shard (past Dancer Brian)
+Item: Relaxed Mint (in the Market)
 
-Herb Shop sells the following items:
-      Micle Berry 
-      Mental Herb 
-      Figy Berry 
+### Herb Shop:
+- Micle Berry 
+- Mental Herb 
+- Figy Berry 
 
-The Move Tutor is present, past Dancer Brian, and teaches the vanilla moves. 
+The Yellow Move Tutor is present, past Dancer Brian
 
 !tr 255/43 Guards the Move Tutor and shards
 
@@ -997,11 +1024,12 @@ Note: The move tutor for Blast Burn, Frenzy Plant, Hydro Cannon has been removed
 Note: The Move Reminder is here!
 Item: Rocky Helmet (found near entrance)
 Item: 5x Heart Scales can be found by the Move Reminder.
+Item: x1 Brave, Quiet, Sassy Mint (reward for defeating Colress)
 
 ### NOTE: "Proto" Items are dangerous devices designed by colress that boost a Pokemon's stats on switch in at the cost of their accuracy. Be careful!
 
 ### Colress 
-!trm 739/48 Rewards 1x Proto Booster
+!trm 739/48 Rewards 1x Brave, Quiet, Sassy Mint
 
 
 
@@ -1009,7 +1037,7 @@ Item: 5x Heart Scales can be found by the Move Reminder.
 ## Relic Passage (Driftveil Side)
 Item: Iron Ball (past the Backpacker Tag)
 Item: TM91 Flash Cannon (past Hiker Keith)
-Item: x10 Red Shard (past Hiker Tobias)
+Item: x20 Red Shard (past Hiker Tobias)
 Item: x10 Sitrus Berry (past Backpacker Annie)
 
 ### FIELD EFFECT: There is a Permanent Pre Set Trick Room in Relic Passage 
@@ -1061,18 +1089,19 @@ This content is locked off afterwards.
 ### Cheren Tag Battle
 !trm 374/47 Left Side 
 !trm 375/47 Right Side 
-Cheren's Team 
+#### Cheren's Team 
 !trm 371/48 
 
 ### Rival Tag Battle 
 !trm 376/47 Left Side 
 !trm 377/47 Right Side 
-Hugh's Teams
+#### Hugh's Teams
 !trm 369/50 Picked Tepig
 !trm 370/50 Picked Dewott
 !trm 368/50 Picked Snivy
 
-
+### WARNING: After defeating the Hugh Tag Battle, you will lose a Pokemon!
+The Shadow Triad will steal a random, non-fainted Pokemon from your party after you complete the final battle on Plasma Frigate. You will be able to recover this Pokemon eventually, but plan your team accordingly!
 
 
 ## Route 6 
@@ -1107,7 +1136,10 @@ Note: This is a new encounter location, but you must defeat Ranger Audra to acce
 !tr 265/49 Right Side 
 
 
+
 ### Rival Hugh (outside Chargestone Cave)
+There is no rain for Hugh's battle!
+
 !trm 487 If chose Snivy
 
 !trm 488 If chose Tepig
@@ -1173,10 +1205,10 @@ Item: Heart Scale x2 (found at the entrance)
 
 !enc 20 
 
-### Fight #1
+### Fight #1 
 !trm 537/48 Choose One (Top)
 !trm 743/48 Choose One (Bottom)
-### Fight #2
+### Fight #2 
 !trm 539/49 Choose One (Left)
 !trm 741/49 Choose One (Right)
 ### Fight #3

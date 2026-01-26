@@ -236,7 +236,7 @@ extern "C"
             BattleMon = Handler_GetBattleMon(a2, a3);
             if (BattleMon_IsFullHP(BattleMon))
             {
-                BattleEventVar_MulValue(VAR_RATIO, 4096);
+                BattleEventVar_MulValue(VAR_MOVE_POWER_RATIO, 2048);
                 *a4 = 1;
             }
             else
@@ -268,7 +268,7 @@ extern "C"
     }
 
     ITEM_TRIGGERTABLE FocusBandHandlers[] = {
-        {EVENT_MOVE_DAMAGE_PROCESSING_2, (ITEM_HANDLER_FUNC)HandlerFocusBandNew},
+        {EVENT_MOVE_POWER, (ITEM_HANDLER_FUNC)HandlerFocusBandNew},
         {EVENT_AFTER_DAMAGE_REACTION, (ITEM_HANDLER_FUNC)HandlerFocusBandAfter},
     };
 
@@ -2676,7 +2676,7 @@ extern "C"
     */
 
     ITEM_TRIGGERTABLE TeraFocusBandHandlers[] = {
-        {EVENT_MOVE_DAMAGE_PROCESSING_2, (ITEM_HANDLER_FUNC)HandlerFocusBandNew},
+        {EVENT_MOVE_POWER, (ITEM_HANDLER_FUNC)HandlerFocusBandNew},
         {EVENT_AFTER_DAMAGE_REACTION, (ITEM_HANDLER_FUNC)HandlerFocusBandAfter},
         {EVENT_CHECK_SPECIAL_PRIORITY, (ITEM_HANDLER_FUNC)HandlerTera}};
 

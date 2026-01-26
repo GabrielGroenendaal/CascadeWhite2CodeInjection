@@ -241,6 +241,9 @@ public class MainEvents {
 		if (EventFlags.Get(522)){
 			EventFlags.Clear(522);
 		}
+		if (!EventFlags.Get(536)) {
+			EventFlags.Set(536);
+		}
 	}
 
 	public static void main_10() {

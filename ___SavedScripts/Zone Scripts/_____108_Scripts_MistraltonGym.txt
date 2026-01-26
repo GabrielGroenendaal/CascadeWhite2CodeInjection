@@ -253,6 +253,7 @@ public class MainEvents {
 	static void clearGatekeepers(){
 		// Cobalion Disable
 		EventFlags.Set(923);
+		
 		// Clears Roods first position
 		if (!EventFlags.Get(520)){
 			EventFlags.Set(520);

@@ -1,5 +1,3 @@
-  "title": "Cascade White 2",
-  
   "moves": {
     "Concuss": {
       "type": "Psychic",
@@ -167,7 +165,7 @@
       "type": "Dark",
       "basePower": 60,
       "category": "Physical",
-      "e_id": 24,
+      "e_id": 0,
       "target": "allAdjacentFoes",
       "sf": true
     },
@@ -908,7 +906,7 @@
       "type": "Poison",
       "basePower": 80,
       "category": "Special",
-      "e_id": 2,
+      "e_id": 0,
       "target": "allAdjacentFoes",
       "sf": true
     },
@@ -1190,7 +1188,7 @@
       "type": "Normal",
       "basePower": 1,
       "category": "Physical",
-      "e_id": 40
+      "e_id": 0
     },
     "Slash": {
       "type": "Normal",
@@ -1661,7 +1659,7 @@
       "type": "Fairy",
       "basePower": 0,
       "category": "Status",
-      "e_id": 24,
+      "e_id": 19,
       "target": "allAdjacentFoes",
       "sf": true
     },
@@ -2476,7 +2474,7 @@
       "type": "Fairy",
       "basePower": 60,
       "category": "Physical",
-      "e_id": 105
+      "e_id": 0
     },
     "Volt Tackle": {
       "type": "Electric",
@@ -3630,7 +3628,8 @@
       "basePower": 65,
       "category": "Special",
       "e_id": 310,
-      "sf": true
+      "sf": true,
+      "hc_effect": "Hex"
     },
     "Sky Drop": {
       "type": "Flying",

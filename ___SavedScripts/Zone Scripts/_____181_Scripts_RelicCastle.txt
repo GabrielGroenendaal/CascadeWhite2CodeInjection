@@ -142,10 +142,11 @@ public class MainEvents {
 		Message.CloseAll();
 		TurnNorth(2);
 		Actor.WaitActionFinish();
+		Sound.PVPlay(505, 0);
 		Message.ActorEx(1024, 6, 1, 0, 0);
 		Input.LastKeyWait();
 		Message.CloseAll();
-
+		Sound.PVWait();
 	
 		if (v33 > 7) {
 			Actor.WalkRoute(2, v33 - 1, v34, 1, 8, 1);
@@ -338,7 +339,7 @@ public class MainEvents {
 	
 	static native void Action009f(int amount) : 0x9f;
 	static native void Action000c(int amount) : 0xc;
-		static native void Action00a1(int amount) : 0xa1;
+	static native void Action00a1(int amount) : 0xa1;
 	static native void Action000d(int amount) : 0xd;
 	static native void Action000e(int amount) : 0xe;
 	static native void Action000f(int amount) : 0xf;

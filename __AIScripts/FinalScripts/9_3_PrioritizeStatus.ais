@@ -89,10 +89,17 @@ priorityCheckSpeed:
 	EndScript()
 
 priorityPrioritize:
+	JumpIfMoveEQ(move.1st_impression, &1stImpressionCheck);
 	JumpIfRandLT(39, &EndOfScriptEnd)
 	AddToScore(10)
 	EndScript()
 
+1stImpressionCheck: 
+	StoreIsFirstTurn(attacker)
+	JumpIfStoredEQ(false, &deprioritizeBy12)
+	JumpIfRandLT(39, &EndOfScriptEnd)
+	AddToScore(10)
+	EndScript()
 
 
 

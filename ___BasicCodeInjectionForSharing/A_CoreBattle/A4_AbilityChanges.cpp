@@ -738,9 +738,10 @@ extern "C"
 
 #pragma region MoldBreaker
 
-    bool THUMB_BRANCH_HandlerMoldBreakerSkipCheck(int a1, int a2, BattleEventType a3, int a4, unsigned __int16 a5)
+    bool THUMB_BRANCH_SAFESTACK_HandlerMoldBreakerSkipCheck(int a1, int a2, BattleEventType a3, int a4, unsigned __int16 a5)
     {
-        return a3 == EVENT_MOVE_SEQUENCE_END && SEARCH_ARRAY(MOLD_BREAKER_AFFECTED_ABILITIES, a5);
+        // k::Printf("Mold Breaker Skip Check: Event %d, Move %d, EVENT_MOVE_SEQUENCE_END = %d\nis mold breaker effected ability = %d\n", a3, a5, a3 == EVENT_MOVE_SEQUENCE_END, SEARCH_ARRAY(MOLD_BREAKER_AFFECTED_ABILITIES, a5));
+        return (a3 == EVENT_MOVE_SEQUENCE_END && SEARCH_ARRAY(MOLD_BREAKER_AFFECTED_ABILITIES, a5));
     }
     void HandlerMoldBreakerPower(int a1, int a2, int a3)
     {

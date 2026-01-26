@@ -851,11 +851,11 @@
 10: Castelia Pokémon Gym\c\nGym Leader: Burgh\nCertified Trainers:\r\n[VAR TRNAME(0)], [VAR TRNAME(1)]
 
 ----- TEXT FILE 36-----
-0: Good work back there in the sewers.\c\nMy Bug-type Pokémon have been scurrying\nwith excitement about getting to\r\nbattle you.\c\nI'd say my Bug-type Pokémon are\npretty great!\r\nC'mon, let me brag a little!\c\nDwebble's round little eyes are cute!\nIt's resilient and reliable!\c\nMy ace is Leavanny!\nIt's really the best!\c\nI think it's so sweet how it makes clothes\nfor other Pokémon out of leaves.\c\nOf course, I'm really proud\nof all of my Pokémon!\c\nWell now...\nLet's get right to it!\c
+0: Good work back there in the sewers.\c\nMy Pokémon have been scurrying with\nexcitement about getting to\r\nbattle you.\c\nI'd say my Pokémon are\npretty great!\r\nC'mon, let me brag a little!\c\nOmastar's round little eyes are cute!\nIt's resilient and reliable!\c\nMy ace is Leavanny!\nIt's really the best!\c\nI think it's so sweet how it makes clothes\nfor other Pokémon out of leaves.\c\nOf course, I'm really proud\nof all of my Pokémon!\c\nWell now...\nLet's get right to it!\c
 1: Oh hoo...\nYou are very strong indeed!\c\nI guess it's no surprise I lost.\c\nHere! Take this Insect Badge!\nI think it'll suit you!\c
 2: [VAR TRNAME(0)] received the\nInsect Badge from Burgh.\c
-3: Ooh! The Insect Badge suits you even\nbetter than I thought it would!\c\nIf you have three Badges,\nPokémon up to Lv. 40 will obey you,\r\nincluding traded Pokémon.\c\nAnd, uh, you know what,\nI'll also give you this.\c
-4: Struggle Bug also lowers the\nSp. Atk of the target that was damaged.\c\nI'm the best guy to tell you this.\nIt's the little things that count!
+3: Ooh! The Insect Badge suits you even\nbetter than I thought it would!\c\nIf you have three Badges,\nPokémon up to Lv. 45 will obey you,\r\nincluding traded Pokémon.\c\nAnd, uh, you know what,\nI'll also give you this.\c
+4: X-Scissor is a precise attack that never\nmisses its target!\c\nI'm the best guy to tell you this.\nIt's the little things that count!
 5: How many discoveries have you made\nsince you started your adventure?\c\nWhen I was a kid, my innocent heart was\ncaptured by the beauty of\r\nBug-type Pokémon.\c\nI drew with them and battled with them,\nand after all this time, I continue\r\nto discover new things.\c\nA world shared with Pokémon is a world\nswarming with mysteries.
 6: Burgh: Hello!\nHow have you been?\c\nSo, now I'm working on\na piece with a Pokémon motif!\r\nWell, I always do that, really.\c\nEvery now and then, I get artist's block.\nBut when I look at my Pokémon...\c\nI get filled with the urge to\ndraw, and I can't stop!
 
@@ -936,8 +936,8 @@
 0: Where did I put those sunglasses?\c
 1: Ah, I found them.\c\nAnd you've really got to have more\nlight to see your way by.\c\nTake this--it'll help you see in\ndark places.\c
 2: Meow!\nHow did you find me?!\c\nYou are something else!\nSo, I'm going to give you something. This!\c
-3: If you use the move Flash, the accuracy\nof the opponent's moves goes down.\c\nWhen you use it twice, the rate to get\nhit by a move will be about half.\c\n'Cause it means more light!\c
-4: If you use the move Flash, the accuracy\nof the opponent's moves goes down.\c\nWhen you use it twice, the rate to get\nhit by a move will be about half.\c\n'Cause it means more light!
+3: These glasses are a real boost\nfor Dark-type Pokémon!\c
+4: These glasses are a real boost\nfor Dark-type Pokémon!
 5: Grin!
 6: Ehehehe...
 7: You can't be serious!
@@ -956,6 +956,7 @@
 4: Your timing is perfect.\c\nThe ship is about to leave.\nPlease get aboard the ship and wait.\c
 5: If you'd like to go to Liberty Garden,\nplease let me know.\c
 6: Would you like to go\nto Liberty Garden again?
+7: I'm sorry, Liberty Island is off limits\nby orders of the Coast Guard.\c\nApparently there's a vandalizer at large!
 
 ----- TEXT FILE 44-----
 0: Hello, hello!\nWould you like to go to Unity Tower?
@@ -1029,6 +1030,26 @@
 9: People like you deserve a Medal...\c\nOK. I've decided.\nYou're the new boss of this area!
 10: New buildings create old places.\c\nGot it?\nEven Castelia City has an underbelly.
 11: If you want to battle me, you'll\nhave to defeat Jean-Paul first!
+12: HEY!!!
+13: You're not from around here, loser.\nGet off our turf!
+14: Damn kid, you're pretty slick!
+15: Got both my Pokémon and my ego bruised\nup. Heh.
+16: Alright, I'll let you in.\nBut be chill.
+17: We'll be rolling out of here soon enough.\nRoxie's throwing a rager across\r\nthe river.
+18: Hey kid, here to buy?\nI've got the best product in town.
+19: What am I selling?\nPokémon [COLOR(2)]Enhancements[COLOR(0)], of course!\c\nI'm sure your Pokémon are great:\nbut they could be better!\c\nI sell powders, pills, and tonics that\nwill make your lil' buddies real strong.\c\nYou can't find this stuff at the PokéMart,\nwhat with all the regulations and junk.\c\nBut EVERYONE is using them these days\nwith how competitive battling has become\r\nsince the Blueberry Academy opened.\c\nHere, I'll give you a free sample!
+20: An Ability Capsule lets you change the\nability of one of your Pokémon.\c\nIt doesn't work on Pokémon who aren't\nfully evolved, nor on Pokémon that have\r\ntheir Hidden Ability.\c\nNow, let me show you the rest of my stock.\nI've got great deals on IV Enhancers\r\nstarting at just $500,000!
+21: Want to buy an IV enhancer for $800,000?\nYou know your opponents already have!
+22: No sense in being prideful, kid.
+23: Looks like you can't afford it.\nI'll be here when you can.
+24: The people of this city are all sheep!\nThe system is rigged, so we might as\r\nwell have fun.
+25: Yo.\nCan you help me out with something?\c\nI've been in a bit of a creative rut\nwith my Pokémon Dance routines, and I\r\nthink I gotta mix things up.\c\nWould you trade one of your Pokémon for\none of mine? Any Pokémon works, bro.
+26: Yo, did you change your mind?\c\nDo ya wanna trade one of your Pokémon for\none of mine? Any Pokémon works, bro.
+27: Sick!\nWhich Pokémon do you want to trade?
+28: Alright, let's do it!
+29: This Pokémon is awesome!\c\nI'm already thinking of some sick dance\nmoves they could pull at my next show!\c\nYou're a legend, bro!
+30: Awww man.
+31: Do you want to give your new Pokémon\na nickname?
 
 ----- TEXT FILE 50-----
 0: Your favorite is [VAR PKNAME(0)], isn't it?
@@ -1044,6 +1065,13 @@
 10: You! You, using Geonet!\nI'll tell you something good\r\nbecause you're great.\c\nWith the latest technology, we can trade\nPokémon with people far away!\c\n...I know it sounds crazy,\nbut give it a try. You'll be surprised!
 11: Oh! You know Geonet!\nGreat, great!\c\nThis is even greater, lemme tell ya!\c\nIf you try Geonet, you can register\nthe place where you live!
 12: You see the globe on the second floor\nof this Pokémon Center?\c\nThat is Geonet.\c\nIf you check on Geonet, you can register\nthe place where you live!
+13: Now that I'm aware of my hidden power,\nI can tell you what type of Hidden Power\r\nyour Pokémon will learn!\r\nDo you want to know?
+14: When a Pokémon learns the move\nHidden Power, somehow I can tell\r\nwhat type that move will be!\c\nShould I tell you what type of\nHidden Power your Pokémon will learn?
+15: If you want to know, ask me, and I'll\nactivate my hidden power for you!
+16: The type of this Pokémon's\nHidden Power is [VAR TYPE(0)]!
+17: I'm sorry, but this Pokémon can't learn\nto use Hidden Power.
+18: It's not possible for an Egg to use\nHidden Power!
+19: If this Pokémon were to learn\nHidden Power, the move's type\r\nwould be [VAR TYPE(0)]!
 
 ----- TEXT FILE 51-----
 0:        
@@ -1490,18 +1518,25 @@
 1: If a Pokémon holds a Scope Lens, it has\na better chance to make a critical hit!
 2: Oh! A company tour?\nAnyway, let's have a battle!\c
 3: What power! I'm moved,\nso I'll give you this present!
-4: A Quick Ball makes it easier to catch a\nPokémon if you use it at the very\r\nbeginning of a battle.
+4: A Zoom Lens makes it easier to land an\nattack if you are slower than your\r\nopponent!
 5: Did you come for Pokémon practice?\nI'll be happy to help you out!\c
 6: With skills like that,\nyou can get the most out of these!
-7: A Timer Ball makes it easier to catch\na Pokémon you've been battling\r\nfor a long time!
+7: You can exchange these Red Shards\nfor valuable moves at the\r\nPokémon Center!
 
 ----- TEXT FILE 55-----
 0: Oh! You are the Pokémon Trainer\nI met at the entrance!\c\nYou've come this far. That means\nyou must be quite strong.\c\nAre you prepared to face the strongest\nperson in this building?\c\nThen, the time has come to challenge\nmy grandson, the company president!\c
 1: I'll show you just how much\nthis Battle Company has researched\r\nPokémon and Trainers!\c
 2: I lost...\c\nBecause you were strong,\nand I was weak.\c\nWe must do even more research\nfor Pokémon and for Trainers!
-3: Thinking that when you win\nit's because of your Pokémon\r\nand that when you lose\r\nit's because of yourself\r\nmight make you stronger...\c\nBut enjoying yourself\nis much, much more important!
+3: Thinking that when you win\nit's because of your Pokémon\r\nand that when you lose\r\nit's because of yourself\r\nmight make you stronger...\c\nBut enjoying yourself\nis much, much more important!\c\nTalk to me kid, I've got something\nfor you!
 4: If you want to make a weak\nPokémon stronger, you should\r\nuse that Exp. Share.\c\nAny Pokémon that holds it receives\nExp. Points, even when it doesn't\r\nparticipate in battle!
 5: My dream as president is to\nrelease a device that lets\r\npeople talk to Pokémon!
+6: Impressive work beating my grandson!\cAs a reward, I'd like to gift you the egg\nof a powerful Pokémon.\cI am certain it will be very useful\nin your future challenges!
+7: Accept the Mystery Egg?
+8: I see!\cIf you change your mind, you can\nfind me here.
+9: Wonderful! Here you go!
+10: You don't have any room in your party\nfor this egg.\cCome back when you have some space.
+11: [VAR TRNAME(0)] obtained a mystery Egg!
+12: Make sure to put that Pokémon to good\nuse!\cIt'll look good for the company!
 
 ----- TEXT FILE 56-----
 0: Hi there! You're participating\nin the Medal Rally, aren't you?\c\nLet me have a look here.\nThe number of Medals you have is...\r\n[VAR NUM3(0)]!\c
@@ -1782,13 +1817,13 @@
 14: In the Battle Box, you can register one\nto six Pokémon that you often use\r\nin battles.\c\nWhen you battle using Infrared\nConnection, you can also battle with\r\nthe Pokémon in the Battle Box!\c\nIt's convenient because you don't\nhave to move Pokémon around!
 15: In order to register your friend\nin your Pal Pad...\c\nYou can either input your friend's code\ndirectly by using your Pal Pad in the\r\nKey Item case...\c\nOr you can use the IR Connection\nfeature of the C-Gear.\c\nThen, you can register your friend!
 16: Catch a lot of Pokémon,\nand use the Boxes a lot!
-17: Oh! How are the Boxes working?\c\nHey, that's right!\nI have a bunch of Eevee!\r\nWould you take one for me?
-18: This is an Eevee I received from\nmy friend in the Kanto region!\c
-19: [VAR TRNAME(0)] received\nan Eevee!
-20: Would you like to give a\nnickname to this Eevee?
+17: Oh! How are the Boxes working?\c\nHey, that's right!\nI have a bunch of Ditto!\r\nWould you take one for me?
+18: This is an Ditto I received from\nmy friend in the Kanto region!\c
+19: [VAR TRNAME(0)] received\nan Ditto!
+20: Would you like to give a\nnickname to this Ditto?
 21: Oh! Your party is full!\c\nThe PC Boxes were designed for\nsituations just like this!
 22: How disappointing.\c\nWell, if you change your mind,\nplease come talk to me again!
-23: Eevee is an amazing Pokémon\nthat has many potential evolutions!
+23: Ditto is an amazing Pokémon\nthat can transform into anything!
 24: I'm working as Fennel's assistant.\c
 25: Is there something you would\nlike to know about researching dreams?
 26: Game Sync
@@ -1925,13 +1960,16 @@
 61: Trainer Tips!\c\n\nGames occur at specific times in\nBig Stadium and Small Court!\c\nYou might be able to have a Pokémon\nbattle with your favorite athlete!
 62: Trainer Tips!\c\n\nThe Musical Theater is always\nlooking for participants!\c\nYou might get more wonderful Props\nif you participate repeatedly!
 63: Battle Institute!\nTest your Trainer Skills!
+64: Omanyte waggles excitedly.
+65: Cranidos headbutts the wall.
+66: Let's go team! We can do this!!\nEven one on two!\c
 
 ----- TEXT FILE 73-----
 0: Welcome to the main stage!\c\nMy beloved Pokémon\nand your Pokémon shall compete!\c\nWe're going to see whose\nstar shines brightest!\c
 1: Well...\c\nNow, you...you're an even more wonderful\nTrainer than I expected.\c\nYour sweet fighting style\nswept me off my feet!\r\nTake this!\c
 2: [VAR TRNAME(0)] received the\nBolt Badge from Elesa!\c
 3: If you have four Badges, including this\nBolt Badge, Pokémon up to Lv. 50,\r\nincluding traded Pokémon, will obey you.\c\nAlso, here's this move I like.\nFeel free to use it, um, if you want to.\c
-4: Volt Switch lets the Pokémon switch with\na different Pokémon after attacking.\c\nOf course, if you don't have another\nPokémon in your party, you can't switch.
+4: Thunder Wave lets you paralyze an enemy\nPokémon, slowing them down dramatically!\c\nThey may even be unable to act at all!
 5: I want my relationship with my Pokémon\nto be less like sun and moon\r\nand more like two blazing suns!\c\nThere'd be no limit to how bright\nwe could shine!
 6: What my Pokémon want to do\nand what I want to do...\r\nWhen they are the same...\c\nWe have more than twice\nthe energy to shine!
 7: Wait!\c\nPlease walk with us.\c
@@ -1946,7 +1984,7 @@
 16: The show is coming to its finale.\nNow, I'll see if you are worthy\r\nto stand on the same stage as Elesa!\c
 17: Being able to see a match between\na challenger and Elesa this close...\c\nThat makes even us gleam with joy!
 18: That was a beautiful Pokémon battle\nyou and Elesa had!\c\nI was captivated by it!\nWhat an absolutely marvelous show!
-19: What do you think? Surprised, right?\c\nThis Gym is, speaking frankly, a glittering\nfashion show and a dazzling stage!\c\nWell, for now, I'll give you this!\c
+19: What do you think? Surprised, right?\c\nThis Gym is, speaking frankly, a glittering\nfashion show and a dazzling stage!\c\Well, for now, I'll give you this!\c
 20: In this Pokémon Gym, we'll have you\nproceed by defeating the Trainers waiting\r\non the catwalk!\c\nBy the way, Electric-type Pokémon don't\ndo well against Ground-type moves...\c\nOh!\c\nBut Ground-type moves don't work\nagainst a Pokémon called Emolga,\r\nso please be careful!
 21: Elesa uses sparkling, bright\nElectric-type attacks!\c\nBut the combination of you and your\nPokémon shone even brighter!\c\nWhy, you're...you're...\na supermodel!\c\nWell, no. You're just a really good\nTrainer with great Pokémon!
 22: Nimbasa City Pokémon Gym\c\nLeader: Elesa\nCertified Trainers:
@@ -1977,12 +2015,96 @@
 14: Uuugh!
 15: The best part of riding a roller coaster\nis screaming your heart out!
 16: The Shining Roller Coaster\nFormer Nimbasa City Pokémon Gym
+17: Eevee purrs, contented.
+18: Wow, that Eevee is incredible!\c
+19: Such an incredible coat!\c
+20: And its proportions! So symmetrical!\c
+21: What a beautiful specimen.\nThey would make a perfect Flareon!
+22: WHAT!?!?
+23: Flareon is trash! There, I said it.\c
+24: Obviously it should evolve into Jolteon.\nLook at it's eyes, it clearly wants\r\nto zap things.\c
+25: No, Glaceon for sure!\c
+26: Espeon is clearly the best!\c
+27: Leafeon, getting underrated as usual.\c
+28: How ridiculous!\nIt clearly makes the perfect Vaporeon.\r\nI sense it yearns for the sea.\c
+29: Who would want to have a smelly, wet\nVaporeon?\c
+30: How DARE you!\c\nI'll fight you right now!\c
+31: With your Pokemon... right?
+32: ...of... of course!
+33: Here, why don't we ask this trainer.
+34: Which do you think is the best\nEeveelution?
+35: Vaporeon
+36: Jolteon
+37: Flareon
+38: Espeon
+39: Umbreon
+40: Glaceon
+41: Leafeon
+42: Sylveon
+43: All of Them
+44: I knew it!
+45: I knew it!
+46: I knew it!
+47: I knew it!
+48: I knew it!
+49: I knew it!
+50: I knew it!
+51: Sylveon isn't even in this region!
+52: That's NOT a real answer!
+53: Why don't we all battle them with our\nEeveelutions! Then we'll know for sure\r\nwhose the best!
+54: Great idea! Let's go!
+55: Wh-  What happened?
+56: See, it's obvious Jolteon is a bum!\nLet me show you how a real Eeveelution\r\nbattles!
+57: Made a fool of by a youngin.
+58: All this hubbub to deny Flareon's clear\nsuperiority. My turn.
+59: Whatever. I didn't choose Flareon for\nbattling anyways.
+60: Come on bro, it's our turn!
+61: Let's show them what a pair of\nEeveelutions can do!
+62: Our warriors of day and night...
+63: ...vanquished.
+64: Come on sis'. We're the last ones left!
+65: Leafeon and Glaceon about to clean up!
+66: I guess we weren't enough either...
+67: ...but maybe that means all our\nEeveelutions are equal?
+68: Oh, looks like even Eevee wants to get\nin on the action!
+69: Wow! Incredible!
+70: Did you see that Flareon battle?\nBlazing!\c
+71: I never knew Leafeon was so sharp!\c
+72: Umbreon is super cool!\c
+73: Espeon is so slender and soft!\c
+74: Jolteon was ridiculously fast.\nNever seen a Pokemon move like that!
+75: I didn't learn anything.\nI still think Vaporeon is the best.
+76: Sorry for all the hassle.\nEvery meeting of the Eevee fan club end\r\nup like this.\c\nCome over here and I'll give you something\nto make it up to you!
+77: Sorry for all that hassle.\nOur fan club tends to get passionate\r\nwhen it comes to Eevee's evolutions.\c\nYour Pokémon seem really strong though...\nWould you be interested in trading one\r\nfor an Eeveelution of your own?
+78: Change your mind about my trade offer?\nI'll trade one of my Eeveelutions for\r\nany of your Pokémon!
+79: Drat.\nWell I'm here if you change your mind!
+80: Awesome!\nWhich Pokémon do you want to trade?
+81: Woah, that Pokémon seems strong!\c\nAnd I'll pick... this one!
+82: Do you want to nickname your new Pokémon?
+83: You know, I've never seen Eevee get so\nexcited to battle before.\r\nYou must be a great trainer.
+84: Don't bother me!\nI'm trying to get a better view!
+85: Perhaps I could enhance Flareon's\nsplendor by learning from the other\r\nEeveelutions!
+86: Maybe I'll hang out with that Glaceon\ntrainer after this!
+87: Did you know that Vaporeon can melt into\nwater?\c\nI have nightmares of him slipping through\na drain sometimes.
+88: Glaceon is Leafeon's best friend, but\nLeafeon isn't Glaceon's best friend.
+89: Glaceon and Leafeon are the bestest of\nfriends! They're inseparable!
+90: Here to get a closer look at Espeon?\c\nWell you can't!\nShe's resting.
+91: Umbreon loves to sit with me while I write\nmy poetry! It's a great companion.
+92: Thanks for exercising Eevee!\c\nHere, something to help with raising your\nown Pokémon!
+93: You can use a Capsule to change a\nPokémon's ability!
 
 ----- TEXT FILE 75-----
 0: Ha ha haa! Check the dust clouds\nthat are stirred up inside of caves!\r\nThey're chock full of Shards!\c\nI've got a pile of them,\nso I'll share with you!\c
 1: I'm pretty sure somewhere in\nDriftveil City there's an artisan\r\nwho will teach your Pokémon moves\r\nin exchange for Shards!
 2: My beauteous Minccino!\nI met it on Route 5.\c\nI'm pretty sure it will be popular\nin musicals!
 3: Chulululucha!
+4: Now that I'm aware of my hidden power,\nI can tell you what type of Hidden Power\r\nyour Pokémon will learn!\r\nDo you want to know?
+5: When a Pokémon learns the move\nHidden Power, somehow I can tell\r\nwhat type that move will be!\c\nShould I tell you what type of\nHidden Power your Pokémon will learn?
+6: If you want to know, ask me, and I'll\nactivate my hidden power for you!
+7: The type of this Pokémon's\nHidden Power is [VAR TYPE(0)]!
+8: I'm sorry, but this Pokémon can't learn\nto use Hidden Power.
+9: It's not possible for an Egg to use\nHidden Power!
+10: If this Pokémon were to learn\nHidden Power, the move's type\r\nwould be [VAR TYPE(0)]!
 
 ----- TEXT FILE 76-----
 0: You can take the Battle Subway from\nGear Station!
@@ -2506,6 +2628,8 @@
 67: Driftveil Market
 68: Driftveil City Pokémon Gym\nLeader: Clay\r\nThe Underground Boss
 69: Clay Tunnel Ahead
+70: Crobat flits from side to side in the air.
+71: Drapion sharpens its claws.
 
 ----- TEXT FILE 108-----
 0: Harrumph! Kept me waitin', didn't ya, kid?\c\nAll right, time to see what\nya can do!\c
@@ -2545,6 +2669,13 @@
 0: Hotels now line Driftveil.\c\nI guess Driftveil's heartbreaker,\nCharles, isn't the big attraction now...
 1: Have you tried this kind of Poké Ball?\c
 2: My Pokémon are very friendly with me,\nand the reason for this is...\c\nTa daa! Because I caught them with\nLuxury Balls!
+3: Now that I'm aware of my hidden power,\nI can tell you what type of Hidden Power\r\nyour Pokémon will learn!\r\nDo you want to know?
+4: When a Pokémon learns the move\nHidden Power, somehow I can tell\r\nwhat type that move will be!\c\nShould I tell you what type of\nHidden Power your Pokémon will learn?
+5: If you want to know, ask me, and I'll\nactivate my hidden power for you!
+6: The type of this Pokémon's\nHidden Power is [VAR TYPE(0)]!
+7: I'm sorry, but this Pokémon can't learn\nto use Hidden Power.
+8: It's not possible for an Egg to use\nHidden Power!
+9: If this Pokémon were to learn\nHidden Power, the move's type\r\nwould be [VAR TYPE(0)]!
 
 ----- TEXT FILE 111-----
 0:        
@@ -2637,7 +2768,7 @@
 7: Rood: The Pokémon you speak of\nis not in this place.\c\nI imagine it is still being\nused by Team Plasma now.\c\nJust as you say, our apologizing\ndoesn't solve anything.\c\nBut you can't move forward unless\nyou admit you were wrong and apologize...\c
 8: [VAR TRNAME(1)]: Enough already!\c\nApologizing isn't going to get\nmy sister's Pokémon back!\c
 9: [VAR TRNAME(0)]!\nI'm going to the Pokémon Gym!\c\nI'll get stronger and crush every\nsingle member of Team Plasma!\c
-10: Rood: Team Plasma made\nTrainers like him suffer...\c\nI feel terrible about it...\nHow foolish we were...\c
+10: Rood: Team Plasma made\nTrainers like him suffer...\c\nI feel terrible about it...\nHow foolish we were...
 11: [VAR TRNAME(0)], as you can see,\nI can't do anything to thank you.\c\nActually, I have a favor to ask of you.\c\nCould you please look after this\nPokémon, Zorua?
 12: Rood: Could you please look after this\nPokémon, Zorua?
 13: Rood: Oh! Thank you!\c
@@ -2750,11 +2881,11 @@
 0: Hee-hee!\nI've been waiting for you.\c\nYou're a tough Trainer who can face the\nwind and not get blown off your feet!\c\nI'm kinda excited about this battle!\nWhy don't you and I have some fun?\c
 1: You're an amazing Pokémon Trainer.\c\nMy Pokémon and I are happy\nbecause for the first time in quite a\r\nwhile--about two years, I'd say--we\r\ncould fight with our full strength.\c\nThis is an official League Gym Badge.\nBut this is just a stepping-stone.\c
 2: [VAR TRNAME(0)] received the\nJet Badge from Skyla.\c
-3: Wow, hot stuff!\c\nWith that many Gym Badges,\nPokémon up to Lv. 70 will obey you.\c\nAlso, I want you to have this TM\nso that you'll always remember\r\nthis Pokémon battle.\c
+3: Wow, hot stuff!\c\nWith that many Gym Badges,\nPokémon up to Lv. 70 will obey you.\c\nAlso, I want you to have this HM\nso that you'll always remember\r\nthis Pokémon battle.\c
 4: I wonder what Professor Juniper\nis up to?\c\nI did promise her a ride in my plane...
 5: Two things that are both really fun:\nflying my own plane and having my\r\nPokémon take me places using Fly!
 6: Skyla: Are you and your Pokémon well?\nOur battle together was a ton of fun.\c\nWhenever my Pokémon think of our battle,\nthey want to start training again.\c\nIt might be a cool idea to take my plane\nand go on a training trip together!
-7: Ow...\c\nOh, I'm sorry!\c\nAllow me to apologize by giving you this\nFresh Water! Take it, please.\c
+7: Ow...\c\nOh, I'm sorry!\c\nAllow me to apologize by giving you these\nAir Balloons! Take them, please.\c
 8: This Gym is a wind tunnel!\c\nWhen the propellers in back start\nspinning quickly, you'll be blown\r\naway like a certain someone just was!\c\nWhen you think the wind will blow,\nstay hidden behind a wall\r\nand wait for it to stop.\c\nBy the way, Flying-type Pokémon have\nmore weaknesses than you might expect,\r\nincluding to Rock-, Electric-, and\r\nIce-type moves!
 9: This Gym is a wind tunnel!\c\nWhen the propellers in back start\nspinning quickly, you'll be blown\r\naway like a certain someone just was!\c\nWhen you think the wind will blow,\nstay hidden behind a wall\r\nand wait for it to stop.\c\nBy the way, Flying-type Pokémon have\nmore weaknesses than you might expect,\r\nincluding to Rock-, Electric-, and\r\nIce-type moves!\c
 10: Letting yourself be blown away is almost\nlike being hit by a Pokémon move!\r\nIt's kinda fun!\c\nOh, yeah! Congrats on defeating\nthe Gym Leader!
@@ -3610,9 +3741,9 @@
 64: All righty, let's go make your Pokémon\nbetter at the Pokémon Center!\c\nIt's like the best place ever for\nPokémon who battle and get hurt!\c
 65: Bianca: The Pokémon Center is the\nsame no matter where you are!\c\nLet's go inside!\c
 66: Mom: Oh! Nice to meet you!\nYou must be Bianca, right?\c\nAnd [VAR TRNAME(0)] picked\n[VAR PKNAME(2)], then!\c\nHee hee.\nLooking good!\c
-67: Oh!\nI almost forgot!\c\nHere! Take these!\nThey're Running Shoes!\c
+67: Oh!\nI almost forgot!\c\nHere! Take these!\nI got them from work!\c
 68: [VAR TRNAME(0)] received\na pair of [COLOR(2)]Running Shoes[COLOR(0)]!
-69: Mom: A perfect fit!\nI'll read the instructions to you!\c\n“Hold the B Button to run faster than\nnormal. Put on the Running Shoes and\r\nrace around to your heart's content!"\c\nNow, you and [VAR PKNAME(2)] can\nrun anywhere you want!\c
+69: Mom: These should help keep [VAR PKNAME(2)]\nnice and healthy!\c\nYou can also use your [COLOR(2)]PokéHelper[COLOR(0)] to\ncall a nurse to heal your Pokémon,\r\nwherever you are!\c
 70: [VAR TRNAME(1)]'s Sister: Um...\nThis is from me!\c
 71:                            
 72: Bianca: Why are there\ntwo Town Maps?\c
@@ -3623,8 +3754,8 @@
 77: [VAR TRNAME(1)]'s Sister: Get along\nwith your Pokémon!
 78: Bianca: Heeey!\c
 79: Bianca: Yoo-hoo!\c
-80: How was it?\nHow did your Pokémon battle with\r\nthe Gym Leader go?\c\nOh! If it isn't the Basic Badge!\c\nWow! Amazing! And you just set off\non your journey with your Pokémon!\c\nYou definitely have potential\nas a Trainer! I'm sure of it!\c\nThis is from me!\nIt's the TM for the move Return.\c
-81: When a Pokémon knows Return,\nthe more it gets along with the Trainer,\r\nthe more powerful the move is!\c
+80: How was it?\nHow did your Pokémon battle with\r\nthe Gym Leader go?\c\nOh! If it isn't the Basic Badge!\c\nWow! Amazing! And you just set off\non your journey with your Pokémon!\c\nYou definitely have potential\nas a Trainer! I'm sure of it!\c\nThis is from me!\nIt'll make your Pokémon look stylish!\c
+81: When a Pokémon holds a Wide Lens, they\nhave an easier time landing attacks!\c\nIt can be great for using moves like\nLeech Seed or Power Whip!\c
 82: Still, that Cheren...\c
 83: Cheren: Bianca!\c\nIt's been two years, hasn't it?\c
 84: Bianca: Oh wow!\c
@@ -3638,9 +3769,9 @@
 92: Bianca: Hey, [VAR TRNAME(0)]!\nIsn't Professor Juniper cool?\c\nIf you talk to her on the Xtransceiver,\nshe'll evaluate the completeness\r\nof your Pokédex or tell you a lot about\r\nhow Pokémon evolve!\c\nAnd you can call us, too, of course!\c
 93: I'll tell you how well\nyou and your Pokémon\r\nare getting along, OK?!\c
 94: Cheren: Bianca makes a good point.\c\nI'll tell you what I know about Pokémon\nAbilities and Pokémon type matchups.\c
-95: [VAR TRNAME(1)]: Are you the Gym Leader?\nOne, two, three--let's battle!\c
+95: Benga: Are you the Gym Leader?\nOne, two, three--let's battle!\c
 96: Cheren: You look like a tough Trainer.\c\nUnderstood.\nPlease come into my Pokémon Gym!\c
-97: [VAR TRNAME(1)]: What was that weak answer?!\nI'm definitely going to take you down!\c
+97: Benga: What was that weak answer?!\nI'm definitely going to take you down!\c
 98: Bianca: Being a Gym Leader\nis even harder than I imagined.\c
 99: The next thing is to make it so you\ncan use the C-Gear.\c\nThe C-Gear is a cool device for\ncommunications, such as Infrared\r\nConnection or Nintendo Wi-Fi Connection.\c
 100: [VAR TRNAME(0)] obtained\nthe [COLOR(1)]C-Gear[COLOR(0)]!
@@ -3678,7 +3809,7 @@
 ----- TEXT FILE 170-----
 0: I asked Alder from Floccesy Town\nto teach here.\c\nHe declined, saying it was the\nera of young people now.
 1: Do you use items during\nPokémon battles?\r\nIf you'd like, try using this!\c
-2: Have your Pokémon hold a White Herb to\nnegate a stat drop!\c\nA Trainer's judgment about whether to\nuse items or moves is important in battle!
+2: Have your Pokémon hold one of these\nberries to damage attackers!\c\nA Trainer's judgment about whether to\nuse items or moves is important in battle!
 3: There's a technique that enables you\nto cancel evolution!\c\nHere, I'll read the textbook to you.\c\n“You can surprise a Pokémon and stop\nits evolution by pressing the B Button\r\nwhen a Pokémon is evolving."
 4: You know how you can have\nyour Pokémon hold items?\c\nWell, it seems like they don't know\nhow to use items made by people,\r\nlike Potions.
 5: Normal-type Pokémon are weak\nto Fighting-type Pokémon.\c\nBut the only Pokémon around here like\nthat are the Riolu in Floccesy Ranch...\c\nIf you're going to battle with a Fire-,\nWater-, or Grass-type Pokémon,\r\nit'll be a simple test of strength!
@@ -3699,6 +3830,29 @@
 20: Aspertia Pokémon Gym\c\nGym Leader: Cheren\nCertified Trainers:\r\n[VAR TRNAME(0)]
 21: Aspertia Pokémon Gym\c\nGym Leader: Cheren\nCertified Trainers:\r\n[VAR TRNAME(0)], [VAR TRNAME(1)]
 22: The Gym Leader is in the middle\nof a heated battle right now!
+23: Hello!\nWould you like to participate in the\r\nBlazing Baton Pass Exchange Program?\c\nIt's a sizzling-hot promotion that the\nBlueberry Academy is offering to all\r\ntrainers, even non-students, as part of\r\nthis year's "Semester of Embers"!\nYou simply trade us a Pokémon,\nany Pokémon, and receive one of our\r\nFire-typePokémon in return!\c\nWhat do you say?
+24: Hello!\nWould you like to participate in the\r\nBubbling Baton Pass Exchange Program?\c\nIt's a stormy-wild promotion that the\nBlueberry Academy is offering to all\r\ntrainers, even non-students, as part of\r\nthis year's "Semester of Waves"!\nYou simply trade us a Pokémon,\nany Pokémon, and receive one of our\r\nWater-type Pokémon in return!\c\nWhat do you say?
+25: Hello!\nWould you like to participate in the\r\nBotanical Baton Pass Exchange Program?\c\nIt's a verdant-fresh promotion that the\nBlueberry Academy is offering to all\r\ntrainers, even non-students, as part of\r\nthis year's "Semester of Petals"!\nYou simply trade us a Pokémon,\nany Pokémon, and receive one of our\r\nGrass-type Pokémon in return!\c\nWhat do you say? 
+26: Of course, you need to think about it.\nJust know that we'll be closing up shop\nhere soon, so make a decision quickly!
+27: Wonderful!\nWhich Pokémon would you like to trade?
+28: Welcome back! Have you made a decision on\nwhether you wish to participate in the\r\nBlazing Baton Pass Exchange Program? 
+29: Welcome back! Have you made a decision on\nwhether you wish to participate in the\r\nBubbling Baton Pass Exchange Program? 
+30: Welcome back! Have you made a decision on\nwhether you wish to participate in the\r\nBotanical Baton Pass Exchange Program? 
+31: What a splendid Pokémon!\nAlright, simply step over here... 
+32: ...and we're done!\c\nWe hope you and your new partner will\nset this world ablaze!
+33: ...and we're done!\c\nWe hope you and your new partner will\nwash away the competition!
+34: ...and we're done!\c\nWe hope you and your new partner will\nlearn and grow together!
+35: Hello!\nWe're sorry if you hoped to participate\r\nin the Baton Pass Exchange Program.\c\nWe've just finished up trading the last\nof our Pokémon.\c\nWe hope to see you next semester for our\nnext promotion!
+36: We're glad to have you participate in our\nBlazing Baton Pass Exchange Program.\c\nWe hope you and your new partner will\nset this world ablaze! 
+37: We're glad to have you participate in our\nBubbling Baton Pass Exchange Program.\c\nWe hope you and your new partner will\nwash away the competition! 
+38: We're glad to have you participate in our\nBotanical Baton Pass Exchange Program.\c\nWe hope you and your new partner will\nlearn and grow together!
+39: Trade for a Fire-type Pokémon?
+40: Trade for a Water-type Pokémon?
+41: Trade for a Grass-type Pokémon?
+42: Can you help me try out these\nberries teacher gave me?
+43: Oh.. ok!
+44: Awesome, here we go!
+45: Do you want to give your\nnew partner a nickname?
 
 ----- TEXT FILE 171-----
 0: ???: You must be a challenger!\c
@@ -3710,7 +3864,7 @@
 6: That battle has made me feel really\nglad you were my first challenger\r\nas a Gym Leader...\c\nI give you this in honor of the strength\nyou and your Pokémon showed!\c
 7: [VAR TRNAME(0)] received the\nBasic Badge from Cheren!\c
 8: Here is your first Gym Badge,\nthe Basic Badge!\r\nThis is an important milestone!\c\nWith this Badge, Pokémon up to Lv. 20\nwill obey you, including traded Pokémon.\c\nAnd I want you to take this!\c
-9: TM83 can teach your\nPokémon the move Work Up!\c\nWhen you use Work Up\nwhile battling, it raises\r\nthe user's Attack and Sp. Atk.\c\nBy the way, TMs can be used\nas many times as you want!\c
+9: TM69 can teach your Pokemon the move\nSecret Power.\c\nSecret Power is a good general-use move\nthat pretty much every Pokemon can learn.\c\nIt gains extra effects depending on the\nenvironment, and can never miss!\c\nBy the way, TMs can be used\nas many times as you want!\c
 10: In the Unova region, there are eight\nPokémon Gyms and eight Gym Badges!\c\nIf you're a Trainer,\nyou could collect all of them!\c\nThat will make it easier to fill\nthe pages of the Pokédex as well!\c\nYes, two years ago, Pokédex in hand,\nI left on a journey with my friends.
 11: Cheren: You should decide what\nyou're going to do from here out!\c\nDon't worry about losing your way--\nyou have Pokémon by your side!
 12: Cheren saw potential in me and\nmade me a Trainer in this Gym!\c
@@ -3731,19 +3885,26 @@
 1: The Pokémon Center heals\nPokémon for free!\c\nYou should bring your Pokémon here\nanytime they are weak.\c
 2: I'll heal your Pokémon.\nHand me your Poké Ball for a sec!\c
 3: Next, I'll explain the PC!\c
-4: This square thing is a PC!\nAny Trainer is free to use it!\c\nYou can deposit Pokémon in it.\c\nAlso, you can withdraw\nPokémon from it!\c
+4: This square thing is a PC!\nAny Trainer is free to use it!\c\nYou can deposit Pokémon in it.\c\nAlso, you can withdraw\nPokémon from it!\c\nYou can also access the PC anywhere with\nyour [COLOR(2)]PokéHelper[COLOR(0)] if you have signal by\r\npressing the START button!\c
 5: The next thing is over here!\c
-6: This is the Poké Mart!\c\nHere you can buy and\nsell many different items!\c\nThe Poké Balls you use\nto catch Pokémon can also\r\nbe bought at the Poké Mart!\c
-7: Here, [VAR TRNAME(0)],\nI'll give you some Poké Balls!\c
-8: Here, [VAR TRNAME(0)],\nI'll give you some Poké Balls!\c
+6: This is the Poké Mart!\c\nHere you can buy and\nsell many different items!\c
+7: Here, [VAR TRNAME(0)],\nI'll give you some Poké Balls to get started!\c
+8: Here, [VAR TRNAME(0)],\nI'll give you some Poké Balls to get started!\c
 9: Bianca: Next up!\c\nI'll show you how\nto use those Poké Balls!\r\nFollow me!\c
-10: Oh?\nYour [VAR PKNAME(1)]...\c
+10: Ruff Ruff!
 11: Its Nature is [VAR ITEM1(2)]!\c\nWith a Pokémon like that by your side,\nI'm sure you'll have a fun journey!
 12: All right! Here's some advice from a\nguy who spends all of his time\r\nin Pokémon Centers!\c\nWhen your Pokémon's HP goes down,\nmake sure to restore it!
+13: Now that I'm aware of my hidden power,\nI can tell you what type of Hidden Power\r\nyour Pokémon will learn!\r\nDo you want to know?
+14: When a Pokémon learns the move\nHidden Power, somehow I can tell\r\nwhat type that move will be!\c\nShould I tell you what type of\nHidden Power your Pokémon will learn?
+15: If you want to know, ask me, and I'll\nactivate my hidden power for you!
+16: The type of this Pokémon's\nHidden Power is [VAR TYPE(0)]!
+17: I'm sorry, but this Pokémon can't learn\nto use Hidden Power.
+18: It's not possible for an Egg to use\nHidden Power!
+19: If this Pokémon were to learn\nHidden Power, the move's type\r\nwould be [VAR TYPE(0)]!
 
 ----- TEXT FILE 173-----
 0: [VAR TRNAME(0)]!\nI'm home!\c
-1: Do you know Professor Juniper?\nShe's a famous Pokémon researcher.\c\nActually, she's an old friend of mine,\nand she called me today for the\r\nfirst time in ages!\c
+1: I know you're bummed about not getting\nadmitted to the Blueberry Academy, but\r\nI have some great news!\c\nDo you know Professor Juniper?\nShe's a famous Pokémon researcher.\c\nActually, she's an old friend of mine,\nand she called me today for the\r\nfirst time in ages!\c
 2: This is out of the blue,\nbut, [VAR TRNAME(0)]!\c\nDo you want to have a Pokémon?
 3: I'll ask you again.\c\nDo you want a Pokémon?
 4: What?!\nThat's a shock!\c
@@ -3781,7 +3942,7 @@
 36: Mom: He left...\c\nOh, that's right! [VAR TRNAME(0)]!\nI have a present for you, too!\c
 37: Mom: No matter what you do, your time\nis yours and your Pokémon's alone!\c\nSo decide what you want to do\nfor yourself and do it!\c\nI enjoy my own time\nin my own way, too!
 38:        
-39: It's a Wii console!\nIt has a Wii Remote!
+39: It's a Wii console!\nIt has a Wii Remote!\c
 40: It's a brand-new bed!
 41: [VAR TRNAME(0)] checked the PC.\c\nAdventure Rule No. 1\nThe X Button opens the menu!\c\nAdventure Rule No. 2\nRecord your progress with SAVE.
 42: It's an award for completing\nthe Unova Pokédex!\c
@@ -3797,6 +3958,90 @@
 52: Sometimes, there are mass outbreaks\nof Pokémon, right?\c\nA lot of the exact same Pokémon\nshow up at the same time,\r\nand it's such a surprise!\c\nLike where were all of you before?\c\nIf you look at the electronic bulletin\nboards, you can learn about them!
 53: Professor Juniper--I'm talking about\nAurea Juniper, mind you...\c\nShe's researching the origins of Pokémon!\c\nIt's interesting!\nAmong the Pokémon that exist now,\r\nthere were some that have been\r\naround from the past and some\r\nthat were discovered recently.\c\nBy the way, her dad is researching\nPokémon distribution and biology!
 54: Your mom's amazing!\c\nIt's sweet how she met\nyour dad while working\r\nreception at the Pokémon Center.\c\nHee hee!\nShe's taught me a lot!
+55: Oh, don't forget your shoes!
+56: *Beep boop*
+57: Critical Hits are currently set to\n2x damage.\c\nWould you like to set them to\n1.5x damage?
+58: Critical Hits are currently set to\n1.5x damage.\c\nWould you like to set them to\n2x damage?
+59: Ok!\nWould you like to change another setting?
+60: Critical Hits have been changed to deal\n1.5x damage!\c\nTo revert this change, simply use this\nconsole again. 
+61: Would you like to change another\nsetting?
+62: This setting does not currently\nfunction!\c\nIn the full release, it will revert most\nTrainers to vanilla positions, reducing\rthe number of mandatory battles.
+63: Critical Hits
+64: IVs
+65: Trainer Placements
+66: Quit
+67: Critical Hits have been changed to deal\n2x damage!\c\nTo revert this change, simply use this\nconsole again. 
+68: This setting does not currently\nfunction!\c\nIn the full release, it will revert most\nTrainers to vanilla positions, reducing\rthe number of mandatory battles.
+69: Wild Pokémon are currently set to have\nrandom IVs.\c\nWould you like to change the IV\nsettings?
+70: Wild Pokémon are currently set to have\nperfect IVs.\c\nWould you like to change the IV\nsettings?
+71: Wild Pokémon have been set to have\nperfect IVs.\c\nTo revert this change, simply use this\nconsole again. 
+72: Wild Pokémon have been set to have\nrandom IVs.\c\nTo revert this change, simply use this\nconsole again. 
+73: -
+74: Wild Pokemon EVs
+75: Animated Backgrounds
+76: Advanced Enemy Switch AI
+77: Limited TMs
+78: Wild Pokémon are currently set to reward\nno Effort Values.\c\nWould you like to set them to reward\nEffort Values?
+79: Wild Pokémon are currently set to reward\nnormal Effort Values.\c\nWould you like to change Wild Pokémon's\nEffort Value yields?
+80: Wild Pokémon are currently set to reward\ndouble Effort Values.\c\nWould you like to change Wild Pokémon's\nEffort Value yields?
+81: Wild Pokémon are currently set to reward\nquadruple Effort Values.\c\nWould you like to change Wild Pokémon's\nEffort Value yields?
+82: Would you like Wild Pokémon to reward\nnormal Effort Values, doubled Effort Values,\nor quadrupled Effort Values?
+83: None (Default)
+84: Normal
+85: Double
+86: Quadruple
+87: Wild Pokémon have been set to reward\nno Effort Values.\c\nTo revert this change, simply use this\nconsole again. 
+88: Wild Pokémon have been set to reward\nnormal Effort Values.\c\nTo revert this change, simply use this\nconsole again.
+89: Wild Pokémon have been set to reward\ndouble Effort Values.\c\nTo revert this change, simply use this\nconsole again.  
+90: Wild Pokémon have been set to reward\nquadruple Effort Values.\c\nTo revert this change, simply use this\nconsole again. 
+91: Wild Pokémon have been set to have\nthree perfect IVs.\c\nTo revert this change, simply use this\nconsole again. 
+92: Random (Default)
+93: Enhanced
+94: Perfect
+95: Wild Pokémon are currently set to have\nthree perfect IVs.\c\nWould you like to change the IV\nsettings?
+96: Enemy trainer Pokémon are currently set\nto have variance in their move PP.\c\nThis variance can range from 1-3 extra\npower points for each move.\c\nWould you like to toggle this feature off?
+97: Enemy trainer Pokémon are currently set\nto have no variance in their move PP.\c\nThis variance, if turned on, can range\nfrom 1-3 extra PP for each move.\c\nWould you like to toggle this feature on?
+98: Enemy trainer Pokémon have been set to\nhave variance in their move PP.\c\nTo revert this change, simply use this\nconsole again.
+99: Enemy trainer Pokémon have been set to\nhave no variance in their move PP.\c\nTo revert this change, simply use this\nconsole again. 
+100: Restore Defaults
+101: Enemy trainers are currently configured\nto use advanced switch AI.\c\nThis includes behavior such as switching a\nPokémon out if it can't deal much damage.\c\nWould you like to toggle this feature\noff?
+102: Enemy trainers are currently configured\nto not use advanced switch AI.\c\nThis includes behavior such as switching a\nPokémon out if it can't deal much damage.\c\nWould you like to toggle this feature\non?
+103: Enemy trainers have been configured to\nuse advanced switch AI. \c\nTo revert this change, simply use this\nconsole again. 
+104: Enemy trainers have been configured to\nnot use advanced switch AI. \c\nTo revert this change, simply use this\nconsole again. 
+105: Technical Machines are currently set up\nto be a limited, consumable resource.\c\nWould you like to revert them to infinite\nusage?
+106: Technical Machines are currently set up\nto be an infinite, re-usable resource.\c\nWould you like to revert them to limited\nusage?
+107: Technical Machines have been set to\nbe a limited, consumable resource.\c\nTo revert this change, simply use this\nconsole again. 
+108: Technical Machines have been set to\nbe an infinite, re-usable resource.\c\nTo revert this change, simply use this\nconsole again. 
+109: Would you like to revert all settings\nto their default values?
+110: Flag 524 is Set.
+111: Flag 524 is Not Set.
+112: Flag 525 is Set.
+113: Flag 525 is Not Set.
+114: Enemy trainers are currently positioned\nto guard rewards and obstruct progress.\c\nWould you like to return them to vanilla\nstyle positioning?\r\nThis makes most route trainers optional. 
+115: Enemy trainers are current positioned\nlike the vanilla game and are largely\r\noptional.\c\nWould you like to revert trainers to be\npositioned as obstacles and gatekeepers?\r\nThis makes most route trainers mandatory. 
+116: Enemy trainers have been reverted to\nvanilla positions. 
+117: Enemy trainers have been restored to\ngatekeeping positions.
+118: Your Flags are gunked up, yo.
+119: Animated Backgrounds are currently\ndisabled.\c\nThese 3D backgrounds can cause\nperformance issues and are not finished.\r\nWould you like to enable them? 
+120: Animated Backgrounds are currently\nenabled.\c\nThese 3D backgrounds can cause\nperformance issues and are not finished.\r\nWould you like to disable them?
+121: Animated Backgrounds have been enabled.\c\nTo revert this change, simply use this\nconsole again.
+122: Animated Backgrounds have been disabled.\c\nTo revert this change, simply use this\nconsole again.
+123: Wild Pokémon are currently set to reward\nno Effort Values.\c\nWould you like to set them to reward\nEffort Values?
+124: Wild Pokémon are currently set to reward\nnormal Effort Values.\c\nWould you like to change Wild Pokémon's\nEffort Value yields?
+125: Wild Pokémon are currently set to reward\ndouble Effort Values.\c\nWould you like to change Wild Pokémon's\nEffort Value yields?
+126: Wild Pokémon are currently set to reward\nquadruple Effort Values.\c\nWould you like to change Wild Pokémon's\nEffort Value yields?
+127: Would you like Wild Pokémon to reward\nnormal Effort Values, doubled Effort Values,\nor quadrupled Effort Values?
+128: None (Default)
+129: Normal
+130: Double 
+131: 
+132: 
+133: 
+134: 
+135: Remember if your journey ever gets too\nstressful, you can always come home!\c\nOh, and I packed my old [COLOR(2)]PokéHelper[COLOR(0)]\nin your bag!\c\nPress the START button and you can\naccess settings to customize your\r\njourney!\c\nStay safe!\c
+136: [VAR TRNAME(0)] received\na pair of [COLOR(2)]Running Shoes[COLOR(0)]!
+137: Do you want me to read the\ninstructions?
+138: “Hold the B Button to run faster than\nnormal. Put on the Running Shoes and\r\nrace around to your heart's content!"!\c
 
 ----- TEXT FILE 174-----
 0: It's too bad. If you had a Pokémon\nwith you as well, you could compete\r\nwith [VAR TRNAME(1)] and see who is the\r\nbetter Trainer!
@@ -3891,9 +4136,17 @@
 41: This is Virbank City!\nCity of falling fog and rising stars!
 42: Pokéstar Studios Ahead\nBringing a new golden age of cinema!
 43: Virbank City Pokémon Gym\nLeader: Roxie\r\nPoison days, poison on the stage!
+44: Azu-ZU!
+45: Togetic chirps with excitement as\nyou approach.\cIt seems to want to give you something:\nit holds a polka-dotted egg in its hands.
+46: Accept the Egg?
+47: Togetic whimpers with disappointment.
+48: Togetic twirls in the air with delight!
+49: You don't have any room in your party\nfor this egg.\cCome back when you have some space.
+50: [VAR TRNAME(0)] obtained an Egg!
+51: Togetic dances in the air, filling you with\njoy.
 
 ----- TEXT FILE 181-----
-0: This is a Pokémon Gym, and\nit's also a rock club!\c\nThe Gym Leader and the others\nare practicing inside, but please\r\nfeel free to challenge all of them!\c\nOh! You'll need to stay hydrated.\nHere you go!\c
+0: This is a Pokémon Gym, and\nit's also a rock club!\c\nThe Gym Leader and the others\nare practicing inside, but please\r\nfeel free to challenge all of them!\c\nOh! These Lum Berries will help you!\nHere you go!\c
 1: The Trainers in this Pokémon Gym\nall use Poison-type Pokémon!\c\nGrass- and Bug-type attacks\ndon't work well against Poison types,\r\nso be careful!\c\nAlso, if your Pokémon are poisoned,\ntheir HP will keep decreasing. Watch out!\c\nAnd you should know that Poison-type\nPokémon can't be poisoned!
 2: The shining Gym Badge is important\nbecause you and your Pokémon\r\nwon it together!\r\nPlease remember that always!
 3: Virbank City Pokémon Gym\c\nLeader: Roxie\nCertified Trainers:
@@ -3914,6 +4167,12 @@
 9: That's a Gym Leader for you!\nShe really brings out the charms\r\nof her Pokémon!\c\nBut she's too wrapped up\nin what she's doing here...
 10: Hey you!\c\nI felt like you were something special\nduring your battle with Roxie.\c\nPlease come with me to Pokéstar Studios!\c
 11: I'm running the PA!\c\nI balance the sound in the venue\nso it's easy to hear!\c\nAre you a Trainer?\c\nSo does that mean you're thinking about\nthe type balance of the Pokémon in\r\nyour party?
+12: Grimer is grooooving!
+13: Koffing is vibing with the music! 
+14: Get in my way, and I'll knock you out!\nStay out of my way...and I'll knock\r\nyou out, too!\c
+15: Hahaha! You're great!\nKnock 'em all out for me, OK?
+16: I can always be straight and honest\nwith myself whenever I'm playing the\r\nguitar or having a Pokémon battle!\c
+17: It's because I'm with my Pokémon that\nI can happily play my guitar.\c\nAnd it's because I play my guitar that\nmy Pokémon become strong. Get it?
 
 ----- TEXT FILE 183-----
 0: Listen! Challenge Poison-type Pokémon\nwith Poison-type Pokémon!\r\nAt least, that's what Roxie told me.\c\nRoxie's a Gym Leader!\nShe plays an instrument. Pretty cool!
@@ -3932,6 +4191,13 @@
 13: Neither
 14: The thing everybody knows
 15: The thing nobody knows
+16: Now that I'm aware of my hidden power,\nI can tell you what type of Hidden Power\r\nyour Pokémon will learn!\r\nDo you want to know?
+17: When a Pokémon learns the move\nHidden Power, somehow I can tell\r\nwhat type that move will be!\c\nShould I tell you what type of\nHidden Power your Pokémon will learn?
+18: If you want to know, ask me, and I'll\nactivate my hidden power for you!
+19: The type of this Pokémon's\nHidden Power is [VAR TYPE(0)]!
+20: I'm sorry, but this Pokémon can't learn\nto use Hidden Power.
+21: It's not possible for an Egg to use\nHidden Power!
+22: If this Pokémon were to learn\nHidden Power, the move's type\r\nwould be [VAR TYPE(0)]!
 
 ----- TEXT FILE 184-----
 0: Ah! I want to go to Pokéstar Studios\nas soon as possible!\c\nI want my dear Audino\nto be in a movie!
@@ -3970,6 +4236,9 @@
 ----- TEXT FILE 188-----
 0: Welcome! Pass through the gate,\nand you'll arrive at Pokéstar Studios!
 1: Pokéstar Studios! That is a place\nwhere you can experience different lives!
+2: Mime Jr. carefully copies your movements.
+3: Tyrogue practices some\nmartial techniques.
+4: Stunky eyes you mischeviously.
 
 ----- TEXT FILE 189-----
 0: [VAR TRNAME(1)]: We'll get the DNA Splicers\nback for sure!\c\nSo you should focus on\ndefeating the Gym Leader first!
@@ -4421,6 +4690,30 @@
 52: Congratulations!\c\n[0x0139(0)]'s awesomeness has\nreached the four corners of the world!\c
 53: [COLOR(2)][CENTER]Warning![COLOR(0)]\c\nThe words you are about to enter\nmay be sent to other players.\c\nPlease consider them carefully\nbefore you register them.\c
 54: [COLOR(2)][CENTER]Warning![COLOR(0)]\c\nThe words you are about to enter\nmay be sent to other players.\c\nPlease consider them carefully\nbefore you register them.\c
+55: Oh! A Trainer!!!
+56: I need your help, desperately!\c\nI am the owner of this mall, Join Avenue,\nand I've made a terrible mistake!\c\nWhen I agreed to host this years PokéCon,\nI had no idea how crazy these fans were!\c\nThere is trash everywhere, people battling\nin the road, the bathrooms are a wreck!\c\nSomeone even brought a bounce house,\nsomehow?
+57: Eeep! Not my hydrangeas!\c
+58: HEY! Get out of the fountain!\c
+59: This is madness...\c\nThe convention was only supposed to last\nthree days, and its been a week!\c\nPlease, you must help me calm them down!\c\nI think the "cosplayers" are causing the\nmost commotion!\c\nBut be careful, once you enter the crowd,\nyou [COLOR(2)]WON'T BE ABLE TO LEAVE[COLOR(0)] until they're\r\ncalm, even to heal or swap Pokemon!\c\nSo if you want to reach Nimbasa City,\nyour team better be ready to handle four\r\nbattles.
+60: Please, think of the property damage!
+61: Thank goodness, they seem to have calmed\ndown...\c\n...\n..what?\c\nWere you expecting payment?
+62: You've started the Join Avenue gauntlet!
+63: The crowds are too dense,\nyou can't get past.
+64: Hey Trainer, over here!
+65: That was some impressive battling,\nstranger!\c\nIt was crazy, watching you battle someone\ndressed up as a character from my books!\c\nIt was like the pages come to life!\c\nHere, take something as thanks!
+66: You've got the tropes of a great trainer!\c\nI'll be following your story, maybe\nwe'll meet at the climax!
+67: Congratulations! You've completed the\nJoin Avenue gauntlet!
+68: The crowd is frantic and crazy.
+69: The crowd has calmed down.
+70: Come buy some of Pokestar Studio's finest\nfilms!\c\nBrycen Man, Riolu Boy, Full Metal Cop!
+71: You've got the tropes of a great trainer!\c\nI'll be following your story, maybe\nwe'll meet at the climax!
+72: You look filthy!\nYou need a makeover right away! 
+73: I'm a professional combat choreographer\nfor Pokestar Studios.\c\nI consult on martial arts and Pokemon Battles! 
+74: Just sit down anywhere, sugar.\nI'll be right with ya.
+75: Care to test your luck?\nYou might win a prize!
+76: Riolu Boy 4: Revelations has just come\nout!\c\nIt features state of the art rayquaza\ntracing!
+77: Move along, kid.
+78: The crowd is frantic and crazy.
 
 ----- TEXT FILE 204-----
 0: [0x013a(0)]!\nDo you have any questions?
@@ -4664,6 +4957,10 @@
 5: An expansive desert and\na castle buried in sand!\c\nThere's no doubt about it!\nTreasure is here!\c\nIt's been a year since the day my\ninternal treasure detector went off,\r\nbut I still haven't found any yet.\r\nI'm still following my dream, though...\c\nAnd I'm having so much fun\nI can barely stand it!\c
 6: The Funfest Mission\n“[VAR FUNFESTMISSION(0)]"\r\nhas been added to the Entralink!
 7: Spending each day living my dream...\nIs THAT my treasure?!
+8: Shuckle waggles at you… menacingly.
+9: Cacturne stands perfectly still…
+10: Lunatone floats eerily overhead.
+11: Grumpig eyes you with eerie malice.
 
 ----- TEXT FILE 217-----
 0: The Relic Castle in the Desert Resort.\c\nYou can tell just by looking at it\nthat time has been cruel.
@@ -4671,8 +4968,33 @@
 
 ----- TEXT FILE 218-----
 0: There are two things I've learned\nabout quicksand!\c\nIf you try to walk through the middle,\nyou'll fall.\c\nAnd if you try to run through it,\nyou'll fall.
+1: A strange energy permerates\nthis ruin.\c\nAll battles have the effect\nof Trick Room.
 
 ----- TEXT FILE 219-----
+0: . . . . . . .
+1: A good choice!\nTirtouga was a fiercesome predator in\rthe ancient ocean!\c\nHere you go!
+2: A good choice!\nLileep should serve you well in your\rupcoming battles!\c\nHere you go! 
+3: A good choice!\nAnorith's claws should serve you well in\ryour upcoming battles!\c\nHere you go!
+4: I hope that helps!\c\nNow, I've got find my way deeper into\nthese ruins.\c\nThese floors might be buried in sand,\nbut perhaps if I came at it from the\rside...\c\nHmm.....
+5: Cover Fossil
+6: Root Fossil
+7: Claw Fossil
+8: Quit
+9: The Cover Fossil belongs to the once\nextinct Pokémon Tirtouga!\c\nSo, do you want the Cover Fossil? 
+10: The Root Fossil is that of the ancient\nplant Lileep!\c\nSo, do you want the Root Fossil?
+11: The Claw Fossil can be revived into the\nlong forgotten Pokémon Anorith!\c\nSo, do you want the Claw Fossil?
+12: Then which Fossil would you like to take?
+13: If you want one of these fossils to\nrevive, let me know!\c\nI won't be here for long!
+14: How lovely to see a young trainer like\nyourself taking time to come appreciate\rUnova's ancient history!
+15: Most trainers these days are holed up in\nclassrooms rather than out in the field.
+16: And you are certainly better company\nthan those superstitious psychics!\c\nIf I have to heear one more theory about\naliens I'll-
+17: ...erm.\nSorry about that.\c\nI've been down in these ruins long enough\nto forget some manners.\c\nMy name is Lenora!\nPleasure to meet you!\c\nI was a gym leader a couple years back,\nbut nowadays I focus on my true passion,\rsturyding ancient ruins.
+18: And what about you?\c\n. . . .\c\nTaking on the gym challenge, eh?\nGood for you, [VAR TRNAME(0)]!\c\nI might be able to help! 
+19: In my excavation here, I've uncovered a\nnumber of ancient fossils.\c\nMy research assistant in Nimbasa could\nrevive one for you!\c\nHow about we have a little battle?\nIf you win, I'll give you one!
+20: Oh!\nHello!
+21: Alright, let's all learn something\nfrom this battle!
+22: Oh, alright!\c\nI'm certain we have something to teach\nother though.
+23: Hmph, excellent!\nYou've got the markings of a all-star\rbattler.\c\nFurther proof that the best experience\nfor a trainer is out in the field.\c\nNow, which fossil would you like?
 
 ----- TEXT FILE 220-----
 
@@ -4714,10 +5036,34 @@
 0:         
 
 ----- TEXT FILE 239-----
+0: Woah there Trainer,\nmind your step!\c\nYou're trampling around the archeological\ndiscovery of the century!
+1: Well, it looks as though you haven't\ndamaged anything...\c\nMy name is Lenora!\nPleasure to meet you!\c\nI was a gym leader a couple years back,\nbut nowadays I focus on my true passion,\rsturyding ancient ruins.
+2: My research here, however, has been\nbrought to a halt.
+3: There is a strange psychic phenomena\ncomplicating my efforts to explore the\rthe castle safely.\c\nEvery time I've made a map, it rearranges\nthe rooms and sends me in circles.\c\nAnd the local Pokémon are fiercely\nprotective of this place.\rMy Pokémon are exhausted from battling. 
+4: If you wish to explore,\nI cannot stop you.\c\nBut be careful...\c\nFrankly, if I can't figure this out soon,\nI'll be forced to seal the site up for\rsafety reasons... 
+5: Watchog eyes you cautiously.
+6: Wa......Wattchog...!
+7: Nobody knows exactly who built the\nRelic Castle, or why space and time are\rtwisted within its walls.\c\nMany speculate it was constructed as a\nshrine to ancient Pokemon, but I have my\rown theories. 
+8: Did something happen?\c\nThe energy here in the castle seemed to\nshift all of a sudden...\c\n . . . .
+9: Remarkable!\c\nAn automated defense system powered by\nPokémon and a strange orb?\rWhat a tantalizing discovery!
+10: Now that that's resolved, I can finally\nbring in my team of excavators to begin\rour research in earnest!
+11: I cannot thank you enough!
+12: Now that that's resolved, I can finally\nbring in my team of excavators to begin\rour research in earnest!\c\nI cannot thank you enough!
+13: Woah there [VAR TRNAME(0)],\nmind your step!\c\nYou're trampling around the archeological\ndiscovery of the century!
+14: Glad to see you and your Pokemon are\nstill in one piece kid!\c\nI see you've also gotten a couple more\nbadges jangling in your pocket since we\rmet up above!\c\nCongratulations!
+15: Oh, confused?\c\nThese ruins are actually part of the same\nmega-structure you found wandering the\rDesert Resort!
+16: Step back trainer!c\nThis part of the ruin has been sealed\noff for your safety!
+17: Sorry [VAR TRNAME(0)], you need to\nstep back!c\nThis part of the ruin has been sealed\noff for people's safety!
+18: I know you're a capable trainer [VAR TRNAME(0)],\nbut nonetheless please take care while\rexploring these ruins.\c\nFrankly, if I can't figure this out soon,\nI'll be forced to seal the site up for\rsafety reasons... 
 
 ----- TEXT FILE 240-----
-0: Vraahhbrbrbr!
-1: Volcarona quietly flew away...
+0: A towering statue of an ancient pokemon\nstands in the center of the chamber.\c\nIn the statue's gaping mouth rests a\nstrange orb, pulsing softly with light.
+1: Take the orb?
+2: The statue eyes you ominously...
+3: The statue snaps its jaws shut around the\norb and rumbles to life!
+4: The statue's mouth falls open and the\nstrange orb tumbles from its socket.
+5: The statue falls inert.
+6: The statue is inert.
 
 ----- TEXT FILE 241-----
 
@@ -4740,7 +5086,7 @@
 ----- TEXT FILE 249-----
 0: Clay: Here we are!\c
 1: Whaddya think?\nGreat buildin', huh?\c\nHere's where the Pokémon World\nTournament takes place!\r\nAin't she purty?\c\nFollow me, tads!\c
-2: Cheren: I barely recognized\nyou and [VAR TRNAME(0)].\c\nYou two are way different from when\nwe battled in Aspertia City!\c\nTraveling with Pokémon makes\neveryone grow so much...\c
+2: Cheren: Hey, slow down!!\nWhat is this about Team Plasma?\c
 3: [VAR TRNAME(1)]: What was that just now?!\c
 4: I'm going after him!\n[VAR TRNAME(0)], come with me!\c
 5: Stop.\c
@@ -4773,14 +5119,48 @@
 32: I'm sorry, but this Pokémon can't learn\nto use Hidden Power.
 33: That cave down there\nis the Relic Passage!\c\nIt was recently discovered,\nbut amazingly, it's...\c\nWait? Where was it\nconnected to again?
 34: A ship's only really a ship when\nit's crossing an ocean.\r\nDocked ships sure look lonely.
-35:        
+35: A strange energy emanates\ntfrom the cave ahead.\c\nAll battles in these ruins have\nthe effect of Trick Room.
 36: The Pokémon World Tournament\naka the PWT\r\nCall it what you like!
+37: [VAR TRNAME(1)]: They stole my sister's Purrloin!\nI have to get it back!\c
+38: Cheren: What!\c\nTeam Plasma haven't been active in two\nyears, since my friend and I...\c
+39: Wait... weren't you carrying [VAR NUM1(0)]\nPokéballs before?
+40: [VAR PKNAME(0)]'s Pokéball is missing from\nyour bag!
+41: Cheren: This is worse than I thought...\c
+42: [VAR TRNAME(0)], I'm sorry for your loss.\nTeam Plasma will be brought to\r\njustice, I swear it!\c
+43: So, do ya want an IV Enhancer applied to\none of your Pokemon?
+44: Aight.
+45: You don't have any enhancers.\c\nI'd sell you some, but I'm all out of\nstock.\c\nCome back when you find some more.
+46: Alright, which Pokemon am I working\non today?
+47: If you change your mind, you know where\nto find me.
+48: HP
+49: Attack
+50: Defense
+51: Special Attack
+52: Special Defense
+53: Speed
+54: Quit
+55: If you change your mind, you know where\nto find me.
+56: You sure you want to enhance their HP?
+57: HP IV has been maximized!
+58: You sure you want to enhance their Attack?
+59: Attack IV has been maximized!
+60: You sure you want to enhance their Defense?
+61: Defense IV has been maximized!
+62: You sure you want to enhance their\nSpecial Attack?
+63: Special Attack IV has been\nmaximized!
+64: You sure you want to enhance their\nSpecial Defense?
+65: Special Defense IV has been\nmaximized!
+66: You sure you want to enhance their Speed?
+67: Speed IV has been maximized!
+68: And which stat would you like to enhance?
+69: Pleasure doing business with you.
+70: Hey kiddo!\nGot any IV Enhancers?\c\nThey're special vitamins filled with crazy\nnutrients.\c\nBring me one and I can mix it into an\nelixir that will raise one of a Pokemon’s\r\ninnate stats to the maximum. 
 
 ----- TEXT FILE 250-----
 0: Clay: This time, I'm gonna have ya\nparticipate in the Driftveil Tournament.\c\nAnything goes in this here tournament!\c\nEight people will be participatin', and if\nya win three times, yer the champion!\c
 1: Cheren: Why did you call me, too?\nI'm busy looking into something!\c
 2: Clay: Ya know somethin', Cheren.\nThe one who's gotta show everyone\r\nwhat Pokémon battlin' means--is you.\c\nAnd yer pal ain't here, either!\c\nI'm countin' on the power of youth,\n'cause everyone likes\r\nup-and-comin' stars!\c\nOK! Whenever yer ready,\nget on over to reception!\c
-3: Clay: Whenever yer ready,\nget on over to reception!
+3: Clay: Dag nabbit!\nThese dang kids...\c\n...guess I'll have to promote the\ntournament myself.\c\nGood thing I've got those gym leaders from\nKanto flying in, at least!\c
 4: Cheren: Man oh man...\nYou never change, Clay.\c\nBut the tournament itself\ndoes look pretty fun!\c\nOK!\nI'll go register!\c
 5: [VAR TRNAME(1)]: Me, too!\c
 6: [VAR TRNAME(0)]. C'mon! Let's have some fun.\nWe'll battle, plain and simple!\c
@@ -4799,18 +5179,41 @@
 19: What can I do when\neverything's sold out?
 20: It's the Pokémon World Tournament!\nIt's all in the name!\c\nTrainers have gathered\nfrom all over the world!
 21: Hello there, Trainer.\nLet me fill you in about Battle Points.\c\nBattle Points, also known as BP, are\npoints you get for winning streaks in\r\neither Nimbasa City's Battle Subway\r\nor this tournament.\c\nWin a lot, save up lots of points, and\nyou can exchange them for useful items!
+22: [VAR TRNAME(1)]: What!?!\c\nWhy would you bring me here for a silly\ntournament?\c\nPurrloin is still out there!\nI need to find Team Plasma!\c
+23: Cheren: Team Plasma...?\c
+24: [VAR TRNAME(1)]: Argh! I don't have time for this!!\c
+25: Cheren: Hey, wait a minute!\c
+26: Clay: Dag nabbit!\nThese dang kids...\c\n...guess I'll have to promote the\ntournament myself.\c\nGood thing I've got those gym leaders from\nKanto flying in, at least!\c
+27: What do you mean I can't register?\nHave you seen my win-loss ratio?
+28: I graduated top of my class from the\nBlueberry Academy.\c\nI am going to dominate this tournament.
+29: Colress: As a researcher, it is the truth\nand the ideal way things should be\r\nthat I seek.\c\nThe latent power of Pokémon...\nWhat is the best way to bring it out?\c\nIf possible, I want it to be the trust\nbetween Trainers and their Pokémon,\r\njust as it has always been.\c\nI look forward to you teaching me\nthat this is indeed true!
+30: Colress: Just as I expected!\c\nYour Pokémon must be happy to\nbe by your side!\r\nYou bring out the best in their power!
+31: Colress: Hm, curious.\c\nYour Pokemon showed much more\n potential on Route 4.
+32: Colress: Thank you for helping me with\nthis little experiment!\c\nTake this as thanks!
+33: Colress: By having battles with\nmany Trainers, I can bring out\r\nPokémon's abilities!\c\nEventually, as I continue to battle,\nthe truth of my theory\r\nwill be evident to all!
 
 ----- TEXT FILE 251-----
 
 ----- TEXT FILE 252-----
 0: Chargestone Cave\nA shocking experience!
+1: [VAR TRNAME(0)]!\nThere you are!
+2: [VAR TRNAME(1)]: [VAR PKNAME(3)] and I have been training\nlike crazy so we can beat Team Plasma\rand their stupid ninjas into the dirt!\c\nCome on, let us give you a taste!
+3: [VAR TRNAME(1)]: Man, you're something else!\c\nI could see you going all the way man,\nto the top! 
+4: [VAR TRNAME(1)]: Hey...\n...can I ask you something?\c\nWhen we were on that ship...\nwhen everything went down,\rwere you scared at all?\c\nDid you ever think, even for a moment,\nabout running?
+5: [VAR TRNAME(1)]: Oh, yeah, of course!\nDuh!\c\nWith Pokémon like that by your side why\nwould you be frightened of anything? 
+6: [VAR TRNAME(1)]: ...me too. 
+7: [VAR TRNAME(1)]: Maybe it's stupid of me,\nI don't know...\c\nBut once we were on that ship it all\ngot real for me, you know? 
+8: [VAR TRNAME(1)]: It was one thing beating up idiot\ngrunts in Virbank: but storming into\rTeam Plasma's base, by ourselves...\c\nIf things went south, they could've\ntaken our Pokémon just like Purrloin...\c\n...or worse.
+9: [VAR TRNAME(1)]: It ticks me off...\nWe got so close to Team Plasma,\rbut weren't strong enough...\c\nThose shadow dudes handled us like\nit was nothing...\c\nSo we've gotta get stronger,\nand stronger, and STRONGER!
+10: [VAR TRNAME(1)]: Next time we meet, I'll be\nstrong enoughto be as fearless as you,\r[VAR TRNAME(0)]! 
+11: [VAR TRNAME(1)]: Next time we meet, let's both\nbe strong enough to be fearless,\r[VAR TRNAME(0)]! 
 
 ----- TEXT FILE 253-----
 0: Heeey!\c
 1: Hi there!\c
 2: Bianca: Did you know this?\c\nIf you push the floating stones,\nthey move!\c
-3: As always, this place is charged with\nlots of electricity that Pokémon like!\c\nThe electric charges react from one\nstone to another, so that's why\r\nthere are floating stones!\c\nYou can't push all of them, though.\c
-4: Oh, that's right!\nI came here to research something!\c\nBe seeing you!\c
+3: Oh, also!\c\nYou know how Ground types are usually\nimmune to Electric Type attacks?\c\nEven the ground here has a powerful\ncharge, turning that immunity\r\ninto a resistance!\c
+4: Oh, that's right!\nI came here to research something!\c\nBe seeing you!\c\nI almost forgot, be CAREFUL exploring!\nThere are tons of magnetic sinkholes\raround!\c\nIf you fall in one, who knows where you'll\nend up, or if you can get out the\rsame way!\c
 5: Bianca: The bridge fell apart,\nbut it's being fixed right now!
 6: What could have happened?\nMaybe wild Pokémon ran into it.\c\nAt any rate, it's going to take some\ntime to fix. Go wait around Driftveil!
 7:      
@@ -4820,6 +5223,9 @@
 11: The Funfest Mission\n“[VAR FUNFESTMISSION(0)]"\r\nhas been added to the Entralink.
 12: The Funfest Mission\n“[VAR FUNFESTMISSION(0)]"\r\nhas been added to the Entralink.
 13: I'll live here!\c\nFrom today on, my home will be here,\namong the beautiful stones!
+14: Bianca: Oh wow, you met Cobalion?\nThat's incredible! 
+15: Bianca: Oh wow, you met Cobalion?\c\nWait... you even defeated Cobalion in\na battle?\rThat's incredible! 
+16: Bianca: So Roodie said that I might know\nwhere to find the other hiding Swords\rof Justice?\c\nWell... maybe.\c\nBut it'll take some time to research.\nLet me check my notes and get back\rto you!
 
 ----- TEXT FILE 254-----
 0: Bianca: Know what?\nI'm here at Professor Juniper's request!\c\nI'm researching a Pokémon\ncalled Tynamo!\c\nBut there aren't very many,\nand they don't seem very strong...
@@ -4829,6 +5235,16 @@
 4: I want to give you this, too.\c
 5: That's a Nugget!\c\nHow'd it get so golden without\ndeep-frying? Trade secret!
 6: Nuggetaboutit!
+7: Bianca: Hey [VAR TRNAME(0)]!\c\nDid you have fun exploring Chargestone\nCave?\c\nIf you don't mind, I'd like to get some\npractical data with a little battle!
+8: Bianca: Wow, thanks!\nThat was some valuable data!\c\nYou know you battle a little like an\nold friend of mine!
+9: Bianca: ...aaaaand recorded!
+10: Bianca: Alright, I'm off to Reversal\nMountain next!\c\nBest of luck with your next gym battle!\c\nSkyla is a real doozey, I never was\nable to beat her.\c\nBut I hear Flying types, or Pokémon\nthat are airborne, can move a lot\rfaster in her gym!\c\nBuh-bye!
+11: Bianca: Alright, I'm off to Reversal\nMountain next!\c\nI'll keep working on tracking down the\nSwords of Justice in the meantime:\rI think I have a couple leads!\c\nMeet me there, and I'll let you know\nif I've found anything!\c\nBuh-bye!
+12: Bianca: Oh wow, you met Cobalion?\nThat's incredible! 
+13: Bianca: Oh wow, you met Cobalion?\c\nWait... you even defeated Cobalion in\na battle?\rThat's incredible!
+14: Bianca: So Roodie said that I might know\nwhere to find the other hiding Swords\rof Justice?\c\nWell... maybe.\c\nBut it'll take some time to research.\nLet me check my notes and get back\rto you!
+15: Since you've come this far, you must be\nquite strong...\c\nI hope you're the Trainer who'll make me\nremember how fun it is to battle!
+16: You've got me beat...\nYour desire and the noble way your\r\nPokémon battled for you... I even felt\r\nthrilled during our match.\c\nThat was a very good battle.
 
 ----- TEXT FILE 255-----
 
@@ -5161,6 +5577,34 @@
 33: Waitasecond!\c\nI dropped something here!\nJust wait until I find it!
 34: Waitasecond!\c\nI dropped something here!\nJust wait until I find it!\c
 35: Phew...\nI finally made it back here.\c\nAre you going farther inside?\nThere's nothing in there but Trainers.
+36: Rhydon is raring to go.
+37: Hm... you seem suspicious.\nWhat are you doing down here in the\r\nsewers?
+38: We're here on official business!\nWe're looking for an illicit substance\r\ndealer. Be careful!
+39: Woah, who goes there!
+40: Crazy how many people there are in the\nsewer today.
+41: I am a Doctor!\c\nIf you have Pokémon in bad shape...\nLet me see your Pokémon in battle!
+42: Your Pokémon are full of life!
+43: You are energetic!\nI will punish lazy children!
+44: You just don't quit!\nYou are so energetic!
+45: I used to be a pro athlete, but now\nI'm a sweeper!
+46: Sweeping isn't too different from hockey\nif you think about it.
+47: Cleaning actually takes a lot\nof strength...\c\nIn other words, I've been training real\nhard by doing all this cleaning!
+48: When you clean, do you ever feel like\nit's never going to end?\c\nWorks for me! That means I can clean\nforever, and I sure love cleaning.
+49: WhoooOOOooOOOOOoa!!
+50: Isn't it fun how shouting out in a sewer\nor a tunnel makes your voice echo?
+51: I've found a strong-looking Trainer\nduring my patrol!\c\nGo, Bibarel!
+52: You see my Bibarel?\c\nIt always seems to want to take the\nsame exact route, but why is that?
+53: Sine, cosine, tangent!
+54: What a catastrophic theorem!
+55: I'm a researcher studying about the\nsmell here!
+56: Even odors that might seem awful to\nhumans might be perfume to a Pokémon.
+57: [VAR TRNAME(0)]: There are Trainers ahead...\nWanna take them on together?
+58: [VAR TRNAME(0)]: Got it!
+59: I'm doing research on rare Berries.\nCan you help me run an experiment?
+60: Enigma Berries heal a Pokemon for a third\nof their health when they withstand a\r\nsuper-effective attack!
+61: Oh, ok!
+62: Great! Here we go!
+63: I got a lot of valuable data!\nHere's a reward!
 
 ----- TEXT FILE 296-----
 
@@ -5200,6 +5644,9 @@
 16: Professor Juniper: Oh?\nYour Pokédex...\c\nYou've seen Victini!\c
 17: In the Unova Pokédex, Victini was\nassigned a special number: zero.\c\nI've heard the special number was\nassigned in the hope that Victini's power\r\nto bring victory would be shared with the\r\nTrainer who travels with this Pokédex...\c
 18: How do you relate to Pokémon?\c\nAs you fill your Pokédex,\nyou'll find your own answer.\c\nThat's what I'm hoping for.\nSee you!\c
+19: Raichu's tail wags, tip pointed at you.
+20: Electrode looks about ready to explode. 
+21: Electabuzz points proudly to his scars,\nfingers crackling with electricity. 
 
 ----- TEXT FILE 301-----
 
@@ -5352,7 +5799,7 @@
 6: ???: Who am I?\c\nI'm the owner of this ranch!\nAnd this is my wife!\c
 7: Wife: After a Pokémon battle, you\nshould heal your Pokémon's HP, right?\r\nHere, I'll give you this!\c
 8: And one for you!\c
-9: It's nice to have Potions when\nyou're far away from a Pokémon Center.\c
+9: You can exchange these at a\nPokémon Center to teach your\r\npartners new moves!\c
 10: Owner: By the way, you didn't happen\nto see a Herdier around here, did you?\c\nI can't figure out where it went.\c\nOur two Herdier are always together\nand this is the first time one has\r\nwandered off, so I'm a little worried...\c
 11: [VAR TRNAME(1)]: You're a little worried?\nAre you KIDDING me?!\c\nYour Pokémon might be lost forever!\c\nWhatever! I'll look!\n[VAR TRNAME(0)]! Help out!\c
 12: Owner: Why did he get so mad?\c\nI think it's probably just\nplaying somewhere in the ranch.\c
@@ -5394,6 +5841,14 @@
 48: Baa baa!
 49: Baa haa!
 50: Ba baaa!
+51: Gosh darnit!\cI just got a whole shipment of eggs from\nmy sister at the daycare!\cBut there are too darn many of them!\nI can't raise all these!\cWould you mind taking one off my hands?\nI've been told these are strong Pokemon!\c
+52: Take the mystery egg?
+53: Fannnntastic!  Here you go!
+54: [VAR TRNAME(0)] obtained a Mystery Egg!
+55: I recommend you run around a few minutes\nto get it to hatch!\cBest of luck!
+56: Dang, your party's full.\nCome back when you've made some space!
+57: Dangit!
+58: A basket filled with eggs of all\nshapes and colors.
 
 ----- TEXT FILE 316-----
 0: Virbank Complex\nWhere Fire Meets Steel
@@ -5407,7 +5862,7 @@
 
 ----- TEXT FILE 317-----
 0: Hey there, Trainer!\nIt looks like you've got energetic\r\nPokémon there with ya!\c\nCan I ask a favor?\c\nI need to get the Workers\nin this complex fired up!\c\nHow about it?\nHelp a guy out, will ya?
-1: Yeah! That's what I like to hear!\c\nThere are some new Workers\nhere in the complex!\c\nGo get those three raring to go!
+1: Yeah! That's what I like to hear!\c\nThere are some new Workers\nhere in the complex!\c\nGo get those three raring to go!\c\nI'll even give you a down payment!
 2: Really? Nobody really wants\nanything enough anymore!
 3: OK!\c\nThe three new Workers are\nin different parts of the complex!
 4: Hey! Ya did it, didn't ya!\nThis is a token of my thanks!\c
@@ -5432,6 +5887,10 @@
 23: Oh? You don't have the\nHabitat List for the complex\r\nfilled up yet...
 24: Amazing!\nThe Habitat List is filled up!\c\nSo amazing! There are so many\nPokémon living in this complex!\c\nHere, take these as thanks!\c
 25: If you fill up the Habitat Lists, you might\ncomplete the Pokédex before you know it!
+26: You have flag 306.
+27: You don't have flag 307.
+28: You don't have flag 308.
+29: You don't have flag 309.
 
 ----- TEXT FILE 318-----
 0: Reversal Mountain Ahead
@@ -5687,6 +6146,7 @@
 64: You're kidding!
 65: This is no good...
 66: What should we do?
+67: [VAR TRNAME(1)]: [VAR TRNAME(0)], quit messing\naround! You need more than one Pokemon!
 
 ----- TEXT FILE 354-----
 0: Team Plasma: Who are you?\c
@@ -5915,12 +6375,27 @@
 14: I failed in my duty,\nand my Pokémon were taken away.\c\nI lost a lot of Pokémon\nI had stolen, too...
 
 ----- TEXT FILE 375-----
+0: A strange energy permerates\nthis ruin.\c\nAll battles have the effect\nof Trick Room.
+1: Fire Stone
+2: Water Stone
+3: Leaf Stone
+4: Thunder Stone
+5: Moon Stone
+6: Sun Stone
+7: Quit
+8: ...fine.
+9: I've been digging here for a while, and\nI've found all these interesting stones.\c\nWould you like one? 
+10: Are you sure you'd like the\n[VAR ITEM2(0)]? 
+11: Okay... which stone would\nyou like? 
+12: Okay... here you go. 
+13: Leave me alone, I need to find\nmore stones. 
 
 ----- TEXT FILE 376-----
 
 ----- TEXT FILE 377-----
 0: I'm here collecting Shards so that\nI can have my Pokémon be taught moves.\c\nThey can be found in the dust clouds,\nbut rarely you'll find a Pokémon instead.
 1: The Funfest Mission\n“[VAR FUNFESTMISSION(0)]"\r\nhas been added to the Entralink.
+2: A strange energy permerates\nthis ruin.\c\nAll battles have the effect\nof Trick Room.
 
 ----- TEXT FILE 378-----
 0:                                                                   
@@ -5934,11 +6409,21 @@
 8: Oh... It looks like none of your\nPokémon has learned Rock Smash...
 9: Dig, dig! Dig, dig! Dig, dig!\nDig, dig! Dig, dig! Dig, dig!
 10: Dig, dig! Dig, dig! Dig, dig!\nDig, dig! Dig, dig! Dig, dig!
+11: Geodude rumbles happily.
+12: Sableye offers some\ngemstones.
+13: Sableye chitters\nmischievously.
+14: [VAR TRNAME(0)] received some Gems!
 
 ----- TEXT FILE 379-----
-0: Oh, Trainer!\nWant to ride this mining cart?
+0: Oh, Trainer!\nThe mind cart is out of order!
 1: Oh!\nLet's go by mining cart!\c
 2: Oh! Anytime you'd like to ride it,\ntalk to me!
+3: Come on, team!\nJust a little more rubble left!
+4: At this rate, we won't be back\nin Driftveil for weeks...
+5: Hyaah!
+6: Huuureeugh!
+7: Haaaruummph!
+8: Sorry Trainer!\c\nPath to Twist mountain is\nclosed for now!
 
 ----- TEXT FILE 380-----
 0: Oh, Trainer!\nWant to ride this mining cart?
@@ -5946,11 +6431,29 @@
 2: Oh! Anytime you'd like to ride it,\ntalk to me!
 
 ----- TEXT FILE 381-----
-0: What is going on\nwith this door?\c\nIt leads to a different place\ndepending on whether the\r\nsun is up or not!
-1: What is going on\nwith this door?\c\nIt leads to a different place\ndepending on whether the\r\nmoon is out or not!
+0: This stonework is ancient, but very well\nmaintained.\rSomeone must take good care of it.\c\nIt wasn't carved with tools...\n...could Pokémon have sculpted this?\c\nAnd what is with this strange marking on\nthe ground..?\c\nMysteries upon mysteries here,\nit would seem.
+1: This stonework is ancient, but very well\nmaintained.\rSomeone must take good care of it.\c\nIt wasn't carved with tools...\n...could Pokémon have sculpted this?\c\nAnd what is with this strange marking on\nthe ground..?\c\nMysteries upon mysteries here,\nit would seem.
 2: An old switch is at your feet!\nStep on it?
 3: A loud, heavy sound echoed\non the other side of the door...
 4: Nothing seems to happen...
+5: Incredible...
+6: Oh, [VAR TRNAME(0)], you came!
+7: I am glad you are here.\nYour trust in me is well placed, I promise. 
+8: Isn't it marvelous?\c\nMistralton Cave is older than Unova, its\nwalls shifting as Pokemon shape the earth.\c\nLegend has it long ago, these tunnels were\na refuge for Pokemon fleeing a terrible\rhuman war...\c\nPoetic then isn't it, that the violence of\nhumans is what brings us here.
+9: These caverns have changed quite a bit\nsince I last visited two years ago...\c\nBut I am certain that Cobalion is in here\nsomewhere! I can feel his aura, even now.\c\nWe must find him and request his aid in\nthe fight against Team Plasma...
+10: ...and hope that we are worthy.
+11: ...it's open.
+12: I can feel it.\nCobalion awaits us beyond that door.
+13: ....\c\n...\c\nThe Swords of Justice once fought to\nprotect Pokémon from human cruelty...\c\n...As a Sage of Team Plasma, I believed\nI was doing the same...
+14: I'm sorry, I just need a moment...\c\nGo forth, Cobalion awaits you!
+15: [VAR TRNAME(0)], what happened?\nDid you accept Cobalion's challenge? 
+16: ...\c\nI see.\nA wise decision, in my opinion.\c\nBut if you change your mind, I am certain\nCobalion will linger in these ruins for a\rlittle while longer. 
+17: ...c\nI see.\nYou were defeated in battle.\c\nWhat a remarkable feat going toe to toe\nwith Cobalion to begin with, though.\c\nPerhaps you'll have a chance to fight him\nagain one day!
+18: ...\c\n...you... defeated Cobalion?\nThat's incredible!\c\nYou truly are an incredible trainer, and\nand I'm certain Cobalion knows that now.\c\nYou must feel incredible, having bested\na legendary Pokémon in battle...\c\nI can only imagine what you'll accomplish\n next!
+19: As for me, it's about time I return to\nthe Plasma Sanctuary.\c\nIf I can face Cobalion, I can face the\nshame of my past and make a\rbetter future.
+20: I do not know where the other Swords of\nJustice hide, but I know someone who does.\c\nA young lady I met two years ago when she\nfirst began her Pokémon adventure.\c\nHer name is Bianca, and she's a research\nassistant for professor Juniper! 
+21: Oh, you know her?\nThat's wonderful!\c\nShe's a very kind person. When I first\nreformed she was one of the only people\rwho believed in me.\c\nShe's doing research nearby in\nChargestone Cave, but if you missed\r\nher she said she was heading to\rReversal Mountain next!
+22: Be well, [VAR TRNAME(0)].\nI am certain you and your Pokémon will\rchange the world. 
 
 ----- TEXT FILE 382-----
 0: Chamber of the one that joins\nthe sun in protecting this place.
@@ -5979,11 +6482,40 @@
 4: It protects this place\nwith the power of ice.
 
 ----- TEXT FILE 386-----
-0: The Pokémon statue that exudes the\npower of steel started moving!\c
-1: Ji-ji-ze-ji-zoh...
+0: Cobalion eyes you with a steely gaze.
+1: Kawbraa!
 2: Registeel disappeared deep\ninto the ruins...
-3: Iron Chamber
+3: Etched on the walls are a series of crude\nimages depicting Pokémon and humans in\rconflict.\c\nAbove these, statues of four regal\nPokémon with sword-like horns.
 4: It protects this place\nwith the power of steel.
+5: 
+6: Kawbraa..... Kawww....
+7: Cobalion stands tall, bearing down on you\nwith his steely gaze.\c\nHis aura is oppressive, you feel as though\nyou can hardly breath.\c\nHis eyes betray no intent...\nthere is a deathly silence in the chamber.
+8: WAIT!!!
+9: Cobalion, please!\nWe mean you no harm!\c\nWe too are friends of Pokémon and\nprotectors of peace...\r...or at least trying to be!\c\nWill you please listen to us, the world\nboth man and Pokémon share is in danger!
+10: Kaww!
+11: Phew...\c\nI didn't know I had that\nin me.
+12: Cobalion, we seek your aid in a coming\nbattle against the forces of darkness.\c\nTeam Plasma, lead by the villain Ghetsis,\nseeks to use violence and terror to sieze\rcontrol of Unova and we who call it home.\c\nWe know not what they plot, but they have\nsecured new allies and amassed great power.\c\nPlease, will you lend us your aid?
+13: There is a deep silence as Cobalion\ncontemplates Roods' words.
+14: Cobalion bows his head, expressing\nhis assent.
+15: Is...\n...is that I think it is?\c\nIs he... bowing? To us?
+16: I can scarcely believe it!\c\nCobalion has granted you...\nus...\rhis favor!\c\nThis is wonderful!\nI'm certain he'll watch over you in the\rdays to come.
+17: N would be so proud of us... 
+18: Thank you, Cobalion!\nYour trust in us is well placed,\rI promise!
+19: Hmm?
+20: Cobalion's has yet to lift his gaze off you.\c\nIt has not wandered or wavered for even\na moment since you entered this chamber.\c\nAs Cobalion observes you intently, you\ncan feel him judging your every move..\c\nAnd in his eyes you can see a challenge.
+21: I... I believe Cobalion wishes to test\nthe bonds between you and your Pokémon\rhimself!
+22: A challenge from Cobalion... as equals!\c\nMost unexpected!\c\nAre you certain you'd want to do this?\nCobalion's strength is literally legendary.\c\nAs a Sword of Justice he'll fight along\nPokémon using tactics far above those\ryou'd find in the wild.\c\nLegend has it Cobalion's gaze is withering,\nand will sharply lower the strongest stat\rof his foes as they enter battle.
+23: Cobalion has already offered his aid: you\ndon't need to do this to stop Team Plasma.\c\nBut if you were to prove your strength\nto Cobalion, I'm certain the reward\rwould be worth it...
+24: Whatever you decide, it is between you\nand Cobalion.\rLet your spirit guide your hand.\c\nI will wait for you outside. 
+25: And... good luck. 
+26: Do you accept Cobalion's challenge?
+27: Cobalion eyes you intently.
+28: Kawbraa
+29: Cobalion bows his head in respect.\c\nScampering from the shadows, a Pokemon\nbrings you a gift!
+30: Cobalion looms over you: dissapointed,\nperhaps.\c\nHis horns begin to glow bright blue...
+31: Kawbraa!
+32: Cobalion disappeared...
+33: Cobalion steps back into position,\nas if to challenge you to spar again.
 
 ----- TEXT FILE 387-----
 0: Argh!\nI was doing very well. I was so close!\r\nBut I lost.\c\nI shouldn't have forced myself to battle\nand should have looked for a Nurse.\c\nThe White Treehollow is not known as\nUnova's Challenge for nothing.
@@ -6368,15 +6900,58 @@
 ----- TEXT FILE 419-----
 0: Sometimes, above the bridge, you can\nsee the shadows of bird Pokémon, right?\c\nTheir feathers drift to the ground here!\c\nAnd when you try to pick them up,\noccasionally you'll run into a Pokémon.
 1: The Funfest Mission\n“[VAR FUNFESTMISSION(0)]"\r\nhas been added to the Entralink!
-2: Driftveil City is famous for this\ndrawbridge, the PWT, and of course,\r\nthe heartbreaker, Charles.
-3: The Driftveil Drawbridge...\nIt's also known as the Charizard Bridge!\c\nBecause the raised drawbridge looks like\nthe Pokémon called Charizard.\c\n...But, I've never seen Charizard,\nso I don't know...
-4: The Driftveil Drawbridge...\nIt's also known as the Charizard Bridge!\c\nBecause the raised drawbridge looks like\nthe Pokémon called Charizard.\c\n...But, I've never seen Charizard,\nso I don't know...\c\n...What?!\nAre you with Charizard?\c
-5: Wow! Awesome!\nYeah, I think it looks like Charizard.\c\nThanks! As a token of my appreciation,\nplease accept this!\c
-6: I wonder if the people who made\nthis drawbridge were with Charizard.
-7: [SPEED(2)]Panting... Panting...\nI'm...thirsty...\c\nI met you on the Skyarrow Bridge...\c\nG-g-give me...\nFresh Water...?[SPEED(0)]
-8: Refreshed!!\c\nI'm 100% rehydrated!\nI feel better now! Thank you!\c\nI'll dash to the next bridge!
-9: [SPEED(2)]But... You don't have Fresh Water...\nI appreciate the thought, though...[SPEED(0)]
-10: [SPEED(2)]Thank...\c\nWhat?\nOh...\c\nWithout Fresh Water...\nI can't run on bridges anymore.[SPEED(0)]
+2: You won't believe what's going on today\non the Bridge!
+3: A bus carrying Nimbasa's star athletes\nbroke down on the way to Big Stadium.\c\nNow they're practicing on the deck of\nthe bridge!\c\nWe came to cheer on our favorite pro,\nStriker Marco!\c
+4: Yeah, but be careful!\c\nWe saw a fan try and ask for an autograph,\nand they battled him instead!\c\nI think they won't let you leave until\npractice is over, even to swap Pokemon!\c\nOnce you pass our Minuns, there's no\ngoing back!\c
+5: So if you wanna cross, your team better\nbe ready to handle five battles!\c\nMake sure to stock up on healing items\nat the Pokémon Center!\c
+6: We'll stay here and record you!\nThis will go viral, for sure!
+7: Plusle cheers with energetic aplomb!\nThey are almost TOO confident in you!
+8: Minun "cheers" unenthusiastically.\nThey seem doubtful you'll succeed...
+9: Hariyama assumes a 2-point stance,\nprepared to take their trainer's tackle!
+10: Nidoking assumes a 4-point stance,\nprepared to tackle their trainer!
+11: Blaziken effortless dribbles the ball\nwhile staring fiercely at Hitmonlee. 
+12: Hitmonlee ignores Blaziken completely,\nnever taking their eyes off the ball.
+13: Voltorb did not agree to be the ball.\nIts patience is thinning...
+14: Shiftry is aloof and smug, sneering at\ntheir competition.
+15: Ambipom is hyped up practicing their\nforward swing. This is their moment!
+16: Galvantula dutifully maintains the\nmakeshift net with webbing.\c\nThey seem frustrated each time the\ntennis ball tears it.
+17: The Elekids swing their arms wildly at\nthe Mankeys, generating fierce sparks.
+18: The Mankeys taunt the Elekids, smacking\ntheir rears and making crude noises.
+19: Chansey tends to wounded athletes!
+20: Garbodor extends its long arms.\nLooks like they can throw a mean pitch!
+21: Marowak twirls her bone in anticipation,\nready to swing.
+22: Hitmonchan is ready to catch anything!
+23: Wow, amazing job!\nYou're blowing up on r/PokemonLeague!
+24: I heard my favorite linebacker was\npracticing here on social media, but...\c\n...I'm too nervous to ask for an autograph.
+25: Hey Trainer, did you hear?
+26: You've got this!\nMy Pokemon and I are cheering for you!
+27: I knew you could do it!\nCan't wait to see you be Champion!
+28: Congratulations! You've completed the\nDriftveil Drawbridge gauntlet!
+29: A baseball decorated like a Pokeball!
+30: Chansey tends to the athletes.
+31: The Driftveil Drawbridge gauntlet\nhas begun!
+32: Crowds block the way back.
+33: Come on, MOVE!\nPUSH THROUGH!\c\nOVERCOME!
+34: ANOTHER SET OF DRILLS!\nYOUR FOOTWORK IS SLOPPY!
+35: Please coach, we can't keep going...
+36: I DO NOT ACCEPT THAT!
+37: I know your strength, I've guided your\ntraining.\c\nYou know in your heart you are\ncapable of more!
+38: You must shatter the weakness within\nyourself, and prevail over your foes with\r\nthe force of your conviction! 
+39: If not for yourself, for your\nallies- er- teammates!
+40: He's right. We can't let the team down.
+41: My fans, my Pokémon... they rely\non me... they BELIEVE in me!
+42: YES COACH!
+43: Excellent.\nNow, for another round of- 
+44: Greetings, trainer!\nMy name is Marshall, and I'm the new head\r\ncoach for the Nimbasa City Voltorbs...\c\n...and the Nimabasa City Luxrays...\nand the Blitzles...
+45: To be frank, all the big teams had a\npretty terrible season and asked for\r\nmy help.
+46: It's been... an adjustment.\nI'm not too familiar with sports, and\r\ntraining people is much more difficult\r\nthan training Pokémon.
+47: But the stadium is a battlefield like any\nother, and battle is something with\r\nwhich I am intimately familiar.
+48: I can see you are the same!\c\nI watched your battles from afar: good\nform and excellent fundamentals.\c\nThe team is sure to have learned\nsomething from you.\c\nAs thanks, and as an apology for\ndisrupting your crossing, take these. 
+49: It is time for us to return to Nimbasa.\nMay your strength serve you well on your\r\njourney, trainer.
+50: Can't give up... gotta get stronger!
+51: One... two... three... four...\c\nOne... two... three... four...
+52: OF COURSE COACH!
+53: WE HAVE THE POWER INSIDE COACH!
 
 ----- TEXT FILE 420-----
 0: Argh! Loud! It's way too noisy!\c\nIt's all the trains! They never stop!\c\nWhen the train runs below,\nit's unbearably noisy!
@@ -7931,7 +8506,7 @@
 
 ----- TEXT FILE 479-----
 0: [VAR TRNAME(0)] booted up the PC.\c
-1: Which PC should be accessed?
+1: What do you want to do?
 2: Someone's PC
 3: Amanita's PC
 4: [VAR TRNAME(0)]'s PC
@@ -7972,6 +8547,138 @@
 39: Accessed Professor Juniper's PC.\c
 40: Accessed the Help System.\c
 41: 
+42: Repel is DISABLED
+43: Heal Pokémon
+44: Heal all your Pokémon, just like in a\nPokémon Center!
+45: Give Status Effect
+46: Give a chosen Pokémon a status effect
+47: Remember Moves
+48: Make your Pokémon remember a move\nit forgot.
+49: Pokémon will now be repelled until\nyou turn it off.\c
+50: Healed your Pokémon up to full health!\c
+51: Which status effect do you want?
+52: 
+53: Poisoned
+54: Paralyzed
+55: Asleep
+56: Burned
+57: Nevermind
+58: 
+59: Repel is ENABLED
+60: Pokémon will no longer be repelled.\c
+61: 
+62: If any of your Pokémon needs to\nremember a move, bring me a Heart Scale!\c\nYou can buy them from a counter at\nthe Pokémon Center in Driftveil.
+63: Should a move be remembered?
+64: Eggs can't remember moves!\c
+65: This Pokémon hasn't forgotten\nany moves.\c
+66: Which Pokémon needs tutoring?\c
+67: Which move should\n[VAR PKNICK(0)] remember?\c
+68: Sorry, you can not use the PC here!\cWould be unfair, wouldn’t it?\c
+69: Done!\c
+70: 
+71: Edge Pokémon XP
+72: Set all your party's XP to be 1 point away\nfrom the next level
+73: Do you want to edge your party's XP?
+74: 
+75: Toggle Weather
+76: Access the Pokémon storage system.
+77: Access the Mailbox.
+78: Speak with Professor Juniper.
+79: Permanent Repel is currently active.
+80: Permanent Repel is currently inactive.
+81: Access Tutorials and Information
+82: Exit
+83: Access Hall of Fame records.
+84: [VAR TRNAME(0)] booted up the PokéHelper!\c
+85: Manage Pokémon
+86: Travel
+87: Change Settings
+88: Aspertia City
+89: Floccesy Town
+90: Virbank City
+91: Castelia City
+92: Join Avenue
+93: Nimbasa City
+94: Driftveil City
+95: PWT
+96: Mistralton City
+97: Lentimas Town
+98: Undella Town
+99: Lacunosa Town
+100: Opelucid City
+101: Are you sure?
+102: Where do you wanna travel?
+103: There are lots of settings for this\ngame... what would you like to change?
+104: Critical Hits
+105: IVs
+106: Trainer Placements
+107: Wild Pokemon EVs
+108: Animated Backgrounds
+109: Advanced Enemy Switch AI
+110: Limited TMs
+111: Battle Scan
+112: Quit
+113: Restore Defaults
+114: Critical Hits are currently set to\n2x damage.\c\nWould you like to set them to\n1.5x damage?
+115: Critical Hits are currently set to\n1.5x damage.\c\nWould you like to set them to\n2x damage?
+116: Ok!\nWould you like to change another setting?
+117: Critical Hits have been changed to deal\n1.5x damage!\c\nTo revert this change, simply use this\nconsole again.
+118: Critical Hits have been changed to deal\n2x damage!\c\nTo revert this change, simply use this\nconsole again.
+119: Would you like to change another\nsetting?
+120: Wild Pokémon are currently set to have\nrandom IVs.\c\nWould you like to change the IV\nsettings?
+121: Wild Pokémon are currently set to have\nperfect IVs.\c\nWould you like to change the IV\nsettings?
+122: Wild Pokémon have been set to have\nperfect IVs.\c\nTo revert this change, simply use this\nconsole again.
+123: Wild Pokémon have been set to have\nrandom IVs.\c\nTo revert this change, simply use this\nconsole again.
+124: Wild Pokémon are currently set to have\nthree perfect IVs.\c\nWould you like to change the IV\nsettings?
+125: Random (Default)
+126: Enhanced
+127: Perfect
+128: Wild Pokémon have been set to have\nthree perfect IVs.\c\nTo revert this change, simply use this\nconsole again.  
+129: Wild Pokémon are currently set to reward\nno Effort Values.\c\nWould you like to set them to reward\nEffort Values?
+130: Wild Pokémon are currently set to reward\nnormal Effort Values.\c\nWould you like to change Wild Pokémon's\nEffort Value yields?
+131: Wild Pokémon are currently set to reward\ndouble Effort Values.\c\nWould you like to change Wild Pokémon's\nEffort Value yields?
+132: Wild Pokémon are currently set to reward\nquadruple Effort Values.\c\nWould you like to change Wild Pokémon's\nEffort Value yields?
+133: None (Default)
+134: Normal
+135: Double
+136: Quadruple
+137: Wild Pokémon have been set to reward\nno Effort Values.\c\nTo revert this change, simply use this\nconsole again.
+138: Wild Pokémon have been set to reward\nnormal Effort Values.\c\nTo revert this change, simply use this\nconsole again.
+139: Wild Pokémon have been set to reward\ndouble Effort Values.\c\nTo revert this change, simply use this\nconsole again.
+140: Wild Pokémon have been set to reward\nquadruple Effort Values.\c\nTo revert this change, simply use this\nconsole again.
+141: Wild Pokémon have been set to have\nthree perfect IVs.\c\nTo revert this change, simply use this\nconsole again.
+142: Animated Backgrounds are currently\ndisabled.\c\nThese 3D backgrounds can cause\nperformance issues and are not finished.\r\nWould you like to enable them?
+143: Animated Backgrounds are currently\nenabled.\c\nThese 3D backgrounds can cause\nperformance issues and are not finished.\r\nWould you like to disable them?
+144: Animated Backgrounds have been enabled.\c\nTo revert this change, simply use this\nconsole again.
+145: Animated Backgrounds have been disabled.\c\nTo revert this change, simply use this\nconsole again.
+146: Enemy trainers are currently configured\nto use advanced switch AI.\c\nThis includes behavior such as switching a\nPokémon out if it can't deal much damage.\c\nWould you like to toggle this feature\noff?
+147: Enemy trainers are currently configured\nto not use advanced switch AI.\c\nThis includes behavior such as switching a\nPokémon out if it can't deal much damage.\c\nWould you like to toggle this feature\non?
+148: Enemy trainers have been configured to\nuse advanced switch AI. \c\nTo revert this change, simply use this\nconsole again.
+149: Enemy trainers have been configured to\nnot use advanced switch AI. \c\nTo revert this change, simply use this\nconsole again.
+150: Technical Machines are currently set up\nto be a limited, consumable resource.\c\nWould you like to revert them to infinite\nusage?
+151: Technical Machines are currently set up\nto be an infinite, re-usable resource.\c\nWould you like to revert them to limited\nusage?
+152: Technical Machines have been set to\nbe a limited, consumable resource.\c\nTo revert this change, simply use this\nconsole again.
+153: Technical Machines have been set to\nbe an infinite, re-usable resource.\c\nTo revert this change, simply use this\nconsole again.
+154: Enemy trainers are currently positioned\nto guard rewards and obstruct progress.\c\nWould you like to return them to vanilla\nstyle positioning?\r\nThis makes most route trainers optional.
+155: Enemy trainers are current positioned\nlike the vanilla game and are largely\r\noptional.\c\nWould you like to revert trainers to be\npositioned as obstacles and gatekeepers?\r\nThis makes most route trainers mandatory. 
+156: Enemy trainers have been reverted to\nvanilla positions.
+157: Enemy trainers have been restored to\ngatekeeping positions.
+158: Your Flags are gunked up, yo.
+159: Would you like to restore\ndefault settings?
+160: Battle Scan is a feature that allows you\nto view enemy data during battle.\c\nSimply hold L1 or R1 when clicking the\n"Pokémon" button in battle.\c\nBattle Scan is currently configured to\nshow limited information: Base Stats,\rrevealed moves, revealed Pokémon.\c\nWould you like Battle Scan to reveal all\ninformation about opposing Pokémon?
+161: Battle Scan is a feature that allows you\nto view enemy data during battle.\c\nSimply hold L1 or R1 when clicking the\n"Pokémon" button in battle.\c\nBattle Scan is currently configured to\nshow complete information: true stats,\rfull teams, full movesets.\c\nWould you like Battle Scan to reveal all\ninformation about opposing Pokémon?
+162: Battle Scan has been configured to\ndisplay complete information. 
+163: Battle Scan has been configured to\ndisplay limited information. 
+164: Dialog Skips
+165: This toggle reduces the amount\nof mandatory scripted dialogue.\c\nWould you like to turn it on?
+166: This toggle reduces the amount\nof mandatory scripted dialogue.\c\nWould you like to turn it off?
+167: Dialogue skips have been turned\non.
+168: Dialogue skips have been turned\noff.
+169: 
+170: You don't have any Pokémon!\c
+171: Remove Pokémon Items
+172: Remove all items from Pokémon\nin your Party and Box.
+173: Do you want remove all held items\nfrom your Pokémon?
 
 ----- TEXT FILE 480-----
 0: This is a remnant of your\nPokémon's dream.\r\nHere, take it.\c
@@ -9511,6 +10218,12 @@
 17: Trainer Tips!\c\n\nPokémon have a source of energy\nfor using moves.\c\nIt's called PP, meaning Power Points.\nThey have PP for each move.\c\nWhen a move has no PP remaining,\nthat Pokémon cannot use that move.\c\nThat's a good time to head for\nthe Pokémon Center!
 18: Desert Resort Ahead\nRight: Nimbasa City
 19:                          
+20: Furret wags its entire body in excitement.
+21: Granbull chomps anxiously.
+22: Noctowl grooms its feathers.
+23: Breloom hops from foot to foot.
+24: Pelipper eyes you placidly.
+25: Altaria eyes you regally.
 
 ----- TEXT FILE 541-----
 0: I'm a heartbreaker...\nMy name... Charles.\c\nNow, I'm having a Triple Battle\nwith the opponent in front of me!
@@ -9584,6 +10297,8 @@
 68: Three Pokémon!
 69: Love!
 70: Good, good, good.
+71: Mincinno guards its lair zealously
+72: Alright.
 
 ----- TEXT FILE 542-----
 
@@ -9598,13 +10313,17 @@
 7: But... Why did it show up\nin front of people?\c
 8: Is it patrolling the Unova region\nto protect Pokémon because it fears for\r\ntheir safety after the commotion caused\r\nby Team Plasma two years ago?\c\nOr does it sense a new problem...?\c
 9: Rood: Unforgivable...\c\nSo the reach of Ghetsis's ambition\nand malice is growing ever wider and\r\nwarping the lives of all it touches...\c
-10: Did Cobalion appear in front of you\nmerely by accident?\c\nOr to plead with you to solve a problem?\c\nUnlike Lord N, I don't have the ability\nto understand the minds of Pokémon.\c\nTherefore, I don't know\nwhat that Pokémon is thinking.\c\nBut if you can befriend Cobalion,\nit will be a great asset to you\r\non your journey.
+10: Did Cobalion appear in front of you\nmerely by accident?\c\nOr to plead with you to solve a problem?\c\nUnlike Lord N, I don't have the ability\nto understand the minds of Pokémon.\c\nTherefore, I don't know\nwhat that Pokémon is thinking.\c\nBut if you can befriend Cobalion,\nit will be a great asset to you\r\non your journey.\c\n...in fact, I may know where Cobalion\nhas gone!\c\nI know you may mistrust a former member\nof Team Plasma, but come find me in\rMistralton Cave!
 11: Not just people and Pokémon...\c\nIt's best for all creatures to accept\nand trust one another...
 12: Chargestone Cave is great!\c\nThe Ferroseed I met here\nwere absolutely adorable!
 13: Water Absorb and Dry Skin.\c\nPokémon with those Abilities love\nWater-type moves and rainy weather. ?\c\nThe Gym Leader in Aspertia City\nis very familiar with Pokémon Abilities,\r\nisn't he?\c\nOh, do you know him? Then you can ask him\nabout Abilities through the Xtransceiver!
 14: Route 6
 15: Trainer Tips!\c\n\nYou can register certain items with\nthe Y Button to use them easily!\c\nLook for a square check box beside\nthe name of a Key Item.
 16: Researching the Year's Seasons:\nThe Season Research Lab
+17: WAAAAH!!!!\rPsyduck seems in distress...
+18: Toxicroak leers at you.
+19: Golduck frolicks in the rain!
+20: Volbeat flickers faintly in\nthe rain!
 
 ----- TEXT FILE 544-----
 0: Cheren: No one really talks about it, but\nthe record shows that there was a\r\nsudden drop in temperature near\r\nLacunosa Town.\c\nIt was only for a moment, but it went\ndown as low as -58° F.\c
@@ -9695,6 +10414,7 @@
 3: Route 7
 4: Celestial Tower\nA place of rest for innocent spirits
 5: Trainer Tips!\c\n\nThe number of Exp. Points you get\nafter a battle is based on levels.\c\nWhen your Pokémon is weaker than\nits opponent, it will get more.\c\nBut if your Pokémon is stronger,\nit won't get as many.
+6: This ancient burial ground is suffused\nwith spiritual energy.\c\nWhile in Celestial Tower, Ghost type\nattacks deal resisted damage to Normal\rtypes, and Psychic type attacks deal\rresisted damage to Dark Types.
 
 ----- TEXT FILE 550-----
 0: Professor Juniper: Hi there!\nHow were things with Skyla?\c\nOh? You still haven't\nearned the Gym Badge yet?\c\nWell, if that's the case,\nI'll keep up the field work\r\nuntil the plane is ready to fly.\c\nOh yeah!\nWhy don't you try using this?\c
@@ -9708,6 +10428,7 @@
 8: At the very top of the Tower,\nthere's a big bell.\c\nI've heard that when you\nring it, it pleases the spirits.
 9: You! You came here at the request of\nthe couple in Humilau City, didn't you?!\c\nNo need for a reply!\nIf you want to ring the bell,\r\nyou'll have to battle with me!\c
 10: Win or lose...\nI'm a Waitress...\c\nI carry the customers' orders\nwith a heaping side of love...
+11: This ancient burial ground is suffused\nwith spiritual energy.\c\nWhile in Celestial Tower, Ghost type\nattacks deal resisted damage to Normal\rtypes, and Psychic type attacks deal\rresisted damage to Dark Types.
 
 ----- TEXT FILE 551-----
 0: I'm invincible now!\n'Cause I'm full of hate!\c
@@ -9722,6 +10443,7 @@
 ----- TEXT FILE 553-----
 0: I can't believe those\nthree down there lost...\c\nEven so, you're not getting past me!\c\nYou're fighting for that couple,\nand I'm fighting for myself!\r\nYou know which is stronger, right?!\c
 1: I see...\c\nWe were thinking only about ourselves.\nWe sure weren't thinking about the\r\nPokémon at our sides, were we?
+2: Powerful psychic energy bars\nyou from progressing...\c
 
 ----- TEXT FILE 554-----
 0: A mysterious presence can be felt here!\nCheck the surrounding area?
@@ -9772,6 +10494,7 @@
 8: Route 8
 9: Trainer Tips!\n\c\nPress SELECT to change the location\nof items in the Bag!\c\nPoink!
 10: Tubeline Bridge\nUnova's famous railway bridge
+11: Psychic gazes at you distantly.
 
 ----- TEXT FILE 558-----
 0:        
@@ -10027,6 +10750,15 @@
 3: It's your choice to trust it and be\ntricked, or to live in doubt.\c\nI enjoyed talking with you.\nThis is a small present.\c
 4: They say Zoroark settled in around here\nabout two years ago.\c\nIt changed the appearance of this\ngrassland with its Illusion Ability\r\nand tricked people and Pokémon.\c\nIt's an outrageous rumor, but\na rumor has some truth in it.\c\nEvery rumor has a kernel of truth to it.\c
 5: Growwwwf!
+6: Nidoqueen observes you regally.
+7: Ninetales' warmth reaches you,\neven from a distance.
+8: Vileplume's stench is hard to ignore. 
+9: Victeebell chomps at you playfully. 
+10: Petilil does a little dance. 
+11: The Gloom are enthralled by the\nsweet aroma of a garden...
+12: Bellossom offers you some\nBerries!
+13: Bellossom sways gently with\nthe breeze.
+14: [VAR TRNAME(0)] received some Berries!
 
 ----- TEXT FILE 598-----
 
@@ -10046,10 +10778,10 @@
 0: Bianca: Heeey!\nThis way!\c
 1: Bianca: Come on!\nThis way!\c
 2: Bianca: This kinda reminds me\nof that day on Route 1.\c
-3: OK, here's how it works.\c\nThe Pokédex's pages fill up\nautomatically when you meet Pokémon!\c\nAnd when you catch a Pokémon,\nmore detailed information on it\r\nis added to the Pokédex!\c\nHere, I'll show you how to catch\na Pokémon! Starting...NOW!\c
-4: Bianca: What a relief!\nI caught a Pokémon!\c\nOh! Um...\nRight. I'll go over the important stuff.\c\nFirst, go find a healthy\nPokémon to catch!\r\nYou need to remember this next bit!\c\nIt's best to lower the Pokémon's HP\nbefore you try to catch it.\c\nUse your Pokémon's moves to lower the HP\nof the Pokémon you want to catch.\r\nMaking it fall asleep or paralyzing it\r\nwill make it even easier to catch!\c
+3: Here, I'll show you how to catch\na Pokémon! Starting...NOW!\c
+4: Bianca: What a relief!\nI caught a Pokémon!\c\nOh! Um...\nRight. I'll go over the important stuff.\c\nFirst, go find a healthy\nPokémon to catch!\r\n[COLOR(2)]You need to remember this next bit![COLOR(0)]\c\nIf you [COLOR(1)]HOLD DOWN[COLOR(0)] the "L" or "R" buttons\nand click the "Pokémon" button in battle,\r\nyou can use your Pokédex to scan your\r\nopponent for useful information.\c\nYou can even use this in battles with\nother trainers!\c
 5: You're going to go deliver\nthe Town Map to your friend, right?\c
-6: Continue straight this way\nto get to Floccesy Town!\c
+6: Continue straight this way\nto get to Floccesy Town!\c\nOh, and make use of these!\c
 7: Bye now!\nMeet lots of Pokémon\r\nand catch a lot of them, OK?\c
 8: ???: You there, Trainer!\c
 9: My name is Alder!\c\nI'm a Trainer with a keen interest in the\nworld. One of my goals is to tell people\r\nabout how wonderful it is to walk toward\r\nthe future together with Pokémon.\c
@@ -10070,8 +10802,8 @@
 24: Know what? I'm searching for\nPokémon in the tall grass!\c\nThat's right! If you don't want\nto meet Pokémon, avoid the tall grass!
 25: [VAR TRNAME(0)]!\c
 26: Excuse me! I forgot to tell\nyou something important!\c\nFirst, take these!\c
-27: Those are Oran Berries!\c\nIf you give one to your Pokémon,\nits HP will be restored.\c
-28: What's more! You can give your Pokémon\na Berry to hold!\c\nLike this Oran Berry, for instance.\nWhen a Pokémon holds this Berry, it can\r\neat the Berry if it gets hurt in the heat\r\nof battle and regain some of its lost HP!\c
+27: Those are Cheri Berries!\c\nIf you use one on your Pokémon,\nit'll be cured of paralysis.\c
+28: What's more! You can give your Pokémon\na Berry to hold!\c\nLike this Cheri Berry, for instance.\nWhen a Pokémon holds this Berry, it can\r\neat the Berry if it gets paralyzed\r\nin battle and cure the status!\c
 29: Well... I just told you\nto challenge the Gym Leader.\c\nAspertia's Gym Leader\nis a very strong Pokémon Trainer!\c\nBut you have nothing to worry about!\c\nIf you think hard about what the\nPokémon at your side can do,\r\nand what you should do as a Trainer,\r\nvictory will be yours!\c
 30: And then you should take on\nstronger and stronger Trainers...\r\nActually, take on the Gym Leaders\r\nof each city!\c\nWorking together with your Pokémon\nis what makes you grow as a Trainer.\c\nAs you and your Pokémon grow stronger,\nyour world will get broader!\c
 31: Route 19
@@ -10087,13 +10819,15 @@
 4: Hmm...\nI see. I see!\c
 5: I love to read news and information\nabout the city displayed\r\non the electric bulletin board\r\non the wall!
 6: Remember that?\c\nThe day you passed this gate\nwith your Pokémon for the first time.
+7: We are removing first index.
+8: We are flying
 
 ----- TEXT FILE 603-----
 0: Pokémon battles begin\nwhen eyes meet!\r\nThat's a rule for Trainers!
 1: Come on! A kid without a single\nGym Badge continuing on past here?\c\nBattle with the Trainers and Pokémon\nin this area, then battle some more!
 2: Come on! A kid without a single\nGym Badge continuing on past here?\c\nBattle with the Trainers and Pokémon\nin this area, then battle some more!\c
 3: Hey! That gleaming thing there\nis the Basic Badge!\c\nBut don't get a swelled head!\nIt's a rough world out there!\r\nHere, I'll show you!\c
-4: All right... I'm beat!\c\nWith dependable Pokémon like that,\neven a kid like you can\r\nhold your own against an adult. Yup!
+4: All right... I'm beat!\c\nWith dependable Pokémon like that,\neven a kid like you can\r\nhold your own against an adult. Yup!\c
 5: Route 20
 6: [VAR TRNAME(0)]! Wait!\c
 7: Cheren: Come with me, you two.\c
@@ -10108,6 +10842,7 @@
 16: Now that I think about it...\c\nIf I run this way, no one can help me!\nI have to head toward the ocean!\c\nSo, with that in mind...\c\nI'm going to flee again!\nGood-bye, Virbank City!\c
 17: [VAR TRNAME(1)]: Well, they're\nreally good at running, anyway...\c\nStill, she just said something useful!\c\nThey must be moving around by boat!\c\nCastelia City has a big port...\nI wonder if they headed there.\c\nOK! Let’s go back to Virbank\nand look for someone who looks like\r\nthey know a lot about ships.\c\nIf I remember right, there was a place\nto board boats on the docks.\c
 18: [VAR TRNAME(1)]: Help me check Route 20!
+19: [VAR TRNAME(0)] received some Berries!
 
 ----- TEXT FILE 604-----
 0: Hello!\nOh, you...\c
@@ -10116,6 +10851,10 @@
 3: You know what they say.\nCheerful company shortens the miles!
 4: Do you know about Audino, the Pokémon\nwho hide in rustling grass?\c\nI wonder why Audino give other Pokémon\nso many Exp. Points.
 5: When we walk, grass rustles!\nIt's Pokémon hide-and-seek!
+6: [VAR TRNAME(1)]: Hey [VAR TRNAME(0)]!\c\nLet's see if you can stand up\nto me and [VAR PKNAME(3)] now!
+7: [VAR TRNAME(1)]: Damn, guess I'm still not strong\nenough.\c\nAre you planning on taking on the\nVirbank City Gym?\c\nThen here, take this!
+8:  [VAR TRNAME(1)]: I installed an app to\nlet you travel between cities!\c\nI'll see you later [VAR TRNAME(0)],\nI've got some more training to do!
+9: Your PokéHelper has been upgraded!
 
 ----- TEXT FILE 605-----
 0: Gurooooohhh!
@@ -12553,14 +13292,15 @@
 45: I can't teach it twice. This Pokémon\nalready knows the special move!
 46: Want me to teach [VAR MOVE(1)]\nto [VAR PKNAME(0)]?
 47: The Pokémon I've taken a shine to are\nthe ones you get from the professor!\c\nTo teach all of these Pokémon a\nspecial move, a battle-combo move...\r\nThat's my pledge!
-48: I'm the master Move Tutor!\c\nAnd I'm also obsessed with\n[VAR ITEM2(0)]!\c\nGive me [VAR ITEM2(0)],\nand I'll thank you by teaching\r\nyour Pokémon a move!\c
-49: I'm the master Move Tutor!\c
+48: I'm a registered [COLOR(1)]Move Tutor[COLOR(0)] for the\nBlueberry Academy!\c\nHere, we accept [VAR ITEM2(0)] as payment!\c
+49: I'm a registered [COLOR(1)]Move Tutor[COLOR(0)] for the\nBlueberry Academy!\c
 50: Want me to teach your\nPokémon a move?
 51: Well, that's just fine!\c\nPick the move you want\nme to teach!\c
 52: If you collect some [VAR ITEM2(0)],\nyou come back now.
 53: [VAR TRNAME(0)] handed over\n[VAR NUM2(2)] [VAR ITEM2(1)] in exchange.
 54: This Pokémon can't learn\nthat move!
 55: This Pokémon already knows that move!
+56: [VAR NUM2(0)], [VAR NUM2(1)]
 
 ----- TEXT FILE 616-----
 0: I'm the Day-Care Man.\c\nWe take care of the precious Pokémon\nof other Trainers.\c\nIf you'd like us to raise your\nPokémon, have a word with my wife.
@@ -13147,6 +13887,22 @@
 86: The girl on the bridge...\c\nShe's playing a lullaby for all the\nsleeping trains of this town.
 87: Anville Town\nRolling Out the Steel Rails
 88: It's a subway map of the Unova region.\c
+89: I've been working here for a while, and\nI've found all these interesting stones.\c\nWould you like one? 
+90: Fire Stone
+91: Water Stone
+92: Leaf Stone
+93: Moon Stone
+94: Sun Stone
+95: Shiny Stone
+96: Dawn Stone
+97: Dusk Stone
+98: Thunder Stone
+99: Quit
+100: Are you sure you'd like the\n[VAR ITEM2(0)]?
+101: Okay... which stone would\nyou like?
+102: Okay... here you go.
+103: ...fine.
+104: Leave me alone, I need to find\nmore stones.
 
 ----- TEXT FILE 648-----
 0: Why do people love trains?\c\nMaybe it's the design--the way trains can\nrun so fast and still be so comfortable.\c\nAll the essential parts work together...\nSimple, but so beautiful!
@@ -13194,9 +13950,26 @@
 24: I'm sorry!\c\nI forgot to upgrade the Pokédex\nthat I gave you!\c\nI'm going to add the Habitat List!\nIt's an amazing feature!\c\nI'm just going to borrow your\nPokédex for a second!\c
 25: [VAR TRNAME(0)]'s Pokédex\nwas upgraded!
 26: With the Habitat List, you can check\nwhich Pokémon are in the area!\c\nIt's a mode in the Pokédex!\c
-27: To use it, open up the Pokédex\nand tap the Habitat List button\r\non the lower left of the Touch Screen!\c\nNext, pick the area you want to see!\c\nYou can see all the Pokémon that live in\nthat area. It even tells you which ones\r\nyou've already caught!\c\nWould you like to hear\nmy explanation again?
-28: I have a tip for you!\c\nWhen you're walking down\na path, you'll sometimes see\r\nrustling grass!\r\nIf you go to that spot...\c\nWell, I'll let the rest\nbe a surprise!\c
+27: To use it, open up the Pokédex\nand tap the Habitat List button\r\non the lower left of the Touch Screen!\c\nNext, pick the area you want to see!\c\nYou can see all the Pokémon that live in\nthat area. It even tells you which ones\r\nyou've already caught!\c
+28: Oh, I have a tip for you!\c\nWhen you're walking down\na path, you'll sometimes see\r\nrustling grass!\r\nIf you go to that spot...\c\nWell, I'll let the rest\nbe a surprise!\c
 29: Filling up the Pokédex will\nmake your world bigger!\c\nSo go to many different places\nand meet many different Pokémon, OK?\c\nSee you!\c
+30: Hey [VAR TRNAME(0)], my name is\nProfessor Juniper!\cI trust Bianca found you alright?\cI've got to know: which Pokemon did you\nchoose to be your partner?
+31: I see, you chose Snivy!\cDid you know as Snivy mature, they learn\nto convert sunlight to electricity?\cSnivy is weak to Fire moves, however.\nI have a Water type that could help!\cDo you want this Wingull?
+32: I see, you chose Tepig!\cDid you know Tepig grow up to be fiercesome\nwrestlers? Very menacing!\cTepig is weak to Water moves, however.\nI have a Grass type that could help!\cDo you want this Shroomish?
+33: I see, you chose Oshawott!\cDid you know Oshawott's shell will grow\ninto a full sword, fit for a samurai?\cOshawott is weak to Grass moves, however.\nI have a Fire type that could help!\cDo you want this Numel?
+34: Oh dear, it seems your party is already\nfull!\cTalk to me when you've made some space!
+35: What a wonderful addition to your party!\cAnd here, this will help you\ntrain [VAR PKNAME(1)]!
+36: Oh, I see.\cWell I will be waiting here if you\nchange your mind!
+37: [VAR TRNAME(0)] obtained [VAR PKNAME(1)]!
+38: Would you like to give [VAR PKNAME(1)] a nickname?
+39: Add Wingull to your party?
+40: Add Shroomish to your party?
+41: Add Numel to your party?
+42: Someone really made a mess\nout there!\c\nThere are boulders all over\nthe place!\c
+43: I'm sure with Pokemon by your side, you'll\ndo incredible things [VAR TRNAME(0)]!\cUntil next time!
+44: [VAR TRNAME(0)]'s PokéDex\nwas upgraded!
+45: With the Habitat List, you can check\nwhich Pokémon are in the area!\c\nIt's a mode in the Pokédex!\c
+46: To use it, open up the PokéDex\nand tap the Habitat List button\r\non the lower left of the Touch Screen!\c\nNext, pick the area you want to see!\c\nYou can see all the Pokémon that live in\nthat area. It even tells you which ones\r\nyou've already caught!\c\nWould you like to hear\nmy explanation again?
 
 ----- TEXT FILE 652-----
 0: Here is a little advice!\nKeep a lot of Potions!\c\nHere is some more advice!\nKeep a lot of Poké Balls, too!
@@ -13204,6 +13977,13 @@
 2: Your [VAR PKNAME(0)] is female!\c\nI wonder what the difference is\nbetween male and female Pokémon.
 3: Your [VAR PKNAME(0)]...\nIts gender is unknown.\c\nI wonder what the difference is between\nmale and female Pokémon.
 4: I read the Help on the PC.\nI feel I became smarter!
+5: Now that I'm aware of my hidden power,\nI can tell you what type of Hidden Power\r\nyour Pokémon will learn!\r\nDo you want to know?
+6: When a Pokémon learns the move\nHidden Power, somehow I can tell\r\nwhat type that move will be!\c\nShould I tell you what type of\nHidden Power your Pokémon will learn?
+7: If you want to know, ask me, and I'll\nactivate my hidden power for you!
+8: The type of this Pokémon's\nHidden Power is [VAR TYPE(0)]!
+9: I'm sorry, but this Pokémon can't learn\nto use Hidden Power.
+10: It's not possible for an Egg to use\nHidden Power!
+11: If this Pokémon were to learn\nHidden Power, the move's type\r\nwould be [VAR TYPE(0)]!
 
 ----- TEXT FILE 653-----
 0: Girl: Oh! Are we going to help\ntrain that person, sir?\c
@@ -13252,6 +14032,7 @@
 43: Hey! What's going on?\c\nYour party's full, huh?\c\nOK!\c\nOK!\c\nGot it!\c\nI'll wait here!
 44: I'll leave it with you!\c\nTake good care of it!\c\n[VAR TRNAME(0)]!\c\nI'll be waiting for you in the Black Tower!\c
 45: I'll leave it with you!\c\nTake good care of it!\c\n[VAR TRNAME(0)]!\c\nI'll be waiting for you\nin the White Treehollow\c
+46: Oh, and take this!
 
 ----- TEXT FILE 654-----
 0: Even if you have a lot of them,\nitems never weigh you down, eh?\c
@@ -13279,6 +14060,12 @@
 9: [VAR PKNICK(0)] remembered the move\nSecret Sword!
 10: What?\n[VAR PKNICK(0)] is...\c
 11: [VAR PKNICK(0)] has resolved to battle\nand has changed into Resolute Form!
+12: Happiny casually lifts a boulder, smiling.
+13: Geodude rolls in place.
+14: Vulpix grooms itself, paying you no mind. 
+15: Croagunk makes unsettling eye contact.
+16: Bonsly smiles placidly.\nWhat does he know..?
+17: Onix towers over you menacingly.\nYou don't want to fight him yet. 
 
 ----- TEXT FILE 657-----
 0: Professor Juniper: Well, I suppose\nI should tell you why\r\nI brought you out here.\c

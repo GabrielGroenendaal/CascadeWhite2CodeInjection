@@ -860,9 +860,10 @@ public class MainEvents {
 
 		LABEL_0ad0:
 		Message.ActorVersioned(1024, 8, 18, 8, 0, 0);
-        Global2805(421,1);
-        Message.ActorEx(1024, 72, 8, 0, 0);
-		Message.CloseActor();
+		Message.CloseAll();
+ //          Global2805(542,3);
+ //          Message.ActorEx(1024, 72, 8, 0, 0);
+ //		Message.CloseActor();
 		sub_0d4c();
 		Message.ActorVersioned(1024, 9, 19, 8, 0, 0);
 		Message.CloseActor();

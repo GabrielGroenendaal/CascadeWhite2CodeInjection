@@ -194,14 +194,20 @@ public class MainEvents {
 
 	public static void main_8() { // @ 0x1e
 		Actor.PauseAll();
-		if (EventFlags.Get(2062)==0 && EventFlags.Get(2061)==0) {
-			EventFlags.Clear(2057);
-			EventFlags.Clear(2263);
-			EventFlags.Clear(2059);
-			EventFlags.Clear(2261);
-			EventFlags.Clear(2074);
+		if (EventFlags.Get(536)==0) {
+			EventFlags.Clear(1520 + 541);
+			EventFlags.Clear(1520 + 542);
+			EventFlags.Clear(1520 + 537);
+			EventFlags.Clear(1520 + 743);
+			EventFlags.Clear(1520 + 539);
+			EventFlags.Clear(1520 + 544);
+			EventFlags.Clear(1520 + 741);
+			EventFlags.Set(522);
+			Field.ChangeMapQuicksand(195, 14, 27);
+			goto Label_CleanUpQuickSand1;
 		}
-		Field.ChangeMapQuicksand(195, 14, 27);
+		Field.ChangeMapQuicksand(196, 55, 51);
+		Label_CleanUpQuickSand1:
 		Runtime.FinishSubEvents();
 		Actor.UnpauseAll();
 	}

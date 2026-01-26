@@ -441,7 +441,7 @@ extern "C" void THUMB_BRANCH_SAFESTACK_sub_2019830(u16 zoneId, int hours, int mi
 
     // k::Printf("\nzoneID is %d", zoneId);
 
-    if (GetBackgroundsSetting())
+    if (!GetBackgroundsSetting())
     {
         // k::Printf("\nAnimated Battle Backgrounds Enabled - Using Outdoor Lighting");
         zoneIdToUse = (IsInArray(zoneId)) ? 445 : zoneId; // Checks to see if we're overwriting the lighting

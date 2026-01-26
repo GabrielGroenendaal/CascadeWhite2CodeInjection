@@ -140,7 +140,8 @@ extern "C"
             AttackingMon = PokeCon_GetBattleMon(a1->pokeCon, Value);
         }
 
-        if (a4->MoveID == MOVE492_FOUL_PLAY){
+        if (a4->MoveID == MOVE492_FOUL_PLAY)
+        {
             AttackingMon = PokeCon_GetBattleMon(a1->pokeCon, BattleMon_GetID(DefendingMon));
         }
 
@@ -178,9 +179,9 @@ extern "C"
 
         v13 = RealStat;
 
-        //if (!Handler_IsSimulationMode(a1))
+        // if (!Handler_IsSimulationMode(a1))
         //{
-        //}
+        // }
 
         BattleEventVar_SetConstValue(VAR_MOVE_ID, a4->MoveID);
         BattleEventVar_SetConstValue(VAR_MOVE_TYPE, a4->moveType);
@@ -368,28 +369,28 @@ extern "C"
         v5 = Param + __aeabi_idiv(((__aeabi_idiv(v4, 4) + v35 + 2 * BW2->BaseHP) * Param), 100) + 10;
         data = v5;
         PokeParty_SetParam(pPkm, PF_MaxHP, v5);
-        //v6 = ((v28 / 4 + v33 + 2 * BW2->BaseATK) * Param) / 100 + 5;
+        // v6 = ((v28 / 4 + v33 + 2 * BW2->BaseATK) * Param) / 100 + 5;
         v6 = __aeabi_idiv(((__aeabi_idiv(v28, 4) + v33 + 2 * BW2->BaseATK) * Param), 100) + 5;
         Nature = PokeParty_GetNature(pPkm);
         v8 = adjustStatForNature(Nature, v6, 1);
         PokeParty_SetParam(pPkm, PF_ATK, v8);
-        //v9 = ((v27 / 4 + v32 + 2 * BW2->BaseDEF) * Param) / 100 + 5;
+        // v9 = ((v27 / 4 + v32 + 2 * BW2->BaseDEF) * Param) / 100 + 5;
         v9 = __aeabi_idiv(((__aeabi_idiv(v27, 4) + v32 + 2 * BW2->BaseDEF) * Param), 100) + 5;
         v10 = PokeParty_GetNature(pPkm);
         v11 = adjustStatForNature(v10, v9, 2);
         PokeParty_SetParam(pPkm, PF_DEF, v11);
         v12 = __aeabi_idiv(((__aeabi_idiv(v26, 4) + v31 + 2 * BW2->BaseSPE) * Param), 100) + 5;
-        //v12 = ((v26 / 4 + v31 + 2 * BW2->BaseSPE) * Param) / 100 + 5;
+        // v12 = ((v26 / 4 + v31 + 2 * BW2->BaseSPE) * Param) / 100 + 5;
         v13 = PokeParty_GetNature(pPkm);
         v14 = adjustStatForNature(v13, v12, 5);
         PokeParty_SetParam(pPkm, PF_SPE, v14);
         v15 = __aeabi_idiv(((__aeabi_idiv(v25, 4) + v30 + 2 * BW2->BaseSPA) * Param), 100) + 5;
 
-        //v15 = ((v25 / 4 + v30 + 2 * BW2->BaseSPA) * Param) / 100 + 5;
+        // v15 = ((v25 / 4 + v30 + 2 * BW2->BaseSPA) * Param) / 100 + 5;
         v16 = PokeParty_GetNature(pPkm);
         v17 = adjustStatForNature(v16, v15, 3);
         PokeParty_SetParam(pPkm, PF_SPA, v17);
-        //v15 = __aeabi_fdiv(((__aeabi_fdiv(v25, 4) + v30 + 2 * BW2->BaseSPA) * Param), 100) + 5;
+        // v15 = __aeabi_fdiv(((__aeabi_fdiv(v25, 4) + v30 + 2 * BW2->BaseSPA) * Param), 100) + 5;
         v18 = __aeabi_idiv(((__aeabi_idiv(v24, 4) + v29 + 2 * BW2->BaseSPD) * Param), 100) + 5;
         v19 = PokeParty_GetNature(pPkm);
         v20 = adjustStatForNature(v19, v18, 4);
@@ -420,10 +421,10 @@ extern "C"
 #pragma end region
 #pragma region NewUIChanges
 
-bool THUMB_BRANCH_IsTrainerOT(BoxPkm *pPkm, void *pTrainerInfo)
-{
-  return 1;
-}
+    bool THUMB_BRANCH_IsTrainerOT(BoxPkm *pPkm, void *pTrainerInfo)
+    {
+        return 1;
+    }
     // enum BottomScreenMenuState
     // {
     //     STATE_WAITING = 0x0,
@@ -627,7 +628,7 @@ bool THUMB_BRANCH_IsTrainerOT(BoxPkm *pPkm, void *pTrainerInfo)
 #pragma endregion
 }
 
-    extern "C" void THUMB_BRANCH_SAFESTACK_PML_PkmSetMetParamsEx(BoxPkm *pPkm, u16 location, u16 year, u16 month, u16 day, bool isWild)
+extern "C" void THUMB_BRANCH_SAFESTACK_PML_PkmSetMetParamsEx(BoxPkm *pPkm, u16 location, u16 year, u16 month, u16 day, bool isWild)
 {
     __int16 v8; // r5
     u16 alteredLocation;
@@ -666,3 +667,122 @@ bool THUMB_BRANCH_IsTrainerOT(BoxPkm *pPkm, void *pTrainerInfo)
     PML_PkmSetParam(pPkm, (PkmField)(v8 + 144), month);
     PML_PkmSetParam(pPkm, (PkmField)(v8 + 145), day);
 };
+
+//  REMOVING SIMIPOUR, SIMISAGE, and SIMISEAR from evolution check for mascot badge/eviolite
+extern "C" int HaveEvolutionRoot(ArcTool *a1, u16 a2, int a3, int a4);
+extern "C" int THUMB_BRANCH_SAFESTACK_Handler_CheckEvolution(int a1, int a2)
+{
+    BattleMon *BattleMon; // r0
+    u16 Species;          // r6
+    unsigned int i;       // r4
+
+    BattleMon = PokeCon_GetBattleMon((void *)(a1 + 8), a2);
+    Species = BattleMon_GetSpecies(BattleMon);
+    for (i = 0; i < 7; i = (i + 1))
+    {
+        if (Species == PK516_SIMIPOUR || Species == PK512_SIMISAGE || Species == PK514_SIMISEAR)
+        {
+            return 0;
+        }
+        if (HaveEvolutionRoot((ArcTool *)(a1 + 1188), Species, 0, i))
+        {
+            return 1;
+        }
+    }
+    return 0;
+};
+
+
+// FIXING ABILITY CAPSULES 
+
+extern "C" u32 PML_PkmGetParam(BoxPkm *pPkm, PkmField field, u32 data);
+extern "C" int GetPersonalAbilCount(PersonalData *p);
+extern "C" void THUMB_BRANCH_SAFESTACK_setAbilityForForm(BoxPkm *pPkm, u16 species)
+{
+    u16 Param;        // r0
+    u32 v5;           // r7
+    PersonalField v6; // r6
+    int v7;           // r4
+    u32 v8;           // r0
+    PersonalData *p;  // [sp+0h] [bp-18h]
+
+    Param = PML_PkmGetParam(pPkm, PF_Forme, 0);
+    p = PML_PersonalLoadBW2(species, Param);
+    v5 = PML_PkmGetParam(pPkm, PF_PID, 0);
+    v6 = Personal_Abil1;
+    v7 = 0x10000;
+    if (PML_PkmGetParam(pPkm, PF_MetGameVersion, 0) < 0x14)
+    {
+        v7 = 1;
+    }
+    if (PML_PkmGetParam(pPkm, PF_IsHiddenAbility, 0))
+    {
+        v6 = Personal_AbilH;
+    }
+    else if (GetPersonalAbilCount(p) == 2 && (v5 & v7) != 0)
+    {
+        v6 = Personal_Abil2;
+    }
+    else
+    {
+    }
+
+    if (PML_PkmGetParam(pPkm, PF_ContestCool, 0) == 1)
+    {
+        if (v6 == Personal_Abil1)
+            v6 = Personal_Abil2;
+        else if (v6 == Personal_Abil2)
+            v6 = Personal_Abil1;
+        else
+        {
+        }
+    }
+    v8 = PML_PersonalGetParam(p, v6);
+    PML_PkmSetParam(pPkm, PF_Ability, v8);
+};
+
+extern "C" u32 THUMB_BRANCH_SAFESTACK_getPkmAbilSlotNumber(BoxPkm *pPkm)
+{
+    unsigned __int8 v2; // r4
+    u16 Param;          // r6
+    u16 v4;             // r0
+    u32 v5;             // r7
+    int v6;             // r6
+    PersonalData *p;    // [sp+0h] [bp-18h]
+    int result;
+
+    v2 = 0;
+    Param = PML_PkmGetParam(pPkm, PF_Species, 0);
+    v4 = PML_PkmGetParam(pPkm, PF_Forme, 0);
+    p = PML_PersonalLoadBW2(Param, v4);
+    v5 = PML_PkmGetParam(pPkm, PF_PID, 0);
+    v6 = 0x10000;
+    result = 0;
+    if (PML_PkmGetParam(pPkm, PF_MetGameVersion, 0) < 0x14)
+    {
+        v6 = 1;
+    }
+    if (PML_PkmGetParam(pPkm, PF_IsHiddenAbility, 0))
+    {
+        result = 2;
+    }
+    else if (GetPersonalAbilCount(p) == 2 && (v5 & v6) != 0)
+    {
+        result = 1;
+    }
+    else {
+
+    }
+    if (PML_PkmGetParam(pPkm, PF_ContestCool, 0) == 1)
+    {
+        if (result == 0)
+            result = 1;
+        else if (result == 1)
+            result = 0;
+        else
+        {
+        }
+    }
+
+    return result;
+}

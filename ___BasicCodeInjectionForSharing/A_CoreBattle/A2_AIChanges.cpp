@@ -3759,7 +3759,7 @@ extern "C"
 #endif
         if (BattleMon_CheckIfMoveCondition(attacker, CONDITION_SLEEP))
         {
-            AIConditionalJump(a1, 0, attacker->MoveConditionCounter[CONDITION_SLEEP] + 1, Condition_GetTurnMax(&attacker->Conditions[CONDITION_SLEEP]), destination);
+            AIConditionalJump(a1, 0, (attacker->MoveConditionCounter[CONDITION_SLEEP] + 1), Condition_GetTurnMax(&attacker->Conditions[CONDITION_SLEEP]), destination);
         }
         return a2->result;
     }

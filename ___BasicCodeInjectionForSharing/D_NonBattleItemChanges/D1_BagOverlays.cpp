@@ -131,20 +131,20 @@ extern "C"
 
         v2 = a1->field_28C;
         ItemUseType = v2->ItemUseType;
-        k::Printf("\n--- PokeList_ItemUseMain Called ---\nItemUseType: %d\nItemID: %d\n", ItemUseType, v2->ItemID);
+        // k::Printf("\n--- PokeList_ItemUseMain Called ---\nItemUseType: %d\nItemID: %d\n", ItemUseType, v2->ItemID);
         if (ItemUseType <= 27)
         {
-            k::Printf("\nItemUseType is 27 or less\n");
+            // k::Printf("\nItemUseType is 27 or less\n");
             if (IsEqual(ItemUseType, 0) || IsEqual(ItemUseType, 6) || IsEqual(ItemUseType, 9) || IsEqual(ItemUseType, 0xE) || IsEqual(ItemUseType, 0x10) || IsEqual(ItemUseType, 0x12) || IsEqual(ItemUseType, 0x15) || IsEqual(ItemUseType, 0x19) || IsEqual(ItemUseType, 0x1B))
             {
-                k::Printf("\nItemUseType matched one of the first set\n");
+                // k::Printf("\nItemUseType matched one of the first set\n");
                 sub_219B1DC(a1);
                 a1->field_D = 2;
                 return;
             }
             else if (IsEqual(ItemUseType, 1))
             {
-                k::Printf("\nItemUseType matched 1\n");
+                // k::Printf("\nItemUseType matched 1\n");
                 a1->field_10C = (int)sub_219FEA8(a1, a1->PokeList_Menu, 0, 22, 21u, 0);
                 sub_219B1DC(a1);
                 a1->field_D = 2;
@@ -152,7 +152,7 @@ extern "C"
             }
             else if (IsEqual(ItemUseType, 3))
             {
-                k::Printf("\nItemUseType matched 3\n");
+                // k::Printf("\nItemUseType matched 3\n");
                 a1->field_14 = 0;
                 sub_219B1DC(a1);
                 a1->field_D = 2;
@@ -160,10 +160,10 @@ extern "C"
             }
             else if (IsEqual(ItemUseType, 5))
             {
-                k::Printf("\nItemUseType matched 5\n");
+                // k::Printf("\nItemUseType matched 5\n");
                 if (PokeList_IsItemSacredAsh(a1, v2->ItemID))
                 {
-                    k::Printf("\nItem is Sacred Ash, checking for fainted Pokemon\n");
+                    // k::Printf("\nItem is Sacred Ash, checking for fainted Pokemon\n");
                     FaintedPkmSlot = PokeList_GetFaintedPkmSlot(a1);
                     if (FaintedPkmSlot == -1)
                     {
@@ -186,7 +186,7 @@ extern "C"
                 }
                 else if (PokeList_GetItemCountByID(a1, a1->field_28C->ItemID))
                 {
-                    k::Printf("\nItem is not Sacred Ash, but we have more than 0 of the item\n");
+                    // k::Printf("\nItem is not Sacred Ash, but we have more than 0 of the item\n");
                     sub_219B1DC(a1);
                     a1->field_D = 2;
                 }
@@ -201,7 +201,7 @@ extern "C"
                     a1->field_D = a1->field_C;
                     a1->field_C = 0;
                 }
-                k::Printf("\nFinished processing ItemUseType 5\n");
+                // k::Printf("\nFinished processing ItemUseType 5\n");
                 return;
             }
             else if (IsEqual(ItemUseType, 7) || IsEqual(ItemUseType, 8))
@@ -1375,21 +1375,13 @@ extern "C"
                     if (ability1 == currentAbility)
                     {
                         PokeParty_SetParam(a1, PF_Ability, ability2);
-                        // PokeParty_RecalcStats(a1);
-                        // int PID = PokeParty_GetParam(a1, PF_PID, 0);
-                        // PID |= 0x10000;
-                        // PokeParty_SetParam(a1, PF_PID, PID);
-                        // PokeParty_RecalcStats(a1);
+                        PokeParty_SetParam(a1, PF_ContestCool, ((PokeParty_GetParam(a1, PF_ContestCool, 0) == 0) ? 1 : 0)); 
                     }
                     else
                     {
 
                         PokeParty_SetParam(a1, PF_Ability, ability1);
-                        // PokeParty_RecalcStats(a1);
-                        // int PID = PokeParty_GetParam(a1, PF_PID, 0);
-                        // PID &= 0x10000;
-                        // PokeParty_SetParam(a1, PF_PID, PID);
-                        // PokeParty_RecalcStats(a1);
+                        PokeParty_SetParam(a1, PF_ContestCool, ((PokeParty_GetParam(a1, PF_ContestCool, 0) == 0) ? 1 : 0)); 
                     }
                 }
             }

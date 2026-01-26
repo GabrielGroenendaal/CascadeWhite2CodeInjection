@@ -1268,7 +1268,7 @@ void Sequence106()
 void Sequence107()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 359);
+	SetVarEqVal(0x800C, 356);
 	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();

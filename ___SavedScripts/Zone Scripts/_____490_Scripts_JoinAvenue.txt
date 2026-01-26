@@ -626,7 +626,7 @@ public class MainEvents {
 	public static void main_13() {
 		int v34;
 		int v35;
-		
+		int camera;
 		// Run the introduction shit if it hasn't been done yet
 		if (EventWorks.Get(16730)==0){
 			goto LABEL_INTRODUCTION;
@@ -643,7 +643,7 @@ public class MainEvents {
 		EventFlags.Clear(1768);
 		EventFlags.Clear(1770);
 		EventFlags.Clear(1771);
-		EventFlag.Clear(522);
+		EventFlags.Clear(522);
 		goto LABEL_FINISHED;
 
 		LABEL_INTRODUCTION:
@@ -665,15 +665,29 @@ public class MainEvents {
 		Message.ActorEx(1024, 56, 0, 0, 0);
 		Input.LastKeyWait();
 		Message.CloseAll();
-		TurnEast32Frames(0);
-		Actor.WaitActionFinish();
-		Message.ActorEx(1024, 57, 0, 0, 0);
+
+          ShowExclamationMark(0);
+          Actor.WaitActionFinish();
+          Actor.WalkRoute(0, 12, 63, 1, 2, 1);
+          TurnWest(0);
+          Actor.WaitActionFinish();
+          // OrganizerCrashOut1(0);
+		// TurnEast32Frames(0);
+		// Actor.WaitActionFinish();
+		Message.Spiked(57, 2);
 		Message.CloseAll();
-		TurnWest32Frames(0);
-		Actor.WaitActionFinish();
-		Message.ActorEx(1024, 58, 0, 0, 0);
+          // OrganizerCrashOut2(0);
+          ShowExclamationMark(0);
+          Actor.WaitActionFinish();
+          Actor.WalkRoute(0, 18, 62, 1, 2, 1);
+          Actor.WaitActionFinish();
+		//TurnWest32Frames(0);
+		//Actor.WaitActionFinish();
+		Message.Spiked(58, 2);
 		Message.CloseAll();
-		TurnSouth32Frames(0);
+		// TurnSouth32Frames(0);
+          Actor.WalkRoute(0, v34, v35-1, 1, 8, 1);
+          TurhSouth(0);
 		Actor.WaitActionFinish();
 		Message.ActorEx(1024, 59, 0, 0, 0);
 		Input.LastKeyWait();
@@ -794,11 +808,10 @@ public class MainEvents {
 		
 		Runtime.FinishSubEvents();
 
-		
 		Actor.UnpauseAll();
 	}
 
-	// talking to any of the crowds
+	// talking to any of the crowd
 	public static void main_18(){
 		Actor.PauseAll();
 		Sound.SEPlay(1351);
@@ -1033,6 +1046,39 @@ public class MainEvents {
 		Action000c(1);
 	}
 
+    static meta void WalkEastThenNorthThenEast(int npcId) : VActionSequence {
+		Action0019(1);
+	}
+
+    static meta void ShowExclamationMark(int npcId) : VActionSequence {
+		Action004b(1);
+	}
+
+    static meta void OrganizerCrashOut1(int npcId) : VActionSequence {
+		Action0016(2);
+        Action0014(9);
+        Action0016(1);
+	}
+
+    static meta void OrganizerCrashOut2(int npcId) : VActionSequence {
+		Action0017(7);
+	}
+
+    static meta void OrganizerCrashOut3(int npcId) : VActionSequence {
+	   Action0016(2);
+        Action0015(1);
+        Action0016(2);
+        Action0015(8);
+	}
+
+	static meta void TurnWest(int npcId) : VActionSequence {
+		Action0022(1);
+	}
+
+		static meta void TurhSouth(int npcId) : VActionSequence {
+		Action0019(1);
+	}
+
 	static meta void Global2805(int a1, int a2) : VGlobalCall[2805];
 	static native void Action0000(int amount) : 0x0;
 	static native void Action0001(int amount) : 0x1;
@@ -1042,7 +1088,11 @@ public class MainEvents {
 	static native void Action000d(int amount) : 0xd;
 	static native void Action000e(int amount) : 0xe;
 	static native void Action000f(int amount) : 0xf;
-	static native void Action0019(int amount) : 0x21;
+     static native void Action0014(int amount) : 0x14; // Walk North2F
+     static native void Action0015(int amount) : 0x15; // Walk South 2F
+     static native void Action0016(int amount) : 0x16; // Walk West 2F
+	static native void Action0017(int amount) : 0x17; // Walk East 2F
+     static native void Action0019(int amount) : 0x21;
 	static native void Action0020(int amount) : 0x20;
 	static native void Action0022(int amount) : 0x22;
 	static native void Action0023(int amount) : 0x23;

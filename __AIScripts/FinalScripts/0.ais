@@ -1460,7 +1460,7 @@ Label_FutureSight:
 
 Label_FakeOut:
 	StoreIsFirstTurn(attacker)
-	JumpIfStoredEQ(false, &deprioritizeBy10)
+	JumpIfStoredEQ(false, &deprioritizeBy12)
 	EndScript()
 
 

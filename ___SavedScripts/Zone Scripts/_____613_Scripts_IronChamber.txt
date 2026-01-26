@@ -72,10 +72,7 @@ public class MainEvents {
 		int v0;
 
 		Actor.PauseAll();
-		Sound.SEPlay(1351);
-		Message.System(0, 2);
-		Message.WaitAdvance();
-		Message.CloseSystem();
+
 		v16 = Player.GetDirection();
 		if (v16 == 0) {
 			ActionSequence_01d4(0);
@@ -102,6 +99,10 @@ public class MainEvents {
 
 		LABEL_0130:
 		Actor.WaitActionFinish();
+		Sound.SEPlay(1351);
+		Message.System(0, 2);
+		Message.WaitAdvance();
+		Message.CloseSystem();
 		Message.System(26, 2);
 		Message.WaitAdvance();
 		Message.CloseSystem();
@@ -116,26 +117,28 @@ public class MainEvents {
 
 		Message.Spiked(28, 2);
 		Message.WaitAdvance();
-		Message.CloseSystem();
+		Message.CloseAll();
 
 		Battle.CallTrainerBattle(491, 0, 0);
 		v0 = Battle.IsTrainerVictory();
+		Battle.EndTrainerBattle();
 		if (v0 == 1) {
-			Message.Info(29, 2);
+			
+			Message.System(29, 2);
 			Input.LastKeyWait();
-			Message.CloseInfo();
+			Message.CloseAll();
 			Global2805(289,1);
 			EventWorks.Set(16451, 2);
 			EventFlags.Set(923);
 			goto Label_PostBattle;
 		}
-		Message.Info(30, 2);
+		Message.System(30, 2);
 		Input.LastKeyWait();
-		Message.CloseActor();
+		Message.CloseAll();
 		PokeParty.RecoverAll();
-		Message.Info(33, 2);
+		Message.System(33, 2);
 		Input.LastKeyWait();
-		Message.CloseActor();
+		Message.CloseAll();
 		EventWorks.Set(16451, 1);
 		goto LABEL_01c5;
 
@@ -144,7 +147,7 @@ public class MainEvents {
 		Sound.PVPlay(638, 0);
 		Message.Spiked(31, 2);
 		Message.WaitAdvance();
-		Message.CloseSystem();
+		Message.CloseAll();
 
 		Fade.FadeEx(3, 0, 16, 4);
 		Fade.FadeExWait();
@@ -157,7 +160,7 @@ public class MainEvents {
 		
 		Message.System(32, 2);
 		Input.LastKeyWait();
-		Message.CloseSystem();
+		Message.CloseAll();
 
 
 		LABEL_01c5:

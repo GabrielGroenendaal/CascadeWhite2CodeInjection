@@ -951,7 +951,7 @@ extern "C"
     */
     void modifyFieldStatus(BattleFieldStatus *fieldStatus, int foe1TrID, BattleStyle style)
     {
-        if (!GetBackgroundsSetting())
+        if (GetBackgroundsSetting())
         {
             return;
         }
@@ -1319,7 +1319,7 @@ extern "C"
 //                   PlayerStateZoneID,
 //                   status->BattleBGID);
 // #endif
-        if (GetBackgroundsSetting())
+        if (!GetBackgroundsSetting())
         {
             status->BattleBGID = ZoneIdToBackgroundID[PlayerStateZoneID];
         }
@@ -1345,7 +1345,7 @@ extern "C"
 //                   status->BtlWeather,
 //                   status->Season);
 // #endif
-        if (GetBackgroundsSetting())
+        if (!GetBackgroundsSetting())
         {
 // #if DEBUGGING_BACKGROUNDS
 //             k::Printf("\nSaveBtlFieldStatus: Checking for position based background changes");
