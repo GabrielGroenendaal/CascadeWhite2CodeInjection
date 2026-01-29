@@ -23,10 +23,9 @@ extern "C" u32 SearchArray(const u32 *const arr, const u32 arrSize, const u32 va
 u8 entryTurn = 0;
 
 bool checkIfWildBattle(ServerFlow *a1)
-    {
-        return a1->mainModule->btlSetup->btlType == 0;
+{
+    return a1->mainModule->btlSetup->btlType == 0;
 }
-
 
 struct BattleFieldExt
 {
@@ -130,7 +129,6 @@ extern "C" BattleField *THUMB_BRANCH_BattleField_Init(HeapID a1)
     return v1;
 }
 
-
 extern "C" int ServerEvent_CheckMultihitHits(ServerFlow *a1, BattleMon *a2, int a3, HitCheckParam *a4);
 extern "C" void THUMB_BRANCH_LINK_ServerControl_DamageRoot_0x36(ServerFlow *serverFlow, BattleMon *attackingMon, MoveID moveID, HitCheckParam *hitCheckParam)
 {
@@ -167,7 +165,7 @@ extern "C" void ServerEvent_AddConditionFailed(ServerFlow *a1, BattleMon *a2, Ba
 extern "C" void PokeSet_SeekStart(PokeSet *a1);
 extern "C" BattleMon *PokeSet_SeekNext(PokeSet *a1);
 
-//Called when the ability of a Pokemon stops being nullifyed [ServerControl_CureCondition]
+// Called when the ability of a Pokemon stops being nullifyed [ServerControl_CureCondition]
 extern "C" void ServerEvent_AbilityNullifyCured(ServerFlow *serverFlow, BattleMon *battleMon)
 {
     BattleEventVar_Push();
@@ -458,8 +456,7 @@ extern "C" BattleEventHandlerTableEntry *THUMB_BRANCH_EventAddPoisonPoint(u32 *h
 
 extern "C" void CommonEmergencyExitCheck(ServerFlow *serverFlow, u32 currentSlot)
 {
-       if (checkIfWildBattle(serverFlow))
-        return;
+
     BattleMon *currentMon = Handler_GetBattleMon(serverFlow, currentSlot);
     u32 maxHP = BattleMon_GetValue(currentMon, VALUE_MAX_HP);
 
@@ -469,7 +466,7 @@ extern "C" void CommonEmergencyExitCheck(ServerFlow *serverFlow, u32 currentSlot
     u32 beforeDmgHP = currentHP + BattleEventVar_GetValue(VAR_DAMAGE) - BattleField_GetSubstituteDamage(currentSlot);
     u32 beforeDmgHPPercent = div32((beforeDmgHP * 100), maxHP);
 #if DEBUGGING_DYNAMICSPEED && DEBUGGING_ALL
-   k::Printf("MAX HP: %d \n", maxHP);
+    k::Printf("MAX HP: %d \n", maxHP);
     k::Printf("CURRENT HP: %d \n", currentHP);
     k::Printf("DAMAGE: %d \n", BattleEventVar_GetValue(VAR_DAMAGE));
     k::Printf("SUBSTITUTE DAMAGE: %d \n", BattleField_GetSubstituteDamage(currentSlot));
@@ -487,8 +484,7 @@ extern "C" void CommonEmergencyExitCheck(ServerFlow *serverFlow, u32 currentSlot
 }
 extern "C" void HandlerEmergencyExitDamageCheck(BattleEventItem *item, ServerFlow *serverFlow, u32 pokemonSlot, u32 *work)
 {
-       if (checkIfWildBattle(serverFlow))
-        return;
+
     u32 targetCount = BattleEventVar_GetValue(VAR_TARGET_COUNT);
     for (u32 target = 0; target < targetCount; ++target)
     {
@@ -501,33 +497,32 @@ extern "C" void HandlerEmergencyExitDamageCheck(BattleEventItem *item, ServerFlo
             if (BattleField_CheckEmergencyExitFlag(pokemonSlot))
             {
                 BattleField_ResetEmergencyExitFlag(pokemonSlot);
-#if DEBUGGING_DYNAMICSPEED && DEBUGGING_ALL
-                k::Printf("EE SWITCH -> SLOT: %d\n", pokemonSlot);
-#endif
-                BattleHandler_PushRun(serverFlow, EFFECT_ABILITYPOPUPIN, pokemonSlot);
+                // #if DEBUGGING_DYNAMICSPEED && DEBUGGING_ALL
+                // #endif
+                if (Handler_GetFightEnableBenchPokeNum(serverFlow, pokemonSlot) && Handler_CheckReservedMemberChangeAction(serverFlow))
+                {
+                    BattleHandler_PushRun(serverFlow, EFFECT_ABILITYPOPUPIN, pokemonSlot);
 
-                HandlerParam_Switch *switchOut;
-                switchOut = (HandlerParam_Switch *)BattleHandler_PushWork(serverFlow, EFFECT_SWITCH, pokemonSlot);
-                switchOut->pokeID = pokemonSlot;
-                BattleHandler_PopWork(serverFlow, switchOut);
+                    HandlerParam_Switch *switchOut;
+                    switchOut = (HandlerParam_Switch *)BattleHandler_PushWork(serverFlow, EFFECT_SWITCH, pokemonSlot);
+                    switchOut->pokeID = pokemonSlot;
+                    BattleHandler_PopWork(serverFlow, switchOut);
 
-                BattleHandler_PushRun(serverFlow, EFFECT_ABILITYPOPUPOUT, pokemonSlot);
+                    BattleHandler_PushRun(serverFlow, EFFECT_ABILITYPOPUPOUT, pokemonSlot);
+                }
             }
         }
     }
 }
 extern "C" void HandlerEmergencyExitSimpleCheck(BattleEventItem *item, ServerFlow *serverFlow, u32 pokemonSlot, u32 *work)
 {
-    if (checkIfWildBattle(serverFlow))
-        return;
+
     if (IS_NOT_NEW_EVENT)
         return;
 
     if (pokemonSlot == BattleEventVar_GetValue(NEW_VAR_MON_ID))
     {
-#if DEBUGGING_DYNAMICSPEED && DEBUGGING_ALL
-        k::Printf("EE SIMPLE -> SLOT: %d\n", pokemonSlot);
-#endif
+
         CommonEmergencyExitCheck(serverFlow, pokemonSlot);
     }
 }
@@ -536,12 +531,9 @@ extern "C" void HandlerEmergencyExitSwitchEnd(BattleEventItem *item, ServerFlow 
     if (BattleField_CheckEmergencyExitFlag(pokemonSlot))
     {
         BattleField_ResetEmergencyExitFlag(pokemonSlot);
-#if DEBUGGING_DYNAMICSPEED && DEBUGGING_ALL
-        k::Printf("EE SWITCH END -> SLOT: %d\n", pokemonSlot);
-#endif
+
         if (Handler_GetFightEnableBenchPokeNum(serverFlow, pokemonSlot) && Handler_CheckReservedMemberChangeAction(serverFlow))
         {
-
             BattleHandler_PushRun(serverFlow, EFFECT_ABILITYPOPUPIN, pokemonSlot);
 
             HandlerParam_Switch *switchOut;
@@ -718,7 +710,6 @@ extern "C" BattleEventHandlerTableEntry *THUMB_BRANCH_EventAddPressure(u32 *hand
 // Stores data of extra action generated by Dancer, Instruct...
 // - Set in [HandlerDancerCheckMove]
 // - Reset and used in [ServerFlow_ActOrderProcMain]
-
 
 // extern "C" bool ProcessEntryTurn(ServerFlow *serverFlow)
 // {
@@ -914,15 +905,15 @@ extern "C" void SwapPokemonOrder(ActionOrderWork *actionOrder, u16 *speedStats, 
 
 extern "C" void THUMB_BRANCH_ServerEvent_BeforeAttacks(ServerFlow *a1, BattleMon *a2, int a3)
 {
-  int ID; // r0
+    int ID; // r0
 
-//   k::Printf("Dynamic Speed - Before Attacks Event\n");
-  BattleEventVar_Push();
-  ID = BattleMon_GetID(a2);
-  BattleEventVar_SetValue(VAR_MON_ID, ID);
-  BattleEventVar_SetValue(VAR_MOVE_ID, a3);
-  BattleEvent_CallHandlers(a1, EVENT_BEFORE_ATTACKS);
-  BattleEventVar_Pop();
+    //   k::Printf("Dynamic Speed - Before Attacks Event\n");
+    BattleEventVar_Push();
+    ID = BattleMon_GetID(a2);
+    BattleEventVar_SetValue(VAR_MON_ID, ID);
+    BattleEventVar_SetValue(VAR_MOVE_ID, a3);
+    BattleEvent_CallHandlers(a1, EVENT_BEFORE_ATTACKS);
+    BattleEventVar_Pop();
 }
 
 extern "C" void PokeSet_SortBySpeedDynamic(ServerFlow *serverFlow, ActionOrderWork *actionOrder, u8 firstIdx, u8 turnStart)
@@ -1328,8 +1319,8 @@ extern "C" void ServerEvent_SwitchIn(ServerFlow *serverFlow, BattleMon *battleMo
 extern "C" void ServerEvent_AfterLastSwitchIn(ServerFlow *serverFlow);
 extern "C" void PokeSet_Add(PokeSet *pokeSet, BattleMon *battleMon);
 extern "C" u32 PokeSet_SortBySpeed(PokeSet *pokeSet, ServerFlow *serverFlow);
-extern "C" u32 ServerControl_ActOrderProc_OnlyPokeIn(ServerFlow* serverFlow, u32* clientAction);
-extern "C" BtlServerWk* BattleServer_InitChangePokemonReq(BtlServerWk* result);
+extern "C" u32 ServerControl_ActOrderProc_OnlyPokeIn(ServerFlow *serverFlow, u32 *clientAction);
+extern "C" BtlServerWk *BattleServer_InitChangePokemonReq(BtlServerWk *result);
 extern "C" void BattleEventVar_CheckStackCleared();
 
 extern "C" u32 ServerFlow_SwitchEndTurn(ServerFlow *serverFlow, u32 *clientAction)
@@ -1371,11 +1362,10 @@ extern "C" void sub_219F0EC(BtlServerWk *btlServer);
 extern "C" bool sub_219F06C(BtlServerWk *btlServer, u8, u8);
 extern "C" void sub_219F168(BtlServerWk *server, u16 cmdID, u8 *data, u32 dataSize);
 extern "C" bool BattleServer_IsWaitingClientReply(BtlServerWk *btlServer);
-#define SEQUENCE_FUNCTION(name) u32(*name)(BtlServerWk* btlServer, u32* statePtr)
-extern "C" void BattleServer_ChangeSequence(BtlServerWk* btlServer, SEQUENCE_FUNCTION(sequence));
-extern "C" void BattleServer_SetDefaultSequence(BtlServerWk* btlServer);
-extern "C" BtlServerWk* BattleServer_InitChangePokemonReq(BtlServerWk* result);
-
+#define SEQUENCE_FUNCTION(name) u32 (*name)(BtlServerWk * btlServer, u32 * statePtr)
+extern "C" void BattleServer_ChangeSequence(BtlServerWk *btlServer, SEQUENCE_FUNCTION(sequence));
+extern "C" void BattleServer_SetDefaultSequence(BtlServerWk *btlServer);
+extern "C" BtlServerWk *BattleServer_InitChangePokemonReq(BtlServerWk *result);
 
 extern "C" u32 BtlServer_EndTurnSequence(BtlServerWk *btlServer, u32 *state)
 {

@@ -995,6 +995,7 @@ extern "C"
         return v18;
     }
 
+    extern void setAbilityForForm(BoxPkm *pPkm, u16 species);
     /*
 
             --------------------------------------------------------------------------------------------------
@@ -1332,6 +1333,8 @@ extern "C"
                 int abilityHidden = PML_PersonalGetParamSingle(species, form, Personal_AbilH);
                 int ability1 = PML_PersonalGetParamSingle(species, form, Personal_Abil1);
                 int ability2 = PML_PersonalGetParamSingle(species, form, Personal_Abil2);
+                int isHidden = PokeParty_GetParam(a1, PF_IsHiddenAbility, 0);
+                
                 // k::Printf("\nCurrent Ability: %d\nHidden Ability: %d\nAbility 1: %d\nAbility 2: %d\n", currentAbility, abilityHidden, ability1, ability2);
                 if (!abilityHidden)
                 {
@@ -1345,16 +1348,21 @@ extern "C"
                 {
                     v6 = 1;
                 }
-                else if (currentAbility == abilityHidden)
-                {
-                    v6 = 1;
+                else {
+                    if (isHidden)
+                    {
+                        PokeParty_SetParam(a1, PF_IsHiddenAbility, 0);
+                        setAbilityForForm(&a1->Base, species);
+                        PokeParty_RecalcStats(a1);
+                    }
+                    else
+                    {
+                        // k::Printf("\nSetting Hidden Ability: %d\n", abilityHidden);
+                        PokeParty_SetHiddenAbil(a1, species, form);
+                        PokeParty_RecalcStats(a1);
+                    }
                 }
-                else
-                {
-                    // k::Printf("\nSetting Hidden Ability: %d\n", abilityHidden);
-                    PokeParty_SetHiddenAbil(a1, species, form);
-                    PokeParty_RecalcStats(a1);
-                }
+               
             }
             else
             {
@@ -1372,10 +1380,16 @@ extern "C"
                 }
                 else
                 {
+                    PokeParty_SetParam(a1, PF_ContestCool, ((PokeParty_GetParam(a1, PF_ContestCool, 0) == 0) ? 1 : 0)); 
+                    setAbilityForForm(&a1->Base, species);
+                    PokeParty_RecalcStats(a1);
+                    /*
                     if (ability1 == currentAbility)
                     {
                         PokeParty_SetParam(a1, PF_Ability, ability2);
                         PokeParty_SetParam(a1, PF_ContestCool, ((PokeParty_GetParam(a1, PF_ContestCool, 0) == 0) ? 1 : 0)); 
+                        setAbilityForForm(a1->base, species);
+                        PokeParty_RecalcStats(a1);
                     }
                     else
                     {
@@ -1383,6 +1397,7 @@ extern "C"
                         PokeParty_SetParam(a1, PF_Ability, ability1);
                         PokeParty_SetParam(a1, PF_ContestCool, ((PokeParty_GetParam(a1, PF_ContestCool, 0) == 0) ? 1 : 0)); 
                     }
+                    */
                 }
             }
 
@@ -1455,4 +1470,6 @@ extern "C"
         GFL_HeapFree(DataFile);
         return v6;
     }
+
+    
 }

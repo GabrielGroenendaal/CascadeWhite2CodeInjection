@@ -718,7 +718,7 @@ import messages.script.Msg0315.MSGID;
 		Message.Actor(1024, 53, 0, 0);
 		Input.LastKeyWait();
 		Message.CloseAll();
-		v5 = System.Random(11);
+		v5 = System.Random(13);
 		if (v5 == 0) {
 			v7 = PokeParty.AddEgg(239, 0);
 			goto LABEL_1104;
@@ -765,6 +765,14 @@ import messages.script.Msg0315.MSGID;
 		}
 		if (v5 == 11) {
 			v7 = PokeParty.AddEgg(431, 0);
+			goto LABEL_1104;
+		}
+		if (v5 == 12) {
+			v7 = PokeParty.AddEgg(522, 0);
+			goto LABEL_1104;
+		}
+		if (v5 == 13) {
+			v7 = PokeParty.AddEgg(406, 0);
 			goto LABEL_1104;
 		}
 

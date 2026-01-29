@@ -2644,7 +2644,7 @@ Label_InvulnerableTurns:
 
 Label_ShadowForce:
 	JumpIfHeldItemEQ(attacker, item.power_herb, &address_0x2B12)
-	Jump(&Label_SkyDrop)
+	Jump(&endScript_DigDive)
 
 address_0x2B12:
 	AddToScore(1)

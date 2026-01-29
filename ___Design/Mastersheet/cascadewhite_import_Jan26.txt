@@ -1,6 +1,4 @@
 {
-  "title": "Cascade White",
-
   "pok_replacements": {
     "": "badegg"
   },
@@ -204,7 +202,7 @@
     "ringtarget": "covertcloak",
     "bindingband": "utilityumbrella"
   },
-   "moves": {
+  "moves": {
     "Concuss": {
       "type": "Psychic",
       "basePower": 55,
@@ -87442,7 +87440,7 @@
           ],
           [
             22,
-            "Flamethrower"
+            "Stompin Tantrum"
           ],
           [
             25,
@@ -87596,7 +87594,7 @@
           ],
           [
             22,
-            "Flamethrower"
+            "Stompin Tantrum"
           ],
           [
             25,
@@ -87772,7 +87770,7 @@
           ],
           [
             22,
-            "Flamethrower"
+            "Stompin Tantrum"
           ],
           [
             25,
@@ -97225,7 +97223,7 @@
           ],
           [
             25,
-            "Recycle"
+            "Rock Polish"
           ],
           [
             27,
@@ -97241,7 +97239,7 @@
           ],
           [
             39,
-            "Counter"
+            "Recycle"
           ],
           [
             43,
@@ -97249,11 +97247,11 @@
           ],
           [
             46,
-            "Obstruct"
+            "Stone Edge"
           ],
           [
             49,
-            "Stone Edge"
+            "Counter"
           ],
           [
             53,
@@ -97261,7 +97259,7 @@
           ],
           [
             57,
-            "Swords Dance"
+            "Obstruct"
           ],
           [
             62,
@@ -97396,7 +97394,7 @@
           ],
           [
             25,
-            "Recycle"
+            "Rock Polish"
           ],
           [
             27,
@@ -97412,7 +97410,7 @@
           ],
           [
             39,
-            "Counter"
+            "Recycle"
           ],
           [
             43,
@@ -97420,11 +97418,11 @@
           ],
           [
             46,
-            "Obstruct"
+            "Stone Edge"
           ],
           [
             49,
-            "Stone Edge"
+            "Counter"
           ],
           [
             53,
@@ -97432,7 +97430,7 @@
           ],
           [
             57,
-            "Swords Dance"
+            "Obstruct"
           ],
           [
             62,

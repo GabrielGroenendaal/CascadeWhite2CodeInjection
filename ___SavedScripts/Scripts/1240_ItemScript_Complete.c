@@ -181,12 +181,12 @@ void Sequence14()
 	End();
 }
 
-/* White Herb x2 - Flocessy Ranch*/
+/* Brightpowder - Flocessy Ranch*/
 void Sequence15()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 214);
-	SetVarEqVal(0x800D, 2);
+	SetVarEqVal(0x800C, 213);
+	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -205,11 +205,11 @@ void Sequence16()
 	End();
 }
 
-/* Trickster Herb (x2) - Virbank Complex (Outside)*/
+/* White Herb (x2) - Virbank Complex (Outside)*/
 void Sequence17()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 136);
+	SetVarEqVal(0x800C, 214);
 	SetVarEqVal(0x800D, 2);
 	Sequence400();
 	WaitMoment();
@@ -624,12 +624,12 @@ void Sequence51()
 	End();
 }
 
-/* White Herb (x5) - Castelia Battle Company */
+/* Trickster Herb (x2) - Castelia Battle Company */
 void Sequence52()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 214);
-	SetVarEqVal(0x800D, 5);
+	SetVarEqVal(0x800C, 136);
+	SetVarEqVal(0x800D, 2);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -1101,12 +1101,12 @@ void Sequence92()
 	End();
 }
 
-/* CHARGESTONE CAVE - Electric Gem (x10) */
+/* CHARGESTONE CAVE - Electric Gem (x5) */
 void Sequence93()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 550);
-	SetVarEqVal(0x800D, 10);
+	SetVarEqVal(0x800D, 5);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -1125,12 +1125,12 @@ void Sequence94()
 	End();
 }
 
-/* CHARGESTONE CAVE - Wacan Berry (x10) */
+/* CHARGESTONE CAVE - Wacan Berry (x5) */
 void Sequence95()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 186);
-	SetVarEqVal(0x800D, 10);
+	SetVarEqVal(0x800D, 5);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -1240,12 +1240,12 @@ void Sequence104()
 	End();
 }
 
-/* CELESTIAL ROOFTOP - Petaya Berry (x5) */
+/* CELESTIAL ROOFTOP - Yellow Shard (x10) */
 void Sequence105()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 204);
-	SetVarEqVal(0x800D, 5);
+	SetVarEqVal(0x800C, 74);
+	SetVarEqVal(0x800D, 10);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -2581,13 +2581,21 @@ void Sequence225()
 	End();
 }
 
-/* Yellow Shard x10 - Celestial Rooftop */
+/* IV Enhancer x3, Rash Mint, Careful Mint - Celestial Rooftop */
 void Sequence226()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 74);
-	SetVarEqVal(0x800D, 10);
+	SetVarEqVal(0x800C, 530);
+	SetVarEqVal(0x800D, 3);
 	Sequence400();
+    WaitMoment();
+    SetVarEqVal(0x800C, 524);
+	SetVarEqVal(0x800D, 1);
+    Sequence400();
+    WaitMoment();
+    SetVarEqVal(0x800C, 521);
+	SetVarEqVal(0x800D, 1);
+    Sequence400();
 	WaitMoment();
 	UnlockAll();
 	End();
@@ -2629,12 +2637,12 @@ void Sequence229()
 	End();
 }
 
-/* Yellow Shard x6 - Clay Tunnel */
+/* Yellow Shard x10 - Clay Tunnel */
 void Sequence230()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 74);
-	SetVarEqVal(0x800D, 6);
+	SetVarEqVal(0x800D, 10);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -2665,11 +2673,12 @@ void Sequence232()
 	End();
 }
 
+/* Yellow Shard (x10) - Clay Tunnel (Skyla Split) */
 void Sequence233()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 158);
-	SetVarEqVal(0x800D, 5);
+	SetVarEqVal(0x800C, 74);
+	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();

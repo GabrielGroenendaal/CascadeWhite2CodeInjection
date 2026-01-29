@@ -1655,16 +1655,18 @@ extern "C"
     int NewHandlerNaturalGiftPower(int a1, ServerFlow *a2, int a3)
     {
         int result;           // r0
-        BattleMon *BattleMon; // r0
+        BattleMon *battleMon; // r0
         u16 HeldItem;         // r0
         int Param;            // r0
 
         result = BattleEventVar_GetValue(VAR_ATTACKING_MON);
         if (a3 == result)
         {
-            BattleMon = Handler_GetBattleMon(a2, a3);
-            HeldItem = BattleMon_GetHeldItem(BattleMon);
+            battleMon = Handler_GetBattleMon(a2, a3);
+            HeldItem = BattleMon_GetHeldItem(battleMon);
+           
             Param = ItemGetParam(HeldItem, ITSTAT_NATURAL_GIFT_POWER);
+            // k::Printf("\nThe natural gift power for item %d on pokemon %d is %d\n", HeldItem, battleMon->ID, Param);
             if (Param)
             {
                 return BattleEventVar_RewriteValue(VAR_MOVE_POWER, Param);
@@ -1704,7 +1706,7 @@ extern "C"
 
     MOVE_TRIGGERTABLE NaturalGiftHandlers[] = {
         {EVENT_MOVE_PARAM, (MOVE_HANDLER_FUNC)NewHandlerNaturalGiftType},
-        {EVENT_MOVE_BASE_POWER, (MOVE_HANDLER_FUNC)HandlerProtectCheckFail},
+        {EVENT_MOVE_BASE_POWER, (MOVE_HANDLER_FUNC)NewHandlerNaturalGiftPower},
     };
 
     MOVE_TRIGGERTABLE *THUMB_BRANCH_EventAddNaturalGift(_DWORD *a1)

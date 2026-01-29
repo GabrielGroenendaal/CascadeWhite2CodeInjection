@@ -500,9 +500,8 @@ public class MainEvents {
 		v9 = 1;
 		v0 = v8;
 		v1 = v9;
-		Global2805(522, 1);
-		Global2805(507, 1);
-		Global2805(527, 1);
+		Global2805(530, 1);
+		Global2805(294, 1);
 		Message.ActorEx(1024, 33, 17, 0, 0);
 		Input.LastKeyWait();
 		EventWorks.Set(16470, 0);

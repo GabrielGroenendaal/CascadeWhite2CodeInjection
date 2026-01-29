@@ -1,7 +1,6 @@
 #include "ScriptHeaders/FrostScriptCommandsBW2.h"
 #include "ScriptHeaders/MovementCommands.h"
 
-// 611 is the text file 
 
 void Sequence0()
 {
@@ -14,11 +13,11 @@ void Sequence0()
 	StackCompare(1);
 	if (255) goto label0;
 	SetVarEqVal(0x8022, 0);
-	Routine0();
+	Routine0(); // It's full of cardboard boxes with\nelectrical appliances in them.
 	goto label1;
 
 label0: ;
-	EventGreyMessage(1, 2);
+	EventGreyMessage(1, 2);  // It's full of cardboard boxes with\nelectrical appliances in them.\c\nOh? Rotom would like to investigate the\nmotors of the electrical appliances...\c\nIs that OK?
 	YesNoBox(0x8010);
 	StackPushVar(0x8010);
 	StackPushConst(0);
@@ -39,7 +38,7 @@ label4: ;
 	goto label5;
 
 label3: ;
-	EventGreyMessage(3, 2);
+	EventGreyMessage(3, 2); // Which Rotom will you allow\nto enter a motor?\c
 	CloseEventGreyMessage();
 	OpenChoosePokemonMenu(0, 0x8010, 0x8021, 0);
 	StackPushVar(0x8010);
@@ -57,14 +56,14 @@ label7: ;
 	goto label5;
 
 label6: ;
-	SetVarEqVal(0x8022, 2);
+	SetVarEqVal(0x8022, 2); // Rotom reluctantly gave up\non entering a motor...
 	Routine0();
 
 label5: ;
 	goto label1;
 
 label2: ;
-	SetVarEqVal(0x8022, 2);
+	SetVarEqVal(0x8022, 2); // Rotom reluctantly gave up\non entering a motor...
 	Routine0();
 
 label1: ;
@@ -95,21 +94,21 @@ label15: ;
 	StackPushConst(0);
 	StackCompare(1);
 	if (255) goto label8;
-	EventGreyMessage(6, 2);
+	EventGreyMessage(6, 2); // Which appliance's motor will you\nallow [VAR PKNICK(0)] to enter?
 	SetupDialogueSelection(31, 1, 0, 1, 0x802D);
-	AddDialogueOption(7, 0xFFFF, 1);
-	AddDialogueOption(8, 0xFFFF, 2);
-	AddDialogueOption(10, 0xFFFF, 3);
-	AddDialogueOption(9, 0xFFFF, 4);
-	AddDialogueOption(11, 0xFFFF, 5);
-	AddDialogueOption(12, 0xFFFF, 0);
-	AddDialogueOption(13, 0xFFFF, 6);
+	AddDialogueOption(7, 0xFFFF, 1); // Microwave oven
+	AddDialogueOption(8, 0xFFFF, 2); // Washing machine
+	AddDialogueOption(10, 0xFFFF, 3); // Electric fan
+	AddDialogueOption(9, 0xFFFF, 4); // Refrigerator
+	AddDialogueOption(11, 0xFFFF, 5); // Lawnmower
+	AddDialogueOption(12, 0xFFFF, 0); // Recall
+	AddDialogueOption(13, 0xFFFF, 6); // Cancel
 	ShowDialogueSelection();
 	StackPushVar(0x802D);
 	StackPushConst(6);
 	StackCompare(1);
 	if (255) goto label9;
-	SetVarEqVal(0x8022, 25);
+	SetVarEqVal(0x8022, 25); // [VAR PKNICK(0)] reluctantly gave up on\nentering a motor...
 	Routine0();
 	Return();
 	goto label10;
@@ -119,7 +118,7 @@ label9: ;
 	StackPushConst(0xFFFE);
 	StackCompare(1);
 	if (255) goto label10;
-	SetVarEqVal(0x8022, 25);
+	SetVarEqVal(0x8022, 25);  // [VAR PKNICK(0)] reluctantly gave up on\nentering a motor...
 	Routine0();
 	Return();
 
@@ -137,12 +136,12 @@ label10: ;
 	StackCompare(1);
 	if (255) goto label12;
 	SetWordPartyNickname(0, 0x8021);
-	EventGreyMessage(24, 2);
+	EventGreyMessage(24, 2); //  [VAR PKNICK(0)] hasn't entered a motor.\c
 	goto label13;
 
 label12: ;
 	SetWordPartyNickname(0, 0x8021);
-	EventGreyMessage(22, 2);
+	EventGreyMessage(22, 2); // This [VAR PKNICK(0)] has already entered\nthat appliance motor.\c
 
 label13: ;
 	goto label14;
@@ -158,9 +157,9 @@ label8: ;
 	StackPushConst(0);
 	StackCompare(1);
 	if (255) goto label16;
-	Routine4();
+	// Routine4();
 	SetWordPartyNickname(0, 0x8021);
-	SetVarEqVal(0x8022, 23);
+	SetVarEqVal(0x8022, 23); // [VAR PKNICK(0)] emerged from the motor.
 	Routine0();
 	SetVarEqVal(0x8010, 1);
 	goto label17;
@@ -168,24 +167,25 @@ label8: ;
 label16: ;
 	SetWordPartyNickname(0, 0x8021);
 	Cry(479, 0);
-	EventGreyMessage(14, 2);
+	EventGreyMessage(14, 2); // [VAR PKNICK(0)] entered the motor.
 	WaitCry();
 	WaitMessage();
 	SetVarEqVal(0x8023, 0);
 	Routine5();
 
 label17: ;
-	StackPushVar(0x8010);
-	StackPushConst(1);
-	StackCompare(1);
-	if (255) goto label18;
+    // CHECK HERE: I think this is what we need to remove to remove the requirement that moves be forgotten and relearned.
+	// StackPushVar(0x8010);
+	//StackPushConst(1);
+	//StackCompare(1);
+	// if (255) goto label18;
 	c0x11C(0x8021, 0x8023, 0x802B);
 	goto label19;
 
 label18: ;
 	SetWordPartyNickname(0, 0x8021);
 	SetWordMove(1, 0x8024);
-	SetVarEqVal(0x8022, 17);
+	SetVarEqVal(0x8022, 17); // 17: [VAR PKNICK(0)] did not learn\n[VAR MOVE(1)].\c\n[VAR PKNICK(0)] emerged from the motor.
 	Routine0();
 
 label19: ;
@@ -232,7 +232,7 @@ void Routine3()
 	goto label24;
 
 label23: ;
-	SetVarEqVal(0x8027, 84);
+	SetVarEqVal(0x8027, 84); // thundershock
 	goto label25;
 
 label24: ;
@@ -241,7 +241,7 @@ label24: ;
 	goto label27;
 
 label26: ;
-	SetVarEqVal(0x8027, 315);
+	SetVarEqVal(0x8027, 481); // overheat
 	goto label25;
 
 label27: ;
@@ -250,7 +250,7 @@ label27: ;
 	goto label29;
 
 label28: ;
-	SetVarEqVal(0x8027, 56);
+	SetVarEqVal(0x8027, 61); // hydro pump
 	goto label25;
 
 label29: ;
@@ -259,7 +259,7 @@ label29: ;
 	goto label31;
 
 label30: ;
-	SetVarEqVal(0x8027, 59);
+	SetVarEqVal(0x8027, 357); // Blizzard
 	goto label25;
 
 label31: ;
@@ -268,7 +268,7 @@ label31: ;
 	goto label33;
 
 label32: ;
-	SetVarEqVal(0x8027, 403);
+	SetVarEqVal(0x8027, 314); // air slash
 	goto label25;
 
 label33: ;
@@ -277,7 +277,7 @@ label33: ;
 	goto label25;
 
 label34: ;
-	SetVarEqVal(0x8027, 437);
+	SetVarEqVal(0x8027, 536); // leaf storm
 	goto label25;
 
 label25: ;
@@ -286,6 +286,7 @@ label25: ;
 
 void Routine4()
 {
+    // I think we need to get rid of this to remove forcing the Rotom to forget a move.
 	SetVarEqVal(0x802E, 0);
 	SetVarEqVal(0x802F, 0);
 	SetVarEqVar(0x8026, 0x8020);
@@ -308,7 +309,7 @@ void Routine4()
 label36: ;
 	SetWordPartyNickname(0, 0x8021);
 	SetWordMove(2, 0x802E);
-	EventGreyMessage(21, 2);
+	EventGreyMessage(21, 2); // [VAR PKNICK(0)] forgot [VAR MOVE(2)]...\c
 
 label35: ;
 	Return();
@@ -353,7 +354,7 @@ label39: ;
 label41: ;
 	SetVarEqVal(0x8010, 1);
 	SetWordPartyNickname(0, 0x8021);
-	SetWordMove(2, 0x8024);
+	SetWordMove(2, 0x8024); // [VAR PKNICK(0)] learned [VAR MOVE(2)]!
 	SetVarEqVal(0x8022, 20);
 	Routine8();
 
@@ -366,8 +367,8 @@ void Routine6()
 	SetWordPartyNickname(0, 0x8021);
 	SetWordMove(1, 0x8025);
 	SetWordMove(2, 0x8024);
-	EventGreyMessage(19, 2);
-	SetVarEqVal(0x8022, 20);
+	EventGreyMessage(19, 2); // 1, [WAIT(20)]2, and[WAIT(20)]... [WAIT(20)]... [WAIT(20)]... Ta-da![0xbe05(3)][0xbe05(6)]\c\n[VAR PKNICK(0)] forgot how to\nuse [VAR MOVE(1)].\c\nAnd...\c
+	SetVarEqVal(0x8022, 20); // [VAR PKNICK(0)] learned [VAR MOVE(2)]!
 	Routine8();
 	Return();
 }
@@ -382,7 +383,7 @@ void Routine7()
 	if (255) goto label42;
 	SetWordPartyNickname(0, 0x8021);
 	SetWordMove(1, 0x8024);
-	EventGreyMessage(15, 2);
+	EventGreyMessage(15, 2); // 15: [VAR PKNICK(0)] is trying to\nlearn [VAR MOVE(1)].\c\nBut [VAR PKNICK(0)] can't learn\nmore than four moves.\c\nDelete a move to make\nroom for [VAR MOVE(1)]?
 	YesNoBox(0x8010);
 	StackPushVar(0x8010);
 	StackPushConst(0);
@@ -462,7 +463,7 @@ void Routine8()
 void Routine9()
 {
 	SetWordMove(1, 0x8024);
-	EventGreyMessage(16, 2);
+	EventGreyMessage(16, 2); // Give up on learning the\nmove [VAR MOVE(1)]?
 	YesNoBox(0x8010);
 	Return();
 }

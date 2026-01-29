@@ -985,7 +985,7 @@ extern "C"
                 if (MainModule_IsAllyMonID(MonID, faintedId))
                 {
 #if DEBUGGING_DAMAGECALC && DEBUGGING_ALL
-                    k::Printf("\nSuccessfully checked and triggered the retaliate handler\n");
+                    // k::Printf("\nSuccessfully checked and triggered the retaliate handler\n");
 #endif
                     return true;
                 }

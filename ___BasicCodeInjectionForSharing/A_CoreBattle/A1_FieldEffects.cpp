@@ -668,30 +668,6 @@ extern "C" void THUMB_BRANCH_SAFESTACK_PML_PkmSetMetParamsEx(BoxPkm *pPkm, u16 l
     PML_PkmSetParam(pPkm, (PkmField)(v8 + 145), day);
 };
 
-//  REMOVING SIMIPOUR, SIMISAGE, and SIMISEAR from evolution check for mascot badge/eviolite
-extern "C" int HaveEvolutionRoot(ArcTool *a1, u16 a2, int a3, int a4);
-extern "C" int THUMB_BRANCH_SAFESTACK_Handler_CheckEvolution(int a1, int a2)
-{
-    BattleMon *BattleMon; // r0
-    u16 Species;          // r6
-    unsigned int i;       // r4
-
-    BattleMon = PokeCon_GetBattleMon((void *)(a1 + 8), a2);
-    Species = BattleMon_GetSpecies(BattleMon);
-    for (i = 0; i < 7; i = (i + 1))
-    {
-        if (Species == PK516_SIMIPOUR || Species == PK512_SIMISAGE || Species == PK514_SIMISEAR)
-        {
-            return 0;
-        }
-        if (HaveEvolutionRoot((ArcTool *)(a1 + 1188), Species, 0, i))
-        {
-            return 1;
-        }
-    }
-    return 0;
-};
-
 
 // FIXING ABILITY CAPSULES 
 

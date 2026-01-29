@@ -1288,7 +1288,7 @@ extern "C"
         HandlerParam_Damage *v9;  // r4
         __int16 ExistAdjacentPos; // [sp+0h] [bp-18h]
         u8 adjacentPos[5];
-        int v6;
+        unsigned int v6;
         int i;
 
         if ((int)a3 == BattleEventVar_GetValue(VAR_DEFENDING_MON))
@@ -1309,14 +1309,16 @@ extern "C"
                 BattleHandler_PopWork(a2, addAnimation);
 
                 ExistAdjacentPos = Handler_GetExistFrontPokePos(a2, (int)a3);
-
                 v6 = Handler_ExpandPokeID(a2, ExistAdjacentPos | 0x200, adjacentPos);
 
+                // k::Printf("\nAFTERMATH TRIGGERED:\nNumTargets = %d", v6);
                 for (i = 0; i < v6; i++)
                 {
+                    
                     explodedMon = Handler_GetBattleMon(a2, adjacentPos[i]);
+                    // k::Printf("\nTarget = %d", explodedMon->ID);
                     v9 = (HandlerParam_Damage *)BattleHandler_PushWork(a2, EFFECT_DAMAGE, (int)a3);
-                    v9->pokeID = v7;
+                    v9->pokeID = adjacentPos[i];
                     v9->damage = DivideMaxHPZeroCheck(explodedMon, 3u);
                     v9->flags = v9->flags & 0xFE | 1;
                     BattleHandler_StrSetup(&v9->exStr, 2u, 402);

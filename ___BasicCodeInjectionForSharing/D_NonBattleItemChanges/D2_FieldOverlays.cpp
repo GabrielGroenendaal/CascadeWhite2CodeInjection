@@ -209,6 +209,46 @@ extern "C"
         return *lvl_cap_ptr;
     }
 
+    void improveIVs(PartyPkm *pPkm)
+    {
+        // Placeholder for potential future IV improvement logic
+        int ivA;
+        int ivB;
+        int count;
+
+        // k::Printf("Improving IVs for species %d\n", PokeParty_GetParam(pPkm, PF_Species, 0));
+        while (count < 5)
+        {
+            ivA = GFL_RandomMT() >> 27;
+            ivB = GFL_RandomMT() >> 27;
+            if (ivA >= ivB)
+            {
+                PokeParty_SetParam(pPkm, (PkmField)(PF_IvHP + count), ivA);
+            }
+            else
+            {
+                PokeParty_SetParam(pPkm, (PkmField)(PF_IvHP + count), ivB);
+            }
+            count++;
+        }
+        PokeParty_RecalcStats(pPkm);
+    }
+
+    struct GenPokeParam
+    {
+        HeapID HeapID;
+        __int16 field_2;
+        int Species;
+        u32 Forme;
+        u32 Level;
+        int HeldItem;
+        AbilLock AbilLock;
+        GenderSet Gender;
+        ShinyType ShinyType;
+        u32 BallItemID;
+        int HiddenAbility;
+    };
+    
     /*
 
         --------------------------------------------------------------------------------------------------
@@ -260,7 +300,7 @@ extern "C"
             PML_PersonalFree(v13);
             PokeParty_SetParam(v9, PF_Happiness, data);
             PokeParty_SetParam(v9, PF_IsEgg, 1u);
-
+            improveIVs(v9);
             if (GetIVSetting() == 2)
             {
                 PokeParty_SetParam(v9, PF_IvATK, 31);
@@ -468,45 +508,7 @@ extern "C"
         return result;
     }
 
-    void improveIVs(PartyPkm *pPkm)
-    {
-        // Placeholder for potential future IV improvement logic
-        int ivA;
-        int ivB;
-        int count;
-
-        // k::Printf("Improving IVs for species %d\n", PokeParty_GetParam(pPkm, PF_Species, 0));
-        while (count < 5)
-        {
-            ivA = GFL_RandomMT() >> 27;
-            ivB = GFL_RandomMT() >> 27;
-            if (ivA >= ivB)
-            {
-                PokeParty_SetParam(pPkm, (PkmField)(PF_IvHP + count), ivA);
-            }
-            else
-            {
-                PokeParty_SetParam(pPkm, (PkmField)(PF_IvHP + count), ivB);
-            }
-            count++;
-        }
-        PokeParty_RecalcStats(pPkm);
-    }
-
-    struct GenPokeParam
-    {
-        HeapID HeapID;
-        __int16 field_2;
-        int Species;
-        u32 Forme;
-        u32 Level;
-        int HeldItem;
-        AbilLock AbilLock;
-        GenderSet Gender;
-        ShinyType ShinyType;
-        u32 BallItemID;
-        int HiddenAbility;
-    };
+    
 
     extern PartyPkm *GameData_MakeBoxPkm(GameData *gameData, GenPokeParam *param);
 
@@ -1184,107 +1186,106 @@ extern "C"
 
        */
 
-    // void THUMB_BRANCH_EventFieldTrade_CreatePkm(GameData *gameData, HeapID heapId, PartyPkm *pkm, FieldTradePkm *tradePkm)
-    // {
-    //     GenderSet Gender;        // r3
-    //     u32 pid;                 // r0
-    //     StrBuf *Name;            // r7
-    //     u32 IvHP;                // r2
-    //     u32 IvATK;               // r2
-    //     u32 IvDEF;               // r2
-    //     u32 IvSPE;               // r2
-    //     u32 IvSPA;               // r2
-    //     u32 IvSPD;               // r2
-    //     u32 Nature;              // r2
-    //     StrBuf *v17;             // r7
-    //     u16 *GameDataPlayerInfo; // r0
+     void THUMB_BRANCH_EventFieldTrade_CreatePkm(GameData *gameData, HeapID heapId, PartyPkm *pkm, FieldTradePkm *tradePkm)
+     {
+         GenderSet Gender;        // r3
+         u32 pid;                 // r0
+         StrBuf *Name;            // r7
+        u32 IvHP;                // r2
+         u32 IvATK;               // r2
+         u32 IvDEF;               // r2
+         u32 IvSPE;               // r2
+         u32 IvSPA;               // r2
+        u32 IvSPD;               // r2
+         u32 Nature;              // r2
+         StrBuf *v17;             // r7
+         u16 *GameDataPlayerInfo; // r0
 
-    //     Gender = tradePkm->Gender;
-    //     if (Gender == 255)
-    //     {
-    //         Gender = GENDER_EITHER;
-    //     }
-    //     pid = PML_GenPID(tradePkm->TIDSet, tradePkm->Species, tradePkm->Forme, Gender, tradePkm->AbilLock, SHINY_PREVENT);
-    //     PokeParty_CreatePkm(
-    //         pkm,
-    //         (MonsNo)(unsigned __int16)tradePkm->Species,
-    //         tradePkm->Level,
-    //         tradePkm->TIDSet,
-    //         ABIL_0,
-    //         0xFFFFFFFF,
-    //         pid,
-    //         0);
-    //     PokeParty_SetParam(pkm, PF_Forme, tradePkm->Forme);
-    //     EventFieldTrade_DebugLogPkm(pkm);
-    //     Name = FieldTradeInput_LoadName(heapId, tradePkm->NicknameIndex);
-    //     PokeParty_SetParam(pkm, PF_NicknameStrBuf, (u32)Name);
-    //     GFL_StrBufFree(Name);
+         Gender = tradePkm->Gender;
+         if (Gender == 255)
+         {
+             Gender = GENDER_EITHER;
+         }
+         pid = PML_GenPID(tradePkm->TIDSet, tradePkm->Species, tradePkm->Forme, Gender, tradePkm->abilLock, SHINY_PREVENT);
+         PokeParty_CreatePkm(
+             pkm,
+             (MonsNo)(unsigned __int16)tradePkm->Species,
+           tradePkm->Level,
+             tradePkm->TIDSet,
+            ABIL_0,
+            0xFFFFFFFF,
+            pid,
+             0);
+         PokeParty_SetParam(pkm, PF_Forme, tradePkm->Forme);
+         EventFieldTrade_DebugLogPkm(pkm);
+         Name = FieldTradeInput_LoadName(heapId, tradePkm->NicknameIndex);
+        PokeParty_SetParam(pkm, PF_NicknameStrBuf, (u32)Name);
+         GFL_StrBufFree(Name);
 
-    //     if (WhiteListedPokemon[tradePkm->Species] == 1)
-    //     {
-    //         int random2 = GFL_RandomLCAlt(100u);
+         if (WhiteListedPokemon[tradePkm->Species] == 1)
+         {
+             int random2 = GFL_RandomLCAlt(100u);
 
-    //         if (random2 <= 10u)
-    //         {
-    //             PokeParty_SetHiddenAbil(pkm, tradePkm->Species, tradePkm->Forme);
-    //         }
-    //     }
-    //     IvHP = tradePkm->IvHP;
-    //     if (IvHP != 255)
-    //     {
-    //         PokeParty_SetParam(pkm, PF_IvHP, IvHP);
-    //     }
-    //     IvATK = tradePkm->IvATK;
-    //     if (IvATK != 255)
-    //     {
-    //         PokeParty_SetParam(pkm, PF_IvATK, IvATK);
-    //     }
-    //     IvDEF = tradePkm->IvDEF;
-    //     if (IvDEF != 255)
-    //     {
-    //         PokeParty_SetParam(pkm, PF_IvDEF, IvDEF);
-    //     }
-    //     IvSPE = tradePkm->IvSPE;
-    //     if (IvSPE != 255)
-    //     {
-    //         PokeParty_SetParam(pkm, PF_IvSPE, IvSPE);
-    //     }
-    //     IvSPA = tradePkm->IvSPA;
-    //     if (IvSPA != 255)
-    //     {
-    //         PokeParty_SetParam(pkm, PF_IvSPA, IvSPA);
-    //     }
-    //     IvSPD = tradePkm->IvSPD;
-    //     if (IvSPD != 255)
-    //     {
-    //         PokeParty_SetParam(pkm, PF_IvSPD, IvSPD);
-    //     }
-    //     if (tradePkm->AbilLock == ABIL_ANY)
-    //     {
-    //         PokeParty_SetHiddenAbil(pkm, tradePkm->Species, tradePkm->Forme);
-    //     }
-    //     Nature = tradePkm->Nature;
-    //     if (Nature != 255)
-    //     {
-    //         PokeParty_SetParam(pkm, PF_Nature, Nature);
-    //     }
-    //     PokeParty_SetParam(pkm, PF_ContestCool, tradePkm->ContestCool);
-    //     PokeParty_SetParam(pkm, PF_ContestBeauty, tradePkm->ContestBeauty);
-    //     PokeParty_SetParam(pkm, PF_ContestCute, tradePkm->ContestCute);
-    //     PokeParty_SetParam(pkm, PF_ContestSmart, tradePkm->ContestSmart);
-    //     PokeParty_SetParam(pkm, PF_ContestTough, tradePkm->ContestTough);
-    //     PokeParty_SetParam(pkm, PF_Item, tradePkm->HeldItem);
-    //     v17 = FieldTradeInput_LoadName(heapId, tradePkm->OTNameIndex);
-    //     PokeParty_SetParam(pkm, PF_OTNameStrBuf, (u32)v17);
-    //     GFL_StrBufFree(v17);
-    //     PokeParty_SetParam(pkm, PF_TrGender, tradePkm->OTGender);
-    //     PokeParty_SetParam(pkm, PF_Region, tradePkm->OTRegion);
-    //     GameDataPlayerInfo = GetGameDataPlayerInfo(gameData);
-    //     PokeParty_SetupMetData(pkm, PKM_OBTAIN_FIELD_TRADE, GameDataPlayerInfo, 30002u, heapId);
-    //     PokeParty_SetParam(pkm, PF_Happiness, 70u);
-    //     EventFieldTrade_DebugLogPkm(pkm);
-    //     PokeParty_RecalcStats(pkm);
-    // }
+            if (random2 <= 10u)
+             {
+                PokeParty_SetHiddenAbil(pkm, tradePkm->Species, tradePkm->Forme);
+             }
+         }
+         IvHP = tradePkm->IvHP;
+         if (IvHP != 255)
+              {
+             PokeParty_SetParam(pkm, PF_IvHP, IvHP);
+         }
+         IvATK = tradePkm->IvATK;
+         if (IvATK != 255)
+         {
+             PokeParty_SetParam(pkm, PF_IvATK, IvATK);
+         }
+         IvDEF = tradePkm->IvDEF;
+         if (IvDEF != 255)
+         {
+             PokeParty_SetParam(pkm, PF_IvDEF, IvDEF);
+         }
+         IvSPE = tradePkm->IvSPE;
+         if (IvSPE != 255)
+         {
+             PokeParty_SetParam(pkm, PF_IvSPE, IvSPE);
+         }
+         IvSPA = tradePkm->IvSPA;
+         if (IvSPA != 255)
+         {
+             PokeParty_SetParam(pkm, PF_IvSPA, IvSPA);
+         }
+         IvSPD = tradePkm->IvSPD;
+         if (IvSPD != 255)
+         {
+             PokeParty_SetParam(pkm, PF_IvSPD, IvSPD);
+         }
+
+         Nature = tradePkm->Nature;
+         if (Nature != 255)
+         {
+             PokeParty_SetParam(pkm, PF_Nature, Nature);
+         }
+
+        improveIVs(pkm);
+         PokeParty_SetParam(pkm, PF_ContestCool, tradePkm->ContestCool);
+         PokeParty_SetParam(pkm, PF_ContestBeauty, tradePkm->ContestBeauty);
+         PokeParty_SetParam(pkm, PF_ContestCute, tradePkm->ContestCute);
+         PokeParty_SetParam(pkm, PF_ContestSmart, tradePkm->ContestSmart);
+         PokeParty_SetParam(pkm, PF_ContestTough, tradePkm->ContestTough);
+         PokeParty_SetParam(pkm, PF_Item, tradePkm->HeldItem);
+         v17 = FieldTradeInput_LoadName(heapId, tradePkm->OTNameIndex);
+         PokeParty_SetParam(pkm, PF_OTNameStrBuf, (u32)v17);
+         GFL_StrBufFree(v17);
+         PokeParty_SetParam(pkm, PF_TrGender, tradePkm->OTGender);
+         PokeParty_SetParam(pkm, PF_Region, tradePkm->OTRegion);
+         GameDataPlayerInfo = GetGameDataPlayerInfo(gameData);
+         PokeParty_SetupMetData(pkm, PKM_OBTAIN_FIELD_TRADE, GameDataPlayerInfo, 30002u, heapId);
+         PokeParty_SetParam(pkm, PF_Happiness, 70u);
+         EventFieldTrade_DebugLogPkm(pkm);
+         PokeParty_RecalcStats(pkm);
+     }
 
     // void THUMB_BRANCH_SAFESTACK_createEggPkm(PartyPkm *newPkm, EggPkm *eggPkm, void *pTrainerInfo, u16 location, HeapID heapId)
     // {
