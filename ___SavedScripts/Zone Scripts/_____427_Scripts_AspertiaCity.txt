@@ -140,6 +140,7 @@ public class MainEvents {
         Global2805(23, 100);
 		Global2805(27, 100);
         Global2805(41, 100);
+		
 		Message.ActorEx(1024, 69, 1, 1, 0);
 		Message.CloseAll();
 		Actor.WalkRoute(3, 48, 741, 1, 8, 0);

@@ -2772,17 +2772,20 @@ enum ItemID
         unsigned __int16 subEff;
     };
 
-    struct MoveParam
-    {
-        unsigned __int16 MoveID;
-        unsigned __int16 OriginalMoveID;
-        unsigned __int16 userType;
-        unsigned __int8 moveType;
-        char damageType;
-        int category;
-        MoveTarget targetType;
-        int flags;
-    };
+    // struct MoveParam
+    // {
+    //     unsigned __int16 MoveID;
+    //     unsigned __int16 OriginalMoveID;
+    //     unsigned __int16 userType;
+    //     unsigned __int8 moveType;
+    //     char damageType;
+    //     int category;
+    //     MoveTarget targetType;
+    //     int flags;
+    // };
+
+    struct 	MoveParam	 {u16 MoveID;u16 OriginalMoveID;u16 userType;u8 moveType;u8 damageType;int category;MoveTarget targetType;int flags;};
+
 
     struct SWAN_PACKED SWAN_ALIGNED(1) calc_damage_record
     {
@@ -3949,8 +3952,13 @@ enum ItemID
             defense = ServerEvent_GetTargetDefenses(a1, AttackingMon, DefendingMon, moveParam, criticalFlag);
             level = BattleMon_GetValue(AttackingMon, VALUE_LEVEL);
             v16 = CalcBaseDamage(power, attack, level, defense);
+            int printing = 0;
+            printing = (moveParam->MoveID == MOVE363_NATURAL_GIFT);
 #if DEBUGGING_DAMAGECALC && DEBUGGING_ALL
+
+                        if (printing){
                 k::Printf("\n\nmove is %d\n===ServerEvent_CalcDamage 1 Base Damage===damage is %d", moveParam->MoveID, v16);
+                        }
 #endif
             fxDamage = v16;
             if (targetDmgRatio != 4096)
@@ -3958,7 +3966,9 @@ enum ItemID
                 fxDamage = fixed_round(v16, targetDmgRatio);
             }
 #if DEBUGGING_DAMAGECALC && DEBUGGING_ALL
+            if (printing){
                 k::Printf("\n\n===ServerEvent_CalcDamage 2 Ratio===damage is %d", fxDamage);
+            }
 #endif
 
             Weather = ServerEvent_GetWeather(a1);
@@ -3970,7 +3980,9 @@ enum ItemID
                 fxDamage = fixed_round(fxDamage, weatherDmgRatio);
             }
 #if DEBUGGING_DAMAGECALC && DEBUGGING_ALL
+            if (printing){
                 k::Printf("\n\n===ServerEvent_CalcDamage 3 Weather===damage is %d", fxDamage);
+            }
 #endif
             if (criticalFlag)
             {
@@ -3988,7 +4000,9 @@ enum ItemID
                 }
             }
 #if DEBUGGING_DAMAGECALC && DEBUGGING_ALL
+            if (printing){
                 k::Printf("\n\n===ServerEvent_CalcDamage 4 Crits===damage is %d", fxDamage);
+            }
 #endif
             if (!MainModule_GetDebugFlag() && ServerFlow_IsNotPokestarBattle(a1))
             {
@@ -4005,7 +4019,9 @@ enum ItemID
                 fxDamage = damageRoll * fxDamage / 100;
             }
 #if DEBUGGING_DAMAGECALC && DEBUGGING_ALL
+            if (printing){
                 k::Printf("\n\n===ServerEvent_CalcDamage 5 Damage Roll===damage is %d", fxDamage);
+            }
 #endif
             moveType = (PokeType)moveParam->moveType;
             if (moveType != TYPE_NULL)
@@ -4057,11 +4073,15 @@ enum ItemID
                 }
             }
 #if DEBUGGING_DAMAGECALC && DEBUGGING_ALL
-                k::Printf("\n\n===ServerEvent_CalcDamage 6 STAB===damage is %d", fxDamage);
+           // if (printing){
+                k::Printf("\n\n===ServerEvent_CalcDamage 6 STAB===damage is %d, moveType is %d, v22 is %d", fxDamage, moveType, v22);
+            //}
 #endif
             v23 = TypeEffectivenessPowerMod(fxDamage, TypeEffectiveness);
 #if DEBUGGING_DAMAGECALC && DEBUGGING_ALL
+            if (printing){
                 k::Printf("\n\n===ServerEvent_CalcDamage 7 TypeEffectiveness===damage is %d, type effectiveness for move %d is %d", v23, moveParam->MoveID, TypeEffectiveness);
+            }
 #endif
             /* OLD OVERHEAT LOGIC */
             if (Category == 1 && BattleMon_GetStatus(AttackingMon) == CONDITION_BURN && BattleMon_GetValue(AttackingMon, VALUE_EFFECTIVE_ABILITY) != ABIL062_GUTS)
@@ -4082,7 +4102,9 @@ enum ItemID
                 v23 = 50 * v23 / 100u;
             }
 #if DEBUGGING_DAMAGECALC && DEBUGGING_ALL
+            if (printing){
                 k::Printf("\n\n===ServerEvent_CalcDamage 8 Overheat/Focus Band===damage is %d", v23);
+            }
 #endif
             if (!v23)
             {
@@ -4097,7 +4119,9 @@ enum ItemID
 
             LOWORD(Value) = fixed_round(v25, v24);
 #if DEBUGGING_DAMAGECALC && DEBUGGING_ALL
+            if (printing){
                 k::Printf("\n\n===ServerEvent_CalcDamage 9 Final FixedRound===damage is %d", Value);
+            }
 #endif
         }
 
@@ -4105,7 +4129,10 @@ enum ItemID
         BattleEventVar_Pop();
         *destDamage = Value;
 #if DEBUGGING_DAMAGECALC && DEBUGGING_ALL
-                k::Printf("\n\n===ServerEvent_CalcDamage 10 Final FixedRound===damage is %d", Value);
+    if (moveParam->MoveID == MOVE363_NATURAL_GIFT)   {
+        k::Printf("\n\n===ServerEvent_CalcDamage 10 Final FixedRound===damage is %d", Value);
+
+    }             
 #endif
         return v29;
     }

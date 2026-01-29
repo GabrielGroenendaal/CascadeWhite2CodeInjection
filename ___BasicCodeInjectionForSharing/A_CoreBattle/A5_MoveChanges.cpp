@@ -1671,10 +1671,10 @@ extern "C"
             {
                 return BattleEventVar_RewriteValue(VAR_MOVE_POWER, Param);
             }
-            else
-            {
-                return BattleEventVar_RewriteValue(VAR_MOVE_POWER, 80);
-            }
+            // else
+            // {
+            //     return BattleEventVar_RewriteValue(VAR_MOVE_POWER, 80);
+            // }
         }
         return result;
     }
@@ -1691,6 +1691,10 @@ extern "C"
         {
             BattleMon = Handler_GetBattleMon(a2, a3);
             HeldItem = BattleMon_GetHeldItem(BattleMon);
+            if (!PML_ItemIsBerry(HeldItem) || HeldItem == IT0043_BERRY_JUICE)
+            {
+                return BattleEventVar_RewriteValue(VAR_MOVE_TYPE, TYPE_NORMAL);
+            }
             Param = ItemGetParam(HeldItem, ITSTAT_NATURAL_GIFT_TYPE);
             if (Param)
             {
@@ -2374,7 +2378,7 @@ extern "C"
                         {
                             messageId = 1285;
                         }
-                        SendMessage(a2, (int)a3, Value, messageId, 0);
+                        SendMessage(a2, (int)a3, (int)a3, messageId, 0);
                         // message = (HandlerParam_Message *)BattleHandler_PushWork(a2, EFFECT_MESSAGE, (int)a3);
                         // BattleHandler_StrSetup(&message->str, 2u, messageId);
                         // BattleHandler_AddArg(&message->str, Value);
