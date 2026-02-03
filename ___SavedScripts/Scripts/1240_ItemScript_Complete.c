@@ -146,10 +146,11 @@ void Sequence11()
 }
 
 
+/* MISTY REWARD - NAIVE MINT */
 void Sequence12()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 328);
+	SetVarEqVal(0x800C, 519);
 	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
@@ -157,7 +158,7 @@ void Sequence12()
 	End();
 }
 
-/* Quick Claw - FLocessy Ranch */
+/* Quick Claw - Flocessy Ranch */
 void Sequence13()
 {
 	LockAll();
@@ -169,11 +170,11 @@ void Sequence13()
 	End();
 }
 
-/* Wiseglasses - Flocessy Ranch */
+/* Brightpowder - Flocessy Ranch */
 void Sequence14()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 267);
+	SetVarEqVal(0x800C, 213);
 	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
@@ -181,12 +182,12 @@ void Sequence14()
 	End();
 }
 
-/* Brightpowder - Flocessy Ranch*/
+/* White Herb (x2) - Flocessy Ranch*/
 void Sequence15()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 213);
-	SetVarEqVal(0x800D, 1);
+	SetVarEqVal(0x800C, 214);
+	SetVarEqVal(0x800D, 2);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -218,13 +219,13 @@ void Sequence17()
 }
 
 
-// REMOVE THIS
-/* ROUTE 6 - TM23 Icy Wind (x3) */
+// MEW
+/* DESERT RESORT - Green Shards x30 */
 void Sequence18()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 350);
-	SetVarEqVal(0x800D, 1);
+	SetVarEqVal(0x800C, 75);
+	SetVarEqVal(0x800D, 30);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -243,11 +244,11 @@ void Sequence19()
 	End();
 }
 
-/* TM47: Low Sweep - Virbank Complex (Inside) */
+/* Wiseglasses - Route 20 */
 void Sequence20()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 374);
+	SetVarEqVal(0x800C, 267);
 	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
@@ -696,24 +697,24 @@ void Sequence57()
 	End();
 }
 
-/* Rowap Berry x15 - Desert Resort (Inside) */
+/* Rowap Berry x10 - Desert Resort (Inside) */
 void Sequence58()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 212);
-	SetVarEqVal(0x800D, 15);
+	SetVarEqVal(0x800D, 10);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
 	End();
 }
 
-/* Jaboca Berry x15 - Desert Resort (Inside) */
+/* Jaboca Berry x10 - Desert Resort (Inside) */
 void Sequence59()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 211);
-	SetVarEqVal(0x800D, 15);
+	SetVarEqVal(0x800D, 10);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -755,12 +756,12 @@ void Sequence62()
 	UnlockAll();
 	End();
 }
-
+/* 30x Green SHard - Desert Resort */
 void Sequence63()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 240);
-	SetVarEqVal(0x800D, 1);
+	SetVarEqVal(0x800C, 75);
+	SetVarEqVal(0x800D, 30);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();

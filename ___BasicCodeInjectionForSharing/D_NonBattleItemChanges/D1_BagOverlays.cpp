@@ -917,6 +917,8 @@ extern "C"
                 a1->field_C = 10;
                 a1->CurrentHP = PokeListPlate_GetCurrentHP(a1, a1->pokeList_Plate[v12]);
                 v6 = PokeList_PrintRecoverHPMessage;
+                a1->field_124 = (int)v6;
+                return v18;
             }
             else if (itemRestore == RESTORETYPE_EV_SPA)
             {

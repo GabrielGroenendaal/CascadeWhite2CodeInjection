@@ -181,9 +181,7 @@ end
 ### Rival Hugh 
 
 !trm 162 If you choose Tepig
-
 !trm 163 If you choose Oshawott
-
 !trm 161 If you choose Snivy 
 
 
@@ -212,7 +210,7 @@ exp share, Exp Share (given by Professor Juniper along with the gift Pokémon)
 grepa berry, Grepa/Kelpsy/Qualot/Pomeg/Tamato/Razz Berries (in the PokéMart)
 end
 
-#### MOVE TUTOR: The green shard move tutor stands by the statue in town, and teaches:
+#### MOVE TUTOR, The green shard move tutor stands by the statue in town, and teaches:
 - Screech (2 shards)
 - Fake Tears (2 shards)
 - Sparkle (2 shards)
@@ -243,14 +241,15 @@ She will also gift you an Exp. Share!
 
 ## Route 20
 !items Items
-muscle band, Muscle Band (found past Lass Isabel)
+muscle band, Muscle Band (found past Youngster Terrell)
+wiseglasses, WiseGlasses (found past Lass Isabel)
 end
 
 !enc 129
 
-!trm 164/8 Guards Encounter
+!trm 164/8 Guards Muscle Band
 
-!trm 165/9 Guards Muscle Band
+!trm 165/9 Guards Wiseglasses
 
 !trm 392/10
 
@@ -262,7 +261,7 @@ end
   quick claw, Quick Claw — found in the south part of the map by fences
   oran berry, Oran Berry x10 — given by Hugh after defeating Lass Molly
   brightpowder, Brightpowder — found after defeating Janitor Orville
-  wise glasses, Wise Glasses — found past Youngster Kenny
+ white herb, White Herb x2 — found past Youngster Kenny
   tm normal, TM10 Hidden Power — reward for defeating Benga
 end
 
@@ -294,9 +293,8 @@ budew
 end
 
 !trm 181/10
-</br>
-!trm 182/10
 
+!trm 182/10
 
 !trm 180/10 
 
@@ -357,23 +355,29 @@ end
 !tr 394 Gatekeeps the Starter Trade 
 
 !notif SPLIT-LOCKED CONTENT, The trade can only be completed prior to defeating Cheren. , #af74b3
-!gifts Blueberry Trade
-desc: A Blueberry Academy representative in the classroom will offer to trade any of the player's Pokémon. In exchange, the player receives a random starter of the type strong against their own. This trade can ONLY be done before defeating Cheren!
-charmander 
-cyndaquil
-torchic
-chimchar
+!gifts Blueberry Trade (Chose Tepig)
+desc: A Blueberry Academy representative in the classroom will offer to trade any of the player's Pokémon. In exchange, the player receives a random starter of the type strong against their own.
 squirtle
 totodile
 mudkip
 piplup
+end
+!gifts Blueberry Trade (Chose Snivy)
+desc: A Blueberry Academy representative in the classroom will offer to trade any of the player's Pokémon. In exchange, the player receives a random starter of the type strong against their own.
+charmander 
+cyndaquil
+torchic
+chimchar
+end
+!gifts Blueberry Trade (Chose Oshawott)
+desc: A Blueberry Academy representative in the classroom will offer to trade any of the player's Pokémon. In exchange, the player receives a random starter of the type strong against their own.
 bulbasaur
 chikorita
 treecko
 turtwig
 end
-
 !trm 171/13
+
 !trm 172/13
 
 ### Leader Cheren
@@ -393,7 +397,6 @@ end
 !items Items
 silk scarf, Silk Scarf (found after defeating Preschooler Lin)
 rawst berry, 3x Rawst/Cheri/Chesto/Pecha/Aspear/Persim Berries (given by Cheren after defeating Jerome)
-tm dark, TM63 Brutal Swing (found after defeating Hiker Jerome)
 miracle seed, Miracle Seed (reward for defeating Kimya)
 mystic water, Mystic Water (reward for defeating Kimya)
 end
@@ -432,7 +435,7 @@ Hugh will challenge you to a battle as you attempt to cross the gate into Virban
 !items Virbank PokéMart 
 lagging tail, Lagging Tail 
 flame orb, Flame Orb
-toxic orb, Toxic Orb, 
+toxic orb, Toxic Orb
 oran berry, Oran Berries
 end
 
@@ -440,6 +443,7 @@ end
 tm electric, TM04 Shock Wave (reward for defeating Scientist)
 tm water, TM50 Water Pulse (reward for defeating Misty)
 clear amulet, Clear Amulet (reward for defeating Misty)
+stable mulch, Naive Mint (reward for defeating Misty)
 end
 
 !enc 4
@@ -450,16 +454,22 @@ end
 ### Misty  
 !notif SPLIT-LOCKED CONTENT, Misty is an optional mini-boss that can only be fought before defeating Roxie. This content is locked off afterwards. , #af74b3
 !tr 765/22 Rewards Togepi, TM50 Water Pulse, Clear Amulet
-!gifts Togepi Egg
-desc: A Togepi egg that can only be acquired by defeating Misty prior to defeating Roxie.
+!gifts Pokemon Egg
+desc: A rare Pokemon egg that can only be acquired by defeating Misty prior to defeating Roxie.
 togepi
+pichu
+azurill
+horsea
+clamperl
+staryu
+magikarp
 end
 
 
 
 ## Complex Exterior
 !items Items 
-white herb, White Herb Herb x2 (found around left edge of the map) 
+tm dark, TM63 Brutal Swing (found around left edge of the map)
 silverpowder, Silverpowder
 end
 
@@ -507,7 +517,7 @@ tm poison, TM09 Venoshock (reward for beating Roxie)
 end
 
 !trm 178/21
-
+-
 !trm 179/21
 
 ### Leader Roxie 
@@ -592,7 +602,7 @@ end
 
 !enc 37
 
-!notif Each pair of trainers in Castelia Sewers can be fought as either a Back to Back battle or a Tag battle (except for the Sewer Grunts). 
+!notif WARNING, Each pair of trainers in Castelia Sewers can be fought as either a Back to Back battle or a Tag battle (except for the Sewer Grunts), #f26253
 
 ### Hugh's Team
 !tr 589/28 Picked Tepig
@@ -621,6 +631,7 @@ end
 !trm 463 (First)
 !trm 464 (Second)
 
+#### Optional
 !tr 100 (Guards Enigma Berries)
 
 
@@ -706,7 +717,7 @@ thick club, Thick Club (found on the top floor)
 light ball, Light Ball (found by Clerk Britney)
 end
 
-!notif MOVE TUTOR: The Red Shard Move Tutor is found in the Battle Company Lobby. They teach
+!notif MOVE TUTOR, The Red Shard Move Tutor is found in the Battle Company Lobby. They teach
 - Seed Bomb (2 shards)
 - Skitter Smack (2 shards)
 - Drill Run (4 shards)
@@ -755,7 +766,7 @@ end
 
 
 ## Liberty Garden 
-!notif SPLIT-LOCKED-CONTENT: Surge is an optional mini-boss that can only be fought before defeating Burgh.  This content is locked off afterwards.  , #af74b3
+!notif SPLIT-LOCKED-CONTENT, Surge is an optional mini-boss that can only be fought before defeating Burgh.  This content is locked off afterwards.  , #af74b3
 ### Lt. Surge
 !tr 766/31 
 
@@ -801,7 +812,7 @@ leppa berry, Leppa Berries
 berry juice, Berry Juice 
 end
 
-## Route 4 
+## Route 4: Elesa Split
 !items Items
 safety goggles, Safety Goggles (reward from Colress)
 tm flying, TM40 Aerial Ace (found past Twins Tara & Val)
@@ -834,7 +845,7 @@ end
 
 
 
-## Desert Resort (Exterior)
+## Desert Resort: Exterior
 !items Items 
 tm ground, TM28 Dig (Past Lady Lina)
 end
@@ -845,14 +856,14 @@ end
 
 
 
-## Desert Resort (Interior)
+## Desert Resort: Interior
 !items Items 
 soft sand, Soft Sand (acquired from the agent in the desert)
 rowap berry, 10x Rowap Berry (acquired by defeating Ranger Anja)
 jaboca berry, 10x Jaboca Berry (acquired by defeating Psychic Perry)
 tm psychic, TM15 Psycho Cut (acquired by defeating Psychic Tommy)
 tm normal, TM83 Endure (acquired by defeating Backpackers Tami and Sam)
-green shard, 50x Green Shards (acquired past Ranger Jaiden)
+green shard, 30x Green Shards (acquired past Ranger Jaiden)
 end
 
 !enc 11
@@ -913,23 +924,20 @@ end
 Join Avenue is now a gauntlet of 4 trainers that must be defeated without changing your team to progress. You will not be able to access the PokéHelper to heal your party, pre-status, or fast travel out. 
 There are several crossroads where you can choose one of two trainers to fight to progress. Plan your route accordingly. 
 
-!notif The office to the left of Join Avenue's south entrance houses boxes of appliances that can change Rotom's form, if you have it.
+!notif NOTE, The office to the left of Join Avenue's south entrance houses boxes of appliances that can change Rotom's form, if you have it.
 
-!notif All Join Avenue shops and vendors have been blocked off by the convention. 
+!notif NOTE, All Join Avenue shops and vendors have been blocked off by the convention. 
 
 ### Fight #1
 !trm 13/35 Choose One (Left)
-
 !trm 59/35 Choose One (Right)
 
 ### Fight #2
 !trm 60/36 Left Side
-
 !trm 61/36 Right Side
 
 ### Fight #3
 !trm 248/37 Choose One (Left)
-
 !trm 48/37 Choose One (Right)
 
 ### Fight #4
@@ -977,14 +985,16 @@ If you acquire a Fossil, they can be revived into an encounter here.
 
 
 ### Eeveelution Gauntlet 
-!notif SPLIT LOCKED CONTENT: The Eevee fan club can only be fought prior to defeating Elesa. Afterwards it is locked off.
+!notif SPLIT LOCKED CONTENT, The Eevee fan club can only be fought prior to defeating Elesa. Afterwards it is locked off.
 You can fight this 8 mon gauntlet of trainers to access a unique trade. You can trade any Pokémon and receive a random eeveelution, so long as they are defeated before Elesa.
 
 !tr 29 (Fight #1)
 !tr 30 (Fight #2)
 !tr 49 (Fight #3)
+
 !tr 51 (Fight #4)
 !tr 52 (Fight #5)
+
 !tr 53 (Fight #6)
 
 !gifts Eeveelution Trade
@@ -1096,6 +1106,7 @@ end
 
 ## Old Nimbasa Gym 
 !trm 621/38
+
 !trm 148/38
 
 
@@ -1122,7 +1133,7 @@ end
 
 ### Nimbasa City Grunts 
 !notif WARNING, The "Mysterious Device" is a dangerous devices designed by colress that boost a Pokémon's Attack and Special Attack on switch in at the cost of their accuracy. Be careful! , #f26253
-!notif These can be fight in either order, but are always back to backs.
+!notif NOTE, These can be fight in either order, but are always back to backs.
 !trm 359/40 (Male Fight of Back-to-Back)
 !trm 751/40 (Female Fight of Back-to-Back) 
 
@@ -1163,7 +1174,7 @@ There are several crossroads where you can choose one of two trainers to fight t
 
 !items Gauntlet Reward
 focus sash, 2x Focus Sash (Received at the end of the gauntlet)
-!end
+end
 
 
 
@@ -1193,7 +1204,7 @@ mental herb, Mental Herb
 figy berry, Figy Berry 
 end
 
-!notif MOVE TUTOR: The Yellow Move Tutor is present, past Dancer Brian, and teaches:
+!notif MOVE TUTOR, The Yellow Move Tutor is present, past Dancer Brian, and teaches:
 - Explosion (2 shards)
 - Self Destruct (2 shards)
 - Zen Headbutt (4 shards)
@@ -1287,9 +1298,9 @@ end
 # Skyla Split (Level Cap 55, Optional Level Cap 51 for Rival)
 
 ## Pokémon World Tournament 
-!notif The move tutor for Blast Burn, Frenzy Plant, Hydro Cannon has been removed. 
-!notif The Move Reminder is here!
-!notif The Top Stall has the IV Master, who in exchange for IV Enhancers will maximize an IV of your choice for one of your Pokémon to 31. 
+!notif NOTE, The move tutor for Blast Burn, Frenzy Plant, Hydro Cannon has been removed. 
+!notif MOVE REMINDER, The Move Reminder is here!
+!notif IV MASTER, The Top Stall has the IV Master, who in exchange for IV Enhancers will maximize an IV of your choice for one of your Pokémon to 31. 
 
 !items Items
 rocky helmet, Rocky Helmet (found near entrance)
@@ -1304,8 +1315,8 @@ end
 
 
 
-## Relic Passage (Driftveil Side)
-!notif: This has the same met location as the part of Relic Passage accessible in Burgh split, except there are now water encounters.
+## Relic Passage: Skyla Split
+!notif NOTE, This has the same met location as the part of Relic Passage accessible in Burgh split, except there are now water encounters.
 !items Items 
 iron ball, Iron Ball (past the Backpacker Tag)
 tm steel, TM91 Flash Cannon (past Hiker Keith)
@@ -1375,7 +1386,7 @@ end
 !trm 368/50 Picked Snivy
 
 
-## Route 6 
+## Route 6: Skyla Split
 !items Items
 hm water, HM03 Surf (Received at the Season Research Center)
 tm normal, TM57 Weather Ball (past the Scientist Tag Battle)
@@ -1387,7 +1398,7 @@ end
 
 !trm 268/48
 
-!notif After these two trainers, you can access the Season Research Center. See below for more details.
+!notif NOTE, After these two trainers, you can access the Season Research Center. See below for more details.
 
 !trm 263/48 Left Side 
 !trm 264/48 Right Side 
@@ -1463,7 +1474,7 @@ end
 
 !tr 491/52 Rewards Assault Vest 
 
-!notif This encounter is not available until you defeat Cobalion. 
+!notif NOTE, This encounter is not available until you defeat Cobalion. 
 !enc 87
 
 
@@ -1502,7 +1513,7 @@ end
 Chargestone Cave is now two gauntlets of 4 trainers each that must be defeated without changing your team to progress. You will not be able to access the PokéHelper to heal your party, pre-status, or fast travel out. 
 There are several crossroads where you can choose one of two trainers to fight to progress. Plan your route accordingly
 
-!notif: WARNING, Volkner can only be fought within this Gauntlet. You cannot return to him later. rgb(255, 55, 0)
+!notif WARNING, Volkner can only be fought within this Gauntlet. You cannot return to him later. rgb(255, 55, 0)
 !notif FIELD EFFECT, In Chargestone Cave, Ground types only resist Electric moves. , #4e86d4
 
 !items Items
@@ -1560,7 +1571,7 @@ end
 ## Route 7 
 !enc 111 
 
-!item Items 
+!items Items 
 tm psychic, TM51 Ally Switch 
 heart scale, Heart Scale (found past Sola & Ana)
 tm fairy, TM32 Dazzling Gleam (found past Sola & Ana)
@@ -1648,8 +1659,3 @@ end
 
 
 # End of Current Content
-
-
-
-
-

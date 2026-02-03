@@ -150,9 +150,13 @@ label8: ;
 
 label3: ;
     // IF I WANT TO MOVE COMMON FUNCTIONS OUT 
-    //AddDialogueOption(43, 0xFFFF, 43);
-    //AddDialogueOption(171, 0xFFFF, 171);
-    //AddDialogueOption(71, 0xFFFF, 71);
+	GetPartyCount(0x8022, 0);
+	Compare(0x8022, 0);
+	if (1) goto label_DisablePokeHelperOptions;
+    AddDialogueOption(43, 0xFFFF, 43);
+    AddDialogueOption(171, 0xFFFF, 171);
+    AddDialogueOption(71, 0xFFFF, 71);
+label_DisablePokeHelperOptions: ;
 	StackPushVar(0x8022);
 	StackPushConst(1);
 	StackCompare(1);
@@ -169,6 +173,12 @@ label9: ;
 	if (255) goto label_DisablingFlight;
 	Storec0xD3(0x8028);
 	Compare(0x8028, 495);
+	if (1) goto label_DisablingFlight;
+	Storec0xD3(0x8028);
+	Compare(0x8028, 161);
+	if (1) goto label_DisablingFlight;
+	Storec0xD3(0x8028);
+	Compare(0x8028, 502);
 	if (1) goto label_DisablingFlight;
 	AddDialogueOption(86, 0xFFFF, 86);
 

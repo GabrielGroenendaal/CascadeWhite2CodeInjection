@@ -40,6 +40,11 @@ bool IsEqual(int a1, int a2)
 
 C_DECL_BEGIN
 
+extern void HandlerOranBerryReaction(BattleEventItem *a1, ServerFlow *a2, unsigned int *a3);
+extern void HandlerOranBerryCheckActivation(BattleEventItem *a1, ServerFlow *a2, int a3);
+extern void HandlerOranBerryUse(BattleEventItem *a1, ServerFlow *a2, unsigned int *a3);
+extern void HandlerOranBerrySwitchIn(BattleEventItem *a1, ServerFlow *a2, unsigned int *a3);
+
 // STUFF FOR FIELD EFFECTS
 extern VecFx32 *PlayerState_GetWPos(PlayerState *playerState);
 extern bool DoesMonHaveShadowTag(int a1, BattleMon *a2);

@@ -41,4 +41,5 @@
 #define DEBUGGING_SIDE_EFFECTS false
 #define DEBUGGING_FIELDEFFECTS false
 
+#define DAMAGE_CACHE_ENABLED true
 #endif

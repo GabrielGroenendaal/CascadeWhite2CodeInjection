@@ -18,6 +18,11 @@ Dynamic-Calc/
 Test/
 __Pokeweb/
 ___DynamicCalcCheckout/
+Dynamic-Calc-Decomps/
+___DynamicCalcCascade/
+___PokewebLiveCascade/
+___DynamicDex/
+ddex/
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 

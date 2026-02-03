@@ -420,6 +420,7 @@ public class MainEvents {
 		sub_0091();
 	}
 	public static void main_19() {
+		int v16;
 			Actor.PauseAll();
 			ShowExclamationMark(0);
 			Actor.WaitActionFinish();
@@ -436,10 +437,10 @@ public class MainEvents {
 			Sound.MEWait();
 			Message.WaitAdvance();
 			Message.CloseSystem();
-			Message.ActorEx(1024, 2, 0, 1, 0);
+			Message.ActorEx(1024, 137, 0, 1, 0);
 			v16 = YesNoWin.Show();
 			if (v16 == 0) {
-				Message.ActorEx(1024, 2, 0, 1, 0);
+				Message.ActorEx(1024, 138, 0, 1, 0);
 			}
 			Message.ActorEx(1024, 135, 0, 1, 0);
 			Input.LastKeyWait();

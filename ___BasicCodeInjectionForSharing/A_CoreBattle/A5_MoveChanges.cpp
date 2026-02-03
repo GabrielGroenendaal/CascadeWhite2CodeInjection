@@ -1718,7 +1718,7 @@ extern "C"
         *a1 = 2;
         return NaturalGiftHandlers;
     }
-
+    
 #pragma endregion
 
 #pragma region StompingTantrumAndClones
@@ -1872,7 +1872,7 @@ extern "C"
     void HandlerRecharge(int a1, ServerFlow *a2, int a3)
     {
         BattleMon *mon;
-        if (a3 == BattleEventVar_GetValue(VAR_ATTACKING_MON))
+        if (a3 == BattleEventVar_GetValue(VAR_MON_ID))
         {
             mon = Handler_GetBattleMon(a2, a3);
             if (!BattleMon_GetTurnFlag(mon, TURNFLAG_MOVEFAILED))
@@ -1883,7 +1883,7 @@ extern "C"
     }
 
     MOVE_TRIGGERTABLE RechargeHandlers[] = {
-        {EVENT_MOVE_EXECUTE_END, (MOVE_HANDLER_FUNC)HandlerRecharge},
+        {EVENT_MOVE_EXECUTE_EFFECTIVE, (MOVE_HANDLER_FUNC)HandlerRecharge},
     };
 
     MOVE_TRIGGERTABLE *THUMB_BRANCH_EventAddPowerSplit(_DWORD *a1)
@@ -1898,7 +1898,7 @@ extern "C"
     void HandlerScaleShotEnd(int a1, ServerFlow *a2, int a3)
     {
         BattleMon *mon;
-        if (a3 == BattleEventVar_GetValue(VAR_ATTACKING_MON))
+        if (a3 == BattleEventVar_GetValue(VAR_MON_ID))
         {
             mon = Handler_GetBattleMon(a2, a3);
             if (BattleMon_IsStatChangeValid(mon, VALUE_DEFENSE_STAGE, -1) || BattleMon_IsStatChangeValid(mon, VALUE_SPEED_STAGE, 1))
@@ -1910,7 +1910,7 @@ extern "C"
     }
 
     MOVE_TRIGGERTABLE ScaleShotHandlers[] = {
-        {EVENT_MOVE_EXECUTE_END, (MOVE_HANDLER_FUNC)HandlerScaleShotEnd},
+        {EVENT_MOVE_EXECUTE_EFFECTIVE, (MOVE_HANDLER_FUNC)HandlerScaleShotEnd},
 
     };
 
@@ -2006,7 +2006,7 @@ extern "C"
     }
 
     MOVE_TRIGGERTABLE OverheatHandlers[] = {
-        {EVENT_MOVE_EXECUTE_END, (MOVE_HANDLER_FUNC)HandlerOverheatRecharge},
+        {EVENT_MOVE_EXECUTE_EFFECTIVE, (MOVE_HANDLER_FUNC)HandlerOverheatRecharge},
     };
 
     MOVE_TRIGGERTABLE *THUMB_BRANCH_EventAddWonderRoom(_DWORD *a1)

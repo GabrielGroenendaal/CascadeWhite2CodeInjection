@@ -1210,9 +1210,7 @@ extern "C"
     BattleEventHandlerTableEntry *EventAddSideMist(int *a1)
     {
         *a1 = 4;
-#if DEBUGGING_ALL && DEBUGGING_SIDE_EFFECTS
-        k::Printf("ADDING MIST HANDLERS\n");
-#endif
+
         return (BattleEventHandlerTableEntry *)MistHandlers;
     }
     BattleEventHandlerTableEntry *EventAddSideTailwind(int *a1)
@@ -1686,11 +1684,22 @@ extern "C"
 
     bool BattleSideStatus_IsEffectActive(int currentSide, SideEffect effect)
     {
+        
         if (effect < DEFAULT_SIDE_CONDITION_AMOUNT)
             return SideStatus.Sides[currentSide].Conditions[effect].battleEventItem != 0;
         else
             return SideStatusExt.Sides[currentSide].Conditions[effect - DEFAULT_SIDE_CONDITION_AMOUNT].battleEventItem != 0;
     }
+
+    bool THUMB_BRANCH_SAFESTACK_BattleSideStatus_IsEffectActive(int currentSide, SideEffect effect)
+    {
+        
+        if (effect < DEFAULT_SIDE_CONDITION_AMOUNT)
+            return SideStatus.Sides[currentSide].Conditions[effect].battleEventItem != 0;
+        else
+            return SideStatusExt.Sides[currentSide].Conditions[effect - DEFAULT_SIDE_CONDITION_AMOUNT].battleEventItem != 0;
+    }
+    
     bool THUMB_BRANCH_Handler_IsSideEffectActive(int a1, int currentSide, SideEffect effect)
     {
         return BattleSideStatus_IsEffectActive(currentSide, effect);
@@ -1703,18 +1712,18 @@ extern "C"
     {
         return BattleSideStatus_IsEffectActive(currentSide, effect);
     }
-    bool THUMB_BRANCH_j_j_BattleSideStatus_IsEffectActive_1(int currentSide, SideEffect effect)
-    {
-        return BattleSideStatus_IsEffectActive(currentSide, effect);
-    }
-    bool THUMB_BRANCH_j_j_BattleSideStatus_IsEffectActive_2(int currentSide, SideEffect effect)
-    {
-        return BattleSideStatus_IsEffectActive(currentSide, effect);
-    }
-    bool THUMB_BRANCH_j_j_BattleSideStatus_IsEffectActive_3(int currentSide, SideEffect effect)
-    {
-        return BattleSideStatus_IsEffectActive(currentSide, effect);
-    }
+    // bool THUMB_BRANCH_j_j_BattleSideStatus_IsEffectActive_1(int currentSide, SideEffect effect)
+    // {
+    //     return BattleSideStatus_IsEffectActive(currentSide, effect);
+    // }
+    // bool THUMB_BRANCH_j_j_BattleSideStatus_IsEffectActive_2(int currentSide, SideEffect effect)
+    // {
+    //     return BattleSideStatus_IsEffectActive(currentSide, effect);
+    // }
+    // bool THUMB_BRANCH_j_j_BattleSideStatus_IsEffectActive_3(int currentSide, SideEffect effect)
+    // {
+    //     return BattleSideStatus_IsEffectActive(currentSide, effect);
+    // }
 
     int THUMB_BRANCH_j_j_SideEvent_RemoveItem(int currentSide, SideEffect effect)
     {
@@ -1886,7 +1895,6 @@ extern "C"
     // void THUMB_BRANCH_SAFESTACK_ServerControl_SideEffectEndMessageCore(ServerFlow *a1, unsigned int a2, int a3)
     // {
     //     int v4; // r2
-
     //     v4 = -1;
     //     if (a2 <= 0xF)
     //     {
@@ -1954,6 +1962,7 @@ extern "C"
     //     }
     // }
 
+#pragma region WEATHER
     extern void BattleField_EndWeather(BattleField *a1);
     extern int BtlvCore_WaitMessage(BtlvCore *a1);
     extern void BtlvCore_StartMessageStandard(BtlvCore *a1, int a2, _DWORD *a3);
@@ -2114,4 +2123,6 @@ extern "C"
             return ServerControl_CheckExpGet(a1);
         }
     }
+
+#pragma endregion
 }

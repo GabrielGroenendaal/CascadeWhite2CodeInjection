@@ -8,124 +8,118 @@
 
 */
 
+Steps: 
+make sure we copied all the scripts back into our folder. 
+export and import into pokeweb
+update: 
+    marts 
+    pokedex
+    trainers
+    encounters
+    moves 
+    documentation for encounters, moves, trainers, dex, marts
+export and create a new folder to extract the rom and make a new ctrmap project
+update: 
+    item script 
+    virbank script 
+    item placements 
+    berry juice handlers 
+    pokestar studios background 
+    virbank city text
+debug:
+    freeze dry 
+    mystical fire 
+    berry juice 
+export:
+documentation:
+    update mastersheet with more spaces and correct notifs 
+    install node.js 
+    update our dex 
 
+
+New Google Account: 
+    trustypeachs@gmail.com
+    password: Ktba6jq8r3??????
+
+```Patch Notes:```
+**Bugs**:
+- Fixed an issue where backgrounds were causing crashes in Pokestar Studios by turning off the backgrounds. I'll investigate. 
+- Fixed an issue where Cosplayer Anders was awarding an Ability Patch. 
+
+**Items**:
+- Returned the 2x White Herb to Floccessy Ranch
+- Moved the Brightpowder in Ranch to post Lass Daya on Route 19 
+- Fixed the item pickups in Desert Resort rewarding too many Rowap/Jaboca Berries
+- Fixed the missing 30x Green Shards in Desert Resort
+- Removed Brutal Swing from Route 20 and put it in Virbank City
+- Added a new reward for the Misty fight; a Naive Mint!
+- Added Magost, Bluk, Nanab, Wepear, Pinep berries to the Flocessy Pokemart and updated their item descriptions to include their natural gift typing and power. 
+
+**Encounters**:
+- Misty's gift encounter is now a random roll between the following mons: 16% Togepi, 16% Azurill, 16% Staryu, 16% Pichu, 16% Clamperl, 16% Horsea, 4% Magikarp
+- For dupes avoidance, these encounters have been removed from the previous tables.
+- Aspertia City Fishing (Dark Spot): 15% Marill -> 15% Panpour 
+- Route 19 Fishing: 5% Marill -> 5% Shellder 
+- Route 19 Fishing (Dark Spot): 40% Marill -> 40% Chinchou, 15% Chinchou -> 15% Mantyke 
+- Route 20 Fishing: 5% Staryu -> 5% Seel 
+- Flocessy Ranch Grass: 2% Marill -> 2% Riolu 
+- Virbank City Fishing (Dark Spot): 40% Horsea -> 40% Carvanha 
+- Complex Exterior Fishing (Dark Spot): 15% Clamperl -> 15% Seel 
+- Plasma Sanctuary: 10% Spinda -> 10% Togetic 
+- Celestial Rooftop: 10% Xatu -> 10% Togetic
+
+**Balance**: 
+- Seel is now Water/Ice, just like Dewgong. It and Dewgong get a +10 to HP.
+- Blitzle learns Pursuit over Tail Whip
+- Whimsur Line always has the Amplifier ability, lose their Attack buffs, and has a small revamp to their learnset (Hyper Voice for Burgh Split)
+- Chinchou gets +10 Defense, +5 Special Attack, +20 Special Defense
+- Shellder gets +10 Speed and a small revamp to their learnset (Early Icicle Spear)
+- Togepi Line has a revamped learnset to account for not being a guarantee-able encounter. (Draining kiss for Roxie split, for example)
+- Rapidash Line gets a slightly retooled learnset, main thing is earlier Flare Blitz (level 55)
+- Staryu and Starmie get +20 HP each and a slightly retooled learnset
+- Horsea line gets Aqua Tail at level 30
+- Azurill line gets slight tweaks to learnset.
+- Magikarp now evolves by leveling up while holding a Dragon Fang.
+
+**Moves**: 
+- Fixed an issue where Smokescreen was a spread move. 
+- Fixed Agility not having +1 Priority
+- Fixed Submission to 90 BP 
+- Chilling Water is now a spread move.
+- Low Sweep is now a spread move.
+
+**Trainers**: 
+- Fixed a bunch of faulty abilities on the AI (Pilot Flynn)
+- Fixed Girl in Suit and Guy in Suit not having doubles AI flags. 
+
+**Known Issues**: 
+- There is a visual bug with Burgh's gym and the Harlequins. This is purely visual.
+- Max Potion seems to be curing Status, and Full Restores have some strange behavior with the UI. 
+- 
 
 
 ====================================================================================================================================================
 /*   ISSUES LIST   */
 
+
     [ BACKGROUNDS ]
-        - Now that ability changes isn't breaking things, let's test again with Background changes to see if there is somewhere else we can overwrite the lighting. 
-        
-
-    [ PLAYTESTING ]
-        - Set up the Dynamic Calc Npoint.io endpoint and give it to Hzla to add in.
+        - Now that ability changes isn't breaking things, let's test again with Background changes to see if there is somewhere else we can overwrite the lighting.  
     
-    
-    [ SCRIPTING ]
-        - Do castelia sewers. If it's boring, spend tonight implementing the new sewers progression.
-        - Disable Travel in Castelia Sewers, Reversal Mountain
-        - Add a barrier in Castelia Sewers that doesn't go away until you defeat the PLasma Grunts that prevents you from getting to the alleyway. 
-        - Have Hugh reward you with a hardy, lax and gentle mint in the sewers!
-        - Add a trainer in Castelia Allleyway that fights you in exchange for an ability capsule. 
-        - Add a trade to castelia alleyway for one of the three following pokemon: 
-
-
     [ MECHANICS ]
-        - EndSideEffectMessageCore 
-            - We can also try to use direct address rewrites to get it to work over Swamp
-        - Add ability capsule.
-            - We'll overwrite one of the other EV increasing items, then have it set the nature to the PARAM - 1. 
-            - If it's not separate messages this will be a little more complicateed.
-            - 
-        - Add Mints
-            - We'll overwrite one of the other EV increasing items, then have it set the nature to the PARAM - 1. 
-
-
-
-
-====================================================================================================================================================
-/*   ITEM ADDITIONS  */
-
-
-    I think I've got most of the implementation down, we'll just need to modify the text banks, and modify the items themselves to work properly. 
+        - Using Full Restores causes some kind of weird behavior. Using Max Potion seems to cure status?
+        - See if we can disable Dig switch trapping triggering early vs. the non target, or at least vs targets it has no effect against.
+        - 100% fishing rate. No time out. 
+        - Figure out what's going on with Freeze Dry and Mystical Fire.
     
-    [ NATURE MINTS ] 
-        You acquire a Quirky Mint in Virbank Complex. 
-        Colress gives you a Bashful, Bold, and Careful Mint. 
-        Defeating Sabrina gets you a modest mint (replaces the Yellow Shards)
-        
-        For Mints we can use the Data Cards. Indexes: 505-529 
-        They are unused in the game right now, they're in order, and that should work perfectly fine. 
+    [ DOCUMENTATION ERRORS ]
+        - Need to update documentation for all of today's changes. 
+        - Update the Mastersheet properly.
 
-        0: Hardy
-        1: Lonely
-        2: Brave 
-        3: Adamant 
-        4: Naughty 
-        5: Bold
-        6: Docile 
-        7: Relaxed
-        8: Impish
-        9: Lax 
-        10: Timid 
-        11: Hasty 
-        12: Serious
-        13: Jolly 
-        14: Naive 
-        15: Modest 
-        16: Mild 
-        17: Quiet 
-        18: Bashful 
-        19: Rash 
-        20: Calm 
-        21: Gentle 
-        22: Sassy 
-        23: Careful 
-        24: Quirky 
-
-    [ ABILITY CAPSULES ]
-        For Ability Capsules we'll replace Zinc. 
-
-        An NPC in Burgh split will fight you guarding 2 ability capsules in the Castelia Alleyway. 
-        He won't fight you post Burgh. 
+    
+      
 
 
-        Scrafty 
-        Level: 28
-        Ability: Intimidate 
-        Moves: 
-            - Crunch 
-            - Brick Break 
-            - Fake Out 
-            - Zen Headbutt
-        
-        Beedrill 
-        Level: 28
-        Ability: Adaptability 
-        Moves: 
-            - Poison Jab 
-            - Skitter Smack 
-            - Detect 
-            - Thrash 
-        
-        Toxicroak 
-        Level: 28
-        Ability: Exploit 
-        Moves: 
-            - Force Palm
-            - Poison Jab
-            - Sucker Punch 
-            - Fake Out
-        
-        Hitmonchan 
-        Level: 28
-        Ability: Iron Fist
-        Moves: 
-            Ice Punch
-            Fire Punch 
-            Thunder Punch 
-            Dizzy Punch
+
 
 
 
@@ -247,9 +241,6 @@
         - Village Bridge Gauntlet 
         - Castelia Sewers Rework: 
             - I think a potentially simple way to achieve this is to simply move the trainers, but this could be complicated with sewers having different maps for different seasons.
-
-
-
 
 
 ====================================================================================================================================================

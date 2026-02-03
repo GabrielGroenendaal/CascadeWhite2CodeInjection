@@ -33,6 +33,23 @@ extern "C"
         }
         return 0;
     }
+
+    // Just adding the Berry Juice 
+   ITEM_TRIGGERTABLE BerryJuiceHandlers[] = {
+        {EVENT_CHECK_ITEM_REACTION, (ITEM_HANDLER_FUNC)HandlerOranBerryReaction},
+        {EVENT_SWITCH_IN, (ITEM_HANDLER_FUNC)HandlerOranBerrySwitchIn},
+        {EVENT_CHECK_ACTIVATION, (ITEM_HANDLER_FUNC)HandlerOranBerryCheckActivation},
+        {EVENT_USE_ITEM, (ITEM_HANDLER_FUNC)HandlerOranBerryUse},
+        {EVENT_USE_ITEM_TEMP, (ITEM_HANDLER_FUNC)HandlerOranBerryUse},
+    };
+
+    ITEM_TRIGGERTABLE *THUMB_BRANCH_EventAddBerryJuice(_DWORD *a1)
+    {
+        *a1 = 5;
+        return BerryJuiceHandlers;
+    }
+
+
     /*
 
 
@@ -539,6 +556,9 @@ extern "C"
         else if (a2 == IT0225_MASCOT_BADGE || a2 == IT0215_TERA_BADGE)
         {
             return 1;
+        }
+        else {
+            return 0;
         }
         return 0;
     }
@@ -2337,6 +2357,7 @@ extern "C"
         return 0;
     }
 
+    
     // Overwritten to remove the unintended effects of overwriting the CONDITION_ACCURACY_UP effect
     bool THUMB_BRANCH_ServerEvent_CheckHit(ServerFlow *a1, BattleMon *a2, BattleMon *a3, MoveParam *a4)
     {

@@ -538,8 +538,7 @@ extern "C"
 
         {EVENT_STAT_STAGE_CHANGE_LAST_CHECK, (ABILITY_HANDLER_FUNC)HandlerHyperCutterCheck},
 
-        {EVENT_STAT_STAGE_CHANGE_FAIL, (ABILITY_HANDLER_FUNC)HandlerHyperCutterGuard}
-    };
+        {EVENT_STAT_STAGE_CHANGE_FAIL, (ABILITY_HANDLER_FUNC)HandlerHyperCutterGuard}};
 
     ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddScrappy(_DWORD *a1)
     {
@@ -1314,7 +1313,7 @@ extern "C"
                 // k::Printf("\nAFTERMATH TRIGGERED:\nNumTargets = %d", v6);
                 for (i = 0; i < v6; i++)
                 {
-                    
+
                     explodedMon = Handler_GetBattleMon(a2, adjacentPos[i]);
                     // k::Printf("\nTarget = %d", explodedMon->ID);
                     v9 = (HandlerParam_Damage *)BattleHandler_PushWork(a2, EFFECT_DAMAGE, (int)a3);
@@ -2585,10 +2584,12 @@ extern "C"
 
 
     */
+
     void HandlerMagician(BattleEventItem *item, ServerFlow *serverFlow, u32 pokemonSlot, u32 *work)
     {
         if (pokemonSlot == BattleEventVar_GetValue(VAR_ATTACKING_MON))
         {
+
             BattleMon *currentMon = Handler_GetBattleMon(serverFlow, pokemonSlot);
             if (!*work)
             {
@@ -2635,12 +2636,11 @@ extern "C"
         }
     }
     ABILITY_TRIGGERTABLE PickpocketHandlers[]{
-        {EVENT_DAMAGE_PROCESSING_START, (ABILITY_HANDLER_FUNC)HandlerThiefStart},
         {EVENT_DAMAGE_PROCESSING_END_HIT_REAL, (ABILITY_HANDLER_FUNC)HandlerMagician},
     };
     ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddPickpocket(_DWORD *a1)
     {
-        *a1 = 2;
+        *a1 = 1;
         return PickpocketHandlers;
     }
 
@@ -3231,10 +3231,10 @@ extern "C"
             {
                 for (i = 0; i < pokeCount; i++)
                 {
-// if (!(Handler_GetBattleStyle(a2) != BTL_STYLE_TRIPLE || IsPosInRangeTripleBattle(ExistFrontPokePos, tracePokemonSlot)))
-// {
-//     continue;
-// }
+                    // if (!(Handler_GetBattleStyle(a2) != BTL_STYLE_TRIPLE || IsPosInRangeTripleBattle(ExistFrontPokePos, tracePokemonSlot)))
+                    // {
+                    //     continue;
+                    // }
 
                     traceVictim = Handler_GetBattleMon(a2, opposingPokePos[i]);
                     traceAbilityId = BattleMon_GetValue(traceVictim, VALUE_ABILITY);
@@ -3686,9 +3686,22 @@ extern "C"
                     {
                         v7 = MOVEFAIL_CONFUSION;
                     }
-                    else if (Status == CONDITION_PARALYSIS && BattleMon_GetValue(a2, VALUE_EFFECTIVE_ABILITY) != ABIL062_GUTS && BattleMon_GetValue(a2, VALUE_EFFECTIVE_ABILITY) != ABIL095_QUICK_FEET && BattleMon_GetValue(a2, VALUE_EFFECTIVE_ABILITY) != ABIL063_MARVEL_SCALE && RollEffectChance(0x19u))
+                    else if (Status == CONDITION_PARALYSIS)
                     {
-                        v7 = MOVEFAIL_PARALYSIS;
+                        if (BattleMon_GetValue(a2, VALUE_EFFECTIVE_ABILITY) == ABIL062_GUTS || BattleMon_GetValue(a2, VALUE_EFFECTIVE_ABILITY) == ABIL063_MARVEL_SCALE)
+                        {
+                        }
+                        else if (BattleMon_GetValue(a2, VALUE_EFFECTIVE_ABILITY) == ABIL095_QUICK_FEET && RollEffectChance(0x4u))
+                        {
+                            v7 = MOVEFAIL_PARALYSIS;
+                        }
+                        else
+                        {
+                            if (RollEffectChance(0x19u))
+                            {
+                                v7 = MOVEFAIL_PARALYSIS;
+                            }
+                        }
                     }
                     else if (ServerControl_CheckAttract(a1, a2))
                     {
@@ -4687,7 +4700,5 @@ extern "C" int THUMB_BRANCH_SAFESTACK_PokeList_LoadSwitchInFailMessage(PokeListM
 #pragma endregion
 
 #pragma region testing
-
-
 
 #pragma endregion

@@ -22,6 +22,7 @@ import system.Field;
 import system.Input;
 import system.Runtime;
 import system.Sound;
+import system.System;
 import system.text.WordSet;
 
 public class MainEvents {
@@ -657,7 +658,7 @@ public class MainEvents {
 		int v0;
 		int v4;
 		int v5;
-
+        int randomEgg;
 		Actor.PauseAll();
 		Sound.SEPlay(1351);
 		Actor.FacePlayer();
@@ -693,7 +694,37 @@ public class MainEvents {
 			Message.Actor(1024, 48, 0, 0);
 			Input.LastKeyWait();
 			Message.CloseAll();
-			v0 = PokeParty.AddEgg(175, 0);
+
+            randomEgg = System.Random(99);
+
+            if (randomEgg >= 0 && randomEgg <= 15){
+                // Togepi
+                v0 = PokeParty.AddEgg(175, 0);
+            }
+            if (randomEgg >= 16 && randomEgg <= 31){
+                // Azurill
+                v0 = PokeParty.AddEgg(298, 0);
+            }
+            if (randomEgg >= 32 && randomEgg <= 47){
+                // Pichu 
+                v0 = PokeParty.AddEgg(172, 0);
+            }
+            if (randomEgg >= 48 && randomEgg <= 63){
+                // Staryu 
+                v0 = PokeParty.AddEgg(120, 0);
+            }
+            if (randomEgg >= 64 && randomEgg <= 79){
+                // Clamperl 
+                v0 = PokeParty.AddEgg(366, 0);
+            }
+            if (randomEgg >= 80 && randomEgg <= 95){
+                // Horsea 
+                v0 = PokeParty.AddEgg(116, 0);
+            }
+            if (randomEgg >= 96 && randomEgg <= 99){
+                // Magikarp
+                v0 = PokeParty.AddEgg(129, 0);
+            }
 			goto LABEL_0ce7;
 		}
 
@@ -729,6 +760,7 @@ public class MainEvents {
                 Actor.Hide(21);
                 Actor.Hide(17);
                 Actor.Hide(25);
+                Actor.Hide(26); // REPLACE POTENTIALLY WITH WHATEVER ID WE GIVE THE NAIVE MINT
         }
 	}
 

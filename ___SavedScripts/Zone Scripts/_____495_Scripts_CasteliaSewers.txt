@@ -1167,8 +1167,10 @@ public class MainEvents {
 
         // Modify this to account for coming from the north.
 		v34 += 2;
-		Actor.WalkRoute(0, v33, v34, 0, 8, 0);
-		Actor.WaitActionFinish();
+		if (v34 != v36){
+			Actor.WalkRoute(0, v33, v34, 0, 8, 0);
+			Actor.WaitActionFinish();
+		}
 		TurnNorth8F(0);
 		Actor.WaitActionFinish();
 

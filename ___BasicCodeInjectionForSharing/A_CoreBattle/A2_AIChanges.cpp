@@ -211,126 +211,129 @@ extern "C"
 
 #pragma region DamageCalcStateTracking
 
-//     struct keyPair
-//     {
-//         u8 dirty;
-//         u16 value;
-//     };
+#if DAMAGE_CACHE_ENABLED
+    struct keyPair
+    {
+        u8 dirty;
+        u16 value;
+    };
 
-//     keyPair calcTable[6][6][4] = {
-//         {{{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-//          {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-//          {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-//          {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-//          {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-//          {{0, 0}, {0, 0}, {0, 0}, {0, 0}}},
-//         {{{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-//          {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-//          {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-//          {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-//          {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-//          {{0, 0}, {0, 0}, {0, 0}, {0, 0}}},
-//         {{{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-//          {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-//          {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-//          {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-//          {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-//          {{0, 0}, {0, 0}, {0, 0}, {0, 0}}},
-//         {{{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-//          {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-//          {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-//          {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-//          {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-//          {{0, 0}, {0, 0}, {0, 0}, {0, 0}}},
-//         {{{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-//          {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-//          {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-//          {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-//          {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-//          {{0, 0}, {0, 0}, {0, 0}, {0, 0}}},
-//         {{{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-//          {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-//          {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-//          {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-//          {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
-//          {{0, 0}, {0, 0}, {0, 0}, {0, 0}}},
-//     };
+    keyPair calcTable[6][6][4] = {
+        {{{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+         {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+         {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+         {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+         {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+         {{0, 0}, {0, 0}, {0, 0}, {0, 0}}},
+        {{{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+         {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+         {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+         {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+         {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+         {{0, 0}, {0, 0}, {0, 0}, {0, 0}}},
+        {{{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+         {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+         {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+         {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+         {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+         {{0, 0}, {0, 0}, {0, 0}, {0, 0}}},
+        {{{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+         {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+         {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+         {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+         {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+         {{0, 0}, {0, 0}, {0, 0}, {0, 0}}},
+        {{{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+         {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+         {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+         {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+         {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+         {{0, 0}, {0, 0}, {0, 0}, {0, 0}}},
+        {{{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+         {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+         {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+         {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+         {{0, 0}, {0, 0}, {0, 0}, {0, 0}},
+         {{0, 0}, {0, 0}, {0, 0}, {0, 0}}},
+    };
 
-//     u16 NumOfCalcs = 0;
-//     u16 NumOfCalcsAvoided = 0;
+    u16 NumOfCalcs = 0;
+    u16 NumOfCalcsAvoided = 0;
 
-//     void resetCalcTable()
-//     {
-//         for (u8 i = 0; i < 6; i++)
-//         {
-//             for (u8 k = 0; k < 6; k++)
-//             {
-//                 for (u8 j = 0; j < 4; j++)
-//                 {
-//                     calcTable[i][k][j].dirty = 0;
-//                     calcTable[i][k][j].value = 0;
-//                 }
-//             }
-//         }
-// #if DEBUGGING_DAMAGECALC && DEBUGGING_ALL
-//         k::Printf("\nThe number of calcs performed this turn was %d and the number of calcs avoided was %d\n", NumOfCalcs, NumOfCalcsAvoided);
-// #endif
-//         NumOfCalcs = 0;
-//         NumOfCalcsAvoided = 0;
-//     }
+    void resetCalcTable()
+    {
+        for (u8 i = 0; i < 6; i++)
+        {
+            for (u8 k = 0; k < 6; k++)
+            {
+                for (u8 j = 0; j < 4; j++)
+                {
+                    calcTable[i][k][j].dirty = 0;
+                    calcTable[i][k][j].value = 0;
+                }
+            }
+        }
+#if DEBUGGING_DAMAGECALC && DEBUGGING_ALL
+        k::Printf("\nThe number of calcs performed this turn was %d and the number of calcs avoided was %d\n", NumOfCalcs, NumOfCalcsAvoided);
+#endif
+        NumOfCalcs = 0;
+        NumOfCalcsAvoided = 0;
+    }
 
-//     u8 GetMovePos(BattleMon *mon, MoveID move)
-//     {
-//         int movecount = BattleMon_GetMoveCount(mon);
-//         int count = 0;
-//         if (movecount)
-//         {
-//             do
-//             {
-//                 if (Move_GetID(mon, count) == move)
-//                 {
-//                     return count;
-//                 }
-//                 count++;
-//             } while (count < movecount);
-//         }
-//         return 5;
-//     }
+    u8 GetMovePos(BattleMon *mon, MoveID move)
+    {
+        int movecount = BattleMon_GetMoveCount(mon);
+        int count = 0;
+        if (movecount)
+        {
+            do
+            {
+                if (Move_GetID(mon, count) == move)
+                {
+                    return count;
+                }
+                count++;
+            } while (count < movecount);
+        }
+        return 5;
+    }
 
-//     u16 checkCalcTable(ServerFlow *flow, BattleMon *attacker, BattleMon *defender, MoveID move)
-//     {
-//         int index1 = Handler_PokeIDToPokePos(flow, attacker->ID);
-//         int index2 = Handler_PokeIDToPokePos(flow, defender->ID);
-//         int index3 = GetMovePos(attacker, move);
-//         if (index3 > 4)
-//         {
-//             return 0;
-//         }
+    u16 checkCalcTable(ServerFlow *flow, BattleMon *attacker, BattleMon *defender, MoveID move)
+    {
+        int index1 = Handler_PokeIDToPokePos(flow, attacker->ID);
+        int index2 = Handler_PokeIDToPokePos(flow, defender->ID);
+        int index3 = GetMovePos(attacker, move);
+        if (index3 > 4)
+        {
+            return 0;
+        }
 
-//         NumOfCalcs++;
-//         if (calcTable[index1][index2][index3].dirty == 1)
-//         {
-//             NumOfCalcsAvoided++;
-//             return calcTable[index1][index2][index3].value;
-//         }
-//         return 0;
-//     }
+        NumOfCalcs++;
+        if (calcTable[index1][index2][index3].dirty == 1)
+        {
+            NumOfCalcsAvoided++;
+            return calcTable[index1][index2][index3].value;
+        }
+        return 0;
+    }
 
-//     void saveToCalcTable(ServerFlow *flow, BattleMon *attacker, BattleMon *defender, MoveID move, u32 damage)
-//     {
-//         int index1 = Handler_PokeIDToPokePos(flow, attacker->ID);
-//         int index2 = Handler_PokeIDToPokePos(flow, defender->ID);
-//         int index3 = GetMovePos(attacker, move);
-//         calcTable[index1][index2][index3].dirty = 1;
-//         calcTable[index1][index2][index3].value = damage;
-//     }
+    void saveToCalcTable(ServerFlow *flow, BattleMon *attacker, BattleMon *defender, MoveID move, u32 damage)
+    {
+        int index1 = Handler_PokeIDToPokePos(flow, attacker->ID);
+        int index2 = Handler_PokeIDToPokePos(flow, defender->ID);
+        int index3 = GetMovePos(attacker, move);
+        calcTable[index1][index2][index3].dirty = 1;
+        calcTable[index1][index2][index3].value = damage;
+    }
 
     void THUMB_BRANCH_ServerControl_TurnCheckField(ServerFlow *a1)
     {
-        // resetCalcTable();
+        resetCalcTable();
+
         BattleField_TurnCheck(TurnCheckCallback_Field, a1);
         ServerDisplay_AddCommon(a1->serverCommandQueue, 47, 0);
     }
+#endif
 
 #pragma endregion
 
@@ -366,23 +369,17 @@ extern "C"
 
     FieldTypeChanges checkForFieldEffects()
     {
-        // #if DEBUGGING_ALL && DEBUGGING_FIELDEFFECTS
-        // k::Printf("\nDEBUGGING checkForFieldEffects FUNCTION\n");
-        // #endif
+
         PlayerState *playerState = GameData_GetPlayerState(*(GameData **)(g_GameBeaconSys + 4));
         int zoneId = PlayerState_GetZoneID(playerState);
-        // #if DEBUGGING_ALL && DEBUGGING_FIELDEFFECTS
-        // k::Printf("\nZONE ID IS: %d\n", zoneId);
-        // #endif
+
         if (zoneId == 121)
         {
             return FIELD_OPELUCID;
         }
         if (zoneId == 607 || zoneId == 195 || zoneId == 196 || zoneId == 197)
         {
-            // #if DEBUGGING_ALL && DEBUGGING_FIELDEFFECTS
-            // k::Printf("\nCHARGESTONE FIELD DETECTED\n");
-            // #endif
+
             return FIELD_CHARGESTONE;
         }
         if (zoneId == 339 || zoneId == 338 || zoneId == 340 || zoneId == 341 || zoneId == 462 || (zoneId >= 510 && zoneId <= 514) || (zoneId >= 569 && zoneId <= 572))
@@ -916,8 +913,9 @@ extern "C"
         //         k::Printf("\nCheck 1: Setting up field effects at the start of the battle\n");
         // #endif
         /* Some kind of initialization of the damage calc cache would be good here */
-        // resetCalcTable();
-
+#if DAMAGE_CACHE_ENABLED
+        resetCalcTable();
+#endif
         for (i = 0; i < 4; ++i)
         {
             ClientWork = BattleServer_GetClientWork(a1->server, i);
@@ -1372,12 +1370,13 @@ extern "C"
         {
             return 0;
         }
-        // v12 = checkCalcTable(a1, AttackingMon, DefendingMon, (MoveID)a4);
-        // if (v12)
-        // {
-        //     return v12;
-        // }
-
+#if DAMAGE_CACHE_ENABLED
+        v12 = checkCalcTable(a1, AttackingMon, DefendingMon, (MoveID)a4);
+        if (v12)
+        {
+            return v12;
+        }
+#endif
         isMoldBreaker = HasMoldBreaker(AttackingMon);
 
         /*
@@ -1770,8 +1769,9 @@ extern "C"
         --a1->simulationCounter;
         
         // k::Printf("\nSimulated Damage for move %d is %d\n", a4check, v12);
-        // saveToCalcTable(a1, AttackingMon, DefendingMon, (MoveID)a4, v12);
-
+#if DAMAGE_CACHE_ENABLED
+        saveToCalcTable(a1, AttackingMon, DefendingMon, (MoveID)a4, v12);
+#endif
         /*
             ----------------------------------------------------------------------------------
             ------------------------------- PURSUIT LOGIC ------------------------------------

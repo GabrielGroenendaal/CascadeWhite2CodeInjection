@@ -647,8 +647,8 @@ extern "C"
         9,  // 382 Route 15 Interior
         64, // 383 Route 16
         9,  // 384 Bridge Gate
-        66, // 385 Lostlorn Forest
-        66, // 386 Lostlorn Forest
+        0, // 385 Lostlorn Forest Should be 66
+        0, // 386 Lostlorn Forest Should be 66
         0,  // 387 Route 18
         9,  // 388 Route 18 Interior
         2,  // 389 Nuvema Town
@@ -752,8 +752,8 @@ extern "C"
         9,  // 487 White Treehollow
         56, // 488 Castelia Gym Leader
         30, // 489 Aspertia Gym
-        60, // 490 Join Avenue
-        60, // 491 Join Avenue Interior
+        9, // 490 Join Avenue   // Should be 60 but it's being buggy
+        9, // 491 Join Avenue Interior // Should be 60 but it's being buggy
         9,  // 492 White Treehollow
         9,  // 493 Black Tower
         54, // 494 Castelia City Interior

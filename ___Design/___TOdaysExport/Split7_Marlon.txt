@@ -1,0 +1,1418 @@
+
+This split begins after defeating Skyla, and has a level cap of 59. Within this split is the following content: 
+    - Reversal Mountain (rigorous route with trainers that can be fought as Tag Battles or b2b battles) 
+    - Strange House (optional back to back to back with heals in between for an encounter)
+    - Route 14, a gauntlet 
+    - Undella Town, where there is a rough tag battle vs. Alder
+    - Abundant Shrine (optional), gatekept by the Kanto leader Blaine
+    - Marine Tube (rigorous battle route with the Shadow Traid ambushing you)
+    - Virizion Side Quest (Optional)
+    - Humilau City and Gym, which caps off this split 
+    - Optional Gatekeeper bosses guarding Route 22 and Route 21. 
+
+Encounters:
+    Mandatory: 
+        Lentimas Town
+        Reversal Mountain 
+        Route 14 
+        Humilau Town 
+        Route 21
+        Route 22
+    Optional:
+        Abundant Shrine
+        Pinwheel Forest
+        Strange House
+
+Bosses:
+    Strange House Gauntlet 
+    Route 14 Gauntlet 
+    Alder & Victini
+    Marine Tube Gauntlet
+    Blaine
+    Virizion
+    Marlon
+
+
+====================================================================================================================================================
+/*   LENTIMAS TOWN   */
+
+    There is nothing to do here specifically but there is the move tutor.
+    We are altering this move tutor as per the MoveTutorsRedesign.txt document.
+
+
+====================================================================================================================================================
+/*   REVERSAL OUTSKIRTS   */
+     
+    Entrance is guarded by a back-to-back fight against the two cyclists (this will need to be scripted)
+    
+    [ TRAINERS ]
+        Trainer ID Cyclist Jeremiah
+
+            Rapidash 
+            Ability: Majestic Ward 
+            Moves:
+                Overheat
+                Spirit Break 
+                Megahorn 
+                Attract 
+            
+            Sandslash 
+            Ability: Sand Force 
+            Moves: 
+                Earthquake 
+                Spin Out 
+                Rock Slide 
+                Double Team 
+            
+            Linoone 
+            Ability: Tough Claws 
+            Moves:
+                Extremespeed 
+                Double-Edge 
+                Pursuit 
+                Brick Break 
+            
+        Trainer ID Cyclist Adelaide
+            Galvantula 
+            Ability: Arena Trap 
+            Moves: 
+                Thunderbolt 
+                Bug Buzz 
+                Giga Drain
+                Sticky Web 
+            
+            Unfezant 
+            Ability: Resilient 
+            Moves: 
+                Retaliate 
+                Crush Claw 
+                Acrobatics 
+                Steel Wing
+             
+            Zebstrika
+            Ability: Reckless
+            Moves:
+                Wild Charge 
+                Dark Pulse 
+                Submission 
+                Double-Edge
+            
+    
+    [ ITEMS ]
+        Item ID: 1x Heart Scale
+        Item ID: TMX Thunderbolt 
+    
+    [ ENCOUNTERS ]
+        This is technically a different encounter location than the interior. 
+
+        Encounters:
+            Grumpig 20%
+            Camerupt 20%
+            Cacturne 10%
+            Drapion 10%
+            Skarmory 10%
+            Drifblim 10%
+            Electrode 5%
+            Dodrio
+            Flygon
+
+        Grass: 
+            20% Grumpig
+            20% Dodrio
+            10% Donphan 
+            10% Drapion 
+            10% Skarmory 
+            10% Drifblim 
+            10% Cacturne 
+            10% Camerupt 
+            
+        Doubles Grass: 
+            20% Boldore 
+            20% Graveler
+            10% Rhydon
+            10% Onix
+            10% Lunatone
+            10% Solrock
+            10% Golbat 
+            10% Maractus 
+            
+        Shaking Grass:
+            60% Audino 
+            30% Dunsparce
+            10% Gabite
+
+
+====================================================================================================================================================
+/*   STRANGE HOUSE   */
+    
+    There is a back to back to back here (with heals in between). These trainers are like those in Sterling Silver Rocket Hideout, designed to be annoying as shit.
+
+    [ FIELD EFFECT ]
+        Haunted: Psychic moves are only NVE against Dark-types and Ghost moves are only NVE against Normal types.
+    
+    [ TRAINERS ]
+        Potential Sets:
+            Shedinja @ Focus Sash
+            Ability: Wonder Guard
+            Moves:
+                Reflect Type
+                U-Turn 
+                Infestation
+                Phantom Strike 
+            
+            Mismagius @ Starf Berry 
+            Ability: Levitate
+            Moves: 
+                Curse 
+                Substitute 
+                Baton Pass 
+                Moonblast 
+            
+            Claydol @ Weakness Policy 
+            Ability: Speed Boost 
+            Moves: 
+                Stored Power
+                Protect 
+                Will-o-Wisp
+                Light Screen 
+            
+            Gengar @ Focus Band
+            Ability: Shadow Tag 
+            Moves: 
+                Hex
+                Will-o-Wisp
+                Destiny Bond 
+                Hypnosis 
+            
+            Rotom @ Magnet
+            Ability: Galvanize 
+            Moves: 
+                Hyper Beam 
+                Grudge 
+            
+            Froslass @ Choice Specs
+            Ability: Illusion 
+            Moves: 
+                Blizzard 
+            
+            Dusclops @ Eviolite 
+            Ability: Shadow Tag
+            Moves:
+                Shadow Punch
+                Hammer Arm
+                Rest
+                Bulk Up 
+            
+            Parasect @ Brightpowder
+            Ability: Stakeout 
+            Moves:
+                1st Impression 
+                Shadow Force 
+                Leech Life 
+                Swords Dance 
+    
+    [ ITEMS ]
+        5x Ghost Gems 
+        TM for Teleport 
+
+    [ ENCOUNTERS ]
+        20% Gastly 
+        20% Litwick 
+        15% Shuppet
+        15% Duskull
+        15% Misdreavus 
+        10% Marowak     
+         5% Spiritomb
+
+
+====================================================================================================================================================
+/*   REVERSAL MOUNTAIN (INTERIOR)   */
+    
+    You are paired with Benga as your partner here. Each of the fights here can be done as a back to back or as a tag double battle. 
+
+    Benga is heading to Undella Town to seek out his grandfather for more training. 
+
+
+    [ BENGA ]
+        Benga gatekeeps the whole mountain and your encounter. This is a scripted event that will need to be added to the entrance of the mountain. 
+
+        (DOUBLES FIGHT)
+        Machamp @ Tera Quick Claw 
+        Ability: No Guard 
+        Moves: 
+            Spirit Break 
+            Dynamic Punch
+            Stone Edge 
+            Swagger 
+        
+        Slaking @ Attack Insurance
+        Ability: Truant 
+        Moves: 
+            Return 
+            Entrainment 
+            Focus Punch 
+            Slack Off 
+
+        Shiftry @ Brightpowder 
+        Ability: Chlorophyll
+        Moves:
+            Solar Blade 
+            Wicked Blow
+            Fake Out 
+            Weather Ball 
+        
+        Darmanitan-Zen @ Life Orb 
+        Ability: Sheer Force 
+        Moves: 
+            Ancientpower
+            Psychic Noise 
+            Flamethrower 
+            Earth Power 
+        
+        Gyarados @ Wacan Berry
+        Ability: Intimidate 
+        Moves: 
+            Aqua Tail
+            Fly
+            Dragon Dance 
+            Protect
+        
+        Garchomp @ Proto Accelerator 
+        Ability: Mold Breaker 
+        Moves: 
+            Dragon Rush 
+            Sand Tomb 
+            Iron Tail
+            Temper Flare 
+        
+    [ ITEMS ]
+        TM Flamethrower 
+        TM Aura Sphere 
+        Heart Scale x3 
+        Fire Gem x5
+        Occa Berry x5
+    
+    [ ENCOUNTERS ]
+        
+        Walking: 
+            20% Heatmor 
+            20% Camerupt 
+            10% Magcargo 
+            10% Typhlosion
+            10% Excadrill 
+            10% Rhydon 
+            10% Magmar 
+            10% Castform-Sunny 
+        
+        Dust Clouds: 
+            60% Weezing 
+            40% Onix 
+
+    [ TRAINERS ]    
+        I think I'm going to go forward with my concept of making Reversal Mountain an area where you can choose between tags and back-to-backs. 
+        I think deciding if you box has the sauce for the back-2-back will be interesting and youu have the option to play risky with benga as well. 
+
+        [ BENGA TAG PARTNER ]
+            Garchomp @ Wide Lens
+            Ability: Mold Breaker 
+            Moves: 
+                - Drill Run
+                - Dragon Rush 
+                - Iron Tail 
+                - Stone Edge 
+            
+            Venusaur @ Black Sludge 
+            Ability: Huge Power
+            Moves: 
+                - Vine Whip 
+                - Sludge Bomb
+                - Double-Edge
+                - Sleep Powder
+            
+            Gyarados @ Wacan Berry 
+            Ability: Intimidate 
+            Moves: 
+                - Aqua Tail 
+                - Fly 
+                - Flamethrower
+                - Natural Gift 
+            
+            Machamp @ Quick Claw 
+            Ability: No Guard 
+            Moves: 
+                - Dynamic Punch 
+                - Stone Edge 
+                - Spirit Break 
+                - Wrap 
+            
+            Darmanitan-Zen @ Life Orb
+            Ability: Sheer Force 
+            Moves: 
+                - Psychic Noise 
+                - Ancientpower 
+                - Earth Power 
+                - Flamethrower 
+        
+
+        [ TRAINERS #1 : Hikers ]
+            Gigalith 
+            Ability: Sturdy 
+            Moves:
+                Ancient Power 
+                Earth Power 
+                Self Destruct
+                Stealth Rock
+            
+            Excadrill
+            Ability: Sturdy 
+            Moves: 
+                Drill Run 
+                Iron Head 
+                Rock Climb 
+                Swords Dance
+            
+            Kingler 
+            Ability: Sturdy 
+            Moves:
+                Crabhammer 
+                Steamroller
+                Meteor Mash 
+                Scary Face
+            
+
+
+
+            Torterra 
+            Ability: Determined
+            Moves:
+                Wood Hammer 
+                Head Smash
+                Headlong Rush 
+                Stealth Rock 
+            
+            Darmanitan 
+            Ability: Sheer Force 
+            Moves:
+                Fire Punch
+                Zen Headbutt
+                Sucker Punch
+                Belly Drum 
+            
+            Aerodactyl 
+            Ability: Determined
+            Moves:
+                Brave Bird
+                Rock Slide 
+                Drill Run 
+                Screech
+            
+
+        [ TRAINERS #2: Rangers ]
+            Krookadile
+            Ability: Tenacity
+            Moves:
+                Knock Off 
+                High Horsepower 
+                Sucker Punch 
+                Psychic Fangs
+            
+            Arcanine
+            Ability: Intimidate
+            Moves:
+                Fire Blast
+                Return
+                Close Combat 
+                Will-o-Wisp
+             
+            Beartic
+            Ability: Fluffy 
+            Moves:
+                Icicle Crash
+                Mega Punch
+                Liquidation
+                Victory Dance 
+            
+
+
+
+            Crobat 
+            Ability: Infiltrator 
+            Moves:
+                Sludge Bomb 
+                Brave Bird
+                Confuse Ray 
+                Steel Wing
+            
+            Probopass
+            Ability: Levitate
+            Moves:
+                Diamond Storm
+                Zap Cannon
+                Earth Power
+                Thunder Wave
+            
+            Luxray
+            Ability: Guts
+            Moves:
+                Zing Zap
+                Payback
+                Fire Fang
+                Ice Fang
+            
+
+        [ TRAINERS #3: Battle Girl + Black Belt ]
+            Mienshao 
+            Ability: Keen Senses
+            Moves:
+                Focus Blast 
+                Hurricane 
+                Detect
+                Power Whip
+            
+            Onix
+            Ability: Sturdy 
+            Moves:
+                Rock Climb 
+                Headlong Rush 
+                Iron Tail 
+                Screech
+            
+            Swellow 
+            Ability: Guts
+            Moves:
+                Return 
+                Fly 
+                Heat Wave 
+                Sky Uppercut 
+            
+
+
+            Seviper
+            Ability: Strong Jaw 
+            Moves:
+                Poison Fang 
+                Crunch
+                Ice Fang
+                Fire Fang 
+            
+            Medicham
+            Ability: Huge Power 
+            Moves: 
+                Strength 
+                Ice Punch
+                Esper Wing 
+                Cosmic Power 
+            
+            Scyther
+            Ability: Technician
+            Moves:
+                Razor Winds
+                Pin Missilie
+                Low Sweep
+                Dual Chop
+
+
+        [ TRAINERS #4: Nurse + Doctor ]
+            Kangaskhan
+            Ability: Tough Claws
+            Moves: 
+                Bind
+                Dragon Claw 
+                Strength
+                Quick Attack 
+            
+            Rotom-Frost
+            Ability: Refrigerate
+            Moves:
+                Hyper Voice 
+                Uproar
+                Thunderbolt
+                Ally Switch
+            
+            Gothitelle
+            Ability: Patient
+            Moves: 
+                Psychic 
+                Dark Pulse 
+                Fake Out 
+                Aura Sphere
+
+
+
+            Swoobat
+            Ability: Friend Guard 
+            Moves: 
+                Alluring Voice 
+                Acrobatics 
+                Double Team 
+                Heat Wave 
+
+            Miltank
+            Ability: Scrappy 
+            Moves: 
+                Return
+                Mega Punch
+                Play Rough
+                Milk Drink
+            
+            Alomomola 
+            Ability: Healer  
+                Dive 
+                Mirror Coat
+                Curse
+                Giga Impact
+
+
+        [ TRAINERS #5: Backpackers  ]
+            Kecleon 
+            Ability: Adaptability
+            Moves: 
+                Shadow Punch
+                Dragon Tail 
+                Shadow Sneak 
+                Focus Punch
+            
+            Zangoose
+            Ability: Toxic Boost
+            Moves: 
+                Take Down
+                Thrash 
+                Brick Break 
+                Poison Jab 
+            
+            Blaziken
+            Ability: Speed Boost
+            Moves:
+                Flamethrower
+                Focus Blast
+                Acrobatics
+                Detect
+
+
+
+            Victrebell
+            Ability: Corrosion
+            Moves:
+                Gunk Shot 
+                Leaf Storm 
+                Sleep Powder
+                Growth
+            
+            Ariados
+            Ability: Stakeout 
+            Moves:
+                1st Impression
+                Payback 
+                Megahorn 
+                Silk Trap 
+            
+            Swampert  
+            Ability: Sheer Force 
+            Moves:
+                Muddy Water 
+                Blizzard 
+                High Horsepower 
+                Hammer Arm
+             
+
+        [ TRAINERS #6: Ace Trainers ]
+            Weavile @ Chople Berry
+            Ability: Skill Link
+            Moves:
+                Icicle Spear
+                Fury Swipes
+                Razor Winds 
+                Fake Out
+            Electivire @ Ice Gem
+            Ability: Teravolt
+            Moves:
+                Volt Tackle
+                Close Combat
+                Ice Punch
+                Protect
+            Drifblim @ Flame Orb
+            Ability: Flare Boost
+            Moves:
+                Ominous Wind
+                Air Slash 
+                Flamethrower 
+                Psycho Shift
+            Flygon @ Throat Spray
+            Ability: Amplifier 
+            Moves:
+                Psychic Noise 
+                Hyper Voice 
+                Bug Buzz 
+                Alluring Voice
+            
+            Azumarill @ Weakness Policy
+            Ability: Sap Sipper 
+            Moves:
+                Blizzard
+                Moonblast 
+                Hydro Pump
+                Helping Hand
+            Ursaring @ Dark Gem
+            Ability: Quick Feet
+            Moves:  
+                Slash
+                Drill Run
+                Crunch
+                Sweet Scent
+            Magmortar @ Air Balloon
+            Ability: Turboblaze
+            Moves:
+                Flamethrower
+                Dragon Pulse
+                Dark Pulse
+                Aura Sphere
+            Grumpig @ Tanga Berry
+            Ability: Hustle
+            Moves:
+                Faint Attack
+                Psycho Cut 
+                Dizzy Punch
+                Bounce
+
+
+
+        [ TRAINERS FLANNERY ]
+            Magcargo 
+            Tropius
+            Camerupt
+            Infernape
+            Torkoal
+
+
+====================================================================================================================================================
+/*   ROUTE 14   */
+
+    A gauntlet that is contextualized as the PokeHelper losing signal in this remote area. Lots of choices on how to progress. 
+    Alder greets when you arrive in Undella Town, says he's going to Abundant shrine to find Benga. 
+    He's the one who gives you 3x focus bands.
+
+    [ ITEMS ]
+        HM Waterfall
+        3x Focus Bands 
+    
+    [ ENCOUNTERS ]
+        Concept: Low Value Mons 
+        
+        Grass: 
+            20% Linoone 
+            20% Butterfree 
+            10% Sawsbuck-Summer
+            10% Liepard
+            10% Parasect
+            10% Swadloon
+            10% Jigglypuff
+            10% Seviper
+
+        Grass (Shaking): 
+            20% Mightyena 
+            20% Dustox 
+            10% Ariados
+            10% Stoutland
+            10% Tropius
+            10% Purugly
+            10% Audino
+            10% Zangoose
+        
+        Grass (Doubles):
+            20% Venomoth 
+            20% Butterfree 
+            10% Wormadam-Grassy
+            10% Golduck
+            10% Tangrowth
+            10% Mienshao
+            10% Pidgeot
+            10% Altaria
+
+        Fishing: 
+            40% Goldeen 
+            40% Remoraid 
+            20% Basculin
+        
+        Fishing (Dark Spot):
+            40% Shellos-East 
+            40% Finneon 
+            20% Barboach
+        
+        Surfing: 
+            60% Tranquil 
+            30% Quagsire 
+            10% Marshtomp
+       
+        Surfing (Dark Spot):
+            60% Fearow
+            30% Seel
+            10% Croconaw
+
+
+    [ TRAINERS ]
+        These trainers are not faced in a linear order. I think I'd want the initial 
+        
+        Choice Node 1: 
+            Backpacker Reece (Doubles)
+                Slaking @ Throat Spray 
+                Ability: Slow Start
+                Moves:
+                    Boomburst 
+                    Ice Beam
+                    Flamethrower
+                    Slack Off
+                
+                Noctowl @ Choice Specs
+                Ability: Tenacity 
+                Moves: 
+                    Air Cutter  
+                
+                Chatot @ Brightpowder
+                Ability: Amplifier 
+                Moves:
+                    Hyper Voice
+                    Chatter 
+                
+                Luvdisc @ Focus Band
+                Ability: Friend Guard
+                Moves:
+                    Moonblast
+                    Hydro Pump
+                    Charm
+                    Captivate
+        
+
+            Backpacker Vicki (Doubles)
+                Delcatty @ Grass Gem
+                Ability: Hustle
+                Moves:
+                    Petal Blizzard
+                    Play Rough 
+                    Iron Tail 
+                    Sing
+                
+                Girafirig
+                Ability: Sap Sipper
+                Moves:
+                    Play Rough 
+                    Crunch
+                    Psychic Fangs
+                    Reflect
+                
+                Meganium 
+                Ability: Healer 
+                Moves:
+                    Petal Blizzard
+                    Play Rough 
+                    Headlong Rush 
+                    Sweet Scent 
+                
+                Stantler 
+                Ability: Sap Sipper
+                Moves:
+                    Megahorn
+                    Body Slam
+                    Phantom Strike 
+                    Confuse Ray
+        
+
+        Choice Node 2A: 
+            Swimmer ??? 
+
+                Corsola @ Air Balloon
+                Ability: Water Absorb
+                Moves:
+                    Toxic Spikes
+                    Baneful Bunker
+                    Stealth Rock 
+                    Explosion
+                
+                Tentacruel @ Brightpowder
+                Ability: Merciless
+                Moves:
+                    Venoshock
+                    Hex
+                    Scald
+                    Baneful Bunker
+                
+                Jellicent @ Weakness Policy
+                Ability: Cursed Body  
+                Moves:
+                    Hex
+                    Scald
+                    Recover
+                    Bitter Malice
+
+                Gorebyss @ Poison Gem
+                Ability: Corrosion
+                Moves:
+                    Venoshock
+                    Bitter Malice
+                    Draco Meteor 
+                    Substitute
+            
+
+            Swimmer Junko 
+                Lapras @ Leftovers
+                Ability: Refrigerate
+                Moves:
+                    Hyper Voice 
+                    Hydro Pump 
+                    Dragon Tail
+                    Flip Turn 
+
+                Lumineon @ Life Orb
+                Ability: Illumination
+                Moves:
+                    Thunder 
+                    Hydro Pump
+                    Blizzard
+                    Hurricane
+                
+                Seaking @ Power Herb
+                Ability: Sap Sipper
+                Moves:
+                    Dive
+                    Bounce 
+                    Swagger
+                    Horn Drill 
+                
+                Sharpedo @ Focus Sash
+                Ability: Strong Jaw 
+                Moves:
+                    Crunch
+                    Ice Fang
+                    Psychic Fangs
+                    Hydro Pump
+
+
+
+        Choice Node 2B: 
+            Battle Girl Glinda 
+                Hitmonlee
+                
+                Alakazam
+
+                Gallade 
+
+                Mr. Mime
+
+
+            Black Belt Jay 
+                Bastiodon 
+
+                Hariyama 
+
+                Lucario 
+
+                Hitmonchan 
+            
+        
+        Choice Node 3: 
+            Veteran ???
+                Salamence
+            
+            Veteran ???
+                Tyranitar
+            
+            Veteran ??? 
+                Metagross
+
+
+        Gardenia (Optional): (Guards Energy Ball + 5x Rindo Berries + 5x Grass Gems)
+            Cherrim @ Focus Band
+            Ability: Flower Gift 
+            Moves: 
+                - Weather Crash 
+                - Solar Blade
+                - Play Rough 
+                - Growth
+            
+            Breloom @ Tera Brightpowder
+            Ability: Poison Heal 
+            Moves: 
+                - Thunderpunch
+                - Seed Bomb
+                - Drain Punch
+                - Spore
+            
+            Torterra @ Quick Claw 
+            Ability: Determined 
+            Moves: 
+                - Rock Wrecker
+                - Wood Hammer 
+                - Earthquake 
+                - Stealth Rock
+            
+            Leafeon @ Choice Band
+            Ability: Tenacity 
+            Moves: 
+                - Leaf Blade 
+            
+            Roserade 
+            Ability: Majestic Ward 
+            Moves: 
+                - Energy Ball 
+                - Sludge Bomb 
+                - Hyper Beam 
+                - Quiver Dance
+        
+        Final Battle: 
+            Socialite Marian & Gentleman Sheldon back to back 
+
+
+====================================================================================================================================================
+/*   UNDELLA TOWN   */
+
+    The path to Route 13 is blocked until the Plasma Frigate is infiltrated. Instead, your path forward in progression is to defeat a gatekeeper 
+    and then go through the Marine Tube to Humilau Town.
+
+
+    [ ITEMS ]
+        5x Throat Sprays Reward for defeating Musician Preston 
+    
+    [ MUSICIAN PRESTON ]
+        This trainer gatekeeps maybe 5x Throat Sprays. 
+
+    [ BENGA + VICTINI TAG BATTLE ]
+
+        Benga's Team: 
+            Bronzong
+            Gyarados 
+            Machamp 
+            Darmanitan-Z
+            Shiftry 
+            Garchomp
+
+        Alder's Team 
+            Basculin @ Assault Vest
+            Ability: Adaptability 
+            Moves: 
+                - Aqua Tail
+                - Phantom Strike 
+                - Blizzard
+                - Rock Wrecker 
+            
+            Conkeldurr @ Lum Berry
+            Ability: Solid Rock 
+            Moves: 
+                - Stone Edge 
+                - Hammer Arm 
+                - Ice Punch 
+                - Thunder Punch
+            
+            Vanilluxe @ Petaya Berry 
+            Ablity: Refrigerate 
+            Moves: 
+                - Spit Up 
+                - Hyper Voice 
+                - Sludge Bomb 
+                - Protect 
+            
+            Bouffalant @ Blunder Policy
+            Ability: Guts (no pre-status)
+            Moves: 
+                - Double-Edge 
+                - High Horsepower
+                - Thrash 
+                - Slack Off  
+            
+            Volcarona @ Tera F-Band
+            Ability: Blaze 
+            Moves: 
+                - Heat Wave 
+                - Silver Wind 
+                - Protect 
+                - Quiver Dance 
+        
+        Victini's Team: 
+            Lucario @ Focus Sash
+            Ability: Skill Link
+            Moves: 
+                Spike Cannon
+                Arm Thrust 
+                Bone Rush 
+                Fury Swipes 
+            
+            Togekiss @ Covert Cloak
+            Ability: Friend Guard 
+            Moves: 
+                Moonblast 
+                Air Slash 
+                Extrasensory
+                Safeguard
+            
+            Ampharos @ Shuca Berry
+            Ability: Mold Breaker 
+            Moves: 
+                Dragon Pulse 
+                Thunderbolt 
+                Focus Blast 
+                Thunder Wave
+           
+            Golurk @ White Herb
+            Ability: Weak Armor 
+            Moves: 
+                High Horsepower 
+                Shadow Punch 
+                Heavy Slam 
+                Will-o-Wisp 
+            
+            Victini @ Sitrus Berry
+            Ability: Illumination 
+            Moves: 
+                Searing Shot 
+                Thunder 
+                Psychic 
+                Hyper Beam
+ 
+
+====================================================================================================================================================
+/*   MARINE TUBE   */
+
+    Marine tube is the site of a series of difficult battles with the shadow triad as they ambush you in vicious back to back attacks. 
+
+    There are a variety of field effects and such employed by the shadow triad, and I think it's going to be about 5 fights overall. 
+    
+    [ SCRIPTING ]
+        We'll need a lot of scripts and trigger values for the various battles that take place here. 
+        It ends with Janine interrupting a confrontation and the Shadow Triad fleeing before she explains a bit more of her backstory and scurries off. 
+    
+    [ TRAINERS ]
+        Gimmicks
+            Evasion 
+            Illusion 
+            Back-to-Back
+            Pre-Set Spikes
+            Explosives 
+            Back to Back #2
+
+
+====================================================================================================================================================
+/*   HUMILAU CITY    */
+
+    There are no battles in Humilau City before the gym, but there are a good handful of items and an encounter. 
+
+    [ ITEMS ] 
+
+    [ ENCOUNTERS ]
+
+
+====================================================================================================================================================
+/*   ROUTE 22   */
+
+    There are just 2-3 trainers here, one gatekeeping the whole route and the others gatekeeping useful items like the Solarbeam TM and the Dragon Claw TM.
+
+    [ ITEMS ]
+
+    [ ENCOUNTERS ]
+
+    [ TRAINERS ]
+
+        Gatekeeper Trainer:
+
+
+        Item Gatekeeper #1: 
+
+
+        Doubles Gatekeeper #1:
+
+
+====================================================================================================================================================
+/*   ROUTE 21   */
+    
+    The path to Seaside Cavern is blocked by a Worker indicating it's too dangerous to enter due to recent rock slide activity and ornery pokemon. 
+
+    Next to this gentleman is ground walking table that has better encounters than fishing. There are two swimmers here to fight
+
+    
+    [ ITEMS ]
+
+
+    [ ENCOUNTERS ]
+        Fishing:
+
+        Fishing (Dark Spot):
+
+        Surfing:
+
+        Surfing (Dark Spot):
+
+        Sand:
+
+
+    [ TRAINERS ]
+
+        Gatekeeper:
+
+        Item Gatekeeper #1:
+
+        Item Gatekeeper #2:
+
+
+====================================================================================================================================================
+/*   ABUNDANT SHRINE   */
+
+    Abundant Shrine is now a gatekept location; you can only enter if you defeat Blaine before 
+
+    [ ITEMS ]
+        Ability Drill
+        IV Enhancer x3 
+        Lonely Mint
+        Impish Mint 
+        TM Heat Wave 
+
+    [ ENCOUNTERS ]
+        Concept: One table should be powerful normal types, another maybe powerful psychic types 
+
+        Grass:
+            20% Stantler 
+            20% Arcanine 
+            10% Golurk 
+            10% Azumarill 
+            10% Altaria 
+            10% Charizard
+            10% Ninetales
+            10% Lunatone
+
+        Grass (Shaking):
+            40% Kangaskhan
+            20% Vigoroth 
+            20% Bouffalant 
+            20% Chansey
+        
+        Doubles Grass: 
+            20% Bronzong 
+            20% Kirlia 
+            10% Girafirig
+            10% Hypno
+            10% Slowking
+            10% Alakazam 
+            10% Solrock
+            10% Misdreavus
+        
+        Fishing:
+            40% Buizel 
+            40% Lotad 
+            20% Poliwag
+       
+        Fishing (Dark Spot):
+            40% Basculin-BlueStriped 
+            40% Psyduck 
+            20% Marill
+        
+        Surf:
+            60% Sigilyph 
+            30% Noctowl
+            10% Emolga
+        
+        Surf (Dark Spot):
+            60% Honchkrow
+            30% Swanna 
+            10% Bibarel
+
+    [ BLAINE ]
+        This fight gatekeeps an encounter in lab in Undella Town.
+            Infernape @ Focus Sash
+            Ability: Exploit 
+            Moves: 
+                Overheat 
+                Close Combat 
+                Stealth Rocks
+                Solarbeam
+
+            Typhlosion @ Focus Band
+            Ability: Turboblaze
+            Moves:
+                Eruption 
+                Heat Wave 
+                Earth Power 
+                U-Turn 
+            
+            Mewtwo @ Colbur Berry
+            Ability: Unnerve
+            Moves:
+                Psystrike 
+                Flamethrower
+                Ice Beam 
+                Thunderbolt
+
+            Solrock @ Abiiiy Drill
+            Ability: Chlorophyll 
+            Moves: 
+                Ancient Power 
+                Weather Ball 
+                Psychic 
+                Earth Power 
+            
+            Sceptile @ Brightpowder
+            Ability: Solar Power 
+            Moves: 
+                Solarbeam 
+                Draco Meteor 
+                Flamethrower 
+                Focus Blast 
+            
+            Arcanine Tera Focus-Band
+            Ability: Determined 
+            Moves: 
+                Overheat
+                Head Charge 
+                Rock Wrecker 
+                Superpower
+
+
+====================================================================================================================================================
+/*   PINWHEEL FOREST   */
+
+    This is where the optional virizion quest will take place. For our initial implementation, we're going to keep this pretty low key. 
+        - Change the Spawn Flag for the NPC blocking access to Tubeline Bridge 
+        - Add some new blocking npcs to prevent players from reaching Nacrene City 
+        - Add a simple eyes-meet trainer script for Virizon with the Choice Specs on the other side of her. 
+        - We can either use a simple walking encounter table for rumination field or we can use pinwheel forest tables.
+        - If we do the latter, we'll need to hack into the encounter generator to disable encounters until you beat Virizion for pinwheel forest. 
+    
+    [ ITEMS ]
+        TM Energy Ball (gatekept by a Pokemon Ranger)
+        Heart Scale x3 (gatekept by a Pokemon Ranger)
+        Choice Specs (reward for defeating Virizion)
+    
+    [ ENCOUNTER ]
+
+        Walking (If we don't use Pinwheel Forest):
+            - 20% Gloom
+            - 20% Scyther 
+            - 10% Ferrothorn 
+            - 10% Sceptile 
+            - 10% Tangela
+            - 10% Vespiquen 
+            - 10% Torterra 
+            - 10% Serperior
+        
+        Grass: 
+            - 20% Gloom 
+            - 20% Sceptile
+            - 10% Ferrothorn 
+            - 10% Sceptile 
+            - 10% Tangrowth
+            - 10% Vespiquen 
+            - 10% Torterra 
+            - 10% Pidgeot
+        
+        Grass (Shaking):
+            - 25% Rapidash 
+            - 25% Whimsicott 
+            - 25% Gardevoir 
+            - 20% Meganium 
+        
+        Grass (Doubles):
+            - 25% Scyther 
+            - 25% Noctowl 
+            - 25% Staraptor
+            - 25% Serperior 
+        
+        Fishing: 
+            - 40% Ludicolo
+            - 40% Luvdisc
+            - 20% Dragonair
+        
+        Fishing (Dark Spot):
+            - 40% Clamperl
+            - 40% Qwilfish
+            - 20% Milotic
+        
+        Surf:
+            - 60% Swanna
+            - 30% Altaria
+            - 10% Walrein
+        
+        Surf (Dark Spot):
+            - 60% Luvdisc
+            - 30% Seadra
+            - 10% Gyarados
+    
+
+    [ VIRIZION ]
+            FIELD EFFECT: Foes have leech seed applied to them on switch in. 
+
+            Serperior @ Life Orb
+            Ability: Adaptability
+            Moves:
+                Thunder
+                Frenzy Plant 
+                Volt Switch 
+                Draco Meteor 
+            
+            Staraptor @ Brightpowder
+            Ability: Reckless 
+            Moves: 
+                Brave Bird
+                Superpower
+                U-Turn 
+                Double-Edge 
+            
+            Ferrothorn @ Quick Claw
+            Ability: Aftermath
+            Moves: 
+                Gyro Ball 
+                Thunder 
+                Power Whip 
+                Body Press
+
+            Milotic @ Leftovers 
+            Abilitiy: Marvel Scale (Pre Paralyzed)
+            Moves: 
+                Whirlpool
+                Alluring Voice
+                Substitute 
+                Protect 
+            
+            Dragonite @ Weakness Policy
+            Ability: Majestic Ward 
+            Moves: 
+                Hurricane 
+                Outrage
+                Thunder 
+                Weather Ball
+            
+            Virizion @ Leftovers
+            Ability: Anticipation
+            Moves:
+                Sacred Sword 
+                Leaf Blade 
+                Stone Edge
+                Psyblade 
+
+
+====================================================================================================================================================
+/*   HUMILAU GYM   */
+
+    There is permanent rain in the Humilau Gym. 
+
+
+    [ ITEMS ]
+        Get the TM for Wave Crash for defeating the pokemon
+        Receive 3x Absorb Bulbs upon enterinng the gym 
+    
+    [ TRAINERS ]
+        
+        Ace Trainer 1
+
+        Ace Trainer 2
+
+        Ace Trainer 3
+
+        Ace Trainer 4
+
+        Ace Trainer 5
+
+        Ace Trainer 6
+
+        Gym Leader Marlon
+
+
+
+
+
+
+

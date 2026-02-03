@@ -53,7 +53,7 @@ Parabolic Zap
 Ember
 Flamethrower
 Mist
-WaterGun
+Water Gun
 Hydro Pump
 Surf
 Ice Beam
