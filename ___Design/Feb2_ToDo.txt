@@ -1,0 +1,360 @@
+
+
+/*         
+	
+	-----------------------------------------------------------------------------------------------------------------------------------------
+	-------------------------------------------------- WHAT I WANNA DO TODAY ---------------------------------------------------------------- 
+	-----------------------------------------------------------------------------------------------------------------------------------------       
+
+*/
+
+
+New Google Account: 
+    trustypeachs@gmail.com
+    password: Ktba6jq8r3??????
+
+
+To Do List:
+    First:
+        - Fix the Driftveil Tutor being Red Shards 
+        - Fix Old man giving you air balloons
+        - Fix Scott's Zubatr in the Calcs
+    Later:
+        - Implement the new TM Compatibility. 
+        - Implement the new Field Effects
+
+MISSING MONS:
+    Whimsicott 
+    Sharpedo 
+
+MISSING MECHANICS: 
+    Anticipation 
+    Moody
+    Simple 
+    Growth 
+
+``[ TRAINERS ]``
+> - **PWT Colress's Rotom-Fan** now has Uproar over Double-Edge and Leaf Tornado over Telekinesis. 
+> - **PWT Colress's Klinklang, Metagross and Rotom-Fan** are now level 47. 
+> - **PWT Colress's Manectric** now has Volt Switch over Psychic Fangs.
+> - **Strange Statue Team** has had their levels raised by 2. 
+> - **Baker Jenn and Depot Agent Hank** have had their pokemon levels raised by 1 to match Ranger Serenity. 
+> - **Plasma Grunt #8** is now a double battle, as intended. 
+> - **Janine's Glalie and Drapion** are now level 44, up from 43. 
+> - **Leader Clay's Dugtrio** is now level 46, up from 44. 
+> - **Leader Roxie's Rotom** now has Eject Button, over Leftovers 
+> - **Join Avenue Gauntlet Trainers** have received a global +1 to their levels. 
+> - **Driftveil Drawbridge Gauntlet Trainers** have received a global +1 to their levels. 
+> - **Leader Elesa's Glaceon** has Icy Wind over Extrasensory.
+> - **Plasma Grunt 4's Rampardos** is now Sheer Force as intended.
+> - **Leader Erika's Victreebell** now has Sucker Punch over Sleep Powder. 
+> - **Leader Erika's Beautifly** has Scorching Swarm again instead of Bug Buzz. 
+
+```[ ENCOUNTERS ]```
+> - **Castelia Sewers Walking**: Zubat is no longer a 20% encounter in Castelia Sewers. Scraggy takes it's place. Lickitung raplced with 10% Drowzee Zubat is now a 4% encounter, and Koffing is a 5% encounter. 
+> - **Castelia Sewers Walking**: 40% Murkrow replaced with 40% Lickitung 
+> - **Castelia Sewers Fishing Dark Spot**: 40% Murkrow replaced with 40% Lickitung.
+
+``[ BALANCE ]``
+> - **Crobat Line** is getting Strong Body in Ability Slot 1, as Infiltrator becomes the Hidden Ability. Sniper becomes AI Only. 
+> - **Aipom and Ambipom** lose their Attack buff. 
+> - **Hoppip, Skiploom, and Jumpluff** are losing 5 Attack.
+> - **Mime Jr. and Mr. Mime** are losing 10 HP. Substitute and Doubleslap have swapped positions in their learnset. 
+> - **Goldeen and Seaking** have Facade swapped positions with Double-Edge in their learnset. 
+> - **Hitmontop** is losing 10 HP 
+> - **Hitmonlee** is losing 20 HP and having it redistributed to Defense.
+> - **Dewgong** is losing 5 SpA. 
+> - **Slowking** is losing 10 SpA 
+> - **Slowbro** is losing 10 Atk
+> - **Scyther** is losing 10 HP. It now gets Acrobatics instead of Dual Wingbeat at level 53.
+> - **Scizor** is losing 10 Defense. 
+> - **Whimsicott** is losing 10 Atk and 10 Defense. Infiltrator becomes its new Hidden Ability, over Merciless. 
+> - **Scolipede Line** swaps ability positions for Speed Boost and Strong Body
+> - **Krokorok** loses 10 Atk. 
+> - **Krookadile Line** learns earthquake at 45, and Cross Chop at 48. 
+> - **Darumaka** can evolve into Darmanitan by using a Dawn Stone, as well at reaching level 50. 
+> - **Maractus** swaps Ability Slots for Storm Drain and Sand Rush. 
+> - **Dwebble / Crustle** now have Pickup as their Hidden Ability. 
+> - **Yamask** loses 10 SpA. 
+> - **Swanna Line** Ability 3 is now Friend Guard, over Ice body.
+> - **Jellicent** gains +20 Defense. 
+> - **Druddigon** swaps Ability Slots for Battle Armor and Sheer Force. 
+> - **Golurk** loses 15 Speed. 
+> - **Kricketot** loses all its buffs (it cannot be acquired anyways)
+> - **Floatzel** loses 5 Atk and 5 SpA. 
+> - **Swellow** loses 10 Atk. Taillow gains +10 Special Attack. 
+> - **Breloom** loses 10 Speed. 
+> - **Hariyama** has Lucky Chant and Wide Guard swapped in the learnset.
+> - **Carvanah and Sharpedo** have ability slots 2 and 3 swapped, making Strong Jaw the new hidden ability. 
+> - **Spinda** loses 5 in each stat. 
+> - **Barboach and Whiscash** loses the +10 to Attack. 
+> - **Glalie** loses the -20 to Special Attack. 
+> - **Froslas** gains +20 to Attack. 
+> - **Spinarak / Ariados** lose 5 Atk. 
+> - **Natu and Xatu** lose 10 and 5 SpA, respectively. 
+> - **Corsola** loses 10 Atk.
+> - **Diglett & Dugtrio** lose 10 Atk 
+> - **Riolu** now evolves to Lucario via use of a Dawn Stone or at level 50. Riolu consequently learns Spike Cannon at level 46. 
+CHECK: DEPOT AGENT HANK (SCOLIPEDE, now Ability 1)
+CHECK: Ranger Jaiden (MARACTUS, Now ability 1), Backpacker Annie (MARACTUS, Now Ablity 3)
+CHECK: Janitor Brady (GOLBAT, now ability 4), Guitarist Billy Jo (GOLBAT, now ability 3), Scientist Marissa (GOLBAT, now ability 4), Janine (CROBAT, now ability 4)
+CHECK: Ace Trainer Mary (DRUDDIGON, now ability 1)
+CHECK: Fisherman Andrew (CARVANAH, now ability 3), 
+
+HIDDEN ABILITY UPDATES: 
+    Golbat line ability 4: Shadow Tag -> Sniper 
+    
+Documentation: 
+    Castelia Sewers Machoke's Eviolite
+    Ability descriptions Exploud 
+    Double check the abilities and natures for Plusle / Minun 
+
+====================================================================================================================================================
+/*   PATCH NOTES    */
+
+```Patch Notes:```
+``[ BUG FIXES & SCRIPTING ]``
+> - **Season Research Lab**: Gift Deerling was removed. from Weather Lab 
+> - **Wild Castform** will no longer sometimes carrying Mystic Water 
+> - **1st Impression** should no longer be selected even on turns it shouldn't work. 
+> - **Driftveil City**: Fixed the Driftveil Move Tutor not being the Yellow Shard tutor. 
+> - **Driftveil City**: Fixed the Old Man giving you Air balloons in Driftveil City 
+> - **Nimbasa City Eeveelution Gauntlet** has been fixed to not share an EventWork with the Castelia Sewers Scraggy Encounter. 
+> - **Uproar** should now be correctly boosted by the user's previous move attacking into an immunity.
+> - **Anger Point** should now be correctly triggered by the user's move attacking into an immunity.
+> - **Blunder Policy** should now be correctly triggered by the user's move attacking into an immunity. 
+> - **Unstable Backgrounds** for Lostlorn Forest, Driftveil City, Driftveil Gym and Join Avenue have been disabled. 
+> - **Metal Burst** is now negative priority, as intended.
+> - **Castelia City Casteliocones** no longer cause a crash for no reason. 
+> - **Virbank Outskirts** has had Bulbasaur removed as an encounter, as intended. 
+> - **Joltik** now evolves in Galvantula at 28, as intended.
+> - **Backpacker Kendall** now properly blocks access to the Rock Slide TM> 
+> - **Glalie** loses the -20 to Special Attack it was missing 
+> - **Froslass** gains +20 to Attack it was missing
+> - **Preschooler Greg's Bulbasaur** now has Leaf Tornado as intended. 
+
+```[ TRAINERS ]```
+> - **Leader Elesa's Zebstrika** is now Reckless instead of Determined, to offset the buff Focus Band received.  It is also Timid over Naughty.
+> - **Ace Trainer Mary's Magmortar** is now holding a Tera Focus Sash instead of a Tera Focus Band.
+> - **Baker Jenn's Tropius** now has Chlorophyll instead of Overgrow, as intended. She now has Air Slash instead of Air Cutter.
+> - **Volkner's Luxray** now has Rivalry instead of Guts. It's moveset is now (Discharge, Beat Up, Glare, Thrash)
+> - **Baker Jenn's Tropius** now has Chlorophyll instead of Overgrow, as intended. She now has Air Slash instead of Air Cutter.
+> - **Smasher Aspen** is now a Single Battle, as intended. 
+> - **Roughneck Chance's Hitmonchan** now has Beat Up, as intended.
+
+``[ NEW CHANGES ]``
+> - **Focus Band** has a new effect: provides the holder 50% chance to reduce incoming direct damage from a move by 50%. This allows counterplay to be distinct from Focus Sash countplery, and be based around either massive overdamage (say, using a flying move to nuke Harlequin Anders Focus Band Ledian) or outbulking for 2hkos, and can't be disrupted with a simple fake out or with rocky helmet (once you get it)
+> - **MANY TRAINERS** have had their sets adjusted to account for this new functionality for Focus Band. 
+> - **Neutralizing Gas** can no longer disable Drought, Sand Stream, Drizzle, Snow Warning, Illusion or Imposter (would rather do this than limit access to this ability even further)
+> - **Mascot Badge and Tera Mascot Badge** can no longer be stolen or knocked off. 
+> - **TMS have been adjusted** to account for many of them being tutor moves now. God willing this will be the last time i need to touch learnsets.
+
+
+
+
+====================================================================================================================================================
+/*   BUGS   */
+
+    [ UPROAR ]
+        Make some test cases for singles and doubles and see if we can consistently trigger the damage boost. 
+    
+    [ RETALIATE ]
+        Verify the AI sees the boosted damage 
+    
+    [ SLEEP TALK ]
+        Put in somme print statements and see if we can get the AI to better understand when it's about to wake up or not
+    
+    [ CASTELIA SEWERS GRUNTS ]
+        This bug occurs during the tag battle vs. the Castelia Sewer Grunts. 
+        We should check all the AI flags to make sure there isn't something unintentionally being toggled.
+        We should check the AI Flags for Strength to make sure it isn't being given AI flags for another move. 
+        We should re-implement damage caching to see if maybe that resolves the issue. 
+        We should examine the AI Scripts to make sure there's no infinite logic associated with Auto-crit moves, Venoshock, Protect, or Strength 
+ 
+    
+
+====================================================================================================================================================
+/*   MECHANICS   */
+    
+    [ REMOVE ALL ITEMS ]
+        See if we can find some script or function that iterates over the entire PC and removes all held items 
+
+    [ UPDATE FOCUS BAND ]
+        Change the functionality of Focus Band to a random chance proc to half the damage of an incoming attack. 
+        Untoggle Consumable from Focus Band and Tera Focus Band 
+        Update Documentation for Focus Band
+
+    [ TMS ]
+        TMs we Need to Change:
+            TM23: Icy Wind -> Weather Crash 
+            TM88: Pluck -> Muddy Water 
+            TM59: Incinerate -> Temper Flare 
+            TM76: Struggle Bug -> Safeguard 
+            TM70: Sparkle -> Diamond Storm
+            TM47: Low Sweep -> Cross Chop
+            TM54: Breaking Swipe -> Dragon Rush
+            TM44: Rest -> Power Whip
+            TM95: Snarl -> Giga Impact 
+            TM79: Body Press -> Hyper Beam 
+        
+        Ones to Change About Earlier:
+            TM20: Hyper Voice (Sold in Mistralton City)
+            TM01: Psychic Fangs (acquired in Relic Sanctum)
+            TM37: Hex (Castelia Sewers)
+            TM64: Teleport (Celestial Tower)
+            TM76: Safeguard (sold in Nimbasa City)
+            TM59: Temper Flare (replaces TM27 Return by Join Avenue)
+            TM27: Return (sold in Nimbasa City)
+
+        Ones To give in Marlon Split: 
+            TM02: Dragon Claw (Reversal Mountain)
+            TM23: Weather Crash (Humilau City)
+            TM24: Thunderbolt (Route 21)
+            TM35: Flamethrower (Flannery, Reversal Mountain)
+            TM45: Lunge (Bugsy, Pinwheel Forest)
+            TM51: Ally Switch (Strange House)
+            TM53: Energy Ball (Gardenia, Pinwheel Forest)
+            TM58: Hurricane (Past Falkner, Route 14)
+            TM62: Acrobatics (Marine Tube, after defeating the Plasma Shadow Triad)
+            HM05: Waterfall (reward for Gauntlet)
+            HM06: Dive (reward from Marlon)
+
+        Ones To give in Drayden Split: 
+            TM93: Wild Charge (encountered on PLasma Infiltration)
+            TM74: Gyro Ball (Byron in Twist Mountain)
+            TM71: Stone Edge (Roark in Twist Mountain)
+            TM26: Earthquake (Blue in Challenger's Cave)
+            TM82: Dragon Tail (Reward from Drayden)
+            TM13: Ice Beam (Candice, Route 13)
+            TM46: Aura Sphere (Maylene, Route 13)
+            TM85: Play Rough (Reward from Whitney)
+            TM14: Blizzard (bought from SM9)
+            TM25: Thunder (bought from SM9)
+            TM38: Fire Blast (bought from SM9)
+            TM22: Solar Beam (Undella Bay)
+            TM31: Brick Break (Opelucid City)
+            TM92: Solar Blade (Undella Bay)
+        
+        One to give in Kyurem Split:
+            TM75: Storm Throw (Plasma Frigate)
+            TM41: Infestation (Plasma Frigate)
+            TM34: Sludge Wave (Plasma Frigate)
+            TM88: Muddy Water (past Crasher Wake, Route 8)
+            TM56: Fling (Defeat Giovanni)
+            TM68: Avalanche (from Giant Chasm)
+            TM69: Gunk Shot (from Janine)
+
+        One to give in League Split:
+            TM43: Heat Wave
+            TM60: Wave Crash (from Misty)
+            TM42: Facade (from Norman)
+            TM52: Focus Blast 
+            TM70: Sparkle -> Diamond Storm
+
+        One to give in Post-Game Split:
+            TM95: Giga Impact
+            TM79: Hyper Beam 
+
+    [ FIELD EFFECTS ]
+        Forest's Wrath (Leech Seed on Switch in, Aromatherapy Animation)
+        Smoke Bomb (Haze Animation, -1 Accuracy on switch in)
+        Underdog (boosts lowest stat by +2 on switch in, Focus Energy Animation
+        Sturdy Combatant (Endure Animation, all Pokemon benefit from Sturdy)
+        Pickpockets (Items removed on switch in, Thief Animation);
+        Horde (Play Rough Animation, deals 1/8 damage at the end of each turn)
+        Scourge of Unova (applied 3 turn perish song and heal block to pokemon on switch in, Glaciate Animation)
+
+
+====================================================================================================================================================
+/*   DOCUMENTATION   */
+
+    [ AI CHANGES DOCUMENT ]
+        We can go through our AI Scripts and comment them thoroughly so that an AI can go through and make an executive summary of them that we could then correct. 
+    
+    [ GENERAL CHANGES SHEET ]
+        Add something like this to the Pokemon Changes sheet that indicates the following:
+            Normal's Immunity to Curse and Shadow Tag 
+            Psychic's immunity to Confusion 
+            Ghost's immunity to trapping 
+            Hail's new mechanics 
+            Fire type moves all thaw frozen 
+            Gastro Acid is a permanent condition until end of battle 
+            Stone Evolutions 
+            Electric's immunity to Paralysis 
+            Move Tutors 
+
+
+====================================================================================================================================================
+/*   BIG GOALS   */
+    
+    [ DOUBLES / TRIPLES SWITCH AI ]
+        I have an idea for iterating over every pokemon in battle when determining switch in ai.
+        This would need to be implemented for both illusion and the other one. 
+        
+        I think we can look at ExpandPokeID to get a list of pokemon that are out on the opposing team. Or we could look at DetermineSwitchInOpponent to 
+        Figure out how it handles that logic.
+
+
+
+
+====================================================================================================================================================
+/*   SPIT BALLING   */
+           
+	[ Earmark footage for trailer ]
+		- Setup 
+			- Figure out how to make the PC invisible. 
+			- Find a good backing track 
+		- Scenes
+			- NEW Rivals
+				- Benga Text Box 
+				- Cobalion Battle 
+			- Battles
+				- Castelia Gym Battle 
+				- Elesa Gym Trainer Battle
+				- Roxie Gym Battle 
+				- Clay Gym Battle 
+				- Misty Gym Battle
+			- Catching pokemon in:
+				- Route 6 
+				- Route 20
+				- Virbank Water 
+				- Relic Castle 
+			- Overworld Panning Shots:
+				- Join Avenue 
+				- Driftveil Drawbridge
+				- Charge stone cave 
+			- New Pokemon
+				- Swoobat 
+				- Move use: Sticky Web
+				- Ability Use: Bulletproof triggers 
+				- Move Use: 1st Impression 
+				- Panning over bag with new items 
+			- QOL Options
+				- PC Anywhere
+				- Settings 
+				- Fast Travel 
+
+
+    [ TMS ]
+        We made the following TMs redundant: 
+            - Low Sweep 
+            - Icy Wind 
+            - Incinerate 
+            - Snarl 
+            - Struggle Bug 
+            - Pluck 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
