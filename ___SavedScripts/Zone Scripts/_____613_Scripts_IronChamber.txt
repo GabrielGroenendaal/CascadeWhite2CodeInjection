@@ -119,7 +119,7 @@ public class MainEvents {
 		Message.WaitAdvance();
 		Message.CloseAll();
 
-		Battle.CallTrainerBattle(491, 0, 0);
+		Battle.CallTrainerBattle(491, 0, 1);
 		v0 = Battle.IsTrainerVictory();
 		Battle.EndTrainerBattle();
 		if (v0 == 1) {

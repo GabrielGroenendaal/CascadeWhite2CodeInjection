@@ -36,7 +36,8 @@ extern "C"
                 a1 == IT0230_FOCUS_BAND ||
                 a1 == IT0306_TERA_B_POLICY ||
                 a1 == IT0256_BLUNDER_POLICY ||
-                a1 == IT0305_TERA_W_POLICY ||
+                a1 == IT0305_TERA_W_POLICY || 
+                a1 == IT0228_TERA_GEM ||
                 a1 == IT0302_TERA_SASH);
     }
 
@@ -693,7 +694,7 @@ extern "C"
                 for (i = 0; v6 < MoveCount; v6 = (v6 + 1))
                 {
                     ID = Move_GetID(PokeParam, v6);
-                    if (!j_j_IsSleepTalkUncallableMove(ID) && ID != 156 && !getMoveFlag(ID, FLAG_REQUIRES_CHARGE))
+                    if (!j_j_IsSleepTalkUncallableMove(ID) && ID != MOVE156_REST && !getMoveFlag(ID, FLAG_REQUIRES_CHARGE))
                     {
                         v9 = i;
                         i = (i + 1);

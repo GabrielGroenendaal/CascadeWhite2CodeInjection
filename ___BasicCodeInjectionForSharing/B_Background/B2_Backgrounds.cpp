@@ -358,9 +358,9 @@ extern "C"
         61, // 93 Nimbasa City (LOOK AT THIS A BATTLEFIELD)
         61, // 94 Nimbasa Interior
         61, // 95 Nimbasa Interior
-        73, // 96 Driftveil City
-        81, // 97 Driftveil Gym
-        81, // 98 Driftveil Gym Lobby
+        9, // 96 Driftveil City  // CHANGE: Should  BE 73
+        9, // 97 Driftveil Gym  // CHANGE: Should  be 81
+        9, // 98 Driftveil Gym Lobby  // CHANGE: Should  be 81
         27, // 99 Driftveil Pokemon Center
         76, // 100 Driftveil Interior
         76, // 101 Driftveil Interior
@@ -647,8 +647,8 @@ extern "C"
         9,  // 382 Route 15 Interior
         64, // 383 Route 16
         9,  // 384 Bridge Gate
-        0, // 385 Lostlorn Forest Should be 66
-        0, // 386 Lostlorn Forest Should be 66
+        0, // 385 Lostlorn Forest CHANGE: Should  be 66
+        0, // 386 Lostlorn Forest CHANGE: Should  be 66
         0,  // 387 Route 18
         9,  // 388 Route 18 Interior
         2,  // 389 Nuvema Town
@@ -750,10 +750,10 @@ extern "C"
         9,  // 485 White Treehollow
         9,  // 486 Black Tower
         9,  // 487 White Treehollow
-        56, // 488 Castelia Gym Leader
+        9, // 488 Castelia Gym Leader CHANGE: Should be 56
         30, // 489 Aspertia Gym
-        9, // 490 Join Avenue   // Should be 60 but it's being buggy
-        9, // 491 Join Avenue Interior // Should be 60 but it's being buggy
+        9, // 490 Join Avenue   // CHANGE: Should  be 60 but it's being buggy
+        9, // 491 Join Avenue Interior // CHANGE: Should  be 60 but it's being buggy
         9,  // 492 White Treehollow
         9,  // 493 Black Tower
         54, // 494 Castelia City Interior
@@ -1352,7 +1352,7 @@ extern "C"
 // #endif
             if (PlayerStateZoneID == 446    // Route 20
                 || PlayerStateZoneID == 445 // Flocessy Ranch
-                || PlayerStateZoneID == 385 // Lostlorn Forest
+                //|| PlayerStateZoneID == 385 // Lostlorn Forest
                 || PlayerStateZoneID == 551 // Route 4
                 || PlayerStateZoneID == 383 // Route 16
                 || PlayerStateZoneID == 329 // Route 5

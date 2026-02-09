@@ -207,6 +207,7 @@ extern "C"
                 a1 == IT0304_TERA_CLAW ||
                 a1 == IT0217_QUICK_CLAW ||
                 a1 == IT0281_BLACK_SLUDGE ||
+                a1 == IT0228_TERA_GEM || 
                 a1 == IT0234_LEFTOVERS ||
                 a1 == IT0311_TERA_LEFTOVERS || a1 == IT0255_ATTACK_INSURANCE || a1 == IT0309_TERA_INSURANCE);
     }
@@ -233,10 +234,8 @@ extern "C"
 #pragma region Contact
     bool overrideContact(BattleMon *a1, MoveID a2)
     {
-        if (BattleMon_GetHeldItem(a1) == IT0228_PROTECTIVE_GEAR || BattleMon_GetValue(a1, VALUE_EFFECTIVE_ABILITY) == ABIL142_OVERCOAT)
+        if (BattleMon_GetHeldItem(a1) == IT0293_SAFETY_GOGGLES || BattleMon_GetValue(a1, VALUE_EFFECTIVE_ABILITY) == ABIL142_OVERCOAT)
             return true;
-        // if (BattleMon_GetValue(a1, VALUE_EFFECTIVE_ABILITY) == ABIL089_IRON_FIST && getMoveFlag(a2, FLAG_PUNCH))
-        //     return true;
         return false;
     }
 
@@ -921,7 +920,7 @@ extern "C"
     {
         if (a3 == BattleEventVar_GetValue(VAR_ATTACKING_MON) && BattleEventVar_GetValue(VAR_TYPE_EFFECTIVENESS) > 3)
         {
-            BattleEventVar_MulValue(VAR_MOVE_POWER_RATIO, 4915);
+            BattleEventVar_MulValue(VAR_RATIO, 4915);
         }
     }
 
@@ -1037,7 +1036,7 @@ extern "C"
             BattleMon *mon = Handler_GetBattleMon((ServerFlow *)a1, a3);
             if (*a4)
             {
-                if (PML_MoveGetCategory(BattleEventVar_GetValue(VAR_MOVE_ID)))
+                if (PML_MoveGetCategory(BattleEventVar_GetValue(VAR_MOVE_ID)) && BattleEventVar_GetValue(VAR_MOVE_ID) != MOVE165_STRUGGLE)
                 {
                     a4[1] = BattleEventVar_RewriteValue(VAR_FAIL_CAUSE, MOVEFAIL_ABILITY);
                 }
@@ -1045,7 +1044,7 @@ extern "C"
             }
             else
             {
-                if (PML_MoveGetCategory(BattleEventVar_GetValue(VAR_MOVE_ID)))
+                if (PML_MoveGetCategory(BattleEventVar_GetValue(VAR_MOVE_ID)) && BattleEventVar_GetValue(VAR_MOVE_ID) != MOVE165_STRUGGLE)
                 {
                     *a4 = 1;
                 }
@@ -3736,6 +3735,17 @@ extern "C"
         }
     }
 
+    void THUMB_BRANCH_ServerControl_MoveUseNotEffective(ServerFlow *a1, int a2, int a3)
+    {
+        int v6; // r7
+        BattleMon *mon;
+        mon = Handler_GetBattleMon(a1, a2);
+        TurnFlag_Set(mon, TURNFLAG_MOVEFAILED);
+        v6 = HEManager_PushState((int*)&a1->heManager);
+        ServerEvent_MoveUseEnd_Common(a1, a2, a3, EVENT_MOVE_EXECUTE_NOEFFECT);
+        HEManager_PopState((int*)&a1->heManager, v6);
+    }
+
     void THUMB_BRANCH_ServerEvent_CheckMoveExecuteFail(ServerFlow *a1, BattleMon *a2, int a3, int a4)
     {
         int ID; // r0
@@ -3772,6 +3782,7 @@ extern "C"
             EffectivenessRecorder_Add(effrec, ID, v8);
             if (!v8)
             {
+
                 // TurnFlag Added Here
                 if (!MainModule_IsAllyMonID(i->ID, attacker->ID))
                 {

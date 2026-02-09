@@ -351,5 +351,6 @@ extern bool CheckHPDebug(BattleMon *a1);
 extern bool ActionOrder_InterruptReserve(ServerFlow *a1, int a2);
 extern int ActionOrder_SendToLast(ServerFlow *a1, int a2);
 extern bool ServerControl_ChangeWeatherCheck(ServerFlow *a1, unsigned int a2, int a3);
-
+    extern bool Handler_DoesBattleMonExist(int a1, int a2);
+    
 C_DECL_END

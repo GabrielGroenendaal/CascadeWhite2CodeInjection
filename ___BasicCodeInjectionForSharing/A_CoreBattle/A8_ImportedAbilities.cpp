@@ -569,7 +569,14 @@ extern "C" BattleEventHandlerTableEntry *THUMB_BRANCH_EventAddRunAway(u32 *handl
 
 AbilID abilityCantBeNeutralized[] = {
     ABIL046_NEUTRALIZING_GAS,
-    ABIL121_MULTITYPE};
+    ABIL121_MULTITYPE,
+    ABIL002_DRIZZLE,
+    ABIL070_DROUGHT,
+    ABIL045_SAND_STREAM,
+    ABIL117_SNOW_WARNING,
+    ABIL150_IMPOSTER,
+    ABIL149_ILLUSION
+};
 
 extern "C" b32 AbilityCantBeNeutralized(AbilID ability)
 {

@@ -407,6 +407,7 @@ public class MainEvents {
                 Actor.Hide(21);
                 Actor.Hide(17);
                 Actor.Hide(25);
+				Actor.Hide(28);
         }
 		if (EventWorks.Get(16556) != 5) {
 			return;

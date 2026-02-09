@@ -1,0 +1,547 @@
+
+This split begins after defeating Skyla, and has a level cap of 59. Within this split is the following content: 
+    - Reversal Mountain (rigorous route with trainers that can be fought as Tag Battles or b2b battles) 
+    - Strange House (optional back to back to back with heals in between for an encounter)
+    - Route 14, a gauntlet 
+    - Undella Town, where there is a rough tag battle vs. Alder
+    - Abundant Shrine (optional), gatekept by the Kanto leader Blaine
+    - Marine Tube (rigorous battle route with the Shadow Traid ambushing you)
+    - Virizion Side Quest (Optional)
+    - Humilau City and Gym, which caps off this split 
+    - Optional Gatekeeper bosses guarding Route 22 and Route 21. 
+
+Encounters:
+    Mandatory: 
+        Lentimas Town
+        Reversal Mountain 
+        Route 14 
+        Humilau Town 
+        Route 21
+        Route 22
+    Optional:
+        Abundant Shrine
+        Pinwheel Forest
+        Strange House
+
+Bosses:
+    Strange House Gauntlet 
+    Route 14 Gauntlet 
+    Alder & Victini
+    Marine Tube Gauntlet
+    Blaine
+    Virizion
+    Marlon
+
+TMs
+            TM02: Dragon Claw (Reversal Mountain)
+            TM23: Weather Crash (Humilau City)
+            TM24: Thunderbolt (Route 21)
+            TM35: Flamethrower (Flannery, Reversal Mountain)
+            TM45: Lunge (Bugsy, Pinwheel Forest)
+            TM51: Ally Switch (Strange House)
+            TM53: Energy Ball (Gardenia, Pinwheel Forest)
+            TM58: Hurricane (Past Falkner, Route 14)
+            TM62: Acrobatics (Marine Tube, after defeating the Plasma Shadow Triad)
+            HM05: Waterfall (reward for Gauntlet)
+            HM06: Dive (reward from Marlon)
+        
+Leftover Items: 
+    175 
+    174
+
+Leftover Trainers: 
+    43: Ace Trainer Lucca
+    333: Breeder Addison
+    334: Hiker ???
+    327: Doctor ???
+    326: Black Belt ???
+
+====================================================================================================================================================
+/*   LENTIMAS TOWN   */
+
+    Add Dawn, Shiny, Dusk stones to the PokeMart 
+
+    Remove TM57 from the girl in the house with the Krokorok 
+
+
+====================================================================================================================================================
+/*   LENTIMAS OUTSKIRTS   */
+    
+    Remove TM30 from behind the Strange House 
+
+    Scripting:  
+        Add a back to back battle here with Adelaide and Jeremiah. 
+        It will prompt the player if they're ready first. 
+
+        16440: EventWork Storage 
+    
+    Items: 
+        115: Shadow Ball -> ???
+        116: Full Heal -> ???
+        382: ??? -? ???
+        117: Remove 
+    
+    Trainers: 
+        467: Cyclist Adelaide 
+        468: Cyclist Jeremiah 
+
+
+====================================================================================================================================================
+/*   STRANGE HOUSE   */
+
+    Code Injection:
+        Disable encounters in this area unless a certain eventworks is set to true. 
+        16441 
+
+    Scripting:
+        You need to wander around this chamber and then we can pick one of the back rooms to put the haunting in.
+        This is a back to back to back battle based on the eventworks 16441. 
+    
+    Items:
+        111: Spell Tag -> ??? (Lower Floors)
+        112: Rare Candy -> ???
+        113: Dusk Stone -> ??? (Lower Floors)
+        114: Full Heal -> ??? (Back Room)
+    
+    Trainers: 
+        3: Aspen -> Ghostly Gent
+        247: Aspen -> Ghostly Child
+        62: Roberto -> Ghostly Man
+
+
+====================================================================================================================================================
+/*   REVERSAL MOUNTAIN   */
+
+    Scripting:
+        We're going to have to use the same logic we did in the Sewers to basically make a bunch of back to backs or tags. 
+
+        16446: Stores the state of the Reveral Mountain B2Bs
+        THese are all going to be mandatory so we can just use incrementing values. 
+    
+        We will need to update the text for what Bianca is usually saying to work for Benga. 
+    
+    Trainers:
+        237: Partner Benga 
+
+
+        521: Hiker Jared
+        522: Hiker Marcus 
+
+        516: Ranger Lewis 
+        517: Ranger Eliza (Add her to map)
+
+        788: Backpacker Kiyo
+        514: Backpacker Kumiko
+        
+        524: Battle Girl Chan
+        523: Black Belt Corey 
+
+        672: Doctor Derek
+        243: Hoopster Lamarcus -> Nurse Ratchet (ADD TO MAP)
+
+        519: Ace Trainer Ray
+        787: Ace Trainer Cora 
+
+
+        559: Youngster Wes -> Hoenn Leader Flannery 
+    
+    Items
+        119: Reveie -> By Hikers
+        118: Max Repel (Entrance Cavern)
+        124: Toxic Orb (lower chambers)
+        125: Flame Orb (lower chambers)
+        121: PP UP (b) -> By Ace Trainers
+        122: Nugget -> ??? (By Exit)
+        120: TM69 -> ??? (By Lava)
+        123: Hyper Potion (east of entrance)
+    
+    Items to Add:
+        TM35 Flamethrower 
+        Fire Gem x5 
+        Occa Berry x5 
+        Red Shard x20 
+        TM02 Dragon Claw 
+        Heart Scale x1 
+
+
+====================================================================================================================================================
+/*   ROUTE 14   */
+
+    Scripting:
+        This is a gauntlet, but we're going to keep it pretty simple and just disable the PokeHelper here
+        When you cross a threshold, a bunch of npcs will spawn blocking the way back. 
+        We will probably only need one eventworks for this
+        When the gauntlet is complete, despawn a bunch of overworld items and 
+            1230: ??? -> Flying Gems x5
+            1231 ??? -> Coba Berries x5
+            1232 ??? -> TM Hurricane 
+            1229: ??? -> HM04 Waterfall 
+            1257: ??? -> Eject Pack 0x3
+        
+        16442
+    
+    Trainers: 
+        285: Backpacker Reece 
+        283: Fisherman Sid -> Backpacker FEMALE 
+
+        281: Black Belt Jay
+        282: Battle Girl Glinda 
+
+        279: Fisherman X???
+        280: Ace Trainer Junko -> Fisherman Sid 
+
+        245: Hoopster lamarcus -> Veteran x
+        246 Hoopster lamarcus -> Veteran Y 
+        54: Infielder Alex -> Veteran Z
+
+        55: Infielder Alex -> Falkner 
+
+
+====================================================================================================================================================
+/*   UNDELLA TOWN   */
+
+    The path to Route 13 is blocked until the Plasma Frigate is infiltrated. Instead, your path forward in progression is to defeat a gatekeeper 
+    and then go through the Marine Tube to Humilau Town.
+
+    [ SCRIPTING ]
+        Add Protestors Blocking the Route 13 Gate 
+        Add Protestors Blocking the Abundant Shrine entrance 
+        Add something blocking the Undella Bay entrance.
+        Remove the Hugh encounter. 
+    
+    [ ITEMS ]
+        5x Throat Sprays Reward for defeating Musician Preston 
+        1x Ability Patch for the B2B
+        1226: Just remove it. 
+    
+    Trainers: 
+        277: Socialite Marian 
+        278: Gentleman Sheldon
+        232: Infielder Alex -> Musician 
+        234: Infielder Connor -> Benga Partner 
+        582: Smasher Mari -> Alder 
+        506: Hoopster Bobby -> Victini 
+    
+            
+====================================================================================================================================================
+/*   ABUNDANT SHRINE   */
+
+    Scripting: 
+        We can use a simple guardian script for now for Blaine. 
+
+        Add in the Ultimate Move Tutor. 
+
+        Give some basic text to the people who would've been trainers here. 
+
+        16443: Hugh Call, ALder Encounter, Shadow Triad 
+
+        16444: Stores Back to Back Encounter 
+    Items: 
+        126: Berry Juice -> IV Enhancers 
+        255: ??? -> Ability Drill 
+        256: ??? -> Adamant / Impish Mint.
+    
+    Trainers:
+        Remove all the non Blaine Trainers. Give them some simple text.
+
+        770: Blaine
+
+
+====================================================================================================================================================
+/*   MARINE TUBE   */
+
+    Marine tube is the site of a series of difficult battles with the shadow triad as they ambush you in vicious back to back attacks. 
+
+    There are a variety of field effects and such employed by the shadow triad, and I think it's going to be about 5 fights overall. 
+    
+    [ SCRIPTING ]
+        We'll need a lot of scripts and trigger values for the various battles that take place here. 
+        It ends with Janine interrupting a confrontation and the Shadow Triad fleeing before she explains a bit more of her backstory and scurries off. 
+
+        We can probably just use one eventworks for thsi whole shebang and keep incrementing it.
+
+    Items: 
+        253: ??? -> Acrobatics TM 
+    
+    Trainers: 
+        69: Shadow Triad 1
+        250: Shadow Triad 2
+        4: Shadow Triad 3
+        1: Smasher Elena -> Shadow Triad 4
+        3: Smasher Aspen -> Shadow Triad 5
+        7: Worker Matthew -> Shadow Triad 6
+        8: Hoopster Bobby -> Shadow Triad 7
+        9: Hoopster John -> Shadow Triad 8
+        26: Linebacker Bob -> Shadow Triad 9
+
+    [ TRAINERS ]
+        Pokemon
+            Tyranitar 
+            Bisharp
+            Liepard
+            Mightyena
+            Drapion
+            Crobat
+            Weezing
+            Electrode 
+            Ninjask
+            Accelgor
+            Sharpedo
+            Crawdaunt
+            Tentacruel
+            Swoobat
+            Sableye
+            Gengar
+            Absol
+            Banette
+            Pawniard (mascot badge)
+            Mandibuzz 
+            Feraligatr 
+            Fearow
+            Crobat
+            
+        Gimmicks
+            Evasion 
+            Illusion 
+            Back-to-Back
+            Pre-Set Spikes
+            Explosives 
+            Back to Back #2
+    
+        Fight #1 (Evasion)
+            Brightpowder
+            Anticipation
+            Acid Armor 
+            Double Team 
+        
+        Fight #2 Illusion 
+            Zoroark 
+            Retaliate 
+            Swords Dance 
+            Nasty Plot 
+        
+        Fight #3 Explosions
+            Explosion 
+            Self Destruct 
+            Aftermath 
+            Aerilate Double-Edge 
+        
+        Fight #4 Pre-Set Spikes
+            Just a lot of strong offensive mons 
+        
+        Fight #5 Back to Back 
+
+        Fight #6 Back to Back (Doubles)
+
+
+====================================================================================================================================================
+/*   HUMILAU CITY    */
+
+    There are no battles in Humilau City before the gym, but there are a good handful of items and an encounter. 
+
+    Scripting: 
+        16445 Stores state of Humilau b2b
+    
+    Trainers:
+        306: Backpacker Myra -> Lady X 
+        307: Lowell -> Rich Boy Y 
+    
+
+    [ ITEMS ]
+        Remove the Hidden Heart Scale 
+        Leave the exposed Heart Scale 
+        Replace the Protean with 5x Blue Shards. 
+
+        171: Shell Bell 
+        164: Protean -> 5x Blue Shards 
+
+        TM23 Weather Crash 
+        1x Ability Capsules for the B2B 
+    
+
+            
+
+====================================================================================================================================================
+/*   ROUTE 22   */
+
+    There are just 2-3 trainers here, one gatekeeping the whole route and the others gatekeeping useful items like the Solarbeam TM and the Dragon Claw TM.
+
+    [ ITEMS ]
+        172: ??? -> 30x Green Shards 
+        173: ??? -> Weather Crash 
+    
+    Trainer:
+        3044: Battle Girl ???
+        Change model to battle girl 
+
+        Remove all the other trainers 
+    
+    Scripting: 
+        Everything that Colress does we could have him do in Humilau town. 
+        Remove the Terrakoin Encouner. 
+
+        I honestly don't even remember what happens here. 
+
+
+====================================================================================================================================================
+/*   ROUTE 21   */
+    
+    The path to Seaside Cavern is blocked by a Worker indicating it's too dangerous to enter due to recent rock slide activity and ornery pokemon. 
+
+    Next to this gentleman is ground walking table that has better encounters than fishing. There are two swimmers here to fight
+
+    Scripting:
+        Place a trainer in front of the gym that despawns when defeated. We can see if a good flag already exists or make a new one. 
+    
+    Trainers: 
+        311: Swimmer Desiree (Gatekeeper)
+        310: Item Gatekeeper 1
+        308: Item Gatekeeper 2
+        312: Item Gatekeeper 3
+        309: Sand Gatekeeper 
+
+    [ SUN ]
+
+    [ ITEMS ]
+        169: ??? -> TM24 Thunderbolt
+        170: ??? -> Cell Battery x3
+            
+
+====================================================================================================================================================
+/*   PINWHEEL FOREST   */
+
+    This is where the optional virizion quest will take place. For our initial implementation, we're going to keep this pretty low key. 
+        - Change the Spawn Flag for the NPC blocking access to Tubeline Bridge 
+        - Add some new blocking npcs to prevent players from reaching Nacrene City 
+        - Add a simple eyes-meet trainer script for Virizon with the Choice Specs on the other side of her. 
+        - We can either use a simple walking encounter table for rumination field or we can use pinwheel forest tables.
+        - If we do the latter, we'll need to hack into the encounter generator to disable encounters until you beat Virizion for pinwheel forest. 
+    
+    Scripting: 
+        
+        16471: Tracks the state of the Virizion Quest 
+        16472: Tracks the outcome of the Virizion quest. 
+
+    Trainers: 
+        326: ??? -> Bugsy 
+        327: ??? -> Gardenia 
+        507: Virizion 
+    
+    Items: 
+        174: All the Gardenia Items 
+        175: All the Bugsy Items 
+
+
+    [ VIRIZION ]
+            FIELD EFFECT: Foes have leech seed applied to them on switch in. 
+
+            Serperior @ Life Orb
+            Ability: Adaptability
+            Moves:
+                Thunder
+                Frenzy Plant 
+                Volt Switch 
+                Draco Meteor 
+            
+            Staraptor @ Brightpowder
+            Ability: Reckless 
+            Moves: 
+                Brave Bird
+                Superpower
+                U-Turn 
+                Double-Edge 
+            
+            Ferrothorn @ Quick Claw
+            Ability: Aftermath
+            Moves: 
+                Gyro Ball 
+                Thunder 
+                Power Whip 
+                Body Press
+
+            Milotic @ Leftovers 
+            Abilitiy: Marvel Scale (Pre Paralyzed)
+            Moves: 
+                Whirlpool
+                Alluring Voice
+                Substitute 
+                Protect 
+            
+            Dragonite @ Weakness Policy
+            Ability: Majestic Ward 
+            Moves: 
+                Hurricane 
+                Outrage
+                Thunder 
+                Weather Ball
+            
+            Virizion @ Leftovers
+            Ability: Anticipation
+            Moves:
+                Sacred Sword 
+                Leaf Blade 
+                Stone Edge
+                Psyblade 
+
+
+====================================================================================================================================================
+/*   HUMILAU GYM   */
+
+    There is permanent rain in the Humilau Gym. 
+
+    Scripting: 
+        We will need to add something that despawns all the optional items from this split and the trainers and also clears optional flags for Skyla Split. 
+        
+            Trainers: (1520 + )
+                566
+                564
+                562
+                561
+                565
+                569
+                570
+                266
+                265
+                410
+                681
+                680
+                682
+                683
+                413
+                548
+                272
+                273
+                271
+                275
+                276
+                274
+                552
+                551
+                549
+                550
+                553
+                554
+            
+            Items to Despawn: 
+                Everything from Flannery, Bugsy, and Gardenia. 
+    
+
+    [ ITEMS ]
+        Get the TM for Wave Crash for defeating the pokemon
+        Receive 3x Absorb Bulbs upon enterinng the gym 
+    
+    [ TRAINERS ]
+        350: Ace Trainer Doyle 
+        351: Ace Trainer Melina 
+        352: Ace Trainer Enzio
+        353: Ace Trainer Jeanne
+        354: Ace Trainer Santino
+        355: Ace Trainer Sable 
+
+        160: Marlon 
+
+
+
+
+
+

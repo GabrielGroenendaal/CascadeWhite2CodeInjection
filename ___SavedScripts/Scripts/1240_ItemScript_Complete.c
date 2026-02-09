@@ -316,11 +316,12 @@ void Sequence25()
 	End();
 }
 
+/* WHITE HERB x3 - Driftveil Market */
 void Sequence26()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 249);
-	SetVarEqVal(0x800D, 1);
+	SetVarEqVal(0x800C, 214);
+	SetVarEqVal(0x800D, 3);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -888,10 +889,11 @@ void Sequence73()
 	End();
 }
 
+/* CASTELIA SEWERS - x1 Eject Pack */
 void Sequence74()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 2);
+	SetVarEqVal(0x800C, 539);
 	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
@@ -1313,6 +1315,7 @@ void Sequence110()
 	End();
 }
 
+// SPELL TAG
 void Sequence111()
 {
 	LockAll();
@@ -1335,6 +1338,7 @@ void Sequence112()
 	End();
 }
 
+// DUSK STONE
 void Sequence113()
 {
 	LockAll();
@@ -3444,11 +3448,11 @@ void Sequence301()
 	End();
 }
 
-/* TM27 Return - Route 4 */
+/* TM59 Temper Flare - Route 4 */
 void Sequence302()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 354);
+	SetVarEqVal(0x800C, 386);
 	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
@@ -3468,10 +3472,11 @@ void Sequence303()
 	End();
 }
 
+/* TM64 Teleport - Celestial Tower */
 void Sequence304()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 93);
+	SetVarEqVal(0x800C, 391);
 	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
@@ -3479,10 +3484,11 @@ void Sequence304()
 	End();
 }
 
+/* TM01 Psychic Fangs - Relic Sanctum */
 void Sequence305()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 572);
+	SetVarEqVal(0x800C, 328);
 	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();

@@ -167,13 +167,16 @@ The moves taught have been changed.
 desc: The following items are sold
 Pokéball, Pokéball
 maxpotion, Max Potion
-+1soda, +1 Soda (heals Pokémon for 1 health)
-+5 Soda, +5 Soda (heals Pokémon for 5 health)
+lemonade, +1 Soda (heals Pokémon for 1 health)
+soda pop, +5 Soda (heals Pokémon for 5 health)
 end
 
 !items Items
 superrod, Super Rod
 Pokéball, Pokéball x 15 (given by Bianca in the Pokémon Center)
+maxpotion, Max Potions, Full Restores, Max Elixirs and Full Heals (given by Mom)
+rare candy, Rare Candies (given by Mom). Reusable
+rare candy, Unusual Candies (given by Mom). Edges your Pokémon within 1 exp of the next level. Reusable
 end
 
 
@@ -195,9 +198,7 @@ end
 
 ## Route 19 
 !items Items
-rare candy, Rare Candies (given by Bianca). Reusable
-unusual candy, Unusual Candies (given by Bianca). Edges your Pokémon within 1 exp of the next level. Reusable
-stress tester, Stress Tester (East side of route). Reduces the holder's HP to 1 at the start of battle against a wild Pokémon. Very useful for predamaging
+assault vest, Stress Tester (East side of route). Reduces the holder's HP to 1 at the start of battle against a wild Pokémon. Very useful for predamaging
 end
 
 !enc 128
@@ -598,11 +599,12 @@ mental herb, Mental Herb x5 (found after the healthcare tag)
 greed shard, Green Shards x15 (found after the Clerk tag)
 sticky barb, Sticky Barb (found after the Scientist tag)
 stable mulch, 1x Hardy Mint, 1x Lax Mint, 1x Gentle Mint (reward for Defeating the Plasma Grunts)
+tm ghost, TM37 Hex (encountered behind the Grimers once you beat the grunts)
 end
 
 !enc 37
 
-!notif WARNING, Each pair of trainers in Castelia Sewers can be fought as either a Back to Back battle or a Tag battle (except for the Sewer Grunts), #f26253
+!notif WARNING, Each pair of trainers in Castelia Sewers can be fought as either a Back to Back battle or a Tag battle (except for the Sewer Grunts). Hugh will NOT heal you between the back to backs! , #f26253
 
 ### Hugh's Team
 !tr 589/28 Picked Tepig
@@ -817,7 +819,7 @@ end
 safety goggles, Safety Goggles (reward from Colress)
 tm flying, TM40 Aerial Ace (found past Twins Tara & Val)
 figy berry, 10x Figy Berry (found Northeast of Pokéfan Sachiko)
-tm normal, TM27 Return (Found past Benga)
+tm fire, TM59 Temper Flare (Found past Benga)
 end
 
 ### Colress 
@@ -957,6 +959,7 @@ end
 desc: If you didn't fight Brock or Misty, this is your opportunity to get some TMs. 
 tm water, TM50 Water Pulse 
 tm fighting, TM94 Rock Smash
+tm normal, TM27 Return
 end 
 
 !items Items
@@ -1300,6 +1303,7 @@ end
 ## Pokémon World Tournament 
 !notif NOTE, The move tutor for Blast Burn, Frenzy Plant, Hydro Cannon has been removed. 
 !notif MOVE REMINDER, The Move Reminder is here!
+!notif MOVE TUTOR, Move Tutors of all 4 types can be found here in one convenient location.
 !notif IV MASTER, The Top Stall has the IV Master, who in exchange for IV Enhancers will maximize an IV of your choice for one of your Pokémon to 31. 
 
 !items Items
@@ -1341,7 +1345,7 @@ end
 
 ## Relic Sanctum
 !items Items 
-tm ghost, TM37 Hex (Past the Psychics)
+tm psychic, TM01 Psychic Fangs (Past the Psychics)
 root fossil, Root Fossil, Helix Fossil, Cover Fossil (Past Lenora)
 life orb, Life Orb (reward for defeating the Strange Statue)
 end
@@ -1561,6 +1565,7 @@ end
 ## Mistralton City 
 !items TM Shop 
 tm fire, TM48 Mystical Fire 
+tm normal, TM20 Hyper Voice 
 end 
 !items Items 
 red shard, x30 Red Shards (by the Planes)
@@ -1572,7 +1577,6 @@ end
 !enc 111 
 
 !items Items 
-tm psychic, TM51 Ally Switch 
 heart scale, Heart Scale (found past Sola & Ana)
 tm fairy, TM32 Dazzling Gleam (found past Sola & Ana)
 tm bug, TM89 U-Turn (past Harlequins)
@@ -1597,6 +1601,7 @@ end
 heart scale, 2x Heart Scale (past the Psychic Tag Battle)
 tm ghost, TM30 Shadow Ball (past Gentleman Daniel)
 tm psychic, TM29 Psychic (past Pokéfan Georgia)
+tm fairy, TM64 Teleport (past Pokéfan Jude)
 end
 
 !notif FIELD EFFECT, In Celestial Tower, Dark types only resist Psychic moves and Normal types only resist Ghost moves. , #4e86d4

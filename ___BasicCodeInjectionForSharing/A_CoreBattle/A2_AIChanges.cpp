@@ -845,8 +845,20 @@ extern "C"
                 addAnimation->pos_from = 3;
                 addAnimation->pos_to = 0;
                 BattleHandler_PopWork(a1, addAnimation);
-                CreateSpikes(0, a1, 0, 0, 0, 6, Permanent, 148);
+                CreateSpikes(0, a1, 0, 0, 0, SIDEEFF_SPIKES, Permanent, 148);
             }
+
+            if (trainerClass == 192)
+            {
+                ConditionData Permanent = Condition_MakePermanent();
+                HandlerParam_AddAnimation *addAnimation = (HandlerParam_AddAnimation *)BattleHandler_PushWork(a1, EFFECT_ADD_ANIMATION, 0);
+                addAnimation->animNo = MOVE114_HAZE;
+                addAnimation->pos_from = 3;
+                addAnimation->pos_to = 0;
+                BattleHandler_PopWork(a1, addAnimation);
+                CreateSpikes(0, a1, 0, 0, 0, SIDEEFF_SMOKEBOMB, Permanent, 257);
+            }
+
 
             // Cobalion Fight
             if (trainerId == 491)
@@ -858,13 +870,22 @@ extern "C"
                 addAnimation->pos_from = 1;
                 addAnimation->pos_to = 0;
                 BattleHandler_PopWork(a1, addAnimation);
-                CreateSpikes(0, a1, 0, 0, 0, 15, Permanent, 208);
+                CreateSpikes(0, a1, 0, 0, 0, SIDEEFF_OPPRESSIVE, Permanent, 208);
             }
+            
 
-            // if (trainerId == 4)
-            // {
-            //     CreateSpikes(0, a1, 0, 0, 0, 14, Condition_MakePermanent(), 210);
-            // }
+            // Virizion Fight
+            if (trainerId == 507) 
+            {
+
+                ConditionData Permanent = Condition_MakePermanent();
+                HandlerParam_AddAnimation *addAnimation = (HandlerParam_AddAnimation *)BattleHandler_PushWork(a1, EFFECT_ADD_ANIMATION, 0);
+                addAnimation->animNo = MOVE312_AROMATHERAPY;
+                addAnimation->pos_from = 1;
+                addAnimation->pos_to = 0;
+                BattleHandler_PopWork(a1, addAnimation);
+                CreateSpikes(0, a1, 0, 0, 0, SIDEEFF_FORESTWRATH, Permanent, 208);
+            }
         }
 
         // Overworld Weather Setter

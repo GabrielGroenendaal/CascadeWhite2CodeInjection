@@ -2,6 +2,7 @@ import messages.script.Msg0169.MSGID;
 
 import Base;
 import Overlay66;
+import player.Bag;
 import event.Battle;
 import event.EVCamera;
 import event.Effects;
@@ -137,9 +138,15 @@ public class MainEvents {
 		Message.CloseAll();
 		Actor.WalkRoute(1, 47, 740, 1, 8, 0);
 		Actor.WaitActionFinish();
-        Global2805(23, 100);
-		Global2805(27, 100);
-        Global2805(41, 100);
+        Global2805(50, 1);
+        Global2805(47, 1);
+        Message.System(131, 2);
+        Message.WaitAdvance();
+        Message.CloseAll();
+        Bag.GiveItem(23, 999);
+        Bag.GiveItem(24, 999);
+        Bag.GiveItem(27, 999);
+        Bag.GiveItem(41, 999);
 		
 		Message.ActorEx(1024, 69, 1, 1, 0);
 		Message.CloseAll();

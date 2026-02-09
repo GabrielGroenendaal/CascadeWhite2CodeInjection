@@ -608,6 +608,7 @@ extern int HandlerFocusBandCheck(BattleEventItem *a1, int a2, int a3, int *a4);
 extern int HandlerFocusBandUse(BattleEventItem *a1, ServerFlow *a2, unsigned int *a3);
 extern int HandlerQuickClawUse(BattleEventItem *a1, ServerFlow *a2, int a3, _DWORD *a4);
 extern int HandlerQuickClawPriorityCheck(BattleEventItem *a1, ServerFlow *a2, unsigned int *a3);
+extern int ItemAttackValueToRatio(BattleEventItem *a1);
 extern void HandlerBrightPowder(BattleEventItem *a1, int a2, int a3);
 extern void HandlerLeftoversUse(BattleEventItem *a1, ServerFlow *a2, unsigned int *a3);
 extern void HandlerLeftoversReaction(BattleEventItem *a1, ServerFlow *a2, unsigned int *a3);

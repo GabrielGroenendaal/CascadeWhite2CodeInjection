@@ -40,6 +40,6 @@
 #define DEBUGGING_ABILITIES false
 #define DEBUGGING_SIDE_EFFECTS false
 #define DEBUGGING_FIELDEFFECTS false
-
-#define DAMAGE_CACHE_ENABLED true
+#define TESTING_BATTLEFIELD false
+#define DAMAGE_CACHE_ENABLED false
 #endif

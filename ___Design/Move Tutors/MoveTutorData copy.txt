@@ -5,7 +5,8 @@ Left: 2101
 Middle: 10100
 Right: 10105
 
-
+2281: Pledge Moves
+2282: Ultimate Moves
 // Humilau City
 2285
 26 00 00 00 02 00 00 00 00 00 00 00   Bind -> Double-Edge

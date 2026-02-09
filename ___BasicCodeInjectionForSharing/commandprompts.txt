@@ -38,6 +38,7 @@
 
 
 /* Damage Calc */
+"C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\____Github_CascadeWhite\arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi\bin\arm-none-eabi-g++.exe"  -r -mthumb -mlong-calls -march=armv5t -Os A_CoreBattle/A9_DamageCalc.cpp -Iswan-master -o ______Output/A9_DamageCalc.elf
 
 
 /* Illusion Check */

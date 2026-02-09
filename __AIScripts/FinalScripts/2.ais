@@ -2728,7 +2728,7 @@ data_address_0x2C0E:
 //   FAKE OUT   
 
 Label_FakeOut:
-	AddToScore(4)
+	AddToScore(3)
 	EndScript()
 
 

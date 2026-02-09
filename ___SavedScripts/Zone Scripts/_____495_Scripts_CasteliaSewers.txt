@@ -213,6 +213,8 @@ public class MainEvents {
 		Actor.Hide(21);
 		Actor.Hide(39);
 		Actor.Hide(40);
+        Actor.Hide(43); // Hide the two Talking Roughnecks 
+        Actor.Hide(44); // Hide the Two Talking Roughnecks
 		EventWorks.Set(16563, 1);
 		EventWorks.Set(16562, 3);
 		EventFlags.Set(755);
@@ -286,10 +288,10 @@ public class MainEvents {
 		Sound.SEPlay(1351);
 		Actor.FacePlayer();
 		Sound.PVPlay(444, 0);
-		Message.Actor(1024, 36, 0, 0);
+		Message.System(36, 2);
 		Sound.PVWait();
-		Input.LastKeyWait();
-		Message.CloseActor();
+		Message.WaitAdvance();
+		Message.CloseAll();
 		Runtime.FinishSubEvents();
 		Actor.UnpauseAll();
 	}
@@ -835,8 +837,58 @@ public class MainEvents {
 		Actor.FacePlayer();
 		Sound.PVPlay(88, 0);
 		Sound.PVWait();
-		Input.LastKeyWait();
-		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
+
+    // SCRAGGY ENCOUNTER SCRIPTING
+    // Model Number 314
+    public static void main_37() {
+        int SCRAGGY_ID;
+        SCRAGGY_ID = 46;
+        Actor.PauseAll();
+		Sound.SEPlay(1351);
+        ShowExclamationMark(46);
+		TurnEast8F(SCRAGGY_ID);
+        Actor.WaitActionFinish();
+        Runtime.Sleep(16);
+        Sound.PVPlay(559, 0);
+        HopLeft(SCRAGGY_ID);
+        HopRight(SCRAGGY_ID);
+        HopDown(SCRAGGY_ID);
+        Actor.WaitActionFinish();
+        DashAway(SCRAGGY_ID);
+        Actor.WaitActionFinish();
+        Actor.Hide(SCRAGGY_ID);
+		Sound.PVWait();
+        EventWorks.Set(16488, 1);
+        EventFlags.Set(533);
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
+    
+    // Second Scraggy Script
+    public static void main_38() {
+        int SCRAGGY2_ID;
+        SCRAGGY2_ID = 47;
+        Actor.PauseAll();
+		Sound.SEPlay(1351);
+        ShowExclamationMark(SCRAGGY2_ID);
+		TurnNorth8F(SCRAGGY2_ID);
+        Actor.WaitActionFinish();
+        Runtime.Sleep(16);
+        Sound.PVPlay(559, 0);
+        HopLeft(SCRAGGY2_ID);
+        HopRight(SCRAGGY2_ID);
+        HopDown(SCRAGGY2_ID);
+        Actor.WaitActionFinish();
+        Sound.PVWait();
+        DashAway2(SCRAGGY2_ID);
+        Runtime.Sleep(26);
+		Sound.SEPlay(1369);
+        Actor.Hide(SCRAGGY2_ID);
+        EventWorks.Set(16488, 2);
+        EventFlags.Set(534);
 		Runtime.FinishSubEvents();
 		Actor.UnpauseAll();
     }
@@ -867,7 +919,7 @@ public class MainEvents {
         int isVictory;
         int pokeCount; 
         int dummy;
-
+		EventFlags.Set(535);
 		Sound.SEPlay(1351);
         ShowExclamationMark(trainer_A_Entity);
         Actor.WaitActionFinish();
@@ -905,6 +957,7 @@ public class MainEvents {
 
         isVictory = Battle.IsTrainerVictory();
         if (isVictory != 1) { 
+			EventFlags.Clear(535);
             Battle.CallTrainerLose();
             goto Label_EndBackToBackBattleScript;
         }
@@ -948,6 +1001,7 @@ public class MainEvents {
         
         isVictory = Battle.IsTrainerVictory();
         if (isVictory != 1) { 
+			EventFlags.Clear(535);
             Battle.CallTrainerLose();
             goto Label_EndBackToBackBattleScript;
         }
@@ -961,6 +1015,7 @@ public class MainEvents {
         EventFlags.Set(1520 + trainer_A);
         EventFlags.Set(1520 + trainer_B);
         EventWorks.Set(event, 1);
+		EventFlags.Clear(535);
         Label_EndBackToBackBattleScript:
         Runtime.FinishSubEvents();
 		Actor.UnpauseAll();
@@ -972,7 +1027,7 @@ public class MainEvents {
         int isVictory;
         int pokeCount; 
         int dummy;
-
+		EventFlags.Set(535);
         if (EventWorks.Get(16432) == 2) {
             partnerTeamID = 590;
         } 
@@ -1042,6 +1097,7 @@ public class MainEvents {
         Battle.CallTrainerMultiBattle(partnerTeamID, trainer_A, trainer_B, 0);
         isVictory = Battle.IsTrainerVictory();
         if (isVictory != 1) {
+			EventFlags.Clear(535);
             Battle.CallTrainerLose();
             goto Label_EndMultiBattleScript;
         }
@@ -1056,6 +1112,7 @@ public class MainEvents {
 		EventFlags.Set(1520 + trainer_A);
         EventFlags.Set(1520 + trainer_B);
         EventWorks.Set(event, 1);
+		EventFlags.Clear(535);
         Label_EndMultiBattleScript:
         Runtime.FinishSubEvents();
 		Actor.UnpauseAll();
@@ -1167,7 +1224,7 @@ public class MainEvents {
 
         // Modify this to account for coming from the north.
 		v34 += 2;
-		if (v34 != v36){
+		if (v34 != v36 || v33 != v35){
 			Actor.WalkRoute(0, v33, v34, 0, 8, 0);
 			Actor.WaitActionFinish();
 		}
@@ -1271,7 +1328,10 @@ public class MainEvents {
 
 
 
-
+	static meta void ShowExclamationMark(int npcId) : VActionSequence { 
+		Action004b(1);
+	}
+	
 	static meta void ExclaimAndTurnSouth(int npcId) : VActionSequence {
 		Action004b(1);
 		Action0021(1);
@@ -1367,6 +1427,30 @@ public class MainEvents {
 	static meta void TurnSouth(int npcId) : VActionSequence {
 		Action0021(1);
 	}
+
+    static meta void HopLeft(int npcId) : VActionSequence {
+        Action0032(1);
+    }
+
+    static meta void HopRight(int npcId) : VActionSequence {
+        Action0033(1);
+    }
+
+    static meta void HopUp(int npcId) : VActionSequence {
+        Action0030(1);
+    }
+
+    static meta void HopDown(int npcId) : VActionSequence {
+        Action0031(1);
+    }
+
+    static meta void DashAway(int npcId) : VActionSequence {
+        Action0017(10);
+    }
+    static meta void DashAway2(int npcId) : VActionSequence {
+        Action0015(6);
+        Action0017(7);
+    }
 	static meta void Global2805(int a1, int a2) : VGlobalCall[2805];
 	static meta void Global10536(int a1, int a2) : VGlobalCall[10536];
 	static meta void Global10535(int a1, int a2, int a3, int a4, int a5) : VGlobalCall[10535];
@@ -1381,10 +1465,17 @@ public class MainEvents {
 	static native void Action0011(int amount) : 0x11;
 	static native void Action0012(int amount) : 0x12;
 	static native void Action0013(int amount) : 0x13;
+    static native void Action0015(int amount) : 0x15;
+	static native void Action0016(int amount) : 0x16;
+	static native void Action0017(int amount) : 0x17;
 	static native void Action0020(int amount) : 0x20;
 	static native void Action0021(int amount) : 0x21;
 	static native void Action0022(int amount) : 0x22;
 	static native void Action0023(int amount) : 0x23;
 	static native void Action004b(int amount) : 0x4b;
+    static native void Action0030(int amount) : 0x30;
+    static native void Action0031(int amount) : 0x31;
+    static native void Action0032(int amount) : 0x32;
+    static native void Action0033(int amount) : 0x33;
 	static native void Action009f(int amount) : 0x9f;
 }

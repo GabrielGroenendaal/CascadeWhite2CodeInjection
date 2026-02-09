@@ -26,7 +26,7 @@ endScript_1:
 setup_moves_script:
 	JumpIfUserWillFaint_Setup(&deprioritize_address)
 	JumpIfUserWillTakeLowDamage_Setup(&high_chance_to_prioritize)
-	EndScript()
+	Jump(&endOfTheScript)
 
 
 
@@ -49,7 +49,7 @@ debuff_moves_save_script:
 	JumpIfStoredEQ(ability.prankster, &debuff_compareSpeed)
 	JumpCompareSpeed(LT, &debuff_compareSpeed)
 	JumpIfRandLT(102, &debuff_compareSpeed)
-	AddToScore(-2)
+	AddToScore(-1)
 
 debuff_compareSpeed:
 	JumpIfUserWillTakeLowDamage_Debuffs(&high_chance_to_deprioritize)
@@ -68,7 +68,7 @@ debuff_moves_status_script:
 	JumpCompareSpeed(LT, &endOfTheScript)
 	JumpIfRandLT(102, &endOfTheScript)
 	AddToScore(-2)
-	EndScript()
+	Jump(&endOfTheScript)
 
 
 
@@ -86,8 +86,16 @@ priorityCheckSpeed:
 	EndScript()
 
 priorityPrioritize:
-	// CalcMoveDamage(false)
-	// JumpIfStoredEQ(no_damage, &deprioritize_address)
+	CalcMoveDamage(false)
+	JumpIfStoredEQ(no_damage, &deprioritize_address)
+    JumpIfMoveEQ(move.first_impression, &priority_FakeOut)
+    Jump(&priorityEnd)
+
+priority_FakeOut:
+    StoreIsFirstTurn(attacker)
+	JumpIfStoredEQ(false, &deprioritize_address)
+
+priorityEnd:
 	JumpIfRandLT(100, &endOfTheScript)
 	AddToScore(6)
 	EndScript()
@@ -100,24 +108,20 @@ priorityPrioritize:
 
 // HELPERS
 high_chance_to_deprioritize:
-	GetAbilityGuess(attacker)
 	JumpIfRandLT(204, &endOfTheScript)
 	AddToScore(-2)
 	EndScript()
 
 high_chance_to_prioritize:
-	GetAbilityGuess(attacker)
 	JumpIfRandLT(128, &endOfTheScript)
 	AddToScore(2)
 	EndScript()
 
 deprioritize_address:
-	GetAbilityGuess(attacker)
 	AddToScore(-10)
 	EndScript()
 
 endOfTheScript:
-	GetAbilityGuess(attacker)
 	EndScript()
 
 

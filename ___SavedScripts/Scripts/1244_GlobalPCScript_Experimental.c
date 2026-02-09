@@ -180,6 +180,15 @@ label9: ;
 	Storec0xD3(0x8028);
 	Compare(0x8028, 502);
 	if (1) goto label_DisablingFlight;
+    Storec0xD3(0x8028);
+	Compare(0x8028, 192);
+	if (1) goto label_DisablingFlight;
+    Storec0xD3(0x8028);
+	Compare(0x8028, 552);
+	if (1) goto label_DisablingFlight;
+    Storec0xD3(0x8028);
+	Compare(0x8028, 613);
+	if (1) goto label_DisablingFlight;
 	AddDialogueOption(86, 0xFFFF, 86);
 
 label_DisablingFlight: ;

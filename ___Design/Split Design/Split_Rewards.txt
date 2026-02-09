@@ -1,0 +1,95 @@
+[ TMS ]
+        TMs we Need to Change:
+            TM23: Icy Wind -> Weather Crash 
+            TM88: Pluck -> Muddy Water 
+            TM59: Incinerate -> Temper Flare 
+            TM76: Struggle Bug -> Safeguard 
+            TM70: Sparkle -> Diamond Storm
+            TM47: Low Sweep -> Cross Chop
+            TM54: Breaking Swipe -> Dragon Rush
+            TM44: Rest -> Power Whip
+            TM95: Snarl -> Giga Impact 
+            TM79: Body Press -> Hyper Beam 
+        
+        Ones to Change About Earlier:
+            TM20: Hyper Voice (Sold in Mistralton City)
+            TM01: Psychic Fangs (acquired in Relic Sanctum)
+            TM37: Hex (Castelia Sewers)
+            TM64: Teleport (Celestial Tower)
+            TM76: Safeguard (sold in Nimbasa City)
+            TM59: Temper Flare (replaces TM27 Return by Join Avenue)
+            TM27: Return (sold in Nimbasa City)
+
+        Ones To give in Marlon Split: 
+            TM02: Dragon Claw (Reversal Mountain)
+            TM23: Weather Crash (Humilau City)
+            TM24: Thunderbolt (Route 21)
+            TM35: Flamethrower (Flannery, Reversal Mountain)
+            TM45: Lunge (Bugsy, Pinwheel Forest)
+            TM51: Ally Switch (Strange House)
+            TM53: Energy Ball (Gardenia, Pinwheel Forest)
+            TM58: Hurricane (Past Falkner, Route 14)
+            TM62: Acrobatics (Marine Tube, after defeating the Plasma Shadow Triad)
+            HM05: Waterfall (reward for Gauntlet)
+            HM06: Dive (reward from Marlon)
+
+        Ones To give in Drayden Split: 
+            TM93: Wild Charge (encountered on PLasma Infiltration)
+            TM74: Gyro Ball (Byron in Twist Mountain)
+            TM71: Stone Edge (Roark in Twist Mountain)
+            TM26: Earthquake (Blue in Challenger's Cave)
+            TM82: Dragon Tail (Reward from Drayden)
+            TM13: Ice Beam (Candice, Route 13)
+            TM46: Aura Sphere (Maylene, Route 13)
+            TM85: Play Rough (Reward from Whitney)
+            TM14: Blizzard (bought from SM9)
+            TM25: Thunder (bought from SM9)
+            TM38: Fire Blast (bought from SM9)
+            TM22: Solar Beam (Undella Bay)
+            TM31: Brick Break (Opelucid City)
+            TM92: Solar Blade (Undella Bay)
+        
+        One to give in Kyurem Split:
+            TM75: Storm Throw (Plasma Frigate)
+            TM41: Infestation (Plasma Frigate)
+            TM34: Sludge Wave (Plasma Frigate)
+            TM88: Muddy Water (past Crasher Wake, Route 8)
+            TM56: Fling (Defeat Giovanni)
+            TM68: Avalanche (from Giant Chasm)
+            TM69: Gunk Shot (from Janine)
+
+        One to give in League Split:
+            TM43: Heat Wave
+            TM60: Wave Crash (from Misty)
+            TM42: Facade (from Norman)
+            TM52: Focus Blast 
+            TM70: Sparkle -> Diamond Storm
+
+        One to give in Post-Game Split:
+            TM95: Giga Impact
+            TM79: Hyper Beam 
+
+[ ITEMS ]
+
+    New Item Idea:
+        Ancient Ward:
+            Once per battle, block the effects of a critical hit. 
+    
+    Items We Haven't Given Yet:
+        Choice Specs 
+        Choice Band 
+        Choice Scarf
+        Focus Band 
+        Weakness Policy 
+        Blunder Policy 
+        Attack Insurance 
+        
+    Items We Can Give Out Multiple Times:
+        Eject Button
+        Eject Pack 
+        Air Balloons
+        Blue Shards
+        Red Shards
+        Green Shards 
+        Yellow Shards 
+        

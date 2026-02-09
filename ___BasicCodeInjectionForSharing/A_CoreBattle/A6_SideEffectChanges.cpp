@@ -29,133 +29,133 @@ extern "C"
     BattleFieldExt battleFieldExt;
 #define BATTLEFIELD_EXT (BattleField *)&battleFieldExt
 
-    int BattleField_GetTerrain()
-    {
-        return battleFieldExt.terrain;
-    }
+    // int BattleField_GetTerrain()
+    // {
+    //     return battleFieldExt.terrain;
+    // }
 
-    void BattleField_SetTerrain(int terrain, int turns)
-    {
-        battleFieldExt.terrain = terrain;
-        battleFieldExt.terrainTurns = turns;
-    }
-    void BattleField_EndTerrain()
-    {
-        battleFieldExt.terrain = 0;
-        battleFieldExt.terrainTurns = 0;
-    }
-    int BattleField_GetTerrainTurns()
-    {
-        return battleFieldExt.terrainTurns;
-    }
+    // void BattleField_SetTerrain(int terrain, int turns)
+    // {
+    //     battleFieldExt.terrain = terrain;
+    //     battleFieldExt.terrainTurns = turns;
+    // }
+    // void BattleField_EndTerrain()
+    // {
+    //     battleFieldExt.terrain = 0;
+    //     battleFieldExt.terrainTurns = 0;
+    // }
+    // int BattleField_GetTerrainTurns()
+    // {
+    //     return battleFieldExt.terrainTurns;
+    // }
 
-    int TerrainPowerMod(ServerFlow *serverFlow, BattleMon *attackingMon, BattleMon *defendingMon, int terrain, int type)
-    {
-        switch (terrain)
-        {
-        case TERRAIN_ELECTRIC:
-            if (!ServerControl_CheckFloating(serverFlow, attackingMon, 1))
-                if (type == TYPE_ELECTRIC)
-                    return 5325;
-            break;
-        case TERRAIN_GRASSY:
-            if (!ServerControl_CheckFloating(serverFlow, attackingMon, 1))
-                if (type == TYPE_GRASS)
-                    return 5325;
-            break;
-        case TERRAIN_MISTY:
-            if (!ServerControl_CheckFloating(serverFlow, defendingMon, 1)) // check the defender
-                if (type == TYPE_DRAGON)
-                    return 2048;
-            break;
-        case TERRAIN_PSYCHIC:
-            if (!ServerControl_CheckFloating(serverFlow, attackingMon, 1))
-                if (type == TYPE_PSYCHIC)
-                    return 5325;
-            break;
-        }
-        return 4096;
-    }
+    // int TerrainPowerMod(ServerFlow *serverFlow, BattleMon *attackingMon, BattleMon *defendingMon, int terrain, int type)
+    // {
+    //     switch (terrain)
+    //     {
+    //     case TERRAIN_ELECTRIC:
+    //         if (!ServerControl_CheckFloating(serverFlow, attackingMon, 1))
+    //             if (type == TYPE_ELECTRIC)
+    //                 return 5325;
+    //         break;
+    //     case TERRAIN_GRASSY:
+    //         if (!ServerControl_CheckFloating(serverFlow, attackingMon, 1))
+    //             if (type == TYPE_GRASS)
+    //                 return 5325;
+    //         break;
+    //     case TERRAIN_MISTY:
+    //         if (!ServerControl_CheckFloating(serverFlow, defendingMon, 1)) // check the defender
+    //             if (type == TYPE_DRAGON)
+    //                 return 2048;
+    //         break;
+    //     case TERRAIN_PSYCHIC:
+    //         if (!ServerControl_CheckFloating(serverFlow, attackingMon, 1))
+    //             if (type == TYPE_PSYCHIC)
+    //                 return 5325;
+    //         break;
+    //     }
+    //     return 4096;
+    // }
 
-    int ServerEvent_IncreaseMoveTerrainTurns(ServerFlow *serverFlow, int terrain, int attackingSlot)
-    {
-        BattleEventVar_Push();
-        SET_UP_NEW_EVENT;
-        BattleEventVar_SetConstValue(VAR_WEATHER, terrain);
-        BattleEventVar_SetConstValue(NEW_VAR_ATTACKING_MON, attackingSlot);
-        BattleEventVar_SetValue(VAR_EFFECT_TURN_COUNT, 0);
-        BattleEvent_CallHandlers(serverFlow, EVENT_MOVE_TERRAIN_TURN_COUNT);
-        int turnCount = BattleEventVar_GetValue(VAR_EFFECT_TURN_COUNT);
-        BattleEventVar_Pop();
-        return turnCount;
-    }
+    // int ServerEvent_IncreaseMoveTerrainTurns(ServerFlow *serverFlow, int terrain, int attackingSlot)
+    // {
+    //     BattleEventVar_Push();
+    //     SET_UP_NEW_EVENT;
+    //     BattleEventVar_SetConstValue(VAR_WEATHER, terrain);
+    //     BattleEventVar_SetConstValue(NEW_VAR_ATTACKING_MON, attackingSlot);
+    //     BattleEventVar_SetValue(VAR_EFFECT_TURN_COUNT, 0);
+    //     BattleEvent_CallHandlers(serverFlow, EVENT_MOVE_TERRAIN_TURN_COUNT);
+    //     int turnCount = BattleEventVar_GetValue(VAR_EFFECT_TURN_COUNT);
+    //     BattleEventVar_Pop();
+    //     return turnCount;
+    // }
 
-    int ServerEvent_ChangeTerrain(ServerFlow *serverFlow, int terrain)
-    {
-        bool failFlag = 0;
+    // int ServerEvent_ChangeTerrain(ServerFlow *serverFlow, int terrain)
+    // {
+    //     bool failFlag = 0;
 
-        PokeSet *pokeSet = &serverFlow->switching_in_mons;
-        j_PokeSet_SeekStart(pokeSet);
-        for (BattleMon *currentMon = j_PokeSet_SeekNext(pokeSet); currentMon; currentMon = j_PokeSet_SeekNext(pokeSet))
-        {
-            int v4 = HEManager_PushState(&serverFlow->heManager);
+    //     PokeSet *pokeSet = &serverFlow->switching_in_mons;
+    //     j_PokeSet_SeekStart(pokeSet);
+    //     for (BattleMon *currentMon = j_PokeSet_SeekNext(pokeSet); currentMon; currentMon = j_PokeSet_SeekNext(pokeSet))
+    //     {
+    //         int v4 = HEManager_PushState(&serverFlow->heManager);
 
-            if (!BattleMon_IsFainted(currentMon))
-            {
-                BattleEventVar_Push();
-                SET_UP_NEW_EVENT;
-                int currentSlot = BattleMon_GetID(currentMon);
-                BattleEventVar_SetConstValue(NEW_VAR_MON_ID, currentSlot);
-                BattleEventVar_SetConstValue(VAR_WEATHER, terrain);
-                BattleEventVar_SetRewriteOnceValue(VAR_MOVE_FAIL_FLAG, 0);
-                BattleEvent_CallHandlers(serverFlow, EVENT_TERRAIN_CHANGE);
-                failFlag = BattleEventVar_GetValue(VAR_MOVE_FAIL_FLAG);
-                if (failFlag)
-                {
-                    BattleEvent_CallHandlers(serverFlow, EVENT_TERRAIN_CHANGE_FAIL);
-                }
-                BattleEventVar_Pop();
-            }
+    //         if (!BattleMon_IsFainted(currentMon))
+    //         {
+    //             BattleEventVar_Push();
+    //             SET_UP_NEW_EVENT;
+    //             int currentSlot = BattleMon_GetID(currentMon);
+    //             BattleEventVar_SetConstValue(NEW_VAR_MON_ID, currentSlot);
+    //             BattleEventVar_SetConstValue(VAR_WEATHER, terrain);
+    //             BattleEventVar_SetRewriteOnceValue(VAR_MOVE_FAIL_FLAG, 0);
+    //             BattleEvent_CallHandlers(serverFlow, EVENT_TERRAIN_CHANGE);
+    //             failFlag = BattleEventVar_GetValue(VAR_MOVE_FAIL_FLAG);
+    //             if (failFlag)
+    //             {
+    //                 BattleEvent_CallHandlers(serverFlow, EVENT_TERRAIN_CHANGE_FAIL);
+    //             }
+    //             BattleEventVar_Pop();
+    //         }
 
-            HEManager_PopState(&serverFlow->heManager, v4);
-        }
+    //         HEManager_PopState(&serverFlow->heManager, v4);
+    //     }
 
-        return !failFlag;
-    }
-    void ServerEvent_ChangeTerrainAfter(ServerFlow *serverFlow, int terrain)
-    {
-        PokeSet *pokeSet = &serverFlow->switching_in_mons;
-        j_PokeSet_SeekStart(pokeSet);
-        for (BattleMon *currentMon = j_PokeSet_SeekNext(pokeSet); currentMon; currentMon = j_PokeSet_SeekNext(pokeSet))
-        {
-            int v4 = HEManager_PushState(&serverFlow->heManager);
+    //     return !failFlag;
+    // }
+    // void ServerEvent_ChangeTerrainAfter(ServerFlow *serverFlow, int terrain)
+    // {
+    //     PokeSet *pokeSet = &serverFlow->switching_in_mons;
+    //     j_PokeSet_SeekStart(pokeSet);
+    //     for (BattleMon *currentMon = j_PokeSet_SeekNext(pokeSet); currentMon; currentMon = j_PokeSet_SeekNext(pokeSet))
+    //     {
+    //         int v4 = HEManager_PushState(&serverFlow->heManager);
 
-            if (!BattleMon_IsFainted(currentMon))
-            {
-                BattleEventVar_Push();
-                SET_UP_NEW_EVENT;
-                int currentSlot = BattleMon_GetID(currentMon);
-                BattleEventVar_SetConstValue(NEW_VAR_MON_ID, currentSlot);
-                BattleEventVar_SetConstValue(VAR_WEATHER, terrain);
-                BattleEvent_CallHandlers(serverFlow, EVENT_AFTER_TERRAIN_CHANGE);
-                BattleEventVar_Pop();
-            }
+    //         if (!BattleMon_IsFainted(currentMon))
+    //         {
+    //             BattleEventVar_Push();
+    //             SET_UP_NEW_EVENT;
+    //             int currentSlot = BattleMon_GetID(currentMon);
+    //             BattleEventVar_SetConstValue(NEW_VAR_MON_ID, currentSlot);
+    //             BattleEventVar_SetConstValue(VAR_WEATHER, terrain);
+    //             BattleEvent_CallHandlers(serverFlow, EVENT_AFTER_TERRAIN_CHANGE);
+    //             BattleEventVar_Pop();
+    //         }
 
-            HEManager_PopState(&serverFlow->heManager, v4);
-        }
-    }
-    int ServerEvent_GetTerrain(ServerFlow *serverFlow)
-    {
-        BattleEventVar_Push();
-        SET_UP_NEW_EVENT;
-        BattleEventVar_SetRewriteOnceValue(VAR_MOVE_FAIL_FLAG, 0);
-        BattleEvent_CallHandlers(serverFlow, EVENT_TERRAIN_CHECK);
-        int failFlag = BattleEventVar_GetValue(VAR_MOVE_FAIL_FLAG);
-        BattleEventVar_Pop();
-        if (failFlag)
-            return 0;
-        return BattleField_GetTerrain();
-    }
+    //         HEManager_PopState(&serverFlow->heManager, v4);
+    //     }
+    // }
+    // int ServerEvent_GetTerrain(ServerFlow *serverFlow)
+    // {
+    //     BattleEventVar_Push();
+    //     SET_UP_NEW_EVENT;
+    //     BattleEventVar_SetRewriteOnceValue(VAR_MOVE_FAIL_FLAG, 0);
+    //     BattleEvent_CallHandlers(serverFlow, EVENT_TERRAIN_CHECK);
+    //     int failFlag = BattleEventVar_GetValue(VAR_MOVE_FAIL_FLAG);
+    //     BattleEventVar_Pop();
+    //     if (failFlag)
+    //         return 0;
+    //     return BattleField_GetTerrain();
+    // }
     void ServerEvent_GroundedByGravity(ServerFlow *serverFlow, BattleMon *battleMon)
     {
         BattleEventVar_Push();
@@ -166,24 +166,24 @@ extern "C"
         BattleEventVar_Pop();
     }
 
-    bool ServerControl_ChangeTerrainCheck(ServerFlow *serverFlow, int terrain, int turns)
-    {
-        if (terrain > TERRAIN_PSYCHIC)
-            return 0;
+    // bool ServerControl_ChangeTerrainCheck(ServerFlow *serverFlow, int terrain, int turns)
+    // {
+    //     if (terrain > TERRAIN_PSYCHIC)
+    //         return 0;
 
-        return terrain != BattleField_GetTerrain() || turns == 255 && BattleField_GetTerrainTurns() != 255;
-    }
-    int ServerControl_ChangeTerrain(ServerFlow *serverFlow, int terrain, int turns)
-    {
-        if (!ServerControl_ChangeTerrainCheck(serverFlow, terrain, turns))
-            return 0;
+    //     return terrain != BattleField_GetTerrain() || turns == 255 && BattleField_GetTerrainTurns() != 255;
+    // }
+    // int ServerControl_ChangeTerrain(ServerFlow *serverFlow, int terrain, int turns)
+    // {
+    //     if (!ServerControl_ChangeTerrainCheck(serverFlow, terrain, turns))
+    //         return 0;
 
-        if (!ServerEvent_ChangeTerrain(serverFlow, terrain))
-            return 0;
+    //     if (!ServerEvent_ChangeTerrain(serverFlow, terrain))
+    //         return 0;
 
-        BattleField_SetTerrain(terrain, turns);
-        return 1;
-    }
+    //     BattleField_SetTerrain(terrain, turns);
+    //     return 1;
+    // }
 
     // typedef struct
     // {
@@ -301,240 +301,240 @@ extern "C"
     }
 
     // GENERAL TERRAIN
-    void HandlerTerrainPreventStatus(BattleEventItem *a1, ServerFlow *serverFlow, int pokemonSlot, int *work)
-    {
-        int terrain = BattleField_GetTerrain();
-        if (terrain != TERRAIN_ELECTRIC && terrain != TERRAIN_MISTY)
-            return;
+    // void HandlerTerrainPreventStatus(BattleEventItem *a1, ServerFlow *serverFlow, int pokemonSlot, int *work)
+    // {
+    //     int terrain = BattleField_GetTerrain();
+    //     if (terrain != TERRAIN_ELECTRIC && terrain != TERRAIN_MISTY)
+    //         return;
 
-        BattleMon *currentMon = Handler_GetBattleMon(serverFlow, BattleEventVar_GetValue(VAR_DEFENDING_MON));
-        if (!ServerControl_CheckFloating(serverFlow, currentMon, 1))
-        {
-            if (terrain == TERRAIN_ELECTRIC)
-            {
-                if (BattleEventVar_GetValue(VAR_CONDITION_ID) == CONDITION_SLEEP ||
-                    BattleEventVar_GetValue(VAR_CONDITION_ID) == CONDITION_DROWSY)
-                {
-                    *work = BattleEventVar_RewriteValue(VAR_MOVE_FAIL_FLAG, 1);
-                }
-            }
-            else // MISTY TERRAIN
-            {
-                if (BattleEventVar_GetValue(VAR_CONDITION_ID) == CONDITION_PARALYSIS ||
-                    BattleEventVar_GetValue(VAR_CONDITION_ID) == CONDITION_SLEEP ||
-                    BattleEventVar_GetValue(VAR_CONDITION_ID) == CONDITION_FREEZE ||
-                    BattleEventVar_GetValue(VAR_CONDITION_ID) == CONDITION_BURN ||
-                    BattleEventVar_GetValue(VAR_CONDITION_ID) == CONDITION_POISON ||
-                    BattleEventVar_GetValue(VAR_CONDITION_ID) == CONDITION_CONFUSION ||
-                    BattleEventVar_GetValue(VAR_CONDITION_ID) == CONDITION_DROWSY)
-                {
-                    *work = BattleEventVar_RewriteValue(VAR_MOVE_FAIL_FLAG, 1);
-                }
-            }
-        }
-    }
+    //     BattleMon *currentMon = Handler_GetBattleMon(serverFlow, BattleEventVar_GetValue(VAR_DEFENDING_MON));
+    //     if (!ServerControl_CheckFloating(serverFlow, currentMon, 1))
+    //     {
+    //         if (terrain == TERRAIN_ELECTRIC)
+    //         {
+    //             if (BattleEventVar_GetValue(VAR_CONDITION_ID) == CONDITION_SLEEP ||
+    //                 BattleEventVar_GetValue(VAR_CONDITION_ID) == CONDITION_DROWSY)
+    //             {
+    //                 *work = BattleEventVar_RewriteValue(VAR_MOVE_FAIL_FLAG, 1);
+    //             }
+    //         }
+    //         else // MISTY TERRAIN
+    //         {
+    //             if (BattleEventVar_GetValue(VAR_CONDITION_ID) == CONDITION_PARALYSIS ||
+    //                 BattleEventVar_GetValue(VAR_CONDITION_ID) == CONDITION_SLEEP ||
+    //                 BattleEventVar_GetValue(VAR_CONDITION_ID) == CONDITION_FREEZE ||
+    //                 BattleEventVar_GetValue(VAR_CONDITION_ID) == CONDITION_BURN ||
+    //                 BattleEventVar_GetValue(VAR_CONDITION_ID) == CONDITION_POISON ||
+    //                 BattleEventVar_GetValue(VAR_CONDITION_ID) == CONDITION_CONFUSION ||
+    //                 BattleEventVar_GetValue(VAR_CONDITION_ID) == CONDITION_DROWSY)
+    //             {
+    //                 *work = BattleEventVar_RewriteValue(VAR_MOVE_FAIL_FLAG, 1);
+    //             }
+    //         }
+    //     }
+    // }
 
-    void HandlerTerrainStatusFailMessage(BattleEventItem *a1, ServerFlow *serverFlow, int pokemonSlot, int *work)
-    {
-        int terrain = BattleField_GetTerrain();
-        if (terrain != TERRAIN_ELECTRIC && terrain != TERRAIN_MISTY)
-            return;
+    // void HandlerTerrainStatusFailMessage(BattleEventItem *a1, ServerFlow *serverFlow, int pokemonSlot, int *work)
+    // {
+    //     int terrain = BattleField_GetTerrain();
+    //     if (terrain != TERRAIN_ELECTRIC && terrain != TERRAIN_MISTY)
+    //         return;
 
-        if (*work)
-        {
-            short msgID = BATTLE_ELECTRIC_TERRAIN_STATUS_MSGID;
-            if (terrain == TERRAIN_MISTY)
-                msgID = BATTLE_MISTY_TERRAIN_STATUS_MSGID;
+    //     if (*work)
+    //     {
+    //         short msgID = BATTLE_ELECTRIC_TERRAIN_STATUS_MSGID;
+    //         if (terrain == TERRAIN_MISTY)
+    //             msgID = BATTLE_MISTY_TERRAIN_STATUS_MSGID;
 
-            int defendingSlot = BattleEventVar_GetValue(VAR_DEFENDING_MON);
-            HandlerParam_Message *v6 = (HandlerParam_Message *)BattleHandler_PushWork(serverFlow, EFFECT_MESSAGE, 31);
-            BattleHandler_StrSetup(&v6->str, 2u, msgID);
-            BattleHandler_AddArg(&v6->str, defendingSlot);
-            BattleHandler_PopWork(serverFlow, v6);
-        }
-    }
-    // ELECTRIC TERRAIN
-    void CommonElectricTerrainCureStatus(ServerFlow *serverFlow, int pokemonSlot)
-    {
-        HandlerParam_CureCondition *v7;
+    //         int defendingSlot = BattleEventVar_GetValue(VAR_DEFENDING_MON);
+    //         HandlerParam_Message *v6 = (HandlerParam_Message *)BattleHandler_PushWork(serverFlow, EFFECT_MESSAGE, 31);
+    //         BattleHandler_StrSetup(&v6->str, 2u, msgID);
+    //         BattleHandler_AddArg(&v6->str, defendingSlot);
+    //         BattleHandler_PopWork(serverFlow, v6);
+    //     }
+    // }
+    // // ELECTRIC TERRAIN
+    // void CommonElectricTerrainCureStatus(ServerFlow *serverFlow, int pokemonSlot)
+    // {
+    //     HandlerParam_CureCondition *v7;
 
-        BattleMon *currentMon = Handler_GetBattleMon(serverFlow, pokemonSlot);
-        if (BattleMon_CheckIfMoveCondition(currentMon, CONDITION_SLEEP))
-        {
-            if (!ServerControl_CheckFloating(serverFlow, currentMon, 1))
-            {
-                v7 = (HandlerParam_CureCondition *)BattleHandler_PushWork(serverFlow, EFFECT_CURE_STATUS, pokemonSlot);
-                v7->sickCode = CONDITION_SLEEP;
-                v7->poke_cnt = 1;
-                v7->pokeID[0] = pokemonSlot;
-                // k::Printf("TERRAIN CURE\n");
-                BattleHandler_PopWork(serverFlow, v7);
-            }
-        }
-    }
-    void HandlerElectricTerrainCheckSleep(BattleEventItem *a1, ServerFlow *serverFlow, int pokemonSlot, int *work)
-    {
-        // k::Printf("HandlerElectricTerrainEndSleep\n");
-        if (BattleField_GetTerrain() != TERRAIN_ELECTRIC)
-            return;
+    //     BattleMon *currentMon = Handler_GetBattleMon(serverFlow, pokemonSlot);
+    //     if (BattleMon_CheckIfMoveCondition(currentMon, CONDITION_SLEEP))
+    //     {
+    //         if (!ServerControl_CheckFloating(serverFlow, currentMon, 1))
+    //         {
+    //             v7 = (HandlerParam_CureCondition *)BattleHandler_PushWork(serverFlow, EFFECT_CURE_STATUS, pokemonSlot);
+    //             v7->sickCode = CONDITION_SLEEP;
+    //             v7->poke_cnt = 1;
+    //             v7->pokeID[0] = pokemonSlot;
+    //             // k::Printf("TERRAIN CURE\n");
+    //             BattleHandler_PopWork(serverFlow, v7);
+    //         }
+    //     }
+    // }
+    // void HandlerElectricTerrainCheckSleep(BattleEventItem *a1, ServerFlow *serverFlow, int pokemonSlot, int *work)
+    // {
+    //     // k::Printf("HandlerElectricTerrainEndSleep\n");
+    //     if (BattleField_GetTerrain() != TERRAIN_ELECTRIC)
+    //         return;
 
-        if (pokemonSlot == BattleEventVar_GetValue(VAR_MON_ID))
-        {
-            BattleMon *currentMon = Handler_GetBattleMon(serverFlow, pokemonSlot);
-            if (!ServerControl_CheckFloating(serverFlow, currentMon, 1))
-            {
-                BattleEventVar_RewriteValue(VAR_MOVE_FAIL_FLAG, 1);
-            }
-        }
-    }
-    void HandlerElectricTerrainTerrainChange(BattleEventItem *a1, ServerFlow *serverFlow, int pokemonSlot, int *work)
-    {
-        if (IS_NOT_NEW_EVENT)
-            return;
+    //     if (pokemonSlot == BattleEventVar_GetValue(VAR_MON_ID))
+    //     {
+    //         BattleMon *currentMon = Handler_GetBattleMon(serverFlow, pokemonSlot);
+    //         if (!ServerControl_CheckFloating(serverFlow, currentMon, 1))
+    //         {
+    //             BattleEventVar_RewriteValue(VAR_MOVE_FAIL_FLAG, 1);
+    //         }
+    //     }
+    // }
+    // void HandlerElectricTerrainTerrainChange(BattleEventItem *a1, ServerFlow *serverFlow, int pokemonSlot, int *work)
+    // {
+    //     if (IS_NOT_NEW_EVENT)
+    //         return;
 
-        if (BattleField_GetTerrain() != TERRAIN_ELECTRIC)
-            return;
+    //     if (BattleField_GetTerrain() != TERRAIN_ELECTRIC)
+    //         return;
 
-        CommonElectricTerrainCureStatus(serverFlow, BattleEventVar_GetValue(NEW_VAR_MON_ID));
-    }
-    void HandlerElectricTerrainSwitchIn(BattleEventItem *a1, ServerFlow *serverFlow, int pokemonSlot, int *work)
-    {
-        if (BattleField_GetTerrain() != TERRAIN_ELECTRIC)
-            return;
+    //     CommonElectricTerrainCureStatus(serverFlow, BattleEventVar_GetValue(NEW_VAR_MON_ID));
+    // }
+    // void HandlerElectricTerrainSwitchIn(BattleEventItem *a1, ServerFlow *serverFlow, int pokemonSlot, int *work)
+    // {
+    //     if (BattleField_GetTerrain() != TERRAIN_ELECTRIC)
+    //         return;
 
-        CommonElectricTerrainCureStatus(serverFlow, BattleEventVar_GetValue(VAR_MON_ID));
-    }
-    void HandlerElectricTerrainActProcEnd(BattleEventItem *a1, ServerFlow *serverFlow, int pokemonSlot, int *work)
-    {
-        if (BattleField_GetTerrain() != TERRAIN_ELECTRIC)
-            return;
+    //     CommonElectricTerrainCureStatus(serverFlow, BattleEventVar_GetValue(VAR_MON_ID));
+    // }
+    // void HandlerElectricTerrainActProcEnd(BattleEventItem *a1, ServerFlow *serverFlow, int pokemonSlot, int *work)
+    // {
+    //     if (BattleField_GetTerrain() != TERRAIN_ELECTRIC)
+    //         return;
 
-        CommonElectricTerrainCureStatus(serverFlow, BattleEventVar_GetValue(VAR_MON_ID));
-    }
-    void HandlerElectricTerrainFloatingChange(BattleEventItem *a1, ServerFlow *serverFlow, int pokemonSlot, int *work)
-    {
-        if (BattleField_GetTerrain() != TERRAIN_ELECTRIC)
-            return;
+    //     CommonElectricTerrainCureStatus(serverFlow, BattleEventVar_GetValue(VAR_MON_ID));
+    // }
+    // void HandlerElectricTerrainFloatingChange(BattleEventItem *a1, ServerFlow *serverFlow, int pokemonSlot, int *work)
+    // {
+    //     if (BattleField_GetTerrain() != TERRAIN_ELECTRIC)
+    //         return;
 
-        CommonElectricTerrainCureStatus(serverFlow, BattleEventVar_GetValue(VAR_MON_ID));
-    }
-    void HandlerElectricTerrainFloatingChangeNEW(BattleEventItem *a1, ServerFlow *serverFlow, int pokemonSlot, int *work)
-    {
-        if (IS_NOT_NEW_EVENT)
-            return;
+    //     CommonElectricTerrainCureStatus(serverFlow, BattleEventVar_GetValue(VAR_MON_ID));
+    // }
+    // void HandlerElectricTerrainFloatingChangeNEW(BattleEventItem *a1, ServerFlow *serverFlow, int pokemonSlot, int *work)
+    // {
+    //     if (IS_NOT_NEW_EVENT)
+    //         return;
 
-        if (BattleField_GetTerrain() != TERRAIN_ELECTRIC)
-            return;
+    //     if (BattleField_GetTerrain() != TERRAIN_ELECTRIC)
+    //         return;
 
-        CommonElectricTerrainCureStatus(serverFlow, BattleEventVar_GetValue(NEW_VAR_MON_ID));
-    }
-    // GRASSY TERRAIN
-    void HandlerGrassyTerrainHeal(BattleEventItem *a1, ServerFlow *serverFlow, int pokemonSlot, int *work)
-    {
-        if (BattleField_GetTerrain() != TERRAIN_GRASSY)
-            return;
+    //     CommonElectricTerrainCureStatus(serverFlow, BattleEventVar_GetValue(NEW_VAR_MON_ID));
+    // }
+    // // GRASSY TERRAIN
+    // void HandlerGrassyTerrainHeal(BattleEventItem *a1, ServerFlow *serverFlow, int pokemonSlot, int *work)
+    // {
+    //     if (BattleField_GetTerrain() != TERRAIN_GRASSY)
+    //         return;
 
-        HandlerParam_RecoverHP *v6;
+    //     HandlerParam_RecoverHP *v6;
 
-        int currentSlot = BattleEventVar_GetValue(VAR_MON_ID);
-        BattleMon *currentMon = Handler_GetBattleMon(serverFlow, currentSlot);
-        if (!ServerControl_CheckFloating(serverFlow, currentMon, 1))
-        {
-            if (!BattleMon_IsFullHP(currentMon))
-            {
-                v6 = (HandlerParam_RecoverHP *)BattleHandler_PushWork(serverFlow, EFFECT_RECOVERHP, currentSlot);
-                v6->pokeID = currentSlot;
-                v6->recoverHP = DivideMaxHPZeroCheck(currentMon, 16);
-                BattleHandler_StrSetup(&v6->exStr, 2u, 914);
-                BattleHandler_AddArg(&v6->exStr, currentSlot);
-                int SubID = BattleEventItem_GetSubID(a1);
-                BattleHandler_AddArg(&v6->exStr, SubID);
-                BattleHandler_PopWork(serverFlow, v6);
-            }
-        }
-    }
-    void HandlerGrassyTerrainQuakeMoves(BattleEventItem *a1, ServerFlow *serverFlow, int pokemonSlot, int *work)
-    {
-        if (BattleField_GetTerrain() != TERRAIN_GRASSY)
-            return;
+    //     int currentSlot = BattleEventVar_GetValue(VAR_MON_ID);
+    //     BattleMon *currentMon = Handler_GetBattleMon(serverFlow, currentSlot);
+    //     if (!ServerControl_CheckFloating(serverFlow, currentMon, 1))
+    //     {
+    //         if (!BattleMon_IsFullHP(currentMon))
+    //         {
+    //             v6 = (HandlerParam_RecoverHP *)BattleHandler_PushWork(serverFlow, EFFECT_RECOVERHP, currentSlot);
+    //             v6->pokeID = currentSlot;
+    //             v6->recoverHP = DivideMaxHPZeroCheck(currentMon, 16);
+    //             BattleHandler_StrSetup(&v6->exStr, 2u, 914);
+    //             BattleHandler_AddArg(&v6->exStr, currentSlot);
+    //             int SubID = BattleEventItem_GetSubID(a1);
+    //             BattleHandler_AddArg(&v6->exStr, SubID);
+    //             BattleHandler_PopWork(serverFlow, v6);
+    //         }
+    //     }
+    // }
+    // void HandlerGrassyTerrainQuakeMoves(BattleEventItem *a1, ServerFlow *serverFlow, int pokemonSlot, int *work)
+    // {
+    //     if (BattleField_GetTerrain() != TERRAIN_GRASSY)
+    //         return;
 
-        if (pokemonSlot == BattleEventVar_GetValue(VAR_DEFENDING_MON))
-        {
-            int moveID = BattleEventVar_GetValue(VAR_MOVE_ID);
-            if (moveID == 89 ||
-                moveID == 222 ||
-                moveID == 523)
-            {
-                BattleMon *defendingMon = Handler_GetBattleMon(serverFlow, pokemonSlot);
-                if (!ServerControl_CheckFloating(serverFlow, defendingMon, 1))
-                {
-                    int power = BattleEventVar_GetValue(VAR_MOVE_POWER);
-                    BattleEventVar_RewriteValue(VAR_MOVE_POWER, power / 2);
-                }
-            }
-        }
-    }
-    // MISTY TERRAIN (all in general)
-    // PSYCHIC TERRAIN
-    void HandlerPsychicTerrainPreventPrio(BattleEventItem *a1, ServerFlow *serverFlow, int pokemonSlot, int *work)
-    {
-        if (BattleField_GetTerrain() != TERRAIN_PSYCHIC)
-            return;
+    //     if (pokemonSlot == BattleEventVar_GetValue(VAR_DEFENDING_MON))
+    //     {
+    //         int moveID = BattleEventVar_GetValue(VAR_MOVE_ID);
+    //         if (moveID == 89 ||
+    //             moveID == 222 ||
+    //             moveID == 523)
+    //         {
+    //             BattleMon *defendingMon = Handler_GetBattleMon(serverFlow, pokemonSlot);
+    //             if (!ServerControl_CheckFloating(serverFlow, defendingMon, 1))
+    //             {
+    //                 int power = BattleEventVar_GetValue(VAR_MOVE_POWER);
+    //                 BattleEventVar_RewriteValue(VAR_MOVE_POWER, power / 2);
+    //             }
+    //         }
+    //     }
+    // }
+    // // MISTY TERRAIN (all in general)
+    // // PSYCHIC TERRAIN
+    // void HandlerPsychicTerrainPreventPrio(BattleEventItem *a1, ServerFlow *serverFlow, int pokemonSlot, int *work)
+    // {
+    //     if (BattleField_GetTerrain() != TERRAIN_PSYCHIC)
+    //         return;
 
-        int currentMon = BattleEventVar_GetValue(VAR_DEFENDING_MON);
-        // k::Printf("PREVENT PRIO -> TERRAIN: %d | ATTACKER: %d | DEFENDER: %d\n", BattleField_GetTerrain(), BattleEventVar_GetValue(VAR_ATTACKING_MON), currentMon);
-        if (currentMon == BattleEventVar_GetValue(VAR_ATTACKING_MON))
-            return;
+    //     int currentMon = BattleEventVar_GetValue(VAR_DEFENDING_MON);
+    //     // k::Printf("PREVENT PRIO -> TERRAIN: %d | ATTACKER: %d | DEFENDER: %d\n", BattleField_GetTerrain(), BattleEventVar_GetValue(VAR_ATTACKING_MON), currentMon);
+    //     if (currentMon == BattleEventVar_GetValue(VAR_ATTACKING_MON))
+    //         return;
 
-        BattleMon *defendingMon = Handler_GetBattleMon(serverFlow, currentMon);
-        if (!ServerControl_CheckFloating(serverFlow, defendingMon, 1))
-        {
-            ActionOrderWork *action_order = serverFlow->actionOrderWork;
-            u16 orderIdx = 0;
+    //     BattleMon *defendingMon = Handler_GetBattleMon(serverFlow, currentMon);
+    //     if (!ServerControl_CheckFloating(serverFlow, defendingMon, 1))
+    //     {
+    //         ActionOrderWork *action_order = serverFlow->actionOrderWork;
+    //         u16 orderIdx = 0;
 
-            BattleMon *attackingMon = Handler_GetBattleMon(serverFlow, BattleEventVar_GetValue(VAR_ATTACKING_MON));
-            for (; orderIdx < 6; ++orderIdx)
-                if (action_order[orderIdx].battleMon == attackingMon)
-                    break;
+    //         BattleMon *attackingMon = Handler_GetBattleMon(serverFlow, BattleEventVar_GetValue(VAR_ATTACKING_MON));
+    //         for (; orderIdx < 6; ++orderIdx)
+    //             if (action_order[orderIdx].battleMon == attackingMon)
+    //                 break;
 
-            int priority = (action_order[orderIdx].field_8 >> 16) & 0x3FFFFF;
-            priority -= 7;
-            // k::Printf("PRIO: %d\n", priority);
-            int special_priority = ((action_order[orderIdx].field_8 >> 13) & 0x7); // special priority takes into account item & ability prio boosts (1 = no added prio)
-            special_priority -= 1;
-            // k::Printf("SPECIAL PRIO: %d\n", special_priority);
-            priority += special_priority;
+    //         int priority = (action_order[orderIdx].field_8 >> 16) & 0x3FFFFF;
+    //         priority -= 7;
+    //         // k::Printf("PRIO: %d\n", priority);
+    //         int special_priority = ((action_order[orderIdx].field_8 >> 13) & 0x7); // special priority takes into account item & ability prio boosts (1 = no added prio)
+    //         special_priority -= 1;
+    //         // k::Printf("SPECIAL PRIO: %d\n", special_priority);
+    //         priority += special_priority;
 
-            if (priority > 0)
-                BattleEventVar_RewriteValue(VAR_NO_EFFECT_FLAG, 1);
-        }
-    }
+    //         if (priority > 0)
+    //             BattleEventVar_RewriteValue(VAR_NO_EFFECT_FLAG, 1);
+    //     }
+    // }
 
-    BattleEventHandlerTableEntry FieldTerrainHandlers[] = {
-        // GENERAL TERRAIN
-        {EVENT_ADD_CONDITION_CHECK_FAIL, (BattleEventHandler)HandlerTerrainPreventStatus},
-        {EVENT_ADD_CONDITION_FAIL, (BattleEventHandler)HandlerTerrainStatusFailMessage},
-        // ELECTRIC TERRAIN
-        {EVENT_CHECK_SLEEP, (BattleEventHandler)HandlerElectricTerrainCheckSleep},
-        {EVENT_AFTER_TERRAIN_CHANGE, (BattleEventHandler)HandlerElectricTerrainTerrainChange},
-        {EVENT_SWITCH_IN, (BattleEventHandler)HandlerElectricTerrainSwitchIn},
-        {EVENT_ACTION_PROCESSING_END, (BattleEventHandler)HandlerElectricTerrainActProcEnd},
-        {EVENT_ITEM_REWRITE_DONE, (BattleEventHandler)HandlerElectricTerrainFloatingChange},
-        {EVENT_AFTER_ABILITY_CHANGE, (BattleEventHandler)HandlerElectricTerrainFloatingChange},
-        {EVENT_GROUNDED_BY_GRAVITY, (BattleEventHandler)HandlerElectricTerrainFloatingChangeNEW},
-        // GRASSY TERRAIN
-        {EVENT_TURN_CHECK_BEGIN, (BattleEventHandler)HandlerGrassyTerrainHeal},
-        {EVENT_MOVE_BASE_POWER, (BattleEventHandler)HandlerGrassyTerrainQuakeMoves},
-        // MISTY TERRAIN (all in general)
-        // PSYCHIC TERRAIN
-        {EVENT_ABILITY_CHECK_NO_EFFECT, (BattleEventHandler)HandlerPsychicTerrainPreventPrio},
-    };
+    // BattleEventHandlerTableEntry FieldTerrainHandlers[] = {
+    //     // GENERAL TERRAIN
+    //     {EVENT_ADD_CONDITION_CHECK_FAIL, (BattleEventHandler)HandlerTerrainPreventStatus},
+    //     {EVENT_ADD_CONDITION_FAIL, (BattleEventHandler)HandlerTerrainStatusFailMessage},
+    //     // ELECTRIC TERRAIN
+    //     {EVENT_CHECK_SLEEP, (BattleEventHandler)HandlerElectricTerrainCheckSleep},
+    //     {EVENT_AFTER_TERRAIN_CHANGE, (BattleEventHandler)HandlerElectricTerrainTerrainChange},
+    //     {EVENT_SWITCH_IN, (BattleEventHandler)HandlerElectricTerrainSwitchIn},
+    //     {EVENT_ACTION_PROCESSING_END, (BattleEventHandler)HandlerElectricTerrainActProcEnd},
+    //     {EVENT_ITEM_REWRITE_DONE, (BattleEventHandler)HandlerElectricTerrainFloatingChange},
+    //     {EVENT_AFTER_ABILITY_CHANGE, (BattleEventHandler)HandlerElectricTerrainFloatingChange},
+    //     {EVENT_GROUNDED_BY_GRAVITY, (BattleEventHandler)HandlerElectricTerrainFloatingChangeNEW},
+    //     // GRASSY TERRAIN
+    //     {EVENT_TURN_CHECK_BEGIN, (BattleEventHandler)HandlerGrassyTerrainHeal},
+    //     {EVENT_MOVE_BASE_POWER, (BattleEventHandler)HandlerGrassyTerrainQuakeMoves},
+    //     // MISTY TERRAIN (all in general)
+    //     // PSYCHIC TERRAIN
+    //     {EVENT_ABILITY_CHECK_NO_EFFECT, (BattleEventHandler)HandlerPsychicTerrainPreventPrio},
+    // };
 
-    BattleEventHandlerTableEntry *EventAddFieldTerrain(int *a1)
-    {
-        *a1 = 12;
-        return FieldTerrainHandlers;
-    }
+    // BattleEventHandlerTableEntry *EventAddFieldTerrain(int *a1)
+    // {
+    //     *a1 = 12;
+    //     return FieldTerrainHandlers;
+    // }
 
     FieldEffectEventAddTable FieldEffectEventAddTableExt[] = {
         {FLDEFF_WEATHER, EventAddFieldWeather},
@@ -810,11 +810,11 @@ extern "C"
 
                     if (turnCount >= turnMax)
                     {
-                        if (currentEffect == FLDEFF_TERRAIN)
-                        {
-                            BattleField_EndTerrain(); // remove terrain data
-                            ServerEvent_ChangeTerrain(serverFlow, TERRAIN_NULL);
-                        }
+                        // if (currentEffect == FLDEFF_TERRAIN)
+                        // {
+                            // BattleField_EndTerrain(); // remove terrain data
+                            // ServerEvent_ChangeTerrain(serverFlow, TERRAIN_NULL);
+                        // }
 
                         BattleEventItem *events = currBattleField->battleEventItems[currFieldEffect];
                         if (events)
@@ -833,129 +833,129 @@ extern "C"
         }
     }
 
-    int THUMB_BRANCH_BattleHandler_AddFieldEffect(ServerFlow *serverFlow, HandlerParam_AddFieldEffect *params)
-    {
-        u8 prevTerrain = TERRAIN_NULL;
-        u8 terrain = params->field_D;
-        int pokemonSlot = params->header.flags << 19 >> 27;
+    // int THUMB_BRANCH_BattleHandler_AddFieldEffect(ServerFlow *serverFlow, HandlerParam_AddFieldEffect *params)
+    // {
+    //     u8 prevTerrain = TERRAIN_NULL;
+    //     u8 terrain = params->field_D;
+    //     int pokemonSlot = params->header.flags << 19 >> 27;
 
-        if (params->effect == FLDEFF_TERRAIN)
-        {
-            prevTerrain = BattleField_GetTerrain();
-            u8 turns = Condition_GetTurnMax(params->cont);
+    //     if (params->effect == FLDEFF_TERRAIN)
+    //     {
+    //         prevTerrain = BattleField_GetTerrain();
+    //         u8 turns = Condition_GetTurnMax(params->cont);
 
-            u8 extraTurns = ServerEvent_IncreaseMoveTerrainTurns(serverFlow, terrain, pokemonSlot);
-            if (extraTurns)
-            {
-                turns += extraTurns;
-                params->cont = Condition_MakeTurn(turns);
-            }
+    //         u8 extraTurns = ServerEvent_IncreaseMoveTerrainTurns(serverFlow, terrain, pokemonSlot);
+    //         if (extraTurns)
+    //         {
+    //             turns += extraTurns;
+    //             params->cont = Condition_MakeTurn(turns);
+    //         }
 
-            if (!ServerControl_ChangeTerrain(serverFlow, terrain, turns))
-            {
-                return 0;
-            }
-        }
+    //         if (!ServerControl_ChangeTerrain(serverFlow, terrain, turns))
+    //         {
+    //             return 0;
+    //         }
+    //     }
 
-        if (!prevTerrain && !ServerControl_FieldEffectCore(serverFlow, params->effect, params->cont, params->fAddDependPoke))
-        {
-            return 0;
-        }
+    //     if (!prevTerrain && !ServerControl_FieldEffectCore(serverFlow, params->effect, params->cont, params->fAddDependPoke))
+    //     {
+    //         return 0;
+    //     }
 
-        if (params->effect == FLDEFF_TERRAIN)
-        {
-            int moveID = 0;
-            switch (params->field_D)
-            {
-            case TERRAIN_ELECTRIC:
-                moveID = ELECTRIC_TERRAIN_MOVE_ANIM;
-                break;
-            case TERRAIN_GRASSY:
-                moveID = GRASSY_TERRAIN_MOVE_ANIM;
-                break;
-            case TERRAIN_MISTY:
-                moveID = MISTY_TERRAIN_MOVE_ANIM;
-                break;
-            case TERRAIN_PSYCHIC:
-                moveID = PSYCHIC_TERRAIN_MOVE_ANIM;
-                break;
-            }
-            int pokePos = MainModule_PokeIDToPokePos(serverFlow->mainModule, serverFlow->pokeCon, pokemonSlot);
-            ServerDisplay_AddCommon(serverFlow->serverCommandQueue, 48, pokePos, pokePos, moveID, 0, 0);
-        }
+    //     if (params->effect == FLDEFF_TERRAIN)
+    //     {
+    //         int moveID = 0;
+    //         switch (params->field_D)
+    //         {
+    //         case TERRAIN_ELECTRIC:
+    //             moveID = ELECTRIC_TERRAIN_MOVE_ANIM;
+    //             break;
+    //         case TERRAIN_GRASSY:
+    //             moveID = GRASSY_TERRAIN_MOVE_ANIM;
+    //             break;
+    //         case TERRAIN_MISTY:
+    //             moveID = MISTY_TERRAIN_MOVE_ANIM;
+    //             break;
+    //         case TERRAIN_PSYCHIC:
+    //             moveID = PSYCHIC_TERRAIN_MOVE_ANIM;
+    //             break;
+    //         }
+    //         int pokePos = MainModule_PokeIDToPokePos(serverFlow->mainModule, serverFlow->pokeCon, pokemonSlot);
+    //         ServerDisplay_AddCommon(serverFlow->serverCommandQueue, 48, pokePos, pokePos, moveID, 0, 0);
+    //     }
 
-        BattleHandler_SetString(serverFlow, &params->exStr);
+    //     BattleHandler_SetString(serverFlow, &params->exStr);
 
-        if (params->effect == FLDEFF_TERRAIN)
-        {
-            ServerEvent_ChangeTerrainAfter(serverFlow, terrain);
-        }
+    //     if (params->effect == FLDEFF_TERRAIN)
+    //     {
+    //         ServerEvent_ChangeTerrainAfter(serverFlow, terrain);
+    //     }
 
-        return 1;
-    }
+    //     return 1;
+    // }
 
-    int THUMB_BRANCH_BattleHandler_RemoveFieldEffect(ServerFlow *serverFlow, HandlerParam_RemoveFieldEffect *params)
-    {
-        if (params->effect == FLDEFF_TERRAIN)
-        {
-            BattleField_EndTerrain();
-        }
-        if (!BattleField_RemoveEffect(params->effect))
-        {
-            return 0;
-        }
-        ServerControl_FieldEffectEnd(serverFlow, params->effect);
-        return 1;
-    }
+    // int THUMB_BRANCH_BattleHandler_RemoveFieldEffect(ServerFlow *serverFlow, HandlerParam_RemoveFieldEffect *params)
+    // {
+    //     if (params->effect == FLDEFF_TERRAIN)
+    //     {
+    //         BattleField_EndTerrain();
+    //     }
+    //     if (!BattleField_RemoveEffect(params->effect))
+    //     {
+    //         return 0;
+    //     }
+    //     ServerControl_FieldEffectEnd(serverFlow, params->effect);
+    //     return 1;
+    // }
 
-    void THUMB_BRANCH_ServerControl_FieldEffectEnd(ServerFlow *serverFlow, BattleFieldEffect fieldEffect)
-    {
-        int msgID = -1;
-        // k::Printf("END FIELD EFFECT: %d\n", fieldEffect);
-        if (fieldEffect <= FLDEFF_TERRAIN)
-        {
-            switch (fieldEffect)
-            {
-            case FLDEFF_TRICK_ROOM:
-                msgID = 116;
-                break;
-            case FLDEFF_GRAVITY:
-                msgID = 118;
-                break;
-            case FLDEFF_WONDER_ROOM:
-                msgID = 179;
-                break;
-            case FLDEFF_MAGIC_ROOM:
-                msgID = 181;
-                break;
-            case FLDEFF_TERRAIN:
-                msgID = BATTLE_TERRAIN_END_MSGID;
-                break;
-            default:
-                break;
-            }
-        }
-        // k::Printf("MSG ID: %d\n", msgID);
-        if (msgID >= 0)
-        {
-            ServerDisplay_AddMessageImpl(serverFlow->serverCommandQueue, 90, msgID, 0xFFFF0000);
-        }
-        ServerDisplay_AddCommon(serverFlow->serverCommandQueue, 36, fieldEffect);
-        if (fieldEffect == EFFECT_MAGIC_ROOM)
-        {
-            ServerControl_SortBySpeed(serverFlow, serverFlow->PokeSetTemp);
-            j_PokeSet_SeekStart(serverFlow->PokeSetTemp);
-            for (BattleMon *currentMon = j_PokeSet_SeekNext(serverFlow->PokeSetTemp);
-                 currentMon;
-                 currentMon = j_PokeSet_SeekNext(serverFlow->PokeSetTemp))
-            {
-                if (BattleMon_CanBattle(currentMon))
-                {
-                    ServerControl_CheckItemReaction(serverFlow, currentMon, 0);
-                }
-            }
-        }
-    }
+    // void THUMB_BRANCH_ServerControl_FieldEffectEnd(ServerFlow *serverFlow, BattleFieldEffect fieldEffect)
+    // {
+    //     int msgID = -1;
+    //     // k::Printf("END FIELD EFFECT: %d\n", fieldEffect);
+    //     if (fieldEffect <= FLDEFF_TERRAIN)
+    //     {
+    //         switch (fieldEffect)
+    //         {
+    //         case FLDEFF_TRICK_ROOM:
+    //             msgID = 116;
+    //             break;
+    //         case FLDEFF_GRAVITY:
+    //             msgID = 118;
+    //             break;
+    //         case FLDEFF_WONDER_ROOM:
+    //             msgID = 179;
+    //             break;
+    //         case FLDEFF_MAGIC_ROOM:
+    //             msgID = 181;
+    //             break;
+    //         case FLDEFF_TERRAIN:
+    //             msgID = BATTLE_TERRAIN_END_MSGID;
+    //             break;
+    //         default:
+    //             break;
+    //         }
+    //     }
+    //     // k::Printf("MSG ID: %d\n", msgID);
+    //     if (msgID >= 0)
+    //     {
+    //         ServerDisplay_AddMessageImpl(serverFlow->serverCommandQueue, 90, msgID, 0xFFFF0000);
+    //     }
+    //     ServerDisplay_AddCommon(serverFlow->serverCommandQueue, 36, fieldEffect);
+    //     if (fieldEffect == EFFECT_MAGIC_ROOM)
+    //     {
+    //         ServerControl_SortBySpeed(serverFlow, serverFlow->PokeSetTemp);
+    //         j_PokeSet_SeekStart(serverFlow->PokeSetTemp);
+    //         for (BattleMon *currentMon = j_PokeSet_SeekNext(serverFlow->PokeSetTemp);
+    //              currentMon;
+    //              currentMon = j_PokeSet_SeekNext(serverFlow->PokeSetTemp))
+    //         {
+    //             if (BattleMon_CanBattle(currentMon))
+    //             {
+    //                 ServerControl_CheckItemReaction(serverFlow, currentMon, 0);
+    //             }
+    //         }
+    //     }
+    // }
 
     int THUMB_BRANCH_BattleHandler_GravityCheck(ServerFlow *serverFlow, HandlerParam_Header *params)
     {
@@ -980,11 +980,11 @@ extern "C"
                 ServerControl_CureCondition(serverFlow, battleMon, CONDITION_FLOATING, 0);
                 grounded = true;
             }
-            if (BattleMon_CheckIfMoveCondition(battleMon, CONDITION_TERA))
-            {
-                ServerControl_CureCondition(serverFlow, battleMon, CONDITION_TERA, 0);
-                grounded = true;
-            }
+            // if (BattleMon_CheckIfMoveCondition(battleMon, CONDITION_TERA))
+            // {
+            //     ServerControl_CureCondition(serverFlow, battleMon, CONDITION_TERA, 0);
+            //     grounded = true;
+            // }
             if (grounded)
             {
                 ServerDisplay_AddMessageImpl(serverFlow->serverCommandQueue, 91, 1083, pokemonIDs[i], -65536);
@@ -1235,7 +1235,7 @@ extern "C"
             // if (DoesItemPreventHazardEffects(BattleMon_GetHeldItem(currentMon))) // Heavy-Duty Boots check
             //     return;
 
-            if (BattleMon_GetHeldItem(currentMon) == IT0228_PROTECTIVE_GEAR || BattleMon_GetValue(currentMon, VALUE_EFFECTIVE_ABILITY) == ABIL142_OVERCOAT)
+            if (BattleMon_GetHeldItem(currentMon) == IT0293_SAFETY_GOGGLES || BattleMon_GetValue(currentMon, VALUE_EFFECTIVE_ABILITY) == ABIL142_OVERCOAT)
             {
                 return;
             }
@@ -1305,7 +1305,7 @@ extern "C"
             }
             else
             {
-                if (BattleMon_GetHeldItem(currentMon) == IT0228_PROTECTIVE_GEAR || BattleMon_GetValue(currentMon, VALUE_EFFECTIVE_ABILITY) == ABIL142_OVERCOAT)
+                if (BattleMon_GetHeldItem(currentMon) == IT0293_SAFETY_GOGGLES || BattleMon_GetValue(currentMon, VALUE_EFFECTIVE_ABILITY) == ABIL142_OVERCOAT)
                 {
                     return;
                 }
@@ -1345,7 +1345,7 @@ extern "C"
         if (currentSide == GetSideFromMonID(currentSlot))
         {
             BattleMon *currentMon = Handler_GetBattleMon(serverFlow, currentSlot);
-            if (BattleMon_GetHeldItem(currentMon) == IT0228_PROTECTIVE_GEAR || BattleMon_GetValue(currentMon, VALUE_EFFECTIVE_ABILITY) == ABIL142_OVERCOAT)
+            if (BattleMon_GetHeldItem(currentMon) == IT0293_SAFETY_GOGGLES || BattleMon_GetValue(currentMon, VALUE_EFFECTIVE_ABILITY) == ABIL142_OVERCOAT)
             {
                 return;
             }
@@ -1433,7 +1433,7 @@ extern "C"
         if (currentSide == GetSideFromMonID(currentSlot))
         {
             BattleMon *currentMon = Handler_GetBattleMon(serverFlow, currentSlot);
-            if (BattleMon_GetHeldItem(currentMon) == IT0228_PROTECTIVE_GEAR || BattleMon_GetValue(currentMon, VALUE_EFFECTIVE_ABILITY) == ABIL142_OVERCOAT)
+            if (BattleMon_GetHeldItem(currentMon) == IT0293_SAFETY_GOGGLES || BattleMon_GetValue(currentMon, VALUE_EFFECTIVE_ABILITY) == ABIL142_OVERCOAT)
             {
                 return;
             }
@@ -1478,6 +1478,7 @@ extern "C"
         return SideStickyWebHandlers;
     }
 
+    // OPPRESIVE
     StatStage GetHighestStat(BattleMon *a1)
     {
         int atk;
@@ -1563,6 +1564,308 @@ extern "C"
         return SideOppressiveHandlers;
     }
 
+    /* UNDERDOG - Keldeo's Field Effect */
+
+    StatStage GetLowestStat(BattleMon *a1)
+    {
+        int atk;
+        int def;
+        int spa;
+        int spd;
+        int spe;
+
+        atk = BattleMon_GetValue(a1, VALUE_ATTACK_STAT);
+        def = BattleMon_GetValue(a1, VALUE_DEFENSE_STAT);
+        spa = BattleMon_GetValue(a1, VALUE_SPECIAL_ATTACK_STAT);
+        spd = BattleMon_GetValue(a1, VALUE_SPECIAL_DEFENSE_STAT);
+        spe = BattleMon_GetValue(a1, VALUE_SPEED_STAT);
+
+        if (atk <= def && atk <= spa && atk <= spd && atk <= spe)
+        {
+            return STATSTAGE_ATTACK;
+        }
+        else if (def <= atk && def <= spa && def <= spd && def <= spe)
+        {
+            return STATSTAGE_DEFENSE;
+        }
+        else if (spa <= atk && spa <= def && spa <= spd && spa <= spe)
+        {
+            return STATSTAGE_SPECIAL_ATTACK;
+        }
+        else if (spd <= atk && spd <= def && spd <= spa && spd <= spe)
+        {
+            return STATSTAGE_SPECIAL_DEFENSE;
+        }
+        else if (spe <= atk && spe <= def && spe <= spa && spe <= spd)
+        {
+            return STATSTAGE_SPEED;
+        }
+        else
+        {
+            return STATSTAGE_ATTACK;
+        }
+    }
+
+    void HandlerSideUnderdog(BattleEventItem *a1, ServerFlow *serverFlow, int currentSide, int *work)
+    {
+        HandlerParam_ChangeStatStage *v3;
+        HandlerParam_ChangeStatStage *v6;
+
+        int currentSlot = BattleEventVar_GetValue(VAR_MON_ID);
+        if (currentSide == GetSideFromMonID(currentSlot))
+        {
+            BattleMon *currentMon = Handler_GetBattleMon(serverFlow, currentSlot);
+            v3 = (HandlerParam_ChangeStatStage *)BattleHandler_PushWork(serverFlow, EFFECT_CHANGESTATSTAGE, currentSlot);
+            v3->header.flags |= 0x04000000;
+            v3->poke_cnt = 1;
+            v3->pokeID[0] = currentSlot;
+            v3->fMoveAnimation = 1;
+            v3->rankType = GetLowestStat(currentMon);
+            v3->rankVolume = 2;
+            v3->pad = 0x40000000;
+            BattleHandler_PopWork(serverFlow, v3);
+        }
+    }
+
+    BattleEventHandlerTableEntry SideUnderdogHandlers[] = {
+        {EVENT_SWITCH_IN, HandlerSideUnderdog}, // Rapid Spin implementation is in HandlerRapidSpin
+    };
+
+    BattleEventHandlerTableEntry *EventAddSideUnderdog(int *a1)
+    {
+        *a1 = 1;
+        return SideUnderdogHandlers;
+    }
+
+    extern ConditionData Condition_MakePermanentParam(int data);
+
+    /* FORESTS WRATH - Virizion's Field Effect */
+    void HandlerSideForestWrath(BattleEventItem *a1, ServerFlow *serverFlow, int currentSide, int *work)
+    {
+        HandlerParam_RemoveSideEffect *v7; // r1
+        HandlerParam_RemoveSideEffect *v9; // r0
+        HandlerParam_AddCondition *v10;    // r4
+
+        int currentSlot = BattleEventVar_GetValue(VAR_MON_ID);
+        if (currentSide == GetSideFromMonID(currentSlot))
+        {
+            BattleMon *currentMon = Handler_GetBattleMon(serverFlow, currentSlot);
+            if (!BattleMon_HasType(currentMon, TYPE_GRASS))
+            {
+                if (BattleMon_GetHeldItem(currentMon) == IT0293_SAFETY_GOGGLES || BattleMon_GetValue(currentMon, VALUE_EFFECTIVE_ABILITY) == ABIL142_OVERCOAT)
+                {
+                    return;
+                }
+                v10 = (HandlerParam_AddCondition *)BattleHandler_PushWork(serverFlow, EFFECT_ADDCONDITION, 31);
+                v10->sickID = CONDITION_LEECHSEED;
+                unsigned int battleCount = BattleSideStatus_GetCountFromBattleEventItem(a1, currentSide); // New Definition
+                ConditionData permanent = Condition_MakePermanentParam(1);
+                v10->sickCont = permanent;
+                v10->pokeID = currentSlot;
+                BattleHandler_PopWork(serverFlow, v10);
+            }
+        }
+    }
+    BattleEventHandlerTableEntry SideForestWrathHandlers[] = {
+        {EVENT_SWITCH_IN, HandlerSideForestWrath}, // Rapid Spin implementation is in HandlerRapidSpin
+    };
+
+    BattleEventHandlerTableEntry *EventAddSideForestWrath(int *a1)
+    {
+        *a1 = 1;
+        return SideForestWrathHandlers;
+    }
+
+    /* SMOKE BOMB */
+    void HandlerSideSmokeBomb(BattleEventItem *a1, ServerFlow *serverFlow, int currentSide, int *work)
+    {
+        HandlerParam_ChangeStatStage *v3;
+        HandlerParam_AddAnimation *v6;
+        
+        int currentSlot = BattleEventVar_GetValue(VAR_MON_ID);
+        if (currentSide == GetSideFromMonID(currentSlot))
+        {
+            v6 = (HandlerParam_AddAnimation*)BattleHandler_PushWork(serverFlow, EFFECT_ADD_ANIMATION, currentSlot);
+            v6->pos_from =  Handler_PokeIDToPokePos(serverFlow, currentSlot);
+            v6->pos_to = 6;
+            v6->animNo = MOVE114_HAZE;
+            BattleHandler_PopWork(serverFlow, v6);
+
+            BattleMon *currentMon = Handler_GetBattleMon(serverFlow, currentSlot);
+            v3 = (HandlerParam_ChangeStatStage *)BattleHandler_PushWork(serverFlow, EFFECT_CHANGESTATSTAGE, currentSlot);
+            v3->header.flags |= 0x04000000;
+            v3->poke_cnt = 1;
+            v3->pokeID[0] = currentSlot;
+            v3->fMoveAnimation = 1;
+            v3->rankType = STATSTAGE_ACCURACY;
+            v3->rankVolume = -1;
+            v3->pad = 0x40000000;
+            BattleHandler_PopWork(serverFlow, v3);
+        }
+    }
+
+    BattleEventHandlerTableEntry SideSmokeBombHandlers[] = {
+        {EVENT_SWITCH_IN, HandlerSideSmokeBomb}, // Rapid Spin implementation is in HandlerRapidSpin
+    };
+
+    BattleEventHandlerTableEntry *EventAddSideSmokeBomb(int *a1)
+    {
+        *a1 = 1;
+        return SideSmokeBombHandlers;
+    }
+
+    /* SCOURGE OF UNOVA */
+    void HandlerSideUnovasEnd(BattleEventItem *a1, ServerFlow *serverFlow, int currentSide, int *work)
+    {
+        HandlerParam_ChangeStatStage *v3;
+        HandlerParam_ChangeStatStage *v6;
+
+        int currentSlot = BattleEventVar_GetValue(VAR_MON_ID);
+        if (currentSide == GetSideFromMonID(currentSlot))
+        {
+            BattleMon *currentMon = Handler_GetBattleMon(serverFlow, currentSlot);
+            v3 = (HandlerParam_ChangeStatStage *)BattleHandler_PushWork(serverFlow, EFFECT_CHANGESTATSTAGE, currentSlot);
+            v3->header.flags |= 0x04000000;
+            v3->poke_cnt = 1;
+            v3->pokeID[0] = currentSlot;
+            v3->fMoveAnimation = 1;
+            v3->rankType = STATSTAGE_ACCURACY;
+            v3->rankVolume = -1;
+            v3->pad = 0x40000000;
+            BattleHandler_PopWork(serverFlow, v3);
+        }
+    }
+
+    BattleEventHandlerTableEntry SideUnovasEndHandlers[] = {
+        {EVENT_SWITCH_IN, HandlerSideUnovasEnd}, // Rapid Spin implementation is in HandlerRapidSpin
+    };
+
+    BattleEventHandlerTableEntry *EventAddSideUnovasEnd(int *a1)
+    {
+        *a1 = 1;
+        return SideUnovasEndHandlers;
+    }
+
+
+
+    /* RUMBLE */
+    void HandlerSideRumble(BattleEventItem *a1, ServerFlow *serverFlow, int currentSide, int *work)
+    {
+        unsigned int Value_35;   // r4
+        BattleMon *PokeParam_7;  // r7
+        HandlerParam_AddAnimation *v7; // r6
+        HandlerParam_Damage *v8; // r6
+
+        Value_35 = BattleEventVar_GetValue(VAR_MON_ID);
+        if (Value_35 != 31 && Handler_DoesBattleMonExist((int)serverFlow, Value_35) && !ServerControl_CheckMatchup(serverFlow) && (currentSide == GetSideFromMonID(Value_35)))
+        {
+            PokeParam_7 = Handler_GetBattleMon(serverFlow, Value_35);
+            v7 = (HandlerParam_AddAnimation*)BattleHandler_PushWork(serverFlow, EFFECT_ADD_ANIMATION, Value_35);
+            v7->pos_from =  Handler_PokeIDToPokePos(serverFlow, Value_35);
+            v7->pos_to = Handler_PokeIDToPokePos(serverFlow, Value_35);
+            v7->animNo = MOVE150_PLAY_ROUGH;
+            BattleHandler_PopWork(serverFlow, v7);
+            v8 = (HandlerParam_Damage*)BattleHandler_PushWork(serverFlow, EFFECT_DAMAGE, 31);
+            v8->pokeID = Value_35;
+            v8->damage = DivideMaxHPZeroCheck(PokeParam_7, 6u);
+            BattleHandler_StrSetup(&v8->exStr, 2u, 1327);
+            BattleHandler_AddArg(&v8->exStr, Value_35);
+            BattleHandler_PopWork(serverFlow, v8);
+        }
+    }
+
+    BattleEventHandlerTableEntry SideRumbleHandlers[] = {
+        {EVENT_TURN_CHECK_BEGIN, HandlerSideRumble},
+    };
+
+    BattleEventHandlerTableEntry *EventAddSideRumble(int *a1)
+    {
+        *a1 = 1;
+        return SideRumbleHandlers;
+    }
+
+
+
+
+
+
+
+    /* STOLEN */
+    void HandlerSideStolen(BattleEventItem *a1, ServerFlow *serverFlow, int currentSide, int *work)
+    {
+        HandlerParam_ChangeStatStage *v3;
+        HandlerParam_ChangeStatStage *v6;
+
+        int currentSlot = BattleEventVar_GetValue(VAR_MON_ID);
+        if (currentSide == GetSideFromMonID(currentSlot))
+        {
+            BattleMon *currentMon = Handler_GetBattleMon(serverFlow, currentSlot);
+            v3 = (HandlerParam_ChangeStatStage *)BattleHandler_PushWork(serverFlow, EFFECT_CHANGESTATSTAGE, currentSlot);
+            v3->header.flags |= 0x04000000;
+            v3->poke_cnt = 1;
+            v3->pokeID[0] = currentSlot;
+            v3->fMoveAnimation = 1;
+            v3->rankType = STATSTAGE_ACCURACY;
+            v3->rankVolume = -1;
+            v3->pad = 0x40000000;
+            BattleHandler_PopWork(serverFlow, v3);
+        }
+    }
+
+    BattleEventHandlerTableEntry SideStolenHandlers[] = {
+        {EVENT_SWITCH_IN, HandlerSideStolen},
+    };
+
+    BattleEventHandlerTableEntry *EventAddSideStolen(int *a1)
+    {
+        *a1 = 1;
+        return SideStolenHandlers;
+    }
+
+
+
+
+
+
+
+    /* STURDY FIGHTER */
+    void HandlerSideSturdyFighter(BattleEventItem *a1, ServerFlow *serverFlow, int currentSide, int *work)
+    {
+        HandlerParam_ChangeStatStage *v3;
+        HandlerParam_ChangeStatStage *v6;
+
+        int currentSlot = BattleEventVar_GetValue(VAR_MON_ID);
+        if (currentSide == GetSideFromMonID(currentSlot))
+        {
+            BattleMon *currentMon = Handler_GetBattleMon(serverFlow, currentSlot);
+            v3 = (HandlerParam_ChangeStatStage *)BattleHandler_PushWork(serverFlow, EFFECT_CHANGESTATSTAGE, currentSlot);
+            v3->header.flags |= 0x04000000;
+            v3->poke_cnt = 1;
+            v3->pokeID[0] = currentSlot;
+            v3->fMoveAnimation = 1;
+            v3->rankType = STATSTAGE_ACCURACY;
+            v3->rankVolume = -1;
+            v3->pad = 0x40000000;
+            BattleHandler_PopWork(serverFlow, v3);
+        }
+    }
+
+    BattleEventHandlerTableEntry SideSturdyFighterHandlers[] = {
+        {EVENT_SWITCH_IN, HandlerSideSturdyFighter},
+    };
+
+    BattleEventHandlerTableEntry *EventAddSideSturdyFighter(int *a1)
+    {
+        *a1 = 1;
+        return SideSturdyFighterHandlers;
+    }
+
+
+
+
+
+
+
     SideEffectEventAddTable ExtSideEffectEventAddTable[] = {
         {SIDEEFF_REFLECT, EventAddSideReflect, 1},
         {SIDEEFF_LIGHT_SCREEN, EventAddSideLightScreen, 1},
@@ -1579,7 +1882,15 @@ extern "C"
         {SIDEEFF_SEA_OF_FIRE, EventAddSideSeaOfFire, 1},
         {SIDEEFF_SWAMP, EventAddSideSwamp, 1},
         {SIDEEFF_STICKYWEB, EventAddSideStickyWeb, 1},
-        {SIDEEFF_OPPRESSIVE, EventAddSideOppressive, 1}};
+        {SIDEEFF_OPPRESSIVE, EventAddSideOppressive, 1},
+        {SIDEEFF_FORESTWRATH, EventAddSideForestWrath, 1},      // Done
+        {SIDEEFF_SMOKEBOMB, EventAddSideSmokeBomb, 1},          // Done
+        {SIDEEFF_RUMBLE, EventAddSideRumble, 1},                // Reference Sea of Fire
+        {SIDEEFF_STURDY_FIGHTER, EventAddSideSturdyFighter, 1}, // The most complicated to implement and also i'm not sure how i wanna do it yet
+        {SIDEEFF_UNDERDOG, EventAddSideUnderdog, 1},            // Implemented
+        {SIDEEFF_STOLEN, EventAddSideStolen, 1},
+        {SIDEEFF_UNOVA_END, EventAddSideUnovasEnd, 1} // Reference Perish Song
+    };
 
     int *SideEffectEvent_AddItem(int currentSide, SideEffect effect, ConditionData condData)
     {
@@ -1684,7 +1995,7 @@ extern "C"
 
     bool BattleSideStatus_IsEffectActive(int currentSide, SideEffect effect)
     {
-        
+
         if (effect < DEFAULT_SIDE_CONDITION_AMOUNT)
             return SideStatus.Sides[currentSide].Conditions[effect].battleEventItem != 0;
         else
@@ -1693,13 +2004,13 @@ extern "C"
 
     bool THUMB_BRANCH_SAFESTACK_BattleSideStatus_IsEffectActive(int currentSide, SideEffect effect)
     {
-        
+
         if (effect < DEFAULT_SIDE_CONDITION_AMOUNT)
             return SideStatus.Sides[currentSide].Conditions[effect].battleEventItem != 0;
         else
             return SideStatusExt.Sides[currentSide].Conditions[effect - DEFAULT_SIDE_CONDITION_AMOUNT].battleEventItem != 0;
     }
-    
+
     bool THUMB_BRANCH_Handler_IsSideEffectActive(int a1, int currentSide, SideEffect effect)
     {
         return BattleSideStatus_IsEffectActive(currentSide, effect);
@@ -1820,7 +2131,9 @@ extern "C"
                     ServerControl_SideEffectEndMessageCore(serverFlow, i, params->side);
                     // k::Printf("Removed side effect %d from side %d\n", i, params->side);
                     removedAnEffect = 1;
-                } else {
+                }
+                else
+                {
                     // k::Printf("Failed to remove side effect %d from side %d\n", i, params->side);
                 }
             }

@@ -19,8 +19,6 @@ import system.text.WordSet;
 
 public class MainEvents {
 	public static void main_1() { // @ 0x56
-		int v0;
-
 		Actor.PauseAll();
 		Sound.SEPlay(1351);
 		Actor.FacePlayer();
@@ -29,12 +27,9 @@ public class MainEvents {
 		Message.CloseActor();
 		Runtime.FinishSubEvents();
 		Actor.UnpauseAll();
-		v0 = 0;
 	}
 
 	public static void main_2() { // @ 0x78
-		int v0;
-
 		Actor.PauseAll();
 		Sound.SEPlay(1351);
 		Actor.FacePlayer();
@@ -43,12 +38,9 @@ public class MainEvents {
 		Message.CloseActor();
 		Runtime.FinishSubEvents();
 		Actor.UnpauseAll();
-		v0 = 0;
 	}
 
 	public static void main_3() { // @ 0x9a
-		int v0;
-
 		Actor.PauseAll();
 		Sound.SEPlay(1351);
 		Actor.FacePlayer();
@@ -57,12 +49,9 @@ public class MainEvents {
 		Message.CloseActor();
 		Runtime.FinishSubEvents();
 		Actor.UnpauseAll();
-		v0 = 0;
 	}
 
 	public static void main_4() { // @ 0xbc
-		int v0;
-
 		Actor.PauseAll();
 		Sound.SEPlay(1351);
 		Actor.FacePlayer();
@@ -71,12 +60,9 @@ public class MainEvents {
 		Message.CloseActor();
 		Runtime.FinishSubEvents();
 		Actor.UnpauseAll();
-		v0 = 0;
 	}
 
 	public static void main_5() { // @ 0xde
-		int v0;
-
 		Actor.PauseAll();
 		Sound.SEPlay(1351);
 		Actor.FacePlayer();
@@ -85,12 +71,9 @@ public class MainEvents {
 		Message.CloseActor();
 		Runtime.FinishSubEvents();
 		Actor.UnpauseAll();
-		v0 = 0;
 	}
 
 	public static void main_6() { // @ 0x100
-		int v0;
-
 		Actor.PauseAll();
 		Sound.SEPlay(1351);
 		Actor.FacePlayer();
@@ -99,12 +82,9 @@ public class MainEvents {
 		Message.CloseActor();
 		Runtime.FinishSubEvents();
 		Actor.UnpauseAll();
-		v0 = 0;
 	}
 
 	public static void main_7() { // @ 0x122
-		int v0;
-
 		Actor.PauseAll();
 		Sound.SEPlay(1351);
 		Actor.FacePlayer();
@@ -113,12 +93,9 @@ public class MainEvents {
 		Message.CloseActor();
 		Runtime.FinishSubEvents();
 		Actor.UnpauseAll();
-		v0 = 0;
 	}
 
 	public static void main_8() { // @ 0x144
-		int v0;
-
 		Actor.PauseAll();
 		Actor.WalkRoute(255, 15, 25, 1, 8, 1);
 		Runtime.Sleep(8);
@@ -170,6 +147,8 @@ public class MainEvents {
 		Actor.Hide(14);
 		Message.CloseAll();
 		goto LABEL_02ee;
+
+        // Skipped Entirely
 		ActionSequence_07d4(14);
 		Runtime.Sleep(8);
 		ActionSequence_07dc(13);
@@ -194,6 +173,7 @@ public class MainEvents {
 		ActionSequence_0810(5);
 		Actor.WaitActionFinish();
 
+        // Closes out the Script
 		LABEL_02ee:
 		Actor.Hide(14);
 		Actor.Hide(5);
@@ -220,12 +200,9 @@ public class MainEvents {
 		Actor.Show(17);
 		Runtime.FinishSubEvents();
 		Actor.UnpauseAll();
-		v0 = 0;
 	}
 
 	public static void main_9() { // @ 0x36e
-		int v0;
-
 		if (EventWorks.Get(16693) == 1) {
 			EventFlags.Clear(892);
 			EventFlags.Clear(891);
@@ -234,16 +211,12 @@ public class MainEvents {
 			Actor.SetGPos(13, 15, 0, 11, 0);
 			Actor.SetGPos(14, 14, 0, 11, 0);
 			Actor.SetGPos(5, 14, 0, 9, 1);
-			v0 = 0;
 			return;
 		}
-		v0 = 0;
 		return;
 	}
 
 	public static void main_10() { // @ 0x3bf
-		int v0;
-
 		Actor.PauseAll();
 		Sound.SEPlay(1351);
 		Actor.FacePlayer();
@@ -252,12 +225,9 @@ public class MainEvents {
 		Message.CloseActor();
 		Runtime.FinishSubEvents();
 		Actor.UnpauseAll();
-		v0 = 0;
 	}
 
 	public static void main_11() { // @ 0x3e1
-		int v0;
-
 		Actor.PauseAll();
 		Sound.SEPlay(1351);
 		Actor.FacePlayer();
@@ -266,12 +236,9 @@ public class MainEvents {
 		Message.CloseActor();
 		Runtime.FinishSubEvents();
 		Actor.UnpauseAll();
-		v0 = 0;
 	}
 
 	public static void main_12() { // @ 0x403
-		int v0;
-
 		Actor.PauseAll();
 		Actor.WalkRoute(255, 15, 9, 1, 8, 0);
 		Actor.WaitActionFinish();
@@ -324,12 +291,9 @@ public class MainEvents {
 		Actor.Show(17);
 		Runtime.FinishSubEvents();
 		Actor.UnpauseAll();
-		v0 = 0;
 	}
 
 	public static void main_13() { // @ 0x530
-		int v0;
-
 		Actor.PauseAll();
 		WordSet.LoadPlayerName(0);
 		WordSet.LoadRivalName(1);
@@ -340,12 +304,9 @@ public class MainEvents {
 		Message.CloseActor();
 		Runtime.FinishSubEvents();
 		Actor.UnpauseAll();
-		v0 = 0;
 	}
 
 	public static void main_14() { // @ 0x558
-		int v0;
-
 		Actor.PauseAll();
 		WordSet.LoadPlayerName(0);
 		WordSet.LoadRivalName(1);
@@ -356,12 +317,9 @@ public class MainEvents {
 		Message.CloseActor();
 		Runtime.FinishSubEvents();
 		Actor.UnpauseAll();
-		v0 = 0;
 	}
 
 	public static void main_15() { // @ 0x580
-		int v0;
-
 		Actor.PauseAll();
 		Sound.SEPlay(1351);
 		Actor.FacePlayer();
@@ -370,7 +328,6 @@ public class MainEvents {
 		Message.CloseActor();
 		Runtime.FinishSubEvents();
 		Actor.UnpauseAll();
-		v0 = 0;
 	}
 
 	public static void main_16() { // @ 0x5a2
@@ -416,8 +373,6 @@ public class MainEvents {
 	}
 
 	public static void main_18() { // @ 0x622
-		int v0;
-
 		Actor.PauseAll();
 		Sound.SEPlay(1351);
 		Actor.FacePlayer();
@@ -426,12 +381,9 @@ public class MainEvents {
 		Message.CloseActor();
 		Runtime.FinishSubEvents();
 		Actor.UnpauseAll();
-		v0 = 0;
 	}
 
 	public static void main_19() { // @ 0x644
-		int v0;
-
 		Actor.PauseAll();
 		Sound.SEPlay(1351);
 		Message.Actor(1024, 27, 0, 0);
@@ -439,12 +391,9 @@ public class MainEvents {
 		Message.CloseActor();
 		Runtime.FinishSubEvents();
 		Actor.UnpauseAll();
-		v0 = 0;
 	}
 
 	public static void main_20() { // @ 0x664
-		int v0;
-
 		Actor.PauseAll();
 		Sound.SEPlay(1351);
 		Message.Actor(1024, 28, 0, 0);
@@ -452,19 +401,12 @@ public class MainEvents {
 		Message.CloseActor();
 		Runtime.FinishSubEvents();
 		Actor.UnpauseAll();
-		v0 = 0;
 	}
 
 	public static void main_21() { // @ 0x684
-		int v0;
-		int v1;
-		int v4;
-		int v5;
-		int v6;
-		int v7;
-		int v8;
-		int v9;
-
+        int isVictory;
+	int v4;
+	int v5;
 		Actor.PauseAll();
 		ActionSequence_082c(17);
 		Actor.WaitActionFinish();
@@ -478,28 +420,25 @@ public class MainEvents {
 		Message.ActorEx(1024, 29, 17, 0, 0);
 		Input.LastKeyWait();
 		Message.CloseActor();
-		Battle.CallTrainerBattle(709, 0, 0);
-		Battle.EndTrainerBattle();
-		v0 = Battle.IsTrainerVictory();
-		v6 = v0;
-		if (v6 != 1) {
+		Battle.CallTrainerBattle(739, 0, 1);
+		isVictory = Battle.IsTrainerVictory();
+		if (isVictory != 1) {
+            Battle.EndTrainerBattle();
 			PokeParty.RecoverAll();
 			Message.ActorEx(1024, 31, 17, 0, 0);
 			Input.LastKeyWait();
 			Message.CloseActor();
-			goto LABEL_0713;
-		}
-		Message.ActorEx(1024, 30, 17, 0, 0);
-		Input.LastKeyWait();
+		} else {
+            Battle.EndTrainerBattle();
+            Message.ActorEx(1024, 30, 17, 0, 0);
+		    Input.LastKeyWait();
+            Message.CloseActor();
+        }
 
 		LABEL_0713:
 		Message.ActorEx(1024, 32, 17, 0, 0);
 		Input.LastKeyWait();
 		Message.CloseActor();
-		v8 = 1;
-		v9 = 1;
-		v0 = v8;
-		v1 = v9;
 		Global2805(530, 1);
 		Global2805(294, 1);
 		Message.ActorEx(1024, 33, 17, 0, 0);
@@ -509,7 +448,6 @@ public class MainEvents {
 		Message.CloseAll();
 		Runtime.FinishSubEvents();
 		Actor.UnpauseAll();
-		v0 = 0;
 	}
 
 	static meta void ActionSequence_0784(int npcId) : VActionSequence {

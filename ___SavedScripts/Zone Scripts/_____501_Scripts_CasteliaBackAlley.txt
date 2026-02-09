@@ -236,6 +236,19 @@ public class MainEvents {
 		Actor.UnpauseAll();
 	}
 
+    // Scraggy Script
+    public static void main_6() { // @ 0x9f4
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Sound.PVPlay(559, 0);
+		Message.System(32, 2);
+		Sound.PVWait();
+		Message.WaitAdvance();
+		Message.CloseAll();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
 
 	static meta void WalkOneTileWest(int npcID) : VActionSequence {
 		Action000e(1);

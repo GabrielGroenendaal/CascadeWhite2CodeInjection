@@ -72,10 +72,10 @@ public class MainEvents {
 		Message.CloseAll();
 		ActionSequence_07a0(5);
 		Actor.WaitActionFinish();
-	
-		Global2805(50, 1);
-		Global2805(47, 1);
 		Pokedex.EnableNational();
+        Message.System(35, 2);
+        Message.WaitAdvance();
+        Message.CloseAll();
 		Message.ActorEx(1024, 7, 5, 0, 0);
 		Message.CloseAll();
 		sub_0205();

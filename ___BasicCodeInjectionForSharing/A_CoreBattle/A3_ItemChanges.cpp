@@ -15,12 +15,13 @@ extern "C"
 #pragma region WIPBattleItems
 
     extern const u16 BERRY_ITEM_IDS[64];
-    
+
     int THUMB_BRANCH_PML_ItemIsBerry(u16 itemId)
     {
         unsigned int i; // r3
 
-        if (itemId == IT0043_BERRY_JUICE){
+        if (itemId == IT0043_BERRY_JUICE)
+        {
             // k::Printf("\n\nThe item is Berry Juice\n\n");
             return 1;
         }
@@ -34,8 +35,8 @@ extern "C"
         return 0;
     }
 
-    // Just adding the Berry Juice 
-   ITEM_TRIGGERTABLE BerryJuiceHandlers[] = {
+    // Just adding the Berry Juice
+    ITEM_TRIGGERTABLE BerryJuiceHandlers[] = {
         {EVENT_CHECK_ITEM_REACTION, (ITEM_HANDLER_FUNC)HandlerOranBerryReaction},
         {EVENT_SWITCH_IN, (ITEM_HANDLER_FUNC)HandlerOranBerrySwitchIn},
         {EVENT_CHECK_ACTIVATION, (ITEM_HANDLER_FUNC)HandlerOranBerryCheckActivation},
@@ -48,7 +49,6 @@ extern "C"
         *a1 = 5;
         return BerryJuiceHandlers;
     }
-
 
     /*
 
@@ -180,31 +180,6 @@ extern "C"
     /*
 
         --------------------------------------------------------------------------------------------------
-        ----------------------------------- UTILITY UMBRELLA ---------------------------------------------
-        --------------------------------------------------------------------------------------------------
-
-    */
-
-    void HandlerUtilityUmbrella(BattleEventItem *item, ServerFlow *serverFlow, u32 pokemonSlot, u32 *work)
-    {
-        return;
-    }
-
-    ITEM_TRIGGERTABLE UtilityUmbrellaHandlers[] = {
-        {EVENT_ADD_CONDITION, (ITEM_HANDLER_FUNC)HandlerUtilityUmbrella},
-        {EVENT_ADD_STAT_STAGE_CHANGE_TARGET, (ITEM_HANDLER_FUNC)HandlerUtilityUmbrella},
-        {EVENT_FLINCH_CHECK, (ITEM_HANDLER_FUNC)HandlerUtilityUmbrella},
-    };
-
-    ITEM_TRIGGERTABLE *THUMB_BRANCH_EventAddBindingBand(_DWORD *a1)
-    {
-        *a1 = 3;
-        return UtilityUmbrellaHandlers;
-    }
-
-    /*
-
-        --------------------------------------------------------------------------------------------------
         ------------------------------------ CLEAR AMULET ------------------------------------------------
         --------------------------------------------------------------------------------------------------
 
@@ -244,16 +219,18 @@ extern "C"
         --------------------------------------------------------------------------------------------------
 
     */
+    extern bool ItemEvent_RollEffectChance(int a1, unsigned int a2);
+    // CHANGE THIS WE NEED TO MAKE THIS
 
     void HandlerFocusBandNew(int a1, ServerFlow *a2, int a3, int *a4)
     {
         BattleMon *BattleMon; // r0
-        if (a3 == BattleEventVar_GetValue(VAR_DEFENDING_MON))
+        if (a3 == BattleEventVar_GetValue(VAR_DEFENDING_MON) & !Handler_IsSimulationMode(a2))
         {
             BattleMon = Handler_GetBattleMon(a2, a3);
-            if (BattleMon_IsFullHP(BattleMon))
+            if (ItemEvent_RollEffectChance((int)a2, 50u))
             {
-                BattleEventVar_MulValue(VAR_MOVE_POWER_RATIO, 2048);
+                BattleEventVar_MulValue(VAR_RATIO, 2048);
                 *a4 = 1;
             }
             else
@@ -262,36 +239,42 @@ extern "C"
             }
         }
     }
-
-    int HandlerFocusBandAfter(BattleEventItem *a1, ServerFlow *a2, int a3, int **a4)
+    void HandlerFocusBandAfterNew(BattleEventItem *a1, ServerFlow *a2, int a3, unsigned int **a4)
     {
-        int result;                   // r0
-        HandlerParam_ConsumeItem *v8; // r7
-        int SubID;                    // r0
 
         if (*a4)
         {
-
-            v8 = (HandlerParam_ConsumeItem *)BattleHandler_PushWork(a2, EFFECT_CONSUMEITEM, a3);
-            BattleHandler_StrSetup(&v8->exStr, 2u, 0xDBu);
-            BattleHandler_AddArg(&v8->exStr, a3);
-            SubID = BattleEventItem_GetSubID(a1);
-            BattleHandler_AddArg(&v8->exStr, SubID);
-            BattleHandler_PopWork(a2, v8);
-            result = 0;
-            *a4 = 0;
+            if (HandlerCommon_CheckTargetMonID(a3))
+            {
+                ItemEvent_PushRun(a1, a2, a3);
+            }
         }
-        return result;
+    }
+    void NewHandlerFocusBandUse(BattleEventItem *a1, ServerFlow *a2, unsigned int *a3)
+    {
+        HandlerParam_Message *v6; // r4
+        int SubID;                // r0
+
+        if ((int)a3 == BattleEventVar_GetValue(VAR_MON_ID))
+        {
+            v6 = (HandlerParam_Message *)BattleHandler_PushWork(a2, EFFECT_MESSAGE, (int)a3);
+            BattleHandler_StrSetup(&v6->str, 2u, 1324);
+            BattleHandler_AddArg(&v6->str, (int)a3);
+            SubID = BattleEventItem_GetSubID(a1);
+            BattleHandler_AddArg(&v6->str, SubID);
+            BattleHandler_PopWork(a2, v6);
+        }
     }
 
     ITEM_TRIGGERTABLE FocusBandHandlers[] = {
-        {EVENT_MOVE_POWER, (ITEM_HANDLER_FUNC)HandlerFocusBandNew},
-        {EVENT_AFTER_DAMAGE_REACTION, (ITEM_HANDLER_FUNC)HandlerFocusBandAfter},
+        {EVENT_MOVE_DAMAGE_PROCESSING_2, (ITEM_HANDLER_FUNC)HandlerFocusBandNew},
+        {EVENT_AFTER_DAMAGE_REACTION, (ITEM_HANDLER_FUNC)HandlerFocusBandAfterNew},
+        {EVENT_USE_ITEM, (ITEM_HANDLER_FUNC)NewHandlerFocusBandUse},
     };
 
     ITEM_TRIGGERTABLE *THUMB_BRANCH_EventAddFocusBand(_DWORD *a1)
     {
-        *a1 = 2;
+        *a1 = 3;
         return FocusBandHandlers;
     }
 
@@ -451,33 +434,7 @@ extern "C"
 
 #pragma endregion
 
-#pragma region WeatherStuff
-    /*
 
-        --------------------------------------------------------------------------------------------------
-        ------------------------------------ PROTECTIVE GEAR ---------------------------------------------
-        --------------------------------------------------------------------------------------------------
-
-    */
-
-    void HandlerProtectiveGear(BattleEventItem *item, ServerFlow *serverFlow, u32 pokemonSlot, u32 *work)
-    {
-        return;
-    }
-
-    ITEM_TRIGGERTABLE ProtectiveGearHandlers[] = {
-        {EVENT_ADD_CONDITION, (ITEM_HANDLER_FUNC)HandlerProtectiveGear},
-        {EVENT_ADD_STAT_STAGE_CHANGE_TARGET, (ITEM_HANDLER_FUNC)HandlerProtectiveGear},
-        {EVENT_FLINCH_CHECK, (ITEM_HANDLER_FUNC)HandlerProtectiveGear},
-    };
-
-    ITEM_TRIGGERTABLE *THUMB_BRANCH_EventAddSmokeBall(_DWORD *a1)
-    {
-        *a1 = 3;
-        return ProtectiveGearHandlers;
-    }
-
-#pragma endregion
 
 /*
 
@@ -517,7 +474,7 @@ extern "C"
 
     bool overrideContact(BattleMon *a1, MoveID a2)
     {
-        if (BattleMon_GetHeldItem(a1) == IT0228_PROTECTIVE_GEAR || BattleMon_GetValue(a1, VALUE_EFFECTIVE_ABILITY) == ABIL142_OVERCOAT)
+        if (BattleMon_GetHeldItem(a1) == IT0228_TERA_GEM || BattleMon_GetValue(a1, VALUE_EFFECTIVE_ABILITY) == ABIL142_OVERCOAT)
             return true;
         // if (BattleMon_GetValue(a1, VALUE_EFFECTIVE_ABILITY) == ABIL089_IRON_FIST && getMoveFlag(a2, FLAG_PUNCH))
         //     return true;
@@ -557,7 +514,8 @@ extern "C"
         {
             return 1;
         }
-        else {
+        else
+        {
             return 0;
         }
         return 0;
@@ -2357,7 +2315,6 @@ extern "C"
         return 0;
     }
 
-    
     // Overwritten to remove the unintended effects of overwriting the CONDITION_ACCURACY_UP effect
     bool THUMB_BRANCH_ServerEvent_CheckHit(ServerFlow *a1, BattleMon *a2, BattleMon *a3, MoveParam *a4)
     {
@@ -2697,13 +2654,14 @@ extern "C"
     */
 
     ITEM_TRIGGERTABLE TeraFocusBandHandlers[] = {
-        {EVENT_MOVE_POWER, (ITEM_HANDLER_FUNC)HandlerFocusBandNew},
-        {EVENT_AFTER_DAMAGE_REACTION, (ITEM_HANDLER_FUNC)HandlerFocusBandAfter},
+        {EVENT_MOVE_DAMAGE_PROCESSING_2, (ITEM_HANDLER_FUNC)HandlerFocusBandNew},
+        {EVENT_AFTER_DAMAGE_REACTION, (ITEM_HANDLER_FUNC)HandlerFocusBandAfterNew},
+        {EVENT_USE_ITEM, (ITEM_HANDLER_FUNC)NewHandlerFocusBandUse},
         {EVENT_CHECK_SPECIAL_PRIORITY, (ITEM_HANDLER_FUNC)HandlerTera}};
 
     ITEM_TRIGGERTABLE *THUMB_BRANCH_EventAddFistPlate(_DWORD *a1)
     {
-        *a1 = 3;
+        *a1 = 4;
         return TeraFocusBandHandlers;
     }
 
@@ -2920,6 +2878,72 @@ extern "C"
     {
         *a1 = 4;
         return TeraMascotBadgeHandlers;
+    }
+
+
+
+
+    /*
+
+        --------------------------------------------------------------------------------------------------
+        --------------------------------------- TERA PLATE -----------------------------------------------
+        --------------------------------------------------------------------------------------------------
+
+    */
+
+    void HandlerTeraPlatePower(BattleEventItem *item, ServerFlow *serverFlow, u32 pokemonSlot, u32 *work)
+    {
+        int v6; // r0
+        BattleMon *mon = Handler_GetBattleMon(serverFlow, pokemonSlot);
+        if (pokemonSlot == BattleEventVar_GetValue(VAR_ATTACKING_MON) && PML_MoveGetType(Move_GetID(mon, 0)) == BattleEventVar_GetValue(VAR_MOVE_TYPE))
+        {
+            v6 = ItemAttackValueToRatio(item);
+            BattleEventVar_MulValue(VAR_MOVE_POWER_RATIO, v6);
+        }
+    }
+
+    ITEM_TRIGGERTABLE TeraPlateHandlers[] = {
+        {EVENT_MOVE_POWER, (ITEM_HANDLER_FUNC)HandlerTeraPlatePower},
+        {EVENT_CHECK_SPECIAL_PRIORITY, (ITEM_HANDLER_FUNC)HandlerTera},
+    };
+
+    ITEM_TRIGGERTABLE *THUMB_BRANCH_EventAddBindingBand(_DWORD *a1)
+    {
+        *a1 = 2;
+        return TeraPlateHandlers;
+    }
+
+
+    /*
+
+        --------------------------------------------------------------------------------------------------
+        ------------------------------------ PROTECTIVE GEAR ---------------------------------------------
+        --------------------------------------------------------------------------------------------------
+
+    */
+
+    void HandlerTeraGemPower(int a1, ServerFlow *a2, int a3, _DWORD *a4)
+    {
+        CommonGemDecide(a1, a2, a3, a4, PML_MoveGetType(Move_GetID(Handler_GetBattleMon(a2, a3), 0)));
+    }
+
+    void HandlerTeraGemDecide(int a1, ServerFlow *a2, int a3, _DWORD *a4)
+    {
+        
+        CommonGemPower(a1, a2, a3, a4, PML_MoveGetType(Move_GetID(Handler_GetBattleMon(a2, a3), 0)));
+    }
+
+    ITEM_TRIGGERTABLE TeraGemHandlers[] = {
+        {EVENT_DAMAGE_PROCESSING_START, (ITEM_HANDLER_FUNC)HandlerTeraGemPower},
+        {EVENT_MOVE_POWER, (ITEM_HANDLER_FUNC)HandlerTeraGemDecide},
+        {EVENT_DAMAGE_PROCESSING_END, (ITEM_HANDLER_FUNC)HandlerGemEnd},
+        {EVENT_CHECK_SPECIAL_PRIORITY, (ITEM_HANDLER_FUNC)HandlerTera}
+    };
+
+    ITEM_TRIGGERTABLE *THUMB_BRANCH_EventAddSmokeBall(_DWORD *a1)
+    {
+        *a1 = 4;
+        return TeraGemHandlers;
     }
 #pragma endregion
 }

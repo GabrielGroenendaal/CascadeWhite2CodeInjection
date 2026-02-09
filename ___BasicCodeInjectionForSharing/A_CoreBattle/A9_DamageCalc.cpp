@@ -1726,7 +1726,7 @@ extern "C"
         IT0225_MASCOT_BADGE = 0xE1,
         IT0226_DEEP_SEA_TOOTH = 0xE2,
         IT0227_DEEP_SEA_SCALE = 0xE3,
-        IT0228_PROTECTIVE_GEAR = 0xE4,
+        IT0228_TERA_GEM = 0xE4,
         IT0229_EVERSTONE = 0xE5,
         IT0230_FOCUS_BAND = 0xE6,
         IT0231_LUCKY_EGG = 0xE7,
@@ -2042,7 +2042,7 @@ extern "C"
         IT0541_AIR_BALLOON = 0x21D,
         IT0542_RED_CARD = 0x21E,
         IT0543_COVERT_CLOAK = 0x21F,
-        IT0544_UTILITY_UMBRELLA = 0x220,
+        IT0544_TERA_PLATE = 0x220,
         IT0545_ABSORB_BULB = 0x221,
         IT0546_CELL_BATTERY = 0x222,
         IT0547_EJECT_BUTTON = 0x223,
@@ -2926,7 +2926,7 @@ extern "C"
         unsigned __int32 actionType : 4;
         unsigned __int32 shift : 28;
     };
-    
+
     union BattleActionParam
     {
         u32 raw;
@@ -2937,7 +2937,7 @@ extern "C"
         BattleAction_Run Run;
         BattleAction_Shift Shift;
         BattleAction_Rotate Rotate;
-    }; 
+    };
 
     struct ActionOrderWork
     {
@@ -3038,7 +3038,7 @@ extern "C"
 
 #pragma region ConstLists
 
-    const u16 teraItems[17] = {
+    const u16 teraItems[19] = {
         IT0215_TERA_BADGE,
         IT0298_TERA_SPECS,
         IT0299_TERA_C_BAND,
@@ -3055,7 +3055,10 @@ extern "C"
         IT0310_TERA_DRILL,
         IT0311_TERA_LEFTOVERS,
         IT0312_TERA_DICE,
-        IT0313_TERA_K_ROCK};
+        IT0313_TERA_K_ROCK,
+        IT0544_TERA_PLATE,
+        IT0228_TERA_GEM,
+    };
 
     const u16 autoCritMoves[9] = {
         MOVE314_AIR_CUTTER,
@@ -3789,7 +3792,9 @@ extern "C"
     extern u32 PML_PersonalGetParamSingle(u16 species, u16 form, PersonalField field);
     extern void PokeParty_SetNature(PartyPkm *pkm, u8 nature);
     extern unsigned int RandomInRange(unsigned int a1, unsigned int a2);
-
+    extern bool Handler_IsSimulationMode(ServerFlow *a1);
+    extern bool MainModule_IsAllyMonID(unsigned int a1, unsigned int a2);
+    extern void TurnFlag_Set(BattleMon *a1, TurnFlag a2);
     extern uint8_t getOverheatLastTurnByte(BattleMon *a1)
     {
         return *((uint8_t *)a1 + 0xEB);
@@ -3892,6 +3897,7 @@ extern "C"
 
 #pragma region DamageCalc
 
+
     /*
 
         --------------------------------------------------------------------------------------------------
@@ -3932,6 +3938,10 @@ extern "C"
         int attack;            // [sp+18h] [bp-18h]
 
         Category = PML_MoveGetCategory(moveParam->MoveID);
+        //         if (!Handler_IsSimulationMode(a1))
+        // {
+        //     k::Printf("\nFinal damage value for move %d being returned is %d\n", moveParam->MoveID, Value);
+        // }
         v29 = 0;
         BattleEventVar_Push();
         BattleEventVar_SetConstValue(VAR_TYPE_EFFECTIVENESS, TypeEffectiveness);
@@ -4145,6 +4155,19 @@ extern "C"
             k::Printf("\n\n===ServerEvent_CalcDamage 10 Final FixedRound===damage is %d", Value);
         }
 #endif
+        // if (!Handler_IsSimulationMode(a1))
+        // {
+        //     k::Printf("\nFinal damage value for move %d being returned is %d\n", moveParam->MoveID, Value);
+        // }
+        // if (!Value)
+        // {
+        //     // TurnFlag Added Here
+        //     if (!MainModule_IsAllyMonID(DefendingMon->ID, AttackingMon->ID) && !Handler_IsSimulationMode(a1))
+        //     {
+        //         k::Printf("\nNo Damage was dealt, Value = %d, setting move failed flag\n", Value);
+        //         TurnFlag_Set(AttackingMon, TURNFLAG_MOVEFAILED);
+        //     }
+        // }
         return v29;
     }
 
