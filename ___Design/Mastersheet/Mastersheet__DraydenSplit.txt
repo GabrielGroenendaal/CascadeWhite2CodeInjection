@@ -1,0 +1,210 @@
+
+
+
+# Drayden Split (Level Cap 71, Optional Cap 68 for Benga)
+
+## Seaside Cave 
+!items Items 
+tm fighting, TM31 Brick Break (reward from defeating Maylene)
+fighting gem, Fighting Gem (x3) (reward from defeating Maylene)
+chople berry, Chople Berry (x3) (reward from defeating Maylene)
+heart scale, Heart Scale (x1) (reward for beating the Battle Girl)
+end
+
+
+!tr 1 (rewards a Heart Scale)
+
+### Maylene 
+!notif SPLIT-LOCKED CONTENT, . , #af74b3 
+!tr 1 
+
+
+### Black Belt Kai (Undella Bay Gatekeeper)
+!tr 1
+
+
+
+## Undella Bay 
+!items Items 
+tm grass, TM
+end
+
+
+
+
+
+
+## Abyssal Ruins
+!items Items 
+end
+
+!notif FIELD EFFECT, There is Pre-Set Perma Trick Room in Abyssal Ruins , #4e86d4
+
+### Strange Statue 
+!notif SPLIT-LOCKED CONTENT, . , #af74b3 
+
+
+
+
+
+
+
+## Plasma Frigate 
+!items Items 
+tm psychic, TM51 Ally Switch 
+tm electric, TM93 Wild Charge 
+
+end
+
+### Plasma Rumble 
+!notif FIELD EFFECT, RUMBLE: Your Pokemon will take damage equal to 1/6 of their total health at the end of each turn, #4e86d4
+
+### Zinzolin 
+
+
+
+
+
+
+
+## Route 13 
+!items Items 
+tm normal, TM23 Weather Crash ()
+tm normal, TM?? Weather Ball 
+tm ice, TM68 Avalanche (Reward from Candice)
+ice gem, Ice Gems (x3) (Reward from Candice)
+yache berry, Yache Berry (x3) (Reward from Candice)
+end
+
+!notif FIELD EFFECT, There is Permanent Hail on Route 13 , #4e86d4
+
+
+### Candice 
+!notif SPLIT-LOCKED CONTENT, . , #af74b3 
+
+
+
+
+
+## Lacunosa Town 
+!items Items 
+end
+
+### Benga 
+Rather than an encounter with Team Plasma, Benga will confront you here and demand to battle. This is a challenging single battle. 
+
+
+
+
+## Route 12 
+There are no trainers on Route 12. Nothing blocking you from receiving an encounter for defeating Benga!
+
+!items Items 
+end
+
+
+
+
+
+## Village Bridge (Gauntlet)
+Village Bridge is now a gauntlet of 4 trainers that must be defeated without changing your team to progress. You will not be able to access the PokéHelper to heal your party, pre-status, or fast travel out. 
+There are several crossroads where you can choose one of two trainers to fight to progress. Plan your route accordingly. 
+
+!notif FIELD EFFECT, There is Pre-Set Perma Trick Room in Village Bridge , #4e86d4
+
+### Fight #1 
+
+### Fight #2 
+
+### Fight #3
+
+### Fight #4 
+
+### Optional Miniboss: Striaton Brothers 
+
+### End of Gauntlet 
+
+!items Items 
+end
+
+!enc 
+
+
+
+
+
+## Route 11 
+!items Items 
+end
+
+### ??? Route 11 Doubles Grass Gatekeeper 
+!notif SPLIT-LOCKED CONTENT, . , #af74b3 
+
+
+## Opelucid City 
+!items Items 
+end
+
+## Route 9 
+!items Items 
+end
+
+### Route 9 Gatekeeper 
+!notif SPLIT-LOCKED CONTENT, . , #af74b3 
+
+
+## SM9 
+!items Items 
+normal gem, Normal Gems (for sale, if you can defeat Whitney)
+end
+
+### Whitney 
+!notif SPLIT-LOCKED CONTENT, . , #af74b3 
+
+
+## Challenger's Cave 
+!notif SPLIT-LOCKED CONTENT, . , #af74b3 
+
+!items Items 
+end
+
+### Kanto Leader Blue 
+
+
+## Twist Mountain 
+!notif SPLIT-LOCKED CONTENT, . , #af74b3 
+
+!items Items 
+end
+
+### Sinnoh Leader Roark 
+
+### Sinnoh Leader Byron 
+
+### Guardian of Unova, Terrakion
+
+!notif NOTE, This encounter is not available until you defeat Cobalion. 
+!enc 87
+
+
+
+## Opelucid Gym 
+!items Items 
+end
+
+### Leader Drayden 
+!notif SPLIT END, Defeating Drayden will look you out of the following content, #af74b3
+- Maylene Miniboss 
+- Strange Statue Miniboss 
+- Candice Miniboss 
+- Whitney Miniboss 
+- Route 9, 11, Village Bridge encounters. 
+- Blue Opt. Boss 
+- Roark Miniboss 
+- Byron Miniboss 
+- Terrakion Side Queust 
+
+!trm 
+
+
+# End of Current Content

@@ -273,7 +273,7 @@ void Sequence22()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 93);
-	SetVarEqVal(0x800D, 2);
+	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -857,7 +857,7 @@ void Sequence71()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 93);
-	SetVarEqVal(0x800D, 5);
+	SetVarEqVal(0x800D, 3);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -1104,12 +1104,12 @@ void Sequence92()
 	End();
 }
 
-/* CHARGESTONE CAVE - Electric Gem (x5) */
+/* CHARGESTONE CAVE - Electric Gem (x3) */
 void Sequence93()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 550);
-	SetVarEqVal(0x800D, 5);
+	SetVarEqVal(0x800D, 3);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -1133,7 +1133,7 @@ void Sequence95()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 186);
-	SetVarEqVal(0x800D, 5);
+	SetVarEqVal(0x800D, 3);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -1296,7 +1296,7 @@ void Sequence109()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 93);
-	SetVarEqVal(0x800D, 2);
+	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -3465,7 +3465,7 @@ void Sequence303()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 93);
-	SetVarEqVal(0x800D, 2);
+	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -4327,11 +4327,12 @@ void Sequence376()
 	End();
 }
 
+/* White Herb (x2) - Driftveil Market */
 void Sequence377()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 324);
-	SetVarEqVal(0x800D, 1);
+	SetVarEqVal(0x800C, 214);
+	SetVarEqVal(0x800D, 2);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();

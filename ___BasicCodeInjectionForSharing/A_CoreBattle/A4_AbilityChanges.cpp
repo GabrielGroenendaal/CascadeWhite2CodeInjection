@@ -2760,7 +2760,8 @@ extern "C"
     ABILITY_TRIGGERTABLE RefrigerateHandlers[] = {
         {EVENT_MOVE_PARAM, (ABILITY_HANDLER_FUNC)HandlerRefrigerateType}, // 22
         {EVENT_ATTACKER_POWER, (ABILITY_HANDLER_FUNC)HandlerAtePower}};
-    ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddEarlyBird(_DWORD *a1)
+    
+    ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddTelepathy(_DWORD *a1)
     {
         *a1 = 2;
         return RefrigerateHandlers;

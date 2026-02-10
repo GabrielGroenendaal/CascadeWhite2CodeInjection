@@ -455,8 +455,8 @@ end
 ### Misty  
 !notif SPLIT-LOCKED CONTENT, Misty is an optional mini-boss that can only be fought before defeating Roxie. This content is locked off afterwards. , #af74b3
 !tr 765/22 Rewards Togepi, TM50 Water Pulse, Clear Amulet
-!gifts Pokemon Egg
-desc: A rare Pokemon egg that can only be acquired by defeating Misty prior to defeating Roxie.
+!gifts Pokémon Egg
+desc: A rare Pokémon egg that can only be acquired by defeating Misty prior to defeating Roxie.
 togepi
 pichu
 azurill
@@ -1454,7 +1454,7 @@ end
 
 
 ## Clay Tunnel 
-!notif WARNING, This shares a met location with Clay Tunnel accessible by beating Janine. If you skipped that fight, you can get an encounter here. rgb(255, 55, 0)
+!notif WARNING, This shares a met location with Clay Tunnel accessible by beating Janine. If you skipped that fight, you can get an encounter here. #f26253
 
 !items Items 
 tm rock, TM87 Rock Climb 
@@ -1517,7 +1517,7 @@ end
 Chargestone Cave is now two gauntlets of 4 trainers each that must be defeated without changing your team to progress. You will not be able to access the PokéHelper to heal your party, pre-status, or fast travel out. 
 There are several crossroads where you can choose one of two trainers to fight to progress. Plan your route accordingly
 
-!notif WARNING, Volkner can only be fought within this Gauntlet. You cannot return to him later. rgb(255, 55, 0)
+!notif WARNING, Volkner can only be fought within this Gauntlet. You cannot return to him later. #f26253
 !notif FIELD EFFECT, In Chargestone Cave, Ground types only resist Electric moves. , #4e86d4
 
 !items Items

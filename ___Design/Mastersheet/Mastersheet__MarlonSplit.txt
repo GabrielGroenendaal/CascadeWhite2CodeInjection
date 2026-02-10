@@ -1,0 +1,367 @@
+# Marlon Split (Level Cap 63, Optional Cap 59 for Alder)
+
+## Lentimas Town 
+!items PokéMart 
+dawn stone, Dawn Stone
+shiny stone, Shiny Stone
+dusk stone, Dusk Stone
+end
+!items Items 
+sitrus berry, Sitrus Berry (x10) (Found on airfield)
+end
+
+!notif NOTE, Upon arriving in Lentimas Town, Bianca will head off to Pinwheel Forest to investigate rumors of Virizion. You can join her there whenever, but keep in mind it is a difficult challenge you likely won't be prepared for until later this split.
+
+## Lentimas Outskirts 
+
+!notif NEW ENCOUNTER, The exterior of the mountain is now a unique met location for encounters , #469e62
+
+!items Items 
+yellow shard, Yellow Shard (x5)
+end
+
+### Back to Back 
+
+!trm 468 First of Back-to-Back
+!trm 467 Second of Back-to-Back
+
+!enc 48
+
+
+## Strange House 
+!notif SPLIT-LOCKED, The haunting of Strange House, and the optional fight with Fantina, can only be investigated prior to defeating Marlon , #af74b3 
+
+!items Items 
+tm fire, Will-o-Wisp TM (guarded by the gauntlet)
+red card, Red Card (x5)
+white herb, White Herb (x5)
+kasib berry, Trickster herb (x3)
+end
+
+!notif WARNING, This is a back to back to back battle with no heals in between , #f26253
+!tr 337 First of B2B2B
+!tr 247 Second of B2B2B
+!tr 62 Third of B2B2B
+
+!notif NOTE, This encounter is not available until you defeat the spirits of Strange House. 
+!enc 66
+
+
+## Reversal Mountain 
+!items Items 
+tm dragon, TM02 Dragon Claw 
+heart scale, Heart Scale 
+red shard, Red Shard (x20)
+sitrus berry, Sitrus Berries (x10)
+tm fire, TM35 Flamethrower (Reward for defeating Flannery, can be fought after Benga leaves you)
+fire gem, Fire Gem (x3) (Reward for defeating Flannery, can be fought after Benga leaves you)
+occa berry, Occa Berry (x3) (Reward for defeating Flannery, can be fought after Benga leaves you)
+end
+
+!notif NOTE, Reversal Mountain is a distinct location from the exterior grass for met location. 
+
+!enc 49 
+
+!notif WARNING, Each pair of trainers in Reversal Mountain can be fought as either a Back to Back battle or a Tag battle. Benga will NOT heal you between the back to backs! , #f26253
+
+### Benga's Team 
+!trm 237 
+
+### Back to Back or Tag 
+!trm 521 (First)
+!trm 522 (Second)
+
+### Back to Back or Tag 
+!trm 516 (First)
+!trm 517 (Second)
+
+### Back to Back or Tag 
+!trm 788 (First)
+!trm 514 (Second)
+
+### Back to Back or Tag 
+!trm 524 (First)
+!trm 523 (Second)
+
+### Back to Back or Tag 
+!trm 672 (First)
+!trm 243 (Second)
+
+### Back to Back or Tag 
+!trm 519 (First)
+!trm 787 (Second)
+
+
+### Optional Mini-Boss: Flannery
+!notif SPLIT-LOCKED, Flannery, and her Rewards, can only be accessed prior to defeating Marlon, #af74b3 
+!notif NOTE, Flannery cannot be fought until Benga leaves you after defeating all the other trainers in Reversal Mountain.
+
+!tr 559
+
+
+## Route 14 (Gauntlet)
+Route 14 is now a gauntlet of 3 trainer battles with an optional mini-boss for the brave. 
+There are several crossroads where you can choose one of two trainers to fight to progress. Plan your route accordingly
+
+!items Items 
+hm water, HM05 Waterfall (found at the end of the gauntlet)
+tm flying, TM58 Hurricane (reward for defeating Falkner)
+flying gem, Flying Gems (x3) (reward for defeating Falkner)
+coba berry, Coba Berry (x3) (reward for defeating Falkner)
+end
+
+!enc 122 
+
+### Fight #1: Backpackers 
+!trm 285 Choose One (North Path)
+
+!trm 259 Choose One (South Path)
+
+### Fight #2A (Only fought if you took the south path)
+!trm 283 Choose One (Right Waterfall)
+
+!trm 414 Choose One (South Waterfall)
+
+### Fight #2B (Only fought if you took the south path)
+!trm 281 Choose One (Left)
+
+!trm 282 Choose One (Right)
+
+### Fight #3 (A trainer waits at the bottom of each waterfall)
+!trm 245 Choose One (Northmost Waterfall)
+
+!trm 246 Choose One (Middle Waterfall)
+
+!trm 54 Choose One (Southmost Waterfall)
+
+### Optional Miniboss: Falkner (can only be fought within the gauntlet)
+Falkner can be found on the south path of the route after defeating the Veterans. He can only be encountered before the gauntlet is complete. 
+!tr 55 Optional, can only be fought within the gauntlet 
+
+
+### End of Gauntlet 
+
+
+
+## Undella Town 
+
+!notif NOTE, Undella Town has no Wild Pokémon encounters. Tourist activity has driven them away. 
+
+!notif NOTE, There is no rival battle with Hugh here. Instead, you must defeat Alder and his partner in a tag battle to open the path to Humilau City. 
+
+!items Items 
+repel, Throat Spray (x5) (Blocked by Musician Kinsley)
+ability , Ability Patch (x1) (Guarded by B2B Fight)
+end
+
+!tr 232 Optional, Guards the Throat Sprays
+
+### Ability Patch Back-To-Back
+!notif SPLIT-LOCKED, The old couple will leave Undella Resort once you defeat Marlon, locking off their reward  , #af74b3
+These trainers can be found in the northwestern villa and battle you as soon as you enter. Be careful! 
+
+!tr 278 First of B2B
+!tr 277 Second of B2B 
+
+### Alder Tag Battle 
+To access the Marine Tube and head towards your seventh gym badge, you must face Alder and his partner in a tag battle with Benga. 
+
+!notif FIELD EFFECT, Victini's Presence makes all moves 20% more accurate in this battle, regardless of if Victini is in battle, #4e86d4
+
+!trm 234 Benga's Team 
+
+!trm 582 Alder's Team 
+
+!trm 506 Victini's Team
+
+
+
+
+## Abundant Shrine 
+Abundant Shrine can be accessed immediately upon arriving in Undella, but the challenge faced here is best saved for the end of the split. 
+
+!notif SPLIT-LOCKED, Blaine is an optional mini-boss that can only be fought before defeating Marlon. This content is locked off afterwards.  , #af74b3
+
+### Blaine 
+!tr 770 
+
+!enc 123
+
+!items Items 
+rocky helmet, Ability Drill 
+old gateau, IV Enhancer (x3)
+stable mulch, Lonely / Impish Mint (x1)
+end
+
+!notif ULTIMATE MOVE TUTOR, The ultimate tutor for starters can be found here and will teach Blast Burn, Frenzy Plant, and Hydro Cannon to starters. 
+
+
+
+## Marine Tube 
+Marine Tube is home to a vicious ambush from the shadow triad, seeking to eliminate the player as an obstacle to team plasma. 
+These will be a series of grueling battles using every underhanded trick in the book, be careful. 
+
+### Shadow Triad Ambush #1: Hax Tactics
+!trm 69 
+
+### Shadow Triad Ambush #2: Evasion Tactics
+!trm 233
+
+### Shadow Triad Ambush #3: Back to Back Assaults
+!trm 235 First of B2B 
+!trm 26 Second of B2B
+
+### Shadow Triad Ambush #4: Explosives!
+!trm 236
+
+### Shadow Triad Ambush #4: Binding
+!trm 250 
+
+### Final Shadow Triad Ambush: Triple Onslaught!
+!trm 113 First of B2B2B
+!trm 114 Second of B2B2B
+!trm 623 Third of B2B2B 
+
+!items Items 
+tm dark, TM12 Taunt (left by Shadow Triad after the first B2B)
+tm flying, TM62 Acrobatics (left by the Shadow Triad after the second B2B2B)
+end
+
+
+
+## Humilau Town 
+!items Items 
+shell bell, Shell Bell (behind Pokémon Center)
+heart scale, Heart Scale (in middle of town shallows)
+blue shard, Blue Shards (x5) (Northwest dock)
+ability capsule, Ability Capsule (x2) (Defeat the B2B Trainers)
+end
+
+!notif MOVE TUTOR, The blue shard move tutor is in their original location, and teaches:
+- Double-Edge (2 shards)
+- Heal Pulse (2 shards)
+- Healing Wish (4 shards)
+- Lucky Chant (4 shards)
+- Synthesis (6 shards)
+- Roost (6 shards)
+- Head Smash (6 shards)
+- Helping Hand (6 shards)
+- Overheat (8 shards)
+- Outrage (8 shards)
+- Superpower (8 shards)
+- Rest (10 shards)
+- Toxic (10 shards)
+
+!enc 5
+
+### Humilau City B2B 
+!notif SPLIT-LOCKED, The tourists in Humilau City will leave after Marlon is defeated, locking off their rewards. , #af74b3 
+!tr 306 Back to Back (First Fight)
+!tr 307 Back to Back (Second Fight)
+
+
+
+## Route 21 
+!items Items 
+tm electric, TM24 Thunderbolt (requires beating either Swimmer Y or Swimmer Z)
+yellow shard, Yellow Shard (x10) (requires beating Fisherman Sid)
+cell battery, Cell Battery (x3) (requires beating Fisherman Sid)
+end
+
+!notif FIELD EFFECT, There is permanent sun on Route 21 , #4e86d4
+
+### Swimmer Desiree (Route 21 Gatekeeper)
+!tr 311 
+
+!enc 134
+
+### Thunderbolt Guardians (Choose one to Fight)
+!tr 310 (Choose One: Left)
+!tr 308 (Choose One: Right)
+
+!tr 309 (Guards access to the Sand Encounters)
+
+!tr 312 (Guards access to the Yellow Shards on the beach)
+
+
+## Route 22
+!items Items 
+green shard, Green Shard (x30)
+eject button, Eject Button (x3) (Blocked by Breeder M)
+end
+
+### Shel (Route 22 Gatekeeper)
+!tr 44 
+
+!enc 130
+
+!tr 333 (Gatekeeps Water Encounters and the Eject Buttons)
+
+
+
+## Pinwheel Forest 
+
+!notif SPLIT-LOCKED CONTENT, All the content in Pinwheel Forest can only be completed before Marlon is defeated. , #af74b3 
+
+!items Items 
+grass gem, Grass Gem (x3) (Reward for defeating Gardenia)
+rindo berry, Rindo Berry (x3) (Reward for defeating Gardenia)
+tm grass, TM53: Energy Ball (Reward for defeating Gardenia)
+bug gem, Bug Gem (x3) (Reward for defeating Bugsy)
+tanga berry, Tanga Berry (x3) (Reward for defeating Bugsy)
+tm bug, TM45: Lunge (Reward for defeating Bugsy)
+choice specs, Choice Specs (Reward for defeating Virizion)
+end
+
+### Bugsy 
+!tr 326
+
+### Gardenia 
+!tr 538
+
+### Virizion 
+!notif FIELD EFFECT, Forest's Wrath: Enemies of Virizion that switch into battle are afflicted by leech seed. Does not affect Grass types, Pokémon wearing Safety Goggles, or Pokémon with the ability Overcoat.. , #4e86d4
+
+!tr 507
+
+!notif NOTE, Encounters will not spawn in Pinwheel Forest until Virizion is defeated. 
+!enc 9 
+
+
+## Humilau Gym 
+!items Items 
+absorb bulb, Absorb Bulb (x3) (Given by Gym Guide upon entering)
+hm water, HM06 Dive (reward for defeating Marlon)
+end
+
+!notif FIELD EFFECT, There is permanent rain in Humilau Gym , #4e86d4
+
+!trm 350 
+
+!trm 351 
+
+!trm 352 
+
+!trm 353 
+
+!trm 354 
+
+!trm 355 
+
+### Leader Marlon
+!notif SPLIT END, Defeating Marlon will look you out of the following content, #af74b3
+- Strange House Gauntlet and Rewards (Will o Wisp TM, Encounter)
+- Flannery Miniboss in Reversal Mountain (rewards Fire Gems, TM35 Flamethrower, Occa Berry)
+- Undella Town B2B (rewards 1x Ability Patch)
+- Gardenia Miniboss in Pinwheel Forest (rewards Grass Gems, TM53 Energy Ball, Rindo Berries)
+- Bugsy Miniboss in Pinwheel Forest (rewards Bug Gems, TM45 Lunge, Tanga Barries)
+- Virizion Side Quest in Pinwheel Forest (rewards Pinwheel Forest encounter, Choice Specs)
+- Blaine Miniboss (rewards Ability Drill, Adamant/Lonely Mints, Abundant Shrine encounter, IV Enhancers, Starter Move Tutors)
+- Humilau City B2B (rewards 2x Ability Capsules)
+
+!trm 160 Rewards HM06 Dive 
+
+
+# End of Current Content
+
+### -

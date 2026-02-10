@@ -211,7 +211,7 @@ exp share, Exp Share (given by Professor Juniper along with the gift Pokémon)
 grepa berry, Grepa/Kelpsy/Qualot/Pomeg/Tamato/Razz Berries (in the PokéMart)
 end
 
-#### MOVE TUTOR, The green shard move tutor stands by the statue in town, and teaches:
+!notif MOVE TUTOR, The green shard move tutor stands by the statue in town, and teaches:
 - Screech (2 shards)
 - Fake Tears (2 shards)
 - Sparkle (2 shards)
@@ -329,7 +329,7 @@ end
 
 
 ## Pledge Grove 
-!notif SPLIT-LOCKED CONTENT, Brock is an optional mini-boss that can only be fought before defeating Cheren. This content is locked off afterwards. , #af74b3
+!notif SPLIT-LOCKED, Brock is an optional mini-boss that can only be fought before defeating Cheren. This content is locked off afterwards. , #af74b3
 
 !items Items
   berry juice, x10 Berry Juice (Reward for Defeating Brock)
@@ -355,7 +355,7 @@ end
 
 !tr 394 Gatekeeps the Starter Trade 
 
-!notif SPLIT-LOCKED CONTENT, The trade can only be completed prior to defeating Cheren. , #af74b3
+!notif SPLIT-LOCKED, The trade can only be completed prior to defeating Cheren. , #af74b3
 !gifts Blueberry Trade (Chose Tepig)
 desc: A Blueberry Academy representative in the classroom will offer to trade any of the player's Pokémon. In exchange, the player receives a random starter of the type strong against their own.
 squirtle
@@ -382,7 +382,11 @@ end
 !trm 172/13
 
 ### Leader Cheren
-!notif SPLIT END, Defeating Cheren locks you out of Pledge Grove, the Blueberry Starter Trade, and the Jaboca/Rowap berries. , #af74b3
+!notif SPLIT END, Defeating Cheren locks you out the following content , #af74b3
+- Brock Miniboss (rewards TM94 Rock Smash, Berry Juices, Pledge Grove Encounter)
+- Blueberry Academy Trade 
+- Aspertia City Schoolkid (rewards 3x Jaboca / Rowap Berries)
+
 !trm 156/15 Rewards TM67 Secret Power
 
 
@@ -453,10 +457,10 @@ end
 
 
 ### Misty  
-!notif SPLIT-LOCKED CONTENT, Misty is an optional mini-boss that can only be fought before defeating Roxie. This content is locked off afterwards. , #af74b3
+!notif SPLIT-LOCKED, Misty is an optional mini-boss that can only be fought before defeating Roxie. This content is locked off afterwards. , #af74b3
 !tr 765/22 Rewards Togepi, TM50 Water Pulse, Clear Amulet
-!gifts Pokemon Egg
-desc: A rare Pokemon egg that can only be acquired by defeating Misty prior to defeating Roxie.
+!gifts Pokémon Egg
+desc: A rare Pokémon egg that can only be acquired by defeating Misty prior to defeating Roxie.
 togepi
 pichu
 azurill
@@ -500,7 +504,7 @@ end
 !tr 645 Rewards Magnet && Doubles Grass access
 
 ### Eviolite Quest 
-!notif SPLIT-LOCKED CONTENT, This quest can only be completed before defeating Roxie.  , #af74b3
+!notif SPLIT-LOCKED, This quest can only be completed before defeating Roxie.  , #af74b3
 Speak to the Foreman to receive a Charcoal and a quest to defeat the three workers. Completing this quest before Defeating Roxie rewards you with an Eviolite. 
 
 !tr 204/19
@@ -522,7 +526,10 @@ end
 !trm 179/21
 
 ### Leader Roxie 
-!notif SPLIT END, After defeating Roxie, you will be locked out of fighting Misty and getting her rewards, as well as the Eviolite Complex quest. , #af74b3
+!notif SPLIT END, After defeating Roxie, you will be locked out of the following: , #af74b3
+- Misty Opt. Boss (rewards Pokémon Egg, Clear Amulet, Naive Mint, TM50 Water Pulse)
+- Virbank Complex Worker Quest (rewards Eviolite)
+
 !trm 157/23 Rewards TM09 Venoshock
 
 
@@ -653,11 +660,11 @@ end
 
 
 ## Castelia Alleyway
-!notif SPLIT-LOCKED CONTENT, the NPCs in this alleyway and the items/trades they offer are only available before Burgh is defeated. Afterwards, they disappear. , #af74b3 
+!notif SPLIT-LOCKED, The NPCs in this alleyway and the items/trades they offer are only available before Burgh is defeated. Afterwards, they disappear. , #af74b3 
 
 !items Items 
 ability capsule, Ability Capsule (speak to right NPC)
-throat spray, Throat Spray (held by the traded Pokémon)
+repel, Throat Spray (held by the traded Pokémon)
 end
 
 !tr 329 Gatekeeps the Capsule and Trade
@@ -762,7 +769,7 @@ end
 
 
 ### School Kid Neil
-!notif SPLIT-LOCKED CONTENT, While most of the Battle Company can be done at any time, you can only receive an Egg if you defeat Neil before Burgh. , #af74b3
+!notif SPLIT-LOCKED, While most of the Battle Company can be done at any time, you can only receive an Egg if you defeat Neil before Burgh. , #af74b3
 !tr 503/30 (Rewards Egg)
 
 
@@ -796,7 +803,13 @@ end
 !trm 737/30
 
 ### Leader Burgh 
-!notif SPLIT END, After defeating Burgh, you will be locked out Liberty Island, getting the Castelia Battle Company Egg, and the Castelia Alleyway items and trade. , #af74b3
+!notif SPLIT END, After defeating Burgh, you will be locked out of the following: , #af74b3
+- Surge Opt Boss (rewards Liberty Island encounter, TM89 U-Turn, Leftovers)
+- Castelia Alleyway (rewards Ability Capsule, Dancer Trade)
+- Battle Company Egg 
+- Enigma Berry Guardian in Castelia Sewers
+- Evolution Stone Gift in Relic Passage
+
 !trm 154/32 Rewards TM81 X-Scissor
 
 
@@ -908,7 +921,7 @@ end
 
 
 ### Lenora 
-!notif SPLIT-LOCKED CONTENT, Lenora can only be fought before Elesa is defeated. , #af74b3
+!notif SPLIT-LOCKED, Lenora can only be fought before Elesa is defeated. , #af74b3
 
 !tr 790/37
 
@@ -973,7 +986,7 @@ If you acquire a Fossil, they can be revived into an encounter here.
 
 
 ### Ingo and Emmett 
-!notif SPLIT-LOCKED CONTENT, Ingo and Emmet can only be fought before Elesa is defeated. , #af74b3
+!notif SPLIT-LOCKED, Ingo and Emmet can only be fought before Elesa is defeated. , #af74b3
 !tr 732/40 Left Side 
 !tr 733/40 Right Side 
 
@@ -1020,15 +1033,15 @@ end
 
 !items Rare Evolution Stone 
 desc: The worker in the top right of the map can be sPokén with to receive any evolution stone of your choice. Many Pokémon, even those that didn't in vanilla, can evolve early with evolution stones like Golbat and Gothorita.
-water stone 
-fire stone 
-leaf stone
-thunder stone 
-moon stone 
-sun stone
-dawn stone 
-shiny stone
-dusk stone 
+water stone, Water Stone
+fire stone, Fire Stone
+leaf stone, Leaf Stone
+thunder stone, Thunder Stone
+moon stone, Moon Stone
+sun stone, Sun Stone
+dawn stone, Dawn Stone
+shiny stone, Shiny Stone
+dusk stone,, Dusk Stone
 end 
 
 !enc 15
@@ -1091,7 +1104,7 @@ end
 
 
 ### Erika
-!notif SPLIT-LOCKED CONTENT, Erika is an optional mini-boss that can only be fought before defeating Elesa. This content is locked off afterwards. , #af74b3
+!notif SPLIT-LOCKED, Erika is an optional mini-boss that can only be fought before defeating Elesa. This content is locked off afterwards. , #af74b3
 !tr 767/40 Rewards 2x Resist Berries, TM48 Mystical Fire, Lostlorn Encounter 
 
 
@@ -1101,7 +1114,6 @@ end
 !items Erika Reward
 desc: Speak with Bellossom to receive 2x of each Resist Berry
 wacan berry, 2x each Resist Berry
-tm fire, TM48 Mystical Fire (reward for defeating Erika)
 end
 
 !enc 26
@@ -1126,7 +1138,12 @@ end
 !trm 209/39
 
 ### Leader Elesa
-!notif SPLIT END, Defeating Elesa will lock you out of fighting Ingo and Emmet (access to Anville Town), Erika (access to Deep Lostlorn), Lenora (access to Fossil), and the Eeveelution gauntlet. , #af74b3
+!notif SPLIT END, Defeating Elesa will lock you out of the following: , #af74b3
+- Erika Opt. Boss (Guards 2x of each resist berry, Deep Lostlorn Forest encounter)
+- Ingo and Emmet miniboss (Guards Anville Town encounter, Dragon Fang, Evolution Stone)
+- Relic Castle Lenora (rewards a Fossil)
+- Eeveelution Gauntlet (rewards Ability Capsule, random Eeveelution Trade)
+
 !trm 153/41 Rewards TM73 Thunder Wave
 
 
@@ -1242,7 +1259,7 @@ end
 
 
 ### Janine 
-!notif SPLIT-LOCKED CONTENT, Janine is an optional mini-boss that can only be fought before defeating Clay. This content is locked off afterwards. , #af74b3
+!notif SPLIT-LOCKED, Janine is an optional mini-boss that can only be fought before defeating Clay. This content is locked off afterwards. , #af74b3
 !tr 768/45 Rewards 2x Each Gem, TM12 Taunt, Clay Tunnel Encounter, 10x Yellow Shards
 
 
@@ -1292,7 +1309,9 @@ end
 !trm 325/45 Right Side 
 
 ### Leader Clay 
-!notif SPLIT END, Defeating Clay will lock you out of fighting Janine and accessing Clay Tunnel.  , #af74b3
+!notif SPLIT END, Defeating Clay will lock you out of:  , #af74b3
+- Janine Opt. Boss (rewards Clay Tunnel encounter, 2x of each gem, 10x yellow shards)
+
 !trm 158/46 Rewards HM04 Strength
 
 
@@ -1360,7 +1379,7 @@ end
 !enc 18
 
 ### Strange Statue
-!notif SPLIT-LOCKED CONTENT, The Strange Statue is an optional mini-boss that can only be fought before defeating Skyla. This content is locked off afterwards. , #af74b3
+!notif SPLIT-LOCKED, The Strange Statue is an optional mini-boss that can only be fought before defeating Skyla. This content is locked off afterwards. , #af74b3
 !tr 634/51 Rewards Life Orb 
 
 
@@ -1392,9 +1411,10 @@ end
 
 ## Route 6: Skyla Split
 !items Items
-hm water, HM03 Surf (Received at the Season Research Center)
-tm normal, TM57 Weather Ball (past the Scientist Tag Battle)
+lum berry, Lum Berries (x10) (Received at the Season Research Center)
+sitrus berry, Sitrus Berries (x10) (past the Scientist Tag Battle)
 end
+!notif NOTE, Once you acquire the HM for surf, you can always surf on Water, even if no Pokémon in your party knows the move. 
 
 !notif FIELD EFFECT, There is a Permanent Rainstorm in Route 6 , #4e86d4
 
@@ -1473,7 +1493,7 @@ assault vest, Assault Vest (reward for beating Cobalion)
 end 
 
 ### Cobalion 
-!notif SPLIT-LOCKED CONTENT, Cobalion is an optional mini-boss that can only be fought before defeating Skyla. This content is locked off afterwards. , #af74b3
+!notif SPLIT-LOCKED, Cobalion is an optional mini-boss that can only be fought before defeating Skyla. This content is locked off afterwards. , #af74b3
 !notif FIELD EFFECT, Enemies of Cobalion that switch into battles have their highest non-HP stat reduced by one stage. , #4e86d4
 
 !tr 491/52 Rewards Assault Vest 
@@ -1490,7 +1510,7 @@ There are several crossroads where you can choose one of two trainers to fight t
 !notif FIELD EFFECT, In Chargestone Cave, Ground types only resist Electric moves. , #4e86d4
 
 !items Items 
-heart scale, x2 Heart Scale (found at the entrance)
+heart scale, x1 Heart Scale (found at the entrance)
 end
 
 !enc 20 
@@ -1523,8 +1543,8 @@ There are several crossroads where you can choose one of two trainers to fight t
 !items Items
 tm poison, TM36 Sludge Bomb (found before Gauntlet)
 tm electric, TM72 Volt Switch (reward for beating Volkner)
-electric gem, x5 Electric Gem (reward for beating Volkner)
-wacan berry, x5 Wacan Berry (reward for beating Volkner)
+electric gem, x3 Electric Gem (reward for beating Volkner)
+wacan berry, x3 Wacan Berry (reward for beating Volkner)
 end
 
 ### Fight #1
@@ -1598,7 +1618,7 @@ end
 
 ## Celestial Tower 
 !items Items 
-heart scale, 2x Heart Scale (past the Psychic Tag Battle)
+heart scale, 1x Heart Scale (past the Psychic Tag Battle)
 tm ghost, TM30 Shadow Ball (past Gentleman Daniel)
 tm psychic, TM29 Psychic (past Pokéfan Georgia)
 tm fairy, TM64 Teleport (past Pokéfan Jude)
@@ -1621,14 +1641,13 @@ end
 
 
 ### Sabrina
-!notif SPLIT-LOCKED CONTENT, Sabrina is an optional mini-boss that can only be fought before defeating Skyla. This content is locked off afterwards.  , #af74b3
+!notif SPLIT-LOCKED, Sabrina is an optional mini-boss that can only be fought before defeating Skyla. This content is locked off afterwards.  , #af74b3
 !tr 769/54 Rewards TM61 Will-o-Wisp, Celestial Rooftop Encounter, Covert Cloak, x3 IV Enhancers, Rash Mint, Careful Mint
 
 
 
 ## Celestial Rooftop (only accessible by beating Sabrina)
 !items Sabrina Rewards 
-tm fire, TM61 Will-o-Wisp
 old gateau, 3x IV Enhancers 
 stable mulch, 1x Rash / Careful Mints
 covert cloak, Covert Cloak
@@ -1659,246 +1678,12 @@ end
 !trm 152/53
 
 ### Leader Skyla 
-!notif SPLIT END, Defeating Skyla will lock you out of the Relic Sanctum Life Orb event, the Cobalion side quest, and the Sabrina battle for access to celestial rooftop. , #af74b3
+!notif SPLIT END, Defeating Skyla will lock you out of the following content , #af74b3
+- Relic Sanctum Guardian (rewards a Life Orb)
+- Cobalion Side Quest (rewards Guidance Chamber encounter, Assault Vest)
+- Sabrina Miniboss (rewards Rash/Careful Mints, 3x IV Enhancers, Covert Cloak, Rooftop Encounter)
+
 !trm 155/55 Rewards HM02 Fly 
-
-
-# Marlon Split 
-
-## Lentimas Town 
-!items PokeMart 
-dawn stone, Dawn Stone 
-shiny stone, Shiny Stone 
-dusk stone, Dusk Stone 
-end
-
-## Lentimas Outskirts 
-
-!notif NEW ENCOUNTER, The exterior of the mountain is now a unique met location for encounters , #469e62
-
-!items Items 
-yellow shard, Yellow Shard (x5)
-end
-
-### Back to Back 
-!trm 467 First of Back-to-Back
-!trm 468 Second of Back-to-Back
-
-!enc 48
-
-
-## Strange House 
-!notif SPLIT-LOCKED CONTENT, The haunting of Strange House, and the optional fight with Fantina, can only be investigated prior to defeating Marlon , #af74b3 
-
-!items Items 
-shed shell, Shed Shell 
-tm psychic, TM51 Ally Switch (reward for defeating Fantina)
-ghost gem, Ghost Gem (x5) (reward for defeating Fantina)
-kasib berry, Kasib berry (x5) (reward for defeating Fantina)
-end
-
-!tr 64 Optional Fantina Fight 
-
-!notif 
-!notif WARNING, This is a back to back to back battle with no heals in between, . rgb(255, 55, 0)
-!tr 3 First of B2B2B
-!tr 247 Second of B2B2B
-!tr 62 Third of B2B2B
-
-!notif NOTE, This encounter is not available until you defeat Cobalion. 
-!enc 66
-
-
-## Reversal Mountain 
-!items Items 
-tm fire, TM35 Flamethrower (Reward for defeating Flannery)
-fire gem, Fire Gem (x5) (Reward for defeating Flannery)
-occa berry, Occa Berry (x5) (Reward for defeating Flannery)
-tm dragon, TM02 Dragon Claw 
-heart scale, Heart Scale 
-red shard, Red Shard (x20)
-end
-
-!notif WARNING, Each pair of trainers in Reversal Mountain can be fought as either a Back to Back battle or a Tag battle (except for the Sewer Grunts). Benga will NOT heal you between the back to backs! , #f26253
-
-### Benga's Team 
-!trm 237 
-
-### Back to Back or Tag 
-!trm 521 (First)
-!trm 522 (Second)
-
-### Back to Back or Tag 
-!trm 516 (First)
-!trm 517 (Second)
-
-### Back to Back or Tag 
-!trm 788 (First)
-!trm 514 (Second)
-
-### Back to Back or Tag 
-!trm 524 (First)
-!trm 523 (Second)
-
-### Back to Back or Tag 
-!trm 672 (First)
-!trm 243 (Second)
-
-### Back to Back or Tag 
-!trm 519 (First)
-!trm 787 (Second)
-
-
-### Optional Mini-Boss: Flannery
-!notif SPLIT-LOCKED CONTENT, Flannery, and her Rewards, can only be accessed prior to defeating Marlon, #af74b3 
-
-!tr 559
-
-
-## Route 14 
-Route 14 is now a gauntlet of 3 trainer battles with an optional mini-boss for the brave. 
-There are several crossroads where you can choose one of two trainers to fight to progress. Plan your route accordingly
-
-!items Items 
-hm water, HM05 Waterfall (found at the end of the gauntlet)
-tm flying, TM58 Hurricane (reward for defeating Falkner)
-flying gem, Flying Gems (x5) (reward for defeating Falkner)
-coba berry, Coba Berry (x5) (reward for defeating Falkner)
-end
-
-!enc 122 
-
-### Fight #1: Backpackers 
-!trm 285 Choose One (North Path)
-!trm 283 Choose One (South Path)
-
-### Fight #2A (Only fought if you took the north path)
-!trm 281 Choose One (Left)
-!trm 282 Choose One (Right)
-
-### Fight #2B (Only fought if you took the south path)
-!trm 279 Choose One (Right Waterfall)
-!trm 280 Choose One (South Waterfall)
-
-### Fight #3 
-!trm 245 Choose One (Northmost Waterfall)
-
-!trm 246 Choose One (Middle Waterfall)
-
-!trm 54 Choose One (Southmost Waterfall)
-
-### Optional Miniboss: Falkner (can only be fought within the gauntlet)
-Falkner can be found on the south path of the route after defeating the Veterans. He can only be encountered before the gauntlet is complete. 
-!tr 55 Optional, can only be fought within the gauntlet 
-
-
-### End of Gauntlet 
-
-
-
-## Undella Town 
-
-!notif NOTE, Undella Town has no Wild Pokemon encounters. Tourist activity has driven them away. 
-
-!notif NOTE, There is no rival battle with Hugh here. Instead, you must defeat Alder and his partner in a tag battle to open the path to Humilau City. 
-
-!items Items 
-throat spray, Throat Spray (x5) (Blocked by Musician Kinsley)
-ability patch, Ability Patch (x1) (Guarded by B2B Fight)
-end
-
-!tr 232 Optional, Guards the Throat Sprays
-
-### Ability Patch Back-To-Back
-!notif SPLIT-LOCKED CONTENT, The old couple will leave Undella Resort once you defeat Marlon, locking off their reward  , #af74b3
-These trainers can be found in the northwestern villa and battle you as soon as you enter. Be careful! 
-
-!tr 277 First of B2B
-!tr 278 Second of B2B 
-
-### Alder Tag Battle 
-To access the Marine Tube and head towards your seventh gym badge, you must face Alder and his partner in a tag battle with Benga. 
-
-!notif FIELD EFFECT, Victini's Presence makes all moves 20% more accurate in this battle, regardless of if Victini is in battle, #4e86d4
-
-!trm 234 Benga's Team 
-
-!trm 582 Alder's Team 
-
-!trm 506 Victini's Team
-
-
-
-
-## Abundant Shrine 
-Abundant Shrine can be accessed immediately upon arriving in Undella, but the challenge faced here is best saved for the end of the split. 
-
-!notif SPLIT-LOCKED CONTENT, Blaine is an optional mini-boss that can only be fought before defeating Marlon. This content is locked off afterwards.  , #af74b3
-
-### Blaine 
-!tr 770 
-
-!enc 123
-
-!items Items 
-rocky helmet, Ability Drill 
-old gateau, IV Enhancer (x3)
-stable mulch, Lonely / Impish Mint (x1)
-end
-
-!notif ULTIMATE MOVE TUTOR, The ultimate tutor for starters can be found here and will teach Blast Burn, Frenzy Plant, and Hydro Cannon to starters. 
-
-
-
-## Marine Tube 
-Marine Tube is home to a vicious ambush from the shadow triad, seeking to eliminate the player as an obstacle to team plasma. 
-These will be a series of grueling battles using every underhanded trick in the book, be careful. 
-
-### Spikes Battle 
-!trm 69 
-
-### Hax Battle 
-!trm 250 
-
-### Trapping Back to Back 
-!trm 3 First of B2B 
-!trm 26 Second of B2B
-
-### Explosion Battle
-!trm 4 
-
-### Evasion Battle 
-!trm 1 
-
-### B2B2B Battle
-!trm 7 First of B2B2B
-!trm 8 Second of B2B2B
-!trm 9 Third of B2B2B 
-
-!items Items 
-tm flying, TM62 Acrobatics (left by the Shadow Triad after retreating)
-end
-
-
-
-## Humilau Town 
-!items Items 
-end
-
-
-## Route 22
-!items Items 
-end
-
-
-## Route 21 
-!items Items 
-end
-
-
-## Humilau Gym 
-!items Items 
-end
 
 
 # End of Current Content

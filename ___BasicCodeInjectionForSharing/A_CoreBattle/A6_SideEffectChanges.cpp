@@ -185,36 +185,76 @@ extern "C"
     //     return 1;
     // }
 
-    // typedef struct
-    // {
-    //     BattleEventType triggerValue;
-    //     FIELD_HANDLER_FUNC function;
-    // } FIELD_TRIGGERTABLE;
+    void HandlerFieldVictoryStarAccuracy(int a1, int a2, unsigned int a3)
+    {
+        BattleEventVar_MulValue(VAR_RATIO, 4915);
+    }
 
-    // FIELD_TRIGGERTABLE FieldWeatherHandlers[] = {
-    //     {EVENT_MOVE_DAMAGE_PROCESSING_2, (FIELD_HANDLER_FUNC)HandlerFieldWeather}};
+    void HandlerFieldSmokeBomb(BattleEventItem *a1, ServerFlow *serverFlow, int currentSide, int *work)
+    {
+        HandlerParam_ChangeStatStage *v3;
+        HandlerParam_AddAnimation *v6;
+        
+        int currentSlot = BattleEventVar_GetValue(VAR_MON_ID);
+        if (currentSide == GetSideFromMonID(currentSlot))
+        {
+            v6 = (HandlerParam_AddAnimation*)BattleHandler_PushWork(serverFlow, EFFECT_ADD_ANIMATION, currentSlot);
+            v6->pos_from =  Handler_PokeIDToPokePos(serverFlow, currentSlot);
+            v6->pos_to = 6;
+            v6->animNo = MOVE114_HAZE;
+            BattleHandler_PopWork(serverFlow, v6);
 
-    // FIELD_TRIGGERTABLE FieldTrickRoomHandlers[] = {
-    //     {EVENT_CALC_SPEED, (FIELD_HANDLER_FUNC)HandlerFieldTrickRoom}};
+            BattleMon *currentMon = Handler_GetBattleMon(serverFlow, currentSlot);
+            v3 = (HandlerParam_ChangeStatStage *)BattleHandler_PushWork(serverFlow, EFFECT_CHANGESTATSTAGE, currentSlot);
+            v3->header.flags |= 0x04000000;
+            v3->poke_cnt = 1;
+            v3->pokeID[0] = currentSlot;
+            v3->fMoveAnimation = 1;
+            v3->rankType = STATSTAGE_ACCURACY;
+            v3->rankVolume = -1;
+            v3->pad = 0x40000000;
+            BattleHandler_PopWork(serverFlow, v3);
+        }
+    }
 
-    // FIELD_TRIGGERTABLE FieldGravityHandlers[] = {
-    //     {EVENT_MOVE_ACCURACY, (FIELD_HANDLER_FUNC)HandlerFieldGravityAccuracy},
-    //     {EVENT_CHECK_TYPE_EFFECTIVENESS, (FIELD_HANDLER_FUNC)HandlerFieldGravityGrounded}};
 
-    // FIELD_TRIGGERTABLE FieldImprisonHandlers[] = {
-    //     {EVENT_NULL, (FIELD_HANDLER_FUNC)HandlerFieldMagicRoom}};
 
-    // FIELD_TRIGGERTABLE FieldWaterSportHandlers[] = {
-    //     {EVENT_MOVE_POWER, (FIELD_HANDLER_FUNC)HandlerFieldWaterSport}};
+     typedef struct
+     {
+         BattleEventType triggerValue;
+         FIELD_HANDLER_FUNC function;
+     } FIELD_TRIGGERTABLE;
 
-    // FIELD_TRIGGERTABLE FieldMudSportHandlers[] = {
-    //     {EVENT_MOVE_POWER, (FIELD_HANDLER_FUNC)HandlerFieldMudSport}};
+    FIELD_TRIGGERTABLE FieldWeatherHandlers[] = {
+        {EVENT_MOVE_DAMAGE_PROCESSING_2, (FIELD_HANDLER_FUNC)HandlerFieldWeather}};
 
-    // FIELD_TRIGGERTABLE FieldWonderRoomHandlers[] = {
-    //     {EVENT_BEFORE_DEFENDER_GUARD, (FIELD_HANDLER_FUNC)HandlerFieldWonderRoom}};
+    FIELD_TRIGGERTABLE FieldTrickRoomHandlers[] = {
+        {EVENT_CALC_SPEED, (FIELD_HANDLER_FUNC)HandlerFieldTrickRoom}};
 
-    // FIELD_TRIGGERTABLE FieldMagicRoomHandlers[] = {
-    //     {EVENT_NULL, (FIELD_HANDLER_FUNC)HandlerFieldMagicRoom}};
+    FIELD_TRIGGERTABLE FieldGravityHandlers[] = {
+        {EVENT_MOVE_ACCURACY, (FIELD_HANDLER_FUNC)HandlerFieldGravityAccuracy},
+        {EVENT_CHECK_TYPE_EFFECTIVENESS, (FIELD_HANDLER_FUNC)HandlerFieldGravityGrounded}};
+
+    FIELD_TRIGGERTABLE FieldImprisonHandlers[] = {
+        {EVENT_NULL, (FIELD_HANDLER_FUNC)HandlerFieldMagicRoom}};
+
+    FIELD_TRIGGERTABLE FieldWaterSportHandlers[] = {
+        {EVENT_MOVE_POWER, (FIELD_HANDLER_FUNC)HandlerFieldWaterSport}};
+
+    FIELD_TRIGGERTABLE FieldMudSportHandlers[] = {
+        {EVENT_MOVE_POWER, (FIELD_HANDLER_FUNC)HandlerFieldMudSport}};
+
+    FIELD_TRIGGERTABLE FieldWonderRoomHandlers[] = {
+        {EVENT_BEFORE_DEFENDER_GUARD, (FIELD_HANDLER_FUNC)HandlerFieldWonderRoom}};
+
+    FIELD_TRIGGERTABLE FieldMagicRoomHandlers[] = {
+        {EVENT_NULL, (FIELD_HANDLER_FUNC)HandlerFieldMagicRoom}};
+
+    FIELD_TRIGGERTABLE FieldSmokeBombHandlers[] = {
+        {EVENT_SWITCH_IN, (FIELD_HANDLER_FUNC)HandlerFieldSmokeBomb}};
+
+    FIELD_TRIGGERTABLE FieldVictoryStarHandlers[] = {
+        {EVENT_MOVE_ACCURACY, (FIELD_HANDLER_FUNC)HandlerFieldVictoryStarAccuracy}};
 
     // FIELD_TRIGGERTABLE *EventAddFieldWeather(int *a1)
     // {
@@ -259,6 +299,18 @@ extern "C"
     //     return FieldMagicRoomHandlers;
     // }
 
+    // FIELD_TRIGGERTABLE *EventAddFieldVictoryStar(int *a1)
+    // {
+    //     *a1 = 1;
+    //     return FieldVictoryStarHandlers;
+    // }
+
+    // FIELD_TRIGGERTABLE *EventAddFieldSmokeBomb(int *a1)
+    // {
+    //     *a1 = 1;
+    //     return FieldSmokeBombHandlers;
+    // }
+
     BattleEventHandlerTableEntry *EventAddFieldWeather(int *a1)
     {
         *a1 = 1;
@@ -299,6 +351,19 @@ extern "C"
         *a1 = 1;
         return (BattleEventHandlerTableEntry *)0x0689D790;
     }
+
+    BattleEventHandlerTableEntry *EventAddFieldVictoryStar(int *a1)
+    {
+        *a1 = 1;
+        return (BattleEventHandlerTableEntry *)FieldVictoryStarHandlers;
+    }
+
+        BattleEventHandlerTableEntry *EventAddFieldSmokeBomb(int *a1)
+    {
+        *a1 = 1;
+        return (BattleEventHandlerTableEntry *)FieldSmokeBombHandlers;
+    }
+    
 
     // GENERAL TERRAIN
     // void HandlerTerrainPreventStatus(BattleEventItem *a1, ServerFlow *serverFlow, int pokemonSlot, int *work)
@@ -545,7 +610,10 @@ extern "C"
         {FLDEFF_MUD_SPORT, EventAddFieldMudSport},
         {FLDEFF_WONDER_ROOM, EventAddFieldWonderRoom},
         {FLDEFF_MAGIC_ROOM, EventAddFieldMagicRoom},
-        {FLDEFF_MAGIC_ROOM, EventAddFieldMagicRoom},
+        {FLDEFF_TERRAIN, EventAddFieldVictoryStar},
+        {FLDEFF_VICTORYSTAR, EventAddFieldVictoryStar},
+        {FLDEFF_SMOKEBOMB, EventAddFieldSmokeBomb},
+        
 #if ADD_NEW_ITEMS
         {(FieldEffect)FLDEFF_TERRAIN, EventAddFieldTerrain},
 #endif

@@ -364,7 +364,9 @@ extern "C"
         FIELD_OPELUCID = 3,
         FIELD_TRICK_ROOM = 4,
         FIELD_SKYLA = 5,
-        FIELD_SUN = 6
+        FIELD_SUN = 6,
+        FIELD_SMOKEBOMB = 7,
+        FIELD_VICTORYSTAR = 8,
     };
 
     FieldTypeChanges checkForFieldEffects()
@@ -376,6 +378,12 @@ extern "C"
         if (zoneId == 121)
         {
             return FIELD_OPELUCID;
+        }
+        if (zoneId == 446){
+            return FIELD_SMOKEBOMB;
+        }
+        if (zoneId == 437){
+            return FIELD_VICTORYSTAR;
         }
         if (zoneId == 607 || zoneId == 195 || zoneId == 196 || zoneId == 197)
         {
@@ -727,19 +735,12 @@ extern "C"
         int trainerId;
         int trainerClass;
         ConditionData random;
-        // #if DEBUGGING_ALL && DEBUGGING_FIELDEFFECTS
 
-        //         k::Printf("\nDEBUGGING FIELD EFFECTS FUNCTION\n");
-        // #endif
         FieldStatus = BtlSetup_GetFieldStatus(a1->mainModule);
         FieldTypeChanges field = checkForFieldEffects();
-        // #if DEBUGGING_ALL && DEBUGGING_FIELDEFFECTS
-        //         k::Printf("\nFIELD TYPE RETURNED AS: %d\n", field);
-        // #endif
+
         ServerControl_ChangeWeather(a1, 10, 10);
-        // #if DEBUGGING_ALL && DEBUGGING_FIELDEFFECTS
-        //         k::Printf("\nWEATHER CHECK\n");
-        // #endif
+
         // Trick Room Setter
         // Checks ZoneId for Relic Castle, currently
         if (field == FIELD_TRICK_ROOM)
@@ -754,6 +755,34 @@ extern "C"
             BattleHandler_PopWork(a1, bhwork);
             ServerControl_FieldEffectCore(a1, 1, Condition_MakePermanent(), 0);
         }
+
+#if TESTING_FIELDEFFECTS
+        if (field == FIELD_SMOKEBOMB){
+            HandlerParam_AddAnimation *addAnimation = (HandlerParam_AddAnimation *)BattleHandler_PushWork(a1, EFFECT_ADD_ANIMATION, 0);
+            addAnimation->animNo = MOVE114_HAZE;
+            addAnimation->pos_from = 6;
+            addAnimation->pos_to = 6;
+            BattleHandler_PopWork(a1, addAnimation);
+            ServerDisplay_AddCommon(a1->serverCommandQueue, 48, 1, 0, 433, 0, 0); // IS THIS STILL CORRECT 
+            bhwork = (HandlerParam_Message *)BattleHandler_PushWork(a1, EFFECT_MESSAGE, 0);
+            BattleHandler_StrSetup(&bhwork->str, 1u, 203); // CHANGE THIS MESSAGE
+            BattleHandler_PopWork(a1, bhwork);
+            ServerControl_FieldEffectCore(a1, 10, Condition_MakePermanent(), 0);
+        }
+
+        if (field == FIELD_VICTORYSTAR){
+             HandlerParam_AddAnimation *addAnimation = (HandlerParam_AddAnimation *)BattleHandler_PushWork(a1, EFFECT_ADD_ANIMATION, 0);
+            addAnimation->animNo = MOVE381_LUCKY_CHANT;
+            addAnimation->pos_from = 6;
+            addAnimation->pos_to = 6;
+            BattleHandler_PopWork(a1, addAnimation);
+            ServerDisplay_AddCommon(a1->serverCommandQueue, 48, 1, 0, 433, 0, 0); // IS THIS STILL CORRECT 
+            bhwork = (HandlerParam_Message *)BattleHandler_PushWork(a1, EFFECT_MESSAGE, 0);
+            BattleHandler_StrSetup(&bhwork->str, 1u, 203); // CHANGE THIS MESSAGE
+            BattleHandler_PopWork(a1, bhwork);
+            ServerControl_FieldEffectCore(a1, 9, Condition_MakePermanent(), 0);
+        }
+#endif 
         // #if DEBUGGING_ALL && DEBUGGING_FIELDEFFECTS
         //         k::Printf("\nTRICK ROOM CHECK COMPLETE\n");
         // #endif

@@ -1,0 +1,339 @@
+
+====================================================================================================================================================
+/*   PATCH NOTES    */
+
+> - **Crobat Line** is getting Strong Body in Ability Slot 1, as Infiltrator becomes the Hidden Ability. Sniper becomes AI Only. 
+> - **Aipom and Ambipom** lose their Attack buff. 
+> - **Hoppip, Skiploom, and Jumpluff** are losing 10 Attack.
+> - **Mime Jr. and Mr. Mime** are losing 10 HP. Substitute and Doubleslap have swapped positions in their learnset. 
+> - **Goldeen and Seaking** have Facade swapped positions with Double-Edge in their learnset. 
+> - **Hitmontop** is losing 10 HP and 10 Defense
+> - **Hitmonlee** is losing 20 HP and having it redistributed to Defense. Also losing 10 Special Defense 
+> - **Hitmonchan** is losing 10 Speed 
+> - **Dewgong** is losing 5 SpA. 
+> - **Slowking** is losing 10 SpA 
+> - **Slowbro** is losing 10 Atk
+> - **Scyther** is losing 10 HP. It now gets Acrobatics instead of Dual Wingbeat at level 53.
+> - **Scizor** is losing 10 Defense. 
+> - **Whimsicott** is losing 10 Atk and 10 Defense. Infiltrator becomes its new Hidden Ability, over Merciless. 
+> - **Cottonee** now evolves at level 42, or with a Sun Stone.
+> - **Scolipede Line** swaps ability positions for Speed Boost and Strong Body
+> - **Krokorok** loses 10 Atk. 
+> - **Krookadile Line** learns earthquake at 45, and Cross Chop at 48. 
+> - **Darumaka** can evolve into Darmanitan by using a Dawn Stone, as well at reaching level 50. 
+> - **Maractus** swaps Ability Slots for Storm Drain and Sand Rush. 
+> - **Dwebble / Crustle** now have Pickup as their Hidden Ability. 
+> - **Yamask** loses 10 SpA. 
+> - **Swanna Line** Ability 3 is now Friend Guard, over Ice body.
+> - **Jellicent** gains +20 Defense. 
+> - **Druddigon** swaps Ability Slots for Battle Armor and Sheer Force. 
+> - **Golurk** loses 15 Speed. 
+> - **Kricketot** loses all its buffs (it cannot be acquired anyways)
+> - **Floatzel** loses 5 Atk and 5 SpA. 
+> - **Swellow** loses 10 Atk. Taillow gains +10 Special Attack. 
+> - **Breloom** loses 10 Speed. 
+> - **Hariyama** has Lucky Chant and Wide Guard swapped in the learnset.
+> - **Carvanah and Sharpedo** have ability slots 2 and 3 swapped, making Strong Jaw the new hidden ability. 
+> - **Spinda** loses 5 in each stat. 
+> - **Barboach and Whiscash** loses the +10 to Attack. 
+> - **Glalie** loses the -20 to Special Attack. 
+> - **Froslass** gains +20 to Attack. 
+> - **Spinarak / Ariados** lose 5 Atk. 
+> - **Natu and Xatu** lose 10 and 5 SpA, respectively. 
+> - **Corsola** loses 10 Atk.
+> - **Diglett & Dugtrio** lose 10 Atk 
+> - **Riolu** now evolves to Lucario via use of a Dawn Stone or at level 50. Riolu consequently learns Spike Cannon at level 46. 
+> - **Ninjask** loses 10 Atk 
+> - **Venusaur** loses Swords Dance at level 58. Gets Growth Instead. 
+> - **Serperior Line** swaps Positions for Focus Energy and Hyper Beam. They learn Power Whip at level 42 instead of Seething Cold. 
+> - **Serperior Line** learns Leaf Blade at level 27 instead of Giga Drain, which is pushed back to level 46. Flame Burst is replaced with Seething Cold. 
+> - **Mothim** gets Sap Sipper over Tenacity. Tenacity becomes the Hidden Ability. 
+
+
+====================================================================================================================================================
+/*   IMMUNITY ABILITIES    */
+
+    Immunity Abilities are very powerful. We implemented a bunch of ways to punish them; Trapping, Ability Drill, buffed Mold Breaker, 
+    Attack insurance, Blunder Policy, Anger Point, failure boosted moves. But they might not be enough. 
+
+    I think specifically Fire and Water Immunities likely need to come down. Luvdisc doesn't need it, Stunfisk can have it as an HA
+    
+    The most egregious immunities: 
+
+        Stunfisk 
+        Typhlosion 
+        Jumpluff 
+        Emolga (with Motor Drive being the issue)
+    
+    Water Immunities: 
+        BEFORE
+            Ability 1/2:
+                Poliwag Line (Ability 1)
+                Vaporeon (ability 1)
+                Quagsire (ability 1)
+                Mantine (Ability 1)
+                Gastrodon (ability 1)
+                Cradily (ability 1)
+                Cacturne (Ability 1)
+                Luvdisc (ability 1)
+                maractus (ability 1, soon to be HA)
+                Frillish (ability 1)
+                Armaldo (ability 1)
+                Parasect (ability 1)
+                Toxicroak (ability 1)
+                Jynx (ability 2)
+                Seismitoad (ability 1)
+                Simipour (ability 2)
+                Stunfisk (ability 1)
+            
+            HA:
+                Grimer (HA)
+                Lanturn (HA)
+                Magcargo (HA)
+                Corsola (HA)
+                Lumineon (HA)
+                Accelgor (ability 3)    
+
+        AFTER: 
+            Ability 1/2:
+                Vaporeon 
+            
+            HA: 
+
+    Electric Immunities:
+        BEFORE: 
+            Ability 1/2:
+                Lanturn (ability 1)
+                Electrode (ability 2)
+                Plusle (Move Volt Absorb to HA, make Distracting the other ability)
+                Seaking (This one is fine)
+                Electivire (This one is fine)
+                Minun (Move Motor Drive to HA, make Healer the other ability)
+                Rotom-Fan (this one is fine; rare encounter) 
+                Emolga (this one might be a problem but it's also a huge part of its identity and its rare)
+                Jolteon (this one is fine, maybe volt absorb instead tho)
+                Pikachu (this one is fine)
+                Swellow (this one is fine)
+            
+            HA:    
+                Huntail
+                Manectric
+                Klinklang
+
+        AFTER: 
+            Ability 1/2:
+                Lanturn 
+                Seaking 
+                Electivire 
+                Pikachu 
+                Swellow 
+                Jolteon (very rare)
+                Electrode (very rare)
+                Rotom-Fan (very rare)
+            
+            HA:
+                Huntail
+                Dewgong 
+                Klinklang
+                Plusle
+                Minun 
+
+
+    Fire Immunities:
+        I like what I did with a lot of these where the first stage ability is Flash Fire then it becomes something else. I might want to explore that more.
+
+        Claydol is definitely fine. 
+
+        Typhlosion is probably the strongest abuser here with ground typing to obliterate most fire types. 
+
+        Sunflora has a cute niche of walling most fire types tbh that i think is worth keeeping. 
+
+        Typhlosion can definitely replace Flash Fire with Sand Rush. That's 100% fine even if it's ability that requires a bit of explanation. 
+
+        BEFORE: 
+            Ability 1/2:
+                Ninetales (Swap Positions with Serene Grace)
+                Rapidash (Swap Positions with Run Away, Add Endure to learnset)
+                Typhlosion (replace Flash Fire with Sand Rush)
+                Sunflora (swap positions with Chlorophyll)
+                Houndoom (swap positions with Unnerve)
+                Heatmor 
+                Chandelure (could swap places with Infiltrator)
+                Claydol (this is fine Claydol needs the help)
+
+            HA:
+                Golurk 
+        
+        AFTER:
+            Ability 1/2:
+                Heatmor 
+                Claydol 
+                Chandelure
+            
+            HA:
+                Ninetales 
+                Rapidash
+                Chandelure 
+                Golurk 
+                Sunflora 
+                Simisear
+                Houndoom 
+    
+    Grass Immunities: 
+        These are mostly fine but I think have a big issue with Jumpluff specifically of creating sweeps with attack boosts and encore. 
+        This could be solved by turning Sap Sipper into an healing effect. Another idea is making Sap Sipper / Storm Drain function like flash fire, but that could be more messy 
+        Encore is the biggest issue here tbh. 
+
+        I think we just replace it wholesale on Jumpluff with Infiltrator. Either that or it needs to losee encore. 
+
+        BEFORE
+            Ability 1/2:
+                Seaking (this one is probably fine)
+                Azumarill (this one is probably fine)
+                Leafeon (this one is probably fine, just get rid of encore)
+                Jumpluff (this is probably the most egregious one due to encore + flying typing)
+                Girafirig  (maybe swap sap sipper and slush rush positions)
+                Stantler (maybe swap sap sipper and slush rush positions)
+                Gastrodon East (this one is probably fine)
+                Bouffalant (this one is really strong but also super rare so it's probably fine)
+                Simisage 
+            
+            HA:
+                Sudowoodo 
+
+        AFTER:
+            Ability 1/2
+                Seaking 
+                Azumarill 
+                Leafeon 
+                Bouffalant 
+                Gastrodon  
+                Girafirig 
+            
+            HA:
+                Stantler 
+                Sudowoodo 
+                Simisage
+
+
+    Sound Immmunities: (maybe downgrade immunity to a 2x resistance?) (These are all pretty rare encounters and might be fine)
+        Ability 1/2:
+            Exploud 
+            Chatot 
+            Kricketune 
+            Swoobat 
+            
+        HA:
+            Flygon
+    
+
+    Wind Immunities: (these are fine IMO)
+        Ability 1/2:
+            Shiftry (this is fine)
+        
+        HA:
+            Jumpluff
+            Gliscor 
+            Emolga
+            Mothim
+
+
+    Bullet Immunities: (These could be super warping but i literally haven't seen any of them in play yet so idk)
+        Ability 1/2:
+
+        HA:
+            Cloyster
+            Rhyperior 
+            Forretress
+            Scrafty
+            Bastiodon
+
+
+
+
+
+====================================================================================================================================================
+/*   DAMAGE OUTPUT    */
+
+    We have a lot more abilities now; Pokemon definitely don't need to have all good abilities and they can swap abilities with ability capsules. 
+
+    A lot of the changes we made to make all abilities better could be removed tbh; specifically stuff like the Iron Fist buff.
+
+    Damage outliers 
+
+    [ TECHNICIAN + MULTI HIT ]
+        Floatzel 
+        Mr. Mime 
+        Ambipom 
+        Kricketune 
+    
+    [ SNIPER + Auto Crit ]
+        Persian 
+        Drapion 
+        Octillery 
+        Crobat (for now)
+    
+    [ TOUGH CLAWS ]
+        Absol + 130 Atk 
+        Metagross + 130 Atk 
+        Charizard + 119 Attack 
+        Dodrio + 125 Atk 
+        Aerodactyl + 105 Atk and good speed 
+
+    [ EXPLOIT ]
+        Honchkrow is the only one this isn't a hidden ability for and yeeeeet. 
+        It might be worth unwhitelisting these. 
+
+        Something we could do here is nerf exploit by having it reduce the non dominant offense. 
+
+        Infernape (this is almost certainly too strong and needs to be brought down and moved to an ai only ability. We can replace Exploit with Defiant?
+        Sceptile (this is also certainly too strong and needs to be brought down or made a hidden ability. I think we can make the hidden ability hyper cutter and the main ability overgrow)
+        Sableye (This is basically AI only with how rare it is but should still probably be curbed down. Make the ability infiltrator instead maybe?)
+        Seviper (This is really strong but I think that's okay; it has terrible bulk and 100/100 offenses and huge 4MSS syndrome)
+        Lucario (this is so ridiculously strong idk how i allowed it. )
+        Persian (Thi)
+        Weavile 
+
+
+    [ OVERALL OFFENDERS ]
+        Tough Claws: 
+            Tough Claws Dodrio needs to be made more rare. It's an absolutely filthy ability, typing, speed combination for a Pokemon with so much Offense. 
+            Charizard should be brought down a little bit and buffed in Special Attack IMO. 109 Atk 90 SpA still makes it plenty threatening 
+            Aerodactyl should get intimidate instead and swap out Tough claws to an AI only slot 
+        Technician:
+            Floatzel should lose Fake Out. Tech Fake Out should be more limited in general. 
+            
+
+
+
+====================================================================================================================================================
+/*   MOVES    */
+
+    Muddy Water TM needs to be super late and tightly guarded 
+        Omastar: Scale Move 
+        Ludicolo: Replace with Surf
+        Jellicent: Replace with Surf 
+        Piplup: Replace with Aqua Ring 
+
+        Remove from TMs 
+            Investigate what is going on with Muddy Water TM 
+            
+            Chatot 
+            Blaziken 
+            Braviary 
+            Chatot 
+            Combee 
+            Crobat
+            Delibird 
+            Dodrio
+            Fearow 
+            Honchkrow 
+            Mandibuzz 
+            Xatu 
+            Pidgeot 
+
+    Dig, Bounce, Dive might need to not be never-miss for balance. 
+    All these moves could also be reduced in power to justify it. 
+    Look at muddy water distribution in general. 
+    Diamond Storm is also a pretty filthy move but luckily has pretty limited distribution. 
+    Heat Wave, Muddy Water, Diamond Storm would make pretty good tutor moves tbh. 

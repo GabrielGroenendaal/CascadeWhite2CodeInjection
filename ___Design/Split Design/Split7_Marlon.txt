@@ -48,13 +48,41 @@ TMs
 Leftover Items: 
     175 
     174
+    253
 
 Leftover Trainers: 
     43: Ace Trainer Lucca
-    333: Breeder Addison
-    334: Hiker ???
     327: Doctor ???
     326: Black Belt ???
+
+Falkner Class (127)
+444
+445
+446
+447
+
+Flannery Text
+1737
+1738
+1739
+
+Bugsy Text: 
+1148 
+1149 
+1150 
+
+Gardenia Text:
+1673
+1674
+1675
+
+Blaine Text:
+2199
+2200
+2201
+2202
+2203
+
 
 ====================================================================================================================================================
 /*   LENTIMAS TOWN   */
@@ -260,78 +288,6 @@ Leftover Trainers:
 
         We can probably just use one eventworks for thsi whole shebang and keep incrementing it.
 
-    Items: 
-        253: ??? -> Acrobatics TM 
-    
-    Trainers: 
-        69: Shadow Triad 1
-        250: Shadow Triad 2
-        4: Shadow Triad 3
-        1: Smasher Elena -> Shadow Triad 4
-        3: Smasher Aspen -> Shadow Triad 5
-        7: Worker Matthew -> Shadow Triad 6
-        8: Hoopster Bobby -> Shadow Triad 7
-        9: Hoopster John -> Shadow Triad 8
-        26: Linebacker Bob -> Shadow Triad 9
-
-    [ TRAINERS ]
-        Pokemon
-            Tyranitar 
-            Bisharp
-            Liepard
-            Mightyena
-            Drapion
-            Crobat
-            Weezing
-            Electrode 
-            Ninjask
-            Accelgor
-            Sharpedo
-            Crawdaunt
-            Tentacruel
-            Swoobat
-            Sableye
-            Gengar
-            Absol
-            Banette
-            Pawniard (mascot badge)
-            Mandibuzz 
-            Feraligatr 
-            Fearow
-            Crobat
-            
-        Gimmicks
-            Evasion 
-            Illusion 
-            Back-to-Back
-            Pre-Set Spikes
-            Explosives 
-            Back to Back #2
-    
-        Fight #1 (Evasion)
-            Brightpowder
-            Anticipation
-            Acid Armor 
-            Double Team 
-        
-        Fight #2 Illusion 
-            Zoroark 
-            Retaliate 
-            Swords Dance 
-            Nasty Plot 
-        
-        Fight #3 Explosions
-            Explosion 
-            Self Destruct 
-            Aftermath 
-            Aerilate Double-Edge 
-        
-        Fight #4 Pre-Set Spikes
-            Just a lot of strong offensive mons 
-        
-        Fight #5 Back to Back 
-
-        Fight #6 Back to Back (Doubles)
 
 
 ====================================================================================================================================================
@@ -346,7 +302,7 @@ Leftover Trainers:
         306: Backpacker Myra -> Lady X 
         307: Lowell -> Rich Boy Y 
     
-
+    
     [ ITEMS ]
         Remove the Hidden Heart Scale 
         Leave the exposed Heart Scale 
@@ -355,7 +311,6 @@ Leftover Trainers:
         171: Shell Bell 
         164: Protean -> 5x Blue Shards 
 
-        TM23 Weather Crash 
         1x Ability Capsules for the B2B 
     
 
@@ -372,6 +327,7 @@ Leftover Trainers:
     
     Trainer:
         3044: Battle Girl ???
+        333: breeder Addison 
         Change model to battle girl 
 
         Remove all the other trainers 
@@ -400,6 +356,45 @@ Leftover Trainers:
         312: Item Gatekeeper 3
         309: Sand Gatekeeper 
 
+
+        Fisherman 
+
+            Stunfisk 
+            Abillity: Patient 
+            Moves:
+                Earthquake 
+                Thunderbolt
+                Roar
+                Gastro Acid 
+            
+            Eelektross 
+            Ability: Levitate 
+            Moves: 
+                Thunderbolt
+                Flamethrower 
+                Wrap
+                Giga Drain 
+            
+            Sealeo @ Eviolite 
+            Ability: Thick Fat 
+            Moves: 
+                Avalanche
+                Curse
+                Weather Crash
+                Slack Off 
+            
+            Slowking 
+            Ability: Inner Focus 
+            Moves: 
+                Future Sight 
+                Psychic 
+                Flamethrower 
+                Slack Off 
+            
+
+
+            
+        
     [ SUN ]
 
     [ ITEMS ]
@@ -423,8 +418,8 @@ Leftover Trainers:
         16472: Tracks the outcome of the Virizion quest. 
 
     Trainers: 
-        326: ??? -> Bugsy 
-        327: ??? -> Gardenia 
+        326: ??? -> Bugsy (128)
+        327: ??? -> Gardenia (class 168)
         507: Virizion 
     
     Items: 
@@ -483,6 +478,16 @@ Leftover Trainers:
                 Stone Edge
                 Psyblade 
 
+            
+            Vespiquen @ Assault Vest
+            Ability: Filter 
+            Moves: 
+                Infestation 
+                Aeroblast
+                U-Turn 
+                Diamond Storm
+
+
 
 ====================================================================================================================================================
 /*   HUMILAU GYM   */
@@ -539,7 +544,6 @@ Leftover Trainers:
         355: Ace Trainer Sable 
 
         160: Marlon 
-
 
 
 
