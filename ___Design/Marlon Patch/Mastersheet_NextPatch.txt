@@ -208,7 +208,10 @@ end
 ## Flocessy Town
 !items Items
 exp share, Exp Share (given by Professor Juniper along with the gift Pokémon)
-grepa berry, Grepa/Kelpsy/Qualot/Pomeg/Tamato/Razz Berries (in the PokéMart)
+end
+
+!items PokeMart (Natural Gift Berries)
+grepa berry, Tamato / Nomel / Hondew / Grepa / Pomeg / Kelpsy / Pinap / Rabuta / Magost / Cornn / Wepear / Bluk / Nanab / Pamtre / Spelon Berries
 end
 
 !notif MOVE TUTOR, The green shard move tutor stands by the statue in town, and teaches:
@@ -262,7 +265,7 @@ end
   quick claw, Quick Claw — found in the south part of the map by fences
   oran berry, Oran Berry x10 — given by Hugh after defeating Lass Molly
   brightpowder, Brightpowder — found after defeating Janitor Orville
- white herb, White Herb x2 — found past Youngster Kenny
+  white herb, White Herb x2 — found past Youngster Kenny
   tm normal, TM10 Hidden Power — reward for defeating Benga
 end
 
@@ -307,7 +310,7 @@ end
 
 ## Alder's House 
 !items Items
-  tm normal, TM17 Hidden Force (reward for defeating Alder's Kids)
+tm normal, TM17 Hidden Force (reward for defeating Alder's Kids)
 end
 !notif WARNING, Seymour and Cassie are fought back to back. , #f26253
 
@@ -474,7 +477,7 @@ end
 
 ## Complex Exterior
 !items Items 
-tm dark, TM63 Brutal Swing (found around left edge of the map)
+tm psychic, TM15 Psycho Cut (found around left edge of the map)
 silverpowder, Silverpowder
 end
 
@@ -577,7 +580,7 @@ end
 ## Route 4 
 !items Items
 sharp beak, Sharp Beak (found past Pokéfan Norbert)
-tm ground, TM78 Bulldoze (reward for beating one of the Fisherman)
+tm flying, TM40 Aerial Ace (reward for beating one of the Fisherman)
 deepseascale, Deepseascale (reward for beating one of the Fisherman)
 deepseatooth, Deepseatooth (reward for beating one of the Fisherman)
 end
@@ -603,7 +606,7 @@ black sludge, Black Sludge (found west of the Plasma Grunts after beating them)
 enigma berry, Enigma Berry x3 (found after the Janitor Tag)
 twistedspoon, Twistedspoon (found after the Workers)
 mental herb, Mental Herb x5 (found after the healthcare tag)
-greed shard, Green Shards x15 (found after the Clerk tag)
+green shard, Green Shards x15 (found after the Clerk tag)
 sticky barb, Sticky Barb (found after the Scientist tag)
 stable mulch, 1x Hardy Mint, 1x Lax Mint, 1x Gentle Mint (reward for Defeating the Plasma Grunts)
 tm ghost, TM37 Hex (encountered behind the Grimers once you beat the grunts)
@@ -830,7 +833,7 @@ end
 ## Route 4: Elesa Split
 !items Items
 safety goggles, Safety Goggles (reward from Colress)
-tm flying, TM40 Aerial Ace (found past Twins Tara & Val)
+lum berry, x3 Lum Berries (found past Twins Tara & Val)
 figy berry, 10x Figy Berry (found Northeast of Pokéfan Sachiko)
 tm fire, TM59 Temper Flare (Found past Benga)
 end
@@ -852,7 +855,7 @@ end
 
 
 ### Lady Lina (Desert Resort Gatekeeper)
-!tr 147/36 Desert Resort access + TM28 Dig 
+!tr 147/36 Desert Resort access + TM78 Bulldoze
 
 
 ### Benga 
@@ -862,7 +865,7 @@ end
 
 ## Desert Resort: Exterior
 !items Items 
-tm ground, TM28 Dig (Past Lady Lina)
+tm ground, TM78 Bulldoze (Past Lady Lina)
 end
 
 !notif WARNING, Desert Resort Exterior and Desert Resort Interior share a met location!
@@ -876,9 +879,9 @@ end
 soft sand, Soft Sand (acquired from the agent in the desert)
 rowap berry, 10x Rowap Berry (acquired by defeating Ranger Anja)
 jaboca berry, 10x Jaboca Berry (acquired by defeating Psychic Perry)
-tm psychic, TM15 Psycho Cut (acquired by defeating Psychic Tommy)
+tm psychic, TM03 Psyshock (acquired by defeating Psychic Tommy)
 tm normal, TM83 Endure (acquired by defeating Backpackers Tami and Sam)
-green shard, 30x Green Shards (acquired past Ranger Jaiden)
+green shard, 20x Green Shards (acquired past Ranger Jaiden)
 end
 
 !enc 11
@@ -890,7 +893,7 @@ end
 
 !tr 667/35 Guards 10x Rowap Berries 
 
-!tr 668/35 Guards TM15: Psycho Cut
+!tr 668/35 Guards TM03 Psyshock
 
 !tr 511/35 Guards 10x Jaboca Berries
 
@@ -906,8 +909,7 @@ end
 !notif NEW ENCOUNTER, Relic Castle's upper and lower area are not distinct met locations for encounters. , #469e62
 
 !items Items 
-tm psychic, TM33 Reflect (Found on the lower floor, requires fighting Psychic Perry)
-tm psychic, TM16 Light Screen (Found on the lower floor, requires fighitng Psychic Perry)
+tm fire, TM48 Mystical Fire (Found on the lower floor, requires fighting Psychic Low)
 tm ground, TM18 Scorching Sands (Found past Psychic Dua on the Top Floor)
 end
 
@@ -915,7 +917,7 @@ end
 
 !enc 12 
 
-!tr 512/36 Guards TM33 Reflect and TM16 Light Screen
+!tr 512/36 Guards TM48 Mystical Fire
 
 !tr 510/36 Guards TM18 Scorching Sands and access to Lenora 
 
@@ -1029,6 +1031,7 @@ end
 ## Anville Town (only accessible by defeating Ingo and Emmet)
 !items Item 
 dragon fang, Dragon Fang 
+dragon gem, x2 Dragon Gems 
 end
 
 !items Rare Evolution Stone 
@@ -1072,7 +1075,7 @@ end
 tm fairy, TM08 Dizzy Punch (past Hector, requires Strength)
 normal gem, x3 Normal Gem (past Art & Stu)
 tm normal, TM49 Snore (past Art & Stu)
-absorb bulb, x3 Absorb Bulb (past Roughneck Silvester)
+eject button, x3 Eject Pack (past Roughneck Silvester)
 end
 
 ### Depot Agent Hank (Route 16 gatekeeper)
@@ -1114,12 +1117,13 @@ end
 !items Erika Reward
 desc: Speak with Bellossom to receive 2x of each Resist Berry
 wacan berry, 2x each Resist Berry
+red shard, x10 Red Shards
 end
 
 !enc 26
 
 
-## Old Nimbasa Gym 
+## Old Nimbasa Gym  
 !trm 621/38
 
 !trm 148/38
@@ -1203,10 +1207,11 @@ end
 expert belt, Expert Belt (found in the market, vanilla location)
 tm grass, TM85 Grass Knot (south of Musician Preston)
 tm fairy, TM90 Draining Kiss (Past Backers Ava and Aya)
-red shard, x30 Red Shard (past Dancer Brian)
-fire stone, Common Evolution Stones (Sold in the Pokémart)
+red shard, x20 Red Shard (past Dancer Brian)
 yellow shard, x6 Yellow Shard (past Dancer Brian)
-stable mulch, Relaxed Mint (in the Market)
+white herb, x2 White Herb (in the Market)
+kasib berry, x2 Trickster Herb (in the market)
+tm fighting, TM31 Brick Break (in Plasma Sanctuary)
 end 
 
 !items PokéMart 
@@ -1260,14 +1265,13 @@ end
 
 ### Janine 
 !notif SPLIT-LOCKED, Janine is an optional mini-boss that can only be fought before defeating Clay. This content is locked off afterwards. , #af74b3
-!tr 768/45 Rewards 2x Each Gem, TM12 Taunt, Clay Tunnel Encounter, 10x Yellow Shards
+!tr 768/45 Rewards 2x Each Gem, Clay Tunnel Encounter, 10x Yellow Shards
 
 
 
 ## Clay Tunnel (must defeat Janine to access)
 !items Janine Rewards
 poison gem, 2x Each Gem (Speak with Sableye)
-tm dark, TM12 Taunt
 yellow shard, 10x Yellow Shards
 end
 !enc 84
@@ -1327,7 +1331,7 @@ end
 
 !items Items
 rocky helmet, Rocky Helmet (found near entrance)
-heart scale, 5x Heart Scales can be found by the Move Reminder.
+heart scale, 3x Heart Scales can be found by the Move Reminder.
 colress mchn, Proto Booster (reward for defeating Colress)
 old gateau, IV Enhancer (reward for defeating Colress)
 end
@@ -1474,15 +1478,19 @@ end
 
 
 ## Clay Tunnel 
-!notif WARNING, This shares a met location with Clay Tunnel accessible by beating Janine. If you skipped that fight, you can get an encounter here. rgb(255, 55, 0)
-
 !items Items 
-tm rock, TM87 Rock Climb 
-yellow shard, 10x Yellow Shards
+yellow shard, 6x Yellow Shards
+tm ground, TM28 Dig (reward for defeating Roxanne) 
+ground gem, x3 Ground Gem (reward for defeating Roxanne) 
+shuca berry, x3 Shuca Berry (reward for defeating Roxanne) 
 end
 
+!notif WARNING, This shares a met location with Clay Tunnel accessible by beating Janine. If you skipped that fight, you can get an encounter here. #f26253
 !enc 85
 
+### Roxanne Miniboss
+!notif SPLIT-LOCKED CONTENT, Roxanne can only be fought and her rewards only claimed before Skyla is defeated , #af74b3 
+!tr 228 
 
 
 ## Guidance Chamber 
@@ -1494,7 +1502,7 @@ end
 
 ### Cobalion 
 !notif SPLIT-LOCKED, Cobalion is an optional mini-boss that can only be fought before defeating Skyla. This content is locked off afterwards. , #af74b3
-!notif FIELD EFFECT, Enemies of Cobalion that switch into battles have their highest non-HP stat reduced by one stage. , #4e86d4
+!notif FIELD EFFECT, Enemies of Cobalion that switch into battles have their highest non-HP stat reduced by one stage on switch in. , #4e86d4
 
 !tr 491/52 Rewards Assault Vest 
 
@@ -1537,7 +1545,7 @@ end
 Chargestone Cave is now two gauntlets of 4 trainers each that must be defeated without changing your team to progress. You will not be able to access the PokéHelper to heal your party, pre-status, or fast travel out. 
 There are several crossroads where you can choose one of two trainers to fight to progress. Plan your route accordingly
 
-!notif WARNING, Volkner can only be fought within this Gauntlet. You cannot return to him later. rgb(255, 55, 0)
+!notif WARNING, Volkner can only be fought within this Gauntlet. You cannot return to him later. #f26253
 !notif FIELD EFFECT, In Chargestone Cave, Ground types only resist Electric moves. , #4e86d4
 
 !items Items
