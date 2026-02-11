@@ -51,54 +51,48 @@ Drayden Split begins when Marlon is defeated. It encompasses the stretch of cont
     There are a small handful of trainers here, namely one that gatekeeps Undella Bay. 
 
     [ ITEMS ]
-
+        TM31 Brick Break 
+        3x Fighting Gem 
+        3x Chople Berry 
+        1x Heart Scale 
+    
     [ ENCOUNTERS ]
+        Walking:
+            20%
+            20%
+            10%
+            10%
+            10%
+            10%
+            10%
+            10%
 
-    [ TRAINERS ]
-        Black Belt Drago (Undella Bay Gatekeeper)
+        Dust Clouds:
+            20%
+            20%
+            10%
+            10%
+            10%
+            10%
+            10%
+            10%
+        
+        Fishing:
+            40%
+            40%
+            20%
 
-        Battle Girl Maki (Heart Scale gatekeeper)
+        Surfing: 
+            60%
+            30%
+            10%
 
-        Maylene (Aura Sphere gatekeeper)
-            Machamp @ Focus Band 
-            Ability: No Guard 
-            Moves:
-                Dynamic Punch 
-                Stone Edge 
-                Spirit Break 
-                Knock Off 
-            
-            Golem @ Tera C-Band 
-            Ability: Determined 
-            Moves:
-                Head Smash 
-                Rollout
-                Accelerock 
-                Earthquake 
-            
-            Meditite @ Mascot Badge 
-            Ability: Huge Power 
-            Moves:
-                Aura Sphere
-                Psyshock 
-                Fake Out 
-                Thunderpunch
-            
-            Swellow @ Power Herb
-            Ability: Guts 
-            Moves:
-                Facade
-                Extremespeed
-                Fly
-                Close Combat 
-            
-            Lucario @ Life Orb 
-            Ability: Exploit 
-            Moves:
-                Focus Blast 
-                Meteor Mash 
-                Extremespeed 
-                Dark Pulse 
+
+    [ BLACK BELT DRAGON (Undellla Bay Gatekeeper) ]
+
+
+    [ BATTLE GIRL MAKI (Heart Scale Gatekeeper) ]
+
 
 ====================================================================================================================================================
 /*   UNDELLA BAY   */
@@ -106,8 +100,35 @@ Drayden Split begins when Marlon is defeated. It encompasses the stretch of cont
     There are no battles here, simply an item and an encounter. 
 
     [ ITEMS ]
-
+        SolarBeam TM 
+    
     [ ENCOUNTERS ]
+        Fishing:
+            40% Luvdisc 
+            40% Shellder
+            15% Frillish 
+            5% Spheal
+
+        Surfing:
+            60% Delibird 
+            30% Crawdaunt
+            10% Seadra
+
+        Sand:
+            40% Crustle 
+            20% Krabby 
+            20% Tirtouga 
+            20% Anorith
+
+    [ SWIMMER M (Abyssal Ruins Gatekeeper) ]
+        Doubles
+
+        Starmie 
+
+        Clefable 
+
+        Sigilyph
+
 
 
 ====================================================================================================================================================
@@ -116,16 +137,20 @@ Drayden Split begins when Marlon is defeated. It encompasses the stretch of cont
     There is a single battle here guarding an item and an encounter. 
 
     [ ITEMS ]
+        Life Orb 
+        Solar Blade TM 
 
     [ ENCOUNTERS ]
+        20% Relicanth 
         20% Lanturn
-        20% Relicanth
+        10% Eelektross 
         10% Jellicent 
+        10% Gorebyss
+        10% Huntail
         10% Cofagrigus
-        10% Huntail 
-        10% Gorebyss 
-        10% Wailord 
-        10% Eelektross
+        10% Wailord
+
+    [ STRANGE STATUE ]
 
 
 ====================================================================================================================================================

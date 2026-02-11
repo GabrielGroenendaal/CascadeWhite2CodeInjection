@@ -57,7 +57,7 @@ tm electric, TM93 Wild Charge
 end
 
 ### Plasma Rumble 
-!notif FIELD EFFECT, RUMBLE: Your Pokemon will take damage equal to 1/6 of their total health at the end of each turn, #4e86d4
+!notif FIELD EFFECT, RUMBLE: Your Pokémon will take damage equal to 1/6 of their total health at the end of each turn, #4e86d4
 
 ### Zinzolin 
 

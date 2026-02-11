@@ -112,6 +112,15 @@ Documentation:
 ```[ ENCOUNTERS ]```
 > - **Castelia Sewers Walking**: Zubat is no longer a 20% encounter in Castelia Sewers. Scraggy takes it's place. Lickitung raplced with 10% Drowzee Zubat is now a 4% encounter, and Koffing is a 5% encounter. 
 > - **Castelia Sewers Fishing Dark Spot**: 40% Murkrow replaced with 40% Lickitung.
+> - **Liberty Garden** no longer has Charmeleon and Combusken. Instead, Plusle and Minun are a 10% chance. 
+> - **Deep Lostlorn Forest** no longer has a 20% chance for Bayleef, instead with 20% Swadloon. 10% Swadloon replaced with 10% Sawsbuck-Autumn
+> - **Route 6 Grass** 10% Ivysaur slot replaced with 10% Weepinbell.
+> - **Route 6 Doubles Grass** 10% Grovyle slot becomes 10% Simisage 
+> - **Route 6 DOubles Grass** 10% Marshtomp slot becomes 10% Whiscash
+> - **Relic Passage Dark Spot Surfing** tables are 60% Swoobat 30% Tirtouga
+> - **Route 7 Shaking Grass** is now 60% Miltank, 30% Stoutland, 10% Swellow 
+
+
 
 ``[ TRAINERS ]``
 > - **PWT Colress's Rotom-Fan** now has Uproar over Double-Edge and Leaf Tornado over Telekinesis. 
@@ -122,8 +131,6 @@ Documentation:
 > - **Janine's Glalie and Drapion** are now level 44, up from 43. 
 > - **Leader Clay's Dugtrio** is now level 46, up from 44. 
 > - **Leader Roxie's Rotom** now has Eject Button, over Leftovers 
-> - **Join Avenue Gauntlet Trainers** have received a global +1 to their levels. 
-> - **Driftveil Drawbridge Gauntlet Trainers** have received a global +1 to their levels. 
 > - **Leader Elesa's Glaceon** has Icy Wind over Extrasensory.
 > - **Leader Erika's Victreebell** now has Sucker Punch over Sleep Powder. 
 > - **Leader Erika's Beautifly** has Scorching Swarm again instead of Bug Buzz. 
@@ -141,7 +148,22 @@ Documentation:
 > - **Heart Scale** drops have been reduced from 2 to 1 in Celestial Tower, Chargestone Cave and Route 7.
 > - **White Herb (x2)** added to Driftveil Market 
 > - **HM04 Waterfall** no longer given by Cheren at weather institute. Instead he gives 10 lum berries. 
-
+> - **Dig** is removed from Desert Resort, replaced with TM78 Bulldoze 
+> - **Bulldoze** is replaced with Aerial Ace TM in lower Route 4. 
+> - **Aerial Ace TM** is replaced with Lum Berry x3 in middle Route 4 
+> - **Desert Resort** now offers 20x Green Shards, down from 30x 
+> - **Psyshock TM** is now found in Desert Resort, not Route 7
+> - **Psycho Cut TM** is now found in Virbank Complex, not Brutal Swing. 
+> - **Mystical Fire** TM is now found in Relic Castle, where Light Screen / Reflect used to be. 
+> - **10x Red Shards** are found in Deep Lostlorn Forest where the Mystical Fire used to be . 
+> - **Juniper** no longer offers a Docile mint in Mistralton. 
+> - **Driftveil Market** now is home to 2x Trickster Herbs, not a Relaxed Mint 
+> - **Route 16** has 3x Eject Packs instead of 3x Absorb Bulbs 
+> - **Driftveil City** gives you 20x Red Shards, down from 30. 
+> - **Extra Red Shards** removed from Mistralton City 
+> - **3x Ghost Gems, Shadow Ball TM, 3x Kasib Berries** added to Celestial TOwer gatekept by Morty
+> - **3x Ground Gems, Dig TM, 3x Shuca Berries** added to Clay Tunnel gatekept by Roxanne
+> - **Mistralton City PokeMart** now sells the TMs for Light Screen, Reflect and Safeguard
 
 ``[ NEW CHANGES ]``
 > - **AI Status Move Scoring** now accounts for Trickster Herb and Prankster, not penalizing those move scores if the user is normally slower. 

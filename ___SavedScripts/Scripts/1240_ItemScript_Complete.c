@@ -73,11 +73,11 @@ void Sequence5()
 	End();
 }
 
-/* TM63 Brutal Swing - Route 20 */
+/* TM15 Psycho Cut - Route 20 */
 void Sequence6()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 390);
+	SetVarEqVal(0x800C, 342);
 	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
@@ -121,11 +121,11 @@ void Sequence9()
 	End();
 }
 
-/* TM16 Light Screen - Relic Castle (Upper Floors) */
+/* TM48 Mystical Fire - Relic Castle (Upper Floors) */
 void Sequence10()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 343);
+	SetVarEqVal(0x800C, 375);
 	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
@@ -220,12 +220,12 @@ void Sequence17()
 
 
 // MEW
-/* DESERT RESORT - Green Shards x30 */
+/* DESERT RESORT - Green Shards x20 */
 void Sequence18()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 75);
-	SetVarEqVal(0x800D, 30);
+	SetVarEqVal(0x800D, 20);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -316,12 +316,12 @@ void Sequence25()
 	End();
 }
 
-/* WHITE HERB x3 - Driftveil Market */
+/* WHITE HERB x2 - Driftveil Market */
 void Sequence26()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 214);
-	SetVarEqVal(0x800D, 3);
+	SetVarEqVal(0x800D, 2);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -567,23 +567,23 @@ void Sequence46()
 	End();
 }
 
-/* TM40 Aerial Ace - Route 4 */
+/* Lum Berry x3 - Route 4 */
 void Sequence47()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 367);
-	SetVarEqVal(0x800D, 1);
+	SetVarEqVal(0x800C, 157);
+	SetVarEqVal(0x800D, 3);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
 	End();
 }
 
-/* TM28 Dig - Desert Resort (Outside) */
+/* TM78 Bulldoze - Desert Resort (Outside) */
 void Sequence48()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 355);
+	SetVarEqVal(0x800C, 405);
 	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
@@ -650,11 +650,11 @@ void Sequence53()
 	End();
 }
 
-/* TM15 Psycho Cut - Desert Resort (Inside) */
+/* TM03: Psyshock - Desert Resort (Inside) */
 void Sequence54()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 342);
+	SetVarEqVal(0x800C, 330);
 	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
@@ -792,12 +792,12 @@ void Sequence65()
 	End();
 }
 
-/* TM48 Mystical Fire - Lostlorn Forest */
+/* Red Shard x10 - Lostlorn Forest */
 void Sequence66()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 375);
-	SetVarEqVal(0x800D, 1);
+	SetVarEqVal(0x800C, 72);
+	SetVarEqVal(0x800D, 10);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -865,12 +865,12 @@ void Sequence71()
 }
 
 
-/* TM57 Weather Ball - Route 6 */
+/* 10x Sitrus Berries - Route 6 */
 void Sequence72()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 384);
-	SetVarEqVal(0x800D, 1);
+	SetVarEqVal(0x800C, 158);
+	SetVarEqVal(0x800D, 10);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -901,11 +901,12 @@ void Sequence74()
 	End();
 }
 
+/* Ground GEM x3 - Clay Tunnel */
 void Sequence75()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 45);
-	SetVarEqVal(0x800D, 1);
+	SetVarEqVal(0x800C, 555);
+	SetVarEqVal(0x800D, 3);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -1012,11 +1013,12 @@ void Sequence84()
 	End();
 }
 
+/* SHUCA BERRY x3 - Clay Tunnel */
 void Sequence85()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 339);
-	SetVarEqVal(0x800D, 1);
+	SetVarEqVal(0x800C, 191);
+	SetVarEqVal(0x800D, 3);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -1128,7 +1130,7 @@ void Sequence94()
 	End();
 }
 
-/* CHARGESTONE CAVE - Wacan Berry (x5) */
+/* CHARGESTONE CAVE - Wacan Berry (x3) */
 void Sequence95()
 {
 	LockAll();
@@ -1235,8 +1237,8 @@ void Sequence103()
 void Sequence104()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 330);
-	SetVarEqVal(0x800D, 1);
+	SetVarEqVal(0x800C, 256);
+	SetVarEqVal(0x800D, 3);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -3309,10 +3311,11 @@ void Sequence289()
 	End();
 }
 
+/* TM31 Brick Break - Plasma Sanctuary */
 void Sequence290()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 348);
+	SetVarEqVal(0x800C, 358);
 	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
@@ -3412,11 +3415,11 @@ void Sequence298()
 	End();
 }
 
-/* TM78 Bulldoze - Route 4 */
+/* TM40 Aerial Ace - Route 4 */
 void Sequence299()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 405);
+	SetVarEqVal(0x800C, 367);
 	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
@@ -3424,11 +3427,11 @@ void Sequence299()
 	End();
 }
 
-/* Absorb Bulb x3 - Route 16 */
+/* Eject Pack x3 - Route 16 */
 void Sequence300()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 545);
+	SetVarEqVal(0x800C, 539);
 	SetVarEqVal(0x800D, 3);
 	Sequence400();
 	WaitMoment();
@@ -3472,12 +3475,12 @@ void Sequence303()
 	End();
 }
 
-/* TM64 Teleport - Celestial Tower */
+/* Kasib Berry x3 - Celestial Tower */
 void Sequence304()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 391);
-	SetVarEqVal(0x800D, 1);
+	SetVarEqVal(0x800C, 196);
+	SetVarEqVal(0x800D, 3);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -3496,11 +3499,12 @@ void Sequence305()
 	End();
 }
 
+/* GHOST GEM x3 - Celestial Tower */
 void Sequence306()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 29);
-	SetVarEqVal(0x800D, 1);
+	SetVarEqVal(0x800C, 560);
+	SetVarEqVal(0x800D, 3);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -3639,10 +3643,11 @@ void Sequence318()
 	End();
 }
 
+/* TM28 Dig - Clay Tunnel */
 void Sequence319()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 92);
+	SetVarEqVal(0x800C, 355);
 	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
@@ -4097,7 +4102,7 @@ void Sequence357()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 72);
-	SetVarEqVal(0x800D, 30);
+	SetVarEqVal(0x800D, 20);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -4315,12 +4320,12 @@ void Sequence375()
 	End();
 }
 
-/* Relaxed Mint - Driftveil Market */
+/* Trickster Herb (x2) - Driftveil Market */
 void Sequence376()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 512);
-	SetVarEqVal(0x800D, 1);
+	SetVarEqVal(0x800C, 136);
+	SetVarEqVal(0x800D, 2);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();

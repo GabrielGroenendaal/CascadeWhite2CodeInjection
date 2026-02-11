@@ -1512,7 +1512,7 @@ extern "C"
         {EVENT_MOVE_DAMAGE_PROCESSING_2, (ABILITY_HANDLER_FUNC)HandlerIceScales}, // 22
     };
 
-    ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddRunAway(_DWORD *a1)
+    ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddWonderSkin(_DWORD *a1)
     {
         *a1 = 1;
         return IceScalesHandlers;

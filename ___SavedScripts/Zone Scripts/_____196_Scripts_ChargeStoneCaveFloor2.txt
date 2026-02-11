@@ -258,7 +258,7 @@ public class MainEvents {
 		Player.GetGPos(v33, v34);
 		Actor.WalkRoute(19, (v33-1), v34, 1, 8, 0);
 		Actor.WaitActionFinish();
-		Message.ActorEx(1024, 19, 15, 0, 0);
+		Message.ActorEx(1024, 15, 19, 0, 0);
 		Input.LastKeyWait();
 		Message.CloseAll();
 
@@ -269,7 +269,7 @@ public class MainEvents {
 		}
         	Battle.EndTrainerBattle();
 
-        	Message.ActorEx(1024, 19, 16, 0, 0);
+        	Message.ActorEx(1024, 16, 19, 0, 0);
 		Input.LastKeyWait();
 		Message.CloseAll();
 		EventWorks.Set(16487, 1);
@@ -281,7 +281,7 @@ public class MainEvents {
 		Actor.PauseAll();
 		Sound.SEPlay(1351);
 		Actor.FacePlayer();
-		Message.ActorEx(1024, 19, 16, 0, 0);
+		Message.ActorEx(1024, 16, 19, 0, 0);
 		Input.LastKeyWait();
 		Message.CloseAll();
 		Runtime.FinishSubEvents();

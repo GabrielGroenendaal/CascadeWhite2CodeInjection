@@ -1,76 +1,395 @@
-[ TMS ]
-        TMs we Need to Change:
-            TM23: Icy Wind -> Weather Crash 
-            TM88: Pluck -> Muddy Water 
-            TM59: Incinerate -> Temper Flare 
-            TM76: Struggle Bug -> Safeguard 
-            TM70: Sparkle -> Diamond Storm
-            TM47: Low Sweep -> Cross Chop
-            TM54: Breaking Swipe -> Dragon Rush
-            TM44: Rest -> Power Whip
-            TM95: Snarl -> Giga Impact 
-            TM79: Body Press -> Hyper Beam 
+
+
+
+====================================================================================================================================================
+/*   CHEREN SPLIT   */
+
+    [ TMS ]
+        TM Hidden Force   
+        TM Hidden Power 
+        TM Rock Smash     (Missable)
+        TM Secret Power 
+    
+    [ ITEMS ]
+        Muscle Band 
+        Wise Glasses 
+        Quick Claw 
+        Brightpowder 
+    
+    [ CONSUMABLES ]
+        White Herb (x2)
+        Oran Berry (x10)
+        Chilan Berry (x3)
+        Cheri Berry (x3)
+        Green Shards (x20)
+        Jaboca Berry (x3)   (Missable)
+        Rowap Berry  (x3)   (Missable)
+        Berry Juices (x10)  (Missable)
+
+====================================================================================================================================================
+/*   ROXIE SPLIT   */
+
+    [ TMS ]
+        TM Shock Wave 
+        TM Water Pulse     (Missable)
+        TM Rock Tomb
+        TM Venoshock  
+        TM Psycho Cut 
+
+    [ ITEMS ]
+        Oran Berries
+        Silk Scarf 
+        Silverpowder 
+        Poison Barb 
+        Magnet 
+        Charcoal 
+        Lagging Tail 
+        Flame Orb 
+        Toxic Orb
+        Eviolite           (Missable)
+        Clear Amulet       (Missable)
+    
+    [ CONSUMABLES ]
+        Cheri Berry (x3)
+        Chesto Berry (x3)
+        Aspear Berry (x3)
+        Persim Berry (x3)
+        Rawst Berry (x3)
+        Pecha Berry (x3)
+        Lum Berry (x3)
+        Green Shards (x15)
+        Normal Gem (x2)
+        Naive Mint (x1)        (Missable)
+
+====================================================================================================================================================
+/*   BURGH SPLIT   */
+
+    [ TMS ]
+        HM Cut 
+        TM Rock Slide
+        TM Shadow Claw
+        TM Magical Leaf
+        TM Hex  
+        TM U-Turn        (Missable)
+        TM X-Scissor
+
+    [ ITEMS ]
+        Cheri Berries 
+        Rawst Berries 
+        Chesto Berries 
+        Persim Berries 
+        Pecha Berries 
+        Aspear Berries 
+        Leppa Berries
+        Eviolite +1 
+        Black Glasses
+        Sharp Beak 
+        Twistedspoon
+        Shell Bell 
+        Zoom Lens 
+        Scope Lens 
+        Leftovers       (Missable)
+        Sticky Barb 
+        Black Sludge 
+        Black Belt 
+        Metal Coat 
+        Hard Stone 
+        Thick Club 
+        Light Ball 
+
+    
+    [ CONSUMABLES ]
+        Enigma Berry (x3)
+        Tanga Berry (x3)
+        Trickster Herb (x2)
+        Red Shards (x10)
+        Mental Herb (x5)
+        Common Evolution Stone (x1)
+        Ability Capsule (x1) (Missable)
+        Throat Spray (x1) (Missable)
+        Green Shards (x15)
+        Hardy Mint (x1)
+        Lax Mint (x1)
+        Gentle Mint (x1)
+
+====================================================================================================================================================
+/*   ELESA SPLIT   */
+
+    [ TMS ]
+        TM Bulldoze 
+        TM Endure 
+        TM Psyshock 
+        TM Scorching Sands  
+        TM Mystical Fire 
+        TM Temper Flare 
+        TM Return 
+        TM Poison Jab 
+        TM Power Gem 
+        TM Dizzy Punch 
+        TM Snore 
+        TM Giga Drain 
+        TM Thunder Wave
+
+    [ ITEMS ]
+        Berry Juices 
+        Safety Goggles 
+        Soft Sand         
+        NeverMeltIce
+        Dragon Fang           (Missable)
+        Spell Tag 
+        Big Root 
+    
+    [ CONSUMABLES ]
+        Figy Berry (x10)
+        Rowap Berry (x10)
+        Jaboca Berry (x10)
+        Sitrus Berry (x20)
+        Ability Capsule (x1)  (Missable)
+        Resist Berry (x2)     (Missable)
+        Green Shard (x20) 
+        Fossil                (Missable)
+        Rare Evolution Stone  (Missable)
+        Dragon Gem (x3)       (Missable)
+        Normal Gem (x3)
+        Eject Pack (x3)
+        Cell Battery (x3)
+        Red Shards (x10)      (Missable)
+
+====================================================================================================================================================
+/*   CLAY SPLIT   */
+
+    [ TMS ]
+        TM Draining Kiss 
+        TM Grass Knot 
+        TM Scald 
+        TM Brick Break 
+        HM Strength 
+
+    [ ITEMS ]
+        Expert Belt 
+        Mental Herbs 
+        Micle Berries 
+        Figy Berries 
+
+    
+    [ CONSUMABLES ]
+        Focus Sash (x2)
+        White Herb (x2)
+        Trickster Herb (x2)
+        Red Shard (x20)
+        Yellow Shard (x6)
+        Yellow Shard (x10)  (Missable)
+        Every Gem (x2)      (Missable)
+        Eject Button (x3)
+ 
+====================================================================================================================================================
+/*   SKYLA SPLIT   */
+
+    [ TMS ]
+        TM Flash Cannon   (Relic Passage)
+        TM Psychic Fangs  (Relic Sanctum)
+        TM Drain Punch    (Mistralton Cave)
+        TM Knock Off      (Mistralton Cave)
+        TM Dig            (Roxanne Reward)    (Missable)
+        TM Sludge Bomb    (Chargestone Cave)
+        TM Aurora Beam    (Chargestone Cave)
+        TM Bug Buzz       (Chargestone Cave)
+        TM Volt Switch    (Volkner Reward)    (Missable)
+        TM Safeguard      (Mistralton City)
+        TM Light Screen   (Mistralton City)
+        TM Reflect        (Mistralton City)
+        TM Dazzling Gleam (Route 7)
+        TM Psychic        (Celestial Tower)
+        TM Teleport       (Celestial Tower)
+        TM Shadow Ball    (Morty Reward)      (Missable)
+        HM Fly            (Skyla Reward)
+
+    [ ITEMS ]
+        Iron Ball     (Relic Passage)
+        Rocky Helmet  (PWT)
+        Life Orb      (Relic Sanctum)   (Missable)
+        Assault Vest  (Cobalion Reward) (Missable)
+        Covert Cloak  (Sabrina Reward)  (Missable)
+    
+    [ CONSUMABLES ]
+        Sitrus Berry (x10)     (Relic Passage)
+        Red Shards (x20)       (Relic Passage)
+        Fossils (x1)           (Relic Sanctum)
+        Heart Scale (x3)       (PWT)
+        IV Enhancer (x1)       (PWT)
+        Sitrus Berries (x10)   (Route 6)
+        Lum Berries (x10)      (Route 6)
+        Ground Gem (x3)        (Clay Tunnel)      (Missable)
+        Shuca Berry (x3)       (Clay Tunnel)      (Missable)
+        Electric Gem (x3)      (Volkner Reward)   (Missable)
+        Wacan Berry (x3)       (Volkner Reward)   (Missable)
+        Heart Scale (x1)       (Chargestone Cave)
+        Master Ball (x1)       (Mistralton City)
+        Sassy Mint  (x1)       (Mistralton City)
+        Relaxed Mint (x1)      (Mistralton City)
+        Blunder Policy (x2)    (Route 7)
+        Heart Scale (x1)       (Route 7)
+        Heart Scale (x1)       (Celestial Tower)
+        Ghost Gem (x3)         (Morty Reward)     (Missable)
+        Kasib Berry (x3)       (Morty Reward)     (Missable)
+        Rash Mint (x1)         (Sabrina Reward)   (Missable)
+        Careful Mint (x1)      (Sabrina Reward)   (Missable)
+        IV Enhancer (x3)       (Sabrina Reward)   (Missable)
+        Air Balloon (x3)       (Mistralton Gym)
+
+====================================================================================================================================================
+/*   MARLON SPLIT   */
+
+    [ TMS ]
+        TM Will-o-Wisp       (Strange House)     (Missable)
+        TM Flamethrower      (Flannery Reward)   (Missable)
+        TM Dragon Claw       (Reversal Mountain)
+        TM Hurricane         (Falkner Reward)    (Missable)
+        HM Waterfall         (Route 14)
+        TM Acrobatics        (Marine Tube)
+        TM Taunt             (Marine Tube)
+        TM Thunderbolt       (Route 21)
+        TM Energy Ball       (Gardenia Reward)   (Missable)
+        TM Lunge             (Bugsy Reward)      (Missable)
+        HM Dive              (Marlon Reward)
+
+    [ ITEMS ]
+        Rare Evo Stones      (Lentimas PokeMart)
+        Ability Drill        (Abundant Shrine)   (Missable)
+        Shell Bell           (Humilau Town)   
+        Choice Specs         (Virizion Reward)   (Missable)
+    
+    [ CONSUMABLES ]
+        Sitrus Berry (x10)   (Lentimas Town)
+        Yellow Shard (x5)    (Lentimas Outskirts)
+        Trickster Herb (x3)  (Strange House)
+        White Herb (x3)      (Strange House)
+        Red Card (x5)        (Strange House)
+        Red Shard (x20)      (Reversal Mountain)
+        Sitrus Berry (x10)   (Reversal Mountain)
+        Heart Scale (x1)     (Reversal Mountain)
+        Fire Gem (x3)        (Flannery Reward)   (Missable)
+        Occa Berry (x3)      (Flannery Reward)   (Missable)
+        Flying Gem (x3)      (Falkner Reward)    (Missable)
+        Coba Berry (x3)      (Falkner Reward)    (Missable)
+        Throat Spray (x3)    (Undella Town)
+        Ability Patch (x1)   (Undella Town)      (Missable)
+        IV Enhancer (x3)     (Abundant Shrine)   (Missable)
+        Lonely Mint (x3)     (Abundant Shrine)   (Missable)
+        Bold Mint (x3)       (Abundant Shrine)   (Missable)
+        Ability Capsule (x2) (Humilau Town)      (Missable)
+        Heart Scale (x1)     (Humilau Town)
+        Blue Shard (x5)      (Humilau Town)
+        Yellow Shard (x10)   (Route 21)
+        Cell Battery (x3)    (Route 21)
+        Green Shards (x30)   (Route 22)
+        Eject Button (x3)    (Route 22)
+        Grass Gem (x3)       (Gardenia Reward)   (Missable)
+        Rindo Berry (x3)     (Gardenia Reward)   (Missable)
+        Bug Gem (x3)         (Bugsy Reward)      (Missable)
+        Tanga Berry (x3)     (Bugsy Reward)      (Missable)
+        Absorb Bulb (x3)     (Humilau Gym)
+
+====================================================================================================================================================
+/*   DRAYDEN SPLIT   */
+
+    [ TMS ]
+        TM Solarbeam      (Undella Bay)
+        TM Solar Blade    (Abyssal Ruins)
+        TM Cross Chop     (Maylene Reward)    (Missable)
+        TM Wild Charge    (Plasma Frigate)    
+        TM Brutal Swing   (Plasma Frigate)    
+        TM Weather Ball   (Route 13)
+        TM Weather Crash  (Route 13)
+        TM Focus Blast    (Lacunosa Town)
+        TM Stone Edge     (Route 11)
+        TM Sludge Wave    (Route 9)
+        TM Play Rough     (Fantina Reward)    (Missable)
+        TM Avalanche      (Candice Reward)    (Missable)
+        TM Rock Climb     (Roark Reward)      (Missable)
+        TM Gyro Ball      (Byron Reward)      (Missable)
+        TM Hyper Voice    (Whitney Reward)    (Missable)
+        TM Dragon Tail    (Drayden Reward)
+
+    [ ITEMS ]
+        Life Orb          (Abyssal Ruins)     (Missable)
+        Choice Band       (Terrakion Reward)  (Missable)
+        Leftovers         
+        Normal Gems       (Whitney Reward)    (Missable)
+    
+    [ CONSUMABLES ]
+        Rock Gem (x3)        (Roark Reward)   (Missable)
+        Charti Berry (x3)    (Roark Reward)   (Missable)
+        Steel Gem (x3)       (Byron Reward)   (Missable)
+        Babiri Berry (x3)    (Byron Reward)   (Missable)
+        Chilan Berry (x3)    (Whitney Reward) (Missable)
+        Fighting Gem (x3)    (Maylene Reward) (Missable)
+        Chople Berry (x3)    (Maylene Reward) (Missable)
+        Ice Gem (x3)         (Candice Reward) (Missable)
+        Yache Berry (x3)     (Candice Reward) (Missable)
+        Fairy Gem (x3)       (Fantina Reward) (Missable)
+        Roseli Berry (x3)    (Fantina Reward) (Missable)
         
-        Ones to Change About Earlier:
-            TM20: Hyper Voice (Sold in Mistralton City)
-            TM01: Psychic Fangs (acquired in Relic Sanctum)
-            TM37: Hex (Castelia Sewers)
-            TM64: Teleport (Celestial Tower)
-            TM76: Safeguard (sold in Nimbasa City)
-            TM59: Temper Flare (replaces TM27 Return by Join Avenue)
-            TM27: Return (sold in Nimbasa City)
+====================================================================================================================================================
+/*   KYUREM SPLIT   */
 
-        Ones To give in Marlon Split: 
-            TM02: Dragon Claw (Reversal Mountain)
-            TM23: Weather Crash (Humilau City)
-            TM24: Thunderbolt (Route 21)
-            TM35: Flamethrower (Flannery, Reversal Mountain)
-            TM45: Lunge (Bugsy, Pinwheel Forest)
-            TM51: Ally Switch (Strange House)
-            TM53: Energy Ball (Gardenia, Pinwheel Forest)
-            TM58: Hurricane (Past Falkner, Route 14)
-            TM62: Acrobatics (Marine Tube, after defeating the Plasma Shadow Triad)
-            HM05: Waterfall (reward for Gauntlet)
-            HM06: Dive (reward from Marlon)
+    [ TMS ]
+        TM Ice Beam       (Frozen Opelucid)
+        TM Ally Switch    (Tate/Liza Reward)  (Missable)
+        TM Dragon Rush    (Winona Reward)     (Missable)
+        TM Aura Sphere    (Plasma Frigate)
+        TM Storm Throw    (Plasma Frigate)
+        TM Infestation    (Plasma Frigate)
+        TM Diamond Storm  (Giovanni Reward)   (Missable)
+        TM Wave Crash     (Wake Reward)       (Missable)
+        TM Gunk Shot      (Plasma Frigate)   
 
-        Ones To give in Drayden Split: 
-            TM93: Wild Charge (encountered on PLasma Infiltration)
-            TM74: Gyro Ball (Byron in Twist Mountain)
-            TM71: Stone Edge (Roark in Twist Mountain)
-            TM26: Earthquake (Blue in Challenger's Cave)
-            TM82: Dragon Tail (Reward from Drayden)
-            TM13: Ice Beam (Candice, Route 13)
-            TM46: Aura Sphere (Maylene, Route 13)
-            TM85: Play Rough (Reward from Whitney)
-            TM14: Blizzard (bought from SM9)
-            TM25: Thunder (bought from SM9)
-            TM38: Fire Blast (bought from SM9)
-            TM22: Solar Beam (Undella Bay)
-            TM31: Brick Break (Opelucid City)
-            TM92: Solar Blade (Undella Bay)
+    [ ITEMS ]
+        Choice Scarf      (Keldeo Reward)     (Missable)
+    
+    [ CONSUMABLES ]
+        Water Gem (x3)    (Wake Reward)       (Missable)
+        Passho Berry (x3) (Wake Reward)       (Missable)
+        Psychic Gem (x3)  (Tate&Liza Reward)  (Missable)
+        Payapa Berry (x3) (Tate&Liza Reward)  (Missable)
+        Dragon Gem (x3)   (Winona Reward)     (Missable)
+        Haban Berry (x3)  (Winona Reward)     (Missable)
         
-        One to give in Kyurem Split:
-            TM75: Storm Throw (Plasma Frigate)
-            TM41: Infestation (Plasma Frigate)
-            TM34: Sludge Wave (Plasma Frigate)
-            TM88: Muddy Water (past Crasher Wake, Route 8)
-            TM56: Fling (Defeat Giovanni)
-            TM68: Avalanche (from Giant Chasm)
-            TM69: Gunk Shot (from Janine)
+====================================================================================================================================================
+/*   LEAGUE SPLIT   */
 
-        One to give in League Split:
-            TM43: Heat Wave
-            TM60: Wave Crash (from Misty)
-            TM42: Facade (from Norman)
-            TM52: Focus Blast 
-            TM70: Sparkle -> Diamond Storm
+    [ TMS ]
+        TM Thunder        
+        TM Blizzard          
+        TM Fire Blast 
+        TM Power Whip     (Erika Reward)      (Missable)
+        TM Earthquake     (Brock Reward)      (Missable)
+        TM Facade         (Norman Reward)     (Missable)
+        TM Muddy Water    (Misty Reward)      (Missable)
+        TM Fling          (Janine Reward)     (Missable)
 
-        One to give in Post-Game Split:
-            TM95: Giga Impact
-            TM79: Hyper Beam 
+    [ ITEMS ]
 
-[ ITEMS ]
+    [ CONSUMABLES ]
 
+====================================================================================================================================================
+/*   POST-GAME SPLIT   */
+
+    [ TMS ]
+        TM Hyper Beam 
+        TM Giga Impact 
+
+    [ ITEMS ]
+
+    
+    [ CONSUMABLES ]
+        
+====================================================================================================================================================
+/*   LEFTOVERS   */
+    
+    [ TMS ]
+        TM Heat Wave 
+    
     New Item Idea:
         Ancient Ward:
             Once per battle, block the effects of a critical hit. 
@@ -93,3 +412,4 @@
         Green Shards 
         Yellow Shards 
         
+====================================================================================================================================================

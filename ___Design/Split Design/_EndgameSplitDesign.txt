@@ -1,0 +1,842 @@
+
+
+*---------------*-------------------------------------*-------------------------------------------------------*-------------------------------------------------------*
+|  SPLIT NAME   |             LEVEL CAPS              |                       TRAINERS                        |                    ENCOUNTERS                         |
+*---------------*---------------------*---------------*------------------*-------------------*----------------*------------------*-------------------*----------------*
+|               |   OPTIONAL          |    FINAL      |    MANDATORY     |     OPTIONAL      |     TOTAL      |    MANDATORY     |     OPTIONAL      |     TOTAL      |                                                                                                                                                                              
+*---------------*---------------------*---------------*------------------*-------------------*----------------*------------------*-------------------*----------------*
+*---------------*---------------------*---------------*------------------*-------------------*----------------*------------------*-------------------*----------------*
+|    CHEREN     |  11 (Hugh 2)        |  15 (Cheren)  |        13        |         3         |      16        |         8        |         1         |       9        |
+*---------------*---------------------*---------------*------------------*-------------------*----------------*------------------*-------------------*----------------*
+|    ROXIE      |  19 (Hugh 3)        |  23 (Roxie)   |        21 (+8)   |        13 (+10)   |      34 (+18)  |        12 (+4)   |         2 (+1)    |      14 (+5)   |                                 
+*---------------*---------------------*---------------*------------------*-------------------*----------------*------------------*-------------------*----------------*
+|    BURGH      |  28 (Sewer Grunts)  |  32 (Burgh)   |        34 (+13)  |        27 (+14)   |      61 (+27)  |        17 (+5)   |         4 (+2)    |      21 (+7)   |
+*---------------*---------------------*---------------*------------------*-------------------*----------------*------------------*-------------------*----------------*
+|    ELESA      |  37 (Benga 2)       |  41 (Elesa)   |        50 (+16)  |        50 (+23)   |     100 (+39)  |        22 (+5)   |         7 (+3)    |      29 (+8)   |
+*---------------*---------------------*---------------*------------------*-------------------*----------------*------------------*-------------------*----------------*
+|    CLAY       |  44 (Rood)          |  46 (Clay)    |        65 (+15)  |        56 (+6)    |     121 (+21)  |        25 (+3)   |         8 (+1)    |      33 (+4)   |
+*---------------*---------------------*---------------*------------------*-------------------*----------------*------------------*-------------------*----------------*
+|    SKYLA      |  51 (Hugh 4)        |  55 (Skyla)   |        89 (+24)  |        80 (+24)   |     169 (+48)  |        31 (+6)   |        10 (+2)    |      41 (+8)   |
+*---------------*---------------------*---------------*------------------*-------------------*----------------*------------------*-------------------*----------------*
+|    MARLON     |  59 (Alder)         |  63 (Marlon)  |       111 (+22)  |        95 (+15)   |     206 (+37)  |        37 (+6)   |        13 (+3)    |      50 (+0)   |             
+*---------------*---------------------*---------------*------------------*-------------------*----------------*------------------*-------------------*----------------*
+|    DRAYDEN    |  66 (Benga 3)       |  69 (Drayden) |       133 (+22)  |       113 (+18)   |     246 (+40)  |        41 (+4)   |        19 (+6)    |      60 (+10)  |           
+*---------------*---------------------*---------------*------------------*-------------------*----------------*------------------*-------------------*----------------*
+|    KYUREM     |  72 (Colress)       |  74 (Kyurem)  |       157 (+24)  |       122 (+9)    |     279 (+33)  |        44 (+3)   |        21 (+2)    |      65 (+5)   |
+*---------------*---------------------*---------------*------------------*-------------------*----------------*------------------*-------------------*----------------*
+|    LEAGUE     |  77 (Hugh 5)        |  80 (League)  |       172 (+15)  |       132 (+10)   |     304 (+25)  |        46 (+2)   |        22 (+1)    |      68 (+3)   |
+*---------------*---------------------*---------------*------------------*-------------------*----------------*------------------*-------------------*----------------*
+|    POSTGAME   |  100 (PWT)          |  100 (Red)    |       187 (+15)  |       132 (+0)    |     319 (+15)  |        53 (+7)   |        22 (+0)    |      75 (+7)   |
+*---------------*---------------------*---------------*------------------*-------------------*----------------*------------------*-------------------*----------------*
+
+
+*------------------------------------------------------------------*
+|                      SPLIT LOCKED CONTENT                        |
+*-----------------*------------------------------------------------*
+|      SPLIT      |                     CONTENT                    |
+*-----------------*------------------------------------------------*
+*-----------------*------------------------------------------------*
+|      CHEREN     |     Brock Battle                               |
+|                 |     Pledge Grove Encounter & Items             |
+|                 |     Blueberry Academy Trade                    |
+|                 |     Rowap/Jaboca Optional                      |
+*-----------------*------------------------------------------------*
+|      ROXIE      |     Misty Battle                               |
+|                 |     Misty Rewards (Egg, Clear Amulet)          |
+|                 |     Worker Eviolite Quest                      |
+*-----------------*------------------------------------------------*
+|      BURGH      |     Surge Battle                               |
+|                 |     Liberty Island Encounters & Rewards        |
+|                 |     Enigma Berry Optional                      |
+|                 |     Battle Company Egg                         |
+|                 |     Castelia Alleyway Trade & Items            |
+*-----------------*------------------------------------------------*
+|      ELESA      |     Erika Battle                               |
+|                 |     Deep Lostlorn Encounters & Items           |
+|                 |     Fossil Lenora Optional                     |
+|                 |     Eeveelution Gauntlet                       |
+|                 |     Ingo & Emmet & Anville Town                |
+*-----------------*------------------------------------------------*
+|      CLAY       |     Janine Battle                              |
+|                 |     Clay Tunnel Encounter & Items              |
+*-----------------*------------------------------------------------*
+|      SKYLA      |     Sabrina Battle                             |
+|                 |     Celestial Rooftop Encounter & Items        |
+|                 |     Cobalion Side Quest                        |
+|                 |     Relic Sanctum Event                        |
+|                 |     Roxanne Miniboss                           |
+|                 |     Morty Miniboss                             |
+*-----------------*------------------------------------------------*
+|      MARLON     |     Blaine Battle                              |
+|                 |     Abundant Shrine Encounter & Items          |
+|                 |     Virizion Side Quest                        |
+|                 |     Strange House Event                        |
+|                 |     Ability Patch Optional                     |
+|                 |     Ability Capsule Optional                   |
+|                 |     Flannery Miniboss                          |
+|                 |     Bugsy Miniboss                             |
+|                 |     Gardenia Miniboss                          |
+*-----------------*------------------------------------------------*
+|      DRAYDEN    |     Blue Battle                                |
+|                 |     Challenger's Cave Encounter & Items        |
+|                 |     Terrakion Side Quest                       |
+|                 |     Abyssal Ruins Event                        |
+|                 |     Candice Miniboss                           |
+|                 |     Maylene Miniboss                           |
+|                 |     Whitney Miniboss                           |
+|                 |     Roark Miniboss                             |
+|                 |     Byron Miniboss                             |
+|                 |     Undella Bay, Route 9, Route 11 encounters  |
+*-----------------*------------------------------------------------*
+|      KYUREM     |     Giovanni Battle                            |
+|                 |     Nature Preserve Encounter & Items          |
+|                 |     Keldeo Side Quest                          |
+|                 |     Wake Miniboss                              |
+|                 |     Winona Miniboss                            |
+|                 |     Tate & Liza Miniboss                       |
+*-----------------*------------------------------------------------*
+|      LEAGUE     |     Lance Battle                               |
+|                 |     Old Victory Road Encounter & Items         |
+*-----------------*------------------------------------------------*
+
+
+-4 Frigate 
+
+TYPE MINIBOSSES
+    Skyla Split: 
+        Electric: Volkner   (TM Volt Switch)
+        Ground: Roxanne   (TM Dig)
+        Ghost: Morty     (TM Shadow Ball)
+
+    Marlon Split: 
+        Grass: Gardenia   (TM Energy Ball)
+            Bug: Bugsy      (TM Lunge)
+        Fire: Flannery   (TM Flamethrower)
+        Flying: Falkner    (TM Hurricane)
+
+    Drayden Split: 
+        Normal: Whitney   (TM Hyper Voice)
+            Rock: Roark     (TM Stone Edge)
+        Steel: Byron     (TM Gyro Ball)
+            Ice: Candice   (TM Avalanche)
+        Fighting: Maylene   (TM Brick Break)
+
+    Kyurem Split: 
+        Water: Wake        (TM Wave Crash)
+        Dragon: Winona      (TM Dragon Rush)
+        Psychic: Tate & Liza (TM Ally Switch)
+
+    League Split: 
+        Poison: Janine       (TM Gunk Shot, TM Aura Sphere)
+        Fairy: Erika        (TM Play Rough, TM Heat Wave)
+
+    Leftovers:
+        Dark (Could use Shadow Triad)
+
+
+
+
+[ SPLIT BREAKDOWN ]
+        Cheren Split: 
+            Encounters: (Total: 9, Mandatory: 8, Optional: 1)
+                Mandatory: 8
+                    Starter
+                    Rowdy Pokemon Center 
+                    Route 19 
+                    Flocessy Town 
+                    Route 20 
+                    Flocessy Ranch 
+                    Ranch Egg 
+                    Alder's House
+                Optional: 1
+                    Pledge Grove 
+                Total: 9
+            
+            Trainers: (Total: 16, Mandatory: 13, Optional: 3)
+                Mandatory: 13
+                    1 (Hugh)
+                    3 (Route 20)
+                    5 (Flocessy Ranch)
+                    1 (Alder's House)
+                    3 (Aspertia Gym)
+                Mandatory (With Toggle): 8 
+                    1 (Hugh)
+                    1 (Route 20)
+                    2 (Flocessy Ranch)
+                    1 (Alders House)
+                    3 (Aspertia Gym)
+                Optional: 3
+                    1 (Pledge Grove)
+                    2 (Aspertia Gym)
+                Total: 16
+        
+
+        Roxie Split: 
+            Encounters: (Total: 14, Mandatory: 12, Optional: 2)
+                Mandatory: 4
+                    Virbank Outskirts 
+                    Virbank City 
+                    Complex Exterior
+                    Virbank Complex
+                Optional: 1 
+                    Misty Egg
+                Total: 5
+            
+            Trainers: (Total: 34, Mandatory: 21, Optional: 13)
+                Mandatory: 8 
+                    4 (Route 20)
+                    1 (Virbank Gate)
+                    3 (Virbank Gym)
+                Mandatory (With Toggle): 6 
+                    2 (Route 20)
+                    1 (Virbank Gate)
+                    3 (Virbank Gym)
+                Optional: 10
+                Total: 18
+
+
+        Burgh Split: 
+            Encounters: (Total: 21, Mandatory: 17, Optional: 4)
+                Mandatory: 5
+                    Sewers 
+                    Route 4
+                    Gardens
+                    Relic Castle 
+                    Pokestar
+                Optional: 2
+                    Battle Egg 
+                    Liberty
+                Total: 7
+            
+            Trainers: (Total: 58, Mandatory: 33, Optional: 25)
+                Mandatory: 13 
+                    2 (Grunts)
+                    6 (Sewers)
+                    5 (Gym)
+                Mandatory (with Toggle): 11
+                Optional: 12
+                    14
+                Total: 24
+        
+
+        Elesa Split: 
+            Encounters: (Total: 29, Mandatory: 22, Optional: 7)
+                Mandatory: 5
+                Optional: 3
+                Total: 8
+             
+            Trainers: (Total: 95, Mandatory: 49, Optional: 46)
+                Mandatory: 16
+
+
+                Mandatory (with Toggle): 11
+                Optional: 21
+                    2 Route 4
+                    7 Resort 
+                    3 Castle 
+                    1 Nimbasa 
+                    3 Route 5 
+                    4 Route 16 
+                    3 Lostlorn
+
+                Total: 38 
+
+
+        Clay Split: 
+            Encounters: (Total: 33, Mandatory: 25, Optional: 8)
+                Mandatory: 3
+                Optional: 1
+                Total: 4
+             
+            Trainers: (Total: 116, Mandatory: 65, Optional: 51)
+                Mandatory: 16
+
+                Mandatory (With Toggle): 9
+                Optional: 5
+                    Janine
+                    3 
+                    2
+
+                Total: 23
+
+
+        Skyla Split: 
+            Encounters: (Total: 41, Mandatory: 31, Optional: 10)
+                Mandatory: 6
+                    Mistralton Cave
+                    Relic Sanctum 
+                    Chargestone Cave 
+                    Route 7 
+                    Celestial Tower 
+                    Season Reserach Center
+                Optional: 2
+                    Guidance Chamber 
+                    Celestial Rooftop
+                Total: 8
+             
+            Trainers: (Total: 164, Mandatory: 89, Optional: 75)
+                Mandatory: 24
+                Mandatory (with Toggle): 17
+                Optional: 24
+                Total: 48
+
+        MErlon Split 
+
+            Trainers: 22 Mandatory
+                1 Outskirts 
+                4 Reversal Mountain 
+                3 Route 14 
+                1 Undella Town 
+                6 Marine Tube 
+                7 Humilau Gym 
+
+                1 Flannery 
+                1 Strange House 
+                1 Falkner 
+                2 Undella 
+                1 Abundant Shrine 
+                4 Route 21 
+                2 Route 22 
+                3 Pinwheel Forest 
+                
+            Encounters:
+                Mandatory 
+                    Lentimas Outskirts 
+                    Reversal Mountain 
+                    Route 14
+                    Humilau Town 
+                    Route 22 
+                    Route 21 
+                
+                Optional: 
+                    Strange House 
+                    Abundant Shrine 
+                    Pinwheel Forest
+
+            Drayden Spllit: 
+                Encounters: 
+                    Mandatory: 
+                        Seaside Cave 
+                        Route 13 
+                        Route 12 
+                        Village Bridge 
+                    Optional:   
+                        Undella Bay 
+                        Abyssal Ruins 
+                        Route 11 
+                        Route 9 
+                        Challenger's Cave 
+                        Twist Mountain 
+            
+            Kyurem Split: 
+                Encounters: 
+                    Route 10 
+                    Giant Chasm 
+                    Plasma Frigate 
+                    Nature Preserve 
+                    Moors of Iccirus 
+            
+            League Spllit: 
+                Victory Road
+                Old Victory Road 
+
+
+            Postgame: 
+                Dragonspiral Tower 
+                Route 3 
+                Route 2 
+                Route 1 
+                Dreamyard 
+                Wellspring Cave 
+                Icciruss City 
+
+        Drayden Trainers: 
+            Mandatory 22
+                5 Plasma Frigate 
+                4 Route 13 
+                1 Lacunosa Town 
+                6 Village Bridge 
+                6 Opelucid Gym 
+
+            Optional: 
+                3 Seaside Cave 
+                1 Undella Bay 
+                1 Abyssal Ruin 
+                3 Route 13 
+                2 Village Bridge 
+                1 Route 11 
+                3 Route 9 
+                1 SM9 
+                3 Twist Mountain
+
+        Kyurem Trainers: 
+            Mandatory: 24
+                5 Frozen Opelucid 
+                4 Route 10 
+               10 Plasma Frigate 
+                5 Plasma Bosses 
+            
+            Optional: 9
+                2 Plasma Frigate
+                2 Moors of Iccirus
+                5 Route 10
+
+        League: 
+            Mandatory: 
+                10 Victory Road 
+                5 League 
+            
+            Optional: 
+                10 Victory Road 
+
+MARLON SPLIT DESIGN A: Includes Plasma Frigate
+
+        Breakdown:     
+        *---------------------------------------------------*
+        | Split Name     |   Encounters   |     Trainers    |
+        *---------------------------------------------------*
+        | Marlon  Split  |       10       |        49       |
+        | Drayden Split  |        7       |        29       |
+        | League  Split  |       10       |        56       |
+        *---------------------------------------------------*
+        
+        Marlon Split:
+            Encounters: (Total: 51, Mandatory: 36, Optional: 15)
+                Mandatory: 5
+                    Lentimas Town 
+                    Reversal Mountain 
+                    Route 14
+                    Route 21
+                    Humilau Town 
+                Optional: 5
+                    Abundant Shrine
+                    Pinwheel Forest
+                    Strange House
+                    Undella Bay 
+                    Seaside Cavern
+                Total: 10
+             
+            Trainers: (Total: 213, Mandatory: 127, Optional: 86)
+                Mandatory: 38
+                    1 (Lentimas Town)
+                    5 (Reversal Mountain)
+                    4 (Route 14)
+                    1 (Undella Town)
+                    3 (Route 21)
+                    3 (Seaside Cave)
+                    15 (Plasma Frigate)
+                    6 (Humilau Gym)
+                Optional: 11
+                    1 (Strange House)
+                    2 (Reversal Mountain)
+                    1 (Route 14)
+                    2 (Undella Town)
+                    1 (Humilau Town)
+                    1 (Undella Bay)
+                    3 (Abundant Shrine)
+                Total: 49
+        
+        Drayden Split:
+            Encounters: (Total: 58, Mandatory: 38, Optional: 20)
+                Mandatory: 2
+                    Route 13
+                    Village Bridge 
+                Optional: 5
+                    Route 12 
+                    Route 11
+                    Route 10 
+                    Twist Mountain 
+                    Challenger's Cave
+                Total: 7
+
+            Trainers: (Total: 213, Mandatory: 144, Optional: 98)
+                Mandatory: 17
+                    5 (Route 13)
+                    1 (Lacunosa Town)
+                    6 (Village Bridge)
+                    5 (Opelucid Gym)
+                Optional: 12
+                    1 (Route 12)
+                    1 (Route 11)
+                    2 (Route 10)
+                    1 (Challenger's Cave)
+                    2 (Village Bridge)
+                    3 (Twist Mountain)
+                    2 (The Mall)
+                Total: 29
+        
+        League Split:
+            Encounters: (Total: 67, Mandatory: 45, Optional: 23)
+                Mandatory: 7
+                    Route 10
+                    Route 23 
+                    Giant Chasm 
+                    Plasma Frigate
+                    Deep Giant Chasm 
+                    Victory Road 
+                Optional: 3
+                    Moors of Iccirus 
+                    Nature Preserve 
+                    Old Victory Road
+                Total: 10
+
+            Trainers: (Total: 269, Mandatory: 183, Optional: 115)
+                Mandatory: 39
+                    4 (Opelucid City)
+                    3 (Route 10)
+                    15 (Plasma Frigate)
+                    2 (Deep Giant Chasm)
+                    10 (Victory Road)
+                    5 (Pokemon League)
+                Optional: 17
+                    2 (Route 10)
+                    5 (Plasma Frigate)
+                    5 (Victory Road)
+                Total: 56        
+        
+
+
+
+MARLON SPLIT DESIGN B: Excludes Plasma Frigate
+
+        Breakdown:     
+        *---------------------------------------------------*
+        | Split Name     |   Encounters   |     Trainers    |
+        *---------------------------------------------------*
+        | Marlon  Split  |        9       |        34       |
+        | Drayden Split  |        9       |        44       |
+        | League  Split  |       10       |        48       |
+        *---------------------------------------------------*
+        
+        Marlon Split:
+            Encounters: (Total: 50, Mandatory: 36, Optional: 14)
+                Mandatory: 5
+                    Lentimas Town 
+                    Reversal Mountain 
+                    Route 14
+                    Humilau Town 
+                    Route 21
+                Optional: 4
+                    Abundant Shrine
+                    Pinwheel Forest
+                    Strange House
+                    Route 22
+                Total: 9
+             
+            Trainers: (Total: 201, Mandatory: 112, Optional: 79)
+                Mandatory: 23
+                    1 (Lentimas Town)
+                    5 (Reversal Mountain)
+                    4 (Route 14)
+                    6 (Marine Tube)
+                    1 (Undella Town)
+                    6 (Humilau Gym)
+                Optional: 17
+                    1 (Strange House)
+                    2 (Reversal Mountain)
+                    1 (Route 14)
+                    2 (Undella Town)
+                    1 (Humilau Town)
+                    1 (Route 23)
+                    3 (Route 21)
+                    3 (Abundant Shrine)
+                    1 (Seaside Cavern)
+                    2 (Pinwheel Forest)
+                Total: 37
+        
+        Drayden Split:
+            Encounters: (Total: 59, Mandatory: 40, Optional: 19)
+                Mandatory: 4
+                    Seaside Cavern 
+                    Route 13
+                    Route 12
+                    Village Bridge 
+                Optional: 5
+                    Undella Bay
+                    Route 11
+                    Route 9 
+                    Twist Mountain 
+                    Challenger's Cave
+                Total: 9
+
+            Trainers: (Total: 242, Mandatory: 143, Optional: 87)
+                Mandatory: 31
+                    2 (Seaside Cave)
+                    12 (Plasma Frigate)
+                    5 (Route 13)
+                    1 (Lacunosa Town)
+                    6 (Village Bridge)
+                    5 (Opelucid Gym)
+                Optional: 11
+                    1 (Undella Bay)
+                    1 (Route 11)
+                    2 (Route 9)
+                    1 (Challenger's Cave)
+                    1 (Village Bridge)
+                    3 (Twist Mountain)
+                    2 (The Mall)
+                Total: 44
+        
+        League Split:
+            Encounters: (Total: 69, Mandatory: 47, Optional: 22)
+                Mandatory: 7
+                    Route 10
+                    Route 23 
+                    Giant Chasm 
+                    Plasma Frigate
+                    Deep Giant Chasm 
+                    Victory Road 
+                Optional: 3
+                    Moors of Iccirus 
+                    Nature Preserve 
+                    Old Victory Road
+                Total: 10
+
+            Trainers: (Total: 290, Mandatory: 179, Optional: 99)
+                Mandatory: 36
+                    4 (Opelucid City)
+                    3 (Route 10)
+                    12 (Plasma Frigate)
+                    2 (Deep Giant Chasm)
+                    10 (Victory Road)
+                    5 (Pokemon League)
+                Optional: 12
+                    2 (Route 10)
+                    5 (Plasma Frigate)
+                    5 (Victory Road)
+                Total: 48    
+
+           
+        
+        Alder Split: 
+            Encounters: (Total: 48, Mandatory: 35, Optional: 13)
+                Mandatory: 4
+                Optional: 3
+                Total: 7
+             
+            Trainers: (Total: 187, Mandatory: 103, Optional: 84)
+                Mandatory: 14
+                    1 (Lentimas Town)
+                    1 (Benga)
+                    5 (Reversal Mountain)
+                    4 (Route 14)
+                    3 (Abundant Shrine)
+                Optional: 9
+                    1 (Strange House)
+                    2 (Reversal Mountain)
+                    1 (Route 14)
+                    2 (Undella Town)
+                    2 (Abundant Shrine)
+                    1 (Pinwheel Forest)
+                Total: 23 
+
+
+        Drayden Split: 
+            Encounters: (Total: 55, Mandatory: 37, Optional: 18)
+                Mandatory: 2
+                Optional: 5
+                Total: 7
+             
+            Trainers: (Total: 215, Mandatory: 122, Optional: 93)
+                Mandatory: 19
+                    5 (Route 13)
+                    1 (Zinzolin)
+                    1 (Route 12)
+                    6 (Village Bridge)
+                    1 (Route 11)
+                    5 (Opelucid Gym)
+                Optional: 9
+                    2 (Route 13)
+                    1 (Twist Mountain)
+                    2 (Route 9)
+                    2 (Village Bridge)
+                    1 (Route 12)
+                    1 (Route 11)
+                Total: 28
+
+
+        Marlon Split: 
+            Encounters: (Total: 60, Mandatory: 38, Optional: 22)
+                Mandatory: 1
+                Optional: 4
+                Total: 5
+             
+            Trainers: (Total: 242, Mandatory: 139, Optional: 103)
+                Mandatory: 17
+                    5 (Opelucid City)
+                    6 (Marine Tube)
+                    6 (Humilau Gym)
+                Optional: 10
+                    4 (Route 21)
+                    2 (Seaside Cavern)
+                    1 (Undella Bay)
+                    2 (Route 22)
+                    1 (Moor of Icirrus)
+                Total: 27
+
+
+        Kyurem Split 
+            Encounters: (Total: 65, Mandatory: 42, Optional: 23)
+                Mandatory: 4
+                Optional: 1
+                Total: 5
+             
+            Trainers: (Total: 278, Mandatory: 159, Optional: 119)
+                Mandatory: 20
+                    6 Grunts (Plasma Frigate)
+                    1 Horde of Grunts (Plasma Frigate)
+                    1 Zinzolin (Plasma Frigate)
+                    6 Grunts (Plasma Frigate)
+                    1 Hoard of Grunts (Plasma Frigate)
+                    1 Zinzolin (Plasma Frigate)
+                    1 Shadow Triad Conclusion (Plasma Frigate)
+                    1 Colress (Plasma Frigate)
+                    1 Ghetsis (Giant Chasm)
+                    1 Kyurem-W (Giant Chasm)
+                Optional: 16
+                    8 Grunts (First Plasma Frigate Infiltration)
+                    8 Grunts (Second Plasma Frigate Infiltration)
+                Total: 36
+
+
+        League Split: 
+            Encounters: (Total: 70, Mandatory: 46, Optional: 24)
+                Mandatory: 4
+                Optional: 1
+                Total: 5
+             
+            Trainers: (Total: 312, Mandatory: 179, Optional: 133)
+                Mandatory: 20
+                    5 (Route 23)
+                    10 (Victory Road)
+                    5 (Pokemon League) 
+                Optional: 14
+                    2 (Route 23)
+                    8 (Victory Road)
+                    4 (PWT)
+                Total: 34
+
+
+
+        *--------------------------------------------------------*
+        |   SPLIT   |    ENCOUNTERS   | | | |      TRAINERS      | 
+        *--------------------------------------------------------*
+        |  Cheren   |  9  |  8  |  1  | | | |  16  |  13  |   3  | 
+        |   Roxie   |  5  |  4  |  1  | | | |  18  |   8  |  10  | 
+        |   Burgh   |  7  |  5  |  2  | | | |  24  |  12  |  12  | 
+        |   Elesa   |  8  |  5  |  3  | | | |  38  |  16  |  21  | 
+        |    Clay   |  4  |  3  |  1  | | | |  23  |  16  |   5  | 
+        |   Skyla   |  8  |  6  |  2  | | | |  48  |  24  |  24  | 
+        |   Alder   |  7  |  4  |  3  | | | |  23  |  14  |   9  | 
+        | Drayden   |  7  |  2  |  5  | | | |  28  |  19  |   9  | 
+        |  Marlon   |  5  |  1  |  4  | | | |  27  |  17  |  10  | 
+        |  Kyurem   |  5  |  4  |  1  | | | |  36  |  20  |  16  | 
+        |  League   |  5  |  4  |  1  | | | |  34  |  20  |  14  | 
+        *--------------------------------------------------------*
+
+        9 | 16 1.778
+        5 | 18 3.6
+        7 | 24 3.42
+        8 | 38 4.75
+        4 | 23 5.75
+        8 | 48 6
+        7 | 23 3.28
+        7 | 28 4
+        5 | 27 5.4
+        5 | 36 7.2
+        5 | 34 6.8
+
+        8 | 13 1.625
+        4 |  8 2
+        5 | 12 2.4
+        5 | 16 3.2
+        3 | 16 5.3
+        6 | 24 4
+        4 | 14 3.5
+        2 | 19 9.5
+        1 | 17 17
+        4 | 20 5
+        4 | 20 5
+
+
+
+
+
+
+        Marlon Split:
+            Lentimas Town 
+            Reversal Mountain
+                Tag or B2B battles /w Benga  
+            Strange House (Optional)
+                B2B2B
+            Pinwheel Forest (Optional)
+                Virizion Miniboss
+            Route 14
+                Gauntlet 
+            Undella Town
+                (Mandatory) Alder + Victini Fight 
+                (Optional) Blaine Fight 
+            Abundant Shrine (Optional)
+            Marine Tube 
+                Shadow Triad Assault 
+            Humilau City 
+            Route 22 (Optional)
+            Route 21 (Optional)
+            Seaside Cavern (Optional)
+            Undella Bay (Optional)
+            Humilau Gym 
+
+            Encounters:
+                Mandatory: 
+                    Lentimas Town
+                    Reversal Mountain
+                    Route 14
+                    Humilau Town
+                Optional:
+                    Strange House
+                    Pinwheel Forest
+                    Abundant Shrine
+                    Route 22
+                    Route 21
+        
+        Drayden Split 
+
+            You can now access Seaside Cave. 
+            Optional Miniboss Guarding Undella Bay. (Wake?)
+            First Plasma Frigate Infiltration 
+                This includes a gauntlet
+                This includes a mass b2b2b2b 
+                This includes a scene with Janine fighting off the shadow triad 
+                this is the introduction to Zinzolin proper. 
+            Route 13
+            Lacunosa Town 
+                There is no longer a confrontation with Zinzolin here. Instead, this is where you have another fight with Benga 
+            Route 12 
+                This can just be a chill, lazy route with nothing blocking an encounter. Basically the reward for beating Benga 
+            Village Bridge
+                This is a gauntlet.
+            Route 11
+                To access the doubles grass which has all the good encounters, you need to defeat a very powerful gatekeeper. Otherwise the regular grass is kinda shit 
+            Route 9 (Optional)
+                Access to encounter grass is gatekept by a trainer
+            Mall (Optional)
+                There are no encounters here but a lot of very powerful resources, including access to a shopo where you can purchase infinite normal gems
+            Challenger's Cave 
+            Twist Mountain 
+                An optional encounter, several optional mini bosses, terrakion battle. 
+            Opelcudi Gym 
+
+            Encounters
+                Mandatory: 
+                    Route 13
+                    Village Bridge 
+                    Seaside Cavern 
+                    Route 12
+                    Village Bridge
+                
+                Optional:
+                    Undella Bay
+                    Route 11
+                    Route 10
+                    Challenger's Cave 
+                    Twist Mountain

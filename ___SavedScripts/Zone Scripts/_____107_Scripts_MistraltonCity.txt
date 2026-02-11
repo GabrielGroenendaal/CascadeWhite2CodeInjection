@@ -129,7 +129,6 @@ public class MainEvents {
 		WordSet.LoadNumber(1, v35, 3);
 		Message.ActorEx(1024, 3, 4, 0, 0);
 		Message.CloseAll();
-		Global2805(511, 1);
         Global2805(527, 1);
         Global2805(510, 1);
         Global2805(1, 1);
