@@ -1,0 +1,45 @@
+import messages.script.Msg0586.MSGID;
+
+import event.actors.Actor;
+import event.dialogs.Message;
+import event.funfest.Funfest;
+import pokescript.vm.VM;
+import system.EventFlags;
+import system.EventWorks;
+import system.Runtime;
+import system.Sound;
+
+public class MainEvents {
+	public static void main_1() { // @ 0xe
+		Actor.PauseAll();
+		Funfest.Broadcast(17, 0);
+		Sound.SEPlay(1351);
+		Message.PlaceSign(0, 3);
+		Message.ClosePlaceSign();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_2() { // @ 0x28
+		Actor.PauseAll();
+		Funfest.Broadcast(17, 0);
+		Sound.SEPlay(1351);
+		Message.PlaceSign(1, 0);
+		Message.ClosePlaceSign();
+		EventFlags.Set(2675);
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_3() { // @ 0x46
+		Actor.PauseAll();
+		Funfest.Broadcast(17, 0);
+		Sound.SEPlay(1351);
+		Message.PlaceSign(2, 0);
+		Message.ClosePlaceSign();
+		EventFlags.Set(2676);
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+}

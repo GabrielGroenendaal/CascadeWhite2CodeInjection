@@ -1,0 +1,191 @@
+import messages.script.Msg0657.MSGID;
+
+import Base;
+import event.FieldDemo;
+import event.actors.Actor;
+import event.dialogs.Message;
+import event.dialogs.YesNoWin;
+import event.funfest.Funfest;
+import pokescript.vm.Math;
+import pokescript.vm.StackCtrl;
+import pokescript.vm.VM;
+import system.EventFlags;
+import system.EventWorks;
+import system.Fade;
+import system.Field;
+import system.Input;
+import system.Runtime;
+import system.Sound;
+
+public class MainEvents {
+	public static void main_1() { // @ 0x4b
+		int v16;
+
+		Actor.PauseAll();
+		Field.CallPlaceNameDisp();
+		Runtime.Sleep(70);
+		Message.ActorEx(1024, 0, 2, 0, 0);
+		Message.CloseAll();
+		ActionSequence_0278(2);
+		Actor.WaitActionFinish();
+		Message.ActorEx(1024, 1, 2, 0, 0);
+		Message.ActorVersioned(1024, 3, 2, 2, 0, 0);
+		Message.CloseAll();
+		ActionSequence_0290(2);
+		Actor.WaitActionFinish();
+		Message.ActorVersioned(1024, 5, 4, 2, 0, 0);
+		Message.CloseAll();
+		Message.ActorEx(1024, 6, 5, 0, 0);
+		Message.CloseAll();
+		ActionSequence_0278(2);
+		Actor.WaitActionFinish();
+		Message.ActorVersioned(1024, 8, 7, 2, 0, 0);
+		v16 = YesNoWin.Show();
+		if (v16 != 0) {
+			Message.ActorEx(1024, 10, 2, 0, 0);
+			goto LABEL_00fc;
+		}
+		Message.ActorEx(1024, 9, 2, 0, 0);
+
+		LABEL_00fc:
+		Message.ActorEx(1024, 11, 2, 0, 0);
+		Message.CloseAll();
+		Message.ActorEx(1024, 12, 5, 0, 0);
+		Message.CloseAll();
+		Actor.WalkRoute(5, 626, 306, 1, 8, 1);
+		Runtime.Sleep(8);
+		ActionSequence_0278(255);
+		Actor.WaitActionFinish();
+		Actor.Hide(5);
+		EventFlags.Set(777);
+		EventWorks.Set(16587, 2);
+		EventWorks.Set(16672, 1);
+		Base.CMD_262(3, 4);
+		Base.CMD_262(0, 4);
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_2() { // @ 0x1c7
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 13, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_3() { // @ 0x1e3
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 14, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_4() { // @ 0x1ff
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 15, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_5() { // @ 0x21b
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 16, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_6() { // @ 0x237
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Sound.PVPlay(552, 0);
+		Message.Actor(1024, 17, 0, 0);
+		Sound.PVWait();
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_7() { // @ 0x25b
+		Actor.PauseAll();
+		Funfest.Broadcast(17, 0);
+		Sound.SEPlay(1351);
+		Message.PlaceSign(21, 1);
+		Message.ClosePlaceSign();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_8() { // @ 0x15a
+		int v16;
+
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 18, 0, 0);
+		v16 = YesNoWin.Show();
+		if (v16 != 0) {
+			Message.Actor(1024, 20, 0, 0);
+			Input.LastKeyWait();
+			Message.CloseAll();
+			goto LABEL_01c1;
+		}
+		Message.Actor(1024, 19, 0, 0);
+		Message.CloseAll();
+		Fade.OutBlackQ();
+		Fade.Wait();
+		Field.Close();
+		FieldDemo.Call3DDemo(25, 0);
+		Field.Open();
+		Runtime.ReserveScript(11);
+		Field.ChangeMap(111, 14, 0, 19, 1);
+
+		LABEL_01c1:
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_9() { // @ 0x26
+		Actor.PauseAll();
+		Fade.InBlackQ();
+		Fade.Wait();
+		if (EventWorks.Get(16587) == 1) {
+			goto LABEL_0045;
+		}
+		Field.CallPlaceNameDisp();
+		VM.DebugPrint(22);
+
+		LABEL_0045:
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	static meta void ActionSequence_0278(int npcId) : VActionSequence {
+		Action0023(1);
+	}
+
+	static meta void ActionSequence_0290(int npcId) : VActionSequence {
+		Action0021(1);
+	}
+
+
+	static native void Action0021(int amount) : 0x21;
+	static native void Action0023(int amount) : 0x23;
+}

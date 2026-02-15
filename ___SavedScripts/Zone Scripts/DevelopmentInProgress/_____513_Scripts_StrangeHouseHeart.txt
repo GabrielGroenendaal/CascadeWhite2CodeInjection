@@ -1,0 +1,170 @@
+import messages.script.Msg0335.MSGID;
+
+import event.actors.Actor;
+import event.actors.Player;
+import event.dialogs.Message;
+import pokescript.vm.Math;
+import pokescript.vm.StackCtrl;
+import pokescript.vm.VM;
+import system.EventFlags;
+import system.EventWorks;
+import system.Runtime;
+import system.Sound;
+
+public class MainEvents {
+	public static void main_1() { // @ 0x12
+		int v0;
+		int v1;
+		int v16;
+		int v32;
+		int v33;
+
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		EventFlags.Set(899);
+		Actor.Hide(0);
+		Global2814(453, 1);
+		Player.GetGPos(v32, v33);
+		v16 = Player.GetDirection();
+		if (v16 == 0) {
+			v33 += 2;
+			goto LABEL_00c6;
+		}
+
+		LABEL_0069:
+		if (v16 == 1) {
+			v33 -= 2;
+			goto LABEL_00c6;
+		}
+
+		LABEL_0088:
+		if (v16 == 3) {
+			v32 -= 2;
+			goto LABEL_00c6;
+		}
+
+		LABEL_00a7:
+		if (v16 == 2) {
+			v32 += 2;
+			goto LABEL_00c6;
+		}
+
+		LABEL_00c6:
+		Actor.New(v32, v33, v16, 251, 15, 0);
+		ActionSequence_01cc(251);
+		Actor.WaitActionFinish();
+		Runtime.Sleep(16);
+		ActionSequence_01a4(255);
+		Actor.WaitActionFinish();
+		if (v16 == 0) {
+			ActionSequence_01b4(255);
+			goto LABEL_0170;
+		}
+
+		LABEL_010d:
+		if (v16 == 1) {
+			ActionSequence_01ac(255);
+			goto LABEL_0170;
+		}
+
+		LABEL_012e:
+		if (v16 == 3) {
+			ActionSequence_01bc(255);
+			goto LABEL_0170;
+		}
+
+		LABEL_014f:
+		if (v16 == 2) {
+			ActionSequence_01c4(255);
+			goto LABEL_0170;
+		}
+
+		LABEL_0170:
+		Actor.WaitActionFinish();
+		Message.ActorEx(1024, 0, 251, 0, 0);
+		Message.CloseAll();
+		ActionSequence_0220(251);
+		Actor.WaitActionFinish();
+		Actor.Hide(251);
+		EventWorks.Set(16499, 1);
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	static meta void ActionSequence_01a4(int npcId) : VActionSequence {
+		Action004b(1);
+	}
+
+	static meta void ActionSequence_01ac(int npcId) : VActionSequence {
+		Action0020(1);
+	}
+
+	static meta void ActionSequence_01b4(int npcId) : VActionSequence {
+		Action0021(1);
+	}
+
+	static meta void ActionSequence_01bc(int npcId) : VActionSequence {
+		Action0022(1);
+	}
+
+	static meta void ActionSequence_01c4(int npcId) : VActionSequence {
+		Action0023(1);
+	}
+
+	static meta void ActionSequence_01cc(int npcId) : VActionSequence {
+		Action0049(1);
+		Action0045(1);
+		Action003d(1);
+		Action0046(1);
+		Action003d(1);
+		Action0045(1);
+		Action003d(1);
+		Action0046(1);
+		Action003d(2);
+		Action0045(1);
+		Action003d(2);
+		Action0046(1);
+		Action003d(2);
+		Action0045(1);
+		Action003d(3);
+		Action0046(1);
+		Action003d(3);
+		Action0045(1);
+		Action003d(4);
+		Action0046(1);
+	}
+
+	static meta void ActionSequence_0220(int npcId) : VActionSequence {
+		Action0045(1);
+		Action003d(4);
+		Action0046(1);
+		Action003d(3);
+		Action0045(1);
+		Action003d(3);
+		Action0046(1);
+		Action003d(2);
+		Action0045(1);
+		Action003d(2);
+		Action0046(1);
+		Action003d(2);
+		Action0045(1);
+		Action003d(1);
+		Action0046(1);
+		Action003d(1);
+		Action0045(1);
+		Action003d(1);
+		Action0046(1);
+	}
+
+	static meta void Global2814(int a1, int a2) : VGlobalCall[2814];
+
+	static native void Action0020(int amount) : 0x20;
+	static native void Action0021(int amount) : 0x21;
+	static native void Action0022(int amount) : 0x22;
+	static native void Action0023(int amount) : 0x23;
+	static native void Action003d(int amount) : 0x3d;
+	static native void Action0045(int amount) : 0x45;
+	static native void Action0046(int amount) : 0x46;
+	static native void Action0049(int amount) : 0x49;
+	static native void Action004b(int amount) : 0x4b;
+}
