@@ -210,7 +210,7 @@ end
 exp share, Exp Share (given by Professor Juniper along with the gift Pokémon)
 end
 
-!items PokeMart (Natural Gift Berries)
+!items PokéMart (Natural Gift Berries)
 grepa berry, Tamato / Nomel / Hondew / Grepa / Pomeg / Kelpsy / Pinap / Rabuta / Magost / Cornn / Wepear / Bluk / Nanab / Pamtre / Spelon Berries
 end
 
@@ -384,7 +384,7 @@ end
 
 !trm 172/13
 
-### Leader Cheren
+## Leader Cheren
 !notif SPLIT END, Defeating Cheren locks you out the following content , #af74b3
 - Brock Miniboss (rewards TM94 Rock Smash, Berry Juices, Pledge Grove Encounter)
 - Blueberry Academy Trade 
@@ -528,7 +528,7 @@ end
 -
 !trm 179/21
 
-### Leader Roxie 
+## Leader Roxie 
 !notif SPLIT END, After defeating Roxie, you will be locked out of the following: , #af74b3
 - Misty Opt. Boss (rewards Pokémon Egg, Clear Amulet, Naive Mint, TM50 Water Pulse)
 - Virbank Complex Worker Quest (rewards Eviolite)
@@ -805,7 +805,7 @@ end
 
 !trm 737/30
 
-### Leader Burgh 
+## Leader Burgh 
 !notif SPLIT END, After defeating Burgh, you will be locked out of the following: , #af74b3
 - Surge Opt Boss (rewards Liberty Island encounter, TM89 U-Turn, Leftovers)
 - Castelia Alleyway (rewards Ability Capsule, Dancer Trade)
@@ -1141,7 +1141,7 @@ end
 
 !trm 209/39
 
-### Leader Elesa
+## Leader Elesa
 !notif SPLIT END, Defeating Elesa will lock you out of the following: , #af74b3
 - Erika Opt. Boss (Guards 2x of each resist berry, Deep Lostlorn Forest encounter)
 - Ingo and Emmet miniboss (Guards Anville Town encounter, Dragon Fang, Evolution Stone)
@@ -1312,7 +1312,7 @@ end
 !trm 319/45 Left Side 
 !trm 325/45 Right Side 
 
-### Leader Clay 
+## Leader Clay 
 !notif SPLIT END, Defeating Clay will lock you out of:  , #af74b3
 - Janine Opt. Boss (rewards Clay Tunnel encounter, 2x of each gem, 10x yellow shards)
 
@@ -1332,14 +1332,13 @@ end
 !items Items
 rocky helmet, Rocky Helmet (found near entrance)
 heart scale, 3x Heart Scales can be found by the Move Reminder.
-colress mchn, Proto Booster (reward for defeating Colress)
+colress mchn, Proto Booster (reward for defeating Colress) 
 old gateau, IV Enhancer (reward for defeating Colress)
 end
 
 ### Colress 
 !notif WARNING, "Proto" Items are dangerous devices designed by colress that boost a Pokémon's stats on switch in at the cost of their accuracy. Be careful! , #f26253
 !trm 739/48 Rewards 1x IV Enhancer, 1x Proto Booster
-
 
 
 ## Relic Passage: Skyla Split
@@ -1415,10 +1414,10 @@ end
 
 ## Route 6: Skyla Split
 !items Items
-lum berry, Lum Berries (x10) (Received at the Season Research Center)
-sitrus berry, Sitrus Berries (x10) (past the Scientist Tag Battle)
+hm water, HM06 Waterfall (Received at the Season Research Center)
+sitrus berry, x10 Sitrus Berries (past the Scientist Tag Battle)
 end
-!notif NOTE, Once you acquire the HM for surf, you can always surf on Water, even if no Pokémon in your party knows the move. 
+!notif NOTE, Once you acquire the HM for Waterfall, you can always Surf on Water, even if no Pokémon in your party knows the move. 
 
 !notif FIELD EFFECT, There is a Permanent Rainstorm in Route 6 , #4e86d4
 
@@ -1426,26 +1425,17 @@ end
 
 !trm 268/48
 
-!notif NOTE, After these two trainers, you can access the Season Research Center. See below for more details.
-
 !trm 263/48 Left Side 
 !trm 264/48 Right Side 
 
-!trm 292/49
+
+!trm 292/49 Choose One (Left Path)
+!trm 410/49 Choose One (Right Path, through doubles grass)
+
 
 ### School Kids Mara & Alvin (Mistralton Cave Gatekeepers)
 !tr 266/49 Left Side 
 !tr 265/49 Right Side 
-
-
-
-### Season Research Center 
-!notif NEW ENCOUNTER,  This is a new encounter location, but you must defeat Ranger Audra to access the tiles with encounters at the back of the room. , #469e62
-
-### Ranger Audra (Research Lab gatekeeper)
-!tr 410
-
-!enc 88 
 
 
 
@@ -1564,7 +1554,7 @@ end
 !trm 744/50 Choose One (Bottom)
 
 ### Fight #2B (Only Fought if you fought Ranger Briana)
-!trm 16/50 Choose One (Top)
+!trm 284/50 Choose One (Top)
 !trm 740/50 Choose One (Bottom)
 
 ### Fight #3
@@ -1592,12 +1582,14 @@ end
 
 ## Mistralton City 
 !items TM Shop 
-tm fire, TM48 Mystical Fire 
-tm normal, TM20 Hyper Voice 
+tm normal, TM27 Safeguard
+tm psychic, TM33 Reflect 
+tm psychic, TM16 Light Screen
 end 
 !items Items 
-red shard, x30 Red Shards (by the Planes)
-stable mulch, 1x Quirky, Sassy, Bold Mint (received from Juniper) 
+master ball, Master Ball (received from Juniper)
+stable mulch, 1x Sassy Mint (received from Juniper) 
+stable mulch, 1x Relaxed Mint (received from Juniper)
 end
 
 
@@ -1608,7 +1600,7 @@ end
 heart scale, Heart Scale (found past Sola & Ana)
 tm fairy, TM32 Dazzling Gleam (found past Sola & Ana)
 tm bug, TM89 U-Turn (past Harlequins)
-tm psychic, TM03 Psyshock (past Holly)
+weakness policy, x3 Blunder Policy (past Holly)
 end
 
 !tr 272/50 Left Side 
@@ -1627,37 +1619,43 @@ end
 ## Celestial Tower 
 !items Items 
 heart scale, 1x Heart Scale (past the Psychic Tag Battle)
-tm ghost, TM30 Shadow Ball (past Gentleman Daniel)
 tm psychic, TM29 Psychic (past Pokéfan Georgia)
-tm fairy, TM64 Teleport (past Pokéfan Jude)
+tm fairy, TM64 Teleport (past Gentleman)
+tm ghost, TM30 Shadow Ball (reward for Morty)
+ghost gem, x3 Ghost Gem (reward for Morty)
+kasib berry, x3 Kasib Berry (rewards for Morty)
 end
 
 !notif FIELD EFFECT, In Celestial Tower, Dark types only resist Psychic moves and Normal types only resist Ghost moves. , #4e86d4
+
+### Miniboss-Morty
+!notif SPLIT-LOCKED, Morty is an optional mini-boss that can only be fought before defeating Skyla. This content is locked off afterwards.  , #af74b3
+!tr 229/51 Guards TM30 Shadow Ball, Kasib Berries, Ghost Gems 
+
 ### Socialite Grace (Celestial Tower Gatekeeper)
 !tr 552/52 
 
 !enc 114 
 
-!tr 551/51 Guards TM30 Shadow Ball 
-
 !tr 549/51
 
 !tr 550/51 Guards TM29 Psychic 
 
-!tr 553/52 Left Side , guards Heart Scales
-!tr 554/52 Right Side, guards Heart Scales
+!tr 553/52 Left Side , guards Heart Scale
+!tr 554/52 Right Side, guards Heart Scale
 
 
 ### Sabrina
 !notif SPLIT-LOCKED, Sabrina is an optional mini-boss that can only be fought before defeating Skyla. This content is locked off afterwards.  , #af74b3
-!tr 769/54 Rewards TM61 Will-o-Wisp, Celestial Rooftop Encounter, Covert Cloak, x3 IV Enhancers, Rash Mint, Careful Mint
+!tr 769/54 Rewards Celestial Rooftop Encounter, Covert Cloak, x3 IV Enhancers, Rash Mint, Careful Mint
 
 
 
 ## Celestial Rooftop (only accessible by beating Sabrina)
 !items Sabrina Rewards 
 old gateau, 3x IV Enhancers 
-stable mulch, 1x Rash / Careful Mints
+stable mulch, 1x Rash Mint
+stable mulch, 1x Careful Mint
 covert cloak, Covert Cloak
 end 
 
@@ -1685,13 +1683,391 @@ end
 
 !trm 152/53
 
-### Leader Skyla 
+## Leader Skyla 
 !notif SPLIT END, Defeating Skyla will lock you out of the following content , #af74b3
 - Relic Sanctum Guardian (rewards a Life Orb)
 - Cobalion Side Quest (rewards Guidance Chamber encounter, Assault Vest)
 - Sabrina Miniboss (rewards Rash/Careful Mints, 3x IV Enhancers, Covert Cloak, Rooftop Encounter)
+- Roxanne Miniboss (rewards Ground Gems, Shuca Berries, TM28 Dig)
+- Morty Miniboss (rewards Ghost Gems, Kasib Berries, TM30 Shadow Ball)
 
 !trm 155/55 Rewards HM02 Fly 
 
 
+# Marlon Split (Level Cap 63, Optional Cap 59 for Alder)
+
+## Lentimas Town 
+!items PokéMart 
+dawn stone, Dawn Stone
+shiny stone, Shiny Stone
+dusk stone, Dusk Stone
+end
+!items Items 
+sitrus berry, x10 Sitrus Berry (Found on airfield)
+end
+
+!notif NOTE, Upon arriving in Lentimas Town, Bianca will head off to Pinwheel Forest to investigate rumors of Virizion. You can join her there whenever, but keep in mind it is a difficult challenge you likely won't be prepared for until later this split.
+
+## Lentimas Outskirts 
+
+!notif NEW ENCOUNTER, The exterior of the mountain is now a unique met location for encounters , #469e62
+
+!items Items 
+yellow shard, x5 Yellow Shard
+end
+
+### Back to Back 
+
+!trm 468 First of Back-to-Back
+!trm 467 Second of Back-to-Back
+
+!enc 48
+
+
+## Strange House 
+!notif SPLIT-LOCKED, The haunting of Strange House, and the optional fight with Fantina, can only be investigated prior to defeating Marlon , #af74b3 
+
+!items Items 
+tm fire, Will-o-Wisp TM (guarded by the gauntlet)
+red card, x5 Red Card
+white herb, x3 White Herb 
+kasib berry, x3 Trickster herb
+end
+
+!notif WARNING, This is a back to back to back battle with no heals in between , #f26253
+!tr 337 First of B2B2B
+!tr 247 Second of B2B2B
+!tr 62 Third of B2B2B
+
+!notif NOTE, This encounter is not available until you defeat the spirits of Strange House. 
+!enc 66
+
+
+## Reversal Mountain 
+!items Items 
+tm dragon, TM02 Dragon Claw 
+heart scale, x1 Heart Scale 
+red shard, x20 Red Shard 
+sitrus berry, x10 Sitrus Berries 
+tm fire, TM35 Flamethrower (Reward for defeating Flannery, can be fought after Benga leaves you)
+fire gem, x3 Fire Gem (Reward for defeating Flannery, can be fought after Benga leaves you)
+occa berry, x3 Occa Berry (Reward for defeating Flannery, can be fought after Benga leaves you)
+end
+
+!notif NOTE, Reversal Mountain is a distinct location from the exterior grass for met location. 
+
+!enc 49 
+
+!notif WARNING, Each pair of trainers in Reversal Mountain can be fought as either a Back to Back battle or a Tag battle. Benga will NOT heal you between the back to backs! , #f26253
+
+### Benga's Team 
+!trm 237 
+
+### Back to Back or Tag 
+!trm 521 (First)
+!trm 522 (Second)
+
+### Back to Back or Tag 
+!trm 516 (First)
+!trm 517 (Second)
+
+### Back to Back or Tag 
+!trm 672 (First)
+!trm 243 (Second)
+
+### Back to Back or Tag 
+!trm 524 (First)
+!trm 523 (Second)
+
+### Back to Back or Tag 
+!trm 788 (First)
+!trm 514 (Second)
+
+### Back to Back or Tag 
+!trm 519 (First)
+!trm 787 (Second)
+
+
+### Optional Mini-Boss: Flannery
+!notif SPLIT-LOCKED, Flannery, and her Rewards, can only be accessed prior to defeating Alder, #af74b3 
+!notif NOTE, Flannery cannot be fought until Benga leaves you after defeating all the other trainers in Reversal Mountain.
+
+!tr 559
+
+
+## Route 14 (Gauntlet)
+Route 14 is now a gauntlet of 3 trainer battles with an optional mini-boss for the brave. 
+There are several crossroads where you can choose one of two trainers to fight to progress. Plan your route accordingly
+
+!items Items 
+custap berry, x3 Custap Berry (found at the end of the gauntlet)
+tm flying, TM58 Hurricane (reward for defeating Falkner)
+flying gem, x3 Flying Gems (reward for defeating Falkner)
+coba berry, x3 Coba Berry (reward for defeating Falkner)
+old gateau, x1 IV Enhancer (reward for defeating Falkner)
+end
+
+!enc 122 
+
+### Fight #1: Backpackers 
+!trm 285 Choose One (North Path)
+
+!trm 259 Choose One (South Path)
+
+### Fight #2A (Only fought if you took the south path)
+!trm 283 Choose One (Right Waterfall)
+
+!trm 414 Choose One (South Waterfall)
+
+### Fight #2B (Only fought if you took the south path)
+!trm 281 Choose One (Left)
+
+!trm 282 Choose One (Right)
+
+### Fight #3 (A trainer waits at the bottom of each waterfall)
+!trm 245 Choose One (Northmost Waterfall)
+
+!trm 246 Choose One (Middle Waterfall)
+
+!trm 54 Choose One (Southmost Waterfall)
+
+### Optional Miniboss: Falkner (can only be fought within the gauntlet)
+Falkner can be found on the south path of the route after defeating the Veterans. He can only be encountered before the gauntlet is complete. 
+!tr 55 Optional, can only be fought within the gauntlet 
+
+
+### End of Gauntlet 
+
+
+
+## Undella Town 
+
+!notif NOTE, Undella Town has no Wild Pokémon encounters. Tourist activity has driven them away. 
+
+!notif NOTE, There is no rival battle with Hugh here. Instead, you must defeat Alder and his partner in a tag battle to open the path to Humilau City. 
+
+!items Items 
+repel, x3 Throat Spray (Blocked by Musician Kinsley)
+ability capsule, x1 Ability Patch (Guarded by B2B Fight)
+end
+
+!tr 232 Optional, Guards the Throat Sprays
+
+### Ability Patch Back-To-Back
+!notif SPLIT-LOCKED, The old couple will leave Undella Resort once you defeat Alder, locking off their reward  , #af74b3
+These trainers can be found in the northwestern villa and battle you as soon as you enter. Be careful! 
+
+!tr 278 First of B2B
+!tr 277 Second of B2B 
+
+## Alder Tag Battle 
+!notif SPLIT END, Defeating Alder will look you out of the following content, #af74b3
+- Strange House Gauntlet and Rewards (Will o Wisp TM, Encounter)
+- Flannery Miniboss in Reversal Mountain (rewards Fire Gems, TM35 Flamethrower, Occa Berry)
+- Undella Town B2B (rewards 1x Ability Patch)
+To access the Marine Tube and head towards your seventh gym badge, you must face Alder and his partner in a tag battle with Benga. 
+
+!notif FIELD EFFECT, Victini's Presence makes all moves 20% more accurate in this battle, regardless of if Victini is in battle, #4e86d4
+
+!trm 234 Benga's Team 
+
+!trm 582 Alder's Team 
+
+!trm 506 Victini's Team
+
+
+
+
+## Abundant Shrine 
+Abundant Shrine can be accessed immediately upon arriving in Undella, but the challenge faced here is best saved for the end of the split. 
+
+!notif FIELD EFFECT, There is permanent sun on Abundant Shrine , #4e86d4
+
+
+!notif SPLIT-LOCKED, Blaine is an optional mini-boss that can only be fought before defeating Marlon. This content is locked off afterwards.  , #af74b3
+
+### Blaine 
+!tr 770 
+
+!enc 123
+
+!items Items 
+rocky helmet, Ability Drill 
+old gateau, x3 IV Enhancer
+stable mulch, x1 Lonely Mint
+stable mulch, x1 Impish Mint
+end
+
+!notif ULTIMATE MOVE TUTOR, The ultimate tutor for starters can be found here and will teach Blast Burn, Frenzy Plant, and Hydro Cannon to starters. 
+
+
+
+## Marine Tube 
+Marine Tube is home to a vicious ambush from the shadow triad, seeking to eliminate the player as an obstacle to team plasma. 
+These will be a series of grueling battles using every underhanded trick in the book, be careful. 
+
+### Shadow Triad Ambush #1: Hax Tactics
+!trm 69 
+
+### Shadow Triad Ambush #2: Evasion Tactics
+!trm 233
+
+### Shadow Triad Ambush #3: Back to Back Assaults
+!trm 235 First of B2B 
+!trm 26 Second of B2B
+
+### Shadow Triad Ambush #4: Explosives!
+!trm 236
+
+### Shadow Triad Ambush #4: Binding
+!trm 250 
+
+### Final Shadow Triad Ambush: Triple Onslaught!
+!trm 113 First of B2B2B
+!trm 114 Second of B2B2B
+!trm 623 Third of B2B2B 
+
+!items Items 
+tm dark, TM12 Taunt (left by Shadow Triad after the first B2B)
+tm flying, TM62 Acrobatics (left by the Shadow Triad after the second B2B2B)
+end
+
+
+
+## Humilau Town 
+!items Items 
+shell bell, Shell Bell (behind Pokémon Center)
+heart scale, x1 Heart Scale (in middle of town shallows)
+blue shard, x5 Blue Shards (Northwest dock)
+ability capsule, x2 Ability Capsule (Defeat the B2B Trainers)
+end
+
+!notif MOVE TUTOR, The blue shard move tutor is in their original location, and teaches:
+- Double-Edge (2 shards)
+- Heal Pulse (2 shards)
+- Healing Wish (4 shards)
+- Lucky Chant (4 shards)
+- Synthesis (6 shards)
+- Roost (6 shards)
+- Head Smash (6 shards)
+- Helping Hand (6 shards)
+- Overheat (8 shards)
+- Outrage (8 shards)
+- Superpower (8 shards)
+- Rest (10 shards)
+- Toxic (10 shards)
+
+!notif NOTE, There are no wild Pokemon encounters in Humilau City. They've been scared off by the tourism!
+
+!notif FIELD EFFECT, There is permanent sun in Humilau City , #4e86d4
+
+
+### Humilau City B2B 
+!notif SPLIT-LOCKED, The tourists in Humilau City will leave after Marlon is defeated, locking off their rewards. , #af74b3 
+!tr 306 Back to Back (First Fight)
+!tr 307 Back to Back (Second Fight)
+
+
+### Swimmer Desiree (Route 21 Gatekeeper)
+!tr 311 
+
+## Route 21 
+!items Items 
+tm electric, TM24 Thunderbolt (requires beating either Swimmer Y or Swimmer Z)
+yellow shard, x10 Yellow Shard (requires beating Fisherman Sid)
+heart scale, x1 Heart Scale (found on the beach by Seaside Cave entrance)
+end
+
+!notif FIELD EFFECT, There is permanent sun on Route 21 , #4e86d4
+
+!enc 134
+
+### Thunderbolt Guardians (Choose one to Fight)
+!tr 310 (Choose One: Left)
+!tr 308 (Choose One: Right)
+
+!tr 309 (Guards access to the Sand Encounters & Heart Scale)
+
+!tr 312 (Guards access to the Yellow Shards on the beach)
+
+
+## Route 22
+!items Items 
+green shard, x30 Green Shard 
+eject button, x3 Eject Button (Blocked by Breeder M)
+sitrus berry, x10 Sitrus Berries (navigate the railings)
+end
+
+### Shel (Route 22 Gatekeeper)
+!tr 44 
+
+!enc 130
+
+
+!tr 333 (Gatekeeps Water Encounters and the Eject Buttons)
+
+
+
+## Pinwheel Forest 
+
+!notif SPLIT-LOCKED CONTENT, All the content in Pinwheel Forest can only be completed before Marlon is defeated. , #af74b3 
+
+!items Items 
+grass gem, x3 Grass Gem (Reward for defeating Gardenia)
+rindo berry, x3 Rindo Berry (Reward for defeating Gardenia)
+tm grass, TM53: Energy Ball (Reward for defeating Gardenia)
+bug gem, x3 Bug Gem  (Reward for defeating Bugsy)
+tanga berry, x3 Tanga Berry (Reward for defeating Bugsy)
+tm bug, TM45: Lunge (Reward for defeating Bugsy)
+choice specs, Choice Specs (Reward for defeating Virizion)
+end
+
+### Bugsy 
+!tr 326
+
+### Gardenia 
+!tr 538
+
+### Virizion 
+!notif FIELD EFFECT, Forest's Wrath: Enemies of Virizion that switch into battle are afflicted by leech seed. Does not affect Grass types, Pokémon wearing Safety Goggles, or Pokémon with the ability Overcoat.. , #4e86d4
+
+!tr 507
+
+!notif NOTE, Encounters will not spawn in Pinwheel Forest until Virizion is defeated. 
+!enc 9 
+
+
+## Humilau Gym 
+!items Items 
+absorb bulb, x3 Absorb Bulb (Given by Gym Guide upon entering)
+hm water, HM06 Dive (reward for defeating Marlon)
+end
+
+!notif FIELD EFFECT, There is permanent rain in Humilau Gym , #4e86d4
+
+!trm 350 
+
+!trm 351 
+
+!trm 352 
+
+!trm 353 
+
+!trm 354 
+
+!trm 355 
+
+## Leader Marlon
+!notif SPLIT END, Defeating Marlon will look you out of the following content, #af74b3
+- Gardenia Miniboss in Pinwheel Forest (rewards Grass Gems, TM53 Energy Ball, Rindo Berries)
+- Bugsy Miniboss in Pinwheel Forest (rewards Bug Gems, TM45 Lunge, Tanga Barries)
+- Virizion Side Quest in Pinwheel Forest (rewards Pinwheel Forest encounter, Choice Specs)
+- Blaine Miniboss (rewards Ability Drill, Bold/Lonely Mints, Abundant Shrine encounter, IV Enhancers, Starter Move Tutors)
+- Humilau City B2B (rewards 2x Ability Capsules)
+
+!trm 160 Rewards HM06 Dive 
+
+
 # End of Current Content
+
+### -

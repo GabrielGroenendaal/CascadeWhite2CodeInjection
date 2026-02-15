@@ -441,6 +441,7 @@ public class MainEvents {
 		Message.CloseActor();
 		Global2805(530, 1);
 		Global2805(294, 1);
+		Global2805(635, 1);
 		Message.ActorEx(1024, 33, 17, 0, 0);
 		Input.LastKeyWait();
 		EventWorks.Set(16470, 0);

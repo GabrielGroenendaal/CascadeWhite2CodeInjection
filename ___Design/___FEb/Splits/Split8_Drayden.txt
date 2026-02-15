@@ -43,6 +43,30 @@ Drayden Split begins when Marlon is defeated. It encompasses the stretch of cont
             
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ====================================================================================================================================================
 /*   SEASIDE CAVE   */
     
@@ -94,6 +118,28 @@ Drayden Split begins when Marlon is defeated. It encompasses the stretch of cont
     [ BATTLE GIRL MAKI (Heart Scale Gatekeeper) ]
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ====================================================================================================================================================
 /*   UNDELLA BAY   */
 
@@ -110,15 +156,14 @@ Drayden Split begins when Marlon is defeated. It encompasses the stretch of cont
             5% Spheal
 
         Surfing:
-            60% Delibird 
+            70% Delibird 
             30% Crawdaunt
-            10% Seadra
 
         Sand:
-            40% Crustle 
-            20% Krabby 
-            20% Tirtouga 
-            20% Anorith
+            70% Crustle 
+            10% Krabby 
+            10% Tirtouga 
+            10% Anorith
 
     [ SWIMMER M (Abyssal Ruins Gatekeeper) ]
         Doubles
@@ -128,6 +173,25 @@ Drayden Split begins when Marlon is defeated. It encompasses the stretch of cont
         Clefable 
 
         Sigilyph
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -152,6 +216,69 @@ Drayden Split begins when Marlon is defeated. It encompasses the stretch of cont
 
     [ STRANGE STATUE ]
 
+        Field Effect: Pre-Set Trick Room 
+
+        Wailord @ Leftovers
+        Ability: Truant 
+        Moves: 
+            - Whirlpool 
+            - Substitute 
+            - Gastro Acid 
+            - Aqua Ring
+        
+        Spiritomb @ Roseli Berry
+        Ability: Magic Guard
+        Moves: 
+            - Night Daze 
+            - Hyper Beam 
+            - Confuse Ray 
+            - Mean Look
+
+        Darmanitan-Z @ King's Rock
+        Ability: Sheer Force 
+        Moves: 
+            Diamond Storm 
+            Psychic 
+            Surf 
+            Energy Ball 
+        
+        Beheyeem @ Choice Specs 
+        Abiltiy: Inner Focus 
+        Moves: 
+            Psychic 
+
+        Wailord 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ====================================================================================================================================================
 /*   PLASMA FRIGATE   */
@@ -165,6 +292,32 @@ Drayden Split begins when Marlon is defeated. It encompasses the stretch of cont
     You will not be able to travel off the ship. If you white out you will respawn not at the last pokemon center. 
 
     Tbh we need to look at how this is CURRENTLY scripted. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ====================================================================================================================================================
@@ -227,6 +380,40 @@ Drayden Split begins when Marlon is defeated. It encompasses the stretch of cont
     [ TRAINERS]
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ====================================================================================================================================================
 /*   LACUNOSA TOWN   */
 
@@ -237,6 +424,38 @@ Drayden Split begins when Marlon is defeated. It encompasses the stretch of cont
     [ BENGA ]
         
     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ====================================================================================================================================================
 /*   ROUTE 12   */
     
@@ -275,6 +494,38 @@ Drayden Split begins when Marlon is defeated. It encompasses the stretch of cont
             10% Kricketune
     
     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ====================================================================================================================================================
 /*   VILLAGE BRIDGE   */
 
@@ -349,6 +600,38 @@ Drayden Split begins when Marlon is defeated. It encompasses the stretch of cont
     [ OPTIONAL TRAINERS ]
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ====================================================================================================================================================
 /*   ROUTE 11   */
 
@@ -375,6 +658,40 @@ Drayden Split begins when Marlon is defeated. It encompasses the stretch of cont
         Just one big fuck you gatekeeper trainer 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ====================================================================================================================================================
 /*   ROUTE 9   */
 
@@ -390,6 +707,46 @@ Drayden Split begins when Marlon is defeated. It encompasses the stretch of cont
 
     [ GATEKEEPER TRAINER ]
         Roughnecks X and Y 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ====================================================================================================================================================
@@ -438,6 +795,46 @@ Drayden Split begins when Marlon is defeated. It encompasses the stretch of cont
         Eevee (mascot badge, savant)
         Alakazam (focus sash, magic guard)
         Gyarados (choice specs)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ====================================================================================================================================================
@@ -495,6 +892,45 @@ Drayden Split begins when Marlon is defeated. It encompasses the stretch of cont
             Rollout
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ====================================================================================================================================================
 /*   TWIST MOUNTAIN   */
 
@@ -522,6 +958,34 @@ Drayden Split begins when Marlon is defeated. It encompasses the stretch of cont
             10%
             10%
             10%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ====================================================================================================================================================

@@ -64,6 +64,27 @@ const u16 BulletproofMoves[21] = {
     MOVE311_WEATHER_BALL,
     MOVE192_ZAP_CANNON};
 
+    const u16 teraItems[19] = {
+        IT0215_TERA_BADGE,
+        IT0298_TERA_SPECS,
+        IT0299_TERA_C_BAND,
+        IT0300_TERA_SCARF,
+        IT0301_TERA_ORB,
+        IT0302_TERA_SASH,
+        IT0303_TERA_F_BAND,
+        IT0304_TERA_CLAW,
+        IT0305_TERA_W_POLICY,
+        IT0306_TERA_B_POLICY,
+        IT0307_TERA_POWDER,
+        IT0308_TERA_VEST,
+        IT0309_TERA_INSURANCE,
+        IT0310_TERA_DRILL,
+        IT0311_TERA_LEFTOVERS,
+        IT0312_TERA_DICE,
+        IT0313_TERA_K_ROCK,
+        IT0544_TERA_PLATE,
+        IT0228_TERA_GEM,
+    };
 const int FLAIL_POWER_TABLE[6] = {
     0xC80001, 0x960004, 0x640009, 0x500010, 0x280020, 0x140030};
 
@@ -402,7 +423,7 @@ extern "C"
         {
             return FIELD_TRICK_ROOM;
         }
-        if (zoneId == 537 || zoneId == 538 || zoneId == 539 || zoneId == 540 || zoneId == 541 || zoneId == 542 || zoneId == 461 || zoneId == 376 || zoneId == 589)
+        if (zoneId == 463 || zoneId == 465 || zoneId == 376)
         {
             return FIELD_SUN;
         }
@@ -2256,6 +2277,18 @@ extern "C"
         else if (BattleMon_GetValue(a1, VALUE_EFFECTIVE_ABILITY) == ABIL145_SAVANT)
         {
             return a3 + (a3 >> 1);
+        }
+        else if (BattleMon_CheckIfMoveCondition(a1, CONDITION_TERA) || SEARCH_ARRAY(teraItems, a1->HeldItem))
+        {
+            if (a2 == PML_PersonalGetParamSingle(a1->Species, a1->Form, Personal_Type1) || a2 == PML_PersonalGetParamSingle(a1->Species, a1->Form, Personal_Type2)){
+                return a3 + (a3 >> 1);
+            } 
+            if (a2 == PML_MoveGetType(Move_GetID(a1, 0))){
+                return a3 + (a3 >> 1);
+            } 
+            else {
+                return a3;
+            }
         }
         else
         {

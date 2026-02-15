@@ -4,19 +4,19 @@
 
 > - **Crobat Line** is getting Strong Body in Ability Slot 1, as Infiltrator becomes the Hidden Ability. Sniper becomes AI Only. 
 > - **Aipom and Ambipom** lose their Attack buff. 
-> - **Hoppip, Skiploom, and Jumpluff** are losing 10 Attack.
-> - **Mime Jr. and Mr. Mime** are losing 10 HP. Substitute and Doubleslap have swapped positions in their learnset. 
+> - **Hoppip, Skiploom, and Jumpluff's** Ability 2 is now Infiltrator, not Sap Sipper. 
+> - **Mime Jr. and Mr. Mime** are losing 5 HP. Substitute and Doubleslap have swapped positions in their learnset. 
 > - **Goldeen and Seaking** have Facade swapped positions with Double-Edge in their learnset. 
 > - **Hitmontop** is losing 10 HP and 10 Defense
 > - **Hitmonlee** is losing 20 HP and having it redistributed to Defense. Also losing 10 Special Defense 
 > - **Hitmonchan** is losing 10 Speed 
-> - **Dewgong** is losing 5 SpA. 
-> - **Slowking** is losing 10 SpA 
-> - **Slowbro** is losing 10 Atk
-> - **Scyther** is losing 10 HP. It now gets Acrobatics instead of Dual Wingbeat at level 53.
+> - **Dewgong** is losing 5 SpA. Their hidden ability is now Thick Fat.
+> - **Scyther** is losing 10 HP. It now gets Acrobatics instead of Dual Wingbeat at level 53. Dual Wingbeat is a scale move.
 > - **Scizor** is losing 10 Defense. 
 > - **Whimsicott** is losing 10 Atk and 10 Defense. Infiltrator becomes its new Hidden Ability, over Merciless. 
 > - **Cottonee** now evolves at level 42, or with a Sun Stone.
+> - **Lilligant** loses 5 Defense and Special Defense. 
+> - **Petilil** now evolves at level 42 or with a Sun Stone.
 > - **Scolipede Line** swaps ability positions for Speed Boost and Strong Body
 > - **Krokorok** loses 10 Atk. 
 > - **Krookadile Line** learns earthquake at 45, and Cross Chop at 48. 
@@ -28,10 +28,8 @@
 > - **Jellicent** gains +20 Defense. 
 > - **Druddigon** swaps Ability Slots for Battle Armor and Sheer Force. 
 > - **Golurk** loses 15 Speed. 
-> - **Kricketot** loses all its buffs (it cannot be acquired anyways)
-> - **Floatzel** loses 5 Atk and 5 SpA. 
-> - **Swellow** loses 10 Atk. Taillow gains +10 Special Attack. 
-> - **Breloom** loses 10 Speed. 
+> - **Swellow** loses 10 Atk and gains +5 SpA. Taillow gains +10 Special Attack. 
+> - **Breloom** loses 10 Defense and Speed. 
 > - **Hariyama** has Lucky Chant and Wide Guard swapped in the learnset.
 > - **Carvanah and Sharpedo** have ability slots 2 and 3 swapped, making Strong Jaw the new hidden ability. 
 > - **Spinda** loses 5 in each stat. 
@@ -39,120 +37,86 @@
 > - **Glalie** loses the -20 to Special Attack. 
 > - **Froslass** gains +20 to Attack. 
 > - **Spinarak / Ariados** lose 5 Atk. 
-> - **Natu and Xatu** lose 10 and 5 SpA, respectively. 
 > - **Corsola** loses 10 Atk.
-> - **Diglett & Dugtrio** lose 10 Atk 
 > - **Riolu** now evolves to Lucario via use of a Dawn Stone or at level 50. Riolu consequently learns Spike Cannon at level 46. 
-> - **Ninjask** loses 10 Atk 
-> - **Venusaur** loses Swords Dance at level 58. Gets Growth Instead. 
+> - **Venusaur** loses Swords Dance at level 58. Gets Growth Instead. At level 3 they learn Poisonpowder.
 > - **Serperior Line** swaps Positions for Focus Energy and Hyper Beam. They learn Power Whip at level 42 instead of Seething Cold. 
 > - **Serperior Line** learns Leaf Blade at level 27 instead of Giga Drain, which is pushed back to level 46. Flame Burst is replaced with Seething Cold. 
-> - **Mothim** gets Sap Sipper over Tenacity. Tenacity becomes the Hidden Ability. 
+> - **Mothim** gets Attack Order at level 55. 
+> - **Burmy** can evolve into Wormadam-Trash using a Thunderstone.
+> - **Magcargo's** Hidden Ability is now Shell Armor. 
+> - **Luvdisc** ability one is now Rivalry instead of Water Absorb. 
+> - **Flygon Line** replaces Tenacity with Sand Rush.
+> - **Typhlosion Line** loses Flash Fire, gains Sand Rush in that spot instead. 
+> - **Plusle's** abilities are now Distracting, Friend Guard, Trace
+> - **Minun's** abilities are now Distracting, Healer, Trace
+> - **Huntail's** hidden ability is now Strong Jaw. 
+> - **Voltorb Line** now has Unnerve instead of Volt Absorb. 
+> - **Rapidash Line** now has Run Away as ability 1, swapped position with Flash Fire. They now learn Endure at 23 instead of Heal Pulse. 
+> - **Houndoom Line** swaps ability slots between Unnerve and Flash Fire. 
+> - **Poliwag Line** now swapped position for Ability 1 and 3; Water Absorb is HA. 
+> - **Seismitoad Line** now swapped Position for Ability 1 and 3; Water Absorb is now HA.
+> - **Quagsire Line** swaps positions between Gooey and Water Absorb.
+
 
 
 ====================================================================================================================================================
 /*   IMMUNITY ABILITIES    */
-
-    Immunity Abilities are very powerful. We implemented a bunch of ways to punish them; Trapping, Ability Drill, buffed Mold Breaker, 
-    Attack insurance, Blunder Policy, Anger Point, failure boosted moves. But they might not be enough. 
-
-    I think specifically Fire and Water Immunities likely need to come down. Luvdisc doesn't need it, Stunfisk can have it as an HA
-    
-    The most egregious immunities: 
-
-        Stunfisk 
-        Typhlosion 
-        Jumpluff 
-        Emolga (with Motor Drive being the issue)
-    
     Water Immunities: 
-        BEFORE
+        NEW: (Ability: 12 | HA: 10 | Total: 22)
             Ability 1/2:
-                Poliwag Line (Ability 1)
-                Vaporeon (ability 1)
-                Quagsire (ability 1)
-                Mantine (Ability 1)
-                Gastrodon (ability 1)
-                Cradily (ability 1)
-                Cacturne (Ability 1)
-                Luvdisc (ability 1)
-                maractus (ability 1, soon to be HA)
-                Frillish (ability 1)
-                Armaldo (ability 1)
-                Parasect (ability 1)
-                Toxicroak (ability 1)
-                Jynx (ability 2)
-                Seismitoad (ability 1)
-                Simipour (ability 2)
-                Stunfisk (ability 1)
-            
-            HA:
-                Grimer (HA)
-                Lanturn (HA)
-                Magcargo (HA)
-                Corsola (HA)
-                Lumineon (HA)
-                Accelgor (ability 3)    
-
-        AFTER: 
-            Ability 1/2:
-                Vaporeon 
+                Vaporeon  
+                Mantine 
+                Gastrodon 
+                Cradily 
+                Cacturne 
+                Frillish 
+                Armaldo 
+                Parasect
+                Toxicroak 
+                Stunfisk
+                Jynx
+                Simipour
             
             HA: 
+                Quagsire
+                Poliwag
+                Seismitoad
+                Maractus
+                Corsola 
+                Accelgor 
+                Lanturn 
+                Corsola 
+                Lumineon 
+                Muk 
+
+            Removed: 
+                Magcargo 
+                Luvdisc 
 
     Electric Immunities:
-        BEFORE: 
-            Ability 1/2:
-                Lanturn (ability 1)
-                Electrode (ability 2)
-                Plusle (Move Volt Absorb to HA, make Distracting the other ability)
-                Seaking (This one is fine)
-                Electivire (This one is fine)
-                Minun (Move Motor Drive to HA, make Healer the other ability)
-                Rotom-Fan (this one is fine; rare encounter) 
-                Emolga (this one might be a problem but it's also a huge part of its identity and its rare)
-                Jolteon (this one is fine, maybe volt absorb instead tho)
-                Pikachu (this one is fine)
-                Swellow (this one is fine)
-            
-            HA:    
-                Huntail
-                Manectric
-                Klinklang
-
-        AFTER: 
+        AFTER: (Ability: 8 | HA: 2 | Total: 10)
             Ability 1/2:
                 Lanturn 
                 Seaking 
-                Electivire 
+                Electivire
                 Pikachu 
                 Swellow 
+                Emolga
                 Jolteon (very rare)
-                Electrode (very rare)
                 Rotom-Fan (very rare)
             
             HA:
-                Huntail
-                Dewgong 
                 Klinklang
-                Plusle
-                Minun 
+                Manectric
 
+            Removed: 
+                Minun, Plusle, Pachirisu, Electrode, Huntail 
 
     Fire Immunities:
-        I like what I did with a lot of these where the first stage ability is Flash Fire then it becomes something else. I might want to explore that more.
-
-        Claydol is definitely fine. 
-
-        Typhlosion is probably the strongest abuser here with ground typing to obliterate most fire types. 
-
-        Sunflora has a cute niche of walling most fire types tbh that i think is worth keeeping. 
-
-        Typhlosion can definitely replace Flash Fire with Sand Rush. That's 100% fine even if it's ability that requires a bit of explanation. 
-
         BEFORE: 
             Ability 1/2:
-                Ninetales (Swap Positions with Serene Grace)
+                Ninetales 
                 Rapidash (Swap Positions with Run Away, Add Endure to learnset)
                 Typhlosion (replace Flash Fire with Sand Rush)
                 Sunflora (swap positions with Chlorophyll)
@@ -169,49 +133,27 @@
                 Heatmor 
                 Claydol 
                 Chandelure
-            
-            HA:
-                Ninetales 
-                Rapidash
-                Chandelure 
-                Golurk 
+                Ninetales
                 Sunflora 
+
+            HA: 
+                Rapidash 
+                Golurk 
                 Simisear
                 Houndoom 
     
     Grass Immunities: 
-        These are mostly fine but I think have a big issue with Jumpluff specifically of creating sweeps with attack boosts and encore. 
-        This could be solved by turning Sap Sipper into an healing effect. Another idea is making Sap Sipper / Storm Drain function like flash fire, but that could be more messy 
-        Encore is the biggest issue here tbh. 
-
-        I think we just replace it wholesale on Jumpluff with Infiltrator. Either that or it needs to losee encore. 
-
-        BEFORE
-            Ability 1/2:
-                Seaking (this one is probably fine)
-                Azumarill (this one is probably fine)
-                Leafeon (this one is probably fine, just get rid of encore)
-                Jumpluff (this is probably the most egregious one due to encore + flying typing)
-                Girafirig  (maybe swap sap sipper and slush rush positions)
-                Stantler (maybe swap sap sipper and slush rush positions)
-                Gastrodon East (this one is probably fine)
-                Bouffalant (this one is really strong but also super rare so it's probably fine)
-                Simisage 
-            
-            HA:
-                Sudowoodo 
-
         AFTER:
             Ability 1/2
                 Seaking 
                 Azumarill 
                 Leafeon 
                 Bouffalant 
-                Gastrodon  
+                Gastrodon-East  
                 Girafirig 
+                Ninetales
             
             HA:
-                Stantler 
                 Sudowoodo 
                 Simisage
 

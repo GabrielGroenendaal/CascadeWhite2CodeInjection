@@ -604,16 +604,16 @@ extern "C"
     ToggledEncounters toggleEncounters[12] = {
         {613, 16451, 2}, // Cobalion Encounter Enabling
         {155, 16472, 2}, // Virizion Encounter Enabling
-        {346, 16474, 2}, // Keldeo State Tracking
-        {198, 16476, 2}, // Terrakion State Tracking
-        {199, 16476, 2}, // Terrakion State Tracking
-        {200, 16476, 2}, // Terrakion State Tracking
-        {201, 16476, 2}, // Terrakion State Tracking
-        {202, 16476, 2}, // Terrakion State Tracking
-        {203, 16476, 2}, // Terrakion State Tracking
-        {204, 16476, 2}, // Terrakion State Tracking
-        {298, 16476, 2}, // Terrakion State Tracking
-        {509, 16476, 2}, // Terrakion State Tracking
+        // {346, 16474, 2}, // Keldeo State Tracking
+        // {198, 16476, 2}, // Terrakion State Tracking
+        // {199, 16476, 2}, // Terrakion State Tracking
+        // {200, 16476, 2}, // Terrakion State Tracking
+        // {201, 16476, 2}, // Terrakion State Tracking
+        // {202, 16476, 2}, // Terrakion State Tracking
+        // {203, 16476, 2}, // Terrakion State Tracking
+        // {204, 16476, 2}, // Terrakion State Tracking
+        // {298, 16476, 2}, // Terrakion State Tracking
+        // {509, 16476, 2}, // Terrakion State Tracking
     };
 
     const u16 draydenSplitDisabledEncounterZones[7] = {
@@ -788,7 +788,7 @@ extern "C"
     {
         BagSaveData *Bag;
         Bag = GameData_GetBag(wk->m_GameData);
-        return (BagSave_GetItemCountByID(Bag, 422) != 0);
+        return (BagSave_GetItemCountByID(Bag, 424) != 0);
     }
 
     b32 THUMB_BRANCH_PML_MoveIsHM(u16 moveNum)

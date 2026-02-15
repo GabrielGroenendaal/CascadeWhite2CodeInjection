@@ -189,6 +189,17 @@ label9: ;
     Storec0xD3(0x8028);
 	Compare(0x8028, 613);
 	if (1) goto label_DisablingFlight;
+	Storec0xD3(0x8028);
+	Compare(0x8028, 538);
+	if (1) goto label_DisablingFlight;
+	Compare(0x8028, 539);
+	if (1) goto label_DisablingFlight;
+	Compare(0x8028, 540);
+	if (1) goto label_DisablingFlight;
+	Compare(0x8028, 541);
+	if (1) goto label_DisablingFlight;
+	Compare(0x8028, 542);
+	if (1) goto label_DisablingFlight;
 	AddDialogueOption(86, 0xFFFF, 86);
 
 label_DisablingFlight: ;
@@ -1187,7 +1198,20 @@ label_skipMistralton: ;
 	AddDialogueOption(97, 0xFFFF, 458);
 
 label_skipLentimas: ;
+// ======== LENTIMAS TOWN ======== */
+	SetVarFlagStatus(545, 0x8030);
+	Compare(0x8030, 0);
+	if (1) goto label_skipLentimas;
+	AddDialogueOption(98, 0xFFFF, 412);
 
+label_skipUndella: ;
+// ======== LENTIMAS TOWN ======== */
+	SetVarFlagStatus(544, 0x8030);
+	Compare(0x8030, 0);
+	if (1) goto label_skipLentimas;
+	AddDialogueOption(174, 0xFFFF, 465);
+
+label_skipHumilau: ;
 	AddDialogueOption(112, 0xFFFF, 112);
 	ShowDialogueSelection2();
 	CloseEventGreyMessage();
@@ -1235,6 +1259,10 @@ label_letsFly: ;
 	if (1) goto label_mapMistralton;
 	Compare(0x8029, 458);
 	if (1) goto label_mapLentimas;
+	Compare(0x8029, 412);
+	if (1) goto label_mapUndella;
+	Compare(0x8029, 465);
+	if (1) goto label_mapHumilau;
 	goto label_goBack;
 
 label_mapAspertia: ;
@@ -1278,6 +1306,13 @@ label_mapLentimas: ;
 	c0x28A(458, 1);
 	goto label_travelOptions;
 
+label_mapUndella: ;
+	c0x28A(412, 1);
+	goto label_travelOptions;
+
+label_mapHumilau: ;
+	c0x28A(465, 1);
+	goto label_travelOptions;
 
 label_goBack: ;
 	Return();

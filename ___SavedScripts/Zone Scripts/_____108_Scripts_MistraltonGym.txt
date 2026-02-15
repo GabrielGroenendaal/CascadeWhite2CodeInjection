@@ -253,6 +253,9 @@ public class MainEvents {
 	static void clearGatekeepers(){
 		// Cobalion Disable
 		EventFlags.Set(923);
+
+		// Miniboss Disable
+		EventFlags.Set(542);
 		
 		// Clears Roods first position
 		if (!EventFlags.Get(520)){
@@ -261,6 +264,16 @@ public class MainEvents {
 		// Clears Roods second position
 		if (!EventFlags.Get(517)){
 			EventFlags.Set(517);
+		}
+		// Clears Roxanne
+		if (!EventFlags.Get(1520 + 228)){
+			EventFlags.Set(1404);
+			EventFlags.Set(1406);
+		}
+		// Clears Morty 
+		if (!EventFlags.Get(1520 + 229)){
+			EventFlags.Set(1175);
+			EventFlags.Set(1185);
 		}
 		// Clears the Event Flag Tracking
 		if (EventWorks.Get(16450) < 7){

@@ -207,7 +207,7 @@ extern "C"
                 a1 == IT0304_TERA_CLAW ||
                 a1 == IT0217_QUICK_CLAW ||
                 a1 == IT0281_BLACK_SLUDGE ||
-                a1 == IT0228_TERA_GEM || 
+                a1 == IT0228_TERA_GEM ||
                 a1 == IT0234_LEFTOVERS ||
                 a1 == IT0311_TERA_LEFTOVERS || a1 == IT0255_ATTACK_INSURANCE || a1 == IT0309_TERA_INSURANCE);
     }
@@ -903,13 +903,16 @@ extern "C"
         {
             BattleMon = Handler_GetBattleMon(a1, a2);
             v7 = DivideMaxHp(BattleMon, 3u);
-            if (BattleMon_GetValue(BattleMon, VALUE_CURRENT_HP) <= v7 && a3 == BattleEventVar_GetValue(VAR_MOVE_TYPE))
+            if (a3 == BattleEventVar_GetValue(VAR_MOVE_TYPE))
             {
-                BattleEventVar_MulValue(VAR_RATIO, 6144);
-            }
-            else
-            {
-                BattleEventVar_MulValue(VAR_RATIO, 5120);
+                if (BattleMon_GetValue(BattleMon, VALUE_CURRENT_HP) <= v7)
+                {
+                    BattleEventVar_MulValue(VAR_RATIO, 6144);
+                }
+                else
+                {
+                    BattleEventVar_MulValue(VAR_RATIO, 5120);
+                }
             }
         }
     }
@@ -2760,7 +2763,7 @@ extern "C"
     ABILITY_TRIGGERTABLE RefrigerateHandlers[] = {
         {EVENT_MOVE_PARAM, (ABILITY_HANDLER_FUNC)HandlerRefrigerateType}, // 22
         {EVENT_ATTACKER_POWER, (ABILITY_HANDLER_FUNC)HandlerAtePower}};
-    
+
     ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddTelepathy(_DWORD *a1)
     {
         *a1 = 2;
@@ -3742,9 +3745,9 @@ extern "C"
         BattleMon *mon;
         mon = Handler_GetBattleMon(a1, a2);
         TurnFlag_Set(mon, TURNFLAG_MOVEFAILED);
-        v6 = HEManager_PushState((int*)&a1->heManager);
+        v6 = HEManager_PushState((int *)&a1->heManager);
         ServerEvent_MoveUseEnd_Common(a1, a2, a3, EVENT_MOVE_EXECUTE_NOEFFECT);
-        HEManager_PopState((int*)&a1->heManager, v6);
+        HEManager_PopState((int *)&a1->heManager, v6);
     }
 
     void THUMB_BRANCH_ServerEvent_CheckMoveExecuteFail(ServerFlow *a1, BattleMon *a2, int a3, int a4)

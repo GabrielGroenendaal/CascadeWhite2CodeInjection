@@ -622,6 +622,7 @@ extern void SCQueue_AddCommon(void *a1, int a2, ...);
 extern void BattleField_TurnCheck(void* a1, ServerFlow *a2);
 extern void* TurnCheckCallback_Field;
 extern int HandlerThunderFlyCheck(int a1, int a2, int a3);
+extern u32 PML_PersonalGetParamSingle(u16 species, u16 form, PersonalField field);
 extern void CommonStatDropGuardCheck(ServerFlow *serverFlow, u32 pokemonSlot, u32 *work, u32 moveEffect);
 extern bool ServerControl_ChangeWeatherCheck(ServerFlow *a1, unsigned int a2, int a3); 
 extern void HandlerMoldBreakerSwitchIn(int a1, ServerFlow *a2, unsigned int *a3);

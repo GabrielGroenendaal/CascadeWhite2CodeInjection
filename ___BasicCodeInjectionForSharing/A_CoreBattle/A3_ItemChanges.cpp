@@ -125,7 +125,7 @@ extern "C"
 #if DEBUGGING_ITEMS && DEBUGGING_ALL
         k::Printf("\nThe total bst calculated is %d\n", bst);
 #endif
-        if (bst < 400)
+        if (bst < 450)
         {
             return true;
         }
@@ -160,7 +160,7 @@ extern "C"
         {
             if (checkBSTLowerThan400(serverFlow, pokemonSlot))
             {
-                BattleEventVar_MulValue(VAR_RATIO, 8192);
+                BattleEventVar_MulValue(VAR_RATIO, 6144);
             }
         }
     }
@@ -1096,7 +1096,7 @@ extern "C"
 
             damage = (HandlerParam_Damage *)BattleHandler_PushWork(a2, EFFECT_DAMAGE, pokemonSlot);
             damage->pokeID = BattleEventVar_GetValue(VAR_DEFENDING_MON);
-            damage->damage = DivideMaxHPZeroCheck(defendingMon, 8u);
+            damage->damage = DivideMaxHPZeroCheck(defendingMon, 4u);
             BattleHandler_StrSetup(&damage->exStr, 2u, 1237);
             BattleHandler_AddArg(&damage->exStr, damage->pokeID);
             BattleHandler_PopWork(a2, damage);

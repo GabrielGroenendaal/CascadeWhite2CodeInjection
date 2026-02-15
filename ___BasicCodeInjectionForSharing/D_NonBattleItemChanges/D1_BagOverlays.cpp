@@ -429,6 +429,28 @@ extern "C"
                 return;
             }
         }
+        if (PokeParty_GetParam(pkm, PF_Species, 0) == 412)
+        {
+            // Thunderstone Stone
+            if (itmID == 83)
+            {
+                PokeParty_ChangeForme(pkm, 2);
+            }
+            // Fire Stone
+            else if (itmID == 82)
+            {
+                PokeParty_ChangeForme(pkm, 1);
+            }
+            // Leaf Stone
+            else if (itmID == 85)
+            {
+                PokeParty_ChangeForme(pkm, 0);
+            }
+            else
+            {
+                return;
+            }
+        }
         return;
     }
 

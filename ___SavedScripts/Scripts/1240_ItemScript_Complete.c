@@ -1305,24 +1305,24 @@ void Sequence109()
 	End();
 }
 
-/* CELESTIAL TOWER - SHADOW BALL */
+/* LENTIMAS TOWN - SITRUS BERRIES X10 */
 void Sequence110()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 357);
-	SetVarEqVal(0x800D, 1);
+	SetVarEqVal(0x800C, 158);
+	SetVarEqVal(0x800D, 10);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
 	End();
 }
 
-// SPELL TAG
+/* RED CARD X5 - STRANGE HOUSE */
 void Sequence111()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 247);
-	SetVarEqVal(0x800D, 1);
+	SetVarEqVal(0x800C, 542);
+	SetVarEqVal(0x800D, 5);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -1340,23 +1340,24 @@ void Sequence112()
 	End();
 }
 
-// DUSK STONE
+// Trickster Herb x3 - Strange House
 void Sequence113()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 108);
-	SetVarEqVal(0x800D, 1);
+	SetVarEqVal(0x800C, 136);
+	SetVarEqVal(0x800D, 3);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
 	End();
 }
 
+/* WHITE HERB x3 - Strange House */
 void Sequence114()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 27);
-	SetVarEqVal(0x800D, 1);
+	SetVarEqVal(0x800C, 214);
+	SetVarEqVal(0x800D, 3);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -1374,33 +1375,36 @@ void Sequence115()
 	End();
 }
 
+/* LENTIMAS OUTSKIRTS - YELLOW SHARD X5 */
 void Sequence116()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 27);
-	SetVarEqVal(0x800D, 1);
+	SetVarEqVal(0x800C, 74);
+	SetVarEqVal(0x800D, 5);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
 	End();
 }
 
+/* REVERSAL MOUNTAIN - FIRE GEM X3 */
 void Sequence117()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 228);
-	SetVarEqVal(0x800D, 1);
+	SetVarEqVal(0x800C, 548);
+	SetVarEqVal(0x800D, 3);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
 	End();
 }
 
+/* REVERSAL MOUNTAIN - RED SHARD X10 */
 void Sequence118()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 77);
-	SetVarEqVal(0x800D, 1);
+	SetVarEqVal(0x800C, 72);
+	SetVarEqVal(0x800D, 10);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -1418,44 +1422,47 @@ void Sequence119()
 	End();
 }
 
+/* REVERSAL MOUNTAIN - RED SHARD X10 */
 void Sequence120()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 396);
-	SetVarEqVal(0x800D, 1);
+	SetVarEqVal(0x800C, 72);
+	SetVarEqVal(0x800D, 10);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
 	End();
 }
 
+/* HEART SCAEL X1 - REVERSAL MOUNTAIN */
 void Sequence121()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 51);
+	SetVarEqVal(0x800C, 93);
 	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
 	End();
 }
-
+/* 10x Sitrus Berries - Reversal Mountain */
 void Sequence122()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 92);
-	SetVarEqVal(0x800D, 1);
+	SetVarEqVal(0x800C, 158);
+	SetVarEqVal(0x800D, 10);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
 	End();
 }
 
+/* REVERSAL MOUNTAIN - lum berries */
 void Sequence123()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 25);
-	SetVarEqVal(0x800D, 1);
+	SetVarEqVal(0x800C, 157);
+	SetVarEqVal(0x800D, 10);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -1473,10 +1480,11 @@ void Sequence124()
 	End();
 }
 
+/* tm02 dragon claw - reversal mountain */
 void Sequence125()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 273);
+	SetVarEqVal(0x800C, 329);
 	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
@@ -1484,11 +1492,12 @@ void Sequence125()
 	End();
 }
 
+/* Throat Spray x3 - Undella Town */
 void Sequence126()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 43);
-	SetVarEqVal(0x800D, 1);
+	SetVarEqVal(0x800C, 112);
+	SetVarEqVal(0x800D, 3);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -1517,10 +1526,11 @@ void Sequence128()
 	End();
 }
 
+/* IV Enhancer - Route 14*/
 void Sequence129()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 89);
+	SetVarEqVal(0x800C, 530);
 	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
@@ -1528,11 +1538,12 @@ void Sequence129()
 	End();
 }
 
+/* FLYING GEM x3 - Route 14 */
 void Sequence130()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 93);
-	SetVarEqVal(0x800D, 1);
+	SetVarEqVal(0x800C, 556);
+	SetVarEqVal(0x800D, 3);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -1549,12 +1560,12 @@ void Sequence131()
 	UnlockAll();
 	End();
 }
-
+/* Coba Berry x3 - Route 14 */
 void Sequence132()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 92);
-	SetVarEqVal(0x800D, 1);
+	SetVarEqVal(0x800C, 192);
+	SetVarEqVal(0x800D, 3);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -1891,10 +1902,11 @@ void Sequence162()
 	End();
 }
 
+/* HEART SCALE X1 - Humilau */
 void Sequence163()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 7);
+	SetVarEqVal(0x800C, 93);
 	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
@@ -1902,11 +1914,12 @@ void Sequence163()
 	End();
 }
 
+/* BLUE SHARD X5 - humilau */
 void Sequence164()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 46);
-	SetVarEqVal(0x800D, 1);
+	SetVarEqVal(0x800C, 73);
+	SetVarEqVal(0x800D, 5);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -1946,10 +1959,11 @@ void Sequence167()
 	End();
 }
 
+/* HEART SCALE X1 - Route 21 */
 void Sequence168()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 77);
+	SetVarEqVal(0x800C, 93);
 	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
@@ -1957,10 +1971,11 @@ void Sequence168()
 	End();
 }
 
+/* TM24: THUNDERBOLT - route 21 */
 void Sequence169()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 89);
+	SetVarEqVal(0x800C, 351);
 	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
@@ -1968,17 +1983,19 @@ void Sequence169()
 	End();
 }
 
+/* YELLOW SHARD X10 - ROUTE 21 */
 void Sequence170()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 51);
-	SetVarEqVal(0x800D, 1);
+	SetVarEqVal(0x800C, 74);
+	SetVarEqVal(0x800D, 10);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
 	End();
 }
 
+/* SHELL BELL - HUMILAU TOWN */
 void Sequence171()
 {
 	LockAll();
@@ -1990,33 +2007,36 @@ void Sequence171()
 	End();
 }
 
+/* ROUTE 22 - SITRUS BERRIES */
 void Sequence172()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 24);
-	SetVarEqVal(0x800D, 1);
+	SetVarEqVal(0x800C, 158);
+	SetVarEqVal(0x800D, 10);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
 	End();
 }
 
+/* EJECT BUTTON X3 - ROUTE 22*/
 void Sequence173()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 49);
-	SetVarEqVal(0x800D, 1);
+	SetVarEqVal(0x800C, 547);
+	SetVarEqVal(0x800D, 3);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
 	End();
 }
 
+/* GREEN SHARD X30 - ROUTE 22*/
 void Sequence174()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 50);
-	SetVarEqVal(0x800D, 1);
+	SetVarEqVal(0x800C, 75);
+	SetVarEqVal(0x800D, 30);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -2923,24 +2943,32 @@ void Sequence254()
 	UnlockAll();
 	End();
 }
-
+/* Ability Drill x1 - Abundant Shrine */
 void Sequence255()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 29);
+	SetVarEqVal(0x800C, 223);
 	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
 	End();
 }
-
+/* IV Enhancer x3, Lonely Mint, Bold Mint - Abundant Shrine */
 void Sequence256()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 107);
-	SetVarEqVal(0x800D, 1);
+	SetVarEqVal(0x800C, 530);
+	SetVarEqVal(0x800D, 3);
 	Sequence400();
+    WaitMoment();
+    SetVarEqVal(0x800C, 506);
+	SetVarEqVal(0x800D, 1);
+    Sequence400();
+    WaitMoment();
+    SetVarEqVal(0x800C, 510);
+	SetVarEqVal(0x800D, 1);
+    Sequence400();
 	WaitMoment();
 	UnlockAll();
 	End();
@@ -2957,22 +2985,24 @@ void Sequence257()
 	End();
 }
 
+/* Bug Gem x3 - Pinwheel Forest*/
 void Sequence258()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 53);
-	SetVarEqVal(0x800D, 1);
+	SetVarEqVal(0x800C, 558);
+	SetVarEqVal(0x800D, 3);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
 	End();
 }
 
+/* Tanga Berry x3 - Pinwheel Forest */
 void Sequence259()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 6);
-	SetVarEqVal(0x800D, 1);
+	SetVarEqVal(0x800C, 194);
+	SetVarEqVal(0x800D, 3);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -3001,32 +3031,34 @@ void Sequence261()
 	End();
 }
 
+/* Heart scale x1 - pinwheel forest */
 void Sequence262()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 349);
+	SetVarEqVal(0x800C, 93);
 	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
 	End();
 }
-
+/* Rindo berry x3 - pinwheel */
 void Sequence263()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 80);
-	SetVarEqVal(0x800D, 1);
+	SetVarEqVal(0x800C, 187);
+	SetVarEqVal(0x800D, 3);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
 	End();
 }
 
+/* TM45 Lunge - Pinwheel */
 void Sequence264()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 413);
+	SetVarEqVal(0x800C, 372);
 	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
@@ -3034,10 +3066,11 @@ void Sequence264()
 	End();
 }
 
+/* TM53 ENERGY BALL - PINWHEEL */
 void Sequence265()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 2);
+	SetVarEqVal(0x800C, 380);
 	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
@@ -3045,11 +3078,12 @@ void Sequence265()
 	End();
 }
 
+/* GRASS GEM X3 - PINWHEEL FOREST */
 void Sequence266()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 29);
-	SetVarEqVal(0x800D, 1);
+	SetVarEqVal(0x800C, 551);
+	SetVarEqVal(0x800D, 3);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -4388,11 +4422,12 @@ void Sequence381()
 	End();
 }
 
+/* OCCA BERRY x3 - REVERSAL MOUNTAIN */
 void Sequence382()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 78);
-	SetVarEqVal(0x800D, 1);
+	SetVarEqVal(0x800C, 184);
+	SetVarEqVal(0x800D, 3);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();

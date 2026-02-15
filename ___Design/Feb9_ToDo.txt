@@ -1,0 +1,71 @@
+
+
+/*         
+	
+	-----------------------------------------------------------------------------------------------------------------------------------------
+	-------------------------------------------------- WHAT I WANNA DO TODAY ---------------------------------------------------------------- 
+	-----------------------------------------------------------------------------------------------------------------------------------------       
+
+*/
+
+- Implement Personal Changes 
+- Implement TrPok changes to account for Personal Changes
+- Update Skyla "reset flags" script to remove Roxanne, her items, Morty, her items. 
+- Reassign 740 (dwight) to a trainer that has intro dialogue or see if we can manually set that somewhere. 
+- Implement and test remainder of field effects (Victory Star, Smoke Bomb)
+
+
+
+514 is where we're going to do the strange house event. 
+
+
+====================================================================================================================================================
+/*   LIVE BUILD   */
+
+
+====================================================================================================================================================
+/*   MARLON BUILD   */
+        
+    [ BUGS ]
+        - Fix Illusion 
+        - Fix Castelia Sewer Crash 
+        - Figure out the hardware issue 
+        - Figure out Sleep Talk failing sometimes
+        - Figure out if there is some shit modifier being applied to Charm / Captivate that is dissuading it. 
+
+    [ MECHANICS ]
+        - Implement doubles switch in ai change 
+        
+Balance 
+    We might need to do another pass over and spread out move distribution some more especially for Burgh and elesa split. 
+    Less 80 BP + moves in this split. 
+    More scale moves. 
+
+
+Underutilized Mechanics Throughout the Game:
+    Trapping Moves 
+    Mean Look / Block 
+    Anticipation 
+    Brightpowder 
+    Double Team / Acid Armor / Minimize 
+    Scary Face in Doubles 
+    String Shot in doubles 
+    Sweet Scent in doubles 
+    Dive/dig/fly/bounce 
+    Focus Band maybe?
+    Failure boosted moves in the mid-late game 
+    Status boosted moves in the mid-late game 
+    Swagger / Flatter
+    Confusion in general 
+    Attract in general 
+    Moody 
+    Simple 
+    Hustle on AI mons 
+    Quick Draw 
+    Inner Focus on AI 
+    Phasing Moves. Circle Throw, Roar, Whirlwind, Dragon Tail 
+    Priority on Pokemon, especially otherwise strong pokemon. 
+    Set up on pokemon. 
+    hazards (increases the value of defog and rapid spin)
+    speed lowering moves in the mid-late game. 
+    charm / captivate in doubles 

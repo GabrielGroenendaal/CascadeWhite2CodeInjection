@@ -57,19 +57,19 @@ Documentation:
 ``[ BALANCE ]``
 > - **Crobat Line** is getting Strong Body in Ability Slot 1, as Infiltrator becomes the Hidden Ability. Sniper becomes AI Only. 
 > - **Aipom and Ambipom** lose their Attack buff. 
-> - **Hoppip, Skiploom, and Jumpluff** are losing 10 Attack.
-> - **Mime Jr. and Mr. Mime** are losing 10 HP. Substitute and Doubleslap have swapped positions in their learnset. 
+> - **Hoppip, Skiploom, and Jumpluff's** Ability 2 is now Infiltrator, not Sap Sipper. 
+> - **Mime Jr. and Mr. Mime** are losing 5 HP. Substitute and Doubleslap have swapped positions in their learnset. 
 > - **Goldeen and Seaking** have Facade swapped positions with Double-Edge in their learnset. 
 > - **Hitmontop** is losing 10 HP and 10 Defense
 > - **Hitmonlee** is losing 20 HP and having it redistributed to Defense. Also losing 10 Special Defense 
 > - **Hitmonchan** is losing 10 Speed 
-> - **Dewgong** is losing 5 SpA. 
-> - **Slowking** is losing 10 SpA 
-> - **Slowbro** is losing 10 Atk
-> - **Scyther** is losing 10 HP. It now gets Acrobatics instead of Dual Wingbeat at level 53.
+> - **Dewgong** is losing 5 SpA. Their hidden ability is now Thick Fat.
+> - **Scyther** is losing 10 HP. It now gets Acrobatics instead of Dual Wingbeat at level 53. Dual Wingbeat is a scale move.
 > - **Scizor** is losing 10 Defense. 
 > - **Whimsicott** is losing 10 Atk and 10 Defense. Infiltrator becomes its new Hidden Ability, over Merciless. 
 > - **Cottonee** now evolves at level 42, or with a Sun Stone.
+> - **Lilligant** loses 5 Defense and Special Defense. 
+> - **Petilil** now evolves at level 42 or with a Sun Stone.
 > - **Scolipede Line** swaps ability positions for Speed Boost and Strong Body
 > - **Krokorok** loses 10 Atk. 
 > - **Krookadile Line** learns earthquake at 45, and Cross Chop at 48. 
@@ -81,10 +81,8 @@ Documentation:
 > - **Jellicent** gains +20 Defense. 
 > - **Druddigon** swaps Ability Slots for Battle Armor and Sheer Force. 
 > - **Golurk** loses 15 Speed. 
-> - **Kricketot** loses all its buffs (it cannot be acquired anyways)
-> - **Floatzel** loses 5 Atk and 5 SpA. 
-> - **Swellow** loses 10 Atk. Taillow gains +10 Special Attack. 
-> - **Breloom** loses 10 Speed. 
+> - **Swellow** loses 10 Atk and gains +5 SpA. Taillow gains +10 Special Attack. 
+> - **Breloom** loses 10 Defense and Speed. 
 > - **Hariyama** has Lucky Chant and Wide Guard swapped in the learnset.
 > - **Carvanah and Sharpedo** have ability slots 2 and 3 swapped, making Strong Jaw the new hidden ability. 
 > - **Spinda** loses 5 in each stat. 
@@ -92,22 +90,36 @@ Documentation:
 > - **Glalie** loses the -20 to Special Attack. 
 > - **Froslass** gains +20 to Attack. 
 > - **Spinarak / Ariados** lose 5 Atk. 
-> - **Natu and Xatu** lose 10 and 5 SpA, respectively. 
 > - **Corsola** loses 10 Atk.
-> - **Diglett & Dugtrio** lose 10 Atk 
 > - **Riolu** now evolves to Lucario via use of a Dawn Stone or at level 50. Riolu consequently learns Spike Cannon at level 46. 
-> - **Ninjask** loses 10 Atk 
-> - **Metagross** now correctly has Tough Claws as a Hidden Ability. Light Metal and Strong Body are the main abilities. 
-> - **Dodrio Line** swaps ability slots for Tough Claws and Sand Rush. Dodrio learns Endure at level 25. 
-> - **Drapion Line** swaps positions for Sniper and Tough Claws. 
-> - **Pidgeot line** swaps positions for Quick Feet and Aerilate 
-> - **Flygon Line** swaps ability positions for Tenacity and Sand Rush. 
-> - **Butterfree** swaps ability slots with Tenacity and Swarm. 
-> - **Beedrill** swaps ability slots between Adaptability and Swarm. 
-> - **Aerodactyl** loses Tough Claws and gains Intimidate in Slot 1. Tough Claws becomes AI Only. 
-> - **Charizard** loses 10 Atk and gains 10 Special Attack. 
-> - **Sceptile Line** loses Exploit. Hyper Cutter takes its place and Overgrow takes Hyper Cutter's place.
-> - **Infernape Line** loses Exploit. 
+> - **Venusaur** loses Swords Dance at level 58. Gets Growth Instead. At level 3 they learn Poisonpowder.
+> - **Serperior Line** swaps Positions for Focus Energy and Hyper Beam. They learn Power Whip at level 42 instead of Seething Cold. 
+> - **Serperior Line** learns Leaf Blade at level 27 instead of Giga Drain, which is pushed back to level 46. Flame Burst is replaced with Seething Cold. 
+> - **Mothim** gets Attack Order at level 55. 
+> - **Burmy** can evolve into Wormadam-Trash using a Thunderstone.
+> - **Magcargo's** Hidden Ability is now Shell Armor. 
+> - **Luvdisc** ability one is now Rivalry instead of Water Absorb. 
+> - **Flygon Line** replaces Tenacity with Sand Rush.
+> - **Typhlosion Line** loses Flash Fire, gains Sand Rush in that spot instead. 
+> - **Plusle's** abilities are now Distracting, Friend Guard, Trace
+> - **Minun's** abilities are now Distracting, Healer, Trace
+> - **Huntail's** hidden ability is now Strong Jaw. 
+> - **Voltorb Line** now has Unnerve instead of Volt Absorb. 
+> - **Rapidash Line** now has Run Away as ability 1, swapped position with Flash Fire. They now learn Endure at 23 instead of Heal Pulse. 
+> - **Houndoom Line** swaps ability slots between Unnerve and Flash Fire. 
+> - **Poliwag Line** now swapped position for Ability 1 and 3; Water Absorb is HA. 
+> - **Seismitoad Line** now swapped Position for Ability 1 and 3; Water Absorb is now HA.
+> - **Aerodactyl** ability one is now Intimidate. Tough Claws is AI only. 
+> - **Emboar** now learns Sucker Punch as a scale move. Instead at 52 it learns Night Daze. It learns Bulk Up at 99, and Close Combat at 55. and Giga Impact at 60. 
+> - **Houndoom** now learns Sucker Punch as a scale move. Instead at level 47 it learns Fire Blast. At level 62 it learns Heat Wave.
+> - **Samurott Line** has Flip Turn as a Scale move. It learns Dive at that level instead. Swords dance is learned at 99, Hydro Cannon at 59, Superpower at 64. 
+> - **Liepard Line** swaps positions for Knock Off and Wicked Blow. 
+> - **Zebstrika** replaces Temper Flare with Megahorn as a Scale move. 
+> - **Sceptile** now gets Hyper Cutter as hidden ability. Ability 1 is Overgrow. Exploit is an AI only ability. 
+> - **Scolipede** gets Defense Curl as a scale move.
+> - **Fake Out** is no longer a never-miss move. 
+> - **Dugtrio line** now learns Bulldoze at 26 and Dig at 34. They learn earthquake at 52, sucker punch at 43, and Head Smash as a scale move.
+
 
 ```[ ENCOUNTERS ]```
 > - **Castelia Sewers Walking**: Zubat is no longer a 20% encounter in Castelia Sewers. Scraggy takes it's place. Lickitung raplced with 10% Drowzee Zubat is now a 4% encounter, and Koffing is a 5% encounter. 
@@ -119,8 +131,10 @@ Documentation:
 > - **Route 6 DOubles Grass** 10% Marshtomp slot becomes 10% Whiscash
 > - **Relic Passage Dark Spot Surfing** tables are 60% Swoobat 30% Tirtouga
 > - **Route 7 Shaking Grass** is now 60% Miltank, 30% Stoutland, 10% Swellow 
-
-
+> - **Diglett** is now a 2% in Relic Passage.
+> - **Season Research Center** encounter has been removed. 
+> - **Relic Castle** 10% Duskull has been replaced with 10% Chimecho. Duskull is now a 4%. 
+> - **Celestial Tower** 10% Dusclops replaced with 10% Shuppet. Dusclops is now a 4% encounter. 
 
 ``[ TRAINERS ]``
 > - **PWT Colress's Rotom-Fan** now has Uproar over Double-Edge and Leaf Tornado over Telekinesis. 
@@ -129,15 +143,26 @@ Documentation:
 > - **Strange Statue Team** has had their levels raised by 2. 
 > - **Baker Jenn and Depot Agent Hank** have had their pokemon levels raised by 1 to match Ranger Serenity. 
 > - **Janine's Glalie and Drapion** are now level 44, up from 43. 
-> - **Leader Clay's Dugtrio** is now level 46, up from 44. 
+> - **Leader Clay's Dugtrio** is now level 46, up from 44. It now has Spikes over Iron Head and Gunk Shot over Close Combat. 
+> - **Leader Clay's Conkeldurr** is now Guts, Pre Paralyzed, with Hammer Arm, Mach Punch, Stone Edge, Slack Off. 
+> - **Leader Clay's Excadrill** now has Block over Strength and holds a Shuca Berry.
+> - **Leader Clay's Electrode** is now holding a Chople Berry and has Steel Beam over Flash Cannon.
 > - **Leader Roxie's Rotom** now has Eject Button, over Leftovers 
 > - **Leader Elesa's Glaceon** has Icy Wind over Extrasensory.
 > - **Leader Erika's Victreebell** now has Sucker Punch over Sleep Powder. 
-> - **Leader Erika's Beautifly** has Scorching Swarm again instead of Bug Buzz. 
+> - **Leader Erika's Beautifly** has Scorching Swarm again instead of Bug Buzz and Mystical Fire over Solarbeam.
 > - **Benga's Aerodactyl** is now holding a Passho Berry
 > - **Benga's Bronzong** now has Energy Ball over Reflect. 
 > - **Benga's Druddigon** now has Glare over Rock Climb.
 > - **Kanto Leader Surge's Octillery** now has a Shuca Berry over a Wacan Berry. It now has Swift over Natural Gift.
+> - **Clay's Dugtrio** now has Spikes over Iron Head and Gunk Shot over Close Combat. 
+> - **Burgh's Gliscor** is holding a Clear Amulet. It knows Rock Slide over Lunge and Bounce over Aerial Ace. 
+> - **Burgh's Escavalier** now knows Razor Shell over Natural Gift. 
+> - **Erika's Beautifly** knows Mystical Fire over Solarbeam. 
+> - **Erika's Nidoqueen** is now Sheer Force again. It knows Fire Punch over Flamethrower. 
+> - **Erika's Cherrim** is holding a Coba Berry and Knows Wild Charge over Return.
+> - **Burgh's Gliscor** has Bounce over Aerial Ace, a Clear Amulet over Bug Gem, and Rock Slide over Lunge. 
+> - **Burgh's Omastar** now has Icy Wind over Signal Beam.
 
 ``[ ITEMS ]``
 > - **Sabrina Miniboss** no longer awards the Will-o-Wisp TM 
