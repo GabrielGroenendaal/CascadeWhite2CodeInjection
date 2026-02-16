@@ -41,5 +41,7 @@ public class MainEvents {
 		Runtime.FinishSubEvents();
 		Actor.UnpauseAll();
 	}
-
+	// Field XTranceriver 5 is Cheren Call
+	// Text ID 389
+	
 }

@@ -592,6 +592,7 @@ extern "C"
     };
     extern void FieldEncount_GenWildPokeParam(EncountManager *mgr, WildEncSlot *src, WildPokemonParam *dest);
     extern bool FieldEncount_CheckLevelRepelled(EncountManager *mgr, u32 level);
+    extern u16* EventWork_GetWkPtr(EventWorkSave *eventWork, int swkId);
     extern PlayerState *GameData_GetPlayerState(GameData *gameData);
     extern int PlayerState_GetZoneID(PlayerState *a1);
     extern int GetLeaguePokeCenReturnLocationIdx();
@@ -606,23 +607,23 @@ extern "C"
         {155, 16472, 2}, // Virizion Encounter Enabling
 
         /* STRANGE HOUSE ENCOUNTER DISABLING */
-        {462, 16441, 2}, 
-        {510, 16441, 2}, 
-        {511, 16441, 2}, 
-        {512, 16441, 2}, 
-        {513, 16441, 2}, 
-        {514, 16441, 2}, 
-        {569, 16441, 2},
-        {570, 16441, 2}, 
-        {571, 16441, 2}, 
-        {572, 16441, 2}, 
+        {462, 16441, 1}, 
+        {510, 16441, 1}, 
+        {511, 16441, 1}, 
+        {512, 16441, 1}, 
+        {513, 16441, 1}, 
+        {514, 16441, 1}, 
+        {569, 16441, 1},
+        {570, 16441, 1}, 
+        {571, 16441, 1}, 
+        {572, 16441, 1}, 
     };
 
     const u16 draydenSplitDisabledEncounterZones[7] = {
         308, 348, 309, 365, 367, 310, 368};
 
-    const u16 marlonSplitDisabledZones[4] = {
-        515, 516, 240, 463};
+    // const u16 marlonSplitDisabledZones[4] = {
+    //     515, 516, 240, 463};
 
     bool isEncounterDisabled(EncountManager *mgr)
     {
@@ -633,13 +634,15 @@ extern "C"
             if (zoneId == toggleEncounters[i].ZoneID)
             {
                 EventWorkSave *eventWork = GameData_GetEventWork(mgr->gameData);
-                u32 flagValue = EventWork_FlagGet(eventWork, toggleEncounters[i].flagToCheck);
-                if (flagValue == toggleEncounters[i].enablingValue)
+                u16* flagValue = EventWork_GetWkPtr(eventWork, toggleEncounters[i].flagToCheck);
+                if (*flagValue == toggleEncounters[i].enablingValue)
                 {
+                    // k::Printf("\nEncounters enabled! flag is %d, event flag = %d", toggleEncounters[i].flagToCheck, flagValue);
                     return false;
                 }
                 else
                 {
+                    // k::Printf("\nEncounters enabled flag is %d, event flag is = %d!", toggleEncounters[i].flagToCheck, flagValue);
                     return true;
                 }
             }
@@ -650,10 +653,10 @@ extern "C"
         {
             return true;
         }
-        if (isBadgeObtained(getTrainerCardDataBlkAddress(mgr->gameData), 7) && SEARCH_ARRAY(marlonSplitDisabledZones, zoneId))
-        {
-            return true;
-        }
+        // if (isBadgeObtained(getTrainerCardDataBlkAddress(mgr->gameData), 7) && SEARCH_ARRAY(marlonSplitDisabledZones, zoneId))
+        // {
+        //     return true;
+        // }
         return false;
     }
 
@@ -1019,10 +1022,10 @@ extern "C"
         {
             return true;
         }
-        if (isBadgeObtained(getTrainerCardDataBlkAddress(mgr->m_GameData), 7) && SEARCH_ARRAY(marlonSplitDisabledZones, zoneId))
-        {
-            return true;
-        }
+        // if (isBadgeObtained(getTrainerCardDataBlkAddress(mgr->m_GameData), 7) && SEARCH_ARRAY(marlonSplitDisabledZones, zoneId))
+        // {
+        //     return true;
+        // }
         return false;
     }
 

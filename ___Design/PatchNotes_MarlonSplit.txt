@@ -163,6 +163,7 @@ Documentation:
 > - **Erika's Cherrim** is holding a Coba Berry and Knows Wild Charge over Return.
 > - **Burgh's Gliscor** has Bounce over Aerial Ace, a Clear Amulet over Bug Gem, and Rock Slide over Lunge. 
 > - **Burgh's Omastar** now has Icy Wind over Signal Beam.
+> - **Erika's Vileplume** is now correctly Chlorophyll. 
 
 ``[ ITEMS ]``
 > - **Sabrina Miniboss** no longer awards the Will-o-Wisp TM 

@@ -18,6 +18,11 @@ import system.Runtime;
 import system.Sound;
 import system.text.WordSet;
 
+// I think this is the right script.
+// 467 stores the follower dialogue that we'll need to edit for Benga 
+// 327 Stores the local dialogue we'll need to edit for Benga.
+
+
 public class MainEvents {
 	public static void main_1() { // @ 0x30
 		if (EventWorks.Get(16672) != 2 || EventFlags.Get(2406)) {
