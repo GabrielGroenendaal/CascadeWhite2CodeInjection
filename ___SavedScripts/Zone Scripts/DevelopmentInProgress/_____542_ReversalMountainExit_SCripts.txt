@@ -1,0 +1,175 @@
+import messages.script.Msg0330.MSGID;
+
+import Base;
+import event.actors.Actor;
+import event.actors.Follow;
+import event.actors.Player;
+import event.dialogs.Message;
+import event.dialogs.YesNoWin;
+import pokescript.vm.Math;
+import pokescript.vm.StackCtrl;
+import pokescript.vm.VM;
+import system.EventFlags;
+import system.EventWorks;
+import system.Input;
+import system.Runtime;
+import system.Sound;
+import system.text.WordSet;
+
+public class MainEvents {
+	public static void main_1() { // @ 0x1c
+		int v0;
+		int v1;
+		int v16;
+		int v32;
+
+		Actor.PauseAll();
+		WordSet.LoadPlayerName(0);
+		sub_0138();
+		Message.ActorEx(1024, 0, 254, 0, 0);
+		v16 = YesNoWin.Show();
+		if (v16 != 0) {
+			Message.ActorEx(1024, 3, 254, 0, 0);
+			Message.CloseAll();
+			Follow.SetEnableMovement(1);
+			ActionSequence_01fc(255);
+			Actor.WaitActionFinish();
+			Follow.SetEnableMovement(0);
+			goto LABEL_0116;
+		}
+		if (EventWorks.Get(16673) != 3) {
+			Message.ActorEx(1024, 2, 254, 0, 0);
+			goto LABEL_007b;
+		}
+		Message.ActorEx(1024, 1, 254, 0, 0);
+
+		LABEL_007b:
+		Message.CloseAll();
+		Actor.WalkRoute(254, 25, 15, 1, 8, 0);
+		v32 = Player.GetDirection();
+		if (v32 == 0) {
+			goto LABEL_00ae;
+		}
+		Runtime.Sleep(16);
+		ActionSequence_0224(255);
+
+		LABEL_00ae:
+		Actor.WaitActionFinish();
+		Global10536(2, 0);
+		EventWorks.Set(16672, 3);
+		EventWorks.Set(16673, 3);
+		EventFlags.Set(959);
+		EventFlags.Clear(960);
+		Base.CMD_262(3, 0);
+		Actor.Show(0);
+		Actor.Hide(254);
+
+		LABEL_0116:
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_2() { // @ 0x11c
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 4, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	static void sub_0138() { // @ 0x138
+		int v32;
+
+		v32 = Player.GetDirection();
+		if (v32 == 2) {
+			ActionSequence_023c(255);
+			ActionSequence_0214(254);
+			goto LABEL_01e0;
+		}
+
+		LABEL_0165:
+		if (v32 == 3) {
+			ActionSequence_0234(255);
+			ActionSequence_021c(254);
+			goto LABEL_01e0;
+		}
+
+		LABEL_018e:
+		if (v32 == 0) {
+			ActionSequence_022c(255);
+			ActionSequence_0204(254);
+			goto LABEL_01e0;
+		}
+
+		LABEL_01b7:
+		if (v32 == 1) {
+			ActionSequence_0224(255);
+			ActionSequence_020c(254);
+			goto LABEL_01e0;
+		}
+
+		LABEL_01e0:
+		Actor.WaitActionFinish();
+	}
+
+	static meta void ActionSequence_01fc(int npcId) : VActionSequence {
+		Action000e(1);
+	}
+
+	static meta void ActionSequence_0204(int npcId) : VActionSequence {
+		Action0000(1);
+	}
+
+	static meta void ActionSequence_020c(int npcId) : VActionSequence {
+		Action0001(1);
+	}
+
+	static meta void ActionSequence_0214(int npcId) : VActionSequence {
+		Action0002(1);
+	}
+
+	static meta void ActionSequence_021c(int npcId) : VActionSequence {
+		Action0003(1);
+	}
+
+	static meta void ActionSequence_0224(int npcId) : VActionSequence {
+		Action0020(1);
+	}
+
+	static meta void ActionSequence_022c(int npcId) : VActionSequence {
+		Action0021(1);
+	}
+
+	static meta void ActionSequence_0234(int npcId) : VActionSequence {
+		Action0022(1);
+	}
+
+	static meta void ActionSequence_023c(int npcId) : VActionSequence {
+		Action0023(1);
+	}
+
+	static meta void Global10536(int a1, int a2) : VGlobalCall[10536];
+
+	static native void Action0000(int amount) : 0x0;
+	static native void Action0001(int amount) : 0x1;
+	static native void Action0002(int amount) : 0x2;
+	static native void Action0003(int amount) : 0x3;
+	static native void Action000e(int amount) : 0xe;
+	static native void Action0020(int amount) : 0x20;
+	static native void Action0021(int amount) : 0x21;
+	static native void Action0022(int amount) : 0x22;
+	static native void Action0023(int amount) : 0x23;
+}
+
+
+
+
+----- TEXT FILE 330-----
+0: Oh! Undella Town is right through here!\c\nI want to keep looking around\na little bit.\c\nWhat do you want to do?\nShould we say bye for now?
+1: OK, then!\c\nI want to do a little more\nresearch about Heatran anyway!\c\nThank you for coming with me!\nBe careful on the rest of your journey!\c
+2: OK, then!\c\nI want to do a little more research\nabout where Heatran might be!\c\nThank you for coming with me!\nBe careful on the rest of your journey!\c
+3: OK! Well, then.\nLet's go look around a little more!\c
+4: Reversal Mountain... I wonder...\nCould a Magma Stone be in there?\c\nHave you heard of it?\nThey say a Magma Stone was found\r\nin a volcano in the distant Sinnoh region.\c\nApparently, it had something to do\nwith Heatran!

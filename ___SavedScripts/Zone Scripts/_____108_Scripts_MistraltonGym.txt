@@ -255,7 +255,7 @@ public class MainEvents {
 		EventFlags.Set(923);
 
 		// Miniboss Disable
-		EventFlags.Set(542);
+		EventFlags.Set(539);
 		
 		// Clears Roods first position
 		if (!EventFlags.Get(520)){

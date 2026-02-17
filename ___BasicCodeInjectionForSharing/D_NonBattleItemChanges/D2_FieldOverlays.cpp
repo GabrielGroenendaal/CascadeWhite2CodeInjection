@@ -996,15 +996,20 @@ extern "C"
     extern int positionShakingSpot(EncountSystem *encSys, int a2, u8 type);
     extern void sub_21A272C(void **a1, int a2);
     extern void setShakingSpotOff(EncountState *result);
+    
     bool isPhenoDisabled(EncountSystem *mgr)
     {
         PlayerState *playerState = GameData_GetPlayerState(mgr->m_GameData);
         int zoneId = PlayerState_GetZoneID(playerState);
+        EventWorkSave *eventWork = GameData_GetEventWork(mgr->m_GameData);
+
+        if (EventWork_FlagGet(eventWork, 2406)){
+            return true;
+        }
         for (int i = 0; i < ARRAY_COUNT(toggleEncounters); i++)
         {
             if (zoneId == toggleEncounters[i].ZoneID)
             {
-                EventWorkSave *eventWork = GameData_GetEventWork(mgr->m_GameData);
                 u32 flagValue = EventWork_FlagGet(eventWork, toggleEncounters[i].flagToCheck);
                 if (flagValue == toggleEncounters[i].enablingValue)
                 {

@@ -4,7 +4,7 @@
 /*   BIANCA LENTIMAS    */
 
 
-Oh!\nI've made some progress on my research\r\ninto the Swords of Justice.\c\nI think I might have a lead\nat Pinwheel Forest!\c\nJust take the Tubeline Bridge from east\nside of Castelia City and you\r\ncan't miss it!\c\nI'll meet you there!
+Bianca: Oh!\nI've made some progress on my research\r\ninto the Swords of Justice.\c\nI think I might have a lead\nat Pinwheel Forest!\c\nJust take the Tubeline Bridge from east\nside of Castelia City and you\r\ncan't miss it!\c\nI'll meet you there!
 
 ===========================================================================================
 /*   LENTIMAS B2B    */
@@ -86,7 +86,7 @@ How many calories do you think we\nburned?
 		EventWorks.Set(16499, 1);
 		EventWorks.Set(16441, 1);
 
-        
+
 ===========================================================================================
 /*   STRANGE HOUSE    */
 	
@@ -122,9 +122,7 @@ Something is outside!
 /*   BENGA REVERSAL    */
 
 [ ARRIVING AT REVERSAL ]
-Oh hey, you made it!\c\nAnd you've got the [VAR COLOR(1)]Jet Badge[VAR COLOR(2)] too!\c\nSkyla was kinda a pushover, wasn't she?
-I need stronger opponents if I want any\nchance of ever beating Iris, and Gramps\r\nsaid this mountain is the place to\r\nfind 'em. 
-So whadduya say, [VAR TRNAME(0)]?\nLets pair up and get some real\r\ntraining in! It'll be more fun\r\nexploring together!
+Oh hey, you made it [VAR TRNAME(0)]!\c\nAnd you've got the [VAR COLOR(1)]Jet Badge[VAR COLOR(2)] too!\c\nSkyla was kinda a pushover, wasn't she?\c\nI need stronger opponents if I want any\nchance of ever beating Iris, and Gramps\r\nsaid this mountain is the place to\r\nfind 'em.\c\nSo whadduya say, [VAR TRNAME(0)]?\nLets pair up and get some real\r\ntraining in! It'll be more fun\r\nexploring together!
 
 Oh! Don't worry!\nI'll take care of healing our Pokémon.\r\nLet's go!
 
@@ -141,19 +139,23 @@ Aight, don't leave me waiting too long.
 Sweet, I wanna get some more battling in!
 
 [ RETURNING AFTER LEAVING ]
-Woo, you look energized, refreshed! Let's get to it, yah?
+Woo, you look energized, refreshed!\nLet's get to it, yah?\c
 
 
 [ DIALOGUE 1 ]
+Visiting the Pokémon World Tournament\ngot me real amped up- All those\r\nstrong trainers, clashing against each\nother to see who ends up on top.\c\nMust be incredible training.
 
 [ DIALOGUE 2 ]
+How do you choose your Pokémon's moves?\c\nI try to cover a lot of different\nbases, but I always feel like I'm\r\nmissing something...
 
 [ DIALOGUE 3 ]
+I can't believe how far we've come since\nmeeting at the ranch.\c\n6 badges in...\nDoes it feel real yet?
 
 [ DIALOGUE 4 ]
+I wonder what I'm gonna do once I become\nchampion...\c\nDo I get to make decrees or something?\nI never was clear on the specifics.
 
-[ DIALGOUE 5 ]
-
+[ DIALOGUE 5 ]
+The wild Pokémon here are incredible!\nNo wonder so many trainers come here.
 
 [ BEFORE TAG BATTLE ]
 Woah, some trainers ahead!\nDo you wanna take 'em on together,\nor solo?

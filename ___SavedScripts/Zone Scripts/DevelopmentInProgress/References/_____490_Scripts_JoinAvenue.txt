@@ -665,39 +665,29 @@ public class MainEvents {
 		Message.ActorEx(1024, 56, 0, 0, 0);
 		Input.LastKeyWait();
 		Message.CloseAll();
-		camera = v35 - 20;
-          EVCamera.Init();
-          EVCamera.Unbind();
-          EVCamera.MoveTo(2.3652344f, 0.0f, 237, 15, 0.0f, 45, 20);
-          EVCamera.Wait();
-          Message.System(78, 2);
-          Message.WaitAdvance();
-          Message.CloseAll();
-          Fade.FadeEx(3, 0, 16, 2);
-		Fade.FadeExWait();
-		EVCamera.MoveToDefault(1);
-          EVCamera.Wait();
-          EVCamera.Rebind();
-          EVCamera.End();
-		Fade.FadeEx(3, 16, 0, 2);
-		Fade.FadeExWait();
 
           ShowExclamationMark(0);
           Actor.WaitActionFinish();
-          OrganizerCrashOut1(0);
+          Actor.WalkRoute(0, 12, 63, 1, 2, 1);
+          TurnWest(0);
           Actor.WaitActionFinish();
+          // OrganizerCrashOut1(0);
 		// TurnEast32Frames(0);
 		// Actor.WaitActionFinish();
 		Message.Spiked(57, 2);
 		Message.CloseAll();
-          OrganizerCrashOut2(0);
+          // OrganizerCrashOut2(0);
+          ShowExclamationMark(0);
+          Actor.WaitActionFinish();
+          Actor.WalkRoute(0, 18, 62, 1, 2, 1);
           Actor.WaitActionFinish();
 		//TurnWest32Frames(0);
 		//Actor.WaitActionFinish();
 		Message.Spiked(58, 2);
 		Message.CloseAll();
 		// TurnSouth32Frames(0);
-          OrganizerCrashOut3(0);
+          Actor.WalkRoute(0, v34, v35-1, 1, 8, 1);
+          TurhSouth(0);
 		Actor.WaitActionFinish();
 		Message.ActorEx(1024, 59, 0, 0, 0);
 		Input.LastKeyWait();
@@ -818,11 +808,10 @@ public class MainEvents {
 		
 		Runtime.FinishSubEvents();
 
-		
 		Actor.UnpauseAll();
 	}
 
-	// talking to any of the crowds
+	// talking to any of the crowd
 	public static void main_18(){
 		Actor.PauseAll();
 		Sound.SEPlay(1351);
@@ -1076,10 +1065,18 @@ public class MainEvents {
 	}
 
     static meta void OrganizerCrashOut3(int npcId) : VActionSequence {
-		Action0016(1);
+	   Action0016(2);
         Action0015(1);
         Action0016(2);
         Action0015(8);
+	}
+
+	static meta void TurnWest(int npcId) : VActionSequence {
+		Action0022(1);
+	}
+
+		static meta void TurhSouth(int npcId) : VActionSequence {
+		Action0019(1);
 	}
 
 	static meta void Global2805(int a1, int a2) : VGlobalCall[2805];

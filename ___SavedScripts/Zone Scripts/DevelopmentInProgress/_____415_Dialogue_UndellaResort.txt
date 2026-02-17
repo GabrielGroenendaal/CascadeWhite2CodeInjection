@@ -1,0 +1,9 @@
+----- TEXT FILE 644-----
+0: I wonder why only the father\nfrom The Riches stayed here...
+1: I hear that the shops in\n[0x0139(0)] are run by amazing\r\nPokémon Trainers.\c\nOK! I can't lose to them!\nI'm getting excited about this!
+
+
+
+[ ENTITIES ]
+    0: Gentleman
+    2: Socialite

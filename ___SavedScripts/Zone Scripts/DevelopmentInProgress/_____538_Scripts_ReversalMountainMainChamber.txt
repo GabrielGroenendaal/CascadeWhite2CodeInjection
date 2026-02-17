@@ -59,7 +59,7 @@ public class MainEvents {
 			Message.CloseAll();
 			ActionSequence_0500(255);
 			Actor.WaitActionFinish();
-			Global10535(13, 7, 1, 4, 10538);
+			Global10535(13, 7, 1, 237, 10538);
 			goto LABEL_01c3;
 		}
 		v16 = Player.GetExState();
@@ -80,7 +80,7 @@ public class MainEvents {
 		Message.CloseAll();
 		ActionSequence_0500(255);
 		Actor.WaitActionFinish();
-		Global10535(13, 7, 1, 4, 10538);
+		Global10535(13, 7, 1, 237, 10538);
 		EventFlags.Set(427);
 		EventWorks.Set(16673, 1);
 		Base.CMD_262(1, 20);

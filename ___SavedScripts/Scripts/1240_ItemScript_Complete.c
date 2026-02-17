@@ -1387,12 +1387,12 @@ void Sequence116()
 	End();
 }
 
-/* REVERSAL MOUNTAIN - FIRE GEM X3 */
+/* REVERSAL MOUNTAIN - RED SHARD X10 */
 void Sequence117()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 548);
-	SetVarEqVal(0x800D, 3);
+	SetVarEqVal(0x800C, 72);
+	SetVarEqVal(0x800D, 10);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -1410,12 +1410,12 @@ void Sequence118()
 	UnlockAll();
 	End();
 }
-
+/* REVERSAL MOUNTAIN - FIRE GEM X3 */
 void Sequence119()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 28);
-	SetVarEqVal(0x800D, 1);
+	SetVarEqVal(0x800C, 548);
+	SetVarEqVal(0x800D, 3);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();

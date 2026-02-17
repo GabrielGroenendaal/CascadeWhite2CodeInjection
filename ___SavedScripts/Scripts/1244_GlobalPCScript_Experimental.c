@@ -1201,14 +1201,14 @@ label_skipLentimas: ;
 // ======== LENTIMAS TOWN ======== */
 	SetVarFlagStatus(545, 0x8030);
 	Compare(0x8030, 0);
-	if (1) goto label_skipLentimas;
+	if (1) goto label_skipUndella;
 	AddDialogueOption(98, 0xFFFF, 412);
 
 label_skipUndella: ;
 // ======== LENTIMAS TOWN ======== */
 	SetVarFlagStatus(544, 0x8030);
 	Compare(0x8030, 0);
-	if (1) goto label_skipLentimas;
+	if (1) goto label_skipHumilau;
 	AddDialogueOption(174, 0xFFFF, 465);
 
 label_skipHumilau: ;
