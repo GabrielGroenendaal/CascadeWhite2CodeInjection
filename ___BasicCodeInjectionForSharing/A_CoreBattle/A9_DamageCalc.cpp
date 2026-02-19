@@ -4377,6 +4377,10 @@ extern "C"
         // #if DEBUGGING_ALL
         //     k::Printf("\n===TrainerUtil_SetupPkm===Nature = %d output of the nature function is %d.  v9 is %d and v9 & 0xFF is %d", PokeParty_GetParam(pkm, PF_Nature, 0), __aeabi_idiv((v9 & 0xFF), 25), v9, (v9 & 0xFF));
         // #endif
+
+        if (trId == 634){
+            PokeParty_SetParam(pkm, PF_IvSPE, 0);
+        }
         PokeParty_SetNature(pkm, mod32((v9 >> 8), 25));
     }
 

@@ -27,9 +27,68 @@
 
     Shadow Triad Related
 
+    7, 8, 9
 
 
 [ SCRIPTS ]
     ActorSetRailPos
 
     In general it's going to take a lot of playtesting to get this to work.
+
+
+
+
+[ RAILS ]
+    Bottom Rail (2)
+        61 Tiles Long 
+        9 tiles wide (-4 right, 4 left)
+    
+    Middle Rail (1)
+
+
+
+
+[ RAILS ]
+    Trigger 1: 
+        Line No: 2 
+        FrontPos: 45
+        Side Pos: 0
+    
+    Trigger 2: 
+        Line No: 2 
+        FrontPos: 30
+        Side Pos: 0
+
+    Trigger 3: 
+        Line No: 2 
+        FrontPos: 15
+        Side Pos: 0
+
+    Trigger 4: 
+        Line No: 2 
+        FrontPos: 0
+        Side Pos: 0
+    
+    Trigger 5: 
+        Line No: 1 
+        FrontPos: 65
+        Side Pos: 0
+    
+    Trigger 6: 
+        Line No: 1 
+        Frontpos: 50 
+        Side Pos: 
+    
+    Trigger 7: 
+        Line No: 1 
+        Frontpos: 35 
+        Side Pos: 0
+
+
+0x71	PlayerGetRailPos	pLineId	pPosFront	pPosSide	
+0x72	ActorGetRailPos	actorId	pLineId	pPosFront	pPosSide    
+
+
+
+0x7c	PlayerSetRailPos	lineId	posFront	posSide	
+0x7d	ActorSetRailPos	actorId	lineId	posFront	posSide
