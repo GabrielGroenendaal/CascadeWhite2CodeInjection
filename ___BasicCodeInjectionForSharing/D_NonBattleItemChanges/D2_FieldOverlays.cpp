@@ -526,6 +526,36 @@ extern "C"
         }
         BoxPkm = GameData_MakeBoxPkm(gameData, param);
         improveIVs(BoxPkm);
+        if (GetIVSetting() == 2)
+        {
+                PokeParty_SetParam(BoxPkm, PF_IvATK, 31);
+                PokeParty_SetParam(BoxPkm, PF_IvDEF, 31);
+                PokeParty_SetParam(BoxPkm, PF_IvHP, 31);
+                PokeParty_SetParam(BoxPkm, PF_IvSPA, 31);
+                PokeParty_SetParam(BoxPkm, PF_IvSPD, 31);
+                PokeParty_SetParam(BoxPkm, PF_IvSPE, 31);
+        }
+        else if (GetIVSetting() == 1)
+        {
+                int numOfPerfectIVs = 0;
+                int random2 = 0;
+                PkmField ivs[6] = {PF_IvHP, PF_IvATK, PF_IvDEF, PF_IvSPA, PF_IvSPD, PF_IvSPE};
+                int changedIVs[6] = {0, 0, 0, 0, 0, 0};
+                do
+                {
+                    random2 = GFL_RandomLCAlt(5u);
+                    if (changedIVs[random2] == 0)
+                    {
+                        changedIVs[random2] == 1;
+                        PokeParty_SetParam(BoxPkm, ivs[random2], 31);
+                        numOfPerfectIVs++;
+                    }
+                } while (numOfPerfectIVs < 3);
+        }
+        else
+        {
+        
+        }
         PokeParty_AddPkm(Party, BoxPkm);
         Pokedex = (_DWORD *)GameData_GetPokedex(gameData);
         addPkmToDex(Pokedex, BoxPkm);
@@ -865,7 +895,7 @@ extern "C"
     extern void PokeParty_RecoverAll(PokeParty *pParty);
     extern b32 GameData_CheckPairFlag(GameData *gameData);
 
-    int personalPokePartyHeal(PokeParty *pParty)
+    int personalPokePartyHeal(PokeParty *pParty, u8 shouldHeal)
     {
         signed __int32 PkmCount; // r6
         int i;                   // r5
@@ -877,7 +907,9 @@ extern "C"
             Pkm = PokeParty_GetPkm(pParty, i);
             if (PokeParty_GetParam(Pkm, PF_NowHP, 0) != 0)
             {
-                PokeParty_Recover(Pkm);
+                if (shouldHeal){
+                    PokeParty_Recover(Pkm);
+                }
                 check = 1;
             }
         }
@@ -891,7 +923,7 @@ extern "C"
         PartyPkm *Pkm;           // r4
         if (GameData_CheckPairFlag(GAME_DATA) && EventWork_FlagGet(GameData_GetEventWork(GAME_DATA), 535))
         {
-            if (!personalPokePartyHeal(pParty))
+            if (!personalPokePartyHeal(pParty, 0))
             {
                 PkmCount = PokeParty_GetPkmCount(pParty);
                 for (i = 0; i < PkmCount; ++i)
@@ -934,7 +966,7 @@ extern "C"
 
         GameData = FieldScriptEnv_GetGameData(env);
         Party = GameData_GetParty(GameData);
-        if (!personalPokePartyHeal(Party))
+        if (!personalPokePartyHeal(Party, 1))
         {
             PokeParty_RecoverAll(Party);
         }
@@ -1275,6 +1307,7 @@ extern "C"
                 PokeParty_SetHiddenAbil(pkm, tradePkm->Species, tradePkm->Forme);
             }
         }
+        improveIVs(pkm);
         IvHP = tradePkm->IvHP;
         if (IvHP != 255)
         {
@@ -1312,7 +1345,37 @@ extern "C"
             PokeParty_SetParam(pkm, PF_Nature, Nature);
         }
 
-        improveIVs(pkm);
+        if (GetIVSetting() == 2)
+        {
+                PokeParty_SetParam(pkm, PF_IvATK, 31);
+                PokeParty_SetParam(pkm, PF_IvDEF, 31);
+                PokeParty_SetParam(pkm, PF_IvHP, 31);
+                PokeParty_SetParam(pkm, PF_IvSPA, 31);
+                PokeParty_SetParam(pkm, PF_IvSPD, 31);
+                PokeParty_SetParam(pkm, PF_IvSPE, 31);
+        }
+        else if (GetIVSetting() == 1)
+        {
+                int numOfPerfectIVs = 0;
+                int random2 = 0;
+                PkmField ivs[6] = {PF_IvHP, PF_IvATK, PF_IvDEF, PF_IvSPA, PF_IvSPD, PF_IvSPE};
+                int changedIVs[6] = {0, 0, 0, 0, 0, 0};
+                do
+                {
+                    random2 = GFL_RandomLCAlt(5u);
+                    if (changedIVs[random2] == 0)
+                    {
+                        changedIVs[random2] == 1;
+                        PokeParty_SetParam(pkm, ivs[random2], 31);
+                        numOfPerfectIVs++;
+                    }
+                } while (numOfPerfectIVs < 3);
+        }
+        else
+        {
+        
+        }
+
         PokeParty_SetParam(pkm, PF_ContestCool, tradePkm->ContestCool);
         PokeParty_SetParam(pkm, PF_ContestBeauty, tradePkm->ContestBeauty);
         PokeParty_SetParam(pkm, PF_ContestCute, tradePkm->ContestCute);

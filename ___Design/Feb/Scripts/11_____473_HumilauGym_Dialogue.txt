@@ -1,0 +1,11 @@
+----- TEXT FILE 190-----
+
+3: 
+That's the Wave Badge,\nthe Unova region's new\r\nGym Badge! Pretty sweet, right?\c\nNow you got seven Badges,\nso you can be tight with Pokémon up to\r\nlevel 70!\c\nOh yeah, got a HM for you, too!\c
+4: 
+So Dive takes two turns to execute!\nBut it never misses its target.\c\nIt can even break through Protect and hit\nPokémon trying to switch out!\c
+5: 
+Shoots!\nI'll meet you outside, broski!\r\nHope it's useful!\c
+
+14:
+The Level Cap is now [COLOR(2)]66[COLOR(0)]!

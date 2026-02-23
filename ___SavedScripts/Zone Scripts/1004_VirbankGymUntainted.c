@@ -99,6 +99,16 @@ label9: ;
 	StackCompare(1);
 	if (255) goto label11;
 	Routine1();
+    SetVarEqVal(0x4052, 28);
+    Compare(0x4051, 0);
+    if (1) goto label_LevelCapsEnabled;
+    goto label_LevelCapsNotEnabled;
+
+label_LevelCapsEnabled: ; 
+    EventGreyMessage(18, 2);
+    CloseEventGreyMessage();
+
+label_LevelCapsNotEnabled: ;
 	goto label10;
 
 label11: ;

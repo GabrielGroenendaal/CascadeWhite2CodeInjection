@@ -160,7 +160,7 @@ extern "C"
         {
             if (checkBSTLowerThan400(serverFlow, pokemonSlot))
             {
-                BattleEventVar_MulValue(VAR_RATIO, 6144);
+                BattleEventVar_MulValue(VAR_RATIO, 8192);
             }
         }
     }

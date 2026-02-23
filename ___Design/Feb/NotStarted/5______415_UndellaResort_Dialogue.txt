@@ -1,0 +1,36 @@
+----- TEXT FILE 644-----
+0: I wonder why only the father\nfrom The Riches stayed here...
+1: I hear that the shops in\n[0x0139(0)] are run by amazing\r\nPokémon Trainers.\c\nOK! I can't lose to them!\nI'm getting excited about this!
+
+2:
+My goodness, a rowdy protestor has\nbroken into our room!
+
+3:
+Quick dear, strike\nthem down with your Pokémon!\r\nThe law is on our side!
+
+
+4:
+Why I never...!
+
+5:
+Don't worry dear, I'll deal with\nthis ruffian myself!
+
+6:
+Please, don't hurt us!
+
+7:
+We're just trying to enjoy our vacation!\r\nHere, take this!
+
+8:
+Now please, leave us alone!
+
+
+9:
+Haven't you done enough?\nLeave before we call the police!
+
+10:
+You better watch your step, trainer.\nMy husband is a big donor to the\nPokémon League!\r\nWe'll have the champion roughing you up,\njust you wait!
+
+[ ENTITIES ]
+    0: Gentleman
+    2: Socialite

@@ -59,7 +59,7 @@ const u16 WindMoves[17] = {
     MOVE018_WHIRLWIND,
     MOVE314_AIR_CUTTER};
 
-unsigned __int16 MOLD_BREAKER_AFFECTED_ABILITIES[47] = {
+unsigned __int16 MOLD_BREAKER_AFFECTED_ABILITIES[51] = {
     ABIL025_WONDER_GUARD,
     ABIL043_AMPLIFIER,
     ABIL026_LEVITATE,
@@ -106,14 +106,19 @@ unsigned __int16 MOLD_BREAKER_AFFECTED_ABILITIES[47] = {
     ABIL134_HEAVY_METAL,
     ABIL135_LIGHT_METAL,
     ABIL080_COLOSSAL,
-    ABIL113_SCRAPPY};
+    ABIL113_SCRAPPY,
+    ABIL056_GOOEY,
+    ABIL009_STATIC,
+    ABIL049_FLAME_BODY,
+    ABIL027_EFFECT_SPORE,
+};
 
-const u16 HyperCutterMoves[27] = {
+const u16 HyperCutterMoves[28] = {
     MOVE421_SHADOW_CLAW, MOVE533_SACRED_SWORD, MOVE534_RAZOR_SHELL, MOVE530_DUAL_CHOP, MOVE529_DRILL_RUN, MOVE554_SOLAR_BLADE,
     MOVE440_CROSS_POISON, MOVE427_PSYCHO_CUT, MOVE404_X_SCISSOR, MOVE400_NIGHT_SLASH, MOVE403_AIR_SLASH, MOVE384_PSYBLADE,
     MOVE348_LEAF_BLADE, MOVE337_DRAGON_CLAW, MOVE332_AERIAL_ACE, MOVE314_AIR_CUTTER, MOVE306_CRUSH_CLAW, MOVE232_METAL_CLAW,
     MOVE163_SLASH, MOVE154_FURY_SWIPES, MOVE065_DRILL_PECK, MOVE013_RAZOR_WINDS, MOVE010_SCRATCH, MOVE210_FURY_CUTTER, MOVE015_CUT,
-    MOVE075_RAZOR_LEAF, MOVE548_SECRET_SWORD};
+    MOVE075_RAZOR_LEAF, MOVE548_SECRET_SWORD, MOVE032_HORN_DRILL};
 
 const u16 BulletproofMoves[21] = {
     MOVE491_ACID_SPRAY,
@@ -305,6 +310,54 @@ extern "C"
         }
     }
 
+    void THUMB_BRANCH_HandlerEffectSpore(int a1, ServerFlow *a2, unsigned int *a3)
+    {
+        unsigned int v5;  // r0
+        MoveCondition v6; // r4
+        ConditionData v7; // r0
+        BattleMon *mon;
+        unsigned __int16 Value;        // r0
+        HandlerParam_AddCondition *v9; // r5
+        if ((int)a3 == BattleEventVar_GetValue(VAR_DEFENDING_MON) && !BattleEventVar_GetValue(VAR_SUBSTITUTE_FLAG))
+        {
+            mon = Handler_GetBattleMon(a2, BattleEventVar_GetValue(VAR_ATTACKING_MON));
+            if (!BattleMon_HasType(mon, TYPE_GRASS) && BattleMon_GetHeldItem(mon) != IT0293_SAFETY_GOGGLES && BattleMon_GetValue(mon, VALUE_EFFECTIVE_ABILITY) != ABIL142_OVERCOAT)
+            {
+                v5 = BattleRandom(30u);
+                if (v5 <= 20)
+                {
+                    v6 = CONDITION_PARALYSIS;
+                    if (v5 <= 10)
+                    {
+                        v6 = CONDITION_SLEEP;
+                    }
+                }
+                else
+                {
+                    v6 = CONDITION_POISON;
+                }
+                v7.raw = MakeBasicStatus(v6).raw;
+
+                if ((int)a2 == BattleEventVar_GetValue(VAR_DEFENDING_MON) && !BattleEventVar_GetValue(VAR_SUBSTITUTE_FLAG))
+                {
+                    Value = BattleEventVar_GetValue(VAR_MOVE_ID);
+                    if (!AbilityEvent_RollEffectChance((int)a1, 50u))
+                    {
+                        if (overrideContact(mon, (MoveID)Value))
+                            return;
+
+                        v9 = (HandlerParam_AddCondition *)BattleHandler_PushWork(a2, EFFECT_ADDCONDITION, (int)a3);
+                        v9->header.flags |= 0x800000u;
+                        v9->sickID = v6;
+                        v9->sickCont = v7;
+                        v9->fAlmost = 0;
+                        v9->pokeID = BattleEventVar_GetValue(VAR_ATTACKING_MON);
+                        BattleHandler_PopWork(a2, v9);
+                    }
+                }
+            }
+        }
+    }
     void THUMB_BRANCH_HandlerRoughSkin(int a1, ServerFlow *a2, unsigned int *a3)
     {
         unsigned __int16 Value;  // r0
@@ -1081,6 +1134,50 @@ extern "C"
                 }
             }
         }
+    }
+
+    int THUMB_BRANCH_SAFESTACK_ServerEvent_CheckNoEffect(
+        ServerFlow *a1,
+        MoveParam *a2,
+        BattleEventType a3,
+        BattleMon *a4,
+        BattleMon* a5,
+        int a6,
+        _WORD *a7,
+        int *a8)
+    {
+        int ID;        // r0
+        int v12;       // r0
+        int v13;       // r0
+        int Value;     // r5
+        int IfEnabled; // [sp+4h] [bp-1Ch]
+
+        ID = BattleMon_GetID(a5);
+        IfEnabled = sub_21B0874((EffectivenessRecorder*) a6, ID);
+        BattleHandler_StrClear(a7);
+        BattleEventVar_Push();
+        v12 = BattleMon_GetID(a4);
+        BattleEventVar_SetConstValue(VAR_ATTACKING_MON, v12);
+        v13 = BattleMon_GetID(a5);
+        BattleEventVar_SetConstValue(VAR_DEFENDING_MON, v13);
+        BattleEventVar_SetConstValue(VAR_MOVE_ID, a2->MoveID);
+        BattleEventVar_SetConstValue(VAR_MOVE_TYPE, a2->moveType);
+        BattleEventVar_SetConstValue(VAR_MAGIC_COAT_FLAG, a2->flags & 1);
+        BattleEventVar_SetConstValue(VAR_WORK_ADDRESS, (int)a7);
+        BattleEventVar_SetConstValue(VAR_TYPE_EFFECTIVENESS, IfEnabled);
+        BattleEventVar_SetRewriteOnceValue(VAR_NO_EFFECT_FLAG, 0);
+        BattleEventVar_SetRewriteOnceValue(VAR_GENERAL_USE_FLAG, 0);
+        BattleEvent_CallHandlers(a1, a3);
+        Value = BattleEventVar_GetValue(VAR_NO_EFFECT_FLAG);
+        *a8 = BattleEventVar_GetValue(VAR_GENERAL_USE_FLAG);
+        BattleEventVar_Pop();
+
+        int moveId = a2->MoveID;
+        if ((moveId == 78 || moveId == 79 || moveId == 147 || moveId == 476 || moveId == 77 || moveId == 139) && BattleMon_HasType(a5, TYPE_GRASS))
+        {
+            Value = 1;
+        }
+        return Value;
     }
 
     ABILITY_TRIGGERTABLE OvercoatHandlers[] = {

@@ -12,17 +12,99 @@
 ====================================================================================================================================================
 /*   MARLON BUILD   */
 
-- Implement and test remainder of field effects (Victory Star, Smoke Bomb)
-- Fix collision for Reversal Mountain, Chargestone Cave, Route 21
-- Increase Exp yields on pokemon by about 20% that aren't 1st stage mons. 
-- Remove Season Research Lab encounter; it's not that interesting. Make the trainer a node with the other ranger. 
+To Do:
+- LATER 
+    - Implement and Test Route 14 Scripting and Dialogue 
+    - Implement and Test Reversal Mountain Scripting and Dialogue 
+    - Implement and Test Pinwheel Forest Scripting and Dialogue 
+    - Implement and Test Humilau City Scripting and Dialogue
+    - Implement and Test Undella Town Scripting and Dialogue
+    - Implement the Revised GlobalPCScript 
+    - Implement the Fixed Join Avenue Script
+    - Test Grass Types being Immune to Powders 
+    - Test the new Effect Spore effect. 
+    - Test Corrosion 
+
+- EASY 
+    - Implement Level Caps 
+        - Implement the GlobalPCScript Changes 
+        - Implement the changes for all the relevant zones. 
+    - Implement the Lentimas Town Flag Fixer 
+    - Remove the Sun Stone NPC from Nimbasa 
+    - D2 Field Overlays 
+        - Implement the level CAP 
+        - Make sure the Chatot / Kricketune / Spinda trades do not have their ivs rerolled. They should be perfect. 
+    - D1 Bag 
+        - Disable Rare Candies for pokemon going past the level cap. You can just add this to the level 100 check
+    - Move the Reversal Mountain Flannery Thing into the Sanctum
 
 
 
 
 
+271
+4453
 
 
+
+
+
+Trainers: 
+    Underutilized Mechanics: 
+        Chip Away Normal Types 
+        Ability Neutraliizing: 
+            Gastro Acid 
+        
+        Evasion:
+            Double Team 
+            Acid Armor 
+            Smokescreen 
+            Sand Attack (in doubles) 
+            Anticipation
+            Snow Cloak / Sand Veil
+        Confusion:  
+            Supersonic
+            Rock Climb 
+            Confuse Ray 
+            Swagger 
+        Attraction 
+        Hazards
+        Trapping 
+            Block 
+            Mean Look 
+            Dive / Dig / Bounce / Fly / Shadow Force 
+            Pursuit 
+            Wrap / Fire Spin / Clamp / Whirlpool / etc. 
+            Shadow Tag / Arena Trap
+        Failure Boosting: 
+            Anger Point 
+            Thrash 
+            Seething Cold 
+            Uproar 
+            Stompin Tantrum 
+            Grudge 
+            Blunder Policy 
+        Priority: 
+            Quick Claw 
+            Quick Draw 
+            Trickster Herb 
+        Speed Control: 
+            Scary Face 
+            Rock Tomb 
+            Bulldoze 
+            icy Wind 
+            Glaciate 
+            Heavy Slam 
+            Heat Crash (make sure it has the same id as icy wind)
+        Chaos Stats: 
+            Moody 
+            Starf Berry 
+
+
+
+
+Gen 4 Switch AI: 
+    Checks to see if a Pokemon has a superr effective move. If it does, then creates a score based on the type matchup. 
 
 
 
@@ -136,12 +218,6 @@ Prune Encounters?
 
     [ MECHANICS ]
         - Implement doubles switch in ai change 
-        
-Balance 
-    We might need to do another pass over and spread out move distribution some more especially for Burgh and elesa split. 
-    Less 80 BP + moves in this split. 
-    More scale moves. 
-
 
 Underutilized Mechanics Throughout the Game:
     Trapping Moves 

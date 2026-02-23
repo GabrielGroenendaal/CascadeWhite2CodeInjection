@@ -1,0 +1,30 @@
+----- TEXT FILE 666-----
+0: [VAR TRNAME(1)]: You found them!\nI knew you could do it!\c
+1: But...\nHow do we get in?\c
+2: ???: Hold up!\c
+3: A heavy gangplank fell\nwith a solid thud...\c
+4: Marlon: Eh, this should do it!\c
+5: [VAR TRNAME(1)]: I thought you weren't\ngoing to fight Team Plasma?\c
+6: Marlon: Hey, friends!\nTeam Plasma's not botherin' me.\c\nThey could be up to no good\nfor reals, and...\c\nIt's not my style to go around\ndecidin' Team Plasma's bad\r\nwithout thinkin' 'bout it\r\njust 'cause everyone says so!\c
+7: But, eh, you're havin' trouble,\nso I've got to help out!\r\nThat's what I want to do!\c
+8: [VAR TRNAME(1)]: Thanks...\c
+9: Marlon: Listen, 'K.\nBelieve in somethin'!\c\nSearchin' for stolen\nPokémon is fine!\c\nKeepin' Unova from bein'\niced over's fine too!\c\nIt's all good.\nBut think 'bout why you're doin' that.\c\nThe strength of your beliefs is what\ngives you and your Pokémon power!\c
+10: I made some noise,\nso some people came out!\c
+11: Hey, be careful, 'K!\c
+12: [VAR TRNAME(1)]: What was that?!\nThe guy sure doesn't follow through!\c
+13: Well, I guess he was being\nkind in his own way...\c\nAll right, I'm going in!\c
+14: [VAR TRNAME(1)]: Team Plasma!\c\nNo matter where you fly,\nI won't let you get away!\c\nBut, what's over there anyway?\c
+15: Cheren: Sorry I'm late...\c\nI suspect that they're flying\ntoward the Giant Chasm.\c
+16: [VAR TRNAME(1)]: The Giant Chasm!\nThat's deep in Route 22, right?\c\nOK, I'm going!\n[VAR TRNAME(0)]! You come too!\c
+17: That Pokémon...\c\nKyurem, was it?\c\nIts cry sounded\nlonely somehow.\c
+18: Cheren: Kyurem!\c\nTeam Plasma is using Kyurem's\npower for evil?!\c
+19: Then how should we stop\nTeam Plasma?\c\nIf Kyurem is, like Drayden said,\na legendary Dragon-type Pokémon,\r\nthe only ones who could stand up\r\nto it are Reshiram or Zekrom!\c\nBut...\nNeither of them is here right now...\c\nWhere are the ones the legendary\nPokémon recognized as heroes, anyway?\r\nI guess I just have to find one of them!
+20: Then how should we stop\nTeam Plasma?\c\nIf Kyurem is, like Drayden said,\na legendary Dragon-type Pokémon,\r\nthe only ones who could stand up\r\nto it are Zekrom or Reshiram!\c\nBut...\nNeither of them is here right now...\c\nWhere are the ones the legendary\nPokémon recognized as heroes, anyway?\r\nI guess I just have to find one of them!
+21: Cheren: Yeah...\c\nYou can get to the Giant Chasm\nfrom Route 22.
+
+[ SEASIDE CAVE ]
+22:
+Sorry kid, [COLOR(2)]Seaside Cave[COLOR(0)] is off\nlimits!\c\nLots of unusual Pokémon activity and\nwe don't want anyone getting hurt.\c\nYou won't be able to get in without\n[COLOR(1)]Gym Leader Marlon's[COLOR(0)] say so!
+
+
+

@@ -886,7 +886,7 @@ const int WhiteListedPokemon[651]{
     1, // PK125_ELECTABUZZ = 0x7D,
     1, // PK126_MAGMAR = 0x7E,
     1, // PK127_PINSIR = 0x7F,
-    1, // PK128_TAUROS = 0x80,
+    0, // PK128_TAUROS = 0x80,
     0, // PK129_MAGIKARP = 0x81,
     0, // PK130_GYARADOS = 0x82,
     1, // PK131_LAPRAS = 0x83,

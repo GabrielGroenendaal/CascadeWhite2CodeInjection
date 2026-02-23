@@ -1,58 +1,24 @@
 
 
-/*         
-	
-	-----------------------------------------------------------------------------------------------------------------------------------------
-	-------------------------------------------------- WHAT I WANNA DO TODAY ---------------------------------------------------------------- 
-	-----------------------------------------------------------------------------------------------------------------------------------------       
 
-*/
-
-
-New Google Account: 
-    trustypeachs@gmail.com
-    password: Ktba6jq8r3??????
-
-
-To Do List:
-    First:
-        - Fix the Driftveil Tutor being Red Shards 
-        - Fix Old man giving you air balloons
-        - Fix Scott's Zubatr in the Calcs
-    Later:
-        - Implement the new TM Compatibility. 
-        - Implement the new Field Effects
-
-MISSING MONS:
-    Whimsicott 
-    Sharpedo 
-
-MISSING MECHANICS: 
-    Anticipation 
-    Moody
-    Simple 
-    Growth 
-
-CHECK: DEPOT AGENT HANK (SCOLIPEDE, now Ability 1)
-CHECK: Ranger Jaiden (MARACTUS, Now ability 1), Backpacker Annie (MARACTUS, Now Ablity 3)
-CHECK: Janitor Brady (GOLBAT, now ability 4), Guitarist Billy Jo (GOLBAT, now ability 3), Scientist Marissa (GOLBAT, now ability 4), Janine (CROBAT, now ability 4)
-CHECK: Ace Trainer Mary (DRUDDIGON, now ability 1)
-CHECK: Fisherman Andrew (CARVANAH, now ability 3), 
-
-HIDDEN ABILITY UPDATES: 
-    Golbat line ability 4: Shadow Tag -> Sniper 
-    
-Documentation: 
-    Castelia Sewers Machoke's Eviolite
-    Ability descriptions Exploud 
-
-====================================================================================================================================================
+=============================================================================================================
 /*   PATCH NOTES    */
 
 ```Patch Notes:```
+If you're updating from the previous patch, you'll want to speak to an NPC in Lentimas Town who should get all your flags and work values fixed. They can be found on the north end of the airstrip. 
+
 ``[ BUG FIXES & SCRIPTING ]``
 > - **Lostlorn Forest** removed the Zoroark encounter. 
-
+> - **PWT Move Tutors** are now correctly assigned. The Starter Move Tutor has been moved. 
+> - **PWT IV Enhancer** has been fixed to maximize the correct IVs. 
+> - **Route 4** removed the errant Pokemon Breeder. 
+> - **Route Gate Nimbasa** removed the guy who gives you a Macho Brace, now a Tera Badge. 
+> - **Encounters** now correctly unlock after defeating Cobalion in Guidance Chamber.
+> - **Gift and Trade Encounters** will now have their IVS properly maximized / enhanceed if the player has Perfect/Enhanced IVs toggled. 
+> - **Nimbasa City**: Removed the unintentional Sun Stone 
+> - **Join Avenue**: Fixed a crash that occured when reaching the gauntlet end on the right hand side of the avenue. 
+> - **Move Tutors** fixed the Blue and Yellow Move tutor lists being mixed up. Yellow Shards are now the most rare. 
+> - **The Castelia Alleyway Trades** should have their perfect IVs back. 
 
 ``[ BALANCE ]``
 > - **Crobat Line** is getting Strong Body in Ability Slot 1, as Infiltrator becomes the Hidden Ability. Sniper becomes AI Only. 
@@ -63,16 +29,14 @@ Documentation:
 > - **Hitmontop** is losing 10 HP and 10 Defense
 > - **Hitmonlee** is losing 20 HP and having it redistributed to Defense. Also losing 10 Special Defense 
 > - **Hitmonchan** is losing 10 Speed 
-> - **Dewgong** is losing 5 SpA. Their hidden ability is now Thick Fat.
+> - **Dewgong** hidden ability is now Thick Fat.
 > - **Scyther** is losing 10 HP. It now gets Acrobatics instead of Dual Wingbeat at level 53. Dual Wingbeat is a scale move.
 > - **Scizor** is losing 10 Defense. 
-> - **Whimsicott** is losing 10 Atk and 10 Defense. Infiltrator becomes its new Hidden Ability, over Merciless. 
+> - **Whimsicott** is losing 10 Atk and 10 Special Attack. Infiltrator becomes its new Hidden Ability, over Merciless. 
 > - **Cottonee** now evolves at level 42, or with a Sun Stone.
 > - **Lilligant** loses 5 Defense and Special Defense. 
 > - **Petilil** now evolves at level 42 or with a Sun Stone.
 > - **Scolipede Line** swaps ability positions for Speed Boost and Strong Body
-> - **Krokorok** loses 10 Atk. 
-> - **Krookadile Line** learns earthquake at 45, and Cross Chop at 48. 
 > - **Darumaka** can evolve into Darmanitan by using a Dawn Stone, as well at reaching level 50. 
 > - **Maractus** swaps Ability Slots for Storm Drain and Sand Rush. 
 > - **Dwebble / Crustle** now have Pickup as their Hidden Ability. 
@@ -119,6 +83,20 @@ Documentation:
 > - **Scolipede** gets Defense Curl as a scale move.
 > - **Fake Out** is no longer a never-miss move. 
 > - **Dugtrio line** now learns Bulldoze at 26 and Dig at 34. They learn earthquake at 52, sucker punch at 43, and Head Smash as a scale move.
+> - **Banette's Hidden Ability** is now Justified. 
+> - **Krookadile Line's Abilities** are now Intimidate, Sand Rush, Strong Jaw. Tenacity and Anger Point become AI Only. 
+> - **Krookadile Line** has slightly adjusted learnset. 
+> - **Krokorok** loses 10 Atk. 
+> - **Krookadile Line** learns earthquake at 45, and Cross Chop at 48. 
+> - **Ursaring Line's** ability 3 is now Sap Sipper. 
+> - **Yawn and Fly** can now miss. 
+> - **Gigalith Line** gets Metal Sound instead of Force Palm. 
+> - **Parasect** gets +10 Atk and a slightly revamped learnset
+> - **Walrein Line** now has the Abilities Ice Body, Guts, and Intimidate.
+> - **Walrein Line** can learn Aqua Jet as a Scale Move. They learn Sheer Cold at level 55 instead of Blizzard. At 75 they learn Giga Impact instead of Sheer Cold. Yawn is now a Scale Move. In Yawn's Place it learns Hyper Beam. 
+> - **Tyranitar Line** Abilities are now Berserk / Battle Armor / Sheer Force
+> - **Eelektross** now gets +15 Defense and +20 Special Defense. 
+> - **Leafeon** ability 2 is now Hyper Cutter.
 
 
 ```[ ENCOUNTERS ]```
@@ -164,6 +142,8 @@ Documentation:
 > - **Burgh's Gliscor** has Bounce over Aerial Ace, a Clear Amulet over Bug Gem, and Rock Slide over Lunge. 
 > - **Burgh's Omastar** now has Icy Wind over Signal Beam.
 > - **Erika's Vileplume** is now correctly Chlorophyll. 
+> - **Clerk Britney's Piloswine** now has Freeze Dry over Ice Fang. 
+
 
 ``[ ITEMS ]``
 > - **Sabrina Miniboss** no longer awards the Will-o-Wisp TM 
@@ -173,9 +153,9 @@ Documentation:
 > - **Weather Ball** TM is no longer found in Route 6. In its place are 10x Sitrus Berries.
 > - **Heart Scale** drops have been reduced from 2 to 1 in Celestial Tower, Chargestone Cave and Route 7.
 > - **White Herb (x2)** added to Driftveil Market 
-> - **HM04 Waterfall** no longer given by Cheren at weather institute. Instead he gives 10 lum berries. 
 > - **Dig** is removed from Desert Resort, replaced with TM78 Bulldoze 
-> - **Bulldoze** is replaced with Aerial Ace TM in lower Route 4. 
+> - **Bulldoze** is replaced with Sharp Beak in Lower Route 4 
+> - **Sharp Beak** is raplced with 5x Berry Juice in SouthEastern Route 4
 > - **Aerial Ace TM** is replaced with Lum Berry x3 in middle Route 4 
 > - **Desert Resort** now offers 20x Green Shards, down from 30x 
 > - **Psyshock TM** is now found in Desert Resort, not Route 7
@@ -190,204 +170,20 @@ Documentation:
 > - **3x Ghost Gems, Shadow Ball TM, 3x Kasib Berries** added to Celestial TOwer gatekept by Morty
 > - **3x Ground Gems, Dig TM, 3x Shuca Berries** added to Clay Tunnel gatekept by Roxanne
 > - **Mistralton City PokeMart** now sells the TMs for Light Screen, Reflect and Safeguard
+> - **Skill Swap** now costs 10 Red Shards. 
+> - **Thunder Punch, Ice Punch, Fire Punch** now cost 6 Red Shards. 
+> - **Uproar and Take Down** now cost 4 Green Shards. 
+> - **Iron Ball** has been moved from Relic Passage to the location of the Bug Buzz TM in Chargestone Cave. In its place is 3x Normal Gems. 
+> - **TM Knock Off** has been removed from Mistralton Cave. In it's place is the TM for Bug Buzz. 
+
 
 ``[ NEW CHANGES ]``
 > - **AI Status Move Scoring** now accounts for Trickster Herb and Prankster, not penalizing those move scores if the user is normally slower. 
-
+> - **Effect Spore** is now an AI only ability. It triggers in response to any move, contact or otherwise, and has an 50% proc chance. It won't affect Grass types, pokemon with Overcoat, or Pokemon holding Safety Goggles.
+> - **AI Switch Logic** accounts for Tera when applying the STAB bonus for switch in. 
+> - **Grass Types are now properly immune to Powder effects** 
+> - **Enforced Level Caps** are now a toggle-able option in the PokeHelper menu. While in the PokeHelper menu, you can also see the current level cap.
 
 ``[ UPCOMING WORK ]``
-
-
-
-
-
-
-====================================================================================================================================================
-/*   BUGS   */
-
-    [ ILLUSION ]
-        Seems to inconsistently work. Need to make some robust test cases and make sure the logic is airtight.
-    
-    [ SLEEP TALK ]
-        Put in somme print statements and see if we can get the AI to better understand when it's about to wake up or not
-    
-    [ CASTELIA SEWERS GRUNTS ]
-        This bug occurs during the tag battle vs. the Castelia Sewer Grunts. 
-        We should check all the AI flags to make sure there isn't something unintentionally being toggled.
-        We should check the AI Flags for Strength to make sure it isn't being given AI flags for another move. 
-        We should re-implement damage caching to see if maybe that resolves the issue. 
-        We should examine the AI Scripts to make sure there's no infinite logic associated with Auto-crit moves, Venoshock, Protect, or Strength 
- 
-    
-
-====================================================================================================================================================
-/*   MECHANICS   */
-    
-    [ REMOVE ALL ITEMS ]
-        See if we can find some script or function that iterates over the entire PC and removes all held items 
-
-    [ FIELD EFFECTS ]
-        Forest's Wrath (Leech Seed on Switch in, Aromatherapy Animation)
-        Underdog (boosts lowest stat by +2 on switch in, Focus Energy Animation)
-        Sturdy Combatant (Endure Animation, all Pokemon benefit from Sturdy)
-        Horde (Play Rough Animation, deals 1/8 damage at the end of each turn)
-
-        Pickpockets (Items removed on switch in, Thief Animation) (side effect)
-        Scourge of Unova (applied 3 turn perish song and heal block to pokemon on switch in, Glaciate Animation) (side effect)
-        Smoke Bomb (Haze Animation, -1 Accuracy on switch in to all Pokemon) (field effect)
-        Victory Star (all accuracy increased by 20%) (field effect)
-
-        Update the field effect zone ids for Haunted. 
-        
-    [ TMS ]
-        Leftovers: 
-            Weather Crash 
-            Weather Ball
-            Aura Sphere
-            Brutal Swing 
-
-        Ones To give in Marlon Split: 
-            TM02: Dragon Claw (Reversal Mountain)
-            TM23: Weather Crash (Humilau City)
-            TM24: Thunderbolt (Route 21)
-            TM35: Flamethrower (Flannery, Reversal Mountain)
-            TM45: Lunge (Bugsy, Pinwheel Forest)
-            TM Will o Wisp (Strange House)
-            TM12: Taunt (marine tube, after first B2B with Shadow Triad)
-            TM53: Energy Ball (Gardenia, Pinwheel Forest)
-            TM58: Hurricane (Past Falkner, Route 14)
-            TM62: Acrobatics (Marine Tube, after defeating the Plasma Shadow Triad)
-            HM05: Waterfall (reward for Gauntlet)
-            HM06: Dive (reward from Marlon)
-
-        Ones To give in Drayden Split: 
-            TM93: Wild Charge (encountered on PLasma Infiltration)
-            TM51: Ally Switch (Shadow Triad, encountered on plasma Infiltration)
-            TM74: Gyro Ball (Byron in Twist Mountain)
-            TM71: Stone Edge (Roark in Twist Mountain)
-            TM26: Earthquake (Blue in Challenger's Cave)
-            TM82: Dragon Tail (Reward from Drayden)
-            TM31: Brick Break (Maylene, Seaside Cave)
-            TM68: Avalanche (Candice, from Route 13)
-            TM85: Play Rough (Reward from Whitney)
-            TM22: Solar Beam (Undella Bay)
-            TM92: Solar Blade (Undella Bay)
-            TM38 Fire Blast (Bought in SM9)
-            TM25 Thunder (Bought in SM9)
-            TM14 Blizzard (Bought in SM9)
-        
-        One to give in Kyurem Split:
-            TM13: Ice Beam (Zinzolin, Route 13)
-            TM75: Storm Throw (Plasma Frigate)
-            TM41: Infestation (Plasma Frigate)
-            TM34: Sludge Wave (Plasma Frigate)
-            TM88: Muddy Water (past Crasher Wake, Route 8)
-            TM Aura Sphere (Held by your captured pokemon upon their return)
-            TM56: Fling (Defeat Giovanni)
-            TM69: Gunk Shot (from Janine)
-
-        One to give in League Split:
-            TM43: Heat Wave
-            TM60: Wave Crash (from Misty)
-            TM42: Facade (from Norman)
-            TM52: Focus Blast 
-            TM70: Sparkle -> Diamond Storm
-
-        One to give in Post-Game Split:
-            TM95: Giga Impact
-            TM79: Hyper Beam 
-
-
-====================================================================================================================================================
-/*   DOCUMENTATION   */
-
-    [ AI CHANGES DOCUMENT ]
-        We can go through our AI Scripts and comment them thoroughly so that an AI can go through and make an executive summary of them that we could then correct. 
-    
-    [ GENERAL CHANGES SHEET ]
-        Add something like this to the Pokemon Changes sheet that indicates the following:
-            Normal's Immunity to Curse and Shadow Tag 
-            Psychic's immunity to Confusion 
-            Ghost's immunity to trapping 
-            Hail's new mechanics 
-            Fire type moves all thaw frozen 
-            Gastro Acid is a permanent condition until end of battle 
-            Stone Evolutions 
-            Electric's immunity to Paralysis 
-            Move Tutors 
-
-
-====================================================================================================================================================
-/*   BIG GOALS   */
-    
-    [ DOUBLES / TRIPLES SWITCH AI ]
-        I have an idea for iterating over every pokemon in battle when determining switch in ai.
-        This would need to be implemented for both illusion and the other one. 
-        
-        I think we can look at ExpandPokeID to get a list of pokemon that are out on the opposing team. Or we could look at DetermineSwitchInOpponent to 
-        Figure out how it handles that logic.
-
-
-
-
-====================================================================================================================================================
-/*   SPIT BALLING   */
-           
-	[ Earmark footage for trailer ]
-		- Setup 
-			- Figure out how to make the PC invisible. 
-			- Find a good backing track 
-		- Scenes
-			- NEW Rivals
-				- Benga Text Box 
-				- Cobalion Battle 
-			- Battles
-				- Castelia Gym Battle 
-				- Elesa Gym Trainer Battle
-				- Roxie Gym Battle 
-				- Clay Gym Battle 
-				- Misty Gym Battle
-			- Catching pokemon in:
-				- Route 6 
-				- Route 20
-				- Virbank Water 
-				- Relic Castle 
-			- Overworld Panning Shots:
-				- Join Avenue 
-				- Driftveil Drawbridge
-				- Charge stone cave 
-			- New Pokemon
-				- Swoobat 
-				- Move use: Sticky Web
-				- Ability Use: Bulletproof triggers 
-				- Move Use: 1st Impression 
-				- Panning over bag with new items 
-			- QOL Options
-				- PC Anywhere
-				- Settings 
-				- Fast Travel 
-
-
-    [ TMS ]
-        We made the following TMs redundant: 
-            - Low Sweep 
-            - Icy Wind 
-            - Incinerate 
-            - Snarl 
-            - Struggle Bug 
-            - Pluck 
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

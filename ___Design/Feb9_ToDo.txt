@@ -8,24 +8,194 @@
 
 */
 
-- Implement Personal Changes 
-- Implement TrPok changes to account for Personal Changes
-- Update Skyla "reset flags" script to remove Roxanne, her items, Morty, her items. 
-- Reassign 740 (dwight) to a trainer that has intro dialogue or see if we can manually set that somewhere. 
-- Implement and test remainder of field effects (Victory Star, Smoke Bomb)
-
-
-
-514 is where we're going to do the strange house event. 
-
-
-====================================================================================================================================================
-/*   LIVE BUILD   */
-
 
 ====================================================================================================================================================
 /*   MARLON BUILD   */
-        
+
+To Do:
+- LATER 
+    - Implement and Test Route 14 Scripting and Dialogue 
+    - Implement and Test Reversal Mountain Scripting and Dialogue 
+    - Implement and Test Pinwheel Forest Scripting and Dialogue 
+    - Implement and Test Humilau City Scripting and Dialogue
+    - Implement the Revised Item Script 
+    - Implement the Revised GlobalPCScript 
+    - Test Grass Types being Immune to Powders 
+    - Test the new Effect Spore effect. 
+    - Test Corrosion 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Trainers: 
+    Underutilized Mechanics: 
+        Evasion:
+            Double Team 
+            Acid Armor 
+            Smokescreen 
+            Sand Attack (in doubles) 
+            Anticipation
+            Snow Cloak / Sand Veil
+        Confusion:  
+            Supersonic
+            Rock Climb 
+            Confuse Ray 
+            Swagger 
+        Attraction 
+        Hazards
+        Trapping 
+            Block 
+            Mean Look 
+            Dive / Dig / Bounce / Fly / Shadow Force 
+            Pursuit 
+            Wrap / Fire Spin / Clamp / Whirlpool / etc. 
+            Shadow Tag / Arena Trap
+        Failure Boosting: 
+            Anger Point 
+            Thrash 
+            Seething Cold 
+            Uproar 
+            Stompin Tantrum 
+            Grudge 
+            Blunder Policy 
+        Priority: 
+            Quick Claw 
+            Quick Draw 
+            Trickster Herb 
+        Speed Control: 
+            Scary Face 
+            Rock Tomb 
+            Bulldoze 
+            icy Wind 
+            Glaciate 
+            Heavy Slam 
+            Heat Crash (make sure it has the same id as icy wind)
+        Chaos Stats: 
+            Moody 
+            Starf Berry 
+
+
+
+
+Gen 4 Switch AI: 
+    Checks to see if a Pokemon has a superr effective move. If it does, then creates a score based on the type matchup. 
+
+
+
+
+
+Prune Encounters?
+
+
+
+    Cheren Split: 9
+        Starter
+        Rowdy Pokemon Center 
+        Route 19 
+        Floccessy Town 
+        Route 20
+        Floccessy Ranch 
+        Flocessy Egg 
+        Alder's House 
+        Pledge Grove 
+
+    Roxie Split: 14
+        Virbank Outskirts
+        Virbank City 
+        Complex Exterior 
+        Virbank Complex
+        Misty Egg 
+    
+    Burgh Split: 21
+        Pokestar Studios 
+        Castelia Sewers 
+        Route 4
+        Castelia Gardens 
+        Relic Passage 
+        Battle Company 
+        Liberty Garden 
+    
+    Elesa Split: 29
+        Desert Resort 
+        Relic Castle 
+        Relic Fossil 
+        Anville Town 
+        Route 5
+        Route 16 
+        Lostlorn Forest 
+        Deep Lostlorn Forest 
+
+    Clay Split: 33
+        Drawbridge
+        Driftveil City 
+        Route 6 
+        Clay Tunnel 
+    
+    Skyla Split: 39
+        Relic Sanctum 
+        Weather Research Center   (-1)
+        Chargestone Cave 
+        Mistralton Cave 
+        Guidance Chamber   (-1)
+        Route 7 
+        Celestial Tower 
+        Celestial Rooftop 
+    
+    Marlon Split: 46
+        Lentimas Outskirts   
+        Reversal Mountain 
+        Strange House 
+        Route 14             (Low Value)
+        Abundant Shrine      (expected to lose 1)
+        Humilau Town         (-1) (Same Reasoning as Undella Town)
+        Route 22 
+        Route 21 
+        Pinwheel Forest      (-1)(Expected to lose 2-3)
+
+    Drayden Split: 53
+        Seaside Cave      
+        Undella Bay        (Low Value) 
+        Abyssal Ruins      (Same encounter table as Undella Bay?)
+        Route 13
+        Route 12          
+        Village Bridge     (-1)
+        Route 11 
+        Route 9 
+        Challenger's Cave  (-1) 
+        Twist Mountain     (-1)(Expected to lose 2-3)
+
+    Kyurem Split: 57
+        Route 10 
+        Giant Chasm 
+        Plasma Frigate 
+        Nature Preserve 
+        Moors of Icirrus   (-1)
+    
+    League Split: 60
+        Route 23 
+        Victory Road 
+        Old Victory Road 
+    
+    Total: 68
+        -1 Humilau 
+        -1 Abyssal Ruin 
+        -1 Weather Research Center 
+        -1 Challenger's Cave 
+        -1 Lentimas Outskirts
+    
     [ BUGS ]
         - Fix Illusion 
         - Fix Castelia Sewer Crash 
@@ -35,12 +205,6 @@
 
     [ MECHANICS ]
         - Implement doubles switch in ai change 
-        
-Balance 
-    We might need to do another pass over and spread out move distribution some more especially for Burgh and elesa split. 
-    Less 80 BP + moves in this split. 
-    More scale moves. 
-
 
 Underutilized Mechanics Throughout the Game:
     Trapping Moves 

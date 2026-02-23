@@ -47,7 +47,8 @@ label32: ;
 	StackCompare(1);
 	if (255) goto label0;
 	PlaySound(1372);
-	EventGreyMessage(1, 2);
+	SetWordNumber(1, 0x4052, 3);
+	EventGreyMessage(178, 2);
 	SetupDialogueSelection(31, 1, 0, 1, 0x8024);
 
 
@@ -80,7 +81,6 @@ label1: ;
 	StackPushConst(0);
 	StackCompare(2);
 	if (255) goto label_SkipDialogueOption1;
-	SetWordPlayerName(0);
 	AddDialogueOption(4, 0xFFFF, 4);
 	StackPushVar(0x8026);
 	StackPushConst(1);
@@ -153,24 +153,32 @@ label3: ;
 	GetPartyCount(0x8022, 0);
 	Compare(0x8022, 0);
 	if (1) goto label_DisablePokeHelperOptions;
+
     AddDialogueOption(43, 0xFFFF, 43);
+
     AddDialogueOption(171, 0xFFFF, 171);
+
     AddDialogueOption(71, 0xFFFF, 71);
 label_DisablePokeHelperOptions: ;
 	StackPushVar(0x8022);
 	StackPushConst(1);
 	StackCompare(1);
 	if (255) goto label9;
+
 	AddDialogueOption(6, 0xFFFF, 6);
 
 label9: ;
 	// New Options
 	// goto label_DisablingFlight;
+
+    // Didn't receive the ugprade from Hugh Yet
 	SetVarEqVar(0x8022, 16759);
 	StackPushVar(0x8022);
 	StackPushConst(0);
 	StackCompare(2);
 	if (255) goto label_DisablingFlight;
+
+    // Castelia Sewers and Associated Areas
 	Storec0xD3(0x8028);
 	Compare(0x8028, 495);
 	if (1) goto label_DisablingFlight;
@@ -180,16 +188,25 @@ label9: ;
 	Storec0xD3(0x8028);
 	Compare(0x8028, 502);
 	if (1) goto label_DisablingFlight;
+
+    // PWT Interior
     Storec0xD3(0x8028);
 	Compare(0x8028, 192);
 	if (1) goto label_DisablingFlight;
+
+
+    // Plasma Frigate
     Storec0xD3(0x8028);
 	Compare(0x8028, 552);
 	if (1) goto label_DisablingFlight;
+
+    // Iron Chamber
     Storec0xD3(0x8028);
 	Compare(0x8028, 613);
 	if (1) goto label_DisablingFlight;
-	Storec0xD3(0x8028);
+	
+    // Reversal Mountain
+    Storec0xD3(0x8028);
 	Compare(0x8028, 538);
 	if (1) goto label_DisablingFlight;
 	Compare(0x8028, 539);
@@ -200,12 +217,30 @@ label9: ;
 	if (1) goto label_DisablingFlight;
 	Compare(0x8028, 542);
 	if (1) goto label_DisablingFlight;
+
+    // Route 14
+    Compare(0x8028, 374);
+	if (1) goto label_DisablingFlight;
+
+    // Marine Tube
+    Compare(0x8028, 464);
+	if (1) goto label_DisablingFlight;
+
+    // Humilau Gym 
+    Compare(0x8028, 473);
+	if (1) goto label_DisablingFlight;
+
+    // Nimbasa Gym 
+    Compare(0x8028, 63);
+	if (1) goto label_DisablingFlight;
 	AddDialogueOption(86, 0xFFFF, 86);
 
 label_DisablingFlight: ;
+
 	AddDialogueOption(87, 0xFFFF, 87);
 
 	AddDialogueOption(7, 0xFFFF, 7);
+
 	AddDialogueOption(8, 0xFFFF, 8);
 	ShowDialogueSelection2();
 	CloseEventGreyMessage();
@@ -453,7 +488,7 @@ label64: ;
 	AddDialogueOption(17, 23, 17);
 	AddDialogueOption(20, 26, 20);
 	AddDialogueOption(18, 24, 18);
-	AddDialogueOption(43, 44, 43);
+	// AddDialogueOption(43, 44, 43);
 	AddDialogueOption(45, 46, 45);
 	AddDialogueOption(71, 72, 71);
 	AddDialogueOption(171, 172, 171);
@@ -772,8 +807,8 @@ void Sequence6()
 	PlayFanfare(1300);
 	WaitFanfare();
 	PC_131();
-	FadeFromBlack2();
-	WaitFade();
+	// FadeFromBlack2();
+	// WaitFade();
 	EventGreyMessage(50, 2);
 	CloseEventGreyMessage();
 	PlaySound(1372);
@@ -1205,11 +1240,30 @@ label_skipLentimas: ;
 	AddDialogueOption(98, 0xFFFF, 412);
 
 label_skipUndella: ;
-// ======== LENTIMAS TOWN ======== */
-	SetVarFlagStatus(544, 0x8030);
-	Compare(0x8030, 0);
+// ======== HUMILAU TOWN ======== */
+	Compare(16462, 0);
 	if (1) goto label_skipHumilau;
 	AddDialogueOption(174, 0xFFFF, 465);
+
+// label_skipHumilau: ;
+// ======== LACUNOSA TOWN ======== */
+//	Compare(16462, 0);
+//	if (1) goto label_skipLacunosa;
+//	AddDialogueOption(175, 0xFFFF, lacunosaZone); // Put the Lacunosa Town ID here
+//
+//label_skipLacunosa: ;
+// ======== OPELUCID TOWN ======== */
+//	Compare(16462, 0);
+//	if (1) goto label_skipOpelucid;
+//	AddDialogueOption(176, 0xFFFF, opelucidZone); // Put the opelucid Town ID here
+//
+//label_skipOpelucid: ;
+// ======== LEAGUE ======== */
+//	Compare(16462, 0);
+//	if (1) goto label_skipLeague;
+//	AddDialogueOption(177, 0xFFFF, leagueZone); // Put the League Zone ID here
+
+label_skipLeague: ;
 
 label_skipHumilau: ;
 	AddDialogueOption(112, 0xFFFF, 112);
@@ -1263,6 +1317,12 @@ label_letsFly: ;
 	if (1) goto label_mapUndella;
 	Compare(0x8029, 465);
 	if (1) goto label_mapHumilau;
+//  Compare(0x8029, lacunosaZone);
+//	if (1) goto label_mapLacunosa;
+//  Compare(0x8029, opelucidZone);
+//	if (1) goto label_mapOpelucid;
+//  Compare(0x8029, leagueZone);
+//	if (1) goto label_mapLeague;
 	goto label_goBack;
 
 label_mapAspertia: ;
@@ -1313,6 +1373,18 @@ label_mapUndella: ;
 label_mapHumilau: ;
 	c0x28A(465, 1);
 	goto label_travelOptions;
+
+//label_mapLacunosa: ;
+//	c0x28A(lacunosaZone, 1);
+//	goto label_travelOptions;
+
+//label_mapOpelucid: ;
+//	c0x28A(opelucidZone, 1);
+//	goto label_travelOptions;
+
+//label_mapLeague: ;
+//	c0x28A(leagueZone, 1);
+//	goto label_travelOptions;
 
 label_goBack: ;
 	Return();
@@ -1375,6 +1447,9 @@ label_goBack: ;
 		- Anti-Yap Options
 			Off (D)
 			On
+        - Hard Level Caps 
+            Off (D)
+            On 
 
 */
 void Sequence18()
@@ -1407,6 +1482,9 @@ label49_options: ;
     // Anti-Yap Options
 	// AddDialogueOption(164, 0xFFFF, 10);
 
+    // Level Caps 
+    AddDialogueOption(179, 0xFFFF, 11);
+
 
 	// Quit
 	AddDialogueOption(112, 0xFFFF, 7);
@@ -1417,9 +1495,10 @@ label49_options: ;
 
 //
 //	CRITICAL HITS
+//
 
 	Compare(0x8004, 0);
-	if (5) goto label45_options;
+	if (5) goto label_LevelCapOptions;
 	// CloseAllMessageBoxes();
 	Compare(0x401F, 0);
 	if (5) goto label46_options;
@@ -1456,6 +1535,61 @@ label50_options: ;
 	SetVarEqVar2(0x401F, 0);
 
 label51_options: ;
+	EventGreyMessage(119, 2);
+	WaitForButton();
+	goto label49_options;
+
+
+
+
+
+
+
+//
+
+//	Level Caps
+
+//
+
+label_LevelCapOptions: ;
+	Compare(0x8004, 11);
+	if (5) goto label45_options;
+	// CloseAllMessageBoxes();
+	Compare(0x4051, 0);
+	if (5) goto levelCapOptionsA;
+	EventGreyMessage(180, 2);
+	goto levelCapOptionsB;
+
+levelCapOptionsA: ;
+	EventGreyMessage(181, 2);
+
+levelCapOptionsB: ;
+	WaitForButton();
+	YesNoBox(0x8000);
+	SetVarEqVar(0x8006, 0x8000);
+	Compare(0x8006, 1);
+	if (5) goto levelCapOptionsC;
+	// CloseAllMessageBoxes();
+	EventGreyMessage(116, 2);
+	WaitForButton();
+	goto label49_options;
+
+// Toggling the Level Cap Settings
+levelCapOptionsC: ;
+	// CloseAllMessageBoxes();
+	Compare(0x4051, 0);
+	if (5) goto levelCapOptionsD;
+	EventGreyMessage(182, 2);
+	WaitForButton();
+	SetVarEqVar2(0x4051, 1);
+	goto levelCapOptionsE;
+
+levelCapOptionsD: ;
+	EventGreyMessage(183, 2);
+	WaitForButton();
+	SetVarEqVar2(0x4051, 0);
+
+levelCapOptionsE: ;
 	EventGreyMessage(119, 2);
 	WaitForButton();
 	goto label49_options;
@@ -2026,11 +2160,19 @@ label102_options: ;
 
 label103_options: ;
 	Compare(0x4032, 0);
-	if (1) goto label104_options;
+	if (1) goto label_DefaultLevelCapSetting;
 	// CloseAllMessageBoxes();
 	EventGreyMessage(137, 2);
 	WaitForButton();
 	SetVarEqVar2(0x4032, 0);
+
+label_DefaultLevelCapSetting: ;
+	Compare(0x4051, 0);
+	if (1) goto label104_options;
+	// CloseAllMessageBoxes();
+	EventGreyMessage(183, 2);
+	WaitForButton();
+	SetVarEqVar2(0x4051, 0);
 
 label104_options: ;
 	Compare(0x4033, 0);

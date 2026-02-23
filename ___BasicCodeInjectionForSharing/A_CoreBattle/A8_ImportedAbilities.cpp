@@ -1468,17 +1468,17 @@ extern "C" void THUMB_BRANCH_LINK_BtlServer_FaintSequence_0x136(BtlServerWk *btl
 // extern "C" u32 PokeParty_GetParamCore(PartyPkm *pkm, PkmField field, void *extra);
 // extern "C" void PokeParty_PkmEncrypt(PartyPkm *pPkm);
 
-// STRUCT_DECLARE(GameData)
-// #define GAME_DATA *(GameData **)(g_GameBeaconSys + 4)
-// extern "C" EventWorkSave *GameData_GetEventWork(void *gameData);
-// extern "C" u16 *EventWork_GetWkPtr(EventWorkSave *eventWork, int swkId);
+STRUCT_DECLARE(GameData)
+#define GAME_DATA *(GameData **)(g_GameBeaconSys + 4)
+extern "C" EventWorkSave *GameData_GetEventWork(void *gameData);
+extern "C" u16 *EventWork_GetWkPtr(EventWorkSave *eventWork, int swkId);
 
-// extern "C" u32 checkEVFlags(u32 param)
-// {
-//     EventWorkSave *eventWork = GameData_GetEventWork(GAME_DATA);
-//     u16 *lvl_cap_ptr = EventWork_GetWkPtr(eventWork, 16434);
-//     return *lvl_cap_ptr;
-// }
+extern "C" u32 checkEVFlags(u32 param)
+{
+    EventWorkSave *eventWork = GameData_GetEventWork(GAME_DATA);
+    u16 *lvl_cap_ptr = EventWork_GetWkPtr(eventWork, 16434);
+    return *lvl_cap_ptr;
+}
 
 // extern "C" u32 THUMB_BRANCH_PokeParty_GetParam(PartyPkm *pPkm, PkmField field, void *extra)
 // {
@@ -1494,55 +1494,71 @@ extern "C" void THUMB_BRANCH_LINK_BtlServer_FaintSequence_0x136(BtlServerWk *btl
 //     return ParamCore;
 // }
 
-// extern "C" s32 fx_sqrt(s32 num);
-// extern "C" u32 PML_UtilGetPkmLvExp(u16 species, u16 form, int level);
+extern "C" s32 fx_sqrt(s32 num);
+extern "C" u32 PML_UtilGetPkmLvExp(u16 species, u16 form, int level);
 
-// extern "C" u32 GetExpForLevel100(BattleMon *a1)
-// {
-//     return PML_UtilGetPkmLvExp(a1->Species, a1->Form, 100);
-// }
+extern "C" u32 GetExpForLevel100(BattleMon *a1)
+{
+    return PML_UtilGetPkmLvExp(a1->Species, a1->Form, 100);
+}
+extern "C" u32 checkLevelCap(u8 level)
+{
+    EventWorkSave *eventWork = GameData_GetEventWork(GAME_DATA);
+    u16 *lvl_cap_ptr = EventWork_GetWkPtr(eventWork, 16465);
+    if (*lvl_cap_ptr == 1){
+        u16* lvl_cap_value = EventWork_GetWkPtr(eventWork, 16466);
+        if (level >= *lvl_cap_value) {
+            return 0;
+        } else {
+            return 1;
+        }
+    } 
+    return 1;
+}
+extern "C" int THUMB_BRANCH_ScaleExpGainedByLevel(BattleMon *monGainingExp, unsigned int amountOfExpGainedSoFar, int monGainingExpLevel, int defeatedMonLevel)
+{
+    int v4;                      // r5
+    int v6;                      // r4
+    float v7;                    // r0
+    unsigned int v8;             // r5
+    float v9;                    // r0
+    unsigned int v10;            // r4
+    unsigned int ExpForLevel100; // r0
 
-// extern "C" int THUMB_BRANCH_ScaleExpGainedByLevel(BattleMon *monGainingExp, unsigned int amountOfExpGainedSoFar, int monGainingExpLevel, int defeatedMonLevel)
-// {
-//     int v4;                      // r5
-//     int v6;                      // r4
-//     float v7;                    // r0
-//     unsigned int v8;             // r5
-//     float v9;                    // r0
-//     unsigned int v10;            // r4
-//     unsigned int ExpForLevel100; // r0
+    if (!checkLevelCap(monGainingExpLevel)){
+        return 0;
+    }
+    // k::Printf("\n\nmonGainingExperience is %d\namountofExpSoFar is %d\nlevel is %d\ndefeatedMonLevel is %d\n\n",
+    //           BattleMon_GetID(monGainingExp), amountOfExpGainedSoFar, monGainingExpLevel, defeatedMonLevel);
 
-//     k::Printf("\n\nmonGainingExperience is %d\namountofExpSoFar is %d\nlevel is %d\ndefeatedMonLevel is %d\n\n",
-//               BattleMon_GetID(monGainingExp), amountOfExpGainedSoFar, monGainingExpLevel, defeatedMonLevel);
-
-//     v4 = 2 * defeatedMonLevel + 10;
-//     v6 = defeatedMonLevel + monGainingExpLevel + 10;
-//     if (2 * defeatedMonLevel == -10)
-//     {
-//         v7 = (v4 << 12) - 0.5;
-//     }
-//     else
-//     {
-//         v7 = (v4 << 12) + 0.5;
-//     }
-//     v8 = (fx_sqrt(v7) * v4 * v4) >> 12;
-//     if (v6)
-//     {
-//         v9 = (v6 << 12) + 0.5;
-//     }
-//     else
-//     {
-//         v9 = 0 - 0.5;
-//     }
-//     v10 = div32(amountOfExpGainedSoFar * v8, ((v6 * v6 * fx_sqrt(v9)) >> 12)) + 1;
-//     // amountOfExpGainedSoFar * v8 / ((v6 * v6 * fx_sqrt(v9)) >> 12) + 1;
-//     ExpForLevel100 = GetExpForLevel100(monGainingExp);
-//     if (v10 > ExpForLevel100)
-//     {
-//         return ExpForLevel100;
-//     }
-//     k::Printf("\n\nmonGainingExperience is %d\namountofExpSoFar is %d\nlevel is %d\ndefeatedMonLevel is %d\nfinalExp is %d\n\n",
-//               BattleMon_GetID(monGainingExp), amountOfExpGainedSoFar, monGainingExpLevel, defeatedMonLevel, v10);
-//     return v10;
-// }
+    v4 = 2 * defeatedMonLevel + 10;
+    v6 = defeatedMonLevel + monGainingExpLevel + 10;
+    if (2 * defeatedMonLevel == -10)
+    {
+        v7 = (v4 << 12) - 0.5;
+    }
+    else
+    {
+        v7 = (v4 << 12) + 0.5;
+    }
+    v8 = (fx_sqrt(v7) * v4 * v4) >> 12;
+    if (v6)
+    {
+        v9 = (v6 << 12) + 0.5;
+    }
+    else
+    {
+        v9 = 0 - 0.5;
+    }
+    v10 = div32(amountOfExpGainedSoFar * v8, ((v6 * v6 * fx_sqrt(v9)) >> 12)) + 1;
+    // amountOfExpGainedSoFar * v8 / ((v6 * v6 * fx_sqrt(v9)) >> 12) + 1;
+    ExpForLevel100 = GetExpForLevel100(monGainingExp);
+    if (v10 > ExpForLevel100)
+    {
+        return ExpForLevel100;
+    }
+    // k::Printf("\n\nmonGainingExperience is %d\namountofExpSoFar is %d\nlevel is %d\ndefeatedMonLevel is %d\nfinalExp is %d\n\n",
+            //   BattleMon_GetID(monGainingExp), amountOfExpGainedSoFar, monGainingExpLevel, defeatedMonLevel, v10);
+    return v10;
+}
 #pragma endregion

@@ -85,12 +85,12 @@ void Sequence6()
 	End();
 }
 
-/* IRON BALL - Relic Passage */
+/* 3x Normal Gem - Relic Passage */
 void Sequence7()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 278);
-	SetVarEqVal(0x800D, 1);
+	SetVarEqVal(0x800C, 564);
+	SetVarEqVal(0x800D, 3);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -638,12 +638,12 @@ void Sequence52()
 	End();
 }
 
-/* Sharp Beak - Route 4 */
+/* Berry Juice (x5) - Route 4 */
 void Sequence53()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 244);
-	SetVarEqVal(0x800D, 1);
+	SetVarEqVal(0x800C, 43);
+	SetVarEqVal(0x800D, 5);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -1094,11 +1094,11 @@ void Sequence91()
 	End();
 }
 
-/* CHARGESTONE CAVE - TM77 Bug Buzz */
+/* CHARGESTONE CAVE - Iron Ball */
 void Sequence92()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 404);
+	SetVarEqVal(0x800C, 278);
 	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
@@ -1245,11 +1245,11 @@ void Sequence104()
 	End();
 }
 
-/* CELESTIAL ROOFTOP - Yellow Shard (x10) */
+/* CELESTIAL ROOFTOP - BLUE Shard (x10) */
 void Sequence105()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 74);
+	SetVarEqVal(0x800C, 73);
 	SetVarEqVal(0x800D, 10);
 	Sequence400();
 	WaitMoment();
@@ -1375,11 +1375,11 @@ void Sequence115()
 	End();
 }
 
-/* LENTIMAS OUTSKIRTS - YELLOW SHARD X5 */
+/* LENTIMAS OUTSKIRTS - BLUE SHARD X5 */
 void Sequence116()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 74);
+	SetVarEqVal(0x800C, 73);
 	SetVarEqVal(0x800D, 5);
 	Sequence400();
 	WaitMoment();
@@ -1914,11 +1914,11 @@ void Sequence163()
 	End();
 }
 
-/* BLUE SHARD X5 - humilau */
+/* YELLOW SHARD X5 - humilau */
 void Sequence164()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 73);
+	SetVarEqVal(0x800C, 74);
 	SetVarEqVal(0x800D, 5);
 	Sequence400();
 	WaitMoment();
@@ -1983,11 +1983,11 @@ void Sequence169()
 	End();
 }
 
-/* YELLOW SHARD X10 - ROUTE 21 */
+/* BLUE SHARD X10 - ROUTE 21 */
 void Sequence170()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 74);
+	SetVarEqVal(0x800C, 73);
 	SetVarEqVal(0x800D, 10);
 	Sequence400();
 	WaitMoment();
@@ -2087,11 +2087,11 @@ void Sequence178()
 	End();
 }
 
-/* MISTRALTON CAVE - TM05: Knock Off (x1) */
+/* MISTRALTON CAVE -  TM77 Bug Buzz */
 void Sequence179()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 332);
+	SetVarEqVal(0x800C, 404);
 	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
@@ -2628,11 +2628,11 @@ void Sequence226()
 	End();
 }
 
-/* Yellow Shard x10 - Clay Tunnel */
+/* BLUE Shard x10 - Clay Tunnel */
 void Sequence227()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 74);
+	SetVarEqVal(0x800C, 73);
 	SetVarEqVal(0x800D, 10);
 	Sequence400();
 	WaitMoment();
@@ -2640,11 +2640,11 @@ void Sequence227()
 	End();
 }
 
-/* Yellow Shard x6 - Driftveil City */
+/* BLUE Shard x6 - Driftveil City */
 void Sequence228()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 74);
+	SetVarEqVal(0x800C, 73);
 	SetVarEqVal(0x800D, 6);
 	Sequence400();
 	WaitMoment();
@@ -2664,11 +2664,11 @@ void Sequence229()
 	End();
 }
 
-/* Yellow Shard x10 - Clay Tunnel */
+/* BLUE Shard x10 - Clay Tunnel */
 void Sequence230()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 74);
+	SetVarEqVal(0x800C, 73);
 	SetVarEqVal(0x800D, 10);
 	Sequence400();
 	WaitMoment();
@@ -2700,11 +2700,11 @@ void Sequence232()
 	End();
 }
 
-/* Yellow Shard (x10) - Clay Tunnel (Skyla Split) */
+/* BLUE Shard (x10) - Clay Tunnel (Skyla Split) */
 void Sequence233()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 74);
+	SetVarEqVal(0x800C, 73);
 	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
@@ -3449,11 +3449,11 @@ void Sequence298()
 	End();
 }
 
-/* TM40 Aerial Ace - Route 4 */
+/* TM40 Sharp Beak - Route 4 */
 void Sequence299()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 367);
+	SetVarEqVal(0x800C, 244);
 	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();

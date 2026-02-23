@@ -601,6 +601,8 @@ extern void HandlerChoiceScarf(int a1, int a2, int a3);
 extern void HandlerChoiceBandPower(int a1, int a2, int a3);
 extern void HandlerLifeOrbPower(BattleEventItem *a1, int a2, int a3);
 extern void HandlerLifeOrbReaction(int a1, ServerFlow *a2, unsigned int *a3);
+extern void BattleHandler_StrClear(void *str);
+extern int sub_21B0874(EffectivenessRecorder *a1, int a2);
 extern int HandlerFocusSash(int a1, ServerFlow *a2, int a3, int *a4);
 extern int HandlerFocusSashUse(BattleEventItem *a1, ServerFlow *a2, int a3, int *a4);
 extern int HandlerFocusBand(BattleEventItem *a1, ServerFlow *a2, int a3, int *a4);

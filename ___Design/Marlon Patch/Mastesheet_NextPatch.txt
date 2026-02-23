@@ -154,8 +154,8 @@ Bug Reports, resources, discussion, and a forum to provide feedback can be found
 The moves taught have been changed. 
 - Green Shards: Screech, Fake Tears, Sparkle, Defog, Chilling Water, Low Sweep, Incinerate, Icy Wind, Electroweb, Snarl, Breaking Swipe, Struggle Bug, Take Down, Uproar
 - Red Shards: Seed Bomb, Skitter Smack, Drill Run, Bounce, Signal Beam, Iron Head, SKill Swap, Seething Cold, Psychic Noise, Dual Chop, Low Kick, Cross Poison, Fire Punch, Thunder Punch, Ice Punch
-- Yellow Shards: Explosion, Self Destruct, Zen Headbutt, Magic Coat, Barrier, Defense Curl, Sweet Scent, Gastro Acid, Iron Tail, Aqua Tail, Earth Power, Psyblade, Foul Play, Focus Punch, Gravity, Follow Me, Protect 
-- Blue Shards: Double-Edge, Heal Pulse, Healing Wish, Lucky Chant, Synthesis, Roost, Head Smash, Helping Hand, Overheat, Outrage, Superpower, Toxic, Rest
+- Blue Shards: Explosion, Self Destruct, Zen Headbutt, Magic Coat, Barrier, Defense Curl, Sweet Scent, Gastro Acid, Iron Tail, Aqua Tail, Earth Power, Psyblade, Foul Play, Focus Punch, Gravity, Follow Me, Protect 
+- Yellow Shards: Double-Edge, Heal Pulse, Healing Wish, Lucky Chant, Synthesis, Roost, Head Smash, Helping Hand, Overheat, Outrage, Superpower, Toxic, Rest
 
 
 
@@ -227,8 +227,8 @@ end
 - Snarl (6 shards)
 - Breaking Swipe (6 shards)
 - Struggle Bug (6 shards)
-- Take Down (8 shards)
-- Uproar (8 shards)
+- Take Down (4 shards)
+- Uproar (4 shards)
 - Natural Gift (10 shards)
 
 
@@ -579,8 +579,8 @@ end
 
 ## Route 4 
 !items Items
-sharp beak, Sharp Beak (found past Pokéfan Norbert)
-tm flying, TM40 Aerial Ace (reward for beating one of the Fisherman)
+berry juice, Berry Juice x3 (found past PokéFan Norbert)
+sharp beak, Sharp Beak (reward for beating one of the Fisherman)
 deepseascale, Deepseascale (reward for beating one of the Fisherman)
 deepseatooth, Deepseatooth (reward for beating one of the Fisherman)
 end
@@ -710,10 +710,6 @@ end
 
 
 ## Castelia Garden 
-!items Items
-tm grass, TM06 Magical Leaf 
-end
-
 !enc 1
 
 
@@ -736,15 +732,15 @@ end
 - Bounce (4 shards)
 - Signal Beam (4 shards)
 - Iron Head (6 shards)
-- Skill Swap (6 shards)
+- Skill Swap (10 shards)
 - Seething Cold (6 shards)
 - Psychic Noise (6 shards)
 - Dual Chop (6 shards)
 - Low Kick (8 shards)
 - Cross Poison (8 shards)
-- Fire Punch (10 shards)
-- Thunder Punch (10 shards)
-- Ice Punch (10 shards)
+- Fire Punch (6 Shards)
+- Thunder Punch (6 Shards)
+- Ice Punch (6 Shards)
 
 !gifts Battle Company Egg 
 desc: If you defeat all the trainers in the Company before defeating Burgh, you receive a gift encounter.
@@ -1208,10 +1204,9 @@ expert belt, Expert Belt (found in the market, vanilla location)
 tm grass, TM85 Grass Knot (south of Musician Preston)
 tm fairy, TM90 Draining Kiss (Past Backers Ava and Aya)
 red shard, x20 Red Shard (past Dancer Brian)
-yellow shard, x6 Yellow Shard (past Dancer Brian)
+blue shard, x6 Blue Shard (past Dancer Brian)
 white herb, x2 White Herb (in the Market)
 kasib berry, x2 Trickster Herb (in the market)
-tm fighting, TM31 Brick Break (in Plasma Sanctuary)
 end 
 
 !items PokéMart 
@@ -1229,9 +1224,9 @@ mental herb, Mental Herb
 figy berry, Figy Berry 
 end
 
-!notif MOVE TUTOR, The Yellow Move Tutor is present, past Dancer Brian, and teaches:
-- Explosion (2 shards)
-- Self Destruct (2 shards)
+!notif MOVE TUTOR, The Blue Move Tutor is present, past Dancer Brian, and teaches:
+- Explosion (1 shards)
+- Self Destruct (1 shards)
 - Zen Headbutt (4 shards)
 - Magic Coat (4 shards)
 - Barrier (6 shards)
@@ -1265,14 +1260,14 @@ end
 
 ### Janine 
 !notif SPLIT-LOCKED, Janine is an optional mini-boss that can only be fought before defeating Clay. This content is locked off afterwards. , #af74b3
-!tr 768/45 Rewards 2x Each Gem, Clay Tunnel Encounter, 10x Yellow Shards
+!tr 768/45 Rewards 2x Each Gem, Clay Tunnel Encounter, 10x Blue Shards
 
 
 
 ## Clay Tunnel (must defeat Janine to access)
 !items Janine Rewards
 poison gem, 2x Each Gem (Speak with Sableye)
-yellow shard, 10x Yellow Shards
+blue shard, 10x Blue Shards
 end
 !enc 84
 
@@ -1314,7 +1309,7 @@ end
 
 ## Leader Clay 
 !notif SPLIT END, Defeating Clay will lock you out of:  , #af74b3
-- Janine Opt. Boss (rewards Clay Tunnel encounter, 2x of each gem, 10x yellow shards)
+- Janine Opt. Boss (rewards Clay Tunnel encounter, 2x of each gem, 10x Blue shards)
 
 !trm 158/46 Rewards HM04 Strength
 
@@ -1344,7 +1339,7 @@ end
 ## Relic Passage: Skyla Split
 !notif NOTE, This has the same met location as the part of Relic Passage accessible in Burgh split, except there are now water encounters.
 !items Items 
-iron ball, Iron Ball (past the Backpacker Tag)
+normal gem, x2 Normal Gem (past the Backpacker Tag)
 tm steel, TM91 Flash Cannon (past Hiker Keith)
 red shard, x20 Red Shard (past Hiker Tobias)
 sitrus berry, x10 Sitrus Berry (past Backpacker Annie)
@@ -1453,7 +1448,7 @@ There is a new rival battle vs. Hugh outside the entrance to Chargestone Cave. T
 ## Mistralton Cave 
 !items Items
 tm fighting, TM07 Drain Punch (past the Hiker Tag Battle)
-tm dark, TM05 Knock Off (past Ace Trainer Belle)
+tm bug, TM77 Bug Buzz (past Ace Trainer Belle)
 end
 
 !enc 108 
@@ -1461,15 +1456,13 @@ end
 !tr 681/51 Left Side 
 !tr 680/51 Right Side
 
-!tr 682/51 Guards Clay Tunnel 
-
 !tr 683/51 Guards access to the Guidance Chamber 
 
 
 
 ## Clay Tunnel 
 !items Items 
-yellow shard, 6x Yellow Shards
+blue shard, 6x Blue Shards
 tm ground, TM28 Dig (reward for defeating Roxanne) 
 ground gem, x3 Ground Gem (reward for defeating Roxanne) 
 shuca berry, x3 Shuca Berry (reward for defeating Roxanne) 
@@ -1571,12 +1564,12 @@ end
 
 !items Items
 tm ice, TM21 Aurora Beam (past Ace Trainer Lydon)
-tm bug, TM77 Bug Buzz (past Ace Trainer Mary)
+iron ball, Iron Ball (past Ace Trainer Mary)
 end
 
 !tr 413/51 Guards TM21 Aurora Beam 
 
-!tr 548/51 Guards TM77 Bug Buzz 
+!tr 548/51 Guards Iron Ball
 
 
 
@@ -1606,10 +1599,10 @@ end
 !tr 272/50 Left Side 
 !tr 273/50 Right Side 
 
-!tr 271/52 Guards TM03 Psyshock
+!tr 271/52 Guards 3x Weakness Policies
 
-!tr 275/50 Left Side, Guards TM89 U-Turn 
-!tr 276/50 Right Side, Guards TM89 U-Turn 
+!tr 275/50 Left Side, Guards TM89 U-Turn & Doubles Grass
+!tr 276/50 Right Side, Guards TM89 U-Turn & Doubles Grass
 
 !tr 274/51 Guards TM32 Dazzling Gleam and Heart Scale 
 
@@ -1637,7 +1630,7 @@ end
 
 !enc 114 
 
-!tr 549/51
+!tr 549/51 Guards TM64 Teleport
 
 !tr 550/51 Guards TM29 Psychic 
 
@@ -1713,7 +1706,7 @@ end
 !notif NEW ENCOUNTER, The exterior of the mountain is now a unique met location for encounters , #469e62
 
 !items Items 
-yellow shard, x5 Yellow Shard
+blue shard, x5 Blue Shard
 end
 
 ### Back to Back 
@@ -1801,7 +1794,7 @@ There are several crossroads where you can choose one of two trainers to fight t
 
 !items Items 
 custap berry, x3 Custap Berry (found at the end of the gauntlet)
-tm flying, TM58 Hurricane (reward for defeating Falkner)
+tm flying, TM11 Air Slash (reward for defeating Falkner)
 flying gem, x3 Flying Gems (reward for defeating Falkner)
 coba berry, x3 Coba Berry (reward for defeating Falkner)
 old gateau, x1 IV Enhancer (reward for defeating Falkner)
@@ -1814,7 +1807,7 @@ end
 
 !trm 259 Choose One (South Path)
 
-### Fight #2A (Only fought if you took the south path)
+### Fight #2A (Only fought if you took the North path)
 !trm 283 Choose One (Right Waterfall)
 
 !trm 414 Choose One (South Waterfall)
@@ -1938,11 +1931,11 @@ end
 !items Items 
 shell bell, Shell Bell (behind Pokémon Center)
 heart scale, x1 Heart Scale (in middle of town shallows)
-blue shard, x5 Blue Shards (Northwest dock)
+yellow shard, x5 Yellow Shards (Northwest dock)
 ability capsule, x2 Ability Capsule (Defeat the B2B Trainers)
 end
 
-!notif MOVE TUTOR, The blue shard move tutor is in their original location, and teaches:
+!notif MOVE TUTOR, The yellow shard move tutor is in their original location, and teaches:
 - Double-Edge (2 shards)
 - Heal Pulse (2 shards)
 - Healing Wish (4 shards)
@@ -1957,7 +1950,7 @@ end
 - Rest (10 shards)
 - Toxic (10 shards)
 
-!notif NOTE, There are no wild Pokemon encounters in Humilau City. They've been scared off by the tourism!
+!notif NOTE, There are no wild Pokémon encounters in Humilau City. They've been scared off by the tourism!
 
 !notif FIELD EFFECT, There is permanent sun in Humilau City , #4e86d4
 
@@ -1967,14 +1960,13 @@ end
 !tr 306 Back to Back (First Fight)
 !tr 307 Back to Back (Second Fight)
 
-
 ### Swimmer Desiree (Route 21 Gatekeeper)
 !tr 311 
 
 ## Route 21 
 !items Items 
 tm electric, TM24 Thunderbolt (requires beating either Swimmer Y or Swimmer Z)
-yellow shard, x10 Yellow Shard (requires beating Fisherman Sid)
+blue shard, x10 Blue Shard (requires beating Fisherman Sid)
 heart scale, x1 Heart Scale (found on the beach by Seaside Cave entrance)
 end
 
@@ -1988,7 +1980,7 @@ end
 
 !tr 309 (Guards access to the Sand Encounters & Heart Scale)
 
-!tr 312 (Guards access to the Yellow Shards on the beach)
+!tr 312 (Guards access to the Blue Shards on the beach)
 
 
 ## Route 22

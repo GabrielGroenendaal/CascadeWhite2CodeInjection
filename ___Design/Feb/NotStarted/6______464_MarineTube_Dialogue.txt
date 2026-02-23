@@ -1,0 +1,94 @@
+----- TEXT FILE 431-----
+0: [SPEED(2)]Oh... Oh...\nSo...thirsty...\c\nI met you on Marvelous Bridge...\c\nG-g-give me...\nFresh Water...?[SPEED(0)]
+1: Refreshed!!\c\nI'm 100% rehydrated!\nI feel better now! Thank you!\c\nI'll dash to the next bridge!
+2: [SPEED(2)]But... You don't have Fresh Water...\nI appreciate the thought, though...[SPEED(0)]
+3: [SPEED(2)]Thank...\c\nWhat?\nOh...\c\nWithout Fresh Water...\nI can't run on bridges anymore.[SPEED(0)]
+4: This is what the undersea world\nlooks like!\c\nI've never seen this before,\nbecause I can't swim!\c\nI'd given up on seeing this.\nI'm so moved!
+5: This place is like a walk-through\naquarium, but isn't this a place\r\nfor Pokémon to see us?
+6: Wow!\nIt's an ocean trench!\c\nSo deep!\nMaybe six miles deep?
+7: That's right... It's deep...\nLove is infinitely deep...
+8: Rain Dance is a move to use\nwith a feeling of yearning.\c\nAs for when to use it...\c\nSigh... What's wrong with me?\nI can't think of any gripping ideas.\c\nWith a condition like this,\nI can't explain well on TV.
+9: Does your Pokémon have\na Poison Barb?
+10: Does your Pokémon have\na Poison Barb?\c\nWow! [VAR PKNAME(0)] has\na Poison Barb!\c\nGood going. I think you can\nuse this well, too!\c
+11: Black Sludge! Few Pokémon\nlike to hold it, though.\c\nFYI, I'm the first fan of Roxie!
+
+
+
+[ ENTITIES ]
+    Remove the one that already has a spawn flag 
+
+    Make all the other's spawn flag something we set and the clear afterwards. 
+
+    ActorSetRailPos
+
+
+    0xb8: appearing 
+    0xb9: disappearing 
+
+    Shadow Triad Related
+
+    7, 8, 9
+
+
+[ SCRIPTS ]
+    ActorSetRailPos
+
+    In general it's going to take a lot of playtesting to get this to work.
+
+
+
+
+[ RAILS ]
+    Bottom Rail (2)
+        61 Tiles Long 
+        9 tiles wide (-4 right, 4 left)
+    
+    Middle Rail (1)
+
+
+
+
+[ RAILS ]
+    Trigger 1: 
+        Line No: 2 
+        FrontPos: 45
+        Side Pos: 0
+    
+    Trigger 2: 
+        Line No: 2 
+        FrontPos: 30
+        Side Pos: 0
+
+    Trigger 3: 
+        Line No: 2 
+        FrontPos: 15
+        Side Pos: 0
+
+    Trigger 4: 
+        Line No: 2 
+        FrontPos: 0
+        Side Pos: 0
+    
+    Trigger 5: 
+        Line No: 1 
+        FrontPos: 65
+        Side Pos: 0
+    
+    Trigger 6: 
+        Line No: 1 
+        Frontpos: 50 
+        Side Pos: 
+    
+    Trigger 7: 
+        Line No: 1 
+        Frontpos: 35 
+        Side Pos: 0
+
+
+0x71	PlayerGetRailPos	pLineId	pPosFront	pPosSide	
+0x72	ActorGetRailPos	actorId	pLineId	pPosFront	pPosSide    
+
+
+
+0x7c	PlayerSetRailPos	lineId	posFront	posSide	
+0x7d	ActorSetRailPos	actorId	lineId	posFront	posSide

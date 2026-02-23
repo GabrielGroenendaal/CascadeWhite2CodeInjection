@@ -1,0 +1,120 @@
+----- TEXT FILE 586-----
+0: Route 14
+1: Trainer Tips!\n\c\nThe maximum number of Boxes is now 24!\c\nIn other words, you can store\n720 Pokémon!
+2: Trainer Tips!\n\c\nWhile you are using the Xtransceiver,\npress a direction on the +Control Pad.\c\nThe appearance of the screen will\nchange in varied ways!
+3:
+Woah there, Trainer.\nBe careful!\c\nThis route has mighty dangerous lately...\r\n...the Pokémon are wild and unruly,\nthe rapids fast and unforgiving.\c\nI can't even get PokéHelper signal here!\c\nOnce you enter, you\n[COLOR(1)]won't be able to turn back[COLOR(0)] until you\r\nreach the bottom. There is even an [COLOR(2)]elite trainer[COLOR(0)] up\non that cliff, though I don't know if\r\nhe'll be here long.\c\nI can't stop you from going forward,\nbut please be careful!
+4: 
+Hey there trainer!\nGlad to see you made it down safely.\c\nHow did I get here before you?\c\nWell, I have a Pokémon with teleport, of\ncourse!
+5:
+...in retrospect I probably could've\nbrought you too.
+6:
+Oh well, you're here safe and sound, and\nthat's what matters, not how well\r\nI do my job.\c\nI can escort you to Undella Town,\nif you're ready?
+7:
+Okie dokie!
+8:
+Alrighty then!\nHere we are!\c\nMake sure to leave a good review with\nour parks department!
+9:
+Uh, well, don't do anything dangerous! 
+10: 
+My Pokémon all sparkle like emeralds!\nLet me show you their true power!
+11:
+Green is a splendid color, don't you think?
+12: 
+My Pokémon will leave your team in cinders!
+13:
+Did you notice my Pokémon are all red?\nIgnore Salamence.
+14:
+My team will sweep you away you like\na crushing wave.
+15:
+It's fun building a team around a color,\nbut I wonder if my Charizard felt bitter\r\nwhen I chose the color blue.
+16:
+Check out my lively Pokémon, which\nI've gathered from all around the\r\nUnova region!
+17:
+As long as you've got momentum,\nyou don't need experience or knowledge!
+18:
+If I just dangle this fishing line here, it\nlooks like I'm doing something, right?\r\nTruth is, I'm not doing a single thing!
+19:
+In fishing, you'll have good days and\nyou'll have bad days.\r\nBut hey, losing is the mother of\nall invention!
+20:
+I'll show you the real power of the\nmagnificent bird Pokémon!\r\nDad!\nI hope you're watching me battle\f\nfrom above!
+21:
+A defeat is a defeat.\nYou are strong indeed.\r\nI'm going to train harder with my Pokémon\nto become the greatest Bird Keeper of all!\r\nHere.. take this!\c
+22:
+As long as I have lofty ambitions, I can\nfly as far as I want.\r\nI'll keep flying and aiming high!\nJust like you!
+23:
+CAcaaaawww! 
+24:
+You hear the sounds of intense training\ncoming from the cliff behind you...
+25:
+The Xtransceiver is ringing.
+26: 
+[VAR TRNAME(0)] picked up the Xtransceiver.\c
+27: 
+Pokémon block your path back!
+28:
+HEY!
+29:
+Route 14 Gauntlet Complete!
+30:
+[VAR TRNAME(0)]'s Xtransceiver\nis ringing.
+31
+[VAR TRNAME(0)] picked up\nthe Xtransceiver.\c
+
+[ ENTITIES ]
+24: Introductory Ranger 
+    545 Spawn Flag
+25: Closing Ranger
+    545 Spawn Flag
+
+3: Veteran Beryl
+
+4: Veteran Ruby
+
+6: Veteran Cobalt 
+
+15: Fisherman Sid 
+
+1: Fisherman Bucky
+
+5: Falkner
+    546 Spawn Flag
+
+[ ON THE WAY OUT ]
+
+
+
+16463
+
+0: Hasn't interacted with Start 
+1: Has Interacted with Start 
+2: Gauntlet has Started 
+3: Fisherman Interacted with 
+4: Veteran Interacted With 
+5: Falkner Threshold passed 
+6: Exit Reached and Exited. 
+
+
+16464
+0: Gauntlet not yet completed 
+1: Gauntlet completed
+
+
+
+Gauntlet Reset
+    16464: 0 
+
+Gauntlet Start
+    16463: 1
+
+Fisherman Zones: 
+    16463: 2
+
+Veteran Trigger Zones: 
+    16463: 3 
+
+Bird Caw: 
+    16463: 4 
+
+Exit: 
+    16463: 5

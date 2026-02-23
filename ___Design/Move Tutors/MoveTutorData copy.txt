@@ -27,7 +27,7 @@ C8 00 00 00 0A 00 00 00 09 00 00 00   Giga Drain -> Outrage
 2283 is the global script 
 2E 02 00 00 02 00 00 00 01 00 00 00   Bug Bite -> Skitter Smack
 92 01 00 00 02 00 00 00 00 00 00 00   Covet -> Seed Bomb
-1D 01 00 00 06 00 00 00 06 00 00 00   Super Fang -> Skill Swap 
+1D 01 00 00 0A 00 00 00 06 00 00 00   Super Fang -> Skill Swap 
 12 02 00 00 06 00 00 00 09 00 00 00   Dual Chop
 44 01 00 00 04 00 00 00 04 00 00 00   Signal Beam
 BA 01 00 00 04 00 00 00 05 00 00 00   Iron Head
@@ -37,9 +37,9 @@ BA 01 00 00 04 00 00 00 05 00 00 00   Iron Head
 43 00 00 00 08 00 00 00 0A 00 00 00   Low Kick
 B8 01 00 00 08 00 00 00 0B 00 00 00   Gunk Shot -> Cross Poison 
 DC 00 00 00 06 00 00 00 07 00 00 00   Uproar -> Seething Cold 
-09 00 00 00 0A 00 00 00 0D 00 00 00   Thunderpunch
-07 00 00 00 0A 00 00 00 0C 00 00 00   Fire Punch
-08 00 00 00 0A 00 00 00 0E 00 00 00   Ice Punch
+09 00 00 00 06 00 00 00 0D 00 00 00   Thunderpunch
+07 00 00 00 06 00 00 00 0C 00 00 00   Fire Punch
+08 00 00 00 06 00 00 00 0E 00 00 00   Ice Punch
 
 NACRENE CITY
 2286 is the global script 
@@ -56,8 +56,8 @@ EA 01 00 00 04 00 00 00 05 00 00 00   #6 Wonder Room -> Low Sweep
 C4 00 00 00 06 00 00 00 07 00 00 00   #8 Recycle -> Icy Wind
 6B 01 00 00 0A 00 00 00 0E 00 00 00   #15 Snatch -> Natural Gift
 2B 02 00 00 06 00 00 00 09 00 00 00   #10 Stealth Rock -> Snarl
-24 00 00 00 08 00 00 00 0C 00 00 00   #13 Sleep Talk -> Take Down
-FD 00 00 00 08 00 00 00 0D 00 00 00   #14 Skill Swap -> Uproar
+24 00 00 00 04 00 00 00 0C 00 00 00   #13 Sleep Talk -> Take Down
+FD 00 00 00 04 00 00 00 0D 00 00 00   #14 Skill Swap -> Uproar
 
 // Lentimas Town
 2284

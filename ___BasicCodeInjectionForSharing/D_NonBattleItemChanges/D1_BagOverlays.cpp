@@ -21,6 +21,26 @@ extern "C" u32 getTMSetting()
     return 1;
     // return *lvl_cap_ptr;
 }
+
+extern "C" u32 checkLevelCap(u8 level)
+{
+    EventWorkSave *eventWork = GameData_GetEventWork(GAME_DATA);
+    u16 *lvl_cap_ptr = EventWork_GetWkPtr(eventWork, 16465);
+    if (*lvl_cap_ptr == 1)
+    {
+        u16 *lvl_cap_value = EventWork_GetWkPtr(eventWork, 16466);
+        if (level >= *lvl_cap_value)
+        {
+            return 0;
+        }
+        else
+        {
+            return 1;
+        }
+    }
+    return 1;
+}
+
 extern "C" u32 THUMB_BRANCH_PML_ItemGetMaxStorageCount(u16 itemIdx)
 {
 
@@ -454,6 +474,15 @@ extern "C"
         return;
     }
 
+    bool checkLevelCapsRareCandy(int itemId, PartyPkm *pkm)
+    {
+        if (itemId == 50)
+        {
+            int level = PokeParty_GetParam(pkm, PF_Level, 0);
+            return checkLevelCap(level);
+        }
+        return 1;
+    }
     /*
 
         --------------------------------------------------------------------------------------------------
@@ -516,7 +545,7 @@ extern "C"
                 sub_219B8F0(a1);
                 return;
             }
-            if (PokeList_CanItemWithBattleStatsBeUsed(a1->SelectedPkm, a1->field_28C->ItemID, 0, a1->heapId))
+            if (PokeList_CanItemWithBattleStatsBeUsed(a1->SelectedPkm, a1->field_28C->ItemID, 0, a1->heapId) && checkLevelCapsRareCandy(itemId, a1->SelectedPkm))
             {
                 v5 = PokeList_PrintItemRecoverMessage(a1, 0);
                 v6 = PokeList_ApplyItemEffect(a1->SelectedPkm, a1->field_28C->ItemID, 0, a1->field_28C->field_40, a1->heapId);
@@ -558,10 +587,9 @@ extern "C"
                 int ability2 = PML_PersonalGetParamSingle(species, form, Personal_Abil2);
 
                 // k::Printf("\nUsing Ability Capsule or Ability Patch\n");
-                
+
                 if (!ability2 || ability1 == ability2)
                 {
-
                 }
                 else
                 {
@@ -1198,6 +1226,7 @@ extern "C"
                 }
                 v6 = 1;
             }
+
             v8 = 1;
         }
         // k::printf("\n14. We're checking if this is an evolution stone!\n");
@@ -1358,7 +1387,7 @@ extern "C"
                 int ability1 = PML_PersonalGetParamSingle(species, form, Personal_Abil1);
                 int ability2 = PML_PersonalGetParamSingle(species, form, Personal_Abil2);
                 int isHidden = PokeParty_GetParam(a1, PF_IsHiddenAbility, 0);
-                
+
                 // k::Printf("\nCurrent Ability: %d\nHidden Ability: %d\nAbility 1: %d\nAbility 2: %d\n", currentAbility, abilityHidden, ability1, ability2);
                 if (!abilityHidden)
                 {
@@ -1372,7 +1401,8 @@ extern "C"
                 {
                     v6 = 1;
                 }
-                else {
+                else
+                {
                     if (isHidden)
                     {
                         PokeParty_SetParam(a1, PF_IsHiddenAbility, 0);
@@ -1386,7 +1416,6 @@ extern "C"
                         PokeParty_RecalcStats(a1);
                     }
                 }
-               
             }
             else
             {
@@ -1404,14 +1433,14 @@ extern "C"
                 }
                 else
                 {
-                    PokeParty_SetParam(a1, PF_ContestCool, ((PokeParty_GetParam(a1, PF_ContestCool, 0) == 0) ? 1 : 0)); 
+                    PokeParty_SetParam(a1, PF_ContestCool, ((PokeParty_GetParam(a1, PF_ContestCool, 0) == 0) ? 1 : 0));
                     setAbilityForForm(&a1->Base, species);
                     PokeParty_RecalcStats(a1);
                     /*
                     if (ability1 == currentAbility)
                     {
                         PokeParty_SetParam(a1, PF_Ability, ability2);
-                        PokeParty_SetParam(a1, PF_ContestCool, ((PokeParty_GetParam(a1, PF_ContestCool, 0) == 0) ? 1 : 0)); 
+                        PokeParty_SetParam(a1, PF_ContestCool, ((PokeParty_GetParam(a1, PF_ContestCool, 0) == 0) ? 1 : 0));
                         setAbilityForForm(a1->base, species);
                         PokeParty_RecalcStats(a1);
                     }
@@ -1419,7 +1448,7 @@ extern "C"
                     {
 
                         PokeParty_SetParam(a1, PF_Ability, ability1);
-                        PokeParty_SetParam(a1, PF_ContestCool, ((PokeParty_GetParam(a1, PF_ContestCool, 0) == 0) ? 1 : 0)); 
+                        PokeParty_SetParam(a1, PF_ContestCool, ((PokeParty_GetParam(a1, PF_ContestCool, 0) == 0) ? 1 : 0));
                     }
                     */
                 }
@@ -1494,6 +1523,4 @@ extern "C"
         GFL_HeapFree(DataFile);
         return v6;
     }
-
-    
 }

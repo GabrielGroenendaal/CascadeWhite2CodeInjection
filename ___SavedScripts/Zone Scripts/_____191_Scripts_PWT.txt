@@ -550,15 +550,15 @@ public class MainEvents {
                 }
                 if (v4 == 3){
                     v8 = 62; // ID for "You sure you want to enhance their\nSpecial Attack?"
-                    v9 = 3;
+                    v9 = 4;
                 }
                 if (v4 == 4){
                     v8 = 64; // ID for "You sure you want to enhance their\nSpecial Defense?"
-                    v9 = 4;
+                    v9 = 5;
                 }
                 if (v4 == 5){
                     v8 = 66; // ID for "You sure you want to enhance their Speed?"
-                    v9 = 5;
+                    v9 = 3;
                 }
                 Message.Actor(1024, v8, 2, 0);
 			    v0 = YesNoWin.Show();

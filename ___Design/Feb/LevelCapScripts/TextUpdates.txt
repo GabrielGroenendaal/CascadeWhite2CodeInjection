@@ -1,0 +1,140 @@
+
+
+
+
+
+----- TEXT FILE 36-----  Castelia Gym 
+7:
+The Level Cap is now [COLOR(2)]35[COLOR(0)]!
+
+
+
+
+
+
+
+
+
+
+----- TEXT FILE 73----- Nimbasa Gym
+31: 
+The Level Cap is now [COLOR(2)]44[COLOR(0)]!
+
+
+
+
+----- TEXT FILE 107----- Driftveil City 
+72: 
+The Level Cap is now [COLOR(2)]46[COLOR(0)]!
+
+
+
+
+----- TEXT FILE 108----- Driftveil Gym 
+25:
+The Level Cap is now [COLOR(2)]51[COLOR(0)]!
+
+
+
+----- TEXT FILE 127----- Mistralton City
+14:
+The Level Cap is now [COLOR(2)]59[COLOR(0)]!
+
+
+
+----- TEXT FILE 169----- Aspertia City 
+132:
+The Level Cap is [COLOR(2)]11[COLOR(0)]!
+
+
+
+
+----- TEXT FILE 171----- Aspertia Gym
+24:
+The Level Cap is [COLOR(2)]19[COLOR(0)]!
+
+
+
+
+
+----- TEXT FILE 182----- Virbank Gym
+18:
+The Level Cap is now [COLOR(2)]28[COLOR(0)]!
+
+
+
+
+----- TEXT FILE 252----- Chargestone Cave Entrance
+12:
+The Level Cap is now [COLOR(2)]55[COLOR(0)]!
+
+
+
+
+----- TEXT FILE 295----- Castelia Sewers
+64:
+The Level Cap is now [COLOR(2)]32[COLOR(0)]!
+
+
+----- TEXT FILE 315----- Flocessy Ranch 
+59: 
+The Level Cap is now [COLOR(2)]15[COLOR(0)]!
+
+
+
+
+
+----- TEXT FILE 479----- Global PC Script
+175:
+Lacunosa Town
+176:
+Opelucid City 
+177: 
+Pokémon League 
+178:
+The current Level Cap is [COLOR(2)][VAR NUM3(1)][COLOR(0)]!
+179:
+Level Caps 
+180: 
+Level caps are currently not enforced:\nPokémon can level up past the cap.\c\nWould you like to enforce\n[COLOR(2)]HARD[COLOR(0)] level caps, where Pokémon\r\ncannot level past the cap?
+181:
+Level caps are currently enforced:\nPokémon cannot level up past the cap.\c\nWould you like to revert to\n[COLOR(1)]SOFT[COLOR(0)] level caps, where Pokémon\r\ncan level past the cap?
+182: 
+Level caps will now be enforced!
+183:
+Level caps will no longer be enforced!
+
+
+----- TEXT FILE 540----- Route 4 
+26:
+The Level Cap is now [COLOR(2)]41[COLOR(0)]!
+
+
+----- TEXT FILE 604----- Virbank Gate
+10: 
+The Level Cap is now [COLOR(2)]23[COLOR(0)]!
+
+
+
+--- Text File 389 --- Marine Tube 
+
+
+Hugh:
+[VAR TRNAME(0)]!\nWe've been trying to call you!\c\nI tracked Team Plasma's stupid ship from\nDriftveil to the coast by Humilau City!\c\nLot of ocean here to search, and the cops\nwere totally useless!
+
+Cheren:
+Hm... looks like they're busy dealing\nwith the protestors at the resort...\c\nI heard even Alder has joined in! 
+
+Hugh: 
+Agh,\nwho cares about some stupid\r\nbuilding plans!\c\nTeam Plasma is out there!
+
+Cheren: 
+Looks like we'll need to get creative.\c\nYou two go speak with the gym leader\nin Humilau, Marlon.\r\nHe knows these waters well, and may be\nable to assist us.\c\nMeanwhile, I'll reach out to the other\ngym leaders and make an action plan.
+
+Hugh:
+Fine, but we're not waiting for you if\nthe action starts!\c\n[VAR TRNAME(0)], where are you?\nUndella Town?\r\nGot it!\c\nFrom there, go through the Marine Tube\nand come straight to Humilau City!\c\nWe'll rescue our Pokémon, don't sweat!
+
+
+
+
+
