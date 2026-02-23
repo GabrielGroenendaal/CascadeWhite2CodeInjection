@@ -771,8 +771,8 @@ public class MainEvents {
 		Actor.PauseAll();
 		Sound.SEPlay(1351);
 		Message.Spiked(75, 2);
-        Message.WaitAdvance();
-        Message.CloseAll();
+            Message.WaitAdvance();
+            Message.CloseAll();
 		Runtime.FinishSubEvents();
 		Actor.UnpauseAll();
 	}
@@ -782,12 +782,40 @@ public class MainEvents {
 
     // Musician 
     public static void main_28() { // @ 0x600
+            int yesNo;
+            int isVictory;
 		Actor.PauseAll();
 		Sound.SEPlay(1351);
 		Actor.FacePlayer();
-		Message.Actor(1024, 17, 0, 0);
-		Input.LastKeyWait();
-		Message.CloseActor();
+            if (EventWorks.Get(1520 + 232)){
+                  Message.Actor(1024, 35, 0, 0);
+		      Input.LastKeyWait();
+		      Message.CloseActor();
+                  goto Label_EndMusicianScript;
+            }
+		Message.Actor(1024, 44, 0, 0);
+            yesNo = YesNoWin.Show();
+            if (yesNo == 1){
+                  Message.Actor(1024, 46, 0, 0);
+                  Message.CloseAll();
+                  goto Label_EndMusicianScript;
+            }
+            Message.Actor(1024, 45, 0, 0);
+            Message.CloseAll();
+
+            Battle.CallTrainerBattle(232, 0, 0);
+            isVictory = Battle.IsTrainerVictory();
+            if (isVictory != 1){
+                  Battle.CallTrainerLose();
+                  goto Label_EndMusicianScript;
+            }
+            Battle.EndTrainerBattle();
+            Message.Actor(1024, 47, 0, 0);
+            Message.CloseAll();
+            Global2805(112, 3);
+            EventFlags.Set(1520 + 232);
+
+            Label_EndMusicianScript:
 		Runtime.FinishSubEvents();
 		Actor.UnpauseAll();
 	}
@@ -801,7 +829,7 @@ public class MainEvents {
 		Actor.PauseAll();
 		Sound.SEPlay(1351);
 		Actor.FacePlayer();
-        Sound.PVPlay(179, 0);
+            Sound.PVPlay(494, 0);
 		Message.Actor(1024, 76, 0, 0);
 		Sound.PVWait();
 		Input.LastKeyWait();
@@ -889,7 +917,13 @@ public class MainEvents {
 		yesNo = YesNoWin.Show();
 
 		if (yesNo == 0) {
-			goto LABEL_EndAlderBengaScript;
+			Message.ActorEx(1024, 57, 12, 0, 0);
+			Message.CloseAll();
+                  TurnNorth(benga);
+			TurnNorth(255);
+			Actor.WaitActionFinish();
+			alderBengaTag();
+			goto LABEL_EndAlderScript;
 		}
 		TurnNorth(benga);
 		TurnNorth(255);
@@ -902,12 +936,6 @@ public class MainEvents {
 		Runtime.FinishSubEvents();
 		Actor.UnpauseAll();
 		// Gives a text update for the Level Cap Increasing
-        if (EventWorks.Get(16465) == 1){
-            Sound.SEPlay(1351);
-            Message.System(77, 2);
-            Message.WaitAdvance();
-            Message.CloseAll();            
-        }
     }
 	// Speaking with Alder after rejecting the initial battle. 
 	public static void main_31() {
@@ -926,8 +954,11 @@ public class MainEvents {
 			Message.CloseAll();
 			Actor.GetGPos(12, BengaX, BengaY);
 			Actor.WalkRoute(255, BengaX+1, BengaY, 0, 8, 0);
-			TurnNorth(255);
 			Actor.WaitActionFinish();
+                  TurnNorth(255);
+                  TurnNorth(12);
+                  TurnSouth(10);
+                  Actor.WaitActionFinish();
 			alderBengaTag();
 			goto LABEL_EndAlderScript;
 		}
@@ -958,8 +989,11 @@ public class MainEvents {
 			Message.CloseAll();
 			Actor.GetGPos(12, BengaX, BengaY);
 			Actor.WalkRoute(255, BengaX+1, BengaY, 0, 8, 0);
-			TurnNorth(255);
 			Actor.WaitActionFinish();
+                  TurnNorth(255);
+                  TurnNorth(12);
+                  TurnSouth(10);
+                  Actor.WaitActionFinish();
 			alderBengaTag();
 			goto LABEL_EndBengaScript;
 		}
@@ -976,22 +1010,124 @@ public class MainEvents {
 	static void alderBengaTag() {
 		int alder = 10;
 		int benga = 12;
+            int bengaEndPosX = 0;
+            int bengaEndPosY = 0;
+            int alderEndPosX = 0;
+            int alderEndPosY = 0;
 
-		// TO DO
+            int isVictory;
 
+            Message.ActorEx(1024, 58, 12, 0, 0);
+            Message.CloseAll();
 
-		Actor.Hide(alder);
+            TurnEast(10);
+            TurnWest(11);
+            Actor.WaitActionFinish();
+
+            Message.ActorEx(1024, 59, 10, 0, 0);
+            Message.ActorEx(1024, 76, 11, 0, 0);
+            Input.LastKeyWait();
+            Message.CloseAll();
+
+            Battle.CallTrainerMultiBattle(234, 582, 506, 1);
+            isVictory = Battle.IsTrainerVictory();
+            if (v16 != 1){
+                  Battle.EndTrainerBattle();
+			PokeParty.RecoverAll();
+			Message.ActorEx(1024, 62, 12, 0, 0);
+			Message.CloseAll();
+
+                  ShowMusicNote(10);
+                  Actor.WaitActionFinish();
+                  Message.ActorEx(1024, 64, 10, 0, 0);
+                  Message.CloseAll();
+                  TurnSouth(12);
+                  Actor.WaitActionFinish();
+                  Message.ActorEx(1024, 65, 12, 0, 0);
+                  Message.CloseAll();
+		} 
+            else {
+                  Battle.EndTrainerBattle();
+                  Message.ActorEx(1024, 63, 12, 0, 0);
+                  Message.CloseAll();
+
+                  ShowMusicNote(10);
+                  Actor.WaitActionFinish();
+                  Message.ActorEx(1024, 64, 10, 0, 0);
+                  Message.CloseAll();
+                  TurnSouth(12);
+                  Actor.WaitActionFinish();
+                  Message.ActorEx(1024, 66, 12, 0, 0);
+                  Message.CloseAll();
+            }
+
+            ShowQuestionMark(10); 
+            Actor.WaitActionFinish();
+            WalkSouth8F(10);
+            TurnWest(255);
+            Actor.WaitActionFinish();
+            Message.ActorEx(1024, 67, 10, 0, 0);
+            Message.CloseAll();
+            HopUp(12);
+            Actor.WaitActionFinish();
+            Message.Spiked(68, 2);
+            Message.CloseAll();
+            Runtime.Sleep(32);
+            WalkNorth8F(10);
+            Actor.WaitActionFinish();
+            Message.ActorEx(1024, 69, 10, 0, 0);
+            Message.CloseAll();
+            TurnSouth(12);
+            Actor.WaitActionFinish();
+            Message.ActorEx(1024, 70, 12, 0, 0);
+            Message.CloseAll();
+            TurnEast(12);
+            TurnWest(10);
+            WordSet.LoadPlayerName(0);
+            Message.ActorEx(1024, 85, 12, 0, 0);
+            Message.CloseAll();
+            Actor.WalkRoute(12, bengaEndPosX, bengaEndPosY, 0, 4, 0);
+            TurnEast(255);
+            Actor.WaitActionFinish();
+            Actor.Hide(12);
+            
+            Runtime.Sleep(60);
+            Message.ActorEx(1024, 86, 10, 0, 0);
+            Message.CloseAll();
+            TurnNorth(255);
+            TurnSouth(10);
+            Actor.WaitActionFinish();
+            Message.ActorEx(1024, 71, 10, 0, 0);
+            Message.ActorEx(1024, 72, 10, 0, 0);
+            Message.CloseAll();
+            Actor.WalkRoute(10, alderEndPos + 6, alderEndPosY, 0, 8, 0);
+            Actor.WaitActionFinish();
+            Message.ActorEx(1024, 73, 10, 0, 0);
+            Message.CloseAll();
+            Actor.WalkRoute(10, alderEndPos + 6, alderEndPosY, 0, 8, 0);
+            Actor.WaitActionFinish();
+            Actor.Hide(10);
+
+            HopSouth(11);
+            Actor.WaitActionFinish();
+            Actor.WalkRoute(10, alderEndPos + 6, alderEndPosY, 0, 4, 0);
+            Actor.WaitActionFinish();
+            Actor.Hide(11);
+
 		EventWorks.Set(16443, 3);
 		EventWorks.Set(16466, 63);
 		EventFlags.Set(549);
 		EventFlags.Set(548);
-		if (EventWorks.Get(16465) == 1){
-            Sound.SEPlay(1351);
-            Message.System(77, 2);
-            Message.WaitAdvance();
-            Message.CloseAll();            
+            if (EventWorks.Get(16465) == 1){
+                  Sound.SEPlay(1351);
+                  Message.System(77, 2);
+                  Message.WaitAdvance();
+                  Message.CloseAll();            
+            }         
         }
 	}
+
+
 	static void sub_005a() { // @ 0x5a
 		int v35;
 
@@ -1102,6 +1238,7 @@ public class MainEvents {
 		Action0010(2);
 		Action0021(1);
 	}
+      
 
 	static meta void BengaZoom(int npcId) : VActionSequence {
 		Action0016(2);

@@ -66,10 +66,10 @@ I don't understand the point of all these\nprotests!\c\nIf you wanna change thin
 We'll show those suits they can't\nplunder mother earth with our song!\c\nWant to join in?\nOur voices together with our Pokémon\r\ncould change hearts and minds!
 
 45:
-Radical.\nI'll set a beat!
+Radical.\nI'll set a beat!\c
 
 46:
-Tch.\nTypical brainwashed youth.
+Tch.\nTypical brainwashed youth.\c
 
 47:
 That was a crazy jam session!\nHere, take these!
@@ -102,13 +102,13 @@ Alder: Indeed!\nLearning to understand other trainer's\nPokémon can be as valua
 Benga: Hm...\nWhat do you say, [VAR TRNAME(0)]?\r\nAre you ready?
 
 57: Alder & Benga 8
-Benga: Alright, lets do it!
+Benga: Alright, lets do it!\c
 
 58: Alder & Benga 9
-Benga: Ready when you are!
+Benga: Ready when you are!\c
 
 59: Alder & Benga 10
-Alder: Let's show them our battling\nspirit, Victini!
+Alder: Let's show them our battling\nspirit, Victini!\c
 
 60: Alder & Benga 11
 Alder: Alright, take some time and\nfind us when you're ready!\c
@@ -117,40 +117,40 @@ Alder: Alright, take some time and\nfind us when you're ready!\c
 Benga: Hey, you ready to battle\ngramps with me?
 
 62: Alder & Benga 13
-Benga: We... lost?
+Benga: We... lost?\c
 
 63: Alder & Benga 14
-Benga: We... won?
+Benga: We... won?\c
 
 64: Alder & Benga 15
-Alder: Excellent showing, you two.\c\nI could see the passion in both you and\nyour Pokémon's hearts!\r\nI can see they had a lot of fun too!
+Alder: Excellent showing, you two.\c\nI could see the passion in both you and\nyour Pokémon's hearts!\r\nI can see they had a lot of fun too!\c
 
 65: Alder & Benga 16
-Benga: I lost...\nagain...
+Benga: I lost...\nagain...\c
 
 66: Alder & Benga 17
-Benga: We beat...\nmy grandpa...?
+Benga: We beat...\nmy grandpa...?\c
 
 67: Alder & Benga 18
-Alder: Grandson,\nthat was an incredible battle.\c\nOur Pokémon are happy.\nWe all won here. 
+Alder: Grandson,\nthat was an incredible battle.\c\nOur Pokémon are happy.\nWe all won here.\c
 
 68: Alder & Benga 19
-Benga: No gramps!\nWinning isn't just feeling good and\r\nachieving nothing, like you have!  
+Benga: No gramps!\nWinning isn't just feeling good and\r\nachieving nothing, like you have!\c
 
 69: Alder & Benga 20
-Alder: There's more to battling than\nwinning and losing, Benga.\c\nIf victory is all you're looking for,\nI'm not sure my training will do you\r\nany good, Benga.
+Alder: There's more to battling than\nwinning and losing, Benga.\c\nIf victory is all you're looking for,\nI'm not sure my training will do you\r\nany good, Benga.\c
 
 70: Alder & Benga 21
-Benga: I need to get stronger.\c\nIf you're not going to train me,\nI'll go find another way! 
+Benga: I need to get stronger.\c\nIf you're not going to train me,\nI'll go find another way!\c
 
 71: Alder & Benga 22
-Alder: That boy...\nI apologize you had to see that.\c\nIt's been difficult since his parents...
+Alder: I apologize you had to see that.\c\nIt's been difficult since his parents...\c
 
 72: Alder & Benga 23
-Alder: Well, anyways.\nNo point in pushing a sore wound.\c\nWould you look after him for me?\nMaybe you can get through to him in\r\na way I can't. 
+Alder: Well, anyways.\nNo point in pushing a sore wound.\c\nWould you look after him for me?\nMaybe you can get through to him in\r\na way I can't.\c
 
 73: Alder & Benga 24
-Alder: Best of luck on your\njourney, [VAR TRNAME(0)]!
+Alder: Best of luck on your\njourney, [VAR TRNAME(0)]!\c
 
 74: Protestors Blocking 
 BACK OFF GRIMSLEY!\nBACK OFF GRIMSLEY!
@@ -185,6 +185,17 @@ Well, since I have you both here, why\ndon't we three do a little training\r\nba
 
 84:
 Alder: Are you prepared to battle?
+
+
+85:
+[VAR TRNAME(0)], next time we meet,\nI'll be strong enough to beat you.\r\nI'll be stronger than anybody!\c
+
+86:
+That boy...\c
+
+
+
+
 [ ENTITIES ]
 10: Alder 
 11: Victini
