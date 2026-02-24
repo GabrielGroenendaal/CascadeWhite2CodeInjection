@@ -13,38 +13,123 @@
 /*   MARLON BUILD   */
 
 To Do:
-- LATER 
-    - Implement and Test Route 14 Scripting and Dialogue 
-    - Implement and Test Reversal Mountain Scripting and Dialogue 
-    - Implement and Test Pinwheel Forest Scripting and Dialogue 
-    - Implement and Test Humilau City Scripting and Dialogue
-    - Implement and Test Undella Town Scripting and Dialogue
-    - Implement the Revised GlobalPCScript 
-    - Implement the Fixed Join Avenue Script
-    - Test Grass Types being Immune to Powders 
-    - Test the new Effect Spore effect. 
-    - Test Corrosion 
+- HARD 
+    - Implement and test the new switch AI function 
+    - Debug the illusion implementation 
+
+- Moderate 
+    - Test all the level cap scripts 
+    - Implement all the marlon split scripts we've written 
+    - Test the new Plasma Frigate Theft Script 
 
 - EASY 
-    - Implement Level Caps 
-        - Implement the GlobalPCScript Changes 
-        - Implement the changes for all the relevant zones. 
-    - Implement the Lentimas Town Flag Fixer 
-    - Remove the Sun Stone NPC from Nimbasa 
-    - D2 Field Overlays 
-        - Implement the level CAP 
-        - Make sure the Chatot / Kricketune / Spinda trades do not have their ivs rerolled. They should be perfect. 
-    - D1 Bag 
-        - Disable Rare Candies for pokemon going past the level cap. You can just add this to the level 100 check
+    - Add a "pre heal" modifier to the docs 
+    - Test Grass Powder Immunity 
+    - Test Overcoat / Safety Goggles Powder Immunity 
+    - Test Corrosion AI damage calc
     - Move the Reversal Mountain Flannery Thing into the Sanctum
+    - Add in Illusion Test Cases: 
+        4-5 mon teams that can be pretty simple but have a single illusion mon on them. 
+    
 
 
+- BACKGROUND 
+    - Rebalancing Learnsets a bit. Nerfs across the board and a lot more high power moves made into scales. 
+    - Retooling trainers with some of the new stuff we added and some of the old stuff that already existed. 
+
+Trainers: 
+    Underutilized Mechanics: 
+        Chip Away Normal Types 
+        Ability Neutraliizing: 
+            Gastro Acid 
+        
+        Evasion:
+            Double Team 
+            Acid Armor 
+            Smokescreen 
+            Sand Attack (in doubles) 
+            Anticipation
+            Snow Cloak / Sand Veil
+        Confusion:  
+            Supersonic
+            Rock Climb 
+            Confuse Ray 
+            Swagger 
+        Attraction 
+        Hazards
+        Trapping 
+            Block 
+            Mean Look 
+            Dive / Dig / Bounce / Fly / Shadow Force 
+            Pursuit 
+            Wrap / Fire Spin / Clamp / Whirlpool / etc. 
+            Shadow Tag / Arena Trap
+        Failure Boosting: 
+            Anger Point 
+            Thrash 
+            Seething Cold 
+            Uproar 
+            Stompin Tantrum 
+            Grudge 
+            Blunder Policy 
+        Priority: 
+            Quick Claw 
+            Quick Draw 
+            Trickster Herb 
+        Speed Control: 
+            Scary Face 
+            Rock Tomb 
+            Bulldoze 
+            icy Wind 
+            Glaciate 
+            Heavy Slam 
+            Heat Crash (make sure it has the same id as icy wind)
+        Chaos Stats: 
+            Moody 
+            Starf Berry 
 
 
+====================================================================================================================================================
+/*   DRAYDEN BUILD   */
 
-271
-4453
-
+    Scripting Tasks: 
+        Seaside Cave 
+            Maylene 
+        Undella Bay 
+            The sand encounters 
+            Dive Gatekeeper 
+        Abyssal Ruins 
+            Encounters 
+            The Strange Statue Event 
+        Plasma Frigate 
+            Rumble 
+            Janine Rescue 
+            Flagsetting 
+        Route 13
+            Make a new texture pack and test it out adding snow 
+            Candice 
+        Lacunosa Town 
+            Removing the Zinzolin event and adding in the rival fight with benga 
+            Modifying the text here for Bianca and Juniper 
+            Adding the Psychics B2B
+        Village Bridge 
+            The whole gauntlet 
+            The Leftovers B2B2B
+        Route 11: 
+            Just the gatekeeper trainner 
+        Opelcuid Town 
+            Modifying the event so Iris goes to twist mountain to help with terrakion 
+        Route 9 
+            Gatekeepers 
+            Opening up Challengers Cave
+            Blue Optional Battle 
+        SM9 Malll 
+            Maylene Gatekeeper 
+            Updating the shops 
+        Twist Mountain 
+            The whole event here. 
+            Byron and Roark 
+            Blocking it off after Opelucid Gym 
 
 
 
@@ -102,147 +187,3 @@ Trainers:
 
 
 
-
-Gen 4 Switch AI: 
-    Checks to see if a Pokemon has a superr effective move. If it does, then creates a score based on the type matchup. 
-
-
-
-
-
-Prune Encounters?
-
-
-
-    Cheren Split: 9
-        Starter
-        Rowdy Pokemon Center 
-        Route 19 
-        Floccessy Town 
-        Route 20
-        Floccessy Ranch 
-        Flocessy Egg 
-        Alder's House 
-        Pledge Grove 
-
-    Roxie Split: 14
-        Virbank Outskirts
-        Virbank City 
-        Complex Exterior 
-        Virbank Complex
-        Misty Egg 
-    
-    Burgh Split: 21
-        Pokestar Studios 
-        Castelia Sewers 
-        Route 4
-        Castelia Gardens 
-        Relic Passage 
-        Battle Company 
-        Liberty Garden 
-    
-    Elesa Split: 29
-        Desert Resort 
-        Relic Castle 
-        Relic Fossil 
-        Anville Town 
-        Route 5
-        Route 16 
-        Lostlorn Forest 
-        Deep Lostlorn Forest 
-
-    Clay Split: 33
-        Drawbridge
-        Driftveil City 
-        Route 6 
-        Clay Tunnel 
-    
-    Skyla Split: 39
-        Relic Sanctum 
-        Weather Research Center   (-1)
-        Chargestone Cave 
-        Mistralton Cave 
-        Guidance Chamber   (-1)
-        Route 7 
-        Celestial Tower 
-        Celestial Rooftop 
-    
-    Marlon Split: 46
-        Lentimas Outskirts   
-        Reversal Mountain 
-        Strange House 
-        Route 14             (Low Value)
-        Abundant Shrine      (expected to lose 1)
-        Humilau Town         (-1) (Same Reasoning as Undella Town)
-        Route 22 
-        Route 21 
-        Pinwheel Forest      (-1)(Expected to lose 2-3)
-
-    Drayden Split: 53
-        Seaside Cave      
-        Undella Bay        (Low Value) 
-        Abyssal Ruins      (Same encounter table as Undella Bay?)
-        Route 13
-        Route 12          
-        Village Bridge     (-1)
-        Route 11 
-        Route 9 
-        Challenger's Cave  (-1) 
-        Twist Mountain     (-1)(Expected to lose 2-3)
-
-    Kyurem Split: 57
-        Route 10 
-        Giant Chasm 
-        Plasma Frigate 
-        Nature Preserve 
-        Moors of Icirrus   (-1)
-    
-    League Split: 60
-        Route 23 
-        Victory Road 
-        Old Victory Road 
-    
-    Total: 68
-        -1 Humilau 
-        -1 Abyssal Ruin 
-        -1 Weather Research Center 
-        -1 Challenger's Cave 
-        -1 Lentimas Outskirts
-    
-    [ BUGS ]
-        - Fix Illusion 
-        - Fix Castelia Sewer Crash 
-        - Figure out the hardware issue 
-        - Figure out Sleep Talk failing sometimes
-        - Figure out if there is some shit modifier being applied to Charm / Captivate that is dissuading it. 
-
-    [ MECHANICS ]
-        - Implement doubles switch in ai change 
-
-Underutilized Mechanics Throughout the Game:
-    Trapping Moves 
-    Mean Look / Block 
-    Anticipation 
-    Brightpowder 
-    Double Team / Acid Armor / Minimize 
-    Scary Face in Doubles 
-    String Shot in doubles 
-    Sweet Scent in doubles 
-    Dive/dig/fly/bounce 
-    Focus Band maybe?
-    Failure boosted moves in the mid-late game 
-    Status boosted moves in the mid-late game 
-    Swagger / Flatter
-    Confusion in general 
-    Attract in general 
-    Moody 
-    Simple 
-    Hustle on AI mons 
-    Quick Draw 
-    Inner Focus on AI 
-    Phasing Moves. Circle Throw, Roar, Whirlwind, Dragon Tail 
-    Priority on Pokemon, especially otherwise strong pokemon. 
-    Set up on pokemon. 
-    hazards (increases the value of defog and rapid spin)
-    speed lowering moves in the mid-late game. 
-    charm / captivate in doubles 

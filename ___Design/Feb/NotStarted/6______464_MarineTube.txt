@@ -1,6 +1,7 @@
 import messages.script.Msg0431.MSGID;
 
 import Base;
+import event.Battle;
 import event.actors.Actor;
 import event.actors.Player;
 import event.dialogs.Message;
@@ -19,6 +20,9 @@ import system.text.WordSet;
 
 public class MainEvents {
 	public static void main_1() { // @ 0x40
+		if (EventWorks.Get(16433) <= 9){
+			Sound.BGMFadeOut(1);
+		}
 		Base.CMD_2C4();
 	}
 
@@ -200,7 +204,202 @@ public class MainEvents {
 		Runtime.FinishSubEvents();
 		Actor.UnpauseAll();
 	}
+	// 16433
+	// 2: Start of Event 
+	// 3: First Ambush 
+	// 4: Second Ambush 
+	// 5: Third Ambush 
+	// 6: Fourth Ambush 
+	// 7: Fifth Ambush 
+	// 8: Sixth Ambush 
+	// 9: Arriving at Humilau Town
 
+	public static void main_9() {
+		Actor.PauseAll();
+		WalkNorth3Tiles(255);
+		Actor.WaitActionFinish();
+		WalkNorth2TilesSlow(255);
+		Actor.WaitActionFinish();
+		WalkNorth1TileSlow(255);
+		Actor.WaitActionFinish();
+		Runtme.Sleep(32);
+		Message.System(12, 2);
+		Message.CloseAll();
+		EventWorks.Set(16433, 3);
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_10(){
+		int playerX;
+		int playerY;
+		int playerZ;
+
+		Actor.PauseAll();
+		Actor.Hide(7);
+		Actor.Hide(8);
+		Actor.Hide(9);
+		Message.System(13, 0);
+		Message.CloseAll();
+		
+		Actor.Show(7);
+		Actor.Show(8);
+		Actor.Show(9);
+		Actor.SetRailPos(7, 27, -4);
+		Actor.SetRailPos(8, 27, 0);
+		Actor.SetRailPos(9, 27, 4);
+		ShadowAppear(7);
+		ShadowAppear(8);
+		ShadowAppear(9);
+		ShowExclamationMark(255);
+		Actor.WaitActionFinish();
+		Sound.BGMPlay(1239);
+		Player.GetRailPos(playerX, playerY, playerZ);
+		FixPositioning(playerZ);
+		Actor.WaitActionFinish();
+		TurnNorth(255);
+		Actor.WaitActionFinish();
+		WordSet.LoadPlayerName(0);
+		Message.ActorEx(1024, 14, 8, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseAll();
+		Message.ActorEx(1024, 15, 7, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseAll();
+		Message.ActorEx(1024, 16, 9, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseAll();
+		Message.ActorEx(1024, 17, 8, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseAll();
+		ShadowRunsSouthTwoTiles(8);
+		Actor.WaitActionFinish();
+
+		Battle.CallTrainerBattle(69, 0, 0);
+		isVictory =  Battle.IsTrainerVictory();
+		if (v16 != 1) {
+			Battle.CallTrainerLose();
+			goto LABEL_EndAmbushOne;
+		}
+		Battle.EndTrainerBattle();
+		Message.ActorEx(1024, 18, 8, 0, 0);
+		Actor.WaitActionFinish();
+		Message.ActorEx(1024, 19, 8, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseAll();
+		ShadowDisappear(7);
+		ShadowDisappear(8);
+		ShadowDisappear(9);
+		Actor.WaitActionFinish();
+		Actor.SetRailPos(7, 2, 0, 50);
+		Actor.SetRailPos(8, 2, 0, 50);
+		Actor.SetRailPos(9, 2, 0, 50);
+		EventWorks.Set(16433, 4);
+		Sound.BGMFadeOut(90);
+
+		LABEL_EndAmbushOne: 
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	static void FixPositioning(int offset){
+		if (offset == -4){
+			WalkEastFourTile(255);
+			return;
+		}
+		if (offfset == -3){
+			WalkEastThreeTile(255);
+			return;
+		}
+		if (offset == -2){
+			WalkEastTwoTile(255);
+			return;
+		}
+		if (offset == -1){
+			WalkEastOneTile(255);
+			return;
+		}
+		if (offset == 1){
+			WalkWestOneTile(255);
+			return;
+		}	
+		if (offset == 2){
+			WalkWestTwoTile(255);
+			return;
+		}
+		if (offset == 3){
+			WalkWestThreeTile(255);
+			return;
+		}
+		if (offset == 4){
+			WalkWestFourTile(255);
+			return;
+		}
+		return;
+	}
+	static meta void ShadowAppear(int npcId) : VActionSequence {
+		Action00b8(1);
+
+	}
+	static meta void ShadowDisappear(int npcId) : VActionSequence {
+		Action00b9(1);
+	}
+
+	static meta void ShadowRunsSouthTwoTiles(int npcId) : VActionSequence {
+		Action0011(2);
+	}
+
+	static meta void ShadowRunsNorth10Tiles(int npcId) : VActionSequence {
+		Action0014(10);
+	}
+	static meta void WalkWestOneTile(int npcId) : VActionSequence {
+		Action000e(1);
+	}
+
+	static meta void WalkWestTwoTile(int npcId) : VActionSequence {
+		Action000e(2);
+	}
+
+	static meta void WalkWestThreeTile(int npcId) : VActionSequence {
+		Action000e(3);
+	}
+
+	static meta void WalkWestFourTile(int npcId) : VActionSequence {
+		Action000e(4);
+	}
+
+	static meta void WalkEastOneTile(int npcId) : VActionSequence {
+		Action000f(1);
+	}
+
+	static meta void WalkEastTwoTile(int npcId) : VActionSequence {
+		Action000f(2);
+	}
+
+	static meta void WalkEastThreeTile(int npcId) : VActionSequence {
+		Action000f(3);
+	}
+
+	static meta void WalkEastFourTile(int npcId) : VActionSequence {
+		Action000f(4);
+	}
+
+	static meta void TurnNorth8F(int npcId) : VActionSequence {
+		Action0020(1);
+	}
+
+	static meta void TurnSouth8F(int npcId) : VActionSequence {
+		Action0021(1);
+	}
+
+	static meta void TurnWest8F(int npcId) : VActionSequence {
+		Action0022(1);
+	}
+
+	static meta void TurnEast8F(int npcId) : VActionSequence {
+		Action0023(1);
+	}
+	
 	static meta void ActionSequence_016c(int npcId) : VActionSequence {
 		Action0027(4);
 		Action0013(1);
@@ -217,10 +416,23 @@ public class MainEvents {
 	}
 
 	static meta void Global2805(int a1, int a2) : VGlobalCall[2805];
-
+	static native void Action000c(int amount) : 0xc;
+	static native void Action000d(int amount) : 0xd;
+	static native void Action000e(int amount) : 0xe;
+	static native void Action000f(int amount) : 0xf;
+	static native void Action00b8(int amount) : 0xb8;
+	static native void Action00b9(int amount) : 0xb9;
 	static native void Action0001(int amount) : 0x1;
 	static native void Action0011(int amount) : 0x11;
 	static native void Action0013(int amount) : 0x13;
+	static native void Action0014(int amount) : 0x14;
 	static native void Action0025(int amount) : 0x25;
 	static native void Action0027(int amount) : 0x27;
+    static native void Action0015(int amount) : 0x15;
+	static native void Action0016(int amount) : 0x16;
+	static native void Action0017(int amount) : 0x17;
+	static native void Action0020(int amount) : 0x20;
+	static native void Action0021(int amount) : 0x21;
+	static native void Action0022(int amount) : 0x22;
+	static native void Action0023(int amount) : 0x23;
 }

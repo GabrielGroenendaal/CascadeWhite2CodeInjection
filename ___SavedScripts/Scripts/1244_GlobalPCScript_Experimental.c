@@ -157,7 +157,7 @@ label3: ;
     AddDialogueOption(43, 0xFFFF, 43);
 
     AddDialogueOption(171, 0xFFFF, 171);
-
+    AddDialogueOption(194, 0xFFFF, 194);
     AddDialogueOption(71, 0xFFFF, 71);
 label_DisablePokeHelperOptions: ;
 	StackPushVar(0x8022);
@@ -168,71 +168,12 @@ label_DisablePokeHelperOptions: ;
 	AddDialogueOption(6, 0xFFFF, 6);
 
 label9: ;
-	// New Options
-	// goto label_DisablingFlight;
-
-    // Didn't receive the ugprade from Hugh Yet
+	// Didn't receive the ugprade from Hugh Yet
 	SetVarEqVar(0x8022, 16759);
 	StackPushVar(0x8022);
 	StackPushConst(0);
 	StackCompare(2);
 	if (255) goto label_DisablingFlight;
-
-    // Castelia Sewers and Associated Areas
-	Storec0xD3(0x8028);
-	Compare(0x8028, 495);
-	if (1) goto label_DisablingFlight;
-	Storec0xD3(0x8028);
-	Compare(0x8028, 161);
-	if (1) goto label_DisablingFlight;
-	Storec0xD3(0x8028);
-	Compare(0x8028, 502);
-	if (1) goto label_DisablingFlight;
-
-    // PWT Interior
-    Storec0xD3(0x8028);
-	Compare(0x8028, 192);
-	if (1) goto label_DisablingFlight;
-
-
-    // Plasma Frigate
-    Storec0xD3(0x8028);
-	Compare(0x8028, 552);
-	if (1) goto label_DisablingFlight;
-
-    // Iron Chamber
-    Storec0xD3(0x8028);
-	Compare(0x8028, 613);
-	if (1) goto label_DisablingFlight;
-	
-    // Reversal Mountain
-    Storec0xD3(0x8028);
-	Compare(0x8028, 538);
-	if (1) goto label_DisablingFlight;
-	Compare(0x8028, 539);
-	if (1) goto label_DisablingFlight;
-	Compare(0x8028, 540);
-	if (1) goto label_DisablingFlight;
-	Compare(0x8028, 541);
-	if (1) goto label_DisablingFlight;
-	Compare(0x8028, 542);
-	if (1) goto label_DisablingFlight;
-
-    // Route 14
-    Compare(0x8028, 374);
-	if (1) goto label_DisablingFlight;
-
-    // Marine Tube
-    Compare(0x8028, 464);
-	if (1) goto label_DisablingFlight;
-
-    // Humilau Gym 
-    Compare(0x8028, 473);
-	if (1) goto label_DisablingFlight;
-
-    // Nimbasa Gym 
-    Compare(0x8028, 63);
-	if (1) goto label_DisablingFlight;
 	AddDialogueOption(86, 0xFFFF, 86);
 
 label_DisablingFlight: ;
@@ -354,7 +295,72 @@ label33a: ;
 	goto label35a;
 
 label34a: ;
+    // Castelia Sewers and Associated Areas
+	Storec0xD3(0x8028);
+	Compare(0x8028, 495);
+	if (1) goto label_cantFlyHere;
+	Storec0xD3(0x8028);
+	Compare(0x8028, 161);
+	if (1) goto label_cantFlyHere;
+	Storec0xD3(0x8028);
+	Compare(0x8028, 502);
+	if (1) goto label_cantFlyHere;
+
+    // PWT Interior
+    Storec0xD3(0x8028);
+	Compare(0x8028, 192);
+	if (1) goto label_cantFlyHere;
+
+
+    // Plasma Frigate
+    Storec0xD3(0x8028);
+	Compare(0x8028, 552);
+	if (1) goto label_cantFlyHere;
+
+    // Iron Chamber
+    Storec0xD3(0x8028);
+	Compare(0x8028, 613);
+	if (1) goto label_cantFlyHere;
+	
+    // Reversal Mountain
+    Storec0xD3(0x8028);
+	Compare(0x8028, 538);
+	if (1) goto label_cantFlyHere;
+	Compare(0x8028, 539);
+	if (1) goto label_cantFlyHere;
+	Compare(0x8028, 540);
+	if (1) goto label_cantFlyHere;
+	Compare(0x8028, 541);
+	if (1) goto label_cantFlyHere;
+	Compare(0x8028, 542);
+	if (1) goto label_cantFlyHere;
+	
+	// Pinwheel Forest
+	Compare(0x8028, 155);
+	if (1) goto label_cantFlyHere;
+	Compare(0x8028, 156);
+	if (1) goto label_cantFlyHere;
+
+    // Route 14
+    Compare(0x8028, 374);
+	if (1) goto label_cantFlyHere;
+
+    // Marine Tube
+    Compare(0x8028, 464);
+	if (1) goto label_cantFlyHere;
+
+    // Humilau Gym 
+    Compare(0x8028, 473);
+	if (1) goto label_cantFlyHere;
+
+    // Nimbasa Gym 
+    Compare(0x8028, 63);
+	if (1) goto label_cantFlyHere;
+
 	Sequence17();
+	goto label12;
+label_cantFlyHere: ;
+	EventGreyMessage(196, 2);
 	goto label12;
 
 label35a: ;
@@ -393,13 +399,13 @@ label_MainRemoveItemFunctionA: ;
 	YesNoBox(0x8000);
 	Compare(0x8000, 1);
 	if (1) goto label12;
-	Sequence19();
+	Sequence20();
 	goto label12;
 
 label_MainEdgeFunction: ;
     Compare(0x8024, 71);
     if (1) goto label_MainEdgeFunctionA;
-    goto label12;
+    goto label_MainPreDamageFunction;
 
 label_MainEdgeFunctionA: ;
     GetPartyCount(0x8022, 0);
@@ -409,7 +415,19 @@ label_MainEdgeFunctionA: ;
 	YesNoBox(0x8000);
 	Compare(0x8000, 1);
 	if (1) goto label12;
-	Sequence20();
+	Sequence21();
+	goto label12;
+
+label_MainPreDamageFunction: ;
+    Compare(0x8024, 194);
+    if (1) goto label_MainPreDamageFunctionA;
+    goto label12;
+
+label_MainPreDamageFunctionA: ;
+    GetPartyCount(0x8022, 0);
+	Compare(0x8022, 0);
+	if (1) goto label_NoPokemon;
+	Sequence19();
 	goto label12;
 
 label12: ;
@@ -619,7 +637,7 @@ label62: ;
 	YesNoBox(0x8000);
 	Compare(0x8000, 1);
 	if (1) goto label57;
-	Sequence20();
+	Sequence21();
 	goto label57;
 
 label_RemoveItems_checked: ;
@@ -632,7 +650,7 @@ label_RemoveItems_clicked: ;
 	YesNoBox(0x8000);
 	Compare(0x8000, 1);
 	if (1) goto label57;
-	Sequence19();
+	Sequence20();
 	goto label57;
 
 label46: ;
@@ -846,24 +864,32 @@ label79: ;
 	OpenChoosePokemonMenu(0, 0x8000, 0x8004, 0);
 	SetPokemonIV(0x8004, 157, 5);
 	PlaySound(1372);
+    EventGreyMessage(193, 2);
+    WaitForButton();
 	goto label78;
 
 label80: ;
 	OpenChoosePokemonMenu(0, 0x8000, 0x8004, 0);
 	SetPokemonIV(0x8004, 157, 1);
 	PlaySound(1372);
+    EventGreyMessage(193, 2);
+    WaitForButton();
 	goto label78;
 
 label81: ;
 	OpenChoosePokemonMenu(0, 0x8000, 0x8004, 0);
 	SetPokemonIV(0x8004, 157, 2);
 	PlaySound(1372);
+    EventGreyMessage(193, 2);
+    WaitForButton();
 	goto label78;
 
 label82: ;
 	OpenChoosePokemonMenu(0, 0x8000, 0x8004, 0);
 	SetPokemonIV(0x8004, 157, 4);
 	PlaySound(1372);
+    EventGreyMessage(193, 2);
+    WaitForButton();
 	goto label78;
 
 label78: ;
@@ -1150,7 +1176,6 @@ void Sequence17()
 {
 	PlaySound(1351);
 	SetVarEqVal(0x8034, 0);
-
 label_travelOptions: ;
 	StackPushVar(0x8034);
 	StackPushConst(0);
@@ -1158,7 +1183,6 @@ label_travelOptions: ;
 	if (255) goto label_goBack;
 
 	EventGreyMessage(102, 2);
-	WaitForButton();
 	
 
 	SetupDialogueSelection(31, 1, 0, 1, 0x8029);
@@ -1245,27 +1269,25 @@ label_skipUndella: ;
 	if (1) goto label_skipHumilau;
 	AddDialogueOption(174, 0xFFFF, 465);
 
-// label_skipHumilau: ;
-// ======== LACUNOSA TOWN ======== */
-//	Compare(16462, 0);
-//	if (1) goto label_skipLacunosa;
-//	AddDialogueOption(175, 0xFFFF, lacunosaZone); // Put the Lacunosa Town ID here
-//
-//label_skipLacunosa: ;
-// ======== OPELUCID TOWN ======== */
-//	Compare(16462, 0);
-//	if (1) goto label_skipOpelucid;
-//	AddDialogueOption(176, 0xFFFF, opelucidZone); // Put the opelucid Town ID here
-//
-//label_skipOpelucid: ;
-// ======== LEAGUE ======== */
-//	Compare(16462, 0);
-//	if (1) goto label_skipLeague;
-//	AddDialogueOption(177, 0xFFFF, leagueZone); // Put the League Zone ID here
-
-label_skipLeague: ;
-
 label_skipHumilau: ;
+// // ======== LACUNOSA TOWN ======== */
+// 	Compare(16462, 0);
+// 	if (1) goto label_skipLacunosa;
+// 	AddDialogueOption(175, 0xFFFF, lacunosaZone); // Put the Lacunosa Town ID here
+
+// label_skipLacunosa: ;
+// // ======== OPELUCID TOWN ======== */
+// 	Compare(16462, 0);
+// 	if (1) goto label_skipOpelucid;
+// 	AddDialogueOption(176, 0xFFFF, opelucidZone); // Put the opelucid Town ID here
+
+// label_skipOpelucid: ;
+// // ======== LEAGUE ======== */
+// 	Compare(16462, 0);
+// 	if (1) goto label_skipLeague;
+// 	AddDialogueOption(177, 0xFFFF, leagueZone); // Put the League Zone ID here
+
+// label_skipLeague: ;
 	AddDialogueOption(112, 0xFFFF, 112);
 	ShowDialogueSelection2();
 	CloseEventGreyMessage();
@@ -2237,18 +2259,72 @@ label100_options: ;
 	Return();
 }
 
+/* PRE-DAMAGE SCRIPT */
+void Sequence19(){
+    EventGreyMessage(184, 2);
+	CloseEventGreyMessage();
+    OpenChoosePokemonMenu(0, 0x8000, 0x8004, 0);
+    // Stores Now HP
+    GetPokemonParam(0x8001, 0x8004, 160);
+	SetVarEqVar(0x8035, 0x8001);
+    // Stores Max HP
+    GetPokemonParam(0x8002, 0x8004, 161);
+	SetVarEqVar(0x8037, 0x8002);
+    SetVarEqVar(0x8036, 0x8035);
+Label_StartSelection: ;
+    SetWordPartyNickname(0, 0x8004);
+    SetWordNumber(1, 0x8036, 3);
+    EventGreyMessage(185, 2);
+	SetupDialogueSelection(31, 1, 0, 1, 0x8024);
+    Compare(0x8036, 1);
+    if (3) goto Label_NotEnoughHP;
+	AddDialogueOption(186, 0xFFFF, 1);
+    Compare(0x8036, 5);
+    if (3) goto Label_NotEnoughHP;
+	AddDialogueOption(187, 0xFFFF, 5);
+    Compare(0x8036, 10);
+    if (3) goto Label_NotEnoughHP;
+	AddDialogueOption(188, 0xFFFF, 10);
+    Compare(0x8036, 20);
+    if (3) goto Label_NotEnoughHP;
+	AddDialogueOption(189, 0xFFFF, 20);
+    Compare(0x8036, 50);
+    if (3) goto Label_NotEnoughHP;
+	AddDialogueOption(190, 0xFFFF, 50);
+    Compare(0x8036, 100);
+    if (3) goto Label_NotEnoughHP;
+    AddDialogueOption(191, 0xFFFF, 100);
+Label_NotEnoughHP: ;
+    AddDialogueOption(193, 0xFFFF, 193);
+	ShowDialogueSelection2();
+	Compare(0x8024, 0xFFFE);
+	if (1) goto label_EndPreDamageScript;
+	Compare(0x8024, 193);
+	if (1) goto label_EndPreDamageScript;
+    SubtractVar(0x8036, 0x8024);
+    goto Label_StartSelection;
+
+label_EndPreDamageScript: ;
+	SetPokemonIV(0x8004, 160, 0x8036);
+	PlaySound(1372);
+    EventGreyMessage(193, 2);
+    WaitForButton();
+    Return();
+}
+
+
 /* REMOVE ALL ITEMS FROM POKEMON SCRIPT */
 /* REPLACE WITH 133 */
-void Sequence19(){
+void Sequence20(){
     PC_131();
 	EventGreyMessage(69, 2);
-
+    SetVarEqVal(0x8036, 0x8035);
 	Return();
 }
 
 /* EDGE POKEMON SCRIPT */
 /* REPLACE WITH 135 */
-void Sequence20()
+void Sequence21()
 {
     PC_131();
 	EventGreyMessage(69, 2);

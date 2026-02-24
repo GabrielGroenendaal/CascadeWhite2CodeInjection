@@ -1,6 +1,7 @@
 import messages.script.Msg0213.MSGID;
 
 import Base;
+import event.Battle;
 import event.actors.Actor;
 import event.actors.Follow;
 import event.actors.Player;
@@ -17,6 +18,9 @@ import system.Input;
 import system.Runtime;
 import system.Sound;
 import system.text.WordSet;
+import pokemon.PokeParty;
+import event.dialogs.ListMenu;
+
 
 public class MainEvents {
 	public static void main_1() { // @ 0x509
@@ -227,6 +231,247 @@ public class MainEvents {
 		Base.CMD_262(2, 14);
 	}
 
+	// Gardenia Script
+	public static void main_12() {
+		int textId;
+    	int yesNo;
+    	int isVictory;
+    	Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+
+        int textId = 30;
+
+		if (EventFlags.Get(1520 + 538)) {
+			Message.Actor(1024, textId + 4, 0, 0);
+			Input.LastKeyWait();
+			Message.CloseActor();
+			goto Label_EndGardenia;
+		}
+		Message.Actor(1024, textId, 0, 0);
+		yesNo = YesNoWin.Show();
+		if (yesNo != 0) {
+			Message.Actor(1024, textId + 2, 0, 0);
+			Input.LastKeyWait();
+			Message.CloseActor();
+			goto Label_EndGardenia;
+		}
+		Message.Actor(1024, textId + 1, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+
+		Battle.CallTrainerBattle(538, 0, 0); // REPLACE WITH ROUGHNECK TRAINER ID 
+		isVictory = Battle.IsTrainerVictory();
+		if (isVictory != 1) {
+			Battle.CallTrainerLose();
+			goto Label_EndGardenia;
+		}
+        Battle.EndTrainerBattle();
+		Message.Actor(1024, textId + 3, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		
+		Global2805(380, 1);
+		Message.Actor(1024, textId + 5, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		EventFlags.Set(1520 + 538);
+
+		Label_EndGardenia:
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();  
+	}
+
+	// Bugsy Script
+	public static void main_13() {
+		int textId;
+    	int yesNo;
+    	int isVictory;
+    	Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+
+        int textId = 36;
+
+		if (EventFlags.Get(1520 + 326)) {
+			Message.Actor(1024, textId + 4, 0, 0);
+			Input.LastKeyWait();
+			Message.CloseActor();
+			goto Label_EndBugsy;
+		}
+		Message.Actor(1024, textId, 0, 0);
+		yesNo = YesNoWin.Show();
+		if (yesNo != 0) {
+			Message.Actor(1024, textId + 2, 0, 0);
+			Input.LastKeyWait();
+			Message.CloseActor();
+			goto Label_EndBugsy;
+		}
+		Message.Actor(1024, textId + 1, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+
+		Battle.CallTrainerBattle(326, 0, 0); // REPLACE WITH ROUGHNECK TRAINER ID 
+		isVictory = Battle.IsTrainerVictory();
+		if (isVictory != 1) {
+			Battle.CallTrainerLose();
+			goto Label_EndBugsy;
+		}
+        Battle.EndTrainerBattle();
+		Message.Actor(1024, textId + 3, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		
+		Global2805(372, 1);
+		Message.Actor(1024, textId + 5, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		EventFlags.Set(1520 + 326);
+
+		Label_EndBugsy:
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	// Police Script
+	public static void main_14(){
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 54, 0, 0);
+		Message.WaitAdvance();
+		Message.CloseAll();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	// Bianca Introductory Script 
+	// 16471 == 0
+	public static void main_15(){
+		int BiancaEntity;
+		int playerX;
+		int playerY;
+		
+		Actor.PauseAll();
+		Player.GetGPos(playerX, playerY);
+		ShowExclamationMark(BiancaEntity);
+		TurnNorth(BiancaEntity);
+		Actor.WaitActionFinish();
+
+		Message.ActorEx(1024, 42, BiancaEntity, 0, 0);
+		Message.CloseAll();
+		playerY += 1; 
+		Actor.WalkRoute(BiancaEntity, playerX, playerY, 0, 8, 0);
+		Actor.WaitActionFinish();
+		TurnNorth(BiancaEntity);
+		Actor.WaitActionFinish();
+
+		Message.ActorEx(1024, 55, BiancaEntity, 0, 0);
+		Message.CloseAll();
+		WalkSouth2Tiles(BiancaEntity);
+		Actor.WaitActionFinish();
+		Message.ActorEx(1024, 43, BiancaEntity, 0, 0);
+		Input.LastKeyWait();
+		ShowQuestionMark(BiancaEntity);
+		Actor.WaitActionFinish();
+		Message.ActorEx(1024, 44, BiancaEntity, 0, 0);
+		Message.CloseAll();
+
+		WalkNorth8F(BiancaEntity);
+		Actor.WaitActionFinish();
+
+		Message.ActorEx(1024, 46, BiancaEntity, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseAll();
+		TurnEast8F(BiancaEntity);
+		Actor.WaitActionFinish();
+		Message.ActorEx(1024, 47, BiancaEntity, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseAll();
+		EventWorks.Set(16471, 1);
+
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	// Bianca Speaking 
+	public static void main_16(){
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 45, 0, 0);
+		Message.WaitAdvance();
+		Message.CloseAll();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	// Bianca Exiting Pinwheel 
+	// Triggered by EventWorks 16471 == 2
+	// Looks at outcome of Virizion fight, 16472 
+	// 1 == talked to, didn't fight 
+	// 2 == fought and won 
+	// 3 == fought and lost 
+	public static void main_17(){
+		int BiancaEntity;
+		int playerX;
+		int playerY;
+		Actor.PauseAll();
+		Player.GetGPos(playerX, playerY);
+		ShowExclamationMark(BiancaEntity);
+		TurnSouth(BiancaEntity);
+		Actor.WaitActionFinish();
+
+		Message.ActorEx(1024, 48, BiancaEntity, 0, 0);
+		Message.CloseAll();
+		playerY -= 1; 
+		Actor.WalkRoute(BiancaEntity, playerX, playerY, 0, 8, 0);
+		Actor.WaitActionFinish();
+		TurnSouth(BiancaEntity);
+		Actor.WaitActionFinish();
+
+		Message.ActorEx(1024, 56, BiancaEntity, 0, 0);
+		Message.CloseAll();
+		ShowEllipses(255);
+		Runtime.Sleep(32);
+		ShowExclamationMark(BiancaEntity);
+		Actor.WaitActionFinish();
+		if (EventWorks.Get(16472) == 1){
+			Message.ActorEx(1024, 49, BiancaEntity, 0, 0);
+			goto Label_BiancaExitScript;
+		}
+		if (EventWorks.Get(16472) == 2){
+			Message.ActorEx(1024, 50, BiancaEntity, 0, 0);
+			goto Label_BiancaExitScript;
+		}
+		if (EventWorks.Get(16472) == 3){
+			Message.ActorEx(1024, 51, BiancaEntity, 0, 0);
+			goto Label_BiancaExitScript;
+		}
+		Label_BiancaExitScript;
+		Input.LastKeyWait();
+		Message.CloseAll();
+		TurnEast(BiancaEntity);
+		Actor.WaitActionFinish();
+		Message.ActorEx(1024, 52, BiancaEntity, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseAll();
+		TurnSouth(BiancaEntity);
+		Actor.WaitActionFinish();
+		Message.ActorEx(1024, 53, BiancaEntity, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseAll();
+		BiancaExit(BiancaEntity);
+		Runtime.Sleep(64);
+		Sound.SEPlay(1369);
+		Actor.Hide(BiancaEntity);
+		EventFlags.Set(552);
+		EventWorks.Set(16471, 3);
+
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
 	static void sub_0269() { // @ 0x269
 		int v0;
 		int v1;
@@ -325,6 +570,10 @@ public class MainEvents {
 		ActionSequence_059c(21);
 		ActionSequence_0554(255);
 		Actor.WaitActionFinish();
+	}
+	
+	static meta void BiancaExit(int npcId) : VActionSequence {
+		Action000c(8);
 	}
 
 	static meta void ActionSequence_01ec(int npcId) : VActionSequence {

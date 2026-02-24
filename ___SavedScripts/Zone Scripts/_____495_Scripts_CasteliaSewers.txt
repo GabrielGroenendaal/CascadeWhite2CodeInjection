@@ -207,6 +207,16 @@ public class MainEvents {
 		EVCamera.Rebind();
 		EVCamera.End();
 		Global10536(2000, 0);
+
+        // Updating Level Caps
+        EventWorks.Set(16466, 32);
+        if (EventWorks.Get(16465) == 1){
+            Sound.SEPlay(1351);
+            Message.System(64, 2);
+            Message.WaitAdvance();
+            Message.CloseAll();            
+        }
+        
 		Actor.Hide(254);
 		Actor.Hide(19);
 		Actor.Hide(20);

@@ -1,5 +1,6 @@
 import messages.script.Msg0353.MSGID;
 
+import player.Bag;
 import Base;
 import event.Battle;
 import event.EVCamera;
@@ -13,6 +14,7 @@ import pokemon.Daycare;
 import pokescript.vm.Math;
 import pokescript.vm.StackCtrl;
 import pokescript.vm.VM;
+import system.Fade;
 import system.EventFlags;
 import system.EventWorks;
 import system.Field;
@@ -185,6 +187,17 @@ public class MainEvents {
                 goto LABEL_08af;
             }
 			Sound.SEPlay(1351);
+            Message.ActorEx(1024, 68, 0, 0, 0);
+            Input.LastKeyWait();
+            Message.CloseAll();
+            Fade.FadeEx(3, 0, 16, 2);
+		    Fade.FadeExWait();
+		    PokeParty.RecoverAll();
+		    Sound.MEPlay(1300);
+		    Sound.MEWait();
+		    Fade.FadeEx(3, 16, 0, 2);
+		    Fade.FadeExWait();
+            Sound.SEPlay(1351);
 			Message.ActorEx(1024, 32, 0, 0, 0); //  [VAR TRNAME(1)]: I'm gonna end this,\nso back me up!\c\nOK, Plasma punk, are YOU the thief\nwho stole a Purrloin in Aspertia\r\nfive years back?\c
 			Message.CloseAll();
 			Player.GetGPos(v34, v35);
@@ -305,6 +318,18 @@ public class MainEvents {
 		Actor.WaitActionFinish();
 		Message.ActorEx(1024, 17, 1, 0, 0);
 		Message.CloseAll();
+		Sound.SEPlay(1351);
+        Message.ActorEx(1024, 68, 1, 0, 0);
+        Input.LastKeyWait();
+        Message.CloseAll();
+        Fade.FadeEx(3, 0, 16, 2);
+		Fade.FadeExWait();
+		PokeParty.RecoverAll();
+		Sound.MEPlay(1300);
+		Sound.MEWait();
+		Fade.FadeEx(3, 16, 0, 2);
+		Fade.FadeExWait();
+
 		Player.GetGPos(v34, v35);
 		if (v34 != 10 || v35 != 28) {
 			if (v34 != 11 || v35 != 29) {
@@ -893,9 +918,43 @@ public class MainEvents {
 		stealPokemon();
 	}
 
+   
+    // This script checks to see what the lowest health non-fainted Pokemmon in the party is and takes it. 
     static void stealPokemon() {
         // this script is going to iterate over the players team and steal one of their pokemon. 
-        
+        int lowestHealthPokemon = 12;
+        int lowestHealth = 999;
+        int totalPokemonCount = PokeParty.GetPkmCount(0);
+        int i;
+        int monsHealth;
+        for (i = 0; i < totalPokemonCount; i++){
+            if (!PokeParty.IsEgg(i)){
+                monsHealth = PokeParty.GetParam(i, 160);
+                if (monsHealth > 0){
+                    if (monsHealth < lowestHealth){
+                        lowestHealth = monsHealth;
+                        lowestHealthPokemon = i;
+                    }
+                    if (monsHealth == lowestHealth){
+                        if (System.Random(100) > 50){
+                            lowestHealth = monsHealth;
+                            lowestHealthPokemon = i;
+                        }
+                    }
+                }
+            }
+        }
+        if (lowestHealthPokemon == 12){
+            stealPokemonCheck2();
+        }
+        else {
+            stealThePokemon(lowestHealthPokemon);
+        }
+        return;
+    }
+
+    static void stealPokemonCheck2() {
+        // this script is going to iterate over the players team and steal one of their pokemon. 
         int option1; 
         int option2;
         int option3;
@@ -972,11 +1031,21 @@ public class MainEvents {
          if (random == 5) {
         	random == option6;
         }
-        Daycare.DepositPkm(random);
+		stealThePokemon(random);
 
         LABEL_EndSteal:
         return;
     }
+
+
+	static void stealThePokemon(int index){
+		int hasItem = PokeParty.GetParam(index, 6);
+		if (hasItem != 0){
+			Bag.GiveItem(hasItem, 1);
+			PokeParty.SetIV(index, 6, 0);
+		}
+		Daycare.DepositPkm(index);
+	}
 
 
 	static void sub_1268() { // @ 0x1268

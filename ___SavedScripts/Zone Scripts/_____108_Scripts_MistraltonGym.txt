@@ -229,6 +229,14 @@ public class MainEvents {
 		Message.Actor(1024, 4, 0, 0);
 		Input.LastKeyWait();
 		Message.CloseActor();
+
+        if (EventWorks.Get(16465) == 1){
+            Sound.SEPlay(1351);
+            Message.System(14, 2);
+            Message.WaitAdvance();
+            Message.CloseAll();            
+        }
+                
 		if (EventWorks.Get(16578) != 2) {
 			Base.CMD_262(1, 19);
 			goto LABEL_0217;
@@ -257,6 +265,9 @@ public class MainEvents {
 		// Miniboss Disable
 		EventFlags.Set(539);
 		
+        // Level Cap Update 
+        EventWorks.Set(16466, 59);
+
 		// Clears Roods first position
 		if (!EventFlags.Get(520)){
 			EventFlags.Set(520);

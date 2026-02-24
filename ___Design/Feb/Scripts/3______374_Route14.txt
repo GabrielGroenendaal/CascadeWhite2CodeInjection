@@ -369,6 +369,7 @@ public class MainEvents {
 
     // Falkner 
     public static void main_17(){
+        int isVictory;
         Actor.PauseAll();
         Actor.FacePlayer();
         Actor.WaitActionFinish();
@@ -387,7 +388,9 @@ public class MainEvents {
         isVictory = Battle.IsTrainerVictory();
         if (isVictory != 1){
             Battle.CallTrainerLose();
+            goto Label_EndFalkner;
         }
+        Battle.EndTrainerBattle();
         Message.ActorEx(1024, 21, 4, 0, 0);
         Input.LastKeyWait();
         Message.CloseAll();

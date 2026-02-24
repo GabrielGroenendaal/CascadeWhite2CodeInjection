@@ -63,6 +63,15 @@ public class MainEvents {
 		Input.LastKeyWait();
 		Message.CloseActor();
 
+
+        // Gives a text update for the Level Cap Increasing
+        if (EventWorks.Get(16465) == 1){
+            Sound.SEPlay(1351);
+            Message.System(31, 2);
+            Message.WaitAdvance();
+            Message.CloseAll();            
+        }
+
 		LABEL_02ec:
 		Runtime.FinishSubEvents();
 		Actor.UnpauseAll();
@@ -874,6 +883,10 @@ public class MainEvents {
 
 		// Clears Lenora 
 		EventFlags.Set(528);
+
+        // Update Level Cap
+		EventWorks.Set(16466, 44);
+
 		if (EventWorks.Get(16526) == 0){
 			EventWorks.Set(16526, 1);
 		}

@@ -1,0 +1,32 @@
+
+
+
+0:
+Virizion glances aloofly in your\ndirection...\r\nIn her eyes, you see a challenge...
+
+1:
+Accept
+
+2:
+Decline
+
+3:
+Virizion turns its gaze, unperturbed.
+
+4:
+Virizion hums softly as a cold wind\nblows through the forest...\c\nYou can feel blades of grasp beginning\nto wrap around your feet...
+
+5:
+Kikwaaaa!
+
+6:
+Virizion bows her head in respect.\c\nRising up from the mossy floor, an\npowerful item appears...
+
+7:
+Virizion eyes you curiously,\nand assumes a resting position.
+
+8:
+Virizion disappeared...
+
+9:
+Virizion regards your injured Pokémon,\nand raises its horn which begins to glow.

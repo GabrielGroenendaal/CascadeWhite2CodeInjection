@@ -29,3 +29,118 @@
 27: The legendary Pok�mon...\nIs it true it was really beyond here?
 28: The surface is covered with moss.\nTouching it feels good somehow.
 29: Trainer Tips!\c\n\nA forest is likely to contain many\nwell-hidden items!\c\nThey may be hard to find,\nso look carefully!
+
+
+
+
+
+30: Gardenia Intro 
+My Grass-type Pokémon are growing good\nand strong.\c\nCome on, let's battle!\nA real quick one, OK?
+
+31: Accept Gardenia Battle 
+Woo, let's do it!
+
+32: Reject Gardenia Battle 
+Aww, really?\nMy Grass-type Pokémon are growing good\nand strong, too...
+
+33: Defeated Gardenia 
+Amazing!\nHey! How do you feel?\c\nGreat, right?\nMe too!\c\nLet me give you this as thanks!
+
+34: Post Loss Field 
+Me and my greenies are all set for the\ntournament coming up.\r\nThanks!
+
+35: Post Item
+That TM is Energy Ball!\nIt's a powerful move that draws upon\r\nthe primal energy of life itself!
+
+36: Bugsy Intro 
+Hello, my name is Bugsy!\My research is going to make me the\r\nauthority on Bug-type Pokémon!\c\nWould you care to assist me in a test?
+
+37: Accept Bugsy Battle 
+Let the experiment begin!
+
+38: Reject Bugsy Battle 
+Aw, okay.\c\nI'll be here doing field research for\na little bit.
+
+39: Defeated Bugsy 
+Thanks!\c\nThanks to our battle, I was also able\nto make progress in my research!\c\nHere, take this as thanks!
+
+40: Post Loss Field 
+I never lose when it comes to\nBug-type Pokémon.\c\nI'm so embarrassed to have said that.\c\nI'll start my studies of other Pokémon\nover from the beginning, too.\c\nI'm truly grateful that you made me\nrealize I need to do that!
+
+41: Post Item 
+That TM is for Lunge, a powerful attack\nthat also lowers the target's Attack!
+
+42: Bianca 1 
+Bianca: Hey! You made it!\c 
+
+43: Bianca 2
+Bianca: Wow...\nit's nostalgic being back here again...\c\nI went a journey with my friends two\nyears ago...\r\nwe fought Team Plasma here to get back\na... uh....
+
+44: Bianca 3 
+Bianca:  ...dragon skull?\nThat can't be right.\c
+
+45: Bianca 4 
+Hm...\nthere's a strange energy here today.\r\nWhere are all the wild Pokémon?\c\nMaybe those trainers I saw earlier scared\nthem away?
+
+46: 
+Well, from my research, it seems that\nVirizion, one of the Swords of Justice,\r\nonce used this forest as a refuge for\nPokémon fleeing a great war.\c\nThere is said to a be hidden clearing,\ndeep in the grove where it would rest\r\nand meditate upon battle tactics. 
+
+47:
+I tried to look around myself, but I\ngot kinda lost...\r\nI think it's to the east though.
+
+48: 
+Bianca: Hey [VAR TRNAME(0)], there\nyou are!\c
+
+49: 
+Bianca: You found Virizion?\c\nThat's incredible!\nI knew you could do it!
+
+50:
+Bianca: You found Virizion?\nAnd you battled it?\c\nThat's incredible!
+
+51:
+Bianca: You found Virizion?\nAnd you defeated it in battle?\c\nThat's incredible!\nI had no idea you were so strong!
+
+52:
+Virizion seems really wise and cool...\nI'm sure she'll help you get your\rPokémon back and stop Team Plasma!\r\nI'm sure of it! 
+
+53:
+Bianca:Alright, I've got to get back\nto Professor Juniper.\r\nWe're supposed to meet in Lacunosa Town.\c\nI'm so happy I was able to help, and\nbest of luck with everything!
+
+54: Police Officer 
+Sorry kid, roads closed.\nConstruction in progress. 
+
+55:
+How was the trip?\nIt's a lot easier now that you\r\nhave Fly, right?
+
+56: 
+I was starting to get worried!\nWhat happened?
+
+[ BIANCA INTRODUCTION ]
+	(Turn North)
+Hey! You made it!
+	
+	(Ellipses)
+	(Walk South One Tile)
+
+Wow...\nit's nostalgic being back here again...\c\nI went a journey with my friends two\nyears ago...\r\nwe fought Team Plasma here to get back\na... dragon skull?\c\nThat can't be right.
+	
+	(Adjust Hat Bianca Animation)
+
+	(Turn North)
+
+	(Walk Two tiles North)
+
+Well, from my research, it seems that\nVirizion, one of the Swords of Justice,\r\nonce used this forest as a refuge for\nPokémon fleeing a great war.\c\nThere is said to a be hidden clearing,\ndeep in the grove where it would rest\r\nand meditate upon battle tactics. 
+	
+	(Question Mark)
+
+	(Turn South)
+
+Hm...\nthere's a strange energy here today.\r\nWhere are all the wild Pokémon?\c\nMaybe those trainers I saw earlier scared\nthem away?
+	
+	(Turn North)
+
+Alright, I've got to get back to\nProfessor Juniper.\r\nWe're supposed to meet in Lacunosa Town.\c\nBest of luck with everything!
+	
+	(Walk Route out of forest)
+

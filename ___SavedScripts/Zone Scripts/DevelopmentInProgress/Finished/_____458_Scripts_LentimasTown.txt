@@ -57,7 +57,11 @@ public class MainEvents {
 		ActionSequence_0278(255);
 		Actor.WaitActionFinish();
 		Actor.Hide(5);
+		Message.System(24, 2);
+		Message.WaitAdvance();
+		Message.CloseAll();
 		EventFlags.Set(777);
+        	EventFlags.Set(519);
 		EventWorks.Set(16587, 2);
 		EventWorks.Set(16672, 1);
 		EventWorks.Set(16447, 1);
@@ -177,6 +181,58 @@ public class MainEvents {
 		Runtime.FinishSubEvents();
 		Actor.UnpauseAll();
 	}
+
+    // State Fixer 
+    public static void main_10() {
+ 		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+
+        if (!EventFlags.Get(519))
+        {
+            // Clears Roxanne
+			EventFlags.Set(1404);
+			EventFlags.Set(1406);
+		    // Clears Morty 
+			EventFlags.Set(1175);
+			EventFlags.Set(1185);
+            EventFlags.Set(539);
+            if (!EventFlags.Get(551)){
+				EventWorks.Set(16466, 59);
+                EventFlags.Clear(519);
+                EventFlags.Set(519);
+                EventWorks.Set(16447, 1);
+            }
+		    Message.Actor(1024, 22, 0, 0);
+		    Input.LastKeyWait();
+		    Message.CloseActor();
+        } 
+		if (EventWorks.Get(16447) == 0){
+            // Clears Roxanne
+			EventFlags.Set(1404);
+			EventFlags.Set(1406);
+		    // Clears Morty 
+			EventFlags.Set(1175);
+			EventFlags.Set(1185);
+            EventFlags.Set(539);
+            if (!EventFlags.Get(551)){
+				EventWorks.Set(16466, 59);
+                EventFlags.Clear(519);
+                EventFlags.Set(519);
+                EventWorks.Set(16447, 1);
+            }
+		    Message.Actor(1024, 22, 0, 0);
+		    Input.LastKeyWait();
+		    Message.CloseActor();			
+		}
+		else {
+		    Message.Actor(1024, 23, 0, 0);
+		    Input.LastKeyWait();
+		    Message.CloseActor();            
+        }
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();       
+    }
 
 	static meta void ActionSequence_0278(int npcId) : VActionSequence {
 		Action0023(1);

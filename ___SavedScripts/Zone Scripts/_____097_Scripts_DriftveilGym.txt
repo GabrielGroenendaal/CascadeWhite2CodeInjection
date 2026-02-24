@@ -113,7 +113,16 @@ public class MainEvents {
 		LABEL_0245:
 		Actor.WaitActionFinish();
 		Message.ActorEx(1024, 5, 7, 0, 0);
-		Message.CloseActor();
+		Message.CloseAll();
+
+        // Gives a text update for the Level Cap Increasing
+        if (EventWorks.Get(16465) == 1){
+            Sound.SEPlay(1351);
+            Message.System(25, 2);
+            Message.WaitAdvance();
+            Message.CloseAll();            
+        }
+
 		ActionSequence_06a4(7);
 		if (v16 == 0) {
 			ActionSequence_0690(255);
@@ -881,6 +890,9 @@ public class MainEvents {
 	}
 
 	static void clearGatekeepers(){
+		// Update Level Cap
+		EventWorks.Set(16466, 51);
+		
 		// Lady Lina
 		if (!EventFlags.Get(1520 + 147)) {
 			EventFlags.Set(1667);

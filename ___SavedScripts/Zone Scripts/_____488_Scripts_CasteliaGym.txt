@@ -155,6 +155,16 @@ public class MainEvents {
 		Message.Actor(1024, 4, 0, 0);
 		Input.LastKeyWait();
 		Message.CloseActor();
+
+        // Handles the Level Cap Updates 
+        EventWorks.Set(16466, 35);
+        if (EventWorks.Get(16465) == 1){
+            Sound.SEPlay(1351);
+            Message.System(X, 2);
+            Message.WaitAdvance();
+            Message.CloseAll();            
+        }  
+
 		EventFlags.Set(2416);
 		EventWorks.Set(16564, 1);
 		EventFlags.Clear(756);
@@ -211,4 +221,3 @@ public class MainEvents {
 	static native void Action0037(int amount) : 0x37;
 	static native void Action0045(int amount) : 0x45;
 }
-

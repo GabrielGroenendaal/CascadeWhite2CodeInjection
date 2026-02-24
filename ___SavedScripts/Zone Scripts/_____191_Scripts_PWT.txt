@@ -473,7 +473,7 @@ public class MainEvents {
         int v32;
         int success;
         int v0;
-
+        int checkIv;
 
         Actor.PauseAll();
 		Sound.SEPlay(1351);
@@ -519,12 +519,30 @@ public class MainEvents {
 		if (v5 == 0) {
             Message.Actor(1024, 68, 2, 0); // REPLACE WITH "And which stat would you like to enhance?"
 			ListMenu.InitRightAnchor(31, 5, 0, 1, v4);
-			ListMenu.AddItem(48, 65535, 0); // HP
-			ListMenu.AddItem(49, 65535, 1); // Atk 
-			ListMenu.AddItem(50, 65535, 2); // Def
-			ListMenu.AddItem(51, 65535, 3); // SpA
-            ListMenu.AddItem(52, 65535, 4); // SpD
-            ListMenu.AddItem(53, 65535, 5); // Spe
+            checkIv = PokeParty.GetParam(v32, 70);
+            if (checkIv < 31){
+                ListMenu.AddItem(48, 65535, 0); // HP
+            }
+            checkIv = PokeParty.GetParam(v32, 71);
+            if (checkIv < 31){
+                ListMenu.AddItem(49, 65535, 1); // Atk 
+            }
+            checkIv = PokeParty.GetParam(v32, 72);
+            if (checkIv < 31){
+                ListMenu.AddItem(50, 65535, 2); // Def
+            }
+            checkIv = PokeParty.GetParam(v32, 74);
+            if (checkIv < 31){
+                ListMenu.AddItem(51, 65535, 3); // SpA
+            }
+            checkIv = PokeParty.GetParam(v32, 75);
+            if (checkIv < 31){
+                ListMenu.AddItem(52, 65535, 4); // SpD
+            }
+            checkIv = PokeParty.GetParam(v32, 73);
+            if (checkIv < 31){
+                ListMenu.AddItem(53, 65535, 5); // Spe
+            }
             ListMenu.AddItem(54, 65535, 6); // Quit
 			ListMenu.ShowDialog();
 
@@ -778,9 +796,9 @@ public class MainEvents {
 	static native void Action0021(int amount) : 0x21;
 	static native void Action0022(int amount) : 0x22;
 	static native void Action0023(int amount) : 0x23;
-	    	static native void Action0031(int amount) : 0x31;
+	static native void Action0031(int amount) : 0x31;
     	static native void Action0032(int amount) : 0x32;
-    	    	static native void Action0033(int amount) : 0x33;
+    	static native void Action0033(int amount) : 0x33;
 	static native void Action004b(int amount) : 0x4b;
     	static native void Action009f(int amount) : 0x9f;
 }

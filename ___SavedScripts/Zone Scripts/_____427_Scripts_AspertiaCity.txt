@@ -1442,6 +1442,16 @@ public class MainEvents {
 		Actor.WaitActionFinish();
 		Message.ActorEx(1024, 64, 2, 0, 0);
 		Message.CloseAll();
+
+        // Handles the Level Cap Updates 
+        EventWorks.Set(16466, 11);
+        if (EventWorks.Get(16465) == 1){
+            Sound.SEPlay(1351);
+            Message.System(132, 2);
+            Message.WaitAdvance();
+            Message.CloseAll();            
+        }  
+                  
 		ActionSequence_0e90(2);
 		Runtime.Sleep(6);
 		ActionSequence_0e90(255);

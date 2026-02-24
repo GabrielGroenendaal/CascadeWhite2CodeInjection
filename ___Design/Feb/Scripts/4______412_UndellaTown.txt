@@ -1032,10 +1032,10 @@ public class MainEvents {
             Battle.CallTrainerMultiBattle(234, 582, 506, 1);
             isVictory = Battle.IsTrainerVictory();
             if (v16 != 1){
-                  Battle.EndTrainerBattle();
-			PokeParty.RecoverAll();
-			Message.ActorEx(1024, 62, 12, 0, 0);
-			Message.CloseAll();
+                Battle.EndTrainerBattle();
+			    PokeParty.RecoverAll();
+			    Message.ActorEx(1024, 62, 12, 0, 0);
+			    Message.CloseAll();
 
                   ShowMusicNote(10);
                   Actor.WaitActionFinish();
@@ -1045,8 +1045,8 @@ public class MainEvents {
                   Actor.WaitActionFinish();
                   Message.ActorEx(1024, 65, 12, 0, 0);
                   Message.CloseAll();
-		} 
-            else {
+		    } 
+             else {
                   Battle.EndTrainerBattle();
                   Message.ActorEx(1024, 63, 12, 0, 0);
                   Message.CloseAll();
@@ -1114,10 +1114,11 @@ public class MainEvents {
             Actor.WaitActionFinish();
             Actor.Hide(11);
 
-		EventWorks.Set(16443, 3);
-		EventWorks.Set(16466, 63);
-		EventFlags.Set(549);
-		EventFlags.Set(548);
+            EventWorks.Set(16443, 3); // State Progression
+            EventWorks.Set(16466, 63); // Level Cap
+            EventWorks.Set(16444, 2); // Undella BTB
+            EventFlags.Set(549); // Flannery Despawn
+            EventFlags.Set(548); // Strange House Despawn
             if (EventWorks.Get(16465) == 1){
                   Sound.SEPlay(1351);
                   Message.System(77, 2);

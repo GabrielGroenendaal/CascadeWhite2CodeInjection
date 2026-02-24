@@ -519,12 +519,12 @@ void Sequence42()
 	End();
 }
 
-/* RELIC PASSAGE WEST - Red Shards (x20) */
+/* RELIC PASSAGE WEST - Red Shards (x10) */
 void Sequence43()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 72);
-	SetVarEqVal(0x800D, 20);
+	SetVarEqVal(0x800D, 10);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -1147,7 +1147,7 @@ void Sequence96()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 72);
-	SetVarEqVal(0x800D, 30);
+	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -1387,24 +1387,24 @@ void Sequence116()
 	End();
 }
 
-/* REVERSAL MOUNTAIN - RED SHARD X10 */
+/* REVERSAL MOUNTAIN - RED SHARD X5 */
 void Sequence117()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 72);
-	SetVarEqVal(0x800D, 10);
+	SetVarEqVal(0x800D, 5);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
 	End();
 }
 
-/* REVERSAL MOUNTAIN - RED SHARD X10 */
+/* REVERSAL MOUNTAIN - RED SHARD X5 */
 void Sequence118()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 72);
-	SetVarEqVal(0x800D, 10);
+	SetVarEqVal(0x800D, 5);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -1422,12 +1422,12 @@ void Sequence119()
 	End();
 }
 
-/* REVERSAL MOUNTAIN - RED SHARD X10 */
+/* REVERSAL MOUNTAIN - RED SHARD X5 */
 void Sequence120()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 72);
-	SetVarEqVal(0x800D, 10);
+	SetVarEqVal(0x800D, 5);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -4131,12 +4131,12 @@ void Sequence356()
 }
 
 
-/* Red Shard x 20 - Driftveil City */
+/* Red Shard x 10 - Driftveil City */
 void Sequence357()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 72);
-	SetVarEqVal(0x800D, 20);
+	SetVarEqVal(0x800D, 10);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();

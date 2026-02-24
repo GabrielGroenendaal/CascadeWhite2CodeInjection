@@ -1189,16 +1189,19 @@ extern "C"
                     return 0;
                 }
             }
-            return 4096;
+            return 6144;
         }
         // Electro Shot
         if (IsEqual(MoveID, MOVE193_ELECTRO_SHOT))
         {
             if (ServerEvent_GetWeather(a1) != 2 && AttackingMon->HeldItem != IT0271_POWER_HERB)
             {
-                return 0;
+                if (RandomInRange(0, 100) > 60)
+                {
+                    return 0;
+                }
             }
-            return 4096;
+            return 6144;
         }
         //  Hex, Beat Up, Infernal Parade, Barb Barrage
         if (IsEqual(MoveID, MOVE169_INFERNAL_PARADE) || IsEqual(MoveID, MOVE272_BARB_BARRAGE) || IsEqual(MoveID, MOVE251_BEAT_UP) || IsEqual(MoveID, MOVE506_HEX) || IsEqual(MoveID, MOVE244_BITTER_MALICE))
@@ -1861,41 +1864,6 @@ extern "C"
         return v12;
     }
 
-    // int THUMB_BRANCH_SAFESTACK_Handler_SimulationDamage(ServerFlow *a1, int a2, int a3, int a4, bool isSimulation, bool something)
-    // {
-    //     TypeEffectiveness typeEffectiveness; // r6
-    //     BattleMon *DefendingMon;             // [sp+14h] [bp-34h]
-    //     BattleMon *AttackingMon;             // [sp+18h] [bp-30h]
-    //     unsigned __int16 v12;                // [sp+1Ch] [bp-2Ch] BYREF
-    //     __int16 moveParam[20];               // [sp+20h] [bp-28h] BYREF
-    //     int v14;                             // [sp+48h] [bp+0h]
-    //     int v15;                             // [sp+4Ch] [bp+4h]
-
-    //     if (!a4 || !PML_MoveIsDamaging(a4))
-    //     {
-    //         return 0;
-    //     }
-    //     AttackingMon = PokeCon_GetBattleMon(a1->pokeCon, a2);
-    //     DefendingMon = PokeCon_GetBattleMon(a1->pokeCon, a3);
-    //     ++a1->simulationCounter;
-    //     if (BattleMon_IsIllusionEnabled(DefendingMon))
-    //     {
-    //         DefendingMon = MainModule_GetIllusionDisguise(a1->mainModule, (int)a1->pokeCon, (int)DefendingMon);
-    //     }
-    //     if (v14)
-    //     {
-    //         typeEffectiveness = (TypeEffectiveness) Handler_SimulationEffectivenessCore(a1, a2, a3, a4);
-    //     }
-    //     else
-    //     {
-    //         typeEffectiveness = EFFECTIVENESS_1;
-    //     }
-    //     ServerEvent_GetMoveParam(a1, a4, (int)AttackingMon, (MoveParam*)moveParam);
-    //     ServerEvent_CalcDamage(a1, AttackingMon, DefendingMon, (MoveParam*)moveParam, typeEffectiveness, 4096, 0, v15 == 0, &v12);
-    //     --a1->simulationCounter;
-    //     return v12;
-    // }
-
     #pragma endregion
 
 #pragma region SwitchInAIHelpers
@@ -1987,6 +1955,7 @@ extern "C"
         int isMoldBreaker = HasMoldBreaker(AttackingMon);
         value = a4;
 
+ 
         if (IsEqual(MoveID, MOVE474_VENOSHOCK))
         {
             if (BattleMon_CheckIfMoveCondition(DefendingMon, CONDITION_POISON))
@@ -2265,6 +2234,11 @@ extern "C"
             }
         }
 
+        if (IsEqual(MoveID, MOVE264_FOCUS_PUNCH))
+        {
+            return (value >> 1);
+        }
+
         return value;
     }
 
@@ -2296,6 +2270,52 @@ extern "C"
         }
     }
 
+    // This function alters the switch-in AI based on defensive matchups. 
+    // It does not check moves; instead it checks typings 
+    // If the attacker is weak to either of the defender's types, applies a negative modifier. If the defender is 4x weak, it applies a massive modifier. 
+    // If the attacker is resistant or immune to both of the target's types, applies a positive modifer. 
+    // Accounts for Tera
+    int checkForMatchup(BattleMon *attackingMon, BattleMon *defendingMon, unsigned int a3)
+    {
+        int defenderType1;
+        int defenderType2;
+        u8 defenderType1Effectiveness;
+        u8 defenderType2Effectiveness;
+        int attackerType;
+        defenderType1 = PokeTypePair_GetType1(BattleMon_GetPokeType(defendingMon));
+        defenderType2 = PokeTypePair_GetType2(BattleMon_GetPokeType(defendingMon));
+        
+        // Checks for Terastalization. 
+        if (BattleMon_CheckIfMoveCondition(attackingMon, CONDITION_TERA) || SEARCH_ARRAY(teraItems, attackingMon->HeldItem)){
+            attackerType = PML_MoveGetType(Move_GetID(attackingMon, 0));
+        }
+        else {
+            attackerType = BattleMon_GetPokeType(attackingMon);
+        }
+
+
+        defenderType1Effectiveness = (CheckIfImmuneAbility(defenderType1, 0, attackingMon)) ? 0 : GetTypeEffectivenessVsMon(defenderType1, attackerType);
+        defenderType2Effectiveness = (CheckIfImmuneAbility(defenderType2, 0, attackingMon)) ? 0 : GetTypeEffectivenessVsMon(defenderType2, attackerType);
+
+        if (defenderType1Effectiveness == 5 || defenderType2Effectiveness == 5){
+            // If the mon is 4x weak to either of the target's types, halves the seen BP.
+            return (a3 >> 1);
+        }
+        if (defenderType1Effectiveness == 4 || defenderType2Effectiveness == 4){
+            // If the mon is 2x weak to either of the target's types, removes a quarter of the seen BP
+            return (a3 >> 1) + (a3 >> 2);
+        }
+        if (defenderType1Effectiveness <= 1 && defenderType2Effectiveness <= 1){
+            // If the target heavily resists or is 4x immune to both of the target's types, boosts the BP by 50%
+            return a3  + (a3 >> 1);
+        }
+        if (defenderType1Effectiveness <= 2 && defenderType2Effectiveness <= 2){
+            // If the mon at least resists both of the target's types
+            return a3 + (a3 >> 2); 
+        }
+        return a3;
+    }
+
     bool CheckIfImmuneAbility(int Type, int MoveID, BattleMon *DefendingMon)
     {
         int ability = BattleMon_GetValue(DefendingMon, VALUE_EFFECTIVE_ABILITY);
@@ -2319,6 +2339,9 @@ extern "C"
         if (Type == TYPE_FIRE && ((ability == ABIL018_FLASH_FIRE) || ability == ABIL021_WELL_BAKED_BODY))
         {
             return true;
+        }
+        if (!MoveID){
+            return false;
         }
         if (ability == ABIL043_AMPLIFIER && getMoveFlag(MoveID, FLAG_SOUND))
         {
@@ -2595,7 +2618,9 @@ extern "C"
                                     v10 = checkForTechnician(MonData, ID, v10);
 
                                     v10 = checkForSTAB(MonData, Type, v10);
-
+#if SWITCH_AI_CHANGES
+                                    v10 = checkForMatchup(MonData, v24, v10);
+#endif 
                                     v10 = checkForAbilityAndItemBPChanges(MonData, v24, Type, TypeEffectivenessVsMon, v10);
 
                                     BasePower = HIWORD(v10);
@@ -2905,6 +2930,9 @@ extern "C"
                                     v10 = checkForBPChanges(MonData, v24, ID, v10, a1);
                                     v10 = checkForTechnician(MonData, ID, v10);
                                     v10 = checkForSTAB(MonData, Type, v10);
+#if SWITCH_AI_CHANGES
+                                    v10 = checkForMatchup(MonData, v24, v10);
+#endif 
                                     v10 = checkForAbilityAndItemBPChanges(MonData, v24, Type, TypeEffectivenessVsMon, v10);
                                     BasePower = HIWORD(v10);
                                 }
@@ -3927,6 +3955,8 @@ extern "C"
 
     extern int sub_219C424(MainModule *a1, int a2);
 
+
+    // Test stoppping the illusion removal. 
     void THUMB_BRANCH_MainModule_SetIllusionForParty(MainModule *a1, BattleParty *a2, int a3)
     {
         int i;                          // r6
@@ -3958,6 +3988,8 @@ extern "C"
             {
                 if (NumBattlePositionsOfClient >= i)
                 {
+
+                    // I think this part isn't working properly. 
                     if (BattleMon_GetViewSrcData(v8) != a1->TempPartyPkm)
                     {
                         BattleMon_RemoveIllusion(v8);

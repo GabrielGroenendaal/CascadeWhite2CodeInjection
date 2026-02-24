@@ -13,6 +13,99 @@
 11: Black Sludge! Few Pokémon\nlike to hold it, though.\c\nFYI, I'm the first fan of Roxie!
 
 
+12:
+The tunnel is oddly quiet...
+
+
+13:
+Heh heh....\nGot you!
+
+14:
+...we've been watching you, [VAR TRNAME(0)].\nObserving your progress.
+
+15:
+We see you're keen to meddle in\nLord Ghetsis's plans.
+
+16:
+We can not allow this....
+
+17:
+Now....\nstrike!!
+
+(First Battle)
+18:
+...we are just getting started.\c\n
+Retreat brothers to position B! 
+
+
+[ SECOND AMBUSH ]
+My evasive tactics will leave you\nfloundering in the dark!
+
+
+
+Regroup to position C for our next attack!
+
+
+
+
+[ THIRD AMBUSH ]
+
+Lets see if you can handle our\nback-to-back assault!
+
+Now, to finish you off! 
+
+The child withstood our combined assault? 
+
+No matter, we still have plans upon\nplans to foil them!\r\nTo position D!
+
+
+
+[ FOURTH AMBUSH ]
+I'll blast your Pokemon to smithereens!
+
+
+
+It didn't work. Fall back!
+
+
+
+
+[ FIFTH AMBUSH ]
+I'll entrap your Pokemon leaving\nthem nowhere to run!
+
+
+
+
+The child escaped my grasp...\n...but it's not over yet.
+
+
+
+
+[ SIXTH AMBUSH ]
+All three of us together!\c\nAttack!
+
+
+
+HIYAAAA!
+
+
+
+Now brother, the final blow!
+
+
+
+Impossible!\nOur trio attack failed? 
+
+
+And I'm out of Pokemon... 
+
+Tch...\nYou may have won this time...\r\nBut Lord Ghetsis always wins in the end.\c\nTurn back now, while you can.
+
+
+
+
+
+
 
 [ ENTITIES ]
     Remove the one that already has a spawn flag 

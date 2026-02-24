@@ -175,6 +175,16 @@ public class MainEvents {
 		Runtime.Sleep(20);
 		Sound.SEPlay(1369);
 		Actor.Hide(251);
+
+        // Handles the Level Cap Updates 
+        EventWorks.Set(16466, 23);
+        if (EventWorks.Get(16465) == 1){
+            Sound.SEPlay(1351);
+            Message.System(10, 2);
+            Message.WaitAdvance();
+            Message.CloseAll();            
+        }  
+        
 		Field.PlayMapBGM();
 		EventWorks.Set(16759, 1);
 		Runtime.FinishSubEvents();
@@ -197,7 +207,7 @@ public class MainEvents {
 		Action0012(5);
 	}
 
-		static meta void TurnWest(int npcId) : VActionSequence {
+	static meta void TurnWest(int npcId) : VActionSequence {
 		Action0022(1);
 	}
 

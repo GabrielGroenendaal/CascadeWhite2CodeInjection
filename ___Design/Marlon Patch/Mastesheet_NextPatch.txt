@@ -40,6 +40,8 @@ A brief overview of the changes is:
 
 - When determining BP for Switch AI, the AI is able to account for STAB, move effects that alter BP, moves and abilities that alter type effectiveness (Freeze Dry, Corrosion), abiities that provide resistances and immunities, and abilities that can alter BP such as Technician and Skill Link. 
 
+- When determine BP for Switch AI, the AI will apply up to +-50% modifier depending on the defensive matchup into the target. 
+
 - When simulating damage for moves, the AI can now see the correct damage for moves with variable BP (Hex, Electro Ball, Flail, etc.)
 
 - The AI has a very low chance to switch out mid-turn if it is dealing negligible damage to all Pokémon on the field. This chance increases each turn the Pokémon is in battle. 
@@ -66,6 +68,8 @@ The biggest addition is that of the PokéHelper, a new piece of technology avail
 
 - Apply Status to your Party 
 
+- Pre Damage your Pokémon 
+
 - Edge Party Exp
 
 - Remove Party Held Items
@@ -86,18 +90,17 @@ You are now able to customize your gameplay through the Settings Menu in the Pok
 
 - Critical Hit Damage (Toggle): Critical Hits deal 2x / 1.5x damage (default: 2x)
 
-- Animated Backgrounds (Toggle): The game does/doesn't use the new animated backgrounds in battle (default: doesn't) Note that these backgrounds are not fully tested and can cause crashes or visual glitches. 
+- Animated Backgrounds (Toggle): The game does/doesn't use the new animated backgrounds in battle (default: on) Note that these backgrounds are not fully tested and can cause crashes or visual glitches. 
 
 - IV Randomization: when generating IVs for Wild Pokémon, they have random/improved/boosted/perfect IVs. (default: random) "improved" rolls IVs twice and uses the higher total. "boosted" sets three random ivs to 31. "perfect" sets all ivs to 31.
-
-- EVs: Defeating Pokémon rewards no/1x/2x/4x/8x EVs. (default: no EVs)
 
 - Advanced Switch AI (Toggle): The AI does/doesn't use the advanced mid-turn switch AI (default: does)
 
 - Trainer Placements (Toggle): The game uses the modified/vanilla placements and movement for trainers (default: modified) This setting reverts Trainers to vanilla-like positions and movement, making the majority of them optional again. Good for casual play!
 
-- Battle Scan Detail (Toggle): The Battle Scan feature reveals partial/complete information about enemy Pokémon. (default: partial) "partial" info displays the Pokémon's ability, base stats, typing, and any moves that have been revealed in battle. It hides items, raw stats, and any team members who have not yet entered battle. "complete" info displays all the above and also raw stat values, held item, all moves, and all Pokémon on the team. 
+- Battle Scan Detail (Toggle): The Battle Scan feature reveals partial/complete information about enemy Pokémon. (default: complete) "partial" info displays the Pokémon's ability, base stats, typing, and any moves that have been revealed in battle. It hides items, raw stats, and any team members who have not yet entered battle. "complete" info displays all the above and also raw stat values, held item, all moves, and all Pokémon on the team. 
 
+- Level Caps (Toggle): You can turn on or off enforced level caps (default: off). These will prevent you from gaining experience or using rare candies on Pokémon over the level cap. These use the mini boss level caps as well.
 
 
 #### Battle Scan
@@ -1040,7 +1043,7 @@ moon stone, Moon Stone
 sun stone, Sun Stone
 dawn stone, Dawn Stone
 shiny stone, Shiny Stone
-dusk stone,, Dusk Stone
+dusk stone, Dusk Stone
 end 
 
 !enc 15
@@ -1203,7 +1206,7 @@ end
 expert belt, Expert Belt (found in the market, vanilla location)
 tm grass, TM85 Grass Knot (south of Musician Preston)
 tm fairy, TM90 Draining Kiss (Past Backers Ava and Aya)
-red shard, x20 Red Shard (past Dancer Brian)
+red shard, x10 Red Shard (past Dancer Brian)
 blue shard, x6 Blue Shard (past Dancer Brian)
 white herb, x2 White Herb (in the Market)
 kasib berry, x2 Trickster Herb (in the market)
@@ -1341,7 +1344,7 @@ end
 !items Items 
 normal gem, x2 Normal Gem (past the Backpacker Tag)
 tm steel, TM91 Flash Cannon (past Hiker Keith)
-red shard, x20 Red Shard (past Hiker Tobias)
+red shard, x10 Red Shard (past Hiker Tobias)
 sitrus berry, x10 Sitrus Berry (past Backpacker Annie)
 end
 
@@ -1354,7 +1357,7 @@ end
 
 !tr 562/48 Rewards TM91 Flash Cannon 
 
-!tr 561/48 Rewards x20 Red Shards 
+!tr 561/48 Rewards x10 Red Shards 
 
 !tr 565/48 Rewards 10x Sitrus Berries 
 
@@ -1389,15 +1392,15 @@ end
 !trm 372/46 First Fight of Back to Back 
 !trm 374/46 Second Fight of Back to Back 
 
-### Cheren Tag Battle
+### Cheren Tag Battle (Pre-Healed)
 !trm 374/47 Left Side 
 !trm 375/47 Right Side 
 
 #### Cheren's Team 
 !trm 371/48 
 
-!notif WARNING, Upon defeating the Final Trainers on the Frigate, one of the Pokémon in your party will be stolen at random! You can recover them in the final split of the game, where they will have perfect IVs. Plan accordingly. , #f26253
-### Rival Tag Battle 
+!notif WARNING, Upon defeating the Final Trainers on the Frigate, the lowest health NON-FAINTED Pokémon in your party will be stolen! You can recover them in the final split of the game, where they will have perfect IVs and you can choose their nature. Plan accordingly. , #f26253
+### Rival Tag Battle (Pre-Healed)
 !trm 376/47 Left Side 
 !trm 377/47 Right Side 
 
@@ -1740,7 +1743,7 @@ end
 !items Items 
 tm dragon, TM02 Dragon Claw 
 heart scale, x1 Heart Scale 
-red shard, x20 Red Shard 
+red shard, x15 Red Shard 
 sitrus berry, x10 Sitrus Berries 
 tm fire, TM35 Flamethrower (Reward for defeating Flannery, can be fought after Benga leaves you)
 fire gem, x3 Fire Gem (Reward for defeating Flannery, can be fought after Benga leaves you)
@@ -2063,3 +2066,5 @@ end
 # End of Current Content
 
 ### -
+
+
