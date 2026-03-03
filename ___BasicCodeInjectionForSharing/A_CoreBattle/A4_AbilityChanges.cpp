@@ -318,11 +318,14 @@ extern "C"
         BattleMon *mon;
         unsigned __int16 Value;        // r0
         HandlerParam_AddCondition *v9; // r5
+
+        // k::Printf("Effect Spore Handler\n");
         if ((int)a3 == BattleEventVar_GetValue(VAR_DEFENDING_MON) && !BattleEventVar_GetValue(VAR_SUBSTITUTE_FLAG))
         {
             mon = Handler_GetBattleMon(a2, BattleEventVar_GetValue(VAR_ATTACKING_MON));
             if (!BattleMon_HasType(mon, TYPE_GRASS) && BattleMon_GetHeldItem(mon) != IT0293_SAFETY_GOGGLES && BattleMon_GetValue(mon, VALUE_EFFECTIVE_ABILITY) != ABIL142_OVERCOAT)
             {
+                // k::Printf("Passed initial checks\n");
                 v5 = BattleRandom(30u);
                 if (v5 <= 20)
                 {
@@ -337,15 +340,15 @@ extern "C"
                     v6 = CONDITION_POISON;
                 }
                 v7.raw = MakeBasicStatus(v6).raw;
-
-                if ((int)a2 == BattleEventVar_GetValue(VAR_DEFENDING_MON) && !BattleEventVar_GetValue(VAR_SUBSTITUTE_FLAG))
+                // k::Printf("Roll for status: Rolled %d and got status %d\n", v5, v6);
+                if ((int)a3 == BattleEventVar_GetValue(VAR_DEFENDING_MON) && !BattleEventVar_GetValue(VAR_SUBSTITUTE_FLAG))
                 {
                     Value = BattleEventVar_GetValue(VAR_MOVE_ID);
                     if (!AbilityEvent_RollEffectChance((int)a1, 50u))
                     {
                         if (overrideContact(mon, (MoveID)Value))
                             return;
-
+                        // k::Printf("Applying status\n");
                         v9 = (HandlerParam_AddCondition *)BattleHandler_PushWork(a2, EFFECT_ADDCONDITION, (int)a3);
                         v9->header.flags |= 0x800000u;
                         v9->sickID = v6;
@@ -1141,7 +1144,7 @@ extern "C"
         MoveParam *a2,
         BattleEventType a3,
         BattleMon *a4,
-        BattleMon* a5,
+        BattleMon *a5,
         int a6,
         _WORD *a7,
         int *a8)
@@ -1153,7 +1156,7 @@ extern "C"
         int IfEnabled; // [sp+4h] [bp-1Ch]
 
         ID = BattleMon_GetID(a5);
-        IfEnabled = sub_21B0874((EffectivenessRecorder*) a6, ID);
+        IfEnabled = sub_21B0874((EffectivenessRecorder *)a6, ID);
         BattleHandler_StrClear(a7);
         BattleEventVar_Push();
         v12 = BattleMon_GetID(a4);
@@ -1905,54 +1908,68 @@ extern "C"
         {
             PokeParam = Handler_GetBattleMon(a2, a3);
 
-            if (BattleMon_HasType(PokeParam, TYPE_FIRE))
+            if (PokeParam->Species == PK377_REGIROCK)
             {
-                if (PokeParam->Sex == 0)
-                {
-                    v6 = (HandlerParam_AddCondition *)BattleHandler_PushWork(a2, EFFECT_ADDCONDITION, (int)a3);
-                    v6->sickID = CONDITION_POISON;
-                    v6->sickCont = MakeBasicStatus(CONDITION_POISON);
-                    v6->fAlmost = 0;
-                    v6->pokeID = (unsigned __int8)a3;
-                    BattleHandler_StrSetup(&v6->exStr, 1u, 202);
-                    BattleHandler_AddArg(&v6->exStr, (int)a3);
-                    BattleHandler_PopWork(a2, v6);
-                }
-                else
-                {
-                    v6 = (HandlerParam_AddCondition *)BattleHandler_PushWork(a2, EFFECT_ADDCONDITION, (int)a3);
-                    v6->sickID = CONDITION_PARALYSIS;
-                    v6->sickCont = MakeBasicStatus(CONDITION_PARALYSIS);
-                    v6->fAlmost = 0;
-                    v6->pokeID = (unsigned __int8)a3;
-                    BattleHandler_StrSetup(&v6->exStr, 1u, 242);
-                    BattleHandler_AddArg(&v6->exStr, (int)a3);
-                    BattleHandler_PopWork(a2, v6);
-                }
+                v6 = (HandlerParam_AddCondition *)BattleHandler_PushWork(a2, EFFECT_ADDCONDITION, (int)a3);
+                v6->sickID = CONDITION_PARALYSIS;
+                v6->sickCont = MakeBasicStatus(CONDITION_PARALYSIS);
+                v6->fAlmost = 0;
+                v6->pokeID = (unsigned __int8)a3;
+                BattleHandler_StrSetup(&v6->exStr, 1u, 242);
+                BattleHandler_AddArg(&v6->exStr, (int)a3);
+                BattleHandler_PopWork(a2, v6);
             }
             else
             {
-                if (PokeParam->Sex == 0)
+                if (BattleMon_HasType(PokeParam, TYPE_FIRE))
                 {
-                    v6 = (HandlerParam_AddCondition *)BattleHandler_PushWork(a2, EFFECT_ADDCONDITION, (int)a3);
-                    v6->sickID = CONDITION_BURN;
-                    v6->sickCont = MakeBasicStatus(CONDITION_BURN);
-                    v6->fAlmost = 0;
-                    v6->pokeID = (unsigned __int8)a3;
-                    BattleHandler_StrSetup(&v6->exStr, 1u, 201);
-                    BattleHandler_AddArg(&v6->exStr, (int)a3);
-                    BattleHandler_PopWork(a2, v6);
+                    if (PokeParam->Sex == 0)
+                    {
+                        v6 = (HandlerParam_AddCondition *)BattleHandler_PushWork(a2, EFFECT_ADDCONDITION, (int)a3);
+                        v6->sickID = CONDITION_POISON;
+                        v6->sickCont = MakeBasicStatus(CONDITION_POISON);
+                        v6->fAlmost = 0;
+                        v6->pokeID = (unsigned __int8)a3;
+                        BattleHandler_StrSetup(&v6->exStr, 1u, 202);
+                        BattleHandler_AddArg(&v6->exStr, (int)a3);
+                        BattleHandler_PopWork(a2, v6);
+                    }
+                    else
+                    {
+                        v6 = (HandlerParam_AddCondition *)BattleHandler_PushWork(a2, EFFECT_ADDCONDITION, (int)a3);
+                        v6->sickID = CONDITION_PARALYSIS;
+                        v6->sickCont = MakeBasicStatus(CONDITION_PARALYSIS);
+                        v6->fAlmost = 0;
+                        v6->pokeID = (unsigned __int8)a3;
+                        BattleHandler_StrSetup(&v6->exStr, 1u, 242);
+                        BattleHandler_AddArg(&v6->exStr, (int)a3);
+                        BattleHandler_PopWork(a2, v6);
+                    }
                 }
                 else
                 {
-                    v6 = (HandlerParam_AddCondition *)BattleHandler_PushWork(a2, EFFECT_ADDCONDITION, (int)a3);
-                    v6->sickID = CONDITION_PARALYSIS;
-                    v6->sickCont = MakeBasicStatus(CONDITION_PARALYSIS);
-                    v6->fAlmost = 0;
-                    v6->pokeID = (unsigned __int8)a3;
-                    BattleHandler_StrSetup(&v6->exStr, 1u, 242);
-                    BattleHandler_AddArg(&v6->exStr, (int)a3);
-                    BattleHandler_PopWork(a2, v6);
+                    if (PokeParam->Sex == 0)
+                    {
+                        v6 = (HandlerParam_AddCondition *)BattleHandler_PushWork(a2, EFFECT_ADDCONDITION, (int)a3);
+                        v6->sickID = CONDITION_BURN;
+                        v6->sickCont = MakeBasicStatus(CONDITION_BURN);
+                        v6->fAlmost = 0;
+                        v6->pokeID = (unsigned __int8)a3;
+                        BattleHandler_StrSetup(&v6->exStr, 1u, 201);
+                        BattleHandler_AddArg(&v6->exStr, (int)a3);
+                        BattleHandler_PopWork(a2, v6);
+                    }
+                    else
+                    {
+                        v6 = (HandlerParam_AddCondition *)BattleHandler_PushWork(a2, EFFECT_ADDCONDITION, (int)a3);
+                        v6->sickID = CONDITION_PARALYSIS;
+                        v6->sickCont = MakeBasicStatus(CONDITION_PARALYSIS);
+                        v6->fAlmost = 0;
+                        v6->pokeID = (unsigned __int8)a3;
+                        BattleHandler_StrSetup(&v6->exStr, 1u, 242);
+                        BattleHandler_AddArg(&v6->exStr, (int)a3);
+                        BattleHandler_PopWork(a2, v6);
+                    }
                 }
             }
         }

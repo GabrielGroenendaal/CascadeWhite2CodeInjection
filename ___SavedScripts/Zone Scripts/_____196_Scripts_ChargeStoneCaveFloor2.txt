@@ -137,16 +137,22 @@ public class MainEvents {
 		Actor.UnpauseAll();
 	}
 
+
+	// The one past the Ranger
 	public static void main_6() { // @ 0x1e
 		Actor.PauseAll();
-		Field.ChangeMapQuicksand(197, 24, 6);
+		Field.ChangeMapQuicksand(197, 20, 34);
+		// Field.ChangeMapQuicksand(197, 24, 6);
 		Runtime.FinishSubEvents();
 		Actor.UnpauseAll();
 	}
 
+
+	// The one past the doctor
 	public static void main_7() { // @ 0x1e
 		Actor.PauseAll();
-		Field.ChangeMapQuicksand(197, 20, 34);
+		Field.ChangeMapQuicksand(197, 24, 6);
+		// Field.ChangeMapQuicksand(197, 20, 34);
 		Runtime.FinishSubEvents();
 		Actor.UnpauseAll();
 	}

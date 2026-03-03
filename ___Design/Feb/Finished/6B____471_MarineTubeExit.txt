@@ -1,0 +1,111 @@
+import messages.script.Msg0197.MSGID;
+
+import event.actors.Actor;
+import event.app.AppCall;
+import event.dialogs.Message;
+import pokescript.vm.StackCtrl;
+import pokescript.vm.VM;
+import system.EventFlags;
+import system.EventWorks;
+import system.Fade;
+import system.Field;
+import system.Input;
+import system.Runtime;
+import system.Sound;
+
+import system.text.WordSet;
+
+public class MainEvents {
+	public static void main_1() { // @ 0x12
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 0, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_2() { // @ 0x2e
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 1, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_3() { // @ 0x4a
+		int v0;
+		int v1;
+		int v2;
+		int v3;
+		int v4;
+		int v5;
+		int v6;
+
+		Actor.PauseAll();
+		v0 = 369;
+		v1 = 1;
+		v2 = 343;
+		v3 = 2;
+		v4 = 3;
+		v5 = 3;
+		v6 = Runtime.GetTextFile();
+		Global2800(v0, v1, v2, v3, v4, v5, v6);
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_4() { // @ 0xb6
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Message.Info(4, 2);
+		Message.CloseAll();
+		Fade.OutBlackQ();
+		Fade.Wait();
+		Field.Close();
+		AppCall.CallPokedexDiploma(3, 1);
+		Field.Open();
+		Fade.InBlackQ();
+		Fade.Wait();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_5(){
+		Actor.PauseAll();
+		Sound.SEPlay(1852);
+		Sound.SEWait();
+		Message.System(7, 2);
+		Message.WaitAdvance();
+		Message.CloseAll();
+		TurnSouth(255);
+		Actor.WaitActionFinish();
+		WordSet.LoadPlayerName(0);
+		Message.System(8, 2);
+		Message.CloseAll();
+		if (EventWorks.Get(16471) > 0) {
+			Message.ActorEx(1024, 6, 255, 0, 0);
+		} else {
+			Message.ActorEx(1024, 5, 255, 0, 0);
+		}
+		Input.LastKeyWait();
+		Message.CloseAll();
+		Message.System(9, 2);
+		Message.WaitAdvance();
+		Message.CloseAll();
+		EventWorks.Set(16433, 9);
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+	static meta void TurnSouth(int npcId) : VActionSequence {
+		Action0021(1);
+	}
+	static meta void Global2800(int a1, int a2, int a3, int a4, int a5, int a6, int a7) : VGlobalCall[2800];
+	static native void Action0021(int amount) : 0x21;
+
+}

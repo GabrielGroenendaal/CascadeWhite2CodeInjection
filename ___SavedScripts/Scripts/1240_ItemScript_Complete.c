@@ -3986,12 +3986,12 @@ void Sequence344()
 	End();
 }
 
-/* Dusk Stones x 10 - Relic Passage*/
+/* Blue SHard x5 (Abyssal Ruins)*/
 void Sequence345()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 108);
-	SetVarEqVal(0x800D, 10);
+	SetVarEqVal(0x800C, 73);
+	SetVarEqVal(0x800D, 5);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -4046,12 +4046,12 @@ void Sequence349()
 	End();
 }
 
-/* Payapa Berry x2 - Lostlorn Forest */
+/* Green Shard x5 - Abyssal Ruins */
 void Sequence350()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 193);
-	SetVarEqVal(0x800D, 2);
+	SetVarEqVal(0x800C, 75);
+	SetVarEqVal(0x800D, 5);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -4106,24 +4106,24 @@ void Sequence354()
 	End();
 }
 
-/* Charti Berry x2 - Lostlorn Forest */
+/* Green Shard x5 - Abyssal Ruins */
 void Sequence355()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 195);
-	SetVarEqVal(0x800D, 2);
+	SetVarEqVal(0x800C, 75);
+	SetVarEqVal(0x800D, 5);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
 	End();
 }
 
-/* RELIC CASTLE - TM37 Hex */
+/* Green Shard x5 - Abyssal Ruins */
 void Sequence356()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 364);
-	SetVarEqVal(0x800D, 1);
+	SetVarEqVal(0x800C, 75);
+	SetVarEqVal(0x800D, 5);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -4191,12 +4191,12 @@ void Sequence361()
 	End();
 }
 
-/* Electric Gem x2 - Clay Tunnel */
+/* Solar Blade - Abyssal Ruins */
 void Sequence362()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 550);
-	SetVarEqVal(0x800D, 2);
+	SetVarEqVal(0x800C, 419);
+	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();

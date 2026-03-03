@@ -96,6 +96,20 @@ extern "C"
         return *lvl_cap_ptr;
     }
 
+    u32 GetBackgroundsSetting_ForDebugging()
+    {
+        EventWorkSave *eventWork = GameData_GetEventWork(GAME_DATA);
+        u16 *lvl_cap_ptr = EventWork_GetWkPtr(eventWork, 16435);
+        return *lvl_cap_ptr;
+    }
+
+    u32 GetBackgroundSeason()
+    {
+        EventWorkSave *eventWork = GameData_GetEventWork(GAME_DATA);
+        u16 *lvl_cap_ptr = EventWork_GetWkPtr(eventWork, 16436);
+        return *lvl_cap_ptr;
+    }
+
     struct WildEncSlot
     {
         u16 IdAndForme;
@@ -358,9 +372,9 @@ extern "C"
         61, // 93 Nimbasa City (LOOK AT THIS A BATTLEFIELD)
         61, // 94 Nimbasa Interior
         61, // 95 Nimbasa Interior
-        9, // 96 Driftveil City  // CHANGE: Should  BE 73
-        9, // 97 Driftveil Gym  // CHANGE: Should  be 81
-        9, // 98 Driftveil Gym Lobby  // CHANGE: Should  be 81
+        9,  // 96 Driftveil City  // CHANGE: Should  BE 73
+        9,  // 97 Driftveil Gym  // CHANGE: Should  be 81
+        9,  // 98 Driftveil Gym Lobby  // CHANGE: Should  be 81
         27, // 99 Driftveil Pokemon Center
         76, // 100 Driftveil Interior
         76, // 101 Driftveil Interior
@@ -647,8 +661,8 @@ extern "C"
         9,  // 382 Route 15 Interior
         64, // 383 Route 16
         9,  // 384 Bridge Gate
-        0, // 385 Lostlorn Forest CHANGE: Should  be 66
-        0, // 386 Lostlorn Forest CHANGE: Should  be 66
+        0,  // 385 Lostlorn Forest CHANGE: Should  be 66
+        0,  // 386 Lostlorn Forest CHANGE: Should  be 66
         0,  // 387 Route 18
         9,  // 388 Route 18 Interior
         2,  // 389 Nuvema Town
@@ -750,10 +764,10 @@ extern "C"
         9,  // 485 White Treehollow
         9,  // 486 Black Tower
         9,  // 487 White Treehollow
-        9, // 488 Castelia Gym Leader CHANGE: Should be 56
+        9,  // 488 Castelia Gym Leader CHANGE: Should be 56
         30, // 489 Aspertia Gym
-        9, // 490 Join Avenue   // CHANGE: Should  be 60 but it's being buggy
-        9, // 491 Join Avenue Interior // CHANGE: Should  be 60 but it's being buggy
+        9,  // 490 Join Avenue   // CHANGE: Should  be 60 but it's being buggy
+        9,  // 491 Join Avenue Interior // CHANGE: Should  be 60 but it's being buggy
         9,  // 492 White Treehollow
         9,  // 493 Black Tower
         54, // 494 Castelia City Interior
@@ -931,6 +945,11 @@ extern "C"
     extern DayPart GetRealTimeDayPeriod(Season season);
 #pragma endregion
 
+    Season THUMB_BRANCH_GameData_GetSeason(void *gameData)
+    {
+        return (Season)GetBackgroundSeason();
+        return *(Season *)((u8 *)gameData + 0x1C8);
+    }
     /*
 
         --------------------------------------------------------------------------------------------------
@@ -951,28 +970,34 @@ extern "C"
     */
     void modifyFieldStatus(BattleFieldStatus *fieldStatus, int foe1TrID, BattleStyle style)
     {
+
+#if DEBUGGING_BACKGROUNDS
+
+        fieldStatus->BattleBGID = GetBackgroundsSetting_ForDebugging();
+        return;
+#endif
         if (GetBackgroundsSetting())
         {
             return;
         }
         int random;
-// #if DEBUGGING_BACKGROUNDS
-//         k::Printf("\nModifying Field Status for Trainer ID: %d", foe1TrID);
-// #endif
+        // #if DEBUGGING_BACKGROUNDS
+        //         k::Printf("\nModifying Field Status for Trainer ID: %d", foe1TrID);
+        // #endif
         int zoneId = fieldStatus->ZoneID;
         DayPart dayperiod = GetRealTimeDayPeriod((Season)fieldStatus->Season);
-// #if DEBUGGING_BACKGROUNDS
-//         k::Printf("\nMade it past the GetRealTimeDayPeriod function");
-// #endif
+        // #if DEBUGGING_BACKGROUNDS
+        //         k::Printf("\nMade it past the GetRealTimeDayPeriod function");
+        // #endif
         // Aspertia Gym Trainer 1
         if (foe1TrID == 171)
         {
             fieldStatus->BattleBGID = 30;
             return;
         }
-// #if DEBUGGING_BACKGROUNDS
-//         k::Printf("\nMade it past the Aspertia Gym Trainer 1 check");
-// #endif
+        // #if DEBUGGING_BACKGROUNDS
+        //         k::Printf("\nMade it past the Aspertia Gym Trainer 1 check");
+        // #endif
         // Aspertia Gym Trainer 2
         if (foe1TrID == 172)
         {
@@ -980,9 +1005,9 @@ extern "C"
             return;
         }
 
-// #if DEBUGGING_BACKGROUNDS
-//         k::Printf("\nMade it past the Aspertia Gym Trainer 2 check");
-// #endif
+        // #if DEBUGGING_BACKGROUNDS
+        //         k::Printf("\nMade it past the Aspertia Gym Trainer 2 check");
+        // #endif
         // Cheren
         if (foe1TrID == 156)
         {
@@ -990,9 +1015,9 @@ extern "C"
             return;
         }
 
-// #if DEBUGGING_BACKGROUNDS
-//         k::Printf("\nMade it past the Cheren check");
-// #endif
+        // #if DEBUGGING_BACKGROUNDS
+        //         k::Printf("\nMade it past the Cheren check");
+        // #endif
         // Roxie
         if (foe1TrID == 157)
         {
@@ -1002,9 +1027,9 @@ extern "C"
             fieldStatus->ZoneID = 457;
             return;
         }
-// #if DEBUGGING_BACKGROUNDS
-//         k::Printf("\nMade it past the Roxie check");
-// #endif
+        // #if DEBUGGING_BACKGROUNDS
+        //         k::Printf("\nMade it past the Roxie check");
+        // #endif
         // // Colress PWT
         // if (foe1TrID == 739)
         // {
@@ -1018,14 +1043,15 @@ extern "C"
         // Misty
         if (foe1TrID == 765)
         {
-// #if DEBUGGING_BACKGROUNDS
-//             k::Printf("\nMisty Battle Background Triggered");
-// #endif
+            // #if DEBUGGING_BACKGROUNDS
+            //             k::Printf("\nMisty Battle Background Triggered");
+            // #endif
             if (dayperiod == MORNING)
             {
                 fieldStatus->BattleBGID = 35;
             }
-            if (dayperiod == DAY){
+            if (dayperiod == DAY)
+            {
                 fieldStatus->BattleBGID = 35;
             }
             if (dayperiod == SUNSET)
@@ -1036,25 +1062,27 @@ extern "C"
             {
                 fieldStatus->BattleBGID = 37;
             }
-            if (dayperiod == NIGHT){
+            if (dayperiod == NIGHT)
+            {
                 fieldStatus->BattleBGID = 37;
             }
             return;
         }
-// #if DEBUGGING_BACKGROUNDS
-//         k::Printf("\nMade it past the Misty check");
-//         #endif
+        // #if DEBUGGING_BACKGROUNDS
+        //         k::Printf("\nMade it past the Misty check");
+        //         #endif
         // Surge
         if (foe1TrID == 766)
         {
-// #if DEBUGGING_BACKGROUNDS
-//             k::Printf("\nSurge Battle Background Triggered");
-// #endif
+            // #if DEBUGGING_BACKGROUNDS
+            //             k::Printf("\nSurge Battle Background Triggered");
+            // #endif
             if (dayperiod == MORNING)
             {
                 fieldStatus->BattleBGID = 51;
             }
-            if (dayperiod == DAY){
+            if (dayperiod == DAY)
+            {
                 fieldStatus->BattleBGID = 51;
             }
             if (dayperiod == SUNSET)
@@ -1065,7 +1093,8 @@ extern "C"
             {
                 fieldStatus->BattleBGID = 53;
             }
-            if (dayperiod == NIGHT){
+            if (dayperiod == NIGHT)
+            {
                 fieldStatus->BattleBGID = 53;
             }
             return;
@@ -1076,92 +1105,93 @@ extern "C"
         // Benga
         if (foe1TrID == 773)
         {
-// #if DEBUGGING_BACKGROUNDS
-//             k::Printf("\nBenga Battle Background Triggered");
-// #endif
+            // #if DEBUGGING_BACKGROUNDS
+            //             k::Printf("\nBenga Battle Background Triggered");
+            // #endif
             fieldStatus->BattleBGID = 49;
             return;
         }
-// #if DEBUGGING_BACKGROUNDS
-//         k::Printf("\nMade it past the Benga check");
-// #endif
+        // #if DEBUGGING_BACKGROUNDS
+        //         k::Printf("\nMade it past the Benga check");
+        // #endif
         // Fisherman Andrew and Hubert
         if (foe1TrID == 210)
         {
             random = TrainerData_GetParam(foe1TrID, TR_CLASS);
-// #if DEBUGGING_BACKGROUNDS
-//             k::Printf("\nFisherman Battle Background Triggered");
-// #endif
+            // #if DEBUGGING_BACKGROUNDS
+            //             k::Printf("\nFisherman Battle Background Triggered");
+            // #endif
             fieldStatus->BattlePedestalID = 6;
             return;
         }
 
-        if (foe1TrID == 211){
+        if (foe1TrID == 211)
+        {
             fieldStatus->BattlePedestalID = 6;
             return;
         }
-// #if DEBUGGING_BACKGROUNDS
-//         k::Printf("\nMade it past the Fisherman check");
-// #endif
+        // #if DEBUGGING_BACKGROUNDS
+        //         k::Printf("\nMade it past the Fisherman check");
+        // #endif
         // Elesa
         if (foe1TrID == 153)
         {
-// #if DEBUGGING_BACKGROUNDS
-//             k::Printf("\nElesa Battle Background Triggered");
-// #endif
+            // #if DEBUGGING_BACKGROUNDS
+            //             k::Printf("\nElesa Battle Background Triggered");
+            // #endif
             fieldStatus->BattleBGID = 70;
             return;
         }
-// #if DEBUGGING_BACKGROUNDS
-//         k::Printf("\nMade it past the Elesa check");
-// #endif
+        // #if DEBUGGING_BACKGROUNDS
+        //         k::Printf("\nMade it past the Elesa check");
+        // #endif
         // Erika
         if (foe1TrID == 767)
         {
-// #if DEBUGGING_BACKGROUNDS
-//             k::Printf("\nErika Battle Background Triggered");
-// #endif
+            // #if DEBUGGING_BACKGROUNDS
+            //             k::Printf("\nErika Battle Background Triggered");
+            // #endif
             fieldStatus->BattleBGID = 67;
             return;
         }
-// #if DEBUGGING_BACKGROUNDS
-//         k::Printf("\nMade it past the Erika check");
-// #endif
+        // #if DEBUGGING_BACKGROUNDS
+        //         k::Printf("\nMade it past the Erika check");
+        // #endif
         // Janine
         if (foe1TrID == 768 && zoneId == 96)
         {
-// #if DEBUGGING_BACKGROUNDS
-//             k::Printf("\nJanine Battle Background Triggered");
-// #endif
+            // #if DEBUGGING_BACKGROUNDS
+            //             k::Printf("\nJanine Battle Background Triggered");
+            // #endif
             fieldStatus->BattleBGID = 75;
             return;
         }
-// #if    DEBUGGING_BACKGROUNDS
-//         k::Printf("\nMade it past the Janine check");
-// #endif
+        // #if    DEBUGGING_BACKGROUNDS
+        //         k::Printf("\nMade it past the Janine check");
+        // #endif
         // Rood
         if (foe1TrID == 346 && zoneId == 96)
         {
-// #if DEBUGGING_BACKGROUNDS
-//             k::Printf("\nRood Battle Background Triggered");
-// #endif
+            // #if DEBUGGING_BACKGROUNDS
+            //             k::Printf("\nRood Battle Background Triggered");
+            // #endif
             fieldStatus->BattleBGID = 74;
             return;
         }
-// #if DEBUGGING_BACKGROUNDS
-//         k::Printf("\nMade it past the Rood check");
-// #endif
+        // #if DEBUGGING_BACKGROUNDS
+        //         k::Printf("\nMade it past the Rood check");
+        // #endif
         // Clay
         if (foe1TrID == 158)
         {
-// #if DEBUGGING_BACKGROUNDS
-//             k::Printf("\nClay Battle Background Triggered");
-// #endif
+            // #if DEBUGGING_BACKGROUNDS
+            //             k::Printf("\nClay Battle Background Triggered");
+            // #endif
             fieldStatus->BattleBGID = 82;
             return;
         }
         // #if DEBUGGING_BACKGROUNDS
-        // k::Printf("\nMade it past the Clay check"); 
+        // k::Printf("\nMade it past the Clay check");
         // #endif
         return;
     }
@@ -1190,57 +1220,57 @@ extern "C"
         int trClass;                   // r0
         BattleFieldStatus fieldStatus; // [sp+18h] [bp-28h] BYREF
         int v16;                       // [sp+28h] [bp-18h]
-// #if DEBUGGING_BACKGROUNDS
-//         k::Printf("\nBtlSetup_SetTrainerLocal called with Foe1 ID: %d, Foe2 ID: %d, Ally ID: %d, Style: %d", foe1TrId, foe2TrId, allyTrId, style);
-// #endif
+                                       // #if DEBUGGING_BACKGROUNDS
+                                       //         k::Printf("\nBtlSetup_SetTrainerLocal called with Foe1 ID: %d, Foe2 ID: %d, Ally ID: %d, Style: %d", foe1TrId, foe2TrId, allyTrId, style);
+                                       // #endif
         v16 = allyTrId;
         m_GameData = encSys->m_GameData;
         BtlSetup_Reset(setup);
-// #if DEBUGGING_BACKGROUNDS
-//         k::Printf("\nReset Battle Setup");
-// #endif
+        // #if DEBUGGING_BACKGROUNDS
+        //         k::Printf("\nReset Battle Setup");
+        // #endif
 
         SaveBtlFieldStatus(&fieldStatus, encSys->m_GameData, encSys->m_Field);
-// #if DEBUGGING_BACKGROUNDS
-//         k::Printf("\nSaved Battle Field Status with BG ID: %d, Pedestal ID: %d, Zone ID: %d", fieldStatus.BattleBGID, fieldStatus.BattlePedestalID, fieldStatus.ZoneID);
-// #endif
+        // #if DEBUGGING_BACKGROUNDS
+        //         k::Printf("\nSaved Battle Field Status with BG ID: %d, Pedestal ID: %d, Zone ID: %d", fieldStatus.BattleBGID, fieldStatus.BattlePedestalID, fieldStatus.ZoneID);
+        // #endif
         Param = TrainerData_GetParam(foe1TrId, TR_CLASS);
-// #if DEBUGGING_BACKGROUNDS
-//         k::Printf("\nGot Trainer Class: %d", Param);
-// #endif
+        // #if DEBUGGING_BACKGROUNDS
+        //         k::Printf("\nGot Trainer Class: %d", Param);
+        // #endif
         btlPedestalId = GetTrainerClassBattlePedestal(Param);
         if (btlPedestalId != 20)
         {
             fieldStatus.BattlePedestalID = btlPedestalId;
         }
-// #if DEBUGGING_BACKGROUNDS
-//         k::Printf("\nSet Battle Pedestal ID to: %d", fieldStatus.BattlePedestalID);
-// #endif
+        // #if DEBUGGING_BACKGROUNDS
+        //         k::Printf("\nSet Battle Pedestal ID to: %d", fieldStatus.BattlePedestalID);
+        // #endif
         trClass = TrainerData_GetParam(foe1TrId, TR_CLASS);
         fieldStatus.BattleBGID = CheckOverridenTrainerBattleBG(trClass, fieldStatus.BattleBGID);
-// #if DEBUGGING_BACKGROUNDS
-//         k::Printf("\nSet Battle BG ID to: %d", fieldStatus.BattleBGID);
-// #endif
+        // #if DEBUGGING_BACKGROUNDS
+        //         k::Printf("\nSet Battle BG ID to: %d", fieldStatus.BattleBGID);
+        // #endif
         modifyFieldStatus(&fieldStatus, foe1TrId, style);
-// #if DEBUGGING_BACKGROUNDS
-//         k::Printf("\nModified Field Status to BG ID: %d, Pedestal ID: %d", fieldStatus.BattleBGID, fieldStatus.BattlePedestalID);
-// #endif
+        // #if DEBUGGING_BACKGROUNDS
+        //         k::Printf("\nModified Field Status to BG ID: %d, Pedestal ID: %d", fieldStatus.BattleBGID, fieldStatus.BattlePedestalID);
+        // #endif
         if (style <= BTL_STYLE_ROTATION)
         {
             if (style == BTL_STYLE_SINGLE)
             {
                 if (foe2TrId)
                 {
-// #if DEBUGGING_BACKGROUNDS
-//                     k::Printf("\nSetting up 1v2 Battle");
-// #endif
+                    // #if DEBUGGING_BACKGROUNDS
+                    //                     k::Printf("\nSetting up 1v2 Battle");
+                    // #endif
                     BtlSetup_SetTrainer1v2(setup, m_GameData, &fieldStatus, foe1TrId, foe2TrId, heapId);
                 }
                 else
                 {
-// #if DEBUGGING_BACKGROUNDS
-//                     k::Printf("\nSetting up 1v1 Single Battle");
-// #endif
+                    // #if DEBUGGING_BACKGROUNDS
+                    //                     k::Printf("\nSetting up 1v1 Single Battle");
+                    // #endif
                     BtlSetup_SetTrainer1v1Single(setup, m_GameData, &fieldStatus, foe1TrId, heapId);
                 }
             }
@@ -1248,9 +1278,9 @@ extern "C"
             {
                 if (style == BTL_STYLE_DOUBLE && allyTrId)
                 {
-// #if DEBUGGING_BACKGROUNDS
-//                     k::Printf("\nSetting up 2v2 Battle");
-// #endif
+                    // #if DEBUGGING_BACKGROUNDS
+                    //                     k::Printf("\nSetting up 2v2 Battle");
+                    // #endif
                     BtlSetup_SetTrainer2v2(setup, m_GameData, &fieldStatus, allyTrId, foe1TrId, foe2TrId, heapId);
                 }
                 else
@@ -1258,33 +1288,33 @@ extern "C"
 
                     if (howManyPokesAreAbleToFight(GameData_GetParty(m_GameData)) < 2)
                     {
-// #if DEBUGGING_BACKGROUNDS
-//                         k::Printf("\nSetting up 1v1 Single Battle due to only 1");
-// #endif
+                        // #if DEBUGGING_BACKGROUNDS
+                        //                         k::Printf("\nSetting up 1v1 Single Battle due to only 1");
+                        // #endif
                         BtlSetup_SetTrainer1v1Single(setup, m_GameData, &fieldStatus, foe1TrId, heapId);
                     }
                     else
                     {
                         if (style == BTL_STYLE_DOUBLE)
                         {
-// #if DEBUGGING_BACKGROUNDS
-//                             k::Printf("\nSetting up 1v1 Double Battle");
-// #endif
+                            // #if DEBUGGING_BACKGROUNDS
+                            //                             k::Printf("\nSetting up 1v1 Double Battle");
+                            // #endif
                             BtlSetup_SetTrainer1v1Double(setup, m_GameData, &fieldStatus, foe1TrId, heapId);
                         }
 
                         if (style == BTL_STYLE_TRIPLE)
                         {
-// #if DEBUGGING_BACKGROUNDS
-//                             k::Printf("\nSetting up 3v3 Battle");
-// #endif
+                            // #if DEBUGGING_BACKGROUNDS
+                            //                             k::Printf("\nSetting up 3v3 Battle");
+                            // #endif
                             BtlSetup_SetTrainer3v3(setup, m_GameData, &fieldStatus, foe1TrId, heapId);
                         }
                         if (style == BTL_STYLE_ROTATION)
                         {
-// #if DEBUGGING_BACKGROUNDS
-//                             k::Printf("\nSetting up Rotation Battle");
-// #endif
+                            // #if DEBUGGING_BACKGROUNDS
+                            //                             k::Printf("\nSetting up Rotation Battle");
+                            // #endif
                             BtlSetup_SetTrainerRotation(setup, m_GameData, &fieldStatus, foe1TrId, heapId);
                         }
                     }
@@ -1308,48 +1338,48 @@ extern "C"
         int TileClass;          // r0
         void *player;           // [sp+0h] [bp-28h]
         RTCTime time;           // [sp+4h] [bp-24h] BYREF
-// #if DEBUGGING_BACKGROUNDS
-//         k::Printf("\nSaveBtlFieldStatus called");
-// #endif
+                                // #if DEBUGGING_BACKGROUNDS
+                                //         k::Printf("\nSaveBtlFieldStatus called");
+                                // #endif
         PlayerStateZoneID = Field_GetPlayerStateZoneID(field);
         player = Field_GetPlayer(field);
         status->BattleBGID = GetZoneBattleBGID(PlayerStateZoneID);
-// #if DEBUGGING_BACKGROUNDS
-//         k::Printf("\nSaveBtlFieldStatus: Initial Battle BG ID from Zone ID %d is %d",
-//                   PlayerStateZoneID,
-//                   status->BattleBGID);
-// #endif
+        // #if DEBUGGING_BACKGROUNDS
+        //         k::Printf("\nSaveBtlFieldStatus: Initial Battle BG ID from Zone ID %d is %d",
+        //                   PlayerStateZoneID,
+        //                   status->BattleBGID);
+        // #endif
         if (!GetBackgroundsSetting())
         {
             status->BattleBGID = ZoneIdToBackgroundID[PlayerStateZoneID];
         }
-// #if DEBUGGING_BACKGROUNDS
-//         k::Printf("\nSaveBtlFieldStatus: Modified Battle BG ID is %d", status->BattleBGID);
-// #endif
+        // #if DEBUGGING_BACKGROUNDS
+        //         k::Printf("\nSaveBtlFieldStatus: Modified Battle BG ID is %d", status->BattleBGID);
+        // #endif
         TileTypeUnder = FieldPlayer_GetTileTypeUnder(player);
         TileClass = GetTileClass(TileTypeUnder);
         status->BattlePedestalID = GetTileEncountType(TileClass);
         status->ZoneID = PlayerStateZoneID;
-// #if DEBUGGING_BACKGROUNDS
-//         k::Printf("\nSaveBtlFieldStatus: Set Battle Pedestal ID to %d", status->BattlePedestalID);
-// #endif
+        // #if DEBUGGING_BACKGROUNDS
+        //         k::Printf("\nSaveBtlFieldStatus: Set Battle Pedestal ID to %d", status->BattlePedestalID);
+        // #endif
         RTC_GetCachedTime(&time);
         status->Hour = time.Hour;
         status->Minute = time.Minute;
         status->BtlWeather = ConvFieldWeatherToBtl(field);
         status->Season = GameData_GetSeason(gameData);
-// #if DEBUGGING_BACKGROUNDS
-//         k::Printf("\nSaveBtlFieldStatus: Set Time to %02d:%02d, Weather to %d, Season to %d",
-//                   status->Hour,
-//                   status->Minute,
-//                   status->BtlWeather,
-//                   status->Season);
-// #endif
+        // #if DEBUGGING_BACKGROUNDS
+        //         k::Printf("\nSaveBtlFieldStatus: Set Time to %02d:%02d, Weather to %d, Season to %d",
+        //                   status->Hour,
+        //                   status->Minute,
+        //                   status->BtlWeather,
+        //                   status->Season);
+        // #endif
         if (!GetBackgroundsSetting())
         {
-// #if DEBUGGING_BACKGROUNDS
-//             k::Printf("\nSaveBtlFieldStatus: Checking for position based background changes");
-// #endif
+            // #if DEBUGGING_BACKGROUNDS
+            //             k::Printf("\nSaveBtlFieldStatus: Checking for position based background changes");
+            // #endif
             if (PlayerStateZoneID == 446    // Route 20
                 || PlayerStateZoneID == 445 // Flocessy Ranch
                 //|| PlayerStateZoneID == 385 // Lostlorn Forest
@@ -1358,9 +1388,9 @@ extern "C"
                 || PlayerStateZoneID == 329 // Route 5
             )
             {
-// #if DEBUGGING_BACKGROUNDS
-//                 k::Printf("\nSaveBtlFieldStatus: Position based background change triggered");
-// #endif
+                // #if DEBUGGING_BACKGROUNDS
+                //                 k::Printf("\nSaveBtlFieldStatus: Position based background change triggered");
+                // #endif
                 PlayerState *playerstate = GameData_GetPlayerState(gameData);
                 VecFx32 *vec = PlayerState_GetWPos(playerstate);
                 VecFx32 *print;
@@ -1404,7 +1434,6 @@ extern "C"
         }
     }
 
-    
 #pragma endregion
 
 #pragma region DoubleBattleFix

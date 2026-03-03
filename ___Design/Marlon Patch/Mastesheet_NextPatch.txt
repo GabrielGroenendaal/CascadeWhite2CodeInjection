@@ -1328,7 +1328,6 @@ end
 !notif IV MASTER, The Top Stall has the IV Master, who in exchange for IV Enhancers will maximize an IV of your choice for one of your Pokémon to 31. 
 
 !items Items
-rocky helmet, Rocky Helmet (found near entrance)
 heart scale, 3x Heart Scales can be found by the Move Reminder.
 colress mchn, Proto Booster (reward for defeating Colress) 
 old gateau, IV Enhancer (reward for defeating Colress)

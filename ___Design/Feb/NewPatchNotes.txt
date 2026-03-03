@@ -1,0 +1,64 @@
+
+
+
+- Implement an event script for the psychics or 
+- Fix Depot Agent Hank not having the correct view distance.
+- Fix Focus Punch being seen as 150 BP by the switch ai 
+- Have Electro Shot / Meteor Herb be seen at 50% stronger under the right conditions. 
+
+=============================================================================================================
+/*   PATCH NOTES    */
+
+```Patch Notes:```
+If you're updating from the previous patch, you'll want to speak to an NPC in Lentimas Town who should get all your flags and work values fixed. They can be found on the north end of the airstrip. 
+
+``[ BUG FIXES & SCRIPTING ]``
+> - **Chargestone Cave** warps now correctly go to the right locations. 
+> - **Pilot Ewing** now is correctly facing upwards. 
+
+
+// This function alters the switch-in AI based on defensive matchups. 
+    // It does not check moves; instead it checks typings 
+    // If the attacker is weak to either of the defender's types, applies a negative modifier. If the defender is 4x weak, it applies a massive modifier. 
+    // If the attacker is resistant or immune to both of the target's types, applies a positive modifer. 
+    // Accounts for Tera
+    int checkForMatchup(BattleMon *attackingMon, BattleMon *DefendingMon, unsigned int a3)
+    {
+        Types defenderType1;
+        Types defenderType2;
+        u8 defenderType1Effectiveness;
+        u8 defenderType2Effectiveness;
+        int attackerType;
+        defenderType1 = PokeTypePair_GetType1(BattleMon_GetPokeType(defendingMon));
+        defenderType2 = PokeTypePair_GetType2(BattleMon_GetPokeType(defendingMon));
+        
+        // Checks for Terastalization. 
+        if (BattleMon_CheckIfMoveCondition(a1, CONDITION_TERA) || SEARCH_ARRAY(teraItems, a1->HeldItem)){
+            attackerType = PML_MoveGetType(Move_GetID(attackingMon, 0));
+        }
+        else {
+            attackerType = BattleMon_GetPokeType(attackingMon);
+        }
+
+
+        defenderType1Effectiveness = (CheckIfImmuneAbility(defenderType1, 0, attackingMon)) ? 0 : GetTypeEffectivenessVsMon(defenderType1, attackerType);
+        defenderType2Effectiveness = (CheckIfImmuneAbility(defenderType2, 0, attackingMon)) ? 0 : GetTypeEffectivenessVsMon(defenderType2, attackerType);
+
+        if (defenderType1Effectiveness == 5 || defenderType2Effectiveness == 5){
+            // If the mon is 4x weak to either of the target's types, halves the seen BP.
+            return (a3 >> 1);
+        }
+        if (defenderType1Effectiveness == 4 || defenderType2Effectiveness == 4){
+            // If the mon is 2x weak to either of the target's types, removes a quarter of the seen BP
+            return (a3 >> 1) + (a3 >> 2);
+        }
+        if (defenderType1Effectiveness <= 1 && defenderType2Effectiveness <= 1){
+            // If the target heavily resists or is 4x immune to both of the target's types, boosts the BP by 50%
+            return a3  + (a3 >> 1);
+        }
+        if (defenderType1Effectiveness <= 2 && defenderType2Effectiveness <= 2){
+            // If the mon at least resists both of the target's types
+            return a3 + (a3 >> 2); 
+        }
+        return a3;
+    }

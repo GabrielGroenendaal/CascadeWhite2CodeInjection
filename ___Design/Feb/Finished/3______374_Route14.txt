@@ -1,0 +1,759 @@
+import messages.script.Msg0586.MSGID;
+
+import Overlay58;
+import event.Battle;
+import event.EVCamera;
+import event.ObjInit;
+import event.FieldDemo;
+import event.actors.Actor;
+import event.actors.Player;
+import event.dialogs.Message;
+import event.dialogs.YesNoWin;
+import event.funfest.Funfest;
+import player.Medals;
+import player.Records;
+import pokescript.vm.Math;
+import pokescript.vm.StackCtrl;
+import pokescript.vm.VM;
+import system.EventFlags;
+import system.EventWorks;
+import system.Fade;
+import system.Field;
+import system.Game;
+import system.Input;
+import system.Runtime;
+import system.Sound;
+import system.text.WordSet;
+
+public class MainEvents {
+	public static void main_1() { // @ 0xe
+		Actor.PauseAll();
+		Funfest.Broadcast(17, 0);
+		Sound.SEPlay(1351);
+		Message.PlaceSign(0, 3);
+		Message.ClosePlaceSign();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_2() { // @ 0x28
+		Actor.PauseAll();
+		Funfest.Broadcast(17, 0);
+		Sound.SEPlay(1351);
+		Message.PlaceSign(1, 0);
+		Message.ClosePlaceSign();
+		EventFlags.Set(2675);
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_3() { // @ 0x46
+		Actor.PauseAll();
+		Funfest.Broadcast(17, 0);
+		Sound.SEPlay(1351);
+		Message.PlaceSign(2, 0);
+		Message.ClosePlaceSign();
+		EventFlags.Set(2676);
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+	// Field XTranceriver 5 is Cheren Call
+	// Text ID 389
+
+    // 522: Gauntlet is in progress
+    // 1575: Stores if Falkner has been defeated.
+    // 546: Flag that stores if the gauntlet has been completed. It also despawns a bunch of NPCs 
+    // 16463: Stores state of the route 14 gauntlet 
+    // 16464: Stores stat of gauntlet reset 
+    // 16443: Tracks the X-Tranceiver Call you get from Hugh and the initial and final Gauntlet Triggers 
+
+    // Initial Dialogue with the Ranger 
+    // Resets the Gauntlet
+    public static void main_4(){
+        if (EventWorks.Get(16463) == 0){
+            Actor.PauseAll();
+            ShowExclamationMark(24);
+            Actor.WaitActionFinish();
+            Message.Spiked(28, 2);
+            Message.WaitAdvance();
+            Message.CloseAll();
+            TurnNorth(255);
+            Actor.WaitActionFinish();
+            Message.ActorEx(1024, 3, 24, 0, 0);
+            Input.LastKeyWait();
+            Message.CloseAll();
+            EventWorks.Set(16463, 1);
+            Runtime.FinishSubEvents();
+		    Actor.UnpauseAll();
+        }
+        else if (EventWorks.Get(16463) != 0){
+            EventWorks.Set(16463, 1);
+            EventFlags.Clear(1520 + 285);
+            EventFlags.Clear(1520 + 259);
+            EventFlags.Clear(1520 + 281);
+            EventFlags.Clear(1520 + 282);
+        }
+        else {
+
+        }
+    }
+
+    // Speak with Ranger 
+    public static void main_5(){
+        Actor.PauseAll();
+        Actor.FacePlayer();
+        Actor.WaitActionFinish();
+        Message.ActorEx(1024, 3, 24, 0, 0);
+        Input.LastKeyWait();
+        Message.CloseAll();
+        if (EventWorks.Get(16463) == 0) {
+            EventWorks.Set(16463, 1);
+        }
+        Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
+
+    // Initiates the Gauntlet 
+    public static void main_6(){
+
+        int psyduckID;
+
+        psyduckID = 4151;
+
+        Actor.PauseAll();
+         Fade.FadeEx(3, 0, 16, 2);
+		Fade.FadeExWait();
+		Actor.New(683, 363, 0, 254, psyduckID, 0);
+        Actor.New(683, 364, 0, 253, psyduckID, 0);
+        Actor.New(683, 365, 0, 252, psyduckID, 0);
+
+ 
+        Runtime.Sleep(30);
+		Fade.FadeEx(3, 16, 0, 2);
+		Fade.FadeExWait();
+
+        TurnWest(255);
+        ShowExclamationMark(255);
+        Actor.WaitActionFinish();
+        Message.System(27, 2);
+        Message.WaitAdvance();
+        Message.CloseAll();
+		Actor.Hide(29);
+        EventFlags.Set(522);
+        EventWorks.Set(16463, 2);
+        Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
+
+
+    // Fisherman Sid
+    public static void main_7(){
+        int isVictory;
+        Actor.PauseAll();
+        ShowExclamationMark(15);
+        Actor.WaitActionFinish();
+        TurnWest(255);
+        Actor.WaitActionFinish();
+        Message.ActorEx(1024, 16, 15, 0, 0);
+        Input.LastKeyWait();
+        Message.CloseAll();
+        Battle.CallTrainerBattle(283, 0, 0);
+        isVictory = Battle.IsTrainerVictory();
+        if (isVictory != 1){
+            Battle.CallTrainerLose();
+        }
+        Battle.EndTrainerBattle();
+        Message.ActorEx(1024, 17, 15, 0, 0);
+        Input.LastKeyWait();
+        Message.CloseAll();
+        EventWorks.Set(16463, 3);
+        Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
+
+    // Fisherman Sid (Speak with)
+    public static void main_8(){
+        int isVictory;
+        Actor.PauseAll();
+        Actor.FacePlayer();
+        Actor.WaitActionFinish();
+        if (EventWorks.Get(16463) == 3){
+            Message.ActorEx(1024, 17, 15, 0, 0);
+            Input.LastKeyWait();
+            Message.CloseAll();
+            goto LABEL_EndFishermanSid;
+        }
+        Message.ActorEx(1024, 16, 15, 0, 0);
+        Input.LastKeyWait();
+        Message.CloseAll();
+        Battle.CallTrainerBattle(283, 0, 0);
+        isVictory = Battle.IsTrainerVictory();
+        if (isVictory != 1){
+            Battle.CallTrainerLose();
+        }
+        Battle.EndTrainerBattle();
+        Message.ActorEx(1024, 17, 15, 0, 0);
+        Input.LastKeyWait();
+        Message.CloseAll();
+        EventWorks.Set(16463, 3);
+
+        LABEL_EndFishermanSid: 
+        Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
+
+    
+    // Fisherman Bucky 
+    public static void main_9(){
+        int isVictory;
+        Actor.PauseAll();
+        ShowExclamationMark(1);
+        Actor.WaitActionFinish();
+        TurnSouth(255);
+        Actor.WaitActionFinish();
+        Message.ActorEx(1024, 18, 1, 0, 0);
+        Input.LastKeyWait();
+        Message.CloseAll();
+        Battle.CallTrainerBattle(283, 0, 0);
+        isVictory = Battle.IsTrainerVictory();
+        if (isVictory != 1){
+            Battle.CallTrainerLose();
+        }
+        Battle.EndTrainerBattle();
+        Message.ActorEx(1024, 19, 1, 0, 0);
+        Input.LastKeyWait();
+        Message.CloseAll();
+        EventWorks.Set(16463, 3);
+        Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
+
+    // Fisherman Bucky (Speak With)
+    public static void main_10(){
+        int isVictory;
+        Actor.PauseAll();
+        Actor.FacePlayer();
+        Actor.WaitActionFinish();
+        if (EventWorks.Get(16463) == 3){
+            Message.ActorEx(1024, 19, 1, 0, 0);
+            Input.LastKeyWait();
+            Message.CloseAll();
+            goto LABEL_EndFishermanBucky;
+        }
+        Message.ActorEx(1024, 18, 1, 0, 0);
+        Input.LastKeyWait();
+        Message.CloseAll();
+        Battle.CallTrainerBattle(283, 0, 0);
+        isVictory = Battle.IsTrainerVictory();
+        if (isVictory != 1){
+            Battle.CallTrainerLose();
+        }
+        Battle.EndTrainerBattle();
+        Message.ActorEx(1024, 19, 1, 0, 0);
+        Input.LastKeyWait();
+        Message.CloseAll();
+        EventWorks.Set(16463, 3);
+
+        LABEL_EndFishermanBucky: 
+        Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
+
+    // Veteran Beryl 
+    public static void main_11(){
+        int isVictory;
+        Actor.PauseAll();
+        ShowExclamationMark(3);
+        Actor.WaitActionFinish();
+        TurnSouth(255);
+        Actor.WaitActionFinish();
+        Message.ActorEx(1024, 10, 3, 0, 0);
+        Input.LastKeyWait();
+        Message.CloseAll();
+        Battle.CallTrainerBattle(245, 0, 0);
+        isVictory = Battle.IsTrainerVictory();
+        if (isVictory != 1){
+            Battle.CallTrainerLose();
+        }
+        Battle.EndTrainerBattle();
+        Message.ActorEx(1024, 11, 3, 0, 0);
+        Input.LastKeyWait();
+        Message.CloseAll();
+        EventWorks.Set(16463, 4);
+        Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
+
+    // Veteran Beryl (Speak with)
+    public static void main_12(){
+        Actor.PauseAll();
+        Actor.FacePlayer();
+        Actor.WaitActionFinish();
+        Message.ActorEx(1024, 11, 3, 0, 0);
+        Input.LastKeyWait();
+        Message.CloseAll();
+        Runtime.FinishSubEvents();
+		Actor.UnpauseAll();       
+    }
+
+    // Veteran Cobalt 
+    public static void main_13(){
+        int isVictory;
+        Actor.PauseAll();
+        ShowExclamationMark(6);
+        Actor.WaitActionFinish();
+        TurnSouth(255);
+        Actor.WaitActionFinish();
+        Message.ActorEx(1024, 14, 6, 0, 0);
+        Input.LastKeyWait();
+        Message.CloseAll();
+        Battle.CallTrainerBattle(54, 0, 0);
+        isVictory = Battle.IsTrainerVictory();
+        if (isVictory != 1){
+            Battle.CallTrainerLose();
+        }
+        Battle.EndTrainerBattle();
+        Message.ActorEx(1024, 15, 6, 0, 0);
+        Input.LastKeyWait();
+        Message.CloseAll();
+        EventWorks.Set(16463, 4);
+        Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
+
+    // Veteran Cobalt (Speak With)
+    public static void main_14(){
+        Actor.PauseAll();
+        Actor.FacePlayer();
+        Actor.WaitActionFinish();
+        Message.ActorEx(1024, 15, 6, 0, 0);
+        Input.LastKeyWait();
+        Message.CloseAll();
+        Runtime.FinishSubEvents();
+		Actor.UnpauseAll();    
+    }
+
+    // Veteran Ruby 
+    public static void main_15(){
+        int isVictory;
+        Actor.PauseAll();
+        ShowExclamationMark(4);
+        Actor.WaitActionFinish();
+        TurnSouth(255);
+        Actor.WaitActionFinish();
+        Message.ActorEx(1024, 12, 4, 0, 0);
+        Input.LastKeyWait();
+        Message.CloseAll();
+        Battle.CallTrainerBattle(246, 0, 0);
+        isVictory = Battle.IsTrainerVictory();
+        if (isVictory != 1){
+            Battle.CallTrainerLose();
+        }
+        Battle.EndTrainerBattle();
+        Message.ActorEx(1024, 13, 4, 0, 0);
+        Input.LastKeyWait();
+        Message.CloseAll();
+        EventWorks.Set(16463, 4);
+        Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
+
+    // Veteran Ruby (Speak with)
+    public static void main_16(){
+        Actor.PauseAll();
+        Actor.FacePlayer();
+        Actor.WaitActionFinish();
+        Message.ActorEx(1024, 13, 4, 0, 0);
+        Input.LastKeyWait();
+        Message.CloseAll();
+        Runtime.FinishSubEvents();
+		Actor.UnpauseAll();    
+    }
+
+    // Falkner 
+    public static void main_17(){
+        int isVictory;
+        int yesNo;
+        
+        Actor.PauseAll();
+        Actor.FacePlayer();
+        Actor.WaitActionFinish();
+
+        if (EventFlags.Get(1575)){
+            Message.ActorEx(1024, 22, 5, 0, 0);
+            Input.LastKeyWait();
+            Message.CloseAll();
+            goto Label_EndFalkner;
+        }
+
+        Message.ActorEx(1024, 33, 5, 0, 0);
+        yesNo = YesNoWin.Show();
+        if (yesNo == 1) {
+	       Message.ActorEx(1024, 34, 5, 0, 0);
+            Input.LastKeyWait();
+            Message.CloseAll();
+            goto Label_EndFalkner;
+        }
+        Message.ActorEx(1024, 20, 5, 0, 0);
+        Input.LastKeyWait();
+        Message.CloseAll();
+
+        Battle.CallTrainerBattle(55, 0, 0);
+        isVictory = Battle.IsTrainerVictory();
+        if (isVictory != 1){
+            Battle.CallTrainerLose();
+            goto Label_EndFalkner;
+        }
+        Battle.EndTrainerBattle();
+        Message.ActorEx(1024, 21, 5, 0, 0);
+        Input.LastKeyWait();
+        Message.CloseAll();
+        Global2805(192, 3);
+        Global2805(556, 3);
+        Global2805(338, 1);
+        EventFlags.Set(1575);
+        EventFlags.Set(546);
+        Message.ActorEx(1024, 22, 5, 0, 0);
+        Input.LastKeyWait();
+        Message.CloseAll();
+        EventWorks.Set(16463, 5);
+
+        Label_EndFalkner: 
+        Runtime.FinishSubEvents();
+		Actor.UnpauseAll();    
+    }
+
+    // Walk Out without fighting Falkner 
+    public static void main_18(){
+        if (!EventFlags.Get(1575)){
+            Actor.PauseAll();
+            Sound.PVPlay(18, 0);
+            Message.Spiked(23, 2);
+            Message.WaitAdvance();
+            Sound.PVWait();
+            Message.CloseAll();
+            Message.System(24, 2);
+            Message.WaitAdvance();
+            Message.CloseAll();
+            Runtime.FinishSubEvents();
+		    Actor.UnpauseAll();    
+        }
+        EventWorks.Set(16463, 5); 
+    }
+
+
+    // Route 14 Exit 
+    // Gauntlet Complete 
+    public static void main_19(){
+        int yesNo;
+
+        Actor.PauseAll();
+        ShowExclamationMark(25);
+        Actor.WaitActionFinish();
+        TurnEast8F(255);
+        TurnWest(25);
+        Actor.WaitActionFinish();
+
+        if (EventWorks.Get(16463) == 5) {
+            EventWorks.Set(16463, 6);
+            Message.ActorEx(1024, 4, 25, 0, 0);
+            Input.LastKeyWait();
+            Message.CloseAll();
+            TurnSouth(25);
+            Actor.WaitActionFinish();
+            Message.ActorEx(1024, 5, 25, 0, 0);
+            Input.LastKeyWait();
+            Message.CloseAll();
+            TurnWest(25);
+            Actor.WaitActionFinish();
+            Message.ActorEx(1024, 6, 25, 0, 0);
+        } else {
+            Message.ActorEx(1024, 32, 25, 0, 0);
+        }
+        yesNo = YesNoWin.Show();
+        if (yesNo != 0){
+            Message.ActorEx(1024, 9, 25, 0, 0);
+            Input.LastKeyWait();
+            Message.CloseAll();
+            WalkSouth(255);
+            Actor.WaitActionFinish();
+            goto LABEL_EndRangerExitTrigger;
+        }
+        Message.ActorEx(1024, 7, 25, 0, 0);
+        Input.LastKeyWait();
+        Message.CloseAll();
+        WalkNorth8F(255);
+        WalkWest8F(25);
+        Actor.WaitActionFinish();
+        TurnNorth(25);
+        TurnSouth(255);
+        Actor.WaitActionFinish();
+        Message.ActorEx(1024, 8, 25, 0, 0);
+        Input.LastKeyWait();
+        Message.CloseAll();
+        Actor.Hide(25);
+        Actor.Show(29);
+        EventFlags.Clear(522);
+        EventFlags.Set(546);
+        Actor.Hide(5);
+        Actor.Hide(11);
+        EventWorks.Set(16463, 7);
+        EventWorks.Set(16464, 1);
+        EventFlags.Clear(1520 + 285);
+        EventFlags.Set(1520 + 285);
+        EventFlags.Clear(1520 + 259);
+        EventFlags.Set(1520 + 259);
+        EventFlags.Clear(1520 + 281);
+        EventFlags.Set(1520 + 281);
+        EventFlags.Clear(1520 + 282);
+        EventFlags.Set(1520 + 282);
+        Message.System(29, 2);
+        Message.WaitAdvance();
+        Message.CloseAll();
+
+        LABEL_EndRangerExitTrigger:
+        Runtime.FinishSubEvents();
+		Actor.UnpauseAll();   
+    }
+
+    // Speak with Ranger At Exit 
+    public static void main_20(){
+        Actor.PauseAll();
+        Actor.FacePlayer();
+        Actor.WaitActionFinish();
+        if (EventWorks.Get(16463) == 5){
+            Message.ActorEx(1024, 9, 25, 0, 0);
+            Input.LastKeyWait();
+            Message.CloseAll();
+            goto LABEL_EndRangerExit;
+        }
+        if (EventWorks.Get(16463) == 6){
+            Message.ActorEx(1024, 9, 25, 0, 0);
+            Input.LastKeyWait();
+            Message.CloseAll();
+            goto LABEL_EndRangerExit;
+        }
+        Message.ActorEx(1024, 8, 29, 0, 0);
+        Input.LastKeyWait();
+        Message.CloseAll();
+
+        LABEL_EndRangerExit: 
+        Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
+
+    // XTranceiver Call 
+    public static void main_21(){
+        Actor.PauseAll();
+        Sound.MEPlay(1852);
+        Sound.MEWait();
+        Sound.MEPlay(1351);
+        WordSet.LoadPlayerName(0);
+        Message.System(30, 2);
+        Message.WaitAdvance();
+        Message.CloseAll();
+        Message.System(31, 2);
+        Message.CloseAll();
+        Fade.OutBlackQ();
+		Fade.Wait();
+		FieldDemo.CallXTransceiver(5, 0);
+		Fade.InBlackQ();
+		Fade.Wait();
+		Sound.MEPlay(1853);
+        Sound.MEWait();
+        EventWorks.Set(16443, 1); // Sets up the Undella Logic 
+        EventFlags.Set(538); // Clears out the Protestors 
+        EventFlags.Set(545);
+        Actor.UnpauseAll();
+        
+    }
+
+    // South path State trigger
+    public static void main_22(){
+        EventWorks.Set(16463, 3);
+    }
+
+	static meta void ApproachPlayer(int npcId) : VActionSequence {
+		Action000d(2);
+	}
+	static meta void WalkSouth(int npcId) : VActionSequence {
+		Action000d(1);
+	}
+
+    static meta void WalkWest8F(int npcId) : VActionSequence {
+		Action000e(2);
+	}
+	static meta void ActionSequence_04ac(int npcId) : VActionSequence {
+		Action004b(1);
+	}
+
+	static meta void ActionSequence_04b4(int npcId) : VActionSequence {
+		Action0001(1);
+	}
+	static meta void WalkNorth8F(int npcId) : VActionSequence {
+		Action000c(2);
+	}
+	static meta void ActionSequence_04bc(int npcId) : VActionSequence {
+		Action0003(1);
+	}
+
+	static meta void ActionSequence_04c4(int npcId) : VActionSequence {
+		Action0002(1);
+	}
+
+	static meta void ActionSequence_04cc(int npcId) : VActionSequence {
+		Action0000(1);
+	}
+
+	static meta void ActionSequence_04d4(int npcId) : VActionSequence {
+		Action000f(1);
+		Action000e(1);
+		Action000d(9);
+	}
+
+	static meta void ActionSequence_04e4(int npcId) : VActionSequence {
+		Action000f(1);
+		Action003f(1);
+		Action000f(1);
+		Action000d(9);
+	}
+
+	static meta void ActionSequence_04f8(int npcId) : VActionSequence {
+		Action000f(1);
+		Action000d(9);
+	}
+
+	static meta void ActionSequence_0504(int npcId) : VActionSequence {
+		Action003f(2);
+		Action0001(1);
+	}
+
+	static meta void ActionSequence_0510(int npcId) : VActionSequence {
+		Action000d(2);
+	}
+
+	static meta void ActionSequence_0518(int npcId) : VActionSequence {
+		Action000d(2);
+	}
+
+	static meta void ActionSequence_0648(int npcId) : VActionSequence {
+		Action003f(2);
+		Action000e(4);
+	}
+
+	static meta void ActionSequence_0654(int npcId) : VActionSequence {
+		Action000e(1);
+	}
+
+	static meta void ActionSequence_065c(int npcId) : VActionSequence {
+		Action000e(4);
+		Action003f(1);
+		Action0045(1);
+	}
+
+	static meta void ActionSequence_0d20(int npcId) : VActionSequence {
+		Action000c(7);
+	}
+
+	static meta void ActionSequence_0d28(int npcId) : VActionSequence {
+		Action000c(5);
+	}
+
+	static meta void ActionSequence_0d30(int npcId) : VActionSequence {
+		Action0001(1);
+		Action003d(1);
+		Action0002(1);
+		Action003d(1);
+		Action0000(1);
+		Action003d(1);
+		Action0003(1);
+		Action003d(1);
+		Action0001(1);
+	}
+
+	static meta void TurnWest32Frames(int npcId) : VActionSequence {
+		Action004b(1);
+		Action0022(1);
+	}
+
+	static meta void TurnEast32Frames(int npcId) : VActionSequence {
+		Action004b(1);
+		Action0023(1);
+	}
+
+	static meta void TurnEast8Frames(int npcId) : VActionSequence {
+		Action0023(1);
+	}
+
+	static meta void TurnSouth32Frames(int npcId) : VActionSequence {
+		Action0019(1);
+	}
+
+	static meta void TurnAroundAndMoveNorthFrames(int npcId) : VActionSequence {
+		Action0020(1);
+		Action000c(1);
+	}
+
+    static meta void WalkEastThenNorthThenEast(int npcId) : VActionSequence {
+		Action0019(1);
+	}
+	static meta void TurnSouth(int npcId) : VActionSequence {
+		Action0021(1);
+	}
+    static meta void ShowExclamationMark(int npcId) : VActionSequence {
+		Action004b(1);
+	}
+
+    static meta void OrganizerCrashOut1(int npcId) : VActionSequence {
+		Action0016(2);
+        Action0014(9);
+        Action0016(1);
+	}
+
+    static meta void OrganizerCrashOut2(int npcId) : VActionSequence {
+		Action0017(7);
+	}
+
+    static meta void OrganizerCrashOut3(int npcId) : VActionSequence {
+	   Action0016(2);
+        Action0015(1);
+        Action0016(2);
+        Action0015(8);
+	}
+
+	static meta void TurnWest(int npcId) : VActionSequence {
+		Action0022(1);
+	}
+
+	static meta void TurnSouth(int npcId) : VActionSequence {
+		Action0019(1);
+	}
+		static meta void TurnNorth(int npcId) : VActionSequence {
+		Action0020(1);
+	}
+	static meta void TurnEast8F(int npcId) : VActionSequence {
+		Action0023(1);
+	}
+	static meta void Global2805(int a1, int a2) : VGlobalCall[2805];
+	static native void Action0000(int amount) : 0x0;
+	static native void Action0001(int amount) : 0x1;
+	static native void Action0002(int amount) : 0x2;
+	static native void Action0003(int amount) : 0x3;
+	static native void Action000c(int amount) : 0xc;
+	static native void Action000d(int amount) : 0xd;
+	static native void Action000e(int amount) : 0xe;
+	static native void Action000f(int amount) : 0xf;
+    static native void Action0014(int amount) : 0x14; // Walk North2F
+    static native void Action0015(int amount) : 0x15; // Walk South 2F
+    static native void Action0016(int amount) : 0x16; // Walk West 2F
+	static native void Action0017(int amount) : 0x17; // Walk East 2F
+    static native void Action0021(int amount) : 0x21;
+    static native void Action0019(int amount) : 0x19;
+	static native void Action0020(int amount) : 0x20;
+	static native void Action0022(int amount) : 0x22;
+	static native void Action0023(int amount) : 0x23;
+	static native void Action003d(int amount) : 0x3d;
+	static native void Action003f(int amount) : 0x3f;
+	static native void Action0045(int amount) : 0x45;
+	static native void Action004b(int amount) : 0x4b;
+}

@@ -9,85 +9,188 @@
 */
 
 
+- Implement Balance Changes 
+- Implement Test Cases 
+- Implement AI Changes Fix 
+
 ====================================================================================================================================================
 /*   MARLON BUILD   */
+
+
+
+Small Issues: 
+    - Victini's Trainer Class is still using Claire's Sprite 
+    - Fix Music Table 
+    - Fix Alder's Trainer Class not having the right Trainer Music either 
+    - Add Alder's theme to the overworld.
+    - Make sure we're using the trainer background encounter music for Route 14
+    - Terastalization might not be using the correct pokemon ID 
 
 To Do:
 - HARD 
     - Implement and test the new switch AI function 
+    - Implement and test the new doubles switch AI 
+        - Backup the old AI Changes 
     - Debug the illusion implementation 
 
 - Moderate 
     - Test all the level cap scripts 
     - Implement all the marlon split scripts we've written 
     - Test the new Plasma Frigate Theft Script 
+    - Test applying the sprite sheets to the flashback models 
 
 - EASY 
-    - Add a "pre heal" modifier to the docs 
+    - Test the Exp Mode Setting
+    - Test the fixed Join Avenue Script
     - Test Grass Powder Immunity 
     - Test Overcoat / Safety Goggles Powder Immunity 
     - Test Corrosion AI damage calc
-    - Move the Reversal Mountain Flannery Thing into the Sanctum
-    - Add in Illusion Test Cases: 
-        4-5 mon teams that can be pretty simple but have a single illusion mon on them. 
-    
-
+    - Add in Test Cases 
+        - Doubles/Triples Switch AI Changes 
+        - Corrosion 
+        - Illusion     
+    - Update Clamperl evolution methods 
+    - Update the hidden ability logic to use the first value to also determine rate
+    - Sabrina's Alakazam now has Anticipation. It knows Calm Mind over Hyper Beam. 
+    - Dugtrio is Ability 3 Sand Force, Ability 1 Unnerve 
 
 - BACKGROUND 
     - Rebalancing Learnsets a bit. Nerfs across the board and a lot more high power moves made into scales. 
     - Retooling trainers with some of the new stuff we added and some of the old stuff that already existed. 
 
-Trainers: 
-    Underutilized Mechanics: 
-        Chip Away Normal Types 
-        Ability Neutraliizing: 
-            Gastro Acid 
-        
-        Evasion:
-            Double Team 
-            Acid Armor 
-            Smokescreen 
-            Sand Attack (in doubles) 
-            Anticipation
-            Snow Cloak / Sand Veil
-        Confusion:  
-            Supersonic
-            Rock Climb 
-            Confuse Ray 
-            Swagger 
-        Attraction 
-        Hazards
-        Trapping 
-            Block 
-            Mean Look 
-            Dive / Dig / Bounce / Fly / Shadow Force 
-            Pursuit 
-            Wrap / Fire Spin / Clamp / Whirlpool / etc. 
-            Shadow Tag / Arena Trap
-        Failure Boosting: 
-            Anger Point 
-            Thrash 
-            Seething Cold 
-            Uproar 
-            Stompin Tantrum 
-            Grudge 
-            Blunder Policy 
-        Priority: 
-            Quick Claw 
-            Quick Draw 
-            Trickster Herb 
-        Speed Control: 
-            Scary Face 
-            Rock Tomb 
-            Bulldoze 
-            icy Wind 
-            Glaciate 
-            Heavy Slam 
-            Heat Crash (make sure it has the same id as icy wind)
-        Chaos Stats: 
-            Moody 
-            Starf Berry 
 
+
+Test Cases: 
+    [ Test Case #1: CORROSION ]
+        Player:
+            Klinklang 
+        Enemy:
+            Victreebell (Ability: Corrosion) (Poison Jab, Cross Chop)
+
+    [ Test Case #2: Illusion ]
+        Player:
+            Toxicroak 
+        Enemy:
+            Patrat (level 1)
+            Tauros (double edge)
+            Gengar (Illusion) (Psychic)
+            Sandslash (Earthquake)
+            Pelipper (Air Slash)
+    
+    [ Test Case #3: Illusion ]
+        Player:
+            Toxicroak 
+        Enemy:
+            Patrat (level 1)
+            Tauros (double edge)
+            Sandslash (Earthquake)
+            Pelipper (Air Slash)
+            Gengar (Illusion) (Psychic)
+    
+    [ Test Case #4: Illusion ]
+        Player: 
+            Leavanny 
+        Enemy: 
+            Patrat 
+            Hypno (Illusion) (Smog)
+            Staraptor (wing attack)
+            Octillery (flame burst)
+            tauros (rock climb)
+    
+    [ Test Case #5: Illusion ]
+        Player: 
+            Leavanny 
+        Enemy: 
+            Patrat 
+            Staraptor (wing attack)
+            Octillery (flame burst)
+            tauros (rock climb)
+            Hypno (Illusion) (Smog)
+
+    [ Test Case #6: New Doubles Switch AI ]
+        Player: 
+            Leavanny 
+            Miltank 
+        Enemy: 
+            Patrat 
+            Patrat 
+            Sawk (Close Combat, Body Slam) (487.5)
+            Hitmonchan (Close Combat, Fire Punch) (680)
+            Hitmonlee (Flare Blitz) (600)
+    
+    [ Test Case #7: New Doubles Switch AI ]
+        Player: 
+            Dustox 
+            Miltank 
+        Enemy: 
+            Patrat 
+            Patrat
+            Sawk (Hi Jump Kick) (437.5)
+            Infernape (Flare Blitz) (540)
+            Alakazam (Psychic, Focus Blast) (510)
+    
+    [ Test Case #8: New Doubles Switch AI ]
+        Player: 
+            Dustox 
+            Miltank 
+            Swampert 
+        Enemy: 
+            Patrat 
+            Patrat 
+            Patrat 
+            Sawk (High Jump Kick)
+                Dustox + Miltank Slot: 438.75
+                Dustox + Miltank + Swampert Slot: 628.5
+                Miltank + Swampert Slot: 585                 
+            Alakazam (Psychic, Aura Sphere, Energy Ball)
+                Dustox + Miltank Slot: 450
+                Dustox + Miltank + Swampert Slot: 810 
+                Miltank + Swampert Slot: 540 
+            Infernape (Flare Blitz)
+                Dustox + Miltank Slot: 540 
+                Dustox + Miltank + Swampert Slot: 630
+                Miltank + Swampert Slot: 270 
+        Expected Behavior:
+            Sawk will always come in first on Miltank + Swampert sllot
+            Alakazam will always come in first on the middle slot 
+            Infernape will always come in first on the Dustox + Miltank Slot 
+    
+    [ Test Case #9: New Matchup AI ]
+        Player: 
+            Alakazam 
+        Enemy: 
+            Patrat 
+            Mightyena (Bite) (180 * 1.5 = 270)
+            Toxicroak (Wicked Blow) (220 * .5x = 110)
+            Scolipede (X-Scissor) (240 * .75x = 180)
+            Tauros (Head Charge) (195 * 1.0x = 195)
+    
+    [ Test Case #10: New Matchup AI ]
+        Player:
+            Jumpluff 
+        Enemy: 
+            Patrat 
+            Golem (Stone Edge) (315 * 0.5x = 157.5)
+            Swampert (Ice Punch) (320 * 0.5x = 160)
+            Arcanine (Fire Punch) (240 * 1.0x = 240)
+            Cryogonal (Ancient Power) (160 * 1.5x = 240)
+            Lopunny (Aurora Beam) (300 * 0.75x = 225)
+        Expected Behavior: 
+            Cryogonal -> Arcanine -> Lopunny -> Swampert -> Golem 
+     
+    [ Test Case #11: New Matchup AI ]
+        Player: 
+            Vaporeon 
+        Enemy: 
+            Patrat 
+            Magcargo (Ability: Dry Skin) (Solarbeam) (240 * 1.5x = 360)
+            Torterra (Seed Bomb) (240 * 1.0x = 240)
+            Stunfisk (Zap Cannon) (420 * 0.75x = 315)
+            Lapras (Freeze Dry) (210 * 1.25x = 262.5)
+        Expected Behavior: 
+            Magcargo -> Stunfisk -> Lapras -> Torterra 
+    
+    [ Test Case #12: New Matchup AI + ]
 
 ====================================================================================================================================================
 /*   DRAYDEN BUILD   */

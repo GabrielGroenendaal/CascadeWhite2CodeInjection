@@ -1,0 +1,1363 @@
+import messages.script.Msg0327.MSGID;
+
+import Base;
+import event.Battle;
+import event.actors.Actor;
+import event.actors.Follow;
+import event.actors.Player;
+import event.dialogs.Message;
+import event.dialogs.YesNoWin;
+import pokemon.Pokedex;
+import pokescript.vm.Math;
+import pokescript.vm.StackCtrl;
+import pokescript.vm.VM;
+import system.EventFlags;
+import system.EventWorks;
+import system.Field;
+import system.Input;
+import system.Runtime;
+import system.Sound;
+import system.text.WordSet;
+import pokemon.PokeParty;
+import event.Trainer;
+
+public class MainEvents {
+	public static void main_1() { // @ 0x30
+		if (EventWorks.Get(16672) != 2 || EventFlags.Get(2406)) {
+			return;
+		}
+		EventWorks.Set(16672, 1);
+		EventFlags.Clear(959);
+	}
+
+	public static void main_2() { // @ 0x5f
+	}
+
+	public static void main_3() { // @ 0x61
+		int v0;
+		int v1;
+		int v2;
+		int v3;
+		int v4;
+		int v16;
+
+		Actor.PauseAll();
+		WordSet.LoadPlayerName(0);
+		if (EventFlags.Get(427)) {
+			v16 = Player.GetExState();
+			if (v16 != 1) {
+				goto LABEL_0157;
+			}
+			Player.SetSpecialSequence(1);
+
+			LABEL_0157:
+			ActionSequence_01d4(13);
+			Actor.WaitActionFinish();
+			Message.ActorEx(1024, 18, 13, 0, 0);
+			Message.CloseAll();
+			ActionSequence_0500(255);
+			Actor.WaitActionFinish();
+			Global10535(13, 7, 1, 237, 10538);
+			goto LABEL_01c3;
+		}
+		v16 = Player.GetExState();
+		if (v16 != 1) {
+			goto LABEL_0094;
+		}
+		Player.SetSpecialSequence(1);
+
+		LABEL_0094:
+		ActionSequence_01d4(13);
+		Actor.WaitActionFinish();
+		Message.ActorGendered(1024, 0, 1, 13, 0, 0);
+		Message.ActorEx(1024, 2, 13, 0, 0);
+		Message.CloseAll();
+		ActionSequence_0550(13);
+		Actor.WaitActionFinish();
+		Message.ActorEx(1024, 3, 13, 0, 0);
+		Message.CloseAll();
+		ActionSequence_0500(255);
+		Actor.WaitActionFinish();
+		Global10535(13, 7, 1, 237, 10538);
+		EventFlags.Set(427);
+		EventWorks.Set(16673, 1);
+		Base.CMD_262(1, 20);
+
+		LABEL_01c3:
+		EventWorks.Set(16672, 2);
+		EventFlags.Set(959);
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+    // Function that is called when exiting Reversal Mountain 
+	public static void main_4() { // @ 0x1e0
+		int v0;
+		int v1;
+		int v16;
+
+		Actor.PauseAll();
+		WordSet.LoadPlayerName(0);
+		sub_038f();
+		Message.ActorEx(1024, 13, 254, 0, 0);
+		v16 = YesNoWin.Show();
+		if (v16 != 0) {
+			Message.ActorEx(1024, 16, 254, 0, 0);
+			Message.CloseAll();
+			Follow.SetEnableMovement(1);
+			ActionSequence_0500(255);
+			Actor.WaitActionFinish();
+			Follow.SetEnableMovement(0);
+			goto LABEL_02dc;
+		}
+		if (EventWorks.Get(16673) != 3) {
+			Message.ActorEx(1024, 15, 254, 0, 0);
+			EventFlags.Clear(959);
+			goto LABEL_0251;
+		}
+		Message.ActorEx(1024, 14, 254, 0, 0);
+		EventWorks.Set(16672, 3);
+		EventFlags.Set(959);
+		EventFlags.Clear(960);
+
+		LABEL_0251:
+		Message.CloseAll();
+		Actor.WalkRoute(254, 8, 9, 0, 8, 0);
+		Actor.WaitActionFinish();
+		ActionSequence_0540(254);
+		Actor.WaitActionFinish();
+		Global10536(6, 0);
+		if (EventWorks.Get(16672) == 3) {
+			goto LABEL_02dc;
+		}
+		ActionSequence_0508(255);
+		Actor.WaitActionFinish();
+		Runtime.ReserveScript(1);
+		Field.ChangeMapWarp(537, 29, 4, 2);
+
+		LABEL_02b8:
+
+		LABEL_02dc:
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+    // Script that is called when you reach the Magma Chamber 
+	public static void main_5() { // @ 0x2e2
+		int v32;
+
+		Actor.PauseAll();
+		WordSet.LoadPlayerName(0);
+		v32 = Player.GetDirection();
+		ActionSequence_0550(254);
+		Runtime.Sleep(8);
+		if (v32 != 3) {
+			ActionSequence_0548(255);
+			goto LABEL_0320;
+		}
+		ActionSequence_0540(255);
+
+		LABEL_0320:
+		Actor.WaitActionFinish();
+		ActionSequence_0530(254);
+		Actor.WaitActionFinish();
+		if (v32 != 3) {
+			ActionSequence_0540(254);
+			goto LABEL_0355;
+		}
+		ActionSequence_0548(254);
+
+		LABEL_0355:
+		Actor.WaitActionFinish();
+		Message.ActorGendered(1024, 4, 5, 254, 0, 0);
+		Message.CloseAll();
+		EventWorks.Set(16673, 2);
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_6() { // @ 0x373
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 17, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+
+    // False Swipe Scientist Dude at the Top of the Map 
+	public static void main_7() { // @ 0x43b
+		int v0;
+		int v1;
+		int v16;
+
+		Actor.PauseAll();
+		if (EventFlags.Get(469)) {
+			Sound.SEPlay(1351);
+			Actor.FacePlayer();
+			Message.Actor(1024, 22, 0, 0);
+			Input.LastKeyWait();
+			Message.CloseActor();
+			goto LABEL_04e9;
+		}
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 19, 0, 0);
+		v16 = Pokedex.CheckHabitatList(461, 0, 0);
+		if (v16 != 1) {
+			Message.Actor(1024, 20, 0, 0);
+			Input.LastKeyWait();
+			Message.CloseAll();
+			goto LABEL_04e9;
+		}
+		Message.Actor(1024, 21, 0, 0);
+		Message.CloseAll();
+		Global2805(381, 1);
+		EventFlags.Set(469);
+		Message.Actor(1024, 22, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseAll();
+
+		LABEL_04e9:
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+
+    // Hikers Trigger Event
+    // 16446 = 0
+    public static void main_8() {
+        int trainer_A;
+        int trainer_B;
+        int trainer_A_Entity;
+        int trainer_B_Entity;
+        int trainer_A_Pos; 
+        int trainer_B_Pos;
+        int event;
+        
+
+        trainer_A = 522; // CHANGE THE MESSAGE ID
+        trainer_B = 521; // CHANGE THE MESSAGE ID
+        trainer_A_Entity = 15; // CHANGE THE MESSAGE ID
+        trainer_B_Entity = 3; // CHANGE THE MESSAGE ID
+        trainer_A_Pos = 4; // 1: North of player, 2: South of player, 3: Right of Player, 4: Left of Player
+        trainer_B_Pos = 3; // 1: North of player, 2: South of player, 3: Right of Player, 4: Left of Player
+        event = 16446;
+
+        Actor.PauseAll();
+		ShowExclamationMark(254);
+		Actor.WaitActionFinish();
+		TurnNorth8F(255);
+		Actor.WaitActionFinish();
+        
+	    checkSetting();
+	    WalkSouth8F(255);
+	    WalkSouth8F(254);
+	    Actor.WaitActionFinish();
+	  	
+        if (EventFlags.Get(508)) {
+            trainerBackToBackBattles(trainer_A, trainer_B, trainer_A_Entity, trainer_B_Entity, trainer_A_Pos, trainer_B_Pos, event);
+            EventWorks.Set(16446, 1);
+        } else {
+            trainerTagBattles(trainer_A, trainer_B, trainer_A_Entity, trainer_B_Entity, trainer_A_Pos, trainer_B_Pos, event);
+            EventWorks.Set(16446, 1);
+        }            
+    }
+
+    // Speaking with Hiker Markus
+    public static void main_9() {
+    	int textId;
+    	Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		textId = getTextId(521);
+		Message.Actor(1024, textId, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
+
+    // Speaking with Hiker Jared
+    public static void main_10() {
+    	int textId;
+    	Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		textId = getTextId(522);
+		Message.Actor(1024, textId, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
+
+
+
+
+    // Rangers Trigger Event
+    // 16446 = 1
+    public static void main_11() {
+        int trainer_A;
+        int trainer_B;
+        int trainer_A_Entity;
+        int trainer_B_Entity;
+        int trainer_A_Pos; 
+        int trainer_B_Pos;
+        int event;
+        
+
+        trainer_A = 516; // CHANGE THE MESSAGE ID
+        trainer_B = 517; // CHANGE THE MESSAGE ID
+        trainer_A_Entity = 4; // CHANGE THE MESSAGE ID
+        trainer_B_Entity = 18; // CHANGE THE MESSAGE ID
+        trainer_A_Pos = 2; // 1: North of player, 2: South of player, 3: Right of Player, 4: Left of Player
+        trainer_B_Pos = 1; // 1: North of player, 2: South of player, 3: Right of Player, 4: Left of Player
+        event = 16446;
+
+        Actor.PauseAll();
+		ShowExclamationMark(254);
+		Actor.WaitActionFinish();
+		TurnWest8F(255);
+		Actor.WaitActionFinish();
+        
+	    checkSetting();
+	    WalkEast8F(255);
+	    WalkEast8F(254);
+	    Actor.WaitActionFinish();
+	  	
+        if (EventFlags.Get(508)) {
+            trainerBackToBackBattles(trainer_A, trainer_B, trainer_A_Entity, trainer_B_Entity, trainer_A_Pos, trainer_B_Pos, event);
+            EventWorks.Set(16446, 2);
+        } else {
+            trainerTagBattles(trainer_A, trainer_B, trainer_A_Entity, trainer_B_Entity, trainer_A_Pos, trainer_B_Pos, event);
+            EventWorks.Set(16446, 2);
+        }            
+    }
+
+    // Speaking with Ranger Lewis
+    public static void main_12() {
+    	int textId;
+    	Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		textId = getTextId(516);
+		Message.Actor(1024, textId, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
+
+    // Speaking with Ranger Eliza
+    public static void main_13() {
+    	int textId;
+    	Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		textId = getTextId(517);
+		Message.Actor(1024, textId, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
+
+
+
+
+
+
+    // Doctors Trigger Event
+    // 16446 = 2
+    public static void main_14() {
+        int trainer_A;
+        int trainer_B;
+        int trainer_A_Entity;
+        int trainer_B_Entity;
+        int trainer_A_Pos; 
+        int trainer_B_Pos;
+        int event;
+        
+
+        trainer_A = 672; // CHANGE THE MESSAGE ID
+        trainer_B = 243; // CHANGE THE MESSAGE ID
+        trainer_A_Entity = 7; // CHANGE THE MESSAGE ID
+        trainer_B_Entity = 17; // CHANGE THE MESSAGE ID
+        trainer_A_Pos = 1; // 1: North of player, 2: South of player, 3: Right of Player, 4: Left of Player
+        trainer_B_Pos = 2; // 1: North of player, 2: South of player, 3: Right of Player, 4: Left of Player
+        event = 16446;
+
+        Actor.PauseAll();
+		ShowExclamationMark(254);
+		Actor.WaitActionFinish();
+		TurnWest8F(255);
+		Actor.WaitActionFinish();
+        
+	    checkSetting();
+	    WalkEast8F(255);
+	    WalkEast8F(254);
+	    Actor.WaitActionFinish();
+	  	
+        if (EventFlags.Get(508)) {
+            trainerBackToBackBattles(trainer_A, trainer_B, trainer_A_Entity, trainer_B_Entity, trainer_A_Pos, trainer_B_Pos, event);
+            EventWorks.Set(16446, 3);
+        } else {
+            trainerTagBattles(trainer_A, trainer_B, trainer_A_Entity, trainer_B_Entity, trainer_A_Pos, trainer_B_Pos, event);
+            EventWorks.Set(16446, 3);
+        }         
+    }
+
+    // Speaking with Doctor Derek
+    public static void main_15() {
+    	int textId;
+    	Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		textId = getTextId(672);
+		Message.Actor(1024, textId, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
+
+    // Speaking with Nurse Ratchet
+    public static void main_16() {
+    	int textId;
+    	Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		textId = getTextId(243);
+		Message.Actor(1024, textId, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
+
+
+
+
+    // Fighters Trigger Event
+    // 16446 = 3
+    public static void main_17() {
+        int trainer_A;
+        int trainer_B;
+        int trainer_A_Entity;
+        int trainer_B_Entity;
+        int trainer_A_Pos; 
+        int trainer_B_Pos;
+        int event;
+        
+
+        trainer_A = 523; // CHANGE THE MESSAGE ID
+        trainer_B = 524; // CHANGE THE MESSAGE ID
+        trainer_A_Entity = 2; // CHANGE THE MESSAGE ID
+        trainer_B_Entity = 0; // CHANGE THE MESSAGE ID
+        trainer_A_Pos = 3; // 1: North of player, 2: South of player, 3: Right of Player, 4: Left of Player
+        trainer_B_Pos = 4; // 1: North of player, 2: South of player, 3: Right of Player, 4: Left of Player
+        event = 16446;
+
+        Actor.PauseAll();
+		ShowExclamationMark(254);
+		Actor.WaitActionFinish();
+		TurnSouth(255);
+		Actor.WaitActionFinish();
+        
+	    checkSetting();
+	    WalkNorth8F(255);
+	    WalkNorth8F(254);
+	    Actor.WaitActionFinish();
+	  	
+        if (EventFlags.Get(508)) {
+            trainerBackToBackBattles(trainer_A, trainer_B, trainer_A_Entity, trainer_B_Entity, trainer_A_Pos, trainer_B_Pos, event);
+            EventWorks.Set(16446, 4);
+        } else {
+            trainerTagBattles(trainer_A, trainer_B, trainer_A_Entity, trainer_B_Entity, trainer_A_Pos, trainer_B_Pos, event);
+            EventWorks.Set(16446, 4);
+        }             
+    }
+
+    // Speaking with Black Belt Corey
+    public static void main_18() {
+    	int textId;
+    	Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		textId = getTextId(524);
+		Message.Actor(1024, textId, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
+
+    // Speaking with Battle Girl Chan
+    public static void main_19() {
+    	int textId;
+    	Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		textId = getTextId(523);
+		Message.Actor(1024, textId, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
+
+
+
+    // Backpackers Trigger Event
+    // 16446 = 4
+    public static void main_20() {
+        int trainer_A;
+        int trainer_B;
+        int trainer_A_Entity;
+        int trainer_B_Entity;
+        int trainer_A_Pos; 
+        int trainer_B_Pos;
+        int event;
+        
+
+        trainer_A = 788; // CHANGE THE MESSAGE ID
+        trainer_B = 514; // CHANGE THE MESSAGE ID
+        trainer_A_Entity = 1; // CHANGE THE MESSAGE ID
+        trainer_B_Entity = 14; // CHANGE THE MESSAGE ID
+        trainer_A_Pos = 4; // 1: North of player, 2: South of player, 3: Right of Player, 4: Left of Player
+        trainer_B_Pos = 3; // 1: North of player, 2: South of player, 3: Right of Player, 4: Left of Player
+        event = 16446;
+
+        Actor.PauseAll();
+		ShowExclamationMark(254);
+		Actor.WaitActionFinish();
+		TurnSouth(255);
+		Actor.WaitActionFinish();
+        
+	    checkSetting();
+	    WalkNorth8F(255);
+	    WalkNorth8F(254);
+	    Actor.WaitActionFinish();
+	  	
+        if (EventFlags.Get(508)) {
+            trainerBackToBackBattles(trainer_A, trainer_B, trainer_A_Entity, trainer_B_Entity, trainer_A_Pos, trainer_B_Pos, event);
+            EventWorks.Set(16446, 5);
+        } else {
+            trainerTagBattles(trainer_A, trainer_B, trainer_A_Entity, trainer_B_Entity, trainer_A_Pos, trainer_B_Pos, event);
+            EventWorks.Set(16446, 5);
+        }             
+    }
+
+    // Speaking with Backpacker Kiyo
+    public static void main_21() {
+    	int textId;
+    	Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		textId = getTextId(788);
+		Message.Actor(1024, textId, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
+
+    // Speaking with Backpacker Kumiko
+    public static void main_22() {
+    	int textId;
+    	Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		textId = getTextId(514);
+		Message.Actor(1024, textId, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
+
+
+
+    // Ace Trainers Trigger Event
+    // 16446 = 5
+    public static void main_23() {
+        int trainer_A;
+        int trainer_B;
+        int trainer_A_Entity;
+        int trainer_B_Entity;
+        int trainer_A_Pos; 
+        int trainer_B_Pos;
+        int event;
+        
+
+        trainer_A = 519; // CHANGE THE MESSAGE ID
+        trainer_B = 787; // CHANGE THE MESSAGE ID
+        trainer_A_Entity = 6; // CHANGE THE MESSAGE ID
+        trainer_B_Entity = 5; // CHANGE THE MESSAGE ID
+        trainer_A_Pos = 4; // 1: North of player, 2: South of player, 3: Right of Player, 4: Left of Player
+        trainer_B_Pos = 3; // 1: North of player, 2: South of player, 3: Right of Player, 4: Left of Player
+        event = 16446;
+
+        Actor.PauseAll();
+		ShowExclamationMark(254);
+		Actor.WaitActionFinish();
+		TurnSouth(255);
+		Actor.WaitActionFinish();
+        
+	    checkSetting();
+	    WalkNorth8F(255);
+	    WalkNorth8F(254);
+	    Actor.WaitActionFinish();
+	  	
+        if (EventFlags.Get(508)) {
+            trainerBackToBackBattles(trainer_A, trainer_B, trainer_A_Entity, trainer_B_Entity, trainer_A_Pos, trainer_B_Pos, event);
+            EventWorks.Set(16446, 6);
+        } else {
+            trainerTagBattles(trainer_A, trainer_B, trainer_A_Entity, trainer_B_Entity, trainer_A_Pos, trainer_B_Pos, event);
+            EventWorks.Set(16446, 6);
+        }        
+    }
+
+    // Speaking with Ace Trainer Ray
+    public static void main_24() {
+    	int textId;
+    	Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		textId = getTextId(519);
+		Message.Actor(1024, textId, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
+
+    // Speaking with Ace Trainer Cora
+    public static void main_25() {
+    	int textId;
+    	Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		textId = getTextId(787);
+		Message.Actor(1024, textId, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
+
+    // Exiting Reversal Mountain 
+    public static void main_26() {
+        int v0;
+		int v1;
+		int v16;
+		Actor.PauseAll();
+		WordSet.LoadPlayerName(0);
+		sub_038f();
+		Sound.SEPlay(1351);
+		Message.ActorEx(1024, 55, 254, 0, 0);
+        	Input.LastKeyWait();
+        	Sound.SEPlay(1852);
+        	ShowMusicNote(254);
+        	Sound.SEWait();
+       	Actor.WaitActionFinish();
+        Message.CloseAll();
+        Sound.SEPlay(1351);
+        Message.System(56, 2);
+        Message.WaitAdvance();
+        Message.CloseAll();
+        ShowExclamationMark(254);
+        TurnSouth(254);
+        Actor.WaitActionFinish();
+        Sound.SEPlay(1351);
+		Message.ActorEx(1024, 57, 254, 0, 0);
+        Input.LastKeyWait();
+        Message.CloseAll();
+        WalkWest8F(254);
+        Actor.WaitActionFinish();
+        Sound.SEPlay(1351);
+        Message.System(58, 2);
+        Message.WaitAdvance();
+        Message.CloseAll();
+        Runtime.Sleep(20);
+        Sound.SEPlay(1351);
+        Message.ActorEx(1024, 59, 254, 0, 0);
+        Input.LastKeyWait();
+        Message.CloseAll();
+        Runtime.Sleep(60);
+        Sound.SEPlay(1351);
+        Message.ActorEx(1024, 60, 254, 0, 0);
+        Input.LastKeyWait();
+        Message.CloseAll();
+        ShowEllipses(254);
+        Actor.WaitActionFinish();
+        Sound.SEPlay(1351);
+        Message.ActorEx(1024, 61, 254, 0, 0);
+        Input.LastKeyWait();
+        Message.CloseAll();
+        HopDown(254);
+        Actor.WaitActionFinish();
+        HopRight(254);
+        Actor.WaitActionFinish();
+        HopLeft(254);
+        Actor.WaitActionFinish();
+        HopDown(254);
+        Actor.WaitActionFinish();
+        Sound.SEPlay(1351);
+        Message.ActorEx(1024, 62, 254, 0, 0);
+        Input.LastKeyWait();
+        Message.CloseAll();
+        Sound.SEPlay(1853);
+        WalkEast8F(254);
+        Actor.WaitActionFinish();
+        Sound.SEPlay(1351);
+        Message.ActorEx(1024, 63, 254, 0, 0);
+        Input.LastKeyWait();
+        Message.CloseAll();
+
+        // Walk Route out of Reversal Mountain 
+
+        // Do whatever you need to do to reset the flags properly.
+		Actor.WalkRoute(254, 90, 9, 0, 4, 0);
+		Actor.WaitActionFinish();
+       	Actor.Hide(254);
+		EventWorks.Set(16446, 7);  // Despawns the Trigger Values
+		EventWorks.Set(16672, 3);  // CHANGE: This needs to be whatever despawns everything
+		EventFlags.Set(959);       // CHANGE: This needs to be whatever despawns everything
+		EventFlags.Set(960);     // CHANGE: This needs to be whatever despawns everything
+		Global10536(6, 0);
+		TurnEast8F(255);
+		Actor.WaitActionFinish();
+
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+
+    }
+
+    // speaking with Flannery 
+    // PUT THIS IN THE MAIN CHAMBER 
+    public static void main_27() {
+    		int textId;
+    		int yesNo;
+    		int isVictory;
+    		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+
+		if (EventFlags.Get(1520 + 559)) {
+			Message.Actor(1024, 53, 0, 0);
+			Input.LastKeyWait();
+			Message.CloseActor();
+			goto Label_EndEnigmaScript;
+		}
+		Message.Actor(1024, 49, 0, 0);
+		yesNo = YesNoWin.Show();
+		if (yesNo != 0) {
+			Message.Actor(1024, 51, 0, 0);
+			Input.LastKeyWait();
+			Message.CloseActor();
+			goto Label_EndEnigmaScript;
+		}
+		Message.Actor(1024, 50, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+
+		Battle.CallTrainerBattle(559, 0, 0); // REPLACE WITH ROUGHNECK TRAINER ID 
+		isVictory = Battle.IsTrainerVictory();
+		if (isVictory != 1) {
+			Battle.CallTrainerLose();
+		}
+        Battle.EndTrainerBattle();
+		Message.Actor(1024, 52, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		
+		Global2805(362, 1);
+        Global2805(184, 3);
+        Global2805(548, 3);
+		Message.Actor(1024, 54, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+        WalkEast8F(29);
+        Actor.WaitActionFinish();
+        TurnSouth(29);
+        Actor.WaitActionFinish();
+		EventFlags.Set(1520 + 559);
+
+		Label_EndEnigmaScript:
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
+    
+
+
+	static void sub_038f() { // @ 0x38f
+		int v32;
+
+		v32 = Player.GetDirection();
+		if (v32 == 2) {
+			ActionSequence_0548(255);
+			ActionSequence_0520(254);
+			goto LABEL_0437;
+		}
+
+		LABEL_03bc:
+		if (v32 == 3) {
+			ActionSequence_0540(255);
+			ActionSequence_0528(254);
+			goto LABEL_0437;
+		}
+
+		LABEL_03e5:
+		if (v32 == 0) {
+			ActionSequence_0538(255);
+			ActionSequence_0510(254);
+			goto LABEL_0437;
+		}
+
+		LABEL_040e:
+		if (v32 == 1) {
+			ActionSequence_0530(255);
+			ActionSequence_0518(254);
+			goto LABEL_0437;
+		}
+
+		LABEL_0437:
+		Actor.WaitActionFinish();
+	}
+    
+    static void checkSetting() {
+		int yesNo;
+		WordSet.LoadRivalName(0);
+		Message.ActorEx(1024, 47, 254, 4, 0);
+		yesNo = YesNoWin.Show();
+		if (yesNo == 0) {
+            if (EventFlags.Get(508)) {
+                EventFlags.Clear(508);
+            } 
+        } 
+        else {
+        	EventFlags.Set(508);
+        }
+        WordSet.LoadRivalName(0);
+		Message.ActorEx(1024, 48, 254, 4, 0);
+        Input.LastKeyWait();
+        Message.CloseActor();
+	}
+
+    static void trainerBackToBackBattles(int trainer_A, int trainer_B, int trainer_A_Entity, int trainer_B_Entity, int trainer_A_Pos, int trainer_B_Pos, int event){
+        int textId;
+        int isVictory;
+        int pokeCount; 
+        int dummy;
+        int eventValue;
+		EventFlags.Set(535);
+		Sound.SEPlay(1351);
+        ShowExclamationMark(trainer_A_Entity);
+        Actor.WaitActionFinish();
+
+        if (trainer_A_Pos == 1) { // Trainer is above the player
+            TurnSouth8F(trainer_A_Entity);
+            TurnNorth8F(255);
+            Actor.WaitActionFinish();
+        }
+        if (trainer_A_Pos == 2) { // trainer is below the player
+            TurnNorth8F(trainer_A_Entity);
+            TurnSouth8F(255);
+            Actor.WaitActionFinish();
+        }
+        if (trainer_A_Pos == 3) { // trainer is right of the player
+            TurnWest8F(trainer_A_Entity);
+            TurnEast8F(255);
+            Actor.WaitActionFinish();
+        }
+        if (trainer_A_Pos == 4) { // trainer is left off the player.
+            TurnEast8F(trainer_A_Entity);
+            TurnWest8F(255);
+            Actor.WaitActionFinish();
+        }
+        Trainer.PlayBGMPush(trainer_A);
+        textId = getTextId(trainer_A);
+        Message.ActorEx(1024, textId, trainer_A_Entity, 4, 0);
+        Input.LastKeyWait();
+        Message.CloseAll();
+
+        Battle.CallTrainerBattle(trainer_A, 0, 0);
+
+
+        // Second Trainer of the Back to Back battle.
+
+        isVictory = Battle.IsTrainerVictory();
+        if (isVictory != 1) { 
+			EventFlags.Clear(535);
+            Battle.CallTrainerLose();
+            goto Label_EndBackToBackBattleScript;
+        }
+        pokeCount = PokeParty.GetPkmCount(2);
+        if (pokeCount == 0){
+            PokeParty.RecoverAll();
+        } 
+        Battle.EndTrainerBattle();
+
+		Sound.SEPlay(1351);
+        ShowExclamationMark(trainer_B_Entity);
+        Actor.WaitActionFinish();
+        if (trainer_B_Pos == 1) { // Trainer is above the player
+            TurnSouth8F(trainer_B_Entity);
+            TurnNorth8F(255);
+            Actor.WaitActionFinish();
+        }
+        if (trainer_B_Pos == 2) { // trainer is below the player
+            TurnNorth8F(trainer_B_Entity);
+            TurnSouth8F(255);
+            Actor.WaitActionFinish();
+        }
+        if (trainer_B_Pos == 3) { // trainer is right of the player
+            TurnWest8F(trainer_B_Entity);
+            TurnEast8F(255);
+            Actor.WaitActionFinish();
+        }
+        if (trainer_B_Pos == 4) { // trainer is left off the player.
+            TurnEast8F(trainer_B_Entity);
+            TurnWest8F(255);
+            Actor.WaitActionFinish();
+        }
+		Trainer.PlayBGMPush(trainer_B);
+        textId = getTextId(trainer_B);
+        Message.ActorEx(1024, textId, trainer_B_Entity, 4, 0);
+        Input.LastKeyWait();
+        Message.CloseAll();
+
+        Battle.CallTrainerBattle(trainer_B, 0, 0);
+ 
+        isVictory = Battle.IsTrainerVictory();
+        if (isVictory != 1) { 
+		  EventFlags.Clear(535);
+            Battle.CallTrainerLose();
+            goto Label_EndBackToBackBattleScript;
+        }
+        pokeCount = PokeParty.GetPkmCount(2);
+        if (pokeCount == 0){
+            PokeParty.RecoverAll();
+        } else {
+            dummy = PokeParty.GetEVTotal(0);
+        }
+        Battle.EndTrainerBattle();
+        EventFlags.Set(1520 + trainer_A);
+        EventFlags.Set(1520 + trainer_B);
+	   EventFlags.Clear(535);
+	 
+        Label_EndBackToBackBattleScript:
+        Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
+
+    static void trainerTagBattles(int trainer_A, int trainer_B, int trainer_A_Entity, int trainer_B_Entity, int trainer_A_Pos, int trainer_B_Pos, int event){
+        int partnerTeamID; 
+        int textId;
+        int isVictory;
+        int pokeCount; 
+        int dummy;
+		partnerTeamID = 237;
+	    Sound.SEPlay(1351);
+        ShowExclamationMark(trainer_A_Entity);
+        Actor.WaitActionFinish();
+		Trainer.PlayBGMPush(trainer_A);
+        if (trainer_A_Pos == 1) { // Trainer is above the player
+            TurnSouth8F(trainer_A_Entity);
+            TurnNorth8F(255);
+            Actor.WaitActionFinish();
+        }
+        if (trainer_A_Pos == 2) { // trainer is below the player
+            TurnNorth8F(trainer_A_Entity);
+            TurnSouth8F(255);
+            Actor.WaitActionFinish();
+        }
+        if (trainer_A_Pos == 3) { // trainer is right of the player
+            TurnWest8F(trainer_A_Entity);
+            TurnEast8F(255);
+            Actor.WaitActionFinish();
+        }
+        if (trainer_A_Pos == 4) { // trainer is left off the player.
+            TurnEast8F(trainer_A_Entity);
+            TurnWest8F(255);
+            Actor.WaitActionFinish();
+        }
+        textId = getTextId(trainer_A);
+        Message.ActorEx(1024, textId, trainer_A_Entity, 4, 0);
+        Input.LastKeyWait();
+        Message.CloseAll();
+
+		Sound.SEPlay(1351);
+        ShowExclamationMark(trainer_B_Entity);
+        Actor.WaitActionFinish();
+        if (trainer_B_Pos == 1) { // Trainer is above the player
+            TurnSouth8F(trainer_B_Entity);
+            TurnNorth8F(255);
+            Actor.WaitActionFinish();
+        }
+        if (trainer_B_Pos == 2) { // trainer is below the player
+            TurnNorth8F(trainer_B_Entity);
+            TurnSouth8F(255);
+            Actor.WaitActionFinish();
+        }
+        if (trainer_B_Pos == 3) { // trainer is right of the player
+            TurnWest8F(trainer_B_Entity);
+            TurnEast8F(255);
+            Actor.WaitActionFinish();
+        }
+        if (trainer_B_Pos == 4) { // trainer is left off the player.
+            TurnEast8F(trainer_B_Entity);
+            TurnWest8F(255);
+            Actor.WaitActionFinish();
+        }
+        textId = getTextId(trainer_B);
+        Message.ActorEx(1024, textId, trainer_B_Entity, 4, 0);
+        Input.LastKeyWait();
+        Message.CloseAll();
+
+        Battle.CallTrainerMultiBattle(partnerTeamID, trainer_A, trainer_B, 0);
+        isVictory = Battle.IsTrainerVictory();
+        if (isVictory != 1) {
+			EventFlags.Clear(535);
+            Battle.CallTrainerLose();
+            goto Label_EndMultiBattleScript;
+        }
+
+        pokeCount = PokeParty.GetPkmCount(2);
+        if (pokeCount == 0){
+            PokeParty.RecoverAll();
+        } else {
+            dummy = PokeParty.GetEVTotal(0);
+        }
+        Battle.EndTrainerBattle();
+		EventFlags.Set(1520 + trainer_A);
+        EventFlags.Set(1520 + trainer_B);
+        Battle.EndTrainerBattle();
+        EventFlags.Set(1520 + trainer_A);
+        EventFlags.Set(1520 + trainer_B);
+		EventFlags.Clear(535);
+        Label_EndMultiBattleScript:
+        Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
+
+    static int getTextId(int trainerId){ 
+        // For each trainer ID returns the text address based on if they've been defeated or not. 
+        
+        // Hiker Markus
+		if (trainerId == 521) {
+            if (EventFlags.Get(1520 + trainerId)) {
+                return 24;
+            } else {
+                return 23;
+            }
+        }
+		// Hiker Jared
+		if (trainerId == 522) {
+            if (EventFlags.Get(1520 + trainerId)) {
+                return 26;
+            } else {
+                return 25;
+            }
+        }
+		// Ranger Lewis
+		if (trainerId == 516) {
+            if (EventFlags.Get(1520 + trainerId)) {
+                return 28;
+            } else {
+                return 27;
+            }
+        }
+		// Ranger Eliza
+		if (trainerId == 517) {
+            if (EventFlags.Get(1520 + trainerId)) {
+                return 30;
+            } else {
+                return 29;
+            }
+        }
+		// Doctor Derek
+		if (trainerId == 672) {
+            if (EventFlags.Get(1520 + trainerId)) {
+                return 32;
+            } else {
+                return 31;
+            }
+        }
+		// Nurse Ratchet
+		if (trainerId == 243) {
+            if (EventFlags.Get(1520 + trainerId)) {
+                return 34;
+            } else {
+                return 33;
+            }
+        }
+		// Black Belt Corey
+		if (trainerId == 524) {
+            if (EventFlags.Get(1520 + trainerId)) {
+                return 36;
+            } else {
+                return 35;
+            }
+        }
+		// Battle Girl Chan
+		if (trainerId == 523) {
+            if (EventFlags.Get(1520 + trainerId)) {
+                return 38;
+            } else {
+                return 37;
+            }
+        }
+		// Backpacker Kiyo
+		if (trainerId == 788) {
+            if (EventFlags.Get(1520 + trainerId)) {
+                return 40;
+            } else {
+                return 39;
+            }
+        }
+		// Backpacker Kumiko
+		if (trainerId == 514) {
+            if (EventFlags.Get(1520 + trainerId)) {
+                return 42;
+            } else {
+                return 41;
+            }
+        }
+        // Ace Trainer Ray
+		if (trainerId == 519) {
+            if (EventFlags.Get(1520 + trainerId)) {
+                return 44;
+            } else {
+                return 43;
+            }
+        }
+		// Ace Trainer Cora
+		if (trainerId == 787) {
+            if (EventFlags.Get(1520 + trainerId)) {
+                return 46;
+            } else {
+                return 45;
+            }
+        }
+		return 0;
+    }
+
+	static meta void ActionSequence_01d4(int npcId) : VActionSequence {
+		Action004b(1);
+		Action000e(1);
+	}
+
+	static meta void ActionSequence_0500(int npcId) : VActionSequence {
+		Action000f(1);
+	}
+
+	static meta void ActionSequence_0508(int npcId) : VActionSequence {
+		Action000e(1);
+	}
+
+	static meta void ActionSequence_0510(int npcId) : VActionSequence {
+		Action0000(1);
+	}
+
+	static meta void ActionSequence_0518(int npcId) : VActionSequence {
+		Action0001(1);
+	}
+
+	static meta void ActionSequence_0520(int npcId) : VActionSequence {
+		Action0002(1);
+	}
+
+	static meta void ActionSequence_0528(int npcId) : VActionSequence {
+		Action0003(1);
+	}
+
+	static meta void ActionSequence_0530(int npcId) : VActionSequence {
+		Action0020(1);
+	}
+
+	static meta void ActionSequence_0538(int npcId) : VActionSequence {
+		Action0021(1);
+	}
+
+	static meta void ActionSequence_0540(int npcId) : VActionSequence {
+		Action0022(1);
+	}
+
+	static meta void ActionSequence_0548(int npcId) : VActionSequence {
+		Action0023(1);
+	}
+
+	static meta void ActionSequence_0550(int npcId) : VActionSequence {
+		Action004b(1);
+	}
+    
+	static meta void ShowExclamationMark(int npcId) : VActionSequence { 
+		Action004b(1);
+	}
+	
+	static meta void ExclaimAndTurnSouth(int npcId) : VActionSequence {
+		Action004b(1);
+		Action0021(1);
+	}
+
+	static meta void WalkEastThenSouthThenEast8F(int npcId) : VActionSequence {
+		Action0013(1);
+		Action0011(4);
+		Action0013(9);
+	}
+
+	static meta void WalkWestThenSouthThenEast4F(int npcId) : VActionSequence {
+		Action0012(1);
+		Action0011(4);
+		Action0013(9);
+	}
+
+	static meta void WalkSouthThenWalkEast8F_Again(int npcId) : VActionSequence {
+		Action000d(2);
+		Action000f(9);
+	}
+
+	static meta void WalkSouth5Tiles8F(int npcId) : VActionSequence {
+		Action000d(5);
+	}
+
+		static meta void TurnNorth(int npcId) : VActionSequence {
+		Action0020(1);
+	}
+
+	static meta void WalkSouthThenWalkEas10Tilest8F(int npcId) : VActionSequence {
+		Action000d(5);
+		Action000f(10);
+	}
+
+	static meta void WalkSouthThenWalkEast8F(int npcId) : VActionSequence {
+		Action000d(2);
+		Action000f(9);
+	}
+
+	static meta void WalkEast8F(int npcId) : VActionSequence {
+		Action000f(1);
+	}
+
+	static meta void WalkWest8F(int npcId) : VActionSequence {
+		Action000e(1);
+	}
+
+	static meta void LookSouth(int npcId) : VActionSequence {
+		Action0001(1);
+	}
+
+	static meta void LookEast(int npcId) : VActionSequence {
+		Action0003(1);
+	}
+
+	static meta void LookNorth(int npcId) : VActionSequence {
+		Action0000(1);
+	}
+
+
+
+	static meta void TurnNorth8F(int npcId) : VActionSequence {
+		Action0020(1);
+	}
+
+	static meta void TurnSouth8F(int npcId) : VActionSequence {
+		Action0021(1);
+	}
+
+	static meta void TurnWest8F(int npcId) : VActionSequence {
+		Action0022(1);
+	}
+
+	static meta void TurnEast8F(int npcId) : VActionSequence {
+		Action0023(1);
+	}
+
+	static meta void ShowExclamationMark(int npcId) : VActionSequence {
+		Action004b(1);
+	}
+
+	static meta void ActionSequence_0928(int npcId) : VActionSequence {
+		Action009f(1);
+	}
+	static meta void WalkNorth8F(int npcId) : VActionSequence {
+		Action000c(1);
+	}
+	static meta void WalkSouth8F(int npcId) : VActionSequence {
+		Action000d(1);
+	}
+		
+	static meta void TurnSouth(int npcId) : VActionSequence {
+		Action0021(1);
+	}
+
+    static meta void HopLeft(int npcId) : VActionSequence {
+        Action0032(1);
+    }
+
+    static meta void HopRight(int npcId) : VActionSequence {
+        Action0033(1);
+    }
+
+    static meta void HopUp(int npcId) : VActionSequence {
+        Action0030(1);
+    }
+
+    static meta void HopDown(int npcId) : VActionSequence {
+        Action0031(1);
+    }
+
+    static meta void DashAway(int npcId) : VActionSequence {
+        Action0017(10);
+    }
+    static meta void DashAway2(int npcId) : VActionSequence {
+        Action0015(6);
+        Action0017(7);
+    }
+
+
+    static meta void ShowMusicNote(int npcId) : VActionSequence {
+        Action00a0(1);
+    }
+
+    
+    static meta void ShowEllipses(int npcId) : VActionSequence {
+        Action00a1(1);
+    }
+	static meta void Global10535(int a1, int a2, int a3, int a4, int a5) : VGlobalCall[10535];
+	static meta void Global10536(int a1, int a2) : VGlobalCall[10536];
+	static meta void Global2805(int a1, int a2) : VGlobalCall[2805];
+
+	static native void Action0000(int amount) : 0x0;
+	static native void Action0001(int amount) : 0x1;
+	static native void Action0002(int amount) : 0x2;
+	static native void Action0003(int amount) : 0x3;
+	static native void Action000c(int amount) : 0xc;
+	static native void Action000d(int amount) : 0xd;
+	static native void Action000e(int amount) : 0xe;
+	static native void Action000f(int amount) : 0xf;
+    static native void Action0011(int amount) : 0x11;
+	static native void Action0012(int amount) : 0x12;
+	static native void Action0013(int amount) : 0x13;
+    static native void Action0015(int amount) : 0x15;
+	static native void Action0016(int amount) : 0x16;
+	static native void Action0017(int amount) : 0x17;
+	static native void Action0020(int amount) : 0x20;
+	static native void Action0021(int amount) : 0x21;
+	static native void Action0022(int amount) : 0x22;
+	static native void Action0023(int amount) : 0x23;
+	static native void Action004b(int amount) : 0x4b;
+    static native void Action0030(int amount) : 0x30;
+    static native void Action0031(int amount) : 0x31;
+    static native void Action0032(int amount) : 0x32;
+    static native void Action0033(int amount) : 0x33;
+	static native void Action009f(int amount) : 0x9f;
+    static native void Action00a0(int amount) : 0xa0;
+    static native void Action00a1(int amount) : 0xa1;
+}

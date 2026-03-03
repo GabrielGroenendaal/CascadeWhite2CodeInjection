@@ -61,7 +61,7 @@ No matter, we still have plans upon\nplans to foil them!\r\nTo position D!
 
 
 [ FOURTH AMBUSH ]
-I'll blast your Pokemon to smithereens!
+I'll blast your Pokémon to smithereens!
 
 
 
@@ -71,7 +71,7 @@ It didn't work. Fall back!
 
 
 [ FIFTH AMBUSH ]
-I'll entrap your Pokemon leaving\nthem nowhere to run!
+I'll entrap your Pokémon leaving\nthem nowhere to run!
 
 
 
@@ -97,7 +97,7 @@ Now brother, the final blow!
 Impossible!\nOur trio attack failed? 
 
 
-And I'm out of Pokemon... 
+And I'm out of Pokémon... 
 
 Tch...\nYou may have won this time...\r\nBut Lord Ghetsis always wins in the end.\c\nTurn back now, while you can.
 

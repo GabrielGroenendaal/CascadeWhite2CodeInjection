@@ -7,6 +7,7 @@ import event.actors.Player;
 import event.dialogs.Message;
 import event.dialogs.YesNoWin;
 import player.Bag;
+import system.Fade;
 import pokemon.PokeParty;
 import pokescript.vm.Math;
 import pokescript.vm.StackCtrl;
@@ -20,9 +21,6 @@ import system.text.WordSet;
 
 public class MainEvents {
 	public static void main_1() { // @ 0x40
-		if (EventWorks.Get(16433) <= 9){
-			Sound.BGMFadeOut(1);
-		}
 		Base.CMD_2C4();
 	}
 
@@ -214,6 +212,7 @@ public class MainEvents {
 	// 8: Sixth Ambush 
 	// 9: Arriving at Humilau Town
 
+	// Arriving in the Marine Tube and feeling the SHadow Triad Watching
 	public static void main_9() {
 		Actor.PauseAll();
 		WalkNorth3Tiles(255);
@@ -222,79 +221,87 @@ public class MainEvents {
 		Actor.WaitActionFinish();
 		WalkNorth1TileSlow(255);
 		Actor.WaitActionFinish();
-		Runtme.Sleep(32);
+		Runtime.Sleep(32);
 		Message.System(12, 2);
 		Message.CloseAll();
-		EventWorks.Set(16433, 3);
+		EventWorks.Set(16433, 2);
 		Runtime.FinishSubEvents();
 		Actor.UnpauseAll();
 	}
 
+
+	// First Ambush
 	public static void main_10(){
 		int playerX;
 		int playerY;
 		int playerZ;
-
-		Actor.PauseAll();
-		Actor.Hide(7);
-		Actor.Hide(8);
-		Actor.Hide(9);
-		Message.System(13, 0);
-		Message.CloseAll();
+		int isVictory; 
 		
-		Actor.Show(7);
-		Actor.Show(8);
-		Actor.Show(9);
-		Actor.SetRailPos(7, 27, -4);
-		Actor.SetRailPos(8, 27, 0);
-		Actor.SetRailPos(9, 27, 4);
-		ShadowAppear(7);
-		ShadowAppear(8);
-		ShadowAppear(9);
+		Actor.PauseAll();
+		Message.System(13, 0);
+		Message.WaitAdvance();
+		Message.CloseAll();
+         Fade.FadeEx(3, 0, 16, 2);
+		Fade.FadeExWait();
+		Actor.SetRailPos(3, 2, 27, 8);
+		Actor.SetRailPos(5, 2, 27, 6);
+		Actor.SetRailPos(6, 2, 27, 4);
+		TurnSouth8F(3);
+		TurnSouth8F(5);
+		TurnSouth8F(6);
+		Actor.WaitActionFinish();
+		Fade.FadeEx(3, 16, 0, 2);
+		Fade.FadeExWait();
+
 		ShowExclamationMark(255);
 		Actor.WaitActionFinish();
 		Sound.BGMPlay(1239);
 		Player.GetRailPos(playerX, playerY, playerZ);
 		FixPositioning(playerZ);
 		Actor.WaitActionFinish();
-		TurnNorth(255);
+		TurnNorth8F(255);
 		Actor.WaitActionFinish();
 		WordSet.LoadPlayerName(0);
-		Message.ActorEx(1024, 14, 8, 0, 0);
+		Message.ActorEx(1024, 14, 5, 0, 0);
 		Input.LastKeyWait();
 		Message.CloseAll();
-		Message.ActorEx(1024, 15, 7, 0, 0);
+		Message.ActorEx(1024, 15, 3, 0, 0);
 		Input.LastKeyWait();
 		Message.CloseAll();
-		Message.ActorEx(1024, 16, 9, 0, 0);
+		Message.ActorEx(1024, 16, 6, 0, 0);
 		Input.LastKeyWait();
 		Message.CloseAll();
-		Message.ActorEx(1024, 17, 8, 0, 0);
+		Message.ActorEx(1024, 17, 5, 0, 0);
 		Input.LastKeyWait();
 		Message.CloseAll();
-		ShadowRunsSouthTwoTiles(8);
+		ShadowRunsSouthTwoTiles(5);
 		Actor.WaitActionFinish();
 
 		Battle.CallTrainerBattle(69, 0, 0);
 		isVictory =  Battle.IsTrainerVictory();
-		if (v16 != 1) {
+		if (isVictory != 1) {
+			EventWorks.Set(16489, 0);
 			Battle.CallTrainerLose();
 			goto LABEL_EndAmbushOne;
 		}
 		Battle.EndTrainerBattle();
-		Message.ActorEx(1024, 18, 8, 0, 0);
+		Message.ActorEx(1024, 18, 5, 0, 0);
 		Actor.WaitActionFinish();
-		Message.ActorEx(1024, 19, 8, 0, 0);
+		Message.ActorEx(1024, 19, 5, 0, 0);
 		Input.LastKeyWait();
 		Message.CloseAll();
-		ShadowDisappear(7);
-		ShadowDisappear(8);
-		ShadowDisappear(9);
+		Fade.FadeEx(3, 0, 16, 2);
+		Fade.FadeExWait();
+		ShadowDisappear(3);
+		ShadowDisappear(5);
+		ShadowDisappear(6);
 		Actor.WaitActionFinish();
-		Actor.SetRailPos(7, 2, 0, 50);
-		Actor.SetRailPos(8, 2, 0, 50);
-		Actor.SetRailPos(9, 2, 0, 50);
-		EventWorks.Set(16433, 4);
+		Actor.SetRailPos(3, 2, 0, 50);
+		Actor.SetRailPos(5, 2, 0, 50);
+		Actor.SetRailPos(6, 2, 0, 50);
+		Fade.FadeEx(3, 16, 0, 2);
+		Fade.FadeExWait();
+		EventWorks.Set(16433, 3);
 		Sound.BGMFadeOut(90);
 
 		LABEL_EndAmbushOne: 
@@ -302,41 +309,214 @@ public class MainEvents {
 		Actor.UnpauseAll();
 	}
 
-	static void FixPositioning(int offset){
-		if (offset == -4){
+
+	// Second Ambush 
+	public static void main_11() {
+		int playerX;
+		int playerY;
+		int playerZ;
+		int isVictory; 
+		
+		Actor.PauseAll();
+		Message.System(13, 0);
+		Message.WaitAdvance();
+		Message.CloseAll();
+         Fade.FadeEx(3, 0, 16, 2);
+		Fade.FadeExWait();
+		Actor.SetRailPos(3, 2, 27, 8);
+		Actor.SetRailPos(5, 2, 27, 6);
+		Actor.SetRailPos(6, 2, 27, 4);
+		TurnSouth8F(3);
+		TurnSouth8F(5);
+		TurnSouth8F(6);
+		Actor.WaitActionFinish();
+		Fade.FadeEx(3, 16, 0, 2);
+		Fade.FadeExWait();
+
+		ShowExclamationMark(255);
+		Actor.WaitActionFinish();
+		Sound.BGMPlay(1239);
+		Player.GetRailPos(playerX, playerY, playerZ);
+		FixPositioning(playerZ);
+		Actor.WaitActionFinish();
+		TurnNorth8F(255);
+		Actor.WaitActionFinish();
+		WordSet.LoadPlayerName(0);
+		Message.ActorEx(1024, 14, 5, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseAll();
+		Message.ActorEx(1024, 15, 3, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseAll();
+		Message.ActorEx(1024, 16, 6, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseAll();
+		Message.ActorEx(1024, 17, 5, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseAll();
+		ShadowRunsSouthTwoTiles(5);
+		Actor.WaitActionFinish();
+
+		Battle.CallTrainerBattle(69, 0, 0);
+		isVictory =  Battle.IsTrainerVictory();
+		if (isVictory != 1) {
+			EventWorks.Set(16489, 0);
+			Battle.CallTrainerLose();
+			goto LABEL_EndAmbush2;
+		}
+		Battle.EndTrainerBattle();
+		Message.ActorEx(1024, 18, 5, 0, 0);
+		Actor.WaitActionFinish();
+		Message.ActorEx(1024, 19, 5, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseAll();
+		Fade.FadeEx(3, 0, 16, 2);
+		Fade.FadeExWait();
+		ShadowDisappear(3);
+		ShadowDisappear(5);
+		ShadowDisappear(6);
+		Actor.WaitActionFinish();
+		Actor.SetRailPos(3, 2, 0, 50);
+		Actor.SetRailPos(5, 2, 0, 50);
+		Actor.SetRailPos(6, 2, 0, 50);
+		Fade.FadeEx(3, 16, 0, 2);
+		Fade.FadeExWait();
+		EventWorks.Set(16433, 3);
+		Sound.BGMFadeOut(90);
+
+		LABEL_EndAmbush2: 
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	} 
+
+	// Third Ambush
+	public static void main_12() {
+		Actor.PauseAll();
+		WalkNorth3Tiles(255);
+		Actor.WaitActionFinish();
+		WalkNorth2TilesSlow(255);
+		Actor.WaitActionFinish();
+		WalkNorth1TileSlow(255);
+		Actor.WaitActionFinish();
+		Runtime.Sleep(32);
+		Message.System(12, 2);
+		Message.CloseAll();
+		EventWorks.Set(16433, 5);
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	} 
+
+	// Fourth Ambush 
+	public static void main_13() {
+		Actor.PauseAll();
+		WalkNorth3Tiles(255);
+		Actor.WaitActionFinish();
+		WalkNorth2TilesSlow(255);
+		Actor.WaitActionFinish();
+		WalkNorth1TileSlow(255);
+		Actor.WaitActionFinish();
+		Runtime.Sleep(32);
+		Message.System(12, 2);
+		Message.CloseAll();
+		EventWorks.Set(16433, 6);
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	} 
+
+	// Fifth Ambush
+	public static void main_14() {
+		Actor.PauseAll();
+		WalkNorth3Tiles(255);
+		Actor.WaitActionFinish();
+		WalkNorth2TilesSlow(255);
+		Actor.WaitActionFinish();
+		WalkNorth1TileSlow(255);
+		Actor.WaitActionFinish();
+		Runtime.Sleep(32);
+		Message.System(12, 2);
+		Message.CloseAll();
+		EventWorks.Set(16433, 7);
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	// Sixth Ambush
+	public static void main_15() {
+		Actor.PauseAll();
+		WalkNorth3Tiles(255);
+		Actor.WaitActionFinish();
+		WalkNorth2TilesSlow(255);
+		Actor.WaitActionFinish();
+		WalkNorth1TileSlow(255);
+		Actor.WaitActionFinish();
+		Runtime.Sleep(32);
+		Message.System(12, 2);
+		Message.CloseAll();
+		EventWorks.Set(16433, 8);
+		EventWorks.Set(16489, 2);
+		EventFlags.Set(554);
+		EventFlags.Clear(553);
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_16() {
+		Sound.BGMFadeOut(120);
+		EventWorks.Set(16489, 1); 
+	}
+	
+	static void FixPositioning(int playerZ){
+		if (playerZ == 12){
+			WalkEastSixTile(255);
+			return;
+		}
+		if (playerZ == 11){
+			WalkEastFiveTile(255);
+			return;
+		}
+		if (playerZ == 10){
 			WalkEastFourTile(255);
 			return;
 		}
-		if (offfset == -3){
+		if (playerZ == 9){
 			WalkEastThreeTile(255);
 			return;
 		}
-		if (offset == -2){
+		if (playerZ == 8){
 			WalkEastTwoTile(255);
 			return;
 		}
-		if (offset == -1){
+		if (playerZ == 7){
 			WalkEastOneTile(255);
 			return;
 		}
-		if (offset == 1){
+		if (playerZ == 5){
 			WalkWestOneTile(255);
 			return;
 		}	
-		if (offset == 2){
+		if (playerZ == 4){
 			WalkWestTwoTile(255);
 			return;
 		}
-		if (offset == 3){
+		if (playerZ == 3){
 			WalkWestThreeTile(255);
 			return;
 		}
-		if (offset == 4){
+		if (playerZ == 2){
 			WalkWestFourTile(255);
+			return;
+		}
+		if (playerZ == 1){
+			WalkWestFiveTile(255);
+			return;
+		}
+				if (playerZ == 0){
+			WalkWestSixTile(255);
 			return;
 		}
 		return;
 	}
+	
 	static meta void ShadowAppear(int npcId) : VActionSequence {
 		Action00b8(1);
 
@@ -346,7 +526,7 @@ public class MainEvents {
 	}
 
 	static meta void ShadowRunsSouthTwoTiles(int npcId) : VActionSequence {
-		Action0011(2);
+		Action0015(2);
 	}
 
 	static meta void ShadowRunsNorth10Tiles(int npcId) : VActionSequence {
@@ -367,7 +547,12 @@ public class MainEvents {
 	static meta void WalkWestFourTile(int npcId) : VActionSequence {
 		Action000e(4);
 	}
-
+	static meta void WalkWestFiveTile(int npcId) : VActionSequence {
+		Action000e(5);
+	}
+		static meta void WalkWestSixTile(int npcId) : VActionSequence {
+		Action000e(6);
+	}
 	static meta void WalkEastOneTile(int npcId) : VActionSequence {
 		Action000f(1);
 	}
@@ -383,6 +568,24 @@ public class MainEvents {
 	static meta void WalkEastFourTile(int npcId) : VActionSequence {
 		Action000f(4);
 	}
+
+	static meta void WalkEastFiveTile(int npcId) : VActionSequence {
+		Action000f(5);
+	}
+	static meta void WalkEastSixTile(int npcId) : VActionSequence {
+		Action000f(6);
+	}
+	static meta void WalkNorth3Tiles(int npcId) : VActionSequence {
+		Action000c(3);
+	}
+
+	static meta void WalkNorth2TilesSlow(int npcId) : VActionSequence {
+		Action0008(2);
+	}
+
+	static meta void WalkNorth1TileSlow(int npcId) : VActionSequence {
+		Action0004(1);
+	}	
 
 	static meta void TurnNorth8F(int npcId) : VActionSequence {
 		Action0020(1);
@@ -414,9 +617,15 @@ public class MainEvents {
 	static meta void ActionSequence_0188(int npcId) : VActionSequence {
 		Action0001(1);
 	}
+	
+	static meta void ShowExclamationMark(int npcId) : VActionSequence {
+		Action004b(1);
+	}
 
 	static meta void Global2805(int a1, int a2) : VGlobalCall[2805];
 	static native void Action000c(int amount) : 0xc;
+	static native void Action0004(int amount) : 0x4;
+	static native void Action0008(int amount) : 0x8;
 	static native void Action000d(int amount) : 0xd;
 	static native void Action000e(int amount) : 0xe;
 	static native void Action000f(int amount) : 0xf;
@@ -435,4 +644,5 @@ public class MainEvents {
 	static native void Action0021(int amount) : 0x21;
 	static native void Action0022(int amount) : 0x22;
 	static native void Action0023(int amount) : 0x23;
+	static native void Action004b(int amount) : 0x4b;
 }

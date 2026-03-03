@@ -21,6 +21,10 @@ If you're updating from the previous patch, you'll want to speak to an NPC in Le
 > - **The Castelia Alleyway Trades** should have their perfect IVs back. 
 > - **Celestial Tower** psychics are now properly a tag battle.
 > - **Clay Tunnel Worker** no longer crashes the game with his faulty movement. 
+> - **Chargestone Cave** warps now correctly go to the right locations. 
+> - **Pilot Ewing** now is correctly facing upwards. 
+> - **Skitter Smack** is now properly a contact move.
+> - **Mud Bomb** is no longer flagged as having accuracy-dropping, whcih was causing it to be clicked over highest damage.
 
 ``[ BALANCE ]``
 > - **Crobat Line** is getting Strong Body in Ability Slot 1, as Infiltrator becomes the Hidden Ability. Sniper becomes AI Only. 
@@ -100,6 +104,9 @@ If you're updating from the previous patch, you'll want to speak to an NPC in Le
 > - **Eelektross** now gets +15 Defense and +20 Special Defense. 
 > - **Leafeon** ability 2 is now Hyper Cutter.
 > - **Ferrothorn** doesn't learn Gravity by level up anymore. It learns Snap Trap at level 48 instead of leech seed, and leech is a scale move. Instead of Gravity, Ferrothorn learns Rock Climb.
+> - **Abomasnow** has a learnset nerf.
+> - **Hail, Sunny Day, Sandstorm, Rain Dance** are all a lot more rare, often requiring scales to access. 
+> - **Fake Out** has been pruned from a lot of learnsets. 
 
 
 ```[ ENCOUNTERS ]```
@@ -180,6 +187,8 @@ If you're updating from the previous patch, you'll want to speak to an NPC in Le
 > - **Iron Ball** has been moved from Relic Passage to the location of the Bug Buzz TM in Chargestone Cave. In its place is 3x Normal Gems. 
 > - **TM Knock Off** has been removed from Mistralton Cave. In it's place is the TM for Bug Buzz. 
 > - **Red Shards** More Limited. 
+> - **Rocky Helmet** removed from PWT. Will now be acquired later.
+
 
 ``[ NEW CHANGES ]``
 > - **AI Status Move Scoring** now accounts for Trickster Herb and Prankster, not penalizing those move scores if the user is normally slower. 
@@ -188,8 +197,8 @@ If you're updating from the previous patch, you'll want to speak to an NPC in Le
 > - **Grass Types are now properly immune to Powder effects** 
 > - **Enforced Level Caps** are now a toggle-able option in the PokeHelper menu. While in the PokeHelper menu, you can also see the current level cap.
 > - **Switch AI** now takes in defensive matchups into consideration as a BP modifier. It checks the types of the pokemon it's calculating BP against to see if either is super effective or 4x effective against the switch in Pokemon, applying a 0.75x or 0.5x modifier accordingly. If the Pokemon resists or is immune to both types, they can get a 1.25x or 1.5x modifier. 
-> - **Shadow Triad** no longer steal a random Pokemon. Instead they steal the Pokemon in the party with the lowest health that isn't fainted. Hugh will now HEAL you before the battle! 
-> - **Pre Damage** is now able to be performed from the menu. You can't get it to specific values, but to 1/5/10/20/50/100/150/200/250 HP. 
+> - **Shadow Triad** no longer steal a random Pokemon. Instead they steal the Pokemon in the party with the lowest health that isn't fainted. Hugh will now HEAL you before the battle! You can't get it to specific values, but to 1/5/10/20/50/100/150/200/250 HP. 
+> - **Solarbeam** is now spread and damages all adjacent targets. 
 
 ``[ UPCOMING WORK ]``
 

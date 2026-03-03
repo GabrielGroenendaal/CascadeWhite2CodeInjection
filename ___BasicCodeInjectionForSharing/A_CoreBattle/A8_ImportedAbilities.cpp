@@ -1515,6 +1515,54 @@ extern "C" u32 checkLevelCap(u8 level)
     } 
     return 1;
 }
+
+extern "C" u32 scaleExpToLevelCap(unsigned int amountOfExpGainedSoFar, u8 defeatedMonLevel, u8 monGainingExpLevel)
+{
+    EventWorkSave *eventWork = GameData_GetEventWork(GAME_DATA);
+    u16 *exp_boost_ptr = EventWork_GetWkPtr(eventWork, 16467);
+    if (*exp_boost_ptr == 1){
+        u16* lvl_cap_value = EventWork_GetWkPtr(eventWork, 16466);
+        if (monGainingExpLevel >= *lvl_cap_value){
+            if (defeatedMonLevel >= (monGainingExpLevel - 5)){
+                return (defeatedMonLevel - 10);
+            }
+        }
+        else {
+            if (defeatedMonLevel < *lvl_cap_value){
+                if (monGainingExpLevel <= (*lvl_cap_value - 5)){
+                    return (defeatedMonLevel + (*lvl_cap_value * 2));
+                } 
+                else {
+                    return *lvl_cap_value;
+                }
+            } 
+        }
+    } 
+    else if (*exp_boost_ptr == 2){
+        u16* lvl_cap_value = EventWork_GetWkPtr(eventWork, 16466);
+        if (monGainingExpLevel >= *lvl_cap_value){
+            if (defeatedMonLevel >= (monGainingExpLevel - 5)){
+                return (defeatedMonLevel - 10);
+            }
+        }
+        else {
+            if (defeatedMonLevel < *lvl_cap_value){
+                if (monGainingExpLevel <= (*lvl_cap_value - 5)){
+                    return (defeatedMonLevel + (*lvl_cap_value * 3));
+                } 
+                else {
+                    return (*lvl_cap_value * 2);
+                }
+            } 
+        }
+    }
+   
+     return defeatedMonLevel;
+    
+}
+
+
+
 extern "C" int THUMB_BRANCH_ScaleExpGainedByLevel(BattleMon *monGainingExp, unsigned int amountOfExpGainedSoFar, int monGainingExpLevel, int defeatedMonLevel)
 {
     int v4;                      // r5
@@ -1524,16 +1572,17 @@ extern "C" int THUMB_BRANCH_ScaleExpGainedByLevel(BattleMon *monGainingExp, unsi
     float v9;                    // r0
     unsigned int v10;            // r4
     unsigned int ExpForLevel100; // r0
-
+    int tempDefeatedMonLevel;
     if (!checkLevelCap(monGainingExpLevel)){
         return 0;
     }
     // k::Printf("\n\nmonGainingExperience is %d\namountofExpSoFar is %d\nlevel is %d\ndefeatedMonLevel is %d\n\n",
     //           BattleMon_GetID(monGainingExp), amountOfExpGainedSoFar, monGainingExpLevel, defeatedMonLevel);
 
-    v4 = 2 * defeatedMonLevel + 10;
-    v6 = defeatedMonLevel + monGainingExpLevel + 10;
-    if (2 * defeatedMonLevel == -10)
+    tempDefeatedMonLevel = scaleExpToLevelCap(amountOfExpGainedSoFar, defeatedMonLevel, monGainingExpLevel);
+    v4 = 2 * tempDefeatedMonLevel + 10;
+    v6 = tempDefeatedMonLevel + monGainingExpLevel + 10;
+    if (2 * tempDefeatedMonLevel == -10)
     {
         v7 = (v4 << 12) - 0.5;
     }

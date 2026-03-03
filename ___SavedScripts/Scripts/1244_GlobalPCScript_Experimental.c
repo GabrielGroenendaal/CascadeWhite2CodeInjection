@@ -1483,35 +1483,43 @@ void Sequence18()
 label49_options: ;
 	SetupDialogueSelection(31, 5, 0, 1, 0x8004);
 	// Critical Hits
-	AddDialogueOption(104, 0xFFFF, 0);
+	AddDialogueOption(104, 103, 0);
 	// IVS
-	AddDialogueOption(105, 0xFFFF, 1);
+	AddDialogueOption(105, 103, 1);
 	// Trainer Placements
-	AddDialogueOption(106, 0xFFFF, 6);
+	AddDialogueOption(106, 103, 6);
 	// Wild Pokemon EVs
-	// AddDialogueOption(107, 0xFFFF, 2);
+	// AddDialogueOption(107, 103, 2);
 	// Animated Backgrounds
-	AddDialogueOption(108, 0xFFFF, 3);
+	AddDialogueOption(108, 103, 3);
 	// Advanced Enemy Switch In Logic
-	AddDialogueOption(109, 0xFFFF, 4);
+	AddDialogueOption(109, 103, 4);
 	
+
+    // Exp Modes
+	AddDialogueOption(197, 103, 13);
+
     // Limited TMs
-	// AddDialogueOption(110, 0xFFFF, 5);
+	// AddDialogueOption(110, 103, 5);
 
 	// Battle Scan
-	AddDialogueOption(111, 0xFFFF, 9);
+	AddDialogueOption(111, 103, 9);
 	
     // Anti-Yap Options
-	// AddDialogueOption(164, 0xFFFF, 10);
+	// AddDialogueOption(164, 103, 10);
 
     // Level Caps 
-    AddDialogueOption(179, 0xFFFF, 11);
+    AddDialogueOption(179, 103, 11);
 
+	// Restore Defaults
+	AddDialogueOption(113, 214, 8);
+
+    // Casual Preset
+    AddDialogueOption(211, 212, 12);
 
 	// Quit
-	AddDialogueOption(112, 0xFFFF, 7);
-	// Restore Defaults
-	AddDialogueOption(113, 0xFFFF, 8);
+	AddDialogueOption(112, 103, 7);
+
 	ShowDialogueSelection2();
 
 
@@ -2056,11 +2064,11 @@ label_BattleScan_1: ;
 	// CloseAllMessageBoxes();
 	Compare(16438, 0);
 	if (5) goto label_BattleScan_2;
-	EventGreyMessage(160, 2);
+	EventGreyMessage(161, 2);
 	goto label_BattleScan_3;
 
 label_BattleScan_2: ;
-	EventGreyMessage(161, 2);
+	EventGreyMessage(160, 2);
 
 label_BattleScan_3: ;
 	WaitForButton();
@@ -2077,13 +2085,13 @@ label_BattleScan_4: ;
 	// CloseAllMessageBoxes();
 	Compare(16438, 0);
 	if (5) goto label_BattleScan_5;
-	EventGreyMessage(162, 2);
+	EventGreyMessage(163, 2);
 	WaitForButton();
 	SetVarEqVar2(16438, 1);
 	goto label_BattleScan_6;
 
 label_BattleScan_5: ;
-	EventGreyMessage(163, 2);
+	EventGreyMessage(162, 2);
 	WaitForButton();
 	SetVarEqVar2(16438, 0);
 
@@ -2101,7 +2109,7 @@ label_BattleScan_6: ;
 //
 label_AntiYap_1:
 	Compare(0x8004, 10);
-	if (5) goto label88_options;
+	if (5) goto label_ExpBoost_1;
 	// CloseAllMessageBoxes();
 	Compare(16439, 0);
 	if (5) goto label_AntiYap_2;
@@ -2142,118 +2150,257 @@ label_AntiYap_6: ;
 	goto label49_options;
 
 
+//
+
+//  EXP BOOST 
+
+//
+label_ExpBoost_1: ;
+	Compare(0x8004, 13);
+	if (5) goto label_CasualPreset_1;
+	Compare(0x4053, 0);
+	if (5) goto label_ExpBoost_2;
+	EventGreyMessage(198, 2);
+	goto label_ExpBoost_5;
+
+label_ExpBoost_2: ;
+	Compare(0x4053, 1);
+	if (5) goto label_ExpBoost_3;
+	EventGreyMessage(199, 2);
+	goto label_ExpBoost_5;
+
+label_ExpBoost_3: ;
+	EventGreyMessage(200, 2);
+
+label_ExpBoost_5: ;
+	SetupDialogueSelection(31, 5, 0, 1, 0x8006);
+	AddDialogueOption(201, 202, 0);
+	AddDialogueOption(203, 204, 1);
+	AddDialogueOption(205, 206, 2);
+	AddDialogueOption(207, 0xFFFF, 2);
+	ShowDialogueSelection2();
+	Compare(0x8006, 0);
+	if (5) goto label_ExpBoost_6;
+	EventGreyMessage(208, 2);
+	WaitForButton();
+	SetVarEqVar2(0x4053, 0);
+	EventGreyMessage(119, 2);
+	WaitForButton();
+	goto label49_options;
+
+label_ExpBoost_6: ;
+	Compare(0x8006, 1);
+	if (5) goto label_ExpBoost_7;
+	EventGreyMessage(209, 2);
+	WaitForButton();
+	SetVarEqVar2(0x4053, 1);
+	EventGreyMessage(119, 2);
+	WaitForButton();
+	goto label49_options;
+
+label_ExpBoost_7: ;
+	Compare(0x8006, 2);
+	if (5) goto label_ExpBoost_8;
+	EventGreyMessage(210, 2);
+	WaitForButton();
+	SetVarEqVar2(0x4053, 2);
+	EventGreyMessage(119, 2);
+	WaitForButton();
+	goto label49_options;
+
+label_ExpBoost_8: ;
+label_ExpBoost_9: ;
+	Compare(0x8006, 3);
+	if (5) goto label_ExpBoost_10;
+	EventGreyMessage(116, 2);
+	WaitForButton();
+	goto label49_options;
+
+label_ExpBoost_10: ;
+	EventGreyMessage(119, 2);
+	WaitForButton();
+	goto label49_options;
+
+
+// 
+
+//	Apply Casual Presets
+
+//
+label_CasualPreset_1: ;
+	Compare(0x8004, 12);
+	if (5) goto label_RestoreDefaults_1;
+	EventGreyMessage(213, 2);
+	WaitForButton();
+	YesNoBox(0x8000);
+	SetVarEqVar(0x8006, 0x8000);
+	Compare(0x8006, 1);
+	if (5) goto Label_CriticalHitCasualSetting;
+	EventGreyMessage(116, 2);
+	WaitForButton();
+	goto label49_options;
+
+Label_CriticalHitCasualSetting: ;
+	Compare(0x401F, 0);
+	if (1) goto Label_WildPokemonIVCasualSettings;
+	EventGreyMessage(118, 2);
+	WaitForButton();
+	SetVarEqVar2(0x401F, 0);
+
+Label_WildPokemonIVCasualSettings: ;
+	Compare(0x4031, 0);
+	if (1) goto Label_WildPokemonEVCasualSettings;
+	EventGreyMessage(123, 2);
+	WaitForButton();
+	SetVarEqVar2(0x4031, 0);
+
+Label_WildPokemonEVCasualSettings: ;
+	Compare(0x4032, 0);
+	if (1) goto label_CasualLevelCapSetting;
+	EventGreyMessage(137, 2);
+	WaitForButton();
+	SetVarEqVar2(0x4032, 0);
+
+label_CasualLevelCapSetting: ;
+	Compare(0x4051, 0);
+	if (1) goto Label_CasualExpModeSetting;
+	EventGreyMessage(183, 2);
+	WaitForButton();
+	SetVarEqVar2(0x4051, 0);
+
+Label_CasualExpModeSetting: ;
+    Compare(0x4053, 1);
+    if (1) goto Label_CasualTrainerPlacementSetting;
+    EventGreyMessage(209, 2);
+    WaitForButton();
+    SetVarEqVar2(0x4053, 1);
+
+Label_CasualTrainerPlacementSetting: ;
+	SetVarFlagStatus(524, 0x8000);
+	Compare(0x8000, 0);
+	if (1) goto Label_CasualBattleScanSettings;
+	EventGreyMessage(157, 2);
+	WaitForButton();
+	ClearFlag(524);
+	SetFlag(525);
+
+Label_CasualBattleScanSettings: ;
+	Compare(16438, 0);
+	if (1) goto Label_RestoredCasuals;
+	EventGreyMessage(162, 2);
+	WaitForButton();
+	SetVarEqVar2(16438, 0);
+
+Label_RestoredCasuals: ;
+	EventGreyMessage(119, 2);
+	WaitForButton();
+	goto label49_options;
+
 
 // 
 
 //	RESTORE DEFAULTS
 
 //
-label88_options: ;
+label_RestoreDefaults_1: ;
 	Compare(0x8004, 8);
-	if (5) goto label100_options;
-	// CloseAllMessageBoxes();
+	if (5) goto Label_RestoreDefaultsExit;
 	EventGreyMessage(159, 2);
 	WaitForButton();
 	YesNoBox(0x8000);
 	SetVarEqVar(0x8006, 0x8000);
 	Compare(0x8006, 1);
-	if (5) goto label101_options;
-	// CloseAllMessageBoxes();
+	if (5) goto Label_CriticalHitDefaultSetting;
 	EventGreyMessage(116, 2);
 	WaitForButton();
 	goto label49_options;
 
-label101_options: ;
-	// CloseAllMessageBoxes();
+Label_CriticalHitDefaultSetting: ;
 	Compare(0x401F, 0);
-	if (1) goto label102_options;
-	// CloseAllMessageBoxes();
+	if (1) goto Label_WildPokemonIVDefeaultSettings;
 	EventGreyMessage(118, 2);
 	WaitForButton();
 	SetVarEqVar2(0x401F, 0);
 
-label102_options: ;
+Label_WildPokemonIVDefeaultSettings: ;
 	Compare(0x4031, 0);
-	if (1) goto label103_options;
-	// CloseAllMessageBoxes();
+	if (1) goto Label_WildPokemonEVDefaultSettings;
 	EventGreyMessage(123, 2);
 	WaitForButton();
 	SetVarEqVar2(0x4031, 0);
 
-label103_options: ;
+Label_WildPokemonEVDefaultSettings: ;
 	Compare(0x4032, 0);
 	if (1) goto label_DefaultLevelCapSetting;
-	// CloseAllMessageBoxes();
 	EventGreyMessage(137, 2);
 	WaitForButton();
 	SetVarEqVar2(0x4032, 0);
 
 label_DefaultLevelCapSetting: ;
 	Compare(0x4051, 0);
-	if (1) goto label104_options;
-	// CloseAllMessageBoxes();
+	if (1) goto Label_DefaultANimatedBackgroundSetting;
 	EventGreyMessage(183, 2);
 	WaitForButton();
 	SetVarEqVar2(0x4051, 0);
 
-label104_options: ;
+Label_DefaultANimatedBackgroundSetting: ;
 	Compare(0x4033, 0);
-	if (1) goto label105_options;
-	// CloseAllMessageBoxes();
+	if (1) goto Label_DefaultAdvancedSwitchAI;
 	EventGreyMessage(144, 2);
 	WaitForButton();
 	SetVarEqVar2(0x4033, 0);
 
-label105_options: ;
+Label_DefaultAdvancedSwitchAI: ;
 	Compare(0x4034, 0);
-	if (1) goto label106_options;
-	// CloseAllMessageBoxes();
+	if (1) goto Label_DefaultExpModeSetting;
 	EventGreyMessage(148, 2);
 	WaitForButton();
 	SetVarEqVar2(0x4034, 0);
 
-label106_options: ;
+Label_DefaultExpModeSetting: ;
+    Compare(0x4053, 0);
+    if (1) goto Label_DefaultTrainerPlacementSetting;
+    EventGreyMessage(208, 2);
+    WaitForButton();
+    SetVarEqVar2(0x4053, 0);
+
+// Label_LimitedTMDefaultSettings :;
 	// Compare(0x4035, 0);
-	// if (1) goto label107_options;
+	// if (1) goto Label_DefaultTrainerPlacementSetting;
 	// // CloseAllMessageBoxes();
 	// EventGreyMessage(152, 2);
 	// WaitForButton();
 	// SetVarEqVar2(0x4035, 0);
 
-label107_options: ;
+Label_DefaultTrainerPlacementSetting: ;
 	SetVarFlagStatus(524, 0x8000);
 	Compare(0x8000, 0);
-	if (1) goto label108_optionsa;
-	// CloseAllMessageBoxes();
+	if (1) goto Label_DefaultBattleScanSettings;
 	EventGreyMessage(157, 2);
 	WaitForButton();
 	ClearFlag(524);
 	SetFlag(525);
 
-label108_optionsa: ;
-	// Compare(16438, 0);
-	// if (1) goto label109_optoions;
-	// // CloseAllMessageBoxes();
-	// EventGreyMessage(162, 2);
-	// WaitForButton();
-	// SetVarEqVar2(16438, 0);
+Label_DefaultBattleScanSettings: ;
+	Compare(16438, 0);
+	if (1) goto Label_DialogueSkipsDefaultSettting;
+	EventGreyMessage(162, 2);
+	WaitForButton();
+	SetVarEqVar2(16438, 0);
 
-label109_optoions: ;
+Label_DialogueSkipsDefaultSettting: ;
 	Compare(16439, 0);
-	if (1) goto label108;
-	// CloseAllMessageBoxes();
-
+	if (1) goto Label_RestoredDefaults;
 	EventGreyMessage(168, 2);
 	WaitForButton();
 	SetVarEqVar2(16439, 0);
 
-label108: ;
-	// CloseAllMessageBoxes();
+Label_RestoredDefaults: ;
 	EventGreyMessage(119, 2);
 	WaitForButton();
 	goto label49_options;
 
-label100_options: ;
+Label_RestoreDefaultsExit: ;
 	WaitMoment();
 	SetVarEqVal(0x8000, 0);
 	Return();
