@@ -724,8 +724,6 @@ trickster herb, x2 Trickster Herbs (Reward for defeating Clerk Brittany) (grants
 zoom lens, Zoom Lens (Reward for defeating Clerk Clemens)
 shell bell, Shell Bell (Reward for defeating Clerk Gilligan)
 red shard, 10x Red Shards (Reward for Defeating Clerk Warren)
-thick club, Thick Club (found on the top floor)
-light ball, Light Ball (found by Clerk Britney)
 end
 
 !notif MOVE TUTOR, The Red Shard Move Tutor is found in the Battle Company Lobby. They teach
@@ -1216,10 +1214,18 @@ end
 fire stone, Fire Stone
 water stone, Water Stone
 leaf stone, Leaf Stone 
-thunderstone, Thunder Stone, 
+thunderstone, Thunder Stone 
 sun stone, Sun Stone
 moon stone, Moon Stone
 end
+
+!items Incense Shop 
+thick club, Thick Club 
+light ball, Light Ball
+full incense, Full Incense 
+luck incense, Luck Incense
+pure incense, Pure Incense 
+end 
 
 !items Herb Shop
 micle berry, Micle Berry 
@@ -1692,11 +1698,6 @@ end
 # Marlon Split (Level Cap 63, Optional Cap 59 for Alder)
 
 ## Lentimas Town 
-!items PokéMart 
-dawn stone, Dawn Stone
-shiny stone, Shiny Stone
-dusk stone, Dusk Stone
-end
 !items Items 
 sitrus berry, x10 Sitrus Berry (Found on airfield)
 end
@@ -1840,6 +1841,11 @@ Falkner can be found on the south path of the route after defeating the Veterans
 !notif NOTE, Undella Town has no Wild Pokémon encounters. Tourist activity has driven them away. 
 
 !notif NOTE, There is no rival battle with Hugh here. Instead, you must defeat Alder and his partner in a tag battle to open the path to Humilau City. 
+!items PokéMart 
+dawn stone, Dawn Stone
+shiny stone, Shiny Stone
+dusk stone, Dusk Stone
+end
 
 !items Items 
 repel, x3 Throat Spray (Blocked by Musician Kinsley)

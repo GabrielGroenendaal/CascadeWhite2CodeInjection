@@ -1086,30 +1086,50 @@ extern "C"
 
     void HandlerAttackInsuranceUse(BattleEventItem *battleEventItem, ServerFlow *a2, int pokemonSlot, int *work)
     {
+        // New Damage Function 
+        u8 v13[5];
+        unsigned int NumTargets; 
+        unsigned int currentTarget;
+        int currentTargetPosition;
+        __int16 ExistFrontPokePos;
+        BattleMon* defendingMon;
+        BattleMon *attackingMon;
         HandlerParam_Damage *damage;
-        int target;
-        BattleMon *defendingMon;
 
-        if (pokemonSlot == BattleEventVar_GetValue(VAR_MON_ID) && PML_MoveIsDamaging(BattleEventVar_GetValue(VAR_MOVE_ID)))
+        if (pokemonSlot == BattleEventVar_GetValue(VAR_MON_ID))
         {
-            defendingMon = Handler_GetBattleMon(a2, BattleEventVar_GetValue(VAR_DEFENDING_MON));
+            attackingMon = Handler_GetBattleMon(a2, pokemonSlot);
+            if (BattleMon_GetTurnFlag(attackingMon, TURNFLAG_MOVEFAILED))
+            {
+                ExistFrontPokePos = Handler_GetExistFrontPokePos(a2, pokemonSlot);
+                NumTargets = Handler_ExpandPokeID(a2, ExistFrontPokePos | 0x100, v13);
 
-            damage = (HandlerParam_Damage *)BattleHandler_PushWork(a2, EFFECT_DAMAGE, pokemonSlot);
-            damage->pokeID = BattleEventVar_GetValue(VAR_DEFENDING_MON);
-            damage->damage = DivideMaxHPZeroCheck(defendingMon, 4u);
-            BattleHandler_StrSetup(&damage->exStr, 2u, 1237);
-            BattleHandler_AddArg(&damage->exStr, damage->pokeID);
-            BattleHandler_PopWork(a2, damage);
+                for (currentTarget = 0; currentTarget < NumTargets; currentTarget++)
+                {
+                    currentTargetPosition = v13[currentTarget];
+                    defendingMon = Handler_GetBattleMon(a2, currentTargetPosition);
+                    if (!BattleMon_IsFainted(defendingMon))
+                    {
+                        damage = (HandlerParam_Damage *)BattleHandler_PushWork(a2, EFFECT_DAMAGE, currentTargetPosition);
+                        damage->pokeID = currentTargetPosition;
+                        damage->damage = DivideMaxHPZeroCheck(defendingMon, 4u);
+                        BattleHandler_StrSetup(&damage->exStr, 2u, 1237);
+                        BattleHandler_AddArg(&damage->exStr, damage->pokeID);
+                        BattleHandler_PopWork(a2, damage);
+                    }
+                }
+            }
         }
     }
 
     ITEM_TRIGGERTABLE AttackInsuranceHandlers[] = {
-        {EVENT_MOVE_EXECUTE_NOEFFECT, (ITEM_HANDLER_FUNC)HandlerAttackInsuranceUse}, // 24
+        {EVENT_MOVE_EXECUTE_END, (ITEM_HANDLER_FUNC)HandlerAttackInsuranceUse}, // 24
+        {EVENT_MOVE_EXECUTE_FAIL, (ITEM_HANDLER_FUNC)HandlerAttackInsuranceUse}
     };
 
     ITEM_TRIGGERTABLE *THUMB_BRANCH_EventAddLaxIncense(_DWORD *a1)
     {
-        *a1 = 1;
+        *a1 = 2;
         return AttackInsuranceHandlers;
     }
 
@@ -2768,12 +2788,13 @@ extern "C"
     */
 
     ITEM_TRIGGERTABLE TeraAttackInsuranceHandlers[] = {
-        {EVENT_MOVE_EXECUTE_NOEFFECT, (ITEM_HANDLER_FUNC)HandlerAttackInsuranceUse}, // 24
+        {EVENT_MOVE_EXECUTE_END, (ITEM_HANDLER_FUNC)HandlerAttackInsuranceUse}, // 24
+        {EVENT_MOVE_EXECUTE_FAIL, (ITEM_HANDLER_FUNC)HandlerAttackInsuranceUse},
         {EVENT_CHECK_SPECIAL_PRIORITY, (ITEM_HANDLER_FUNC)HandlerTera}};
 
     ITEM_TRIGGERTABLE *THUMB_BRANCH_EventAddStonePlate(_DWORD *a1)
     {
-        *a1 = 2;
+        *a1 = 3;
         return TeraAttackInsuranceHandlers;
     }
 

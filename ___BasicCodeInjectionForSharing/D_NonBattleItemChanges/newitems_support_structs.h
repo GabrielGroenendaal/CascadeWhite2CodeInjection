@@ -757,7 +757,7 @@ enum MonsNo
     MONSNO_MAX = 0x28A,
 };
 
-const int WhiteListedPokemon[651]{
+const u8 WhiteListedPokemon[651]{
     0, // PK_NULL = 0x0,
     1, // PK001_BULBASAUR = 0x1,
     1, // PK002_IVYSAUR = 0x2,
@@ -1411,7 +1411,6 @@ const int WhiteListedPokemon[651]{
     0, // MONSNO_MAX = 0x28A,
 };
 
-int i = 0x61;
 enum AbilLock
 {
     ABIL_0 = 0x0,

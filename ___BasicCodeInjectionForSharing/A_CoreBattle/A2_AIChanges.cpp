@@ -64,27 +64,27 @@ const u16 BulletproofMoves[21] = {
     MOVE311_WEATHER_BALL,
     MOVE192_ZAP_CANNON};
 
-    const u16 teraItems[19] = {
-        IT0215_TERA_BADGE,
-        IT0298_TERA_SPECS,
-        IT0299_TERA_C_BAND,
-        IT0300_TERA_SCARF,
-        IT0301_TERA_ORB,
-        IT0302_TERA_SASH,
-        IT0303_TERA_F_BAND,
-        IT0304_TERA_CLAW,
-        IT0305_TERA_W_POLICY,
-        IT0306_TERA_B_POLICY,
-        IT0307_TERA_POWDER,
-        IT0308_TERA_VEST,
-        IT0309_TERA_INSURANCE,
-        IT0310_TERA_DRILL,
-        IT0311_TERA_LEFTOVERS,
-        IT0312_TERA_DICE,
-        IT0313_TERA_K_ROCK,
-        IT0544_TERA_PLATE,
-        IT0228_TERA_GEM,
-    };
+const u16 teraItems[19] = {
+    IT0215_TERA_BADGE,
+    IT0298_TERA_SPECS,
+    IT0299_TERA_C_BAND,
+    IT0300_TERA_SCARF,
+    IT0301_TERA_ORB,
+    IT0302_TERA_SASH,
+    IT0303_TERA_F_BAND,
+    IT0304_TERA_CLAW,
+    IT0305_TERA_W_POLICY,
+    IT0306_TERA_B_POLICY,
+    IT0307_TERA_POWDER,
+    IT0308_TERA_VEST,
+    IT0309_TERA_INSURANCE,
+    IT0310_TERA_DRILL,
+    IT0311_TERA_LEFTOVERS,
+    IT0312_TERA_DICE,
+    IT0313_TERA_K_ROCK,
+    IT0544_TERA_PLATE,
+    IT0228_TERA_GEM,
+};
 const int FLAIL_POWER_TABLE[6] = {
     0xC80001, 0x960004, 0x640009, 0x500010, 0x280020, 0x140030};
 
@@ -359,7 +359,7 @@ extern "C"
 #pragma endregion
 
 #pragma region genericHelpers
-    
+
     u32 getSwitchSetting()
     {
 
@@ -409,10 +409,12 @@ extern "C"
         {
             return FIELD_OPELUCID;
         }
-        if (zoneId == 446){
+        if (zoneId == 446)
+        {
             return FIELD_SMOKEBOMB;
         }
-        if (zoneId == 437){
+        if (zoneId == 437)
+        {
             return FIELD_VICTORYSTAR;
         }
         if (zoneId == 607 || zoneId == 195 || zoneId == 196 || zoneId == 197)
@@ -787,32 +789,21 @@ extern "C"
         }
 
 #if TESTING_FIELDEFFECTS
-        if (field == FIELD_SMOKEBOMB){
+        if (field == FIELD_SMOKEBOMB)
+        {
             HandlerParam_AddAnimation *addAnimation = (HandlerParam_AddAnimation *)BattleHandler_PushWork(a1, EFFECT_ADD_ANIMATION, 0);
             addAnimation->animNo = MOVE114_HAZE;
             addAnimation->pos_from = 6;
             addAnimation->pos_to = 6;
             BattleHandler_PopWork(a1, addAnimation);
-            ServerDisplay_AddCommon(a1->serverCommandQueue, 48, 1, 0, 433, 0, 0); // IS THIS STILL CORRECT 
+            ServerDisplay_AddCommon(a1->serverCommandQueue, 48, 1, 0, 433, 0, 0); // IS THIS STILL CORRECT
             bhwork = (HandlerParam_Message *)BattleHandler_PushWork(a1, EFFECT_MESSAGE, 0);
             BattleHandler_StrSetup(&bhwork->str, 1u, 203); // CHANGE THIS MESSAGE
             BattleHandler_PopWork(a1, bhwork);
             ServerControl_FieldEffectCore(a1, 10, Condition_MakePermanent(), 0);
         }
+#endif
 
-        if (field == FIELD_VICTORYSTAR){
-             HandlerParam_AddAnimation *addAnimation = (HandlerParam_AddAnimation *)BattleHandler_PushWork(a1, EFFECT_ADD_ANIMATION, 0);
-            addAnimation->animNo = MOVE381_LUCKY_CHANT;
-            addAnimation->pos_from = 6;
-            addAnimation->pos_to = 6;
-            BattleHandler_PopWork(a1, addAnimation);
-            ServerDisplay_AddCommon(a1->serverCommandQueue, 48, 1, 0, 433, 0, 0); // IS THIS STILL CORRECT 
-            bhwork = (HandlerParam_Message *)BattleHandler_PushWork(a1, EFFECT_MESSAGE, 0);
-            BattleHandler_StrSetup(&bhwork->str, 1u, 203); // CHANGE THIS MESSAGE
-            BattleHandler_PopWork(a1, bhwork);
-            ServerControl_FieldEffectCore(a1, 9, Condition_MakePermanent(), 0);
-        }
-#endif 
         // #if DEBUGGING_ALL && DEBUGGING_FIELDEFFECTS
         //         k::Printf("\nTRICK ROOM CHECK COMPLETE\n");
         // #endif
@@ -896,28 +887,41 @@ extern "C"
 
             // PreSet Spikes
             // Checks TrainerId
-            if (trainerClass == 192)
-            {
-                ConditionData Permanent = Condition_MakePermanent();
-                HandlerParam_AddAnimation *addAnimation = (HandlerParam_AddAnimation *)BattleHandler_PushWork(a1, EFFECT_ADD_ANIMATION, 0);
-                addAnimation->animNo = MOVE191_SPIKES;
-                addAnimation->pos_from = 3;
-                addAnimation->pos_to = 0;
-                BattleHandler_PopWork(a1, addAnimation);
-                CreateSpikes(0, a1, 0, 0, 0, SIDEEFF_SPIKES, Permanent, 148);
-            }
+            // if (trainerClass == 192)
+            // {
+            //     ConditionData Permanent = Condition_MakePermanent();
+            //     HandlerParam_AddAnimation *addAnimation = (HandlerParam_AddAnimation *)BattleHandler_PushWork(a1, EFFECT_ADD_ANIMATION, 0);
+            //     addAnimation->animNo = MOVE191_SPIKES;
+            //     addAnimation->pos_from = 3;
+            //     addAnimation->pos_to = 0;
+            //     BattleHandler_PopWork(a1, addAnimation);
+            //     CreateSpikes(0, a1, 0, 0, 0, SIDEEFF_SPIKES, Permanent, 148);
+            // }
 
-            if (trainerClass == 192)
-            {
-                ConditionData Permanent = Condition_MakePermanent();
-                HandlerParam_AddAnimation *addAnimation = (HandlerParam_AddAnimation *)BattleHandler_PushWork(a1, EFFECT_ADD_ANIMATION, 0);
-                addAnimation->animNo = MOVE114_HAZE;
-                addAnimation->pos_from = 3;
-                addAnimation->pos_to = 0;
-                BattleHandler_PopWork(a1, addAnimation);
-                CreateSpikes(0, a1, 0, 0, 0, SIDEEFF_SMOKEBOMB, Permanent, 257);
-            }
+            // if (trainerClass == 192)
+            // {
+            //     ConditionData Permanent = Condition_MakePermanent();
+            //     HandlerParam_AddAnimation *addAnimation = (HandlerParam_AddAnimation *)BattleHandler_PushWork(a1, EFFECT_ADD_ANIMATION, 0);
+            //     addAnimation->animNo = MOVE114_HAZE;
+            //     addAnimation->pos_from = 3;
+            //     addAnimation->pos_to = 0;
+            //     BattleHandler_PopWork(a1, addAnimation);
+            //     CreateSpikes(0, a1, 0, 0, 0, SIDEEFF_SMOKEBOMB, Permanent, 257);
+            // }
 
+            if (trainerId == 582 || trainerId == 506)
+            {
+                // HandlerParam_AddAnimation *addAnimation = (HandlerParam_AddAnimation *)BattleHandler_PushWork(a1, EFFECT_ADD_ANIMATION, 0);
+                // addAnimation->animNo = MOVE381_LUCKY_CHANT;
+                // addAnimation->pos_from = 6;
+                // addAnimation->pos_to = 6;
+                // BattleHandler_PopWork(a1, addAnimation);
+                ServerDisplay_AddCommon(a1->serverCommandQueue, 48, 1, 0, 381, 0, 0); // IS THIS STILL CORRECT
+                bhwork = (HandlerParam_Message *)BattleHandler_PushWork(a1, EFFECT_MESSAGE, 0);
+                BattleHandler_StrSetup(&bhwork->str, 1u, 261); // CHANGE THIS MESSAGE
+                BattleHandler_PopWork(a1, bhwork);
+                ServerControl_FieldEffectCore(a1, 9, Condition_MakePermanent(), 0);
+            }
 
             // Cobalion Fight
             if (trainerId == 491)
@@ -931,10 +935,9 @@ extern "C"
                 BattleHandler_PopWork(a1, addAnimation);
                 CreateSpikes(0, a1, 0, 0, 0, SIDEEFF_OPPRESSIVE, Permanent, 208);
             }
-            
 
             // Virizion Fight
-            if (trainerId == 507) 
+            if (trainerId == 507)
             {
 
                 ConditionData Permanent = Condition_MakePermanent();
@@ -943,7 +946,7 @@ extern "C"
                 addAnimation->pos_from = 1;
                 addAnimation->pos_to = 0;
                 BattleHandler_PopWork(a1, addAnimation);
-                CreateSpikes(0, a1, 0, 0, 0, SIDEEFF_FORESTWRATH, Permanent, 208);
+                CreateSpikes(0, a1, 0, 0, 0, SIDEEFF_FORESTWRATH, Permanent, 255);
             }
         }
 
@@ -1580,7 +1583,7 @@ extern "C"
 
         TypeEffectiveness = Handler_SimulationEffectivenessCore(a1, a2, a3, a4check);
 
-        ratio =  CheckRatio(a1, AttackingMon, DefendingMon, a4check);
+        ratio = CheckRatio(a1, AttackingMon, DefendingMon, a4check);
 
         ServerEvent_GetMoveParam(a1, a4check, (int)AttackingMon, (MoveParam *)moveParam);
 
@@ -1748,7 +1751,8 @@ extern "C"
             TypeEffectiveness = GetTypeEffectivenessVsMonAltered(((MoveParam *)moveParam)->moveType, BattleMon_GetPokeType(DefendingMon));
         }
 
-        if (IsEqual(a4check, MOVE327_SKY_UPPERCUT)){
+        if (IsEqual(a4check, MOVE327_SKY_UPPERCUT))
+        {
             TypeEffectiveness = EvaluateTypeEffectivenesssForFighting(((MoveParam *)moveParam)->moveType, BattleMon_GetPokeType(DefendingMon), (BattleMon_GetValue(AttackingMon, VALUE_EFFECTIVE_ABILITY) == ABIL113_SCRAPPY));
         }
 
@@ -1850,7 +1854,7 @@ extern "C"
             isSimulation == 0,
             &v12);
         --a1->simulationCounter;
-        
+
         // k::Printf("\nSimulated Damage for move %d is %d\n", a4check, v12);
 #if DAMAGE_CACHE_ENABLED
         saveToCalcTable(a1, AttackingMon, DefendingMon, (MoveID)a4, v12);
@@ -1873,7 +1877,7 @@ extern "C"
         return v12;
     }
 
-    #pragma endregion
+#pragma endregion
 
 #pragma region SwitchInAIHelpers
 
@@ -1964,7 +1968,6 @@ extern "C"
         int isMoldBreaker = HasMoldBreaker(AttackingMon);
         value = a4;
 
- 
         if (IsEqual(MoveID, MOVE474_VENOSHOCK))
         {
             if (BattleMon_CheckIfMoveCondition(DefendingMon, CONDITION_POISON))
@@ -2263,13 +2266,16 @@ extern "C"
         }
         else if (BattleMon_CheckIfMoveCondition(a1, CONDITION_TERA) || SEARCH_ARRAY(teraItems, a1->HeldItem))
         {
-            if (a2 == PML_PersonalGetParamSingle(a1->Species, a1->Form, Personal_Type1) || a2 == PML_PersonalGetParamSingle(a1->Species, a1->Form, Personal_Type2)){
+            if (a2 == PML_PersonalGetParamSingle(a1->Species, a1->Form, Personal_Type1) || a2 == PML_PersonalGetParamSingle(a1->Species, a1->Form, Personal_Type2))
+            {
                 return a3 + (a3 >> 1);
-            } 
-            if (a2 == PML_MoveGetType(Move_GetID(a1, 0))){
+            }
+            if (a2 == PML_MoveGetType(Move_GetID(a1, 0)))
+            {
                 return a3 + (a3 >> 1);
-            } 
-            else {
+            }
+            else
+            {
                 return a3;
             }
         }
@@ -2303,7 +2309,8 @@ extern "C"
         {
             return true;
         }
-        if (!MoveID){
+        if (!MoveID)
+        {
             return false;
         }
         if (ability == ABIL043_AMPLIFIER && getMoveFlag(MoveID, FLAG_SOUND))
@@ -2321,11 +2328,10 @@ extern "C"
         return false;
     }
 
-    
-    // This function alters the switch-in AI based on defensive matchups. 
-    // It does not check moves; instead it checks typings 
-    // If the attacker is weak to either of the defender's types, applies a negative modifier. If the defender is 4x weak, it applies a massive modifier. 
-    // If the attacker is resistant or immune to both of the target's types, applies a positive modifer. 
+    // This function alters the switch-in AI based on defensive matchups.
+    // It does not check moves; instead it checks typings
+    // If the attacker is weak to either of the defender's types, applies a negative modifier. If the defender is 4x weak, it applies a massive modifier.
+    // If the attacker is resistant or immune to both of the target's types, applies a positive modifer.
     // Accounts for Tera
     int checkForMatchup(BattleMon *attackingMon, BattleMon *defendingMon, unsigned int a3)
     {
@@ -2336,34 +2342,39 @@ extern "C"
         int attackerType;
         defenderType1 = PokeTypePair_GetType1(BattleMon_GetPokeType(defendingMon));
         defenderType2 = PokeTypePair_GetType2(BattleMon_GetPokeType(defendingMon));
-        
-        // Checks for Terastalization. 
-        if (BattleMon_CheckIfMoveCondition(attackingMon, CONDITION_TERA) || SEARCH_ARRAY(teraItems, attackingMon->HeldItem)){
+
+        // Checks for Terastalization.
+        if (BattleMon_CheckIfMoveCondition(attackingMon, CONDITION_TERA) || SEARCH_ARRAY(teraItems, attackingMon->HeldItem))
+        {
             attackerType = PML_MoveGetType(Move_GetID(attackingMon, 0));
         }
-        else {
+        else
+        {
             attackerType = BattleMon_GetPokeType(attackingMon);
         }
-
 
         defenderType1Effectiveness = (CheckIfImmuneAbility(defenderType1, 0, attackingMon)) ? 0 : GetTypeEffectivenessVsMon(defenderType1, attackerType);
         defenderType2Effectiveness = (CheckIfImmuneAbility(defenderType2, 0, attackingMon)) ? 0 : GetTypeEffectivenessVsMon(defenderType2, attackerType);
 
-        if (defenderType1Effectiveness == 5 || defenderType2Effectiveness == 5){
+        if (defenderType1Effectiveness == 5 || defenderType2Effectiveness == 5)
+        {
             // If the mon is 4x weak to either of the target's types, halves the seen BP.
             return (a3 >> 1);
         }
-        if (defenderType1Effectiveness == 4 || defenderType2Effectiveness == 4){
+        if (defenderType1Effectiveness == 4 || defenderType2Effectiveness == 4)
+        {
             // If the mon is 2x weak to either of the target's types, removes a quarter of the seen BP
             return (a3 >> 1) + (a3 >> 2);
         }
-        if (defenderType1Effectiveness <= 1 && defenderType2Effectiveness <= 1){
+        if (defenderType1Effectiveness <= 1 && defenderType2Effectiveness <= 1)
+        {
             // If the target heavily resists or is 4x immune to both of the target's types, boosts the BP by 50%
-            return a3  + (a3 >> 1);
+            return a3 + (a3 >> 1);
         }
-        if (defenderType1Effectiveness <= 2 && defenderType2Effectiveness <= 2){
+        if (defenderType1Effectiveness <= 2 && defenderType2Effectiveness <= 2)
+        {
             // If the mon at least resists both of the target's types
-            return a3 + (a3 >> 2); 
+            return a3 + (a3 >> 2);
         }
         return a3;
     }
@@ -2381,55 +2392,7 @@ extern "C"
 
     int illusionMonId;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#if TESTING_DOUBLES_SWITCH_AI 
+#if TESTING_DOUBLES_SWITCH_AI
 
     unsigned int PersonalPickBestMonToSwitchInto(BtlClientWk *a1, u8 *a2, unsigned int a3, BattleMon *a4)
     {
@@ -2461,21 +2424,28 @@ extern "C"
         u8 defendingAllies[5];
         int currentTargetPosition;
         __int16 v23_temp[6];
-         BattleMon *defendingMonChecked;
+        BattleMon *defendingMonChecked;
 
-        if (getSwitchSetting() == 1){
+        if (getSwitchSetting() == 1)
+        {
             numTargets = 1;
-        } else {
+        }
+        else
+        {
             defenderPos = Handler_PokeIDToPokePos(BattleServer_GetServerFlow(a1->mainModule->server), a4->ID);
-            numTargets = Handler_ExpandPokeID(BattleServer_GetServerFlow(a1->mainModule->server), defenderPos | 0x700, defendingAllies);           
+            numTargets = Handler_ExpandPokeID(BattleServer_GetServerFlow(a1->mainModule->server), defenderPos | 0x700, defendingAllies);
         }
 
-        for (currentTarget = 0; currentTarget < numTargets; currentTarget++){
-            if (getSwitchSetting() == 1) {
-               
+        for (currentTarget = 0; currentTarget < numTargets; currentTarget++)
+        {
+            if (getSwitchSetting() == 1)
+            {
+
                 currentTargetPosition = defendingAllies[currentTarget];
                 defendingMonChecked = Handler_GetBattleMon(BattleServer_GetServerFlow(a1->mainModule->server), currentTargetPosition);
-            } else {
+            }
+            else
+            {
                 defendingMonChecked = a4;
             }
             PokeType = BattleMon_GetPokeType(defendingMonChecked);
@@ -2697,9 +2667,9 @@ extern "C"
                                         v10 = checkForTechnician(MonData, ID, v10);
 
                                         v10 = checkForSTAB(MonData, Type, v10);
-                                        #if SWITCH_AI_CHANGES
+#if SWITCH_AI_CHANGES
                                         v10 = checkForMatchup(MonData, defendingMonChecked, v10);
-                                        #endif 
+#endif
                                         v10 = checkForAbilityAndItemBPChanges(MonData, defendingMonChecked, Type, TypeEffectivenessVsMon, v10);
 
                                         BasePower = HIWORD(v10);
@@ -2713,7 +2683,8 @@ extern "C"
                             }
                             v5 = (v5 + 1);
                         } while (v5 < MoveCount);
-                        v23[i] += v23_temp[i];                    }
+                        v23[i] += v23_temp[i];
+                    }
                 }
             }
         }
@@ -2781,13 +2752,11 @@ extern "C"
         BattleMon *v24;         // [sp+28h] [bp-18h]
         __int16 v23_temp[6];
 
-
         v24 = a4;
         u8 *monsCopy = a2;
         copyArray(a2, monsCopy);
         int personalResult = PersonalPickBestMonToSwitchInto(a1, a2, a3, a4);
         personalResult = monsCopy[0];
-
 
         __int16 defenderPos;
         int numTargets;
@@ -2796,21 +2765,28 @@ extern "C"
         int currentTargetPosition;
         BattleMon *defendingMonChecked;
 
-        if (getSwitchSetting() == 1){
+        if (getSwitchSetting() == 1)
+        {
             numTargets = 1;
-        } else {
+        }
+        else
+        {
             defenderPos = Handler_PokeIDToPokePos(BattleServer_GetServerFlow(a1->mainModule->server), a4->ID);
-            numTargets = Handler_ExpandPokeID(BattleServer_GetServerFlow(a1->mainModule->server), defenderPos | 0x700, defendingAllies);           
+            numTargets = Handler_ExpandPokeID(BattleServer_GetServerFlow(a1->mainModule->server), defenderPos | 0x700, defendingAllies);
         }
 
-        for (currentTarget = 0; currentTarget < numTargets; currentTarget++){
-            if (getSwitchSetting() == 1) {     
+        for (currentTarget = 0; currentTarget < numTargets; currentTarget++)
+        {
+            if (getSwitchSetting() == 1)
+            {
                 currentTargetPosition = defendingAllies[currentTarget];
                 defendingMonChecked = Handler_GetBattleMon(BattleServer_GetServerFlow(a1->mainModule->server), currentTargetPosition);
-            } else {
+            }
+            else
+            {
                 defendingMonChecked = a4;
             }
-             k::Printf("Checking mon %d for switch-in from Pokemon %d\n", a4->ID, defendingMonChecked->ID);
+            k::Printf("Checking mon %d for switch-in from Pokemon %d\n", a4->ID, defendingMonChecked->ID);
             PokeType = BattleMon_GetPokeType(defendingMonChecked);
             defAbility = (AbilID)BattleMon_GetValue(defendingMonChecked, VALUE_EFFECTIVE_ABILITY);
             for (i = 0; i < a3; i = (i + 1))
@@ -2834,7 +2810,6 @@ extern "C"
                                 {
                                     Type = PML_MoveGetType(ID);
                                     BasePower = PML_MoveGetBasePower(ID);
-
 
                                     // Weather Ball Checks
                                     if (ID == MOVE267_NATURE_POWER)
@@ -2998,7 +2973,6 @@ extern "C"
                                         TypeEffectivenessVsMon = 3;
                                     }
 
-
                                     if (!HasMoldBreaker(MonData) && CheckIfImmuneAbility(Type, ID, defendingMonChecked))
                                     {
                                         TypeEffectivenessVsMon = 0;
@@ -3035,16 +3009,15 @@ extern "C"
                                         v10 = checkForBPChanges(MonData, defendingMonChecked, ID, v10, a1);
                                         v10 = checkForTechnician(MonData, ID, v10);
                                         v10 = checkForSTAB(MonData, Type, v10);
-                                    #if SWITCH_AI_CHANGES
+#if SWITCH_AI_CHANGES
                                         v10 = checkForMatchup(MonData, defendingMonChecked, v10);
-                                    #endif 
+#endif
                                         v10 = checkForAbilityAndItemBPChanges(MonData, defendingMonChecked, Type, TypeEffectivenessVsMon, v10);
                                         BasePower = HIWORD(v10);
                                     }
                                     if (v23_temp[i] < BasePower)
                                     {
                                         v23_temp[i] = BasePower;
-                                        
                                     }
                                 }
                             }
@@ -3055,41 +3028,41 @@ extern "C"
                         if (atkAbility == ABIL149_ILLUSION)
                         {
                             int illusionBasePower = v23_temp[i];
-                                    #if DEBUGGING_ILLUSION && DEBUGGING_ALL
-                                            k::Printf("\nThe actual best switch in is %d\n", BattleParty_GetMonData(BattleClient_GetActParty(a1), a2[actualBest])->Species);
+#if DEBUGGING_ILLUSION && DEBUGGING_ALL
+                            k::Printf("\nThe actual best switch in is %d\n", BattleParty_GetMonData(BattleClient_GetActParty(a1), a2[actualBest])->Species);
 
-                                            k::Printf("\nFor Pokemon %d, their highest base power move is %d.\nWithout this pokemon of id=%d the switch ai would return %d.",
-                                                    BattleParty_GetMonData(BattleClient_GetActParty(a1), a2[actualBest])->Species, v23[i], i, actualBest);
-                                            k::Printf("\nThe actual best switch in is %d with id %d while the current Pokemon we are assessing is %d with id %d\n", BattleParty_GetMonData(BattleClient_GetActParty(a1), personalResult)->Species, personalResult, MonData->Species, a2[i]);
-                                    #endif
+                            k::Printf("\nFor Pokemon %d, their highest base power move is %d.\nWithout this pokemon of id=%d the switch ai would return %d.",
+                                      BattleParty_GetMonData(BattleClient_GetActParty(a1), a2[actualBest])->Species, v23[i], i, actualBest);
+                            k::Printf("\nThe actual best switch in is %d with id %d while the current Pokemon we are assessing is %d with id %d\n", BattleParty_GetMonData(BattleClient_GetActParty(a1), personalResult)->Species, personalResult, MonData->Species, a2[i]);
+#endif
                             if (personalResult == a2[i])
                             {
-                                        #if DEBUGGING_ILLUSION && DEBUGGING_ALL
-                                                    k::Printf("\nThe Illusion Pokemon is the best switch in");
-                                    #endif
-                               // if (BattleRandom(100) > 50)
+#if DEBUGGING_ILLUSION && DEBUGGING_ALL
+                                k::Printf("\nThe Illusion Pokemon is the best switch in");
+#endif
+                                // if (BattleRandom(100) > 50)
                                 if (BattleRandom(100) > 1)
                                 {
-                                    #if DEBUGGING_ILLUSION && DEBUGGING_ALL
-                                                k::Printf(" but is going dodge their duties\n");
-                                #endif
+#if DEBUGGING_ILLUSION && DEBUGGING_ALL
+                                    k::Printf(" but is going dodge their duties\n");
+#endif
                                     illusionBasePower = illusionBasePower >> 1;
                                     // k::Printf("\nBasePower is now %d", BasePower);
                                 }
                             }
                             else if (personalResult != a2[i] && illusionBasePower >= 80)
                             {
-                                #if DEBUGGING_ILLUSION && DEBUGGING_ALL
-                                                k::Printf("\nThe Illusion Pokemon is not the best switch in");
-                                #endif
-                                
+#if DEBUGGING_ILLUSION && DEBUGGING_ALL
+                                k::Printf("\nThe Illusion Pokemon is not the best switch in");
+#endif
+
                                 // if (BattleRandom(100) > 50)
                                 if (BattleRandom(100) > 1)
                                 {
-                                #if DEBUGGING_ILLUSION && DEBUGGING_ALL
-                                                    k::Printf(" but is going to come in anyways\n");
+#if DEBUGGING_ILLUSION && DEBUGGING_ALL
+                                    k::Printf(" but is going to come in anyways\n");
 
-                                #endif
+#endif
                                     illusionBasePower = illusionBasePower << 1;
                                 }
                             }
@@ -3101,10 +3074,9 @@ extern "C"
 
                         v23[i] += v23_temp[i];
                         k::Printf("\nTotal BP calculated for pokemon %d is %d\n", defendingMonChecked->ID, v23[i]);
-
                     }
                 }
-            }            
+            }
         }
         // k::Printf("\nStep 21\n");
         result = a3;
@@ -3129,26 +3101,10 @@ extern "C"
         return result;
     }
 
-#endif 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#endif
 
 #if USING_VANILLA_SWITCH_AI
-    
+
     unsigned int PersonalPickBestMonToSwitchInto(BtlClientWk *a1, u8 *a2, unsigned int a3, BattleMon *a4)
     {
         unsigned int v5;    // r5
@@ -3176,7 +3132,6 @@ extern "C"
 
         v24 = a4;
 
-        
         PokeType = BattleMon_GetPokeType(a4);
         defAbility = (AbilID)BattleMon_GetValue(a4, VALUE_EFFECTIVE_ABILITY);
 
@@ -3397,9 +3352,9 @@ extern "C"
                                     v10 = checkForTechnician(MonData, ID, v10);
 
                                     v10 = checkForSTAB(MonData, Type, v10);
-                            #if SWITCH_AI_CHANGES
+#if SWITCH_AI_CHANGES
                                     v10 = checkForMatchup(MonData, v24, v10);
-                            #endif 
+#endif
                                     v10 = checkForAbilityAndItemBPChanges(MonData, v24, Type, TypeEffectivenessVsMon, v10);
 
                                     BasePower = HIWORD(v10);
@@ -3672,7 +3627,6 @@ extern "C"
                                     TypeEffectivenessVsMon = 3;
                                 }
 
-
                                 if (!HasMoldBreaker(MonData) && CheckIfImmuneAbility(Type, ID, a4))
                                 {
                                     TypeEffectivenessVsMon = 0;
@@ -3711,7 +3665,7 @@ extern "C"
                                     v10 = checkForSTAB(MonData, Type, v10);
 #if SWITCH_AI_CHANGES
                                     v10 = checkForMatchup(MonData, v24, v10);
-#endif 
+#endif
                                     v10 = checkForAbilityAndItemBPChanges(MonData, v24, Type, TypeEffectivenessVsMon, v10);
                                     BasePower = HIWORD(v10);
                                 }
@@ -3733,7 +3687,7 @@ extern "C"
                         k::Printf("\nFor Pokemon %d, their highest base power move is %d.\nWithout this pokemon of id=%d the switch ai would return %d.",
                                   BattleParty_GetMonData(BattleClient_GetActParty(a1), a2[actualBest])->Species, v23[i], i, actualBest);
                         k::Printf("\nThe actual best switch in is %d with id %d while the current Pokemon we are assessing is %d with id %d\n", BattleParty_GetMonData(BattleClient_GetActParty(a1), personalResult)->Species, personalResult, MonData->Species, a2[i]);
-#endif                  
+#endif
                         int illusionBasePower = v23[i];
                         if (personalResult == a2[i])
                         {
@@ -3793,35 +3747,9 @@ extern "C"
         }
         return result;
     }
-#endif 
+#endif
 
 #pragma endregion
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 #pragma region MidBattleSwitchAI
 
@@ -4000,10 +3928,10 @@ extern "C"
                 // moveDamage = checkCalcTable(flow, attackingMon, defender, (MoveID)Move_GetID(attackingMon, i));
                 // if (!moveDamage)
                 // {
-                    moveDamage = Handler_SimulationDamage(flow,
-                                                          BattleMon_GetID(attackingMon),
-                                                          BattleMon_GetID(defender),
-                                                          Move_GetID(attackingMon, i), true, false);
+                moveDamage = Handler_SimulationDamage(flow,
+                                                      BattleMon_GetID(attackingMon),
+                                                      BattleMon_GetID(defender),
+                                                      Move_GetID(attackingMon, i), true, false);
                 // }
 
                 if ((moveDamage << 1) >= currentHp)
@@ -4074,7 +4002,6 @@ extern "C"
 
         return (CheckIfMonToSwitchToWithSEMove(work, defendingMon, 2)) ? switchout : 0;
     }
-
 
     bool THUMB_BRANCH_SAFESTACK_ShouldSwitchIfChoicedIntoIneffectiveMove(BtlClientWk *work, BattleMon *attackingMon, BattleMon *defendingMon)
     {
@@ -4183,7 +4110,7 @@ extern "C"
         // int moveDamage = checkCalcTable(BattleServer_GetServerFlow(work->mainModule->server), attackingMon, defendingMon, (MoveID)moveID);
         // if (!moveDamage)
         // {
-          int  moveDamage = Handler_SimulationDamage(BattleServer_GetServerFlow(work->mainModule->server),
+        int moveDamage = Handler_SimulationDamage(BattleServer_GetServerFlow(work->mainModule->server),
                                                   BattleMon_GetID(attackingMon),
                                                   BattleMon_GetID(defendingMon),
                                                   moveID, true, false);
@@ -4754,8 +4681,7 @@ extern "C"
 
     extern int sub_219C424(MainModule *a1, int a2);
 
-
-    // Test stoppping the illusion removal. 
+    // Test stoppping the illusion removal.
     void THUMB_BRANCH_MainModule_SetIllusionForParty(MainModule *a1, BattleParty *a2, int a3)
     {
         int i;                          // r6
@@ -4788,7 +4714,7 @@ extern "C"
                 if (NumBattlePositionsOfClient >= i)
                 {
 
-                    // I think this part isn't working properly. 
+                    // I think this part isn't working properly.
                     // if (BattleMon_GetViewSrcData(v8) != a1->TempPartyPkm)
                     // {
                     //     BattleMon_RemoveIllusion(v8);

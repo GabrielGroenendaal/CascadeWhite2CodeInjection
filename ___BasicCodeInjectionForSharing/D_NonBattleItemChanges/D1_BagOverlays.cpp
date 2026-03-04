@@ -588,7 +588,7 @@ extern "C"
 
                 // k::Printf("\nUsing Ability Capsule or Ability Patch\n");
 
-                if (!ability2 || ability1 == ability2)
+                if (!ability2 || ability1 == ability2 || currentAbility == abilityHidden)
                 {
                 }
                 else

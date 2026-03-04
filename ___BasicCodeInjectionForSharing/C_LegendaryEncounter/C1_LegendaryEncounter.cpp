@@ -942,8 +942,8 @@ extern "C"
                 trainerClass = a2->mainModule->btlSetup->TrainerSetups[1]->TrClass;
 
                 // Guardians of Unova and Gym Leaders
-                if (trainerId == VICTINI_ID ||
-                    trainerId == COBALION_ID ||
+                if (trainerId == COBALION_ID ||
+                    // trainerId == VICTINI_ID ||
                     trainerId == VIRIZION_ID ||
                     trainerId == TERRAKION_ID ||
                     trainerId == KELDEO_ID ||
@@ -1029,9 +1029,9 @@ extern "C"
                 else if (trainerId == KYUREM_WHITE_ID){
                     check = 244;
                 }
-                else if (trainerId == VICTINI_ID){
-                    check = 245;
-                }
+                // else if (trainerId == VICTINI_ID){
+                //     check = 245;
+                // }
                 else
                 {
                     check = 14;
@@ -1055,7 +1055,9 @@ extern "C"
                 trainerClass = a2->mainModule->btlSetup->TrainerSetups[1]->TrClass;
                 // k::Printf("\n\nsub_21 TrainerId is %d and TrainerClass is %d\n", trainerId, trainerClass);
 
-                if ((trainerId == VICTINI_ID || trainerId == KYUREM_WHITE_ID || trainerId == 491 || trainerId == 507 || trainerId == 508 || trainerId == 509 || trainerId == 634) && BattleMon_GetID(ViewSrcData) >= 6)
+                if ((trainerId == 491 || trainerId == 507 || trainerId == 508 || trainerId == 509 || 
+                    // trainerId == VICTINI_ID || trainerID == KYUREM_ID ||
+                    trainerId == 634 ) && BattleMon_GetID(ViewSrcData) >= 6)
                 {
                     check = 676;
                 }

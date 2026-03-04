@@ -855,16 +855,16 @@ extern "C"
                         check = 1234;
                     }
                     // Victini
-                    else if (trainerId == VICTINI_ID){
-                        if (BattleMon_GetSpecies(a2) == 494)
-                        {
-                            check = 1312;
-                        }
-                        else
-                        {
-                            check = 1315;
-                        }
-                    }
+                    // else if (trainerId == VICTINI_ID){
+                    //     if (BattleMon_GetSpecies(a2) == 494)
+                    //     {
+                    //         check = 1312;
+                    //     }
+                    //     else
+                    //     {
+                    //         check = 1315;
+                    //     }
+                    // }
                     // Kyurem && Kyurem White
                     else if (trainerId == KYUREM_ID){
                         if (BattleMon_GetSpecies(a2) == 646)
@@ -1038,21 +1038,21 @@ extern "C"
                         result = 237;
                     }
                 }
-                else if (trainerId == VICTINI_ID)
-                {
-                    if (a2 == 1)
-                    {
-                        result = 245;
-                    }
-                    else if (a2 == 2)
-                    {
-                        result = 246;
-                    }
-                    else
-                    {
-                        result = 247;
-                    }
-                }
+                // else if (trainerId == VICTINI_ID)
+                // {
+                //     if (a2 == 1)
+                //     {
+                //         result = 245;
+                //     }
+                //     else if (a2 == 2)
+                //     {
+                //         result = 246;
+                //     }
+                //     else
+                //     {
+                //         result = 247;
+                //     }
+                // }
                 else if (trainerId == KYUREM_ID)
                 {
                     if (a2 == 1)
@@ -1200,16 +1200,16 @@ extern "C"
                         Btlv_StringParam_Setup(&a1->strParam, 1, 234);
                         goto LABEL_13;
                     }
-                    else if (a1->mainModule->btlSetup->TrainerSetups[v5]->TrID == VICTINI_ID && ID >=6)
-                    {
-                        if (BattleMon_GetSpecies(ClientMonData) == 494)
-                        {
-                            Btlv_StringParam_Setup(&a1->strParam, 1, 239);
-                        } else {
-                            Btlv_StringParam_Setup(&a1->strParam, 1, 243);
-                        }
-                        goto LABEL_13;
-                    }
+                    // else if (a1->mainModule->btlSetup->TrainerSetups[v5]->TrID == VICTINI_ID && ID >=6)
+                    // {
+                    //     if (BattleMon_GetSpecies(ClientMonData) == 494)
+                    //     {
+                    //         Btlv_StringParam_Setup(&a1->strParam, 1, 239);
+                    //     } else {
+                    //         Btlv_StringParam_Setup(&a1->strParam, 1, 243);
+                    //     }
+                    //     goto LABEL_13;
+                    // }
                     else if ((a1->mainModule->btlSetup->TrainerSetups[v5]->TrID == KYUREM_ID || a1->mainModule->btlSetup->TrainerSetups[v5]->TrID == KYUREM_WHITE_ID) && ID >=6)
                     {
                         if (BattleMon_GetSpecies(ClientMonData) == 646)

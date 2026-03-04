@@ -4441,16 +4441,27 @@ extern "C" InputButton GCTX_HIDGetHeldKeys();
 extern "C" int MainModule_IsPartnerBattle(MainModule *a1);
 
 u8 *enteredBattle;
+// BattleMon* scannedParty[6];
+// u8 scannedCount;
+// extern "C" BattleMon* getBattleMon(PartyPkm *a1){
+//     for (int i = 0; i < scannedCount; i++){
+//         if (scannedParty[i]->partySrc->Base.pid == a1->Base.pid){
+//             return scannedParty[i];
+//         }
+//     }
+//     return 0;
+// }
 
 extern "C" void findBattleMon(BtlvCore *a1, PokeParty *a2, int clientId)
 {
     BattleParty party = a1->pokeCon->party[clientId];
-
+   
     /* WILD BATTLES */
     if (a1->mainModule->btlSetup->btlType == 0)
     {
         for (int j = 0; j < party.memberCount; j++)
         {
+            
             if (party.mons[j]->partySrc->Base.pid == a2->Pokemon[j].Base.pid)
             {
                 a2->Pokemon[j].field_D8 = 2;
@@ -4571,7 +4582,6 @@ extern "C" void THUMB_BRANCH_SAFESTACK_StartBottomScreenMenu(BtlvCore *a1, Battl
     a2->CommErrorFlag = 0;
     a2->EndFlag = 0;
 }
-
 extern "C" u32 GetScanSetting()
 {
     EventWorkSave *eventWork = GameData_GetEventWork(GAME_DATA);
@@ -4590,8 +4600,12 @@ extern "C" void THUMB_BRANCH_SAFESTACK_PokeList_LoadPokeData(PokeListMain *a1, P
     PokeList_MoveData *v9; // r4
     char v10;              // r0
     int isEnemy;
+    BattleMon* mon;
 
     a3->partyPkm = a2;
+    // mon = getBattleMon(a2);
+    int PokeTypes; 
+
     if (a2)
     {
         a3->Species = PokeParty_GetParam(a2, PF_Species, 0);
@@ -4612,8 +4626,10 @@ extern "C" void THUMB_BRANCH_SAFESTACK_PokeList_LoadPokeData(PokeListMain *a1, P
                 a3->Speed = PML_PersonalGetParamSingle(a3->Species, a3->Forme, Personal_SPE);
                 a3->SpecialAttack = PML_PersonalGetParamSingle(a3->Species, a3->Forme, Personal_SPA);
                 a3->SpecialDefense = PML_PersonalGetParamSingle(a3->Species, a3->Forme, Personal_SPD);
-                a3->CurrentHP = PokeParty_GetParam(a3->partyPkm, PF_NowHP, 0);
-                a3->MaxHP = PokeParty_GetParam(a3->partyPkm, PF_MaxHP, 0);
+                a3->CurrentHP = PML_PersonalGetParamSingle(a3->Species, a3->Forme, Personal_HP);
+                a3->MaxHP = PML_PersonalGetParamSingle(a3->Species, a3->Forme, Personal_HP);
+                // a3->CurrentHP = PokeParty_GetParam(a3->partyPkm, PF_NowHP, 0);
+                // a3->MaxHP = PokeParty_GetParam(a3->partyPkm, PF_MaxHP, 0);
             }
             else
             {
@@ -4625,6 +4641,9 @@ extern "C" void THUMB_BRANCH_SAFESTACK_PokeList_LoadPokeData(PokeListMain *a1, P
                 a3->CurrentHP = PokeParty_GetParam(a3->partyPkm, PF_NowHP, 0);
                 a3->MaxHP = PokeParty_GetParam(a3->partyPkm, PF_MaxHP, 0);
             }
+            // PokeTypes = BattleMon_GetPokeType(mon);
+            // a3->Type1 = PokeTypePair_GetType1(PokeTypes);
+            // a3->Type2 = PokeTypePair_GetType2(PokeTypes);
             a3->Type1 = PokeParty_GetParam(a3->partyPkm, PF_Type1, 0);
             a3->Type2 = PokeParty_GetParam(a3->partyPkm, PF_Type2, 0);
             a3->Level = PokeParty_GetParam(a3->partyPkm, PF_Level, 0) & 0x7F | a3->Level & 0x80;
@@ -4641,6 +4660,7 @@ extern "C" void THUMB_BRANCH_SAFESTACK_PokeList_LoadPokeData(PokeListMain *a1, P
             a3->SexStatusIsEgg = PokeParty_GetSex(a3->partyPkm) & 7 | a3->SexStatusIsEgg & 0xF8;
             a3->SexStatusIsEgg = (8 * sub_202D8EC(a3->partyPkm)) & 0x7F | a3->SexStatusIsEgg & 0x87;
             a3->SexStatusIsEgg = (PokeParty_GetParam(a3->partyPkm, PF_IsEgg, 0) << 7) | a3->SexStatusIsEgg & 0x7F;
+            // a3->Ability = BattleMon_GetValue(mon, VALUE_EFFECTIVE_ABILITY);
             a3->Ability = PokeParty_GetParam(a3->partyPkm, PF_Ability, 0);
             a3->Item = PokeParty_GetParam(a3->partyPkm, PF_Item, 0);
             a3->Experience = (isEnemy) ? 0 : PokeParty_GetParam(a3->partyPkm, PF_Experience, 0);

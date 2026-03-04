@@ -844,7 +844,9 @@ extern "C"
             {
                 trainerId = a1->mainModule->btlSetup->TrainerSetups[1]->TrID;
                 // // k::Printf("\n\nThe Pokemon's ID is %d and the species is %d\n\n", a2, ClientMonData->Species);
-                if ((trainerId == 491 || trainerId == 507 || trainerId == 508 || trainerId == 509 || trainerId == 634 || trainerId == VICTINI_ID || trainerId == KYUREM_ID || trainerId == KYUREM_WHITE_ID) && a2 >= 6)
+                if ((trainerId == 491 || trainerId == 507 || trainerId == 508 || trainerId == 509 || 
+                    // trainerId == VICTINI_ID || trainerId == KYUREM_ID || trainerId == KYUREM_WHITE_ID ||
+                    trainerId == 634) && a2 >= 6)
                 {
                     animation = 677;
                 }
@@ -898,7 +900,9 @@ extern "C"
             {
                 trainerId = a1->mainModule->btlSetup->TrainerSetups[1]->TrID;
                 // // k::Printf("\n\nThe trainer ID is %d.  The Pokemon ID is %d.\n\n", trainerId, MainModule_ViewPosToBattlePos(a1->mainModule, a2));
-                if ((trainerId == 491 || trainerId == 507 || trainerId == 508 || trainerId == 509 || trainerId == 634 || trainerId == VICTINI_ID || trainerId == KYUREM_ID || trainerId == KYUREM_WHITE_ID) && MainModule_ViewPosToBattlePos(a1->mainModule, a2) >= 6)
+                if ((trainerId == 491 || trainerId == 507 || trainerId == 508 || trainerId == 509 || 
+                    // trainerId == VICTINI_ID || trainerId == KYUREM_ID || trainerId == KYUREM_WHITE_ID ||
+                    trainerId == 634) && MainModule_ViewPosToBattlePos(a1->mainModule, a2) >= 6)
                 {
                     animation = 678;
                 }
@@ -956,7 +960,9 @@ extern "C"
                 {
                     trainerId = a1->mainModule->btlSetup->TrainerSetups[1]->TrID;
                     //  // k::Printf("\n\nThe trainer ID is %d. The client ID is %d.  The pokemon ID is %d. switchoutstrID is %d\n\n", trainerId, *a3, a3[1], SwitchOutStrID);
-                    if (trainerId == 491 || trainerId == 507 || trainerId == 508 || trainerId == 509 || trainerId == 634 || trainerId == VICTINI_ID || trainerId == KYUREM_ID || trainerId == KYUREM_WHITE_ID)
+                    if (trainerId == 491 || trainerId == 507 || trainerId == 508 || trainerId == 509 || 
+                        //trainerId == VICTINI_ID || trainerId == KYUREM_ID || trainerId == KYUREM_WHITE_ID ||
+                        trainerId == 634)
                     {
                         SwitchOutStrID = 226;
                     }

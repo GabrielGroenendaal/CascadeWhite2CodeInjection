@@ -945,11 +945,11 @@ extern "C"
     extern DayPart GetRealTimeDayPeriod(Season season);
 #pragma endregion
 
-    Season THUMB_BRANCH_GameData_GetSeason(void *gameData)
-    {
-        return (Season)GetBackgroundSeason();
-        return *(Season *)((u8 *)gameData + 0x1C8);
-    }
+    // Season THUMB_BRANCH_GameData_GetSeason(void *gameData)
+    // {
+    //     return (Season)GetBackgroundSeason();
+    //     return *(Season *)((u8 *)gameData + 0x1C8);
+    // }
     /*
 
         --------------------------------------------------------------------------------------------------

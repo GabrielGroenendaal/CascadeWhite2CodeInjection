@@ -19,9 +19,6 @@
 
 
 Small Issues: 
-    - Victini's Trainer Class is still using Claire's Sprite 
-    - Fix Music Table 
-    - Fix Alder's Trainer Class not having the right Trainer Music either 
     - Add Alder's theme to the overworld.
     - Make sure we're using the trainer background encounter music for Route 14
     - Terastalization might not be using the correct pokemon ID 
@@ -34,7 +31,6 @@ To Do:
     - Debug the illusion implementation 
 
 - Moderate 
-    - Test all the level cap scripts 
     - Implement all the marlon split scripts we've written 
     - Test the new Plasma Frigate Theft Script 
     - Test applying the sprite sheets to the flashback models 

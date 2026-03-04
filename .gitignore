@@ -23,6 +23,7 @@ ___DynamicCalcCascade/
 ___PokewebLiveCascade/
 ___DynamicDex/
 ddex/
+arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi/
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 

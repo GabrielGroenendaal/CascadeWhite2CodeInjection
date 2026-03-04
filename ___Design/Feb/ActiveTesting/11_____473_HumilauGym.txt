@@ -212,10 +212,9 @@ public class MainEvents {
 		Trainer.FlagGet(355);
 		resetMarlonSplitFlags();
 		EventFlags.Set(2421);
-
-		// Examine these more closely once we look into Seaside Cave and Plasma FRigate more.
 		EventWorks.Set(16607, 1);
 		EventWorks.Set(16611, 1); // One of these we'll remove 
+		// EventFlags.Clear(810); // We don't need the Cobalion Event 
 		EventFlags.Set(1002);
 		Base.CMD_262(1, 27);
 		v32 = Player.GetDirection();
