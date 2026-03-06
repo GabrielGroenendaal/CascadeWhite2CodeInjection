@@ -51,10 +51,12 @@ public class MainEvents {
 		Actor.UnpauseAll();
 	}
 
+    // Gym Guide 
 	public static void main_2() { // @ 0x31c
 		int v0;
 		int v1;
 		int v8;
+        int anythingLeft;
 
 		Actor.PauseAll();
 		if (EventWorks.Get(16671) != 0) {
@@ -69,11 +71,12 @@ public class MainEvents {
 			Actor.FacePlayer();
 			Message.Actor(1024, 9, 0, 0);
 			Message.CloseActor();
-			Global2805(30, 1);
+			Global2805(545, 3);
 			Message.Actor(1024, 10, 0, 0);
 			Input.LastKeyWait();
 			Message.CloseActor();
 			EventFlags.Set(117);
+            EventWorks.Set(16671, 2);
 			goto LABEL_03ef;
 		}
 		Sound.SEPlay(1351);
@@ -86,9 +89,62 @@ public class MainEvents {
 		LABEL_03c1:
 		Sound.SEPlay(1351);
 		Actor.FacePlayer();
-		Message.Actor(1024, 10, 0, 0);
-		Input.LastKeyWait();
-		Message.CloseActor();
+        anythingLeft = 0;
+
+        
+        // Humilau B2B
+        if (EventWorks.Get(16445) == 0){
+            anythingLeft += 1;
+        }
+        // Bugsy
+        if (EventWorks.Get(16490) == 0){
+            anythingLeft += 1;
+        }        
+        // Gardenia
+        if (EventWorks.Get(16491) == 0){
+            anythingLeft += 1;
+        }
+        // Virizion
+         if (EventWorks.Get(16472) != 2){
+            anythingLeft += 1;
+        }
+        // Blaine
+        if (!EventFlags.Get(1520 + 770) != 1){
+            anythingLeft += 1;
+        }
+        if (anythingLeft > 0){
+            Message.Actor(1024, 16, 0, 0);
+		    Input.LastKeyWait();
+		    Message.CloseActor();
+
+            // Humilau B2B
+            if (EventWorks.Get(16445) == 0){
+                Message.System(18, 2);
+            }
+            // Bugsy
+            if (EventWorks.Get(16490) == 0){
+                Message.System(19, 2);
+            }        
+            // Gardenia
+            if (EventWorks.Get(16491) == 0){
+                Message.System(20, 2);
+            }
+            // Blaine
+            if (!EventFlags.Get(1520 + 770) != 1){
+                Message.System(21, 2);
+            }
+            // Virizion
+            if (EventWorks.Get(16472) != 2){
+                Message.System(22, 2);
+            }
+
+            Message.CloseAll();
+        } 
+        else {
+          	Message.Actor(1024, 17, 0, 0);
+            Input.LastKeyWait();
+            Message.CloseActor();  
+        }
 
 		LABEL_03d5:
 		goto LABEL_03ef;
@@ -141,6 +197,32 @@ public class MainEvents {
 		Runtime.FinishSubEvents();
 		Actor.UnpauseAll();
 	}
+
+    // Humilau Gym Guide Trigger Event
+    public static void main_5() {
+        if (EventFlags.Get(117)){
+            int GuideEntity;
+            GuideEntity = 7; 
+            Actor.PauseAll();
+         
+            TurnWest(GuideEntity);
+            Message.ActorEx(1024, 15, GuideEntity, 0, 0);
+            TurnEast(255);
+             WalkNorth(GuideEntity);
+             TurnWest(GuideEntity);
+            Actor.WaitActionFinish();
+            Message.ActorEx(1024, 9, GuideEntity, 0, 0);
+            Message.CloseAll();
+            Global2805(545, 3);
+            Message.ActorEx(1024, 10, GuideEntity, 0, 0);
+            Input.LastKeyWait();
+            Message.CloseActor();
+            EventFlags.Set(117);
+            Runtime.FinishSubEvents();
+            Actor.UnpauseAll();            
+        }
+    }
+
 
 	static void sub_009c() { // @ 0x9c
 		int v0;
@@ -407,15 +489,27 @@ public class MainEvents {
 	static meta void ActionSequence_04a4(int npcId) : VActionSequence {
 		Action0021(1);
 	}
-
+    static meta void TurnEast(int npcId) : VActionSequence {
+		Action0023(1);
+	}
+    static meta void TurnWest(int npcId) : VActionSequence {
+		Action0022(1);
+	}
+	static meta void WalkNorth(int npcId) : VActionSequence {
+		Action000c(1);
+	}
+	
 	static meta void Global2805(int a1, int a2) : VGlobalCall[2805];
 
 	static native void Action0003(int amount) : 0x3;
 	static native void Action000d(int amount) : 0xd;
+	static native void Action000c(int amount) : 0xc;
 	static native void Action0010(int amount) : 0x10;
 	static native void Action0012(int amount) : 0x12;
 	static native void Action0020(int amount) : 0x20;
 	static native void Action0021(int amount) : 0x21;
+    static native void Action0022(int amount) : 0x22;
+    static native void Action0023(int amount) : 0x23;
 	static native void Action0045(int amount) : 0x45;
 	static native void Action0047(int amount) : 0x47;
 	static native void Action0048(int amount) : 0x48;

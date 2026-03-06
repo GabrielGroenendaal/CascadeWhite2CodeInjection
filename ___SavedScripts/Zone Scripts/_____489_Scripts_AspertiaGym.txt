@@ -58,6 +58,11 @@ public class MainEvents {
 		Message.ActorEx(1024, 22, 3, 0, 0);
 		Message.WaitAdvance();
 		Message.CloseAll();
+		ShowExclamationMark(3);
+		Actor.WaitActionFinish();
+		Message.ActorEx(1024, 25, 3, 0, 0);
+		Message.WaitAdvance();
+		Message.CloseAll();
 		Actor.WalkRoute(3, 12, 22, 0, 8, 0);
 		Actor.WaitActionFinish();
 		ActionSequence_08e0(3);
@@ -331,7 +336,9 @@ public class MainEvents {
 
 	public static void main_7() { // @ 0x837
 		int v8;
+		int anythingLeft;
 
+		
 		Actor.PauseAll();
 		v8 = TrainerCard.HasBadge(0);
 		if (v8 != 0) {
@@ -342,11 +349,50 @@ public class MainEvents {
 			Message.CloseActor();
 			goto LABEL_0880;
 		}
-		Sound.SEPlay(1351);
-		Actor.FacePlayer();
-		Message.Actor(1024, 22, 0, 0);
-		Input.LastKeyWait();
-		Message.CloseActor();
+
+		anythingLeft = 0;
+
+        // Rowap / Jaboca
+        if (!EventFlags.Get(542)){
+            anythingLeft += 1;
+        }   
+        // Blueberry Trade
+        if (!EventFlags.Get(541)){
+            anythingLeft += 1;
+        }   
+        // Brock 
+        if (!EventFlags.Get(764 + 1520)){
+            anythingLeft += 1;
+        }
+
+		if (anythingLeft > 0){
+			Sound.SEPlay(1351);
+			Actor.FacePlayer();
+			Message.Actor(1024, 26, 0, 0);
+			Input.LastKeyWait();
+			Message.CloseActor();
+
+			// Rowap / Jaboca
+			if (!EventFlags.Get(542)){
+				Message.System(28, 2);
+			}   
+			// Blueberry Trade
+			if (!EventFlags.Get(541)){
+				Message.System(29, 2);
+			}   
+			// Brock 
+			if (!EventFlags.Get(764 + 1520)){
+				Message.System(27, 2);
+			}
+			Message.CloseAll();
+		}
+		else {
+			Sound.SEPlay(1351);
+			Actor.FacePlayer();
+			Message.Actor(1024, 22, 0, 0);
+			Input.LastKeyWait();
+			Message.CloseActor();
+		}
 
 		LABEL_0880:
 		Runtime.FinishSubEvents();
@@ -502,7 +548,9 @@ public class MainEvents {
 	static meta void ActionSequence_08e8(int npcId) : VActionSequence {
 		Action004b(1);
 	}
-
+    static meta void ShowExclamationMark(int npcId) : VActionSequence {
+        Action004b(1);
+    }
 	static meta void Global2805(int a1, int a2) : VGlobalCall[2805];
 
 	static native void Action0000(int amount) : 0x0;

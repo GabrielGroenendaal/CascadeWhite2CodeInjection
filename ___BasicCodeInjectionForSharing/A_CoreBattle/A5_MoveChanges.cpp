@@ -36,7 +36,7 @@ extern "C"
                 a1 == IT0230_FOCUS_BAND ||
                 a1 == IT0306_TERA_B_POLICY ||
                 a1 == IT0256_BLUNDER_POLICY ||
-                a1 == IT0305_TERA_W_POLICY || 
+                a1 == IT0305_TERA_W_POLICY ||
                 a1 == IT0228_TERA_GEM ||
                 a1 == IT0302_TERA_SASH);
     }
@@ -903,58 +903,58 @@ extern "C"
         return result;
     }
 
-    void THUMB_BRANCH_SAFESTACK_HandlerPresentRandomCheck(int a1, ServerFlow *a2, int a3, int *a4)
-    {
-        int Defending;
-        if (a3 == BattleEventVar_GetValue(VAR_ATTACKING_MON))
-        {
-            Defending = BattleEventVar_GetValue(VAR_DEFENDING_MON);
-            if (MainModule_IsAllyMonID(a3, Defending))
-            {
-                *a4 = BattleEventVar_RewriteValue(VAR_GENERAL_USE_FLAG, 1);
-            }
-            Handler_SetMoveEffectIndex(a2, *a4 != 0);
-        }
-    }
+    // void THUMB_BRANCH_SAFESTACK_HandlerPresentRandomCheck(int a1, ServerFlow *a2, int a3, int *a4)
+    // {
+    //     int Defending;
+    //     if (a3 == BattleEventVar_GetValue(VAR_ATTACKING_MON))
+    //     {
+    //         Defending = BattleEventVar_GetValue(VAR_DEFENDING_MON);
+    //         if (MainModule_IsAllyMonID(a3, Defending))
+    //         {
+    //             *a4 = BattleEventVar_RewriteValue(VAR_GENERAL_USE_FLAG, 1);
+    //         }
+    //         Handler_SetMoveEffectIndex(a2, *a4 != 0);
+    //     }
+    // }
 
-    void THUMB_BRANCH_SAFESTACK_HandlerPresentHeal(int a1, ServerFlow *a2, unsigned int *a3, unsigned int **a4)
-    {
-        int Value;                  // r6
-        BattleMon *BattleMon;       // r7
-        HandlerParam_RecoverHP *v9; // r5
-        if ((int)a3 == BattleEventVar_GetValue(VAR_ATTACKING_MON) && *a4)
-        {
-            Value = BattleEventVar_GetValue(VAR_DEFENDING_MON);
-            BattleMon = Handler_GetBattleMon(a2, Value);
-            if (BattleMon_IsFullHP(BattleMon))
-            {
-                SendMessage(a2, (int)a3, Value, 210, 0);
-            }
-            else
-            {
-                v9 = (HandlerParam_RecoverHP *)BattleHandler_PushWork(a2, EFFECT_RECOVERHP, (int)a3);
-                v9->pokeID = Value;
-                v9->recoverHP = DivideMaxHPZeroCheck(BattleMon, 2u);
-                BattleHandler_StrSetup(&v9->exStr, 2u, 387);
-                BattleHandler_AddArg(&v9->exStr, Value);
-                BattleHandler_PopWork(a2, v9);
-            }
-        }
-    }
+    // void THUMB_BRANCH_SAFESTACK_HandlerPresentHeal(int a1, ServerFlow *a2, unsigned int *a3, unsigned int **a4)
+    // {
+    //     int Value;                  // r6
+    //     BattleMon *BattleMon;       // r7
+    //     HandlerParam_RecoverHP *v9; // r5
+    //     if ((int)a3 == BattleEventVar_GetValue(VAR_ATTACKING_MON) && *a4)
+    //     {
+    //         Value = BattleEventVar_GetValue(VAR_DEFENDING_MON);
+    //         BattleMon = Handler_GetBattleMon(a2, Value);
+    //         if (BattleMon_IsFullHP(BattleMon))
+    //         {
+    //             SendMessage(a2, (int)a3, Value, 210, 0);
+    //         }
+    //         else
+    //         {
+    //             v9 = (HandlerParam_RecoverHP *)BattleHandler_PushWork(a2, EFFECT_RECOVERHP, (int)a3);
+    //             v9->pokeID = Value;
+    //             v9->recoverHP = DivideMaxHPZeroCheck(BattleMon, 2u);
+    //             BattleHandler_StrSetup(&v9->exStr, 2u, 387);
+    //             BattleHandler_AddArg(&v9->exStr, Value);
+    //             BattleHandler_PopWork(a2, v9);
+    //         }
+    //     }
+    // }
 
-    int THUMB_BRANCH_HandlerPresentPower(int a1, int a2, int a3)
-    {
-        int result;      // r0
-        int v5;          // r4
-        unsigned int v6; // r0
+    // int THUMB_BRANCH_HandlerPresentPower(int a1, int a2, int a3)
+    // {
+    //     int result;      // r0
+    //     int v5;          // r4
+    //     unsigned int v6; // r0
 
-        result = BattleEventVar_GetValue(VAR_ATTACKING_MON);
-        if (a3 == result)
-        {
-            return BattleEventVar_RewriteValue(VAR_MOVE_POWER, 90);
-        }
-        return result;
-    }
+    //     result = BattleEventVar_GetValue(VAR_ATTACKING_MON);
+    //     if (a3 == result)
+    //     {
+    //         return BattleEventVar_RewriteValue(VAR_MOVE_POWER, 90);
+    //     }
+    //     return result;
+    // }
 
     int THUMB_BRANCH_HandlerStoredPower(int a1, ServerFlow *a2, int a3)
     {
@@ -1665,7 +1665,7 @@ extern "C"
         {
             battleMon = Handler_GetBattleMon(a2, a3);
             HeldItem = BattleMon_GetHeldItem(battleMon);
-           
+
             Param = ItemGetParam(HeldItem, ITSTAT_NATURAL_GIFT_POWER);
             // k::Printf("\nThe natural gift power for item %d on pokemon %d is %d\n", HeldItem, battleMon->ID, Param);
             if (Param)
@@ -1719,7 +1719,7 @@ extern "C"
         *a1 = 2;
         return NaturalGiftHandlers;
     }
-    
+
 #pragma endregion
 
 #pragma region StompingTantrumAndClones
@@ -1761,6 +1761,28 @@ extern "C"
 #pragma endregion
 
 #pragma region PollenPuff
+
+    void HandlerNightShade(BattleEventItem *a1, int a2, int a3)
+    {
+        int v4; // r0
+        if (a3 == BattleEventVar_GetValue(VAR_ATTACKING_MON))
+        {
+            BattleEventVar_MulValue(VAR_RATIO, 8096);
+        }
+    }
+
+    MOVE_TRIGGERTABLE NightShadeHandlers[] = {
+        {EVENT_CALC_RECOIL, (MOVE_HANDLER_FUNC)HandlerNightShade}};
+
+    // Night Shade
+    MOVE_TRIGGERTABLE *THUMB_BRANCH_EventAddPresent(_DWORD *a1)
+    {
+        *a1 = 1;
+        return NightShadeHandlers;
+    }
+
+
+
 
     void HandlerPollenPuffCheck(int a1, ServerFlow *a2, int a3, int *a4)
     {
@@ -1866,7 +1888,6 @@ extern "C"
     // }
 
 #pragma endregion
-
 
 #pragma region Recharge
 
@@ -2076,7 +2097,6 @@ extern "C"
 
     // extern BattleEventItem* BattleEvent_SeekItem(BattleEventItemType a1, int a2);
 
-    
     int THUMB_BRANCH_IsUnselectableMove(BtlClientWk *a1, BattleMon *a2, int move, Btlv_StringParam *strparam)
     {
         ConditionData MoveCondition; // r0
@@ -2324,8 +2344,6 @@ extern "C"
         }
         return 0;
     }
-
-
 
 #pragma endregion
 

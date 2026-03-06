@@ -10,7 +10,8 @@ NewAILogic:
 	JumpIfStoredIsInList(&debuff_moves_save, &debuff_moves_save_script)
 	JumpIfStoredIsInList(&debuff_moves_status, &debuff_moves_status_script)
 	JumpIfMoveEffectEQ(move_ef.increased_priority, &address_Priority)
-
+    JumpIfMoveEffectEQ(move_ef.fake_out, &address_Priority)
+    
 endScript_1:
 	EndScript()
 
@@ -88,20 +89,23 @@ priorityCheckSpeed:
 priorityPrioritize:
 	CalcMoveDamage(false)
 	JumpIfStoredEQ(no_damage, &deprioritize_address)
+    JumpIfMoveEQ(move.fake_out, &priority_FakeOut)
     JumpIfMoveEQ(move.first_impression, &priority_FakeOut)
     Jump(&priorityEnd)
 
 priority_FakeOut:
     StoreIsFirstTurn(attacker)
 	JumpIfStoredEQ(false, &deprioritize_address)
+	Jump(&priorityFakeOutEnd)
 
 priorityEnd:
 	JumpIfRandLT(100, &endOfTheScript)
 	AddToScore(6)
 	EndScript()
 
-
-
+priorityFakeOutEnd: 
+	AddToScore(15)
+	EndScript()
 
  
 

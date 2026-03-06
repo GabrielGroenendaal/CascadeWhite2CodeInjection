@@ -24,6 +24,7 @@ import system.Input;
 import system.Runtime;
 import system.Sound;
 import system.text.WordSet;
+import event.Trainer;
 
 public class MainEvents {
 	public static void main_1() { // @ 0xe
@@ -154,6 +155,7 @@ public class MainEvents {
         Actor.WaitActionFinish();
         TurnWest(255);
         Actor.WaitActionFinish();
+        Trainer.PlayBGMPush(283);
         Message.ActorEx(1024, 16, 15, 0, 0);
         Input.LastKeyWait();
         Message.CloseAll();
@@ -183,6 +185,7 @@ public class MainEvents {
             Message.CloseAll();
             goto LABEL_EndFishermanSid;
         }
+        Trainer.PlayBGMPush(283);
         Message.ActorEx(1024, 16, 15, 0, 0);
         Input.LastKeyWait();
         Message.CloseAll();
@@ -211,10 +214,11 @@ public class MainEvents {
         Actor.WaitActionFinish();
         TurnSouth(255);
         Actor.WaitActionFinish();
+        Trainer.PlayBGMPush(414);
         Message.ActorEx(1024, 18, 1, 0, 0);
         Input.LastKeyWait();
         Message.CloseAll();
-        Battle.CallTrainerBattle(283, 0, 0);
+        Battle.CallTrainerBattle(414, 0, 0);
         isVictory = Battle.IsTrainerVictory();
         if (isVictory != 1){
             Battle.CallTrainerLose();
@@ -240,10 +244,11 @@ public class MainEvents {
             Message.CloseAll();
             goto LABEL_EndFishermanBucky;
         }
+        Trainer.PlayBGMPush(414);
         Message.ActorEx(1024, 18, 1, 0, 0);
         Input.LastKeyWait();
         Message.CloseAll();
-        Battle.CallTrainerBattle(283, 0, 0);
+        Battle.CallTrainerBattle(414, 0, 0);
         isVictory = Battle.IsTrainerVictory();
         if (isVictory != 1){
             Battle.CallTrainerLose();
@@ -267,6 +272,7 @@ public class MainEvents {
         Actor.WaitActionFinish();
         TurnSouth(255);
         Actor.WaitActionFinish();
+        Trainer.PlayBGMPush(245);
         Message.ActorEx(1024, 10, 3, 0, 0);
         Input.LastKeyWait();
         Message.CloseAll();
@@ -304,6 +310,7 @@ public class MainEvents {
         Actor.WaitActionFinish();
         TurnSouth(255);
         Actor.WaitActionFinish();
+        Trainer.PlayBGMPush(54);
         Message.ActorEx(1024, 14, 6, 0, 0);
         Input.LastKeyWait();
         Message.CloseAll();
@@ -341,6 +348,7 @@ public class MainEvents {
         Actor.WaitActionFinish();
         TurnSouth(255);
         Actor.WaitActionFinish();
+        Trainer.PlayBGMPush(246);
         Message.ActorEx(1024, 12, 4, 0, 0);
         Input.LastKeyWait();
         Message.CloseAll();
@@ -508,6 +516,7 @@ public class MainEvents {
         EventFlags.Clear(1520 + 282);
         EventFlags.Set(1520 + 282);
         Message.System(29, 2);
+        Sound.MEPlay(1306);
         Message.WaitAdvance();
         Message.CloseAll();
 
@@ -547,7 +556,6 @@ public class MainEvents {
         Actor.PauseAll();
         Sound.MEPlay(1852);
         Sound.MEWait();
-        Sound.MEPlay(1351);
         WordSet.LoadPlayerName(0);
         Message.System(30, 2);
         Message.WaitAdvance();

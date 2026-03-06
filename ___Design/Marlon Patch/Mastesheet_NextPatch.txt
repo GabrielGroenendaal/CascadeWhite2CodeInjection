@@ -452,6 +452,7 @@ end
 
 !items Items 
 tm electric, TM04 Shock Wave (reward for defeating Scientist)
+kings rock, King's Rock (speak to Benga in the NorthEast)
 tm water, TM50 Water Pulse (reward for defeating Misty)
 clear amulet, Clear Amulet (reward for defeating Misty)
 stable mulch, Naive Mint (reward for defeating Misty)
@@ -2071,5 +2072,4 @@ end
 # End of Current Content
 
 ### -
-
 

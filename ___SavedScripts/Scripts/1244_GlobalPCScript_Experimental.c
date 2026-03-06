@@ -295,7 +295,11 @@ label33a: ;
 	goto label35a;
 
 label34a: ;
-    // Castelia Sewers and Associated Areas
+	// Check for Follower
+	SetVarFlagStatus(2406, 0x8028);
+	Compare(0x8028, 1);
+	if (1) goto label_cantFlyHere;
+	// Castelia Sewers and Associated Areas
 	Storec0xD3(0x8028);
 	Compare(0x8028, 495);
 	if (1) goto label_cantFlyHere;

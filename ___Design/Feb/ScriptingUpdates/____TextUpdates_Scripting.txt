@@ -1,0 +1,495 @@
+----- TEXT FILE 295----- Castelia Sewers
+0: [VAR TRNAME(1)]: [VAR TRNAME(0)]!\nI need you to get tougher!\c\nEven I'm going to have trouble\ntaking them on all by myself...\c\nAnyway, it's OK!\nI'll take care of healing our Pok�mon!\c\nI'm counting on you, [VAR TRNAME(0)]!\nAre you ready to go?
+1: [VAR TRNAME(1)]: C'mon!\nHurry up and get ready!\c
+2: [VAR TRNAME(1)]: OK!\nLet's find Team Plasma!\c
+3: [VAR TRNAME(1)]: I suppose.\nGoing to step outside for a minute?
+4: [VAR TRNAME(1)]: I'm sorry\nI got you mixed up in this,\r\nbut I can't forgive Team Plasma!
+5: [VAR TRNAME(1)]: So this is the sewer...\nWell, it's not as stinky as I expected.
+6: [VAR TRNAME(1)]: Still...\nPok�mon live everywhere, don't they?
+7: [VAR TRNAME(1)]: If you don't get strong,\nyou can't protect the things that are\r\nimportant to you!
+8: [VAR TRNAME(1)]: Don't worry about me!\nLet's hurry and find Team Plasma!
+9:                                     
+10:                                   
+11: Hey!\c
+12: Team Plasma: What do you want?\c
+13: [VAR TRNAME(1)]: Team Plasma!\nYou villains!\c
+14: Team Plasma: What?\nDon't treat us like villains!\c\nAnd don't interfere with our\nplans to liberate Pok�mon!\c
+15: [VAR TRNAME(1)]: Liberate? Ha!\nYou're just ordinary Pok�mon thieves!\c\nAnd what's more, you use those\nstolen Pok�mon like they're tools!\c
+16: Team Plasma: Shaddap!\nHand over your Pok�mon!\c
+17: [VAR TRNAME(1)]: Let's do this, [VAR TRNAME(0)]!\c
+18: Team Plasma: They're really tough!\c\nBut whatever!\nWe've got the Pok�mon we need!\r\nNow, we flee!\c
+19: [VAR TRNAME(1)]: Tch!\nThey run away like Patrat!\c\nOK! Let's go farther inside!\nThere might be more in there!\c
+20: ???: I don't think that's\nnecessary, you two.\c
+21: [VAR TRNAME(1)]: Could you be\nGym Leader Burgh?\c
+22: Burgh: Yessir! One and the same!\nI'm Burgh.\c\nAnd there was no one suspicious\nbeyond here!\c
+23: [VAR TRNAME(1)]: Is that...so?\c
+24: Burgh: Yes indeedy!\c\nI'm concerned about\nTeam Plasma as well.\c\nMore importantly, shall\nwe leave this place?\c\nFor some reason,\nthis sewer is bugging me.\c
+25: [VAR TRNAME(1)]: Huh...\c\nDidn't you and the other Gym Leaders\nfight Team Plasma two years ago?\c
+26: [VAR TRNAME(1)]: Thanks for your help.\nHere, use this!\c
+27: I'll find those other\nTeam Plasma punks!\c\nI... I'll never forgive Pok�mon thieves!\nNo way!\c
+28: Burgh: He's gone...\c
+29: ???: You there!\c
+30: That was an excellent demonstration\nof battling. The way you brought out\r\nthe power of your Pok�mon against\r\nan opponent like Team Plasma...\c\nAstounding. Simply astounding.\nInteresting as well. I see...\c
+31: Burgh: Who...was that?\c
+32: Well. No matter.\nWhat are you going to do?\c\nYou can stay here\nand train your Pok�mon.\c\nOr maybe you should come\nchallenge me, the Gym Leader!\c\nBe seeing you!\c
+33: Waitasecond!\c\nI dropped something here!\nJust wait until I find it!
+34: Waitasecond!\c\nI dropped something here!\nJust wait until I find it!\c
+35: Phew...\nI finally made it back here.\c\nAre you going farther inside?\nThere's nothing in there but Trainers.
+36: Rhydon is raring to go.
+37: Hm... you seem suspicious.\nWhat are you doing down here in the\r\nsewers?
+38: We're here on official business!\nWe're looking for an illicit substance\r\ndealer. Be careful!
+39: Woah, who goes there!
+40: Crazy how many people there are in the\nsewer today.
+41: I am a Doctor!\c\nIf you have Pok�mon in bad shape...\nLet me see your Pok�mon in battle!
+42: Your Pok�mon are full of life!
+43: You are energetic!\nI will punish lazy children!
+44: You just don't quit!\nYou are so energetic!
+45: I used to be a pro athlete, but now\nI'm a sweeper!
+46: Sweeping isn't too different from hockey\nif you think about it.
+47: Cleaning actually takes a lot\nof strength...\c\nIn other words, I've been training real\nhard by doing all this cleaning!
+48: When you clean, do you ever feel like\nit's never going to end?\c\nWorks for me! That means I can clean\nforever, and I sure love cleaning.
+49: WhoooOOOooOOOOOoa!!
+50: Isn't it fun how shouting out in a sewer\nor a tunnel makes your voice echo?
+51: I've found a strong-looking Trainer\nduring my patrol!\c\nGo, Bibarel!
+52: You see my Bibarel?\c\nIt always seems to want to take the\nsame exact route, but why is that?
+53: Sine, cosine, tangent!
+54: What a catastrophic theorem!
+55: I'm a researcher studying about the\nsmell here!
+56: Even odors that might seem awful to\nhumans might be perfume to a Pok�mon.
+57: [VAR TRNAME(0)]: There are Trainers ahead...\nWanna take them on together?
+58: [VAR TRNAME(0)]: Got it!
+59: I'm doing research on rare Berries.\nCan you help me run an experiment?
+60: Enigma Berries heal a Pokemon for a third\nof their health when they withstand a\r\nsuper-effective attack!
+61: Oh, ok!
+62: Great! Here we go!
+63: I got a lot of valuable data!\nHere's a reward!
+
+
+65: 
+Oh hello there, [VAR TRNAME(0)]!\n-I mean, stranger!\c\nI am but a simple law clerk who got\nlost here in the sewers!\c 
+66:
+Why am I in the sewers?\nIt's a shortcut to work, of course!\c 
+67:
+Say, I saw you have a battle with those two strange men in Plasma uniforms. Do you know their purpose here in Castelia. Who are their superiors? Where is their base of operations?
+68:
+I don't know..? 
+69:
+Why are you asking me..?
+70:
+Teeheee, of course.\nI was just curious!\c\nI'm off back to work at the... factory!\c\nBye!\c
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+----- TEXT FILE 315----- Floccessy Ranch
+60:
+???: Don't worry lil' guy, that weirdo\ncan't hurt you anymore!\c\nJust rest a sec, let the oran berries\ndo their work!
+
+61:
+???: Huh, who are you?\nYou smell tough!\c
+
+62:
+...\n...\c\n???: [VAR TRNAME(0)], huh?\nBenga: Call me Benga, the [COLOR(2)]UNDEFEATED[COLOR(0)],\nthe strongest trainer in Floccesy Town!\c\nAnd soon, strongest in the world!\n
+
+63:
+I've got champion in my blood!\nMy gramps is the champion!\c\nOr... he was...
+
+64:
+I was out here training when I ran\ninto that goon messing with this lil' guy.\c\nWhat kind of jerk gets off picking\non a Pokémon like that?\c\nAnd he didn't even put up a good fight,\na total pushover.\c
+
+65:
+Hey!\nI've got a battle itch that weirdo\r\ncouldn't scratch.\c\nLet me show you how a future champ\nbattles!\c 
+
+66:
+Benga; Woah, where'd you come\nfrom stranger?\c
+
+67:
+You're strong! Crazy strong!\c\nYou must be...
+
+68:
+...my RIVAL!\c
+
+69:
+No wonder you're so strong!\nYou'd have to be to challenge me!\cHere, a gift to cement our new rivalry!
+
+70:
+Benga: Hm... guess I'm off to a bad start with\nthe whole "undefeated" thing.\c
+
+71:
+Okay!\nREDO REDO!
+
+72:
+You better watch out next time we fight!\c\nBecause starting NOW I'm never going to\nlose a battle to nobody, count on it!\c
+
+73:
+See, this guy knows what I'm talking\nabout!\c\nLooks like the oran berries did\nthe trick!\c
+
+74:
+Benga: I'll find ya later, [VAR TRNAME(0)]!\nThis is gonna be fun!
+
+75:
+HEY! 
+
+76:
+???: Tch... you little pest!\nWatch where you're going!\c\nDon't you know who you're messin with?\c\nI'm a member of a group that strikes\nfear into the hearts of those who\r\nstand before it: Team Plasma!\c\nEver heard of it?
+
+77: 
+Whatever...\c\nFools will never understand us...\c\nStill...\c\nFirst I got lost chasing Herdier...\nand then some crazy kid attacked me...\r\nand now you're messing up my escape!\c
+
+78: 
+Agh!\nIs he following me?\c
+
+79: 
+Better hope we don't meet again, kid!\c\nOr I'll really mess you up!\c
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+----- TEXT FILE 180----- VIRBANK CITY (Incorrect, we added something here I think)
+52: 
+Benga: Hey there, [VAR TRNAME(0)]!
+
+53:
+Benga: You haven't fought Roxie yet?
+
+54: 
+You gotta catch up if you wanna be\nmy rival, [VAR TRNAME(0)]!\c\nHere, maybe this will help!
+
+55:
+It's a King's Rock!\nMy gramps gave it to me as a\rlucky charm.\c\nBut I don't think I'll need his luck\nanymore. 
+
+56:
+The next gym is in Castelia City, right..?
+
+57:
+Benga: I'll race you there, rival!
+
+58:
+Where ya been?\c\nI've been keeping my promise since we last fought:\nI haven't lost a single battle!\c\nI evne just got my Toxic Badge from\nthe gym leader here!\c\nTwo down, six to go!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+----- TEXT FILE 540----- Route 4 
+
+27: 
+???: Woah, FIRE alert, [VAR TRNAME(0)] is\nrolling in!
+
+28:
+Benga: How's it hanging, rival?\nYou got your Insect Badge? 
+
+29:
+Benga: Smells like its time for a\nrematch then!\c\nAnd I'm warning ya, I haven't lost a\nbattle since...
+
+30:
+...BAH! Who cares!\nLet's RUMBLE!\c
+
+31:
+Benga: Heh...\nThat was a good battle, thanks...
+
+32:
+Benga: I won..?
+
+33: WOOOOOOOO!!! 
+
+34: 
+Benga: Woah, sorry about that.\nI don't mean to be a sore winner:\nthat was a great battle!\c
+
+35: 
+To be real with ya, I kinda needed this win today.\c\nIt hasn't been so long since I\nlost, actually.\c
+
+36:
+I was doing real good, beating everyone\njust like gramps, even the Gym Leaders!\c\nSo when I heard the current "champ" was\nin Castelia, I thought I could beat them.\c
+
+37:
+I lost.\nI lost BAD.\c
+
+38:
+I thought maybe it was a fluke,\nbut then I go and lose to you again...\c
+
+39:
+I was hopin' it was a fluke, that beating\nwould prove I had the sauce, but nah,\r\nthere's no comparison.\c\nThe champ's so strong... they're playing\na different game than the two of us...\c
+
+40:
+No... 
+
+41:
+NO!!!! 
+
+42:
+Benga: I'm the best, so for someone to\nbeat me that means they gotta be\r\nthe bestest best!
+
+43:
+So all I gotta do is become the\nBESTEST bestest best!\c\nIt's so obvious!
+
+44:
+Thanks [VAR TRNAME(0)].\nI needed that pep talk!\c\nNext time we meet, I'll show you what\nthe best of the best looks like!\c
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+----- TEXT FILE 601----- Route 19
+9: Ah, a trainer!\nMy name is Alder!\c\nI'm a Trainer with a keen interest in the\nworld. One of my goals is to tell people\r\nabout how wonderful it is to walk toward\r\nthe future together with Pokémon.\c
+11: Your [VAR PKNAME(1)] is\na fine-looking Pokémon!\c\nBut, you're not exactly\na seasoned Trainer yet...\c
+36: ???: Do you see something, Victini?
+
+37:
+Victini seems to see something in you,\nand its rarely wrong about these things!\c
+
+38: 
+Indeed! I'll train you a little!\nFollow me!\c
+
+39:
+Tini!\c
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+----- TEXT FILE 651-----
+47: 
+Victini rocks back and forth on its\nround body with a huge smile! 
+
+
+
+
+
+
+
+
+----- TEXT FILE 603----- Route 20 
+
+20:
+O-oh!\nHello there, partner!\c
+21:
+My name is Britney!\nI'm just a Unovan schoolgirl out here\r\ntraining for a big test!
+22:
+Say, I just saw you speaking with that\nwoman in the silly outfit!\c\nWho was she?
+23:
+A member of Team Plasma 
+24:
+A member of Team Neo Plasma 
+25:
+I don't know
+26:
+Team Plasma?
+27:
+I thought they were defeated two\nyears ago?
+28:
+Team... Neo Plasma?
+29:
+Are they a new group of bad guys,\nor the remnants of the old one...
+30:
+...he doesn't want to talk, huh.
+31:
+...she doesn't want to talk, huh.
+32:
+Did she tell what she was up to?\nDo you know where she went?\r\nDoes she have any allies?
+33:
+Oh, teehee!\nSorry about that! I just love gossip.\r\nThanks for the chat, mister!
+34:
+Oh, teehee!\nSorry about that! I just love gossip.\r\nThanks for the chat, miss!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+----- TEXT FILE 249----- PWT
+
+71:
+Benga: Let's see...\c\nI want to teach Garchomp Dragon Rush for\ndouble battles, but I might want to save\r\nthis scale to teach Venusaur Growth\ndown the line...
+
+72: 
+Benga: [VAR TRNAME(0)]!\nYou're here!
+
+73:
+Benga: Dude, this place is awesome!\c\nAll these amazing trainers duking it out\nto prove they're the best: it's sick!\c\n
+
+74:
+There's also a ton of stuff here to help\ntrainers get super strong! 
+
+75:
+Like the lady over here, super nice lady,\ncan teach your Pokémon any move its\r\never known!
+
+76:
+She can even teach Pokémon moves they\ncan't learn any other way!\c\nDo you think she's, like, tapping into\ntheir genetic memory?
+
+77:
+It ain't free though:\nshe charges one [COLOR(2)]Heart Scale[COLOR(0)] per move!\c\nThey're super rare, but I pulled a bunch\noff Luvdisc while swimming over!\c\nHere, take some!
+
+78:
+You should look around, there's\nsome other crazy stuff here too!\c 
+
+79:
+The Blueberry Academy set up a bunch of\nmove tutors across the plaza!\c
+
+80:
+And the guy in that north booth says he\ncan even maximize a Pokémon's natural\r\npotential!\c
+
+81:
+Benga: Alright, I'm heading out!\c\nI've spent all I got for now, and we\nwon't qualify for the big league\ntournaments until we have 8 badges.\c
+
+82:
+And for trainers like us, there's no\npoint splashin' around in the kiddy pool!\c
+
+83:
+Seeya later, [VAR TRNAME(0)]!\c
+
+84: 
+???: Thats amazing!
+
+
+
+
+
+
+
+
+
+16494:
+
+0: Flocessy Ranch 
+1: Castelia City 
+2: Route 4 
+3: Pokemon World Tournament 
+
+
+Janine State Tracking: 
+
+
+
+
+2213: 
+Huh, who are you?\nYou smell tough!\c\nCall me Benga, the strongest trainer in\nFloccesy Town.\c\nAnd soon, strongest in the world!\c\nI've got champion in my blood!\nMy gramps is the champion! Or... he was.\c\nHmph... he lost, but I WON'T!\c\nI'll be even stronger than him!\nI'll never lose to nobody!\c\nHere! Let me show you how a future champ\nbattles!\c 
+2214: 
+Woah, where'd you come from stranger?\c\nYou're strong! Crazy strong!\nYou must be...\c\n...my RIVAL!\c\nNo wonder you're so strong!\nYou'd have to be to challenge me!\c\nHm... guess I'm off to a bad start with\nthe whole "undefeated" thing.\c\nOkay!\nREDO REDO!\c\nYou better watch out next time we fight!\c\nBecause starting NOW I'm never going to\nlose a battle to nobody, count on it!\c
+2215: 
+Just what I expect from you, rival!\nNow its my turn!
+2216: 
+No no NO!\nWe can do this! We HAVE to do this!
+2217: 
+Get up! Come on get UP!
+2218: 
+...lost again, huh.
+2219: 
+Hey there, Rival!\nSmells like its time for a rematch!\c\nAnd I'm warning ya, I haven't lost a\nbattle since...\c\n...BAH! Who cares!\nLet's RUMBLE!\c
+2220: 
+...that was a good battle, thanks...\c\n...\c\nTo be real with ya, it hasn't been so\nlong since I lost, actually.\c\nI was doing real good, beating everyone\njust like gramps, even the Gym Leaders!\c\nSo when I heard the current "champ" was\nin Castelia, I thought I could beat them.\c\nI lost.\nI lost BAD.\c\nI thought maybe it was a fluke,\nbut then I go and lose to you...\c\nNo... NO!\c\nI'm the best, so for someone to beat me\nthat means they're the bestest best!\c\nSo all I gotta do is become the\nBESTEST bestest best! Of course!\nThanks rival.\nI needed that pep talk!\c\nNext time we meet, I'll show you what the\nbest of the best looks like!\c

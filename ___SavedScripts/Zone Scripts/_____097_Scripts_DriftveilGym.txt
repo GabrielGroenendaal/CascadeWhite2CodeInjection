@@ -175,6 +175,7 @@ public class MainEvents {
 		Actor.UnpauseAll();
 	}
 
+    // Initial Dialogue with the Gym Guide 
 	public static void main_3() { // @ 0x328
 		int v0;
 		int v1;
@@ -190,19 +191,18 @@ public class MainEvents {
 			Message.CloseActor();
 			goto LABEL_03c2;
 		}
-		if (EventFlags.Get(111)) {
-			Message.Actor(1024, 22, 0, 0);
-			Input.LastKeyWait();
-			Message.CloseActor();
-			goto LABEL_03c2;
-		}
-		Message.Actor(1024, 21, 0, 0);
-		Message.CloseActor();
-		Global2805(547, 3);
-		Message.Actor(1024, 22, 0, 0);
-		Input.LastKeyWait();
-		Message.CloseActor();
-		EventFlags.Set(111);
+		if (!EventFlags.Get(1520 + 768)){
+            Message.Actor(1024, 28, 0, 0);
+		    Input.LastKeyWait();
+		    Message.CloseActor();
+            Message.System(30, 2);
+            Message.CloseAll();
+        }
+        else {
+            Message.Actor(1024, 29, 0, 0);
+		    Input.LastKeyWait();
+		    Message.CloseActor();
+        }
 
 		LABEL_03c2:
 		Runtime.FinishSubEvents();
@@ -287,6 +287,8 @@ public class MainEvents {
 	}
 
 	public static void main_9() { // @ 0x68
+
+
 	}
 
 	public static void main_10() { // @ 0x6a
@@ -817,6 +819,33 @@ public class MainEvents {
 		Actor.UnpauseAll();
 	}
 
+    // Gym Guide 
+    public static void main_25() {
+        if (!EventFlags.Get(111)){
+            int GuideEntity;
+            GuideEntity = 0; // CHANGE THIS LATER 
+            Actor.PauseAll();
+            Sound.SEPlay(1351);
+            Message.ActorEx(1024, 26, GuideEntity, 0, 0);
+            Message.CloseAll();
+            WalkSouth2Tiles(GuideEntity);
+            Actor.WaitActionFinish();
+            Message.ActorEx(1024, 21, GuideEntity, 0, 0);
+            Message.CloseActor();
+            Global2805(547, 3);
+            Message.ActorEx(1024, 22, GuideEntity, 0, 0);
+            Input.LastKeyWait();
+            Message.CloseActor();
+            Message.ActorEx(1024, 27, GuideEntity, 0, 0);
+            Input.LastKeyWait();
+            Message.CloseActor();
+            EventFlags.Set(111);
+            Runtime.FinishSubEvents();
+            Actor.UnpauseAll();
+        }
+    }
+
+
 	static void sub_04b0(int v32) { // @ 0x4b0
 		Sound.SEPlay(1351);
 		WordSet.LoadPlayerName(0);
@@ -978,7 +1007,9 @@ public class MainEvents {
 			EventFlags.Set(1817);
 		}
 	}
-
+	static meta void WalkSouth2Tiles(int npcId) : VActionSequence {
+		Action000d(2);
+	}
 	static meta void ActionSequence_0690(int npcId) : VActionSequence {
 		Action0003(1);
 		Action0049(1);

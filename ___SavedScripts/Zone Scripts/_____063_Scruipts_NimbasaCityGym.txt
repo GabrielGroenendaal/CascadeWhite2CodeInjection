@@ -505,10 +505,13 @@ public class MainEvents {
 		Actor.UnpauseAll();
 	}
 
+    // SPeaking with the Gym Guide
 	public static void main_10() { // @ 0x135f
 		int v0;
 		int v1;
 		int v8;
+
+        int anythingLeft; 
 
 		Actor.PauseAll();
 		Sound.SEPlay(1351);
@@ -520,20 +523,51 @@ public class MainEvents {
 			Message.CloseActor();
 			goto LABEL_13f9;
 		}
-		if (EventFlags.Get(110)) {
-			Message.Actor(1024, 20, 0, 0);
-			Input.LastKeyWait();
-			Message.CloseActor();
-			goto LABEL_13f9;
-		}
-		Message.Actor(1024, 19, 0, 0);
-		Message.CloseActor();
-		Global2805(30, 1);
-		Message.Actor(1024, 20, 0, 0);
-		Input.LastKeyWait();
-		Message.CloseActor();
-		EventFlags.Set(110);
-
+        
+        anythingLeft = 0;
+        // Lenora Relic Castle
+        if (!EventFlags.Get(527)){
+            anythingLeft += 1;
+        }
+        // Eeveelution Gauntlet
+        if (EventWorks.Get(16486) == 0){
+            anythingLeft += 1;
+        }        
+        // Ingo & Emmet
+        if (!EventFlags.Get(764)){
+            anythingLeft += 1;
+        }
+        // Erika 
+        if (!EventFlags.Get(767 + 1520)){
+            anythingLeft += 1;
+        }
+        if (anythingLeft > 0){
+            Message.Actor(1024, 33, 0, 0);
+		    Input.LastKeyWait();
+		    Message.CloseActor();
+            // Lenora Relic Castle
+            if (!EventFlags.Get(527)){
+                Message.System(35, 2);
+            }
+            // Eeveelution Gauntlet
+            if (EventWorks.Get(16486) == 0){
+                Message.System(36, 2);
+            }        
+            // Ingo & Emmet
+            if (!EventFlags.Get(764)){
+                Message.System(37, 2);
+            }
+            // Erika 
+            if (!EventFlags.Get(767 + 1520)){
+                Message.System(38, 2);
+            }
+            Message.CloseAll();
+        } 
+        else {
+            Message.Actor(1024, 34, 0, 0);
+		    Input.LastKeyWait();
+		    Message.CloseActor();
+        }
 		LABEL_13f9:
 		Runtime.FinishSubEvents();
 		Actor.UnpauseAll();
@@ -593,8 +627,11 @@ public class MainEvents {
 		Base.CMD_25F(6);
 	}
 
+    // Trigger Event with the gym guide 
 	public static void main_14() { // @ 0x13ff
-		int v0;
+
+		if (!EventFlags.Get(110)){
+			int v0;
 		int v1;
 		int v42;
 		int v43;
@@ -605,14 +642,19 @@ public class MainEvents {
 		Player.GetGPos(v42, v43);
 		ActionSequence_09a8(1);
 		Actor.WaitActionFinish();
-		Actor.WalkRoute(1, v42, 58, 0, 8, 0);
-		Actor.WaitActionFinish();
-		ActionSequence_1274(1);
-		Actor.WaitActionFinish();
+		if (v42 != 17) {
+			Actor.WalkRoute(1, v42, v43-1, 0, 8, 0);
+			Actor.WaitActionFinish();
+			ActionSequence_1274(1);
+			Actor.WaitActionFinish();	
+		}
 		Message.ActorEx(1024, 19, 1, 0, 0);
 		Message.CloseAll();
 		Global2805(546, 3);
 		Message.ActorEx(1024, 20, 1, 0, 0);
+		Message.WaitAdvance();
+		Message.CloseAll();
+        	Message.ActorEx(1024, 32, 1, 0, 0);
 		Message.WaitAdvance();
 		Message.CloseAll();
 		Actor.WalkRoute(1, 17, 58, 0, 8, 1);
@@ -623,6 +665,8 @@ public class MainEvents {
 		EventWorks.Set(16706, 1);
 		Runtime.FinishSubEvents();
 		Actor.UnpauseAll();
+		}
+		
 	}
 
 	static void sub_02f2() { // @ 0x2f2

@@ -861,7 +861,6 @@ public class MainEvents {
 		
 		int yesNo;
 		int isVictory;
-
 		int BengaX;
 		int BengaY; 
 
@@ -933,9 +932,12 @@ public class MainEvents {
 		WordSet.LoadPlayerName(0);
 		Message.ActorEx(1024, 56, benga, 0, 0);
 
+
+        checkGatekeepers();
 		yesNo = YesNoWin.Show();
 
 		if (yesNo == 0) {
+			Message.CloseAll();
 			Message.ActorEx(1024, 57, 12, 0, 0);
 			Message.CloseAll();
                   TurnNorth(benga);
@@ -944,6 +946,7 @@ public class MainEvents {
 			alderBengaTag();
 			goto LABEL_EndAlderBengaScript;
 		}
+		Message.CloseAll();
 		TurnNorth(benga);
 		TurnNorth(255);
 		Actor.WaitActionFinish();
@@ -956,6 +959,7 @@ public class MainEvents {
 		Actor.UnpauseAll();
 		// Gives a text update for the Level Cap Increasing
     }
+
 	// Speaking with Alder after rejecting the initial battle. 
 	public static void main_31() {
 		int BengaX;
@@ -967,9 +971,11 @@ public class MainEvents {
 		Actor.FacePlayer();
 		Sound.SEPlay(1351);
 		Message.ActorEx(1024, 84, 10, 0, 0);
+        checkGatekeepers();
 		yesNo = YesNoWin.Show();
 
 		if (yesNo == 0) {
+			Message.CloseAll();
 			Message.ActorEx(1024, 57, 12, 0, 0);
 			Message.CloseAll();
 			Actor.GetGPos(12, BengaX, BengaY);
@@ -982,6 +988,7 @@ public class MainEvents {
 			alderBengaTag();
 			goto LABEL_EndAlderScript;
 		}
+		Message.CloseAll();
 		Message.ActorEx(1024, 60, 10, 0, 0);
 		Message.CloseAll();
 		TurnSouth(AlderEntity);
@@ -1005,9 +1012,11 @@ public class MainEvents {
 		Actor.FacePlayer();
 		Sound.SEPlay(1351);
 		Message.ActorEx(1024, 61, 12, 0, 0);
+        checkGatekeepers();
 		yesNo = YesNoWin.Show();
 
 		if (yesNo == 0) {
+			Message.CloseAll();
 			Message.ActorEx(1024, 57, 12, 0, 0);
 			Message.CloseAll();
 			Player.GetGPos(playerX, playerY);
@@ -1025,6 +1034,7 @@ public class MainEvents {
 			alderBengaTag();
 			goto LABEL_EndBengaScript;
 		}
+		Message.CloseAll();
 		Message.ActorEx(1024, 60, 10, 0, 0);
 		Message.CloseAll();
 		TurnSouth(AlderEntity);
@@ -1262,7 +1272,54 @@ public class MainEvents {
           }
 	
 
+    static void checkGatekeepers(){
+        int anythingLeft;
 
+		anythingLeft = 0;
+
+
+		// Strange House 
+		if (EventWorks.Get(16441) == 0){
+			anythingLeft += 1;
+		}
+
+		// Flannery 
+		if (!EventFlags.Get(1520 + 559)){
+			anythingLeft += 1;
+		}
+
+		// Undella B2B
+		if (EventWorks.Get(16444) != 2){
+			anythingLeft += 1;
+		}
+
+
+        if (anythingLeft > 0){
+            Input.LastKeyWait();
+            Message.CloseAll();
+            Message.System(100, 2);
+			Message.WaitAdvance();
+            Message.CloseAll();     
+
+			// Strange House 
+			if (EventWorks.Get(16441) == 0){
+				Message.System(101, 2);
+			}
+
+			// Flannery 
+			if (!EventFlags.Get(1520 + 559)){
+				Message.System(102, 2);
+			}
+
+			// Undella B2B
+			if (EventWorks.Get(16444) != 2){
+				Message.System(103, 2);
+			}
+			Message.CloseAll();
+			Message.System(104, 2);
+        }
+        
+    }
 	static void sub_005a() { // @ 0x5a
 		int v35;
 

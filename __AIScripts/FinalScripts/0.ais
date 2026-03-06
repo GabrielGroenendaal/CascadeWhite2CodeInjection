@@ -899,6 +899,8 @@ Label_StickyWebs:
 	JumpIfStoredEQ(item.tera_drill, &endScript_7)
 	GetAbilityGuess(defender)
 	JumpIfStoredEQ(ability.magic_bounce, &deprioritizeBy12)
+	JumpIfRandLT(40, &endScript_7)
+	AddToScore(2);
 
 endScript_7:
 	EndScript()
@@ -3322,7 +3324,7 @@ deprioritizeBy10:
 	EndScript()
 
 HighChanceToDeprioritizeBy10:
-	JumpIfRandLT(230, &DeprioritizeEndScript)
+	JumpIfRandLT(128, &DeprioritizeEndScript)
 	AddToScore(-10)
 
 DeprioritizeEndScript:

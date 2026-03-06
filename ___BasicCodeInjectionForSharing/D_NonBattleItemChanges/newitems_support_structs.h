@@ -757,7 +757,7 @@ enum MonsNo
     MONSNO_MAX = 0x28A,
 };
 
-const u8 WhiteListedPokemon[651]{
+const int WhiteListedPokemon[651]{
     0, // PK_NULL = 0x0,
     1, // PK001_BULBASAUR = 0x1,
     1, // PK002_IVYSAUR = 0x2,
@@ -886,7 +886,7 @@ const u8 WhiteListedPokemon[651]{
     1, // PK125_ELECTABUZZ = 0x7D,
     1, // PK126_MAGMAR = 0x7E,
     1, // PK127_PINSIR = 0x7F,
-    0, // PK128_TAUROS = 0x80,
+    1, // PK128_TAUROS = 0x80,
     0, // PK129_MAGIKARP = 0x81,
     0, // PK130_GYARADOS = 0x82,
     1, // PK131_LAPRAS = 0x83,
@@ -1411,6 +1411,7 @@ const u8 WhiteListedPokemon[651]{
     0, // MONSNO_MAX = 0x28A,
 };
 
+int i = 0x61;
 enum AbilLock
 {
     ABIL_0 = 0x0,

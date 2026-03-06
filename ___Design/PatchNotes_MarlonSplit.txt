@@ -87,7 +87,6 @@ If you're updating from the previous patch, you'll want to speak to an NPC in Le
 > - **Zebstrika** replaces Temper Flare with Megahorn as a Scale move. 
 > - **Sceptile** now gets Hyper Cutter as hidden ability. Ability 1 is Overgrow. Exploit is an AI only ability. 
 > - **Scolipede** gets Defense Curl as a scale move.
-> - **Fake Out** is no longer a never-miss move. 
 > - **Dugtrio line** now learns Bulldoze at 26 and Dig at 34. They learn earthquake at 52, sucker punch at 43, and Head Smash as a scale move.
 > - **Banette's Hidden Ability** is now Justified. 
 > - **Krookadile Line's Abilities** are now Intimidate, Sand Rush, Strong Jaw. Tenacity and Anger Point become AI Only. 
@@ -107,7 +106,8 @@ If you're updating from the previous patch, you'll want to speak to an NPC in Le
 > - **Abomasnow** has a learnset nerf.
 > - **Hail, Sunny Day, Sandstorm, Rain Dance** are all a lot more rare, often requiring scales to access. 
 > - **Fake Out** has been pruned from a lot of learnsets. 
-
+> - **Relicanth** gains +15 Speed.
+> - **LOTS of other Small Learnset Tweaks**
 
 ```[ ENCOUNTERS ]```
 > - **Castelia Sewers Walking**: Zubat is no longer a 20% encounter in Castelia Sewers. Scraggy takes it's place. Lickitung raplced with 10% Drowzee Zubat is now a 4% encounter, and Koffing is a 5% encounter. 
@@ -199,6 +199,8 @@ If you're updating from the previous patch, you'll want to speak to an NPC in Le
 > - **Switch AI** now takes in defensive matchups into consideration as a BP modifier. It checks the types of the pokemon it's calculating BP against to see if either is super effective or 4x effective against the switch in Pokemon, applying a 0.75x or 0.5x modifier accordingly. If the Pokemon resists or is immune to both types, they can get a 1.25x or 1.5x modifier. 
 > - **Shadow Triad** no longer steal a random Pokemon. Instead they steal the Pokemon in the party with the lowest health that isn't fainted. Hugh will now HEAL you before the battle! You can't get it to specific values, but to 1/5/10/20/50/100/150/200/250 HP. 
 > - **Solarbeam** is now spread and damages all adjacent targets. 
+> - **Fake Out** is no longer a never-miss move. 
+> - **Night Shade** now heals the user for 100% of the damage it deals. It has 2 PP.
 
 ``[ UPCOMING WORK ]``
 

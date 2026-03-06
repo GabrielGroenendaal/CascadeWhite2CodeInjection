@@ -385,10 +385,14 @@ public class MainEvents {
 		Actor.WaitActionFinish();
 		Message.ActorEx(1024, 43, BiancaEntity, 0, 0);
 		Input.LastKeyWait();
+        Message.CloseAll();
 		ShowQuestionMark(BiancaEntity);
 		Actor.WaitActionFinish();
 		Message.ActorEx(1024, 44, BiancaEntity, 0, 0);
 		Message.CloseAll();
+
+        BiancaHat(BiancaEntity);
+        Actor.WaitActionFinish();
 
 		WalkNorth8F(BiancaEntity);
 		Actor.WaitActionFinish();
@@ -828,6 +832,11 @@ public class MainEvents {
 		Action0019(1);
 	}
 
+
+    static meta void BiancaHat(int npcId) : VActionSequence {
+		Action0064(1);
+	}
+
 	
 	static meta void Global10536(int a1, int a2) : VGlobalCall[10536];
 	static meta void Global2805(int a1, int a2) : VGlobalCall[2805];
@@ -858,4 +867,5 @@ public class MainEvents {
      static native void Action009f(int amount) : 0x9f;
 	static native void Action0021(int amount) : 0x21;
 	static native void Action00b5(int amount) : 0xb5;
+    static native void Action0064(int amount) : 0x64;
 }

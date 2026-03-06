@@ -375,6 +375,7 @@ label30: ;
 	SetFlag(721);
 	SetFlag(720);
 	SetFlag(725);
+    SetFlag(560);
 	SetVarEqVal(0x40AC, 4);
 	ClearFlag(724);
 	WaitMoment();

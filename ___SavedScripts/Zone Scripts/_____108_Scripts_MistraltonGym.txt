@@ -75,6 +75,8 @@ public class MainEvents {
 		C06Gym.StartFanAmbience();
 	}
 
+
+    // Gym Guide Introduction
 	public static void main_5() { // @ 0x23d
 		int v0;
 		int v1;
@@ -123,9 +125,12 @@ public class MainEvents {
 		Actor.UnpauseAll();
 	}
 
+    // Gym Guide 
 	public static void main_6() { // @ 0x378
 		int v8;
+        int anythingLeft;
 
+        anythingLeft = 0;
 		Actor.PauseAll();
 		Sound.SEPlay(1351);
 		Actor.FacePlayer();
@@ -136,10 +141,61 @@ public class MainEvents {
 			Message.CloseActor();
 			goto LABEL_03bb;
 		}
-		Message.Actor(1024, 8, 0, 0);
-		Input.LastKeyWait();
-		Message.CloseActor();
+         // Strange Statue
+        if (!EventFlags.Get(928)){
+            anythingLeft += 1;
+        }
+        // Roxanne
+        if (!EventFlags.Get(1520 + 228)){
+            anythingLeft += 1;
+        }        
+        // Morty
+        if (!EventFlags.Get(1520 + 229)){
+            anythingLeft += 1;
+        }
+        // Sabrina
+        if (!EventFlags.Get(1520 + 769)){
+            anythingLeft += 1;
+        }
+        // Cobalion
+        if (!EventFlags.Get(923) != 1){
+            anythingLeft += 1;
+        }
 
+        if (anythingLeft > 0){
+            Message.Actor(1024, 15, 0, 0);
+		    Input.LastKeyWait();
+		    Message.CloseActor();
+            // Strange Statue
+            if (EventFlags.Get(928) != 1){
+                Message.System(20, 2);
+            }
+            // Roxanne
+            if (!EventFlags.Get(1520 + 228)){
+                Message.System(17, 2);
+            }        
+            // Morty
+            if (!EventFlags.Get(1520 + 229)){
+                Message.System(18, 2);
+            }
+            // Sabrina
+            if (!EventFlags.Get(1520 + 769)){
+                Message.System(18, 2);
+            }
+            // Cobalion
+            if (!EventFlags.Get(923) != 1){
+                Message.System(16, 2);
+            }
+            Message.CloseAll();
+        } 
+        else {
+            Message.Actor(1024, 21, 0, 0);
+		    Input.LastKeyWait();
+		    Message.CloseActor();
+        }
+
+
+       
 		LABEL_03bb:
 		Runtime.FinishSubEvents();
 		Actor.UnpauseAll();

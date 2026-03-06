@@ -666,36 +666,36 @@ public class MainEvents {
         	Sound.SEWait();
        	Actor.WaitActionFinish();
         Message.CloseAll();
-        Sound.SEPlay(1351);
+
         Message.System(56, 2);
         Message.WaitAdvance();
         Message.CloseAll();
         ShowExclamationMark(254);
         TurnSouth(254);
         Actor.WaitActionFinish();
-        Sound.SEPlay(1351);
+
 		Message.ActorEx(1024, 57, 254, 0, 0);
         Input.LastKeyWait();
         Message.CloseAll();
         WalkWest8F(254);
         Actor.WaitActionFinish();
-        Sound.SEPlay(1351);
+
         Message.System(58, 2);
         Message.WaitAdvance();
         Message.CloseAll();
         Runtime.Sleep(20);
-        Sound.SEPlay(1351);
+
         Message.ActorEx(1024, 59, 254, 0, 0);
         Input.LastKeyWait();
         Message.CloseAll();
         Runtime.Sleep(60);
-        Sound.SEPlay(1351);
+
         Message.ActorEx(1024, 60, 254, 0, 0);
         Input.LastKeyWait();
         Message.CloseAll();
         ShowEllipses(254);
         Actor.WaitActionFinish();
-        Sound.SEPlay(1351);
+  
         Message.ActorEx(1024, 61, 254, 0, 0);
         Input.LastKeyWait();
         Message.CloseAll();
@@ -707,14 +707,13 @@ public class MainEvents {
         Actor.WaitActionFinish();
         HopDown(254);
         Actor.WaitActionFinish();
-        Sound.SEPlay(1351);
+
         Message.ActorEx(1024, 62, 254, 0, 0);
         Input.LastKeyWait();
         Message.CloseAll();
         Sound.SEPlay(1853);
         WalkEast8F(254);
         Actor.WaitActionFinish();
-        Sound.SEPlay(1351);
         Message.ActorEx(1024, 63, 254, 0, 0);
         Input.LastKeyWait();
         Message.CloseAll();
