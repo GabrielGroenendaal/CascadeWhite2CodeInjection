@@ -70,7 +70,7 @@ Oh hello there, [VAR TRNAME(0)]!\n-I mean, stranger!\c\nI am but a simple law cl
 66:
 Why am I in the sewers?\nIt's a shortcut to work, of course!\c 
 67:
-Say, I saw you have a battle with those two strange men in Plasma uniforms. Do you know their purpose here in Castelia. Who are their superiors? Where is their base of operations?
+Say, I saw you have a battle with those\ntwo strange men in Plasma uniforms.\c\nDo you know their purpose here in\nCastelia City? Who are their superiors?\r\nWhere is their base of operations?
 68:
 I don't know..? 
 69:

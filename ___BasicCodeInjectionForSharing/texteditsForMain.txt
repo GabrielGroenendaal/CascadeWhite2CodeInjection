@@ -1,6 +1,22 @@
 
 
 
+
+Enemy trainers are currently configured\nto use default post-KO switch AI for\r\ndouble and triple battles.\r\nIn a multi-battle, the AI will pick a\nrandom foe to check moves against to\r\ndetermine the Pokémon to switch in next.\c\nWould you like to change this logic\nto one of the experimental options?
+Enemy trainers are currently configured\nto use cumulative post-KO switch AI for\r\ndouble and triple battles.\r\nIn a multi-battle, the AI will account\nfor all foes to check moves against to\r\ndetermine the Pokémon to switch in next.\c\n\c\nWould you like to change this logic\nto one of the other options?
+Enemy trainers are currently configured\nto use health-based post-KO switch AI for\r\ndouble and triple battles.\r\nIn a multi-battle, the AI picks the most\ndamaged foe to check moves against to\r\ndetermine the Pokémon to switch in next.\c\nWould you like to change this logic\nto one of the other options?
+
+
+In a multi-battle, the AI will pick a\nrandom foe to check moves against.
+In a multi-battle, the AI will account\nfor all foes to check moves against.
+In a multi-battle, the AI picks the most\ndamaged foe to check moves against.
+
+
+Post-KO Switch AI has been configured\nto use default logic.
+Post-KO Switch AI has been configured\nto use cumulative logic.
+Post-KO Switch AI has been configured\nto use health-based logic.
+
+
 /* Text File 18 */
 
 1291: 
@@ -52,7 +68,7 @@ Scripts For:
 
 
 253:
-    Entity 63 (the Pokeball) becomes 
+    Entity 63 (the Pokéball) becomes 
         Model: 95
         Script: 29
         Spawnflag: 523

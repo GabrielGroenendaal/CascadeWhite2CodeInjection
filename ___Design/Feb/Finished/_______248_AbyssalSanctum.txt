@@ -81,8 +81,8 @@ public class MainEvents {
 		Runtime.Sleep(40);
 		Fade.OutBlack();
 		Fade.Wait();
-		Runtime.ReserveScript(10);
-		Field.ChangeMap(247, 42, 3, 24, 1);
+		Runtime.ReserveScript(21);
+		Field.ChangeMap(245, 81, 3, 75, 1);
 		goto LABEL_0279;
 
 		LABEL_0200:

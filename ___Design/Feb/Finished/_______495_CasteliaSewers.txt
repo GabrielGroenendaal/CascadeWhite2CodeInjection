@@ -23,9 +23,7 @@ import system.Sound;
 import system.text.WordSet;
 
 
-// New Janine Entity 
-// Spawn Flag 753 
-// Script 
+
 public class MainEvents {
 	public static void main_1() { // @ 0x3c
 		if (EventWorks.Get(16563) != 0 || EventFlags.Get(2406)) {
@@ -48,7 +46,7 @@ public class MainEvents {
 
         int janineEntity; 
         int janineX; 
-        int janineY;
+        int janineZ;
 
 		Actor.PauseAll();
 		WordSet.LoadPlayerName(0);
@@ -162,7 +160,6 @@ public class MainEvents {
 		Message.CloseAll();
 		WalkEast8F(254);
 		Actor.WaitActionFinish();
-		Global2805(505, 1);
 		Global2805(514, 1);
 		Global2805(526, 1);
 		Message.ActorEx(1024, 27, 254, 4, 0);
@@ -218,7 +215,7 @@ public class MainEvents {
 		EVCamera.End();
 		Global10536(2000, 0);
 
-        Actor.SetGPos(janineEntity, janineX, 1, janineZ, 0);
+        Actor.SetGPos(47, 59, 0, 13, 0);
 
 
         // Updating Level Caps
@@ -882,10 +879,10 @@ public class MainEvents {
         Actor.WaitActionFinish();
         DashAway(SCRAGGY_ID);
         Actor.WaitActionFinish();
-        Actor.Hide(SCRAGGY_ID);
+        
 		Sound.PVWait();
         EventWorks.Set(16488, 1);
-        EventFlags.Set(533);
+        Actor.SetGPos(46, 82, 0, 15, 1);
 		Runtime.FinishSubEvents();
 		Actor.UnpauseAll();
     }
@@ -893,7 +890,7 @@ public class MainEvents {
     // Second Scraggy Script
     public static void main_38() {
         int SCRAGGY2_ID;
-        SCRAGGY2_ID = 47;
+        SCRAGGY2_ID = 46;
         Actor.PauseAll();
 		Sound.SEPlay(1351);
         ShowExclamationMark(SCRAGGY2_ID);
@@ -911,7 +908,7 @@ public class MainEvents {
 		Sound.SEPlay(1369);
         Actor.Hide(SCRAGGY2_ID);
         EventWorks.Set(16488, 2);
-        EventFlags.Set(534);
+        EventFlags.Set(533);
 		Runtime.FinishSubEvents();
 		Actor.UnpauseAll();
     }
@@ -926,18 +923,19 @@ public class MainEvents {
         int janineX;
         int janineZ;
 
-        int janineEntity = 10; // CHANGE THIS LATER 
-
         Actor.PauseAll();
         Actor.FacePlayer();
         Player.GetGPos(playerX, playerZ);
-        Actor.GetGPos(janineEntity, janineX, janineZ);
-        Message.ActorEx(1024, 65, janineEntity, 0, 0);
+        Actor.GetGPos(47, janineX, janineZ);
+        
+	   WordSet.LoadPlayerName(0);
+        Message.Actor(1024, 65, 0, 0);
         Message.CloseAll();
-        ShowQuestionMark(janineEntity);
+        ShowQuestionMark(47);
         Actor.WaitActionFinish();
-        Message.ActorEx(1024, 66, janineEntity, 0, 0);
-        Message.ActorEx(1024, 67, janineEntity, 0, 0);
+        Message.Actor(1024, 66, 0, 0);
+        Runtime.Sleep(32);
+        Message.Actor(1024, 67, 0, 0);
 
         ListMenu.InitRightAnchor(31, 13, 0, 1, listMenu);
 		ListMenu.AddItem(68, 65535, 0);
@@ -945,28 +943,24 @@ public class MainEvents {
 		ListMenu.ShowDialog();
         if (listMenu == 0){
             Message.CloseAll();
-            Message.ActorEx(1024, 70, janineEntity, 0, 0);
+            Message.Actor(1024, 70, 0, 0);
         } else {
             Message.CloseAll();
-            Message.ActorEx(1024, 70, janineEntity, 0, 0);
+            Message.Actor(1024, 70, 0, 0);
         }
-
-        if (playerZ == (janineZ - 1)){
-            WalkEast(janineEntity);
-            Actor.WaitActionFinish();
-        }
-        JanineLeavesA(janineEntity);
+        Message.CloseAll();
+        JanineLeavesA(47);
         Runtime.Sleep(16);
         TurnSouth(255);
         Actor.WaitActionFinish();
-        TurnEast(janineEntity);
+        TurnEast8F(47);
         Actor.WaitActionFinish();
-        TurnWest(janineEntity);
+        TurnWest8F(47);
         Actor.WaitActionFinish();
-        JanineLeavesB(janineEntity);
+        JanineLeavesB(47);
         Actor.WaitActionFinish();
 
-        Actor.Hide(janineEntity);
+        Actor.Hide(47);
         Runtime.FinishSubEvents();
 		Actor.UnpauseAll();
     }
@@ -1533,6 +1527,10 @@ public class MainEvents {
         Action0015(6);
         Action0017(7);
     }
+    static meta void ShowQuestionMark(int npcId) : VActionSequence {
+		Action009f(1);
+	}    
+	
 	static meta void Global2805(int a1, int a2) : VGlobalCall[2805];
 	static meta void Global10536(int a1, int a2) : VGlobalCall[10536];
 	static meta void Global10535(int a1, int a2, int a3, int a4, int a5) : VGlobalCall[10535];

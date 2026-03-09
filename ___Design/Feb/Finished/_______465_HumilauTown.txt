@@ -111,7 +111,7 @@ public class MainEvents {
 		v16 = YesNoWin.Show();
 		if (v16 != 0) {
             Message.CloseAll();
-            HopUp(0);
+            HopDown(0);
             Actor.WaitActionFinish();
             WordSet.LoadPlayerName(0);
             WordSet.LoadRivalName(1);
@@ -128,7 +128,7 @@ public class MainEvents {
         WordSet.LoadRivalName(1);
 		Message.ActorEx(1024, 57, 0, 6, 0);
 		Message.CloseAll();
-        TurnNorth(0);
+        TurnSouth(0);
         Actor.WaitActionFinish();
 
 		LABEL_031d:
@@ -843,7 +843,7 @@ public class MainEvents {
 	}
 
 	public static void main_22(){
-		EventWorks.Set(16492, 1);
+		EventWorks.Set(16462, 1);
 
 	}
 

@@ -75,6 +75,7 @@ E2 03
 162: Aguav Berry -> Kee Berry
 206: Lansat Berry -> Roseli Berry
 223: Amulet Coin -> Ability Drill ***
+
 225: Soul Dew -> Mascot Badge
 255: Lax Incense -> Attack Insurance ***
 256: Lucky Punch -> Blunder Policy ***

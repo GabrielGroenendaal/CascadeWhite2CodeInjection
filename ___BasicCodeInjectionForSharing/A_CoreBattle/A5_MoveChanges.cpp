@@ -1761,6 +1761,7 @@ extern "C"
 #pragma endregion
 
 #pragma region PollenPuff
+    
 
     void HandlerNightShade(BattleEventItem *a1, int a2, int a3)
     {

@@ -1859,39 +1859,58 @@ label70_options: ;
 	if (5) goto label76_options;
 	// CloseAllMessageBoxes();
 	Compare(0x4034, 0);
-	if (5) goto label77_options;
-	EventGreyMessage(146, 2);
+	if (1) goto label_DefaultSwitchAILogic;
+	Compare(0x4034, 1);
+	if (1) goto label_CumulativeSwitchAILogic;
+	EventGreyMessage(217, 2);
 	goto label78_options;
 
-label77_options: ;
-	EventGreyMessage(147, 2);
+label_DefaultSwitchAILogic: ;
+	EventGreyMessage(215, 2);
+	goto label78_options;
+
+label_CumulativeSwitchAILogic: ;
+	EventGreyMessage(216, 2);
 
 label78_options: ;
 	WaitForButton();
-	YesNoBox(0x8000);
-	SetVarEqVar(0x8006, 0x8000);
+	SetupDialogueSelection(31, 5, 0, 1, 0x8006);
+	AddDialogueOption(224, 218, 0);
+	AddDialogueOption(225, 219, 1);
+	AddDialogueOption(226, 220, 2);
+	AddDialogueOption(207, 0xFFFF, 2);
+	ShowDialogueSelection2();
+
+	Compare(0x8006, 0);
+	if (1) goto label_SetDefaultSwitchAI;
 	Compare(0x8006, 1);
-	if (5) goto label79_options;
-	// CloseAllMessageBoxes();
+	if (1) goto label_SetCumulativeSwitchAI;
+	Compare(0x8006, 2);
+	if (1) goto label_SetHealthBasedSwitchAI;
 	EventGreyMessage(116, 2);
 	WaitForButton();
 	goto label49_options;
 
-label79_options: ;
-	// CloseAllMessageBoxes();
-	Compare(0x4034, 0);
-	if (5) goto label80_options;
-	EventGreyMessage(149, 2);
-	WaitForButton();
-	SetVarEqVar2(0x4034, 1);
-	goto label81_options;
-
-label80_options: ;
-	EventGreyMessage(148, 2);
+label_SetDefaultSwitchAI: ;
+	EventGreyMessage(221, 2);
 	WaitForButton();
 	SetVarEqVar2(0x4034, 0);
+	EventGreyMessage(119, 2);
+	WaitForButton();
+	goto label49_options;
 
-label81_options: ;
+label_SetCumulativeSwitchAI: ;
+	EventGreyMessage(222, 2);
+	WaitForButton();
+	SetVarEqVar2(0x4034, 1);
+	EventGreyMessage(119, 2);
+	WaitForButton();
+	goto label49_options;
+
+label_SetHealthBasedSwitchAI: ;
+	EventGreyMessage(223, 2);
+	WaitForButton();
+	SetVarEqVar2(0x4034, 2);
 	EventGreyMessage(119, 2);
 	WaitForButton();
 	goto label49_options;
@@ -2067,12 +2086,12 @@ label_BattleScan_1: ;
 	if (5) goto label_AntiYap_1;
 	// CloseAllMessageBoxes();
 	Compare(16438, 0);
-	if (5) goto label_BattleScan_2;
-	EventGreyMessage(161, 2);
+	if (1) goto label_BattleScan_2;
+	EventGreyMessage(160, 2);
 	goto label_BattleScan_3;
 
 label_BattleScan_2: ;
-	EventGreyMessage(160, 2);
+	EventGreyMessage(161, 2);
 
 label_BattleScan_3: ;
 	WaitForButton();
@@ -2088,16 +2107,16 @@ label_BattleScan_3: ;
 label_BattleScan_4: ;
 	// CloseAllMessageBoxes();
 	Compare(16438, 0);
-	if (5) goto label_BattleScan_5;
-	EventGreyMessage(163, 2);
-	WaitForButton();
-	SetVarEqVar2(16438, 1);
-	goto label_BattleScan_6;
-
-label_BattleScan_5: ;
+	if (1) goto label_BattleScan_5;
 	EventGreyMessage(162, 2);
 	WaitForButton();
 	SetVarEqVar2(16438, 0);
+	goto label_BattleScan_6;
+
+label_BattleScan_5: ;
+	EventGreyMessage(163, 2);
+	WaitForButton();
+	SetVarEqVar2(16438, 1);
 
 label_BattleScan_6: ;
 	EventGreyMessage(119, 2);
@@ -2357,7 +2376,7 @@ Label_DefaultANimatedBackgroundSetting: ;
 Label_DefaultAdvancedSwitchAI: ;
 	Compare(0x4034, 0);
 	if (1) goto Label_DefaultExpModeSetting;
-	EventGreyMessage(148, 2);
+	EventGreyMessage(221, 2);
 	WaitForButton();
 	SetVarEqVar2(0x4034, 0);
 

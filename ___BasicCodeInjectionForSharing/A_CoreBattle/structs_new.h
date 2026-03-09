@@ -1653,8 +1653,8 @@ enum SideEffect
     SIDEEFF_STICKYWEB = 0xE,
     SIDEEFF_OPPRESSIVE = 0xF,
     SIDEEFF_FORESTWRATH = 0x10,
-    SIDEEFF_SMOKEBOMB = 0x11, 
-    SIDEEFF_RUMBLE = 0x12, 
+    SIDEEFF_SMOKEBOMB = 0x11,
+    SIDEEFF_RUMBLE = 0x12,
     SIDEEFF_STURDY_FIGHTER = 0x13,
     SIDEEFF_UNDERDOG = 0x14,
     SIDEEFF_STOLEN = 0x15,
@@ -4087,6 +4087,86 @@ struct SWAN_PACKED SWAN_ALIGNED(1) BottomScreenMenuData
     char MoveInfoMoveIndex;
     char field_4C;
 };
+// 968 BtlClientWk 00000254 Auto struct __attribute__((packed)) __attribute__((aligned(4)))
+// {
+//     MainModule *mainModule;
+//     PokeCon *pokeCon;
+//     BattleMon *currentMon;
+//     BattleActionParam *currentAction;
+//     BtlRecWk *recData;
+//     int recReader;
+//     RecPlayerControl recPlayer;
+//     int(__fastcall *mainProc)(BtlClientWk *) __attribute__((aligned(4)));
+//     EscapeInfo escapeInfo;
+//     BattleField *battleField;
+//     __int64 randX;
+//     u64 randMul;
+//     u64 randAdd;
+//     Adapter *adapter;
+//     BtlvCore *btlvCore;
+//     Btlv_StringParam strParam;
+//     _BYTE gap7C[4];
+//     Btlv_StringParam secondaryStrParam;
+//     _BYTE gapA4[4];
+//     BtlServerWk *cmdCheckServer;
+//     RotationMoveSelect UsableMovesForMonsOnField;
+//     char PrevRotation;
+//     int(__fastcall *subproc)(BtlClientWk *, int *) __attribute__((aligned(4)));
+//     int subseq;
+//     int(__fastcall *ActionSelectProc)(BtlClientWk *a1, unsigned int *a2);
+//     unsigned int ActionSelectSeq;
+//     void *returnDataPtr;
+//     int returnDataSize;
+//     int dummyReturnData;
+//     _WORD cmdLimitTime;
+//     _WORD gameLimitTime;
+//     unsigned __int16 AIBagItems[4];
+//     ScriptVM *VM;
+//     _QWORD AIrandX;
+//     _QWORD AIrandMul;
+//     _QWORD AIrandAdd;
+//     u8 bestMonToSwitchIn[6];
+//     u8 doTrainerMessage[4];
+//     __attribute__((aligned(4))) BattleParty *actPokeParty;
+//     unsigned __int8 numBattlePositions;
+//     unsigned __int8 procPokeIdx;
+//     char prevPokeIdx;
+//     u8 firstPokeIdx;
+//     char fStdMsgChanged;
+//     char basePos;
+//     __attribute__((aligned(4))) BattleActionParam actionParam[3];
+//     u8 LauncherCost[3];
+//     __attribute__((aligned(2))) int cmdQueue;
+//     int ServerCmdArgs[16];
+//     int serverCmd;
+//     int ServerCmdProc;
+//     int ServerCmdSeq;
+//     PokeSelectParam pokeSelectParam;
+//     PokeSelectResult pokeSelectResult;
+//     __attribute__((aligned(2))) HeapID TrainerMsgHeapID;
+//     __int16 EnemyMonHP;
+//     u16 AITrainerMsgID;
+//     _WORD SelItemWork[3];
+//     u8 myID;
+//     char myType;
+//     char state;
+//     char commWaitInfoOn;
+//     char bagMode;
+//     char WonderLauncherEnergy;
+//     _BYTE changeEscapeCode;
+//     u8 forceQuitActionSelect;
+//     _BYTE cmdCheckTimingCode;
+//     char currentActionCount;
+//     char moveInfoPokeIdx;
+//     char moveInfoMoveIdx;
+//     char actSelectFlags;
+//     char myChangePokeCount;
+//     char NumValidSwitchIns;
+//     u8 clientTurnCount;
+//     unsigned __int8 myChangePokePos[6];
+//     PokestarSeqWork pokestarSeqWork;
+//     char commonWait;
+// } 
 
 struct SWAN_PACKED SWAN_ALIGNED(4) BtlClientWk
 {
@@ -5294,64 +5374,64 @@ struct ScriptVM
     u8 *ExecFile;
 };
 
-    enum PlayerExState
-    {
-        FLD_PLAYER_EXSTATE_NONE = 0x0,
-        FLD_PLAYER_EXSTATE_CYCLING = 0x1,
-        FLD_PLAYER_EXSTATE_SURF = 0x2,
-        FLD_PLAYER_EXSTATE_DIVE = 0x3,
-    };
+enum PlayerExState
+{
+    FLD_PLAYER_EXSTATE_NONE = 0x0,
+    FLD_PLAYER_EXSTATE_CYCLING = 0x1,
+    FLD_PLAYER_EXSTATE_SURF = 0x2,
+    FLD_PLAYER_EXSTATE_DIVE = 0x3,
+};
 
-    struct RTCTime
-    {
-        u32 Hour;
-        u32 Minute;
-        u32 Second;
-    };
-    struct TileType
-    {
-        u16 Class;
-        u16 Flags;
-    };
-    struct RailPosition
-    {
-        u16 ComponentID;
-        u8 ComponentIsLine;
-        u8 RailDirection;
-        s16 PosSide;
-        u16 PosFront;
-    };
-    typedef u16 fxangle;
-    typedef s32 fx32;
+struct RTCTime
+{
+    u32 Hour;
+    u32 Minute;
+    u32 Second;
+};
+struct TileType
+{
+    u16 Class;
+    u16 Flags;
+};
+struct RailPosition
+{
+    u16 ComponentID;
+    u8 ComponentIsLine;
+    u8 RailDirection;
+    s16 PosSide;
+    u16 PosFront;
+};
+typedef u16 fxangle;
+typedef s32 fx32;
 
-    struct VecFx32
-    {
-        fx32 x;
-        fx32 y;
-        fx32 z;
-    };
+struct VecFx32
+{
+    fx32 x;
+    fx32 y;
+    fx32 z;
+};
 
-    struct PlayerState
-    {
-        u16 ZoneID;
-        VecFx32 VecPos;
-        RailPosition RailPos;
-        fxangle RotationAngle;
-        u8 field_1A;
-        u8 IsPosRail;
-        u16 NowOBJCODE;
-        __int16 field_1E;
-        int field_20;
-        int field_24;
-        int field_28;
-        int field_2C;
-        int field_30;
-        int field_34;
-        int field_38;
-        int field_3C;
-        PlayerExState ExState;
-    };
-    
+struct PlayerState
+{
+    u16 ZoneID;
+    VecFx32 VecPos;
+    RailPosition RailPos;
+    fxangle RotationAngle;
+    u8 field_1A;
+    u8 IsPosRail;
+    u16 NowOBJCODE;
+    __int16 field_1E;
+    int field_20;
+    int field_24;
+    int field_28;
+    int field_2C;
+    int field_30;
+    int field_34;
+    int field_38;
+    int field_3C;
+    PlayerExState ExState;
+};
+
 #pragma endregion
 
 #pragma region TypeCharts

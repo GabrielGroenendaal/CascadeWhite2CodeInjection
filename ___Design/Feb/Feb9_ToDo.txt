@@ -19,16 +19,9 @@
 To Do:
 
 EASY: 
-    - Add Trainer Placement Flags for Route 21 and Route 22. 
     - Double Check the Fisherman Trainer IDs for Route 14.
     - Test the New Plasma Frigate Theft Script.
     - Test Exp Modes and Tweak the Formula to be more aggressive if need be. 
-    - Test our IV maximizing function 
-    - Make sure the AI Flags for Sticky Web are correct.
-    - Flannery Updates 
-        - Fake Out over Thunder Punch on Infernape 
-    - Implement new AI Script 
-    - Replace Torterra with Turtwig on Gardenia's Team 
 
 
 MODERATE: 

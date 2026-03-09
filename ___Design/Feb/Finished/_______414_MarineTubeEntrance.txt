@@ -107,7 +107,6 @@ public class MainEvents {
 	}
 
 	public static void main_8() {
-		EventWorks.Set(16433, 1);
 		EventFlags.Set(553);
 	}
 

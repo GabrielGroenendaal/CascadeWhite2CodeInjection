@@ -612,7 +612,7 @@ twistedspoon, Twistedspoon (found after the Workers)
 mental herb, Mental Herb x5 (found after the healthcare tag)
 green shard, Green Shards x15 (found after the Clerk tag)
 sticky barb, Sticky Barb (found after the Scientist tag)
-stable mulch, 1x Hardy Mint, 1x Lax Mint, 1x Gentle Mint (reward for Defeating the Plasma Grunts)
+stable mulch, 1x Lax Mint, 1x Gentle Mint (reward for Defeating the Plasma Grunts)
 tm ghost, TM37 Hex (encountered behind the Grimers once you beat the grunts)
 end
 

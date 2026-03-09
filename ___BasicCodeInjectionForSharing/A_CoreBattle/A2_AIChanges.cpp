@@ -397,6 +397,7 @@ extern "C"
         FIELD_SUN = 6,
         FIELD_SMOKEBOMB = 7,
         FIELD_VICTORYSTAR = 8,
+        FIELD_RAIN = 9
     };
 
     FieldTypeChanges checkForFieldEffects()
@@ -409,14 +410,14 @@ extern "C"
         {
             return FIELD_OPELUCID;
         }
-        if (zoneId == 446)
-        {
-            return FIELD_SMOKEBOMB;
-        }
-        if (zoneId == 437)
-        {
-            return FIELD_VICTORYSTAR;
-        }
+        // if (zoneId == 446)
+        // {
+        //     return FIELD_SMOKEBOMB;
+        // }
+        // if (zoneId == 437)
+        // {
+        //     return FIELD_VICTORYSTAR;
+        // }
         if (zoneId == 607 || zoneId == 195 || zoneId == 196 || zoneId == 197)
         {
 
@@ -430,13 +431,17 @@ extern "C"
         {
             return FIELD_SKYLA;
         }
-        if (zoneId == 503 || zoneId == 504 || zoneId == 505 || (zoneId >= 255 && zoneId <= 262) || (zoneId >= 160 && zoneId <= 190))
+        if (zoneId == 503 || zoneId == 504 || zoneId == 505 || zoneId == 245 || zoneId == 248 || (zoneId >= 255 && zoneId <= 262) || (zoneId >= 160 && zoneId <= 190))
         {
             return FIELD_TRICK_ROOM;
         }
         if (zoneId == 463 || zoneId == 465 || zoneId == 376)
         {
             return FIELD_SUN;
+        }
+        if (zoneId == 473)
+        {
+            return FIELD_RAIN;
         }
         return FIELD_NONE;
     };
@@ -955,6 +960,14 @@ extern "C"
         {
             // Setting Sun
             if (ServerControl_ChangeWeather(a1, 1, 255))
+            {
+                return 1;
+            }
+        }
+        else if (field == FIELD_RAIN)
+        {
+            // Setting Rain
+            if (ServerControl_ChangeWeather(a1, 2, 255))
             {
                 return 1;
             }
@@ -2382,6 +2395,8 @@ extern "C"
 
 #pragma region SwitchInAI
 
+#if DEBUGGING_ILLUSION
+
     void copyArray(u8 *arr, u8 *arrCopy)
     {
         for (int i = 0; i < 28; i++)
@@ -2391,9 +2406,6 @@ extern "C"
     }
 
     int illusionMonId;
-
-#if TESTING_DOUBLES_SWITCH_AI
-
     unsigned int PersonalPickBestMonToSwitchInto(BtlClientWk *a1, u8 *a2, unsigned int a3, BattleMon *a4)
     {
         unsigned int v5;    // r5
@@ -2426,27 +2438,27 @@ extern "C"
         __int16 v23_temp[6];
         BattleMon *defendingMonChecked;
 
-        if (getSwitchSetting() == 1)
+        if (getSwitchSetting() == 0)
         {
             numTargets = 1;
         }
         else
         {
-            defenderPos = Handler_PokeIDToPokePos(BattleServer_GetServerFlow(a1->mainModule->server), a4->ID);
-            numTargets = Handler_ExpandPokeID(BattleServer_GetServerFlow(a1->mainModule->server), defenderPos | 0x700, defendingAllies);
+            defenderPos = a1->myChangePokePos[0]; // MainModule_PokeIDToPokePos(a1->mainModule, a1->pokeCon, a4->ID);
+            // k::Printf("Defender Pos: %d\n", defenderPos);
+            numTargets = MainModule_ExpandExistPokeID(a1->mainModule, a1->pokeCon, defenderPos | 0x100, defendingAllies);
         }
 
         for (currentTarget = 0; currentTarget < numTargets; currentTarget++)
         {
-            if (getSwitchSetting() == 1)
+            if (getSwitchSetting() == 0)
             {
-
-                currentTargetPosition = defendingAllies[currentTarget];
-                defendingMonChecked = Handler_GetBattleMon(BattleServer_GetServerFlow(a1->mainModule->server), currentTargetPosition);
+                defendingMonChecked = a4;
             }
             else
             {
-                defendingMonChecked = a4;
+                currentTargetPosition = defendingAllies[currentTarget];
+                defendingMonChecked = PokeCon_GetBattleMon(a1->pokeCon, currentTargetPosition);
             }
             PokeType = BattleMon_GetPokeType(defendingMonChecked);
             defAbility = (AbilID)BattleMon_GetValue(defendingMonChecked, VALUE_EFFECTIVE_ABILITY);
@@ -2725,6 +2737,79 @@ extern "C"
 
         return result;
     }
+#endif
+#if TESTING_DOUBLES_SWITCH_AI
+    BattleMon *THUMB_BRANCH_SwitchAI_DetermineOpponent(BtlClientWk *a1, __int16 a2)
+    {
+        __int64 Count;          // r4
+        u64 v4;             // r2
+        unsigned __int8 v5; // r3
+        u8 a4[4];           // [sp+0h] [bp-18h] BYREF
+
+        int i;
+        int lowestHealthRatio;
+        int currentHealthRatio;
+        BattleMon *currentMon;
+        int lowestHealthRatioIndex;
+        lowestHealthRatio = 500000;
+        lowestHealthRatioIndex = 1000;
+
+        if (getSwitchSetting() == 1)
+        {
+            BattleStyle battleStyle;
+            battleStyle = (BattleStyle)BtlSetup_GetBattleStyle(a1->mainModule);
+            int OppositeEnemyPos;
+            OppositeEnemyPos = sub_219C508(battleStyle, a2);
+            currentMon = PokeCon_GetFrontPokeData(a1->pokeCon, OppositeEnemyPos);
+            return PokeCon_GetFrontPokeData(a1->pokeCon, OppositeEnemyPos);
+        }
+        else if (getSwitchSetting() == 2)
+        {
+            Count = MainModule_ExpandExistPokeID(a1->mainModule, a1->pokeCon, a2 | 0x100, a4);
+            if (!Count)
+            {
+                return 0;
+            }
+            for (int i = 0; i < Count; i++)
+            {
+                currentMon = PokeCon_GetBattleMon(a1->pokeCon, a4[i]);
+                currentHealthRatio = BattleMon_GetHPRatio(currentMon);
+                if (currentHealthRatio < lowestHealthRatio)
+                {
+                    lowestHealthRatio = currentHealthRatio;
+                    lowestHealthRatioIndex = i;
+                }
+                else if (currentHealthRatio == lowestHealthRatio)
+                {
+                    if (BattleRandom(100) < 50)
+                    {
+                        lowestHealthRatioIndex = i;
+                    }
+                }
+                else
+                {
+                }
+            }
+            if (lowestHealthRatioIndex == 1000)
+            {
+                lowestHealthRatioIndex = BattleRandom(Count);
+            }
+            return PokeCon_GetBattleMon(a1->pokeCon, a4[lowestHealthRatioIndex]);
+        }
+        else
+        {
+            Count = MainModule_ExpandExistPokeID(a1->mainModule, a1->pokeCon, a2 | 0x100, a4);
+            if (!Count)
+            {
+                return 0;
+            }
+            v4 = a1->rand3 + a1->rand2 * a1->rand1;
+            a1->rand1 = v4;
+            v5 = (HIDWORD(v4) * Count) >> 32;
+            return PokeCon_GetBattleMon(a1->pokeCon, a4[v5]);
+        }
+    }
+#endif
 
     unsigned int THUMB_BRANCH_SAFESTACK_PickBestMonToSwitchInto(BtlClientWk *a1, u8 *a2, unsigned int a3, BattleMon *a4)
     {
@@ -2743,52 +2828,59 @@ extern "C"
         unsigned int v15;                    // r0
         unsigned int v18;
         int randomvalue;
-        u8 v16;                 // r1
-        int Type;               // [sp+8h] [bp-38h]
-        unsigned int MoveCount; // [sp+Ch] [bp-34h]
-        unsigned int i;         // [sp+10h] [bp-30h]
-        int PokeType;           // [sp+14h] [bp-2Ch]
-        __int16 v23[6];         // [sp+1Ch] [bp-24h]
-        BattleMon *v24;         // [sp+28h] [bp-18h]
+        u8 v16;                              // r1
+        int Type;                            // [sp+8h] [bp-38h]
+        unsigned int MoveCount;              // [sp+Ch] [bp-34h]
+        unsigned int i;                      // [sp+10h] [bp-30h]
+        int PokeType;                        // [sp+14h] [bp-2Ch]
+        __int16 v23[6] = {0, 0, 0, 0, 0, 0}; // [sp+1Ch] [bp-24h]
+        BattleMon *v24;                      // [sp+28h] [bp-18h]
         __int16 v23_temp[6];
 
         v24 = a4;
+
+#if DEBUGGING_ILLUSION
         u8 *monsCopy = a2;
         copyArray(a2, monsCopy);
         int personalResult = PersonalPickBestMonToSwitchInto(a1, a2, a3, a4);
         personalResult = monsCopy[0];
-
+#endif
         __int16 defenderPos;
         int numTargets;
-        u8 defendingAllies[5];
+        u8 defendingAllies[4];
         unsigned int currentTarget;
         int currentTargetPosition;
         BattleMon *defendingMonChecked;
 
+        numTargets = 1;
+
         if (getSwitchSetting() == 1)
         {
-            numTargets = 1;
-        }
-        else
-        {
-            defenderPos = Handler_PokeIDToPokePos(BattleServer_GetServerFlow(a1->mainModule->server), a4->ID);
-            numTargets = Handler_ExpandPokeID(BattleServer_GetServerFlow(a1->mainModule->server), defenderPos | 0x700, defendingAllies);
+            defenderPos = MainModule_PokeIDToPokePos(a1->mainModule, a1->pokeCon, a4->ID);
+            numTargets = MainModule_ExpandExistPokeID(a1->mainModule, a1->pokeCon, defenderPos | 0x700, defendingAllies);
         }
 
         for (currentTarget = 0; currentTarget < numTargets; currentTarget++)
         {
+            defendingMonChecked = a4;
+
             if (getSwitchSetting() == 1)
             {
                 currentTargetPosition = defendingAllies[currentTarget];
-                defendingMonChecked = Handler_GetBattleMon(BattleServer_GetServerFlow(a1->mainModule->server), currentTargetPosition);
+                defendingMonChecked = PokeCon_GetBattleMon(a1->pokeCon, currentTargetPosition);
             }
-            else
-            {
-                defendingMonChecked = a4;
-            }
-            k::Printf("Checking mon %d for switch-in from Pokemon %d\n", a4->ID, defendingMonChecked->ID);
+
             PokeType = BattleMon_GetPokeType(defendingMonChecked);
             defAbility = (AbilID)BattleMon_GetValue(defendingMonChecked, VALUE_EFFECTIVE_ABILITY);
+
+            if (getSwitchSetting() == 1)
+            {
+                if (!IsPosInRangeTripleBattle(MainModule_PokeIDToPokePos(a1->mainModule, a1->pokeCon, defendingMonChecked->ID), MainModule_PokeIDToPokePos(a1->mainModule, a1->pokeCon, a4->ID)))
+                {
+                    continue;
+                }
+            }
+
             for (i = 0; i < a3; i = (i + 1))
             {
                 v5 = 0;
@@ -2796,6 +2888,8 @@ extern "C"
                 v23_temp[i] = 0;
                 MonData = BattleParty_GetMonData(BattleClient_GetActParty(a1), a2[i]);
                 atkAbility = (AbilID)BattleMon_GetValue(MonData, VALUE_EFFECTIVE_ABILITY);
+                // k::Printf("Evaluating mon %d at position %d with ability %d\n", MonData->Species, MainModule_PokeIDToPokePos(a1->mainModule, a1->pokeCon, MonData->ID), BattleMon_GetValue(MonData, VALUE_EFFECTIVE_ABILITY));
+
                 if (!BattleMon_IsFainted(MonData))
                 {
                     MoveCount = BattleMon_GetMoveCount(MonData);
@@ -3023,46 +3117,23 @@ extern "C"
                             }
                             v5 = (v5 + 1);
                         } while (v5 < MoveCount);
-
+#if DEBUGGING_ILLUSION
                         // before moving on to the next pokemon, the game will check if the pokemon has the ability illusion.
                         if (atkAbility == ABIL149_ILLUSION)
                         {
                             int illusionBasePower = v23_temp[i];
-#if DEBUGGING_ILLUSION && DEBUGGING_ALL
-                            k::Printf("\nThe actual best switch in is %d\n", BattleParty_GetMonData(BattleClient_GetActParty(a1), a2[actualBest])->Species);
-
-                            k::Printf("\nFor Pokemon %d, their highest base power move is %d.\nWithout this pokemon of id=%d the switch ai would return %d.",
-                                      BattleParty_GetMonData(BattleClient_GetActParty(a1), a2[actualBest])->Species, v23[i], i, actualBest);
-                            k::Printf("\nThe actual best switch in is %d with id %d while the current Pokemon we are assessing is %d with id %d\n", BattleParty_GetMonData(BattleClient_GetActParty(a1), personalResult)->Species, personalResult, MonData->Species, a2[i]);
-#endif
                             if (personalResult == a2[i])
                             {
-#if DEBUGGING_ILLUSION && DEBUGGING_ALL
-                                k::Printf("\nThe Illusion Pokemon is the best switch in");
-#endif
                                 // if (BattleRandom(100) > 50)
                                 if (BattleRandom(100) > 1)
                                 {
-#if DEBUGGING_ILLUSION && DEBUGGING_ALL
-                                    k::Printf(" but is going dodge their duties\n");
-#endif
                                     illusionBasePower = illusionBasePower >> 1;
-                                    // k::Printf("\nBasePower is now %d", BasePower);
                                 }
                             }
                             else if (personalResult != a2[i] && illusionBasePower >= 80)
                             {
-#if DEBUGGING_ILLUSION && DEBUGGING_ALL
-                                k::Printf("\nThe Illusion Pokemon is not the best switch in");
-#endif
-
-                                // if (BattleRandom(100) > 50)
                                 if (BattleRandom(100) > 1)
                                 {
-#if DEBUGGING_ILLUSION && DEBUGGING_ALL
-                                    k::Printf(" but is going to come in anyways\n");
-
-#endif
                                     illusionBasePower = illusionBasePower << 1;
                                 }
                             }
@@ -3071,14 +3142,12 @@ extern "C"
                             }
                             v23_temp[i] = illusionBasePower;
                         }
-
-                        v23[i] += v23_temp[i];
-                        k::Printf("\nTotal BP calculated for pokemon %d is %d\n", defendingMonChecked->ID, v23[i]);
+#endif
+                        v23[i] = v23[i] + v23_temp[i];
                     }
                 }
             }
         }
-        // k::Printf("\nStep 21\n");
         result = a3;
         for (j = 0; j < a3; result = a3)
         {
@@ -3101,10 +3170,9 @@ extern "C"
         return result;
     }
 
-#endif
-
 #if USING_VANILLA_SWITCH_AI
 
+#if DEBUGGING_ILLUSION
     unsigned int PersonalPickBestMonToSwitchInto(BtlClientWk *a1, u8 *a2, unsigned int a3, BattleMon *a4)
     {
         unsigned int v5;    // r5
@@ -3408,6 +3476,7 @@ extern "C"
 
         return result;
     }
+#endif
 
     unsigned int THUMB_BRANCH_SAFESTACK_PickBestMonToSwitchInto(BtlClientWk *a1, u8 *a2, unsigned int a3, BattleMon *a4)
     {
@@ -3678,6 +3747,7 @@ extern "C"
                         v5 = (v5 + 1);
                     } while (v5 < MoveCount);
 
+#if DEBUGGING_ILLUSION
                     // before moving on to the next pokemon, the game will check if the pokemon has the ability illusion.
                     if (atkAbility == ABIL149_ILLUSION)
                     {
@@ -3722,6 +3792,7 @@ extern "C"
                         }
                         v23[i] = illusionBasePower;
                     }
+#endif
                 }
             }
         }
@@ -4026,14 +4097,14 @@ extern "C"
         {
 
             // If the two conditions this function is defined for are not relevant, switch to the other one.
-            if (!getSwitchSetting())
-            {
+            // if (getSwitchSetting() != 1)
+            // {
                 return AlternateSwitchConditions(work, attackingMon, defendingMon);
-            }
-            else
-            {
-                return 0;
-            }
+            // }
+            // else
+            // {
+            //     return 0;
+            // }
         }
 
         if (BattleMon_CheckIfMoveCondition(attackingMon, CONDITION_CHOICELOCK))
@@ -4679,6 +4750,7 @@ extern "C"
 
 #pragma region WIPIllusionChanges
 
+#if DEBUGGING_ILLUSION
     extern int sub_219C424(MainModule *a1, int a2);
 
     // Test stoppping the illusion removal.
@@ -4738,6 +4810,6 @@ extern "C"
             } while (v10 < a2->memberCount);
         }
     }
-
+#endif
 #pragma endregion
 }

@@ -200,7 +200,7 @@ public class MainEvents {
 
     // Humilau Gym Guide Trigger Event
     public static void main_5() {
-        if (EventFlags.Get(117)){
+        if (!EventFlags.Get(117)){
             int GuideEntity;
             GuideEntity = 7; 
             Actor.PauseAll();

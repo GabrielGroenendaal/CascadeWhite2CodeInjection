@@ -44,7 +44,7 @@ extern void HandlerOranBerryReaction(BattleEventItem *a1, ServerFlow *a2, unsign
 extern void HandlerOranBerryCheckActivation(BattleEventItem *a1, ServerFlow *a2, int a3);
 extern void HandlerOranBerryUse(BattleEventItem *a1, ServerFlow *a2, unsigned int *a3);
 extern void HandlerOranBerrySwitchIn(BattleEventItem *a1, ServerFlow *a2, unsigned int *a3);
-
+extern BattleMon* PokeCon_GetFrontPokeData(PokeCon *pokeCon, int pos);
 // STUFF FOR FIELD EFFECTS
 extern VecFx32 *PlayerState_GetWPos(PlayerState *playerState);
 extern bool DoesMonHaveShadowTag(int a1, BattleMon *a2);
@@ -54,7 +54,7 @@ extern int MainModule_ExpandExistPokeID(
         MainModule *a1,
         PokeCon *a2,
         __int16 currentPosWithTargetType,
-        char *ids);
+        u8 *ids);
 extern void CommonDamageReact(BattleEventItem *a1, ServerFlow *a2, unsigned int *a3, unsigned int a4, int a5);
 extern int GetNumMonsOnField(BattleStyle a1, int a2);
 extern int BattleParty_GetPartyCount(BattleParty *a1);

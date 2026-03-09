@@ -3458,7 +3458,7 @@ extern "C"
         int Value;            // r4
         BattleMon *BattleMon; // [sp+8h] [bp-20h]
         unsigned int Count;   // [sp+Ch] [bp-1Ch]
-        char ids[24];         // [sp+10h] [bp-18h] BYREF
+        u8 ids[24];         // [sp+10h] [bp-18h] BYREF
 
         ID = BattleMon_GetID(a2);
         v7 = MainModule_PokeIDToPokePos(a1->mainModule, a1->pokeCon, ID);
@@ -4615,11 +4615,11 @@ extern "C" void THUMB_BRANCH_SAFESTACK_PokeList_LoadPokeData(PokeListMain *a1, P
             // a3->Forme = (a2->field_D8 == 1) ? 0:
             isEnemy = a1->pokeListSetupData->field_3C;
 
-            a3->Species = (a2->field_D8 == 1 && isEnemy && !GetScanSetting()) ? 0 : a3->Species;
+            a3->Species = (a2->field_D8 == 1 && isEnemy && GetScanSetting()) ? 0 : a3->Species;
             a3->Species = (a2->field_D4 == 1) ? 0 : a3->Species;
             a3->Forme = PokeParty_GetParam(a3->partyPkm, PF_Forme, 0);
 
-            if (isEnemy && !GetScanSetting()) // && !GetScanSetting())
+            if (isEnemy && GetScanSetting()) // && !GetScanSetting())
             {
                 a3->Attack = PML_PersonalGetParamSingle(a3->Species, a3->Forme, Personal_ATK);
                 a3->Defense = PML_PersonalGetParamSingle(a3->Species, a3->Forme, Personal_DEF);
@@ -4678,7 +4678,7 @@ extern "C" void THUMB_BRANCH_SAFESTACK_PokeList_LoadPokeData(PokeListMain *a1, P
                 // currentPP = PokeParty_GetParam(a3->partyPkm, (PkmField)(i + 58), 0);
                 // maxPP =  PML_MoveGetParam(v9->MoveID, MVDATA_BASEPP) + 3;
                 int missingPP = PokeParty_GetParam(a3->partyPkm, (PkmField)(i + 58), 0) < (PML_MoveGetParam(PokeParty_GetParam(a3->partyPkm, (PkmField)(i + 54), 0), MVDATA_BASEPP) + ((a2->field_D8 == 2) ? 0 : 3));
-                if (isEnemy && !missingPP && !GetScanSetting()) // && !(PokeParty_GetParam(a3->partyPkm, (PkmField)(i + 58), 0) < (PML_MoveGetParam(v9->MoveID, MVDATA_BASEPP) + 3)))
+                if (isEnemy && !missingPP && GetScanSetting()) // && !(PokeParty_GetParam(a3->partyPkm, (PkmField)(i + 58), 0) < (PML_MoveGetParam(v9->MoveID, MVDATA_BASEPP) + 3)))
                 {
                     continue;
                 }

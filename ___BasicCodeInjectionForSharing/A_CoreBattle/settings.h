@@ -44,9 +44,9 @@
 #define DAMAGE_CACHE_ENABLED false
 
 
-#define USING_VANILLA_SWITCH_AI true 
-#define SWITCH_AI_CHANGES true 
-#define TESTING_DOUBLES_SWITCH_AI false
+#define USING_VANILLA_SWITCH_AI false 
+#define SWITCH_AI_CHANGES false 
+#define TESTING_DOUBLES_SWITCH_AI true
 
 
 #endif
