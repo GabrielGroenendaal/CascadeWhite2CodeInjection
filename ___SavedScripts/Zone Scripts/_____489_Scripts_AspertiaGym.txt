@@ -567,3 +567,6 @@ public class MainEvents {
 	static native void Action004b(int amount) : 0x4b;
 	static native void Action00b5(int amount) : 0xb5;
 }
+
+
+The user saps the user's life force,\ninflicting matching the user's level and\nhealing for the same amount.

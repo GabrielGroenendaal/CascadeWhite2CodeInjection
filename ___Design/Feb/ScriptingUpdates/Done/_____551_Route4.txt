@@ -6,6 +6,7 @@ import event.actors.Actor;
 import event.actors.Player;
 import event.dialogs.Message;
 import event.funfest.Funfest;
+import pokemon.PokeParty;
 import pokescript.vm.Math;
 import pokescript.vm.StackCtrl;
 import pokescript.vm.VM;
@@ -17,6 +18,8 @@ import system.RTC;
 import system.Runtime;
 import system.Sound;
 import system.text.WordSet;
+import event.Trainer;
+
 
 public class MainEvents {
 	public static void main_1() { // @ 0x4e
@@ -455,9 +458,116 @@ public class MainEvents {
 	}
 
 	// Benga Script 
+	// EventWorks.Get()
 	public static void main_20() {
 
+		int playerX;
+		int playerZ; 
+		int textId; 
+		int bengaEntity;
+		int isVictory;
+		textId = 27;
+		bengaEntity = 4; // CHANGE THIS LATER 
+		Actor.PauseAll();
+
+
+		Message.ActorEx(1024, textId, bengaEntity, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		
+		Player.GetGPos(playerX, playerZ);
+		Actor.WalkRoute(bengaEntity, playerX, playerZ-1, 0, 8, 0);
+		Actor.WaitActionFinish();
+		Trainer.PlayBGMPush(773);
+		Wordset.LoadPlayerName(0);
+		Message.ActorEx(1024, textId+1, bengaEntity, 0, 0);
+		Message.CloseAll();
+		HopDown(bengaEntity);
+		HopDown(bengaEntity);
+		Actor.WaitActionFinish();
+		Message.ActorEx(1024, textId+2, bengaEntity, 0, 0);
+		Message.CloseAll();
+		Message.Spiked(textId + 3, 2);
+		Message.CloseAll();
+
+
+		// Battle 
+		//Battle.CallTrainerBattle(773, 0, 1);
+		isVictory = 1; // Battle.IsTrainerVictory();
+		if (isVictory == 1) {
+			;; Battle.EndTrainerBattle();
+			Message.ActorEx(1024, textId+4, bengaEntity, 0, 0);
+		} else {
+			// Battle.EndTrainerBattle();
+			Message.ActorEx(1024, textId+5, bengaEntity, 0, 0);
+			Message.CloseAll();
+			Message.Spiked(textId + 6, 2);
+			BengaZoom(bengaEntity);
+			Actor.WaitActionFinish();
+			Message.WaitAdvance();
+			Message.CloseAll();
+			Runtime.Sleep(32);
+			HopDown(bengaEntity);
+			Message.ActorEx(1024, textId + 7, bengaEntity, 0, 0);
+			Actor.WaitActionFinish();
+			PokeParty.RecoverAll();
+		}
+		TurnWest(bengaEntity);
+		Message.ActorEx(1024, textId + 8, bengaEntity, 0, 0);
+		Actor.WaitActionFinish();
+		WalkNorth(bengaEntity);
+		Message.ActorEx(1024, textId + 9, bengaEntity, 0, 0);
+		Actor.WaitActionFinish();
+		Message.CloseAll();
+		TurnSouth(bengaEntity);
+		Actor.WaitActionFinish();
+		Message.ActorEx(1024, textId + 10, bengaEntity, 0, 0);
+		TurnWest(bengaEntity);
+		if (isVictory == 1){
+			Message.ActorEx(1024, textId + 11, bengaEntity, 0, 0);
+		}
+		else {
+			Message.ActorEx(1024, textId + 12, bengaEntity, 0, 0);
+		}
+		Message.CloseAll();
+		ShowEllipses(bengaEntity);
+		Actor.WaitActionFinish();
+		Message.ActorEx(1024, textId + 13, bengaEntity, 0, 0);
+		Message.CloseAll();
+		HopDown(bengaEntity);
+		Message.Spiked(textId + 14, 2);
+		Actor.WaitActionFinish();
+		Message.CloseAll();
+
+		WalkSouth(bengaEntity);
+		Actor.WaitActionFinish();
+		Message.ActorEx(1024, textId +15, bengaEntity, 0, 0);
+		ShowMusicNote(bengaEntity);
+		Message.ActorEx(1024, textId + 16, bengaEntity, 0, 0);
+		Actor.WaitActionFinish();
+		Message.CloseAll();
+		WalkNorth(bengaEntity);
+		TurnSouth(bengaEntity);
+		Actor.WaitActionFinish();
+		Message.ActorEx(1024, textId + 17, bengaEntity, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseAll();
+		
+		// CHANGE THESE VALUES LATER 
+		Actor.WalkRoute(bengaEntity, bengaX, bengaZ, 0, 4, 0);
+		Actor.WaitActionFinish();
+		Actor.JumpToGPos(bengaEntity, bengaX + 5, 1, bengaZ);
+		Field.PlayMapBGM();
+		Runtime.Sleep(32);
+		EventFlags.Set(1520 + 773);
+		EventWorks.Set(16494, 3);
+		Actor.Hide(bengaEntity);
+
+		// Post Battle 
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
 	}
+
 	static meta void ActionSequence_03dc(int npcId) : VActionSequence {
 		Action000f(2);
 		Action0021(1);
@@ -471,23 +581,35 @@ public class MainEvents {
 		Action000f(1);
 		Action0021(1);
 	}
-
+	static meta void WalkSouth(int npcId) : VActionSequence {
+		Action000d(1);
+	}
 	static meta void ActionSequence_03fc(int npcId) : VActionSequence {
 		Action000e(1);
 		Action000c(1);
 		Action0023(1);
 	}
-
+	static meta void ShowEllipses(int npcId) : VActionSequence {
+	        Action00a1(1);
+        }
 	static meta void ActionSequence_040c(int npcId) : VActionSequence {
 		Action000e(2);
 		Action000c(1);
 		Action0023(1);
 	}
+	static meta void ShowMusicNote(int npcId) : VActionSequence {
+        Action00a0(1);
+    }
 
 	static meta void ActionSequence_041c(int npcId) : VActionSequence {
 		Action00b6(1);
 	}
-
+	static meta void WalkNorth(int npcId) : VActionSequence {
+		Action000c(2);
+	}
+    static meta void TurnSouth(int npcId) : VActionSequence {
+        Action0021(1);
+    }
 	static meta void ActionSequence_0424(int npcId) : VActionSequence {
 		Action0021(1);
 		Action004b(1);
@@ -525,7 +647,18 @@ public class MainEvents {
 	static meta void ActionSequence_069c(int npcId) : VActionSequence {
 		Action0023(1);
 	}
-
+	static meta void BengaZoom(int npcId) : VActionSequence {
+		Action0014(2);
+		Action0016(2);
+		Action0015(2);
+		Action0017(2);
+	}
+	static meta void HopDown(int npcId) : VActionSequence {
+        Action0031(1);
+	}
+	static meta void TurnWest(int npcId) : VActionSequence {
+		Action0022(1);
+	}
 	static meta void Global2805(int a1, int a2) : VGlobalCall[2805];
 
 	static native void Action000c(int amount) : 0xc;
@@ -538,4 +671,11 @@ public class MainEvents {
 	static native void Action004b(int amount) : 0x4b;
 	static native void Action009f(int amount) : 0x9f;
 	static native void Action00b6(int amount) : 0xb6;
+	static native void Action0014(int amount) : 0x14;
+	static native void Action0015(int amount) : 0x15;
+	static native void Action0016(int amount) : 0x16;
+	static native void Action0017(int amount) : 0x17;
+	static native void Action0031(int amount) : 0x31;
+	static native void Action00a0(int amount) : 0xa0;
+	static native void Action00a1(int amount) : 0xa1;
 }

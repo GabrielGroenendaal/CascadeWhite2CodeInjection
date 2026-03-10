@@ -1,0 +1,287 @@
+import messages.script.Msg0313.MSGID;
+
+import Base;
+import event.EVCamera;
+import event.Battle;
+import event.actors.Actor;
+import event.actors.Player;
+import event.dialogs.Message;
+import event.dialogs.YesNoWin;
+import pokescript.vm.Math;
+import pokescript.vm.StackCtrl;
+import pokescript.vm.VM;
+import system.EventFlags;
+import system.EventWorks;
+import system.Fade;
+import system.Field;
+import system.Runtime;
+import system.Sound;
+
+public class MainEvents {
+	public static void main_1() { // @ 0x4d
+		Actor.PauseAll();
+		Sound.SEPlay(1369);
+		Sound.SEWait();
+		ActionSequence_006c(255);
+		Fade.InBlack();
+		Fade.Wait();
+		Actor.WaitActionFinish();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_2() { // @ 0xa1
+		Actor.PauseAll();
+		sub_0078(0, 6);
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_3() { // @ 0x123
+		int v16;
+		int v34;
+		int v35;
+		int v36;
+
+		Actor.PauseAll();
+		Message.System(5, 2);
+		v16 = YesNoWin.Show();
+		Message.CloseSystem();
+		if (v16 != 0) {
+			v36 = 0;
+			v36 = Player.GetDirection();
+			if (v36 == 0) {
+				goto LABEL_0200;
+			}
+			goto LABEL_0210;
+		}
+		v34 = 0;
+		v35 = 0;
+		Player.GetGPos(v34, v35);
+		if (v34 == 12) {
+			ActionSequence_02b4(255);
+			goto LABEL_01b9;
+		}
+
+		LABEL_0177:
+		if (v34 == 13) {
+			ActionSequence_02c4(255);
+			goto LABEL_01b9;
+		}
+
+		LABEL_0198:
+		if (v34 == 14) {
+			ActionSequence_02cc(255);
+			goto LABEL_01b9;
+		}
+
+		LABEL_01b9:
+		Actor.WaitActionFinish();
+		Player.AnimateY(0, 60, 64, 0);
+		Runtime.Sleep(40);
+		Fade.OutBlack();
+		Fade.Wait();
+		Runtime.ReserveScript(21);
+		Field.ChangeMap(245, 81, 3, 78, 1);
+		goto LABEL_0279;
+
+		LABEL_0200:
+		ActionSequence_0294(255);
+		Actor.WaitActionFinish();
+		goto LABEL_0279;
+
+		LABEL_0210:
+		if (v36 == 1) {
+			ActionSequence_029c(255);
+			Actor.WaitActionFinish();
+			goto LABEL_0279;
+		}
+
+		LABEL_0233:
+		if (v36 == 2) {
+			ActionSequence_02a4(255);
+			Actor.WaitActionFinish();
+			goto LABEL_0279;
+		}
+
+		LABEL_0256:
+		if (v36 == 3) {
+			ActionSequence_02ac(255);
+			Actor.WaitActionFinish();
+			goto LABEL_0279;
+		}
+
+		LABEL_0279:
+		v36 = 0;
+		v35 = 0;
+		v34 = 0;
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_4() { // @ 0xbb
+		Actor.PauseAll();
+		sub_0078(1, 7);
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_5() { // @ 0xd5
+		Actor.PauseAll();
+		sub_0078(2, 8);
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_6() { // @ 0xef
+		Actor.PauseAll();
+		sub_0078(3, 9);
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_7() { // @ 0x109
+		Actor.PauseAll();
+		sub_0078(4, 10);
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_8() { // @ 0x32
+		if (EventWorks.Get(16783) > 5) {
+			return;
+		}
+		EventWorks.Set(16783, 6);
+	}
+
+	public static void main_9() { // @ 0x2dc
+		int v0;
+		int v1;
+
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.Hide(0);
+		Global2807(590, 1);
+		EventFlags.Set(1469);
+		EventWorks.Set(16783, 8);
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_10() {
+		int v16;
+        	int v7;
+       	int v0;
+		
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		if (EventFlags.Get(1520 + 104)) {
+			Message.System(17, 2);
+			Message.WaitAdvance();
+			Message.CloseAll();
+			goto LABEL_00c4;
+		}
+        	Message.System(11, 0);
+        	Message.WaitAdvance();
+          Message.CloseSystem();
+        	Message.System(12, 0);
+        	v7 = YesNoWin.Show();
+        	Message.CloseSystem();
+
+        	if (v7 != 0){
+            	Message.System(13, 0);
+            	Message.WaitAdvance();
+               Message.CloseSystem();
+            	goto LABEL_00c4;
+        	}
+        	Runtime.Sleep(32);
+		Sound.SEPlay(2226);
+        	EVCamera.Shake(6, 0, 3, 10, 1, 0, 1, 3);
+        	Runtime.Sleep(32);
+		Message.Spiked(14, 2);
+		Message.WaitAdvance();
+		Message.CloseAll();
+		Battle.CallTrainerBattle(104, 0, 0);
+		v0 = Battle.IsTrainerVictory();
+		if (v0 == 0) {
+			Battle.CallTrainerLose();
+			goto LABEL_00c4;
+		}
+		EventFlags.Set(1520 + 104);
+		EventFlags.Set(554);
+		Battle.EndTrainerBattle();
+
+		Message.System(15, 0);
+		Message.WaitAdvance();
+		Message.CloseSystem();
+		Global2805(270, 1);
+		Message.System(16, 0);
+		Message.WaitAdvance();
+		Message.CloseSystem();
+		
+		LABEL_00c4:
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	static void sub_0078(int v32, int v33) { // @ 0x78
+		Sound.SEPlay(1351);
+		Base.CMD_230(v32, 0);
+		if (EventWorks.Get(16783) < 2) {
+			goto LABEL_009d;
+		}
+		Message.ClosePlaceSign();
+		Message.PlaceSign(v33, 0);
+
+		LABEL_009d:
+		Message.ClosePlaceSign();
+	}
+
+	static meta void ActionSequence_006c(int npcId) : VActionSequence {
+		Action0008(1);
+		Action000c(1);
+	}
+
+	static meta void ActionSequence_0294(int npcId) : VActionSequence {
+		Action000d(1);
+	}
+
+	static meta void ActionSequence_029c(int npcId) : VActionSequence {
+		Action000c(1);
+	}
+
+	static meta void ActionSequence_02a4(int npcId) : VActionSequence {
+		Action000f(1);
+	}
+
+	static meta void ActionSequence_02ac(int npcId) : VActionSequence {
+		Action000e(1);
+	}
+
+	static meta void ActionSequence_02b4(int npcId) : VActionSequence {
+		Action000d(1);
+		Action000f(1);
+		Action0001(1);
+	}
+
+	static meta void ActionSequence_02c4(int npcId) : VActionSequence {
+		Action000d(1);
+	}
+
+	static meta void ActionSequence_02cc(int npcId) : VActionSequence {
+		Action000d(1);
+		Action000e(1);
+		Action0001(1);
+	}
+
+	static meta void Global2807(int a1, int a2) : VGlobalCall[2807];
+
+	static meta void Global2805(int a1, int a2) : VGlobalCall[2805];
+
+	static native void Action0001(int amount) : 0x1;
+	static native void Action0008(int amount) : 0x8;
+	static native void Action000c(int amount) : 0xc;
+	static native void Action000d(int amount) : 0xd;
+	static native void Action000e(int amount) : 0xe;
+	static native void Action000f(int amount) : 0xf;
+}

@@ -889,7 +889,13 @@ public class MainEvents {
 		Action0021(1);
 	}
 
-
+	static meta void WalkWest(int npcId) : VActionSequence {
+		Action000e(1);
+	}
+	static meta void WalkNorth(int npcId) : VActionSequence {
+		Action000c(2);
+	}
+	
 	static meta void Global2800(int a1, int a2, int a3, int a4, int a5, int a6, int a7) : VGlobalCall[2800];
 
 	static native void Action000c(int amount) : 0xc;

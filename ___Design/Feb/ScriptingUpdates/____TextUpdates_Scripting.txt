@@ -1,101 +1,54 @@
------ TEXT FILE 295----- Castelia Sewers
-0: [VAR TRNAME(1)]: [VAR TRNAME(0)]!\nI need you to get tougher!\c\nEven I'm going to have trouble\ntaking them on all by myself...\c\nAnyway, it's OK!\nI'll take care of healing our Pok�mon!\c\nI'm counting on you, [VAR TRNAME(0)]!\nAre you ready to go?
-1: [VAR TRNAME(1)]: C'mon!\nHurry up and get ready!\c
-2: [VAR TRNAME(1)]: OK!\nLet's find Team Plasma!\c
-3: [VAR TRNAME(1)]: I suppose.\nGoing to step outside for a minute?
-4: [VAR TRNAME(1)]: I'm sorry\nI got you mixed up in this,\r\nbut I can't forgive Team Plasma!
-5: [VAR TRNAME(1)]: So this is the sewer...\nWell, it's not as stinky as I expected.
-6: [VAR TRNAME(1)]: Still...\nPok�mon live everywhere, don't they?
-7: [VAR TRNAME(1)]: If you don't get strong,\nyou can't protect the things that are\r\nimportant to you!
-8: [VAR TRNAME(1)]: Don't worry about me!\nLet's hurry and find Team Plasma!
-9:                                     
-10:                                   
-11: Hey!\c
-12: Team Plasma: What do you want?\c
-13: [VAR TRNAME(1)]: Team Plasma!\nYou villains!\c
-14: Team Plasma: What?\nDon't treat us like villains!\c\nAnd don't interfere with our\nplans to liberate Pok�mon!\c
-15: [VAR TRNAME(1)]: Liberate? Ha!\nYou're just ordinary Pok�mon thieves!\c\nAnd what's more, you use those\nstolen Pok�mon like they're tools!\c
-16: Team Plasma: Shaddap!\nHand over your Pok�mon!\c
-17: [VAR TRNAME(1)]: Let's do this, [VAR TRNAME(0)]!\c
-18: Team Plasma: They're really tough!\c\nBut whatever!\nWe've got the Pok�mon we need!\r\nNow, we flee!\c
-19: [VAR TRNAME(1)]: Tch!\nThey run away like Patrat!\c\nOK! Let's go farther inside!\nThere might be more in there!\c
-20: ???: I don't think that's\nnecessary, you two.\c
-21: [VAR TRNAME(1)]: Could you be\nGym Leader Burgh?\c
-22: Burgh: Yessir! One and the same!\nI'm Burgh.\c\nAnd there was no one suspicious\nbeyond here!\c
-23: [VAR TRNAME(1)]: Is that...so?\c
-24: Burgh: Yes indeedy!\c\nI'm concerned about\nTeam Plasma as well.\c\nMore importantly, shall\nwe leave this place?\c\nFor some reason,\nthis sewer is bugging me.\c
-25: [VAR TRNAME(1)]: Huh...\c\nDidn't you and the other Gym Leaders\nfight Team Plasma two years ago?\c
-26: [VAR TRNAME(1)]: Thanks for your help.\nHere, use this!\c
-27: I'll find those other\nTeam Plasma punks!\c\nI... I'll never forgive Pok�mon thieves!\nNo way!\c
-28: Burgh: He's gone...\c
-29: ???: You there!\c
-30: That was an excellent demonstration\nof battling. The way you brought out\r\nthe power of your Pok�mon against\r\nan opponent like Team Plasma...\c\nAstounding. Simply astounding.\nInteresting as well. I see...\c
-31: Burgh: Who...was that?\c
-32: Well. No matter.\nWhat are you going to do?\c\nYou can stay here\nand train your Pok�mon.\c\nOr maybe you should come\nchallenge me, the Gym Leader!\c\nBe seeing you!\c
-33: Waitasecond!\c\nI dropped something here!\nJust wait until I find it!
-34: Waitasecond!\c\nI dropped something here!\nJust wait until I find it!\c
-35: Phew...\nI finally made it back here.\c\nAre you going farther inside?\nThere's nothing in there but Trainers.
-36: Rhydon is raring to go.
-37: Hm... you seem suspicious.\nWhat are you doing down here in the\r\nsewers?
-38: We're here on official business!\nWe're looking for an illicit substance\r\ndealer. Be careful!
-39: Woah, who goes there!
-40: Crazy how many people there are in the\nsewer today.
-41: I am a Doctor!\c\nIf you have Pok�mon in bad shape...\nLet me see your Pok�mon in battle!
-42: Your Pok�mon are full of life!
-43: You are energetic!\nI will punish lazy children!
-44: You just don't quit!\nYou are so energetic!
-45: I used to be a pro athlete, but now\nI'm a sweeper!
-46: Sweeping isn't too different from hockey\nif you think about it.
-47: Cleaning actually takes a lot\nof strength...\c\nIn other words, I've been training real\nhard by doing all this cleaning!
-48: When you clean, do you ever feel like\nit's never going to end?\c\nWorks for me! That means I can clean\nforever, and I sure love cleaning.
-49: WhoooOOOooOOOOOoa!!
-50: Isn't it fun how shouting out in a sewer\nor a tunnel makes your voice echo?
-51: I've found a strong-looking Trainer\nduring my patrol!\c\nGo, Bibarel!
-52: You see my Bibarel?\c\nIt always seems to want to take the\nsame exact route, but why is that?
-53: Sine, cosine, tangent!
-54: What a catastrophic theorem!
-55: I'm a researcher studying about the\nsmell here!
-56: Even odors that might seem awful to\nhumans might be perfume to a Pok�mon.
-57: [VAR TRNAME(0)]: There are Trainers ahead...\nWanna take them on together?
-58: [VAR TRNAME(0)]: Got it!
-59: I'm doing research on rare Berries.\nCan you help me run an experiment?
-60: Enigma Berries heal a Pokemon for a third\nof their health when they withstand a\r\nsuper-effective attack!
-61: Oh, ok!
-62: Great! Here we go!
-63: I got a lot of valuable data!\nHere's a reward!
+é
 
 
-65: 
-Oh hello there, [VAR TRNAME(0)]!\n-I mean, stranger!\c\nI am but a simple law clerk who got\nlost here in the sewers!\c 
-66:
-Why am I in the sewers?\nIt's a shortcut to work, of course!\c 
-67:
-Say, I saw you have a battle with those\ntwo strange men in Plasma uniforms.\c\nDo you know their purpose here in\nCastelia City? Who are their superiors?\r\nWhere is their base of operations?
-68:
-I don't know..? 
-69:
-Why are you asking me..?
-70:
-Teeheee, of course.\nI was just curious!\c\nI'm off back to work at the... factory!\c\nBye!\c
+----- TEXT FILE 47----- Castelia Docks
+12: 
+That boy ran by so fast! Like a scarlet blur!\c\nHe kinda reminds me of someone...
+
+13: 
+???: ALMOST THERE!\c
+
+14:
+Benga: WOOOOO!!!!\c\nWE MADE IT!
+
+15: 
+Benga: Heyo [VAR TRNAME(0)], looks like you\nbeat me here!\c
+
+16: 
+Benga: I got held up tussling with some\nSharpedo a couple miles back.\c 
+
+17:
+We're chill now, though.\nGot a couple love scars to prove it!\c
+
+18:
+Benga: Alright, I'm off to find the\nchamp. Maybe squash the gym on the way!\c
+
+19: 
+Try and keep up, rival!
 
 
 
+----- TEXT FILE 651----- Floccessy Town
+47:
+Here, take these!\nThey'll help you with your training!
 
+48:
+Alder: These are [COLOR (2)]Shards[COLOR (0)]: tokens used\nby the Blueberry Academy as rewards for\r\nstudents and those who participate in\ntheir battle programs!c 
 
+49:
+They can be exchanged with tutors such\nas the gentleman over there to teach\r\nPokémon useful moves!
 
+50:
+They come in many different colors, with Green\nbeing the most common!\c
 
+51:
+Alder: Oh right, I almost forgot!\c
 
+52: 
+Alder: My house is just a little farther!\c\nStop by the Pokémon Center\nor the Move Tutor first if you'd like!\c
 
-
-
-
-
-
-
-
-
-
-
+53: 
+Victini rocks back and forth on its\nround body with a huge smile! 
 
 
 
@@ -164,10 +117,12 @@ Agh!\nIs he following me?\c
 Better hope we don't meet again, kid!\c\nOr I'll really mess you up!\c
 
 
+80:
+You're strong\nAlmost as strong as me!\c\nYou must be...
 
 
-
-
+81: 
+Here, let me give your partners some!\c
 
 
 
@@ -239,16 +194,16 @@ Where ya been?\c\nI've been keeping my promise since we last fought:\nI haven't 
 ???: Woah, FIRE alert, [VAR TRNAME(0)] is\nrolling in!
 
 28:
-Benga: How's it hanging, rival?\nYou got your Insect Badge? 
+Benga: How's it hanging, rival?\nYou got your Insect Badge?\c
 
 29:
-Benga: Smells like its time for a\nrematch then!\c\nAnd I'm warning ya, I haven't lost a\nbattle since...
+Benga: Smells like its time for a\nrematch then!\c\nAnd I'm warning ya, I haven't lost a\nbattle since...\c\n...\c
 
 30:
 ...BAH! Who cares!\nLet's RUMBLE!\c
 
 31:
-Benga: Heh...\nThat was a good battle, thanks...
+Benga: Heh...\nThat was a good battle, thanks...\c
 
 32:
 Benga: I won..?
@@ -256,7 +211,7 @@ Benga: I won..?
 33: WOOOOOOOO!!! 
 
 34: 
-Benga: Woah, sorry about that.\nI don't mean to be a sore winner:\nthat was a great battle!\c
+Benga: Woah, sorry about that.\nI don't mean to be a sore winner:\nthat was a great battle!\c\nHere!\c
 
 35: 
 To be real with ya, I kinda needed this win today.\c\nIt hasn't been so long since I\nlost, actually.\c
@@ -343,7 +298,6 @@ Tini!\c
 
 ----- TEXT FILE 651-----
 47: 
-Victini rocks back and forth on its\nround body with a huge smile! 
 
 
 
@@ -469,7 +423,7 @@ Seeya later, [VAR TRNAME(0)]!\c
 0: Flocessy Ranch 
 1: Castelia City 
 2: Route 4 
-3: Pokemon World Tournament 
+3: Pokémon World Tournament 
 
 
 Janine State Tracking: 

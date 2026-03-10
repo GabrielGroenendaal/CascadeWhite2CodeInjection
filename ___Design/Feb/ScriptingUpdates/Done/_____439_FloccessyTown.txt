@@ -52,8 +52,19 @@ public class MainEvents {
 	public static void main_3() { // @ 0xb6
 		int v34;
 		int v35;
+		int victiniEntity; 
 
+		int alderX; 
+		float alderXinput;
+		int alderZ;
+		float alderZinput; 
+
+		victiniEntity = 10; // CHANGE THIS LATER 
 		Actor.PauseAll();
+		Actor.GetGPos(0, alderX, alderZ);
+		alderXinput = alderX * 16.0f;
+		alderZinput = alderZ * 16.0f;
+
 		ActionSequence_0134(0);
 		Actor.WaitActionFinish();
 		Player.GetGPos(v34, v35);
@@ -68,8 +79,55 @@ public class MainEvents {
 		LABEL_00f5:
 		WordSet.LoadPlayerName(0);
 		Message.ActorEx(1024, 0, 0, 0, 0);
-		Message.ActorEx(1024, 1, 0, 0, 0);
 		Message.CloseAll();
+
+		Sound.PVPlay(494);
+		HopLeft(victiniEntity);
+		TurnEast(0);
+		HopLeft(victiniEntity);
+		Sound.PVWait();
+		Actor.WaitActionFinish();
+		ShowExclamationMark(0);
+		Message.ActorEx(1024, 51, 0, 0, 0);
+		Actor.WaitActionFinish();
+		TurnWest(0);
+		Actor.WaitActionFinish();
+		Message.ActorEx(1024, 47, 0, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseAll();
+		Global2805(75, 10);
+		Message.ActorEx(1024, 48, 0, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseAll();
+
+		// EV Camera Stuff, will need to playtest this a lot
+		EVCamera.Init();
+		EVCamera.Unbind();
+
+		// 237.0f is the original a3
+		EVCamera.MoveTo(2.3652344f, 0.0f, 475.0f, alderXinput, 16.003662f, alderZinput, 40);
+		TurnNorth(0);
+		EVCamera.Wait();
+		Actor.WaitActionFinish();
+		EVCamera.Wait();
+
+		Message.ActorEx(1024, 49, 0, 0, 0);
+		Input.LastKeyWait();
+		EVCamera.MoveToDefault(40);
+		Message.ActorEx(1024, 50, 0, 0, 0);
+		Actor.WaitActionFinish();
+		EVCamera.Wait();
+		EVCamera.Rebind();
+		EVCamera.End();
+		Input.LastKeyWait();
+		Message.CloseAll();
+		TurnWest(0);
+		Actor.WaitActionFinish();
+		Message.ActorEx(1024, 52, 0, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseAll();
+
+
 		ActionSequence_0140(0);
         Runtime.Sleep(8);
         WalkSouth(victiniEntity);
@@ -560,7 +618,7 @@ public class MainEvents {
         Actor.PauseAll();
         Actor.FacePlayer();
         Sound.PVPlay(494);
-        Message.Info(47, 1);
+        Message.Info(53, 1);
         Message.CloseAll();
         Sound.PVWait();
         Runtime.FinishSubEvents();
@@ -625,7 +683,9 @@ public class MainEvents {
 	static meta void ActionSequence_0714(int npcId) : VActionSequence {
 		Action0021(1);
 	}
-
+	static meta void TurnSouth(int npcId) : VActionSequence {
+		Action0021(1);
+	}
 	static meta void ActionSequence_071c(int npcId) : VActionSequence {
 		Action0022(1);
 	}
@@ -641,7 +701,22 @@ public class MainEvents {
 	static meta void ActionSequence_0734(int npcId) : VActionSequence {
 		Action009f(1);
 	}
-	
+	static meta void ShowExclamationMark(int npcId) : VActionSequence {
+            Action004b(1);
+	}
+	static meta void TurnEast(int npcId) : VActionSequence {
+		Action0023(1);
+	}
+	static meta void HopLeft(int npcId) : VActionSequence {
+        Action0032(1);
+    }
+	static meta void TurnWest(int npcId) : VActionSequence {
+		Action0022(1);
+    }
+	static meta void TurnNorth(int npcId) : VActionSequence {
+        Action0020(1);
+	}
+
 	static meta void Global2805(int a1, int a2) : VGlobalCall[2805];
 
 	static native void Action000c(int amount) : 0xc;
@@ -650,6 +725,7 @@ public class MainEvents {
 	static native void Action0021(int amount) : 0x21;
 	static native void Action0022(int amount) : 0x22;
 	static native void Action0023(int amount) : 0x23;
+	static native void Action0032(int amount) : 0x32;
 	static native void Action004b(int amount) : 0x4b;
 	static native void Action009f(int amount) : 0x9f;
 }

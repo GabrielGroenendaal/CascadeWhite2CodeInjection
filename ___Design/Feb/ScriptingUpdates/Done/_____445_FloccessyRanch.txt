@@ -132,7 +132,7 @@ import messages.script.Msg0315.MSGID;
 		Actor.WaitActionFinish();
 		Message.ActorEx(1024, 7, 2, 5, 0);
 		Message.CloseAll();
-		Global2805(75, 20);
+		Global2805(75, 10);
 		Actor.WalkRoute(2, 43, 46, 1, 8, 0);
 		Actor.WaitActionFinish();
 		ActionSequence_0f34(2);
@@ -365,20 +365,26 @@ import messages.script.Msg0315.MSGID;
 
 
         // BATTLE 
-        Battle.CallTrainerBattle(772, 0, 0);
-        isVictory = Battle.IsTrainerVictory();
-		if (isVictory != 1) {
-			Battle.CallTrainerLose();
-			goto Label_EndBengaScript;
+        //Battle.CallTrainerBattle(772, 0, 1);
+        isVictory = 1; //Battle.IsTrainerVictory();
+		if (isVictory == 1) {
+			// Battle.EndTrainerBattle();
+			BengaStepBack(16);
+			Actor.WaitActionFinish();
+			Message.ActorEx(1024, 66, 16, 5, 0);
+			HopDown(16);
+			Message.ActorEx(1024, 67, 16, 5, 0);
+			Messgae.CloseAll();
+		} 
+		else{
+			// Battle.EndTrainerBattle();
+			BengaStepBack(16);
+			Actor.WaitActionFinish();
+			Message.ActorEx(1024, 66, 16, 5, 0);
+			HopDown(16);
+			Message.ActorEx(1024, 80, 16, 5, 0);
+			Messgae.CloseAll();
 		}
-		Battle.EndTrainerBattle();
-
-        BengaStepBack(16);
-
-        Message.ActorEx(1024, 66, 16, 5, 0);
-        HopDown(16);
-        Message.ActorEx(1024, 67, 16, 5, 0);
-        Messgae.CloseAll();
         Message.Spiked(68, 2);
         Message.CloseAll();
         WalkSouth(16);
@@ -410,12 +416,19 @@ import messages.script.Msg0315.MSGID;
 		Message.ActorEx(1024, 73, 3, 3, 0);
 		Sound.PVWait();
         Message.CloseAll();
-
-        TurnSouth(16);
+		TurnSouth(16);
         Actor.WaitActionFinish();
+		if (isVictory != 1){
+			Message.ActorEx(1024, 81, 3, 3, 0);
+			Message.CloseAll();
+			Sound.SEPlay(1391);
+			Sound.SEWait();
+			PokeParty.RecoverAll();
+		}
         Message.ActorEx(1024, 73, 3, 3, 0);
         Message.CloseAll();
 
+		// Look at alll of this!
         Actor.JumpToGPos(16, 55, 1, 19);
         BengaLeaves(16);
         Runtime.Sleep(16);
@@ -483,6 +496,7 @@ import messages.script.Msg0315.MSGID;
 
 		EventWorks.Set(16551, 5);
 		EventWorks.Set(16549, 4);
+		EventWorks.Set(16494, 1);
 		EventFlags.Set(729);
 		EventFlags.Set(728);
 
@@ -1131,7 +1145,9 @@ import messages.script.Msg0315.MSGID;
 		Action0022(0);
 		Action0032(0);
 	}
-
+	static meta void TurnWest(int npcId) : VActionSequence {
+		Action0022(1);
+    }
 	static meta void ActionSequence_0adc(int npcId) : VActionSequence {
 		Action000e(1);
 		Action000d(1);
@@ -1163,7 +1179,9 @@ import messages.script.Msg0315.MSGID;
 	static meta void ActionSequence_0f3c(int npcId) : VActionSequence {
 		Action0023(1);
 	}
-
+	static meta void WalkSouth(int npcId) : VActionSequence {
+		Action000d(1);
+	}
 	static meta void ActionSequence_0f44(int npcId) : VActionSequence {
 		Action004b(1);
 	}
@@ -1190,7 +1208,15 @@ import messages.script.Msg0315.MSGID;
         Action0033(1);
     }
 
-
+	static meta void TurnSouth(int npcId) : VActionSequence {
+		Action0021(1);
+	}
+	static meta void HopDown(int npcId) : VActionSequence {
+        Action0031(1);
+    }
+    static meta void ShowExclamationMark(int npcId) : VActionSequence {
+        Action004b(1);
+    }
 	static meta void Global2805(int a1, int a2) : VGlobalCall[2805];
 
 	static native void Action000a(int amount) : 0xa;

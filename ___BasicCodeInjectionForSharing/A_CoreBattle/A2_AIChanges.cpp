@@ -718,6 +718,9 @@ extern "C"
         Value = BattleEventVar_GetValue(VAR_NO_TYPE_EFFECTIVENESS);
         v11 = BattleEventVar_GetValue(VAR_SET_TYPE_EFFECTIVENESS);
         BattleEventVar_Pop();
+        if (Value == 4 ) {
+            return EFFECTIVENESS_1;
+        }
         if (v11 == 1)
         {
             return EFFECTIVENESS_1;

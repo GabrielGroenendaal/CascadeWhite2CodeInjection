@@ -306,6 +306,7 @@ public class MainEvents {
 		Actor.UnpauseAll();
 	}
 
+	// Use 701 for Janine
 	public static void main_10() { // @ 0x54b
 		int v16;
 		int v32;
@@ -323,13 +324,13 @@ public class MainEvents {
 		Message.ActorEx(1024, 15, 22, 0, 0);
 		Message.CloseAll();
 		Battle.CallTrainerBattle(763, 0, 0);
-        Actor.SetGPos(janineEntity, janineX, janineY, janineZ, 1);
 		v16 = Battle.IsTrainerVictory();
 		if (v16 != 1) {
 			Battle.CallTrainerLose();
 			goto LABEL_059a;
 		}
 		Battle.EndTrainerBattle();
+		Actor.SetGPos(janineEntity, janineX, janineY, janineZ, 1);
 
 		LABEL_059a:
 		Message.ActorEx(1024, 16, 22, 0, 0);
@@ -660,7 +661,10 @@ public class MainEvents {
     static meta void HopRight(int npcId) : VActionSequence {
         Action0033(1);
     }
-
+	
+	static meta void TurnEast(int npcId) : VActionSequence {
+		Action0023(1);
+	}
     static meta void HopUp(int npcId) : VActionSequence {
         Action0030(1);
     }
@@ -685,6 +689,10 @@ public class MainEvents {
 	static meta void WalkNorth(int npcId) : VActionSequence {
 		Action000c(2);
 	}
+
+	static meta void TurnWest(int npcId) : VActionSequence {
+		Action0022(1);
+    }
 	static meta void Global2805(int a1, int a2) : VGlobalCall[2805];
 
 	

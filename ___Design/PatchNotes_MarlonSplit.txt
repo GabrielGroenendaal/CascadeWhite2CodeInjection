@@ -25,6 +25,7 @@ If you're updating from the previous patch, you'll want to speak to an NPC in Le
 > - **Pilot Ewing** now is correctly facing upwards. 
 > - **Skitter Smack** is now properly a contact move.
 > - **Mud Bomb** is no longer flagged as having accuracy-dropping, whcih was causing it to be clicked over highest damage.
+> - **Struggle** now correctly deals type-less damage. 
 
 ``[ BALANCE ]``
 > - **Crobat Line** is getting Strong Body in Ability Slot 1, as Infiltrator becomes the Hidden Ability. Sniper becomes AI Only. 
@@ -201,6 +202,7 @@ If you're updating from the previous patch, you'll want to speak to an NPC in Le
 > - **Solarbeam** is now spread and damages all adjacent targets. 
 > - **Fake Out** is no longer a never-miss move. 
 > - **Night Shade** now heals the user for 100% of the damage it deals. It has 2 PP.
+> - **Mirror Coat, Counter, Mirror Move, and Metal Burst** are all never-miss moves now.
 
 ``[ UPCOMING WORK ]``
 

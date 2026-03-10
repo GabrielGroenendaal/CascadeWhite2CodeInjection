@@ -1761,7 +1761,17 @@ extern "C"
 #pragma endregion
 
 #pragma region PollenPuff
-    
+    int THUMB_BRANCH_HandlerStruggleMoveParam(int a1, int a2, int a3)
+    {
+        int result; // r0
+
+        result = BattleEventVar_GetValue(VAR_MON_ID);
+        if (a3 == result)
+        {
+            return BattleEventVar_RewriteValue(VAR_NO_TYPE_EFFECTIVENESS, 3);
+        }
+        return result;
+    }
 
     void HandlerNightShade(BattleEventItem *a1, int a2, int a3)
     {
@@ -1781,9 +1791,6 @@ extern "C"
         *a1 = 1;
         return NightShadeHandlers;
     }
-
-
-
 
     void HandlerPollenPuffCheck(int a1, ServerFlow *a2, int a3, int *a4)
     {

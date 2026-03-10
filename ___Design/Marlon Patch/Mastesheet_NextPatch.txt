@@ -211,6 +211,7 @@ end
 ## Flocessy Town
 !items Items
 exp share, Exp Share (given by Professor Juniper along with the gift Pokémon)
+green shard, Green Shard x10 — Given by Alder upon arrival in town
 end
 
 !items PokéMart (Natural Gift Berries)
@@ -264,7 +265,7 @@ end
 
 ## Floccesy Ranch
 !items Items
-  green shard, Green Shard x20 — reward for defeating Rival
+  green shard, Green Shard x10 — reward for defeating Rival
   quick claw, Quick Claw — found in the south part of the map by fences
   oran berry, Oran Berry x10 — given by Hugh after defeating Lass Molly
   brightpowder, Brightpowder — found after defeating Janitor Orville
@@ -2072,4 +2073,3 @@ end
 # End of Current Content
 
 ### -
-

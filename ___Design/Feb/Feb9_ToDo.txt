@@ -12,45 +12,53 @@
 - Implement Balance Changes 
 - Implement Test Cases 
 - Implement AI Changes Fix 
+- Make struggle properly typeless.
 
 ====================================================================================================================================================
 /*   MARLON BUILD   */
 
 To Do:
+    Brittany's Sealeo has Wacan Berry; Super Fang over Body Slam 
+    Ice Fang over Aurora Beam 
+    Brittany's Piloswine has 
+        Passho Berry over Rock Gem 
+        
 
 EASY: 
-    - Double Check the Fisherman Trainer IDs for Route 14.
     - Test the New Plasma Frigate Theft Script.
     - Test Exp Modes and Tweak the Formula to be more aggressive if need be. 
 
-
 MODERATE: 
-    - Test and Implement the Gym Lockout Indicator Scripts 
     - Test and Implement the Post-Marlon gym scripting
         - Setting the game up for the Frigate 
         - Blocking off Abundant Shrine and Pinwheel Forest 
         - Disabling the Humilau B2B 
-        - The whole script with Marlon and Hugh when you exit the gym. 
-    - Update Trainers throughout the game with more later game mechanics to introduce them earlier.
-    - Update trainers with new natures for Pokemon to make them more interesting 
-    - Add new AI for Howl, Agility. 
+    - Trainer Updates 
+    - Polish Scripts
+        - Route 19
+        - Flocessy Town 
+        - Flocessy Ranch 
+        - Route 20 
+        - Virbank City
+        - Virbank Gym 
+        - Castelia City 
+        - Route 4
+        - PWT 
+    - AI Scripts 
+        - Howl 
+        - Agility 
+        - Stun Spore / Paralysis 
+        - Fake Out over Kill 
+        - Work Up 
 
+- Make sure the AI for Acid Spray, Fake Out, Heavy Slam accounts for Sheer Force. 
 
 HARD: 
-    - Marine Tube Scripting 
-        - Fix the Message ID indexes 
-        - Test all the scripting Logic 
-        - Update the Marine Tube exit script to use the eventwork of the tube 
-        - Make sure our spawn flags are correct
-    - Update Terastalization Polish
-        - Some kind of color status for Tera
-
 
 
 
 IMPOSSIBLE: 
     - Debug Illusion 
-    - Implement the Doubles Switch AI 
     - Test Battle Scan with Type Changing and Ability Changing.
     - Update Terastalization Polish
         - Some kind of color status for Tera
