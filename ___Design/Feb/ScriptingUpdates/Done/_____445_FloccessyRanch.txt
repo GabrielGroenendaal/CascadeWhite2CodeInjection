@@ -19,92 +19,92 @@ import messages.script.Msg0315.MSGID;
 	import system.System;
 	import system.text.WordSet;
 	
-	public class MainEvents {
-		public static void main_1() { // @ 0x52
-		}
+public class MainEvents {
+	public static void main_1() { // @ 0x52
 	
-		public static void main_2() { // @ 0x5a
-			if (EventWorks.Get(16551) != 2) {
-				if (EventWorks.Get(16551) != 3) {
-					goto LABEL_00a8;
-				}
-				Actor.SetGPos(0, 22, 3, 13, 1);
-				goto LABEL_00cd;
+	}
+	
+	public static void main_2() { // @ 0x5a
+		if (EventWorks.Get(16551) != 2) {
+			if (EventWorks.Get(16551) != 3) {
+				goto LABEL_00a8;
 			}
-			Actor.SetGPos(0, 22, 2, 32, 1);
+			Actor.SetGPos(0, 22, 3, 13, 1);
 			goto LABEL_00cd;
-	
-			LABEL_00a8:
-			if (EventWorks.Get(16551) != 4) {
-				goto LABEL_00cd;
-			}
-			Actor.SetGPos(0, 47, 2, 13, 1);
-	
-			LABEL_00cd:
-			if (EventWorks.Get(16551) >= 5 || EventWorks.Get(16551) == 0) {
-				if (EventWorks.Get(16551) != 5) {
-					return;
-				}
-				Actor.SetGPos(1, 46, 2, 42, 1);
-				Actor.SetGPos(2, 47, 2, 42, 1);
-				Actor.SetGPos(10, 45, 2, 40, 3);
-				Actor.SetGPos(3, 47, 2, 40, 2);
+		}
+		Actor.SetGPos(0, 22, 2, 32, 1);
+		goto LABEL_00cd;
+
+		LABEL_00a8:
+		if (EventWorks.Get(16551) != 4) {
+			goto LABEL_00cd;
+		}
+		Actor.SetGPos(0, 47, 2, 13, 1);
+
+		LABEL_00cd:
+		if (EventWorks.Get(16551) >= 5 || EventWorks.Get(16551) == 0) {
+			if (EventWorks.Get(16551) != 5) {
 				return;
 			}
-			Actor.SetGPos(1, 43, 2, 46, 2);
-			Actor.SetGPos(2, 43, 2, 45, 2);
-			Actor.SetGPos(10, 44, 2, 46, 2);
-	
+			Actor.SetGPos(1, 46, 2, 42, 1);
+			Actor.SetGPos(2, 47, 2, 42, 1);
+			Actor.SetGPos(10, 45, 2, 40, 3);
+			Actor.SetGPos(3, 47, 2, 40, 2);
+			return;
 		}
+		Actor.SetGPos(1, 43, 2, 46, 2);
+		Actor.SetGPos(2, 43, 2, 45, 2);
+		Actor.SetGPos(10, 44, 2, 46, 2);
+	}
 	
-		public static void main_3() { // @ 0x18f
-	int v0;
-			int v1;
-			int v16;
-			int v33;
-			int v34;
-	
-			Actor.PauseAll();
-			Player.GetGPos(v33, v34);
-			Actor.SetGPos(0, 33, 2, v34, 2);
-			v33 -= 1;
-			Actor.WalkRoute(0, v33, v34, 1, 8, 0);
-			Sound.BGMPlayPush(1237);
-			Actor.WaitActionFinish();
-			WordSet.LoadRivalName(1);
-			Message.ActorEx(1024, 0, 0, 0, 0);
-			Message.CloseAll();
-			if (EventWorks.Get(16432) != 0) {
-				if (EventWorks.Get(16432) != 1) {
-					goto LABEL_01e0;
-				}
-				Battle.CallTrainerBattle(167, 0, 0);
-				goto LABEL_01e8;
+	public static void main_3() { // @ 0x18f
+		int v0;
+		int v1;
+		int v16;
+		int v33;
+		int v34;
+
+		Actor.PauseAll();
+		Player.GetGPos(v33, v34);
+		Actor.SetGPos(0, 33, 2, v34, 2);
+		v33 -= 1;
+		Actor.WalkRoute(0, v33, v34, 1, 8, 0);
+		Sound.BGMPlayPush(1237);
+		Actor.WaitActionFinish();
+		WordSet.LoadRivalName(1);
+		Message.ActorEx(1024, 0, 0, 0, 0);
+		Message.CloseAll();
+		if (EventWorks.Get(16432) != 0) {
+			if (EventWorks.Get(16432) != 1) {
+				goto LABEL_01e0;
 			}
-			Battle.CallTrainerBattle(166, 0, 0);
+			Battle.CallTrainerBattle(167, 0, 0);
 			goto LABEL_01e8;
-	
-			LABEL_01e0:
-			Battle.CallTrainerBattle(168, 0, 0);
-	
-			LABEL_01e8:
-			v16 = Battle.IsTrainerVictory();
-			if (v16 != 1) {
-				Battle.CallTrainerLose();
-				goto LABEL_0221;
-			}
-			Actor.SetGPos(0, 42, 2, 46, 0);
-			Actor.SetGPos(255, 42, 2, 45, 1);
-			Battle.EndTrainerBattle();
-	
-			LABEL_0221:
-			WordSet.LoadRivalName(1);
-			Message.ActorEx(1024, 1, 0, 0, 0);
-			Message.CloseAll();
-			WordSet.LoadPlayerName(0);
-			Sound.SEPlay(2017);
-			Message.System(2, 0);
-			Message.CloseSystem();
+		}
+		Battle.CallTrainerBattle(166, 0, 0);
+		goto LABEL_01e8;
+
+		LABEL_01e0:
+		Battle.CallTrainerBattle(168, 0, 0);
+
+		LABEL_01e8:
+		v16 = Battle.IsTrainerVictory();
+		if (v16 != 1) {
+			Battle.CallTrainerLose();
+			goto LABEL_0221;
+		}
+		Actor.SetGPos(0, 42, 2, 46, 0);
+		Actor.SetGPos(255, 42, 2, 45, 1);
+		Battle.EndTrainerBattle();
+
+		LABEL_0221:
+		WordSet.LoadRivalName(1);
+		Message.ActorEx(1024, 1, 0, 0, 0);
+		Message.CloseAll();
+		WordSet.LoadPlayerName(0);
+		Sound.SEPlay(2017);
+		Message.System(2, 0);
+		Message.CloseSystem();
 		Sound.SEWait();
 		Message.ActorEx(1024, 3, 0, 0, 0);
 		Message.CloseAll();
@@ -165,15 +165,15 @@ import messages.script.Msg0315.MSGID;
 		Input.LastKeyWait();
 		Message.CloseAll();
 
-        // Handles the Level Cap Updates 
-        EventWorks.Set(16466, 15);
-        if (EventWorks.Get(16465) == 1){
-            Sound.SEPlay(1351);
-            Message.System(59, 2);
-            Message.WaitAdvance();
-            Message.CloseAll();            
-        }  
-        
+		// Handles the Level Cap Updates 
+		EventWorks.Set(16466, 15);
+		if (EventWorks.Get(16465) == 1){
+			Sound.SEPlay(1351);
+			Message.System(59, 2);
+			Message.WaitAdvance();
+			Message.CloseAll();            
+		}  
+		
 		Actor.SetGPos(0, 25, 2, 44, 0);
 		EventWorks.Set(16551, 1);
 		Runtime.FinishSubEvents();
@@ -212,7 +212,7 @@ import messages.script.Msg0315.MSGID;
 	}
 
 	public static void main_5() { // @ 0x4d7
-			int v0;
+		int v0;
 		int v1;
 		int v33;
 		int v34;
@@ -350,6 +350,7 @@ import messages.script.Msg0315.MSGID;
         ShowExclamationMark(16);
 		Actor.WalkRoute(0, 42, 12, 1, 4, 0);
 		Actor.WaitActionFinish();
+		Trainer.PlayBGMPush(772);
 		Message.ActorEx(1024, 61, 16, 5, 0);
         WordSet.LoadPlayerName(0);
         Message.ActorEx(1024, 62, 16, 5, 0);
@@ -363,6 +364,8 @@ import messages.script.Msg0315.MSGID;
         Message.ActorEx(1024, 65, 16, 5, 0);
         Message.CloseAll();
 
+
+		// CHANGE THIS LATER
 
         // BATTLE 
         //Battle.CallTrainerBattle(772, 0, 1);
@@ -435,6 +438,7 @@ import messages.script.Msg0315.MSGID;
         TurnEast(255);
         Actor.WaitActionFinish();
         Actor.Hide(16);
+		Field.PlayMapBGM();
 
 		EVCamera.MoveToDefault(32);
 		ActionSequence_09b4(16);
@@ -495,7 +499,7 @@ import messages.script.Msg0315.MSGID;
 		Fade.FadeExWait();
 
 		EventWorks.Set(16551, 5);
-		EventWorks.Set(16549, 4);
+		EventWorks.Set(16549, 3);
 		EventWorks.Set(16494, 1);
 		EventFlags.Set(729);
 		EventFlags.Set(728);
@@ -912,7 +916,8 @@ import messages.script.Msg0315.MSGID;
         int yesNo;
 
         int playerGruntOverworldID;
-
+		playerGruntOverworldID = 251; // CHANGE THIS LATER
+		
         Actor.PauseAll();
         Player.GetGPos(playerX, playerZ);
         // Plasma Grunt Runs up, Bumps into Trainer
@@ -943,6 +948,8 @@ import messages.script.Msg0315.MSGID;
         // Walk North One Tile 
         WalkNorth(252);
         Actor.WaitActionFinish();
+
+		Trainer.PlayBGMPush(763);
         Message.ActorEx(1024, 76, 252, 5, 0);
 		yesNo = YesNoWin.Show();
         if (yesNo != 0){
@@ -991,12 +998,13 @@ import messages.script.Msg0315.MSGID;
 		Message.CloseAll();
         
         // Plasma Grunt Runs Away Very Fast 
+		Field.PlayMapBGM();
 		PlasmaEscape2(252);
 		Runtime.Sleep(20);
         TurnNorth(255);
         Actor.WaitActionFinish();
 		Actor.Hide(252);
-        EventWorks.Set(16549, 3); // Sets up the Trigger for Benga 
+        EventWorks.Set(16495, 1); // Sets up the Trigger for Benga 
 
 		Runtime.FinishSubEvents();
 		Actor.UnpauseAll();

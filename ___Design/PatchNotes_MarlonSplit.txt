@@ -156,6 +156,9 @@ If you're updating from the previous patch, you'll want to speak to an NPC in Le
 > - **Clerk Britney's Piloswine** now has Freeze Dry over Ice Fang. 
 > - **Colress's Beheyeem** is now Patient and holding a Shuca Berry. 
 > - **Sabrina's Sigilyph** is being repllcaed by a Focus Band Keen Senses Mienshao. 
+> - **Clerk Britney's Sealeo** is now holding a Wacan Berry. It has Super Fang over Body slam and Ice Fang over Aurora Beam. 
+> - **Clerk Britney's Piloswine** now has Passho Berry over Rock Gem, and Yawn over Rock Smash 
+> - **Linebacker Dan's Piloswine** now has Avalanche over Ice Beam.
 
 ``[ ITEMS ]``
 > - **Sabrina Miniboss** no longer awards the Will-o-Wisp TM 
@@ -203,6 +206,10 @@ If you're updating from the previous patch, you'll want to speak to an NPC in Le
 > - **Fake Out** is no longer a never-miss move. 
 > - **Night Shade** now heals the user for 100% of the damage it deals. It has 2 PP.
 > - **Mirror Coat, Counter, Mirror Move, and Metal Burst** are all never-miss moves now.
+> - **Taunt** now affects all adjacent foes. 
+> - **Seismic Toss** now cannot miss. 
+> - **Psywave** now affects all adjacent foes. 
+
 
 ``[ UPCOMING WORK ]``
 

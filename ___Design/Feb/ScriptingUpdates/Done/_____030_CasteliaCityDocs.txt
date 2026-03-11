@@ -16,7 +16,10 @@ public static void main_X() {
     int bengaZ;
     int bengaOverworld; 
 
-    textId = 13; 
+    int irisEntity; 
+
+    irisEntity = 11; // CHANGE THIS LATER 
+    textId = 13;  // CHANGE THIS LATER 
     bengaId = 251;
     Player.GetGPos(playerX, playerZ);
     

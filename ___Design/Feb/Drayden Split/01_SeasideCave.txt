@@ -1,0 +1,19 @@
+
+
+
+
+====================================================================================================================================================
+/*   SCRIPTING   */
+
+    - The gatekeeper of Undella Bay needs to be scripted so that he can block off access once the Plasma Frigate is complete. 
+
+    - We need to remove the Crustle blocking the way. It's unnecessary Now. 
+
+    - We need to review and update the dialogue for Marlon and Hugh before boarding the Plasma Frigate  
+
+    - We need to add the Scripted encounter with Maylene 
+
+    - We need to Move Battle Girl Shel to block the water encounters and downstairs somehow. 
+
+
+

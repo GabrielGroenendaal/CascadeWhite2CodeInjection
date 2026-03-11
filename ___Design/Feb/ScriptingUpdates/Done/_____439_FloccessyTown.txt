@@ -62,8 +62,8 @@ public class MainEvents {
 		victiniEntity = 10; // CHANGE THIS LATER 
 		Actor.PauseAll();
 		Actor.GetGPos(0, alderX, alderZ);
-		alderXinput = alderX * 16.0f;
-		alderZinput = alderZ * 16.0f;
+		alderXinput = alderX * 16.0f; // CHANGE THIS LATER 
+		alderZinput = alderZ * 16.0f; // CHANGE THIS LATER 
 
 		ActionSequence_0134(0);
 		Actor.WaitActionFinish();

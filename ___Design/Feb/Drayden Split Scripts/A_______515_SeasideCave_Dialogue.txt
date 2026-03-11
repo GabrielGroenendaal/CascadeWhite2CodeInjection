@@ -1,0 +1,23 @@
+
+
+
+----- TEXT FILE 399-----
+0: Hm!\c\nIf you want past here,\nyou have to defeat me,\r\nand my Roggenrola!\r\nAnd we're as sturdy as rock!\c\nBut, my Roggenrola and I\nonly battle strong Trainers.\c\nThat is my, and my Roggenrola's,\npolicy! It's as sturdy as rock!
+1: Mmm!\c\nMy Roggenrola and I\nhave been waiting for\r\na strong Trainer like you!\c\nIf you want to pass, you must beat\nmy Roggenrola and me!\c\nCan you defeat our rock-hard will?
+2: Just to let you know, my Roggenrola and\nI are the sturdiest things that were\r\never sturdy!\c
+3: What a flimsy answer!
+4: Mmm!\c\nYour strength is the real thing!\c\nMy Roggenrola and I must\nbecome even sturdier,\r\nso we're off to continue our training!\c\nFarewell!
+5: Mmm!\c\nHow did you sneak up behind me like that?\nWell, no matter!\c\nMy Roggenrola and I have been waiting\nfor a strong Trainer like you!\c\nIf you want to pass, you must defeat\nmy Roggenrola and me!\c\nOur will is sturdy as rock!
+6: Stur! Stur!
+7: De deee!
+8: Rorooog!
+9: It's a big boulder, but it doesn't\nlook like a Pokémon can move it...
+10: Use the Colress Machine on the\nbig boulder?
+11: Crus chul!
+12: The Colress Machine broke...
+
+
+
+Entities: 
+    12: Black Belt 
+        

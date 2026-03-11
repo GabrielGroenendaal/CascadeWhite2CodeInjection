@@ -1,0 +1,70 @@
+----- TEXT FILE 353-----
+0: [VAR TRNAME(1)]: This ship...\c\nWhy is it so cold?\c
+1: Cheren: And...\c
+2: It seems like it's disguised\nas an old sailboat...\r\nBut that can't be it, right?\c
+3: Team Plasma: Why should you care?\c\nBy the time we're done with you,\nit won't matter anyway!\c
+4: [VAR TRNAME(1)]: You guys...\nSeriously, this is Team Plasma's base?\c
+5: Team Plasma: Correct answer!\c\nSo that's why, as you can see...\c
+6: There are so many of us here!\c
+7: [VAR TRNAME(1)]: Is this all?\nI think you need more backup.\c
+8: Team Plasma: Ha ha ha! Oooh, I'm\nso scared, big tough guy!\c\nOK!\nPulverize these punks!\r\nPlasmaaaa!\c
+9: [VAR TRNAME(1)]: Hey, just to let you know...\c\nI'm about to unleash my rage!\c
+10: Team Plasma: You're first!\c
+11: Team Plasma: Next! Next!\nHurry up already!\c
+12: Team Plasma: Go! Go!\c\nSomebody avenge me\nand take these guys out!
+13: Team Plasma: It's my turn!\nActually, it's Trubbish time!\c
+14: Team Plasma: What's with this Trainer?!\c\nThis reminds me of that Trainer who\nmessed with us two years ago...\c
+15: Team Plasma: What's with this Trainer?!\c\nThis reminds me of that Trainer who\nmessed with us two years ago...
+16: Team Plasma: Tch!\nIt's two against one now!\c
+17: Cheren: [VAR TRNAME(0)]!\c\nI'd like to show them what the two of us\ncan do, so could you help me out?\c
+18: Cheren: Thanks!\nYou've really become much stronger!\c\nHelp out [VAR TRNAME(1)]\nnext, OK?\c
+19: Cheren: There are so many of them.\nWhat a bother!
+20: Team Plasma: Hey, I remember you!\nYou're gonna pay for Virbank!\c\nYou and the Gym Leader are going\ndown, so you'd better brace yourself!
+21: Team Plasma: The Gym Leader is\nirritating, but you...\r\nYou are a horrible little brat!
+22: Team Plasma: This guy...\nMore than strong, he's scary!\r\nHe's really cheesed off!
+23: Team Plasma: Look around you!\c\nSee how many of us there are?\nJust surrender already!
+24: Team Plasma: Ooogz...\nStrong for such a little brat!
+25: Team Plasma: That little punk\nwas too intense!\c\nEspecially for someone whose head\nlooks like a Qwilfish!
+26: Team Plasma: You guys are too intense!
+27: Team Plasma: I'm not losing!\c\nWell, actually, I haven't\nreceived a Pokémon yet!
+28: Team Plasma: What's this?\c\nAre the Gym Leaders\ngoing to interfere with us again?
+29: Team Plasma: I didn't stand a chance...\c\nAnd I bullied--I mean trained--my\nPokémon for two whole years, too!
+30: Team Plasma: Sniff...\nOur plans might fail again...
+31: [VAR TRNAME(1)]: This is a piece of cake!\nGo back up Cheren!
+32: [VAR TRNAME(1)]: I'm gonna end this,\nso back me up!\c\nOK, Plasma punk, are YOU the thief\nwho stole a Purrloin in Aspertia\r\nfive years back?\c
+33: [VAR TRNAME(1)]: That's the last of 'em!\c\nWell now... Why don't you tell me\neverything you know about Purrloin?\c
+34: Cheren: Good idea...\c\nThere are a lot of things I want\nto ask about as well.\c
+35: ???: What is going on?\c
+36: Cheren: Oh, good grief...\c\nYou're the person who was\nshivering in the Cold Storage, right?\c\nWasn't your name Zinzolin?\c\nYou're going to have to tell me what\nyou're planning to do with this ship.\c
+37: Zinzolin: YOU!\c\nOnce again, we will use the\nlegendary Dragon-type Pokémon\r\nand we will rule the Unova region!\c\nCurious Trainers, we shall not\nlet you run around as you please!\c
+38: Shadow Triad!\nGet them out of here!\c
+39: Shadow Triad: By the way,\nwe are not your...\c
+40: Zinzolin: I know!\nBut kick them out of here now!\c
+41: Shadow Triad: Move.\c
+42: The hatch is closed tightly.
+43: [VAR TRNAME(1)]: Take care of that guy!\nHe's no problem for you, right?\c
+44: [VAR TRNAME(1)]: I'm fine...\nLet's try to find a way inside.
+45: [VAR TRNAME(1)]: OK!\nThis time we'll check out the ship!\c\nWhen we were in Driftveil City,\nZinzolin came from this direction!\c
+46: This is the place...\c\nOK! I'm going!\c
+47: [VAR TRNAME(1)]: Hey!\nCome here for a sec!\c
+48: Team Plasma: You!\c\nYou must be friends of Smiley Swimsuit,\nthat guy who lowered the gangplank!\c\nAaargh! You even got the roadblock\nCrustle out of the way!\c\nHere I come!\nPlasmaaaa!\c
+49: Team Plasma: Oh no!\nThe hatch is still open!\c
+50: Team Plasma: I don't know anything\nabout your Purrloin or whatever!
+51: Zzz...\nZzz...\c\nLooks like he's asleep.
+52: Team Plasma: The sky sure is vast.
+53: Team Plasma: I knew...\c\nI knew that Ghetsis\nwas using me...\c\nBut I had friends here...
+54: Intruders!
+55: For now, let them through!
+56: Don't try to get out of your\nwatch with stupid talk like that!
+57: And, um, did you find the swimsuit\nguy who lowered the gangplank?
+58: Even the same Pokémon\ncan exhibit different strengths\r\ndepending on the Trainer!\c\nIt's so interesting!\nVery, very interesting!\c\nWell, now!\nGive me but a moment of your time!
+59: The invisible force that exists between\nyou and Pokémon...\r\nThis time I will determine what it is!\c
+60: And I went to all the\ntrouble to come here, too...\r\nYou're an unkind person.
+61: Well, now!\nGive me but a moment of your time!
+62: The things you and your Pokémon\nhave seen and felt...\r\nDo they belong to you and you alone?\c\nIf you would, please have another\nPokémon battle with me.\c\nBy facing you, I feel as if I can see\nwhat I should do from now on.
+63: Hey!
+64: You're kidding!
+65: This is no good...
+66: What should we do?
+67: [VAR TRNAME(1)]: [VAR TRNAME(0)], quit messing\naround! You need more than one Pokémon! 
+68: Here, let me heal your Pokémon up!

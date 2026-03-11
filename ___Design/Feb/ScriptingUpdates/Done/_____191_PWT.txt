@@ -623,10 +623,10 @@ public class MainEvents {
         int bengaEntity;
         int messageId;
 
-        playerX = 176; // Update This
-        playerZ = 459; // Update This
-        bengaEntity = 10; // CHANGE LATER 
-        messageId = 71;
+        playerX = 176; // CHANGE THIS LATER 
+        playerZ = 459; // CHANGE THIS LATER 
+        bengaEntity = 10; // CHANGE THIS LATER 
+        messageId = 71; // CHANGE THIS LATER 
 
         Actor.PauseAll();
 
@@ -895,7 +895,7 @@ public class MainEvents {
 	static meta void WalkNorth(int npcId) : VActionSequence {
 		Action000c(2);
 	}
-	
+
 	static meta void Global2800(int a1, int a2, int a3, int a4, int a5, int a6, int a7) : VGlobalCall[2800];
 
 	static native void Action000c(int amount) : 0xc;

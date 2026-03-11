@@ -3199,7 +3199,7 @@ extern "C"
         {1, ABIL145_SAVANT, ABIL141_MOODY, ABIL149_ILLUSION},                  // PK122_MR_MIME = 0x7A,
         {1, ABIL029_STRONG_BODY, ABIL005_STURDY, ABIL005_STURDY},              // PK123_SCYTHER = 0x7B,
         {1, ABIL117_SNOW_WARNING, ABIL149_ILLUSION, ABIL081_SNOW_CLOAK},       // PK124_JYNX = 0x7C,
-        {1, ABIL058_MINUS, ABIL083_ANGER_POINT, ABIL057_PLUS},                 // PK125_ELECTABUZZ = 0x7D,
+        {1, ABIL089_IRON_FIST, ABIL083_ANGER_POINT, ABIL042_MAGNET_PULL},                 // PK125_ELECTABUZZ = 0x7D,
         {1, ABIL020_QUICK_DRAW, ABIL070_DROUGHT, ABIL106_AFTERMATH},           // PK126_MAGMAR = 0x7E,
         {1, ABIL045_SAND_STREAM, ABIL022_INTIMIDATE, ABIL055_HUSTLE},          // PK127_PINSIR = 0x7F,
         {1, ABIL141_MOODY, ABIL038_BERSERK, ABIL055_HUSTLE},                   // PK128_TAUROS = 0x8{0, ABIL001_STENCH, ABIL001_STENCH, ABIL001_STENCH},
@@ -3221,9 +3221,9 @@ extern "C"
         {1, ABIL117_SNOW_WARNING, ABIL081_SNOW_CLOAK, ABIL081_SNOW_CLOAK},     // PK{0, ABIL001_STENCH, ABIL001_STENCH, ABIL001_STENCH},4_ARTICUNO = 0x90,
         {1, ABIL002_DRIZZLE, ABIL002_DRIZZLE, ABIL002_DRIZZLE},                // PK145_ZAPDOS = 0x9{0, ABIL001_STENCH, ABIL001_STENCH, ABIL001_STENCH},
         {1, ABIL070_DROUGHT, ABIL070_DROUGHT, ABIL070_DROUGHT},                // PK146_MOLTRES = 0x92,
-        {0, ABIL001_STENCH, ABIL001_STENCH, ABIL001_STENCH},                   // PK147_DRATINI = 0x93,
-        {0, ABIL001_STENCH, ABIL001_STENCH, ABIL001_STENCH},                   // PK148_DRAGONAIR = 0x94,
-        {0, ABIL001_STENCH, ABIL001_STENCH, ABIL001_STENCH},                   // PK149_DRAGONITE = 0x95,
+        {1, ABIL047_THICK_FAT, ABIL047_THICK_FAT, ABIL047_THICK_FAT},                   // PK147_DRATINI = 0x93,
+        {1, ABIL047_THICK_FAT, ABIL047_THICK_FAT, ABIL047_THICK_FAT},                   // PK148_DRAGONAIR = 0x94,
+        {1, ABIL047_THICK_FAT, ABIL047_THICK_FAT, ABIL047_THICK_FAT},                   // PK149_DRAGONITE = 0x95,
         {1, ABIL104_MOLD_BREAKER, ABIL127_UNNERVE, ABIL046_NEUTRALIZING_GAS},  // PK150_MEWTWO = 0x96,
         {1, ABIL104_MOLD_BREAKER, ABIL127_UNNERVE, ABIL046_NEUTRALIZING_GAS},  // PK151_MEW = 0x97,
 
@@ -3377,7 +3377,7 @@ extern "C"
         {1, ABIL113_SCRAPPY, ABIL113_SCRAPPY, ABIL113_SCRAPPY},                // PK296_MAKUHITA = 0x128,
         {1, ABIL113_SCRAPPY, ABIL113_SCRAPPY, ABIL113_SCRAPPY},                // PK297_HARIYAMA = 0x129,
         {0, ABIL001_STENCH, ABIL001_STENCH, ABIL001_STENCH},                   // PK298_AZURILL = 0x12A,
-        {1, ABIL045_SAND_STREAM, ABIL045_SAND_STREAM, ABIL045_SAND_STREAM},    // PK299_NOSEPASS = 0x12B,
+        {1, ABIL045_SAND_STREAM, ABIL010_VOLT_ABSORB, ABIL010_VOLT_ABSORB},    // PK299_NOSEPASS = 0x12B,
         {1, ABIL141_MOODY, ABIL141_MOODY, ABIL141_MOODY},                      // PK300_SKITTY = 0x12C,
         {1, ABIL141_MOODY, ABIL141_MOODY, ABIL141_MOODY},                      // PK301_DELCATTY = 0x12D,
         {1, ABIL119_STAKEOUT, ABIL023_SHADOW_TAG, ABIL023_SHADOW_TAG},         // PK302_SABLEYE = 0x12E,
@@ -3546,7 +3546,7 @@ extern "C"
         {1, ABIL001_STENCH, ABIL001_STENCH, ABIL001_STENCH},                   // PK463_LICKILICKY = 0x1CF,
         {1, ABIL045_SAND_STREAM, ABIL038_BERSERK, ABIL038_BERSERK},            // PK464_RHYPERIOR = 0x1D0,
         {1, ABIL034_CHLOROPHYLL, ABIL047_THICK_FAT, ABIL047_THICK_FAT},        // PK460,TANGROWTH = 0x1D1,
-        {1, ABIL058_MINUS, ABIL083_ANGER_POINT, ABIL057_PLUS},                 // PK466_ELECTIVIRE = 0x1D2,
+        {1, ABIL058_MINUS, ABIL083_ANGER_POINT, ABIL042_MAGNET_PULL},                 // PK466_ELECTIVIRE = 0x1D2,
         {1, ABIL020_QUICK_DRAW, ABIL070_DROUGHT, ABIL106_AFTERMATH},           //  PK467_MAGMORTAR = 0x1D3,
         {1, ABIL131_HEALER, ABIL131_HEALER, ABIL131_HEALER},                   // PK468_TOGEKISS = 0x1D4,
         {0, ABIL001_STENCH, ABIL001_STENCH, ABIL001_STENCH},                   // PK469_YANMEGA = 0x1D5,
@@ -4383,14 +4383,43 @@ extern "C"
         PokeParty_SetParam(pkm, PF_IvSPD, 31);
         PokeParty_SetParam(pkm, PF_IvSPA, 31);
         PokeParty_SetParam(pkm, PF_IvHP, 31);
+        // Trick Room Trainers
         if (trId == 634){
             PokeParty_SetParam(pkm, PF_IvSPE, 0);
         }
+        // Trick Room Trainers
         if (trId == 104){
             PokeParty_SetParam(pkm, PF_IvSPE, 0);
         }
         PokeParty_SetNature(pkm, mod32((v9 >> 8), 25));
     }
+
+
+
+    // THIS IS THE FUNCTION I THINK WE NEED TO EDIT.
+    // extern "C" u32 checkEVFlags(u32 param)
+    // {
+       // EventWorkSave *eventWork = GameData_GetEventWork(GAME_DATA);
+        // u16 *lvl_cap_ptr = EventWork_GetWkPtr(eventWork, 16434);
+        //return *lvl_cap_ptr;
+   // }
+
+   // extern "C" u32 THUMB_BRANCH_PML_PersonalGetParamSingle(PartyPkm *pPkm, PkmField field, void *extra)
+  //  {
+       // u32 ParamCore; // r4
+       // PokeParty_PkmDecryptCheck(pPkm);
+       // ParamCore = PokeParty_GetParamCore(pPkm, field, extra);
+       // PokeParty_PkmEncrypt(pPkm);
+       // if (field == Personal_EvATK || field == Personal_EvDEF || field == Personal_EvHP || field == Personal_EvSPA || field == Personal_EvSPD || field == Personal_EvSPE)
+        //{
+         //   if (ParamCore > 0){
+           //     ParamCore = ParamCore * checkEVFlags();
+          //  }
+       // }
+      //  return ParamCore;
+  //  }
+
+
 
 #pragma endregion
 

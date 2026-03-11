@@ -9,67 +9,238 @@
 */
 
 
-- Implement Balance Changes 
-- Implement Test Cases 
-- Implement AI Changes Fix 
-- Make struggle properly typeless.
+
 
 ====================================================================================================================================================
 /*   MARLON BUILD   */
 
-To Do:
-    Brittany's Sealeo has Wacan Berry; Super Fang over Body Slam 
-    Ice Fang over Aurora Beam 
-    Brittany's Piloswine has 
-        Passho Berry over Rock Gem 
-        
+    EASY: 
+        - Test the New Plasma Frigate Theft Script.
+        - Test Exp Modes and Tweak the Formula to be more aggressive if need be. 
 
-EASY: 
-    - Test the New Plasma Frigate Theft Script.
-    - Test Exp Modes and Tweak the Formula to be more aggressive if need be. 
+    MODERATE: 
+        - Test and Implement the Post-Marlon gym scripting
+            - Setting the game up for the Frigate 
+            - Blocking off Abundant Shrine and Pinwheel Forest 
+            - Disabling the Humilau B2B 
+        - Polish Scripts
+            - Route 19
+            - Flocessy Town 
+            - Flocessy Ranch 
+            - Route 20 
+            - Virbank City
+            - Virbank Gym 
+            - Castelia City 
+            - Route 4
+            - PWT 
+        - AI Scripts 
+            - Howl 
+            - Agility 
+            - Stun Spore / Paralysis 
+            - Fake Out over Kill 
+            - Work Up 
+            - (Check for Sheer Force) Acid Spray, Fake Out, Heavy Slam accounts for Sheer Force. 
 
-MODERATE: 
-    - Test and Implement the Post-Marlon gym scripting
-        - Setting the game up for the Frigate 
-        - Blocking off Abundant Shrine and Pinwheel Forest 
-        - Disabling the Humilau B2B 
-    - Trainer Updates 
-    - Polish Scripts
-        - Route 19
-        - Flocessy Town 
-        - Flocessy Ranch 
-        - Route 20 
-        - Virbank City
-        - Virbank Gym 
-        - Castelia City 
-        - Route 4
-        - PWT 
-    - AI Scripts 
-        - Howl 
-        - Agility 
-        - Stun Spore / Paralysis 
-        - Fake Out over Kill 
-        - Work Up 
-
-- Make sure the AI for Acid Spray, Fake Out, Heavy Slam accounts for Sheer Force. 
-
-HARD: 
+    HARD: 
 
 
 
-IMPOSSIBLE: 
-    - Debug Illusion 
-    - Test Battle Scan with Type Changing and Ability Changing.
-    - Update Terastalization Polish
-        - Some kind of color status for Tera
-        - Fix the Tera Animation in Doubles 
-        - See if you can get the tera types to be stored properly somewhere. 
+    IMPOSSIBLE: 
+        - Debug Illusion 
+        - Test Battle Scan with Type Changing and Ability Changing.
+        - Update Terastalization Polish
+            - Some kind of color status for Tera
+            - Fix the Tera Animation in Doubles 
+            - See if you can get the tera types to be stored properly somewhere. 
     
 
 
+====================================================================================================================================================
+/*   MECHANICS UPDATES    */
+    
+    Psywave is spread and cannot miss 
+
+    Seismic Toss cannot miss. 
+
+    Taunt is spread. 
+
+    Electabuzz/Electivire Ability 4 is Iron Fist, Ability 6 is Magnet Pull 
+
+    Breloom
+        19: Wake Up Slap -> Sweet Scent 
+        22: Trop Kick -> Giga Drain 
 
 
-Trainers: 
+====================================================================================================================================================
+/*   TRAINER UPDATES    */
+
+
+    Roxanne
+        Cradily 
+            Item: Focus Band
+            Ability: Poison Heal
+            Moves: 
+                Leaf Tornado 
+                Infestation
+                Diamond Storm
+                Gastro Acid
+        
+        Probopass @ Tera Leftovers 
+        Ability: Levitate 
+        Moves: 
+            Earth Power 
+            Diamond Storm 
+            Metal Sound 
+            Thunder Wave
+        
+        Claydol @ Brightpowder 
+        Ability: Speed Boost 
+        Moves: 
+            Stored Power 
+            Ancientpower 
+            Cosmic Power 
+            Hypnosis 
+        
+        Onix @ Power Herb
+        Ability: Sand Rush 
+        Moves: 
+            Rock Slide 
+            Dig 
+            Substitute 
+            Skull Bash
+
+        Nosepass: 
+        Ability: Lightning Rod 
+        Moves: 
+            Diamond Storm 
+            Energy Ball 
+            Discharge 
+
+
+        Weakness Policy
+
+    Scientist Blythe 
+        Dusclops 
+            Shadow Punch -> Night Shade 
+        
+    Eeveelution B2B2B: 
+        Every Eeveelution now gets a Sitrus Berry 
+        Flareon gets Quick Attack 
+    
+    Castelia Alleway Gatekeeper 
+        Scrafty @ Roseli Berry 
+            Rock Smash -> Low Sweep 
+        Beedrill @ Flying Gem
+            Poison Fang -> Acrobatics  
+        Toxicroak @ Dark Gem 
+        Hitmonchan @ Coba Berry
+
+    Roxie:  
+        Mightyena 
+        Moves: 
+            Take Down -> Glare 
+    
+    
+    Surge: 
+
+        Electabuzz: 
+            Ability: Iron Fist 
+            Moves: 
+                Thunder Punch > Facade 
+            
+        Krookadile 
+            Item: Dark Gem
+            Nature: Lonely
+            Moves: 
+                Crunch 
+                Bone Club 
+                Pursuit 
+                Screech  
+
+
+    Clerk Britney: 
+        Sealeo
+            Item: Wacan Berry 
+            Moves:
+                Aurora Beam -> Ice Fang 
+                Body Slam -> Super Fang 
+        Piloswine 
+            Item: Passho Berry 
+
+    Depot Agent Hank: 
+        Klang: 
+            Levitate -> Heavy Metal 
+
+
+    Virizion 
+        Milotic -> Suicune 
+            Ability: Serene Grace
+            Item: Ability Drill 
+            Moves: 
+                Water Pulse 
+                Silver Wind
+                Glare 
+                Substitute
+
+
+
+====================================================================================================================================================
+/*   ANTI YAP    */
+    
+    427: Aspertia City
+        Mom Call with Juniper 
+        Hugh Encounter 
+        Bianca Dialogue 
+
+    428: Player Home    
+        Mom Dialogue
+    437: Route 19 
+        Bianca Dialogue
+        Alder Dialogue 1 
+        Alder Dialogue 2
+    438: Aspertia Gate 
+    439: Flocessy Town 
+        Alder Dialogue 1 
+        Alder Dialogue 2 
+        Juniper Dialogue 
+    445: Flocessy Ranch
+        Hugh Battle 
+        Hugh Dialogue 1 
+        Hugh Dialogue 2 
+        Hugh Dialogue 3 
+        Plasma Grunt Dialogue 
+        Benga Dialogue 
+        EggGiver Dialogue 
+    446: Route 20
+
+
+
+====================================================================================================================================================
+/*   NOTES    */
+
+      U-Turn adjustment (We should take a look at this later after we do more playtesting)
+        !notif MOVE TUTOR, The Red Shard Move Tutor is found in the Battle Company Lobby. They teach
+            - Skitter Smack (4 -> 2 shards)
+            - Signal Beam -> U-Turn (4 -> 10 shards)
+            - Iron Head (6 shards)
+            - Skill Swap (10 -> 8 shards)
+            - Seething Cold (6 shards)
+            - Psychic Noise (6 shards)
+            - Dual Chop (6 -> 2 shards)
+            - Low Kick (8 -> 2 shards)
+            - Cross Poison (8 shards)
+            - Fire Punch (6 Shards)
+            - Thunder Punch (6 Shards)
+            - Ice Punch (6 Shards)
+
+        Remove U-Turn TM from Liberty Island. Put 10x Red Shards there instead. 
+        Remove U-Turn TM from Harlequin reward. Put 10x Red Shards there instead. 
+
+        Adjust all Personal compat for U-Turn
+            Beautifly and Dustox need to get it back. 
+            Unfezant gets it by level up
+        
+
     Underutilized Mechanics: 
         Back to Backs
         
@@ -78,7 +249,7 @@ Trainers:
         Chip Away Normal Types 
         Ability Neutraliizing: 
             Gastro Acid 
-        
+
         Evasion:
             Double Team 
             Acid Armor 

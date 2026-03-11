@@ -1,0 +1,10 @@
+
+
+
+
+This is going to probably be the lion's share of the scripting tasks for Drayden split. 
+We are modifying a lot of stuff and adding a lot of stuff. We're also adding Janine's intervention. 
+
+====================================================================================================================================================
+/*   SCRIPTING   */
+
