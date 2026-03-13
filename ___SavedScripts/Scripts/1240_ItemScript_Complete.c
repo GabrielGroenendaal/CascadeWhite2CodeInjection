@@ -220,12 +220,12 @@ void Sequence17()
 
 
 // MEW
-/* DESERT RESORT - Green Shards x20 */
+/* DESERT RESORT - Green Shards x15 */
 void Sequence18()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 75);
-	SetVarEqVal(0x800D, 20);
+	SetVarEqVal(0x800D, 15);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -328,6 +328,7 @@ void Sequence26()
 	End();
 }
 
+/* SEASIDE CAVE - Heart Scale (x1) */
 void Sequence27()
 {
 	LockAll();
@@ -556,11 +557,12 @@ void Sequence45()
 	End();
 }
 
+/* SEASIDE CAVE - Cell Battery (x2) */
 void Sequence46()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 46);
-	SetVarEqVal(0x800D, 1);
+	SetVarEqVal(0x800C, 546);
+	SetVarEqVal(0x800D, 2);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -591,10 +593,11 @@ void Sequence48()
 	End();
 }
 
+/* TM22 SolarBeam - Undella Bay */
 void Sequence49()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 286);
+	SetVarEqVal(0x800C, 349);
 	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
@@ -698,24 +701,24 @@ void Sequence57()
 	End();
 }
 
-/* Rowap Berry x10 - Desert Resort (Inside) */
+/* Rowap Berry x5 - Desert Resort (Inside) */
 void Sequence58()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 212);
-	SetVarEqVal(0x800D, 10);
+	SetVarEqVal(0x800D, 5);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
 	End();
 }
 
-/* Jaboca Berry x10 - Desert Resort (Inside) */
+/* Jaboca Berry x5 - Desert Resort (Inside) */
 void Sequence59()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 211);
-	SetVarEqVal(0x800D, 10);
+	SetVarEqVal(0x800D, 5);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -769,10 +772,19 @@ void Sequence63()
 	End();
 }
 
+/* ABYSSAL RUIN - Cover, Plume, Armor Fossil */
 void Sequence64()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 14);
+	SetVarEqVal(0x800C, 104);
+	SetVarEqVal(0x800D, 1);
+	Sequence400();
+	WaitMoment();
+	SetVarEqVal(0x800C, 572);
+	SetVarEqVal(0x800D, 1);
+	Sequence400();
+	WaitMoment();
+	SetVarEqVal(0x800C, 573);
 	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
@@ -1221,24 +1233,24 @@ void Sequence102()
 	End();
 }
 
-/* ROUTE 7 - TM89: U-Turn */
+/* ROUTE 7 - Blunder Policy X3 */
 void Sequence103()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 416);
-	SetVarEqVal(0x800D, 1);
+	SetVarEqVal(0x800C, 256);
+	SetVarEqVal(0x800D, 3);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
 	End();
 }
 
-/* ROUTE 7 - TM03: Psyshock */
+/* ROUTE 7 - TM11: Air Slash */
 void Sequence104()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 256);
-	SetVarEqVal(0x800D, 3);
+	SetVarEqVal(0x800C, 338);
+	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -1340,11 +1352,11 @@ void Sequence112()
 	End();
 }
 
-// Trickster Herb x3 - Strange House
+// Power Herb x3 - Strange House
 void Sequence113()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 136);
+	SetVarEqVal(0x800C, 271);
 	SetVarEqVal(0x800D, 3);
 	Sequence400();
 	WaitMoment();
@@ -2031,12 +2043,12 @@ void Sequence173()
 	End();
 }
 
-/* GREEN SHARD X30 - ROUTE 22*/
+/* GREEN SHARD X15 - ROUTE 22*/
 void Sequence174()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 75);
-	SetVarEqVal(0x800D, 30);
+	SetVarEqVal(0x800D, 15);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -3345,11 +3357,11 @@ void Sequence289()
 	End();
 }
 
-/* TM31 Brick Break - Plasma Sanctuary */
+/* TM01 Psychic Fangs - Abysssal Ruin */
 void Sequence290()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 358);
+	SetVarEqVal(0x800C, 328);
 	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
@@ -3521,11 +3533,11 @@ void Sequence304()
 	End();
 }
 
-/* TM01 Psychic Fangs - Relic Sanctum */
+/* TM31 Brick Break - Relic Passage */
 void Sequence305()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 328);
+	SetVarEqVal(0x800C, 358);
 	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();

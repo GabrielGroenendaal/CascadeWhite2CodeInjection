@@ -73,12 +73,12 @@ public class MainEvents {
 		if (v0 == 0) {
 			Message.ActorEx(1024, 21, 7, 2, 0);
 			Message.CloseAll();
-			Battle.CallTrainerBattle(790, 0, 0);
-			battleOutcome = Battle.IsTrainerVictory();
+			// Battle.CallTrainerBattle(790, 0, 0);
+			battleOutcome = 1; // Battle.IsTrainerVictory();
 			if (battleOutcome == 0) {
-				Battle.CallTrainerLose();
+				// Battle.CallTrainerLose();
 			}
-			Battle.EndTrainerBattle();
+			// Battle.EndTrainerBattle();
 			Message.ActorEx(1024, 23, 7, 2, 0);
 			EventWorks.Set(16526, 2);
 			v8 = 0;
@@ -103,7 +103,7 @@ public class MainEvents {
 				if (v0 == 0) {
 					Message.ActorEx(1024, 1, 7, 2, 0);
 					Message.CloseAll();
-					Global2805(572, 1);
+					Global2805(101, 1);
 					EventFlags.Set(527);
 					Message.ActorEx(1024, 4, 7, 2, 0);
 					Input.LastKeyWait();
@@ -188,11 +188,12 @@ public class MainEvents {
 			if (v0 == 0) {
 				Message.ActorEx(1024, 21, 7, 2, 0);
 				Message.CloseAll();
-				Battle.CallTrainerBattle(790, 0, 0);
-				battleOutcome2 = Battle.IsTrainerVictory();
+				// Battle.CallTrainerBattle(790, 0, 0);
+				battleOutcome2 = 1; //Battle.IsTrainerVictory();
 				if (battleOutcome2 == 0) {
-					Battle.CallTrainerLose();
+					// Battle.CallTrainerLose();
 				}
+				// Battle.EndTrainerBattle();
 				Message.ActorEx(1024, 23, 7, 2, 0);
 				EventWorks.Set(16526, 2);
 				v5 = 0;
@@ -223,7 +224,7 @@ public class MainEvents {
 				if (v0 == 0) {
 					Message.ActorEx(1024, 1, 7, 2, 0);
 					Message.CloseAll();
-					Global2805(572, 1);
+					Global2805(101, 1);
 					EventFlags.Set(527);
 					Message.ActorEx(1024, 4, 7, 2, 0);
 					Input.LastKeyWait();
@@ -303,11 +304,12 @@ public class MainEvents {
 			if (v0 == 0) {
 				Message.ActorEx(1024, 21, 7, 2, 0);
 				Message.CloseAll();
-				Battle.CallTrainerBattle(790, 0, 0);
-				battleOutcome3 = Battle.IsTrainerVictory();
+				//Battle.CallTrainerBattle(790, 0, 0);
+				battleOutcome3 = 1; //Battle.IsTrainerVictory();
 				if (battleOutcome3 == 0) {
-					Battle.CallTrainerLose();
+					//Battle.CallTrainerLose();
 				}
+				Battle.EndTrainerBattle();
 				Message.ActorEx(1024, 23, 7, 2, 0);
 				EventWorks.Set(16526, 2);
 				v5 = 0;
@@ -333,7 +335,7 @@ public class MainEvents {
 				if (v0 == 0) {
 					Message.ActorEx(1024, 1, 7, 2, 0);
 					Message.CloseAll();
-					Global2805(572, 1);
+					Global2805(101, 1);
 					EventFlags.Set(527);
 					Message.ActorEx(1024, 4, 7, 2, 0);
 					Input.LastKeyWait();

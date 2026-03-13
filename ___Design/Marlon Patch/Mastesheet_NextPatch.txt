@@ -613,7 +613,7 @@ twistedspoon, Twistedspoon (found after the Workers)
 mental herb, Mental Herb x5 (found after the healthcare tag)
 green shard, Green Shards x15 (found after the Clerk tag)
 sticky barb, Sticky Barb (found after the Scientist tag)
-stable mulch, 1x Lax Mint, 1x Gentle Mint (reward for Defeating the Plasma Grunts)
+stable mulch, 1x Serious Mint (reward for Defeating the Plasma Grunts)
 tm ghost, TM37 Hex (encountered behind the Grimers once you beat the grunts)
 end
 
@@ -858,7 +858,7 @@ end
 
 
 ### Benga 
-!trm 773/37 Rewards TM27 Return
+!trm 773/37 Rewards TM59 Temper Flare
 
 
 
@@ -876,11 +876,11 @@ end
 ## Desert Resort: Interior
 !items Items 
 soft sand, Soft Sand (acquired from the agent in the desert)
-rowap berry, 10x Rowap Berry (acquired by defeating Ranger Anja)
-jaboca berry, 10x Jaboca Berry (acquired by defeating Psychic Perry)
+rowap berry, 5x Rowap Berry (acquired by defeating Ranger Anja)
+jaboca berry, 5x Jaboca Berry (acquired by defeating Psychic Perry)
 tm psychic, TM03 Psyshock (acquired by defeating Psychic Tommy)
 tm normal, TM83 Endure (acquired by defeating Backpackers Tami and Sam)
-green shard, 20x Green Shards (acquired past Ranger Jaiden)
+green shard, 15x Green Shards (acquired past Ranger Jaiden)
 end
 
 !enc 11
@@ -890,11 +890,11 @@ end
 ### Ranger Jaden (Desert Resort Interior Gatekeeper)
 !tr 666/36
 
-!tr 667/35 Guards 10x Rowap Berries 
+!tr 667/35 Guards 5x Rowap Berries 
 
 !tr 668/35 Guards TM03 Psyshock
 
-!tr 511/35 Guards 10x Jaboca Berries
+!tr 511/35 Guards 5x Jaboca Berries
 
 !tr 664/36 Right Side, Guards TM83 Endure 
 !tr 663/36 Left Side, Guards TM83 Endure 
@@ -930,7 +930,7 @@ end
 desc: Defeating Lenora before Elesa will reward you with one of the following fossils of your choice.
 root fossil, Root Fossil 
 claw fossil, Claw Fossil
-cover fossil, Cover Fossil
+helix fossil, Helix Fossil
 end
 
 
@@ -1372,29 +1372,32 @@ end
 
 ## Relic Sanctum
 !items Items 
-tm psychic, TM01 Psychic Fangs (Past the Psychics)
-root fossil, Root Fossil, Helix Fossil, Cover Fossil (Past Lenora)
+dome fossil, Dome Fossil, Skull Fossil (Past the Scientist in the room past Lenora)
+skull fossil, Skull Fossil (defeat the Scientist in the room past Lenora)
 life orb, Life Orb (reward for defeating the Strange Statue)
 end
 
-!notif FIELD EFFECT, There is a Permanent Pre Set Trick Room in Relic Sanctum  , #4e86d4
+!notif FIELD EFFECT, There is a Permanent Pre Set Trick Room in Relic Sanctum.  , #4e86d4
 
 ### Psychic Tully & Psychic Ena (Relic Castle Gatekeepers)
 !tr 569/50 Left Side 
 !tr 570/50 Right Side 
+
+!tr ???/52 Guards Dome / Skull Fossil 
 
 !notif NEW ENCOUNTER, This is a unique encounter from the upper Relic Castle Floors in Desert Resort. , #469e62 
 !enc 18
 
 ### Strange Statue
 !notif SPLIT-LOCKED, The Strange Statue is an optional mini-boss that can only be fought before defeating Skyla. This content is locked off afterwards. , #af74b3
+!notif WARNING, The Strange Statue's Pokemon have 0 Speed IVs. , #f26253
 !tr 634/51 Rewards Life Orb 
 
 
 
 ## Plasma Frigate 
 
-!notif WARNING, "Proto" Items are dangerous devices designed by colress that boost a Pokémon's stats on switch in at the cost of their accuracy. Be careful! , #f26253
+!notif WARNING, "Proto" Items are dangerous devices designed by Colress that boost a Pokémon's stats on switch in at the cost of their accuracy. Be careful! , #f26253
 ### Back to Back
 !trm 372/46 First Fight of Back to Back 
 !trm 374/46 Second Fight of Back to Back 
@@ -1493,13 +1496,13 @@ Solve the Underground Chamber puzzle to access a new Cobalion boss fight. The Gu
 assault vest, Assault Vest (reward for beating Cobalion)
 end 
 
-### Cobalion 
+### Cobalion, Guardian of Unova
 !notif SPLIT-LOCKED, Cobalion is an optional mini-boss that can only be fought before defeating Skyla. This content is locked off afterwards. , #af74b3
 !notif FIELD EFFECT, Enemies of Cobalion that switch into battles have their highest non-HP stat reduced by one stage on switch in. , #4e86d4
 
 !tr 491/52 Rewards Assault Vest 
 
-!notif NOTE, This encounter is not available until you defeat Cobalion. 
+!notif ENCOUNTER, Wild Pokémon will not appear in Guidance Chamber until you defeat Cobalion. , #469e62
 !enc 87
 
 
@@ -1585,14 +1588,14 @@ end
 
 ## Mistralton City 
 !items TM Shop 
-tm normal, TM27 Safeguard
 tm psychic, TM33 Reflect 
 tm psychic, TM16 Light Screen
 end 
+
 !items Items 
 master ball, Master Ball (received from Juniper)
-stable mulch, 1x Sassy Mint (received from Juniper) 
-stable mulch, 1x Relaxed Mint (received from Juniper)
+stable mulch, 1x Lax Mint (received from Juniper) 
+stable mulch, 1x Gentle Mint (received from Juniper)
 end
 
 
@@ -1602,17 +1605,17 @@ end
 !items Items 
 heart scale, Heart Scale (found past Sola & Ana)
 tm fairy, TM32 Dazzling Gleam (found past Sola & Ana)
-tm bug, TM89 U-Turn (past Harlequins)
-weakness policy, x3 Blunder Policy (past Holly)
+tm flying, TM11 Air Slash (past Holly)
+weakness policy, x3 Blunder Policy (past Harlequins)
 end
 
 !tr 272/50 Left Side 
 !tr 273/50 Right Side 
 
-!tr 271/52 Guards 3x Weakness Policies
+!tr 271/52 Guards TM11 Air Slash
 
-!tr 275/50 Left Side, Guards TM89 U-Turn & Doubles Grass
-!tr 276/50 Right Side, Guards TM89 U-Turn & Doubles Grass
+!tr 275/50 Left Side, Guards Blunder Policies & Doubles Grass
+!tr 276/50 Right Side, Guards lunder Policies & Doubles Grass
 
 !tr 274/51 Guards TM32 Dazzling Gleam and Heart Scale 
 
@@ -1729,7 +1732,7 @@ end
 tm fire, Will-o-Wisp TM (guarded by the gauntlet)
 red card, x5 Red Card
 white herb, x3 White Herb 
-kasib berry, x3 Trickster herb
+power herb, x3 Power Herb
 end
 
 !notif WARNING, This is a back to back to back battle with no heals in between , #f26253
@@ -1737,7 +1740,7 @@ end
 !tr 247 Second of B2B2B
 !tr 62 Third of B2B2B
 
-!notif NOTE, This encounter is not available until you defeat the spirits of Strange House. 
+!notif ENCOUNTER, Wild Pokémon will not appear in Strange House until you defeat the spirits in battle. , #469e62
 !enc 66
 
 
@@ -1799,7 +1802,7 @@ There are several crossroads where you can choose one of two trainers to fight t
 
 !items Items 
 custap berry, x3 Custap Berry (found at the end of the gauntlet)
-tm flying, TM11 Air Slash (reward for defeating Falkner)
+tm flying, TM62 Acrobatics (reward for defeating Falkner)
 flying gem, x3 Flying Gems (reward for defeating Falkner)
 coba berry, x3 Coba Berry (reward for defeating Falkner)
 old gateau, x1 IV Enhancer (reward for defeating Falkner)
@@ -1840,7 +1843,7 @@ Falkner can be found on the south path of the route after defeating the Veterans
 
 ## Undella Town 
 
-!notif NOTE, Undella Town has no Wild Pokémon encounters. Tourist activity has driven them away. 
+!notif NO ENCOUNTER, Undella Town has no Wild Pokémon encounters. Tourist activity has driven them away. , #469e62
 
 !notif NOTE, There is no rival battle with Hugh here. Instead, you must defeat Alder and his partner in a tag battle to open the path to Humilau City. 
 !items PokéMart 
@@ -1931,8 +1934,8 @@ These will be a series of grueling battles using every underhanded trick in the 
 !trm 623 Third of B2B2B 
 
 !items Items 
-tm dark, TM12 Taunt (left by Shadow Triad after the first B2B)
-tm flying, TM62 Acrobatics (left by the Shadow Triad after the second B2B2B)
+kasib berry, x2 Trickster Herbs (left by Shadow Triad after the first B2B)
+tm dark, TM12 Taunt (left by Shadow Triad after the second B2B)
 end
 
 
@@ -1960,7 +1963,7 @@ end
 - Rest (10 shards)
 - Toxic (10 shards)
 
-!notif NOTE, There are no wild Pokémon encounters in Humilau City. They've been scared off by the tourism!
+!notif NO ENCOUNTER, There are no wild Pokémon encounters in Humilau City. They've been scared off by the tourism! , #469e62
 
 !notif FIELD EFFECT, There is permanent sun in Humilau City , #4e86d4
 
@@ -2030,12 +2033,11 @@ end
 ### Gardenia 
 !tr 538
 
-### Virizion 
-!notif FIELD EFFECT, Forest's Wrath: Enemies of Virizion that switch into battle are afflicted by leech seed. Does not affect Grass types, Pokémon wearing Safety Goggles, or Pokémon with the ability Overcoat.. , #4e86d4
-
+### Virizion, Guardian of Unova
+!notif FIELD EFFECT, Forest's Wrath: Enemies of Virizion that switch into battle are afflicted by leech seed. Does not affect Grass types, Pokémon wearing Safety Goggles, or Pokémon with the ability Overcoat. , #4e86d4
 !tr 507
 
-!notif NOTE, Encounters will not spawn in Pinwheel Forest until Virizion is defeated. 
+!notif ENCOUNTER, Wild Pokémon will not appear in Pinwheel Forest until Virizion is defeated. , #469e62 
 !enc 9 
 
 

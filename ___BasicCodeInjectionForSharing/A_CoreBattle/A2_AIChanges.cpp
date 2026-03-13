@@ -369,6 +369,25 @@ extern "C"
         // return *lvl_cap_ptr;
     }
 
+    u32 checkForMatchupFlag()
+    {
+
+        EventWorkSave *eventWork = GameData_GetEventWork(GAME_DATA);
+        u16 *lvl_cap_ptr = EventWork_GetWkPtr(eventWork, 16503);
+        return *lvl_cap_ptr;
+        // return *lvl_cap_ptr;
+    }
+
+    u32 checkForAdvancedSwitchOutAIFlag()
+    {
+
+        EventWorkSave *eventWork = GameData_GetEventWork(GAME_DATA);
+        u16 *lvl_cap_ptr = EventWork_GetWkPtr(eventWork, 16502);
+        return *lvl_cap_ptr;
+        // return *lvl_cap_ptr;
+    }
+
+
     bool HasMoldBreaker(BattleMon *a1)
     {
         return (
@@ -435,7 +454,7 @@ extern "C"
         {
             return FIELD_TRICK_ROOM;
         }
-        if (zoneId == 463 || zoneId == 465 || zoneId == 376)
+        if (zoneId == 463 || zoneId == 465 || zoneId == 376 ||  zoneId == 240 )
         {
             return FIELD_SUN;
         }
@@ -2682,9 +2701,11 @@ extern "C"
                                         v10 = checkForTechnician(MonData, ID, v10);
 
                                         v10 = checkForSTAB(MonData, Type, v10);
-#if SWITCH_AI_CHANGES
-                                        v10 = checkForMatchup(MonData, defendingMonChecked, v10);
-#endif
+
+                                        if (checkForMatchupFlag()){
+                                            v10 = checkForMatchup(MonData, defendingMonChecked, v10);
+                                        }
+
                                         v10 = checkForAbilityAndItemBPChanges(MonData, defendingMonChecked, Type, TypeEffectivenessVsMon, v10);
 
                                         BasePower = HIWORD(v10);
@@ -3106,9 +3127,9 @@ extern "C"
                                         v10 = checkForBPChanges(MonData, defendingMonChecked, ID, v10, a1);
                                         v10 = checkForTechnician(MonData, ID, v10);
                                         v10 = checkForSTAB(MonData, Type, v10);
-#if SWITCH_AI_CHANGES
-                                        v10 = checkForMatchup(MonData, defendingMonChecked, v10);
-#endif
+                                        if (checkForMatchupFlag()){
+                                            v10 = checkForMatchup(MonData, defendingMonChecked, v10);
+                                        }
                                         v10 = checkForAbilityAndItemBPChanges(MonData, defendingMonChecked, Type, TypeEffectivenessVsMon, v10);
                                         BasePower = HIWORD(v10);
                                     }

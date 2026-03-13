@@ -15,10 +15,20 @@
 /*   MARLON BUILD   */
 
     EASY: 
-        - Test the New Plasma Frigate Theft Script.
-        - Test Exp Modes and Tweak the Formula to be more aggressive if need be. 
-
+        - Update Mastersheet with Icons for new stuff: 
+            - Fossil Changes 
+        - Remove the Items in Relic Sanctum for 
+            - Psychic Fangs 
+            - Cover Fossil 
+        - Update Drayden Stuff for all the optional Trick Room Trainers in Undella Bay 
+        - Test the New Lenora Script 
+        - Put the battle girl outside guarding the Solarbeam TM
+        - Set up the abyssal ruins to have trainers guarding stuff . 
+    
     MODERATE: 
+        - Implement Gen 4 Style Switch AI as a toggle-able option 
+        - Confirm the altered PC script works. 
+
         - Test and Implement the Post-Marlon gym scripting
             - Setting the game up for the Frigate 
             - Blocking off Abundant Shrine and Pinwheel Forest 
@@ -42,7 +52,10 @@
             - (Check for Sheer Force) Acid Spray, Fake Out, Heavy Slam accounts for Sheer Force. 
 
     HARD: 
-
+        - Add new Trainer Sprites for underwater and have them gatekeep the following stuff in Abyssal Ruins
+            TM Solar Blade 
+            TM Psychic Fangs 
+            Fossils 
 
 
     IMPOSSIBLE: 
@@ -57,132 +70,616 @@
 
 ====================================================================================================================================================
 /*   MECHANICS UPDATES    */
-    
-    Psywave is spread and cannot miss 
-
-    Seismic Toss cannot miss. 
-
-    Taunt is spread. 
-
-    Electabuzz/Electivire Ability 4 is Iron Fist, Ability 6 is Magnet Pull 
-
-    Breloom
-        19: Wake Up Slap -> Sweet Scent 
-        22: Trop Kick -> Giga Drain 
 
 
 ====================================================================================================================================================
 /*   TRAINER UPDATES    */
+    
+    We should look at some of the late game Marlon Split trainers and whether they should be using held items. 
+    At the moment, there are only a few of them in this split that don't that kinda stick out 
+
+    The Route 21 Trainers 
 
 
-    Roxanne
-        Cradily 
-            Item: Focus Band
-            Ability: Poison Heal
-            Moves: 
-                Leaf Tornado 
-                Infestation
-                Diamond Storm
-                Gastro Acid
-        
-        Probopass @ Tera Leftovers 
-        Ability: Levitate 
+    Complicate the Undella B2B, add two more pokemon. It's a huge reward!
+
+    Complicate the Tag Battle with Ingo / Emmet
+        (Make the partner weaker)
+
+
+
+
+
+
+    -
+
+
+
+
+
+
+    Cyclist Jeremiah 
+        Rapidash @ Trickster Herb
+        Ability: Majestic Ward 
         Moves: 
-            Earth Power 
-            Diamond Storm 
-            Metal Sound 
-            Thunder Wave
-        
-        Claydol @ Brightpowder 
-        Ability: Speed Boost 
-        Moves: 
-            Stored Power 
-            Ancientpower 
-            Cosmic Power 
+            Overheat 
+            Spirit Break 
+            Megahorn 
             Hypnosis 
         
-        Onix @ Power Herb
+        Sandslash @ White Herb
+        Ability: Sand Force 
+        Moves: 
+            Earthquake 
+            Spin Out 
+            Rock Slide 
+            Double Team 
+        
+        Linoone @ Shell Bell
+        Ability: Tough Claws 
+        Moves: 
+            Double Edge 
+            Extremespeed 
+            Aqua Tail
+            
+
+    Cyclist Adelaide 
+        Carnivine @ Choice Scarf
+        Ability: Arena Trap
+        Moves: 
+            Needle Arm 
+            Iron Head 
+            U-Turn 
+            Switcheroo 
+        
+        Unfezant @ Flying Gem
+        Ability: Unburden 
+        Moves: 
+            Retaliate 
+            Crush Claw 
+            Acrobatics 
+            Steel Wing 
+        
+        Zebstrika @ Normal Gem
+        Ability: Reckless 
+        Moves: 
+            Wild Charge 
+            Thrash 
+            Head Charge 
+            Hi Jump Kick
+
+
+
+    -
+
+
+
+
+
+
+
+    Socialite Marian 
+
+        Whiscash @ Attack Insurance 
+        Ability: Moisturize 
+        Moves: 
+            Hyper Beam 
+            Stompin Tantrum 
+            Spikes  
+            Sweagger
+         
+        Swanna @ Starf Berry 
+        Ability: Serene Grace 
+        Moves: 
+            Air Slash 
+            Ice Beam 
+            Water Pulse
+            Substitute 
+        
+        Vileplume @ Brightpowder 
+        Ability: Merciless 
+        Moves: 
+            Fairy Wind 
+            Hex 
+            Stun Spore 
+            Quiver Dance
+
+        Lopunny @ Chople Berry
+        Ability: Scrappy 
+        Moves: 
+            Fake Out 
+            Return 
+            Strength
+            Attract
+
+    
+    Gentleman Sheldon 
+        Honchkrow @ Power Herb 
+        Ability: Exploit 
+        Moves: 
+            Fly 
+            Dark Pulse 
+            Sucker Punch 
+            Hurricane 
+        
+        Shuckle @ Kee Berry 
+        Ability: Gourmand 
+        Moves: 
+            Infestation 
+            Swallow 
+            Protect 
+            Sandstorm 
+        
+        Breloom @ Life Orb 
+        Ability: Technician 
+        Moves: 
+            Mach Punch 
+            Accelerock 
+            Bullet Seed 
+            Low Sweep 
+        
+        Smeargle @ Focus Sash
+        Ability: Savant 
+        Moves: 
+            Stored Power
+            Quiver Dance
+            Hurricane
+            Spore
+
+
+
+
+
+
+
+
+
+    -
+
+
+
+
+
+
+
+    
+
+    Lenora 
+        Snorlax @ Throat Spray 
+        Level: 36 
+        Ability: Thick Fat
+        Nature: Rash
+        Moves: 
+            Boomburst 
+            Thunder 
+            Fire Blast 
+            Blizzard 
+        
+        Wigglytuff @ Lum Berry 
+        Level: 37
+        Ability: Aerilate 
+        Nature: Quiet 
+        Moves: 
+            Retaliate 
+            Doubleslap 
+            Tri Attack 
+            Rollout 
+        
+        Bastiodon @ Weakness Policy 
+        Level: 37
+        Ability: Solid Rock 
+        Nature: Impish
+        Moves: 
+            Iron Head 
+            Rock Slide 
+            Strength
+            Super Fang 
+        
+        Watchog @ Chople Berry
+        Level: 38 
+        Ability: Stakeout 
+        Nature: Brave
+        Moves: 
+            Retaliate 
+            Pursuit
+            Screech 
+            Hypnosis
+    
+
+
+
+
+
+
+
+    -
+
+
+
+
+
+
+
+
+
+    Psychic Tully: 
+        Xatu @ Rock Gem 
+        Level: 48
+        Ability: Magic Bounce 
+        Moves: 
+            Psychic Noise 
+            Air Slash 
+            Ancientpower 
+            Light Screen 
+        
+        Wormadam-Sandy @ Sitrus Berry
+        Level: 48
+        Ability: Battle Armor 
+        Moves: 
+            Infestation 
+            Charm
+            Captivate
+            Leech Seed 
+        
+        Beheeyem @ Life Orb
+        Level: 49
+        Ability: Levitate 
+        Moves: 
+            Discharge 
+            Energy Ball 
+            Ice Beam 
+            Shadow Ball 
+    
+
+    Psychic Ena 
+        Claydol @ Weakness Policy
+        Level: 48
+        Ability: Heavy Metal 
+        Moves: 
+            Earth Power 
+            Aura Sphere 
+            Ice Beam 
+            Hypnosis 
+        
+        Metang @ Eviolite 
+        Level: 48
+        Ability: Tough Claws 
+        Moves: 
+            Spin Out 
+            Earthquake 
+            Metal Sound
+            Screech 
+        
+        Marowak @ Thick Club 
+        Level: 49
+        Ability: Justified 
+        Moves: 
+            Earthquake 
+            Rock Slide 
+            Lunge 
+            Brick Break 
+    
+
+
+
+
+
+
+
+
+    -
+
+
+
+
+
+
+
+    
+
+
+    Swimmer Harold 
+        Castform-Sunny @ Charti Berry 
+        Ability: Solar Power 
+        Moves: 
+            - Incinerate
+            - Air Cutter
+            - Tri Attack 
+            - Tailwind
+
+        Lapras @ Leftovers
+        Ability: Ice Body 
+            Icicle Crash
+            Dragon Rush 
+            Thunder Wave
+            Confuse Ray
+        
+        Simisage @ Focus Sash 
+        Ability: Overgrow 
+        Moves: 
+            Solarbeam 
+            Solar Blade 
+            Growth 
+            Weather Ball 
+        
+        Kingler @ Big Root
+        Ability: Sturdy 
+        Moves: 
+            Leech Life 
+            Drain Punch
+            Rock Climb
+            Shell Smash 
+    
+
+
+
+
+
+
+
+    -
+
+
+
+
+
+
+
+    
+    Swimmmer Kylie 
+        Bellossom @ Kebia Berry 
+        Ability: Flower Gift 
+        Moves: 
+            Petal Blizzard 
+            Protect 
+            Triple Axel 
+            Blaze Kick 
+        
+        Seaking @ Wacan Berry 
+        Ability: Sap Sipper 
+        Moves: 
+            Fake Out 
+            Giga Impact 
+            Megahorn 
+            Weather Crash 
+        
+        Sceptile @ Psychic Gem
+        Ability: Hyper Cutter 
+        Moves: 
+            Leaf Blade 
+            Psyblade 
+            Dragon Claw
+            Air Slash
+        
+        Relicanth @ Rindo Berry
+        Ability: Determined 
+        Moves: 
+            Rock Wrecker 
+            Night Shade
+            Icy Wind 
+            Helping Hand 
+        
+
+
+
+
+
+
+
+    -
+
+
+
+
+
+
+
+    
+    Fisherman Kenzo 
+        Stunfisk @ Attack Insurance
+        Ability: Patient 
+        Moves:  
+            Sand Tomb 
+            Discharge 
+            Gastro Acid 
+            Gunk Shot 
+        
+        Eelektross @ Zoom Lens
+        Ability: Levitate 
+        Moves: 
+            Fire Blast 
+            Focus Blast 
+            Power Whip 
+            Wrap 
+        
+        Sealeo @ Eviolite 
+        Ability: Guts 
+        Moves: 
+            Avalanche 
+            Weather Crash 
+            Facade
+            Ice Shard 
+        
+        Rotom-Heat @ White Herb
+        Ability: Levitate 
+        Moves: 
+            Overheat 
+            Night Shade 
+            Discharge 
+            Double Team 
+    
+
+
+
+
+
+
+
+    -
+
+
+
+
+
+
+
+    
+    Ranger Mikiko 
+        Hippowdon @ Trickster Herb
+        Ability: Sand Stream
+        Moves: 
+            Fissure 
+            Power Trip
+            Slack Off 
+            Amnesia
+
+        Stoutland @ Weakness Policy
         Ability: Sand Rush 
         Moves: 
-            Rock Slide 
-            Dig 
-            Substitute 
-            Skull Bash
+            Retaliate 
+            Chip Away
+            Charm 
+            Captivate
+        
+        Flygon @ Sitrus Berry
+        Ability: Sand Veil 
+        Moves: 
+            Dragonbreath
+            Scorching Sands
+            Uproar 
+            Quiver Dance 
 
-        Nosepass: 
-        Ability: Lightning Rod 
+        Lunatone @ Babiri Berry
+        Ability: Solid Rock  
         Moves: 
             Diamond Storm 
-            Energy Ball 
-            Discharge 
+            Stored Power 
+            Cosmic Power 
+            Rock Polish
 
 
-        Weakness Policy
 
-    Scientist Blythe 
-        Dusclops 
-            Shadow Punch -> Night Shade 
-        
-    Eeveelution B2B2B: 
-        Every Eeveelution now gets a Sitrus Berry 
-        Flareon gets Quick Attack 
+
+
+
+
+
+    -
+
+
+
+
+
+
+
     
-    Castelia Alleway Gatekeeper 
-        Scrafty @ Roseli Berry 
-            Rock Smash -> Low Sweep 
-        Beedrill @ Flying Gem
-            Poison Fang -> Acrobatics  
-        Toxicroak @ Dark Gem 
-        Hitmonchan @ Coba Berry
+    Battle Girl Tia: 
 
-    Roxie:  
-        Mightyena 
+        Druddigon @ Maranga Berry
+        Ability: Sheer Force 
         Moves: 
-            Take Down -> Glare 
+            - Fire Punch 
+            - Dragon Claw 
+            - Recover 
+            - Stockpile
+
+        Blaziken @ Power Herb
+        Ability: Speed Boost 
+        Moves: 
+            - Fire Spin 
+            - Close Combat 
+            - Detect 
+            - Bounce
+
+        Throh @ Attack Insurance 
+        Ability: Mold Breaker 
+        Moves: 
+            - Circle Throw 
+            - Earthquake 
+            - Temper Flare 
+            - Stealth Rock 
+        
+        Shiftry @ Focus Sash 
+        Ability: Chlorophyll 
+        Moves: 
+            - Solar Blade 
+            - Growth 
+            - Dark Pulse 
+            - Air Slash 
+
     
+
+
+
+
+
+
+
+    -
+
+
+
+
+
+
+
     
-    Surge: 
+    Abyssal Ruin Gatekeeper (Sun Trainer)
 
-        Electabuzz: 
-            Ability: Iron Fist 
-            Moves: 
-                Thunder Punch > Facade 
-            
-        Krookadile 
-            Item: Dark Gem
-            Nature: Lonely
-            Moves: 
-                Crunch 
-                Bone Club 
-                Pursuit 
-                Screech  
+        Solrock @ Power Herb
+        Ability: Chlorophyll 
+        Moves: 
+            Dazzling Gleam 
+            Solarbeam 
+            Meteor Beam
+            Confuse Ray 
+        
+        Slowking @ Colbur Berry
+        Ability: Inner Focus 
+        Moves: 
+            Dream Eater 
+            Follow Me
+            Flamethrower 
+            Future Sight 
+        
+        Golurk @ Tera Gem 
+        Ability: Well Baked Body 
+        Moves: 
+            Meteor Mash 
+            High Horsepower 
+            Power Trip
+            Iron Defense 
+        
+        Clefable @ Blunder Policy 
+        Ability: Friend Guard 
+        Moves: 
+            Dazzling Gleam 
+            Fire Blast 
+            Blizzard 
+            Helping Hand 
+
+        Sigilyph @ Life Orb
+        Ability: Magic Guard 
+        Moves: 
+            Heat Wave 
+            Esper Wing 
+            Solarbeam
+            Detect 
 
 
-    Clerk Britney: 
-        Sealeo
-            Item: Wacan Berry 
-            Moves:
-                Aurora Beam -> Ice Fang 
-                Body Slam -> Super Fang 
-        Piloswine 
-            Item: Passho Berry 
-
-    Depot Agent Hank: 
-        Klang: 
-            Levitate -> Heavy Metal 
 
 
-    Virizion 
-        Milotic -> Suicune 
-            Ability: Serene Grace
-            Item: Ability Drill 
-            Moves: 
-                Water Pulse 
-                Silver Wind
-                Glare 
-                Substitute
+====================================================================================================================================================
+/*   FIELD EFFECT IDEAS    */
 
 
+    [ DIVERSIFY ]
+    Pokemon lose their Same-Type Attack Bonus. They receive a 25% damage boost to moves they don't share a type with. 
+
+    [ STURDY ]
+    All Pokemon receive 30% less damage from direct attacks. 
+
+    
 
 ====================================================================================================================================================
 /*   ANTI YAP    */

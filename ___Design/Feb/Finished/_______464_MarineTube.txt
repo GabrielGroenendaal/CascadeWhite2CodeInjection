@@ -437,6 +437,11 @@ public class MainEvents {
 			Fade.FadeExWait();
 			EventFlags.Set(3037);
 			Sound.BGMFadeOut(90);
+            Message.Info(38, 2);
+            Message.WaitAdvance();
+            Message.CloseAll();
+            Global2805(136, 2);
+
 
 			LABEL_EndAmbushThree: 
 			Runtime.FinishSubEvents();
@@ -719,7 +724,11 @@ public class MainEvents {
 			EventFlags.Clear(553);
 			EventWorks.Set(16433, 8);
 			EventWorks.Set(16489, 2);
-			
+            Message.Info(38, 2);
+            Message.WaitAdvance();
+            Message.CloseAll();
+            Global2805(339, 1);
+
 			LABEL_EndAmbushSix: 
 			Runtime.FinishSubEvents();
 			Actor.UnpauseAll();
@@ -950,6 +959,7 @@ public class MainEvents {
 	}
 
 	static meta void Global2805(int a1, int a2) : VGlobalCall[2805];
+
 	static native void Action000c(int amount) : 0xc;
 	static native void Action0004(int amount) : 0x4;
 	static native void Action0008(int amount) : 0x8;

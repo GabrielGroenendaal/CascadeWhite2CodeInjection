@@ -160,8 +160,7 @@ public class MainEvents {
 		Message.CloseAll();
 		WalkEast8F(254);
 		Actor.WaitActionFinish();
-		Global2805(514, 1);
-		Global2805(526, 1);
+		Global2805(517, 1);
 		Message.ActorEx(1024, 27, 254, 4, 0);
 		Message.CloseAll();
 		WalkSouthThenWalkEast8F_Again(254);

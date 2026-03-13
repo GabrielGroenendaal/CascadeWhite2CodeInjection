@@ -192,6 +192,8 @@ If you're updating from the previous patch, you'll want to speak to an NPC in Le
 > - **TM Knock Off** has been removed from Mistralton Cave. In it's place is the TM for Bug Buzz. 
 > - **Red Shards** More Limited. 
 > - **Rocky Helmet** removed from PWT. Will now be acquired later.
+> - **Rowap and Jaboca Berries** in Desert Resort reduced to 5x, down from 10x. 
+> - **Fossil Distribution Altered**: You get Root, Helix, and Claw fossils from Lenora. You get Dome and Skull Fossils from an optional trainer in Clay Split. The Armor, Cover, and Plume Fossils are found behind an optional fight in Abyssal Ruins. The Old Amber is found in N's Castle in the final split of the game. 
 
 
 ``[ NEW CHANGES ]``

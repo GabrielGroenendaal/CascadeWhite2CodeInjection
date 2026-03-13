@@ -418,7 +418,7 @@ public class MainEvents {
         Message.CloseAll();
         Global2805(192, 3);
         Global2805(556, 3);
-        Global2805(338, 1);
+        Global2805(389, 1);
         EventFlags.Set(1575);
         EventFlags.Set(546);
         Message.ActorEx(1024, 22, 5, 0, 0);
@@ -499,12 +499,16 @@ public class MainEvents {
         Message.ActorEx(1024, 8, 25, 0, 0);
         Input.LastKeyWait();
         Message.CloseAll();
+        Message.ActorEx(1024, 25, 25, 0, 0);
+        Message.CloseAll();
+        Global2805(210, 3)
         Actor.Hide(25);
         Actor.Show(29);
         EventFlags.Clear(522);
         EventFlags.Set(546);
         Actor.Hide(5);
         Actor.Hide(11);
+
         EventWorks.Set(16463, 7);
         EventWorks.Set(16464, 1);
         EventFlags.Clear(1520 + 285);

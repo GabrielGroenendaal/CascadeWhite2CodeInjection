@@ -1,0 +1,25 @@
+
+
+/* 20x Red Shards - Liberty Island */
+void Sequence333()
+{
+	LockAll();
+	SetVarEqVal(0x800C, 72);
+	SetVarEqVal(0x800D, 20);
+	Sequence400();
+	WaitMoment();
+	UnlockAll();
+	End();
+}
+
+/* ROUTE 7 - 10x Red Shards */
+void Sequence103()
+{
+	LockAll();
+	SetVarEqVal(0x800C, 72);
+	SetVarEqVal(0x800D, 10);
+	Sequence400();
+	WaitMoment();
+	UnlockAll();
+	End();
+}

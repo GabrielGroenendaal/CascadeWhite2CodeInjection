@@ -1858,21 +1858,79 @@ label70_options: ;
 	Compare(0x8004, 4);
 	if (5) goto label76_options;
 	// CloseAllMessageBoxes();
-	Compare(0x4034, 0);
-	if (1) goto label_DefaultSwitchAILogic;
-	Compare(0x4034, 1);
-	if (1) goto label_CumulativeSwitchAILogic;
-	EventGreyMessage(217, 2);
-	goto label78_options;
 
-label_DefaultSwitchAILogic: ;
+    EventGreyMessage(227, 2);
+
+label_OpenDialogueSwitchAI: ;
+    WaitForButton();
+    SetupDialogueSelection(31, 5, 0, 1, 0x8006);
+
+    Compare(0x4034, 1);
+    if (1) goto label_SwitchAINavMenuDoublesCumulative; 
+    Compare(0x4034, 2);
+    if (1) goto label_SwitchAINavMenuDoublesHealth; 
+    // Using Health Based Doubles Switch AI currently
+    AddDialogueOption(228, 229, 0);
+    goto label_SetUpMatchUpAIOptions;
+    
+label_SwitchAINavMenuDoublesCumulative: ;
+    // Using Default Based Doubles Switch in AI 
+    AddDialogueOption(228, 230, 0);
+    goto label_SetUpMatchUpAIOptions;
+
+label_SwitchAINavMenuDoublesHealth: ;
+    // Using Cumulative Based Doubles Switch in AI 
+    AddDialogueOption(228, 231, 0);
+
+label_SetUpMatchUpAIOptions: ;
+	Compare(0x4076, 1);
+	if (1) goto label_MatchupAIOptionsOn;
+    AddDialogueOption(232, 233, 1);
+    goto label_SetupGen4SwitchAIOptions;
+
+label_MatchupAIOptionsOn: ;
+    AddDialogueOption(232, 234, 1);
+
+label_SetupGen4SwitchAIOptions: ;
+    Compare(0x4077, 1);
+	if (1) goto label_Gen4SwitchInAIOn;
+    AddDialogueOption(235, 236, 2);
+    goto label_FinishShowingSwitchInOptions;
+
+label_Gen4SwitchInAIOn: ;
+    AddDialogueOption(235, 237, 2);
+
+label_FinishShowingSwitchInOptions: ;
+    AddDialogueOption(207, 0xFFFF, 3);
+    ShowDialogueSelection2();
+
+    Compare(0x8006, 0);
+    if (1) goto label_OpenDoublesSwitchInOptions; 
+    Compare(0x8006, 1);
+    if (1) goto label_OpenMatchupOptions; 
+    Compare(0x8006, 2);
+    if (1) goto label_OpenGen4Options; 
+    EventGreyMessage(116, 2);
+	WaitForButton();
+	goto label49_options;
+
+
+label_OpenDoublesSwitchInOptions: ;
+    Compare(0x4034, 1);
+	if (1) goto label_CumulativeSwitchAILogic;
+	Compare(0x4034, 2);
+	if (1) goto label_HealthBasedSwitchAILogic;
 	EventGreyMessage(215, 2);
-	goto label78_options;
+	goto label_DoublesSwitchAIDialogueMenu;
 
 label_CumulativeSwitchAILogic: ;
 	EventGreyMessage(216, 2);
+	goto label_DoublesSwitchAIDialogueMenu;
 
-label78_options: ;
+label_HealthBasedSwitchAILogic: ;
+	EventGreyMessage(217, 2);
+
+label_DoublesSwitchAIDialogueMenu: ;
 	WaitForButton();
 	SetupDialogueSelection(31, 5, 0, 1, 0x8006);
 	AddDialogueOption(224, 218, 0);
@@ -1889,7 +1947,7 @@ label78_options: ;
 	if (1) goto label_SetHealthBasedSwitchAI;
 	EventGreyMessage(116, 2);
 	WaitForButton();
-	goto label49_options;
+	goto label_OpenDialogueSwitchAI;
 
 label_SetDefaultSwitchAI: ;
 	EventGreyMessage(221, 2);
@@ -1897,7 +1955,7 @@ label_SetDefaultSwitchAI: ;
 	SetVarEqVar2(0x4034, 0);
 	EventGreyMessage(119, 2);
 	WaitForButton();
-	goto label49_options;
+	goto label_OpenDialogueSwitchAI;
 
 label_SetCumulativeSwitchAI: ;
 	EventGreyMessage(222, 2);
@@ -1905,7 +1963,7 @@ label_SetCumulativeSwitchAI: ;
 	SetVarEqVar2(0x4034, 1);
 	EventGreyMessage(119, 2);
 	WaitForButton();
-	goto label49_options;
+	goto label_OpenDialogueSwitchAI;
 
 label_SetHealthBasedSwitchAI: ;
 	EventGreyMessage(223, 2);
@@ -1913,7 +1971,87 @@ label_SetHealthBasedSwitchAI: ;
 	SetVarEqVar2(0x4034, 2);
 	EventGreyMessage(119, 2);
 	WaitForButton();
-	goto label49_options;
+	goto label_OpenDialogueSwitchAI;
+
+
+
+
+label_OpenMatchupOptions: ; 
+    Compare(0x4076, 1);
+	if (1) goto label_MatchUpToggledOff;
+	EventGreyMessage(238, 2);
+	goto label_MatchUpSwitchAIToggleDialogue;
+
+label_MatchUpToggledOff: ;
+	EventGreyMessage(239, 2);
+
+label_MatchUpSwitchAIToggleDialogue: ;
+	WaitForButton();
+	YesNoBox(0x8000);
+	SetVarEqVar(0x8006, 0x8000);
+    Compare(0x8006, 0);
+    if (1) goto label_MatchUpSwitchAIToggleSetting; 
+    EventGreyMessage(116, 2);
+	WaitForButton();
+	goto label_OpenDialogueSwitchAI;
+
+label_MatchUpSwitchAIToggleSetting: ;
+    Compare(0x4076, 1); 
+    if (1) goto Label_TogglingMatchupsOff; 
+    EventGreyMessage(241, 2);
+	WaitForButton();
+	SetVarEqVar2(0x4076, 1);
+	EventGreyMessage(119, 2);
+	WaitForButton();
+	goto label_OpenDialogueSwitchAI;
+
+Label_TogglingMatchupsOff: ; 
+    EventGreyMessage(240, 2);
+	WaitForButton();
+	SetVarEqVar2(0x4076, 0);
+	EventGreyMessage(119, 2);
+	WaitForButton();
+	goto label_OpenDialogueSwitchAI;
+
+
+
+label_OpenGen4Options: ; 
+    Compare(0x4077, 1);
+	if (1) goto label_Gen4ToggledOff;
+	EventGreyMessage(238, 2);
+	goto label_Gen4AISwitchoutToggleDialogue;
+
+label_Gen4ToggledOff: ;
+	EventGreyMessage(239, 2);
+
+label_Gen4AISwitchoutToggleDialogue: ;
+	WaitForButton();
+	YesNoBox(0x8000);
+	SetVarEqVar(0x8006, 0x8000);
+    Compare(0x8006, 0);
+    if (1) goto label_Gen4AiSwitchOutToggleSetting; 
+    EventGreyMessage(116, 2);
+	WaitForButton();
+	goto label_OpenDialogueSwitchAI;
+
+label_Gen4AiSwitchOutToggleSetting: ;
+    Compare(0x4077, 1); 
+    if (1) goto Label_TogglingGen4AiOff; 
+    EventGreyMessage(245, 2);
+	WaitForButton();
+	SetVarEqVar2(0x4076, 1);
+	EventGreyMessage(119, 2);
+	WaitForButton();
+	goto label_OpenDialogueSwitchAI;
+    
+Label_TogglingGen4AiOff: ; 
+    EventGreyMessage(244, 2);
+	WaitForButton();
+	SetVarEqVar2(0x4077, 0);
+	EventGreyMessage(119, 2);
+	WaitForButton();
+	goto label_OpenDialogueSwitchAI;
+
 
 
 // 
@@ -2292,6 +2430,9 @@ label_CasualLevelCapSetting: ;
 	SetVarEqVar2(0x4051, 0);
 
 Label_CasualExpModeSetting: ;
+    SetVarEqVar2(0x4034, 0);
+    SetVarEqVar2(0x4076, 0);
+    SetVarEqVar2(0x4077, 0);
     Compare(0x4053, 1);
     if (1) goto Label_CasualTrainerPlacementSetting;
     EventGreyMessage(209, 2);
@@ -2374,6 +2515,9 @@ Label_DefaultANimatedBackgroundSetting: ;
 	SetVarEqVar2(0x4033, 0);
 
 Label_DefaultAdvancedSwitchAI: ;
+    SetVarEqVar2(0x4076, 0);
+    SetVarEqVar2(0x4077, 0);
+
 	Compare(0x4034, 0);
 	if (1) goto Label_DefaultExpModeSetting;
 	EventGreyMessage(221, 2);
