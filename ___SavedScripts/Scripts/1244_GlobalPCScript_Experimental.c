@@ -165,7 +165,7 @@ label_DisablePokeHelperOptions: ;
 	StackCompare(1);
 	if (255) goto label9;
 
-	AddDialogueOption(6, 0xFFFF, 6);
+	// AddDialogueOption(6, 0xFFFF, 6);
 
 label9: ;
 	// Didn't receive the ugprade from Hugh Yet

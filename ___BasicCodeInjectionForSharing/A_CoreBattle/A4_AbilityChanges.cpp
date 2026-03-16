@@ -1585,7 +1585,7 @@ extern "C"
         {
             if (getMoveFlag(BattleEventVar_GetValue(VAR_MOVE_ID), FLAG_SOUND))
             {
-                BattleEventVar_MulValue(VAR_MOVE_POWER_RATIO, 4915);
+                BattleEventVar_MulValue(VAR_MOVE_POWER_RATIO, 5324);
             }
         }
     }

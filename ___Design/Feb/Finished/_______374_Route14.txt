@@ -151,12 +151,12 @@ public class MainEvents {
     public static void main_7(){
         int isVictory;
         Actor.PauseAll();
-        ShowExclamationMark(15);
+        ShowExclamationMark(1);
         Actor.WaitActionFinish();
-        TurnWest(255);
+        TurnSouth(255);
         Actor.WaitActionFinish();
         Trainer.PlayBGMPush(283);
-        Message.ActorEx(1024, 16, 15, 0, 0);
+        Message.ActorEx(1024, 16, 1, 0, 0);
         Input.LastKeyWait();
         Message.CloseAll();
         Battle.CallTrainerBattle(283, 0, 0);
@@ -165,7 +165,7 @@ public class MainEvents {
             Battle.CallTrainerLose();
         }
         Battle.EndTrainerBattle();
-        Message.ActorEx(1024, 17, 15, 0, 0);
+        Message.ActorEx(1024, 17, 1, 0, 0);
         Input.LastKeyWait();
         Message.CloseAll();
         EventWorks.Set(16463, 3);
@@ -180,13 +180,13 @@ public class MainEvents {
         Actor.FacePlayer();
         Actor.WaitActionFinish();
         if (EventWorks.Get(16463) == 3){
-            Message.ActorEx(1024, 17, 15, 0, 0);
+            Message.ActorEx(1024, 17, 1, 0, 0);
             Input.LastKeyWait();
             Message.CloseAll();
             goto LABEL_EndFishermanSid;
         }
         Trainer.PlayBGMPush(283);
-        Message.ActorEx(1024, 16, 15, 0, 0);
+        Message.ActorEx(1024, 16, 1, 0, 0);
         Input.LastKeyWait();
         Message.CloseAll();
         Battle.CallTrainerBattle(283, 0, 0);
@@ -195,7 +195,7 @@ public class MainEvents {
             Battle.CallTrainerLose();
         }
         Battle.EndTrainerBattle();
-        Message.ActorEx(1024, 17, 15, 0, 0);
+        Message.ActorEx(1024, 17, 1, 0, 0);
         Input.LastKeyWait();
         Message.CloseAll();
         EventWorks.Set(16463, 3);
@@ -210,12 +210,12 @@ public class MainEvents {
     public static void main_9(){
         int isVictory;
         Actor.PauseAll();
-        ShowExclamationMark(1);
+        ShowExclamationMark(15);
         Actor.WaitActionFinish();
-        TurnSouth(255);
+        TurnWest(255);
         Actor.WaitActionFinish();
         Trainer.PlayBGMPush(414);
-        Message.ActorEx(1024, 18, 1, 0, 0);
+        Message.ActorEx(1024, 18, 15, 0, 0);
         Input.LastKeyWait();
         Message.CloseAll();
         Battle.CallTrainerBattle(414, 0, 0);
@@ -224,7 +224,7 @@ public class MainEvents {
             Battle.CallTrainerLose();
         }
         Battle.EndTrainerBattle();
-        Message.ActorEx(1024, 19, 1, 0, 0);
+        Message.ActorEx(1024, 19, 15, 0, 0);
         Input.LastKeyWait();
         Message.CloseAll();
         EventWorks.Set(16463, 3);
@@ -239,13 +239,13 @@ public class MainEvents {
         Actor.FacePlayer();
         Actor.WaitActionFinish();
         if (EventWorks.Get(16463) == 3){
-            Message.ActorEx(1024, 19, 1, 0, 0);
+            Message.ActorEx(1024, 19, 15, 0, 0);
             Input.LastKeyWait();
             Message.CloseAll();
             goto LABEL_EndFishermanBucky;
         }
         Trainer.PlayBGMPush(414);
-        Message.ActorEx(1024, 18, 1, 0, 0);
+        Message.ActorEx(1024, 18, 15, 0, 0);
         Input.LastKeyWait();
         Message.CloseAll();
         Battle.CallTrainerBattle(414, 0, 0);
@@ -254,7 +254,7 @@ public class MainEvents {
             Battle.CallTrainerLose();
         }
         Battle.EndTrainerBattle();
-        Message.ActorEx(1024, 19, 1, 0, 0);
+        Message.ActorEx(1024, 19, 15, 0, 0);
         Input.LastKeyWait();
         Message.CloseAll();
         EventWorks.Set(16463, 3);
@@ -501,7 +501,7 @@ public class MainEvents {
         Message.CloseAll();
         Message.ActorEx(1024, 25, 25, 0, 0);
         Message.CloseAll();
-        Global2805(210, 3)
+        Global2805(210, 3);
         Actor.Hide(25);
         Actor.Show(29);
         EventFlags.Clear(522);

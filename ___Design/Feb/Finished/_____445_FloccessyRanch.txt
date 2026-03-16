@@ -18,7 +18,8 @@ import messages.script.Msg0315.MSGID;
 	import system.Sound;
 	import system.System;
 	import system.text.WordSet;
-	
+	import event.Trainer;
+	import system.Field;
 public class MainEvents {
 	public static void main_1() { // @ 0x52
 	
@@ -342,15 +343,18 @@ public class MainEvents {
 		Sound.PVWait();
 		Message.WaitAdvance();
 		Message.CloseActor();
-        
+
+        ShowExclamationMark(0);
+        HopDown(0);
+        Actor.WaitActionFinish();
 		WordSet.LoadRivalName(1);
-		Message.Info(26, 1);
+		Message.Info(26, 2);
 		Message.CloseAll();
 		ActionSequence_0f2c(16);
         ShowExclamationMark(16);
 		Actor.WalkRoute(0, 42, 12, 1, 4, 0);
 		Actor.WaitActionFinish();
-		Trainer.PlayBGMPush(772);
+		Sound.BGMPlay(1101);
 		Message.ActorEx(1024, 61, 16, 5, 0);
         WordSet.LoadPlayerName(0);
         Message.ActorEx(1024, 62, 16, 5, 0);
@@ -361,6 +365,10 @@ public class MainEvents {
         TurnWest(16);
         Actor.WaitActionFinish();
         Message.ActorEx(1024, 64, 16, 5, 0);
+        Message.CloseAll();
+        WalkSouth(16);
+        TurnSouth(3);
+        Actor.WaitActionFinish();
         Message.ActorEx(1024, 65, 16, 5, 0);
         Message.CloseAll();
 
@@ -368,6 +376,8 @@ public class MainEvents {
 		// CHANGE THIS LATER
 
         // BATTLE 
+        Message.System(84, 2);
+        Message.CloseAll();
         //Battle.CallTrainerBattle(772, 0, 1);
         isVictory = 1; //Battle.IsTrainerVictory();
 		if (isVictory == 1) {
@@ -377,7 +387,7 @@ public class MainEvents {
 			Message.ActorEx(1024, 66, 16, 5, 0);
 			HopDown(16);
 			Message.ActorEx(1024, 67, 16, 5, 0);
-			Messgae.CloseAll();
+			Message.CloseAll();
 		} 
 		else{
 			// Battle.EndTrainerBattle();
@@ -386,24 +396,24 @@ public class MainEvents {
 			Message.ActorEx(1024, 66, 16, 5, 0);
 			HopDown(16);
 			Message.ActorEx(1024, 80, 16, 5, 0);
-			Messgae.CloseAll();
+			Message.CloseAll();
 		}
+		 HopDown(16);
+        Actor.WaitActionFinish();
+        HopDown(16);
+        Actor.WaitActionFinish();
+        HopDown(16);
+        Actor.WaitActionFinish();
         Message.Spiked(68, 2);
         Message.CloseAll();
         WalkSouth(16);
         Actor.WaitActionFinish();
         Message.ActorEx(1024, 69, 16, 5, 0);
-		Actor.New(51, 20, 1, 251, 110, 0);
-		Runtime.Sleep(4);
-		Actor.WalkRoute(251, 51, 23, 1, 4, 1);
-		Runtime.Sleep(16);
-		Sound.SEPlay(1422);
-		Actor.WaitActionFinish();
-		Sound.SEWait();
-		Actor.Hide(251);
+		Message.CloseAll();
 		Global2805(337, 1);
 		Message.ActorEx(1024, 70, 16, 5, 0);
 		Message.CloseAll();
+		Runtime.Sleep(16);
         HopDown(16);
         Actor.WaitActionFinish();
         Message.Spiked(71, 2);
@@ -414,37 +424,44 @@ public class MainEvents {
 		Message.CloseAll();
 
         Sound.PVPlay(507, 0);
-        Runtime.Sleep(16);
+        HopDown(3);
+        Message.ActorEx(1024, 82, 3, 3, 0);
+        Message.CloseAll();
+        Actor.WaitActionFinish();
+        
         TurnNorth(16);
-		Message.ActorEx(1024, 73, 3, 3, 0);
+		Message.ActorEx(1024, 73, 16, 3, 0);
 		Sound.PVWait();
         Message.CloseAll();
 		TurnSouth(16);
         Actor.WaitActionFinish();
 		if (isVictory != 1){
-			Message.ActorEx(1024, 81, 3, 3, 0);
+			Message.ActorEx(1024, 81, 16, 5, 0);
 			Message.CloseAll();
 			Sound.SEPlay(1391);
 			Sound.SEWait();
 			PokeParty.RecoverAll();
 		}
-        Message.ActorEx(1024, 73, 3, 3, 0);
-        Message.CloseAll();
+		Message.ActorEx(1024, 74, 16, 5, 0);
+        	Message.CloseAll();
 
 		// Look at alll of this!
-        Actor.JumpToGPos(16, 55, 1, 19);
-        BengaLeaves(16);
-        Runtime.Sleep(16);
-        TurnEast(255);
+		TurnEast(16);
+	
+	        Actor.JumpToGPos(16, 53, 2, 22);
+         TurnEast(255);
+         Actor.JumpToGPos(16, 56, 3, 22);
+         Message.Info(83, 2);
+         Runtime.Sleep(16);
+        Actor.JumpToGPos(16, 59, 2, 22);
         Actor.WaitActionFinish();
+        Runtime.Sleep(32);
         Actor.Hide(16);
+        Message.CloseAll();
 		Field.PlayMapBGM();
 
 		EVCamera.MoveToDefault(32);
-		ActionSequence_09b4(16);
 		Runtime.Sleep(20);
-		ActionSequence_0f2c(255);
-		Actor.WaitActionFinish();
 		ActionSequence_0a2c(3);
 		ActionSequence_0f24(255);
 		Actor.WaitActionFinish();
@@ -500,7 +517,6 @@ public class MainEvents {
 
 		EventWorks.Set(16551, 5);
 		EventWorks.Set(16549, 3);
-		EventWorks.Set(16494, 1);
 		EventFlags.Set(729);
 		EventFlags.Set(728);
 
@@ -907,7 +923,7 @@ public class MainEvents {
 		Runtime.FinishSubEvents();
 		Actor.UnpauseAll();
 	}
-
+	
     // New Team Plasma Script 
     public static void main_21() {
         
@@ -923,7 +939,7 @@ public class MainEvents {
         // Plasma Grunt Runs up, Bumps into Trainer
         ShowExclamationMark(255);
         Actor.WaitActionFinish();
-        Actor.New(playerX, playerZ+10, 1, 252, playerGruntOverworldID, 0);
+        Actor.New(playerX, playerZ+10, 1, 252, 293, 0);
 
         // Actor Runs up and Smacks the Trainer. 
         // Actor Runs North 
@@ -932,7 +948,7 @@ public class MainEvents {
         // Then move back one tile. 
 
         GruntRunsUp(252);
-        Runtime.Sleep(40);
+        Runtime.Sleep(36);
         Sound.SEPlay(1370); // CHANGE THIS TO THE BUMP ID 
         PlayerBumpsUp(255);
         GruntBumpsDown(252);
@@ -946,7 +962,7 @@ public class MainEvents {
         Message.CloseAll();
 
         // Walk North One Tile 
-        WalkNorth(252);
+        WalkNorthOneTile(252);
         Actor.WaitActionFinish();
 
 		Trainer.PlayBGMPush(763);
@@ -962,7 +978,8 @@ public class MainEvents {
 		Message.ActorEx(1024, 77, 252, 5, 0);
 		Message.CloseAll();
 
-        Sound.PVPlay(443);
+        Sound.PVPlay(443, 0);
+        ShowQuestionMark(16);
         HopRight(252);
 		Message.ActorEx(1024, 78, 252, 5, 0);
         Actor.WaitActionFinish();
@@ -970,21 +987,14 @@ public class MainEvents {
 		Message.CloseAll();
 
         // Grunt is leaving!
-        if (playerX == 1){
+        if (playerX == 46){
             PlasmaEscape1_A(252);
             Runtime.Sleep(8);
             TurnEast(255);
             Runtime.Sleep(8);
             TurnNorth(255);
         }
-        else if (playerX == 0){
-            PlasmaEscape1_B(252);
-            Runtime.Sleep(8);
-            TurnEast(255);
-            Runtime.Sleep(8);
-            TurnNorth(255);
-            
-        } else {
+        else {
             PlasmaEscape1_C(252);
             Runtime.Sleep(8);
             TurnWest(255);
@@ -993,6 +1003,7 @@ public class MainEvents {
         }
         Actor.WaitActionFinish();
         TurnSouth(252);
+        BengaReturn(16);
         Actor.WaitActionFinish();
         Message.ActorEx(1024, 79, 252, 5, 0);
 		Message.CloseAll();
@@ -1011,12 +1022,12 @@ public class MainEvents {
     }
 
     static meta void BengaLeaves(int npcId) : VActionSequence {
-		Action0013(10);
+		Action0013(2);
 	}
 
     static meta void PlasmaEscape1_A(int npcId) : VActionSequence {
 		Action0013(1); 
-        Action0010(4);
+        Action0010(3);
         Action0012(1);
 	}
     static meta void PlasmaEscape1_B(int npcId) : VActionSequence {
@@ -1029,12 +1040,12 @@ public class MainEvents {
 	}
     static meta void PlasmaEscape2(int npcId) : VActionSequence {
 		Action0012(5);
-        Action0011(8);
+        Action0010(8);
         Action0012(5);
 	}
 
     static meta void GruntRunsUp(int npcId) : VActionSequence {
-		Action0010(10);
+		Action0010(9);
 	}
     static meta void PlayerBumpsUp(int npcId) : VActionSequence {
 		Action0047(1);
@@ -1206,6 +1217,9 @@ public class MainEvents {
 	static meta void WalkNorth(int npcId) : VActionSequence {
 		Action000c(2);
 	}
+	static meta void WalkNorthOneTile(int npcId) : VActionSequence {
+		Action000c(1);
+	}
     static meta void TurnNorth(int npcId) : VActionSequence {
             Action0020(1);
 	}
@@ -1225,6 +1239,21 @@ public class MainEvents {
     static meta void ShowExclamationMark(int npcId) : VActionSequence {
         Action004b(1);
     }
+    static meta void HopLeft(int npcId) : VActionSequence {
+        Action0032(1);
+    }
+    static meta void ShowQuestionMark(int npcId) : VActionSequence {
+        Action009f(1);
+        Action0011(1);
+        Action0026(1);
+    }
+
+    static meta void BengaReturn(int npcId) : VActionSequence {
+        Action000c(1);
+        Action0022(1);
+    }
+
+
 	static meta void Global2805(int a1, int a2) : VGlobalCall[2805];
 
 	static native void Action000a(int amount) : 0xa;
@@ -1240,6 +1269,7 @@ public class MainEvents {
 	static native void Action0021(int amount) : 0x21;
 	static native void Action0022(int amount) : 0x22;
 	static native void Action0023(int amount) : 0x23;
+		static native void Action0026(int amount) : 0x26;
 	static native void Action0027(int amount) : 0x27;
 	static native void Action0032(int amount) : 0x32;
     static native void Action0033(int amount) : 0x33;

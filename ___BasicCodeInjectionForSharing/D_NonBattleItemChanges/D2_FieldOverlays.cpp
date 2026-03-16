@@ -321,7 +321,7 @@ extern "C"
                     random2 = GFL_RandomLCAlt(5u);
                     if (changedIVs[random2] == 0)
                     {
-                        changedIVs[random2] == 1;
+                        changedIVs[random2] = 1;
                         PokeParty_SetParam(v9, ivs[random2], 31);
                         numOfPerfectIVs++;
                     }
@@ -453,7 +453,7 @@ extern "C"
                 random2 = GFL_RandomLCAlt(5u);
                 if (changedIVs[random2] == 0)
                 {
-                    changedIVs[random2] == 1;
+                    changedIVs[random2] = 1;
                     PokeParty_SetParam(pPkm, ivs[random2], 31);
                     numOfPerfectIVs++;
                 }
@@ -528,33 +528,32 @@ extern "C"
         improveIVs(BoxPkm);
         if (GetIVSetting() == 2)
         {
-                PokeParty_SetParam(BoxPkm, PF_IvATK, 31);
-                PokeParty_SetParam(BoxPkm, PF_IvDEF, 31);
-                PokeParty_SetParam(BoxPkm, PF_IvHP, 31);
-                PokeParty_SetParam(BoxPkm, PF_IvSPA, 31);
-                PokeParty_SetParam(BoxPkm, PF_IvSPD, 31);
-                PokeParty_SetParam(BoxPkm, PF_IvSPE, 31);
+            PokeParty_SetParam(BoxPkm, PF_IvATK, 31);
+            PokeParty_SetParam(BoxPkm, PF_IvDEF, 31);
+            PokeParty_SetParam(BoxPkm, PF_IvHP, 31);
+            PokeParty_SetParam(BoxPkm, PF_IvSPA, 31);
+            PokeParty_SetParam(BoxPkm, PF_IvSPD, 31);
+            PokeParty_SetParam(BoxPkm, PF_IvSPE, 31);
         }
         else if (GetIVSetting() == 1)
         {
-                int numOfPerfectIVs = 0;
-                int random2 = 0;
-                PkmField ivs[6] = {PF_IvHP, PF_IvATK, PF_IvDEF, PF_IvSPA, PF_IvSPD, PF_IvSPE};
-                int changedIVs[6] = {0, 0, 0, 0, 0, 0};
-                do
+            int numOfPerfectIVs = 0;
+            int random2 = 0;
+            PkmField ivs[6] = {PF_IvHP, PF_IvATK, PF_IvDEF, PF_IvSPA, PF_IvSPD, PF_IvSPE};
+            int changedIVs[6] = {0, 0, 0, 0, 0, 0};
+            do
+            {
+                random2 = GFL_RandomLCAlt(5u);
+                if (changedIVs[random2] == 0)
                 {
-                    random2 = GFL_RandomLCAlt(5u);
-                    if (changedIVs[random2] == 0)
-                    {
-                        changedIVs[random2] == 1;
-                        PokeParty_SetParam(BoxPkm, ivs[random2], 31);
-                        numOfPerfectIVs++;
-                    }
-                } while (numOfPerfectIVs < 3);
+                    changedIVs[random2] = 1;
+                    PokeParty_SetParam(BoxPkm, ivs[random2], 31);
+                    numOfPerfectIVs++;
+                }
+            } while (numOfPerfectIVs < 3);
         }
         else
         {
-        
         }
         PokeParty_AddPkm(Party, BoxPkm);
         Pokedex = (_DWORD *)GameData_GetPokedex(gameData);
@@ -622,7 +621,7 @@ extern "C"
     };
     extern void FieldEncount_GenWildPokeParam(EncountManager *mgr, WildEncSlot *src, WildPokemonParam *dest);
     extern bool FieldEncount_CheckLevelRepelled(EncountManager *mgr, u32 level);
-    extern u16* EventWork_GetWkPtr(EventWorkSave *eventWork, int swkId);
+    extern u16 *EventWork_GetWkPtr(EventWorkSave *eventWork, int swkId);
     extern PlayerState *GameData_GetPlayerState(GameData *gameData);
     extern int PlayerState_GetZoneID(PlayerState *a1);
     extern int GetLeaguePokeCenReturnLocationIdx();
@@ -637,16 +636,16 @@ extern "C"
         {155, 16472, 2}, // Virizion Encounter Enabling
 
         /* STRANGE HOUSE ENCOUNTER DISABLING */
-        {462, 16441, 1}, 
-        {510, 16441, 1}, 
-        {511, 16441, 1}, 
-        {512, 16441, 1}, 
-        {513, 16441, 1}, 
-        {514, 16441, 1}, 
+        {462, 16441, 1},
+        {510, 16441, 1},
+        {511, 16441, 1},
+        {512, 16441, 1},
+        {513, 16441, 1},
+        {514, 16441, 1},
         {569, 16441, 1},
-        {570, 16441, 1}, 
-        {571, 16441, 1}, 
-        {572, 16441, 1}, 
+        {570, 16441, 1},
+        {571, 16441, 1},
+        {572, 16441, 1},
     };
 
     const u16 draydenSplitDisabledEncounterZones[7] = {
@@ -664,7 +663,7 @@ extern "C"
             if (zoneId == toggleEncounters[i].ZoneID)
             {
                 EventWorkSave *eventWork = GameData_GetEventWork(mgr->gameData);
-                u16* flagValue = EventWork_GetWkPtr(eventWork, toggleEncounters[i].flagToCheck);
+                u16 *flagValue = EventWork_GetWkPtr(eventWork, toggleEncounters[i].flagToCheck);
                 if (*flagValue == toggleEncounters[i].enablingValue)
                 {
                     // k::Printf("\nEncounters enabled! flag is %d, event flag = %d", toggleEncounters[i].flagToCheck, flagValue);
@@ -907,7 +906,8 @@ extern "C"
             Pkm = PokeParty_GetPkm(pParty, i);
             if (PokeParty_GetParam(Pkm, PF_NowHP, 0) != 0)
             {
-                if (shouldHeal){
+                if (shouldHeal)
+                {
                     PokeParty_Recover(Pkm);
                 }
                 check = 1;
@@ -1028,14 +1028,15 @@ extern "C"
     extern int positionShakingSpot(EncountSystem *encSys, int a2, u8 type);
     extern void sub_21A272C(void **a1, int a2);
     extern void setShakingSpotOff(EncountState *result);
-    
+
     bool isPhenoDisabled(EncountSystem *mgr)
     {
         PlayerState *playerState = GameData_GetPlayerState(mgr->m_GameData);
         int zoneId = PlayerState_GetZoneID(playerState);
         EventWorkSave *eventWork = GameData_GetEventWork(mgr->m_GameData);
 
-        if (EventWork_FlagGet(eventWork, 2406)){
+        if (EventWork_FlagGet(eventWork, 2406))
+        {
             return true;
         }
         for (int i = 0; i < ARRAY_COUNT(toggleEncounters); i++)
@@ -1347,33 +1348,32 @@ extern "C"
 
         if (GetIVSetting() == 2)
         {
-                PokeParty_SetParam(pkm, PF_IvATK, 31);
-                PokeParty_SetParam(pkm, PF_IvDEF, 31);
-                PokeParty_SetParam(pkm, PF_IvHP, 31);
-                PokeParty_SetParam(pkm, PF_IvSPA, 31);
-                PokeParty_SetParam(pkm, PF_IvSPD, 31);
-                PokeParty_SetParam(pkm, PF_IvSPE, 31);
+            PokeParty_SetParam(pkm, PF_IvATK, 31);
+            PokeParty_SetParam(pkm, PF_IvDEF, 31);
+            PokeParty_SetParam(pkm, PF_IvHP, 31);
+            PokeParty_SetParam(pkm, PF_IvSPA, 31);
+            PokeParty_SetParam(pkm, PF_IvSPD, 31);
+            PokeParty_SetParam(pkm, PF_IvSPE, 31);
         }
         else if (GetIVSetting() == 1)
         {
-                int numOfPerfectIVs = 0;
-                int random2 = 0;
-                PkmField ivs[6] = {PF_IvHP, PF_IvATK, PF_IvDEF, PF_IvSPA, PF_IvSPD, PF_IvSPE};
-                int changedIVs[6] = {0, 0, 0, 0, 0, 0};
-                do
+            int numOfPerfectIVs = 0;
+            int random2 = 0;
+            PkmField ivs[6] = {PF_IvHP, PF_IvATK, PF_IvDEF, PF_IvSPA, PF_IvSPD, PF_IvSPE};
+            int changedIVs[6] = {0, 0, 0, 0, 0, 0};
+            do
+            {
+                random2 = GFL_RandomLCAlt(5u);
+                if (changedIVs[random2] == 0)
                 {
-                    random2 = GFL_RandomLCAlt(5u);
-                    if (changedIVs[random2] == 0)
-                    {
-                        changedIVs[random2] == 1;
-                        PokeParty_SetParam(pkm, ivs[random2], 31);
-                        numOfPerfectIVs++;
-                    }
-                } while (numOfPerfectIVs < 3);
+                    changedIVs[random2] = 1;
+                    PokeParty_SetParam(pkm, ivs[random2], 31);
+                    numOfPerfectIVs++;
+                }
+            } while (numOfPerfectIVs < 3);
         }
         else
         {
-        
         }
 
         PokeParty_SetParam(pkm, PF_ContestCool, tradePkm->ContestCool);
@@ -1393,6 +1393,200 @@ extern "C"
         EventFieldTrade_DebugLogPkm(pkm);
         PokeParty_RecalcStats(pkm);
     }
+
+    extern u32 getIDAsUInt(void *pTrainerInfo);
+    extern PartyPkm *PokeParty_NewPkm(
+        u16 species,
+        u8 level,
+        u32 idSet,
+        AbilLock abil_num,
+        u32 ivs,
+        u32 pid,
+        u32 abil_mask);
+    extern int GetItemParam(u16 itemId, u16 itemField, HeapID heapId);
+    extern int PML_ItemGetMonsBallID(u16 itemId);
+    extern int ZoneData_GetPlaceNameID(u16 zoneId);
+    extern int howManyTotalPokesAreInBoxes(void *boxAccessor);
+    extern void* GameData_GetBoxSaveAccessor(GameData *gameData);
+    extern int nullsub_28(void* result);
+    extern b32 BoxSaveAccessor_InsertPkm(void *boxAccessor, BoxPkm *pkm);
+
+    int THUMB_BRANCH_GameData_AddBoxPkm(GameData *gameData, GenPokeParam *param)
+    {
+        void *BoxSaveAccessor; // r6
+        PartyPkm *partyPkm;                 // r5
+        BoxPkm *v7;                       // r0
+        void *Pokedex;                  // r0
+
+        BoxSaveAccessor = GameData_GetBoxSaveAccessor(gameData);
+        if (howManyTotalPokesAreInBoxes(BoxSaveAccessor) >= 720)
+        {
+            return 0;
+        }
+        partyPkm = GameData_MakeBoxPkm(gameData, param);
+
+        if (param->ShinyType == SHINY_PREVENT){
+            improveIVs(partyPkm);
+        }
+        if (WhiteListedPokemon[param->Species] == 1)
+        {
+            int random2 = GFL_RandomLCAlt(100u);
+
+            if (random2 <= 10u)
+            {
+                PokeParty_SetHiddenAbil(partyPkm, param->Species, param->Forme);
+            }
+        }
+         k::Printf("\nCrash Check #9: Species %d\n", param->Species);
+        if (GetIVSetting() == 2)
+        {
+            PokeParty_SetParam(partyPkm, PF_IvATK, 31);
+            PokeParty_SetParam(partyPkm, PF_IvDEF, 31);
+            PokeParty_SetParam(partyPkm, PF_IvHP, 31);
+            PokeParty_SetParam(partyPkm, PF_IvSPA, 31);
+            PokeParty_SetParam(partyPkm, PF_IvSPD, 31);
+            PokeParty_SetParam(partyPkm, PF_IvSPE, 31);
+        }
+        else if (GetIVSetting() == 1)
+        {
+            int numOfPerfectIVs = 0;
+            int random2 = 0;
+            PkmField ivs[6] = {PF_IvHP, PF_IvATK, PF_IvDEF, PF_IvSPA, PF_IvSPD, PF_IvSPE};
+            int changedIVs[6] = {0, 0, 0, 0, 0, 0};
+            do
+            {
+                random2 = GFL_RandomLCAlt(5u);
+                if (changedIVs[random2] == 0)
+                {
+                    changedIVs[random2] = 1;
+                    PokeParty_SetParam(partyPkm, ivs[random2], 31);
+                    numOfPerfectIVs++;
+                }
+            } while (numOfPerfectIVs < 3);
+        }
+        else
+        {
+        }
+        PokeParty_RecalcStats(partyPkm);
+
+        v7 = (BoxPkm *)nullsub_28(partyPkm);
+        BoxSaveAccessor_InsertPkm(BoxSaveAccessor, v7);
+        Pokedex = GameData_GetPokedex(gameData);
+        addPkmToDex((unsigned int*)Pokedex, partyPkm);
+        GFL_HeapFree(partyPkm);
+        return 1;
+    }
+
+
+    // PartyPkm *THUMB_BRANCH_SAFESTACK_GameData_MakeBoxPkm(GameData *gameData, GenPokeParam *param)
+    // {
+    //     u16 *GameDataPlayerInfo;  // r7
+    //     u16 *v5;                  // r0
+    //     unsigned int IDAsUInt;    // r4
+    //     u32 v7;                   // r0
+    //     PartyPkm *pkm;            // r4
+    //     int MonsBallID;           // r0
+    //     PlayerState *PlayerState; // r0
+    //     u16 ZoneID;               // r0
+    //     u16 PlaceNameID;          // r0
+    //     k::Printf("\nCrash Check #1: Species %d\n", param->Species);
+    //     GameDataPlayerInfo = GetGameDataPlayerInfo(gameData);
+    //      k::Printf("\nCrash Check #2: Species %d\n", param->Species);
+    //     v5 = GetGameDataPlayerInfo(gameData);
+    //      k::Printf("\nCrash Check #3: Species %d\n", param->Species);
+    //     IDAsUInt = getIDAsUInt(v5);
+    //      k::Printf("\nCrash Check #4: Species %d\n", param->Species);
+    //     v7 = PML_GenPID(IDAsUInt, param->Species, param->Forme, param->Gender, param->AbilLock, param->ShinyType);
+    //      k::Printf("\nCrash Check #5: Species %d\n", param->Species);
+
+    //     //  PokeParty_CreatePkm(
+    //     //     pkm,
+    //     //     (MonsNo)(unsigned __int16)param->Species,
+    //     //     param->Level,
+    //     //     IDAsUInt,
+    //     //     ABIL_0,
+    //     //     0xFFFFFFFF,
+    //     //     v7,
+    //     //     0);
+    //     pkm = PokeParty_NewPkm(param->Species, param->Level, IDAsUInt, ABIL_0, 0xFFFFFFFF, v7, 0);
+    //      k::Printf("\nCrash Check #6: Species %d\n", param->Species);
+    //     PokeParty_ChangeForme(pkm, (unsigned __int16)param->Forme);
+    //     PokeParty_SetParam(pkm, PF_Item, param->HeldItem);
+    //      k::Printf("\nCrash Check #7: Species %d\n", param->Species);
+    //     if (param->HiddenAbility)
+    //     {
+    //         PokeParty_SetHiddenAbil(pkm, param->Species, param->Forme);
+    //     }
+    //     if (GetItemParam(param->BallItemID, 0xF, param->HeapID) == 4)
+    //     {
+    //         MonsBallID = PML_ItemGetMonsBallID(param->BallItemID);
+    //         PokeParty_SetParam(pkm, PF_Pokeball, MonsBallID);
+    //     }
+    //      k::Printf("\nCrash Check #8: Species %d\n", param->Species);
+        // if (WhiteListedPokemon[param->Species] == 1)
+        // {
+        //     int random2 = GFL_RandomLCAlt(100u);
+
+        //     if (random2 <= 10u)
+        //     {
+        //         PokeParty_SetHiddenAbil(pkm, param->Species, param->Forme);
+        //     }
+        // }
+        //  k::Printf("\nCrash Check #9: Species %d\n", param->Species);
+        // if (GetIVSetting() == 2)
+        // {
+        //     PokeParty_SetParam(pkm, PF_IvATK, 31);
+        //     PokeParty_SetParam(pkm, PF_IvDEF, 31);
+        //     PokeParty_SetParam(pkm, PF_IvHP, 31);
+        //     PokeParty_SetParam(pkm, PF_IvSPA, 31);
+        //     PokeParty_SetParam(pkm, PF_IvSPD, 31);
+        //     PokeParty_SetParam(pkm, PF_IvSPE, 31);
+        // }
+        // else if (GetIVSetting() == 1)
+        // {
+        //     int numOfPerfectIVs = 0;
+        //     int random2 = 0;
+        //     PkmField ivs[6] = {PF_IvHP, PF_IvATK, PF_IvDEF, PF_IvSPA, PF_IvSPD, PF_IvSPE};
+        //     int changedIVs[6] = {0, 0, 0, 0, 0, 0};
+        //     do
+        //     {
+        //         random2 = GFL_RandomLCAlt(5u);
+        //         if (changedIVs[random2] == 0)
+        //         {
+        //             changedIVs[random2] = 1;
+        //             PokeParty_SetParam(pkm, ivs[random2], 31);
+        //             numOfPerfectIVs++;
+        //         }
+        //     } while (numOfPerfectIVs < 3);
+        // }
+        // else
+        // {
+        // }
+
+    //     k::Printf("\nMade Box Pkm for species %d\n", param->Species);
+
+    //     PlayerState = GameData_GetPlayerState(gameData);
+
+    //     k::Printf("\nCrash Check #10: Species %d\n", param->Species);
+
+    //     ZoneID = PlayerState_GetZoneID(PlayerState);
+
+    //     k::Printf("\nCrash Check #11: Species %d\n", param->Species);
+
+    //     PlaceNameID = ZoneData_GetPlaceNameID(ZoneID);
+
+    //     k::Printf("\nCrash Check #12: Species %d\n", param->Species);
+
+    //     PokeParty_SetupMetData(pkm, PKM_OBTAIN_CAPTURE, GameDataPlayerInfo, PlaceNameID, param->HeapID);
+
+    //     k::Printf("\nCrash Check #13: Species %d\n", param->Species);
+
+    //     PokeParty_RecalcStats(pkm);
+
+    //     k::Printf("\nCrash Check #14: Species %d\n", param->Species);
+
+    //     return pkm;
+    // }
 
     // void THUMB_BRANCH_SAFESTACK_createEggPkm(PartyPkm *newPkm, EggPkm *eggPkm, void *pTrainerInfo, u16 location, HeapID heapId)
     // {

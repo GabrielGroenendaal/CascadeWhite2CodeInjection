@@ -144,11 +144,12 @@ public class MainEvents {
 		Actor.PauseAll();
 		Actor.Hide(8);
 
-        HopLeft(494);
-        Sound.PVPlay(494);
+        HopLeft(10);
+        Sound.PVPlay(494, 0);
         Sound.PVWait();
         Actor.WaitActionFinish();
 		Message.Info(36, 1);
+		Message.WaitAdvance();
 		Message.CloseAll();
 		EVCamera.Init();
 		EVCamera.Unbind();
@@ -214,8 +215,10 @@ public class MainEvents {
         
 
 		ActionSequence_0464(1);
-        Runtime.Sleep(16);
-        WalkNorth(victiniEntity);
+        Runtime.Sleep(8);
+        if (v34 == 695) {
+        	WalkNorth(victiniEntity);
+        }
         Runtime.Sleep(8);
         FollowAlder(victiniEntity);
 		Actor.WaitActionFinish();
@@ -592,8 +595,12 @@ public class MainEvents {
     static meta void HopDown(int npcId) : VActionSequence {
         Action0031(1);
     }
-
-
+	static meta void TurnEast(int npcId) : VActionSequence {
+		Action0023(1);
+	}
+	static meta void TurnWest(int npcId) : VActionSequence {
+		Action0022(1);
+	}
 	static meta void Global2805(int a1, int a2) : VGlobalCall[2805];
 
 	static native void Action0002(int amount) : 0x2;
@@ -610,7 +617,8 @@ public class MainEvents {
 	static native void Action003a(int amount) : 0x3a;
 	static native void Action003f(int amount) : 0x3f;
 	static native void Action00a1(int amount) : 0xa1;
-    static native void Action00a1(int amount) : 0xa0;
+    static native void Action00a0(int amount) : 0xa0;
+     static native void Action004b(int amount) : 0x4b;
     static native void Action009f(int amount) : 0x9f;
     static native void Action0030(int amount) : 0x30;
     static native void Action0031(int amount) : 0x31;

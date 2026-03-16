@@ -775,7 +775,7 @@ public class MainEvents {
         int BengaY;
         int BengaZ;
 
-        BengaEntity = 10; // CHANGE THIS LATER 
+        BengaEntity = 4; // CHANGE THIS LATER 
         messageStart = 52;
 
         Actor.PauseAll();
@@ -811,7 +811,7 @@ public class MainEvents {
         Input.LastKeyWait();
         Message.CloseAll();
 
-        Actor.WalkRoute(BengaEntity, BengaX+2, BengaZ, 0, 8, 0);
+        Actor.WalkRoute(BengaEntity, BengaX, BengaZ-2, 0, 8, 0);
         TurnEast(BengaEntity);
         Actor.WaitActionFinish();
         

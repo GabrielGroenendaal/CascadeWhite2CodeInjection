@@ -4396,30 +4396,30 @@ extern "C"
 
 
     // THIS IS THE FUNCTION I THINK WE NEED TO EDIT.
-    extern "C" u32 checkEVFlags()
-    {
-        EventWorkSave *eventWork = GameData_GetEventWork(GAME_DATA);
-        u16 *lvl_cap_ptr = EventWork_GetWkPtr(eventWork, 16434);
-        return *lvl_cap_ptr;
-    }
-    extern "C" void* PML_PersonalLoadBW2(u16 species, u16 form);
-    extern "C" u32 PML_PersonalGetParam(void *personal, PersonalField field);
-    extern "C" u32 THUMB_BRANCH_PML_PersonalGetParamSingle(u16 species, u16 form, PersonalField field)
-    {
+    // extern "C" u32 checkEVFlags()
+    // {
+    //     EventWorkSave *eventWork = GameData_GetEventWork(GAME_DATA);
+    //     u16 *lvl_cap_ptr = EventWork_GetWkPtr(eventWork, 16434);
+    //     return *lvl_cap_ptr;
+    // }
+    // extern "C" void* PML_PersonalLoadBW2(u16 species, u16 form);
+    // extern "C" u32 PML_PersonalGetParam(void *personal, PersonalField field);
+    // extern "C" u32 THUMB_BRANCH_PML_PersonalGetParamSingle(u16 species, u16 form, PersonalField field)
+    // {
 
-        void *BW2; // r0
-        u32 output; 
-        u32 postModOutput;
-        BW2 = PML_PersonalLoadBW2(species, form);
-        output = PML_PersonalGetParam(BW2, field);
+    //     void *BW2; // r0
+    //     u32 output; 
+    //     u32 postModOutput;
+    //     BW2 = PML_PersonalLoadBW2(species, form);
+    //     output = PML_PersonalGetParam(BW2, field);
 
-        if (field == Personal_EvATK || field == Personal_EvDEF || field == Personal_EvHP || field == Personal_EvSPA || field == Personal_EvSPD || field == Personal_EvSPE)
-        {
-           postModOutput *= checkEVFlags();
-       }
-       k::Printf("\n===PersonalGetParamSingle===species is %d, form is %d, field is %d, output is %d, postModOutput is %d", species, form, field, output, postModOutput);
-        return output;
-    }
+    //     if (field == Personal_EvATK || field == Personal_EvDEF || field == Personal_EvHP || field == Personal_EvSPA || field == Personal_EvSPD || field == Personal_EvSPE)
+    //     {
+    //        postModOutput *= checkEVFlags();
+    //    }
+    //    k::Printf("\n===PersonalGetParamSingle===species is %d, form is %d, field is %d, output is %d, postModOutput is %d", species, form, field, output, postModOutput);
+    //     return output;
+    // }
 
 
 #pragma endregion

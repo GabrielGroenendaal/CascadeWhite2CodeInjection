@@ -2676,12 +2676,12 @@ void Sequence229()
 	End();
 }
 
-/* BLUE Shard x10 - Clay Tunnel */
+/* BLUE Shard x6 - Clay Tunnel */
 void Sequence230()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 73);
-	SetVarEqVal(0x800D, 10);
+	SetVarEqVal(0x800D, 6);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -2712,7 +2712,7 @@ void Sequence232()
 	End();
 }
 
-/* BLUE Shard (x10) - Clay Tunnel (Skyla Split) */
+
 void Sequence233()
 {
 	LockAll();
@@ -3998,7 +3998,7 @@ void Sequence344()
 	End();
 }
 
-/* Blue SHard x5 (Abyssal Ruins)*/
+/* Blue Shard x5 (Abyssal Ruins)*/
 void Sequence345()
 {
 	LockAll();

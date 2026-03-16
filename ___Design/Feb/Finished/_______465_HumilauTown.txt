@@ -833,6 +833,16 @@ public class MainEvents {
 		SwimDownAndOut(SwimmerEntity);
 		Actor.WaitActionFinish();
 		Actor.Hide(SwimmerEntity);
+
+		ShowExclamationMark(17); 
+		TurnSouth(17);
+		Actor.WaitActionFinish();
+
+		ChaseSwimmer(17);
+		Actor.WaitActionFinish();
+		Actor.JumpToGPos(17, 778, 0, 195);
+		Actor.Hide(17);
+		
 		EventFlags.Set(547);
 		EventWorks.Set(16493, 1);
 
@@ -846,7 +856,11 @@ public class MainEvents {
 		EventWorks.Set(16462, 1);
 
 	}
-
+	static meta void ChaseSwimmer(int npcId) :  VActionSequence {
+		Action0011(1);
+		Action0013(2);
+		Action0025(1);
+	}
 	static meta void SwimDownAndOut(int npcId) :  VActionSequence {
 		Action0011(8);
 	}
@@ -1139,6 +1153,7 @@ public class MainEvents {
 	static native void Action000c(int amount) : 0xc;
 	static native void Action000d(int amount) : 0xd;
 	static native void Action000e(int amount) : 0xe;
+	static native void Action0025(int amount) : 0x25;
 	static native void Action000f(int amount) : 0xf;
     static native void Action0011(int amount) : 0x11;
 	static native void Action0012(int amount) : 0x12;

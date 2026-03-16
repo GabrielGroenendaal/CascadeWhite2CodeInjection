@@ -16,6 +16,9 @@ import system.Runtime;
 import system.Sound;
 import system.text.WordSet;
 
+import event.Trainer;
+import system.Field;
+
 public class MainEvents {
 	public static void main_1() { // @ 0x57
 		int v16;
@@ -220,59 +223,63 @@ public class MainEvents {
 	   
 	    Actor.PauseAll();
 	
-	
+		Sound.SEPlay(1351);
+
 	    Message.Spiked(textId, 2);
-	    ShowQuestionMark(255);
-	    TurnSouth(255);
+	    
 	    Actor.WaitActionFinish();
 	    Message.WaitAdvance();
 	    Message.CloseAll();
-	
-	    Actor.New(bengaId, 4, -48, 121, 304, 0);
+		TurnWest(255);
+	    ShowQuestionMark(255);
+	    Actor.WaitActionFinish();
+	    Actor.New(5, 21, 0, 251, 304, 0);
 	
 	    // X, Y, Z
-	    Overlay67.CMD_3E8(5, 65531, 151);
+	    Actor.SetGPos(251, 8, 0, 23, 0);
 	    // Entity, X, Z, Direction
-		Overlay67.CMD_3E9(bengaId, 11, 21, 2);
+		Actor.JumpToGPos(251, 8, 0, 19);
 	
-	    Message.Spiked(textId+1, 2);
-	    BengaZoom(bengaId);
-	    TurnWest(255);
+	    Message.Spiked(14, 2);
+	    BengaZoom(251);
+	    TurnSouth(1);
 	    Actor.WaitActionFinish();
 	    Message.WaitAdvance();
 	    Message.CloseAll();
 	
-	    ShowExclamationMark(bengaId);
-	    TurnEast(bengaId);
+	    ShowExclamationMark(251);
+	    TurnEast(251);
 	    Actor.WaitActionFinish();
 	
 	    // Walks to the player 
-	    WalkEastTwoTiles(bengaId);
-	
+	    Trainer.PlayBGMPush(773);
+	    ApproachPlayer(251);
+		Actor.WaitActionFinish();
 	    WordSet.LoadPlayerName(0);
-	    Message.ActorEx(1024, textId+2, bengaId, 0, 0);
-	    TurnSouth(bengaId);
-	    Message.ActorEx(1024, textId+3, bengaId, 0, 0);
+	    Message.ActorEx(1024, textId+2, 251, 0, 0);
+	    TurnSouth(251);
+	    Message.ActorEx(1024, textId+3, 251, 0, 0);
 	    Message.CloseAll();
-	    ShowMusicNote(bengaId);
+	    ShowMusicNote(251);
 	    Actor.WaitActionFinish();
-	    Message.ActorEx(1024, textId+4, bengaId, 0, 0);
-	    TurnEast(bengaId);
-	    Message.ActorEx(1024, textId+5, bengaId, 0, 0);
-	    TurnWest(bengaId);
-	    Message.ActorEx(1024, textId+6, bengaId, 0, 0);
+	    Message.ActorEx(1024, textId+4, 251, 0, 0);
+	    TurnEast(251);
+	    Message.ActorEx(1024, textId+5, 251, 0, 0);
+	    TurnWest(251);
+	    Message.ActorEx(1024, textId+6, 251, 0, 0);
 	    Input.LastKeyWait();
 	    Message.CloseAll();
 	
 	    // Benga Leaves 
-	    BengaLeaves(bengaId);
-	    Runtime.Sleep(36);
-	    ShowQuestionMark(irisEntity);
-	    TurnWest(irisEntity);
-	    Actor.WaitActionFinish();
-	    Actor.Hide(bengaId);
-	
-	    EventWorks.Set(16494, 2);
+	    BengaLeaves(251);
+	    Runtime.Sleep(16);
+	    TurnWest(1);
+	    ShowQuestionMark(1);
+	    Runtime.Sleep(16);
+	    Actor.Hide(251);
+		Field.PlayMapBGM();
+		Actor.WaitActionFinish();
+	    EventWorks.Set(16494, 1);
 	    Runtime.FinishSubEvents();
 		Actor.UnpauseAll();
 	}
@@ -283,7 +290,12 @@ public class MainEvents {
 	    Action0014(6);
 	    Action0016(9);
 	}
-	
+	static meta void ApproachPlayer(int npcId) : VActionSequence {
+		// Input this stuff later 
+	    Action0017(2);
+	    Action0015(2);
+	    Action0017(3);
+	}
 	static meta void BengaZoom(int npcId) : VActionSequence {
 		Action0014(2);
 		Action0016(2);
