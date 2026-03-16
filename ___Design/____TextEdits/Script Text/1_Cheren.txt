@@ -1,0 +1,747 @@
+
+
+
+----- TEXT FILE 169----- Aspertia City
+0: Hi, [VAR TRNAME(0)]!\c
+1: [VAR TRNAME(1)]: Hey!\nYou get a Pokémon yet?\c\nThere aren't any Pokémon Trainers\naround here, and I'm getting bored!\c
+2: What's that?\c\n...\c
+3: A person named Bianca is\ngiving you a Pokémon? Really?!\c
+4: [VAR TRNAME(1)]'s Sister: [VAR TRNAME(0)]...\c\nIf you get a Pokémon,\ntake really, really good care of it, OK?\c
+5: [VAR TRNAME(1)]: Yeah...\c
+6: OK! Let's go get your Pokémon!\c\nThere's something I have to do!\c\nAnd to do that, I need someone\nI can trust besides my partner Pokémon.\r\nA person I can trust!\c\nThat's right! I'm talking about you!\nYou seem like you've got good instincts!\c
+7: You head on home.\c
+8: OK, big brother!\c\nBye-bye, [VAR TRNAME(0)]!\c
+9: [VAR TRNAME(1)]: All riiight!\nLet's go find that person named Bianca!
+10:                          
+11: [VAR TRNAME(1)]: Still...\c\nYou're really lucky to get a Pokémon!
+12: [VAR TRNAME(1)]: Once you get a Pokémon,\nyou leave on a journey right away.\c\nWhen you do that, I'm gonna have you\nhelp me out!
+13: [VAR TRNAME(1)]: Hurry up already!\nLet's look for that Bianca person!
+14: [VAR TRNAME(1)]: Wait!\c\nI was just in the Pokémon Center,\nand there wasn't anyone like that there.\c
+15: [VAR TRNAME(1)]: The Trainers' School\nwas just finished!\c\nNo one is allowed inside until a\nTeacher, or better said, a Gym Leader,\r\nstarts working there!\c
+16: [VAR TRNAME(1)]: That goes to Route 19.\c\nIf we don't find Bianca here in town,\nI'll go check it for you!\c\n'Cause I already have a Pokémon!\c
+17: [VAR TRNAME(1)]: Oh, I get it!\c\nThe outlook is Aspertia's\nmost famous spot!\c\nI'll bet Bianca is up there\nlooking at the scenery!\c\nC'mon!\nGo get your Pokémon already!\c
+18: [VAR TRNAME(1)]: Listen, there's no way\nI got this wrong!
+19: [VAR TRNAME(1)]: Listen, there's no way\nI got this wrong!\c
+20: ???: It's sooo pretty!\c
+21: Hey there!\nDon't you agree?\c
+22: Oh!\nMy name is Bianca!\c\nI'm the assistant of the\nPokémon Professor--Professor Juniper.\c\nBy the way, I'm looking for someone.\nDo you know a person named [VAR TRNAME(0)]?
+23: Oh, wait!\nYou're [VAR TRNAME(0)]!\c\nWooow! You're ex-act-ly like\nwhat I heard!\c
+24: Oh, wait!\nYou're [VAR TRNAME(0)]!\c\nWooow! You're ex-act-ly like\nwhat I heard!\c
+25:                                            
+26: Bianca: Nice to meet you!\c\nI have a really important request\nto ask you!\c\nWill you help us complete\nthe Pokédex?
+27: Oh, wow, thanks!\c\nYour support will help Professor\nJuniper's research move forward!\c\nAnyway, filling up the\nPokédex is totally fun!
+28: N-no way...\c\nI-I must have misheard you.\nRight?\c\nThis is a very important request.\c\nWill you please help us complete\nthe Pokédex?
+29: [VAR TRNAME(1)]: See!\nBianca was here, right?\c\nNow, c'mon!\nGo and get your Pokémon!
+30: [VAR TRNAME(1)]: See!\nBianca was here, right?\c\nNow, c'mon!\nGo and get your Pokémon!\c
+31: Bianca: OK, then!\c\nTa-daaa!\c\nIn here is the Pokémon\nthat will be your partner!\c
+32:                                               
+33:                                              
+34:                                              
+35: [CENTER]The Water-type Pokémon\n[CENTER][VAR PKNAME(1)]
+36: [CENTER]The Fire-type Pokémon\n[CENTER][VAR PKNAME(1)]
+37: [CENTER]The Grass-type Pokémon\n[CENTER][VAR PKNAME(1)]
+38: Choose a Pokémon.
+39: Is this the Pokémon you want?
+40: Pick this one!
+41: YES
+42: NO
+43: [VAR TRNAME(0)] chose [VAR PKNAME(1)]!
+44: Bianca: Oh, wow! You and [VAR PKNAME(2)]\nare a perfect match!\c\nBy the way, would you like to give\na nickname to the Pokémon you chose?
+45: Bianca: Oh, OK, gotcha.\nYou're not going to give it a nickname.\c
+46: Bianca: [VAR PKNICK(0)]!\nIs that the nickname you want?
+47: Bianca: [VAR PKNICK(0)]!\nThat is such a great name!\c
+48: Bianca: Now you've got your Pokémon,\nso I'll give you this, too--a Pokédex!\c
+49: [VAR TRNAME(0)] received\nthe [COLOR(2)]Pokédex[COLOR(0)]!
+50: Bianca: You want to know what it does?\c\nThe Pokédex is a high-tech device\nthat automatically records the\r\nPokémon you encounter!\c\nSo Professor Juniper wants you to carry\nthis Pokédex, visit a lot of places, and\r\nmeet all the Pokémon in the Unova region!
+51: Still, that Professor Juniper!\c\nThe normal thing to do is to\nget an OK before sending\r\nsomeone clear out here, right?
+52: [VAR TRNAME(1)]: Heeey! How long are you\nplanning on keeping me waiting, anyway?\c\nHey! What's that?\c
+53: So that's your partner, huh?\c\nThat's great!\c\nMy sister already said so, but\ntake really, really good care\r\nof your Pokémon! Got it?\c\nWhat's that you're holding there?\c
+54: Bianca: It's a Pokédex!\c
+55: [VAR TRNAME(1)]: Please give me\na Pokédex, too!\c\nI want to get stronger!\c\nIf I have a Pokédex,\nI can learn more about Pokémon...\r\nThat'll make me tougher, right?\c
+56: Bianca: Um...who are you again?\c
+57: I'm [VAR TRNAME(1)]!\c\nI'm going to travel the Unova region\nwith my Pokémon partner in order\r\nto search for something very important!\c
+58: Bianca: Well, OK!\c\nI don't really get it, but going\non a journey is always good!\c\nAnyway, I just happen to have\nanother Pokédex on me!\c\nIt looks like Pokémon distribution has\nreally changed compared to two years\r\nago, so the more, the merrier!\c
+59: Bianca: Ooh, I thought of something cool!\c\nYou both have Pokémon, right?\nWhy don't you have a Pokémon battle?
+60: [VAR TRNAME(1)]: Let's see how good\na Trainer you are!\c\nI'll use my [VAR PKNAME(3)]\nthat I raised from an Egg!\c
+61: [VAR TRNAME(1)]: I lost...\nThis is different than battling\r\nwith wild Pokémon!\c\nWell, whatever.\nI'm just happy to know you're\r\na Trainer I can count on!\c\nCool. I'm heading off first!\nGet stronger!\c
+62: [VAR TRNAME(1)]: That was good enough\nfor your first battle!\c\nCool. I'm heading off first!\nGet stronger!\c
+63: Bianca: The Pokémon on both\nsides did their best!\c\nBut this little one is still weak,\nso battle with it and make it stronger!\c
+64: All righty, let's go make your Pokémon\nbetter at the Pokémon Center!\c\nIt's like the best place ever for\nPokémon who battle and get hurt!\c
+65: Bianca: The Pokémon Center is the\nsame no matter where you are!\c\nLet's go inside!\c
+66: Mom: Oh! Nice to meet you!\nYou must be Bianca, right?\c\nAnd [VAR TRNAME(0)] picked\n[VAR PKNAME(2)], then!\c\nHee hee.\nLooking good!\c
+67: Oh!\nI almost forgot!\c\nHere! Take these!\nI got them from work!\c
+68: [VAR TRNAME(0)] received\na pair of [COLOR(2)]Running Shoes[COLOR(0)]!
+69: Mom: These should help keep your\npartner nice and healthy!\c\nYou can also use your [COLOR(2)]PokéHelper[COLOR(0)] to\ncall a nurse to heal your Pokémon,\r\nwherever you are!\c
+70: [VAR TRNAME(1)]'s Sister: Um...\nThis is from me!\c
+71:                            
+72: Bianca: Why are there\ntwo Town Maps?\c
+73: [VAR TRNAME(1)]'s Sister: I want you to\ngive the other one to my big brother!\c
+74: Mom: That's a good idea! Even if it is\na single road to the ocean, having a\r\nTown Map is always nice.\c\nI mean, if you use a Town Map,\nyou'll know all about what the\r\nUnova region is like!\c
+75: Bianca: Aww, you guys!\nJust watching this makes me happy!\c\nC'mon, we're headed for Route 19!\nI'll teach you how to catch a Pokémon!\c
+76: Mom: Bon voyage!\c\nTake [VAR PKNAME(2)] and go see\nmany different Pokémon and\r\npeople with your own eyes!
+77: [VAR TRNAME(1)]'s Sister: Get along\nwith your Pokémon!
+78: Bianca: Heeey!\c
+79: Bianca: Yoo-hoo!\c
+80: How was it?\nHow did your Pokémon battle with\r\nthe Gym Leader go?\c\nOh! If it isn't the Basic Badge!\c\nWow! Amazing! And you just set off\non your journey with your Pokémon!\c\nYou definitely have potential\nas a Trainer! I'm sure of it!\c\nThis is from me!\nIt'll make your Pokémon look stylish!\c
+81: When a Pokémon holds a Wide Lens, they\nhave an easier time landing attacks!\c\nIt can be great for using moves like\nLeech Seed or Power Whip!\c
+82: Still, that Cheren...\c
+83: Cheren: Bianca!\c\nIt's been two years, hasn't it?\c
+84: Bianca: Oh wow!\c
+85: Wh-what's up?\c
+86: Cheren: I thought it would be a\ngood idea to register each other\r\nin the Xtransceiver!\c
+87: Now, you can communicate\nwith me from your Xtransceiver.\c
+88: Bianca: M-me, too!\c
+89: I registered Professor Juniper\nfor you, too!\c
+90: The Xtransceiver is ringing!
+91: [VAR TRNAME(0)] picked up the\nXtransceiver!\c
+92: Bianca: Hey, [VAR TRNAME(0)]!\nIsn't Professor Juniper cool?\c\nIf you talk to her on the Xtransceiver,\nshe'll evaluate the completeness\r\nof your Pokédex or tell you a lot about\r\nhow Pokémon evolve!\c\nAnd you can call us, too, of course!\c
+93: I'll tell you how well\nyou and your Pokémon\r\nare getting along, OK?!\c
+94: Cheren: Bianca makes a good point.\c\nI'll tell you what I know about Pokémon\nAbilities and Pokémon type matchups.\c
+95: Benga: Are you the Gym Leader?\nOne, two, three--let's battle!\c
+96: Cheren: You look like a tough Trainer.\c\nUnderstood.\nPlease come into my Pokémon Gym!\c
+97: Benga: What was that weak answer?!\nI'm definitely going to take you down!\c
+98: Bianca: Being a Gym Leader\nis even harder than I imagined.\c
+99: The next thing is to make it so you\ncan use the C-Gear.\c\nThe C-Gear is a cool device for\ncommunications, such as Infrared\r\nConnection or Nintendo Wi-Fi Connection.\c
+100: [VAR TRNAME(0)] obtained\nthe [COLOR(1)]C-Gear[COLOR(0)]!
+101: Turn on the C-Gear and\nestablish communications?
+102: YES
+103: NO
+104: Some functions of the C-Gear\nwill be restricted. Is that OK?
+105: Wireless communications\nare turned OFF.\c\nTurn wireless communications\nON in the System Settings.\r\nError code: 50699\c
+106: Check this! The C-Gear was activated,\nand that screen showed up!\c\nIf you touch the “?" icon in the\nbottom-right corner of the\r\nC-Gear screen, you can read about\r\nthe C-Gear.\c\nLike, what are you going to do now?\nYou know, there's another Pokémon Gym\r\nin Virbank City, which is just past\r\nFloccesy Town.
+107: If you want to turn on the C-Gear, touch\nthe Power symbol at the bottom right of\r\nthe C-Gear screen.\c\nThen, after turning on the power,\nif you touch the “?" icon in the\r\nbottom-right corner of the\r\nC-Gear screen, you can read about\r\nthe C-Gear.\c\nLike, what are you going to do now?\nYou know, there's another Pokémon Gym\r\nin Virbank City, which is just past\r\nFloccesy Town.
+108: [VAR TRNAME(1)]: Hey! My sis has something\nshe wants to tell you!\c
+109: [VAR TRNAME(1)]'s Sister: Um...\n[VAR TRNAME(0)]...\c\nMy Purrloin...\c\nIt evolved, but thank you\nvery much for finding it!\c
+110: [VAR TRNAME(1)]: There's more, right?\c
+111: [VAR TRNAME(1)]'s Sister: Um...\n[VAR TRNAME(0)]...\c\nThese days, I've been having\ndreams about a Pokémon.\r\nA Pokémon called Zoroark.\c\nIt was calling your name, [VAR TRNAME(0)]!\c
+112: [VAR TRNAME(1)]: I don't really get it,\nbut I hear that the Zoroark from her\r\ndreams is on Victory Road!\c\nThat's what she wanted to say.\nBe seeing you!\c
+113: Oh! Almost forgot.\c\nCongrats on becoming the Champion!\c\nI called it!\nYou've got good instincts!\c
+114: Trainers are the ones who\nhave their Pokémon partners battle.\c\nI hear Gym Leaders are\nreally strong Trainers!
+115: So about the Gym Leader Cheren...\c\nA few years ago he traveled all over\nthe Unova region with his Pokémon.
+116: I wish the Trainers' School\nwould hurry up and open!\c\nThere's so much about\nPokémon I want to know!
+117: I know lots about Pokémon!\c\n'Cause I learned so much\nat the Trainers' School!
+118: The view of Route 19\nfrom the outlook is\r\nAspertia City's pride and joy.
+119: The power of science is amazing!\c\nNow you can use communications\nto play with a hundred people\r\nat the same time!
+120: People go on journeys and become adults.\nMaybe I should leave this city, too...
+121: Sometimes wild Pokémon attack people!\c\nBut the ones you befriend, the ones that\nstay by your side, are Pokémon, too!
+122: Your mom's really good at\ngetting Pokémon to rest\r\nand making them feel better!
+123: Oh, hi!\c\nWhy, Aurea Juniper!\c\nIt's been far too long!\nWhat can I do for you?\c\n...\c\nWow! A Pokédex...\nFor my child?\c\nWhy, that's great! I think a journey\nwould be a wonderful experience!\c
+124: What now? She's already here?\c\nOh, for Pete's sake.\nYou never change.\c\nOnce you've decided on something,\nyou just start going.\c\nOK! Bianca, right?\nA big, green hat. Got it.\c\nOK!\nNo worries!\c
+125: This is Aspertia City.\nA city that reaches for the sky.
+126: [VAR TRNAME(0)]'s House
+127: Aspertia City Outlook Ahead\nUnova Unfolds before Your Eyes
+128: Trainers' School\nUnder Construction
+129: Aspertia City Pokémon Gym\nGym Leader: Cheren\r\nThe one who seeks the right path.
+130: Let's go!
+131: Mom gave [VAR TRNAME(0)] a bunch of\n[COLOR(2)]Healing Supplies[COLOR(0)]!
+132: The Level Cap is [COLOR(2)]11[COLOR(0)]!
+
+
+
+----- TEXT FILE 173----- ASPERTIA PLAYER HOME
+0: [VAR TRNAME(0)]!\nI'm home!\c
+1: I know you're bummed about not getting\nadmitted to the Blueberry Academy, but\r\nI have some great news!\c\nDo you know Professor Juniper?\nShe's a famous Pokémon researcher.\c\nActually, she's an old friend of mine,\nand she called me today for the\r\nfirst time in ages!\c
+2: This is out of the blue,\nbut, [VAR TRNAME(0)]!\c\nDo you want to have a Pokémon?
+3: I'll ask you again.\c\nDo you want a Pokémon?
+4: What?!\nThat's a shock!\c
+5: OK!\nStep one completed!\c\nWell then, do you know what a\nPokédex is?
+6: I knew you would!\c\nIsn't it amazing how it automatically\nrecords Pokémon you encounter?\c
+7: I see...\c\nIt's an amazing device that automatically\nrecords the Pokémon you encounter!\c
+8: Yet another question!\c\nYou want a Pokédex, right?
+9: OK!\nStep two completed!\c
+10: I don't mean to be selfish, but I'd like it\nif you were a bit more agreeable.\c\nHaving a Pokédex means\ntraveling around the world!\r\nThink about that for a second.\c\nSo I'll ask you again...\c\nYou want a Pokédex, right?
+11: [VAR TRNAME(0)]!\nYour course of action has been set!\c\nA girl named Bianca has come\nhere to meet you!\c\nShe's Professor Juniper's assistant.\nI was told to simply look for\r\na big, green hat!\c\nThat's right! You're going to\ngo look for Bianca.\c\nAnd then you'll get a Pokédex and a\nPokémon to be your partner!
+12: [VAR TRNAME(0)]!\nYour course of action has been set!\c\nA girl named Bianca has come\nhere to meet you!\c\nShe's Professor Juniper's assistant.\nI was told to simply look for\r\na big, green hat!\c\nThat's right! You're going\nto go look for Bianca.\c\nAnd then you'll get a Pokédex and a\nPokémon to be your partner!\c\nOh! Your Xtransceiver's in your\nBag, right?\r\nDo you know how to open your Bag?
+13: I'll send you off with these\nwords from “Adventure Rules."\r\n“The X Button is vitally important\r\nfor Trainers."\c\nOK! Off with you now!\nGo look for Bianca, OK!
+14: The girl's name is Bianca. I was told\nyou should look for a big, green hat!\c\nShe might be lost because\nthis is her first time here.\r\nGo look for her!
+15: Oh? Are the both of you\nout looking for Bianca?\c\nYou still haven't found her?\nLook for the big, green hat!
+16: Bianca: I was just talking to your mom!\c\nShe told me an amazing\nstory about Professor Juniper!
+17: Mom: Welcome back!\nHey, how are your Pokémon?\c\nWell, why don't you rest for a moment?\nNothing but hard work will wear you out!\c
+18: Mom: Looking good!\c\nBoth you and your Pokémon\nseem raring to go!
+19: Mom: The same step is a lot more\nwonderful if it's made while\r\nthinking about Pokémon!
+20: Mom: When I was younger,\nI worked at Pokémon Centers\r\nall over the place!
+21: Mom: I wish we knew how\nPokémon felt...
+22: Mom: Seeing energetic Pokémon\nfills me up with energy, too!\c\nIt reminds me of when I used\nto work in the Pokémon Center!
+23: Mom: Welcome home, [VAR TRNAME(0)]!\nSeems like you've had a rough time.\r\nRest here awhile.\c\n...\c
+24: Mom: OK! You and your Pokémon\nare full of energy!\c\nThis is a little advice from\nyour mother!\c\nWhen your Pokémon's stamina,\nI mean HP, goes down,\r\nheal them regularly at the\r\nPokémon Center!\c\nIf you're going on a long adventure,\nstock up on Potions\r\nat the Poké Mart!\c\nI'm cheering for you!\nHave a wonderful journey!
+25: Mom: Welcome home, [VAR TRNAME(0)]!\c
+26: Hmm. I barely recognize you!\c\nIt seems like you've seen\nand thought about a lot\r\nand grown into an adult!\c\nOh! Seems we're about to have\na visitor!\c
+27: ???: Oh, so you're [VAR TRNAME(0)]!\c\nMy name's Juniper!\c\nThe one who gave you\nyour Pokédex is my daughter!\c
+28: Mom: It's been a long time,\nProfessor Juniper!\c
+29: Cedric Juniper: Has it been that long?\nI can't remember...\c\nWell, that's not really why I came.\c
+30: [VAR TRNAME(0)]!\c\nTo commemorate your entering the\nHall of Fame, I'm going to upgrade\r\nyour Pokédex!\c
+31: [VAR TRNAME(0)]'s Pokédex\nwas upgraded!
+32: Cedric Juniper: I'll tell you what\nI upgraded, so why don't you ask?\c\nWell, actually, it's really simple!\c\nI made it so you can register\nall of the National Pokédex Pokémon.\c
+33: Mom: Wow! That's amazing!\nThat must be why you and\r\nyour daughter are Pokémon Professors!\c
+34: Cedric Juniper: Ha ha ha!\nFlattery won't get you anywhere!\c\nWell then, think I'd best\nbe taking my leave!\c
+35: Listen up! There are still many, many\nPokémon in this world!\c\nSometimes Pokémon attack\neach other for food.\c\nSometimes they help one another.\nThey protect each other's places.\c\nI'd be happy if you think about things\nlike that while looking at the Pokédex.\c
+36: Mom: He left...\c\nOh, that's right! [VAR TRNAME(0)]!\nI have a present for you, too!\c
+37: Mom: No matter what you do, your time\nis yours and your Pokémon's alone!\c\nSo decide what you want to do\nfor yourself and do it!\c\nI enjoy my own time\nin my own way, too!
+38:        
+39: It's a Wii console!\nIt has a Wii Remote!\c
+40: It's a brand-new bed!
+41: [VAR TRNAME(0)] checked the PC.\c\nAdventure Rule No. 1\nThe X Button opens the menu!\c\nAdventure Rule No. 2\nRecord your progress with SAVE.
+42: It's an award for completing\nthe Unova Pokédex!\c
+43: It's an award for completing\nthe National Mode Pokédex!\c
+44: It's a trophy proving you defeated\nthe Single Master in the Battle Subway!
+45: It's a trophy proving you defeated\nthe Double Master in the Battle Subway!
+46: It's a trophy proving you defeated\nthe Multi Master in the Battle Subway!
+47: It's a model of a Ferris wheel\nMom bought as a souvenir.
+48: It's a Darumaka Pokémon doll\nMom received in the past.\c\nWhen you get knocked down,\njust get up again!
+49: Hee hee!\nI came to visit!\c\nProfessor Juniper is investigating\na cave on Route 20!
+50: The Cave of Being...\c\nI wonder where those three Pokémon--\nUxie, Mesprit, and Azelf--flew off to?\c\nUxie is a Pokémon that\nsymbolizes knowledge...\c\nIf you mention a place in Unova\nwhere knowledge is gathered,\r\nthe first thing that comes to mind\r\nis Nacrene City's museum...\c\nMesprit is the Pokémon that\npresides over emotion, right?\c\nCelestial Tower's bell stirs emotions...\c\nAnd Azelf is willpower...\c\nThe desire to see something through...\nWhat place could represent that?
+51: Route 23's mysterious Pokémon...\c\nJust by being near it you can feel\nsome kind of willpower...\c\nIt's best to go have a look\nfor yourself!
+52: Sometimes, there are mass outbreaks\nof Pokémon, right?\c\nA lot of the exact same Pokémon\nshow up at the same time,\r\nand it's such a surprise!\c\nLike where were all of you before?\c\nIf you look at the electronic bulletin\nboards, you can learn about them!
+53: Professor Juniper--I'm talking about\nAurea Juniper, mind you...\c\nShe's researching the origins of Pokémon!\c\nIt's interesting!\nAmong the Pokémon that exist now,\r\nthere were some that have been\r\naround from the past and some\r\nthat were discovered recently.\c\nBy the way, her dad is researching\nPokémon distribution and biology!
+54: Your mom's amazing!\c\nIt's sweet how she met\nyour dad while working\r\nreception at the Pokémon Center.\c\nHee hee!\nShe's taught me a lot!
+55: Oh, don't forget your shoes!
+56: *Beep boop*
+57: Critical Hits are currently set to\n2x damage.\c\nWould you like to set them to\n1.5x damage?
+58: Critical Hits are currently set to\n1.5x damage.\c\nWould you like to set them to\n2x damage?
+59: Ok!\nWould you like to change another setting?
+60: Critical Hits have been changed to deal\n1.5x damage!\c\nTo revert this change, simply use this\nconsole again. 
+61: Would you like to change another\nsetting?
+62: This setting does not currently\nfunction!\c\nIn the full release, it will revert most\nTrainers to vanilla positions, reducing\rthe number of mandatory battles.
+63: Critical Hits
+64: IVs
+65: Trainer Placements
+66: Quit
+67: Critical Hits have been changed to deal\n2x damage!\c\nTo revert this change, simply use this\nconsole again. 
+68: This setting does not currently\nfunction!\c\nIn the full release, it will revert most\nTrainers to vanilla positions, reducing\rthe number of mandatory battles.
+69: Wild Pokémon are currently set to have\nrandom IVs.\c\nWould you like to change the IV\nsettings?
+70: Wild Pokémon are currently set to have\nperfect IVs.\c\nWould you like to change the IV\nsettings?
+71: Wild Pokémon have been set to have\nperfect IVs.\c\nTo revert this change, simply use this\nconsole again. 
+72: Wild Pokémon have been set to have\nrandom IVs.\c\nTo revert this change, simply use this\nconsole again. 
+73: -
+74: Wild Pokemon EVs
+75: Animated Backgrounds
+76: Advanced Enemy Switch AI
+77: Limited TMs
+78: Wild Pokémon are currently set to reward\nno Effort Values.\c\nWould you like to set them to reward\nEffort Values?
+79: Wild Pokémon are currently set to reward\nnormal Effort Values.\c\nWould you like to change Wild Pokémon's\nEffort Value yields?
+80: Wild Pokémon are currently set to reward\ndouble Effort Values.\c\nWould you like to change Wild Pokémon's\nEffort Value yields?
+81: Wild Pokémon are currently set to reward\nquadruple Effort Values.\c\nWould you like to change Wild Pokémon's\nEffort Value yields?
+82: Would you like Wild Pokémon to reward\nnormal Effort Values, doubled Effort Values,\nor quadrupled Effort Values?
+83: None (Default)
+84: Normal
+85: Double
+86: Quadruple
+87: Wild Pokémon have been set to reward\nno Effort Values.\c\nTo revert this change, simply use this\nconsole again. 
+88: Wild Pokémon have been set to reward\nnormal Effort Values.\c\nTo revert this change, simply use this\nconsole again.
+89: Wild Pokémon have been set to reward\ndouble Effort Values.\c\nTo revert this change, simply use this\nconsole again.  
+90: Wild Pokémon have been set to reward\nquadruple Effort Values.\c\nTo revert this change, simply use this\nconsole again. 
+91: Wild Pokémon have been set to have\nthree perfect IVs.\c\nTo revert this change, simply use this\nconsole again. 
+92: Random (Default)
+93: Enhanced
+94: Perfect
+95: Wild Pokémon are currently set to have\nthree perfect IVs.\c\nWould you like to change the IV\nsettings?
+96: Enemy trainer Pokémon are currently set\nto have variance in their move PP.\c\nThis variance can range from 1-3 extra\npower points for each move.\c\nWould you like to toggle this feature off?
+97: Enemy trainer Pokémon are currently set\nto have no variance in their move PP.\c\nThis variance, if turned on, can range\nfrom 1-3 extra PP for each move.\c\nWould you like to toggle this feature on?
+98: Enemy trainer Pokémon have been set to\nhave variance in their move PP.\c\nTo revert this change, simply use this\nconsole again.
+99: Enemy trainer Pokémon have been set to\nhave no variance in their move PP.\c\nTo revert this change, simply use this\nconsole again. 
+100: Restore Defaults
+101: Enemy trainers are currently configured\nto use advanced switch AI.\c\nThis includes behavior such as switching a\nPokémon out if it can't deal much damage.\c\nWould you like to toggle this feature\noff?
+102: Enemy trainers are currently configured\nto not use advanced switch AI.\c\nThis includes behavior such as switching a\nPokémon out if it can't deal much damage.\c\nWould you like to toggle this feature\non?
+103: Enemy trainers have been configured to\nuse advanced switch AI. \c\nTo revert this change, simply use this\nconsole again. 
+104: Enemy trainers have been configured to\nnot use advanced switch AI. \c\nTo revert this change, simply use this\nconsole again. 
+105: Technical Machines are currently set up\nto be a limited, consumable resource.\c\nWould you like to revert them to infinite\nusage?
+106: Technical Machines are currently set up\nto be an infinite, re-usable resource.\c\nWould you like to revert them to limited\nusage?
+107: Technical Machines have been set to\nbe a limited, consumable resource.\c\nTo revert this change, simply use this\nconsole again. 
+108: Technical Machines have been set to\nbe an infinite, re-usable resource.\c\nTo revert this change, simply use this\nconsole again. 
+109: Would you like to revert all settings\nto their default values?
+110: Flag 524 is Set.
+111: Flag 524 is Not Set.
+112: Flag 525 is Set.
+113: Flag 525 is Not Set.
+114: Enemy trainers are currently positioned\nto guard rewards and obstruct progress.\c\nWould you like to return them to vanilla\nstyle positioning?\r\nThis makes most route trainers optional. 
+115: Enemy trainers are current positioned\nlike the vanilla game and are largely\r\noptional.\c\nWould you like to revert trainers to be\npositioned as obstacles and gatekeepers?\r\nThis makes most route trainers mandatory. 
+116: Enemy trainers have been reverted to\nvanilla positions. 
+117: Enemy trainers have been restored to\ngatekeeping positions.
+118: Your Flags are gunked up, yo.
+119: Animated Backgrounds are currently\ndisabled.\c\nThese 3D backgrounds can cause\nperformance issues and are not finished.\r\nWould you like to enable them? 
+120: Animated Backgrounds are currently\nenabled.\c\nThese 3D backgrounds can cause\nperformance issues and are not finished.\r\nWould you like to disable them?
+121: Animated Backgrounds have been enabled.\c\nTo revert this change, simply use this\nconsole again.
+122: Animated Backgrounds have been disabled.\c\nTo revert this change, simply use this\nconsole again.
+123: Wild Pokémon are currently set to reward\nno Effort Values.\c\nWould you like to set them to reward\nEffort Values?
+124: Wild Pokémon are currently set to reward\nnormal Effort Values.\c\nWould you like to change Wild Pokémon's\nEffort Value yields?
+125: Wild Pokémon are currently set to reward\ndouble Effort Values.\c\nWould you like to change Wild Pokémon's\nEffort Value yields?
+126: Wild Pokémon are currently set to reward\nquadruple Effort Values.\c\nWould you like to change Wild Pokémon's\nEffort Value yields?
+127: Would you like Wild Pokémon to reward\nnormal Effort Values, doubled Effort Values,\nor quadrupled Effort Values?
+128: None (Default)
+129: Normal
+130: Double 
+131: 
+132: 
+133: 
+134: 
+135: Remember if your journey ever gets too\nstressful, you can always come home!\c\nOh, and I packed my old [COLOR(2)]PokéHelper[COLOR(0)]\nin your bag!\c\nPress the START button and you can\naccess settings to customize your\r\njourney!\c\nStay safe!\c
+136: [VAR TRNAME(0)] received\na pair of [COLOR(2)]Running Shoes[COLOR(0)]!
+137: Do you want me to read the\ninstructions?
+138: “Hold the B Button to run faster than\nnormal. Put on the Running Shoes and\r\nrace around to your heart's content!"!\c
+
+
+
+
+
+
+----- TEXT FILE 174----- HUGH'S HOUSE
+0: It's too bad. If you had a Pokémon\nwith you as well, you could compete\r\nwith [VAR TRNAME(1)] and see who is the\r\nbetter Trainer!
+1: To be honest, I don't want\nmy son to go on a journey.\r\nI mean, his goal is...\c\nBut there is no parent who doesn't\nwish for his or her child to grow.
+2: It looks like my son found\nsomething important.\c\nIt's all because Pokémon--\nand you--were by his side!
+3: Someday you will both go on a\njourney with your Pokémon, too!
+4: [VAR TRNAME(0)]...\c\nIf [VAR TRNAME(1)] loses his way\non the path, or in life really,\r\nplease help him, won't you?\c\nHe's the kind of person who, well,\nwho lets rage build inside him.
+5: [VAR TRNAME(0)]...\c\nIf [VAR TRNAME(1)] loses his way\non the path, or in life really,\r\nplease help him, won't you?\c\nHe's the kind of person who, well,\nwho lets rage build inside him.
+6: I wonder if she and Liepard will\ngo on a journey together as well...
+
+
+
+
+
+----- TEXT FILE 175----- HUGH'S HOUSE (UPSTAIRS)
+0: [VAR TRNAME(0)], did you find\nthat lady called Bianca?\c\nI hope you get a Pokémon soon!
+1: Oh, [VAR TRNAME(0)]!\nTake care of [VAR PKNAME(1)]!\c\nOnly Trainers can protect\ntheir own Pokémon!
+2: I wish...\c\nI wish my big brother could go on a\njourney for his Pokémon, not for me.
+3: Hi, [VAR TRNAME(0)]!\c\nWow! It's [VAR PKNAME(1)]!\c\nYou know lots of other Pokémon, right?\nCool!
+4: Know what?\nMy big brother told me something.\c\nHe said to talk to the Liepard\ninside the Poké Ball lots and lots,\r\nlike I'm doing, until it remembers me!\c\nAnd to pet it, even if it's just on\nthe outside of the Poké Ball!
+5: [VAR TRNAME(0)]!\c\nLook!\c\nLiepard looks so happy\nwhen I pet its head!
+6: Preoooww... ♪
+7:          
+8: It's a map of the Unova region.
+
+
+
+
+
+----- TEXT FILE 170----- ASPERTIA CLASSROOM
+0: I asked Alder from Floccesy Town\nto teach here.\c\nHe declined, saying it was the\nera of young people now.
+1: Do you use items during\nPokémon battles?\r\nIf you'd like, try using this!\c
+2: Have your Pokémon hold one of these\nberries to damage attackers!\c\nA Trainer's judgment about whether to\nuse items or moves is important in battle!
+3: There's a technique that enables you\nto cancel evolution!\c\nHere, I'll read the textbook to you.\c\n“You can surprise a Pokémon and stop\nits evolution by pressing the B Button\r\nwhen a Pokémon is evolving."
+4: You know how you can have\nyour Pokémon hold items?\c\nWell, it seems like they don't know\nhow to use items made by people,\r\nlike Potions.
+5: Normal-type Pokémon are weak\nto Fighting-type Pokémon.\c\nBut the only Pokémon around here like\nthat are the Riolu in Floccesy Ranch...\c\nIf you're going to battle with a Fire-,\nWater-, or Grass-type Pokémon,\r\nit'll be a simple test of strength!
+6: The blackboard explains Pokémon\nstatus changes in battle.\c
+7: What do you want to read about?
+8: If poisoned, a Pokémon steadily loses HP\nwhen battling.\c\nThe poison lingers after the battle.\nTo cure it, use an Antidote.\c
+9: Paralysis reduces the Speed stat\nand may prevent movement.\c\nIt remains after battle, so use a\nParlyz Heal.\c
+10: If a Pokémon falls asleep, it will be\nunable to attack.\c\nThe Pokémon may wake up on its own,\nbut if a battle ends while it is\r\nsleeping, it will stay asleep.\c\nWake it up using an Awakening.\c
+11: A burn reduces the Attack stat and\nsteadily reduces the victim's HP.\c\nA burn lingers after battle.\nCure a burn using a Burn Heal.\c
+12: If a Pokémon is frozen, it becomes\ncompletely helpless.\c\nThe Pokémon may thaw out on its own,\nbut if a battle ends while it is\r\nfrozen, it will stay frozen.\c\nThaw it out using an Ice Heal.\c
+13: Poison
+14: Paralysis
+15: Sleep
+16: Burn
+17: Frozen
+18: Cancel
+19: Aspertia Pokémon Gym\c\nGym Leader: Cheren\nCertified Trainers:
+20: Aspertia Pokémon Gym\c\nGym Leader: Cheren\nCertified Trainers:\r\n[VAR TRNAME(0)]
+21: Aspertia Pokémon Gym\c\nGym Leader: Cheren\nCertified Trainers:\r\n[VAR TRNAME(0)], [VAR TRNAME(1)]
+22: The Gym Leader is in the middle\nof a heated battle right now!
+23: Hello!\nWould you like to participate in the\r\nBlazing Baton Pass Exchange Program?\c\nIt's a sizzling-hot promotion that the\nBlueberry Academy is offering to all\r\ntrainers, even non-students, as part of\r\nthis year's "Semester of Embers"!\nYou simply trade us a Pokémon,\nany Pokémon, and receive one of our\r\nFire-typePokémon in return!\c\nWhat do you say?
+24: Hello!\nWould you like to participate in the\r\nBubbling Baton Pass Exchange Program?\c\nIt's a stormy-wild promotion that the\nBlueberry Academy is offering to all\r\ntrainers, even non-students, as part of\r\nthis year's "Semester of Waves"!\nYou simply trade us a Pokémon,\nany Pokémon, and receive one of our\r\nWater-type Pokémon in return!\c\nWhat do you say?
+25: Hello!\nWould you like to participate in the\r\nBotanical Baton Pass Exchange Program?\c\nIt's a verdant-fresh promotion that the\nBlueberry Academy is offering to all\r\ntrainers, even non-students, as part of\r\nthis year's "Semester of Petals"!\nYou simply trade us a Pokémon,\nany Pokémon, and receive one of our\r\nGrass-type Pokémon in return!\c\nWhat do you say? 
+26: Of course, you need to think about it.\nJust know that we'll be closing up shop\nhere soon, so make a decision quickly!
+27: Wonderful!\nWhich Pokémon would you like to trade?
+28: Welcome back! Have you made a decision on\nwhether you wish to participate in the\r\nBlazing Baton Pass Exchange Program? 
+29: Welcome back! Have you made a decision on\nwhether you wish to participate in the\r\nBubbling Baton Pass Exchange Program? 
+30: Welcome back! Have you made a decision on\nwhether you wish to participate in the\r\nBotanical Baton Pass Exchange Program? 
+31: What a splendid Pokémon!\nAlright, simply step over here... 
+32: ...and we're done!\c\nWe hope you and your new partner will\nset this world ablaze!
+33: ...and we're done!\c\nWe hope you and your new partner will\nwash away the competition!
+34: ...and we're done!\c\nWe hope you and your new partner will\nlearn and grow together!
+35: Hello!\nWe're sorry if you hoped to participate\r\nin the Baton Pass Exchange Program.\c\nWe've just finished up trading the last\nof our Pokémon.\c\nWe hope to see you next semester for our\nnext promotion!
+36: We're glad to have you participate in our\nBlazing Baton Pass Exchange Program.\c\nWe hope you and your new partner will\nset this world ablaze! 
+37: We're glad to have you participate in our\nBubbling Baton Pass Exchange Program.\c\nWe hope you and your new partner will\nwash away the competition! 
+38: We're glad to have you participate in our\nBotanical Baton Pass Exchange Program.\c\nWe hope you and your new partner will\nlearn and grow together!
+39: Trade for a Fire-type Pokémon?
+40: Trade for a Water-type Pokémon?
+41: Trade for a Grass-type Pokémon?
+42: Can you help me try out these\nberries teacher gave me?
+43: Oh.. ok!
+44: Awesome, here we go!
+45: Do you want to give your\nnew partner a nickname?
+
+
+----- TEXT FILE 171----- ASPERTIA GYM
+0: ???: You must be a challenger!\c
+1: Welcome to Aspertia City's Pokémon Gym.\c\nI'm Cheren, the Gym Leader!\c\nHm? Well, maybe I'd better say that I\njust became the Gym Leader!\c\nMore importantly, we need to prepare\nbefore welcoming you to the Gym.\c
+2: We have a challenger!\nYou two, take your places!\c
+3: If you can defeat these two,\nthen I'll be your opponent!
+4: If you want to battle me,\nplease defeat those two first, OK?
+5: Just as this is your first Gym challenge,\nthis is my first Pokémon battle\r\nas a Gym Leader!\c\nLet's both do our best and have\na battle we can be proud of!\c
+6: That battle has made me feel really\nglad you were my first challenger\r\nas a Gym Leader...\c\nI give you this in honor of the strength\nyou and your Pokémon showed!\c
+7: [VAR TRNAME(0)] received the\nBasic Badge from Cheren!\c
+8: Here is your first Gym Badge,\nthe Basic Badge!\r\nThis is an important milestone!\c\nWith this Badge, Pokémon up to Lv. 20\nwill obey you, including traded Pokémon.\c\nAnd I want you to take this!\c
+9: TM69 can teach your Pokemon the move\nSecret Power.\c\nSecret Power is a good general-use move\nthat pretty much every Pokemon can learn.\c\nIt gains extra effects depending on the\nenvironment, and can never miss!\c\nBy the way, TMs can be used\nas many times as you want!\c
+10: In the Unova region, there are eight\nPokémon Gyms and eight Gym Badges!\c\nIf you're a Trainer,\nyou could collect all of them!\c\nThat will make it easier to fill\nthe pages of the Pokédex as well!\c\nYes, two years ago, Pokédex in hand,\nI left on a journey with my friends.
+11: Cheren: You should decide what\nyou're going to do from here out!\c\nDon't worry about losing your way--\nyou have Pokémon by your side!
+12: Cheren saw potential in me and\nmade me a Trainer in this Gym!\c
+13: If you can defeat the girl, too,\nyou can challenge the Gym Leader!
+14: Wow! You can challenge\nthe Gym Leader!
+15: The reason Cheren saw potential\nin me was there was no one else...?\c\nNo way! Even if that is the case,\nI just have to get stronger!
+16: Now I'll show you all of the\nthings I learned from Cheren!\c
+17: I guess you can battle a little!\nThink you can beat the other Trainer?
+18: OK. You're pretty good!\nBut, can you beat Cheren?
+19: I have to learn even more\nabout my Pokémon!
+20: Hello! I'm Clyde, the guide for Trainers\nwho challenge Pokémon Gyms.\c\nThank you for taking on the Gym!\nTake this to commemorate\r\nyour debut!\c
+21: Pokémon Gyms are facilities\nfor testing Trainers' abilities!\c\nPut simply, if you can defeat\nthe Gym Leader, it means\r\nyou're a really good Trainer!\c
+22: If you run out of Pokémon that can fight\nduring a Pokémon battle, you lose!\c\nSo having a lot of Pokémon with you\nmight work to your advantage!
+23: I hope you'll remember the wonderful\nmoment in which you received\r\nthat Badge forever.
+24: The Level Cap is [COLOR(2)]19[COLOR(0)]!
+25: And, as a heads up, beating a Gym Leader\nis a big deal!\c\nThings will change, people will move,\nand [COLOR(2)]parts of the world get blocked off[COLOR(0)].\c\nBut don't worry!\nYou can always speak to me to find out\nwhat content defeating the gym leader\r\nwill lock you out of!
+26: Once you defeat Cheren, the\nfollowing content will be locked off!
+27: You've completed all the Split-Locked\ncontent available before Cheren!
+28: The [COLOR(2)]Rowap/Jaboca Berry Optional[COLOR(0)]\nin [COLOR(1)]Aspertia Classroom[COLOR(0)].\c\nDefeating him rewards 3x Rowap and\n3x Jaboca Berries!\c
+29: The [COLOR(2)]Blueberry Academy Trade[COLOR(0)]\nin [COLOR(1)]Aspertia Classroom[COLOR(0)].\c\nDefeating the trainer guarding her grants\nthe opportunity to trade any Pokémon\r\nfor a starter!\c
+30: The [COLOR(2)]Brock Optional Boss Fight[COLOR(0)]\nin [COLOR(1)]Pledge Grove[COLOR(0)].\c\nDefeating him rewards an encounter in\nPledge Grove, 10x Berry Juices, and\r\nthe Rock Smash TM!\c
+
+
+----- TEXT FILE 172----- ASPERTIA POKEMON CENTER
+0: Bianca: OK! I'll show you around\nthe Pokémon Center!\c
+1: The Pokémon Center heals\nPokémon for free!\c\nYou should bring your Pokémon here\nanytime they are weak.\c
+2: I'll heal your Pokémon.\nHand me your Poké Ball for a sec!\c
+3: Next, I'll explain the PC!\c
+4: This square thing is a PC!\nAny Trainer is free to use it!\c\nYou can deposit Pokémon in it.\c\nAlso, you can withdraw\nPokémon from it!\c\nYou can also access the PC anywhere with\nyour [COLOR(2)]PokéHelper[COLOR(0)] if you have signal by\r\npressing the START button!\c
+5: The next thing is over here!\c
+6: This is the Poké Mart!\c\nHere you can buy and\nsell many different items!\c
+7: Here, [VAR TRNAME(0)],\nI'll give you some Poké Balls to get started!\c
+8: Here, [VAR TRNAME(0)],\nI'll give you some Poké Balls to get started!\c
+9: Bianca: Next up!\c\nI'll show you how\nto use those Poké Balls!\r\nFollow me!\c
+10: Ruff Ruff!
+11: Its Nature is [VAR ITEM1(2)]!\c\nWith a Pokémon like that by your side,\nI'm sure you'll have a fun journey!
+12: All right! Here's some advice from a\nguy who spends all of his time\r\nin Pokémon Centers!\c\nWhen your Pokémon's HP goes down,\nmake sure to restore it!
+13: Now that I'm aware of my hidden power,\nI can tell you what type of Hidden Power\r\nyour Pokémon will learn!\r\nDo you want to know?
+14: When a Pokémon learns the move\nHidden Power, somehow I can tell\r\nwhat type that move will be!\c\nShould I tell you what type of\nHidden Power your Pokémon will learn?
+15: If you want to know, ask me, and I'll\nactivate my hidden power for you!
+16: The type of this Pokémon's\nHidden Power is [VAR TYPE(0)]!
+17: I'm sorry, but this Pokémon can't learn\nto use Hidden Power.
+18: It's not possible for an Egg to use\nHidden Power!
+19: If this Pokémon were to learn\nHidden Power, the move's type\r\nwould be [VAR TYPE(0)]!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+----- TEXT FILE 601----- ROUTE 19
+0: Bianca: Heeey!\nThis way!\c
+1: Bianca: Come on!\nThis way!\c
+2: Bianca: This kinda reminds me\nof that day on Route 1.\c
+3: Here, I'll show you how to catch\na Pokémon! Starting...NOW!\c
+4: Bianca: What a relief!\nI caught a Pokémon!\c\nOh! Um...\nRight. I'll go over the important stuff.\c\nFirst, go find a healthy\nPokémon to catch!\r\n[COLOR(2)]You need to remember this next bit![COLOR(0)]\c\nIf you [COLOR(1)]HOLD DOWN[COLOR(0)] the "L" or "R" buttons\nand click the "Pokémon" button in battle,\r\nyou can use your Pokédex to scan your\r\nopponent for useful information.\c\nYou can even use this in battles with\nother trainers!\c
+5: You're going to go deliver\nthe Town Map to your friend, right?\c
+6: Continue straight this way\nto get to Floccesy Town!\c\nOh, and let me upgrade your PokéDex!\c 
+7: Bye now!\nMeet lots of Pokémon\r\nand catch a lot of them, OK?\c
+8: ???: You there, Trainer!\c
+9: Ah, a trainer!\nMy name is Alder!\c\nI'm a Trainer with a keen interest in the\nworld. One of my goals is to tell people\r\nabout how wonderful it is to walk toward\r\nthe future together with Pokémon.\c
+10: And you are?\c\n...\n...\c\nHmph! So you're [VAR TRNAME(0)]\nfrom Aspertia City!\c
+11: Your [VAR PKNAME(1)] is\na fine-looking Pokémon!\c\nBut, you're not exactly\na seasoned Trainer yet...\c
+12: Hey, you know about ledge jumping?
+13: Oh...\c\nI guess you would know you can\njump off these little ledges.
+14: That so...\nWell then, watch me carefully!\c
+15: From the top of the ledge!\c\nBoing!\c
+16: It's really cool how you can take\nshortcuts by jumping off these, right?
+17:           
+18:            
+19:                                                                                                
+20:                          
+21:                                                                       
+22:                                                                                                                                                       
+23:                                                                                    
+24: Know what? I'm searching for\nPokémon in the tall grass!\c\nThat's right! If you don't want\nto meet Pokémon, avoid the tall grass!
+25: [VAR TRNAME(0)]!\c
+26: Excuse me! I forgot to tell\nyou something important!\c\nFirst, take these!\c
+27: Those are Cheri Berries!\c\nIf you use one on your Pokémon,\nit'll be cured of paralysis.\c
+28: What's more! You can give your Pokémon\na Berry to hold!\c\nLike this Cheri Berry, for instance.\nWhen a Pokémon holds this Berry, it can\r\neat the Berry if it gets paralyzed\r\nin battle and cure the status!\c
+29: Well... I just told you\nto challenge the Gym Leader.\c\nAspertia's Gym Leader\nis a very strong Pokémon Trainer!\c\nBut you have nothing to worry about!\c\nIf you think hard about what the\nPokémon at your side can do,\r\nand what you should do as a Trainer,\r\nvictory will be yours!\c
+30: And then you should take on\nstronger and stronger Trainers...\r\nActually, take on the Gym Leaders\r\nof each city!\c\nWorking together with your Pokémon\nis what makes you grow as a Trainer.\c\nAs you and your Pokémon grow stronger,\nyour world will get broader!\c
+31: Route 19
+32: Route 19
+33: Trainer Tips!\c\n\nMake an effort to talk to all the\npeople you meet during your journey!\c\nChances are they will have something\nuseful to tell you.
+34: You can use Surf?\nNice! We can be Surf buddies!
+35: Your [COLOR(2)]PokéDex[COLOR(0)] was upgraded to\nthe National Mode! 
+36: ???: Do you see something, Victini?
+37: Victini seems to see something in you,\nand its rarely wrong about these things!\c
+38: Indeed! I'll train you a little!\nFollow me!\c
+39: Tini!\c
+
+
+
+
+
+----- TEXT FILE 651----- FLOCESSY TOWN
+0: Alder: Oh, that's right! [VAR TRNAME(0)],\nare your Pokémon well?\c\nYour Pokémon are always doing\ntheir best for you, the Trainer,\r\nso you must always be kind to them!\c
+1: My house is just a little farther!\c\nStop by the Pokémon Center\nfirst if you'd like!\c
+2: Alder: Hey, this way!\nShall we start training?\c
+3: By the way...why are you\nholding two Town Maps?\c\n...\c
+4: Oh ho!\nIt's your friend's Town Map, is it?\c
+5: Your friend is the one with\nthe [VAR PKNAME(0)], isn't he?\c\nIt just so happens, he was training\nhis Pokémon on Route 20...\c\nWell, if that's the case, you should\ngo give him the Town Map first!\c
+6: Just follow this road.\nIt goes to Route 20!\c
+7: Just follow this road.\nIt goes right to Route 20!\c\nI'll be waiting here until you\ndeliver the Town Map!
+8: Alder: Oh! It looks like you've\ndelivered the Town Map to your friend!\c\nHrm...\c\nYou were only gone a moment,\nbut you and your Pokémon have grown.\c\nWhy, I could almost mistake you\nfor someone else!\c\nWell then. Instead of training you,\nI would like you and your Pokémon\r\nto give me a hand!\c
+9: Alder: [VAR TRNAME(0)]!\c\nYou know the Trainers' School\nand Pokémon Gym that\r\nwere just built in Aspertia?\c\nI received notice that\nthe Gym Leader has arrived!\c\nSo I have some advice for you.\c\nIf you want to see how much\nyou understand your partners,\r\nyour Pokémon, then you should\r\nchallenge the Gym Leader!\c
+10: In the morning, my Pokémon come\nto wake me up when they're hungry.\c\nAt night, my Pokémon get tired\nfrom playing and take up the whole bed!\c\nOh! It fills me with so much joy!
+11: You see, in Floccesy Ranch,\nwild Pokémon might surprise you!\c\nAt times like that, only your\nown Pokémon can help you out!
+12: I always save a record of my adventure,\nso I don't forget what I've done so far!\r\nIt's a good idea for any Trainer!
+13: People always think the past\nor the future would be so wonderful.\c\nBut the great time we're\nspending with Pokémon\r\nis right now!
+14: Want to know what Alder taught me?
+15: He said the Pokémon you throw out at\nthe start of battle is the one\r\nin the upper-left slot in your party!\c\nThat's why I put a Pokémon I want\nto make stronger or a Pokémon that's\r\nalready tough in that spot!
+16: You're being too bashful!\nIt's a good opportunity! Ask away!
+17: Are you happy you're\nable to train Pokémon?
+18: Right?!\nMe too!
+19: Huh? But you're traveling\nwith Pokémon!
+20: Floccesy Town\nProphecy Flocks Here
+21: It's an old clock tower...
+22: Bianca: Heeey!\c
+23: Bianca: Hey there!\c
+24: I'm sorry!\c\nI forgot to upgrade the Pokédex\nthat I gave you!\c\nI'm going to add the Habitat List!\nIt's an amazing feature!\c\nI'm just going to borrow your\nPokédex for a second!\c
+25: [VAR TRNAME(0)]'s Pokédex\nwas upgraded!
+26: With the Habitat List, you can check\nwhich Pokémon are in the area!\c\nIt's a mode in the Pokédex!\c
+27: To use it, open up the Pokédex\nand tap the Habitat List button\r\non the lower left of the Touch Screen!\c\nNext, pick the area you want to see!\c\nYou can see all the Pokémon that live in\nthat area. It even tells you which ones\r\nyou've already caught!\c
+28: Oh, I have a tip for you!\c\nWhen you're walking down\na path, you'll sometimes see\r\nrustling grass!\r\nIf you go to that spot...\c\nWell, I'll let the rest\nbe a surprise!\c
+29: Filling up the Pokédex will\nmake your world bigger!\c\nSo go to many different places\nand meet many different Pokémon, OK?\c\nSee you!\c
+30: Hey [VAR TRNAME(0)], my name is\nProfessor Juniper!\cI trust Bianca found you alright?\cI've got to know: which Pokemon did you\nchoose to be your partner?
+31: I see, you chose Snivy!\cDid you know as Snivy mature, they learn\nto convert sunlight to electricity?\cSnivy is weak to Fire moves, however.\nI have a Water type that could help!\cDo you want this Wingull?
+32: I see, you chose Tepig!\cDid you know Tepig grow up to be fiercesome\nwrestlers? Very menacing!\cTepig is weak to Water moves, however.\nI have a Grass type that could help!\cDo you want this Shroomish?
+33: I see, you chose Oshawott!\cDid you know Oshawott's shell will grow\ninto a full sword, fit for a samurai?\cOshawott is weak to Grass moves, however.\nI have a Fire type that could help!\cDo you want this Numel?
+34: Oh dear, it seems your party is already\nfull!\cTalk to me when you've made some space!
+35: What a wonderful addition to your party!\cAnd here, this will help you\ntrain [VAR PKNAME(1)]!
+36: Oh, I see.\cWell I will be waiting here if you\nchange your mind!
+37: [VAR TRNAME(0)] obtained [VAR PKNAME(1)]!
+38: Would you like to give [VAR PKNAME(1)] a nickname?
+39: Add Wingull to your party?
+40: Add Shroomish to your party?
+41: Add Numel to your party?
+42: Someone really made a mess\nout there!\c\nThere are boulders all over\nthe place!\c
+43: I'm sure with Pokemon by your side, you'll\ndo incredible things [VAR TRNAME(0)]!\cUntil next time!
+44: [VAR TRNAME(0)]'s PokéDex\nwas upgraded!
+45: With the Habitat List, you can check\nwhich Pokémon are in the area!\c\nIt's a mode in the Pokédex!\c
+46: To use it, open up the PokéDex\nand tap the Habitat List button\r\non the lower left of the Touch Screen!\c\nNext, pick the area you want to see!\c\nYou can see all the Pokémon that live in\nthat area. It even tells you which ones\r\nyou've already caught!\c\nWould you like to hear\nmy explanation again?
+47: Here, take these!\nThey'll help you with your training!
+48: Alder: These are [COLOR(2)]Shards[COLOR(0)]: tokens used\nby the Blueberry Academy as rewards for\r\nstudents and those who participate in\r\ntheir battle programs!
+49: They can be exchanged with tutors such\nas the gentleman over there to teach\r\nPokémon useful moves!
+50: They come in many different colors,\nwith Green being the most common!
+51: Alder: Oh right, I almost forgot!\c
+52: Alder: My house is just a little farther!\c\nStop by the Pokémon Center\nor the Move Tutor first if you'd like!
+53: Victini rocks back and forth on its\nround body with a huge smile!\c
+
+----- TEXT FILE 652----- FLOCESSY POKEMON CENTER
+0: Here is a little advice!\nKeep a lot of Potions!\c\nHere is some more advice!\nKeep a lot of Poké Balls, too!
+1: Your [VAR PKNAME(0)] is male!\c\nI wonder what the difference is\nbetween male and female Pokémon.
+2: Your [VAR PKNAME(0)] is female!\c\nI wonder what the difference is\nbetween male and female Pokémon.
+3: Your [VAR PKNAME(0)]...\nIts gender is unknown.\c\nI wonder what the difference is between\nmale and female Pokémon.
+4: I read the Help on the PC.\nI feel I became smarter!
+5: Now that I'm aware of my hidden power,\nI can tell you what type of Hidden Power\r\nyour Pokémon will learn!\r\nDo you want to know?
+6: When a Pokémon learns the move\nHidden Power, somehow I can tell\r\nwhat type that move will be!\c\nShould I tell you what type of\nHidden Power your Pokémon will learn?
+7: If you want to know, ask me, and I'll\nactivate my hidden power for you!
+8: The type of this Pokémon's\nHidden Power is [VAR TYPE(0)]!
+9: I'm sorry, but this Pokémon can't learn\nto use Hidden Power.
+10: It's not possible for an Egg to use\nHidden Power!
+11: If this Pokémon were to learn\nHidden Power, the move's type\r\nwould be [VAR TYPE(0)]!
+
+----- TEXT FILE 653----- ALDER'S HOUSE
+0: Girl: Oh! Are we going to help\ntrain that person, sir?\c
+1: Boy: Really? But that Trainer\nlooks really tough!\c
+2: Alder: That's right! This Trainer may\nbe tough, but you can learn from\r\nlosing as well.\c\nMore importantly, haven't I been telling\nyou just to enjoy Pokémon battles?\c
+3: So, [VAR TRNAME(0)]!\nPlease be their opponent!\c
+4: I'll show you what's\ncool about my Pokémon!\c
+5: That was a fine battle,\nboth of you.\c\nWell, next we have...\c
+6: Ready!\c
+7: Alder: First we have to heal\nyour Pokémon, [VAR TRNAME(0)].\c
+8: Girl: Some Pokémon battles are\ndecided by type matchups!\c
+9: Alder: That was truly\na rousing battle!\c\nI could tell that all of the Pokémon\nwere enjoying themselves as well!\c
+10: How about it, [VAR TRNAME(0)]?\c\nPokémon types are very important\nin battle, aren't they?\c\nWater is strong against Fire...\nFire is strong against Grass...\r\nGrass is strong against Water...\c\nType matchups don't\ndecide everything, though!\c
+11: But, listen!\c\nWhen a Pokémon uses a move\nthat matches its type, the move\r\nbecomes more powerful!\c
+12: Let's heal those hard-working Pokémon!\c\n[VAR PKNAME(1)]!\nYou did a great job for [VAR TRNAME(0)]!\c
+13: Meeting Pokémon and people you\nnever would have met otherwise\r\nis truly one of the great things\r\nabout traveling!
+14: Alder: Oh!\nYou won a Gym Badge!\c\nThat's the result of\nunderstanding your Pokémon\r\nand bringing out their power!
+15: Alder: Getting that many\nGym Badges is impressive!\c\nBut you're only partway\nthrough your journey...\c\nWhat does being strong\nreally mean?
+16: Alder: Oh! You've come!\c\nCould I spar with you,\nthe strongest Trainer\r\nin the Unova region?
+17: Alder: Oh! You've come!\c\nI want to show them what's\nincredible about Trainers as well!\c\nCould I spar with you,\nthe strongest Trainer\r\nin the Unova region?
+18: Oh!\nMy heart jumps for joy!\c\nWell, then, prepare yourself\nfor battle!\c\nKiai!\c
+19: Hrm...\nWell, I shall wait here, then.
+20: Alder: That's the Champion for you!\c
+21: ???: Gramps!\c\nI did it!\c\nI did it!\c\nI DID it!\c\nThe Black Tower!\c\nI made it to the top!\c
+22: ???: Gramps!\c\nI did it!\c\nI did it!\c\nI DID it!\c\nThe White Treehollow!\c\nI made it to the deepest part!\c
+23: Alder: Why, if it isn't Benga!\c\nAre you serious, boy?\c
+24: Benga: Hey!\c\nGramps!\c\nYou know how\nstrong I am!\c\nHey, hey!\c
+25: Who's that?\c
+26: Alder: His name is\n[VAR TRNAME(0)]!\c\nHe's the strongest\nTrainer in the Unova region.\c
+27: Alder: Her name is\n[VAR TRNAME(0)]!\c\nShe's the strongest\nTrainer in the Unova region.\c
+28: Benga: I knew it!\c\nThat Trainer smells tough!\c
+29: Alder: How about it, Benga?\nDo you want to spar, perhaps?\c
+30: Benga: No!\c\nI know that Trainer's strong!\c\nAnd I want to battle!\c\nBut those Pokémon\nhaven't been through enough!\c
+31: Me!\c\nAnd my Pokémon!\c\nWe climbed to the top of the Black Tower!\c\nYou do that, too!\c\nThere we'll see who's stronger!\c\nLet's try hard to be the best!\c
+32: Me!\c\nAnd my Pokémon!\c\nWe made it to the deepest part\nof the White Treehollow!\c\nYou do that, too!\c\nThere we'll see who's stronger!\c\nLet's try hard to be the best!\c
+33: Later!\c\nGramps and [VAR TRNAME(0)]!\c
+34: Alder: He's a lively one,\neven for MY grandson!\c\nI'll explain what he was\ntalking about.\c\nHe challenged a place called\nthe Black Tower, which\r\nappeared in Black City.\c\nYou'll find out what kind of\nplace it is if you go there.\c\nAn ordinary Trainer, however,\ncan't make it to where he is.\c\nSo that's the story!\nIf you'd like, you should take\r\nthe challenge as well.
+35: Alder: He's a lively one,\neven for MY grandson!\c\nI'll explain what he was\ntalking about.\c\nHe challenged a place called\nthe White Treehollow, which\r\nappeared in White Forest.\c\nYou'll find out what kind of\nplace it is if you go there.\c\nAn ordinary Trainer, however,\ncan't make it to where he is.\c\nSo that's the story!\nIf you'd like, you should take\r\nthe challenge as well.
+36: Alder: When you find something\nyou want to do, you should\r\ntake it on without a moment of doubt!\c\nDon't worry!\nYou have Pokémon by your side, right?\c\nIf you're together,\nyou can do things you can't do alone,\r\nand your Pokémon can go places\r\nthey couldn't go on their own.
+37: My dream is to strengthen my Pokémon\nhere and become the strongest\r\nTrainer in Unova!
+38: I think I can get even stronger\nif I learn more about Pokémon!\c\nThat's why I want to go to many\ndifferent places--so I can learn a lot!
+39: Hey!\c\nHey!\c\nHey!\c\nIt was a promise!\c\nBetween me and you!\c\nWe had the best match!\c\nThis is to remember it by!\c\nRaise this Gible!\c
+40: Hey!\c\nHey!\c\nHey!\c\nIt was a promise!\c\nBetween me and you!\c\nWe had the best match!\c\nThis is to remember it by!\c\nRaise this Dratini!\c
+41: [VAR TRNAME(0)] received\n[VAR PKNAME(1)]!
+42: Would you like to give a\nnickname to this [VAR PKNAME(1)]?
+43: Hey! What's going on?\c\nYour party's full, huh?\c\nOK!\c\nOK!\c\nGot it!\c\nI'll wait here!
+44: I'll leave it with you!\c\nTake good care of it!\c\n[VAR TRNAME(0)]!\c\nI'll be waiting for you in the Black Tower!\c
+45: I'll leave it with you!\c\nTake good care of it!\c\n[VAR TRNAME(0)]!\c\nI'll be waiting for you\nin the White Treehollow\c
+46: Oh, and take this!
+
+----- TEXT FILE 654----- FLOCESSY TOWN 2
+0: Even if you have a lot of them,\nitems never weigh you down, eh?\c
+1: Bags sure are cool.\c\nItems in your Bag are automatically\nsorted by type.
+2: The biggest city in Unova is Castelia!\c\nI want to take the ship from Virbank\nand go play there!
+3: On a sunny day, my Patrat's fur\ngets all fluffy!\r\nI can't help wanting to pet it!
+4: Skuwaaa!
+
+----- TEXT FILE 655----- FLOCESSY TOWN 3
+0: As they wandered in search of Pokémon,\npeople began making homes in more places.\c\nThis ranch used to be a grassy meadow.\c\nIt's now become a place where people\nand Pokémon have homes together!
+1: I don't really know much about\nPokémon types and stuff like that.\c\nI just focus on raising one Pokémon\nand charge ahead!\c\nBut it's kinda the hard way to do things.\c\nWhen I run into a Pokémon that mine is\nnot good against, I can't win anymore!
+2: Oh, you have so many Pokémon!\c\nSeems to me that thinking about how\nto raise each one would be a lot of fun!
+3: Yip!
+
+
+----- TEXT FILE 603----- ROUTE 20 
+0: Pokémon battles begin\nwhen eyes meet!\r\nThat's a rule for Trainers!
+1: Come on! A kid without a single\nGym Badge continuing on past here?\c\nBattle with the Trainers and Pokémon\nin this area, then battle some more!
+2: Come on! A kid without a single\nGym Badge continuing on past here?\c\nBattle with the Trainers and Pokémon\nin this area, then battle some more!\c
+3: Hey! That gleaming thing there\nis the Basic Badge!\c\nBut don't get a swelled head!\nIt's a rough world out there!\r\nHere, I'll show you!\c
+4: All right... I'm beat!\c\nWith dependable Pokémon like that,\neven a kid like you can\r\nhold your own against an adult. Yup!\c
+5: Route 20
+6: [VAR TRNAME(0)]! Wait!\c
+7: Cheren: Come with me, you two.\c
+8: See the dark tall grass here?\c\nIt's rare, but sometimes two\nPokémon pop out at the same time.\c\nAlso, the Pokémon that hide in\ndark grass are slightly stronger.\c\nSo be careful if you walk through.\c
+9: If you're going to challenge the\nnext Gym, it's the Virbank Gym.\r\nThese might help!\c
+10: Here are some for you, [VAR TRNAME(1)]!\c
+11: Both of you, do your best!\c\nIf you need anything,\ncall me on the Xtransceiver.\c
+12: [VAR TRNAME(1)]: Cheren sure knows a lot.\c\nAnd he fought those\nTeam Plasma thugs, too...\c
+13: I've decided!\nI'm going to get stronger than him!\c\nYou should...\c\nDo your best! Fill up the Pokédex\nand have my back. Got it?\c
+14: I have to get stronger\nthan Team Plasma!
+15: Yeesh! I really hate it when\npeople won't let things go!\c
+16: Now that I think about it...\c\nIf I run this way, no one can help me!\nI have to head toward the ocean!\c\nSo, with that in mind...\c\nI'm going to flee again!\nGood-bye, Virbank City!\c
+17: [VAR TRNAME(1)]: Well, they're\nreally good at running, anyway...\c\nStill, she just said something useful!\c\nThey must be moving around by boat!\c\nCastelia City has a big port...\nI wonder if they headed there.\c\nOK! Let’s go back to Virbank\nand look for someone who looks like\r\nthey know a lot about ships.\c\nIf I remember right, there was a place\nto board boats on the docks.\c
+18: [VAR TRNAME(1)]: Help me check Route 20!
+19: [VAR TRNAME(0)] received some Berries!
+20: O-oh!\nHello there, partner!\c
+21: My name is Britney!\nI'm just a Unovan schoolgirl out here\r\ntraining for a big test!
+22: Say, I just saw you speaking with that\nwoman in the silly outfit!\c\nWho was she?
+23: A member of Team Plasma
+24: A member of Team Neo Plasma
+25: I don't know
+26: Team Plasma?
+27: I thought they were defeated two\nyears ago?
+28: Team... Neo Plasma?
+29: Are they a new group of bad guys,\nor the remnants of the old one...
+30: ...he doesn't want to talk, huh.
+31: ...she doesn't want to talk, huh.
+32: Did she tell you her plans?\nDo you know where she went?\r\nDoes she have any allies?
+33: Oh, teehee!\nSorry about that! I just love gossip.\r\nThanks for the chat, mister!
+34: Oh, teehee!\nSorry about that! I just love gossip.\r\nThanks for the chat, miss!
+
+
+
+
+----- TEXT FILE 315----- FLOCESSY RANCH
+0: [VAR TRNAME(1)]: Oh! Nice!\nYou've come here to toughen up!\c\nAll right! Let's see how much\nstronger you've become! Come at me!\c
+1: [VAR TRNAME(1)]: Not bad...\c\nYou're thinking about how to bring out\nyour Pokémon's strength.\c\nI should be able to count\non you for backup!\c\nWhat are you doing here anyway?\c\nHuh?\nA Town Map?\c
+2: [VAR TRNAME(0)] handed over\nthe Town Map!\c
+3: [VAR TRNAME(1)]: Tch...\nShe didn't have to do that...\c\nThanks to you, too. We just left,\nand you've already helped me out.\c
+4: ???: I thought it was lively around here!\nYou were having a Pokémon battle, huh?\r\nIsn't it nice to be young!\c
+5: [VAR TRNAME(1)]: Who are you?\c
+6: ???: Who am I?\c\nI'm the owner of this ranch!\nAnd this is my wife!\c
+7: Wife: After a Pokémon battle, you\nshould heal your Pokémon's HP, right?\r\nHere, I'll give you this!\c
+8: And one for you!\c
+9: You can exchange these with a\nBlueberry Academy Tutor to teach your\r\npartners new moves!\c
+10: Owner: By the way, you didn't happen\nto see a Herdier around here, did you?\c\nI can't figure out where it went.\c\nOur two Herdier are always together\nand this is the first time one has\r\nwandered off, so I'm a little worried...\c
+11: [VAR TRNAME(1)]: You're a little worried?\nAre you KIDDING me?!\c\nYour Pokémon might be lost forever!\c\nWhatever! I'll look!\n[VAR TRNAME(0)]! Help out!\c
+12: Owner: Why did he get so mad?\c\nI think it's probably just\nplaying somewhere in the ranch.\c
+13: Wife: I wonder...\c\nBy the way, dear, if your Pokémon\nget hurt, let me know.\r\nI'll make them feel better for you!
+14: Herdier, where did you go?
+15: [VAR TRNAME(1)]: Did Herdier...\nwander somewhere back here?\c\nLet's have a look!\c
+16: Wow, this ranch is really big!
+17: Why haven't we found it yet?\nI'm worried about Herdier...
+18: Oh! Here! I'll share something\ngood with you!\c
+19: If your Pokémon is paralyzed,\nuse one of these on it!\c
+20: Still, Pokémon don't just wander\noff on their own.\c\nIn a worst-case scenario,\nit might be involved in some trouble!
+21: Yawrp!
+22: Did you hear that just now?\c
+23: I'll check this area!\c\nYou go deeper in the grove\nand look!\c
+24: Look deeper in the grove!
+25: Herdier: Yaarrrp...
+26: [VAR TRNAME(1)]: That cry!\nYou found it!\c\nWhat a relief!\c\nOK, I'll go call its Trainer,\nso you stay here with it!\c
+27: ???: Tch...\nYou little pest!\c\nI'm a member of a group that strikes\nfear into the hearts of those who\r\nstand before it: Team Plasma!\c\nEver heard of it?
+28: That's right! We're the righteous group\nthat tried to conquer Unova two years\r\nback in order to liberate Pokémon!\c
+29: Really? We're the righteous group\nthat tried to conquer Unova two years\r\nback in order to liberate Pokémon!\c
+30: Whatever...\c\nFools will never understand us...\c\nStill...\c\nFirst I got lost chasing Herdier...\nand now some nosy kid caught me!\c\nAll of this is your fault!\nTake this!\c
+31: OK! I'll use this opportunity\nto retreat for now!\c
+32: Yap! Bwoof!
+33: Owner: Herdier!\c\nWhat made you come all\nthe way back here?\c\nWell, at any rate, I'm really grateful\nfor your help, you two!\c
+34: [VAR TRNAME(1)]: You're awfully calm\nabout this!\c\nYour Pokémon might have\nbeen gone for good!\c\nTake better care of it!\c
+35: Owner: Hmm...\nI wonder if something happened to him...\c\nIt's like he's afraid of\nlosing Pokémon...\c\nCome on, Herdier!\nEveryone's waiting! Let's go home!\c
+36: Owner: Thanks! It's all thanks\nto you and your Pokémon!\c\nYou're really great! Hey, is that it?\nDid Alder train you?
+37: This ranch started when a fence\nwas made to protect Pokémon!
+38: Owner: It is strange for Herdier\nto wander off on its own.\c\nIt always plays with the other\none or works on the ranch...
+39: Yup! You and your Pokémon\nare full of energy!
+40: You and your Pokémon\nlook a little worn out...\c\nRest here a minute--you won't\nget anywhere all tired like that!\c
+41: You and your Pokémon\nfound Herdier! Great!
+42: Herdier: Bawoo...
+43: Bawoof! Ba woof!
+44: Ba woof! Bawoof!
+45: Baaah!
+46: Baa!
+47: Baawn!
+48: Baa baa!
+49: Baa haa!
+50: Ba baaa!
+51: Gosh darnit!\cI just got a whole shipment of eggs from\nmy sister at the daycare!\cBut there are too darn many of them!\nI can't raise all these!\cWould you mind taking one off my hands?\nI've been told these are strong Pokemon!\c
+52: Take the mystery egg?
+53: Fannnntastic!  Here you go!
+54: [VAR TRNAME(0)] obtained a Mystery Egg!
+55: I recommend you run around a few minutes\nto get it to hatch!\cBest of luck!
+56: Dang, your party's full.\nCome back when you've made some space!
+57: Dangit!
+58: A basket filled with eggs of all\nshapes and colors.
+59: The Level Cap is now [COLOR(2)]15[COLOR(0)]!
+60: ???: Don't worry lil' guy, that weirdo\ncan't hurt you anymore!\c\nJust rest a sec, let the oran berries\ndo their work!
+61: ???: Huh, who are you?\nYou smell tough!\c
+62: ...\n...\c\n???: [VAR TRNAME(0)], huh?\nCall me Benga, the [COLOR(2)]UNDEFEATED[COLOR(0)],\nthe strongest trainer in Floccesy Town!\c\nAnd soon, strongest in the world!\c
+63: I've got champion in my blood!\nMy gramps is the champion!\c\nOr... he was...\c
+64: Benga: I was out here training when I ran\ninto that goon messing with this lil' guy.\c\nWhat kind of jerk gets off picking\non a Pokémon like that?\c\nAnd he didn't even put up a good fight,\na total pushover.\c
+65: Hey!\nI've got a battle itch that weirdo\r\ncouldn't scratch.\c\nLet me show you how a future champ\nbattles!\c
+66: Benga: Woah, where'd you come\nfrom stranger?\c 
+67: You're strong! Crazy strong!\c\nYou must be...\c
+68: ...my RIVAL!\c
+69: No wonder you're so strong!\nYou'd have to be to challenge me!\cHere, a gift to cement our new rivalry!\c
+70: Benga: Hm... guess I'm off to a bad start\nwith the whole "undefeated" thing.\c
+71: Okay!\nREDO REDO!\c
+72: You better watch out next time we fight!\c\nBecause starting NOW I'm never going to\nlose a battle to nobody, count on it!\c
+73: See, this guy knows what I'm talking\nabout!\c\nLooks like the oran berries did\nthe trick!\c
+74: Benga: I'll find ya later, [VAR TRNAME(0)]!\nThis is gonna be fun!\c
+75: ???: Hey!
+76: ???: Tch... you little pest!\nWatch where you're going!\c\nDon't you know who you're messin with?\c\nI'm a member of a group that strikes\nfear into the hearts of those who\r\nstand before it: Team Plasma!\c\nEver heard of it?
+77: Whatever...\c\nFools will never understand us...\c\nStill...\c\nFirst I got lost chasing Herdier...\nand then some crazy kid attacked me...\r\nand now you're messing up my escape!\c
+78: Agh!\nIs he following me?\c
+79: Better hope we don't meet again, kid!\c\nOr I'll really mess you up!\c
+80: You're strong\nAlmost as strong as me!\c\nYou must be...
+81: Here, let me give your partners some!\c
+82: Bawoof! Ba woof!\c
+83: Benga: Ow!\nA branch!
+84: INSERT BATTLE HERE\c
+
+
