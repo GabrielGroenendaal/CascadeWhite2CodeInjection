@@ -188,48 +188,42 @@ public class MainEvents {
 		Sound.SEPlay(1351);
 		Actor.FacePlayer();
 
-        if (!EventFlags.Get(519))
-        {
-            // Clears Roxanne
-			EventFlags.Set(1404);
-			EventFlags.Set(1406);
-		    // Clears Morty 
-			EventFlags.Set(1175);
-			EventFlags.Set(1185);
-            EventFlags.Set(539);
-            if (!EventFlags.Get(551)){
-				EventWorks.Set(16466, 59);
-                EventFlags.Clear(519);
-                EventFlags.Set(519);
-                EventWorks.Set(16447, 1);
-            }
-		    Message.Actor(1024, 22, 0, 0);
-		    Input.LastKeyWait();
-		    Message.CloseActor();
-        } 
-		if (EventWorks.Get(16447) == 0){
-            // Clears Roxanne
-			EventFlags.Set(1404);
-			EventFlags.Set(1406);
-		    // Clears Morty 
-			EventFlags.Set(1175);
-			EventFlags.Set(1185);
-            EventFlags.Set(539);
-            if (!EventFlags.Get(551)){
-				EventWorks.Set(16466, 59);
-                EventFlags.Clear(519);
-                EventFlags.Set(519);
-                EventWorks.Set(16447, 1);
-            }
-		    Message.Actor(1024, 22, 0, 0);
-		    Input.LastKeyWait();
-		    Message.CloseActor();			
+		if (EventFlags.Get(519)==0){
+			goto Label_ResetFlags;
+		}
+		if (EventWorks.Get(16447) == 0) {
+			goto Label_ResetFlags;
 		}
 		else {
-		    Message.Actor(1024, 23, 0, 0);
-		    Input.LastKeyWait();
-		    Message.CloseActor();            
-        }
+			Message.Actor(1024, 23, 0, 0);
+		    	Input.LastKeyWait();
+		    	Message.CloseActor();          
+		    	goto Label_FinishFlagResets;  
+		}
+		
+
+        	Label_ResetFlags: ;
+        	// Clears Roxanne
+        	EventFlags.Set(1404);           
+        	EventFlags.Set(1406);          
+        	// Clears Morty 
+        	EventFlags.Set(1175);         
+        	EventFlags.Set(1185);           
+        	EventFlags.Set(539);           
+        	EventWorks.Set(16495, 1);      
+        	EventWorks.Set(16494, 3);      
+        	EventFlags.Set(560);           
+        	if (EventFlags.Get(551)==0){
+            	EventWorks.Set(16466, 59); 
+            	EventFlags.Clear(519);      
+            	EventFlags.Set(519);        
+            	EventWorks.Set(16447, 1);   
+        	}
+        	Message.Actor(1024, 22, 0, 0);
+       	Input.LastKeyWait();
+        	Message.CloseActor();
+
+        	Label_FinishFlagResets: ;
 		Runtime.FinishSubEvents();
 		Actor.UnpauseAll();       
     }

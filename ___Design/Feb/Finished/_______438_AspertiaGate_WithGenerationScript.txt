@@ -161,645 +161,681 @@ public class MainEvents {
 	}
 
 	public static void main_6(){
-            int textId = 9;
-            int yesNo; 
-            int scriptEntity; 
-            int listMenu;  
-            int encounterOutcome; 
-		  int encountTotal;
-		  int keepGeneratingEncounters;
-		  int outcome;
-		  
-            Actor.PauseAll();
-            Actor.FacePlayer();
+        int textId = 9;
+        int yesNo; 
+        int listMenu;  
+        int encounterOutcome; 
+        int encountTotal;
+        int keepGeneratingEncounters;
+        
+        Actor.PauseAll();
+        Actor.FacePlayer();
 
-            Label_StartGenerationScript: ;
-            int encountNum = EventWorks.Get(16504);
-            int nextEncPlace = EventWorks.Get(16505);
-		
-		  encountTotal = getEncountTotal();
-            
-            if (encountNum == 0){
-
-                  // This is a tool for generating\nyour encounters for a playthrough.\c\nWould you like to begin?\c
-                  Message.System(textId, 2);
-                  yesNo = YesNoWin.Show();
-                  
-                  if (yesNo == 1){
-	                  Message.CloseAll();
-	                  // Alright, return if you need to\ngenerate encounters!
-	                  Message.System(textId+1, 2);
-	                  Message.WaitAdvance();
-	                  Message.CloseAll();
-	                  goto Label_EndEncounterGeneratorScript; 
-                  }
-                 
-
-                  Message.CloseAll();
-                  nextEncPlace = 427; 
-                  goto Label_GoOverNextEncounter;
-            } else {
-            		 WordSet.LoadNumber(0, (encountNum + 1), 3);
-                  WordSet.LoadNumber(2, encountTotal - encountNum, 3);
-                  WordSet.LoadPlaceName(1, nextEncPlace);
-                  Message.System(textId+3, 2);
-                  // You are currently on encounter #[VAR NUM(0)] of generation.\c\nYou have [VAR NUM(2)] encounters left!\c\nWhat would you like to do?\c 
-
-             Label_ResumeEncounterGeneration: ;
-                  ListMenu.InitRightAnchor(31, 5, 0, 1, listMenu);
-                  ListMenu.AddItem(13, 65535, 0); // Continue with Encounter #[VAR NUM(0)]
-                  ListMenu.AddItem(14, 65535, 1); // Start from the beginning
-                  ListMenu.AddItem(15, 65535, 2); // Exit 
-                  ListMenu.ShowDialog();
-                  if (listMenu == 1){
-	                  // Are you sure you want to start from\nfrom the beginning generating\r\nyour encounters?\c
-	                  Message.System(textId+7, 2); 
-	                  yesNo = YesNoWin.Show();
-	                  if (yesNo == 0){
-	                        EventWorks.Set(16504, 0);
-	                        EventWorks.Set(16505, 427);
-	                        // Ok, we've reset the generation!\c
-	                        Message.System(textId+8, 2);
-	                        goto Label_StartGenerationScript;
-	                  }
-	                  // Ok, what would you like to do?\c
-	                  Message.System(textId+9, 2); 
-	                  goto Label_ResumeEncounterGeneration; 
-                  }
-                  else if (listMenu == 0){
-                  		goto Label_GoOverNextEncounter;
-                  }
-                  Message.System(textId+1, 2);
-                  Message.WaitAdvance();
-                  Message.CloseAll();
-                  goto Label_EndEncounterGeneratorScript;
-            }
-
-            Label_GoOverNextEncounter: ;
-            if (nextEncPlace == 427){
-                  WordSet.LoadNumber(0, (encountNum + 1), 3);
-                  WordSet.LoadNumber(2, (encountTotal - encountNum), 3);
-                  WordSet.LoadPlaceName(1, nextEncPlace);
-                  // This is the start of your encounter\ngeneration.\c\nYour next encounter is in [VAR LOCATION(1)]\nand you have [VAR NUM(2)] encounters left!\c
-                  Message.System(textId+11, 2);
-
-            } else {
-                  WordSet.LoadNumber(0, (encountNum+1), 3);
-                  WordSet.LoadNumber(2, (encountTotal - encountNum), 3);
-                  WordSet.LoadPlaceName(1, nextEncPlace);
-                  Message.System(textId+12, 2);
-                  // The next encounter, Encounter #[VAR NUM(0)], is\nin [VAR LOCATION(1)]!\r\nYou have [VAR NUM(2)] encounters left!\c 
-            }
-
-            if (PokeParty.GetPkmCount(0) == 6){
-                goto label_NoRoomForPokemon;
-            }
-            keepGeneratingEncounters = 0;
-
-            Label_GenerateEncounterForLocation: ; 
-
-            if (keepGeneratingEncounters == 0){
-                  
-                  outcome = 0;
-
-                  // Starter
-                  if (encountNum == 0){
-	                  outcome = sub_Starters();
-	                  goto Label_ResolveOutcome; 
-                  }
-
-                  // Rowdy Pokemon Center
-                  if (encountNum == 1){
-	                  outcome = sub_GenerateWildPokemonForZoneID(435, 3, 2, 0, 0, 0);
-	                  goto Label_ResolveOutcome; 
-                  }
-
-                  // Route 19
-                  if (encountNum == 2){
-	                  outcome = sub_GenerateWildPokemonForZoneID(437, 3, 1, 1, 0, 1);
-	                  goto Label_ResolveOutcome; 
-                  }
-
-                  // COME BACK TO THIS LATER
-                  // Flocessy Town
-                  if (encountNum == 3){
-	                  outcome = sub_GenerateGiftPokemonForZoneId(439);
-	                  goto Label_ResolveOutcome; 
-                  }
-
-                  // Route 20
-                  if (encountNum == 4){
-	                  outcome = sub_GenerateWildPokemonForZoneID(446, 5, 1, 1, 0, 1);
-	                  goto Label_ResolveOutcome; 
-                  }
-
-                  // Ranch
-                  if (encountNum == 5){
-	                  outcome = sub_GenerateWildPokemonForZoneID(445, 6, 1, 1, 0, 1);
-	                  goto Label_ResolveOutcome; 
-                  }
-
-                  // COME BACK TO THIS LATER
-                  // Flocessy Egg
-                  if (encountNum == 6){
-	                  outcome = sub_GenerateGiftPokemonForZoneId(445);
-	                  goto Label_ResolveOutcome; 
-                  }
-
-                  // Alders House
-                  if (encountNum == 7){
-	                  outcome = sub_GenerateWildPokemonForZoneID(440, 7, 2, 0, 0, 0);
-	                  goto Label_ResolveOutcome; 
-                  }
-
-                  // COME BACK TO THIS LATER 
-                  /// Blue Berry Trade
-                  if (encountNum == 8){
-	                  outcome = sub_GenerateTradePokemonForZoneID(427);
-	                  goto Label_ResolveOutcome; 
-                  }
-                  // Pledge Grove
-                  if (encountNum == 9){
-	                  outcome = sub_GenerateWildPokemonForZoneID(614, 10, 4, 0, 0, 0);
-	                  goto Label_ResolveOutcome; 
-                  }
-                  // Virbank Outskirts
-                  if (encountNum == 10){
-	                  outcome = sub_GenerateWildPokemonForZoneID(164, 10, 0, 0, 1, 0);
-	                  goto Label_ResolveOutcome; 
-                  }
-                  // Virbank City
-                  if (encountNum == 11){
-	                  outcome = sub_GenerateWildPokemonForZoneID(448, 10, 0, 0, 0, 1);
-	                  goto Label_ResolveOutcome; 
-                  }
-
-                  // Complex Exterior
-                  if (encountNum == 12){
-	                  outcome = sub_GenerateWildPokemonForZoneID(456, 14, 1, 1, 0, 1);
-	                  goto Label_ResolveOutcome; 
-                  }
-                  // Complex Interior
-                  if (encountNum == 13){
-	                  outcome = sub_GenerateWildPokemonForZoneID(457, 15, 1, 1, 1, 0);
-	                  goto Label_ResolveOutcome; 
-                  }
-
-                  // MISTY EGG ENCOUNTER 
-                  // COME BACK TO THIS LATER 
-                  if (encountNum == 14){
-	                  outcome = sub_GenerateGiftPokemonForZoneId(448);
-	                  goto Label_ResolveOutcome; 
-                  }
-
-                  // pokestar stuidios
-                  if (encountNum == 15){
-	                  outcome = sub_GenerateWildPokemonForZoneID(566, 16, 2, 0, 0, 0);
-	                  goto Label_ResolveOutcome; 
-                  }
-                  // castelia sewers
-                  if (encountNum == 16){
-	                  outcome = sub_GenerateWildPokemonForZoneID(495, 19, 2, 0, 0, 1);
-	                  goto Label_ResolveOutcome; 
-                  }
-                  // castelia gardens
-                  if (encountNum == 17){
-	                  outcome = sub_GenerateWildPokemonForZoneID(500, 22, 1, 1, 1, 0);
-	                  goto Label_ResolveOutcome; 
-                  }
-                  // route 4
-                  if (encountNum == 18){
-                  	outcome = sub_GenerateWildPokemonForZoneID(551, 20, 4, 0, 0, 1);
-                  	goto Label_ResolveOutcome; 
-                  }
-                  // relic passage
-                  if (encountNum == 19){
-	                  outcome = sub_GenerateWildPokemonForZoneID(503, 22, 2, 2, 0, 0);
-                  	goto Label_ResolveOutcome; 
-                  }
-
-                  // COME BACK TO THIS LATER 
-                  // Battle Company
-                  if (encountNum == 20){
-	                  outcome = sub_GenerateGiftPokemonForZoneId(46);
-	                  goto Label_ResolveOutcome; 
-                  }
-
-                  // COME BACK TO THIS LATER
-                  // Alleyway
-                  if (encountNum == 21){
-	                  outcome = sub_GenerateTradePokemonForZoneID(502);
-	                  goto Label_ResolveOutcome; 
-                  }
-                  // Liberty Garden
-                  if (encountNum == 22){
-	                  outcome = sub_GenerateWildPokemonForZoneID(235, 24, 0, 0, 1, 0);
-	                  goto Label_ResolveOutcome; 
-                  }
-
-                  // Desert Resort
-                  if (encountNum == 23){
-	                  outcome = sub_GenerateWildPokemonForZoneID(157, 26, 4, 4, 0, 0);
-	                  goto Label_ResolveOutcome; 
-                  }
-
-                  // Relic Castle
-                  if (encountNum == 24){
-	                  outcome = sub_GenerateWildPokemonForZoneID(161, 27, 0, 2, 0, 0);
-	                  goto Label_ResolveOutcome; 
-                  }
-
-                  // COME BACK TO THIS LATER 
-                  // Fossil
-                  if (encountNum == 25){
-	                  outcome = sub_GenerateFossil();
-	                  goto Label_ResolveOutcome; 
-                  }
-
-                  // Route 5
-                  if (encountNum == 26){
-	                  outcome = sub_GenerateWildPokemonForZoneID(329, 28, 1, 1, 1, 0);
-	                  goto Label_ResolveOutcome; 
-                  }
-
-                  // Route 16
-                  if (encountNum == 27){
-	                  outcome = sub_GenerateWildPokemonForZoneID(314, 28, 1, 1, 1, 0);
-	                  goto Label_ResolveOutcome; 
-                  }
-                  // Lostlorn Forest
-                  if (encountNum == 28){
-	                  outcome = sub_GenerateWildPokemonForZoneID(385, 29, 1, 1, 0, 1);
-	                  goto Label_ResolveOutcome; 
-                  }
-                  /// Anville Town
-                  if (encountNum == 29){
-	                  outcome = sub_GenerateWildPokemonForZoneID(418, 29, 0, 0, 1, 0);
-	                  goto Label_ResolveOutcome; 
-                  }
-
-                  // Deep Lostlorn Forest
-                  if (encountNum == 30){
-	                  outcome = sub_GenerateWildPokemonForZoneID(165, 29, 0, 0, 1, 0);
-	                  goto Label_ResolveOutcome; 
-                  }
-
-
-                  // COME BACK TO THIS LATER 
-                  // Eeveelution Trade
-                  if (encountNum == 31){
-	                  outcome = sub_GenerateTradePokemonForZoneID(62);
-	                  goto Label_ResolveOutcome; 
-                  }
-
-
-                  // Drawbridge
-                  if (encountNum == 32){
-	                  outcome = sub_GenerateWildPokemonForZoneID(253, 30, 0, 3, 0, 0);
-	                  goto Label_ResolveOutcome; 
-                  }
-                  // Plasma Sanctuary
-                  if (encountNum == 33){
-	                  outcome = sub_GenerateWildPokemonForZoneID(96, 31, 2, 0, 0, 0);
-	                  goto Label_ResolveOutcome; 
-                  }
-                  // Route 6
-                  if (encountNum == 34){
-	                  outcome = sub_GenerateWildPokemonForZoneID(331, 31, 1, 1, 1, 1);
-	                  goto Label_ResolveOutcome; 
-                  }
-                  // Clay Tunnel
-                  if (encountNum == 35){
-	                  outcome = sub_GenerateWildPokemonForZoneID(506, 32, 2, 2, 0, 0);
-	                  goto Label_ResolveOutcome; 
-                  }
-                  // Relic Sanctum
-                  if (encountNum == 36){
-	                  outcome = sub_GenerateWildPokemonForZoneID(181, 33, 2, 0, 0, 0);
-	                  goto Label_ResolveOutcome; 
-                  }
-                  // Mistralton Cave
-                  if (encountNum == 37){
-	                  outcome = sub_GenerateWildPokemonForZoneID(333, 35, 2, 2, 0, 0);
-	                  goto Label_ResolveOutcome; 
-                  }
-                  // Chargestone Cave
-                  if (encountNum == 38){
-	                  outcome = sub_GenerateWildPokemonForZoneID(195, 36, 2, 2, 0, 0);
-	                  goto Label_ResolveOutcome; 
-                  }
-                  /// Route 7
-                  if (encountNum == 39){
-	                  outcome = sub_GenerateWildPokemonForZoneID(337, 37, 1, 1, 1, 0);
-	                  goto Label_ResolveOutcome; 
-                  }
-                  // Celestial Tower
-                  if (encountNum == 40){
-	                  outcome = sub_GenerateWildPokemonForZoneID(338, 38, 2, 0, 0, 0);
-	                  goto Label_ResolveOutcome; 
-                  }
-                  // Celestial Rooftop
-                  if (encountNum == 41){
-	                  outcome = sub_GenerateWildPokemonForZoneID(341, 39, 2, 0, 0, 0);
-	                  goto Label_ResolveOutcome; 
-                  }
-                  // Guidance Chamber
-                  if (encountNum == 42){
-	                  outcome = sub_GenerateWildPokemonForZoneID(613, 40, 2, 2, 0, 0);
-	                  goto Label_ResolveOutcome; 
-                  }
-                  // Lentimas Outskirts
-                  if (encountNum == 43){
-	                  outcome = sub_GenerateWildPokemonForZoneID(461, 42, 1, 1, 1, 0);
-	                  goto Label_ResolveOutcome; 
-                  }
-                  // Reversal Mountain 
-                  if (encountNum == 44){
-	                  outcome = sub_GenerateWildPokemonForZoneID(539, 43, 2, 2, 0, 0);
-	                  goto Label_ResolveOutcome; 
-                  } 
-
-                  // Route 14
-                  if (encountNum == 45){
-	                  outcome = sub_GenerateWildPokemonForZoneID(374, 43, 1, 1, 1, 2);
-	                  goto Label_ResolveOutcome; 
-                  }
-                  // Strange House
-                  if (encountNum == 46){
-	                  outcome = sub_GenerateWildPokemonForZoneID(462, 42, 2, 0, 0, 0);
-	                  goto Label_ResolveOutcome; 
-                  }
-                  // Route 21
-                  if (encountNum == 47){
-	                  outcome = sub_GenerateWildPokemonForZoneID(463, 44, 4, 0, 0, 1);
-	                  goto Label_ResolveOutcome; 
-                  }
-                  // Route 22
-                  if (encountNum == 48){
-	                  outcome = sub_GenerateWildPokemonForZoneID(474, 44, 1, 1, 1, 2);
-	                  goto Label_ResolveOutcome; 
-                  }
-                  // Pinwheel Forest
-                  if (encountNum == 49){
-	                  outcome = sub_GenerateWildPokemonForZoneID(155, 45, 1, 1, 1, 2);
-	                  goto Label_ResolveOutcome; 
-                  }
-                  // Abundant Shrine
-                  if (encountNum == 50){
-                        outcome = sub_GenerateWildPokemonForZoneID(376, 44, 1, 1, 1, 1);
-                        goto Label_ResolveOutcome; 
-                  }
-                  // Seaside Cave
-                  if (encountNum == 51){
-                        outcome = sub_GenerateWildPokemonForZoneID(515, 32, 2, 2, 0, 2);
-                        goto Label_ResolveOutcome; 
-                  }
-                  // Undella Bay
-                  if (encountNum == 52){
-                        outcome = sub_GenerateWildPokemonForZoneID(240, 10, 4, 0, 0, 2);
-                        goto Label_ResolveOutcome; 
-                  }
-                  // Abyssal Ruin
-                  if (encountNum == 53){
-                        outcome = sub_GenerateWildPokemonForZoneID(245, 46, 2, 0, 0, 0);
-                        goto Label_ResolveOutcome; 
-                  }
-                  // Route 13
-                  if (encountNum == 54){
-                        outcome = sub_GenerateWildPokemonForZoneID(370, 47, 1, 1, 1, 2);
-                        goto Label_ResolveOutcome; 
-                  }
-                  // Route 12
-                  if (encountNum == 55){
-                        outcome = sub_GenerateWildPokemonForZoneID(368, 47, 1, 1, 1, 0);
-                        goto Label_ResolveOutcome; 
-                  }
-                  // Village Bridge
-                  if (encountNum == 56){
-                        outcome = sub_GenerateWildPokemonForZoneID(255, 47, 1, 1, 1, 2);
-                        goto Label_ResolveOutcome; 
-                  }
-                  // Route 11
-                  if (encountNum == 57){
-                        outcome = sub_GenerateWildPokemonForZoneID(365, 48, 1, 1, 1, 2);
-                        goto Label_ResolveOutcome; 
-                  }
-
-                  // Route 9
-                  if (encountNum == 58){
-                        outcome = sub_GenerateWildPokemonForZoneID(308, 48, 1, 1, 1, 0);
-                        goto Label_ResolveOutcome; 
-                  }
-                  // Challenger's Cave
-                  if (encountNum == 59){
-                        outcome = sub_GenerateWildPokemonForZoneID(352, 10, 2, 2, 0, 0);
-                        goto Label_ResolveOutcome; 
-                  }
-                  // Twist Mountain
-                  if (encountNum == 60){
-	                  outcome = sub_GenerateWildPokemonForZoneID(198, 47, 2, 2, 0, 0);
-	                  goto Label_ResolveOutcome; 
-                  }
-
-                  if (encountNum == 61) {
-                  	goto Label_FinishedGeneratingEncounters; 
-                  }
-            
-                  Label_ResolveOutcome: ;
-                  if (outcome == 1){
-	                  keepGeneratingEncounters = 1; 
-	                  goto Label_GenerateEncounterForLocation; 
-                  } else {
-	                  encountNum = encountNum + 1; 
-	                  nextEncPlace = findNextEncPlace(encountNum);
-                      EventWorks.Set(16504, encountNum);
-                      EventWorks.Set(16505, nextEncPlace);
-                  goto Label_GoOverNextEncounter; 
-                  }
-            }
-            else {
-                  Message.System(textId+1, 2);
-                  Message.WaitAdvance();
-                  Message.CloseAll();
-                  goto Label_EndEncounterGeneratorScript;
-            }
-
-            label_NoRoomForPokemon: ;
-            Message.System(47, 2);
-            Message.WaitAdvance();
-            Message.CloseAll();
-            goto Label_EndEncounterGeneratorScript;
-
-            Label_FinishedGeneratingEncounters: ; 
-            Message.System(textId + 13, 2);
-            // You've finished generating encounters!\nWould you like to reset?\c 
+        Label_StartGenerationScript: ;
+        int encountNum = EventWorks.Get(16504);
+        int nextEncPlace = EventWorks.Get(16505);
+    
+        encountTotal = getEncountTotal();
+        
+        if (encountNum == 0){
+            // This is a tool for generating\nyour encounters for a playthrough.\c\nWould you like to begin?\c
+            Message.System(textId, 2);
             yesNo = YesNoWin.Show();
-            if (yesNo == 0){
-                  EventWorks.Set(16504, 0);
-                  EventWorks.Set(16505, 427);
-                  // Ok, we've reset the generation!\c
-                  Message.System(textId+8, 2);
-                  goto Label_StartGenerationScript;
+            
+            if (yesNo == 1){
+                Message.CloseAll();
+                // Alright, return if you need to\ngenerate encounters!
+                Message.System(textId+1, 2);
+                Message.WaitAdvance();
+                Message.CloseAll();
+                goto Label_EndEncounterGeneratorScript; 
+            }
+            Message.CloseAll();
+            nextEncPlace = 427; 
+            goto Label_GoOverNextEncounter;
+        } 
+        else {
+            if (encountNum == encountTotal){
+                goto Label_FinishedGeneratingEncounters; 
+            }
+            WordSet.LoadNumber(0, (encountNum + 1), 3);
+            WordSet.LoadNumber(2, encountTotal - encountNum, 3);
+            WordSet.LoadPlaceName(1, nextEncPlace);
+            Message.System(textId+3, 2);
+            // You are currently on encounter #[VAR NUM(0)] of generation.\c\nYou have [VAR NUM(2)] encounters left!\c\nWhat would you like to do?\c 
+
+            Label_ResumeEncounterGeneration: ;
+            ListMenu.InitRightAnchor(31, 5, 0, 1, listMenu);
+            ListMenu.AddItem(13, 65535, 0); // Continue with Encounter #[VAR NUM(0)]
+            ListMenu.AddItem(14, 65535, 1); // Start from the beginning
+            ListMenu.AddItem(15, 65535, 2); // Exit 
+            ListMenu.ShowDialog();
+            if (listMenu == 1){
+                // Are you sure you want to start from\nfrom the beginning generating\r\nyour encounters?\c
+                Message.System(textId+7, 2); 
+                yesNo = YesNoWin.Show();
+                if (yesNo == 0){
+                    EventWorks.Set(16504, 0);
+                    EventWorks.Set(16505, 427);
+                    // Ok, we've reset the generation!\c
+                    Message.System(textId+8, 2);
+                    goto Label_StartGenerationScript;
+                }
+                // Ok, what would you like to do?\c
+                Message.System(textId+9, 2); 
+                goto Label_ResumeEncounterGeneration; 
+            }
+            else if (listMenu == 0){
+                goto Label_GoOverNextEncounter;
             }
             Message.System(textId+1, 2);
             Message.WaitAdvance();
             Message.CloseAll();
+            goto Label_EndEncounterGeneratorScript;
+        }
 
-            Label_EndEncounterGeneratorScript: ; 
-            Runtime.FinishSubEvents();
-            Actor.UnpauseAll();
-      }
+        Label_GoOverNextEncounter: ;
+        if (encountNum == encountTotal){
+            goto Label_FinishedGeneratingEncounters; 
+        }
+        if (nextEncPlace == 427){
+            WordSet.LoadNumber(0, (encountNum + 1), 3);
+            WordSet.LoadNumber(2, (encountTotal - encountNum), 3);
+            WordSet.LoadPlaceName(1, nextEncPlace);
+            // This is the start of your encounter\ngeneration.\c\nYour next encounter is in [VAR LOCATION(1)]\nand you have [VAR NUM(2)] encounters left!\c
+            Message.System(textId+11, 2);
+        } else {
+            WordSet.LoadNumber(0, (encountNum+1), 3);
+            WordSet.LoadNumber(2, (encountTotal - encountNum), 3);
+            WordSet.LoadPlaceName(1, nextEncPlace);
+            Message.System(textId+12, 2);
+            // The next encounter, Encounter #[VAR NUM(0)], is\nin [VAR LOCATION(1)]!\r\nYou have [VAR NUM(2)] encounters left!\c 
+        }
 
-      static int sub_GenerateGiftPokemonForZoneId(int zoneId){
-            int listMenu; 
-            int yesNo; 
-            int wildOutcome; 
+        keepGeneratingEncounters = 0;
 
-            LABEL_RerollingGiftEncounters: ;
-            int speciesId;
-            int forme; 
-            int level; 
-      		int textId = 9;
-      		
+        Label_GenerateEncounterForLocation: ; 
+        if (keepGeneratingEncounters == 0){
+            
+            int outcome = 0;
+
+            // Starter
+            if (encountNum == 0){
+                outcome = sub_Starters();
+                goto Label_ResolveOutcome; 
+            }
+
+            // Rowdy Pokemon Center
+            if (encountNum == 1){
+                outcome = sub_GenerateWildPokemonForZoneID(435, 3, 2, 0, 0, 0);
+                goto Label_ResolveOutcome; 
+            }
+
+            // Route 19
+            if (encountNum == 2){
+                outcome = sub_GenerateWildPokemonForZoneID(437, 3, 1, 1, 0, 1);
+                goto Label_ResolveOutcome; 
+            }
+
             // Flocessy Town
-            if (zoneId == 439){
-                  if (EventWorks.Get(16432) == 0){
-                        speciesId = 278; // Wingull
-                  }
-                  else if (EventWorks.Get(16432) == 1){
-                        speciesId = 285; // Shroomish
-                  }
-                  else {
-                        speciesId = 322; // Numel
-                  }
-                  level = 5;
+            if (encountNum == 3){
+                outcome = sub_GenerateGiftPokemonForZoneId(439);
+                goto Label_ResolveOutcome; 
             }
-            // Flocessy Ranch
-            else if (zoneId == 445){
-                  speciesId = GenerateRanchEgg();
-                  level = 1;
+
+            // Route 20
+            if (encountNum == 4){
+                outcome = sub_GenerateWildPokemonForZoneID(446, 5, 1, 1, 0, 1);
+                goto Label_ResolveOutcome; 
             }
-            else if (zoneId == 118){
-                  speciesId = GenerateMistyEgg();
-                  level = 1;
+
+            // Ranch
+            if (encountNum == 5){
+                outcome = sub_GenerateWildPokemonForZoneID(445, 6, 1, 1, 0, 1);
+                goto Label_ResolveOutcome; 
             }
-            else if (zoneId == 8){
-                  speciesId = GenerateCompanyEgg();
-                  level = 1;
+
+            // Flocessy Egg
+            if (encountNum == 6){
+                outcome = sub_GenerateGiftPokemonForZoneId(445);
+                goto Label_ResolveOutcome; 
+            }
+
+            // Alders House
+            if (encountNum == 7){
+                outcome = sub_GenerateWildPokemonForZoneID(440, 7, 2, 0, 0, 0);
+                goto Label_ResolveOutcome; 
+            }
+ 
+            /// Blue Berry Trade
+            if (encountNum == 8){
+                outcome = sub_GenerateTradePokemonForZoneID(427);
+                goto Label_ResolveOutcome; 
+            }
+
+            // Pledge Grove
+            if (encountNum == 9){
+                outcome = sub_GenerateWildPokemonForZoneID(614, 10, 4, 0, 0, 0);
+                goto Label_ResolveOutcome; 
+            }
+
+            // Virbank Outskirts
+            if (encountNum == 10){
+                outcome = sub_GenerateWildPokemonForZoneID(164, 10, 0, 0, 1, 0);
+                goto Label_ResolveOutcome; 
+            }
+
+            // Virbank City
+            if (encountNum == 11){
+                outcome = sub_GenerateWildPokemonForZoneID(448, 10, 0, 0, 0, 1);
+                goto Label_ResolveOutcome; 
+            }
+
+            // Complex Exterior
+            if (encountNum == 12){
+                outcome = sub_GenerateWildPokemonForZoneID(456, 14, 1, 1, 0, 1);
+                goto Label_ResolveOutcome; 
+            }
+
+            // Complex Interior
+            if (encountNum == 13){
+                outcome = sub_GenerateWildPokemonForZoneID(457, 15, 1, 1, 1, 0);
+                goto Label_ResolveOutcome; 
+            }
+
+            // COME BACK TO THIS LATER 
+            if (encountNum == 14){
+                outcome = sub_GenerateGiftPokemonForZoneId(448);
+                goto Label_ResolveOutcome; 
+            }
+
+            // pokestar stuidios
+            if (encountNum == 15){
+                outcome = sub_GenerateWildPokemonForZoneID(566, 16, 2, 0, 0, 0);
+                goto Label_ResolveOutcome; 
+            }
+
+            // castelia sewers
+            if (encountNum == 16){
+                outcome = sub_GenerateWildPokemonForZoneID(495, 19, 2, 0, 0, 1);
+                goto Label_ResolveOutcome; 
+            }
+
+            // route 4
+            if (encountNum == 17){
+                outcome = sub_GenerateWildPokemonForZoneID(551, 20, 4, 0, 0, 1);
+                goto Label_ResolveOutcome; 
+            }
+
+            // castelia gardens
+            if (encountNum == 18){
+                outcome = sub_GenerateWildPokemonForZoneID(500, 22, 1, 1, 1, 0);
+                goto Label_ResolveOutcome; 
+            }
+
+            // relic passage
+            if (encountNum == 19){
+                outcome = sub_GenerateWildPokemonForZoneID(503, 22, 2, 2, 0, 0);
+                goto Label_ResolveOutcome; 
+            }
+
+            // Battle Company
+            if (encountNum == 20){
+                outcome = sub_GenerateGiftPokemonForZoneId(46);
+                goto Label_ResolveOutcome; 
+            }
+            
+            // Alleyway
+            if (encountNum == 21){
+                outcome = sub_GenerateTradePokemonForZoneID(502);
+                goto Label_ResolveOutcome; 
+            }
+
+            // Liberty Garden
+            if (encountNum == 22){
+                outcome = sub_GenerateWildPokemonForZoneID(235, 24, 0, 0, 1, 0);
+                goto Label_ResolveOutcome; 
+            }
+
+            // Desert Resort
+            if (encountNum == 23){
+                outcome = sub_GenerateWildPokemonForZoneID(157, 26, 4, 4, 0, 0);
+                goto Label_ResolveOutcome; 
+            }
+
+            // Relic Castle
+            if (encountNum == 24){
+                outcome = sub_GenerateWildPokemonForZoneID(161, 27, 0, 2, 0, 0);
+                goto Label_ResolveOutcome; 
+            }
+
+            // Route 5
+            if (encountNum == 25){
+                outcome = sub_GenerateWildPokemonForZoneID(329, 28, 1, 1, 1, 0);
+                goto Label_ResolveOutcome; 
+            }
+
+            // Route 16
+            if (encountNum == 26){
+                outcome = sub_GenerateWildPokemonForZoneID(314, 28, 1, 1, 1, 0);
+                goto Label_ResolveOutcome; 
+            }
+
+            // Lostlorn Forest
+            if (encountNum == 27){
+                outcome = sub_GenerateWildPokemonForZoneID(385, 29, 1, 1, 0, 1);
+                goto Label_ResolveOutcome; 
+            }
+
+            // Fossil
+            if (encountNum == 28){
+                outcome = sub_GenerateFossil();
+                goto Label_ResolveOutcome; 
+            }
+
+            // Anville Town
+            if (encountNum == 29){
+                outcome = sub_GenerateWildPokemonForZoneID(418, 29, 0, 0, 1, 0);
+                goto Label_ResolveOutcome; 
+            }
+
+            // Deep Lostlorn Forest
+            if (encountNum == 30){
+                outcome = sub_GenerateWildPokemonForZoneID(165, 29, 0, 0, 1, 0);
+                goto Label_ResolveOutcome; 
+            }
+
+            // Eeveelution Trade
+            if (encountNum == 31){
+                outcome = sub_GenerateTradePokemonForZoneID(62);
+                goto Label_ResolveOutcome; 
+            }
+
+            // Drawbridge
+            if (encountNum == 32){
+                outcome = sub_GenerateWildPokemonForZoneID(253, 30, 0, 3, 0, 0);
+                goto Label_ResolveOutcome; 
+            }
+
+            // Route 6
+            if (encountNum == 33){
+                outcome = sub_GenerateWildPokemonForZoneID(331, 31, 1, 1, 1, 1);
+                goto Label_ResolveOutcome; 
+            }
+
+            // Plasma Sanctuary
+            if (encountNum == 34){
+                outcome = sub_GenerateWildPokemonForZoneID(96, 31, 2, 0, 0, 0);
+                goto Label_ResolveOutcome; 
+            }
+
+            // Clay Tunnel
+            if (encountNum == 35){
+                outcome = sub_GenerateWildPokemonForZoneID(506, 32, 2, 2, 0, 0);
+                goto Label_ResolveOutcome; 
+            }
+
+            // Relic Sanctum
+            if (encountNum == 36){
+                outcome = sub_GenerateWildPokemonForZoneID(181, 33, 2, 0, 0, 0);
+                goto Label_ResolveOutcome; 
+            }
+
+            // Mistralton Cave
+            if (encountNum == 37){
+                outcome = sub_GenerateWildPokemonForZoneID(333, 35, 2, 2, 0, 0);
+                goto Label_ResolveOutcome; 
+            }
+
+            // Chargestone Cave
+            if (encountNum == 38){
+                outcome = sub_GenerateWildPokemonForZoneID(195, 36, 2, 2, 0, 0);
+                goto Label_ResolveOutcome; 
+            }
+
+            /// Route 7
+            if (encountNum == 39){
+                outcome = sub_GenerateWildPokemonForZoneID(337, 37, 1, 1, 1, 0);
+                goto Label_ResolveOutcome; 
+            }
+
+            // Celestial Tower
+            if (encountNum == 40){
+                outcome = sub_GenerateWildPokemonForZoneID(338, 38, 2, 0, 0, 0);
+                goto Label_ResolveOutcome; 
+            }
+
+            // Celestial Rooftop
+            if (encountNum == 41){
+                outcome = sub_GenerateWildPokemonForZoneID(341, 39, 2, 0, 0, 0);
+                goto Label_ResolveOutcome; 
+            }
+
+            // Guidance Chamber
+            if (encountNum == 42){
+                outcome = sub_GenerateWildPokemonForZoneID(613, 40, 2, 2, 0, 0);
+                goto Label_ResolveOutcome; 
+            }
+
+            // Lentimas Outskirts
+            if (encountNum == 43){
+                outcome = sub_GenerateWildPokemonForZoneID(461, 42, 1, 1, 1, 0);
+                goto Label_ResolveOutcome; 
+            }
+
+            // Reversal Mountain 
+            if (encountNum == 44){
+                outcome = sub_GenerateWildPokemonForZoneID(539, 43, 2, 2, 0, 0);
+                goto Label_ResolveOutcome; 
+            } 
+
+            // Route 14
+            if (encountNum == 45){
+                outcome = sub_GenerateWildPokemonForZoneID(374, 43, 1, 1, 1, 2);
+                goto Label_ResolveOutcome; 
+            }
+
+            // Strange House
+            if (encountNum == 46){
+                outcome = sub_GenerateWildPokemonForZoneID(462, 42, 2, 0, 0, 0);
+                goto Label_ResolveOutcome; 
+            }
+
+            // Route 21
+            if (encountNum == 47){
+                outcome = sub_GenerateWildPokemonForZoneID(463, 44, 4, 0, 0, 1);
+                goto Label_ResolveOutcome; 
+            }
+
+            // Route 22
+            if (encountNum == 48){
+                outcome = sub_GenerateWildPokemonForZoneID(474, 44, 1, 1, 1, 2);
+                goto Label_ResolveOutcome; 
+            }
+
+            // Pinwheel Forest
+            if (encountNum == 49){
+                outcome = sub_GenerateWildPokemonForZoneID(155, 45, 1, 1, 1, 2);
+                goto Label_ResolveOutcome; 
+            }
+
+            // Abundant Shrine
+            if (encountNum == 50){
+                outcome = sub_GenerateWildPokemonForZoneID(376, 44, 1, 1, 1, 1);
+                goto Label_ResolveOutcome; 
+            }
+
+            // Seaside Cave
+            if (encountNum == 51){
+                outcome = sub_GenerateWildPokemonForZoneID(515, 32, 2, 2, 0, 2);
+                goto Label_ResolveOutcome; 
+            }
+
+            // Undella Bay
+            if (encountNum == 52){
+                outcome = sub_GenerateWildPokemonForZoneID(240, 10, 4, 0, 0, 2);
+                goto Label_ResolveOutcome; 
+            }
+
+            // Abyssal Ruin
+            if (encountNum == 53){
+                outcome = sub_GenerateWildPokemonForZoneID(245, 46, 2, 0, 0, 0);
+                goto Label_ResolveOutcome; 
+            }
+
+            // Route 13
+            if (encountNum == 54){
+                outcome = sub_GenerateWildPokemonForZoneID(370, 47, 1, 1, 1, 2);
+                goto Label_ResolveOutcome; 
+            }
+
+            // Route 12
+            if (encountNum == 55){
+                outcome = sub_GenerateWildPokemonForZoneID(368, 47, 1, 1, 1, 0);
+                goto Label_ResolveOutcome; 
+            }
+
+            // Village Bridge
+            if (encountNum == 56){
+                outcome = sub_GenerateWildPokemonForZoneID(255, 47, 1, 1, 1, 2);
+                goto Label_ResolveOutcome; 
+            }
+
+            // Route 11
+            if (encountNum == 57){
+                outcome = sub_GenerateWildPokemonForZoneID(365, 48, 1, 1, 1, 2);
+                goto Label_ResolveOutcome; 
+            }
+
+            // Route 9
+            if (encountNum == 58){
+                outcome = sub_GenerateWildPokemonForZoneID(308, 48, 1, 1, 1, 0);
+                goto Label_ResolveOutcome; 
+            }
+
+            // Challenger's Cave
+            if (encountNum == 59){
+                outcome = sub_GenerateWildPokemonForZoneID(352, 10, 2, 2, 0, 0);
+                goto Label_ResolveOutcome; 
+            }
+
+            // Twist Mountain
+            if (encountNum == 60){
+                outcome = sub_GenerateWildPokemonForZoneID(198, 47, 2, 2, 0, 0);
+                goto Label_ResolveOutcome; 
+            }
+
+            if (encountNum == 61) {
+                goto Label_FinishedGeneratingEncounters; 
+            }
+    
+            Label_ResolveOutcome: ;
+            if (outcome == 1){
+                keepGeneratingEncounters = 1; 
+                goto Label_GenerateEncounterForLocation; 
+            } 
+            else if (outcome == 2){
+                encountNum = encountNum + 1; 
+                nextEncPlace = findNextEncPlace(encountNum);
+                EventWorks.Set(16504, encountNum);
+                EventWorks.Set(16505, nextEncPlace);
+                keepGeneratingEncounters = 1; 
+                goto Label_GenerateEncounterForLocation; 
             }
             else {
-                  speciesId = 1;
+                encountNum = encountNum + 1; 
+                nextEncPlace = findNextEncPlace(encountNum);
+                EventWorks.Set(16504, encountNum);
+                EventWorks.Set(16505, nextEncPlace);
+                goto Label_GoOverNextEncounter; 
             }
+        }
+        else {
+            Message.System(textId+1, 2);
+            Message.WaitAdvance();
+            Message.CloseAll();
+            goto Label_EndEncounterGeneratorScript;
+        }
 
-            Label_GiftPokemonDialoguePopup: ;
-            WordSet.LoadPokeSpecies(4, speciesId);
-            // Your encounter is [VAR PKNAME(4)]!\c\nIs this a valid encounter?
-            Message.System(textId + 32, 2);
+        Label_FinishedGeneratingEncounters: ; 
+        Message.System(textId + 13, 2);
 
-            yesNo = YesNoWin.Show();
-            if (yesNo == 0){
-                  wildOutcome = callWildBattle(speciesId, level, 0, 0); 
-            } else {
-                  goto LABEL_RerollingGiftEncounters; 
+        // You've finished generating encounters!\nWould you like to reset?\c 
+        yesNo = YesNoWin.Show();
+        if (yesNo == 0){
+            EventWorks.Set(16504, 0);
+            EventWorks.Set(16505, 427);
+            // Ok, we've reset the generation!\c
+            Message.System(textId+8, 2);
+            goto Label_StartGenerationScript;
+        }
+        Message.System(textId+1, 2);
+        Message.WaitAdvance();
+        Message.CloseAll();
+
+        Label_EndEncounterGeneratorScript: ; 
+        Runtime.FinishSubEvents();
+        Actor.UnpauseAll();
+    }
+
+    static int sub_GenerateGiftPokemonForZoneId(int zoneId){
+        int listMenu; 
+        int yesNo; 
+
+        LABEL_RerollingGiftEncounters: ;
+        int speciesId;
+        int forme; 
+        int level; 
+        int textId = 9;
+        
+        // Flocessy Town
+        if (zoneId == 439){
+                if (EventWorks.Get(16432) == 0){
+                    speciesId = 278; // Wingull
+                }
+                else if (EventWorks.Get(16432) == 1){
+                    speciesId = 285; // Shroomish
+                }
+                else {
+                    speciesId = 322; // Numel
+                }
+                level = 5;
+        }
+        // Flocessy Ranch
+        else if (zoneId == 445){
+                speciesId = GenerateRanchEgg();
+                level = 1;
+        }
+        else if (zoneId == 118){
+                speciesId = GenerateMistyEgg();
+                level = 1;
+        }
+        else if (zoneId == 8){
+                speciesId = GenerateCompanyEgg();
+                level = 1;
+        }
+        else {
+                speciesId = 1;
+        }
+
+        if (zoneId == 427){
+            if (EventWorks.Get(16432) == 1){
+                Message.System(56, 2);
             }
-
-            if (wildOutcome == 0){
-                  goto Label_GiftPokemonDialoguePopup;
-            } else {
-                  Message.System(textId + 18, 2);
-                  yesNo = YesNoWin.Show();
-                  if (yesNo == 0){
-                        return 0;
-                  } else {
-                        return 1;
-                  }
+            else if (EventWorks.Get(16432) == 0){
+                Message.System(57, 2);
             }
-            return 1;
-      }
+            else {
+                Message.System(58, 2);
+            }
+        } 
 
-	static int getEncountTotal(){
-		if (TrainerCard.HasBadge(6)){
-			return 60;
-		}
-		if (TrainerCard.HasBadge(7)){
-			return 50;
-		}
-		if (TrainerCard.HasBadge(5)){
-			return 42;
-		}
-		if (TrainerCard.HasBadge(4)){
-			return 35;
-		}
-		if (TrainerCard.HasBadge(3)){
-			return 31;
-		}
-		if (TrainerCard.HasBadge(2)){
-			return 22;
-		}
-		if (TrainerCard.HasBadge(1)){
-			return 14;
-		}
-		if (TrainerCard.HasBadge(0)){
-			return 9;
-		}
-		return 9;
-	}
+        Label_GiftPokemonDialoguePopup: ;
+        WordSet.LoadPokeSpecies(4, speciesId);
+        // Your encounter is [VAR PKNAME(4)]!\c\nDo you want to move forward with\n[VAR PKNAME(4)] as your encounter?
+        Message.System(41, 2);
+
+        ListMenu.InitRightAnchor(31, 5, 0, 1, listMenu);
+        ListMenu.AddItem(49, 65535, 0); // Continue with Encounter #[VAR NUM(0)]
+        if (zoneId != 439){
+            ListMenu.AddItem(50, 65535, 1); // Reroll on the same table
+        }
+        ListMenu.AddItem(15, 65535, 3); // Exit 
+        ListMenu.ShowDialog();
+
+        if (listMenu == 0){
+            callWildBattle(speciesId, level, 0, 0); 
+        }
+        else if (listMenu == 1){
+            goto LABEL_RerollingGiftEncounters; 
+        }
+        else {
+            return 1; 
+        }
+        
+        Message.System(textId + 18, 2);
+        yesNo = YesNoWin.Show();
+        if (yesNo == 0){
+            return 0;
+        } else {
+            return 2;
+        }
+        return 2;
+    }
+
 
 	
-      static int sub_GenerateTradePokemonForZoneID(int zoneId){
-            int listMenu; 
-            int yesNo; 
-            int wildOutcome; 
-		  int textId = 9;
-			
-            Label_RerollingTradeEncounterTables: ;
-            int speciesId;
-            int forme; 
-            int level; 
-      
-            // Aspertia City
-            if (zoneId == 427){
-                  speciesId = GenerateStarterTrade();
-                  level = 5;
+    static int sub_GenerateTradePokemonForZoneID(int zoneId){
+        int listMenu; 
+        int yesNo; 
+        int textId = 9;
+        
+        Label_RerollingTradeEncounterTables: ;
+        int speciesId;
+        int forme; 
+        int level; 
+    
+        // Aspertia City
+        if (zoneId == 427){
+                speciesId = GenerateStarterTrade();
+                level = 5;
+        }
+        // Nimbasa City
+        else if (zoneId == 9){
+                speciesId = GenerateEeveelutionTrade();
+                level = 15;
+        }
+        else if (zoneId == 8){
+                speciesId = GenerateSoundTrade();
+                level = 30;
+        }
+        else {
+                speciesId = 1;
+        }
+
+        Label_TradeEncounterDialoguePopup: ;
+        if (zoneId == 427){
+            if (EventWorks.Get(16432) == 1){
+                Message.System(59, 2);
             }
-            // Nimbasa City
-            else if (zoneId == 9){
-                  speciesId = GenerateEeveelutionTrade();
-                  level = 15;
-            }
-            else if (zoneId == 8){
-                  speciesId = GenerateSoundTrade();
-                  level = 30;
+            else if (EventWorks.Get(16432) == 0){
+                Message.System(60, 2);
             }
             else {
-                  speciesId = 1;
+                Message.System(61, 2);
             }
+        } 
 
-            Label_TradeEncounterDialoguePopup: ;
-            WordSet.LoadPokeSpecies(4, speciesId);
-            // Your encounter is [VAR PKNAME(4)]!\c\nIs this a valid encounter?
-            Message.System(textId + 32, 2);
+        WordSet.LoadPokeSpecies(4, speciesId);
+        // Your encounter is [VAR PKNAME(4)]!\c\nDo you want to move forward with\n[VAR PKNAME(4)] as your encounter?
+        Message.System(textId + 32, 2);
 
-            yesNo = YesNoWin.Show();
-            if (yesNo == 0){
-                  wildOutcome = callWildBattle(speciesId, level, 0, 0); 
-            } else {
-                  goto Label_RerollingTradeEncounterTables; 
-            }
+        ListMenu.InitRightAnchor(31, 5, 0, 1, listMenu);
+        ListMenu.AddItem(49, 65535, 0); // Continue with Encounter #[VAR NUM(0)]
+        ListMenu.AddItem(50, 65535, 1); // Reroll on the same table
+        ListMenu.AddItem(15, 65535, 3); // Exit 
+        ListMenu.ShowDialog();
 
-            if (wildOutcome == 0){
-                  goto Label_TradeEncounterDialoguePopup;
-            } else {
-                  Message.System(textId + 18, 2);
-                  yesNo = YesNoWin.Show();
-                  if (yesNo == 0){
-                        return 0;
-                  } else {
-                        return 1;
-                  }
-            }
-            return 1;
-      }
+        if (listMenu == 0){
+            callWildBattle(speciesId, level, 0, 0); 
+        }
+        else if (listMenu == 1){
+            goto Label_RerollingTradeEncounterTables; 
+        }
+        else {
+            return 1; 
+        }
+        
+        Message.System(52, 2);
+        Message.System(textId + 18, 2);
+        yesNo = YesNoWin.Show();
+        if (yesNo == 0){
+            return 0;
+        } else {
+            return 2;
+        }
+        return 2;
+    }
 
 	static int sub_Starters() {
 	
@@ -821,188 +857,329 @@ public class MainEvents {
 	    if (listMenu == 498){
             WordSet.LoadPokeSpecies(4, 498);
 	        wildOutcome = callWildBattle(498, 5, 0, 0);
+            EventWorks.Set(16432, 1);
+            Message.System(53, 2);
 	    }
 	    else if (listMenu == 495){
             WordSet.LoadPokeSpecies(4, 495);
 	        wildOutcome = callWildBattle(495, 5, 0, 0);
+            EventWorks.Set(16432, 0);
+            Message.System(54, 2);
 	    }
 	    else if (listMenu == 501){
             WordSet.LoadPokeSpecies(4, 501);
 	        wildOutcome = callWildBattle(501, 5, 0, 0);
+            EventWorks.Set(16432, 2);
+            Message.System(55, 2);
 	    }
 	    else {
 	        Message.CloseAll();
-	        return 0; 
+	        return 1; 
 	    }
-	  
+
         // Ready to move onto the next encounter?
         Message.System(textId + 18, 2);
         yesNo = YesNoWin.Show();
         if (yesNo == 0){
-            if (listMenu == 495){
-                EventWorks.Set(16432, 0);
-            }
-            else if (listMenu == 498){
-                EventWorks.Set(16432, 1);
-            }else {
-                EventWorks.Set(16432, 2);
-            }
             return 0;
         } else {
-            return 1;
+            return 2;
         }
-	    
-	    return 1;
+	    return 2;
 	}
 
-
-      static int sub_GenerateWildPokemonForZoneID(int zoneId, int level, int isWalking, int isShaking, int isDoubles, int isWater) {
-            int listMenu; 
-            int yesNo; 
-            int wildOutcome; 
-		  int textId = 9;
-            Label_RerollingEncountersWildTables: ;
-            int speciesId;
-            int forme; 
-
-            // The options for encounters in [VAR LOCATION(1)] are:
-            Message.System(28, 2);
-
-            ListMenu.InitRightAnchor(31, 5, 0, 1, listMenu);
-            if (isWalking == 1){
-                  ListMenu.AddItem(29, 65535, 0); // Grass / Walking
-            }
-            if (isWalking == 2){
-                  ListMenu.AddItem(30, 65535, 0); // Ground
-            }
-            if (isWalking == 4){
-                  ListMenu.AddItem(39, 65535, 0); // Sand, Exterior
-            }
-            
-            if (isShaking == 1){
-                  if (TrainerCard.HasBadge(0)){
-                        ListMenu.AddItem(31, 65535, 1); // Shaking Grass 
-                  }
-            }
-            if (isShaking == 2){
-                  ListMenu.AddItem(32, 65535, 1); // DustClouds 
-            }
-            if (isShaking == 3){
-                  ListMenu.AddItem(33, 65535, 1); // Shadows 
-            }
-            if (isShaking == 4){
-                  ListMenu.AddItem(40, 65535, 1); // Sand, Interior 
-            }
-
-            if (isDoubles == 1){
-                  ListMenu.AddItem(34, 65535, 6); // Doubles Grass
-            }
-            if (isWater > 0){
-                  ListMenu.AddItem(35, 65535, 2); // Fishing
-                  if (TrainerCard.HasBadge(0)&& isWater != 2){
-                        ListMenu.AddItem(36, 65535, 3); // Fishing Dark Spot
-                  }
-                  if (TrainerCard.HasBadge(4)){
-                        ListMenu.AddItem(37, 65535, 4); // Surfing
-
-                        if (isWater != 2){ 
-                              ListMenu.AddItem(38, 65535, 5); // Surfing Dark Spot
-                        }
-                  }
-            }
-            ListMenu.AddItem(15, 65535, 7); // Exit 
-            ListMenu.ShowDialog();
+    static int sub_GenerateWildPokemonForZoneID(int zoneId, int level, int isWalking, int isShaking, int isDoubles, int isWater) {
+        int listMenu; 
+        int listMenu2;
+        int yesNo; 
+        int numberOfTables = 0;
+        int textId = 9;
 
 
-            // RANDOMLY ROLL THE ENCOUNTER 
-            if (listMenu >= 0 && listMenu <= 6){
-                  speciesId = GenerateWildsEncounter(zoneId, listMenu);
+        Label_RePickingEncounterWildTables: ;
+        int speciesId;
+        int forme; 
+
+        // The options for encounters in [VAR LOCATION(1)] are:
+        Message.System(28, 2);
+
+        ListMenu.InitRightAnchor(31, 5, 0, 1, listMenu);
+        if (isWalking > 0){
+            numberOfTables += 1;
+        }
+        if (isWalking == 1){
+                ListMenu.AddItem(29, 65535, 0); // Grass / Walking
+        }
+        if (isWalking == 2){
+                ListMenu.AddItem(30, 65535, 0); // Ground
+        }
+        if (isWalking == 4){
+                ListMenu.AddItem(39, 65535, 0); // Sand, Exterior
+        }
+        if (isShaking > 0){
+            numberOfTables += 1;
+        }
+        if (isShaking == 1){
+                if (TrainerCard.HasBadge(0)){
+                    ListMenu.AddItem(31, 65535, 1); // Shaking Grass 
+                }
+        }
+        if (isShaking == 2){
+                ListMenu.AddItem(32, 65535, 1); // DustClouds 
+        }
+        if (isShaking == 3){
+                ListMenu.AddItem(33, 65535, 1); // Shadows 
+        }
+        if (isShaking == 4){
+                ListMenu.AddItem(40, 65535, 1); // Sand, Interior 
+        }
+
+        if (isDoubles == 1){
+                ListMenu.AddItem(34, 65535, 6); // Doubles Grass
+                numberOfTables += 1;
+        }
+        if (isWater > 0){
+                ListMenu.AddItem(35, 65535, 2); // Fishing
+                numberOfTables += 1;
+                if (TrainerCard.HasBadge(0)&& isWater != 2){
+                    ListMenu.AddItem(36, 65535, 3); // Fishing Dark Spot
+                    numberOfTables += 1;
+                }
+                if (TrainerCard.HasBadge(4)){
+                    ListMenu.AddItem(37, 65535, 4); // Surfing
+                    numberOfTables += 1;
+                    if (isWater != 2){ 
+                            ListMenu.AddItem(38, 65535, 5); // Surfing Dark Spot
+                            numberOfTables += 1;
+                    }
+                }
+        }
+        ListMenu.AddItem(15, 65535, 7); // Exit 
+        ListMenu.ShowDialog();
+
+        Label_RerollingEncountersWildTables: ; 
+        // RANDOMLY ROLL THE ENCOUNTER 
+        if (listMenu >= 0 && listMenu <= 6){
+                speciesId = GenerateWildsEncounter(zoneId, listMenu);
+        }
+        else {
+                Message.CloseAll();
+                return 1; 
+        }
+
+
+        Label_WildEncounterDialoguePopup: ;
+        WordSet.LoadPokeSpecies(4, speciesId);
+        // Your encounter is [VAR PKNAME(4)]!\c\nDo you want to move forward with\n[VAR PKNAME(4)] as your encounter?
+        Message.System(textId + 32, 2);
+
+
+        ListMenu.InitRightAnchor(31, 5, 0, 1, listMenu2);
+        ListMenu.AddItem(49, 65535, 0); // Continue with Encounter #[VAR NUM(0)]
+        ListMenu.AddItem(50, 65535, 1); // Reroll on the same table
+        if (numberOfTables > 1){
+            ListMenu.AddItem(51, 65535, 2); // Reroll on a different table
+        }
+        ListMenu.AddItem(15, 65535, 3); // Exit 
+        ListMenu.ShowDialog();
+
+        if (listMenu2 == 0){
+            forme = getForme(speciesId, zoneId);
+            if (listMenu == 2 || listMenu == 3){
+                callWildBattle(speciesId, 10, forme, 2); 
+            }
+            else if (listMenu == 4 || listMenu == 5){
+                callWildBattle(speciesId, 30, forme, 2); 
             }
             else {
-                  Message.CloseAll();
-                  return 0; 
+                callWildBattle(speciesId, level, forme, 2); 
             }
+        }
+        else if (listMenu2 == 1){
+            goto Label_RerollingEncountersWildTables; 
+        }
+        else if (listMenu2 == 2){
+            goto Label_RePickingEncounterWildTables; 
+        }
+        else {
+            return 1; 
+        }
 
+        Message.System(textId + 18, 2);
+        yesNo = YesNoWin.Show();
+        if (yesNo == 0){
+            return 0;
+        } else {
+            return 2;
+        }
+        return 2;
+    }
 
-            Label_WildEncounterDialoguePopup: ;
-            WordSet.LoadPokeSpecies(4, speciesId);
-            // Your encounter is [VAR PKNAME(4)]!\c\nIs this a valid encounter?
-            Message.System(textId + 32, 2);
+    static int sub_GenerateFossil(){
+        int listMenu; 
+        int yesNo; 
+        // Which fossil would you like to choose?
+        Message.System(42, 2);
 
-            yesNo = YesNoWin.Show();
-            if (yesNo == 0){
-                  forme = getForme(speciesId, zoneId);
-                  if (listMenu == 2 || listMenu == 3){
-                        wildOutcome = callWildBattle(speciesId, 10, forme, 2); 
-                  }
-                  else if (listMenu == 4 || listMenu == 5){
-                        wildOutcome = callWildBattle(speciesId, 30, forme, 2); 
-                  }
-                  else {
-                        wildOutcome = callWildBattle(speciesId, level, forme, 2); 
-                  }
-            } else {
-                  goto Label_RerollingEncountersWildTables; 
-            }
+        ListMenu.InitRightAnchor(31, 5, 0, 1, listMenu);
+        ListMenu.AddItem(43, 65535, 347); // Anorith
+        ListMenu.AddItem(44, 65535, 345); // Lileep
+        if (TrainerCard.HasBadge(5)){
+                ListMenu.AddItem(45, 65535, 140); // Kabuto
+                ListMenu.AddItem(46, 65535, 408); // Cranidos     
+        }
+        ListMenu.AddItem(15, 65535, 3); // Exit 
+        ListMenu.ShowDialog();
 
-            if (wildOutcome == 0){
-                  goto Label_WildEncounterDialoguePopup;
-            } else {
-                  Message.System(textId + 18, 2);
-                  yesNo = YesNoWin.Show();
-                  if (yesNo == 0){
-                        return 0;
-                  } else {
-                        return 1;
-                  }
-            }
-            return 1;
-      }
+        Label_RepeatFossil: ;
+        if (listMenu == 347){
+            WordSet.LoadPokeSpecies(4, 347);
+                callWildBattle(347, 20, 0, 0);
+        }
+        else if (listMenu == 345){
+            WordSet.LoadPokeSpecies(4, 345);
+                callWildBattle(345, 20, 0, 0);
+        }
+        else if (listMenu == 140){
+            WordSet.LoadPokeSpecies(4, 140);
+                callWildBattle(140, 20, 0, 0);
+        }
+        else if (listMenu == 408){
+            WordSet.LoadPokeSpecies(4, 408);
+                callWildBattle(408, 20, 0, 0);
+        }
+        else {
+                Message.CloseAll();
+                return 1; 
+        }
+        
+        // Ready to move onto the next encounter?
+        Message.System(27, 2);
+        yesNo = YesNoWin.Show();
+        return yesNo;
+    }
 
-      static int sub_GenerateFossil(){
-            int listMenu; 
-            int yesNo; 
-            int wildOutcome;
-            // Which fossil would you like to choose?
-            Message.System(42, 2);
+	static int getEncountTotal(){
+        int levelCap = EventWorks.Get(16466);
 
-            ListMenu.InitRightAnchor(31, 5, 0, 1, listMenu);
-            ListMenu.AddItem(43, 65535, 347); // Anorith
-            ListMenu.AddItem(44, 65535, 345); // Lileep
-            if (TrainerCard.HasBadge(5)){
-                  ListMenu.AddItem(45, 65535, 140); // Kabuto
-                  ListMenu.AddItem(46, 65535, 408); // Cranidos     
-            }
-            ListMenu.AddItem(15, 65535, 3); // Exit 
-            ListMenu.ShowDialog();
+        // 0: Starter 
+        // 1: Rowdy Pokemon Center 
+        // 2: Route 19 
+        // 3: Flocessy Town 
+        // 4: Route 20 
+        // 5: Flocessy Ranch 
+        // 6: Flocessy Egg 
+        // 7: Alder's House 
+        // 8: Blueberry Trade 
+        // 9: Pledge Grove 
+        if (levelCap == 0){
+            return 5;
+        }
+        if (levelCap == 11){
+            return 5;
+        }
+        if (levelCap == 15){
+            return 7; 
+        }
+        if (levelCap == 19){
+            return 9;
+        }
+        // 10: Virbank Outskirts
+        // 11: Virbank City
+        // 12: Virbank Complex Exterior 
+        // 13: Virbank Complex Interior 
+        // 14: Misty Egg
+        if (levelCap == 23){
+            return 13;
+        }
+        if (levelCap == 28){
+            return 14;
+        }
+        // 15: Pokestar Studios 
+        // 16: Castelia Sewers 
+        // 17: Route 4
+        // 18: Castelia Gardens
+        // 19: Relic Passage 
+        // 20: Castelia Battle Company 
+        // 21: Castelia Alleway 
+        // 22: Liberty Garden 
+        if (levelCap == 32){
+            return 17;
+        }
+        if (levelCap == 37){
+            return 22;
+        }
+        // 23: Desert Resort 
+        // 24: Relic Castle 
+        // 25: Route 5
+        // 26: Route 16 
+        // 27: Lostlorn Forest 
+        // 28: Fossil 
+        // 29: Anvillle Town 
+        // 30: Deep Lostlorn Forest 
+        // 31: Eeveelution Trade 
+        if (levelCap == 41){
+            return 27;
+        }
+        if (levelCap == 44){
+            return 31;
+        }
 
-            Label_RepeatFossil: ;
-            if (listMenu == 347){
-                WordSet.LoadPokeSpecies(4, 347);
-                  wildOutcome = callWildBattle(347, 20, 0, 0);
-            }
-            else if (listMenu == 345){
-                WordSet.LoadPokeSpecies(4, 345);
-                  wildOutcome = callWildBattle(345, 20, 0, 0);
-            }
-            else if (listMenu == 140){
-                WordSet.LoadPokeSpecies(4, 140);
-                  wildOutcome = callWildBattle(140, 20, 0, 0);
-            }
-            else if (listMenu == 408){
-                WordSet.LoadPokeSpecies(4, 408);
-                  wildOutcome = callWildBattle(408, 20, 0, 0);
-            }
-            else {
-                  Message.CloseAll();
-                  return 0; 
-            }
-            
-            // Ready to move onto the next encounter?
-            Message.System(27, 2);
-            yesNo = YesNoWin.Show();
-            return yesNo;
-      }
+        // 32: Driftveil Drawbridge 
+        // 33: Route 6 
+        // 34: Plasma Sanctuary 
+        // 35: Driftveil City 
+
+        if (levelCap == 46){
+            return 33;
+        }
+        if (levelCap == 51){
+            return 35;
+        }
+        // 36: Relic Sanctum 
+        // 37: Mistralton Cave 
+        // 38: Chargestone Cave
+        // 39: Route 7 
+        // 40: Celestial Tower 
+        // 41: Celestial Rooftop 
+        // 42: Guidance Chamber 
+        if (levelCap == 55){
+            return 37;
+        }
+        if (levelCap == 59){
+            return 42;
+        }
+
+        // 43: Lentimas Outskirts 
+        // 44: Reversal Mountain 
+        // 45: Route 14 
+        // 46: Strange House 
+        // 47: Route 21 
+        // 48: Route 22 
+        // 49: Pinwheel Forest 
+        // 50: Abundant Shrine 
+        if (levelCap == 63){
+            return 46;
+        }
+        if (levelCap == 66){
+            return 50;
+        }
+
+        // 51: Seaside Cave 
+        // 52: Undella Bay 
+        // 53: Abyssal Ruin 
+        // 54: Route 13 
+        // 55: Route 12 
+        // 56: Village Bridge
+        // 57: Route 11 
+        // 58: Route 9
+        // 59: Challenger's Cave 
+        // 60: Twist Mountain 
+        if (levelCap == 69){
+            return 54;
+        }
+        return 60;
+	}
 
     static int GenerateWildsEncounter(int zoneId, int encounterType){
 
@@ -3320,7 +3497,7 @@ public class MainEvents {
 
 
       static int callWildBattle(int pokeId, int level, int forme, int choice){
-            Box.AddPkmEx(pokeId, forme, level, 0, 0, choice, 0, 1);
+            Box.AddPkmEx(pokeId, forme, level, 0, 0, 0, 0, choice);
             WordSet.LoadPokeSpecies(6, pokeId);
             Message.System(48, 2);
             Message.WaitAdvance();
@@ -3731,16 +3908,17 @@ public class MainEvents {
                   return 495;
             }
 
-            // 17 Castelia gardens 
+            // 17 Route 4
             if (encountNum == 17){
-                  return 500;  // CHANGE THIS LATER
-            }
-
-            // 18 Route 4
-            if (encountNum == 18){
                   return 551;
             }
 
+            // 18 Castelia gardens 
+            if (encountNum == 18){
+                  return 500;  // CHANGE THIS LATER
+            }
+
+    
             // 19: Relic Passage 
             if (encountNum == 19){
                   return 503;
@@ -3771,24 +3949,26 @@ public class MainEvents {
                   return 161;
             }
 
-            // 25: Fossil 
-            if (encountNum == 25){
-                  return 161;
-            }
+         
 
-            // 26: Route 5 
-            if (encountNum == 26){
+            // 25: Route 5 
+            if (encountNum == 25){
                   return 329;
             }
 
-            // 27: Route 16 
-            if (encountNum == 27){
+            // 26: Route 16 
+            if (encountNum == 26){
                   return 314;  // CHANGE THIS LATER
             }
 
-            // 28: Lostlorn Forest
-            if (encountNum == 28){
+            // 27: Lostlorn Forest
+            if (encountNum == 27){
                   return 385;
+            }
+
+            // 28: Fossil 
+            if (encountNum == 28){
+                  return 161;
             }
 
             // 29: Anville Town 
@@ -3811,14 +3991,16 @@ public class MainEvents {
                   return 253;
             }
 
-            // 33: Plasma Sacntuary 
+       
+
+            // 33: Route 6 
             if (encountNum == 33){
-                  return 96;
+                  return 331;
             }
 
-            // 34: Route 6 
+            // 34: Plasma Sacntuary 
             if (encountNum == 34){
-                  return 331;
+                  return 96;
             }
 
             // 35: Clay Tunnel 

@@ -1411,8 +1411,11 @@ const int WhiteListedPokemon[651]{
     0, // MONSNO_MAX = 0x28A,
 };
 
-int i = 0x61;
+
 enum AbilLock
+#ifdef __cplusplus
+    : u32
+#endif
 {
     ABIL_0 = 0x0,
     ABIL_1 = 0x1,
