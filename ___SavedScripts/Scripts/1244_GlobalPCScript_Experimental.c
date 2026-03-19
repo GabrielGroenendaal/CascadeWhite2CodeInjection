@@ -1869,18 +1869,26 @@ label_OpenDialogueSwitchAI: ;
     if (1) goto label_SwitchAINavMenuDoublesCumulative; 
     Compare(0x4034, 2);
     if (1) goto label_SwitchAINavMenuDoublesHealth; 
-    // Using Health Based Doubles Switch AI currently
+    Compare(0x4034, 3);
+    if (1) goto label_SwitchAINavMenuDoublesHealthHighest; 
+    // Using Default Doubles Switch AI currently
     AddDialogueOption(228, 229, 0);
     goto label_SetUpMatchUpAIOptions;
     
 label_SwitchAINavMenuDoublesCumulative: ;
-    // Using Default Based Doubles Switch in AI 
+    // Using Cumulative Based Doubles Switch in AI 
     AddDialogueOption(228, 230, 0);
     goto label_SetUpMatchUpAIOptions;
 
 label_SwitchAINavMenuDoublesHealth: ;
-    // Using Cumulative Based Doubles Switch in AI 
+    // Using Health Based Based Doubles Switch in AI 
     AddDialogueOption(228, 231, 0);
+    goto label_SetUpMatchUpAIOptions;
+
+label_SwitchAINavMenuDoublesHealthHighest: ;
+    // Using Health Based Based Doubles Switch in AI 
+    AddDialogueOption(228, 246, 0);
+    goto label_SetUpMatchUpAIOptions;
 
 label_SetUpMatchUpAIOptions: ;
 	Compare(0x4076, 1);
@@ -1920,6 +1928,8 @@ label_OpenDoublesSwitchInOptions: ;
 	if (1) goto label_CumulativeSwitchAILogic;
 	Compare(0x4034, 2);
 	if (1) goto label_HealthBasedSwitchAILogic;
+    Compare(0x4034, 3);
+	if (1) goto label_HealthBasedSwitchAILogicHighest;
 	EventGreyMessage(215, 2);
 	goto label_DoublesSwitchAIDialogueMenu;
 
@@ -1929,6 +1939,11 @@ label_CumulativeSwitchAILogic: ;
 
 label_HealthBasedSwitchAILogic: ;
 	EventGreyMessage(217, 2);
+    goto label_DoublesSwitchAIDialogueMenu;
+
+label_HealthBasedSwitchAILogicHighest: ;
+	EventGreyMessage(247, 2);
+    goto label_DoublesSwitchAIDialogueMenu;
 
 label_DoublesSwitchAIDialogueMenu: ;
 	WaitForButton();
@@ -1936,7 +1951,8 @@ label_DoublesSwitchAIDialogueMenu: ;
 	AddDialogueOption(224, 218, 0);
 	AddDialogueOption(225, 219, 1);
 	AddDialogueOption(226, 220, 2);
-	AddDialogueOption(207, 0xFFFF, 2);
+	AddDialogueOption(247, 248, 3);
+	AddDialogueOption(207, 0xFFFF, 4);
 	ShowDialogueSelection2();
 
 	Compare(0x8006, 0);
@@ -1944,7 +1960,9 @@ label_DoublesSwitchAIDialogueMenu: ;
 	Compare(0x8006, 1);
 	if (1) goto label_SetCumulativeSwitchAI;
 	Compare(0x8006, 2);
-	if (1) goto label_SetHealthBasedSwitchAI;
+	if (1) goto label_SetLowestHealthBasedSwitchAI;
+	Compare(0x8006, 3);
+	if (1) goto label_SetHighestHealthBasedSwitchAI;
 	EventGreyMessage(116, 2);
 	WaitForButton();
 	goto label_OpenDialogueSwitchAI;
@@ -1965,7 +1983,7 @@ label_SetCumulativeSwitchAI: ;
 	WaitForButton();
 	goto label_OpenDialogueSwitchAI;
 
-label_SetHealthBasedSwitchAI: ;
+label_SetLowestHealthBasedSwitchAI: ;
 	EventGreyMessage(223, 2);
 	WaitForButton();
 	SetVarEqVar2(0x4034, 2);
@@ -1973,7 +1991,13 @@ label_SetHealthBasedSwitchAI: ;
 	WaitForButton();
 	goto label_OpenDialogueSwitchAI;
 
-
+label_SetHighestHealthBasedSwitchAI: ;
+	EventGreyMessage(249, 2);
+	WaitForButton();
+	SetVarEqVar2(0x4034, 3);
+	EventGreyMessage(119, 2);
+	WaitForButton();
+	goto label_OpenDialogueSwitchAI;
 
 
 label_OpenMatchupOptions: ; 

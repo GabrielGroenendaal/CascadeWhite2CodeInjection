@@ -2820,6 +2820,40 @@ extern "C"
             }
             return PokeCon_GetBattleMon(a1->pokeCon, a4[lowestHealthRatioIndex]);
         }
+        else if (getSwitchSetting() == 3){
+
+            lowestHealthRatio = 1;
+            Count = MainModule_ExpandExistPokeID(a1->mainModule, a1->pokeCon, a2 | 0x100, a4);
+            if (!Count)
+            {
+                return 0;
+            }
+            for (int i = 0; i < Count; i++)
+            {
+                currentMon = PokeCon_GetBattleMon(a1->pokeCon, a4[i]);
+                currentHealthRatio = BattleMon_GetHPRatio(currentMon);
+                if (currentHealthRatio > lowestHealthRatio)
+                {
+                    lowestHealthRatio = currentHealthRatio;
+                    lowestHealthRatioIndex = i;
+                }
+                else if (currentHealthRatio == lowestHealthRatio)
+                {
+                    if (BattleRandom(100) < 50)
+                    {
+                        lowestHealthRatioIndex = i;
+                    }
+                }
+                else
+                {
+                }
+            }
+            if (lowestHealthRatioIndex == 1000)
+            {
+                lowestHealthRatioIndex = BattleRandom(Count);
+            }
+            return PokeCon_GetBattleMon(a1->pokeCon, a4[lowestHealthRatioIndex]);
+        }
         else
         {
             Count = MainModule_ExpandExistPokeID(a1->mainModule, a1->pokeCon, a2 | 0x100, a4);
