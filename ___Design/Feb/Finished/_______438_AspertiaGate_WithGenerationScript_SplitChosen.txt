@@ -301,7 +301,7 @@ public class MainEvents {
                 goto Label_FinishedGeneratingEncounters; 
             }
             WordSet.LoadNumber(0, (encountNum + 1), 3);
-            WordSet.LoadNumber(2, (encountTotal - encountNum + 1), 3);
+            WordSet.LoadNumber(2, (encountTotal + 1 - encountNum), 3);
             WordSet.LoadPlaceName(1, nextEncPlace);
             Message.System(textId+3, 2);
             // You are currently on encounter #[VAR NUM(0)] of generation.\c\nYou have [VAR NUM(2)] encounters left!\c\nWhat would you like to do?\c 
@@ -343,13 +343,13 @@ public class MainEvents {
         }
         if (nextEncPlace == 427){
             WordSet.LoadNumber(0, (encountNum + 1), 3);
-            WordSet.LoadNumber(2, (encountTotal - encountNum + 1), 3);
+            WordSet.LoadNumber(2, (encountTotal + 1 - encountNum), 3);
             WordSet.LoadPlaceName(1, nextEncPlace);
             // This is the start of your encounter\ngeneration.\c\nYour next encounter is in [VAR LOCATION(1)]\nand you have [VAR NUM(2)] encounters left!\c
             Message.System(textId+11, 2);
         } else {
-            WordSet.LoadNumber(0, (encountNum+1), 3);
-            WordSet.LoadNumber(2, (encountTotal - encountNum + 1), 3);
+            WordSet.LoadNumber(0, (encountNum + 1), 3);
+            WordSet.LoadNumber(2, (encountTotal + 1 - encountNum), 3);
             WordSet.LoadPlaceName(1, nextEncPlace);
             Message.System(textId+12, 2);
             // The next encounter, Encounter #[VAR NUM(0)], is\nin [VAR LOCATION(1)]!\r\nYou have [VAR NUM(2)] encounters left!\c 
@@ -490,7 +490,7 @@ public class MainEvents {
             
             // Alleyway
             if (encountNum == 21){
-                outcome = sub_GenerateTradePokemonForZoneID(502);
+                outcome = sub_GenerateTradePokemonForZoneID(501);
                 goto Label_ResolveOutcome; 
             }
 
@@ -810,11 +810,11 @@ public class MainEvents {
                 speciesId = GenerateRanchEgg();
                 level = 1;
         }
-        else if (zoneId == 118){
+        else if (zoneId == 448){
                 speciesId = GenerateMistyEgg();
                 level = 1;
         }
-        else if (zoneId == 8){
+        else if (zoneId == 46){
                 speciesId = GenerateCompanyEgg();
                 level = 1;
         }
@@ -822,7 +822,7 @@ public class MainEvents {
                 speciesId = 1;
         }
 
-        if (zoneId == 427){
+        if (zoneId == 439){
             if (EventWorks.Get(16432) == 1){
                 Message.System(56, 2);
             }
@@ -885,11 +885,11 @@ public class MainEvents {
                 level = 5;
         }
         // Nimbasa City
-        else if (zoneId == 9){
+        else if (zoneId == 62){
                 speciesId = GenerateEeveelutionTrade();
                 level = 15;
         }
-        else if (zoneId == 8){
+        else if (zoneId == 501){
                 speciesId = GenerateSoundTrade();
                 level = 30;
         }
@@ -1021,12 +1021,10 @@ public class MainEvents {
                 ListMenu.AddItem(39, 65535, 0); // Sand, Exterior
         }
         if (isShaking > 0){
-            numberOfTables += 1;
+            numberOfTables = numberOfTables + 1;
         }
         if (isShaking == 1){
-                if (TrainerCard.HasBadge(0)){
-                    ListMenu.AddItem(31, 65535, 1); // Shaking Grass 
-                }
+            ListMenu.AddItem(31, 65535, 1); // Shaking Grass 
         }
         if (isShaking == 2){
                 ListMenu.AddItem(32, 65535, 1); // DustClouds 
@@ -1045,18 +1043,18 @@ public class MainEvents {
         if (isWater > 0){
                 ListMenu.AddItem(35, 65535, 2); // Fishing
                 numberOfTables += 1;
-                if (TrainerCard.HasBadge(0)&& isWater != 2){
+                //if (TrainerCard.HasBadge(0)&& isWater != 2){
                     ListMenu.AddItem(36, 65535, 3); // Fishing Dark Spot
                     numberOfTables += 1;
-                }
-                if (TrainerCard.HasBadge(4)){
+                //}
+                //if (TrainerCard.HasBadge(4)){
                     ListMenu.AddItem(37, 65535, 4); // Surfing
                     numberOfTables += 1;
-                    if (isWater != 2){ 
+                    //if (isWater != 2){ 
                             ListMenu.AddItem(38, 65535, 5); // Surfing Dark Spot
                             numberOfTables += 1;
-                    }
-                }
+                    //}
+                //}
         }
         ListMenu.AddItem(15, 65535, 7); // Exit 
         ListMenu.ShowDialog();
@@ -1437,12 +1435,12 @@ public class MainEvents {
                   }
                   // Dark Spot Surfing
                   if (encounterType == 5){
-                        // 5440: Alomomola (60%)
+                        // 594: Alomomola (60%)
                         // 550: Basculin (30%)
                         // 129: Magikarp (5%)
                         // 129: Magikarp (4%)
                         // 129: Magikarp (1%)
-                        return generateWildEncountersSurfing(5440, 550, 129, 129, 129);
+                        return generateWildEncountersSurfing(594, 550, 129, 129, 129);
                   }
             }
 
@@ -1891,12 +1889,12 @@ public class MainEvents {
                   }
                   // Dark Spot Surfing
                   if (encounterType == 5){
-                        // 5440: Alomomola (60%)
+                        // 594: Alomomola (60%)
                         // 211: Qwilfish (30%)
                         // 321: Wailord (5%)
                         // 321: Wailord (4%)
                         // 321: Wailord (1%)
-                        return generateWildEncountersSurfing(5440, 211, 321, 321, 321);
+                        return generateWildEncountersSurfing(594, 211, 321, 321, 321);
                   }
             }
 
@@ -2868,12 +2866,12 @@ public class MainEvents {
                   }
                   // Surfing
                   if (encounterType == 4){
-                        // 5440: Alomomola (60%)
+                        // 594: Alomomola (60%)
                         // 222: Corsola (30%)
                         // 427: Seadra (5%)
                         // 592: Frillish (4%)
                         // 592: Frillish (1%)
-                        return generateWildEncountersSurfing(5440, 222, 427, 592, 592);
+                        return generateWildEncountersSurfing(594, 222, 427, 592, 592);
                   }
                   // Dark Spot Surfing
                   if (encounterType == 5){
@@ -3142,19 +3140,19 @@ public class MainEvents {
                   if (encounterType == 2){
                         // 370: Luvdisc (60%)
                         // 90: Shellder (30%)
-                        // 5440: Alomomola (5%)
-                        // 5440: Alomomola (4%)
-                        // 5440: Alomomola (1%)
-                        return generateWildEncountersFishing(370, 90, 5440, 5440, 5440);
+                        // 594: Alomomola (5%)
+                        // 594: Alomomola (4%)
+                        // 594: Alomomola (1%)
+                        return generateWildEncountersFishing(370, 90, 594, 594, 594);
                   }
                   // Dark Spot Fishing
                   if (encounterType == 3){
                         // 370: Luvdisc (60%)
                         // 90: Shellder (30%)
-                        // 5440: Alomomola (5%)
-                        // 5440: Alomomola (4%)
-                        // 5440: Alomomola (1%)
-                        return generateWildEncountersFishing(370, 90, 5440, 5440, 5440);
+                        // 594: Alomomola (5%)
+                        // 594: Alomomola (4%)
+                        // 594: Alomomola (1%)
+                        return generateWildEncountersFishing(370, 90, 594, 594, 594);
                   }
                   // Surfing
                   if (encounterType == 4){
@@ -3712,7 +3710,7 @@ public class MainEvents {
             int random; 
             random = System.Random(100);
             if (random >= 0 && random < 8){
-                  return 5440;
+                  return 594;
             }
             else if (random >= 8 && random < 16){
                   return 455;
@@ -4035,7 +4033,7 @@ public class MainEvents {
 
             // 21: Castelia Alleyay 
             if (encountNum == 21){
-                  return 502;
+                  return 501;
             }
 
             // 22: Liberty Garden 
