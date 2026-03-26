@@ -528,6 +528,10 @@ extern "C"
 
 
     */
+
+
+
+    
 #pragma region Multiscale
 
     // Multiscale
@@ -4586,7 +4590,7 @@ extern "C" u32 GetScanSetting()
 {
     EventWorkSave *eventWork = GameData_GetEventWork(GAME_DATA);
     u16 *lvl_cap_ptr = EventWork_GetWkPtr(eventWork, 16438);
-    return *lvl_cap_ptr;
+    return (*lvl_cap_ptr) ? 1 : 0;
 }
 extern "C" u32 PML_PersonalGetParamSingle(u16 species, u16 form, PersonalField field);
 

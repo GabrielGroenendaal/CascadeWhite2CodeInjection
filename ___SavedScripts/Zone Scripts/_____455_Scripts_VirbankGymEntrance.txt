@@ -97,11 +97,7 @@ public class MainEvents {
 		if (v0 == 0) {
 			Message.ActorEx(1024, 0, 0, 0, 0);
 			Message.CloseActor();
-			v8 = 157;
-			v9 = 3;
-			v0 = v8;
-			v1 = v9;
-			Global2805(v4, v5, v6, v7);
+			Global2805(157, 3);
 			EventFlags.Set(116);
 
 			Message.ActorEx(1024, 7, 0, 0, 0);
@@ -272,7 +268,7 @@ public class MainEvents {
 		Action0001(1);
 	}
 
-	static meta void Global2805(int a1, int a2, int a3, int a4) : VGlobalCall[2805];
+	static meta void Global2805(int a1, int a2) : VGlobalCall[2805];
 
 	static native void Action0001(int amount) : 0x1;
 	static native void Action0003(int amount) : 0x3;

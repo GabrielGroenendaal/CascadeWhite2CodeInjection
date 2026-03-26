@@ -1,0 +1,1388 @@
+import messages.script.Msg0628.MSGID;
+
+import event.Battle;
+import event.FieldTrade;
+import event.actors.Actor;
+import event.app.PokeApp;
+import event.dialogs.Message;
+import event.dialogs.YesNoWin;
+import pokescript.vm.Math;
+import pokescript.vm.StackCtrl;
+import pokescript.vm.VM;
+import system.EventFlags;
+import system.EventWorks;
+import system.Input;
+import system.Runtime;
+import system.Sound;
+import pokemon.PokeParty;
+import system.EventWorks;
+import system.text.WordSet;
+import event.dialogs.ListMenu;
+import player.Bag;
+
+
+public class MainEvents {
+	// Selects your playtesting split
+    public static void main_1(){
+        int listMenu;
+
+        Actor.PauseAll();
+        Message.System(195, 2);
+        ListMenu.InitRightAnchor(31, 5, 0, 1, listMenu);
+        ListMenu.AddItem(196, 197, 19);
+        ListMenu.AddItem(198, 199, 28);
+        ListMenu.AddItem(200, 201, 35);
+        ListMenu.AddItem(202, 203, 44);
+        ListMenu.AddItem(204, 205, 51);
+        ListMenu.AddItem(206, 207, 59);
+        ListMenu.AddItem(208, 209, 67);
+        ListMenu.ShowDialog();
+        if (listMenu >= 19){
+            if (listMenu <= 59){
+                EventWorks.Set(16466, listMenu);
+                Message.System(210, 2);
+                Message.CloseAll();
+                goto Label_EndSplitChoiceScript;
+            }
+        }
+        Message.System(211, 2);
+        Message.CloseAll();
+        
+        Label_EndSplitChoiceScript: 
+        Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
+
+    // Runs playtesting battles 
+    public static void main_2(){
+        int listMenu;
+        Actor.PauseAll();
+        Actor.FacePlayer();
+        if (!EventFlags.Get(570)){
+            Message.System(212, 2);
+            EventFlags.Set(570);
+        } 
+        Message.System(220, 2);
+        ListMenu.InitRightAnchor(31, 5, 0, 1, listMenu);
+        generateOptions();
+        ListMenu.AddItem(213, 65535, 0);
+        ListMenu.ShowDialog();
+        if (listMenu >= 1){
+            if (listMenu <= 800){
+                if (listMenu == 29){
+                    runEeveelutionGauntlet();
+                }
+                else if (listMenu == 337){
+                    runStrangeHouseGauntlet();
+                }
+                else {
+                    if (checkForTag(listMenu) == 1){
+                        runTagBattle(listMenu);
+                    }
+                    else {
+                        runBattle(listMenu);
+                    }
+                }
+            }
+        } 
+        Message.System(221, 2);
+        Message.CloseAll();
+
+        Label_EndTrainerBattleScript: 
+        Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
+
+    public static void main_3(){
+        int listMenu;
+        int yesNo;
+        int split;
+
+        Actor.PauseAll();
+        Actor.FacePlayer();
+        split = getSplit();
+        if (split == 0){
+            Message.System(184, 2);
+            Message.CloseAll();
+            goto Label_EndItemScript;
+        }
+
+        Message.System(139, 2);
+        yesNo = YesNoWin.Show();
+        if (yesNo == 1){
+            Message.System(140, 2);
+            Message.CloseAll();
+            goto Label_EndItemScript;
+        }
+
+        giveSplitItems(split);
+        checkSplitLockedItems(split);
+        
+
+        Label_EndItemScript: 
+        Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
+	
+    static void resetFieldEffects(){
+        EventWorks.Set(16560, 0);
+        return;
+    }
+
+    static void checkForFieldEffect(int trainerId){
+        EventWorks.Set(16560, 0);
+
+        // LOCATION BASED FIELD EFFECTS 
+        // need to set 5 to become rain and 6 to become sand 
+
+        // Marlon (rain)
+        if (trainerId == 160){
+            EventWorks.Set(16560, 5);
+        }
+        
+        // Blaine (Sun)
+        if (trainerId == 770){
+            EventWorks.Set(16560, 376);
+        }
+
+        // Clay (Sand)
+        if (trainerId == 158){
+            EventWorks.Set(16560, 6);
+        }
+
+        // Roxanne (Sand)
+        if (trainerId == 228){
+            EventWorks.Set(16560, 6);
+        }
+
+        // Strange Statue (trick Room) 
+        if (trainerId == 634){
+            EventWorks.Set(16560, 181);
+        }
+
+        // Lenora (trick Room) 
+        if (trainerId == 790){
+            EventWorks.Set(16560, 181);
+        }
+
+        // Strange House (Haunted)
+        if (trainerId == 337){
+            EventWorks.Set(16560, 340);
+        }
+
+        // Morty (Haunted)
+        if (trainerId == 229){
+            EventWorks.Set(16560, 340);
+        }
+
+        // Sabrina (Haunted)
+        if (trainerId == 769){
+            EventWorks.Set(16560, 340);
+        }
+    }
+
+    static int checkForTag(int trainerId){
+
+        // Sewers Tag
+        if (trainerId == 588){
+            return 1;
+        }
+        if (trainerId == 589){
+            return 1;
+        }
+        if (trainerId == 590){
+            return 1;
+        }
+
+
+        // Ingo & Emmet 
+        if (trainerId == 361){
+            return 1;
+        }
+        if (trainerId == 362){
+            return 1;
+        }
+        if (trainerId == 360){
+            return 1;
+        }
+
+        // Benga & Alder 
+        if (trainerId == 234){
+            return 1;
+        }
+
+        return 0;
+    }
+
+    static void generateOptions(){
+        int split = EventWorks.Get(16466);
+        int starterFlag = EventWorks.Get(16432);
+        if (split < 19){
+            return;
+        }
+        // Cheren Split Boss Fights
+        if (split == 19){
+            ListMenu.AddItem(214, 65535, 772); // Benga 
+            ListMenu.AddItem(215, 65535, 171); // Youngster Pedro 
+            ListMenu.AddItem(216, 65535, 172); // Lass Serena 
+            ListMenu.AddItem(217, 65535, 764); // Brock 
+            ListMenu.AddItem(218, 65535, 156); // Cheren 
+        }
+
+        // Roxie Split Boss Fights 
+        if (split == 28){
+
+            // Virbank Gate Hugh
+            if (starterFlag == 0){
+                ListMenu.AddItem(219, 65535, 557);
+            }
+            else if (starterFlag == 1){
+                ListMenu.AddItem(219, 65535, 558);
+            }
+            else {
+                ListMenu.AddItem(219, 65535, 556);
+            }
+            ListMenu.AddItem(222, 65535, 179); // Guitarist Billy Jo
+            ListMenu.AddItem(223, 65535, 178); // Roughneck Nicky
+            ListMenu.AddItem(224, 65535, 765); // Misty 
+            ListMenu.AddItem(225, 65535, 157); // Roxie
+        }
+
+        // Burgh Split Boss Fights
+        if (split == 35){
+            // Sewers Tag Battle
+            if (starterFlag == 0){
+                ListMenu.AddItem(226, 65535, 588);
+            }
+            else if (starterFlag == 1){
+                ListMenu.AddItem(226, 65535, 589);
+            }
+            else {
+                ListMenu.AddItem(226, 65535, 590);
+            }
+            ListMenu.AddItem(227, 65535, 503); // President Neil
+            ListMenu.AddItem(228, 65535, 329); // Alleyway gang
+            ListMenu.AddItem(229, 65535, 766); // Lt. Surge 
+            ListMenu.AddItem(230, 65535, 154); // Burgh
+        }
+
+        // Elesa Split Boss Fights
+        if (split == 44){
+            ListMenu.AddItem(231, 65535, 773); // Benga 
+            // Ingo & Emmet Tag Battle
+            if (starterFlag == 0){
+                ListMenu.AddItem(232, 65535, 360);
+            }
+            else if (starterFlag == 1){
+                ListMenu.AddItem(232, 65535, 361);
+            }
+            else {
+                ListMenu.AddItem(232, 65535, 362);
+            }
+            ListMenu.AddItem(233, 65535, 29); // Eeveelution Gauntlet
+            ListMenu.AddItem(234, 65535, 790); // Lenora
+            ListMenu.AddItem(235, 65535, 767); // Erika
+            ListMenu.AddItem(236, 65535, 153); // Elesa
+        }
+
+        // Clay Split Boss Fights
+        if (split == 51){
+            ListMenu.AddItem(237, 65535, 340); // Charles
+            ListMenu.AddItem(238, 65535, 346); // Rood
+            ListMenu.AddItem(239, 65535, 768); // Janine
+            ListMenu.AddItem(240, 65535, 158); // Clay
+        }
+
+        // Skyla Split Boss Fights
+        if (split == 59){
+            ListMenu.AddItem(241, 65535, 739); // Colress
+            ListMenu.AddItem(242, 65535, 634); // Strange Statue
+
+            // Chargestone Hugh Battle
+            if (starterFlag == 0){
+                ListMenu.AddItem(243, 65535, 487);
+            }
+            else if (starterFlag == 1){
+                ListMenu.AddItem(243, 65535, 488);
+            }
+            else {
+                ListMenu.AddItem(243, 65535, 489);
+            }
+
+            ListMenu.AddItem(244, 65535, 228); // Roxanne
+            ListMenu.AddItem(245, 65535, 229); // Morty
+            ListMenu.AddItem(246, 65535, 769); // Sabrina
+            ListMenu.AddItem(247, 65535, 491); // Cobalion
+            ListMenu.AddItem(248, 65535, 155); // Skyla
+
+        }
+
+        // Marlon Split Boss Fights 
+        if (split == 67){
+            ListMenu.AddItem(249, 65535, 559); // Flannery
+            ListMenu.AddItem(250, 65535, 337); // Strange House
+            ListMenu.AddItem(251, 65535, 234); // Benga & Alder
+            ListMenu.AddItem(252, 65535, 538); // Gardenia
+            ListMenu.AddItem(253, 65535, 326); // Bugsy 
+            ListMenu.AddItem(254, 65535, 770); // Blaine 
+            ListMenu.AddItem(255, 65535, 507); // Virizion 
+            ListMenu.AddItem(256, 65535, 160); // Marlon 
+        }
+
+        return;
+    }
+
+    static void giveSplitItems(int split){
+        int count; 
+
+        // No Items 
+        if (split == 0){
+            Message.System(184, 2);
+            Message.CloseAll();
+            return;
+        }
+
+        // Cheren Split (Pre Hugh)
+        if (split >= 1){
+            Bag.GiveItem(266, 1); // Muscle Band x1 
+            Bag.GiveItem(267, 1); // Wise Glasses x1 
+            //Bag.GiveItem(75, 10); // Green Shards x10
+            //Bag.GiveItem(4, 30); // PokeBalls x30  
+            Bag.GiveItem(216, 1); // Exp Share x1
+
+            // Super Rod x1
+            if (Bag.GetItemQuantity(447) == 0){
+                Bag.GiveItem(447, 1);
+            }
+        }
+
+        // Cheren Split (All)
+        if (split >= 2){
+            Bag.GiveItem(214, 2); // White Herb x2 
+            //Bag.GiveItem(149, 3); // Cheri Berry x3 
+            //Bag.GiveItem(200, 3); // Chilan Berry x3 
+            //Bag.GiveItem(75, 10); // Green Shards x10
+            Bag.GiveItem(213, 1); // Brightpowder x1 
+            Bag.GiveItem(217, 1); // Quick Claw x1 
+        }
+
+        // Roxie Split (Pre Hugh)
+        if (split >= 3){
+            // Berries 
+            //Bag.GiveItem(152, 3);
+            //Bag.GiveItem(153, 3);
+            //Bag.GiveItem(151, 3);
+            //Bag.GiveItem(150, 3);
+            //Bag.GiveItem(149, 3);
+            //Bag.GiveItem(156, 3);
+            Bag.GiveItem(239, 1); // Miracle Seed 
+            Bag.GiveItem(243, 1);  // Mystic Water 
+            Bag.GiveItem(251, 1); // Silk Scarf 
+        }
+
+        // Roxie Split (All)
+        if (split >= 4){
+            //Bag.GiveItem(157, 3); // Lum Berry x3 
+            Bag.GiveItem(564, 2); // Normal Gem x2 
+            Bag.GiveItem(75, 15); // Green Shard x15 
+            Bag.GiveItem(245, 1); // Poison Barb 
+            Bag.GiveItem(242, 1); // Magnet 
+            Bag.GiveItem(249, 1); // Charcoal 
+            //Bag.GiveItem(15, 30); // Quick Ball x30 
+            Bag.GiveItem(221, 1); // King's Rock x1 
+            Bag.GiveItem(222, 1); // Silverpowder 
+            Bag.GiveItem(564, 279); // Lagging Tail x10 
+            Bag.GiveItem(564, 273); // Flame Orb x10 
+            Bag.GiveItem(564, 272); // Toxic Orb x10
+
+            // TM04 
+            if (Bag.GetItemQuantity(331) == 0){
+                Bag.GiveItem(331, 1);
+            }
+
+            // TM15 
+            if (Bag.GetItemQuantity(342) == 0){
+                Bag.GiveItem(342, 1);
+            }
+
+            // TM39 
+            if (Bag.GetItemQuantity(366) == 0){
+                Bag.GiveItem(366, 1);
+            }
+        }
+
+        // Burgh Split (Post Sewers)
+        if (split >= 5){
+            Bag.GiveItem(538, 1); // Eviolite
+            Bag.GiveItem(241, 1); // Black Belt 
+            Bag.GiveItem(267, 9); // Wise Glasses x9 
+            Bag.GiveItem(266, 9); // Muscle Band x9 
+            Bag.GiveItem(221, 9); // King's Rock x9 
+            Bag.GiveItem(240, 1); // BlackGlasses 
+            Bag.GiveItem(43, 3); // Berry Juice x3 
+            Bag.GiveItem(244, 1); // Sharp Beak x1 
+            Bag.GiveItem(227, 1); // DeepSeaScale 
+            Bag.GiveItem(226, 1); // Deep Sea Tooth 
+            Bag.GiveItem(281, 1); // Black Sludge x1 
+            Bag.GiveItem(248, 1); // TwistedSpoon x1 
+            Bag.GiveItem(288, 1); // Sticky Barb x1 
+            Bag.GiveItem(75, 15); // Green Shard x15 
+            Bag.GiveItem(219, 5); // Mental Herb x5 
+
+            // TM65
+            if (Bag.GetItemQuantity(392) == 0){
+                Bag.GiveItem(392, 1);
+            }
+
+            // TM37
+            if (Bag.GetItemQuantity(364) == 0){
+                Bag.GiveItem(364, 1);
+            }
+        }
+
+        // Burgh Split (All)
+        if (split >= 6){
+            Bag.GiveItem(238, 1); // Hard Stone 
+            Bag.GiveItem(233, 1); // Metal Coat 
+            Bag.GiveItem(136, 2); // Trickster Herb x2 
+            Bag.GiveItem(276, 1); // Zoom Lens x1 
+            Bag.GiveItem(253, 1); // Shell Bell x1 
+            Bag.GiveItem(72, 10); // Red Shards x10 
+            Bag.GiveItem(194, 3); // Tanga Berry x3 
+
+            // TM80 
+            if (Bag.GetItemQuantity(407) == 0){
+                Bag.GiveItem(407, 1);
+            }
+        }
+
+        // Elesa Items (Pre-Benga)
+        if (split >= 7){
+            Bag.GiveItem(157, 3); // Lum Berry x3 
+            Bag.GiveItem(159, 10); // Figy Berry x10 
+            Bag.GiveItem(237, 1); // Soft Sand 
+            Bag.GiveItem(212, 5); // Rowap Berry x5 
+            Bag.GiveItem(211, 5); // Jaboca Berry x5 
+            Bag.GiveItem(75, 15); // Green Shards x15 
+
+            // TM18  
+            if (Bag.GetItemQuantity(345) == 0){
+                Bag.GiveItem(345, 1);
+            }
+
+            // TM48  
+            if (Bag.GetItemQuantity(375) == 0){
+                Bag.GiveItem(375, 1);
+            }
+
+            // TM83  
+            if (Bag.GetItemQuantity(410) == 0){
+                Bag.GiveItem(410, 1);
+            }
+
+            // TM03  
+            if (Bag.GetItemQuantity(330) == 0){
+                Bag.GiveItem(330, 1);
+            }
+
+            // TM78  
+            if (Bag.GetItemQuantity(405) == 0){
+                Bag.GiveItem(405, 1);
+            }
+        }
+
+        // Elesa Split (All)
+        if (split >= 8){
+            Bag.GiveItem(246, 1); // Nevermeltice 
+            Bag.GiveItem(247, 1); // Spell Tag 
+            Bag.GiveItem(564, 3); // Normal Gem x3 
+            Bag.GiveItem(539, 3); // Eject Pack x3
+            Bag.GiveItem(296, 1); /// Big Root x1 
+
+            // TM19   
+            if (Bag.GetItemQuantity(346) == 0){
+                Bag.GiveItem(346, 1);
+            }
+
+            // TM49   
+            if (Bag.GetItemQuantity(376) == 0){
+                Bag.GiveItem(376, 1);
+            }
+
+            // TM66   
+            if (Bag.GetItemQuantity(393) == 0){
+                Bag.GiveItem(393, 1);
+            }
+
+            // TM84   
+            if (Bag.GetItemQuantity(411) == 0){
+                Bag.GiveItem(411, 1);
+            }
+
+            // TM08   
+            if (Bag.GetItemQuantity(335) == 0){
+                Bag.GiveItem(335, 1);
+            }
+
+            // TM27   
+            if (Bag.GetItemQuantity(354) == 0){
+                Bag.GiveItem(354, 1);
+            }
+            
+            // TM59   
+            if (Bag.GetItemQuantity(386) == 0){
+                Bag.GiveItem(386, 1);
+            }
+        }
+
+        // Clay Split (All)
+        if (split >= 9){
+            Bag.GiveItem(268, 1); // Expert Belt 
+            Bag.GiveItem(72, 10); // Red Shard x10 
+            Bag.GiveItem(73, 6); // Blue Shard x6 
+            Bag.GiveItem(214, 2); // White Herb x2
+            Bag.GiveItem(246, 2); // Trickster Herb x2 
+            Bag.GiveItem(82, 10); // Fire Stone x10 
+            Bag.GiveItem(84, 10); // Water Stone x10 
+            Bag.GiveItem(85, 10); // Leaf Stone x10 
+            Bag.GiveItem(83, 10); // Thunderstone x10 
+            Bag.GiveItem(81, 10); // Moon Stone x10 
+            Bag.GiveItem(80, 10); // Sun Stone x10 
+            Bag.GiveItem(236, 1); // Light Ball x1 
+            Bag.GiveItem(258, 1); // Thick Club x1 
+            Bag.GiveItem(259, 1); // Stick x1 
+            Bag.GiveItem(209, 50); // Micle Berry x50 
+            Bag.GiveItem(219, 50); // Mental Herb x50 
+            Bag.GiveItem(159, 50); // Figy Berry x50 
+             
+
+            // TM85
+            if (Bag.GetItemQuantity(412) == 0){
+                Bag.GiveItem(412, 1);
+            }
+
+            // TM90
+            if (Bag.GetItemQuantity(417) == 0){
+                Bag.GiveItem(417, 1);
+            }
+
+            // TM55
+            if (Bag.GetItemQuantity(382) == 0){
+                Bag.GiveItem(382, 1);
+            }
+        }
+
+        // Skyla Split (All)
+        if (split >= 10){
+            Bag.GiveItem(93, 6); // Heart Scale x6
+            Bag.GiveItem(564, 2); // Normal Gem x2 
+            Bag.GiveItem(72, 10); // Red Shard x10 
+            Bag.GiveItem(158, 20); // Sitrus Berry x20 
+            Bag.GiveItem(73, 6); // Blue Shard x6 
+            Bag.GiveItem(278, 1); // Iron Ball x1 
+            Bag.GiveItem(256, 3); // Blunder Policy x3 
+
+            // TM29 
+            if (Bag.GetItemQuantity(356) == 0){
+                Bag.GiveItem(356, 1);
+            }
+
+            // TM64  
+            if (Bag.GetItemQuantity(391) == 0){
+                Bag.GiveItem(391, 1);
+            }
+            
+            // TM32  
+            if (Bag.GetItemQuantity(359) == 0){
+                Bag.GiveItem(359, 1);
+            }
+            
+            // TM11  
+            if (Bag.GetItemQuantity(338) == 0){
+                Bag.GiveItem(338, 1);
+            }
+            
+            // TM33  
+            if (Bag.GetItemQuantity(360) == 0){
+                Bag.GiveItem(360, 1);
+            }
+            
+            // TM16  
+            if (Bag.GetItemQuantity(343) == 0){
+                Bag.GiveItem(343, 1);
+            }
+            
+            // TM36  
+            if (Bag.GetItemQuantity(363) == 0){
+                Bag.GiveItem(363, 1);
+            }
+            
+            // TM21 
+            if (Bag.GetItemQuantity(348) == 0){
+                Bag.GiveItem(348, 1);
+            }
+            
+            // TM91  
+            if (Bag.GetItemQuantity(418) == 0){
+                Bag.GiveItem(418, 1);
+            }
+
+            // HM06  
+            if (Bag.GetItemQuantity(425) == 0){
+                Bag.GiveItem(425, 1);
+            }
+
+            // TM07  
+            if (Bag.GetItemQuantity(334) == 0){
+                Bag.GiveItem(334, 1);
+            }
+            
+            // TM77 
+            if (Bag.GetItemQuantity(404) == 0){
+                Bag.GiveItem(404, 1);
+            }
+        }
+
+        // Marlon Split (Pre Benga)
+        if (split >= 11){
+            Bag.GiveItem(158, 20); // Sitrus Berry x20 
+            Bag.GiveItem(93, 1); // Heart Scale x1
+            Bag.GiveItem(72, 15); // Red Shard x15
+            Bag.GiveItem(73, 5); // Blue Shard x5 
+            Bag.GiveItem(542, 5); // Red Card x5 
+            Bag.GiveItem(214, 3); // White Herb x3 
+            Bag.GiveItem(271, 3); // Power Herb x3 
+            Bag.GiveItem(109, 9); // Dawn Stone x9 
+            Bag.GiveItem(108, 9); // Dusk Stone x9 
+            Bag.GiveItem(107, 9); // Shiny Stone x9 
+
+            // TM02
+            if (Bag.GetItemQuantity(329) == 0){
+                Bag.GiveItem(329, 1); 
+            }
+        }
+
+        // Marlon Split (All)
+        if (split >= 12){
+            Bag.GiveItem(93, 2); // Heart Scale x2 
+            Bag.GiveItem(74, 5); // Yellow Shard x5 
+            Bag.GiveItem(93, 1); // Shell Bell x1 
+            Bag.GiveItem(253, 10); // Blue Shard x10 
+            Bag.GiveItem(547, 3); // Eject Button x3 
+            Bag.GiveItem(75, 15); // Green Shard x15 
+            Bag.GiveItem(158, 10); // Sitrus Berry x10 
+
+            // TM24 
+            if (Bag.GetItemQuantity(351) == 0){
+                Bag.GiveItem(351, 1);
+            }
+        }
+
+        // Drayden Split (Pre Benga)
+        //if (split >= 13){
+
+        //}
+
+        // Drayden Split (All)
+        //if (split >= 14){
+
+        //}
+
+        return;
+    }
+
+    static void checkSplitLockedItems(int split){
+        int yesNo;
+        int listMenu; 
+
+        if (split < 2){
+            return;
+        }
+
+        Message.System(183, 2);
+
+        // Cheren Split
+        if (split >= 2){
+            
+            // Rowap / Jaboca Berries
+            Message.System(141, 2);
+            yesNo = YesNoWin.Show();
+            if (yesNo == 0){
+                Bag.GiveItem(212, 3); // Rowap Berries 
+                Bag.GiveItem(211, 3); // Jaboca Berries
+            }
+            Message.CloseAll();
+            
+
+            // Brock 
+            Message.System(142, 2);
+            yesNo = YesNoWin.Show();
+            if (yesNo == 0){
+                Bag.GiveItem(43, 10); // Berry Juice
+
+                // TM94
+                if (Bag.GetItemQuantity(619) == 0){
+                    Bag.GiveItem(619, 1);
+                }
+            }
+            Message.CloseAll();        
+        }
+
+        // Roxie Split
+        if (split >= 4){
+
+            // Eviolite Quest
+            Message.System(143, 2);
+            yesNo = YesNoWin.Show();
+            if (yesNo == 0){
+                Bag.GiveItem(538, 1); // Eviolite
+            }
+            Message.CloseAll();
+            
+
+            // Misty 
+            Message.System(144, 2);
+            yesNo = YesNoWin.Show();
+            if (yesNo == 0){
+                
+                Bag.GiveItem(280, 1); // Clear Amulet 
+                Bag.GiveItem(519, 1); // Naive Mint 
+
+                // TM50
+                if (Bag.GetItemQuantity(377) == 0){
+                    Bag.GiveItem(377, 1);
+                }
+            }
+            Message.CloseAll();
+        }
+
+        // Burgh Split
+        if (split >= 6){
+
+            // Enigma Berry Quest
+            Message.System(145, 2);
+            yesNo = YesNoWin.Show();
+            if (yesNo == 0){
+                Bag.GiveItem(208, 3); // Enigma Berry x3 
+            }
+            Message.CloseAll();
+            
+
+            // Scientists 
+            Message.System(146, 2);
+            yesNo = YesNoWin.Show();
+            if (yesNo == 0){
+                Label_PickRelicPassageStone: 
+                Message.System(185, 2);
+                ListMenu.InitRightAnchor(31, 5, 0, 1, listMenu);
+                ListMenu.AddItem(186, 65535, 84);
+                ListMenu.AddItem(187, 65535, 85);
+                ListMenu.AddItem(188, 65535, 82);
+                ListMenu.AddItem(189, 65535, 83);
+                ListMenu.AddItem(190, 65535, 81);
+                ListMenu.AddItem(191, 65535, 80);
+                ListMenu.ShowDialog();
+
+                if (listMenu >= 80){
+                    if (listMenu <= 85){
+                        Bag.GiveItem(listMenu, 1);
+                    }
+                    else {
+                        goto Label_PickRelicPassageStone;
+                    }
+                } else{
+                    goto Label_PickRelicPassageStone;
+                }
+            }
+            Message.CloseAll();
+            
+
+            // Castelia Gang 
+            Message.System(148, 2);
+            yesNo = YesNoWin.Show();
+            if (yesNo == 0){
+                Bag.GiveItem(48, 1); // Ability Capsule x1
+            }
+            Message.CloseAll();
+            
+
+            // Lt. Surge
+            Message.System(147, 2);
+            yesNo = YesNoWin.Show();
+            if (yesNo == 0){
+                
+                Bag.GiveItem(234, 1); // Leftovers 
+
+                // TM89
+                if (Bag.GetItemQuantity(416) == 0){
+                    Bag.GiveItem(416, 1);
+                }
+            }
+            Message.CloseAll();
+        }
+
+        // Elesa Split
+        if (split >= 8){
+
+            // Ingo & Emmet
+            Message.System(149, 2);
+            yesNo = YesNoWin.Show();
+            if (yesNo == 0){
+                Bag.GiveItem(250, 1); // Dragon Fang 
+                Bag.GiveItem(561, 2); // Dragon Gem 
+
+                Label_PickAnvilleTownStone: 
+                Message.System(185, 2);
+                ListMenu.InitRightAnchor(31, 5, 0, 1, listMenu);
+                ListMenu.AddItem(186, 65535, 84);
+                ListMenu.AddItem(187, 65535, 85);
+                ListMenu.AddItem(188, 65535, 82);
+                ListMenu.AddItem(189, 65535, 83);
+                ListMenu.AddItem(190, 65535, 81);
+                ListMenu.AddItem(191, 65535, 80);
+                ListMenu.AddItem(192, 65535, 109);
+                ListMenu.AddItem(193, 65535, 107);
+                ListMenu.AddItem(194, 65535, 108);
+                ListMenu.ShowDialog();
+
+                if (listMenu >= 80){
+                    if (listMenu <= 85){
+                        Bag.GiveItem(listMenu, 1);
+                    }
+                    else {
+                        if (listMenu >= 107){
+                            if (listMenu <= 109){
+                                Bag.GiveItem(listMenu, 1);
+                            } 
+                            else {
+                                goto Label_PickAnvilleTownStone;
+                            }
+                        }
+                        else {
+                            goto Label_PickAnvilleTownStone;
+                        }
+                    }
+                } 
+                else {
+                    goto Label_PickAnvilleTownStone;
+                }
+
+            }
+            Message.CloseAll();
+            
+
+            // Eeveelution Gauntlet
+            Message.System(150, 2);
+            yesNo = YesNoWin.Show();
+            if (yesNo == 0){
+                Bag.GiveItem(48, 1); // Ability Capsule x1 
+            }
+            Message.CloseAll();
+            
+
+            // Erika
+            Message.System(151, 2);
+            yesNo = YesNoWin.Show();
+            if (yesNo == 0){
+                Bag.GiveItem(72, 10); // Red Shard x10
+                Bag.GiveItem(184, 2); // Occa Berry
+                Bag.GiveItem(185, 2); // Passho Berry
+                Bag.GiveItem(186, 2); // Wacan Berry 
+                Bag.GiveItem(187, 2); // Rindo Berry
+                Bag.GiveItem(188, 2); // Yache Berry
+                Bag.GiveItem(189, 2); // Chople Berry
+                Bag.GiveItem(190, 2); // Kebia Berry
+                Bag.GiveItem(191, 2); // Shuca Berry
+                Bag.GiveItem(192, 2); // Coba Berry
+                Bag.GiveItem(193, 2); // Payapa Berry
+                Bag.GiveItem(194, 2); // Tanga Berry
+                Bag.GiveItem(195, 2); // Charti Berry
+                Bag.GiveItem(196, 2); // Kasib Berry
+                Bag.GiveItem(197, 2); // Haban Berry
+                Bag.GiveItem(198, 2); // Colbur Berry
+                Bag.GiveItem(199, 2); // Babiri Berry
+                Bag.GiveItem(200, 2); // Chilan Berry
+                Bag.GiveItem(206, 2); // Roseli Berry
+            }
+            Message.CloseAll();
+        }
+
+        // Clay Split
+        if (split >= 9){
+
+            // Janine
+            Message.System(152, 2);
+            yesNo = YesNoWin.Show();
+            if (yesNo == 0){
+                Bag.GiveItem(73, 10); // Blue Shards x10 
+                Bag.GiveItem(548, 2);
+        		Bag.GiveItem(549, 2);
+        		Bag.GiveItem(550, 2);
+       		    Bag.GiveItem(551, 2);
+        		Bag.GiveItem(552, 2);
+        		Bag.GiveItem(553, 2);
+        		Bag.GiveItem(554, 2);
+        		Bag.GiveItem(555, 2);
+        		Bag.GiveItem(556, 2);
+        		Bag.GiveItem(557, 2);
+        		Bag.GiveItem(558, 2);
+        		Bag.GiveItem(559, 2);
+        		Bag.GiveItem(560, 2);
+        		Bag.GiveItem(561, 2);
+        		Bag.GiveItem(562, 2);
+        		Bag.GiveItem(563, 2);
+        		Bag.GiveItem(564, 2);
+        		Bag.GiveItem(290, 2);
+            }
+            Message.CloseAll();
+        }
+        
+        // Skyla Split
+        if (split >= 10){
+
+            // Strange Statue
+            Message.System(153, 2);
+            yesNo = YesNoWin.Show();
+            if (yesNo == 0){
+                Bag.GiveItem(270, 1); // Life Orb
+            }
+            Message.CloseAll();
+
+            // Roxanne
+            Message.System(154, 2);
+            yesNo = YesNoWin.Show();
+            if (yesNo == 0){
+                
+                Bag.GiveItem(191, 3); // Shuca Berry x3 
+                Bag.GiveItem(555, 3); // Ground Gem x3 
+
+                // TM28
+                if (Bag.GetItemQuantity(355) == 0){
+                    Bag.GiveItem(355, 1);
+                }
+            }
+            Message.CloseAll();
+            
+            // Morty
+            Message.System(155, 2);
+            yesNo = YesNoWin.Show();
+            if (yesNo == 0){
+                
+                Bag.GiveItem(196, 3); // Kasib Berry x3 
+                Bag.GiveItem(560, 3); // Ghost Gem x3 
+
+                // TM30
+                if (Bag.GetItemQuantity(357) == 0){
+                    Bag.GiveItem(357, 1);
+                }
+
+            }
+            Message.CloseAll();
+            
+
+            // Volkner
+            Message.System(156, 2);
+            yesNo = YesNoWin.Show();
+            if (yesNo == 0){
+                
+                Bag.GiveItem(186, 3); // Wacan Berry x3 
+                Bag.GiveItem(550, 3); // Electric Gem x3 
+                
+                // TM72
+                if (Bag.GetItemQuantity(399) == 0){
+                    Bag.GiveItem(399, 1);
+                }
+            }
+            Message.CloseAll();
+            
+
+            // Sabrina
+            Message.System(157, 2);
+            yesNo = YesNoWin.Show();
+            if (yesNo == 0){
+                Bag.GiveItem(524, 1); // Rash Mint 
+                Bag.GiveItem(521, 1); // Careful Mint
+                Bag.GiveItem(543, 1); // Covert Cloak
+                Bag.GiveItem(530, 3); // IV Enhancer x3  
+            }
+            Message.CloseAll();
+            
+
+            // Cobalion
+            Message.System(158, 2);
+            yesNo = YesNoWin.Show();
+            if (yesNo == 0){
+                Bag.GiveItem(289, 2); // Assault Vest
+            }
+            Message.CloseAll();
+            
+        }
+
+        // Alder Split
+        if (split >= 11){
+
+            // Falkner
+            Message.System(159, 2);
+            yesNo = YesNoWin.Show();
+            if (yesNo == 0){
+                Bag.GiveItem(192, 3); // Coba Berry x3 
+                Bag.GiveItem(556, 3); // Flying Gem x3 
+
+                // TM62
+                if (Bag.GetItemQuantity(389) == 0){
+                    Bag.GiveItem(389, 1);
+                }
+            }
+            Message.CloseAll();
+            
+
+            // Flannery
+            Message.System(160, 2);
+            yesNo = YesNoWin.Show();
+            if (yesNo == 0){
+                Bag.GiveItem(184, 3); // Occa Berry x3 
+                Bag.GiveItem(548, 3); // Fire Gem x3 
+
+                // TM35
+                if (Bag.GetItemQuantity(362) == 0){
+                    Bag.GiveItem(362, 1);
+                }
+            }
+            Message.CloseAll();
+            
+
+            // Strange House Gauntlet
+            Message.System(161, 2);
+            yesNo = YesNoWin.Show();
+            if (yesNo == 0){
+                // TM61
+                if (Bag.GetItemQuantity(388) == 0){
+                    Bag.GiveItem(388, 1);
+                }
+            }
+            Message.CloseAll();
+            
+
+            // Undella B2B
+            Message.System(162, 2);
+            yesNo = YesNoWin.Show();
+            if (yesNo == 0){
+                Bag.GiveItem(52, 1); // Ability Patch x1
+            }
+            Message.CloseAll();       
+        }
+
+        // Marlon Split
+        if (split >= 12){
+
+            // Humilau B2B
+            Message.System(163, 2);
+            yesNo = YesNoWin.Show();
+            if (yesNo == 0){
+                Bag.GiveItem(48, 2); // Ability Capsule x2
+            }
+            Message.CloseAll();
+            
+
+            // Gardenia
+            Message.System(164, 2);
+            yesNo = YesNoWin.Show();
+            if (yesNo == 0){
+                Bag.GiveItem(187, 3); // Rindo Berry x3 
+                Bag.GiveItem(551, 3); // Grass Gem x3 
+
+                // TM53
+                if (Bag.GetItemQuantity(380) == 0){
+                    Bag.GiveItem(380, 1);
+                }
+            }
+            Message.CloseAll();
+            
+
+            // Bugsy
+            Message.System(165, 2);
+            yesNo = YesNoWin.Show();
+            if (yesNo == 0){
+                Bag.GiveItem(194, 3); // Tanga Berry x3 
+                Bag.GiveItem(558, 3); // Bug Gem x3 
+
+                // TM45
+                if (Bag.GetItemQuantity(372) == 0){
+                    Bag.GiveItem(372, 1);
+                }
+            }
+            Message.CloseAll();
+            
+
+            // Blaine
+            Message.System(166, 2);
+            yesNo = YesNoWin.Show();
+            if (yesNo == 0){
+                Bag.GiveItem(506, 1); // Lonely Mint 
+                Bag.GiveItem(510, 1); // Bold Mint
+                Bag.GiveItem(223, 1); // Ability Drill
+                Bag.GiveItem(530, 3); // IV Enhancer x3  
+            }
+            Message.CloseAll();
+            
+
+            // Virizion
+            Message.System(167, 2);
+            yesNo = YesNoWin.Show();
+            if (yesNo == 0){
+                Bag.GiveItem(297, 1); // Choice Specs
+            }
+            Message.CloseAll();    
+        }
+        return;
+    }
+
+    static int getSplit(){
+            // 0: No Items 
+            // 1: Cheren Items (pre Hugh)
+            // 2: Cheren Items (All) 
+            // 3: Roxie Items (Pre Virbank)
+            // 4: Roxie Items (All)
+            // 5: Burgh Items (Sewers)
+            // 6: Burgh Items (All)
+            // 7: Elesa Items (Pre-Benga)
+            // 8: Elesa Items (All)
+            // 9: Clay Items (All)
+            // 10: Skyla Items (All)
+            // 11: Marlon Items (Pre Alder)
+            // 12: Marlon Items (All)
+            // 13: Drayden Items (pre Benga)
+            // 14: Drayden Items (all)
+        int split = EventWorks.Get(16466);
+        if (split == 0){
+            return 0;
+        }
+        if (split == 11){
+            return 0;
+        }
+        if (split == 15){
+            return 1;
+        }
+        if (split == 19){
+            return 2;
+        }
+        if (split == 23){
+            return 3;
+        }
+        if (split == 28){
+            return 4;
+        }
+        if (split == 32){
+            return 5;
+        }
+        if (split == 35){
+            return 6;
+        }
+        if (split == 37){
+            return 6;
+        }
+        if (split == 41){
+            return 7;
+        }
+        if (split == 44){
+            return 8;
+        }
+        if (split == 46){
+            return 8;
+        }
+        if (split == 51){
+            return 9;
+        }        
+        if (split == 55){
+            return 9;
+        }
+        if (split == 59){
+            return 10;
+        }
+        if (split == 63){
+            return 11;
+        }
+        if (split == 67){
+            return 12;
+        }
+        if (split == 69){
+            return 13;
+        }
+        if (split == 72){
+            return 14;
+        }
+        return 0;
+    }
+
+    static void runEeveelutionGauntlet(){
+        int isVictory;
+
+        Battle.CallTrainerBattle(29, 0, 1);
+        isVictory = Battle.IsTrainerVictory();
+        if (isVictory != 1) {
+            Battle.EndTrainerBattle();
+            PokeParty.RecoverAll();
+            goto Label_EndEeveelutionGauntlet;
+        }
+        Battle.EndTrainerBattle();
+
+        Battle.CallTrainerBattle(30, 0, 1);
+        isVictory = Battle.IsTrainerVictory();
+        if (isVictory != 1) {
+            Battle.EndTrainerBattle();
+            PokeParty.RecoverAll();
+            goto Label_EndEeveelutionGauntlet;
+        }
+        Battle.EndTrainerBattle();
+
+        Battle.CallTrainerBattle(49, 0, 1);
+        isVictory = Battle.IsTrainerVictory();
+        if (isVictory != 1) {
+            Battle.EndTrainerBattle();
+            PokeParty.RecoverAll();
+            goto Label_EndEeveelutionGauntlet;
+        }
+        Battle.EndTrainerBattle();
+
+        Battle.CallTrainerBattle(51, 0, 1);
+        isVictory = Battle.IsTrainerVictory();
+        if (isVictory != 1) {
+            Battle.EndTrainerBattle();
+            PokeParty.RecoverAll();
+            goto Label_EndEeveelutionGauntlet;
+        }
+        Battle.EndTrainerBattle();
+
+        Battle.CallTrainerBattle(52, 0, 1);
+        isVictory = Battle.IsTrainerVictory();
+        if (isVictory != 1) {
+            Battle.EndTrainerBattle();
+            PokeParty.RecoverAll();
+            goto Label_EndEeveelutionGauntlet;
+        }
+        Battle.EndTrainerBattle();
+
+        Battle.CallTrainerBattle(53, 0, 1);
+        isVictory = Battle.IsTrainerVictory();
+        if (isVictory != 1) {
+            Battle.EndTrainerBattle();
+            PokeParty.RecoverAll();
+            goto Label_EndEeveelutionGauntlet;
+        }
+        Battle.EndTrainerBattle();
+
+        Label_EndEeveelutionGauntlet:
+        return;
+    }
+
+    static void runStrangeHouseGauntlet(){
+        int isVictory;
+
+        checkForFieldEffect(337);
+
+        Battle.CallTrainerBattle(337, 0, 1);
+        isVictory = Battle.IsTrainerVictory();
+        if (isVictory != 1) {
+            Battle.EndTrainerBattle();
+            PokeParty.RecoverAll();
+            goto Label_EndStrangeHouseGauntlet;
+        }
+        Battle.EndTrainerBattle();
+
+        Battle.CallTrainerBattle(247, 0, 1);
+        isVictory = Battle.IsTrainerVictory();
+        if (isVictory != 1) {
+            Battle.EndTrainerBattle();
+            PokeParty.RecoverAll();
+            goto Label_EndStrangeHouseGauntlet;
+        }
+        Battle.EndTrainerBattle();
+
+        Battle.CallTrainerBattle(62, 0, 1);
+        isVictory = Battle.IsTrainerVictory();
+        if (isVictory != 1) {
+            Battle.EndTrainerBattle();
+            PokeParty.RecoverAll();
+            goto Label_EndStrangeHouseGauntlet;
+        }
+        Battle.EndTrainerBattle();
+
+        Label_EndStrangeHouseGauntlet:
+        resetFieldEffects();
+        return;
+    }
+
+    static void runTagBattle(int trainerId){
+        int isVictory;
+        int foe1TR; 
+        int foe2TR; 
+        checkForFieldEffect(trainerId);
+
+        if (trainerId == 234){
+            foe1TR = 582;
+            foe2TR = 506;
+        }
+
+        if (trainerId == 589){
+            foe1TR = 356;
+            foe2TR = 342;
+        }
+        else if (trainerId == 588){
+            foe1TR = 356;
+            foe2TR = 342;
+        }
+        else if (trainerId == 590){
+            foe1TR = 356;
+            foe2TR = 342;
+        }
+        else {
+
+        }
+
+        if (trainerId == 360){
+            foe1TR = 732;
+            foe2TR = 733;
+        }
+        else if (trainerId == 361){
+            foe1TR = 732;
+            foe2TR = 733;
+        }
+        else if (trainerId == 362){
+            foe1TR = 732;
+            foe2TR = 733;
+        }
+        else {
+
+        }
+        Battle.CallTrainerMultiBattle(trainerId, foe1TR, foe2TR, 1);
+        isVictory = Battle.IsTrainerVictory();
+		if (isVictory != 1) {
+			Battle.EndTrainerBattle();
+            PokeParty.RecoverAll();
+            goto Label_EndTagBattle;
+		}
+        Battle.EndTrainerBattle();
+
+        Label_EndTagBattle:
+        resetFieldEffects();
+        return;
+    }
+
+    static void runBattle(int trainerId){
+        int isVictory;
+
+        checkForFieldEffect(trainerId);
+        Battle.CallTrainerBattle(trainerId, 0, 1);
+        isVictory = Battle.IsTrainerVictory();
+		if (isVictory != 1) {
+			Battle.EndTrainerBattle();
+            PokeParty.RecoverAll();
+            goto Label_EndTestBattle;
+		}
+        Battle.EndTrainerBattle();
+        
+        Label_EndTestBattle:
+        resetFieldEffects();
+        return;
+    }
+}

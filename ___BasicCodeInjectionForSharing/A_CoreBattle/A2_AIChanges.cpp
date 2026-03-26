@@ -64,7 +64,7 @@ const u16 BulletproofMoves[21] = {
     MOVE311_WEATHER_BALL,
     MOVE192_ZAP_CANNON};
 
-const u16 teraItems[19] = {
+const u16 teraItems[20] = {
     IT0215_TERA_BADGE,
     IT0298_TERA_SPECS,
     IT0299_TERA_C_BAND,
@@ -84,7 +84,9 @@ const u16 teraItems[19] = {
     IT0313_TERA_K_ROCK,
     IT0544_TERA_PLATE,
     IT0228_TERA_GEM,
+    IT0257_TERA_EVIOLITE
 };
+
 const int FLAIL_POWER_TABLE[6] = {
     0xC80001, 0x960004, 0x640009, 0x500010, 0x280020, 0x140030};
 
@@ -360,6 +362,24 @@ extern "C"
 
 #pragma region genericHelpers
 
+    u32 getFalseZoneID()
+    {
+
+        EventWorkSave *eventWork = GameData_GetEventWork(GAME_DATA);
+        u16 *lvl_cap_ptr = EventWork_GetWkPtr(eventWork, 16560);
+        return *lvl_cap_ptr;
+        // return *lvl_cap_ptr;
+    }
+
+    u32 getFalseTrainerID()
+    {
+
+        EventWorkSave *eventWork = GameData_GetEventWork(GAME_DATA);
+        u16 *lvl_cap_ptr = EventWork_GetWkPtr(eventWork, 16565);
+        return *lvl_cap_ptr;
+        // return *lvl_cap_ptr;
+    }
+
     u32 getSwitchSetting()
     {
 
@@ -416,27 +436,25 @@ extern "C"
         FIELD_SUN = 6,
         FIELD_SMOKEBOMB = 7,
         FIELD_VICTORYSTAR = 8,
-        FIELD_RAIN = 9
+        FIELD_RAIN = 9,
+        FIELD_SAND = 10,
     };
 
     FieldTypeChanges checkForFieldEffects()
     {
 
         PlayerState *playerState = GameData_GetPlayerState(*(GameData **)(g_GameBeaconSys + 4));
-        int zoneId = PlayerState_GetZoneID(playerState);
+        int zoneId = getFalseZoneID(); // PlayerState_GetZoneID(playerState);
+        zoneId = (zoneId == 0) ? PlayerState_GetZoneID(playerState) : zoneId;
+
+        if (zoneId == 6){
+            return FIELD_SAND;
+        }
 
         if (zoneId == 121)
         {
             return FIELD_OPELUCID;
         }
-        // if (zoneId == 446)
-        // {
-        //     return FIELD_SMOKEBOMB;
-        // }
-        // if (zoneId == 437)
-        // {
-        //     return FIELD_VICTORYSTAR;
-        // }
         if (zoneId == 607 || zoneId == 195 || zoneId == 196 || zoneId == 197)
         {
 
@@ -458,7 +476,7 @@ extern "C"
         {
             return FIELD_SUN;
         }
-        if (zoneId == 473)
+        if (zoneId == 5)
         {
             return FIELD_RAIN;
         }
@@ -831,16 +849,12 @@ extern "C"
         }
 #endif
 
-        // #if DEBUGGING_ALL && DEBUGGING_FIELDEFFECTS
-        //         k::Printf("\nTRICK ROOM CHECK COMPLETE\n");
-        // #endif
+       
         random = Condition_MakePermanent();
         // Chargestone Cave
         if (field == FIELD_CHARGESTONE)
         {
-            //  #if DEBUGGING_ALL && DEBUGGING_FIELDEFFECTS
-            //         k::Printf("\nDEBUGING CHARGESTONE FIELD\n");
-            // #endif
+       
             HandlerParam_AddAnimation *addAnimation = (HandlerParam_AddAnimation *)BattleHandler_PushWork(a1, EFFECT_ADD_ANIMATION, 0);
             addAnimation->animNo = MOVE351_SHOCK_WAVE;
             addAnimation->pos_from = 3;
@@ -849,16 +863,12 @@ extern "C"
             bhwork = (HandlerParam_Message *)BattleHandler_PushWork(a1, EFFECT_MESSAGE, 0);
             BattleHandler_StrSetup(&bhwork->str, 1u, 204);
             BattleHandler_PopWork(a1, bhwork);
-            // #if DEBUGGING_ALL && DEBUGGING_FIELDEFFECTS
-            //         k::Printf("\nCHARGESTONE FIELD DIDN't CRASH\n");
-            // #endif
+     
         }
         // Celestial Tower
         else if (field == FIELD_CELESTIAL)
         {
-            // #if DEBUGGING_ALL && DEBUGGING_FIELDEFFECTS
-            //         k::Printf("\nDEBUGGING CELESTIAL FIELD\n");
-            // #endif
+    
             HandlerParam_AddAnimation *addAnimation = (HandlerParam_AddAnimation *)BattleHandler_PushWork(a1, EFFECT_ADD_ANIMATION, 0);
             addAnimation->animNo = MOVE114_HAZE;
             addAnimation->pos_from = 6;
@@ -867,10 +877,8 @@ extern "C"
             bhwork = (HandlerParam_Message *)BattleHandler_PushWork(a1, EFFECT_MESSAGE, 0);
             BattleHandler_StrSetup(&bhwork->str, 1u, 205);
             BattleHandler_PopWork(a1, bhwork);
-            // #if DEBUGGING_ALL && DEBUGGING_FIELDEFFECTS
-            //         k::Printf("\nCELESTIAL FIELD DIDN'T CRASH\n");
-            // #endif
         }
+
         // Opelucid Gym
         else if (field == FIELD_OPELUCID)
         {
@@ -908,9 +916,9 @@ extern "C"
             trainerSetups = a1->mainModule->btlSetup->TrainerSetups;
 
             currentTrainer = trainerSetups[1];
-
             trainerId = currentTrainer->TrID;
             trainerClass = currentTrainer->TrClass;
+            
 
             // PreSet Spikes
             // Checks TrainerId

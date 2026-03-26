@@ -561,6 +561,11 @@ extern "C"
 
 #pragma region overwrites
 
+    void THUMB_BRANCH_HandlerHiddenPowerPower(int a1, ServerFlow *a2, int a3)
+    {
+        return;
+    }
+
     MoveCondition TRI_ATTACK_STATUSES[3] = {CONDITION_BURN, CONDITION_FREEZE, CONDITION_PARALYSIS};
 
     int THUMB_BRANCH_HandlerTriAttack(int a1, int a2, int a3)

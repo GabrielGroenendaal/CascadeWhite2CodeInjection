@@ -3926,11 +3926,11 @@ void Sequence338()
 	End();
 }
 
-/* RELIC CASTLE BELOW - Cover Fossil (x1) */
+/* RELIC CASTLE BELOW - Dome Fossil (x1) */
 void Sequence339()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 572);
+	SetVarEqVal(0x800C, 102);
 	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
@@ -3938,11 +3938,11 @@ void Sequence339()
 	End();
 }
 
-/* RELIC CASTLE BELOW - Helix Fossil (x1) */
+/* RELIC CASTLE BELOW - Skull Fossil (x1) */
 void Sequence340()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 101);
+	SetVarEqVal(0x800C, 105);
 	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();

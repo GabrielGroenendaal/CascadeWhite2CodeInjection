@@ -1307,47 +1307,47 @@ extern "C"
         return ToxicOrbHandlers;
     }
 
-    /*
+    // /*
 
-        --------------------------------------------------------------------------------------------------
-        ------------------------------------ STRESS TESTER -----------------------------------------------
-        --------------------------------------------------------------------------------------------------
+    //     --------------------------------------------------------------------------------------------------
+    //     ------------------------------------ STRESS TESTER -----------------------------------------------
+    //     --------------------------------------------------------------------------------------------------
 
-    */
+    // */
 
-    void HandlerStressTester(BattleEventItem *a1, ServerFlow *a2, int a3)
-    {
-        HandlerParam_Damage *v1;
-        int ItemParam;
-        int SubID;
-        BattleMon *PokeParam;
+    // void HandlerStressTester(BattleEventItem *a1, ServerFlow *a2, int a3)
+    // {
+    //     HandlerParam_Damage *v1;
+    //     int ItemParam;
+    //     int SubID;
+    //     BattleMon *PokeParam;
 
-        if (a3 == BattleEventVar_GetValue(VAR_MON_ID) && checkIfWildBattle(a2))
-        {
-            PokeParam = Handler_GetBattleMon(a2, a3);
+    //     if (a3 == BattleEventVar_GetValue(VAR_MON_ID) && checkIfWildBattle(a2))
+    //     {
+    //         PokeParam = Handler_GetBattleMon(a2, a3);
 
-            // k::Printf("\n\nThe pokemon's sex is %d\n\n", PokeParam->Sex);
-            v1 = (HandlerParam_Damage *)BattleHandler_PushWork(a2, EFFECT_DAMAGE, a3);
-            v1->pokeID = a3;
-            v1->damage = BattleMon_GetValue(PokeParam, VALUE_CURRENT_HP) - 1;
-            BattleHandler_StrSetup(&v1->exStr, 2u, 1038);
-            BattleHandler_AddArg(&v1->exStr, a3);
-            SubID = BattleEventItem_GetSubID(a1);
-            BattleHandler_AddArg(&v1->exStr, SubID);
-            BattleHandler_PopWork(a2, v1);
-        }
-    }
+    //         // k::Printf("\n\nThe pokemon's sex is %d\n\n", PokeParam->Sex);
+    //         v1 = (HandlerParam_Damage *)BattleHandler_PushWork(a2, EFFECT_DAMAGE, a3);
+    //         v1->pokeID = a3;
+    //         v1->damage = BattleMon_GetValue(PokeParam, VALUE_CURRENT_HP) - 1;
+    //         BattleHandler_StrSetup(&v1->exStr, 2u, 1038);
+    //         BattleHandler_AddArg(&v1->exStr, a3);
+    //         SubID = BattleEventItem_GetSubID(a1);
+    //         BattleHandler_AddArg(&v1->exStr, SubID);
+    //         BattleHandler_PopWork(a2, v1);
+    //     }
+    // }
 
-    ITEM_TRIGGERTABLE StressTesterHandlers[] = {
-        {EVENT_SWITCH_IN, (ITEM_HANDLER_FUNC)HandlerStressTester},
-        {EVENT_SKIP_RUN_CALC, (ITEM_HANDLER_FUNC)HandlerSmokeBall},
-        {EVENT_RUN_EXIT_MESSAGE, (ITEM_HANDLER_FUNC)HandlerSmokeBallMessage}};
+    // ITEM_TRIGGERTABLE StressTesterHandlers[] = {
+    //     {EVENT_SWITCH_IN, (ITEM_HANDLER_FUNC)HandlerStressTester},
+    //     {EVENT_SKIP_RUN_CALC, (ITEM_HANDLER_FUNC)HandlerSmokeBall},
+    //     {EVENT_RUN_EXIT_MESSAGE, (ITEM_HANDLER_FUNC)HandlerSmokeBallMessage}};
 
-    ITEM_TRIGGERTABLE *THUMB_BRANCH_EventAddMetalPowder(_DWORD *a1)
-    {
-        *a1 = 3;
-        return StressTesterHandlers;
-    }
+    // ITEM_TRIGGERTABLE *THUMB_BRANCH_EventAddMetalPowder(_DWORD *a1)
+    // {
+    //     *a1 = 3;
+    //     return StressTesterHandlers;
+    // }
 
     /*
 
@@ -2879,6 +2879,18 @@ extern "C"
     {
         *a1 = 3;
         return TeraKingsRockHandlers;
+    }
+
+
+
+    ITEM_TRIGGERTABLE TeraEvioliteHandlers[] = {
+        {EVENT_DEFENDER_GUARD, (ITEM_HANDLER_FUNC)HandlerEviolite},
+       {EVENT_CHECK_SPECIAL_PRIORITY, (ITEM_HANDLER_FUNC)HandlerTera}};
+
+    ITEM_TRIGGERTABLE *THUMB_BRANCH_EventAddMetalPowder(_DWORD *a1)
+    {
+        *a1 = 2;
+        return TeraEvioliteHandlers;
     }
 
     /*
