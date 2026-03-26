@@ -108,6 +108,8 @@ If you're updating from the previous patch, you'll want to speak to an NPC in Le
 > - **Hail, Sunny Day, Sandstorm, Rain Dance** are all a lot more rare, often requiring scales to access. 
 > - **Fake Out** has been pruned from a lot of learnsets. 
 > - **Relicanth** gains +15 Speed.
+> - **Togetic** has its Special Attack, Speed, and HP reduced. It's not a guaranteed encounter and doesn't need guaranteed value. 
+> - **Unfezant** can scale for Sky Attack or Reflect Type.
 > - **LOTS of other Small Learnset Tweaks**
 
 ```[ ENCOUNTERS ]```
