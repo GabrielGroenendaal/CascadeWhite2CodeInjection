@@ -1,4 +1,4 @@
-  "moves": {
+"moves": {
     "Concuss": {
       "type": "Psychic",
       "basePower": 55,
@@ -57,7 +57,7 @@
       "pp": 5,
       "accuracy": 100,
       "priority": 0,
-      "e_id": 0,
+      "e_id": 276,
       "sf": true,
       "flags": {
         "punch": true
@@ -222,14 +222,14 @@
       "e_id": 42,
       "sf": true
     },
-    "Brutal Swing": {
-      "type": "Dark",
-      "basePower": 60,
+    "Slam": {
+      "type": "Normal",
+      "basePower": 110,
       "category": "Physical",
-      "pp": 20,
-      "accuracy": 101,
+      "pp": 10,
+      "accuracy": 85,
       "priority": 0,
-      "e_id": 0,
+      "e_id": 6,
       "target": "allAdjacentFoes",
       "sf": true
     },
@@ -287,18 +287,14 @@
       "priority": 0,
       "e_id": 45
     },
-    "Headlong Rush": {
-      "type": "Ground",
-      "basePower": 120,
+    "Rolling Kick": {
+      "type": "Fighting",
+      "basePower": 60,
       "category": "Physical",
-      "pp": 5,
+      "pp": 20,
       "accuracy": 100,
       "priority": 0,
-      "e_id": 229,
-      "sf": true,
-      "flags": {
-        "punch": true
-      }
+      "e_id": 103
     },
     "Sand Attack": {
       "type": "Ground",
@@ -1215,7 +1211,7 @@
     },
     "Hidden Force": {
       "type": "Normal",
-      "basePower": 80,
+      "basePower": 70,
       "category": "Physical",
       "pp": 10,
       "accuracy": 100,
@@ -2300,7 +2296,8 @@
       "pp": 10,
       "accuracy": 90,
       "priority": 0,
-      "e_id": 0
+      "e_id": 6,
+      "sf": true
     },
     "Dragon Breath": {
       "type": "Dragon",
@@ -2419,7 +2416,7 @@
     },
     "Hidden Power": {
       "type": "Normal",
-      "basePower": 80,
+      "basePower": 70,
       "category": "Special",
       "pp": 15,
       "accuracy": 100,
@@ -2570,8 +2567,8 @@
       "type": "Normal",
       "basePower": 40,
       "category": "Physical",
-      "pp": 10,
-      "accuracy": 100,
+      "pp": 3,
+      "accuracy": 101,
       "priority": 3,
       "e_id": 158
     },
@@ -2772,9 +2769,9 @@
       "accuracy": 100,
       "priority": 0,
       "e_id": 0,
-      "sf": true,
+      "hc_effect": "Hex",
       "target": "allAdjacentFoes",
-      "hc_effect": "Hex"
+      "sf": true
     },
     "Wish": {
       "type": "Normal",
@@ -2785,14 +2782,14 @@
       "priority": 0,
       "e_id": 179
     },
-    "Assist": {
-      "type": "Normal",
-      "basePower": 0,
-      "category": "Status",
-      "pp": 20,
-      "accuracy": 101,
+    "Supercell Slam": {
+      "type": "Electric",
+      "basePower": 130,
+      "category": "physical",
+      "pp": 10,
+      "accuracy": 90,
       "priority": 0,
-      "e_id": 180
+      "e_id": 45
     },
     "Ingrain": {
       "type": "Grass",
@@ -2857,7 +2854,7 @@
       "type": "Normal",
       "basePower": 0,
       "category": "Status",
-      "pp": 1,
+      "pp": 3,
       "accuracy": 100,
       "priority": 0,
       "e_id": 187,
@@ -3796,7 +3793,7 @@
     },
     "Payback": {
       "type": "Dark",
-      "basePower": 50,
+      "basePower": 55,
       "category": "Physical",
       "pp": 10,
       "accuracy": 100,
@@ -3906,9 +3903,9 @@
       "type": "Normal",
       "basePower": 1,
       "category": "Status",
-      "pp": 20,
+      "pp": 3,
       "accuracy": 101,
-      "priority": 0,
+      "priority": 1,
       "e_id": 241
     },
     "Copycat": {
@@ -3994,14 +3991,18 @@
       "priority": 0,
       "e_id": 249
     },
-    "Heart Swap": {
-      "type": "Psychic",
-      "basePower": 0,
-      "category": "Status",
-      "pp": 10,
-      "accuracy": 101,
+    "Headlong Rush": {
+      "type": "Ground",
+      "basePower": 120,
+      "category": "Physical",
+      "pp": 5,
+      "accuracy": 100,
       "priority": 1,
-      "e_id": 250
+      "e_id": 229,
+      "sf": true,
+      "flags": {
+        "punch": true
+      }
     },
     "Aqua Ring": {
       "type": "Water",
@@ -4110,7 +4111,8 @@
       "pp": 15,
       "accuracy": 100,
       "priority": 0,
-      "e_id": 0
+      "e_id": 0,
+      "sf": true
     },
     "Air Slash": {
       "type": "Flying",
@@ -4603,7 +4605,7 @@
       "pp": 10,
       "accuracy": 100,
       "priority": 0,
-      "e_id": 0,
+      "e_id": 276,
       "sf": true
     },
     "Wood Hammer": {
@@ -4920,13 +4922,13 @@
     },
     "Sludge Wave": {
       "type": "Poison",
-      "basePower": 95,
+      "basePower": 120,
       "category": "Special",
       "pp": 10,
-      "accuracy": 100,
+      "accuracy": 77,
       "priority": 0,
       "e_id": 2,
-      "target": "allAdjacent",
+      "target": "allAdjacentFoes",
       "sf": true
     },
     "Quiver Dance": {
@@ -5107,14 +5109,16 @@
       "priority": 0,
       "e_id": 305
     },
-    "Quick Guard": {
-      "type": "Fighting",
-      "basePower": 0,
+    "Brutal Swing": {
+      "type": "Dark",
+      "basePower": 60,
       "category": "Status",
-      "pp": 15,
+      "pp": 20,
       "accuracy": 101,
-      "priority": 3,
-      "e_id": 306
+      "priority": 0,
+      "e_id": 0,
+      "target": "allAdjacentFoes",
+      "sf": true
     },
     "Ally Switch": {
       "type": "Psychic",
@@ -5161,8 +5165,7 @@
       "accuracy": 100,
       "priority": 0,
       "e_id": 0,
-      "sf": true,
-      "hc_effect": "Hex"
+      "sf": true
     },
     "Sky Drop": {
       "type": "Flying",
@@ -5377,7 +5380,8 @@
       "recoil": [
         25,
         100
-      ]
+      ],
+      "sf": true
     },
     "Drill Run": {
       "type": "Ground",
@@ -5570,7 +5574,7 @@
     },
     "Relic Song": {
       "type": "Normal",
-      "basePower": 75,
+      "basePower": 90,
       "category": "Special",
       "pp": 10,
       "accuracy": 100,
@@ -5628,7 +5632,7 @@
       "pp": 10,
       "accuracy": 100,
       "priority": 0,
-      "e_id": 0,
+      "e_id": 276,
       "sf": true
     },
     "Meteor Beam": {

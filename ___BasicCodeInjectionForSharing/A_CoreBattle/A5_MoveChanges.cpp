@@ -8,6 +8,10 @@
 extern "C"
 {
 
+    // Orphaned Hard Coded Effects
+    // Heart Swap
+    // Quick Guard
+
 #pragma region HelperFunctions
     bool checkIfConsumableItem(int a1)
     {
@@ -124,6 +128,59 @@ extern "C"
 #pragma endregion
 
 #pragma region PivotingMoves
+
+    int THUMB_BRANCH_HandlerPsywave(int a1, ServerFlow *a2, int a3)
+    {
+        int result;           // r0
+        BattleMon *BattleMon; // r0
+        int level;            // r4
+        int damage;           // r1
+
+        result = BattleEventVar_GetValue(VAR_ATTACKING_MON);
+        if (a3 == result)
+        {
+            BattleMon = Handler_GetBattleMon(a2, a3);
+            level = BattleMon_GetValue(BattleMon, VALUE_LEVEL);
+            damage = ((BattleRandom(0x4Bu) + 75) * level / 100);
+            if (!damage)
+            {
+                damage = 1;
+            }
+            return BattleEventVar_RewriteValue(VAR_FIXED_DAMAGE, damage);
+        }
+        return result;
+    }
+
+    void THUMB_BRANCH_CommonJumpKickEffect(int a1, ServerFlow *a2, int a3)
+    {
+        BattleMon *BattleMon;    // r0
+        u16 v6;                  // r7
+        HandlerParam_Damage *v7; // r6
+
+        HandlerParam_AddAnimation *addAnimation = (HandlerParam_AddAnimation *)BattleHandler_PushWork(a2, EFFECT_ADD_ANIMATION, 0);
+        addAnimation->animNo = MOVE340_BOUNCE;
+        addAnimation->pos_from = Handler_PokeIDToPokePos(a2, (int)a3);
+        addAnimation->pos_to = 6;
+        BattleHandler_PopWork(a2, addAnimation);
+        BattleMon = Handler_GetBattleMon(a2, a3);
+        v6 = DivideMaxHPZeroCheck(BattleMon, 4u);
+        v7 = (HandlerParam_Damage *)BattleHandler_PushWork(a2, EFFECT_DAMAGE, a3);
+        v7->pokeID = a3;
+        v7->damage = v6;
+        BattleHandler_StrSetup(&v7->exStr, 2u, 902);
+        BattleHandler_AddArg(&v7->exStr, a3);
+        BattleHandler_PopWork(a2, v7);
+
+        if (Handler_GetFightEnableBenchPokeNum(a2, a3) && Handler_CheckReservedMemberChangeAction(a2))
+        {
+
+            HandlerParam_ForceSwitch *switchOut;
+            switchOut = (HandlerParam_ForceSwitch *)BattleHandler_PushWork(a2, EFFECT_FORCE_SWITCH, a3);
+            switchOut->monID = a3;
+            BattleHandler_PopWork(a2, switchOut);
+        }
+    }
+
     void HandlerPartingShotCheck(BattleEventItem *item, ServerFlow *serverFlow, u32 pokemonSlot, u32 *work)
     {
         if (pokemonSlot == BattleEventVar_GetValue(VAR_ATTACKING_MON))
@@ -1547,8 +1604,8 @@ extern "C"
 
 #pragma region ProtectMoves
 
-    MoveID NEW_PROTECT_COUNTER_MOVES[9] = {
-        MOVE203_ENDURE, MOVE182_PROTECT, MOVE197_DETECT, MOVE469_WIDE_GUARD, MOVE501_QUICK_GUARD, MOVE376_SPIKY_SHIELD,
+    MoveID NEW_PROTECT_COUNTER_MOVES[8] = {
+        MOVE203_ENDURE, MOVE182_PROTECT, MOVE197_DETECT, MOVE469_WIDE_GUARD, MOVE376_SPIKY_SHIELD,
         MOVE462_SILK_TRAP, MOVE262_OBSTRUCT, MOVE559_BANEFUL_BUNKER};
 
     void THUMB_BRANCH_HandlerProtectStart(int a1, ServerFlow *a2, unsigned int *a3)
@@ -2054,49 +2111,80 @@ extern "C"
 
 #pragma region status
 
-    // MoveTarget THUMB_BRANCH_DetermineCurseTargetData(BattleMon *a1)
-    // {
-    //     return TARGET_OTHER_SELECT;
-    // }
+    // int MULTIHIT_CHANCES[6] = {0, 0, 15, 50, 85, 100};
 
-    // void THUMB_BRANCH_HandlerCurse(int a1, ServerFlow *a2, int a3)
+    // unsigned int THUMB_BRANCH_RollMultiHitHits(unsigned int result)
     // {
-    //     char effectIndex;                  // r6
-    //     int Value;                         // r7
-    //     HandlerParam_AddCondition *v7;     // r6
-    //     HandlerParam_ChangeHP *v8;         // r6
-    //     HandlerParam_ChangeStatStage *v9;  // r0
-    //     HandlerParam_ChangeStatStage *v10; // r0
-    //     HandlerParam_ChangeStatStage *v11; // r0
-    //     BattleMon *BattleMon;              // [sp+0h] [bp-20h]
-    //     if (a3 == BattleEventVar_GetValue(VAR_ATTACKING_MON))
+    //     unsigned int v1; // r3
+
+    //     if (result == 5)
     //     {
-    //        BattleMon = Handler_GetBattleMon(a2, a3);
-    //         if (BattleMon_GetValue(BattleMon, VALUE_CURRENT_HP) > 0)
+    //         v1 = BattleRandom(100u);
+    //         result = 0;
+    //         while (v1 >= MULTIHIT_CHANCES[result])
     //         {
-    //             Value = BattleEventVar_GetValue(VAR_TARGET_MON_ID);
-    //             if (Value != 31)
+    //             result = (result + 1);
+    //             if (result >= 6)
     //             {
-    //                 v7 = (HandlerParam_AddCondition *)BattleHandler_PushWork(a2, EFFECT_ADDCONDITION, a3);
-    //                 v7->pokeID = Value;
-    //                 v7->sickID = CONDITION_CURSE;
-    //                 v7->sickCont = Condition_MakePermanent();
-    //                 BattleHandler_StrSetup(&v7->exStr, 2u, 1064);
-    //                 BattleHandler_AddArg(&v7->exStr, a3);
-    //                 BattleHandler_AddArg(&v7->exStr, Value);
-    //                 BattleHandler_PopWork(a2, v7);
-    //                 v8 = (HandlerParam_ChangeHP *)BattleHandler_PushWork(a2, EFFECT_CHANGEHP, a3);
-    //                 v8->pokeID[0] = a3;
-    //                 v8->volume[0] = -DivideMaxHPZeroCheck(BattleMon, 2u);
-    //                 v8->poke_cnt = 1;
-    //                 v8->header.flags |= 0x1000000u;
-    //                 BattleHandler_PopWork(a2, v8);
+    //                 return 5;
     //             }
     //         }
-    //         effectIndex = 1;
-    //         Handler_SetMoveEffectIndex(a2, effectIndex);
     //     }
+    //     return result;
     // }
+
+    int THUMB_BRANCH_HandlerCurseMoveParam(int a1, ServerFlow *a2, int a3)
+    {
+        int result;           // r0
+        BattleMon *BattleMon; // r0
+        int v7;               // r0
+
+        result = BattleEventVar_GetValue(VAR_MON_ID);
+        if (a3 == result)
+        {
+            BattleMon = Handler_GetBattleMon(a2, a3);
+            v7 = 0;
+            return BattleEventVar_RewriteValue(VAR_TARGET_TYPE, v7);
+        }
+        return result;
+    }
+
+    void THUMB_BRANCH_HandlerCurse(int a1, ServerFlow *a2, int a3)
+    {
+        char effectIndex;              // r6
+        int Value;                     // r7
+        HandlerParam_AddCondition *v7; // r6
+        HandlerParam_ChangeHP *v8;     // r6
+        BattleMon *BattleMon;          // [sp+0h] [bp-20h]
+        if (a3 == BattleEventVar_GetValue(VAR_ATTACKING_MON))
+        {
+            BattleMon = Handler_GetBattleMon(a2, a3);
+            effectIndex = 0;
+            if (BattleMon_GetValue(BattleMon, VALUE_CURRENT_HP) > 0)
+            {
+                Value = BattleEventVar_GetValue(VAR_TARGET_MON_ID);
+                if (Value != 31)
+                {
+                    v7 = (HandlerParam_AddCondition *)BattleHandler_PushWork(a2, EFFECT_ADDCONDITION, a3);
+                    v7->pokeID = Value;
+                    v7->sickID = CONDITION_CURSE;
+                    v7->sickCont = Condition_MakePermanent();
+                    BattleHandler_StrSetup(&v7->exStr, 2u, 1064);
+                    BattleHandler_AddArg(&v7->exStr, a3);
+                    BattleHandler_AddArg(&v7->exStr, Value);
+                    BattleHandler_PopWork(a2, v7);
+                    v8 = (HandlerParam_ChangeHP *)BattleHandler_PushWork(a2, EFFECT_CHANGEHP, a3);
+                    v8->pokeID[0] = a3;
+                    v8->volume[0] = -DivideMaxHPZeroCheck(BattleMon, 2u);
+                    v8->poke_cnt = 1;
+                    v8->header.flags |= 0x1000000u;
+                    BattleHandler_PopWork(a2, v8);
+                }
+                effectIndex = 1;
+            }
+            Handler_SetMoveEffectIndex(a2, effectIndex);
+        }
+    }
 
     int THUMB_BRANCH_HandlerAttractCheckFail(int a1, ServerFlow *a2, int a3)
     {

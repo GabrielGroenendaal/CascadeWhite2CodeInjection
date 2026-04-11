@@ -316,7 +316,7 @@ data_address_MoveEffects:
 	move_ef.spite => &endScript_1
 	move_ef.false_swipe => &endScript_1
 	move_ef.team_heal => &endScript_1
-	move_ef.increased_priority => &endScript_1
+	move_ef.increased_priority => &Label_CheckPriority
 	move_ef.triple_kick => &endScript_1
 	move_ef.theif => &endScript_1
 	move_ef.spider_web => &Label_Block
@@ -1481,8 +1481,14 @@ Label_FakeOut:
 
 
 
+Label_CheckPriority:
+	JumpIfMoveEQ(move.first_impression, &Label_CheckPriorityEnd)
+	EndScript()
 
-
+Label_CheckPriorityEnd: 
+	StoreIsFirstTurn(attacker)
+	JumpIfStoredEQ(false, &deprioritizeBy15)
+	EndScript()
 
 
 

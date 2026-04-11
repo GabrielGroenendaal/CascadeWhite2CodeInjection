@@ -225,13 +225,13 @@ extern "C"
         MOVE018_WHIRLWIND = 0x12,
         MOVE019_FLY = 0x13,
         MOVE020_BIND = 0x14,
-        MOVE021_BRUTAL_SWING = 0x15,
+        MOVE021_SLAM = 0x15,
         MOVE022_VINE_WHIPS = 0x16,
         MOVE023_STOMP = 0x17,
         MOVE024_DOUBLE_KICK = 0x18,
         MOVE025_HIGH_HORSEPOWER = 0x19,
         MOVE026_JUMP_KICK = 0x1A,
-        MOVE027_HEADLONG_RUSH = 0x1B,
+        MOVE027_ROLLING_KICK = 0x1B,
         MOVE028_SAND_ATTACK = 0x1C,
         MOVE029_HEADBUTT = 0x1D,
         MOVE030_DEVOUR = 0x1E,
@@ -478,7 +478,7 @@ extern "C"
         MOVE271_WEATHER_CRASH = 0x10F,
         MOVE272_BARB_BARRAGE = 0x110,
         MOVE273_WISH = 0x111,
-        MOVE274_ASSIST = 0x112,
+        MOVE274_SUPERCELL_SLAM = 0x112,
         MOVE275_INGRAIN = 0x113,
         MOVE276_SUPERPOWER = 0x114,
         MOVE277_MAGIC_COAT = 0x115,
@@ -595,7 +595,7 @@ extern "C"
         MOVE388_WORRY_SEED = 0x184,
         MOVE389_SUCKER_PUNCH = 0x185,
         MOVE390_TOXIC_SPIKES = 0x186,
-        MOVE391_HEART_SWAP = 0x187,
+        MOVE391_HEADLONG_RUSH = 0x187,
         MOVE392_AQUA_RING = 0x188,
         MOVE393_MAGNET_RISE = 0x189,
         MOVE394_FLARE_BLITZ = 0x18A,
@@ -705,7 +705,7 @@ extern "C"
         MOVE498_CHIP_AWAY = 0x1F2,
         MOVE499_CLEAR_SMOG = 0x1F3,
         MOVE500_STORED_POWER = 0x1F4,
-        MOVE501_QUICK_GUARD = 0x1F5,
+        MOVE501_BRUTAL_SWING = 0x1F5,
         MOVE502_ALLY_SWITCH = 0x1F6,
         MOVE503_SCALD = 0x1F7,
         MOVE504_SHELL_SMASH = 0x1F8,
@@ -3817,7 +3817,7 @@ extern "C"
         return *lvl_cap_ptr;
     }
 
-    int VANILLA_CRIT_CHANCES[5] = {0x18, 8, 4, 3, 2};
+    int VANILLA_CRIT_CHANCES[5] = {0x10, 5, 3, 2, 0};
     int MODERN_CRIT_CHANCES[5] = {0x18, 8, 2, 0, 0};
 
     bool THUMB_BRANCH_RollCritical(int a1)
@@ -3881,7 +3881,7 @@ extern "C"
                 if (Value > 4)
                 {
                     // LOBYTE(Value) = 4;
-                    Value = (Value & 0xFF) | 4;
+                    Value = 4;
                 }
                 v11 = personalRollCritical(Value);
             }
@@ -4207,7 +4207,7 @@ extern "C"
                 if (BattleMon != a2 && !a1->actionOrderWork[v4].fDone)
                 {
                     v6 = (((u32)ActionOrderWork[v4].Action) & 0xF) == 1 ? (((u32)ActionOrderWork[v4].Action) >> 7) : 0;
-                    if (v6 == MOVE228_PURSUIT)
+                    if (v6 == MOVE228_PURSUIT || v6 == MOVE027_ROLLING_KICK)
                     {
                         moveID = v6;
                         Value = BattleMon_GetValue(BattleMon, VALUE_SPEED_STAT);
@@ -4264,7 +4264,7 @@ extern "C"
                         v11 = 0;
                     }
 
-                    if (v11 == MOVE228_PURSUIT)
+                    if (v11 == MOVE228_PURSUIT || v11 == MOVE027_ROLLING_KICK)
                     {
                         MoveEvent_ForceRemoveItemFromBattleMon(a1->actionOrderWork[v8].BattleMon, v11);
                     }

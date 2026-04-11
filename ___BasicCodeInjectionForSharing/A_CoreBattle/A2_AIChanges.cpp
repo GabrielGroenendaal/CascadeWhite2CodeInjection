@@ -1522,6 +1522,7 @@ extern "C"
         {
             return AttackingMon->Level;
         }
+
         else if (IsEqual(a4, MOVE149_PSYWAVE) && (!BattleMon_HasType(DefendingMon, TYPE_DARK) || IsEqual(atkAbility, ABIL039_INNER_FOCUS)))
         {
             return AttackingMon->Level;
@@ -1908,7 +1909,7 @@ extern "C"
             ----------------------------------------------------------------------------------
         */
 
-        if (IsEqual(a4check, MOVE228_PURSUIT) && (v12 << 1) >= DefendingMon->CurrentHP)
+        if ((IsEqual(a4check, MOVE228_PURSUIT) || IsEqual(a4check, MOVE027_ROLLING_KICK)) && (v12 << 1) >= DefendingMon->CurrentHP)
         {
 
             if (RandomInRange(1, 100) >= 60)

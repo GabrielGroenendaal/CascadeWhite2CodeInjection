@@ -31,7 +31,7 @@ public class MainEvents {
         ListMenu.InitRightAnchor(31, 5, 0, 1, listMenu);
         ListMenu.AddItem(196, 197, 19);
         ListMenu.AddItem(198, 199, 28);
-        ListMenu.AddItem(200, 201, 35);
+        ListMenu.AddItem(200, 201, 37);
         ListMenu.AddItem(202, 203, 44);
         ListMenu.AddItem(204, 205, 51);
         ListMenu.AddItem(206, 207, 59);
@@ -249,7 +249,7 @@ public class MainEvents {
         }
 
         // Burgh Split Boss Fights
-        if (split == 35){
+        if (split == 37){
             // Sewers Tag Battle
             if (starterFlag == 0){
                 ListMenu.AddItem(226, 65535, 588);
@@ -1174,9 +1174,6 @@ public class MainEvents {
         }
         if (split == 32){
             return 5;
-        }
-        if (split == 35){
-            return 6;
         }
         if (split == 37){
             return 6;

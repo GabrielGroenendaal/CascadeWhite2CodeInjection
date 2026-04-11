@@ -1,0 +1,108 @@
+----- TEXT FILE 602----- Encounter Generation 400
+    87:
+    You received [COLOR(2)][VAR PKNAME(4)][COLOR(0)]\nas your gift fossil!\c
+    88: 
+    You received [COLOR(2)][VAR PKNAME(4)][COLOR(0)]\nas your Blueberry Trade!\c\nRemember to "subtract" one of your\nencounters so far to emulate the trade!\c
+    89: 
+    You received [COLOR(2)][VAR PKNAME(4)][COLOR(0)]\nas your Castelia Alleyway Trade!\c\nRemember to "subtract" one of your\nencounters so far to emulate the trade!\c
+    90:
+    You received [COLOR(2)][VAR PKNAME(4)][COLOR(0)]\nas your Eeveelution Trade!\c\nRemember to "subtract" one of your\nencounters so far to emulate the trade!\c
+    91:
+    Are you sure you want to pick [COLOR(2)][VAR PKNAME(4)][COLOR(0)]?\nThis will affect future encounters.
+    92:
+    For this simulated run, did the player\ndefeat [COLOR(2)]Schoolkid Marsha[COLOR(0)] before defeating\r\nCheren for the [COLOR(1)]Academy Starter Trade[COLOR(0)]?
+    93:
+    For this simulated run, did the player\ndefeat [COLOR(2)]Leader Brock[COLOR(0)] before defeating\r\nCheren for the [COLOR(1)]Pledge Grove Encounter[COLOR(0)]?
+    94: 
+    For this simulated run, did the player\ndefeat [COLOR(2)]Leader Misty[COLOR(0)] before defeating\r\nRoxie for the [COLOR(1)]Misty Gift Egg[COLOR(0)]?
+    95: 
+    For this simulated run, did the player\ndefeat [COLOR(2)]President Neil[COLOR(0)] before defeating\r\nBurgh for the [COLOR(1)]Battle Company Egg[COLOR(0)]?
+    96: 
+    For this simulated run, did the player\ndefeat [COLOR(2)]Roughneck Chance[COLOR(0)] before defeating\r\nBurgh for the [COLOR(1)]Castelia Gang Trade[COLOR(0)]?
+    97: 
+    For this simulated run, did the player\ndefeat [COLOR(2)]Leader Surge[COLOR(0)] before defeating\r\nBurgh for the [COLOR(1)]Liberty Garden encounter[COLOR(0)]?
+    98:
+    For this simulated run, did the player\ndefeat [COLOR(2)]Researcher Lenora[COLOR(0)] before defeating\r\nElesa for the [COLOR(1)]Relic Castle Fossil[COLOR(0)]?
+    99:
+    For this simulated run, did the player\ndefeat [COLOR(2)]Ingo & Emmet[COLOR(0)] before defeating\r\nElesa for the [COLOR(1)]Anville Town Encounter[COLOR(0)]?
+    100:
+    For this simulated run, did the player\ndefeat [COLOR(2)]Leader Erika[COLOR(0)] before defeating\r\nElesa for the [COLOR(1)]Deep Lostlorn Encounter[COLOR(0)]?
+    101:
+    For this simulated run, did the player\ndefeat the [COLOR(2)]Eevee Club[COLOR(0)] before defeating\r\nElesa for the [COLOR(1)]Eeveelution Trade[COLOR(0)]?
+    102:
+    For this simulated run, did the player\ndefeat [COLOR(2)]Leader Janine[COLOR(0)] before defeating\r\nClay for the [COLOR(1)]Clay Tunnel Encounter[COLOR(0)]?
+    103:
+    For this simulated run, did the player\ndefeat [COLOR(2)]Leader Sabrina[COLOR(0)] before defeating\r\nSkyla for the [COLOR(1)]Celestial Roof Encounter[COLOR(0)]?
+    104:
+    For this simulated run, did the player\ndefeat [COLOR(2)]Cobalion[COLOR(0)] before defeating\r\nSkyla for the [COLOR(1)]Guidance Chamber Encounter[COLOR(0)]?
+    105:
+    For this simulated run, did the player\ndefeat the [COLOR(2)]Ghost Gauntlet[COLOR(0)] before beating\r\nMarlon for the [COLOR(1)]Strange House Encounter[COLOR(0)]?
+    106: 
+    For this simulated run, did the player\ndefeat [COLOR(2)]Virizion[COLOR(0)] before defeating\r\nClay for the [COLOR(1)]Clay Tunnel Encounter[COLOR(0)]?
+    107: 
+    For this simulated run, did the player\ndefeat [COLOR(2)]Leader Blaine[COLOR(0)] before defeating\r\nClay for the [COLOR(1)]Clay Tunnel Encounter[COLOR(0)]?
+    108: 
+    For this simulated run, did the player\ndefeat [COLOR(2)]Black Belt Rocky[COLOR(0)] before defeating\r\nBenga 3 for the [COLOR(1)]Undella Bay Encounter[COLOR(0)]?
+    109:
+    For this simulated run, did the player\ndefeat [COLOR(2)]Swimmer Bart[COLOR(0)] before defeating\r\nBenga 3 for the [COLOR(1)]Abyssal Ruin Encounter[COLOR(0)]?
+    110:
+    For this simulated run, did the player\ndefeat [COLOR(2)]Leader Blue[COLOR(0)] before defeating\r\nDrayden for a [COLOR(1)]Challenger Cave Encounter[COLOR(0)]?
+    111:
+    For this simulated run, did the player\ndefeat [COLOR(2)]Terrakion[COLOR(0)] before defeating\r\nDrayden for a [COLOR(1)]Twist Mountain Encounter[COLOR(0)]?
+    112:
+    Defeated Within the Split 
+    113:
+    Not Defeated Within the Split
+    114:
+    This simulated run is locked out of\nthis encounter.\c 
+    115:
+    How would you like to generate your\ntest encounters?\c
+    116:
+    One-by-one (Manual)
+    117:
+    Generate encounters one at a time, choosing\nan encounter table for each route:
+    118:
+    One-by-one (Auto)
+    119:
+    Generate encounters automatically,\nno input required.
+
+    120:
+    How do you want to handle split-locked\nencounters?\c
+    121:
+    Decide One-by-one 
+    122:
+    Choose whether to include each split-locked\nencounter individually:
+    123:
+    Include All 
+    124: 
+    Includes all the split-locked encounters\nautomatically:
+    125:
+    Exclude All 
+    126:
+    Exclude all the split-locked encounters\nautomatically: 
+    127:
+    Okay, we'll generate encounters\none-by-one with you choosing the\r\nencounter table for each location!\c
+
+    128:
+    Okay, we'll generate encounters\nindividually, but won't require input!\c 
+
+    129:
+    Okay, we'll generate all encounters\nat once with no player input or feedback.\c
+
+    130: 
+    Batched (Auto)
+
+    131:
+    Encounters will instantly be generated\nautomatically, no input.
+
+    132:
+    Okay, we'll prompt you for each\nsplit-locked encounter!\c 
+
+    133:
+    Okay, we'll automatically include\nall split-locked encounters!\c
+
+    134:
+    Okay, we'll automatically exclude\nall split-locked encounters!\c
+
+    135:
+    Your encounter is [COLOR(2)][VAR PKNAME(4)][COLOR(0)]!

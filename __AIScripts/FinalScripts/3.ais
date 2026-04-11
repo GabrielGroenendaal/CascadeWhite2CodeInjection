@@ -100,7 +100,7 @@ priority_FakeOut:
 
 priorityEnd:
 	JumpIfRandLT(100, &endOfTheScript)
-	AddToScore(6)
+	AddToScore(15)
 	EndScript()
 
 priorityFakeOutEnd: 

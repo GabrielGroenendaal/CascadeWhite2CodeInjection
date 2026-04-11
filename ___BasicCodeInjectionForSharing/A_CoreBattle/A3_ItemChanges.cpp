@@ -472,6 +472,20 @@ extern "C"
 */
 #pragma region BattleItems
 
+    int THUMB_BRANCH_HandlerScopeLens(int a1, int a2, int a3)
+    {
+        int result; // r0
+        char Value; // r0
+
+        result = BattleEventVar_GetValue(VAR_ATTACKING_MON);
+        if (a3 == result)
+        {
+            Value = BattleEventVar_GetValue(VAR_CRIT_STAGE);
+            return BattleEventVar_RewriteValue(VAR_CRIT_STAGE, (Value + 2));
+        }
+        return result;
+    }
+
     bool overrideContact(BattleMon *a1, MoveID a2)
     {
         if (BattleMon_GetHeldItem(a1) == IT0228_TERA_GEM || BattleMon_GetValue(a1, VALUE_EFFECTIVE_ABILITY) == ABIL142_OVERCOAT)

@@ -1,0 +1,1224 @@
+import messages.script.Msg0074.MSGID;
+
+import Base;
+import event.Battle;
+import event.EVCamera;
+import event.FieldDemo;
+import event.FieldTrade;
+import event.app.PokeApp;
+import event.actors.Actor;
+import event.actors.Player;
+import event.dialogs.ListMenu;
+import event.dialogs.Message;
+import event.dialogs.YesNoWin;
+import event.funfest.Funfest;
+import player.TrainerCard;
+import pokescript.vm.Math;
+import pokescript.vm.StackCtrl;
+import pokescript.vm.VM;
+import system.EventFlags;
+import system.EventWorks;
+import system.Fade;
+import system.Input;
+import system.RTC;
+import system.Runtime;
+import system.Sound;
+import system.System;
+import system.text.WordSet;
+
+public class MainEvents {
+	public static void main_1() { // @ 0x3ea
+		Actor.PauseAll();
+		Funfest.Broadcast(17, 0);
+		Sound.SEPlay(1351);
+		Message.PlaceSign(8, 2);
+		Message.ClosePlaceSign();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_2() { // @ 0x404
+		Actor.PauseAll();
+		Funfest.Broadcast(17, 0);
+		Sound.SEPlay(1351);
+		Message.PlaceSign(16, 2);
+		Message.ClosePlaceSign();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_3() { // @ 0x3e
+		int v0;
+		int v1;
+		int v16;
+		int v32;
+		int v33;
+		int v34;
+		int v35;
+		int v36;
+
+		if (!EventFlags.Get(264)) {
+			goto LABEL_0055;
+		}
+		EventFlags.Clear(2429);
+
+		LABEL_0055:
+		v32 = 0;
+		v33 = 0;
+		Base.CMD_266(v32);
+		v16 = RTC.GetDayOfWeek();
+		if (v16 == 2) {
+			v33 = 291;
+			goto LABEL_00e5;
+		}
+
+		LABEL_0088:
+		if (v16 == 3) {
+			v33 = 249;
+			goto LABEL_00e5;
+		}
+
+		LABEL_00a7:
+		if (v16 == 5) {
+			v33 = 103;
+			goto LABEL_00e5;
+		}
+
+		LABEL_00c6:
+		if (v16 == 6) {
+			v33 = 223;
+			goto LABEL_00e5;
+		}
+
+		LABEL_00e5:
+		if (v32 == 0) {
+			if (v33 <= 0 || EventFlags.Get(2773) || !EventFlags.Get(2400)) {
+				goto LABEL_0172;
+			}
+			EventWorks.Set(16416, v33);
+			EventWorks.Set(16776, 1);
+			goto LABEL_01e7;
+		}
+		v16 = TrainerCard.GetSex();
+		if (v16 != 0) {
+			EventWorks.Set(16416, 289);
+			goto LABEL_0121;
+		}
+		EventWorks.Set(16416, 290);
+
+		LABEL_0121:
+		EventWorks.Set(16776, 2);
+		goto LABEL_01e7;
+
+		LABEL_0172:
+		v34 = 0;
+		v35 = 0;
+		v35 = RTC.GetSeason();
+		if (EventWorks.Get(16755) == v35) {
+			goto LABEL_0199;
+		}
+		EventFlags.Clear(2740);
+
+		LABEL_0199:
+		v0 = RTC.GetSeason();
+		v1 = TrainerCard.GetSex();
+		v34 = v0;
+		v34 *= 2;
+		v34 += v1;
+		v1 = v1;
+		v0 = v0;
+		Base.CMD_21F(v34, v16);
+		EventWorks.Set(16416, v16);
+		EventWorks.Set(16755, v35);
+		EventWorks.Set(16776, 0);
+		v35 = 0;
+		v34 = 0;
+
+		LABEL_01e7:
+		v33 = 0;
+		v32 = 0;
+		v36 = 0;
+		v36 = RTC.GetDayOfWeek();
+		if (v36 != 2 || EventFlags.Get(2773) || !EventFlags.Get(2400)) {
+			if (v36 != 3 || EventFlags.Get(2773) || !EventFlags.Get(2400)) {
+				goto LABEL_027b;
+			}
+			Base.CMD_262(3, 11);
+			goto LABEL_02b4;
+		}
+		Base.CMD_262(1, 44);
+		goto LABEL_02b4;
+
+		LABEL_027b:
+		if (v36 != 6 || EventFlags.Get(2773) || !EventFlags.Get(2400)) {
+			goto LABEL_02b4;
+		}
+		Base.CMD_262(2, 13);
+
+		LABEL_02b4:
+		if (v36 == 2 || !EventFlags.Get(2400)) {
+			goto LABEL_035e;
+		}
+		if (EventFlags.Get(417) || EventFlags.Get(491)) {
+			if (!EventFlags.Get(417) || EventFlags.Get(491)) {
+				goto LABEL_0335;
+			}
+			Base.CMD_262(1, 42);
+			goto LABEL_035e;
+		}
+		Base.CMD_262(1, 41);
+		goto LABEL_035e;
+
+		LABEL_0335:
+		if (!EventFlags.Get(417) || !EventFlags.Get(491)) {
+			goto LABEL_035e;
+		}
+		Base.CMD_262(1, 43);
+
+		LABEL_035e:
+		if (v36 == 3 || !EventFlags.Get(2400)) {
+			goto LABEL_0387;
+		}
+		Base.CMD_262(3, 0);
+
+		LABEL_0387:
+		if (v36 == 6 || !EventFlags.Get(2400)) {
+			goto LABEL_03e2;
+		}
+		if (EventWorks.Get(16657) != 0) {
+			if (EventWorks.Get(16657) != 1) {
+				goto LABEL_03e2;
+			}
+			Base.CMD_262(2, 0);
+			goto LABEL_03e2;
+		}
+		Base.CMD_262(2, 14);
+
+		LABEL_03e2:
+		v36 = 0;
+	}
+
+	public static void main_4() { // @ 0x5d9
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 1, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_5() { // @ 0x5f5
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 2, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_6() { // @ 0x611
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 3, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_7() { // @ 0x62d
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 9, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_8() { // @ 0x649
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 10, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_9() { // @ 0x665
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 11, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_10() { // @ 0x681
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 12, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_11() { // @ 0x69d
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Sound.PVPlay(531, 0);
+		Message.Actor(1024, 13, 0, 0);
+		Sound.PVWait();
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_12() { // @ 0x6c1
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Sound.PVPlay(559, 0);
+		Message.Actor(1024, 14, 0, 0);
+		Sound.PVWait();
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_13() { // @ 0x41e
+		int v0;
+		int v1;
+		int v37;
+
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		v37 = 0;
+		v37 = TrainerCard.GetSex();
+		Actor.Hide(11);
+		if (v37 == 0) {
+			Global2807(637, 1);
+			goto LABEL_04a4;
+		}
+
+		LABEL_046b:
+		if (v37 == 1) {
+			Global2807(636, 1);
+			goto LABEL_04a4;
+		}
+
+		LABEL_04a4:
+		Sound.MEPlay(1327);
+		if (v37 == 0) {
+			Message.System(4, 2);
+			goto LABEL_04e6;
+		}
+
+		LABEL_04c7:
+		if (v37 == 1) {
+			Message.System(6, 2);
+			goto LABEL_04e6;
+		}
+
+		LABEL_04e6:
+		Sound.MEWait();
+		WordSet.LoadPlayerName(0);
+		if (v37 == 0) {
+			Message.System(5, 2);
+			goto LABEL_0529;
+		}
+
+		LABEL_050a:
+		if (v37 == 1) {
+			Message.System(7, 2);
+			goto LABEL_0529;
+		}
+
+		LABEL_0529:
+		Message.CloseAll();
+		Fade.OutBlackQ();
+		Fade.Wait();
+		if (v37 == 0) {
+			FieldDemo.CallXTransceiver(2, 1);
+			goto LABEL_056d;
+		}
+
+		LABEL_054e:
+		if (v37 == 1) {
+			FieldDemo.CallXTransceiver(3, 1);
+			goto LABEL_056d;
+		}
+
+		LABEL_056d:
+		Fade.InBlackQ();
+		Fade.Wait();
+		Base.CMD_263(5);
+		EventFlags.Set(671);
+		EventWorks.Set(16678, 1);
+		EventWorks.Set(16679, 1);
+		EventWorks.Set(16680, 1);
+		EventWorks.Set(16681, 1);
+		EventWorks.Set(16682, 1);
+		EventWorks.Set(16683, 1);
+		EventWorks.Set(16684, 1);
+		EventWorks.Set(16685, 1);
+		EventWorks.Set(16686, 1);
+		EventWorks.Set(16687, 1);
+		EventWorks.Set(16688, 1);
+		EventWorks.Set(16689, 1);
+		EventWorks.Set(16690, 1);
+		EventWorks.Set(16691, 1);
+		EventWorks.Set(16692, 1);
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_14() { // @ 0x6e5
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 0, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_15() { // @ 0x701
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 15, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+	
+	public static void main_16() {
+		        int yesNo;
+        int v4;
+        int v4_response;
+        int v4_entity;
+		int isVictory;
+        int lass_entity;
+        int lass_ID;
+        int richboy_entity;
+        int richboy_ID;
+        int gentleman_entity;
+        int gentleman_ID;
+        int backersM_entity1;
+        int backersM_entity2;
+        int backersM_ID;
+        int backersF_entity1;
+        int backersF_entity2;
+        int backersF_ID;
+        int breederM_entity;
+        int breederF_entity;
+        int breederF_ID;
+        
+        int playerX;
+        int playerY;
+
+        lass_entity = 20;
+        lass_ID = 29;
+
+        richboy_entity = 15;
+        richboy_ID = 49;
+
+        gentleman_entity = 22;
+        gentleman_ID = 30;
+
+        backersM_entity1 = 18;
+        backersM_entity2 = 17;
+        backersM_ID = 51;
+
+        backersF_entity1 = 14;
+        backersF_entity2 = 16;
+        backersF_ID = 52;
+
+        breederM_entity = 21;
+        breederF_entity = 19;
+        breederF_ID = 53;
+
+        int baseMessage;
+        baseMessage = 18;
+		Player.GetGPos(playerX, playerY);
+        Actor.PauseAll();
+
+        // EV CAMERA CHANGES 
+        // EVCamera.Init();
+        // EVCamera.Unbind();
+        // EVCamera.MoveTo(2.3652344f, 0.0f, 237, 85, 16, 27, 45);
+        // EVCamera.Wait();
+
+        Sound.SEPlay(1351);
+        Message.ActorEx(1024, baseMessage, lass_entity, 3, 0); // Replace with "Wow, that Eevee is incredible!"
+        Message.CloseActor();
+
+        Message.Multi(baseMessage + 1, 6, 20, 1);
+		Runtime.Sleep(26);
+		Message.Multi(baseMessage + 2, 4, 11, 2);
+		Runtime.Sleep(26);
+		Message.CloseWin(1);
+		Message.Multi(94, 13, 2, 3);
+		Runtime.Sleep(26);
+		Message.CloseWin(2);
+		Message.Multi(95, 18, 14, 4);
+		Runtime.Sleep(26);
+		Message.CloseWin(3);
+		Message.ActorEx(1024, baseMessage + 3, richboy_entity, 2, 0);
+		Runtime.Sleep(26);
+		Message.CloseWin(4);
+        Input.LastKeyWait();
+		Message.CloseAll();
+        Runtime.Sleep(32);
+
+        // Message.ActorEx(1024, baseMessage + 1, gentleman_entity, 0, 0); // Replace with "Such an incredible coat!"
+        // Message.CloseActor();
+        // Message.ActorEx(1024, baseMessage + 2, backersM_entity1, 0, 0); // Replace with "And its proportions! So symmetrical!"
+        // Message.CloseActor();
+        // Message.ActorEx(1024, baseMessage + 3, richboy_entity, 0, 0); // Replace with "What a beautiful specimen.\nThey would make a perfect Flareon!"
+        // Input.LastKeyWait();
+        // Message.CloseAll();
+        // Runtime.Sleep(32);
+        ShowExclamationMark(lass_entity);
+        ShowExclamationMark(gentleman_entity);
+        ShowExclamationMark(backersF_entity1);
+        ShowExclamationMark(backersF_entity2);
+        ShowExclamationMark(backersM_entity1);
+        ShowExclamationMark(backersM_entity2);
+        TurnWest8F(backersF_entity1);
+        WalkSouth8F(backersF_entity2);
+        TurnWest(backersF_entity2);
+        if (playerY != 27) {
+        	WalkNorth8F(gentleman_entity);
+        }
+       
+        HopLeft(lass_entity);
+        Actor.WaitActionFinish();
+        Sound.SEPlay(1351);
+        Message.Spiked(baseMessage + 4, 2); // Replace with "WHAT!"
+        Input.LastKeyWait();
+        Message.CloseAll();
+
+        Message.Multi(96, 6, 20, 1);
+		Runtime.Sleep(26);
+		Message.Multi(97, 4, 11, 2);
+		Runtime.Sleep(26);
+		Message.CloseWin(1);
+		Message.Multi(98, 13, 2, 3);
+		Runtime.Sleep(26);
+		Message.CloseWin(2);
+		Message.Multi(23, 18, 14, 4);
+		Runtime.Sleep(26);
+		Message.CloseWin(3);
+		Runtime.Sleep(8);
+		Message.CloseWin(4);
+        Message.ActorEx(1024, baseMessage + 6, lass_entity, 3, 0); // Replace with "Obviously it should evolve into Jolteon.\nLook at it's eyes, it clearly wants\r\nto zap things."
+        Runtime.Sleep(26);
+	   Message.CloseWin(4);
+	   Input.LastKeyWait();
+        Message.CloseActor();
+
+        HopDown(backersF_entity1);
+        Runtime.Sleep(8);
+        HopDown(backersF_entity2);
+
+        Message.Multi(25, 6, 20, 1);
+		Runtime.Sleep(26);
+		Message.Multi(26, 4, 11, 2);
+		Runtime.Sleep(26);
+		Message.CloseWin(1);
+		Message.Multi(27, 13, 2, 3);
+		Runtime.Sleep(26);
+		Message.CloseWin(2);
+		Message.Multi(99, 18, 14, 4);
+		Runtime.Sleep(26);
+		Message.CloseWin(3);
+		
+        Message.ActorEx(1024, baseMessage + 10, gentleman_entity, 2, 0); // Replace with "How ridiculous!\nIt would clearly make the perfect Vaporeon.\r\nI sense it yearns for the sea."
+        Runtime.Sleep(26);
+		Message.CloseWin(4);
+        Input.LastKeyWait();
+        Message.CloseActor();
+
+        // Message.ActorEx(1024, baseMessage + 5, backersM_entity1, 0, 0); // Replace with "Flareon is trash! There, I said it."
+        // Message.CloseActor();
+        // Message.ActorEx(1024, baseMessage + 6, lass_entity, 0, 0); // Replace with "Obviously it should evolve into Jolteon.\nLook at it's eyes, it clearly wants\r\nto zap things."
+        // Message.CloseActor();
+        // Message.ActorEx(1024, baseMessage + 7, backersF_entity1, 0, 0); // Replace with "No, Glaceon for sure!"
+        // Message.CloseActor();
+        // Message.ActorEx(1024, baseMessage + 8, backersM_entity1, 0, 0); // Replace with "Espeon is clearly the best!"
+        // Message.CloseActor();
+        // Message.ActorEx(1024, baseMessage + 9, backersF_entity2, 0, 0); // Replace with "Leafeon, getting underrated as usual."
+        // Message.CloseActor();
+        // Message.ActorEx(1024, baseMessage + 10, gentleman_entity, 0, 0); // Replace with "How ridiculous!\nIt would clearly make the perfect Vaporeon.\r\nI sense it yearns for the sea."
+        // Message.CloseActor();
+
+        TurnNorth8F(lass_entity);
+        Actor.WaitActionFinish();
+        Message.ActorEx(1024, baseMessage + 11, lass_entity, 3, 0); // Replace with "Who would want to have a smelly, wet\nVaporeon?"
+        Message.CloseActor();
+        TurnSouth8F(breederF_entity);
+        TurnSouth8F(backersM_entity1);
+         TurnSouth8F(backersF_entity1);
+          TurnSouth8F(backersF_entity2);
+          TurnSouth8F(richboy_entity);
+        TurnSouth8F(backersM_entity2);
+        TurnEast8F(gentleman_entity);
+        Actor.WaitActionFinish();
+        Message.ActorEx(1024, baseMessage + 12, gentleman_entity, 2, 0); // Replace with "How DARE you!\c\nI'll fight you right now!"
+        Message.CloseActor();
+        Runtime.Sleep(16);
+        TurnWest8F(lass_entity);
+        Message.ActorEx(1024, baseMessage + 13, breederF_entity, 3, 0); // Replace with "With your Pokemon... right?"
+        Input.LastKeyWait();
+        Message.CloseActor();
+        Runtime.Sleep(32);
+        Message.ActorEx(1024, baseMessage + 14, gentleman_entity, 2, 0); // Replace with "...of... of course!"
+        Input.LastKeyWait();
+        Message.CloseActor();
+ 	    ShowExclamationMark(lass_entity);
+ 	    Actor.WaitActionFinish();
+        Message.ActorEx(1024, baseMessage + 15, lass_entity, 3, 0); // Replace with "Here, why don't we ask this trainer."
+        Input.LastKeyWait();
+        Message.CloseActor();
+
+        // EV CAMERA CHANGES 
+		// EVCamera.MoveToDefault(45);
+
+        // WALK ROUTE TO TRAINER 
+        Player.GetGPos(playerX, playerY);
+        Actor.WalkRoute(lass_entity, playerX + 1, playerY, 0, 8, 1);
+        TurnWest(lass_entity);
+        TurnWest(breederM_entity);
+        TurnWest(gentleman_entity);
+        Actor.WaitActionFinish();
+
+        // EV CAMERA CHANGES 
+        // EVCamera.Wait();
+		// EVCamera.Rebind();
+		// EVCamera.End();
+
+
+        Message.ActorEx(1024, baseMessage + 16, lass_entity, 2, 0); // Hey friendo!\c\nWe promise not to judge you, but which\nEeveelution do you think is the best?
+        ListMenu.InitRightAnchor(31, 5, 0, 1, v4);
+		ListMenu.AddItem(35, 65535, 0); // Vaporeon
+		ListMenu.AddItem(36, 65535, 1); // Jolteon 
+		ListMenu.AddItem(37, 65535, 2); // Flareon
+		ListMenu.AddItem(38, 65535, 3); // Espeon
+        ListMenu.AddItem(39, 65535, 4); // Umbreon
+        ListMenu.AddItem(40, 65535, 5); // Glaceon
+        ListMenu.AddItem(41, 65535, 6); // Leafeon
+        ListMenu.AddItem(42, 65535, 7); // Sylveon
+        ListMenu.AddItem(43, 65535, 8); // All of them?
+		ListMenu.ShowDialog();
+
+        if (v4 == 0) {
+            v4_response = baseMessage + 26;
+            v4_entity = gentleman_entity;
+        }  
+        if (v4 == 1) {
+            v4_response = baseMessage + 27;
+            v4_entity = lass_entity;
+        } 
+         if (v4 == 2) {
+            v4_response = baseMessage + 28;
+            v4_entity = richboy_entity;
+        } 
+         if (v4 == 3) {
+            v4_response = baseMessage + 29;
+            v4_entity = backersM_entity1;
+        } 
+         if (v4 == 4) {
+            v4_response = baseMessage + 30;
+            v4_entity = backersM_entity2;
+        } 
+         if (v4 == 5) {
+              v4_response = baseMessage + 31;
+            v4_entity = backersF_entity1;
+        } 
+         if (v4 == 6) {
+              v4_response = baseMessage + 32;
+            v4_entity = backersF_entity2;
+        } 
+         if (v4 == 7) {
+              v4_response = baseMessage + 33;
+            v4_entity = lass_entity;
+        } 
+         if (v4 == 8) {
+            v4_response = baseMessage + 34;
+            v4_entity = 250;
+        }
+
+        if (v4_entity == 250) {
+            Message.CloseAll();
+            Sound.SEPlay(1351);
+            Message.Spiked(v4_response, 2);
+            Message.WaitAdvance();
+            Message.CloseAll();
+        } else {
+            Message.CloseAll();
+            Message.ActorEx(1024, v4_response, v4_entity, 2, 0); 
+            Input.LastKeyWait();
+            Message.CloseAll();
+        }
+
+		TurnEast8F(lass_entity);
+		Actor.WaitActionFinish();
+        Message.ActorEx(1024, baseMessage + 35, backersF_entity2, 2, 0); // Replace with "Why don't we all battle him with our\neeveelutions! Then we'll know for sure\nwhose the best!"
+        Input.LastKeyWait();
+        Message.CloseAll();
+
+
+
+        // LASS BATTLE 
+        ShowExclamationMark(lass_entity);
+        TurnWest8F(lass_entity);
+        Actor.WaitActionFinish();
+        Message.ActorEx(1024, baseMessage + 36, lass_entity, 2, 0); // Replace with "Great idea! Let's go!"
+        Input.LastKeyWait();
+        Message.CloseActor();
+        handleBattle(lass_ID);
+
+
+        // GENTLEMAN BATTLE
+        Message.ActorEx(1024, baseMessage + 37, lass_entity, 2, 0); // Replace with "Wh-  What happened?"
+        Input.LastKeyWait();
+        Message.CloseAll();
+		WalkEast5Tiles8F(lass_entity);
+		TurnWest8F(lass_entity);
+        ShowExclamationMark(gentleman_entity);
+        HopLeft(gentleman_entity);
+        Actor.WaitActionFinish();
+        Message.ActorEx(1024, baseMessage + 38, gentleman_entity, 2, 0); // Replace with "See, it's obvious Jolteon is a bum!\nLet me show you how a real Eeveelution\r\nbattles!"
+        Input.LastKeyWait();
+        Message.CloseAll();
+        handleBattle(gentleman_ID);
+        
+
+        // RICH BOY BATTLE
+        Message.ActorEx(1024, baseMessage + 39, gentleman_entity, 2, 0); // Replace with "Made a fool of by a youngin."
+        Input.LastKeyWait();
+        Message.CloseAll();
+		WalkEast3Tiles8F(gentleman_entity);
+		TurnWest8F(gentleman_entity);
+        ShowExclamationMark(richboy_entity);
+        HopDown(richboy_entity);
+        Actor.WaitActionFinish();
+        Message.ActorEx(1024, baseMessage + 40, richboy_entity, 2, 0); // Replace with "All this hubbub to deny Flareon's clear\nsuperiority. My turn."
+        Input.LastKeyWait();
+        Message.CloseAll();
+        handleBattle(richboy_ID);
+        
+
+        // BACKERS M
+        Message.ActorEx(1024, baseMessage + 41, richboy_entity, 2, 0); // Replace with "Whatever. I didn't choose Flareon for\nbattling anyways."
+        Input.LastKeyWait();
+        Message.CloseAll();
+        ShowExclamationMark(backersM_entity1);
+        ShowExclamationMark(backersM_entity2);
+        Actor.WaitActionFinish();
+        Message.ActorEx(1024, baseMessage + 42, backersM_entity1, 2, 0); // Replace with "Come on bro, it's our turn!"
+        Input.LastKeyWait();
+        Message.ActorEx(1024, baseMessage + 43, backersM_entity2, 2, 0); // Replace with "Let's show them what a pair of Eeveelutions\ncan do!"
+        Input.LastKeyWait();
+        Message.CloseAll();
+        handleBattle(backersM_ID);
+        
+
+        // BACKERS F
+        Message.ActorEx(1024, baseMessage + 44, backersM_entity1, 2, 0); // Replace with "Our warriors of day and night..."
+        Input.LastKeyWait();
+        Message.ActorEx(1024, baseMessage + 45, backersM_entity2, 2, 0); // Replace with "...vanquished."
+        Input.LastKeyWait();
+        Message.CloseAll();
+        ShowExclamationMark(backersF_entity1);
+        ShowExclamationMark(backersF_entity2);
+        Actor.WaitActionFinish();
+        Message.ActorEx(1024, baseMessage + 46, backersF_entity1, 2, 0); // Replace with "Come on sis'. We're the last ones left!"
+        Input.LastKeyWait();
+        Message.ActorEx(1024, baseMessage + 47, backersF_entity2, 2, 0); // Replace with "Leafeon and Glaceon about to clean up!"
+        Input.LastKeyWait();
+        Message.CloseAll();
+        handleBattle(backersF_ID);
+
+
+        // EEVEE
+        Message.ActorEx(1024, baseMessage + 48, backersF_entity1, 2, 0); // Replace with "I guess we weren't enough either..."
+        Input.LastKeyWait();
+        Message.ActorEx(1024, baseMessage + 49, backersF_entity2, 2, 0); // Replace with "...but maybe that means all our Eeveelutions\nare equal?"
+        Input.LastKeyWait();
+        Message.CloseAll();
+		HopDown(23);
+		TurnSouth8F(breederM_entity);
+        Runtime.Sleep(32);
+        ShowExclamationMark(breederF_entity);
+        Actor.WaitActionFinish();
+        Message.ActorEx(1024, baseMessage + 50, breederF_entity, 2, 0); // Replace with "Oh, looks like Eevee wants to get in on this\ntoo!"
+        Input.LastKeyWait();
+        Message.CloseAll();
+        handleBattle(breederF_ID);
+        
+
+        // Conclusion
+		WalkWest8F(23);
+		TurnEast8F(23);
+		Actor.WaitActionFinish();
+		ShowEllipses(lass_entity);
+        ShowEllipses(richboy_entity);
+        ShowEllipses(backersF_entity1);
+        ShowEllipses(backersM_entity1);
+        Actor.WaitActionFinish();
+        TurnWest8F(backersM_entity1);
+        TurnWest8F(backersM_entity2);
+        TurnEast8F(breederF_entity);
+        TurnEast8F(richboy_entity);
+        Actor.WaitActionFinish();
+        Sound.SEPlay(1351);
+        Message.Spiked(baseMessage + 51, 0); // "Wow! Incredible"
+        Input.LastKeyWait();
+        Message.CloseAll();
+
+        Message.Multi(70, 6, 20, 1);
+		Runtime.Sleep(26);
+		Message.Multi(71, 4, 11, 2);
+		Runtime.Sleep(26);
+		Message.CloseWin(1);
+		Message.Multi(72, 13, 2, 3);
+		Runtime.Sleep(26);
+		Message.CloseWin(2);
+		Message.Multi(73, 18, 14, 4);
+		Runtime.Sleep(26);
+		Message.CloseWin(3);
+        Message.Multi(74, 6, 20, 5);
+		Runtime.Sleep(26);
+		Message.CloseWin(4);
+        
+        Message.ActorEx(1024, baseMessage + 57, gentleman_entity, 2, 0); // Replace with "I didn't learn anything.\nI still think Vaporeon is the best."
+        Runtime.Sleep(26);
+		Message.CloseWin(5);
+        Input.LastKeyWait();
+        Message.CloseAll();
+
+        // Message.ActorEx(1024, baseMessage + 52, backersM_entity1, 0, 0); // Replace with "Did you see that Flareon battle?\nBlazing!"
+        // Message.CloseActor();
+        // Message.ActorEx(1024, baseMessage + 53, lass_entity, 0, 0); // Replace with "I never knew Leafeon was so sharp!"
+        // Message.CloseActor();
+        // Message.ActorEx(1024, baseMessage + 54, backersF_entity1, 0, 0); // Replace with "Umbreon is super cool."
+        // Message.CloseActor();
+        // Message.ActorEx(1024, baseMessage + 55, backersM_entity1, 0, 0); // Replace with "Espeon is clearly the best!"
+        // Message.CloseActor();
+        // Message.ActorEx(1024, baseMessage + 56, backersF_entity2, 0, 0); // Replace with "Jolteon was ridiculously fast.\nNever seen a Pokemon move like that!"
+        // Message.CloseActor();
+        // Message.ActorEx(1024, baseMessage + 57, gentleman_entity, 0, 0); // Replace with "I didn't learn anything.\nI still think Vaporeon is the best."
+        // Input.LastKeyWait();
+        // Message.CloseActor();
+
+        Message.ActorEx(1024, baseMessage + 58, breederM_entity, 0, 0); // Replace with "Sorry for all the hassle.\nEvery meeting of the Eevee fan club ends up\r\nlike this.\c\nCome over here and I'll give you something\nto make it up to you!"
+        Input.LastKeyWait();
+        Message.CloseActor();
+
+        EventWorks.Set(16486, 1);
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+
+	    // The Trade Script
+    public static void main_17() {
+		int state; 
+		int yesNo; 
+		int randomNo;
+		int v32; 
+		int v33;
+
+        	Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+
+		state = EventWorks.Get(16486);
+		if (state == 3) {
+			Message.Actor(1024, 83, 0, 0); // REPLACE WITH "This Pokemon is awesome!\c\nI'm already thinking of some sick dance\nmoves they could pull at my next show!\c\nYou're a legend, bro!"
+			Input.LastKeyWait();
+			Message.CloseActor();
+			goto LABEL_EndTradeScript;
+		}
+		if (state == 1) {
+			Message.Actor(1024, 77, 0, 0); // REPLACE WITH "We'll be rolling out of here soon enough.\nRoxie's throwing a rager across\nthe river.
+			EventWorks.Set(16486, 2);
+		} else {
+			Message.Actor(1024, 78, 0, 0); // REPLACE WITH "We'll be rolling out of here soon enough.\nRoxie's throwing a rager across\nthe river.
+		}
+		yesNo = YesNoWin.Show();
+
+		if (yesNo != 0) {
+			goto LABEL_RejectTrade;
+		}
+		Message.Actor(1024, 80, 0, 0); // REPLACE WITH "Sick!\nWhich Pokemon do you want to trade?"
+		Input.LastKeyWait();
+		Message.CloseAll();
+		v32 = 0;
+		v33 = 0;
+		PokeApp.CallPokeSelect(0, v33, v32, 0);
+		if (v33 != 1) {
+			goto LABEL_RejectTrade;
+		}
+		Message.Actor(1024, 81, 0, 0); // REPLACE WITH "Alright, let's do it!"
+		Input.LastKeyWait();
+		Message.CloseAll();
+		randomNo = System.Random(7);
+		FieldTrade.Start((15 + randomNo), v32);
+
+		Message.System(82, 2);
+		yesNo = YesNoWin.Show();
+		if (yesNo == 0) {
+			PokeApp.CallRename(v32, 1);
+		}
+		Message.CloseAll();
+		Message.Actor(1024, 83, 0, 0); // REPLACE WITH "This Pokemon is awesome!\c\nI'm already thinking of some sick dance\nmoves they could pull at my next show!\c\nYou're a legend, bro!"
+		Input.LastKeyWait();
+		Message.CloseAll();
+		EventWorks.Set(16486, 3);
+		goto LABEL_EndTradeScript;
+
+		
+		LABEL_RejectTrade:
+		Sound.SEPlay(1351);
+		Message.Actor(1024, 79, 0, 0); // REPLACE WITH "Awww man."
+		Input.LastKeyWait();
+		Message.CloseActor();
+		
+		LABEL_EndTradeScript:
+		v33 = 0;
+		v32 = 0;
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+
+	}
+
+	public static void main_18() { // @ 0x9f4
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Sound.PVPlay(133, 0);
+		Message.Actor(1024, 17, 0, 0);
+		Sound.PVWait();
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	// Rich Boy
+	public static void main_19() { // @ 0x9f4
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		if (EventWorks.Get(16486) == 0) {
+			Message.Actor(1024, 84, 0, 0);
+		} else {
+			Message.Actor(1024, 85, 0, 0);
+		}
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+		// LASS
+	public static void main_20() { // @ 0x9f4
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 86, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	// gENTLEMAN
+	public static void main_21() { // @ 0x9f4
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 87, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_22() { // @ 0x9f4
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+
+		if (EventFlags.Get(513)) {
+			Message.Actor(1024, 93, 0, 0);
+			Input.LastKeyWait();
+			Message.CloseActor();
+		} else {
+			Message.Actor(1024, 92, 0, 0);
+			Input.LastKeyWait();
+			Message.CloseActor();
+			Global2805(48, 1);
+			EventFlags.Set(513);
+			Message.Actor(1024, 93, 0, 0);
+			Input.LastKeyWait();
+			Message.CloseActor();
+		}
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	// F Back 1
+	public static void main_23() { // @ 0x9f4
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 88, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	// F Backer 2
+	public static void main_24() { // @ 0x9f4
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 89, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	// M Backer 1
+	public static void main_25() { // @ 0x9f4
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 90, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	// M Backer 2
+	public static void main_26() { // @ 0x9f4
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 91, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+	
+    static void handleBattle(int trainerId){
+        	int isVictory; 
+        	Battle.CallTrainerBattle(trainerId, 0, 0); // REPLACE WITH ROUGHNECK TRAINER ID 
+		isVictory = Battle.IsTrainerVictory();
+		if (isVictory != 1) {
+			Battle.CallTrainerLose();
+		}
+        	Battle.EndTrainerBattle();
+    }
+
+	static meta void ExclaimAndTurnSouth(int npcId) : VActionSequence {
+		Action004b(1);
+		Action0021(1);
+	}
+
+	static meta void WalkEastThenSouthThenEast8F(int npcId) : VActionSequence {
+		Action0013(1);
+		Action0011(4);
+		Action0013(9);
+	}
+
+	static meta void WalkWestThenSouthThenEast4F(int npcId) : VActionSequence {
+		Action0012(1);
+		Action0011(4);
+		Action0013(9);
+	}
+
+	static meta void WalkSouthThenWalkEast8F_Again(int npcId) : VActionSequence {
+		Action000d(2);
+		Action000f(9);
+	}
+
+	static meta void WalkSouth5Tiles8F(int npcId) : VActionSequence {
+		Action000d(5);
+	}
+
+	static meta void WalkSouthThenWalkEas10Tilest8F(int npcId) : VActionSequence {
+		Action000d(5);
+		Action000f(10);
+	}
+
+	static meta void WalkSouthThenWalkEast8F(int npcId) : VActionSequence {
+		Action000d(2);
+		Action000f(9);
+	}
+
+	static meta void WalkEast8F(int npcId) : VActionSequence {
+		Action000f(1);
+	}
+	static meta void WalkEast5Tiles8F(int npcId) : VActionSequence {
+		Action000f(5);
+	}
+		static meta void WalkEast3Tiles8F(int npcId) : VActionSequence {
+		Action000f(3);
+	}
+
+	static meta void WalkWest8F(int npcId) : VActionSequence {
+		Action000e(1);
+	}
+
+	static meta void LookSouth(int npcId) : VActionSequence {
+		Action0001(1);
+	}
+
+	static meta void LookEast(int npcId) : VActionSequence {
+		Action0003(1);
+	}
+
+	static meta void LookNorth(int npcId) : VActionSequence {
+		Action0000(1);
+	}
+
+
+
+	static meta void TurnNorth8F(int npcId) : VActionSequence {
+		Action0020(1);
+	}
+
+	static meta void TurnSouth8F(int npcId) : VActionSequence {
+		Action0021(1);
+	}
+
+	static meta void TurnWest8F(int npcId) : VActionSequence {
+		Action0022(1);
+	}
+
+	static meta void TurnEast8F(int npcId) : VActionSequence {
+		Action0023(1);
+	}
+
+	static meta void ShowExclamationMark(int npcId) : VActionSequence {
+		Action004b(1);
+	}
+
+	static meta void ActionSequence_0928(int npcId) : VActionSequence {
+		Action009f(1);
+	}
+	static meta void WalkNorth8F(int npcId) : VActionSequence {
+		Action000c(1);
+	}
+	static meta void WalkSouth8F(int npcId) : VActionSequence {
+		Action000d(1);
+	}
+		static meta void TurnWest(int npcId) : VActionSequence {
+		Action0022(1);
+	}
+
+			static meta void ShowEllipses(int npcId) : VActionSequence {
+	        Action00a1(1);
+        }
+
+        static meta void ShowExclamationMark(int npcId) : VActionSequence {
+            Action004b(1);
+        }
+
+        static meta void ShowQuestionMark(int npcId) : VActionSequence {
+            Action009f(1);
+        }
+
+        static meta void ShowMusicNote(int npcId) : VActionSequence {
+            Action00a0(1);
+        }
+
+        static meta void HopLeft(int npcId) : VActionSequence {
+            Action0032(1);
+        }
+
+        static meta void HopRight(int npcId) : VActionSequence {
+            Action0033(1);
+        }
+
+        static meta void HopUp(int npcId) : VActionSequence {
+            Action0030(1);
+        }
+
+        static meta void HopDown(int npcId) : VActionSequence {
+            Action0031(1);
+        }
+        
+        static meta void TurnWest(int npcId) : VActionSequence {
+		    Action0022(1);
+        }
+
+
+
+        static meta void TurnNorth(int npcId) : VActionSequence {
+            Action0020(1);
+        }
+
+        static meta void TurnEast8F(int npcId) : VActionSequence {
+		    Action0023(1);
+	    }
+
+	static meta void Global2805(int a1, int a2) : VGlobalCall[2805];
+	static meta void Global10536(int a1, int a2) : VGlobalCall[10536];
+	static meta void Global10535(int a1, int a2, int a3, int a4, int a5) : VGlobalCall[10535];
+	
+	static native void Action0000(int amount) : 0x0;
+	static native void Action0001(int amount) : 0x1;
+	static native void Action0003(int amount) : 0x3;
+	static native void Action000d(int amount) : 0xd;
+	static native void Action000e(int amount) : 0xe;
+	static native void Action000f(int amount) : 0xf;
+	static native void Action0011(int amount) : 0x11;
+	static native void Action0012(int amount) : 0x12;
+	static native void Action0013(int amount) : 0x13;
+	static native void Action004b(int amount) : 0x4b;
+        static native void Action000c(int amount) : 0xc;
+	    static native void Action000f(int amount) : 0xf;
+	    static native void Action0020(int amount) : 0x20;
+	    static native void Action0021(int amount) : 0x21;
+	    static native void Action0022(int amount) : 0x22;
+	    static native void Action0023(int amount) : 0x23;
+        static native void Action004b(int amount) : 0x4b;
+        static native void Action00a1(int amount) : 0xa1;
+        static native void Action00a0(int amount) : 0xa0;
+        static native void Action009f(int amount) : 0x9f;
+        static native void Action0030(int amount) : 0x30;
+        static native void Action0031(int amount) : 0x31;
+        static native void Action0032(int amount) : 0x32;
+        static native void Action0033(int amount) : 0x33;
+        
+	
+	static meta void Global2807(int a1, int a2) : VGlobalCall[2807];
+}

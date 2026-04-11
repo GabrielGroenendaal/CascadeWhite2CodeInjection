@@ -300,7 +300,7 @@ data_address_moveEffects:
 	move_ef.electro_ball => &Label_ElectroBall
 	move_ef.soak => &Label_Soak
 	move_ef.dmg_user_spe+1 => &Label_FlameCharge
-	move_ef.acid_spray => &Label_AcidSpray
+	move_ef.acid_spray => &Label_LowerTargetSpecialDefense
 	move_ef.foul_play => &Label_FoulPlay
 	move_ef.simple_beam => &Label_SimpleBeam
 	move_ef.entrainment => &Label_Entrainment
@@ -960,6 +960,19 @@ address_0x10EC:
 	EndScript()
 
 Label_SpeedLoweringAIMoves:
+	GetHeldItem(defender)
+	JumpIfStoredEQ(item.covert_cloak, &endScript_IcyWind)
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.sheer_force, &endScript_IcyWind)
+	JumpIfStoredEQ(ability.mold_breaker, &Label_SpeedLoweringAIMovesRand)
+	JumpIfStoredEQ(ability.teravolt, &Label_SpeedLoweringAIMovesRand)
+	JumpIfStoredEQ(ability.turboblaze, &Label_SpeedLoweringAIMovesRand)
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.white_smoke, &endScript_IcyWind)
+	JumpIfStoredEQ(ability.strong_body, &endScript_IcyWind)
+	JumpIfStoredEQ(ability.resilient, &endScript_IcyWind)
+
+Label_SpeedLoweringAIMovesRand:
 	JumpCompareSpeed(GT, &address_IcyWindRandBoost)
 	Jump(&endScript_IcyWind)
 
@@ -1030,7 +1043,24 @@ address_0x1194:
 //   LOWER ENEMY SPECIAL DEFENSE   
 
 Label_LowerTargetSpecialDefense:
+	JumpIfMoveEQ(move.acid_spray, &Label_AcidSpray)
+	JumpIfMoveEQ(move.metal_sound, &Label_AcidSpray)
+	Jump(&Label_LowerSpecialDefenseLogic)
+
+Label_AcidSpray: 
+	GetHeldItem(defender)
+	JumpIfStoredEQ(ability.covert_cloak, &address_0x11FE)
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.sheer_force, &address_0x11FE)
+	JumpIfStoredEQ(ability.teravolt, &Label_LowerSpecialDefenseLogic)
+	JumpIfStoredEQ(ability.mold_breaker, &Label_LowerSpecialDefenseLogic)
+	JumpIfStoredEQ(ability.turboblaze, &Label_LowerSpecialDefenseLogic)
 	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.white_smoke, &address_0x11FE)
+	JumpIfStoredEQ(ability.strong_body, &address_0x11FE)
+	JumpIfStoredEQ(ability.resilient, &address_0x11FE)
+
+Label_LowerSpecialDefenseLogic:
 	JumpIfStoredEQ(ability.unaware, &deprioritizeBy2)
 	JumpIfHealthLT(attacker, 70, &address_0x11DA)
 	JumpIfStatStageGT(defender, spd, -3, &address_0x11EA)
@@ -1050,7 +1080,15 @@ address_0x11FE:
 
 
 
+Label_AcidSpray: 
+	GetHeldItem(defender)
 
+	GetAbilityGuess(attacker)
+
+	GetAbilityGuess(defender)
+
+
+Label_AcidSpray_EndScript:
 
 
 
@@ -1082,21 +1120,16 @@ address_0x122C:
 
 address_0x124E:
 	JumpIfNotBadlyPoisoned(defender, &address_0x1268)
-	JumpIfRandLT(70, &address_0x1268)
+	JumpIfRandLT(50, &address_0x1268)
 	AddToScore(2)
 
 address_0x1268:
 	JumpIfRandLT(96, &address_0x1286)
-	AddToScore(2)
-
-address_0x1286:
-	JumpIfRandLT(96, &address_0x12C8)
 	AddToScore(1)
 
-address_0x12C8:
-	JumpIfNotCondition(defender, cond_flag.power_trick, &address_0x12E6)
-	JumpIfRandLT(70, &address_0x12E6)
-	AddToScore(2)
+address_0x1286:
+	JumpIfRandLT(96, &address_0x12E6)
+	AddToScore(1)
 
 address_0x12E6:
 	JumpIfHealthGT(attacker, 70, &address_0x1332)
@@ -1106,7 +1139,7 @@ address_0x12E6:
 	JumpIfRandLT(70, &address_0x1332)
 
 address_0x132C:
-	AddToScore(-2)
+	AddToScore(-3)
 
 address_0x1332:
 	EndScript()
@@ -1582,16 +1615,14 @@ address_0x1A5A:
 
 
 //   PARALYSIS   
-
 Label_TargetPar:
 	JumpCompareSpeed(GT, &address_0x1A80)
-	JumpIfHealthGT(attacker, 70, &address_0x1A90)
+	JumpIfHealthGT(attacker, 70, &address_0x1A80)
 	AddToScore(-1)
-	Jump(&address_0x1A90)
 
 address_0x1A80:
-	JumpIfRandLT(20, &address_0x1A90)
-	AddToScore(3)
+	JumpIfRandLT(70, &address_0x1A90)
+	AddToScore(2)
 
 address_0x1A90:
 	EndScript()
@@ -2728,6 +2759,18 @@ data_address_0x2C0E:
 //   FAKE OUT   
 
 Label_FakeOut:
+	GetHeldItem(defender)
+	JumpIfStoredEQ(item.covert_cloak, &address_0x2C88)
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.sheer_force, &address_0x2C88)
+	JumpIfStoredEQ(ability.teravolt, &Label_FakeOutAddScore)
+	JumpIfStoredEQ(ability.turboblaze, &Label_FakeOutAddScore)
+	JumpIfStoredEQ(ability.mold_breaker, &Label_FakeOutAddScore)
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.resilient, &address_0x2C88)
+	JumpIfStoredEQ(ability.inner_focus, &address_0x2C88)
+
+Label_FakeOutAddScore:
 	AddToScore(3)
 	EndScript()
 
@@ -5958,6 +6001,12 @@ Label_Acrobatics:
 
 //   REFLECT TYPE   
 Label_ReflectType:
+	GetAbilityGuess(attacker)
+	JumpIfStoredNE(item.rivalry, &Label_ReflectType2)
+	JumpIfRandLT(110, &address_0x5BF0)
+	AddToScore(2)
+
+Label_ReflectType2:
 	GetType(attacker_type1)
 	JumpIfStoredIsInList(&address_Type1, &address_0x5BE0)
 	JumpIfStoredIsInList(&address_Type2, &address_0x5BCA)
@@ -6058,18 +6107,20 @@ Label_GrassPledge:
 
 //   WORK UP   
 Label_WorkUp:
-	JumpIfStatStageLT(attacker, atk, +3, &address_0x5C96)
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.unaware, &address_0x5D10)
+	JumpIfStatStageLT(attacker, atk, +2, &Label_WorkUpCheckSpecialAttack)
 	JumpIfRandLT(100, &address_0x5CE4)
 	AddToScore(-1)
 	Jump(&address_0x5CE4)
 
-address_0x5C96:
-	JumpIfStatStageLT(attacker, spa, +3, &address_0x5CBE)
+Label_WorkUpCheckSpecialAttack:
+	JumpIfStatStageLT(attacker, spa, +2, &Label_BothStatsLowerThan1)
 	JumpIfRandLT(100, &address_0x5CE4)
 	AddToScore(-1)
 	Jump(&address_0x5CE4)
 
-address_0x5CBE:
+Label_BothStatsLowerThan1:
 	JumpIfHealthNE(attacker, 100, &address_0x5CEA)
 	JumpIfHasMoveWithEffect(attacker, move_ef.baton_pass, &address_0x5CE4)
 	JumpIfRandLT(128, &address_0x5CEA)

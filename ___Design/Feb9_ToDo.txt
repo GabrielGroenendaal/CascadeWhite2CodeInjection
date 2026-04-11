@@ -30,6 +30,29 @@ To Do:
 
 
 
+[ ROMHACKING ]
+    - EV Toggle 
+        - Add the EVs back to all Pokemon, make a list of them while at work 
+        - Confirm the EV toggle script works
+        - Make it's enabled in the global PC script. 
+    - Get the rest of the debug saves for Marlon Split 
+    - Test and implement the post-marlon gym scripting for Frigate, Abundant Shrine, Pinwheel Forest
+
+
+
+
+[ LIFE ]
+    - Take Pictures of Room to Get Lighting Suggestions from Chat GPT 
+    - Budgeting 
+        - Rewrite the Lease 
+        - Print out the amazon returns 
+        - Fix the Tax Return 
+        - Get the last 200 dollars of my delta credit 
+    - Appointments
+        - Finding a Therapist in-network 
+
+
+
 
 
 

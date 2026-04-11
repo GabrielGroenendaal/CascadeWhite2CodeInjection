@@ -7,6 +7,7 @@
 
 
 MultiBattleLogic:
+	JumpIfMoveEQ(move.howl, &address_HowlLogic)
 	JumpIfTargetIsAlly(&address_TargetingAnAlly)
 	CalcMoveDamage(false)
 	JumpIfStoredEQ(no_damage, &address_MoveDealsNoDamage)
@@ -103,11 +104,12 @@ address_MoveDealsNoDamage:
 
 
 
+address_HowlLogic: 
+	JumpIfRandLT(64, &Label_EndHowlScript)
+	AddToScore(1)
 
-
-
-
-
+Label_EndHowlScript: 
+	EndScript()
 
 
 
@@ -1239,6 +1241,8 @@ address_TargetingAnAlly:
 	JumpIfStoredEQ(type.electric, &address_TargetAlliesElectricMoves)
 	JumpIfStoredEQ(type.water, &address_WaterMoveLogicForSingleTargetMoves)
 	JumpIfStoredEQ(type.dark, &address_DarkTypeMoveLogicForSingleTargetMoves)
+
+	
 	JumpIfMoveEQ(move.fling, &address_TargetAllyWithBestow)
 	JumpIfHeldItemEQ(attacker_ally, item.weakness_policy, &address_TriggerAllyWeaknessPolicy)
 	JumpIfHeldItemEQ(attacker_ally, item.tera_w-policy, &address_TriggerAllyWeaknessPolicy)
@@ -1446,6 +1450,7 @@ address_NonDamagingAllyTargetingMoves:
 	JumpIfMoveEQ(move.bestow, &address_TargetAllyWithBestow)
 	JumpIfMoveEQ(move.gastro_acid, &address_TargetAllyWithGastroAcid)
 	JumpIfMoveEQ(move.acupressure, &address_TargetAllyWithAcupressure)
+	JumpIfMoveEQ(move.agility, &address_TargetAllyWithAgility)
 	JumpIfMoveEQ(move.heal_pulse, &address_TargetAllyWithHealPulse)
 	Jump(&deprioritizeBy30Again)
 
@@ -1680,8 +1685,14 @@ address_0x1D38:
 
 
 
+address_TargetAllyWithAgility: 
+	JumpCompareSpeed(GT, &address_AgilityEndScript)
+	JumpIfStatStageEQ(attacker_ally, spe, +2, &deprioritizeBy30Again)
+	JumpIfRandLT(128, &address_AgilityEndScript)
+	AddToScore(2)
 
-
+address_AgilityEndScript: 
+	EndScript()
 
 
 
@@ -1698,7 +1709,6 @@ address_TargetAllyWithAcupressure:
 
 address_AcupressureRNGCheck:
 	JumpIfRandLT(128, &endScript_AcuPressureOnAlly)
-	JumpIfRandLT(80, &endScript_AcuPressureOnAlly)
 	AddToScore(2)
 
 endScript_AcuPressureOnAlly:

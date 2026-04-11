@@ -103,13 +103,13 @@ enum MoveID
     MOVE018_WHIRLWIND = 0x12,
     MOVE019_FLY = 0x13,
     MOVE020_BIND = 0x14,
-    MOVE021_BRUTAL_SWING = 0x15,
+    MOVE021_SLAM = 0x15,
     MOVE022_VINE_WHIPS = 0x16,
     MOVE023_STOMP = 0x17,
     MOVE024_DOUBLE_KICK = 0x18,
     MOVE025_HIGH_HORSEPOWER = 0x19,
     MOVE026_JUMP_KICK = 0x1A,
-    MOVE027_HEADLONG_RUSH = 0x1B,
+    MOVE027_ROLLING_KICK = 0x1B,
     MOVE028_SAND_ATTACK = 0x1C,
     MOVE029_HEADBUTT = 0x1D,
     MOVE030_DEVOUR = 0x1E,
@@ -473,7 +473,7 @@ enum MoveID
     MOVE388_WORRY_SEED = 0x184,
     MOVE389_SUCKER_PUNCH = 0x185,
     MOVE390_TOXIC_SPIKES = 0x186,
-    MOVE391_HEART_SWAP = 0x187,
+    MOVE391_HEADLONG_RUSH = 0x187,
     MOVE392_AQUA_RING = 0x188,
     MOVE393_MAGNET_RISE = 0x189,
     MOVE394_FLARE_BLITZ = 0x18A,
@@ -583,7 +583,7 @@ enum MoveID
     MOVE498_CHIP_AWAY = 0x1F2,
     MOVE499_CLEAR_SMOG = 0x1F3,
     MOVE500_STORED_POWER = 0x1F4,
-    MOVE501_QUICK_GUARD = 0x1F5,
+    MOVE501_BRUTAL_SWING = 0x1F5,
     MOVE502_ALLY_SWITCH = 0x1F6,
     MOVE503_SCALD = 0x1F7,
     MOVE504_SHELL_SMASH = 0x1F8,
@@ -1694,7 +1694,8 @@ enum BattleHandlerEffect
     EFFECT_SETANIMATIONID = 0x3A,
     EFFECT_ADD_ANIMATION = 0x37,
     EFFECT_SWAPITEM = 0x24,
-    EFFECT_SWITCH = 0x29
+    EFFECT_SWITCH = 0x29,
+    EFFECT_FORCE_SWITCH = 0x2E
 };
 
 enum BattleMonValue
@@ -4419,6 +4420,16 @@ struct SWAN_ALIGNED(4) HandlerParam_AddCondition
     u8 pokeID;
     u8 OverwriteMode;
     HandlerParam_StrParams exStr;
+};
+
+struct SWAN_ALIGNED(4) HandlerParam_ForceSwitch
+{
+    HandlerParam_Header header;
+    u16 animID;
+    u8 monID;
+    unsigned __int8 fUseNonWildEffect : 4;
+    unsigned __int8 fDisableLevelCheck : 4;
+    HandlerParam_StrParams strParam;
 };
 
 struct HandlerParam_CureCondition
