@@ -1587,12 +1587,15 @@ public class MainEvents {
                   }
                   // Doubles Grass
                   if (encounterType == 6){
-                        // 1440: Wooper (60%)
-                        // 74: Geodude (30%)
-                        // 551: Sandile (5%)
-                        // 343: Baltoy (4%)
-                        // 50: Diglett (1%)
-                        return generateWildEncountersFishing(1440, 74, 551, 343, 50);
+                        // 194: Wooper (20%)
+                        // 74: Geodude (20%)
+                        // 551: Sandile (10%)
+                        // 343: Baltoy (10%)
+                        // 535: Tympole (10%)
+                        // 50: Diglett (10%)
+                        // 92: Gastly (10%)
+                        // 436 Bronzor (10%)
+                        return generateWildEncountersWalking(194, 74, 551, 343, 535, 50, 92, 92, 436, 436, 436, 436);
                   }
             }
 
