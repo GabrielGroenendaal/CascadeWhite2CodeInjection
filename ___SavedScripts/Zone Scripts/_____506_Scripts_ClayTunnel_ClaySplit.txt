@@ -1,11 +1,12 @@
-import messages.script.Msg0597.MSGID;
+import messages.script.Msg0378.MSGID;
 
-import player.Bag;
 import event.actors.Actor;
 import event.actors.Player;
 import event.dialogs.Message;
 import event.dialogs.YesNoWin;
+import player.Bag;
 import player.TrainerCard;
+import pokescript.vm.Math;
 import pokescript.vm.StackCtrl;
 import pokescript.vm.VM;
 import system.EventFlags;
@@ -16,70 +17,82 @@ import system.Sound;
 import system.text.WordSet;
 
 public class MainEvents {
-	public static void main_1() { // @ 0x18
+	public static void main_1() { // @ 0x26
 		int v0;
 		int v1;
-		int v16;
-		int v33;
-		int v34;
+		int v4;
+		int v5;
+		int v6;
+		int v7;
+		int v8;
+		int v9;
+		int v10;
 
 		Actor.PauseAll();
 		Sound.SEPlay(1351);
 		Actor.FacePlayer();
 		Message.Actor(1024, 0, 0, 0);
-		v16 = YesNoWin.Show();
-		if (v16 != 0) {
-			Message.Actor(1024, 2, 0, 0);
-			goto LABEL_005b;
+		v0 = YesNoWin.Show();
+		v6 = v0;
+		if (v6 == 0) {
+			Message.Actor(1024, 1, 0, 0);
+			goto LABEL_0069;
 		}
-		Message.Actor(1024, 1, 0, 0);
+		Message.Actor(1024, 2, 0, 0);
 
-		LABEL_005b:
+		LABEL_0069:
 		Message.Actor(1024, 3, 0, 0);
 		Message.CloseAll();
-		Global2805(620, 1);
+		v9 = 620;
+		v10 = 1;
+		v0 = v9;
+		v1 = v10;
+		Global2805(v4, v5, v6, v7, v8);
 		Message.Actor(1024, 4, 0, 0);
 		Message.CloseAll();
-		Player.GetGPos(v33, v34);
-		if (v33 != 8) {
-			Actor.WalkRoute(7, 8, 14, 1, 8, 1);
-			Runtime.Sleep(8);
-			ActionSequence_0170(255);
+		Player.GetGPos(v7, v8);
+		if (v7 == 8) {
+			Actor.WalkRoute(7, 9, 15, 1, 8, 0);
+			Runtime.Sleep(16);
+			ActionSequence_0444(255);
 			Actor.WaitActionFinish();
-			goto LABEL_00ea;
+			goto LABEL_0116;
 		}
-		Actor.WalkRoute(7, 9, 15, 1, 8, 0);
-		Runtime.Sleep(16);
-		ActionSequence_0170(255);
+		Actor.WalkRoute(7, 8, 14, 1, 8, 1);
+		Runtime.Sleep(8);
+		ActionSequence_0444(255);
 		Actor.WaitActionFinish();
 
-		LABEL_00ea:
+		LABEL_0116:
 		Actor.Hide(7);
 		Runtime.Sleep(2);
-		if (v33 != 8) {
-			Actor.New(8, 14, 1, 251, 196, 0);
-			goto LABEL_0127;
+		if (v7 == 8) {
+			Actor.New(9, 15, 1, 251, 196, 0);
+			goto LABEL_014d;
 		}
-		Actor.New(9, 15, 1, 251, 196, 0);
+		Actor.New(8, 14, 1, 251, 196, 0);
 
-		LABEL_0127:
+		LABEL_014d:
 		Runtime.Sleep(6);
-		ActionSequence_0190(255);
+		ActionSequence_044c(255);
 		Sound.PVPlay(571, 0);
 		Message.ActorEx(1024, 5, 251, 0, 0);
 		Sound.PVWait();
 		Message.WaitAdvance();
 		Message.CloseActor();
 		Actor.WaitActionFinish();
-		ActionSequence_0188(251);
+		ActionSequence_0454(251);
 		Actor.WaitActionFinish();
 		Actor.Hide(251);
 		EventFlags.Set(967);
 		Runtime.FinishSubEvents();
 		Actor.UnpauseAll();
+		v0 = 0;
 	}
 
-    public static void main_2() { // @ 0x185
+	public static void main_2() { // @ 0x191
+		int v0;
+
 		Actor.PauseAll();
 		Sound.SEPlay(1351);
 		Actor.FacePlayer();
@@ -90,9 +103,12 @@ public class MainEvents {
 		Message.CloseActor();
 		Runtime.FinishSubEvents();
 		Actor.UnpauseAll();
+		v0 = 0;
 	}
 
-	public static void main_3() { // @ 0x1af
+	public static void main_3() { // @ 0x1bb
+		int v0;
+
 		Actor.PauseAll();
 		Sound.SEPlay(1351);
 		Actor.FacePlayer();
@@ -103,9 +119,12 @@ public class MainEvents {
 		Message.CloseActor();
 		Runtime.FinishSubEvents();
 		Actor.UnpauseAll();
+		v0 = 0;
 	}
 
-	public static void main_4() { // @ 0x1d9
+	public static void main_4() { // @ 0x1e5
+		int v0;
+
 		Actor.PauseAll();
 		Sound.SEPlay(1351);
 		Actor.FacePlayer();
@@ -116,9 +135,12 @@ public class MainEvents {
 		Message.CloseActor();
 		Runtime.FinishSubEvents();
 		Actor.UnpauseAll();
+		v0 = 0;
 	}
 
-	public static void main_5() { // @ 0x203
+	public static void main_5() { // @ 0x20f
+		int v0;
+
 		Actor.PauseAll();
 		Sound.SEPlay(1351);
 		Actor.FacePlayer();
@@ -129,9 +151,12 @@ public class MainEvents {
 		Message.CloseActor();
 		Runtime.FinishSubEvents();
 		Actor.UnpauseAll();
+		v0 = 0;
 	}
 
-	public static void main_6() { // @ 0x22d
+	public static void main_6() { // @ 0x239
+		int v0;
+
 		Actor.PauseAll();
 		Sound.SEPlay(1351);
 		Actor.FacePlayer();
@@ -142,34 +167,50 @@ public class MainEvents {
 		Message.CloseActor();
 		Runtime.FinishSubEvents();
 		Actor.UnpauseAll();
+		v0 = 0;
 	}
 
-    public static void main_7() {
-        if (TrainerCard.HasBadge(3) && EventFlags.Get(2287) == 0) {
-            Actor.Hide(8);
-            Actor.Hide(26);
-            Actor.Hide(25);
-            Actor.Hide(27);
-            Actor.Hide(28);
-            Actor.Show(33);
-            Actor.Show(34);
-            Actor.Show(35);
-            Actor.Show(36);
-            Actor.Show(37);
-            Actor.Show(38);
-            Actor.Show(39);
-            return;
-        } 
-        Actor.Hide(33);
-        Actor.Hide(34);
-        Actor.Hide(35);
-        Actor.Hide(36);
-        Actor.Hide(37);
-        Actor.Hide(38);
-        Actor.Hide(39);
-    }
+	public static void main_7() { // @ 0x263
+		int v0;
+		int v1;
 
-    public static void main_8() { // @ 0x1d9
+		v0 = TrainerCard.HasBadge(3);
+		v0 = EventFlags.Get(2287);
+		v1 = 0;
+		v0 = v0 != v1;
+		v1 = v0;
+		v0 = v0;
+		v0 &= v1;
+		if (v0 == 0) {
+			Actor.Hide(33);
+			Actor.Hide(34);
+			Actor.Hide(35);
+			Actor.Hide(36);
+			Actor.Hide(37);
+			Actor.Hide(38);
+			Actor.Hide(39);
+			v0 = 0;
+			return;
+		}
+		Actor.Hide(8);
+		Actor.Hide(26);
+		Actor.Hide(25);
+		Actor.Hide(27);
+		Actor.Hide(28);
+		Actor.Show(33);
+		Actor.Show(34);
+		Actor.Show(35);
+		Actor.Show(36);
+		Actor.Show(37);
+		Actor.Show(38);
+		Actor.Show(39);
+		v0 = 0;
+		return;
+	}
+
+	public static void main_8() { // @ 0x302
+		int v0;
+
 		Actor.PauseAll();
 		Sound.SEPlay(1351);
 		Actor.FacePlayer();
@@ -180,6 +221,7 @@ public class MainEvents {
 		Message.CloseActor();
 		Runtime.FinishSubEvents();
 		Actor.UnpauseAll();
+		v0 = 0;
 	}
 
 	public static void main_9() { // @ 0x1d9
@@ -198,27 +240,27 @@ public class MainEvents {
 			Message.System(14, 0);
 			Sound.MEWait();
 			Message.CloseSystem();
-       		Bag.GiveItem(184, 2);
-        		Bag.GiveItem(185, 2);
-        		Bag.GiveItem(186, 2);
-       		Bag.GiveItem(187, 2);
-        		Bag.GiveItem(188, 2);
-        		Bag.GiveItem(189, 2);
-        		Bag.GiveItem(190, 2);
-        		Bag.GiveItem(191, 2);
-        		Bag.GiveItem(192, 2);
-        		Bag.GiveItem(193, 2);
-        		Bag.GiveItem(194, 2);
-        		Bag.GiveItem(195, 2);
-        		Bag.GiveItem(196, 2);
-        		Bag.GiveItem(197, 2);
-        		Bag.GiveItem(198, 2);
-        		Bag.GiveItem(199, 2);
-        		Bag.GiveItem(200, 2);
-        		Bag.GiveItem(206, 2);
-				EventFlags.Set(531);
+       		Bag.GiveItem(548, 2);
+	        	Bag.GiveItem(549, 2);
+	        	Bag.GiveItem(550, 2);
+	       	Bag.GiveItem(551, 2);
+	        	Bag.GiveItem(552, 2);
+	        	Bag.GiveItem(553, 2);
+	        	Bag.GiveItem(554, 2);
+	        	Bag.GiveItem(555, 2);
+	        	Bag.GiveItem(556, 2);
+	        	Bag.GiveItem(557, 2);
+	        	Bag.GiveItem(558, 2);
+	        	Bag.GiveItem(559, 2);
+	        	Bag.GiveItem(560, 2);
+	        	Bag.GiveItem(561, 2);
+	        	Bag.GiveItem(562, 2);
+	        	Bag.GiveItem(563, 2);
+	        	Bag.GiveItem(564, 2);
+	        	Bag.GiveItem(290, 2);
+			EventFlags.Set(531);
 		} else {
-			Message.Actor(1024, 11, 0, 0);
+			Message.Actor(1024, 13, 0, 0);
 			Sound.PVWait();
 			Input.LastKeyWait();
 			Message.CloseActor();
@@ -227,20 +269,19 @@ public class MainEvents {
 		Actor.UnpauseAll();
 	}
 
-
-	static meta void ActionSequence_0170(int npcId) : VActionSequence {
+	static meta void ActionSequence_0444(int npcId) : VActionSequence {
 		Action0021(1);
 	}
 
-	static meta void ActionSequence_0188(int npcId) : VActionSequence {
-		Action0011(4);
-	}
-
-	static meta void ActionSequence_0190(int npcId) : VActionSequence {
+	static meta void ActionSequence_044c(int npcId) : VActionSequence {
 		Action004b(1);
 	}
 
-	static meta void Global2805(int a1, int a2) : VGlobalCall[2805];
+	static meta void ActionSequence_0454(int npcId) : VActionSequence {
+		Action0011(4);
+	}
+
+	static meta void Global2805(int a1, int a2, int a3, int a4, int a5) : VGlobalCall[2805];
 
 	static native void Action0011(int amount) : 0x11;
 	static native void Action0021(int amount) : 0x21;

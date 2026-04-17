@@ -849,6 +849,7 @@ public class MainEvents {
 	}
 
     static void trainerBackToBackBattles(int trainer_A, int trainer_B, int trainer_A_Entity, int trainer_B_Entity, int trainer_A_Pos, int trainer_B_Pos, int event){
+    		
         int textId;
         int isVictory;
         int pokeCount; 
@@ -946,6 +947,7 @@ public class MainEvents {
             dummy = PokeParty.GetEVTotal(0);
         }
         Battle.EndTrainerBattle();
+        Label_SkipTrainerA:
         EventFlags.Set(1520 + trainer_A);
         EventFlags.Set(1520 + trainer_B);
 	   EventFlags.Clear(535);
@@ -1034,12 +1036,12 @@ public class MainEvents {
             dummy = PokeParty.GetEVTotal(0);
         }
         Battle.EndTrainerBattle();
-		EventFlags.Set(1520 + trainer_A);
-        EventFlags.Set(1520 + trainer_B);
-        Battle.EndTrainerBattle();
+
+        LABEL_SkipTrainerB: 
         EventFlags.Set(1520 + trainer_A);
         EventFlags.Set(1520 + trainer_B);
 		EventFlags.Clear(535);
+		
         Label_EndMultiBattleScript:
         Runtime.FinishSubEvents();
 		Actor.UnpauseAll();

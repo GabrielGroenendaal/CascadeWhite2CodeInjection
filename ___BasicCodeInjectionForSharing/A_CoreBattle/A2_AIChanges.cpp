@@ -2778,7 +2778,6 @@ extern "C"
         u64 v4;             // r2
         unsigned __int8 v5; // r3
         u8 a4[4];           // [sp+0h] [bp-18h] BYREF
-
         int i;
         int lowestHealthRatio;
         int currentHealthRatio;
@@ -2786,12 +2785,10 @@ extern "C"
         int lowestHealthRatioIndex;
         lowestHealthRatio = 500000;
         lowestHealthRatioIndex = 1000;
-
         if (getSwitchSetting() == 1)
         {
-            BattleStyle battleStyle;
-            battleStyle = (BattleStyle)BtlSetup_GetBattleStyle(a1->mainModule);
             int OppositeEnemyPos;
+            BattleStyle battleStyle = (BattleStyle)BtlSetup_GetBattleStyle(a1->mainModule);
             OppositeEnemyPos = sub_219C508(battleStyle, a2);
             currentMon = PokeCon_GetFrontPokeData(a1->pokeCon, OppositeEnemyPos);
             return PokeCon_GetFrontPokeData(a1->pokeCon, OppositeEnemyPos);
@@ -2830,7 +2827,6 @@ extern "C"
             return PokeCon_GetBattleMon(a1->pokeCon, a4[lowestHealthRatioIndex]);
         }
         else if (getSwitchSetting() == 3){
-
             lowestHealthRatio = 1;
             Count = MainModule_ExpandExistPokeID(a1->mainModule, a1->pokeCon, a2 | 0x100, a4);
             if (!Count)
@@ -2905,6 +2901,8 @@ extern "C"
         __int16 v23_temp[6];
 
         v24 = a4;
+        BattleStyle battleStyle;
+        battleStyle = (BattleStyle)BtlSetup_GetBattleStyle(a1->mainModule);
 
 #if DEBUGGING_ILLUSION
         u8 *monsCopy = a2;
@@ -2921,7 +2919,7 @@ extern "C"
 
         numTargets = 1;
 
-        if (getSwitchSetting() == 1)
+        if (battleStyle != BTL_STYLE_SINGLE && getSwitchSetting() == 1)
         {
             defenderPos = MainModule_PokeIDToPokePos(a1->mainModule, a1->pokeCon, a4->ID);
             numTargets = MainModule_ExpandExistPokeID(a1->mainModule, a1->pokeCon, defenderPos | 0x700, defendingAllies);
@@ -2931,7 +2929,7 @@ extern "C"
         {
             defendingMonChecked = a4;
 
-            if (getSwitchSetting() == 1)
+            if (battleStyle != BTL_STYLE_SINGLE && getSwitchSetting() == 1)
             {
                 currentTargetPosition = defendingAllies[currentTarget];
                 defendingMonChecked = PokeCon_GetBattleMon(a1->pokeCon, currentTargetPosition);
@@ -2940,7 +2938,7 @@ extern "C"
             PokeType = BattleMon_GetPokeType(defendingMonChecked);
             defAbility = (AbilID)BattleMon_GetValue(defendingMonChecked, VALUE_EFFECTIVE_ABILITY);
 
-            if (getSwitchSetting() == 1)
+            if (battleStyle == BTL_STYLE_TRIPLE && getSwitchSetting() == 1)
             {
                 if (!IsPosInRangeTripleBattle(MainModule_PokeIDToPokePos(a1->mainModule, a1->pokeCon, defendingMonChecked->ID), MainModule_PokeIDToPokePos(a1->mainModule, a1->pokeCon, a4->ID)))
                 {
@@ -2972,45 +2970,45 @@ extern "C"
                                     Type = PML_MoveGetType(ID);
                                     BasePower = PML_MoveGetBasePower(ID);
 
-                                    // Weather Ball Checks
-                                    if (ID == MOVE267_NATURE_POWER)
-                                    {
+                                    // // Weather Ball Checks
+                                    // if (ID == MOVE267_NATURE_POWER)
+                                    // {
 
-                                        int BattleTerrain = Handler_GetBattleTerrain(BattleServer_GetServerFlow(a1->mainModule->server));
+                                    //     int BattleTerrain = Handler_GetBattleTerrain(BattleServer_GetServerFlow(a1->mainModule->server));
 
-                                        if (BattleTerrain == 5u)
-                                        {
-                                            ID = 402;
-                                        }
-                                        else if (BattleTerrain == 11u)
-                                        {
-                                            ID = 89;
-                                        }
-                                        else if (BattleTerrain == 0xCu)
-                                        {
-                                            ID = 56;
-                                        }
-                                        else if (BattleTerrain == 7u)
-                                        {
-                                            ID = 59;
-                                        }
-                                        else if (BattleTerrain == 9u)
-                                        {
-                                            ID = 426;
-                                        }
-                                        else if (BattleTerrain == 0xAu)
-                                        {
-                                            ID = 157;
-                                        }
-                                        else if (BattleTerrain == 0xDu)
-                                        {
-                                            ID = 58;
-                                        }
-                                        else
-                                        {
-                                            ID = 161;
-                                        }
-                                    }
+                                    //     if (BattleTerrain == 5u)
+                                    //     {
+                                    //         ID = 402;
+                                    //     }
+                                    //     else if (BattleTerrain == 11u)
+                                    //     {
+                                    //         ID = 89;
+                                    //     }
+                                    //     else if (BattleTerrain == 0xCu)
+                                    //     {
+                                    //         ID = 56;
+                                    //     }
+                                    //     else if (BattleTerrain == 7u)
+                                    //     {
+                                    //         ID = 59;
+                                    //     }
+                                    //     else if (BattleTerrain == 9u)
+                                    //     {
+                                    //         ID = 426;
+                                    //     }
+                                    //     else if (BattleTerrain == 0xAu)
+                                    //     {
+                                    //         ID = 157;
+                                    //     }
+                                    //     else if (BattleTerrain == 0xDu)
+                                    //     {
+                                    //         ID = 58;
+                                    //     }
+                                    //     else
+                                    //     {
+                                    //         ID = 161;
+                                    //     }
+                                    // }
 
                                     if (atkAbility == ABIL012_GALVANIZE && Type == TYPE_NORMAL)
                                     {

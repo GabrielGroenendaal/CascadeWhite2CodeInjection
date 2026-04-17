@@ -1166,15 +1166,15 @@ public class MainEvents {
             Message.CloseAll();
 		  TurnSouth(10);
 		  TurnSouth(11);
+		  Actor.WaitActionFinish();
+
             Battle.CallTrainerMultiBattle(234, 506, 582, 1);
             isVictory = Battle.IsTrainerVictory();
-            isVictory = 1;
             if (isVictory != 1){
                 Battle.EndTrainerBattle();
 			    PokeParty.RecoverAll();
 			    Message.ActorEx(1024, 62, 12, 0, 0);
 			    Message.CloseAll();
-
                   ShowMusicNote(10);
                   Actor.WaitActionFinish();
                   Message.ActorEx(1024, 64, 10, 0, 0);
@@ -1186,6 +1186,7 @@ public class MainEvents {
 		    } 
              else {
                   Battle.EndTrainerBattle();
+                  PokeParty.RecoverAll();
                   Message.ActorEx(1024, 63, 12, 0, 0);
                   Message.CloseAll();
 

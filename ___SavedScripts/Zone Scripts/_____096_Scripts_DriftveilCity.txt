@@ -332,14 +332,8 @@ public class MainEvents {
             Actor.Hide(27);
             Actor.Hide(20);
             Actor.Hide(28);
-            Actor.Show(29);
-            Actor.Show(30);
-            Actor.Show(31);
             return;
         } 
-        Actor.Show(27);
-        Actor.Show(20);
-        Actor.Show(28);
         Actor.Hide(29);
         Actor.Hide(30);
         Actor.Hide(31);	
@@ -682,14 +676,8 @@ public class MainEvents {
             Actor.Hide(27);
             Actor.Hide(20);
             Actor.Hide(28);
-            Actor.Show(29);
-            Actor.Show(30);
-            Actor.Show(31);
             return;
         } 
-        Actor.Show(27);
-        Actor.Show(20);
-        Actor.Show(28);
         Actor.Hide(29);
         Actor.Hide(30);
         Actor.Hide(31);			

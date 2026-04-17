@@ -1056,6 +1056,11 @@ void Sequence12()
 	Compare(0x8031, 490);
 	if (1) goto label_isGauntlet;
 
+	// Route14
+	Storec0xD3(0x8031);
+	Compare(0x8031, 374);
+	if (1) goto label_isGauntlet;
+
 label_end: ;
 	Return();
     

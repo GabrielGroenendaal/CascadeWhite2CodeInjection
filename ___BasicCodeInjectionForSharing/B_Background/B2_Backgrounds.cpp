@@ -2,7 +2,7 @@
 #include "swantypes.h"
 
 #define DEBUGGING_BACKGROUNDS true
-#define ANIMATED_BACKGROUNDS_ENABLED 0
+#define ANIMATED_BACKGROUNDS_ENABLED 1
 
 #pragma region defintions
 extern u32 g_GameBeaconSys;
@@ -1146,14 +1146,14 @@ extern "C"
         //         k::Printf("\nMade it past the Elesa check");
         // #endif
         // Erika
-        if (foe1TrID == 767)
-        {
-            // #if DEBUGGING_BACKGROUNDS
-            //             k::Printf("\nErika Battle Background Triggered");
-            // #endif
-            fieldStatus->BattleBGID = 67;
-            return;
-        }
+        // if (foe1TrID == 767)
+        // {
+        //     // #if DEBUGGING_BACKGROUNDS
+        //     //             k::Printf("\nErika Battle Background Triggered");
+        //     // #endif
+        //     fieldStatus->BattleBGID = 67;
+        //     return;
+        // }
         // #if DEBUGGING_BACKGROUNDS
         //         k::Printf("\nMade it past the Erika check");
         // #endif
@@ -1285,36 +1285,37 @@ extern "C"
                 }
                 else
                 {
-
-                    if (howManyPokesAreAbleToFight(GameData_GetParty(m_GameData)) < 2)
+                    if (style == BTL_STYLE_DOUBLE)
                     {
-                        // #if DEBUGGING_BACKGROUNDS
-                        //                         k::Printf("\nSetting up 1v1 Single Battle due to only 1");
-                        // #endif
-                        BtlSetup_SetTrainer1v1Single(setup, m_GameData, &fieldStatus, foe1TrId, heapId);
-                    }
-                    else
-                    {
-                        if (style == BTL_STYLE_DOUBLE)
+                        if (howManyPokesAreAbleToFight(GameData_GetParty(m_GameData)) < 2)
                         {
-                            // #if DEBUGGING_BACKGROUNDS
-                            //                             k::Printf("\nSetting up 1v1 Double Battle");
-                            // #endif
+                            BtlSetup_SetTrainer1v1Single(setup, m_GameData, &fieldStatus, foe1TrId, heapId);
+                        }
+                        else
+                        {
                             BtlSetup_SetTrainer1v1Double(setup, m_GameData, &fieldStatus, foe1TrId, heapId);
                         }
+                    }
 
-                        if (style == BTL_STYLE_TRIPLE)
+                    if (style == BTL_STYLE_TRIPLE)
+                    {
+                        if (howManyPokesAreAbleToFight(GameData_GetParty(m_GameData)) < 3)
                         {
-                            // #if DEBUGGING_BACKGROUNDS
-                            //                             k::Printf("\nSetting up 3v3 Battle");
-                            // #endif
+                            BtlSetup_SetTrainer1v1Single(setup, m_GameData, &fieldStatus, foe1TrId, heapId);
+                        }
+                        else
+                        {
                             BtlSetup_SetTrainer3v3(setup, m_GameData, &fieldStatus, foe1TrId, heapId);
                         }
-                        if (style == BTL_STYLE_ROTATION)
+                    }
+                    if (style == BTL_STYLE_ROTATION)
+                    {
+                        if (howManyPokesAreAbleToFight(GameData_GetParty(m_GameData)) < 3)
                         {
-                            // #if DEBUGGING_BACKGROUNDS
-                            //                             k::Printf("\nSetting up Rotation Battle");
-                            // #endif
+                            BtlSetup_SetTrainer1v1Single(setup, m_GameData, &fieldStatus, foe1TrId, heapId);
+                        }
+                        else
+                        {
                             BtlSetup_SetTrainerRotation(setup, m_GameData, &fieldStatus, foe1TrId, heapId);
                         }
                     }

@@ -5,7 +5,7 @@
 #define _WORD unsigned short
 #define _DWORD unsigned int
 #define _QWORD unsigned long
-
+#define INCLUDING_VICTINI false
 // Uses esdb_newBattle.yml
 
 /*
@@ -943,7 +943,9 @@ extern "C"
 
                 // Guardians of Unova and Gym Leaders
                 if (trainerId == COBALION_ID ||
-                    // trainerId == VICTINI_ID ||
+#if INCLUDING_VICTINI
+                     trainerId == VICTINI_ID ||
+#endif
                     trainerId == VIRIZION_ID ||
                     trainerId == TERRAKION_ID ||
                     trainerId == KELDEO_ID ||
@@ -1029,9 +1031,11 @@ extern "C"
                 else if (trainerId == KYUREM_WHITE_ID){
                     check = 244;
                 }
-                // else if (trainerId == VICTINI_ID){
-                //     check = 245;
-                // }
+#if INCLUDING_VICTINI
+                else if (trainerId == VICTINI_ID){
+                     check = 245;
+                }
+#endif
                 else
                 {
                     check = 14;
@@ -1056,7 +1060,9 @@ extern "C"
                 // k::Printf("\n\nsub_21 TrainerId is %d and TrainerClass is %d\n", trainerId, trainerClass);
 
                 if ((trainerId == 491 || trainerId == 507 || trainerId == 508 || trainerId == 509 || 
-                    // trainerId == VICTINI_ID || trainerID == KYUREM_ID ||
+#if INCLUDING_VICTINI
+                     trainerId == VICTINI_ID || trainerId == KYUREM_ID ||
+#endif
                     trainerId == 634 ) && BattleMon_GetID(ViewSrcData) >= 6)
                 {
                     check = 676;

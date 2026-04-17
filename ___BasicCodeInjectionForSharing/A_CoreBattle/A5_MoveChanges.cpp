@@ -573,7 +573,7 @@ extern "C"
             if (CommonCounterCheckDamageRecieved(Handler_GetBattleMon(a2, a3), 0, v11))
             {
                 Value = 75;
-                SendMessage(a2, a3, a3, 366, 0);
+                // SendMessage(a2, a3, a3, 366, 0);
             }
             else
             {
@@ -1536,6 +1536,33 @@ extern "C"
         }
     }
 
+    void HandlerSwallowStart(int a1, ServerFlow *a2, int a3, int *a4)
+    {
+        BattleMon *PokeParam;    // r0
+        HandlerParam_Header *v8; // r0
+        HandlerParam_ActivateItem *v9;
+        u16 HeldItem;
+
+        if (a3 == BattleEventVar_GetValue(VAR_ATTACKING_MON) && !*a4)
+        {
+            PokeParam = Handler_GetBattleMon(a2, a3);
+            HeldItem = BattleMon_GetHeldItem(PokeParam);
+
+            if (PML_ItemIsBerry(HeldItem))
+            {
+                SendMessage(a2, a3, a3, 1159, HeldItem);
+                v9 = (HandlerParam_ActivateItem *)BattleHandler_PushWork(a2, EFFECT_ACTIVATEITEM, a3);
+                v9->header.flags |= 0x1000000u;
+                v9->itemID = (int)HeldItem;
+                v9->pokeID = a3;
+                BattleHandler_PopWork(a2, v9);
+                v8 = (HandlerParam_Header *)BattleHandler_PushWork(a2, EFFECT_CONSUMEITEM, a3);
+                v8[1].flags = 1;
+                BattleHandler_PopWork(a2, v8);
+            }
+        }
+    }
+
     MOVE_TRIGGERTABLE SwallowHandlers[] = {
         {EVENT_MOVE_EXECUTE_CHECK2, (MOVE_HANDLER_FUNC)HandlerSwallowCheckFail},
         {EVENT_RECOVER_HP, (MOVE_HANDLER_FUNC)HandlerSwallowHeal},
@@ -1544,13 +1571,13 @@ extern "C"
 
     MOVE_TRIGGERTABLE StockpileHandlers[] = {
         {EVENT_MOVE_EXECUTE_CHECK2, (MOVE_HANDLER_FUNC)HandlerSwallowCheckFail},
-        {EVENT_DAMAGE_PROCESSING_START, (MOVE_HANDLER_FUNC)HandlerSwallowEnd},
+        {EVENT_DAMAGE_PROCESSING_START, (MOVE_HANDLER_FUNC)HandlerSwallowStart},
         {EVENT_MOVE_EXECUTE_END, (MOVE_HANDLER_FUNC)HandlerSwallowEnd},
     };
 
     MOVE_TRIGGERTABLE SpitUpHandlers[] = {
         {EVENT_MOVE_EXECUTE_CHECK2, (MOVE_HANDLER_FUNC)HandlerSwallowCheckFail},
-        {EVENT_DAMAGE_PROCESSING_START, (MOVE_HANDLER_FUNC)HandlerSwallowEnd},
+        {EVENT_DAMAGE_PROCESSING_START, (MOVE_HANDLER_FUNC)HandlerSwallowStart},
         {EVENT_MOVE_EXECUTE_END, (MOVE_HANDLER_FUNC)HandlerSwallowEnd},
     };
 
@@ -1560,7 +1587,7 @@ extern "C"
         return SwallowHandlers;
     }
 
-    MOVE_TRIGGERTABLE *THUMB_BRANCH_EventAddSpitup(_DWORD *a1)
+    MOVE_TRIGGERTABLE *THUMB_BRANCH_EventAddSpitUp(_DWORD *a1)
     {
         *a1 = 3;
         return SpitUpHandlers;

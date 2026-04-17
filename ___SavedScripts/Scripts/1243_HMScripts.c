@@ -82,7 +82,7 @@ void Sequence2()
 	StackPushConst(6);
 	StackCompare(1);
 	if (255) goto label5;
-	StoreItemCount(422, 0x8010);
+	StoreItemCount(424, 0x8010);
 	StackPushVar(0x8010);
 	StackPushConst(0);
 	StackCompare(1);

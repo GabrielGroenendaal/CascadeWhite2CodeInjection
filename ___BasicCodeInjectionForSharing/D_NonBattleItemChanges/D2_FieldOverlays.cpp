@@ -915,6 +915,25 @@ extern "C"
         }
         return check;
     }
+    extern void ClearFollowNpcData(void *result);
+    extern void *GetFieldFollowerCfg(GameData *gameData);
+    void THUMB_BRANCH_ShutdownFollowWork(GameData *gameData)
+    {
+        void *FieldFollowerCfg;   // r6
+        EventWorkSave *EventWork; // r4
+
+        FieldFollowerCfg = GetFieldFollowerCfg(gameData);
+        EventWork = GameData_GetEventWork(gameData);
+        k::Printf("\nWe are in the function to reset follow state.");
+        if (GameData_CheckPairFlag(gameData))
+        {
+            k::Printf("\nWe have successfully reset the follower state EventWork is %d\n", EventWork_FlagGet(EventWork, 2406));
+            EventWork_FlagReset(EventWork, 2406);
+            k::Printf("\nWe have successfully reset the follower state. Eventwork 2406 is %d\n", EventWork_FlagGet(EventWork, 2406));
+            *EventWork_GetWkPtr(EventWork, 16451) = 255;
+            ClearFollowNpcData(FieldFollowerCfg);
+        }
+    }
 
     void THUMB_BRANCH_PokeParty_RecoverAll(PokeParty *pParty)
     {
@@ -1029,14 +1048,41 @@ extern "C"
     extern void sub_21A272C(void **a1, int a2);
     extern void setShakingSpotOff(EncountState *result);
 
+
+    // extern u8* EventWork_GetFlagBytePtr(EventWorkSave *eventWork, u32 flagId);
+    // extern _DWORD __ROR4__(_DWORD d, char c);
+    // b32 THUMB_BRANCH_EventWork_FlagGet(EventWorkSave *eventWork, int eventBitNum)
+    // {
+    //     u8 *FlagBytePtr; // r0
+    //     int v4;          // r1
+    //     b32 result;      // r0
+
+    //     FlagBytePtr = EventWork_GetFlagBytePtr(eventWork, eventBitNum);
+    //     if (!FlagBytePtr)
+    //     {
+    //         k::Printf("\nthe EventBitNumber %d returns 0", eventBitNum);
+    //         return 0;
+    //     }
+    //     v4 = *FlagBytePtr;
+    //     result = 1;
+    //     if ((v4 & (1 << ((eventBitNum < 0) + __ROR4__((eventBitNum << 29) - ((unsigned int)eventBitNum >> 31), 29)))) == 0)
+    //     {
+    //         k::Printf("\nthe EventBitNumber %d returns 0", eventBitNum);
+    //         return 0;
+    //     }
+    //     k::Printf("\nthe EventBitNumber %d returns 1", eventBitNum);
+    //     return result;
+    // }
+
     bool isPhenoDisabled(EncountSystem *mgr)
     {
         PlayerState *playerState = GameData_GetPlayerState(mgr->m_GameData);
         int zoneId = PlayerState_GetZoneID(playerState);
         EventWorkSave *eventWork = GameData_GetEventWork(mgr->m_GameData);
 
-        if (EventWork_FlagGet(eventWork, 2406))
+        if (EventWork_FlagGet(eventWork, 2406) == 1)
         {
+            k::Printf("\nPheno is disabled");
             return true;
         }
         for (int i = 0; i < ARRAY_COUNT(toggleEncounters); i++)
@@ -1407,16 +1453,16 @@ extern "C"
     extern int PML_ItemGetMonsBallID(u16 itemId);
     extern int ZoneData_GetPlaceNameID(u16 zoneId);
     extern int howManyTotalPokesAreInBoxes(void *boxAccessor);
-    extern void* GameData_GetBoxSaveAccessor(GameData *gameData);
-    extern int nullsub_28(void* result);
+    extern void *GameData_GetBoxSaveAccessor(GameData *gameData);
+    extern int nullsub_28(void *result);
     extern b32 BoxSaveAccessor_InsertPkm(void *boxAccessor, BoxPkm *pkm);
     extern void setAbilityForForm(BoxPkm *pPkm, u16 species);
     int THUMB_BRANCH_GameData_AddBoxPkm(GameData *gameData, GenPokeParam *param)
     {
         void *BoxSaveAccessor; // r6
-        PartyPkm *partyPkm;                 // r5
-        BoxPkm *v7;                       // r0
-        void *Pokedex;                  // r0
+        PartyPkm *partyPkm;    // r5
+        BoxPkm *v7;            // r0
+        void *Pokedex;         // r0
 
         BoxSaveAccessor = GameData_GetBoxSaveAccessor(gameData);
         if (howManyTotalPokesAreInBoxes(BoxSaveAccessor) >= 720)
@@ -1426,7 +1472,8 @@ extern "C"
         partyPkm = GameData_MakeBoxPkm(gameData, param);
         PokeParty_SetParam(partyPkm, PF_IsHiddenAbility, 0);
         setAbilityForForm(&partyPkm->Base, param->Species);
-        if (param->HiddenAbility == SHINY_PREVENT){
+        if (param->HiddenAbility == SHINY_PREVENT)
+        {
             improveIVs(partyPkm);
         }
         if (WhiteListedPokemon[param->Species] == 1)
@@ -1472,11 +1519,10 @@ extern "C"
         v7 = (BoxPkm *)nullsub_28(partyPkm);
         BoxSaveAccessor_InsertPkm(BoxSaveAccessor, v7);
         Pokedex = GameData_GetPokedex(gameData);
-        addPkmToDex((unsigned int*)Pokedex, partyPkm);
+        addPkmToDex((unsigned int *)Pokedex, partyPkm);
         GFL_HeapFree(partyPkm);
         return 1;
     }
-
 
     // PartyPkm *THUMB_BRANCH_SAFESTACK_GameData_MakeBoxPkm(GameData *gameData, GenPokeParam *param)
     // {

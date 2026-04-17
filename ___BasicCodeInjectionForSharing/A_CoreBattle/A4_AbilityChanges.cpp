@@ -1097,6 +1097,10 @@ extern "C"
         if (a3 == BattleEventVar_GetValue(VAR_MON_ID))
         {
             BattleMon *mon = Handler_GetBattleMon((ServerFlow *)a1, a3);
+            if (BattleMon_GetTurnFlag(mon, TURNFLAG_MOVEFAILEDLASTTURN)){
+                *a4 = 0;
+            }
+
             if (*a4)
             {
                 if (PML_MoveGetCategory(BattleEventVar_GetValue(VAR_MOVE_ID)) && BattleEventVar_GetValue(VAR_MOVE_ID) != MOVE165_STRUGGLE)
@@ -2604,7 +2608,7 @@ extern "C"
 
                     BattleHandler_PushRun(a2, EFFECT_ABILITYPOPUPIN, a3);
                     v9 = (HandlerParam_Message *)BattleHandler_PushWork(a2, EFFECT_MESSAGE, a3);
-                    BattleHandler_StrSetup(&v9->str, 2u, 1246); // replace with the actual id
+                    BattleHandler_StrSetup(&v9->str, 2u, 1230); // replace with the actual id
                     BattleHandler_AddArg(&v9->str, a3);
                     BattleHandler_PopWork(a2, v9);
                     BattleHandler_PushRun(a2, EFFECT_ABILITYPOPUPOUT, a3);
@@ -2714,7 +2718,7 @@ extern "C"
             if (!*work)
             {
                 u32 targetSlot = BattleEventVar_GetValue(VAR_TARGET_MON_ID);
-                if (targetSlot != 31)
+                if (targetSlot != 31 && getMoveFlag(BattleEventVar_GetValue(VAR_MOVE_ID), FLAG_CONTACT))
                 {
                     BattleMon *targetMon = Handler_GetBattleMon(serverFlow, targetSlot);
                     if (BattleMon_GetHeldItem(targetMon))
