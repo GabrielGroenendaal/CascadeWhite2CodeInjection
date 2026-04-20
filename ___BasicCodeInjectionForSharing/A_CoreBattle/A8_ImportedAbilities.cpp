@@ -5,6 +5,8 @@
 #include "settings.h"
 #include "swantypes.h"
 
+#define TESTING_NO_NEGATIVE_SCALING true
+
 extern "C" u32 SearchArray(const u32 *const arr, const u32 arrSize, const u32 value)
 {
     for (u32 i = 0; i < arrSize; ++i)
@@ -1520,6 +1522,7 @@ extern "C" u32 scaleExpToLevelCap(unsigned int amountOfExpGainedSoFar, u8 defeat
 {
     EventWorkSave *eventWork = GameData_GetEventWork(GAME_DATA);
     u16 *exp_boost_ptr = EventWork_GetWkPtr(eventWork, 16467);
+
     if (*exp_boost_ptr == 1){
         u16* lvl_cap_value = EventWork_GetWkPtr(eventWork, 16466);
         if (monGainingExpLevel >= *lvl_cap_value){
@@ -1555,6 +1558,13 @@ extern "C" u32 scaleExpToLevelCap(unsigned int amountOfExpGainedSoFar, u8 defeat
                 }
             } 
         }
+    }
+    else {
+        #if TESTING_NO_NEGATIVE_SCALING 
+                if (defeatedMonLevel < monGainingExpLevel){
+                    return monGainingExpLevel;
+                }
+        #endif 
     }
    
      return defeatedMonLevel;

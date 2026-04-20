@@ -1,0 +1,240 @@
+
+
+/*         
+	
+	-----------------------------------------------------------------------------------------------------------------------------------------
+	-------------------------------------------------- WHAT I WANNA DO TODAY ---------------------------------------------------------------- 
+	-----------------------------------------------------------------------------------------------------------------------------------------       
+
+*/
+
+
+
+[ BUGS AND OPTIMIZATION ]
+    Space Optimization: 
+        - Look into PersonalLoadBW2 to see how it manually specifies the HeapID. 
+        - Create a spreadsheet that outputs the hex code for the ai only abilities. 
+
+
+
+
+[ MECHANICS ]
+
+    Immunity Check: 
+        - Right now the AI accounts for immunity abilities when calculating damage directly. 
+        - This can be unideal because it does make the AI behave pretty predictably when their highest damage move into a pokemon hits an immunity. 
+        - Instead, remove these manual checks then see if our 0.ais is robust enough to still catch them. 
+    
+    Check Matchup: 
+        - Add a Tera Check here so that that isn't ignored. 
+        
+    Gen 4 Switch Out AI:
+        - I really like the potential for G4 Switch AI in terms of how it could change the feel of the game. 
+        - We would need to hook into the function that triggers switch outs when a POkemon in the back has a relevant immunity ability and update it to additionally check for a resistance. 
+    
+    Field Effect Concepts: 
+        - There are a lot of field effect concepts we might want to implement. 
+        - Chargestone Cave: Updated to also downgrade flying type ground immunity to a resistance. 
+        - Dragon's Fury: Basically just Anger Point as an ability. 
+        
+
+
+[ BALANCE ]
+
+    Make Cherubi pure grass now that it doesn't show up anywhere early game. 
+
+    General Learnset Dampening. Reduce the overall power of most learnsets where you can. 
+
+    Move Dampening: 
+        Try and reduce the power of a lot of the stronger moves we've added. 
+    
+    Rexamine some of the speed demon offense mons 
+        Floatzel 
+        Seviper 
+            Might need to lose Strong Jaw or Exploit 
+        Dodrio 
+            Swap Tough CLaws and Rand Rush 
+             
+
+
+[ TRAINERS ]
+
+
+    Roxie's Qwilfish 
+        Qwilfish 
+        Moves: 
+            Scald 
+            Venoshock 
+            Toxic Spikes 
+            Endure 
+    
+    Give Benga's Seedot Leaf Tornado 
+    Give Benga's Bronzor Confuse Ray over Magical Leaf. 
+
+    Maybe tune down the new Shadow Triad a little bit. 
+
+    Expand out the Celestial Tower Tag battle Trainers. 
+
+    New Rain Team for Route 20
+        Surskit 
+        Ability: Drizzle 
+        Moves: 
+            Chilling Water 
+            Struggle Bug 
+            Captivate
+            Charm 
+        
+        Grotle 
+        Ability: Overgrow
+        Moves: 
+            Ingrain 
+            Stomp 
+            Accelerock
+            Amnesia 
+        
+        Kabuto 
+        Ability: Swift Swim 
+        Moves: 
+            Rock Blast 
+            Scald
+            Icicle Spear
+            Soak 
+        
+        Palpitoad 
+        Ability: Dry Skin 
+        Moves: 
+            Aqua Jet 
+            Mud Shot 
+            Gastro Acid 
+            Venoshock
+    
+    Gardenia 
+        Carnivine 
+        Moves: 
+            Supercell Slam 
+            Snap Trap 
+            U-Turn 
+            Spikes
+
+
+    Grotle 
+
+[ ROMHACKING ]
+    - EV Toggle 
+        - Add the EVs back to all Pokemon, make a list of them while at work 
+        - Confirm the EV toggle script works
+        - Make it's enabled in the global PC script. 
+    - Get the rest of the debug saves for Marlon Split 
+    - Test and implement the post-marlon gym scripting for Frigate, Abundant Shrine, Pinwheel Forest
+
+
+
+
+
+[ LIFE ]
+    - Budgeting 
+        - Rewrite the Lease 
+    - Appointments
+        - Finding a Therapist in-network 
+
+
+
+====================================================================================================================================================
+/*   MARLON BUILD   */
+
+
+
+    IMPOSSIBLE: 
+        - Debug Illusion 
+        - Test Battle Scan with Type Changing and Ability Changing.
+        - Update Terastalization Polish
+            - Some kind of color status for Tera
+            - Fix the Tera Animation in Doubles 
+            - See if you can get the tera types to be stored properly somewhere. 
+    
+
+
+ 
+
+
+====================================================================================================================================================
+/*   NOTES    */
+
+      U-Turn adjustment (We should take a look at this later after we do more playtesting)
+        !notif MOVE TUTOR, The Red Shard Move Tutor is found in the Battle Company Lobby. They teach
+            - Skitter Smack (4 -> 2 shards)
+            - Signal Beam -> U-Turn (4 -> 10 shards)
+            - Iron Head (6 shards)
+            - Skill Swap (10 -> 8 shards)
+            - Seething Cold (6 shards)
+            - Psychic Noise (6 shards)
+            - Dual Chop (6 -> 2 shards)
+            - Low Kick (8 -> 2 shards)
+            - Cross Poison (8 shards)
+            - Fire Punch (6 Shards)
+            - Thunder Punch (6 Shards)
+            - Ice Punch (6 Shards)
+
+        Remove U-Turn TM from Liberty Island. Put 10x Red Shards there instead. 
+        Remove U-Turn TM from Harlequin reward. Put 10x Red Shards there instead. 
+
+        Adjust all Personal compat for U-Turn
+            Beautifly and Dustox need to get it back. 
+            Unfezant gets it by level up
+        
+
+    Underutilized Mechanics: 
+        Back to Backs
+        
+        Limit to 3 Pokemon 
+
+        Chip Away Normal Types 
+        Ability Neutraliizing: 
+            Gastro Acid 
+
+        Evasion:
+            Double Team 
+            Acid Armor 
+            Smokescreen 
+            Sand Attack (in doubles) 
+            Anticipation
+            Snow Cloak / Sand Veil
+        Confusion:  
+            Supersonic
+            Rock Climb 
+            Confuse Ray 
+            Swagger 
+        Attraction 
+        Hazards
+        Trapping 
+            Block 
+            Mean Look 
+            Dive / Dig / Bounce / Fly / Shadow Force 
+            Pursuit 
+            Wrap / Fire Spin / Clamp / Whirlpool / etc. 
+            Shadow Tag / Arena Trap
+        Failure Boosting: 
+            Anger Point 
+            Thrash 
+            Seething Cold 
+            Uproar 
+            Stompin Tantrum 
+            Grudge 
+            Blunder Policy 
+        Priority: 
+            Quick Claw 
+            Quick Draw 
+            Trickster Herb 
+        Speed Control: 
+            Scary Face 
+            Rock Tomb 
+            Bulldoze 
+            icy Wind 
+            Glaciate 
+            Heavy Slam 
+            Heat Crash (make sure it has the same id as icy wind)
+        Chaos Stats: 
+            Moody 
+            Starf Berry 
+
+

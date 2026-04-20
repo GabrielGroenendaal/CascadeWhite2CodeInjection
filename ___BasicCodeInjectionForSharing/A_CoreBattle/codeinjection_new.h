@@ -40,6 +40,10 @@ bool IsEqual(int a1, int a2)
 
 C_DECL_BEGIN
 
+extern int DoesMonHaveSuperEffectiveMove(BtlClientWk *a1, BattleMon *a2, BattleMon *a3, int a4);
+extern int MoveDamageRec_Get(BattleMon *a1, unsigned int a2, unsigned int a3, MoveDamageRec *a4);
+extern int CheckMonsForTypeAbsorbingAbility(BtlClientWk *a1, int a2, _BYTE *a3);
+
 extern void HandlerEviolite(int a1, int a2, int a3);
 extern void HandlerOranBerryReaction(BattleEventItem *a1, ServerFlow *a2, unsigned int *a3);
 extern void HandlerOranBerryCheckActivation(BattleEventItem *a1, ServerFlow *a2, int a3);

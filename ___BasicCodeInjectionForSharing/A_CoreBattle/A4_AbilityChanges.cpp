@@ -2923,357 +2923,357 @@ extern "C"
 #pragma endregion
 
 #pragma region Anticipation
-    const u8 normalTypeChart[18][18] = {
-        {4, 4, 4, 4, 4, 2, 4, 0, 2, 4, 4, 4, 4, 4, 4, 4, 4, 4},
-        {8, 4, 2, 2, 4, 8, 2, 0, 8, 4, 4, 4, 4, 2, 8, 4, 8, 2},
-        {4, 8, 4, 4, 4, 2, 8, 4, 2, 4, 4, 8, 2, 4, 4, 4, 4, 4},
-        {4, 4, 4, 2, 2, 2, 4, 2, 0, 4, 4, 8, 4, 4, 4, 4, 4, 8},
-        {4, 4, 0, 8, 4, 8, 2, 4, 8, 8, 4, 2, 8, 4, 4, 4, 4, 4},
-        {4, 2, 8, 4, 2, 4, 8, 4, 2, 8, 4, 4, 4, 4, 8, 4, 4, 4},
-        {4, 2, 2, 2, 4, 4, 4, 2, 2, 2, 4, 8, 4, 8, 4, 4, 8, 2},
-        {0, 4, 4, 4, 4, 4, 4, 8, 4, 4, 4, 4, 4, 8, 4, 4, 2, 4},
-        {4, 4, 4, 4, 4, 8, 4, 4, 2, 2, 2, 4, 2, 4, 8, 4, 4, 8},
-        {4, 4, 4, 4, 4, 2, 8, 4, 8, 2, 2, 8, 4, 4, 8, 2, 4, 4},
-        {4, 4, 4, 4, 8, 8, 4, 4, 4, 8, 2, 2, 4, 4, 4, 2, 4, 4},
-        {4, 4, 2, 2, 8, 8, 2, 4, 2, 2, 8, 2, 4, 4, 4, 2, 4, 4},
-        {4, 4, 8, 4, 0, 4, 4, 4, 4, 4, 8, 2, 2, 4, 4, 2, 4, 4},
-        {4, 8, 4, 8, 4, 4, 4, 4, 2, 4, 4, 4, 4, 2, 4, 4, 0, 4},
-        {4, 4, 8, 4, 8, 4, 4, 4, 2, 2, 2, 8, 4, 4, 2, 8, 4, 4},
-        {4, 4, 4, 4, 4, 4, 4, 4, 2, 4, 4, 4, 4, 4, 4, 8, 4, 0},
-        {4, 2, 4, 4, 4, 4, 4, 8, 4, 4, 4, 4, 4, 8, 4, 4, 2, 2},
-        {4, 8, 4, 2, 4, 4, 4, 4, 2, 2, 4, 4, 4, 4, 4, 8, 8, 4}};
+    // const u8 normalTypeChart[18][18] = {
+    //     {4, 4, 4, 4, 4, 2, 4, 0, 2, 4, 4, 4, 4, 4, 4, 4, 4, 4},
+    //     {8, 4, 2, 2, 4, 8, 2, 0, 8, 4, 4, 4, 4, 2, 8, 4, 8, 2},
+    //     {4, 8, 4, 4, 4, 2, 8, 4, 2, 4, 4, 8, 2, 4, 4, 4, 4, 4},
+    //     {4, 4, 4, 2, 2, 2, 4, 2, 0, 4, 4, 8, 4, 4, 4, 4, 4, 8},
+    //     {4, 4, 0, 8, 4, 8, 2, 4, 8, 8, 4, 2, 8, 4, 4, 4, 4, 4},
+    //     {4, 2, 8, 4, 2, 4, 8, 4, 2, 8, 4, 4, 4, 4, 8, 4, 4, 4},
+    //     {4, 2, 2, 2, 4, 4, 4, 2, 2, 2, 4, 8, 4, 8, 4, 4, 8, 2},
+    //     {0, 4, 4, 4, 4, 4, 4, 8, 4, 4, 4, 4, 4, 8, 4, 4, 2, 4},
+    //     {4, 4, 4, 4, 4, 8, 4, 4, 2, 2, 2, 4, 2, 4, 8, 4, 4, 8},
+    //     {4, 4, 4, 4, 4, 2, 8, 4, 8, 2, 2, 8, 4, 4, 8, 2, 4, 4},
+    //     {4, 4, 4, 4, 8, 8, 4, 4, 4, 8, 2, 2, 4, 4, 4, 2, 4, 4},
+    //     {4, 4, 2, 2, 8, 8, 2, 4, 2, 2, 8, 2, 4, 4, 4, 2, 4, 4},
+    //     {4, 4, 8, 4, 0, 4, 4, 4, 4, 4, 8, 2, 2, 4, 4, 2, 4, 4},
+    //     {4, 8, 4, 8, 4, 4, 4, 4, 2, 4, 4, 4, 4, 2, 4, 4, 0, 4},
+    //     {4, 4, 8, 4, 8, 4, 4, 4, 2, 2, 2, 8, 4, 4, 2, 8, 4, 4},
+    //     {4, 4, 4, 4, 4, 4, 4, 4, 2, 4, 4, 4, 4, 4, 4, 8, 4, 0},
+    //     {4, 2, 4, 4, 4, 4, 4, 8, 4, 4, 4, 4, 4, 8, 4, 4, 2, 2},
+    //     {4, 8, 4, 2, 4, 4, 4, 4, 2, 2, 4, 4, 4, 4, 4, 8, 8, 4}};
 
-    enum FieldTypeChanges
-    {
-        FIELD_NONE = 0,
-        FIELD_CHARGESTONE = 1,
-        FIELD_CELESTIAL = 2,
-        FIELD_OPELUCID = 3,
-        FIELD_TRICK_ROOM = 4,
-        FIELD_SKYLA = 5,
-        FIELD_SUN = 6
-    };
+    // enum FieldTypeChanges
+    // {
+    //     FIELD_NONE = 0,
+    //     FIELD_CHARGESTONE = 1,
+    //     FIELD_CELESTIAL = 2,
+    //     FIELD_OPELUCID = 3,
+    //     FIELD_TRICK_ROOM = 4,
+    //     FIELD_SKYLA = 5,
+    //     FIELD_SUN = 6
+    // };
 
-    int GetTypeEffectivenessAltered(int a1, int a2)
-    {
-        TypeEffectiveness result;
-        int v3;
+    // int GetTypeEffectivenessAltered(int a1, int a2)
+    // {
+    //     TypeEffectiveness result;
+    //     int v3;
 
-        if (a1 == TYPE_NONE || a2 == TYPE_NONE)
-        {
-            result = EFFECTIVENESS_1;
-            return result;
-        }
-        // Freeze Dry
-        else if (a1 == TYPE_ICE && a2 == TYPE_WATER)
-        {
-            v3 = 8;
-        }
-        // Corrosion
-        else if (a1 == TYPE_POISON && a2 == TYPE_STEEL)
-        {
-            v3 = 8;
-        }
-        // Inner Focus
-        else if (a1 == TYPE_PSYCHIC && a2 == TYPE_DARK)
-        {
-            v3 = 4;
-        }
-        // Scrappy and Relic Song
-        else if (a1 == TYPE_NORMAL && a2 == TYPE_GHOST)
-        {
-            v3 = 4;
-        }
-        // Sacred Sword and Scrappy
-        else if (a1 == TYPE_FIGHTING && a2 == TYPE_GHOST)
-        {
-            v3 = 4;
-        }
-        else
-        {
-            v3 = normalTypeChart[a1][a2];
-        }
+    //     if (a1 == TYPE_NONE || a2 == TYPE_NONE)
+    //     {
+    //         result = EFFECTIVENESS_1;
+    //         return result;
+    //     }
+    //     // Freeze Dry
+    //     else if (a1 == TYPE_ICE && a2 == TYPE_WATER)
+    //     {
+    //         v3 = 8;
+    //     }
+    //     // Corrosion
+    //     else if (a1 == TYPE_POISON && a2 == TYPE_STEEL)
+    //     {
+    //         v3 = 8;
+    //     }
+    //     // Inner Focus
+    //     else if (a1 == TYPE_PSYCHIC && a2 == TYPE_DARK)
+    //     {
+    //         v3 = 4;
+    //     }
+    //     // Scrappy and Relic Song
+    //     else if (a1 == TYPE_NORMAL && a2 == TYPE_GHOST)
+    //     {
+    //         v3 = 4;
+    //     }
+    //     // Sacred Sword and Scrappy
+    //     else if (a1 == TYPE_FIGHTING && a2 == TYPE_GHOST)
+    //     {
+    //         v3 = 4;
+    //     }
+    //     else
+    //     {
+    //         v3 = normalTypeChart[a1][a2];
+    //     }
 
-        switch (v3)
-        {
-        case 0:
-            result = EFFECTIVENESS_IMMUNE;
-            break;
-        case 2:
-            result = EFFECTIVENESS_1_2;
-            break;
-        case 4:
-            result = EFFECTIVENESS_1;
-            break;
-        case 8:
-            result = EFFECTIVENESS_2;
-            break;
-        default:
-            return 0;
-        }
-        return result;
-    }
+    //     switch (v3)
+    //     {
+    //     case 0:
+    //         result = EFFECTIVENESS_IMMUNE;
+    //         break;
+    //     case 2:
+    //         result = EFFECTIVENESS_1_2;
+    //         break;
+    //     case 4:
+    //         result = EFFECTIVENESS_1;
+    //         break;
+    //     case 8:
+    //         result = EFFECTIVENESS_2;
+    //         break;
+    //     default:
+    //         return 0;
+    //     }
+    //     return result;
+    // }
 
-    int GetTypeEffectivenessVsMonAltered(int a1, int a2)
-    {
-        int TypeEffectiveness; // r4
-        int v6;                // r0
-        int v7;
-        int v8;
-        v8 = PokeTypePair_GetType1(a2);
-        v7 = PokeTypePair_GetType2(a2);
+    // int GetTypeEffectivenessVsMonAltered(int a1, int a2)
+    // {
+    //     int TypeEffectiveness; // r4
+    //     int v6;                // r0
+    //     int v7;
+    //     int v8;
+    //     v8 = PokeTypePair_GetType1(a2);
+    //     v7 = PokeTypePair_GetType2(a2);
 
-        if (PokeTypePair_IsMonotype(a2))
-        {
+    //     if (PokeTypePair_IsMonotype(a2))
+    //     {
 
-            return GetTypeEffectivenessAltered(a1, v8);
-        }
-        TypeEffectiveness = GetTypeEffectivenessAltered(a1, v8);
-        v6 = GetTypeEffectivenessAltered(a1, v7);
-        return GetTypeEffectivenessMultiplier(TypeEffectiveness, v6);
-    }
+    //         return GetTypeEffectivenessAltered(a1, v8);
+    //     }
+    //     TypeEffectiveness = GetTypeEffectivenessAltered(a1, v8);
+    //     v6 = GetTypeEffectivenessAltered(a1, v7);
+    //     return GetTypeEffectivenessMultiplier(TypeEffectiveness, v6);
+    // }
 
-    int EvaluateTypeEffectiveness(int a1, int a2, bool isScrappy)
-    {
-        TypeEffectiveness result;
-        int v3;
+    // int EvaluateTypeEffectiveness(int a1, int a2, bool isScrappy)
+    // {
+    //     TypeEffectiveness result;
+    //     int v3;
 
-        if (a1 == TYPE_NONE || a2 == TYPE_NONE)
-        {
-            result = EFFECTIVENESS_1;
-            return result;
-        }
-        else if (a1 == TYPE_FIGHTING && a2 == TYPE_FLYING)
-        {
-            v3 = 8;
-        }
-        else if ((a1 == TYPE_FIGHTING) && a2 == TYPE_GHOST)
-        {
-            if (isScrappy)
-            {
-                v3 = 4;
-            }
-            else
-            {
-                v3 = 0;
-            }
-        }
-        else
-        {
-            v3 = normalTypeChart[a1][a2];
-        }
+    //     if (a1 == TYPE_NONE || a2 == TYPE_NONE)
+    //     {
+    //         result = EFFECTIVENESS_1;
+    //         return result;
+    //     }
+    //     else if (a1 == TYPE_FIGHTING && a2 == TYPE_FLYING)
+    //     {
+    //         v3 = 8;
+    //     }
+    //     else if ((a1 == TYPE_FIGHTING) && a2 == TYPE_GHOST)
+    //     {
+    //         if (isScrappy)
+    //         {
+    //             v3 = 4;
+    //         }
+    //         else
+    //         {
+    //             v3 = 0;
+    //         }
+    //     }
+    //     else
+    //     {
+    //         v3 = normalTypeChart[a1][a2];
+    //     }
 
-        switch (v3)
-        {
-        case 0:
-            result = EFFECTIVENESS_IMMUNE;
-            break;
-        case 2:
-            result = EFFECTIVENESS_1_2;
-            break;
-        case 4:
-            result = EFFECTIVENESS_1;
-            break;
-        case 8:
-            result = EFFECTIVENESS_2;
-            break;
-        default:
-            return 0;
-        }
-        return result;
-    }
-    int EvaluateTypeEffectivenesssForFighting(int type1, int pokeType, bool isScrappy)
-    {
-        int TypeEffectiveness; // r4
-        int v6;                // r0
-        int v7;
-        int v8;
-        v8 = PokeTypePair_GetType1(pokeType);
-        v7 = PokeTypePair_GetType2(pokeType);
+    //     switch (v3)
+    //     {
+    //     case 0:
+    //         result = EFFECTIVENESS_IMMUNE;
+    //         break;
+    //     case 2:
+    //         result = EFFECTIVENESS_1_2;
+    //         break;
+    //     case 4:
+    //         result = EFFECTIVENESS_1;
+    //         break;
+    //     case 8:
+    //         result = EFFECTIVENESS_2;
+    //         break;
+    //     default:
+    //         return 0;
+    //     }
+    //     return result;
+    // }
+    // int EvaluateTypeEffectivenesssForFighting(int type1, int pokeType, bool isScrappy)
+    // {
+    //     int TypeEffectiveness; // r4
+    //     int v6;                // r0
+    //     int v7;
+    //     int v8;
+    //     v8 = PokeTypePair_GetType1(pokeType);
+    //     v7 = PokeTypePair_GetType2(pokeType);
 
-        if (PokeTypePair_IsMonotype(pokeType))
-        {
-            return EvaluateTypeEffectiveness(type1, v8, isScrappy);
-        }
-        TypeEffectiveness = EvaluateTypeEffectiveness(type1, v8, isScrappy);
-        v6 = EvaluateTypeEffectiveness(type1, v7, isScrappy);
-        return GetTypeEffectivenessMultiplier(TypeEffectiveness, v6);
-    }
+    //     if (PokeTypePair_IsMonotype(pokeType))
+    //     {
+    //         return EvaluateTypeEffectiveness(type1, v8, isScrappy);
+    //     }
+    //     TypeEffectiveness = EvaluateTypeEffectiveness(type1, v8, isScrappy);
+    //     v6 = EvaluateTypeEffectiveness(type1, v7, isScrappy);
+    //     return GetTypeEffectivenessMultiplier(TypeEffectiveness, v6);
+    // }
 
-    unsigned int HandlerAnticipationDodge(int a1, ServerFlow *a2, int a3)
-    {
-        unsigned int result; // r0
-        int moveId;
-        Types type;
-        BattleMon *defender;
-        BattleMon *attacker;
-        int defenderId;
-        int v18;
-        int typeEffectiveness;
-        int PokeType;
+    // unsigned int HandlerAnticipationDodge(int a1, ServerFlow *a2, int a3)
+    // {
+    //     unsigned int result; // r0
+    //     int moveId;
+    //     Types type;
+    //     BattleMon *defender;
+    //     BattleMon *attacker;
+    //     int defenderId;
+    //     int v18;
+    //     int typeEffectiveness;
+    //     int PokeType;
 
-        defenderId = BattleEventVar_GetValue(VAR_DEFENDING_MON);
+    //     defenderId = BattleEventVar_GetValue(VAR_DEFENDING_MON);
 
-        if (a3 == defenderId)
-        {
-            moveId = BattleEventVar_GetValue(VAR_MOVE_ID);
-            type = (Types)PML_MoveGetType(moveId);
-            defender = Handler_GetBattleMon(a2, defenderId);
-            PokeType = BattleMon_GetPokeType(defender);
-            attacker = Handler_GetBattleMon(a2, BattleEventVar_GetValue(VAR_ATTACKING_MON));
+    //     if (a3 == defenderId)
+    //     {
+    //         moveId = BattleEventVar_GetValue(VAR_MOVE_ID);
+    //         type = (Types)PML_MoveGetType(moveId);
+    //         defender = Handler_GetBattleMon(a2, defenderId);
+    //         PokeType = BattleMon_GetPokeType(defender);
+    //         attacker = Handler_GetBattleMon(a2, BattleEventVar_GetValue(VAR_ATTACKING_MON));
 
-            // Weather Ball Checks
-            if (moveId == MOVE311_WEATHER_BALL || moveId == MOVE271_WEATHER_CRASH)
-            {
-                v18 = BattleField_GetWeather();
+    //         // Weather Ball Checks
+    //         if (moveId == MOVE311_WEATHER_BALL || moveId == MOVE271_WEATHER_CRASH)
+    //         {
+    //             v18 = BattleField_GetWeather();
 
-                if (v18 == 1)
-                {
-                    type = TYPE_FIRE;
-                }
-                else if (v18 == 2)
-                {
-                    type = TYPE_WATER;
-                }
-                else if (v18 == 3)
-                {
-                    type = TYPE_ICE;
-                }
-                else if (v18 == 4)
-                {
-                    type = TYPE_ROCK;
-                }
-            }
+    //             if (v18 == 1)
+    //             {
+    //                 type = TYPE_FIRE;
+    //             }
+    //             else if (v18 == 2)
+    //             {
+    //                 type = TYPE_WATER;
+    //             }
+    //             else if (v18 == 3)
+    //             {
+    //                 type = TYPE_ICE;
+    //             }
+    //             else if (v18 == 4)
+    //             {
+    //                 type = TYPE_ROCK;
+    //             }
+    //         }
 
-            if (moveId == MOVE267_NATURE_POWER)
-            {
-                int BattleTerrain = Handler_GetBattleTerrain(BattleServer_GetServerFlow(a2->mainModule->server));
+    //         if (moveId == MOVE267_NATURE_POWER)
+    //         {
+    //             int BattleTerrain = Handler_GetBattleTerrain(BattleServer_GetServerFlow(a2->mainModule->server));
 
-                if (BattleTerrain == 5u)
-                {
-                    moveId = 402;
-                }
-                else if (BattleTerrain == 11u)
-                {
-                    moveId = 89;
-                }
-                else if (BattleTerrain == 0xCu)
-                {
-                    moveId = 56;
-                }
-                else if (BattleTerrain == 7u)
-                {
-                    moveId = 59;
-                }
-                else if (BattleTerrain == 9u)
-                {
-                    moveId = 426;
-                }
-                else if (BattleTerrain == 0xAu)
-                {
-                    moveId = 157;
-                }
-                else if (BattleTerrain == 0xDu)
-                {
-                    moveId = 58;
-                }
-                else
-                {
-                    moveId = 161;
-                }
-                type = (Types)PML_MoveGetType(moveId);
-            }
+    //             if (BattleTerrain == 5u)
+    //             {
+    //                 moveId = 402;
+    //             }
+    //             else if (BattleTerrain == 11u)
+    //             {
+    //                 moveId = 89;
+    //             }
+    //             else if (BattleTerrain == 0xCu)
+    //             {
+    //                 moveId = 56;
+    //             }
+    //             else if (BattleTerrain == 7u)
+    //             {
+    //                 moveId = 59;
+    //             }
+    //             else if (BattleTerrain == 9u)
+    //             {
+    //                 moveId = 426;
+    //             }
+    //             else if (BattleTerrain == 0xAu)
+    //             {
+    //                 moveId = 157;
+    //             }
+    //             else if (BattleTerrain == 0xDu)
+    //             {
+    //                 moveId = 58;
+    //             }
+    //             else
+    //             {
+    //                 moveId = 161;
+    //             }
+    //             type = (Types)PML_MoveGetType(moveId);
+    //         }
 
-            if (moveId == MOVE363_NATURAL_GIFT && PML_ItemIsBerry(BattleMon_GetHeldItem(attacker)))
-            {
-                type = (Types)ItemGetParam(BattleMon_GetHeldItem(attacker), ITSTAT_NATURAL_GIFT_TYPE);
-            }
-            if (BattleMon_GetValue(attacker, VALUE_EFFECTIVE_ABILITY) == ABIL105_MOISTURIZE && type == TYPE_NORMAL)
-            {
-                type = (Types)TYPE_WATER;
-            }
-            if (BattleMon_GetValue(attacker, VALUE_EFFECTIVE_ABILITY) == ABIL012_GALVANIZE && type == TYPE_NORMAL)
-            {
-                type = (Types)TYPE_ELECTRIC;
-            }
-            if (BattleMon_GetValue(attacker, VALUE_EFFECTIVE_ABILITY) == ABIL048_REFRIGERATE && type == TYPE_NORMAL)
-            {
-                type = (Types)TYPE_ICE;
-            }
-            if (BattleMon_GetValue(attacker, VALUE_EFFECTIVE_ABILITY) == ABIL060_AERILATE && type == TYPE_NORMAL)
-            {
-                type = (Types)TYPE_FLYING;
-            }
-            if (BattleMon_GetValue(attacker, VALUE_EFFECTIVE_ABILITY) == ABIL040_PIXILATE && type == TYPE_NORMAL)
-            {
-                type = (Types)TYPE_FAIRY;
-            }
+    //         if (moveId == MOVE363_NATURAL_GIFT && PML_ItemIsBerry(BattleMon_GetHeldItem(attacker)))
+    //         {
+    //             type = (Types)ItemGetParam(BattleMon_GetHeldItem(attacker), ITSTAT_NATURAL_GIFT_TYPE);
+    //         }
+    //         if (BattleMon_GetValue(attacker, VALUE_EFFECTIVE_ABILITY) == ABIL105_MOISTURIZE && type == TYPE_NORMAL)
+    //         {
+    //             type = (Types)TYPE_WATER;
+    //         }
+    //         if (BattleMon_GetValue(attacker, VALUE_EFFECTIVE_ABILITY) == ABIL012_GALVANIZE && type == TYPE_NORMAL)
+    //         {
+    //             type = (Types)TYPE_ELECTRIC;
+    //         }
+    //         if (BattleMon_GetValue(attacker, VALUE_EFFECTIVE_ABILITY) == ABIL048_REFRIGERATE && type == TYPE_NORMAL)
+    //         {
+    //             type = (Types)TYPE_ICE;
+    //         }
+    //         if (BattleMon_GetValue(attacker, VALUE_EFFECTIVE_ABILITY) == ABIL060_AERILATE && type == TYPE_NORMAL)
+    //         {
+    //             type = (Types)TYPE_FLYING;
+    //         }
+    //         if (BattleMon_GetValue(attacker, VALUE_EFFECTIVE_ABILITY) == ABIL040_PIXILATE && type == TYPE_NORMAL)
+    //         {
+    //             type = (Types)TYPE_FAIRY;
+    //         }
 
-            typeEffectiveness = GetTypeEffectivenessVsMon(type, PokeType);
+    //         typeEffectiveness = GetTypeEffectivenessVsMon(type, PokeType);
 
-            if (BattleMon_GetValue(attacker, VALUE_EFFECTIVE_ABILITY) == ABIL113_SCRAPPY && (type == TYPE_NORMAL || type == TYPE_FIGHTING))
-            {
-                typeEffectiveness = GetTypeEffectivenessVsMonAltered(type, PokeType);
-            }
-            if (moveId == MOVE357_FREEZE_DRY || moveId == MOVE547_RELIC_SONG || moveId == MOVE533_SACRED_SWORD)
-            {
-                typeEffectiveness = GetTypeEffectivenessVsMonAltered(type, PokeType);
-            }
-            if ((type == TYPE_POISON && BattleMon_GetValue(attacker, VALUE_EFFECTIVE_ABILITY) == ABIL007_CORROSION) || (type == TYPE_PSYCHIC && BattleMon_GetValue(attacker, VALUE_EFFECTIVE_ABILITY) == ABIL039_INNER_FOCUS))
-            {
-                typeEffectiveness = GetTypeEffectivenessVsMonAltered(type, PokeType);
-            }
+    //         if (BattleMon_GetValue(attacker, VALUE_EFFECTIVE_ABILITY) == ABIL113_SCRAPPY && (type == TYPE_NORMAL || type == TYPE_FIGHTING))
+    //         {
+    //             typeEffectiveness = GetTypeEffectivenessVsMonAltered(type, PokeType);
+    //         }
+    //         if (moveId == MOVE357_FREEZE_DRY || moveId == MOVE547_RELIC_SONG || moveId == MOVE533_SACRED_SWORD)
+    //         {
+    //             typeEffectiveness = GetTypeEffectivenessVsMonAltered(type, PokeType);
+    //         }
+    //         if ((type == TYPE_POISON && BattleMon_GetValue(attacker, VALUE_EFFECTIVE_ABILITY) == ABIL007_CORROSION) || (type == TYPE_PSYCHIC && BattleMon_GetValue(attacker, VALUE_EFFECTIVE_ABILITY) == ABIL039_INNER_FOCUS))
+    //         {
+    //             typeEffectiveness = GetTypeEffectivenessVsMonAltered(type, PokeType);
+    //         }
 
-            if (moveId == MOVE327_SKY_UPPERCUT)
-            {
-                typeEffectiveness = EvaluateTypeEffectivenesssForFighting(type, PokeType, (BattleMon_GetValue(attacker, VALUE_EFFECTIVE_ABILITY) == ABIL113_SCRAPPY));
-            }
+    //         if (moveId == MOVE327_SKY_UPPERCUT)
+    //         {
+    //             typeEffectiveness = EvaluateTypeEffectivenesssForFighting(type, PokeType, (BattleMon_GetValue(attacker, VALUE_EFFECTIVE_ABILITY) == ABIL113_SCRAPPY));
+    //         }
 
-            if (moveId == MOVE498_CHIP_AWAY || BattleMon_GetValue(attacker, VALUE_EFFECTIVE_ABILITY) == ABIL096_NORMALIZE)
-            {
-                typeEffectiveness = 3;
-            }
+    //         if (moveId == MOVE498_CHIP_AWAY || BattleMon_GetValue(attacker, VALUE_EFFECTIVE_ABILITY) == ABIL096_NORMALIZE)
+    //         {
+    //             typeEffectiveness = 3;
+    //         }
 
-            // if (moveId == MOVE327_SKY_UPPERCUT || moveId == MOVE357_FREEZE_DRY || BattleMon_GetValue(attacker, VALUE_EFFECTIVE_ABILITY) == ABIL007_CORROSION)
-            // {
-            //     typeEffectiveness = GetTypeEffectivenessVsMonAltered(type, PokeType);
-            //     // //k::printf("\n 2. TypeEffectivenessVsMon is: %d for Move %d \n", TypeEffectivenessVsMon, a4);
-            // }
-            // else if (moveId == MOVE533_SACRED_SWORD || moveId == MOVE547_RELIC_SONG)
-            // {
-            //     typeEffectiveness = GetTypeEffectivenessVsMonAlteredSacredSword(type, PokeType);
-            // }
-            // else if (moveId == MOVE498_CHIP_AWAY)
-            // {
-            //     typeEffectiveness = 3;
-            // }
-            // else
-            // {
-            //     typeEffectiveness = GetTypeEffectivenessVsMon(type, PokeType);
-            // }
+    //         // if (moveId == MOVE327_SKY_UPPERCUT || moveId == MOVE357_FREEZE_DRY || BattleMon_GetValue(attacker, VALUE_EFFECTIVE_ABILITY) == ABIL007_CORROSION)
+    //         // {
+    //         //     typeEffectiveness = GetTypeEffectivenessVsMonAltered(type, PokeType);
+    //         //     // //k::printf("\n 2. TypeEffectivenessVsMon is: %d for Move %d \n", TypeEffectivenessVsMon, a4);
+    //         // }
+    //         // else if (moveId == MOVE533_SACRED_SWORD || moveId == MOVE547_RELIC_SONG)
+    //         // {
+    //         //     typeEffectiveness = GetTypeEffectivenessVsMonAlteredSacredSword(type, PokeType);
+    //         // }
+    //         // else if (moveId == MOVE498_CHIP_AWAY)
+    //         // {
+    //         //     typeEffectiveness = 3;
+    //         // }
+    //         // else
+    //         // {
+    //         //     typeEffectiveness = GetTypeEffectivenessVsMon(type, PokeType);
+    //         // }
 
-            if (typeEffectiveness >= 4)
-            {
-                result = BattleEventVar_GetValue(VAR_ACCURACY);
-                if (result > 0x32)
-                {
-                    return BattleEventVar_RewriteValue(VAR_ACCURACY, 50);
-                }
-            }
-        }
-        return result;
-    }
+    //         if (typeEffectiveness >= 4)
+    //         {
+    //             result = BattleEventVar_GetValue(VAR_ACCURACY);
+    //             if (result > 0x32)
+    //             {
+    //                 return BattleEventVar_RewriteValue(VAR_ACCURACY, 50);
+    //             }
+    //         }
+    //     }
+    //     return result;
+    // }
 
-    ABILITY_TRIGGERTABLE AnticipationHandlers[] = {
-        {EVENT_SWITCH_IN, (ABILITY_HANDLER_FUNC)HandlerAnticipation},            // 22
-        {EVENT_AFTER_ABILITY_CHANGE, (ABILITY_HANDLER_FUNC)HandlerAnticipation}, // 22
-        {EVENT_MOVE_ACCURACY, (ABILITY_HANDLER_FUNC)HandlerAnticipationDodge}};
+    // ABILITY_TRIGGERTABLE AnticipationHandlers[] = {
+    //     {EVENT_SWITCH_IN, (ABILITY_HANDLER_FUNC)HandlerAnticipation},            // 22
+    //     {EVENT_AFTER_ABILITY_CHANGE, (ABILITY_HANDLER_FUNC)HandlerAnticipation}, // 22
+    //     {EVENT_MOVE_ACCURACY, (ABILITY_HANDLER_FUNC)HandlerAnticipationDodge}};
 
-    ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddAnticipation(_DWORD *a1)
-    {
-        *a1 = 3;
-        return AnticipationHandlers;
-    }
+    // ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddAnticipation(_DWORD *a1)
+    // {
+    //     *a1 = 3;
+    //     return AnticipationHandlers;
+    // }
 
 #pragma endregion
 

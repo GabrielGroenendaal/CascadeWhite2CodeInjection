@@ -2047,11 +2047,11 @@ Label_TogglingMatchupsOff: ;
 label_OpenGen4Options: ; 
     Compare(0x4077, 1);
 	if (1) goto label_Gen4ToggledOff;
-	EventGreyMessage(238, 2);
+	EventGreyMessage(250, 2);
 	goto label_Gen4AISwitchoutToggleDialogue;
 
 label_Gen4ToggledOff: ;
-	EventGreyMessage(239, 2);
+	EventGreyMessage(251, 2);
 
 label_Gen4AISwitchoutToggleDialogue: ;
 	WaitForButton();
@@ -2066,15 +2066,15 @@ label_Gen4AISwitchoutToggleDialogue: ;
 label_Gen4AiSwitchOutToggleSetting: ;
     Compare(0x4077, 1); 
     if (1) goto Label_TogglingGen4AiOff; 
-    EventGreyMessage(245, 2);
+    EventGreyMessage(253, 2);
 	WaitForButton();
-	SetVarEqVar2(0x4076, 1);
+	SetVarEqVar2(0x4077, 1);
 	EventGreyMessage(119, 2);
 	WaitForButton();
 	goto label_OpenDialogueSwitchAI;
     
 Label_TogglingGen4AiOff: ; 
-    EventGreyMessage(244, 2);
+    EventGreyMessage(252, 2);
 	WaitForButton();
 	SetVarEqVar2(0x4077, 0);
 	EventGreyMessage(119, 2);

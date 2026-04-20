@@ -4210,8 +4210,7 @@ struct SWAN_PACKED SWAN_ALIGNED(4) BtlClientWk
     _QWORD rand3;
     u8 field_114[6];
     u8 field_11A[4];
-    SWAN_ALIGNED(4)
-    BattleParty *actPokeParty;
+    SWAN_ALIGNED(4) BattleParty *actPokeParty;
     unsigned __int8 myCoverPosNum;
     unsigned __int8 procPokeIdx;
     char prevPokeIdx;
