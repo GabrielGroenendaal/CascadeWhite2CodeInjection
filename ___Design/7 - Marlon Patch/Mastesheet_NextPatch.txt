@@ -152,7 +152,7 @@ Bug Reports, resources, discussion, and a forum to provide feedback can be found
 
 The moves taught have been changed. 
 - Green Shards: Screech, Fake Tears, Sparkle, Defog, Chilling Water, Low Sweep, Incinerate, Icy Wind, Electroweb, Snarl, Breaking Swipe, Struggle Bug, Take Down, Uproar
-- Red Shards: Seed Bomb, Skitter Smack, Drill Run, Bounce, Signal Beam, Iron Head, SKill Swap, Seething Cold, Psychic Noise, Dual Chop, Low Kick, Cross Poison, Fire Punch, Thunder Punch, Ice Punch
+- Red Shards: Seed Bomb, U-Turn, Drill Run, Bounce, Signal Beam, Iron Head, Skill Swap, Seething Cold, Psychic Noise, Torment, Low Kick, Cross Poison, Fire Punch, Thunder Punch, Ice Punch
 - Blue Shards: Explosion, Self Destruct, Zen Headbutt, Magic Coat, Barrier, Defense Curl, Sweet Scent, Gastro Acid, Iron Tail, Aqua Tail, Earth Power, Psyblade, Foul Play, Focus Punch, Gravity, Follow Me, Protect 
 - Yellow Shards: Double-Edge, Heal Pulse, Healing Wish, Lucky Chant, Synthesis, Roost, Head Smash, Helping Hand, Overheat, Outrage, Superpower, Toxic, Rest
 
@@ -451,7 +451,7 @@ oran berry, Oran Berries
 end
 
 !items Items 
-tm electric, TM04 Shock Wave (reward for defeating Scientist)
+tm psychic, TM15 Psycho Cut (reward for defeating Scientist)
 kings rock, King's Rock (speak to Benga in the NorthEast)
 tm water, TM50 Water Pulse (reward for defeating Misty)
 clear amulet, Clear Amulet (reward for defeating Misty)
@@ -481,8 +481,7 @@ end
 
 ## Complex Exterior
 !items Items 
-tm psychic, TM15 Psycho Cut (found around left edge of the map)
-silverpowder, Silverpowder
+silverpowder, Silverpowder (found around left edge of the map)
 end
 
 !notif NEW ENCOUNTER, Complex Exterior is a new met location distinct from the Virbank Complex. , #469e62
@@ -729,20 +728,21 @@ end
 
 !notif MOVE TUTOR, The Red Shard Move Tutor is found in the Battle Company Lobby. They teach
 - Seed Bomb (2 shards)
-- Skitter Smack (2 shards)
+- Iron Head (2 shards)
+- Fire Punch (2 Shards)
+- Thunder Punch (2 Shards)
+- Ice Punch (2 Shards)
 - Drill Run (4 shards)
 - Bounce (4 shards)
 - Signal Beam (4 shards)
 - Iron Head (6 shards)
 - Seething Cold (6 shards)
 - Psychic Noise (6 shards)
-- Dual Chop (6 shards)
-- Fire Punch (6 Shards)
-- Thunder Punch (6 Shards)
-- Ice Punch (6 Shards)
+- Torment (6 shards)
 - Low Kick (8 shards)
 - Cross Poison (8 shards)
 - Skill Swap (10 shards)
+- U-Turn (10 Shards)
 
 
 !gifts Battle Company Egg 
@@ -783,7 +783,9 @@ end
 
 !items Lt. Surge Rewards 
 leftovers, Leftovers (reward for defeating Surge)
-tm bug, TM89 U-Turn (reward for defeating Surge)
+tm electric, TM04 Shock Wave (reward for defeating Surge)
+red shard, Red Shards x10 (reward for defeating Surge)
+stable mulch, 1x Hasty Mint (reward for defeating Surge)
 end
 
 !enc 19 
@@ -806,7 +808,7 @@ end
 
 ## Leader Burgh 
 !notif SPLIT END, After defeating Burgh, you will be locked out of the following: , #af74b3
-- Surge Opt Boss (rewards Liberty Island encounter, TM89 U-Turn, Leftovers)
+- Surge Opt Boss (rewards Liberty Island encounter, Hasty Mint, TM04 Shock Wave, Leftovers)
 - Castelia Alleyway (rewards Ability Capsule, Dancer Trade)
 - Battle Company Egg 
 - Enigma Berry Guardian in Castelia Sewers
@@ -1241,14 +1243,14 @@ end
 !notif MOVE TUTOR, The Blue Move Tutor is present, past Dancer Brian, and teaches:
 - Explosion (1 shards)
 - Self Destruct (1 shards)
-- Zen Headbutt (4 shards)
-- Magic Coat (4 shards)
+- Zen Headbutt (2 shards)
+- Magic Coat (2 shards)
+- Iron Tail (4 shards)
+- Aqua Tail (4 shards)
 - Barrier (6 shards)
 - Defense Curl (6 shards)
 - Sweet Scent (6 shards)
 - Gastro Acid (6 shards)
-- Iron Tail (8 shards)
-- Aqua Tail (8 shards)
 - Earth Power (8 shards)
 - Psyblade (8 shards)
 - Foul Play (8 shards)

@@ -84,7 +84,6 @@ public class MainEvents {
 		TurnNorth8F(254);
 		TurnNorth8F(255);
 		Actor.WaitActionFinish();
-		goto LABEL_0503;
 		if (EventWorks.Get(16432) != 0) {
 			if (EventWorks.Get(16432) != 1) {
 				goto LABEL_04c7;

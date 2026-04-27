@@ -1,8 +1,8 @@
 #include "kPrint.h"
 #include "swantypes.h"
 
-#define DEBUGGING_BACKGROUNDS true
-#define ANIMATED_BACKGROUNDS_ENABLED 1
+#define DEBUGGING_BACKGROUNDS false
+#define ANIMATED_BACKGROUNDS_ENABLED true
 
 #pragma region defintions
 extern u32 g_GameBeaconSys;

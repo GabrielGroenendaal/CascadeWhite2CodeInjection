@@ -3854,12 +3854,16 @@ void Sequence332()
 	End();
 }
 
-/* TM89 U-Turn - Liberty Island */
+/* Hasty Mint - Liberty Island */
 void Sequence333()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 416);
+	SetVarEqVal(0x800C, 516);
 	SetVarEqVal(0x800D, 1);
+	Sequence400();
+	WaitMoment();
+	SetVarEqVal(0x800C, 72);
+	SetVarEqVal(0x800D, 10);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
