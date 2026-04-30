@@ -7,7 +7,7 @@ STRUCT_DECLARE(GameData)
 #define GAME_DATA *(GameData **)(g_GameBeaconSys + 4)
 
 #define TESTING_G4_STYLE_SWITCH_IN_AI true
-#define TESTING_G4_STYLE_SWITCH_OUT_AI false
+#define TESTING_G4_STYLE_SWITCH_OUT_AI true
 #define USING_VANILLA_AI false
 #define DEBUGGING_G4_SWITCH_AI false
 // Uses esdb_newBattle.yml
@@ -2525,7 +2525,7 @@ extern "C"
 
                                         v10 = checkForSTAB(MonData, Type, v10);
 
-                                        if (getEventWorkValue(16503)())
+                                        if (getEventWorkValue(16503))
                                         {
                                             v10 = checkForMatchup(MonData, defendingMonChecked, v10);
                                         }
@@ -3219,7 +3219,8 @@ extern "C"
                                     {
                                         u8 pokeType_1 = PokeTypePair_GetType1(BattleMon_GetPokeType(MonData));
                                         u8 pokeType_2 = PokeTypePair_GetType2(BattleMon_GetPokeType(MonData));
-                                        if (BattleMon_CheckIfMoveCondition(MonData, CONDITION_TERA) || SEARCH_ARRAY(teraItems, MonData->HeldItem)){
+                                        if (BattleMon_CheckIfMoveCondition(MonData, CONDITION_TERA) || SEARCH_ARRAY(teraItems, MonData->HeldItem))
+                                        {
                                             pokeType_1 = PML_MoveGetType(Move_GetID(MonData, 0));
                                             pokeType_2 = PML_MoveGetType(Move_GetID(MonData, 0));
                                         }
@@ -3600,7 +3601,7 @@ extern "C"
                                         v10 = checkForBPChanges(MonData, defendingMonChecked, ID, v10, a1);
                                         v10 = checkForTechnician(MonData, ID, v10);
                                         v10 = checkForSTAB(MonData, Type, v10);
-                                        if (getEventWorkValue(16503)())
+                                        if (getEventWorkValue(16503))
                                         {
                                             v10 = checkForMatchup(MonData, defendingMonChecked, v10);
                                         }
@@ -3671,12 +3672,12 @@ extern "C"
 #pragma endregion
 
 #if TESTING_G4_STYLE_SWITCH_OUT_AI
-    bool THUMB_BRANCH_SAFESTACK_FinalSwitchChecks(BtlClientWk *a1, BattleMon *a2, BattleMon *a3, _BYTE *a4)
+    bool THUMB_BRANCH_SAFESTACK_FinalSwitchChecks(BtlClientWk_Test *a1, BattleMon *a2, BattleMon *a3, _BYTE *a4)
     {
         _BYTE *v3;                  // r3 MAPDST
         __int64 v6;                 // r2
         unsigned int v8;            // r6
-        u8 i;           // r4
+        u8 i;                       // r4
         int Value;                  // r0
         unsigned int PartyCount;    // r7
         BattleStyle battleStyle;    // r0
@@ -3687,83 +3688,108 @@ extern "C"
         __int64 v17;                // r2
         __int64 v18;                // r2
         MoveDamageRec v21;          // [sp+40h] [bp-20h] BYREF
-        #if DEBUGGING_G4_SWITCH_AI
-            k::Printf("\nFinal Switch Check 1, lets check if we can find the value of %d\n", (int)a4);
-        #endif
-        // if (DoesMonHaveSuperEffectiveMove(a1, a2, a3, 4)) // don't switch if the current mon has a super effective move, 90% of the time
-        // {
-        //     v6 = a1->rand3 + a1->rand2 * a1->rand1;
-        //     a1->rand1 = v6;
-        //     if (!is_mul_ok(0xAu, HIDWORD(v6)))
-        //     {
-        //         return 0;
-        //     }
-        // }
+        ServerFlow *flow;
+
+#if DEBUGGING_G4_SWITCH_AI
+        k::Printf("\nFinal Switch Check 1, lets check if we can find the value of %d\n", (int)a4);
+#endif
+        // Need to figure out what we're comparing here to check for a 90% situation.
+        if (DoesMonHaveSuperEffectiveMove(a1, a2, a3, 4)) // don't switch if the current mon has a super effective move, 90% of the time
+        {
+            if (BattleRandom(100u) > 10)
+            {
+                return 0;
+            }
+        }
         v8 = 0;
-        for (i = VALUE_ATTACK_STAGE; (unsigned int)i <= VALUE_EVASION_STAGE; i = i + 1 ) // don't switch if the current mon has +4 stat boosts total
+        for (i = VALUE_ATTACK_STAGE; (unsigned int)i <= VALUE_EVASION_STAGE; i = i + 1) // don't switch if the current mon has +4 stat boosts total
         {
             Value = BattleMon_GetValue(a2, (BattleMonValue)i) - 6;
-            if (Value > 6){
+            if (Value > 6)
+            {
                 v8 += Value;
             }
-            #if DEBUGGING_G4_SWITCH_AI
-                k::Printf("\nFinal Switch Check 1+, v8 is %d, and Value is %d", v8, Value);
-            #endif
         }
-        #if DEBUGGING_G4_SWITCH_AI
-            k::Printf("\nFinal Switch Check 2, v8 is %d, and Value is %d", v8, Value);
-        #endif
         if (v8 >= 4)
         {
             return 0;
         }
-        #if DEBUGGING_G4_SWITCH_AI
-            k::Printf("\nFinal Switch Check 3");
-        #endif
+#if DEBUGGING_G4_SWITCH_AI
+        k::Printf("\nFinal Switch Check 3");
+#endif
+
+        // MoveDamageRec_Get is checking for a damaging move.
+        // We need this to check for the most recent damageing move.
+        // We also need to see if this function works for
         if (MoveDamageRec_Get(a2, 1u, 0, &v21)) // only switch if the current mon has been hit by a damaging move
         {
-            #if DEBUGGING_G4_SWITCH_AI
-                k::Printf("\nFinal Switch Check 4");
-            #endif
-            PartyCount = BattleParty_GetPartyCount((BattleParty*)((char*)a1 + 0x120));
-            battleStyle = (BattleStyle) BtlSetup_GetBattleStyle(a1->mainModule);
-            #if DEBUGGING_G4_SWITCH_AI
-                k::Printf("\nFinal Switch Check 4B: The battle style is %d and the party count is %d and numMonsOnField is %d", battleStyle, PartyCount, (unsigned int)GetNumMonsOnField(battleStyle, *(unsigned __int8*)(&a1 + 0x124)));
-            #endif
-            for (j = GetNumMonsOnField(battleStyle, *(unsigned __int8*)(&a1 + 0x124)); j < PartyCount; ++j)
+#if DEBUGGING_G4_SWITCH_AI
+            k::Printf("\nWe retrieved Move Damage Record\nMove ID: %d\nDamage: %d\nMoveType: %d\nDamage Type: %d\nPoke ID: %d\nPokePos: %d\n\n", v21.moveID, v21.damage, v21.moveType, v21.damageType, v21.pokeID, v21.pokePos);
+#endif
+
+            flow = BattleServer_GetServerFlow(a1->mainModule->server);
+            MoveRecord *record = Handler_GetMoveRecord(flow);
+            u32 ptr = (record->ptr == 0) ? 119 : (record->ptr - 1);
+#if DEBUGGING_G4_SWITCH_AI
+            k::Printf("\nThe most recent damaging move was %d, and it was used against poke ID %d. Current ptr is %d\n", record->record[ptr].MoveID, record->record[ptr].PokeID, ptr);
+#endif
+            if (v21.pokeID != record->record[ptr].PokeID)
             {
-                #if DEBUGGING_G4_SWITCH_AI
-                    k::Printf("\nFinal Switch Check 5-%d", j);
-                #endif
+#if DEBUGGING_G4_SWITCH_AI
+                k::Printf("\nThe most recent damaging move was not the move used against the mon, we should not switch");
+#endif
+                return 0;
+            }
+
+#if DEBUGGING_G4_SWITCH_AI
+            k::Printf("\nFinal Switch Check 4");
+#endif
+
+            // PartyCount isn't working. I'm not entirely sure why.
+            // I think it's probably because my BattleMon struct isn't correctly put together but even trying to manually grab the value isn't working.
+            PartyCount = BattleParty_GetPartyCount(a1->actPokeParty);
+            battleStyle = (BattleStyle)BtlSetup_GetBattleStyle(a1->mainModule);
+#if DEBUGGING_G4_SWITCH_AI
+            k::Printf("\nFinal Switch Check 4B: The battle style is %d and the party count is %d and numMonsOnField is %d", battleStyle, PartyCount, (unsigned int)GetNumMonsOnField(battleStyle, a1->myCoverPosNum));
+#endif
+
+            // GetNumMonsOnField is failing out. I'm not entirely sure why.
+            // I think it's probably because my BattleMon struct isn't correctly put together but even trying to manually grab the value isn't working.
+            for (j = GetNumMonsOnField(battleStyle, a1->myCoverPosNum); j < PartyCount; ++j)
+            {
+#if DEBUGGING_G4_SWITCH_AI
+                k::Printf("\nFinal Switch Check 5-%d", j);
+#endif
                 if (!SwitchAI_CheckReserve(a1, (unsigned __int8)j))
                 {
-                    #if DEBUGGING_G4_SWITCH_AI
-                        k::Printf("\nFinal Switch Check 6-%d", j);
-                    #endif
+#if DEBUGGING_G4_SWITCH_AI
+                    k::Printf("\nFinal Switch Check 6-%d", j);
+#endif
                     MonData = BattleParty_GetMonData(a1->actPokeParty, (unsigned __int8)j);
                     if (DoesMonHaveSuperEffectiveMove(a1, MonData, a3, 4))
                     {
-                        #if DEBUGGING_G4_SWITCH_AI
-                            k::Printf("\nFinal Switch Check 7-%d", j);
-                        #endif
+#if DEBUGGING_G4_SWITCH_AI
+                        k::Printf("\nFinal Switch Check 7-%d", j);
+#endif
                         PokeType = BattleMon_GetPokeType(MonData);
                         TypeEffectivenessVsMon = GetTypeEffectivenessVsMon(v21.damageType, PokeType);
                         if (TypeEffectivenessVsMon)
                         {
-                            #if DEBUGGING_G4_SWITCH_AI
-                                k::Printf("\nFinal Switch Check 8-%d", j);
-                            #endif
+#if DEBUGGING_G4_SWITCH_AI
+                            k::Printf("\nFinal Switch Check 8-%d", j);
+#endif
                             if (TypeEffectivenessVsMon < 3)
                             {
-                                #if DEBUGGING_G4_SWITCH_AI
-                                    k::Printf("\nFinal Switch Check 9-%d", j);
-                                #endif
-                                v18 = a1->rand3 + a1->rand2 * a1->rand1;
-                                a1->rand1 = v18;
-                                if (BattleRandom(99u) > 66){
-                                    #if DEBUGGING_G4_SWITCH_AI
-                                        k::Printf("\nFinal Switch Check 10-%d", j);
-                                    #endif
+#if DEBUGGING_G4_SWITCH_AI
+                                k::Printf("\nFinal Switch Check 9-%d", j);
+#endif
+                                // v18 = a1->rand3 + a1->rand2 * a1->rand1;
+                                // a1->rand1 = v18;
+                                if (BattleRandom(99u) > 66)
+                                {
+#if DEBUGGING_G4_SWITCH_AI
+                                    k::Printf("\nFinal Switch Check 10-%d", j);
+#endif
                                     *a4 = j;
                                     return 1;
                                 }
@@ -3776,17 +3802,18 @@ extern "C"
                         }
                         else
                         {
-                            v17 = a1->rand3 + a1->rand2 * a1->rand1;
-                            a1->rand1 = v17;
-                            #if DEBUGGING_G4_SWITCH_AI
-                                k::Printf("\nFinal Switch Check 99-%d", j);
-                            #endif
-                            if (BattleRandom(100u) > 50){
-                                #if DEBUGGING_G4_SWITCH_AI
-                                        k::Printf("\nFinal Switch Check 1010-%d", j);
-                                    #endif
-                                    *a4 = j;
-                                    return 1;
+// v17 = a1->rand3 + a1->rand2 * a1->rand1;
+// a1->rand1 = v17;
+#if DEBUGGING_G4_SWITCH_AI
+                            k::Printf("\nFinal Switch Check 99-%d", j);
+#endif
+                            if (BattleRandom(100u) > 50)
+                            {
+#if DEBUGGING_G4_SWITCH_AI
+                                k::Printf("\nFinal Switch Check 1010-%d", j);
+#endif
+                                *a4 = j;
+                                return 1;
                             }
 
                             // if (v17 >= 0)
@@ -3801,124 +3828,7 @@ extern "C"
         }
         return 0;
     }
-    // int CheckForMonsWithResistedTypingsAndSuperEffectiveMoves(BtlClientWk *a1, u8 damageType, BattleMon* defendingMon, _BYTE *a3)
-    // {
-    //     unsigned int PartyCount;     // r7
-    //     BattleStyle BattleStyle;     // r0
-    //     unsigned int NumMonsOnField; // r4
-    //     BattleMon *MonData;          // r6
-
-    //     PartyCount = BattleParty_GetPartyCount(a1->actPokeParty);
-    //     BattleStyle = MainModule_GetBattleStyle(a1->mainModule);
-    //     NumMonsOnField = GetNumMonsOnField(BattleStyle, a1->myCoverPosNum);
-    //     if (NumMonsOnField >= PartyCount)
-    //     {
-    //         return 0;
-    //     }
-    //     while (1)
-    //     {
-    //         if (!SwitchAI_CheckReserve(a1, (unsigned __int8)NumMonsOnField))
-    //         {
-    //             MonData = BattleParty_GetMonData(a1->actPokeParty, (unsigned __int8)NumMonsOnField);
-
-    //             int PotentialSwitchInType = BattleMon_GetPokeType(MonData);
-    //             int effectiveness = GetTypeEffectivenessVsMon(damageType, PotentialSwitchInType);
-    //             if (effectiveness < 3)
-    //             {
-    //                if (DoesMonHaveSuperEffectiveMove(a1, MonData, defendingMon, 4))
-    //                {
-    //                    break;
-    //                }
-    //             }
-    //         }
-    //         if (++NumMonsOnField >= PartyCount)
-    //         {
-    //             return 0;
-    //         }
-    //     }
-    //     *a3 = NumMonsOnField;
-    //     return 1;
-    // }
-
-    // // INSERT THE FUNCTION HERE FOR SWITCH OUT TO IMMMUNITY
-    // bool THUMB_BRANCH_ShouldSwitchIfTypeAbsorbingAbility(BtlClientWk *a1, BattleMon *a2, BattleMon *a3)
-    // {
-    //     _BYTE *v3;         // r3 MAPDST
-    //     u64 v5;            // kr00_8
-    //     unsigned int j;    // r4
-    //     wchar_t *v8;       // r0
-    //     __int64 v9;        // r0
-    //     unsigned int v10;  // r2
-    //     int num2;          // [sp+8h] [bp-40h]
-    //     unsigned int i;    // [sp+Ch] [bp-3Ch]
-    //     char v15[2];       // [sp+24h] [bp-24h] BYREF
-    //     MoveDamageRec v16; // [sp+26h] [bp-22h] BYREF
-
-    //     // This is checking if the pokemon being attacked has a super effective move into the pokemon attacking it.
-    //     // If it does, it has a 33% chance to skip all remaining checks to switch out.
-    //     if (DoesMonHaveSuperEffectiveMove(a1, a2, a3, 4))
-    //     {
-    //         v5 = a1->rand3 + a1->rand2 * a1->rand1;
-    //         a1->rand1 = v5;
-    //         if (BattleRandom(3) > 2)
-    //         {
-    //             return 0;
-    //         }
-    //     }
-    //     num2 = 1;
-
-    //     // This checks to see if a Pokemon attacked Pokemon a2 I think.
-    //     if (MoveDamageRec_Get(a2, 1u, 0, &v16))
-    //     {
-    //         // Then it iterates over all the attacks that hit that slot.
-    //         do
-    //         {
-
-    //             // This is the vanilla logic, and it checks to see if the damage type matches one of the ones that has immune abilities.
-    //             // Then it gets the abilities that match that damage type and checks to see if the attacking Pokemon has one of those abilities, and if it does, it has a chance to switch out.
-    //             // for (i = 0; i < 4; ++i)
-    //             // {
-    //             //     // if ( v16.damageType == LOBYTE(aRw[5 * i]) )
-    //             //     if (v16.damageType == ((aRw[5 * i] & 0xFF00)))
-    //             //     {
-    //             //         for (j = 0; j < 4; ++j)
-    //             //         {
-    //             //             v8 = &aRw[5 * i + j];
-    //             //             if (!v8[1])
-    //             //             {
-    //             //                 break;
-    //             //             }
-    //             //             if (CheckMonsForTypeAbsorbingAbility(a1, v8[1], (_BYTE *)v15))
-    //             //             {
-    //             //                 v9 = a1->rand3 + a1->rand2 * a1->rand1;
-    //             //                 a1->rand1 = v9;
-    //             //                 if (v9 >= 0)
-    //             //                 {
-    //             //                     *v3 = v15[0];
-    //             //                     return 1;
-    //             //                 }
-    //             //             }
-    //             //         }
-    //             //     }
-    //             // }
-
-    //             // Instead we're going to feed in the damage Type and process it to see if any pokemon have a super effective move + resist the type.
-    //             if (CheckForMonsWithResistedTypingsAndSuperEffectiveMoves(a1, v16.damageType, a3, (_BYTE *)v15))
-    //             {
-    //                 v9 = a1->rand3 + a1->rand2 * a1->rand1;
-    //                 a1->rand1 = v9;
-    //                 if (v9 >= 0)
-    //                 {
-    //                     *v3 = v15[0];
-    //                     return 1;
-    //                 }
-    //             }
-    //             v10 = num2;
-    //             num2 = (num2 + 1);
-    //         } while (MoveDamageRec_Get(a2, 1u, v10, &v16));
-    //     }
-    //     return 0;
-    // }
+    
 #endif
 
 #pragma region MidBattleSwitchAI
@@ -4262,6 +4172,31 @@ extern "C"
 #pragma endregion
 
 #pragma region AIScriptFunctions
+
+    int THUMB_BRANCH_AI075_GetProtectCount(ScriptVM *a1, TrainerAIEnv *a2)
+    {
+        unsigned int v3;                   // r0
+        int BattlePosFromCommandArg;       // r0
+        BattleMon *BattleMonFromBattlePos; // r5
+        int ConsecutiveMoveCount;          // r0
+        int previousMove;
+        v3 = VM_Read32(a1);
+        BattlePosFromCommandArg = GetBattlePosFromCommandArg(a2, v3);
+        BattleMonFromBattlePos = GetBattleMonFromBattlePos(a2, BattlePosFromCommandArg);
+        previousMove = BattleMon_GetPreviousMoveID(BattleMonFromBattlePos);
+
+        if (previousMove == MOVE182_PROTECT || previousMove == MOVE197_DETECT || previousMove == MOVE203_ENDURE || previousMove == MOVE469_WIDE_GUARD || previousMove == MOVE462_SILK_TRAP || previousMove == MOVE376_SPIKY_SHIELD || previousMove == MOVE559_BANEFUL_BUNKER || previousMove == MOVE262_OBSTRUCT)
+        {
+            ConsecutiveMoveCount = BattleMon_GetConsecutiveMoveCount(BattleMonFromBattlePos);
+        }
+        else
+        {
+            ConsecutiveMoveCount = 0;
+        }
+        a2->param = ConsecutiveMoveCount;
+        return a2->result;
+    }
+
     /*
 
         --------------------------------------------------------------------------------------------------
@@ -4306,6 +4241,7 @@ extern "C"
 
         MoveCount = BattleMon_GetMoveCount(a1);
         LoopMoveCategoryCheck = 0;
+        i = 0;
         do
         {
             LoopMoveID = Move_GetID(a1, i);
@@ -4731,9 +4667,7 @@ extern "C"
     }
 #pragma endregion
 
-
-
-#pragma region AnticipationDodge 
+#pragma region AnticipationDodge
     typedef struct
     {
         BattleEventType triggerValue;
@@ -4897,8 +4831,7 @@ extern "C"
         return AnticipationHandlers;
     }
 
-#pragma endregion 
-
+#pragma endregion
 
 #if DEBUGGING_ILLUSION
     extern int sub_219C424(MainModule *a1, int a2);

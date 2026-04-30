@@ -1,4 +1,5 @@
-{
+backup_data = {
+  "title":"Cascade White",
   "pok_replacements": {
     "": "badegg"
   },
@@ -364,7 +365,7 @@
       ]
     },
     "Swords Dance": {
-      "type": "Normal",
+      "type": "Steel",
       "basePower": 0,
       "category": "Status",
       "pp": 1,
@@ -725,7 +726,7 @@
       }
     },
     "Supersonic": {
-      "type": "Normal",
+      "type": "Bug",
       "basePower": 0,
       "category": "Status",
       "pp": 10,
@@ -750,7 +751,7 @@
       "sf": true
     },
     "Disable": {
-      "type": "Normal",
+      "type": "Ghost",
       "basePower": 0,
       "category": "Status",
       "pp": 20,
@@ -1318,7 +1319,7 @@
       "sf": true
     },
     "Minimize": {
-      "type": "Normal",
+      "type": "Psychic",
       "basePower": 0,
       "category": "Status",
       "pp": 2,
@@ -1950,7 +1951,8 @@
       "accuracy": 100,
       "priority": 0,
       "e_id": 0,
-      "sf": true
+      "sf": true,
+      "hc_effect": "Hex"
     },
     "Snap Trap": {
       "type": "Grass",
@@ -2693,7 +2695,8 @@
       "accuracy": 100,
       "priority": 0,
       "e_id": 0,
-      "sf": true
+      "sf": true,
+      "hc_effect": "Hex"
     },
     "Extreme Speed": {
       "type": "Normal",
@@ -2750,7 +2753,7 @@
       "pp": 10,
       "accuracy": 85,
       "priority": 0,
-      "e_id": 261,
+      "e_id": 42,
       "sf": true
     },
     "Beat Up": {
@@ -2762,6 +2765,7 @@
       "priority": 0,
       "e_id": 0,
       "sf": true,
+      "hc_effect": "Hex",
       "flags": {
         "punch": true
       }
@@ -2972,7 +2976,8 @@
       "priority": 0,
       "e_id": 0,
       "target": "allAdjacentFoes",
-      "sf": true
+      "sf": true,
+      "hc_effect": "Hex"
     },
     "Wish": {
       "type": "Normal",
@@ -5366,7 +5371,8 @@
       "accuracy": 100,
       "priority": 0,
       "e_id": 0,
-      "sf": true
+      "sf": true,
+      "hc_effect": "Hex"
     },
     "Sky Drop": {
       "type": "Flying",
@@ -5968,7 +5974,7 @@
           ],
           [
             15,
-            "Sludge"
+            "Venoshock"
           ],
           [
             19,
@@ -6133,7 +6139,7 @@
           ],
           [
             15,
-            "Sludge"
+            "Venoshock"
           ],
           [
             19,
@@ -6320,7 +6326,7 @@
           ],
           [
             15,
-            "Sludge"
+            "Venoshock"
           ],
           [
             19,
@@ -6607,7 +6613,7 @@
           "Fire Pledge",
           "Blast Burn",
           "Draco Meteor",
-          "Dual Chop",
+          "Torment",
           "Low Kick",
           "Thunder Punch",
           "Fire Punch",
@@ -6801,7 +6807,7 @@
           "Fire Pledge",
           "Blast Burn",
           "Draco Meteor",
-          "Dual Chop",
+          "Torment",
           "Low Kick",
           "Thunder Punch",
           "Fire Punch",
@@ -7012,7 +7018,7 @@
           "Fire Pledge",
           "Blast Burn",
           "Draco Meteor",
-          "Dual Chop",
+          "Torment",
           "Low Kick",
           "Thunder Punch",
           "Fire Punch",
@@ -7746,7 +7752,7 @@
           "Hidden Force"
         ],
         "tutors": [
-          "Skitter Smack",
+          "U-Turn",
           "Skill Swap",
           "Signal Beam",
           "Psychic Noise",
@@ -7837,7 +7843,7 @@
           ],
           [
             25,
-            "Signal Beam"
+            "Giga Drain"
           ],
           [
             29,
@@ -7845,7 +7851,7 @@
           ],
           [
             31,
-            "Giga Drain"
+            "Signal Beam"
           ],
           [
             33,
@@ -7924,7 +7930,7 @@
           "Giga Impact"
         ],
         "tutors": [
-          "Skitter Smack",
+          "U-Turn",
           "Skill Swap",
           "Signal Beam",
           "Psychic Noise",
@@ -8058,7 +8064,7 @@
           "Hidden Force"
         ],
         "tutors": [
-          "Skitter Smack",
+          "U-Turn",
           "Signal Beam",
           "Drill Run",
           "Cross Poison",
@@ -8139,7 +8145,7 @@
           ],
           [
             25,
-            "Skitter Smack"
+            "Drill Run"
           ],
           [
             28,
@@ -8147,7 +8153,7 @@
           ],
           [
             31,
-            "Drill Run"
+            "X-Scissor"
           ],
           [
             33,
@@ -8223,7 +8229,7 @@
           "Fly"
         ],
         "tutors": [
-          "Skitter Smack",
+          "U-Turn",
           "Signal Beam",
           "Drill Run",
           "Cross Poison",
@@ -8386,6 +8392,7 @@
           "Fly"
         ],
         "tutors": [
+          "U-Turn",
           "Bounce",
           "Seething Cold",
           "Protect",
@@ -8548,6 +8555,7 @@
           "Fly"
         ],
         "tutors": [
+          "U-Turn",
           "Bounce",
           "Seething Cold",
           "Protect",
@@ -8728,6 +8736,7 @@
           "Fly"
         ],
         "tutors": [
+          "U-Turn",
           "Bounce",
           "Seething Cold",
           "Protect",
@@ -8882,7 +8891,7 @@
           "Strength"
         ],
         "tutors": [
-          "Skitter Smack",
+          "U-Turn",
           "Seed Bomb",
           "Iron Head",
           "Drill Run",
@@ -9061,7 +9070,7 @@
           "Strength"
         ],
         "tutors": [
-          "Skitter Smack",
+          "U-Turn",
           "Seed Bomb",
           "Iron Head",
           "Drill Run",
@@ -9229,6 +9238,8 @@
           "Fly"
         ],
         "tutors": [
+          "U-Turn",
+          "Torment",
           "Drill Run",
           "Bounce",
           "Foul Play",
@@ -9398,6 +9409,8 @@
           "Fly"
         ],
         "tutors": [
+          "U-Turn",
+          "Torment",
           "Drill Run",
           "Bounce",
           "Foul Play",
@@ -9561,7 +9574,7 @@
         ],
         "tutors": [
           "Draco Meteor",
-          "Dual Chop",
+          "Torment",
           "Iron Head",
           "Drill Run",
           "Cross Poison",
@@ -9750,7 +9763,7 @@
         ],
         "tutors": [
           "Draco Meteor",
-          "Dual Chop",
+          "Torment",
           "Iron Head",
           "Drill Run",
           "Cross Poison",
@@ -11680,12 +11693,12 @@
         "None"
       ],
       "bs": {
-        "hp": 80,
-        "at": 45,
+        "hp": 75,
+        "at": 60,
         "df": 63,
-        "sa": 90,
+        "sa": 85,
         "sd": 80,
-        "sp": 45
+        "sp": 35
       },
       "learnset_info": {
         "learnset": [
@@ -11719,7 +11732,7 @@
           ],
           [
             19,
-            "Draining Kiss"
+            "Double Slap"
           ],
           [
             22,
@@ -11882,8 +11895,8 @@
       ],
       "bs": {
         "hp": 95,
-        "at": 70,
-        "df": 83,
+        "at": 80,
+        "df": 73,
         "sa": 105,
         "sd": 100,
         "sp": 60
@@ -11920,7 +11933,7 @@
           ],
           [
             19,
-            "Draining Kiss"
+            "Double Slap"
           ],
           [
             22,
@@ -12972,6 +12985,8 @@
           "Fly"
         ],
         "tutors": [
+          "U-Turn",
+          "Torment",
           "Cross Poison",
           "Seething Cold",
           "Zen Headbutt",
@@ -13142,6 +13157,8 @@
           "Fly"
         ],
         "tutors": [
+          "U-Turn",
+          "Torment",
           "Cross Poison",
           "Seething Cold",
           "Zen Headbutt",
@@ -13884,9 +13901,8 @@
           "Cut"
         ],
         "tutors": [
-          "Skitter Smack",
+          "U-Turn",
           "Seed Bomb",
-          "Dual Chop",
           "Signal Beam",
           "Cross Poison",
           "Foul Play",
@@ -14083,9 +14099,8 @@
           "Cut"
         ],
         "tutors": [
-          "Skitter Smack",
+          "U-Turn",
           "Seed Bomb",
-          "Dual Chop",
           "Signal Beam",
           "Cross Poison",
           "Foul Play",
@@ -14234,7 +14249,7 @@
           "Giga Impact"
         ],
         "tutors": [
-          "Skitter Smack",
+          "U-Turn",
           "Skill Swap",
           "Signal Beam",
           "Psychic Noise",
@@ -14427,7 +14442,7 @@
           "Giga Impact"
         ],
         "tutors": [
-          "Skitter Smack",
+          "U-Turn",
           "Skill Swap",
           "Signal Beam",
           "Psychic Noise",
@@ -14573,7 +14588,6 @@
           "Strength"
         ],
         "tutors": [
-          "Skitter Smack",
           "Seed Bomb",
           "Iron Head",
           "Drill Run",
@@ -14742,7 +14756,6 @@
           "Strength"
         ],
         "tutors": [
-          "Skitter Smack",
           "Seed Bomb",
           "Iron Head",
           "Drill Run",
@@ -14901,8 +14914,9 @@
           "Cut"
         ],
         "tutors": [
-          "Skitter Smack",
+          "U-Turn",
           "Seed Bomb",
+          "Torment",
           "Iron Head",
           "Psychic Noise",
           "Low Kick",
@@ -15109,8 +15123,9 @@
           "Cut"
         ],
         "tutors": [
-          "Skitter Smack",
+          "U-Turn",
           "Seed Bomb",
+          "Torment",
           "Iron Head",
           "Psychic Noise",
           "Low Kick",
@@ -15693,8 +15708,9 @@
           "Strength"
         ],
         "tutors": [
+          "U-Turn",
           "Seed Bomb",
-          "Dual Chop",
+          "Torment",
           "Iron Head",
           "Drill Run",
           "Bounce",
@@ -15888,8 +15904,9 @@
           "Strength"
         ],
         "tutors": [
+          "U-Turn",
           "Seed Bomb",
-          "Dual Chop",
+          "Torment",
           "Iron Head",
           "Drill Run",
           "Bounce",
@@ -16865,6 +16882,7 @@
         ],
         "tutors": [
           "Skill Swap",
+          "Torment",
           "Signal Beam",
           "Psychic Noise",
           "Seething Cold",
@@ -17033,6 +17051,7 @@
         ],
         "tutors": [
           "Skill Swap",
+          "Torment",
           "Signal Beam",
           "Psychic Noise",
           "Seething Cold",
@@ -17227,6 +17246,7 @@
         ],
         "tutors": [
           "Skill Swap",
+          "Torment",
           "Signal Beam",
           "Psychic Noise",
           "Seething Cold",
@@ -17393,7 +17413,6 @@
           "Strength"
         ],
         "tutors": [
-          "Dual Chop",
           "Iron Head",
           "Low Kick",
           "Thunder Punch",
@@ -17572,7 +17591,6 @@
           "Strength"
         ],
         "tutors": [
-          "Dual Chop",
           "Iron Head",
           "Low Kick",
           "Thunder Punch",
@@ -17765,7 +17783,6 @@
           "Strength"
         ],
         "tutors": [
-          "Dual Chop",
           "Iron Head",
           "Low Kick",
           "Thunder Punch",
@@ -17922,7 +17939,6 @@
           "Cut"
         ],
         "tutors": [
-          "Skitter Smack",
           "Seed Bomb",
           "Low Kick",
           "Cross Poison",
@@ -18100,7 +18116,6 @@
           "Cut"
         ],
         "tutors": [
-          "Skitter Smack",
           "Seed Bomb",
           "Low Kick",
           "Cross Poison",
@@ -18291,7 +18306,6 @@
           "Cut"
         ],
         "tutors": [
-          "Skitter Smack",
           "Seed Bomb",
           "Low Kick",
           "Cross Poison",
@@ -20450,7 +20464,7 @@
           "Strength"
         ],
         "tutors": [
-          "Skitter Smack",
+          "U-Turn",
           "Seed Bomb",
           "Drill Run",
           "Bounce",
@@ -20968,6 +20982,7 @@
           "Signal Beam",
           "Drill Run",
           "Seething Cold",
+          "Barrier",
           "Aqua Tail",
           "Protect",
           "Follow Me",
@@ -20977,6 +20992,7 @@
           "Rest",
           "Toxic",
           "Chilling Water",
+          "Breaking Swipe",
           "Icy Wind",
           "Natural Gift",
           "Take Down",
@@ -21159,6 +21175,7 @@
           "Signal Beam",
           "Drill Run",
           "Seething Cold",
+          "Barrier",
           "Aqua Tail",
           "Protect",
           "Follow Me",
@@ -21168,6 +21185,7 @@
           "Rest",
           "Toxic",
           "Chilling Water",
+          "Breaking Swipe",
           "Icy Wind",
           "Natural Gift",
           "Take Down",
@@ -22033,6 +22051,7 @@
           "Giga Impact"
         ],
         "tutors": [
+          "Torment",
           "Seething Cold",
           "Thunder Punch",
           "Fire Punch",
@@ -22213,6 +22232,7 @@
           "Giga Impact"
         ],
         "tutors": [
+          "Torment",
           "Seething Cold",
           "Thunder Punch",
           "Fire Punch",
@@ -22407,6 +22427,7 @@
           "Giga Impact"
         ],
         "tutors": [
+          "Torment",
           "Seething Cold",
           "Thunder Punch",
           "Fire Punch",
@@ -23137,8 +23158,6 @@
           "Dive"
         ],
         "tutors": [
-          "Skitter Smack",
-          "Dual Chop",
           "Iron Head",
           "Drill Run",
           "Low Kick",
@@ -23322,8 +23341,6 @@
           "Dive"
         ],
         "tutors": [
-          "Skitter Smack",
-          "Dual Chop",
           "Iron Head",
           "Drill Run",
           "Low Kick",
@@ -23472,6 +23489,7 @@
           "Giga Impact"
         ],
         "tutors": [
+          "Torment",
           "Signal Beam",
           "Iron Head",
           "Drill Run",
@@ -23662,6 +23680,7 @@
           "Giga Impact"
         ],
         "tutors": [
+          "Torment",
           "Signal Beam",
           "Iron Head",
           "Drill Run",
@@ -26032,7 +26051,6 @@
           "Cut"
         ],
         "tutors": [
-          "Skitter Smack",
           "Seed Bomb",
           "Earth Power",
           "Self Destruct",
@@ -27498,6 +27516,7 @@
         "tutors": [
           "Seed Bomb",
           "Skill Swap",
+          "Torment",
           "Psychic Noise",
           "Low Kick",
           "Thunder Punch",
@@ -27670,8 +27689,7 @@
           "Cut"
         ],
         "tutors": [
-          "Skitter Smack",
-          "Dual Chop",
+          "U-Turn",
           "Signal Beam",
           "Iron Head",
           "Low Kick",
@@ -28003,7 +28021,7 @@
           "Strength"
         ],
         "tutors": [
-          "Dual Chop",
+          "Torment",
           "Low Kick",
           "Thunder Punch",
           "Fire Punch",
@@ -28171,7 +28189,7 @@
           "Strength"
         ],
         "tutors": [
-          "Dual Chop",
+          "Torment",
           "Low Kick",
           "Cross Poison",
           "Thunder Punch",
@@ -28360,8 +28378,7 @@
           "Strength"
         ],
         "tutors": [
-          "Skitter Smack",
-          "Dual Chop",
+          "U-Turn",
           "Signal Beam",
           "Iron Head",
           "Drill Run",
@@ -30391,7 +30408,6 @@
           "Dive"
         ],
         "tutors": [
-          "Dual Chop",
           "Drill Run",
           "Low Kick",
           "Seething Cold",
@@ -30596,7 +30612,6 @@
           "Dive"
         ],
         "tutors": [
-          "Dual Chop",
           "Drill Run",
           "Low Kick",
           "Seething Cold",
@@ -30779,6 +30794,7 @@
           "Strength"
         ],
         "tutors": [
+          "Torment",
           "Iron Head",
           "Earth Power",
           "Zen Headbutt",
@@ -31490,7 +31506,6 @@
         ],
         "tutors": [
           "Draco Meteor",
-          "Dual Chop",
           "Iron Head",
           "Bounce",
           "Barrier",
@@ -31670,7 +31685,6 @@
         ],
         "tutors": [
           "Draco Meteor",
-          "Dual Chop",
           "Iron Head",
           "Bounce",
           "Barrier",
@@ -31873,7 +31887,6 @@
         ],
         "tutors": [
           "Draco Meteor",
-          "Dual Chop",
           "Iron Head",
           "Bounce",
           "Barrier",
@@ -32272,10 +32285,10 @@
           "Dive"
         ],
         "tutors": [
-          "Skitter Smack",
+          "U-Turn",
           "Seed Bomb",
           "Skill Swap",
-          "Dual Chop",
+          "Torment",
           "Signal Beam",
           "Iron Head",
           "Psychic Noise",
@@ -33537,7 +33550,7 @@
         "tutors": [
           "Water Pledge",
           "Hydro Cannon",
-          "Dual Chop",
+          "Torment",
           "Iron Head",
           "Low Kick",
           "Seething Cold",
@@ -33734,7 +33747,7 @@
         "tutors": [
           "Water Pledge",
           "Hydro Cannon",
-          "Dual Chop",
+          "Torment",
           "Iron Head",
           "Low Kick",
           "Seething Cold",
@@ -33933,7 +33946,7 @@
         "tutors": [
           "Water Pledge",
           "Hydro Cannon",
-          "Dual Chop",
+          "Torment",
           "Iron Head",
           "Low Kick",
           "Seething Cold",
@@ -34097,6 +34110,7 @@
           "Strength"
         ],
         "tutors": [
+          "U-Turn",
           "Seed Bomb",
           "Skill Swap",
           "Bounce",
@@ -34283,6 +34297,7 @@
           "Strength"
         ],
         "tutors": [
+          "U-Turn",
           "Seed Bomb",
           "Skill Swap",
           "Bounce",
@@ -34791,7 +34806,7 @@
           "Strength"
         ],
         "tutors": [
-          "Skitter Smack",
+          "U-Turn",
           "Signal Beam",
           "Bounce",
           "Low Kick",
@@ -34995,7 +35010,7 @@
           "Strength"
         ],
         "tutors": [
-          "Skitter Smack",
+          "U-Turn",
           "Signal Beam",
           "Bounce",
           "Low Kick",
@@ -35150,7 +35165,6 @@
           "Giga Impact"
         ],
         "tutors": [
-          "Skitter Smack",
           "Signal Beam",
           "Bounce",
           "Cross Poison",
@@ -35318,7 +35332,6 @@
           "Giga Impact"
         ],
         "tutors": [
-          "Skitter Smack",
           "Signal Beam",
           "Bounce",
           "Cross Poison",
@@ -35499,6 +35512,8 @@
           "Fly"
         ],
         "tutors": [
+          "U-Turn",
+          "Torment",
           "Cross Poison",
           "Seething Cold",
           "Zen Headbutt",
@@ -36053,7 +36068,7 @@
           ],
           [
             19,
-            "Draining Kiss"
+            "Double Slap"
           ],
           [
             22,
@@ -36846,6 +36861,7 @@
           "Fly"
         ],
         "tutors": [
+          "U-Turn",
           "Signal Beam",
           "Psychic Noise",
           "Bounce",
@@ -37036,6 +37052,7 @@
           "Fly"
         ],
         "tutors": [
+          "U-Turn",
           "Signal Beam",
           "Psychic Noise",
           "Bounce",
@@ -37199,7 +37216,6 @@
         ],
         "tutors": [
           "Draco Meteor",
-          "Dual Chop",
           "Signal Beam",
           "Thunder Punch",
           "Fire Punch",
@@ -37381,7 +37397,6 @@
         ],
         "tutors": [
           "Draco Meteor",
-          "Dual Chop",
           "Signal Beam",
           "Thunder Punch",
           "Fire Punch",
@@ -37585,7 +37600,6 @@
         ],
         "tutors": [
           "Draco Meteor",
-          "Dual Chop",
           "Signal Beam",
           "Thunder Punch",
           "Fire Punch",
@@ -38712,7 +38726,7 @@
           "Fly"
         ],
         "tutors": [
-          "Skitter Smack",
+          "U-Turn",
           "Seed Bomb",
           "Bounce",
           "Magic Coat",
@@ -38882,7 +38896,7 @@
           "Fly"
         ],
         "tutors": [
-          "Skitter Smack",
+          "U-Turn",
           "Seed Bomb",
           "Bounce",
           "Magic Coat",
@@ -39066,7 +39080,7 @@
           "Fly"
         ],
         "tutors": [
-          "Skitter Smack",
+          "U-Turn",
           "Seed Bomb",
           "Bounce",
           "Magic Coat",
@@ -39212,7 +39226,7 @@
           "Strength"
         ],
         "tutors": [
-          "Skitter Smack",
+          "U-Turn",
           "Seed Bomb",
           "Bounce",
           "Low Kick",
@@ -39714,7 +39728,7 @@
           "Giga Impact"
         ],
         "tutors": [
-          "Skitter Smack",
+          "U-Turn",
           "Signal Beam",
           "Psychic Noise",
           "Bounce",
@@ -40242,6 +40256,7 @@
         ],
         "tutors": [
           "Seed Bomb",
+          "Torment",
           "Signal Beam",
           "Iron Head",
           "Psychic Noise",
@@ -40426,6 +40441,7 @@
         ],
         "tutors": [
           "Seed Bomb",
+          "Torment",
           "Signal Beam",
           "Iron Head",
           "Psychic Noise",
@@ -40613,6 +40629,7 @@
           "Fly"
         ],
         "tutors": [
+          "U-Turn",
           "Seething Cold",
           "Foul Play",
           "Protect",
@@ -41400,6 +41417,7 @@
         ],
         "tutors": [
           "Skill Swap",
+          "Torment",
           "Signal Beam",
           "Iron Head",
           "Psychic Noise",
@@ -41563,7 +41581,6 @@
           "Strength"
         ],
         "tutors": [
-          "Skitter Smack",
           "Seed Bomb",
           "Signal Beam",
           "Iron Head",
@@ -41756,7 +41773,6 @@
           "Strength"
         ],
         "tutors": [
-          "Skitter Smack",
           "Seed Bomb",
           "Signal Beam",
           "Iron Head",
@@ -42127,8 +42143,7 @@
           "Strength"
         ],
         "tutors": [
-          "Skitter Smack",
-          "Dual Chop",
+          "U-Turn",
           "Drill Run",
           "Bounce",
           "Cross Poison",
@@ -42329,6 +42344,7 @@
           "Head Smash",
           "Toxic",
           "Outrage",
+          "Superpower",
           "Screech",
           "Breaking Swipe",
           "Natural Gift",
@@ -43044,8 +43060,7 @@
           "Cut"
         ],
         "tutors": [
-          "Skitter Smack",
-          "Dual Chop",
+          "U-Turn",
           "Signal Beam",
           "Iron Head",
           "Low Kick",
@@ -43211,7 +43226,6 @@
           "Strength"
         ],
         "tutors": [
-          "Skitter Smack",
           "Signal Beam",
           "Earth Power",
           "Self Destruct",
@@ -43389,7 +43403,6 @@
           "Strength"
         ],
         "tutors": [
-          "Skitter Smack",
           "Signal Beam",
           "Iron Head",
           "Drill Run",
@@ -45360,6 +45373,7 @@
           "Fly"
         ],
         "tutors": [
+          "U-Turn",
           "Bounce",
           "Seething Cold",
           "Ice Punch",
@@ -45831,6 +45845,7 @@
         ],
         "tutors": [
           "Skill Swap",
+          "Torment",
           "Foul Play",
           "Protect",
           "Defense Curl",
@@ -46012,6 +46027,7 @@
         ],
         "tutors": [
           "Skill Swap",
+          "Torment",
           "Foul Play",
           "Protect",
           "Defense Curl",
@@ -47124,10 +47140,10 @@
           "Blast Burn",
           "Hydro Cannon",
           "Draco Meteor",
-          "Skitter Smack",
+          "U-Turn",
           "Seed Bomb",
           "Skill Swap",
-          "Dual Chop",
+          "Torment",
           "Signal Beam",
           "Iron Head",
           "Psychic Noise",
@@ -47788,7 +47804,7 @@
           "Strength"
         ],
         "tutors": [
-          "Dual Chop",
+          "Torment",
           "Low Kick",
           "Thunder Punch",
           "Fire Punch",
@@ -47946,7 +47962,7 @@
           "Strength"
         ],
         "tutors": [
-          "Dual Chop",
+          "Torment",
           "Low Kick",
           "Cross Poison",
           "Thunder Punch",
@@ -49903,8 +49919,7 @@
           "Grass Pledge",
           "Frenzy Plant",
           "Draco Meteor",
-          "Skitter Smack",
-          "Dual Chop",
+          "U-Turn",
           "Low Kick",
           "Thunder Punch",
           "Focus Punch",
@@ -50092,8 +50107,7 @@
           "Grass Pledge",
           "Frenzy Plant",
           "Draco Meteor",
-          "Skitter Smack",
-          "Dual Chop",
+          "U-Turn",
           "Low Kick",
           "Thunder Punch",
           "Focus Punch",
@@ -50299,8 +50313,7 @@
           "Grass Pledge",
           "Frenzy Plant",
           "Draco Meteor",
-          "Skitter Smack",
-          "Dual Chop",
+          "U-Turn",
           "Low Kick",
           "Thunder Punch",
           "Focus Punch",
@@ -50465,8 +50478,8 @@
         "tutors": [
           "Fire Pledge",
           "Blast Burn",
-          "Skitter Smack",
-          "Dual Chop",
+          "U-Turn",
+          "Torment",
           "Bounce",
           "Low Kick",
           "Thunder Punch",
@@ -50645,8 +50658,8 @@
         "tutors": [
           "Fire Pledge",
           "Blast Burn",
-          "Skitter Smack",
-          "Dual Chop",
+          "U-Turn",
+          "Torment",
           "Bounce",
           "Low Kick",
           "Thunder Punch",
@@ -50847,8 +50860,8 @@
         "tutors": [
           "Fire Pledge",
           "Blast Burn",
-          "Skitter Smack",
-          "Dual Chop",
+          "U-Turn",
+          "Torment",
           "Bounce",
           "Low Kick",
           "Thunder Punch",
@@ -51515,6 +51528,7 @@
         ],
         "tutors": [
           "Seed Bomb",
+          "Torment",
           "Foul Play",
           "Protect",
           "Iron Tail",
@@ -51681,6 +51695,7 @@
         ],
         "tutors": [
           "Seed Bomb",
+          "Torment",
           "Foul Play",
           "Protect",
           "Iron Tail",
@@ -51821,7 +51836,7 @@
         ],
         "tutors": [
           "Seed Bomb",
-          "Dual Chop",
+          "Torment",
           "Iron Head",
           "Drill Run",
           "Cross Poison",
@@ -51997,7 +52012,7 @@
         ],
         "tutors": [
           "Seed Bomb",
-          "Dual Chop",
+          "Torment",
           "Iron Head",
           "Drill Run",
           "Cross Poison",
@@ -52076,7 +52091,7 @@
           "Hidden Force"
         ],
         "tutors": [
-          "Skitter Smack",
+          "U-Turn",
           "Sweet Scent",
           "Heal Pulse",
           "Toxic",
@@ -52149,7 +52164,7 @@
           "Hidden Force"
         ],
         "tutors": [
-          "Skitter Smack",
+          "U-Turn",
           "Signal Beam",
           "Magic Coat",
           "Barrier",
@@ -52248,7 +52263,7 @@
           ],
           [
             34,
-            "Light Screen"
+            "U-turn"
           ],
           [
             36,
@@ -52323,7 +52338,7 @@
           "Fly"
         ],
         "tutors": [
-          "Skitter Smack",
+          "U-Turn",
           "Signal Beam",
           "Magic Coat",
           "Barrier",
@@ -52405,7 +52420,7 @@
           "Hidden Force"
         ],
         "tutors": [
-          "Skitter Smack",
+          "U-Turn",
           "Signal Beam",
           "Cross Poison",
           "Magic Coat",
@@ -52504,7 +52519,7 @@
           ],
           [
             34,
-            "Light Screen"
+            "U-turn"
           ],
           [
             36,
@@ -52578,7 +52593,7 @@
           "Giga Impact"
         ],
         "tutors": [
-          "Skitter Smack",
+          "U-Turn",
           "Signal Beam",
           "Cross Poison",
           "Magic Coat",
@@ -53741,6 +53756,7 @@
           "Fly"
         ],
         "tutors": [
+          "U-Turn",
           "Psychic Noise",
           "Protect",
           "Iron Tail",
@@ -53902,6 +53918,7 @@
           "Fly"
         ],
         "tutors": [
+          "U-Turn",
           "Psychic Noise",
           "Protect",
           "Iron Tail",
@@ -54065,6 +54082,7 @@
           "Dive"
         ],
         "tutors": [
+          "U-Turn",
           "Bounce",
           "Seething Cold",
           "Gastro Acid",
@@ -54250,6 +54268,7 @@
           "Dive"
         ],
         "tutors": [
+          "U-Turn",
           "Bounce",
           "Seething Cold",
           "Gastro Acid",
@@ -54403,6 +54422,7 @@
         ],
         "tutors": [
           "Skill Swap",
+          "Torment",
           "Signal Beam",
           "Psychic Noise",
           "Thunder Punch",
@@ -54575,6 +54595,7 @@
         ],
         "tutors": [
           "Skill Swap",
+          "Torment",
           "Signal Beam",
           "Psychic Noise",
           "Thunder Punch",
@@ -54776,6 +54797,7 @@
         ],
         "tutors": [
           "Skill Swap",
+          "Torment",
           "Signal Beam",
           "Psychic Noise",
           "Thunder Punch",
@@ -54909,7 +54931,7 @@
           "Dive"
         ],
         "tutors": [
-          "Skitter Smack",
+          "U-Turn",
           "Signal Beam",
           "Sweet Scent",
           "Aqua Tail",
@@ -55099,7 +55121,7 @@
           "Dive"
         ],
         "tutors": [
-          "Skitter Smack",
+          "U-Turn",
           "Signal Beam",
           "Sweet Scent",
           "Aqua Tail",
@@ -55236,7 +55258,7 @@
         ],
         "tutors": [
           "Seed Bomb",
-          "Dual Chop",
+          "Torment",
           "Bounce",
           "Thunder Punch",
           "Zen Headbutt",
@@ -55428,7 +55450,7 @@
         ],
         "tutors": [
           "Seed Bomb",
-          "Dual Chop",
+          "Torment",
           "Bounce",
           "Thunder Punch",
           "Zen Headbutt",
@@ -56081,8 +56103,8 @@
           "Fly"
         ],
         "tutors": [
-          "Skitter Smack",
-          "Dual Chop",
+          "U-Turn",
+          "Torment",
           "Signal Beam",
           "Drill Run",
           "Earth Power",
@@ -56243,8 +56265,8 @@
           "Fly"
         ],
         "tutors": [
-          "Skitter Smack",
-          "Dual Chop",
+          "U-Turn",
+          "Torment",
           "Signal Beam",
           "Drill Run",
           "Cross Poison",
@@ -56401,8 +56423,8 @@
           "Fly"
         ],
         "tutors": [
-          "Skitter Smack",
-          "Dual Chop",
+          "U-Turn",
+          "Torment",
           "Signal Beam",
           "Drill Run",
           "Cross Poison",
@@ -57751,6 +57773,7 @@
           "Strength"
         ],
         "tutors": [
+          "U-Turn",
           "Seed Bomb",
           "Skill Swap",
           "Psychic Noise",
@@ -57955,6 +57978,7 @@
           "Strength"
         ],
         "tutors": [
+          "U-Turn",
           "Seed Bomb",
           "Skill Swap",
           "Psychic Noise",
@@ -58147,7 +58171,7 @@
           "Cut"
         ],
         "tutors": [
-          "Dual Chop",
+          "Torment",
           "Low Kick",
           "Cross Poison",
           "Seething Cold",
@@ -58510,7 +58534,7 @@
         ],
         "tutors": [
           "Draco Meteor",
-          "Dual Chop",
+          "Torment",
           "Iron Head",
           "Low Kick",
           "Thunder Punch",
@@ -58710,7 +58734,7 @@
         ],
         "tutors": [
           "Draco Meteor",
-          "Dual Chop",
+          "Torment",
           "Iron Head",
           "Low Kick",
           "Thunder Punch",
@@ -58924,7 +58948,7 @@
         ],
         "tutors": [
           "Draco Meteor",
-          "Dual Chop",
+          "Torment",
           "Iron Head",
           "Low Kick",
           "Thunder Punch",
@@ -60182,7 +60206,7 @@
           "Giga Impact"
         ],
         "tutors": [
-          "Skitter Smack",
+          "U-Turn",
           "Signal Beam",
           "Thunder Punch",
           "Ice Punch",
@@ -60366,7 +60390,7 @@
           "Giga Impact"
         ],
         "tutors": [
-          "Skitter Smack",
+          "U-Turn",
           "Signal Beam",
           "Thunder Punch",
           "Ice Punch",
@@ -62837,7 +62861,7 @@
         ],
         "tutors": [
           "Draco Meteor",
-          "Skitter Smack",
+          "U-Turn",
           "Signal Beam",
           "Iron Head",
           "Psychic Noise",
@@ -63026,7 +63050,7 @@
         ],
         "tutors": [
           "Draco Meteor",
-          "Skitter Smack",
+          "U-Turn",
           "Signal Beam",
           "Iron Head",
           "Psychic Noise",
@@ -63233,7 +63257,7 @@
         ],
         "tutors": [
           "Draco Meteor",
-          "Skitter Smack",
+          "U-Turn",
           "Signal Beam",
           "Iron Head",
           "Psychic Noise",
@@ -64179,8 +64203,7 @@
           "Strength"
         ],
         "tutors": [
-          "Skitter Smack",
-          "Dual Chop",
+          "Torment",
           "Iron Head",
           "Low Kick",
           "Cross Poison",
@@ -64375,8 +64398,7 @@
           "Strength"
         ],
         "tutors": [
-          "Skitter Smack",
-          "Dual Chop",
+          "Torment",
           "Cross Poison",
           "Seething Cold",
           "Foul Play",
@@ -65289,7 +65311,7 @@
           "Dive"
         ],
         "tutors": [
-          "Dual Chop",
+          "Torment",
           "Iron Head",
           "Ice Punch",
           "Zen Headbutt",
@@ -65486,7 +65508,7 @@
           "Dive"
         ],
         "tutors": [
-          "Dual Chop",
+          "Torment",
           "Iron Head",
           "Ice Punch",
           "Zen Headbutt",
@@ -66344,8 +66366,6 @@
           "Strength"
         ],
         "tutors": [
-          "Skitter Smack",
-          "Dual Chop",
           "Signal Beam",
           "Iron Head",
           "Drill Run",
@@ -66542,8 +66562,6 @@
           "Strength"
         ],
         "tutors": [
-          "Skitter Smack",
-          "Dual Chop",
           "Signal Beam",
           "Iron Head",
           "Drill Run",
@@ -67222,7 +67240,7 @@
         "tutors": [
           "Draco Meteor",
           "Skill Swap",
-          "Dual Chop",
+          "Torment",
           "Iron Head",
           "Low Kick",
           "Cross Poison",
@@ -67379,7 +67397,11 @@
         ],
         "tutors": [
           "Skill Swap",
+          "Torment",
           "Seething Cold",
+          "Thunder Punch",
+          "Fire Punch",
+          "Ice Punch",
           "Magic Coat",
           "Foul Play",
           "Self Destruct",
@@ -67563,11 +67585,16 @@
         ],
         "tutors": [
           "Skill Swap",
+          "Torment",
           "Seething Cold",
+          "Thunder Punch",
+          "Fire Punch",
+          "Ice Punch",
           "Magic Coat",
           "Foul Play",
           "Self Destruct",
           "Explosion",
+          "Focus Punch",
           "Protect",
           "Double-Edge",
           "Helping Hand",
@@ -68154,11 +68181,11 @@
           ],
           [
             22,
-            "Draining Kiss"
+            "Psywave"
           ],
           [
             26,
-            "Refresh"
+            "Draining Kiss"
           ],
           [
             29,
@@ -68448,7 +68475,7 @@
           "Strength"
         ],
         "tutors": [
-          "Skitter Smack",
+          "Torment",
           "Iron Head",
           "Drill Run",
           "Bounce",
@@ -69523,7 +69550,7 @@
           "Dive"
         ],
         "tutors": [
-          "Dual Chop",
+          "Torment",
           "Iron Head",
           "Bounce",
           "Cross Poison",
@@ -69718,7 +69745,7 @@
           "Dive"
         ],
         "tutors": [
-          "Dual Chop",
+          "Torment",
           "Iron Head",
           "Bounce",
           "Cross Poison",
@@ -69909,7 +69936,7 @@
           "Dive"
         ],
         "tutors": [
-          "Dual Chop",
+          "Torment",
           "Iron Head",
           "Bounce",
           "Cross Poison",
@@ -70398,7 +70425,6 @@
         ],
         "tutors": [
           "Draco Meteor",
-          "Dual Chop",
           "Iron Head",
           "Aqua Tail",
           "Protect",
@@ -70560,7 +70586,6 @@
         ],
         "tutors": [
           "Draco Meteor",
-          "Dual Chop",
           "Iron Head",
           "Aqua Tail",
           "Protect",
@@ -70753,7 +70778,6 @@
         ],
         "tutors": [
           "Draco Meteor",
-          "Dual Chop",
           "Iron Head",
           "Aqua Tail",
           "Protect",
@@ -73366,8 +73390,9 @@
         "tutors": [
           "Fire Pledge",
           "Blast Burn",
+          "U-Turn",
           "Seed Bomb",
-          "Dual Chop",
+          "Torment",
           "Low Kick",
           "Cross Poison",
           "Thunder Punch",
@@ -73556,8 +73581,9 @@
         "tutors": [
           "Fire Pledge",
           "Blast Burn",
+          "U-Turn",
           "Seed Bomb",
-          "Dual Chop",
+          "Torment",
           "Low Kick",
           "Cross Poison",
           "Thunder Punch",
@@ -73764,8 +73790,9 @@
         "tutors": [
           "Fire Pledge",
           "Blast Burn",
+          "U-Turn",
           "Seed Bomb",
-          "Dual Chop",
+          "Torment",
           "Low Kick",
           "Cross Poison",
           "Thunder Punch",
@@ -74416,11 +74443,14 @@
           "Strength"
         ],
         "tutors": [
+          "U-Turn",
           "Protect",
           "Double-Edge",
           "Helping Hand",
           "Rest",
+          "Head Smash",
           "Toxic",
+          "Superpower",
           "Roost",
           "Defog",
           "Low Sweep",
@@ -74562,11 +74592,14 @@
           "Strength"
         ],
         "tutors": [
+          "U-Turn",
           "Protect",
           "Double-Edge",
           "Helping Hand",
           "Rest",
+          "Head Smash",
           "Toxic",
+          "Superpower",
           "Roost",
           "Defog",
           "Low Sweep",
@@ -74722,11 +74755,14 @@
           "Strength"
         ],
         "tutors": [
+          "U-Turn",
           "Protect",
           "Double-Edge",
           "Helping Hand",
           "Rest",
+          "Head Smash",
           "Toxic",
+          "Superpower",
           "Roost",
           "Defog",
           "Low Sweep",
@@ -75180,8 +75216,8 @@
           "Strength"
         ],
         "tutors": [
-          "Skitter Smack",
-          "Dual Chop",
+          "U-Turn",
+          "Torment",
           "Signal Beam",
           "Psychic Noise",
           "Cross Poison",
@@ -75359,8 +75395,8 @@
           "Strength"
         ],
         "tutors": [
-          "Skitter Smack",
-          "Dual Chop",
+          "U-Turn",
+          "Torment",
           "Signal Beam",
           "Psychic Noise",
           "Cross Poison",
@@ -77166,7 +77202,7 @@
           "Giga Impact"
         ],
         "tutors": [
-          "Skitter Smack",
+          "U-Turn",
           "Signal Beam",
           "Iron Head",
           "Psychic Noise",
@@ -77336,7 +77372,7 @@
           "Fly"
         ],
         "tutors": [
-          "Skitter Smack",
+          "U-Turn",
           "Signal Beam",
           "Seething Cold",
           "Sweet Scent",
@@ -77473,7 +77509,7 @@
           "Fly"
         ],
         "tutors": [
-          "Skitter Smack",
+          "U-Turn",
           "Signal Beam",
           "Seething Cold",
           "Sweet Scent",
@@ -77660,7 +77696,7 @@
           "Strength"
         ],
         "tutors": [
-          "Skitter Smack",
+          "U-Turn",
           "Signal Beam",
           "Seething Cold",
           "Sweet Scent",
@@ -77826,6 +77862,7 @@
           "Cut"
         ],
         "tutors": [
+          "U-Turn",
           "Seed Bomb",
           "Psychic Noise",
           "Thunder Punch",
@@ -77971,7 +78008,8 @@
           "Dive"
         ],
         "tutors": [
-          "Dual Chop",
+          "U-Turn",
+          "Torment",
           "Low Kick",
           "Ice Punch",
           "Focus Punch",
@@ -78159,7 +78197,8 @@
           "Dive"
         ],
         "tutors": [
-          "Dual Chop",
+          "U-Turn",
+          "Torment",
           "Low Kick",
           "Ice Punch",
           "Focus Punch",
@@ -78311,6 +78350,7 @@
           "Strength"
         ],
         "tutors": [
+          "U-Turn",
           "Seed Bomb",
           "Fire Punch",
           "Earth Power",
@@ -78498,6 +78538,7 @@
           "Strength"
         ],
         "tutors": [
+          "U-Turn",
           "Seed Bomb",
           "Fire Punch",
           "Earth Power",
@@ -79002,7 +79043,7 @@
           "Strength"
         ],
         "tutors": [
-          "Skitter Smack",
+          "U-Turn",
           "Seed Bomb",
           "Bounce",
           "Low Kick",
@@ -79182,6 +79223,7 @@
           "Fly"
         ],
         "tutors": [
+          "U-Turn",
           "Seething Cold",
           "Self Destruct",
           "Explosion",
@@ -79372,6 +79414,7 @@
           "Fly"
         ],
         "tutors": [
+          "U-Turn",
           "Seething Cold",
           "Self Destruct",
           "Explosion",
@@ -79528,6 +79571,7 @@
           "Strength"
         ],
         "tutors": [
+          "U-Turn",
           "Bounce",
           "Low Kick",
           "Thunder Punch",
@@ -79722,6 +79766,7 @@
           "Strength"
         ],
         "tutors": [
+          "U-Turn",
           "Bounce",
           "Low Kick",
           "Thunder Punch",
@@ -80072,6 +80117,7 @@
           "Fly"
         ],
         "tutors": [
+          "U-Turn",
           "Seething Cold",
           "Foul Play",
           "Protect",
@@ -80225,8 +80271,10 @@
           "Strength"
         ],
         "tutors": [
+          "U-Turn",
           "Seed Bomb",
           "Skill Swap",
+          "Torment",
           "Foul Play",
           "Protect",
           "Iron Tail",
@@ -80405,8 +80453,10 @@
           "Strength"
         ],
         "tutors": [
+          "U-Turn",
           "Seed Bomb",
           "Skill Swap",
+          "Torment",
           "Foul Play",
           "Protect",
           "Iron Tail",
@@ -80491,7 +80541,7 @@
           ],
           [
             22,
-            "Draining Kiss"
+            "Psywave"
           ]
         ],
         "tms": [
@@ -80710,6 +80760,7 @@
           "Strength"
         ],
         "tutors": [
+          "Torment",
           "Cross Poison",
           "Seething Cold",
           "Foul Play",
@@ -80898,6 +80949,7 @@
           "Strength"
         ],
         "tutors": [
+          "Torment",
           "Cross Poison",
           "Seething Cold",
           "Foul Play",
@@ -81941,6 +81993,8 @@
           "Fly"
         ],
         "tutors": [
+          "U-Turn",
+          "Torment",
           "Psychic Noise",
           "Protect",
           "Follow Me",
@@ -82097,6 +82151,7 @@
           "Giga Impact"
         ],
         "tutors": [
+          "Torment",
           "Seething Cold",
           "Foul Play",
           "Zen Headbutt",
@@ -82235,7 +82290,7 @@
         ],
         "tutors": [
           "Draco Meteor",
-          "Dual Chop",
+          "Torment",
           "Iron Head",
           "Drill Run",
           "Earth Power",
@@ -82405,7 +82460,7 @@
         ],
         "tutors": [
           "Draco Meteor",
-          "Dual Chop",
+          "Torment",
           "Iron Head",
           "Drill Run",
           "Earth Power",
@@ -82589,7 +82644,7 @@
         ],
         "tutors": [
           "Draco Meteor",
-          "Dual Chop",
+          "Torment",
           "Iron Head",
           "Drill Run",
           "Earth Power",
@@ -82899,7 +82954,7 @@
           "Strength"
         ],
         "tutors": [
-          "Dual Chop",
+          "Torment",
           "Iron Head",
           "Low Kick",
           "Thunder Punch",
@@ -83098,7 +83153,7 @@
           "Strength"
         ],
         "tutors": [
-          "Dual Chop",
+          "Torment",
           "Iron Head",
           "Low Kick",
           "Thunder Punch",
@@ -83584,7 +83639,6 @@
           "Strength"
         ],
         "tutors": [
-          "Skitter Smack",
           "Cross Poison",
           "Aqua Tail",
           "Protect",
@@ -83771,7 +83825,6 @@
           "Strength"
         ],
         "tutors": [
-          "Skitter Smack",
           "Cross Poison",
           "Aqua Tail",
           "Protect",
@@ -83944,7 +83997,7 @@
           "Strength"
         ],
         "tutors": [
-          "Dual Chop",
+          "Torment",
           "Bounce",
           "Low Kick",
           "Cross Poison",
@@ -84145,7 +84198,7 @@
           "Strength"
         ],
         "tutors": [
-          "Dual Chop",
+          "Torment",
           "Bounce",
           "Low Kick",
           "Cross Poison",
@@ -84333,7 +84386,7 @@
           "Strength"
         ],
         "tutors": [
-          "Skitter Smack",
+          "U-Turn",
           "Iron Head",
           "Bounce",
           "Foul Play",
@@ -85385,6 +85438,7 @@
           "Strength"
         ],
         "tutors": [
+          "Torment",
           "Low Kick",
           "Seething Cold",
           "Ice Punch",
@@ -86116,7 +86170,6 @@
           "Cut"
         ],
         "tutors": [
-          "Skitter Smack",
           "Seed Bomb",
           "Earth Power",
           "Self Destruct",
@@ -86289,7 +86342,7 @@
           "Strength"
         ],
         "tutors": [
-          "Dual Chop",
+          "Torment",
           "Low Kick",
           "Thunder Punch",
           "Fire Punch",
@@ -86464,7 +86517,7 @@
           "Strength"
         ],
         "tutors": [
-          "Dual Chop",
+          "Torment",
           "Low Kick",
           "Cross Poison",
           "Thunder Punch",
@@ -86813,7 +86866,7 @@
           "Giga Impact"
         ],
         "tutors": [
-          "Skitter Smack",
+          "U-Turn",
           "Signal Beam",
           "Psychic Noise",
           "Bounce",
@@ -87383,8 +87436,8 @@
           "Strength"
         ],
         "tutors": [
-          "Skitter Smack",
-          "Dual Chop",
+          "U-Turn",
+          "Torment",
           "Drill Run",
           "Bounce",
           "Cross Poison",
@@ -89530,7 +89583,7 @@
           "Strength"
         ],
         "tutors": [
-          "Skitter Smack",
+          "U-Turn",
           "Iron Head",
           "Seething Cold",
           "Earth Power",
@@ -90805,6 +90858,7 @@
           "Rock Smash"
         ],
         "tutors": [
+          "U-Turn",
           "Signal Beam",
           "Bounce",
           "Seething Cold",
@@ -90958,6 +91012,7 @@
           "Frenzy Plant",
           "Draco Meteor",
           "Seed Bomb",
+          "Torment",
           "Seething Cold",
           "Earth Power",
           "Sweet Scent",
@@ -91149,6 +91204,7 @@
           "Frenzy Plant",
           "Draco Meteor",
           "Seed Bomb",
+          "Torment",
           "Seething Cold",
           "Earth Power",
           "Sweet Scent",
@@ -91362,6 +91418,7 @@
           "Frenzy Plant",
           "Draco Meteor",
           "Seed Bomb",
+          "Torment",
           "Seething Cold",
           "Earth Power",
           "Sweet Scent",
@@ -92125,7 +92182,7 @@
         "tutors": [
           "Water Pledge",
           "Hydro Cannon",
-          "Dual Chop",
+          "Torment",
           "Drill Run",
           "Low Kick",
           "Seething Cold",
@@ -92321,7 +92378,7 @@
         "tutors": [
           "Water Pledge",
           "Hydro Cannon",
-          "Dual Chop",
+          "Torment",
           "Drill Run",
           "Low Kick",
           "Seething Cold",
@@ -92535,7 +92592,7 @@
         "tutors": [
           "Water Pledge",
           "Hydro Cannon",
-          "Dual Chop",
+          "Torment",
           "Drill Run",
           "Low Kick",
           "Seething Cold",
@@ -93508,7 +93565,9 @@
           "Cut"
         ],
         "tutors": [
+          "U-Turn",
           "Seed Bomb",
+          "Torment",
           "Cross Poison",
           "Seething Cold",
           "Foul Play",
@@ -93691,7 +93750,9 @@
           "Cut"
         ],
         "tutors": [
+          "U-Turn",
           "Seed Bomb",
+          "Torment",
           "Cross Poison",
           "Seething Cold",
           "Foul Play",
@@ -93851,6 +93912,7 @@
         ],
         "tutors": [
           "Seed Bomb",
+          "Torment",
           "Low Kick",
           "Thunder Punch",
           "Earth Power",
@@ -94040,6 +94102,7 @@
         ],
         "tutors": [
           "Seed Bomb",
+          "Torment",
           "Low Kick",
           "Thunder Punch",
           "Earth Power",
@@ -94218,6 +94281,7 @@
           "Strength"
         ],
         "tutors": [
+          "Torment",
           "Low Kick",
           "Fire Punch",
           "Earth Power",
@@ -94409,6 +94473,7 @@
           "Strength"
         ],
         "tutors": [
+          "Torment",
           "Low Kick",
           "Fire Punch",
           "Earth Power",
@@ -94587,6 +94652,7 @@
         ],
         "tutors": [
           "Seed Bomb",
+          "Torment",
           "Low Kick",
           "Ice Punch",
           "Earth Power",
@@ -94779,6 +94845,7 @@
         ],
         "tutors": [
           "Seed Bomb",
+          "Torment",
           "Low Kick",
           "Ice Punch",
           "Earth Power",
@@ -95313,6 +95380,7 @@
           "Strength"
         ],
         "tutors": [
+          "U-Turn",
           "Protect",
           "Iron Tail",
           "Double-Edge",
@@ -95471,6 +95539,7 @@
           "Strength"
         ],
         "tutors": [
+          "U-Turn",
           "Protect",
           "Iron Tail",
           "Double-Edge",
@@ -95647,6 +95716,7 @@
           "Strength"
         ],
         "tutors": [
+          "U-Turn",
           "Protect",
           "Iron Tail",
           "Double-Edge",
@@ -95806,6 +95876,7 @@
           "Giga Impact"
         ],
         "tutors": [
+          "Torment",
           "Signal Beam",
           "Bounce",
           "Low Kick",
@@ -96002,6 +96073,7 @@
           "Giga Impact"
         ],
         "tutors": [
+          "Torment",
           "Signal Beam",
           "Bounce",
           "Low Kick",
@@ -96676,7 +96748,9 @@
           "Fly"
         ],
         "tutors": [
+          "U-Turn",
           "Skill Swap",
+          "Torment",
           "Signal Beam",
           "Magic Coat",
           "Aqua Tail",
@@ -96873,7 +96947,9 @@
           "Fly"
         ],
         "tutors": [
+          "U-Turn",
           "Skill Swap",
+          "Torment",
           "Signal Beam",
           "Magic Coat",
           "Aqua Tail",
@@ -97044,10 +97120,13 @@
           "Self Destruct",
           "Explosion",
           "Protect",
+          "Defense Curl",
           "Double-Edge",
           "Helping Hand",
           "Rest",
+          "Head Smash",
           "Toxic",
+          "Superpower",
           "Screech",
           "Low Sweep",
           "Natural Gift",
@@ -97220,10 +97299,13 @@
           "Self Destruct",
           "Explosion",
           "Protect",
+          "Defense Curl",
           "Double-Edge",
           "Helping Hand",
           "Rest",
+          "Head Smash",
           "Toxic",
+          "Superpower",
           "Screech",
           "Low Sweep",
           "Natural Gift",
@@ -98913,12 +98995,13 @@
           "Endure",
           "Poison Jab",
           "Grass Knot",
+          "U-turn",
           "Solar Blade",
           "Giga Impact",
           "Cut"
         ],
         "tutors": [
-          "Skitter Smack",
+          "U-Turn",
           "Seed Bomb",
           "Signal Beam",
           "Cross Poison",
@@ -99066,12 +99149,13 @@
           "Endure",
           "Poison Jab",
           "Grass Knot",
+          "U-turn",
           "Solar Blade",
           "Giga Impact",
           "Cut"
         ],
         "tutors": [
-          "Skitter Smack",
+          "U-Turn",
           "Seed Bomb",
           "Signal Beam",
           "Cross Poison",
@@ -99264,12 +99348,13 @@
           "Endure",
           "Poison Jab",
           "Grass Knot",
+          "U-turn",
           "Solar Blade",
           "Giga Impact",
           "Cut"
         ],
         "tutors": [
-          "Skitter Smack",
+          "U-Turn",
           "Seed Bomb",
           "Signal Beam",
           "Cross Poison",
@@ -99419,7 +99504,6 @@
           "Strength"
         ],
         "tutors": [
-          "Skitter Smack",
           "Aqua Tail",
           "Protect",
           "Iron Tail",
@@ -99584,7 +99668,6 @@
           "Strength"
         ],
         "tutors": [
-          "Skitter Smack",
           "Aqua Tail",
           "Protect",
           "Iron Tail",
@@ -99771,7 +99854,6 @@
           "Strength"
         ],
         "tutors": [
-          "Skitter Smack",
           "Aqua Tail",
           "Protect",
           "Iron Tail",
@@ -99941,7 +100023,9 @@
           "Fly"
         ],
         "tutors": [
+          "U-Turn",
           "Seed Bomb",
+          "Torment",
           "Sweet Scent",
           "Protect",
           "Follow Me",
@@ -100141,7 +100225,9 @@
           "Fly"
         ],
         "tutors": [
+          "U-Turn",
           "Seed Bomb",
+          "Torment",
           "Sweet Scent",
           "Protect",
           "Follow Me",
@@ -100842,6 +100928,7 @@
           "Strength"
         ],
         "tutors": [
+          "Torment",
           "Drill Run",
           "Low Kick",
           "Earth Power",
@@ -101024,6 +101111,7 @@
           "Strength"
         ],
         "tutors": [
+          "Torment",
           "Drill Run",
           "Low Kick",
           "Earth Power",
@@ -101220,6 +101308,7 @@
           "Strength"
         ],
         "tutors": [
+          "Torment",
           "Drill Run",
           "Low Kick",
           "Earth Power",
@@ -101396,6 +101485,7 @@
           "Strength"
         ],
         "tutors": [
+          "U-Turn",
           "Fire Punch",
           "Earth Power",
           "Focus Punch",
@@ -101594,6 +101684,7 @@
           "Strength"
         ],
         "tutors": [
+          "U-Turn",
           "Fire Punch",
           "Earth Power",
           "Focus Punch",
@@ -101773,7 +101864,7 @@
           "Giga Impact"
         ],
         "tutors": [
-          "Skitter Smack",
+          "U-Turn",
           "Psychic Noise",
           "Bounce",
           "Thunder Punch",
@@ -101952,7 +102043,7 @@
           "Strength"
         ],
         "tutors": [
-          "Skitter Smack",
+          "U-Turn",
           "Earth Power",
           "Self Destruct",
           "Explosion",
@@ -102134,7 +102225,7 @@
           "Strength"
         ],
         "tutors": [
-          "Skitter Smack",
+          "U-Turn",
           "Earth Power",
           "Self Destruct",
           "Explosion",
@@ -102307,7 +102398,7 @@
           "Strength"
         ],
         "tutors": [
-          "Dual Chop",
+          "Torment",
           "Iron Head",
           "Low Kick",
           "Thunder Punch",
@@ -102498,7 +102589,7 @@
           "Strength"
         ],
         "tutors": [
-          "Dual Chop",
+          "Torment",
           "Iron Head",
           "Low Kick",
           "Thunder Punch",
@@ -103580,8 +103671,10 @@
           "Strength"
         ],
         "tutors": [
+          "U-Turn",
           "Bounce",
           "Earth Power",
+          "Zen Headbutt",
           "Aqua Tail",
           "Protect",
           "Iron Tail",
@@ -103765,8 +103858,10 @@
           "Strength"
         ],
         "tutors": [
+          "U-Turn",
           "Bounce",
           "Earth Power",
+          "Zen Headbutt",
           "Aqua Tail",
           "Protect",
           "Iron Tail",
@@ -104285,7 +104380,9 @@
           "Cut"
         ],
         "tutors": [
+          "U-Turn",
           "Seed Bomb",
+          "Torment",
           "Bounce",
           "Low Kick",
           "Seething Cold",
@@ -104467,7 +104564,9 @@
           "Cut"
         ],
         "tutors": [
+          "U-Turn",
           "Seed Bomb",
+          "Torment",
           "Bounce",
           "Low Kick",
           "Seething Cold",
@@ -104631,15 +104730,26 @@
           "Strength"
         ],
         "tutors": [
+          "U-Turn",
           "Seed Bomb",
+          "Torment",
+          "Bounce",
+          "Low Kick",
+          "Foul Play",
+          "Sweet Scent",
           "Aqua Tail",
           "Protect",
           "Follow Me",
           "Iron Tail",
           "Double-Edge",
+          "Heal Pulse",
+          "Lucky Chant",
           "Helping Hand",
+          "Healing Wish",
           "Rest",
           "Toxic",
+          "Fake Tears",
+          "Screech",
           "Icy Wind",
           "Natural Gift",
           "Take Down",
@@ -104808,15 +104918,26 @@
           "Strength"
         ],
         "tutors": [
+          "U-Turn",
           "Seed Bomb",
+          "Torment",
+          "Bounce",
+          "Low Kick",
+          "Foul Play",
+          "Sweet Scent",
           "Aqua Tail",
           "Protect",
           "Follow Me",
           "Iron Tail",
           "Double-Edge",
+          "Heal Pulse",
+          "Lucky Chant",
           "Helping Hand",
+          "Healing Wish",
           "Rest",
           "Toxic",
+          "Fake Tears",
+          "Screech",
           "Icy Wind",
           "Natural Gift",
           "Take Down",
@@ -104965,6 +105086,7 @@
         ],
         "tutors": [
           "Skill Swap",
+          "Torment",
           "Signal Beam",
           "Psychic Noise",
           "Seething Cold",
@@ -105135,6 +105257,7 @@
         ],
         "tutors": [
           "Skill Swap",
+          "Torment",
           "Signal Beam",
           "Psychic Noise",
           "Seething Cold",
@@ -105326,6 +105449,7 @@
         ],
         "tutors": [
           "Skill Swap",
+          "Torment",
           "Signal Beam",
           "Psychic Noise",
           "Seething Cold",
@@ -107280,6 +107404,7 @@
           "Cut"
         ],
         "tutors": [
+          "U-Turn",
           "Seed Bomb",
           "Signal Beam",
           "Protect",
@@ -107424,14 +107549,20 @@
           "Cut"
         ],
         "tutors": [
-          "Skitter Smack",
           "Iron Head",
           "Drill Run",
+          "Self Destruct",
+          "Explosion",
           "Protect",
+          "Defense Curl",
+          "Iron Tail",
+          "Double-Edge",
           "Helping Hand",
           "Rest",
           "Toxic",
+          "Screech",
           "Struggle Bug",
+          "Natural Gift",
           "Take Down"
         ]
       },
@@ -107594,14 +107725,20 @@
           "Cut"
         ],
         "tutors": [
-          "Skitter Smack",
           "Iron Head",
           "Drill Run",
+          "Self Destruct",
+          "Explosion",
           "Protect",
+          "Defense Curl",
+          "Iron Tail",
+          "Double-Edge",
           "Helping Hand",
           "Rest",
           "Toxic",
+          "Screech",
           "Struggle Bug",
+          "Natural Gift",
           "Take Down"
         ]
       },
@@ -107751,6 +107888,7 @@
         ],
         "tutors": [
           "Seed Bomb",
+          "Torment",
           "Psychic Noise",
           "Foul Play",
           "Sweet Scent",
@@ -107929,6 +108067,7 @@
         ],
         "tutors": [
           "Seed Bomb",
+          "Torment",
           "Psychic Noise",
           "Foul Play",
           "Sweet Scent",
@@ -108082,6 +108221,8 @@
           "Dive"
         ],
         "tutors": [
+          "Torment",
+          "Signal Beam",
           "Seething Cold",
           "Magic Coat",
           "Self Destruct",
@@ -108265,6 +108406,8 @@
           "Dive"
         ],
         "tutors": [
+          "Torment",
+          "Signal Beam",
           "Seething Cold",
           "Magic Coat",
           "Self Destruct",
@@ -108426,6 +108569,7 @@
           "Dive"
         ],
         "tutors": [
+          "U-Turn",
           "Bounce",
           "Seething Cold",
           "Magic Coat",
@@ -108589,7 +108733,7 @@
           "Cut"
         ],
         "tutors": [
-          "Skitter Smack",
+          "U-Turn",
           "Signal Beam",
           "Bounce",
           "Sweet Scent",
@@ -108770,7 +108914,7 @@
           "Cut"
         ],
         "tutors": [
-          "Skitter Smack",
+          "U-Turn",
           "Signal Beam",
           "Bounce",
           "Sweet Scent",
@@ -109649,6 +109793,7 @@
           "Strength"
         ],
         "tutors": [
+          "U-Turn",
           "Bounce",
           "Cross Poison",
           "Seething Cold",
@@ -109846,6 +109991,7 @@
           "Strength"
         ],
         "tutors": [
+          "U-Turn",
           "Bounce",
           "Cross Poison",
           "Seething Cold",
@@ -110060,6 +110206,7 @@
           "Strength"
         ],
         "tutors": [
+          "U-Turn",
           "Bounce",
           "Cross Poison",
           "Seething Cold",
@@ -110571,6 +110718,7 @@
           "Giga Impact"
         ],
         "tutors": [
+          "Torment",
           "Protect",
           "Overheat",
           "Helping Hand",
@@ -110716,6 +110864,7 @@
           "Giga Impact"
         ],
         "tutors": [
+          "Torment",
           "Protect",
           "Overheat",
           "Helping Hand",
@@ -110874,6 +111023,7 @@
           "Giga Impact"
         ],
         "tutors": [
+          "Torment",
           "Protect",
           "Overheat",
           "Helping Hand",
@@ -111027,7 +111177,7 @@
         ],
         "tutors": [
           "Draco Meteor",
-          "Dual Chop",
+          "Torment",
           "Iron Head",
           "Drill Run",
           "Low Kick",
@@ -111211,7 +111361,7 @@
         ],
         "tutors": [
           "Draco Meteor",
-          "Dual Chop",
+          "Torment",
           "Iron Head",
           "Drill Run",
           "Low Kick",
@@ -111409,7 +111559,7 @@
         ],
         "tutors": [
           "Draco Meteor",
-          "Dual Chop",
+          "Torment",
           "Iron Head",
           "Drill Run",
           "Low Kick",
@@ -112108,7 +112258,8 @@
           "Giga Impact"
         ],
         "tutors": [
-          "Skitter Smack",
+          "U-Turn",
+          "Torment",
           "Signal Beam",
           "Seething Cold",
           "Foul Play",
@@ -112288,7 +112439,8 @@
           "Giga Impact"
         ],
         "tutors": [
-          "Skitter Smack",
+          "U-Turn",
+          "Torment",
           "Signal Beam",
           "Seething Cold",
           "Foul Play",
@@ -112627,7 +112779,8 @@
           "Strength"
         ],
         "tutors": [
-          "Dual Chop",
+          "U-Turn",
+          "Torment",
           "Bounce",
           "Low Kick",
           "Focus Punch",
@@ -112813,7 +112966,8 @@
           "Strength"
         ],
         "tutors": [
-          "Dual Chop",
+          "U-Turn",
+          "Torment",
           "Bounce",
           "Low Kick",
           "Focus Punch",
@@ -113521,7 +113675,7 @@
           "Cut"
         ],
         "tutors": [
-          "Dual Chop",
+          "Torment",
           "Iron Head",
           "Low Kick",
           "Foul Play",
@@ -113695,7 +113849,7 @@
           "Cut"
         ],
         "tutors": [
-          "Dual Chop",
+          "Torment",
           "Iron Head",
           "Low Kick",
           "Foul Play",
@@ -114002,9 +114156,14 @@
           "Strength"
         ],
         "tutors": [
+          "U-Turn",
+          "Zen Headbutt",
           "Protect",
+          "Follow Me",
+          "Double-Edge",
           "Helping Hand",
           "Rest",
+          "Head Smash",
           "Toxic",
           "Superpower",
           "Roost",
@@ -114155,9 +114314,14 @@
           "Strength"
         ],
         "tutors": [
+          "U-Turn",
+          "Zen Headbutt",
           "Protect",
+          "Follow Me",
+          "Double-Edge",
           "Helping Hand",
           "Rest",
+          "Head Smash",
           "Toxic",
           "Superpower",
           "Roost",
@@ -114307,9 +114471,12 @@
           "Strength"
         ],
         "tutors": [
+          "U-Turn",
+          "Torment",
           "Seething Cold",
           "Foul Play",
           "Protect",
+          "Follow Me",
           "Helping Hand",
           "Rest",
           "Toxic",
@@ -114476,9 +114643,12 @@
           "Strength"
         ],
         "tutors": [
+          "U-Turn",
+          "Torment",
           "Seething Cold",
           "Foul Play",
           "Protect",
+          "Follow Me",
           "Helping Hand",
           "Rest",
           "Toxic",
@@ -114653,7 +114823,6 @@
           "Cut"
         ],
         "tutors": [
-          "Skitter Smack",
           "Iron Head",
           "Low Kick",
           "Seething Cold",
@@ -114825,7 +114994,6 @@
           "Strength"
         ],
         "tutors": [
-          "Skitter Smack",
           "Iron Head",
           "Drill Run",
           "Low Kick",
@@ -114982,6 +115150,8 @@
         ],
         "tutors": [
           "Draco Meteor",
+          "U-Turn",
+          "Torment",
           "Seething Cold",
           "Earth Power",
           "Aqua Tail",
@@ -115159,6 +115329,8 @@
         ],
         "tutors": [
           "Draco Meteor",
+          "U-Turn",
+          "Torment",
           "Seething Cold",
           "Earth Power",
           "Aqua Tail",
@@ -115366,6 +115538,8 @@
         ],
         "tutors": [
           "Draco Meteor",
+          "U-Turn",
+          "Torment",
           "Seething Cold",
           "Earth Power",
           "Aqua Tail",
@@ -115517,7 +115691,7 @@
           "Fly"
         ],
         "tutors": [
-          "Skitter Smack",
+          "U-Turn",
           "Signal Beam",
           "Zen Headbutt",
           "Sweet Scent",
@@ -115693,7 +115867,7 @@
           "Fly"
         ],
         "tutors": [
-          "Skitter Smack",
+          "U-Turn",
           "Signal Beam",
           "Zen Headbutt",
           "Sweet Scent",
@@ -117308,7 +117482,7 @@
         ],
         "tutors": [
           "Seed Bomb",
-          "Dual Chop",
+          "Torment",
           "Signal Beam",
           "Low Kick",
           "Seething Cold",
@@ -117484,7 +117658,7 @@
           "Fly"
         ],
         "tutors": [
-          "Skitter Smack",
+          "U-Turn",
           "Signal Beam",
           "Iron Head",
           "Cross Poison",
@@ -120141,7 +120315,7 @@
           "Giga Impact"
         ],
         "tutors": [
-          "Skitter Smack",
+          "U-Turn",
           "Signal Beam",
           "Iron Head",
           "Psychic Noise",
@@ -120309,7 +120483,7 @@
           "Giga Impact"
         ],
         "tutors": [
-          "Skitter Smack",
+          "U-Turn",
           "Signal Beam",
           "Iron Head",
           "Psychic Noise",
@@ -122457,6 +122631,7 @@
           "Strength"
         ],
         "tutors": [
+          "U-Turn",
           "Fire Punch",
           "Earth Power",
           "Focus Punch",
@@ -122619,7 +122794,7 @@
         ],
         "tutors": [
           "Seed Bomb",
-          "Dual Chop",
+          "Torment",
           "Signal Beam",
           "Low Kick",
           "Seething Cold",
@@ -123557,7 +123732,7 @@
         "item": "Leftovers",
         "nature": "Hardy",
         "moves": [
-          "High Jump Kick",
+          "Tackle",
           "-----",
           "-----",
           "-----"
@@ -124067,1345 +124242,6 @@
         }
       }
     },
-    "Electivire": {
-      "Lvl 50 Smasher Elena ": {
-        "level": 50,
-        "ai": 15,
-        "noCh": false,
-        "tr_id": 1,
-        "ivs": {
-          "hp": 31,
-          "at": 31,
-          "df": 31,
-          "sa": 31,
-          "sd": 31,
-          "sp": 31
-        },
-        "battle_type": "Singles",
-        "reward_item": "Potion",
-        "item": "-",
-        "nature": "Calm",
-        "moves": [
-          "Supercell Slam",
-          "",
-          "",
-          ""
-        ],
-        "sub_index": 1,
-        "ability": "Motor Drive",
-        "sprite": "trainer_sprites/smasher.png",
-        "form": 0,
-        "evs": {
-          "df": 0
-        }
-      },
-      "Lvl 41 Hoopster Bobby3 - Driftveil Drawbridge": {
-        "level": 41,
-        "ai": 143,
-        "noCh": false,
-        "tr_id": 71,
-        "ivs": {
-          "hp": 31,
-          "at": 31,
-          "df": 31,
-          "sa": 31,
-          "sd": 31,
-          "sp": 31
-        },
-        "battle_type": "Singles",
-        "reward_item": "Full Restore",
-        "item": "Blunder Policy",
-        "nature": "Modest",
-        "moves": [
-          "Hyper Voice",
-          "Flamethrower",
-          "Focus Punch",
-          "Quick Attack"
-        ],
-        "sub_index": 1,
-        "ability": "Galvanize",
-        "sprite": "trainer_sprites/hoopster.png",
-        "form": 0,
-        "evs": {
-          "df": 0
-        }
-      },
-      "Lvl 38 Beauty Nikola ": {
-        "level": 38,
-        "ai": 143,
-        "noCh": false,
-        "tr_id": 207,
-        "ivs": {
-          "hp": 31,
-          "at": 31,
-          "df": 31,
-          "sa": 31,
-          "sd": 31,
-          "sp": 31
-        },
-        "battle_type": "Doubles",
-        "reward_item": "None",
-        "item": "Air Balloon",
-        "nature": "Rash",
-        "moves": [
-          "Thunderbolt",
-          "Ice Punch",
-          "Fire Punch",
-          "Drain Punch"
-        ],
-        "sub_index": 2,
-        "ability": "Teravolt",
-        "sprite": "trainer_sprites/beauty.png",
-        "form": 0,
-        "evs": {
-          "df": 0
-        }
-      },
-      "Lvl 52 Sinnoh Leader Volkner ": {
-        "level": 52,
-        "ai": 15,
-        "noCh": false,
-        "tr_id": 493,
-        "ivs": {
-          "hp": 31,
-          "at": 31,
-          "df": 31,
-          "sa": 31,
-          "sd": 31,
-          "sp": 31
-        },
-        "battle_type": "Singles",
-        "reward_item": "None",
-        "item": "Assault Vest",
-        "nature": "Lonely",
-        "moves": [
-          "Double-Edge",
-          "Quick Attack",
-          "Focus Blast",
-          "Temper Flare"
-        ],
-        "sub_index": 4,
-        "ability": "Galvanize",
-        "sprite": "trainer_sprites/volkner.png",
-        "form": 0,
-        "evs": {
-          "df": 0
-        }
-      },
-      "Lvl 56 Ace Trainer Ray ": {
-        "level": 56,
-        "ai": 143,
-        "noCh": false,
-        "tr_id": 519,
-        "ivs": {
-          "hp": 31,
-          "at": 31,
-          "df": 31,
-          "sa": 31,
-          "sd": 31,
-          "sp": 31
-        },
-        "battle_type": "Singles",
-        "reward_item": "None",
-        "item": "-",
-        "nature": "Jolly",
-        "moves": [
-          "Zing Zap",
-          "Close Combat",
-          "Protect",
-          "Fire Punch"
-        ],
-        "sub_index": 1,
-        "ability": "Teravolt",
-        "sprite": "trainer_sprites/acetrainer.png",
-        "form": 0,
-        "evs": {
-          "df": 0
-        }
-      },
-      "Lvl 64 Veteran Sinan ": {
-        "level": 64,
-        "ai": 135,
-        "noCh": false,
-        "tr_id": 643,
-        "ivs": {
-          "hp": 31,
-          "at": 31,
-          "df": 31,
-          "sa": 31,
-          "sd": 31,
-          "sp": 31
-        },
-        "battle_type": "Singles",
-        "reward_item": "None",
-        "item": "-",
-        "nature": "Timid",
-        "moves": [
-          "Thunder",
-          "Earthquake",
-          "Rock Slide",
-          "Thunder Wave"
-        ],
-        "sub_index": 1,
-        "ability": "Motor Drive",
-        "sprite": "trainer_sprites/veteran.png",
-        "form": 0,
-        "evs": {
-          "df": 0
-        }
-      }
-    },
-    "Patrat": {
-      "Lvl 1 Smasher Elena ": {
-        "level": 1,
-        "ai": 15,
-        "noCh": false,
-        "tr_id": 1,
-        "ivs": {
-          "hp": 31,
-          "at": 31,
-          "df": 31,
-          "sa": 31,
-          "sd": 31,
-          "sp": 31
-        },
-        "battle_type": "Singles",
-        "reward_item": "Potion",
-        "item": "-",
-        "nature": "Quiet",
-        "moves": [
-          "Tackle",
-          "",
-          "",
-          ""
-        ],
-        "sub_index": 2,
-        "ability": "Illumination",
-        "sprite": "trainer_sprites/smasher.png",
-        "form": 0,
-        "evs": {
-          "df": 0
-        }
-      },
-      "Lvl 1 Smasher Bianca ": {
-        "level": 1,
-        "ai": 15,
-        "noCh": false,
-        "tr_id": 4,
-        "ivs": {
-          "hp": 31,
-          "at": 31,
-          "df": 31,
-          "sa": 31,
-          "sd": 31,
-          "sp": 31
-        },
-        "battle_type": "Singles",
-        "reward_item": "None",
-        "item": "Lum Berry",
-        "nature": "Quiet",
-        "moves": [
-          "Explosion",
-          "Sand Attack",
-          "Charm",
-          "Captivate"
-        ],
-        "sub_index": 0,
-        "ability": "Illumination",
-        "sprite": "trainer_sprites/bianca.png",
-        "form": 0,
-        "evs": {
-          "df": 0
-        }
-      },
-      "Lvl 1 Smasher N ": {
-        "level": 1,
-        "ai": 15,
-        "noCh": false,
-        "tr_id": 5,
-        "ivs": {
-          "hp": 31,
-          "at": 31,
-          "df": 31,
-          "sa": 31,
-          "sd": 31,
-          "sp": 31
-        },
-        "battle_type": "Singles",
-        "reward_item": "None",
-        "item": "None",
-        "nature": "Bashful",
-        "moves": [
-          "Rest",
-          "Sleep Talk",
-          "Leer",
-          "Growl"
-        ],
-        "sub_index": 0,
-        "ability": "Illumination",
-        "sprite": "trainer_sprites/n.png",
-        "form": 0,
-        "evs": {
-          "df": 0
-        }
-      },
-      "Lvl 1 Smasher N2 ": {
-        "level": 1,
-        "ai": 15,
-        "noCh": false,
-        "tr_id": 6,
-        "ivs": {
-          "hp": 31,
-          "at": 31,
-          "df": 31,
-          "sa": 31,
-          "sd": 31,
-          "sp": 31
-        },
-        "battle_type": "Singles",
-        "reward_item": "None",
-        "item": "-",
-        "nature": "Bold",
-        "moves": [
-          "Rest",
-          "Snore",
-          "Leer",
-          "Growl"
-        ],
-        "sub_index": 0,
-        "ability": "Illumination",
-        "sprite": "trainer_sprites/n.png",
-        "form": 0,
-        "evs": {
-          "df": 0
-        }
-      },
-      "Lvl 1 Worker Matthew 1": {
-        "level": 1,
-        "ai": 143,
-        "noCh": false,
-        "tr_id": 7,
-        "ivs": {
-          "hp": 31,
-          "at": 31,
-          "df": 31,
-          "sa": 31,
-          "sd": 31,
-          "sp": 31
-        },
-        "battle_type": "Doubles",
-        "reward_item": "Blue Shard",
-        "item": "Focus Band",
-        "nature": "Gentle",
-        "moves": [
-          "Tackle",
-          "-----",
-          "-----",
-          "-----"
-        ],
-        "sub_index": 0,
-        "ability": "Patient",
-        "sprite": "trainer_sprites/worker.png",
-        "form": 0,
-        "evs": {
-          "df": 0
-        }
-      },
-      "Lvl 1 Worker Matthew 2": {
-        "level": 1,
-        "ai": 143,
-        "noCh": false,
-        "tr_id": 7,
-        "ivs": {
-          "hp": 31,
-          "at": 31,
-          "df": 31,
-          "sa": 31,
-          "sd": 31,
-          "sp": 31
-        },
-        "battle_type": "Doubles",
-        "reward_item": "Blue Shard",
-        "item": "None",
-        "nature": "Docile",
-        "moves": [
-          "Volt Tackle",
-          "-----",
-          "-----",
-          "-----"
-        ],
-        "sub_index": 1,
-        "ability": "Illumination",
-        "sprite": "trainer_sprites/worker.png",
-        "form": 0,
-        "evs": {
-          "df": 0
-        }
-      },
-      "Lvl 1 Hoopster Bobby 1": {
-        "level": 1,
-        "ai": 143,
-        "noCh": false,
-        "tr_id": 8,
-        "ivs": {
-          "hp": 31,
-          "at": 31,
-          "df": 31,
-          "sa": 31,
-          "sd": 31,
-          "sp": 31
-        },
-        "battle_type": "Doubles",
-        "reward_item": "Potion",
-        "item": "Covert Cloak",
-        "nature": "Jolly",
-        "moves": [
-          "Tackle",
-          "1st Impression",
-          "-----",
-          "-----"
-        ],
-        "sub_index": 0,
-        "ability": "Illumination",
-        "sprite": "trainer_sprites/hoopster.png",
-        "form": 0,
-        "evs": {
-          "df": 0
-        }
-      },
-      "Lvl 1 Hoopster Bobby 2": {
-        "level": 1,
-        "ai": 143,
-        "noCh": false,
-        "tr_id": 8,
-        "ivs": {
-          "hp": 31,
-          "at": 31,
-          "df": 31,
-          "sa": 31,
-          "sd": 31,
-          "sp": 31
-        },
-        "battle_type": "Doubles",
-        "reward_item": "Potion",
-        "item": "None",
-        "nature": "Bold",
-        "moves": [
-          "Wing Attack",
-          "-----",
-          "-----",
-          "-----"
-        ],
-        "sub_index": 1,
-        "ability": "Illumination",
-        "sprite": "trainer_sprites/hoopster.png",
-        "form": 0,
-        "evs": {
-          "df": 0
-        }
-      },
-      "Lvl 1 Hoopster John - Chargestone Cave 1": {
-        "level": 1,
-        "ai": 143,
-        "noCh": false,
-        "tr_id": 9,
-        "ivs": {
-          "hp": 31,
-          "at": 31,
-          "df": 31,
-          "sa": 31,
-          "sd": 31,
-          "sp": 31
-        },
-        "battle_type": "Triples",
-        "reward_item": "Hyper Potion",
-        "item": "None",
-        "nature": "Hasty",
-        "moves": [
-          "Counter",
-          "Mirror Coat",
-          "-----",
-          "-----"
-        ],
-        "sub_index": 0,
-        "ability": "Illumination",
-        "sprite": "trainer_sprites/hoopster.png",
-        "form": 0,
-        "evs": {
-          "df": 0
-        }
-      },
-      "Lvl 1 Hoopster John - Chargestone Cave 2": {
-        "level": 1,
-        "ai": 143,
-        "noCh": false,
-        "tr_id": 9,
-        "ivs": {
-          "hp": 31,
-          "at": 31,
-          "df": 31,
-          "sa": 31,
-          "sd": 31,
-          "sp": 31
-        },
-        "battle_type": "Triples",
-        "reward_item": "Hyper Potion",
-        "item": "None",
-        "nature": "Naive",
-        "moves": [
-          "Tackle",
-          "-----",
-          "-----",
-          "-----"
-        ],
-        "sub_index": 1,
-        "ability": "Patient",
-        "sprite": "trainer_sprites/hoopster.png",
-        "form": 0,
-        "evs": {
-          "df": 0
-        }
-      },
-      "Lvl 1 Hoopster John - Chargestone Cave": {
-        "level": 1,
-        "ai": 143,
-        "noCh": false,
-        "tr_id": 9,
-        "ivs": {
-          "hp": 31,
-          "at": 31,
-          "df": 31,
-          "sa": 31,
-          "sd": 31,
-          "sp": 31
-        },
-        "battle_type": "Triples",
-        "reward_item": "Hyper Potion",
-        "item": "None",
-        "nature": "Naive",
-        "moves": [
-          "Tackle",
-          "-----",
-          "-----",
-          "-----"
-        ],
-        "sub_index": 2,
-        "ability": "Patient",
-        "sprite": "trainer_sprites/hoopster.png",
-        "form": 0,
-        "evs": {
-          "df": 0
-        }
-      },
-      "Lvl 1 Clerk F Trisha ": {
-        "level": 1,
-        "ai": 15,
-        "noCh": false,
-        "tr_id": 10,
-        "ivs": {
-          "hp": 31,
-          "at": 31,
-          "df": 31,
-          "sa": 31,
-          "sd": 31,
-          "sp": 31
-        },
-        "battle_type": "Singles",
-        "reward_item": "None",
-        "item": "None",
-        "nature": "Relaxed",
-        "moves": [
-          "Weather Ball",
-          "Bubble Beam",
-          "-----",
-          "-----"
-        ],
-        "sub_index": 0,
-        "ability": "Illumination",
-        "sprite": "trainer_sprites/clerkf.png",
-        "form": 0,
-        "evs": {
-          "df": 0
-        }
-      },
-      "Lvl 1 Waiter Lou - Shopping Mall": {
-        "level": 1,
-        "ai": 15,
-        "noCh": false,
-        "tr_id": 11,
-        "ivs": {
-          "hp": 31,
-          "at": 31,
-          "df": 31,
-          "sa": 31,
-          "sd": 31,
-          "sp": 31
-        },
-        "battle_type": "Singles",
-        "reward_item": "None",
-        "item": "-",
-        "nature": "Relaxed",
-        "moves": [
-          "Volt Tackle",
-          "-----",
-          "-----",
-          "-----"
-        ],
-        "sub_index": 0,
-        "ability": "Illumination",
-        "sprite": "trainer_sprites/waiter.png",
-        "form": 0,
-        "evs": {
-          "df": 0
-        }
-      },
-      "Lvl 1 Waitress Olwen - Shopping Mall": {
-        "level": 1,
-        "ai": 15,
-        "noCh": false,
-        "tr_id": 12,
-        "ivs": {
-          "hp": 31,
-          "at": 31,
-          "df": 31,
-          "sa": 31,
-          "sd": 31,
-          "sp": 31
-        },
-        "battle_type": "Singles",
-        "reward_item": "None",
-        "item": "None",
-        "nature": "Quirky",
-        "moves": [
-          "Tackle",
-          "-----",
-          "-----",
-          "-----"
-        ],
-        "sub_index": 0,
-        "ability": "Illumination",
-        "sprite": "trainer_sprites/waitress.png",
-        "form": 0,
-        "evs": {
-          "df": 0
-        }
-      },
-      "Lvl 30 Youngster Kevin ": {
-        "level": 30,
-        "ai": 15,
-        "noCh": false,
-        "tr_id": 17,
-        "ivs": {
-          "hp": 31,
-          "at": 31,
-          "df": 31,
-          "sa": 31,
-          "sd": 31,
-          "sp": 31
-        },
-        "battle_type": "Singles",
-        "reward_item": "Ultra Ball",
-        "item": "Wacan Berry",
-        "nature": "Hasty",
-        "moves": [
-          "Natural Gift",
-          "Double-Edge",
-          "-----",
-          "-----"
-        ],
-        "sub_index": 0,
-        "ability": "Illumination",
-        "sprite": "trainer_sprites/youngster.png",
-        "form": 0,
-        "evs": {
-          "df": 0
-        }
-      },
-      "Lvl 1 Clerk M Fredric ": {
-        "level": 1,
-        "ai": 15,
-        "noCh": false,
-        "tr_id": 20,
-        "ivs": {
-          "hp": 31,
-          "at": 31,
-          "df": 31,
-          "sa": 31,
-          "sd": 31,
-          "sp": 31
-        },
-        "battle_type": "Singles",
-        "reward_item": "Ultra Ball",
-        "item": "-",
-        "nature": "Adamant",
-        "moves": [
-          "Explosion",
-          "-----",
-          "-----",
-          "-----"
-        ],
-        "sub_index": 0,
-        "ability": "Illumination",
-        "sprite": "trainer_sprites/clerkm.png",
-        "form": 0,
-        "evs": {
-          "df": 0
-        }
-      },
-      "Lvl 31 Backers Hawk & Dar ": {
-        "level": 31,
-        "ai": 15,
-        "noCh": false,
-        "tr_id": 21,
-        "ivs": {
-          "hp": 31,
-          "at": 31,
-          "df": 31,
-          "sa": 31,
-          "sd": 31,
-          "sp": 31
-        },
-        "battle_type": "Singles",
-        "reward_item": "None",
-        "item": "-",
-        "nature": "Lonely",
-        "moves": [
-          "Explosion",
-          "-----",
-          "-----",
-          "-----"
-        ],
-        "sub_index": 0,
-        "ability": "Patient",
-        "sprite": "trainer_sprites/backers.png",
-        "form": 0,
-        "evs": {
-          "df": 0
-        }
-      },
-      "Lvl 1 Backers Joe & Ross ": {
-        "level": 1,
-        "ai": 15,
-        "noCh": false,
-        "tr_id": 22,
-        "ivs": {
-          "hp": 31,
-          "at": 31,
-          "df": 31,
-          "sa": 31,
-          "sd": 31,
-          "sp": 31
-        },
-        "battle_type": "Singles",
-        "reward_item": "None",
-        "item": "-",
-        "nature": "Naive",
-        "moves": [
-          "Explosion",
-          "-----",
-          "-----",
-          "-----"
-        ],
-        "sub_index": 0,
-        "ability": "Illumination",
-        "sprite": "trainer_sprites/backers.png",
-        "form": 0,
-        "evs": {
-          "df": 0
-        }
-      },
-      "Lvl 31 Backers Kay & Ali ": {
-        "level": 31,
-        "ai": 15,
-        "noCh": false,
-        "tr_id": 24,
-        "ivs": {
-          "hp": 31,
-          "at": 31,
-          "df": 31,
-          "sa": 31,
-          "sd": 31,
-          "sp": 31
-        },
-        "battle_type": "Singles",
-        "reward_item": "None",
-        "item": "Icy Rock",
-        "nature": "Mild",
-        "moves": [
-          "Explosion",
-          "-----",
-          "-----",
-          "-----"
-        ],
-        "sub_index": 0,
-        "ability": "Patient",
-        "sprite": "trainer_sprites/backersf.png",
-        "form": 0,
-        "evs": {
-          "df": 0
-        }
-      },
-      "Lvl 1 Ace Trainer Mariana ": {
-        "level": 1,
-        "ai": 15,
-        "noCh": false,
-        "tr_id": 31,
-        "ivs": {
-          "hp": 31,
-          "at": 31,
-          "df": 31,
-          "sa": 31,
-          "sd": 31,
-          "sp": 31
-        },
-        "battle_type": "Singles",
-        "reward_item": "None",
-        "item": "-",
-        "nature": "Jolly",
-        "moves": [
-          "Growl",
-          "-----",
-          "-----",
-          "-----"
-        ],
-        "sub_index": 0,
-        "ability": "Illumination",
-        "sprite": "trainer_sprites/acetrainerf.png",
-        "form": 0,
-        "evs": {
-          "df": 0
-        }
-      },
-      "Lvl 40 Elite Four Caitlin ": {
-        "level": 40,
-        "ai": 15,
-        "noCh": false,
-        "tr_id": 41,
-        "ivs": {
-          "hp": 31,
-          "at": 31,
-          "df": 31,
-          "sa": 31,
-          "sd": 31,
-          "sp": 31
-        },
-        "battle_type": "Singles",
-        "reward_item": "None",
-        "item": "None",
-        "nature": "Sassy",
-        "moves": [
-          "Quick Attack",
-          "Brick Break",
-          "-----",
-          "-----"
-        ],
-        "sub_index": 1,
-        "ability": "Patient",
-        "sprite": "trainer_sprites/caitlin.png",
-        "form": 0,
-        "evs": {
-          "df": 0
-        }
-      },
-      "Lvl 58 Pokefan Darcy ": {
-        "level": 58,
-        "ai": 1,
-        "noCh": false,
-        "tr_id": 108,
-        "ivs": {
-          "hp": 31,
-          "at": 31,
-          "df": 31,
-          "sa": 31,
-          "sd": 31,
-          "sp": 31
-        },
-        "battle_type": "Singles",
-        "reward_item": "Max Potion",
-        "item": "-",
-        "nature": "Serious",
-        "moves": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "sub_index": 4,
-        "ability": "Illumination",
-        "sprite": "trainer_sprites/pokefanf.png",
-        "form": 0,
-        "evs": {
-          "df": 0
-        }
-      },
-      "Lvl 8 Youngster Terrell - Route 20": {
-        "level": 8,
-        "ai": 15,
-        "noCh": false,
-        "tr_id": 164,
-        "ivs": {
-          "hp": 31,
-          "at": 31,
-          "df": 31,
-          "sa": 31,
-          "sd": 31,
-          "sp": 31
-        },
-        "battle_type": "Singles",
-        "reward_item": "None",
-        "item": "None",
-        "nature": "Naive",
-        "moves": [
-          "Tackle",
-          "Leer",
-          "Growl",
-          "Bite"
-        ],
-        "sub_index": 0,
-        "ability": "Patient",
-        "sprite": "trainer_sprites/youngster.png",
-        "form": 0,
-        "evs": {
-          "df": 0
-        }
-      },
-      "Lvl 1 Team Plasma Colress3 ": {
-        "level": 1,
-        "ai": 7,
-        "noCh": false,
-        "tr_id": 581,
-        "ivs": {
-          "hp": 31,
-          "at": 31,
-          "df": 31,
-          "sa": 31,
-          "sd": 31,
-          "sp": 31
-        },
-        "battle_type": "Singles",
-        "reward_item": "None",
-        "item": "-",
-        "nature": "Naughty",
-        "moves": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "sub_index": 0,
-        "ability": "Illumination",
-        "sprite": "trainer_sprites/colress.png",
-        "form": 0,
-        "evs": {
-          "df": 0
-        }
-      },
-      "Lvl 1 no data ": {
-        "level": 1,
-        "ai": 1,
-        "noCh": false,
-        "tr_id": 616,
-        "ivs": {
-          "hp": 31,
-          "at": 31,
-          "df": 31,
-          "sa": 31,
-          "sd": 31,
-          "sp": 31
-        },
-        "battle_type": "Singles",
-        "reward_item": "None",
-        "item": "-",
-        "nature": "Hasty",
-        "moves": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "sub_index": 0,
-        "ability": "Patient",
-        "sprite": "trainer_sprites/nodata.png",
-        "form": 0,
-        "evs": {
-          "df": 0
-        }
-      },
-      "Lvl 1 no data 2 ": {
-        "level": 1,
-        "ai": 1,
-        "noCh": false,
-        "tr_id": 617,
-        "ivs": {
-          "hp": 31,
-          "at": 31,
-          "df": 31,
-          "sa": 31,
-          "sd": 31,
-          "sp": 31
-        },
-        "battle_type": "Singles",
-        "reward_item": "None",
-        "item": "-",
-        "nature": "Bashful",
-        "moves": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "sub_index": 0,
-        "ability": "Illumination",
-        "sprite": "trainer_sprites/nodata.png",
-        "form": 0,
-        "evs": {
-          "df": 0
-        }
-      },
-      "Lvl 1 no data 3 ": {
-        "level": 1,
-        "ai": 1,
-        "noCh": false,
-        "tr_id": 618,
-        "ivs": {
-          "hp": 31,
-          "at": 31,
-          "df": 31,
-          "sa": 31,
-          "sd": 31,
-          "sp": 31
-        },
-        "battle_type": "Singles",
-        "reward_item": "None",
-        "item": "-",
-        "nature": "Naive",
-        "moves": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "sub_index": 0,
-        "ability": "Illumination",
-        "sprite": "trainer_sprites/nodata.png",
-        "form": 0,
-        "evs": {
-          "df": 0
-        }
-      },
-      "Lvl 1 no data 4 ": {
-        "level": 1,
-        "ai": 1,
-        "noCh": false,
-        "tr_id": 619,
-        "ivs": {
-          "hp": 31,
-          "at": 31,
-          "df": 31,
-          "sa": 31,
-          "sd": 31,
-          "sp": 31
-        },
-        "battle_type": "Singles",
-        "reward_item": "None",
-        "item": "-",
-        "nature": "Gentle",
-        "moves": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "sub_index": 0,
-        "ability": "Patient",
-        "sprite": "trainer_sprites/nodata.png",
-        "form": 0,
-        "evs": {
-          "df": 0
-        }
-      },
-      "Lvl 1 no data 5 ": {
-        "level": 1,
-        "ai": 1,
-        "noCh": false,
-        "tr_id": 620,
-        "ivs": {
-          "hp": 31,
-          "at": 31,
-          "df": 31,
-          "sa": 31,
-          "sd": 31,
-          "sp": 31
-        },
-        "battle_type": "Singles",
-        "reward_item": "None",
-        "item": "-",
-        "nature": "Quiet",
-        "moves": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "sub_index": 0,
-        "ability": "Illumination",
-        "sprite": "trainer_sprites/nodata.png",
-        "form": 0,
-        "evs": {
-          "df": 0
-        }
-      },
-      "Lvl 16 Youngster Abe ": {
-        "level": 16,
-        "ai": 1,
-        "noCh": false,
-        "tr_id": 622,
-        "ivs": {
-          "hp": 31,
-          "at": 31,
-          "df": 31,
-          "sa": 31,
-          "sd": 31,
-          "sp": 31
-        },
-        "battle_type": "Singles",
-        "reward_item": "None",
-        "item": "-",
-        "nature": "Impish",
-        "moves": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "sub_index": 1,
-        "ability": "Patient",
-        "sprite": "trainer_sprites/youngster.png",
-        "form": 0,
-        "evs": {
-          "df": 0
-        }
-      },
-      "Lvl 16 Rich Boy Brad2 ": {
-        "level": 16,
-        "ai": 1,
-        "noCh": false,
-        "tr_id": 627,
-        "ivs": {
-          "hp": 31,
-          "at": 31,
-          "df": 31,
-          "sa": 31,
-          "sd": 31,
-          "sp": 31
-        },
-        "battle_type": "Singles",
-        "reward_item": "None",
-        "item": "-",
-        "nature": "Impish",
-        "moves": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "sub_index": 0,
-        "ability": "Patient",
-        "sprite": "trainer_sprites/richboy.png",
-        "form": 0,
-        "evs": {
-          "df": 0
-        }
-      },
-      "Lvl 12 School Kid Keston - Pinwheel Forest": {
-        "level": 12,
-        "ai": 143,
-        "noCh": false,
-        "tr_id": 633,
-        "ivs": {
-          "hp": 31,
-          "at": 31,
-          "df": 31,
-          "sa": 31,
-          "sd": 31,
-          "sp": 31
-        },
-        "battle_type": "Doubles",
-        "reward_item": "None",
-        "item": "Jaboca Berry",
-        "nature": "Hasty",
-        "moves": [
-          "Secret Power",
-          "Bite",
-          "Recycle",
-          "Detect"
-        ],
-        "sub_index": 3,
-        "ability": "Illumination",
-        "sprite": "trainer_sprites/schoolkid.png",
-        "form": 0,
-        "evs": {
-          "df": 0
-        }
-      },
-      "Lvl 1 Nursery Aide Naoise ": {
-        "level": 1,
-        "ai": 1,
-        "noCh": false,
-        "tr_id": 660,
-        "ivs": {
-          "hp": 31,
-          "at": 31,
-          "df": 31,
-          "sa": 31,
-          "sd": 31,
-          "sp": 31
-        },
-        "battle_type": "Singles",
-        "reward_item": "None",
-        "item": "-",
-        "nature": "Serious",
-        "moves": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "sub_index": 0,
-        "ability": "Patient",
-        "sprite": "trainer_sprites/nurseryaide.png",
-        "form": 0,
-        "evs": {
-          "df": 0
-        }
-      },
-      "Lvl 1 Gentleman Rich ": {
-        "level": 1,
-        "ai": 1,
-        "noCh": false,
-        "tr_id": 661,
-        "ivs": {
-          "hp": 31,
-          "at": 31,
-          "df": 31,
-          "sa": 31,
-          "sd": 31,
-          "sp": 31
-        },
-        "battle_type": "Singles",
-        "reward_item": "None",
-        "item": "-",
-        "nature": "Hardy",
-        "moves": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "sub_index": 0,
-        "ability": "Illumination",
-        "sprite": "trainer_sprites/gentleman.png",
-        "form": 0,
-        "evs": {
-          "df": 0
-        }
-      }
-    },
-    "Zigzagoon": {
-      "Lvl 1 Smasher Elena ": {
-        "level": 1,
-        "ai": 15,
-        "noCh": false,
-        "tr_id": 1,
-        "ivs": {
-          "hp": 31,
-          "at": 31,
-          "df": 31,
-          "sa": 31,
-          "sd": 31,
-          "sp": 31
-        },
-        "battle_type": "Singles",
-        "reward_item": "Potion",
-        "item": "-",
-        "nature": "Rash",
-        "moves": [
-          "Volt Tackle",
-          "",
-          "",
-          ""
-        ],
-        "sub_index": 3,
-        "ability": "Tough Claws",
-        "sprite": "trainer_sprites/smasher.png",
-        "form": 0,
-        "evs": {
-          "df": 0
-        }
-      },
-      "Lvl 58 Pokefan Darcy ": {
-        "level": 58,
-        "ai": 1,
-        "noCh": false,
-        "tr_id": 108,
-        "ivs": {
-          "hp": 31,
-          "at": 31,
-          "df": 31,
-          "sa": 31,
-          "sd": 31,
-          "sp": 31
-        },
-        "battle_type": "Singles",
-        "reward_item": "Max Potion",
-        "item": "-",
-        "nature": "Gentle",
-        "moves": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "sub_index": 2,
-        "ability": "Pickup",
-        "sprite": "trainer_sprites/pokefanf.png",
-        "form": 0,
-        "evs": {
-          "df": 0
-        }
-      },
-      "Lvl 61 Youngster Jimmy - Route 2": {
-        "level": 61,
-        "ai": 1,
-        "noCh": false,
-        "tr_id": 401,
-        "ivs": {
-          "hp": 31,
-          "at": 31,
-          "df": 31,
-          "sa": 31,
-          "sd": 31,
-          "sp": 31
-        },
-        "battle_type": "Singles",
-        "reward_item": "None",
-        "item": "-",
-        "nature": "Naive",
-        "moves": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "sub_index": 2,
-        "ability": "Pickup",
-        "sprite": "trainer_sprites/youngster.png",
-        "form": 0,
-        "evs": {
-          "df": 0
-        }
-      }
-    },
     "Swalot": {
       "Lvl 50 Linebacker Dan ": {
         "level": 50,
@@ -125425,9 +124261,9 @@
         "item": "None",
         "nature": "Adamant",
         "moves": [
-          "Sludge Bomb",
-          "Mud Bomb",
+          "Minimize",
           "Tackle",
+          "-----",
           "-----"
         ],
         "sub_index": 0,
@@ -125526,6 +124362,320 @@
         "sub_index": 2,
         "ability": "Gourmand",
         "sprite": "trainer_sprites/pokemonranger.png",
+        "form": 0,
+        "evs": {
+          "df": 0
+        }
+      }
+    },
+    "Muk": {
+      "Lvl 50 Linebacker Dan ": {
+        "level": 50,
+        "ai": 143,
+        "noCh": false,
+        "tr_id": 2,
+        "ivs": {
+          "hp": 31,
+          "at": 31,
+          "df": 31,
+          "sa": 31,
+          "sd": 31,
+          "sp": 31
+        },
+        "battle_type": "Singles",
+        "reward_item": "Potion",
+        "item": "Black Sludge",
+        "nature": "Modest",
+        "moves": [
+          "Mirror Coat",
+          "Counter",
+          "",
+          ""
+        ],
+        "sub_index": 1,
+        "ability": "Strong Body",
+        "sprite": "trainer_sprites/linebacker.png",
+        "form": 0,
+        "evs": {
+          "df": 0
+        }
+      },
+      "Lvl 61 Scientist Simon ": {
+        "level": 61,
+        "ai": 5,
+        "noCh": false,
+        "tr_id": 99,
+        "ivs": {
+          "hp": 31,
+          "at": 31,
+          "df": 31,
+          "sa": 31,
+          "sd": 31,
+          "sp": 31
+        },
+        "battle_type": "Singles",
+        "reward_item": "Ether",
+        "item": "-",
+        "nature": "Rash",
+        "moves": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "sub_index": 1,
+        "ability": "Strong Body",
+        "sprite": "trainer_sprites/scientist.png",
+        "form": 0,
+        "evs": {
+          "df": 0
+        }
+      },
+      "Lvl 48 Policeman Neagle - Route 6": {
+        "level": 48,
+        "ai": 15,
+        "noCh": false,
+        "tr_id": 215,
+        "ivs": {
+          "hp": 31,
+          "at": 31,
+          "df": 31,
+          "sa": 31,
+          "sd": 31,
+          "sp": 31
+        },
+        "battle_type": "Singles",
+        "reward_item": "None",
+        "item": "None",
+        "nature": "Hardy",
+        "moves": [
+          "Dive",
+          "Poison Jab",
+          "Block",
+          "Thunder"
+        ],
+        "sub_index": 1,
+        "ability": "Water Absorb",
+        "sprite": "trainer_sprites/policeman.png",
+        "form": 0,
+        "evs": {
+          "df": 0
+        }
+      },
+      "Lvl 36 Artist Horton - Route 5": {
+        "level": 36,
+        "ai": 143,
+        "noCh": false,
+        "tr_id": 254,
+        "ivs": {
+          "hp": 31,
+          "at": 31,
+          "df": 31,
+          "sa": 31,
+          "sd": 31,
+          "sp": 31
+        },
+        "battle_type": "Triples",
+        "reward_item": "None",
+        "item": "-",
+        "nature": "Docile",
+        "moves": [
+          "Knock Off",
+          "Poison Jab",
+          "Fire Punch",
+          "Sucker Punch"
+        ],
+        "sub_index": 1,
+        "ability": "Poison Touch",
+        "sprite": "trainer_sprites/artist.png",
+        "form": 0,
+        "evs": {
+          "df": 0
+        }
+      },
+      "Lvl 44 Team Plasma Grunt41 ": {
+        "level": 44,
+        "ai": 1,
+        "noCh": false,
+        "tr_id": 585,
+        "ivs": {
+          "hp": 31,
+          "at": 31,
+          "df": 31,
+          "sa": 31,
+          "sd": 31,
+          "sp": 31
+        },
+        "battle_type": "Singles",
+        "reward_item": "None",
+        "item": "-",
+        "nature": "Calm",
+        "moves": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "sub_index": 1,
+        "ability": "Strong Body",
+        "sprite": "trainer_sprites/teamplasma.png",
+        "form": 0,
+        "evs": {
+          "df": 0
+        }
+      },
+      "Lvl 47 Team Plasma Grunt46 ": {
+        "level": 47,
+        "ai": 1,
+        "noCh": false,
+        "tr_id": 724,
+        "ivs": {
+          "hp": 31,
+          "at": 31,
+          "df": 31,
+          "sa": 31,
+          "sd": 31,
+          "sp": 31
+        },
+        "battle_type": "Singles",
+        "reward_item": "None",
+        "item": "-",
+        "nature": "Mild",
+        "moves": [
+          "Sludge Wave",
+          "Acid Armor",
+          "Screech",
+          "Fling"
+        ],
+        "sub_index": 1,
+        "ability": "Strong Body",
+        "sprite": "trainer_sprites/teamplasma.png",
+        "form": 0,
+        "evs": {
+          "df": 0
+        }
+      }
+    },
+    "Mightyena": {
+      "Lvl 50 Linebacker Dan ": {
+        "level": 50,
+        "ai": 143,
+        "noCh": false,
+        "tr_id": 2,
+        "ivs": {
+          "hp": 31,
+          "at": 31,
+          "df": 31,
+          "sa": 31,
+          "sd": 31,
+          "sp": 31
+        },
+        "battle_type": "Singles",
+        "reward_item": "Potion",
+        "item": "-",
+        "nature": "Jolly",
+        "moves": [
+          "Growl",
+          "",
+          "",
+          ""
+        ],
+        "sub_index": 2,
+        "ability": "Intimidate",
+        "sprite": "trainer_sprites/linebacker.png",
+        "form": 0,
+        "evs": {
+          "df": 0
+        }
+      },
+      "Lvl 1 Clerk F Trisha ": {
+        "level": 1,
+        "ai": 15,
+        "noCh": false,
+        "tr_id": 10,
+        "ivs": {
+          "hp": 31,
+          "at": 31,
+          "df": 31,
+          "sa": 31,
+          "sd": 31,
+          "sp": 31
+        },
+        "battle_type": "Singles",
+        "reward_item": "None",
+        "item": "None",
+        "nature": "Careful",
+        "moves": [
+          "Bite",
+          "Power Trip",
+          "-----",
+          "-----"
+        ],
+        "sub_index": 1,
+        "ability": "Intimidate",
+        "sprite": "trainer_sprites/clerkf.png",
+        "form": 0,
+        "evs": {
+          "df": 0
+        }
+      },
+      "Lvl 22 Leader Roxie ": {
+        "level": 22,
+        "ai": 15,
+        "noCh": false,
+        "tr_id": 157,
+        "ivs": {
+          "hp": 31,
+          "at": 31,
+          "df": 31,
+          "sa": 31,
+          "sd": 31,
+          "sp": 31
+        },
+        "battle_type": "Singles",
+        "reward_item": "None",
+        "item": "Poison Gem",
+        "nature": "Lonely",
+        "moves": [
+          "Beat Up",
+          "Pursuit",
+          "Poison Fang",
+          "Sing"
+        ],
+        "sub_index": 4,
+        "ability": "Intimidate",
+        "sprite": "trainer_sprites/roxie.png",
+        "form": 0,
+        "evs": {
+          "df": 0
+        }
+      },
+      "Lvl 48 Guitarist Anna - Chargestone Cave": {
+        "level": 48,
+        "ai": 143,
+        "noCh": false,
+        "tr_id": 537,
+        "ivs": {
+          "hp": 31,
+          "at": 31,
+          "df": 31,
+          "sa": 31,
+          "sd": 31,
+          "sp": 31
+        },
+        "battle_type": "Doubles",
+        "reward_item": "None",
+        "item": "Electric Gem",
+        "nature": "Jolly",
+        "moves": [
+          "Crunch",
+          "Psychic Fangs",
+          "Thunder Fang",
+          "Ice Fang"
+        ],
+        "sub_index": 0,
+        "ability": "Strong Jaw",
+        "sprite": "trainer_sprites/guitarist.png",
         "form": 0,
         "evs": {
           "df": 0
@@ -126656,6 +125806,1031 @@
         }
       }
     },
+    "Patrat": {
+      "Lvl 1 Smasher Bianca ": {
+        "level": 1,
+        "ai": 15,
+        "noCh": false,
+        "tr_id": 4,
+        "ivs": {
+          "hp": 31,
+          "at": 31,
+          "df": 31,
+          "sa": 31,
+          "sd": 31,
+          "sp": 31
+        },
+        "battle_type": "Singles",
+        "reward_item": "None",
+        "item": "Lum Berry",
+        "nature": "Quiet",
+        "moves": [
+          "Explosion",
+          "Sand Attack",
+          "Charm",
+          "Captivate"
+        ],
+        "sub_index": 0,
+        "ability": "Illumination",
+        "sprite": "trainer_sprites/bianca.png",
+        "form": 0,
+        "evs": {
+          "df": 0
+        }
+      },
+      "Lvl 1 Smasher N ": {
+        "level": 1,
+        "ai": 15,
+        "noCh": false,
+        "tr_id": 5,
+        "ivs": {
+          "hp": 31,
+          "at": 31,
+          "df": 31,
+          "sa": 31,
+          "sd": 31,
+          "sp": 31
+        },
+        "battle_type": "Singles",
+        "reward_item": "None",
+        "item": "None",
+        "nature": "Bashful",
+        "moves": [
+          "Rest",
+          "Sleep Talk",
+          "Leer",
+          "Growl"
+        ],
+        "sub_index": 0,
+        "ability": "Illumination",
+        "sprite": "trainer_sprites/n.png",
+        "form": 0,
+        "evs": {
+          "df": 0
+        }
+      },
+      "Lvl 1 Smasher N2 ": {
+        "level": 1,
+        "ai": 15,
+        "noCh": false,
+        "tr_id": 6,
+        "ivs": {
+          "hp": 31,
+          "at": 31,
+          "df": 31,
+          "sa": 31,
+          "sd": 31,
+          "sp": 31
+        },
+        "battle_type": "Singles",
+        "reward_item": "None",
+        "item": "-",
+        "nature": "Bold",
+        "moves": [
+          "Rest",
+          "Snore",
+          "Leer",
+          "Growl"
+        ],
+        "sub_index": 0,
+        "ability": "Illumination",
+        "sprite": "trainer_sprites/n.png",
+        "form": 0,
+        "evs": {
+          "df": 0
+        }
+      },
+      "Lvl 1 Worker Matthew 1": {
+        "level": 1,
+        "ai": 143,
+        "noCh": false,
+        "tr_id": 7,
+        "ivs": {
+          "hp": 31,
+          "at": 31,
+          "df": 31,
+          "sa": 31,
+          "sd": 31,
+          "sp": 31
+        },
+        "battle_type": "Doubles",
+        "reward_item": "Blue Shard",
+        "item": "Focus Band",
+        "nature": "Gentle",
+        "moves": [
+          "Tackle",
+          "-----",
+          "-----",
+          "-----"
+        ],
+        "sub_index": 0,
+        "ability": "Patient",
+        "sprite": "trainer_sprites/worker.png",
+        "form": 0,
+        "evs": {
+          "df": 0
+        }
+      },
+      "Lvl 1 Worker Matthew 2": {
+        "level": 1,
+        "ai": 143,
+        "noCh": false,
+        "tr_id": 7,
+        "ivs": {
+          "hp": 31,
+          "at": 31,
+          "df": 31,
+          "sa": 31,
+          "sd": 31,
+          "sp": 31
+        },
+        "battle_type": "Doubles",
+        "reward_item": "Blue Shard",
+        "item": "None",
+        "nature": "Docile",
+        "moves": [
+          "Volt Tackle",
+          "-----",
+          "-----",
+          "-----"
+        ],
+        "sub_index": 1,
+        "ability": "Illumination",
+        "sprite": "trainer_sprites/worker.png",
+        "form": 0,
+        "evs": {
+          "df": 0
+        }
+      },
+      "Lvl 1 Hoopster Bobby 1": {
+        "level": 1,
+        "ai": 143,
+        "noCh": false,
+        "tr_id": 8,
+        "ivs": {
+          "hp": 31,
+          "at": 31,
+          "df": 31,
+          "sa": 31,
+          "sd": 31,
+          "sp": 31
+        },
+        "battle_type": "Doubles",
+        "reward_item": "Potion",
+        "item": "Covert Cloak",
+        "nature": "Jolly",
+        "moves": [
+          "Tackle",
+          "1st Impression",
+          "-----",
+          "-----"
+        ],
+        "sub_index": 0,
+        "ability": "Illumination",
+        "sprite": "trainer_sprites/hoopster.png",
+        "form": 0,
+        "evs": {
+          "df": 0
+        }
+      },
+      "Lvl 1 Hoopster Bobby 2": {
+        "level": 1,
+        "ai": 143,
+        "noCh": false,
+        "tr_id": 8,
+        "ivs": {
+          "hp": 31,
+          "at": 31,
+          "df": 31,
+          "sa": 31,
+          "sd": 31,
+          "sp": 31
+        },
+        "battle_type": "Doubles",
+        "reward_item": "Potion",
+        "item": "None",
+        "nature": "Bold",
+        "moves": [
+          "Wing Attack",
+          "-----",
+          "-----",
+          "-----"
+        ],
+        "sub_index": 1,
+        "ability": "Illumination",
+        "sprite": "trainer_sprites/hoopster.png",
+        "form": 0,
+        "evs": {
+          "df": 0
+        }
+      },
+      "Lvl 1 Hoopster John - Chargestone Cave 1": {
+        "level": 1,
+        "ai": 143,
+        "noCh": false,
+        "tr_id": 9,
+        "ivs": {
+          "hp": 31,
+          "at": 31,
+          "df": 31,
+          "sa": 31,
+          "sd": 31,
+          "sp": 31
+        },
+        "battle_type": "Triples",
+        "reward_item": "Hyper Potion",
+        "item": "None",
+        "nature": "Hasty",
+        "moves": [
+          "Counter",
+          "Mirror Coat",
+          "-----",
+          "-----"
+        ],
+        "sub_index": 0,
+        "ability": "Illumination",
+        "sprite": "trainer_sprites/hoopster.png",
+        "form": 0,
+        "evs": {
+          "df": 0
+        }
+      },
+      "Lvl 1 Hoopster John - Chargestone Cave 2": {
+        "level": 1,
+        "ai": 143,
+        "noCh": false,
+        "tr_id": 9,
+        "ivs": {
+          "hp": 31,
+          "at": 31,
+          "df": 31,
+          "sa": 31,
+          "sd": 31,
+          "sp": 31
+        },
+        "battle_type": "Triples",
+        "reward_item": "Hyper Potion",
+        "item": "None",
+        "nature": "Naive",
+        "moves": [
+          "Tackle",
+          "-----",
+          "-----",
+          "-----"
+        ],
+        "sub_index": 1,
+        "ability": "Patient",
+        "sprite": "trainer_sprites/hoopster.png",
+        "form": 0,
+        "evs": {
+          "df": 0
+        }
+      },
+      "Lvl 1 Hoopster John - Chargestone Cave": {
+        "level": 1,
+        "ai": 143,
+        "noCh": false,
+        "tr_id": 9,
+        "ivs": {
+          "hp": 31,
+          "at": 31,
+          "df": 31,
+          "sa": 31,
+          "sd": 31,
+          "sp": 31
+        },
+        "battle_type": "Triples",
+        "reward_item": "Hyper Potion",
+        "item": "None",
+        "nature": "Naive",
+        "moves": [
+          "Tackle",
+          "-----",
+          "-----",
+          "-----"
+        ],
+        "sub_index": 2,
+        "ability": "Patient",
+        "sprite": "trainer_sprites/hoopster.png",
+        "form": 0,
+        "evs": {
+          "df": 0
+        }
+      },
+      "Lvl 1 Clerk F Trisha ": {
+        "level": 1,
+        "ai": 15,
+        "noCh": false,
+        "tr_id": 10,
+        "ivs": {
+          "hp": 31,
+          "at": 31,
+          "df": 31,
+          "sa": 31,
+          "sd": 31,
+          "sp": 31
+        },
+        "battle_type": "Singles",
+        "reward_item": "None",
+        "item": "None",
+        "nature": "Relaxed",
+        "moves": [
+          "Weather Ball",
+          "Bubble Beam",
+          "-----",
+          "-----"
+        ],
+        "sub_index": 0,
+        "ability": "Illumination",
+        "sprite": "trainer_sprites/clerkf.png",
+        "form": 0,
+        "evs": {
+          "df": 0
+        }
+      },
+      "Lvl 1 Waiter Lou - Shopping Mall": {
+        "level": 1,
+        "ai": 15,
+        "noCh": false,
+        "tr_id": 11,
+        "ivs": {
+          "hp": 31,
+          "at": 31,
+          "df": 31,
+          "sa": 31,
+          "sd": 31,
+          "sp": 31
+        },
+        "battle_type": "Singles",
+        "reward_item": "None",
+        "item": "-",
+        "nature": "Relaxed",
+        "moves": [
+          "Volt Tackle",
+          "-----",
+          "-----",
+          "-----"
+        ],
+        "sub_index": 0,
+        "ability": "Illumination",
+        "sprite": "trainer_sprites/waiter.png",
+        "form": 0,
+        "evs": {
+          "df": 0
+        }
+      },
+      "Lvl 1 Waitress Olwen - Shopping Mall": {
+        "level": 1,
+        "ai": 15,
+        "noCh": false,
+        "tr_id": 12,
+        "ivs": {
+          "hp": 31,
+          "at": 31,
+          "df": 31,
+          "sa": 31,
+          "sd": 31,
+          "sp": 31
+        },
+        "battle_type": "Singles",
+        "reward_item": "None",
+        "item": "None",
+        "nature": "Quirky",
+        "moves": [
+          "Tackle",
+          "-----",
+          "-----",
+          "-----"
+        ],
+        "sub_index": 0,
+        "ability": "Illumination",
+        "sprite": "trainer_sprites/waitress.png",
+        "form": 0,
+        "evs": {
+          "df": 0
+        }
+      },
+      "Lvl 30 Youngster Kevin ": {
+        "level": 30,
+        "ai": 15,
+        "noCh": false,
+        "tr_id": 17,
+        "ivs": {
+          "hp": 31,
+          "at": 31,
+          "df": 31,
+          "sa": 31,
+          "sd": 31,
+          "sp": 31
+        },
+        "battle_type": "Singles",
+        "reward_item": "Ultra Ball",
+        "item": "Wacan Berry",
+        "nature": "Hasty",
+        "moves": [
+          "Natural Gift",
+          "Double-Edge",
+          "-----",
+          "-----"
+        ],
+        "sub_index": 0,
+        "ability": "Illumination",
+        "sprite": "trainer_sprites/youngster.png",
+        "form": 0,
+        "evs": {
+          "df": 0
+        }
+      },
+      "Lvl 1 Clerk M Fredric ": {
+        "level": 1,
+        "ai": 15,
+        "noCh": false,
+        "tr_id": 20,
+        "ivs": {
+          "hp": 31,
+          "at": 31,
+          "df": 31,
+          "sa": 31,
+          "sd": 31,
+          "sp": 31
+        },
+        "battle_type": "Singles",
+        "reward_item": "Ultra Ball",
+        "item": "-",
+        "nature": "Adamant",
+        "moves": [
+          "Explosion",
+          "-----",
+          "-----",
+          "-----"
+        ],
+        "sub_index": 0,
+        "ability": "Illumination",
+        "sprite": "trainer_sprites/clerkm.png",
+        "form": 0,
+        "evs": {
+          "df": 0
+        }
+      },
+      "Lvl 31 Backers Hawk & Dar ": {
+        "level": 31,
+        "ai": 15,
+        "noCh": false,
+        "tr_id": 21,
+        "ivs": {
+          "hp": 31,
+          "at": 31,
+          "df": 31,
+          "sa": 31,
+          "sd": 31,
+          "sp": 31
+        },
+        "battle_type": "Singles",
+        "reward_item": "None",
+        "item": "-",
+        "nature": "Lonely",
+        "moves": [
+          "Explosion",
+          "-----",
+          "-----",
+          "-----"
+        ],
+        "sub_index": 0,
+        "ability": "Patient",
+        "sprite": "trainer_sprites/backers.png",
+        "form": 0,
+        "evs": {
+          "df": 0
+        }
+      },
+      "Lvl 1 Backers Joe & Ross ": {
+        "level": 1,
+        "ai": 15,
+        "noCh": false,
+        "tr_id": 22,
+        "ivs": {
+          "hp": 31,
+          "at": 31,
+          "df": 31,
+          "sa": 31,
+          "sd": 31,
+          "sp": 31
+        },
+        "battle_type": "Singles",
+        "reward_item": "None",
+        "item": "-",
+        "nature": "Naive",
+        "moves": [
+          "Explosion",
+          "-----",
+          "-----",
+          "-----"
+        ],
+        "sub_index": 0,
+        "ability": "Illumination",
+        "sprite": "trainer_sprites/backers.png",
+        "form": 0,
+        "evs": {
+          "df": 0
+        }
+      },
+      "Lvl 31 Backers Kay & Ali ": {
+        "level": 31,
+        "ai": 15,
+        "noCh": false,
+        "tr_id": 24,
+        "ivs": {
+          "hp": 31,
+          "at": 31,
+          "df": 31,
+          "sa": 31,
+          "sd": 31,
+          "sp": 31
+        },
+        "battle_type": "Singles",
+        "reward_item": "None",
+        "item": "Icy Rock",
+        "nature": "Mild",
+        "moves": [
+          "Explosion",
+          "-----",
+          "-----",
+          "-----"
+        ],
+        "sub_index": 0,
+        "ability": "Patient",
+        "sprite": "trainer_sprites/backersf.png",
+        "form": 0,
+        "evs": {
+          "df": 0
+        }
+      },
+      "Lvl 1 Ace Trainer Mariana ": {
+        "level": 1,
+        "ai": 15,
+        "noCh": false,
+        "tr_id": 31,
+        "ivs": {
+          "hp": 31,
+          "at": 31,
+          "df": 31,
+          "sa": 31,
+          "sd": 31,
+          "sp": 31
+        },
+        "battle_type": "Singles",
+        "reward_item": "None",
+        "item": "-",
+        "nature": "Jolly",
+        "moves": [
+          "Growl",
+          "-----",
+          "-----",
+          "-----"
+        ],
+        "sub_index": 0,
+        "ability": "Illumination",
+        "sprite": "trainer_sprites/acetrainerf.png",
+        "form": 0,
+        "evs": {
+          "df": 0
+        }
+      },
+      "Lvl 40 Elite Four Caitlin ": {
+        "level": 40,
+        "ai": 15,
+        "noCh": false,
+        "tr_id": 41,
+        "ivs": {
+          "hp": 31,
+          "at": 31,
+          "df": 31,
+          "sa": 31,
+          "sd": 31,
+          "sp": 31
+        },
+        "battle_type": "Singles",
+        "reward_item": "None",
+        "item": "None",
+        "nature": "Sassy",
+        "moves": [
+          "Quick Attack",
+          "Brick Break",
+          "-----",
+          "-----"
+        ],
+        "sub_index": 1,
+        "ability": "Patient",
+        "sprite": "trainer_sprites/caitlin.png",
+        "form": 0,
+        "evs": {
+          "df": 0
+        }
+      },
+      "Lvl 58 Pokefan Darcy ": {
+        "level": 58,
+        "ai": 1,
+        "noCh": false,
+        "tr_id": 108,
+        "ivs": {
+          "hp": 31,
+          "at": 31,
+          "df": 31,
+          "sa": 31,
+          "sd": 31,
+          "sp": 31
+        },
+        "battle_type": "Singles",
+        "reward_item": "Max Potion",
+        "item": "-",
+        "nature": "Serious",
+        "moves": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "sub_index": 4,
+        "ability": "Illumination",
+        "sprite": "trainer_sprites/pokefanf.png",
+        "form": 0,
+        "evs": {
+          "df": 0
+        }
+      },
+      "Lvl 8 Youngster Terrell - Route 20": {
+        "level": 8,
+        "ai": 15,
+        "noCh": false,
+        "tr_id": 164,
+        "ivs": {
+          "hp": 31,
+          "at": 31,
+          "df": 31,
+          "sa": 31,
+          "sd": 31,
+          "sp": 31
+        },
+        "battle_type": "Singles",
+        "reward_item": "None",
+        "item": "None",
+        "nature": "Naive",
+        "moves": [
+          "Tackle",
+          "Leer",
+          "Growl",
+          "Bite"
+        ],
+        "sub_index": 0,
+        "ability": "Patient",
+        "sprite": "trainer_sprites/youngster.png",
+        "form": 0,
+        "evs": {
+          "df": 0
+        }
+      },
+      "Lvl 1 Team Plasma Colress3 ": {
+        "level": 1,
+        "ai": 7,
+        "noCh": false,
+        "tr_id": 581,
+        "ivs": {
+          "hp": 31,
+          "at": 31,
+          "df": 31,
+          "sa": 31,
+          "sd": 31,
+          "sp": 31
+        },
+        "battle_type": "Singles",
+        "reward_item": "None",
+        "item": "-",
+        "nature": "Naughty",
+        "moves": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "sub_index": 0,
+        "ability": "Illumination",
+        "sprite": "trainer_sprites/colress.png",
+        "form": 0,
+        "evs": {
+          "df": 0
+        }
+      },
+      "Lvl 1 no data ": {
+        "level": 1,
+        "ai": 1,
+        "noCh": false,
+        "tr_id": 616,
+        "ivs": {
+          "hp": 31,
+          "at": 31,
+          "df": 31,
+          "sa": 31,
+          "sd": 31,
+          "sp": 31
+        },
+        "battle_type": "Singles",
+        "reward_item": "None",
+        "item": "-",
+        "nature": "Hasty",
+        "moves": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "sub_index": 0,
+        "ability": "Patient",
+        "sprite": "trainer_sprites/nodata.png",
+        "form": 0,
+        "evs": {
+          "df": 0
+        }
+      },
+      "Lvl 1 no data 2 ": {
+        "level": 1,
+        "ai": 1,
+        "noCh": false,
+        "tr_id": 617,
+        "ivs": {
+          "hp": 31,
+          "at": 31,
+          "df": 31,
+          "sa": 31,
+          "sd": 31,
+          "sp": 31
+        },
+        "battle_type": "Singles",
+        "reward_item": "None",
+        "item": "-",
+        "nature": "Bashful",
+        "moves": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "sub_index": 0,
+        "ability": "Illumination",
+        "sprite": "trainer_sprites/nodata.png",
+        "form": 0,
+        "evs": {
+          "df": 0
+        }
+      },
+      "Lvl 1 no data 3 ": {
+        "level": 1,
+        "ai": 1,
+        "noCh": false,
+        "tr_id": 618,
+        "ivs": {
+          "hp": 31,
+          "at": 31,
+          "df": 31,
+          "sa": 31,
+          "sd": 31,
+          "sp": 31
+        },
+        "battle_type": "Singles",
+        "reward_item": "None",
+        "item": "-",
+        "nature": "Naive",
+        "moves": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "sub_index": 0,
+        "ability": "Illumination",
+        "sprite": "trainer_sprites/nodata.png",
+        "form": 0,
+        "evs": {
+          "df": 0
+        }
+      },
+      "Lvl 1 no data 4 ": {
+        "level": 1,
+        "ai": 1,
+        "noCh": false,
+        "tr_id": 619,
+        "ivs": {
+          "hp": 31,
+          "at": 31,
+          "df": 31,
+          "sa": 31,
+          "sd": 31,
+          "sp": 31
+        },
+        "battle_type": "Singles",
+        "reward_item": "None",
+        "item": "-",
+        "nature": "Gentle",
+        "moves": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "sub_index": 0,
+        "ability": "Patient",
+        "sprite": "trainer_sprites/nodata.png",
+        "form": 0,
+        "evs": {
+          "df": 0
+        }
+      },
+      "Lvl 1 no data 5 ": {
+        "level": 1,
+        "ai": 1,
+        "noCh": false,
+        "tr_id": 620,
+        "ivs": {
+          "hp": 31,
+          "at": 31,
+          "df": 31,
+          "sa": 31,
+          "sd": 31,
+          "sp": 31
+        },
+        "battle_type": "Singles",
+        "reward_item": "None",
+        "item": "-",
+        "nature": "Quiet",
+        "moves": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "sub_index": 0,
+        "ability": "Illumination",
+        "sprite": "trainer_sprites/nodata.png",
+        "form": 0,
+        "evs": {
+          "df": 0
+        }
+      },
+      "Lvl 16 Youngster Abe ": {
+        "level": 16,
+        "ai": 1,
+        "noCh": false,
+        "tr_id": 622,
+        "ivs": {
+          "hp": 31,
+          "at": 31,
+          "df": 31,
+          "sa": 31,
+          "sd": 31,
+          "sp": 31
+        },
+        "battle_type": "Singles",
+        "reward_item": "None",
+        "item": "-",
+        "nature": "Impish",
+        "moves": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "sub_index": 1,
+        "ability": "Patient",
+        "sprite": "trainer_sprites/youngster.png",
+        "form": 0,
+        "evs": {
+          "df": 0
+        }
+      },
+      "Lvl 16 Rich Boy Brad2 ": {
+        "level": 16,
+        "ai": 1,
+        "noCh": false,
+        "tr_id": 627,
+        "ivs": {
+          "hp": 31,
+          "at": 31,
+          "df": 31,
+          "sa": 31,
+          "sd": 31,
+          "sp": 31
+        },
+        "battle_type": "Singles",
+        "reward_item": "None",
+        "item": "-",
+        "nature": "Impish",
+        "moves": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "sub_index": 0,
+        "ability": "Patient",
+        "sprite": "trainer_sprites/richboy.png",
+        "form": 0,
+        "evs": {
+          "df": 0
+        }
+      },
+      "Lvl 12 School Kid Keston - Pinwheel Forest": {
+        "level": 12,
+        "ai": 143,
+        "noCh": false,
+        "tr_id": 633,
+        "ivs": {
+          "hp": 31,
+          "at": 31,
+          "df": 31,
+          "sa": 31,
+          "sd": 31,
+          "sp": 31
+        },
+        "battle_type": "Doubles",
+        "reward_item": "None",
+        "item": "Jaboca Berry",
+        "nature": "Hasty",
+        "moves": [
+          "Secret Power",
+          "Bite",
+          "Recycle",
+          "Detect"
+        ],
+        "sub_index": 3,
+        "ability": "Illumination",
+        "sprite": "trainer_sprites/schoolkid.png",
+        "form": 0,
+        "evs": {
+          "df": 0
+        }
+      },
+      "Lvl 1 Nursery Aide Naoise ": {
+        "level": 1,
+        "ai": 1,
+        "noCh": false,
+        "tr_id": 660,
+        "ivs": {
+          "hp": 31,
+          "at": 31,
+          "df": 31,
+          "sa": 31,
+          "sd": 31,
+          "sp": 31
+        },
+        "battle_type": "Singles",
+        "reward_item": "None",
+        "item": "-",
+        "nature": "Serious",
+        "moves": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "sub_index": 0,
+        "ability": "Patient",
+        "sprite": "trainer_sprites/nurseryaide.png",
+        "form": 0,
+        "evs": {
+          "df": 0
+        }
+      },
+      "Lvl 1 Gentleman Rich ": {
+        "level": 1,
+        "ai": 1,
+        "noCh": false,
+        "tr_id": 661,
+        "ivs": {
+          "hp": 31,
+          "at": 31,
+          "df": 31,
+          "sa": 31,
+          "sd": 31,
+          "sp": 31
+        },
+        "battle_type": "Singles",
+        "reward_item": "None",
+        "item": "-",
+        "nature": "Hardy",
+        "moves": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "sub_index": 0,
+        "ability": "Illumination",
+        "sprite": "trainer_sprites/gentleman.png",
+        "form": 0,
+        "evs": {
+          "df": 0
+        }
+      }
+    },
     "Staraptor": {
       "Lvl 1 Smasher N ": {
         "level": 1,
@@ -127176,12 +127351,12 @@
         "nature": "Bold",
         "moves": [
           "Dark Void",
-          "Dream Eater",
-          "Baton Pass",
-          "Substitute"
+          "Future Sight",
+          "Parting Shot",
+          "Night Shade"
         ],
         "sub_index": 0,
-        "ability": "Bad Dreams",
+        "ability": "Inner Focus",
         "sprite": "trainer_sprites/sabrina.png",
         "form": 0,
         "evs": {
@@ -128334,8 +128509,8 @@
         "moves": [
           "Psychic",
           "Calm Mind",
-          "Zap Cannon",
-          "Detect"
+          "Hyper Beam",
+          "Aura Sphere"
         ],
         "sub_index": 5,
         "ability": "Anticipation",
@@ -128371,101 +128546,6 @@
         "sub_index": 1,
         "ability": "Magic Guard",
         "sprite": "trainer_sprites/caitlin.png",
-        "form": 0,
-        "evs": {
-          "df": 0
-        }
-      }
-    },
-    "Mightyena": {
-      "Lvl 1 Clerk F Trisha ": {
-        "level": 1,
-        "ai": 15,
-        "noCh": false,
-        "tr_id": 10,
-        "ivs": {
-          "hp": 31,
-          "at": 31,
-          "df": 31,
-          "sa": 31,
-          "sd": 31,
-          "sp": 31
-        },
-        "battle_type": "Singles",
-        "reward_item": "None",
-        "item": "None",
-        "nature": "Careful",
-        "moves": [
-          "Bite",
-          "Power Trip",
-          "-----",
-          "-----"
-        ],
-        "sub_index": 1,
-        "ability": "Intimidate",
-        "sprite": "trainer_sprites/clerkf.png",
-        "form": 0,
-        "evs": {
-          "df": 0
-        }
-      },
-      "Lvl 22 Leader Roxie ": {
-        "level": 22,
-        "ai": 15,
-        "noCh": false,
-        "tr_id": 157,
-        "ivs": {
-          "hp": 31,
-          "at": 31,
-          "df": 31,
-          "sa": 31,
-          "sd": 31,
-          "sp": 31
-        },
-        "battle_type": "Singles",
-        "reward_item": "None",
-        "item": "Poison Gem",
-        "nature": "Lonely",
-        "moves": [
-          "Beat Up",
-          "Pursuit",
-          "Poison Fang",
-          "Sing"
-        ],
-        "sub_index": 4,
-        "ability": "Intimidate",
-        "sprite": "trainer_sprites/roxie.png",
-        "form": 0,
-        "evs": {
-          "df": 0
-        }
-      },
-      "Lvl 48 Guitarist Anna - Chargestone Cave": {
-        "level": 48,
-        "ai": 143,
-        "noCh": false,
-        "tr_id": 537,
-        "ivs": {
-          "hp": 31,
-          "at": 31,
-          "df": 31,
-          "sa": 31,
-          "sd": 31,
-          "sp": 31
-        },
-        "battle_type": "Doubles",
-        "reward_item": "None",
-        "item": "Electric Gem",
-        "nature": "Jolly",
-        "moves": [
-          "Crunch",
-          "Psychic Fangs",
-          "Thunder Fang",
-          "Ice Fang"
-        ],
-        "sub_index": 0,
-        "ability": "Strong Jaw",
-        "sprite": "trainer_sprites/guitarist.png",
         "form": 0,
         "evs": {
           "df": 0
@@ -131429,8 +131509,8 @@
         "item": "Colbur Berry",
         "nature": "Jolly",
         "moves": [
-          "Shadow Force",
-          "Crush Claw",
+          "Phantom Strike",
+          "Slam",
           "Pursuit",
           "Play Rough"
         ],
@@ -135943,7 +136023,7 @@
         "moves": [
           "Scorching Swarm",
           "Moonblast",
-          "Mystical Fire",
+          "Psychic",
           "U-turn"
         ],
         "sub_index": 1,
@@ -146685,7 +146765,7 @@
           "Sacred Sword",
           "Aqua Tail",
           "X-Scissor",
-          "Night Slash"
+          "Meditate"
         ],
         "sub_index": 4,
         "ability": "Hyper Cutter",
@@ -148372,7 +148452,7 @@
         "item": "Thick Club",
         "nature": "Serious",
         "moves": [
-          "Drill Run",
+          "Earthquake",
           "Shadow Force",
           "Temper Flare",
           "Drain Punch"
@@ -148884,6 +148964,37 @@
         "sub_index": 1,
         "ability": "Shed Skin",
         "sprite": "trainer_sprites/pokemonranger.png",
+        "form": 0,
+        "evs": {
+          "df": 0
+        }
+      },
+      "Lvl 44 Kanto Leader Janine - Driftveil City": {
+        "level": 44,
+        "ai": 143,
+        "noCh": true,
+        "tr_id": 768,
+        "ivs": {
+          "hp": 31,
+          "at": 31,
+          "df": 31,
+          "sa": 31,
+          "sd": 31,
+          "sp": 31
+        },
+        "battle_type": "Doubles",
+        "reward_item": "None",
+        "item": "Red Card",
+        "nature": "Lonely",
+        "moves": [
+          "Dragon Tail",
+          "Shadow Punch",
+          "Obstruct",
+          "Scary Face"
+        ],
+        "sub_index": 2,
+        "ability": "Adaptability",
+        "sprite": "trainer_sprites/janine.png",
         "form": 0,
         "evs": {
           "df": 0
@@ -150993,6 +151104,163 @@
         }
       }
     },
+    "Electivire": {
+      "Lvl 41 Hoopster Bobby3 - Driftveil Drawbridge": {
+        "level": 41,
+        "ai": 143,
+        "noCh": false,
+        "tr_id": 71,
+        "ivs": {
+          "hp": 31,
+          "at": 31,
+          "df": 31,
+          "sa": 31,
+          "sd": 31,
+          "sp": 31
+        },
+        "battle_type": "Singles",
+        "reward_item": "Full Restore",
+        "item": "Blunder Policy",
+        "nature": "Modest",
+        "moves": [
+          "Hyper Voice",
+          "Flamethrower",
+          "Focus Punch",
+          "Quick Attack"
+        ],
+        "sub_index": 1,
+        "ability": "Galvanize",
+        "sprite": "trainer_sprites/hoopster.png",
+        "form": 0,
+        "evs": {
+          "df": 0
+        }
+      },
+      "Lvl 38 Beauty Nikola ": {
+        "level": 38,
+        "ai": 143,
+        "noCh": false,
+        "tr_id": 207,
+        "ivs": {
+          "hp": 31,
+          "at": 31,
+          "df": 31,
+          "sa": 31,
+          "sd": 31,
+          "sp": 31
+        },
+        "battle_type": "Doubles",
+        "reward_item": "None",
+        "item": "Air Balloon",
+        "nature": "Rash",
+        "moves": [
+          "Thunderbolt",
+          "Ice Punch",
+          "Fire Punch",
+          "Drain Punch"
+        ],
+        "sub_index": 2,
+        "ability": "Teravolt",
+        "sprite": "trainer_sprites/beauty.png",
+        "form": 0,
+        "evs": {
+          "df": 0
+        }
+      },
+      "Lvl 52 Sinnoh Leader Volkner ": {
+        "level": 52,
+        "ai": 15,
+        "noCh": false,
+        "tr_id": 493,
+        "ivs": {
+          "hp": 31,
+          "at": 31,
+          "df": 31,
+          "sa": 31,
+          "sd": 31,
+          "sp": 31
+        },
+        "battle_type": "Singles",
+        "reward_item": "None",
+        "item": "Assault Vest",
+        "nature": "Lonely",
+        "moves": [
+          "Double-Edge",
+          "Quick Attack",
+          "Focus Blast",
+          "Temper Flare"
+        ],
+        "sub_index": 4,
+        "ability": "Galvanize",
+        "sprite": "trainer_sprites/volkner.png",
+        "form": 0,
+        "evs": {
+          "df": 0
+        }
+      },
+      "Lvl 56 Ace Trainer Ray ": {
+        "level": 56,
+        "ai": 143,
+        "noCh": false,
+        "tr_id": 519,
+        "ivs": {
+          "hp": 31,
+          "at": 31,
+          "df": 31,
+          "sa": 31,
+          "sd": 31,
+          "sp": 31
+        },
+        "battle_type": "Singles",
+        "reward_item": "None",
+        "item": "-",
+        "nature": "Jolly",
+        "moves": [
+          "Zing Zap",
+          "Close Combat",
+          "Protect",
+          "Fire Punch"
+        ],
+        "sub_index": 1,
+        "ability": "Teravolt",
+        "sprite": "trainer_sprites/acetrainer.png",
+        "form": 0,
+        "evs": {
+          "df": 0
+        }
+      },
+      "Lvl 64 Veteran Sinan ": {
+        "level": 64,
+        "ai": 135,
+        "noCh": false,
+        "tr_id": 643,
+        "ivs": {
+          "hp": 31,
+          "at": 31,
+          "df": 31,
+          "sa": 31,
+          "sd": 31,
+          "sp": 31
+        },
+        "battle_type": "Singles",
+        "reward_item": "None",
+        "item": "-",
+        "nature": "Timid",
+        "moves": [
+          "Thunder",
+          "Earthquake",
+          "Rock Slide",
+          "Thunder Wave"
+        ],
+        "sub_index": 1,
+        "ability": "Motor Drive",
+        "sprite": "trainer_sprites/veteran.png",
+        "form": 0,
+        "evs": {
+          "df": 0
+        }
+      }
+    },
     "Stoutland": {
       "Lvl 63 Hoopster John2 - Nimbasa City": {
         "level": 63,
@@ -151822,8 +152090,8 @@
         "item": "Focus Band",
         "nature": "Relaxed",
         "moves": [
-          "Scald",
-          "Hex",
+          "Hydro Cannon",
+          "Ominous Wind",
           "Mean Look",
           "Recover"
         ],
@@ -154570,7 +154838,7 @@
           "Parting Shot"
         ],
         "sub_index": 1,
-        "ability": "Prankster",
+        "ability": "Effect Spore",
         "sprite": "trainer_sprites/virizion.png",
         "form": 0,
         "evs": {
@@ -156858,7 +157126,7 @@
           "Sky Attack",
           "Steel Wing",
           "Drill Peck",
-          "Rock Slide"
+          "Stealth Rock"
         ],
         "sub_index": 2,
         "ability": "Tenacity",
@@ -159914,163 +160182,6 @@
         }
       }
     },
-    "Muk": {
-      "Lvl 61 Scientist Simon ": {
-        "level": 61,
-        "ai": 5,
-        "noCh": false,
-        "tr_id": 99,
-        "ivs": {
-          "hp": 31,
-          "at": 31,
-          "df": 31,
-          "sa": 31,
-          "sd": 31,
-          "sp": 31
-        },
-        "battle_type": "Singles",
-        "reward_item": "Ether",
-        "item": "-",
-        "nature": "Rash",
-        "moves": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "sub_index": 1,
-        "ability": "Strong Body",
-        "sprite": "trainer_sprites/scientist.png",
-        "form": 0,
-        "evs": {
-          "df": 0
-        }
-      },
-      "Lvl 48 Policeman Neagle - Route 6": {
-        "level": 48,
-        "ai": 15,
-        "noCh": false,
-        "tr_id": 215,
-        "ivs": {
-          "hp": 31,
-          "at": 31,
-          "df": 31,
-          "sa": 31,
-          "sd": 31,
-          "sp": 31
-        },
-        "battle_type": "Singles",
-        "reward_item": "None",
-        "item": "None",
-        "nature": "Hardy",
-        "moves": [
-          "Dive",
-          "Poison Jab",
-          "Block",
-          "Thunder"
-        ],
-        "sub_index": 1,
-        "ability": "Water Absorb",
-        "sprite": "trainer_sprites/policeman.png",
-        "form": 0,
-        "evs": {
-          "df": 0
-        }
-      },
-      "Lvl 36 Artist Horton - Route 5": {
-        "level": 36,
-        "ai": 143,
-        "noCh": false,
-        "tr_id": 254,
-        "ivs": {
-          "hp": 31,
-          "at": 31,
-          "df": 31,
-          "sa": 31,
-          "sd": 31,
-          "sp": 31
-        },
-        "battle_type": "Triples",
-        "reward_item": "None",
-        "item": "-",
-        "nature": "Docile",
-        "moves": [
-          "Knock Off",
-          "Poison Jab",
-          "Fire Punch",
-          "Sucker Punch"
-        ],
-        "sub_index": 1,
-        "ability": "Poison Touch",
-        "sprite": "trainer_sprites/artist.png",
-        "form": 0,
-        "evs": {
-          "df": 0
-        }
-      },
-      "Lvl 44 Team Plasma Grunt41 ": {
-        "level": 44,
-        "ai": 1,
-        "noCh": false,
-        "tr_id": 585,
-        "ivs": {
-          "hp": 31,
-          "at": 31,
-          "df": 31,
-          "sa": 31,
-          "sd": 31,
-          "sp": 31
-        },
-        "battle_type": "Singles",
-        "reward_item": "None",
-        "item": "-",
-        "nature": "Calm",
-        "moves": [
-          "",
-          "",
-          "",
-          ""
-        ],
-        "sub_index": 1,
-        "ability": "Strong Body",
-        "sprite": "trainer_sprites/teamplasma.png",
-        "form": 0,
-        "evs": {
-          "df": 0
-        }
-      },
-      "Lvl 47 Team Plasma Grunt46 ": {
-        "level": 47,
-        "ai": 1,
-        "noCh": false,
-        "tr_id": 724,
-        "ivs": {
-          "hp": 31,
-          "at": 31,
-          "df": 31,
-          "sa": 31,
-          "sd": 31,
-          "sp": 31
-        },
-        "battle_type": "Singles",
-        "reward_item": "None",
-        "item": "-",
-        "nature": "Mild",
-        "moves": [
-          "Sludge Wave",
-          "Acid Armor",
-          "Screech",
-          "Fling"
-        ],
-        "sub_index": 1,
-        "ability": "Strong Body",
-        "sprite": "trainer_sprites/teamplasma.png",
-        "form": 0,
-        "evs": {
-          "df": 0
-        }
-      }
-    },
     "Gastrodon-East": {
       "Lvl 28 Scientist Blythe ": {
         "level": 28,
@@ -161423,6 +161534,70 @@
         ],
         "sub_index": 1,
         "ability": "Run Away",
+        "sprite": "trainer_sprites/youngster.png",
+        "form": 0,
+        "evs": {
+          "df": 0
+        }
+      }
+    },
+    "Zigzagoon": {
+      "Lvl 58 Pokefan Darcy ": {
+        "level": 58,
+        "ai": 1,
+        "noCh": false,
+        "tr_id": 108,
+        "ivs": {
+          "hp": 31,
+          "at": 31,
+          "df": 31,
+          "sa": 31,
+          "sd": 31,
+          "sp": 31
+        },
+        "battle_type": "Singles",
+        "reward_item": "Max Potion",
+        "item": "-",
+        "nature": "Gentle",
+        "moves": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "sub_index": 2,
+        "ability": "Pickup",
+        "sprite": "trainer_sprites/pokefanf.png",
+        "form": 0,
+        "evs": {
+          "df": 0
+        }
+      },
+      "Lvl 61 Youngster Jimmy - Route 2": {
+        "level": 61,
+        "ai": 1,
+        "noCh": false,
+        "tr_id": 401,
+        "ivs": {
+          "hp": 31,
+          "at": 31,
+          "df": 31,
+          "sa": 31,
+          "sd": 31,
+          "sp": 31
+        },
+        "battle_type": "Singles",
+        "reward_item": "None",
+        "item": "-",
+        "nature": "Naive",
+        "moves": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "sub_index": 2,
+        "ability": "Pickup",
         "sprite": "trainer_sprites/youngster.png",
         "form": 0,
         "evs": {
@@ -168701,7 +168876,7 @@
         },
         "battle_type": "Singles",
         "reward_item": "None",
-        "item": "Weakness Policy",
+        "item": "Enigma Berry",
         "nature": "Docile",
         "moves": [
           "Fairy Wind",
@@ -172817,9 +172992,9 @@
         "battle_type": "Singles",
         "reward_item": "None",
         "item": "Metronome",
-        "nature": "Rash",
+        "nature": "Impish",
         "moves": [
-          "Uproar",
+          "Hyper Voice",
           "-----",
           "-----",
           "-----"
@@ -172855,7 +173030,7 @@
           "Hex",
           "Will-O-Wisp",
           "Thunder Wave",
-          "Electroweb"
+          "Shock Wave"
         ],
         "sub_index": 2,
         "ability": "Levitate",
@@ -173076,7 +173251,7 @@
           "Twineedle",
           "Barb Barrage",
           "Rollout",
-          "Toxic Spikes"
+          "Heal Order"
         ],
         "sub_index": 5,
         "ability": "Tenacity",
@@ -174015,7 +174190,7 @@
         "moves": [
           "Whirlpool",
           "Ice Beam",
-          "Entrainment",
+          "Gastro Acid",
           "Slack Off"
         ],
         "sub_index": 2,
@@ -183352,37 +183527,6 @@
         "evs": {
           "df": 0
         }
-      },
-      "Lvl 44 Kanto Leader Janine - Driftveil City": {
-        "level": 44,
-        "ai": 143,
-        "noCh": true,
-        "tr_id": 768,
-        "ivs": {
-          "hp": 31,
-          "at": 31,
-          "df": 31,
-          "sa": 31,
-          "sd": 31,
-          "sp": 31
-        },
-        "battle_type": "Doubles",
-        "reward_item": "None",
-        "item": "Charti Berry",
-        "nature": "Quirky",
-        "moves": [
-          "Shadow Ball",
-          "Blizzard",
-          "Air Slash",
-          "Hypnosis"
-        ],
-        "sub_index": 2,
-        "ability": "Keen Senses",
-        "sprite": "trainer_sprites/janine.png",
-        "form": 0,
-        "evs": {
-          "df": 0
-        }
       }
     },
     "Poliwrath": {
@@ -186396,7 +186540,7 @@
           "Heat Wave",
           "Thunder",
           "Body Press",
-          "Gyro Ball"
+          "Sludge Wave"
         ],
         "sub_index": 3,
         "ability": "Levitate",
@@ -193540,7 +193684,7 @@
           "Knock Off",
           "Dark Pulse",
           "Sludge Bomb",
-          "Submission"
+          "Play Rough"
         ],
         "sub_index": 3,
         "ability": "Exploit",
@@ -195383,7 +195527,7 @@
           "Hypnosis"
         ],
         "sub_index": 0,
-        "ability": "Thick Fat",
+        "ability": "Skill Link",
         "sprite": "trainer_sprites/pokefan.png",
         "form": 0,
         "evs": {
@@ -198571,7 +198715,7 @@
         "item": "Mascot Badge",
         "nature": "Adamant",
         "moves": [
-          "Seed Bomb",
+          "Giga Impact",
           "Stone Edge",
           "Earthquake",
           "Shell Smash"
@@ -201110,6 +201254,1623 @@
           "df": 0
         }
       }
+    }
+  },
+  "order": {
+    "162": {
+      "id": 162,
+      "next": 163,
+      "prev": null
+    },
+    "163": {
+      "id": 163,
+      "next": 161,
+      "prev": 162
+    },
+    "161": {
+      "id": 161,
+      "next": 164,
+      "prev": 163
+    },
+    "164": {
+      "id": 164,
+      "next": 165,
+      "prev": 161
+    },
+    "165": {
+      "id": 165,
+      "next": 392,
+      "prev": 164
+    },
+    "392": {
+      "id": 392,
+      "next": 166,
+      "prev": 165
+    },
+    "166": {
+      "id": 166,
+      "next": 167,
+      "prev": 392
+    },
+    "167": {
+      "id": 167,
+      "next": 168,
+      "prev": 166
+    },
+    "168": {
+      "id": 168,
+      "next": 181,
+      "prev": 167
+    },
+    "181": {
+      "id": 181,
+      "next": 182,
+      "prev": 168
+    },
+    "182": {
+      "id": 182,
+      "next": 180,
+      "prev": 181
+    },
+    "180": {
+      "id": 180,
+      "next": 772,
+      "prev": 182
+    },
+    "772": {
+      "id": 772,
+      "next": 747,
+      "prev": 180
+    },
+    "747": {
+      "id": 747,
+      "next": 748,
+      "prev": 772
+    },
+    "748": {
+      "id": 748,
+      "next": 749,
+      "prev": 747
+    },
+    "749": {
+      "id": 749,
+      "next": 750,
+      "prev": 748
+    },
+    "750": {
+      "id": 750,
+      "next": 169,
+      "prev": 749
+    },
+    "169": {
+      "id": 169,
+      "next": 170,
+      "prev": 750
+    },
+    "170": {
+      "id": 170,
+      "next": 764,
+      "prev": 169
+    },
+    "764": {
+      "id": 764,
+      "next": 633,
+      "prev": 170
+    },
+    "633": {
+      "id": 633,
+      "next": 394,
+      "prev": 764
+    },
+    "394": {
+      "id": 394,
+      "next": 171,
+      "prev": 633
+    },
+    "171": {
+      "id": 171,
+      "next": 172,
+      "prev": 394
+    },
+    "172": {
+      "id": 172,
+      "next": 156,
+      "prev": 171
+    },
+    "156": {
+      "id": 156,
+      "next": 206,
+      "prev": 172
+    },
+    "206": {
+      "id": 206,
+      "next": 173,
+      "prev": 156
+    },
+     "173": {
+      "id": 173,
+      "next": 174,
+      "prev": 206
+    },
+     "174": {
+      "id": 174,
+      "next": 176,
+      "prev": 173
+    },
+    "396": {
+      "id": 396,
+      "next": 176,
+      "prev": 174
+    },
+     "176": {
+      "id": 176,
+      "next": 175,
+      "prev": 396
+    },
+     "175": {
+      "id": 175,
+      "next": 557,
+      "prev": 176
+    },
+     "557": {
+      "id": 557,
+      "next": 558,
+      "prev": 175
+    },
+     "558": {
+      "id": 558,
+      "next": 556,
+      "prev": 557
+    },
+     "556": {
+      "id": 556,
+      "next": 555,
+      "prev": 558
+    },
+    "555": {
+      "id": 555,
+      "next": 765,
+      "prev": 556
+    },
+     "765": {
+      "id": 765,
+      "next": 746,
+      "prev": 555
+    },
+     "746": {
+      "id": 746,
+      "next": 745,
+      "prev": 765
+    },
+     "745": {
+      "id": 745,
+      "next": 645,
+      "prev": 746
+    },
+    "645": {
+      "id": 645,
+      "next": 738,
+      "prev": 745
+    },
+     "738": {
+      "id": 738,
+      "next": 204,
+      "prev": 645
+    },
+     "204": {
+      "id": 204,
+      "next": 205,
+      "prev": 738
+    },
+     "205": {
+      "id": 205,
+      "next": 203,
+      "prev": 204
+    },
+     "203": {
+      "id": 203,
+      "next": 178,
+      "prev": 205
+    },
+    "178": {
+      "id": 178,
+      "next": 179,
+      "prev": 203
+    },
+     "179": {
+      "id": 179,
+      "next": 157,
+      "prev": 178
+    },
+     "157": {
+      "id": 157,
+      "next": 690,
+      "prev": 179
+    },
+     "690": {
+      "id": 690,
+      "next": 763,
+      "prev": 157
+    },
+     "763": {
+      "id": 763,
+      "next": 224,
+      "prev": 690
+    },
+     "224": {
+      "id": 224,
+      "next": 211,
+      "prev": 763
+    },
+     "211": {
+      "id": 211,
+      "next": 210,
+      "prev": 224
+    },
+     "210": {
+      "id": 210,
+      "next": 589,
+      "prev": 211
+    },
+     
+
+     "589": {
+      "id": 589,
+      "next": 590,
+      "prev": 210
+    },
+
+     "590": {
+      "id": 590,
+      "next": 588,
+      "prev": 589
+    },
+         "588": {
+      "id": 588,
+      "next": 115,
+      "prev": 590
+    },
+
+    "115": {
+      "id": 115,
+      "next": 461,
+      "prev": 588
+    },
+         "461": {
+      "id": 461,
+      "next": 492,
+      "prev": 115
+    },
+
+    "492": {
+      "id": 492,
+      "next": 465,
+      "prev": 461
+    },
+    "465": {
+      "id": 465,
+      "next": 601,
+      "prev": 492
+    },
+
+    "601": {
+      "id": 601,
+      "next": 119,
+      "prev": 465
+    },
+
+    "119": {
+      "id": 119,
+      "next": 459,
+      "prev": 601
+    },
+    "459": {
+      "id": 459,
+      "next": 19,
+      "prev": 119
+    },
+
+    "19": {
+      "id": 19,
+      "next": 463,
+      "prev": 459
+    },
+    "463": {
+      "id": 463,
+      "next": 464,
+      "prev": 19
+    },
+
+    "464": {
+      "id": 464,
+      "next": 100,
+      "prev": 463
+    },
+    "100": {
+      "id": 100,
+      "next": 356,
+      "prev": 464
+    },
+    
+     "356": {
+      "id": 356,
+      "next": 342,
+      "prev": 100
+    },
+     "342": {
+      "id": 342,
+      "next": 465,
+      "prev": 356
+    },
+     "465": {
+      "id": 465,
+      "next": 461,
+      "prev": 342
+    },
+     "461": {
+      "id": 461,
+      "next": 567,
+      "prev": 465
+    },
+        "567": {
+      "id": 567,
+      "next": 568,
+      "prev": 461
+    },
+     "568": {
+      "id": 568,
+      "next": 563,
+      "prev": 567
+    },
+     "563": {
+      "id": 563,
+      "next": 501,
+      "prev": 568
+    },
+     "501": {
+      "id": 501,
+      "next": 691,
+      "prev": 563
+    },
+     "691": {
+      "id": 691,
+      "next": 692,
+      "prev": 501
+    },
+     "692": {
+      "id": 692,
+      "next": 502,
+      "prev": 691
+    },
+     "502": {
+      "id": 502,
+      "next": 503,
+      "prev": 692
+    },
+     "503": {
+      "id": 503,
+      "next": 766,
+      "prev": 502
+    },
+    "766": {
+      "id": 766,
+      "next": 734,
+      "prev": 503
+    },
+     "734": {
+      "id": 734,
+      "next": 735,
+      "prev": 766
+    },
+     "735": {
+      "id": 735,
+      "next": 736,
+      "prev": 734
+    },
+     "736": {
+      "id": 736,
+      "next": 737,
+      "prev": 735
+    },
+    "737": {
+      "id": 737,
+      "next": 154,
+      "prev": 736
+    },
+     "154": {
+      "id": 154,
+      "next": 358,
+      "prev": 737
+    },
+     "358": {
+      "id": 358,
+      "next": 226,
+      "prev": 154
+    },
+     "226": {
+      "id": 226,
+      "next": 221,
+      "prev": 358
+    },
+     "221": {
+      "id": 221,
+      "next": 225,
+      "prev": 226
+    },
+     "225": {
+      "id": 225,
+      "next": 214,
+      "prev": 221
+    },
+     "214": {
+      "id": 214,
+      "next": 223,
+      "prev": 225
+    },
+     "223": {
+      "id": 223,
+      "next": 222,
+      "prev": 214
+    },
+        "222": {
+      "id": 222,
+      "next": 147,
+      "prev": 223
+    },
+     "147": {
+      "id": 147,
+      "next": 773,
+      "prev": 222
+    },
+     "773": {
+      "id": 773,
+      "next": 666,
+      "prev": 147
+    },
+     "666": {
+      "id": 666,
+      "next": 667,
+      "prev": 773
+    },
+     "667": {
+      "id": 667,
+      "next": 668,
+      "prev": 666
+    },
+     "668": {
+      "id": 668,
+      "next": 511,
+      "prev": 667
+    },
+     "511": {
+      "id": 511,
+      "next": 664,
+      "prev": 668
+    },
+     "664": {
+      "id": 664,
+      "next": 663,
+      "prev": 511
+    },
+
+       "663": {
+      "id": 663,
+      "next": 669,
+      "prev": 664
+    },
+     "669": {
+      "id": 669,
+      "next": 512,
+      "prev": 663
+    },
+     "512": {
+      "id": 512,
+      "next": 510,
+      "prev": 669
+    },
+     "510": {
+      "id": 510,
+      "next": 790,
+      "prev": 512
+    },
+        "790": {
+      "id": 790,
+      "next": 13,
+      "prev": 510
+    },
+     "13": {
+      "id": 13,
+      "next": 59,
+      "prev": 790
+    },
+     "59": {
+      "id": 59,
+      "next": 60,
+      "prev": 13
+    },
+     "60": {
+      "id": 60,
+      "next": 61,
+      "prev": 59
+    },
+     "61": {
+      "id": 61,
+      "next": 248,
+      "prev": 60
+    },
+     "248": {
+      "id": 248,
+      "next": 48,
+      "prev": 61
+    },
+     "48": {
+      "id": 48,
+      "next": 251,
+      "prev": 248
+    },
+     "251": {
+      "id": 251,
+      "next": 732,
+      "prev": 48
+    },
+        "732": {
+      "id": 732,
+      "next": 733,
+      "prev": 251
+    },
+     "733": {
+      "id": 733,
+      "next": 361,
+      "prev": 732
+    },
+     "361": {
+      "id": 361,
+      "next": 362,
+      "prev": 733
+    },
+     "362": {
+      "id": 362,
+      "next": 360,
+      "prev": 361
+    },
+     "360": {
+      "id": 360,
+      "next": 364,
+      "prev": 362
+    },
+     "364": {
+      "id": 364,
+      "next": 365,
+      "prev": 360
+    },
+     "365": {
+      "id": 365,
+      "next": 363,
+      "prev": 364
+    },
+     "363": {
+      "id": 363,
+      "next": 29,
+      "prev": 365
+    },
+    "29": {
+      "id": 29,
+      "next": 30,
+      "prev": 363
+    },
+    "30": {
+      "id": 30,
+      "next": 49,
+      "prev": 29
+    },
+    "49": {
+      "id": 49,
+      "next": 51,
+      "prev": 30
+    },
+
+    "51": {
+      "id": 51,
+      "next": 52,
+      "prev": 49
+    },
+
+    "52": {
+      "id": 52,
+      "next": 53,
+      "prev": 51
+    },
+    "53": {
+      "id": 53,
+      "next": 253,
+      "prev": 52
+    },
+       "253": {
+      "id": 253,
+      "next": 254,
+      "prev": 53
+    },
+     "254": {
+      "id": 254,
+      "next": 293,
+      "prev": 253
+    },
+     "293": {
+      "id": 293,
+      "next": 262,
+      "prev": 254
+    },
+     "262": {
+      "id": 262,
+      "next": 260,
+      "prev": 293
+    },
+        "260": {
+      "id": 260,
+      "next": 261,
+      "prev": 262
+    },
+     "261": {
+      "id": 261,
+      "next": 257,
+      "prev": 260
+    },
+     "257": {
+      "id": 257,
+      "next": 217,
+      "prev": 261
+    },
+     "217": {
+      "id": 217,
+      "next": 297,
+      "prev": 257
+    },
+     "297": {
+      "id": 297,
+      "next": 298,
+      "prev": 217
+    },
+     "298": {
+      "id": 298,
+      "next": 767,
+      "prev": 297
+    },
+     "767": {
+      "id": 767,
+      "next": 621,
+      "prev": 298
+    },
+     "621": {
+      "id": 621,
+      "next": 148,
+      "prev": 767
+    },
+        "148": {
+      "id": 148,
+      "next": 207,
+      "prev": 621
+    },
+     "207": {
+      "id": 207,
+      "next": 208,
+      "prev": 148
+    },
+     "208": {
+      "id": 208,
+      "next": 209,
+      "prev": 207
+    },
+     "209": {
+      "id": 209,
+      "next": 153,
+      "prev": 208
+    },
+     "153": {
+      "id": 153,
+      "next": 359,
+      "prev": 209
+    },
+     "359": {
+      "id": 359,
+      "next": 751,
+      "prev": 153
+    },
+     "751": {
+      "id": 751,
+      "next": 340,
+      "prev": 359
+    },
+     "340": {
+      "id": 340,
+      "next": 63,
+      "prev": 751
+    },
+
+       "63": {
+      "id": 63,
+      "next": 65,
+      "prev": 340
+    },
+     "65": {
+      "id": 65,
+      "next": 14,
+      "prev": 63
+    },
+     "14": {
+      "id": 14,
+      "next": 58,
+      "prev": 65
+    },
+     "58": {
+      "id": 58,
+      "next": 50,
+      "prev": 14
+    },
+        "50": {
+      "id": 50,
+      "next": 249,
+      "prev": 58
+    },
+     "249": {
+      "id": 249,
+      "next": 679,
+      "prev": 50
+    },
+     "679": {
+      "id": 679,
+      "next": 670,
+      "prev": 249
+    },
+     "670": {
+      "id": 670,
+      "next": 68,
+      "prev": 679
+    },
+     "68": {
+      "id": 68,
+      "next": 71,
+      "prev": 670
+    },
+     "71": {
+      "id": 71,
+      "next": 56,
+      "prev": 68
+    },
+     "56": {
+      "id": 56,
+      "next": 57,
+      "prev": 71
+    },
+     "57": {
+      "id": 57,
+      "next": 255,
+      "prev": 56
+    },
+        "255": {
+      "id": 255,
+      "next": 252,
+      "prev": 57
+    },
+     "252": {
+      "id": 252,
+      "next": 256,
+      "prev": 255
+    },
+     "256": {
+      "id": 256,
+      "next": 346,
+      "prev": 252
+    },
+     "346": {
+      "id": 346,
+      "next": 768,
+      "prev": 256
+    },
+     "768": {
+      "id": 768,
+      "next": 267,
+      "prev": 346
+    },
+     "267": {
+      "id": 267,
+      "next": 527,
+      "prev": 768
+    },
+     "527": {
+      "id": 527,
+      "next": 324,
+      "prev": 267
+    },
+     "324": {
+      "id": 324,
+      "next": 323,
+      "prev": 527
+    },
+
+       "323": {
+      "id": 323,
+      "next": 322,
+      "prev": 324
+    },
+     "322": {
+      "id": 322,
+      "next": 321,
+      "prev": 323
+    },
+     "321": {
+      "id": 321,
+      "next": 320,
+      "prev": 322
+    },
+     "320": {
+      "id": 320,
+      "next": 319,
+      "prev": 321
+    },
+        "319": {
+      "id": 319,
+      "next": 325,
+      "prev": 320
+    },
+     "325": {
+      "id": 325,
+      "next": 158,
+      "prev": 319
+    },
+     "158": {
+      "id": 158,
+      "next": 739,
+      "prev": 325
+    },
+     "739": {
+      "id": 739,
+      "next": 566,
+      "prev": 158
+    },
+     "566": {
+      "id": 566,
+      "next": 564,
+      "prev": 739
+    },
+     "564": {
+      "id": 564,
+      "next": 562,
+      "prev": 566
+    },
+     "562": {
+      "id": 562,
+      "next": 561,
+      "prev": 564
+    },
+     "561": {
+      "id": 561,
+      "next": 565,
+      "prev": 562
+    },
+        "565": {
+      "id": 565,
+      "next": 569,
+      "prev": 561
+    },
+     "569": {
+      "id": 569,
+      "next": 570,
+      "prev": 565
+    },
+     "570": {
+      "id": 570,
+      "next": 634,
+      "prev": 569
+    },
+     "634": {
+      "id": 634,
+      "next": 372,
+      "prev": 570
+    },
+     "372": {
+      "id": 372,
+      "next": 374,
+      "prev": 634
+    },
+     "374": {
+      "id": 374,
+      "next": 375,
+      "prev": 372
+    },
+     "375": {
+      "id": 375,
+      "next": 371,
+      "prev": 374
+    },
+     "371": {
+      "id": 371,
+      "next": 376,
+      "prev": 375
+    },
+    "376": {
+      "id": 376,
+      "next": 377,
+      "prev": 371
+    },
+        "377": {
+      "id": 377,
+      "next": 369,
+      "prev": 376
+    },
+        "369": {
+      "id": 369,
+      "next": 370,
+      "prev": 377
+    },
+        "370": {
+      "id": 370,
+      "next": 368,
+      "prev": 369
+    },
+        "368": {
+      "id": 368,
+      "next": 215,
+      "prev": 370
+    },
+        "215": {
+      "id": 215,
+      "next": 268,
+      "prev": 368
+    },
+        "215": {
+      "id": 215,
+      "next": 410,
+      "prev": 368
+    },
+    "410": {
+      "id": 410,
+      "next": 263,
+      "prev": 215
+    },
+        "263": {
+      "id": 263,
+      "next": 264,
+      "prev": 410
+    },
+        "264": {
+      "id": 264,
+      "next": 292,
+      "prev": 263
+    },
+        "292": {
+      "id": 292,
+      "next": 266,
+      "prev": 264
+    },
+        "266": {
+      "id": 266,
+      "next": 265,
+      "prev": 292
+    },
+        "265": {
+      "id": 265,
+      "next": 487,
+      "prev": 266
+    },
+        "487": {
+      "id": 487,
+      "next": 488,
+      "prev": 265
+    },
+        "488": {
+      "id": 488,
+      "next": 489,
+      "prev": 487
+    },
+        "489": {
+      "id": 489,
+      "next": 681,
+      "prev": 488
+    },
+        "681": {
+      "id": 681,
+      "next": 680,
+      "prev": 489
+    },
+        "680": {
+      "id": 680,
+      "next": 227,
+      "prev": 681
+    },
+        "227": {
+      "id": 227,
+      "next": 683,
+      "prev": 680
+    },
+        "683": {
+      "id": 683,
+      "next": 491,
+      "prev": 227
+    },
+        "491": {
+      "id": 491,
+      "next": 537,
+      "prev": 683
+    },
+        "537": {
+      "id": 537,
+      "next": 743,
+      "prev": 491
+    },
+        "743": {
+      "id": 743,
+      "next": 539,
+      "prev": 537
+    },
+        "539": {
+      "id": 539,
+      "next": 741,
+      "prev": 743
+    },
+        "741": {
+      "id": 741,
+      "next": 544,
+      "prev": 539
+    },
+        "544": {
+      "id": 544,
+      "next": 541,
+      "prev": 741
+    },
+        "541": {
+      "id": 541,
+      "next": 542,
+      "prev": 544
+    },
+        "542": {
+      "id": 542,
+      "next": 671,
+      "prev": 541
+    },
+        "671": {
+      "id": 671,
+      "next": 543,
+      "prev": 542
+    },
+        "543": {
+      "id": 543,
+      "next": 742,
+      "prev": 671
+    },
+        "742": {
+      "id": 742,
+      "next": 744,
+      "prev": 543
+    },
+        "744": {
+      "id": 744,
+      "next": 284,
+      "prev": 742
+    },
+      "284": {
+      "id": 284,
+      "next": 740,
+      "prev": 744
+    },
+        "740": {
+      "id": 740,
+      "next": 547,
+      "prev": 284
+    },
+        "547": {
+      "id": 547,
+      "next": 545,
+      "prev": 740
+    },
+        "545": {
+      "id": 545,
+      "next": 493,
+      "prev": 547
+    },
+        "493": {
+      "id": 493,
+      "next": 593,
+      "prev": 545
+    },
+        "593": {
+      "id": 593,
+      "next": 413,
+      "prev": 493
+    },
+        "413": {
+      "id": 413,
+      "next": 548,
+      "prev": 593
+    },
+        "548": {
+      "id": 548,
+      "next": 272,
+      "prev": 413
+    },
+        "272": {
+      "id": 272,
+      "next": 273,
+      "prev": 548
+    },
+        "273": {
+      "id": 273,
+      "next": 271,
+      "prev": 272
+    },
+        "271": {
+      "id": 271,
+      "next": 275,
+      "prev": 273
+    },
+        "275": {
+      "id": 275,
+      "next": 276,
+      "prev": 271
+    },
+        "276": {
+      "id": 276,
+      "next": 274,
+      "prev": 275
+    },
+        "274": {
+      "id": 274,
+      "next": 552,
+      "prev": 276
+    },
+        "552": {
+      "id": 552,
+      "next": 551,
+      "prev": 274
+    },
+        "551": {
+      "id": 551,
+      "next": 229,
+      "prev": 552
+    },
+        "229": {
+      "id": 229,
+      "next": 550,
+      "prev": 551
+    },
+        "550": {
+      "id": 550,
+      "next": 553,
+      "prev": 229
+    },
+        "553": {
+      "id": 553,
+      "next": 554,
+      "prev": 550
+    },
+        "554": {
+      "id": 554,
+      "next": 769,
+      "prev": 553
+    },
+        "769": {
+      "id": 769,
+      "next": 149,
+      "prev": 554
+    },
+        "149": {
+      "id": 149,
+      "next": 150,
+      "prev": 769
+    },
+        "150": {
+      "id": 150,
+      "next": 332,
+      "prev": 149
+    },
+        "332": {
+      "id": 332,
+      "next": 151,
+      "prev": 150
+    },
+        "151": {
+      "id": 151,
+      "next": 152,
+      "prev": 332
+    },
+    "152": {
+      "id": 152,
+      "next": 155,
+      "prev": 151
+    },
+    "155": {
+      "id": 155,
+      "next": 468,
+      "prev": 152
+    },
+
+
+
+
+
+
+
+
+
+
+
+
+
+    "468": {
+      "id": 468,
+      "next": 467,
+      "prev": 155
+    },
+
+    "467": {
+      "id": 467,
+      "next": 337,
+      "prev": 468
+    },
+
+    "337": {
+      "id": 337,
+      "next": 247,
+      "prev": 467
+    },
+
+    "247": {
+      "id": 247,
+      "next": 62,
+      "prev": 337
+    },
+
+    "62": {
+      "id": 62,
+      "next": 521,
+      "prev": 247
+    },
+
+    "521": {
+      "id": 521,
+      "next": 522,
+      "prev": 62
+    },
+
+    "522": {
+      "id": 522,
+      "next": 516,
+      "prev": 521
+    },
+
+    "516": {
+      "id": 516,
+      "next": 517,
+      "prev": 522
+    },
+
+    "517": {
+      "id": 517,
+      "next": 672,
+      "prev": 516
+    },
+
+    "672": {
+      "id": 672,
+      "next": 243,
+      "prev": 517
+    },
+
+    "243": {
+      "id": 243,
+      "next": 524,
+      "prev": 672
+    },
+
+    "524": {
+      "id": 524,
+      "next": 523,
+      "prev": 243
+    },
+
+    "523": {
+      "id": 523,
+      "next": 788,
+      "prev": 524
+    },
+
+    "788": {
+      "id": 788,
+      "next": 514,
+      "prev": 523
+    },
+
+    "514": {
+      "id": 514,
+      "next": 519,
+      "prev": 788
+    },
+
+    "519": {
+      "id": 519,
+      "next": 787,
+      "prev": 514
+    },
+
+    "787": {
+      "id": 787,
+      "next": 559,
+      "prev": 519
+    },
+
+    "559": {
+      "id": 559,
+      "next": 285,
+      "prev": 787
+    },
+
+    "285": {
+      "id": 285,
+      "next": 259,
+      "prev": 559
+    },
+
+    "259": {
+      "id": 259,
+      "next": 283,
+      "prev": 285
+    },
+
+    "283": {
+      "id": 283,
+      "next": 414,
+      "prev": 259
+    },
+
+    "414": {
+      "id": 414,
+      "next": 281,
+      "prev": 283
+    },
+
+    "281": {
+      "id": 281,
+      "next": 282,
+      "prev": 414
+    },
+
+    "282": {
+      "id": 282,
+      "next": 245,
+      "prev": 281
+    },
+
+    "245": {
+      "id": 245,
+      "next": 246,
+      "prev": 282
+    },
+
+    "246": {
+      "id": 246,
+      "next": 54,
+      "prev": 245
+    },
+
+    "54": {
+      "id": 54,
+      "next": 55,
+      "prev": 246
+    },
+
+    "55": {
+      "id": 55,
+      "next": 232,
+      "prev": 54
+    },
+
+    "232": {
+      "id": 232,
+      "next": 278,
+      "prev": 55
+    },
+
+    "278": {
+      "id": 278,
+      "next": 277,
+      "prev": 232
+    },
+
+    "277": {
+      "id": 277,
+      "next": 234,
+      "prev": 278
+    },
+
+    "234": {
+      "id": 234,
+      "next": 582,
+      "prev": 277
+    },
+
+    "582": {
+      "id": 582,
+      "next": 506,
+      "prev": 234
+    },
+
+    "506": {
+      "id": 506,
+      "next": 770,
+      "prev": 582
+    },
+
+    "770": {
+      "id": 770,
+      "next": 69,
+      "prev": 506
+    },
+
+    "69": {
+      "id": 69,
+      "next": 233,
+      "prev": 770
+    },
+
+    "233": {
+      "id": 233,
+      "next": 235,
+      "prev": 69
+    },
+
+    "235": {
+      "id": 235,
+      "next": 26,
+      "prev": 233
+    },
+
+    "26": {
+      "id": 26,
+      "next": 236,
+      "prev": 235
+    },
+
+    "236": {
+      "id": 236,
+      "next": 250,
+      "prev": 26
+    },
+
+    "250": {
+      "id": 250,
+      "next": 113,
+      "prev": 236
+    },
+
+    "113": {
+      "id": 113,
+      "next": 114,
+      "prev": 250
+    },
+
+    "114": {
+      "id": 114,
+      "next": 623,
+      "prev": 113
+    },
+
+    "623": {
+      "id": 623,
+      "next": 306,
+      "prev": 114
+    },
+
+    "306": {
+      "id": 306,
+      "next": 307,
+      "prev": 623
+    },
+
+    "307": {
+      "id": 307,
+      "next": 311,
+      "prev": 306
+    },
+
+    "311": {
+      "id": 311,
+      "next": 310,
+      "prev": 307
+    },
+
+    "310": {
+      "id": 310,
+      "next": 308,
+      "prev": 311
+    },
+
+    "308": {
+      "id": 308,
+      "next": 309,
+      "prev": 310
+    },
+
+    "309": {
+      "id": 309,
+      "next": 312,
+      "prev": 308
+    },
+
+    "312": {
+      "id": 312,
+      "next": 44,
+      "prev": 309
+    },
+
+    "44": {
+      "id": 44,
+      "next": 333,
+      "prev": 312
+    },
+
+    "333": {
+      "id": 333,
+      "next": 326,
+      "prev": 44
+    },
+
+    "326": {
+      "id": 326,
+      "next": 538,
+      "prev": 333
+    },
+
+    "538": {
+      "id": 538,
+      "next": 507,
+      "prev": 326
+    },
+
+    "507": {
+      "id": 507,
+      "next": 350,
+      "prev": 538
+    },
+
+    "350": {
+      "id": 350,
+      "next": 351,
+      "prev": 507
+    },
+
+    "351": {
+      "id": 351,
+      "next": 352,
+      "prev": 350
+    },
+
+    "352": {
+      "id": 352,
+      "next": 353,
+      "prev": 351
+    },
+
+    "353": {
+      "id": 353,
+      "next": 354,
+      "prev": 352
+    },
+
+    "354": {
+      "id": 354,
+      "next": 355,
+      "prev": 353
+    },
+
+    "355": {
+      "id": 355,
+      "next": 160,
+      "prev": 354
+    },
+
+    "160": {
+      "id": 160,
+      "next": null,
+      "prev": 355
     }
   }
 }

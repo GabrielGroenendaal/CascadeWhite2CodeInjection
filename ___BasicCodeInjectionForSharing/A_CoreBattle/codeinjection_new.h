@@ -40,10 +40,10 @@ bool IsEqual(int a1, int a2)
 
 C_DECL_BEGIN
 
-extern int DoesMonHaveSuperEffectiveMove(BtlClientWk *a1, BattleMon *a2, BattleMon *a3, int a4);
+extern int DoesMonHaveSuperEffectiveMove(BtlClientWk_Test *a1, BattleMon *a2, BattleMon *a3, int a4);
 extern int MoveDamageRec_Get(BattleMon *a1, unsigned int a2, unsigned int a3, MoveDamageRec *a4);
-extern int CheckMonsForTypeAbsorbingAbility(BtlClientWk *a1, int a2, _BYTE *a3);
-
+extern int CheckMonsForTypeAbsorbingAbility(BtlClientWk_Test *a1, int a2, _BYTE *a3);
+extern MoveRecord * Handler_GetMoveRecord(ServerFlow *a1); 
 extern void HandlerEviolite(int a1, int a2, int a3);
 extern void HandlerOranBerryReaction(BattleEventItem *a1, ServerFlow *a2, unsigned int *a3);
 extern void HandlerOranBerryCheckActivation(BattleEventItem *a1, ServerFlow *a2, int a3);
@@ -572,7 +572,7 @@ extern void GFL_StrBufStoreString(StrBuf *strbuf, wchar_t *dest, int length);
 extern int BattleMon_GetComboMoveData(BattleMon *a1, _BYTE *a2, _WORD *a3);
 extern int GetComboMoveType(int a1, int a2);
 extern u8 Condition_GetTurnMax(void *a1);
-
+extern int BattleMon_GetConsecutiveMoveCount(BattleMon *a1);
 extern int PokeTypePair_MakeMonotype(__int16 a1);
 extern void HandlerAnticipation(int a1, _DWORD *a2, unsigned int a3, int a4);
 extern int BattleMon_CanBattle(BattleMon *a1);
@@ -587,7 +587,7 @@ extern int MainModule_BattlePosToClientID(MainModule *a1, int a2);
 extern BattleMon *SwitchAI_DetermineOpponent(void *a1, __int16 a2);
 extern unsigned int MainModule_GetClientPokePos(MainModule *a1, int clientID, int partyIndex);
 extern BattleMon *PokeCon_GetBattleMon(void *a1, int a2);
-extern int SwitchAI_CheckReserve(BtlClientWk *a1, int a2);
+extern int SwitchAI_CheckReserve(BtlClientWk_Test *a1, int a2);
 extern int GetNumBattleReadyPartyMons(BtlClientWk *a1, u8 *a2);
 extern bool HandlerCommon_IsMonLastInTurnOrder(ServerFlow *a1, int a2);
 extern int Handler_GetThisTurnAction(ServerFlow *a1, int a2, _DWORD *a3);

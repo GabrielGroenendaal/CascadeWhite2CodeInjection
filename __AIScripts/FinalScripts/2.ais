@@ -1049,7 +1049,7 @@ Label_LowerTargetSpecialDefense:
 
 Label_AcidSpray: 
 	GetHeldItem(defender)
-	JumpIfStoredEQ(ability.covert_cloak, &address_0x11FE)
+	JumpIfStoredEQ(item.covert_cloak, &address_0x11FE)
 	GetAbilityGuess(attacker)
 	JumpIfStoredEQ(ability.sheer_force, &address_0x11FE)
 	JumpIfStoredEQ(ability.teravolt, &Label_LowerSpecialDefenseLogic)
@@ -1270,10 +1270,13 @@ address_0x164A:
 
 Label_Heal50:
 	JumpIfHealthEQ(attacker, 100, &address_0x169A)
-	JumpCompareSpeed(GT, &address_0x16A6)
+	JumpCompareSpeed(GT, &address_HealingLogicIfTheUserIsSlower)
+    JumpIfUserWillTakeLowDamage_Setup(&lowDamageIntake_Healing)
 	AddToScore(-8)
 	Jump(&address_0x16F2)
-	JumpIfHealthLT(attacker, 50, &address_0x16CA)
+
+lowDamageIntake_Healing: 
+    JumpIfHealthLT(attacker, 50, &address_0x16CA)
 	JumpIfHealthGT(attacker, 80, &address_0x169A)
 	JumpIfRandLT(70, &address_0x16CA)
 
@@ -1281,7 +1284,7 @@ address_0x169A:
 	AddToScore(-3)
 	Jump(&address_0x16F2)
 
-address_0x16A6:
+address_HealingLogicIfTheUserIsSlower:
 	JumpIfHealthLT(attacker, 70, &address_0x16CA)
 	JumpIfRandLT(30, &address_0x16CA)
 	AddToScore(-3)
@@ -1463,8 +1466,12 @@ address_0x18A0:
 
 
 //   BINDING MOVES   
-
 Label_Binding:
+    JumpIfHasCondition(defender, cond.bind, &address_0x18EC)
+    JumpIfRandLT(100, &Binding_StatusChecks)
+    AddToScore(1)
+
+Binding_StatusChecks:
 	JumpIfBadlyPoisoned(defender, &address_0x18DC)
 	JumpIfHasCondition(defender, cond.curse, &address_0x18DC)
 	JumpIfHasCondition(defender, cond.perish_song, &address_0x18DC)
@@ -6002,7 +6009,7 @@ Label_Acrobatics:
 //   REFLECT TYPE   
 Label_ReflectType:
 	GetAbilityGuess(attacker)
-	JumpIfStoredNE(item.rivalry, &Label_ReflectType2)
+	JumpIfStoredNE(ability.rivalry, &Label_ReflectType2)
 	JumpIfRandLT(110, &address_0x5BF0)
 	AddToScore(2)
 

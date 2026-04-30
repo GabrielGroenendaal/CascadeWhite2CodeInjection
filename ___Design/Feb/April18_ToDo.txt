@@ -1,0 +1,182 @@
+
+
+/*         
+	
+	-----------------------------------------------------------------------------------------------------------------------------------------
+	-------------------------------------------------- WHAT I WANNA DO TODAY ---------------------------------------------------------------- 
+	-----------------------------------------------------------------------------------------------------------------------------------------       
+
+*/
+
+
+
+[ BUGS AND OPTIMIZATION ]
+    Obstruct / Protect Moves:   
+        Seemingly are not resetting the counter properly. Investigate. 
+        Test with mons with Protect/Obstruct + a status move. 
+    
+    Investigate the Damage Calc Discrepancies 
+        I don't have an explanation for these yet. It's possible there's some weird damage value changes on the calc side, or the natures are incorrect. 
+        We are just going to have to play through the game and assess if there are any weird damage calc happenings. 
+
+    Playtest our Game: 
+        We need to do some runs using vanilla switch AI 
+        Then we need to do some runs using Gen 4 Switch AI 
+        If we were to do g4 switch AI we would need to slap a lot more coverage on across the board.
+    
+
+
+[ AI ]
+    Double check Immunity Logic 
+        - Make some test cases and observe the behavior. 
+    
+    Make it so the mid turn switch AI won't trigger if the target moved first last turn.
+        - We can look into MoveDamageRec_Get to see how that function works.
+        - Hopefully our implementation of FinalSwitchChecks will now work with the changes we made.  
+    
+    Double check the Iron Defense AI (getLastMoveCategory). 
+
+
+
+[ TRAINERS ]
+    Roxie   
+        Rotom
+            Electroweb -> Shock Wave 
+        
+        Loudred 
+            Uproar -> Hyper Voice 
+            Impish Nature
+        
+        Whirlipede 
+            Toxic Spikes -> Heal Order 
+        
+    Erika 
+        Beautifly: 
+            Psychic 
+    
+    Rood: 
+        Zoroark: 
+            Submission -> Play Rough 
+        
+    
+
+[ BALANCE ]
+    Remove more of the damage power outliers. 
+
+    Make Charge Beam and Mega Punch and Fiery Dance into an Omniboost Move. 
+        - Update Overlay 167 
+        - Update Move Description 
+        - Update Notes in the Mastersheet 
+        - Update the Move Itself 
+
+
+[ ROMHACKING ]
+    - EV Toggle 
+        - Add the EVs back to all Pokemon, make a list of them while at work 
+        - Confirm the EV toggle script works
+        - Make it's enabled in the global PC script. 
+    - Test and implement the post-marlon gym scripting for Frigate, Abundant Shrine, Pinwheel Forest
+
+
+
+
+====================================================================================================================================================
+/*   TESTING   */
+
+    Case #1: Protect / Obstruct 
+        Enemy Team: 
+            Exploud 
+                Chip Away 
+            
+        Player Team:    
+            Mew: 
+                Protect 
+                Obstruct 
+                Leer 
+                Shadow Sneak 
+        
+    
+    Case #2: Mid Turn Switch Out AI 
+
+        Enemy Team: 
+            
+
+
+
+====================================================================================================================================================
+/*   MARLON BUILD   */
+
+
+
+    IMPOSSIBLE: 
+        - Debug Illusion 
+        - Test Battle Scan with Type Changing and Ability Changing.
+        - Update Terastalization Polish
+            - Some kind of color status for Tera
+            - Fix the Tera Animation in Doubles 
+            - See if you can get the tera types to be stored properly somewhere. 
+    
+
+
+ 
+
+
+====================================================================================================================================================
+/*   NOTES    */
+        
+
+    Underutilized Mechanics: 
+        Back to Backs
+        
+        Limit to 3 Pokemon 
+
+        Chip Away Normal Types 
+        Ability Neutraliizing: 
+            Gastro Acid 
+
+        Evasion:
+            Double Team 
+            Acid Armor 
+            Smokescreen 
+            Sand Attack (in doubles) 
+            Anticipation
+            Snow Cloak / Sand Veil
+        Confusion:  
+            Supersonic
+            Rock Climb 
+            Confuse Ray 
+            Swagger 
+        Attraction 
+        Hazards
+        Trapping 
+            Block 
+            Mean Look 
+            Dive / Dig / Bounce / Fly / Shadow Force 
+            Pursuit 
+            Wrap / Fire Spin / Clamp / Whirlpool / etc. 
+            Shadow Tag / Arena Trap
+        Failure Boosting: 
+            Anger Point 
+            Thrash 
+            Seething Cold 
+            Uproar 
+            Stompin Tantrum 
+            Grudge 
+            Blunder Policy 
+        Priority: 
+            Quick Claw 
+            Quick Draw 
+            Trickster Herb 
+        Speed Control: 
+            Scary Face 
+            Rock Tomb 
+            Bulldoze 
+            icy Wind 
+            Glaciate 
+            Heavy Slam 
+            Heat Crash (make sure it has the same id as icy wind)
+        Chaos Stats: 
+            Moody 
+            Starf Berry 
+
+

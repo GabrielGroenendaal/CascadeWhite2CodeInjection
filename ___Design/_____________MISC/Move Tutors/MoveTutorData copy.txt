@@ -37,9 +37,9 @@ BA 01 00 00 04 00 00 00 05 00 00 00   Iron Head
 43 00 00 00 08 00 00 00 0A 00 00 00   Low Kick
 B8 01 00 00 08 00 00 00 0B 00 00 00   Gunk Shot -> Cross Poison 
 DC 00 00 00 06 00 00 00 07 00 00 00   Uproar -> Seething Cold 
-09 00 00 00 06 00 00 00 0D 00 00 00   Thunderpunch
-07 00 00 00 06 00 00 00 0C 00 00 00   Fire Punch
-08 00 00 00 06 00 00 00 0E 00 00 00   Ice Punch
+09 00 00 00 02 00 00 00 0D 00 00 00   Thunderpunch
+07 00 00 00 02 00 00 00 0C 00 00 00   Fire Punch
+08 00 00 00 02 00 00 00 0E 00 00 00   Ice Punch
 
 NACRENE CITY
 2286 is the global script 
@@ -61,20 +61,20 @@ FD 00 00 00 04 00 00 00 0D 00 00 00   #14 Skill Swap -> Uproar
 
 // Lentimas Town
 2284
-15 01 00 00 04 00 00 00 03 00 00 00   Magic Coat
+15 01 00 00 02 00 00 00 03 00 00 00   Magic Coat
 4F 01 00 00 06 00 00 00 04 00 00 00   Block -> Barrier
 9E 01 00 00 08 00 00 00 0A 00 00 00   Earth Power
 EC 01 00 00 08 00 00 00 0C 00 00 00   Foul Play
 64 01 00 00 0A 00 00 00 0E 00 00 00   Gravity
-AC 01 00 00 04 00 00 00 02 00 00 00   Magnet Rise -> Zen Headbutt
+AC 01 00 00 02 00 00 00 02 00 00 00   Magnet Rise -> Zen Headbutt
 78 00 00 00 02 00 00 00 01 00 00 00   Iron Defense -> Self Destruct
 99 00 00 00 02 00 00 00 00 00 00 00   Last Resort -> Explosion
 08 01 00 00 0A 00 00 00 0D 00 00 00   Superpower -> Focus Punch
 E6 00 00 00 06 00 00 00 06 00 00 00   Electroweb -> Sweet Scent
 7C 01 00 00 06 00 00 00 07 00 00 00   Icy Wind -> Gastro Acid 
-91 01 00 00 08 00 00 00 09 00 00 00   Aqua Tail 
+91 01 00 00 04 00 00 00 09 00 00 00   Aqua Tail 
 B6 00 00 00 0A 00 00 00 10 00 00 00   Dark Pulse -> Protect
 80 01 00 00 08 00 00 00 0B 00 00 00   Zen Headbutt -> Psyblade
 0A 01 00 00 0A 00 00 00 0F 00 00 00   Dragon Pulse -> Follow Me 
 6F 00 00 00 06 00 00 00 05 00 00 00   Hyper Voice -> Defense Curl
-E7 00 00 00 06 00 00 00 08 00 00 00   Iron Tail 
+E7 00 00 00 04 00 00 00 08 00 00 00   Iron Tail 

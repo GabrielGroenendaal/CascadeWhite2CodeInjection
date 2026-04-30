@@ -1,0 +1,182 @@
+Dentures (Golbat) (F) @ None
+Level: 27
+Calm Nature
+Ability: Shadow Tag
+Ability Slot: 2
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 5 HP / 14 Atk / 25 Def / 24 SpA / 4 SpD / 3 Spe
+- Leech Life
+- Wing Attack
+- U-turn
+- Sludge
+Met: Union Cave
+
+Coattails (Pidgeotto) (M) @ Oran Berry
+Level: 27
+Impish Nature
+Ability: Quick Feet
+Ability Slot: 2
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 15 HP / 11 Atk / 5 Def / 14 SpA / 31 SpD / 7 Spe
+- Spark
+- Shock Wave
+- Aerial Ace
+- Feather Dance
+Met: Route 29
+
+Backpack (Omanyte) (M) @ None
+Level: 27
+Serious Nature
+Ability: Shell Armor
+Ability Slot: 2
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 5 HP / 24 Atk / 12 Def / 30 SpA / 26 SpD / 8 Spe
+- Icy Wind
+- Mud Shot
+- Rollout
+- Bubble Beam
+Met: Dark Cave
+
+Turbanur (Ivysaur) (M) @ None
+Level: 27
+Hardy Nature
+Ability: Thick Fat
+Ability Slot: 2
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 22 HP / 16 Atk / 22 Def / 21 SpA / 23 SpD / 19 Spe
+- Magical Leaf
+- Growl
+- Mega Drain
+- Sludge
+Met: Sprout Tower
+
+Togepi (Egg) (M) @ None
+Level: 1
+Hardy Nature
+Ability: Serene Grace
+Ability Slot: 2
+Egg: Yes
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 7 HP / 26 Atk / 2 Def / 16 SpA / 1 SpD / 29 Spe
+- Growl
+- Charm
+- Extrasensory
+- -----
+Met: Mystery Zone
+
+Scarf (Arbok) (M) @ Oran Berry
+Level: 27
+Relaxed Nature
+Ability: Intimidate
+Ability Slot: 1
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 16 HP / 17 Atk / 30 Def / 29 SpA / 24 SpD / 22 Spe
+- Poison Tail
+- Glare
+- Dragon Claw
+- Rock Tomb
+Met: Route 32
+
+Crownsh (Corphish) (F) @ None
+Level: 27
+Calm Nature
+Ability: Shell Armor
+Ability Slot: 2
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 16 HP / 17 Atk / 6 Def / 31 SpA / 14 SpD / 25 Spe
+- Muddy Water
+- Aqua Jet
+- Rock Smash
+- Knock Off
+Met: Route 31
+
+NecklaceU (Bayleef) (M) @ None
+Level: 27
+Bold Nature
+Ability: Filter
+Ability Slot: 2
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 30 HP / 16 Atk / 30 Def / 15 SpA / 23 SpD / 21 Spe
+- Leech Seed
+- Synthesis
+- Mega Drain
+- Magical Leaf
+Met: Pokéwalker
+
+Moisturizr (Quagsire) (M) @ None
+Level: 27
+Impish Nature
+Ability: Water Absorb
+Ability Slot: 1
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 18 HP / 21 Atk / 11 Def / 29 SpA / 12 SpD / 22 Spe
+- Ice Beam
+- Body Slam
+- Rock Tomb
+- Magnitude
+Met: SLOWPOKE Well
+
+Pinisc (Luvdisc) (F) @ Hard Stone
+Level: 27
+Hasty Nature
+Ability: Swift Swim
+Ability Slot: 1
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 21 HP / 28 Atk / 24 Def / 20 SpA / 15 SpD / 20 Spe
+- Ice Beam
+- Ancient Power
+- Surf
+- Charm
+Met: Violet City
+
+Collare (Illumise) (F) @ Twisted Spoon
+Level: 27
+Naughty Nature
+Ability: Tinted Lens
+Ability Slot: 2
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 16 HP / 29 Atk / 20 Def / 19 SpA / 4 SpD / 0 Spe
+- Psybeam
+- Charm
+- Moonlight
+- U-turn
+Met: Ilex Forest
+
+Masque (Sunflora) (F) @ None
+Level: 26
+Lonely Nature
+Ability: Chlorophyll
+Ability Slot: 1
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 12 HP / 28 Atk / 13 Def / 29 SpA / 26 SpD / 8 Spe
+- Ember
+- Mega Drain
+- Leech Seed
+- Morning Sun
+Met: Route 30
+
+Vestl (Floatzel) (F) @ None
+Level: 26
+Careful Nature
+Ability: Swift Swim
+Ability Slot: 1
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 24 HP / 30 Atk / 21 Def / 25 SpA / 24 SpD / 9 Spe
+- Aqua Jet
+- Ice Punch
+- Bubble Beam
+- U-turn
+Met: Ruins of Alph
+
+Mittens (Ledian) (M) @ Muscle Band
+Level: 27
+Careful Nature
+Ability: Iron Fist
+Ability Slot: 1
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 6 HP / 14 Atk / 21 Def / 10 SpA / 28 SpD / 9 Spe
+- Leech Life
+- Mach Punch
+- U-turn
+- Ice Punch
+Met: Route 46

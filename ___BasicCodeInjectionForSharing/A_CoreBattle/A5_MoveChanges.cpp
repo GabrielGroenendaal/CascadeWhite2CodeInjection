@@ -1649,7 +1649,7 @@ extern "C"
             v7 = 0;
             while (PreviousMoveID != NEW_PROTECT_COUNTER_MOVES[v7])
             {
-                if (++v7 >= 9)
+                if (++v7 >= 8)
                 {
                     v8 = (HandlerParam_SetCounter *)BattleHandler_PushWork(a2, EFFECT_COUNTER, (int)a3);
                     v8->pokeID = (int)a3;
@@ -2611,54 +2611,54 @@ extern "C"
 #pragma endregion
 
 #pragma region MiscMoves
-    void THUMB_BRANCH_HandlerWaterPledgeCheck(BattleEventItem *a1, ServerFlow *serverFlow, int pokeId, _DWORD *work)
-    {
-        unsigned int attackingMonId;   // r0
-        BattleMon *BattleMon;          // r0
-        int SubID;                     // r0
-        unsigned __int8 ComboMoveType; // r5
-        Types moveType;                // r1
-        int move1;
-        int move2;
-        int move1TypeE;
-        int move2TypeE;
-        unsigned __int16 comboMoveId;
-        unsigned __int8 comboPokeId;
+    // void THUMB_BRANCH_HandlerWaterPledgeCheck(BattleEventItem *a1, ServerFlow *serverFlow, int pokeId, _DWORD *work)
+    // {
+    //     unsigned int attackingMonId;   // r0
+    //     BattleMon *BattleMon;          // r0
+    //     int SubID;                     // r0
+    //     unsigned __int8 ComboMoveType; // r5
+    //     Types moveType;                // r1
+    //     int move1;
+    //     int move2;
+    //     int move1TypeE;
+    //     int move2TypeE;
+    //     unsigned __int16 comboMoveId;
+    //     unsigned __int8 comboPokeId;
 
-        attackingMonId = BattleEventVar_GetValue(VAR_ATTACKING_MON);
-        if (pokeId == attackingMonId)
-        {
-            BattleMon = Handler_GetBattleMon(serverFlow, pokeId);
-            attackingMonId = BattleMon_GetComboMoveData(BattleMon, &comboPokeId, &comboMoveId);
-            if (attackingMonId)
-            {
-                SubID = BattleEventItem_GetSubID(a1);
-                ComboMoveType = GetComboMoveType(SubID, comboMoveId);
+    //     attackingMonId = BattleEventVar_GetValue(VAR_ATTACKING_MON);
+    //     if (pokeId == attackingMonId)
+    //     {
+    //         BattleMon = Handler_GetBattleMon(serverFlow, pokeId);
+    //         attackingMonId = BattleMon_GetComboMoveData(BattleMon, &comboPokeId, &comboMoveId);
+    //         if (attackingMonId)
+    //         {
+    //             SubID = BattleEventItem_GetSubID(a1);
+    //             ComboMoveType = GetComboMoveType(SubID, comboMoveId);
 
-                moveType = (Types)BattleEventVar_GetValue(VAR_MOVE_TYPE);
-                if (ComboMoveType)
-                {
-                    work[0] = 1;
-                    work[1] = ComboMoveType;
-                    work[2] = comboPokeId;
+    //             moveType = (Types)BattleEventVar_GetValue(VAR_MOVE_TYPE);
+    //             if (ComboMoveType)
+    //             {
+    //                 work[0] = 1;
+    //                 work[1] = ComboMoveType;
+    //                 work[2] = comboPokeId;
 
-                    move1 = PML_MoveGetType(SubID);
-                    move2 = PML_MoveGetType(comboMoveId);
-                    move1TypeE = GetTypeEffectivenessVsMon(move1, BattleMon_GetPokeType(Handler_GetBattleMon(serverFlow, BattleEventVar_GetValue(VAR_DEFENDING_MON))));
-                    move2TypeE = GetTypeEffectivenessVsMon(move2, BattleMon_GetPokeType(Handler_GetBattleMon(serverFlow, BattleEventVar_GetValue(VAR_DEFENDING_MON))));
+    //                 move1 = PML_MoveGetType(SubID);
+    //                 move2 = PML_MoveGetType(comboMoveId);
+    //                 move1TypeE = GetTypeEffectivenessVsMon(move1, BattleMon_GetPokeType(Handler_GetBattleMon(serverFlow, BattleEventVar_GetValue(VAR_DEFENDING_MON))));
+    //                 move2TypeE = GetTypeEffectivenessVsMon(move2, BattleMon_GetPokeType(Handler_GetBattleMon(serverFlow, BattleEventVar_GetValue(VAR_DEFENDING_MON))));
 
-                    if (move2TypeE > move1TypeE)
-                    {
-                        BattleEventVar_RewriteValue(VAR_MOVE_TYPE, move2);
-                    }
-                    else
-                    {
-                        BattleEventVar_RewriteValue(VAR_MOVE_TYPE, move1);
-                    }
-                }
-            }
-        }
-    }
+    //                 if (move2TypeE > move1TypeE)
+    //                 {
+    //                     BattleEventVar_RewriteValue(VAR_MOVE_TYPE, move2);
+    //                 }
+    //                 else
+    //                 {
+    //                     BattleEventVar_RewriteValue(VAR_MOVE_TYPE, move1);
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
 
 #pragma endregion
 
