@@ -89,6 +89,7 @@ extern "C"
     extern u16 *EventWork_GetWkPtr(EventWorkSave *eventWork, int swkId);
     extern int howManyPokesAreAbleToFight(PokeParty *pPartyBlk);
     extern PokeParty *GameData_GetParty(void *data);
+
     u32 GetBackgroundsSetting()
     {
         EventWorkSave *eventWork = GameData_GetEventWork(GAME_DATA);
@@ -1043,6 +1044,7 @@ extern "C"
         // Misty
         if (foe1TrID == 765)
         {
+            random = TrainerData_GetParam(foe1TrID, TR_CLASS);
             // #if DEBUGGING_BACKGROUNDS
             //             k::Printf("\nMisty Battle Background Triggered");
             // #endif
@@ -1050,6 +1052,7 @@ extern "C"
             {
                 fieldStatus->BattleBGID = 35;
             }
+            random = TrainerData_GetParam(foe1TrID, TR_CLASS);
             if (dayperiod == DAY)
             {
                 fieldStatus->BattleBGID = 35;
@@ -1058,10 +1061,12 @@ extern "C"
             {
                 fieldStatus->BattleBGID = 36;
             }
-            if (dayperiod == EVENING || dayperiod == NIGHT)
+            random = TrainerData_GetParam(foe1TrID, TR_CLASS);
+            if (dayperiod == EVENING)
             {
                 fieldStatus->BattleBGID = 37;
             }
+            random = TrainerData_GetParam(foe1TrID, TR_CLASS);
             if (dayperiod == NIGHT)
             {
                 fieldStatus->BattleBGID = 37;
@@ -1074,6 +1079,7 @@ extern "C"
         // Surge
         if (foe1TrID == 766)
         {
+            random = TrainerData_GetParam(foe1TrID, TR_CLASS);
             // #if DEBUGGING_BACKGROUNDS
             //             k::Printf("\nSurge Battle Background Triggered");
             // #endif
@@ -1085,6 +1091,7 @@ extern "C"
             {
                 fieldStatus->BattleBGID = 51;
             }
+            random = TrainerData_GetParam(foe1TrID, TR_CLASS);
             if (dayperiod == SUNSET)
             {
                 fieldStatus->BattleBGID = 52;
@@ -1097,11 +1104,13 @@ extern "C"
             {
                 fieldStatus->BattleBGID = 53;
             }
+            random = TrainerData_GetParam(foe1TrID, TR_CLASS);
             return;
         }
         // #if DEBUGGING_BACKGROUNDS
         // k::Printf("\nMade it past the Surge check");
         // #endif
+
         // Benga
         if (foe1TrID == 773)
         {
