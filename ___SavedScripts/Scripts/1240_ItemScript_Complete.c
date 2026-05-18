@@ -121,7 +121,7 @@ void Sequence9()
 	End();
 }
 
-/* TM48 Mystical Fire - Relic Castle (Upper Floors) */
+/* TM48 Mystical Fire - Relic Castle (Lower Floors) */
 void Sequence10()
 {
 	LockAll();
@@ -170,11 +170,11 @@ void Sequence13()
 	End();
 }
 
-/* Brightpowder - Flocessy Ranch */
+/* wiseglasses - Flocessy Ranch */
 void Sequence14()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 213);
+	SetVarEqVal(0x800C, 267);
 	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
@@ -629,12 +629,12 @@ void Sequence51()
 	End();
 }
 
-/* Trickster Herb (x2) - Castelia Battle Company */
+/* Trickster Herb (X10) - Castelia Battle Company */
 void Sequence52()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 136);
-	SetVarEqVal(0x800D, 2);
+	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -2620,12 +2620,12 @@ void Sequence225()
 	End();
 }
 
-/* IV Enhancer x3, Rash Mint, Careful Mint - Celestial Rooftop */
+/* IV Enhancer x2, Rash Mint, Careful Mint - Celestial Rooftop */
 void Sequence226()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 530);
-	SetVarEqVal(0x800D, 3);
+	SetVarEqVal(0x800D, 2);
 	Sequence400();
     WaitMoment();
     SetVarEqVal(0x800C, 524);
@@ -2700,13 +2700,33 @@ void Sequence231()
 	End();
 }
 
-
+/* 3x each status berry - Route 5 */
 void Sequence232()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 158);
-	SetVarEqVal(0x800D, 5);
+	SetVarEqVal(0x800C, 149);
+	SetVarEqVal(0x800D, 3);
 	Sequence400();
+    WaitMoment();
+    SetVarEqVal(0x800C, 150);
+	SetVarEqVal(0x800D, 3);
+    Sequence400();
+    WaitMoment();
+    SetVarEqVal(0x800C, 151);
+	SetVarEqVal(0x800D, 3);
+    Sequence400();
+	WaitMoment();
+    SetVarEqVal(0x800C, 152);
+	SetVarEqVal(0x800D, 3);
+    Sequence400();
+	WaitMoment();
+    SetVarEqVal(0x800C, 153);
+	SetVarEqVal(0x800D, 3);
+    Sequence400();
+	WaitMoment();
+    SetVarEqVal(0x800C, 156);
+	SetVarEqVal(0x800D, 3);
+    Sequence400();
 	WaitMoment();
 	UnlockAll();
 	End();
@@ -2966,12 +2986,12 @@ void Sequence255()
 	UnlockAll();
 	End();
 }
-/* IV Enhancer x3, Lonely Mint, Bold Mint - Abundant Shrine */
+/* IV Enhancer x2, Lonely Mint, Bold Mint - Abundant Shrine */
 void Sequence256()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 530);
-	SetVarEqVal(0x800D, 3);
+	SetVarEqVal(0x800D, 2);
 	Sequence400();
     WaitMoment();
     SetVarEqVal(0x800C, 506);
@@ -3345,7 +3365,7 @@ void Sequence288()
 	End();
 }
 
-/* TM61 Power Gem - Route 5 */
+/* TM61 Power Gem - Relic Castle */
 void Sequence289()
 {
 	LockAll();
@@ -3439,6 +3459,7 @@ void Sequence296()
 	End();
 }
 
+/* DRAGON FANG - Anville Town */
 void Sequence297()
 {
 	LockAll();
@@ -3473,12 +3494,12 @@ void Sequence299()
 	End();
 }
 
-/* Eject Pack x3 - Route 16 */
+/* Eject Pack x2 - Route 16 */
 void Sequence300()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 539);
-	SetVarEqVal(0x800D, 3);
+	SetVarEqVal(0x800D, 2);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -3533,11 +3554,11 @@ void Sequence304()
 	End();
 }
 
-/* TM31 Brick Break - Relic Passage */
+/* Aerial Ace TM - Clay tunnel */
 void Sequence305()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 358);
+	SetVarEqVal(0x800C, 367);
 	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
@@ -4370,12 +4391,12 @@ void Sequence375()
 	End();
 }
 
-/* Trickster Herb (x2) - Driftveil Market */
+/* Trickster Herb (x1) - Driftveil Market */
 void Sequence376()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 136);
-	SetVarEqVal(0x800D, 2);
+	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();

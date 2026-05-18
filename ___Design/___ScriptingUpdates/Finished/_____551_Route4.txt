@@ -558,7 +558,7 @@ public class MainEvents {
 		Message.CloseAll();
 		WalkSouth(bengaEntity);
 		Actor.WaitActionFinish();
-		Global2805(386, 1);
+		Global2805(213, 1);
 		WalkNorthOneTile(bengaEntity);
 		TurnSouth(bengaEntity);
 		Message.ActorEx(1024, 45, bengaEntity, 2, 0);

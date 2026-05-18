@@ -165,9 +165,7 @@ The moves taught have been changed.
 !items Pokémart
 desc: The following items are sold
 Pokéball, Pokéball
-maxpotion, Max Potion
-lemonade, +1 Soda (heals Pokémon for 1 health)
-soda pop, +5 Soda (heals Pokémon for 5 health)
+maxpotion, Max Potions, Full Restores, Max Elixirs and Full Heals
 end
 
 !items Items
@@ -243,14 +241,13 @@ She will also gift you an Exp. Share!
 ## Route 20
 !items Items
 muscle band, Muscle Band (found past Youngster Terrell)
-wiseglasses, WiseGlasses (found past Lass Isabel)
 end
 
 !enc 129
 
 !trm 164/8 Guards Muscle Band
 
-!trm 165/9 Guards Wiseglasses
+!trm 165/9 
 
 !trm 392/10
 
@@ -261,7 +258,7 @@ end
   green shard, Green Shard x10 — reward for defeating Rival
   quick claw, Quick Claw — found in the south part of the map by fences
   oran berry, Oran Berry x10 — given by Hugh after defeating Lass Molly
-  brightpowder, Brightpowder — found after defeating Janitor Orville
+  wiseglasses, WiseGlasses (found past Janitor Orville)
   white herb, White Herb x2 — found past Youngster Kenny
   tm normal, TM10 Hidden Power — reward for defeating Benga
 end
@@ -561,15 +558,7 @@ end
 
 
 ## Castelia City 
-!items Castlelia PokéMart 
-cheri berry, Cheri Berries 
-pecha berry, Pecha Berries
-aspear berry, Aspear Berries 
-rawst berry, Rawst Berries 
-chesto berry, Chesto Berries
-persim berry, Persim Berries
-leppa berry, Leppa Berries 
-kings rock, King's Rock 
+!items Castlelia PokéMart
 muscle band, Muscle Band 
 wiseglasses, Wiseglasses
 end
@@ -720,7 +709,7 @@ end
 ## Castelia Battle Company 
 !items Items 
 eviolite, Eviolite (Received upon entering the building)
-trickster herb, x2 Trickster Herbs (Reward for defeating Clerk Brittany) (grants +1 priority to a status move, consumable)
+trickster herb, x1 Trickster Herbs (Reward for defeating Clerk Brittany) (grants +1 priority to a status move, consumable)
 zoom lens, Zoom Lens (Reward for defeating Clerk Clemens)
 shell bell, Shell Bell (Reward for defeating Clerk Gilligan)
 red shard, 10x Red Shards (Reward for Defeating Clerk Warren)
@@ -763,7 +752,7 @@ end
 
 !tr 501/28 Rewards Zoom Lens 
 
-!tr 691/28 Rewards Trickster Herbs (x2)
+!tr 691/28 Rewards Trickster Herbs (x1)
 
 !tr 692/28 Rewards Shell Bell 
 
@@ -821,12 +810,6 @@ end
 # Elesa Split (Level Cap 41, Optional Level Cap 37 for Benga)
 !items PokéMart
 desc: The Pokémart now has the following items for sale
-cheri berry, Cheri Berries
-pecha berry, Pecha Berries 
-aspear berry, Aspear Berries 
-persim berry, Persim Berries 
-chesto berry, Chesto Berries 
-rawst berry, Rawst Berries
 leppa berry, Leppa Berries 
 berry juice, Berry Juice 
 end
@@ -836,7 +819,7 @@ end
 safety goggles, Safety Goggles (reward from Colress)
 lum berry, x3 Lum Berries (found past Twins Tara & Val)
 figy berry, 10x Figy Berry (found Northeast of Pokéfan Sachiko)
-tm fire, TM59 Temper Flare (Found past Benga)
+brightpowder, Brightpowder (Reward for beating Benga)
 end
 
 ### Colress 
@@ -860,7 +843,7 @@ end
 
 
 ### Benga 
-!trm 773/37 Rewards TM59 Temper Flare
+!trm 773/37 Rewards Brightpowder
 
 
 
@@ -910,7 +893,7 @@ end
 !notif NEW ENCOUNTER, Relic Castle's upper and lower area are not distinct met locations for encounters. , #469e62
 
 !items Items 
-tm fire, TM48 Mystical Fire (Found on the lower floor, requires fighting Psychic Low)
+tm rock, TM66 Power Gem (Found on the lower floor, requires fighting Psychic Low)
 tm ground, TM18 Scorching Sands (Found past Psychic Dua on the Top Floor)
 end
 
@@ -918,7 +901,7 @@ end
 
 !enc 12 
 
-!tr 512/36 Guards TM48 Mystical Fire
+!tr 512/36 Guards TM66 Power Gem
 
 !tr 510/36 Guards TM18 Scorching Sands and access to Lenora 
 
@@ -972,9 +955,7 @@ end
 
 ## Nimbasa City 
 !items TM Vendor 
-desc: If you didn't fight Brock or Misty, this is your opportunity to get some TMs. 
-tm water, TM50 Water Pulse 
-tm fighting, TM94 Rock Smash
+desc: 
 tm normal, TM27 Return
 end 
 
@@ -1032,7 +1013,6 @@ end
 ## Anville Town (only accessible by defeating Ingo and Emmet)
 !items Item 
 dragon fang, Dragon Fang 
-dragon gem, x2 Dragon Gems 
 end
 
 !items Rare Evolution Stone 
@@ -1055,7 +1035,7 @@ end
 ## Route 5 
 !items Items 
 spell tag, Spell Tag (past Baker Jenn)
-tm rock, TM66 Power Gem (past Artist Horton)
+rawst berry, rawst berry, 3x Rawst/Cheri/Chesto/Pecha/Aspear/Persim Berries 
 tm poison, TM84 Poison Jab (past Ranger Lois)
 end
 
@@ -1076,7 +1056,7 @@ end
 tm fairy, TM08 Dizzy Punch (past Cyclists)
 normal gem, x3 Normal Gem (past Art & Stu)
 tm normal, TM49 Snore (past Art & Stu)
-eject button, x3 Eject Pack (past Roughneck Silvester)
+eject button, x2 Eject Pack (past Roughneck Silvester)
 end
 
 ### Depot Agent Hank (Route 16 gatekeeper)
@@ -1095,8 +1075,7 @@ end
 
 ## Lostlorn Forest 
 !items Items 
-big root, Big Root (past Ranger Serenity)
-tm grass, TM19 Giga Drain (past Ranger Forrest)
+big root, Big Root (past Ranger Forrest) (HAS BEEN BUFFED TO 75% BOOST)
 end
 
 ### Ranger Serenity (Lostlorn Forest Gatekeeper)
@@ -1104,12 +1083,12 @@ end
 
 !enc 126
 
-!tr 298/36 Guards TM19 Giga Drain 
+!tr 298/36 Guards Big Root
 
 
 ### Erika
 !notif SPLIT-LOCKED, Erika is an optional mini-boss that can only be fought before defeating Elesa. This content is locked off afterwards. , #af74b3
-!tr 767/40 Rewards 2x Resist Berries, TM48 Mystical Fire, Lostlorn Encounter 
+!tr 767/40 Rewards 2x Resist Berries, TM06 Magical Leaf, Lostlorn Encounter 
 
 
 
@@ -1118,6 +1097,7 @@ end
 !items Erika Reward
 desc: Speak with Bellossom to receive 2x of each Resist Berry
 wacan berry, 2x each Resist Berry
+tm grass, TM06 Magical Leaf 
 red shard, x10 Red Shards
 end
 
@@ -1214,7 +1194,7 @@ tm fairy, TM90 Draining Kiss (Past Backers Ava and Aya)
 red shard, x10 Red Shard (past Dancer Brian)
 blue shard, x6 Blue Shard (past Dancer Brian)
 white herb, x2 White Herb (in the Market)
-kasib berry, x2 Trickster Herb (in the market)
+kasib berry, x1 Trickster Herb (in the market)
 end 
 
 !items PokéMart 
@@ -1276,13 +1256,14 @@ end
 
 ### Janine 
 !notif SPLIT-LOCKED, Janine is an optional mini-boss that can only be fought before defeating Clay. This content is locked off afterwards. , #af74b3
-!tr 768/45 Rewards 2x Each Gem, Clay Tunnel Encounter, 10x Blue Shards
+!tr 768/45 Rewards 2x Each Gem, Aerial Ace TM, Clay Tunnel Encounter, 10x Blue Shards
 
 
 
 ## Clay Tunnel (must defeat Janine to access)
 !items Janine Rewards
 poison gem, 2x Each Gem (Speak with Sableye)
+tm flying, TM40 Aerial Ace
 blue shard, 10x Blue Shards
 end
 !enc 84
@@ -1334,6 +1315,16 @@ end
 
 # Skyla Split (Level Cap 55, Optional Level Cap 51 for Rival)
 
+!items PokéMart
+desc: The Pokémart now has the following items for sale
+cheri berry, Cheri Berries 
+pecha berry, Pecha Berries
+aspear berry, Aspear Berries 
+rawst berry, Rawst Berries 
+chesto berry, Chesto Berries
+persim berry, Persim Berries
+end
+
 ## Pokémon World Tournament 
 !notif NOTE, The move tutor for Blast Burn, Frenzy Plant, Hydro Cannon has been removed. 
 !notif MOVE REMINDER, The Move Reminder is here!
@@ -1379,6 +1370,7 @@ end
 !items Items 
 dome fossil, Dome Fossil, Skull Fossil (Past the Scientist in the room past Lenora)
 skull fossil, Skull Fossil (defeat the Scientist in the room past Lenora)
+tm fire, TM48 Mystical Fire (defeat Scientist Hughes)
 life orb, Life Orb (reward for defeating the Strange Statue)
 end
 
@@ -1387,6 +1379,8 @@ end
 ### Psychic Tully & Psychic Ena (Relic Castle Gatekeepers)
 !tr 569/50 Left Side 
 !tr 570/50 Right Side  
+
+!tr 654/51 Guards Fossils and TM48 Mystical Fire 
 
 !notif NEW ENCOUNTER, This is a unique encounter from the upper Relic Castle Floors in Desert Resort. , #469e62 
 !enc 18
@@ -1481,11 +1475,14 @@ end
 blue shard, 6x Blue Shards
 tm ground, TM28 Dig (reward for defeating Roxanne) 
 ground gem, x3 Ground Gem (reward for defeating Roxanne) 
-shuca berry, x3 Shuca Berry (reward for defeating Roxanne) 
+shuca berry, x3 Shuca Berry (reward for defeating Roxanne)
+tm fire, TM59 Temper Flare (reward for beating Geoff) 
 end
 
 !notif WARNING, This shares a met location with Clay Tunnel accessible by beating Janine. If you skipped that fight, you can get an encounter here. #f26253
 !enc 85
+
+!tr 682/51 Guards TM59 Temper Flare 
 
 ### Roxanne Miniboss
 !notif SPLIT-LOCKED CONTENT, Roxanne can only be fought and her rewards only claimed before Skyla is defeated , #af74b3 
@@ -1618,7 +1615,7 @@ end
 !tr 271/52 Guards TM11 Air Slash
 
 !tr 275/50 Left Side, Guards Blunder Policies & Doubles Grass
-!tr 276/50 Right Side, Guards lunder Policies & Doubles Grass
+!tr 276/50 Right Side, Guards Blunder Policies & Doubles Grass
 
 !tr 274/51 Guards TM32 Dazzling Gleam and Heart Scale 
 
@@ -1662,7 +1659,7 @@ end
 
 ## Celestial Rooftop (only accessible by beating Sabrina)
 !items Sabrina Rewards 
-old gateau, 3x IV Enhancers 
+old gateau, 2x IV Enhancers 
 stable mulch, 1x Rash Mint
 stable mulch, 1x Careful Mint
 covert cloak, Covert Cloak
@@ -1902,7 +1899,7 @@ Abundant Shrine can be accessed immediately upon arriving in Undella, but the ch
 
 !items Items 
 rocky helmet, Ability Drill 
-old gateau, x3 IV Enhancer
+old gateau, x2 IV Enhancer
 stable mulch, x1 Lonely Mint
 stable mulch, x1 Impish Mint
 end

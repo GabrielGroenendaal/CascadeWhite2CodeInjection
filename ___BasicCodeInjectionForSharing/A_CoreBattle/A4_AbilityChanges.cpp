@@ -545,6 +545,8 @@ extern "C"
 
 #pragma region Heatproof
 
+    // CHANGE THIS 
+    // See if we can implement this in the code itself.
     // Heatproof
     void THUMB_BRANCH_HandlerHeatproofPower(int a1, int a2, int a3)
     {
@@ -711,18 +713,7 @@ extern "C"
         if (a3 == BattleEventVar_GetValue(VAR_DEFENDING_MON))
         {
             Value = BattleEventVar_GetValue(VAR_TYPE_EFFECTIVENESS);
-            if (Value == EFFECTIVENESS_2)
-            {
-                BattleEventVar_MulValue(VAR_RATIO, 3072);
-            }
-            else if (Value == EFFECTIVENESS_4)
-            {
-                BattleEventVar_MulValue(VAR_RATIO, 2304);
-            }
-            else
-            {
-                BattleEventVar_MulValue(VAR_RATIO, 4096);
-            }
+            BattleEventVar_MulValue(VAR_RATIO, ((Value == EFFECTIVENESS_2) ? 3072 : ((Value == EFFECTIVENESS_4) ? 2304 : 4096)));
         }
     }
 #pragma endregion
@@ -869,33 +860,29 @@ extern "C"
 #pragma endregion
 
 #pragma region Reckless
-    void THUMB_BRANCH_HandlerReckless(int a1, int a2, int a3)
-    {
-        int Value; // r4
+    // CHANGE THIS 
+    // Double check that we need to hook this
+    // void THUMB_BRANCH_HandlerReckless(int a1, int a2, int a3)
+    // {
+    //     int Value; // r4
 
-        if (a3 == BattleEventVar_GetValue(VAR_ATTACKING_MON))
-        {
-            Value = BattleEventVar_GetValue(VAR_MOVE_ID);
-            if (PML_MoveGetParam(Value, MVDATA_RECOIL_NEG) || Value == MOVE153_EXPLOSION || Value == MOVE120_SELF_DESTRUCT || Value == MOVE026_JUMP_KICK || Value == MOVE136_HIGH_JUMP_KICK)
-            {
-                BattleEventVar_MulValue(VAR_MOVE_POWER_RATIO, 4915);
-            }
-        }
-    }
+    //     if (a3 == BattleEventVar_GetValue(VAR_ATTACKING_MON))
+    //     {
+    //         Value = BattleEventVar_GetValue(VAR_MOVE_ID);
+    //         if (PML_MoveGetParam(Value, MVDATA_RECOIL_NEG) || Value == MOVE153_EXPLOSION || Value == MOVE120_SELF_DESTRUCT || Value == MOVE026_JUMP_KICK || Value == MOVE136_HIGH_JUMP_KICK)
+    //         {
+    //             BattleEventVar_MulValue(VAR_MOVE_POWER_RATIO, 4915);
+    //         }
+    //     }
+    // }
 #pragma endregion
 
 #pragma region FurCoat
     void HanderFurCoat(int a1, ServerFlow *a2, int a3)
     {
-        int result; // r0
-        int Value;  // r0
-
-        result = BattleEventVar_GetValue(VAR_DEFENDING_MON);
-        if (a3 == result)
+        if (a3 == BattleEventVar_GetValue(VAR_DEFENDING_MON))
         {
-            Value = BattleEventVar_GetValue(VAR_MOVE_ID);
-
-            if (PML_MoveGetCategory(Value) == 1)
+            if (PML_MoveGetCategory(BattleEventVar_GetValue(VAR_MOVE_ID)) == 1)
             {
                 BattleEventVar_MulValue(VAR_RATIO, 2048);
             }
@@ -962,17 +949,9 @@ extern "C"
         if (a2 == BattleEventVar_GetValue(VAR_ATTACKING_MON))
         {
             BattleMon = Handler_GetBattleMon(a1, a2);
-            v7 = DivideMaxHp(BattleMon, 3u);
             if (a3 == BattleEventVar_GetValue(VAR_MOVE_TYPE))
             {
-                if (BattleMon_GetValue(BattleMon, VALUE_CURRENT_HP) <= v7)
-                {
-                    BattleEventVar_MulValue(VAR_RATIO, 6144);
-                }
-                else
-                {
-                    BattleEventVar_MulValue(VAR_RATIO, 5120);
-                }
+                BattleEventVar_MulValue(VAR_RATIO, ((BattleMon_GetValue(BattleMon, VALUE_CURRENT_HP) <= DivideMaxHp(BattleMon, 3u)) ? 6144 : 5120));
             }
         }
     }
@@ -1096,7 +1075,7 @@ extern "C"
     {
         if (a3 == BattleEventVar_GetValue(VAR_MON_ID))
         {
-            BattleMon *mon = Handler_GetBattleMon((ServerFlow *)a1, a3);
+            BattleMon *mon = Handler_GetBattleMon((ServerFlow *)a2, a3);
             if (BattleMon_GetTurnFlag(mon, TURNFLAG_MOVEFAILEDLASTTURN)){
                 *a4 = 0;
             }
@@ -1335,6 +1314,10 @@ extern "C"
 
 #pragma region Regenerator
     /* Regenerator Nerf */
+
+    // CHANGE THIS 
+    // see if we can implement this directly in overlay_167 instead. 
+
     void THUMB_BRANCH_SAFESTACK_HandlerRegenerator(int a1, ServerFlow *a2, unsigned int *a3)
     {
         BattleMon *PokeParam;      // r6
@@ -1368,6 +1351,8 @@ extern "C"
 
 #pragma region IronFist
     /* Iron Fist Buff*/
+    // CHANGE THIS 
+    // See if we can edit this directly in the code instead. 
     void THUMB_BRANCH_HandlerIronFist(int a1, int a2, int a3)
     {
         int result;             // r0
@@ -1441,6 +1426,10 @@ extern "C"
 
 #pragma region WeakArmor
     /* WEAK ARMOR IMPLEMENTATION */
+
+    // CHANGE THIS 
+    // See if we can handle this directly in the code as well 
+    
     void THUMB_BRANCH_HandlerWeakArmor(int a1, ServerFlow *a2, unsigned int *a3)
     {
         BattleMon *PokeParam;             // r7
@@ -1907,6 +1896,19 @@ extern "C"
 
 #pragma region PreStatusAbilities
 
+
+    void triggerPreStatus(ServerFlow *a1, u8 pokePos, MoveCondition condition){
+        HandlerParam_AddCondition *v6;
+        v6 = (HandlerParam_AddCondition *)BattleHandler_PushWork(a1, EFFECT_ADDCONDITION, (int)pokePos);
+        v6->sickID = condition;
+        v6->sickCont = MakeBasicStatus(condition);
+        v6->fAlmost = 0;
+        v6->pokeID = (unsigned __int8)pokePos;
+        BattleHandler_StrSetup(&v6->exStr, 1u, ((condition == CONDITION_PARALYSIS) ? 242 : ((condition==CONDITION_BURN) ? 201 : 202)));
+        BattleHandler_AddArg(&v6->exStr, (int)pokePos);
+        BattleHandler_PopWork(a1, v6);
+    }
+
     void HandlerPreStatusForGuts(int a1, ServerFlow *a2, int a3)
     {
         HandlerParam_AddCondition *v6;
@@ -1915,122 +1917,41 @@ extern "C"
         if (a3 == BattleEventVar_GetValue(VAR_MON_ID) && a3 >= 6 && !checksIfWildBattle(a2))
         {
             PokeParam = Handler_GetBattleMon(a2, a3);
+            u8 condition; 
+            u8 textId; 
 
             if (PokeParam->Species == PK377_REGIROCK)
             {
-                v6 = (HandlerParam_AddCondition *)BattleHandler_PushWork(a2, EFFECT_ADDCONDITION, (int)a3);
-                v6->sickID = CONDITION_PARALYSIS;
-                v6->sickCont = MakeBasicStatus(CONDITION_PARALYSIS);
-                v6->fAlmost = 0;
-                v6->pokeID = (unsigned __int8)a3;
-                BattleHandler_StrSetup(&v6->exStr, 1u, 242);
-                BattleHandler_AddArg(&v6->exStr, (int)a3);
-                BattleHandler_PopWork(a2, v6);
+                condition = CONDITION_PARALYSIS;
             }
-            else
-            {
-                if (BattleMon_HasType(PokeParam, TYPE_FIRE))
-                {
-                    if (PokeParam->Sex == 0)
-                    {
-                        v6 = (HandlerParam_AddCondition *)BattleHandler_PushWork(a2, EFFECT_ADDCONDITION, (int)a3);
-                        v6->sickID = CONDITION_POISON;
-                        v6->sickCont = MakeBasicStatus(CONDITION_POISON);
-                        v6->fAlmost = 0;
-                        v6->pokeID = (unsigned __int8)a3;
-                        BattleHandler_StrSetup(&v6->exStr, 1u, 202);
-                        BattleHandler_AddArg(&v6->exStr, (int)a3);
-                        BattleHandler_PopWork(a2, v6);
-                    }
-                    else
-                    {
-                        v6 = (HandlerParam_AddCondition *)BattleHandler_PushWork(a2, EFFECT_ADDCONDITION, (int)a3);
-                        v6->sickID = CONDITION_PARALYSIS;
-                        v6->sickCont = MakeBasicStatus(CONDITION_PARALYSIS);
-                        v6->fAlmost = 0;
-                        v6->pokeID = (unsigned __int8)a3;
-                        BattleHandler_StrSetup(&v6->exStr, 1u, 242);
-                        BattleHandler_AddArg(&v6->exStr, (int)a3);
-                        BattleHandler_PopWork(a2, v6);
-                    }
-                }
-                else
-                {
-                    if (PokeParam->Sex == 0)
-                    {
-                        v6 = (HandlerParam_AddCondition *)BattleHandler_PushWork(a2, EFFECT_ADDCONDITION, (int)a3);
-                        v6->sickID = CONDITION_BURN;
-                        v6->sickCont = MakeBasicStatus(CONDITION_BURN);
-                        v6->fAlmost = 0;
-                        v6->pokeID = (unsigned __int8)a3;
-                        BattleHandler_StrSetup(&v6->exStr, 1u, 201);
-                        BattleHandler_AddArg(&v6->exStr, (int)a3);
-                        BattleHandler_PopWork(a2, v6);
-                    }
-                    else
-                    {
-                        v6 = (HandlerParam_AddCondition *)BattleHandler_PushWork(a2, EFFECT_ADDCONDITION, (int)a3);
-                        v6->sickID = CONDITION_PARALYSIS;
-                        v6->sickCont = MakeBasicStatus(CONDITION_PARALYSIS);
-                        v6->fAlmost = 0;
-                        v6->pokeID = (unsigned __int8)a3;
-                        BattleHandler_StrSetup(&v6->exStr, 1u, 242);
-                        BattleHandler_AddArg(&v6->exStr, (int)a3);
-                        BattleHandler_PopWork(a2, v6);
-                    }
-                }
+            else {
+                condition = ((BattleMon_HasType(PokeParam, TYPE_FIRE)) ? ((PokeParam->Sex == 0) ? CONDITION_POISON : CONDITION_PARALYSIS ) : ((PokeParam->Sex == 0) ? CONDITION_BURN : CONDITION_PARALYSIS ));
             }
+            triggerPreStatus(a2, a3, (MoveCondition)condition);
         }
     }
 
     void HandlerPrePoisonOnAI(int a1, ServerFlow *a2, int a3)
     {
-        HandlerParam_AddCondition *v6;
         if (a3 == BattleEventVar_GetValue(VAR_MON_ID) && a3 >= 6 && !checksIfWildBattle(a2))
         {
-
-            v6 = (HandlerParam_AddCondition *)BattleHandler_PushWork(a2, EFFECT_ADDCONDITION, (int)a3);
-            v6->sickID = CONDITION_POISON;
-            v6->sickCont = MakeBasicStatus(CONDITION_POISON);
-            v6->fAlmost = 0;
-            v6->pokeID = (unsigned __int8)a3;
-            BattleHandler_StrSetup(&v6->exStr, 1u, 202);
-            BattleHandler_AddArg(&v6->exStr, (int)a3);
-            BattleHandler_PopWork(a2, v6);
+            triggerPreStatus(a2, a3, CONDITION_POISON);
         }
     }
 
     void HandlerPreBurnOnAI(int a1, ServerFlow *a2, int a3)
     {
-        HandlerParam_AddCondition *v6;
         if (a3 == BattleEventVar_GetValue(VAR_MON_ID) && a3 >= 6 && !checksIfWildBattle(a2))
         {
-
-            v6 = (HandlerParam_AddCondition *)BattleHandler_PushWork(a2, EFFECT_ADDCONDITION, (int)a3);
-            v6->sickID = CONDITION_BURN;
-            v6->sickCont = MakeBasicStatus(CONDITION_BURN);
-            v6->fAlmost = 0;
-            v6->pokeID = (unsigned __int8)a3;
-            BattleHandler_StrSetup(&v6->exStr, 1u, 201);
-            BattleHandler_AddArg(&v6->exStr, (int)a3);
-            BattleHandler_PopWork(a2, v6);
+            triggerPreStatus(a2, a3, CONDITION_BURN);
         }
     }
 
     void HandlerPreParalysisOnAI(int a1, ServerFlow *a2, int a3)
     {
-        HandlerParam_AddCondition *v6;
         if (a3 == BattleEventVar_GetValue(VAR_MON_ID) && a3 >= 6 && !checksIfWildBattle(a2))
         {
-
-            v6 = (HandlerParam_AddCondition *)BattleHandler_PushWork(a2, EFFECT_ADDCONDITION, (int)a3);
-            v6->sickID = CONDITION_PARALYSIS;
-            v6->sickCont = MakeBasicStatus(CONDITION_PARALYSIS);
-            v6->fAlmost = 0;
-            v6->pokeID = (unsigned __int8)a3;
-            BattleHandler_StrSetup(&v6->exStr, 1u, 242);
-            BattleHandler_AddArg(&v6->exStr, (int)a3);
-            BattleHandler_PopWork(a2, v6);
+            triggerPreStatus(a2, a3, CONDITION_PARALYSIS);
         }
     }
 
@@ -2041,60 +1962,31 @@ extern "C"
         if (a3 == BattleEventVar_GetValue(VAR_MON_ID) && a3 >= 6 && !checksIfWildBattle(a2))
         {
             poke = Handler_GetBattleMon(a2, a3);
-            if (poke->Sex == 0)
-            {
-                v6 = (HandlerParam_AddCondition *)BattleHandler_PushWork(a2, EFFECT_ADDCONDITION, (int)a3);
-                v6->sickID = CONDITION_POISON;
-                v6->sickCont = MakeBasicStatus(CONDITION_POISON);
-                v6->fAlmost = 0;
-                v6->pokeID = (unsigned __int8)a3;
-                BattleHandler_StrSetup(&v6->exStr, 1u, 202);
-                BattleHandler_AddArg(&v6->exStr, (int)a3);
-                BattleHandler_PopWork(a2, v6);
-            }
-            else
-            {
-                v6 = (HandlerParam_AddCondition *)BattleHandler_PushWork(a2, EFFECT_ADDCONDITION, (int)a3);
-                v6->sickID = CONDITION_PARALYSIS;
-                v6->sickCont = MakeBasicStatus(CONDITION_PARALYSIS);
-                v6->fAlmost = 0;
-                v6->pokeID = (unsigned __int8)a3;
-                BattleHandler_StrSetup(&v6->exStr, 1u, 242);
-                BattleHandler_AddArg(&v6->exStr, (int)a3);
-                BattleHandler_PopWork(a2, v6);
-            }
+            triggerPreStatus(a2, a3, ((poke->Sex == 0) ? CONDITION_POISON : CONDITION_PARALYSIS));
         }
     }
 
-    int HandlerToxicBoostStatus(int a1, int a2, int a3)
+    void HandlerToxicBoostStatus(int a1, int a2, int a3)
     {
-        int result; // r0
         int Value;  // r0
         int v6;     // r0
 
-        result = BattleEventVar_GetValue(VAR_MON_ID);
-        if (a3 == result)
+        if (a3 == BattleEventVar_GetValue(VAR_MON_ID))
         {
-            result = BattleEventVar_GetValue(VAR_CONDITION_ID);
-            if (result == 4)
+            if (BattleEventVar_GetValue(VAR_CONDITION_ID) == 4)
             {
                 Value = BattleEventVar_GetValue(VAR_DAMAGE);
                 v6 = checkHigher(Value / 2, 1);
-                return BattleEventVar_RewriteValue(VAR_DAMAGE, v6);
+                BattleEventVar_RewriteValue(VAR_DAMAGE, v6);
             }
         }
-        return result;
     }
 
     void HandlerToxicBoostDamage(int a1, int a2, int a3)
     {
-        int result; // r0
-
-        result = BattleEventVar_GetValue(VAR_DEFENDING_MON);
-        if (a3 == result)
+        if (a3 == BattleEventVar_GetValue(VAR_DEFENDING_MON))
         {
-            result = BattleEventVar_GetValue(VAR_MOVE_TYPE);
-            if (result == TYPE_POISON)
+            if (BattleEventVar_GetValue(VAR_MOVE_TYPE) == TYPE_POISON)
             {
                 BattleEventVar_MulValue(VAR_RATIO, 2048);
             }
@@ -2274,7 +2166,6 @@ extern "C"
         {EVENT_STAT_STAGE_CHANGE_LAST_CHECK, (ABILITY_HANDLER_FUNC)HandlerClearBodyCheck}, // 35
         {EVENT_STAT_STAGE_CHANGE_FAIL, (ABILITY_HANDLER_FUNC)HandlerClearBodyGuard},       // 36
         {EVENT_WEATHER_REACTION, (ABILITY_HANDLER_FUNC)HandlerOvercoat},                   // 37
-
     };
 
     ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddClearBody(_DWORD *a1)
@@ -2318,25 +2209,32 @@ extern "C"
     {
         BattleMon *BattleMon; // r6
         int UsedItem;
-        HandlerParam_SetItem *v8; // r0
-
         if (a3 == BattleEventVar_GetValue(VAR_MON_ID))
         {
-
             BattleMon = Handler_GetBattleMon(a2, a3);
             UsedItem = BattleMon_GetUsedItem(BattleMon);
 
             if (UsedItem && BattleMon_GetHeldItem(BattleMon) == 0)
             {
-                v8 = (HandlerParam_SetItem *)BattleHandler_PushWork(a2, EFFECT_SET_HELD_ITEM, a3);
-                v8->header.flags |= 0x800000u;
-                v8->itemID = UsedItem;
+                // See if we can add 
+                HandlerParam_AddCondition *v8 = (HandlerParam_AddCondition *)BattleHandler_PushWork(a2, EFFECT_ADDCONDITION, a3);
                 v8->pokeID = a3;
-                v8->fClearConsume = 0;
-                BattleHandler_StrSetup(&v8->exStr, 2u, 1162);
-                BattleHandler_AddArg(&v8->exStr, a3);
-                BattleHandler_AddArg(&v8->exStr, UsedItem);
+                v8->sickID = CONDITION_EMBARGO;
+                v8->sickCont = MakeBasicStatus(CONDITION_EMBARGO);
+                v8->fAlmost = 0;
+                BattleHandler_StrSetup(&v8->exStr, 2u, 1333);
+                BattleHandler_AddArg(&v8->exStr, v8->pokeID);
                 BattleHandler_PopWork(a2, v8);
+
+                HandlerParam_SetItem *v9 = (HandlerParam_SetItem *)BattleHandler_PushWork(a2, EFFECT_SET_HELD_ITEM, a3);
+                v9->header.flags |= 0x800000u;
+                v9->itemID = UsedItem;
+                v9->pokeID = a3;
+                v9->fClearConsume = 0;
+                BattleHandler_StrSetup(&v9->exStr, 2u, 1162);
+                BattleHandler_AddArg(&v9->exStr, a3);
+                BattleHandler_AddArg(&v9->exStr, UsedItem);
+                BattleHandler_PopWork(a2, v9);
             }
         }
     }
@@ -3545,7 +3443,7 @@ extern "C"
                 while (1)
                 {
                     BattleMon = Handler_GetBattleMon(a2, v12[v10]);
-                    if (!BattleMon_CheckIfMoveCondition(BattleMon, CONDITION_SLEEP) || BattleMon_HasType(BattleMon, TYPE_NORMAL))
+                    if (!BattleMon_CheckIfMoveCondition(BattleMon, CONDITION_SLEEP) || BattleMon_HasType(BattleMon, TYPE_GHOST))
                     {
                         break;
                     }
@@ -3693,13 +3591,8 @@ extern "C"
 #pragma region Analytic
     void THUMB_BRANCH_HandlerAnalytic(int a1, ServerFlow *a2, int a3)
     {
-        unsigned __int16 Value; // r0
-        int v6;                 // r0
-
         if (a3 == BattleEventVar_GetValue(VAR_ATTACKING_MON))
         {
-            Value = BattleEventVar_GetValue(VAR_MOVE_ID);
-
             if (HandlerCommon_IsMonLastInTurnOrder(a2, a3))
             {
                 BattleEventVar_MulValue(VAR_MOVE_POWER_RATIO, 5325);
@@ -4448,17 +4341,6 @@ extern "C" int sub_21CF250(BtlvCore *a1);
 extern "C" InputButton GCTX_HIDGetHeldKeys();
 extern "C" int MainModule_IsPartnerBattle(MainModule *a1);
 
-u8 *enteredBattle;
-// BattleMon* scannedParty[6];
-// u8 scannedCount;
-// extern "C" BattleMon* getBattleMon(PartyPkm *a1){
-//     for (int i = 0; i < scannedCount; i++){
-//         if (scannedParty[i]->partySrc->Base.pid == a1->Base.pid){
-//             return scannedParty[i];
-//         }
-//     }
-//     return 0;
-// }
 
 extern "C" void findBattleMon(BtlvCore *a1, PokeParty *a2, int clientId)
 {

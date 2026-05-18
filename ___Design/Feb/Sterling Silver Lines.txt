@@ -1,0 +1,406 @@
+
+
+Limeotto (Pidgeot) (F) @ None
+Level: 50
+Modest Nature
+Ability: Huge Power
+Ability Slot: 2
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 24 HP / 5 Atk / 18 Def / 19 SpA / 5 SpD / 23 Spe
+- Shock Wave
+- Charge Beam
+- Air Slash
+- Thunderbolt
+Met: Route 43
+
+Raisin (Dewgong) (F) @ None
+Level: 41
+Calm Nature
+Ability: Thick Fat
+Ability Slot: 1
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 8 HP / 6 Atk / 31 Def / 13 SpA / 30 SpD / 21 Spe
+- Dive
+- Aurora Beam
+- Aqua Jet
+- Brine
+Met: Mahogany Town
+
+Tamale (Wooper) (F) @ None
+Level: 26
+Quirky Nature
+Ability: Water Absorb
+Ability Slot: 1
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 31 HP / 5 Atk / 27 Def / 5 SpA / 15 SpD / 26 Spe
+- Mud Bomb
+- Body Slam
+- Ice Beam
+- Magnitude
+Met: Cliff Cave
+
+Stoneot (Hoothoot) (F) @ None
+Level: 15
+Hasty Nature
+Ability: Tinted Lens
+Ability Slot: 2
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 27 HP / 18 Atk / 16 Def / 17 SpA / 2 SpD / 14 Spe
+- Hypnosis
+- Dream Eater
+- Psybeam
+- Pound
+Met: Safari Zone Gate
+
+Coconutぁ (Hitmonchan) (M) @ None
+Level: 48
+Sassy Nature
+Ability: Inner Focus
+Ability Slot: 2
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 17 HP / 19 Atk / 23 Def / 11 SpA / 31 SpD / 17 Spe
+- Headbutt
+- Mach Punch
+- Fake Out
+- Detect
+Met: Global Terminal
+
+Almond (Torkoal) (M) @ Charcoal
+Level: 48
+Brave Nature
+Ability: Shell Armor
+Ability Slot: 1
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 22 HP / 2 Atk / 30 Def / 27 SpA / 23 SpD / 30 Spe
+- Rapid Spin
+- Captivate
+- Earth Power
+- Flamethrower
+Met: Mt. Mortar
+
+Walnut (Kabutops) (M) @ Aspear Berry
+Level: 48
+Mild Nature
+Ability: Battle Armor
+Ability Slot: 1
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 11 HP / 0 Atk / 14 Def / 31 SpA / 23 SpD / 23 Spe
+- Superpower
+- Rollout
+- Protect
+- Waterfall
+Met: Dark Cave
+
+PearDÖU (Meganium) (F) @ Miracle Seed
+Level: 48
+Naive Nature
+Ability: Filter
+Ability Slot: 2
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 6 HP / 7 Atk / 27 Def / 29 SpA / 14 SpD / 22 Spe
+- Leech Seed
+- Synthesis
+- Giga Drain
+- Strength
+Met: Pokéwalker
+
+Coconut (Donphan) (M) @ Iron Ball
+Level: 48
+Naive Nature
+Ability: Quick Feet
+Ability Slot: 2
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 11 HP / 23 Atk / 16 Def / 29 SpA / 22 SpD / 22 Spe
+- Rollout
+- Strength
+- Horn Drill
+- Magnitude
+Met: Union Cave
+
+Blueberry (Pelipper) (F) @ None
+Level: 48
+Bashful Nature
+Ability: Marvel Scale
+Ability Slot: 1
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 8 HP / 4 Atk / 17 Def / 10 SpA / 11 SpD / 27 Spe
+- Roost
+- Surf
+- Toxic
+- Air Slash
+Met: Route 31
+
+Pepperr (Houndoom) (F) @ None
+Level: 48
+Docile Nature
+Ability: Flash Fire
+Ability Slot: 2
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 12 HP / 26 Atk / 15 Def / 5 SpA / 11 SpD / 31 Spe
+- Ice Fang
+- Flamethrower
+- Sucker Punch
+- Crunch
+Met: Route 42
+
+Acorn (Shiftry) (F) @ Black Glasses
+Level: 48
+Naughty Nature
+Ability: Chlorophyll
+Ability Slot: 1
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 13 HP / 13 Atk / 16 Def / 20 SpA / 27 SpD / 6 Spe
+- Dark Pulse
+- Sucker Punch
+- Grass Knot
+- Synthesis
+Met: National Park
+
+Blueberry (Kingdra) (M) @ None
+Level: 48
+Lonely Nature
+Ability: Swift Swim
+Ability Slot: 1
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 12 HP / 24 Atk / 9 Def / 13 SpA / 1 SpD / 14 Spe
+- Surf
+- Twister
+- Octazooka
+- Ice Beam
+Met: Cherrygrove City
+
+Jujubee (Fearow) (M) @ Sharp Beak
+Level: 48
+Gentle Nature
+Ability: Intimidate
+Ability Slot: 1
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 25 HP / 2 Atk / 19 Def / 24 SpA / 17 SpD / 31 Spe
+- Knock Off
+- Sucker Punch
+- Fly
+- Drill Peck
+Met: Route 46
+
+Cherry (Solrock) @ None
+Level: 48
+Naughty Nature
+Ability: Chlorophyll
+Ability Slot: 2
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 29 HP / 30 Atk / 10 Def / 22 SpA / 14 SpD / 31 Spe
+- Flame Wheel
+- Leech Life
+- Hypnosis
+- Morning Sun
+Met: Burned Tower
+
+Eggplant (Exploud) (F) @ Exp. Share
+Level: 48
+Gentle Nature
+Ability: Scrappy
+Ability Slot: 2
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 23 HP / 17 Atk / 0 Def / 12 SpA / 27 SpD / 5 Spe
+- Shadow Sneak
+- Icy Wind
+- Crunch
+- Extreme Speed
+Met: Route 35
+
+Orange (Starmie) @ None
+Level: 48
+Impish Nature
+Ability: Rain Dish
+Ability Slot: 1
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 19 HP / 21 Atk / 28 Def / 14 SpA / 20 SpD / 26 Spe
+- Confusion
+- Surf
+- Camouflage
+- Recover
+Met: Olivine City
+
+LilyPilly (Wigglytuff) (F) @ Chesto Berry
+Level: 48
+Serious Nature
+Ability: Unaware
+Ability Slot: 2
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 25 HP / 10 Atk / 31 Def / 31 SpA / 24 SpD / 18 Spe
+- Rest
+- Hyper Beam
+- Perish Song
+- Gravity
+Met: Goldenrod City
+
+Dragnfruit (Walrein) (F) @ Oran Berry
+Level: 48
+Bold Nature
+Ability: Ice Body
+Ability Slot: 2
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 26 HP / 20 Atk / 27 Def / 19 SpA / 29 SpD / 6 Spe
+- Ice Beam
+- Surf
+- Rest
+- Perish Song
+Met: Route 41
+
+Figer (Muk) (F) @ None
+Level: 48
+Hardy Nature
+Ability: Poison Point
+Ability Slot: 1
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 19 HP / 17 Atk / 6 Def / 30 SpA / 30 SpD / 16 Spe
+- Rock Tomb
+- Knock Off
+- Shadow Sneak
+- Poison Jab
+Met: SLOWPOKE Well
+
+Banana (Ampharos) (M) @ None
+Level: 46
+Rash Nature
+Ability: Volt Absorb
+Ability Slot: 1
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 1 HP / 24 Atk / 6 Def / 5 SpA / 30 SpD / 10 Spe
+- Thunderbolt
+- Shock Wave
+- Recover
+- Spider Web
+Met: Route 32
+
+Melonrm (Castform) (F) @ None
+Level: 48
+Lax Nature
+Ability: Forecast
+Ability Slot: 1
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 23 HP / 19 Atk / 6 Def / 18 SpA / 0 SpD / 19 Spe
+- Thunderbolt
+- Hyper Voice
+- Heat Wave
+- Ice Beam
+Met: Route 38
+
+Granadilla (Aggron) (F) @ None
+Level: 48
+Rash Nature
+Ability: Battle Armor
+Ability Slot: 2
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 4 HP / 2 Atk / 2 Def / 21 SpA / 29 SpD / 30 Spe
+- Iron Head
+- Quick Attack
+- Iron Tail
+- Thunder Wave
+Met: Pokéathlon Dome
+
+Parcha (Rhydon) (F) @ None
+Level: 49
+Careful Nature
+Ability: Rock Head
+Ability Slot: 2
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 22 HP / 17 Atk / 21 Def / 21 SpA / 0 SpD / 30 Spe
+- Hammer Arm
+- Horn Drill
+- Ice Fang
+- Earthquake
+Met: Cliff Edge Gate
+
+Blackberry (Mismagius) (F) @ Twisted Spoon
+Level: 49
+Lonely Nature
+Ability: Levitate
+Ability Slot: 1
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 14 HP / 6 Atk / 21 Def / 27 SpA / 15 SpD / 5 Spe
+- Shadow Ball
+- Psychic
+- Perish Song
+- Shadow Sneak
+Met: Ecruteak City
+
+Onionse (Zangoose) (M) @ None
+Level: 48
+Naughty Nature
+Ability: Guts
+Ability Slot: 2
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 27 HP / 23 Atk / 27 Def / 17 SpA / 13 SpD / 18 Spe
+- Detect
+- Shadow Punch
+- Avalanche
+- Facade
+Met: Route 39
+
+Lemon (Espeon) (F) @ None
+Level: 48
+Bashful Nature
+Ability: Magic Guard
+Ability Slot: 2
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 4 HP / 23 Atk / 9 Def / 28 SpA / 27 SpD / 24 Spe
+- Extrasensory
+- Morning Sun
+- Magical Leaf
+- Future Sight
+Met: Cianwood City
+
+Mayhaw (Mantine) (F) @ None
+Level: 48
+Bashful Nature
+Ability: Swift Swim
+Ability Slot: 2
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 29 HP / 16 Atk / 14 Def / 5 SpA / 25 SpD / 30 Spe
+- Air Slash
+- Icy Wind
+- Roost
+- Surf
+Met: New Bark Town
+
+BlueApple (Manaphy) @ None
+Level: 50
+Hardy Nature
+Ability: Damp
+Ability Slot: 2
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 10 HP / 18 Atk / 23 Def / 29 SpA / 18 SpD / 21 Spe
+- Surf
+- Charm
+- U-turn
+- Grass Knot
+Met: Route 40
+
+Pepper (Magmar) (F) @ None
+Level: 48
+Serious Nature
+Ability: No Guard
+Ability Slot: 2
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 30 HP / 19 Atk / 18 Def / 1 SpA / 28 SpD / 29 Spe
+- Fire Punch
+- Flamethrower
+- Will-O-Wisp
+- Cross Chop
+Met: Route 34
+
+Leektch’d (Farfetch’d) (F) @ None
+Level: 48
+Hardy Nature
+Ability: Intimidate
+Ability Slot: 2
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 30 HP / 18 Atk / 9 Def / 21 SpA / 4 SpD / 24 Spe
+- Knock Off
+- Drill Peck
+- Close Combat
+- Reversal
+Met: Route 48
+
+
