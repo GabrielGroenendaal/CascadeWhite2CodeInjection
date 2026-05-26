@@ -687,8 +687,23 @@ extern "C"
 
 #pragma endregion
 
-    // #pragma region Unaware
+#pragma region Unaware
 
+    void THUMB_BRANCH_HandlerUnawareDefenseRank(int a1, int a2, int a3)
+    {
+        if ( a3 == BattleEventVar_GetValue(VAR_ATTACKING_MON) || a3 == BattleEventVar_GetValue(VAR_DEFENDING_MON) )
+        {
+            BattleEventVar_RewriteValue(VAR_GENERAL_USE_FLAG, 1);
+        }
+    }
+
+    void THUMB_BRANCH_HandlerUnawareAttackRank(int a1, int a2, int a3)
+    {
+        if ( a3 == BattleEventVar_GetValue(VAR_ATTACKING_MON) || a3 == BattleEventVar_GetValue(VAR_DEFENDING_MON) )
+        {
+            BattleEventVar_RewriteValue(VAR_GENERAL_USE_FLAG, 1);
+        }
+    }
     //     ABILITY_TRIGGERTABLE UnawareHandlers[] = {
     //         {EVENT_MOVE_ACCURACY_STAGE, (ABILITY_HANDLER_FUNC)HandlerUnawareHitRank}, // 41
     //         {EVENT_BEFORE_ATTACKER_POWER, (ABILITY_HANDLER_FUNC)HandlerUnawareAttackRank},
@@ -703,7 +718,7 @@ extern "C"
     //         *a1 = 7;
     //         return UnawareHandlers;
     //     }
-    // #pragma endregion
+#pragma endregion
 
 #pragma region Filter/Solid Rock
     void THUMB_BRANCH_HandlerSolidRock(int a1, int a2, int a3)
