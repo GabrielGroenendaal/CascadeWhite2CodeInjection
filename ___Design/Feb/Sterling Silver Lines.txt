@@ -1,44 +1,5 @@
-Amulet (Persian) (F) @ None
-Level: 49
-Timid Nature
-Ability: Adaptability
-Ability Slot: 1
-EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-IVs: 7 HP / 17 Atk / 6 Def / 22 SpA / 14 SpD / 14 Spe
-- Hyper Voice
-- U-turn
-- Dark Pulse
-- Fake Out
-Met: Route 32
-
-Spectacles (Noctowl) (F) @ None
-Level: 49
-Rash Nature
-Ability: Tinted Lens
-Ability Slot: 2
-EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-IVs: 11 HP / 31 Atk / 22 Def / 8 SpA / 16 SpD / 19 Spe
-- Hypnosis
-- Psycho Boost
-- Mist Ball
-- Air Slash
-Met: Route 29
-
-Plugs (Electivire) (M) @ None
-Level: 49
-Docile Nature
-Ability: Motor Drive
-Ability Slot: 1
-EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-IVs: 31 HP / 29 Atk / 2 Def / 18 SpA / 15 SpD / 26 Spe
-- Thunderbolt
-- Discharge
-- Mach Punch
-- Cross Chop
-Met: Union Cave
-
-Cologne (Gengar) (F) @ None
-Level: 49
+Cologne (Gengar) (F) @ Poison Barb
+Level: 50
 Modest Nature
 Ability: Levitate
 Ability Slot: 1
@@ -51,7 +12,7 @@ IVs: 16 HP / 13 Atk / 3 Def / 4 SpA / 15 SpD / 30 Spe
 Met: Ecruteak City
 
 Capote (Tropius) (F) @ None
-Level: 49
+Level: 50
 Bold Nature
 Ability: Levitate
 Ability Slot: 2
@@ -63,44 +24,83 @@ IVs: 13 HP / 23 Atk / 30 Def / 25 SpA / 14 SpD / 7 Spe
 - Grass Knot
 Met: Route 38
 
-Bucklete (Magnezone) @ None
+Bibull (Pelipper) (F) @ Oran Berry
 Level: 50
-Timid Nature
-Ability: Levitate
+Quiet Nature
+Ability: Marvel Scale
 Ability Slot: 1
 EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-IVs: 5 HP / 22 Atk / 27 Def / 9 SpA / 31 SpD / 16 Spe
-- Magnet Bomb
-- Shock Wave
-- Aurora Beam
-- Discharge
-Met: Pokéathlon Dome
+IVs: 20 HP / 24 Atk / 17 Def / 28 SpA / 25 SpD / 5 Spe
+- Air Slash
+- Surf
+- Roost
+- Toxic
+Met: Route 31
 
-Earmuffs (Lopunny) (M) @ None
-Level: 49
-Sassy Nature
+Glovesrl (Poliwrath) (M) @ Mystic Water
+Level: 50
+Impish Nature
+Ability: Water Absorb
+Ability Slot: 1
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 30 HP / 19 Atk / 3 Def / 17 SpA / 26 SpD / 16 Spe
+- Rest
+- Close Combat
+- Drain Punch
+- Surf
+Met: Route 40
+
+Staffch’d (Farfetch’d) (F) @ Exp. Share
+Level: 48
+Jolly Nature
 Ability: Scrappy
 Ability Slot: 1
 EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-IVs: 27 HP / 28 Atk / 22 Def / 2 SpA / 31 SpD / 0 Spe
-- Fake Out
-- Strength
-- Double-Edge
-- U-turn
-Met: Route 37
+IVs: 0 HP / 31 Atk / 2 Def / 24 SpA / 3 SpD / 27 Spe
+- Reversal
+- Drill Peck
+- Close Combat
+- Fly
+Met: Route 39
 
-T-Shirtd (Typhlosion) (F) @ None
-Level: 49
-Modest Nature
-Ability: Blaze
+Spectacles (Noctowl) (F) @ Exp. Share
+Level: 50
+Rash Nature
+Ability: Tinted Lens
 Ability Slot: 2
 EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-IVs: 28 HP / 2 Atk / 23 Def / 29 SpA / 29 SpD / 28 Spe
-- Quick Attack
-- Mud Bomb
-- Lava Plume
-- Power Gem
-Met: Pokéwalker
+IVs: 11 HP / 31 Atk / 22 Def / 8 SpA / 16 SpD / 19 Spe
+- Hypnosis
+- Psycho Boost
+- Mist Ball
+- Air Slash
+Met: Route 29
+
+Bracelets (Kingler) (F) @ None
+Level: 48
+Jolly Nature
+Ability: Shell Armor
+Ability Slot: 1
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 22 HP / 5 Atk / 25 Def / 7 SpA / 28 SpD / 28 Spe
+- Protect
+- Aqua Jet
+- Captivate
+- Strength
+Met: New Bark Town
+
+Pearlsr (Cloyster) (F) @ None
+Level: 36
+Docile Nature
+Ability: Skill Link
+Ability Slot: 1
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 2 HP / 21 Atk / 6 Def / 20 SpA / 16 SpD / 9 Spe
+- Aqua Tail
+- Clamp
+- Ice Shard
+- Protect
+Met: Mahogany Town
 
 Botoxnk (Toxicroak) (F) @ None
 Level: 48
@@ -167,18 +167,18 @@ IVs: 0 HP / 6 Atk / 20 Def / 14 SpA / 31 SpD / 9 Spe
 - Sludge Bomb
 Met: Ilex Forest
 
-Eyeshadow (Fearow) (M) @ None
-Level: 48
-Calm Nature
-Ability: Sniper
+Beadsute (Exeggutor) (M) @ None
+Level: 50
+Serious Nature
+Ability: Chlorophyll
 Ability Slot: 2
 EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-IVs: 6 HP / 29 Atk / 1 Def / 17 SpA / 4 SpD / 22 Spe
-- Detect
-- Sucker Punch
-- Drill Peck
-- Aerial Ace
-Met: Azalea Town
+IVs: 31 HP / 9 Atk / 0 Def / 27 SpA / 31 SpD / 14 Spe
+- Egg Bomb
+- Sleep Powder
+- Grass Knot
+- Leech Seed
+Met: Safari Zone Gate
 
 Perfume (Weezing) (M) @ None
 Level: 48
@@ -193,44 +193,57 @@ IVs: 20 HP / 24 Atk / 17 Def / 18 SpA / 23 SpD / 16 Spe
 - Flamethrower
 Met: Burned Tower
 
-Overalls (Rapidash) (M) @ None
-Level: 48
-Impish Nature
-Ability: Reckless
+Braidsol (Tentacruel) (M) @ None
+Level: 50
+Timid Nature
+Ability: Rain Dish
 Ability Slot: 2
 EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-IVs: 11 HP / 22 Atk / 16 Def / 1 SpA / 28 SpD / 27 Spe
-- Jump Kick
-- Charm
-- Megahorn
-- Blaze Kick
-Met: Route 30
+IVs: 20 HP / 20 Atk / 3 Def / 26 SpA / 26 SpD / 30 Spe
+- Giga Drain
+- Rest
+- Surf
+- Sludge Bomb
+Met: Cherrygrove City
 
-Apron (Azumarill) (F) @ None
-Level: 49
-Hasty Nature
-Ability: Huge Power
+Mittens (Hariyama) (M) @ None
+Level: 48
+Quirky Nature
+Ability: Thick Fat
 Ability Slot: 1
 EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-IVs: 10 HP / 22 Atk / 12 Def / 25 SpA / 19 SpD / 10 Spe
-- Aqua Jet
-- Fake Out
-- Aqua Tail
-- Return
-Met: Route 35
+IVs: 0 HP / 0 Atk / 2 Def / 13 SpA / 3 SpD / 7 Spe
+- Earthquake
+- Close Combat
+- Bullet Punch
+- Seismic Toss
+Met: Route 48
 
-Cowlt (Shiftry) (F) @ None
-Level: 48
-Modest Nature
-Ability: Chlorophyll
+Mustache (Walrein) (M) @ None
+Level: 50
+Careful Nature
+Ability: Ice Body
 Ability Slot: 2
 EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-IVs: 17 HP / 4 Atk / 1 Def / 5 SpA / 8 SpD / 26 Spe
-- Dark Pulse
+IVs: 19 HP / 15 Atk / 12 Def / 14 SpA / 19 SpD / 3 Spe
+- Ice Beam
+- Rest
+- Perish Song
+- Yawn
+Met: Route 41
+
+Hoodie (Golem) (M) @ None
+Level: 50
+Jolly Nature
+Ability: Rock Head
+Ability Slot: 1
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 10 HP / 16 Atk / 1 Def / 15 SpA / 28 SpD / 3 Spe
+- Earthquake
+- Rollout
+- Magnitude
 - Sucker Punch
-- Giga Drain
-- Synthesis
-Met: National Park
+Met: Route 46
 
 Helmetke (Manectric) (M) @ None
 Level: 48
@@ -258,31 +271,44 @@ IVs: 27 HP / 10 Atk / 13 Def / 22 SpA / 7 SpD / 10 Spe
 - Mirror Coat
 Met: Route 33
 
-LipFiller (Magmortar) (F) @ None
-Level: 48
-Modest Nature
-Ability: Flash Fire
+Plugs (Electivire) (M) @ None
+Level: 49
+Docile Nature
+Ability: Motor Drive
 Ability Slot: 1
 EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-IVs: 29 HP / 22 Atk / 29 Def / 10 SpA / 25 SpD / 24 Spe
-- Cross Chop
+IVs: 31 HP / 29 Atk / 2 Def / 18 SpA / 15 SpD / 26 Spe
+- Thunderbolt
+- Discharge
 - Mach Punch
-- Taunt
-- Flamethrower
-Met: Route 34
+- Cross Chop
+Met: Union Cave
 
-Bangsou (Lanturn) (F) @ None
-Level: 48
-Relaxed Nature
-Ability: Volt Absorb
+Amulet (Persian) (F) @ None
+Level: 50
+Timid Nature
+Ability: Adaptability
 Ability Slot: 1
 EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-IVs: 19 HP / 29 Atk / 7 Def / 24 SpA / 31 SpD / 13 Spe
-- Charge Beam
-- Surf
-- Rest
+IVs: 7 HP / 17 Atk / 6 Def / 22 SpA / 14 SpD / 14 Spe
+- Hyper Voice
+- U-turn
+- Dark Pulse
+- Fake Out
+Met: Route 32
+
+Bucklete (Magnezone) @ None
+Level: 50
+Timid Nature
+Ability: Levitate
+Ability Slot: 1
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 5 HP / 22 Atk / 27 Def / 9 SpA / 31 SpD / 16 Spe
+- Magnet Bomb
 - Shock Wave
-Met: Route 42
+- Aurora Beam
+- Discharge
+Met: Pokéathlon Dome
 
 Coattails (Pidgeot) (F) @ None
 Level: 50
@@ -297,83 +323,70 @@ IVs: 14 HP / 26 Atk / 16 Def / 28 SpA / 20 SpD / 22 Spe
 - U-turn
 Met: Route 43
 
-Braidsol (Tentacruel) (M) @ None
-Level: 48
-Timid Nature
-Ability: Rain Dish
+Overalls (Rapidash) (M) @ None
+Level: 50
+Impish Nature
+Ability: Reckless
 Ability Slot: 2
 EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-IVs: 20 HP / 20 Atk / 3 Def / 26 SpA / 26 SpD / 30 Spe
-- Giga Drain
+IVs: 11 HP / 22 Atk / 16 Def / 1 SpA / 28 SpD / 27 Spe
+- Jump Kick
+- Charm
+- Megahorn
+- Blaze Kick
+Met: Route 30
+
+Bangsou (Lanturn) (F) @ None
+Level: 50
+Relaxed Nature
+Ability: Volt Absorb
+Ability Slot: 1
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 19 HP / 29 Atk / 7 Def / 24 SpA / 31 SpD / 13 Spe
+- Charge Beam
+- Surf
 - Rest
-- Surf
-- Sludge Bomb
-Met: Cherrygrove City
+- Shock Wave
+Met: Route 42
 
-Staffch’d (Farfetch’d) (F) @ None
-Level: 48
-Jolly Nature
-Ability: Scrappy
-Ability Slot: 1
-EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-IVs: 0 HP / 31 Atk / 2 Def / 24 SpA / 3 SpD / 27 Spe
-- Reversal
-- Drill Peck
-- Close Combat
-- Fly
-Met: Route 39
-
-Bibull (Pelipper) (F) @ None
+T-Shirtd (Typhlosion) (F) @ None
 Level: 49
-Quiet Nature
-Ability: Marvel Scale
-Ability Slot: 1
+Modest Nature
+Ability: Blaze
+Ability Slot: 2
 EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-IVs: 20 HP / 24 Atk / 17 Def / 28 SpA / 25 SpD / 5 Spe
-- Air Slash
-- Surf
-- Roost
-- Toxic
-Met: Route 31
+IVs: 28 HP / 2 Atk / 23 Def / 29 SpA / 29 SpD / 28 Spe
+- Quick Attack
+- Mud Bomb
+- Lava Plume
+- Power Gem
+Met: Pokéwalker
 
-Mittens (Hariyama) (M) @ None
+Cowlt (Shiftry) (F) @ None
 Level: 48
-Quirky Nature
-Ability: Thick Fat
-Ability Slot: 1
-EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-IVs: 0 HP / 0 Atk / 2 Def / 13 SpA / 3 SpD / 7 Spe
-- Earthquake
-- Close Combat
-- Bullet Punch
-- Seismic Toss
-Met: Route 48
-
-Beadsute (Exeggutor) (M) @ None
-Level: 47
-Serious Nature
+Modest Nature
 Ability: Chlorophyll
 Ability Slot: 2
 EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-IVs: 31 HP / 9 Atk / 0 Def / 27 SpA / 31 SpD / 14 Spe
-- Egg Bomb
-- Sleep Powder
-- Flamethrower
-- Leech Seed
-Met: Safari Zone Gate
+IVs: 17 HP / 4 Atk / 1 Def / 5 SpA / 8 SpD / 26 Spe
+- Dark Pulse
+- Sucker Punch
+- Giga Drain
+- Synthesis
+Met: National Park
 
-Bracelets (Kingler) (F) @ None
-Level: 48
-Jolly Nature
-Ability: Shell Armor
-Ability Slot: 1
+Implants (Drifblim) (M) @ None
+Level: 50
+Hardy Nature
+Ability: Unburden
+Ability Slot: 2
 EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-IVs: 22 HP / 5 Atk / 25 Def / 7 SpA / 28 SpD / 28 Spe
-- Protect
-- Aqua Jet
-- Captivate
-- Strength
-Met: New Bark Town
+IVs: 16 HP / 15 Atk / 17 Def / 28 SpA / 28 SpD / 10 Spe
+- Ominous Wind
+- Air Slash
+- Heat Wave
+- Explosion
+Met: Mt. Mortar
 
 Braran♀ (Nidoqueen) (F) @ None
 Level: 49
@@ -388,57 +401,31 @@ IVs: 26 HP / 15 Atk / 22 Def / 25 SpA / 17 SpD / 9 Spe
 - Captivate
 Met: Dark Cave
 
-Glovesrl (Poliwrath) (M) @ None
-Level: 48
-Impish Nature
-Ability: Water Absorb
+LipFiller (Magmortar) (F) @ None
+Level: 50
+Modest Nature
+Ability: Flash Fire
 Ability Slot: 1
 EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-IVs: 30 HP / 19 Atk / 3 Def / 17 SpA / 26 SpD / 16 Spe
-- Rest
-- Close Combat
-- Drain Punch
-- Surf
-Met: Route 40
-
-Implants (Drifblim) (M) @ None
-Level: 48
-Hardy Nature
-Ability: Unburden
-Ability Slot: 2
-EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-IVs: 16 HP / 15 Atk / 17 Def / 28 SpA / 28 SpD / 10 Spe
-- Ominous Wind
-- Air Slash
+IVs: 29 HP / 22 Atk / 29 Def / 10 SpA / 25 SpD / 24 Spe
+- Cross Chop
+- Mach Punch
 - Heat Wave
-- U-turn
-Met: Mt. Mortar
+- Flamethrower
+Met: Route 34
 
-Hoodie (Golem) (M) @ None
-Level: 49
-Jolly Nature
-Ability: Rock Head
+Apron (Azumarill) (F) @ None
+Level: 50
+Hasty Nature
+Ability: Huge Power
 Ability Slot: 1
 EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-IVs: 10 HP / 16 Atk / 1 Def / 15 SpA / 28 SpD / 3 Spe
-- Earthquake
-- Rollout
-- Magnitude
-- Sucker Punch
-Met: Route 46
-
-Pearlsr (Cloyster) (F) @ None
-Level: 36
-Docile Nature
-Ability: Skill Link
-Ability Slot: 1
-EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-IVs: 2 HP / 21 Atk / 6 Def / 20 SpA / 16 SpD / 9 Spe
+IVs: 10 HP / 22 Atk / 12 Def / 25 SpA / 19 SpD / 10 Spe
+- Aqua Jet
+- Fake Out
 - Aqua Tail
-- Clamp
-- Ice Shard
-- Protect
-Met: Mahogany Town
+- Return
+Met: Route 35
 
 Vestl (Floatzel) (M) @ None
 Level: 48
@@ -453,18 +440,18 @@ IVs: 29 HP / 28 Atk / 31 Def / 13 SpA / 22 SpD / 21 Spe
 - Charge Beam
 Met: Ruins of Alph
 
-Mustache (Walrein) (M) @ None
-Level: 50
-Careful Nature
-Ability: Ice Body
+Accessorie (Eevee) (M) @ None
+Level: 10
+Timid Nature
+Ability: Adaptability
 Ability Slot: 2
 EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-IVs: 19 HP / 15 Atk / 12 Def / 14 SpA / 19 SpD / 3 Spe
-- Ice Beam
-- Rest
-- Perish Song
-- Yawn
-Met: Route 41
+IVs: 6 HP / 26 Atk / 14 Def / 25 SpA / 1 SpD / 29 Spe
+- Helping Hand
+- Sand Attack
+- Headbutt
+- Quick Attack
+Met: Cianwood City
 
 Poncho (Quagsire) (M) @ None
 Level: 51
@@ -479,19 +466,6 @@ IVs: 26 HP / 20 Atk / 4 Def / 18 SpA / 1 SpD / 11 Spe
 - Aqua Tail
 Met: Cliff Cave
 
-Accessorie (Eevee) (M) @ None
-Level: 10
-Timid Nature
-Ability: Adaptability
-Ability Slot: 2
-EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-IVs: 6 HP / 26 Atk / 14 Def / 25 SpA / 1 SpD / 29 Spe
-- Helping Hand
-- Sand Attack
-- Headbutt
-- Quick Attack
-Met: Cianwood City
-
 Ascotぁ (Togetic) (M) @ None
 Level: 46
 Bold Nature
@@ -504,4 +478,3 @@ IVs: 12 HP / 26 Atk / 6 Def / 21 SpA / 24 SpD / 21 Spe
 - Air Slash
 - Wish
 Met: Global Terminal
-
