@@ -55,12 +55,12 @@ extern "C"
         {
             BattleHandler_AddArg(&message->str, secondArg);
         }
-        if (thirdArg){
+        if (thirdArg)
+        {
             BattleHandler_AddArg(&message->str, thirdArg);
         }
         BattleHandler_PopWork(serverFlow, message);
     }
-
 
     // Just adding the Berry Juice
     ITEM_TRIGGERTABLE BerryJuiceHandlers[] = {
@@ -465,8 +465,6 @@ extern "C"
 
 #pragma endregion
 
-
-
 /*
 
 
@@ -503,6 +501,28 @@ extern "C"
 */
 #pragma region BattleItems
 
+    int THUMB_BRANCH_SAFESTACK_CommonResistBerry(int a1, ServerFlow *a2, int a3, _DWORD *a4, unsigned __int8 a5, int a6)
+    {
+        BattleMon *BattleMon; // r0
+
+        if (a3 != BattleEventVar_GetValue(VAR_DEFENDING_MON) || a5 != BattleEventVar_GetValue(VAR_MOVE_TYPE) || !a6 && BattleEventVar_GetValue(VAR_TYPE_EFFECTIVENESS) <= 3)
+        {
+            return 0;
+        }
+        BattleMon = Handler_GetBattleMon(a2, a3);
+        if (BattleMon_IsSubstituteActive(BattleMon))
+        {
+            return 0;
+        }
+        if (!Handler_IsSimulationMode(a2))
+        {
+            BattleEventVar_MulValue(VAR_RATIO, 2048);
+            *a4 = 1;
+        }
+        return 1;
+    }
+
+    
     void THUMB_BRANCH_HandlerScopeLens(int a1, int a2, int a3)
     {
         if (a3 == BattleEventVar_GetValue(VAR_ATTACKING_MON))
@@ -1123,13 +1143,13 @@ extern "C"
 
     void HandlerAttackInsuranceUse(BattleEventItem *battleEventItem, ServerFlow *a2, int pokemonSlot, int *work)
     {
-        // New Damage Function 
+        // New Damage Function
         u8 v13[5];
-        unsigned int NumTargets; 
+        unsigned int NumTargets;
         unsigned int currentTarget;
         int currentTargetPosition;
         __int16 ExistFrontPokePos;
-        BattleMon* defendingMon;
+        BattleMon *defendingMon;
         BattleMon *attackingMon;
         HandlerParam_Damage *damage;
 
@@ -1161,8 +1181,7 @@ extern "C"
 
     ITEM_TRIGGERTABLE AttackInsuranceHandlers[] = {
         {EVENT_MOVE_EXECUTE_END, (ITEM_HANDLER_FUNC)HandlerAttackInsuranceUse}, // 24
-        {EVENT_MOVE_EXECUTE_FAIL, (ITEM_HANDLER_FUNC)HandlerAttackInsuranceUse}
-    };
+        {EVENT_MOVE_EXECUTE_FAIL, (ITEM_HANDLER_FUNC)HandlerAttackInsuranceUse}};
 
     ITEM_TRIGGERTABLE *THUMB_BRANCH_EventAddLaxIncense(_DWORD *a1)
     {
@@ -1979,7 +1998,6 @@ extern "C"
             SendMessage(a2, (int)a3, (int)a3, 1192, (int)a3, BattleEventItem_GetSubID((BattleEventItem *)a1));
             ChangeStats(a2, (int)a3, (int)a3, STATSTAGE_DEFENSE, 1, 1);
             ChangeStats(a2, (int)a3, (int)a3, STATSTAGE_SPECIAL_DEFENSE, 1, 1);
-
 
             // v8 = (HandlerParam_Message *)BattleHandler_PushWork(a2, EFFECT_MESSAGE, (int)a3);
             // BattleHandler_StrSetup(&v8->str, 2u, 1192);
@@ -2906,11 +2924,9 @@ extern "C"
         return TeraKingsRockHandlers;
     }
 
-
-
     ITEM_TRIGGERTABLE TeraEvioliteHandlers[] = {
         {EVENT_DEFENDER_GUARD, (ITEM_HANDLER_FUNC)HandlerEviolite},
-       {EVENT_CHECK_SPECIAL_PRIORITY, (ITEM_HANDLER_FUNC)HandlerTera}};
+        {EVENT_CHECK_SPECIAL_PRIORITY, (ITEM_HANDLER_FUNC)HandlerTera}};
 
     ITEM_TRIGGERTABLE *THUMB_BRANCH_EventAddMetalPowder(_DWORD *a1)
     {
@@ -2937,9 +2953,6 @@ extern "C"
         *a1 = 4;
         return TeraMascotBadgeHandlers;
     }
-
-
-
 
     /*
 
@@ -2971,7 +2984,6 @@ extern "C"
         return TeraPlateHandlers;
     }
 
-
     /*
 
         --------------------------------------------------------------------------------------------------
@@ -2987,7 +2999,7 @@ extern "C"
 
     void HandlerTeraGemDecide(int a1, ServerFlow *a2, int a3, _DWORD *a4)
     {
-        
+
         CommonGemPower(a1, a2, a3, a4, PML_MoveGetType(Move_GetID(Handler_GetBattleMon(a2, a3), 0)));
     }
 
@@ -2995,8 +3007,7 @@ extern "C"
         {EVENT_DAMAGE_PROCESSING_START, (ITEM_HANDLER_FUNC)HandlerTeraGemPower},
         {EVENT_MOVE_POWER, (ITEM_HANDLER_FUNC)HandlerTeraGemDecide},
         {EVENT_DAMAGE_PROCESSING_END, (ITEM_HANDLER_FUNC)HandlerGemEnd},
-        {EVENT_CHECK_SPECIAL_PRIORITY, (ITEM_HANDLER_FUNC)HandlerTera}
-    };
+        {EVENT_CHECK_SPECIAL_PRIORITY, (ITEM_HANDLER_FUNC)HandlerTera}};
 
     ITEM_TRIGGERTABLE *THUMB_BRANCH_EventAddSmokeBall(_DWORD *a1)
     {

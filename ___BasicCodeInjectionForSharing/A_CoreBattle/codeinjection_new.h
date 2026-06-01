@@ -40,6 +40,7 @@ bool IsEqual(int a1, int a2)
 
 C_DECL_BEGIN
 
+extern bool BattleMon_IsSubstituteActive(BattleMon *a1);
 extern int DoesMonHaveSuperEffectiveMove(BtlClientWk_Test *a1, BattleMon *a2, BattleMon *a3, int a4);
 extern int MoveDamageRec_Get(BattleMon *a1, unsigned int a2, unsigned int a3, MoveDamageRec *a4);
 extern int CheckMonsForTypeAbsorbingAbility(BtlClientWk_Test *a1, int a2, _BYTE *a3);
