@@ -634,16 +634,15 @@ extern "C" void THUMB_BRANCH_SAFESTACK_PML_PkmSetMetParamsEx(BoxPkm *pPkm, u16 l
     u16 alteredLocation;
 
     alteredLocation = location;
+    PlayerState *playerState = GameData_GetPlayerState(*(GameData **)(g_GameBeaconSys + 4));
+    VecFx32 *vec = PlayerState_GetWPos(playerState);
+    int zoneId = PlayerState_GetZoneID(playerState);
     // k::Printf("\nSetting Met Params for Pkm %d: Loc %d, Date %d/%d/%d, isWild %d\n", pPkm->pid, location, month, day, year, isWild);
     if (location == 125    // Route 20
         || location == 72  // Lostlorn Forest
         || location == 122 // Floccessy Town
     )
     {
-        PlayerState *playerState = GameData_GetPlayerState(*(GameData **)(g_GameBeaconSys + 4));
-        VecFx32 *vec = PlayerState_GetWPos(playerState);
-        int zoneId = PlayerState_GetZoneID(playerState);
-
         // Route 20
         if (location == 122 && zoneId == 440)
         {
@@ -659,6 +658,18 @@ extern "C" void THUMB_BRANCH_SAFESTACK_PML_PkmSetMetParamsEx(BoxPkm *pPkm, u16 l
         {
             alteredLocation = 95;
         }
+
+        // Virbank Preschool 
+        if (location == 118 && zoneId == 450){
+            alteredLocation = 97;
+        }
+
+    }
+    if (zoneId == 248 || zoneId == 245){
+        alteredLocation = 116;
+    }
+    if (zoneId == 450){
+        alteredLocation = 97;
     }
 
     PML_PkmSetParam(pPkm, (PkmField)(isWild + 149), alteredLocation);

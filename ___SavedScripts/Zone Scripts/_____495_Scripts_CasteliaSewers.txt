@@ -4,6 +4,7 @@ import Base;
 import event.Trainer;
 import event.Battle;
 import event.EVCamera;
+import event.dialogs.ListMenu;
 import event.actors.Actor;
 import event.actors.Follow;
 import event.actors.Player;
@@ -20,6 +21,8 @@ import system.Input;
 import system.Runtime;
 import system.Sound;
 import system.text.WordSet;
+
+
 
 public class MainEvents {
 	public static void main_1() { // @ 0x3c
@@ -40,6 +43,10 @@ public class MainEvents {
 		int v16;
 		int v33;
 		int v34;
+
+        int janineEntity; 
+        int janineX; 
+        int janineZ;
 
 		Actor.PauseAll();
 		WordSet.LoadPlayerName(0);
@@ -121,6 +128,7 @@ public class MainEvents {
 		Actor.WaitActionFinish();
 		Actor.Hide(1);
 		Actor.Hide(2);
+
 		Message.ActorEx(1024, 19, 254, 4, 0);
 		Message.CloseAll();
 		Message.Info(20, 1);
@@ -152,9 +160,7 @@ public class MainEvents {
 		Message.CloseAll();
 		WalkEast8F(254);
 		Actor.WaitActionFinish();
-		Global2805(505, 1);
-		Global2805(514, 1);
-		Global2805(526, 1);
+		Global2805(517, 1);
 		Message.ActorEx(1024, 27, 254, 4, 0);
 		Message.CloseAll();
 		WalkSouthThenWalkEast8F_Again(254);
@@ -207,6 +213,9 @@ public class MainEvents {
 		EVCamera.Rebind();
 		EVCamera.End();
 		Global10536(2000, 0);
+
+        Actor.SetGPos(47, 59, 0, 13, 0);
+
 
         // Updating Level Caps
         EventWorks.Set(16466, 32);
@@ -869,10 +878,10 @@ public class MainEvents {
         Actor.WaitActionFinish();
         DashAway(SCRAGGY_ID);
         Actor.WaitActionFinish();
-        Actor.Hide(SCRAGGY_ID);
+        
 		Sound.PVWait();
         EventWorks.Set(16488, 1);
-        EventFlags.Set(533);
+        Actor.SetGPos(46, 82, 0, 15, 1);
 		Runtime.FinishSubEvents();
 		Actor.UnpauseAll();
     }
@@ -880,7 +889,7 @@ public class MainEvents {
     // Second Scraggy Script
     public static void main_38() {
         int SCRAGGY2_ID;
-        SCRAGGY2_ID = 47;
+        SCRAGGY2_ID = 46;
         Actor.PauseAll();
 		Sound.SEPlay(1351);
         ShowExclamationMark(SCRAGGY2_ID);
@@ -898,8 +907,60 @@ public class MainEvents {
 		Sound.SEPlay(1369);
         Actor.Hide(SCRAGGY2_ID);
         EventWorks.Set(16488, 2);
-        EventFlags.Set(534);
+        EventFlags.Set(533);
 		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
+
+    // Janine Script
+    public static void main_39(){
+
+        int listMenu;
+        int janineEntity;
+        int playerX;
+        int playerZ;
+        int janineX;
+        int janineZ;
+
+        Actor.PauseAll();
+        Actor.FacePlayer();
+        Player.GetGPos(playerX, playerZ);
+        Actor.GetGPos(47, janineX, janineZ);
+        
+	   WordSet.LoadPlayerName(0);
+        Message.Actor(1024, 65, 0, 0);
+        Message.CloseAll();
+        ShowQuestionMark(47);
+        Actor.WaitActionFinish();
+        Message.Actor(1024, 66, 0, 0);
+        Runtime.Sleep(32);
+        Message.Actor(1024, 67, 0, 0);
+
+        ListMenu.InitRightAnchor(31, 13, 0, 1, listMenu);
+		ListMenu.AddItem(68, 65535, 0);
+		ListMenu.AddItem(69, 65535, 1);
+		ListMenu.ShowDialog();
+        if (listMenu == 0){
+            Message.CloseAll();
+            Message.Actor(1024, 70, 0, 0);
+        } else {
+            Message.CloseAll();
+            Message.Actor(1024, 70, 0, 0);
+        }
+        Message.CloseAll();
+        JanineLeavesA(47);
+        Runtime.Sleep(16);
+        TurnSouth(255);
+        Actor.WaitActionFinish();
+        TurnEast8F(47);
+        Actor.WaitActionFinish();
+        TurnWest8F(47);
+        Actor.WaitActionFinish();
+        JanineLeavesB(47);
+        Actor.WaitActionFinish();
+
+        Actor.Hide(47);
+        Runtime.FinishSubEvents();
 		Actor.UnpauseAll();
     }
 
@@ -922,8 +983,6 @@ public class MainEvents {
         	Message.CloseActor();
 	}
 
-	
-	
     static void trainerBackToBackBattles(int trainer_A, int trainer_B, int trainer_A_Entity, int trainer_B_Entity, int trainer_A_Pos, int trainer_B_Pos, int event){
         int textId;
         int isVictory;
@@ -1127,7 +1186,6 @@ public class MainEvents {
         Runtime.FinishSubEvents();
 		Actor.UnpauseAll();
     }
-
 
     static int getTextId(int trainerId){ 
         // For each trainer ID returns the text address based on if they've been defeated or not. 
@@ -1336,6 +1394,13 @@ public class MainEvents {
 		Actor.Hide(254);
 	}
 
+    static meta void JanineLeavesA(int npcId) : VActionSequence { 
+		Action000d(3);
+	}
+
+    static meta void JanineLeavesB(int npcId) : VActionSequence { 
+		Action0015(10);
+	}
 
 
 	static meta void ShowExclamationMark(int npcId) : VActionSequence { 
@@ -1461,6 +1526,10 @@ public class MainEvents {
         Action0015(6);
         Action0017(7);
     }
+    static meta void ShowQuestionMark(int npcId) : VActionSequence {
+		Action009f(1);
+	}    
+	
 	static meta void Global2805(int a1, int a2) : VGlobalCall[2805];
 	static meta void Global10536(int a1, int a2) : VGlobalCall[10536];
 	static meta void Global10535(int a1, int a2, int a3, int a4, int a5) : VGlobalCall[10535];

@@ -1,6 +1,7 @@
 import messages.script.Msg0180.MSGID;
 
 import event.Battle;
+import Overlay67;
 import event.EVCamera;
 import event.FieldDemo;
 import event.ObjInit;
@@ -765,6 +766,100 @@ public class MainEvents {
         }
 	}
 
+
+    // Benga Script
+    public static void main_28() {
+        int BengaEntity;
+        int messageStart;
+        int BengaX;
+        int BengaZ;
+		int playerX;
+		int playerZ;
+        BengaEntity = 4; // CHANGE THIS LATER 
+        messageStart = 52;
+
+        Actor.PauseAll();
+        Sound.SEPlay(1351);
+        Actor.FacePlayer();
+        Actor.GetGPos(4, BengaX, BengaZ);
+        Player.GetGPos(playerX, playerZ);
+        WordSet.LoadPlayerName(0);
+        Message.Actor(1024, messageStart, 0, 0);
+        Sound.BGMPlay(1101);
+        Message.Actor(1024, messageStart+6, 0, 0);
+        Input.LastKeyWait();
+        Message.CloseAll();
+        Message.Info(60, 2);
+        ShowExclamationMark(BengaEntity);
+        Message.Info(61, 2);
+        Message.CloseAll();
+        Actor.WaitActionFinish();
+        Message.Spiked(messageStart+1, 2);
+        Message.WaitAdvance();
+        Message.CloseAll();
+        HopUp(BengaEntity);
+        Actor.WaitActionFinish();
+        HopLeft(BengaEntity);
+        Actor.WaitActionFinish();
+        HopRight(BengaEntity);
+        Actor.WaitActionFinish();
+        HopDown(BengaEntity);
+        Actor.WaitActionFinish();
+        Actor.FacePlayer();
+        Message.Actor(1024, messageStart+2, 0, 0);
+        Input.LastKeyWait();
+        Message.CloseAll();
+        Global2805(221, 1);
+        Message.Actor(1024, messageStart+3, 0, 0);
+        Input.LastKeyWait();
+        Message.CloseAll();
+        Actor.WaitActionFinish();
+		EVCamera.Init();
+		EVCamera.Unbind();
+		EVCamera.MoveTo(2.3652344f, 0.0f, 237.0f, 3744.0f, 0.0f, 10416.0f, 45);
+		
+        if (playerX > BengaX) {
+        		BengaGoesToSeaA(4);
+        		Actor.WaitActionFinish();
+        } else {
+        		BengaGoesToSeaB(4);
+        		Actor.WaitActionFinish();
+        }
+        EVCamera.Wait();
+        TurnEast(255);
+        
+        Message.ActorEx(1024, messageStart+4, BengaEntity, 0, 0);
+        Runtime.Sleep(16);
+        Input.LastKeyWait();
+        Message.CloseAll();
+        ShowMusicNote(BengaEntity);
+        Actor.WaitActionFinish();
+        TurnWest(4);
+        Message.Spiked(messageStart+5, 2);
+        Message.WaitAdvance();
+        Actor.WaitActionFinish();
+        Message.CloseAll();
+    
+	   WalkEastThreeTiles(4);
+	   Actor.WaitActionFinish();
+        
+        Actor.JumpToGPos(BengaEntity, 243, 65531, 651);
+        Sound.SEPlay(1511);
+        Message.Info(59, 2);
+        
+  	   Runtime.Sleep(32);
+  	   Message.CloseAll();
+  	   Field.PlayMapBGM();
+  	   EVCamera.MoveToDefault(45);
+		EVCamera.Wait();
+		EVCamera.Rebind();
+		EVCamera.End();
+        Actor.Hide(BengaEntity);
+        EventFlags.Set(560);
+        Runtime.FinishSubEvents();
+	    Actor.UnpauseAll();
+    }
+
 	static void sub_0555() { // @ 0x555
 		Sound.BGMPlay(1266);
 		Message.ActorEx(1024, 8, 7, 0, 0);
@@ -798,6 +893,11 @@ public class MainEvents {
 		Field.PlayMapBGM();
 		EventWorks.Set(16556, 5);
 	}
+
+	static meta void RunEastTwoTiles(int npcId) : VActionSequence {
+		Action0013(2);
+	}
+
 
 	static meta void ActionSequence_01e8(int npcId) : VActionSequence {
 		Action000f(5);
@@ -857,9 +957,7 @@ public class MainEvents {
 	}
 
 	static meta void TurnWest(int npcId) : VActionSequence {
-		Action0002(1);
-		Action004b(1);
-		Action000e(1);
+		Action0022(1);
 	}
 
 	static meta void ActionSequence_04d4(int npcId) : VActionSequence {
@@ -899,7 +997,20 @@ public class MainEvents {
 	static meta void ActionSequence_0988(int npcId) : VActionSequence {
 		Action0064(1);
 	}
-
+	static meta void BengaGoesToSeaA(int npcId) : VActionSequence {
+		Action000c(1);
+		Action000f(3);
+		
+	}
+	static meta void WalkEastThreeTiles(int npcId) : VActionSequence {
+		Action0013(4);
+		
+	}
+	static meta void BengaGoesToSeaB(int npcId) : VActionSequence {
+		Action000f(1);
+		Action000c(1);
+		Action000f(2);
+	}
 	static meta void ActionSequence_0990(int npcId) : VActionSequence {
 		Action0047(1);
 		Action0012(1);
@@ -920,10 +1031,44 @@ public class MainEvents {
 		Action0026(4);
 		Action0012(1);
 	}
-
+	static meta void WalkEast(int npcId) : VActionSequence {
+		Action000f(2);
+	}
+		static meta void WalkNorth(int npcId) : VActionSequence {
+		Action0010(1);
+	}
+	static meta void TurnEast(int npcId) : VActionSequence {
+		Action0023(1);
+	}
 	static meta void ActionSequence_09cc(int npcId) : VActionSequence {
 		Action0012(2);
 	}
+    static meta void ShowExclamationMark(int npcId) : VActionSequence {
+        Action004b(1);
+    }
+    static meta void HopLeft(int npcId) : VActionSequence {
+        Action0032(1);
+    }
+
+    static meta void HopRight(int npcId) : VActionSequence {
+        Action0033(1);
+    }
+
+    static meta void HopUp(int npcId) : VActionSequence {
+        Action0030(1);
+    }
+
+    static meta void HopDown(int npcId) : VActionSequence {
+        Action0031(1);
+    }
+
+    static meta void TurnSouth(int npcId) : VActionSequence {
+		Action0021(1);
+	}
+    
+    static meta void ShowMusicNote(int npcId) : VActionSequence {
+        Action00a0(1);
+    }
 
 	static meta void Global2806(int a1, int a2) : VGlobalCall[2806];
 	static meta void Global2805(int a1, int a2) : VGlobalCall[2805];
@@ -940,6 +1085,7 @@ public class MainEvents {
 	static native void Action0010(int amount) : 0x10;
 	static native void Action0011(int amount) : 0x11;
 	static native void Action0012(int amount) : 0x12;
+    static native void Action0013(int amount) : 0x13;
 	static native void Action0020(int amount) : 0x20;
 	static native void Action0021(int amount) : 0x21;
 	static native void Action0022(int amount) : 0x22;
@@ -951,4 +1097,9 @@ public class MainEvents {
 	static native void Action004b(int amount) : 0x4b;
 	static native void Action0064(int amount) : 0x64;
 	static native void Action00a1(int amount) : 0xa1;
+    static native void Action00a0(int amount) : 0xa0;
+    static native void Action0030(int amount) : 0x30;
+    static native void Action0031(int amount) : 0x31;
+    static native void Action0032(int amount) : 0x32;
+    static native void Action0033(int amount) : 0x33;
 }

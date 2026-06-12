@@ -586,7 +586,7 @@ public class MainEvents {
                     Message.WaitAdvance();
 					Message.CloseAll();
 					Bag.TakeItem(530, 1);
-					PokeParty.SetIV(v32, 70 + v4,31);
+					PokeParty.SetIV(v32, 70 + v9,31);
 					Message.Actor(1024, 69, 2, 0); // Pleasure doing business with you.
 					Input.LastKeyWait();
 					Message.CloseAll();
@@ -606,6 +606,105 @@ public class MainEvents {
 
         LABEL_EndScriptMain3:
 		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
+
+    // Benga Script 
+    public static void main_21(){
+        int playerX;
+        int playerZ;
+        int bengaX;
+        int bengaZ;
+        int bengaJumpX;
+        int bengaJumpY;
+        int bengaJumpZ;
+        
+
+        int bengaEntity;
+        int messageId;
+
+        playerX = 178; // CHANGE THIS LATER 
+        playerZ = 469; // CHANGE THIS LATER 
+        bengaEntity = 10; // CHANGE THIS LATER 
+        messageId = 71; // CHANGE THIS LATER 
+
+        Actor.PauseAll();
+
+        Sound.SEPlay(1351);
+        Message.Spiked(messageId+13, 2);
+        Message.WaitAdvance();
+        Message.CloseAll();
+
+        ShowQuestionMark(255);
+        Actor.WaitActionFinish();
+        Actor.WalkRoute(255, playerX, playerZ, 0, 8, 0);
+        Actor.WaitActionFinish();
+
+        Actor.GetGPos(bengaEntity, bengaX, bengaZ);
+        WordSet.LoadPlayerName(0);
+        Message.ActorEx(1024, messageId, bengaEntity, 0, 0);
+        Input.LastKeyWait();
+        Message.CloseAll();
+        ShowExclamationMark(bengaEntity);
+        TurnNorth(bengaEntity);
+        Actor.WaitActionFinish();
+		Sound.SEPlay(1351);
+        Message.Spiked(messageId+1, 2);
+		Message.CloseAll();
+        Actor.WalkRoute(bengaEntity, playerX, playerZ+1, 0, 4, 0);
+        HopUp(bengaEntity);
+        HopUp(bengaEntity);
+		Actor.WaitActionFinish();
+        Message.ActorEx(1024, messageId+2, bengaEntity, 0, 0);
+        Message.CloseAll();
+        TurnSouth(bengaEntity);
+        Message.ActorEx(1024, messageId+3, bengaEntity, 0, 0);
+        Input.LastKeyWait();
+        Message.CloseAll();
+        WalkSouth3Tiles(bengaEntity);
+		PlayerFollowBenga(255);
+        Actor.WaitActionFinish();
+
+        Message.ActorEx(1024, messageId+4, bengaEntity, 0, 0);
+        TurnEast(bengaEntity);
+        Actor.WaitActionFinish();
+        Message.ActorEx(1024, messageId+5, bengaEntity, 0, 0);
+		TurnNorth(bengaEntity);
+        Message.ActorEx(1024, messageId+6, bengaEntity, 0, 0);
+        Input.LastKeyWait();
+        Message.CloseAll();
+        Global2805(93, 3);
+        Message.ActorEx(1024, messageId+7, bengaEntity, 0, 0);
+        TurnEast(bengaEntity);
+        Message.ActorEx(1024, messageId+8, bengaEntity, 0, 0);
+        Message.CloseAll();
+        BengaApproach(bengaEntity);
+		Runtime.Sleep(12);
+		TurnEast(255);
+        Actor.WaitActionFinish();
+        Message.ActorEx(1024, messageId+9, bengaEntity, 0, 0);
+        Message.CloseAll();
+        BengaApproach2(bengaEntity);
+		Actor.WaitActionFinish();
+        Message.ActorEx(1024, messageId+10, bengaEntity, 0, 0);
+        Message.CloseAll();
+        HopLeft(bengaEntity);
+        Message.Spiked(messageId+11, 2);
+        Message.CloseAll();
+        TurnWest(bengaEntity);
+        Actor.WaitActionFinish();
+        Message.ActorEx(1024, messageId+12, bengaEntity, 0, 0);
+        Message.CloseAll();
+        BengaRun(bengaEntity);
+		Runtime.Sleep(24);
+		Sound.SEPlay(1351);
+		Message.Spiked(85, 2);
+		Runtime.Sleep(72);
+		Message.CloseAll();
+        Actor.Hide(bengaEntity);
+        EventFlags.Set(561);
+        EventWorks.Set(16494, 3);
+        Runtime.FinishSubEvents();
 		Actor.UnpauseAll();
     }
 
@@ -649,6 +748,29 @@ public class MainEvents {
 		Message.Actor(1024, 28, 0, 0);
 	}
 
+	static meta void BengaApproach(int npcId) : VActionSequence {
+		Action0013(3);
+		Action0010(3);
+	}
+
+	static meta void BengaApproach2(int npcId) : VActionSequence {
+		Action0011(2);
+		Action0012(2);
+	}
+
+	static meta void BengaRun(int npcId) : VActionSequence {
+		Action0013(15);
+	}
+	static meta void PlayerFollowBenga(int npcId) : VActionSequence {
+		Action000d(1);
+		Action000f(2);
+		Action0021(1);
+	}
+	
+	static meta void WalkSouth3Tiles(int npcId) : VActionSequence {
+		Action000f(2);
+		Action000d(1);
+	}
 	static meta void ActionSequence_025c(int npcId) : VActionSequence {
 		Action000d(3);
 		Action000f(6);
@@ -756,13 +878,16 @@ public class MainEvents {
     static meta void ShowQuestionMark(int npcId) : VActionSequence {
         Action009f(1);
     }
+
     static meta void HopLeft(int npcId) : VActionSequence {
         Action0032(1);
     }
-        static meta void HopRight(int npcId) : VActionSequence {
+
+    static meta void HopRight(int npcId) : VActionSequence {
         Action0033(1);
     }
-            static meta void HopDown(int npcId) : VActionSequence {
+
+    static meta void HopDown(int npcId) : VActionSequence {
         Action0033(1);
     }
 
@@ -774,31 +899,44 @@ public class MainEvents {
         Action0031(1);
     }
 
-    	static meta void ShowExclamationMark(int npcId) : VActionSequence {
+    static meta void ShowExclamationMark(int npcId) : VActionSequence {
 		Action004b(1);
 	}
 
-	   static meta void ActionSequenceFollowUp(int npcId) : VActionSequence {
+	static meta void ActionSequenceFollowUp(int npcId) : VActionSequence {
 		Action000f(1);
 		Action0021(1);
 	}
 
-
+	static meta void WalkWest(int npcId) : VActionSequence {
+		Action000e(1);
+	}
+	static meta void WalkNorth(int npcId) : VActionSequence {
+		Action000c(2);
+	}
+	static meta void HopUp(int npcId) : VActionSequence {
+        Action0030(1);
+    }
+    
 	static meta void Global2800(int a1, int a2, int a3, int a4, int a5, int a6, int a7) : VGlobalCall[2800];
-
+	static meta void Global2805(int a1, int a2) : VGlobalCall[2805];
+	
 	static native void Action000c(int amount) : 0xc;
 	static native void Action000d(int amount) : 0xd;
 	static native void Action000e(int amount) : 0xe;
 	static native void Action000f(int amount) : 0xf;
+	static native void Action0010(int amount) : 0x10;
+	static native void Action0012(int amount) : 0x12;
 	static native void Action0011(int amount) : 0x11;
 	static native void Action0013(int amount) : 0x13;
 	static native void Action0020(int amount) : 0x20;
 	static native void Action0021(int amount) : 0x21;
 	static native void Action0022(int amount) : 0x22;
 	static native void Action0023(int amount) : 0x23;
+	static native void Action0030(int amount) : 0x30;
 	static native void Action0031(int amount) : 0x31;
-    	static native void Action0032(int amount) : 0x32;
-    	static native void Action0033(int amount) : 0x33;
+    static native void Action0032(int amount) : 0x32;
+    static native void Action0033(int amount) : 0x33;
 	static native void Action004b(int amount) : 0x4b;
-    	static native void Action009f(int amount) : 0x9f;
+    static native void Action009f(int amount) : 0x9f;
 }

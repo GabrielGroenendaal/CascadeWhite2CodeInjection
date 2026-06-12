@@ -52,6 +52,7 @@ extern void HandlerOranBerryUse(BattleEventItem *a1, ServerFlow *a2, unsigned in
 extern void HandlerOranBerrySwitchIn(BattleEventItem *a1, ServerFlow *a2, unsigned int *a3);
 extern BattleMon* PokeCon_GetFrontPokeData(PokeCon *pokeCon, int pos);
 // STUFF FOR FIELD EFFECTS
+extern int HandlerSeismicToss(int a1, ServerFlow *a2, int a3);
 extern VecFx32 *PlayerState_GetWPos(PlayerState *playerState);
 extern bool DoesMonHaveShadowTag(int a1, BattleMon *a2);
 extern bool IsMonTrappedByArenaTrap(BtlClientWk *a1, BattleMon *a2);

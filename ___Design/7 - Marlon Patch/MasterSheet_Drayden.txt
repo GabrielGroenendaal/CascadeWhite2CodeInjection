@@ -1,0 +1,373 @@
+
+
+# Drayden Split (Level Cap 69, Optional Cap 66 for Benga)
+
+## Seaside Cave 
+!notif SPLIT-LOCKED CONTENT, Seaside Cave only be accessed before defeating Benga in Lacunosa town. , #af74b3
+!items Items 
+tm fighting, TM47 Cross Chop (reward from defeating Maylene)
+fighting gem, Fighting Gem (x3) (reward from defeating Maylene)
+chople berry, Chople Berry (x3) (reward from defeating Maylene)
+heart scale, Heart Scale (x1) (reward for beating the Ranger)
+end
+
+!enc 1 
+
+!tr 1 (rewards a Heart Scale)
+
+### Maylene 
+!notif SPLIT-LOCKED CONTENT, Seaside Cave, and by extension Maylene, only be accessed before defeating Benga in Lacunosa town. , #af74b3
+!tr 1 Rewards 2x Chople Berries, 2x Fighting Gem, TM47 Cross Chop
+
+
+### Black Belt Kai (Undella Bay Gatekeeper)
+!tr 1
+
+
+
+## Undella Bay 
+!notif SPLIT-LOCKED CONTENT, Undella Bay can only be accessed before defeating Benga in Lacunosa town. , #af74b3
+
+!items Items 
+tm grass, TM22 Solarbeam (Past Battle Girl Tia)
+end
+
+!notif FIELD EFFECT, There is permanent sun in Undella Bay , #4e86d4
+
+!enc 1 
+
+!tr 1 (rewards the TM for Solarbeam)
+
+### Swimmer Bart (Abyssal Ruins Gatekeeper)
+!tr 1 
+
+
+
+## Abyssal Ruins
+
+!notif SPLIT-LOCKED CONTENT, Abyssal Ruins can only be accessed before defeating Benga in Lacunosa town. , #af74b3
+!items Items 
+tm psychic, TM01 Psychic Fangs (past Swimmer Mitzi, Northwest Corner)
+plume fossil, Plume, Armor, Cover Fossils (past Swimmer Matt, Northeast Corner)
+tm grass, TM92 Solar Blade (past Swimmer Anissa, southeast corner)
+blue shard, Blue Shards x5 (past Swimmer Tim, middle)
+green shard, Green Shards x20 (past Swimmer Tim, second floor)
+life orb, Life Orb (reward for defeating the Strange Statue)
+end
+
+!notif FIELD EFFECT, There is Pre-Set Perma Trick Room in Abyssal Ruins , #4e86d4
+
+!notif NEW ENCOUNTER, While exploring without a repel active, you can encounter wild Pokémon in the ruins! , #469e62
+
+!enc 1 
+
+!tr 1 (Guards TTM92 Solar Blade)
+
+!tr 1 (Guards Fossils)
+
+!tr 1 (Guards TM01 Psychic Fangs)
+
+!tr 1 (Guards blue shards and access to the Sunken Statue)
+
+### Strange Statue  #af74b3 
+!tr 1 Rewards Life Orb
+
+
+
+
+
+
+## Plasma Frigate 
+!items Items 
+tm psychic, TM51 Ally Switch (reward for defeating Plasma Scientist F) 
+tm electric, TM93 Wild Charge (reward for defeating Plasma Scientist M) 
+heart scale, Heart Scale x1 
+end
+
+### Plasma Rumble 
+!notif FIELD EFFECT, RUMBLE: Your Pokémon will take damage equal to 1/6 of their total health at the end of each turn, #4e86d4
+!tr 1
+!tr 1 
+!tr 1 
+!tr 1
+
+!tr 1 
+
+!tr 1 
+
+!tr 1 
+
+!tr 1 
+
+!tr 1 
+
+### Zinzolin Tag Battle 
+!tr 1 Hugh's Team if you Picked Tepig
+
+!tr 1 Hugh's Team if you Picked Dewott
+
+!tr 1 Hugh's Team if you Picked Snivy
+
+!trm 1 Left Side 
+!trm 1 Right Side 
+
+
+
+
+
+
+## Route 13 
+!items Items 
+tm normal, TM23 Weather Crash (guarded by Scientist Y)
+tm normal, TM57 Weather Ball (guarded by Scientist X)
+red shard, Red Shards (x20) 
+blue shard, Blue Shards (x5)
+tm ice, TM68 Avalanche (Reward from Candice)
+ice gem, Ice Gems (x3) (Reward from Candice)
+yache berry, Yache Berry (x3) (Reward from Candice)
+end
+
+!notif FIELD EFFECT, There is Permanent Hail on Route 13 , #4e86d4
+
+!enc 1 
+
+!trm 1 Right Side 
+!trm 1 Left Side 
+
+!trm 1 (Guards the Heart Scale)
+
+!trm 1 Choose One (Left)
+!trm 1 Choose One (Right)
+
+!tr 1 (Guards TM27 Weather Crash)
+!tr 1 (Guards TM57 Weahter Ball)
+
+!trm 1
+
+!trm 1 Choose One (Left)
+!trm 1 Choose One (Right)
+
+### Candice 
+!notif SPLIT-LOCKED CONTENT, Candice only hangs around Route 13 until you defeat Benga in Lacunosa Town , #af74b3 
+!tr 1 Rewards 2x Yache Berries, 2x Ice Gems, TM68 Avalanche
+
+
+
+
+
+
+
+## Lacunosa Town 
+!items Items 
+colress mchn, Proto Booster (reward for defeating Benga) 
+end
+
+### Benga 
+!notif SPLIT END, Defeating Benga will look you out of the following content, #af74b3
+- Seaside Cave, Undella Bay, Abyssal Ruins locations, and all encounters/items within 
+- Candice Miniboss in Route 13 (rewards Ice Gems, yache Berries, TM68 Avalanche)
+- Maylene Miniboss in Seaside Cave (rewards Fighting Gems, Chople Berries, TM47 Cross Chop)
+
+Rather than an encounter with Team Plasma, Benga will confront you here and demand to battle. This is a challenging single battle. 
+!trm 1 
+
+
+
+
+
+
+
+
+
+## Route 12 
+There are no trainers on Route 12. Nothing blocking you from receiving an encounter for defeating Benga!
+
+!items Items 
+enigma berry, Enigma Berries x5 
+end
+
+!enc 1
+
+
+
+
+
+
+
+## Village Bridge (Gauntlet)
+Village Bridge is now a gauntlet of 6 trainers that must be defeated without changing your team to progress. You will not be able to access the PokéHelper to heal your party, pre-status, or fast travel out. 
+There are several crossroads where you can choose one of two trainers to fight to progress. Plan your route accordingly. 
+
+!notif FIELD EFFECT, There is Pre-Set Perma Trick Room in Village Bridge , #4e86d4
+
+### Fight #1 
+!trm 1 Choose One (Top)
+!trm 1 Choose One (Bottom)
+
+### Fight #2 
+!trm 1 
+
+### Fight #3
+!trm 1 Choose One (Top)
+!trm 1 Choose One (Bottom)
+
+### Fight #4 
+!trm 1 Choose One (Top)
+!trm 1 Choose One (Bottom)
+
+### Optional Miniboss: Fantina (can only be fought within the Gauntlet)
+!tr 1 Rewards 2x Roseli Berries, 2x Fairy Gems, TM85 Play Rough 
+
+### Fight #5
+!trm 1
+
+### End of Gauntlet 
+
+!items Items 
+petaya berry, x1 Petaya, Salac, and Liechi Berry (gauntlet reward)
+leftovers, Leftovers (B2B2B reward)
+roseli berry, x3 Roseli Berries (Fantina Reward)
+fairy gem, x3 Fairy Gems (Fantina Reward)
+tm fairy, TM85 Play Rough (fantina Reward)
+end
+
+### Leftovers B2B2B 
+In the restaurant on Village Bridge, you can choose to battle the three Striaton Brothers to receive a Leftovers!
+You can choose the order fight the Brothers! 
+!tr 1 
+!tr 1 
+!tr 1 
+
+### Artist X (Village Bridge encounter gatekeeper)
+!tr 1
+
+!enc 1
+
+
+
+
+
+
+## Route 11 
+!items Items 
+end
+
+!notif SPLIT-LOCKED CONTENT, Wild Pokémon will cease to appear on Route 11 once Drayden has been defeated , #af74b3 
+
+### ??? Route 11 Doubles Grass Gatekeeper 
+!tr 1 
+
+!enc 1 
+
+
+## Opelucid City 
+!items Items 
+ability capsule, Ability Patch x1 (reward for defeating Tate & Liza)
+blue shard, Blue Shards x10 (linebacker on the second floor of Drayden's House)
+end
+
+### Ability Patch Back-To-Back
+!notif SPLIT-LOCKED, Tate and Liza will leave Opelucid once you defeat Drayden, locking off their reward  , #af74b3
+!notif FIELD EFFECT, Permanent Trick Room is set before the FIRST battle against Liza, but not the second against Tate. , #4e86d4
+
+!tr 278 First of B2B
+!tr 277 Second of B2B 
+
+
+## Route 9 
+!items Items 
+end
+
+!notif SPLIT-LOCKED CONTENT, Wild Pokémon will cease to appear on Route 11 once Drayden has been defeated , #af74b3 
+
+### Route 9 Gatekeeper 
+!tr 1 
+
+!tr 1 Guards X 
+
+### Kanto Gym Leader Blue 
+!notif SPLIT-LOCKED, Blue is an optional mini-boss that can only be fought before defeating Drayden. This content is locked off afterwards.  , #af74b3
+!tr 1 Guards Challenger's Cave Access, Rocky Helmet, and 1x IV Enhancer. 
+
+## Challenger's Cave 
+!items Items 
+end
+
+!enc 1
+
+
+## SM9 
+!items Items 
+normal gem, Normal Gems (for sale, if you can defeat Whitney)
+end
+
+### Whitney 
+!notif SPLIT-LOCKED CONTENT, Whitney can only be fought before defeating Drayden, #af74b3 
+!tr 1 Rewards access to SM9 Upper Store 
+
+
+
+## Twist Mountain 
+!notif SPLIT-LOCKED CONTENT, Twist Mountain, in its entirity, will be locked off once Drayden is defeated , #af74b3 
+
+!items Items 
+rock gem, x3 Rock Gem (Roark reward)
+charti berry, 3x Charti Berry (Roark reward)
+tm rock, TMXX Rock Climb
+steel gem, x3 Steel Gem (Byron reward)
+babiri berry, x3 Babiri Berry (Byron Reward)
+tm steel, TMXX Gyro Ball
+choice band, Choice Band (Terrakion reward)
+end
+
+### Sinnoh Leader Roark 
+!tr 1
+
+### Sinnoh Leader Byron 
+!tr 1
+
+### Guardian of Unova, Terrakion
+!notif FIELD EFFECT, Something , #4e86d4
+!tr 1 
+!notif ENCOUNTER, Wild Pokémon will not appear in Twist Mountain until Terrakion is defeated. , #469e62 
+!enc 1
+
+
+
+## Opelucid Gym 
+
+!notif FIELD EFFECT, Dragon's Fury: Pokémon deal 50% more damage and are 50% faster if their move failed on the previous turn. , #4e86d4
+
+!items Items 
+weakness policy, x2 Weakness Policy (given by gym guide upon entering)
+tm dragon, TM82 Dragon Tail (Drayden reward)
+end
+
+!trm 1 
+
+!trm 1 Choose One (Left)
+!trm 1 Choose One (Right)
+
+!trm 1 
+
+!trm 1 Choose One (Left)
+!trm 1 Choose One (Right)
+
+!trm 1 Choose One (Left)
+!trm 1 Choose One (Right)
+
+!trm 1 Choose One (Left)
+!trm 1 Choose One (Right)
+
+### Leader Drayden 
+!notif SPLIT END, Defeating Drayden will look you out of the following content, #af74b3
+- Tate and Liza B2B (rewards an Ability Patch)
+- Whitney Miniboss (rewards infinite Normal Gems and Chilan Berries)
+- Route 9, 11, Village Bridge encounters. 
+- Blue Opt. Boss (rewards Rocky Helmet, Challenger's Cave Encounter, x1 IV Enhancer)
+- Roark Miniboss (rewards 3x Rock Gems, 3x Charti Berries, TMXX Rock Climb)
+- Byron Miniboss (rewards 3x Steel Gems, 3x Babiri Berries, TMXX Rock Climb)
+- Terrakion Side Queust (rewards Twist Mountain encounter, Choice Band)
+
+!trm Rewards TM82 Dragon Tail
+

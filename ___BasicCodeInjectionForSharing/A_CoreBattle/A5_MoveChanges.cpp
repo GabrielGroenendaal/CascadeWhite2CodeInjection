@@ -1629,6 +1629,37 @@ extern "C"
 
 #pragma endregion
 
+#pragma region Explosion
+
+    void HandlerExplosionPower(int a1, ServerFlow *a2, int a3)
+    {
+        if (a3 == BattleEventVar_GetValue(VAR_ATTACKING_MON))
+        {
+            BattleEventVar_MulValue(VAR_MOVE_POWER_RATIO, 0x2000); 
+        }
+    }
+    
+    MOVE_TRIGGERTABLE ExplosionHandlers[] = {
+        {EVENT_DETERMINE_MOVE_DAMAGE, (MOVE_HANDLER_FUNC)HandlerExplosionDamageDetermine},
+        {EVENT_MOVE_EXECUTE_START, (MOVE_HANDLER_FUNC)HandlerExplosionStart},
+        {EVENT_MOVE_EXECUTE_END, (MOVE_HANDLER_FUNC)HandlerExplosionEnd},
+        {EVENT_MOVE_POWER, (MOVE_HANDLER_FUNC)HandlerExplosionPower},
+    };
+
+    MOVE_TRIGGERTABLE *THUMB_BRANCH_EventAddExplosion(_DWORD *a1)
+    {
+        *a1 = 4;
+        return ExplosionHandlers;
+    }
+
+    MOVE_TRIGGERTABLE *THUMB_BRANCH_EventAddFinalGambit(_DWORD *a1)
+    {
+        *a1 = 4;
+        return ExplosionHandlers;
+    }
+
+#pragma endregion
+
 #pragma region ProtectMoves
 
     MoveID NEW_PROTECT_COUNTER_MOVES[8] = {
@@ -1862,17 +1893,27 @@ extern "C"
         return result;
     }
 
-    void HandlerNightShade(BattleEventItem *a1, int a2, int a3)
+    void HandlerNightShade(BattleEventItem *a1, ServerFlow *a2, int a3)
     {
-        int v4; // r0
+        BattleMon *mon; 
+        HandlerParam_RecoverHP *v8;
         if (a3 == BattleEventVar_GetValue(VAR_ATTACKING_MON))
         {
-            BattleEventVar_MulValue(VAR_RATIO, 8096);
+            mon = Handler_GetBattleMon(a2, a3);
+            if (!BattleMon_IsFullHP(mon))
+            {
+                v8 = (HandlerParam_RecoverHP *)BattleHandler_PushWork(a2, EFFECT_RECOVERHP, (int)a3);
+                v8->pokeID = (int)a3;
+                v8->recoverHP = BattleMon_GetValue(mon, VALUE_LEVEL);
+                BattleHandler_StrSetup(&v8->exStr, 2u, 387);
+                BattleHandler_AddArg(&v8->exStr, (int)a3);
+                BattleHandler_PopWork(a2, v8);
+            }
         }
     }
 
     MOVE_TRIGGERTABLE NightShadeHandlers[] = {
-        {EVENT_CALC_RECOIL, (MOVE_HANDLER_FUNC)HandlerNightShade}};
+        {EVENT_MOVE_DAMAGE_PROCESSING_1, (MOVE_HANDLER_FUNC)HandlerSeismicToss}};
 
     // Night Shade
     MOVE_TRIGGERTABLE *THUMB_BRANCH_EventAddPresent(_DWORD *a1)

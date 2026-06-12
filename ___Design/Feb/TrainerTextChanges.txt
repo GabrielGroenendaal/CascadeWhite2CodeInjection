@@ -1,0 +1,39 @@
+
+
+I need you to write me some dialogue for a Pokemon Game. 
+Text entries in Pokemon abide by a couple of rules. You can only display two lines of text at a time, and lines of text are separated with a newline character "\n"
+To clear the page before new text, use a clear character "\c"
+To extend the text and scroll down one line, use a "\r" character. 
+
+Included in the file I'm about to upload is all the text in the game. I have labeled various sections that refer to different types of dialogue (trainer text, overworld text, etc)
+
+For each trainer, generally speaking, they have a few lines of dialogue. 
+
+"Pre Battle Overworld": The line they give when they are first encountered or interacted with, which ends with the start of battle. 
+"Battle Loss": The line of text they have after all their pokemon have been defeated in battle. These are usually shorter. 
+"Post-Battle Overworld": The line of text they give after they've been battled in the overworld. 
+
+These lines of dialogue usually serve to set the tone of the game, do some light worldbuilding, etc. 
+The baseline we're using here is the vanilla game of Pokemon Black and White 2. You can trawl bulbapedia and other associated websites to create a summary of that game's story and get an idea of how the characters in its world speak. 
+There are a few major changes I am making for my pokemon game: 
+- The Blueberry Academy is a major education institution that teaches people about Pokemon Battling. Anyone can enroll, even adults. Students are privy to many benefits, including access to Powerful Rental Pokemon (so they don't need to raise their own)
+- The general populace of Unova is way more skilled at Battling and has much more awareness of Pokemon typings and stuff. 
+In addition, I'd like to use the dialogue to inject some charm into the characters and tutorialize some of the changed abilities and move effects. 
+
+
+
+
+Youngster Petey
+I just got my first rental Pokemon from\nthe Blueberry Academy!\c\nWanna see what they can do?
+Wait, what?\nThey didn't do anything!
+Hm, I guess these Pokemon were kinda lame.\nI'll have to ask for better ones next time. 
+
+
+
+
+Don't tell me you've never done a\nDouble Battle before!\c\nDon't worry, I'll show you the ropes!
+Guess you already know how they work...
+Double Battles are all the rage.\nAnyone still doing Singles these days is a total loser.
+
+
+

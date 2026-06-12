@@ -285,13 +285,13 @@ extern "C"
 
         if ((int)a3 == BattleEventVar_GetValue(VAR_MON_ID))
         {
-            SendMessage(a2, (int)a3, (int)a3, 1324, (int)a3, BattleEventItem_GetSubID(a1));
-            // v6 = (HandlerParam_Message *)BattleHandler_PushWork(a2, EFFECT_MESSAGE, (int)a3);
-            // BattleHandler_StrSetup(&v6->str, 2u, 1324);
-            // BattleHandler_AddArg(&v6->str, (int)a3);
-            // SubID = BattleEventItem_GetSubID(a1);
-            // BattleHandler_AddArg(&v6->str, SubID);
-            // BattleHandler_PopWork(a2, v6);
+            // SendMessage(a2, (int)a3, (int)a3, 1324, (int)a3, BattleEventItem_GetSubID(a1));
+            v6 = (HandlerParam_Message *)BattleHandler_PushWork(a2, EFFECT_MESSAGE, (int)a3);
+            BattleHandler_StrSetup(&v6->str, 2u, 1324);
+            BattleHandler_AddArg(&v6->str, (int)a3);
+            SubID = BattleEventItem_GetSubID(a1);
+            BattleHandler_AddArg(&v6->str, SubID);
+            BattleHandler_PopWork(a2, v6);
         }
     }
 
@@ -2603,7 +2603,7 @@ extern "C"
             addConditon->pokeID = pokemonSlot;
             addConditon->sickID = CONDITION_TERA;
             addConditon->sickCont = Condition_MakePermanent();
-            BattleHandler_StrSetup(&addConditon->exStr, 2u, 1294);
+            BattleHandler_StrSetup(&addConditon->exStr, 2u, ((type == TYPE_FAIRY) ? 1342 : 1294));
             BattleHandler_AddArg(&addConditon->exStr, pokemonSlot);
             BattleHandler_AddArg(&addConditon->exStr, type);
             BattleHandler_PopWork(serverFlow, addConditon);

@@ -31,17 +31,38 @@ public class MainEvents {
 		EVCamera.Unbind();
 		EVCamera.MoveTo(2.3652344f, 0.0f, 237.0f, 856.0f, 16.003662f, 11176.0f, 16);
 		EVCamera.Wait();
-		Message.ActorGendered(1024, 0, 1, 5, 0, 0);
-		Message.CloseAll();
+
+		// Anti-Yap
+		if (EventWorks.Get(16439) == 1){
+            ShowExclamationMark(5);
+            Actor.WaitActionFinish();
+        } else {
+            Message.ActorGendered(1024, 0, 1, 5, 0, 0);
+		    Message.CloseAll();
+        }
+
+
 		sub_0192();
 		ActionSequence_07a8(5);
 		Actor.WaitActionFinish();
-		Message.ActorEx(1024, 2, 5, 0, 0);
-		Message.CloseAll();
-		ActionSequence_0798(5);
-		Actor.WaitActionFinish();
-		Message.ActorEx(1024, 3, 5, 0, 0);
-		Message.CloseAll();
+
+		// Anti-Yap
+		if (EventWorks.Get(16439) == 1){
+            ShowEllipses(5);
+            Actor.WaitActionFinish();
+        } else {
+           Message.ActorEx(1024, 2, 5, 0, 0);
+		    Message.CloseAll();
+        }
+
+		// Anti Yap 
+		if (EventWorks.Get(16439) != 1) {
+			ActionSequence_0798(5);
+			Actor.WaitActionFinish();
+			Message.ActorEx(1024, 3, 5, 0, 0);
+			Message.CloseAll();
+		}
+
 		Player.GetGPos(v33, v34);
 		EVCamera.MoveTo(2.3652344f, 0.0f, 237.0f, 984.0f, 16.003662f, 11144.0f, 72);
 		ActionSequence_0720(5);
@@ -62,25 +83,48 @@ public class MainEvents {
 		EVCamera.Wait();
 		EVCamera.Rebind();
 		EVCamera.End();
-		Message.ActorEx(1024, 4, 5, 0, 0);
-		Message.CloseAll();
-		Message.ActorEx(1024, 5, 5, 0, 0);
-		Message.CloseAll();
+
+		// Anti Yap 
+		if (EventWorks.Get(16439) == 1){
+            ShowMusicNote(5);
+            Actor.WaitActionFinish();
+        } else {
+			Message.ActorEx(1024, 4, 5, 0, 0);
+			Message.CloseAll();
+			Message.ActorEx(1024, 5, 5, 0, 0);
+			Message.CloseAll();
+		}
 		ActionSequence_07a8(5);
 		Actor.WaitActionFinish();
-		Message.ActorEx(1024, 6, 5, 0, 0);
-		Message.CloseAll();
+		
+		// Anti Yap 
+		if (EventWorks.Get(16439) == 1){
+			HopDown(5);
+            Actor.WaitActionFinish();
+		}
+		else {
+			Message.ActorEx(1024, 6, 5, 0, 0);
+			Message.CloseAll();
+		}
+
 		ActionSequence_07a0(5);
 		Actor.WaitActionFinish();
 		Pokedex.EnableNational();
+		Sound.SEPlay(2176);
         Message.System(35, 2);
+		Sound.SEWait();
         Message.WaitAdvance();
         Message.CloseAll();
-		Message.ActorEx(1024, 7, 5, 0, 0);
-		Message.CloseAll();
+
+		// Anti Yap 
+		if (EventWorks.Get(16439) != 1){
+            Message.ActorEx(1024, 7, 5, 0, 0);
+		    Message.CloseAll();
+        }
+
 		sub_0205();
 		EventWorks.Set(16547, 1);
-       	 Actor.Hide(8);
+       	Actor.Hide(8);
 		EventFlags.Set(987);
 		EventFlags.Clear(739);
 		EventFlags.Set(744);
@@ -98,9 +142,16 @@ public class MainEvents {
 		int v34;
 		int v35;
 
+        int victiniEntity = 10; // CHANGE THIS LATER 
 		Actor.PauseAll();
 		Actor.Hide(8);
-		Message.Info(8, 1);
+
+        HopLeft(10);
+        Sound.PVPlay(494, 0);
+        Sound.PVWait();
+        Actor.WaitActionFinish();
+		Message.Info(36, 1);
+		Message.WaitAdvance();
 		Message.CloseAll();
 		EVCamera.Init();
 		EVCamera.Unbind();
@@ -131,7 +182,6 @@ public class MainEvents {
 		Actor.WaitActionFinish();
 		WordSet.LoadPlayerName(0);
 		Message.ActorEx(1024, 10, 1, 0, 0);
-		Message.CloseAll();
 		Player.GetGPos(v33, v34);
 		if (v34 == 693) {
 			ActionSequence_03c0(1);
@@ -154,12 +204,32 @@ public class MainEvents {
 		WordSet.LoadPartyPokeSpecies(1, v35);
 		Message.ActorEx(1024, 11, 1, 0, 0);
 		Message.CloseAll();
+        HopLeft(victiniEntity);
+        TurnEast(1);
+        Message.ActorEx(1024, 39, victiniEntity, 0, 0);
+        Actor.WaitActionFinish();
+        Message.CloseAll();
+        Message.ActorEx(1024, 37, 1, 0, 0);
+        TurnWest(1);
+        Actor.WaitActionFinish();
+        Message.ActorEx(1024, 38, 1, 0, 0);
+        Message.CloseAll();
+        
+
 		ActionSequence_0464(1);
+        Runtime.Sleep(8);
+        if (v34 == 695) {
+        	WalkNorth(victiniEntity);
+        }
+        Runtime.Sleep(8);
+        FollowAlder(victiniEntity);
 		Actor.WaitActionFinish();
 		Field.PlayMapBGM();
 		Actor.Hide(1);
+        Actor.Hide(victiniEntity);
 		EventWorks.Set(16547, 2);
 		EventFlags.Set(738);
+        EventFlags.Set(562);
 		Runtime.FinishSubEvents();
 		Actor.UnpauseAll();
 	}
@@ -363,6 +433,15 @@ public class MainEvents {
 		Actor.Hide(5);
 		Sound.SEWait();
 	}
+    
+    static meta void WalkNorth(int npcId) : VActionSequence {
+		Action000c(1);
+	}
+
+    static meta void FollowAlder(int npcId) : VActionSequence {
+		Action000d(1);
+        Action000f(5);
+	}
 
 	static meta void ActionSequence_0250(int npcId) : VActionSequence {
 		Action000f(8);
@@ -486,6 +565,44 @@ public class MainEvents {
 		Action0023(1);
 	}
 
+	static meta void ShowEllipses(int npcId) : VActionSequence {
+        Action00a1(1);
+    }
+
+    static meta void ShowExclamationMark(int npcId) : VActionSequence {
+        Action004b(1);
+    }
+
+    static meta void ShowQuestionMark(int npcId) : VActionSequence {
+        Action009f(1);
+    }
+
+    static meta void ShowMusicNote(int npcId) : VActionSequence {
+        Action00a0(1);
+    }
+
+
+    static meta void HopLeft(int npcId) : VActionSequence {
+        Action0032(1);
+    }
+
+    static meta void HopRight(int npcId) : VActionSequence {
+        Action0033(1);
+    }
+
+    static meta void HopUp(int npcId) : VActionSequence {
+        Action0030(1);
+    }
+
+    static meta void HopDown(int npcId) : VActionSequence {
+        Action0031(1);
+    }
+	static meta void TurnEast(int npcId) : VActionSequence {
+		Action0023(1);
+	}
+	static meta void TurnWest(int npcId) : VActionSequence {
+		Action0022(1);
+	}
 	static meta void Global2805(int a1, int a2) : VGlobalCall[2805];
 
 	static native void Action0002(int amount) : 0x2;
@@ -501,6 +618,13 @@ public class MainEvents {
 	static native void Action0023(int amount) : 0x23;
 	static native void Action003a(int amount) : 0x3a;
 	static native void Action003f(int amount) : 0x3f;
-	static native void Action004b(int amount) : 0x4b;
+	static native void Action00a1(int amount) : 0xa1;
+    static native void Action00a0(int amount) : 0xa0;
+     static native void Action004b(int amount) : 0x4b;
+    static native void Action009f(int amount) : 0x9f;
+    static native void Action0030(int amount) : 0x30;
+    static native void Action0031(int amount) : 0x31;
+    static native void Action0032(int amount) : 0x32;
+    static native void Action0033(int amount) : 0x33;
 	static native void Action0064(int amount) : 0x64;
 }

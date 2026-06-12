@@ -31,9 +31,14 @@ public class MainEvents {
 				return;
 			}
 			ObjInit.SetNPCGPos(0, 3, 111, 2, 669);
+			
+			ObjInit.SetNPCGPos(5, 3, 109, 2, 662);
+			
 			return;
 		}
 		ObjInit.SetNPCGPos(0, 1, 113, 2, 669);
+		
+		ObjInit.SetNPCGPos(5, 3, 109, 2, 662);
 	}
 
 	public static void main_2() { // @ 0xb4
@@ -52,9 +57,21 @@ public class MainEvents {
 	public static void main_3() { // @ 0xb6
 		int v34;
 		int v35;
+		int victiniEntity; 
 
+		int alderX; 
+		float alderXinput;
+		int alderZ;
+		float alderZinput; 
+
+		victiniEntity = 5; // CHANGE THIS LATER 
 		Actor.PauseAll();
+		Actor.GetGPos(0, alderX, alderZ);
+		alderXinput = alderX * 16.0f; // CHANGE THIS LATER 
+		alderZinput = alderZ * 16.0f; // CHANGE THIS LATER 
+
 		ActionSequence_0134(0);
+		ActionSequence_0134(5);
 		Actor.WaitActionFinish();
 		Player.GetGPos(v34, v35);
 		if (v35 == 695) {
@@ -68,11 +85,61 @@ public class MainEvents {
 		LABEL_00f5:
 		WordSet.LoadPlayerName(0);
 		Message.ActorEx(1024, 0, 0, 0, 0);
-		Message.ActorEx(1024, 1, 0, 0, 0);
 		Message.CloseAll();
-		ActionSequence_0140(0);
+
+		Sound.PVPlay(494, 0);
+		HopLeft(victiniEntity);
+		TurnEast(0);
+		HopLeft(victiniEntity);
+		Sound.PVWait();
+		Actor.WaitActionFinish();
+		ShowExclamationMark(0);
+		Message.ActorEx(1024, 51, 0, 0, 0);
+		Actor.WaitActionFinish();
+		TurnWest(0);
+		Actor.WaitActionFinish();
+		Message.ActorEx(1024, 47, 0, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseAll();
+		Global2805(75, 10);
+		Message.ActorEx(1024, 48, 0, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseAll();
+
+		// EV Camera Stuff, will need to playtest this a lot
+		EVCamera.Init();
+		EVCamera.Unbind();
+
+		// 237.0f is the original a3
+		EVCamera.MoveTo(2.3652344f, 0.0f, 237.0f, 1744.0f, 32.0f, 10928.0f, 40);
+		TurnNorth(0);
+		EVCamera.Wait();
+		Actor.WaitActionFinish();
+		EVCamera.Wait();
+
+		Message.ActorEx(1024, 49, 0, 0, 0);
+		Input.LastKeyWait();
+		EVCamera.MoveToDefault(40);
+		Message.ActorEx(1024, 50, 0, 0, 0);
+		Actor.WaitActionFinish();
+		EVCamera.Wait();
+		EVCamera.Rebind();
+		EVCamera.End();
+		Input.LastKeyWait();
+		Message.CloseAll();
+		TurnWest(0);
+		Actor.WaitActionFinish();
+		Message.ActorEx(1024, 52, 0, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseAll();
+
+
+        ActionSequence_0140(victiniEntity);
+        Runtime.Sleep(8);
+        ActionSequence_0140(0);
 		Actor.WaitActionFinish();
 		Actor.SetGPos(0, 113, 2, 669, 1);
+        Actor.SetGPos(victiniEntity, 108, 2, 662, 1);
 		EventWorks.Set(16549, 1);
 		Runtime.FinishSubEvents();
 		Actor.UnpauseAll();
@@ -551,6 +618,17 @@ public class MainEvents {
 			Actor.Show(12);
 		}
 	}
+
+    public static void main_21(){
+        Actor.PauseAll();
+        Actor.FacePlayer();
+        Sound.PVPlay(494, 0);
+        Message.Info(53, 1);
+        Message.CloseAll();
+        Sound.PVWait();
+        Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
 	
 	static void sub_0312() { // @ 0x312
 		int v32;
@@ -591,6 +669,10 @@ public class MainEvents {
 		Action0023(1);
 	}
 
+    static meta void WalkSouth(int npcId) : VActionSequence {
+		Action000d(1);
+	}
+
 	static meta void ActionSequence_06d4(int npcId) : VActionSequence {
 		Action000c(1);
 	}
@@ -606,7 +688,9 @@ public class MainEvents {
 	static meta void ActionSequence_0714(int npcId) : VActionSequence {
 		Action0021(1);
 	}
-
+	static meta void TurnSouth(int npcId) : VActionSequence {
+		Action0021(1);
+	}
 	static meta void ActionSequence_071c(int npcId) : VActionSequence {
 		Action0022(1);
 	}
@@ -622,15 +706,32 @@ public class MainEvents {
 	static meta void ActionSequence_0734(int npcId) : VActionSequence {
 		Action009f(1);
 	}
-	
+	static meta void ShowExclamationMark(int npcId) : VActionSequence {
+            Action004b(1);
+	}
+	static meta void TurnEast(int npcId) : VActionSequence {
+		Action0023(1);
+	}
+	static meta void HopLeft(int npcId) : VActionSequence {
+        Action0032(1);
+    }
+	static meta void TurnWest(int npcId) : VActionSequence {
+		Action0022(1);
+    }
+	static meta void TurnNorth(int npcId) : VActionSequence {
+        Action0020(1);
+	}
+
 	static meta void Global2805(int a1, int a2) : VGlobalCall[2805];
 
 	static native void Action000c(int amount) : 0xc;
+	static native void Action000d(int amount) : 0xd;
 	static native void Action000f(int amount) : 0xf;
 	static native void Action0020(int amount) : 0x20;
 	static native void Action0021(int amount) : 0x21;
 	static native void Action0022(int amount) : 0x22;
 	static native void Action0023(int amount) : 0x23;
+	static native void Action0032(int amount) : 0x32;
 	static native void Action004b(int amount) : 0x4b;
 	static native void Action009f(int amount) : 0x9f;
 }

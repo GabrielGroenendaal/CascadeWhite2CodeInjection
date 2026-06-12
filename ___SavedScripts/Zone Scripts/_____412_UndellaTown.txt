@@ -1261,6 +1261,7 @@ public class MainEvents {
             EventWorks.Set(16444, 3); // Undella BTB
             EventFlags.Set(549); // Flannery Despawn
             EventFlags.Set(548); // Strange House Despawn
+			EventFlags.Set(899); // Strange House Despawn
 		
             if (EventWorks.Get(16465) == 1){
                   Sound.SEPlay(1351);

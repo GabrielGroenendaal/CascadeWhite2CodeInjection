@@ -2,6 +2,7 @@ import messages.script.Msg0603.MSGID;
 
 import player.Bag;
 import event.Battle;
+import event.dialogs.ListMenu;
 import event.ObjInit;
 import event.Trainer;
 import event.actors.Actor;
@@ -102,19 +103,7 @@ public class MainEvents {
 		Message.ActorEx(1024, 4, 0, 0, 0);
 		Message.WaitAdvance();
 		Message.CloseAll();
-
-        /* ADDING THE NEW BERRIES */
-        WordSet.LoadPlayerName(0);
-        Sound.MEPlay(1304);
-		Message.System(19, 0);
-		Sound.MEWait();
-		Message.CloseSystem();
-        Bag.GiveItem(149, 3);
-        Bag.GiveItem(150, 3);
-        Bag.GiveItem(151, 3);
-        Bag.GiveItem(152, 3);
-        Bag.GiveItem(153, 3);
-        Bag.GiveItem(156, 3);
+   
 		Actor.WalkRoute(0, 160, 643, 0, 8, 0);
 		Actor.WaitActionFinish();
 		ActionSequence_07bc(0);
@@ -178,7 +167,17 @@ public class MainEvents {
 		Message.CloseAll();
 		ActionSequence_077c(23);
 		Actor.WaitActionFinish();
-		Global2805(151, 3);
+		WordSet.LoadPlayerName(0);
+        Sound.MEPlay(1304);
+		Message.System(19, 0);
+		Sound.MEWait();
+		Message.CloseSystem();
+        Bag.GiveItem(149, 3);
+        Bag.GiveItem(150, 3);
+        Bag.GiveItem(151, 3);
+        Bag.GiveItem(152, 3);
+        Bag.GiveItem(153, 3);
+        Bag.GiveItem(156, 3);
 		ActionSequence_04f0(23);
 		Actor.WaitActionFinish();
 		WordSet.LoadPlayerName(0);
@@ -305,13 +304,17 @@ public class MainEvents {
 		Actor.UnpauseAll();
 	}
 
+	// Use 701 for Janine
 	public static void main_10() { // @ 0x54b
 		int v16;
 		int v32;
-
+		int playerX;
+		int playerZ;
+		
 		Actor.PauseAll();
 		Sound.SEPlay(1351);
 		Actor.FacePlayer();
+		Player.GetGPos(playerX, playerZ);
 		Actor.SetGPos(21, 146, 2, 663, 3);
 		Trainer.PlayBGMPush(763);
 		Message.ActorEx(1024, 15, 22, 0, 0);
@@ -323,17 +326,29 @@ public class MainEvents {
 			goto LABEL_059a;
 		}
 		Battle.EndTrainerBattle();
+		Actor.Hide(26);
+		Actor.Hide(12);
+		Actor.SetGPos(9, 155, 2, 659, 1);
 
 		LABEL_059a:
 		Message.ActorEx(1024, 16, 22, 0, 0);
 		Message.CloseAll();
 		v32 = Player.GetDirection();
-		if (v32 == 1) {
-			Actor.WalkRoute(22, 156, 653, 1, 4, 0);
-			goto LABEL_05e1;
+		if (playerX != 155) {
+			LeaveScenePlasma(22);
+			Actor.WaitActionFinish();
 		}
-		Actor.WalkRoute(22, 155, 653, 1, 4, 0);
-
+		Actor.WalkRoute(22, 156, 653, 1, 4, 0);
+		if (playerX != 155) {
+			Runtime.Sleep(28);
+			TurnNorth(9);
+			Actor.WaitActionFinish();
+		}
+		else {
+			Runtime.Sleep(36);
+			TurnNorth(9);
+			Actor.WaitActionFinish();
+		}
 		LABEL_05e1:
 		Runtime.Sleep(8);
 		ActionSequence_07b4(255);
@@ -345,6 +360,8 @@ public class MainEvents {
 				goto LABEL_066b;
 			}
 			Actor.WalkRoute(21, 155, 667, 1, 8, 0);
+			Runtime.Sleep(48);
+			TurnSouth(9);
 			Actor.WaitActionFinish();
 			ActionSequence_07c4(255);
 			ActionSequence_07cc(21);
@@ -352,6 +369,8 @@ public class MainEvents {
 			goto LABEL_06db;
 		}
 		Actor.WalkRoute(21, 156, 666, 1, 8, 0);
+		Runtime.Sleep(48);
+		TurnSouth(9);
 		Actor.WaitActionFinish();
 		ActionSequence_07cc(255);
 		ActionSequence_07c4(21);
@@ -364,6 +383,8 @@ public class MainEvents {
 				goto LABEL_06db;
 			}
 			Actor.WalkRoute(21, 155, 667, 1, 8, 0);
+			Runtime.Sleep(48);
+			TurnSouth(9);
 			Actor.WaitActionFinish();
 			ActionSequence_07cc(255);
 			ActionSequence_07c4(21);
@@ -371,6 +392,8 @@ public class MainEvents {
 			goto LABEL_06db;
 		}
 		Actor.WalkRoute(21, 156, 668, 1, 8, 0);
+		Runtime.Sleep(48);
+		TurnSouth(9);
 		Actor.WaitActionFinish();
 		ActionSequence_07cc(255);
 		ActionSequence_07c4(21);
@@ -381,7 +404,11 @@ public class MainEvents {
 		WordSet.LoadRivalName(1);
 		Message.ActorEx(1024, 17, 21, 0, 0);
 		Message.CloseAll();
-		Actor.WalkRoute(21, 155, 654, 1, 8, 1);
+		if (playerX != 155) {
+			LeaveScene(21);
+			Actor.WaitActionFinish();
+		}
+		Actor.WalkRoute(21, 156, 654, 1, 8, 1);
 		Runtime.Sleep(8);
 		ActionSequence_07b4(255);
 		Actor.WaitActionFinish();
@@ -407,6 +434,169 @@ public class MainEvents {
 		Actor.UnpauseAll();
 	}
 
+    // Add a new actor with this script attached that is stored on the bottom half of the map
+    // SpawnFlag = 701
+
+	// New Janine
+	public static void main_12() {
+		int janineEntity;
+		int messageStart;
+		int listMenu;
+		int playerX;
+		int playerZ;
+		int janineX; 
+		int janineZ;
+
+		int janineX = 154;
+		int janineZ = 661;
+		int messageStart = 20;
+		int janineEntity = 9; 
+		Player.GetGPos(playerX, playerZ);
+
+		Actor.PauseAll();
+		Actor.FacePlayer();
+		ShowExclamationMark(9);
+		Actor.WaitActionFinish();
+
+		Message.ActorEx(1024, 20, 9, 3, 0);
+		Message.ActorEx(1024, 21, 9, 3, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		ShowQuestionMark(9);
+		Actor.WaitActionFinish();
+
+		Message.ActorEx(1024, 22, 9, 3, 0);
+		Actor.GetGPos(9, janineX, janineZ);
+		ListMenu.InitRightAnchor(31, 13, 0, 1, listMenu);
+		ListMenu.AddItem(23, 65535, 0);
+		ListMenu.AddItem(24, 65535, 1);
+		ListMenu.AddItem(25, 65535, 2);
+		ListMenu.ShowDialog();
+		if (listMenu == 0){
+			Message.CloseAll();
+			repositionJanine(9, playerX, playerZ, janineX, janineZ);
+			Actor.WaitActionFinish();
+			Message.ActorEx(1024, 26, 9, 3, 0);
+			Message.CloseAll();
+			if (janineX != playerX) {
+				Actor.WalkRoute(9, playerX, playerZ-2, 0, 8, 0);
+			}
+			TurnNorth(9);
+			TurnNorth(255);
+			Actor.WaitActionFinish();
+			Message.ActorEx(1024, 27, 9, 3, 0);
+			Input.LastKeyWait();
+			Message.CloseAll();
+			goto Label_JanineText;
+		} 
+		if (listMenu == 1){
+			Message.CloseAll();
+			repositionJanine(9, playerX, playerZ, janineX, janineZ);
+			Actor.WaitActionFinish();
+			Message.ActorEx(1024, 28, 9, 3, 0);
+			Message.CloseAll();
+			if (janineX != playerX) {
+				Actor.WalkRoute(9, playerX, playerZ-2, 0, 8, 0);
+			}
+			TurnNorth(9);
+			TurnNorth(255);
+			Actor.WaitActionFinish();
+			Message.ActorEx(1024, 29, 9, 3, 0);
+			Input.LastKeyWait();
+			Message.CloseAll();
+			goto Label_JanineText;
+		} else {
+			Message.CloseAll();
+			ShowEllipses(9);
+			Actor.WaitActionFinish();
+			Actor.WalkRoute(9, playerX, playerZ-2, 0, 8, 0);
+			TurnNorth(9);
+			TurnNorth(255);
+			Actor.WaitActionFinish();
+			Message.ActorGendered(1024, 30, 31, 9, 3, 0);
+			Input.LastKeyWait();
+			Message.CloseAll();
+		}
+
+		Label_JanineText: 
+		WalkSouth(9);
+		Actor.WaitActionFinish();
+		Message.ActorEx(1024, 32, 9, 3, 0);
+		Input.LastKeyWait();
+		Message.CloseAll();
+		ShowEllipses(9);
+		Actor.WaitActionFinish();
+		LockDirection(9);
+		WalkNorthOneTile(9);
+		UnlockDirection(9);
+		Message.ActorGendered(1024, 33, 34, 9, 3, 0);
+		Input.LastKeyWait();
+		Message.CloseAll();
+
+		WalkSlowlyNorth(9);
+		Actor.WaitActionFinish();
+		TurnEast(9);
+		Actor.WaitActionFinish();
+		Runtime.Sleep(16);
+		TurnWest(9);
+		Actor.WaitActionFinish();
+		Runtime.Sleep(48);
+		JanineEscape(9);
+		Actor.WaitActionFinish();
+        Actor.SetGPos(9, playerX, 0, playerZ+50, 1);
+		Actor.Hide(9);
+
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	static void repositionJanine(int janineEntity, int playerX, int playerZ, int janineX, int janineZ){
+		LockDirection(janineEntity);
+		ShowExclamationMark(janineEntity);
+
+		if (playerX > janineX){
+			WalkWest(janineEntity);
+			goto Label_PostJanineMovement;
+		}
+		if (playerX < janineX){
+			WalkEast(janineEntity);
+			goto Label_PostJanineMovement;
+		}
+		if (playerZ > janineZ){
+			WalkNorthOneTile(janineEntity);
+			goto Label_PostJanineMovement;
+		}
+		if (playerZ < janineZ){
+			WalkSouth(janineEntity);
+			goto Label_PostJanineMovement;
+		}
+		Label_PostJanineMovement:
+		UnlockDirection(janineEntity);
+	}
+
+	static meta void JanineEscape(int npcId) : VActionSequence {
+            Action0014(6);
+			Action0016(8);
+			Action0014(5);
+	}	
+	static meta void LeaveScene(int npcId) : VActionSequence {
+         Action000c(1);
+		Action000f(1);
+	}	
+	static meta void LeaveScenePlasma(int npcId) : VActionSequence {
+         Action0010(1);
+		Action0013(1);
+	}
+	static meta void WalkSlowlyNorth(int npcId) : VActionSequence {
+            Action0008(4);
+	}
+	static meta void TurnNorth(int npcId) : VActionSequence {
+            Action0020(1);
+	}
+
+	static meta void WalkSouth(int npcId) : VActionSequence {
+		Action000d(1);
+	}
 	static meta void ActionSequence_0170(int npcId) : VActionSequence {
 		Action004b(1);
 		Action0020(1);
@@ -487,16 +677,99 @@ public class MainEvents {
 		Action004b(1);
 	}
 
+    static meta void ShowEllipses(int npcId) : VActionSequence {
+        Action00a1(1);
+    }
+
+    static meta void ShowExclamationMark(int npcId) : VActionSequence {
+        Action004b(1);
+    }
+
+    static meta void ShowQuestionMark(int npcId) : VActionSequence {
+        Action009f(1);
+    }
+    
+    static meta void ShowMusicNote(int npcId) : VActionSequence {
+        Action00a0(1);
+    }
+
+
+    static meta void HopLeft(int npcId) : VActionSequence {
+        Action0032(1);
+    }
+
+    static meta void HopRight(int npcId) : VActionSequence {
+        Action0033(1);
+    }
+	
+	static meta void TurnEast(int npcId) : VActionSequence {
+		Action0023(1);
+	}
+	static meta void TurnSouth(int npcId) : VActionSequence {
+		Action0021(1);
+	}
+	static meta void TurnEast4F(int npcId) : VActionSequence {
+		Action0027(1);
+	}
+	static meta void TurnNorth4F(int npcId) : VActionSequence {
+		Action0024(1);
+	}
+    static meta void HopUp(int npcId) : VActionSequence {
+        Action0030(1);
+    }
+
+    static meta void HopDown(int npcId) : VActionSequence {
+        Action0031(1);
+    }
+	static meta void LockDirection(int npcId) : VActionSequence {
+		Action0047(1);
+	}
+	static meta void UnlockDirection(int npcId) : VActionSequence {
+		Action0048(1);
+	}
+    
+	static meta void WalkEast(int npcId) : VActionSequence {
+		Action000f(1);
+	}
+	static meta void WalkWest(int npcId) : VActionSequence {
+		Action000e(1);
+	}
+
+
+	static meta void WalkNorthOneTile(int npcId) : VActionSequence {
+		Action000c(1);
+	}
+
+	static meta void TurnWest(int npcId) : VActionSequence {
+		Action0022(1);
+    }
 	static meta void Global2805(int a1, int a2) : VGlobalCall[2805];
 
+	
+	static native void Action0008(int amount) : 0x8;
 	static native void Action000c(int amount) : 0xc;
 	static native void Action000d(int amount) : 0xd;
 	static native void Action000e(int amount) : 0xe;
 	static native void Action000f(int amount) : 0xf;
+	static native void Action0014(int amount) : 0x14;
+	static native void Action0010(int amount) : 0x10;
+	static native void Action0013(int amount) : 0x13;
+	static native void Action0016(int amount) : 0x16;
 	static native void Action0020(int amount) : 0x20;
 	static native void Action0021(int amount) : 0x21;
 	static native void Action0022(int amount) : 0x22;
 	static native void Action0023(int amount) : 0x23;
-	static native void Action004b(int amount) : 0x4b;
+	static native void Action0024(int amount) : 0x24;
+	static native void Action0027(int amount) : 0x27;
 	static native void Action00b5(int amount) : 0xb5;
+    static native void Action004b(int amount) : 0x4b;
+    static native void Action00a1(int amount) : 0xa1;
+    static native void Action00a0(int amount) : 0xa0;
+    static native void Action009f(int amount) : 0x9f;
+    static native void Action0030(int amount) : 0x30;
+    static native void Action0031(int amount) : 0x31;
+    static native void Action0032(int amount) : 0x32;
+    static native void Action0033(int amount) : 0x33;
+	static native void Action0047(int amount) : 0x47;
+	static native void Action0048(int amount) : 0x48;
 }

@@ -382,14 +382,14 @@ public class MainEvents {
 			}   
 			// Brock 
 			if (!EventFlags.Get(764 + 1520)){
-				Message.System(27, 2);
+				Message.System(30, 2);
 			}
 			Message.CloseAll();
 		}
 		else {
 			Sound.SEPlay(1351);
 			Actor.FacePlayer();
-			Message.Actor(1024, 22, 0, 0);
+			Message.Actor(1024, 27, 0, 0);
 			Input.LastKeyWait();
 			Message.CloseActor();
 		}
@@ -567,6 +567,3 @@ public class MainEvents {
 	static native void Action004b(int amount) : 0x4b;
 	static native void Action00b5(int amount) : 0xb5;
 }
-
-
-The user saps the user's life force,\ninflicting matching the user's level and\nhealing for the same amount.

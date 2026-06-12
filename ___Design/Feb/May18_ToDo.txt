@@ -1,0 +1,294 @@
+
+
+/*         
+	
+	-----------------------------------------------------------------------------------------------------------------------------------------
+	-------------------------------------------------- WHAT I WANNA DO TODAY ---------------------------------------------------------------- 
+	-----------------------------------------------------------------------------------------------------------------------------------------       
+
+*/
+
+
+Look into editing the resist berry function so that during calc simulations the AI won't see them. 
+
+
+
+Make Ghosts Rarer? 
+
+    Start nerfing more statlines. 
+    We need to pick out a selection of pokemon that are common are worse quality
+        Ekans 
+        Spearow 
+
+Move Changes: 
+    overheat: now also has a Burn Chance 
+    Sheer Cold: now also has a Freeze Change 
+    Leaf Storm: Revert this to recoil 
+
+
+
+Bug Fixes: 
+    Fix the IV Enhancer 
+
+    Double Check all the Mint rewards 
+        - Juniper 
+        - Sabrina 
+    
+    Fix the level cap setting for Hugh 
+
+    Fix the encounter prevention / allowance for Guidance Chamber.
+
+    Figure out why Hugh's level cap adjustment didn't work.
+
+
+
+
+Item Changes: 
+    Fix the mints being given out. I think we're giving out too many. 
+
+
+Fix the IV Enhancer 
+
+
+    One half of the life orb is found in Relic Sanctum 
+
+    The other half is found in Ayssal Ruin 
+
+    The Cracked Life Orb inflicts recoil damage equal to 20% health. 
+
+
+
+
+Weather Plasma Grunts 
+    Grunt 
+        Cradily @ Chople Berry (Ability: Sand Stream) (Weather Ball, Petal Dance, Recover, Stealth Rock)
+        Steelix @ Custap Berry (Ability: Sturdy) (Gyro Ball, Earthquake, Explosion, Endure)
+        Crobat @ Scope Lens (Ability: Strong Body) (Sludge Bomb, Dark Pulse, Dual Wingbeat, Giga Drain)
+        Gigalith @ Proto Accelerator (Ability: Sand Force) (Power Gem, Scorching Sands, Flash Cannon, Energy Ball)
+
+Village Bridge
+    Gentleman X 
+        Durant @ Assault Vest (Ability: Heatproof) (Lunge, Iron Head, Rock Slide, Clamp)
+        Noctowl @ Colbur Berry (Ability: Tenacity) (Shadow Ball, Chatter, Hypnosis, Ice Beam)
+        Cofagrigus @ Enigam Berry (Ability: Cursed Body) (Hex, Mean Look, Will-o-Wisp, Doom Desire)
+        Lucario @ Expert Belt (Ability: Trace) (Close Combat, Flash Cannon, Ice Punch, Dark Pulse)
+
+    Socialite Y 
+        Gorebyss @ Shuca Berry (Ability: Corrosion) (Sludge Bomb, Whirlpool, Twister, Attract)
+        Seviper @ Expert Belt (Ability: Infiltrator) (Fire Blast, Aqua Tail, Superpower, Power Whip)
+        Vaporeon @ Quick Claw (Ability: Water Absorb) (Surf, Ice Beam, Recover, Magical Leaf)
+        Roserade @ Miracle Seed (Ability: Majestic Ward) (Leaf Storm, Protect, Sludge Bomb, Aura Sphere)
+
+    Fantina     
+        Mawile @ Quick Claw (Ability: Sheer Force) (Iron Tail, Fire Blast, Blizzard, Thunder)
+        Clefable @ Tera Leftovers (Ability: Magic Guard) (Hyper Beam, Moonblast, Ominous Wind, Protect)
+        Drifblim @ Liechi Berry (Ability: Unburden) (Acrobatics, Phantom Strike, Explosion, Stockpile)
+        Gardevoir @ Brightpowder (Ability: Pixilate) (Stored Power, Uproar, Double Team, Will-o-Wisp)
+        Mismagius @ Life Orb (Ability: Levitate) (Moonblast, Shadow Ball, Inferno, Diamond Storm)
+
+
+Route 10
+    Ranger Gatekeeper 
+        Armaldo @ Damp Rock (Ability: Swift Swim) (Rock Climb, Twineedle, Waterfall, Cross Chop)
+        Masquerain @ Ice Gem (Ability: Intimidate) (Scald, Bug Buzz, Blizzard, Protect)
+        Scizor @ Muscle Band (Ability: Light Metal) (Iron Head, Crabhammer, Rock Slide, Lunge)
+        Butterfree @ Tera C-Scarf (Ability: Tinted Lens) (Hurricane, U-Turn)
+        Volbeat @ Charti Berry (Ability: Magic Guard) (Thunder, Silver Wind, Weather Ball, Quiver Dance)
+
+
+Route 9
+    Hooligans X and Y 
+        Scrafty @ Roseli Berry (Ability: Bulletproof) (Focus Punch, Payback, Rock Wrecker, Fake Out)
+        Arbok @ Assault Vest (Ability: Intimidate) (Wrap, Dragon Tail, Crunch, Rock Slide)
+        Wigglytuff @ Focus Band (Ability: Aerilate) (Dazzling Gleam, Hyper Voice, Helping Hand, Follow Me)
+        Granbull @ Muscle Band (Ability: Quick Feet) (Heart Stamp, Sky Uppercut, Facade, Swagger)
+        Garbodor @ Tera Orb (Ability: Aftermath) (Knock Off, Gunk Shot, Heavy Slam, Protect)
+
+    Roughneck J 
+        Donphan @ Focus Sash (Ability: Speed Boost) (Earthquake, Rock Slide, U-Turn, Stealth Rock)
+        Muk @ Air Balloon (Ability: Aftermath) (Gunk Shot, Minimize, Block, Hammer Arm)
+        Zangoose @ Scope Lens (Ability: Toxic Boost) (Return, Quick Attack, Thrash, Dragon Claw)
+        Mightyena @ Life Orb (Ability: Strong Jaw) (Crunch, Sucker Punch, Pursuit, Ice Fang)
+        Primeape @ Quick Claw (Ability: Berserk) (Superpower, Rock Wrecker, Rolling Kick, Wicked Blow)
+
+
+Leftovers Gauntlet
+    Cilan 
+        Maractus @ Smooth Rock (Ability: Sand Rush) (Spikes, Stealth Rock, Spore, Self Destruct)
+        Stunfisk @ Attack Insurance (Ability: Sand Veil) (Discharge, Sand Tomb, Scald, Sludge Bomb)
+        Crustle @ White Herb (Ability: Shell Armor) (Rock Slide, Leech Life, Crabhammer, Shell Smash)
+        Pansage @ Mascot Badge (Ability: Overgrow) (Seed Bomb, Weather Crash, Drain Punch, Swords Dance)
+    
+    Cress
+        Basculin @ Damp Rock (Ability: Swift Swim) (Shadow Ball, Flip Turn, Aqua Tail, Superpower)
+        Swanna @ Charti Berry (Ability: Serene Grace) (Air Slash, Muddy Water, Freeze Dry, Sing)
+        Huntail @ Assault Vest (Ability: Strong Jaw) (Thunder Fang, Wave Crash, Devour, Poison Fang)
+        Panpour @ Mascot Badge (Ability: Torrent) (Scald, Ice Beam, Mud Bomb, Play Rough)
+
+    Chili 
+        Sunflora @ Heat Rock (Ability: Chlorophyll) (Petal Dance, Fiery Dance, Earth Power, Power Gem)
+        Rotom-Heat @ Charti Berry (Ability: Levitate) (Overheat, Protect, Discharge, Solarbeam)
+        Snorlax @ Chople Berry (Ability: Gourmand) (Body Slam, Temper Flare, Gastro Acid, Slack Off)
+        Pansear @ Mascot Badge (Ability: Blaze) (Lava Plume, Solarbeam, Rock Slide, Thunderpunch)
+
+
+
+
+Drayden's Gym: 
+    "Dragon's Rage: When a move fails or has no effect, the attack gains 50% speed and attack on their next turn"
+
+    Veteran X 
+
+
+    Veteran Y 
+
+
+    Veteran Z 
+
+
+    Veteran H 
+
+
+    Veteran L 
+    
+
+
+
+Abilites: 
+    - Ability Changes 
+        - Unaware prevents the user's stat stages from affecting damage either. 
+        - See if we can implement the following abilitie sinto the overlay itself.
+            - Iron Fist (20% -> 30%)
+            - Regenerator (3 -> 5)
+            - Heatproof (50% -> 75%)
+            - Stench (10% -> 20%)
+            - Weak Armor (+1 to +2)
+        - Double Check that we need to hook Reckless 
+        - Fix Pickup items being usable as soon as picked up (add a quick embargo check)
+
+
+    
+Items:
+    - Light Clay 
+        - Is now AI Exclusive and extends the duration of any field effects by 10 turns. 
+        - This includes gravity, screens, tailwind, etc.
+
+AI 
+    - Add AI for endure that checks to see if the holder has a salac berry, red card, weakness policy and also dies to an incoming attack and is slower
+    - decent chance to increase endure odds in that case. 
+
+
+
+
+    
+[ BUGS AND OPTIMIZATION ]
+    Investigate the Damage Calc Discrepancies 
+        I don't have an explanation for these yet. It's possible there's some weird damage value changes on the calc side, or the natures are incorrect. 
+        We are just going to have to play through the game and assess if there are any weird damage calc happenings. 
+
+    Playtest our Game: 
+        We need to do some runs using vanilla switch AI 
+        Then we need to do some runs using Gen 4 Switch AI 
+        If we were to do g4 switch AI we would need to slap a lot more coverage on across the board.
+    
+
+
+[ AI ]
+    Double check that we implemented the spread move logic for moves. Idk why it wouldn't be in the repo we definitely copied it over. 
+
+
+        
+    
+
+[ BALANCE ]
+    Remove more of the damage power outliers. 
+
+
+[ ROMHACKING ]
+    - EV Toggle 
+        - Add the EVs back to all Pokemon, make a list of them while at work 
+        - Confirm the EV toggle script works
+        - Make it's enabled in the global PC script. 
+    - Test and implement the post-marlon gym scripting for Frigate, Abundant Shrine, Pinwheel Forest
+
++
+
+
+
+====================================================================================================================================================
+/*   MARLON BUILD   */
+
+
+
+    IMPOSSIBLE: 
+        - Debug Illusion 
+        - Test Battle Scan with Type Changing and Ability Changing.
+        - Update Terastalization Polish
+            - Some kind of color status for Tera
+            - Fix the Tera Animation in Doubles 
+            - See if you can get the tera types to be stored properly somewhere. 
+    
+
+
+ 
+
+
+====================================================================================================================================================
+/*   NOTES    */
+        
+
+    Underutilized Mechanics: 
+        Back to Backs
+        
+        Limit to 3 Pokemon 
+
+        Chip Away Normal Types 
+        Ability Neutraliizing: 
+            Gastro Acid 
+
+        Evasion:
+            Double Team 
+            Acid Armor 
+            Smokescreen 
+            Sand Attack (in doubles) 
+            Anticipation
+            Snow Cloak / Sand Veil
+        Confusion:  
+            Supersonic
+            Rock Climb 
+            Confuse Ray 
+            Swagger 
+        Attraction 
+        Hazards
+        Trapping 
+            Block 
+            Mean Look 
+            Dive / Dig / Bounce / Fly / Shadow Force 
+            Pursuit 
+            Wrap / Fire Spin / Clamp / Whirlpool / etc. 
+            Shadow Tag / Arena Trap
+        Failure Boosting: 
+            Anger Point 
+            Thrash 
+            Seething Cold 
+            Uproar 
+            Stompin Tantrum 
+            Grudge 
+            Blunder Policy 
+        Priority: 
+            Quick Claw 
+            Quick Draw 
+            Trickster Herb 
+        Speed Control: 
+            Scary Face 
+            Rock Tomb 
+            Bulldoze 
+            icy Wind 
+            Glaciate 
+            Heavy Slam 
+            Heat Crash (make sure it has the same id as icy wind)
+        Chaos Stats: 
+            Moody 
+            Starf Berry 
+
+

@@ -1988,7 +1988,7 @@ extern "C"
 
         if (a3 == BattleEventVar_GetValue(VAR_MON_ID))
         {
-            if (BattleEventVar_GetValue(VAR_CONDITION_ID) == 4)
+            if (BattleEventVar_GetValue(VAR_CONDITION_ID) == 5)
             {
                 Value = BattleEventVar_GetValue(VAR_DAMAGE);
                 v6 = checkHigher(Value / 2, 1);
@@ -3971,7 +3971,7 @@ extern "C"
                                 v8->fMoveAnimation = 1;
                                 v8->rankType = STATSTAGE_DEFENSE;
                                 v8->rankVolume = -2;
-                                BattleHandler_StrSetup(&v8->exStr, 2u, 1264);
+                                BattleHandler_StrSetup(&v8->exStr, 2u, 1339);
                                 BattleHandler_AddArg(&v8->exStr, v8->pokeID[0]);
                                 BattleHandler_PopWork(a1, v8);
                             }
@@ -3985,7 +3985,7 @@ extern "C"
                                 v8->sickID = CONDITION_POISON;
                                 v8->sickCont = MakeBasicStatus(CONDITION_POISON);
                                 v8->fAlmost = 0;
-                                BattleHandler_StrSetup(&v8->exStr, 2u, 1264);
+                                BattleHandler_StrSetup(&v8->exStr, 2u, 1336);
                                 BattleHandler_AddArg(&v8->exStr, v8->pokeID);
                                 BattleHandler_PopWork(a1, v8);
                             }

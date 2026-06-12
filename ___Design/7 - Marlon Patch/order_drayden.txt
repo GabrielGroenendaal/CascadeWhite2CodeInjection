@@ -1,0 +1,449 @@
+ "SeasideRanger": {
+      "id": SeasideRanger,
+      "next": SeasideBlackBelt,
+      "prev": trainer
+    },
+    
+    "SeasideBlackBelt": {
+      "id": SeasideBlackBelt,
+      "next": Maylene,
+      "prev": SeasideRanger
+    },
+    
+    "Maylene": {
+      "id": Maylene,
+      "next": BattleGirlTia,
+      "prev": SeasideBlackBelt
+    },
+    
+    "BattleGirlTia": {
+      "id": BattleGirlTia,
+      "next": SwimmerBart,
+      "prev": Maylene
+    },
+    
+    "SwimmerBart": {
+      "id": SwimmerBart,
+      "next": SwimmerAnissa,
+      "prev": BattleGirlTia
+    },
+    
+    "SwimmerAnissa": {
+      "id": SwimmerAnissa,
+      "next": SwimmerTim,
+      "prev": SwimmerBart
+    },
+    
+    "SwimmerTim": {
+      "id": SwimmerTim,
+      "next": SwimmerMatt,
+      "prev": SwimmerAnissa
+    },
+    
+    "SwimmerMatt": {
+      "id": SwimmerMatt,
+      "next": SwimmerMitzi,
+      "prev": SwimmerTim
+    },
+    
+    "SwimmerMitzi": {
+      "id": SwimmerMitzi,
+      "next": SunkenStatue,
+      "prev": SwimmerMatt
+    },
+    
+    "SunkenStatue": {
+      "id": SunkenStatue,
+      "next": PlasmaGruntB2B2B2B_1,
+      "prev": SwimmerMitzi
+    },
+    
+    "PlasmaGruntB2B2B2B_1": {
+      "id": PlasmaGruntB2B2B2B_1,
+      "next": PlasmaGruntB2B2B2B_2,
+      "prev": SunkenStatue
+    },
+    
+    "PlasmaGruntB2B2B2B_2": {
+      "id": PlasmaGruntB2B2B2B_2,
+      "next": PlasmaGruntB2B2B2B_3,
+      "prev": PlasmaGruntB2B2B2B_1
+    },
+    
+    "PlasmaGruntB2B2B2B_3": {
+      "id": PlasmaGruntB2B2B2B_3,
+      "next": PlasmaGruntB2B2B2B_4,
+      "prev": PlasmaGruntB2B2B2B_2
+    },
+    
+    "PlasmaGruntB2B2B2B_4": {
+      "id": PlasmaGruntB2B2B2B_4,
+      "next": PlasmaGrunt_1_B2B1,
+      "prev": PlasmaGruntB2B2B2B_3
+    },
+    
+    "PlasmaGrunt_1_B2B1": {
+      "id": PlasmaGrunt_1_B2B1,
+      "next": PlasmaGrunt_2_B2B2,
+      "prev": PlasmaGruntB2B2B2B_4
+    },
+    
+    "PlasmaGrunt_2_B2B2": {
+      "id": PlasmaGrunt_2_B2B2,
+      "next": PlasmaGrunt_3,
+      "prev": PlasmaGrunt_1_B2B1
+    },
+    
+    "PlasmaGrunt_3": {
+      "id": PlasmaGrunt_3,
+      "next": PlasmaGrunt_4_B2B1,
+      "prev": PlasmaGrunt_2_B2B2
+    },
+    
+    "PlasmaGrunt_4_B2B1": {
+      "id": PlasmaGrunt_4_B2B1,
+      "next": PlasmaGrunt_5_B2B2,
+      "prev": PlasmaGrunt_3
+    },
+    
+    "PlasmaGrunt_5_B2B2": {
+      "id": PlasmaGrunt_5_B2B2,
+      "next": PlasmaGrunt_6_Tag1,
+      "prev": PlasmaGrunt_4_B2B1
+    },
+    
+    "PlasmaGrunt_6_Tag1": {
+      "id": PlasmaGrunt_6_Tag1,
+      "next": PlasmaGrunt_7_Tag2,
+      "prev": PlasmaGrunt_5_B2B2
+    },
+    
+    "PlasmaGrunt_7_Tag2": {
+      "id": PlasmaGrunt_7_Tag2,
+      "next": PlasmaGrunt_8_B2B1,
+      "prev": PlasmaGrunt_6_Tag1
+    },
+    
+    "PlasmaGrunt_8_B2B1": {
+      "id": PlasmaGrunt_8_B2B1,
+      "next": PlasmaGrunt_9_B2B2,
+      "prev": PlasmaGrunt_7_Tag2
+    },
+    
+    "PlasmaGrunt_9_B2B2": {
+      "id": PlasmaGrunt_9_B2B2,
+      "next": FrigateScientist1,
+      "prev": PlasmaGrunt_8_B2B1
+    },
+    
+    "FrigateScientist1": {
+      "id": FrigateScientist1,
+      "next": FrigateScientist2,
+      "prev": PlasmaGrunt_9_B2B2
+    },
+    
+    "FrigateScientist2": {
+      "id": FrigateScientist2,
+      "next": FrigateHugh1,
+      "prev": FrigateScientist1
+    },
+    
+    "FrigateHugh1": {
+      "id": FrigateHugh1,
+      "next": FrigateHugh2,
+      "prev": FrigateScientist2
+    },
+    
+    "FrigateHugh2": {
+      "id": FrigateHugh2,
+      "next": FrigateHugh3,
+      "prev": FrigateHugh1
+    },
+    
+    "FrigateHugh3": {
+      "id": FrigateHugh3,
+      "next": FrigateZinzolin,
+      "prev": FrigateHugh2
+    },
+    
+    "FrigateZinzolin": {
+      "id": FrigateZinzolin,
+      "next": FrigateKyurem,
+      "prev": FrigateHugh3
+    },
+    
+    "FrigateKyurem": {
+      "id": FrigateKyurem,
+      "next": Route13_RangerA,
+      "prev": FrigateZinzolin
+    },
+    
+    "Route13_RangerA": {
+      "id": Route13_RangerA,
+      "next": Route13_RangerB,
+      "prev": FrigateKyurem
+    },
+    
+    "Route13_RangerB": {
+      "id": Route13_RangerB,
+      "next": Route13_Worker,
+      "prev": Route13_RangerA
+    },
+    
+    "Route13_Worker": {
+      "id": Route13_Worker,
+      "next": Route13_FisherA,
+      "prev": Route13_RangerB
+    },
+    
+    "Route13_FisherA": {
+      "id": Route13_FisherA,
+      "next": Route13_FisherB,
+      "prev": Route13_Worker
+    },
+    
+    "Route13_FisherB": {
+      "id": Route13_FisherB,
+      "next": Route13_ScientistM,
+      "prev": Route13_FisherA
+    },
+    
+    "Route13_ScientistM": {
+      "id": Route13_ScientistM,
+      "next": Route13_ScientistF,
+      "prev": Route13_FisherB
+    },
+    
+    "Route13_ScientistF": {
+      "id": Route13_ScientistF,
+      "next": Route13_BlackBelt,
+      "prev": Route13_ScientistM
+    },
+    
+    "Route13_BlackBelt": {
+      "id": Route13_BlackBelt,
+      "next": Route13_AceTrainerF,
+      "prev": Route13_ScientistF
+    },
+    
+    "Route13_AceTrainerF": {
+      "id": Route13_AceTrainerF,
+      "next": Route13_AceTrainerM,
+      "prev": Route13_BlackBelt
+    },
+    
+    "Route13_AceTrainerM": {
+      "id": Route13_AceTrainerM,
+      "next": Route13_Candice,
+      "prev": Route13_AceTrainerF
+    },
+    
+    "Route13_Candice": {
+      "id": Route13_Candice,
+      "next": Lacunosa_Benga,
+      "prev": Route13_AceTrainerM
+    },
+    
+    "Lacunosa_Benga": {
+      "id": Lacunosa_Benga,
+      "next": VillageBridge_Fight1_Waitress,
+      "prev": Route13_Candice
+    },
+    
+    "VillageBridge_Fight1_Waitress": {
+      "id": VillageBridge_Fight1_Waitress,
+      "next": VillageBridge_Fight1_Waiter,
+      "prev": Lacunosa_Benga
+    },
+    
+    "VillageBridge_Fight1_Waiter": {
+      "id": VillageBridge_Fight1_Waiter,
+      "next": VillageBridge_Fight2_Baker,
+      "prev": VillageBridge_Fight1_Waitress
+    },
+    
+    "VillageBridge_Fight2_Baker": {
+      "id": VillageBridge_Fight2_Baker,
+      "next": VillageBridge_Fight3_Gentleman,
+      "prev": VillageBridge_Fight1_Waiter
+    },
+    
+    "VillageBridge_Fight3_Gentleman": {
+      "id": VillageBridge_Fight3_Gentleman,
+      "next": VillageBridge_Fight3_Socialite,
+      "prev": VillageBridge_Fight2_Baker
+    },
+    
+    "VillageBridge_Fight3_Socialite": {
+      "id": VillageBridge_Fight3_Socialite,
+      "next": VillageBridge_Fight4_Musician,
+      "prev": VillageBridge_Fight3_Gentleman
+    },
+    
+    "VillageBridge_Fight4_Musician": {
+      "id": VillageBridge_Fight4_Musician,
+      "next": VillageBridge_Fantina,
+      "prev": VillageBridge_Fight3_Socialite
+    },
+    
+    "VillageBridge_Fantina": {
+      "id": VillageBridge_Fantina,
+      "next": VillageBridge_Fight5_Maid,
+      "prev": VillageBridge_Fight4_Musician
+    },
+    
+    "VillageBridge_Fight5_Maid": {
+      "id": VillageBridge_Fight5_Maid,
+      "next": VillageBridge_Artist,
+      "prev": VillageBridge_Fantina
+    },
+    
+    "VillageBridge_Artist": {
+      "id": VillageBridge_Artist,
+      "next": VillageBridge_StriatonB2B2B_Cilan,
+      "prev": VillageBridge_Fight5_Maid
+    },
+    
+    "VillageBridge_StriatonB2B2B_Cilan": {
+      "id": VillageBridge_StriatonB2B2B_Cilan,
+      "next": VillageBridge_StriatonB2B2B_Cress,
+      "prev": VillageBridge_Artist
+    },
+    
+    "VillageBridge_StriatonB2B2B_Cress": {
+      "id": VillageBridge_StriatonB2B2B_Cress,
+      "next": VillageBridge_StriatonB2B2B_Chili,
+      "prev": VillageBridge_StriatonB2B2B_Cilan
+    },
+    
+    "VillageBridge_StriatonB2B2B_Chili": {
+      "id": VillageBridge_StriatonB2B2B_Chili,
+      "next": Route12_RangerGatekeeper,
+      "prev": VillageBridge_StriatonB2B2B_Cress
+    },
+    
+    "Route12_RangerGatekeeper": {
+      "id": Route12_RangerGatekeeper,
+      "next": Liza,
+      "prev": VillageBridge_StriatonB2B2B_Chili
+    },
+    
+    "Liza": {
+      "id": Liza,
+      "next": Tate,
+      "prev": Route12_RangerGatekeeper
+    },
+    
+    "Tate": {
+      "id": Tate,
+      "next": Route9_Hooligans,
+      "prev": Liza
+    },
+    
+    "Route9_Hooligans": {
+      "id": Route9_Hooligans,
+      "next": Route9_Roughneck,
+      "prev": Tate
+    },
+    
+    "Route9_Roughneck": {
+      "id": Route9_Roughneck,
+      "next": Route9_Blue,
+      "prev": Route9_Hooligans
+    },
+    
+    "Route9_Blue": {
+      "id": Route9_Blue,
+      "next": SM9_Whitney,
+      "prev": Route9_Roughneck
+    },
+    
+    "SM9_Whitney": {
+      "id": SM9_Whitney,
+      "next": TwistMountain_Roark,
+      "prev": Route9_Blue
+    },
+    
+    "TwistMountain_Roark": {
+      "id": TwistMountain_Roark,
+      "next": TwistMountain_Byron,
+      "prev": SM9_Whitney
+    },
+    
+    "TwistMountain_Byron": {
+      "id": TwistMountain_Byron,
+      "next": TwistMountain_Terrakion,
+      "prev": TwistMountain_Roark
+    },
+    
+    "TwistMountain_Terrakion": {
+      "id": TwistMountain_Terrakion,
+      "next": OpelucidGym_Fight1,
+      "prev": TwistMountain_Byron
+    },
+    
+    "OpelucidGym_Fight1": {
+      "id": OpelucidGym_Fight1,
+      "next": OpelucidGym_Fight2_ChoiceA,
+      "prev": TwistMountain_Terrakion
+    },
+    
+    "OpelucidGym_Fight2_ChoiceA": {
+      "id": OpelucidGym_Fight2_ChoiceA,
+      "next": OpelucidGym_Fight2_ChoiceB,
+      "prev": OpelucidGym_Fight1
+    },
+    
+    "OpelucidGym_Fight2_ChoiceB": {
+      "id": OpelucidGym_Fight2_ChoiceB,
+      "next": OpelucidGym_Fight3,
+      "prev": OpelucidGym_Fight2_ChoiceA
+    },
+    
+    "OpelucidGym_Fight3": {
+      "id": OpelucidGym_Fight3,
+      "next": OpelucidGym_Fight4_ChoiceA,
+      "prev": OpelucidGym_Fight2_ChoiceB
+    },
+    
+    "OpelucidGym_Fight4_ChoiceA": {
+      "id": OpelucidGym_Fight4_ChoiceA,
+      "next": OpelucidGym_Fight4_ChoiceB,
+      "prev": OpelucidGym_Fight3
+    },
+    
+    "OpelucidGym_Fight4_ChoiceB": {
+      "id": OpelucidGym_Fight4_ChoiceB,
+      "next": OpelucidGym_Fight5_ChoiceA,
+      "prev": OpelucidGym_Fight4_ChoiceA
+    },
+    
+    "OpelucidGym_Fight5_ChoiceA": {
+      "id": OpelucidGym_Fight5_ChoiceA,
+      "next": OpelucidGym_Fight5_ChoiceB,
+      "prev": OpelucidGym_Fight4_ChoiceB
+    },
+    
+    "OpelucidGym_Fight5_ChoiceB": {
+      "id": OpelucidGym_Fight5_ChoiceB,
+      "next": OpelucidGym_Fight6_ChoiceA,
+      "prev": OpelucidGym_Fight5_ChoiceA
+    },
+    
+    "OpelucidGym_Fight6_ChoiceA": {
+      "id": OpelucidGym_Fight6_ChoiceA,
+      "next": OpelucidGym_Fight6_ChoiceB,
+      "prev": OpelucidGym_Fight5_ChoiceB
+    },
+    
+    "OpelucidGym_Fight6_ChoiceB": {
+      "id": OpelucidGym_Fight6_ChoiceB,
+      "next": OpelucidGym_Drayden,
+      "prev": OpelucidGym_Fight6_ChoiceA
+    },
+    
+    "OpelucidGym_Drayden": {
+      "id": OpelucidGym_Drayden,
+      "next": null,
+      "prev": OpelucidGym_Fight6_ChoiceB
+    }

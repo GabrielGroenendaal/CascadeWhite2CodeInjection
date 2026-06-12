@@ -40,13 +40,13 @@ A brief overview of the changes is:
 
 - When determining BP for Switch AI, the AI is able to account for STAB, move effects that alter BP, moves and abilities that alter type effectiveness (Freeze Dry, Corrosion), abiities that provide resistances and immunities, and abilities that can alter BP such as Technician and Skill Link. 
 
-- When determining BP for Switch AI, the AI will apply up to +-50% modifier depending on the defensive matchup into the target. 
-
 - When simulating damage for moves, the AI can now see the correct damage for moves with variable BP (Hex, Electro Ball, Flail, etc.)
 
 - The AI has a very low chance to switch out mid-turn if it is dealing negligible damage to all Pokémon on the field. This chance increases each turn the Pokémon is in battle. 
 
 - The AI now has a high chance to switch out mid-turn if it is locked into a move that deals low damage via Encore or Choice Items.
+
+- The AI has the same mid-turn switch AI triggers as Gen 4 (can switch into a Pokémon that resists that last move received and has a super effective move IF they moved before the target last turn)
 
 A full list of the AI Changes is outlined in the [AI Changes Overview](https://drive.google.com/file/d/1Z2hoQeMt998p8sx8VA0MbgYViWAQwedM/view?usp=sharing) document. 
 
@@ -265,7 +265,7 @@ end
 
 !enc 45
 
-### Rival Fight (Rewards 20x Green Shards)
+### Rival Fight (Rewards 10x Green Shards)
 !trm 166 If chose Snivy
 
 !trm 167 If chose Tepig
@@ -331,7 +331,7 @@ end
 !notif SPLIT-LOCKED, Brock is an optional mini-boss that can only be fought before defeating Cheren. This content is locked off afterwards. , #af74b3
 
 !items Items
-  berry juice, x10 Berry Juice (Reward for Defeating Brock)
+  berry juice, x5 Berry Juice (Reward for Defeating Brock)
   tm fighting, TM94 Rock Smash (Reward for Defeating Brock)
 end 
 
@@ -473,6 +473,13 @@ clamperl
 staryu
 magikarp
 end
+
+
+
+## Virbank Preschool 
+!notif NEW ENCOUNTER, Virbank Preschool is a new met location distinct from the Virbank Complex. Simply interact with the shelves in the back of the room! , #469e62
+
+!enc 29
 
 
 
@@ -1096,7 +1103,7 @@ end
 !notif NEW ENCOUNTER, Deep Lostlorn Forest is a unique met location for Pokémon. , #469e62
 !items Erika Reward
 desc: Speak with Bellossom to receive 2x of each Resist Berry
-wacan berry, 2x each Resist Berry
+wacan berry, 1x each Resist Berry
 tm grass, TM06 Magical Leaf 
 red shard, x10 Red Shards
 end
@@ -1262,7 +1269,7 @@ end
 
 ## Clay Tunnel (must defeat Janine to access)
 !items Janine Rewards
-poison gem, 2x Each Gem (Speak with Sableye)
+poison gem, 1x Each Gem (Speak with Sableye)
 tm flying, TM40 Aerial Ace
 blue shard, 10x Blue Shards
 end
@@ -1371,7 +1378,7 @@ end
 dome fossil, Dome Fossil, Skull Fossil (Past the Scientist in the room past Lenora)
 skull fossil, Skull Fossil (defeat the Scientist in the room past Lenora)
 tm fire, TM48 Mystical Fire (defeat Scientist Hughes)
-life orb, Life Orb (reward for defeating the Strange Statue)
+stable mulch, Brave OR Quiet Mint (reward for defeating the Strange Statue)
 end
 
 !notif FIELD EFFECT, There is a Permanent Pre Set Trick Room in Relic Sanctum.  , #4e86d4
@@ -1387,8 +1394,8 @@ end
 
 ### Strange Statue
 !notif SPLIT-LOCKED, The Strange Statue is an optional mini-boss that can only be fought before defeating Skyla. This content is locked off afterwards. , #af74b3
-!notif WARNING, The Strange Statue's Pokemon have 0 Speed IVs. , #f26253
-!tr 634/51 Rewards Life Orb 
+!notif WARNING, The Strange Statue's Pokémon have 0 Speed IVs. , #f26253
+!tr 634/51 Rewards Brave or Stable Mulch
 
 
 
@@ -1434,9 +1441,7 @@ end
 !trm 264/48 Right Side 
 
 
-!trm 292/49 Choose One (Left Path)
-!trm 410/49 Choose One (Right Path, through doubles grass)
-
+!trm 292/49
 
 ### School Kids Mara & Alvin (Mistralton Cave Gatekeepers)
 !tr 266/49 Left Side 
@@ -1474,8 +1479,8 @@ end
 !items Items 
 blue shard, 6x Blue Shards
 tm ground, TM28 Dig (reward for defeating Roxanne) 
-ground gem, x3 Ground Gem (reward for defeating Roxanne) 
-shuca berry, x3 Shuca Berry (reward for defeating Roxanne)
+ground gem, x1 Ground Gem (reward for defeating Roxanne) 
+shuca berry, x1 Shuca Berry (reward for defeating Roxanne)
 tm fire, TM59 Temper Flare (reward for beating Geoff) 
 end
 
@@ -1547,8 +1552,8 @@ There are several crossroads where you can choose one of two trainers to fight t
 !items Items
 tm poison, TM36 Sludge Bomb (found before Gauntlet)
 tm electric, TM72 Volt Switch (reward for beating Volkner)
-electric gem, x3 Electric Gem (reward for beating Volkner)
-wacan berry, x3 Wacan Berry (reward for beating Volkner)
+electric gem, x1 Electric Gem (reward for beating Volkner)
+wacan berry, x1 Wacan Berry (reward for beating Volkner)
 end
 
 ### Fight #1
@@ -1628,8 +1633,8 @@ heart scale, 1x Heart Scale (past the Psychic Tag Battle)
 tm psychic, TM29 Psychic (past Pokéfan Georgia)
 tm fairy, TM64 Teleport (past Gentleman)
 tm ghost, TM30 Shadow Ball (reward for Morty)
-ghost gem, x3 Ghost Gem (reward for Morty)
-kasib berry, x3 Kasib Berry (rewards for Morty)
+ghost gem, x1 Ghost Gem (reward for Morty)
+kasib berry, x1 Kasib Berry (rewards for Morty)
 end
 
 !notif FIELD EFFECT, In Celestial Tower, Dark types only resist Psychic moves and Normal types only resist Ghost moves. , #4e86d4
@@ -1653,15 +1658,23 @@ end
 
 ### Sabrina
 !notif SPLIT-LOCKED, Sabrina is an optional mini-boss that can only be fought before defeating Skyla. This content is locked off afterwards.  , #af74b3
-!tr 769/54 Rewards Celestial Rooftop Encounter, Covert Cloak, x3 IV Enhancers, Rash Mint, Careful Mint
+!tr 769/54 Rewards Celestial Rooftop Encounter, Covert Cloak, x1 IV Enhancers
 
+
+374: 
+Seaking -> Linoone Trainer 
+375
+Houndoom -> Zangoose Trainer 
+
+376:
+Seviper -> Dunsparce Trainer 
+377
+Kingler -> Weezing Trainer 
 
 
 ## Celestial Rooftop (only accessible by beating Sabrina)
 !items Sabrina Rewards 
-old gateau, 2x IV Enhancers 
-stable mulch, 1x Rash Mint
-stable mulch, 1x Careful Mint
+old gateau, 1x IV Enhancers 
 covert cloak, Covert Cloak
 end 
 
@@ -1751,8 +1764,8 @@ heart scale, x1 Heart Scale
 red shard, x15 Red Shard 
 sitrus berry, x10 Sitrus Berries 
 tm fire, TM35 Flamethrower (Reward for defeating Flannery, can be fought after Benga leaves you)
-fire gem, x3 Fire Gem (Reward for defeating Flannery, can be fought after Benga leaves you)
-occa berry, x3 Occa Berry (Reward for defeating Flannery, can be fought after Benga leaves you)
+fire gem, x1 Fire Gem (Reward for defeating Flannery, can be fought after Benga leaves you)
+occa berry, x1 Occa Berry (Reward for defeating Flannery, can be fought after Benga leaves you)
 end
 
 !notif NOTE, Reversal Mountain is a distinct location from the exterior grass for met location. 
@@ -1801,11 +1814,10 @@ Route 14 is now a gauntlet of 3 trainer battles with an optional mini-boss for t
 There are several crossroads where you can choose one of two trainers to fight to progress. Plan your route accordingly
 
 !items Items 
-custap berry, x3 Custap Berry (found at the end of the gauntlet)
+custap berry, x2 Custap Berry (found at the end of the gauntlet)
 tm flying, TM62 Acrobatics (reward for defeating Falkner)
-flying gem, x3 Flying Gems (reward for defeating Falkner)
-coba berry, x3 Coba Berry (reward for defeating Falkner)
-old gateau, x1 IV Enhancer (reward for defeating Falkner)
+flying gem, x1 Flying Gems (reward for defeating Falkner)
+coba berry, x1 Coba Berry (reward for defeating Falkner)
 end
 
 !enc 122 
@@ -1899,9 +1911,7 @@ Abundant Shrine can be accessed immediately upon arriving in Undella, but the ch
 
 !items Items 
 rocky helmet, Ability Drill 
-old gateau, x2 IV Enhancer
-stable mulch, x1 Lonely Mint
-stable mulch, x1 Impish Mint
+old gateau, x1 IV Enhancer
 end
 
 !notif ULTIMATE MOVE TUTOR, The ultimate tutor for starters can be found here and will teach Blast Burn, Frenzy Plant, and Hydro Cannon to starters. 
@@ -2018,11 +2028,11 @@ end
 !notif SPLIT-LOCKED CONTENT, All the content in Pinwheel Forest can only be completed before Marlon is defeated. , #af74b3 
 
 !items Items 
-grass gem, x3 Grass Gem (Reward for defeating Gardenia)
-rindo berry, x3 Rindo Berry (Reward for defeating Gardenia)
+grass gem, x1 Grass Gem (Reward for defeating Gardenia)
+rindo berry, x1 Rindo Berry (Reward for defeating Gardenia)
 tm grass, TM53: Energy Ball (Reward for defeating Gardenia)
-bug gem, x3 Bug Gem  (Reward for defeating Bugsy)
-tanga berry, x3 Tanga Berry (Reward for defeating Bugsy)
+bug gem, x1 Bug Gem  (Reward for defeating Bugsy)
+tanga berry, x1 Tanga Berry (Reward for defeating Bugsy)
 tm bug, TM45: Lunge (Reward for defeating Bugsy)
 choice specs, Choice Specs (Reward for defeating Virizion)
 end

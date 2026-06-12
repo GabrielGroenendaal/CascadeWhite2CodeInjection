@@ -4051,7 +4051,7 @@ extern "C"
                     int teraType = PML_MoveGetType(Move_GetID(AttackingMon, 0));
                     int type1 = PML_PersonalGetParamSingle(AttackingMon->Species, AttackingMon->Form, Personal_Type1);
                     int type2 = PML_PersonalGetParamSingle(AttackingMon->Species, AttackingMon->Form, Personal_Type2);
-                    if ((moveType == type1 && moveType == teraType) && (moveType == type2 && moveType == teraType))
+                    if ((moveType == type1 && moveType == teraType) || (moveType == type2 && moveType == teraType))
                     {
                         ratio = (BattleMon_GetValue(AttackingMon, VALUE_EFFECTIVE_ABILITY) == ABIL091_ADAPTABILITY) ? 9216 : 8192;
                         fxDamage = fixed_round(fxDamage, ratio);

@@ -1,0 +1,179 @@
+import messages.script.Msg0185.MSGID;
+
+import event.actors.Actor;
+import event.dialogs.Message;
+import pokescript.vm.StackCtrl;
+import pokescript.vm.VM;
+import system.EventFlags;
+import system.EventWorks;
+import system.Input;
+import system.Runtime;
+import system.Sound;
+
+import system.System;
+import event.Battle;
+
+public class MainEvents {
+	public static void main_1() { // @ 0x1a
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 0, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_2() { // @ 0x36
+		int v0;
+		int v1;
+		int v2;
+		int v3;
+		int v4;
+		int v5;
+		int v6;
+
+		Actor.PauseAll();
+		v0 = 19;
+		v1 = 1;
+		v2 = 279;
+		v3 = 1;
+		v4 = 2;
+		v5 = 2;
+		v6 = Runtime.GetTextFile();
+		Global2800(v0, v1, v2, v3, v4, v5, v6);
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_3() { // @ 0xa2
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 3, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_4() { // @ 0xbe
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 4, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_5() { // @ 0xda
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 5, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_6() { // @ 0xf6
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 6, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_7() {
+		int random; 
+		int speciesId;
+		int level;
+		int isVictory;
+		Actor.PauseAll();
+		random = System.Random(100);
+		level = System.Random(3) + 11;
+
+		ShowExclamationMark(255);
+		Actor.WaitActionFinish();
+		Message.System(7, 2);
+		Input.LastKeyWait();
+		Message.CloseAll();
+
+
+		if (random < 100) {
+			if (random < 80) {
+				if (random < 60) {
+					if (random < 46) {
+						if (random < 32) {
+							if (random < 22){
+								if (random < 12) {
+									if (random < 7) {
+										if (random < 2) {
+											speciesId = 353;
+										}
+										else {
+											speciesId = 425;
+										}
+									}
+									else {
+										speciesId = 438;
+									}
+								}
+								else {
+									speciesId = 427;
+								}
+							}
+							else {
+								speciesId = 572;
+							}
+						}
+						else {
+							speciesId = 300;
+						}
+					}
+					else {
+						speciesId = 174;
+					}
+				} 
+				else {
+					speciesId = 506;
+				}
+			}
+			else {
+				speciesId = 209;
+			}
+		} else {
+			speciesId = 209;
+		}
+		Sound.PVPlay(speciesId, 0);
+		Sound.PVWait();
+		
+		Battle.CallWildBattle(speciesId, level, 0);	
+		isVictory = Battle.IsWildVictory();
+		if (isVictory != 1){ 
+			Battle.CallWildLose();
+			goto Label_LostWildBattle;		
+		}
+		Battle.EndWildBattle();
+		
+		Label_LostWildBattle:
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+		
+	}
+
+	static meta void ShowExclamationMark(int npcId) : VActionSequence {
+		Action004b(1);
+	}
+	static native void Action004b(int amount) : 0x4b;
+
+
+	static meta void Global2800(int a1, int a2, int a3, int a4, int a5, int a6, int a7) : VGlobalCall[2800];
+}

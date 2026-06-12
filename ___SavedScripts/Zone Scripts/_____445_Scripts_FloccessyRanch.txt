@@ -18,93 +18,94 @@ import messages.script.Msg0315.MSGID;
 	import system.Sound;
 	import system.System;
 	import system.text.WordSet;
+	import event.Trainer;
+	import system.Field;
+public class MainEvents {
+	public static void main_1() { // @ 0x52
 	
-	public class MainEvents {
-		public static void main_1() { // @ 0x52
-		}
+	}
 	
-		public static void main_2() { // @ 0x5a
-			if (EventWorks.Get(16551) != 2) {
-				if (EventWorks.Get(16551) != 3) {
-					goto LABEL_00a8;
-				}
-				Actor.SetGPos(0, 22, 3, 13, 1);
-				goto LABEL_00cd;
+	public static void main_2() { // @ 0x5a
+		if (EventWorks.Get(16551) != 2) {
+			if (EventWorks.Get(16551) != 3) {
+				goto LABEL_00a8;
 			}
-			Actor.SetGPos(0, 22, 2, 32, 1);
+			Actor.SetGPos(0, 22, 3, 13, 1);
 			goto LABEL_00cd;
-	
-			LABEL_00a8:
-			if (EventWorks.Get(16551) != 4) {
-				goto LABEL_00cd;
-			}
-			Actor.SetGPos(0, 47, 2, 13, 1);
-	
-			LABEL_00cd:
-			if (EventWorks.Get(16551) >= 5 || EventWorks.Get(16551) == 0) {
-				if (EventWorks.Get(16551) != 5) {
-					return;
-				}
-				Actor.SetGPos(1, 46, 2, 42, 1);
-				Actor.SetGPos(2, 47, 2, 42, 1);
-				Actor.SetGPos(10, 45, 2, 40, 3);
-				Actor.SetGPos(3, 47, 2, 40, 2);
+		}
+		Actor.SetGPos(0, 22, 2, 32, 1);
+		goto LABEL_00cd;
+
+		LABEL_00a8:
+		if (EventWorks.Get(16551) != 4) {
+			goto LABEL_00cd;
+		}
+		Actor.SetGPos(0, 47, 2, 13, 1);
+
+		LABEL_00cd:
+		if (EventWorks.Get(16551) >= 5 || EventWorks.Get(16551) == 0) {
+			if (EventWorks.Get(16551) != 5) {
 				return;
 			}
-			Actor.SetGPos(1, 43, 2, 46, 2);
-			Actor.SetGPos(2, 43, 2, 45, 2);
-			Actor.SetGPos(10, 44, 2, 46, 2);
-	
+			Actor.SetGPos(1, 46, 2, 42, 1);
+			Actor.SetGPos(2, 47, 2, 42, 1);
+			Actor.SetGPos(10, 45, 2, 40, 3);
+			Actor.SetGPos(3, 47, 2, 40, 2);
+			return;
 		}
+		Actor.SetGPos(1, 43, 2, 46, 2);
+		Actor.SetGPos(2, 43, 2, 45, 2);
+		Actor.SetGPos(10, 44, 2, 46, 2);
+	}
 	
-		public static void main_3() { // @ 0x18f
-	int v0;
-			int v1;
-			int v16;
-			int v33;
-			int v34;
-	
-			Actor.PauseAll();
-			Player.GetGPos(v33, v34);
-			Actor.SetGPos(0, 33, 2, v34, 2);
-			v33 -= 1;
-			Actor.WalkRoute(0, v33, v34, 1, 8, 0);
-			Sound.BGMPlayPush(1237);
-			Actor.WaitActionFinish();
-			WordSet.LoadRivalName(1);
-			Message.ActorEx(1024, 0, 0, 0, 0);
-			Message.CloseAll();
-			if (EventWorks.Get(16432) != 0) {
-				if (EventWorks.Get(16432) != 1) {
-					goto LABEL_01e0;
-				}
-				Battle.CallTrainerBattle(167, 0, 0);
-				goto LABEL_01e8;
+	public static void main_3() { // @ 0x18f
+		int v0;
+		int v1;
+		int v16;
+		int v33;
+		int v34;
+
+		Actor.PauseAll();
+		Player.GetGPos(v33, v34);
+		Actor.SetGPos(0, 33, 2, v34, 2);
+		v33 -= 1;
+		Actor.WalkRoute(0, v33, v34, 1, 8, 0);
+		Sound.BGMPlayPush(1237);
+		Actor.WaitActionFinish();
+		WordSet.LoadRivalName(1);
+		Message.ActorEx(1024, 0, 0, 0, 0);
+		Message.CloseAll();
+		if (EventWorks.Get(16432) != 0) {
+			if (EventWorks.Get(16432) != 1) {
+				goto LABEL_01e0;
 			}
-			Battle.CallTrainerBattle(166, 0, 0);
+			Battle.CallTrainerBattle(167, 0, 0);
 			goto LABEL_01e8;
-	
-			LABEL_01e0:
-			Battle.CallTrainerBattle(168, 0, 0);
-	
-			LABEL_01e8:
-			v16 = Battle.IsTrainerVictory();
-			if (v16 != 1) {
-				Battle.CallTrainerLose();
-				goto LABEL_0221;
-			}
-			Actor.SetGPos(0, 42, 2, 46, 0);
-			Actor.SetGPos(255, 42, 2, 45, 1);
-			Battle.EndTrainerBattle();
-	
-			LABEL_0221:
-			WordSet.LoadRivalName(1);
-			Message.ActorEx(1024, 1, 0, 0, 0);
-			Message.CloseAll();
-			WordSet.LoadPlayerName(0);
-			Sound.SEPlay(2017);
-			Message.System(2, 0);
-			Message.CloseSystem();
+		}
+		Battle.CallTrainerBattle(166, 0, 0);
+		goto LABEL_01e8;
+
+		LABEL_01e0:
+		Battle.CallTrainerBattle(168, 0, 0);
+
+		LABEL_01e8:
+		v16 = Battle.IsTrainerVictory();
+		if (v16 != 1) {
+			Battle.CallTrainerLose();
+			goto LABEL_0221;
+		}
+		Actor.SetGPos(0, 42, 2, 46, 0);
+		Actor.SetGPos(255, 42, 2, 45, 1);
+		Battle.EndTrainerBattle();
+
+		LABEL_0221:
+		WordSet.LoadRivalName(1);
+		Message.ActorEx(1024, 1, 0, 0, 0);
+		Message.CloseAll();
+		WordSet.LoadPlayerName(0);
+		Sound.SEPlay(2017);
+		Message.System(2, 0);
+		Message.CloseSystem();
 		Sound.SEWait();
 		Message.ActorEx(1024, 3, 0, 0, 0);
 		Message.CloseAll();
@@ -132,7 +133,7 @@ import messages.script.Msg0315.MSGID;
 		Actor.WaitActionFinish();
 		Message.ActorEx(1024, 7, 2, 5, 0);
 		Message.CloseAll();
-		Global2805(75, 20);
+		Global2805(75, 10);
 		Actor.WalkRoute(2, 43, 46, 1, 8, 0);
 		Actor.WaitActionFinish();
 		ActionSequence_0f34(2);
@@ -165,15 +166,15 @@ import messages.script.Msg0315.MSGID;
 		Input.LastKeyWait();
 		Message.CloseAll();
 
-        // Handles the Level Cap Updates 
-        EventWorks.Set(16466, 15);
-        if (EventWorks.Get(16465) == 1){
-            Sound.SEPlay(1351);
-            Message.System(59, 2);
-            Message.WaitAdvance();
-            Message.CloseAll();            
-        }  
-        
+		// Handles the Level Cap Updates 
+		EventWorks.Set(16466, 15);
+		if (EventWorks.Get(16465) == 1){
+			Sound.SEPlay(1351);
+			Message.System(59, 2);
+			Message.WaitAdvance();
+			Message.CloseAll();            
+		}  
+		
 		Actor.SetGPos(0, 25, 2, 44, 0);
 		EventWorks.Set(16551, 1);
 		Runtime.FinishSubEvents();
@@ -212,7 +213,7 @@ import messages.script.Msg0315.MSGID;
 	}
 
 	public static void main_5() { // @ 0x4d7
-			int v0;
+		int v0;
 		int v1;
 		int v33;
 		int v34;
@@ -318,7 +319,8 @@ import messages.script.Msg0315.MSGID;
 		int v16;
 		int v33;
 		int v34;
-
+        int isVictory; 
+        
 		Actor.PauseAll();
 		EVCamera.Init();
 		EVCamera.Unbind();
@@ -331,44 +333,133 @@ import messages.script.Msg0315.MSGID;
 		ActionSequence_0efc(16);
 		Actor.WaitActionFinish();
 		EVCamera.Wait();
+
+        Message.ActorEx(1024, 60, 16, 5, 0);
+        Message.WaitAdvance();
+        Message.CloseAll();
+
 		Sound.PVPlay(507, 0);
 		Message.ActorEx(1024, 25, 3, 3, 0);
 		Sound.PVWait();
 		Message.WaitAdvance();
 		Message.CloseActor();
+
+        ShowExclamationMark(0);
+        HopDown(0);
+        Actor.WaitActionFinish();
 		WordSet.LoadRivalName(1);
-		Message.Info(26, 1);
+		Message.Info(26, 2);
 		Message.CloseAll();
 		ActionSequence_0f2c(16);
+        ShowExclamationMark(16);
 		Actor.WalkRoute(0, 42, 12, 1, 4, 0);
 		Actor.WaitActionFinish();
-		Message.ActorEx(1024, 27, 16, 5, 0);
-		v16 = YesNoWin.Show();
-		if (v16 != 0) {
-			Message.ActorEx(1024, 29, 16, 5, 0);
-			goto LABEL_07bf;
-		}
-		Message.ActorEx(1024, 28, 16, 5, 0);
+		Sound.BGMPlay(1101);
+		Message.ActorEx(1024, 61, 16, 5, 0);
+        WordSet.LoadPlayerName(0);
+        Message.ActorEx(1024, 62, 16, 5, 0);
+        HopDown(16);
+        Message.ActorEx(1024, 63, 16, 5, 0);
+        Actor.WaitActionFinish();
+        Message.CloseAll();
+        TurnWest(16);
+        Actor.WaitActionFinish();
+        Message.ActorEx(1024, 64, 16, 5, 0);
+        Message.CloseAll();
+        WalkSouth(16);
+        TurnSouth(3);
+        Actor.WaitActionFinish();
+        Message.ActorEx(1024, 65, 16, 5, 0);
+        Message.CloseAll();
 
-		LABEL_07bf:
-		Message.ActorEx(1024, 30, 16, 5, 0);
+
+		// CHANGE THIS LATER
+
+
+        Battle.CallTrainerBattle(772, 0, 1);
+        isVictory = Battle.IsTrainerVictory();
+		if (isVictory == 1) {
+			Battle.EndTrainerBattle();
+			BengaStepBack(16);
+			Actor.WaitActionFinish();
+			Message.ActorEx(1024, 66, 16, 5, 0);
+			HopDown(16);
+			Message.ActorEx(1024, 67, 16, 5, 0);
+			Message.CloseAll();
+		} 
+		else{
+			 Battle.EndTrainerBattle();
+			BengaStepBack(16);
+			Actor.WaitActionFinish();
+			Message.ActorEx(1024, 66, 16, 5, 0);
+			HopDown(16);
+			Message.ActorEx(1024, 80, 16, 5, 0);
+			Message.CloseAll();
+		}
+		 HopDown(16);
+        Actor.WaitActionFinish();
+        HopDown(16);
+        Actor.WaitActionFinish();
+        HopDown(16);
+        Actor.WaitActionFinish();
+        Message.Spiked(68, 2);
+        Message.CloseAll();
+        WalkSouth(16);
+        Actor.WaitActionFinish();
+        Message.ActorEx(1024, 69, 16, 5, 0);
 		Message.CloseAll();
-		Actor.New(51, 20, 1, 251, 110, 0);
-		Runtime.Sleep(4);
-		Actor.WalkRoute(251, 51, 23, 1, 4, 1);
-		Runtime.Sleep(16);
-		Sound.SEPlay(1422);
-		Actor.WaitActionFinish();
-		Sound.SEWait();
-		Actor.Hide(251);
 		Global2805(337, 1);
-		Message.ActorEx(1024, 31, 16, 5, 0);
+		Message.ActorEx(1024, 70, 16, 5, 0);
 		Message.CloseAll();
+		Runtime.Sleep(16);
+        HopDown(16);
+        Actor.WaitActionFinish();
+        Message.Spiked(71, 2);
+        Message.CloseAll();
+        WalkSouth(16);
+        Actor.WaitActionFinish();
+        Message.ActorEx(1024, 72, 16, 5, 0);
+		Message.CloseAll();
+
+        Sound.PVPlay(507, 0);
+        HopDown(3);
+        Message.ActorEx(1024, 82, 3, 3, 0);
+        Message.CloseAll();
+        Actor.WaitActionFinish();
+        
+        TurnNorth(16);
+		Message.ActorEx(1024, 73, 16, 3, 0);
+		Sound.PVWait();
+        Message.CloseAll();
+		TurnSouth(16);
+        Actor.WaitActionFinish();
+		if (isVictory != 1){
+			Message.ActorEx(1024, 81, 16, 5, 0);
+			Message.CloseAll();
+			Sound.SEPlay(1391);
+			Sound.SEWait();
+			PokeParty.RecoverAll();
+		}
+		Message.ActorEx(1024, 74, 16, 5, 0);
+        	Message.CloseAll();
+
+		// Look at alll of this!
+		TurnEast(16);
+	
+	        Actor.JumpToGPos(16, 53, 2, 22);
+         TurnEast(255);
+         Actor.JumpToGPos(16, 56, 3, 22);
+         Message.Info(83, 2);
+         Runtime.Sleep(16);
+        Actor.JumpToGPos(16, 59, 2, 22);
+        Actor.WaitActionFinish();
+        Runtime.Sleep(32);
+        Actor.Hide(16);
+        Message.CloseAll();
+		Field.PlayMapBGM();
+
 		EVCamera.MoveToDefault(32);
-		ActionSequence_09b4(16);
 		Runtime.Sleep(20);
-		ActionSequence_0f2c(255);
-		Actor.WaitActionFinish();
 		ActionSequence_0a2c(3);
 		ActionSequence_0f24(255);
 		Actor.WaitActionFinish();
@@ -403,7 +494,7 @@ import messages.script.Msg0315.MSGID;
 		ActionSequence_0f34(255);
 		Actor.WaitActionFinish();
 		Actor.Hide(0);
-		Actor.Hide(16);
+		Actor.Hide(16); 
 		ActionSequence_0f2c(255);
 		ActionSequence_0f24(1);
 		Actor.WaitActionFinish();
@@ -421,10 +512,13 @@ import messages.script.Msg0315.MSGID;
 		Actor.SetGPos(3, 47, 2, 40, 2);
 		Fade.FadeEx(3, 16, 0, 4);
 		Fade.FadeExWait();
+
 		EventWorks.Set(16551, 5);
 		EventWorks.Set(16549, 3);
 		EventFlags.Set(729);
 		EventFlags.Set(728);
+
+        Label_EndBengaScript: 
 		Runtime.FinishSubEvents();
 		Actor.UnpauseAll();
 
@@ -827,7 +921,150 @@ import messages.script.Msg0315.MSGID;
 		Runtime.FinishSubEvents();
 		Actor.UnpauseAll();
 	}
+	
+    // New Team Plasma Script 
+    public static void main_21() {
+        
+        int playerX;
+        int playerZ;
+        int yesNo;
 
+        int playerGruntOverworldID;
+		playerGruntOverworldID = 251; // CHANGE THIS LATER
+		
+        Actor.PauseAll();
+        Player.GetGPos(playerX, playerZ);
+        // Plasma Grunt Runs up, Bumps into Trainer
+        ShowExclamationMark(255);
+        Actor.WaitActionFinish();
+        Actor.New(playerX, playerZ+10, 1, 252, 293, 0);
+
+        // Actor Runs up and Smacks the Trainer. 
+        // Actor Runs North 
+        // As soon as that finishes, play the "Bump" sound effect 
+        // Player and Grunt both lock orientation 
+        // Then move back one tile. 
+
+        GruntRunsUp(252);
+        Runtime.Sleep(36);
+        Sound.SEPlay(1370); // CHANGE THIS TO THE BUMP ID 
+        PlayerBumpsUp(255);
+        GruntBumpsDown(252);
+        Runtime.Sleep(16);
+        Sound.SEPlay(10); // Change this to the post bump sound effect 
+        Actor.WaitActionFinish();
+
+
+        Message.Spiked(75, 2);
+        Message.WaitAdvance();
+        Message.CloseAll();
+
+        // Walk North One Tile 
+        WalkNorthOneTile(252);
+        Actor.WaitActionFinish();
+
+		Trainer.PlayBGMPush(763);
+        Message.ActorEx(1024, 76, 252, 5, 0);
+		yesNo = YesNoWin.Show();
+        if (yesNo != 0){
+            Message.ActorEx(1024, 29, 252, 5, 0);
+            goto LABEL_PostPlasmaQuestion;
+        }
+        Message.ActorEx(1024, 28, 252, 5, 0);
+
+        LABEL_PostPlasmaQuestion:
+		Message.ActorEx(1024, 77, 252, 5, 0);
+		Message.CloseAll();
+
+        Sound.PVPlay(443, 0);
+        ShowQuestionMark(16);
+        HopRight(252);
+		Message.ActorEx(1024, 78, 252, 5, 0);
+        Actor.WaitActionFinish();
+        Sound.PVWait();
+		Message.CloseAll();
+
+        // Grunt is leaving!
+        if (playerX == 46){
+            PlasmaEscape1_A(252);
+            Runtime.Sleep(8);
+            TurnEast(255);
+            Runtime.Sleep(8);
+            TurnNorth(255);
+        }
+        else {
+            PlasmaEscape1_C(252);
+            Runtime.Sleep(8);
+            TurnWest(255);
+            Runtime.Sleep(8);
+            TurnNorth(255);
+        }
+        Actor.WaitActionFinish();
+        TurnSouth(252);
+        BengaReturn(16);
+        Actor.WaitActionFinish();
+        Message.ActorEx(1024, 79, 252, 5, 0);
+		Message.CloseAll();
+        
+        // Plasma Grunt Runs Away Very Fast 
+		Field.PlayMapBGM();
+		PlasmaEscape2(252);
+		Runtime.Sleep(20);
+        TurnNorth(255);
+        Actor.WaitActionFinish();
+		Actor.Hide(252);
+        EventWorks.Set(16495, 1); // Sets up the Trigger for Benga 
+
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
+
+    static meta void BengaLeaves(int npcId) : VActionSequence {
+		Action0013(2);
+	}
+
+    static meta void PlasmaEscape1_A(int npcId) : VActionSequence {
+		Action0013(1); 
+        Action0010(3);
+        Action0012(1);
+	}
+    static meta void PlasmaEscape1_B(int npcId) : VActionSequence {
+		Action0013(1);
+        Action0010(4); 
+	}
+    static meta void PlasmaEscape1_C(int npcId) : VActionSequence {
+		Action0012(1);
+        Action0010(4);
+	}
+    static meta void PlasmaEscape2(int npcId) : VActionSequence {
+		Action0012(5);
+        Action0010(8);
+        Action0012(5);
+	}
+
+    static meta void GruntRunsUp(int npcId) : VActionSequence {
+		Action0010(9);
+	}
+    static meta void PlayerBumpsUp(int npcId) : VActionSequence {
+		Action0047(1);
+        Action0034(1);
+        Action0048(1);
+	}
+
+    static meta void BengaStepBack(int npcId) : VActionSequence {
+		Action0047(1);
+        Action000c(1);
+        Action0048(1);
+	}
+
+    static meta void GruntBumpsDown(int npcId) : VActionSequence {
+		Action0047(1);
+        Action0031(1);
+        Action0048(1);
+	}
+    static meta void ActionSequence_040c(int npcId) : VActionSequence {
+		Action0012(11);
+	}
 
 	static meta void ActionSequence_040c(int npcId) : VActionSequence {
 		Action0012(11);
@@ -925,7 +1162,9 @@ import messages.script.Msg0315.MSGID;
 		Action0022(0);
 		Action0032(0);
 	}
-
+	static meta void TurnWest(int npcId) : VActionSequence {
+		Action0022(1);
+    }
 	static meta void ActionSequence_0adc(int npcId) : VActionSequence {
 		Action000e(1);
 		Action000d(1);
@@ -957,7 +1196,9 @@ import messages.script.Msg0315.MSGID;
 	static meta void ActionSequence_0f3c(int npcId) : VActionSequence {
 		Action0023(1);
 	}
-
+	static meta void WalkSouth(int npcId) : VActionSequence {
+		Action000d(1);
+	}
 	static meta void ActionSequence_0f44(int npcId) : VActionSequence {
 		Action004b(1);
 	}
@@ -965,6 +1206,51 @@ import messages.script.Msg0315.MSGID;
 	static meta void ActionSequence_0f4c(int npcId) : VActionSequence {
 		Action009f(1);
 	}
+	static meta void LockDirection(int npcId) : VActionSequence {
+		Action0047(1);
+	}
+	static meta void UnlockDirection(int npcId) : VActionSequence {
+		Action0048(1);
+	}
+	static meta void WalkNorth(int npcId) : VActionSequence {
+		Action000c(2);
+	}
+	static meta void WalkNorthOneTile(int npcId) : VActionSequence {
+		Action000c(1);
+	}
+    static meta void TurnNorth(int npcId) : VActionSequence {
+            Action0020(1);
+	}
+    static meta void TurnEast(int npcId) : VActionSequence {
+		Action0023(1);
+	}
+    static meta void HopRight(int npcId) : VActionSequence {
+        Action0033(1);
+    }
+
+	static meta void TurnSouth(int npcId) : VActionSequence {
+		Action0021(1);
+	}
+	static meta void HopDown(int npcId) : VActionSequence {
+        Action0031(1);
+    }
+    static meta void ShowExclamationMark(int npcId) : VActionSequence {
+        Action004b(1);
+    }
+    static meta void HopLeft(int npcId) : VActionSequence {
+        Action0032(1);
+    }
+    static meta void ShowQuestionMark(int npcId) : VActionSequence {
+        Action009f(1);
+        Action0011(1);
+        Action0026(1);
+    }
+
+    static meta void BengaReturn(int npcId) : VActionSequence {
+        Action000c(1);
+        Action0022(1);
+    }
+
 
 	static meta void Global2805(int a1, int a2) : VGlobalCall[2805];
 
@@ -981,8 +1267,12 @@ import messages.script.Msg0315.MSGID;
 	static native void Action0021(int amount) : 0x21;
 	static native void Action0022(int amount) : 0x22;
 	static native void Action0023(int amount) : 0x23;
+		static native void Action0026(int amount) : 0x26;
 	static native void Action0027(int amount) : 0x27;
 	static native void Action0032(int amount) : 0x32;
+    static native void Action0033(int amount) : 0x33;
+    static native void Action0034(int amount) : 0x34;
+    static native void Action0031(int amount) : 0x31;
 	static native void Action0047(int amount) : 0x47;
 	static native void Action0048(int amount) : 0x48;
 	static native void Action004b(int amount) : 0x4b;
