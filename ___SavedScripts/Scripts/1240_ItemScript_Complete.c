@@ -97,12 +97,12 @@ void Sequence7()
 	End();
 }
 
-/* Berry Juice x10 - Pledge Grove */
+/* Berry Juice x5 - Pledge Grove */
 void Sequence8()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 43);
-	SetVarEqVal(0x800D, 10);
+	SetVarEqVal(0x800D, 5);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -460,24 +460,24 @@ void Sequence37()
 	End();
 }
 
-/* Passho Berry x2 - Lostlorn Forest */
+/* Passho Berry x1 - Lostlorn Forest */
 void Sequence38()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 185);
-	SetVarEqVal(0x800D, 2);
+	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
 	End();
 }
 
-/* Rindo Berry x2 - Lostlorn Forest */
+/* Rindo Berry x1 - Lostlorn Forest */
 void Sequence39()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 187);
-	SetVarEqVal(0x800D, 2);
+	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -665,24 +665,24 @@ void Sequence54()
 	End();
 }
 
-/* Wacan Berry x2 - Lostlorn Forest */
+/* Wacan Berry x1 - Lostlorn Forest */
 void Sequence55()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 186);
-	SetVarEqVal(0x800D, 2);
+	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
 	End();
 }
 
-/* Shuca Berry x2 - Lostlorn Forest */
+/* Shuca Berry x1 - Lostlorn Forest */
 void Sequence56()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 191);
-	SetVarEqVal(0x800D, 3);
+	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -725,24 +725,24 @@ void Sequence59()
 	End();
 }
 
-/* Coba Berry x2 - Lostlorn Forest */
+/* Coba Berry x1 - Lostlorn Forest */
 void Sequence60()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 192);
-	SetVarEqVal(0x800D, 2);
+	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
 	End();
 }
 
-/* Haban Berry x2 - Lostlorn Forest */
+/* Haban Berry x1 - Lostlorn Forest */
 void Sequence61()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 197);
-	SetVarEqVal(0x800D, 2);
+	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -760,12 +760,12 @@ void Sequence62()
 	UnlockAll();
 	End();
 }
-/* 30x Green SHard - Desert Resort */
+/* 15x Green SHard - Desert Resort */
 void Sequence63()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 75);
-	SetVarEqVal(0x800D, 30);
+	SetVarEqVal(0x800D, 15);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -816,12 +816,12 @@ void Sequence66()
 	End();
 }
 
-/* Icca Berry x2 - Lostlorn Forest */
+/* Icca Berry x1 - Lostlorn Forest */
 void Sequence67()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 184);
-	SetVarEqVal(0x800D, 2);
+	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -913,12 +913,12 @@ void Sequence74()
 	End();
 }
 
-/* Ground GEM x3 - Clay Tunnel */
+/* Ground GEM x1 - Clay Tunnel */
 void Sequence75()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 555);
-	SetVarEqVal(0x800D, 3);
+	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -1025,12 +1025,12 @@ void Sequence84()
 	End();
 }
 
-/* SHUCA BERRY x3 - Clay Tunnel */
+/* SHUCA BERRY x1 - Clay Tunnel */
 void Sequence85()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 191);
-	SetVarEqVal(0x800D, 3);
+	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -1118,12 +1118,12 @@ void Sequence92()
 	End();
 }
 
-/* CHARGESTONE CAVE - Electric Gem (x3) */
+/* CHARGESTONE CAVE - Electric Gem (x1) */
 void Sequence93()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 550);
-	SetVarEqVal(0x800D, 3);
+	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -1422,12 +1422,12 @@ void Sequence118()
 	UnlockAll();
 	End();
 }
-/* REVERSAL MOUNTAIN - FIRE GEM X3 */
+/* REVERSAL MOUNTAIN - FIRE GEM X1 */
 void Sequence119()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 548);
-	SetVarEqVal(0x800D, 3);
+	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -1550,12 +1550,12 @@ void Sequence129()
 	End();
 }
 
-/* FLYING GEM x3 - Route 14 */
+/* FLYING GEM x1 - Route 14 */
 void Sequence130()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 556);
-	SetVarEqVal(0x800D, 3);
+	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -1572,12 +1572,12 @@ void Sequence131()
 	UnlockAll();
 	End();
 }
-/* Coba Berry x3 - Route 14 */
+/* Coba Berry x1 - Route 14 */
 void Sequence132()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 192);
-	SetVarEqVal(0x800D, 3);
+	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -2608,34 +2608,34 @@ void Sequence224()
 	End();
 }
 
-/* Dragon Gem x3 - Anville Town */
+/* Dragon Gem x1 - Anville Town */
 void Sequence225()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 561);
-	SetVarEqVal(0x800D, 3);
+	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
 	End();
 }
 
-/* IV Enhancer x2, Rash Mint, Careful Mint - Celestial Rooftop */
+/* IV Enhancer x1 - Celestial Rooftop */
 void Sequence226()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 530);
-	SetVarEqVal(0x800D, 2);
+	SetVarEqVal(0x800D, 1);
 	Sequence400();
     WaitMoment();
-    SetVarEqVal(0x800C, 524);
-	SetVarEqVal(0x800D, 1);
-    Sequence400();
-    WaitMoment();
-    SetVarEqVal(0x800C, 528);
-	SetVarEqVal(0x800D, 1);
-    Sequence400();
-	WaitMoment();
+    // SetVarEqVal(0x800C, 524);
+	// SetVarEqVal(0x800D, 1);
+    // Sequence400();
+    // WaitMoment();
+    //SetVarEqVal(0x800C, 528);
+	// SetVarEqVal(0x800D, 1);
+    // Sequence400();
+	// WaitMoment();
 	UnlockAll();
 	End();
 }
@@ -2986,22 +2986,22 @@ void Sequence255()
 	UnlockAll();
 	End();
 }
-/* IV Enhancer x2, Lonely Mint, Bold Mint - Abundant Shrine */
+/* IV Enhancer x1 - Abundant Shrine */
 void Sequence256()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 530);
-	SetVarEqVal(0x800D, 2);
+	SetVarEqVal(0x800D, 1);
 	Sequence400();
     WaitMoment();
-    SetVarEqVal(0x800C, 506);
-	SetVarEqVal(0x800D, 1);
-    Sequence400();
-    WaitMoment();
-    SetVarEqVal(0x800C, 510);
-	SetVarEqVal(0x800D, 1);
-    Sequence400();
-	WaitMoment();
+    // SetVarEqVal(0x800C, 506);
+	// SetVarEqVal(0x800D, 1);
+    // Sequence400();
+    // WaitMoment();
+    // SetVarEqVal(0x800C, 510);
+	// SetVarEqVal(0x800D, 1);
+    // Sequence400();
+	// WaitMoment();
 	UnlockAll();
 	End();
 }
@@ -3017,24 +3017,24 @@ void Sequence257()
 	End();
 }
 
-/* Bug Gem x3 - Pinwheel Forest*/
+/* Bug Gem x1 - Pinwheel Forest*/
 void Sequence258()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 558);
-	SetVarEqVal(0x800D, 3);
+	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
 	End();
 }
 
-/* Tanga Berry x3 - Pinwheel Forest */
+/* Tanga Berry x1 - Pinwheel Forest */
 void Sequence259()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 194);
-	SetVarEqVal(0x800D, 3);
+	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -3074,12 +3074,12 @@ void Sequence262()
 	UnlockAll();
 	End();
 }
-/* Rindo berry x3 - pinwheel */
+/* Rindo berry x1 - pinwheel */
 void Sequence263()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 187);
-	SetVarEqVal(0x800D, 3);
+	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -3110,12 +3110,12 @@ void Sequence265()
 	End();
 }
 
-/* GRASS GEM X3 - PINWHEEL FOREST */
+/* GRASS GEM X1 - PINWHEEL FOREST */
 void Sequence266()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 551);
-	SetVarEqVal(0x800D, 3);
+	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -3389,48 +3389,48 @@ void Sequence290()
 	End();
 }
 
-/* Ghost Gem x2 - Clay Tunnel */
+/* Ghost Gem x1 - Clay Tunnel */
 void Sequence291()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 560);
-	SetVarEqVal(0x800D, 2);
+	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
 	End();
 }
 
-/* Fighting Gem x2 - Clay Tunnel */
+/* Fighting Gem x1 - Clay Tunnel */
 void Sequence292()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 553);
-	SetVarEqVal(0x800D, 2);
+	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
 	End();
 }
 
-/* Bug Gem x2 - Clay Tunnel */
+/* Bug Gem x1 - Clay Tunnel */
 void Sequence293()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 558);
-	SetVarEqVal(0x800D, 2);
+	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
 	End();
 }
 
-/* Poison Gem x2 - Clay Tunnel */
+/* Poison Gem x1 - Clay Tunnel */
 void Sequence294()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 554);
-	SetVarEqVal(0x800D, 2);
+	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -3542,12 +3542,12 @@ void Sequence303()
 	End();
 }
 
-/* Kasib Berry x3 - Celestial Tower */
+/* Kasib Berry x1 - Celestial Tower */
 void Sequence304()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 196);
-	SetVarEqVal(0x800D, 3);
+	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -3566,12 +3566,12 @@ void Sequence305()
 	End();
 }
 
-/* GHOST GEM x3 - Celestial Tower */
+/* GHOST GEM x1 - Celestial Tower */
 void Sequence306()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 560);
-	SetVarEqVal(0x800D, 3);
+	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -3839,12 +3839,12 @@ void Sequence329()
 	End();
 }
 
-/* Normal Gem x2 - Virbank Complex (Inside) */
+/* Normal Gem x1 - Virbank Complex (Inside) */
 void Sequence330()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 564);
-	SetVarEqVal(0x800D, 2);
+	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -4035,48 +4035,48 @@ void Sequence345()
 	End();
 }
 
-/* Yache Berry x2 - Lostlorn Forest */
+/* Yache Berry x1 - Lostlorn Forest */
 void Sequence346()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 188);
-	SetVarEqVal(0x800D, 2);
+	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
 	End();
 }
 
-/* Babiri Berry x2 - Lostlorn Forest */
+/* Babiri Berry x1 - Lostlorn Forest */
 void Sequence347()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 199);
-	SetVarEqVal(0x800D, 2);
+	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
 	End();
 }
 
-/* Colbur Berry x2 - Lostlorn Forest */
+/* Colbur Berry x1 - Lostlorn Forest */
 void Sequence348()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 198);
-	SetVarEqVal(0x800D, 2);
+	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
 	End();
 }
 
-/* Kasib Berry x2 - Lostlorn Forest */
+/* Kasib Berry x1 - Lostlorn Forest */
 void Sequence349()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 196);
-	SetVarEqVal(0x800D, 2);
+	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -4095,48 +4095,48 @@ void Sequence350()
 	End();
 }
 
-/* Kebia Berry x2 - Lostlorn Forest */
+/* Kebia Berry x1 - Lostlorn Forest */
 void Sequence351()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 190);
-	SetVarEqVal(0x800D, 2);
+	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
 	End();
 }
 
-/* Chilan Berry x2 - Lostlorn Forest */
+/* Chilan Berry x1 - Lostlorn Forest */
 void Sequence352()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 200);
-	SetVarEqVal(0x800D, 2);
+	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
 	End();
 }
 
-/* Tanga Berry x2 - Lostlorn Forest */
+/* Tanga Berry x1 - Lostlorn Forest */
 void Sequence353()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 194);
-	SetVarEqVal(0x800D, 2);
+	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
 	End();
 }
 
-/* Chople Berry x2 - Lostlorn Forest */
+/* Chople Berry x1 - Lostlorn Forest */
 void Sequence354()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 189);
-	SetVarEqVal(0x800D, 2);
+	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -4192,36 +4192,36 @@ void Sequence358()
 	End();
 }
 
-/* Fire Gem x2 - Clay Tunnel */
+/* Fire Gem x1 - Clay Tunnel */
 void Sequence359()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 548);
-	SetVarEqVal(0x800D, 2);
+	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
 	End();
 }
 
-/* Water Gem x2 - Clay Tunnel */
+/* Water Gem x1 - Clay Tunnel */
 void Sequence360()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 549);
-	SetVarEqVal(0x800D, 2);
+	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
 	End();
 }
 
-/* Grass Gem x2 - Clay Tunnel */
+/* Grass Gem x1 - Clay Tunnel */
 void Sequence361()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 551);
-	SetVarEqVal(0x800D, 2);
+	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -4240,84 +4240,84 @@ void Sequence362()
 	End();
 }
 
-/* Ice Gem x2 - Clay Tunnel */
+/* Ice Gem x1 - Clay Tunnel */
 void Sequence363()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 552);
-	SetVarEqVal(0x800D, 2);
+	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
 	End();
 }
 
-/* Ground Gem x2 - Clay Tunnel */
+/* Ground Gem x1 - Clay Tunnel */
 void Sequence364()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 555);
-	SetVarEqVal(0x800D, 2);
+	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
 	End();
 }
 
-/* Rock Gem x2 - Clay Tunnel */
+/* Rock Gem x1 - Clay Tunnel */
 void Sequence365()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 559);
-	SetVarEqVal(0x800D, 2);
+	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
 	End();
 }
 
-/* Steel Gem x2 - Clay Tunnel */
+/* Steel Gem x1 - Clay Tunnel */
 void Sequence366()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 563);
-	SetVarEqVal(0x800D, 2);
+	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
 	End();
 }
 
-/* Dragon Gem x2 - Clay Tunnel */
+/* Dragon Gem x1 - Clay Tunnel */
 void Sequence367()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 561);
-	SetVarEqVal(0x800D, 2);
+	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
 	End();
 }
 
-/* Flying Gem x2 - Clay Tunnel */
+/* Flying Gem x1 - Clay Tunnel */
 void Sequence368()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 556);
-	SetVarEqVal(0x800D, 2);
+	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
 	End();
 }
 
-/* Psychic Gem x2 - Clay Tunnel */
+/* Psychic Gem x1 - Clay Tunnel */
 void Sequence369()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 557);
-	SetVarEqVal(0x800D, 2);
+	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -4379,12 +4379,12 @@ void Sequence374()
 	End();
 }
 
-/* Dark Gem x2 - Clay Tunnel */
+/* Dark Gem x1 - Clay Tunnel */
 void Sequence375()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 562);
-	SetVarEqVal(0x800D, 2);
+	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -4459,12 +4459,12 @@ void Sequence381()
 	End();
 }
 
-/* OCCA BERRY x3 - REVERSAL MOUNTAIN */
+/* OCCA BERRY x1 - REVERSAL MOUNTAIN */
 void Sequence382()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 184);
-	SetVarEqVal(0x800D, 3);
+	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();

@@ -1659,6 +1659,7 @@ enum SideEffect
     SIDEEFF_UNDERDOG = 0x14,
     SIDEEFF_STOLEN = 0x15,
     SIDEEFF_UNOVA_END = 0x16,
+    SIDEEFF_KYUREMBOSS = 0x17
 };
 
 enum BattleHandlerEffect

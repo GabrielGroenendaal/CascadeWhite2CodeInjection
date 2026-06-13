@@ -274,7 +274,7 @@ extern "C"
             return FIELD_SAND;
         }
 
-        if (zoneId == 121)
+        if (zoneId == 121 ) 
         {
             return FIELD_OPELUCID;
         }
@@ -430,10 +430,6 @@ extern "C"
             {
                 v3 = 4;
             }
-            else if (zoneId == FIELD_OPELUCID)
-            {
-                v3 = 2;
-            }
             else
             {
                 v3 = 0;
@@ -497,19 +493,14 @@ extern "C"
         {
             v3 = 2;
         }
+        else if (a1 == TYPE_GROUND && a2 == TYPE_FLYING && field == FIELD_CHARGESTONE){
+            v3 = 2;
+        }
         else if (a1 == TYPE_GHOST && a2 == TYPE_NORMAL && field == FIELD_CELESTIAL)
         {
             v3 = 2;
         }
         else if (a1 == TYPE_PSYCHIC && a2 == TYPE_DARK && field == FIELD_CELESTIAL)
-        {
-            v3 = 2;
-        }
-        else if (a1 == TYPE_DRAGON && a2 == TYPE_FAIRY && field == FIELD_OPELUCID)
-        {
-            v3 = 2;
-        }
-        else if (a1 == TYPE_FIGHTING && a2 == TYPE_GHOST && field == FIELD_OPELUCID)
         {
             v3 = 2;
         }
@@ -702,14 +693,17 @@ extern "C"
         // Opelucid Gym
         else if (field == FIELD_OPELUCID)
         {
-            HandlerParam_AddAnimation *addAnimation = (HandlerParam_AddAnimation *)BattleHandler_PushWork(a1, EFFECT_ADD_ANIMATION, 0);
-            addAnimation->animNo = MOVE137_GLARE;
-            addAnimation->pos_from = 3;
-            addAnimation->pos_to = 0;
-            BattleHandler_PopWork(a1, addAnimation);
+            //HandlerParam_AddAnimation *addAnimation = (HandlerParam_AddAnimation *)BattleHandler_PushWork(a1, EFFECT_ADD_ANIMATION, 0);
+            //addAnimation->animNo = 116;
+            //addAnimation->pos_from = 3;
+            //addAnimation->pos_to = 0;
+            //BattleHandler_PopWork(a1, addAnimation);
+            random = Condition_MakePermanent();
+            ServerDisplay_AddCommon(a1->serverCommandQueue, 48, 1, 0, 116, 0, 0); // Change this Message Probably
             bhwork = (HandlerParam_Message *)BattleHandler_PushWork(a1, EFFECT_MESSAGE, 0);
-            BattleHandler_StrSetup(&bhwork->str, 1u, 206);
+            BattleHandler_StrSetup(&bhwork->str, 1u, 263); // Change This Message
             BattleHandler_PopWork(a1, bhwork);
+            ServerControl_FieldEffectCore(a1, 0xB, Condition_MakePermanent(), 0);
         }
 
         // Skyla' Gym
@@ -801,6 +795,34 @@ extern "C"
                 addAnimation->pos_to = 0;
                 BattleHandler_PopWork(a1, addAnimation);
                 CreateSpikes(0, a1, 0, 0, 0, SIDEEFF_FORESTWRATH, Permanent, 255);
+            }
+
+            // Terrakion Fight
+            // CHANGE THIS LATER
+            if (trainerId == 508 || trainerId == 2)
+            {
+
+                //ConditionData Permanent = Condition_MakePermanent();
+                //HandlerParam_AddAnimation *addAnimation = (HandlerParam_AddAnimation *)BattleHandler_PushWork(a1, EFFECT_ADD_ANIMATION, 0);
+                //addAnimation->animNo = 335;
+                //addAnimation->pos_from = 1;
+                //addAnimation->pos_to = 0;
+                //BattleHandler_PopWork(a1, addAnimation);
+                random = Condition_MakePermanent();
+                ServerDisplay_AddCommon(a1->serverCommandQueue, 48, 1, 0, 335, 0, 0); // Change this Message Probably
+                bhwork = (HandlerParam_Message *)BattleHandler_PushWork(a1, EFFECT_MESSAGE, 0);
+                BattleHandler_StrSetup(&bhwork->str, 1u, 262); // Change This Message
+                BattleHandler_PopWork(a1, bhwork);
+                ServerControl_FieldEffectCore(a1, 0xC, Condition_MakePermanent(), 0);
+            }
+
+            if (trainerId == 1){
+                random = Condition_MakePermanent();
+                ServerDisplay_AddCommon(a1->serverCommandQueue, 48, 1, 0, 116, 0, 0); // Change this Message Probably
+                bhwork = (HandlerParam_Message *)BattleHandler_PushWork(a1, EFFECT_MESSAGE, 0);
+                BattleHandler_StrSetup(&bhwork->str, 1u, 263); // Change This Message
+                BattleHandler_PopWork(a1, bhwork);
+                ServerControl_FieldEffectCore(a1, 0xB, Condition_MakePermanent(), 0);
             }
         }
 

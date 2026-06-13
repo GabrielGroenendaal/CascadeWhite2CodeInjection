@@ -2,12 +2,14 @@ import messages.script.Msg0239.MSGID;
 
 
 import Base;
+import player.Bag;
 import event.Battle;
 import event.EVCamera;
 import event.ObjInit;
 import event.actors.Actor;
 import event.actors.Player;
 import event.app.PokeApp;
+import event.dialogs.ListMenu;
 import event.dialogs.Message;
 import event.dialogs.YesNoWin;
 import event.funfest.Funfest;
@@ -214,7 +216,8 @@ public class MainEvents {
 	public static void main_4() {
 		int v33;
 		int v34;
-
+        int listMenu;
+        int count; 
 		if (EventFlags.Get(404)){
 			Actor.PauseAll();
 			Sound.SEPlay(1351);
@@ -232,10 +235,21 @@ public class MainEvents {
 			Message.CloseAll();
 			Runtime.Sleep(24);
 			ShowExclamationMark(2);
+            Actor.WaitActionFinish();
 
 			Message.ActorEx(1024, 9, 2, 0, 0);
 			Input.LastKeyWait();
 			Message.CloseAll();
+
+            count = Bag.GetItemQuantity(589);
+            if (count == 1){
+                Bag.TakeItem(589, 1);
+            }
+            
+            WordSet.LoadPlayerName(0);
+            Message.System(26, 2);
+            Input.LastKeyWait();
+            Message.CloseAll();
 
 			Actor.WalkRoute(2, 6, 5, 1, 8, 1);
 			Actor.WaitActionFinish();
@@ -246,16 +260,73 @@ public class MainEvents {
 			Input.LastKeyWait();
 			Message.CloseAll();
 
-			TurnNorth(2);
-			Actor.WaitActionFinish();
-			
-			Message.ActorEx(1024, 11, 2, 0, 0);
+            ShowQuestionMark(2);
+            Actor.WaitActionFinish();
+
+            Message.ActorEx(1024, 27, 2, 0, 0);
+			Input.LastKeyWait();
+
+            ShowExclamationMark(2);
+            Actor.WaitActionFinish();
+
+            Message.ActorEx(1024, 28, 2, 0, 0);
+			Input.LastKeyWait();
+
+            TurnWest(2);
+            Actor.WaitActionFinish();
+
+            Message.ActorEx(1024, 29, 2, 0, 0);
 			Input.LastKeyWait();
 			Message.CloseAll();
 
+            HopLeft(2);
+            Actor.WaitActionFinish();
+
+            Message.ActorEx(1024, 30, 2, 0, 0);
+			Input.LastKeyWait();
+			Message.CloseAll();
+
+			TurnNorth(2);
+			Actor.WaitActionFinish();
+			
+            WordSet.LoadPlayerName(0);
+			Message.ActorEx(1024, 31, 2, 0, 0);
+			Input.LastKeyWait();
+			Message.CloseAll();
+            
+            WalkNorthOneTile(2);
+            Actor.WaitActionFinish();
+            Message.ActorEx(1024, 32, 2, 0, 0);
+			Input.LastKeyWait();
+			Message.CloseAll();
+
+            Label_OfferCandy:
+            ListMenu.InitRightAnchor(31, 5, 0, 1, listMenu);
+			ListMenu.AddItem(19, 21, 0);
+			ListMenu.AddItem(20, 22, 1);
+			ListMenu.ShowDialog();
+
+            if (listMenu == 0){
+                Message.ActorEx(1024, 23, 2, 0, 0);
+                Input.LastKeyWait();
+                Message.CloseAll();
+                Global2805(507, 1);
+            }
+            else if (listMenu == 1) {
+                Message.ActorEx(1024, 24, 2, 0, 0);
+                Input.LastKeyWait();
+                Message.CloseAll();
+                Global2805(522, 1);
+            }
+            else {
+                Message.ActorEx(1024, 25, 2, 0, 0);
+                Input.LastKeyWait();
+                goto Label_OfferCandy;
+            }
+
 			EventWorks.Set(16525, 3);
 			Runtime.FinishSubEvents();
-		Actor.UnpauseAll();
+		    Actor.UnpauseAll();
 		}
 	}
 
@@ -293,7 +364,9 @@ public class MainEvents {
 	}
 
 
-	
+	static meta void HopLeft(int npcId) : VActionSequence {
+            Action0032(1);
+       }
 	static meta void ShowExclamationMark(int npcId) : VActionSequence {
 		Action004b(1);
 	}
@@ -336,7 +409,7 @@ public class MainEvents {
 	static meta void WalkNorthOneTile(int npcId) : VActionSequence {
 		Action000c(1);
 	}
-	
+	static meta void Global2805(int a1, int a2) : VGlobalCall[2805];
 	static native void Action009f(int amount) : 0x9f;
 	static native void Action000c(int amount) : 0xc;
 	static native void Action00a1(int amount) : 0xa1;
@@ -349,6 +422,7 @@ public class MainEvents {
 	static native void Action0021(int amount) : 0x21;
 	static native void Action0022(int amount) : 0x22;
 	static native void Action0023(int amount) : 0x23;
+	static native void Action0032(int amount) : 0x32;
 	static native void Action004b(int amount) : 0x4b;
 
 }

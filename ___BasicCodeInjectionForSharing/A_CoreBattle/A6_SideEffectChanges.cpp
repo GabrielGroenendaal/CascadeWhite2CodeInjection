@@ -218,6 +218,75 @@ extern "C"
     }
 
 
+    void HandlerAngerPointPower(int a1, ServerFlow *a2, int a3)
+    {
+        BattleMon *mon;
+        if (a3 == BattleEventVar_GetValue(VAR_ATTACKING_MON))
+        {
+            mon = Handler_GetBattleMon(a2, a3);
+            if (BattleMon_GetTurnFlag(mon, TURNFLAG_MOVEFAILEDLASTTURN))
+            {
+                BattleEventVar_MulValue(VAR_MOVE_POWER_RATIO, 6144);
+            }
+        }
+    }
+
+    void HandlerAngerPointSpeed(int a1, ServerFlow *a2, int a3)
+    {
+        BattleMon *mon;
+        if (a3 == BattleEventVar_GetValue(VAR_ATTACKING_MON))
+        {
+            mon = Handler_GetBattleMon(a2, a3);
+            if (BattleMon_GetTurnFlag(mon, TURNFLAG_MOVEFAILEDLASTTURN))
+            {
+                BattleEventVar_MulValue(VAR_RATIO, 6144);
+            }
+        }
+    }
+
+    void HandlerAngerPointMessage(int a1, ServerFlow *a2, int a3)
+    {
+        BattleMon *mon;
+        HandlerParam_Message *v1;
+        if (a3 == BattleEventVar_GetValue(VAR_MON_ID))
+        {
+            mon = Handler_GetBattleMon(a2, a3);
+            if (BattleMon_GetTurnFlag(mon, TURNFLAG_MOVEFAILED))
+            {
+                BattleHandler_PushRun(a2, EFFECT_ABILITYPOPUPIN, (int)a3);
+                v1 = (HandlerParam_Message *)BattleHandler_PushWork(a2, EFFECT_MESSAGE, (int)a3);
+                BattleHandler_StrSetup(&v1->str, 2u, 1243);
+                BattleHandler_AddArg(&v1->str, a3);
+                BattleHandler_PopWork(a2, v1);
+                BattleHandler_PushRun(a2, EFFECT_ABILITYPOPUPOUT, (int)a3);
+            }
+        }
+    }
+
+
+
+    void HandlerFieldNoRetreat(BattleEventItem *a1, ServerFlow *serverFlow, int currentSide, int *work)
+    {
+        HandlerParam_AddCondition *v10;
+        HandlerParam_AddAnimation *v6;
+        
+        int currentSlot = BattleEventVar_GetValue(VAR_MON_ID);
+        if (currentSide == GetSideFromMonID(currentSlot))
+        {
+            v6 = (HandlerParam_AddAnimation*)BattleHandler_PushWork(serverFlow, EFFECT_ADD_ANIMATION, currentSlot);
+            v6->pos_from =  Handler_PokeIDToPokePos(serverFlow, currentSlot);
+            v6->pos_to = 6;
+            v6->animNo = 335;
+            BattleHandler_PopWork(serverFlow, v6);
+            v10 = (HandlerParam_AddCondition *)BattleHandler_PushWork(serverFlow, EFFECT_ADDCONDITION, 31);
+            v10->sickID = CONDITION_BLOCK;
+            ConditionData permanent = Condition_MakePermanentParam(1);
+            v10->sickCont = permanent;
+            v10->pokeID = currentSlot;
+            BattleHandler_PopWork(serverFlow, v10);
+        }
+    }
+
 
      typedef struct
      {
@@ -256,6 +325,17 @@ extern "C"
     FIELD_TRIGGERTABLE FieldVictoryStarHandlers[] = {
         {EVENT_MOVE_ACCURACY, (FIELD_HANDLER_FUNC)HandlerFieldVictoryStarAccuracy}};
 
+    
+    FIELD_TRIGGERTABLE FieldDragonsFuryHandlers[] = {
+        {EVENT_MOVE_EXECUTE_END, (ABILITY_HANDLER_FUNC)HandlerAngerPointMessage},  // 22
+        {EVENT_MOVE_EXECUTE_FAIL, (ABILITY_HANDLER_FUNC)HandlerAngerPointMessage}, // 22
+        {EVENT_MOVE_POWER, (ABILITY_HANDLER_FUNC)HandlerAngerPointPower},
+        {EVENT_CALC_SPEED, (ABILITY_HANDLER_FUNC)HandlerAngerPointSpeed},
+    };
+    
+    FIELD_TRIGGERTABLE FieldNoRetreatHandlers[] = {
+        {EVENT_SWITCH_IN, (FIELD_HANDLER_FUNC)HandlerFieldVictoryStarAccuracy}};
+    
     // FIELD_TRIGGERTABLE *EventAddFieldWeather(int *a1)
     // {
     //     *a1 = 1;
@@ -358,10 +438,23 @@ extern "C"
         return (BattleEventHandlerTableEntry *)FieldVictoryStarHandlers;
     }
 
-        BattleEventHandlerTableEntry *EventAddFieldSmokeBomb(int *a1)
+    BattleEventHandlerTableEntry *EventAddFieldSmokeBomb(int *a1)
     {
         *a1 = 1;
         return (BattleEventHandlerTableEntry *)FieldSmokeBombHandlers;
+    }
+
+
+    BattleEventHandlerTableEntry *EventAddFieldDragonsFury(int *a1)
+    {
+        *a1 = 4;
+        return (BattleEventHandlerTableEntry *)FieldDragonsFuryHandlers;
+    }
+
+    BattleEventHandlerTableEntry *EventAddFieldNoRetreat(int *a1)
+    {
+        *a1 = 1;
+        return (BattleEventHandlerTableEntry *)FieldNoRetreatHandlers;
     }
     
 
@@ -613,6 +706,8 @@ extern "C"
         {FLDEFF_TERRAIN, EventAddFieldVictoryStar},
         {FLDEFF_VICTORYSTAR, EventAddFieldVictoryStar},
         {FLDEFF_SMOKEBOMB, EventAddFieldSmokeBomb},
+        {FLDEFF_DRAGONSFURY, EventAddFieldDragonsFury},
+        {FLDEFF_NO_RETREAT, EventAddFieldNoRetreat}
         
 #if ADD_NEW_ITEMS
         {(FieldEffect)FLDEFF_TERRAIN, EventAddFieldTerrain},
@@ -1783,36 +1878,36 @@ extern "C"
     }
 
     /* SCOURGE OF UNOVA */
-    void HandlerSideUnovasEnd(BattleEventItem *a1, ServerFlow *serverFlow, int currentSide, int *work)
-    {
-        HandlerParam_ChangeStatStage *v3;
-        HandlerParam_ChangeStatStage *v6;
+    // void HandlerSideUnovasEnd(BattleEventItem *a1, ServerFlow *serverFlow, int currentSide, int *work)
+    // {
+    //     HandlerParam_ChangeStatStage *v3;
+    //     HandlerParam_ChangeStatStage *v6;
 
-        int currentSlot = BattleEventVar_GetValue(VAR_MON_ID);
-        if (currentSide == GetSideFromMonID(currentSlot))
-        {
-            BattleMon *currentMon = Handler_GetBattleMon(serverFlow, currentSlot);
-            v3 = (HandlerParam_ChangeStatStage *)BattleHandler_PushWork(serverFlow, EFFECT_CHANGESTATSTAGE, currentSlot);
-            v3->header.flags |= 0x04000000;
-            v3->poke_cnt = 1;
-            v3->pokeID[0] = currentSlot;
-            v3->fMoveAnimation = 1;
-            v3->rankType = STATSTAGE_ACCURACY;
-            v3->rankVolume = -1;
-            v3->pad = 0x40000000;
-            BattleHandler_PopWork(serverFlow, v3);
-        }
-    }
+    //     int currentSlot = BattleEventVar_GetValue(VAR_MON_ID);
+    //     if (currentSide == GetSideFromMonID(currentSlot))
+    //     {
+    //         BattleMon *currentMon = Handler_GetBattleMon(serverFlow, currentSlot);
+    //         v3 = (HandlerParam_ChangeStatStage *)BattleHandler_PushWork(serverFlow, EFFECT_CHANGESTATSTAGE, currentSlot);
+    //         v3->header.flags |= 0x04000000;
+    //         v3->poke_cnt = 1;
+    //         v3->pokeID[0] = currentSlot;
+    //         v3->fMoveAnimation = 1;
+    //         v3->rankType = STATSTAGE_ACCURACY;
+    //         v3->rankVolume = -1;
+    //         v3->pad = 0x40000000;
+    //         BattleHandler_PopWork(serverFlow, v3);
+    //     }
+    // }
 
-    BattleEventHandlerTableEntry SideUnovasEndHandlers[] = {
-        {EVENT_SWITCH_IN, HandlerSideUnovasEnd}, // Rapid Spin implementation is in HandlerRapidSpin
-    };
+    // BattleEventHandlerTableEntry SideUnovasEndHandlers[] = {
+    //     {EVENT_SWITCH_IN, HandlerSideUnovasEnd}, // Rapid Spin implementation is in HandlerRapidSpin
+    // };
 
-    BattleEventHandlerTableEntry *EventAddSideUnovasEnd(int *a1)
-    {
-        *a1 = 1;
-        return SideUnovasEndHandlers;
-    }
+    // BattleEventHandlerTableEntry *EventAddSideUnovasEnd(int *a1)
+    // {
+    //     *a1 = 1;
+    //     return SideUnovasEndHandlers;
+    // }
 
 
 
@@ -1859,36 +1954,36 @@ extern "C"
 
 
     /* STOLEN */
-    void HandlerSideStolen(BattleEventItem *a1, ServerFlow *serverFlow, int currentSide, int *work)
-    {
-        HandlerParam_ChangeStatStage *v3;
-        HandlerParam_ChangeStatStage *v6;
+    // void HandlerSideStolen(BattleEventItem *a1, ServerFlow *serverFlow, int currentSide, int *work)
+    // {
+    //     HandlerParam_ChangeStatStage *v3;
+    //     HandlerParam_ChangeStatStage *v6;
 
-        int currentSlot = BattleEventVar_GetValue(VAR_MON_ID);
-        if (currentSide == GetSideFromMonID(currentSlot))
-        {
-            BattleMon *currentMon = Handler_GetBattleMon(serverFlow, currentSlot);
-            v3 = (HandlerParam_ChangeStatStage *)BattleHandler_PushWork(serverFlow, EFFECT_CHANGESTATSTAGE, currentSlot);
-            v3->header.flags |= 0x04000000;
-            v3->poke_cnt = 1;
-            v3->pokeID[0] = currentSlot;
-            v3->fMoveAnimation = 1;
-            v3->rankType = STATSTAGE_ACCURACY;
-            v3->rankVolume = -1;
-            v3->pad = 0x40000000;
-            BattleHandler_PopWork(serverFlow, v3);
-        }
-    }
+    //     int currentSlot = BattleEventVar_GetValue(VAR_MON_ID);
+    //     if (currentSide == GetSideFromMonID(currentSlot))
+    //     {
+    //         BattleMon *currentMon = Handler_GetBattleMon(serverFlow, currentSlot);
+    //         v3 = (HandlerParam_ChangeStatStage *)BattleHandler_PushWork(serverFlow, EFFECT_CHANGESTATSTAGE, currentSlot);
+    //         v3->header.flags |= 0x04000000;
+    //         v3->poke_cnt = 1;
+    //         v3->pokeID[0] = currentSlot;
+    //         v3->fMoveAnimation = 1;
+    //         v3->rankType = STATSTAGE_ACCURACY;
+    //         v3->rankVolume = -1;
+    //         v3->pad = 0x40000000;
+    //         BattleHandler_PopWork(serverFlow, v3);
+    //     }
+    // }
 
-    BattleEventHandlerTableEntry SideStolenHandlers[] = {
-        {EVENT_SWITCH_IN, HandlerSideStolen},
-    };
+    // BattleEventHandlerTableEntry SideStolenHandlers[] = {
+    //     {EVENT_SWITCH_IN, HandlerSideStolen},
+    // };
 
-    BattleEventHandlerTableEntry *EventAddSideStolen(int *a1)
-    {
-        *a1 = 1;
-        return SideStolenHandlers;
-    }
+    // BattleEventHandlerTableEntry *EventAddSideStolen(int *a1)
+    // {
+    //     *a1 = 1;
+    //     return SideStolenHandlers;
+    // }
 
 
 
@@ -1897,36 +1992,36 @@ extern "C"
 
 
     /* STURDY FIGHTER */
-    void HandlerSideSturdyFighter(BattleEventItem *a1, ServerFlow *serverFlow, int currentSide, int *work)
-    {
-        HandlerParam_ChangeStatStage *v3;
-        HandlerParam_ChangeStatStage *v6;
+    // void HandlerSideSturdyFighter(BattleEventItem *a1, ServerFlow *serverFlow, int currentSide, int *work)
+    // {
+    //     HandlerParam_ChangeStatStage *v3;
+    //     HandlerParam_ChangeStatStage *v6;
 
-        int currentSlot = BattleEventVar_GetValue(VAR_MON_ID);
-        if (currentSide == GetSideFromMonID(currentSlot))
-        {
-            BattleMon *currentMon = Handler_GetBattleMon(serverFlow, currentSlot);
-            v3 = (HandlerParam_ChangeStatStage *)BattleHandler_PushWork(serverFlow, EFFECT_CHANGESTATSTAGE, currentSlot);
-            v3->header.flags |= 0x04000000;
-            v3->poke_cnt = 1;
-            v3->pokeID[0] = currentSlot;
-            v3->fMoveAnimation = 1;
-            v3->rankType = STATSTAGE_ACCURACY;
-            v3->rankVolume = -1;
-            v3->pad = 0x40000000;
-            BattleHandler_PopWork(serverFlow, v3);
-        }
-    }
+    //     int currentSlot = BattleEventVar_GetValue(VAR_MON_ID);
+    //     if (currentSide == GetSideFromMonID(currentSlot))
+    //     {
+    //         BattleMon *currentMon = Handler_GetBattleMon(serverFlow, currentSlot);
+    //         v3 = (HandlerParam_ChangeStatStage *)BattleHandler_PushWork(serverFlow, EFFECT_CHANGESTATSTAGE, currentSlot);
+    //         v3->header.flags |= 0x04000000;
+    //         v3->poke_cnt = 1;
+    //         v3->pokeID[0] = currentSlot;
+    //         v3->fMoveAnimation = 1;
+    //         v3->rankType = STATSTAGE_ACCURACY;
+    //         v3->rankVolume = -1;
+    //         v3->pad = 0x40000000;
+    //         BattleHandler_PopWork(serverFlow, v3);
+    //     }
+    // }
 
-    BattleEventHandlerTableEntry SideSturdyFighterHandlers[] = {
-        {EVENT_SWITCH_IN, HandlerSideSturdyFighter},
-    };
+    // BattleEventHandlerTableEntry SideSturdyFighterHandlers[] = {
+    //     {EVENT_SWITCH_IN, HandlerSideSturdyFighter},
+    // };
 
-    BattleEventHandlerTableEntry *EventAddSideSturdyFighter(int *a1)
-    {
-        *a1 = 1;
-        return SideSturdyFighterHandlers;
-    }
+    // BattleEventHandlerTableEntry *EventAddSideSturdyFighter(int *a1)
+    // {
+    //     *a1 = 1;
+    //     return SideSturdyFighterHandlers;
+    // }
 
 
 
@@ -1954,10 +2049,11 @@ extern "C"
         {SIDEEFF_FORESTWRATH, EventAddSideForestWrath, 1},      // Done
         {SIDEEFF_SMOKEBOMB, EventAddSideSmokeBomb, 1},          // Done
         {SIDEEFF_RUMBLE, EventAddSideRumble, 1},                // Reference Sea of Fire
-        {SIDEEFF_STURDY_FIGHTER, EventAddSideSturdyFighter, 1}, // The most complicated to implement and also i'm not sure how i wanna do it yet
+        {SIDEEFF_STURDY_FIGHTER, EventAddSideReflect, 1}, // The most complicated to implement and also i'm not sure how i wanna do it yet
         {SIDEEFF_UNDERDOG, EventAddSideUnderdog, 1},            // Implemented
-        {SIDEEFF_STOLEN, EventAddSideStolen, 1},
-        {SIDEEFF_UNOVA_END, EventAddSideUnovasEnd, 1} // Reference Perish Song
+        {SIDEEFF_STOLEN, EventAddSideReflect, 1},
+        {SIDEEFF_UNOVA_END, EventAddSideReflect, 1}, // Reference Perish Song
+        {SIDEEFF_KYUREMBOSS, EventAddSideReflect, 1} // Placeholder
     };
 
     int *SideEffectEvent_AddItem(int currentSide, SideEffect effect, ConditionData condData)

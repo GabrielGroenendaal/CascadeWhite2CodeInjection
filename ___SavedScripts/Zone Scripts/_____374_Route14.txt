@@ -416,8 +416,8 @@ public class MainEvents {
         Message.ActorEx(1024, 21, 5, 0, 0);
         Input.LastKeyWait();
         Message.CloseAll();
-        Global2805(192, 3);
-        Global2805(556, 3);
+        Global2805(192, 1);
+        Global2805(556, 1);
         Global2805(389, 1);
         EventFlags.Set(1575);
         EventFlags.Set(546);

@@ -1,0 +1,241 @@
+
+
+/*         
+	
+	-----------------------------------------------------------------------------------------------------------------------------------------
+	-------------------------------------------------- WHAT I WANNA DO TODAY ---------------------------------------------------------------- 
+	-----------------------------------------------------------------------------------------------------------------------------------------       
+
+*/
+
+
+Blue Origin 
+
+
+AI Changes: 
+    - Check the 2 turn move AI and make sure it's not doubling up into resists. 
+    - Double check the healing AI
+
+Documentation: 
+    Update the Mastersheet to account for all the changes to item rewards. 
+
+Item Changes: 
+    Life Orb removed from Relic Sanctum. Instead, defeating the Strange Statue has Lenora reward the player with their choice between a Brave or Quiet mint. 
+    Janine rewards 1x of each gym, down from 2x
+    Erika rewards 1x of each resist berry, down from x2
+    The optional gym leaders reward +1 of each resist berry / gem, down from 3
+    Sabrina rewards no Mints, only 1x IV enhancer 
+    Blaine rewards no mints, only 1x IV enhancer 
+    Brock rewards 5x Berry Juice, down from 10. 
+
+Bug Fixes: 
+    Fix the Frigate Grunt Teams 
+    Update the Virbank Gym script to not show text 
+    Update the post roxie gym battle text to better reflect new objectives 
+    Check if we actually implemented Scientist Hughes.
+
+
+
+
+
+Changes to Mini Bosses: 
+
+    Volkner: 
+        Level 51 Jolteon @ Ability Drill (Ability: Tenacity) (Thunderbolt, Volt Switch, Thunder Wave, Signal Beam)
+        Level 51 Raichu @ Tera Belt (Ability: Sheer Force) (Icicle Crash, Teeter Dance, Earth Power, Discharge)
+        Level 51 Ambipom @ Starf Berry (Ability: Speed Boost) (Slam, Thunder Punch, Substitute, Baton Pass)
+        Level 51 Luxray @ Focus Band (Ability: Rivalry) (Beat Up, Discharge, Glare, Thrash)
+        Level 52 Electivire @ Assault Vest (Ability: Galvanize) (Return, Ice Punch, Cross Chop, Earthquake)
+
+    Roxanne:
+        Level 52 Cradily @ Focus Band (Ability: Poison Heal) (Leaf Tornado, Ancient Power, Infestation, Gastro Acid)
+        Level 52 Claydol @ Brightpowder (Ability: Speed Boost) (Stored Power, Ancient Power, Stealth Rock, Healing Wish)
+        Level 52 Probopass @ Tera Weakness Policy (Ability: Sand Force) (Earth Power, Flash Cannon, Weather Ball, Charge Beam)
+        Level 52 Onix @ Power Herb (Ability: Sand Rush) (Skull Bash, Dig, Rock Slide, Substitute)
+        Level 52 Shuckle @ Light Clay (Ability: Strong Body) (Infestation, Sand Tomb, Light Screen, Reflect)
+        Level 53 Nosepass @ Mascot Badge (Ability: Volt Absorb) (Power Gem, Discharge, Energy Ball, Recover)
+    
+    Morty:
+        Level 52 Dusclops @ Eviolite (Ability: Cursed Body) (Ominous Wind, Curse, Protect, Night Shade)
+        Level 52 Dustox @ Focus Band (Ability: Marvel Scale) (Infestation, Ominous Wind, Poison Gas, Moonlight)
+        Level 52 Stantler @ Colbur Berry (Ability: Intimidate) (Body Slam, Phantom Strike, Megahorn, Hypnosis)
+        Level 52 Sableye @ Loaded Dice (Ability: Hyper Cutter) (Fury Swipes, Shadow Claw, Confuse Ray, Strength)
+        Level 52 Honchkrow @ Roseli Berry (Ability: Exploit) (Drill Peck, Sucker Punch, Pursuit, Heat Wave)
+        Level 53 Gengar @ Tera Sash (Ability: Shadow Tag) (Dazzling Gleam, Shadow Ball,Sludge Bomb, Thunderbolt)
+
+    Flannery:
+        Level 56 Magcargo @ Tera Gem (Ability: Drought) (Heat Wave, Diamond Storm, Stealth Rock, Light Screen)
+        Level 56 Tropius @ Normal Gem (Ability: Chlorophyll) (Solarbeam, Hyper Beam, Ancient Power, Sleep Powder)
+        Level 56 Camerupt @ Shuca Berry (Ability: Solid Rock) (Magma Storm, High Horsepower, Solarbeam, Growth)
+        Level 56 Wobbuffet @ Colbur Berry (Ability: Shadow Tag) (Thunder Wave, Helping Hand, Psywave, Follow Me)
+        Level 56 Infernape @ Focus Sash (Ability: Exploit) (Overheat, Close Combat, Fake Out, Thunderpunch)
+        Level 57 Torkoal @ Assault Vest (Ability: Aftermath) (Blast Burn, Explosion, Giga Impact, Body Press)
+
+
+
+
+
+
+Drayden Split Trainers:
+        
+    
+    Drayden Split Mini Bosses:
+        Fantina 
+            Current:
+                Vileplueme @ Focus Band (Ability: Effect Spore) (Whirlwind, Hex, Dazzling Gleam, Toxic Spikes)
+                Mawile @ Occa Berry (Ability: Sheer Force) (Spirit Break, Thunder, Blizzard, Fire Blast) 
+                Clefable @ Tera Sash (Ability: Magic Guard) (Psycho Boost, Starburst, Flamethrower, Healing Wish)
+                Drifblim @ Fairy Gem (Ability: Flare Boost) (Hurricane, Ominous Wind, Fairy Wind, Tailwind)
+                Mismagius @ Life Orb (Abillity: Shadow Tag) (Moonblast, Shadow Ball, Calm Mind, Trick Room)
+            
+            Pitch:
+                Vileplume @ Focus Band (Ability: Effect Spore) (Whirlwind, Hex, Dazzling Gleam, Toxic Spikes)
+                Mawile @ Quick Claw (Ability: Sheer Force) (Spirit Break, Fire Blast, Blizzard, Thunder)
+                Clefable @ Tera Sash (Ability: Magic Guard) (Psycho Boost, Moonblast, Ominous Wind, Protect)
+                Drifblim @ Liechi Berry (Ability: Unburden) (Acrobatics, Phantom Strike, Explosion, Stockpile)
+                Mismagius @ Wise Glasses (Ability: Levitate) (Moonblast, Shadow Ball, Inferno, Diamond Storm)
+
+
+
+        Hooligans:
+            Current: 
+                Raticate @ Chople Berry (Ability: Guts) (Facade, Quick Attack, Crunch, Protect)
+                Scolipede @ Eject Pack (Ability: Tenacity) (Steamroller, Gunk Shot, Spin Out, Headlong Rush)
+                Donphan @ Normal Gem (Ability: Speed Boost) (High Horsepower, Slam, Rock Slide, Bulk Up)
+                Houndoom @ Passho Berry (Ability: Intimidate) (Fire Lash, Crunch, Sludge Bomb, Howl)
+                Scrafty @ Tera Leftovers (Ability: Shed Skin) (Circle Throw, Glare, Beat Up, Rest)
+
+            I definitely want to keep Tera Scrafty on the team. I think Arbok is also a good fit with Life Orb maybe? 
+
+            Old:
+                Scrafty @ Roseli Berry (Ability: Bulletproof) (Focus Punch, Payback, Rock Wrecker, Fake Out)
+                Arbok @ Assault Vest (Ability: Intimidate) (Wrap, Dragon Tail, Crunch, Rock Slide)
+                Wigglytuff @ Focus Band (Ability: Aerilate) (Dazzling Gleam, Hyper Voice, Helping Hand, Follow Me)
+                Granbull @ Muscle Band (Ability: Quick Feet) (Heart Stamp, Sky Uppercut, Facade, Swagger)
+                Garbodor @ Tera Orb (Ability: Aftermath) (Knock Off, Gunk Shot, Heavy Slam, Protect)
+        
+        Blue
+            Current (Triples)
+                Blastoise @ Starf Berry (Ability: Quick Draw) (Hydro Cannon, Steel Beam, Blizzard, Protect)
+                Venusaur @ Focus Band (Ability: Effect Spore) (Leaf Tornado, Roar, Sweet Scent, Toxic Spikes)
+                Charizard @ Brightpowder (Ability: Tough Claws) (Flare Blitz, Dragon Rush, Tailwind, Protect)
+                Alakazam @ Focus Sash (Ability: Magic Guard) (Psychic Noise, Blizzard, Dark Void, Zap Cannon)
+                Pidgeot @ Tera Plate (Ability: Aerilate) (Tailwind, Extremespeed, Hyper Beam, Focus Blast)
+                Eevee @ Mascot Badge (Ability: Savant) (Ice Beam, Heat Wave, Sucker Punch, Iron Tail)
+
+            Proposed Blue + Red Tag Battle 
+                Blue: 
+                Blatoise @ Starf Berry (Ability: Quick Draw) (Hydro Cannon, Steel Beam, Stockpile, Blizzard)
+                Alakazam @ Focus Sash (Ability: Inner Focus) (Psychic, Thunderbolt, Ice Beam, Detect)
+                Pidgeot @ Tera Plate (Ability: Aerilate) (Tailwind, Extremespeed, Hyper Voice, Focus Blast)
+                Eevee @ Mascot Badge (Ability: Savant) (Shadow Ball, Zing Zap, Play Rough, Reflect)
+
+                Red: 
+                Charizard @ Brightpowder (Ability: Tough Claws) (Flare Blitz, Dragon Rush, Giga Impact, U-Turn)
+                Venusaur @ Focus Band (Ability: Effect Spore) (Leaf Tornado, Sludge Wave, Roar, Earth Power)
+                Snorlax @ Tera Leftovers (Ability: Thick Fat) (Thrash, Bind, Scary Face, Hammer Arm)
+                Pikachu @ Mascot Badge (Ability: Galvanize) (Extremespeed, Iron Tail, Mega Punch, Light Screen)
+
+
+
+
+
+
+
+
+    
+[ BUGS AND OPTIMIZATION ]
+    Investigate the Damage Calc Discrepancies 
+        I don't have an explanation for these yet. It's possible there's some weird damage value changes on the calc side, or the natures are incorrect. 
+        We are just going to have to play through the game and assess if there are any weird damage calc happenings. 
+
+    Playtest our Game: 
+        We need to do some runs using vanilla switch AI 
+        Then we need to do some runs using Gen 4 Switch AI 
+        If we were to do g4 switch AI we would need to slap a lot more coverage on across the board.
+    
+
+
+[ AI ]
+    Double check that we implemented the spread move logic for moves. Idk why it wouldn't be in the repo we definitely copied it over. 
+
+
+
+
+====================================================================================================================================================
+/*   MARLON BUILD   */
+
+
+
+    IMPOSSIBLE: 
+        - Debug Illusion 
+        - Test Battle Scan with Type Changing and Ability Changing.
+        - Update Terastalization Polish
+            - Some kind of color status for Tera
+            - Fix the Tera Animation in Doubles 
+            - See if you can get the tera types to be stored properly somewhere. 
+    
+
+
+ 
+
+
+====================================================================================================================================================
+/*   NOTES    */
+        
+
+    Underutilized Mechanics: 
+        Back to Backs
+        
+        Limit to 3 Pokemon 
+
+        Chip Away Normal Types 
+        Ability Neutraliizing: 
+            Gastro Acid 
+
+        Evasion:
+            Double Team 
+            Acid Armor 
+            Smokescreen 
+            Sand Attack (in doubles) 
+            Anticipation
+            Snow Cloak / Sand Veil
+        Confusion:  
+            Supersonic
+            Rock Climb 
+            Confuse Ray 
+            Swagger 
+        Attraction 
+        Hazards
+        Trapping 
+            Block 
+            Mean Look 
+            Dive / Dig / Bounce / Fly / Shadow Force 
+            Pursuit 
+            Wrap / Fire Spin / Clamp / Whirlpool / etc. 
+            Shadow Tag / Arena Trap
+        Failure Boosting: 
+            Anger Point 
+            Thrash 
+            Seething Cold 
+            Uproar 
+            Stompin Tantrum 
+            Grudge 
+            Blunder Policy 
+        Priority: 
+            Quick Claw 
+            Quick Draw 
+            Trickster Herb 
+        Speed Control: 
+            Scary Face 
+            Rock Tomb 
+            Bulldoze 
+            icy Wind 
+            Glaciate 
+            Heavy Slam 
+            Heat Crash (make sure it has the same id as icy wind)
+        Chaos Stats: 
+            Moody 
+            Starf Berry 
+
+

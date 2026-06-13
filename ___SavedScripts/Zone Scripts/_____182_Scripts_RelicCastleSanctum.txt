@@ -1,5 +1,6 @@
 import messages.script.Msg0240.MSGID;
 
+import player.Bag;
 import event.EVCamera;
 import event.Battle;
 import event.actors.Actor;
@@ -16,23 +17,27 @@ import system.Sound;
 public class MainEvents {
 	public static void main_1() { // @ 0x6
 		int v16;
-        int v7;
-        int v0;
-
+        	int v7;
+        	int v0;
+        	int count; 
+		int yesNo; 
+		int isVictory;
+		
 		Actor.PauseAll();
 		Sound.SEPlay(1351);
-		Sound.PVPlay(637, 0);
 		if (EventFlags.Get(404)) {
+            count = Bag.GetItemQuantity(588);
+            if (count == 1){
+                goto LABEL_BringingTheSunkenCrown;
+            }
 			Message.System(6, 2);
-			Sound.PVWait();
 			Message.WaitAdvance();
 			Message.CloseAll();
 			goto LABEL_00c4;
 		}
         Message.System(0, 0);
-        Sound.PVWait();
         Message.WaitAdvance();
-           Message.CloseSystem();
+        Message.CloseSystem();
         Message.System(1, 0);
         v7 = YesNoWin.Show();
         Message.CloseSystem();
@@ -65,11 +70,50 @@ public class MainEvents {
 		Message.System(4, 0);
 		Message.WaitAdvance();
 		Message.CloseSystem();
-		Global2805(270, 1);
+		Global2805(589, 1);
 		Message.System(5, 0);
 		Message.WaitAdvance();
 		Message.CloseSystem();
-		
+		goto LABEL_00c4;
+
+        LABEL_BringingTheSunkenCrown: 
+        Message.System(7, 2);
+		Message.WaitAdvance();
+        yesNo = YesNoWin.Show();
+        if (yesNo == 0){
+            Bag.TakeItem(588, 1);
+            Message.System(8, 2);
+		    Message.WaitAdvance();
+            Message.CloseAll();
+            Runtime.Sleep(32);
+            Sound.SEPlay(2226);
+            EVCamera.Shake(6, 0, 3, 10, 1, 0, 1, 3);
+            Runtime.Sleep(32);
+
+            Sound.PVPlay(637, 0);
+            Message.Spiked(9, 2);
+            Message.WaitAdvance();
+            Message.CloseAll();
+            Sound.PVWait();
+
+            Battle.CallWildBattleEx(637, 75, 0, 0);	
+			isVictory = Battle.IsWildVictory();
+			if (isVictory != 1){ 
+				Battle.CallWildLose();
+				goto LABEL_00c4;		
+			}
+			Battle.EndWildBattle();
+            Message.System(10, 0);
+            Message.WaitAdvance();
+            Message.CloseSystem();
+        }
+        else {
+            Message.System(17, 2);
+		    Message.WaitAdvance();
+            Message.CloseAll();
+        }
+
+
 		LABEL_00c4:
 		Runtime.FinishSubEvents();
 		Actor.UnpauseAll();

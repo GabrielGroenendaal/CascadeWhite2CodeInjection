@@ -1,5 +1,31 @@
-eisseNl (Huntail) (M) @ None
+nocaB (Primeape) (F) @ Black Belt
 Level: 37
+Naughty Nature
+Ability: Limber
+Ability Slot: 2
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 17 HP / 16 Atk / 31 Def / 16 SpA / 10 SpD / 22 Spe
+- Cross Chop
+- U-turn
+- Reversal
+- Knock Off
+Met: Route 36
+
+eldooN (Tangrowth) (F) @ Miracle Seed
+Level: 37
+Rash Nature
+Ability: Chlorophyll
+Ability Slot: 2
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 19 HP / 26 Atk / 31 Def / 20 SpA / 28 SpD / 20 Spe
+- Knock Off
+- Sleep Powder
+- Giga Drain
+- Confusion
+Met: Ilex Forest
+
+eisseNl (Huntail) (M) @ None
+Level: 39
 Sassy Nature
 Ability: Swift Swim
 Ability Slot: 1
@@ -11,70 +37,44 @@ IVs: 2 HP / 27 Atk / 30 Def / 0 SpA / 18 SpD / 19 Spe
 - Sucker Punch
 Met: Route 41
 
-.I.B.F (Phione) @ None
-Level: 37
-Quiet Nature
-Ability: Damp
-Ability Slot: 1
-EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-IVs: 6 HP / 17 Atk / 18 Def / 4 SpA / 13 SpD / 12 Spe
-- Surf
-- Charm
-- Supersonic
-- Bubble Beam
-Met: Route 40
-
-surebreC (Houndoom) (M) @ None
-Level: 38
-Rash Nature
-Ability: Flash Fire
-Ability Slot: 2
-EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-IVs: 12 HP / 23 Atk / 23 Def / 11 SpA / 9 SpD / 8 Spe
-- Fire Fang
-- Sucker Punch
-- Thunder Fang
-- Crunch
-Met: Cliff Edge Gate
-
-peerCnk (Toxicroak) (F) @ None
+layoRn♀ (Nidoqueen) (F) @ None
 Level: 39
-Quiet Nature
-Ability: Hyper Cutter
+Timid Nature
+Ability: Battle Armor
 Ability Slot: 1
 EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-IVs: 1 HP / 13 Atk / 31 Def / 4 SpA / 27 SpD / 22 Spe
-- Bullet Punch
-- Fake Out
-- Mach Punch
+IVs: 1 HP / 11 Atk / 1 Def / 9 SpA / 28 SpD / 28 Spe
+- Double Kick
+- Bite
 - Sludge Bomb
-Met: Olivine City
+- Body Slam
+Met: Dark Cave
 
-okeePl (Pelipper) (F) @ None
-Level: 37
-Lonely Nature
-Ability: Marvel Scale
-Ability Slot: 2
-EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-IVs: 2 HP / 28 Atk / 29 Def / 26 SpA / 28 SpD / 7 Spe
-- Air Cutter
-- Signal Beam
-- Bubble Beam
-- Roost
-Met: Route 39
-
-osrratS (Starmie) @ None
-Level: 37
-Mild Nature
-Ability: Rain Dish
+tegguN (Aron) (F) @ Exp. Share
+Level: 35
+Serious Nature
+Ability: Rock Head
 Ability Slot: 1
 EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-IVs: 9 HP / 5 Atk / 5 Def / 13 SpA / 16 SpD / 29 Spe
-- Confusion
-- Bubble Beam
-- Surf
-- Recover
-Met: Cianwood City
+IVs: 8 HP / 18 Atk / 23 Def / 11 SpA / 23 SpD / 22 Spe
+- Strength
+- Rock Smash
+- Rock Slide
+- Iron Head
+Met: Mt. Mortar
+
+nwapSeraR (Cranidos) (F) @ Exp. Share
+Level: 38
+Sassy Nature
+Ability: Rock Head
+Ability Slot: 1
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 27 HP / 30 Atk / 18 Def / 5 SpA / 0 SpD / 30 Spe
+- Rock Slide
+- U-turn
+- Dragon Rush
+- Earthquake
+Met: National Park
 
 eldeeN (Beedrill) (F) @ None
 Level: 37
@@ -102,7 +102,7 @@ IVs: 17 HP / 11 Atk / 10 Def / 17 SpA / 10 SpD / 26 Spe
 - Thunder Wave
 Met: Route 37
 
-ssAret (Furret) (M) @ Silk Scarf
+ssAret (Furret) (M) @ None
 Level: 39
 Adamant Nature
 Ability: Early Bird
@@ -128,7 +128,7 @@ IVs: 1 HP / 30 Atk / 20 Def / 15 SpA / 24 SpD / 20 Spe
 - Crunch
 Met: Route 33
 
-samajaP (Sunflora) (M) @ Expert Belt
+samajaP (Sunflora) (M) @ None
 Level: 37
 Hardy Nature
 Ability: Chlorophyll
@@ -141,8 +141,21 @@ IVs: 21 HP / 26 Atk / 21 Def / 22 SpA / 10 SpD / 23 Spe
 - U-turn
 Met: Route 30
 
+okeePl (Pelipper) (F) @ None
+Level: 37
+Lonely Nature
+Ability: Marvel Scale
+Ability Slot: 2
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 2 HP / 28 Atk / 29 Def / 26 SpA / 28 SpD / 7 Spe
+- Air Cutter
+- Signal Beam
+- Bubble Beam
+- Roost
+Met: Route 39
+
 shcniPh (Crawdaunt) (M) @ None
-Level: 38
+Level: 39
 Lonely Nature
 Ability: Shell Armor
 Ability Slot: 2
@@ -154,20 +167,7 @@ IVs: 1 HP / 15 Atk / 25 Def / 9 SpA / 15 SpD / 27 Spe
 - Counter
 Met: Route 31
 
-nocaB (Primeape) (F) @ None
-Level: 37
-Naughty Nature
-Ability: Limber
-Ability Slot: 2
-EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-IVs: 17 HP / 16 Atk / 31 Def / 16 SpA / 10 SpD / 22 Spe
-- Cross Chop
-- Rock Slide
-- Reversal
-- Knock Off
-Met: Route 36
-
-kroPnhoJ (Grumpig) (F) @ Twisted Spoon
+kroPnhoJ (Grumpig) (F) @ None
 Level: 37
 Hardy Nature
 Ability: Thick Fat
@@ -219,18 +219,18 @@ IVs: 19 HP / 24 Atk / 23 Def / 29 SpA / 30 SpD / 12 Spe
 - Recycle
 Met: Goldenrod City
 
-deeWh (Bellossom) (F) @ None
-Level: 35
-Sassy Nature
-Ability: Flash Fire
-Ability Slot: 2
+.I.B.F (Phione) @ None
+Level: 37
+Quiet Nature
+Ability: Damp
+Ability Slot: 1
 EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-IVs: 17 HP / 4 Atk / 27 Def / 26 SpA / 29 SpD / 2 Spe
-- Giga Drain
-- Sludge Bomb
-- Lucky Chant
-- Flamethrower
-Met: Sprout Tower
+IVs: 6 HP / 17 Atk / 18 Def / 4 SpA / 13 SpD / 12 Spe
+- Surf
+- Charm
+- Supersonic
+- Bubble Beam
+Met: Route 40
 
 xeHreavus (Misdreavus) (F) @ None
 Level: 35
@@ -245,7 +245,7 @@ IVs: 0 HP / 3 Atk / 8 Def / 19 SpA / 5 SpD / 3 Spe
 - Shadow Sneak
 Met: Ecruteak City
 
-cissalCo (Pidgeotto) (M) @ Exp. Share
+cissalCo (Pidgeotto) (M) @ None
 Level: 27
 Docile Nature
 Ability: Keen Eye
@@ -297,20 +297,20 @@ IVs: 20 HP / 16 Atk / 0 Def / 9 SpA / 30 SpD / 11 Spe
 - Supersonic
 Met: Cherrygrove City
 
-nwapSeraR (Cranidos) (F) @ None
+gabnaeB (Hariyama) (M) @ None
 Level: 38
-Sassy Nature
-Ability: Rock Head
-Ability Slot: 1
+Lonely Nature
+Ability: Guts
+Ability Slot: 2
 EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-IVs: 27 HP / 30 Atk / 18 Def / 5 SpA / 0 SpD / 30 Spe
-- Rock Slide
-- U-turn
-- Dragon Rush
-- Earthquake
-Met: National Park
+IVs: 31 HP / 8 Atk / 27 Def / 11 SpA / 13 SpD / 23 Spe
+- Fake Out
+- Knock Off
+- Bullet Punch
+- Drain Punch
+Met: Union Cave
 
-paZemite (Magneton) @ Magnet
+paZemite (Magneton) @ None
 Level: 39
 Quirky Nature
 Ability: Levitate
@@ -336,7 +336,7 @@ IVs: 12 HP / 9 Atk / 31 Def / 4 SpA / 13 SpD / 2 Spe
 - Surf
 Met: Ruins of Alph
 
-ebmaraH (Infernape) (M) @ Charcoal
+ebmaraH (Infernape) (M) @ None
 Level: 39
 Quiet Nature
 Ability: Blaze
@@ -349,68 +349,68 @@ IVs: 17 HP / 10 Atk / 29 Def / 2 SpA / 17 SpD / 30 Spe
 - Brick Break
 Met: Burned Tower
 
-eldooN (Tangrowth) (F) @ None
-Level: 37
-Rash Nature
-Ability: Chlorophyll
-Ability Slot: 2
-EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-IVs: 19 HP / 26 Atk / 31 Def / 20 SpA / 28 SpD / 20 Spe
-- Knock Off
-- Sleep Powder
-- Giga Drain
-- Confusion
-Met: Ilex Forest
-
-gabnaeB (Hariyama) (M) @ None
-Level: 37
-Lonely Nature
-Ability: Guts
-Ability Slot: 2
-EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-IVs: 31 HP / 8 Atk / 27 Def / 11 SpA / 13 SpD / 23 Spe
-- Fake Out
-- Knock Off
-- Bullet Punch
-- Drain Punch
-Met: Union Cave
-
-layoRn♀ (Nidoqueen) (F) @ Poison Barb
+yliLp (Cradily) (F) @ None
 Level: 39
-Timid Nature
-Ability: Battle Armor
-Ability Slot: 1
-EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-IVs: 1 HP / 11 Atk / 1 Def / 9 SpA / 28 SpD / 28 Spe
-- Double Kick
-- Bite
-- Sludge Bomb
-- Body Slam
-Met: Dark Cave
-
-tegguN (Aron) (F) @ Exp. Share
-Level: 35
-Serious Nature
-Ability: Rock Head
-Ability Slot: 1
-EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-IVs: 8 HP / 18 Atk / 23 Def / 11 SpA / 23 SpD / 22 Spe
-- Strength
-- Rock Smash
-- Rock Slide
-- Iron Head
-Met: Mt. Mortar
-
-yliLp (Lileep) (F) @ None
-Level: 20
 Bold Nature
 Ability: Water Absorb
 Ability Slot: 1
 EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 IVs: 8 HP / 30 Atk / 17 Def / 6 SpA / 30 SpD / 6 Spe
-- Acid
-- Mud Shot
-- Ingrain
-- Brine
+- Sludge Bomb
+- Gastro Acid
+- Ancient Power
+- Mirror Coat
 Met: Violet City
+
+deeWh (Bellossom) (F) @ None
+Level: 35
+Sassy Nature
+Ability: Flash Fire
+Ability Slot: 2
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 17 HP / 4 Atk / 27 Def / 26 SpA / 29 SpD / 2 Spe
+- Giga Drain
+- Sludge Bomb
+- Lucky Chant
+- Flamethrower
+Met: Sprout Tower
+
+osrratS (Starmie) @ None
+Level: 37
+Mild Nature
+Ability: Rain Dish
+Ability Slot: 1
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 9 HP / 5 Atk / 5 Def / 13 SpA / 16 SpD / 29 Spe
+- Confusion
+- Bubble Beam
+- Surf
+- Recover
+Met: Cianwood City
+
+surebreC (Houndoom) (M) @ None
+Level: 38
+Rash Nature
+Ability: Flash Fire
+Ability Slot: 2
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 12 HP / 23 Atk / 23 Def / 11 SpA / 9 SpD / 8 Spe
+- Fire Fang
+- Sucker Punch
+- Thunder Fang
+- Crunch
+Met: Cliff Edge Gate
+
+peerCnk (Toxicroak) (F) @ None
+Level: 39
+Quiet Nature
+Ability: Hyper Cutter
+Ability Slot: 1
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 1 HP / 13 Atk / 31 Def / 4 SpA / 27 SpD / 22 Spe
+- Bullet Punch
+- Fake Out
+- Mach Punch
+- Sludge Bomb
+Met: Olivine City
 

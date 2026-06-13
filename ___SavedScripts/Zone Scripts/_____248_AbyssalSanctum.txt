@@ -1,6 +1,7 @@
 import messages.script.Msg0313.MSGID;
 
 import Base;
+import player.Bag;
 import event.EVCamera;
 import event.Battle;
 import event.actors.Actor;
@@ -170,34 +171,41 @@ public class MainEvents {
 
 	public static void main_10() {
 		int v16;
-        	int v7;
+        int v7;
        	int v0;
+		int yesNo; 
+        int isVictory;
+		int count;
 		
 		Actor.PauseAll();
 		Sound.SEPlay(1351);
 		if (EventFlags.Get(1520 + 104)) {
+            count = Bag.GetItemQuantity(589);
+            if (count == 1){
+                goto LABEL_InsertingTheDesertCrown;
+            }
 			Message.System(17, 2);
 			Message.WaitAdvance();
 			Message.CloseAll();
 			goto LABEL_00c4;
 		}
-        	Message.System(11, 0);
-        	Message.WaitAdvance();
-          Message.CloseSystem();
-        	Message.System(12, 0);
-        	v7 = YesNoWin.Show();
-        	Message.CloseSystem();
+        Message.System(11, 0);
+        Message.WaitAdvance();
+        Message.CloseSystem();
+        Message.System(12, 0);
+        v7 = YesNoWin.Show();
+        Message.CloseSystem();
 
-        	if (v7 != 0){
-            	Message.System(13, 0);
-            	Message.WaitAdvance();
-               Message.CloseSystem();
-            	goto LABEL_00c4;
-        	}
-        	Runtime.Sleep(32);
+        if (v7 != 0){
+            Message.System(13, 0);
+            Message.WaitAdvance();
+            Message.CloseSystem();
+            goto LABEL_00c4;
+        }
+        Runtime.Sleep(32);
 		Sound.SEPlay(2226);
-        	EVCamera.Shake(6, 0, 3, 10, 1, 0, 1, 3);
-        	Runtime.Sleep(32);
+        EVCamera.Shake(6, 0, 3, 10, 1, 0, 1, 3);
+        Runtime.Sleep(32);
 		Message.Spiked(14, 2);
 		Message.WaitAdvance();
 		Message.CloseAll();
@@ -214,11 +222,47 @@ public class MainEvents {
 		Message.System(15, 0);
 		Message.WaitAdvance();
 		Message.CloseSystem();
-		Global2805(270, 1);
+		Global2805(588, 1);
 		Message.System(16, 0);
 		Message.WaitAdvance();
 		Message.CloseSystem();
-		
+		goto LABEL_00c4; 
+
+        LABEL_InsertingTheDesertCrown: 
+        Message.System(18, 2);
+		Message.WaitAdvance();
+        yesNo = YesNoWin.Show();
+        if (yesNo == 0){
+            Bag.TakeItem(589, 1);
+            Message.System(19, 2);
+		    Message.WaitAdvance();
+            Message.CloseAll();
+            Runtime.Sleep(32);
+            Sound.SEPlay(2226);
+            EVCamera.Shake(6, 0, 3, 10, 1, 0, 1, 3);
+            Runtime.Sleep(32);
+            Sound.PVPlay(555, 0);
+            Message.Spiked(20, 2);
+            Message.WaitAdvance();
+            Message.CloseAll();
+            Sound.PVWait();
+            Battle.CallWildBattleEx(555, 65, 1, 0);	
+			isVictory = Battle.IsWildVictory();
+			if (isVictory != 1){ 
+				Battle.CallWildLose();
+				goto LABEL_00c4;		
+			}
+			Battle.EndWildBattle();
+            Message.System(21, 0);
+            Message.WaitAdvance();
+            Message.CloseSystem();
+        }
+        else {
+            Message.System(17, 2);
+		    Message.WaitAdvance();
+            Message.CloseAll();
+        }
+
 		LABEL_00c4:
 		Runtime.FinishSubEvents();
 		Actor.UnpauseAll();
