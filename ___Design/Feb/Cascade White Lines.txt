@@ -1,0 +1,132 @@
+Blooott (Dewott) (M) @ Eviolite
+Level: 30
+Jolly Nature
+Ability: Shell Armor
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 25 HP / 26 Atk / 29 Def / 14 SpA / 28 SpD / 26 Spe
+- Aqua Jet
+- Detect
+- Razor Shell
+- Drain Punch
+Met: Aspertia City
+
+Blackuh (Donphan) (M) @ Hondew Berry
+Level: 29
+Bashful Nature
+Ability: Battle Armor
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 8 HP / 24 Atk / 22 Def / 17 SpA / 27 SpD / 18 Spe
+- Natural Gift
+- Rapid Spin
+- Bulldoze
+- Ice Shard
+Met: Floccesy Ranch
+
+Purrpuhl (Golbat) (M) @ Oran Berry
+Level: 28
+Rash Nature
+Ability: Infiltrator
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 22 HP / 18 Atk / 26 Def / 28 SpA / 24 SpD / 17 Spe
+- Leech Life
+- Taunt
+- Air Cutter
+- Poison Fang
+Met: Aspertia Gate
+
+Whyte (Nuzleaf) (F) @ Exp. Share
+Level: 30
+Timid Nature
+Ability: Pickpocket
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 22 HP / 31 Atk / 7 Def / 10 SpA / 10 SpD / 5 Spe
+- Fake Out
+- Torment
+- Detect
+- Leaf Tornado
+Met: Route 6
+
+Gurray (Glameow) (F) @ Eviolite
+Level: 30
+Adamant Nature
+Ability: Multiscale
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 23 HP / 7 Atk / 10 Def / 30 SpA / 0 SpD / 26 Spe
+- Fake Out
+- Body Slam
+- Thrash
+- Charm
+Met: Pokestar Studios
+
+Flamingo (Clamperl) (F) @ None
+Level: 27
+Lax Nature
+Ability: Torrent
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 29 HP / 20 Atk / 28 Def / 27 SpA / 10 SpD / 26 Spe
+- Aqua Ring
+- Protect
+- Aurora Beam
+- Water Pulse
+Met: Virbank Gate
+
+Creemeh (Raticate) (M) @ None
+Level: 28
+Gentle Nature
+Ability: Guts
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 27 HP / 18 Atk / 7 Def / 5 SpA / 22 SpD / 14 Spe
+- Ice Fang
+- Hyper Fang
+- Endure
+- Sucker Punch
+Met: Castelia Sewers
+
+Rhedar (Simisear) (F) @ Magost Berry
+Level: 28
+Naughty Nature
+Ability: Flash Fire
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 22 HP / 30 Atk / 14 Def / 17 SpA / 19 SpD / 27 Spe
+- Taunt
+- Fire Punch
+- Acrobatics
+- Natural Gift
+Met: Virbank Complex
+
+Lavendur (Beautifly) (F) @ Oran Berry
+Level: 29
+Gentle Nature
+Ability: Multiscale
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 26 HP / 18 Atk / 13 Def / 7 SpA / 30 SpD / 14 Spe
+- Sweet Kiss
+- Giga Drain
+- Protect
+- Psychic
+Met: Route 5
+
+Payull (Dewgong) (F) @ None
+Level: 30
+Naive Nature
+Ability: Compound Eyes
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 27 HP / 24 Atk / 9 Def / 18 SpA / 23 SpD / 6 Spe
+- Aurora Beam
+- Conversion
+- Icy Wind
+- Encore
+Met: Route 4
+
+Readrak (Ariados) (F) @ Oran Berry
+Level: 28
+Rash Nature
+Ability: Toxic Boost
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 26 HP / 14 Atk / 11 Def / 2 SpA / 26 SpD / 10 Spe
+- Scary Face
+- Night Shade
+- Feint Attack
+- Fusion Flare
+Met: Route 20
+
