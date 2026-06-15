@@ -1,0 +1,7 @@
+----- TEXT FILE 305-----
+0: Jelliiii!
+1: Jellicent dove down into\nthe depths of the ocean...
+2: Jeeelliii. ♪
+3: Jellicent dove down into\nthe depths of the ocean...
+4: The Xtransceiver is ringing.
+5: [VAR TRNAME(0)] picked up the Xtransceiver.\c

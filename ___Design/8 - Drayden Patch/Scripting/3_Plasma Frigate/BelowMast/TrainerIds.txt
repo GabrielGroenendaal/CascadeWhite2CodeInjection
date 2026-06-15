@@ -1,0 +1,29 @@
+
+
+Trainer IDs: 
+    Main Room:
+        800
+        801
+        802
+        812
+
+    Top Left Room:
+        426
+        427
+    
+    Bottom Left Room: (Top Half)
+        343
+        436 
+
+    Top MIddle Room Right:    
+        429
+    
+    Top Bottom Ropm Right: 
+        437
+    
+Item Ids: 
+    Top Right Room: 
+        191 
+    
+    Bottom Left Cafetia: 
+        189

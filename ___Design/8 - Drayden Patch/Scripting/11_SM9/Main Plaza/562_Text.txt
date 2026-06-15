@@ -1,0 +1,30 @@
+
+----- TEXT FILE 562-----
+0: If you want all the TMs, the\nShopping Mall is a must-visit!\c\nThat's right! You should brag about\ncoming here to the TM Collector\r\nin Mistralton City!
+1: On the first floor, they sell medicines.\c\nOn the second floor, they sell TMs\nand different kinds of Mail.\c\nOn the third floor, they sell items for\nraising stats and battle items.\c\nI really admire Mr. Clyde, the\nPokémon Gym guide, so I'm practicing\r\nbeing a guide, too!
+2: I was challenged to a Pokémon\nbattle inside the Shopping Mall!\c\nThat means it's a place where\nonly the strong survive. Got it?
+3: The thing I buy most often is the item\nthat raises a Pokémon's HP, called HP Up.\c\nThere are also a lot of other items that\ncatch my eye.
+4: I can't wait for evening!\nThat's right! Evening itself is a fever!
+5: It's tonight's special evening deal!\c\nPoké Balls are on sale!\c\nFor an a-m-a-z-i-n-g...\c\n10% off!\nThey're on sale now!
+6: It's tonight's special evening deal!\c\nPotions are on sale!\c\nFor an a-m-a-z-i-n-g...\c\n10% off!\nThey're on sale now!
+7: OK, then that will be $0 for no items!\c\nThanks for nothing!\nPlease come again!
+8: Well, at 10% off, your\nPoké Ball purchase will be $180!
+9: Well, at 10% off, your\nPotion purchase will be $270!
+10: What? You don't have enough money,\neven when it's 10% off?!
+11: What? You can't hold any more\neven when you'd get 10% off?!
+12: The better Trainer you are,\nthe more you'll find yourself thinking!\c\nThat's so you can help your\nPokémon partners win!
+13: If I were to play hide-and-seek with\nmy Pokémon, they'd find me right away!\c\nBut if I were to get lost,\nI'd be glad they could find me right away!
+14: Welcome to Shopping Mall Nine!\nIt's called Nine because it's on Route 9.\c\nYou can remember it by thinking of this:\n“Done shopping? Nein!"
+15: My Lampent's not good at\nPokémon battles,\r\nbut it's great at making toast!
+16: I'm a Lady...\c\nI've come to do some shopping,\nbut I'm having ever so much trouble\r\nfinding out what is sold where.\c\nWould you be so kind as to buy\na Hyper Potion for me?\r\nI'll give you the money for it.
+17: Why, thank you!\nHere is the money for it.\c\nJust a Hyper Potion, please.\nThank you ever so much for your help.
+18: [VAR TRNAME(0)] received $1,200!
+19: Someone refusing a request from me?\nWhat a novel sensation!\c\nNow, where could they be\nselling those Hyper Potions?
+20: I want a Hyper Potion!\nDid you already buy one for me?
+21: Did I not ask you to buy\na Hyper Potion for me?\c\nPlease! I'm waiting.\c\nOr did you already buy it, perhaps?
+22: It's a Hyper Potion!\nThank you for buying it so quickly!\c\nThis isn't much, but please take it!
+23: It's a Hyper Potion! It feels as though\nI've been waiting ever so long for this.\c\nBut I am happy to finally have it.\nThis isn't much, but please take it.
+24: Excuse me? It seems as though\nthere's no Hyper Potion in your Bag.\c\nPlease!\nBuy a Hyper Potion for me!
+25: What I want is a Hyper Potion!\nPlease! I'm waiting...
+26: Shopping is so much fun!\nI'm thrilled with all I've accomplished!
+27: Shopping Mall Nine\nColorful and wonderful!

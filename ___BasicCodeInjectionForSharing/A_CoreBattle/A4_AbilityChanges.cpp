@@ -3387,7 +3387,7 @@ extern "C"
         v8 = 0;
         if (BattleMon_HasType(a2, TYPE_GHOST))
         {
-            goto LABEL_11;
+            return 4;
         }
         if (Count)
         {

@@ -1,0 +1,11 @@
+
+
+Trainer IDs: 
+    313 - Ace Trainer Summer
+    314 - Swimmer Matt
+    315 - Swimmer Bart
+    316 - Swimmer Tim 
+    317 - Swimmer Arissa
+
+Item IDs: 
+    128 

@@ -1,0 +1,74 @@
+
+----- TEXT FILE 204-----
+0: [0x013a(0)]!\nDo you have any questions?
+1: This is the brand-new avenue in the\nUnova region, [0x0139(1)]!\c\nIt is still under major development\nto create an avenue that's perfect for\r\nmeeting people, making discoveries,\r\nand having fun. Good times!\c
+2: [0x013a(0)], you've been signed up\nby the owner to manage the avenue.\c\nYour goal is simple:\ncreate a dazzling, delightful avenue!\c\nDesign an avenue that will fill all visitors\nwith joy and the desire to visit often.\c\nYou'll have assistants, so please let us\nknow how we can help you.\c
+3: You can use various communication\nfeatures to encourage people to visit.\c\nTalk to people during their visits here.\nThere are two things you can do.\c\nThe first thing is to “invite" someone.\nThe other thing is to “recommend" a shop\r\nto someone.\c\nTo really get the idea of all you can do,\nstay and listen to a little more about it.\c
+4: You can bring in more customers by\nusing the communication features.\c\nWhen you have the C-Gear turned on,\npassersby will visit the avenue.\c\nPeople you've met through the Union\nRoom, Infrared Communication, Random\r\nMatchups, and GTS visit the avenue, too.\c\nCommunication features aren't the\nonly way to bring in visitors.\c\nAs your adventure progresses,\nfans might sometimes visit the avenue.\c\nYou can use your Town Map to check\nthe current number of visitors.\c\nIt might be fun to check it now and then.\c
+5: When you select “Invite," the visitor\nwill begin to live here and create a shop.\c\nEach person has his or her own\nhopes and dreams.\c\nI recommend listening carefully to the\nperson before you decide.\c
+6: “Recommend" a shop to a visitor.\c\nIf the visitor is happy with the shop,\nthe popularity of the shop and\r\nthis avenue will go up.\c\nAs their popularity goes up, shops and\nthis avenue reach higher ranks.\c\nThe higher the shop rank goes up,\nthe more items and services it'll have.\c\nWhen the current avenue rank goes up,\nitem prices will become slightly\r\nmore reasonable.\c\nTry to recommend shops that your\nvisitors will be delighted with so the\r\npopularity of the shops goes up!\c
+7: [0x013a(0)], this is your office.\c\nYour assistants and I will support you\nin developing [0x0139(1)].\c\nAs the avenue grows bigger and bigger,\nthere will be more and more visitors.\c\nYou may enjoy hearing what they have to\nsay, so please drop by from time to time.\c
+8: At Markets, you'll be able to purchase\nvarious items useful for your adventure.\c\nSometimes they carry items not available\nat Poké Marts, or so I've heard.\c
+9: At Raffle Shops, you can win cool prizes.\c\nThe grand prize is a Master Ball!\c
+10: Flower Shops carry Berries.\c\nDifferent shops may have\ndifferent Berries.\c
+11: At Nurseries, you can put Pokémon Eggs\nin incubators to speed up hatching.\c
+12: Dojos train Pokémon.\c\nThey can level up Pokémon and\nraise the base stats of Pokémon.\c\nBe aware that Pokémon won't learn\ncertain moves or evolve while they\r\nlevel up this way.\c
+13: Antique Shops carry rare finds.\c\nYou may find out you have really rare\nitems when you have them appraised.\c
+14: Cafés give you and your Pokémon\nthe chance to have a nice meal.\c\nMeals make Pokémon happy,\nand they will grow friendly faster.\c\nYou can also level Pokémon up and\nraise their base stats.\c\nBe aware that Pokémon won't learn\ncertain moves or evolve while they\r\nlevel up this way.\c
+15: Beauty Salons keep Pokémon tidy.\c\nHaircuts and cosmetics make Pokémon\nhappy, and they grow friendlier faster.\c
+16: There are seven different kinds of shops\nthat can be built in [0x0139(0)].\c\nWhen someone is invited to build a shop,\nthe type of shop they open is based\r\non that person's hopes and dreams.\c\nWhen you recommend shops to visitors,\nthe shops get more popular and their\r\nrank improves.\c\nTalk to assistant 2 for advice on what\nkinds of shops will grow the fastest.\c
+17: There are eight different kinds of shops\nyou can build in [0x0139(0)].\c\nWhen someone is invited to build a shop,\nthe type of shop they open is based\r\non that person's hopes and dreams.\c\nWhen you recommend shops to visitors,\nthe shops get more popular and their\r\nrank improves.\c\nTalk to assistant 2 for advice on what\nkinds of shops will grow the fastest.\c
+18: Is there anything you'd like to know\nabout shops?
+19: I'm looking forward to seeing this grow\ninto a fantastic avenue!
+20: Bring in more customers by using\nthe communication features.\c\nPeople you've met through communication\nfeatures will visit the avenue.\c\nWhen you talk to them, there are three\nthings you can choose to do.\c\nYou can “invite" the person to join\nthe avenue, “recommend" a shop, or\r\n“recruit" that person as an assistant.\c\nFor details, please listen to\neach explanation.\c
+21: If you choose to “Recruit," the visitor\nwill become your assistant and help you.\c\nYour chances of recruiting the visitor\nimprove if your avenue ranks higher\r\nthan the person's ideals.\c
+22: What is this place?
+23: What should I do?
+24: How do I make this a great avenue?
+25: How do I bring in visitors?
+26: What does “invite" mean?
+27: What does “recommend" mean?
+28: What is a shop?
+29: What is this room?
+30: I'm fine!
+31: Details, please!
+32: What is a Market?
+33: What is a Raffle Shop?
+34: What is a Flower Shop?
+35: What is a Nursery?
+36: What is a Dojo?
+37: What is an Antique Shop?
+38: What is a Café?
+39: What is a Beauty Salon?
+40: What does “recruit" mean?
+41: [VAR TRNAME(0)],\nI see you are putting in a lot of effort!\c
+42: [VAR TRNAME(0)],\nI see you are putting in a lot of effort!\c
+43: [VAR TRNAME(0)],\nI see you are putting in a lot of effort!\c
+44: [VAR TRNAME(0)],\nI see you are putting in a lot of effort!\c
+45: [VAR TRNAME(0)],\nI see you are putting in a lot of effort!\c
+46: [VAR TRNAME(0)],\nI see you are putting in a lot of effort!\c
+47: [VAR TRNAME(0)],\nI see you are putting in a lot of effort!\c
+48: [VAR TRNAME(0)],\nI see you are putting in a lot of effort!\c
+49: I have a present for you today.\nI've recruited a new assistant for you.\c
+50: I have a present for you today.\nI've recruited a new assistant for you.\c
+51: Today, I want to say how grateful I am.\c\nThank you for doing so much to\ndevelop this avenue!\c\nYou're a truly deserving “[0x013a(1)]"!\nI'd say you've made the avenue your own!\c\nBecause of that, you have earned\nthe privilege of renaming the avenue.\c\nPlease consider a new name for Join\nAvenue that describes its character.\c
+52: Wonderful!\c\n[0x013a(1)],\n[0x0139(2)] belongs to you now!\r\nI'll leave everything to you.\c\nContinue developing the avenue\nso visitors will be even more delighted.\c
+53: Today, I have a present for you.\c\nNow you can change the avenue's\nneon arch as you wish.\c\nIt will give a fresh look to the avenue.\nWon't it delight our visitors even more?!\c
+54: I have a piece of advice for you today.\c\nYou'd want an assistant that suits\nyour preferences, wouldn't you?\c\nWhy don't you choose one of the visitors?\nIt's quite easy.\c\nTalk to a person and choose “Recruit."\c\nThe higher the current avenue rank is\ncompared to the person's ideals,\r\nthe better chance you'll have of\r\nrecruiting him or her successfully.\c\nPlease bring even more delight\nto our visitors!\c
+55: Today, I have a big present for you!\c\nTo commemorate your entering the\nHall of Fame, shops have been renovated.\c\nYou'll notice new services and items,\nso you might want to check those out.\c\nWhat's more...\nHave you heard of Pokémon Eggs?\c\nYou'll now be able to build what they call\na “Nursery," which enables Eggs to\r\nbe hatched more quickly than normal.\c\nFind a visitor who wants to build a\nNursery, and give it a try!\c
+56: Today, I have a surprise for you.\c\nEverybody here is celebrating the\ngreat effort you've been putting in.\c\nWhat are you waiting for? Don't be shy!\nGo and greet everyone!\c
+57: I have a present for you to recognize\nall your continuous effort.\c\nIt's just a little something.\nPlease, take it.\c
+58: Keep up the good work!\c
+59: Keep up the good work!\c
+60: Keep up the good work!\c
+61: Keep up the good work!\c
+62: Keep up the good work!\c
+63: I have nothing more to\npoint out to you!\c\nJust keep up the good work!\c
+64:                                                 
+65: I have nothing more to\npoint out to you!\c\nJust keep up the good work!\c
+66: [VAR JOINAVINPUT(1)]\nI'm [VAR TRNAME(0)]!\c\nWhen it comes to reorganizing things,\nleave it to me!\c\nPC Boxes and Record Rankings!\nChanging the roles of assistants!\r\nChanging the order of shops!\r\nPlease talk to me when you\r\nwant to reorganize things.\c
+67: [VAR JOINAVINPUT(1)]\nI'm [VAR TRNAME(0)]!\c\nPlease talk to me when you want to rest\nyour tired Pokémon.\c
+68: [VAR JOINAVINPUT(1)]\nI'm [VAR TRNAME(0)]!\c\nPlease talk to me when you want to\nchange the avenue's name.\c
+69: [VAR JOINAVINPUT(1)]\nI'm [VAR TRNAME(0)]!\c\nPlease talk to me when you want to\nchange the avenue's name.\c
+70: [VAR JOINAVINPUT(1)]\nI'm [VAR TRNAME(0)]!\c\nPlease talk to me when you want to\nchange the neon arch.\c
+71: [VAR JOINAVINPUT(1)]\nI'm [VAR TRNAME(0)]!\c\nPlease talk to me when you want to\nchange the neon arch.\c

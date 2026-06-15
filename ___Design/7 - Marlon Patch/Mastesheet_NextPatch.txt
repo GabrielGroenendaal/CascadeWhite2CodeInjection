@@ -1661,16 +1661,6 @@ end
 !tr 769/54 Rewards Celestial Rooftop Encounter, Covert Cloak, x1 IV Enhancers
 
 
-374: 
-Seaking -> Linoone Trainer 
-375
-Houndoom -> Zangoose Trainer 
-
-376:
-Seviper -> Dunsparce Trainer 
-377
-Kingler -> Weezing Trainer 
-
 
 ## Celestial Rooftop (only accessible by beating Sabrina)
 !items Sabrina Rewards 
@@ -1706,7 +1696,7 @@ end
 !notif SPLIT END, Defeating Skyla will lock you out of the following content , #af74b3
 - Relic Sanctum Guardian (rewards a Life Orb)
 - Cobalion Side Quest (rewards Guidance Chamber encounter, Assault Vest)
-- Sabrina Miniboss (rewards Rash/Careful Mints, 3x IV Enhancers, Covert Cloak, Rooftop Encounter)
+- Sabrina Miniboss (rewards 1x IV Enhancers, Covert Cloak, Rooftop Encounter)
 - Roxanne Miniboss (rewards Ground Gems, Shuca Berries, TM28 Dig)
 - Morty Miniboss (rewards Ghost Gems, Kasib Berries, TM30 Shadow Ball)
 
@@ -1739,7 +1729,7 @@ end
 
 
 ## Strange House 
-!notif SPLIT-LOCKED, The haunting of Strange House, and the optional fight with Fantina, can only be investigated prior to defeating Marlon , #af74b3 
+!notif SPLIT-LOCKED, The haunting of Strange House, and the optional fight with Fantina, can only be investigated prior to defeating Alder , #af74b3 
 
 !items Items 
 tm fire, Will-o-Wisp TM (guarded by the gauntlet)
@@ -2076,7 +2066,7 @@ end
 - Gardenia Miniboss in Pinwheel Forest (rewards Grass Gems, TM53 Energy Ball, Rindo Berries)
 - Bugsy Miniboss in Pinwheel Forest (rewards Bug Gems, TM45 Lunge, Tanga Barries)
 - Virizion Side Quest in Pinwheel Forest (rewards Pinwheel Forest encounter, Choice Specs)
-- Blaine Miniboss (rewards Ability Drill, Bold/Lonely Mints, Abundant Shrine encounter, IV Enhancers, Starter Move Tutors)
+- Blaine Miniboss (rewards Ability Drill, Abundant Shrine encounter, IV Enhancers, Starter Move Tutors)
 - Humilau City B2B (rewards 2x Ability Capsules)
 
 !trm 160 Rewards HM06 Dive 

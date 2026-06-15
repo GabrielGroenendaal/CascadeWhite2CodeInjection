@@ -1,0 +1,26 @@
+import messages.script.Msg0259.MSGID;
+
+import pokescript.vm.Math;
+import pokescript.vm.StackCtrl;
+import pokescript.vm.VM;
+import system.EventFlags;
+import system.EventWorks;
+import system.RTC;
+
+public class MainEvents {
+	public static void main_1() { // @ 0x6
+		int v32;
+
+		EventFlags.Set(690);
+		v32 = 0;
+		v32 = RTC.GetSeason();
+		if (v32 != 3) {
+			goto LABEL_002b;
+		}
+		EventFlags.Clear(690);
+
+		LABEL_002b:
+		v32 = 0;
+	}
+
+}

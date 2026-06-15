@@ -1,0 +1,72 @@
+import messages.script.Msg0257.MSGID;
+
+import event.actors.Actor;
+import event.dialogs.Message;
+import pokescript.vm.StackCtrl;
+import pokescript.vm.VM;
+import system.EventFlags;
+import system.EventWorks;
+import system.Input;
+import system.RTC;
+import system.Runtime;
+import system.Sound;
+
+public class MainEvents {
+	public static void main_1() { // @ 0x18
+		int v32;
+
+		v32 = RTC.GetSeason();
+		EventFlags.Set(682);
+		if (v32 != 3) {
+			return;
+		}
+		EventFlags.Clear(682);
+	}
+
+	public static void main_2() { // @ 0x39
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 3, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_3() { // @ 0x55
+		int v32;
+
+		Actor.PauseAll();
+		v32 = RTC.GetSeason();
+		if (v32 != 3) {
+			Sound.SEPlay(1351);
+			Actor.FacePlayer();
+			Message.Actor(1024, 0, 0, 0);
+			Input.LastKeyWait();
+			Message.CloseActor();
+			goto LABEL_009c;
+		}
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 1, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+
+		LABEL_009c:
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_4() { // @ 0xa2
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 2, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+}

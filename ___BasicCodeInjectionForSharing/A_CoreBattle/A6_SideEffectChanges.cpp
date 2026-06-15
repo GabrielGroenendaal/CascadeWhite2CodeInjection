@@ -253,12 +253,12 @@ extern "C"
             mon = Handler_GetBattleMon(a2, a3);
             if (BattleMon_GetTurnFlag(mon, TURNFLAG_MOVEFAILED))
             {
-                BattleHandler_PushRun(a2, EFFECT_ABILITYPOPUPIN, (int)a3);
+                //BattleHandler_PushRun(a2, EFFECT_ABILITYPOPUPIN, (int)a3);
                 v1 = (HandlerParam_Message *)BattleHandler_PushWork(a2, EFFECT_MESSAGE, (int)a3);
                 BattleHandler_StrSetup(&v1->str, 2u, 1243);
                 BattleHandler_AddArg(&v1->str, a3);
                 BattleHandler_PopWork(a2, v1);
-                BattleHandler_PushRun(a2, EFFECT_ABILITYPOPUPOUT, (int)a3);
+                //BattleHandler_PushRun(a2, EFFECT_ABILITYPOPUPOUT, (int)a3);
             }
         }
     }
@@ -273,11 +273,12 @@ extern "C"
         int currentSlot = BattleEventVar_GetValue(VAR_MON_ID);
         if (currentSide == GetSideFromMonID(currentSlot))
         {
-            v6 = (HandlerParam_AddAnimation*)BattleHandler_PushWork(serverFlow, EFFECT_ADD_ANIMATION, currentSlot);
-            v6->pos_from =  Handler_PokeIDToPokePos(serverFlow, currentSlot);
-            v6->pos_to = 6;
-            v6->animNo = 335;
-            BattleHandler_PopWork(serverFlow, v6);
+            // BattleMon *mon = Handler_GetBattleMon(serverFlow, currentSlot);
+            // v6 = (HandlerParam_AddAnimation*)BattleHandler_PushWork(serverFlow, EFFECT_ADD_ANIMATION, currentSlot);
+            // v6->pos_from =  Handler_PokeIDToPokePos(serverFlow, currentSlot);
+            // v6->pos_to = 6;
+            // v6->animNo = 335;
+            // BattleHandler_PopWork(serverFlow, v6);
             v10 = (HandlerParam_AddCondition *)BattleHandler_PushWork(serverFlow, EFFECT_ADDCONDITION, 31);
             v10->sickID = CONDITION_BLOCK;
             ConditionData permanent = Condition_MakePermanentParam(1);
@@ -334,7 +335,7 @@ extern "C"
     };
     
     FIELD_TRIGGERTABLE FieldNoRetreatHandlers[] = {
-        {EVENT_SWITCH_IN, (FIELD_HANDLER_FUNC)HandlerFieldVictoryStarAccuracy}};
+        {EVENT_SWITCH_IN, (FIELD_HANDLER_FUNC)HandlerFieldNoRetreat}};
     
     // FIELD_TRIGGERTABLE *EventAddFieldWeather(int *a1)
     // {

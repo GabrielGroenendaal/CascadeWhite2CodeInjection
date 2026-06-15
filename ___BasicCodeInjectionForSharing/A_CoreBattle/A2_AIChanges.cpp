@@ -2347,7 +2347,7 @@ extern "C"
                             {
                                 ID = Move_GetID(MonData, v5);
 
-                                if (PML_MoveIsDamaging(ID) && ID != MOVE120_SELF_DESTRUCT && ID != MOVE153_EXPLOSION)
+                                if (PML_MoveIsDamaging(ID) && ID != MOVE515_FINAL_GAMBIT && ID != MOVE120_SELF_DESTRUCT && ID != MOVE153_EXPLOSION)
                                 {
                                     Type = PML_MoveGetType(ID);
                                     BasePower = PML_MoveGetBasePower(ID);
@@ -2798,7 +2798,7 @@ extern "C"
                             if (Move_GetPP(MonData, v5))
                             {
                                 ID = Move_GetID(MonData, v5);
-                                if (PML_MoveIsDamaging(ID) && ID != MOVE120_SELF_DESTRUCT && ID != MOVE153_EXPLOSION)
+                                if (PML_MoveIsDamaging(ID) && ID != MOVE515_FINAL_GAMBIT && ID != MOVE120_SELF_DESTRUCT && ID != MOVE153_EXPLOSION)
                                 {
                                     Type = PML_MoveGetType(ID);
                                     BasePower = PML_MoveGetBasePower(ID);

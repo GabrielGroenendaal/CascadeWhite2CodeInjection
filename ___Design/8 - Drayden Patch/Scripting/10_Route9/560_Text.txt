@@ -1,0 +1,5 @@
+----- TEXT FILE 560-----
+0: Route 9
+1: Shopping Mall Nine\nColorful and wonderful!
+2: Trainer Tips!\n\c\nOne kind of Pokémon\ncan have different Abilities.\c\nTry to catch Pokémon you've\nalready caught before!
+3: Tubeline Bridge\nUnova's famous railway bridge

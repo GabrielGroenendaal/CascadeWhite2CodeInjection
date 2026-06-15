@@ -1,0 +1,41 @@
+
+----- TEXT FILE 260-----
+0: If you look for something in an empty\nplace like this, you can discover things!
+1: If you look for something in an empty\nplace like this, you can discover things!\c\nLike this Fossil I just found! Take this!\c
+2: If you come again tomorrow, you might be\nable to find a Fossil of your own.\r\nSo come on out and play if ya want!
+3: Hello!\nI'm a Heavy Machinery Pro!\c\nAnd... You!\nDo you like construction trucks?
+4: Oh! I knew it!\nConstruction trucks are cool, right?\c\nNow, I'll give you a quiz!\c\nThere are five questions in total!\nIf you answer all of them correctly,\r\nI may give you a present!
+5: What? Sorry, I couldn't hear you.\c\nI'll ask you again!\nDo you like construction trucks?
+6: Hi! I've been waiting for you!\nOK. Let's get started!
+7: Construction Truck Quiz!\nFor short: TruQ!\c\nNow, here's the question!\c\nWhich place is famous for\nan old rusty crane truck?
+8: Virbank City
+9: Driftveil City
+10: Undella Town
+11: Humilau City
+12: Construction Truck Quiz!\nFor short: TruQ!\c\nNow, here's the question!\c\nThe trucks that run on Route 4\ncome in three different colors:\r\nred, blue, and...what?
+13: Green
+14: Yellow
+15: White
+16: Black
+17: Construction Truck Quiz!\nFor short: TruQ!\c\nNow, here's the question!\c\nWhich question is this?
+18: First question
+19: Second question
+20: Third question
+21: Fourth question
+22: Construction Truck Quiz!\nFor short: TruQ!\c\nNow, here's the question!\c\nWhich Gym has a yellow drill car?
+23: Humilau City Gym
+24: Opelucid City Gym
+25: Mistralton City Gym
+26: Driftveil City Gym
+27: Construction Truck Quiz!\nFor short: TruQ!\c\nNow, here's the question!\c\nHow many bulldozers\nare there in Twist Mountain?
+28: One
+29: Two
+30: Three
+31: Four
+32: ...\c\nCorrect!\nWell done!\c\nYou're sharp!
+33: ...\c\nHmm... Close!\nToo bad!\c\nBut you were on the right track!
+34: Yay, a future Heavy Machinery Pro!\c\nIf you come see me again tomorrow,\nI'll give you the next question.\r\nSee you then!
+35: If you come back tomorrow,\nyou can give that question another try.\c\nI'll be waiting for you!
+36: Wow! You're amazing!\nYou got a perfect score on the TruQ!\c\nI thought of those questions with\nall my might, you know!\c\nYou are a true Heavy Machinery Pro...\c\nYes! You're a Heavy Machinery Pro\nrecognized by a wandering judge\r\nfrom the Medal Office, which is me!
+37: I'll tell Mr. Medal about your talent\nas a Heavy Machinery Pro.
+38: I'm so happy that I witnessed the\ncrowning of a Heavy Machinery Pro\r\nof a new generation!

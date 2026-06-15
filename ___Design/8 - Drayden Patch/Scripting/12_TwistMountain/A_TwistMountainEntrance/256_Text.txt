@@ -1,0 +1,7 @@
+
+----- TEXT FILE 256-----
+0: I'm Marshal, one of the Elite Four!\c\nYou look like you're a\nPokémon Trainer with potential,\r\nbut I can't let you into Twist Mountain!\c\nThe inside collapsed,\nand you can't get through!
+1: [VAR TRNAME(0)]!\c\nOh, I see! So, you travel all around\nlike this and toughen yourself up, then.
+2: Well, I suppose you have\nmany battles ahead of you.\c\nPokémon battles as a Pokémon Trainer.\c\nBattles about how you\nshould live your life...\c\nYou'll lose sometimes,\nbut I think what matters\r\nis that you do things your own way.\c\nIf you surpass what you've done before,\nyou have bested yourself.
+3: Well then. I'll be waiting for\nyour challenge at the Pokémon League!\c
+4: Twist Mountain ahead.\nWatch out for wild Pokémon.

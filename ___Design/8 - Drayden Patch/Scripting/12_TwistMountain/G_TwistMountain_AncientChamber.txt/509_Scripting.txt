@@ -1,0 +1,120 @@
+import messages.script.Msg0262.MSGID;
+
+import event.Battle;
+import event.actors.Actor;
+import event.dialogs.Message;
+import pokemon.PokeParty;
+import pokescript.vm.Math;
+import pokescript.vm.StackCtrl;
+import pokescript.vm.VM;
+import system.EventFlags;
+import system.EventWorks;
+import system.Input;
+import system.Runtime;
+import system.Sound;
+import system.text.WordSet;
+
+public class MainEvents {
+	public static void main_1() { // @ 0x12
+		int v32;
+		int v33;
+		int v34;
+
+		Actor.PauseAll();
+		v32 = 0;
+		v33 = 0;
+		v34 = 0;
+		Sound.SEPlay(1351);
+		v32 = PokeParty.GetPkmCountBySpecies(378);
+		v33 = PokeParty.GetPkmCountBySpecies(377);
+		v34 = PokeParty.GetPkmCountBySpecies(379);
+		if (v32 != 0 && v33 != 0 && v34 != 0) {
+			sub_008b();
+			goto LABEL_0085;
+		}
+		Message.System(0, 2);
+		Input.LastKeyWait();
+		Message.CloseSystem();
+
+		LABEL_0085:
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_2() { // @ 0x12a
+		Actor.PauseAll();
+		WordSet.LoadPlayerName(0);
+		Sound.SEPlay(1351);
+		Message.Info(4, 2);
+		Input.LastKeyWait();
+		Message.CloseInfo();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_3() { // @ 0x142
+		Actor.PauseAll();
+		WordSet.LoadPlayerName(0);
+		Sound.SEPlay(1351);
+		Message.Info(5, 2);
+		Input.LastKeyWait();
+		Message.CloseInfo();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_4() { // @ 0x15a
+		Actor.PauseAll();
+		WordSet.LoadPlayerName(0);
+		Sound.SEPlay(1351);
+		Message.Info(6, 2);
+		Input.LastKeyWait();
+		Message.CloseInfo();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	static void sub_008b() { // @ 0x8b
+		int v16;
+
+		Message.System(1, 2);
+		Message.WaitAdvance();
+		Message.CloseSystem();
+		Sound.PVPlay(486, 0);
+		Message.Spiked(2, 2);
+		Sound.PVWait();
+		Message.WaitAdvance();
+		Message.CloseInfo();
+		Battle.CallWildBattle(486, 68, 1);
+		v16 = Battle.IsWildVictory();
+		if (v16 != 1) {
+			Battle.CallWildLose();
+			goto LABEL_00d7;
+		}
+		EventFlags.Set(924);
+		Actor.Hide(3);
+		Battle.EndWildBattle();
+
+		LABEL_00d7:
+		v16 = Battle.GetWildBattleResult();
+		if (v16 == 0) {
+			EventFlags.Set(402);
+			return;
+		}
+
+		LABEL_00f8:
+		if (v16 == 1) {
+			goto LABEL_0118;
+		}
+		if (v16 == 2) {
+			goto LABEL_0118;
+		}
+		return;
+
+		LABEL_0118:
+		Message.System(3, 2);
+		Input.LastKeyWait();
+		Message.CloseSystem();
+	}
+
+}

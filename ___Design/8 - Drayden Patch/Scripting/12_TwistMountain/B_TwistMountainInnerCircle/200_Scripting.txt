@@ -1,0 +1,7 @@
+import messages.script.Msg0258.MSGID;
+
+import system.EventFlags;
+import system.EventWorks;
+
+public class MainEvents {
+}

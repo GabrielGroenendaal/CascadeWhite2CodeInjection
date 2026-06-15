@@ -1,0 +1,10 @@
+
+----- TEXT FILE 582-----
+0: Kawbraa!
+1: Cobalion ran away\nbeyond the road...
+2: What am I doing?\nI'm hunting for TREASURE!\c\nTreasure hunting is fun. Sometimes things\nare buried in the sand dunes.\c\nActually, I just found something!\c\nBut it's the same one as I found before,\nso I will give this to you.\c
+3: I just found a treasure.\c\nBut it's the same one as I found before,\nso I'll give you this one.\c
+4: I'll be hunting for treasure here\ntomorrow, too.\c\nI may find something, so if you have\ntime, stop by.\c\nI don't find as many things\nas I used to, though...
+5: Route 13
+6: Route 13
+7: Trainer Tips!\n\c\nChange your type on the Trainer Card\nto change how other players see you.\c\nYou'll look different to others in the\nUnion Room and the Tag Log!\c\nMatch it with your introduction or\ncharacter to show your individuality!
