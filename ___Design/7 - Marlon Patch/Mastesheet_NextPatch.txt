@@ -422,7 +422,7 @@ end
 ## Virbank Gate 
 
 !items Items 
-quick ball, 30x Quick Ball (given by the Clerk on the way into Virbank City)
+quick ball, 3x Quick Ball (given by the Clerk on the way into Virbank City)
 end 
 
 ### Hugh 

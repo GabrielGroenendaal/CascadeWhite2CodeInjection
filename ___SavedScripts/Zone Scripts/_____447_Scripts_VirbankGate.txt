@@ -101,7 +101,7 @@ public class MainEvents {
 
 		LABEL_00f6:
 		Message.CloseAll();
-		Global2805(15, 30);
+		Global2805(15, 3);
 		Message.ActorEx(1024, 3, 0, 0, 0);
 		Input.LastKeyWait();
 		Message.CloseAll();
