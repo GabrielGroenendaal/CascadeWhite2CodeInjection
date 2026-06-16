@@ -1599,8 +1599,6 @@ end
 
 !items Items 
 master ball, Master Ball (received from Juniper)
-stable mulch, 1x Lax Mint (received from Juniper) 
-stable mulch, 1x Gentle Mint (received from Juniper)
 end
 
 
@@ -1611,7 +1609,7 @@ end
 heart scale, Heart Scale (found past Sola & Ana)
 tm fairy, TM32 Dazzling Gleam (found past Sola & Ana)
 tm flying, TM11 Air Slash (past Holly)
-weakness policy, x3 Blunder Policy (past Harlequins)
+stable mulch, x1 Lax Mint (past Harlequins)
 end
 
 !tr 272/50 Left Side 
@@ -1734,7 +1732,7 @@ end
 !items Items 
 tm fire, Will-o-Wisp TM (guarded by the gauntlet)
 red card, x5 Red Card
-white herb, x3 White Herb 
+dusk ball, x3 Dusk Ball
 power herb, x3 Power Herb
 end
 
@@ -1935,7 +1933,7 @@ These will be a series of grueling battles using every underhanded trick in the 
 
 !items Items 
 kasib berry, x2 Trickster Herbs (left by Shadow Triad after the first B2B)
-tm dark, TM12 Taunt (left by Shadow Triad after the second B2B)
+eject button, x1 Eject Button (left by Shadow Triad after the second B2B)
 end
 
 
@@ -1999,7 +1997,7 @@ end
 ## Route 22
 !items Items 
 green shard, x15 Green Shard 
-eject button, x3 Eject Button (Blocked by Breeder M)
+stable mulch, Gentle Mint (Blocked by Breeder M)
 sitrus berry, x10 Sitrus Berries (navigate the railings)
 end
 
@@ -2009,7 +2007,7 @@ end
 !enc 130
 
 
-!tr 333 (Gatekeeps Water Encounters and the Eject Buttons)
+!tr 333 (Gatekeeps Water Encounters and the Gentle Mint)
 
 
 

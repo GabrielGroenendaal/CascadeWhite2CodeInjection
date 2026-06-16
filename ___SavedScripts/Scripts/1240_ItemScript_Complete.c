@@ -1233,12 +1233,12 @@ void Sequence102()
 	End();
 }
 
-/* ROUTE 7 - Blunder Policy X3 */
+/* ROUTE 7 - Lax Mint x1 */
 void Sequence103()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 256);
-	SetVarEqVal(0x800D, 3);
+	SetVarEqVal(0x800C, 514);
+	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -1364,11 +1364,11 @@ void Sequence113()
 	End();
 }
 
-/* WHITE HERB x3 - Strange House */
+/* Dusk Ball x3 - Strange House */
 void Sequence114()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 214);
+	SetVarEqVal(0x800C, 13);
 	SetVarEqVal(0x800D, 3);
 	Sequence400();
 	WaitMoment();
@@ -2031,12 +2031,12 @@ void Sequence172()
 	End();
 }
 
-/* EJECT BUTTON X3 - ROUTE 22*/
+/* Gentle Mint x1 - ROUTE 22*/
 void Sequence173()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 547);
-	SetVarEqVal(0x800D, 3);
+	SetVarEqVal(0x800C, 526);
+	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();

@@ -106,7 +106,8 @@ public class MainEvents {
 		int v33;
 		int v34;
 		int v35;
-
+		int gotEgg; 
+		
 		Actor.PauseAll();
 		EventWorks.Set(16578, 1);
 		Player.GetGPos(v33, v34);
@@ -121,7 +122,13 @@ public class MainEvents {
 		Actor.WaitActionFinish();
 		WordSet.LoadPlayerName(0);
 		Message.ActorEx(1024, 0, 4, 0, 0);
-		Message.ActorEx(1024, 1, 4, 0, 0);
+		gotEgg = EventFlags.Get(2374);
+		if (gotEgg == 1){
+			Message.ActorEx(1024, 44, 4, 0, 0);
+		}
+		else {
+			Message.ActorEx(1024, 1, 4, 0, 0);
+		}
 		Message.ActorEx(1024, 2, 4, 0, 0);
 		WordSet.LoadPlayerName(0);
 		v35 = 0;
@@ -129,9 +136,7 @@ public class MainEvents {
 		WordSet.LoadNumber(1, v35, 3);
 		Message.ActorEx(1024, 3, 4, 0, 0);
 		Message.CloseAll();
-        Global2805(527, 1);
-        Global2805(510, 1);
-        Global2805(1, 1);
+        	Global2805(1, 1);
 		Message.ActorEx(1024, 4, 4, 0, 0);
 		Message.CloseAll();
 		ActionSequence_0990(4);

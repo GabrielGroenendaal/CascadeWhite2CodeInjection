@@ -727,7 +727,7 @@ public class MainEvents {
             Message.Info(38, 2);
             Message.WaitAdvance();
             Message.CloseAll();
-            Global2805(339, 1);
+            Global2805(547, 1);
 
 			LABEL_EndAmbushSix: 
 			Runtime.FinishSubEvents();

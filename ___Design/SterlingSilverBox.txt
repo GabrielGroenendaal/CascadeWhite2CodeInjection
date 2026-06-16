@@ -1,0 +1,429 @@
+spinSsh (Crawdaunt) (F) @ Cheri Berry
+Level: 38
+Bashful Nature
+Ability: Adaptability
+Ability Slot: 1
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 29 HP / 29 Atk / 17 Def / 1 SpA / 3 SpD / 25 Spe
+- Crabhammer
+- Aqua Jet
+- Knock Off
+- Iron Head
+Met: Route 31
+
+lemaC (Camerupt) (M) @ None
+Level: 37
+Serious Nature
+Ability: Solid Rock
+Ability Slot: 2
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 25 HP / 1 Atk / 7 Def / 27 SpA / 21 SpD / 29 Spe
+- Rollout
+- Mud Bomb
+- Counter
+- Lava Plume
+Met: Route 30
+
+ytnuCw (Purugly) (F) @ Expert Belt
+Level: 37
+Jolly Nature
+Ability: Thick Fat
+Ability Slot: 1
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 16 HP / 10 Atk / 28 Def / 5 SpA / 15 SpD / 24 Spe
+- Return
+- U-turn
+- Fake Out
+- Night Slash
+Met: Route 34
+
+csamsnarT (Mawile) (M) @ None
+Level: 38
+Naive Nature
+Ability: Huge Power
+Ability Slot: 2
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 0 HP / 19 Atk / 31 Def / 10 SpA / 5 SpD / 12 Spe
+- Cut
+- Thunder Fang
+- Crunch
+- Return
+Met: Mt. Mortar
+
+popeilriG (Illumise) (F) @ None
+Level: 37
+Rash Nature
+Ability: Tinted Lens
+Ability Slot: 2
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 10 HP / 2 Atk / 28 Def / 13 SpA / 31 SpD / 20 Spe
+- Signal Beam
+- Psychic
+- U-turn
+- Moonlight
+Met: Ilex Forest
+
+appaKl (Torkoal) (F) @ None
+Level: 38
+Hardy Nature
+Ability: Shell Armor
+Ability Slot: 2
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 1 HP / 6 Atk / 26 Def / 21 SpA / 10 SpD / 16 Spe
+- Yawn
+- Flamethrower
+- Rock Slide
+- Mud Bomb
+Met: Cliff Edge Gate
+
+reggorFl (Politoed) (M) @ None
+Level: 37
+Rash Nature
+Ability: Water Absorb
+Ability Slot: 2
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 16 HP / 5 Atk / 9 Def / 15 SpA / 5 SpD / 20 Spe
+- Hypnosis
+- Hyper Voice
+- Magnitude
+- Aurora Beam
+Met: Route 40
+
+dneirF (Quagsire) (F) @ None
+Level: 37
+Quirky Nature
+Ability: Water Absorb
+Ability Slot: 1
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 24 HP / 13 Atk / 31 Def / 3 SpA / 21 SpD / 29 Spe
+- Yawn
+- Earthquake
+- Recover
+- Magnitude
+Met: Ruins of Alph
+
+oggoDur (Houndoom) (F) @ None
+Level: 38
+Naughty Nature
+Ability: Flash Fire
+Ability Slot: 2
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 18 HP / 22 Atk / 31 Def / 6 SpA / 17 SpD / 30 Spe
+- Fire Fang
+- Poison Fang
+- Crunch
+- Sucker Punch
+Met: Burned Tower
+
+dellabeulB (Azumarill) (M) @ None
+Level: 37
+Bashful Nature
+Ability: Huge Power
+Ability Slot: 1
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 18 HP / 22 Atk / 24 Def / 18 SpA / 8 SpD / 11 Spe
+- Fake Out
+- Return
+- Aqua Jet
+- Waterfall
+Met: Route 32
+
+orratS (Starmie) @ None
+Level: 38
+Serious Nature
+Ability: Rain Dish
+Ability Slot: 1
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 4 HP / 29 Atk / 17 Def / 17 SpA / 11 SpD / 3 Spe
+- Bubble Beam
+- Rapid Spin
+- Recover
+- Surf
+Met: Violet City
+
+eropS (Parasect) (M) @ None
+Level: 38
+Careful Nature
+Ability: Water Absorb
+Ability Slot: 2
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 26 HP / 23 Atk / 23 Def / 9 SpA / 15 SpD / 22 Spe
+- Leech Life
+- Spore
+- U-turn
+- Giga Drain
+Met: Sprout Tower
+
+draugefiL (Floatzel) (F) @ None
+Level: 37
+Rash Nature
+Ability: Technician
+Ability Slot: 2
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 8 HP / 22 Atk / 16 Def / 8 SpA / 21 SpD / 10 Spe
+- Charge Beam
+- Shock Wave
+- Ice Punch
+- -----
+Met: Goldenrod City
+
+anosruF (Zangoose) (F) @ Flame Orb
+Level: 38
+Serious Nature
+Ability: Guts
+Ability Slot: 2
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 19 HP / 8 Atk / 15 Def / 18 SpA / 8 SpD / 27 Spe
+- Return
+- Shadow Punch
+- Strength
+- Detect
+Met: Route 39
+
+detcepxE (Lanturn) (F) @ None
+Level: 38
+Sassy Nature
+Ability: Water Absorb
+Ability Slot: 2
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 16 HP / 11 Atk / 26 Def / 13 SpA / 6 SpD / 6 Spe
+- Charge Beam
+- Signal Beam
+- Rest
+- Shock Wave
+Met: Route 42
+
+reeuQt (Masquerain) (M) @ None
+Level: 37
+Timid Nature
+Ability: Intimidate
+Ability Slot: 2
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 0 HP / 3 Atk / 9 Def / 23 SpA / 22 SpD / 16 Spe
+- Bubble Beam
+- Ominous Wind
+- U-turn
+- Ice Beam
+Met: New Bark Town
+
+igoYite (Medicham) (M) @ Black Belt
+Level: 39
+Bashful Nature
+Ability: Pure Power
+Ability Slot: 2
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 18 HP / 13 Atk / 15 Def / 30 SpA / 25 SpD / 17 Spe
+- Strength
+- Detect
+- Fake Out
+- Psycho Cut
+Met: Route 36
+
+diamreM (Seaking) (M) @ None
+Level: 38
+Serious Nature
+Ability: Motor Drive
+Ability Slot: 1
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 25 HP / 10 Atk / 19 Def / 17 SpA / 6 SpD / 29 Spe
+- Horn Attack
+- Waterfall
+- Aqua Jet
+- Pluck
+Met: Cherrygrove City
+
+peerCnk (Toxicroak) (M) @ None
+Level: 37
+Calm Nature
+Ability: Hyper Cutter
+Ability Slot: 1
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 11 HP / 28 Atk / 30 Def / 14 SpA / 15 SpD / 6 Spe
+- Fake Out
+- Bullet Punch
+- Mach Punch
+- Sludge Bomb
+Met: Olivine City
+
+traF (Magmar) (M) @ None
+Level: 37
+Naive Nature
+Ability: No Guard
+Ability Slot: 2
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 27 HP / 2 Atk / 13 Def / 21 SpA / 8 SpD / 28 Spe
+- Fire Punch
+- Lava Plume
+- Brick Break
+- Will-O-Wisp
+Met: Route 35
+
+neeuQgarD (Jynx) (F) @ Chesto Berry
+Level: 39
+Modest Nature
+Ability: Water Absorb
+Ability Slot: 1
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 5 HP / 19 Atk / 30 Def / 9 SpA / 1 SpD / 7 Spe
+- Psychic
+- Sing
+- Ice Beam
+- Perish Song
+Met: Route 38
+
+eriTy (Donphan) (F) @ None
+Level: 37
+Jolly Nature
+Ability: Battle Armor
+Ability Slot: 2
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 18 HP / 11 Atk / 13 Def / 22 SpA / 15 SpD / 17 Spe
+- Rollout
+- Horn Drill
+- Seed Bomb
+- Magnitude
+Met: Union Cave
+
+eednuDe (Feraligatr) (F) @ None
+Level: 33
+Adamant Nature
+Ability: Battle Armor
+Ability Slot: 2
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Crunch
+- Ice Fang
+- Rock Tomb
+- Aqua Jet
+Met: Pokéwalker
+
+llihC (Ludicolo) (F) @ None
+Level: 38
+Calm Nature
+Ability: Rain Dish
+Ability Slot: 2
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 17 HP / 5 Atk / 13 Def / 28 SpA / 13 SpD / 24 Spe
+- Fake Out
+- Giga Drain
+- Aurora Beam
+- Surf
+Met: SLOWPOKE Well
+
+reeS (Xatu) (F) @ None
+Level: 37
+Modest Nature
+Ability: Magic Guard
+Ability Slot: 1
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 10 HP / 10 Atk / 13 Def / 17 SpA / 14 SpD / 28 Spe
+- Me First
+- Wish
+- Extrasensory
+- U-turn
+Met: Dark Cave
+
+slraePl (Clamperl) (M) @ None
+Level: 20
+Careful Nature
+Ability: Shell Armor
+Ability Slot: 2
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 31 HP / 16 Atk / 5 Def / 30 SpA / 4 SpD / 21 Spe
+- Clamp
+- Swift
+- Whirlpool
+- Aurora Beam
+Met: Route 41
+
+osoifaM (Murkrow) (M) @ Exp. Share
+Level: 31
+Naughty Nature
+Ability: Super Luck
+Ability Slot: 1
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 3 HP / 4 Atk / 14 Def / 10 SpA / 11 SpD / 23 Spe
+- Taunt
+- Bite
+- Wing Attack
+- Feint Attack
+Met: Route 37
+
+tnatuM (Eevee) (M) @ None
+Level: 10
+Brave Nature
+Ability: Run Away
+Ability Slot: 1
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 25 HP / 9 Atk / 11 Def / 1 SpA / 11 SpD / 24 Spe
+- Helping Hand
+- Sand Attack
+- Growl
+- Quick Attack
+Met: Cianwood City
+
+sengAavus (Misdreavus) (M) @ None
+Level: 37
+Jolly Nature
+Ability: Levitate
+Ability Slot: 1
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 29 HP / 25 Atk / 29 Def / 22 SpA / 22 SpD / 23 Spe
+- Hyper Voice
+- Psychic
+- Shadow Ball
+- Shadow Sneak
+Met: Ecruteak City
+
+allizdoG (Lairon) (F) @ None
+Level: 37
+Careful Nature
+Ability: Battle Armor
+Ability Slot: 2
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 5 HP / 8 Atk / 8 Def / 16 SpA / 21 SpD / 23 Spe
+- Rock Slide
+- Quick Attack
+- Iron Head
+- Magnet Bomb
+Met: Pokéathlon Dome
+
+ettelemO (Togetic) (M) @ None
+Level: 37
+Naughty Nature
+Ability: Super Luck
+Ability Slot: 1
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 9 HP / 11 Atk / 23 Def / 25 SpA / 8 SpD / 25 Spe
+- Extreme Speed
+- Charm
+- Air Slash
+- Ancient Power
+Met: Global Terminal
+
+orroZa (Roselia) (M) @ None
+Level: 37
+Serious Nature
+Ability: Technician
+Ability Slot: 1
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 23 HP / 13 Atk / 15 Def / 22 SpA / 4 SpD / 24 Spe
+- Mega Drain
+- Toxic
+- Sludge Bomb
+- Magical Leaf
+Met: Route 46
+
+spmohCh (Trapinch) (F) @ Exp. Share
+Level: 32
+Jolly Nature
+Ability: Shed Skin
+Ability Slot: 1
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 3 HP / 29 Atk / 29 Def / 30 SpA / 25 SpD / 18 Spe
+- Rock Slide
+- Feint Attack
+- Dig
+- Crunch
+Met: National Park
+

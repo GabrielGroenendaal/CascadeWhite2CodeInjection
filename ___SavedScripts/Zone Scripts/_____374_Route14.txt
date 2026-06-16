@@ -501,7 +501,7 @@ public class MainEvents {
         Message.CloseAll();
         Message.ActorEx(1024, 25, 25, 0, 0);
         Message.CloseAll();
-        Global2805(210, 3);
+        Global2805(210, 2);
         Actor.Hide(25);
         Actor.Show(29);
         EventFlags.Clear(522);
