@@ -1164,7 +1164,7 @@ extern "C"
                         {
                             Btlv_StringParam_Setup(&a1->strParam, 1, 228);
                         }
-                        Btlv_StringParam_AddArg(&a1->strParam, v5);
+                        Btlv_StringParam_AddArg(&a1->strParam, ID);
                         goto LABEL_13;
                     }
                     // Virizion
@@ -1178,7 +1178,7 @@ extern "C"
                         {
                             Btlv_StringParam_Setup(&a1->strParam, 1, 229);
                         }
-                        Btlv_StringParam_AddArg(&a1->strParam, v5);
+                        Btlv_StringParam_AddArg(&a1->strParam, ID);
                         goto LABEL_13;
                     }
                     // Terrakion
@@ -1190,7 +1190,7 @@ extern "C"
                         } else {
                             Btlv_StringParam_Setup(&a1->strParam, 1, 230);
                         }
-                        Btlv_StringParam_AddArg(&a1->strParam, v5);
+                        Btlv_StringParam_AddArg(&a1->strParam, ID);
                         goto LABEL_13;
                     }
                     // Keldeo
@@ -1202,14 +1202,14 @@ extern "C"
                         } else {
                             Btlv_StringParam_Setup(&a1->strParam, 1, 231);
                         }
-                        Btlv_StringParam_AddArg(&a1->strParam, v5);
+                        Btlv_StringParam_AddArg(&a1->strParam, ID);
                         goto LABEL_13;
                     }
                     // Strange Statue
                     else if (a1->mainModule->btlSetup->TrainerSetups[v5]->TrID == 634 && ID >= 6)
                     {
                         Btlv_StringParam_Setup(&a1->strParam, 1, 234);
-                        Btlv_StringParam_AddArg(&a1->strParam, v5);
+                        Btlv_StringParam_AddArg(&a1->strParam, ID);
                         goto LABEL_13;
                     }
 #if INCLUDING_VICTINI
@@ -1222,7 +1222,7 @@ extern "C"
                          } else {
                              Btlv_StringParam_Setup(&a1->strParam, 1, 243);
                          }
-                         Btlv_StringParam_AddArg(&a1->strParam, v5);
+                         Btlv_StringParam_AddArg(&a1->strParam, ID);
                          goto LABEL_13;
                     }
                     else if ((a1->mainModule->btlSetup->TrainerSetups[v5]->TrID == KYUREM_ID || a1->mainModule->btlSetup->TrainerSetups[v5]->TrID == KYUREM_WHITE_ID) && ID >=6)
@@ -1233,7 +1233,7 @@ extern "C"
                         } else {
                             Btlv_StringParam_Setup(&a1->strParam, 1, 244);
                         }
-                        Btlv_StringParam_AddArg(&a1->strParam, v5);
+                        Btlv_StringParam_AddArg(&a1->strParam, ID);
                         goto LABEL_13;
                     }
 #endif

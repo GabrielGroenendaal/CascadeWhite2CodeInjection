@@ -81,7 +81,6 @@ public class MainEvents {
 		Message.WaitAdvance();
         yesNo = YesNoWin.Show();
         if (yesNo == 0){
-            Bag.TakeItem(588, 1);
             Message.System(8, 2);
 		    Message.WaitAdvance();
             Message.CloseAll();
@@ -95,6 +94,7 @@ public class MainEvents {
             Message.WaitAdvance();
             Message.CloseAll();
             Sound.PVWait();
+            EventWorks.Set(16504, 5);
 
             Battle.CallWildBattleEx(637, 75, 0, 0);	
 			isVictory = Battle.IsWildVictory();

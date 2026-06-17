@@ -1,0 +1,119 @@
+
+
+
+
+
+
+
+
+====================================================================================================================================================
+/*   FROZEN OPELUCID  */
+
+    Sets for Tag Battle: 
+
+    [IRIS TAG BATTLE]
+        Iris's Team: 
+            Level 81 Excadrill @ Lum Berry (Ability: Sturdy) (Megahorn, Drill Run, Rock Slide, Iron Head)
+            Level 81 Aggron @ Lum Berry (Ability: Determined) (Steel Beam, Outrage, Flamethrower, Light Screen)
+            Level 81 Emolga @ Lum Berry (Ability: No Guard) (Thunder, Hurricane, Iron Tail, Fake Out)
+            Level 82 Haxorus @ Lum Berry (Ability: Hyper Cutter) (Sacred Sword, Dragon Claw, Giga Impact, Guillotine)
+        
+        Plasma Grunt (Right Side):
+            Level 70 Raticate @ Chople Berry (Ability: Guts) (Facade, Crunch, Psychic Fangs, Protect)
+            Level 70 Scyther @ Eviolite (Ability: Technician) (Bug Bite, Razor Winds, Low Sweep, Tailwind)
+            Level 70 Granbull @ Focus Band (Ability: Guts) (Close Combat, Play Rough, Facade, Lovely Kiss)
+            Level 70 Magmar @ Proto Accelerator (Ability: Stench) (Heat Wave, Smog, Hyper Voice, Destiny Bond)
+
+        Plasma Grunt (Left Side)
+            Level 70 Skuntank @ Air Balloon (Ability: Flare Boost) (Dark Pulse, Flamethrower, Sludge Bomb, Aeroblast)
+            Level 70 Mightyena @ Brightpowder (Ability: Intimidate) (Pursuit, Screech, Sucker Punch, Swagger)
+            Level 70 Basculin @ Life Orb (Ability: Reckless) (Wave Crash, Superpower, Rock Wrecker, Final Gambit)
+            Level 70 Venomoth @ Proto Armor (Ability: Tenacity) (Stored Power, Silver Wind, Quiver Dance, Reflect)
+    
+    [BENGA TAG BATTLE]
+        Benga's Team: 
+            Level 72 Garchomp @ Lum Berry (Ability: Mold Breaker) (Dragon Claw, Drill Run, Temper Flare, Rock Slide)
+            Level 71 Gyarados @ Lum Berry (Ability: Intimidate) (Scald, Bounce, Thunderbolt, Flamethrower)
+            Level 71 Darmanitan-Z @ Lum Berry (Ability: Solid Rock) (Diamond Storm, Psychic Noise, Reflect, Light Screen)
+            Level 71 Dusknoir @ Lum Berry (Ability: Patient) (Shadow Punch, Drain Punch, Ice Punch, Wide Guard)
+
+        Plasma Grunt (Right Side)
+            Level 69 Sandslash @ White Herb (Ability: Sand Force) (Headlong Rush, Spin Out, Stone Edge, Spiky Shield)
+            Level 69 Grumpig @ Tanga Berry (Ability: Hustle) (Psycho Cut, Foul Play, Confuse Ray, Reflect)
+            Level 69 Seviper @ Choice Band (Ability: Corrosion) (Gunk Shot, Wicked Blow)
+            Level 69 Gigalith @ Proto Accelerator (Ability: Chlorophyll) (Solarbeam, Earth Power, Flamethrower, Thunderbolt)
+
+        Plasma Grunt (Left Side)
+            Level 69 Tangrowth @ Miracle Seed (Ability: Thick Fat) (Leaf Storm, Sleep Powder, Knock Off, Ancient Power)
+            Level 69 Scrafty @ Roseli Berry (Ability: Intimidate) (Fake Out, Revenge, Payback, Block)
+            Level 69 Smeargle @ Expert Belt (Ability: Savant) (Close Combat, Wicked Blow, Electro Ball, Silk Trap)
+            Level 69 Swoobat @ Proto Booster (Ability: Keen Senses) (Acrobatics, Dazzling Gleam, Stored Power, Hypnosis)
+
+    [HUGH TAG BATTLE]
+        Hugh's Team: 
+            Level 72 Serperior @ Sitrus Berry (Ability: Adaptability) (Grass Pledge, Electro Ball, Hurricane, Hyper Beam)
+            Level 72 Emboar @ Sitrus Berry (Ability: Determined) (Flare Blitz, Crunch, Head Smash, Giga Impact)
+            Level 72 Samurott @ Sitrus Berry (Ability: Hyper Cutter) (Sacred Sword, Razor Shell, Megahorn, Giga Impact)
+            Level 71 Eelektross @ Sitrus Berry (Ability: Levitate) (Scald, Bounce, Thunderbolt, Flamethrower)
+            Level 71 Flygon @ Sitrus Berry (Ability: Amplifier) (Bug Buzz, Clanging Scales, Earth Power, Stone Edge)
+            Level 71 Zangoose @ Sitrus Berry (Ability: Toxic Boost) (Crush Claw, Quick Attack, Knock Off, Fire Punch)
+
+        Plasma Grunt (Right Side)
+            Level 69  @  (Ability: ) (Headlong Rush, Spin Out, Stone Edge, Spiky Shield)
+            Level 69  @  (Ability: ) (Psycho Cut, Foul Play, Confuse Ray, Reflect)
+            Level 69  @  (Ability: ) (Gunk Shot, Wicked Blow)
+            Level 69  @  (Ability: ) (Solarbeam, Earth Power, Flamethrower, Thunderbolt)
+
+        Plasma Grunt (Left Side)
+            Level 69  @  (Ability: ) (Leaf Storm, Sleep Powder, Knock Off, Ancient Power)
+            Level 69  @  (Ability: ) (Fake Out, Revenge, Payback, Block)
+            Level 69  @  (Ability: ) (Close Combat, Wicked Blow, Electro Ball, Silk Trap)
+            Level 69  @  (Ability: ) (Acrobatics, Dazzling Gleam, Stored Power, Hypnosis)
+
+
+
+====================================================================================================================================================
+/*   ROUTE 10   */
+
+
+
+
+
+====================================================================================================================================================
+/*   ROUTE 23   */
+
+
+
+
+
+
+====================================================================================================================================================
+/*   GIANT CHASM   */
+
+0
+====================================================================================================================================================
+/*   GIANT CHASM BASIN   */
+
+
+
+====================================================================================================================================================
+/*   PLASMA FRIGATE   */
+
+    [ SCIENTIST (2x) ]
+
+        Porygon2 @ Eviolite (Ability: Normalize) (Blizzard, Reflect, Light Screen, Recover)
+
+
+
+====================================================================================================================================================
+/*   FRIGATE HEADQUARTERS   */
+
+
+
+
+====================================================================================================================================================
+/*   DEEP GIANT CHASM   */
+
+
+
+

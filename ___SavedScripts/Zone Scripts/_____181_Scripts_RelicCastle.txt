@@ -39,18 +39,17 @@ public class MainEvents {
 			ShowExclamationMark(2);
 			Player.GetGPos(v33, v34);
 			Actor.WaitActionFinish();
-			TurnNorth(255);
 			if (EventFlags.Get(526)) {
 				WordSet.LoadPlayerName(0);
-				Message.Spiked(16, 2)
-			} else {
 				Message.Spiked(17, 2)
+			} else {
+				Message.Spiked(16, 2)
 			}
 
 			Message.WaitAdvance();
 			Message.CloseSystem();
 			
-			if (v33 == 2) {
+			if (v33 == 3) {
 				WalkWestOneTile(255);
 			}
 			if (v34 == 10) {
@@ -240,11 +239,6 @@ public class MainEvents {
 			Message.ActorEx(1024, 9, 2, 0, 0);
 			Input.LastKeyWait();
 			Message.CloseAll();
-
-            count = Bag.GetItemQuantity(589);
-            if (count == 1){
-                Bag.TakeItem(589, 1);
-            }
             
             WordSet.LoadPlayerName(0);
             Message.System(26, 2);
@@ -296,6 +290,8 @@ public class MainEvents {
             
             WalkNorthOneTile(2);
             Actor.WaitActionFinish();
+            Message.System(33, 2);
+            Message.CloseAll();
             Message.ActorEx(1024, 32, 2, 0, 0);
 			Input.LastKeyWait();
 			Message.CloseAll();

@@ -152,6 +152,9 @@ public class MainEvents {
 		EventWorks.Set(16607, 2);
 		EventFlags.Set(804);
 		EventFlags.Set(805);
+
+        setUpPlasmaFrigate();
+
 		Base.CMD_262(1, 28);
 		Runtime.FinishSubEvents();
 		Actor.UnpauseAll();
@@ -258,7 +261,7 @@ public class MainEvents {
         Message.ActorEx(1024, 55, LADY_ENTITY, 0, 0);
         Input.LastKeyWait();
         Message.CloseAll();
-        Global2805(48, 2);
+        Global2805(48, 1);
         EventWorks.Set(16445, 1);
 
         LABEL_EndLadyB2B:
@@ -856,6 +859,30 @@ public class MainEvents {
 		EventWorks.Set(16462, 1);
 
 	}
+
+    static void setUpPlasmaFrigate() { // @ 0x250
+
+        // I think this for setting up the frigate on route 21? We'll see.
+        
+        Field.SetMapReplace(5, 1, 1);
+		Field.SetMapReplace(6, 0, 0);
+
+		// Despawns Colress
+		EventFlags.Set(811);
+
+		// ???? Literally no idea what this script is for
+		EventFlags.Set(368);
+
+		// ???? Literally no idea what this script is for
+		EventWorks.Set(16452, 1);
+
+		// ???? Literally no idea what this script is for
+		EventWorks.Set(16646, 1);
+
+		// This just tracks the basic state of the trigger handler here.
+		EventWorks.Set(16611, 2);
+	}
+
 	static meta void ChaseSwimmer(int npcId) :  VActionSequence {
 		Action0011(1);
 		Action0013(2);

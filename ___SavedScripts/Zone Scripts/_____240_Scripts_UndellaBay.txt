@@ -1,0 +1,515 @@
+import messages.script.Msg0305.MSGID;
+
+import event.Battle;
+import event.FieldDemo;
+import event.actors.Actor;
+import event.actors.Player;
+import event.dialogs.Message;
+import event.dialogs.YesNoWin;
+import pokescript.vm.Math;
+import pokescript.vm.StackCtrl;
+import pokescript.vm.VM;
+import system.EventFlags;
+import system.EventWorks;
+import system.Fade;
+import system.Game;
+import system.Input;
+import system.RTC;
+import system.Runtime;
+import system.Sound;
+import system.text.WordSet;
+
+public class MainEvents {
+	public static void main_1() { // @ 0x2c
+		int v35;
+		int v36;
+
+		v35 = RTC.GetDayOfWeek();
+		v36 = Game.GetVersion();
+		if (v36 != 23 || v35 != 1 || EventFlags.Get(2775)) {
+			if (v36 != 22 || v35 != 4 || EventFlags.Get(2775)) {
+				goto LABEL_00ba;
+			}
+			EventFlags.Clear(903);
+			EventWorks.Set(16416, 324);
+			return;
+		}
+		EventFlags.Clear(903);
+		EventWorks.Set(16416, 323);
+		return;
+
+		LABEL_00ba:
+		EventFlags.Set(903);
+	}
+
+	public static void main_2() { // @ 0xc0
+		int v16;
+		int v36;
+		int v37;
+		int v38;
+
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		v36 = Game.GetVersion();
+		if (v36 != 23) {
+			if (v36 != 22) {
+				goto LABEL_0166;
+			}
+			Sound.PVPlay(593, 0);
+			Message.Spiked(2, 2);
+			Sound.PVWait();
+			Message.WaitAdvance();
+			Message.CloseInfo();
+			v38 = 0;
+			v38 = 128;
+			v38 |= 8;
+			v38 |= 64;
+			Battle.CallWildBattle(593, 40, v38);
+			v38 = 0;
+			goto LABEL_0166;
+		}
+		Sound.PVPlay(593, 0);
+		Message.Spiked(0, 2);
+		Sound.PVWait();
+		Message.WaitAdvance();
+		Message.CloseInfo();
+		v37 = 0;
+		v37 = 128;
+		v37 |= 8;
+		v37 |= 32;
+		Battle.CallWildBattle(593, 40, v37);
+		v37 = 0;
+
+		LABEL_0166:
+		v16 = Battle.IsWildVictory();
+		if (v16 != 1) {
+			Battle.CallWildLose();
+			goto LABEL_0193;
+		}
+		EventFlags.Set(903);
+		EventFlags.Set(2775);
+		Actor.Hide(8);
+		Battle.EndWildBattle();
+
+		LABEL_0193:
+		v16 = Battle.GetWildBattleResult();
+		if (v16 == 0) {
+			goto LABEL_021a;
+		}
+		if (v16 == 1) {
+			goto LABEL_01d0;
+		}
+		if (v16 == 2) {
+			goto LABEL_01d0;
+		}
+		goto LABEL_021a;
+
+		LABEL_01aa:
+		goto LABEL_021a;
+
+		LABEL_01d0:
+		v36 = Game.GetVersion();
+		if (v36 != 23) {
+			if (v36 != 22) {
+				goto LABEL_021a;
+			}
+			Message.System(3, 2);
+			Input.LastKeyWait();
+			Message.CloseSystem();
+
+			LABEL_0214:
+			goto LABEL_021a;
+		}
+		Message.System(1, 2);
+		Input.LastKeyWait();
+		Message.CloseSystem();
+
+		LABEL_021a:
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_3() { // @ 0x220
+		Actor.PauseAll();
+		Sound.MEPlay(1327);
+		Message.System(4, 2);
+		Sound.MEWait();
+		WordSet.LoadPlayerName(0);
+		Message.System(5, 2);
+		Message.CloseAll();
+		Fade.OutBlackQ();
+		Fade.Wait();
+		FieldDemo.CallXTransceiver(8, 0);
+		Fade.InBlackQ();
+		Fade.Wait();
+		EventWorks.Set(16710, 2);
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+    //    16525: 
+    //        Tracks whether the player has completed Relic Sanctum's quest 
+    //        1 means they at least met Lenora 
+    //    526: 
+    //        Tracks whther the player has met lenora in Relic Castle Upper Flloors 
+    //    16504:
+    //        Tracks status of the Abyssal Ruins Quest 
+    //        
+    //        0: Base
+    //        1: Triggered the initial dialogue with Lenora
+    //        2: Defeated the trainer guarding the Relic Ruins 
+    //        3: Retrieved the Sunken Crown 
+    //        4: Inserted the Sunken Crown into the Relic Castle 
+
+    // Arriving in Undella Bay and Lenora Speaks to you 
+    public static void main_4(){
+        int playerX;
+        int playerY;
+
+        int Lenora_Entity = 11;
+
+        Actor.PauseAll();
+	   Sound.SEPlay(1351);
+        Player.GetGPos(playerX, playerY);
+        ShowExclamationMark(Lenora_Entity);
+        TurnNorth8F(Lenora_Entity);
+        Actor.WaitActionFinish();
+
+        if (EventFlags.Get(526) == 1){
+            WordSet.LoadPlayerName(0);
+            Message.ActorEx(1024, 6, Lenora_Entity, 0, 0);
+        }
+        else if (EventWorks.Get(16525) > 0) {
+            WordSet.LoadPlayerName(0);
+            Message.ActorEx(1024, 6, Lenora_Entity, 0, 0);
+        }
+        else {
+            Message.ActorEx(1024, 7, Lenora_Entity, 0, 0);
+        }
+        Message.CloseAll();
+
+        Actor.WalkRoute(Lenora_Entity, playerX, playerY+1, 0, 8, 0);
+        TurnNorth8F(Lenora_Entity);
+        Actor.WaitActionFinish();
+
+        if (EventFlags.Get(526) == 1){
+            Message.ActorEx(1024, 10, Lenora_Entity, 0, 0);
+        }
+        else if (EventWorks.Get(16525) > 0) {
+            Message.ActorEx(1024, 10, Lenora_Entity, 0, 0);
+        }
+        else {
+            WordSet.LoadPlayerName(0);
+            Message.ActorEx(1024, 9, Lenora_Entity, 0, 0);
+        }
+        Message.CloseAll();
+
+        WalkSouthOneTile(Lenora_Entity);
+        Actor.WaitActionFinish();
+
+        if (EventWorks.Get(16525) >= 2){
+            Message.ActorEx(1024, 12, Lenora_Entity, 0, 0);
+        }
+        else {
+            Message.ActorEx(1024, 11, Lenora_Entity, 0, 0);
+        }
+        Message.CloseAll();
+        WalkEastTwoTiles(Lenora_Entity);
+        Actor.WaitActionFinish();
+
+        Message.ActorEx(1024, 13, Lenora_Entity, 0, 0);
+        Message.CloseAll();
+        TurnSouth8F(Lenora_Entity);
+        Actor.WaitActionFinish();
+        Message.ActorEx(1024, 14, Lenora_Entity, 0, 0);
+        Message.CloseAll();
+        ReturnToTrainer(Lenora_Entity);
+        // Walk West 2 Tiles then North One Tile 
+        Actor.WaitActionFinish();
+        Message.ActorEx(1024, 15, Lenora_Entity, 0, 0);
+        Message.CloseAll();
+        TurnSouth8F(Lenora_Entity);
+        Actor.WaitActionFinish();
+        Message.ActorEx(1024, 16, Lenora_Entity, 0, 0);
+        Message.CloseAll();
+        TurnNorth8F(Lenora_Entity);
+        Actor.WaitActionFinish();
+        if (EventWorks.Get(16525) >= 2){
+            Message.ActorEx(1024, 34, Lenora_Entity, 0, 0);
+        }
+        else {
+            Message.ActorEx(1024, 17, Lenora_Entity, 0, 0);
+        }
+        Message.CloseAll();
+        EventWorks.Set(16504, 1);
+        Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
+
+    // Speaking with Lenora in the Overworld
+    public static void main_5(){
+        
+        int playerX;
+        int playerY;
+        int LenoraX;
+        int LenoraY;
+        int Lenora_Entity; // CHANGE LATER 
+        Lenora_Entity = 11;
+        Player.GetGPos(playerX, playerY);
+
+        Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+        if (EventWorks.Get(16504) == 1){
+            Message.Actor(1024, 32, 0, 0);
+            Input.LastKeyWait();
+		    Message.CloseActor();
+        }
+        else if (EventWorks.Get(16504) == 2){
+            Message.Actor(1024, 32, 0, 0);
+            Input.LastKeyWait();
+		  Message.CloseActor();
+		  EventWorks.Set(16504, 3);
+        }
+        else if (EventWorks.Get(16504) == 3){
+            WordSet.LoadPlayerName(0);
+            Message.Actor(1024, 18, 0, 0);
+            Input.LastKeyWait();
+		  Message.CloseActor();
+
+            Message.System(19, 2);
+            Message.WaitAdvance();
+            Message.CloseAll();
+		  Actor.GetGPos(Lenora_Entity, LenoraX, LenoraY);
+		  if (playerY > LenoraY){
+		  	WalkEastOneTile(Lenora_Entity);
+		  	Actor.WaitActionFinish();
+		  }
+		  else if (playerX > LenoraX){
+		  	WalkSouthOneTile(Lenora_Entity);
+		  	Actor.WaitActionFinish();
+		  }
+            Actor.WalkRoute(Lenora_Entity, 786, 268, 0, 8, 0);
+            TurnSouth8F(Lenora_Entity);
+            TurnSouth8F(255);
+            Actor.WaitActionFinish();
+
+            Message.Actor(1024, 20, 0, 0);
+            Input.LastKeyWait();
+            ShowExclamationMark(Lenora_Entity);
+            TurnSouth8F(Lenora_Entity);
+            Actor.WaitActionFinish();
+            Message.Actor(1024, 8, 0, 0);
+            Input.LastKeyWait();
+		    Message.CloseActor();
+
+            Actor.WalkRoute(Lenora_Entity, playerX, playerY+1, 0, 8, 0);
+            TurnNorth8F(Lenora_Entity);
+            Actor.WaitActionFinish();
+
+            Message.Actor(1024, 21, 0, 0);
+            Input.LastKeyWait();
+		    Message.CloseActor();
+
+            Global2805(270, 1);
+            
+            if (EventWorks.Get(16525) < 3) {
+                Message.Actor(1024, 22, 0, 0);
+                Input.LastKeyWait();
+                Message.CloseAll();
+            }
+            else {
+                Message.Actor(1024, 35, 0, 0);
+                Input.LastKeyWait();
+                TurnEast8F(Lenora_Entity);
+                Actor.WaitActionFinish();
+                Message.Actor(1024, 33, 0, 0);
+                Input.LastKeyWait();
+                Message.CloseActor();
+            }
+            EventWorks.Set(16504, 4);
+        }
+        else {
+            if (EventWorks.Get(16525) < 3) {
+                Message.Actor(1024, 22, 0, 0);
+                Input.LastKeyWait();
+                Message.CloseAll();
+            }
+            else {
+                Message.Actor(1024, 35, 0, 0);
+                Input.LastKeyWait();
+                TurnEast8F(Lenora_Entity);
+                Actor.WaitActionFinish();
+                Message.Actor(1024, 33, 0, 0);
+                Input.LastKeyWait();
+                Message.CloseActor();
+            }
+        }
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
+
+    // Speaking with the Swimmer in the overworld
+    public static void main_6() {
+        Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+        if (EventWorks.Get(16504) == 1){
+            Message.Actor(1024, 24, 0, 0);
+        }
+        else if (EventWorks.Get(16504) == 2){
+            Message.Actor(1024, 25, 0, 0);
+        }
+        else {
+            Message.Actor(1024, 26, 0, 0);
+        }
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
+
+    // Triggering the Swimmer to Battle you!
+    public static void main_7() {
+        int yesNo;
+		int isVictory;
+		int SwimmerEntity;
+		int swimmerX;
+		int swimmerY;
+		int playerX; 
+		int playerY;
+
+		SwimmerEntity = 3; // CHANGE THIS LATER
+		Actor.PauseAll();
+
+        Player.GetGPos(playerX, playerY);
+		Actor.GetGPos(SwimmerEntity, swimmerX, swimmerY);
+
+        Message.Spiked(31, 2);
+		ShowExclamationMark(255);
+		Actor.WaitActionFinish();
+		Message.WaitAdvance();
+        Message.CloseAll();
+	
+        if (playerX > swimmerX){
+            Fade.OutBlackQ();
+		  Fade.Wait();
+		  TurnWest8F(255);
+		  Actor.WaitActionFinish();
+            Actor.SetGPos(SwimmerEntity, (playerX-1), -6, playerY, 3);
+            Runtime.Sleep(32);
+            Fade.InBlackQ();
+		  Fade.Wait();
+        } 
+        else {
+            Fade.OutBlackQ();
+		  Fade.Wait();
+		  TurnEast8F(255);
+		  Actor.WaitActionFinish();
+            Actor.SetGPos(SwimmerEntity, (playerX+1), -6, playerY, 2);
+            Runtime.Sleep(32);
+            Fade.InBlackQ();
+		  Fade.Wait();
+        }
+        
+		Message.ActorEx(1024, 27, SwimmerEntity, 0, 0);
+		Message.CloseAll();
+		Message.System(36, 2);
+        yesNo = YesNoWin.Show();
+		if (yesNo != 0) {
+			Message.CloseAll();
+			Message.ActorEx(1024, 30, SwimmerEntity, 0, 0);
+			Input.LastKeyWait();
+			Message.CloseAll();
+
+			if (playerX > swimmerX){
+                SwimEast3Tiles(255);
+            }
+            else {
+                SwimWest3Tiles(255);
+            }
+			Actor.WaitActionFinish();
+			goto Label_EndAbyssalRuinsGatekeeper;
+		}
+        Message.CloseAll();
+		Message.ActorEx(1024, 28, SwimmerEntity, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseAll();
+		Battle.CallTrainerBattle(315, 0, 0);
+        isVictory = Battle.IsTrainerVictory();
+        if (isVictory != 1) {
+			Battle.CallTrainerLose();
+		}
+		Battle.EndTrainerBattle();
+		Message.ActorEx(1024, 29, SwimmerEntity, 0, 0);
+        Input.LastKeyWait();
+        Message.CloseAll();
+		if (playerX > swimmerX){
+            SwimWest3Tiles(3);
+        }
+        else {
+            SwimEast3Tiles(3);
+        }
+        Actor.WaitActionFinish();
+		EventWorks.Set(16504, 2);
+
+
+		Label_EndAbyssalRuinsGatekeeper:
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
+    
+    static meta void TurnNorth8F(int npcId) : VActionSequence {
+		Action0020(1);
+	}
+
+	static meta void TurnSouth8F(int npcId) : VActionSequence {
+		Action0021(1);
+	}
+
+	static meta void TurnWest8F(int npcId) : VActionSequence {
+		Action0022(1);
+	}
+
+	static meta void TurnEast8F(int npcId) : VActionSequence {
+		Action0023(1);
+	}
+    static meta void ShowExclamationMark(int npcId) : VActionSequence {
+		Action004b(1);
+	}
+
+    static meta void SwimWest3Tiles(int npcId) : VActionSequence {
+		Action000e(3);
+	}
+
+	static meta void SwimEast3Tiles(int npcId) : VActionSequence {
+		Action000f(3);
+	}
+    static meta void WalkSouthOneTile(int npcId) : VActionSequence {
+		Action000d(1);
+	}
+    static meta void WalkEastTwoTiles(int npcId): VActionSequence {
+        Action000f(2);
+	}
+	static meta void WalkEastOneTile(int npcId): VActionSequence {
+        Action000f(1);
+	}
+    static meta void ReturnToTrainer(int npcId) : VActionSequence {
+        Action000e(2);
+		Action000c(1);
+	}
+
+    static meta void Global2805(int a1, int a2) : VGlobalCall[2805];
+    static native void Action000c(int amount) : 0xc; // Walk North Tile
+    static native void Action000d(int amount) : 0xd; // Walk SouthOne Tile
+    static native void Action000e(int amount) : 0xe; // Walk West Tile
+    static native void Action000f(int amount) : 0xf; // Walk East Tile
+    static native void Action0012(int amount) : 0x12; // Walk West
+	static native void Action0013(int amount) : 0x13; // Walk East
+    static native void Action004b(int amount) : 0x4b; // Exclamation Mark
+    static native void Action0020(int amount) : 0x20; // Turn North
+	static native void Action0021(int amount) : 0x21; // Turn South
+	static native void Action0022(int amount) : 0x22; // Turn West
+	static native void Action0023(int amount) : 0x23; // Turn East
+}

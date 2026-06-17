@@ -1,0 +1,45 @@
+
+
+Remove the Crustle Altogether, we don't need it. 
+
+
+----- TEXT FILE 399-----
+13: 
+I'm pleased to meet you,\nmy name is Maylene.\c\nI'm training for the Pokémon World\nTournament. I take battles very seriously!\c\nI don't really know what it means to be\nstrong... But I will do the best I can\r\nas a Trainer for my Pokémon.\c\nWould you like to spar with me?
+
+14:
+Whenever you're ready!
+
+15:
+I understand.\nI will remain here a little while longer\r\nshould you change your mind.
+
+16:
+Learn from your foe by winning, and\nlearn from your foe by losing, too...\c\nEverything is an experience...\nYes.\r\nPokémon made me realize that....\c\nHere, take this as thanks for the\ngreat battle!
+
+17:
+I can't explain what it means to be\nstrong.\c\nI don't know how much effort goes into\nbeing strong...\c\nBut being with Pokémon lets us keep\nmaking the effort, doesn't it?
+
+
+
+
+
+Maylene: 
+    Post-Defeat: 
+    Thank you very much.\nI learned a lot from this battle.
+
+
+
+471: 
+    Maylene 
+
+580: 
+    Black Belt X 
+
+
+
+Black Belt Team: 
+    Roggenrola @ Mascot Badge (Ability: Sturdy) (Diamond Storm, Earth Power, Stealth Rock, Heat Wave)
+    Hitmonchan @ Coba Berry (Ability: Iron Fist) (Mega Punch, Ice Punch, Pursuit, Meteor Mash)
+    Fraxure @ Eviolite (Ability: Mold Breaker) (Outrage, Poison Jab, Close Combat, Dragon Dance)
+    Dugtrio @ Starf Berry (Ability: Sand Force) (Earthquake, Superpower, Head Smash, Substitute)
+    Hariyama @ Tera Vest (Ability: Guts) (Wave Crash, Drain Punch, Avalanche, Rolling Kick)
