@@ -83,10 +83,11 @@ Rain, snow, sleet, or hail-- nothing\nwill stop me from fishing!
 
 
 Ranger A:
-
-
+    Post Loss: 
+        You can take of yourself, that's\nfor sure!
 Ranger B:
-
+    Post Loss:
+        Guess we were the ones who were\ntrounced, partner.
 
 
 

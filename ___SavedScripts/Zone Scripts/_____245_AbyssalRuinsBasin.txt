@@ -1,4 +1,4 @@
-Fimport messages.script.Msg0310.MSGID;
+import messages.script.Msg0310.MSGID;
 
 import Base;
 import Overlay54;
@@ -299,56 +299,51 @@ public class MainEvents {
 			random = System.Random(100);
 			level = System.Random(3) + 48;
 
+
+
 			if (random < 100) {
-				if (random < 80) {
-					if (random < 60) {
-						if (random < 50) {
-							if (random < 40) {
-								if (random < 30){
-									if (random < 20) {
-										if (random < 15) {
-											if (random < 10) {
-												if (random < 5) {
-													speciesId = 367;
-												}
-												else {
-													speciesId = 368;
-												}
-											}
-											else {
-												speciesId = 356;
-											}
+				if (random < 75) {
+					if (random < 50) {
+						if (random < 40){
+							if (random < 30) {
+								if (random < 20) {
+									if (random < 10) {
+										if (random < 5) {
+											speciesId = 356;
 										}
 										else {
 											speciesId = 321;
 										}
 									}
 									else {
-										speciesId = 121;
+										speciesId = 593;
 									}
 								}
 								else {
-									speciesId = 593;
+									speciesId = 604;
 								}
 							}
 							else {
-								speciesId = 222;
+								speciesId = 367;
 							}
 						}
 						else {
-							speciesId = 604;
+							speciesId = 368;
 						}
-					} 
+					}
 					else {
-						speciesId = 171;
+						speciesId = 369;
 					}
 				}
 				else {
-					speciesId = 369;
+					speciesId = 171;
 				}
-			} else {
-				speciesId = 369;
+			} 
+			else {
+				speciesId = 171;
 			}
+
+	
 			Sound.PVPlay(speciesId, 0);
 			Sound.PVWait();
 			

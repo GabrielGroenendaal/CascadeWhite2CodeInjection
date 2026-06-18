@@ -1,0 +1,52 @@
+
+Seaside Cave:
+    Trainers: 
+        471: Maylene
+        472: Battle Girl Maki 
+        473: Johan 
+        474: Mikiko 
+        580: Rocky 
+    
+    Items: 
+        162 = Enigma Berry x1
+        163 = Dive Ball x5
+        165 = Heart Scale 
+        166 = Lum Berry x3 
+        168 = Yellow Shard x5 
+
+
+Undella Bay: 
+    Trainers: 
+        472: Battle Girl Maki
+        315: Swimmer Bart 
+    
+Abyssal Ruin: 
+    Trainers: 
+        314: Swimmer Matt 
+        316: Swimmer Tim 
+        317: Swimmer Arissa 
+        318: Swimmer Mitzi 
+        104: Sunken Statue 
+
+Plasma Frigate: 
+    Trainers:
+
+    Items: 
+
+
+Route 13: 
+    Trainers:
+        294 - Ranger Daryl
+        295 - Ranger Dianne
+        730 - Black Belt Wesley 
+        133 - Ace Trainer ANgi 
+        134 - Ace Trainer Miguel 
+        286 - Fisherman Jones 
+        287 - Fisherman Damon 
+        288 - Fisherman Leeroy -> Scientist Leeroy 
+        289 - Fisherman Vince -> Worker Vince 
+        290 - Parasol Lady Laura 
+        731 - Battle Girl Alize -> Scientist Alize 
+        471 - Black Belt Rich -> Candice 
+        
+    Items: 

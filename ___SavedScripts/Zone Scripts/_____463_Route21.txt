@@ -132,16 +132,130 @@ public class MainEvents {
 		Runtime.FinishSubEvents();
 		Actor.UnpauseAll();
 	}
+    
+    // Dialogue after getting kicked off the Plasma Frigate 
+    // We're going to start with Janine being visible and she will 
+    // have a little dialogue with the players. her dialogue is warmer 
+    // towards the player if they defeated her in Clay split. 
+    // she then jets off. 
+    // Cheren will appear afterwards. 
+    // The rest of this script can run as normal but we need to make substantial dialogue edits 
+    // To support the new logic. 
+    // Cheren will direct the players to seek out Drayden in Opelucid city for more information on the legendary dragons 
 
 	public static void main_5() { // @ 0x4e8
+        int JanineEntity;
+        int CrobatEntity;
+        int JanineFlag;
+
 		Actor.PauseAll();
+        EventFlags.Clear(857);
+        Actor.Show(JanineEntity);
+        Actor.Show(CrobatEntity);
 		Fade.InBlackQ();
 		Fade.Wait();
-		EventFlags.Clear(857);
+
 		WordSet.LoadPlayerName(0);
 		WordSet.LoadRivalName(1);
 		Message.ActorEx(1024, 14, 9, 0, 0);
 		Message.CloseAll();
+
+        // HUGH turns towards Janine 
+        TurnWest8F(9);
+        Actor.WaitActionFinish();
+        Message.ActorEx(1024, 24, 9, 0, 0);
+		Message.CloseAll();
+
+        // Janine Responds Based on if you met and defeated her in Clay Split 
+        JanineFlag = EventFlags.Get(1520 + 768);
+        if (JanineFlag == 1){
+            Message.ActorEx(1024, 26, JanineEntity, 0, 0);
+            Message.CloseAll();
+            HopLeft(9);
+            Actor.WaitActionFinish();
+            Message.ActorEx(1024, 27, 9, 0, 0);
+            Actor.WaitActionFinish();
+            Message.ActorEx(1024, 28, JanineEntity, 0, 0);
+            Message.CloseAll();
+        }
+        else {
+            Message.ActorEx(1024, 25, JanineEntity, 0, 0);
+            Message.CloseAll();
+        }
+
+        // Hugh Responds 
+		// Hugh turns East
+		TurnEast8F(9);
+		Actor.WaitActionFinish();
+		WordSet.LoadDaycarePokeSpecies(2, 0);
+		Message.ActorEx(1024, 47, 9, 0, 0);
+		Message.CloseAll();
+		TurnWest8F(9);
+		Actor.WaitActionFinish();
+        Message.ActorEx(1024, 29, 9, 0, 0);
+		Message.CloseAll();
+        
+        // Janine Responds again, with different tone depending if you know her.
+        if (JanineFlag == 1){
+            Message.ActorEx(1024, 31, JanineEntity, 0, 0);
+            Message.CloseAll();
+        }
+        else {
+            Message.ActorEx(1024, 30, JanineEntity, 0, 0);
+            Message.CloseAll();
+        }
+
+        // Hugh Turns East Somberly 
+        TurnEast8F(9);
+        Actor.WaitActionFinish();
+        Message.ActorEx(1024, 32, 9, 0, 0);
+		Message.CloseAll();
+
+        // Janine concurs
+        if (JanineFlag == 1){
+            Message.ActorEx(1024, 45, JanineEntity, 0, 0);
+            Message.CloseAll();
+        }
+        else {
+            Message.ActorEx(1024, 33, JanineEntity, 0, 0);
+            Message.CloseAll();
+        }
+
+        // A pause 
+        Runtime.Sleep(64);
+
+        // Janine Exit Dialogue 
+        TurnWest8F(9);
+        if (JanineFlag == 1){
+            Message.ActorEx(1024, 34, JanineEntity, 0, 0);
+            Message.CloseAll();
+        }
+        else {
+            Message.ActorEx(1024, 35, JanineEntity, 0, 0);
+            Message.CloseAll();
+        }
+
+        // Whatever movement stuff we need to do for Janine 
+        Fade.OutBlackQ();
+		Fade.Wait();
+        Actor.Hide(JanineEntity);
+        Actor.Hide(CrobatEntity);
+        Fade.InBlackQ();
+		Fade.Wait();
+
+    
+        // Hugh Commments on her Departure
+        if (JanineFlag == 1){
+            Message.ActorEx(1024, 36, 9, 0, 0);
+            Message.CloseAll();
+        }
+        else {
+            Message.ActorEx(1024, 43, 9, 0, 0);
+            Message.CloseAll();
+        }
+
+        
+        // Cheren Arrives 
 		Sound.SEPlay(1369);
 		Actor.Show(11);
 		Actor.WaitActionFinish();
@@ -151,16 +265,31 @@ public class MainEvents {
 		ActionSequence_06a4(9);
 		ActionSequence_06a4(255);
 		Actor.WaitActionFinish();
-		Message.ActorEx(1024, 15, 11, 0, 0);
+		Message.ActorEx(1024, 37, 11, 0, 0);
 		Message.CloseAll();
 		WordSet.LoadPlayerName(0);
 		WordSet.LoadRivalName(1);
-		Message.ActorEx(1024, 16, 9, 0, 0);
+
+        // Hugh Talks about Kyurem
+        Message.ActorEx(1024, 38, 9, 0, 0);
+		Message.CloseAll();
+
+        // Cheren Responds 
+        Message.ActorEx(1024, 39, 11, 0, 0);
+		Message.CloseAll();
+		ActionSequence_060c(11);
+		Actor.WaitActionFinish();
+		Message.ActorVersioned(1024, 40, 40, 11, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseAll();
+
+        // Hugh Dareets off 
+		Message.ActorEx(1024, 41, 9, 0, 0);
 		Message.CloseAll();
 		ActionSequence_069c(9);
 		ActionSequence_0694(255);
 		Actor.WaitActionFinish();
-		Message.ActorEx(1024, 17, 9, 0, 0);
+		Message.ActorEx(1024, 44, 9, 0, 0);
 		Message.CloseAll();
 		ActionSequence_0624(9);
 		Runtime.Sleep(8);
@@ -172,11 +301,11 @@ public class MainEvents {
 		Sound.SEWait();
 		ActionSequence_06ac(11);
 		Actor.WaitActionFinish();
-		Message.ActorEx(1024, 18, 11, 0, 0);
+		Message.ActorEx(1024, 46, 11, 0, 0);
 		Message.CloseAll();
 		ActionSequence_060c(11);
 		Actor.WaitActionFinish();
-		Message.ActorVersioned(1024, 19, 20, 11, 0, 0);
+		Message.ActorVersioned(1024, 42, 42, 11, 0, 0);
 		Input.LastKeyWait();
 		Message.CloseAll();
 		EventWorks.Set(16646, 5);
@@ -203,6 +332,7 @@ public class MainEvents {
 		Actor.UnpauseAll();
 	}
 
+    // Arriving at the Frigate with Hugh and getting Help from Marlon.
 	public static void main_7() { // @ 0x2fc
 		int v32;
 
@@ -263,6 +393,10 @@ public class MainEvents {
 		EVCamera.Rebind();
 		EVCamera.End();
 		ObjInit.SetWarpGPos(2, 800, 65531, 241);
+
+        // OK these flags we need to understand; i think they're potentially mostly covering for the puzzle 
+        // Cause there are a lot of them based on the ame version. 
+
 		EventWorks.Set(16646, 3);
 		EventFlags.Set(855);
 		EventFlags.Set(856);
@@ -295,7 +429,12 @@ public class MainEvents {
 		Actor.PauseAll();
 		Sound.SEPlay(1351);
 		Actor.FacePlayer();
-		Message.Actor(1024, 22, 0, 0);
+        if (EventWorks.Get(16588) >= 4){
+            Message.Actor(1024, 23, 0, 0);
+        }
+        else {
+            Message.Actor(1024, 22, 0, 0);
+        }
 		Input.LastKeyWait();
 		Message.CloseActor();
 		Runtime.FinishSubEvents();
@@ -387,7 +526,9 @@ public class MainEvents {
 	static meta void ActionSequence_06a4(int npcId) : VActionSequence {
 		Action0022(1);
 	}
-
+	static meta void HopLeft(int npcId) : VActionSequence {
+        Action0032(1);
+    }
 	static meta void ActionSequence_06ac(int npcId) : VActionSequence {
 		Action0023(1);
 	}
@@ -395,8 +536,13 @@ public class MainEvents {
 	static meta void ActionSequence_06b4(int npcId) : VActionSequence {
 		Action004b(1);
 	}
-
-
+    static meta void TurnEast8F(int npcId) : VActionSequence {
+		Action0023(1);
+	}
+    static meta void TurnWest8F(int npcId) : VActionSequence {
+		Action0022(1);
+	}
+    
 	static native void Action0001(int amount) : 0x1;
 	static native void Action000c(int amount) : 0xc;
 	static native void Action000d(int amount) : 0xd;
@@ -409,6 +555,7 @@ public class MainEvents {
 	static native void Action0021(int amount) : 0x21;
 	static native void Action0022(int amount) : 0x22;
 	static native void Action0023(int amount) : 0x23;
+	static native void Action0032(int amount) : 0x32;
 	static native void Action0042(int amount) : 0x42;
 	static native void Action004b(int amount) : 0x4b;
 	static native void Action00a1(int amount) : 0xa1;

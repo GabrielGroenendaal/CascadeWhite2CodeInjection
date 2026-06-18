@@ -1,0 +1,21 @@
+
+
+Howdy all! 
+
+My name is u/TrustyPeaches, and I'm the developer for Cascade White, an upcoming decomp-adjacent hack of Pokemon White 2, and I'd like to showcase an exciting Quality-of-Life feature that's included in my hack.
+ 
+Cascade is a game with robust changes to moves, abilities, typings, and statlines, which can often create a steeper learning curve as players familiarize themselves with all the changes. 
+So to smooth out the learning process, I developed a feature for anyone who wants to spend more time in-game and less on the documentation, the "Battle Scan". 
+
+The "Battle Scan" is a functionality that lets the Player to examine their opponent's team in battle as an alternative for referencing the docs! 
+Simply hold down the L or R bumpers before opening the Pokemon Menu, and you can view a preview of the opponent's team and see:
+- Team Members*
+- Typings 
+- Stats
+- Abilities 
+- Held Items 
+- Moves
+Want to compare speed tiers for a Pokemon you haven't battled before? Scan it. Want to double check the effect of a move? Scan it. Want to see if Luxray got a new Dark typing? Scan it. 
+
+What about blind players? Or those who still want surprises in their gameplay? The Battle Scan can be configured to display information only for team members and moves that have been revealed in battle! 
+
