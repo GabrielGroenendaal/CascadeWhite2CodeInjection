@@ -492,7 +492,7 @@ public class MainEvents {
 		if (isVictory == 1) {
 			Battle.EndTrainerBattle();
 			Message.ActorEx(1024, 31, bengaEntity, 2, 0);
-			
+            EventFlags.Set(1520 + 773);
 		} else {
 			Battle.EndTrainerBattle();
 			Message.ActorEx(1024, 32, bengaEntity, 2, 0);

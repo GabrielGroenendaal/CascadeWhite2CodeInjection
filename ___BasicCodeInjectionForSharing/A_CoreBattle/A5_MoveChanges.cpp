@@ -2097,38 +2097,38 @@ extern "C"
 
 #pragma region KnockOff
 
-    int HandlerKnockOffPower(int a1, ServerFlow *a2, int a3)
-    {
-        int result; // r0
-        BattleMon *defender;
-        BattleMon *BattleMon; // r0
+    // int HandlerKnockOffPower(int a1, ServerFlow *a2, int a3)
+    // {
+    //     int result; // r0
+    //     BattleMon *defender;
+    //     BattleMon *BattleMon; // r0
 
-        result = 65;
-        if (a3 == BattleEventVar_GetValue(VAR_ATTACKING_MON))
-        {
-            defender = Handler_GetBattleMon(a2, BattleEventVar_GetValue(VAR_DEFENDING_MON));
-            BattleMon = Handler_GetBattleMon(a2, a3);
+    //     result = 65;
+    //     if (a3 == BattleEventVar_GetValue(VAR_ATTACKING_MON))
+    //     {
+    //         defender = Handler_GetBattleMon(a2, BattleEventVar_GetValue(VAR_DEFENDING_MON));
+    //         BattleMon = Handler_GetBattleMon(a2, a3);
 
-            if (!HandlerCommon_CheckIfCanStealPokeItem(a2, a3, BattleEventVar_GetValue(VAR_DEFENDING_MON)))
-            {
-                if (BattleMon_GetHeldItem(defender))
-                {
-                    result = 98;
-                }
-            }
-        }
-        return BattleEventVar_RewriteValue(VAR_MOVE_POWER, result);
-    };
+    //         if (!HandlerCommon_CheckIfCanStealPokeItem(a2, a3, BattleEventVar_GetValue(VAR_DEFENDING_MON)))
+    //         {
+    //             if (BattleMon_GetHeldItem(defender))
+    //             {
+    //                 result = 98;
+    //             }
+    //         }
+    //     }
+    //     return BattleEventVar_RewriteValue(VAR_MOVE_POWER, result);
+    // };
 
-    MOVE_TRIGGERTABLE KnockOffHandlers[] = {
-        {EVENT_DAMAGE_PROCESSING_END_HIT_REAL, (MOVE_HANDLER_FUNC)HandlerKnockOff},
-        {EVENT_MOVE_BASE_POWER, (MOVE_HANDLER_FUNC)HandlerKnockOffPower}};
+    // MOVE_TRIGGERTABLE KnockOffHandlers[] = {
+    //     {EVENT_DAMAGE_PROCESSING_END_HIT_REAL, (MOVE_HANDLER_FUNC)HandlerKnockOff},
+    //     {EVENT_MOVE_BASE_POWER, (MOVE_HANDLER_FUNC)HandlerKnockOffPower}};
 
-    MOVE_TRIGGERTABLE *THUMB_BRANCH_EventAddKnockOff(_DWORD *a1)
-    {
-        *a1 = 2;
-        return KnockOffHandlers;
-    }
+    // MOVE_TRIGGERTABLE *THUMB_BRANCH_EventAddKnockOff(_DWORD *a1)
+    // {
+    //     *a1 = 2;
+    //     return KnockOffHandlers;
+    // }
 #pragma endregion
 
 #pragma region WeakenedSpAMoves

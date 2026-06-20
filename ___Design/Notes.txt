@@ -1,0 +1,11 @@
+
+
+Model Number: 327 - 341 
+These are the flashback sprites and are pretty unused so we can just overwrite them with the gym leader sprites 
+Tinke File: 305 to 319
+
+Entity 2 - Model 17
+Entity 3 - Model 13
+Entity 5 - Model 13
+
+

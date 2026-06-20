@@ -1233,12 +1233,12 @@ void Sequence102()
 	End();
 }
 
-/* ROUTE 7 - Lax Mint x1 */
+/* ROUTE 7 - 2x Blunder Policies */
 void Sequence103()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 514);
-	SetVarEqVal(0x800D, 1);
+	SetVarEqVal(0x800C, 256);
+	SetVarEqVal(0x800D, 2);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -2031,12 +2031,16 @@ void Sequence172()
 	End();
 }
 
-/* Gentle Mint x1 - ROUTE 22*/
+/* Spelon and Ganlon Berries  - ROUTE 22*/
 void Sequence173()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 526);
-	SetVarEqVal(0x800D, 1);
+	SetVarEqVal(0x800C, 179);
+	SetVarEqVal(0x800D, 2);
+	Sequence400();
+	WaitMoment();
+	SetVarEqVal(0x800C, 202);
+	SetVarEqVal(0x800D, 2);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -2620,12 +2624,12 @@ void Sequence225()
 	End();
 }
 
-/* IV Enhancer x1 - Celestial Rooftop */
+/* IV Enhancer x5 - Celestial Rooftop */
 void Sequence226()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 530);
-	SetVarEqVal(0x800D, 1);
+	SetVarEqVal(0x800D, 5);
 	Sequence400();
     WaitMoment();
     // SetVarEqVal(0x800C, 524);
@@ -2986,12 +2990,12 @@ void Sequence255()
 	UnlockAll();
 	End();
 }
-/* IV Enhancer x1 - Abundant Shrine */
+/* IV Enhancer x5 - Abundant Shrine */
 void Sequence256()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 530);
-	SetVarEqVal(0x800D, 1);
+	SetVarEqVal(0x800D, 5);
 	Sequence400();
     WaitMoment();
     // SetVarEqVal(0x800C, 506);

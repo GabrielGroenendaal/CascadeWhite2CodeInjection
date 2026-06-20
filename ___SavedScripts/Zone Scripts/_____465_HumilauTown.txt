@@ -1,6 +1,7 @@
 import messages.script.Msg0189.MSGID;
 
 import Base;
+import system.Field;
 import Overlay67;
 import event.Battle;
 import event.actors.Actor;
@@ -339,7 +340,7 @@ public class MainEvents {
         Message.ActorEx(1024, 55, LADY_ENTITY, 0, 0);
         Input.LastKeyWait();
         Message.CloseAll();
-        Global2805(48, 2);
+        Global2805(48, 1);
         EventWorks.Set(16445, 1);
 
 		LABEL_EndRichBoyB2B:
@@ -867,6 +868,9 @@ public class MainEvents {
         Field.SetMapReplace(5, 1, 1);
 		Field.SetMapReplace(6, 0, 0);
 
+		// Set up for Benga 
+		EventFlags.Set(567);
+		 
 		// Despawns Colress
 		EventFlags.Set(811);
 

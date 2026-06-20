@@ -1280,17 +1280,17 @@ extern "C"
                 return 4096;
             }
         }
-        if (IsEqual(MoveID, MOVE282_KNOCK_OFF))
-        {
-            if (BattleMon_GetHeldItem(DefendingMon) && !HandlerCommon_CheckIfCanStealPokeItem(a1, AttackingMon->ID, DefendingMon->ID))
-            {
-                return 6144;
-            }
-            else
-            {
-                return 4096;
-            }
-        }
+        // if (IsEqual(MoveID, MOVE282_KNOCK_OFF))
+        // {
+        //     if (BattleMon_GetHeldItem(DefendingMon) && !HandlerCommon_CheckIfCanStealPokeItem(a1, AttackingMon->ID, DefendingMon->ID))
+        //     {
+        //         return 6144;
+        //     }
+        //     else
+        //     {
+        //         return 4096;
+        //     }
+        // }
         if (IsEqual(MoveID, MOVE478_POWER_TRIP) || IsEqual(MoveID, MOVE500_STORED_POWER))
         {
             int total;
@@ -2115,17 +2115,17 @@ extern "C"
             }
         }
 
-        if (IsEqual(MoveID, MOVE282_KNOCK_OFF))
-        {
-            if (BattleMon_GetHeldItem(DefendingMon) && !HandlerCommon_CheckIfCanStealPokeItem(server, AttackingMon->ID, DefendingMon->ID))
-            {
-                return value + (value >> 1);
-            }
-            else
-            {
-                return value;
-            }
-        }
+        // if (IsEqual(MoveID, MOVE282_KNOCK_OFF))
+        // {
+        //     if (BattleMon_GetHeldItem(DefendingMon) && !HandlerCommon_CheckIfCanStealPokeItem(server, AttackingMon->ID, DefendingMon->ID))
+        //     {
+        //         return value + (value >> 1);
+        //     }
+        //     else
+        //     {
+        //         return value;
+        //     }
+        // }
 
         if (IsEqual(MoveID, MOVE264_FOCUS_PUNCH))
         {
@@ -2786,10 +2786,14 @@ extern "C"
                 v5 = 0;
                 v23_temp[i] = 0;
                 MonData = BattleParty_GetMonData(BattleClient_GetActParty(a1), a2[i]);
-                atkAbility = (AbilID)BattleMon_GetValue(MonData, VALUE_EFFECTIVE_ABILITY);
+                    
 
                 if (!BattleMon_IsFainted(MonData))
                 {
+                    if (MonData->Species == PK132_DITTO){
+                        MonData = defendingMonChecked;
+                        atkAbility = (AbilID)BattleMon_GetValue(MonData, VALUE_EFFECTIVE_ABILITY);
+                    }
                     MoveCount = BattleMon_GetMoveCount(MonData);
                     if (MoveCount)
                     {
@@ -3152,6 +3156,10 @@ extern "C"
 
                 if (!BattleMon_IsFainted(MonData))
                 {
+                    if (MonData->Species == PK132_DITTO){
+                        MonData = defendingMonChecked;
+                        atkAbility = (AbilID)BattleMon_GetValue(MonData, VALUE_EFFECTIVE_ABILITY);
+                    }
                     MoveCount = BattleMon_GetMoveCount(MonData);
                     if (MoveCount)
                     {

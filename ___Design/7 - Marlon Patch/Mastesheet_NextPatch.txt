@@ -199,7 +199,7 @@ end
 
 
 
-## Flocessy Town
+## Floccesy Town
 !items Items
 exp share, Exp Share (given by Professor Juniper along with the gift Pokémon)
 green shard, Green Shard x10 — Given by Alder upon arrival in town
@@ -255,9 +255,9 @@ end
 
 ## Floccesy Ranch
 !items Items
-  green shard, Green Shard x10 — reward for defeating Rival
+  green shard, Green Shard x10 — given by Hugh after defeating Lass Molly
   quick claw, Quick Claw — found in the south part of the map by fences
-  oran berry, Oran Berry x10 — given by Hugh after defeating Lass Molly
+  oran berry, Oran Berry x10 — given by ranchers after defeating Hugh
   wiseglasses, WiseGlasses (found past Janitor Orville)
   white herb, White Herb x2 — found past Youngster Kenny
   tm normal, TM10 Hidden Power — reward for defeating Benga
@@ -265,14 +265,14 @@ end
 
 !enc 45
 
-### Rival Fight (Rewards 10x Green Shards)
+### Rival Fight (Rewards 10x Oran Berries)
 !trm 166 If chose Snivy
 
 !trm 167 If chose Tepig
 
 !trm 168 If chose Oshawott
-
-!gifts Flocessy Ranch Egg
+You can exchange these with a [COLOR(2)]Move Tutor[COLOR(0)]\nfrom the Blueberry Academy to teach\r\nyour partners new moves!\c
+!gifts Floccesy Ranch Egg
 desc: Speak to the rancher after defeating Hugh to receive an egg containing one of the following Pokémon. It can be hatched in Aspertia Gate.
 snover
 elekid
@@ -412,7 +412,8 @@ end
 
 !trm 173/16
 
-!trm 174/16
+!trm 174/16 Choose One (Left)
+!trm 396/16 Choose One (South)
 
 !tr 176/17 Rewards Mystic Water and Miracle Seed
 
@@ -1348,6 +1349,18 @@ end
 !notif WARNING, "Proto" Items are dangerous devices designed by colress that boost a Pokémon's stats on switch in at the cost of their accuracy. Be careful! , #f26253
 !trm 739/48 Rewards 1x IV Enhancer, 1x Proto Booster
 
+## Blueberry Academy 
+!notif NOTE, You can visit the Blueberry Academy from the ship on the docks of the PWT. Defeat a short back-to-back battle for a mint! 
+
+### Terastalization Demonstration 
+!notif WARNING, "Tera" Items function like their non-tera counterparts, but cause the Pokémon to Terastalize at the start of their first turn in battle. The type they Terastalize into is that of the move in their first moveslot. This functions identically to Generation 9 Terastalization! , #f26253
+
+!tr 419 First Fight of Back to Back 
+!tr 424 Second Fight of Back to Back 
+!items Items 
+stable mulch, Gentle or Lax Mint x1 (reward for the Terastalization Demonstration)
+end
+
 
 ## Relic Passage: Skyla Split
 !notif NOTE, This has the same met location as the part of Relic Passage accessible in Burgh split, except there are now water encounters.
@@ -1609,7 +1622,7 @@ end
 heart scale, Heart Scale (found past Sola & Ana)
 tm fairy, TM32 Dazzling Gleam (found past Sola & Ana)
 tm flying, TM11 Air Slash (past Holly)
-stable mulch, x1 Lax Mint (past Harlequins)
+weakness policy, x2 Blunder Policies (past Harlequins)
 end
 
 !tr 272/50 Left Side 
@@ -1943,7 +1956,7 @@ end
 shell bell, Shell Bell (behind Pokémon Center)
 heart scale, x1 Heart Scale (in middle of town shallows)
 yellow shard, x5 Yellow Shards (Northwest dock)
-ability capsule, x2 Ability Capsule (Defeat the B2B Trainers)
+ability capsule, x1 Ability Capsule (Defeat the B2B Trainers)
 end
 
 !notif MOVE TUTOR, The yellow shard move tutor is in their original location, and teaches:
@@ -1997,7 +2010,7 @@ end
 ## Route 22
 !items Items 
 green shard, x15 Green Shard 
-stable mulch, Gentle Mint (Blocked by Breeder M)
+ganlon berry, x2 Ganlon and Spelon Berries (Blocked by Breeder M)
 sitrus berry, x10 Sitrus Berries (navigate the railings)
 end
 

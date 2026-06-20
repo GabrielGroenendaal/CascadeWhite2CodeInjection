@@ -1,80 +1,15 @@
-draugefiL (Floatzel) (F) @ None
-Level: 47
+popeilriG (Illumise) (F) @ None
+Level: 48
 Rash Nature
-Ability: Technician
+Ability: Tinted Lens
 Ability Slot: 2
 EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-IVs: 8 HP / 22 Atk / 16 Def / 8 SpA / 21 SpD / 10 Spe
-- Charge Beam
-- Shock Wave
-- Strength
-- Aqua Tail
-Met: Goldenrod City
-
-peerCnk (Toxicroak) (M) @ None
-Level: 47
-Calm Nature
-Ability: Hyper Cutter
-Ability Slot: 1
-EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-IVs: 11 HP / 28 Atk / 30 Def / 14 SpA / 15 SpD / 6 Spe
-- Fake Out
-- Bullet Punch
-- Mach Punch
-- Sludge Bomb
-Met: Olivine City
-
-tnatuM (Eevee) (M) @ None
-Level: 10
-Brave Nature
-Ability: Run Away
-Ability Slot: 1
-EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-IVs: 25 HP / 9 Atk / 11 Def / 1 SpA / 11 SpD / 24 Spe
-- Helping Hand
-- Sand Attack
-- Headbutt
-- Quick Attack
-Met: Cianwood City
-
-orroZa (Roserade) (M) @ None
-Level: 47
-Serious Nature
-Ability: Technician
-Ability Slot: 1
-EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-IVs: 23 HP / 13 Atk / 15 Def / 22 SpA / 4 SpD / 24 Spe
-- Petal Dance
-- Sludge Bomb
-- Toxic
-- Magical Leaf
-Met: Route 46
-
-reeuQt (Masquerain) (M) @ None
-Level: 48
-Timid Nature
-Ability: Intimidate
-Ability Slot: 2
-EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-IVs: 0 HP / 3 Atk / 9 Def / 23 SpA / 22 SpD / 16 Spe
-- Silver Wind
-- Fly
+IVs: 10 HP / 2 Atk / 28 Def / 13 SpA / 31 SpD / 20 Spe
+- Bug Buzz
+- Psychic
 - U-turn
-- Ice Beam
-Met: New Bark Town
-
-appaKl (Torkoal) (F) @ None
-Level: 48
-Hardy Nature
-Ability: Shell Armor
-Ability Slot: 2
-EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-IVs: 1 HP / 6 Atk / 26 Def / 21 SpA / 10 SpD / 16 Spe
-- Captivate
-- Flamethrower
-- Lava Plume
-- Earth Power
-Met: Cliff Edge Gate
+- Giga Drain
+Met: Ilex Forest
 
 eednuDe (Feraligatr) (F) @ None
 Level: 48
@@ -89,18 +24,70 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Aqua Jet
 Met: Pokéwalker
 
-sengAavus (Mismagius) (M) @ None
-Level: 47
-Jolly Nature
-Ability: Levitate
+orroZa (Roserade) (M) @ None
+Level: 48
+Serious Nature
+Ability: Technician
 Ability Slot: 1
 EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-IVs: 29 HP / 25 Atk / 29 Def / 22 SpA / 22 SpD / 23 Spe
-- Psychic
-- Shadow Ball
-- Shadow Sneak
-- Perish Song
-Met: Ecruteak City
+IVs: 23 HP / 13 Atk / 15 Def / 22 SpA / 4 SpD / 24 Spe
+- Petal Dance
+- Sludge Bomb
+- Toxic
+- Magical Leaf
+Met: Route 46
+
+orratS (Starmie) @ None
+Level: 47
+Serious Nature
+Ability: Rain Dish
+Ability Slot: 1
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 4 HP / 29 Atk / 17 Def / 17 SpA / 11 SpD / 3 Spe
+- Bubble Beam
+- Rapid Spin
+- Recover
+- Surf
+Met: Violet City
+
+appaKl (Torkoal) (F) @ None
+Level: 48
+Hardy Nature
+Ability: Shell Armor
+Ability Slot: 2
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 1 HP / 6 Atk / 26 Def / 21 SpA / 10 SpD / 16 Spe
+- Captivate
+- Flamethrower
+- Lava Plume
+- Earth Power
+Met: Cliff Edge Gate
+
+ytnuCw (Purugly) (F) @ None
+Level: 48
+Jolly Nature
+Ability: Thick Fat
+Ability Slot: 1
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 16 HP / 10 Atk / 28 Def / 5 SpA / 15 SpD / 24 Spe
+- Return
+- U-turn
+- Fake Out
+- Sucker Punch
+Met: Route 34
+
+draugefiL (Floatzel) (F) @ None
+Level: 47
+Rash Nature
+Ability: Technician
+Ability Slot: 2
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 8 HP / 22 Atk / 16 Def / 8 SpA / 21 SpD / 10 Spe
+- Charge Beam
+- Shock Wave
+- Strength
+- Aqua Tail
+Met: Goldenrod City
 
 ykcoReぁ (Hitmonlee) (M) @ None
 Level: 48
@@ -115,31 +102,31 @@ IVs: 18 HP / 13 Atk / 12 Def / 14 SpA / 23 SpD / 7 Spe
 - Strength
 Met: Goldenrod Tunnel
 
-dneirF (Quagsire) (F) @ None
+eloMtt (Dugtrio) (M) @ None
 Level: 48
-Quirky Nature
-Ability: Water Absorb
-Ability Slot: 1
-EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-IVs: 24 HP / 13 Atk / 31 Def / 3 SpA / 21 SpD / 29 Spe
-- Waterfall
-- Earthquake
-- Recover
-- Magnitude
-Met: Ruins of Alph
-
-igoYite (Medicham) (M) @ None
-Level: 47
-Bashful Nature
-Ability: Pure Power
+Relaxed Nature
+Ability: Sand Veil
 Ability Slot: 2
 EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-IVs: 18 HP / 13 Atk / 15 Def / 30 SpA / 25 SpD / 17 Spe
-- Detect
-- Fake Out
-- Psycho Cut
-- Shadow Punch
-Met: Route 36
+IVs: 4 HP / 4 Atk / 0 Def / 31 SpA / 23 SpD / 15 Spe
+- Close Combat
+- Earthquake
+- Sucker Punch
+- Cross Chop
+Met: Route 48
+
+sengAavus (Mismagius) (M) @ None
+Level: 47
+Jolly Nature
+Ability: Levitate
+Ability Slot: 1
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 29 HP / 25 Atk / 29 Def / 22 SpA / 22 SpD / 23 Spe
+- Psychic
+- Shadow Ball
+- Shadow Sneak
+- Perish Song
+Met: Ecruteak City
 
 oggoDur (Houndoom) (F) @ None
 Level: 48
@@ -180,7 +167,7 @@ IVs: 10 HP / 10 Atk / 13 Def / 17 SpA / 14 SpD / 28 Spe
 - Air Slash
 Met: Dark Cave
 
-reggorFl (Politoed) (M) @ Iron Ball
+reggorFl (Politoed) (M) @ None
 Level: 47
 Rash Nature
 Ability: Water Absorb
@@ -206,18 +193,18 @@ IVs: 17 HP / 5 Atk / 13 Def / 28 SpA / 13 SpD / 24 Spe
 - Hyper Voice
 Met: SLOWPOKE Well
 
-ytnuCw (Purugly) (F) @ None
+eropS (Parasect) (M) @ None
 Level: 47
-Jolly Nature
-Ability: Thick Fat
-Ability Slot: 1
+Careful Nature
+Ability: Water Absorb
+Ability Slot: 2
 EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-IVs: 16 HP / 10 Atk / 28 Def / 5 SpA / 15 SpD / 24 Spe
-- Double-Edge
+IVs: 26 HP / 23 Atk / 23 Def / 9 SpA / 15 SpD / 22 Spe
+- Leech Life
+- Spore
+- Aromatherapy
 - U-turn
-- Fake Out
-- Sucker Punch
-Met: Route 34
+Met: Sprout Tower
 
 neeuQgarD (Jynx) (F) @ None
 Level: 47
@@ -232,31 +219,31 @@ IVs: 5 HP / 19 Atk / 30 Def / 9 SpA / 1 SpD / 7 Spe
 - Perish Song
 Met: Route 38
 
-allizdoG (Aggron) (F) @ None
-Level: 47
-Careful Nature
-Ability: Battle Armor
-Ability Slot: 2
-EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-IVs: 5 HP / 8 Atk / 8 Def / 16 SpA / 21 SpD / 23 Spe
-- Rock Slide
-- Quick Attack
-- Iron Head
-- Magnet Bomb
-Met: Pokéathlon Dome
-
-orratS (Starmie) @ None
+anosruF (Zangoose) (F) @ None
 Level: 47
 Serious Nature
-Ability: Rain Dish
+Ability: Guts
+Ability Slot: 2
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 19 HP / 8 Atk / 15 Def / 18 SpA / 8 SpD / 27 Spe
+- Facade
+- Shadow Punch
+- Strength
+- Detect
+Met: Route 39
+
+dellabeulB (Azumarill) (M) @ None
+Level: 48
+Bashful Nature
+Ability: Huge Power
 Ability Slot: 1
 EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-IVs: 4 HP / 29 Atk / 17 Def / 17 SpA / 11 SpD / 3 Spe
-- Bubble Beam
-- Rapid Spin
-- Recover
-- Surf
-Met: Violet City
+IVs: 18 HP / 22 Atk / 24 Def / 18 SpA / 8 SpD / 11 Spe
+- Fake Out
+- Return
+- Aqua Jet
+- Waterfall
+Met: Route 32
 
 spmohCh (Flygon) (F) @ None
 Level: 47
@@ -297,44 +284,44 @@ IVs: 20 HP / 8 Atk / 22 Def / 17 SpA / 2 SpD / 5 Spe
 - Earthquake
 Met: Cliff Cave
 
-spinSsh (Crawdaunt) (F) @ None
+deRados (Gyarados) (M) @ None
+Level: 47
+Docile Nature
+Ability: Intimidate
+Ability Slot: 1
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 4 HP / 20 Atk / 26 Def / 26 SpA / 10 SpD / 26 Spe
+- Ice Fang
+- Crunch
+- Aqua Tail
+- Fly
+Met: Lake of Rage
+
+igoYite (Medicham) (M) @ None
 Level: 47
 Bashful Nature
-Ability: Adaptability
-Ability Slot: 1
-EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-IVs: 29 HP / 29 Atk / 17 Def / 1 SpA / 3 SpD / 25 Spe
-- Crabhammer
-- Aqua Jet
-- Knock Off
-- Iron Head
-Met: Route 31
-
-traF (Magmar) (M) @ None
-Level: 47
-Naive Nature
-Ability: No Guard
+Ability: Pure Power
 Ability Slot: 2
 EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-IVs: 27 HP / 2 Atk / 13 Def / 21 SpA / 8 SpD / 28 Spe
-- Flamethrower
-- Lava Plume
-- Sludge Bomb
-- Will-O-Wisp
-Met: Route 35
+IVs: 18 HP / 13 Atk / 15 Def / 30 SpA / 25 SpD / 17 Spe
+- Detect
+- Fake Out
+- Psycho Cut
+- Shadow Punch
+Met: Route 36
 
-diamreM (Seaking) (M) @ None
+ettelemO (Togekiss) (M) @ None
 Level: 48
-Serious Nature
-Ability: Motor Drive
+Naughty Nature
+Ability: Super Luck
 Ability Slot: 1
 EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-IVs: 25 HP / 10 Atk / 19 Def / 17 SpA / 6 SpD / 29 Spe
-- Aqua Tail
-- Aqua Jet
-- Horn Drill
-- -----
-Met: Cherrygrove City
+IVs: 9 HP / 11 Atk / 23 Def / 25 SpA / 8 SpD / 25 Spe
+- Extreme Speed
+- Hyper Voice
+- Air Slash
+- Extrasensory
+Met: Global Terminal
 
 lemaC (Camerupt) (M) @ None
 Level: 47
@@ -349,44 +336,31 @@ IVs: 25 HP / 1 Atk / 7 Def / 27 SpA / 21 SpD / 29 Spe
 - Lava Plume
 Met: Route 30
 
-anosruF (Zangoose) (F) @ None
+drolegdE (Absol) (F) @ None
 Level: 47
-Serious Nature
-Ability: Guts
-Ability Slot: 2
+Brave Nature
+Ability: Super Luck
+Ability Slot: 1
 EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-IVs: 19 HP / 8 Atk / 15 Def / 18 SpA / 8 SpD / 27 Spe
-- Facade
-- Shadow Punch
-- Strength
-- Detect
-Met: Route 39
-
-eloMtt (Dugtrio) (M) @ None
-Level: 48
-Relaxed Nature
-Ability: Sand Veil
-Ability Slot: 2
-EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-IVs: 4 HP / 4 Atk / 0 Def / 31 SpA / 23 SpD / 15 Spe
-- Close Combat
-- Earthquake
+IVs: 19 HP / 23 Atk / 13 Def / 28 SpA / 23 SpD / 23 Spe
+- Megahorn
+- Iron Head
+- Crunch
 - Sucker Punch
-- Cross Chop
-Met: Route 48
+Met: Route 43
 
-popeilriG (Illumise) (F) @ None
-Level: 48
-Rash Nature
-Ability: Tinted Lens
+traF (Magmortar) (M) @ None
+Level: 49
+Naive Nature
+Ability: No Guard
 Ability Slot: 2
 EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-IVs: 10 HP / 2 Atk / 28 Def / 13 SpA / 31 SpD / 20 Spe
-- Bug Buzz
-- Psychic
-- U-turn
-- Giga Drain
-Met: Ilex Forest
+IVs: 27 HP / 2 Atk / 13 Def / 21 SpA / 8 SpD / 28 Spe
+- Heat Wave
+- Lava Plume
+- Sludge Bomb
+- Will-O-Wisp
+Met: Route 35
 
 eriTy (Donphan) (F) @ None
 Level: 47
@@ -401,31 +375,18 @@ IVs: 18 HP / 11 Atk / 13 Def / 22 SpA / 15 SpD / 17 Spe
 - Magnitude
 Met: Union Cave
 
-eropS (Parasect) (M) @ None
-Level: 47
-Careful Nature
-Ability: Water Absorb
+deaHnt (Glalie) (M) @ None
+Level: 48
+Adamant Nature
+Ability: Rock Head
 Ability Slot: 2
 EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-IVs: 26 HP / 23 Atk / 23 Def / 9 SpA / 15 SpD / 22 Spe
-- Leech Life
-- Spore
-- Aromatherapy
-- U-turn
-Met: Sprout Tower
-
-dellabeulB (Azumarill) (M) @ Silk Scarf
-Level: 47
-Bashful Nature
-Ability: Huge Power
-Ability Slot: 1
-EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-IVs: 18 HP / 22 Atk / 24 Def / 18 SpA / 8 SpD / 11 Spe
-- Fake Out
-- Return
-- Aqua Jet
-- Waterfall
-Met: Route 32
+IVs: 8 HP / 23 Atk / 29 Def / 16 SpA / 27 SpD / 6 Spe
+- Rock Wrecker
+- Crunch
+- Avalanche
+- Rock Slide
+Met: Mahogany Town
 
 osoifaM (Murkrow) (M) @ None
 Level: 31
@@ -440,18 +401,31 @@ IVs: 3 HP / 4 Atk / 14 Def / 10 SpA / 11 SpD / 23 Spe
 - Feint Attack
 Met: Route 37
 
-ettelemO (Togetic) (M) @ None
-Level: 37
-Naughty Nature
-Ability: Super Luck
+tihSo (Forretress) (F) @ None
+Level: 49
+Modest Nature
+Ability: Shell Armor
 Ability Slot: 1
 EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-IVs: 9 HP / 11 Atk / 23 Def / 25 SpA / 8 SpD / 25 Spe
-- Extreme Speed
-- Charm
-- Air Slash
-- Ancient Power
-Met: Global Terminal
+IVs: 8 HP / 1 Atk / 0 Def / 4 SpA / 15 SpD / 19 Spe
+- Protect
+- Bug Buzz
+- Explosion
+- Return
+Met: Safari Zone Gate
+
+tnatuM (Eevee) (M) @ None
+Level: 10
+Brave Nature
+Ability: Run Away
+Ability Slot: 1
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 25 HP / 9 Atk / 11 Def / 1 SpA / 11 SpD / 24 Spe
+- Helping Hand
+- Sand Attack
+- Headbutt
+- Quick Attack
+Met: Cianwood City
 
 slraePl (Clamperl) (M) @ None
 Level: 20
@@ -465,4 +439,95 @@ IVs: 31 HP / 16 Atk / 5 Def / 30 SpA / 4 SpD / 21 Spe
 - Whirlpool
 - Aurora Beam
 Met: Route 41
+
+dneirF (Quagsire) (F) @ None
+Level: 48
+Quirky Nature
+Ability: Water Absorb
+Ability Slot: 1
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 24 HP / 13 Atk / 31 Def / 3 SpA / 21 SpD / 29 Spe
+- Waterfall
+- Earthquake
+- Recover
+- Magnitude
+Met: Ruins of Alph
+
+allizdoG (Aggron) (F) @ None
+Level: 47
+Careful Nature
+Ability: Battle Armor
+Ability Slot: 2
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 5 HP / 8 Atk / 8 Def / 16 SpA / 21 SpD / 23 Spe
+- Rock Slide
+- Quick Attack
+- Iron Head
+- Magnet Bomb
+Met: Pokéathlon Dome
+
+diamreM (Seaking) (M) @ None
+Level: 48
+Serious Nature
+Ability: Motor Drive
+Ability Slot: 1
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 25 HP / 10 Atk / 19 Def / 17 SpA / 6 SpD / 29 Spe
+- Aqua Tail
+- Aqua Jet
+- Horn Drill
+- -----
+Met: Cherrygrove City
+
+spinSsh (Crawdaunt) (F) @ None
+Level: 47
+Bashful Nature
+Ability: Adaptability
+Ability Slot: 1
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 29 HP / 29 Atk / 17 Def / 1 SpA / 3 SpD / 25 Spe
+- Crabhammer
+- Aqua Jet
+- Knock Off
+- Iron Head
+Met: Route 31
+
+peerCnk (Toxicroak) (M) @ None
+Level: 47
+Calm Nature
+Ability: Hyper Cutter
+Ability Slot: 1
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 11 HP / 28 Atk / 30 Def / 14 SpA / 15 SpD / 6 Spe
+- Fake Out
+- Bullet Punch
+- Mach Punch
+- Sludge Bomb
+Met: Olivine City
+
+reeuQt (Masquerain) (M) @ None
+Level: 48
+Timid Nature
+Ability: Intimidate
+Ability Slot: 2
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 0 HP / 3 Atk / 9 Def / 23 SpA / 22 SpD / 16 Spe
+- Silver Wind
+- Fly
+- U-turn
+- Ice Beam
+Met: New Bark Town
+
+pooPow (Fearow) (F) @ None
+Level: 45
+Hasty Nature
+Ability: Sniper
+Ability Slot: 2
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 19 HP / 14 Atk / 31 Def / 1 SpA / 10 SpD / 9 Spe
+- Drill Peck
+- U-turn
+- Detect
+- Sucker Punch
+Met: Azalea Town
 

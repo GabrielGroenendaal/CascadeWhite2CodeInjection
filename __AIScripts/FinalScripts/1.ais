@@ -69,8 +69,6 @@ address_MultiBattleLogic:
     JumpIfMoveEQ(move.wild_charge, &address_Add1ToScoreForSpreadMoves)
     JumpIfMoveEQ(move.smog, &address_Add1ToScoreForSpreadMoves)
     JumpIfMoveEQ(move.power_whip, &address_Add1ToScoreForSpreadMoves)
-    JumpIfMoveEQ(move.psyblade, &address_Add1ToScoreForSpreadMoves)
-    JumpIfMoveEQ(move.stone_edge, &address_Add1ToScoreForSpreadMoves)
     JumpIfMoveEQ(move.attack_order, &address_Add1ToScoreForSpreadMoves)
     JumpIfMoveEQ(move.take_down, &address_Add1ToScoreForSpreadMoves)
     JumpIfMoveEQ(move.hyper_voice, &address_Add1ToScoreForSpreadMoves)

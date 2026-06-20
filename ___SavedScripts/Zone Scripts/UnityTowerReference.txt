@@ -1,0 +1,184 @@
+import messages.script.Msg0044.MSGID;
+
+import Base;
+import event.FieldDemo;
+import event.actors.Actor;
+import event.actors.Player;
+import event.dialogs.ListMenu;
+import event.dialogs.Message;
+import pokescript.vm.Math;
+import pokescript.vm.StackCtrl;
+import pokescript.vm.VM;
+import system.EventFlags;
+import system.EventWorks;
+import system.Fade;
+import system.Field;
+import system.Input;
+import system.Runtime;
+import system.Sound;
+
+public class MainEvents {
+	public static void main_1() { // @ 0x228
+		int v0;
+		int v1;
+		int v2;
+		int v3;
+		int v4;
+		int v5;
+		int v6;
+
+		Actor.PauseAll();
+		v0 = 280;
+		v1 = 1;
+		v2 = 443;
+		v3 = 8;
+		v4 = 9;
+		v5 = 9;
+		v6 = Runtime.GetTextFile();
+		Global2800(v0, v1, v2, v3, v4, v5, v6);
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_2() { // @ 0xe
+		int v8;
+		int v9;
+		int v32;
+		int v33;
+
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		v32 = 0;
+		v33 = 0;
+		Base.CMD_2D7(0, v8);
+		Base.CMD_233(v9);
+		if (v8 == 0 || v9 != 1) {
+			Message.ActorEx(1024, 1, 1, 0, 0);
+			Input.LastKeyWait();
+			Message.CloseAll();
+			goto LABEL_010d;
+		}
+
+		LABEL_004f:
+		if (v32 == 555) {
+			goto LABEL_010d;
+		}
+		Message.ActorEx(1024, 0, 1, 2, 0);
+		ListMenu.InitRightAnchor(31, 1, 0, 1, v33);
+		ListMenu.AddItem(5, 65535, 0);
+		ListMenu.AddItem(6, 65535, 1);
+		ListMenu.AddItem(7, 65535, 2);
+		ListMenu.ShowDialog();
+		if (v33 == 0) {
+			sub_011f();
+			v32 = 555;
+			goto LABEL_004f;
+		}
+
+		LABEL_00b6:
+		if (v33 == 2) {
+			Message.ActorEx(1024, 3, 1, 2, 0);
+			goto LABEL_004f;
+		}
+
+		LABEL_00db:
+		Message.ActorEx(1024, 4, 1, 2, 0);
+		Input.LastKeyWait();
+		Message.CloseAll();
+		v32 = 555;
+
+		LABEL_00f1:
+		goto LABEL_004f;
+
+		LABEL_00f7:
+
+		LABEL_010d:
+		v33 = 0;
+		v32 = 0;
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_3() { // @ 0x208
+		Actor.PauseAll();
+		Fade.InBlackQ();
+		Fade.Wait();
+		Field.CallPlaceNameDisp();
+		ActionSequence_0220(255);
+		Actor.WaitActionFinish();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	static void sub_011f() { // @ 0x11f
+		int v16;
+
+		Message.ActorEx(1024, 2, 1, 2, 0);
+		Message.CloseAll();
+		v16 = Player.GetExState();
+		if (v16 != 1) {
+			goto LABEL_0148;
+		}
+		Player.SetSpecialSequence(1);
+
+		LABEL_0148:
+		v16 = Player.GetDirection();
+		if (v16 != 0) {
+			if (v16 != 1) {
+				goto LABEL_018e;
+			}
+			ActionSequence_01e4(255);
+			goto LABEL_01b7;
+		}
+		ActionSequence_01dc(255);
+		goto LABEL_01b7;
+
+		LABEL_018e:
+		if (v16 != 2) {
+			ActionSequence_0200(255);
+			goto LABEL_01b7;
+		}
+		ActionSequence_01f4(255);
+
+		LABEL_01b7:
+		Actor.WaitActionFinish();
+		Fade.OutBlackQ();
+		Fade.Wait();
+		Field.Close();
+		FieldDemo.Call3DDemo(4, 0);
+		Field.Open();
+		Runtime.ReserveScript(1);
+		Field.ChangeMap(147, 407, 0, 762, 2);
+	}
+
+	static meta void ActionSequence_01dc(int npcId) : VActionSequence {
+		Action0022(1);
+	}
+
+	static meta void ActionSequence_01e4(int npcId) : VActionSequence {
+		Action000f(1);
+		Action000d(3);
+		Action000e(1);
+	}
+
+	static meta void ActionSequence_01f4(int npcId) : VActionSequence {
+		Action000d(1);
+		Action000e(1);
+	}
+
+	static meta void ActionSequence_0200(int npcId) : VActionSequence {
+		Action0022(1);
+	}
+
+	static meta void ActionSequence_0220(int npcId) : VActionSequence {
+		Action000f(1);
+	}
+
+	static meta void Global2800(int a1, int a2, int a3, int a4, int a5, int a6, int a7) : VGlobalCall[2800];
+
+	static native void Action000d(int amount) : 0xd;
+	static native void Action000e(int amount) : 0xe;
+	static native void Action000f(int amount) : 0xf;
+	static native void Action0022(int amount) : 0x22;
+}

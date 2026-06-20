@@ -412,6 +412,10 @@ public class MainEvents {
 		Action0020(1);
 	}
 
+    static meta void ShowExclamationMark(int npcId) : VActionSequence {
+		Action004b(1);
+	}
+
 	static meta void Global2805(int a1, int a2) : VGlobalCall[2805];
 
     static native void Action00d(int amount) : 0xd;

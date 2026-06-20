@@ -3,6 +3,7 @@ import messages.script.Msg0249.MSGID;
 import Base;
 import player.Bag;
 import event.EVCamera;
+import event.FieldDemo;
 import event.ObjInit;
 import event.actors.Actor;
 import event.actors.Player;
@@ -17,6 +18,7 @@ import pokescript.vm.StackCtrl;
 import pokescript.vm.VM;
 import system.EventFlags;
 import system.EventWorks;
+import system.Fade;
 import system.Field;
 import system.Input;
 import system.Runtime;
@@ -474,6 +476,7 @@ public class MainEvents {
         int success;
         int v0;
         int checkIv;
+		int cost;
 
         Actor.PauseAll();
 		Sound.SEPlay(1351);
@@ -517,33 +520,33 @@ public class MainEvents {
 		
 		LABEL_PICK_IV:
 		if (v5 == 0) {
-            Message.Actor(1024, 68, 2, 0); // REPLACE WITH "And which stat would you like to enhance?"
+            Message.ActorEx(1024, 68, 18, 0, 0); // REPLACE WITH "And which stat would you like to enhance?"
 			ListMenu.InitRightAnchor(31, 5, 0, 1, v4);
             checkIv = PokeParty.GetParam(v32, 70);
-            if (checkIv < 31){
-                ListMenu.AddItem(48, 65535, 0); // HP
+            if (checkIv < 30){
+                ListMenu.AddItem(48, 93, 0); // HP
             }
             checkIv = PokeParty.GetParam(v32, 71);
-            if (checkIv < 31){
-                ListMenu.AddItem(49, 65535, 1); // Atk 
+            if (checkIv < 30){
+                ListMenu.AddItem(49, 94, 1); // Atk 
             }
             checkIv = PokeParty.GetParam(v32, 72);
-            if (checkIv < 31){
-                ListMenu.AddItem(50, 65535, 2); // Def
+            if (checkIv < 30){
+                ListMenu.AddItem(50, 93, 2); // Def
             }
             checkIv = PokeParty.GetParam(v32, 74);
-            if (checkIv < 31){
-                ListMenu.AddItem(51, 65535, 3); // SpA
+            if (checkIv < 30){
+                ListMenu.AddItem(51, 94, 3); // SpA
             }
             checkIv = PokeParty.GetParam(v32, 75);
-            if (checkIv < 31){
-                ListMenu.AddItem(52, 65535, 4); // SpD
+            if (checkIv < 30){
+                ListMenu.AddItem(52, 93, 4); // SpD
             }
             checkIv = PokeParty.GetParam(v32, 73);
-            if (checkIv < 31){
-                ListMenu.AddItem(53, 65535, 5); // Spe
+            if (checkIv < 30){
+                ListMenu.AddItem(53, 95, 5); // Spe
             }
-            ListMenu.AddItem(54, 65535, 6); // Quit
+            ListMenu.AddItem(54, 93, 6); // Quit
 			ListMenu.ShowDialog();
 
             if (v4 == 6){
@@ -556,28 +559,39 @@ public class MainEvents {
             else if (v4 < 7 && v4 >= 0) {
                 if (v4 == 0){
                     v8 = 56; // ID for "You sure you want to enhance their HP?"
+					cost = 1;
                     v9 = 0;
                 }
                 if (v4 == 1){
                     v8 = 58; // ID for "You sure you want to enhance their Attack?"
+					cost = 3;
                     v9 = 1;
                 }
                 if (v4 == 2){
                     v8 = 60; // ID for "You sure you want to enhance their Defense?"
+					cost = 1;
                     v9 = 2;
                 }
                 if (v4 == 3){
                     v8 = 62; // ID for "You sure you want to enhance their\nSpecial Attack?"
+					cost = 3;
                     v9 = 4;
                 }
                 if (v4 == 4){
                     v8 = 64; // ID for "You sure you want to enhance their\nSpecial Defense?"
+					cost = 1;
                     v9 = 5;
                 }
                 if (v4 == 5){
                     v8 = 66; // ID for "You sure you want to enhance their Speed?"
+					cost = 5;
                     v9 = 3;
                 }
+				if (count < cost){
+					WordSet.LoadNumber(0, (cost - count), 2);
+					Message.Actor(1024, 96, 2, 0);
+					goto LABEL_PICK_IV;
+				}
                 Message.Actor(1024, v8, 2, 0);
 			    v0 = YesNoWin.Show();
 				if (v0 == 0) {
@@ -585,7 +599,7 @@ public class MainEvents {
 					Message.System(v8 + 1, 2);
                     Message.WaitAdvance();
 					Message.CloseAll();
-					Bag.TakeItem(530, 1);
+					Bag.TakeItem(530, cost);
 					PokeParty.SetIV(v32, 70 + v9,31);
 					Message.Actor(1024, 69, 2, 0); // Pleasure doing business with you.
 					Input.LastKeyWait();
@@ -641,6 +655,7 @@ public class MainEvents {
         Actor.WaitActionFinish();
 
         Actor.GetGPos(bengaEntity, bengaX, bengaZ);
+        Sound.BGMPlay(1101);
         WordSet.LoadPlayerName(0);
         Message.ActorEx(1024, messageId, bengaEntity, 0, 0);
         Input.LastKeyWait();
@@ -676,17 +691,38 @@ public class MainEvents {
         Global2805(93, 3);
         Message.ActorEx(1024, messageId+7, bengaEntity, 0, 0);
         TurnEast(bengaEntity);
+        EVCamera.Init();
+		EVCamera.Unbind();
+		EVCamera.MoveTo(2.3652344f, 0.0f, 237.0f, 3328.0f, 32.0f, 7472.0f, 30);
         Message.ActorEx(1024, messageId+8, bengaEntity, 0, 0);
+        EVCamera.Wait();
         Message.CloseAll();
-        BengaApproach(bengaEntity);
+
+        // New Stuff
+        	TurnSouth8F(bengaEntity);
+		EVCamera.MoveTo(2.3652344f, 0.0f, 237.0f, 2976.0f, 32.0f, 7712.0f, 30);
+		Message.ActorEx(1024, 97, bengaEntity, 0, 0);
+		EVCamera.Wait();
+        	Message.CloseAll();
+		EVCamera.MoveTo(2.3652344f, 0.0f, 237.0f, 2960.0f, 32.0f, 7472.0f, 30);
+        	BengaApproach(bengaEntity);
 		Runtime.Sleep(12);
 		TurnEast(255);
+
+		
         Actor.WaitActionFinish();
+		Runtime.Sleep(16);
         Message.ActorEx(1024, messageId+9, bengaEntity, 0, 0);
+        EVCamera.Wait();
         Message.CloseAll();
+        EVCamera.MoveToDefault(30);
         BengaApproach2(bengaEntity);
+        
 		Actor.WaitActionFinish();
         Message.ActorEx(1024, messageId+10, bengaEntity, 0, 0);
+        EVCamera.Wait();
+        EVCamera.Rebind();
+	  EVCamera.End();
         Message.CloseAll();
         HopLeft(bengaEntity);
         Message.Spiked(messageId+11, 2);
@@ -704,10 +740,66 @@ public class MainEvents {
         Actor.Hide(bengaEntity);
         EventFlags.Set(561);
         EventWorks.Set(16494, 3);
+        Field.PlayMapBGM();
         Runtime.FinishSubEvents();
 		Actor.UnpauseAll();
     }
 
+	// Blueberry Academy Script 
+	public static void main_22(){
+		int v8;
+		int v9;
+		int v32;
+		int listMenu;
+
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.ActorEx(1024, 86, 24, 2, 0);
+		LABEL_004f:
+		ListMenu.InitRightAnchor(31, 1, 0, 1, listMenu);
+		ListMenu.AddItem(87, 65535, 0);
+		ListMenu.AddItem(88, 65535, 1);
+		ListMenu.AddItem(89, 65535, 2);
+		ListMenu.ShowDialog();
+		if (listMenu == 0) {
+			sub_011f();
+		}
+		else if (listMenu == 2) {
+			Message.ActorEx(1024, 91, 24, 2, 0);
+			goto LABEL_004f;
+		}
+		else {
+			Message.ActorEx(1024, 92, 24, 2, 0);
+			Input.LastKeyWait();
+			Message.CloseAll();
+		}
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_23() { // @ 0x208
+		Actor.PauseAll();
+		Fade.InBlackQ();
+		Fade.Wait();
+		Field.CallPlaceNameDisp();
+		Actor.WaitActionFinish();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	static void sub_011f() { // @ 0x11f
+		Message.ActorEx(1024, 90, 24, 2, 0);
+		Message.CloseAll();
+		Fade.OutBlackQ();
+		Fade.Wait();
+		Field.Close();
+		FieldDemo.Call3DDemo(4, 0);
+		Field.Open();
+		Runtime.ReserveScript(1);
+		Field.ChangeMap(147, 407, 0, 762, 2);
+	}
+	
 	static void sub_005c() { // @ 0x5c
 		if (EventWorks.Get(16582) >= 2 && EventWorks.Get(16582) <= 3) {
 			return;
@@ -808,6 +900,9 @@ public class MainEvents {
 	static meta void TurnNorth(int npcId) : VActionSequence {
 		Action0020(1);
 	}
+	static meta void TurnSouth8F(int npcId) : VActionSequence {
+		Action0021(1);
+	}
 
 	
 	static meta void TurnWest(int npcId) : VActionSequence {
@@ -874,6 +969,29 @@ public class MainEvents {
 	static meta void ActionSequence_08d4(int npcId) : VActionSequence {
 		Action0023(1);
 	}
+	static meta void ActionSequence_01dc(int npcId) : VActionSequence {
+		Action0022(1);
+	}
+
+	static meta void ActionSequence_01e4(int npcId) : VActionSequence {
+		Action000f(1);
+		Action000d(3);
+		Action000e(1);
+	}
+
+	static meta void ActionSequence_01f4(int npcId) : VActionSequence {
+		Action000d(1);
+		Action000e(1);
+	}
+
+	static meta void ActionSequence_0200(int npcId) : VActionSequence {
+		Action0022(1);
+	}
+
+	static meta void ActionSequence_0220(int npcId) : VActionSequence {
+		Action000f(1);
+	}
+	
 
     static meta void ShowQuestionMark(int npcId) : VActionSequence {
         Action009f(1);
@@ -917,6 +1035,9 @@ public class MainEvents {
 	static meta void HopUp(int npcId) : VActionSequence {
         Action0030(1);
     }
+	static meta void WalkSouthTwoTiles(int npcId) : VActionSequence {
+		Action0011(2);
+	}
     
 	static meta void Global2800(int a1, int a2, int a3, int a4, int a5, int a6, int a7) : VGlobalCall[2800];
 	static meta void Global2805(int a1, int a2) : VGlobalCall[2805];

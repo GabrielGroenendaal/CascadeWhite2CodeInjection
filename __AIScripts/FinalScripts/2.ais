@@ -3371,9 +3371,6 @@ address_0x34A0:
 
 //   KNOCK OFF   
 Label_KnockOff:
-	GetAbilityGuess(defender)
-	JumpIfStoredEQ(ability.gourmand, &deprioritizeBy5)
-	JumpIfHealthLT(defender, 30, &address_0x34E0)
 	StoreIsFirstTurn(attacker)
 	JumpIfStoredGT(false, &address_0x34E0)
 	JumpIfRandLT(180, &address_0x34E0)
