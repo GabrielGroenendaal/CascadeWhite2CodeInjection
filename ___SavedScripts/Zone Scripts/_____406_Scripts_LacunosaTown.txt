@@ -57,7 +57,7 @@ public class MainEvents {
 		if (EventWorks.Get(16590) != 2) {
 			return;
 		}
-		ObjInit.SetNPCGPos(12, 2, 647, 0, 186);
+		ObjInit.SetNPCGPos(12, 1, 647, 0, 185);
 		ObjInit.SetNPCGPos(10, 3, 645, 0, 186);
 		ObjInit.SetNPCGPos(11, 3, 645, 0, 185);
 	}
@@ -74,7 +74,7 @@ public class MainEvents {
 		if (EventWorks.Get(16590) != 2) {
 			return;
 		}
-		Actor.SetGPos(12, 647, 0, 186, 2);
+		Actor.SetGPos(12, 647, 0, 185, 1);
 		Actor.SetGPos(10, 645, 0, 186, 3);
 		Actor.SetGPos(11, 645, 0, 185, 3);
 	}
@@ -134,11 +134,11 @@ public class MainEvents {
 			if (playerX != 669) {
 				Actor.WalkRoute(255, 669, 183, 1, 8, 1);
                 Actor.WaitActionFinish();
-                ActionSequence_0f8c(255);
+                TurningNorth(255);
                 Actor.WaitActionFinish();
 			}
             else {
-                ActionSequence_0f8c(255);
+                TurningNorth(255);
 			    Actor.WaitActionFinish();
             }
 		} 
@@ -150,7 +150,7 @@ public class MainEvents {
             if (playerZ != 171) {
                 Actor.WalkRoute(255, 666, 171, 1, 8, 0);
                 Actor.WaitActionFinish();
-                ActionSequence_0f84(255);
+                TurningWest(255);
                 Actor.WaitActionFinish();
             } 
             else {
@@ -257,7 +257,7 @@ public class MainEvents {
 			Message.CloseAll();
 			Message.ActorEx(1024, 7, 251, 0, 0);
 			Message.CloseAll();
-			ActionSequence_0f8c(251);
+			TurningNorth(251);
 			Actor.WaitActionFinish();
 			v36 = StaticProp.CreateHandle(1, 652, 169);
 			StaticProp.HndPlayAudioVisualAnm(v36, 0);
@@ -280,7 +280,7 @@ public class MainEvents {
             Message.CloseAll();
             Actor.WalkRoute(6, 652, 170, 1, 8, 1);
             Actor.WaitActionFinish();
-            ActionSequence_0f8c(6);
+            TurningNorth(6);
             Actor.WaitActionFinish();
             v36 = StaticProp.CreateHandle(1, 652, 169);
             StaticProp.HndPlayAudioVisualAnm(v36, 0);
@@ -323,33 +323,28 @@ public class MainEvents {
 		Actor.WaitActionFinish();
 		Message.ActorEx(1024, 10, 9, 0, 0);
 		Message.CloseAll();
-		ApproachFurther(HUGH_ENTITY);
 		Message.ActorVersioned(1024, 12, 11, 6, 1, 0);
 		Message.CloseAll();
-		TurnNorth8F(6);
+		TurnWest8F(6);
 		Runtime.Sleep(8);
-		TurnNorth8F(9);
+		TurnWest8F(9);
 		Actor.WaitActionFinish();
 		WordSet.LoadPlayerName(0);
-        	WordSet.LoadRivalName(1);
+        WordSet.LoadRivalName(1);
 		Message.ActorVersioned(1024, 14, 13, 6, 1, 0);
 		Message.CloseAll();
-       	 Message.ActorEx(1024, 56, HUGH_ENTITY, 0, 0);
+       	Message.ActorEx(1024, 56, HUGH_ENTITY, 2, 0);
 		Message.CloseAll();
-		ActionSequence_0f84(6);
-		Runtime.Sleep(8);
-		ActionSequence_0f84(9);
-		Actor.WaitActionFinish();
 		Message.ActorVersioned(1024, 17, 15, 6, 1, 0);
 		Message.CloseAll();
 
-		ActionSequence_0f8c(9);
+		TurningNorth(9);
 		Runtime.Sleep(8);
-		ActionSequence_0f94(6);
+		TurningSouth(6);
 		Actor.WaitActionFinish();
 		Message.ActorEx(1024, 19, 9, 0, 0);
 		Message.CloseAll();
-		ActionSequence_0fcc(6);
+		LookWest(6);
 		Actor.WaitActionFinish();
 		Runtime.Sleep(20);
 		ActionSequence_0fec(6);
@@ -359,7 +354,7 @@ public class MainEvents {
 		Message.CloseAll();
 		ShowQuestionMark(HUGH_ENTITY);
 		Actor.WaitActionFinish();
-		Message.ActorEx(1024, 21, 9, 0, 0);
+		Message.ActorEx(1024, 21, 9, 2, 0);
 		Message.CloseAll();
 		ActionSequence_0fc4(6);
 		Actor.WaitActionFinish();
@@ -369,24 +364,22 @@ public class MainEvents {
 		Message.CloseAll();
 		Message.ActorEx(1024, 25, 6, 1, 0);
 		Message.CloseAll();
-		ActionSequence_0f84(9);
+		TurningWest(9);
 		Runtime.Sleep(8);
-		ActionSequence_0f84(6);
+		TurningWest(6);
 		Actor.WaitActionFinish();
 		WordSet.LoadPlayerName(0);
 		Message.ActorEx(1024, 26, 6, 1, 0);
 		Message.CloseAll();
 
         // Hugh Responds
-		TurnNorth8F(9);
-		Runtime.Sleep(8);
-		TurnNorth8F(6);
-		Actor.WaitActionFinish();
 		ShowExclamationMark(HUGH_ENTITY);
 		Actor.WaitActionFinish();
-		HopDown(HUGH_ENTITY);
-		TurnNorth8F(255);
-        Message.ActorEx(1024, 57, HUGH_ENTITY, 0, 0);
+		HopRight(HUGH_ENTITY);
+		Runtime.Sleep(8);
+		TurnSouth8F(255);
+        Message.ActorEx(1024, 57, HUGH_ENTITY, 2, 0);
+		Actor.WaitActionFinish();
 		Message.CloseAll();
 
         // HUGH WALKS AwAY A BIT 
@@ -397,7 +390,7 @@ public class MainEvents {
         Runtime.Sleep(4);
         TurnSouth8F(9);
 		Actor.WaitActionFinish();
-        Message.ActorEx(1024, 58, HUGH_ENTITY, 0, 0);
+        Message.ActorEx(1024, 58, HUGH_ENTITY, 2, 0);
 		Message.CloseAll();
 
         // HUGH LEAVES 
@@ -417,7 +410,7 @@ public class MainEvents {
         TurnSouth8F(6);
         Message.ActorEx(1024, 116, 6, 1, 0);
 		Message.CloseAll();
-		ActionSequence_0f8c(9);
+		TurningNorth(9);
 		Actor.WaitActionFinish();
 		Message.ActorEx(1024, 27, 9, 0, 0);
 		Message.CloseAll();
@@ -426,13 +419,13 @@ public class MainEvents {
 		Actor.Hide(6);
 		Actor.WalkRoute(9, 653, 171, 1, 8, 1);
 		Actor.WaitActionFinish();
-		ActionSequence_0f8c(9);
+		TurningNorth(9);
 		Runtime.Sleep(3);
-		ActionSequence_0f94(255);
+		TurningSouth(255);
 		Actor.WaitActionFinish();
 		Message.ActorEx(1024, 28, 9, 0, 0);
 		Message.CloseAll();
-		ActionSequence_0f94(9);
+		TurningSouth(9);
 		Actor.WaitActionFinish();
 		Message.ActorEx(1024, 29, 9, 0, 0);
 		Message.CloseAll();
@@ -441,6 +434,7 @@ public class MainEvents {
 		Actor.Hide(9);
 		EventFlags.Set(778);
 		EventFlags.Set(779);
+		EventFlags.Set(566); // Used For Benga
 		Base.CMD_262(3, 7);
 		Base.CMD_262(0, 6);
 		Runtime.FinishSubEvents();
@@ -464,28 +458,29 @@ public class MainEvents {
 		Actor.PauseAll();
 		Player.GetGPos(playerX, playerZ);
 		if (playerZ == 185) {
-			ActionSequence_0f8c(12);
-			ActionSequence_0f94(255);
+			TurningNorth(12);
+			TurningSouth(255);
 			goto LABEL_0802;
 		}
 
 		LABEL_07d9:
 		if (playerZ == 187) {
-			ActionSequence_0f94(12);
-			ActionSequence_0f8c(255);
+			TurningSouth(12);
+			TurningNorth(255);
 			goto LABEL_0802;
 		}
 
 		LABEL_0802:
 		Actor.WaitActionFinish();
 		WordSet.LoadRivalName(1);
+		TurnEast8F(12);
 		Message.ActorEx(1024, 71, 10, 2, 0);
 		yesNo = YesNoWin.Show();
 		if (yesNo != 0) {
 			Message.ActorEx(1024, 70, 10, 2, 0);
 			Message.WaitAdvance();
 			Message.CloseAll();
-			ActionSequence_0f84(12);
+			TurningSouth(12);
 			ActionSequence_0f9c(255);
 			Actor.WaitActionFinish();
 			goto LABEL_0881;
@@ -500,6 +495,7 @@ public class MainEvents {
 		LABEL_0845:
 		Message.ActorEx(1024, 69, 10, 2, 0);
 		Message.CloseAll();
+		TurnSouth8F(12);
 		sub_BengaBattleScript();
 
 		LABEL_0881:
@@ -537,15 +533,15 @@ public class MainEvents {
 		}
 		Message.Actor(1024, 40, 0, 0);
 		Message.CloseAll();
-		ActionSequence_0f7c(0);
+		TurningEast(0);
 		Actor.WaitActionFinish();
 		Runtime.Sleep(60);
 		if (playerX != 670 || playerZ != 167) {
-			ActionSequence_0f84(0);
+			TurningWest(0);
 			Actor.WaitActionFinish();
 			goto LABEL_0d8e;
 		}
-		ActionSequence_0f94(0);
+		TurningSouth(0);
 		Actor.WaitActionFinish();
 
 		LABEL_0d8e:
@@ -688,7 +684,7 @@ public class MainEvents {
 		Message.ActorEx(1024, 70, 10, 0, 0);
 		Message.WaitAdvance();
 		Message.CloseAll();
-		ActionSequence_0f84(12);
+		TurningWest(12);
 		Actor.WaitActionFinish();
 
 		LABEL_07a2:
@@ -711,6 +707,9 @@ public class MainEvents {
 		int yesNo;
 		int playerX;
 		int playerZ;
+		int playerX2;
+		int playerZ2;
+
 		int v16;
 		
 		Player.GetGPos(playerX, playerZ);
@@ -732,11 +731,11 @@ public class MainEvents {
 			}
 			ActionSequence_0fdc(12);
 			Actor.WaitActionFinish();
-			ActionSequence_0f8c(255);
+			TurningNorth(255);
 			Actor.WaitActionFinish();
 			goto LABEL_0940;
 		}
-		ActionSequence_0f7c(12);
+		TurningEast(12);
 		Actor.WaitActionFinish();
 		goto LABEL_0940;
 
@@ -746,7 +745,7 @@ public class MainEvents {
 		playerZ -= 1;
 		Actor.WalkRoute(12, playerX, playerZ, 1, 8, 1);
 		Actor.WaitActionFinish();
-		ActionSequence_0f8c(255);
+		TurningNorth(255);
 		Actor.WaitActionFinish();
 
 		LABEL_0940:
@@ -758,26 +757,31 @@ public class MainEvents {
 
 		LABEL_095b:
 		WordSet.LoadRivalName(1);
-		Message.ActorEx(1024, 30, 12, 0, 0);
+		WordSet.LoadPlayerName(0);
+		Message.ActorEx(1024, 61, 12, 1, 0);
 		Message.CloseAll();
 
+		Runtime.Sleep(16);
+        WordSet.LoadPlayerName(0);
+		Sound.SEPlay(1351);
+        Message.ActorEx(1024, 62, 10, 0, 1);
         ShowExclamationMark(12);
         ShowExclamationMark(255);
-        WordSet.LoadPlayerName(0);
-        Message.Spiked(62, 2);
-        Message.CloseAll();
+		Message.CloseAll();
+	
         TurnWest8F(12);
         TurnWest8F(255);
+		Actor.WaitActionFinish();
 
-        Sound.BGMPlay(1101);
-		ActionSequence_0f74(10);
+		BengaTooFast(10);
 		ActionSequence_0f74(11);
 		Actor.WaitActionFinish();
+		Sound.BGMPlay(1101);
 		EVCamera.Init();
 		EVCamera.Unbind();
 		EVCamera.MoveTo(2.3652344f, 0.0f, 237.0f, 10344.0f, 0.0f, 2984.0f, 30);
-		ActionSequence_0f84(12);
-		ActionSequence_0f84(255);
+		TurningWest(12);
+		TurningWest(255);
 		Actor.WaitActionFinish();
 		EVCamera.Wait();
 		Message.ActorEx(1024, 63, 10, 2, 0);
@@ -788,23 +792,43 @@ public class MainEvents {
         // PROBABLY NEED TO CHANGE THIS
 		Actor.WalkRoute(12, 647, 186, 1, 4, 0);
 		Actor.WaitActionFinish();
-		ActionSequence_0fcc(12);
+		LookWest(12);
 		Actor.WaitActionFinish();
 		ActionSequence_0ffc(12);
 		Actor.WaitActionFinish();
 
 		WordSet.LoadPlayerName(0);
 		WordSet.LoadRivalName(1);
-		Message.ActorEx(1024, 64, 12, 0, 0);
+		Message.ActorEx(1024, 64, 12, 1, 0);
+        Message.CloseAll();
+        ShowExclamationMark(12);
+        Message.ActorEx(1024, 129, 12, 1, 0);
+        Actor.WaitActionFinish();
         Message.CloseAll();
 
         // Benga Responds 
         Message.ActorEx(1024, 65, 10, 2, 0);
         Message.ActorEx(1024, 66, 10, 2, 0);
         Message.CloseAll();
-        Message.ActorEx(1024, 67, 12, 0, 0);
+		ShowExclamationMark(12);
+		Actor.WaitActionFinish();
+        Message.ActorEx(1024, 67, 12, 1, 0);
         Message.CloseAll();
+		HughRepositions(12);
+
+		Player.GetGPos(playerX2, playerZ2);
+		if (playerZ2 == 185){
+			WalkSouthOneTile(255);
+		}
+		if (playerZ2 == 187){
+			WalkNorthOneTile(255);
+		}
+		if (playerX2 == 650){
+			WalkWestOneTile(255);
+		}
+
         Message.ActorEx(1024, 68, 10, 2, 0);
+		Actor.WaitActionFinish();
         sub_LockoutWarning();
 		yesNo = YesNoWin.Show();
 		if (yesNo != 0) {
@@ -830,14 +854,14 @@ public class MainEvents {
 		goto LABEL_EndBengaEncounter;
 
 		LABEL_RepositionForBengaEncounter:
-		ActionSequence_0f8c(12);
-		ActionSequence_0f94(255);
+		TurningNorth(12);
+		TurningSouth(255);
 		goto LABEL_TRIGGERING_THE_SCRIPT_AGAIN;
 
 		LABEL_RepositionForBengaEncounter2:
 		if (playerZ == 187) {
-			ActionSequence_0f94(12);
-			ActionSequence_0f8c(255);
+			TurningSouth(12);
+			TurningNorth(255);
 			goto LABEL_TRIGGERING_THE_SCRIPT_AGAIN;
 		}
 
@@ -851,7 +875,7 @@ public class MainEvents {
 			Message.ActorEx(1024, 70, 10, 2, 0);
 			Message.WaitAdvance();
 			Message.CloseAll();
-			ActionSequence_0f84(12);
+			TurningWest(12);
 			Actor.WaitActionFinish();
 			goto LABEL_EndBengaEncounter;
 		}
@@ -874,17 +898,18 @@ public class MainEvents {
 		goto LABEL_Start_Benga_Battle;
 		
         // REPOSITIONING_THE_PLAYER
+		
 		Player.GetGPos(playerX, playerZ);
 		if (playerZ == 186) {
-			Actor.WalkRoute(255, 647, 185, 2, 8, 1);
+			Actor.WalkRoute(255, 649, 186, 2, 8, 1);
 			Runtime.Sleep(8);
-			ActionSequence_0f84(12);
+			TurningWest(12);
 			Actor.WaitActionFinish();
 		}
 		if (playerZ == 187) {
 			Actor.WalkRoute(255, 648, 185, 2, 8, 0);
 			Runtime.Sleep(8);
-			ActionSequence_0f84(12);
+			TurningWest(12);
 			Actor.WaitActionFinish();
 			ActionSequence_0fa4(255);
 			Actor.WaitActionFinish();
@@ -893,8 +918,8 @@ public class MainEvents {
 			goto LABEL_Start_Benga_Battle;
 		}
 		if (playerX != 650) {
-			ActionSequence_0f84(12);
-			ActionSequence_0f84(255);
+			TurningWest(12);
+			TurningWest(255);
             Actor.WaitActionFinish();
 			goto LABEL_Start_Benga_Battle;
 		}
@@ -903,12 +928,19 @@ public class MainEvents {
 
         // STARTING THE ACTUAL BATTLE 
 		LABEL_Start_Benga_Battle:
-		Battle.CallTrainerBattle(BENGA_ID, 0, 1);
-		isVictory = Battle.IsTrainerVictory();
+		Player.GetGPos(playerX, playerZ);
+		if (playerX != 649){
+			Actor.WalkRoute(255, 649, 186, 2, 8, 1);
+			Runtime.Sleep(8);
+			TurningWest(255);
+			Actor.WaitActionFinish();
+		}
+
+		//Battle.CallTrainerBattle(164, 0, 1);
+		isVictory = 0; //Battle.IsTrainerVictory();
 		if (isVictory == 0) {
             PokeParty.RecoverAll();
 			Battle.EndTrainerBattle();
-			return;
 		} else {
             Battle.EndTrainerBattle();
         }
@@ -933,7 +965,7 @@ public class MainEvents {
 		WordSet.LoadRivalName(1);
 
         // HUGH CHASES AFTER THEM 
-		Message.ActorEx(1024, 38, 12, 0, 1);
+		Message.ActorEx(1024, 38, 12, 1, 1);
 		Message.CloseActor();
 		Actor.WalkRoute(12, 638, 186, 1, 4, 0);
 		Actor.WaitActionFinish();
@@ -945,19 +977,31 @@ public class MainEvents {
         return; 
 
         LABEL_NewEndScriptForBenga:
+		Message.System(128, 2);
+		Message.CloseAll();
         if (isVictory == 0){
+			Message.ActorEx(1024, 117, 10, 0, 1);
+			HopLeft(10);
+			Actor.WaitActionFinish();
+			HopDown(10);
+			Actor.WaitActionFinish();
+			HopUp(10);
+			Actor.WaitActionFinish();
+			HopRight(10);
+			Actor.WaitActionFinish();
+			Message.CloseAll();
             if (EventFlags.Get(1520 + 773)) {
                 if (EventFlags.Get(1520 + 772)){
                     // Player Lost Lacunosa 
                     // Player Won Route 4 
                     // Player Won Ranch
-                    Message.ActorEx(1024, 72, 10, 1, 0);
+                    Message.ActorEx(1024, 72, 10, 0, 0);
                 }
                 else {
                     // Player Lost Lacunosa 
                     // Player Won Route 4 
                     // Player Lost Ranch
-                    Message.ActorEx(1024, 73, 10, 1, 0);
+                    Message.ActorEx(1024, 73, 10, 0, 0);
                 }
             } 
             else {
@@ -965,28 +1009,30 @@ public class MainEvents {
                     // Player Lost Lacunosa 
                     // Player Lost Route 4 
                     // Player Won Ranch 
-                    Message.ActorEx(1024, 104, 10, 1, 0);
+                    Message.ActorEx(1024, 104, 10, 0, 0);
                 }
                 else {
                     // Player Lost Lacunosa 
                     // Player Lost Route 4 
                     // Player Lost Ranch 
-                    Message.ActorEx(1024, 109, 10, 1, 0);
+                    Message.ActorEx(1024, 109, 10, 0, 0);
                 }
             }
         } else {
+			TurningSouth(10);
+			Runtime.Sleep(16);
             if (EventFlags.Get(1520 + 773)){
                 if (EventFlags.Get(1520 + 772)){
                     // Player Won Lacunosa 
                     // Player Won Route 4
                     // Player Won Rnach 
-                    Message.ActorEx(1024, 105, 10, 1, 0);
+                    Message.ActorEx(1024, 105, 10, 0, 0);
                 }
                 else {
                     // Player Won Lacunosa 
                     // Player Won Route 4 
                     // Player Lost Ranch
-                    Message.ActorEx(1024, 106, 10, 1, 0);
+                    Message.ActorEx(1024, 106, 10, 0, 0);
                 }
             }
             else {
@@ -994,10 +1040,10 @@ public class MainEvents {
                     // Player Won Lacunosa 
                     // Player Lost Route 4 
                     // Player Won Ranch
-                    Message.ActorEx(1024, 107, 10, 1, 0);
+                    Message.ActorEx(1024, 107, 10, 0, 0);
                 }
                 else {
-                    Message.ActorEx(1024, 108, 10, 1, 0);
+                    Message.ActorEx(1024, 108, 10, 0, 0);
                 }
             }
         }
@@ -1005,58 +1051,86 @@ public class MainEvents {
 
         // Hugh Realizes 
         ShowQuestionMark(12);
+		Sound.BGMFadeOut(120);
         Actor.WaitActionFinish();
-        Message.ActorEx(1024, 75, 12, 0, 0);
+
+		// Hugh Walks One Tile South then One Tile Wset 
+        Message.ActorEx(1024, 75, 12, 1, 0);
 		Message.CloseAll();
-		Field.PlayMapBGM();
         ShowExclamationMark(12);
+		Actor.WaitActionFinish();
+		TurnWest8F(12);
         HopLeft(12);
-        Actor.WaitActionFinish();
-        Message.Spiked(76, 2);
+        Message.ActorEx(1024, 76, 12, 1, 1);
+		Actor.WaitActionFinish();
+		Message.CloseAll();
+		Actor.WaitActionFinish();
+		Sound.BGMPlay(1240);
 
         // Some kind of movement to approach Benga 
-        // INSERT MOVEMENT 
-        // INSERT MOVEMENT 
+		EVCamera.Init();
+		EVCamera.Unbind();
+		EVCamera.MoveTo(2.3652344f, 0.0f, 237.0f, 10344.0f, 0.0f, 2984.0f, 30);
+        HughScene1(12);
+		Message.ActorEx(1024, 118, 12, 1, 1);
+		EVCamera.Wait();
+		Actor.WaitActionFinish();
+		Message.CloseAll();
 
         // HUGH DEMANDS ANSWER FROM BENGA 
-		Message.ActorEx(1024, 77, 12, 0, 0);
+		TurnEast8F(10);
+		ShowExclamationMark(10);
+		Actor.WaitActionFinish();
+		Message.ActorEx(1024, 77, 12, 1, 0);
 		Message.CloseAll();
-        ShowExclamationMark(10);
         Actor.WaitActionFinish();
-        Message.ActorEx(1024, 78, 10, 1, 0);
+		HopRight(10);
+		HopRight(10);
+        Message.ActorEx(1024, 78, 10, 0, 0);
 		Message.CloseAll();
         TurnSouth8F(10);
         Actor.WaitActionFinish();
-        Message.ActorEx(1024, 79, 10, 1, 0);
+        Message.ActorEx(1024, 79, 10, 0, 0);
 		Message.CloseAll();
 
         // HUGH TEARS INTO BENGA 
-        TurnEast8F(10);
+        Message.ActorEx(1024, 80, 12, 1, 1);
+		TurnEast8F(10);
+		Message.CloseAll();
         Actor.WaitActionFinish();
-        Message.ActorEx(1024, 80, 12, 0, 0);
+		Message.ActorEx(1024, 126, 12, 1, 0);
 		Message.CloseAll();
-		Runtime.Sleep(15);
-        Message.ActorEx(1024, 81, 10, 1, 0);
+		ShowQuestionMark(10);
+		Actor.WaitActionFinish();
+        Message.ActorEx(1024, 81, 10, 0, 0);
 		Message.CloseAll();
-        Message.ActorEx(1024, 82, 12, 0, 0);
+		HopLeft(12);
+        Message.ActorEx(1024, 82, 12, 1, 1);
 		Message.CloseAll();
-        
+		Message.ActorEx(1024, 127, 12, 1, 0);
+		Message.CloseAll();
+		Actor.WaitActionFinish();
+
         // SOME KIND OF MOVEMENT TO APPROACH GARCHOMP 
-        // INSERT MOVEMENT 
-        // INSERT MOVEMENT 
-
-        Message.ActorEx(1024, 83, 12, 0, 0);
+		BengaBacksUp(10);
+		Actor.WaitActionFinish();
+		Message.ActorEx(1024, 119, 10, 0, 0);
+		Message.CloseAll();
+		Actor.WaitActionFinish();
+		HughScene1(12);
+		Message.ActorEx(1024, 83, 12, 1, 0);
 		Message.CloseAll();
 
-        ShowQuestionMark(10);
-        Actor.WaitActionFinish();
-        Runtime.Sleep(15);
-        TurnSouth8F(10);
-        Actor.WaitActionFinish();
-        Message.ActorEx(1024, 84, 10, 1, 0);
+		ShowQuestionMark(10);
+		Actor.WaitActionFinish();
+		Runtime.Sleep(16);
+		TurnSouth8F(10);
+		Actor.WaitActionFinish();
+		Message.ActorEx(1024, 84, 10, 0, 0);
 		Message.CloseAll();
+		Runtime.Sleep(32);
 
-        Sound.PVPlay(488, 0);
+        Sound.PVPlay(445, 0);
         Message.Info(85, 2);
         Message.CloseAll();
         Sound.PVWait();
@@ -1065,46 +1139,78 @@ public class MainEvents {
 
         ShowExclamationMark(10);
         Actor.WaitActionFinish();
-        Message.Spiked(87, 1);
+        Message.ActorEx(1024, 87, 10, 0, 1);
         Message.CloseAll();
 
         // Benga moves to examine Garchomp
         // INSERT MOVEMENT
         // INSERT MOVEMENT 
-        Message.ActorEx(1024, 88, 10, 1, 0);
+		BengaChecksOnGarchomp1(10);
+        Message.ActorEx(1024, 88, 10, 0, 0);
+		Message.CloseAll();
+		Actor.WaitActionFinish();
+		BengaChecksOnGarchomp2(10);
+		
+        Message.ActorEx(1024, 120, 10, 0, 0);
+		Message.CloseAll();
+		Actor.WaitActionFinish();
+		BengaChecksOnGarchomp3(10);
+		HughBacksUp(12);
+		WalkWestTwoTiles(255);
+        Message.ActorEx(1024, 121, 10, 0, 0);
+		Message.CloseAll();
+		Actor.WaitActionFinish();
+
+        Message.ActorEx(1024, 89, 12, 1, 0);
 		Message.CloseAll();
 
-        Message.ActorEx(1024, 89, 12, 0, 0);
+		TurnSouth8F(10);
+        Runtime.Sleep(16);
+        Message.ActorEx(1024, 90, 10, 0, 0);
 		Message.CloseAll();
-
-        Runtime.Sleep(15);
-        Message.ActorEx(1024, 90, 10, 1, 0);
+		Actor.WaitActionFinish();
+		HopLeft(10);
+		Message.ActorEx(1024, 122, 10, 0, 0);
+		
 		Message.CloseAll();
-
+		Actor.WaitActionFinish();
+        Sound.PVPlay(445, 0);
         Message.System(91, 2);
         Message.CloseAll();
+        Sound.PVWait();
 
-        Message.ActorEx(1024, 92, 10, 1, 0);
-		Message.CloseAll();
-        Runtime.Sleep(60);
+		ShowEllipses(10);
+		Actor.WaitActionFinish();
+		Runtime.Sleep(60);
 
         // BENGA APPROACHES THE PLAYER 
-        Message.ActorEx(1024, 93, 10, 1, 0);
+		BengaApproachesPlayer(10);
+		Actor.WaitActionFinish();
+        Message.ActorEx(1024, 93, 10, 0, 0);
 		Message.CloseAll();
-        Global2805(10, 2);
-
-        TurnSouth8F(10);
+        Global2805(294, 2);
+        TurnWest8F(10);
         Actor.WaitActionFinish();
-        Message.ActorEx(1024, 94, 10, 1, 0);
+        Message.ActorEx(1024, 94, 10, 0, 0);
 		Message.CloseAll();
+		BengaLeaves1(10);
+		Actor.WaitActionFinish();
         Message.Info(95, 2);
 		Message.CloseAll();
 
 
         // BENGA LEAVES 
-		Actor.WalkRoute(10, 637, 186, 1, 4, 0);
-		Runtime.Sleep(8);
-		Actor.WalkRoute(11, 637, 185, 1, 4, 0);
+		BengaLeaves2(11);
+		BengaLeaves3(10);
+		PlayerWatchesThemLeave(255);
+		HughWatchesThemLeaves(12);
+		Runtime.Sleep(64);
+		EVCamera.Return(30);
+		EVCamera.Wait();
+		EVCamera.Rebind();
+		EVCamera.End();
+
+
 		Actor.WaitActionFinish();
 		Actor.Hide(10);
 		Actor.Hide(11);
@@ -1112,23 +1218,40 @@ public class MainEvents {
 		WordSet.LoadRivalName(1);
 
         // HUGH CHASES AFTER THEM 
-		Message.ActorEx(1024, 96, 12, 0, 1);
+		
+		Message.ActorEx(1024, 96, 12, 1, 0);
 		Message.CloseActor();
         // HUGH TURNS TOWARDS THE PLAYER 
-        Message.ActorEx(1024, 97, 12, 0, 1);
-		Message.CloseActor();
-        // HUGH TURNS AWAY FROM THE PLAYER 
-        Message.ActorEx(1024, 98, 12, 0, 1);
-		Message.CloseActor();
-        // HUGH TURNS TOWARDS THE PLAYER 
-        Message.ActorEx(1024, 99, 12, 0, 1);
+		HopLeft(12);
+        Message.ActorEx(1024, 97, 12, 1, 1);
+		Actor.WaitActionFinish();
 		Message.CloseActor();
 
-		Actor.WalkRoute(12, 638, 186, 1, 4, 0);
+        // HUGH TURNS AWAY FROM THE PLAYER 
+		TurnSouth8F(12);
+        Message.ActorEx(1024, 98, 12, 1, 0);
+		Message.CloseActor();
+
+        // HUGH TURNS TOWARDS THE PLAYER 
+		WalkWestOneTile(12);
+        Message.ActorEx(1024, 99, 12, 1, 0);
+		Message.CloseActor();
+		Sound.BGMFadeOut(120);
+
+		HughLeaves3(12);
 		Actor.WaitActionFinish();
 		Actor.Hide(12);
 		sub_Lockout();
+		if (EventWorks.Get(16465) == 1){
+            Sound.SEPlay(1351);
+            Message.System(124, 2);
+            Message.WaitAdvance();
+            Message.CloseAll();            
+        }
+		EventWorks.Set(16466, 70);
+		Field.PlayMapBGM();
 		EventFlags.Set(784);
+		EventFlags.Clear(566);
 		EventWorks.Set(16590, 3);
 		EventWorks.Set(16588, 4);
 		Base.CMD_262(1, 23);
@@ -1168,7 +1291,7 @@ public class MainEvents {
 		}
 
 		// Candice
-		if (EventWorks.Get(1520 + 291) != 2){
+		if (EventFlags.Get(1520 + 390) == 0){
 			anythingLeft += 1;
 		}
         if (anythingLeft > 0){
@@ -1191,7 +1314,7 @@ public class MainEvents {
 			}
 			
 			// Candice
-			if (EventWorks.Get(1520 + 291) != 2){
+			if (EventFlags.Get(1520 + 390) == 0){
 				Message.System(114, 2);
 			}
 
@@ -1210,7 +1333,7 @@ public class MainEvents {
 	}
 
 	static meta void HughExit1(int npcId) : VActionSequence {
-		Action0011(3);
+		Action0011(1);
 		Action0012(1);
 		Action0024(1);
 	}
@@ -1278,7 +1401,7 @@ public class MainEvents {
 
 	static meta void HughApproach(int npcId) : VActionSequence {
 		Action000d(1);
-		Action000f(1);
+		Action000f(2);
 	}
 
 	static meta void ApproachFurther(int npcId) : VActionSequence {
@@ -1297,22 +1420,27 @@ public class MainEvents {
 	}
 
 	static meta void ActionSequence_0f74(int npcId) : VActionSequence {
-		Action000f(6);
+		Action003f(1);
+		Action0013(6);
 	}
 
-	static meta void ActionSequence_0f7c(int npcId) : VActionSequence {
+	static meta void BengaTooFast(int npcId) : VActionSequence {
+		Action0013(6);
+	}
+
+	static meta void TurningEast(int npcId) : VActionSequence {
 		Action0023(1);
 	}
 
-	static meta void ActionSequence_0f84(int npcId) : VActionSequence {
+	static meta void TurningWest(int npcId) : VActionSequence {
 		Action0022(1);
 	}
 
-	static meta void ActionSequence_0f8c(int npcId) : VActionSequence {
+	static meta void TurningNorth(int npcId) : VActionSequence {
 		Action0020(1);
 	}
 
-	static meta void ActionSequence_0f94(int npcId) : VActionSequence {
+	static meta void TurningSouth(int npcId) : VActionSequence {
 		Action0021(1);
 	}
 
@@ -1332,7 +1460,7 @@ public class MainEvents {
 		Action0001(1);
 	}
 
-	static meta void ActionSequence_0fcc(int npcId) : VActionSequence {
+	static meta void LookWest(int npcId) : VActionSequence {
 		Action0002(1);
 	}
 
@@ -1362,6 +1490,16 @@ public class MainEvents {
 		Action0021(1);
 	}
 
+	static meta void HughRepositions(int npcId) : VActionSequence {
+		Action000c(1);
+		Action0021(1);
+	}
+
+	static meta void PlayerReposition(int npcId) : VActionSequence {
+		Action000d(1);
+		Action000e(1);
+	}
+
 	static meta void TurnWest8F(int npcId) : VActionSequence {
 		Action0022(1);
 	}
@@ -1372,7 +1510,20 @@ public class MainEvents {
         Action0032(1);
     }
 
-
+	static meta void WalkSouthOneTile(int npcId) : VActionSequence {
+		Action000d(1);
+		Action0022(1);
+	}
+	static meta void WalkNorthOneTile(int npcId) : VActionSequence {
+		Action000c(1);
+		Action0022(1);
+	}
+	static meta void WalkWestOneTile(int npcId) : VActionSequence {
+		Action000e(1);
+	}
+	static meta void WalkWestTwoTiles(int npcId) : VActionSequence {
+		Action000e(2);
+	}
 	static meta void HopRight(int npcId) : VActionSequence {
 		Action0033(1);
 	}
@@ -1384,14 +1535,99 @@ public class MainEvents {
 	static meta void HopDown(int npcId) : VActionSequence {
 		Action0031(1);
 	}
-	
+
+	static meta void HughScene1(int npcId) : VActionSequence {
+		Action0011(1);
+		Action0012(1);
+	}
+
+	static meta void BengaBacksUp(int npcId) : VActionSequence {
+		Action0047(1);
+		Action000e(1);
+		Action0048(1);
+	}
+
+	static meta void HughBacksUp(int npcId) : VActionSequence {
+		Action0047(1);
+		Action000f(2);
+		Action0048(1);
+	}
+
+	static meta void BengaChecksOnGarchomp1(int npcId) : VActionSequence {
+		Action0012(1);
+		Action0011(1);
+		Action0027(1);
+	}
+	static meta void BengaChecksOnGarchomp2(int npcId) : VActionSequence {
+		Action0010(1);
+		Action0013(1);
+		Action0025(1);
+	}
+	static meta void BengaChecksOnGarchomp3(int npcId) : VActionSequence {
+		Action0013(1);
+		Action0011(1);
+		Action0026(1);
+	}
+
+	static meta void BengaApproachesPlayer(int npcId) : VActionSequence {
+		Action000c(1);
+		Action000f(1);
+	}
+	static meta void ShowEllipses(int npcId) : VActionSequence {
+	        Action00a1(1);
+    }
+
+	static meta void BengaLeaves1(int npcId) : VActionSequence {
+	        Action0012(3);
+			Action0011(1);
+			Action0027(1);
+    }
+
+	static meta void HughWatchesThemLeaves(int npcId) : VActionSequence {
+	        Action003f(8);
+			Action0020(1);
+			Action003f(4);
+			Action000f(2);
+			Action000c(1);
+			Action0023(1);
+    }
+
+	static meta void PlayerWatchesThemLeave(int npcId) : VActionSequence {
+	        Action003f(8);
+			Action0020(1);
+			Action003f(4);
+			Action0023(1);
+    }
+
+	static meta void BengaLeaves2(int npcId) : VActionSequence {
+			Action0008(2);
+			Action000b(4);
+			Action000f(8);
+    }
+
+	static meta void BengaLeaves3(int npcId) : VActionSequence {
+			Action000b(1);
+			Action0008(2);
+			Action000b(4);
+			Action000f(8);
+    }
+
+	static meta void HughLeaves3(int npcId) : VActionSequence {
+	        Action0010(1);
+			Action0012(10);
+    }
+
+
 	static meta void Global2805(int a1, int a2) : VGlobalCall[2805];
 	static native void Action0001(int amount) : 0x1;
 	static native void Action0002(int amount) : 0x2;
+	static native void Action0008(int amount) : 0x8;
+	static native void Action000b(int amount) : 0xb;
 	static native void Action000c(int amount) : 0xc;
 	static native void Action000d(int amount) : 0xd;
 	static native void Action000e(int amount) : 0xe;
 	static native void Action000f(int amount) : 0xf;
+	static native void Action0010(int amount) : 0x10;
 	static native void Action0011(int amount) : 0x11;
 	static native void Action0013(int amount) : 0x13;
 	static native void Action0012(int amount) : 0x12;
@@ -1400,6 +1636,9 @@ public class MainEvents {
 	static native void Action0022(int amount) : 0x22;
 	static native void Action0023(int amount) : 0x23;
 	static native void Action0024(int amount) : 0x24;
+	static native void Action0025(int amount) : 0x25;
+	static native void Action0026(int amount) : 0x26;
+	static native void Action0027(int amount) : 0x27;
     static native void Action0030(int amount) : 0x30;
 	static native void Action0031(int amount) : 0x31;
 	static native void Action0032(int amount) : 0x32;
@@ -1408,5 +1647,9 @@ public class MainEvents {
 	static native void Action004b(int amount) : 0x4b;
 	static native void Action0064(int amount) : 0x64;
 	static native void Action00a1(int amount) : 0xa1;
+	static native void Action006c(int amount) : 0x6c;
+	static native void Action006f(int amount) : 0x6f;
     static native void Action009f(int amount) : 0x9f;
+     static native void Action0047(int amount) : 0x47;
+      static native void Action0048(int amount) : 0x48;
 }

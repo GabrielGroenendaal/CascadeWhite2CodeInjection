@@ -1,0 +1,130 @@
+import messages.script.Msg0374.MSGID;
+
+import event.FieldDemo;
+import event.actors.Actor;
+import event.dialogs.Message;
+import pokemon.Pokedex;
+import pokescript.vm.Math;
+import pokescript.vm.StackCtrl;
+import pokescript.vm.VM;
+import system.EventFlags;
+import system.EventWorks;
+import system.Input;
+import system.Runtime;
+import system.Sound;
+
+public class MainEvents {
+	public static void main_1() { // @ 0xb7
+		Actor.PauseAll();
+		if (EventFlags.Get(2400)) {
+			Sound.SEPlay(1351);
+			Actor.FacePlayer();
+			Message.Actor(1024, 4, 0, 0);
+			Input.LastKeyWait();
+			Message.CloseActor();
+			goto LABEL_00fa;
+		}
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 3, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+
+		LABEL_00fa:
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_2() { // @ 0x100
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 5, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_3() { // @ 0x11c
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 6, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_4() { // @ 0x1e
+		Actor.PauseAll();
+		if (EventFlags.Get(474)) {
+			Sound.SEPlay(1351);
+			Actor.FacePlayer();
+			Message.Actor(1024, 11, 0, 0);
+			Input.LastKeyWait();
+			Message.CloseActor();
+			goto LABEL_00b1;
+		}
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 7, 0, 0);
+		Message.CloseActor();
+		FieldDemo.CallPokemonPreview(643, 0, 0, 0);
+		Pokedex.RegisterSpecies(0, 643);
+		Message.System(8, 0);
+		Message.WaitAdvance();
+		Message.CloseSystem();
+		Message.Actor(1024, 9, 0, 0);
+		Message.CloseActor();
+		FieldDemo.CallPokemonPreview(644, 0, 0, 0);
+		Pokedex.RegisterSpecies(0, 644);
+		Message.System(10, 0);
+		Message.WaitAdvance();
+		Message.CloseSystem();
+		Message.Actor(1024, 11, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		EventFlags.Set(474);
+
+		LABEL_00b1:
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_5() { // @ 0x138
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 13, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_6() { // @ 0x154
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 14, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_7() { // @ 0x170
+		Actor.PauseAll();
+		Sound.SEPlay(2222);
+		Sound.SEWait();
+		Message.Info(12, 2);
+		Input.LastKeyWait();
+		Message.CloseInfo();
+		EventWorks.Set(16713, 2);
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+}

@@ -13,6 +13,7 @@ import system.Input;
 import system.RTC;
 import system.Runtime;
 import system.Sound;
+import system.text.WordSet;
 
 public class MainEvents {
 	public static void main_1() { // @ 0x2e
@@ -51,7 +52,11 @@ public class MainEvents {
 		Sound.SEWait();
 		Actor.WalkRoute(2, 6, 6, 1, 8, 1);
 		Actor.WaitActionFinish();
+		Actor.Show(4);
+		Sound.SEPlay(1369);
+		Actor.WalkRoute(4, 6, 6, 1, 8, 1);
 		Actor.WalkRoute(2, 7, 5, 1, 8, 0);
+		Sound.SEWait();
 		Actor.WaitActionFinish();
 		v35 = RTC.GetDayPart();
 		if (v35 != 3 && v35 != 4) {
@@ -86,10 +91,27 @@ public class MainEvents {
 		Message.CloseAll();
 		Message.ActorEx(1024, 7, 0, 0, 0);
 		Message.CloseAll();
-		ActionSequence_0338(2);
+		ShowExclamationMark(2);
 		Actor.WaitActionFinish();
 		Message.ActorEx(1024, 8, 2, 0, 0);
 		Message.CloseAll();
+		HopUp(4);
+		Actor.WaitActionFinish();
+		WordSet.LoadRivalName(1);
+		Message.ActorEx(1024, 17, 4, 1, 0);
+		Message.CloseAll();
+
+		ShowExclamationMark(0);
+		Actor.WaitActionFinish();
+		Message.ActorEx(1024, 18, 0, 1, 0);
+		Actor.WaitActionFinish();
+		WalkWestOneTile(0);
+		Message.ActorEx(1024, 19, 0, 1, 0);
+		Actor.WaitActionFinish();
+		Message.CloseAll();
+
+		DramaticWalking(0);
+		Actor.WaitActionFinish();
 		Message.ActorEx(1024, 9, 0, 0, 0);
 		Message.CloseAll();
 		Message.ActorEx(1024, 10, 1, 0, 0);
@@ -97,18 +119,21 @@ public class MainEvents {
 		ActionSequence_0318(1);
 		Runtime.Sleep(8);
 		ActionSequence_0350(2);
+		ActionSequence_0350(4);
 		ActionSequence_0350(255);
 		Actor.WaitActionFinish();
 		Message.ActorEx(1024, 11, 1, 0, 0);
 		Message.CloseAll();
-		ActionSequence_02ec(1);
-		ActionSequence_0300(2);
+		JuniperLeaves(1);
+		BiancaLeaves(2);
+		HughLeaves(4);
 		Runtime.Sleep(16);
 		ActionSequence_0330(255);
 		Actor.WaitActionFinish();
 		Sound.SEPlay(1369);
 		Actor.Hide(1);
 		Actor.Hide(2);
+		Actor.Hide(4);
 		Sound.SEWait();
 		EventFlags.Set(781);
 		EventFlags.Set(782);
@@ -163,20 +188,28 @@ public class MainEvents {
 		Actor.UnpauseAll();
 	}
 
-	static meta void ActionSequence_02ec(int npcId) : VActionSequence {
-		Action000d(2);
-		Action000f(1);
-		Action000d(2);
-		Action0045(0);
+	static meta void JuniperLeaves(int npcId) : VActionSequence {
+		Action000d(2); // South 2 tiles
+		Action000f(1); // East one tile
+		Action000d(2); // South 2 tiles 
+		Action0045(0); // Vanish
 	}
 
-	static meta void ActionSequence_0300(int npcId) : VActionSequence {
-		Action003f(1);
-		Action000d(2);
-		Action000e(1);
-		Action000d(2);
-		Action0045(0);
+	static meta void BiancaLeaves(int npcId) : VActionSequence {
+		Action003f(1); // Wait 8F
+		Action000d(2); // South Two Tiles
+		Action000e(1); // West 1 Tile 
+		Action000d(2); // South Two tiles
+		Action0045(0); // Vanish 
 	}
+
+	static meta void HughLeaves(int npcId) : VActionSequence {
+		Action003f(4); // Wait 8F
+		Action000d(3); // South Two Tiles
+		Action0045(0); // Vanish 
+	}
+
+	
 
 	static meta void ActionSequence_0318(int npcId) : VActionSequence {
 		Action0023(1);
@@ -194,7 +227,7 @@ public class MainEvents {
 		Action0021(1);
 	}
 
-	static meta void ActionSequence_0338(int npcId) : VActionSequence {
+	static meta void ShowExclamationMark(int npcId) : VActionSequence {
 		Action004b(1);
 	}
 
@@ -202,6 +235,22 @@ public class MainEvents {
 		Action0002(1);
 	}
 
+	static meta void ActionSequence_0350(int npcId) : VActionSequence {
+		Action0002(1);
+	}
+
+	static meta void DramaticWalking(int npcId) : VActionSequence {
+		Action000f(1);
+		Action0021(1);
+	}
+
+	static meta void HopUp(int npcId) : VActionSequence {
+		Action0030(1);
+	}
+
+	static meta void WalkWestOneTile(int npcId) : VActionSequence {
+		Action000e(1);
+	}
 
 	static native void Action0002(int amount) : 0x2;
 	static native void Action000d(int amount) : 0xd;
@@ -211,6 +260,8 @@ public class MainEvents {
 	static native void Action0021(int amount) : 0x21;
 	static native void Action0022(int amount) : 0x22;
 	static native void Action0023(int amount) : 0x23;
+	static native void Action0030(int amount) : 0x30;
+
 	static native void Action003f(int amount) : 0x3f;
 	static native void Action0045(int amount) : 0x45;
 	static native void Action004b(int amount) : 0x4b;

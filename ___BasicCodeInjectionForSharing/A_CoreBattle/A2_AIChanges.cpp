@@ -783,6 +783,18 @@ extern "C"
                 BattleHandler_PopWork(a1, addAnimation);
                 CreateSpikes(0, a1, 0, 0, 0, SIDEEFF_OPPRESSIVE, Permanent, 208);
             }
+            
+            // Plasma Rumble
+            if (trainerId == 500 || trainerId == 800 || trainerId == 801 || trainerId == 802)
+            {
+                ConditionData Permanent = Condition_MakePermanent();
+                HandlerParam_AddAnimation *addAnimation = (HandlerParam_AddAnimation *)BattleHandler_PushWork(a1, EFFECT_ADD_ANIMATION, 0);
+                addAnimation->animNo = MOVE150_PLAY_ROUGH;
+                addAnimation->pos_from = 1;
+                addAnimation->pos_to = 0;
+                BattleHandler_PopWork(a1, addAnimation);
+                CreateSpikes(0, a1, 0, 0, 0, SIDEEFF_RUMBLE, Permanent, 259);
+            }
 
             // Virizion Fight
             if (trainerId == 507)
@@ -1733,7 +1745,7 @@ extern "C"
             TypeEffectiveness,
             ratio,
             critFlag,
-            isSimulation == 0,
+            isSimulation,
             &v12);
         --a1->simulationCounter;
 
@@ -4375,7 +4387,7 @@ extern "C"
                 int damage = Handler_SimulationDamage(a2->serverFlow,
                                                       BattleMon_GetID(defender),
                                                       BattleMon_GetID(a2->attacker),
-                                                      Move_GetID(defender, i), false, false);
+                                                      Move_GetID(defender, i), true, false);
 
 #if DEBUGGING_AI && DEBUGGING_ALL
                 k::Printf("Check %d is for move %d from %d, the damage against %d is %d. \n", i, Move_GetID(defender, i), defender->Species, a2->attacker->Species, damage);
@@ -4451,7 +4463,7 @@ extern "C"
                 int damage = Handler_SimulationDamage(a2->serverFlow,
                                                       BattleMon_GetID(defender),
                                                       BattleMon_GetID(reference),
-                                                      Move_GetID(defender, i), false, false);
+                                                      Move_GetID(defender, i), true, false);
 
 #if DEBUGGING_AI && DEBUGGING_ALL
                 k::Printf("Check %d isf or move %d from %d, the damage against %d is %d. \n", i, Move_GetID(defender, i), defender->Species, a2->attacker->Species, damage);
@@ -4515,7 +4527,7 @@ extern "C"
                 int damage = Handler_SimulationDamage(a2->serverFlow,
                                                       BattleMon_GetID(defender),
                                                       BattleMon_GetID(a2->attacker),
-                                                      Move_GetID(defender, i), false, false);
+                                                      Move_GetID(defender, i), true, false);
 #if DEBUGGING_AI && DEBUGGING_ALL
                 k::Printf("Check %d isf or move %d from %d, the damage against %d is %d. \n", i, Move_GetID(defender, i), defender->Species, a2->attacker->Species, damage);
 #endif
@@ -4567,7 +4579,7 @@ extern "C"
             int damage = Handler_SimulationDamage(a2->serverFlow,
                                                   BattleMon_GetID(a2->defender),
                                                   BattleMon_GetID(a2->attacker),
-                                                  Move_GetID(a2->defender, i), false, false);
+                                                  Move_GetID(a2->defender, i), true, false);
 #if DEBUGGING_AI && DEBUGGING_ALL
             k::Printf("Check %d is or move %d the damage against %d is %d. \n", i, Move_GetID(a2->defender, i), a2->attacker->Species, damage);
 #endif
@@ -4688,7 +4700,7 @@ extern "C"
         int damage = Handler_SimulationDamage(a2->serverFlow,
                                               BattleMon_GetID(a2->defender),
                                               BattleMon_GetID(a2->attacker),
-                                              a2->moveID, false, false);
+                                              a2->moveID, true, false);
 #if DEBUGGING_AI && DEBUGGING_ALL
         k::Printf("Pokemon %d HP is %d and the damage dealt by the move is %d\n\n", a2->defender->Species, BattleMon_GetValue(a2->defender, VALUE_CURRENT_HP), damage);
 #endif

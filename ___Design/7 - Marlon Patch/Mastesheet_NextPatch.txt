@@ -1342,12 +1342,12 @@ end
 !items Items
 heart scale, 3x Heart Scales can be found by the Move Reminder.
 colress mchn, Proto Booster (reward for defeating Colress) 
-old gateau, IV Enhancer (reward for defeating Colress)
+old gateau, IV Enhancer x53 (reward for defeating Colress)
 end
 
 ### Colress 
 !notif WARNING, "Proto" Items are dangerous devices designed by colress that boost a Pokémon's stats on switch in at the cost of their accuracy. Be careful! , #f26253
-!trm 739/48 Rewards 1x IV Enhancer, 1x Proto Booster
+!trm 739/48 Rewards 3x IV Enhancer, 1x Proto Booster
 
 ## Blueberry Academy 
 !notif NOTE, You can visit the Blueberry Academy from the ship on the docks of the PWT. Defeat a short back-to-back battle for a mint! 
@@ -1669,13 +1669,13 @@ end
 
 ### Sabrina
 !notif SPLIT-LOCKED, Sabrina is an optional mini-boss that can only be fought before defeating Skyla. This content is locked off afterwards.  , #af74b3
-!tr 769/54 Rewards Celestial Rooftop Encounter, Covert Cloak, x1 IV Enhancers
+!tr 769/54 Rewards Celestial Rooftop Encounter, Covert Cloak, x5 IV Enhancers
 
 
 
 ## Celestial Rooftop (only accessible by beating Sabrina)
 !items Sabrina Rewards 
-old gateau, 1x IV Enhancers 
+old gateau, 5x IV Enhancers 
 covert cloak, Covert Cloak
 end 
 
@@ -1912,7 +1912,7 @@ Abundant Shrine can be accessed immediately upon arriving in Undella, but the ch
 
 !items Items 
 rocky helmet, Ability Drill 
-old gateau, x1 IV Enhancer
+old gateau, x5 IV Enhancer
 end
 
 !notif ULTIMATE MOVE TUTOR, The ultimate tutor for starters can be found here and will teach Blast Burn, Frenzy Plant, and Hydro Cannon to starters. 
@@ -1951,7 +1951,7 @@ end
 
 
 
-## Humilau Town 
+## Humilau City 
 !items Items 
 shell bell, Shell Bell (behind Pokémon Center)
 heart scale, x1 Heart Scale (in middle of town shallows)
@@ -2078,7 +2078,7 @@ end
 - Bugsy Miniboss in Pinwheel Forest (rewards Bug Gems, TM45 Lunge, Tanga Barries)
 - Virizion Side Quest in Pinwheel Forest (rewards Pinwheel Forest encounter, Choice Specs)
 - Blaine Miniboss (rewards Ability Drill, Abundant Shrine encounter, IV Enhancers, Starter Move Tutors)
-- Humilau City B2B (rewards 2x Ability Capsules)
+- Humilau City B2B (rewards 1x Ability Capsules)
 
 !trm 160 Rewards HM06 Dive 
 

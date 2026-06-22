@@ -351,7 +351,7 @@ public class MainEvents {
     static void resetMarlonSplitFlags(){
         
 		// Level Cap Update
-		EventWorks.Set(16466, 66);
+		EventWorks.Set(16466, 67);
 
         // Virizion Reset 
         // This blocks off access to Pinwheel Forest 

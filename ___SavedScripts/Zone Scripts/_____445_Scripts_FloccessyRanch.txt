@@ -20,6 +20,7 @@ import messages.script.Msg0315.MSGID;
 	import system.text.WordSet;
 	import event.Trainer;
 	import system.Field;
+	
 public class MainEvents {
 	public static void main_1() { // @ 0x52
 	

@@ -3939,6 +3939,8 @@ extern "C"
         int attack;            // [sp+18h] [bp-18h]
 
         Category = PML_MoveGetCategory(moveParam->MoveID);
+
+        
         //         if (!Handler_IsSimulationMode(a1))
         // {
         //     k::Printf("\nFinal damage value for move %d being returned is %d\n", moveParam->MoveID, Value);

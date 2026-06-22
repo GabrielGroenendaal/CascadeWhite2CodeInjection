@@ -255,7 +255,7 @@ public class MainEvents {
 		TurnSouth8F(9);
 		Actor.WaitActionFinish();
 		if (JanineFlag == 1){
-			Message.ActorEx(1024, 47, 9, 0, 0);
+			Message.ActorEx(1024, 48, 9, 0, 0);
             Message.CloseAll();
 		}
         else {

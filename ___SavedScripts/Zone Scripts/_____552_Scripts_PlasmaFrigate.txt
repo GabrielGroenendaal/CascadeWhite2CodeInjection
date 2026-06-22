@@ -638,6 +638,7 @@ public class MainEvents {
 
 	public static void main_23() { // @ 0xe47
 		int v32;
+		int isVictory;
 
 		Actor.PauseAll();
 		WordSet.LoadPlayerName(0);
@@ -647,31 +648,176 @@ public class MainEvents {
 		Message.ActorEx(1024, 43, 0, 0, 0);
 		Message.CloseAll();
 		ActionSequence_13ec(0);
-		Actor.WalkRoute(14, 10, 30, 1, 8, 1);
+		ShowExclamationMark(14);
+		TurnWest8F(14);
 		Actor.WaitActionFinish();
 		Message.ActorEx(1024, 48, 14, 0, 0);
 		Message.CloseAll();
-		Battle.CallTrainerBattle(500, 0, 0);
-		sub_1268();
-		ActionSequence_0fc0(14);
+
+		PlayerWalksTwoTilesEast(255);
+		GruntBacksUpTwoTilesEast(14);
+		Runtime.Sleep(16);
+		Message.ActorEx(1024, 69, 14, 0, 0);
 		Actor.WaitActionFinish();
-		Message.ActorEx(1024, 49, 14, 0, 0);
 		Message.CloseAll();
+
+		HopDown(14);
+		Message.ActorEx(1024, 70, 14, 0, 1);
+		Actor.WaitActionFinish();
+		Message.CloseAll();
+
+		Sound.BGMPlay(1266);
+		Runtime.Sleep(16);
+		Actor.New(20, 24, 1, 33, 293, 0);
+		Runtime.Sleep(4);
+		FirstGruntApproaches(33);
+		Message.Multi(72, 6, 20, 1);
+		Runtime.Sleep(26);
+		Actor.New(13, 38, 1, 29, 294, 0);
+		SecondGruntApproaches(29);
+		Message.Multi(73, 4, 11, 2);
+		Runtime.Sleep(26);
+		Actor.New(11, 22, 1, 30, 293, 0);
+		ThirdGruntApproaches(30);
+		ShowExclamationMark(0);
+		Message.CloseWin(1);
+		Message.Multi(74, 13, 2, 3);
+		Runtime.Sleep(26);
+		Actor.New(16, 38, 1, 31, 294, 0);
+		FourthGruntApproaches(31);
+		Message.CloseWin(2);
+		Message.Multi(75, 18, 14, 4);
+		Runtime.Sleep(26);
+		Actor.New(20, 24, 1, 32, 293, 0);
+		FifthGruntApproaches(32);
+		ShowExclamationMark(255);
+		TurnNorth8F(255);
+		Message.CloseWin(3);
+		Runtime.Sleep(26);
+		Message.CloseWin(4);
+		TurnWest8F(14);
+		Message.ActorEx(1024, 71, 14, 0, 0);
+		Actor.WaitActionFinish();
+		Message.CloseAll();
+
+		Actor.WaitActionFinish();
+
+		// THE SWARMS OF TRAINERS COMING TO ATTACK YOU
+		Message.System(83, 0);
+		Message.CloseAll();
+		//Battle.CallTrainerBattle(500, 0, 0);
+		isVictory = 1;//Battle.IsTrainerVictory();
+		if (isVictory != 1) {
+			Battle.CallTrainerLose();
+			return;
+		}
+		//Battle.EndTrainerBattle();
+		FirstGruntBacksUp(32);
+		Message.ActorEx(1024, 76, 14, 0, 1);
+		Actor.WaitActionFinish();
+		Message.CloseAll();
+		TurnSouth8F(255);
+		Actor.WaitActionFinish();
+
+		Message.System(83, 0);
+		Message.CloseAll();
+		// Battle.CallTrainerBattle(800, 0, 0);
+		isVictory = 1;// Battle.IsTrainerVictory();
+		if (isVictory!= 1) {
+			Battle.CallTrainerLose();
+			return;
+		}
+		//Battle.EndTrainerBattle();
+		SecondGruntBacksUp(29);
+		HughGruntBacksUp(15);
+		Message.ActorEx(1024, 77, 14, 0, 1);
+		Actor.WaitActionFinish();
+		Message.CloseAll();
+		TurnNorth8F(0);
+		TurnWest8F(255);
+		Message.ActorEx(1024, 78, 0, 0, 0);
+		Actor.WaitActionFinish();
+		Message.CloseAll();
+		
+		Message.System(83, 0);
+		Message.CloseAll();
+
+		//Battle.CallTrainerBattle(801, 0, 0);
+		isVictory = 1;//Battle.IsTrainerVictory();
+		if (isVictory != 1) {
+			Battle.CallTrainerLose();
+			return;
+		}
+		//Battle.EndTrainerBattle();
+
+		ThirdGruntBacksUp(33);
+		FirstGruntBacksUp(30);
+		Message.ActorEx(1024, 79, 14, 0, 0);
+		Actor.WaitActionFinish();
+		Message.CloseAll();
+		TurnEast8F(255);
+		HughApproachesLastGrunt(0);
+		TurnNorth8F(14);
+		Message.ActorEx(1024, 80, 0, 0, 0);
+		Actor.WaitActionFinish();
+		Message.CloseAll();
+		Battle.CallTrainerBattle(802, 0, 0);
+		sub_1268();
+
+		SecondGruntBacksUp(14);
+		Message.ActorEx(1024, 81, 14, 0, 0);
+		Actor.WaitActionFinish();
+		HopDown(0);
+		Message.ActorEx(1024, 82, 0, 0, 1);
+		Actor.WaitActionFinish();
+		Message.CloseAll();
+		ActionSequence_0fc0(15);
+		Actor.WaitActionFinish();
+		Message.ActorEx(1024, 49, 15, 0, 0);
+		Message.CloseAll();
+
 		v32 = Game.GetVersion();
 		if (v32 != 23) {
-			Actor.WalkRoute(14, 13, 38, 1, 4, 0);
-			Actor.WalkRoute(15, 14, 38, 1, 4, 0);
+			FirstGruntEscapes(32);
+			Runtime.Sleep(8);
+			SecondGruntEscapes(31);
+			Runtime.Sleep(8);
+			FirstGruntEscapes(30);
+			Runtime.Sleep(8);
+			ThirdGruntEscapes(33);
+			Runtime.Sleep(8);
+			TurnNorth8F(255);
+			LastGruntEscapes(29);
+			Runtime.Sleep(8);
+			SecondGruntEscapes(14);
+			FirstGruntEscapes(15);
 			Actor.WaitActionFinish();
 			EventWorks.Set(16625, 2);
+			Actor.Hide(32);
+			Actor.Hide(31);
+			Actor.Hide(29);
+			Actor.Hide(33);
+			Actor.Hide(30);
 			Actor.SetGPos(14, 18, 0, 45, 0);
 			Actor.SetGPos(15, 19, 0, 46, 0);
 			goto LABEL_0f40;
 		}
-		Actor.WalkRoute(14, 13, 20, 1, 4, 0);
-		Actor.WalkRoute(15, 13, 20, 1, 4, 0);
+		Actor.WalkRoute(32, 13, 38, 0, 4, 0);
+		Actor.WalkRoute(31, 13, 20, 0, 4, 0);
+		Runtime.Sleep(16);
+		Actor.WalkRoute(29, 13, 38, 0, 4, 0);
+		Actor.WalkRoute(33, 13, 20, 0, 4, 0);
+		Runtime.Sleep(16);
+		Actor.WalkRoute(30, 13, 38, 0, 4, 0);
+		Actor.WalkRoute(14, 13, 38, 0, 4, 0);
+		Actor.WalkRoute(15, 13, 20, 0, 4, 0);
 		Actor.WaitActionFinish();
 		EventWorks.Set(16626, 2);
-		Actor.Hide(14);
+		Actor.Hide(32);
+		Actor.Hide(31);
+		Actor.Hide(29);
+		Actor.Hide(33);
+		Actor.Hide(30);
 		Actor.Hide(15);
 		Actor.Hide(23);
 		Actor.Hide(24);
@@ -698,6 +844,7 @@ public class MainEvents {
 		Base.CMD_262(2, 7);
 		Base.CMD_262(3, 7);
 		Base.CMD_262(4, 0);
+		Field.PlayMapBGM();
 		Runtime.FinishSubEvents();
 		Actor.UnpauseAll();
 	}
@@ -1047,6 +1194,44 @@ public class MainEvents {
 		Daycare.DepositPkm(index);
 	}
 
+	static void sub_Testing() { // @ 0x1268
+		int v16;
+
+		v16 = 1; // Battle.IsTrainerVictory();
+		if (v16 != 1) {
+			//Battle.CallTrainerLose();
+			return;
+		}
+		if (EventWorks.Get(16624) != 2) {
+			goto LABEL_1298;
+		}
+		sub_1375();
+
+		LABEL_1298:
+		if (EventWorks.Get(16624) != 3) {
+			goto LABEL_1369;
+		}
+		sub_1375();
+		Actor.SetGPos(2, 10, 0, 30, 3);
+		Actor.SetGPos(4, 10, 0, 32, 3);
+		Actor.SetGPos(5, 12, 0, 27, 1);
+		Actor.SetGPos(6, 11, 0, 27, 1);
+		Actor.SetGPos(7, 13, 0, 35, 0);
+		Actor.SetGPos(8, 12, 0, 35, 0);
+		Actor.SetGPos(3, 14, 0, 36, 0);
+		Actor.SetGPos(9, 11, 0, 36, 0);
+		Actor.SetGPos(10, 15, 0, 35, 0);
+		Actor.SetGPos(11, 14, 0, 28, 1);
+		Actor.SetGPos(12, 13, 0, 26, 1);
+		Actor.SetGPos(13, 14, 0, 27, 1);
+		Actor.SetGPos(0, 12, 0, 32, 0);
+		Actor.SetGPos(1, 14, 0, 32, 0);
+		Actor.SetGPos(255, 13, 0, 33, 0);
+		EventFlags.Set(831);
+
+		LABEL_1369:
+		//Battle.EndTrainerBattle();
+	}
 
 	static void sub_1268() { // @ 0x1268
 		int v16;
@@ -1196,10 +1381,8 @@ public class MainEvents {
 	}
 
 	static meta void ActionSequence_0fc0(int npcId) : VActionSequence {
-		Action0047(1);
-		Action000f(1);
-		Action0048(1);
 		Action003f(1);
+		Action0021(1);
 		Action004b(1);
 	}
 
@@ -1256,19 +1439,153 @@ public class MainEvents {
 		Action00a1(1);
 	}
 
+	static meta void FirstGruntApproaches(int npcId) : VActionSequence {
+		Action0016(6); // West 5 Tiles
+		Action0015(3);// South 3 Tiles 
+		Action0016(3);// West 3 Tile 
+		Action0015(2);// South 2 Tiles 
+		Action0016(1);// West 1 Tile 
+		Action0015(1);// South 1 Tile 
+		Action002b(1); // Turn East 
+	}
+
+	static meta void SecondGruntApproaches(int npcId) : VActionSequence {
+		Action0014(3); // North 3 Tiles 
+		Action0016(2);// West 2 Tile s
+		Action0014(4);// North 4 Tiles
+	}
+
+	static meta void ThirdGruntApproaches(int npcId) : VActionSequence {
+		Action0015(4); // South 4 Tiles
+		Action0017(1);// East 1
+		Action0015(2);// South 2 Tiles
+	}
+
+
+	static meta void FourthGruntApproaches(int npcId) : VActionSequence {
+		Action0016(3); // West 3 Tiles 
+		Action0014(4);// North 4 Tiles
+		Action0016(1);// West 1 Tile
+		Action0014(4);// North 4 Tiles 
+		Action002a(1);// Turn West 
+
+	}
+
+	static meta void FifthGruntApproaches(int npcId) : VActionSequence {
+		Action0016(5); // West 4 Tiles 
+		Action0015(1);// South 1 Tiles
+		Action0016(2);// West 2 Tile
+		Action0015(1);// South 1 Tiles 
+		Action0016(2);// West 2 Tile
+		Action0015(3);// South 3 Tiles
+	}
+
+	static meta void ShowExclamationMark(int npcId) : VActionSequence {
+		Action004b(1);
+	}
+
+	static meta void TurnNorth8F(int npcId) : VActionSequence {
+		Action0020(1);
+	}
+
+	static meta void TurnSouth8F(int npcId) : VActionSequence {
+		Action0021(1);
+	}
+
+	static meta void TurnEast8F(int npcId) : VActionSequence {
+		Action0023(1);
+	}
+
+	static meta void PlayerWalksTwoTilesEast(int npcId) : VActionSequence {
+		Action000f(2);
+	}
+
+	static meta void GruntBacksUpTwoTilesEast(int npcId) : VActionSequence {
+		Action0047(1);
+		Action000b(2);
+		Action0048(1);
+	}
+	static meta void HopDown(int npcId) : VActionSequence {
+		Action0031(1);
+	}
+	static meta void TurnWest8F(int npcId) : VActionSequence {
+		Action0022(1);
+	}
+
+	static meta void FirstGruntBacksUp(int npcId) : VActionSequence {
+		Action0047(1);
+		Action000c(1);
+		Action0048(1);
+	}
+
+	static meta void SecondGruntBacksUp(int npcId) : VActionSequence {
+		Action0047(1);
+		Action000d(1);
+		Action0048(1);
+	}
+
+	static meta void FirstGruntEscapes(int npcId) : VActionSequence {
+			Action0014(10); // North 3 Tiles
+	    }
+	
+	static meta void SecondGruntEscapes(int npcId) : VActionSequence {
+		    Action0015(2);
+			Action0017(1); // North 3 Tiles
+			Action0015(8);
+	    }
+
+	static meta void ThirdGruntEscapes(int npcId) : VActionSequence {
+		    Action0015(3);
+			Action0017(3); // North 3 Tiles
+			Action0015(8);
+	    }
+	static meta void ThirdGruntBacksUp(int npcId) : VActionSequence {
+		Action0047(1);
+		Action000e(1);
+		Action0048(1);
+	}
+
+	static meta void LastGruntEscapes(int npcId) : VActionSequence {
+		Action0017(1); // North 3 Tiles
+		 Action0015(9);
+	}
+
+	static meta void HughGruntBacksUp(int npcId) : VActionSequence {
+		Action0047(1);
+		Action000f(1);
+		Action0048(1);
+	}
+
+	static meta void HughApproachesLastGrunt(int npcId) : VActionSequence {
+		Action0013(1);
+		Action0021(1);
+	}
+
 
 	static native void Action0000(int amount) : 0x0;
 	static native void Action0001(int amount) : 0x1;
 	static native void Action0002(int amount) : 0x2;
 	static native void Action0003(int amount) : 0x3;
+	static native void Action000a(int amount) : 0xa;
+	static native void Action000b(int amount) : 0xb;
 	static native void Action000c(int amount) : 0xc;
 	static native void Action000d(int amount) : 0xd;
 	static native void Action000e(int amount) : 0xe;
 	static native void Action000f(int amount) : 0xf;
+	static native void Action0011(int amount) : 0x11;
+	static native void Action0013(int amount) : 0x13;
+	static native void Action0014(int amount) : 0x14;
+	static native void Action0015(int amount) : 0x15;
+	static native void Action0016(int amount) : 0x16;
+	static native void Action0017(int amount) : 0x17;
 	static native void Action0020(int amount) : 0x20;
 	static native void Action0021(int amount) : 0x21;
 	static native void Action0022(int amount) : 0x22;
 	static native void Action0023(int amount) : 0x23;
+	static native void Action0027(int amount) : 0x27;
+	static native void Action002a(int amount) : 0x2a;
+	static native void Action002b(int amount) : 0x2b;
+	static native void Action0031(int amount) : 0x31;
 	static native void Action003f(int amount) : 0x3f;
 	static native void Action0047(int amount) : 0x47;
 	static native void Action0048(int amount) : 0x48;

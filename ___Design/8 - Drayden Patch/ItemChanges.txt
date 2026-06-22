@@ -6,7 +6,10 @@ Seaside Cave:
         473: Johan 
         474: Mikiko 
         580: Rocky 
-    
+
+        Leftover:
+            469
+        
     Items: 
         162 = Enigma Berry x1
         163 = Dive Ball x5
@@ -17,9 +20,12 @@ Seaside Cave:
 
 Undella Bay: 
     Trainers: 
-        472: Battle Girl Maki
+        470: Battle Girl Tia
         315: Swimmer Bart 
     
+    Items: 
+        127: TM Solarbeam 
+
 Abyssal Ruin: 
     Trainers: 
         314: Swimmer Matt 
@@ -30,9 +36,23 @@ Abyssal Ruin:
 
 Plasma Frigate: 
     Trainers:
-
+        Rumble: 
+            500 - 1st fight 
+            800 - 2nd fight 
+            801 - 3rd fight
+            802 - 4th fight 
+    
+            798 - Tag Battle (that we're skipping)
+            799 - Tag Battle (that we're skipping)
+            428 OR 443 - First Password, Top Left Room
+            436 OR 451 - Plasma Card Giver in the Mess Hall (Bottom Left: 583)
+            427 OR 442 - Other Trainer in the Mess Hall (Bottom Left: 583)
+            426 OR 441 - Plasma Hint Grunt (Bottom Right: 582)
+            435 OR 450 - Top Right Trainer (Top Right: 580)
+    
     Items: 
-
+        378: On the deck of the ship
+        379: On the deck of the SHip
 
 Route 13: 
     Trainers:
@@ -47,6 +67,22 @@ Route 13:
         289 - Fisherman Vince -> Worker Vince 
         290 - Parasol Lady Laura 
         731 - Battle Girl Alize -> Scientist Alize 
-        471 - Black Belt Rich -> Candice 
+        300 - Black Belt Rich -> Candice 
         
     Items: 
+        133: Normal Gem (x2)
+        134: TMXX Weather Ball
+        135: TMXX Weather Crash 
+        137: TM13 Ice Beam 
+        138: Quick Ball (x5) (On the beach)
+        139: Starf Berry x2 (Located on the Shallows)
+        140: Heart Scale (x1)
+        140: Red Shard (x20) (Located in the grassy island)
+
+
+Lacunosa Town: 
+    Trainers:
+        379 - Benga 
+    
+    Items: 
+        142 - Chilan Berry

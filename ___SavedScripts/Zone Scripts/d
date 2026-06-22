@@ -1,0 +1,12 @@
+	Runtime.Sleep(16);
+			Actor.WalkRoute(31, 13, 20, 0, 4, 0);
+			Runtime.Sleep(16);
+			Actor.WalkRoute(29, 13, 38, 0, 4, 0);
+			Runtime.Sleep(16);
+			Actor.WalkRoute(33, 13, 20, 0, 4, 0);
+			Runtime.Sleep(16);
+			Actor.WalkRoute(30, 13, 38, 0, 4, 0);
+			Runtime.Sleep(16);
+			Actor.WalkRoute(14, 13, 38, 0, 4, 0);
+			Runtime.Sleep(16);
+			Actor.WalkRoute(15, 13, 20, 0, 4, 0);

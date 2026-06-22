@@ -4,7 +4,9 @@ import event.Battle;
 import event.EVCamera;
 import event.actors.Actor;
 import event.actors.Player;
+import event.Trainer;
 import event.dialogs.Message;
+import event.dialogs.YesNoWin;
 import event.funfest.Funfest;
 import pokescript.vm.Math;
 import pokescript.vm.StackCtrl;
@@ -187,7 +189,8 @@ public class MainEvents {
 
     // Entry Blockade with the Two rangers
     public static void main_7(){
-
+		int playerX;
+		int playerZ;
         int rangerA_Entity;
         int rangerA_ID;
         int rangerB_Entity;
@@ -195,37 +198,100 @@ public class MainEvents {
         int yesNo; 
         int isVictory;
 
+
         Actor.PauseAll();
-        Message.ActorEx(1024, 14, rangerA_Entity, 0, 0);
-        Message.ActorEx(1024, 20, rangerB_Entity, 0, 0);
+
+		rangerA_Entity = 14;
+		rangerB_Entity = 8;
+		Player.GetGPos(playerX, playerZ);
+		rangerA_ID = 295; 
+		rangerB_ID = 294;
+		
+		TurnEast8F(rangerA_Entity);
+		TurnEast8F(rangerB_Entity);
+		Sound.SEPlay(1351);
+		if (EventFlags.Get(568)){
+			Message.ActorEx(1024, 33, rangerA_Entity, 0, 1);
+			Actor.WaitActionFinish();
+			Message.CloseAll();
+
+			if (playerZ == 276){
+				WalkSouthOneTile(255);
+			}
+			if (playerZ == 278){
+				WalkNorthOneTile(255);
+			}
+			WalkWestOneTile(255);
+			WalkEastOneTile(rangerB_Entity);
+			Actor.WaitActionFinish();
+			Message.ActorEx(1024, 34, rangerB_Entity, 1, 0);
+			Message.CloseAll();
+			WalkEastOneTile(rangerA_Entity);
+			Actor.WaitActionFinish();
+			Message.ActorEx(1024, 35, rangerA_Entity, 0, 0);
+			Message.CloseAll();
+			goto Label_EnterRoute13;
+		}
+        Message.ActorEx(1024, 14, rangerA_Entity, 0, 1);
+		Actor.WaitActionFinish();
+		Message.CloseAll();
+		if (playerZ == 276){
+				WalkSouthOneTile(255);
+			}
+			if (playerZ == 278){
+				WalkNorthOneTile(255);
+			}
+			WalkWestOneTile(255);
+			Actor.WaitActionFinish();
+		WalkEastOneTile(rangerB_Entity);
+		Actor.WaitActionFinish();
+        Message.ActorEx(1024, 20, rangerB_Entity, 1, 0);
+		Message.CloseAll();
+		WalkEastOneTile(rangerA_Entity);
+		Actor.WaitActionFinish();
         Message.ActorEx(1024, 15, rangerA_Entity, 0, 0);
-        Message.ActorEx(1024, 16, rangerB_Entity, 0, 0);
+		Message.CloseAll();
+		TurnNorth8F(rangerB_Entity);
+		Actor.WaitActionFinish();
+        Message.ActorEx(1024, 16, rangerB_Entity, 1, 0);
+		Message.CloseAll();
+		TurnEast8F(rangerB_Entity);
         Message.ActorEx(1024, 17, rangerA_Entity, 0, 0);
+		Actor.WaitActionFinish();
+		EventFlags.Set(568);
+
+		Label_EnterRoute13:
         yesNo = YesNoWin.Show();
 		if (yesNo != 0) {
-			Message.ActorEx(1024, 18, rangerB_Entity, 0, 0);
-            Message.ActorEx(1024, 19, rangerB_Entity, 0, 0);
-			Input.LastKeyWait();
+			Message.ActorEx(1024, 18, rangerB_Entity, 1, 0);
 			Message.CloseAll();
-            WalkSouthTwoTiles(255);
+            Message.ActorEx(1024, 19, rangerA_Entity, 0, 0);
+			Message.CloseAll();
+            WalkEastOneTile(255);
+			 WalkEastOneTile(255);
+			ReturnToSpotA(rangerA_Entity);
+			ReturnToSpotB(rangerB_Entity);
             Actor.WaitActionFinish();
 			goto LABEL_FinishRangerRoadblock;
 		}
         Message.CloseAll();
         Message.ActorEx(1024, 21, rangerA_Entity, 0, 0);
-        Message.ActorEx(1024, 22, rangerB_Entity, 0, 0);
-        Input.LastKeyWait();
 		Message.CloseAll();
-        Battle.CallTrainerBattle(rangerA_ID, rangerB_ID, 0);
-        isVictory = Battle.IsTrainerVictory();
+        Message.ActorEx(1024, 22, rangerB_Entity, 1, 0);
+		Message.CloseAll();
+        // Battle.CallTrainerBattle(rangerA_ID, rangerB_ID, 0);
+        isVictory = 1;//Battle.IsTrainerVictory();
 		if (isVictory != 1) {
 			Battle.CallTrainerLose();
 		}
         Battle.EndTrainerBattle();
         Message.ActorEx(1024, 23, rangerA_Entity, 0, 0);
-        Message.ActorEx(1024, 24, rangerB_Entity, 0, 0);
-		Input.LastKeyWait();
-		Message.CloseActor();
+		Message.CloseAll();
+        Message.ActorEx(1024, 24, rangerB_Entity, 1, 0);
+		Message.CloseAll();
+		RangerRetreatA(rangerA_Entity);
+		RangerRetreatB(rangerB_Entity);
+		Actor.WaitActionFinish();
         EventWorks.Set(16505, 1);
 
         LABEL_FinishRangerRoadblock:
@@ -265,8 +331,8 @@ public class MainEvents {
         Actor.PauseAll();
 		Sound.SEPlay(1351);
 		Actor.FacePlayer();
-        int Candice_Entity = 10; // CHANGE THIS LATER
-        int trainerId = 291; // CHANGE THIS LATER
+        int Candice_Entity = 29; // CHANGE THIS LATER
+        int trainerId = 300; // CHANGE THIS LATER
 
 		if (EventFlags.Get(1520 + trainerId)) {
 			Message.ActorEx(1024, 13, Candice_Entity, 0, 0);
@@ -311,18 +377,18 @@ public class MainEvents {
     }
 
     // Fisherman Obstacle A 
-    public static void main_10(){
+    public static void main_11(){
         if (!EventFlags.Get(1520 + 287)){
             int isVictory;
             int fisherman_Entity; 
+			fisherman_Entity = 6;
             Actor.PauseAll();
             ShowExclamationMark(fisherman_Entity);
             Actor.WaitActionFinish();
-            TurnEast8F(255);
+            TurnWest8F(255);
             Actor.WaitActionFinish();
             Trainer.PlayBGMPush(287);
             Message.ActorEx(1024, 27, fisherman_Entity, 0, 0);
-            Input.LastKeyWait();
             Message.CloseAll();
             Battle.CallTrainerBattle(287, 0, 0);
             isVictory = Battle.IsTrainerVictory();
@@ -337,19 +403,18 @@ public class MainEvents {
     }
 
     // Fisherman Obstacle B
-    public static void main_11() {
+    public static void main_12() {
         if (!EventFlags.Get(1520 + 286)){
             int isVictory;
             int fisherman_Entity; 
-            
+            fisherman_Entity = 7;
             Actor.PauseAll();
             ShowExclamationMark(fisherman_Entity);
             Actor.WaitActionFinish();
-            TurnWest8F(255);
+            TurnEast8F(255);
             Actor.WaitActionFinish();
             Trainer.PlayBGMPush(286);
             Message.ActorEx(1024, 28, fisherman_Entity, 0, 0);
-            Input.LastKeyWait();
             Message.CloseAll();
             Battle.CallTrainerBattle(286, 0, 0);
             isVictory = Battle.IsTrainerVictory();
@@ -361,6 +426,58 @@ public class MainEvents {
             Runtime.FinishSubEvents();
             Actor.UnpauseAll();
         }  
+    }
+
+	// Spheal
+    public static void main_13() {
+        Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Sound.PVPlay(364, 0);
+		Message.Info(29, 1);
+		Sound.PVWait();
+		Message.CloseAll();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
+
+	// Dewgong
+    public static void main_14() {
+        Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Sound.PVPlay(364, 0);
+		Message.Info(30, 1);
+		Sound.PVWait();
+		Message.CloseAll();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
+
+	// Abomasnow
+    public static void main_15() {
+        Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Sound.PVPlay(460, 0);
+		Message.Info(31, 1);
+		Sound.PVWait();
+		Message.CloseAll();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
+
+	// Glaceon
+    public static void main_16() {
+        Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Sound.PVPlay(471, 0);
+		Message.Info(32, 1);
+		Sound.PVWait();
+		Message.CloseAll();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
     }
 
 	static void sub_0289() { // @ 0x289
@@ -404,6 +521,44 @@ public class MainEvents {
 		Action000d(2);
 	}
 
+	static meta void WalkNorthOneTile(int npcId) : VActionSequence {
+		Action000c(1);
+	}
+	static meta void WalkSouthOneTile(int npcId) : VActionSequence {
+		Action000d(1);
+	}
+
+	static meta void WalkWestOneTile(int npcId) : VActionSequence {
+		Action000e(1);
+	}
+
+	static meta void WalkEastOneTile(int npcId) : VActionSequence {
+		Action000f(1);
+	}
+
+
+	static meta void ReturnToSpotA(int npcId) : VActionSequence {
+		Action000e(1);
+		Action003f(1);
+		Action0020(1);
+	}
+
+	static meta void ReturnToSpotB(int npcId) : VActionSequence {
+		Action003f(1);
+		Action000e(1);
+		Action0021(1);
+	}
+
+	static meta void RangerRetreatA(int npcId) : VActionSequence {
+		Action000d(1);
+		Action0020(1);
+	}
+
+	static meta void RangerRetreatB(int npcId) : VActionSequence {
+		Action000c(1);
+		Action0021(1);
+	}
+	
 	static meta void ActionSequence_03b4(int npcId) : VActionSequence {
 		Action004b(1);
 	}
@@ -415,10 +570,52 @@ public class MainEvents {
     static meta void ShowExclamationMark(int npcId) : VActionSequence {
 		Action004b(1);
 	}
+	static meta void TurnEast8F(int npcId) : VActionSequence {
+		Action0023(1);
+	}
+    static meta void TurnNorth8F(int npcId) : VActionSequence {
+		Action0020(1);
+	}
+
+	static meta void TurnSouth8F(int npcId) : VActionSequence {
+		Action0021(1);
+	}
+	static meta void TurnWest8F(int npcId) : VActionSequence {
+		Action0022(1);
+	}
 
 	static meta void Global2805(int a1, int a2) : VGlobalCall[2805];
-
-    static native void Action00d(int amount) : 0xd;
+	static native void Action0001(int amount) : 0x1;
+	static native void Action0002(int amount) : 0x2;
+	static native void Action0008(int amount) : 0x8;
+	static native void Action000b(int amount) : 0xb;
+	static native void Action000c(int amount) : 0xc;
+	static native void Action000d(int amount) : 0xd;
+	static native void Action000e(int amount) : 0xe;
+	static native void Action000f(int amount) : 0xf;
+	static native void Action0010(int amount) : 0x10;
+	static native void Action0011(int amount) : 0x11;
+	static native void Action0013(int amount) : 0x13;
+	static native void Action0012(int amount) : 0x12;
 	static native void Action0020(int amount) : 0x20;
+	static native void Action0021(int amount) : 0x21;
+	static native void Action0022(int amount) : 0x22;
+	static native void Action0023(int amount) : 0x23;
+	static native void Action0024(int amount) : 0x24;
+	static native void Action0025(int amount) : 0x25;
+	static native void Action0026(int amount) : 0x26;
+	static native void Action0027(int amount) : 0x27;
+    static native void Action0030(int amount) : 0x30;
+	static native void Action0031(int amount) : 0x31;
+	static native void Action0032(int amount) : 0x32;
+	static native void Action0033(int amount) : 0x33;
+	static native void Action003f(int amount) : 0x3f;
 	static native void Action004b(int amount) : 0x4b;
+	static native void Action0064(int amount) : 0x64;
+	static native void Action00a1(int amount) : 0xa1;
+	static native void Action006c(int amount) : 0x6c;
+	static native void Action006f(int amount) : 0x6f;
+    static native void Action009f(int amount) : 0x9f;
+     static native void Action0047(int amount) : 0x47;
+      static native void Action0048(int amount) : 0x48;
 }
