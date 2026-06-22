@@ -1,0 +1,10 @@
+import messages.script.Msg0373.MSGID;
+
+import system.EventFlags;
+import system.EventWorks;
+
+public class MainEvents {
+	public static void nullsub_6() { // @ 0x6
+	}
+
+}

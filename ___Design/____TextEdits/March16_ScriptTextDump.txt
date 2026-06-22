@@ -856,7 +856,7 @@
 15: The [COLOR(2)]Enigma Berry Optional[COLOR(0)]\nin the [COLOR(1)]Castelia Sewers[COLOR(0)].\c\nDefeating her rewards Enigma Berries!\c
 16: The [COLOR(2)]Roughneck Mini-Boss Fight[COLOR(0)]\nin the [COLOR(1)]Castelia Alleyway[COLOR(0)]\r\naccessed through Castelia Sewers.\c\nDefeating him rewards an Ability Capsule\nand the option to trade any Pokémon\r\nfor a perfect IV sound Pokémon.\c
 17: The [COLOR(2)]President Neil Optional Boss Fight[COLOR(0)]\nin the [COLOR(1)]Castelia Battle Company[COLOR(0)].\c\nDefeating him rewards a single-stage\nPokémon egg!\c
-18: The [COLOR(2)]Surge Optional Boss Fight[COLOR(0)]\nin [COLOR(1)]Liberty Island[COLOR(0)].\c\nDefeating him rewards an encounter on\nLiberty Island, a Leftovers, and\r\nthe U-Turn TM!\c
+18: The [COLOR(2)]Surge Optional Boss Fight[COLOR(0)]\nin [COLOR(1)]Liberty Island[COLOR(0)].\c\nDefeating him rewards an encounter on\nLiberty Island, a Leftovers, and\r\na Hasty Mint!\c
 
 ----- TEXT FILE 36-----
 0: Good work back there in the sewers.\c\nMy Pokémon have been scurrying with\nexcitement about getting to\r\nbattle you.\c\nI'd say my Pokémon are\npretty great!\r\nC'mon, let me brag a little!\c\nOmastar's round little eyes are cute!\nIt's resilient and reliable!\c\nMy ace is Leavanny!\nIt's really the best!\c\nI think it's so sweet how it makes clothes\nfor other Pokémon out of leaves.\c\nOf course, I'm really proud\nof all of my Pokémon!\c\nWell now...\nLet's get right to it!\c
@@ -2020,8 +2020,8 @@
 34: You've completed all the Split-Locked\ncontent available before Elesa!
 35: The [COLOR(2)]Lenora Mini-Boss Fight[COLOR(0)]\nin [COLOR(1)]Relic Castle[COLOR(0)].\c\nDefeating her rewards a fossil!\c
 36: The [COLOR(2)]Eeveelution Fan Club Gauntlet[COLOR(0)]\nin [COLOR(1)]Nimbasa City[COLOR(0)].\c\nDefeating them rewards you with an\nAbility Capsule and the chance to trade\r\nany Pokémon for a random Eeveelution.\c
-37: The [COLOR(2)]Ingo & Emmet Mini-Boss Fight[COLOR(0)]\nin [COLOR(1)]Nimbasa City[COLOR(0)].\c\nDefeating them rewards an encounter in\nAnville Town, any evolution stone,\r\n2x Dragon Gems, and a Dragon Fang.\c
-38: The [COLOR(2)]Erika Optional Boss Fight[COLOR(0)]\nin [COLOR(1)]Lostlorn Forest[COLOR(0)].\c\nDefeating her rewards an encounter in\nDeep Lostlorn Forest, 10x Red Shards,\r\nand 2x of every type-resist berry!\c
+37: The [COLOR(2)]Ingo & Emmet Mini-Boss Fight[COLOR(0)]\nin [COLOR(1)]Nimbasa City[COLOR(0)].\c\nDefeating them rewards an encounter in\nAnville Town, any evolution stone,\r\nand a Dragon Fang.\c
+38: The [COLOR(2)]Erika Optional Boss Fight[COLOR(0)]\nin [COLOR(1)]Lostlorn Forest[COLOR(0)].\c\nDefeating her rewards an encounter in\nDeep Lostlorn Forest, 10x Red Shards,\r\nand 1x of every type-resist berry!\c
 
 ----- TEXT FILE 74-----
 0: Oh? Are you a challenger perhaps?\c\nI'm very sorry,\nthe Gym Leader is out right now...\c\nI know where she went though.\c\nShe should be in the building where\nyou can ride the roller coaster.\c\nIt's by the entrance\nto this amusement park.
@@ -2695,7 +2695,7 @@
 27: And remember, you can speak to me\nto see if there's any content defeating\r\nClay will lock you out of!
 28: Once you defeat Clay, the\nfollowing content will be locked off!
 29: You've completed all the Split-Locked\ncontent available before Clay!
-30: The [COLOR(2)]Janine Optional Boss Fight[COLOR(0)]\nin [COLOR(1)]Driftveil City[COLOR(0)].\c\nDefeating her rewards an encounter in\nClay Tunnel, 10x Blue Shards\r\nand 2x of every Gem!\c
+30: The [COLOR(2)]Janine Optional Boss Fight[COLOR(0)]\nin [COLOR(1)]Driftveil City[COLOR(0)].\c\nDefeating her rewards an encounter in\nClay Tunnel, 10x Blue Shards\r\nand 1x of every Gem!\c
 
 ----- TEXT FILE 109-----
 0: Clay: Good dancers are crucial\nfer puttin' on a good show!\c
@@ -2915,6 +2915,7 @@
 41: Mistralton City\nStrewn with Windblown Leaves
 42: Mistralton Cargo Service\nOur slogan is “Quick and Safe!"
 43: Mistralton City Pokémon Gym\nLeader: Skyla\r\nThe Highflying Girl
+44: It's nice to finally be able\nto talk to you again!\c
 
 ----- TEXT FILE 127-----
 0: Hee-hee!\nI've been waiting for you.\c\nYou're a tough Trainer who can face the\nwind and not get blown off your feet!\c\nI'm kinda excited about this battle!\nWhy don't you and I have some fun?\c
@@ -2934,10 +2935,10 @@
 14: The Level Cap is now [COLOR(2)]59[COLOR(0)]!
 15: Once you defeat Skyla, the\nfollowing content will be locked off!
 16: The [COLOR(2)]Cobalion Swords of Justice Quest[COLOR(0)]\nin [COLOR(1)]Guidance Chamber[COLOR(0)]: which is\r\naccessible through Mistralton Cave!\c\nDefeating him rewards an encounter in\nGuidance Chamber and the Assault Vest.\c
-17: The [COLOR(2)]Roxanne Mini-Boss Fight[COLOR(0)]\nin the part of [COLOR(1)]Clay Tunnel[COLOR(0)]\r\naccessible through Mistralton Cave!\c\nDefeating her rewards 3 Shuca Berries,\n3 Ground Gems, and the Dig TM.\c
-18: The [COLOR(2)]Morty Mini-Boss Fight[COLOR(0)]\nin [COLOR(1)]Celestial Tower[COLOR(0)]\r\non the ground floor!\c\nDefeating him rewards 3 Kasib Berries,\n3 Ghost Gems, and the Shadow Ball TM.\c
-19: The [COLOR(2)]Sabrina Optional Boss Fight[COLOR(0)]\nin [COLOR(1)]Celestial Tower[COLOR(0)]!\c\nDefeating her rewards an encounter on\nCelestial Rooftop, Rash / Careful mints,\r\n3 IV enhancers, and the Covert Cloak!\c
-20: The [COLOR(2)]Strange Statue Mini-Boss Fight[COLOR(0)]\nin [COLOR(1)]Relic Sanctum[COLOR(0)].\c\nDefeating it rewards a Life Orb!\c
+17: The [COLOR(2)]Roxanne Mini-Boss Fight[COLOR(0)]\nin the part of [COLOR(1)]Clay Tunnel[COLOR(0)]\r\naccessible through Mistralton Cave!\c\nDefeating her rewards a Shuca Berry,\nGround Gem, and the Dig TM.\c
+18: The [COLOR(2)]Morty Mini-Boss Fight[COLOR(0)]\nin [COLOR(1)]Celestial Tower[COLOR(0)]\r\non the ground floor!\c\nDefeating him rewards a Kasib Berries,\nGhost Gem, and the Shadow Ball TM.\c
+19: The [COLOR(2)]Sabrina Optional Boss Fight[COLOR(0)]\nin [COLOR(1)]Celestial Tower[COLOR(0)]!\c\nDefeating her rewards an encounter on\nCelestial Rooftop, 5 IV enhancers, and\r\nthe Covert Cloak!\c
+20: The [COLOR(2)]Strange Statue Mini-Boss Fight[COLOR(0)]\nin [COLOR(1)]Relic Sanctum[COLOR(0)].\c\nDefeating it rewards a Quiet or\nBrave mint!\c
 21: You've completed all the Split-Locked\ncontent available before Skyla!
 
 ----- TEXT FILE 128-----
@@ -3541,20 +3542,20 @@
 1: Understand what type of Pokémon\neach of the Elite Four uses.\r\nThat is a shortcut for victory!
 
 ----- TEXT FILE 166-----
-0: Return to Castelia City?
+0: Would you like to return to\nthe Pokémon World Tournament?
 1: Well then, please board the ship!\c
 2: Please board the ship\nat your convenience.
 
 ----- TEXT FILE 167-----
-0: Hello, and welcome to Unity Tower!\nWould you like to go upstairs?
+0: Hello, and welcome to the Blueberry\nAcademy!\c\nThe enrollment period for this year\nhas closed unfortunately, but\r\nwould you like to submit an\r\napplication for next year?
 1: Indeed.\nPlease step inside the elevator.\c
 2: Please come again.
 3: This is Unity Tower.\c\nTrainers from all over the world cross\nborders and oceans to gather here.\c\nVisit whichever floor you like!\c\nThe more people you know worldwide,\nthe more floors you can visit.\c\nPlease enjoy all that we have to offer!
 4: Right now, the number of visitors in\nUnity Tower is [VAR NUM2(11)].
-5: Wow! So you like\n[VAR HOBBY(6)], then!
+5: Wow! So you like battles huh?\nI'm just here for the great trades\r\nprogram.
 6: Awesome! The ceiling is sooo high!\c\nI wonder how many of me\nyou'd have to stack up to reach it?
-7: Coming to Unity Tower always\ngets me excited!\c\nBeing here always reminds me of how big\nthe world really is!
-8: You're a new face.\nIs this your first time here?\c\nUnity Tower is the place where\nTrainers come from all over the world.\c\nThat's why I work hard every day doing\nsecurity checks to protect those\r\nyoung Trainers.\c\nDon't loiter around here\nand cause trouble.\r\n...'Kay, you can pass.\c
+7: Coming to the Academy always\ngets me excited!\c\nBeing here always reminds me of how big\nthe world really is!
+8: You're a new face.\nIs this your first time here?\c\nThe Blueberry Academy is a place where\nTrainers come from all over the world.\c\nThat's why I work hard every day doing\nsecurity checks to protect those\r\nyoung Trainers.\c\nDon't loiter around here\nand cause trouble.\r\n...'Kay, you can pass.\c
 9:                                           
 10: Seems like I've met you somewhere...\nAnyway, don't get too wound up and fall.\c\nWhen guests get hurt, it causes me\nno end of trouble.\c\n...'Kay, you can pass.\c
 11: Oh! So you're a Trainer, then!\c\nI see. You're far from family\nand traveling the world, huh?\c\nI suppose it's fine if you contact them\nonce in a while.\c\n'Kay, you can pass.\c
@@ -3589,6 +3590,31 @@
 40: I think I'll try buying that new gum\nnext time.
 41: When I see you, I suddenly feel very\nsure that the future will be full of hope.
 42: When you visit, Unity Tower gets exciting!\c\nThink of this place as your own backyard\nand feel free to go where you please.
+43: I'm sorry, the area beyond here is\nfor students only!\c
+44: This is the Blueberry Academy.\c\nTrainers from all over the world cross\nborders and oceans to gather here\r\nto study and battle!\c\nPlease enjoy all that we have to offer!
+45: Hm, do you don't seem to be in our\nrecords. Most kids your age are...
+46: Isn't Terastalization cool!\nJoin the Blueberry Academy and you\r\ncould use it yourself one day!\c\nOr, I suppose, you could become\nChampion.\r\nWe have an arrangement with the League.
+47: Lots of trainers around Unova are\nbecoming experts of Terastalization!\c\nYou better keep an eye out, and learn\nhow to combat it!
+48: Welcome to the Blueberry Academy!\nHeart of the bustling battle scene\r\nin Unova!\c
+49: You're probably here for our special\n[COLOR(4)]Terastalization[COLOR(0)] presentation!\c
+50: Terastalization is a unique phenomena\nfirst discovered in the Paldea Region!\c\nIt allows a Pokémon to change their\ntype in battle, while still benefitting\r\nfrom offensive bonuses on their\r\noriginal types!\c
+51: It's a fantastically powerful technique,\nand one that we're teaching only to\r\nstudents at the Blueberry Academy!\c
+52: Oh, you're not a student?\c\nWell, you seem like a strong trainer.\c\nWe'll give you something special if\nyou help us show off Terastalization in a\r\nlittle demonstration!\c\nWhat do you say?
+53: Wonderful!\nLet's begin!
+54: I see!\c\nCome back if you change your mind!\c
+55: As you can see, my Unown was able\nto Terastalize into the Electric-type!\c\nThis allowed it to lose all but one\nweakness, which it could offset\r\nwith its Levitate ability!\c
+56: Wow!
+57: Here, as thanks for your assistance, take\none of these Paldean mints!
+58: Gentle Mint
+59: Lax Mint
+60: Raises Defense and Lowers\nSpecial Defense.
+61: Raises Special Defense and Lowers\nDefense.
+62: Good choice!\c
+63: That'll be all for our seminar today!\nThanks everyone!\c
+64: Now, allow me to demonstrate a\nslightly different application of\r\nTerastalization!\c
+65: My Houndoom Terastalized into the\nDark-type, a type it already was!\c\nThis made it's Dark-type moves even\nmore powerful!\c
+66: We insist you take one!\nWhich would you like?
+67: You're back!\nWe're so happy to see you!\c\nWe'll give you something special if\nyou help us show off Terastalization in a\r\nlittle demonstration!\c\nWhat do you say?
 
 ----- TEXT FILE 168-----
 0: [VAR NUM3(2)]F. This is the floor for\n[VAR COUNTRY(0)].
@@ -3934,7 +3960,7 @@
 27: You've completed all the Split-Locked\ncontent available before Cheren!
 28: The [COLOR(2)]Rowap/Jaboca Berry Optional[COLOR(0)]\nin [COLOR(1)]Aspertia Classroom[COLOR(0)].\c\nDefeating him rewards 3x Rowap and\n3x Jaboca Berries!\c
 29: The [COLOR(2)]Blueberry Academy Trade[COLOR(0)]\nin [COLOR(1)]Aspertia Classroom[COLOR(0)].\c\nDefeating the trainer guarding her grants\nthe opportunity to trade any Pokémon\r\nfor a starter!\c
-30: The [COLOR(2)]Brock Optional Boss Fight[COLOR(0)]\nin [COLOR(1)]Pledge Grove[COLOR(0)].\c\nDefeating him rewards an encounter in\nPledge Grove, 10x Berry Juices, and\r\nthe Rock Smash TM!\c
+30: The [COLOR(2)]Brock Optional Boss Fight[COLOR(0)]\nin [COLOR(1)]Pledge Grove[COLOR(0)].\c\nDefeating him rewards an encounter in\nPledge Grove, 5x Berry Juices, and\r\nthe Rock Smash TM!\c
 
 ----- TEXT FILE 172-----
 0: Bianca: OK! I'll show you around\nthe Pokémon Center!\c
@@ -4305,7 +4331,7 @@
 36: Roxie: I thought your movie\nwas pretty good.\c
 37: Pop Roxie: So you saw it...\c\nThat movie was...\c\nNo, it wasn't the movie. It was me.\nI was so excited that I didn't really\r\nbecome Riolu-Man!\c\nActing like that won't\nthrill or excite anyone...\c
 38: Roxie: C'mon!\nDon't get down!\c\nYou can keep trying while\nyou continue on as captain!\c\nAs long as you don't cause anyone\ntrouble, I won't get mad.\c\nI don't know how the Pokéstar Studios\npeople feel about that, though!\c
-39: Oh...\nDid you hear us?\c\nWell, it looks like everyone\nfrom Team Plasma got away...\c\nI don't feel really good about it,\nbut at least they're gone.\c\nOh! There was a lot of ruckus, but\nyou can sail to Castelia City now!\c
+39: Oh...\nDid you hear us?\c\nWell, it looks like everyone\nfrom Team Plasma got away...\c\nI don't feel really good about it,\nbut at least they're gone.\c\nOh! There was a lot of ruckus, but\nyou can sail to Castelia City now!\c\nBut, if you'd like, I suggest you\ncheck out [COLOR(2)]Pokéstar Studios[COLOR(0)] first!\c\nThey're a lot less aggressive about\nrecruitment these days, and there are\r\nlots of rare Pokémon there!\c
 40: Pop Roxie: OK! I guess\nI'll do my best as a captain!\c\nI'll excite and thrill everyone\nby barreling through rough waves!\c
 41: This is Virbank City!\nCity of falling fog and rising stars!
 42: Pokéstar Studios Ahead\nBringing a new golden age of cinema!
@@ -4341,7 +4367,7 @@
 8: Once you defeat Roxie, the\nfollowing content will be locked off!
 9: You've completed all the Split-Locked\ncontent available before Roxie!
 10: The [COLOR(2)]Complex Worker Quest[COLOR(0)]\nin the [COLOR(1)]Virbank Complex[COLOR(0)].\c\nDefeating them rewards an Eviolite!\c
-11: The [COLOR(2)]Misty Optional Boss Fight[COLOR(0)]\non the [COLOR(1)]Virbank Docks[COLOR(0)].\c\nDefeating her rewards an egg,\nthe Clear Amulet, and Water Pulse TM!\c
+11: The [COLOR(2)]Misty Optional Boss Fight[COLOR(0)]\non the [COLOR(1)]Virbank Docks[COLOR(0)].\c\nDefeating her rewards an egg,\nthe Clear Amulet, the Water Pulse TM\r\nand a Naive mint.\c
 
 ----- TEXT FILE 182-----
 0: It's too loud!\nShe can't hear your voice!
@@ -4489,7 +4515,7 @@
 54: Oh that was an absolute delight!\c  
 55: Here, a token of our thanks! 
 56: We're not scared!\nWe're willing to do whatever it takes\r\nwhatever it costs us!\c 
-57: [VAR TRNAME(1)]: You really feel\nthat way, [VAR TRNAME(0)]? 
+57: [VAR TRNAME(1)]: You really feel\nthat way, [VAR TRNAME(0)]?\c
 58: Heyyyyyy, umm, so sorry but like\nI'm actually using this stretch of water\r\nfor my training, soooooo...\c\nUnless you wanna battle for it,\ncan you step back mmmkay? 
 59: Oh my gosh, rude! 
 60: Thank you soooo much!  
@@ -4510,14 +4536,14 @@
 11: Marlon's swimming around, isn't he...
 12: Humilau City Pokémon Gym\c\nGym Leader: Marlon\nCertified Trainers:\r\n[VAR TRNAME(1)]
 13: Humilau City Pokémon Gym\c\nGym Leader: Marlon\nCertified Trainers:\r\n[VAR TRNAME(0)], [VAR TRNAME(1)]
-14: The Level Cap is now [COLOR(2)]66[COLOR(0)]!
+14: The Level Cap is now [COLOR(2)]67[COLOR(0)]!
 15: Hey there, trainer!\c
 16: Once you defeat Marlon, the\nfollowing content will be locked off!
 17: You've completed all the Split-Locked\ncontent available before Marlon!
-18: The [COLOR(2)]Lady & Rich Boy Back-to-Back[COLOR(0)]\nin [COLOR(1)]Humilau City[COLOR(0)].\c\nDefeating them rewards two\nAbility Capsules!\c
-19: The [COLOR(2)]Bugsy Mini-Boss Fight[COLOR(0)]\nin [COLOR(1)]Pinwheel Forest[COLOR(0)].\c\nDefeating him rewards 3 Tanga Berries,\n3 Bug Gems, and the Lunge TM.\c
-20: The [COLOR(2)]Gardenia Mini-Boss Fight[COLOR(0)]\nin [COLOR(1)]Pinwheel Forest[COLOR(0)].\c\nDefeating her rewards 3 Rindo Berries,\n3 Grass Gems, and the Energy Ball TM.\c
-21: The [COLOR(2)]Blaine Optional Boss Fight[COLOR(0)]\nin [COLOR(1)]Abundant Shrine[COLOR(0)].\c\nDefeating him rewards an encounter\nin Abundant Shrine, the Lonely and Bold\r\nMints, 3 IV Enhancers, an ability Drill,\nand access to the Starter move tutors!\c
+18: The [COLOR(2)]Lady & Rich Boy Back-to-Back[COLOR(0)]\nin [COLOR(1)]Humilau City[COLOR(0)].\c\nDefeating them rewards a\nAbility Capsule!\c
+19: The [COLOR(2)]Bugsy Mini-Boss Fight[COLOR(0)]\nin [COLOR(1)]Pinwheel Forest[COLOR(0)].\c\nDefeating him rewards a Tanga Berry,\na Bug Gem, and the Lunge TM.\c
+20: The [COLOR(2)]Gardenia Mini-Boss Fight[COLOR(0)]\nin [COLOR(1)]Pinwheel Forest[COLOR(0)].\c\nDefeating her rewards a Rindo Berry,\na Grass Gem, and the Energy Ball TM.\c
+21: The [COLOR(2)]Blaine Optional Boss Fight[COLOR(0)]\nin [COLOR(1)]Abundant Shrine[COLOR(0)].\c\nDefeating him rewards an encounter\nin Abundant Shrine, 5 IV Enhancers,\r\nan ability Drill, and access\r\nto the Starter move tutors!\c
 22: The [COLOR(2)]Virizion Swords of Justice Quest[COLOR(0)]\n in [COLOR(1)]Pinwheel Forest[COLOR(0)].\c\nDefeating her rewards an encounter\nin Pinwheel Forest and the Choice Specs!\c
 
 ----- TEXT FILE 191-----
@@ -5317,7 +5343,7 @@
 13: Woah there [VAR TRNAME(0)],\nmind your step!\c\nYou're trampling around the archeological\ndiscovery of the century!
 14: Glad to see you and your Pokemon are\nstill in one piece kid!\c\nI see you've also gotten a couple more\nbadges jangling in your pocket since we\rmet up above!\c\nCongratulations!
 15: Oh, confused?\c\nThese ruins are actually part of the same\nmega-structure you found wandering the\rDesert Resort!
-16: Step back trainer!c\nThis part of the ruin has been sealed\noff for your safety!
+16: Step back trainer!\c\nThis part of the ruin has been sealed\noff for your safety!
 17: Sorry [VAR TRNAME(0)], you need to\nstep back!c\nThis part of the ruin has been sealed\noff for people's safety!
 18: I know you're a capable trainer [VAR TRNAME(0)],\nbut nonetheless please take care while\rexploring these ruins.\c\nFrankly, if I can't figure this out soon,\nI'll be forced to seal the site up for\rsafety reasons... 
 19: Brave Mint
@@ -5334,6 +5360,7 @@
 30: But perhaps it was in fact built after\nby one brother alone.\c\nDoes that mean there another lost city yet\nundiscovered in Unova that is this\r\ncastle's rival?
 31: This is incredible!\c\nI would never have made such a discovery\nwithout your aid, [VAR TRNAME(0)]!
 32: Here, I've got a special piece of candy\nfor you as a token of my appreciation!\c\nWhich would you like?
+33: Lenora returned the strange crown\nto [VAR TRNAME(0)].
 
 ----- TEXT FILE 240-----
 0: A towering statue of an ancient pokemon\nstands in the center of the chamber.\c\nIn the statue's gaping mouth rests a\nstrange crown, pulsing\r\nsoftly with light.
@@ -5423,19 +5450,19 @@
 53: Speed
 54: Quit
 55: If you change your mind, you know where\nto find me.
-56: You sure you want to enhance their\nHP?
+56: You want to exchange [COLOR(2)]1 enhancer[COLOR(0)]\nto maximize their HP?
 57: HP IV has been maximized!
-58: You sure you want to enhance their\nAttack?
+58: You want to exchange [COLOR(2)]3 enhancers[COLOR(0)]\nto maximize their Attack?
 59: Attack IV has been maximized!
-60: You sure you want to enhance their\nDefense?
+60: You want to exchange [COLOR(2)]1 enhancer[COLOR(0)]\nto maximize their Defense?
 61: Defense IV has been maximized!
-62: You sure you want to enhance their\nSpecial Attack?
+62: You want to exchange [COLOR(2)]3 enhancers[COLOR(0)]\nto maximize their Special Attack?
 63: Special Attack IV has been\nmaximized!
-64: You sure you want to enhance their\nSpecial Defense?
+64: You want to exchange [COLOR(2)]1 enhancer[COLOR(0)]\nto maximize their Special Defense?
 65: Special Defense IV has been\nmaximized!
-66: You sure you want to enhance their\nSpeed?
+66: You want to exchange [COLOR(2)]5 enhancers[COLOR(0)]\nto maximize their Speed?
 67: Speed IV has been maximized!
-68: And which stat would you like to enhance?
+68: And which stat would you like to\nmaximize?
 69: Pleasure doing business with you.
 70: Hey kiddo!\nGot any IV Enhancers?\c\nThey're special vitamins filled with crazy\nnutrients.\c\nBring me one and I can mix it into an\nelixir that will raise one of a Pokemon’s\r\ninnate stats to the maximum.\c
 71: Benga: Let's see...\c\nI want to teach Garchomp Dragon Rush for\ndouble battles, but I might want to save\r\nthis scale to teach Venusaur Growth\r\ndown the line...
@@ -5453,6 +5480,18 @@
 83: Seeya later, [VAR TRNAME(0)]!\c
 84: ???: Thats amazing!
 85: Benga: Hey, watch it!
+86: Hello!\nThis is the transport ship to the\r\nBlueberry Academy!\r\nWould you like to board?
+87: Yes
+88: No
+89: What is it?
+90: One person will be on board!\nPlease get on board!\c
+91: The Blueberry Academy is the premiere\ninstitution for the study and practice\r\nof Pokemon Battles!\c\nI'm sure you can learn a lot by visiting!\nWe even have an exciting public seminar\r\non Terastalization today!\c\nWould you like to go?
+92: We'll be here if you change\nyour mind!
+93: Cost: [COLOR(1)]1 IV Enhancers[COLOR(0)]
+94: Cost: [COLOR(1)]3 IV Enhancers[COLOR(0)]
+95: Cost: [COLOR(1)]5 IV Enhancers[COLOR(0)]
+96: You don't have enough IV Enhancers\nfor that!\c
+97: And if you check out the docks, the\nAcademy has a boat ferrying folks\r\nto the school!\c\nSeems they're doing a big a seminar\non [COLOR(4)]Terastalization[COLOR(0)]!\c
 
 ----- TEXT FILE 250-----
 0: Clay: This time, I'm gonna have ya\nparticipate in the Driftveil Tournament.\c\nAnything goes in this here tournament!\c\nEight people will be participatin', and if\nya win three times, yer the champion!\c
@@ -5992,6 +6031,37 @@
 3: Jellicent dove down into\nthe depths of the ocean...
 4: The Xtransceiver is ringing.
 5: [VAR TRNAME(0)] picked up the Xtransceiver.\c
+6: [VAR TRNAME(0)], how wonderful to see\nyou again!\c
+7: Hello there, trainer!\nCome to enjoy the beach sun?\c
+8: It's Reshiram, the legendary dragon of\nTruth!\c\nThis must be the lost capital of the\nhero king!
+9: Ah, your name is [VAR TRNAME(0)]!\c\nMy name is Lenora, and I'm an antiquarian\nhere chasing the biggest archeological\r\ndiscovery of the decade!\c
+10: What am I doing here?\c\nMy work as an antiquarian has brought me\nhere chasing the biggest archeological\r\ndiscovery of the decade!\c
+11: While exploring the ruins of the Relic\nCastle, I discovered an ancient crown\r\ncovered in strange inscriptions alluding\r\nto the ancient hero-kings of Unovan myth.\c
+12: The crown you retrieved from the buried\nthrone room of Relic Castle was covered\r\nin strange inscriptions alluding to the\r\nancient hero-kings of Unovan myth.\c
+13: Legend has it the two brothers once\nruled together as monarchs, using the\r\npower of the Legendary dragon to found\r\nthe region.\c\nBut when they clashed from the conflict\nbetween truth and ideals, the\r\n[COLOR(1)]Legendary Dragon[COLOR(0)] was split apart and\r\ntheir own great kingdom collapsed.\c
+14: Experts had long believed Relic Castle\nwas their capital, built during the\r\ngolden age while the kings were united.\c\nBut the crown suggests it was actually\nbuilt after the kingdom split.\c\nAnd that it had a sister city-kingdom\nlying elsewhere, waiting to be discovered.\c
+15: Which is what has brought me here!\c\nI believe the lost city lies somewhere\nin these waters!\c
+16: I've assembled a crew of elite divers to\ninvestigate, and have already discovered\r\nstrange ruins dotting the ocean floor.\c\nThey lead to a massive mega structure,\nbut it's equipped with defenses like those\r\nof Relic Castle.\c\nMy team hasn't been able to explore\ndeeper without getting flushed out.\c
+17: You seem like a skilled trainer, [VAR TRNAME(0)]!\c\nPerhaps you can succeed where my people\ncould not!\c\nIf you can disarm the temple's defenses\nand bring me some proof that this site is\r\nthe lost capital, I'll reward you\r\nwith a relic of my own!\c
+18: [VAR TRNAME(0)], you've returned!\nAnd you're soaking wet!\c\nDid you discover anything in the ruins?
+19: [VAR TRNAME(0)] hands the Sunken Crown\nover to Lenora!
+20: Remarkable....\nThis crown like and unlike it's sister\r\nfrom the Relic Castle.\c\nIt's surface is covered in familiar\ninscriptions, though I cannot parse the\r\nlanguage.\c\nPerhaps it's written in a different\nscript?\c\nThis drawing however...
+21: I cannot convey to you what a monumental\ndiscovery you've made today!\c\nAnd with the ruin's defenses disarmed, my\nresearchers will be able to scour its\r\nhalls and uncover this kingdom's secrets.\c\nAs promised, here is a relic of my own as\nthanks for your contribution to science!
+22: This crown will make a dazzling addition\nto the museum!\c\nI can already imagine the exhibit now:\n"Lost Histories of Unova"!
+23: 
+24: Hey bud, better keep clear of these\nwaters!\c\nThere's some ancient treasure deep below\nand I plan on getting it first!\c\nI'm just taking a little break, is all.
+25: Maybe I should get a Pokémon with Dive\nif I want to explore the ruins...\c\nHolding my breath doesn't seem to be\nworking...
+26: You found the treasure?\c\nAwww man, and I just got my Lanturn\nout of the PC!
+27: Woah, what do you think you're doing!\c\nI got here first, these ruins are mine\nto explore!\r\nI'm just taking a little break, is all!\c\nIf you wanna go swimming here, you'll\nhave to fight me for it.\c
+28: O-o-oh yeah?\nI'll show you!
+29: Fine, whatever.\nYou're probably gonna get flushed out\r\njust like everyone else.\cI was just trying to keep you safe,\nyou ungrateful brat.
+30: Good, now get outta here!\c\nI'm about to dive down for another look!
+31: HEY!
+32: If you can disarm the temple's defenses\nand bring me some proof that this site is\r\nthe lost capital, I'll reward you\r\nwith a relic of my own!
+33: I wonder if they would fit in each\nother's sockets...
+34: I already know you're a skilled\nexplorer, [VAR TRNAME(0)]!\c\nPerhaps you can succeed where my people\ncould not!\c\nIf you can disarm the temple's defenses\nand bring me some proof that this site is\r\nthe lost capital, I'll reward you\r\nwith a relic of my own!\c
+35: These crowns would make a dazzling display\nat the museum... although...\c\nIt's strange...\nThese insets and grooves: all the little\r\nnotches and inscriptions on the Crowns\r\nappear to match perfectly.
+36: Fight the explorer?
 
 ----- TEXT FILE 306-----
 
@@ -6094,14 +6164,14 @@
 11: A towering statue of an ancient Pokémon\nstands in the center of the chamber.\c\nIn the statue's gaping mouth rests a\nstrange crown, pulsing softly with light.
 12: Take the crown?
 13: The statue eyes you ominously...
-14: The statue snaps its jaws shut around the\ncrown and rumbles to life!
-15: The statue's mouth falls open and the\nstrange crown dislodges\r\nfrom its socket.
+14: The statue snaps its jaws shut around\nthe crown and rumbles to life!
+15: The statue's mouth falls open and the\nstrange crown dislodges from\r\nits socket.
 16: The statue falls inert.
 17: The statue is inert.
 18: There is an empty socket where a crown\nmight fit.\c\nInsert the Desert Crown?
 19: The crown fits snugly into the socket.
 20: Something in the ruins stirs!
-21: 
+21: The ruins fall quiet once more.
 
 ----- TEXT FILE 314-----
 0: Meet lots of Pokémon!\nFloccesy Ranch, just off Floccesy Town
@@ -6116,7 +6186,7 @@
 6: ???: Who am I?\c\nI'm the owner of this ranch!\nAnd this is my wife!\c
 7: Wife: After a Pokémon battle, you\nshould heal your Pokémon's HP, right?\r\nHere, I'll give you this!\c
 8: And some for you!\c
-9: You can exchange these with a [COLOR(2)]Move Tutor[COLOR(0)]\nfrom the Blueberry Academy to teach\r\nyour partners new moves!\c
+9: If your Pokémon is injured,\nuse one of these on it!\c
 10: Owner: By the way, you didn't happen\nto see a Herdier around here, did you?\c\nI can't figure out where it went.\c\nOur two Herdier are always together\nand this is the first time one has\r\nwandered off, so I'm a little worried...\c
 11: [VAR TRNAME(1)]: You're a little worried?\nAre you KIDDING me?!\c\nYour Pokémon might be lost forever!\c\nWhatever! I'll look!\n[VAR TRNAME(0)]! Help out!\c
 12: Owner: Why did he get so mad?\c\nI think it's probably just\nplaying somewhere in the ranch.\c
@@ -6126,7 +6196,7 @@
 16: Wow, this ranch is really big!
 17: Why haven't we found it yet?\nI'm worried about Herdier...
 18: Oh! Here! I'll share something\ngood with you!\c
-19: If your Pokémon is injured,\nuse one of these on it!\c
+19: You can exchange these with a [COLOR(2)]Move Tutor[COLOR(0)]\nfrom the Blueberry Academy to teach\r\nyour partners new moves!\c\nI had a bunch leftover from class.\c
 20: Still, Pokémon don't just wander\noff on their own.\c\nIn a worst-case scenario,\nit might be involved in some trouble!
 21: Yawrp!
 22: Did you hear that just now?\c
@@ -6541,8 +6611,8 @@
 45: [VAR TRNAME(1)]: OK!\nThis time we'll check out the ship!\c\nWhen we were in Driftveil City,\nZinzolin came from this direction!\c
 46: This is the place...\c\nOK! I'm going!\c
 47: [VAR TRNAME(1)]: Hey!\nCome here for a sec!\c
-48: Team Plasma: You!\c\nYou must be friends of Smiley Swimsuit,\nthat guy who lowered the gangplank!\c\nAaargh! You even got the roadblock\nCrustle out of the way!\c\nHere I come!\nPlasmaaaa!\c
-49: Team Plasma: Oh no!\nThe hatch is still open!\c
+48: Team Plasma: You!\c\nYou must be friends of Smiley Swimsuit,\nthat guy who lowered the gangplank!\c
+49: Team Plasma: Oh no!\nThe hatch is still open!\c\nEveryone scatter!\c
 50: Team Plasma: I don't know anything\nabout your Purrloin or whatever!
 51: Zzz...\nZzz...\c\nLooks like he's asleep.
 52: Team Plasma: The sky sure is vast.
@@ -6562,6 +6632,21 @@
 66: What should we do?
 67: [VAR TRNAME(1)]: [VAR TRNAME(0)], quit messing\naround! You need more than one Pokémon! 
 68: Here, let me heal your Pokémon up!
+69: Team Plasma: Hey, stay back!\c
+70: Team Plasma: Everyone!\nGet over here!\c\nWe're under attack!\c
+71: Team Plasma: Hehehehe...\c\nLet's see if you can handle an\nassault from ALL of us!\c
+72: Sound the alarm!
+73: Who'd be that stupid?
+74: We'll knock 'em out!
+75: Never shoulda come here!
+76: Team Plasma: Keep up the attacks!\c\nWe've got the numbers advantage!\c
+77: Team Plasma: Use the Pokémon as a\nshield! Beat them down!\c
+78: [VAR TRNAME(1)]: You miserable cowards!\c
+79: Team Plasma: D-don't worry!\c\nThey can't keep this up forever!\c
+80: [VAR TRNAME(1)]: Watch us!\c
+81: Team Plasma: How are you still\nstanding??\nThere were a half dozen of us!\c
+82: [VAR TRNAME(1)]: You better tell us where our\nPokémon are, or you won't be standing\r\nmuch longer!\c
+83: INSERT PLASMA BATTLE HERE\c
 
 ----- TEXT FILE 354-----
 0: Team Plasma: Who are you?\c
@@ -6651,7 +6736,7 @@
 0: [VAR TRNAME(1)]: Again?!\c
 1: Team Plasma: Wait!\c
 2: No need to be suspicious!\c\nThis uniform is just a disguise.\nI'm ex-Team Plasma!\c\nWhat I am now is a spy, to guard against\nanything bad they might cook up.\c
-3: [VAR TRNAME(1)]: It must be a hard job,\nkeeping an eye on your former allies.\c\nSay, you don't know anything about a\nPurrloin stolen in Aspertia, do you?\c
+3: [VAR TRNAME(1)]: It must be a hard job,\nkeeping an eye on your former allies.\c\nSay, you don't know anything about a\nPurrloin stolen in Aspertia, do you?\c\nOr a [VAR PKNAME(3)] stolen at the\nPokémon World Tournament?\c
 4: S-sorry, but I don't know\nanything about that...\c
 5: [VAR TRNAME(1)]: That's what I figured.\c\nI wouldn't expect someone from a\ngroup bent on world domination\r\nto be all that quick on the uptake.\c
 6: Oh...\c\nBut I honestly wanted\nto save Pokémon...
@@ -6705,11 +6790,11 @@
 5: All of Unova will be\nfrozen with Kyurem's ice!\c\nI wonder if Zinzolin will be OK...\nHe really doesn't like the cold.
 
 ----- TEXT FILE 364-----
-0: Team Plasma: Who are you?\c
+0: Team Plasma: You're too late!\c\nWe've already activated the\nbarriers!\c
 1: [VAR TRNAME(1)]: Just to let you know...\nYou're about to feel my rage!\c
 2: Team Plasma: Ugh...!\nWe have to tell the others.\c
 3: Team Plasma: Oh no! At this rate,\nthey'll get through our barriers!\c
-4: [VAR TRNAME(1)]: They didn't have\nPurrloin with them!\c
+4: [VAR TRNAME(1)]: Ugh...\c\nI know they're evil but do they\nhave to be such tools about it?\c
 5: Barriers, huh...\c
 6: And there's a device where\nyou enter a password here...\c
 7: That means...\c\nWe either have to find the password,\nor get it out of Team Plasma,\r\nto deactivate the barriers.\c\n[VAR TRNAME(0)]!\nLet's split up and find that password!\c
@@ -6719,6 +6804,21 @@
 11: You succeeded in\nentering the password!
 12: All the barriers were deactivated,\nand now you can proceed!
 13: Be careful!\nThe barriers are electrified!
+14: Team Plasma: You'll never make it\nthrough!\c\nMight as well give up, kids!\c
+15: Team Plasma: What are you, stupid?\c
+16: Team Plasma: Weren't you listening\nbefore?\c\nYou're not gonna get through\nour barrier without the password!\c
+17: Team Plasma: Nice try! But you'll\nnever get through our awesome\r\nbarriers without the password.\c
+18: Team Plasma: Cry more, kid!\c
+19: Team Plasma: Uh, they just keep touching\nthe barrier, Janet.\c\nDo you think they heard us?\c
+20: Team Plasma: The barrier is pretty loud...\c\nHEY KID!\nSTOP IT!\c
+21: Team Plasma: Hey kid, you REALLY\nwanna stop doing that!\c\nThat barrier is electrified: you\ncould be causing some serious damage!\c
+22: Team Plasma: Please stop!\c\nThis is actually very distressing to\nwatch!\c
+23: Team Plasma: Is something going on\nin your home life?\r\nIs this a cry for help?\c
+24: Team Plasma: I know things might look\ngrim now!\r\nBut you never know what the future\r\nholds!\c\nI used to be depressed, and then I\ngot recruited by Team Plasma!\c\nNow I'm depressed and I have a\njob!\r\nIt's never too late!\c
+25: Team Plasma: Is this what you thought\nyou signed up for when you joined\r\nTeam Plasma, Bruce?\c\nWatching a child fling themselves at\nan electric barrier over and over?\c
+26: Team Plasma: I will admit this is making\nme question my life choices.\c
+27: Team Plasma: Please kid, give it a break.\c\nYou are causing yourself [COLOR(1)]permanent[COLOR(0)]\ndamage!\c
+28: Team Plasma: Maybe they could've\nunderstood your words before.\c\nBut I don't know if they still can after\nheadbutting an electric barrier [COLOR(1)][VAR NUM2(2)][COLOR(0)] times.\c
 
 ----- TEXT FILE 365-----
 0:                                              
@@ -6984,6 +7084,11 @@
 10: Use the Colress Machine on the\nbig boulder?
 11: Crus chul!
 12: The Colress Machine broke...
+13: I'm pleased to meet you,\nmy name is Maylene.\c\nI'm training for the Pokémon World\nTournament. I take battles very seriously!\c\nI don't really know what it means to be\nstrong... But I will do the best I can\r\nas a Trainer for my Pokémon.\c\nWould you like to spar with me?
+14: Whenever you're ready!
+15: I understand.\nI will remain here a little while longer\r\nshould you change your mind.
+16: Learn from your foe by winning, and\nlearn from your foe by losing, too...\c\nEverything is an experience...\nYes.\r\nPokémon made me realize that....\c\nHere, take this as thanks for the\ngreat battle!
+17: I can't explain what it means to be\nstrong.\c\nI don't know how much effort goes into\nbeing strong...\c\nBut being with Pokémon lets us keep\nmaking the effort, doesn't it?
 
 ----- TEXT FILE 400-----
 
@@ -11181,6 +11286,34 @@
 5: Route 13
 6: Route 13
 7: Trainer Tips!\n\c\nChange your type on the Trainer Card\nto change how other players see you.\c\nYou'll look different to others in the\nUnion Room and the Tag Log!\c\nMatch it with your introduction or\ncharacter to show your individuality!
+8: ???: Well, I wasn't expecting a snowstorm\nwhen I booked a villa at the beach!\c\nGuess you always bring a bit of\nhome with you on vacation.\c 
+9: Candice: My name is Candice!\nAre you a trainer?\c\nI have been waiting for to battle\nsomeone tough!\c\nBut I should tell you, I'm tough too,\nbecause I know how to focus.\c\nPokémon, fashion, romance...\nIt's all about focus!\c\nWant me to show you what I mean? 
+10: Candice: Awww.\c\nWell I'll be enjoying the snow a little\nlonger before I go get my refund from\r\nthe resort, if you change your mind.\c
+11: Get ready to lose!\c
+12: Wow! You're great!\nYou've earned my respect!\c\nI think your focus and will bowled us\nover totally.\c\nTake this as thanks for the awesome\nbattle!\c
+13: Awww!\nThat's it!\c\nI'm going to train so I can throw a\nFocus Punch myself!\c
+14: Howdy there, trainer!\c
+15: If you want to proceed anyways, we'll\nneed to test you in a battle to make\r\nsure you'll be safe!\c\nThere might be some powerful Pokémon\nresponsible!\c
+16: We wouldn't want a repeat of the\nHippowdon incident...\c
+17: So, are you seeking to enter Route 13?
+18: Good, no sense in taking unnecessary\nrisks.\c
+19: We advise you take shelter at the Undella\nPokémon Center while we investigate.\c
+20: As you can see, we're experiencing a bit\nof freak weather on Route 13 today.\c\nCivilians are encouraged to remain inside.\c
+21: I see.\c
+22: I guess we'll have to trounce another\ntrainer, partner.\c
+23: Wow, you're quite the potent trainer!\c\nYou should be safe dealing with any\ndangers up ahead!\c
+24: Just watch your step!\c\nSlippery ice causes thousands of\ninjuries each year!\c 
+25: I just hope this weather is the work of a\nwandering Vanilluxe and not an Abomasnow.
+26: I've seen a lot over my years on the\nforce, but never something like this.\c\nCould an Articuno be responsible?\c\nLocals said they saw a huge shadow\nmoving through the sky...
+27: I didn't plan on going ice fishing\ntoday...\c
+28: Rain, snow, sleet, or hail-- nothing\nwill stop me from fishing!\c
+29: Sealeo balances a large hail chunk\non its nose!\c
+30: Dewgong eyes you with smug\nconfidence.\c\nYou won't get it to move.\c
+31: Abomasnow is enjoying the sudden\nsnowfall!\c
+32: Glaceon prances across the snow\ngracefully.\c
+33: Back again?\c
+34: We really urge you to stay indoors\nwhile the rangers figure this out.\c 
+35: If you want to proceed anyways, we'll\nneed to test you in a battle to make\r\nsure you'll be safe!\c\nAre you sure you want to enter\nRoute 13?
 
 ----- TEXT FILE 583-----
 0: This Pokémon used to deliver\nMail to everyone!\c
@@ -11193,7 +11326,7 @@
 
 ----- TEXT FILE 584-----
 0: The longest road in Unova...\nI heard it's Route 13.
-1: I love to clear my path by\nhaving Pokémon use Hidden Moves!
+1: You hear about that freak\nweather on Route 13?\c\nYou think an Articuno is passing\nby?
 
 ----- TEXT FILE 585-----
 0: I'm really annoyed by what\nTeam Plasma said in the past.\c\nSo, I live with Pokémon\nwithout putting them in Poké Balls!\c\nBut Panpour doesn't\nlisten to me at all...
@@ -14266,10 +14399,10 @@
 16: Chip kwip!
 
 ----- TEXT FILE 635-----
-0: Professor Juniper: Hi there, [VAR TRNAME(0)]!\c
+0: Professor Juniper: Hi there, [VAR TRNAME(0)]!\c[VAR TRNAME(1)] told us you'd be arriving soon!\nGlad the snowstorm didn't keep you!\c
 1: Bianca: Hee hee!\c\nI used Fly, so it looks like\nI beat you here.\c\nThanks for your help\nin Reversal Mountain!\c
-2: Professor Juniper: If you go straight\npast Lacunosa Town, you'll reach\r\nOpelucid City!\c\nBut before you go, there's something\nI want you two to hear.\c
-3: Bianca: What is it?\c
+2: Professor Juniper: If you go straight\npast Lacunosa Town, you'll reach\r\nOpelucid City!\c\nBut before you go, there's something\nI want you three to hear.\c
+3: [VAR TRNAME(1)]: It has to do with\nwith Legendary Dragons, right?\c
 4: Professor Juniper: You'll know soon\nenough. Hurry now!\c
 5: You must be the ones who want to hear\nthat old tale about Lacunosa Town.
 6: Professor Juniper: That's right.\nPlease tell us.\c
@@ -14279,24 +14412,24 @@
 10: Bianca: I know...\c\nThe power to freeze everything around it\ncould even rival the power of the\r\nlegendary Dragon-type Pokémon.\c
 11: Yes, Bianca.\c\nIt's almost like Zekrom, who scorched\nUnova with intense lightning long ago.\c
 12: Yes, Bianca.\c\nIt's almost like Reshiram, who scorched\nUnova with blazing fire long ago.\c
-13: By the way, [VAR TRNAME(0)],\ndo you remember the story of Zekrom?
-14: By the way, [VAR TRNAME(0)],\ndo you remember the story of Reshiram?
-15: I told you a little about it in\nLentimas Town, remember?\c\nZekrom is a legendary Dragon-type\nPokémon that lends its power to the\r\nperson it recognizes as a hero\r\npursuing ideals.\c\nIt has a black body, and it can\nunleash fearsome lightning!\c
+13: By the way, [VAR TRNAME(1)],\ndo you know the story of Zekrom?\c
+14: By the way, [VAR TRNAME(1)],\ndo you know the story of Reshiram?\c
+15: I told [VAR TRNAME(0)] a little about it in\nLentimas Town, but I'll repeat it for\r\nyour sake.\c\nZekrom is a legendary Dragon-type\nPokémon that lends its power to the\r\nperson it recognizes as a hero\r\npursuing ideals.\c\nIt has a black body, and it can\nunleash fearsome lightning!\c
 16: Oh, [VAR TRNAME(0)]...\c\nI even told you a little about\nit in Lentimas Town.\c\nZekrom is a legendary Dragon-type\nPokémon that lends its power to the\r\nperson it recognizes as a hero\r\npursuing ideals.\c\nIt has a black body, and it can\nunleash fearsome lightning!\c
-17: So you remember I told you a little\nabout it in Lentimas Town!\c\nReshiram is a legendary Dragon-type\nPokémon that lends its power to the\r\nperson it recognizes as a hero who\r\nseeks truth.\c\nIt has a white body, and it can send\nforth ferocious flames!\c
+17: I told [VAR TRNAME(0)] a little about it in\nLentimas Town, but I'll repeat it for\r\nyour sake.\c\nReshiram is a legendary Dragon-type\nPokémon that lends its power to the\r\nperson it recognizes as a hero who\r\nseeks truth.\c\nIt has a white body, and it can send\nforth ferocious flames!\c
 18: Oh, [VAR TRNAME(0)]...\c\nI even told you a little about\nit in Lentimas Town.\c\nReshiram is a legendary Dragon-type\nPokémon that lends its power to the\r\nperson it recognizes as a hero who\r\nseeks truth.\c\nIt has a white body, and it can send\nforth ferocious flames!\c
 19: Bianca: Professor, do you think\nthere's a connection between\r\nthe Pokémon from the old story\r\nand the legendary Dragon-type Pokémon?\c
 20: Professor Juniper: The meteorite.\c
-21: Bianca: The meteorite?\c
+21: [VAR TRNAME(1)]: The meteorite?\c
 22: Zekrom was revived from a\nrock called the Dark Stone.\c\nLet's suppose the meteorite\nfrom the story and this stone\r\nare one and the same...\c\nTake into account that elements\nfrom the same era were found in\r\nDragonspiral Tower, where Zekrom was,\r\nand in the Giant Chasm...\c\nIt doesn't prove anything, but it\ncould be a piece of the puzzle.\c\nLet's not write it off as a\ncoincidence just yet...\c
 23: Reshiram was revived from a\nrock called the Light Stone.\c\nLet's suppose the meteorite\nfrom the story and this stone\r\nare one and the same...\c\nTake into account that elements\nfrom the same era were found in\r\nDragonspiral Tower, where Reshiram was,\r\nand in the Giant Chasm...\c\nIt doesn't prove anything, but it\ncould be a piece of the puzzle.\c\nLet's not write it off as a\ncoincidence just yet...\c
 24: Bianca: If your theories are true,\nit should be a really strong Pokémon.\c\nWhat kind of a reason would there be\nfor it to come out only at night?\c\nLike, if, like, it doesn't like sunlight\nor something like that...\c
 25: Until we look into it more deeply, it would\nbe hard to say anything about that.\c\nNow that I think about it, the name\n“Lacunosa" could be derived from\r\nlacunosus clouds, which are clouds\r\nthat resemble a net or a fence.\c\nI wonder if the name is related to\nthe part of the story where they\r\nbuilt walls to protect the town\r\nfrom that Pokémon.\c
-26: Sorry, I rambled on a bit, didn't I?\c\n[VAR TRNAME(0)], could you ask Drayden\nabout this, if you get a chance?\c\nI'm going to do a little fieldwork.\nBianca, help out, OK!\c
+26: Sorry, I rambled on a bit, didn't I?\c\nWhat sparked you two's interest\nin ancient Unovan myths anyways?\c
 27: Bianca: Sure thing!\c
 28: Oh, just so you know, Opelucid City's\nmayor, Drayden, wrestles with his\r\nPokémon to toughen them up!\c
 29: Professor Juniper, wait up!\c
-30: [VAR TRNAME(1)]: What's up?\c\nHave you seen Team Plasma\nanywhere around here?\r\nI heard a rumor to that effect...\c
+30: [VAR TRNAME(1)]: What do you think?\c\nDoes that Pokémon sound like the one\nTeam Plasma had captured on the frigate?\c
 31: Zinzolin: Oh, for crying out loud...\nThis is troublesome indeed,\r\nmy curious Trainers.\c\nPerhaps I should satiate\nyour curiosity somewhat.\c\nThe reason I am still part\nof Team Plasma is this:\c\nI want to know how the world will change.\c\nListen. Pokémon are nature.\nPoké Balls are civilization.\c\nHumans who are used to civilization\ndon't relinquish it easily.\c\nOf course, both nature and\ncivilization are important.\c\nBut what will happen to a world\ntaken over by Team Plasma?\c\nPeople will be forced to throw out\nPoké Balls--a product of civilization.\c\nI want to know what that looks like!\nAnd I want to enjoy it!\c
 32: [VAR TRNAME(1)]: Shut your mouth.\c\nAll I want is to get back\na stolen Pokémon!\c\n[VAR TRNAME(0)]! Give me a hand!\nYou ready?
 33: [VAR TRNAME(1)]: Just to let you know...\c\nYou're about to feel my rage!\c
@@ -14319,6 +14452,83 @@
 50: So the reason nobody goes outside\nat night and it's so peaceful\r\nis because of a Pokémon?\r\nI don't know how to feel about that!
 51: Gahoo! Gahoo!
 52: My Pokémon just runs around on its own.\nMaybe it doesn't need a Trainer?
+53: Bianca: Hee hee!\c\nI used Fly, so it looks like\nI beat you here.\c\nI did my best to find Virizion\nin Pinwheel Forest, but they closed\r\nit off due to wild Pokémon activity.\c\nSorry I couldn't help more!\c
+54: Bianca: Hee hee!\c\nI used Fly, so it looks like\nI beat you here.\c\nI was just telling the Professor about\nour little adventure in Pinwheel Forest!\c
+55: Bianca: Hee hee!\c\nI used Fly, so it looks like\nI beat you here.\c\nI was just telling the Professor how\nyou fought Virizion in Pinwheel Forest!\c
+56: [VAR TRNAME(1)]: Only what I heard on the\nnews two years ago during that disaster\r\nat the Pokémon League.\c
+57: [VAR TRNAME(1)]: Nothin'!\c\nJust doing a project for class\nwith [VAR TRNAME(0)]!\r\nReally been interested in history lately!\c
+58: [VAR TRNAME(1)]: I'll catch up with you later,\n[VAR TRNAME(0)]!\c\nCome find me when you're ready to\nhead to Opelucid City!\c
+59: Professor Juniper: Hm, [VAR TRNAME(1)] seems\na little agitated.\c\nAnd a school project?\nI heard he's been skipping class at\r\nthe Blueberry Academy...\c
+60: Professor Juniper: [VAR TRNAME(0)], can you keep\nan eye on him?\c\nAnd if you're heading to Opelucid city\ncould you ask Drayden about what we\r\nlearned here, if you get a chance?\c\nI'm going to do a little fieldwork.\c
+61: [VAR TRNAME(1)]: So [VAR TRNAME(0)], what do\nyou think?\c\nThat Pokémon from the old lady's story\nsounded a lot like the thing Team Plasma\r\nhad locked up on their ship, right?\c
+62: ???: [VAR TRNAME(0)]!!\c
+63: Benga: You made it here!\nFinally!\c\nYou were taking so long I was worried\nmy rival got stumped by Marlon!\c
+64: [VAR TRNAME(1)]: We were busy tracking down our Poke--\c
+65: Benga: GRAND-kid, yeah.\c\nAnd soon, his successor as champion\nof Unova!\c\nI've been getting way stronger:\nstronger than I ever believed possible!\c\nWith these new items I got, my Pokémon\nare unstoppable!\c\nEven beating Drayden was a total breeze!\c
+66: Benga: That's why I'm here waitin', so\nI can show [VAR TRNAME(0)] how much I've grown!\c
+67: [VAR TRNAME(1)]: A battle? I'll referee!\c\nIf you're as strong as [VAR TRNAME(0)],\nthen I've gotta see this.\c
+68: Benga: Whadduya say, ready to battle?\nI won't take no for an answer!
+69: Benga: Alright, let's do this!\c\nNo holding back, I'm coming at you with\neverything I've got!\c
+70: Benga: Alright, fine, prepare if you\ngotta!\c\nBut I'm not leaving until we have a\nproper showdown, rival to rival!
+71: Benga: Jeez, you took your time.\c\nReady to rumble?\nI won't take no for an answer!
+72: Benga: Awww YEAH!\nI did it!\c\nI finally beat [VAR TRNAME(1)]!\c
+73: Benga: Aww YEAH!\nI was able to beat ya this time!\c\nWas worried this would be a repeat of\nour battle on Route 4!\c
+74: Benga: What... what happened?\nHow did I lose?\c\nWere my Pokémon too weak?\nDo I need to get more IV enhancers?\nMaybe I can buy some more mints...\nDo my Pokémon need stronger items..?\c
+75: [VAR TRNAME(1)]: Wait a minute...\nThose items... are they?\c
+76: [VAR TRNAME(1)]: They are!\c
+77: [VAR TRNAME(1)]: That "item" your Garchomp\nused!\c\nWhere did you get them!\nAnswer me!\c
+78: Benga: Woah, back up buddy!\nGet your own!\c\nI got them from this cool scientist\ndude out by Humilau City.\cThey're a new line of battle items he\nsaid would "unlock Pokémon's potential"!\c
+79: And they've worked!\nMy Pokémon have never been stronger!\c\nImagine if gramps could see me now...\c
+80: [VAR TRNAME(1)]: You idiot!\c
+81: Benga: Team Plasma..?\c\nWhy would they hand these items\nout for free..?\c
+82: [VAR TRNAME(1)]: Because this trash is\nexperimental and dangerous!\c
+83: [VAR TRNAME(1)]: Look at your partner!\nCan't you tell they're in pain?\c
+84: Benga: Garchomp..?\c
+85: ...Gyaaaaooo.\c
+86: Garchomp keels over from\nexhaustion.\c
+87: Benga: Garchomp!?\c
+88: Benga: What's happening?!\c
+89: [VAR TRNAME(1)]: Your Garchomp must love you\na lot.\c\nIt put on a brave face so you wouldn't\nworry...\c
+90: Benga: Garchomp...\nThis whole time... you've been in pain...\r\nWhy didn't he tell me..?\nWhy didn't I notice...?\c\nWas I so focused on winning I couldn't\nsee anything else?\c
+91: Garchomp flinches at Benga's touch.\c
+92: Benga: ...\c
+93: Benga: Here, take these.\nI don't want them anywhere near me.\c
+94: Benga: Come on Garchomp.\c\nThe Pokémon Center is just a few\nsteps that way.\c\nWe'll fix this, I promise.\c
+95: ...Gyaaaaooo..\c
+96: [VAR TRNAME(1)]: Man, his poor Pokémon.\c\nAt least he was just an idiot,\nand not just cruel.\c
+97: [VAR TRNAME(1)]: But I wonder how many other\ntrainers Team Plasma's been handing\r\nout tech to?\c
+98: [VAR TRNAME(1)]: I can only imagine how it\nmesses up a Pokémon over time.\c\nLiepard still won't get out of her\nPokéBall...\c
+99: [VAR TRNAME(1)]: We gotta put a stop to this,\n[VAR TRNAME(0)].\cFor all of Unova's Pokémon...\c
+100: Professor Juniper: Truly astounding what\nthe two of you accomplished.\c
+101: Professor Juniper: Never apologize for\nyour best made efforts, Bianca.\c
+102: Bianca: Hee hee!\c\nI used Fly, so it looks like\nI beat you here.\c\nI was just telling the Professor how\nyou fought and defeated Virizion\r\nin Pinwheel Forest!\c
+103: Professor Juniper: Truly astounding!\nYou have grown into an incredible trainer!\c
+104: Benga: Awww YEAH!\nI was able to beat you again!\c\nJust like our battle at the ranch!\c
+105: Benga: What... what happened?\nHow did I lose again?\r\nWhy can't I ever beat you?\c\nWere my Pokémon too weak?\nDo I need to get more IV enhancers?\nMaybe I can buy some more mints...\nDo my Pokémon need stronger items..?\c
+106: Benga: What... what happened?\nHow did I lose again?\c\nWere my Pokémon too weak?\nDo I need to get more IV enhancers?\nMaybe I can buy some more mints...\nDo my Pokémon need stronger items..?\c
+107: Benga: What... what happened?\nHow did I lose?\r\nI was able to beat you last time!\c\nWere my Pokémon too weak?\nDo I need to get more IV enhancers?\nMaybe I can buy some more mints...\nDo my Pokémon need stronger items..?\c
+108: Benga: What... what happened?\nHow did I lose?\r\nI've never lost to you before!\c\nWere my Pokémon too weak?\nDo I need to get more IV enhancers?\nMaybe I can buy some more mints...\nDo my Pokémon need stronger items..?\c
+109: Benga: Awww YEAH!\nI was able to beat you again!\c\nWhy can't you seem to beat me?\c
+110: Once you battle Benga, no matter\n[COLOR(2)]whether you win or lose[COLOR(0)] the following\r\ncontent will be locked off!
+111: [COLOR(2)]Access to Seaside Cave, Undella Bay\nand Abyssal Ruins![COLOR(0)]\c\nAll of their encounters and optional\nrewards will be locked off.\c
+112: The [COLOR(2)]Maylene Mini-Boss Fight[COLOR(0)]\nin [COLOR(1)]Seaside Cave[COLOR(0)].\c\nDefeating her rewards a Chople Berries,\nFighting Gem, and the Cross Chop TM.\c
+113: The [COLOR(2)]Sunken Statue Mini-Boss Fight[COLOR(0)]\nin [COLOR(1)]Abyssal Ruin[COLOR(0)].\c\nDefeating it rewards a Life Orb!\c
+114: The [COLOR(2)]Candice Mini-Boss Fight[COLOR(0)]\nin [COLOR(1)]Route 13[COLOR(0)].\c\nDefeating her rewards a Yache Berry,\nan Ice Gem, and the Avalanche TM.\c
+115: Do you accept Benga's challenge, knowing\nit will lock you out of content?
+116: Bianca, help out, OK!\c
+117: Benga: WOOOO!
+118: [VAR TRNAME(1)]: Hey Benga!\c
+119: Benga: No...\nThere's no way!\c
+120: Are you okay?\c
+121: Where is it hurting?\c
+122: Benga: Here Garchomp, let\nme take this thing off you...\c
+123: Do you think they're collecting data,\nusing trainers as test subjects?\c
+124: The Level Cap is now [COLOR(2)]70[COLOR(0)]!
+125: For all of Unova's Pokémon...\c
+126: That garbage is Team Plasma's tech!\c\nSome creep offered me the same thing\nat the World Tournament!\c
+127: It isn't helping your Pokémon, it's\nhurting them all so they can battle a\r\nlittle better for a short while!\c
+128: Insert Lost Battle with Benga here.\c
+129: -wait, I know you!\c\nYou're Alder's kid, right?\c
 
 ----- TEXT FILE 636-----
 0: Every Gym Badge tells the story\nof a hard-won victory against\r\na worthy opponent.\c\nI can look at a Gym Badge and\ntell you that story.\c\nCan I see one of your Gym Badges?
@@ -14351,6 +14561,17 @@
 27: What? You haven't\nwon that Gym Badge yet...\c
 28: I don't have anything to do ever since\nI took a post here.\c\nSince nobody goes outside at night,\nit's very peaceful.
 29: True, nobody goes outside at night\nand it's very peaceful...\c\nBut it's all because of\na terrifying Pokémon.\c\nI'm not sure how I feel about that.
+30: Benga: Take it easy, Garchomp.\nNurse Joy said to rest and drink\r\nlots of water.\c
+31: ...Gyaaaaooo..\c
+32: Benga: Hey [VAR TRNAME(1)]...\nIt's nice of you to check on Garchomp.\c
+33: Benga: I'd only been using those items\nfor a few weeks... and look at all the\r\ndamage they--\c
+34: Benga: How did this happen?\nWas I so focused on becoming champion I\r\ndidn't notice my own Pokémon's suffering?\c
+35: Benga: It sounds so silly now.\c\nWinning, getting stronger, becoming\nchampion: none of it would mean anything\r\nif my Pokémon weren't able to experience\r\nit with me.\c
+36: Benga: This [COLOR(1)]Legend Badge[COLOR(0)]...\nit's worthless to me now.\c\nIt wasn't a real victory.\c\nIt wasn't my Pokémon's victory.\c
+37: Benga: Team Plasma...\nI'll make 'em pay for what they're doing\r\nto Pokémon.\c\nI swear it.\c
+38: Garchomp's breathing is labored but\\nsteady.\c\nHe seems to be recovering.\c
+39: Nurse Joy said he's got signs of long\nterm stress and exhaustion: like his\r\nbody has been in strain for years.\c
+40: Benga: ...I caused...\c
 
 ----- TEXT FILE 637-----
 0: When I think about it,\nmy Pokémon is much stronger than me...\c\nPoké Balls are sure amazing.
@@ -14363,12 +14584,12 @@
 1: Professor Juniper: That's right.\nPlease tell us.\c
 2: Behind Lacunosa Town,\nthere's a mighty big hole.\c\nHave you heard of the Giant Chasm?\c
 3: Bianca: Oh, I've heard that around the\nGiant Chasm, there have been brief\r\ntemperature readings of -58° F!\c\nThat's what Cheren told me, anyway!\c
-4: Professor Juniper: The road is blocked,\nso we can't get there right now...\c
+4: Professor Juniper: The road is blocked\ndue to the recent blizzard, so\r\nwe can't get there right now...\c
 5: A long, long time ago, the\nGiant Chasm was created when\r\na big meteorite fell from the sky.\c\nA really scary Pokémon was\nhidden inside that meteorite...\c
 6: Professor Juniper: A meteorite...\c
 7: When darkness falls over the land,\nthis Pokémon appears.\r\nA frigid wind follows it.\c\nIt freezes everything around\nand eats people and Pokémon...\c\nThat's why everyone was afraid.\c
 8: Bianca: The Pokémon ate p-people?\c
-9: So our ancestors surrounded the town\nwith walls, to prevent the Pokémon\r\nfrom getting inside the town.\c\nAlso, a rule was made forbidding\nanyone to go outside after dark.\c\n...And that's the end of the old tale!\c
+9: That's why our ancestors surrounded the\ntown with walls, to prevent the\r\nPokémon from getting inside.\c\nEven today, townsfolk are forbidden to\ngo outside after dark.\c
 10: Professor Juniper: A fascinating story!\nI'll add it to my research records.\c
 11: Everyone, we should be going.\c
 12: That's sure a scary-sounding Pokémon,\neven in an old folktale.
@@ -14376,6 +14597,9 @@
 14: Mmm... OK, I'll tell you...\c\nBehind our Lacunosa Town,\nthere's a big hole in the ground.\c\nThat hole, way in the past...\c\nAaaahhh, I'm so tired...\c\nThat hole, there was a...a big...\ncrashed down...inside was...\c\nbig, scary...really scary...\c\nZzz... Zzz... Zzz...
 15: Aaaahhh... Oh, I should...\nOK, I'll sleep, then...\c\nGoodni... Zzz...\nZzz... Zzz...
 16: My grandma loves old stories!\c\nI'm always having to listen\nto her really long stories.\c\nBut sometimes if it's night, she'll\nfall asleep right in the middle of a story.\c\nIt's OK, though. She's not only healthy,\nshe's a free-spirited grandma, too!
+17: [VAR TRNAME(1)]: This scary Pokémon...\nDid it look like a big dragon with\r\nyellow eyes?\c
+18: Why... yes it did!\c\nDid my granddaughter already\ntell you this story?\c
+19: The Pokémon roamed during the night...\c\nLegend has it all you'd see before\nthe end were it's glowing, yellow eyes.\c
 
 ----- TEXT FILE 639-----
 0: Of course it's dangerous\nto go out at night.\c\nMaybe you should stay inside\nduring the afternoon, too.\r\nThen there's no danger at all!
@@ -14488,7 +14712,7 @@
 99: The current is too strong!
 100: Once you battle Alder, no matter\n[COLOR(2)]whether you win or lose[COLOR(0)] the following\r\ncontent will be locked off!
 101: The [COLOR(2)]Strange House Gauntlet[COLOR(0)]\nin [COLOR(1)]Strange House[COLOR(0)].\c\nDefeating them rewards the TM for\nWill-o-Wisp and an encounter!\c
-102: The [COLOR(2)]Flannery Mini-Boss Fight[COLOR(0)]\nin [COLOR(1)]Reversal Mountain[COLOR(0)]'s center chamber.\c\nDefeating her rewards 3 Occa Berries,\n3 Fire Gems, and the Flamethrower TM.\c
+102: The [COLOR(2)]Flannery Mini-Boss Fight[COLOR(0)]\nin [COLOR(1)]Reversal Mountain[COLOR(0)]'s center chamber.\c\nDefeating her rewards an Occa Berry,\na Fire Gem, and the Flamethrower TM.\c
 103: The [COLOR(2)]Gentleman & Socialiate Back-to-Back[COLOR(0)]\nin [COLOR(1)]Undella Town[COLOR(0)] in\r\nthe leftmost villa.\c\nDefeating them rewards an Ability Patch!\c
 104: Do you accept Alder's challenge, knowing\nit will lock you out of content?
 
@@ -15224,8 +15448,8 @@
 2: ???: Hold up!\c
 3: A heavy gangplank fell\nwith a solid thud...\c
 4: Marlon: Eh, this should do it!\c
-5: [VAR TRNAME(1)]: I thought you weren't\ngoing to fight Team Plasma?\c
-6: Marlon: Hey, friends!\nTeam Plasma's not botherin' me.\c\nThey could be up to no good\nfor reals, and...\c\nIt's not my style to go around\ndecidin' Team Plasma's bad\r\nwithout thinkin' 'bout it\r\njust 'cause everyone says so!\c
+5: [VAR TRNAME(1)]: Well, thanks.\c\nAre you gonna stick around to fight\nTeam Plasma?\c
+6: Marlon: Listen, 'K.\nBelieve in somethin'!\c\nSearchin' for stolen\nPokémon is fine!\c\nIt's all good.\nBut think 'bout why you're doin' that.\c\nThe strength of your beliefs is what\ngives you and your Pokémon power!\c
 7: But, eh, you're havin' trouble,\nso I've got to help out!\r\nThat's what I want to do!\c
 8: [VAR TRNAME(1)]: Thanks...\c
 9: Marlon: Listen, 'K.\nBelieve in somethin'!\c\nSearchin' for stolen\nPokémon is fine!\c\nKeepin' Unova from bein'\niced over's fine too!\c\nIt's all good.\nBut think 'bout why you're doin' that.\c\nThe strength of your beliefs is what\ngives you and your Pokémon power!\c
@@ -15233,15 +15457,41 @@
 11: Hey, be careful, 'K!\c
 12: [VAR TRNAME(1)]: What was that?!\nThe guy sure doesn't follow through!\c
 13: Well, I guess he was being\nkind in his own way...\c\nAll right, I'm going in!\c
-14: [VAR TRNAME(1)]: Team Plasma!\c\nNo matter where you fly,\nI won't let you get away!\c\nBut, what's over there anyway?\c
+14: [VAR TRNAME(1)]: Team Plasma!\c\nNo matter where you fly,\nI won't let you get away!\nLiepard and I will have our\r\nrevenge for what you did to my\r\nsister!\c
 15: Cheren: Sorry I'm late...\c\nI suspect that they're flying\ntoward the Giant Chasm.\c
 16: [VAR TRNAME(1)]: The Giant Chasm!\nThat's deep in Route 22, right?\c\nOK, I'm going!\n[VAR TRNAME(0)]! You come too!\c
 17: That Pokémon...\c\nKyurem, was it?\c\nIts cry sounded\nlonely somehow.\c
 18: Cheren: Kyurem!\c\nTeam Plasma is using Kyurem's\npower for evil?!\c
 19: Then how should we stop\nTeam Plasma?\c\nIf Kyurem is, like Drayden said,\na legendary Dragon-type Pokémon,\r\nthe only ones who could stand up\r\nto it are Reshiram or Zekrom!\c\nBut...\nNeither of them is here right now...\c\nWhere are the ones the legendary\nPokémon recognized as heroes, anyway?\r\nI guess I just have to find one of them!
 20: Then how should we stop\nTeam Plasma?\c\nIf Kyurem is, like Drayden said,\na legendary Dragon-type Pokémon,\r\nthe only ones who could stand up\r\nto it are Zekrom or Reshiram!\c\nBut...\nNeither of them is here right now...\c\nWhere are the ones the legendary\nPokémon recognized as heroes, anyway?\r\nI guess I just have to find one of them!
-21: Cheren: Yeah...\c\nYou can get to the Giant Chasm\nfrom Route 22.
+21: Cheren: Yeah...\c\nYou can get to the Opelucid City\nfrom the north gate in Undella Town.
 22: Sorry kid, [COLOR(2)]Seaside Cave[COLOR(0)] is off\nlimits!\c\nLots of unusual Pokémon activity and\nwe don't want anyone getting hurt.\c\nYou won't be able to get in without\n[COLOR(1)]Gym Leader Marlon's[COLOR(0)] say so!
+23: Hey kid, [COLOR(2)]Seaside Cave[COLOR(0)] is\noff limits!\c\nTeam Plasma has been spotted here and the\npolice are busy conducting their\r\ninvestigation! 
+24: [VAR TRNAME(1)]: Why'd you get in\nour way anyways?\r\nWe could have taken them!\c
+25: ???: You children were foolish and\nreckless, boarding this ship with no\r\nplan and no backup.\cIf I hadn't intervened, you and your\nPokémon could have been hurt...\r\n...or worse...\c
+26: Janine: You were bold to come here\n[VAR TRNAME(0)], though I question the wisdom of\r\nboarding Team Plasma's ship with no plan\r\nand no back up.\c
+27: [VAR TRNAME(1)]: Hey, I was there too!\c
+28: Janine: If I hadn't intervened, you and\nyour Pokémon could have been\r\nhurt...\r\n...or worse...\c
+29: [VAR TRNAME(1)]: What's your deal anyways?\nWhy were you on that ship?\c\nDoin' something foolish and reckless\nas well?\c
+30: ???: I seek revenge on the Shadow Triad,\nand my reasons are my own.\c\nAll you need to know is your idiocy has\ninterfered with my plans and put the\r\nfate of your region in jeopardy.\c\nI shudder to consider what Team Plasma\ncould accomplish with that terrifying\r\nPokémon they've bent to their control...\c
+31: Janine: Three traitors to my family's\nclan serve Team Plasma.\r\nI intended to repay their treachory.\c\nUnfortunately, their forces are far\ngreater than I could have predicted.\c\nThey would pose a great danger even\nwithout that terrifying Pokémon they've\r\nbent to their control...\c
+32: [VAR TRNAME(1)]: That Pokémon...\c\nI've never seen anything like it...\c\nIts cry sounded\nlonely somehow.\c
+33: ???: It suffers terribly.\nOf that I'm certain.\c
+34: ???: If you are an enemy of Team Plasma,\nthen you are no enemy of mine.\c\nBut heed my warning:\nstay out of my way.\c
+35: Janine: I must depart before their trail\nruns cold. They cannot be allowed to act.\c\nUntil we meet again, [VAR TRNAME(0)].\c
+36: [VAR TRNAME(1)]: Guess I wasn't worth\nsaying bye to, huh?\c
+37: Cheren: Sorry I'm late...\c\nWhat happened? Are you two injured?\c
+38: [VAR TRNAME(1)]: Who cares?\nWe rescued Liepard and [VAR PKNAME(2)]!\c\nAnd we've discovered something!\c\nWe don't know what Team Plasma is\nplotting, but they've gotten control of\r\na terrifyingly powerful Pokémon: this\r\nmassive dragon covered in ice that seemed\r\nto be power their ship!\c
+39: Cheren: A Dragon Pokémon strong enough\nto power a frigate that massive?\c\nIt must be capable of producing an\nincredible amount of energy.\cI only know of two Pokémon capable of\nsuch a feat, but neither can control\r\nice...\c
+40: Cheren: I'm at a loss.\nMaybe we could ask Professor Juniper?\c\nBianca mentioned they were visiting\r\nLacunosa Town...\c
+41: [VAR TRNAME(1)]: Lacunosa Town\nThat's northwest of Undella Town right?\c\nOK, I'm going!\n[VAR TRNAME(0)]! You come too!\c
+42: Cheren: If this Pokémon's power truly\nrivals that of a Legendary Dragon, then\r\nTeam Plasma is an more serious threat\r\nthan we imagined.\c
+43: [VAR TRNAME(1)]: Who was that lady...\nAnd why was she spying on Team Plasma?\c
+44: We may have saved our Pokémon, but\ncountless others still need our\r\nhelp!\c
+45: Janine: It suffers terribly.\nOf that I'm certain.\c
+46: Cheren: I have only seen such power once\nbefore... during the battle between the\r\nLegendary Dragons at the Pokémon League\r\ntwo years ago.\c\nBut neither Reshiram nor Zekrom would\nserve Team Plasma willingly...\c
+47: [VAR TRNAME(1)]: We had to go...\r\nThey stole my Purrloin...\r\nand [VAR TRNAME(1)]'s [VAR PKNAME(2)]!\c\nWe had to save them...\c
+48: [VAR TRNAME(1)]: How do you know that lady?\nAnd why was she spying on Team Plasma?\c
 
 ----- TEXT FILE 667-----
 0: The first round!\n[VAR TRNAME(0)] vs. [VAR TRNAME(1)].\c
