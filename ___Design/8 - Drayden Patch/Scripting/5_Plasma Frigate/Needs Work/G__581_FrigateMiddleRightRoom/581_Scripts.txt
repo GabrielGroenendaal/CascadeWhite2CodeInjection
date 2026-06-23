@@ -1,0 +1,71 @@
+import messages.script.Msg0372.MSGID;
+
+
+import Base;
+import event.Battle;
+import pokemon.PokeParty;
+import system.EventFlags;
+import system.EventWorks;
+import event.actors.Actor;
+import event.actors.Player;
+import event.dialogs.Message;
+import pokescript.vm.Math;
+import pokescript.vm.StackCtrl;
+import pokescript.vm.VM;
+import system.Game;
+import system.Fade;
+import system.Input;
+import system.Runtime;
+import system.Sound;
+import system.System;
+import system.text.WordSet;
+
+public class MainEvents {
+	public static void main_1() { // @ 0xa
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 0, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_2() { // @ 0x26
+		int v16;
+
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		WordSet.LoadPlayerName(0);
+		Message.System(1, 0);
+		v16 = YesNoWin.Show();
+		if (v16 != 0) {
+			goto LABEL_007c;
+		}
+		Message.System(2, 0);
+		Message.CloseSystem();
+		Fade.FadeEx(3, 0, 16, 2);
+		Fade.FadeExWait();
+		PokeParty.RecoverAll();
+		Sound.MEPlay(1300);
+		Sound.MEWait();
+		Fade.FadeEx(3, 16, 0, 2);
+		Fade.FadeExWait();
+		Message.System(3, 0);
+		Input.LastKeyWait();
+
+		LABEL_007c:
+		Message.CloseSystem();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+    // Scientist
+    public static void main_3(){
+
+    }
+
+    static meta void Global2805(int a1, int a2) : VGlobalCall[2805];
+    
+}   

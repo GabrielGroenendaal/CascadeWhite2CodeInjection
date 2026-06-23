@@ -299,6 +299,29 @@ label34a: ;
 	SetVarFlagStatus(2406, 0x8028);
 	Compare(0x8028, 1);
 	if (1) goto label_cantFlyHere;
+
+    // Plasma Frigate
+    Storec0xD3(0x8028);
+	Compare(0x8028, 552);
+	if (1) goto label_cantFlyHere;
+    Compare(0x8028, 556);
+	if (1) goto label_cantFlyHere;
+    Compare(0x8028, 558);
+	if (1) goto label_cantFlyHere;
+    Compare(0x8028, 563);
+	if (1) goto label_cantFlyHere;
+    Compare(0x8028, 579);
+	if (1) goto label_cantFlyHere;
+    Compare(0x8028, 580);
+	if (1) goto label_cantFlyHere;
+    Compare(0x8028, 581);
+	if (1) goto label_cantFlyHere;
+    Compare(0x8028, 582);
+	if (1) goto label_cantFlyHere;
+    Compare(0x8028, 583);
+	if (1) goto label_cantFlyHere;
+
+
 	// Castelia Sewers and Associated Areas
 	Storec0xD3(0x8028);
 	Compare(0x8028, 495);

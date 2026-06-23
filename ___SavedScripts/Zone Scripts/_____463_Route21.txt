@@ -148,6 +148,9 @@ public class MainEvents {
         int CrobatEntity;
         int JanineFlag;
 
+		JanineEntity = 18;
+		CrobatEntity = 19;
+		
 		Actor.PauseAll();
         EventFlags.Clear(857);
         Actor.Show(JanineEntity);
@@ -187,7 +190,7 @@ public class MainEvents {
 		// Hugh turns East
 		TurnEast8F(9);
 		Actor.WaitActionFinish();
-		WordSet.LoadDaycarePokeSpecies(2, 0);
+		WordSet.LoadPokeSpecies(2, EventWorks.Get(16507));
 		Message.ActorEx(1024, 47, 9, 0, 0);
 		Message.CloseAll();
 		TurnWest8F(9);
@@ -249,6 +252,12 @@ public class MainEvents {
             Message.ActorEx(1024, 36, 9, 0, 0);
             Message.CloseAll();
         }
+		TurnSouth8F(9);
+		Actor.WaitActionFinish();
+		if (JanineFlag == 1){
+			Message.ActorEx(1024, 48, 9, 0, 0);
+            Message.CloseAll();
+		}
         else {
             Message.ActorEx(1024, 43, 9, 0, 0);
             Message.CloseAll();
@@ -541,6 +550,9 @@ public class MainEvents {
 	}
     static meta void TurnWest8F(int npcId) : VActionSequence {
 		Action0022(1);
+	}
+	static meta void TurnSouth8F(int npcId) : VActionSequence {
+		Action0021(1);
 	}
     
 	static native void Action0001(int amount) : 0x1;

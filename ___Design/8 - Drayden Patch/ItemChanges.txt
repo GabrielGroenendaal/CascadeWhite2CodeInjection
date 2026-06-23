@@ -42,14 +42,56 @@ Plasma Frigate:
             801 - 3rd fight
             802 - 4th fight 
     
-            798 - Tag Battle (that we're skipping)
-            799 - Tag Battle (that we're skipping)
+            798 - Tag Battle Mess Hall
+            799 - Tag Battle Mess Hall
+
+            (EventFlag 348 / EventWork 16714)
+            430 - First Fight of B2B in Bottom Right Room
+            441 - Second Fight of B2B in Bottom Right Room
+
+             (EventFlag 349 / EventWork 16715)
+            432 - First Fight of B2B in Mess Hall, by Baker 
+            442 - Second FIght of the B2B in Mess Hall by Baker 
+
+             (EventFlag 350 / EventWork 16716)
+            434 - First Fight of B2B in Top Left Room 
+            443 - Second Fight of B2B in Top Left Room 
+
+             (EventFlag 353 / EventWork 16718)
+            438 - First Fight of Back to Back in Top Right Room 
+            450 - Second Fight of B2B in Top Right Room 
+
+            (EventFlag 1520+435)
+            435 - Plasma Scientist #1 
+
+             (EventFlag 1520+444)
+            444 - Plasma Scientist #2 
+
+            797 - Zinzolin Tag Team 
+            347 - Zinzolin's Partner Kyurem 
+
             428 OR 443 - First Password, Top Left Room
             436 OR 451 - Plasma Card Giver in the Mess Hall (Bottom Left: 583)
             427 OR 442 - Other Trainer in the Mess Hall (Bottom Left: 583)
             426 OR 441 - Plasma Hint Grunt (Bottom Right: 582)
             435 OR 450 - Top Right Trainer (Top Right: 580)
-    
+            430 / 441 -> SetFlag 348 / 16714 Works
+                Bottom Right Room - Top Grunt 
+            432 / 442 -> Set Flag 349 / 16715 Works
+                This is the Mess Hall Plasma Grunt Bottom Left
+            434 / 443 -> Set Flag 350 / 16716 Works
+                Top Left Room
+            435 / 444 -> Set Flag 351 / 16717 Works
+                Bottom Right Room - Right Grunt
+            438 / 450 -> Set Flag 353 / 16718 Works
+                Top Right Room
+            439 / 451 -> Set Flag 354
+                This is the keycard grunt
+            430 -> 348 
+            432 -> 349
+
+
+
     Items: 
         378: On the deck of the ship
         379: On the deck of the SHip

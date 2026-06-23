@@ -1,0 +1,431 @@
+import messages.script.Msg0374.MSGID;
+
+import event.FieldDemo;
+import pokemon.Pokedex;
+import event.EVCamera;
+import event.ObjInit;
+import Base;
+import event.Battle;
+import pokemon.PokeParty;
+import system.EventFlags;
+import system.EventWorks;
+import event.actors.Actor;
+import event.actors.Player;
+import event.dialogs.Message;
+import event.dialogs.YesNoWin;
+import pokescript.vm.Math;
+import pokescript.vm.StackCtrl;
+import pokescript.vm.VM;
+import system.Game;
+import system.Fade;
+import system.Input;
+import system.Runtime;
+import system.Sound;
+import system.System;
+import system.text.WordSet;
+
+public class MainEvents {
+	public static void main_1() { // @ 0xb7
+		Actor.PauseAll();
+		if (EventFlags.Get(2400)) {
+			Sound.SEPlay(1351);
+			Actor.FacePlayer();
+			Message.Actor(1024, 4, 0, 0);
+			Input.LastKeyWait();
+			Message.CloseActor();
+			goto LABEL_00fa;
+		}
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 3, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+
+		LABEL_00fa:
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_2() { // @ 0x100
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 5, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_3() { // @ 0x11c
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 6, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_4() { // @ 0x1e
+		Actor.PauseAll();
+		if (EventFlags.Get(474)) {
+			Sound.SEPlay(1351);
+			Actor.FacePlayer();
+			Message.Actor(1024, 11, 0, 0);
+			Input.LastKeyWait();
+			Message.CloseActor();
+			goto LABEL_00b1;
+		}
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 7, 0, 0);
+		Message.CloseActor();
+		FieldDemo.CallPokemonPreview(643, 0, 0, 0);
+		Pokedex.RegisterSpecies(0, 643);
+		Message.System(8, 0);
+		Message.WaitAdvance();
+		Message.CloseSystem();
+		Message.Actor(1024, 9, 0, 0);
+		Message.CloseActor();
+		FieldDemo.CallPokemonPreview(644, 0, 0, 0);
+		Pokedex.RegisterSpecies(0, 644);
+		Message.System(10, 0);
+		Message.WaitAdvance();
+		Message.CloseSystem();
+		Message.Actor(1024, 11, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		EventFlags.Set(474);
+
+		LABEL_00b1:
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_5() { // @ 0x138
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 13, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_6() { // @ 0x154
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 14, 0, 0);
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_7() { // @ 0x170
+		Actor.PauseAll();
+		Sound.SEPlay(2222);
+		Sound.SEWait();
+		Message.Info(12, 2);
+		Message.CloseInfo();
+		EventWorks.Set(16713, 2);
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+
+    // Scientist 
+    public static void main_8(){
+        int SCIENTIST_ID;
+        int isVictory; 
+        int yesNo; 
+
+        Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+
+        if (EventFlags.Get(1520 + SCIENTIST_ID)){
+            Message.Actor(1024, 15, 0, 0);
+            yesNo = YesNoWin.Show();
+            if (yesNo == 1){
+                Message.Actor(1024, 16, 0, 0);
+                Message.CloseAll();
+            }
+            else {
+                Message.Actor(1024, 17, 0, 0);
+                Message.CloseAll();
+
+                Battle.CallTrainerBattle(SCIENTIST_ID, 0, 0);
+                isVictory = Battle.IsTrainerVictory();
+                if (isVictory != 1){
+                    Battle.CallTrainerLose();
+                }
+                Battle.EndTrainerBattle();
+                Message.Actor(1024, 18, 0, 0);
+                Message.CloseAll();
+                EventFlags.Set(1520 + SCIENTIST_ID);
+                Global2805(1, 1); // CHANGE THIS LATER
+            }
+        }
+        else {
+            Message.Actor(1024, 19, 0, 0);
+            Message.CloseAll();
+        }
+		
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+
+    }
+
+    // Pokemon Handout Event 1
+    public static void main_9(){
+        int HUGH_ENTITY;
+        int HUGH_FLAG;
+        int GRUNTA_ENTITY;
+        int GRUNTB_ENTITY;
+        int trainerId; 
+
+        Actor.PauseAll();
+        EVCamera.Init();
+        EVCamera.Unbind();
+        EVCamera.MoveTo(2.3652344f, 0.0f, 237.0f, 176.0f, 0.0f, 72.0f, 16); // CHANGE THIS LATER
+        EVCamera.Wait();
+        TurnSouth8F(HUGH_ENTITY);
+        WordSet.LoadPlayerName(0);
+        WordSet.LoadRivalName(1);
+        Message.ActorEx(1024, 49, HUGH_ENTITY, 5, 1);
+        Actor.WaitActionFinish();
+        Message.CloseAll();
+
+        Actor.WalkRoute(255, 4, 4, 0, 8, 0); // CHANGE THIS LATER 
+        Runtime.Sleep(8);
+        TurnWest8F(HUGH_ENTITY);
+        Actor.WaitActionFinish();
+        TurnWest8F(255);
+        Actor.WaitActionFinish();
+
+        Message.ActorEx(1024, 50, GRUNTA_ENTITY, 2, 0);
+        Message.CloseAll();
+        Message.ActorEx(1024, 51, GRUNTB_ENTITY, 1, 0);
+        Message.CloseAll();
+        Message.ActorEx(1024, 33, HUGH_ENTITY, 5, 0);
+        Message.CloseAll();
+
+        EVCamera.MoveToDefault(16);
+        EVCamera.Wait();
+        EVCamera.Rebind();
+        EVCamera.End();
+
+        if (EventWorks.Get(16432) == 2){
+            trainerId = 796;
+        }
+        else if (EventWorks.Get(16432) == 1){
+            trainerId = 795;
+        }
+        else {
+            trainerId = 794;
+        }
+        // Battle.CallTrainerMultiBattle(trainerId, 798, 799, 0);
+        // battleOutcome();
+
+        GruntBacksUp(GRUNTA_ENTITY);
+        Runtime.Sleep(8);
+        GruntBacksUp(GRUNTB_ENTITY);
+        Message.ActorEx(1024, 34, GRUNTB_ENTITY, 1, 0);
+        Message.CloseAll();
+
+        TurnSouth8F(HUGH_ENTITY);
+        Actor.WaitActionFinish();
+		WordSet.LoadDaycarePokeSpecies(3, 0);
+        Message.ActorEx(1024, 35, HUGH_ENTITY, 5, 0);
+        Message.CloseAll();
+
+        // Hugh Runs to the Boxes 
+        // Movement 
+        // Movement 
+        ShowExclamationMark(HUGH_ENTITY);
+        Message.ActorEx(1024, 36, HUGH_ENTITY, 5, 1);
+        Message.CloseAll();
+
+        // Hugh Runs back to the Grunts 
+        // Movement 
+        // Movement 
+
+        TurnWest8F(GRUNTA_ENTITY);
+        TurnWest8F(GRUNTB_ENTITY);
+        Message.ActorEx(1024, 37, HUGH_ENTITY, 5, 0);
+        Actor.WaitActionFinish();
+        Message.CloseAll();
+
+        Message.ActorEx(1024, 38, GRUNTA_ENTITY, 2, 0);
+        Message.CloseAll();
+        Message.ActorEx(1024, 39, GRUNTB_ENTITY, 1, 0);
+        Message.CloseAll();
+
+        Message.ActorEx(1024, 40, HUGH_ENTITY, 5, 1);
+        Message.CloseAll();
+        Message.ActorEx(1024, 41, HUGH_ENTITY, 5, 0);
+        Message.CloseAll();
+        TurnWest8F(HUGH_ENTITY);
+        Actor.WaitActionFinish();
+        Message.ActorEx(1024, 42, HUGH_ENTITY, 5, 0);
+        Message.CloseAll();
+
+        // Fade White Quick 
+        // New Actor for Abra 
+        // Fade In Quick 
+
+        Message.ActorEx(1024, 43, HUGH_ENTITY, 5, 0);
+        Message.CloseAll();
+
+        // Fade White Quick 
+        // Fade In Quick 
+
+        ShowExclamationMark(GRUNTA_ENTITY);
+        ShowExclamationMark(GRUNTB_ENTITY);
+        Runtime.Sleep(64);
+
+        Message.ActorEx(1024, 44, HUGH_ENTITY, 5, 0);
+        Message.CloseAll();
+        // Fade White Quick 
+        // Abra.Hide
+        // Fade In Quick 
+
+        // Hugh Walks Over to the Player 
+        // Movement 
+        // Movement 
+        Message.ActorEx(1024, 45, HUGH_ENTITY, 5, 0);
+        Message.CloseAll();
+
+        EventFlags.Set(571); // CHANGE THIS LATER 
+        EventFlags.Clear(572);
+        EventWorks.Set(16512, 1);
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
+
+    // Grunt #1 
+    public static void main_10(){
+        Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 46, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
+
+    // Grunt #2
+    public static void main_11(){
+        Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 47, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
+    
+    // HUGH 
+    public static void main_12(){
+        Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 52, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
+
+    public static void main_13() { // @ 0x154
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Message.System(53, 0);
+		Message.CloseAll();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+    static void battleOutcome() { // @ 0x3ec
+		int v8;
+		int v16;
+
+		v16 = Battle.IsTrainerVictory();
+		if (v16 != 1) {
+			Battle.CallTrainerLose();
+			return;
+		}
+		v8 = PokeParty.GetPkmCount(2);
+		if (v8 != 0) {
+			goto LABEL_041e;
+		}
+		PokeParty.RecoverAll();
+
+		LABEL_041e:
+		Battle.EndTrainerBattle();
+	}
+
+    static meta void TurnNorth8F(int npcId) : VActionSequence {
+		Action0020(1);
+	}
+
+    static meta void GruntBacksUp(int npcId) : VActionSequence {
+		Action0047(1);
+		Action000e(1);
+		Action0048(1);
+	}
+
+	static meta void TurnSouth8F(int npcId) : VActionSequence {
+		Action0021(1);
+	}
+
+	static meta void TurnEast8F(int npcId) : VActionSequence {
+		Action0023(1);
+	}
+
+    static meta void TurnWest8F(int npcId) : VActionSequence {
+		Action0022(1);
+	}
+	static meta void ShowExclamationMark(int npcId) : VActionSequence {
+		Action004b(1);
+	}
+
+    static meta void Global2805(int a1, int a2) : VGlobalCall[2805];
+    static native void Action0000(int amount) : 0x0;
+	static native void Action0001(int amount) : 0x1;
+	static native void Action0002(int amount) : 0x2;
+	static native void Action0003(int amount) : 0x3;
+	static native void Action000a(int amount) : 0xa;
+	static native void Action000b(int amount) : 0xb;
+	static native void Action000c(int amount) : 0xc;
+	static native void Action000d(int amount) : 0xd;
+	static native void Action000e(int amount) : 0xe;
+	static native void Action000f(int amount) : 0xf;
+	static native void Action0011(int amount) : 0x11;
+	static native void Action0013(int amount) : 0x13;
+	static native void Action0014(int amount) : 0x14;
+	static native void Action0015(int amount) : 0x15;
+	static native void Action0016(int amount) : 0x16;
+	static native void Action0017(int amount) : 0x17;
+	static native void Action0020(int amount) : 0x20;
+	static native void Action0021(int amount) : 0x21;
+	static native void Action0022(int amount) : 0x22;
+	static native void Action0023(int amount) : 0x23;
+	static native void Action0027(int amount) : 0x27;
+	static native void Action002a(int amount) : 0x2a;
+	static native void Action002b(int amount) : 0x2b;
+	static native void Action0031(int amount) : 0x31;
+	static native void Action003f(int amount) : 0x3f;
+	static native void Action0047(int amount) : 0x47;
+	static native void Action0048(int amount) : 0x48;
+	static native void Action004b(int amount) : 0x4b;
+	static native void Action009f(int amount) : 0x9f;
+	static native void Action00a1(int amount) : 0xa1;
+	static native void Action00b8(int amount) : 0xb8;
+}

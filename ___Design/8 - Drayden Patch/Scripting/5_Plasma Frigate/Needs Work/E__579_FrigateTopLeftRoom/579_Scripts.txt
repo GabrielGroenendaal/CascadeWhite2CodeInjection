@@ -1,0 +1,50 @@
+import messages.script.Msg0370.MSGID;
+
+
+import Base;
+import event.Battle;
+import system.EventFlags;
+import system.EventWorks;
+import event.actors.Actor;
+import event.actors.Player;
+import event.dialogs.Message;
+import pokescript.vm.Math;
+import pokescript.vm.StackCtrl;
+import pokescript.vm.VM;
+import system.Game;
+import system.Input;
+import system.Runtime;
+import system.Sound;
+import system.System;
+import system.text.WordSet;
+
+public class MainEvents {
+
+
+    // Back to Back Trigger 
+    public static void main_1(){
+
+    }
+
+
+    // Speaking to the Non Hint Grunt 
+    public static void main_2(){
+
+    }
+
+    static meta void TurnNorth8F(int npcId) : VActionSequence {
+		Action0020(1);
+	}
+
+	static meta void TurnSouth8F(int npcId) : VActionSequence {
+		Action0021(1);
+	}
+
+    static meta void ShowExclamationMark(int npcId) : VActionSequence {
+		Action004b(1);
+	}
+
+    static native void Action0020(int amount) : 0x20;
+	static native void Action0021(int amount) : 0x21;
+    static native void Action004b(int amount) : 0x4b;
+}
