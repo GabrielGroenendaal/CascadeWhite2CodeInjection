@@ -5,6 +5,7 @@ import event.dialogs.Message;
 import pokescript.vm.Math;
 import pokescript.vm.StackCtrl;
 import pokescript.vm.VM;
+import event.actors.Player;
 import system.EventFlags;
 import system.EventWorks;
 import system.Game;
@@ -88,14 +89,15 @@ public class MainEvents {
 	public static void main_5() { // @ 0x17c
 		int v32;
 
-		Actor.PauseAll();
+		//Actor.PauseAll();
 		v32 = Game.GetVersion();
 		WordSet.LoadPlayerName(0);
 		WordSet.LoadRivalName(1);
-
+		WordSet.LoadDaycarePokeSpecies(3, 0);
+		
 		if (v32 != 23) {
 			ActionSequence_03d4(255);
-            Actor.WaitActionFinish();
+           	 Actor.WaitActionFinish();
             Message.ActorEx(1024, 0, 7, 4, 0);
             Message.CloseAll();
             ActionSequence_052c(0);
@@ -111,12 +113,16 @@ public class MainEvents {
             Message.ActorEx(1024, 5, 7, 4, 0);
             Message.CloseAll();
             Message.ActorEx(1024, 6, 0, 3, 0);
-            Input.LastKeyWait();
+            TurnWest8F(0);
+            Message.ActorEx(1024, 27, 0, 3, 0);
+            Actor.WaitActionFinish();
 		    Message.CloseAll();
             HopUp(7);
             Message.ActorEx(1024, 14, 7, 4, 0);
             Message.CloseAll();
+            TurnSouth8F(0);
             Message.ActorEx(1024, 15, 0, 3, 0);
+            Actor.WaitActionFinish();
             Message.CloseAll();
 
             TurnEast8F(7);
@@ -136,6 +142,7 @@ public class MainEvents {
             Message.ActorEx(1024, 17, 0, 3, 0);
             Input.LastKeyWait();
 		    Message.CloseAll();
+			EventFlags.Set(574);
 		}
         else {
             ActionSequence_03e0(255);
@@ -173,7 +180,7 @@ public class MainEvents {
 		EventWorks.Set(16713, 1);
 		EventFlags.Set(1036);
 		Runtime.FinishSubEvents();
-		Actor.UnpauseAll();
+		//Actor.UnpauseAll();
 	}
 
 	public static void main_6() { // @ 0x438
@@ -221,56 +228,81 @@ public class MainEvents {
     // Getting the Plasma Keycard. 
     // 16513 is the eventworks
     public static void main_8(){
-
-    		int HINT_FLAG_1;
-    		int HINT_FLAG_2;
-    		int HINT_FLAG_3;
-    		int HINT_FLAG_4;
-    		int HUGH_FLAG;
-    		int gruntTotal;
-    		
-        if (!EventFlags.Get(HINT_FLAG_1)){
+    	int gruntTotal;
+        if (!EventFlags.Get(348)){
             gruntTotal += 1;
         }
-        if (!EventFlags.Get(HINT_FLAG_2)){
+        if (!EventFlags.Get(349)){
             gruntTotal += 1;
         }
-        if (!EventFlags.Get(HINT_FLAG_3)){
+        if (!EventFlags.Get(350)){
             gruntTotal += 1;
         }
-        if (!EventFlags.Get(HINT_FLAG_4)){
+        if (!EventFlags.Get(353)){
             gruntTotal += 1;
         }
         if (gruntTotal == 0){
-
+            int gruntX; 
+            int gruntZ;
             int playerX;
             int playerZ; 
 
-            Actor.PauseAll();
+            //Actor.PauseAll();
 
             // Reposition the Grunt 
-            // CHANGE THIS LATER 
-
+            Actor.GetGPos(0, gruntX, gruntZ);
+            Player.GetGPos(playerX, playerZ);
+			ShowExclamationMark(0);
+			if (playerZ>=43){
+				TurnSouth8F(0);
+			}
+			else if(playerZ<=38){
+				TurnNorth8F(0);
+			}
+			else {
+				if (playerX > gruntX){
+				TurnEast8F(0);
+				Actor.WaitActionFinish();
+				}
+				else {
+					TurnWest8F(0);
+					Actor.WaitActionFinish();
+				}
+			}
+			Message.ActorEx(1024, 28, 0, 3, 0);
+			Message.CloseAll();
+			
+            if (gruntZ != playerZ){
+                Actor.WalkRoute(0, gruntX, playerZ, 0, 8, 0);
+            }
+            Actor.WaitActionFinish();
+            if (gruntX > playerX){
+                Actor.WalkRoute(0, playerX+1, playerZ, 0, 8, 0);
+				TurnEast8F(255);
+            }
+            else {
+                Actor.WalkRoute(0, playerX-1, playerZ, 0, 8, 0);
+				TurnWest8F(255);
+            }
+            Actor.WaitActionFinish();
 
             Message.ActorEx(1024, 18, 0, 3, 0);
             Message.CloseAll();
-
             Global2805(633, 1);
-
+			EventFlags.Set(356);
             Message.ActorEx(1024, 19, 0, 3, 0);
-
             if (EventWorks.Get(16512) == 0){
-                 Message.ActorEx(1024, 20, 0, 3, 0);
+                Message.ActorEx(1024, 20, 0, 3, 0);
                 Message.CloseAll();
             }
             else {
-                 Message.ActorEx(1024, 26, 0, 3, 0);
-                 EventFlags.Set(HUGH_FLAG); // change this later 
+                Message.ActorEx(1024, 26, 0, 3, 0);
+                EventFlags.Set(572);
                 Message.CloseAll();
             }
             EventWorks.Set(16513, 1);
             Runtime.FinishSubEvents();
-		    Actor.UnpauseAll();
+		    //Actor.UnpauseAll();
         }
     }
 
@@ -278,34 +310,29 @@ public class MainEvents {
     public static void main_9(){
         int messageId;
         int gruntTotal;
-		int HINT_FLAG_1;
-    		int HINT_FLAG_2;
-    		int HINT_FLAG_3;
-    		int HINT_FLAG_4;
-    		
         Actor.PauseAll();
 		Sound.SEPlay(1351);
 		Actor.FacePlayer();
         
         // Need to find the hint flags 
         // CHANGE THESE LATER 
-        if (!EventFlags.Get(HINT_FLAG_1)){
+        if (!EventFlags.Get(348)){
             gruntTotal += 1;
         }
-        if (!EventFlags.Get(HINT_FLAG_2)){
+        if (!EventFlags.Get(349)){
             gruntTotal += 1;
         }
-        if (!EventFlags.Get(HINT_FLAG_3)){
+        if (!EventFlags.Get(350)){
             gruntTotal += 1;
         }
-        if (!EventFlags.Get(HINT_FLAG_4)){
+        if (!EventFlags.Get(353)){
             gruntTotal += 1;
         }
         if (gruntTotal > 0){
             messageId = 20 + gruntTotal; 
         }
         else {
-            if (EventWorks.Get(16512) < 2){
+            if (EventWorks.Get(16512) < 1){
                 messageId = 25;
             }
             else {
@@ -313,7 +340,6 @@ public class MainEvents {
             }
         }
 		Message.Actor(1024, messageId, 0, 0);
-		Input.LastKeyWait();
 		Message.CloseActor();
 		Runtime.FinishSubEvents();
 		Actor.UnpauseAll();
@@ -330,7 +356,7 @@ public class MainEvents {
 	}
 
 	static meta void ActionSequence_03fc(int npcId) : VActionSequence {
-		Action0012(3);
+		Action0012(2);
 		Action0011(7);
 	}
 
@@ -375,7 +401,7 @@ public class MainEvents {
 		Action000f(2);
 	}
 
-	static meta void GruntBacksUpTwoTilesEast(int npcId) : VActionSequence {
+	static meta void GruntBacksUpOneTileWest(int npcId) : VActionSequence {
 		Action0047(1);
 		Action000b(2);
 		Action0048(1);
@@ -388,6 +414,10 @@ public class MainEvents {
 	}
     static meta void HopUp(int npcId) : VActionSequence {
 		Action0030(1);
+	}
+
+	static meta void ShowExclamationMark(int npcId) : VActionSequence {
+		Action004b(1);
 	}
 
     

@@ -667,7 +667,7 @@ public class MainEvents {
 		Actor.WaitActionFinish();
 		Message.CloseAll();
 
-		Sound.BGMPlay(1266);
+		Sound.BGMPlay(1127);
 		Runtime.Sleep(16);
 		Actor.New(20, 24, 1, 33, 293, 0);
 		Runtime.Sleep(4);

@@ -1,6 +1,7 @@
 import messages.script.Msg0318.MSGID;
 
 import event.Battle;
+import system.Field;
 import event.actors.Actor;
 import event.ObjInit;
 import event.app.PokeApp;
@@ -20,6 +21,7 @@ import system.Runtime;
 import system.Sound;
 import system.System;
 import system.text.WordSet;
+import event.Trainer;
 
 public class MainEvents {
 	public static void main_1() { // @ 0x85
@@ -60,6 +62,7 @@ public class MainEvents {
 		ShowExclamationMark(maleBikerEntity);
         ShowExclamationMark(femaleBikerEntity);
         Actor.WaitActionFinish();
+        Trainer.PlayBGMPush(468);
         TurnSouth(255);
         Actor.WaitActionFinish();
 
@@ -75,6 +78,7 @@ public class MainEvents {
 			Message.CloseActor();
             WalkWest8F(255);
             Actor.WaitActionFinish();
+            Field.PlayMapBGM();
 			goto LABEL_EndLentimasScript;
 		}
 		Message.ActorEx(1024, 6, maleBikerEntity, 0, 0);
@@ -82,12 +86,12 @@ public class MainEvents {
 		Message.CloseActor();
 
 		Battle.CallTrainerBattle(468, 0, 0);
-		Battle.EndTrainerBattle();
 		isVictory = Battle.IsTrainerVictory();
 		if (isVictory != 1) {
 			Battle.CallTrainerLose();
             goto LABEL_EndLentimasScript;
 		}
+        Battle.EndTrainerBattle();
 		Message.ActorEx(1024, 8, maleBikerEntity, 0, 0);
 		Input.LastKeyWait();
 		Message.CloseActor();
@@ -97,20 +101,19 @@ public class MainEvents {
         Input.LastKeyWait();
 		Message.CloseActor();
 	    Battle.CallTrainerBattle(467, 0, 0);
-		Battle.EndTrainerBattle();
 		isVictory = Battle.IsTrainerVictory();
 		if (isVictory != 1) {
 			Battle.CallTrainerLose();
                goto LABEL_EndLentimasScript;
 		}           
-
+        Battle.EndTrainerBattle();
         Message.ActorEx(1024, 10, maleBikerEntity, 0, 0);
         Input.LastKeyWait();
 		Message.CloseActor();
 		Message.ActorEx(1024, 11, femaleBikerEntity, 0, 0);
         Input.LastKeyWait();
 		Message.CloseActor();
-
+        Field.PlayMapBGM();
         EventWorks.Set(16440, 1);
 
 		LABEL_EndLentimasScript:

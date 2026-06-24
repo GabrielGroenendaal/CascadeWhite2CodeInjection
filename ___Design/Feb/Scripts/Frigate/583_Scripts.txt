@@ -148,8 +148,8 @@ public class MainEvents {
 		Sound.SEPlay(1351);
 		Actor.FacePlayer();
 
-        if (EventFlags.Get(1520 + 435)){
-			Trainer.PlayBGMPush(435);
+        if (!EventFlags.Get(1520 + 435)){
+			Sound.BGMPlay(1122);
             Message.Actor(1024, 15, 0, 0);
             yesNo = YesNoWin.Show();
             if (yesNo == 1){
@@ -160,18 +160,21 @@ public class MainEvents {
                 Message.Actor(1024, 17, 0, 0);
                 Message.CloseAll();
 
+                goto skipbattle4;
                 Battle.CallTrainerBattle(435, 0, 0);
                 isVictory = Battle.IsTrainerVictory();
                 if (isVictory != 1){
                     Battle.CallTrainerLose();
                 }
                 Battle.EndTrainerBattle();
+                skipbattle4:
+                Field.PlayMapBGM();
                 Message.Actor(1024, 18, 0, 0);
                 Message.CloseAll();
                 EventFlags.Set(1520 + 435);
                 Global2805(378, 1); 
             }
-			Field.PlayMapBGM();
+			
         }
         else {
             Message.Actor(1024, 19, 0, 0);
@@ -185,10 +188,9 @@ public class MainEvents {
 
     // Pokemon Handout Event 1
     public static void main_9(){
-        int HUGH_ENTITY;
-        int HUGH_FLAG;
-        int GRUNTA_ENTITY;
-        int GRUNTB_ENTITY;
+        int HUGH_ENTITY = 11;
+        int GRUNTA_ENTITY = 10;
+        int GRUNTB_ENTITY = 9;
         int trainerId; 
         int playerX;
         int playerZ;
@@ -198,10 +200,10 @@ public class MainEvents {
         Actor.PauseAll();
         EVCamera.Init();
         EVCamera.Unbind();
-        EVCamera.MoveTo(2.3652344f, 0.0f, 237.0f, 176.0f, 0.0f, 72.0f, 16); // CHANGE THIS LATER
+        EVCamera.MoveTo(2.3652344f, 0.0f, 237.0f, 80.0f, 0.0f, 64.0f, 16); // CHANGE THIS LATER
         EVCamera.Wait();
 
-        Actor.GetGPos(0, hughX, hughZ);
+        Actor.GetGPos(HUGH_ENTITY, hughX, hughZ);
         Player.GetGPos(playerX, playerZ);
 
         if (playerZ>hughZ){
@@ -214,12 +216,12 @@ public class MainEvents {
         }
         WordSet.LoadPlayerName(0);
         WordSet.LoadRivalName(1);
-        Message.ActorEx(1024, 49, HUGH_ENTITY, 5, 1);
+        Message.ActorEx(1024, 49, HUGH_ENTITY, 5, 0);
         Actor.WaitActionFinish();
         Message.CloseAll();
 
-		Trainer.PlayBGMPush(430);
-        Actor.WalkRoute(255, hughX, hughZ-1, 0, 8, 0); // CHANGE THIS LATER 
+		Sound.BGMPlay(1127);
+        Actor.WalkRoute(255, hughX, hughZ+1, 0, 8, 0); // CHANGE THIS LATER 
         TurnWest8F(255);
         Runtime.Sleep(8);
         TurnWest8F(HUGH_ENTITY);
@@ -227,7 +229,7 @@ public class MainEvents {
 
         Message.ActorEx(1024, 50, GRUNTA_ENTITY, 2, 0);
         Message.CloseAll();
-        Message.ActorEx(1024, 51, GRUNTB_ENTITY, 1, 0);
+        Message.ActorEx(1024, 51, GRUNTB_ENTITY, 1, 1);
         Message.CloseAll();
         Message.ActorEx(1024, 33, HUGH_ENTITY, 5, 0);
         Message.CloseAll();
@@ -246,6 +248,7 @@ public class MainEvents {
         EVCamera.End();
         Actor.WaitActionFinish();
 
+        goto skipbattle3;
         if (EventWorks.Get(16432) == 2){
             trainerId = 796;
         }
@@ -255,13 +258,13 @@ public class MainEvents {
         else {
             trainerId = 794;
         }
-        // Battle.CallTrainerMultiBattle(trainerId, 798, 799, 0);
-        // battleOutcome();
-
-
+        Battle.CallTrainerMultiBattle(trainerId, 798, 799, 0);
+        battleOutcome();
+        skipbattle3:
+        
 		Field.PlayMapBGM();
         GruntBacksUp(GRUNTA_ENTITY);
-        Runtime.Sleep(8);
+        Runtime.Sleep(4);
         GruntBacksUp(GRUNTB_ENTITY);
         Message.ActorEx(1024, 34, GRUNTB_ENTITY, 1, 0);
         Message.CloseAll();
@@ -283,11 +286,9 @@ public class MainEvents {
         Message.CloseAll();
 
         // Hugh Runs back to the Grunts 
-        TurnEast8F(HUGH_ENTITY);
-        TurnWest8F(GRUNTA_ENTITY);
-        TurnWest8F(GRUNTB_ENTITY);
-        Message.ActorEx(1024, 37, HUGH_ENTITY, 5, 0);
+        HughRunsToBoxes2(HUGH_ENTITY);
         Actor.WaitActionFinish();
+        Message.ActorEx(1024, 37, HUGH_ENTITY, 5, 0);
         Message.CloseAll();
 
         Message.ActorEx(1024, 38, GRUNTA_ENTITY, 2, 0);
@@ -295,14 +296,25 @@ public class MainEvents {
         Message.ActorEx(1024, 39, GRUNTB_ENTITY, 1, 0);
         Message.CloseAll();
 
+        TurnSouth8F(HUGH_ENTITY);
         Message.ActorEx(1024, 40, HUGH_ENTITY, 5, 1);
+        Actor.WaitActionFinish();
         Message.CloseAll();
+        HughReturnsToPlay(HUGH_ENTITY);
+        Runtime.Sleep(4);
+        TurnNorth8F(255);
+        Actor.WaitActionFinish();
         Message.ActorEx(1024, 41, HUGH_ENTITY, 5, 0);
         Message.CloseAll();
-        TurnWest8F(HUGH_ENTITY);
+        TurnNorth8F(HUGH_ENTITY);
         Actor.WaitActionFinish();
         Message.ActorEx(1024, 42, HUGH_ENTITY, 5, 0);
         Message.CloseAll();
+
+        EVCamera.Init();
+        EVCamera.Unbind();
+        EVCamera.MoveTo(2.3652344f, 0.0f, 237.0f, 48.0f, 0.0f, 48.0f, 16); // CHANGE THIS LATER
+        EVCamera.Wait();
 
         // Fade White Quick 
         // New Actor for Abra 
@@ -310,18 +322,23 @@ public class MainEvents {
         Fade.OutWhiteQ();
 		Fade.Wait();
         Sound.PVPlay(63, 0);
-        Actor.New(3, 3, 1, 30, 4145, 0); // Change This Later
+        Actor.New(3, 3, 1, 30, 4160, 0); // Change This Later
         Sound.PVWait();
         Fade.InWhiteQ();
 		Fade.Wait();
 
 		Sound.BGMPlayPush(1237);
-        Message.ActorEx(1024, 43, HUGH_ENTITY, 5, 0);
+        TurnNorth8F(GRUNTA_ENTITY);
+        TurnNorth8F(GRUNTB_ENTITY);
+        TurnNorth8F(255);
+        Actor.WaitActionFinish();
+        Message.ActorEx(1024, 43, HUGH_ENTITY, 5, 1);
         Message.CloseAll();
 
         Fade.OutWhiteQ();
 		Fade.Wait();
         Actor.Hide(30);
+        Runtime.Sleep(8);
         Fade.InWhiteQ();
 		Fade.Wait();
 
@@ -330,23 +347,41 @@ public class MainEvents {
         Runtime.Sleep(64);
         Fade.OutWhiteQ();
 		Fade.Wait();
-        Actor.Show(30);
+        Runtime.Sleep(8);
+        Actor.New(5, 4, 2, 31, 4160, 0); // Change This Later
         Fade.InWhiteQ();
 		Fade.Wait();
 
+        Runtime.Sleep(24);
+        TurnEast8F(HUGH_ENTITY);
         Message.ActorEx(1024, 44, HUGH_ENTITY, 5, 0);
         Message.CloseAll();
 
         Fade.OutWhiteQ();
 		Fade.Wait();
-        Actor.Hide(30);
+        Runtime.Sleep(8);
+        Actor.Hide(31);
         Fade.InWhiteQ();
 		Fade.Wait();
         
         // Hugh Walks Over to the Player 
-        // Movement 
-        // Movement 
+        TurnSouth8F(HUGH_ENTITY);
+        Actor.WaitActionFinish();
+        Grunt1Approach(GRUNTA_ENTITY);
+        Runtime.Sleep(4);
+        Grunt2Approach(GRUNTB_ENTITY);
+        EVCamera.MoveToDefault(16);
         Message.ActorEx(1024, 45, HUGH_ENTITY, 5, 0);
+        Message.CloseAll();
+        EVCamera.Wait();
+        EVCamera.Rebind();
+        EVCamera.End();
+        DramaticWalking(HUGH_ENTITY);
+        Runtime.Sleep(8);
+        TurnEast8F(255);
+        Actor.WaitActionFinish();
+        Field.PlayMapBGM();
+        Message.ActorEx(1024, 63, HUGH_ENTITY, 5, 0);
         Message.CloseAll();
 
         if (EventWorks.Get(16635)==1){
@@ -360,7 +395,7 @@ public class MainEvents {
         }
         EventFlags.Set(571);
         EventWorks.Set(16512, 1);
-		Field.PlayMapBGM();
+		
 
 		LABEL_FinishScriptedEncounter:
 		Runtime.FinishSubEvents();
@@ -396,6 +431,7 @@ public class MainEvents {
         Actor.PauseAll();
 		Sound.SEPlay(1351);
 		Actor.FacePlayer();
+        WordSet.LoadRivalName(1);
 		Message.Actor(1024, 52, 0, 0);
 		Input.LastKeyWait();
 		Message.CloseActor();
@@ -417,8 +453,8 @@ public class MainEvents {
         int playerX;
         int playerZ;
 
-        int GRUNTA_ENTITY;
-        int GRUNTB_ENTITY;
+        int GRUNTA_ENTITY = 0;
+        int GRUNTB_ENTITY = 3;
         int isVictory;
 
         Actor.PauseAll();
@@ -426,13 +462,14 @@ public class MainEvents {
         ShowExclamationMark(GRUNTA_ENTITY);
         Actor.WaitActionFinish();
 
-        Trainer.PlayBGMPush(430);
+        Sound.BGMPlay(1127);
         TurnNorth8F(255);
         WalkSouthOneTile(GRUNTA_ENTITY);
         Actor.WaitActionFinish();
         Message.ActorEx(1024, 55, GRUNTA_ENTITY, 4, 1);
         Message.CloseAll();
 
+        goto skipbattle2;
         Battle.CallTrainerBattle(432, 0, 0);
 		isVictory = Battle.IsTrainerVictory();
 		if (isVictory != 1) {
@@ -440,6 +477,7 @@ public class MainEvents {
             goto Label_EndGruntScript;
 		}           
         Battle.EndTrainerBattle();
+        skipbattle2:
         Field.PlayMapBGM();
 
         GruntBacksOneTileUp(GRUNTA_ENTITY);
@@ -455,9 +493,10 @@ public class MainEvents {
 		TurnWest8F(GRUNTA_ENTITY);
 		Actor.WaitActionFinish();
 
-		Trainer.PlayBGMPush(442);
+		Sound.BGMPlay(1127);
         Player.GetGPos(playerX, playerZ);
-        Actor.WalkRoute(GRUNTB_ENTITY, playerX-1, playerZ, 0, 4, 0);
+        Actor.WalkRoute(GRUNTB_ENTITY, playerX-2, playerZ, 0, 4, 0);
+        TurnEast8F(GRUNTB_ENTITY);
 		Actor.WaitActionFinish();
 
         Message.ActorEx(1024, 58, GRUNTB_ENTITY, 2, 0);
@@ -469,6 +508,7 @@ public class MainEvents {
 		Message.ActorEx(1024, 60, GRUNTB_ENTITY, 2, 1);
         Message.CloseAll();
 
+        goto skipbattle;
         Battle.CallTrainerBattle(442, 0, 0);
 		isVictory = Battle.IsTrainerVictory();
 		if (isVictory != 1) {
@@ -477,6 +517,7 @@ public class MainEvents {
             goto Label_EndGruntScript;
 		}           
         Battle.EndTrainerBattle();
+        skipbattle:
         Field.PlayMapBGM();
 
 		WalkWestThreeTiles(GRUNTB_ENTITY);
@@ -485,9 +526,9 @@ public class MainEvents {
         Message.CloseAll();
 
 		TurnNorth8F(255);
-		TurnSouth8F(GRUNTB_ENTITY);
-        Message.ActorEx(1024, 62, GRUNTA_ENTITY, 4, 0);
+		TurnSouth8F(GRUNTA_ENTITY);
         Actor.WaitActionFinish();
+        Message.ActorEx(1024, 62, GRUNTA_ENTITY, 4, 0);
         Message.CloseAll();
 
 
@@ -496,6 +537,26 @@ public class MainEvents {
 
         Label_EndGruntScript:
         Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
+
+    public static void main_15(){
+        Actor.PauseAll();
+		Sound.SEPlay(1351);
+        WordSet.LoadRivalName(1);
+        WordSet.LoadPlayerName(0);
+        HopLeft(12);
+		Message.ActorEx(1024, 64, 12, 0, 0);
+        Actor.WaitActionFinish();
+		Message.CloseActor();
+        TurnEast8F(12);
+        Actor.WaitActionFinish();
+        Message.ActorEx(1024, 65, 12, 0, 0);
+		Message.CloseActor();
+        Runtime.Sleep(8);
+        TurnWest8F(12);
+        Actor.WaitActionFinish();
+		Runtime.FinishSubEvents();
 		Actor.UnpauseAll();
     }
 
@@ -554,16 +615,40 @@ public class MainEvents {
 	}
 
 	static meta void WalkWestThreeTiles(int npcId) : VActionSequence {
-		Action000e(3);
+		Action000e(2);
 		Action0023(1);
 	}
 
     static meta void HughRunsToBoxes(int npcID) : VActionSequence {
 		Action0012(1);
-        Action0011(2);
-        Action0012(3);
-        Action0020(1);
+        Action0010(1);
+        Action0022(1);
 	}
+    static meta void HughRunsToBoxes2(int npcID) : VActionSequence {
+		Action0011(1);
+        Action0032(1);
+	}
+
+    static meta void Grunt1Approach(int npcID) : VActionSequence {
+		Action0012(1);
+        Action0010(1);
+	}
+
+    static meta void Grunt2Approach(int npcID) : VActionSequence {
+		Action0013(1);
+        Action0010(1);
+        Action0026(1);
+	}
+    static meta void HughReturnsToPlay(int npcID) : VActionSequence {
+		Action0013(1);
+        Action0021(1);
+	}
+
+    static meta void DramaticWalking(int npcID) : VActionSequence {
+		Action000f(2);
+        Action0022(1);
+	}
+
 
 	static meta void GruntBacksOneTileUp(int npcId) : VActionSequence {
 		Action0047(1);
@@ -599,6 +684,9 @@ public class MainEvents {
 	        Action00a1(1);
     }
 
+	static meta void HopLeft(int npcId) : VActionSequence {
+        Action0032(1);
+    }
     static meta void Global2805(int a1, int a2) : VGlobalCall[2805];
     static native void Action0000(int amount) : 0x0;
 	static native void Action0001(int amount) : 0x1;
@@ -610,6 +698,7 @@ public class MainEvents {
 	static native void Action000d(int amount) : 0xd;
 	static native void Action000e(int amount) : 0xe;
 	static native void Action000f(int amount) : 0xf;
+	static native void Action0010(int amount) : 0x10;
 	static native void Action0011(int amount) : 0x11;
 	static native void Action0012(int amount) : 0x12;
 	static native void Action0013(int amount) : 0x13;
@@ -621,10 +710,12 @@ public class MainEvents {
 	static native void Action0021(int amount) : 0x21;
 	static native void Action0022(int amount) : 0x22;
 	static native void Action0023(int amount) : 0x23;
+	static native void Action0026(int amount) : 0x26;
 	static native void Action0027(int amount) : 0x27;
 	static native void Action002a(int amount) : 0x2a;
 	static native void Action002b(int amount) : 0x2b;
 	static native void Action0031(int amount) : 0x31;
+	static native void Action0032(int amount) : 0x32;
 	static native void Action003f(int amount) : 0x3f;
 	static native void Action0047(int amount) : 0x47;
 	static native void Action0048(int amount) : 0x48;

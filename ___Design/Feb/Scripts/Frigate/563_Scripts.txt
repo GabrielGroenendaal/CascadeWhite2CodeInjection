@@ -154,7 +154,8 @@ public class MainEvents {
 
             // THE PLASMA GRUNT EVENT 
 			// CHANGE THIS LATER
-
+            // Player moves to X = 11, Z = 7 
+            // GRunts can run straight down.
 			EventWorks.Set(16635, 1);
 			EventFlags.Set(357);
 			EventFlags.Set(569); // Despawns the grunts

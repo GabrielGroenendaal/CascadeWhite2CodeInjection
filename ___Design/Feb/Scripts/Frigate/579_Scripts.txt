@@ -1,0 +1,256 @@
+import messages.script.Msg0370.MSGID;
+
+
+import Base;
+import event.Battle;
+import system.EventFlags;
+import system.EventWorks;
+import event.actors.Actor;
+import event.actors.Player;
+import event.dialogs.Message;
+import pokescript.vm.Math;
+import pokescript.vm.StackCtrl;
+import pokescript.vm.VM;
+import system.Fade;
+import system.Game;
+import system.Input;
+import system.Runtime;
+import system.Sound;
+import system.System;
+import system.text.WordSet;
+import event.Trainer;
+import system.Field;
+
+public class MainEvents {
+// EventFlag 
+    // Back to Back Trigger 
+    // 350 
+    // 16716
+    public static void main_1(){
+        
+        int playerX;
+        int playerZ;
+
+        int GRUNTA_ENTITY = 1;
+        int GRUNTB_ENTITY = 2;
+        int isVictory;
+
+        Actor.PauseAll();
+        
+        Message.ActorEx(1024, 1, GRUNTA_ENTITY, 4, 0);
+        Message.CloseAll();
+		
+
+        Fade.OutBlackQ();
+		Fade.Wait();
+        EventFlags.Clear(574);
+        Runtime.Sleep(16);
+        Actor.Show(GRUNTB_ENTITY);
+        Fade.InBlackQ();
+		Fade.Wait();
+
+        ShowExclamationMark(255);
+        TurnNorth8F(255);
+        Actor.WaitActionFinish();
+
+        Sound.BGMPlay(1127);
+        Message.ActorEx(1024, 2, GRUNTA_ENTITY, 4, 1);
+        Message.CloseAll();
+        GruntRushesOneTileDown(GRUNTB_ENTITY);
+        Actor.WaitActionFinish();
+		goto SKIP_BATTLE;
+        Battle.CallTrainerBattle(434, 0, 0);
+		isVictory = Battle.IsTrainerVictory();
+		if (isVictory != 1) {
+			Battle.CallTrainerLose();
+            goto Label_EndGruntScript;
+		}           
+        Battle.EndTrainerBattle();
+
+		SKIP_BATTLE:
+        GruntBacksTwoTilesUp(GRUNTB_ENTITY);
+        Message.ActorEx(1024, 3, GRUNTB_ENTITY, 2, 0);
+        Actor.WaitActionFinish();
+        Message.CloseAll();
+        
+        HopUp(GRUNTA_ENTITY);
+        TurnSouth8F(255);
+        Message.ActorEx(1024, 4, GRUNTA_ENTITY, 4, 1);
+        Actor.WaitActionFinish();
+        Message.CloseAll();
+
+		goto SKIP_BATTLE2;
+        Battle.CallTrainerBattle(443, 0, 0);
+		isVictory = Battle.IsTrainerVictory();
+		if (isVictory != 1) {
+			Battle.CallTrainerLose();
+            EventFlags.Set(574);
+            goto Label_EndGruntScript;
+		}           
+        Battle.EndTrainerBattle();
+		SKIP_BATTLE2:
+        Field.PlayMapBGM();
+        Message.ActorEx(1024, 5, GRUNTA_ENTITY, 4, 0);
+        Actor.WaitActionFinish();
+        Message.CloseAll();
+
+        EventFlags.Set(350);
+        EventFlags.Set(574);
+        EventWorks.Set(16716, 1);
+
+        Label_EndGruntScript:
+        Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
+
+
+    // Speaking to the Non Hint Grunt 
+    public static void main_2(){
+        Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 6, 0, 0);
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
+
+    public static void main_3(){
+        Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Message.ActorGendered(1024, 7, 8, 1, 1, 0);;
+		Message.CloseAll();
+		TurnSouth8F(255);
+		ShowQuestionMark(255);
+		Actor.WaitActionFinish();
+		Message.ActorEx(1024, 0, 0, 0, 0);
+		Message.CloseAll();
+        	EventWorks.Set(16514, 1);
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
+
+    static meta void WalkSouthOneTile(int npcId) : VActionSequence {
+		Action000d(1);
+	}
+
+    static meta void WalkNorthOneTile(int npcId) : VActionSequence {
+		Action000c(1);
+	}
+
+    static meta void WalkWestOneTile(int npcId) : VActionSequence {
+		Action000e(1);
+	}
+
+    static meta void WalkEastOneTile(int npcId) : VActionSequence {
+		Action000f(1);
+	}
+
+    static meta void TurnNorth8F(int npcId) : VActionSequence {
+		Action0020(1);
+	}
+
+	static meta void TurnSouth8F(int npcId) : VActionSequence {
+		Action0021(1);
+	}
+
+    static meta void TurnWest8F(int npcId) : VActionSequence {
+		Action0022(1);
+	}
+
+    static meta void TurnEast8F(int npcId) : VActionSequence {
+		Action0023(1);
+	}
+
+    static meta void HopUp(int npcId) : VActionSequence {
+		Action0030(1);
+	}
+
+    static meta void HopDown(int npcId) : VActionSequence {
+		Action0031(1);
+	}
+
+    static meta void HopLeft(int npcId) : VActionSequence {
+		Action0032(1);
+	}
+
+    static meta void HopRight(int npcId) : VActionSequence {
+		Action0033(1);
+	}
+
+    static meta void GruntBacksOneTileUp(int npcId) : VActionSequence {
+		Action0047(1);
+		Action000c(1);
+		Action0048(1);
+	}
+
+	static meta void GruntRushesOneTileDown(int npcId) : VActionSequence {
+		Action0011(1);
+	}
+
+    static meta void GruntBacksTwoTilesUp(int npcId) : VActionSequence {
+		Action0047(1);
+		Action000c(3);
+		Action0048(1);
+	}
+
+
+    static meta void GruntBacksOneTileDown(int npcId) : VActionSequence {
+		Action0047(1);
+		Action000d(1);
+		Action0048(1);
+	}
+
+    static meta void GruntBacksFourTilesLeft(int npcId) : VActionSequence {
+		Action0047(1);
+		Action000e(4);
+		Action0048(1);
+	}
+
+    static meta void GruntBacksFourTilesRight(int npcId) : VActionSequence {
+		Action0047(1);
+		Action000f(4);
+		Action0048(1);
+	}
+
+    static meta void ShowExclamationMark(int npcId) : VActionSequence {
+		Action004b(1);
+	}
+	static meta void ShowQuestionMark(int npcId) : VActionSequence {
+	    Action009f(1);
+	}
+    static native void Action0000(int amount) : 0x0;
+	static native void Action0001(int amount) : 0x1;
+	static native void Action0002(int amount) : 0x2;
+	static native void Action0003(int amount) : 0x3;
+	static native void Action000a(int amount) : 0xa;
+	static native void Action000b(int amount) : 0xb;
+	static native void Action000c(int amount) : 0xc;
+	static native void Action000d(int amount) : 0xd;
+	static native void Action000e(int amount) : 0xe;
+	static native void Action000f(int amount) : 0xf;
+	static native void Action0011(int amount) : 0x11;
+	static native void Action0013(int amount) : 0x13;
+	static native void Action0014(int amount) : 0x14;
+	static native void Action0015(int amount) : 0x15;
+	static native void Action0016(int amount) : 0x16;
+	static native void Action0017(int amount) : 0x17;
+	static native void Action0020(int amount) : 0x20;
+	static native void Action0021(int amount) : 0x21;
+	static native void Action0022(int amount) : 0x22;
+	static native void Action0023(int amount) : 0x23;
+	static native void Action0027(int amount) : 0x27;
+    static native void Action0030(int amount) : 0x30;
+	static native void Action002a(int amount) : 0x2a;
+	static native void Action002b(int amount) : 0x2b;
+	static native void Action0031(int amount) : 0x31;
+	static native void Action0032(int amount) : 0x32;
+	static native void Action0033(int amount) : 0x33;
+	static native void Action003f(int amount) : 0x3f;
+	static native void Action0047(int amount) : 0x47;
+	static native void Action0048(int amount) : 0x48;
+	static native void Action004b(int amount) : 0x4b;
+	static native void Action009f(int amount) : 0x9f;
+	static native void Action00a1(int amount) : 0xa1;
+	static native void Action00b8(int amount) : 0xb8;
+}
