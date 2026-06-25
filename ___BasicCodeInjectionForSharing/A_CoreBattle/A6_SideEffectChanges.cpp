@@ -2520,6 +2520,8 @@ extern "C"
         return v8;
     }
 
+
+
     int THUMB_BRANCH_ServerControl_TurnCheckWeather(ServerFlow *a1, PokeSet *a2)
     {
         int v3;         // r2
@@ -2598,6 +2600,7 @@ extern "C"
             {
                 ServerControl_ViewEffect(a1, 597, 6, 6, 0, 0);
             }
+            // BtlvEffect_AddAnim(dword_21D6F48[Weather]);
             return ServerControl_CheckExpGet(a1);
         }
     }

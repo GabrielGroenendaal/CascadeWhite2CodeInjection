@@ -142687,7 +142687,7 @@ Symbols:
   - Name: off_21DF304
     Segment: 0x7
     Address: 0x21df305
-  - Name: BattleViewCmd_AddAnim
+  - Name: BtlvEffect_AddAnim
     Segment: 0x7
     Address: 0x21df309
   - Name: loc_21DF33E

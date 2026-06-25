@@ -46,7 +46,7 @@ public class MainEvents {
         Message.ActorEx(1024, 0, GRUNTA_ENTITY, 4, 0);
         Message.CloseAll();
 
-		goto skipbattle;
+		//goto skipbattle;
         Battle.CallTrainerBattle(430, 0, 0);
 		isVictory = Battle.IsTrainerVictory();
 		if (isVictory != 1) {
@@ -87,7 +87,7 @@ public class MainEvents {
         Message.ActorEx(1024, 4, GRUNTB_ENTITY, 4, 0);
         Message.CloseAll();
 
-		goto skipbattle2;
+		//goto skipbattle2;
         Battle.CallTrainerBattle(441, 0, 0);
 		isVictory = Battle.IsTrainerVictory();
 		if (isVictory != 1) {

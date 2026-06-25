@@ -55,7 +55,7 @@ public class MainEvents {
         Message.ActorEx(1024, 1, GRUNTA_ENTITY, 4, 0);
         Message.CloseAll();
 
-		goto SKIP_Battle;
+		//goto skipbattle;
         Battle.CallTrainerBattle(438, 0, 0);
 		isVictory = Battle.IsTrainerVictory();
 		if (isVictory != 1) {
@@ -66,7 +66,7 @@ public class MainEvents {
         Battle.EndTrainerBattle();
         
 		
-		SKIP_Battle:
+		skipbattle:
 		Field.PlayMapBGM();
 		GruntBacksOneTileRight(GRUNTA_ENTITY);
         Message.ActorEx(1024, 2, GRUNTA_ENTITY, 4, 0);
@@ -90,7 +90,7 @@ public class MainEvents {
 		}
         Message.CloseAll();
 
-		goto SKIP_Battle2;
+		//goto skipbattle2;
         Battle.CallTrainerBattle(450, 0, 0);
 		isVictory = Battle.IsTrainerVictory();
 		if (isVictory != 1) {
@@ -100,7 +100,7 @@ public class MainEvents {
         Battle.EndTrainerBattle();
         
 
-		SKIP_Battle2:
+		skipbattle2:
 		Field.PlayMapBGM();
         GruntBacksOneTilesLeft(GRUNTB_ENTITY);
         Message.ActorEx(1024, 5, GRUNTB_ENTITY, 2, 1);

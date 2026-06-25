@@ -614,6 +614,85 @@ extern "C"
         *a1 = 2;
         return FocusPunchHandlers;
     }
+
+//     void HandlerFocusEnergyNew(int a1, ServerFlow *a2, unsigned int a3)
+//     {
+//         HandlerParam_SetTurnFlag *v5; // r0
+//         BattleMon *BattleMon; // r0
+//         HandlerParam_AddAnimation *v7; // r6
+//         HandlerParam_Message *v8; // r6
+
+//         if ( a3 == BattleEventVar_GetValue(VAR_MON_ID) )
+//         {
+            
+//             v5 = (HandlerParam_SetTurnFlag *)BattleHandler_PushWork(a2, EFFECT_SET_TURN_FLAG, a3);
+//             v5->pokeID = a3;
+//             v5->flag = TURNFLAG_MOVEFAILED;
+//             BattleHandler_PopWork(a2, v5);
+//             BattleMon = Handler_GetBattleMon(a2, a3);
+//             TurnFlag_Clear(BattleMon, TURNFLAG_MOVEFAILEDLASTTURN);
+//             // if ( !BattleMon_IsHiding(BattleMon) )
+//             // {
+//             //     v7 = (HandlerParam_AddAnimation *)BattleHandler_PushWork(a2, EFFECT_ADD_ANIMATION, a3);
+//             //     v7->animNo = 626;
+//             //     v7->pos_from = Handler_PokeIDToPokePos(a2, a3);
+//             //     v7->pos_to = 6;
+//             //     v7->fMsgWinVanish = 1;
+//             //     BattleHandler_PopWork(a2, v7);
+//             // }
+//             // SendMessage(a2, a3, a3, 616, 0);
+//         }
+//     }
+
+//    void HandlerFocusEnergyFail(int a1, ServerFlow *a2, int a3)
+//     {
+//         int result; // r0
+//         BattleMon *BattleMon; // r4
+//         result = BattleEventVar_GetValue(VAR_MON_ID);
+//         if ( a3 == result )
+//         {
+//             BattleMon = Handler_GetBattleMon(a2, a3);
+//             if ( BattleMon_GetConditionFlag(BattleMon, CONDITIONFLAG_FOCUSENERGY) )
+//             {
+//                 BattleEventVar_RewriteValue(VAR_FAIL_CAUSE, 26);
+//             } 
+//         }
+//     }
+
+//     void HandlerFocusEnergySuccess(int a1, ServerFlow *a2, int a3)
+//     {
+//         int result; // r0
+//         BattleMon *BattleMon; // r4
+
+//         result = BattleEventVar_GetValue(VAR_MON_ID);
+//         if ( a3 == result)
+//         {
+//             BattleMon = Handler_GetBattleMon(a2, a3);
+//             if (!BattleMon_GetTurnFlag(BattleMon, TURNFLAG_MOVEFAILED)){
+//                 HandlerParam_SetConditionFlag *v6; // r0
+//                 HandlerParam_Message *v7;
+//                 v6 = (HandlerParam_SetConditionFlag *)BattleHandler_PushWork(a2, EFFECT_SET_CONDITION_FLAG, (int)a3);
+//                 v6->monID = (unsigned __int8)a3;
+//                 v6->flag = CONDITIONFLAG_FOCUSENERGY;
+//                 BattleHandler_PopWork(a2, v6);
+//                 v7 = (HandlerParam_Message *)BattleHandler_PushWork(a2, EFFECT_MESSAGE, (int)a3);
+//                 BattleHandler_StrSetup(&v7->str, 2u, 1041);
+//                 BattleHandler_AddArg(&v7->str, (int)a3);
+//                 BattleHandler_PopWork(a2, v7);
+//             }
+//         }
+//     }
+//     MOVE_TRIGGERTABLE FocusEnergyHandlers[] = {
+//         {EVENT_BEFORE_ATTACKS, (MOVE_HANDLER_FUNC)HandlerFocusEnergyNew},
+//         {EVENT_MOVE_EXECUTE_CHECK2, (MOVE_HANDLER_FUNC)HandlerFocusEnergyFail},
+//     {EVENT_MOVE_SEQUENCE_END, (MOVE_HANDLER_FUNC)HandlerFocusEnergySuccess}};
+
+//     MOVE_TRIGGERTABLE *THUMB_BRANCH_EventAddFocusEnergy(_DWORD *a1)
+//     {
+//         *a1 = 3;
+//         return FocusEnergyHandlers;
+//     }
+
 #pragma endregion
 
 #pragma region overwrites

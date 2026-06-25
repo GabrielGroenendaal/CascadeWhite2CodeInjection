@@ -85,14 +85,14 @@ public class MainEvents {
                 Message.Actor(1024, 5, 0, 0);	
                 Message.CloseAll();
 
-				goto SKIP_BATTLE;
+				//goto skipbattle;
                 Battle.CallTrainerBattle(444, 0, 0);
                 isVictory = Battle.IsTrainerVictory();
                 if (isVictory != 1){
                     Battle.CallTrainerLose();
                 }
                 Battle.EndTrainerBattle();
-				SKIP_BATTLE:
+				skipbattle:
 				Field.PlayMapBGM();
                 Message.Actor(1024, 7, 0, 0);
                 Message.CloseAll();

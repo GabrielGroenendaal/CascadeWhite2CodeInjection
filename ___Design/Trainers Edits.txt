@@ -1,0 +1,395 @@
+
+
+
+
+
+
+Stone Edge should not hit all adjacent enemies.
+
+
+
+
+    
+Look into adding end of turn animations for weather. 
+
+
+[ SAND ATTACK REWORK ]
+    Either sand Attack or smoke screen could be changed to become a pivoting move like parting shot.
+
+    Sand Attack: 
+        Pidgeot  (has a pivoting move)
+        Sandslash  (has a pivoting move)
+        Dugtrio 
+        Golem  (has a pivoting move)
+        Farfetch'd 
+        Rhyperior 
+        Eevee line 
+        Kabutops 
+        Ambipom (has a pivoting move)
+        Gliscor (has a pivoting move)
+        Skarmory 
+        Stantler  (has a pivoting move)
+        Blaziken (has a pivoting move)
+        Mightyena  (has a pivoting move)
+        Linoone 
+        Ninjask (has a pivoting move)
+        Hariyama 
+        Flygon (has a pivoting move)
+        Cacturne 
+        Garchomp 
+        Hippowdon 
+        Watchog 
+        Liepard (has a pivoting move)
+        Gigalith
+        Krookidile (has a pivoting move)
+        Crustle 
+        Scrafty (has a pivoting move)
+        Sawsbuck 
+        Durant 
+        
+
+        Poochyena Line: 
+            - Delete Sand Attack 
+        
+        Nidoran-F / Nidoran-M 
+            - Sand Attack -> Mud Slap 
+        
+        
+        Dwebble: 
+            - Level 7: Recycle 
+            - Level 25: Recycle -> Sand Attack 
+        
+        Eeveelutions: 
+            - Level 4 -> Sand Attack 
+        
+        Pidgey:
+            - Level 5: Roost 
+            - Level 15: Sand Attack 
+        
+        Makuhita Line: 
+            - Level 41: Sand Attack 
+            - Level 47: Lucky Chant
+        
+        Unfezant: 
+            - Level 25: Morning Sun 
+            - Level 36: Detect 
+            - Level 50: Swagger 
+
+        Stoutland: 
+            - Level 9: Sand Attack -> Growl 
+        
+        Staravia: 
+            - Level 7: Sand Attack -> Hyper Voice 
+        
+        Zigzagoon: 
+            - Level 17: Recycle 
+            - Level 23: Sand Attack 
+        
+        Doduo Line: 
+            - Level 7: Pluck 
+            - Level 13: Sand Attack 
+
+        Dunsparce Line: 
+            - Level 7: Tail Whip 
+            - Level 31: Ancient Power -> Sand Attack 
+        
+        Gible Line 
+            - Level 0: Sand Attack -> Growl 
+            - level 16: Screech -> Sand Attack 
+        
+        Shellos: 
+            - Level 10: Chilling Water -> Brine 
+            - Level 24: Brine -> Sand Attack
+
+        Hippopotas Line: 
+            - Level 42: Protect -> Sand Attack 
+
+        Maractus: 
+            - Level 23: Flame Burst -> Sand Attack 
+
+        Wormadam-Sandy: 
+            - Level 29: Rock Slide -> Sand Attack 
+            - Level 31: Leech Life 
+        
+        Wormadam-Trash: 
+            - Level 29: Gyro Ball -> Recycle 
+        
+        Trapinch Line: 
+            - Level 28->29: Signal Beam 
+            - Level 30->31: Sand Attack 
+        
+        Nincada Line: 
+            - Level 7: Remove 
+            - Level 9: Remove 
+            - Level 17: Sand Attack 
+     
+    Smokescreen:
+    Now harshly lowers accuracy for all pokemon but the user. 
+
+        Charizard 
+        Weezing (has a pivoting move)
+        Kingdra (has a pivoting move)
+        Magmortar
+        Flareon 
+        Typhlosion (has a pivoting move)
+        Swalot 
+        Torkoal 
+        Skuntank (has a pivoting move)
+        Emboar (has a pivoting move)
+        Garbodor 
+        Chandelure
+        Magcargo (has a pivoting move)
+        Exploud
+        Spiritomb
+        Octillery
+
+
+
+[ FOCUS ENERGY REWORK ]
+    Current Users: 
+        Mienfoo 
+        Sharpedo 
+        Octillery 
+        Salamence 
+        Darmanitan-Zen 
+        Hydreigon 
+        Typhlosion 
+        Serperior 
+        Swellow 
+        Skuntank 
+        Magmortar 
+        Kricketune 
+        Infernape 
+        Hypno 
+        Camerupt 
+        Beheeyem 
+    
+    Original Users: 
+        Beedrill 
+        Raticate 
+        Fearow 
+        Nidoking 
+        Primeape 
+        Machamp 
+        Marowak 
+        Hitmonlee
+        Hitmonchan 
+        Hitmontop 
+        Kangaskhan 
+        Kingdra 
+        Scyther 
+        Scizor 
+        Pinsir 
+        Octillery 
+        Blaziken
+        Swellow
+        Vigoroth 
+        Hariyama 
+        Sharpedo 
+        Camerupt 
+        Salamence 
+        Kricketune 
+        Rampardos 
+        Drifblim 
+        Skuntank 
+        Samurott 
+        Conkeldurr 
+        Sawk 
+        Throh 
+        Bouffalant 
+        Hydreigon 
+        Nidoqueen 
+        Furret 
+        Ursaring 
+        Donphan 
+        Tyranitar 
+        Flygon 
+        Infernape 
+   
+
+
+====================================================================================================================================================
+/*   PLASMA FRIGATE   */
+
+
+    [ PASSWORD GRUNT B2B #1 ]
+        Current: 
+            #1 (Singles)
+            Drifblim @ Proto Booster (Ability: Unburden) (Chip Away, Explosion, Ominous Wind, Substitute)
+            Shuckle @ Lum Berry (Ability: Contrary) (Infestation, Shell Smasl, Recover, Toxic)
+    
+            #2 (Doubles)
+            Galvantula @ Covert Cloak (Ability: Technician) (Electroweb, Struggle Bug, Helping Hand, Icy Wind)
+            Bibarel @ Life Orb (Ability: Huge Power) (Hyper Fang, Aqua Jet, Aqua Tail, Pursuit)
+            Nidoking @ Proto Armor (Ability: Exploit) (Sludge Bomb, Hi Horsepower, Ice Beam, Megahorn)
+            Glalie @ Choice Scarf (Ability: Refrigerate) (Double-Edge)
+        
+        Proposed:
+    
+
+    [ PASSWORD GRUNT B2B #2 ]
+        Current: 
+            #1 (Singles)
+            Liepard @ Dark Gem (Ability: Pickpocket) (Fake Out, U-Turn, Wicked Blow, Play Rough)
+            Hitmonlee @ Choice Scarf (Ability: Reckless) (Hi Jump Kick, Double-Edge, Head Smash, Rolling Kick)
+            Tauros @ Weakness Policy (Ability: Intimidate) (Head Charge, Strength, Pursuit, Charm)
+            Butterfree @ Proto Booster (Ability: Keen Senses) (Air Slash, Signal Beam, Esper Wing, Quiver Dance )
+    
+            #2 (Singles)
+            Rhydon @ Quick Claw (Ability: Sturdy) (Rock Slide, Earthquake, Megahorn, Mirror Coat)
+            Hypno @ Proto Accelerator (Ability: Inner Focus) (Psychic, Shadow Ball, Sludge Bomb, Curse)
+        Proposed:
+    
+
+    [ PASSWORD GRUNT B2B #3 ]
+        Current: 
+            #1 (Singles)
+            Krookadile @ Proto Armor (Ability: Strong Jaw) (Crunch, Psychic Fangs, Earthquake, Dragon Dance)
+            Dustox @ Brightpowder (Ability: Merciless) (Hex, Infestation, Stun Spore, Moonlight)
+            Sunflora @ Coba Berry (Ability: Solar Power) (Solarbeam, Flamethrower, Ancient Power, Growth)
+            Hitmonchan @ Life Orb (Ability: Iron Fist) (Close combat, Mach Punch, Sky Uppercut, Fire Punch)
+
+            #2 (Singles)
+            Rhydon @ Quick Claw (Ability: Sturdy) (Rock Slide, Earthquake, Megahorn, Mirror Coat)
+            Zweilous @ Proto Accelerator (Ability: Hustle) (Outrage, Wicked Blow, Head Smash, Temper Flare)
+        
+        Proposed:
+    
+
+    [ PASSWORD GRUNT B2B #4 ]
+        Current:
+            #1 (Doubles)
+            Granbull @ Fighting Gem (Ability: Quick Feet) (Facade, Strength, Play Rough, Rock Slide)
+            Furret @ Normal Gem (Ability: Scrappy) (Giga Impact, Coil, Baton Pass, Quick Attack)
+            Dugtrio @ Ground Gem (Ability: Arean Trap) (Dig, Rock Climb, Sucker Punch, Poison Jab)
+            Sharpedo @ Proto Accelerator (Ability: Strong Jaw) (Crunch, Ice Fang, Psychic Fangs, Destiny Bond)
+
+            #2 (Singles)
+            Pachirisu @ Brightpowder (Ability: Prankster) (Parabolic Zap, Draining Kiss, Nasty Plot, Thunder Wave)
+            Parasect @ Proto Armor (Ability: Effect Spore) (Infestation, Defend Order, Synthesis, Leech Seed)
+
+
+        Proposed:
+    
+
+
+
+
+
+Shauntal 
+
+    Singles: 
+        Spiritomb 
+        Drifblim 
+        Ditto
+        Wailord 
+        Banette 
+        Darmanitan 
+        Chandelure 
+
+Grimsley: 
+    Field Effect Ideas: 
+        Global Brightpowder 
+        Global High Crit Chance 
+        Perma Torment 
+
+
+====================================================================================================================================================
+/*   ROUTE 13   */
+
+    
+
+
+====================================================================================================================================================
+/*   LACUNOSA TOWN   */
+
+
+
+====================================================================================================================================================
+/*   FROZEN OPELUCID  */
+
+    Sets for Tag Battle: 
+
+    [HUGH TAG BATTLE]
+        Hugh's Team: 
+            Level 72 Serperior @ Sitrus Berry (Ability: Adaptability) (Grass Pledge, Electro Ball, Hurricane, Hyper Beam)
+            Level 72 Emboar @ Sitrus Berry (Ability: Determined) (Flare Blitz, Crunch, Head Smash, Giga Impact)
+            Level 72 Samurott @ Sitrus Berry (Ability: Hyper Cutter) (Sacred Sword, Razor Shell, Megahorn, Giga Impact)
+            Level 71 Eelektross @ Sitrus Berry (Ability: Levitate) (Scald, Bounce, Thunderbolt, Flamethrower)
+            Level 71 Flygon @ Sitrus Berry (Ability: Amplifier) (Bug Buzz, Clanging Scales, Earth Power, Stone Edge)
+            Level 71 Zangoose @ Sitrus Berry (Ability: Toxic Boost) (Crush Claw, Quick Attack, Knock Off, Fire Punch)
+
+        Plasma Grunt (Right Side)
+            Level 69  @  (Ability: ) (Headlong Rush, Spin Out, Stone Edge, Spiky Shield)
+            Level 69  @  (Ability: ) (Psycho Cut, Foul Play, Confuse Ray, Reflect)
+            Level 69  @  (Ability: ) (Gunk Shot, Wicked Blow)
+            Level 69  @  (Ability: ) (Solarbeam, Earth Power, Flamethrower, Thunderbolt)
+
+        Plasma Grunt (Left Side)
+            Level 69  @  (Ability: ) (Leaf Storm, Sleep Powder, Knock Off, Ancient Power)
+            Level 69  @  (Ability: ) (Fake Out, Revenge, Payback, Block)
+            Level 69  @  (Ability: ) (Close Combat, Wicked Blow, Electro Ball, Silk Trap)
+            Level 69  @  (Ability: ) (Acrobatics, Dazzling Gleam, Stored Power, Hypnosis)
+
+
+
+====================================================================================================================================================
+/*   ROUTE 10   */
+
+        Shadow Triad: (Smoke Bomb)
+            All Pokemon's accuracy is reduced by one stage on switch in. 
+    
+            Primeape @ Focus Sash (Ability: Defiant) (Close Combat, Thrash, U-Turn, Stone Edge)
+            Arbok @ Tera Leftovers (Ability: Intimidate) (Devour, Wrap, Earthquake, Coil) 
+            Fearow @ Life Orb (Ability: Hustle) (Feint Attack, Aerial Ace, Sucker Punch, Pursuit)
+            Magnezone @ Clear Amulet (Ability: Levitate) (Thunderbolt, Tri Attack, Flash Cannon, Energy Ball)
+            Victreebell @ Coba Berry (Ability: No Guard) (Power Whip, Sleep Powder, Gunk Shot, Swords Dance)
+            Banette @ Colbur Berry (Ability: Anger Point) (Double-Edge, Temper Flare, Phantom Strike, Will-o-Wisp)
+
+
+
+====================================================================================================================================================
+/*   ROUTE 23   */
+
+
+
+
+
+
+====================================================================================================================================================
+/*   GIANT CHASM   */
+
+
+====================================================================================================================================================
+/*   GIANT CHASM BASIN   */
+
+
+
+====================================================================================================================================================
+/*   PLASMA FRIGATE   */
+
+    [ SCIENTIST (2x) ]
+        Volbeat @ Proto Armor (Ability: Plus) (Electroweb, Struggle Bug, Confuse Ray, Sweet Scent)
+        Jolteon @ Life Orb (Ability: Minus) (Hyper Voice, Psychic, Aurora Beam, Shadow Ball)
+        Magnezone @ Red Card (Ability: Sturdy) (Electroweb, Thunderbolt, Metal Sound, Energy Ball)
+        Porygon2 @ Eviolite (Ability: Normalize) (Blizzard, Reflect, Light Screen, Recover)
+        Alakazam @ Normal Gem (Ability: Trace) (Hyper Beam, Psychic Noise, Detect, Aura Sphere)
+
+    [ SCIENTIST (1x) ]
+        Wormadam-Trash (Ability: Anticipation) (Quiver Dance, Steel Beam, Infestation, Heal Order)
+        Electrode @ 
+        Klang @ Eviolite (Ability: Heavy Metal) (Gear Grind, Giga Impact, Shift Gear, High Horsepower)
+        Gardevoir @ Brightpowder (Ability: Pixilate) (Stored Power, Uproar, Double Team, Will-o-Wisp)
+
+====================================================================================================================================================
+/*   FRIGATE HEADQUARTERS   */
+
+
+
+
+====================================================================================================================================================
+/*   DEEP GIANT CHASM   */
+
+
+
+

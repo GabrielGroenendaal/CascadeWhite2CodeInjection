@@ -57,6 +57,7 @@ extern VecFx32 *PlayerState_GetWPos(PlayerState *playerState);
 extern bool DoesMonHaveShadowTag(int a1, BattleMon *a2);
 extern bool IsMonTrappedByArenaTrap(BtlClientWk *a1, BattleMon *a2);
 extern bool IsMonSteelType(int a1, int a2);
+extern void TurnFlag_Clear(BattleMon *a1, int a2);
 extern int MainModule_ExpandExistPokeID(
         MainModule *a1,
         PokeCon *a2,

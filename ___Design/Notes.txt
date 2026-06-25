@@ -9,3 +9,16 @@ Entity 3 - Model 13
 Entity 5 - Model 13
 
 
+
+
+
+1255 - HGSS Gym Leader Theme
+1267 - Elite Plasma
+1272 - Shadow Triad theme
+1276 - vs Raikou 
+1277 - vs Entei 
+1278 - vs Suicune
+1283 - Deoxys
+1290 - Frontier Brain
+1292 - Spooky Gen 4 theme
+1297 - Benga encounter theme unfinished

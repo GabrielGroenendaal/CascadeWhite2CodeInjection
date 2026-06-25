@@ -3665,8 +3665,10 @@ extern "C"
             v7 = (MoveFailCause)ServerEvent_CheckMoveExecute(a1, a2, a3, EVENT_MOVE_EXECUTE_CHECK1);
             if (v7 == MOVEFAIL_NULL)
             {
-                // if (BattleMon_GetTurnFlag(a2, TURNFLAG_FOCUSPUNCHFAIL))
+                // if (BattleMon_GetTurnFlag(a2, TURNFLAG_MOVEFAILEDLASTTURN))
                 // {
+                //     TurnFlag_Set(a2, TURNFLAG_MOVEFAILED);
+                //     TurnFlag_Clear(a2, TURNFLAG_MOVEFAILEDLASTTURN);
                 //     v7 = MOVEFAIL_FOCUSPUNCHFAIL;
                 //     goto LABEL_50;
                 // }

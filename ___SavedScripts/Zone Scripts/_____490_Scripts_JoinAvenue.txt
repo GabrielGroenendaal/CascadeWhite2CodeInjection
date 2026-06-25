@@ -647,9 +647,8 @@ public class MainEvents {
 		goto LABEL_FINISHED;
 
 		LABEL_INTRODUCTION:
-		Actor.PauseAll();
+		//Actor.PauseAll();
 
-		Actor.PauseAll();
 		ActionSequence_04ac(0);
 		Actor.WaitActionFinish();
         Sound.SEPlay(1351);
@@ -658,15 +657,49 @@ public class MainEvents {
 		Message.CloseAll();
 		Player.GetGPos(v34, v35);
 		Actor.WalkRoute(0, v34, v35-1, 1, 8, 1);
-		//ActionSequence_04ac(0);
+        TurnSouth32Frames(0);
 		Actor.WaitActionFinish();
-		TurnSouth32Frames(0);
-		//ApproachPlayer(0);
-		Actor.WaitActionFinish();
-        Sound.SEPlay(1351);
+
 		Message.ActorEx(1024, 56, 0, 0, 0);
-		Input.LastKeyWait();
 		Message.CloseAll();
+        
+        EVCamera.Init();
+        EVCamera.Unbind();
+        EVCamera.MoveTo(2.3652344f, 0.0f, 178.0f, 240.0f, 0.0f, 448.0f, 194);
+
+        Message.Multi(84, 6, 20, 1);
+		Runtime.Sleep(26);
+		Message.Multi(85, 4, 11, 2);
+		Runtime.Sleep(26);
+		Message.CloseWin(1);
+		Message.Multi(86, 13, 2, 3);
+		Runtime.Sleep(26);
+		Message.CloseWin(2);
+		Message.Multi(87, 18, 14, 4);
+		Runtime.Sleep(26);
+		Message.CloseWin(3);
+        Message.Multi(88, 6, 20, 5);
+		Runtime.Sleep(26);
+		Message.CloseWin(4);
+        Message.Multi(89, 4, 11, 6);
+		Runtime.Sleep(26);
+		Message.CloseWin(5);
+        Message.Multi(90, 13, 2, 7);
+		Runtime.Sleep(26);
+		Message.CloseWin(6);
+        Runtime.Sleep(26);
+		Message.CloseWin(7);
+		EVCamera.Wait();
+        Fade.OutBlackQ();
+		Fade.Wait();
+        EVCamera.MoveToDefault(1);
+        EVCamera.Wait();
+        EVCamera.Rebind();
+        EVCamera.End();
+        Runtime.Sleep(8);
+        Fade.InBlackQ();
+		Fade.Wait();
+
 
           ShowExclamationMark(0);
           Actor.WaitActionFinish();
@@ -676,9 +709,8 @@ public class MainEvents {
           // OrganizerCrashOut1(0);
 		// TurnEast32Frames(0);
 		// Actor.WaitActionFinish();
-        Sound.SEPlay(1351);
-		Message.Spiked(57, 2);
-		Message.CloseAll();
+            Message.ActorEx(1024, 57, 0, 2, 1);
+            Message.CloseAll();
           // OrganizerCrashOut2(0);
           ShowExclamationMark(0);
           Actor.WaitActionFinish();
@@ -687,10 +719,10 @@ public class MainEvents {
 		//TurnWest32Frames(0);
 		//Actor.WaitActionFinish();
         Sound.SEPlay(1351);
-		Message.Spiked(58, 2);
-		Message.CloseAll();
+        Message.ActorEx(1024, 58, 0, 2, 1);
+            Message.CloseAll();
 		// TurnSouth32Frames(0);
-          Actor.WalkRoute(0, v34, v35-1, 1, 8, 1);
+          Actor.WalkRoute(0, v34, v35-1, 1, 4, 1);
           TurhSouth(0);
 		Actor.WaitActionFinish();
         Sound.SEPlay(1351);
@@ -701,7 +733,7 @@ public class MainEvents {
 
 		LABEL_FINISHED:
 		Runtime.FinishSubEvents();
-		Actor.UnpauseAll();
+		//Actor.UnpauseAll();
 	}
 
 	// Speaking with the Administrator
@@ -775,13 +807,22 @@ public class MainEvents {
 		LABEL_0088:
 		Actor.WaitActionFinish();
 		WordSet.LoadPlayerName(0);
-        Sound.SEPlay(1351);
 		Message.ActorEx(1024, 65, 5, 0, 0);
-		Input.LastKeyWait();
 		Message.CloseAll();
-
+        TurnSouth8F(5);
+        Actor.WaitActionFinish();
+        Message.ActorEx(1024, 82, 5, 0, 0);
+        TurnWest8F(5);
+        Actor.WaitActionFinish();
+        Message.ActorEx(1024, 79, 5, 0, 0);
+        Message.CloseAll();
+        HopLeft(5);
+        Message.ActorEx(1024, 80, 5, 0, 1);
+        Actor.WaitActionFinish();
+        Message.CloseAll();
+        Message.ActorEx(1024, 81, 5, 0, 0);
+        Message.CloseAll();
 		Global2805(158, 10);
-		Sound.SEPlay(1351);
 		Message.ActorEx(1024, 66, 5, 0, 0);
 		Input.LastKeyWait();
 		Message.CloseAll();
@@ -940,6 +981,10 @@ public class MainEvents {
 		ObjInit.SetWarpGPos(1, 0, 0, 0);
 	}
 
+    static meta void HopLeft(int npcId) : VActionSequence {
+        Action0032(1);
+    }
+
 	static meta void ApproachPlayer(int npcId) : VActionSequence {
 		Action000d(2);
 	}
@@ -1044,6 +1089,14 @@ public class MainEvents {
 		Action0023(1);
 	}
 
+    static meta void TurnWest8F(int npcId) : VActionSequence {
+		Action0022(1);
+	}
+
+    static meta void TurnSouth8F(int npcId) : VActionSequence {
+		Action0021(1);
+	}
+
 	static meta void TurnSouth32Frames(int npcId) : VActionSequence {
 		Action0019(1);
 	}
@@ -1103,6 +1156,7 @@ public class MainEvents {
 	static native void Action0020(int amount) : 0x20;
 	static native void Action0022(int amount) : 0x22;
 	static native void Action0023(int amount) : 0x23;
+    static native void Action0032(int amount) : 0x32;
 	static native void Action003d(int amount) : 0x3d;
 	static native void Action003f(int amount) : 0x3f;
 	static native void Action0045(int amount) : 0x45;

@@ -1,0 +1,191 @@
+
+
+====================================================================================================================================================
+/*   NEW PROGRESSION   */
+
+
+This is the new progression for Kyurem Split Plasma Frigate.
+
+
+    [ BATTLE IN OPELUCID ]
+        There are now three sets of tag battles here. 
+        After team plasma successfully steals the Dark Stone. 
+        Iris will leave to go find the other legendary dragon to defeat Kyurem. 
+
+    [ RUMBLE IN THE GIANT CHASM ]
+        A 6v20 Rumble in the Giant Chasm outside the Plasma Frigate. 
+
+    [ TELEPORTER PUZZLE ]
+        Pretty much vanilla, but we're going to need to change some more trainers to be mandatory. 
+
+    [ ZINZOLIN BOSS ]
+        This is now a single battle with Zinzolin. 
+        We need to edit this script so that Kyurem jumps out of it's enclosure again. 
+        Afterwards, Zinzolin will withdraw Kyurem and deliver it to Ghetsis while the player has to go content with Colress. 
+
+    [ COLRESS BATTLE ]
+        Nothing to change here
+        Interacting with an item in the back of his room spawns a wild Pokemon. 
+
+    [ SHADOW TRIAD BATTLE ]
+        You are ambushed by one member of the Shadow Triad. 
+        Two more show up and Janine appears to assist. 
+        After they are defeated, they will try to escape only to realize they are paralyzed
+        Janine reveals she nicked them with her family's poison while they were distracted by the battle. 
+        The triad will fall to the floor 
+        Janine will thank the player for their aid. She's not sure she could've managed it by herself. 
+        What will she do with them now? Bring them back to Kanto for justice. 
+        She'll give the player something spicy here. 
+
+    [ GHETSIS ]
+        You pursue Ghetsis into the back of Giant Chasm. 
+        When you encounter Ghetsis, his attack is interrupted by N & Reshiram (?*)
+        N will mention Iris and the other gym leaders are already busy rounding up the grunts outside. 
+        N will battle Kyurem while Ghetsis battles you. 
+
+        *part of me thinks that these beats would work better if it's Zekrom and Kyurem-Black, since it better fits the idea of darkness and 
+
+    [ POST GHETSIS SCENE ]
+        After Ghetsis is defeated he will go fufufufu 
+        He commands Kyurem to fuse with Reshiram/Zekrom. The cutscene happens. 
+        Afterwards, instead of obeying, Kyurem goes into a frenzy and N tackles the player to get them out of the way of an attack. 
+        The player is sent back to the title screen. 
+
+    [ POST FUSION SCENE ]
+        The player awakes in a completely frozen version of kyurem's lair with massive ice crystals and a mist rolling over everything. 
+        Ghetsis is frozen in a block of ice. 
+        The player can retrieve the DNA splicers from his staff. 
+        N remarks that the only reason Kyurem did not freeze them is because there's probably something left of Reshiram in there 
+        But that it's being smothered by Kyurem's rage and sorrow. 
+        N notes that it took the Dark stone with it... does it hope to fuse with Zekrom too...?
+        N will accompany the player as they leave. 
+
+    [ GIANT CHASM ]
+        The plasma frigate is gone from Giant Chasm. Team Plasma left, as Colress said they would. 
+        N remarks that they can hear the sounds of battle from the center of the crater... is that Iris? 
+        The anguish of Pokemon is all N can hear. It's defeaning. 
+
+        The chasm itself has a unique weather effect that is like pitch darkness + howling winds. 
+
+    [ GIANT CHASM ENTITIES ]
+        Giant Chasm is filled with roaming Wild Pokemon that use the Trainer Encounter scripts. 
+        There are four "quadrants" each of which can be cleared by a sword of justice you helped. 
+        These wild Pokemon are level 70 and receive an omniboost.
+
+        Ideally, there is a unique theme for the wild pokemon if fought here. 
+        They wiil also have unique sprites. 
+
+        Shivering Plasma Grunts can be found around hiding from their now berserk pokemon. 
+        Benga, Hugh, Roood can be encountered around fending off crazed Pokemon. 
+
+    [ GIANT CHASM FINALE ]
+        Kyurem stands in the middle of the chasm, having just beaten Iris down. 
+        It seems heavily damaged from the battle.
+        Kyurem has a special triples battle with a unique mechanic. 
+        After Kyurem is defeated, you unfuse it and Reshiram. 
+        The weather changes to not shit, maybe the "diamond dust" effect?
+        N gives his usual spiel, and says Kyurem was a hollow creature filled with the hate and cruelty of humans. Perhaps now it needs time to rest and return to a neutral state. 
+        Iris thanks the player, and invites them to seek out the Pokemon League. 
+        Around the chasm Benga and Hugh will give the players words of encouragement. 
+
+
+
+====================================================================================================================================================
+/*   WHAT DOES THIS REQUIRE   */
+
+    [ EXIT SAVE ]
+        When Kyurem goes berserk, I'd like the player to get kicked to the start screen. 
+        Even more ideally, have the audio be different when you do. 
+        I think we can look to the Pokemon League for an idea of how to implement this. 
+    
+    [ GIANT CHASM POLISH ]
+        Sprites
+            - Shivering Male Plasma Grunt 
+            - Shivering Female Plasma Grunt 
+            - Collapsed Shadow Triad Member 
+        
+        3D Model
+            - Frozen Ghetsis 
+            - Modified Giant Chasm Basin; needs to be filled with giant ice crystals that block off access to the center. 
+
+        Weather: 
+            - This is a system I'm unfamiliar with. 
+            - We'll want to add a new custom weather or lighting effect that makes the chasm feel like it's in pitch darkkness. 
+
+
+    [ GIANT CHASM WILD BATTLE MECHANICS ]
+        
+        Battle Scripts:
+            - Wild Pokemon need to move throughout Giant Chasm like trainers with erratic movement codes. 
+            - What we need to look into is if Behavior 1 works with other types of scripts. 
+            - If it doesn't...
+        
+        Global Trainer Script: 
+            - We'll neeed to modify this so that for a specific set of trainer ids, maybe 15-20 of them, instead of callling a trainer battle it maps them onto a Pokemon id. 
+            - It then triggers a wild pokemon battle with the flags for Kyurem. 
+            - On a loss, for one of these battles, it will end the battle, trigger a Runtime.ReserveScript and send the player back to the Giant Chasm cave where N will nurse you back to health 
+
+        Running Away: (Easy)
+            - We need to add a check in the function that checks if the player can run fromm battle that if the zone is giant chasm and a certain event flag is active, they cannot 
+        
+        Wild Pokemon Data: (Easy)
+            - We need to edit our "SetupWildEncounter" script so that if the zone is giant chasm and the event is active, it will randomly assign them one of the CLRS items, including a 10% chance at it being a CLRS invention. 
+        
+        Item Handlers: (Easy)
+            - While in this Giant Chasm map, the text and animation for the CLRS Machines is slightly different. 
+
+        A new Music Theme?: (HARD)
+            This is a tall order but having a custom wild battle pokemon theme for these mons would be pretty sick. 
+
+
+    
+    [ KYUREM BATTLE MECHANICS ]
+        This sounds complicated, but I think it will be pretty simple. 
+        Kyurem will be in the center of a triple battle. He will have a side effect applied to his side of the battle (but it could also be a field effect)
+        
+        Side/Field Effect: 
+            - Kyurem cannot be damaged by anything, affected by any status, etc. while it is in form-1 (Kyurem-White)
+            - At the end of the turn, if Kyurem has no ally Pokemon remaining and no pokemon in reserve, a unique animation plays and it transforms into Kyurem-Black (form 2)
+        
+        Stat Lines: 
+            Kyurem-White (if it's the First Fight): 
+                 HP: 125
+                Atk: 120
+                Def: 90
+                SpA: 170
+                SpD: 100
+                Spe: 95
+                Held Item: Dark Stone
+                Ability: Slow Start
+                MoveSet: Icy Wind, Breaking Swipe, Roar, Mean Look
+            
+            Kyurem-Black (if it's the Second Fight): 
+                 HP: 125
+                Atk: 170
+                Def: 160
+                SpA: 150
+                SpD: 130
+                Spe: 125
+                BST: 860
+                MoveSet:  Wild Charge, Dragon Rush, Blizzard, Boomburst
+
+            OR 
+
+            Kyurem-Black (if it's the First Fight): 
+                 HP: 125
+                Atk: 170
+                Def: 100
+                SpA: 120
+                SpD: 90
+                Spe: 95
+                MoveSet: Breaking Swipe, Icy Wind, Roar, Block
+
+            Kyurem-White (if it's the Second Fight): 
+                 HP: 125
+                Atk: 150
+                Def: 160
+                SpA: 170
+                SpD: 130
+                Spe: 125
+                MoveSet: Blizzard, Dragon Rush, Searing Shot, Boomburst
+        

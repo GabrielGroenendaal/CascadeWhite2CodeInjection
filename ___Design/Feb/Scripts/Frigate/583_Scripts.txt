@@ -160,7 +160,7 @@ public class MainEvents {
                 Message.Actor(1024, 17, 0, 0);
                 Message.CloseAll();
 
-                goto skipbattle4;
+                //goto skipbattle4;
                 Battle.CallTrainerBattle(435, 0, 0);
                 isVictory = Battle.IsTrainerVictory();
                 if (isVictory != 1){
@@ -248,7 +248,7 @@ public class MainEvents {
         EVCamera.End();
         Actor.WaitActionFinish();
 
-        goto skipbattle3;
+        //goto skipbattle3;
         if (EventWorks.Get(16432) == 2){
             trainerId = 796;
         }
@@ -469,7 +469,7 @@ public class MainEvents {
         Message.ActorEx(1024, 55, GRUNTA_ENTITY, 4, 1);
         Message.CloseAll();
 
-        goto skipbattle2;
+        //goto skipbattle2;
         Battle.CallTrainerBattle(432, 0, 0);
 		isVictory = Battle.IsTrainerVictory();
 		if (isVictory != 1) {
@@ -508,7 +508,7 @@ public class MainEvents {
 		Message.ActorEx(1024, 60, GRUNTB_ENTITY, 2, 1);
         Message.CloseAll();
 
-        goto skipbattle;
+        //goto skipbattle;
         Battle.CallTrainerBattle(442, 0, 0);
 		isVictory = Battle.IsTrainerVictory();
 		if (isVictory != 1) {
