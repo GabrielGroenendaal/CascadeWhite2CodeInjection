@@ -307,6 +307,14 @@ public class MainEvents {
 		Trainer.FlagGet(152);
 		Trainer.FlagGet(332);
 		EventFlags.Set(2419);
+
+        // Deactivates all Sabrina related events 
+        if (!EventFlags.Get(1520 + 769)){
+            EventWorks.Set(16523, 4);
+        }
+		if (EventFlags.Get(1520 + 769)){
+			EventFlags.Set(3052);
+		}
 		clearGatekeepers();
 		
 		EventWorks.Set(16577, 1);

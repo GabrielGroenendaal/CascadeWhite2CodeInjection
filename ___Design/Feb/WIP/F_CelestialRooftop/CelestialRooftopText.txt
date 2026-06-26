@@ -1,0 +1,77 @@
+----- TEXT FILE 554-----
+0: A mysterious presence can be felt here!\nCheck the surrounding area?
+1: Kyauun!
+2: Mesprit went flying off somewhere...
+3: It's the Celestial Tower bell...\nWill you ring the bell?
+4: [VAR TRNAME(0)] rang the bell...
+5: The sound of the bell\nreverberates through the area...
+6: The sound of the bell\nreverberates through the area...\c
+7: The bell was left untouched...
+
+
+
+
+[ THE PLAYER CAN ENCOUNTER SABRINA AT THE TOP OF CELESTIAL TOWER. SHE IS PORTRAYED WITH SIMILAR ATTITUDES TO HER CANON PERSONALITY, BUT A BIT MORE MELLOW AND ADRIFT, AS IF PAYING ATTENTION TO MULTPLE THINGS AT ONCE ]
+8: Sabrina Introduction Text. She is feeling a strange presence at the top of the rooftop and seems unaware of the player. 
+
+9: Sabrina expresses her awareness of the player, indicating she can feel their mind even without looking at them.
+
+10: As she turns around to face the player, however, she expresses sudden shock "-its you?". From this point onward, she wil inexplicably use the Player's actual name. 
+
+11: Sabrina explains she is visiting for a pokemon tournament. But that she was drawn to this tower though she can't explain why. 
+
+12: She asks the player if they can feel the strange energy on the Celestial Tower's rooftop. 
+
+[ THE PLAYER IS GIVEN A YES/NO PROMPT ]
+
+13: If the player says no, Sabrina is unsurprised, and says most people aren't sensitive to these things. 
+
+14: If the player says yes, Sabrina asks the player to describe how it feels. 
+
+[ THE PLAYER IS PRESENTED THE FOLLOWING OPTIONS TO RESPOND WITH ]
+
+15: 
+Pained 
+
+16: 
+Joyous 
+
+17:
+Mournful 
+
+18: A joke option where the player is expressing that the wind is cold on the rooftop
+Cold
+
+[ NOTE: Each of Sabrina's responses will reference some kind of premonition relevant to the player's upcoming journey through Unova ]
+19: Sabrina's response to "Pained". She relates that the spirits of pokemon haunt this place, many of which have not yet found peace. Perhaps the ringing of the bell soothes them. 
+
+20: Sabrina's response to "Joyous". She relates this to all the good memories people feel when they visit this tower and ring this bell. 
+
+21: Sabrina's response to "Mournful". She relates this to the purpose of celestial tower (a graveyard) and the players grief over having their Pokemon stolen
+
+22: Sabrina's response to "Cold", which she initially responds to in earnest then realizes the player is probably talking about the wind. 
+
+23: Sabrina says as a psychic, she often has premonitions. She can't explain why, but three years ago she had a vision of battling you. She's not sure what happens next, but it felt important. she then asks to battle. 
+
+[ THE PLAYER RECEIVES A YES/NO PROMPT TO BATTLE SABRINA ]
+
+24: [PLAYER SAYS NO] Sabrina is surprised. She questions whether her premonition was wrong, or had simply yet come to pass. She will wait here a little while longer. 
+
+25: [PLAYER SAYS YES] Sabrina arranges the battlefield to look like her vision, asking the player to stand at a specific point, shifting once or twice, then going "that's right". 
+
+26: Once in position, Sabrina starts battle by saying "Let's see what happens next!" 
+
+27: After the battle, Sabrina expresses shock at the events of the battle not being what she expected. She ominously wonders if that means that everything else that's to come may still yet change, that there's hope for this region?
+
+28: She urges the pllayer to continue on their adventure, that the bond between them and their pokemon is powerful to forge their own fates. To help you on your journey she gives out 
+
+[ 5x IV Enhancers, the Covert Cloak, the Will o Wisp TM ]
+
+29: "You'll know what to do with these when the time comes." Sabrina wishes you luck with what's to come, then seemingly teleports away.  
+
+30: Blurb of text you get from speaking with Alakazam.
+
+
+31: After ringing the spirit gong, a wild pokemon appears! 
+
+32: [PLAYER SAID NO INITIALLY THEN RETURNS LATER]: Sabrina asks if they're ready to battle now? 

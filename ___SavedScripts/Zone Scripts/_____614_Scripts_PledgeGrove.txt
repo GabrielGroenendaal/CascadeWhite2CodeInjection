@@ -387,7 +387,6 @@ public class MainEvents {
 
 		EventWorks.Set(16515, 2);
 		EventFlags.Set(1520 + 764);
-;
 	}
 	
 

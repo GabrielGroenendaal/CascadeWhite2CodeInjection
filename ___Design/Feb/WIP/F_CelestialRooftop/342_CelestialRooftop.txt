@@ -1,0 +1,172 @@
+import messages.script.Msg0553.MSGID;
+
+import event.Battle;
+import event.EVCamera;
+import player.Bag;
+import event.actors.Actor;
+import event.actors.Player;
+import event.dialogs.Message;
+import event.dialogs.YesNoWin;
+import player.TrainerCard;
+import pokescript.vm.Math;
+import pokescript.vm.StackCtrl;
+import pokescript.vm.VM;
+import system.EventFlags;
+import system.EventWorks;
+import system.Fade;
+import system.Input;
+import system.Runtime;
+import system.text.WordSet;
+import system.Sound;
+import event.Battle;
+import system.Field;
+
+
+public class MainEvents {
+
+    // Sabrina Event Trigger
+	public static void main_1() { // @ 0x1c
+	
+    }
+
+    // Sabrina Event Trigger 2
+	public static void main_2() { // @ 0x1e
+		
+	}
+
+    // Speaking with Alakazam 
+	public static void main_3() {
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Sound.PVPlay(65, 0);
+		Message.Info(17, 0);
+		Sound.PVWait();
+		Message.CloseAll();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+    // Ringing the Gong 
+	public static void main_4() {
+		int random; 
+		int speciesId;
+		int form;
+		int level;
+		int isVictory;
+		if (EventFlags.Get(1520 + 769)) {
+			Actor.PauseAll();
+			random = System.Random(100);
+			level = System.Random(2) + 39;
+			form = 0;
+			if (random < 100) {
+				if (random < 75) {
+					if (random < 50) {
+						if (random < 40){
+							if (random < 30) {
+								if (random < 20) {
+									if (random < 10) {
+										speciesId = 356; // Togetic
+									}
+									else {
+										speciesId = 593; // Misdreavus
+									}
+								}
+								else {
+									speciesId = 604; // Noctowl
+								}
+							}
+							else {
+								speciesId = 367; // Murkrow
+							}
+						}
+						else {
+							speciesId = 368; // Altaria
+						}
+					}
+					else {
+						speciesId = 369; // Castform
+						form = System.Random(3);
+					}
+				}
+				else {
+					speciesId = 358; // Chimecho
+				}
+			} 
+			else {
+				speciesId = 358; // Chimecho
+			}
+
+			Sound.PVPlay(speciesId, 0);
+			Sound.PVWait();
+			Battle.CallWildBattleEx(speciesId, level, form,  0);	
+			isVictory = Battle.IsWildVictory();
+			if (isVictory != 1){ 
+				Battle.CallWildLose();
+				goto Label_LostWildBattle;		
+			}
+			Battle.EndWildBattle();
+			
+			Label_LostWildBattle:
+			Runtime.FinishSubEvents();
+			Actor.UnpauseAll();
+		}
+	}
+
+    static void sub_SabrinaBattle(){
+
+	}
+
+
+	static void sub_0117() { // @ 0x117
+		int v16;
+
+		v16 = Battle.IsTrainerVictory();
+		if (v16 != 1) {
+			Battle.CallTrainerLose();
+			return;
+		}
+		Battle.EndTrainerBattle();
+	}
+
+	
+	static meta void ShowExclamationMark(int npcId) : VActionSequence {
+		Action004b(1);
+	}
+
+	
+	static meta void TurnSouth(int npcId) : VActionSequence {
+		Action0021(1);
+	}
+
+	static meta void WalkSouthOneTile(int npcId) : VActionSequence {
+		Action000d(1);
+	}
+	
+	static meta void TurnWest(int npcId) : VActionSequence {
+		Action0022(1);
+	}
+
+
+    static meta void Global2805(int a1, int a2) : VGlobalCall[2805];
+	static native void Action000d(int amount) : 0xd;
+	static native void Action000f(int amount) : 0xf;
+	static native void Action000c(int amount) : 0xc;
+	static native void Action0010(int amount) : 0x10;
+	static native void Action0011(int amount) : 0x11;
+	static native void Action0012(int amount) : 0x12;
+	static native void Action0013(int amount) : 0x13;
+	static native void Action0020(int amount) : 0x20;
+	static native void Action0021(int amount) : 0x21;
+	static native void Action0022(int amount) : 0x22;
+	static native void Action0023(int amount) : 0x23;
+	static native void Action0032(int amount) : 0x32;
+	static native void Action0033(int amount) : 0x33;
+	static native void Action0036(int amount) : 0x36;
+	static native void Action003f(int amount) : 0x3f;
+	static native void Action004b(int amount) : 0x4b;
+	static native void Action0047(int amount) : 0x47;
+	static native void Action0048(int amount) : 0x48;
+	static native void Action00a1(int amount) : 0xa1;
+	static native void Action000b(int amount) : 0xb;
+}

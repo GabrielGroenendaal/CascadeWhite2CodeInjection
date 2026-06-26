@@ -1089,8 +1089,7 @@ public class MainEvents {
 	public static void main_37() { // @ 0x600
 		Actor.PauseAll();
 		Sound.SEPlay(1351);
-		Message.Spiked(95, 2);
-		Message.WaitAdvance();
+		Message.Actor(1024, 95, 2, 1);
 		Message.CloseAll();
 		Runtime.FinishSubEvents();
 		Actor.UnpauseAll();
@@ -1098,8 +1097,7 @@ public class MainEvents {
 	public static void main_38() { // @ 0x600
 		Actor.PauseAll();
 		Sound.SEPlay(1351);
-		Message.Spiked(96, 2);
-		Message.WaitAdvance();
+		Message.Actor(1024, 96, 2, 1);
 		Message.CloseAll();
 		Runtime.FinishSubEvents();
 		Actor.UnpauseAll();
@@ -1107,10 +1105,8 @@ public class MainEvents {
 	public static void main_39() { // @ 0x600
 		Actor.PauseAll();
 		Sound.SEPlay(1351);
-
-		Message.Actor(1024, 97, 0, 0);
-		Input.LastKeyWait();
-		Message.CloseActor();
+		Message.Actor(1024, 97, 2, 1);
+		Message.CloseAll();
 		Runtime.FinishSubEvents();
 		Actor.UnpauseAll();
 	}
@@ -1132,7 +1128,7 @@ public class MainEvents {
 		ShowExclamationMark(255);
 		Actor.WaitActionFinish();
 		EVCamera.Shake(6, 0, 3, 10, 1, 0, 1, 3);
-        	Runtime.Sleep(32);
+        Runtime.Sleep(32);
 		StrafeLeft(255);
 		Actor.WaitActionFinish();
 		Message.System(99, 2);

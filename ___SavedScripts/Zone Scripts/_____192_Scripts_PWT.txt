@@ -405,8 +405,8 @@ public class MainEvents {
 
 	public static void main_21() { // @ 0x684
         int isVictory;
-	int v4;
-	int v5;
+        int v4;
+        int v5;
 		Actor.PauseAll();
 		ActionSequence_082c(17);
 		Actor.WaitActionFinish();
@@ -440,12 +440,50 @@ public class MainEvents {
 		Input.LastKeyWait();
 		Message.CloseActor();
 		Global2805(530, 3);
+        Message.ActorEx(1024, 38, 17, 0, 0);
+		Message.CloseAll();
+
 		Global2805(294, 1);
 		Message.ActorEx(1024, 33, 17, 0, 0);
-		Input.LastKeyWait();
+        Message.ActorEx(1024, 34, 17, 0, 0);
+		Message.CloseAll();
+
 		EventWorks.Set(16470, 0);
 		Field.PlayMapBGM();
 		Message.CloseAll();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	// Janine
+    public static void main_22() { // @ 0x664
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Message.Actor(1024, 35, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	// Giovanni
+    public static void main_23() { // @ 0x664
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Message.Actor(1024, 36, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	// Sabrina
+    public static void main_24() { // @ 0x664
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Message.Actor(1024, 37, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
 		Runtime.FinishSubEvents();
 		Actor.UnpauseAll();
 	}

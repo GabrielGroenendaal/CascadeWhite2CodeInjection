@@ -1,0 +1,479 @@
+
+
+/*         
+	
+	-----------------------------------------------------------------------------------------------------------------------------------------
+	-------------------------------------------------- WHAT I WANNA DO TODAY ---------------------------------------------------------------- 
+	-----------------------------------------------------------------------------------------------------------------------------------------       
+
+*/
+
+
+[ POLISH ]
+    End of Turn Animations For Weather
+
+[ BALANCE ]
+    Shuckle +10 HP
+
+    Make these moves 80% Accurate: 
+        Focus Blast 
+        Hurricane
+        Thunder
+        Blizzard 
+        Scorching Swarm 
+
+
+
+
+[ NEW UNOWN AND COMBEE FORMS ]
+
+    Sprites:
+        This is by far going to be the hardest part. 
+        We need to create Party Sprites, Front Sprites, Back Sprites for 
+        
+        Combee-Swarming 
+        Unown-Sunken Script
+        Unown-Buried Script
+        
+        Look into midjourney, stable diffusion. we need to make actual gifs 
+    
+    Form Insertion: 
+        We can take up some space from Pokestar Studios entities to add the two new unown personal stat files. 
+    
+    Ability Implementation: 
+        I think I already have this solved. 
+    
+    Encounters: 
+        While the puzzle is a cute idea, for now I think just have the Unown have a script in Abyssal Ruins and Whatever
+
+        Remove Combee from the Castelia Gardens table. Replace it with Mothim. 
+
+        Replace Vespiquen with Combee. in Deep Lostlorn Forest 
+
+    Combee Swarming 
+        Combee:  
+             HP: 50 (+20)
+            Atk: 30
+            Def: 42
+            SpA: 30
+            SpD: 42
+            Spe: 70
+            BST: 264 (+20)
+        
+        Combee-Swarming: 
+            Typing: Bug/Psychic 
+        
+             HP:  50
+            Atk: 120 (+90)
+            Def: 135 (+93)
+            SpA: 120 (+90)
+            SpD: 135 (+93)
+            Spe:  70 
+            BST: 630 
+    
+    Unown Swarming:
+        Unown: (Looks like a)
+        Unown-Buried: 
+        Unown-Sunken: (Looks like a Question Mark)
+             HP: 108 (+60)
+            Atk:  82 (+10)
+            Def:  48 
+            SpA:  82 (+10)
+            SpD:  48
+            Spe:  48
+            BST: 416 (+80)
+
+        Unown-Collective: 
+            Typing: Psychic
+             HP:  48 
+            Atk: 108
+            Def: 132
+            SpA: 108
+            SpD: 132
+            Spe:  48
+            BST: 630 
+
+        Unown-Collective: 
+            Typing: Ghost 
+             HP: 108 
+            Atk: 132
+            Def: 108
+            SpA: 132
+            SpD: 108
+            Spe:  48
+            BST: 636 
+
+    extern "C" void HandlerCollective(BattleEventItem * item, ServerFlow * serverFlow, u32 pokemonSlot, u32 * work) {
+        if (pokemonSlot == BattleEventVar_GetValue(VAR_MON_ID)) {
+            BattleMon* currentMon = Handler_GetBattleMon(serverFlow, pokemonSlot);
+
+            //  0: Combee-Male 
+            //  1: Combee-Female 
+            //  2: Combee-Collective
+            // 26: Unown-Exclamation 
+            // 27: Unown-Question 
+            // 28: Unown-Exclamation Schooling 
+            // 29: Unown-Question Schooling
+
+            u8 currentForm = BattleMon_GetValue(currentMon, VALUE_FORM);
+            u8 newForm = currentForm;
+            u16 msgID = BATTLE_SCHOOLING_INACTIVE_MSGID;
+
+            // TODO: ADD WISHIWASHI
+            if (BattleMon_GetSpecies(currentMon) == 201) {
+                u32 currentHP = BattleMon_GetValue(currentMon, VALUE_CURRENT_HP);
+                if (currentForm == 26 || currentForm == 27){
+                    if (currentHP > DivideMaxHPZeroCheck(currentMon, 4u)) {
+                        newForm = currentForm - 2;
+                        msgID = BATTLE_SCHOOLING_ACTIVE_MSGID;
+                    }
+                }
+                if (currentForm == 28 || currentForm == 29){
+                    if (currentHP <= DivideMaxHPZeroCheck(currentMon, 4u)) {
+                        newForm = currentForm + 2;
+                        msgID = BATTLE_SCHOOLING_INACTIVE_MSGID;
+                    }
+                } 
+            }
+
+            if (BattleMon_GetSpecies(currentMon) == 415) {
+                u32 currentHP = BattleMon_GetValue(currentMon, VALUE_CURRENT_HP);
+                if (currentForm == 0){
+                    if (currentHP > DivideMaxHPZeroCheck(currentMon, 4u)) {
+                        newForm = currentForm + 2;
+                        msgID = BATTLE_SCHOOLING_ACTIVE_MSGID;
+                    }
+                }
+                if (currentForm == 2){
+                    if (currentHP <= DivideMaxHPZeroCheck(currentMon, 4u)) {
+                        newForm = currentForm - 2;
+                        msgID = BATTLE_SCHOOLING_INACTIVE_MSGID;
+                    }
+                } 
+            }
+
+
+            if (currentForm != newForm) {
+                    HandlerParam_ChangeForm* changeForm;
+                    changeForm = (HandlerParam_ChangeForm*)BattleHandler_PushWork(serverFlow, EFFECT_CHANGE_FORM, pokemonSlot);
+                    changeForm->header.flags |= HANDLER_ABILITY_POPUP_FLAG;
+                    changeForm->pokeID = pokemonSlot;
+                    changeForm->newForm = newForm;
+                    BattleHandler_StrSetup(&changeForm->exStr, 2u, msgID);
+                    BattleHandler_PopWork(serverFlow, changeForm);
+                }
+
+        }
+    }
+    BattleEventHandlerTableEntry CollectiveHandlers[]{
+        {EVENT_SWITCH_IN, HandlerCollective},
+        {EVENT_TURN_CHECK_DONE, HandlerCollective},
+    };
+    extern "C" BattleEventHandlerTableEntry * EventAddZenMode(u32 * handlerAmount) {
+        *handlerAmount = ARRAY_COUNT(SchoolingHandlers);
+        return CollectiveHandlers;
+    }
+
+
+
+[ FOCUS ENERGY REWORK ]
+    We can take another crack at implementing this, ignoring the standard movefail conditions. 
+    Instead we can just use the same check we have for focus punch. 
+    And if it occurs, the move fails. 
+
+    We should also test that you can even have a move that raises all the user's stats by one. 
+    
+    Current Users: 
+        Mienfoo 
+        Sharpedo 
+        Octillery 
+        Salamence 
+        Darmanitan-Zen 
+        Hydreigon 
+        Typhlosion 
+        Serperior 
+        Swellow 
+        Skuntank 
+        Magmortar 
+        Kricketune 
+        Infernape 
+        Hypno 
+        Camerupt 
+        Beheeyem 
+    
+    Original Users: 
+        Beedrill 
+        Raticate 
+        Fearow 
+        Nidoking 
+        Primeape 
+        Machamp 
+        Marowak 
+        Hitmonlee
+        Hitmonchan 
+        Hitmontop 
+        Kangaskhan 
+        Kingdra 
+        Scyther 
+        Scizor 
+        Pinsir 
+        Octillery 
+        Blaziken
+        Swellow
+        Vigoroth 
+        Hariyama 
+        Sharpedo 
+        Camerupt 
+        Salamence 
+        Kricketune 
+        Rampardos 
+        Drifblim 
+        Skuntank 
+        Samurott 
+        Conkeldurr 
+        Sawk 
+        Throh 
+        Bouffalant 
+        Hydreigon 
+        Nidoqueen 
+        Furret 
+        Ursaring 
+        Donphan 
+        Tyranitar 
+        Flygon 
+        Infernape 
+   
+
+
+
+  
+[ MECHANICS TO IMPLEMENT ]
+    
+
+Shauntal: 
+    Spiritomb @ Chesto Berry (Ability: Magic Guard) (Dooom Desire, Parting Shot, Hyper Beam, Rest)
+    Ditto @ Enigma Berry (Ability: Imposter) (Parting Shot)
+    Unown-Sunken @ Sitrus Berry (Ability: Collective) (Nightmare, Ancient Power, Recover, Earth Power)
+    Drifblim @ Red Card (Ability: Aftermath) (Ominous Wind, Hurricane, Explosion, Will-o-Wisp)
+    Banette @ Colbur Berry (Ability: Hustle) (Retaliate, Phantom Strike, Play Rough, Curse)
+    Chandelure @ Choice Scarf (Ability: Shadow Tag) (Shadow Ball, Heat Wave, Self-Destruct, Switcheroo)
+
+
+Marshall: 
+
+    Doubles: 
+        Staraptor 
+        Scrafty 
+        Tauros 
+        Infernape
+        Conkeldurr 
+    
+    Field Effect: Straight Up Brawl
+    Pokemon cannot take damage from indirect sources. (See: Magic Guard)
+    
+    Singles 
+    Electivire @ Choice Scarf (Ability: Teravolt) (Hi Jump Kick, Supercell Slam)
+    Medicham @ Choice Scarf (Ability: Huge Power) (Hi Jump Kick, Supercell Slam)
+
+
+    Hitmonlee @ Muscle Band (Ability: Quick Feet) (Fake Out, Hi Jump Kick, Facade, Supercell Slam)
+    Luxario @ Life Orb (Ability: Skill Link) (Spike Cannon, Arm Thrust, Bone Rush, Extremespeed)
+    Onix @ Covert Cloak (Ability: Sturdy) (Stone Edge, Headlong Rush, Explosion, Dragon Dance)
+    Blaziken @ Focus Sash (Ability: Speed Boost) (Blaze Kick, Superpower, Brave Bird, Detect)
+    Bouffalant @ Blunder Policy (Ability: Reckless) (Head Charge, Head Smash, Supercell Slam, Headlong Rush)
+    Conkeldurr @ Tera Orb (Ability: Guts) (Mach Punch, Rolling Kick, Accelerock, Rock Wrecker)
+
+
+
+[ SPRITES TO CREATE ]
+    Collapsed Garchomp 
+    Combee-Swarm
+    Unown-Swarm
+
+
+[ AI ]
+    Double check that we implemented the spread move logic for moves. Idk why it wouldn't be in the repo we definitely copied it over. 
+
+
+[ FIGHTS ]
+    Zinzolin First Fight: 
+        Zinzolin
+            Cryogonal @ Red Card (Ability: Sturdy) (Sheer Cold, Spikes, Self-Destruct, Charge Beam)
+            Weavile @ Focus Sash (Ability: Exploit) (Ice Fang, Knock Off, Pursuit, Diamond Storm)
+            Crobat @ Poison Gem (Ability: Stakeout) (Sludge Wave, Brave Bird, Heat Wave, Tailwind)
+            Walrein @ Assault Vest (Ability: Intimidate) (Avalanche, Aqua Tail, Glaciate, Strength) 
+        
+        Kyurem
+            Spiritomb @ Power Herb (Ability: Magic Guard) (Shadow Force, Doom Desire, Will-o-Wisp, Ancientpower)
+            Magnezone @ Occa Berry (Ability: Levitate) (Electroweb, Thunderbolt, Flash Cannon, Energy Ball)
+            Gengar @ Life Orb (Ability: Unnerve) (Shadow Ball, Seething Cold, Smog, Hypnosis)
+            Kyurem @ Focus Band (Ability: Refrigerate) (Echoed Voice)
+
+    Changes to Mini Bosses: 
+
+        Volkner: 
+            Level 51 Jolteon @ Ability Drill (Ability: Tenacity) (Thunderbolt, Volt Switch, Thunder Wave, Signal Beam)
+            Level 51 Raichu @ Tera Belt (Ability: Sheer Force) (Icicle Crash, Teeter Dance, Earth Power, Discharge)
+            Level 51 Ambipom @ Starf Berry (Ability: Speed Boost) (Slam, Thunder Punch, Substitute, Baton Pass)
+            Level 51 Luxray @ Focus Band (Ability: Rivalry) (Beat Up, Discharge, Glare, Thrash)
+            Level 52 Electivire @ Assault Vest (Ability: Galvanize) (Return, Ice Punch, Cross Chop, Earthquake)
+
+        Roxanne:
+            Level 52 Cradily @ Focus Band (Ability: Poison Heal) (Leaf Tornado, Ancient Power, Infestation, Gastro Acid)
+            Level 52 Claydol @ Brightpowder (Ability: Speed Boost) (Stored Power, Ancient Power, Stealth Rock, Healing Wish)
+            Level 52 Probopass @ Tera Weakness Policy (Ability: Sand Force) (Earth Power, Flash Cannon, Weather Ball, Charge Beam)
+            Level 52 Onix @ Power Herb (Ability: Sand Rush) (Skull Bash, Dig, Rock Slide, Substitute)
+            Level 52 Shuckle @ Light Clay (Ability: Strong Body) (Infestation, Sand Tomb, Light Screen, Reflect)
+            Level 53 Nosepass @ Mascot Badge (Ability: Volt Absorb) (Power Gem, Discharge, Energy Ball, Recover)
+        
+        Morty:
+            Level 52 Dusclops @ Eviolite (Ability: Cursed Body) (Ominous Wind, Curse, Protect, Night Shade)
+            Level 52 Dustox @ Focus Band (Ability: Marvel Scale) (Infestation, Ominous Wind, Poison Gas, Moonlight)
+            Level 52 Stantler @ Colbur Berry (Ability: Intimidate) (Body Slam, Phantom Strike, Megahorn, Hypnosis)
+            Level 52 Sableye @ Loaded Dice (Ability: Hyper Cutter) (Fury Swipes, Shadow Claw, Confuse Ray, Strength)
+            Level 52 Honchkrow @ Roseli Berry (Ability: Exploit) (Drill Peck, Sucker Punch, Pursuit, Heat Wave)
+            Level 53 Gengar @ Tera Sash (Ability: Shadow Tag) (Dazzling Gleam, Shadow Ball,Sludge Bomb, Thunderbolt)
+
+        Flannery:
+            Level 56 Magcargo @ Tera Gem (Ability: Drought) (Heat Wave, Diamond Storm, Stealth Rock, Light Screen)
+            Level 56 Tropius @ Normal Gem (Ability: Chlorophyll) (Solarbeam, Hyper Beam, Ancient Power, Sleep Powder)
+            Level 56 Camerupt @ Shuca Berry (Ability: Solid Rock) (Magma Storm, High Horsepower, Solarbeam, Growth)
+            Level 56 Wobbuffet @ Colbur Berry (Ability: Shadow Tag) (Thunder Wave, Helping Hand, Psywave, Follow Me)
+            Level 56 Infernape @ Focus Sash (Ability: Exploit) (Overheat, Close Combat, Fake Out, Thunderpunch)
+            Level 57 Torkoal @ Assault Vest (Ability: Aftermath) (Blast Burn, Explosion, Giga Impact, Body Press)
+        
+        Gardenia:
+            Level 60 Wormadam-G @ Focus Sash (Ability: Effect Spore) (Leaf Storm, Endure, Scorching Swarm, Sticky Web)
+            Level 61 Carnivine @ Tera B-Powder (Ability: Levitate) (Supercell Slam, Snap Trap, U-Turn, Spikes)
+            Level 60 Breloom @ Life Orb (Ability: Quick Feet) (Facade, Rock Slide, Sky Uppercut, Spore)
+            Level 61 Leafeon @ Choice Band (Ability: Tenacity) (Frenzy Plant, Double-Edge)
+            Level 61 Turtwig @ Mascot Badge (Ability: Sturdy) (Giga Impact, Earthquake, Stone Edge, Shell Smash)
+            Level 62 Roserade @ Red Card (Ability: Majestic Ward) (Seed Flare, Focus Blast, Hyper Beam, Quiver Dance)
+
+        Bugsy:
+            Level 60 Sudowoodo @ Chople Berry (Ability: Prankster) (Rock Wrecker, Explosion, Stealth Rock, Thunder Wave)
+            Level 61 Metapod @ Mascot Badge (Ability: Filter) (Infestation, Ancient Power, Defend Order, Heal Order)
+            Level 61 Kakuna @ Mascot Badge (Ability: Stakeout) (1st Impression, Gunk Shot, Payback, U-Turn)
+            Level 60 Galvantula @ Choice Specs (Ability: Arena Trap) (Electro Ball, Bug Buzz, Energy Ball, Volt Switch)       
+            Level 61 Heracross @ Choice Scarf (Ability Guts) (Megahorn, Hi Jump Kick, Stone Edge, U-Turn)
+            Level 62 Scyther @ Tera Eviolite (Abillity: Technician) (Quick Attack, Razor Winds, Rolling Kick, Swords Dance)
+
+        Blaine:
+            - Magmortar has Sludge Wave over Gunk Shot. 
+
+
+
+
+
+
+    Drayden Split Trainers:
+
+        Drayden Split Mini Bosses:
+            Fantina 
+                Current:
+                    Vileplueme @ Focus Band (Ability: Effect Spore) (Whirlwind, Hex, Dazzling Gleam, Toxic Spikes)
+                    Mawile @ Occa Berry (Ability: Sheer Force) (Spirit Break, Thunder, Blizzard, Fire Blast) 
+                    Clefable @ Tera Sash (Ability: Magic Guard) (Psycho Boost, Starburst, Flamethrower, Healing Wish)
+                    Drifblim @ Fairy Gem (Ability: Flare Boost) (Hurricane, Ominous Wind, Fairy Wind, Tailwind)
+                    Mismagius @ Life Orb (Abillity: Shadow Tag) (Moonblast, Shadow Ball, Calm Mind, Trick Room)
+                
+                Pitch:
+                    Vileplume @ Focus Band (Ability: Effect Spore) (Whirlwind, Hex, Dazzling Gleam, Toxic Spikes)
+                    Mawile @ Quick Claw (Ability: Sheer Force) (Spirit Break, Fire Blast, Blizzard, Thunder)
+                    Clefable @ Tera Sash (Ability: Magic Guard) (Psycho Boost, Moonblast, Ominous Wind, Protect)
+                    Drifblim @ Liechi Berry (Ability: Unburden) (Acrobatics, Phantom Strike, Explosion, Stockpile)
+                    Mismagius @ Wise Glasses (Ability: Levitate) (Moonblast, Shadow Ball, Inferno, Diamond Storm)
+
+
+
+    
+[ BUGS AND OPTIMIZATION ]
+    Investigate the Damage Calc Discrepancies 
+        I don't have an explanation for these yet. It's possible there's some weird damage value changes on the calc side, or the natures are incorrect. 
+        We are just going to have to play through the game and assess if there are any weird damage calc happenings. 
+
+    Playtest our Game: 
+        We need to do some runs using vanilla switch AI 
+        Then we need to do some runs using Gen 4 Switch AI 
+        If we were to do g4 switch AI we would need to slap a lot more coverage on across the board.
+    
+
+
+
+====================================================================================================================================================
+/*   MARLON BUILD   */
+
+
+
+    IMPOSSIBLE: 
+        - Debug Illusion 
+        - Test Battle Scan with Type Changing and Ability Changing.
+        - Update Terastalization Polish
+            - Some kind of color status for Tera
+            - Fix the Tera Animation in Doubles 
+            - See if you can get the tera types to be stored properly somewhere. 
+    
+
+
+ 
+
+
+====================================================================================================================================================
+/*   NOTES    */
+        
+
+    Underutilized Mechanics: 
+        Back to Backs
+        
+        Limit to 3 Pokemon 
+
+        Chip Away Normal Types 
+        Ability Neutraliizing: 
+            Gastro Acid 
+
+        Evasion:
+            Double Team 
+            Acid Armor 
+            Smokescreen 
+            Sand Attack (in doubles) 
+            Anticipation
+            Snow Cloak / Sand Veil
+        Confusion:  
+            Supersonic
+            Rock Climb 
+            Confuse Ray 
+            Swagger 
+        Attraction 
+        Hazards
+        Trapping 
+            Block 
+            Mean Look 
+            Dive / Dig / Bounce / Fly / Shadow Force 
+            Pursuit 
+            Wrap / Fire Spin / Clamp / Whirlpool / etc. 
+            Shadow Tag / Arena Trap
+        Failure Boosting: 
+            Anger Point 
+            Thrash 
+            Seething Cold 
+            Uproar 
+            Stompin Tantrum 
+            Grudge 
+            Blunder Policy 
+        Priority: 
+            Quick Claw 
+            Quick Draw 
+            Trickster Herb 
+        Speed Control: 
+            Scary Face 
+            Rock Tomb 
+            Bulldoze 
+            icy Wind 
+            Glaciate 
+            Heavy Slam 
+            Heat Crash (make sure it has the same id as icy wind)
+        Chaos Stats: 
+            Moody 
+            Starf Berry 
+
+

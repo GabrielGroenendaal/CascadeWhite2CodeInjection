@@ -351,8 +351,13 @@ public class MainEvents {
     static void resetMarlonSplitFlags(){
         
 		// Level Cap Update
-		EventWorks.Set(16466, 66);
+		EventWorks.Set(16466, 67);
 
+        EventFlags.Set(3053);
+        if (EventFlags.Get(1520 + 770)){
+            EventFlags.Clear(3054); // Spawns blaine at the PWT  
+        }
+        
         // Virizion Reset 
         // This blocks off access to Pinwheel Forest 
         EventFlags.Clear(519);

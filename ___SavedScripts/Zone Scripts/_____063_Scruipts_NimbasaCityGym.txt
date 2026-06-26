@@ -921,6 +921,12 @@ public class MainEvents {
 	}
 
 	static void clearGatekeepers(){
+        
+        // Despawns Erika and her Pokemon
+        EventFlags.Set(3047);
+        if (EventFlags.Get(1520 + 767)){
+            EventWorks.Set(16521, 4);
+        }
 
 		EventFlags.Set(509);
 		EventWorks.Set(16486, 20);

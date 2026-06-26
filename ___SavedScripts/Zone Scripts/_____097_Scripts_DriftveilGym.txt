@@ -94,6 +94,7 @@ public class MainEvents {
 		Trainer.FlagGet(323);
 		Trainer.FlagGet(324);
 		Trainer.FlagGet(325);
+
 		EventFlags.Set(2418);
 		ActionSequence_073c(7);
 		Actor.WaitActionFinish();
@@ -922,6 +923,13 @@ public class MainEvents {
 		// Update Level Cap
 		EventWorks.Set(16466, 51);
 		
+        // Despawns Janine and her Pokemon
+        if (!EventFlags.Get(3049)){
+            EventFlags.Set(3049);
+            EventWorks.Set(16522, 4);
+        }
+
+
 		// Lady Lina
 		if (!EventFlags.Get(1520 + 147)) {
 			EventFlags.Set(1667);

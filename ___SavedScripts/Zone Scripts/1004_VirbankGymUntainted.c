@@ -100,8 +100,10 @@ label9: ;
 	if (255) goto label11;
 	Routine1();
     SetVarEqVal(0x4052, 28);
-    Compare(0x4051, 0);
-    if (1) goto label_LevelCapsEnabled;
+	StackPushVar(0x4051);
+	StackPushConst(0);
+    StackCompare(1);
+    if (255) goto label_LevelCapsEnabled;
     goto label_LevelCapsNotEnabled;
 
 label_LevelCapsEnabled: ; 
@@ -244,7 +246,7 @@ void Sequence7()
 	SetVarEqVal(0x8027, 0);
 	GetHeroPosition(0x8026, 0x8027);
 	SetNPCPosition(3, 13, 0, 6, 2);
-	ChangeMusic(1203);
+	ChangeMusic(1266);
 	StackPushVar(0x8026);
 	StackPushConst(3);
 	StackCompare(1);
@@ -420,11 +422,11 @@ void Routine1()
 	StackPushConst(2);
 	StackCompare(1);
 	if (255) goto label32;
-	StartTrainerBattle(765, 0, 0);
+	StartTrainerBattle(164, 0, 0);
 	goto label33;
 
 label32: ;
-	StartTrainerBattle(157, 0, 0);
+	StartTrainerBattle(164, 0, 0);
 
 label33: ;
 	SetVarEqVal(0x8024, 0);

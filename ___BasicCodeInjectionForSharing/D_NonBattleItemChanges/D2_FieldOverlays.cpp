@@ -5,6 +5,14 @@ extern u32 g_GameBeaconSys;
 STRUCT_DECLARE(GameData)
 #define GAME_DATA *(GameData **)(g_GameBeaconSys + 4)
 #define ARRAY_COUNT(arr) sizeof(arr) / sizeof(arr[0])
+
+#define GIANT_CHASM 100 // CHANGE THIS LATER
+#define GIANT_CHASM_CAVE 100 // CHANGE THIS LATER
+#define GIANT_CHASM_FOREST 100 // CHANGE THIS LATER
+#define ROUTE_22 100 // CHANGE THIS LATER
+#define ROUTE_13 100 // CHANGE THIS LATER
+#define KYUREM_FLAG 100 // CHANGE THIS LATER
+#define ROUTE_23 100 // CHANGE THIS LATER
 extern "C" int SearchArray(const u16 *const arr, const u32 arrSize, const u32 value)
 {
     for (u32 i = 0; i < arrSize; ++i)
@@ -16,6 +24,8 @@ extern "C" int SearchArray(const u16 *const arr, const u32 arrSize, const u32 va
     }
     return 0;
 }
+
+
 #define SEARCH_ARRAY(arr, value) SearchArray(arr, ARRAY_COUNT(arr), value)
 extern "C"
 {
@@ -235,6 +245,24 @@ extern "C"
         PokeParty_RecalcStats(pPkm);
     }
 
+    const u16 KyuremSplitBerserkZones[6] = {
+        GIANT_CHASM, GIANT_CHASM_FOREST, GIANT_CHASM_CAVE, ROUTE_13, ROUTE_22, ROUTE_23};
+    
+    extern "C" int isKyuremEvent(EncountManager *mgr){
+        return false;
+        // EventWorkSave *eventWork = GameData_GetEventWork(GAME_DATA);
+        // u16 *kyurem_ptr = EventWork_GetWkPtr(eventWork, KYUREM_FLAG);
+
+        // if (*kyurem_ptr == 1){
+        //     PlayerState *playerState = GameData_GetPlayerState(mgr->gameData);
+        //     int zoneId = PlayerState_GetZoneID(playerState);
+
+        //     return SEARCH_ARRAY(KyuremSplitBerserkZones, zoneId);
+        // }
+        // return 0;
+    }
+
+
     struct GenPokeParam
     {
         HeapID HeapID;
@@ -431,6 +459,12 @@ extern "C"
                 PokeParty_ChangeForme(pPkm, 0);
             }
         }
+        
+        // Unown Checks 
+        if (pkmData->Species == 201){
+            random = GFL_RandomLCAlt(28u);
+            PokeParty_ChangeForme(pPkm, random);
+        }
 
         /* IV Settings */
         if (GetIVSetting() == 2)
@@ -496,6 +530,36 @@ extern "C"
                     mgr->EncType == ENCTYPE_LAND_DOUBLE);
             }
         }
+
+
+        // Kyurem Event Support 
+        if (isKyuremEvent(mgr)){
+            random = GFL_RandomLCAlt(100u);
+            HeldItem = 294;
+            if (random <= 32u)
+            {
+                HeldItem = 294;
+            }
+            else if (random > 32u && random <= 64)
+            {
+                HeldItem = 254;
+            }
+            else if (random > 64u && random <= 96u)
+            {
+                HeldItem = 315;
+            }
+            else if (random > 96u && random <= 100u)
+            {
+                HeldItem = 314;
+            }
+            else
+            {
+                HeldItem = 294;
+            }
+            PokeParty_SetParam(pPkm, PF_Item, HeldItem);
+        }
+
+        
         TrainerGender = getTrainerGender(pTrainerInfo);
         PokeParty_SetParam(pPkm, PF_TrGender, TrainerGender);
         PlayerName = GetPlayerName((int)pTrainerInfo);

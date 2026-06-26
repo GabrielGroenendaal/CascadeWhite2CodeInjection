@@ -390,6 +390,9 @@ public class MainEvents {
 		Actor.Hide(8);
 		Sound.SEWait();
 		EventWorks.Set(16556, 6);
+
+		// Despawns Misty and her Pokemon
+		
 		EventFlags.Set(724);
 		EventFlags.Clear(701);
 		EventFlags.Clear(702);
@@ -402,14 +405,14 @@ public class MainEvents {
 	}
 
 	public static void main_14() { // @ 0xf0
-        if (TrainerCard.HasBadge(1) && EventFlags.Get(2285) == 0){
-                Actor.Hide(19);
-                Actor.Hide(20);
-                Actor.Hide(21);
-                Actor.Hide(17);
-                Actor.Hide(25);
-				Actor.Hide(28);
-        }
+        //if (TrainerCard.HasBadge(1) && EventFlags.Get(2285) == 0){
+                //Actor.Hide(19);
+              //  Actor.Hide(20);
+             //   Actor.Hide(21);
+           //     Actor.Hide(17);
+           //     Actor.Hide(25);
+			//	Actor.Hide(28);
+      //  }
 		if (EventWorks.Get(16556) != 5) {
 			return;
 		}
@@ -512,6 +515,12 @@ public class MainEvents {
 		int v33;
 
 		Actor.PauseAll();
+		EventFlags.Set(3043);
+		Actor.Hide(19);
+		Actor.Hide(17);
+		Actor.Hide(25);
+		Actor.Hide(28);
+
 		EVCamera.Init();
 		EVCamera.Unbind();
 		EVCamera.MoveTo(2.3652344f, 0.0f, 237.0f, 3864.0f, 0.0f, 10728.0f, 20);
@@ -667,6 +676,11 @@ public class MainEvents {
 		Sound.PVPlay(176, 0);
 		Sound.PVWait();
 		
+        if (!EventFlags.Get(1520 + 765)){
+            Message.Actor(1024, 78, 0, 0);
+            Message.CloseAll();
+            goto LABEL_0d0a;
+        }
 		if (EventFlags.Get(2375)!= 0) {
 			goto LABEL_0cfc;
 		}
@@ -755,6 +769,8 @@ public class MainEvents {
 		v0 = 0;
 	}
 
+
+	// We won't need this anymore. Instead we'll assign a new flag to Misty and her cohort 
     public static void main_27() { // @ 0xbfe
         if (TrainerCard.HasBadge(1) && EventFlags.Get(2285) == 0){
                 Actor.Hide(19);
@@ -860,6 +876,170 @@ public class MainEvents {
 	    Actor.UnpauseAll();
     }
 
+    // Misty Script 
+    public static void main_29(){
+        
+        int yesNo; 
+        int actorX;
+        int actorZ;
+        int cameraPosX;
+        int cameraPosZ;
+        int MISTY_ENTITY = 19;
+        int TOGETIC_ENTITY = 17;
+
+        //Actor.PauseAll();
+
+        if (EventWorks.Get(16517) == 0){
+            //  Actor.GetGPos(MISTY_ENTITY, actorX, actorZ);
+            // cameraPosX = (actorX + 1) * 16.0f;
+            // cameraPosZ = actorZ * 16.0f;
+            EVCamera.Init();
+            EVCamera.Unbind();
+            EVCamera.MoveTo(2.3652344f, 0.0f, 237.0f, 4128.0f, -32.0f, 10720.0f, 32); // CHANGE THIS LATER
+            EVCamera.Wait();
+
+            Message.ActorEx(1024, 79, MISTY_ENTITY, 2, 0);
+            Message.CloseAll();
+
+
+            TurnWest8F(TOGETIC_ENTITY);
+            Runtime.Sleep(4);
+            TurnWest8F(MISTY_ENTITY);
+            Actor.WaitActionFinish();
+
+            Message.ActorEx(1024, 62, MISTY_ENTITY, 2, 0);
+            yesNo = YesNoWin.Show();
+            if (yesNo == 0){
+                Message.ActorEx(1024, 63, MISTY_ENTITY, 2, 0);
+            }
+            else {
+                Message.ActorEx(1024, 64, MISTY_ENTITY, 2, 0);
+            }
+            Message.CloseAll();
+
+
+
+            EV CAMERA RETURN 
+            EVCamera.MoveToDefault(32);
+            Message.ActorEx(1024, 65, MISTY_ENTITY, 2, 0);
+            Message.ActorEx(1024, 66, MISTY_ENTITY, 2, 0);
+            EVCamera.Wait();
+            EVCamera.Rebind();
+            EVCamera.End();
+            Message.CloseAll();
+            TurnEast8F(MISTY_ENTITY);
+            Message.ActorEx(1024, 67, MISTY_ENTITY, 2, 0);
+            Actor.WaitActionFinish();
+            Message.CloseAll();
+            TurnWest8F(MISTY_ENTITY);
+            Message.ActorEx(1024, 68, MISTY_ENTITY, 2, 0);
+            Actor.WaitActionFinish();
+            EventWorks.Set(16517, 1);
+            yesNo = YesNoWin.Show();
+            if (yesNo == 1){
+                Message.CloseAll();
+                Message.ActorEx(1024, 71, MISTY_ENTITY, 2, 0);
+                Message.CloseAll();
+                TurnEast8F(MISTY_ENTITY);
+                Actor.WaitActionFinish();
+                goto Label_EndMistyScript;
+            }
+        
+            sub_MistyBattle();
+        }
+        else if (EventWorks.Get(16517) == 1){
+            TurnWest8F(MISTY_ENTITY);
+            Message.ActorEx(1024, 72, MISTY_ENTITY, 2, 0);
+            Actor.WaitActionFinish();
+            yesNo = YesNoWin.Show();
+            if (yesNo == 1){
+                Message.CloseAll();
+                Message.ActorEx(1024, 73, MISTY_ENTITY, 2, 0);
+                Message.CloseAll();
+                TurnEast8F(MISTY_ENTITY);
+                Actor.WaitActionFinish();
+                goto Label_EndMistyScript;
+            }
+           
+            sub_MistyBattle();
+        }
+        else {
+            Actor.FacePlayer();
+            Sound.SEPlay(1351);
+            if (!EventFlags.Get(2375)){
+                Message.ActorEx(1024, 80, MISTY_ENTITY, 2, 0);
+            }
+            else {
+                Message.ActorEx(1024, 77, MISTY_ENTITY, 2, 0);
+            }
+            Message.CloseAll();
+        }
+        
+        Label_EndMistyScript: 
+        Runtime.FinishSubEvents();
+		//Actor.UnpauseAll();
+    }
+
+	 public static void main_30() { // @ 0xbfe
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Sound.PVPlay(222, 0);
+		Message.Actor(1024, 81, 0, 0);
+		Sound.PVWait();
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+    static void sub_MistyBattle(){
+        int MISTY_ENTITY = 19;
+        int TOGETIC_ENTITY = 17;
+		int isVictory;
+
+        Message.CloseAll();
+        Message.ActorEx(1024, 69, MISTY_ENTITY, 2, 0);
+        Message.CloseAll();
+        Sound.BGMFadeOut(32);
+
+        WalkWest4Tiles(255);
+        Runtime.Sleep(16);
+        WalkWest1Tile(MISTY_ENTITY);
+        Actor.WaitActionFinish();
+        Message.ActorEx(1024, 70, MISTY_ENTITY, 2, 1);
+        Message.CloseAll();
+
+		Battle.CallTrainerBattle(164, 0, 0);
+		isVictory = Battle.IsTrainerVictory();
+		if (isVictory != 1){
+			Battle.CallTrainerLose();
+			return;
+		}
+		Battle.EndTrainerBattle();
+
+		Field.PlayMapBGM();
+		Message.ActorEx(1024, 74, MISTY_ENTITY, 2, 0);
+		Message.CloseAll();
+		WalkWestThreeTile(MISTY_ENTITY);
+		Actor.WaitActionFinish();
+		Global2805(280, 1);
+        Global2805(519, 1);
+        Global2805(377, 1);
+		Message.ActorEx(1024, 75, MISTY_ENTITY, 2, 0);
+		Message.CloseAll();
+        
+        TogeticApproaches(TOGETIC_ENTITY);
+        Actor.WaitActionFinish();
+        Sound.PVPlay(176, 0);
+        Sound.PVWait();
+		TurnEast8F(MISTY_ENTITY);
+        ShowExclamationMark(MISTY_ENTITY);
+		Actor.WaitActionFinish();
+		Message.ActorEx(1024, 76, MISTY_ENTITY, 2, 0);
+		Message.CloseAll();
+		EventWorks.Set(16517, 2);
+		EventFlags.Set(1520 + 765);
+    }
 	static void sub_0555() { // @ 0x555
 		Sound.BGMPlay(1266);
 		Message.ActorEx(1024, 8, 7, 0, 0);
@@ -1050,6 +1230,18 @@ public class MainEvents {
         Action0032(1);
     }
 
+    static meta void WalkWestOneTile(int npcId) : VActionSequence {
+        Action000e(1);
+    }
+
+	static meta void WalkWestThreeTile(int npcId) : VActionSequence {
+        Action000e(3);
+    }
+
+    static meta void WalkWestFourTiles(int npcId) : VActionSequence {
+        Action000e(4);
+        Action0023(1);
+    }
     static meta void HopRight(int npcId) : VActionSequence {
         Action0033(1);
     }
@@ -1070,6 +1262,42 @@ public class MainEvents {
         Action00a0(1);
     }
 
+    static meta void TurnNorth8F(int npcId) : VActionSequence {
+		Action0020(1);
+	}
+
+	static meta void TurnSouth8F(int npcId) : VActionSequence {
+		Action0021(1);
+	}
+
+	static meta void TurnEast8F(int npcId) : VActionSequence {
+		Action0023(1);
+	}
+
+	static meta void WalkSouthOneTile(int npcId) : VActionSequence {
+		Action000d(2);
+	}
+
+	static meta void WalkWest1Tile(int npcId) : VActionSequence {
+		Action000e(1);
+	}
+
+	static meta void WalkWest4Tiles(int npcId) : VActionSequence {
+		Action000e(4);
+		Action0023(1);
+	}
+
+	
+	static meta void TurnWest8F(int npcId) : VActionSequence {
+		Action0022(1);
+	}
+
+    static meta void TogeticApproaches(int npcId) : VActionSequence {
+		Action0015(1);
+        Action0022(1);
+	}
+
+
 	static meta void Global2806(int a1, int a2) : VGlobalCall[2806];
 	static meta void Global2805(int a1, int a2) : VGlobalCall[2805];
 
@@ -1086,6 +1314,7 @@ public class MainEvents {
 	static native void Action0011(int amount) : 0x11;
 	static native void Action0012(int amount) : 0x12;
     static native void Action0013(int amount) : 0x13;
+	 static native void Action0015(int amount) : 0x15;
 	static native void Action0020(int amount) : 0x20;
 	static native void Action0021(int amount) : 0x21;
 	static native void Action0022(int amount) : 0x22;

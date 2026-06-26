@@ -489,6 +489,7 @@ public class MainEvents {
 		EventFlags.Set(2414);
 		EventWorks.Set(16552, 2);
 		EventFlags.Clear(742);
+        EventFlags.Set(3041); // Despawns Brock and his Pokemon from the Pledge Grove
 		EventFlags.Set(739);
 		EventFlags.Set(1015);
 		Medals.Discover(130);
