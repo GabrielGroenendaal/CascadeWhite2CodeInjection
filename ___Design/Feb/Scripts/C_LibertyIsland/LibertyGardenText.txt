@@ -113,10 +113,10 @@ Someone's been scrawling the letter "V"\neverywhere! Weird prank, if you ask me.
 
 
 22:
-At attention, recruit!
+???: At attention, runt!
 
 23:
-Lt. Surge!\nThe Lightning American!\c
+I am Lt. Surge!\nThe Lightning Unovan!\c
 Decorated commanding officer,\nveteran Trainer,\c
 defender of Unova...
 
@@ -128,6 +128,7 @@ and the last thing standing\nbetween this island and vandals!
 I've devoted my life to serving Unova!\c
 Now every day, punks come stomping\nthrough here without a care!\c
 Don't play dumb with me, kid!\c
+I know a delinquent when I see one.
 No parent in sight...\nShowing up here all alone...\c
 What makes you think you're worthy\nof setting foot on this island?
 
