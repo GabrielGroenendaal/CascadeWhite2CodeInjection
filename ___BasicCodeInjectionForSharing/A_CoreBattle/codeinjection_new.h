@@ -476,6 +476,8 @@ extern int ServerControl_StatStageChangeCore(
     int a9,
     int a10);
 
+    extern ConditionData MakeCondition(MoveCondition a1, BattleMon *a2, ConditionData *a3);
+    extern bool  CommonDamageReactCheckCore(ServerFlow *a1, int a2, unsigned int a3);
 extern void ServerDisplay_AbilityPopupRemove(ServerFlow *a1, BattleMon *a2);
 extern int HandlerScrappy(int a1, int a2, int a3);
 extern void HandlerRattled(int a1, ServerFlow *a2, int a3);

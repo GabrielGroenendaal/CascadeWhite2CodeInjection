@@ -9,69 +9,109 @@
 7: The bell was left untouched...
 
 
+8:
+???: ...No.\c\nThat wasn't how it happened...\c\n...The bell rang first.\c\n...or was it after?\c
 
+9:
+???: ...\c\n...Someone's here.\c
 
-[ THE PLAYER CAN ENCOUNTER SABRINA AT THE TOP OF CELESTIAL TOWER. SHE IS PORTRAYED WITH SIMILAR ATTITUDES TO HER CANON PERSONALITY, BUT A BIT MORE MELLOW AND ADRIFT, AS IF PAYING ATTENTION TO MULTPLE THINGS AT ONCE ]
-8: Sabrina Introduction Text. She is feeling a strange presence at the top of the rooftop and seems unaware of the player. 
+10:
+???: Oh.\nIt's you.\c\n[VAR TRNAME(0)]...\c
 
-9: Sabrina expresses her awareness of the player, indicating she can feel their mind even without looking at them.
+11:
+Sabrina: I'm Sabrina.\nGym Leader of Saffron City.\c\nI came to Unova for the\nPokémon World Tournament.\c\nBut...\nI had to visit here first...\c
 
-10: As she turns around to face the player, however, she expresses sudden shock "-its you?". From this point onward, she wil inexplicably use the Player's actual name. 
+12:
+Sabrina: Tell me...\cWhen you stand here,\r\ndo you feel anything?\c
 
-11: Sabrina explains she is visiting for a pokemon tournament. But that she was drawn to this tower though she can't explain why. 
+13: (Player says NO)
+Sabrina: I thought you might say that.\nMost people don't notice\nthings like this.\c\nSometimes I wish\nI didn't either.\c
 
-12: She asks the player if they can feel the strange energy on the Celestial Tower's rooftop. 
+14: (Player says YES)
+Sabrina: I see.\nWhat does it feel like?
 
-[ THE PLAYER IS GIVEN A YES/NO PROMPT ]
+15:
+Heavy
 
-13: If the player says no, Sabrina is unsurprised, and says most people aren't sensitive to these things. 
-
-14: If the player says yes, Sabrina asks the player to describe how it feels. 
-
-[ THE PLAYER IS PRESENTED THE FOLLOWING OPTIONS TO RESPOND WITH ]
-
-15: 
-Pained 
-
-16: 
-Joyous 
+16:
+Joyous
 
 17:
-Mournful 
+Familiar
 
-18: A joke option where the player is expressing that the wind is cold on the rooftop
+18: 
+Lonely 
+
+19:
 Cold
 
-[ NOTE: Each of Sabrina's responses will reference some kind of premonition relevant to the player's upcoming journey through Unova ]
-19: Sabrina's response to "Pained". She relates that the spirits of pokemon haunt this place, many of which have not yet found peace. Perhaps the ringing of the bell soothes them. 
+20: Heavy
+Sabrina: Heavy...\c\n...\c\nNo.\c\nThat feeling isn't coming\nfrom this tower.\r\nIt's following you.\c\nSomething precious was taken\nfrom you.\c\nLoss is a terrible weight...\c
 
-20: Sabrina's response to "Joyous". She relates this to all the good memories people feel when they visit this tower and ring this bell. 
+21: Joyous
+Sabrina: Joy...\nThat's good.\c\nPeople don't only come here\nto say goodbye.\c\nThey come to remember\nhappy days too.\c
 
-21: Sabrina's response to "Mournful". She relates this to the purpose of celestial tower (a graveyard) and the players grief over having their Pokemon stolen
+22: Familiar 
+Sabrina: Familiar...\nInteresting...\c\nPerhaps you've stood in a place\nlike this before.\c\nOr perhaps...\nThis isn't the first time\r\nyou've had to say goodbye.\c
 
-22: Sabrina's response to "Cold", which she initially responds to in earnest then realizes the player is probably talking about the wind. 
+23: Lonely 
+Sabrina: Lonely...\nInteresting.\c\nThat isn't what I feel\nfrom this tower.\c\n...\c\nIt's coming from somewhere else.\c\nSomewhere cold...\c
 
-23: Sabrina says as a psychic, she often has premonitions. She can't explain why, but three years ago she had a vision of battling you. She's not sure what happens next, but it felt important. she then asks to battle. 
+24: Cold 
+Sabrina: Cold...\c\nYes.\c\nA bitter cold...\nI've sensed it ever since\r\nI arrived in Unova.\c\n...\c\nOh.\nYou mean the wind.\c\nHeh...\nI suppose that's true too.\c
 
-[ THE PLAYER RECEIVES A YES/NO PROMPT TO BATTLE SABRINA ]
+25: 
+Sabrina: Psychic visions are strange.\c\nSometimes they arrive\nwithout any meaning.\cSometimes...\nit takes years to understand\r\nwhat they were trying to show me.\c
 
-24: [PLAYER SAYS NO] Sabrina is surprised. She questions whether her premonition was wrong, or had simply yet come to pass. She will wait here a little while longer. 
+26: 
+Sabrina: Three years ago,\nI saw myself battling someone\r\non this rooftop.\c\nI remember almost everything.\nThe bell. The wind. The outcome.\r\nBut nothing beyond it.\c\nIt's always felt as though\nI woke up too soon.\c\nThat whatever came next...\nwas the important part.\c
 
-25: [PLAYER SAYS YES] Sabrina arranges the battlefield to look like her vision, asking the player to stand at a specific point, shifting once or twice, then going "that's right". 
+27:
+Sabrina: When I saw you,\nI wondered if perhaps...\c\nWould you battle me?\c\nIf this is that moment...\nI'd like to see what comes next.
 
-26: Once in position, Sabrina starts battle by saying "Let's see what happens next!" 
+28: (Player says NO)
+Sabrina: ...\c\nThat's unexpected.\c\nPerhaps my dream was wrong?\nOr perhaps...\r\nit hasn't happened yet.\c
 
-27: After the battle, Sabrina expresses shock at the events of the battle not being what she expected. She ominously wonders if that means that everything else that's to come may still yet change, that there's hope for this region?
+25: (Player says YES)
+Sabrina: One moment.\c\nCould you stand...\na little farther left?\c
 
-28: She urges the pllayer to continue on their adventure, that the bond between them and their pokemon is powerful to forge their own fates. To help you on your journey she gives out 
+26: (More dialogue after player says yes)
+No.\nHalf a step back.\c
 
-[ 5x IV Enhancers, the Covert Cloak, the Will o Wisp TM ]
+27: (More dialogue after player says yes)
+Sabrina: There.\nThat's how I remember it.\c
 
-29: "You'll know what to do with these when the time comes." Sabrina wishes you luck with what's to come, then seemingly teleports away.  
+28: (More dialogue after player says yes)
+Let's see...\nwhat happens next.\c
 
-30: Blurb of text you get from speaking with Alakazam.
+27:
+Sabrina: ...I lost.\c
+
+28: 
+Sabrina: That's...\nnot what I remember.\c\nFor three years,\nI believed I understood that vision.\c\nPerhaps I wasn't seeing\nthe future at all.\r\nOnly... a possibility.\c
+
+29: 
+Sabrina: If this moment could change...\nThen perhaps...\nthere's hope yet.\c
+
+30: 
+Sabrina: Your journey will be long\nand difficult, [VAR TRNAME(0)].\c\nBut the future is not decided\r\nby visions alone.\c\nThe bond between a Trainer\nand their Pokémon can change\nmore than even I can foresee.\c
+
+31:
+Sabrina: Please.\nTake these.\c
+
+32:
+Sabrina: I think you'll know\nwhen to use them.\c
+
+33:
+Sabrina: Good luck,\n[VAR TRNAME(0)].\c\nI have a feeling...\nNo.\c\nI'll let you find that out for yourself...\c
+
+34:
+Alakazam quietly watches\nthe northern horizon.\c\cIt doesn't seem frightened.\nOnly...\nconcerned.\c
+
+35:
+The bell's echo rings\nacross Celestial Tower...\c\nSomething answered the call!\c
+
+36:
+Sabrina: You've returned.\c\nHave you decided to battle?\nI'd still like to find out\r\nwhat happened after my dream.
 
 
-31: After ringing the spirit gong, a wild pokemon appears! 
-
-32: [PLAYER SAID NO INITIALLY THEN RETURNS LATER]: Sabrina asks if they're ready to battle now? 

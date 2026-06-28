@@ -270,11 +270,11 @@ extern "C"
         HandlerParam_RecoverHP *v8;     // r6
         HandlerParam_CureCondition *v9; // r0
 
-        HandlerParam_ChangeStatStage *v55;
-        HandlerParam_ChangeStatStage *v66;
-        HandlerParam_ChangeStatStage *v77;
-        HandlerParam_ChangeStatStage *v88;
-        HandlerParam_ChangeStatStage *v99;
+        // HandlerParam_ChangeStatStage *v55;
+        // HandlerParam_ChangeStatStage *v66;
+        // HandlerParam_ChangeStatStage *v77;
+        // HandlerParam_ChangeStatStage *v88;
+        // HandlerParam_ChangeStatStage *v99;
         __int16 BattleMonStat_1; // [sp+8h] [bp-18h]
 
         Value_5 = BattleEventVar_GetValue(VAR_MON_ID);
@@ -304,40 +304,47 @@ extern "C"
                 v9->sickCode = CONDITION_24;
                 BattleHandler_PopWork(a2, v9);
             }
-            v55 = (HandlerParam_ChangeStatStage *)BattleHandler_PushWork(a2, EFFECT_CHANGESTATSTAGE, (int)Value_5);
-            v55->poke_cnt = 1;
-            v55->pokeID[0] = (int)Value_5;
-            v55->rankType = STATSTAGE_ATTACK;
-            v55->rankVolume = 1;
-            BattleHandler_PopWork(a2, v55);
-            v66 = (HandlerParam_ChangeStatStage *)BattleHandler_PushWork(a2, EFFECT_CHANGESTATSTAGE, (int)Value_5);
-            v66->poke_cnt = 1;
-            v66->pokeID[0] = (int)Value_5;
-            v66->rankType = STATSTAGE_DEFENSE;
-            v66->rankVolume = 1;
-            v66->fMoveAnimation = 1;
-            BattleHandler_PopWork(a2, v66);
-            v77 = (HandlerParam_ChangeStatStage *)BattleHandler_PushWork(a2, EFFECT_CHANGESTATSTAGE, (int)Value_5);
-            v77->poke_cnt = 1;
-            v77->pokeID[0] = (int)Value_5;
-            v77->rankType = STATSTAGE_SPECIAL_ATTACK;
-            v77->rankVolume = 1;
-            v77->fMoveAnimation = 1;
-            BattleHandler_PopWork(a2, v77);
-            v88 = (HandlerParam_ChangeStatStage *)BattleHandler_PushWork(a2, EFFECT_CHANGESTATSTAGE, (int)Value_5);
-            v88->poke_cnt = 1;
-            v88->pokeID[0] = (int)Value_5;
-            v88->rankType = STATSTAGE_SPECIAL_DEFENSE;
-            v88->rankVolume = 1;
-            v88->fMoveAnimation = 1;
-            BattleHandler_PopWork(a2, v88);
-            v99 = (HandlerParam_ChangeStatStage *)BattleHandler_PushWork(a2, EFFECT_CHANGESTATSTAGE, (int)Value_5);
-            v99->poke_cnt = 1;
-            v99->pokeID[0] = (int)Value_5;
-            v99->rankType = STATSTAGE_SPEED;
-            v99->rankVolume = 1;
-            v99->fMoveAnimation = 1;
-            BattleHandler_PopWork(a2, v99);
+            // v55 = (HandlerParam_ChangeStatStage *)BattleHandler_PushWork(a2, EFFECT_CHANGESTATSTAGE, (int)Value_5);
+            // v55->poke_cnt = 1;
+            // v55->pokeID[0] = (int)Value_5;
+            // v55->rankType = STATSTAGE_ATTACK;
+            // v55->rankVolume = 1;
+            // BattleHandler_PopWork(a2, v55);
+            // ChangeStats(a2, Value_5, Value_5, STATSTAGE_ATTACK, 1, 0);
+            // v66 = (HandlerParam_ChangeStatStage *)BattleHandler_PushWork(a2, EFFECT_CHANGESTATSTAGE, (int)Value_5);
+            // v66->poke_cnt = 1;
+            // v66->pokeID[0] = (int)Value_5;
+            // v66->rankType = STATSTAGE_DEFENSE;
+            // v66->rankVolume = 1;
+            // v66->fMoveAnimation = 1;
+            // BattleHandler_PopWork(a2, v66);
+            // v77 = (HandlerParam_ChangeStatStage *)BattleHandler_PushWork(a2, EFFECT_CHANGESTATSTAGE, (int)Value_5);
+            // v77->poke_cnt = 1;
+            // v77->pokeID[0] = (int)Value_5;
+            // v77->rankType = STATSTAGE_SPECIAL_ATTACK;
+            // v77->rankVolume = 1;
+            // v77->fMoveAnimation = 1;
+            // BattleHandler_PopWork(a2, v77);
+            // v88 = (HandlerParam_ChangeStatStage *)BattleHandler_PushWork(a2, EFFECT_CHANGESTATSTAGE, (int)Value_5);
+            // v88->poke_cnt = 1;
+            // v88->pokeID[0] = (int)Value_5;
+            // v88->rankType = STATSTAGE_SPECIAL_DEFENSE;
+            // v88->rankVolume = 1;
+            // v88->fMoveAnimation = 1;
+            // BattleHandler_PopWork(a2, v88);
+            // v99 = (HandlerParam_ChangeStatStage *)BattleHandler_PushWork(a2, EFFECT_CHANGESTATSTAGE, (int)Value_5);
+            // v99->poke_cnt = 1;
+            // v99->pokeID[0] = (int)Value_5;
+            // v99->rankType = STATSTAGE_SPEED;
+            // v99->rankVolume = 1;
+            // v99->fMoveAnimation = 1;
+            // BattleHandler_PopWork(a2, v99);
+
+            ChangeStats(a2, Value_5, Value_5, STATSTAGE_ATTACK, 1, 0);
+            ChangeStats(a2, Value_5, Value_5, STATSTAGE_DEFENSE, 1, 1);
+            ChangeStats(a2, Value_5, Value_5, STATSTAGE_SPECIAL_ATTACK, 1, 1);
+            ChangeStats(a2, Value_5, Value_5, STATSTAGE_SPECIAL_DEFENSE, 1, 1);
+            ChangeStats(a2, Value_5, Value_5, STATSTAGE_SPEED, 1, 1);
             BattleEventItem_Remove(a1);
         }
     }
@@ -615,83 +622,88 @@ extern "C"
         return FocusPunchHandlers;
     }
 
-//     void HandlerFocusEnergyNew(int a1, ServerFlow *a2, unsigned int a3)
-//     {
-//         HandlerParam_SetTurnFlag *v5; // r0
-//         BattleMon *BattleMon; // r0
-//         HandlerParam_AddAnimation *v7; // r6
-//         HandlerParam_Message *v8; // r6
+    void HandlerFocusEnergyNew(int a1, ServerFlow *a2, unsigned int a3)
+    {
+        BattleMon *BattleMon; // r0
+        HandlerParam_AddAnimation *v7; // r6
 
-//         if ( a3 == BattleEventVar_GetValue(VAR_MON_ID) )
-//         {
-            
-//             v5 = (HandlerParam_SetTurnFlag *)BattleHandler_PushWork(a2, EFFECT_SET_TURN_FLAG, a3);
-//             v5->pokeID = a3;
-//             v5->flag = TURNFLAG_MOVEFAILED;
-//             BattleHandler_PopWork(a2, v5);
-//             BattleMon = Handler_GetBattleMon(a2, a3);
-//             TurnFlag_Clear(BattleMon, TURNFLAG_MOVEFAILEDLASTTURN);
-//             // if ( !BattleMon_IsHiding(BattleMon) )
-//             // {
-//             //     v7 = (HandlerParam_AddAnimation *)BattleHandler_PushWork(a2, EFFECT_ADD_ANIMATION, a3);
-//             //     v7->animNo = 626;
-//             //     v7->pos_from = Handler_PokeIDToPokePos(a2, a3);
-//             //     v7->pos_to = 6;
-//             //     v7->fMsgWinVanish = 1;
-//             //     BattleHandler_PopWork(a2, v7);
-//             // }
-//             // SendMessage(a2, a3, a3, 616, 0);
-//         }
-//     }
+        if ( a3 == BattleEventVar_GetValue(VAR_MON_ID) )
+        {
+            BattleMon = Handler_GetBattleMon(a2, a3);
+            if ( !BattleMon_IsHiding(BattleMon) )
+            {
+                v7 = (HandlerParam_AddAnimation *)BattleHandler_PushWork(a2, EFFECT_ADD_ANIMATION, a3);
+                v7->animNo = 626;
+                v7->pos_from = Handler_PokeIDToPokePos(a2, a3);
+                v7->pos_to = 6;
+                v7->fMsgWinVanish = 1;
+                BattleHandler_PopWork(a2, v7);
+            }
+            SendMessage(a2, a3, a3, 616, 0);
+        }
+    }
 
-//    void HandlerFocusEnergyFail(int a1, ServerFlow *a2, int a3)
-//     {
-//         int result; // r0
-//         BattleMon *BattleMon; // r4
-//         result = BattleEventVar_GetValue(VAR_MON_ID);
-//         if ( a3 == result )
-//         {
-//             BattleMon = Handler_GetBattleMon(a2, a3);
-//             if ( BattleMon_GetConditionFlag(BattleMon, CONDITIONFLAG_FOCUSENERGY) )
-//             {
-//                 BattleEventVar_RewriteValue(VAR_FAIL_CAUSE, 26);
-//             } 
-//         }
-//     }
+   void HandlerFocusEnergyFail(int a1, ServerFlow *a2, int a3, u32 *a4)
+    {
+        int result; // r0
+        BattleMon *BattleMon; // r4
+        result = BattleEventVar_GetValue(VAR_MON_ID);
+        if ( a3 == result )
+        {
+            BattleMon = Handler_GetBattleMon(a2, a3);
+            unsigned __int16 v11[2];
 
-//     void HandlerFocusEnergySuccess(int a1, ServerFlow *a2, int a3)
-//     {
-//         int result; // r0
-//         BattleMon *BattleMon; // r4
+            if (CommonCounterCheckDamageRecieved(Handler_GetBattleMon(a2, a3), 0, v11))
+            {
+                BattleEventVar_RewriteValue(VAR_FAIL_CAUSE, 7);
+                return;
+            }
+            if ( BattleMon_GetConditionFlag(BattleMon, CONDITIONFLAG_FOCUSENERGY) )
+            {
+                BattleEventVar_RewriteValue(VAR_FAIL_CAUSE, 26);
+                return;
+            } 
+            *a4 = 1;
+        }
+    }
 
-//         result = BattleEventVar_GetValue(VAR_MON_ID);
-//         if ( a3 == result)
-//         {
-//             BattleMon = Handler_GetBattleMon(a2, a3);
-//             if (!BattleMon_GetTurnFlag(BattleMon, TURNFLAG_MOVEFAILED)){
-//                 HandlerParam_SetConditionFlag *v6; // r0
-//                 HandlerParam_Message *v7;
-//                 v6 = (HandlerParam_SetConditionFlag *)BattleHandler_PushWork(a2, EFFECT_SET_CONDITION_FLAG, (int)a3);
-//                 v6->monID = (unsigned __int8)a3;
-//                 v6->flag = CONDITIONFLAG_FOCUSENERGY;
-//                 BattleHandler_PopWork(a2, v6);
-//                 v7 = (HandlerParam_Message *)BattleHandler_PushWork(a2, EFFECT_MESSAGE, (int)a3);
-//                 BattleHandler_StrSetup(&v7->str, 2u, 1041);
-//                 BattleHandler_AddArg(&v7->str, (int)a3);
-//                 BattleHandler_PopWork(a2, v7);
-//             }
-//         }
-//     }
-//     MOVE_TRIGGERTABLE FocusEnergyHandlers[] = {
-//         {EVENT_BEFORE_ATTACKS, (MOVE_HANDLER_FUNC)HandlerFocusEnergyNew},
-//         {EVENT_MOVE_EXECUTE_CHECK2, (MOVE_HANDLER_FUNC)HandlerFocusEnergyFail},
-//     {EVENT_MOVE_SEQUENCE_END, (MOVE_HANDLER_FUNC)HandlerFocusEnergySuccess}};
+    void HandlerFocusEnergySuccess(int a1, ServerFlow *a2, int a3, u32 *a4)
+    {
+        int result; // r0
+        BattleMon *BattleMon; // r4
 
-//     MOVE_TRIGGERTABLE *THUMB_BRANCH_EventAddFocusEnergy(_DWORD *a1)
-//     {
-//         *a1 = 3;
-//         return FocusEnergyHandlers;
-//     }
+        result = BattleEventVar_GetValue(VAR_MON_ID);
+        if ( a3 == result && *a4 == 1 )
+        {
+            BattleMon = Handler_GetBattleMon(a2, a3);
+            HandlerParam_SetConditionFlag *v6; // r0
+            HandlerParam_Message *v7;
+            v6 = (HandlerParam_SetConditionFlag *)BattleHandler_PushWork(a2, EFFECT_SET_CONDITION_FLAG, (int)a3);
+            v6->monID = (unsigned __int8)a3;
+            v6->flag = CONDITIONFLAG_FOCUSENERGY;
+            BattleHandler_PopWork(a2, v6);
+            v7 = (HandlerParam_Message *)BattleHandler_PushWork(a2, EFFECT_MESSAGE, (int)a3);
+            BattleHandler_StrSetup(&v7->str, 2u, 1041);
+            BattleHandler_AddArg(&v7->str, (int)a3);
+            BattleHandler_PopWork(a2, v7);
+            ChangeStats(a2, a3, a3, STATSTAGE_ATTACK, 1, 0);
+            ChangeStats(a2, a3, a3, STATSTAGE_DEFENSE, 1, 1);
+            ChangeStats(a2, a3, a3, STATSTAGE_SPECIAL_ATTACK, 1, 1);
+            ChangeStats(a2, a3, a3, STATSTAGE_SPECIAL_DEFENSE, 1, 1);
+            ChangeStats(a2, a3, a3, STATSTAGE_SPEED, 1, 1);
+        }
+    }
+    
+    MOVE_TRIGGERTABLE FocusEnergyHandlers[] = {
+        {EVENT_BEFORE_ATTACKS, (MOVE_HANDLER_FUNC)HandlerFocusEnergyNew},
+        {EVENT_MOVE_EXECUTE_CHECK2, (MOVE_HANDLER_FUNC)HandlerFocusEnergyFail},
+        {EVENT_UNCATEGORIZED_MOVE, (MOVE_HANDLER_FUNC)HandlerFocusEnergySuccess}};
+
+    MOVE_TRIGGERTABLE *THUMB_BRANCH_EventAddFocusEnergy(_DWORD *a1)
+    {
+        *a1 = 3;
+        return FocusEnergyHandlers;
+    }
 
 #pragma endregion
 

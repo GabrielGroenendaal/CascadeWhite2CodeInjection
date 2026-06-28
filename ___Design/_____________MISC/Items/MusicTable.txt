@@ -1,16 +1,11 @@
-Found at address 8E3C0
-
-
-
-
 00 6A 5A 04
 01 6A 5A 04
 02 6A 5A 04
 03 6A 5B 04
 04 6A 5A 04
 05 6A 5B 04
-06 6B 64 04
-07 6B 64 04
+06 6B 60 04
+07 6B 60 04
 08 6A 65 04
 09 6A 65 04
 0A 6A 5A 04
@@ -48,7 +43,7 @@ Found at address 8E3C0
 2A 6A 5B 04
 2B 6A 65 04
 2C 6A 65 04
-2D 6B 64 04
+2D 6B 60 04
 2E 6A 62 04
 28 6A 5A 04
 2F 6A 5F 04
@@ -56,7 +51,7 @@ Found at address 8E3C0
 31 6A 5D 04
 32 6A 61 04
 33 6A 62 04
-34 6B 64 04
+34 6B 60 04
 35 6A 5A 04
 36 6A 5A 04
 37 6A 5A 04
@@ -76,7 +71,7 @@ Found at address 8E3C0
 45 6A 5D 04
 46 6A 5D 04
 47 6A 61 04
-48 6B 64 04
+48 6B 60 04
 49 6A 64 04
 4A 6A 66 04
 4B 6A 66 04
@@ -183,9 +178,9 @@ Found at address 8E3C0
 8B 6A 5A 04
 8C 6A 5A 04
 8D 6A DB 04
-8E 6A 5A 04
-8F 6A 5A 04
-90 6A 5A 04
+2E 6A 67 04
+33 6A 67 04
+22 6A 67 04
 91 6A 5A 04
 92 6A 5A 04
 93 6A 5A 04
@@ -214,20 +209,20 @@ A5 6A 5A 04
 A6 6A 5A 04
 A7 6A 5A 04
 A8 6A 5A 04
-A9 6B 63 04
-AA 6B 63 04
+A9 6B B5 04
+AA 6B B5 04
 AB 77 5A 04
-AC 6B 63 04
+AC 6B B5 04
 AD 77 5A 04
 AE 6A 5A 04
 AF 6A 5A 04
-B0 73 5A 04 ange statue
+B0 73 5A 04
 B1 6A 5A 04
 B2 77 5A 04
-B3 6B 63 04
-B4 6B 63 04
-B5 6B 63 04
-B6 6B 63 04
+B3 6B B5 04
+B4 6B B5 04
+B5 6B B5 04
+B6 6B B5 04
 B7 6A 5A 04
 B8 6A 5A 04
 B9 ED 4D 04
@@ -240,8 +235,22 @@ BA 77 5A 04
 BB 6A 5A 04
 94 EA 5A 04
 
+Found at address 8E3C0
+
+
+
+
+
+67 - Team Plasma
+B5 = Pokestar Studios 
+60 = Cyclist encounter theme
 E7 = Kyurem Theme
 EB = Ghetsis Theme
 ED = Champion Alder's Theme 
 77 = Legendary Pokemon Theme 
 F3 = Team Plasma Theme 
+
+
+Trainer Sprites: 
+2E = Female Scientist 
+33 = Male Scientist

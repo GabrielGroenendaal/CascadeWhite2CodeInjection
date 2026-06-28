@@ -337,6 +337,16 @@ label34a: ;
     Storec0xD3(0x8028);
 	Compare(0x8028, 192);
 	if (1) goto label_cantFlyHere;
+	Compare(0x8028, 181);
+	if (1) goto label_cantFlyHere;
+	Compare(0x8028, 182);
+	if (1) goto label_cantFlyHere;
+	Compare(0x8028, 248);
+	if (1) goto label_cantFlyHere;
+	Compare(0x8028, 245);
+	if (1) goto label_cantFlyHere;
+	Compare(0x8028, 556);
+	if (1) goto label_cantFlyHere;
 
 
     // Plasma Frigate

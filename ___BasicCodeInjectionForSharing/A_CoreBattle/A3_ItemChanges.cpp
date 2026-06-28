@@ -522,7 +522,6 @@ extern "C"
         return 1;
     }
 
-    
     void THUMB_BRANCH_HandlerScopeLens(int a1, int a2, int a3)
     {
         if (a3 == BattleEventVar_GetValue(VAR_ATTACKING_MON))
@@ -540,23 +539,23 @@ extern "C"
         return false;
     }
 
-    void THUMB_BRANCH_HandlerCommonPinchBerryReaction(BattleEventItem *a1, ServerFlow *a2, unsigned int *a3, int *a4)
+    void THUMB_BRANCH_HandlerCustapBerryPriorityCheck(BattleEventItem *a1, ServerFlow *a2, unsigned int *a3)
     {
-        BattleMon *BattleMon; // r0
-
-        if (!*a4)
+        if (a3 == (unsigned int *)BattleEventVar_GetValue(VAR_MON_ID) && CommonDamageReactCheckCore(a2, (int)a3, 2u))
         {
-            BattleMon = Handler_GetBattleMon(a2, (int)a3);
-            if (!BattleMon_CheckIfMoveCondition(BattleMon, (MoveCondition)0xF))
+            if (BattleEventVar_RewriteValue(VAR_PRIORITY, 2))
             {
-                CommonDamageReact(a1, a2, a3, 4u, 1);
+                ItemEvent_PushRun(a1, a2, (int)a3);
             }
         }
     }
 
-    u8 THUMB_BRANCH_doesNatureAffectStat(void *pPkm, int stat)
+    
+
+
+    s8 THUMB_BRANCH_doesNatureAffectStat(void *pPkm, int stat)
     {
-        return 1;
+        return -1;
     }
 
     int THUMB_BRANCH_HandlerCommon_IsUnremovableItem(int a1, int a2)

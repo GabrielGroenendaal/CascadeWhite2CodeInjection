@@ -1,0 +1,916 @@
+
+
+
+Number of Slots We Have: 
+    Won't Use (17)
+        - Celebi 
+        - Lugia 
+        - Ho Oh 
+        - Latios 
+        - Kyogre 
+        - Groudon 
+        - Rayquaza
+        - Uxie 
+        - Mesprit 
+        - Azelf 
+        - Dialga 
+        - Palkia 
+        - Giratina 
+        - Phione 
+        - Manaphy 
+        - Arceus 
+        - Darkrai 
+
+    Could Prune: (12)
+        - Weedle 
+        - Caterpie 
+        - Diglett 
+        - Duskull 
+        - Starly 
+        - Tympole 
+        - Venipede 
+        - Sandile 
+        - Vanillite 
+        - Tynamo 
+        - Cubchoo
+        - Pawniard 
+
+    
+    Might Use: (11)
+        - Zapdos 
+        - Articuno 
+        - Moltres 
+        - Mew 
+        - Entei 
+        - Raikous 
+        - Suicune 
+        - Heatran 
+        - Jirachi 
+        - Latias
+        - Cresselia 
+    
+
+
+Total List of Best Options: (29)
+    To be honest almost all of these are mostly just "nice to haves". 
+    I think we could include some of them if we wanted to but we don't neeed them. 
+    And in fact, to some extent, including them might delute the idea of the game. 
+
+    Greninja 
+    Chesnaught 
+    Delphox 
+    Pangoro
+    Swirlilx / Slurpuff 
+    Dragalge 
+    Heliolisk 
+    Amaura / Aurorus 
+    Sylveon 
+    Noivern 
+    Trevenant 
+    Gourgeist 
+    Type Null / Silvally 
+    Crabominable 
+    Rockruff / Lycanroc 
+    Sandyghast / Pallosand 
+    Toxtricity 
+    Mr Rime
+    Sneasler
+    Cursola 
+    Centiskorch 
+    Fidough/Dascubun 
+    Grafaifai 
+    Glimmora 
+    
+    Forms: 
+        Alolan Rattata/Raticate
+        Alolan Sandshrew/Sandslash 
+        Alolan Vulpix/Ninetales 
+        Galarian Damranitan/Darm-Z 
+        Wigglet/Wuggtrio 
+        Zorua/Zoroark 
+
+Generation 6: 
+    
+    Best Options: 
+        Greninja 
+        Chesnaught 
+        Delphox 
+        Pangoro
+        Swirlilx / Slurpuff 
+        Dragalge 
+        Heliolisk 
+        Amaura / Aurorus 
+        Sylveon 
+        Noivern 
+        Trevenant 
+        Gourgeist 
+    
+    Reasonings:
+        Chesnaught 
+            + Bulky grass fighting is cool 
+            + Iron Barbs and Bulletproof are cool 
+        
+        Greninja
+            + Great for the Shadow Triad to have. 
+            + Cool torrent abuser  
+            + Infiltrator?
+            - Speed creep and power creep. 
+        
+        Delphox: 
+            + Unique typing, not counting Darm-Z 
+            + Very fitting on a lot of mons, including Shauntal maybe as a mgic guard mon. 
+        
+        Talonflame 
+            + Unique typing, pretty cool bird without overwhelming attack 
+            - I wouldn't want to implement Gale Wings 
+        
+        Pangoro: 
+            + Adds a more offensive dark/fighting type 
+            + Really cool mon for grimsley. I could see a quick claw iron fist Pangoro with wicked blow/dynamic punch/ice hammer/meteor mash 
+            - Doesn't super fit in anywhere as a local mon 
+        
+        Swirlix / Slurpuff 
+            + Cool early game fairy, not overwhelming stats 
+            + Good for the Pokestar Studios encounter table and the Preschool table 
+            - Takes two slots 
+            - Competes with other cool early fairies 
+        
+        Dragalge 
+            + Covers a very cool niche of poison/dragon, might be able to free Gorebyss from that role 
+            + Bulky which is a cool stat profile 
+            - Takes two slots 
+        
+        Helioeptile / Heliolisk 
+            + A cool normal/electric with a lot of weather synergies. 
+            + not overwhelming offense or speed. 
+            - takes two slots 
+        
+        Amura / Aurorus 
+            + would be a very cool ice/electric mon 
+            + adding another fossil would be cool, especially one we can put in early. 
+            - takes two slots 
+        
+        Sylveon
+            + I would kinda have to for completeness sake 
+            + It's a cool mon for enemies to have. 
+            + tbh i might be doing this anyways 
+        
+        Gourgeist: 
+            + Covers a missing typing, and we could free cacturne of that role 
+            + We can make use of forms to give it a lot of different cool statlines. 
+
+        
+        Trevenant: 
+            + Basicallly the same situation as Grougeist, altho it's a weaker mon.
+            - Has less interesting ability and tech 
+        
+        Noivern: 
+            + Obviously very cool mons that would get to be pretty cool in Cascade. 
+            + Amplifier helps them, so does infilitrator. 
+            + Cool mon for musicians and dancers to have. 
+
+
+Generation 7: 
+
+    Best Options: 
+        Type Null / Silvally 
+        Crabrawler / Crabominable 
+        Rockruff / Lycanroc 
+        Sandyghast / Pallosand 
+
+
+    Reasonings: 
+        
+        Decidueye: 
+            + 1 slot 
+            + Lots of cool buff ideas, even a simple speed boost. AI could have sniper. 
+            - I don't want to implement spirit shackle. 
+        
+        Crabrawler / Crabomainable 
+            + Very cool mons 
+            + Cool typing, might actually free up Beartic to go Ice/Dark perhaps 
+            + Lots of cool abilities concepts; iron fist, fur coat, etc. 
+            + fits for a lot of different trainers, more fishing table diversity. 
+            - takes two slots, although we don't *need* crabrawler 
+        
+        Rockruff / Lycanroc: 
+            + cool mon to put in pledge grove 
+            + get a lot of mileage out of the different forms with no extra head ache. 
+            + each form has a lot of options for cool niches. 
+        
+        
+        Sandyghast / Pallosand: 
+            + Cool mon, special ground/ghost isn't covered 
+            + Another good pokemon for fisherman 
+            + Works really welll as a fishing table mon. 
+        
+        Type Null / Silvally: 
+            + Probably won't need both of these, but they both work really well for Colress. 
+            + type null gift would work quite well for the player actually. 
+        
+        
+
+Generation 8: 
+
+    Best Options: 
+        Toxtricity 
+        Mr Rime
+        Snasel-Hisua / Sneasler
+        Cursola 
+        Centiskorch 
+
+    Reasonings: 
+
+        Carkol / Coalossal:
+            + Just a really cool mon, covers a lot of ground.
+            - takes two slots 
+        
+        Toxtricity: 
+            + Two mons for the price of one with the two forms 
+            + Excellent mon for Roxie. Tbh if we don'tt giga buff the stats it'll make a good ace (if we ever decide to start changing those)
+            + Helpps with the sound trainers. 
+        
+        Sizzilepede / Centriskorch 
+            + Excellent type combo to have 
+            + Cool abilities 
+            - two slots 
+        
+        Impidimp / Morgrem / Grimmsnarl 
+            + Really cool typing to represent outside of Absol 
+            + Fits onto grimsley's team insanely well 
+            - Is not going to translate well to gen 5 art style 
+            - 3 slots 
+        
+        Cursola: 
+            + Really huge opportunity to give this mon a glow up. 
+            + Can add a ghost form to Corsola for free, although this would make it eviolite compatible. 
+            - a bit awkward unless we also want to add Corsola-G. 
+        
+        Mr. Rime 
+            + Honestly a really col pokemon
+            + Really funny ideas with Strong Jaw tbh 
+            + cool typing, good bulk, i really like this tbh 
+            - we might need to come up with a mr. mime galar but that's fine tbh. 
+        
+        Ursaluna: 
+            + Honestly unsure about this cause we do already cover it with Bouffalant but maybe this is more palettable?
+        
+        Basculegion: 
+            + Just a cool mon and it would let us turn Basculin into more of an early game pokemon. 
+            - I don't think it's art style will look very good in gen 5 
+        
+        Sneasel-Hisua / Sneasler 
+            + Really cool and powerful pokemon of course. 
+            + Really cool mon for Grimsley or Shauntal to have tbh. 
+
+Generation 9: 
+
+    Best Options: 
+        Dascubun 
+        Grafaifai 
+        Reveraroom 
+        Glimmora 
+    
+    Reasonings: 
+        Fidough / Daschbun: 
+            + Provide more options for food themed trainers which is great 
+            + Really good basic early game fairies. 
+            + Cool coverage with well baked body tbh 
+            - takes two slots 
+        
+        Grafaifai: 
+            + Really cool mon and typing. 
+            + Solid stats for this type of game 
+            + Fits some of the urban flavor really well
+        
+        Revaroom 
+            + Just fits unova and a lot of trainer themes super well 
+            + super cool mon to terastalize 
+            + we already have the signature move in 
+            
+        Glimmora: 
+            + Extremely cool pokemon tbh 
+            + Really strong stat line 
+            + Great terastalization target 
+            + great inclusion for Shauntal 
+        
+        Grevard / Houndstone 
+            + Again just a really solid basic type mon 
+            + Not too overwhelming to include as an encounter early on 
+            + Rock/Ghost candidate with Houndstone. 
+
+
+New Forms: 
+
+    Best Options: 
+
+
+    Reasonings: 
+
+        Rattata / Raticate 
+
+        Sandshrew / Sandslash 
+
+        Vulpix / Ninetales 
+
+        Voltorb / Electrode 
+
+        Slowpoke / Slowbro / Slowking 
+
+        Tauros: 
+            + These are all really cool typings to have on a mon with thsi stat line 
+            - They all look kinda stupid tbh 
+        
+
+        Darmanitan / Darm-Z 
+
+        Wigglet / Wuggtrio 
+
+        Zorua / Zoroark 
+
+
+
+
+What would those look like: 
+
+[ GRENINJA ]
+
+    STATS: 
+         HP:  72 
+        Atk: 110 (+15)
+        Def:  67
+        SpA: 103
+        SpD:  71
+        Spe: 122
+        BST: 545 (+15) 
+
+    Abilities: 
+    Torrent / Infiltrator / Savant
+
+    Availability: 
+
+    Enemy Trainers: 
+    Super useful for the Shadow Triad. 
+ 
+
+[ DELPHOX ]
+
+    STATS: 
+         HP:  75
+        Atk:  69
+        Def:  72
+        SpA: 125 (+11)
+        SpD: 100
+        Spe: 104
+        BST: 545 (+11)
+
+    Abilities: 
+    Blaze / Magic Bounce / Magic Guard 
+
+    Availability: 
+
+    Enemy Trainers: 
+        Shauntal would love this. 
+     
+
+
+[ CHESNAUGHT ]
+
+    STATS: 
+         HP:  88 
+        Atk: 107 
+        Def: 137 (+15)
+        SpA:  74
+        SpD:  75
+        Spe:  64
+        BST: 545 (+15)
+
+    Abilities: 
+    Iron Barbs / Bulletproof / Filter
+
+    Availability: 
+
+    Enemy Trainers: 
+
+
+
+[ PANGORO ]
+
+    STATS: 
+         HP:  95
+        Atk: 124
+        Def:  74
+        SpA:  69
+        SpD:  71
+        Spe:  78 (+20)
+        BST: 515 (+24)
+
+    Abilities: 
+    Iron Fist / Mold Breaker / Fluffy 
+
+    Availability: 
+
+    Enemy Trainers: 
+        Grimsley would be great with this.
+
+
+
+[ SLURPUFF ]
+
+    STATS: 
+         HP: 82
+        Atk: 80 
+        Def: 96 (+10)
+        SpA: 85
+        SpD: 85 (+10)
+        Spe: 72
+        BST: 500 (+15)
+
+    Abilities: 
+    Unburden / Gourmand / Gooey 
+
+    Availability: 
+
+    Enemy Trainers: 
+
+
+
+
+[ DRAGALGE ]
+
+    STATS: 
+         HP:  90 (+25)
+        Atk:  75
+        Def:  90
+        SpA: 107 (+10)
+        SpD: 123
+        Spe:  44
+        BST: 529 (+35)
+
+    Abilities: 
+    Adaptability / No Guard / Storm Drain 
+
+    Availability: 
+
+    Enemy Trainers: 
+
+
+
+[ HELIOLISK ]
+
+    STATS: 
+         HP:  62
+        Atk:  55
+        Def:  52
+        SpA: 109
+        SpD:  94
+        Spe: 109
+        BST: 481
+
+    Abilities: 
+    Dry Skin / Solar Power
+
+    Availability: 
+
+    Enemy Trainers: 
+
+
+
+[ AURORUS ]
+
+    STATS: 
+         HP: 123
+        Atk:  77
+        Def:  72
+        SpA:  99
+        SpD:  92
+        Spe:  58
+        BST: 521
+
+    Abilities: 
+    Refrigerate / Illumination / Majestic Ward  
+
+    Availability: 
+
+    Enemy Trainers: 
+
+
+
+[ SYLVEON ]
+
+    STATS: 
+         HP:  95
+        Atk:  65 
+        Def:  65
+        SpA: 110 
+        SpD: 150 (+20)
+        Spe:  60
+        BST: 545 (+20)
+
+    Abilities: 
+    Pixilate / 
+    Availability: 
+
+    Enemy Trainers: 
+
+
+
+[ NOIVERN ]
+
+    STATS: 
+         HP:  85
+        Atk:  95 (+25)
+        Def:  80
+        SpA:  97
+        SpD:  80
+        Spe: 123
+        BST: 560 (+25)
+
+    Abilities: 
+    Amplifier / Infiltrator 
+
+    Availability: 
+
+    Enemy Trainers: 
+
+
+
+
+
+[ GOURGEIST ]
+
+    STATS: 
+         HP:
+        Atk:
+        Def:
+        SpA:
+        SpD:
+        Spe:
+        BST:
+
+    Abilities: 
+
+    Availability: 
+
+    Enemy Trainers: 
+
+
+
+[ TYPE NULL ]
+
+    STATS: 
+         HP: 95
+        Atk: 95
+        Def: 95
+        SpA: 95
+        SpD: 95
+        Spe: 59
+        BST: 534
+
+    Abilities: 
+    Battle Armor / Berserk  
+
+    Availability: 
+
+    Enemy Trainers: 
+        Colress uses one. 
+
+
+
+[ SILVALLY ]
+
+    STATS: 
+         HP: 95
+        Atk: 95
+        Def: 95
+        SpA: 95
+        SpD: 95
+        Spe: 95
+        BST: 570
+
+    Abilities: 
+    Savant 
+
+    Availability: 
+
+    Enemy Trainers: 
+
+
+
+
+[ CRABOMINABLE ]
+
+    STATS: 
+         HP:  97
+        Atk: 132
+        Def:  77
+        SpA:  62
+        SpD:  97 (+30)
+        Spe:  63 (+20)
+        BST:  528 (+50)
+
+    Abilities: 
+    Fur Coat / Iron Fist / Slush Rush 
+
+    Availability: 
+
+    Enemy Trainers: 
+
+
+
+[ TOXTRICITY ]
+
+    STATS: 
+         HP:  75
+        Atk:  98
+        Def:  70
+        SpA: 114
+        SpD:  70
+        Spe:  75
+        BST: 502 
+
+    Abilities: 
+    Amplifier 
+
+    Availability: 
+
+    Enemy Trainers: 
+
+
+
+
+[ CURSOLA ]
+
+    STATS: 
+         HP:  60
+        Atk:  55 (-40)
+        Def:  90 (+40)
+        SpA: 145
+        SpD: 130
+        Spe:  55 (+25)
+        BST: 535 (+25)
+
+    Abilities: 
+    Weak Armor 
+    
+    Availability: 
+
+    Enemy Trainers: 
+
+
+
+
+[ MR. RIME ]
+
+    STATS: 
+         HP:  80
+        Atk: 110 (+25)
+        Def:  75 
+        SpA:  85 (-25)
+        SpD: 100
+        Spe:  70
+        BST: 520
+
+    Abilities: 
+    Ice Body / Strong Jaw / Technician
+
+    Availability: 
+
+    Enemy Trainers: 
+
+
+
+
+[ PALLOSSAND ]
+
+    STATS: 
+         HP:  85
+        Atk:  75
+        Def: 110
+        SpA: 100
+        SpD:  75
+        Spe:  35
+        BST: 480
+
+    Abilities: 
+    Water Absorb / Sand Force / Patient 
+
+    Availability: 
+
+    Enemy Trainers: 
+
+
+
+
+[ CENTISKORCH ]
+
+    STATS: 
+         HP: 100 
+        Atk: 115
+        Def:  65
+        SpA:  90
+        SpD:  90
+        Spe:  65
+        BST: 525 BST
+
+    Abilities: 
+    Flash Fire / White Smoke / Strong Jaw
+
+    Availability: 
+
+    Enemy Trainers: 
+
+
+
+[ DASCHBUN ]
+
+    STATS: 
+         HP:  57
+        Atk:  80
+        Def: 110
+        SpA:  50
+        SpD:  80
+        Spe:  95 
+        BST: 477
+
+    Abilities: 
+    Well Baked Body 
+
+    Availability: 
+
+    Enemy Trainers: 
+
+
+[ GLIMMORA ]
+
+    STATS: 
+         HP:  83
+        Atk:  55
+        Def:  90
+        SpA: 130
+        SpD:  81
+        Spe:  86
+        BST: 525 
+
+    Abilities: 
+    Corrosion / Sturdy / Adaptability
+    
+    Availability: 
+
+    Enemy Trainers: 
+    This would be an incredible pokemon for Shauntal. 
+
+[ GRAFAIFAI ]
+
+    STATS: 
+         HP:  63
+        Atk:  95
+        Def:  65
+        SpA:  90 (+10)
+        SpD:  72
+        Spe: 110 
+        BST: 495 BST
+
+    Abilities: 
+    Prankster / Unburden / 
+    Availability: 
+
+    Enemy Trainers: 
+
+
+
+
+[ ALOLAN-RATTATA / RATICATE ]
+
+    STATS: (Rattata) 
+         HP: 50 (+20)
+        Atk: 66 (+10)
+        Def: 75 (+40)
+        SpA: 25 
+        SpD: 50 (+15)
+        Spe: 62 (-10)
+        BST: 328 (+70)
+
+    STATS: (Raticate) 
+         HP:  75
+        Atk:  71
+        Def: 100 (+30)
+        SpA:  40
+        SpD:  80
+        Spe:  77
+        BST: 443
+    
+    Abilities: 
+    Hustle / Thick Fat / Strong Jaw
+
+    Availability: 
+
+    Enemy Trainers: 
+
+
+[ ALOLAN-VULPIX / NINETALES ]
+    
+    Abilities: 
+
+    Availability: 
+
+    Enemy Trainers: 
+
+[ ALOLAN-SANDSHREW / SANDSLASH ]
+
+    STATS: (Rattata) 
+         HP:
+        Atk:
+        Def:
+        SpA:
+        SpD:
+        Spe:
+        BST:
+
+    STATS: (Raticate) 
+         HP:
+        Atk:
+        Def:
+        SpA:
+        SpD:
+        Spe:
+        BST: 
+    
+    Abilities: 
+
+    Availability: 
+
+    Enemy Trainers: 
+
+[ WIGLETT / WUGGTRIO ]
+
+    STATS: (Rattata) 
+         HP:
+        Atk:
+        Def:
+        SpA:
+        SpD:
+        Spe:
+        BST:
+
+    STATS: (Raticate) 
+         HP:
+        Atk:
+        Def:
+        SpA:
+        SpD:
+        Spe:
+        BST: 
+    
+    Abilities: 
+
+    Availability: 
+
+    Enemy Trainers: 
+
+[ HISUIAN-ZORUA / ZOROARK ]
+
+    STATS: (Rattata) 
+         HP:
+        Atk:
+        Def:
+        SpA:
+        SpD:
+        Spe:
+        BST:
+
+    STATS: (Raticate) 
+         HP:
+        Atk:
+        Def:
+        SpA:
+        SpD:
+        Spe:
+        BST: 
+    
+    Abilities: 
+
+    Availability: 
+
+    Enemy Trainers: 
+
+
+
+Rockruff / Lycanroc 
+Sandyghast / Pallosand 
+Toxtricity 
+Mr Rime
+Sneasler
+Cursola 
+Centiskorch 
+Fidough/Dascubun 
+Grafaifai 
+Glimmora 
+
+Forms: 
+    Alolan Rattata/Raticate
+    Alolan Sandshrew/Sandslash 
+    Alolan Vulpix/Ninetales 
+    Galarian Damranitan/Darm-Z 
+    Wigglet/Wuggtrio 
+    Zorua/Zoroark 

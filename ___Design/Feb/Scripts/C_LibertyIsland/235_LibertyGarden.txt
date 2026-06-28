@@ -2,6 +2,7 @@ import messages.script.Msg0300.MSGID;
 
 import event.actors.Actor;
 import event.dialogs.Message;
+import event.EVCamera;
 import event.dialogs.YesNoWin;
 import event.funfest.Funfest;
 import player.TrainerCard;
@@ -17,6 +18,8 @@ import system.Field;
 import system.Input;
 import system.Runtime;
 import system.Sound;
+import event.Battle;
+import system.Field;
 
 public class MainEvents {
 	public static void main_1() { // @ 0x27b
@@ -197,6 +200,9 @@ public class MainEvents {
 		Actor.PauseAll();
 		Fade.InBlackQ();
 		Fade.Wait();
+		if (EventWorks.Get(16520) == 2){
+			EventWorks.Set(16520, 1); // Makes sure you don't get double tapped 
+		}
 		if (EventWorks.Get(16696) == 1) {
 			goto LABEL_026b;
 		}
@@ -308,7 +314,7 @@ public class MainEvents {
 		Actor.UnpauseAll();
 	}
 
-		public static void main_14() { // @ 0x4d6
+	public static void main_14() { // @ 0x4d6
 		Actor.PauseAll();
 		Sound.SEPlay(1351);
 		Actor.FacePlayer();
@@ -347,6 +353,141 @@ public class MainEvents {
 		Actor.UnpauseAll();
 	}
 
+	// Speaking with Surge directly after all this hassle. 
+	public static void main_17(){
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 11, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	// Initial Surge Confrontation
+	public static void main_18(){
+		int SURGE_ENTITY;
+
+		Message.ActorEx(1024, 21, SURGE_ENTITY, 2, 0);
+		Input.LastKeyWait();
+		ShowExclamationMark(255);
+		Actor.WaitActionFinish();
+		Message.CloseAll();
+
+		// Surge approaches 
+
+		SurgeApprochesA(SURGE_ENTITY);
+		Actor.WaitActionFinish();
+
+		Message.ActorEx(1024, 21, SURGE_ENTITY, 2, 0);
+		Input.LastKeyWait();
+
+		WalkSouth(TwoTiles)
+	}
+
+	// second surge confrontation 
+	public static void main_19(){
+		int SURGE_ENTITY;
+		int yesNo; 
+
+		if (EventWorks.Get(16520) == 2){
+			Message.ActorEx(1024, 21, SURGE_ENTITY, 2, 0);
+			Message.CloseAll();
+			WalkWest8F(SURGE_ENTITY);
+			Message.ActorEx(1024, 21, SURGE_ENTITY, 2, 0);
+			WalkNorth8F(SURGE_ENTITY);
+			Message.ActorEx(1024, 21, SURGE_ENTITY, 2, 0);
+			WalkSouthTwoTiles8F(SURGE_ENTITY);
+			Message.ActorEx(1024, 21, SURGE_ENTITY, 2, 0);
+			WalkNorthAndTurnWest(SURGE_ENTITY);
+			Runtime.Sleep(8);
+			Message.ActorEx(1024, 21, SURGE_ENTITY, 2, 0);
+			yesNo = YesNoWin.Show();
+			if (yesNo == 1) {
+				Message.CloseAll();
+				Message.ActorEx(1024, 21, SURGE_ENTITY, 2, 0);
+				Message.CloseAll();
+				SurgeKnocksPlayerBack(SURGE_ENTITY);
+				Runtime.Sleep(8);
+				Sound.SEPlay(Sound);
+				PlayerIsKnockedBack(255);
+				Sound.SEWait();
+				Actor.WaitActionFinish();
+				SurgeReturnsToPosition(SURGE_ENTITY);
+				Runtime.Sleep(4);
+				Message.ActorEx(1024, 21, SURGE_ENTITY, 2, 0);
+				Message.CloseAll();
+				EventWorks.Set(16520, 2);
+			}
+			else {
+				WalkWest8F(SURGE_ENTITY);
+				Message.ActorEx(1024, 21, SURGE_ENTITY, 2, 0);
+				Message.CloseAll();
+				sub_SurgeBattle();
+			}
+
+		}
+		else {
+			Message.ActorEx(1024, 21, SURGE_ENTITY, 2, 0);
+			Message.CloseAll();
+			WalkWest8F(SURGE_ENTITY);
+			Message.ActorEx(1024, 21, SURGE_ENTITY, 2, 0);
+			Message.CloseAll();
+			sub_SurgeBattle();
+		}
+
+		Label_EndSurgeEncounterScript2: 
+		Runtime.FinishSubEvents();
+	}
+
+	// Handles the surge battle logic 
+	static void sub_SurgeBattle(){
+		int SURGE_ENTITY;
+		int GUIDE_ENTITY;
+		int isVictory; 
+
+		Message.CloseAll();
+		Message.ActorEx(1024, 21, SURGE_ENTITY, 2, 0);
+		Message.CloseAll();
+		Battle.CallTrainerBattle(767, 0 , 0);
+		isVictory = Battle.IsTrainerVictory();
+		if (isVictory != 1){
+			Battle.CallTrainerLose();
+			return;
+		}
+		Battle.EndTrainerBattle();
+
+		Message.ActorEx(1024, 26, SURGE_ENTITY, 2, 0);
+		Message.CloseAll();
+
+		// EV CAMERA SHIT TO THE BOAT GUIDE
+
+	
+
+		Runtime.Sleep(32);
+		Message.ActorEx(1024, 28, SURGE_ENTITY, 2, 0);
+		Message.CloseAll();
+
+		// EV Camera Return TO SURGE
+
+		Message.ActorEx(1024, 29, SURGE_ENTITY, 2, 0);
+		Message.CloseAll();
+
+		
+		WordSet.LoadPlayerName(0);
+		Message.ActorEx(1024, 30, SURGE_ENTITY, 2, 0);
+		Message.CloseAll();
+
+		Global2805(1, 1); // Leftovers 
+		Global2805(1, 1); // Hasty Mint
+
+		Message.ActorEx(1024, 31, SURGE_ENTITY, 2, 0);
+		Message.CloseAll();
+
+		EventFlags.Set(1520 + 766);
+		EventWorks.Set(16520, 5);
+	}
 
 	static meta void ActionSequence_0244(int npcId) : VActionSequence {
 		Action000d(1);

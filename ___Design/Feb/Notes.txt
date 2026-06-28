@@ -1,0 +1,188 @@
+
+Seaside Cave:
+    Trainers: 
+        471: Maylene
+        472: Battle Girl Maki 
+        473: Johan 
+        474: Mikiko 
+        580: Rocky 
+
+        Leftover:
+            469
+        
+    Items: 
+        162 = Enigma Berry x1
+        163 = Dive Ball x5
+        165 = Heart Scale 
+        166 = Lum Berry x3 
+        168 = Yellow Shard x5 
+
+
+Undella Bay: 
+    Trainers: 
+        470: Battle Girl Tia
+        315: Swimmer Bart 
+    
+    Items: 
+        127: TM Solarbeam 
+
+Abyssal Ruin: 
+    Trainers: 
+        314: Swimmer Matt 
+        316: Swimmer Tim 
+        317: Swimmer Arissa 
+        318: Swimmer Mitzi 
+        104: Sunken Statue 
+
+Plasma Frigate: 
+    Trainers:
+        Rumble: 
+            500 - 1st fight 
+            800 - 2nd fight 
+            801 - 3rd fight
+            802 - 4th fight 
+    
+            798 - Tag Battle Mess Hall
+            799 - Tag Battle Mess Hall
+
+            (EventFlag 348 / EventWork 16714)
+            430 - First Fight of B2B in Bottom Right Room
+            441 - Second Fight of B2B in Bottom Right Room
+
+             (EventFlag 349 / EventWork 16715)
+            432 - First Fight of B2B in Mess Hall, by Baker 
+            442 - Second FIght of the B2B in Mess Hall by Baker 
+
+             (EventFlag 350 / EventWork 16716)
+            434 - First Fight of B2B in Top Left Room 
+            443 - Second Fight of B2B in Top Left Room 
+
+             (EventFlag 353 / EventWork 16718)
+            438 - First Fight of Back to Back in Top Right Room 
+            450 - Second Fight of B2B in Top Right Room 
+
+            (EventFlag 1520+435)
+            435 - Plasma Scientist #1 
+
+             (EventFlag 1520+444)
+            444 - Plasma Scientist #2 
+
+            797 - Zinzolin Tag Team 
+            347 - Zinzolin's Partner Kyurem 
+
+            428 OR 443 - First Password, Top Left Room
+            436 OR 451 - Plasma Card Giver in the Mess Hall (Bottom Left: 583)
+            427 OR 442 - Other Trainer in the Mess Hall (Bottom Left: 583)
+            426 OR 441 - Plasma Hint Grunt (Bottom Right: 582)
+            435 OR 450 - Top Right Trainer (Top Right: 580)
+            430 / 441 -> SetFlag 348 / 16714 Works
+                Bottom Right Room - Top Grunt 
+            432 / 442 -> Set Flag 349 / 16715 Works
+                This is the Mess Hall Plasma Grunt Bottom Left
+            434 / 443 -> Set Flag 350 / 16716 Works
+                Top Left Room
+            435 / 444 -> Set Flag 351 / 16717 Works
+                Bottom Right Room - Right Grunt
+            438 / 450 -> Set Flag 353 / 16718 Works
+                Top Right Room
+            439 / 451 -> Set Flag 354
+                This is the keycard grunt
+            430 -> 348 
+            432 -> 349
+
+
+
+    Items: 
+        378: On the deck of the ship
+        379: On the deck of the SHip
+
+Route 13: 
+    Trainers:
+        294 - Ranger Daryl
+        295 - Ranger Dianne
+        730 - Black Belt Wesley 
+        133 - Ace Trainer ANgi 
+        134 - Ace Trainer Miguel 
+        286 - Fisherman Jones 
+        287 - Fisherman Damon 
+        288 - Fisherman Leeroy -> Scientist Leeroy 
+        289 - Fisherman Vince -> Worker Vince 
+        290 - Parasol Lady Laura 
+        731 - Battle Girl Alize -> Scientist Alize 
+        300 - Black Belt Rich -> Candice 
+        
+    Items: 
+        133: Normal Gem (x2)
+        134: TMXX Weather Ball
+        135: TMXX Weather Crash 
+        137: TM13 Ice Beam 
+        138: Quick Ball (x5) (On the beach)
+        139: Starf Berry x2 (Located on the Shallows)
+        140: Heart Scale (x1)
+        140: Red Shard (x20) (Located in the grassy island)
+
+
+Lacunosa Town: 
+    Trainers:
+        379 - Benga 
+    
+    Items: 
+        142 - Chilan Berry
+
+
+Route 12: 
+
+    Items: 
+        - 
+
+
+Village Bridge: 
+    
+    Trainers: 
+        - Fantina
+        - Chili 
+        - Cress 
+        - Cilan
+        - Coraline 
+        
+    Items: 
+
+
+
+Route 11: 
+    Items: 
+
+    Trainers: 
+        - Ranger Audra 
+
+Opelucid City: 
+    Items: 
+
+    Trainers: 
+        - Tate 
+        - Liza 
+
+
+
+Sound
+1112 - Another cool pleasant theme i don't think i've ever heard
+1154 - Wifi Present, pleasant beat that might work for the Blueberry Academy
+1155 - A kinda pleasant high pitch beat 
+
+
+1159 - Tournament Battle Set up 
+
+1311 - Gauntlet Complete
+
+1326 - Acquiring a mysterious item
+
+1332 - Mario KART ASS 
+
+1380 - Impact; use for Happiny's attack in Pledge Grove
+
+1383 - Sending out a become quick
+
+1385 - Sending out a pokemon long
+
+1866 - Warp Sound
+1875 - Warp Sound

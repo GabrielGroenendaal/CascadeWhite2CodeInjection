@@ -940,6 +940,14 @@ public class MainEvents {
                 Message.CloseAll();
                 Message.ActorEx(1024, 71, MISTY_ENTITY, 2, 0);
                 Message.CloseAll();
+				TurnNorth8F(MISTY_ENTITY);
+				TurnSouth8F(TOGETIC_ENTITY);
+				Actor.WaitActionFinish();
+				Message.ActorEx(1024, 83, MISTY_ENTITY, 2, 0);
+                Message.CloseAll();
+				Sound.PVPlay(176, 0);
+				Sound.PVWait();
+				TurnEast8F(TOGETIC_ENTITY);
                 TurnEast8F(MISTY_ENTITY);
                 Actor.WaitActionFinish();
                 goto Label_EndMistyScript;
@@ -970,7 +978,7 @@ public class MainEvents {
                 Message.ActorEx(1024, 80, MISTY_ENTITY, 2, 0);
             }
             else {
-                Message.ActorEx(1024, 77, MISTY_ENTITY, 2, 0);
+                Message.ActorEx(1024, 82, MISTY_ENTITY, 2, 0);
             }
             Message.CloseAll();
         }

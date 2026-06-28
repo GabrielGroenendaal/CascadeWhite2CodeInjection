@@ -17,6 +17,8 @@ import system.Fade;
 import system.Field;
 import system.Runtime;
 import system.Sound;
+import pokemon.PokeParty;
+import system.text.WordSet;
 
 public class MainEvents {
 	public static void main_1() { // @ 0x4d
@@ -269,6 +271,228 @@ public class MainEvents {
 		Actor.UnpauseAll();
 	}
 
+	// Unown
+	public static void main_11() { // @ 0x4d6
+		int UnownIdx; 
+		int isUnown;
+		int UnownForm;
+		int yesNo;
+
+		if (!EventFlags.Get(1520 + 104)){
+			Sound.PVPlay(201, 0);
+			Message.Info(39, 0);
+			Sound.PVWait();
+			Message.CloseAll();
+			goto LABEL_EndUnownScript;
+		}
+		PokeParty.FindPkm(201, isUnown, UnownIdx);
+		
+		if (isUnown == 1){
+			UnownForm = PokeParty.GetForme(UnownIdx);
+			if (UnownForm >= 24) {
+				UnownIdx = 7;
+			}
+		}
+		Sound.SEPlay(1351);
+
+		if (UnownIdx == 7){
+			Sound.PVPlay(201, 0);
+			Message.Info(36, 0);
+			Sound.PVWait();
+			Message.CloseAll();
+			goto LABEL_EndUnownScript;
+		}
+		else { 
+
+			Actor.FacePlayer();
+			Sound.PVPlay(201, 0);
+			WordSet.LoadPartyPokeName(0, UnownIdx);
+			Message.Info(23, 0);
+			Sound.PVWait();
+			yesNo = YesNoWin.Show();
+			if (yesNo == 1){
+				Message.CloseAll();
+				Message.Info(35, 0);
+				Message.CloseAll();
+				goto LABEL_EndUnownScript;
+			}
+			Message.Info(24, 0);
+			Message.CloseAll();
+
+			TurnSouth8F(255);
+			
+			EVCamera.Init();
+			EVCamera.Unbind();
+			EVCamera.MoveTo(2.3652344f, 0.0f, 237.0f, 208.0f, 48.0f, 176.0f, 32);
+			UnownWarpUp(10);
+			Actor.SetMoveCode(10, 15);
+			Actor.WaitActionFinish();
+			Actor.SetGPos(10, 10, 48, 18, 1);
+			UnownWarpDown(10);
+			Actor.WaitActionFinish();
+			
+			Message.Multi(25, 6, 20, 1);
+			UnownWarpUp(20);
+			Actor.SetMoveCode(20, 15);
+			Actor.WaitActionFinish();
+			Actor.SetGPos(20, 11, 48, 18, 1);
+			UnownWarpDown(20);
+			Actor.WaitActionFinish();
+			Runtime.Sleep(14);
+			
+			Message.Multi(26, 4, 11, 2);
+			UnownWarpUp(27);
+			Actor.SetMoveCode(27, 15);
+			Actor.WaitActionFinish();
+			Actor.SetGPos(27, 12, 48, 18, 1);
+			UnownWarpDown(27);
+			Actor.WaitActionFinish();
+			Runtime.Sleep(14);
+			Message.CloseWin(1);
+			
+			Message.Multi(27, 13, 2, 3);
+			UnownWarpUp(6);
+			Actor.SetMoveCode(6, 15);
+			Actor.WaitActionFinish();
+			Actor.SetGPos(6, 13, 48, 18, 1);
+			UnownWarpDown(6);
+			Actor.WaitActionFinish();
+			Runtime.Sleep(14);
+			Message.CloseWin(2);
+
+			
+			Message.Multi(28, 18, 14, 4);
+			UnownWarpUp(22);
+			Actor.SetMoveCode(22, 15);
+			Actor.WaitActionFinish();
+			Actor.SetGPos(22, 14, 48, 18, 1);
+			UnownWarpDown(22);
+			Actor.WaitActionFinish();
+			Runtime.Sleep(14);
+			Message.CloseWin(3);
+			Runtime.Sleep(14);
+			Message.CloseWin(4);
+			
+			Message.Info(30, 0);
+			Message.CloseAll();
+			
+			Sound.MEPlay(1301);
+			Sound.MEWait();
+			Message.System(31, 0);
+			PokeParty.SetForme(UnownIdx, 27);
+
+			Message.CloseAll();
+			Message.Info(32, 0);
+			Message.CloseAll();
+
+			Message.Info(37, 0);
+			Message.CloseAll();
+			
+			Base.CMD_2E8(1, 1);
+			Sound.BGMPlay(1074);
+			
+			Message.Info(33, 2);
+			Message.CloseAll();
+			Message.Info(38, 2);
+			Message.CloseAll();
+			Sound.SEWait();
+			Base.CMD_2E9(1, 1);
+			Field.PlayMapBGM();
+			EVCamera.MoveToDefault(32);
+			EVCamera.Wait();
+			EVCamera.Rebind();
+			EVCamera.End();
+
+			Message.Info(34, 2);
+			Message.CloseAll();
+			Actor.Hide(10);
+			Actor.Hide(20);
+			Actor.Hide(27);
+			Actor.Hide(6);
+			Actor.Hide(22);
+			Actor.Hide(41);
+			goto LABEL_SkipWeirdness;
+
+			UnownWarpUp(10);
+			Actor.SetMoveCode(10, 13);
+			Actor.WaitActionFinish();
+			Actor.SetGPos(10, 10, 48, 14, 0);
+			
+			UnownWarpUp(20);
+			UnownWarpDown(10);
+			Actor.SetMoveCode(20, 13);
+			Actor.WaitActionFinish();
+			Actor.SetGPos(20, 18, 48, 7, 1);
+			
+			UnownWarpUp(27);
+			UnownWarpDown(20);
+			Actor.SetMoveCode(27, 12);
+			Actor.WaitActionFinish();
+			Actor.SetGPos(27, 10, 48, 6, 1);
+			
+			UnownWarpUp(6);
+			UnownWarpDown(27);
+			Actor.SetMoveCode(6, 12);
+			Actor.WaitActionFinish();
+			Actor.SetGPos(6, 18, 48, 11, 1);
+			
+			UnownWarpUp(22);
+			UnownWarpDown(6);
+			Actor.SetMoveCode(22, 12);
+			Actor.WaitActionFinish();
+			Actor.SetGPos(22, 19, 48, 15, 1);
+			UnownWarpDown(22);
+			
+
+			UnownWarpUp(41);
+			Actor.WaitActionFinish();
+
+			LABEL_SkipWeirdness:
+			Actor.Hide(41);
+			
+			goto LABEL_EndUnownScript;
+		}
+
+		LABEL_EndUnownScript:
+		Runtime.FinishSubEvents();
+	}
+
+	public static void main_12() {
+		int UnownIdx; 
+		int isUnown;
+		int UnownForm;
+		PokeParty.FindPkm(201, isUnown, UnownIdx);
+		if (isUnown == 1){
+			UnownForm = PokeParty.GetForme(UnownIdx);
+			if (UnownForm < 24) {
+				Sound.SEPlay(1351);
+				Sound.PVPlay(201, 0);
+				WordSet.LoadPartyPokeName(0, UnownIdx);
+				Message.Info(22, 0);
+				Message.CloseAll();
+				EventWorks.Set(16414, 1);
+			}
+		}
+		EventWorks.Set(16414, 1);
+	}
+	
+	static int checkForUnown(){
+		int UnownIdx;
+		int isUnown;
+
+		int count; 
+
+		while (count < 24){
+			PokeParty.FindPkmEx(201, count, UnownIdx, isUnown);
+
+			if (isUnown == 1){
+				return UnownIdx;
+			}
+			count++;
+		}
+		return 7;
+	}
+
 	static void sub_0078(int v32, int v33) { // @ 0x78
 		Sound.SEPlay(1351);
 		Base.CMD_230(v32, 0);
@@ -319,10 +543,29 @@ public class MainEvents {
 		Action0001(1);
 	}
 
+	static meta void UnownWarpUp(int npcId) : VActionSequence {
+		Action0043(1);
+	}
+
+	static meta void UnownWarpDown(int npcId) : VActionSequence {
+		Action0044(1);
+	}
+
+	static meta void TurnSouth8F(int npcId) : VActionSequence {
+		Action0021(1);
+	}
+
 	static meta void Global2807(int a1, int a2) : VGlobalCall[2807];
 
 	static meta void Global2805(int a1, int a2) : VGlobalCall[2805];
 
+	
+	
+	
+
+	static native void Action0021(int amount) : 0x21;
+	static native void Action0043(int amount) : 0x43;
+	static native void Action0044(int amount) : 0x44;
 	static native void Action0001(int amount) : 0x1;
 	static native void Action0008(int amount) : 0x8;
 	static native void Action000c(int amount) : 0xc;

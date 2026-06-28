@@ -2520,7 +2520,7 @@ extern "C"
         return v8;
     }
 
-
+    int weatherAnims[5] = {0, 241, 240, 258, 201};
 
     int THUMB_BRANCH_ServerControl_TurnCheckWeather(ServerFlow *a1, PokeSet *a2)
     {
@@ -2579,6 +2579,8 @@ extern "C"
             // }
 
             Weather = ServerEvent_GetWeather(a1);
+
+            ServerControl_ViewEffect(a1, weatherAnims[Weather], 6, 6, 0, 0);
             j_j_PokeSet_SeekStart_6(a2);
             for (mon = j_j_PokeSet_SeekNext_12(a2); mon; mon = j_j_PokeSet_SeekNext_12(a2))
             {
@@ -2596,11 +2598,14 @@ extern "C"
                     ServerControl_CheckFainted(a1, mon);
                 }
             }
+            
             if (v11)
             {
                 ServerControl_ViewEffect(a1, 597, 6, 6, 0, 0);
             }
             // BtlvEffect_AddAnim(dword_21D6F48[Weather]);
+            
+
             return ServerControl_CheckExpGet(a1);
         }
     }

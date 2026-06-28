@@ -295,9 +295,7 @@ public class MainEvents {
 		Actor.PauseAll();
 		Sound.SEPlay(1351);
 		Actor.FacePlayer();
-		Sound.PVPlay(43, 0);
 		Message.Actor(1024, 11, 0, 0);
-		Sound.PVWait();
 		Input.LastKeyWait();
 		Message.CloseActor();
 		Runtime.FinishSubEvents();
@@ -469,7 +467,7 @@ public class MainEvents {
 		Runtime.FinishSubEvents();
 		Actor.UnpauseAll();
 	}
-	
+
 	static void sub_ErikaBattle(){
 		int ERIKA_ENTITY;
 		int isVictory; 

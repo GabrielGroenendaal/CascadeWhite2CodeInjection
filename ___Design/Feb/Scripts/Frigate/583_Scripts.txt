@@ -321,6 +321,8 @@ public class MainEvents {
         // Fade In Quick 
         Fade.OutWhiteQ();
 		Fade.Wait();
+        Sound.SEPlay(1383);
+        Sound.SEWait();
         Sound.PVPlay(63, 0);
         Actor.New(3, 3, 1, 30, 4160, 0); // Change This Later
         Sound.PVWait();
@@ -337,6 +339,8 @@ public class MainEvents {
 
         Fade.OutWhiteQ();
 		Fade.Wait();
+        Sound.SEPlay(1866);
+        Sound.SEWait();
         Actor.Hide(30);
         Runtime.Sleep(8);
         Fade.InWhiteQ();
@@ -347,7 +351,8 @@ public class MainEvents {
         Runtime.Sleep(64);
         Fade.OutWhiteQ();
 		Fade.Wait();
-        Runtime.Sleep(8);
+        Sound.SEPlay(1875);
+        Sound.SEWait();
         Actor.New(5, 4, 2, 31, 4160, 0); // Change This Later
         Fade.InWhiteQ();
 		Fade.Wait();

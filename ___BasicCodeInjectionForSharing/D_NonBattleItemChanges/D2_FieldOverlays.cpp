@@ -462,7 +462,7 @@ extern "C"
         
         // Unown Checks 
         if (pkmData->Species == 201){
-            random = GFL_RandomLCAlt(28u);
+            random = GFL_RandomLCAlt(24u);
             PokeParty_ChangeForme(pPkm, random);
         }
 

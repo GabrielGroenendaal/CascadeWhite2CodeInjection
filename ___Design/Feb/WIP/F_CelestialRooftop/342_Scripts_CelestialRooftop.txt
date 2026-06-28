@@ -1,0 +1,280 @@
+import messages.script.Msg0554.MSGID;
+
+import Base;
+import event.Battle;
+import event.EVCamera;
+import event.StaticProp;
+import event.actors.Actor;
+import event.actors.Player;
+import event.dialogs.Message;
+import event.dialogs.YesNoWin;
+import event.funfest.Funfest;
+import pokescript.vm.Math;
+import pokescript.vm.StackCtrl;
+import pokescript.vm.VM;
+import system.EventFlags;
+import system.EventWorks;
+import system.Fade;
+import system.Input;
+import system.Field;
+import system.Runtime;
+import system.Sound;
+import system.text.WordSet;
+
+public class MainEvents {
+	public static void main_1() { // @ 0x24
+		if (EventFlags.Get(919) || EventWorks.Get(16663) != 2) {
+			return;
+		}
+		EventFlags.Set(919);
+		EventWorks.Set(16663, 1);
+	}
+
+    // This is for ringing the bell! 
+	public static void main_2() { // @ 0x53
+		int v16;
+		int v35;
+
+		Actor.PauseAll();
+		WordSet.LoadPlayerName(0);
+		Message.Info(3, 2);
+		Sound.SEPlay(1351);
+		v16 = YesNoWin.Show();
+		if (v16 != 0) {
+			Message.Info(7, 2);
+			Input.LastKeyWait();
+			Message.CloseInfo();
+			goto LABEL_00f9;
+		}
+		if (EventFlags.Get(408)) {
+			goto LABEL_0095;
+		}
+		Funfest.Broadcast(24, 0);
+		EventFlags.Set(408);
+
+		LABEL_0095:
+		Base.CMD_240(64, 30);
+		Sound.SEPlay(1968);
+		Message.Info(4, 2);
+		v35 = 0;
+		v35 = StaticProp.CreateHandle(8, 16, 7);
+		StaticProp.HndPlayAudioVisualAnm(v35, 0);
+		StaticProp.HndWaitAnm(v35);
+		StaticProp.ReleaseHandle(v35);
+		Sound.SEWait();
+		Base.CMD_241(60);
+		Message.Info(5, 2);
+		Input.LastKeyWait();
+		Message.CloseInfo();
+		if (EventWorks.Get(16622) != 5) {
+			goto LABEL_00f9;
+		}
+		EventWorks.Set(16622, 6);
+
+		LABEL_00ea:
+
+		LABEL_00f9:
+		v35 = 0;
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_3() { // @ 0x105
+		int v16;
+		int v32;
+		int v33;
+		int v34;
+
+		Actor.PauseAll();
+		Message.System(0, 2);
+		v16 = YesNoWin.Show();
+		if (v16 != 0) {
+			Message.CloseAll();
+			goto LABEL_01b2;
+		}
+		Message.CloseAll();
+		EventFlags.Clear(919);
+		EventWorks.Set(16663, 2);
+		Runtime.Sleep(30);
+		Sound.PVPlay(481, 0);
+		Message.Info(1, 2);
+		Sound.PVWait();
+		Message.WaitAdvance();
+		Message.CloseInfo();
+		Player.GetGPos(v33, v34);
+		Actor.Show(0);
+		Actor.SetGPos(0, 24, 9, 26, 2);
+		v34 += 2;
+		Actor.MoveLinear(0, v33, 5, v34, 48);
+		Actor.SetGPos(0, v33, 5, v34, 2);
+		ActionSequence_0270(0);
+		Runtime.Sleep(8);
+		v32 = Player.GetDirection();
+		if (v32 == 1) {
+			goto LABEL_01a4;
+		}
+		ActionSequence_0278(255);
+
+		LABEL_01a4:
+		Actor.WaitActionFinish();
+		Runtime.Sleep(16);
+
+		LABEL_01b2:
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_4() { // @ 0x1b8
+		int v16;
+
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Sound.PVPlay(481, 0);
+		Message.Spiked(1, 2);
+		Sound.PVWait();
+		Message.WaitAdvance();
+		Message.CloseInfo();
+		Battle.CallWildBattle(481, 65, 1);
+		v16 = Battle.IsWildVictory();
+		if (v16 != 1) {
+			Battle.CallWildLose();
+			goto LABEL_0208;
+		}
+		EventFlags.Set(919);
+		EventWorks.Set(16663, 3);
+		Actor.Hide(0);
+		Battle.EndWildBattle();
+
+		LABEL_0208:
+		v16 = Battle.GetWildBattleResult();
+		if (v16 == 0) {
+			EventFlags.Set(397);
+			goto LABEL_0259;
+		}
+
+		LABEL_0229:
+		if (v16 == 1) {
+			goto LABEL_0249;
+		}
+		if (v16 == 2) {
+			goto LABEL_0249;
+		}
+		goto LABEL_0259;
+
+		LABEL_0249:
+		Message.System(2, 2);
+		Input.LastKeyWait();
+		Message.CloseSystem();
+
+		LABEL_0259:
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+     // Sabrina Event Trigger
+	public static void main_5() { // @ 0x1c
+	
+    }
+
+    // Sabrina Event Trigger 2
+	public static void main_6() { // @ 0x1e
+		
+	}
+
+    // Speaking with Alakazam 
+	public static void main_7() {
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Sound.PVPlay(65, 0);
+		Message.Info(17, 0);
+		Sound.PVWait();
+		Message.CloseAll();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+    // Ringing the Gong 
+	static void sub_GenerateWildPokemon() {
+		int random; 
+		int speciesId;
+		int form;
+		int level;
+		int isVictory;
+		if (EventFlags.Get(1520 + 769)) {
+			Actor.PauseAll();
+			random = System.Random(100);
+			level = System.Random(2) + 39;
+			form = 0;
+			if (random < 100) {
+				if (random < 75) {
+					if (random < 50) {
+						if (random < 40){
+							if (random < 30) {
+								if (random < 20) {
+									if (random < 10) {
+										speciesId = 356; // Togetic
+									}
+									else {
+										speciesId = 593; // Misdreavus
+									}
+								}
+								else {
+									speciesId = 604; // Noctowl
+								}
+							}
+							else {
+								speciesId = 367; // Murkrow
+							}
+						}
+						else {
+							speciesId = 368; // Altaria
+						}
+					}
+					else {
+						speciesId = 369; // Castform
+						form = System.Random(3);
+					}
+				}
+				else {
+					speciesId = 358; // Chimecho
+				}
+			} 
+			else {
+				speciesId = 358; // Chimecho
+			}
+
+			Sound.PVPlay(speciesId, 0);
+			Sound.PVWait();
+			Battle.CallWildBattleEx(speciesId, level, form,  0);	
+			isVictory = Battle.IsWildVictory();
+			if (isVictory != 1){ 
+				Battle.CallWildLose();
+				goto Label_LostWildBattle;		
+			}
+			Battle.EndWildBattle();
+			
+			Label_LostWildBattle:
+			Runtime.FinishSubEvents();
+			Actor.UnpauseAll();
+		}
+	}
+
+    static void sub_SabrinaBattle(){
+
+	}
+
+
+	static meta void ActionSequence_0270(int npcId) : VActionSequence {
+		Action0020(1);
+	}
+
+	static meta void ActionSequence_0278(int npcId) : VActionSequence {
+		Action0021(1);
+	}
+
+
+	static native void Action0020(int amount) : 0x20;
+	static native void Action0021(int amount) : 0x21;
+}

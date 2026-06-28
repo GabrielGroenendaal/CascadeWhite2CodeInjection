@@ -9,19 +9,11 @@
 */
 
 
-[ POLISH ]
-    End of Turn Animations For Weather
 
-[ BALANCE ]
-    Shuckle +10 HP
-
-    Make these moves 80% Accurate: 
-        Focus Blast 
-        Hurricane
-        Thunder
-        Blizzard 
-        Scorching Swarm 
-
+To Do List: 
+    - See if we can get new Forms to work for Unown. 
+    - Come up with new teams for the Plasma Grunts on the Frigate. 
+    - Implement the Lostlorn Forest, Relic Castle, and Abyssal Ruin script changes. 
 
 
 
@@ -246,6 +238,8 @@
 
 
 
+
+
   
 [ MECHANICS TO IMPLEMENT ]
     
@@ -258,6 +252,11 @@ Shauntal:
     Banette @ Colbur Berry (Ability: Hustle) (Retaliate, Phantom Strike, Play Rough, Curse)
     Chandelure @ Choice Scarf (Ability: Shadow Tag) (Shadow Ball, Heat Wave, Self-Destruct, Switcheroo)
 
+
+    Other Shauntel Ideas: 
+        Vileplume 
+        Crobat 
+        Gengar 
 
 Marshall: 
 

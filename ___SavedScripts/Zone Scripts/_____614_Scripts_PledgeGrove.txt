@@ -175,8 +175,8 @@ public class MainEvents {
 
 		// Happiny Cry
 		Sound.PVPlay(440, 0);
-		Message.ActorEx(1024, 19, HAPPINY_ENTITY, 0, 1);
 		HopLeft(HAPPINY_ENTITY);
+		Message.ActorEx(1024, 19, HAPPINY_ENTITY, 0, 1);
 		Actor.WaitActionFinish();
 		Sound.PVWait();
 		Message.CloseAll();
@@ -195,11 +195,10 @@ public class MainEvents {
 
 		// Happiny Charges Geodude and they bump off each other. 
 		HappinyChargesGeodude(HAPPINY_ENTITY);
-		Runtime.Sleep(8);
+		Actor.WaitActionFinish();
 		Sound.SEPlay(1370);
 		GeodudeBouncesBack(GEODUDE_ENTITY);
 		Sound.SEWait();
-
 		Runtime.Sleep(24);
 
 		Message.ActorEx(1024, 18, BROCK_ENTITY, 2, 0);
@@ -208,15 +207,34 @@ public class MainEvents {
 		HappinyRunsBack(HAPPINY_ENTITY);
 		Runtime.Sleep(16);
 		GeodudeSlouchesForward(GEODUDE_ENTITY);
+		Actor.WaitActionFinish();
 
+		HappinyChargesGeodude(HAPPINY_ENTITY);
+		Actor.WaitActionFinish();
+		Sound.SEPlay(1380);
+		GeodudeBouncesBack(GEODUDE_ENTITY);
+		Sound.SEWait();
+		Runtime.Sleep(24);
+		Sound.PVPlay(440, 0);
+		HopDown(HAPPINY_ENTITY);
+		Message.ActorEx(1024, 36, HAPPINY_ENTITY, 0, 1);
+		Sound.PVWait();
+		Message.CloseAll();
+		Actor.WaitActionFinish();
+
+		Message.ActorEx(1024, 37, BROCK_ENTITY, 2, 0);
+		Message.CloseAll();
+
+		HappinyRunsBack(HAPPINY_ENTITY);
 		Runtime.Sleep(16);
-		ShowExclamationMark(CROAGUNK_ENTITY);
+		GeodudeSlouchesForward(GEODUDE_ENTITY);
+		Runtime.Sleep(16);
 		TurnSouth8F(CROAGUNK_ENTITY);
+		ShowExclamationMark(CROAGUNK_ENTITY);
 		Actor.WaitActionFinish();
 		Sound.PVPlay(453, 0);
-	
-		TurnSouth8F(BROCK_ENTITY);
 		Sound.PVWait();
+		TurnSouth8F(BROCK_ENTITY);
 		Runtime.Sleep(16);
 
 		Message.ActorEx(1024, 20, BROCK_ENTITY, 2, 0);
@@ -747,6 +765,9 @@ public class MainEvents {
 	static meta void ShowExclamationMark(int npcId) : VActionSequence {
 		Action004b(1);
 	}
+	static meta void HopDown(int npcId) : VActionSequence {
+            Action0031(1);
+        }
 
 	static meta void Global2805(int a1, int a2) : VGlobalCall[2805];
 	static native void Action000d(int amount) : 0xd;
@@ -760,6 +781,7 @@ public class MainEvents {
 	static native void Action0021(int amount) : 0x21;
 	static native void Action0022(int amount) : 0x22;
 	static native void Action0023(int amount) : 0x23;
+	static native void Action0031(int amount) : 0x31;
 	static native void Action0032(int amount) : 0x32;
 	static native void Action0033(int amount) : 0x33;
 	static native void Action0036(int amount) : 0x36;

@@ -202,7 +202,6 @@ public class MainEvents {
 
 		LABEL_0440:
 		if (v35 == 81) {
-			ActionSequence_0578(255);
 			goto LABEL_0482;
 		}
 

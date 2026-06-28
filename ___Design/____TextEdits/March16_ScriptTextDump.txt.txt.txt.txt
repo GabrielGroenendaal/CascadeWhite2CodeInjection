@@ -4354,6 +4354,26 @@
 59: Benga: Brrrrrr!\nWater's cold!
 60: ...\c\n...?\c
 61: ...!?\c
+62: ???: Hey, be honest.\c\nDoesn’t this water look perfect for\nswimming with Pokémon?\c
+63: ???: Right?\c\nWater like this is made for splashing\naround with your partners,\r\nnot just watching from the dock.\c
+64: ???: Seriously?\nYou must not spend much time with\r\nWater-type Pokémon.\c\nTo me, this is the kind of place you\njump into without thinking twice.\c
+65: Misty: I’m Misty, leader of\nthe Cerulean City Gym in Kanto.\c
+66: Misty: I wanted to get some training in-\n-swimming with my Water-type Pokémon,\r\nfeeling the currents, the whole thing.\c
+67: Misty: But this harbor?\c\n‘No swimming, boats only.’\nCan you believe that?\c
+68: Misty: I need a good warm-up before I\ndive into the tournament.\r\nHow about a battle here on the pier?\c\nDon’t worry, I won’t go full Gym Leader\nmode on you.\c\nSo?\nWant to help me get some practice in?
+69: Misty: That’s the spirit!\nI knew you had a challenger’s look\r\nin your eyes.\c
+70: Misty: All right, let’s see if you can\nkeep your head above water!\c
+71: Misty: Really?\nWell, if you change your mind I'll\nbe here, being jealous of boats.\c
+72: Misty: I still need a proper warm-up\nbefore I dive into the World Tournament.\c\nSo, how about it?\nWant to battle me?
+73: Still a no, huh?\nYou’re as slippery as a Tentacool.\c
+74: Misty: Phew, that was\none serious workout.\c\nYou’re really not half bad!\c\nHere, take this as a thank-you\nfor the battle!\c
+75: Misty: That’s a Clear Amulet!\nIt stops other Pokémon from changing\r\nthe holder’s stats!\c\nAnd it’s really pretty on top of that!\c\nI also tossed in some candy and a\nTechnical Machine for one of my\r\nfavorite moves!\c
+76: Misty: Hm?\nWhat is it, Togetic?\n\cDo you have something\nfor this Trainer too?\c
+77: Misty: Wow, an Egg from Togetic!\c\nYou know, I’ve raised Togetic ever since\nit was an Egg, too!\c\nTake good care of this one, okay?\c
+78: Togetic eyes you curiously.\c
+79: ???: Honestly... what a waste.\c
+80: Misty: Seems like my Togetic\nwants to give you something!\c
+81: Winnnkuh!
 
 ----- TEXT FILE 181-----
 0: This is a Pokémon Gym, and\nit's also a rock club!\c\nThe Gym Leader and the others\nare practicing inside, but please\r\nfeel free to challenge all of them!\c\nOh! These Lum Berries will help you!\nHere you go!\c
@@ -4945,29 +4965,44 @@
 53: [COLOR(2)][CENTER]Warning![COLOR(0)]\c\nThe words you are about to enter\nmay be sent to other players.\c\nPlease consider them carefully\nbefore you register them.\c
 54: [COLOR(2)][CENTER]Warning![COLOR(0)]\c\nThe words you are about to enter\nmay be sent to other players.\c\nPlease consider them carefully\nbefore you register them.\c
 55: Oh! A Trainer!!!
-56: I need your help, desperately!\c\nI am the owner of this mall, Join Avenue,\nand I've made a terrible mistake!\c\nWhen I agreed to host this years PokéCon,\nI had no idea how crazy these fans were!\c\nThere is trash everywhere, people battling\nin the road, the bathrooms are a wreck!\c\nSomeone even brought a bounce house,\nsomehow?
+56: I need your help, desperately!\c\nI am the owner of this mall, Join Avenue,\nand I've made a terrible mistake!\c\nWhen I agreed to host this years PokéCon,\nI had no idea how crazy these fans were!\c\nJust look!\c
 57: Eeep! Not my hydrangeas!\c
 58: HEY! Get out of the fountain!\c
-59: This is madness...\c\nThe convention was only supposed to last\nthree days, and its been a week!\c\nPlease, you must help me calm them down!\c\nI think the "cosplayers" are causing the\nmost commotion!\c\nBut be careful, once you enter the crowd,\nyou [COLOR(2)]WON'T BE ABLE TO LEAVE[COLOR(0)] until they're\r\ncalm, even to heal or swap Pokemon!\c\nSo if you want to reach Nimbasa City,\nyour team better be ready to handle four\r\nbattles.
+59: This is madness...\c\nThe convention was only supposed to last\nthree days, and its been a week!\c\nPlease, you must help me calm them down!\c\nI think the "cosplayers" are causing the\nmost commotion!\c\nBut be careful, once you enter the crowd,\nyou [COLOR(2)]WON'T BE ABLE TO LEAVE[COLOR(0)] until they're\r\ncalm, even to heal or swap Pokémon!\c\nSo if you want to reach Nimbasa City,\nyour team better be ready to handle four\r\nbattles.
 60: Please, think of the property damage!
 61: Thank goodness, they seem to have calmed\ndown...\c\n...\n..what?\c\nWere you expecting payment?
-62: You've started the Join Avenue gauntlet!
+62: The crowds have you completely\nblocked in!
 63: The crowds are too dense,\nyou can't get past.
-64: Hey Trainer, over here!\c
-65: That was some impressive battling,\nstranger!\c\nIt was crazy, watching you battle\nsomeone dressed up as a character\r\nfrom one my books!\c\nIt was like the pages come to life!\c\nHere, take something as thanks!
-66: You've got the tropes of a great trainer!\c\nI'll be following your story, maybe\nwe'll meet at the climax!
+64: ???: Hey Trainer, over here!\c
+65: Shauntal: My name is Shauntal!\nI'm a screenwriter for some movies\r\nyou may have heard of.\c
+66: Shauntal: I wish you luck on your journey!\c\nYou've got all the tropes of a real\nunderdog protagonist, destined to\r\nachieve greatness!\c\nI'll be following your story, maybe\nwe'll meet at the climax!
 67: Congratulations! You've completed the\nJoin Avenue gauntlet!
 68: The crowd is frantic and crazy.
 69: The crowd has calmed down.
-70: Come buy some of Pokestar Studio's finest\nfilms!\c\nBrycen Man, Riolu Boy, Full Metal Cop!
+70: Come buy some of Pokéstar Studio's finest\nfilms!\c\nBrycen Man, Riolu Boy, Full Metal Cop!
 71: You've got the tropes of a great trainer!\c\nI'll be following your story, maybe\nwe'll meet at the climax!
 72: You look filthy!\nYou need a makeover right away! 
-73: I'm a professional combat choreographer\nfor Pokestar Studios.\c\nI consult on martial arts and Pokemon Battles! 
+73: I'm a professional combat choreographer\nfor Pokéstar Studios.\c\nI consult on martial arts and\r\nPokémon Battles!\nIt's important that everyone\r\nstays safe during filming.
 74: Just sit down anywhere, sugar.\nI'll be right with ya.
 75: Care to test your luck?\nYou might win a prize!
 76: Riolu Boy 4: Revelations has just come\nout!\c\nIt features state of the art rayquaza\ntracing!
 77: Move along, kid.
-78: The crowd is frantic and crazy.
+78: The crowd is frantic...
+79: Shauntal: I've got to say...\nYour battles...\c
+80: ...were in-credible!\c
+81: Shauntal: As a writer and a trainer, it\nwas a dream come true to watch the\r\ncharacters from my stories do battle!\c\nThe suspense!\nThe drama!\r\nIt was like my scripts had come to life!\c\nHere, take something as thanks!\c
+82: "Red Fog of Terror"..."Ghost Eraser"...\n"Hypno on Elm Street"...\r\n"Midsommarill"...\r\n"Silence of the Flaaffys"...\r\n"Polteageist Activity"...\cI'll even be starring myself in\n"Shauntal of the Dead" next year!\c
+83: There is trash everywhere, people battling\nin the halls, the bathrooms are a wreck!\c\nSomeone even brought a bounce house,\nsomehow?\c
+84: Live Q&A with the director!
+85: I camped out all night for this!
+86: Signed script pages, get them here!
+87: Sounds like you're a fake fan!
+88: That stunt was clearly a Ditto.
+89: Do you think Ninja-Boy\nwill cameo?
+90: Brycen-Man 2 isn't canon!
+91: Did you even READ "Chronicles\nof a Full Metal Cop: Volume 8"?\c\nIf you did you would know\nyou're completely wrong!\c
+92: Wow, sounds like someone didn't watch\nall the extended interview material\r\nwhere Brycen revealed all this.\c\nFake fan.\c
+93: ???: Line for Brycen's panel\nstarting now!\c
 
 ----- TEXT FILE 204-----
 0: [0x013a(0)]!\nDo you have any questions?
@@ -5361,6 +5396,8 @@
 31: This is incredible!\c\nI would never have made such a discovery\nwithout your aid, [VAR TRNAME(0)]!
 32: Here, I've got a special piece of candy\nfor you as a token of my appreciation!\c\nWhich would you like?
 33: Lenora returned the strange crown\nto [VAR TRNAME(0)].
+34: Lenora: Here!\nTake this for the next time you\r\ngo exploring underground ruins!\c
+35: I'll be poring over these ruins\nfor some time...\r\nSo much forgotten history to uncover!\c\nBut I'm sure I'll see you\nagain soon!\c
 
 ----- TEXT FILE 240-----
 0: A towering statue of an ancient pokemon\nstands in the center of the chamber.\c\nIn the statue's gaping mouth rests a\nstrange crown, pulsing\r\nsoftly with light.
@@ -5374,6 +5411,27 @@
 8: The crown fits snugly into the socket.
 9: Something in the castle stirs!
 10: The castle is quiet once more\nwith it's protector defeated.
+11: [VAR PKNICK(0)] seems excited...\nIs it reacting to the [COLOR(4)]Unown[COLOR(0)] nearby?\c
+12: The gathered Unown begin to vibrate\nin unison!\c\nAs they move to orbit you, [VAR PKNICK(0)]\nanxiously pulls in their direction.\r\nLet [VAR PKNICK(0)] join them?
+13: The Unown begin to vibrate\nin order...\c
+14: "I"...\c
+15: "D"...\c
+16: "E"...\c
+17: "A"...\c
+18: "L"...\c
+19: "S"...\c
+20: The Unown begin to orbit faster, humming\nat a new, disquieting pitch!\c\n[VAR PKNICK(0)] moves to join them!\c
+21: [VAR PKNICK(0)] transformed into\n[COLOR(1)]Unown-Emphasis[COLOR(0)]!\c
+22: "IDEALS!"\c
+23: Your mind floods with memories of\nwar and strife...\c\nYou see before you two crowned figures\nlocked in combat.\c\nOverhead you can see flashes of\nlightning and plumes of scarlet flames.\c\nAs they clash, you can hear the muffled\nwords of the crowned figure...\c
+24: The vision fades.\c\nThe Unown return to their positions,\nhumming in perfect sync with\r\n[VAR PKNICK(0)]...\c
+25: The Unown rotates it body at\nodd, seemingly random intervals...\c\nIs it communicating something?\c
+26: You pull away from the Unown.\nThey seem to return to their odd rhythms.\c
+27: "S"...\c
+28: "IDEALS"\c
+29: ...your vision begins to cloud...\c
+30: “Truth is the world we see now.\nIdeals are the world we can still make.”\c
+31: The Unown are locked in a trance\naround the strange statue...\c
 
 ----- TEXT FILE 241-----
 
@@ -5492,6 +5550,12 @@
 95: Cost: [COLOR(1)]5 IV Enhancers[COLOR(0)]
 96: You don't have enough IV Enhancers\nfor that!\c
 97: And if you check out the docks, the\nAcademy has a boat ferrying folks\r\nto the school!\c\nSeems they're doing a big a seminar\non [COLOR(4)]Terastalization[COLOR(0)]!\c
+98: Brock: Hey there, friend.\c\nYou've come a long way since our\nbattle in Pledge Grove.\c\nYou've raised your Pokémon well.\c
+99: Misty: Oh hey!\nIt's you again!\c\nThanks to our practice session, I was\nall warmed up for my first tourney match!\c\nMe and my Pokémon completed washed\nthem away!\c
+100: Surge: Gotta say, it's real nice\nbeing home again.\c\nYou can't get a burger worth its salt\nin Kanto, I'll tell you that much.\c
+101: Erika: Losing leaves a bitter aftertaste...\nBut knowing that there are strong\r\nTrainers spurs me to do better...\c
+102: Blaine: Well if it isn't the\nlil' firecracker.\c\nI've just heard they've finished rebuilding\nmy gym on Cinnabar Island!\c\nYou should visit sometime!\c
+103: 
 
 ----- TEXT FILE 250-----
 0: Clay: This time, I'm gonna have ya\nparticipate in the Driftveil Tournament.\c\nAnything goes in this here tournament!\c\nEight people will be participatin', and if\nya win three times, yer the champion!\c
@@ -5525,9 +5589,14 @@
 28: I graduated top of my class from the\nBlueberry Academy.\c\nI am going to dominate this tournament.
 29: Colress: As a researcher, it is the truth\nand the ideal way things should be\r\nthat I seek.\c\nThe latent power of Pokémon...\nWhat is the best way to bring it out?\c\nIf possible, I want it to be the trust\nbetween Trainers and their Pokémon,\r\njust as it has always been.\c\nI look forward to you teaching me\nthat this is indeed true!
 30: Colress: Just as I expected!\c\nYour Pokémon must be happy to\nbe by your side!\r\nYou bring out the best in their power!
-31: Colress: Hm, curious.\c\nYour Pokemon showed much more\n potential on Route 4.
-32: Colress: Thank you for helping me with\nthis little experiment!\c\nTake this as thanks!
-33: Colress: By having battles with\nmany Trainers, I can bring out\r\nPokémon's abilities!\c\nEventually, as I continue to battle,\nthe truth of my theory\r\nwill be evident to all!
+31: Colress: Hm, curious.\c\nYour Pokémon showed much more\n potential on Route 4.
+32: Colress: Thank you for helping me with\nthis little experiment!\c\nIn fact, you're the perfect person\nto try a new [COLOR(2)]Battle Item[COLOR(0)] I've\r\nbeen developing!\c\nHere!
+33: Colress: The [COLOR(2)]Proto Booster[COLOR(0)] is\na new, top-of-the-line piece of equipment\r\nthat will bring out your Pokémon's strength!\c
+34: Colress: By having battles with\nmany Trainers, we can bring out\r\nPokémon's abilities!\c\nEventually, the truth of my theory\nwill be evident to all!\c
+35: Janine: While I admire your victory,\nI'm disappointed that I lost...\c\nI'm still not a full-fledged Trainer yet.\c\nI'll train with my father to be better\nthan before and challenge you again!\c
+36: Giovanni: You managed to bring down\nTeam Plasma.\r\nYou have my thanks for disposing of them.\c\nBut I'll tell you this now...\nNo matter how strong you are,\r\nsomeday you'll lose.\c
+37: Sabrina: There was once a time\nwhen I was shocked that I lost to you.\c\nThat feeling is gone now.\c\nIt's been replaced with a desire to\ngrow strong and live freely, as you do.\c
+38: Colress: Those are IV Enhancers!\c\nYou can exchange them with the vendor\noutside to maximize a Pokemon's IVs,\r\nalthough costs may vary.\c\nAnd... hm...\c\n..you're also the perfect person\nto try a new [COLOR(2)]Battle Item[COLOR(0)] I've\r\nbeen developing!\c\nHere!\c
 
 ----- TEXT FILE 251-----
 
@@ -5939,7 +6008,7 @@
 57: [VAR TRNAME(0)]: There are Trainers ahead...\nWanna take them on together?
 58: [VAR TRNAME(0)]: Got it!
 59: I'm doing research on rare Berries.\nCan you help me run an experiment?
-60: Enigma Berries heal a Pokemon for a third\nof their health when they withstand a\r\nsuper-effective attack!
+60: Enigma Berries heal a Pokemon for half\nof their total health when they\r\nwithstand a super-effective attack!\c\nIt's powerful healing, but it only\ntriggers after a devastating blow!
 61: Oh, ok!
 62: Great! Here we go!
 63: I got a lot of valuable data!\nHere's a reward!
@@ -6172,6 +6241,24 @@
 19: The crown fits snugly into the socket.
 20: Something in the ruins stirs!
 21: The ruins fall quiet once more.
+22: [VAR PKNICK(0)] seems excited...\nIs it reacting to the [COLOR(4)]Unown[COLOR(0)] nearby?\c
+23: The gathered Unown begin to vibrate\nin unison!\c\nAs they move to orbit you, [VAR PKNICK(0)]\nanxiously pulls in their direction.\r\nLet [VAR PKNICK(0)] join them?
+24: The Unown begin to vibrate\nin order...\c
+25: "T"...\c
+26: "R"...\c
+27: "U"...\c
+28: "T"...\c
+29: "H"...\c
+30: The Unown begin to orbit faster, humming\nat a new, disquieting pitch!\c\n[VAR PKNICK(0)] moves to join them!\c
+31: [VAR PKNICK(0)] transformed into\n[COLOR(1)]Unown-Question[COLOR(0)]!\c
+32: "TRUTH?"\c
+33: Your mind floods with memories of\nwar and strife...\c\nYou see before you two crowned figures\nlocked in combat.\c\nOverhead you can see flashes of\nlightning and plumes of scarlet flames.\c\nAs they clash, you can hear the muffled\nwords of the crowned figure...\c
+34: The vision fades.\c\nThe Unown drift along the ceiling,\nhumming in perfect sync with\r\n[VAR PKNICK(0)]...\c
+35: You pull away from the Unown.\nThey seem to return to their odd rhythms.\c
+36: The Unown rotates it body at\nodd, seemingly random intervals...\c\nIs it communicating something?\c
+37: ...your vision begins to cloud...\c
+38: "Truth is the world we stand in.\nIdeals are just dreams that ignore it.”\c
+39: The Unown are locked in a trance\naround the strange statue...\c
 
 ----- TEXT FILE 314-----
 0: Meet lots of Pokémon!\nFloccesy Ranch, just off Floccesy Town
@@ -6787,10 +6874,10 @@
 0: [VAR TRNAME(1)]: Again?!\c
 1: Team Plasma: Wait!\c
 2: No need to be suspicious!\c\nThis uniform is just a disguise.\nI'm ex-Team Plasma!\c\nWhat I am now is a spy, to guard against\nanything bad they might cook up.\c
-3: [VAR TRNAME(1)]: It must be a hard job,\nkeeping an eye on your former allies.\c\nSay, that barrier upstairs, you don't\nknow what the password is, do you?\c
+3: [VAR TRNAME(1)]: It must be a hard job,\nkeeping an eye on your former allies.\c\nSay, about that barrier upstairs...\nYou don't know the password, do you?\c
 4: S-sorry, but I don't know\nanything about that...\c\nThat's the central computer room...\nIt's tightly guarded...\c
-5: [VAR TRNAME(1)]: Figures.\c\nI wouldn't expect someone who joined a\ngroup bent on world domination\r\nwould be all that quick on the uptake.\c
-6: Plasma Spy: Oh...\c\nBut I honestly wanted\nto save Pokémon...
+5: [VAR TRNAME(1)]: Figures.\c\nI wouldn't expect someone who joined a\ngroup bent on world domination\r\nto be all that quick on the uptake.\c
+6: Plasma Spy: Ouch...\c
 7: In this ship, the Plasma Frigate,\nyou move around by using warp panels.\r\nLook sharp!
 8: In order to reach the heart of\nthis ship, you need a password.\c\nPlease get the password from\nthe members of Team Plasma.
 9: I can't remember how to use\nthe warp panels to get around.\r\nAnd they won't give me a Pokémon yet...\c\nBut even a guy like me has\nsomething useful to share.\c\nYou step on four switches\nto remove the barrier!
@@ -6798,19 +6885,21 @@
 11: Team Plasma has disbanded...\c\nAnd I finally just learned how to\nuse the warp panels to get around!\c\nI'm so frustrated!\c\nSo I'm going to stay here and use\nthe warp panels as much as I want!
 12: 
 13: 
-14: [VAR TRNAME(1)]: Then prove it!\c\nDo you know anything about a Purrloin\r\nstolen in Aspertia two years ago?\c\nOr a [VAR PKNAME(3)] stolen at the\nPokémon World Tournament?\c
-15: Plasma Spy: N-not those Pokémon\nspecifically...\c\nBut admin hands out stolen Pokémon at\nthe Mess Hall every day.\c\nMaybe they're there?\c
-16: [VAR TRNAME(1)]: You hear that [VAR TRNAME(0)]?\c\nOur Pokémon might be getting handed over\nto some no-life grunt right now!\c\nLet's go!\c
-17: Plasma Spy: I'll look into this password\nin the meantime...\c\nBe careful.\nThese new Team Plasma members don't\r\nfight fair.\c
-18: Plasma Spy: Hey!\c\nI'm glad I found you!\nLook what I've found!\c
-19: Plasma Spy: You can use the Plasma Key to\nget past the barrier upstairs.\c\nBut you'll need the password, and I'm not\nhigh ranking enough to know it...\c
-20: Plasma Spy: However, you ought to go find your\nfriend first.\c\nLast I saw, he went stomping off towards\nthe Mess Hall...\c
-21: Plasma Spy: From what I've been able to\ngather, there is [COLOR(1)]one[COLOR(0)] more grunt\r\non this floor that knows the password.\c\nSeek them out while I look for the\nPlasma Key Card!\c
-22: Plasma Spy: From what I've been able to\ngather, there are [COLOR(1)]two[COLOR(0)] more grunts\r\non this floor that know the password.\c\nSeek them out while I look for the\nPlasma Key Card!\c
-23: Plasma Spy: From what I've been able to\ngather, there are [COLOR(1)]three[COLOR(0)] more grunts\r\non this floor that know the password.\c\nSeek them out while I look for the\nPlasma Key Card!\c
-24: Plasma Spy: From what I've been able to\ngather, there are [COLOR(1)]four[COLOR(0)] more grunts\r\non this floor that know the password.\c\nSeek them out while I look for the\nPlasma Key Card!\c
+14: [VAR TRNAME(1)]: Then prove it!\c\nDo you know anything about a Purrloin\nstolen in Aspertia two years ago?\c\nOr a [VAR PKNAME(3)] stolen at the\nPokémon World Tournament?\c
+15: Plasma Spy: N-not those Pokémon\nspecifically...\c\nBut they hand out stolen Pokémon at\nthe Mess Hall every day.\c\nMaybe they're there?\c
+16: [VAR TRNAME(1)]: You hear that [VAR TRNAME(0)]?\c\nOur Pokémon might be getting handed over\nto some lowlife grunt right now!\c\nLet's go!\c
+17: Plasma Spy: I may not know the password...\nBut I do know you need a special\r\nkeycard to deactivate the barrier.\c\nIf I can find one, it may be one\nstep closer to atoning for my sins...
+18: Plasma Spy: I'm glad I found you!\nLook what I've found!\c
+19: Plasma Spy: You can use the Plasma Key\nto get past the barrier upstairs.\c\nBut you'll need the password, and I'm not\nhigh ranking enough to know it...\c
+20: Plasma Spy: Regardless you ought\nto go find your friend first.\c\nLast I saw, he went stomping off\ntowards the Mess Hall...\c
+21: Plasma Spy: From what I know,\nthere is [COLOR(1)]one[COLOR(0)] more grunt on\r\nthis floor that know the password.\c\nSeek them out while I look for the\nPlasma Key Card!
+22: Plasma Spy: From what I know,\nthere are [COLOR(1)]two[COLOR(0)] more grunts on\r\nthis floor that know the password.\c\nSeek them out while I look for the\nPlasma Key Card!
+23: Plasma Spy: From what I know,\nthere are [COLOR(1)]three[COLOR(0)] more grunts on\r\nthis floor that know the password.\c\nSeek them out while I look for the\nPlasma Key Card!
+24: Plasma Spy: From what I know,\nthere are [COLOR(1)]four[COLOR(0)] more grunts on\r\nthis floor that know the password.\c\nSeek them out while I look for the\nPlasma Key Card!
 25: Plasma Spy: You ought to go find your\nfriend before using the Plasma Key.\c\nLast I saw, he went stomping off towards\nthe Mess Hall...\c
 26: Plasma Spy: I wish I was strong enough\nto help you liberate all those Pokémon.\r\nBut I fear I'd just get in your way.\c\nI'll do my best to delay the security\nresponse from here. Good luck!\c
+27: I honestly wanted to save Pokémon...\c
+28: Plasma Spy: Hey!\c
 
 ----- TEXT FILE 360-----
 
@@ -6886,16 +6975,16 @@
 27: Team Plasma: Please kid, give it a break.\c\nYou are causing yourself [COLOR(1)]permanent[COLOR(0)]\ndamage!\c
 28: Team Plasma: Maybe they could've\nunderstood your words before.\c\nBut I don't know if they still can after\nheadbutting an electric barrier [COLOR(1)][VAR NUM2(2)][COLOR(0)] times.\c
 29: The Xtransceiver is ringing!\c
-30: [VAR TRNAME(1)]: ...Yo, [VAR TRNAME(0)]?\nWhere are you!\c\nI need your help in the [COLOR(1)]Mess Hall[COLOR(0)]\ndealing with these Plasma clods.\c\nThey're handing out stolen Pokémon:\n[VAR PKNAME(3)] might be here!\c
+30: [VAR TRNAME(1)]: ...Hey, [VAR TRNAME(0)]?\nWhere are you!\c\nI need your help with Team Plasma\nin the [COLOR(1)]Mess Hall[COLOR(0)]!\c\nThey're handing out stolen Pokémon:\n[VAR PKNAME(3)] might be here!\c\nHurry!\c
 31: [VAR TRNAME(0)] hung up the Xtransceiver.\c
 32: Team Plasma: You...\nYou deactivated the barrier!\c
-33: Team Plasma: How did you figure out the password!\c\nAll us grunts went through an hour\nof security training!\c
-34: Team Plasma: Well if you made it this far,\nwe certainly don't wanna fight you.\c\nBye!\c
-35: [VAR TRNAME(1)]: You figured out the password!\nNow we can make it to the central computer\nroom!\c
-36: [VAR TRNAME(1)]: We've been battling for hours:\nmy Pokémon are close to hitting\r\ntheir limit...\c
+33: Team Plasma: How did you figure out the password?\c\nWe all went through an hour\nof security training!\c
+34: Team Plasma: Well if you made it this far,\nwe certainly don't want to fight you.\c\nBye!\c
+35: [VAR TRNAME(1)]: You figured out the password!\nNow we can get to the ship's computer\c
+36: [VAR TRNAME(1)]: We've been battling for hours...\nMy Pokémon are almost at their limit...\c
 37: [VAR TRNAME(1)]: You did it!\c
-38: Let's grab as many Pokémon as we can,\nthen Abra can [COLOR(4)]Teleport[COLOR(0)] us right out!\c
-39: [VAR TRNAME(1)]: I'm right behind you!\nLets save our Pokémon!\c
+38: Let's grab as many Pokémon as we can,\nthen Abra can [COLOR(4)]Teleport[COLOR(0)] us out!\c
+39: [VAR TRNAME(1)]: I'm right behind you!\nLet's save our Pokémon!\c
 
 ----- TEXT FILE 365-----
 0:                                              
@@ -6937,17 +7026,47 @@
 0: Warning! Warning!\nIntruders in the vessel!\r\nEveryone, please respond.
 
 ----- TEXT FILE 370-----
+0: Friendly Plasma Grunt: Are you\nlooking for the password!\c\nCome over here and\nI'll tell it to you!\c
+1: Deceitful Plasma Grunt: Now lean in\nreally close...\r\nSo I can whisper it to you.\c\nOk, so the password is-\c
+2: ...none of your business!\nGet 'em!\c
+3: Alright boss, it's all up to you!\c
+4: Deceitful Plasma Grunt: Now that I've\nlured you in,\r\nthere's no way you can win!\c
+5: Deceitful Plasma Grunt: Well, you can't \nblame a girl for trying.\c\nThe password?\nIt's either a number or a Pokémon,\r\nthey change it all the time.\c
+6: I was hiding under the bunk\nfor hours.\c\nNow I have a weird crick\nin my neck.\c
+7: ???: Helloooooo,\nlittle boy!\c
+8: ???: Helloooooo,\nlittle girl!\c7
 
 ----- TEXT FILE 371-----
 0: Saying yes only so you won't\nhurt another person's feelings...\r\nThat is not true kindness.\c\nTeam Plasma didn't have true kindness.\nNot even me...
+1: Being inside the ship is boring.\nI'll play with you!\c
+2: Oh no!\nI've been defeated!\c\nWhatever shall I do?\c
+3: Ambush time!\c
+4: Haha!\c\nYou thought I was harmless, but I\nwas merely waiting to strike!\c
+5: Eek, don't hurt me!\c
+6: Please don't hurt me!\c\nI don't have any Pokémon!\c
+7: You came back?\c\nThey never come back to the same\nroom twice!\c
+8: Well, that was entertaining.\c\nI'll tell you the hint.\c
 
 ----- TEXT FILE 372-----
 0: Ah. I slept very well!\c\nYou're wearing strange clothes.\nAre you new here?\c\nAny bed in this room is available.\nFeel free to use them if you're tired!
 1: The bed looks nice and comfortable.\nWill you take a quick rest?
 2: [VAR TRNAME(0)] hopped into bed and\nfell asleep...\c
 3: [VAR TRNAME(0)] and the Pokémon\ntook a nap and regained energy!
+4: Fufufufu....\nSo you're the the little varmint running\r\naround the brig.\cI'm not loyal to Team Plasma, but\nI do have use for a strong trainer.\cBeat me in a battle, and I'll reward\nyou with a very useful tool.
+5: Excellent...\c
+6: Disappointing.\c
+7: Incredible!\c\nWhen a Pokémon with Normalize uses a move\nit always has neutral type effectiveness!\c\nThis has profound implications...\nHere.\c
+8: Chip Away is a fairly\nweak move, but it always strikes\r\nwith neutral effectiveness...\c
 
 ----- TEXT FILE 373-----
+0: What do you want, intruder?!\c\nIf you can beat me,\nI'll give you a hint about the password.\c
+1: Tch...\nAs if I'd tell you anything.\c
+2: Warning! Warning!\nIntruders spotted in room 3B!\c
+3: Found 'em!\c
+4: I'm going to get a promotion by beating\nyou, kid!\c
+5: Dang...\c
+6: Alright fine kid,\nI'll give you a hint.\c
+7: You couldn't have just let me win?\nI really need the extra money...\c
 
 ----- TEXT FILE 374-----
 0: I have what you want!\c\nBut if you want it...\nYou know, don't you? Battle me!\c
@@ -6965,10 +7084,10 @@
 12: Warning! Warning!\nIntruders in the vessel!\r\nEveryone, please respond.
 13: It's you the announcement\nwas warning about?\c\nFine.\nI'm very strong.\c\nI'll look the other way\nfor a child like you...
 14: I failed in my duty,\nand my Pokémon were taken away.\c\nI lost a lot of Pokémon\nI had stolen, too...
-15: Well, aren't you a bold little trainer to\nhave boarded our vessel.\c\nCare to participate in an experiment?\c\nI'm evaluating new "tech" and need a test\nsubject. I'll even offer a reward...
+15: Well, aren't you a bold little trainer to\nhave boarded our vessel.\c\nCare to participate in an experiment?\c\nI'm evaluating new "tech" and need a\ntest subject.\r\nI'll even offer a reward...
 16: Hmph, fine.\nContinue your little rampage instead.\c
-17: Sublime.\c\nLet me just get my scanners ready and...\nLet's begin!\c
-18: Marvelous! Exceptional! Unprecedented!\c\nThese readings are off the chart!\c\nHere, take this!\nIt's far less valuable than the data\r\nyou've provided.\c
+17: Sublime.\c\nLet me just get my scanners\nready and...\r\nLet's begin!\c
+18: Marvelous!\nExceptional!\r\nUnprecedented!\c\nThese readings are off the chart!\c\nHere, take this!\nIt's far less valuable than the data\r\nyou've provided.\c
 19: Why am I working for Team Plasma?\c\nWell it's so difficult to secure funding\nfor research these days.\c\nIf I have to build a super-weapon every\nnow and then to continue my studies on\r\nSwalot digestion, so be it.\c
 20: Team Plasma: Alright grunts, listen up!\c
 21: Team Plasma: We've got a fresh batch of\nstrong Pokémon ready for the front line.\c\nBut first...\c
@@ -6987,23 +7106,35 @@
 34: Team Plasma: Insolent brats...\c
 35: [VAR TRNAME(1)]: Don't let 'em escape!\c\nI'll check for Purrloin and [VAR PKNAME(3)]!\c
 36: [VAR TRNAME(1)]: They're not here!\c
-37: [VAR TRNAME(1)]: Alright, talk!\\nWhere are the rest of the Pokémon\r\nyou've stolen?\c\nSpit it out!\c
+37: [VAR TRNAME(1)]: Alright, talk!\nWhere are the rest of the Pokémon\r\nyou've stolen?\c\nSpit it out!\c
 38: Team Plasma: Tch..\nIf they aren't here then they're either\r\nin storage or in use.\c\nOr they've been disposed of, if they\nweren't of use to us...\c
-39: Team Plasma: The current status of all\n"acquisitions" is tracked on the ship's\r\n[COLOR(1)]Main Computer[COLOR(0)].\c\nBut you'll never get past the barrier\nprotecting it.\c
+39: Team Plasma: The current status of all\n"acquisitions" is tracked\r\non the ship's [COLOR(1)]Main Computer[COLOR(0)].\c\nBut you'll never get past the barrier\nprotecting it.\c
 40: [VAR TRNAME(1)]: Arggghh!\c
-41: [VAR TRNAME(1)]: I guess we're going to need that\nstupid password after all.\c\nWe either have to find the password,\nor get it out of Team Plasma,\r\nto deactivate the barriers.\c
-42: [VAR TRNAME(1)]: But first...\c
-43: [VAR TRNAME(1)]: Abra, use Teleport!\nSend all these Pokéballs to Humilau City!\c
+41: [VAR TRNAME(1)]: I guess we're going to need that\nstupid password after all.\c\nWe either have to find the password,\nor get it out of Team Plasma,\r\nto deactivate the barriers.\c\nBut first...\c
+42: [VAR TRNAME(1)]: Come on out, Abra!\c
+43: [VAR TRNAME(1)]: Abra, use [COLOR(5)]Teleport[COLOR(0)]!\c\nTake all these Pokéballs to Humilau City!\c
 44: [VAR TRNAME(1)]: Good work Abra!\nNow return!\c
-45: [VAR TRNAME(1)]: Abra is pretty weak,\nbut I brought her in case we need to\r\nmake a quick escape.\cAlright [VAR TRNAME(0)]!\nLet's split up and find that password!\c
-46: Little brats...\c\nWhen the Shadow Triad gets ahold of you\nyou'll be sorry you came on this ship...\c
-47: I can't believe you stole our Pokémon!\c\nAfter we spent so long stealing them\nfor ourselves!\c
+45: [VAR TRNAME(1)]: Abra is pretty weak,\nbut I brought her in case we need to\r\nmake a quick escape.\c\nI won't let the Shadow Triad get\nthe drop on us again!\c
+46: Little brats...\c\nWhen the Shadow Triad gets ahold\nof you...\r\nYou'll be sorry you came on this ship!
+47: I can't believe you stole our Pokémon!\c\nAfter we spent so long stealing them\nfor ourselves!
 48: I failed in my duty,\nand my Pokémon were taken away.\c\nI just didn't want to use those\nmachines...\r\nIt caused the Pokémon so much pain.\c
 49: [VAR TRNAME(1)]: [VAR TRNAME(0)], help me out!\c
 50: Team Plasma: Who are you?\c
 51: Team Plasma: It's the intruders!\c
-52: [VAR TRNAME(1)]: These people are sick...\nHave you seen those weird machines their\r\nPokémon are wearing?\c\nIt sends them into a frenzy, making them\r\nfight harder than their body can handle!\c\nThat must the same tech Team Plasma had\nwhen we fought them at Nimbasa City.\c\nIt looks more sophisticated now...\c
+52: [VAR TRNAME(1)]: These people are sick...\c\nHave you seen those weird machines\ntheir Pokémon are wearing?\c\nIt sends them into a frenzy, making them\nfight harder than their body can handle!\c\nThat must the same tech Team Plasma had\nwhen we fought them at Nimbasa City.\c\nIt looks more sophisticated now...
 53: These boxes were filled with\nstolen Pokéballs...\c
+54: [VAR TRNAME(1)]: You already deactivated\nthe barrier?\c\nYou're amazing!\c\nI'll clean up the rest of the grunts\nhere and meet you up there!\c
+55: If you get in the way of Team Plasma,\nI'll take care of you!\c 
+56: You're pretty strong, but-\c
+57: ???: What are you two doing!\c
+58: Chef: I've said it for the last time:\nNo battles in the mess hall!\c
+59: But...\nThey're an intruder!\c
+60: Chef: No excuses!\c\nGuess I need to make an example\nof you!\c 
+61: Chef: Now that's settled, who wants\nsome mashed potatoes?\c
+62: Uh...\nThat was intense.\c\nI'll give you a hint now.\c
+63: Alright [VAR TRNAME(0)]!\nLet's split up and find that password!\c
+64: [VAR TRNAME(1)]: Tell me what\nthe password is!\c\nIs it "Evil"?\c\nWhat about "Villain""?\c\nMaybe "Stupid thieving bullies"?\c
+65: [VAR TRNAME(1)]: [VAR TRNAME(0)]!\nFigured out the password yet?\c\nHave you tried "Evil"?\nSpelled E - V - I - L.\c
 
 ----- TEXT FILE 375-----
 0: A strange energy permerates\nthis ruin.\c\nAll battles have the effect\nof Trick Room.
@@ -7205,6 +7336,7 @@
 15: I understand.\nI will remain here a little while longer\r\nshould you change your mind.
 16: Learn from your foe by winning, and\nlearn from your foe by losing, too...\c\nEverything is an experience...\nYes.\r\nPokémon made me realize that....\c\nHere, take this as thanks for the\ngreat battle!
 17: I can't explain what it means to be\nstrong.\c\nI don't know how much effort goes into\nbeing strong...\c\nBut being with Pokémon lets us keep\nmaking the effort, doesn't it?
+18: Hwaroah!
 
 ----- TEXT FILE 400-----
 
@@ -11584,6 +11716,33 @@
 12: Bellossom offers you some\nBerries!
 13: Bellossom sways gently with\nthe breeze.
 14: [VAR TRNAME(0)] received some Berries!
+15: ???: Shh...\nPlease, watch your step.\c
+16: ???: Ah—I’m so sorry.\nThat must have seemed very rude.\c\nUm... my name is Erika.\c\nAnd your name...?\n[VAR TRNAME(0)]...\r\nA pleasure to meet you.\c
+17: Erika: Those Gloom up ahead...\nThey’re in the middle of a very\r\nimportant ritual.\c\nGloom gather in deep forests like this\nto share their energy through dance.\c\nWhen their dance is complete, they’ll\nall evolve together.\c\nThey’re very sensitive, though...\nAlmost no one ever sees this up close.\c
+18: Erika: I can tell you’re a Trainer.\c\nYou probably came here looking for\nrare Pokémon, same as me.\c\nBut until the Gloom’s ritual is over,\nI can’t let anyone pass.\c
+19: Erika: If you wish to go on,\nyou will have to battle me.\r\nWill you stay back?\c
+20: Erika: Oh...\nThank you.\c\nIt means a great deal to me when\nsomeone chooses the Pokémon’s\r\nfeelings first.\c
+21: Erika: I see.\nYour resolve is as strong as\r\nsunlight at noon.\c\nI had hoped my next battle would be\nat the Tournament...\c\nVery well.\c\nAllow me to show you the elegance\nof Grass-type Pokémon.\c
+22: Erika: Oh, [VAR TRNAME(0)].\nYou came back.\c
+23: Erika: How wonderful.\c
+24: Erika: The petals sway...\nThe Gloom turn in perfect circles...\c\nIt is like the whole forest is\nbreathing in time with their dance.\c
+25: Erika: Oh, I see.\nYou are not here for the view.\c\nThen you must have come to battle,\nis that correct?\c
+26: Erika: Oh my...\nWhat a beautiful battle.\c\nYour Pokémon moved with such grace...\nIt was like watching a dance...\c
+27: Erika: Ah...\nLook behind us.\c\nThe Gloom...\nThey are starting to evolve!\c
+28: Erika: How delightful...\c\nDo you think our battle stirred\ntheir hearts?\c\nPerhaps the excitement gave them\nthe courage to evolve.\c
+29: Erika: Their dance is so lively...\nIt feels as if the whole forest is\nsmiling with them.\c
+30: Erika: Thank you, [VAR TRNAME(0)].\nSharing this with you has made this\r\nplace feel even more special.\c\nPlease accept these berries.\nI brought them from my own garden\r\nin Celadon.\c
+31: Erika: These berries are quite special.\c\nIf a Pokémon eats one in battle,\nit can soften the power of a move\r\nit is weak to.\c\nThey are like tiny shields grown\nfrom sunlight and care.\c
+32: Erika: Whenever I sit quietly among\nflowers, Grass-type Pokémon always\r\nseem to gather around me.\c\nThey are gentle, patient, and\nfull of quiet strength.\c\nThat is why I love them so much.\c
+33: ???: Stop!\c
+34: ???: Please, not another step.\c
+35: Erika: Look there-\nIn the field of flowers...\c
+36: Erika: Would you like to stay and\nwatch their dance with me?\c 
+37: Erika: I understand.\nNot everyone is as patient as I.\c
+38: Erika: Most people only remember Gloom\nfor their foul smell.\c\nBut if you look closely, their\nmovements are very gentle...\r\nAlmost like petals in the wind.\c\nI have always thought they were\nquite charming.\c
+39: Erika: Would you like to watch\na little while longer?\c
+40: Erika: The Gloom are still dancing.\nWould you like to watch with me\r\nfor a while?\c
+41: 
 
 ----- TEXT FILE 598-----
 
@@ -14646,6 +14805,93 @@
 128: Insert Lost Battle with Benga here.\c
 129: -wait, I know you!\c\nYou're Alder's kid, right?\c
 
+
+62: ???: [VAR TRNAME(0)]!!\c
+
+63: Benga: You made it here!\nFinally!\c\nYou were taking so long I was worried\nmy rival got stumped by Marlon!\c
+
+64: [VAR TRNAME(1)]: We were busy tracking down our Poke--\c
+
+129: -wait, I know you!\c\nYou're Alder's kid, right?\c
+
+
+65: Benga: GRAND-kid, yeah.\c\nAnd soon, his successor as champion\nof Unova!\c\nI've gotten WAY stronger!\nsStronger than I ever dreamed!\c\nWith these new items I got, my Pokémon\nare unstoppable!\c\nEven beating Drayden was a total breeze!\c
+
+66: Benga: That's why I'm here waitin', so\nI can show [VAR TRNAME(0)] how much I've grown!\c
+
+67: [VAR TRNAME(1)]: A battle? I'll referee!\c\nIf you're as strong as [VAR TRNAME(0)],\nthen I've gotta see this.\c
+
+68: Benga: Whadduya say, ready to battle?\nI won't take no for an answer!
+
+69: Benga: Alright, let's do this!\c\nNo holding back, I'm coming at you with\neverything I've got!\c
+
+70: Benga: Alright, fine, prepare if you\ngotta!\c\nBut I'm not leaving until we have a\nproper showdown, rival to rival!
+
+71: Benga: Jeez, you took your time.\c\nReady to rumble?\nI won't take no for an answer!
+
+72: Benga: Awww YEAH!\nI did it!\c\nI finally beat [VAR TRNAME(1)]!\c
+
+73: Benga: Aww YEAH!\nI was able to beat ya this time!\c\nWas worried this would be a repeat of\nour battle on Route 4!\c
+
+74: Benga: What... what happened?\nHow did I lose?\c\nWere my Pokémon too weak?\nDo I need to get more IV enhancers?\nMaybe I can buy some more mints...\nDo my Pokémon need stronger items..?\c
+
+75: [VAR TRNAME(1)]: Wait a minute...\nThose items... are they?\c
+
+76: [VAR TRNAME(1)]: They are!\c
+
+77: [VAR TRNAME(1)]: That "item" your Garchomp\nused!\c\nWhere did you get them!\nAnswer me!\c
+
+78: Benga: Woah, back up buddy!\nGet your own!\c\nI got them from this cool scientist\ndude out by Humilau City.\cThey're a new line of battle items he\nsaid would "unlock Pokémon's potential"!\c
+
+79: And they've worked!\nMy Pokémon have never been stronger!\c\nImagine if gramps could see me now...\c
+
+80: [VAR TRNAME(1)]: You idiot!\c
+
+126: That garbage is Team Plasma's tech!\c\nSome creep offered me the same thing\nat the World Tournament!\c
+
+127: It isn't helping your Pokémon, it's\nhurting them all so they can battle a\r\nlittle better for a short while!\c
+
+
+81: Benga: Team Plasma..?\c\nWhy would they hand these items\nout for free..?\c
+
+82: [VAR TRNAME(1)]: Because this trash is\nexperimental and dangerous!\c
+
+83: [VAR TRNAME(1)]: Look at your partner!\nCan't you tell they're in pain?\c
+
+84: Benga: Garchomp..?\c
+
+85: ...Gyaaaaooo.\c
+
+86: Garchomp keels over from\nexhaustion.\c
+
+87: Benga: Garchomp!?\c
+
+88: Benga: What's happening?!\c
+
+89: [VAR TRNAME(1)]: Your Garchomp must love you\na lot.\c\nIt put on a brave face so you wouldn't\nworry...\c
+
+90: Benga: Garchomp...\nThis whole time... you've been in pain...\r\nWhy didn't he tell me..?\nWhy didn't I notice...?\c\nWas I so focused on winning I couldn't\nsee anything else?\c
+
+91: Garchomp flinches at Benga's touch.\c
+
+92: Benga: ...\c
+
+93: Benga: Here, take these.\nI don't want them anywhere near me.\c
+
+94: Benga: Come on Garchomp.\c\nThe Pokémon Center is just a few\nsteps that way.\c\nWe'll fix this, I promise.\c
+
+95: ...Gyaaaaooo..\c
+
+96: [VAR TRNAME(1)]: Man, his poor Pokémon.\c\nAt least he was just an idiot,\nand not just cruel.\c
+
+97: [VAR TRNAME(1)]: But I wonder how many other\ntrainers Team Plasma's been handing\r\nout tech to?\c
+
+98: [VAR TRNAME(1)]: I can only imagine how it\nmesses up a Pokémon over time.\c\nLiepard still won't get out of her\nPokéBall...\c
+
+99: [VAR TRNAME(1)]: We gotta put a stop to this,\n[VAR TRNAME(0)].\cFor all of Unova's Pokémon...\c
+
+
+
 ----- TEXT FILE 636-----
 0: Every Gym Badge tells the story\nof a hard-won victory against\r\na worthy opponent.\c\nI can look at a Gym Badge and\ntell you that story.\c\nCan I see one of your Gym Badges?
 1: OK. You don't have to show me anything.\nI'm sure your memories are all you need!
@@ -14821,8 +15067,8 @@
 92: I don't really care about the protest.\nI'm just here for a sense\r\nof community.
 93: Watch out for those currents!\c
 94: They're mighty dangerous!\nYou'll get pushed back!\c
-95: ENOUGH!
-96: If we stand together, they can't\nbreak us!
+95: ENOUGH!\c\nAll of you need to get\nout of the way!\c
+96: Protestor: If we stand together,\nthey can't\nbreak us!\c
 97: No more expansion!\nIt stops here!
 98: Man... I hope we're\nstill getting paid.
 99: The current is too strong!
@@ -15200,6 +15446,24 @@
 15: Croagunk makes unsettling eye contact.
 16: Bonsly smiles placidly.\nWhat does he know..?
 17: Onix towers over you menacingly.\nYou don't want to fight him yet. 
+18: ???: Good!\c\nNow use Rock Smash again!\c
+19: Happee-pee!\c
+20: Oh?\c
+21: ???: I wasn’t expecting anyone to find\nthis little training spot.\c\nI'm Brock, a gym leader from Kanto,\nrepresenting Pewter City.\c
+22: Brock: I came to Unova to participate in\nthe Pokémon World Tournament.\c\nBut to be honest I'm happy just to see\nthe scenery.\c
+23: Brock: This grove is something special,\nisn't it?\c\nI feel a strange energy coming from\nthese stones.\c\nAnd those markings...\nWhat kind of Pokémon might have\r\nleft them?\c
+24: Brock: Hm, you seem pretty strong.\nUp for a little sparring?\c\nDon't be intimidated because I'm\na gym leader.\c\nThe Pokémon I brought here are\nstill being trained.\c\nSo, what do you say?\c
+25: Brock: I understand!\nI'll be heading out soon but swing\r\nby if you change your mind!\c\nWe can share a battle and then some\ndelicious berries after!\c
+26: Brock: Alright, prepare yourself...\c
+27: Brock: Let's begin!\c
+28: Brock: ...impressive!\c\nThe bond between you and your Pokémon is\nstrong enough to topple mountains.\c\nIf you are only at the start of your\njourney, I can only imagine how strong\r\nyou'll be by its end.\c
+29: Brock: Here, let me give something\nto heal your Pokémon!\c
+30: Brock: My Pokémon need time to rest, but\nfeel free to use this spot to train!\c\nMany rare Pokémon seem to gather in\nthe sand.\c
+31: Brock: Hello again!\c
+32: Have you changed your mind on that\nsparring match?
+33: Brock: Those are Berry Juices!\c\nThey're a nutritious snack that can heal\na Pokémon even in the middle of battle!\c\nI also included a Technical Machine\nfor one of my favorite moves!\c
+34: Brock: I'm certain we'll battle again\nsomeday!\c
+35: Hwooorgh!
 
 ----- TEXT FILE 657-----
 0: Professor Juniper: Well, I suppose\nI should tell you why\r\nI brought you out here.\c
@@ -15565,10 +15829,10 @@
 3: A heavy gangplank fell\nwith a solid thud...\c
 4: Marlon: Eh, this should do it!\c
 5: [VAR TRNAME(1)]: Well, thanks.\c\nAre you gonna stick around to fight\nTeam Plasma?\c
-6: Marlon: Listen, 'K.\nBelieve in somethin'!\c\nSearchin' for stolen\nPokémon is fine!\c\nIt's all good.\nBut think 'bout why you're doin' that.\c\nThe strength of your beliefs is what\ngives you and your Pokémon power!\c
+6: Marlon: Hey, friends!\nTeam Plasma's not botherin' me.\c\nThey could be up to no good\nfor reals, and...\c\nIt's not my style to go around\ndecidin' Team Plasma's bad\r\nwithout thinkin' 'bout it\r\njust 'cause everyone says so!\c
 7: But, eh, you're havin' trouble,\nso I've got to help out!\r\nThat's what I want to do!\c
 8: [VAR TRNAME(1)]: Thanks...\c
-9: Marlon: Listen, 'K.\nBelieve in somethin'!\c\nSearchin' for stolen\nPokémon is fine!\c\nKeepin' Unova from bein'\niced over's fine too!\c\nIt's all good.\nBut think 'bout why you're doin' that.\c\nThe strength of your beliefs is what\ngives you and your Pokémon power!\c
+9: Marlon: Listen, 'K.\nBelieve in somethin'!\c\nSearchin' for stolen\nPokémon is fine!\c\nBut think 'bout why you're doin' that.\c\nThe strength of your beliefs is what\ngives you and your Pokémon power!\c
 10: I made some noise,\nso some people came out!\c
 11: Hey, be careful, 'K!\c
 12: [VAR TRNAME(1)]: What was that?!\nThe guy sure doesn't follow through!\c

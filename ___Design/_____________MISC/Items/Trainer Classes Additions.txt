@@ -69,3 +69,31 @@ in 0/7/2
 	32-39: Cress 
 
 We can simply overwrite these for back sprites. We will need to figure out where the back 
+
+
+
+PkMn Trainer (38) - Bianca 
+PkMn Trainer (40) - N 
+PkMn Trainer (145) - Hugh
+PkMn Trainer (190) - Rood 
+PkMn Trainer (197) - Cheren
+PkMn Trainer (195) - Colress (this one we can definitely overwrite)
+100 - Cynthia 
+10 - Chili 
+12 - Cress 
+11 - Cilan 
+89 - Alder 
+
+20-23 = No Data
+37 = No Data
+39 = No Data
+93-96 = No Data 
+97 = Gamfreak (Miromoto)
+147 - 154 = Boss Trainers 
+156 = No Data 
+157 - 164 = Boss Trainers
+166 = No Data 
+231 = No Data
+
+180 - Team Plasma Scientist (F)
+181 - Team Plasma Scientist (M)

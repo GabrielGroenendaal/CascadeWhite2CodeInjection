@@ -665,16 +665,22 @@ public class MainEvents {
         
         EVCamera.Init();
         EVCamera.Unbind();
-        EVCamera.MoveTo(2.3652344f, 0.0f, 178.0f, 240.0f, 0.0f, 448.0f, 194);
+        EVCamera.MoveTo(1.2714844f, 0.0f, 178.0f, 240.0f, 0.0f, 448.0f, 194);
 
         Message.Multi(84, 6, 20, 1);
-		Runtime.Sleep(26);
+		Runtime.Sleep(16);
+		HopLeft(31);
+		Actor.WaitActionFinish();
+		Runtime.Sleep(8);
+		HopRight(30);
+		Actor.WaitActionFinish();
 		Message.Multi(85, 4, 11, 2);
 		Runtime.Sleep(26);
 		Message.CloseWin(1);
 		Message.Multi(86, 13, 2, 3);
 		Runtime.Sleep(26);
 		Message.CloseWin(2);
+		Actor.Hide(54);
 		Message.Multi(87, 18, 14, 4);
 		Runtime.Sleep(26);
 		Message.CloseWin(3);
@@ -692,6 +698,7 @@ public class MainEvents {
 		EVCamera.Wait();
         Fade.OutBlackQ();
 		Fade.Wait();
+		Actor.Hide(55);
         EVCamera.MoveToDefault(1);
         EVCamera.Wait();
         EVCamera.Rebind();
@@ -758,22 +765,59 @@ public class MainEvents {
 	// Triggering the gauntlet 
 
 	public static void main_15() {
-		Actor.PauseAll();
+
 		Sound.SEPlay(1351);
-		Message.System(62, 1);
+		Message.Spiked(93, 2);
+		Message.CloseAll();
+		Fade.OutBlackQ();
+		Fade.Wait();
+		Sound.SEPlay(1370);
+		Sound.SEWait();
+		Runtime.Sleep(8);
+		Sound.SEPlay(1370);
+		Sound.SEWait();
+		Sound.SEPlay(1370);
+		Sound.SEWait();
+		Sound.SEPlay(1370);
+		Sound.SEWait();
+       	Actor.New(11, 66, 0, 70, 11, 2);
+       	Actor.New(12, 67, 2, 71, 8, 3);
+       	Actor.New(13, 68, 3, 72, 12, 2);
+       	Actor.New(14, 67, 1, 73, 11, 3);
+       	Actor.New(15, 67, 0, 74, 21, 3);
+       	Actor.New(16, 68, 2, 75, 22, 2);
+       	Actor.New(17, 68, 0, 76, 18, 2);
+       	Actor.New(18, 67, 3, 77, 18, 3);
+       	Actor.New(19, 66, 1, 78, 23, 2);
+		Actor.UnpauseAll();
+        	Fade.InBlackQ();
+		Fade.Wait();
+		Runtime.Sleep(16);
+		ShowExclamationMark(255);
+		TurnSouth8F(255);
+		Actor.WaitActionFinish();
+		Message.System(62, 2);
 		Input.LastKeyWait();
 		Message.CloseAll();
 		EventWorks.Set(16731, 1);
 		EventWorks.Set(16732, 1);
 		EventFlags.Set(522);
+		
 		Runtime.FinishSubEvents();
-		Actor.UnpauseAll();
 	}
 
 	// Getting Turned Around
 	public static void main_16() {
 		Actor.PauseAll();
 		Sound.SEPlay(1351);
+		HopRight(73);
+		Message.ActorEx(1024, 91, 73, 2, 1);
+		Message.CloseAll();
+		HopLeft(74);
+		Message.ActorEx(1024, 92, 74, 2, 1);
+		Message.CloseAll();
+		Actor.WaitActionFinish();
+
 		Message.System(63, 1);
 		Input.LastKeyWait();
 		Message.CloseAll();
@@ -795,8 +839,10 @@ public class MainEvents {
 		ActionSequence_04ac(5);
 		Actor.WaitActionFinish();
         Sound.SEPlay(1351);
+		Sound.BGMFadeOut(124);
 		Message.ActorEx(1024, 64, 5, 0, 0);
 		Message.CloseAll();
+
 		Player.GetGPos(v33, v34);
 		if (v33 != 19) {
 			Actor.WalkRoute(255, 19, 22, 1, 8, 0);
@@ -807,6 +853,7 @@ public class MainEvents {
 		LABEL_0088:
 		Actor.WaitActionFinish();
 		WordSet.LoadPlayerName(0);
+		Sound.BGMPlay(1265);
 		Message.ActorEx(1024, 65, 5, 0, 0);
 		Message.CloseAll();
         TurnSouth8F(5);
@@ -827,11 +874,12 @@ public class MainEvents {
 		Input.LastKeyWait();
 		Message.CloseAll();
 
-
-		Sound.SEPlay(1908);
+		Sound.MEPlay(1311);
 		Message.System(67, 1);
+		Sound.MEWait();
 		Input.LastKeyWait();
 		Message.CloseAll();
+		Field.PlayMapBGM();
 		EventFlags.Clear(522);
 		EventWorks.Set(16732, 0);
 		EventWorks.Set(16731, 1);
@@ -853,7 +901,15 @@ public class MainEvents {
 		EventFlags.Set(1770);
 		EventFlags.Clear(1771);
 		EventFlags.Set(1771);
-		
+		Actor.Hide(70);
+		Actor.Hide(71);
+		Actor.Hide(72);
+		Actor.Hide(73);
+		Actor.Hide(74);
+		Actor.Hide(75);
+		Actor.Hide(76);
+		Actor.Hide(77);
+		Actor.Hide(78);
 		Runtime.FinishSubEvents();
 
 		Actor.UnpauseAll();
@@ -1093,8 +1149,24 @@ public class MainEvents {
 		Action0022(1);
 	}
 
+	 static meta void HopLeft(int npcId) : VActionSequence {
+        Action0032(1);
+    }
+
+    static meta void HopRight(int npcId) : VActionSequence {
+        Action0033(1);
+    }
+
+    static meta void HopUp(int npcId) : VActionSequence {
+        Action0030(1);
+    }
+
+    static meta void HopDown(int npcId) : VActionSequence {
+        Action0031(1);
+    }
+
     static meta void TurnSouth8F(int npcId) : VActionSequence {
-		Action0021(1);
+		Action0019(1);
 	}
 
 	static meta void TurnSouth32Frames(int npcId) : VActionSequence {
@@ -1139,6 +1211,10 @@ public class MainEvents {
 		Action0019(1);
 	}
 
+	static meta void TurnNorth8F(int npcId) : VActionSequence {
+		Action0020(1);
+	}
+
 	static meta void Global2805(int a1, int a2) : VGlobalCall[2805];
 	static native void Action0000(int amount) : 0x0;
 	static native void Action0001(int amount) : 0x1;
@@ -1156,6 +1232,9 @@ public class MainEvents {
 	static native void Action0020(int amount) : 0x20;
 	static native void Action0022(int amount) : 0x22;
 	static native void Action0023(int amount) : 0x23;
+	static native void Action0033(int amount) : 0x33;
+	static native void Action0030(int amount) : 0x30;
+	static native void Action0031(int amount) : 0x31;
     static native void Action0032(int amount) : 0x32;
 	static native void Action003d(int amount) : 0x3d;
 	static native void Action003f(int amount) : 0x3f;
