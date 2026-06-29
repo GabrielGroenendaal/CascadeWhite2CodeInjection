@@ -1,0 +1,141 @@
+
+
+
+
+----- TEXT FILE 641-----
+0: [VAR TRNAME(1)]: Wait up!\c
+1: Let's see how well we've\nraised our Pokémon!\c
+2: [VAR TRNAME(1)]: Great!\c\nIf we're this strong, Team Plasma will\nrun screaming when they see us!\c
+3: I won't let 'em get away, though!\c\nHer Purrloin...\nI'll get it back for sure!\c
+4: So, [VAR TRNAME(0)]!\nKeep helping me out!\c\nAlso, continue to work hard\non the Pokédex!\c\nYou're the one who was officially\nasked to complete it, after all!\c
+5: [VAR TRNAME(1)]: What?!\c\nIt isn't like I came here because\nI heard rumors about Cynthia\r\nbeing here and I wanted to challenge\r\nher or anything...\c\nI was interested in the Abyssal Ruins!\c\nSee! Here's proof! You can have it!\c
+6: [VAR TRNAME(1)]: It's Dive!\c\nIf you have a Pokémon that knows it,\nyou can dive to the ocean floor.\c\nIf it wasn't for you, I wouldn't have\nfound my sister's Purrloin...\r\nOr should I say her Liepard...\c
+7: OK! [VAR TRNAME(0)]!\c\nLet's see who are Aspertia's\nstrongest Pokémon!
+8: Go get 'em, guys!\c
+9: What's the deal?\nDon't act all cool.
+10: [VAR TRNAME(1)]: [VAR TRNAME(0)]...\c\nI'm really glad you're my friend!\c
+11: Undellaaaaa!\c\nThis protest has me amped!
+12: The Pokémon World Tournament...\nI wonder if Cynthia will participate, too.
+13: Cynthia is participating in the\nPokémon World Tournament!\r\nI have to cheer for her!
+14: The Riches moved far away,\nand it's a little bit lonelier around here.
+15: The sunlight is strong...\c\nDepending on the Pokémon, that can be\neither an advantage or a disadvantage.\c\nStrong sunlight makes Fire-type moves\nstronger and Water-type moves weaker.
+16: Yaaaay! Yaaay!\nUndella Town!!
+17: Sometimes Jellicent\nfloat into Undella Bay.\r\nThey have a reputation for\r\nbeing a little...unusual.
+18: We're starting construction to\nfurther develop Undella's resorts.\c\nBut these protestors are in the way...
+19: Undella Town\nA Town of Rippling Waves
+20: Reversal Mountain Ahead
+21: Marine Tube Ahead\nThe Walk-Through Aquarium
+22: Zinzolin: Mmm, it's so warm here.\c\nLet me get to the point.\c\nI have papers that\nLord Ghetsis left behind.\c\nWith these, you can read the ancient\nscripts in the Abyssal Ruins.\c\nAs my own small, little way to atone\nfor my sins, I'll read them to you!\c
+23: [VAR TRNAME(0)] is now able to read\nthe Abyssal Ruins script!
+24: Just to make sure you know,\nyou reach the Abyssal Ruins\r\nby using Dive in Undella Bay.\c\nAnd you must write down the\nciphers you find in the\r\nAbyssal Ruins by yourself.
+25: According to Lord Ghetsis's papers,\nthe ancient peoples read in the\r\nopposite direction to how we read now.\c
+26: This is what was written\nin the papers...\c\nIf you reach the second floor,\nread by shifting one letter.\c\nIf you reach the third floor,\nread by shifting two letters.\c\nWhat I mean by “shifting" is replacing\na letter with the previous\r\nletter in the alphabet.\c
+27: The king must be the presence that\nstopped the war and united the people.\c
+28: The king could see the future\nand talk to all living things.\r\nHe united the people.\c\nIf that is the truth,\nhe was just like the hero!\c
+29: There are some characters I can't\nrecognize, but based on the context...\c\nAn extremely wonderful king\nwas laid to rest in those ruins.\c\nIf that king has descendants,\nmaybe those special powers\r\nwere passed down...\c
+30: What?!\nYou made it even further, you say?\c\nAnd what kind of ciphers were there?\c\n...\n...\c\nAhem... Oh, yes, now I see.\c
+31: Keep searching!\c\nYou need to write down the\nAbyssal Ruins ciphers.
+32: Now that I've learned everything\nI wanted to know about the\r\nAbyssal Ruins, I take my leave.\c\nYou are my enemy,\nbut your accomplishments and skill\r\nmake you a worthwhile enemy. Adieu!\c
+33: The Xtransceiver is ringing.
+34: [VAR TRNAME(0)] picked up the Xtransceiver.\c
+35: Our culture isn't your capital! 
+36: Nature doesn't exist for humans to\nexploit! 
+37: The pollution has gotten so bad even the\nGrimer won't swim in our beaches. 
+38: Undella used to be a sleepy town,\nuntil Grimsley built his resort...\c\nNow it's loud and busy and Pokémon won't\neven play in the water anymore... 
+39: The fishing has completely dried up here.\nI've heard Humilau is even worse! 
+40: The wind gods will not look kindly\non this foolish human greed... 
+41: Alright, settle down everyone.\nLet's keep this peaceful, yeah? 
+42: If we don't tidy up this place soon\nGrimsley is gonna have my head! 
+43: I don't understand the point of all these\nprotests!\c\nIf you wanna change things, vote!\nAll this stuff is just posturing! 
+44: We'll show those suits they can't\nplunder mother earth with our song!\c\nWant to join in?\nOur voices together with our Pokémon\r\ncould change hearts and minds! 
+45: Radical.\nI'll set a beat!\c 
+46: Tch.\nTypical brainwashed youth.\c 
+47: That was a crazy jam session!\nHere, take these! 
+48: It's not always easy standing up for\nMother Nature. 
+49: Alder: I shouldn't be surprised you've\nmade it this far as well.\c 
+50: Benga: Yeah gramps,\n[VAR TRNAME(0)] is great.\c\nBut I've been getting really strong\ntoo!\r\nI mean, my Pokémon and I have! \c 
+51: Alder: I can see that, Benga.\nYou've come quite a long way since you\r\nleft Floccesy yourself.\c\nYou seem... motivated.\c 
+52: Benga: Of course,\nI've gotta be if I wanna be the champion\r\none day. Just like you used to be! 
+53: Alder: ...of course.\c 
+54: Benga: Battle... both of us?\c 
+55: Alder: Indeed!\nLearning to understand other trainer's\nPokémon can be as valuable as learning\r\nto understand your own!\c 
+56: Benga: Hm...\nWhat do you say, [VAR TRNAME(0)]?\r\nAre you ready? 
+57: Benga: Alright, lets do it!\c 
+58: Benga: Ready when you are!\c 
+59: Alder: Let's show them our battling\nspirit, Victini!\c 
+60: Alder: Alright, take some time and\nfind us when you're ready!\c 
+61: Benga: Hey, you ready to battle\ngramps with me? 
+62: Benga: We... lost?\c 
+63: Benga: We... won?\c 
+64: Alder: Excellent showing, you two.\c\nI could see the passion in both you and\nyour Pokémon's hearts!\r\nI can see they had a lot of fun too!\c 
+65: Benga: I lost...\nagain...\c 
+66: Benga: We beat...\nmy grandpa...?\c 
+67: Alder: Grandson,\nthat was an incredible battle.\c\nOur Pokémon are happy.\nWe all won here.\c 
+68: Benga: No gramps!\nWinning isn't just feeling good and\r\nachieving nothing, like you have!\c 
+69: Alder: There's more to battling than\nwinning and losing, Benga.\c\nIf victory is all you're looking for,\nI'm not sure my training will do you\r\nany good.\c 
+70: Benga: I need to get stronger.\c\nIf you're not going to train me,\nI'll go find another way!\c 
+71: Alder: I apologize you had to see that.\c\nIt's been difficult since his parents...\c 
+72: Alder: Well, anyways.\nNo point in pushing a sore wound.\c\nWould you look after him for me?\nMaybe you can get through to him in\r\na way I can't.\c 
+73: Alder: Best of luck on your\njourney, [VAR TRNAME(0)]!\c 
+74: BACK OFF GRIMSLEY!\nBACK OFF GRIMSLEY! 
+75: Stand down, citizen!\nDon't make us use the Stun Spore! 
+76: Tinii! 
+77: The Level Cap is now [COLOR(2)]63[COLOR(0)]! 
+78: ..that's why the bond between you\nand your Pokémon is so important Benga.\c\nIt's your greatest source of strength!\c 
+79: I'm tired about talking about\nphilosophy gramps... when are we gonna\r\nget too the training? 
+80: Alder: Ah, [VAR TRNAME(0)]!\c 
+81: AGH!\c 
+82: The bond between you and your Pokémon\nwas clear as day even when we first met\r\nby the cliff.\c 
+83: Well, since I have you both here, why\ndon't we three do a little training\r\nbattle.\c\nVictini and I could use the exercise,\nand you could use the training!\c 
+84: Alder: Are you prepared to battle? 
+85: [VAR TRNAME(0)], next time we meet,\nI'll be strong enough to beat you.\r\nI'll be stronger than anybody!\c 
+86: That boy...\c 
+87: Stand down!
+88: Jeez... what a mess.
+89: Where did all the fishies go?
+90: You can't break our chain of love!
+91: We won't leave until the shrine\nis safe!
+92: I don't really care about the protest.\nI'm just here for a sense\r\nof community.
+93: Watch out for those currents!\c
+94: They're mighty dangerous!\nYou'll get pushed back!\c
+95: ENOUGH!\c\nAll of you need to get\nout of the way!\c
+96: Protestor: If we stand together,\nthey can't\nbreak us!\c
+97: No more expansion!\nIt stops here!
+98: Man... I hope we're\nstill getting paid.
+99: The current is too strong!
+100: Once you battle Alder, no matter\n[COLOR(2)]whether you win or lose[COLOR(0)] the following\r\ncontent will be locked off!
+101: The [COLOR(2)]Strange House Gauntlet[COLOR(0)]\nin [COLOR(1)]Strange House[COLOR(0)].\c\nDefeating them rewards the TM for\nWill-o-Wisp and an encounter!\c
+102: The [COLOR(2)]Flannery Mini-Boss Fight[COLOR(0)]\nin [COLOR(1)]Reversal Mountain[COLOR(0)]'s center chamber.\c\nDefeating her rewards an Occa Berry,\na Fire Gem, and the Flamethrower TM.\c
+103: The [COLOR(2)]Gentleman & Socialiate Back-to-Back[COLOR(0)]\nin [COLOR(1)]Undella Town[COLOR(0)] in\r\nthe leftmost villa.\c\nDefeating them rewards an Ability Patch!\c
+104: Do you accept Alder's challenge, knowing\nit will lock you out of content?
+
+
+
+
+
+----- TEXT FILE 588----- Abundant Shrine
+0: Hmm!\c
+1: Wow! Wow!\nWhat an awesome Trainer!\c\nThat Pokémon you are traveling with\nis Landorus in Therian Forme!\c
+2: A long, long time ago...\c\nTornadus and Thundurus\nstarted a rampage in Therian Forme.\c\nWhen everybody thought the Unova region\nwould be ruined and gave up hope,\r\nLandorus, also in Therian Forme,\r\nappeared out of nowhere\r\nand stopped them.\c\nThat's what they say.\c
+3: Oh! Hey!\nWait a second.\c
+4: This has been placed in the shrine.\nTake this.\c
+5: They say the Reveal Glass brings\nThundurus, Tornadus, and Landorus\r\nback to their original appearance.\c\nHowever, I don't know whether\nIncarnate Forme or Therian Forme\r\nis the true Forme.\c
+6: Why do delicious vegetables grow in the\nfields of Mistralton City?\c\nIt's because the ones who grow them are\nvery picky about the mulch they use.\c\nIt's good mulch. Strong mulch. It's\nstored up a lot of energy from nature.\r\nAnd that makes it really stinky!\c\nSuch a powerful aroma! It burns\nall the way to the back of your nose!\c\nAww. Just remembering it\nmakes me dizzy!\c
+7: The Funfest Mission\n“[VAR FUNFESTMISSION(0)]"\r\nhas been added to the Entralink.
+8: Stinky, stinky mulch\ngrows delicious vegetables!
+9: So you know what Landorus is like\nwhen it means business, huh?\c
+10: Yeah! I do!\c\nIt changes into another Forme\nand flies around the sky!\c\nTornadus and Thundurus\nchange Formes, too!\r\n...Well, that's the story, anyway.
+11: Yeah! I do!\c\nIt changes into another Forme\nand flies around the sky!\c\nThundurus and Tornadus\nchange Formes, too!\r\n...Well, that's the story, anyway.
+12: That's good, then!\c\n...You know, I've only heard\nabout it in stories, too.
+13:                                                                                                         
+14:                                                                         
+15:            
+16: This little shrine is dedicated to a\nPokémon called Landorus.\c\nThey say that when Tornadus and\nThundurus were whipping up storms that\r\ndamaged houses and fields all over the\r\nUnova region, Landorus made them stop.\c\nThat's a story from when my\ngrandpa was just a little kid!
+17:                               
+18:                                               
+19:                 
+20: It's a small, weathered shrine.
+21:                       
+22:                                                     
+23:          
+24:                         

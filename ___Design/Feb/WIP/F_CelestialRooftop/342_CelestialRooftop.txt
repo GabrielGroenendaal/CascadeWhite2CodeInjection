@@ -1,54 +1,175 @@
-import messages.script.Msg0553.MSGID;
+import messages.script.Msg0554.MSGID;
 
+import Base;
 import event.Battle;
-import event.EVCamera;
-import player.Bag;
+import event.StaticProp;
 import event.actors.Actor;
 import event.actors.Player;
 import event.dialogs.Message;
 import event.dialogs.YesNoWin;
-import player.TrainerCard;
+import event.funfest.Funfest;
 import pokescript.vm.Math;
 import pokescript.vm.StackCtrl;
 import pokescript.vm.VM;
 import system.EventFlags;
 import system.EventWorks;
-import system.Fade;
 import system.Input;
 import system.Runtime;
-import system.text.WordSet;
 import system.Sound;
-import event.Battle;
-import system.Field;
-
+import system.text.WordSet;
 
 public class MainEvents {
-
-    // Sabrina Event Trigger
-	public static void main_1() { // @ 0x1c
-	
-    }
-
-    // Sabrina Event Trigger 2
-	public static void main_2() { // @ 0x1e
-		
+	public static void main_1() { // @ 0x24
+		if (EventFlags.Get(919) || EventWorks.Get(16663) != 2) {
+			return;
+		}
+		EventFlags.Set(919);
+		EventWorks.Set(16663, 1);
 	}
 
-    // Speaking with Alakazam 
-	public static void main_3() {
+	public static void main_2() { // @ 0x53
+		int v16;
+		int v35;
+
 		Actor.PauseAll();
+		WordSet.LoadPlayerName(0);
+		Message.Info(3, 2);
 		Sound.SEPlay(1351);
-		Actor.FacePlayer();
-		Sound.PVPlay(65, 0);
-		Message.Info(17, 0);
-		Sound.PVWait();
-		Message.CloseAll();
+		v16 = YesNoWin.Show();
+		if (v16 != 0) {
+			Message.Info(7, 2);
+			Input.LastKeyWait();
+			Message.CloseInfo();
+			goto LABEL_00f9;
+		}
+		if (EventFlags.Get(408)) {
+			goto LABEL_0095;
+		}
+		Funfest.Broadcast(24, 0);
+		EventFlags.Set(408);
+
+		LABEL_0095:
+		Base.CMD_240(64, 30);
+		Sound.SEPlay(1968);
+		Message.Info(4, 2);
+		v35 = 0;
+		v35 = StaticProp.CreateHandle(8, 16, 7);
+		StaticProp.HndPlayAudioVisualAnm(v35, 0);
+		StaticProp.HndWaitAnm(v35);
+		StaticProp.ReleaseHandle(v35);
+		Sound.SEWait();
+		Base.CMD_241(60);
+		Message.Info(5, 2);
+		Input.LastKeyWait();
+		Message.CloseInfo();
+		if (EventWorks.Get(16622) != 5) {
+			goto LABEL_00f9;
+		}
+		EventWorks.Set(16622, 6);
+
+		LABEL_00ea:
+
+		LABEL_00f9:
+		v35 = 0;
 		Runtime.FinishSubEvents();
 		Actor.UnpauseAll();
 	}
 
-    // Ringing the Gong 
-	public static void main_4() {
+	public static void main_3() { // @ 0x105
+		int v16;
+		int v32;
+		int v33;
+		int v34;
+
+		Actor.PauseAll();
+		Message.System(0, 2);
+		v16 = YesNoWin.Show();
+		if (v16 != 0) {
+			Message.CloseAll();
+			goto LABEL_01b2;
+		}
+		Message.CloseAll();
+		EventFlags.Clear(919);
+		EventWorks.Set(16663, 2);
+		Runtime.Sleep(30);
+		Sound.PVPlay(481, 0);
+		Message.Info(1, 2);
+		Sound.PVWait();
+		Message.WaitAdvance();
+		Message.CloseInfo();
+		Player.GetGPos(v33, v34);
+		Actor.Show(0);
+		Actor.SetGPos(0, 24, 9, 26, 2);
+		v34 += 2;
+		Actor.MoveLinear(0, v33, 5, v34, 48);
+		Actor.SetGPos(0, v33, 5, v34, 2);
+		ActionSequence_0270(0);
+		Runtime.Sleep(8);
+		v32 = Player.GetDirection();
+		if (v32 == 1) {
+			goto LABEL_01a4;
+		}
+		ActionSequence_0278(255);
+
+		LABEL_01a4:
+		Actor.WaitActionFinish();
+		Runtime.Sleep(16);
+
+		LABEL_01b2:
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_4() { // @ 0x1b8
+		int v16;
+
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Sound.PVPlay(481, 0);
+		Message.Spiked(1, 2);
+		Sound.PVWait();
+		Message.WaitAdvance();
+		Message.CloseInfo();
+		Battle.CallWildBattle(481, 65, 1);
+		v16 = Battle.IsWildVictory();
+		if (v16 != 1) {
+			Battle.CallWildLose();
+			goto LABEL_0208;
+		}
+		EventFlags.Set(919);
+		EventWorks.Set(16663, 3);
+		Actor.Hide(0);
+		Battle.EndWildBattle();
+
+		LABEL_0208:
+		v16 = Battle.GetWildBattleResult();
+		if (v16 == 0) {
+			EventFlags.Set(397);
+			goto LABEL_0259;
+		}
+
+		LABEL_0229:
+		if (v16 == 1) {
+			goto LABEL_0249;
+		}
+		if (v16 == 2) {
+			goto LABEL_0249;
+		}
+		goto LABEL_0259;
+
+		LABEL_0249:
+		Message.System(2, 2);
+		Input.LastKeyWait();
+		Message.CloseSystem();
+
+		LABEL_0259:
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	    // Ringing the Gong 
+	static void sub_GenerateWildPokemon() {
 		int random; 
 		int speciesId;
 		int form;
@@ -113,60 +234,16 @@ public class MainEvents {
 		}
 	}
 
-    static void sub_SabrinaBattle(){
 
+	static meta void ActionSequence_0270(int npcId) : VActionSequence {
+		Action0020(1);
 	}
 
-
-	static void sub_0117() { // @ 0x117
-		int v16;
-
-		v16 = Battle.IsTrainerVictory();
-		if (v16 != 1) {
-			Battle.CallTrainerLose();
-			return;
-		}
-		Battle.EndTrainerBattle();
-	}
-
-	
-	static meta void ShowExclamationMark(int npcId) : VActionSequence {
-		Action004b(1);
-	}
-
-	
-	static meta void TurnSouth(int npcId) : VActionSequence {
+	static meta void ActionSequence_0278(int npcId) : VActionSequence {
 		Action0021(1);
 	}
 
-	static meta void WalkSouthOneTile(int npcId) : VActionSequence {
-		Action000d(1);
-	}
-	
-	static meta void TurnWest(int npcId) : VActionSequence {
-		Action0022(1);
-	}
 
-
-    static meta void Global2805(int a1, int a2) : VGlobalCall[2805];
-	static native void Action000d(int amount) : 0xd;
-	static native void Action000f(int amount) : 0xf;
-	static native void Action000c(int amount) : 0xc;
-	static native void Action0010(int amount) : 0x10;
-	static native void Action0011(int amount) : 0x11;
-	static native void Action0012(int amount) : 0x12;
-	static native void Action0013(int amount) : 0x13;
 	static native void Action0020(int amount) : 0x20;
 	static native void Action0021(int amount) : 0x21;
-	static native void Action0022(int amount) : 0x22;
-	static native void Action0023(int amount) : 0x23;
-	static native void Action0032(int amount) : 0x32;
-	static native void Action0033(int amount) : 0x33;
-	static native void Action0036(int amount) : 0x36;
-	static native void Action003f(int amount) : 0x3f;
-	static native void Action004b(int amount) : 0x4b;
-	static native void Action0047(int amount) : 0x47;
-	static native void Action0048(int amount) : 0x48;
-	static native void Action00a1(int amount) : 0xa1;
-	static native void Action000b(int amount) : 0xb;
 }

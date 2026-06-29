@@ -2878,6 +2878,10 @@ extern "C"
             {
                 v8 = 1276;
             }
+            else if (IsEqual(SubID, MOVE066_SUBMISSION))
+            {
+                v8 = 1345;
+            }
             else
             {
             }

@@ -1,3 +1,21 @@
+
+
+
+Sabrina Entity: 5 
+    X - 16 
+    Y - 112 
+    Z - 15
+
+
+Alakazam Entity: 3
+
+
+Trigger Zone 
+    X - 16 
+    Y - 88 
+    Z - 19 
+
+
 ----- TEXT FILE 554-----
 0: A mysterious presence can be felt here!\nCheck the surrounding area?
 1: Kyauun!

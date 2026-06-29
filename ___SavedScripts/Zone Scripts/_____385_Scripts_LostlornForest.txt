@@ -1,5 +1,7 @@
 import messages.script.Msg0597.MSGID;
 
+import Base;
+import event.EVCamera;
 import player.Bag;
 import event.actors.Actor;
 import event.actors.Player;
@@ -10,10 +12,16 @@ import pokescript.vm.StackCtrl;
 import pokescript.vm.VM;
 import system.EventFlags;
 import system.EventWorks;
+import system.Fade;
 import system.Input;
 import system.Runtime;
 import system.Sound;
 import system.text.WordSet;
+import event.Battle;
+import system.Field;
+
+
+
 
 public class MainEvents {
 	public static void main_1() { // @ 0x18
@@ -144,29 +152,73 @@ public class MainEvents {
 		Actor.UnpauseAll();
 	}
 
+	// We will probably be able to remove this. 
     public static void main_7() {
         if (TrainerCard.HasBadge(3) && EventFlags.Get(2287) == 0) {
-            Actor.Hide(8);
-            Actor.Hide(26);
-            Actor.Hide(25);
-            Actor.Hide(27);
-            Actor.Hide(28);
-            Actor.Show(33);
-            Actor.Show(34);
-            Actor.Show(35);
-            Actor.Show(36);
-            Actor.Show(37);
-            Actor.Show(38);
-            Actor.Show(39);
+            // Actor.Hide(8);
+            // Actor.Hide(26);
+            // Actor.Hide(25);
+            // Actor.Hide(27);
+            // Actor.Hide(28);
+            // Actor.Show(33);
+            // Actor.Show(34);
+            // Actor.Show(35);
+            // Actor.Show(36);
+            // Actor.Show(37);
+            // Actor.Show(38);
+            // Actor.Show(39);
+			if (EventFlags.Get(3047) == 0){
+				EventFlags.Set(3047);
+				Actor.Hide(28);
+				Actor.Hide(8);
+				Actor.Hide(27)
+			}
+
+			// Instead of "showing" these npcs, they'll be moved to the blocking positions and have their movecodes set to 0;
+			Actor.SetGPos(33, 15, 0, 31, 2);
+			Actor.SetMoveCode(33, 3);
+			Actor.SetGPos(34, 16, 0, 30, 1);
+			Actor.SetMoveCode(34, 3);
+			Actor.SetGPos(35, 13, 0, 30, 2);
+			Actor.SetMoveCode(35, 2);
+			Actor.SetGPos(36, 14, 0, 31, 1);
+			Actor.SetMoveCode(36, 2);
+			Actor.SetGPos(37, 17, 0, 31, 0);
+			Actor.SetMoveCode(37, 2);
+			Actor.SetGPos(38, 16, 0, 32, 1);
+			Actor.SetMoveCode(38, 1);
+			Actor.SetGPos(39, 12, 0, 32, 3);
+			Actor.SetMoveCode(39, 2);
             return;
         } 
-        Actor.Hide(33);
-        Actor.Hide(34);
-        Actor.Hide(35);
-        Actor.Hide(36);
-        Actor.Hide(37);
-        Actor.Hide(38);
-        Actor.Hide(39);
+
+		if (EventFlags.Get(2287) == 0){
+			if (EventFlags.Get(2399) == 0){
+				EventFlags.Set(2399);
+				Actor.Hide(25);
+				Actor.Hide(38);
+				Actor.Hide(37);
+				Actor.Hide(26);
+				Actor.Hide(42);
+			}
+		}
+
+		// Instead of hiding these pokemon, we're going to set their GPOS be the dancing mons 
+		// We also need to set their move code
+        // Actor.Hide(33);
+        // Actor.Hide(34);
+        // Actor.Hide(35);
+        // Actor.Hide(36);
+        // Actor.Hide(37);
+        // Actor.Hide(38);
+        // Actor.Hide(39);
+
+		// Hide the Vileplumes and Bellossom
+		// Actor.Hide()
+		// Actor.Hide()
+		// Actor.Hide()
+		// Actor.Hide()
+		// Actor.Hide()
     }
 
     public static void main_8() { // @ 0x1d9
@@ -182,6 +234,7 @@ public class MainEvents {
 		Actor.UnpauseAll();
 	}
 
+	// SPeak with Bellossom
 	public static void main_9() { // @ 0x1d9
 		Actor.PauseAll();
 		Sound.SEPlay(1351);
@@ -228,6 +281,424 @@ public class MainEvents {
 	}
 
 
+	// Speak with the Wild Vileplume 
+	public static void main_10() { // @ 0x1d9
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Sound.PVPlay(43, 0);
+		Message.Actor(1024, 11, 0, 0);
+		Sound.PVWait();
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	// Speak with Erika 
+	public static void main_11() { // @ 0x1d9
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 32, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	// First Trigger Event for Erika 
+	public static void main_12(){
+
+		int playerX;
+		int playerZ;
+		int erikaX;
+		int yesNo;
+		int erikaZ;
+		int ERIKA_ENTITY = 8;
+		Sound.SEPlay(1351);
+		
+		Player.GetGPos(playerX, playerZ);
+		Actor.GetGPos(ERIKA_ENTITY, erikaX, erikaZ);
+		if (playerX > erikaX){
+			TurnEast8F(ERIKA_ENTITY);
+			Message.ActorEx(1024, 33, ERIKA_ENTITY, 2, 1);
+			Actor.WaitActionFinish();
+			Message.CloseAll();
+			TurnWest8F(255);
+			Message.ActorEx(1024, 34, ERIKA_ENTITY, 2, 0);
+			Actor.WaitActionFinish();
+			Message.CloseAll();
+			if ((playerX - 1) > erikaX){
+				Actor.WalkRoute(ERIKA_ENTITY, playerX-1, playerZ, 0, 16, 0);
+				Actor.WaitActionFinish();
+			}
+		}
+		else {
+			TurnSouth8F(ERIKA_ENTITY);
+			Message.ActorEx(1024, 15, ERIKA_ENTITY, 2, 1);
+			Message.CloseAll();
+			Actor.WaitActionFinish();
+			PlayerWalksUpBesideErika(255);
+			Runtime.Sleep(16);
+			TurnEast8F(ERIKA_ENTITY);
+			Actor.WaitActionFinish();
+		}
+		WordSet.LoadPlayerName(0);
+		Message.ActorEx(1024, 16, ERIKA_ENTITY, 2, 0);
+		Actor.WaitActionFinish();
+		Message.CloseAll();
+
+		TurnNorth8F(ERIKA_ENTITY);
+		Actor.WaitActionFinish();
+		Message.ActorEx(1024, 35, ERIKA_ENTITY, 2, 0);
+		Message.CloseAll();
+
+		// EV CAMERA SHENANIGANS
+		EVCamera.Init();
+          EVCamera.Unbind();
+          EVCamera.MoveTo(2.3652344f, 0.0f, 237.0f, 272.0f, 0.0f, 384.0f, 64); // CHANGE THIS LATER
+		TurnNorth8F(255);
+
+		Sound.PVPlay(44, 0);
+		Runtime.Sleep(32);
+		Sound.PVPlay(44, 0);
+		Runtime.Sleep(32);
+		EVCamera.Wait();
+		Message.ActorEx(1024, 17, ERIKA_ENTITY, 2, 0);
+		Message.CloseAll();
+
+		// EV CAMERA RETURNS 
+		EVCamera.MoveToDefault(64);
+		Runtime.Sleep(32);
+		TurnEast8F(ERIKA_ENTITY);
+		TurnWest8F(255);
+		Actor.WaitActionFinish();
+		EVCamera.Wait();
+          EVCamera.Rebind();
+          EVCamera.End();
+          
+		Message.ActorEx(1024, 18, ERIKA_ENTITY, 2, 0);
+		Message.ActorEx(1024, 19, ERIKA_ENTITY, 2, 0);
+		EventWorks.Set(16521, 1);
+		yesNo = YesNoWin.Show();
+		if (yesNo == 0){
+			Message.CloseAll();
+			ShowMusicNote(ERIKA_ENTITY);
+			Actor.WaitActionFinish();
+			Message.ActorEx(1024, 20, ERIKA_ENTITY, 2, 0);
+			Message.ActorEx(1024, 36, ERIKA_ENTITY, 2, 0);
+			yesNo = YesNoWin.Show();
+			if (yesNo == 1){
+				Message.CloseAll();
+				Message.ActorEx(1024, 37, ERIKA_ENTITY, 2, 0);
+				Message.CloseAll();
+				WalkSouthOneTile(255);
+				if ((playerX - 1) > erikaX){
+					Actor.WalkRoute(ERIKA_ENTITY, erikaX, erikaZ, 0, 8, 0);		
+				}
+				TurnNorth8F(ERIKA_ENTITY);
+				Actor.WaitActionFinish();
+			
+				goto LABEL_EndErikaTriggerA;
+			}
+			sub_ErikaWatching(38);
+			WalkSouthOneTile(255);
+			if ((playerX - 1) != erikaX){
+				Actor.WalkRoute(ERIKA_ENTITY, erikaX, erikaZ, 0, 8, 0);		
+			}
+			TurnNorth8F(ERIKA_ENTITY);
+			Actor.WaitActionFinish();
+			goto LABEL_EndErikaTriggerA;
+		}
+		else {
+			sub_ErikaBattle();
+		}
+		
+		LABEL_EndErikaTriggerA:
+		Runtime.FinishSubEvents();
+	}
+	
+
+	// Second Trigger Event for Erika 
+	public static void main_13(){
+		int playerX;
+		int playerZ;
+		int erikaX;
+		int yesNo;
+		int erikaZ;
+		int ERIKA_ENTITY = 8;
+		Sound.SEPlay(1351);
+		
+		Player.GetGPos(playerX, playerZ);
+		Actor.GetGPos(ERIKA_ENTITY, erikaX, erikaZ);
+		TurnEast8F(ERIKA_ENTITY);
+		TurnWest8F(255);
+		Actor.WaitActionFinish();
+		WordSet.LoadPlayerName(0);
+		Message.ActorEx(1024, 22, ERIKA_ENTITY, 2, 0);
+		Message.CloseAll();
+		if ((playerX - 1) > erikaX){
+			Actor.WalkRoute(ERIKA_ENTITY, playerX-1, playerZ, 0, 16, 0);
+			Actor.WaitActionFinish();
+		}
+		Message.ActorEx(1024, 40, ERIKA_ENTITY, 2, 0);
+		yesNo = YesNoWin.Show();
+		if (yesNo == 0){
+			ShowMusicNote(ERIKA_ENTITY);
+			Actor.WaitActionFinish();
+			sub_ErikaWatching(24);
+			WalkSouthOneTile(255);
+			if ((playerX - 1) > erikaX){
+				Actor.WalkRoute(ERIKA_ENTITY, erikaX, erikaZ, 0, 8, 0);	
+			}
+			TurnNorth8F(ERIKA_ENTITY);
+			Actor.WaitActionFinish();
+			goto LABEL_EndErikaTriggerA;
+		}
+		Message.CloseAll();
+		Message.ActorEx(1024, 25, ERIKA_ENTITY, 2, 0);
+		yesNo = YesNoWin.Show();
+		if (yesNo == 1){
+			Message.CloseAll();
+			Message.ActorEx(1024, 20, ERIKA_ENTITY, 2, 0);
+			Message.CloseAll();
+			WalkSouthOneTile8F(255);
+			if ((playerX - 1) > erikaX){
+				Actor.WalkRoute(ERIKA_ENTITY, erikaX, erikaZ, 0, 8, 0);
+			}
+			TurnNorth8F(ERIKA_ENTITY);
+			Actor.WaitActionFinish();
+			goto LABEL_EndErikaTriggerA;
+		}
+		else {
+			sub_ErikaBattle();
+		}
+		
+
+		Actor.WaitActionFinish();
+		Message.CloseAll();
+
+		LABEL_EndErikaTriggerB:
+		Runtime.FinishSubEvents();
+	}
+
+	// Speaking with Erika 
+	public static void main_14(){
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 32, 2, 0);
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_15(){
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Sound.PVPlay(44, 0);
+		Message.Actor(1024, 41, 0, 0);
+		Sound.PVWait();
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_16(){
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Sound.PVPlay(45, 0);
+		Message.Actor(1024, 42, 0, 0);
+		Sound.PVWait();
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_17(){
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Sound.PVPlay(182, 0);
+		Message.Actor(1024, 43, 0, 0);
+		Sound.PVWait();
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+
+	static void sub_ErikaBattle(){
+		int ERIKA_ENTITY = 8;
+		int isVictory; 
+
+		Message.CloseAll();
+		Sound.BGMFadeOut(124);
+		Message.ActorEx(1024, 21, ERIKA_ENTITY, 2, 0);
+		Message.CloseAll();
+		Message.ActorEx(1024, 44, ERIKA_ENTITY, 2, 0);
+		Message.CloseAll();
+		goto skipbattle;
+		Battle.CallTrainerBattle(767, 0 , 0);
+		isVictory = Battle.IsTrainerVictory();
+		if (isVictory != 1){
+			Battle.CallTrainerLose();
+			return;
+		}
+		Battle.EndTrainerBattle();
+		skipbattle: 
+		
+		Message.ActorEx(1024, 26, ERIKA_ENTITY, 2, 0);
+		Message.CloseAll();
+	
+		TurnNorth8F(ERIKA_ENTITY);
+		ShowExclamationMark(ERIKA_ENTITY);
+		Actor.WaitActionFinish();
+		Message.ActorEx(1024, 27, ERIKA_ENTITY, 2, 0);
+		Message.CloseAll();
+		Sound.BGMPlay(1011);
+		
+		// EV CAMERA SHIT 
+
+		EVCamera.Init();
+          EVCamera.Unbind();
+          EVCamera.MoveTo(2.3652344f, 0.0f, 237.0f, 272.0f, 0.0f, 384.0f, 64); // CHANGE THIS LATER
+		TurnNorth8F(255);
+		EVCamera.Wait();
+		
+          Runtime.Sleep(32);
+		Fade.OutWhiteQ();
+		Fade.Wait();
+		EventFlags.Set(2398);
+		EventFlags.Clear(2399);
+        	Sound.PVPlay(45, 0);
+		Actor.Hide(34);
+		Actor.Hide(35);
+		Actor.Hide(33);
+		Actor.Hide(36);
+		Actor.Hide(39);
+		Actor.Show(42);
+		Actor.Show(37);
+		Actor.Show(38);
+		Actor.Show(25);
+		Actor.Show(26);
+		Actor.UnpauseAll();
+        	Sound.PVWait();
+        	Runtime.Sleep(32);
+        	Sound.BGMFadeOut(64);
+        	Fade.InWhiteQ();
+		Fade.Wait();
+		Runtime.Sleep(32);
+		Sound.BGMPlay(1083);
+		Runtime.Sleep(32);
+		Message.ActorEx(1024, 28, ERIKA_ENTITY, 2, 0);
+		Message.CloseAll();
+
+		// EV Camera Return 
+		// EV CAMERA RETURNS 
+		EVCamera.MoveToDefault(64);
+		EVCamera.Wait();
+          EVCamera.Rebind();
+          EVCamera.End();
+          
+		Message.ActorEx(1024, 29, ERIKA_ENTITY, 2, 0);
+		Message.CloseAll();
+
+		TurnEast8F(ERIKA_ENTITY);
+		TurnWest8F(255);
+		Actor.WaitActionFinish();
+		
+		WordSet.LoadPlayerName(0);
+		Message.ActorEx(1024, 30, ERIKA_ENTITY, 2, 0);
+		Message.CloseAll();
+
+		Sound.MEPlay(1304);
+		Message.System(14, 0);
+		Sound.MEWait();
+		Message.CloseSystem();
+		Bag.GiveItem(184, 1);
+		Bag.GiveItem(185, 1);
+		Bag.GiveItem(186, 1);
+		Bag.GiveItem(187, 1);
+		Bag.GiveItem(188, 1);
+		Bag.GiveItem(189, 1);
+		Bag.GiveItem(190, 1);
+		Bag.GiveItem(191, 1);
+		Bag.GiveItem(192, 1);
+		Bag.GiveItem(193, 1);
+		Bag.GiveItem(194, 1);
+		Bag.GiveItem(195, 1);
+		Bag.GiveItem(196, 1);
+		Bag.GiveItem(197, 1);
+		Bag.GiveItem(198, 1);
+		Bag.GiveItem(199, 1);
+		Bag.GiveItem(200, 1);
+		Bag.GiveItem(206, 1);
+
+		Message.ActorEx(1024, 31, ERIKA_ENTITY, 2, 0);
+		Message.CloseAll();
+
+		EventFlags.Set(2287);
+		EventWorks.Set(16521, 5);
+	}
+
+	static void sub_ErikaWatching(int a1){
+		int ERIKA_ENTITY = 8;
+		int messageID; 
+		int yesNo;
+
+		messageID = a1;
+
+		LABEL_WatchGloom:
+		Message.CloseAll();
+		Message.ActorEx(1024, 23, ERIKA_ENTITY, 2, 0);
+		Message.CloseAll();
+
+		
+		// EV CAMERA SHENANIGANS
+		EVCamera.Init();
+          EVCamera.Unbind();
+          EVCamera.MoveTo(2.3652344f, 0.0f, 237.0f, 272.0f, 0.0f, 384.0f, 64); // CHANGE THIS LATER
+		TurnNorth8F(255);
+		TurnNorth8F(ERIKA_ENTITY);
+		EVCamera.Wait();
+		
+		Runtime.Sleep(240);
+
+		if (messageID > 0){
+			Message.ActorEx(1024, messageID, ERIKA_ENTITY, 2, 0);
+			messageID = 0;
+			Message.CloseAll();
+		}
+
+		// EV Camera Returns
+		// EV CAMERA RETURNS 
+		EVCamera.MoveToDefault(64);
+		Runtime.Sleep(32);
+		TurnEast8F(ERIKA_ENTITY);
+		TurnWest8F(255);
+		Actor.WaitActionFinish();
+		EVCamera.Wait();
+          EVCamera.Rebind();
+          EVCamera.End();
+          
+		Message.ActorEx(1024, 39, ERIKA_ENTITY, 2, 0);
+		yesNo = YesNoWin.Show();
+		if (yesNo == 1){
+			Message.CloseAll();
+			Message.ActorEx(1024, 37, ERIKA_ENTITY, 2, 0);
+			Message.CloseAll();
+			return;
+		}
+		goto LABEL_WatchGloom;
+	}
+
 	static meta void ActionSequence_0170(int npcId) : VActionSequence {
 		Action0021(1);
 	}
@@ -240,9 +711,61 @@ public class MainEvents {
 		Action004b(1);
 	}
 
-	static meta void Global2805(int a1, int a2) : VGlobalCall[2805];
+	static meta void ShowExclamationMark(int npcId) : VActionSequence {
+		Action004b(1);
+	}
 
+	static meta void WalkSouthOneTile(int npcId) : VActionSequence {
+		Action000d(1);
+	}
+	static meta void WalkSouthOneTile8F(int npcId) : VActionSequence {
+		Action000d(1);
+	}
+
+	static meta void TurnEast8F(int npcId) : VActionSequence {
+		Action0023(1);
+	}
+	static meta void TurnWest8F(int npcId) : VActionSequence {
+		Action0022(1);
+	}
+	static meta void TurnNorth8F(int npcId) : VActionSequence {
+		Action0020(1);
+	}
+	static meta void TurnSouth8F(int npcId) : VActionSequence {
+		Action0021(1);
+	}
+
+	static meta void PlayerWalksUpBesideErika(int npcId) : VActionSequence {
+		Action000f(1);
+		Action000c(1);
+		Action0022(1);
+	}
+	static meta void ShowMusicNote(int npcId) : VActionSequence {
+	    Action00a0(1);
+	}
+
+	static meta void Global2805(int a1, int a2) : VGlobalCall[2805];
+	static native void Action000d(int amount) : 0xd;
+	static native void Action000f(int amount) : 0xf;
+	static native void Action000c(int amount) : 0xc;
+	static native void Action000e(int amount) : 0xe;
+	static native void Action000b(int amount) : 0xb;
+	static native void Action0010(int amount) : 0x10;
 	static native void Action0011(int amount) : 0x11;
+	static native void Action0012(int amount) : 0x12;
+	static native void Action0013(int amount) : 0x13;
+	static native void Action0020(int amount) : 0x20;
 	static native void Action0021(int amount) : 0x21;
+	static native void Action0022(int amount) : 0x22;
+	static native void Action0023(int amount) : 0x23;
+	static native void Action0031(int amount) : 0x31;
+	static native void Action0032(int amount) : 0x32;
+	static native void Action0033(int amount) : 0x33;
+	static native void Action0036(int amount) : 0x36;
+	static native void Action003f(int amount) : 0x3f;
 	static native void Action004b(int amount) : 0x4b;
+	static native void Action0047(int amount) : 0x47;
+	static native void Action0048(int amount) : 0x48;
+	static native void Action00a1(int amount) : 0xa1;
+	static native void Action00a0(int amount) : 0xa0;
 }

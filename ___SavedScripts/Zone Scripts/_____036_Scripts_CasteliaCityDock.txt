@@ -89,7 +89,7 @@ public class MainEvents {
 		Field.Close();
 		FieldDemo.Call3DDemo(10, 0);
 		Field.Open();
-		Field.ChangeMap(235, 295, 1, 748, 3);
+		Field.ChangeMap(235, 292, 1, 748, 3);
 
 		LABEL_0123:
 		Runtime.FinishSubEvents();

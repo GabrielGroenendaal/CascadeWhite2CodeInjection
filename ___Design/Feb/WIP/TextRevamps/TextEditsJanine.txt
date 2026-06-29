@@ -1,0 +1,63 @@
+
+
+
+[ THIS IS THE PLAYER'S FIRST POSSIBEL ENCOUTNER WITH JANINE ON ROUTE 20, AFTER DEFEATING A PLASMA GRUNT THEY WILL SPOT A NEW, PREVIOUSLY NOT THERE NPC WHO IF SPOKEN TO SAYS THIS ]
+
+20: ???: O-oh!\nHello there, partner!\c
+21: Britney: My name is Britney!\nI'm just a Unovan schoolgirl out here\r\ntraining for a big test!
+22: Say, I just saw you speaking with that\nwoman in the silly outfit!\c\nBritney: Who was she?
+23: A member of Team Plasma
+24: A member of Team Neo Plasma
+25: I don't know
+26: Team Plasma?\c
+27: Britney: I thought they were defeated two\nyears ago?
+28: Team... Neo Plasma?\c
+29: Britney: Are they a new group of bad guys,\nor the remnants of the old one...
+30: Britney: ..he doesn't want to talk, huh.
+31: Britney: ...she doesn't want to talk, huh.
+32: Britney: Did she tell you her plans?\nDo you know where she went?\r\nDoes she have any allies?
+33: Britney: Oh, teehee!\nSorry about that! I just love gossip.\r\nThanks for the chat, mister!
+34: Britney: Oh, teehee!\nSorry about that! I just love gossip.\r\nThanks for the chat, miss!
+
+
+[ THIS THE PLAYER'S SECOND POSSIBLE INTERACTION WITH JANINE IN CASTELIA SEWERS, AFTER DEFEATING THE PLASMA GRUNTS THERE WITH HUGH ]
+[ SAME SITUATION. A NEW NPC WILL BE CONSPICUOUSLY THERE AND HAS THIS TO SAY IF SPOKEN TO ]
+65: Oh hello there, [VAR TRNAME(0)]!\n-I mean, stranger!\c\nI am but a simple law clerk who got\nlost here in the sewers!\c  
+66: Why am I in the sewers?\nIt's a shortcut to work, of course!\c  
+67: Say, I saw you have a battle with those\ntwo strange men in Plasma uniforms.\c\nDo you know their purpose here in\nCastelia City? Who are their superiors?\r\nWhere is their base of operations? 
+68: I don't know..?  
+69: Why are you asking me..? 
+70: Teeheee, of course.\nI was just curious!\c\nI'm off back to work at the... factory!\c\nBye!\c 
+
+
+[ These are lines of dialogue I wrote for Janine's basic "Eyes Meet" trainer encounter. It provides basic existing context ]
+[ SHE CURRENTLY CHALLENGES THE PLAYER TO BATTLE IN DRIFTVEIL CITY ]
+2189: A decisive strike.\nPrecision is everything!
+2190: This isn't over, Janine!\nFind an opening, and strike!
+2191: Good, you are ready.\nLet me tell you what I know.
+2192: The three I seek call themselves the\n"Shadow Triad".\c\nWe were once peers, training under\nmy father, Koga.\c\nBut they have turned their back on our\nclan, on my father... on me.\c\nThey were active years ago in service\nof a man named "N".\c\nBut I believe they serve a different master...\c\nStay alert.\nI'll be in touch.\c
+2193: I've been watching you trainer.\nIt is time we finally meet.\c\nYou may call me Janine.\c\nI am a ninja from a distant land, sent to\nUnova to hunt down traitors to our clan.\c\nThese villains have abandoned our codes,\nall in service of "Team Plasma".\c\nThe same group you and your friend are\nin pursuit of...\c\nLet us see if you have the strength to join\nmy hunt and worthy to receive my aid.\c
+
+
+[ THIS IS AN ENCOUNTER WITH JANINE AFTER SHE HAS RESCUED YOU AND HUGH FROM CERTAIN DISASTER DURING YOUR INFILTRATION OF PLASMA FRIGATE ] 
+[ SHE HAS DIFFERENT DIALOGUE HERE DEPENDING ON IF YOU ACCEPTED HER CHALLENGE BACK IN DRIFTVEIL CITY ]
+[ ??? is also Janine, it's just in case you didn't encounter her. ]
+14: [VAR TRNAME(1)]: Team Plasma!\c\nNo matter where you fly,\nI won't let you get away!\nLiepard and I will have our\r\nrevenge for what you did to my\r\nsister!\c
+24: [VAR TRNAME(1)]: Why'd you get in\nour way anyways?\r\nWe could have taken them!\c
+25: ???: You children were foolish and\nreckless, boarding this ship with no\r\nplan and no backup.\cIf I hadn't intervened, you and your\nPokémon could have been hurt...\r\n...or worse...\c
+26: Janine: You were bold to come here\n[VAR TRNAME(0)], though I question the wisdom of\r\nboarding Team Plasma's ship with no plan\r\nand no back up.\c
+27: [VAR TRNAME(1)]: Hey, I was there too!\c
+28: Janine: If I hadn't intervened, you and\nyour Pokémon could have been\r\nhurt...\r\n...or worse...\c
+29: [VAR TRNAME(1)]: What's your deal anyways?\nWhy were you on that ship?\c\nDoin' something foolish and reckless\nas well?\c
+30: ???: I seek revenge on the Shadow Triad,\nand my reasons are my own.\c\nAll you need to know is your idiocy has\ninterfered with my plans and put the\r\nfate of your region in jeopardy.\c\nI shudder to consider what Team Plasma\ncould accomplish with that terrifying\r\nPokémon they've bent to their control...\c
+31: Janine: Three traitors to my family's\nclan serve Team Plasma.\r\nI intended to repay their treachory.\c\nUnfortunately, their forces are far\ngreater than I could have predicted.\c\nThey would pose a great danger even\nwithout that terrifying Pokémon they've\r\nbent to their control...\c
+32: [VAR TRNAME(1)]: That Pokémon...\c\nKyurem, was it?\c\nI've never seen anything like it...\c\nIts cry sounded\nlonely somehow.\c
+33: ???: It suffers terribly.\nOf that I'm certain.\c
+34: ???: If you are an enemy of Team Plasma,\nthen you are no enemy of mine.\c\nBut heed my warning:\nstay out of my way.\c
+35: Janine: I must depart before their trail\nruns cold. They cannot be allowed to act.\c\nUntil we meet again, [VAR TRNAME(0)].\c
+36: [VAR TRNAME(1)]: Guess I wasn't worth\nsaying bye to, huh?\c
+43: [VAR TRNAME(1)]: Who was that lady...\nAnd why was she spying on Team Plasma?\c
+44: We may have saved our Pokémon, but\ncountless others still need our\r\nhelp!\c
+45: Janine: It suffers terribly.\nOf that I'm certain.\c
+47: [VAR TRNAME(1)]: We had to go...\r\nThey stole my Purrloin...\r\nand [VAR TRNAME(1)]'s [VAR PKNAME(2)]!\c\nWe had to save them...\c
+48: [VAR TRNAME(1)]: How do you know that lady?\nAnd why was she spying on Team Plasma?\c

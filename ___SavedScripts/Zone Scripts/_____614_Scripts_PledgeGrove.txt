@@ -329,7 +329,7 @@ public class MainEvents {
 			Actor.WalkRoute(255, brockX, playerZ-1, 0, 8, 0);
 		}
 		if (brockZ == 20){
-			Actor.WalkRoute(255, brockX, brockZ+1, 0, 8, 0);
+			Actor.WalkRoute(BROCK_ENTITY, brockX, brockZ+1, 0, 8, 0);
 		}
 		TurnNorth8F(255);
 		Actor.WaitActionFinish();

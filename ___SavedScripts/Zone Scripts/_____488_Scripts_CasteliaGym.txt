@@ -177,8 +177,9 @@ public class MainEvents {
 	static void clearGatekeepers(){
         
         // Despawns Surge and his Pokemon 
-        EventFlags.Set(3045);
-        
+        	EventFlags.Set(3045);
+        	EventWorks.Set(16520, 4);
+        	
 		// Nursery Aide Kimya 
 		if (EventFlags.Get(1520 + 176)) {
 			EventFlags.Set(1696);

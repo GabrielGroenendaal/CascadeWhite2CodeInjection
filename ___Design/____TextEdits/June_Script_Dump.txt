@@ -6114,7 +6114,7 @@
 17: You seem like a skilled trainer, [VAR TRNAME(0)]!\c\nPerhaps you can succeed where my people\ncould not!\c\nIf you can disarm the temple's defenses\nand bring me some proof that this site is\r\nthe lost capital, I'll reward you\r\nwith a relic of my own!\c
 18: [VAR TRNAME(0)], you've returned!\nAnd you're soaking wet!\c\nDid you discover anything in the ruins?
 19: [VAR TRNAME(0)] hands the Sunken Crown\nover to Lenora!
-20: Remarkable....\nThis crown like and unlike it's sister\r\nfrom the Relic Castle.\c\nIt's surface is covered in familiar\ninscriptions, though I cannot parse the\r\nlanguage.\c\nPerhaps it's written in a different\nscript?\c\nThis drawing however...
+20: Remarkable....\nThis crown resembles the one\nfrom Relic Castle...\c\nAnd yet...\nit's unmistakably different.\c\nIt's surface is covered in familiar\ninscriptions, though I cannot parse the\r\nlanguage.\c\nPerhaps it's written in a different\nscript?\c\nThis drawing however...
 21: I cannot convey to you what a monumental\ndiscovery you've made today!\c\nAnd with the ruin's defenses disarmed, my\nresearchers will be able to scour its\r\nhalls and uncover this kingdom's secrets.\c\nAs promised, here is a relic of my own as\nthanks for your contribution to science!
 22: This crown will make a dazzling addition\nto the museum!\c\nI can already imagine the exhibit now:\n"Lost Histories of Unova"!
 23: 
