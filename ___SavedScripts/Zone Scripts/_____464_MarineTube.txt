@@ -707,6 +707,11 @@ public class MainEvents {
 			Message.ActorEx(1024, 35, 3, 0, 0);
 			Input.LastKeyWait();
 			Message.CloseAll();
+            WordSet.LoadDaycarePokeSpecies(3, 0);
+            Message.ActorEx(1024, 39, 5, 0, 0);
+			Input.LastKeyWait();
+			Message.CloseAll();
+
 			RunWestOneTile(3);
 			RunSouthOneTile(5);
 			RunSouthOneTile(6);

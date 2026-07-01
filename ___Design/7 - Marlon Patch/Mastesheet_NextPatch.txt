@@ -1391,7 +1391,7 @@ end
 dome fossil, Dome Fossil, Skull Fossil (Past the Scientist in the room past Lenora)
 skull fossil, Skull Fossil (defeat the Scientist in the room past Lenora)
 tm fire, TM48 Mystical Fire (defeat Scientist Hughes)
-stable mulch, Brave OR Quiet Mint (reward for defeating the Strange Statue)
+rocky helmet, Rocky Helmet (reward for defeating the statue)
 end
 
 !notif FIELD EFFECT, There is a Permanent Pre Set Trick Room in Relic Sanctum.  , #4e86d4
@@ -1408,7 +1408,7 @@ end
 ### Strange Statue
 !notif SPLIT-LOCKED, The Strange Statue is an optional mini-boss that can only be fought before defeating Skyla. This content is locked off afterwards. , #af74b3
 !notif WARNING, The Strange Statue's Pokémon have 0 Speed IVs. , #f26253
-!tr 634/51 Rewards Brave or Stable Mulch
+!tr 634/51 Rewards Rocky Helmet
 
 
 
@@ -1504,7 +1504,7 @@ end
 
 ### Roxanne Miniboss
 !notif SPLIT-LOCKED CONTENT, Roxanne can only be fought and her rewards only claimed before Skyla is defeated , #af74b3 
-!tr 228 
+!tr 227
 
 
 ## Guidance Chamber 
@@ -1659,7 +1659,7 @@ end
 
 !enc 114 
 
-!tr 549/51 Guards TM64 Teleport
+!tr 551/51 Guards TM64 Teleport
 
 !tr 550/51 Guards TM29 Psychic 
 

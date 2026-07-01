@@ -6,13 +6,13 @@ STRUCT_DECLARE(GameData)
 #define GAME_DATA *(GameData **)(g_GameBeaconSys + 4)
 #define ARRAY_COUNT(arr) sizeof(arr) / sizeof(arr[0])
 
-#define GIANT_CHASM 100 // CHANGE THIS LATER
-#define GIANT_CHASM_CAVE 100 // CHANGE THIS LATER
+#define GIANT_CHASM 100        // CHANGE THIS LATER
+#define GIANT_CHASM_CAVE 100   // CHANGE THIS LATER
 #define GIANT_CHASM_FOREST 100 // CHANGE THIS LATER
-#define ROUTE_22 100 // CHANGE THIS LATER
-#define ROUTE_13 100 // CHANGE THIS LATER
-#define KYUREM_FLAG 100 // CHANGE THIS LATER
-#define ROUTE_23 100 // CHANGE THIS LATER
+#define ROUTE_22 100           // CHANGE THIS LATER
+#define ROUTE_13 100           // CHANGE THIS LATER
+#define KYUREM_FLAG 100        // CHANGE THIS LATER
+#define ROUTE_23 100           // CHANGE THIS LATER
 extern "C" int SearchArray(const u16 *const arr, const u32 arrSize, const u32 value)
 {
     for (u32 i = 0; i < arrSize; ++i)
@@ -24,7 +24,6 @@ extern "C" int SearchArray(const u16 *const arr, const u32 arrSize, const u32 va
     }
     return 0;
 }
-
 
 #define SEARCH_ARRAY(arr, value) SearchArray(arr, ARRAY_COUNT(arr), value)
 extern "C"
@@ -247,8 +246,9 @@ extern "C"
 
     const u16 KyuremSplitBerserkZones[6] = {
         GIANT_CHASM, GIANT_CHASM_FOREST, GIANT_CHASM_CAVE, ROUTE_13, ROUTE_22, ROUTE_23};
-    
-    extern "C" int isKyuremEvent(EncountManager *mgr){
+
+    extern "C" int isKyuremEvent(EncountManager *mgr)
+    {
         return false;
         // EventWorkSave *eventWork = GameData_GetEventWork(GAME_DATA);
         // u16 *kyurem_ptr = EventWork_GetWkPtr(eventWork, KYUREM_FLAG);
@@ -261,7 +261,6 @@ extern "C"
         // }
         // return 0;
     }
-
 
     struct GenPokeParam
     {
@@ -359,11 +358,11 @@ extern "C"
             {
             }
 
-            if (WhiteListedPokemon[species] == 1)
+            if (WhiteListedPokemon[species] > 1)
             {
-                int random2 = GFL_RandomLCAlt(100u);
+                int random2 = GFL_RandomLCAlt(1000u);
 
-                if (random2 <= 10u)
+                if (random2 <= (25u * WhiteListedPokemon[species]))
                 {
                     PokeParty_SetHiddenAbil(v9, species, Param);
                 }
@@ -459,10 +458,11 @@ extern "C"
                 PokeParty_ChangeForme(pPkm, 0);
             }
         }
-        
-        // Unown Checks 
-        if (pkmData->Species == 201){
-            random = GFL_RandomLCAlt(24u);
+
+        // Unown Checks
+        if (pkmData->Species == 201)
+        {
+            random = GFL_RandomLCAlt(23u);
             PokeParty_ChangeForme(pPkm, random);
         }
 
@@ -500,11 +500,11 @@ extern "C"
         PokeParty_SetDefaultMoves(pPkm);
 
         /* Potential Hidden Ability? */
-        if (WhiteListedPokemon[pkmData->Species] == 1)
+        if (WhiteListedPokemon[pkmData->Species] > 1)
         {
-            random2 = GFL_RandomLCAlt(100u);
+            random2 = GFL_RandomLCAlt(1000u);
 
-            if (random2 <= 10u)
+            if (random2 <= (25u * WhiteListedPokemon[pkmData->Species]))
             {
                 PokeParty_SetHiddenAbil(pPkm, pkmData->Species, pkmData->Forme);
             }
@@ -531,9 +531,9 @@ extern "C"
             }
         }
 
-
-        // Kyurem Event Support 
-        if (isKyuremEvent(mgr)){
+        // Kyurem Event Support
+        if (isKyuremEvent(mgr))
+        {
             random = GFL_RandomLCAlt(100u);
             HeldItem = 294;
             if (random <= 32u)
@@ -559,7 +559,6 @@ extern "C"
             PokeParty_SetParam(pPkm, PF_Item, HeldItem);
         }
 
-        
         TrainerGender = getTrainerGender(pTrainerInfo);
         PokeParty_SetParam(pPkm, PF_TrGender, TrainerGender);
         PlayerName = GetPlayerName((int)pTrainerInfo);
@@ -625,6 +624,122 @@ extern "C"
         GFL_HeapFree(BoxPkm);
         return 1;
     }
+
+    extern void* Field_GetDayCare(void *field);
+    extern PartyPkm* DayCare_GetPkm(void *dayCare, u8 slot);
+    extern void setAbilityForForm(BoxPkm *pPkm, u16 species);
+
+    // Checks if the Pokemon has an ability of a specified slot
+    int THUMB_BRANCH_s00F4_DayCareCalcNewLevel(void *a1, void *a2)
+    {
+        u16 *Var; // r4
+        u8 Any; // r6
+        void *GameSystem; // r0
+        void *Field; // r0
+        void *DayCare; // r5
+        PartyPkm *pkm;
+        PersonalData *personal;
+        u16 abil1; 
+        u16 abil2;
+        u16 hiddenAbil;
+        u16 currentAbil;
+        u16 species; 
+        u8 forme;
+        Var = ScriptReadVar(a1, a2);
+        Any = ScriptReadAny(a1, a2);
+        GameSystem = FieldScriptEnv_GetGameSystem(a2);
+        Field = GSYS_GetField(GameSystem);
+        DayCare = Field_GetDayCare(Field);
+        pkm = DayCare_GetPkm(DayCare, Any);
+        species = PokeParty_GetParam(pkm, PF_Species, 0);
+        forme = PokeParty_GetParam(pkm, PF_Forme, 0);
+        personal = PML_PersonalLoadBW2(species, 0);
+        abil1 = PML_PersonalGetParam(personal, (PersonalField)(26));
+        abil2 = PML_PersonalGetParam(personal, (PersonalField)(27));
+        hiddenAbil = PML_PersonalGetParam(personal, (PersonalField)(28));
+        currentAbil = PokeParty_GetParam(pkm, PF_Ability, 0);
+
+        if (Any == 0){
+            if (abil1 == currentAbil){
+                *Var = 0;
+            }
+            else {
+                *Var = abil1;
+            }
+        }
+        else if (Any == 1){
+            if (abil2 == currentAbil){
+                *Var = 0;
+            }
+            else if (abil1 == abil2){
+                *Var = 0;
+            }
+            else {
+                *Var = abil2;
+            }
+        }
+        else if (Any == 2){
+            if (hiddenAbil == 0){
+                *Var = 0;
+            }
+            else if (abil1 == hiddenAbil){
+                *Var = 0;
+            }
+            else if (hiddenAbil == abil2){
+                *Var = 0;
+            }
+            else if (currentAbil == hiddenAbil){
+                *Var = 0;
+            }
+            else if (WhiteListedPokemon[species] < 2){
+                *Var = 0;
+            }
+            else {
+                *Var = hiddenAbil;
+            }
+        }
+        else if (Any == 3){
+            if (PokeParty_GetParam(pkm, PF_IsHiddenAbility, 0)){
+                PokeParty_SetParam(pkm, PF_IsHiddenAbility, 0);
+                setAbilityForForm(&pkm->Base, species);
+                PokeParty_RecalcStats(pkm);
+            }
+            currentAbil = PokeParty_GetParam(pkm, PF_Ability, 0);
+            if (currentAbil != abil1){
+                PokeParty_SetParam(pkm, PF_ContestCool, ((PokeParty_GetParam(pkm, PF_ContestCool, 0) == 0) ? 1 : 0));
+                setAbilityForForm(&pkm->Base, species);
+                PokeParty_RecalcStats(pkm);
+            }
+        }
+        else if (Any == 4){
+            if (PokeParty_GetParam(pkm, PF_IsHiddenAbility, 0)){
+                PokeParty_SetParam(pkm, PF_IsHiddenAbility, 0);
+                setAbilityForForm(&pkm->Base, species);
+                PokeParty_RecalcStats(pkm);
+            }
+            currentAbil = PokeParty_GetParam(pkm, PF_Ability, 0);
+            if (currentAbil != abil2){
+                PokeParty_SetParam(pkm, PF_ContestCool, ((PokeParty_GetParam(pkm, PF_ContestCool, 0) == 0) ? 1 : 0));
+                setAbilityForForm(&pkm->Base, species);
+                PokeParty_RecalcStats(pkm);
+            }
+        }
+        else if (Any == 6){
+            PokeParty_SetHiddenAbil(pkm, species, forme);
+            PokeParty_RecalcStats(pkm);
+        }
+        else if (Any == 7) {
+            *Var = currentAbil;
+        }    
+        else if (Any == 8){
+            *Var = 0; 
+        }
+        else {
+            *Var = 0;
+        }
+        return 0;
+    }
+
 
 #pragma endregion
 
@@ -793,6 +908,21 @@ extern "C"
         LeaguePokeCenReturnLocationIdx = GetLeaguePokeCenReturnLocationIdx();
         return LeaguePokeCenReturnLocationIdx != GetReturnLocationIdx(a1);
     }
+
+    // int THUMB_BRANCH_s023F_CallPlaceNameDisp(int a1, void *a2)
+    // {
+    //     void *GameSystem; // r0
+    //     void *Field; // r5
+    //     void *PlaceName; // r4
+    //     u16 PlayerStateZoneID; // r0
+
+    //     GameSystem = FieldScriptEnv_GetGameSystem(a2);
+    //     Field = GSYS_GetField(GameSystem);
+    //     PlaceName = Field_GetPlaceName(Field);
+    //     PlayerStateZoneID = Field_GetPlayerStateZoneID(Field);
+    //     BeginForcePlaceNameDisp((int)PlaceName, PlayerStateZoneID);
+    //     return 0;
+    // }
 
 #pragma endregion
 #pragma region HMOverhaul
@@ -1112,7 +1242,6 @@ extern "C"
     extern void sub_21A272C(void **a1, int a2);
     extern void setShakingSpotOff(EncountState *result);
 
-
     // extern u8* EventWork_GetFlagBytePtr(EventWorkSave *eventWork, u32 flagId);
     // extern _DWORD __ROR4__(_DWORD d, char c);
     // b32 THUMB_BRANCH_EventWork_FlagGet(EventWorkSave *eventWork, int eventBitNum)
@@ -1409,11 +1538,11 @@ extern "C"
         PokeParty_SetParam(pkm, PF_NicknameStrBuf, (u32)Name);
         GFL_StrBufFree(Name);
 
-        if (WhiteListedPokemon[tradePkm->Species] == 1)
+        if (WhiteListedPokemon[tradePkm->Species] > 1)
         {
-            int random2 = GFL_RandomLCAlt(100u);
+            int random2 = GFL_RandomLCAlt(1000u);
 
-            if (random2 <= 10u)
+            if (random2 <= (25u * WhiteListedPokemon[tradePkm->Species]))
             {
                 PokeParty_SetHiddenAbil(pkm, tradePkm->Species, tradePkm->Forme);
             }
@@ -1520,7 +1649,7 @@ extern "C"
     extern void *GameData_GetBoxSaveAccessor(GameData *gameData);
     extern int nullsub_28(void *result);
     extern b32 BoxSaveAccessor_InsertPkm(void *boxAccessor, BoxPkm *pkm);
-    extern void setAbilityForForm(BoxPkm *pPkm, u16 species);
+    
     int THUMB_BRANCH_GameData_AddBoxPkm(GameData *gameData, GenPokeParam *param)
     {
         void *BoxSaveAccessor; // r6
@@ -1540,11 +1669,11 @@ extern "C"
         {
             improveIVs(partyPkm);
         }
-        if (WhiteListedPokemon[param->Species] == 1)
+        if (WhiteListedPokemon[param->Species] > 1)
         {
-            int random2 = GFL_RandomLCAlt(100u);
+            int random2 = GFL_RandomLCAlt(1000u);
 
-            if (random2 <= 10u)
+            if (random2 <= (25u * WhiteListedPokemon[param->Species]))
             {
                 PokeParty_SetHiddenAbil(partyPkm, param->Species, param->Forme);
             }

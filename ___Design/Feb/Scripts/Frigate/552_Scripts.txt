@@ -188,6 +188,7 @@ public class MainEvents {
                 goto LABEL_08af;
             }
 			Sound.SEPlay(1351);
+			Actor.FacePlayer();
             Message.ActorEx(1024, 68, 0, 0, 0);
             Input.LastKeyWait();
             Message.CloseAll();
@@ -199,6 +200,8 @@ public class MainEvents {
 		    Fade.FadeEx(3, 16, 0, 2);
 		    Fade.FadeExWait();
             Sound.SEPlay(1351);
+			TurnSouth8F(0);
+			Actor.WaitActionFinish();
 			Message.ActorEx(1024, 32, 0, 0, 0); //  [VAR TRNAME(1)]: I'm gonna end this,\nso back me up!\c\nOK, Plasma punk, are YOU the thief\nwho stole a Purrloin in Aspertia\r\nfive years back?\c
 			Message.CloseAll();
 			Player.GetGPos(v34, v35);

@@ -1,0 +1,27 @@
+
+
+
+We need to rewrite this to account for the fact that Team Plasma DOES steal one of your Pokemon. 
+Hugh's approach to the player, his reasons for battling, and his musing need to account for this even if it requires rewriting the entire scenes. 
+He ran away from the PWT after you were kicked off the ship before anyonne could tell him what had happened. 
+So he needs to reconcile that here. 
+
+In addition, we want to set up a plot element here that Hugh and the player are keeping their investigation into team plasma secret, and so 
+aren't letting anyone else know besides cheren. 
+
+
+----- TEXT FILE 252-----
+0: Chargestone Cave\nA shocking experience!
+1: [VAR TRNAME(0)]!\nThere you are!
+2: [VAR TRNAME(1)]: [VAR PKNAME(3)] and I have been training\nlike crazy so we can beat Team Plasma\rand their stupid ninjas into the dirt!\c\nCome on, let us give you a taste!
+3: [VAR TRNAME(1)]: Man, you're something else!\c\nI could see you going all the way man,\nto the top! 
+4: [VAR TRNAME(1)]: Hey...\n...can I ask you something?\c\nWhen we were on that ship...\nwhen everything went down,\rwere you scared at all?\c\nDid you ever think, even for a moment,\nabout running?
+5: [VAR TRNAME(1)]: Oh, yeah, of course!\nDuh!\c\nWith Pokémon like that by your side why\nwould you be frightened of anything? 
+6: [VAR TRNAME(1)]: ...me too. 
+7: [VAR TRNAME(1)]: Maybe it's stupid of me,\nI don't know...\c\nBut once we were on that ship it all\ngot real for me, you know? 
+8: [VAR TRNAME(1)]: It was one thing beating up idiot\ngrunts in Virbank: but storming into\rTeam Plasma's base, by ourselves...\c\nIf things went south, they could've\ntaken our Pokémon just like Purrloin...\c\n...or worse.
+9: [VAR TRNAME(1)]: It ticks me off...\nWe got so close to Team Plasma,\rbut weren't strong enough...\c\nThose shadow dudes handled us like\nit was nothing...\c\nSo we've gotta get stronger,\nand stronger, and STRONGER!
+10: [VAR TRNAME(1)]: Next time we meet, I'll be\nstrong enoughto be as fearless as you,\r[VAR TRNAME(0)]! 
+11: [VAR TRNAME(1)]: Next time we meet, let's both\nbe strong enough to be fearless,\r[VAR TRNAME(0)]! 
+12: The Level Cap is now [COLOR(2)]55[COLOR(0)]!
+

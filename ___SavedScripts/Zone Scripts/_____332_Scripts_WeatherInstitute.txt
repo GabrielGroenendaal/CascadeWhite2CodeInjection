@@ -94,20 +94,45 @@ public class MainEvents {
 	public static void main_3() { // @ 0xc7
 		int v0;
 		int v1;
-
+		WordSet.LoadRivalName(1);
+		WordSet.LoadPlayerName(0);
 		Actor.PauseAll();
 		Actor.WalkRoute(255, 6, 7, 1, 8, 0);
 		Actor.WaitActionFinish();
 		Message.ActorEx(1024, 0, 0, 0, 0);
 		Message.ActorEx(1024, 1, 0, 0, 0);
 		Message.ActorEx(1024, 2, 0, 0, 0);
+        Message.CloseAll();
+
+        WalkWest8F(0);
+        Runtime.Sleep(8);
+        TurnWest8F(255);
+        Actor.WaitActionFinish();
+        Message.ActorEx(1024, 61, 0, 0, 0);
+        Message.CloseAll();
+        TurnEast8F(0);
+        Actor.WaitActionFinish();
+
+        Message.ActorEx(1024, 62, 0, 0, 0);
+        Message.CloseAll();
+
+        WalkEast8F(0);
+        Runtime.Sleep(8);
+        TurnNorth8F(255);
+        Actor.WaitActionFinish();
+        Message.ActorEx(1024, 63, 0, 0, 0);
+        Message.CloseAll();
 		Message.ActorEx(1024, 3, 0, 0, 0);
 		Message.CloseAll();
 		Actor.WalkRoute(0, 6, 6, 1, 8, 0);
 		Actor.WaitActionFinish();
-		Global2805(422, 1);
+		Global2805(424, 1);
 		Message.ActorEx(1024, 4, 0, 0, 0);
 		Input.LastKeyWait();
+		Message.CloseAll();
+        WalkSouth8F(255);
+        Actor.WaitActionFinish();
+        Message.ActorEx(1024, 65, 0, 0, 0);
 		Message.CloseAll();
 		EventFlags.Set(2439);
 		Base.CMD_262(2, 6);
@@ -737,4 +762,33 @@ public class MainEvents {
 	}
 
 	static meta void Global2805(int a1, int a2) : VGlobalCall[2805];
+
+    static meta void WalkSouth8F(int npcId) : VActionSequence {
+		Action000d(2);
+	}
+    static meta void WalkWest8F(int npcId) : VActionSequence {
+		Action000e(1);
+	}
+    static meta void WalkEast8F(int npcId) : VActionSequence {
+		Action000f(1);
+        Action0021(1);
+	}
+    static meta void TurnWest8F(int npcId) : VActionSequence {
+		Action0022(1);
+	}
+    static meta void TurnEast8F(int npcId) : VActionSequence {
+		Action0023(1);
+	}
+	static meta void TurnNorth8F(int npcId) : VActionSequence {
+		Action0020(1);
+	}
+	
+    static native void Action000e(int amount) : 0xe;
+    static native void Action000d(int amount) : 0xd;
+    static native void Action000f(int amount) : 0xf;
+    static native void Action0020(int amount) : 0x20;
+	static native void Action0021(int amount) : 0x21;
+    static native void Action0022(int amount) : 0x22;
+	static native void Action0023(int amount) : 0x23;
+
 }

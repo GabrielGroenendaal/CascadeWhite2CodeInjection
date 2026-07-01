@@ -294,10 +294,10 @@ public class MainEvents {
             Message.CloseAll();
 
 			// If we want to give the rocky helmet instead.
-			//Message.ActorEx(1024, 34, 2, 0, 0);
-			//Message.CloseAll();
-			//Global2805(540, 1);
-			//goto LABEL_PostGift;
+			Message.ActorEx(1024, 34, 2, 0, 0);
+			Message.CloseAll();
+			Global2805(540, 1);
+			goto LABEL_PostGift;
 
 			// CANDY PATH 
             Message.ActorEx(1024, 32, 2, 0, 0);

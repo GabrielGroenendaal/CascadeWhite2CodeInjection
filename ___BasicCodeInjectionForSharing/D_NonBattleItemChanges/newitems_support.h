@@ -16,7 +16,7 @@ bool IsEqual(int a1, int a2)
 C_DECL_BEGIN
 extern int addPkmToDex(_DWORD *a1, PartyPkm *a2);
 
-
+extern void* GSYS_GetField(void *gsys);
 extern u32 GFL_RandomMT();
 extern u32 PML_GenPID(
     unsigned int idSet,

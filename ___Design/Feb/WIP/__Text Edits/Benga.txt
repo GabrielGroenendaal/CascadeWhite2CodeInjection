@@ -1,0 +1,264 @@
+
+
+----- TEXT FILE 315-----
+60: ???: Don't worry lil' guy, that weirdo\ncan't hurt you anymore!\c\nJust rest a sec, and let the\nOran Berries work their magic!
+61: ???: Huh, who are you?\nYou smell tough!\c
+62: ...\n...\c\n???: [VAR TRNAME(0)], huh?\nCall me Benga, the [COLOR(2)]UNDEFEATED[COLOR(0)],\nthe strongest trainer in Floccesy Town!\c\nAnd soon, strongest in the world!\c
+63: I've got champion in my blood!\nMy gramps is the champion!\c\nOr... he was...\c
+64: Benga: I was out here training when I ran\ninto that goon messing with this lil' guy.\c\nWhat kind of jerk gets off picking\non a Pokémon like that?\c\nAnd he didn't even put up a good fight,\na total pushover.\c
+65: Hey!\nI've got a battle itch that weirdo\r\ncouldn't scratch.\c\nLet me show you how a future champ\nbattles!\c
+66: Benga: Woah, where'd you come\nfrom stranger?\c 
+67: You're strong! Crazy strong!\c\nYou must be...\c
+68: ...my RIVAL!\c
+69: No wonder you're so strong!\nYou'd have to be to challenge me!\cHere, a gift to cement our new rivalry!\c
+70: Benga: Hm... guess I'm off to a bad start\nwith the whole "undefeated" thing.\c
+71: Okay!\nREDO REDO!\c
+72: You better watch out next time we fight!\c\nBecause starting NOW I'm never going to\nlose a battle to nobody, count on it!\c
+73: See, this guy knows what I'm talking\nabout!\c\nLooks like the Oran Berries did\nthe trick!\c
+74: Benga: I'll find ya later, [VAR TRNAME(0)]!\nThis is gonna be fun!\c
+80: You're strong\nAlmost as strong as me!\c\nYou must be...
+81: Here, let me give your partners some!\c
+82: Bawoof! Ba woof!\c
+83: Benga: Ow!\nA branch!
+
+
+
+
+
+
+----- TEXT FILE 180-----
+52: Benga: Hey there, [VAR TRNAME(0)]!\c
+53: Benga: You haven't beaten Roxie yet?
+54: Benga: You gotta catch up if you wanna\nbe my rival, [VAR TRNAME(0)]!\c\nHere, maybe this will help!
+55: It's a King's Rock!\nMy gramps gave it to me as a\rlucky charm.\c\nBut I don't think I'll need his luck\nanymore.
+56: Benga: The next gym is in\nCastelia City, right..?\c\nBut the ferry is out of commission...
+57: Benga: I'll race you there, rival!
+58: Where ya been?\c\nI've been keeping my promise since we last\nfought: I haven't lost a single battle!\c\nI even just got my Toxic Badge from\nthe gym leader here!\c\nTwo down, six to go!
+59: Benga: Brrrrrr!\nWater's cold!
+60: ...\c\n...?\c
+61: ...!?\c
+
+
+
+
+----- TEXT FILE 47-----
+0: Iris: You can go inside\nthe sewers from here!\c\nWhaddaya think?\nSeems pretty suspicious, right?\c
+1: [VAR TRNAME(1)]: [VAR TRNAME(0)]!\nDid you find Team Plasma?!
+2: Uh, thanks...\c\nBut you don't need to lie just\nso I won't be disappointed!\c
+3: Augh! Those dirty Pokémon thieves!\c
+4: That means the only place\nI still haven't checked is...\c\n[VAR TRNAME(0)]!\nHelp me out!\c
+5: Iris: Yep! The sewers are\na perfect place for hiding!
+6: Iris: Your friend...\c\nHe seemed pretty mad.\nDid everything go OK in the sewers?\c
+7: So what are you going to do now?\c\nYou ran into Gym Leader Burgh\nin the sewers, didn't you?\c\nMaybe you should go to the Pokémon Gym\nand see how far you've come!\c\nI'm sure battling will help your Pokémon\ncome to understand you better\r\nas a Trainer, too!
+8: Some Trainers even toughen up\ntheir Pokémon in the sewers...
+9: What?\nYou want to go into the sewers?\c\nWell, OK... But watch out\nfor wild Pokémon.
+10: Because of the tide, you sometimes\nmight not be able to get into\r\nthe Castelia Sewers.\r\nIt depends on the season.
+11: Stick up your thumbs, and curl in\nyour fingers.\c\nThis is a thumbs-up pose. That means OK!\nIn some places, it also means well done!
+12: That boy ran by so fast!\nLike a scarlet blur!\c\nHe kinda reminds me of someone...
+13: ???: ALMOST THERE!
+14: Benga: WOOOOO!!!!\c\nWE MADE IT!
+15: Benga: Heyo [VAR TRNAME(0)], looks like you\nbeat me here!\c
+16: Benga: I got held up tussling with some\nSharpedo a couple miles back.\c
+17: We're chill now, though.\nGot a couple love scars to prove it!\c
+18: Benga: Alright, I'm off to find the\nchamp. Maybe squash the gym on the way!\c
+19: Try and keep up, rival!
+
+
+
+
+----- TEXT FILE 540-----
+27: ???: Woah, FIRE alert, [VAR TRNAME(0)] is\nrolling in!
+28: Benga: How's it hanging, rival?\nYou got your Insect Badge?\c
+29: Benga: Smells like its time for a\nrematch then!\c\nAnd I'm warning ya, I haven't lost a\nbattle since...\c\n...\c
+30: ...BAH! Who cares!\nLet's RUMBLE!\c
+31: Benga: Heh...\nThat was a good battle, thanks...\c
+32: Benga: I won..?
+33: Benga: WOOOOOOOO!!!
+34: Benga: Woah, sorry about that.\nI don't mean to be a sore winner:\nthat was a great battle!\c\nHere!\c
+35: To be real with ya, I kinda needed this\nwin today.\c\nIt hasn't been so long since I\nlost, actually.\c
+36: I was doing real good, beating everyone\njust like gramps, even the Gym Leaders!\c\nSo when I heard the current "champ" was\nin Castelia, I thought I could beat them.\c
+37: I lost.\nI lost BAD.\c
+38: I thought maybe it was a fluke,\nbut then I go and lose to you again...\c
+39: I was hopin' it was a fluke, that beating\nwould prove I had the sauce, but nah,\r\nthere's no comparison.\c\nThe champ's so strong... they're playing\na different game than the two of us...\c
+40: Benga: No...\c\n...\c
+41: NO!!!!\c
+42: Benga: I'm the best, so for someone to\nbeat me that means they gotta be\r\nthe bestest best!\c
+43: So all I gotta do is become the\nBESTEST bestest best!\c\nIt's so obvious!\c
+44: Benga: Alright!\nThanks [VAR TRNAME(0)].\r\nI needed that pep talk!\c\nHope I didn't harsh your vibe with\nmy little pity party.\c\nHere, take this for your trouble!\c
+45: Next time we meet, I'll show you what\nthe best of the best looks like!
+46: Benga: Ow, hot sand!
+
+
+
+
+
+
+----- TEXT FILE 249-----
+71: Benga: Let's see...\c\nI want to teach Garchomp Dragon Rush for\ndouble battles, but I might want to save\r\nthis scale to teach Venusaur Growth\r\ndown the line...
+72: Benga: [VAR TRNAME(0)]!\nYou're here!\c
+73: Benga: Dude, this place is awesome!\c\nAll these amazing trainers duking it out\nto prove they're the best: it's sick!\c
+74: There's also a ton of stuff here to help\ntrainers get super strong!
+75: Like the lady over here, super nice lady,\ncan teach your Pokémon any move its\r\never known!\c
+76: She can even teach Pokémon moves they\ncan't learn any other way!\c\nDo you think she's, like, tapping into\ntheir genetic memory?\c
+77: It ain't free though:\nshe charges one [COLOR(2)]Heart Scale[COLOR(0)] per move!\c\nThey're super rare, but I pulled a bunch\noff Luvdisc while swimming over!\c\nHere, take some!
+78: You should look around, there's\nsome other crazy stuff here too!\c
+79: The Blueberry Academy set up a bunch of\nmove tutors across the plaza!\c
+80: And the guy in that north booth says he\ncan even maximize a Pokémon's natural\r\npotential!\c
+81: Benga: Alright, I'm heading out!\c\nI've spent all I got for now, and we\nwon't qualify for the big league\r\ntournaments until we have 8 badges.\c
+82: And for trainers like us, there's no\npoint splashin' around in the kiddy pool!\c
+83: Seeya later, [VAR TRNAME(0)]!\c
+84: ???: Thats amazing!
+85: Benga: Hey, watch it!
+
+
+----- TEXT FILE 327-----
+0: Benga: Oh hey, you made it [VAR TRNAME(0)]!\c
+1: Benga: Oh hey, you made it [VAR TRNAME(0)]!\c
+2: And you've got the [COLOR(1)]Jet Badge[COLOR(0)] too!\c\nSkyla was kinda a pushover, wasn't she?\c\nI need stronger opponents if I want any\nchance of ever beating Iris, and Gramps\r\nsaid this mountain is the place to\r\nfind 'em.\c\nSo whadduya say, [VAR TRNAME(0)]?\nLets pair up and get some real\r\ntraining in! It'll be more fun\r\nexploring together!\c
+3: Oh! Don't worry!\c\nI'll take care of healing\nour Pokémon, OK?\c\nReady? Let's go!\c
+4: Oh! [VAR TRNAME(0)]!\c\nHere! This is the place!\nLet's look around a little!\c
+5: Oh! [VAR TRNAME(0)]!\c\nHere! This is the place!\nLet's look around a little!\c
+6: Visiting the Pokémon World Tournament\ngot me real amped up- All those\r\nstrong trainers, clashing against each\nother to see who ends up on top.\c\nMust be incredible training.
+7: How do you choose your Pokémon's moves?\c\nI try to cover a lot of different\nbases, but I always feel like I'm\r\nmissing something... 
+8: I can't believe how far we've come since\nmeeting at the ranch.\c\n6 badges in...\nDoes it feel real yet? 
+9: I wonder what I'm gonna do once I become\nchampion...\c\nDo I get to make decrees or something?\nI never was clear on the specifics. 
+10: The wild Pokémon here are incredible!\nNo wonder so many trainers come here.                                
+13: Woah, need to take a breather?\nI can wait here for now. 
+14: Aight, don't leave me waiting too long.
+15: Aight, don't leave me waiting too long.
+16: Sweet, I wanna get some more battling in! 
+47: Woah, some trainers ahead!\nDo you wanna take 'em on together?
+48: Alright, hotshot!
+49: Hey you look pretty strong.\nWanna battle?\r\nI'm training for an upcoming tournament! 
+50: I'm going to demonstrate the hot moves\nI honed close to a volcano!\c 
+51: Dang.\c\nWell, I'll be here for a little while\nlonger, if you change your mind. 
+52: Your strength sure reminds me of\nsomeone...\r\nYou must have battled with many different\npeople and learned good things from\f\nthem every time, huh?\c\nHere, take this. 
+53: Phew, I'm all burned out. 
+54: Phew, I'm all burned out. 
+55: Benga: Phew, those were some good\nbattles. I feel strong enough to\r\ntopple a mountain! 
+56: Benga's Xtransceiver is ringing.
+57: Benga: Huh?
+58: Benga picked up\nthe Xtransceiver.
+59: Benga: ...Hey Gramps!
+60: Benga: ..uh-huh...
+61: Benga: ...really?
+62: Benga: Alright, see you there!
+63: Benga: That was my gramps!\nHe justjust touched down in Undella Town!\c\nSays he's got some super special training\nplanned for me!  I'm gonna be\r\nstronger than ever!\c\nAlright, smell ya round [VAR TRNAME(0)]: thanks\nfor the practice!
+
+
+
+
+
+----- TEXT FILE 641----- 
+49: Alder: I shouldn't be surprised you've\nmade it this far as well.\c 
+50: Benga: Yeah gramps,\n[VAR TRNAME(0)] is great.\c\nBut I've been getting really strong\ntoo!\r\nI mean, my Pokémon and I have! \c 
+51: Alder: I can see that, Benga.\nYou've come quite a long way since you\r\nleft Floccesy yourself.\c\nYou seem... motivated.\c 
+52: Benga: Of course,\nI've gotta be if I wanna be the champion\r\none day. Just like you used to be! 
+53: Alder: ...of course.\c 
+54: Benga: Battle... both of us?\c 
+55: Alder: Indeed!\nLearning to understand other trainer's\nPokémon can be as valuable as learning\r\nto understand your own!\c 
+56: Benga: Hm...\nWhat do you say, [VAR TRNAME(0)]?\r\nAre you ready? 
+57: Benga: Alright, lets do it!\c 
+58: Benga: Ready when you are!\c 
+59: Alder: Let's show them our battling\nspirit, Victini!\c 
+60: Alder: Alright, take some time and\nfind us when you're ready!\c 
+61: Benga: Hey, you ready to battle\ngramps with me? 
+62: Benga: We... lost?\c 
+63: Benga: We... won?\c 
+64: Alder: Excellent showing, you two.\c\nI could see the passion in both you and\nyour Pokémon's hearts!\r\nI can see they had a lot of fun too!\c 
+65: Benga: I lost...\nagain...\c 
+66: Benga: We beat...\nmy grandpa...?\c 
+67: Alder: Grandson,\nthat was an incredible battle.\c\nOur Pokémon are happy.\nWe all won here.\c 
+68: Benga: No gramps!\nWinning isn't just feeling good and\r\nachieving nothing, like you have!\c 
+69: Alder: There's more to battling than\nwinning and losing, Benga.\c\nIf victory is all you're looking for,\nI'm not sure my training will do you\r\nany good.\c 
+70: Benga: I need to get stronger.\c\nIf you're not going to train me,\nI'll go find another way!\c 
+71: Alder: I apologize you had to see that.\c\nIt's been difficult since his parents...\c 
+72: Alder: Well, anyways.\nNo point in pushing a sore wound.\c\nWould you look after him for me?\nMaybe you can get through to him in\r\na way I can't.\c 
+73: Alder: Best of luck on your\njourney, [VAR TRNAME(0)]!\c 
+74: BACK OFF GRIMSLEY!\nBACK OFF GRIMSLEY! 
+75: Stand down, citizen!\nDon't make us use the Stun Spore! 
+76: Tinii! 
+77: The Level Cap is now [COLOR(2)]63[COLOR(0)]! 
+78: ..that's why the bond between you\nand your Pokémon is so important Benga.\c\nIt's your greatest source of strength!\c 
+79: I'm tired about talking about\nphilosophy gramps... when are we gonna\r\nget too the training? 
+80: Alder: Ah, [VAR TRNAME(0)]!\c 
+81: AGH!\c 
+82: The bond between you and your Pokémon\nwas clear as day even when we first met\r\nby the cliff.\c 
+83: Well, since I have you both here, why\ndon't we three do a little training\r\nbattle.\c\nVictini and I could use the exercise,\nand you could use the training!\c 
+84: Alder: Are you prepared to battle? 
+
+
+
+
+
+Go over this again and see if we can find the edits we made, because I'm pretty sure we made some. 
+
+----- TEXT FILE 635-----
+61: [VAR TRNAME(1)]: So [VAR TRNAME(0)], what do\nyou think?\c\nThat Pokémon from the old lady's story\nsounded a lot like that "Kyurem" we saw\r\non Team Plasma's ship, right?\c
+62: ???: [VAR TRNAME(0)]!!\c
+63: Benga: You made it here!\nFinally!\c\nYou were taking so long I was worried\nmy rival got stumped by Marlon!\c
+64: [VAR TRNAME(1)]: We were busy tracking down our Poke--\c
+129: -wait, I know you!\c\nYou're Alder's kid, right?\c
+65: Benga: GRAND-kid, yeah.\c\nAnd soon, his successor as champion\nof Unova!\c\nI've been getting way stronger:\nstronger than I ever believed possible!\c\nWith these new items I got, my Pokémon\nare unstoppable!\c\nEven beating Drayden was a total breeze!\c
+66: Benga: That's why I'm here waitin', so\nI can show [VAR TRNAME(0)] how much I've grown!\c
+67: [VAR TRNAME(1)]: A battle? I'll referee!\c\nIf you're as strong as [VAR TRNAME(0)],\nthen I've gotta see this.\c
+68: Benga: Whadduya say, ready to battle?\nI won't take no for an answer!
+69: Benga: Alright, let's do this!\c\nNo holding back, I'm coming at you with\neverything I've got!\c
+70: Benga: Alright, fine, prepare if you\ngotta!\c\nBut I'm not leaving until we have a\nproper showdown, rival to rival!
+71: Benga: Jeez, you took your time.\c\nReady to rumble?\nI won't take no for an answer!
+72: Benga: Awww YEAH!\nI did it!\c\nI finally beat [VAR TRNAME(1)]!\c
+73: Benga: Aww YEAH!\nI was able to beat ya this time!\c\nWas worried this would be a repeat of\nour battle on Route 4!\c
+74: Benga: What... what happened?\nHow did I lose?\c\nWere my Pokémon too weak?\nDo I need to get more IV enhancers?\nMaybe I can buy some more mints...\nDo my Pokémon need stronger items..?\c
+75: [VAR TRNAME(1)]: Wait a minute...\nThose items... are they?\c
+76: [VAR TRNAME(1)]: They are!\c
+77: [VAR TRNAME(1)]: That "item" your Garchomp\nused!\c\nWhere did you get them!\nAnswer me!\c
+78: Benga: Woah, back up buddy!\nGet your own!\c\nI got them from this cool scientist\ndude out by Humilau City.\cThey're a new line of battle items he\nsaid would "unlock Pokémon's potential"!\c
+79: And they've worked!\nMy Pokémon have never been stronger!\c\nImagine if gramps could see me now...\c
+80: [VAR TRNAME(1)]: You idiot!\c
+126: That garbage is Team Plasma's tech!\c\nSome creep offered me the same thing\nat the World Tournament!\c
+127: It isn't helping your Pokémon, it's\nhurting them all so they can battle a\r\nlittle better for a short while!\c
+81: Benga: Team Plasma..?\c\nWhy would they hand these items\nout for free..?\c
+82: [VAR TRNAME(1)]: Because this trash is\nexperimental and dangerous!\c
+83: [VAR TRNAME(1)]: Look at your partner!\nCan't you tell they're in pain?\c
+84: Benga: Garchomp..?\c
+85: ...Gyaaaaooo.\c
+86: Garchomp keels over from\nexhaustion.\c
+87: Benga: Garchomp!?\c
+88: Benga: What's happening?!\c
+89: [VAR TRNAME(1)]: Your Garchomp must love you\na lot.\c\nIt put on a brave face so you wouldn't\nworry...\c
+90: Benga: Garchomp...\nThis whole time... you've been in pain...\r\nWhy didn't he tell me..?\nWhy didn't I notice...?\c\nWas I so focused on winning I couldn't\nsee anything else?\c
+91: Garchomp flinches at Benga's touch.\c
+92: Benga: ...\c
+93: Benga: Here, take these.\nI don't want them anywhere near me.\c
+94: Benga: Come on Garchomp.\c\nThe Pokémon Center is just a few\nsteps that way.\c\nWe'll fix this, I promise.\c
+95: ...Gyaaaaooo..\c
+96: [VAR TRNAME(1)]: Man, his poor Pokémon.\c\nAt least he was just an idiot,\nand not just cruel.\c
+97: [VAR TRNAME(1)]: But I wonder how many other\ntrainers Team Plasma's been handing\r\nout tech to?\c
+98: [VAR TRNAME(1)]: I can only imagine how it\nmesses up a Pokémon over time.\c\nLiepard still won't get out of her\nPokéBall...\c
+99: [VAR TRNAME(1)]: We gotta put a stop to this,\n[VAR TRNAME(0)].\cFor all of Unova's Pokémon...\c
+100: Professor Juniper: Truly astounding what\nthe two of you accomplished.\c
+101: Professor Juniper: Never apologize for\nyour best made efforts, Bianca.\c
+102: Bianca: Hee hee!\c\nI used Fly, so it looks like\nI beat you here.\c\nI was just telling the Professor how\nyou fought and defeated Virizion\r\nin Pinwheel Forest!\c
+103: Professor Juniper: Truly astounding!\nYou have grown into an incredible trainer!\c
+104: Benga: Awww YEAH!\nI was able to beat you again!\c\nJust like our battle at the ranch!\c
+105: Benga: What... what happened?\nHow did I lose again?\r\nWhy can't I ever beat you?\c\nWere my Pokémon too weak?\nDo I need to get more IV enhancers?\nMaybe I can buy some more mints...\nDo my Pokémon need stronger items..?\c
+106: Benga: What... what happened?\nHow did I lose again?\c\nWere my Pokémon too weak?\nDo I need to get more IV enhancers?\nMaybe I can buy some more mints...\nDo my Pokémon need stronger items..?\c
+107: Benga: What... what happened?\nHow did I lose?\r\nI was able to beat you last time!\c\nWere my Pokémon too weak?\nDo I need to get more IV enhancers?\nMaybe I can buy some more mints...\nDo my Pokémon need stronger items..?\c
+108: Benga: What... what happened?\nHow did I lose?\r\nI've never lost to you before!\c\nWere my Pokémon too weak?\nDo I need to get more IV enhancers?\nMaybe I can buy some more mints...\nDo my Pokémon need stronger items..?\c
+109: Benga: Awww YEAH!\nI was able to beat you again!\c\nWhy can't you seem to beat me?\c
+110: Once you battle Benga, no matter\n[COLOR(2)]whether you win or lose[COLOR(0)] the following\r\ncontent will be locked off!
+111: [COLOR(2)]Access to Seaside Cave, Undella Bay\nand Abyssal Ruins![COLOR(0)]\c\nAll of their encounters and optional\nrewards will be locked off.\c
+112: The [COLOR(2)]Maylene Mini-Boss Fight[COLOR(0)]\nin [COLOR(1)]Seaside Cave[COLOR(0)].\c\nDefeating her rewards a Chople Berries,\nFighting Gem, and the Cross Chop TM.\c
+113: The [COLOR(2)]Sunken Statue Mini-Boss Fight[COLOR(0)]\nin [COLOR(1)]Abyssal Ruin[COLOR(0)].\c\nDefeating it rewards a Life Orb!\c
+114: The [COLOR(2)]Candice Mini-Boss Fight[COLOR(0)]\nin [COLOR(1)]Route 13[COLOR(0)].\c\nDefeating her rewards a Yache Berry,\nan Ice Gem, and the Avalanche TM.\c
+115: Do you accept Benga's challenge, knowing\nit will lock you out of content?
+116: Bianca, help out, OK!\c
+117: Benga: WOOOO!
+118: [VAR TRNAME(1)]: Hey Benga!\c
+119: Benga: No...\nThere's no way!\c
+120: Are you okay?\c
+121: Where is it hurting?\c
+122: Benga: Here Garchomp, let\nme take this thing off you...\c
+123: Do you think they're collecting data,\nusing trainers as test subjects?\c
+124: The Level Cap is now [COLOR(2)]70[COLOR(0)]!
+125: For all of Unova's Pokémon...\c

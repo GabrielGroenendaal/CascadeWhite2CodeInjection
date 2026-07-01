@@ -10,6 +10,7 @@ STRUCT_DECLARE(GameData)
 #define TESTING_G4_STYLE_SWITCH_OUT_AI true
 #define USING_VANILLA_AI false
 #define DEBUGGING_G4_SWITCH_AI false
+#define DAMAGE_CACHE_ENABLED false
 // Uses esdb_newBattle.yml
 
 #pragma region Definitions
@@ -1219,7 +1220,7 @@ extern "C"
             }
             else
             {
-                return 8192;
+                return 12288;
             }
         }
         // Hyper Beam
@@ -3732,6 +3733,11 @@ extern "C"
         MoveDamageRec v21;          // [sp+40h] [bp-20h] BYREF
         ServerFlow *flow;
 
+        battleStyle = (BattleStyle)BtlSetup_GetBattleStyle(a1->mainModule);
+        if (battleStyle == BTL_STYLE_DOUBLE){
+            return 0;
+        }
+
 #if DEBUGGING_G4_SWITCH_AI
         k::Printf("\nFinal Switch Check 1, lets check if we can find the value of %d\n", (int)a4);
 #endif
@@ -4215,6 +4221,10 @@ extern "C"
 
 #pragma region AIScriptFunctions
 
+    MoveID NEW_PROTECT_COUNTER_MOVES[8] = {
+        MOVE203_ENDURE, MOVE182_PROTECT, MOVE197_DETECT, MOVE469_WIDE_GUARD, MOVE376_SPIKY_SHIELD,
+        MOVE462_SILK_TRAP, MOVE262_OBSTRUCT, MOVE559_BANEFUL_BUNKER};
+    
     int THUMB_BRANCH_AI075_GetProtectCount(ScriptVM *a1, TrainerAIEnv *a2)
     {
         unsigned int v3;                   // r0
@@ -4227,7 +4237,7 @@ extern "C"
         BattleMonFromBattlePos = GetBattleMonFromBattlePos(a2, BattlePosFromCommandArg);
         previousMove = BattleMon_GetPreviousMoveID(BattleMonFromBattlePos);
 
-        if (previousMove == MOVE182_PROTECT || previousMove == MOVE197_DETECT || previousMove == MOVE203_ENDURE || previousMove == MOVE469_WIDE_GUARD || previousMove == MOVE462_SILK_TRAP || previousMove == MOVE376_SPIKY_SHIELD || previousMove == MOVE559_BANEFUL_BUNKER || previousMove == MOVE262_OBSTRUCT)
+        if (SEARCH_ARRAY((const u16*)NEW_PROTECT_COUNTER_MOVES, previousMove))//previousMove == MOVE182_PROTECT || previousMove == MOVE197_DETECT || previousMove == MOVE203_ENDURE || previousMove == MOVE469_WIDE_GUARD || previousMove == MOVE462_SILK_TRAP || previousMove == MOVE376_SPIKY_SHIELD || previousMove == MOVE559_BANEFUL_BUNKER || previousMove == MOVE262_OBSTRUCT)
         {
             ConsecutiveMoveCount = BattleMon_GetConsecutiveMoveCount(BattleMonFromBattlePos);
         }

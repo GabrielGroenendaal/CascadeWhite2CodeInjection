@@ -9,12 +9,39 @@
 */
 
 
+    Scripting: 
+        - Implement the Celestial Tower Event 
+        - Implement an Event to Marine Tube: 
+            - Janitor tells you the Tube is closed for cleaning. 
+            - Why isn't he cleanig it now? He's taking a break, leave him alone. 
+            - He then goes back to watching funny dog videos and turns away from the player letting them pass in peace. 
+        - Implement a PC in Marine Tube (see if it works)
+            - Doesn't matter if its' gamey, it's just good QoL. Use a porygon I guess. 
+    
+    Dialogue: 
+        - Workshop the Janine and Blaine Dialogues 
+        - Go over the Hugh Dialogues for Chargestone Cave 
+    
+    Sprites: 
+        Overworld: 
+            - Make a new sprite for pickets holding signs. Ideally we should have two of these.    
+                - can replace caterpie and metapod
+            - Make a new sprite for underwater swimmers M and F. 
+                - Can replace weedle and kakuna 
+            - Make a new sprite for a keeeling over garchomp. 
+                - Can replace rattata 
+            - Make a new sprite for a shivering Plasma Grunt M & F 
+                - Can replace Pidgey & Pidgeotto 
+            - Make a new sprite for a shivering Hugh, Benga, and Rood 
+                - Can replace Spearow, Nidoran-F & Nidoran-M 
+        Trainers: 
+            - Make a Trainer Sprite for an "Agent" 
+            - Make a Trainer Sprite for "Darach" 
+
 
 To Do List: 
     - See if we can get new Forms to work for Unown. 
     - Come up with new teams for the Plasma Grunts on the Frigate. 
-    - Implement the Lostlorn Forest, Relic Castle, and Abyssal Ruin script changes. 
-
 
 
 [ NEW UNOWN AND COMBEE FORMS ]

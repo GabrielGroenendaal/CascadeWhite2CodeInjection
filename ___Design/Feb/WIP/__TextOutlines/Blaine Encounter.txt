@@ -1,0 +1,143 @@
+
+
+
+Changes: 
+    Undella Town: 
+        - Add a Scripted Encounter when you approach the protestors by the construction equipment 
+        - Reduce the number of unique protestor models so we can add a lot more actual entities here to make this feel crowded. 
+        - Update the dialogue for the police officers and the protestors 
+    Abundant Shrine: 
+        - Update the initial cutscene to be Blaine interacting with two protestors who are asking him to sign their protest signs or something. 
+        - Add a couple more protestors / people around the shrine talking about it. 
+        - Assign Blaine's spawn flag to 3053
+
+        
+
+
+Blaine is an encounter I'm not 100% sure on what I want to do with yet, but here is the establishing context I have so far. 
+
+Undella Town in my hack is characterized slightly differently. When the Player arrives, there is an ongoing protest over the 
+resorts expansion into the Abundant Shrine, a culturally and spiritually significant place for the native people of Unova. 
+Protestors are clashing with Police at the construction site, and if left unattended (the player does not defeat blaine before beating Marlon) 
+this protest will escalate into a riot that blocks off access to the shrine altogether. 
+
+Separately, Undella Town is now the location of a new battle with Benga vs. Alder and his partner Victini. 
+
+So Blaine needs to serve as the gatekeeper of Abundant Shrine somehow. Defeating him needs to provide you access to the shrine. 
+Right now, the minimum-viable-product of a justification I have for battle is that Blaine thinks you've been sent to break the protest by the resort. 
+This kind of flimsy justification for battle is very common in Pokemon, but usually from random trainers and not anyone significant. 
+
+PITCH: 
+If you approach the protestors, a short scene plays of arguments between the workers and the protestors. 
+When they notice the player, they remark on seeing your crazy battle with Alder. 
+They ask if you are here to support the protests or not (Yes/No) 
+If the player says yes, they're enthusiastic and tell you to go seek out the "old man" at the shrine. He'll get you set up with a sign.
+If the player says no, they urge you to go listen to the "old man" and promise you'll change your mind. There's nothing more important than nature, man. 
+Then the player goes into the shrine and encounter Blaine interacting with some locals that are treating him as like... a nelson mandela huminatarian / activist. 
+
+HERE IS WHERE I NEED HELP DECIDING ON A DIRECTION: 
+I'm not sure if I want to have an entirely sincere, high energy activist grandpa ranting and raving and stirring the people up. 
+Or an "accidental activist" who started a whole protest by mildly pointing out some very obvious facts and has inadvertently been made the face of the resistance. 
+Either way, this needs to lead to a battle somehow, maybe to help clear his head, or to get the protestors fired up.
+
+    OPTION A: 
+    He's a deeply sincere and highly energized old man activist. He wants to hhave a battle with to get the juices flowing. 
+
+    OPTION B: 
+    The entire protest was accidental and the result of Blaine pointing out the objective negative consequences of the resort's actions.
+    which were taken by the locals to be radical statements. 
+    He's become the face of the protest and, while he likes it, he can't really stay he's on vacation. 
+    He didn't come on vacation expecting to start a riot. He's not even going to be in town much longer with the tournament coming up. 
+
+    Option C: 
+    Blaine is a charlatan who doesn't actually care about the cause at all, and simply views protesting as a form of recreation in itself. 
+    Making signs, chanting, throwing paint on people, it's all good fun. Plus sometimes things get set on fire! 
+
+Then finally, whichever direction we go, defeating Blaine needs to provide access to Abundant Shrine. This can be accomplished by simply positioning Blaine at the entrance. 
+Defeating Blaine should also resolve the protest somehow, maybe he passes the torch onto another activist, or maybe he goes to speak with Grimmsley, or something. 
+I think the mold mild mannered dismount could be him telling the locals their protest is great but he can't be the one to lead this movement, he's got his own home to worry about, before passing the torch to someone else. 
+
+
+
+[ IN UNDELLA TOWN ]
+
+(The first scene that takes place for this little event will be an interaction with some protestors)
+(The protestors are having a heat argument with the workers and cops)
+(There will be about 3-4 lines of back and forth before a stream of 4 or so "mutterinng" and "rumblings" from the crowds)
+1: Cop Message A
+
+2: Protestor Message A
+
+3: Cop Message B 
+
+4: Protestor Message B
+
+5: Mutterings A ("Our cultre isn't\nyour capital!)
+
+6: Mutterings B "Get off the road, slacktivists." 
+
+7: Mutterings C "This is my home. I'll fight for it!"
+
+8: Mutterings D 
+
+(The conflict is interrupted as a protestor notices you approach and tries to pull you into their argument) 
+
+9: Hey Trainer, what do you think is more important? Nature or profit (workshop this heavily)
+
+(One of the workers, maybe a foreman speaks up.)
+10: You're not being fair!\nHey trainer, what do you think is more important? Plants or people? 
+
+(Another argument erupts between the two leaders of the sides)
+11: Protestor Message A
+
+12: Worker Message A
+
+(The two settle)
+13: Some kind of moore neutral yes/no question for the playerr to choose between the two sides of the conflict. 
+
+(Regardless of what they respond, there's another big argument that erupts here.)
+14: 
+
+(Depending on what the pllayer respoonded, either the leader of the protestors or the foreman will pull the player aside and ask them to speak the man in charge of the protest, either to help him out or to ask him to stop)
+15: Player sided with protestors; head protestor speaks to them 
+
+16: Player sided with workers, head worker speaks to them. 
+
+(and then we should have a bunch of lines of dialogue for the workers and protestors to spout off)
+17:
+18:
+19:
+20:
+21:
+22:
+23:
+24:
+
+
+[ IN ABUNDANT SHRINE ] 
+(As the player enters the Shrine, they see Blaine speaking to two protestors who are treating his, fairly milquetoast, words as gospel)
+
+1: Blaine's interaction with these young protestors. They run off excited. 
+
+(Depending on whether you sided with the protestors or the workers before, Blaine's attitude to you is a little different)
+(Either he says something like I heard the resort sent you here to talk to me)
+(Or, oh, you're another protestor?)
+(Before maybe going like "noo.... i can see you just got roped into this, same as me.")
+"You're a trainer aren't you?\nYou've got that spark about you." 
+"I was hoping for a little rest and relaxation when I booked this resort stay. Maybe visit the local landmarks, learn more about the legendaries they worship here." 
+"But you mention one or two facts about pollution and a protest starts. I wasn't trying to start a fuss, I just pointed out the ecological value this shrine's rich soil has for the local pokemon."
+"I feel bad. I want them to succeed, but I can't stay. I've got my own home to protest for... we're still recovering from an eruption." 
+"i need to clear my head. Battle me, that always does the trick." 
+(dialogue for if the player says no)
+(dialogue for if the player says yes)
+(after the battle)
+"Woof, you're a real firecracker. I've got nothing left but cinders."
+'You seem like a lad/lass with their head on straight. What do you think I should do?"
+(Not sure how to revolve this )
+
+
+
+(and then we should have a bunch of lines of dialogue for locals around the ABundant Shrine to talk about the shrine)
+
+
+

@@ -1,0 +1,688 @@
+import messages.script.Msg0554.MSGID;
+
+import Base;
+import event.Battle;
+import event.StaticProp;
+import event.actors.Actor;
+import event.actors.Player;
+import event.dialogs.Message;
+import event.dialogs.ListMenu;
+
+import event.dialogs.YesNoWin;
+import event.funfest.Funfest;
+import pokescript.vm.Math;
+import pokescript.vm.StackCtrl;
+import pokescript.vm.VM;
+import system.EventFlags;
+import system.EventWorks;
+import system.Input;
+import system.Runtime;
+import system.Sound;
+import system.text.WordSet;
+import player.TrainerCard;
+import pokemon.PokeParty;
+import pokemon.Pokedex;
+import system.Fade;
+import system.Field;
+import event.EVCamera;
+import system.RTC;
+
+public class MainEvents {
+	public static void main_1() { // @ 0x24
+		if (EventFlags.Get(919) || EventWorks.Get(16663) != 2) {
+			return;
+		}
+		EventFlags.Set(919);
+		EventWorks.Set(16663, 1);
+	}
+
+	public static void main_2() { // @ 0x53
+		int v16;
+		int v35;
+
+		Actor.PauseAll();
+		WordSet.LoadPlayerName(0);
+		Message.Info(3, 2);
+		Sound.SEPlay(1351);
+		v16 = YesNoWin.Show();
+		if (v16 != 0) {
+			Message.Info(7, 2);
+			Input.LastKeyWait();
+			Message.CloseInfo();
+			goto LABEL_00f9;
+		}
+		if (EventFlags.Get(408)) {
+			goto LABEL_0095;
+		}
+		Funfest.Broadcast(24, 0);
+		EventFlags.Set(408);
+
+		LABEL_0095:
+		Base.CMD_240(64, 30);
+		Sound.SEPlay(1968);
+		Message.Info(4, 2);
+		v35 = 0;
+		v35 = StaticProp.CreateHandle(8, 16, 7);
+		StaticProp.HndPlayAudioVisualAnm(v35, 0);
+		StaticProp.HndWaitAnm(v35);
+		StaticProp.ReleaseHandle(v35);
+		Sound.SEWait();
+		Base.CMD_241(60);
+		Message.Info(5, 2);
+		Input.LastKeyWait();
+		Message.CloseInfo();
+		if (EventWorks.Get(16622) != 5) {
+			goto LABEL_00f9;
+		}
+		EventWorks.Set(16622, 6);
+
+		LABEL_00ea:
+
+		LABEL_00f9:
+		v35 = 0;
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_3() { // @ 0x105
+		int v16;
+		int v32;
+		int v33;
+		int v34;
+
+		Actor.PauseAll();
+		Message.System(0, 2);
+		v16 = YesNoWin.Show();
+		if (v16 != 0) {
+			Message.CloseAll();
+			goto LABEL_01b2;
+		}
+		Message.CloseAll();
+		EventFlags.Clear(919);
+		EventWorks.Set(16663, 2);
+		Runtime.Sleep(30);
+		Sound.PVPlay(481, 0);
+		Message.Info(1, 2);
+		Sound.PVWait();
+		Message.WaitAdvance();
+		Message.CloseInfo();
+		Player.GetGPos(v33, v34);
+		Actor.Show(0);
+		Actor.SetGPos(0, 24, 9, 26, 2);
+		v34 += 2;
+		Actor.MoveLinear(0, v33, 5, v34, 48);
+		Actor.SetGPos(0, v33, 5, v34, 2);
+		TurnNorth8F(0);
+		Runtime.Sleep(8);
+		v32 = Player.GetDirection();
+		if (v32 == 1) {
+			goto LABEL_01a4;
+		}
+		TurnSouth8F(255);
+
+		LABEL_01a4:
+		Actor.WaitActionFinish();
+		Runtime.Sleep(16);
+
+		LABEL_01b2:
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_4() { // @ 0x1b8
+		int v16;
+
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Sound.PVPlay(481, 0);
+		Message.Spiked(1, 2);
+		Sound.PVWait();
+		Message.WaitAdvance();
+		Message.CloseInfo();
+		Battle.CallWildBattle(481, 65, 1);
+		v16 = Battle.IsWildVictory();
+		if (v16 != 1) {
+			Battle.CallWildLose();
+			goto LABEL_0208;
+		}
+		EventFlags.Set(919);
+		EventWorks.Set(16663, 3);
+		Actor.Hide(0);
+		Battle.EndWildBattle();
+
+		LABEL_0208:
+		v16 = Battle.GetWildBattleResult();
+		if (v16 == 0) {
+			EventFlags.Set(397);
+			goto LABEL_0259;
+		}
+
+		LABEL_0229:
+		if (v16 == 1) {
+			goto LABEL_0249;
+		}
+		if (v16 == 2) {
+			goto LABEL_0249;
+		}
+		goto LABEL_0259;
+
+		LABEL_0249:
+		Message.System(2, 2);
+		Input.LastKeyWait();
+		Message.CloseSystem();
+
+		LABEL_0259:
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	// Speaking with Alakazam 
+	public static void main_5(){
+		Sound.SEPlay(1351);
+		Sound.PVPlay(101, 0);
+		Message.System(65, 0);
+		Sound.PVWait();
+		Message.WaitAdvance();
+		Message.CloseAll();
+		Runtime.FinishSubEvents();
+	}
+
+	// Initial Sabrina Trigger 
+	// 16523 = 0
+	public static void main_6(){
+
+		Message.ActorEx(1024, 8, 5, 2, 0);
+		Message.CloseAll();
+		ShowExclamationMark(255);
+		TurnWest8F(255);
+		Actor.WaitActionFinish();
+
+		EVCamera.Init();
+        EVCamera.Unbind();
+        EVCamera.MoveTo(2.3652344f, 0.0f, 237.0f, 256.0f, 1792.0f, 224.0f, 64); // CHANGE THIS LATER
+		Runtime.Sleep(16);
+		SabrinaPaces(5);
+        EVCamera.Wait();
+		Actor.WaitActionFinish();
+
+		Message.ActorEx(1024, 37, 5, 2, 0);
+		Message.CloseAll();
+
+		EVCamera.MoveToDefault(64);
+		SabrinaPacesBack(5);
+		EVCamera.Wait();
+		Actor.WaitActionFinish();
+        EVCamera.Rebind();
+        EVCamera.End();
+		EventWorks.Set(16523, 1);
+		Runtime.FinishSubEvents();
+	}
+
+	// Second Sabrina Trigger
+	// 16523 = 1
+	public static void main_7(){
+
+		int yesNo; 
+		int listMenu; 
+		int messageA;
+		int messageB; 
+
+		EVCamera.Init();
+        EVCamera.Unbind();
+        EVCamera.MoveTo(2.3652344f, 0.0f, 237.0f, 256.0f, 1792.0f, 240.0f, 64); // CHANGE THIS LATER
+		Runtime.Sleep(16);
+		Message.ActorEx(1024, 9, 5, 2, 0);
+		EVCamera.Wait();
+		Message.CloseAll();
+		Message.ActorEx(1024, 38, 5, 2, 0);
+		Message.CloseAll();
+
+		EVCamera.MoveToDefault(64);
+		TurnSouth8F(5);
+		Runtime.Sleep(16);
+		WalkSouthTwoTiles(5);
+		EVCamera.Wait();
+		Actor.WaitActionFinish();
+        EVCamera.Rebind();
+        EVCamera.End();
+		ShowExclamationMark(5);
+		Actor.WaitActionFinish();
+		Runtime.Sleep(8);
+		WordSet.LoadPlayerName(0);
+		Message.ActorEx(1024, 10, 5, 2, 0);
+		Message.CloseAll();
+
+		Message.ActorEx(1024, 11, 5, 2, 0);
+		Message.CloseAll();
+		WalkSouthOneTile(5);
+		Actor.WaitActionFinish();
+		Message.ActorEx(1024, 12, 5, 2, 0);
+		yesNo = YesNoWin.Show();
+		if (yesNo == 0){
+			Message.CloseAll();
+			Message.ActorEx(1024, 14, 5, 2, 0);
+			ListMenu.InitRightAnchor(31, 5, 0, 1, listMenu);
+			ListMenu.AddItem(15, 65535, 20); // Heavy
+			ListMenu.AddItem(16, 65535, 21); // Joyous 
+			ListMenu.AddItem(17, 65535, 22); // Famliar
+			ListMenu.AddItem(18, 65535, 23); // Lonely
+			ListMenu.AddItem(19, 65535, 24); // Cold
+			ListMenu.ShowDialog();
+			if (listMenu >= 20){
+				if (listMenu <= 24 ){
+					Message.CloseAll();
+					messageA = listMenu; 
+					messageB = listMenu + 20; 
+				}
+			}
+		}
+		else {
+			Message.CloseAll();
+			messageA = 13;
+			messageB = 39; 
+		}
+
+		Message.ActorEx(1024, messageA, 5, 2, 0);
+		Message.CloseAll();
+		TurnWest8F(5);
+		Actor.WaitActionFinish();
+		Runtime.Sleep(16);
+		Message.ActorEx(1024, messageB, 5, 2, 0);
+		Message.CloseAll();
+
+		TurnSouth8F(5);
+		Actor.WaitActionFinish();
+		Message.ActorEx(1024, 25, 5, 2, 0);
+		Message.CloseAll();
+
+		EVCamera.Init();
+        EVCamera.Unbind();
+        EVCamera.MoveTo(2.3652344f, 0.0f, 237.0f, 256.0f, 1792.0f, 208.0f, 64); // CHANGE THIS LATER
+		Runtime.Sleep(8);
+		SabrinaWalksUp(5);
+		Message.ActorEx(1024, 26, 5, 2, 0);
+		Actor.WaitActionFinish();
+		EVCamera.Wait();
+		Message.CloseAll();
+
+		EVCamera.MoveTo(2.3652344f, 0.0f, 237.0f, 288.0f, 1792.0f, 208.0f, 32); // CHANGE THIS LATER
+		SabrinaPacesRight(5);
+		Message.ActorEx(1024, 45, 5, 2, 0);
+		Actor.WaitActionFinish();
+		EVCamera.Wait();
+		Message.CloseAll();
+
+		EVCamera.MoveTo(1.8752344f, 0.0f, 237.0f, 288.0f, 1792.0f, 208.0f, 32); // CHANGE THIS LATER
+		TurnNorth8F(5);
+		Message.ActorEx(1024, 46, 5, 2, 0);
+		Actor.WaitActionFinish();
+		EVCamera.Wait();
+		Message.CloseAll();
+
+		EVCamera.MoveTo(2.3652344f, 0.0f, 237.0f, 256.0f, 1792.0f, 240.0f, 32);
+		SabrinaReturns(5);
+		Runtime.Sleep(16);
+		Message.ActorEx(1024, 27, 5, 2, 0);
+		Actor.WaitActionFinish();
+		EVCamera.Wait();
+		Message.CloseAll();
+       
+
+		EventWorks.Set(16523, 2);
+
+		Message.ActorEx(1024, 47, 5, 2, 0);
+		yesNo = YesNoWin.Show();
+		if (yesNo == 0){
+			sub_SabrinaBattle();
+		}
+		else {
+			Message.CloseAll();
+			TurnNorth8F(5);
+			Actor.WaitActionFinish();
+			Message.ActorEx(1024, 28, 5, 2, 0);
+			Message.CloseAll();
+			EVCamera.MoveToDefault(16);
+			WalkSouthTwoTile(255);
+			Actor.WaitActionFinish();
+			EVCamera.Wait();
+			EVCamera.Rebind();
+        	EVCamera.End();
+		}
+		Label_EndSabrinaTrigger2:
+		Runtime.FinishSubEvents();
+	}
+
+	// Third Sabrina Trigger
+	// 16523 = 2
+	public static void main_7(){
+		int yesNo;
+		EVCamera.Init();
+        EVCamera.Unbind();
+		EVCamera.MoveTo(2.3652344f, 0.0f, 237.0f, 256.0f, 1792.0f, 240.0f, 32);
+		Runtime.Sleep(16);
+		Message.ActorEx(1024, 36, 5, 2, 0);
+		EVCamera.Wait();
+		yesNo = YesNoWin.Show();
+		if (yesNo == 0){
+
+			sub_SabrinaBattle();
+		}
+		else {
+			Message.CloseAll();
+			TurnNorth8F(5);
+			Actor.WaitActionFinish();
+			Message.ActorEx(1024, 28, 5, 2, 0);
+			Message.CloseAll();
+			EVCamera.MoveToDefault(16);
+			WalkSouthTwoTile(255);
+			Actor.WaitActionFinish();
+			EVCamera.Wait();
+			EVCamera.Rebind();
+        	EVCamera.End();
+		}
+		Label_EndSabrinaTrigger3:
+		Runtime.FinishSubEvents();
+	}
+
+	static void sub_SabrinaBattle(){
+		Message.CloseAll();
+		Message.ActorEx(1024, 48, 5, 2, 0);
+		Message.CloseAll();
+		EVCamera.MoveTo(2.3652344f, 0.0f, 237.0f, 256.0f, 1792.0f, 240.0f, 64);
+		// Player and Sabrina move to opposite sides of the Arena 
+		//Actor.WalkRoute()
+		//Actor.WalkRoute()
+		EVCamera.Wait();
+		
+		Message.ActorEx(1024, 55, 5, 2, 0);
+		Message.CloseAll();
+		
+		SabrinaApproachesThePlayerToReposition(5);
+		Actor.WaitActionFinish();
+
+		Message.ActorEx(1024, 52, 5, 2, 0);
+		Message.CloseAll();
+		PlayerAdjustOne(255);
+		Actor.WaitActionFinish();
+
+		Message.ActorEx(1024, 53, 5, 2, 0);
+		Message.CloseAll();
+		PlayerAdjustTwo(255);
+		Actor.WaitActionFinish();
+		Sound.BGMFadeOut();
+		Message.ActorEx(1024, 54, 5, 2, 0);
+		Message.CloseAll();
+
+		// SabrinaAssumesPosition(5)
+		UnownWarpUp(3);
+		Actor.WaitActionFinish();
+		Actor.SetGPos(3, 4, 112, 5, 2); // CHANGE THIS LATER 
+		UnownWarpDown(3);
+		Actor.WaitActionFinish();
+		
+		Sound.PVPlay(101, 0);
+		Sound.PVWait();
+
+		Message.ActorEx(1024, 28, 5, 2, 0);
+		Message.CloseAll();
+		
+		goto skipbattle; 
+		Battle.CallTrainerBattle(769, 0, 0);
+		isVictory = Battle.IsTrainerVictory();
+		if (isVictory == 0){
+			Battle.CallTrainerLose();
+			return;
+		}
+		EVCamera.Init();
+        EVCamera.Unbind();
+		EVCamera.MoveTo(2.3652344f, 0.0f, 237.0f, 256.0f, 1792.0f, 240.0f, 1);
+		EVCamera.Wait();
+		Battle.EndTrainerBattle();
+		skipbattle: 
+
+		Field.PlayMapBGM();
+		Runtime.Sleep(64);
+		Message.ActorEx(1024, 49, 5, 2, 0);
+		Message.CloseAll();
+		TurnNorth8F(5);
+		Actor.WaitActionFinish();
+		Message.ActorEx(1024, 50, 5, 2, 0);
+		Message.CloseAll();
+
+		EVCamera.MoveTo(1.8752344f, 0.0f, 237.0f, 288.0f, 1792.0f, 208.0f, 32); // CHANGE THIS LATER
+		SabrinaDramaticWalk(5);
+		Message.ActorEx(1024, 51, 5, 2, 0);
+		EVCamera.Wait();
+		Actor.WaitActionFinish();
+		Message.CloseAll();
+		TurnEast8F(5);
+		Actor.WaitActionFinish();
+		Message.ActorEx(1024, 29, 5, 2, 0);
+		Message.CloseAll();
+
+		EVCamera.MoveToDefault(64);
+		SabrinaReturnsUpToPlay(5);
+		Runtime.Sleep(32);
+		WordSet.LoadPlayerName(0);
+		Message.ActorEx(1024, 30, 5, 2, 0);
+		Message.CloseAll();
+		Actor.WaitActionFinish();
+		EVCamera.Wait();
+		EVCamera.Rebind();
+        EVCamera.End();
+		Message.ActorEx(1024, 31, 5, 2, 0);
+		Message.CloseAll();
+		Global2805(543, 1);
+		Global2805(530, 5);
+		Message.ActorEx(1024, 32, 5, 2, 0);
+		Message.CloseAll();
+
+		EVCamera.Init();
+        EVCamera.Unbind();
+        EVCamera.MoveTo(2.3652344f, 0.0f, 237.0f, 256.0f, 1792.0f, 240.0f, 32); // CHANGE THIS LATER
+		SabrinaRepositionsNextToAlakazam(5);
+		Actor.WaitActionFinish();
+		EVCamera.Wait();
+		Message.ActorEx(1024, 33, 5, 2, 0);
+		Message.CloseAll();
+		UnownWarpUp(5);
+		Runtime.Sleep(4);
+		UnownWarpUp(3);
+		Actor.WaitActionFinish();
+		Actor.Hide(5);
+		Actor.Hide(3);
+		EventWorks.Set(16523, 5);
+		EventFlags.Set(1520 + 769);
+		Actor.WaitActionFinish();
+	}
+
+	// Ringing the Gong 
+	static void sub_GenerateWildPokemon() {
+		int random; 
+		int speciesId;
+		int form;
+		int level;
+		int isVictory;
+		if (EventFlags.Get(1520 + 769)) {
+			Actor.PauseAll();
+			random = System.Random(100);
+			level = System.Random(2) + 39;
+			form = 0;
+			if (random < 100) {
+				if (random < 75) {
+					if (random < 50) {
+						if (random < 40){
+							if (random < 30) {
+								if (random < 20) {
+									if (random < 10) {
+										speciesId = 356; // Togetic
+									}
+									else {
+										speciesId = 593; // Misdreavus
+									}
+								}
+								else {
+									speciesId = 604; // Noctowl
+								}
+							}
+							else {
+								speciesId = 367; // Murkrow
+							}
+						}
+						else {
+							speciesId = 368; // Altaria
+						}
+					}
+					else {
+						speciesId = 369; // Castform
+						form = System.Random(3);
+					}
+				}
+				else {
+					speciesId = 358; // Chimecho
+				}
+			} 
+			else {
+				speciesId = 358; // Chimecho
+			}
+
+			Sound.PVPlay(speciesId, 0);
+			Sound.PVWait();
+			Battle.CallWildBattleEx(speciesId, level, form,  0);	
+			isVictory = Battle.IsWildVictory();
+			if (isVictory != 1){ 
+				Battle.CallWildLose();
+				goto Label_LostWildBattle;		
+			}
+			Battle.EndWildBattle();
+			
+			Label_LostWildBattle:
+			Runtime.FinishSubEvents();
+			Actor.UnpauseAll();
+		}
+	}
+
+	
+
+	// need to change this
+	static meta void SabrinaAssumesPosition(int npcId) : VActionSequence {
+		Action0010(3);
+	}
+
+
+	// need to change this 
+	static meta void SabrinaDramaticWalk(int npcId) : VActionSequence {
+		Action0010(3);
+	}
+
+	// need to change this 
+	static meta void SabrinaReturnsUpToPlay(int npcId) : VActionSequence {
+		Action0010(3);
+	}
+
+	static meta void SabrinaApproachesThePlayerToReposition(int npcId) : VActionSequence {
+		Action0010(3);
+	}
+
+	// NEED TO CHANGE THIS 
+	static meta void SabrinaRepositionsNextToAlakazam(int npcId) : VActionSequence {
+		Action0010(3);
+	}
+
+
+
+
+	static meta void PlayerAdjustOne(int npcId) : VActionSequence {
+		Action0010(1);
+	}
+
+	static meta void PlayerAdjustTwo(int npcId) : VActionSequence {
+		Action0012(1);
+	}
+
+	static meta void SabrinaReturns(int npcId) : VActionSequence {
+		Action000d(3);
+		Action000e(1);
+		Action0021(1);
+	}
+
+	static meta void SabrinaWalksUp(int npcId) : VActionSequence {
+		Action0010(3);
+	}
+
+	static meta void SabrinaPacesRight(int npcId) : VActionSequence {
+		Action0012(2);
+	}
+
+	static meta void WalkSouthTwoTiles(int npcId) : VActionSequence {
+		Action000d(2);
+	}
+
+	static meta void TurnNorth8F(int npcId) : VActionSequence {
+		Action0020(1);
+	}
+
+	static meta void TurnSouth8F(int npcId) : VActionSequence {
+		Action0021(1);
+	}
+	static meta void TurnEast8F(int npcId) : VActionSequence {
+		Action0023(1);
+	}
+	static meta void TurnWest8F(int npcId) : VActionSequence {
+		Action0022(1);
+	}
+	static meta void ShowExclamationMark(int npcId) : VActionSequence {
+		Action004b(1);
+	}
+	static meta void UnownWarpUp(int npcId) : VActionSequence {
+		Action0043(1);
+	}
+
+	static meta void UnownWarpDown(int npcId) : VActionSequence {
+		Action0044(1);
+	}
+
+	static meta void SabrinaPaces(int npcId) : VActionSequence {
+		Action000e(1);
+		Action000c(2);
+		Action003f(1);
+		Action0022(1);
+		Action0023(1);
+		Action003f(1);
+		Action000f(2);
+		Action003f(1);
+		Action0021(1);
+		Action0020(1);
+	}
+
+	static meta void SabrinaPacesBack(int npcId) : VActionSequence {
+		Action003f(1);
+		Action0022(1);
+		Action0020(1);
+		Action003f(1);
+		Action000d(2);
+		Action000f(1);
+		Action0020(1);
+	}
+
+
+	static meta void Global2805(int a1, int a2) : VGlobalCall[2805];
+
+	static native void Action0010(int amount) : 0x10;
+	static native void Action0011(int amount) : 0x11;
+	static native void Action0012(int amount) : 0x12;
+	static native void Action0013(int amount) : 0x13;
+	static native void Action000c(int amount) : 0xc;
+	static native void Action000d(int amount) : 0xd;
+	static native void Action000e(int amount) : 0xe;
+	static native void Action000f(int amount) : 0xf;
+	static native void Action0020(int amount) : 0x20;
+	static native void Action0021(int amount) : 0x21;
+	static native void Action0022(int amount) : 0x22;
+	static native void Action0023(int amount) : 0x23;
+	static native void Action0043(int amount) : 0x43;
+	static native void Action0044(int amount) : 0x44;
+	static native void Action004b(int amount) : 0x4b;
+	static native void Action003f(int amount) : 0x3f;
+}

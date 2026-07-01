@@ -1,3 +1,34 @@
+
+Hugh - 6 
+
+Shadow Triad 1 - 3 
+Shadow Triad 2 - 2
+Janine - 5
+Zinzolin - 1 
+Kyurem - 0
+
+Teleporter Position: 
+    X - 200 
+    Y - 0 
+    Z - 328 
+    (Intervals of 8?)
+
+Hugh Position by PC: 
+    X - 8 
+    Y - 0 
+    Z - 12 
+
+Kyurem Position: 
+    X - 11 
+    Y - 32 
+    Z - 11 
+
+Right in front of Hole 
+    X - 12 
+    Y - 0 
+    Z - 16 
+
+
 ----- TEXT FILE 357----- (Room 556: The overlook room)
 0: Zinzolin: You're an impressive\nTrainer to have made it this far.\c
 1: Since you went to such trouble\nto come here, I'll show you something.\c\nThis is...\c
@@ -20,167 +51,12 @@
 
 
 
-18:
-This place... it's so cold. I can barely feel my fingers... 
-
-19: 
-This is where they keep the ship's computer? 
-
-20:
-Haaahraaa....
-
-21:
-What.... what is that?
-
-22:
-Is... is that a Pokemon?
-
-23:
-What?\nThe Pokedex is drawing a blank! There's no recorded data for it.
-
-24: 
-That chamber it's in... these tubes...\nIs it powering the ship?\nAll by itself?\c\nWhat kind of Pokemon is capable of that power..? And what is Team Plasma planning on doing with it..?
-
-25:
-Is it... watching us?
-
-26:
-Snap out of it HUGH! Don't get distracted. We're here to rescue out Pokemon. We can deal with... that.. later! 
-
-27:
-This must be the computer. Here, you go first, I'll watch your back. 
-
-28:
-You open a console not dissimilar to the PC network. Hundreds and hundreds of Pokemon are catalogged here; some as entries indicating deployment, and others stored in the computer's storage system... 
-
-29:
-You search by date of acquisition and... you find VAR PKNAME!
-
-30:
-Would you like to withdraw VAR PKNAME?
-
-31:
-You have no room in your party. 
-
-32: 
-Player added VAR PKNAME to their party. 
-
-33:
-Woah, where are you going? Get PKNAME out of there! Use the PokeHelper if you need to make some space in your party! 
-
-34: 
-You found PKNAME! 
-
-
-
-35:
-Alright, my turn. Watch my back, player!
-
-36:
-There are hundreds of Pokemon in here... And a half dozen Purrloins... But this Liepard... is this...? 
-
-37:
-It is! Acquired from Aspertia City, two years ago! Evolved during the battle of the Pokemon League. Liepard has seen a lot of combat...
-
-38:
-Now how do I withdraw it? Do I just- oh? 
-
-39: 
-Hugh recovered Liepard!
-
-40:
-Finally... after all this time. Come on out Liepard!\c
-
-41:
-Liepard won't leave the Pokeball. 
-
-42:
-Liepard..?  Is this ball broken? Why won't she come out...?
-
-43:
-???: My goodness, our security is lacking.\nThey made it all the way in here...\c
-
-44:
-Hugh: Someone's here! 
-
-45:
-???: Why, if it isn't the children from Driftveil. You've followed us a long way, haven't you. 
-
-46:
-Team Plasma stole our Pokemon!\c\nPLAYER and I would never rest until we brought them back home!
-
-47:
-How amusing. That Liepard is the Pokemon you came all this way to save? All that effort, just for a broken tool... 
-
-48:
-Liepard is not a tool!\nWhat's wrong with her? What did you do to her? 
-
-49:
-What did we do to her? We used her. Every tool is expected to break eventually. There are other Purrloin.\nWhy are you so fixated on this one?\c
-
-50: 
-[VAR TRNAME(1)]: That's the ONLY Purrloin\nin the world that my late grandpa\r\ncaught for my little sister!\c
-
-51:
-Zinzolin: An individual's feelings...\c\nTo you, that's probably a\nmatter of great importance.\c\nBut from the perspective of other\npeople, it is a trifling matter indeed.\c
-
-52:
-Compare those feelings against\nthe majesty of this ship!\cThis ship itself is a device that\nuses the power of an ancient Pokemon to\nfly through the sky... and so much more.\cWith this ship, we will at last\nconquer Unova!\c
-
-53:
-That Pokemon... you're hurting it too. Just like my Purrloin!
-
-54:
-Perhaps, but wait until you see the fruits of our labors. 
-
-55:
-In fact, why don't I demonstrate now! Kyurem, come forth!\c
-
-56:
-Rival: Player, I've got your back! Let's mulch this robed loser!
-
-57: 
-Excellent... Kyurem's power grows every day. Soon, it will be ready... 
-
-58:
-Whatever you're plotting, we'll put a stop to it!
-
-59: 
-I think not.\nBut your Pokemon will make fine additions to our toolbox.\c\n
-
-60:
-I'll let you take care of them,\nShadow Triad!\cI'll notify the captain we're ready to depart. 
-
-61:
-It's time to go! 
-
-62:
-Come on out, Abra-
-
-63:
-Abra? Where's my Pokeball?
-
-64:
-First step to eliminating a target is to cut off their escape.
-
-65: 
-Rival: Player, we might be in trouble here.\nI'll try and hold them off while you make a run for it. Ready? 
-
-66:
-Three...
-
-67:
-Two...
-
-
-
-
 
 18:
-[VAR TRNAME(0)]: It’s so cold...\nI can barely feel my fingers...\c
+[VAR TRNAME(0)]: This is where they keep the\nship’s computer?\c\nIt’s so cold...\nI can barely feel my fingers...\c
 
 19:
-[VAR TRNAME(0)]: This is where they keep the\nship’s computer?\c
+Harrha....\c
 
 20:
 Haaahraa...\c
@@ -192,7 +68,7 @@ Haaahraa...\c
 [VAR TRNAME(0)]: Is...\nIs that a Pokémon?\c
 
 23:
-[VAR TRNAME(0)]: What?\nThe Pokédex is drawing a blank!\c\nThere’s no recorded data for it.\c
+[VAR TRNAME(0)]: What!?\nThe Pokédex is drawing a blank!\c\nThere’s no recorded data for it.\c
 
 24:
 [VAR TRNAME(0)]: That chamber it’s in...\nThose tubes...\r\nIs it powering the ship all by itself?\c\nWhat kind of Pokémon could have that\nmuch power?\c\nAnd what is Team Plasma planning on\ndoing with it?\c
@@ -201,10 +77,10 @@ Haaahraa...\c
 Is it...\nwatching us?\c
 
 26:
-[VAR TRNAME(0)]: Snap out of it!\nDon’t get distracted!\c\nWe’re here to rescue our Pokémon!\nWe can deal with... that... later!\c
+[VAR TRNAME(0)]: Snap out of it!\c
 
 27:
-[VAR TRNAME(0)]: This must be the computer.\nHere, you go first. I’ll watch your back.\c
+[VAR TRNAME(0)]: This must be the computer.\c
 
 28:
 A console, like the Pokémon\nStorage System.\c\nHundreds and hundreds of Pokémon are\nlisted here.\c\nSome are marked for deployment...\nOthers are stored in the system...\c
@@ -225,7 +101,7 @@ VAR PKNAME was added\nto your party.\c
 [VAR TRNAME(0)]: Whoa!\nWhere are you going?\c\nGet VAR PKNAME out of there!\nUse the Poké Helper if you need to make\r\nsome space in your party!\c
 
 34:
-You found VAR PKNAME!\c
+[VAR TRNAME(0)]: You found [VAR PKNAME(3)]!\c
 
 35:
 [VAR TRNAME(0)]: All right, my turn.\nWatch my back, [VAR TRNAME(0)]!\c
@@ -325,3 +201,411 @@ The first step in capturing a target\nis to cut off their escape.\c
 
 67:
 [VAR TRNAME(0)]: Two...\c
+
+
+68: 
+Testing: This is main_1
+
+69: 
+Testing: This is main_3
+
+
+70: 
+[VAR TRNAME(0)]: Don't worry, [VAR TRNAME(1)].\nI'll watch your back while you\r\nuse the console.\c
+
+71:
+[VAR TRNAME(0)]: What's wrong?\nAre you having trouble with the computer?\c\nI'm not the best with tech...\nI wish I'd caught a Rotom.\c
+
+72: 
+[VAR TRNAME(0)]: What's wrong?\nNot enough space in your party?\c\nWhy not use the [VAR COLOR(2)]PokéHelper[VAR COLOR(0)] to\n[VAR COLOR(1)]Deposit a Pokémon[VAR COLOR(0)] in your PC?\c\nYou call pull the [VAR COLOR(2)]PokéHelper[VAR COLOR(0)] up\nwith the [VAR COLOR(3)]START Button[VAR COLOR(0)]!\c 
+
+73: 
+[VAR TRNAME(0)]: Hey!\nWhere are you going!\c\nYou haven't found [VAR PKNAME(3)] yet!\c
+
+74: 
+[VAR TRNAME(0)]: Hey!\nWhere are you going!\c\n
+
+75: 
+I need you to watch my back\\nwhile I find Purrloin!\c
+
+75: 
+This computer is really confusing though...\nI might need help.\c
+
+
+
+76:
+[VAR TRNAME(0)] booted up the PC.\c
+
+77: 
+What do you want to do?
+
+78: 
+Access Storage
+
+79:
+Zinzolin's PC
+
+80:
+Records
+
+81: 
+Help 
+
+82: 
+Switch Off 
+
+83: 
+Accessed the\nPokémon Storage System.\c
+
+84: 
+DEPOSIT POKÉMON
+
+85: 
+Deposit stolen Pokémon into the\nPokémon Storage System.
+
+86: 
+WITHDRAW POKÉMON
+
+87: 
+Withdraw Pokémon (if authorized)\nfrom the Pokémon Storage System.
+
+88: 
+STATS 
+
+89:
+Provides detailed stats on Pokémon\nstored in the Pokémon Storage System.
+
+90: 
+LOG OUT
+
+91: 
+Log out of the\nPokémon Storage System.
+
+92: 
+Which Pokémon would you like\nto deposit?
+
+93:
+Which Box would you like to deposit\n[VAR PKNAME(4)] into?\c
+
+94: 
+"ACTIVE USE"
+
+95:
+"VIP ONLY"
+
+96:
+"TESTING"
+
+97: 
+"RESERVE" 
+
+98: 
+"DAMAGED"
+
+99:
+"DISCARD"
+
+100:
+Quit 
+
+101: 
+Current deployment roster.\nAvailable to all organization members.
+
+102: 
+Priority assets reserved for\nhigh-ranking personnel.
+
+103: 
+Subjects allocated to research and\ndevelopment activities.
+
+104: 
+Unassigned stock.\nHold in storage indefinitely.
+
+105: 
+Assets impaired in battle or trials.\nMonitor and reassign as needed.
+
+106: 
+Assets surplus to requirements.\nDiscard when storage is full.
+
+107: 
+Depositing [VAR PKNAME(4)] to\n[VAR COLOR(2)]"ACTIVE USE"[VAR COLOR(0)].\r\nScan Keycard to appprove.\c
+
+108: 
+[VAR TRNAME(1)]: Hey, watch out!\c
+
+109: 
+[VAR TRNAME(1)]: Are you having trouble\nwith the computer?\c\nYou almost deposited a Pokémon!\c\nGood thing I noticed in time.\nBe careful!\c
+
+110: 
+Return to Menu 
+
+111: 
+Your party's full!\c\nMake space before making a withdrawal.\c
+
+112: 
+Accessing Boxes...\c
+
+113: 
+Hundreds and hundreds of Pokémon are\nlisted here.\c\nSorting by date of acquisition...\nYou find [VAR PKNAME(3)]!\c
+
+114:
+[VAR PKNAME(3)] #[VAR NUM3(5)]:\nAcquired in: [VAR COLOR(2)]PWT[VAR COLOR(0)].\r\nOperational Performance: [VAR COLOR(4)]Excellent[VAR COLOR(0)]\r\nTemperment: [VAR COLOR(1)]Poor[VAR COLOR(0)].\r\nDeployment Status: [VAR COLOR(1)]Reserved[VAR COLOR(0)] by [VAR COLOR(6)]???[VAR COLOR(0)].\c\nWould you like to withdraw\n[VAR PKNAME(3)]?
+
+115: 
+Logged out of\nPokémon Storage System.\c
+
+116: 
+[VAR TRNAME(0)] recovered [VAR PKNAME(3)]!\c
+
+117: 
+Accessing Pokémon statistics...\c\nProcessing...\c
+
+118:
+Complete!\c
+
+119:
+Total registered assets:\n[VAR COLOR(4)]1254[VAR COLOR(0)] Pokémon.\c\nOperational deployment rate:\n[VAR COLOR(4)]68%[VAR COLOR(0)].\c\nTesting allocation rate:\n[VAR COLOR(4)]15%[VAR COLOR(0)].\c\nIncident reports filed:\n[VAR COLOR(4)]68[VAR COLOR(0)] this cycle.\c\nProjected acquisition target:\n[VAR COLOR(4)]1500[VAR COLOR(0)] Pokémon.\c
+
+120: 
+Accessed Zinzolin's PC.\c
+
+121: 
+Mailbox
+
+122: 
+Journals 
+
+123:
+Log Out 
+
+122: 
+Up to 20 pieces of Mail can be stored.
+
+123:
+Logs
+
+124: 
+Log out of Zinzolin's PC.
+
+125:
+Accessed the Mailbox!\c
+
+126:
+The mailbox is filled with correspondence\nwith various co-conspirators across Unova.\r\nNo names are used: only aliases.\c\nThe communications make reference to\nongoing research projects and strategic\r\nobjectives: "Project K", "O-Day", "N".\c\nNone of it makes any sense to you.\C
+
+127:
+Accessing Personal Logs!\n
+
+128: 
+Personal Logs of user:\n[VAR COLOR(2)]Forbidden Ice[VAR COLOR(0)]
+
+129: 
+Logged out of\nZinzolin's PC. 
+
+130: 
+Accessed the Record System.\c
+
+131: 
+Your Hall of Fame data is corrupted.\c\nIt will be fixed if you enter the\nHall of Fame again.\c
+
+132:
+The Hall of Fame entry belongs to\nsomeone named "N".\c\nWhy is it here?\c
+
+133:
+Accessed the Help System.\c 
+
+134: 
+What do you need Help with? 
+
+135:
+Navigating the Ship 
+
+136: 
+Warp Panel Guide
+
+137: 
+
+
+138: 
+Use of Proto-MCHNs
+
+139: 
+Log Out 
+
+140:
+1F: Deck\nB1F: Barracks\r\nB2F: Engine Room\r\n2F: Captain's Quarters\r\n3F: ???\c\nConsult the Warp Panel guide for\nfurther directions.\c
+
+141:
+A detailed guide for all the Warp panels\non the ship!\c
+
+142:
+...it's 13 months out of date.\c
+
+143: 
+Proto-MCHN usage is restricted to\ntrained personnel only.\c\nFor maximum efficacy, affix Proto-MCHNs\nas close to the asset's neck region\r\n(or equivalent) as possible.\c\nActivation induces heightened aggression\nand significant combat performance\r\nincreases.\c\nNote: Subjects typically exhibit severe\ndiscomfort and agitation during\r\nProto-MCHN operation.\c\nEmotional stress responses improve\ncompliance. Maintain psychological\r\npressure.\c\nPhysical restraint is not reliable while\nProto-MCHN is active. Avoid close\r\ncontact and unnecessary handling.\c\nDeactivate assets promptly after\nengagement to limit degradation.\c
+
+144: 
+Logging out of the Help System.\c
+
+145:
+[VAR TRNAME(0)] turned off the PC.\c
+
+146:
+Log Date: 3rd of Summer.\c\nI received a letter from Rood today—\nHe asked why I remain with Team Plasma\r\nnow that our king has left us.\c\nI was tempted to reply.\nBut Rood is a sentimental sort.\r\nHe would never understand.\c\nI once believed Team Plasma's mission was to\nfree Pokémon from humans.\c\nBut I was wrong.\c\nOur true mission is to free humans\nfrom Pokémon:\r\nfrom our reliance on these tools and the\r\nwretched sentimentality they've\r\ncultivated in us.\c\nPokémon are nature.\nPoké Balls are civilization.\c\nThey coddle and shelter us from the\ncold reality of this world,\r\nand from reaching our true potential.\c\nBut humans who are used to civilization\ndon’t relinquish it easily.\c\nWhat will happen to a world\ntaken over by Team Plasma?\c\nPeople will be forced to throw out\nPoké Balls—a product of civilization.\c\nWill they flounder?\nWill they grow?\c\nI want to know what that looks like!\nI want to know what happens next!\c\nWhat people don't understand about\nnature and civilization is...\c\n...\c
+
+147:
+...it just goes on like this for pages...\c 
+
+
+148:
+Depositing [VAR PKNAME(4)] to\n[VAR COLOR(2)]"ACTIVE USE"[VAR COLOR(0)].\r\nScan Keycard to appprove.\c
+
+149:
+Depositing [VAR PKNAME(4)] to\n[VAR COLOR(2)]"VIP ONLY"[VAR COLOR(0)].\r\nScan Keycard to appprove.\c
+
+150:
+Depositing [VAR PKNAME(4)] to\n[VAR COLOR(2)]"TESTING"[VAR COLOR(0)].\r\nScan Keycard to appprove.\c
+
+151:
+Depositing [VAR PKNAME(4)] to\n[VAR COLOR(2)]"RESERVE"[VAR COLOR(0)].\r\nScan Keycard to appprove.\c
+
+152:
+Depositing [VAR PKNAME(4)] to\n[VAR COLOR(2)]"DAMAGED"[VAR COLOR(0)].\r\nScan Keycard to appprove.\c
+
+153:
+Depositing [VAR PKNAME(4)] to\n[VAR COLOR(2)]"DISCARD"[VAR COLOR(0)].\r\nScan Keycard to appprove.\c
+
+154:
+[VAR PKNAME(3)] was added to your\nparty.\c
+
+155:
+[VAR TRNAME(1)]: Alright Team Plasma!\nPrepare to feel my rage!\c
+
+156:
+[VAR TRNAME(1)]: There's nobody here...\c
+
+157:
+[VAR TRNAME(1)]: Did you hear something?\c
+
+158: 
+We can't get distracted!\c\nWe’re here to rescue our Pokémon!\nWe can deal with...\r\nthat... later!\c
+
+159: 
+[VAR TRNAME(1)]: Here, you go first.\nI’ll watch your back.\c
+
+160: 
+[VAR PKNAME(3)] seems a little different.\nA bit more...
+
+161: 
+(Next)
+
+162:
+(Back)
+
+163:
+Hardy 
+
+164:
+Lonely 
+
+165:
+Brave 
+
+166: 
+Adamant 
+
+167: 
+Naughty 
+
+168: 
+Bold 
+
+171:
+Docile
+
+172: 
+Relaxed 
+
+173: 
+Impish
+
+174: 
+Lax 
+
+175: 
+Timid 
+
+176: 
+Hasty 
+
+177:
+Serious 
+
+178: 
+Jolly 
+
+179: 
+Naive
+
+180:
+Modest
+
+181:
+Mild
+
+182:
+Quiet
+
+183:
+Bashful
+
+184: 
+Rash 
+
+185: 
+Calm 
+
+186: 
+Gentle 
+
+187: 
+Sassy 
+
+188: 
+Careful 
+
+189: 
+Quirky 
+
+190: 
+[VAR COLOR(3)][VAR ITEM1(7)][VAR COLOR(0)] is a neutral nature.
+
+191: 
+A Pokemon with a [VAR COLOR(3)][VAR ITEM1(7)][VAR COLOR(0)] nature\nhas raised [VAR COLOR(2)][VAR ITEM2(8)][VAR COLOR(0)] and reduced [VAR COLOR(1)][VAR ITEM2(9)][VAR COLOR(0)]
+
+192: 
+Are you sure [VAR PKNAME(3)] seems\n[VAR COLOR(3)][VAR ITEM1(7)][VAR COLOR(0)]?
+
+193: 
+[VAR PKNAME(3)]'s ability when they were\nstolen was [VAR ABILITY(7)].\r\nNow their ability is...
+
+194: 
+[VAR ABILITY(8)] 
+
+195: 
+[VAR ABILITY(9)]
+
+196:
+[VAR ABILITY(10)]
+
+197: 
+No Change
+
+198: 
+Are you sure [VAR PKNAME(3)]'s ability is\n[VAR ABILITY(11)]?
+
+199: 
+[VAR PKNAME(3)] is now [VAR COLOR(3)][VAR ITEM1(7)][VAR COLOR(0)]\nafter their time in captivity.\c
+
+200:
+[VAR PKNAME(3)]'s ability is now [VAR COLOR(3)][VAR ITEM1(11)][VAR COLOR(0)]\nafter their time in captivity.\c
+

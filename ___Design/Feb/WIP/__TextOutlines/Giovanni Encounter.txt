@@ -1,0 +1,111 @@
+
+
+The player can encounter Giovanni in the back offices of the SM9 mall. 
+He is here scheming to do... something. We don't need to go into too much detail but all that is important is that 
+Giovanni is extending Team Rocket's operations into Unova. He is discussing this with two of his goons as you enter the room. 
+
+1: Giovanni's discussion with the Goon 
+
+2: Giovanni's second line of discussion with the GOon 
+
+3: Goon respoonds 
+
+4: Giovanni repsonds to the goon 
+
+(Giovanni notices the player has entered)
+
+5: Giovanni says sommething like "We're not alone" 
+
+(Giovanni approaches the player)
+
+6: RIGHT HAND GRUNT:  asks the kid who they are, whats their name. "TRNAME, huh?". 
+
+7: RIGHT_HAND_GOON: Well you walked into the wrong office without knocking, TRNAME. Get 'em boys. 
+
+(This triggers a tag battle with the two rocket agents.)
+
+(After the battle they'll stagger back)
+
+8: RIGHT_HAND_GOON: Alright, guess I'll need to handle this myself!\c 
+
+9: Giovanni de-escalates. "That's enough. Let's talk like civilized people. Have you heard of Team Rocket?" 
+
+10: (Player Reponds Yes) Of course you have, Team Rocket is famous. 
+
+11: (Player Responds no) Good, we'd like to keep it that way. 
+
+12: Giovanni: Team Rocket once aspired to taking over the world. These days we're happy making a profit and staying under the radar. 
+
+13: Giovanni: We've been out of the pokemon stealing business for years. Now we only deal in legitimate merchandise. 
+
+14: Giovanni: So, why don't we let this go. We'll both forget this ever happened, kid. 
+
+(Player is given a yes/no prompt)
+
+15: (Player says yes) Giovanni: Smart. Boys, show the kid out. 
+
+16: (Player says no) (Music cuts out) Giovanni: That was stupid kid. I was ready to let you walk. 
+
+17: Giovanni: Just remember I gave you the chance to walk away. 
+
+(Battle starts)
+
+18: (Player said yes initially but then returns) Giovanni: ...I thought I was pretty clear, kid. Not sure what you're thinking wandering back here again... are you trying to pick a fight? 
+
+19: (Post battle) Giovanni will remark interesting. You remind me of another kid I knew, another thorn in my side. 
+
+20: Giovanni: I know better than to pick fights with kids like you. Never goes well for us. Here's my new offer. 
+
+21: Giovanni: Keep your mouth shut, and I'll give you access to our supplier upstairs. He can hook you up with shards, rare berries, 
+
+(Yes/No Prompt)
+
+22: (Players says yes) Giovanni: Good. Simply telll them the passphrase "apple" and they'll supply you the good stuff. And here. 
+
+(Giovanni gives the player a permit)
+
+23: Giovanni: This here is a permit to visit a rare protective habitat. We were gonna use it for... stuff. But doesn't seem worth kicking up such a fuss anymore. Just take this to the airport in Mistralton.
+
+24: Giovanni: Now, get out of here kid. I won't warn you again . 
+
+25 (Player said no) Giovanni: ...pity. 
+
+26: Giovanni: Fine, let's move boys. We have other operations to attend to. 
+
+27: Giovanni: Better watch out kid, if you keep sticking your nose in everyone's business one day someone will chop it off. 
+
+
+[ IN SM9 OUTSIDE ]
+
+(If you accepted Giovanni's offer, a grunt will be guarding the entrance to his room so you can't get back in)
+1: Grunt's line of dialogue. 
+
+(If you accepted Giovanni's offer, one of the shopkeepers now has new dialogue)
+2: (Dialogue before offer) Extremely saccharine, sells Casteliacones or something stupid. Which would you like?
+
+3: Casteliacone. 
+
+4: Old Gateau 
+
+5: Soda Pop 
+
+6: (Only appears after talking to Giovanni) Rage Candy Bar
+
+7: Quit 
+
+8: Alright, that'll be X PokeDollars! 
+
+9: Thanks for shopping with us. Have a wonderful day (spruce this up to be more corporate customer service speak)
+
+10: (Dialogue after you pick Rage candy bar) ...really? You? Well, guess I'll show you the goods. 
+
+11: Red Shards (x500)
+
+12: Green Shards (x500)
+
+13: Alright, keep it slick, chief. 
+
+
+
+They don't notice you until they've revealed a little too much information. 
+Giovanni approaches the player and asks them who they are, 

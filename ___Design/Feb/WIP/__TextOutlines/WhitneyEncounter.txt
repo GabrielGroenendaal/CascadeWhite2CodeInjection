@@ -1,0 +1,201 @@
+
+
+
+In SM9 Mall there's a long long line by one of the shops. At the front of the line, blocking access to the cashier, is Whitney. 
+
+The shop, whose name we need to come up, is doing a little prommotion to with a quiz attached. Whitney is spending forever working on it. 
+We can do some funnny quiz questions here for pokemon, this will be a cute reference to original whitney. 
+
+
+1: ???: Um...\nOkay so is this supposed to be a trick question?
+
+2: Worker: Ma'am, if you could just step to the side.
+
+3: No! I've got this. I won't let a quick get the best of me again.
+
+(Question #1)
+4: Okay so...the move Baton Pass transfers all conditions except...
+
+5: Gastro Acid 
+
+6: Power Trick 
+
+7: Focus Energy 
+
+8: Minimize 
+
+9: 
+Incorrect!\nAbility Suppression is transferrable by Baton Pass! 
+
+10: 
+Incorrect:\nPower Trick is transferrable by Baton Pass! 
+
+11: 
+Incorrect:\nFocus Energy is transferrable by Baton Pass
+
+12: 
+Correct:\nMinimize's boosts to Evasion are transferred by Baton Pass, but not the "Minimize" status which increases damage received by Stomp or Heat Crash! 
+
+13: (Whitney responds to you getting an incorrect answer)
+???: Hey, don't help me!\c\nEspecially if you're going to be wrong! 
+
+14: (Whitney respoonds to you getting the questioon right)
+???: Hey!\nI was just about to guess that!\c\nThat still counts right!? 
+
+(Question #2)
+14: 
+Okay so question 2...\c\nWhich of the following moves has their effect removed by Sheer Force? 
+
+15: 
+Scale Shot  
+
+16: 
+Spirit Shackle
+
+17: 
+Thousand Waves 
+
+19: 
+Fire Spin
+
+20: 
+Incorrect! Scale Shot will still reduce Defense and Raise Speed when used by a Pokemon with Sheer Force! 
+
+21: 
+Correct! Spirit Shackle, despite functioning identically to Thousand Waves, does have its trapping effect removed by Sheer Force. 
+
+22: 
+Incorrect! Thousand Wave's trapping effect is not removed by Sheer Force. 
+
+23: 
+Incorrect! Fire Spin's binding effect is NOT removed by sheer force.
+
+24: (Whitney responds to getting second question right)
+???: You're spoiling this for me!\c 
+
+25: 
+???: Whatever, next question...\c\nIn the game Pokemon Black & White, when evaluating whether to use the move "Guard Split" the AI considers the user's and target's... 
+
+26: 
+Defense 
+
+27: 
+Ability
+
+28:
+Special Defense 
+
+29: 
+Species 
+
+30: 
+Current Health 
+
+31: 
+That is incorrect! The AI does not consider the user or target's base Defense. It only considered Defense stat stage boosts. 
+
+32: 
+That is incorrect! The AI does not consider the user or target's Ability. 
+
+33: 
+That is incorrect! The AI does not consider the user or target's base Special Defense. It only considered Defense stat stage boosts. 
+
+34: 
+That is correct! The AI will consider, above all else, if the user or target belongs to lists of high defense Pokemon: like Shuckle or Regice. 
+
+35:
+That is incorrect! The AI does not consider the user or target's current Health.
+
+36: 
+???: What..?\nHow did you even know that?\c\nWhy would the game check for Species\ninstead of the actual defense stats?\c
+
+37: 
+Leave me alone, I wanna do this by myself!\c\n 
+
+38: 
+Ok, so, Question 4.\c\nWhich move changed mechanics every generation since it's introduction ?
+
+39: 
+Future Sight
+
+41: 
+Curse 
+
+42: 
+Tailwind
+
+43: 
+Assist 
+
+44: 
+Incorrect!\nFuture Sight stayed mechanically identical between Generations 2 and 3. 
+
+45:
+Correct!\nCurse had changed mechanics every single generation since it's introduction in generation 2. 
+
+46:
+Incorret!\nTailwind did not receive any mechanic change in gen 8, despite getting one every other generation. 
+
+47:
+Incorrect!\nAssist did not change mechanics in Generation 9, as a result of being removed in Generation 8.
+
+48: 
+???: Ugh!\c\nYou're really starting to tick me off!\c\nJust let me get this last one myself... 
+
+49: 
+???: Question #5.\nThe final evolution of Cleffa is... 
+
+50: 
+???: Oh! I know this one! It's 
+
+51: 
+Clefable 
+
+52: 
+Clefaeble 
+
+53: 
+Cleffable 
+
+54: 
+Correct! Clefable is the final evolution of Cleffa!
+
+55: 
+???: Hey!\nI knew that!\c
+
+56: 
+...Clefaeble!\cWait no!
+
+57: 
+Incorrect!\nClefaeble is not the final evolution of Cleffa!
+
+58: 
+...Cleffable!\cWait no!
+
+59: 
+Incorrect!\nCleffable is not the final evolution of Cleffa!
+
+60: 
+You messed me up!\c
+
+61: Whitney mad after you either flub the last question or answer it for her
+I've had it with you!\c\nI'm goingi to roll you over! 
+
+(BATTLE OCCURS)
+62: (If you lose)
+Hah!\nHope that taught you a lesson about being a spoilsport.\c\nHere, let me heal your Pokemon.\c
+
+63: 
+Well, no point in doing the puzzle again. Thanks a lot, I guess. 
+
+64: (If you win)
+Idk put something here. 
+
+65: 
+Well, I don't think I actually wanna buy anything anyways. I'll get out of the way. 
+
+66: If whitney is spoken to in the overworld afterworld and she beat you.
+
+
+67: If whitney is spoken to in the overworld afterworld and you beat her. 
+

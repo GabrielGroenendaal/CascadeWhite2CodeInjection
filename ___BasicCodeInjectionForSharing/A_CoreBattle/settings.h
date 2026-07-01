@@ -41,7 +41,7 @@
 #define DEBUGGING_SIDE_EFFECTS false
 #define DEBUGGING_FIELDEFFECTS false
 #define TESTING_BATTLEFIELD false
-#define DAMAGE_CACHE_ENABLED false
+
 
 
 #define USING_VANILLA_SWITCH_AI false 

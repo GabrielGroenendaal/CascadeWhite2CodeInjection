@@ -20,7 +20,16 @@ Flags
     3055: Giovanni Spawn Flag (SMT)
     3056: Giovanni Spawn Flag (PWT)
     3057: Clay tunnel blocker 
-
+     576: Whitney Despawn Flag (SM9)
+     577: Whitney Position Two Spawn Flag (SM9)
+     578: Other Shopper spawn flag (SM9, if whitney wasn't defeated)
+     580: Team Rocket Grunt spawn Flag (SM9)
+     581: Team Rocket Right hand men of Giovanni spawn flag (SM9)
+     582: Janine position 2 in Driftveil City 
+     583: Tate & Liza Spawn Flag 
+     584: Rare Shopkeeper Position A 
+     585: Rare Shopkeeper Positioon B
+    
 Works: 
     16515: Brock 
     16517: Misty 
@@ -32,90 +41,129 @@ Works:
     16528: Giovanni 
     16529: Janine Quest Script
     16530: The script that runs upon initially arriving in the PWT hallway that will despawn all the kanto gym leaders
+    16531: Random generated number for Frigate 
+    
+
+Done: 
+    Pledge Grove: 
+        Set Brock and all his pokemon to spawn Flag 3041
 
 
-Pledge Grove: 
-    Set Brock and all his pokemon to spawn Flag 3041
+    Defeat Cheren: 
+        Set 3041 to Despawn Brock 
 
 
-Defeat Cheren: 
-    Set 3041 to Despawn Brock 
+    Virbank City: 
+        Set Misty and all her Pokemon to spawn flag 3043 
 
+        Remove the trigger zones that were hiding Misty before. 
 
-Virbank City: 
-    Set Misty and all her Pokemon to spawn flag 3043 
+        Trigger the Plasma Grunt Event in Virbank CIty after defeating Roxie 
+            Set 3043 to Despawn Misty 
+            Hide her and all related entities 
+            Remove the trigger value that despawned her. 
+    
+    Liberty Garden: 
+        Set Surge and all her Pokemon to spawn flag 3045 
 
-    Remove the trigger zones that were hiding Misty before. 
-
-    Trigger the Plasma Grunt Event in Virbank CIty after defeating Roxie 
-        Set 3043 to Despawn Misty 
-        Hide her and all related entities 
-        Remove the trigger value that despawned her. 
-
-
-Liberty Garden: 
-    Set Surge and all her Pokemon to spawn flag 3045 
-
-Defeat Burgh 
+    Defeat Burgh 
     Set 3045 to Despawn Surge and his Pokemon
 
-Lostlorn Forest 
-    Remove Erika's Pokemon except her Vileplume. 
+    Lostlorn Forest 
+        Remove Erika's Pokemon except her Vileplume. 
 
-    The other entities are now part of two groups of dancing glooms 
+        The other entities are now part of two groups of dancing glooms 
 
-    Set Erika and her Pokemon to Spawn flag 3047
+        Set Erika and her Pokemon to Spawn flag 3047
 
-    Defeat Erika to set 16521 to 5
+        Defeat Erika to set 16521 to 5
 
+    Defeat Erika:   
+        Set 3047 to despawn Erika and her Pokemon 
+        Set 16521 to 4 to despawn all trigger zones in Lostlorn Forest 
 
-Defeat Erika:   
-    Set 3047 to despawn Erika and her Pokemon 
-    Set 16521 to 4 to despawn all trigger zones in Lostlorn Forest 
+    Driftveil Gym: 
+        Defeating Clay sets 3049 and EventWorks.16522 to 4 
 
-Driftveil City: 
-    Set Janine and her Pokemon to spawn flag 3049 
-    Set Clay Tunnel Blocker to spawn flag 3057
+    PWT Hallway: 
+        Set 3042 unless Brock was defeated 
+        Set 3044 unless Misty was defeated 
+        Set 3046 unless Surge was defeaed 
+        Set 3048 unless Erika was defeated 
+        Set 3050 
+        Set 3052 
+        Set 3054 
+        Set 3056 
+        
+        
+    PWT: 
+        Add each of the kanto gym leaders here. Give them maybe 1-2 lines of dialogue. Nothing too fancy. 
 
-    Defeating Janine sets both 3049 and 3057 and sets 16522 to 5
+        
+    Mistralton Gym: 
+        Defeating Skyla, if Sabrina was not defeated, sets 3051 to despawn Sabrina and 16523 to 4
+        
 
-Driftveil Gym: 
-    Defeating Clay sets 3049 and EventWorks.16522 to 4 
+    Humilau Gym: 
+        Sets SpawnnFlag 3053 to despawn Blaine and his Pokemon. 
+        (Already blocks off access to the Shrine)
 
-PWT Hallway: 
-    Set 3042 unless Brock was defeated 
-    Set 3044 unless Misty was defeated 
-    Set 3046 unless Surge was defeaed 
-    Set 3048 unless Erika was defeated 
-    Set 3050 
-    Set 3052 
-    Set 3054 
-    Set 3056 
+WIP: 
+    Driftveil City: 
 
-PWT: 
-    Add each of the kanto gym leaders here. Give them maybe 1-2 lines of dialogue. Nothing too fancy. 
+        Arriving in Driftveil City sets: 
+            582 (Janine Position 2)
+        
+        Set Janine and her Pokemon to spawn flag 3049 
+        Set Clay Tunnel Blocker to spawn flag 3057
 
-Celestial Tower - Top Floor: 
-    Remove all the shit here. 
-
-
-Celestial Rooftop: 
-    Add Sabrina here, she blocks access to the Gong. 
-    Give sabrina and her pokemon spawnflag 3051
-
-    Modify the gong script to summon a wild Pokemon. If Sabrina was not defeated, it rings hollow. 
-
-    Defeating Sabrina sets 3051 to Despawn Sabrina and her Pkm as well as 16523 to 5.  
-
-Mistralton Gym: 
-    Defeating Skyla, if Sabrina was not defeated, sets 3051 to despawn Sabrina and 16523 to 4
-
-
-Abundant Shrine: 
-    Give Blaine and his Pkm spawnflag 3053 
-    Modify the introductory event to Abundant Shrine so that Blaine is a part of it and it talks more about the protests. 
+        Defeating Janine sets both 3049 and 3057 and sets 16522 to 5
 
 
-Humilau Gym: 
-    Sets SpawnnFlag 3053 to despawn Blaine and his Pokemon. 
-    (Already blocks off access to the Shrine)
+    Celestial Tower - Top Floor: 
+        Remove all the shit here. 
+
+
+    Celestial Rooftop: 
+        Add Sabrina here, she blocks access to the Gong. 
+        Give sabrina and her pokemon spawnflag 3051
+
+        Modify the gong script to summon a wild Pokemon. If Sabrina was not defeated, it rings hollow. 
+
+        Defeating Sabrina sets 3051 to Despawn Sabrina and her Pkm as well as 16523 to 5.  
+
+    Undella Town: 
+        New Scripted Event Tied to EventWorks 16524 for Blaine. 
+    
+    
+    Abundant Shrine: 
+        Give Blaine and his Pkm spawnflag 3053 
+        Modify the introductory event to Abundant Shrine so that Blaine is a part of it and it talks more about the protests. 
+    
+
+    Arriving in Lacunosa Town sets: 
+        577 (Whitney Positoin 2)
+        578 (Shopper Blocker )
+        580 (Team Rocket Grunt Flag)
+    
+    SM9: 
+        Speaking with Whitney and defeating her sets 
+            576
+
+        Speaking with the ROcket Dealer after getting the passphrase makes the the shopkeeper walk over where you can interact with them. 
+            Sets 584 
+            Clear 585
+
+        
+    
+    Opelucid Gym 
+        Defeatinng Drayden will
+            Set 576 (Whitney)
+            Clear 578  (Whitney)
+            Clear 580 (Rocket Grunt)
+            Set 583 (Tate and Liza) 
+
+            If giovanni was defeated; 
+                Clear 3056
+            If he wasn't 
+                EventWorks.Set(16528, 5)

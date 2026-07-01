@@ -1415,6 +1415,29 @@ extern "C"
     //     return ThunderHandlers;
     // }
 
+    MOVE_TRIGGERTABLE AssistHandlers[] = {
+        {EVENT_MOVE_REQUEST_PARAM, (MOVE_HANDLER_FUNC)HandlerAssist},
+        {EVENT_MOVE_POWER, (MOVE_HANDLER_FUNC)HandlerMeFirstPower},
+    };
+
+    MOVE_TRIGGERTABLE *THUMB_BRANCH_EventAddAssist(_DWORD *a1)
+    {
+        *a1 = 2;
+        return AssistHandlers;
+    }
+
+    // MOVE_TRIGGERTABLE CopycatHandlers[] = {
+    //     {EVENT_MOVE_REQUEST_PARAM, (MOVE_HANDLER_FUNC)HandlerAssist},
+    //     {EVENT_MOVE_POWER, (MOVE_HANDLER_FUNC)HandlerMeFirstPower},
+    // };
+
+    // MOVE_TRIGGERTABLE * EventAddCopycat(_DWORD *a1)
+    // {
+    // *a1 = 2;
+    // return CopycatHandlers;
+    // }
+
+
 #pragma endregion
 
 #pragma region chargeMoves
@@ -2270,27 +2293,28 @@ extern "C"
 
 #pragma region status
 
-    // int MULTIHIT_CHANCES[6] = {0, 0, 15, 50, 85, 100};
+    // Double check this
+    int MULTIHIT_CHANCES[6] = {0, 0, 15, 50, 85, 100};
 
-    // unsigned int THUMB_BRANCH_RollMultiHitHits(unsigned int result)
-    // {
-    //     unsigned int v1; // r3
+    unsigned int THUMB_BRANCH_RollMultiHitHits(unsigned int result)
+    {
+        unsigned int v1; // r3
 
-    //     if (result == 5)
-    //     {
-    //         v1 = BattleRandom(100u);
-    //         result = 0;
-    //         while (v1 >= MULTIHIT_CHANCES[result])
-    //         {
-    //             result = (result + 1);
-    //             if (result >= 6)
-    //             {
-    //                 return 5;
-    //             }
-    //         }
-    //     }
-    //     return result;
-    // }
+        if (result == 5)
+        {
+            v1 = BattleRandom(100u);
+            result = 0;
+            while (v1 >= MULTIHIT_CHANCES[result])
+            {
+                result = (result + 1);
+                if (result >= 6)
+                {
+                    return 5;
+                }
+            }
+        }
+        return result;
+    }
 
     int THUMB_BRANCH_HandlerCurseMoveParam(int a1, ServerFlow *a2, int a3)
     {

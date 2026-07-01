@@ -50,12 +50,8 @@ extern "C"
     {
         HandlerParam_Message *message = (HandlerParam_Message *)BattleHandler_PushWork(serverFlow, EFFECT_MESSAGE, PokemonSlot);
         BattleHandler_StrSetup(&message->str, 2u, messageId);
-        BattleHandler_AddArg(&message->str, targetSlot);
-        if (secondArg)
-        {
-            BattleHandler_AddArg(&message->str, secondArg);
-        }
-        if (thirdArg)
+        BattleHandler_AddArg(&message->str, secondArg);
+        if (thirdArg != 999)
         {
             BattleHandler_AddArg(&message->str, thirdArg);
         }
@@ -285,13 +281,13 @@ extern "C"
 
         if ((int)a3 == BattleEventVar_GetValue(VAR_MON_ID))
         {
-            // SendMessage(a2, (int)a3, (int)a3, 1324, (int)a3, BattleEventItem_GetSubID(a1));
-            v6 = (HandlerParam_Message *)BattleHandler_PushWork(a2, EFFECT_MESSAGE, (int)a3);
-            BattleHandler_StrSetup(&v6->str, 2u, 1324);
-            BattleHandler_AddArg(&v6->str, (int)a3);
-            SubID = BattleEventItem_GetSubID(a1);
-            BattleHandler_AddArg(&v6->str, SubID);
-            BattleHandler_PopWork(a2, v6);
+            SendMessage(a2, (int)a3, (int)a3, 1324, (int)a3, BattleEventItem_GetSubID(a1));
+            // v6 = (HandlerParam_Message *)BattleHandler_PushWork(a2, EFFECT_MESSAGE, (int)a3);
+            // BattleHandler_StrSetup(&v6->str, 2u, 1324);
+            // BattleHandler_AddArg(&v6->str, (int)a3);
+            // SubID = BattleEventItem_GetSubID(a1);
+            // BattleHandler_AddArg(&v6->str, SubID);
+            // BattleHandler_PopWork(a2, v6);
         }
     }
 
@@ -624,7 +620,7 @@ extern "C"
             // if (IsModifyItemMove((MoveID)BattleEventVar_GetValue(VAR_MOVE_ID), BattleMon_GetHeldItem(defendingMon))) // CHECK ITEM IS NOT KNOCKED OFF OR CHANGED
             //     return;
 
-            if (BattleMon_IsStatChangeValid(defendingMon, STATSTAGE_SPECIAL_DEFENSE, 1))
+            if (BattleMon_IsStatChangeValid(defendingMon, STATSTAGE_SPECIAL_DEFENSE, 2))
             {
                 ItemEvent_PushRun(battleEventItem, serverFlow, pokemonSlot);
             }
@@ -635,7 +631,7 @@ extern "C"
     {
         if (pokemonSlot == BattleEventVar_GetValue(VAR_MON_ID))
         {
-            ChangeStats(a2, pokemonSlot, pokemonSlot, STATSTAGE_SPECIAL_DEFENSE, 1, 1);
+            ChangeStats(a2, pokemonSlot, pokemonSlot, STATSTAGE_SPECIAL_DEFENSE, 2, 1);
             // spDefenseBoost = (HandlerParam_ChangeStatStage *)BattleHandler_PushWork(a2, EFFECT_CHANGESTATSTAGE, pokemonSlot);
             // spDefenseBoost->poke_cnt = 1;
             // spDefenseBoost->pokeID[0] = (u8)pokemonSlot;
@@ -674,7 +670,7 @@ extern "C"
             // if (IsModifyItemMove((MoveID)BattleEventVar_GetValue(VAR_MOVE_ID), BattleMon_GetHeldItem(defendingMon))) // CHECK ITEM IS NOT KNOCKED OFF OR CHANGED
             //     return;
 
-            if (BattleMon_IsStatChangeValid(defendingMon, STATSTAGE_DEFENSE, 1))
+            if (BattleMon_IsStatChangeValid(defendingMon, STATSTAGE_DEFENSE, 2))
             {
                 ItemEvent_PushRun(battleEventItem, serverFlow, pokemonSlot);
             }
@@ -685,7 +681,7 @@ extern "C"
     {
         if (pokemonSlot == BattleEventVar_GetValue(VAR_MON_ID))
         {
-            ChangeStats(a2, pokemonSlot, pokemonSlot, STATSTAGE_DEFENSE, 1, 1);
+            ChangeStats(a2, pokemonSlot, pokemonSlot, STATSTAGE_DEFENSE, 2, 1);
             // defenseBoost = (HandlerParam_ChangeStatStage *)BattleHandler_PushWork(a2, EFFECT_CHANGESTATSTAGE, pokemonSlot);
             // defenseBoost->poke_cnt = 1;
             // defenseBoost->pokeID[0] = (u8)pokemonSlot;
@@ -1050,7 +1046,7 @@ extern "C"
             result = BattleEventVar_RewriteValue(VAR_NO_EFFECT_FLAG, 1);
             if (result)
             {
-                SendMessage(a2, (int)a3, (int)a3, 210, (int)a3, 0);
+                SendMessage(a2, (int)a3, (int)a3, 210, (int)a3, 999);
 
                 // v7 = (HandlerParam_Message *)BattleHandler_PushWork(a2, EFFECT_MESSAGE, (int)a3);
                 // BattleHandler_StrSetup(&v7->str, 2u, 210);
@@ -1071,7 +1067,7 @@ extern "C"
             if (!Value || a3[1] != Value)
             {
                 // BattleHandler_PushRun(a1, EFFECT_ABILITY_POPUP_ADD, a2);
-                SendMessage(a1, (int)a2, (int)a2, 1297, (int)a2, 0);
+                SendMessage(a1, (int)a2, (int)a2, 1297, (int)a2, 999);
                 // v9 = (HandlerParam_Message *)BattleHandler_PushWork(a1, EFFECT_MESSAGE, a2);
                 // BattleHandler_StrSetup(&v9->str, 2u, 1297);
                 // BattleHandler_AddArg(&v9->str, a2);
@@ -1588,7 +1584,7 @@ extern "C"
             // BattleHandler_AddArg(&v8->str, (int)a3);
             // BattleHandler_AddArg(&v8->str, BattleEventItem_GetSubID((BattleEventItem *)a1));
             // BattleHandler_PopWork(a2, v8);
-            SendMessage(a2, (int)a3, (int)a3, 1192, (int)a3, BattleEventItem_GetSubID((BattleEventItem *)a1));
+            SendMessage(a2, (int)a3, (int)a3, 1192, (int) a3, BattleEventItem_GetSubID((BattleEventItem *)a1));
             ChangeStats(a2, (int)a3, (int)a3, STATSTAGE_ATTACK, 1, 1);
             ChangeStats(a2, (int)a3, (int)a3, STATSTAGE_SPECIAL_ATTACK, 1, 1);
             ChangeStats(a2, (int)a3, (int)a3, STATSTAGE_ACCURACY, -1, 1);
@@ -1656,7 +1652,7 @@ extern "C"
     {
         if ((int)a3 == BattleEventVar_GetValue(VAR_MON_ID))
         {
-            SendMessage(a2, (int)a3, (int)a3, 1192, (int)a3, BattleEventItem_GetSubID((BattleEventItem *)a1));
+            SendMessage(a2, (int)a3, (int)a3, 1192, (int) a3, BattleEventItem_GetSubID((BattleEventItem *)a1));
             ChangeStats(a2, (int)a3, (int)a3, STATSTAGE_ATTACK, 1, 1);
             ChangeStats(a2, (int)a3, (int)a3, STATSTAGE_SPECIAL_ATTACK, 1, 1);
             // v8 = (HandlerParam_Message *)BattleHandler_PushWork(a2, EFFECT_MESSAGE, (int)a3);
@@ -1723,7 +1719,7 @@ extern "C"
 
         if ((int)a3 == BattleEventVar_GetValue(VAR_MON_ID))
         {
-            SendMessage(a2, (int)a3, (int)a3, 1192, (int)a3, BattleEventItem_GetSubID((BattleEventItem *)a1));
+            SendMessage(a2, (int)a3, (int)a3, 1192, (int) a3, BattleEventItem_GetSubID((BattleEventItem *)a1));
             ChangeStats(a2, (int)a3, (int)a3, STATSTAGE_SPEED, 2, 1);
             ChangeStats(a2, (int)a3, (int)a3, STATSTAGE_ACCURACY, -1, 1);
             // v8 = (HandlerParam_Message *)BattleHandler_PushWork(a2, EFFECT_MESSAGE, (int)a3);
@@ -1783,7 +1779,7 @@ extern "C"
     {
         if ((int)a3 == BattleEventVar_GetValue(VAR_MON_ID))
         {
-            SendMessage(a2, (int)a3, (int)a3, 1192, (int)a3, BattleEventItem_GetSubID((BattleEventItem *)a1));
+            SendMessage(a2, (int)a3, (int)a3, 1192, (int) a3, BattleEventItem_GetSubID((BattleEventItem *)a1));
             ChangeStats(a2, (int)a3, (int)a3, STATSTAGE_SPEED, 2, 1);
 
             // v8 = (HandlerParam_Message *)BattleHandler_PushWork(a2, EFFECT_MESSAGE, (int)a3);
@@ -1838,7 +1834,7 @@ extern "C"
     {
         if ((int)a3 == BattleEventVar_GetValue(VAR_MON_ID))
         {
-            SendMessage(a2, (int)a3, (int)a3, 1192, (int)a3, BattleEventItem_GetSubID((BattleEventItem *)a1));
+            SendMessage(a2, (int)a3, (int)a3, 1192, (int) a3, BattleEventItem_GetSubID((BattleEventItem *)a1));
             ChangeStats(a2, (int)a3, (int)a3, STATSTAGE_ATTACK, 1, 1);
             ChangeStats(a2, (int)a3, (int)a3, STATSTAGE_DEFENSE, 1, 1);
             ChangeStats(a2, (int)a3, (int)a3, STATSTAGE_SPECIAL_ATTACK, 1, 1);
@@ -1925,7 +1921,7 @@ extern "C"
     {
         if ((int)a3 == BattleEventVar_GetValue(VAR_MON_ID))
         {
-            SendMessage(a2, (int)a3, (int)a3, 1192, (int)a3, BattleEventItem_GetSubID((BattleEventItem *)a1));
+            SendMessage(a2, (int)a3, (int)a3, 1192, (int) a3, BattleEventItem_GetSubID((BattleEventItem *)a1));
             ChangeStats(a2, (int)a3, (int)a3, STATSTAGE_DEFENSE, 1, 1);
             ChangeStats(a2, (int)a3, (int)a3, STATSTAGE_SPECIAL_DEFENSE, 1, 1);
             ChangeStats(a2, (int)a3, (int)a3, STATSTAGE_ACCURACY, -1, 1);
@@ -1994,7 +1990,7 @@ extern "C"
     {
         if ((int)a3 == BattleEventVar_GetValue(VAR_MON_ID))
         {
-            SendMessage(a2, (int)a3, (int)a3, 1192, (int)a3, BattleEventItem_GetSubID((BattleEventItem *)a1));
+            SendMessage(a2, (int)a3, (int)a3, 1192, (int) a3, BattleEventItem_GetSubID((BattleEventItem *)a1));
             ChangeStats(a2, (int)a3, (int)a3, STATSTAGE_DEFENSE, 1, 1);
             ChangeStats(a2, (int)a3, (int)a3, STATSTAGE_SPECIAL_DEFENSE, 1, 1);
 

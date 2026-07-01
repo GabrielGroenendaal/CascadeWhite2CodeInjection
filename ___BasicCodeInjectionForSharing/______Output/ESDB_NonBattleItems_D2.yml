@@ -101509,7 +101509,7 @@ Symbols:
   - Name: s00F5_DayCareCalcLevelGain
     Segment: 0x4
     Address: 0x2157e9d
-  - Name: s00F6_DayCareCalcWithdrawCost
+  - Name: s00F6_CheckIfHasAbilityTwo
     Segment: 0x4
     Address: 0x2157ed9
   - Name: s023E_DayCareGetSexForNamePrint
