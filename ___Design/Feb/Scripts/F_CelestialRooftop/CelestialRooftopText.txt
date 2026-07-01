@@ -6,7 +6,35 @@ Sabrina Entity: 5
     Y - 112 
     Z - 15
 
+From Sabrina's starting position she has 3 tiles to move right 
+and 5 tiles to move north 
 
+
+Central Camera Position: 
+    X: 16 
+    Y: 112 
+    Z: 13 
+
+
+Postioning 1 For Battle: 
+    Sabrina: 
+        X: 17 
+        Z: 14
+    Player: 
+        X: 15 
+        Z: 14 
+
+Position 2 For Battle: 
+    Sabrina: 
+        X: 18 
+        Z: 13
+    Player: 
+        X: 14 
+        Z: 13 
+    Alakazam: 
+        X: 18 
+        Z: 14 
+    
 Alakazam Entity: 3
 
 
