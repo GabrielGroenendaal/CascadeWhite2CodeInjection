@@ -1,6 +1,61 @@
 
 Hugh - 6 
 
+Trigger Position for player: 
+    X: 12 
+    Z: 18 
+
+Walking Positioning while Discussing Kyurem for Hugh: 
+    X: 15 
+    Z: 15 
+
+Walking Positioning while Discussing Kyurem for Player: 
+    X: 9 
+    Z: 15 
+
+Camera Positioning for Discussing Kyurem: 
+    X: 12 
+    Z: 15 
+
+Hugh Posiotning when SPeaking to player to snap out of it 
+    X: 9 
+    Z: 13 
+
+Hugh Position when Confronting Zinzolin: 
+    X: 13 
+    Z: 16 
+
+Player Positioning when Confronting Zinzolin: 
+    X: 11 
+    Z: 16 
+
+Zinzolin Position when confronting: 
+    X: 12 
+    Z: 18 
+
+Kyurem Position when Summoned: 
+    X: 11 
+    Z: 14 
+
+Shadow Triad Left  Position WHen Summoned: 
+    X: 9 
+    Z: 16
+
+Shadow Triad Right Postion when Summoned: 
+    X: 15
+    Z: 16 
+
+Janine SPawn 1: 
+    X: 8 
+    Z: 15
+
+Janine Spawn 2:  
+    X: 12 
+    Z :16 
+
+
+
+Janine Position when spawned 
 Shadow Triad 1 - 3 
 Shadow Triad 2 - 2
 Janine - 5
