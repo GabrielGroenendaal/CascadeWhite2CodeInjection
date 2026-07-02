@@ -2579,8 +2579,9 @@ extern "C"
             // }
 
             Weather = ServerEvent_GetWeather(a1);
-
-            ServerControl_ViewEffect(a1, weatherAnims[Weather], 6, 6, 0, 0);
+            if (Weather > 0){
+                ServerControl_ViewEffect(a1, weatherAnims[Weather], 6, 6, 0, 0);
+            }
             j_j_PokeSet_SeekStart_6(a2);
             for (mon = j_j_PokeSet_SeekNext_12(a2); mon; mon = j_j_PokeSet_SeekNext_12(a2))
             {

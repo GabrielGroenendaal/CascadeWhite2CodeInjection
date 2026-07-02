@@ -1164,7 +1164,8 @@ public class MainEvents {
 		  TurnSouth(11);
 		  Actor.WaitActionFinish();
 
-            Battle.CallTrainerMultiBattle(234, 506, 582, 1);
+            // Battle.CallTrainerMultiBattle(234, 506, 582, 1);
+			Battle.CallTrainerMultiBattle(399, 286, 18, 1);
             isVictory = Battle.IsTrainerVictory();
             if (isVictory != 1){
                 Battle.EndTrainerBattle();

@@ -698,41 +698,46 @@ extern "C"
                 *Var = hiddenAbil;
             }
         }
-        else if (Any == 3){
+        else if (Any == 4){
             if (PokeParty_GetParam(pkm, PF_IsHiddenAbility, 0)){
                 PokeParty_SetParam(pkm, PF_IsHiddenAbility, 0);
                 setAbilityForForm(&pkm->Base, species);
                 PokeParty_RecalcStats(pkm);
+                *Var = PokeParty_GetParam(pkm, PF_Ability, 0);
             }
             currentAbil = PokeParty_GetParam(pkm, PF_Ability, 0);
             if (currentAbil != abil1){
                 PokeParty_SetParam(pkm, PF_ContestCool, ((PokeParty_GetParam(pkm, PF_ContestCool, 0) == 0) ? 1 : 0));
                 setAbilityForForm(&pkm->Base, species);
                 PokeParty_RecalcStats(pkm);
+                *Var = PokeParty_GetParam(pkm, PF_Ability, 0);
             }
         }
-        else if (Any == 4){
+        else if (Any == 5){
             if (PokeParty_GetParam(pkm, PF_IsHiddenAbility, 0)){
                 PokeParty_SetParam(pkm, PF_IsHiddenAbility, 0);
                 setAbilityForForm(&pkm->Base, species);
                 PokeParty_RecalcStats(pkm);
+                *Var = PokeParty_GetParam(pkm, PF_Ability, 0);
             }
             currentAbil = PokeParty_GetParam(pkm, PF_Ability, 0);
             if (currentAbil != abil2){
                 PokeParty_SetParam(pkm, PF_ContestCool, ((PokeParty_GetParam(pkm, PF_ContestCool, 0) == 0) ? 1 : 0));
                 setAbilityForForm(&pkm->Base, species);
                 PokeParty_RecalcStats(pkm);
+                *Var = PokeParty_GetParam(pkm, PF_Ability, 0);
             }
         }
         else if (Any == 6){
             PokeParty_SetHiddenAbil(pkm, species, forme);
             PokeParty_RecalcStats(pkm);
+            *Var = PokeParty_GetParam(pkm, PF_Ability, 0);
         }
         else if (Any == 7) {
             *Var = currentAbil;
         }    
         else if (Any == 8){
-            *Var = 0; 
+            *Var = PokeParty_GetParam(pkm, PF_Ability, 0); 
         }
         else {
             *Var = 0;

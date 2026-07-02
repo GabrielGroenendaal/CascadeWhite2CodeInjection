@@ -1,5 +1,6 @@
 import messages.script.Msg0364.MSGID;
 
+import pokemon.Daycare;
 import Overlay64;
 import event.EVCamera;
 import event.Battle;
@@ -156,8 +157,62 @@ public class MainEvents {
 			// CHANGE THIS LATER
             // Player moves to X = 11, Z = 7 
             // GRunts can run straight down.
+
+				
+	            EVCamera.Init();
+	            EVCamera.Unbind();
+	            EVCamera.MoveTo(2.3652344f, 0.0f, 237.0f, 176.0f, 0.0f, 72.0f, 48);
+	            Approach(255);
+	            Runtime.Sleep(16);
+	            ShowExclamationMark(1);
+				ShowExclamationMark(2);
+				Actor.WaitActionFinish();
+	            EVCamera.Wait();
+	            Message.ActorEx(1024, 32, 1, 5, 0);
+	            Message.CloseAll();
+	            Message.ActorEx(1024, 33, 2, 5, 0);
+	            Message.CloseAll();
+	            EventFlags.Set(569);
+				Message.ActorEx(1024, 34, 1, 5, 0);
+	            Message.CloseAll();
+	            TurnWest8F(2);
+	            ShowExclamationMark(2);
+	            Actor.WaitActionFinish();
+	            Runtime.Sleep(32);
+	            Message.Spiked(40, 2);
+	         
+	
+	            GruntRunsAway(1);
+	            Runtime.Sleep(4);
+	            TurnSouth8F(2);
+			Runtime.Sleep(20);
+			TurnSouth8F(255);
+	            Actor.WaitActionFinish();
+	            Actor.Hide(1);
+	  		  Message.CloseAll();
+			  Runtime.Sleep(32);
+	            HopDown(2);
+	            HopDown(2);
+	            TurnNorth8F(255);
+	            Actor.WaitActionFinish();
+	            Message.Spiked(41, 2);
+	          
+	            
+	            EVCamera.MoveToDefault(64);
+	            GruntRunsAway(2);
+	            Runtime.Sleep(24);
+	            TurnSouth8F(255);
+	            Actor.WaitActionFinish();
+	            Actor.Hide(2);
+	            EVCamera.Wait();
+	            EVCamera.Rebind();
+	            EVCamera.End();
+	            Message.CloseAll();
+	            
 			EventWorks.Set(16635, 1);
 			EventFlags.Set(357);
+			EventFlags.Set(838);
+			EventFlags.Set(839);
 			EventFlags.Set(569); // Despawns the grunts
 			goto LABEL_0394;
 		}
@@ -334,12 +389,13 @@ public class MainEvents {
 
         Sound.SEPlay(1369);
         EventFlags.Clear(836);
-        Actor.SetGPos(0, 11, 0, 16, 0);
+        Actor.SetGPos(0, 11, 0, 17, 0);
         Actor.Show(0);
+        WalkNorth8F(0);
         Sound.SEWait();
         WordSet.LoadPlayerName(0);
         WordSet.LoadRivalName(1);
-        Message.ActorEx(1024, 37, 0, 6, 0);
+        Message.ActorEx(1024, 37, 0, 1, 1);
         Message.CloseAll();
 
         Player.GetGPos(playerX, playerZ);
@@ -364,7 +420,7 @@ public class MainEvents {
             offset = 0;
         }
         TurnSouth8F(255);
-        Actor.WalkRoute(0, (playerX + offset), (playerZ + 1), 0, 8, 0);
+        Actor.WalkRoute(0, (playerX + offset), (playerZ + 1), 0, 4, 0);
         Actor.WaitActionFinish();
         
         Message.ActorEx(1024, 35, 0, 6, 0);
@@ -392,11 +448,16 @@ public class MainEvents {
 		Actor.PauseAll();
 		Sound.SEPlay(1351);
 		Actor.FacePlayer();
+		WordSet.LoadRivalName(1);
 		Message.Actor(1024, 39, 0, 0);
 		Input.LastKeyWait();
 		Message.CloseActor();
 		Runtime.FinishSubEvents();
 		Actor.UnpauseAll();
+    }
+
+    public static void main_10(){
+    		Sound.BGMFadeOut(120);
     }
 
 	static void sub_001a() { // @ 0x1a
@@ -462,6 +523,11 @@ public class MainEvents {
 		Action0011(4);
 		Action0012(2);
 	}
+
+	static meta void GruntRunsAway(int npcId) : VActionSequence {
+		Action0011(11);
+	}
+	
 
 	static meta void ActionSequence_0288(int npcId) : VActionSequence {
 		Action0011(1);
@@ -549,6 +615,19 @@ public class MainEvents {
 	}
 	static meta void TurnWest8F(int npcId) : VActionSequence {
 		Action0022(1);
+	}
+
+	static meta void WalkNorth8F(int npcId) : VActionSequence {
+		Action000c(1);
+	}
+
+	static meta void ShowExclamationMark(int npcId) : VActionSequence {
+		Action004b(1);
+	}
+
+	static meta void Approach(int npcId) : VActionSequence {
+		Action000e(3);
+		Action000c(1);
 	}
 
 

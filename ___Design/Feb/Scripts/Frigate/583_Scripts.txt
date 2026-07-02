@@ -258,7 +258,8 @@ public class MainEvents {
         else {
             trainerId = 794;
         }
-        Battle.CallTrainerMultiBattle(trainerId, 798, 799, 0);
+        // Battle.CallTrainerMultiBattle(trainerId, 798, 799, 0);
+        Battle.CallTrainerMultiBattle(trainerId, 768, 766, 0);
         battleOutcome();
         skipbattle3:
         

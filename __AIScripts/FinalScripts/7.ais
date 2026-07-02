@@ -1379,7 +1379,7 @@ address_AllyHasJustified:
 	GetHeldItem(attacker)
 	JumpIfStoredNE(item.ability_drill, &deprioritizeBy30)
 	JumpIfStoredNE(item.tera_drill, &deprioritizeBy30)
-	CheckOwnDamageIntoAlly(&address_CheckAllyDamageIntakeForSideTargeting)
+	// CheckOwnDamageIntoAlly(&address_CheckAllyDamageIntakeForSideTargeting)
 	Jump(&deprioritizeBy30)
 
 
@@ -1394,7 +1394,7 @@ address_TriggerAllyWeaknessPolicy:
 	Jump(&deprioritizeBy30)
 
 address_hasSuperEffectiveMoveForWeaknessPolicy:
-	CheckOwnDamageIntoAlly(&address_CheckAllyDamageIntakeForSideTargeting)
+	//CheckOwnDamageIntoAlly(&address_CheckAllyDamageIntakeForSideTargeting)
 	Jump(&deprioritizeBy30)
 
 

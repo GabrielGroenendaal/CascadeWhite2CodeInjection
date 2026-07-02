@@ -41,8 +41,7 @@ Works:
     16528: Giovanni 
     16529: Janine Quest Script
     16530: The script that runs upon initially arriving in the PWT hallway that will despawn all the kanto gym leaders
-    16531: Random generated number for Frigate 
-    
+
 
 Done: 
     Pledge Grove: 

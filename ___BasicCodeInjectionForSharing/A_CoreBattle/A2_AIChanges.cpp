@@ -11,6 +11,7 @@ STRUCT_DECLARE(GameData)
 #define USING_VANILLA_AI false
 #define DEBUGGING_G4_SWITCH_AI false
 #define DAMAGE_CACHE_ENABLED false
+#define TESTING_AISCRIPTS false
 // Uses esdb_newBattle.yml
 
 #pragma region Definitions
@@ -4688,7 +4689,7 @@ extern "C"
         AIConditionalJump(a1, 0, 1, 2, destination);
         return a2->result;
     }
-
+#if TESTING_AISCRIPTS
     /*
 
         --------------------------------------------------------------------------------------------------
@@ -4717,6 +4718,7 @@ extern "C"
         AIConditionalJump(a1, 6, BattleMon_GetValue(a2->defender, VALUE_CURRENT_HP), damage, destination);
         return a2->result;
     }
+#endif
 #pragma endregion
 
 #pragma region AnticipationDodge

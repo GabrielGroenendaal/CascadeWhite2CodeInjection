@@ -9,6 +9,42 @@
 */
 
 
+
+B2B2B2B Trainers: 
+    Ooze Trainer: 
+        Muk 
+        Reuniclus 
+        Jellicent-F
+        Ditto 
+    
+    Pig Trainer: 
+        Primeape 
+        Emboar 
+        Grumpig 
+        Swoobat
+        Mamoswine 
+    
+    Monkeys
+        Ambipom 
+        Vigoroth 
+        Simisage 
+        Electivire 
+        Infernape 
+    
+    Rodents: 
+        Pachirisu 
+        Sandslash 
+        Typhlosion
+        Azumarill 
+        Raticate 
+
+
+    Implement the Marine Tube Gate Event 
+    Implement the Undella Town Event 
+    Implement the Celestial Tower Event 
+
+    Fix the text description for Sand Attack 
+    
     Scripting: 
         - Implement the Celestial Tower Event 
         - Implement an Event to Marine Tube: 
@@ -19,6 +55,7 @@
             - Doesn't matter if its' gamey, it's just good QoL. Use a porygon I guess. 
     
     Dialogue: 
+        - Double check to see if we kept the changes we made to the Benga scene in Lacunosa anywhere, if not. Redo them. 
         - Workshop the Janine and Blaine Dialogues 
         - Go over the Hugh Dialogues for Chargestone Cave 
     

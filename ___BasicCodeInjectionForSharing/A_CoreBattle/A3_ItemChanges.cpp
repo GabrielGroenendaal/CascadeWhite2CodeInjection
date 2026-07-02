@@ -603,6 +603,8 @@ extern "C"
             }
         }
     }
+
+
     /*
 
         ----------------------------------------------------------------------------------------------------
@@ -647,9 +649,9 @@ extern "C"
         {EVENT_USE_ITEM_TEMP, (ITEM_HANDLER_FUNC)HandlerMarangaBerryUse},
     };
 
-    ITEM_TRIGGERTABLE *EventAddWikiBerry(int *a1)
+    ITEM_TRIGGERTABLE *THUMB_BRANCH_EventAddWikiBerry(int *a1)
     {
-        *a1 = ARRAY_COUNT(MarangaBerryHandlers);
+        *a1 = 3;
         return MarangaBerryHandlers;
     }
 
@@ -697,9 +699,9 @@ extern "C"
         {EVENT_USE_ITEM_TEMP, (ITEM_HANDLER_FUNC)HandlerKeeBerryUse},
     };
 
-    ITEM_TRIGGERTABLE *EventAddAguavBerry(int *a1)
+    ITEM_TRIGGERTABLE *THUMB_BRANCH_EventAddAguavBerry(int *a1)
     {
-        *a1 = ARRAY_COUNT(KeeBerryHandlers);
+        *a1 = 3;
         return KeeBerryHandlers;
     }
 

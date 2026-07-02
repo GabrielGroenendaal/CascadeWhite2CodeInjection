@@ -70,6 +70,8 @@ Plasma Frigate:
             797 - Zinzolin Tag Team 
             347 - Zinzolin's Partner Kyurem 
 
+            812 - Left Spinner
+            343 - Right Spinner 
             428 OR 443 - First Password, Top Left Room
             436 OR 451 - Plasma Card Giver in the Mess Hall (Bottom Left: 583)
             427 OR 442 - Other Trainer in the Mess Hall (Bottom Left: 583)
@@ -161,7 +163,3 @@ Opelucid City:
     Trainers: 
         - Tate 
         - Liza 
-
-
-
-

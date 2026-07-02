@@ -850,7 +850,7 @@ public class MainEvents {
         EventFlags.Set(1520 + 800);
         EventFlags.Set(1520 + 801);
         EventFlags.Set(1520 + 802);
-		EventFlags.Set(1520 + 812);
+
 		Base.CMD_262(0, 6);
 		Base.CMD_262(1, 31);
 		Base.CMD_262(2, 7);
