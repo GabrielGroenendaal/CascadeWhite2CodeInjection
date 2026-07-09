@@ -489,6 +489,7 @@ public class MainEvents {
 		Message.CloseAll();
 		HopUp(6);
 		Actor.WaitActionFinish();
+		// goto label_doJanine;
 		Message.ActorEx(1024, 37, 6, 2, 1);
 		Message.CloseAll();
 		Message.ActorEx(1024, 201, 6, 2, 0);
@@ -744,9 +745,9 @@ public class MainEvents {
 		Actor.WaitActionFinish();
 		Message.CloseAll();
 
-		goto label_SkipBattle;
-		Battle.CallTrainerBattle(164, 0, 0);
-		goto testBattle;
+		//goto label_SkipBattle;
+		//Battle.CallTrainerBattle(164, 0, 0);
+		//goto testBattle;
 		if (EventWorks.Get(16432) == 2){
 			Battle.CallTrainerMultiBattle(796, 797, 347, 1);
 		}
@@ -756,7 +757,7 @@ public class MainEvents {
 		else {
 			Battle.CallTrainerMultiBattle(794, 797, 347, 1);
 		}
-		testBattle:
+		//testBattle:
 		isVictory = Battle.IsTrainerVictory();
 		if (isVictory != 1){
 			
@@ -897,8 +898,9 @@ public class MainEvents {
 		Actor.Hide(200);
 		Runtime.Sleep(8);
 		ShadowDisappear(5);
+		Actor.WaitActionFinish();
 		Actor.SetGPos(5, 12, 0, 16, 1);
-		ShadowAppear(5);
+		JanineAppear(5);
 		Actor.WaitActionFinish();
 		ShowExclamationMark(2);
 		ShowExclamationMark(3);
@@ -907,6 +909,8 @@ public class MainEvents {
 		Message.ActorEx(1024, 221, 5, 0, 1);
 		Actor.WaitActionFinish();
 		Message.CloseAll();
+
+		label_doJanine:
 		Fade.OutBlackQ();
 		Sound.BGMFadeOut(6);
 		Fade.Wait();
@@ -1366,6 +1370,12 @@ public class MainEvents {
 
 	static meta void ShadowDisappear(int npcId) : VActionSequence {
 		Action00b9(1);
+		Action0045(1);
+	}
+
+	static meta void JanineAppear(int npcId) : VActionSequence {
+		Action0046(1);
+		Action00b9(1);
 	}
 
 	static meta void ActionSequence_0480(int npcId) : VActionSequence {
@@ -1708,6 +1718,8 @@ public class MainEvents {
 	static native void Action003f(int amount) : 0x3f;
 	static native void Action0043(int amount) : 0x43;
 	static native void Action0044(int amount) : 0x44;
+	static native void Action0045(int amount) : 0x45;
+	static native void Action0046(int amount) : 0x46;
 	static native void Action0047(int amount) : 0x47;
 	static native void Action0048(int amount) : 0x48;
 	static native void Action004b(int amount) : 0x4b;

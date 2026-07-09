@@ -3196,7 +3196,7 @@ extern "C"
         { ABIL002_DRIZZLE, ABIL002_DRIZZLE, ABIL002_DRIZZLE},                // PK119_SEAKING = 0x77,
         { ABIL002_DRIZZLE, ABIL148_PATIENT, ABIL033_SWIFT_SWIM},             // PK120_STARYU = 0x78,
         { ABIL002_DRIZZLE, ABIL148_PATIENT, ABIL033_SWIFT_SWIM},             // PK121_STARMIE = 0x79,
-        { ABIL145_SAVANT, ABIL141_MOODY, ABIL149_ILLUSION},                  // PK122_MR_MIME = 0x7A,
+        { ABIL145_SAVANT, ABIL141_MOODY, ABIL107_ANTICIPATION},                  // PK122_MR_MIME = 0x7A,
         { ABIL029_STRONG_BODY, ABIL005_STURDY, ABIL005_STURDY},              // PK123_SCYTHER = 0x7B,
         { ABIL117_SNOW_WARNING, ABIL149_ILLUSION, ABIL081_SNOW_CLOAK},       // PK124_JYNX = 0x7C,
         { ABIL089_IRON_FIST, ABIL083_ANGER_POINT, ABIL042_MAGNET_PULL},                 // PK125_ELECTABUZZ = 0x7D,
@@ -3296,8 +3296,8 @@ extern "C"
         { ABIL045_SAND_STREAM, ABIL055_HUSTLE, ABIL055_HUSTLE},           // PK217_URSARING = 0xD9,
         { ABIL106_AFTERMATH, ABIL087_DRY_SKIN, ABIL070_DROUGHT},          // PK218_SLUGMA = 0xDA,
         { ABIL106_AFTERMATH, ABIL087_DRY_SKIN, ABIL070_DROUGHT},          // PK219_MAGCARGO = 0xDB,
-        { ABIL117_SNOW_WARNING, ABIL081_SNOW_CLOAK, ABIL083_ANGER_POINT}, // PK220_SWINUB = 0xDC,
-        { ABIL117_SNOW_WARNING, ABIL081_SNOW_CLOAK, ABIL083_ANGER_POINT}, // PK221_PILOSWINE = 0xDD,
+        { ABIL117_SNOW_WARNING, ABIL081_SNOW_CLOAK, ABIL077_SLUSH_RUSH}, // PK220_SWINUB = 0xDC,
+        { ABIL117_SNOW_WARNING, ABIL081_SNOW_CLOAK, ABIL077_SLUSH_RUSH}, // PK221_PILOSWINE = 0xDD,
         { ABIL045_SAND_STREAM, ABIL087_DRY_SKIN, ABIL055_HUSTLE},         // PK222_CORSOLA = 0xDE,
         { ABIL119_STAKEOUT, ABIL020_QUICK_DRAW, ABIL141_MOODY},           // PK223_REMORAID = 0xDF,
         { ABIL119_STAKEOUT, ABIL020_QUICK_DRAW, ABIL141_MOODY},           // PK2{ ABIL001_STENCH, ABIL001_STENCH, ABIL001_STENCH},_OCTILLERY = 0xE0,
@@ -3417,8 +3417,8 @@ extern "C"
         { ABIL007_CORROSION, ABIL071_ARENA_TRAP, ABIL119_STAKEOUT},                   //  PK{ ABIL001_STENCH, ABIL001_STENCH, ABIL001_STENCH},6_SEVIPER = 0x150,
         { ABIL045_SAND_STREAM, ABIL025_WONDER_GUARD, ABIL045_SAND_STREAM},   //  PK337_LUNATONE = 0x15{ ABIL001_STENCH, ABIL001_STENCH, ABIL001_STENCH},
         { ABIL070_DROUGHT, ABIL025_WONDER_GUARD, ABIL070_DROUGHT},           //   PK338_SOLROCK = 0x152,
-        { ABIL002_DRIZZLE, ABIL045_SAND_STREAM, ABIL091_ADAPTABILITY},        // PK339_BARBOACH = 0x153,
-        { ABIL002_DRIZZLE, ABIL045_SAND_STREAM, ABIL091_ADAPTABILITY},        // PK340_WHISCASH = 0x154,
+        { ABIL139_GOURMAND, ABIL045_SAND_STREAM, ABIL091_ADAPTABILITY},        // PK339_BARBOACH = 0x153,
+        { ABIL139_GOURMAND, ABIL045_SAND_STREAM, ABIL091_ADAPTABILITY},        // PK340_WHISCASH = 0x154,
         { ABIL002_DRIZZLE, ABIL002_DRIZZLE, ABIL002_DRIZZLE},                // PK341_CORPHISH = 0x155,
         { ABIL002_DRIZZLE, ABIL002_DRIZZLE, ABIL002_DRIZZLE},                // PK342_CRAWDAUNT = 0x156,
         { ABIL045_SAND_STREAM, ABIL003_SPEED_BOOST, ABIL071_ARENA_TRAP},     //  PK343_BALTOY = 0x157,
@@ -3519,7 +3519,7 @@ extern "C"
         { ABIL002_DRIZZLE, ABIL002_DRIZZLE, ABIL002_DRIZZLE},                //   PK436_BRONZOR = 0x1B4,
         { ABIL002_DRIZZLE, ABIL002_DRIZZLE, ABIL002_DRIZZLE},                //   PK437_BRONZONG = 0x1B5,
         { ABIL045_SAND_STREAM, ABIL119_STAKEOUT, ABIL055_HUSTLE},            // PK438_BONSLY = 0x1B6,
-        { ABIL145_SAVANT, ABIL141_MOODY, ABIL149_ILLUSION},                  // PK439_MIME_JR = 0x1B7,
+        { ABIL145_SAVANT, ABIL141_MOODY, ABIL107_ANTICIPATION},                  // PK439_MIME_JR = 0x1B7,
         { ABIL037_HUGE_POWER, ABIL037_HUGE_POWER, ABIL037_HUGE_POWER},       //   PK440_HAPPINY = 0x1B8,
         { ABIL141_MOODY, ABIL141_MOODY, ABIL141_MOODY},                      // PK441_CHATOT = 0x1B9,
         { ABIL149_ILLUSION, ABIL023_SHADOW_TAG, ABIL158_PRANKSTER},          //  PK442_SPIRITOMB = 0x1BA,
@@ -3553,7 +3553,7 @@ extern "C"
         { ABIL107_ANTICIPATION, ABIL110_TENACITY, ABIL122_FLOWER_GIFT},       //  PK470_LEAFEON = 0x1D6,
         { ABIL107_ANTICIPATION, ABIL117_SNOW_WARNING, ABIL081_SNOW_CLOAK},   //   PK471_GLACEON = 0x1D7,
         { ABIL045_SAND_STREAM, ABIL008_SAND_VEIL, ABIL008_SAND_VEIL},        // PK472_GLISCOR = 0x1D8,
-        { ABIL117_SNOW_WARNING, ABIL081_SNOW_CLOAK, ABIL083_ANGER_POINT},    //  PK473_MAMOSWINE = 0x1D9,
+        { ABIL117_SNOW_WARNING, ABIL081_SNOW_CLOAK, ABIL077_SLUSH_RUSH},    //  PK473_MAMOSWINE = 0x1D9,
         { ABIL026_LEVITATE, ABIL026_LEVITATE, ABIL026_LEVITATE},             //  PK474_PORYGON_Z = 0x1DA,
         { ABIL149_ILLUSION, ABIL132_FRIEND_GUARD, ABIL020_QUICK_DRAW},       //   PK475_GALLADE = 0x1DB,
         { ABIL045_SAND_STREAM, ABIL045_SAND_STREAM, ABIL045_SAND_STREAM},    //   PK476_PROBOPASS = 0x1DC,
@@ -3698,7 +3698,7 @@ extern "C"
         { ABIL077_SLUSH_RUSH, ABIL117_SNOW_WARNING, ABIL081_SNOW_CLOAK},     // PK613_CUBCHOO = 0x265,
         { ABIL077_SLUSH_RUSH, ABIL117_SNOW_WARNING, ABIL081_SNOW_CLOAK},     // PK614_BEARTIC = 0x266,
         { ABIL106_AFTERMATH, ABIL117_SNOW_WARNING, ABIL081_SNOW_CLOAK},      // PK615_CRYOGONAL = 0x267,
-        { ABIL107_ANTICIPATION, ABIL107_ANTICIPATION, ABIL107_ANTICIPATION}, // PK616_SHELMET = 0x268,
+        { ABIL087_DRY_SKIN, ABIL107_ANTICIPATION, ABIL107_ANTICIPATION}, // PK616_SHELMET = 0x268,
         { ABIL107_ANTICIPATION, ABIL107_ANTICIPATION, ABIL107_ANTICIPATION}, //   PK617_ACCELGOR = 0x269,
         { ABIL008_SAND_VEIL, ABIL045_SAND_STREAM, ABIL045_SAND_STREAM},      // PK618_STUNFISK = 0x26A,
         { ABIL107_ANTICIPATION, ABIL029_STRONG_BODY, ABIL029_STRONG_BODY},   // PK619_MIENFOO = 0x26B,
@@ -4424,6 +4424,139 @@ extern "C"
 
 #pragma endregion
 
+#pragma region Block Passable
+
+    extern void ServerEvent_BeforeFaint(ServerFlow *a1, BattleMon *a2);
+    extern void ServerControl_SkyDropCheckRelease(ServerFlow *a1, BattleMon *a2, unsigned int a3);
+    extern void AbilityEvent_PauseItemProcessing(BattleMon *a1);
+    extern void ItemEvent_PauseItemProcessing(BattleMon *a1);
+    extern void AbilityEvent_RemoveItem(BattleMon *a1);
+    extern void ItemEvent_RemoveItem(BattleMon *a1);
+    extern void MoveEvent_ForceRemoveAllItems(BattleMon *a1);
+    extern void FindFirstInParty_InitWork(void *a1, ServerFlow *a2);
+    extern void FindFirstInParty_SetRotationBattleFlag(void *a1, ServerFlow *a2);
+    extern int FindFirstInParty_GetNext(void *a1, ServerFlow *a2, BattleMon **a3);
+    extern void BattleMon_CureMoveConditionDependPoke(BattleMon *a1, int a2);
+    extern void SCQueue_AddCommon(void *a1, int a2, ...);
+    extern void BattleField_RemoveAffectedMon(int a1);
+    extern bool ServerControl_ShouldBattleEnd(ServerFlow *a1);
+    extern int ServerControl_UnnerveAction(ServerFlow *a1, int a2);
+    extern BattleMon* PokeCon_GetBattleMon(void *a1, int a2);
+    extern void ServerEvent_AbilityNullified(ServerFlow *a1, BattleMon *a2);
+    extern void BattleMon_CopyBatonPassParams(BattleMon *target, BattleMon *user);
+    extern bool BattleMon_IsSubstituteActive(BattleMon *a1);
+    extern bool Condition_IsNull(ConditionData *a1);
+    extern u8 Condition_GetMonID(ConditionData *a1);
+    extern int j_j_PosPoke_GetPokeExistPos_8(PosPoke *a1, int a2);
+    extern ConditionData Condition_MakeNull();
+    extern void Condition_SetMonID(ConditionData *result, int a2);
+    extern int CureDependentCondition(int result, int a2);
+    struct 	HandlerParam_Header	{unsigned __int32 paramType : 8;unsigned __int32 monID : 5;unsigned __int32 size : 10;unsigned __int32 fDisableAbilityPopups : 1;unsigned __int32 fDisableExecution1 : 1;unsigned __int32 fDisableExecution2 : 1;unsigned __int32 pad : 6;};
+    struct HandlerParam_BatonPass {HandlerParam_Header header;u8 userMonID;u8 targetMonID;};
+
+    void BattleMon_TransferMoveConditionDependPoke(BattleMon *a1, int a2, int a3)
+    {
+        unsigned int i; // r4
+        BattleMon *v5; // r5
+
+        //k::Printf("\nWe're in this function now! a2 is %d and a3 is %d", a2, a3);
+        if ( a2 != 31 )
+        {
+            for ( i = 0; i < 36; ++i )
+            {
+                v5 = (BattleMon *)((char *)a1 + 4 * i);
+                //k::Printf("\n===BattleMon_TransferMoveConditionDependPoke===Checking condition ID is %d",Condition_GetMonID(v5->Conditions[0]));
+                if ( !Condition_IsNull(v5->Conditions[0]) && a2 == Condition_GetMonID(v5->Conditions[0]) )
+                {
+                    //k::Printf("\n===BattleMon_TransferMoveConditionDependPoke===Transferring condition %d from mon %d to mon %d", v5->Conditions[0]->raw, a2, a3);
+                    Condition_SetMonID(v5->Conditions[0], a3);
+
+                }
+            }
+        }
+    }
+
+    void TransferDependentConditions(ServerFlow *a1, BattleMon *user, BattleMon *target)
+    {
+        char v9[4];
+        BattleMon *a1a; // [sp+0h] [bp-8h]
+        int ID = BattleMon_GetID(user);
+        int v7; 
+
+        //k::Printf("\n===TransferDependentConditions===Transferring dependent conditions from mon %d to mon %d", ID, BattleMon_GetID(target));
+        FindFirstInParty_InitWork((void *)v9, a1);
+        FindFirstInParty_SetRotationBattleFlag((void *)v9, a1);
+        while ( FindFirstInParty_GetNext((void *)v9, a1, &a1a) )
+        {
+            BattleMon_TransferMoveConditionDependPoke(a1a, ID, BattleMon_GetID(target));
+        }
+    }
+
+    int THUMB_BRANCH_BattleHandler_BatonPass(ServerFlow *a1, HandlerParam_BatonPass *a2)
+    {
+        BattleMon *mon; // r7
+        BattleMon *v5; // r6
+        int PokeExistPos_8; // r0
+
+        mon = PokeCon_GetBattleMon(a1->pokeCon, a2->userMonID);
+        v5 = PokeCon_GetBattleMon(a1->pokeCon, a2->targetMonID);
+        if ( BattleMon_CheckIfMoveCondition(mon, CONDITION_GASTRO_ACID) )
+        {
+            ServerEvent_AbilityNullified(a1, v5);
+        }
+        TransferDependentConditions(a1, mon, v5);
+        // Add some logic in here that
+        BattleMon_CopyBatonPassParams(v5, mon);
+        SCQueue_AddCommon(a1->serverCommandQueue, 38, a2->userMonID, a2->targetMonID);
+        if ( BattleMon_IsSubstituteActive(v5) )
+        {
+            PokeExistPos_8 = j_j_PosPoke_GetPokeExistPos_8(&a1->posPoke, a2->targetMonID);
+            SCQueue_AddCommon(a1->serverCommandQueue, 81, PokeExistPos_8);
+        }
+        return 1;
+    }
+
+    void THUMB_BRANCH_ServerControl_ClearMonDependentEffects(ServerFlow *a1, BattleMon *a2, int a3)
+    {
+        int ID; // r4
+        int v7; // r0
+        BattleMon *a1a; // [sp+0h] [bp-20h] BYREF
+        char v9[4]; // [sp+4h] [bp-1Ch] BYREF
+
+        ID = BattleMon_GetID(a2);
+        ServerEvent_BeforeFaint(a1, a2);
+        ServerControl_SkyDropCheckRelease(a1, a2, 0);
+        if ( a3 )
+        {
+            AbilityEvent_PauseItemProcessing(a2);
+            ItemEvent_PauseItemProcessing(a2);
+        }
+        else
+        {
+            AbilityEvent_RemoveItem(a2);
+            ItemEvent_RemoveItem(a2);
+        }
+        MoveEvent_ForceRemoveAllItems(a2);
+        FindFirstInParty_InitWork((void *)v9, a1);
+        FindFirstInParty_SetRotationBattleFlag((void *)v9, a1);
+        while ( FindFirstInParty_GetNext((void *)v9, a1, &a1a) )
+        {
+            if ( !BattleMon_GetConditionFlag(a2, CONDITIONFLAG_BATON_PASS) ){
+                BattleMon_CureMoveConditionDependPoke(a1a, ID);
+                v7 = BattleMon_GetID(a1a);
+                SCQueue_AddCommon(a1->serverCommandQueue, 44, v7, ID);
+            }
+        }
+        BattleField_RemoveAffectedMon(ID);
+        SCQueue_AddCommon(a1->serverCommandQueue, 35, ID);
+        if ( !ServerControl_ShouldBattleEnd(a1)
+            && (unsigned __int16)BattleMon_GetValue(a2, VALUE_EFFECTIVE_ABILITY) == ABIL127_UNNERVE )
+        {
+            ServerControl_UnnerveAction(a1, (int)a2);
+        }
+    }
+    
+#pragma endregion
 #pragma region PID
     // extern u32 PML_PersonalGetParam(void *personal, PersonalField field);
     // extern void PML_PersonalFree(void *personal);

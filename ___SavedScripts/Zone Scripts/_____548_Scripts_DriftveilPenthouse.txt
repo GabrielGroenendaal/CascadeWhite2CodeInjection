@@ -1,0 +1,553 @@
+import messages.script.Msg0119.MSGID;
+
+import Base;
+import event.Battle;
+import event.StaticProp;
+import event.actors.Actor;
+import event.actors.Player;
+import event.dialogs.Message;
+import event.dialogs.ListMenu;
+import event.dialogs.YesNoWin;
+import event.funfest.Funfest;
+import pokescript.vm.Math;
+import pokescript.vm.StackCtrl;
+import pokescript.vm.VM;
+import system.EventFlags;
+import system.EventWorks;
+import system.Input;
+import system.Runtime;
+import system.Sound;
+import system.text.WordSet;
+import player.TrainerCard;
+import pokemon.PokeParty;
+import pokemon.Pokedex;
+import system.Fade;
+import system.Field;
+import event.EVCamera;
+import system.RTC;
+
+public class MainEvents {
+	public static void main_1() { // @ 0x12
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 0, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_2() { // @ 0x2e
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Sound.PVPlay(515, 0);
+		Message.Actor(1024, 1, 0, 0);
+		Sound.PVWait();
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+	}
+
+	public static void main_3() { // @ 0x52
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Sound.PVPlay(618, 0);
+		Message.Actor(1024, 2, 0, 0);
+		Sound.PVWait();
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+	}
+
+    public static void main_4() { // @ 0x76
+
+	}
+
+    // Speak with Crobat out of Disguise
+    public static void main_5() { // @ 0x52
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Sound.PVPlay(169, 0);
+		Message.Actor(1024, 6, 0, 0);
+		Sound.PVWait();
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+	}
+
+    // Speak with Drapion Out of Disguise
+    public static void main_6() { // @ 0x52
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Sound.PVPlay(452, 0);
+		Message.Actor(1024, 5, 0, 0);
+		Sound.PVWait();
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+	}
+
+    // Speak with Janine in Disguise
+    public static void main_7() { // @ 0x52
+
+        int yesNo; 
+
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+        Sound.BGMPlay(1211);
+		Message.ActorEx(1024, 7, 6, 0, 0);
+        Sound.BGMFadeOut(120);
+        JanineTurnsAway(6);
+        Message.ActorEx(1024, 8, 6, 0, 0);
+		Message.CloseAll();
+
+        Fade.OutBlackQ();
+		Fade.Wait();
+        Actor.Hide(6);
+        Actor.Hide(2);
+        Actor.Hide(1);
+        EventFlags.Set(3058);
+        EventFlags.Clear(3049);
+        Actor.Show(4);
+        Actor.Show(3);
+        Actor.Show(5);
+        Runtime.Sleep(24);
+        JanineTurnsToward(5);
+        Actor.UnpauseAll();
+        Fade.InBlackQ();
+		Fade.Wait();
+
+        ShowExclamationMark(255);
+        Actor.WaitActionFinish();
+        Sound.BGMPlay(1207);
+        WordSet.LoadPlayerName(0);
+        Message.ActorEx(1024, 9, 5, 0, 0);
+		Message.CloseAll();
+
+        PlayerBacksUpFromJanine();
+        Message.ActorEx(1024, 10, 5, 0, 0);
+        Actor.WaitActionFinish();
+		Message.CloseAll();
+
+        JanineTurnsAway(5);
+        Message.ActorEx(1024, 11, 5, 0, 0);
+        JanineTurnsToward(5);
+        Message.ActorEx(1024, 12, 5, 0, 0);
+        Message.CloseAll();
+        JanineMovesPerpendicularAway(5);
+        Message.ActorEx(1024, 13, 5, 0, 0);
+        JanineTurnsToward(5);
+        Message.ActorEx(1024, 14, 5, 0, 0);
+        Actor.WaitActionFinish();
+        Message.CloseAll();
+        JanineMovesPerpendicularTowards(5);
+        JanineTurnsToward(5);
+        Actor.WaitActionFinish();
+        Message.ActorEx(1024, 15, 5, 0, 0);
+
+        yesNo = YesNoWin.Show();
+        if (yesNo == 1){
+            Message.ActorEx(1024, 16, 5, 0, 0);
+            Message.CloseAll();
+            goto Label_EndJanineEvents;
+        }
+        sub_JanineBattle();
+
+        Label_EndJanineEvents:
+		Runtime.FinishSubEvents();
+	}
+
+    // Speak with Janine out of Disguise
+    public static void main_8() { // @ 0x52
+        int yesNo; 
+
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.ActorEx(1024, 17, 5, 0, 0);
+		yesNo = YesNoWin.Show();
+        if (yesNo == 1){
+            Message.ActorEx(1024, 18, 5, 0, 0);
+            Message.CloseAll();
+            goto Label_EndJanineEvents2;
+        }
+        sub_JanineBattle();
+
+        Label_EndJanineEvents2:
+		Runtime.FinishSubEvents();
+	}
+
+    static void sub_JanineBattle(){
+        int isVictory; 
+
+        Sound.BGMFadeOut(120);
+        Message.CloseAll();
+        Runtime.Sleep(32);
+        Message.ActorEx(1024, 19, 5, 0, 0);
+        Message.CloseAll();
+        ShadowDisappear(5);
+        Runtime.Sleep(8);
+        Actor.WaitActionFinish();
+        Runtime.Sleep(12);
+        ShowQuestionMark(255);
+        Actor.WaitActionFinish();
+        Runtime.Sleep(12);
+        Actor.WalkRoute(255, 3, 6, 0, 16, 0);
+        Actor.WaitActionFinish();
+        Runtime.Sleep(32);
+        Message.Info(20, 2);
+        Message.CloseAll();
+        JanineAmbush();
+        Runtime.Sleep(6);
+        ShowExclamationMark(255);
+        JanineTurnsToward(255);
+
+        //goto label_SkipBattle;
+        // 768
+        Battle.CallTrainerBattle(768, 0, 0);
+        isVictory = Battle.IsTrainerVictory();
+        if (isVictory == 0){
+            Battle.CallTrainerLose();
+            return;
+        }
+        Actor.SetGPos(255, 2, 0, 7, 3);
+        Actor.SetGPos(5, 4, 0, 7, 2);
+        Battle.EndTrainerBattle();
+        goto label_PostSkipBattle;
+        
+        label_SkipBattle: 
+         Fade.OutBlackQ();
+		Fade.Wait();
+        Actor.SetGPos(255, 2, 0, 7, 3);
+        Actor.SetGPos(5, 4, 0, 7, 2);
+        Runtime.Sleep(32);
+        Fade.InBlackQ();
+		Fade.Wait();
+
+
+        label_PostSkipBattle: 
+        Message.ActorEx(1024, 21, 5, 0, 0);
+        Message.CloseAll();
+
+	   Sound.BGMPlay(1207);
+        WalkWest8F(5);
+        Actor.WaitActionFinish();
+        Message.ActorEx(1024, 22, 5, 0, 0);
+        Message.CloseAll();
+        TurnSouth8F(5);
+        Actor.WaitActionFinish();
+        Message.ActorEx(1024, 23, 5, 0, 0);
+        Message.CloseAll();
+        WalkEast8F(5);
+        Actor.WaitActionFinish();
+        Message.ActorEx(1024, 24, 5, 0, 0);
+        Message.CloseAll();
+        TurnWest8F(5);
+        Message.ActorEx(1024, 33, 5, 0, 0);
+        Message.CloseAll();
+        WalkSouth8F(5);
+        Runtime.Sleep(8);
+        WalkSouth8F(5);
+        TurnSouth8F(255);
+        Message.ActorEx(1024, 25, 5, 0, 0);
+        Actor.WaitActionFinish();
+        Message.CloseAll();
+        
+        TurnEast8F(5);
+        Actor.WaitActionFinish();
+        Message.ActorEx(1024, 26, 5, 0, 0);
+        Message.CloseAll();
+
+        JanineReturns(5);
+        Runtime.Sleep(8);
+        TurnEast8F(255);
+        Message.ActorEx(1024, 27, 5, 0, 0);
+        Message.CloseAll();
+        WalkWest8F(5);
+        Actor.WaitActionFinish();
+        Message.ActorEx(1024, 28, 5, 0, 0);
+        Message.CloseAll();
+        Global2805(367, 1);
+
+        Message.ActorEx(1024, 29, 5, 0, 0);
+        Message.CloseAll();
+        PlayerBacksUpWest(5);
+        Message.ActorEx(1024, 30, 5, 0, 0);
+        Actor.WaitActionFinish();
+        Message.CloseAll();
+        TurnSouth8F(5);
+        Actor.WaitActionFinish();
+        Message.ActorEx(1024, 31, 5, 0, 0);
+        Message.CloseAll();
+        TurnWest8F(5);
+        Message.ActorEx(1024, 32, 5, 0, 0);
+        Message.CloseAll();
+
+        TurnEast8F(5);
+        Actor.WaitActionFinish();
+        Sound.BGMFadeOut(120);
+        Message.ActorEx(1024, 34, 5, 0, 1);
+        Message.CloseAll();
+        
+        ShadowDisappear(5);
+        Actor.WaitActionFinish();
+        Fade.OutBlackQ();
+		Fade.Wait();
+        Actor.Hide(4);
+        Actor.Hide(3);
+        Actor.Hide(5);
+        Sound.PVPlay(452, 0);
+		Sound.PVWait();
+        EventFlags.Set(3049);
+        Fade.InBlackQ();
+		Fade.Wait();
+        EventWorks.Set(16522, 1);
+        EventFlags.Set(1520 + 768);
+    }
+
+    static void JanineAmbush(){
+        int playerX; 
+        int playerZ; 
+        Player.GetGPos(playerX, playerZ);
+        int dir = Player.GetDirection();
+        if (dir == 0){
+            Actor.SetGPos(5, playerX, 0, playerZ+1, dir);
+        }
+        else if (dir == 1){
+            Actor.SetGPos(5, playerX, 0, playerZ-1, dir);
+        }
+        else if (dir == 2){
+            Actor.SetGPos(5, playerX+1, 0, playerZ, dir);
+        }
+        else {
+            Actor.SetGPos(5, playerX-1, 0, playerZ, dir);
+        }
+        ShadowAppear(5);
+        
+    }
+    
+    static void PlayerBacksUpFromJanine(){
+        int dir = Player.GetDirection();
+        if (dir == 0){
+            PlayerBacksUpSouth(255);
+        }
+        else if (dir == 1){
+            PlayerBacksUpNorth(255);
+        }
+        else if (dir == 2){
+            PlayerBacksUpWest(255);
+        }
+        else {
+            PlayerBacksUpEast(255);
+        }
+    }
+    static void JanineTurnsToward(int npcEntity){
+        int dir = Player.GetDirection();
+        if (dir == 0){
+            TurnSouth8F(npcEntity);
+        }
+        else if (dir == 1){
+            TurnNorth8F(npcEntity);
+        }
+        else if (dir == 2){
+            TurnEast8F(npcEntity);
+        }
+        else {
+            TurnWest8F(npcEntity);
+        }
+        Actor.WaitActionFinish();
+    }
+
+    static void JanineTurnsAway(int npcEntity){
+        int dir = Player.GetDirection();
+        if (dir == 0){
+            TurnNorth8F(npcEntity);
+        }
+        else if (dir == 1){
+            TurnSouth8F(npcEntity);
+        }
+        else if (dir == 2){
+            TurnWest8F(npcEntity);
+        }
+        else {
+            TurnEast8F(npcEntity);
+        }
+    }
+
+    static void JanineMovesPerpendicularTowards(int npcEntity){
+        int dir = Player.GetDirection();
+        if (dir == 0){
+            WalkEast8F(npcEntity);
+        }
+        else if (dir == 1){
+            WalkWest8F(npcEntity);
+        }
+        else if (dir == 2){
+            WalkSouth8F(npcEntity);
+        }
+        else {
+            WalkNorth8F(npcEntity);
+        }
+    }
+
+    static void JanineMovesPerpendicularAway(int npcEntity){
+        int dir = Player.GetDirection();
+        if (dir == 0){
+            WalkWest8F(npcEntity);
+        }
+        else if (dir == 1){
+            WalkEast8F(npcEntity);
+        }
+        else if (dir == 2){
+            WalkNorth8F(npcEntity);
+        }
+        else {
+            WalkSouth8F(npcEntity);
+        }
+        Actor.WaitActionFinish();
+    }
+
+	static meta void ShadowAppear(int npcId) : VActionSequence {
+		Action0046(1);
+		Action00b8(1);
+	}
+
+	static meta void ShadowDisappear(int npcId) : VActionSequence {
+		Action00b9(1);
+		Action0045(1);
+	}
+
+	static meta void WalkEast8F(int npcId) : VActionSequence {
+		Action000f(1);
+	}
+
+    static meta void JanineReturns(int npcId) : VActionSequence {
+		Action000c(2);
+        Action0022(1);
+	}
+
+    static meta void WalkWest8F(int npcId) : VActionSequence {
+		Action000e(1);
+	}
+
+    static meta void WalkNorth8F(int npcId) : VActionSequence {
+		Action000c(1);
+	}
+
+    static meta void WalkSouth8F(int npcId) : VActionSequence {
+		Action000d(1);
+	}
+
+	static meta void ShowExclamationMark(int npcId) : VActionSequence {
+		Action004b(1);
+	}
+	
+	static meta void ShowEllipses(int npcId) : VActionSequence {
+	        Action00a1(1);
+    }
+
+	static meta void HopLeft(int npcId) : VActionSequence {
+            Action0032(1);
+    }
+
+	static meta void HopRight(int npcId) : VActionSequence {
+		Action0033(1);
+	}
+
+	static meta void HopUp(int npcId) : VActionSequence {
+		Action0030(1);
+	}
+
+	static meta void HopDown(int npcId) : VActionSequence {
+		Action0031(1);
+	}
+
+	static meta void PlayerBacksUpNorth(int npcId) : VActionSequence {
+		Action0047(1);
+		Action0008(1);
+		Action0048(1);
+	}
+    static meta void PlayerBacksUpSouth(int npcId) : VActionSequence {
+		Action0047(1);
+		Action0009(1);
+		Action0048(1);
+	}
+    static meta void PlayerBacksUpEast(int npcId) : VActionSequence {
+		Action0047(1);
+		Action000a(1);
+		Action0048(1);
+	}
+	static meta void PlayerBacksupEast(int npcId) : VActionSequence {
+		Action0047(1);
+		Action000a(1);
+		Action0048(1);
+	}
+    static meta void PlayerBacksUpWest(int npcId) : VActionSequence {
+		Action0047(1);
+		Action000b(1);
+		Action0048(1);
+	}
+    static meta void TurnNorth8F(int npcId) : VActionSequence {
+		Action0020(1);
+	}
+
+	static meta void TurnSouth8F(int npcId) : VActionSequence {
+		Action0021(1);
+	}
+	static meta void TurnEast8F(int npcId) : VActionSequence {
+		Action0023(1);
+	}
+	static meta void TurnWest8F(int npcId) : VActionSequence {
+		Action0022(1);
+	}
+	static meta void ShowQuestionMark(int npcId) : VActionSequence {
+            Action009f(1);
+    }
+    static meta void Global2805(int a1, int a2) : VGlobalCall[2805];
+    
+	static native void Action001f(int amount) : 0x1f;
+	static native void Action001e(int amount) : 0x1e;
+	static native void Action001c(int amount) : 0x1c;
+	static native void Action0006(int amount) : 0x6;
+	static native void Action0007(int amount) : 0x7;
+	static native void Action0008(int amount) : 0x8;
+	static native void Action0009(int amount) : 0x9;
+	static native void Action000b(int amount) : 0xb;
+	static native void Action000a(int amount) : 0xa;
+	static native void Action000c(int amount) : 0xc;
+	static native void Action000d(int amount) : 0xd;
+	static native void Action000e(int amount) : 0xe;
+	static native void Action000f(int amount) : 0xf;
+	static native void Action0010(int amount) : 0x10;
+	static native void Action0011(int amount) : 0x11;
+	static native void Action0012(int amount) : 0x12;
+	static native void Action0013(int amount) : 0x13;
+	static native void Action0014(int amount) : 0x14;
+	static native void Action0015(int amount) : 0x15;
+	static native void Action0020(int amount) : 0x20;
+	static native void Action0021(int amount) : 0x21;
+	static native void Action0022(int amount) : 0x22;
+	static native void Action0023(int amount) : 0x23;
+	static native void Action0024(int amount) : 0x24;
+	static native void Action0025(int amount) : 0x25;
+	static native void Action0026(int amount) : 0x26;
+	static native void Action0027(int amount) : 0x27;
+	static native void Action0030(int amount) : 0x30;
+	static native void Action0031(int amount) : 0x31;
+	static native void Action0032(int amount) : 0x32;
+	static native void Action00b9(int amount) : 0xb9;
+	static native void Action0003(int amount) : 0x3;
+	static native void Action0033(int amount) : 0x33;
+	static native void Action003f(int amount) : 0x3f;
+	static native void Action0043(int amount) : 0x43;
+	static native void Action0044(int amount) : 0x44;
+	static native void Action0045(int amount) : 0x45;
+	static native void Action0046(int amount) : 0x46;
+	static native void Action0047(int amount) : 0x47;
+	static native void Action0048(int amount) : 0x48;
+	static native void Action004b(int amount) : 0x4b;
+	static native void Action00b8(int amount) : 0xb8;
+	static native void Action00a1(int amount) : 0xa1;
+	static native void Action009f(int amount) : 0x9f;
+}

@@ -1,4 +1,8 @@
 
+
+
+
+
 Seaside Cave:
     Trainers: 
         471: Maylene
@@ -45,6 +49,9 @@ Plasma Frigate:
             798 - Tag Battle Mess Hall
             799 - Tag Battle Mess Hall
 
+            343 - Right Hand Spinner in Hallway
+            812 - Left Hand Spinner in Hallway 
+
             (EventFlag 348 / EventWork 16714)
             430 - First Fight of B2B in Bottom Right Room
             441 - Second Fight of B2B in Bottom Right Room
@@ -70,8 +77,6 @@ Plasma Frigate:
             797 - Zinzolin Tag Team 
             347 - Zinzolin's Partner Kyurem 
 
-            812 - Left Spinner
-            343 - Right Spinner 
             428 OR 443 - First Password, Top Left Room
             436 OR 451 - Plasma Card Giver in the Mess Hall (Bottom Left: 583)
             427 OR 442 - Other Trainer in the Mess Hall (Bottom Left: 583)

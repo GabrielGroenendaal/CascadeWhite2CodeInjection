@@ -1918,7 +1918,6 @@ enum MoveCondition
     CONDITION_AQUARING = 0x23,
     CONDITION_24 = 0x24 // ????
 };
-
 enum Types
 #ifdef __cplusplus
     : u8

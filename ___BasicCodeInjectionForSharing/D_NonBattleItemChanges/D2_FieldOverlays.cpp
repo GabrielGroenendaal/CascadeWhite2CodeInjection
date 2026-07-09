@@ -89,7 +89,7 @@ extern "C"
     extern void ShopUI_SetBuyConfirmMessage(ShopUIWork *shop);
     extern void ShopUI_SetStatusDialogue(ShopUIWork *shop, int msgId, int currencyItemID, int plural);
     extern u32 div32(u32 numerator, u32 denominator);
-
+    
     // u32 THUMB_BRANCH_sub_21AC110(ShopUIWork *shop)
     // {
     //     u32 Balance;            // r6
@@ -459,11 +459,16 @@ extern "C"
             }
         }
 
+
         // Unown Checks
         if (pkmData->Species == 201)
         {
             random = GFL_RandomLCAlt(23u);
             PokeParty_ChangeForme(pPkm, random);
+        }
+
+        if (EventWork_FlagGet(GameData_GetEventWork(mgr->gameData), 589) == 1){
+            improveIVs(pPkm);
         }
 
         /* IV Settings */
@@ -1247,7 +1252,7 @@ extern "C"
     extern void sub_21A272C(void **a1, int a2);
     extern void setShakingSpotOff(EncountState *result);
 
-    // extern u8* EventWork_GetFlagBytePtr(EventWorkSave *eventWork, u32 flagId);
+    extern u8* EventWork_GetFlagBytePtr(EventWorkSave *eventWork, u32 flagId);
     // extern _DWORD __ROR4__(_DWORD d, char c);
     // b32 THUMB_BRANCH_EventWork_FlagGet(EventWorkSave *eventWork, int eventBitNum)
     // {

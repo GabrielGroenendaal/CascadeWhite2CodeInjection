@@ -19,6 +19,7 @@ import system.EventFlags;
 import system.EventWorks;
 import system.Input;
 import system.Runtime;
+import system.Field;
 import system.Sound;
 import system.text.WordSet;
 
@@ -913,6 +914,7 @@ public class MainEvents {
     }
 
     // Janine Script
+    // Double check that this accounts for alll player positions. 
     public static void main_39(){
 
         int listMenu;
@@ -926,7 +928,8 @@ public class MainEvents {
         Actor.FacePlayer();
         Player.GetGPos(playerX, playerZ);
         Actor.GetGPos(47, janineX, janineZ);
-        
+        Sound.BGMPlay(1211);
+
 	   WordSet.LoadPlayerName(0);
         Message.Actor(1024, 65, 0, 0);
         Message.CloseAll();
@@ -954,11 +957,14 @@ public class MainEvents {
         Actor.WaitActionFinish();
         TurnEast8F(47);
         Actor.WaitActionFinish();
+        Runtime.Sleep(16);
         TurnWest8F(47);
         Actor.WaitActionFinish();
+        Runtime.Sleep(16);
+        Field.PlayMapBGM();
         JanineLeavesB(47);
         Actor.WaitActionFinish();
-
+    
         Actor.Hide(47);
         Runtime.FinishSubEvents();
 		Actor.UnpauseAll();
@@ -1396,12 +1402,15 @@ public class MainEvents {
 
     static meta void JanineLeavesA(int npcId) : VActionSequence { 
 		Action000d(3);
+        Action0009(2);
 	}
 
     static meta void JanineLeavesB(int npcId) : VActionSequence { 
 		Action0015(10);
 	}
-
+    static meta void HopDown(int npcId) : VActionSequence {
+        Action0031(1);
+    }
 
 	static meta void ShowExclamationMark(int npcId) : VActionSequence { 
 		Action004b(1);
@@ -1536,6 +1545,7 @@ public class MainEvents {
 	
 	static native void Action0000(int amount) : 0x0;
 	static native void Action0001(int amount) : 0x1;
+    static native void Action0009(int amount) : 0x9;
 	static native void Action0003(int amount) : 0x3;
 	static native void Action000c(int amount) : 0xc;
 	static native void Action000d(int amount) : 0xd;

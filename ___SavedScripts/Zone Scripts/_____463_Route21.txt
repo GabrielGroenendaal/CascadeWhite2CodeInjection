@@ -154,23 +154,76 @@ public class MainEvents {
         EventFlags.Clear(857);
         Actor.Show(JanineEntity);
         Actor.Show(CrobatEntity);
-		Runtime.Sleep(32);
+        EVCamera.Init();
+		EVCamera.Unbind();
+		EVCamera.MoveTo(2.3652344f, 0.0f, 237.0f, 12848.0f, -80.01929f, 3856.0f, 1);
+        EVCamera.Wait();
+		
+		Runtime.Sleep(16);
+        Actor.UnpauseAll();
 		Fade.InBlackQ();
 		Fade.Wait();
 
+
 		WordSet.LoadPlayerName(0);
 		WordSet.LoadRivalName(1);
+        ShowQuestionMark(9);
+        Actor.WaitActionFinish();
+        TurnSouth8F(9);
+        Runtime.Sleep(4);
+        TurnNorth8F(255);
+        Runtime.Sleep(4);
+		JanineFlag = EventFlags.Get(1520 + 768);
 		Message.ActorEx(1024, 14, 9, 0, 0);
 		Message.CloseAll();
 
-        // HUGH turns towards Janine 
+        EVCamera.MoveToDefault(64);
         TurnWest8F(9);
+        TurnWest8F(255);
+		if (JanineFlag == 1){
+            Message.ActorEx(1024, 49, JanineEntity, 0, 0);
+        }
+        else {
+            Message.ActorEx(1024, 50, JanineEntity, 0, 0);
+        }
+		TurnSouth8F(18);
+		Message.ActorEx(1024, 54, JanineEntity, 0, 0);
         Actor.WaitActionFinish();
-        Message.ActorEx(1024, 24, 9, 0, 0);
+		Message.CloseAll();
+		EVCamera.Wait();
+		EVCamera.Rebind();
+		EVCamera.End();
+
+        // HUGH turns towards Janine 
+		TurnNorth8F(255);
+        Message.ActorEx(1024, 52, 9, 0, 1);
+		Actor.WaitActionFinish();
+		TurnEast8F(9);
+		TurnEast8F(18);
+		Message.ActorEx(1024, 53, 9, 0, 1);
+        Actor.WaitActionFinish();
+		Message.CloseAll();
+		Sound.BGMFadeOut(128);
+		JanineWalksEast(18);
+		Runtime.Sleep(8);
+		TurnWest8F(9);
+		TurnWest8F(255);
+		Message.ActorEx(1024, 51, JanineEntity, 0, 0);
+        Actor.WaitActionFinish();
+		Message.CloseAll();
+		Sound.MEPlay(1304);
+		Message.System(57, 2);
+		Sound.MEWait();
+		Sound.BGMPlay(1207);
 		Message.CloseAll();
 
-        // Janine Responds Based on if you met and defeated her in Clay Split 
-        JanineFlag = EventFlags.Get(1520 + 768);
+		JanineBacksUp(18);
+		Runtime.Sleep(8);
+		Message.ActorEx(1024, 58, 9, 0, 0);
+        Actor.WaitActionFinish();
+		Message.ActorEx(1024, 55, 9, 0, 0);
+		Message.CloseAll();
+
         if (JanineFlag == 1){
             Message.ActorEx(1024, 26, JanineEntity, 0, 0);
             Message.CloseAll();
@@ -178,12 +231,19 @@ public class MainEvents {
             Actor.WaitActionFinish();
             Message.ActorEx(1024, 27, 9, 0, 0);
             Actor.WaitActionFinish();
+			Message.CloseAll();
+			TurnEast8F(JanineEntity);
             Message.ActorEx(1024, 28, JanineEntity, 0, 0);
+			Actor.WaitActionFinish();
             Message.CloseAll();
         }
         else {
             Message.ActorEx(1024, 25, JanineEntity, 0, 0);
+			TurnEast8F(18);
+			Message.ActorEx(1024, 59, JanineEntity, 0, 0);
+			Actor.WaitActionFinish();
             Message.CloseAll();
+
         }
 
         // Hugh Responds 
@@ -201,10 +261,14 @@ public class MainEvents {
         // Janine Responds again, with different tone depending if you know her.
         if (JanineFlag == 1){
             Message.ActorEx(1024, 31, JanineEntity, 0, 0);
+			TurnSouth8F(18);
+			Message.ActorEx(1024, 61, JanineEntity, 0, 0);
             Message.CloseAll();
         }
         else {
             Message.ActorEx(1024, 30, JanineEntity, 0, 0);
+			TurnSouth8F(18);
+			Message.ActorEx(1024, 60, JanineEntity, 0, 0);
             Message.CloseAll();
         }
 
@@ -226,46 +290,49 @@ public class MainEvents {
 
         // A pause 
         Runtime.Sleep(64);
-
+		EventFlags.Set(557);
         // Janine Exit Dialogue 
         TurnWest8F(9);
+		TurnEast8F(18);
         if (JanineFlag == 1){
-            Message.ActorEx(1024, 34, JanineEntity, 0, 0);
+            Message.ActorEx(1024, 35, JanineEntity, 0, 0);
             Message.CloseAll();
         }
         else {
-            Message.ActorEx(1024, 35, JanineEntity, 0, 0);
+            Message.ActorEx(1024, 34, JanineEntity, 0, 0);
             Message.CloseAll();
         }
 
         // Whatever movement stuff we need to do for Janine 
         Fade.OutBlackQ();
 		Fade.Wait();
+		Sound.BGMFadeOut(264);
         Actor.Hide(JanineEntity);
         Actor.Hide(CrobatEntity);
+        Sound.PVPlay(169, 0);
+        Sound.PVWait();
+        Runtime.Sleep(32);
         Fade.InBlackQ();
 		Fade.Wait();
 
-    
+        Runtime.Sleep(32);
+        
         // Hugh Commments on her Departure
         if (JanineFlag == 1){
             Message.ActorEx(1024, 36, 9, 0, 0);
             Message.CloseAll();
         }
 		TurnSouth8F(9);
+		Runtime.Sleep(4);
+		TurnNorth8F(255);
+		Runtime.Sleep(4);
+		Message.ActorEx(1024, 43, 9, 0, 0);
 		Actor.WaitActionFinish();
-		if (JanineFlag == 1){
-			Message.ActorEx(1024, 48, 9, 0, 0);
-            Message.CloseAll();
-		}
-        else {
-            Message.ActorEx(1024, 43, 9, 0, 0);
-            Message.CloseAll();
-        }
-
+        Message.CloseAll();
         
         // Cheren Arrives 
 		Sound.SEPlay(1369);
+		Field.PlayMapBGM();
 		Actor.Show(11);
 		Actor.WaitActionFinish();
 		Sound.SEWait();
@@ -457,6 +524,14 @@ public class MainEvents {
 		ObjInit.SetWarpGPos(2, 787, 65533, 247);
 	}
 
+	static meta void JanineWalksEast(int npcId) : VActionSequence {
+		Action000f(2);
+	}
+
+	static meta void JanineBacksUp(int npcId) : VActionSequence {
+		Action000e(2);
+	}
+
 	static meta void ActionSequence_02a4(int npcId) : VActionSequence {
 		Action000d(2);
 		Action000f(1);
@@ -554,7 +629,12 @@ public class MainEvents {
 	static meta void TurnSouth8F(int npcId) : VActionSequence {
 		Action0021(1);
 	}
-    
+    static meta void TurnNorth8F(int npcId) : VActionSequence {
+		Action0020(1);
+	}
+    static meta void ShowQuestionMark(int npcId) : VActionSequence {
+            Action009f(1);
+    }
 	static native void Action0001(int amount) : 0x1;
 	static native void Action000c(int amount) : 0xc;
 	static native void Action000d(int amount) : 0xd;
@@ -572,4 +652,5 @@ public class MainEvents {
 	static native void Action004b(int amount) : 0x4b;
 	static native void Action00a1(int amount) : 0xa1;
 	static native void Action00b5(int amount) : 0xb5;
+    static native void Action009f(int amount) : 0x9f;
 }

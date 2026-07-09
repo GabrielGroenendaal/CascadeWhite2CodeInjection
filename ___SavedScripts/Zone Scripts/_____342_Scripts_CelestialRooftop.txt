@@ -26,6 +26,7 @@ import system.Fade;
 import system.Field;
 import event.EVCamera;
 import system.RTC;
+import system.System;
 
 public class MainEvents {
 	public static void main_1() { // @ 0x24
@@ -72,11 +73,15 @@ public class MainEvents {
 		Input.LastKeyWait();
 		Message.CloseInfo();
 		if (EventWorks.Get(16622) != 5) {
-			goto LABEL_00f9;
+			goto LABEL_00ea;
 		}
 		EventWorks.Set(16622, 6);
+		goto LABEL_00f9;
 
 		LABEL_00ea:
+		if (EventFlags.Get(1520 + 769)) {
+			sub_GenerateWildPokemon();
+		}
 
 		LABEL_00f9:
 		v35 = 0;
@@ -181,7 +186,7 @@ public class MainEvents {
 	public static void main_5(){
 		Sound.SEPlay(1351);
 		Sound.PVPlay(101, 0);
-		Message.System(65, 0);
+		Message.System(34, 0);
 		Sound.PVWait();
 		Message.WaitAdvance();
 		Message.CloseAll();
@@ -192,6 +197,7 @@ public class MainEvents {
 	// 16523 = 0
 	public static void main_6(){
 
+		Sound.SEPlay(1351);
 		Message.ActorEx(1024, 8, 5, 2, 0);
 		Message.CloseAll();
 		ShowExclamationMark(255);
@@ -200,7 +206,7 @@ public class MainEvents {
 
 		EVCamera.Init();
         EVCamera.Unbind();
-        EVCamera.MoveTo(2.3652344f, 0.0f, 237.0f, 256.0f, 1792.0f, 224.0f, 64); // CHANGE THIS LATER
+        EVCamera.MoveTo(2.3652344f, 0.0f, 237.0f, 256.0f, 112.0f, 224.0f, 64); // CHANGE THIS LATER
 		Runtime.Sleep(16);
 		SabrinaPaces(5);
         EVCamera.Wait();
@@ -230,7 +236,7 @@ public class MainEvents {
 
 		EVCamera.Init();
         EVCamera.Unbind();
-        EVCamera.MoveTo(2.3652344f, 0.0f, 237.0f, 256.0f, 1792.0f, 240.0f, 64); // CHANGE THIS LATER
+        EVCamera.MoveTo(2.3652344f, 0.0f, 237.0f, 256.0f, 112.0f, 240.0f, 64); // CHANGE THIS LATER
 		Runtime.Sleep(16);
 		Message.ActorEx(1024, 9, 5, 2, 0);
 		EVCamera.Wait();
@@ -298,32 +304,29 @@ public class MainEvents {
 
 		EVCamera.Init();
         EVCamera.Unbind();
-        EVCamera.MoveTo(2.3652344f, 0.0f, 237.0f, 256.0f, 1792.0f, 208.0f, 64); // CHANGE THIS LATER
+        EVCamera.MoveTo(2.3652344f, 0.0f, 237.0f, 256.0f, 112.0f, 208.0f, 64); // CHANGE THIS LATER
 		Runtime.Sleep(8);
 		SabrinaWalksUp(5);
-		Message.ActorEx(1024, 26, 5, 2, 0);
+		Message.ActorEx(1024, 26, 5, 1, 0);
 		Actor.WaitActionFinish();
 		EVCamera.Wait();
 		Message.CloseAll();
 
-		EVCamera.MoveTo(2.3652344f, 0.0f, 237.0f, 288.0f, 1792.0f, 208.0f, 32); // CHANGE THIS LATER
+		EVCamera.MoveTo(2.3652344f, 0.0f, 237.0f, 288.0f, 112.0f, 208.0f, 32); // CHANGE THIS LATER
 		SabrinaPacesRight(5);
-		Message.ActorEx(1024, 45, 5, 2, 0);
+		Message.ActorEx(1024, 45, 5, 1, 0);
 		Actor.WaitActionFinish();
 		EVCamera.Wait();
 		Message.CloseAll();
-
-		EVCamera.MoveTo(1.8752344f, 0.0f, 237.0f, 288.0f, 1792.0f, 208.0f, 32); // CHANGE THIS LATER
 		TurnNorth8F(5);
-		Message.ActorEx(1024, 46, 5, 2, 0);
+		Message.ActorEx(1024, 46, 5, 1, 0);
 		Actor.WaitActionFinish();
-		EVCamera.Wait();
 		Message.CloseAll();
 
-		EVCamera.MoveTo(2.3652344f, 0.0f, 237.0f, 256.0f, 1792.0f, 240.0f, 32);
+		EVCamera.MoveTo(2.3652344f, 0.0f, 237.0f, 256.0f, 112.0f, 276.0f, 32);
 		SabrinaReturns(5);
 		Runtime.Sleep(16);
-		Message.ActorEx(1024, 27, 5, 2, 0);
+		Message.ActorEx(1024, 27, 5, 1, 0);
 		Actor.WaitActionFinish();
 		EVCamera.Wait();
 		Message.CloseAll();
@@ -331,20 +334,20 @@ public class MainEvents {
 
 		EventWorks.Set(16523, 2);
 
-		Message.ActorEx(1024, 47, 5, 2, 0);
+		Message.ActorEx(1024, 47, 5, 1, 0);
 		yesNo = YesNoWin.Show();
 		if (yesNo == 0){
 			sub_SabrinaBattle();
 		}
 		else {
 			Message.CloseAll();
-			TurnNorth8F(5);
+			WalkNorth8F(5);
 			Actor.WaitActionFinish();
-			Message.ActorEx(1024, 28, 5, 2, 0);
+			Message.ActorEx(1024, 56, 5, 1, 0);
 			Message.CloseAll();
-			EVCamera.MoveToDefault(16);
-			WalkSouthTwoTile(255);
+			WalkSouthOneTile(255);
 			Actor.WaitActionFinish();
+			EVCamera.MoveToDefault(32);
 			EVCamera.Wait();
 			EVCamera.Rebind();
         	EVCamera.End();
@@ -359,24 +362,26 @@ public class MainEvents {
 		int yesNo;
 		EVCamera.Init();
         EVCamera.Unbind();
-		EVCamera.MoveTo(2.3652344f, 0.0f, 237.0f, 256.0f, 1792.0f, 240.0f, 32);
+		EVCamera.MoveTo(2.3652344f, 0.0f, 237.0f, 256.0f, 112.0f, 240.0f, 32);
 		Runtime.Sleep(16);
-		Message.ActorEx(1024, 36, 5, 2, 0);
+		Sound.SEPlay(1351);
+		TurnSouth8F(5);
+		Message.ActorEx(1024, 36, 5, 1, 0);
+		Actor.WaitActionFinish();
 		EVCamera.Wait();
 		yesNo = YesNoWin.Show();
 		if (yesNo == 0){
-
 			sub_SabrinaBattle();
 		}
 		else {
 			Message.CloseAll();
 			TurnNorth8F(5);
 			Actor.WaitActionFinish();
-			Message.ActorEx(1024, 28, 5, 2, 0);
+			Message.ActorEx(1024, 56, 5, 1, 0);
 			Message.CloseAll();
-			EVCamera.MoveToDefault(16);
-			WalkSouthTwoTile(255);
+			WalkSouthOneTile(255);
 			Actor.WaitActionFinish();
+			EVCamera.MoveToDefault(32);
 			EVCamera.Wait();
 			EVCamera.Rebind();
         	EVCamera.End();
@@ -386,15 +391,21 @@ public class MainEvents {
 	}
 
 	static void sub_SabrinaBattle(){
+
+		int isVictory;
+		
 		Message.CloseAll();
 		Message.ActorEx(1024, 48, 5, 2, 0);
 		Message.CloseAll();
-		EVCamera.MoveTo(2.3652344f, 0.0f, 237.0f, 256.0f, 1792.0f, 240.0f, 64);
+		EVCamera.MoveTo(2.3652344f, 0.0f, 237.0f, 256.0f, 112.0f, 240.0f, 64);
 		// Player and Sabrina move to opposite sides of the Arena 
-		//Actor.WalkRoute()
-		//Actor.WalkRoute()
+		PlayerWalksToPositionB(255);
+		Runtime.Sleep(8);
+		SabrinaWalksToPositionA(5);
+		Actor.WaitActionFinish();
 		EVCamera.Wait();
 		
+		Runtime.Sleep(32);
 		Message.ActorEx(1024, 55, 5, 2, 0);
 		Message.CloseAll();
 		
@@ -410,14 +421,14 @@ public class MainEvents {
 		Message.CloseAll();
 		PlayerAdjustTwo(255);
 		Actor.WaitActionFinish();
-		Sound.BGMFadeOut();
+		Sound.BGMFadeOut(120);
 		Message.ActorEx(1024, 54, 5, 2, 0);
 		Message.CloseAll();
 
-		// SabrinaAssumesPosition(5)
-		UnownWarpUp(3);
+		SabrinaAssumesPosition(5);
+		//UnownWarpUp(3);
 		Actor.WaitActionFinish();
-		Actor.SetGPos(3, 4, 112, 5, 2); // CHANGE THIS LATER 
+		Actor.SetGPos(3, 18, 7, 14, 2); // CHANGE THIS LATER 
 		UnownWarpDown(3);
 		Actor.WaitActionFinish();
 		
@@ -436,10 +447,15 @@ public class MainEvents {
 		}
 		EVCamera.Init();
         EVCamera.Unbind();
-		EVCamera.MoveTo(2.3652344f, 0.0f, 237.0f, 256.0f, 1792.0f, 240.0f, 1);
+		EVCamera.MoveTo(2.3652344f, 0.0f, 237.0f, 256.0f, 112.0f, 240.0f, 1);
 		EVCamera.Wait();
 		Battle.EndTrainerBattle();
 		skipbattle: 
+		Fade.OutBlackQ();
+		Fade.Wait();
+		Runtime.Sleep(64);
+		Fade.InBlackQ();
+		Fade.Wait();
 
 		Field.PlayMapBGM();
 		Runtime.Sleep(64);
@@ -450,20 +466,20 @@ public class MainEvents {
 		Message.ActorEx(1024, 50, 5, 2, 0);
 		Message.CloseAll();
 
-		EVCamera.MoveTo(1.8752344f, 0.0f, 237.0f, 288.0f, 1792.0f, 208.0f, 32); // CHANGE THIS LATER
+		EVCamera.MoveTo(2.3652344f, 0.0f, 237.0f, 288.0f, 112.0f, 208.0f, 32); // CHANGE THIS LATER
 		SabrinaDramaticWalk(5);
 		Message.ActorEx(1024, 51, 5, 2, 0);
 		EVCamera.Wait();
 		Actor.WaitActionFinish();
 		Message.CloseAll();
-		TurnEast8F(5);
+		TurnSouth8F(5);
 		Actor.WaitActionFinish();
 		Message.ActorEx(1024, 29, 5, 2, 0);
 		Message.CloseAll();
 
 		EVCamera.MoveToDefault(64);
 		SabrinaReturnsUpToPlay(5);
-		Runtime.Sleep(32);
+		Runtime.Sleep(24);
 		WordSet.LoadPlayerName(0);
 		Message.ActorEx(1024, 30, 5, 2, 0);
 		Message.CloseAll();
@@ -480,20 +496,26 @@ public class MainEvents {
 
 		EVCamera.Init();
         EVCamera.Unbind();
-        EVCamera.MoveTo(2.3652344f, 0.0f, 237.0f, 256.0f, 1792.0f, 240.0f, 32); // CHANGE THIS LATER
+        EVCamera.MoveTo(2.3652344f, 0.0f, 237.0f, 256.0f, 112.0f, 240.0f, 32); // CHANGE THIS LATER
 		SabrinaRepositionsNextToAlakazam(5);
 		Actor.WaitActionFinish();
 		EVCamera.Wait();
 		Message.ActorEx(1024, 33, 5, 2, 0);
 		Message.CloseAll();
+		EVCamera.MoveToDefault(64);
 		UnownWarpUp(5);
-		Runtime.Sleep(4);
-		UnownWarpUp(3);
 		Actor.WaitActionFinish();
 		Actor.Hide(5);
+		UnownWarpUp(3);
+		Actor.WaitActionFinish();
 		Actor.Hide(3);
+		EVCamera.Wait();
+		EVCamera.Rebind();
+        EVCamera.End();
+
 		EventWorks.Set(16523, 5);
 		EventFlags.Set(1520 + 769);
+		EventFlags.Set(3051);
 		Actor.WaitActionFinish();
 	}
 
@@ -504,8 +526,7 @@ public class MainEvents {
 		int form;
 		int level;
 		int isVictory;
-		if (EventFlags.Get(1520 + 769)) {
-			Actor.PauseAll();
+
 			random = System.Random(100);
 			level = System.Random(2) + 39;
 			form = 0;
@@ -516,26 +537,26 @@ public class MainEvents {
 							if (random < 30) {
 								if (random < 20) {
 									if (random < 10) {
-										speciesId = 356; // Togetic
+										speciesId = 176; // Togetic
 									}
 									else {
-										speciesId = 593; // Misdreavus
+										speciesId = 200; // Misdreavus
 									}
 								}
 								else {
-									speciesId = 604; // Noctowl
+									speciesId = 164; // Noctowl
 								}
 							}
 							else {
-								speciesId = 367; // Murkrow
+								speciesId = 198; // Murkrow
 							}
 						}
 						else {
-							speciesId = 368; // Altaria
+							speciesId = 334; // Altaria
 						}
 					}
 					else {
-						speciesId = 369; // Castform
+						speciesId = 351; // Castform
 						form = System.Random(3);
 					}
 				}
@@ -549,6 +570,9 @@ public class MainEvents {
 
 			Sound.PVPlay(speciesId, 0);
 			Sound.PVWait();
+			ShowExclamationMark(255);
+			Message.Info(35, 2);
+			Message.CloseAll();
 			Battle.CallWildBattleEx(speciesId, level, form,  0);	
 			isVictory = Battle.IsWildVictory();
 			if (isVictory != 1){ 
@@ -559,60 +583,81 @@ public class MainEvents {
 			
 			Label_LostWildBattle:
 			Runtime.FinishSubEvents();
-			Actor.UnpauseAll();
-		}
+		
 	}
 
 	
+	static meta void SabrinaWalksToPositionA(int npcId) : VActionSequence {
+		Action000c(1);
+		Action000f(1);
+		Action000c(1);
+		Action0022(1);
+	}
+
+	static meta void PlayerWalksToPositionB(int npcId) : VActionSequence {
+		Action000c(3);
+		Action000e(1);
+		Action000c(2);
+		Action0023(1);
+	}
 
 	// need to change this
 	static meta void SabrinaAssumesPosition(int npcId) : VActionSequence {
-		Action0010(3);
+		Action000b(2);
+		Action0008(1);
+		Action0022(1);
 	}
 
 
 	// need to change this 
 	static meta void SabrinaDramaticWalk(int npcId) : VActionSequence {
-		Action0010(3);
+		Action000b(1);
+	}
+
+	static meta void WalkNorth8F(int npcId) : VActionSequence {
+		Action000c(1);
 	}
 
 	// need to change this 
 	static meta void SabrinaReturnsUpToPlay(int npcId) : VActionSequence {
-		Action0010(3);
+		Action000e(4);
 	}
 
 	static meta void SabrinaApproachesThePlayerToReposition(int npcId) : VActionSequence {
-		Action0010(3);
+		Action000e(1);
 	}
 
 	// NEED TO CHANGE THIS 
 	static meta void SabrinaRepositionsNextToAlakazam(int npcId) : VActionSequence {
-		Action0010(3);
+		Action000f(3);
+		Action0022(1);
 	}
 
 
 
 
 	static meta void PlayerAdjustOne(int npcId) : VActionSequence {
-		Action0010(1);
+		Action000c(1);
+		Action0023(1);
 	}
 
 	static meta void PlayerAdjustTwo(int npcId) : VActionSequence {
-		Action0012(1);
+		Action000e(1);
+		Action0023(1);
 	}
 
 	static meta void SabrinaReturns(int npcId) : VActionSequence {
-		Action000d(3);
-		Action000e(1);
+		Action000d(1);
+		Action000e(2);
 		Action0021(1);
 	}
 
 	static meta void SabrinaWalksUp(int npcId) : VActionSequence {
-		Action0010(3);
+		Action0008(3);
 	}
 
 	static meta void SabrinaPacesRight(int npcId) : VActionSequence {
-		Action0012(2);
+		Action000b(2);
 	}
 
 	static meta void WalkSouthTwoTiles(int npcId) : VActionSequence {
@@ -643,6 +688,15 @@ public class MainEvents {
 		Action0044(1);
 	}
 
+	static meta void WalkSouthOneTile(int npcId) : VActionSequence {
+		Action000d(1);
+	}
+
+	static meta void WalkSouthTwoTile(int npcId) : VActionSequence {
+		Action000d(2);
+	}
+	
+
 	static meta void SabrinaPaces(int npcId) : VActionSequence {
 		Action000e(1);
 		Action000c(2);
@@ -662,12 +716,17 @@ public class MainEvents {
 		Action0020(1);
 		Action003f(1);
 		Action000d(2);
-		Action000f(1);
+		Action000e(1);
 		Action0020(1);
 	}
 
 
 	static meta void Global2805(int a1, int a2) : VGlobalCall[2805];
+
+	static native void Action0008(int amount) : 0x8;
+	static native void Action0009(int amount) : 0x9;
+	static native void Action000a(int amount) : 0xa;
+	static native void Action000b(int amount) : 0xb;
 
 	static native void Action0010(int amount) : 0x10;
 	static native void Action0011(int amount) : 0x11;

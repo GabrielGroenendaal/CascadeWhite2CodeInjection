@@ -1036,6 +1036,16 @@ public class MainEvents {
 		Runtime.FinishSubEvents();
 		Actor.UnpauseAll();
 	}
+
+	public static void main_27() { // @ 0x69d
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Sound.PVPlay(425, 0);
+		Message.Info(100, 2);
+		Sound.PVWait();
+		Message.CloseAll();
+		Runtime.FinishSubEvents();
+	}
 	
     static void handleBattle(int trainerId){
         	int isVictory; 

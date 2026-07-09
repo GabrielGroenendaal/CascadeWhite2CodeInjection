@@ -7,7 +7,7 @@
 7	Fire Punch
 8	Ice Punch
 9	ThunderPunch
-10	Scratch
+10	Supercell Slam
 11	Dual Wingbeat
 12	Guillotine
 13	Razor Winds
@@ -18,7 +18,7 @@
 18	Whirlwind
 19	Fly
 20	Bind
-21	Brutal Swing
+21	Slam
 22	Vine Whip
 23	Stomp
 24	Double Kick
@@ -498,7 +498,7 @@
 498	Chip Away
 499	Clear Smog
 500	Stored Power
-501	Quick Guard
+501	Brutal Swing
 502	Ally Switch
 503	Scald
 504	Shell Smash

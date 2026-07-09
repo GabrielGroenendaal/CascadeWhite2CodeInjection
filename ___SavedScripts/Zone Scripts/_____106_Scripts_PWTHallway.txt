@@ -100,7 +100,7 @@ public class MainEvents {
 	public static void main_5() { // @ 0x17c
 		EventFlags.Set(3052);
 		EventFlags.Set(3050);
-		EventFlags.Set(3052);
+		EventFlags.Set(3056);
 		EventFlags.Set(3054);
 		if (!EventFlags.Get(1520 + 764)){
 		    EventFlags.Set(3042);

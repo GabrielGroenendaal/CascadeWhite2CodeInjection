@@ -458,6 +458,7 @@ public class MainEvents {
 		ShowExclamationMark(9);
 		Actor.WaitActionFinish();
 
+        Sound.BGMPlay(1211);
 		Message.ActorEx(1024, 20, 9, 3, 0);
 		Message.ActorEx(1024, 21, 9, 3, 0);
 		Input.LastKeyWait();
@@ -533,6 +534,7 @@ public class MainEvents {
 		Input.LastKeyWait();
 		Message.CloseAll();
 
+        Sound.BGMFadeOut(120);
 		WalkSlowlyNorth(9);
 		Actor.WaitActionFinish();
 		TurnEast(9);
@@ -545,6 +547,7 @@ public class MainEvents {
 		Actor.WaitActionFinish();
         Actor.SetGPos(9, playerX, 0, playerZ+50, 1);
 		Actor.Hide(9);
+        Field.PlayMapBGM();
 
 		Runtime.FinishSubEvents();
 		Actor.UnpauseAll();

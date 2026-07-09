@@ -610,6 +610,7 @@ extern "C" bool THUMB_BRANCH_SAFESTACK_BattleMon_CheckIfMoveCondition(BattleMon 
     return (a1->Conditions[a2] & 7) != 0;
 }
 
+
 extern "C" void NeutralizingGasEnd(ServerFlow *serverFlow, u32 pokemonSlot)
 {
     BattleField_RemoveNeutralizingGasMon();

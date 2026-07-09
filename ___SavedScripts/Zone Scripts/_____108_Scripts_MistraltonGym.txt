@@ -313,7 +313,7 @@ public class MainEvents {
             EventWorks.Set(16523, 4);
         }
 		if (EventFlags.Get(1520 + 769)){
-			EventFlags.Set(3052);
+			EventFlags.Clear(3052);
 		}
 		clearGatekeepers();
 		
@@ -366,6 +366,7 @@ public class MainEvents {
 		if (!EventFlags.Get(1520 + 256)){
 			EventFlags.Set(1520 + 256);
 		}
+		
 		// Backers Ava and Aya
 		if (!EventFlags.Get(1520 + 252)){
 			EventFlags.Set(1520 + 252);

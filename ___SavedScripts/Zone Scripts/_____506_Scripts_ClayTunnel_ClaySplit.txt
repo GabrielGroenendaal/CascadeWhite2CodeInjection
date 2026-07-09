@@ -228,7 +228,7 @@ public class MainEvents {
 		Actor.PauseAll();
 		Sound.SEPlay(1351);
 		Actor.FacePlayer();
-		Sound.PVPlay(182, 0);
+		Sound.PVPlay(302, 0);
 
 		if (!EventFlags.Get(531)) {
 			Message.Actor(1024, 12, 0, 0);

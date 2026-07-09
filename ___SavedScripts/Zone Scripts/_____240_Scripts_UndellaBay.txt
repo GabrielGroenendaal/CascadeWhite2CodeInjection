@@ -16,6 +16,7 @@ import system.Game;
 import system.Input;
 import system.RTC;
 import system.Runtime;
+import system.Field;
 import system.Sound;
 import system.text.WordSet;
 
@@ -381,38 +382,40 @@ public class MainEvents {
 		int playerY;
 
 		SwimmerEntity = 3; // CHANGE THIS LATER
-		Actor.PauseAll();
 
         Player.GetGPos(playerX, playerY);
 		Actor.GetGPos(SwimmerEntity, swimmerX, swimmerY);
 
-        Message.Spiked(31, 2);
-		ShowExclamationMark(255);
-		Actor.WaitActionFinish();
+        Message.ActorEx(1024, 31, 3, 2, 1); 
 		Message.WaitAdvance();
         Message.CloseAll();
-	
+
+        Sound.BGMFadeOut(120);
+        ShowExclamationMark(255);
         if (playerX > swimmerX){
+            TurnWest8F(255);
+            Actor.WaitActionFinish();
             Fade.OutBlackQ();
-		  Fade.Wait();
-		  TurnWest8F(255);
-		  Actor.WaitActionFinish();
+		    Fade.Wait();
+            Sound.SEPlay(1452);
             Actor.SetGPos(SwimmerEntity, (playerX-1), -6, playerY, 3);
-            Runtime.Sleep(32);
+            Runtime.Sleep(40);
             Fade.InBlackQ();
-		  Fade.Wait();
+		    Fade.Wait();
         } 
         else {
+            TurnEast8F(255);
+            Actor.WaitActionFinish();
             Fade.OutBlackQ();
-		  Fade.Wait();
-		  TurnEast8F(255);
-		  Actor.WaitActionFinish();
+		    Fade.Wait();
+            Sound.SEPlay(1452);
             Actor.SetGPos(SwimmerEntity, (playerX+1), -6, playerY, 2);
-            Runtime.Sleep(32);
+            Runtime.Sleep(40);
             Fade.InBlackQ();
-		  Fade.Wait();
+		    Fade.Wait();
         }
         
+        Sound.BGMPlay(1120);
 		Message.ActorEx(1024, 27, SwimmerEntity, 0, 0);
 		Message.CloseAll();
 		Message.System(36, 2);
@@ -456,8 +459,8 @@ public class MainEvents {
 
 
 		Label_EndAbyssalRuinsGatekeeper:
+        Field.PlayMapBGM();
 		Runtime.FinishSubEvents();
-		Actor.UnpauseAll();
     }
     
     static meta void TurnNorth8F(int npcId) : VActionSequence {

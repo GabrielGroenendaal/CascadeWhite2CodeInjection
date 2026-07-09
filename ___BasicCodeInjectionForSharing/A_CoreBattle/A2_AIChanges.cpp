@@ -285,7 +285,7 @@ extern "C"
 
             return FIELD_CHARGESTONE;
         }
-        if (zoneId == 339 || zoneId == 338 || zoneId == 340 || zoneId == 341 || zoneId == 462 || (zoneId >= 510 && zoneId <= 514) || (zoneId >= 569 && zoneId <= 572))
+        if (zoneId == 339 || zoneId == 338 || zoneId == 340 || zoneId == 341 || zoneId == 342 || zoneId == 462 || (zoneId >= 510 && zoneId <= 514) || (zoneId >= 569 && zoneId <= 572))
         {
             return FIELD_CELESTIAL;
         }
@@ -495,9 +495,9 @@ extern "C"
         {
             v3 = 2;
         }
-        else if (a1 == TYPE_GROUND && a2 == TYPE_FLYING && field == FIELD_CHARGESTONE){
-            v3 = 2;
-        }
+        // else if (a1 == TYPE_GROUND && a2 == TYPE_FLYING && field == FIELD_CHARGESTONE){
+        //     v3 = 2;
+        // }
         else if (a1 == TYPE_GHOST && a2 == TYPE_NORMAL && field == FIELD_CELESTIAL)
         {
             v3 = 2;
@@ -1288,6 +1288,10 @@ extern "C"
             if (!PML_ItemIsBerry(AttackingMon->HeldItem))
             {
                 return 0;
+            }
+            else if (AttackingMon->HeldItem == IT0204_PETAYA_BERRY)
+            {
+                return 6144;
             }
             else
             {

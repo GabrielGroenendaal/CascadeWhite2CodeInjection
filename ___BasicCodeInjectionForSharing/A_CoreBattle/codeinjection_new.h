@@ -477,6 +477,9 @@ extern int ServerControl_StatStageChangeCore(
     int a10);
 extern void HandlerMeFirstPower(int a1, int a2, int a3);
 extern int HandlerCopycat(int a1, ServerFlow *a2, int a3);
+extern void HandlerPinchReactionSwitchIn(BattleEventItem *a1, ServerFlow *a2, unsigned int *a3);
+extern void  HandlerPinchReactionCommon(BattleEventItem *a1, ServerFlow *a2, unsigned int *a3);
+
 extern int  HandlerAssist(int r0_0, int r1_0, unsigned int a3);
     extern ConditionData MakeCondition(MoveCondition a1, BattleMon *a2, ConditionData *a3);
     extern bool  CommonDamageReactCheckCore(ServerFlow *a1, int a2, unsigned int a3);

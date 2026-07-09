@@ -21,6 +21,7 @@ import system.Input;
 import system.Runtime;
 import system.Sound;
 import system.text.WordSet;
+import event.EVCamera;
 
 public class MainEvents {
 	public static void main_1() { // @ 0x830
@@ -286,6 +287,7 @@ public class MainEvents {
 		Actor.SetGPos(2, 198, 2, 396, 2);
 		EventFlags.Set(716);
 		EventFlags.Set(707);
+		EventFlags.Set(3049);
 		EventWorks.Set(16579, 1);
 		EventFlags.Set(2478);
 		Base.CMD_262(1, 9);
@@ -328,15 +330,15 @@ public class MainEvents {
 	}
 
 	public static void main_13() { // @ 0x15c
-        if (TrainerCard.HasBadge(4) && EventFlags.Get(2288) == 0) {
-            Actor.Hide(27);
-            Actor.Hide(20);
-            Actor.Hide(28);
-            return;
-        } 
-        Actor.Hide(29);
-        Actor.Hide(30);
-        Actor.Hide(31);	
+        //if (TrainerCard.HasBadge(4) && EventFlags.Get(2288) == 0) {
+            //Actor.Hide(27);
+            //Actor.Hide(20);
+            //Actor.Hide(28);
+            //return;
+        //} 
+       // Actor.Hide(29);
+        //Actor.Hide(30);
+        //Actor.Hide(31);	
 	}
 
 	public static void main_14() { // @ 0x15e
@@ -684,6 +686,109 @@ public class MainEvents {
 	}
 
 
+    // Encountering Janine in the overworld
+    public static void main_34(){
+		int playerX; 
+		int playerZ; 
+
+        int JANINE = 205;
+        int worker = 29;
+
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		WordSet.LoadPlayerName(0);
+		Message.Info(73, 2);
+		Message.CloseAll();
+		Actor.New(181, 411, 0, 205, 330, 0);
+
+		Player.GetGPos(playerX, playerZ);
+		if (playerX == 180){
+			PlayerRepositionA(255);
+		}
+		else if (playerX == 182){
+			PlayerRepositionB(255);
+		}
+		else {
+			TurnSouth8F(255);
+		}
+		Actor.WalkRoute(205, 181, 405, 0, 8, 0);
+		Actor.WaitActionFinish();
+
+		Message.ActorEx(1024, 80, 205, 0, 0);
+		Message.CloseAll();
+
+		EVCamera.Init();
+        EVCamera.Unbind();
+        EVCamera.MoveTo(2.3652344f, 0.0f, 237.0f, 2752.0f, -32.0f, 6368.0f, 40); // CHANGE THIS LATER
+		JanineMovesUp(205);
+		Runtime.Sleep(8);
+		TurnNorth8F(255);
+		EVCamera.Wait();
+		Message.ActorEx(1024, 74, 205, 0, 0);
+
+		EVCamera.MoveTo(2.3652344f, 0.0f, 237.0f, 2848.0f, 32.0f, 6368.0f, 24); // CHANGE THIS LATER
+		Message.ActorEx(1024, 75, 205, 0, 0);
+		Message.CloseAll();
+        EVCamera.Wait();
+
+		EVCamera.MoveTo(2.3652344f, 0.0f, 237.0f, 2896.0f, 32.0f, 6416.0f, 24);
+		Runtime.Sleep(24);
+		TurnEast8F(205);
+		Runtime.Sleep(4);
+		TurnWest8F(255);
+		Message.ActorEx(1024, 76, 205, 3, 0);
+		Actor.WaitActionFinish();
+		Message.CloseAll();
+		EVCamera.Wait();
+        
+        // EVCamera.MoveTo(2.3652344f, 0.0f, 237.0f, 2848.0f, 32.0f, 6368.0f, 40); // CHANGE THIS LATER
+		ShadowDisappear(205);
+		Actor.WaitActionFinish();
+        // EVCamera.Wait();
+		
+		Actor.SetGPos(205, 177, 2, 398, 3);
+		ShadowAppear(205);
+		Actor.WaitActionFinish();
+
+		ShowExclamationMark(29);
+		TurnWest8F(29);
+		ShadowDisappear(205);
+		Actor.WaitActionFinish();
+
+		Message.ActorEx(1024, 77, 29, 0, 0);
+		Message.CloseAll();
+		
+		WorkerLooksAround(29);
+		Actor.WaitActionFinish();
+		Message.ActorEx(1024, 78, 29, 0, 1);
+		Message.CloseAll();
+
+		Actor.SetGPos(205, 180, 2, 401, 0);
+		ShadowAppear(205);
+		Actor.WaitActionFinish();
+
+		HopDown(29);
+		Message.ActorEx(1024, 79, 29, 0, 1);
+		Actor.WaitActionFinish();
+		Message.CloseAll();
+		EVCamera.MoveToDefault(64);
+		RunsAway(205);
+		Runtime.Sleep(8);
+		RunsAway(29);
+		TurnWest8F(255);
+		Runtime.Sleep(8);
+		TurnSouth8F(255);
+		Actor.WaitActionFinish();
+		EVCamera.Wait();
+        EVCamera.Rebind();
+        EVCamera.End();
+        Actor.Hide(205);
+        Actor.Hide(29);
+        EventFlags.Set(3057);
+        EventWorks.Set(16522, 2);
+		Actor.UnpauseAll();
+    }
+
 	static void sub_06e0() { // @ 0x6e0
 		int v16;
 
@@ -831,6 +936,69 @@ public class MainEvents {
 		v37 = 0;
 	}
 
+	static meta void ShowExclamationMark(int npcId) : VActionSequence {
+		Action004b(1);
+	}
+
+	static meta void JanineMovesUp(int npcId) : VActionSequence {
+		Action000e(1);
+		Action000c(1);
+	}
+	static meta void PlayerRepositionA(int npcId) : VActionSequence {
+		Action000f(1);
+		Action0021(1);
+	}
+
+	static meta void PlayerRepositionB(int npcId) : VActionSequence {
+		Action000e(1);
+		Action0021(1);
+	}
+	
+	static meta void WorkerLooksAround(int npcId) : VActionSequence {
+		Action0023(1);
+		Action003f(1);
+		Action0020(1);
+		Action003f(1);
+		Action0021(1);
+		Action003f(1);
+	}
+	
+	static meta void TurnEast8F(int npcId) : VActionSequence {
+		Action0023(1);
+	}
+	static meta void TurnWest8F(int npcId) : VActionSequence {
+		Action0022(1);
+	}
+
+	static meta void TurnSouth8F(int npcId) : VActionSequence {
+		Action0021(1);
+	}
+
+	static meta void TurnNorth8F(int npcId) : VActionSequence {
+		Action0020(1);
+	}
+
+
+	static meta void HopDown(int npcId) : VActionSequence {
+		Action0013(2);
+		Action0031(1);
+	}
+
+	static meta void RunsAway(int npcId) : VActionSequence {
+		Action0011(15);
+	}
+
+    static meta void ShadowAppear(int npcId) : VActionSequence {
+		Action0046(1);
+		Action00b8(1);
+	}
+
+	static meta void ShadowDisappear(int npcId) : VActionSequence {
+		Action00b9(1);
+		Action0045(1);
+	}
+
+
 	static meta void ActionSequence_0274(int npcId) : VActionSequence {
 		Action004b(1);
 		Action000c(1);
@@ -947,6 +1115,7 @@ public class MainEvents {
 	static native void Action000d(int amount) : 0xd;
 	static native void Action000e(int amount) : 0xe;
 	static native void Action000f(int amount) : 0xf;
+	static native void Action0010(int amount) : 0x10;
 	static native void Action0011(int amount) : 0x11;
 	static native void Action0012(int amount) : 0x12;
 	static native void Action0013(int amount) : 0x13;
@@ -954,8 +1123,13 @@ public class MainEvents {
 	static native void Action0021(int amount) : 0x21;
 	static native void Action0022(int amount) : 0x22;
 	static native void Action0023(int amount) : 0x23;
+	static native void Action0031(int amount) : 0x31;
 	static native void Action003f(int amount) : 0x3f;
+    static native void Action0045(int amount) : 0x45;
+	static native void Action0046(int amount) : 0x46;
 	static native void Action0047(int amount) : 0x47;
 	static native void Action0048(int amount) : 0x48;
 	static native void Action004b(int amount) : 0x4b;
+    static native void Action00b8(int amount) : 0xb8;
+    static native void Action00b9(int amount) : 0xb9;
 }

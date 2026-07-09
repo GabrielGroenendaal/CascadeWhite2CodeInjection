@@ -73,6 +73,13 @@ extern "C"
         return BerryJuiceHandlers;
     }
 
+    ITEM_TRIGGERTABLE *THUMB_BRANCH_EventAddMagoBerry(_DWORD *a1)
+    {
+        *a1 = 5;
+        return BerryJuiceHandlers;
+    }
+
+
     /*
 
 
@@ -183,7 +190,7 @@ extern "C"
         {
             if (checkBSTLowerThan400(serverFlow, pokemonSlot))
             {
-                BattleEventVar_MulValue(VAR_RATIO, 8192);
+                BattleEventVar_MulValue(VAR_RATIO, 6144);
             }
         }
     }
@@ -2416,10 +2423,10 @@ extern "C"
         {
             v13 = 6;
         }
-        // if (BattleMon_GetTurnFlag(a2, TURNFLAG_ACCURACYUP))
-        // {
-        //     BattleEventVar_MulValue(VAR_RATIO, 4915);
-        // }
+        if (BattleMon_GetTurnFlag(a2, TURNFLAG_ACCURACYUP) || BattleMon_CheckIfMoveCondition(a2, CONDITION_ACCURACYUP))
+        {
+            BattleEventVar_MulValue(VAR_RATIO, 6144);
+        }
         v14 = BattleEventVar_GetValue(VAR_RATIO);
         BattleEventVar_Pop();
         v15 = v20 + 6 - v13;

@@ -991,6 +991,7 @@ extern "C"
         //         k::Printf("\nMade it past the GetRealTimeDayPeriod function");
         // #endif
         // Aspertia Gym Trainer 1
+        random = TrainerData_GetParam(foe1TrID, TR_CLASS);
         if (foe1TrID == 171)
         {
             fieldStatus->BattleBGID = 30;
@@ -1000,6 +1001,7 @@ extern "C"
         //         k::Printf("\nMade it past the Aspertia Gym Trainer 1 check");
         // #endif
         // Aspertia Gym Trainer 2
+        random = TrainerData_GetParam(foe1TrID, TR_CLASS);
         if (foe1TrID == 172)
         {
             fieldStatus->BattleBGID = 31;
@@ -1010,6 +1012,7 @@ extern "C"
         //         k::Printf("\nMade it past the Aspertia Gym Trainer 2 check");
         // #endif
         // Cheren
+        random = TrainerData_GetParam(foe1TrID, TR_CLASS);
         if (foe1TrID == 156)
         {
             fieldStatus->BattleBGID = 32;
@@ -1020,6 +1023,7 @@ extern "C"
         //         k::Printf("\nMade it past the Cheren check");
         // #endif
         // Roxie
+        random = TrainerData_GetParam(foe1TrID, TR_CLASS);
         if (foe1TrID == 157)
         {
             fieldStatus->BattleBGID = 42;
@@ -1042,6 +1046,7 @@ extern "C"
         // }
 
         // Misty
+        random = TrainerData_GetParam(foe1TrID, TR_CLASS);
         if (foe1TrID == 765)
         {
             random = TrainerData_GetParam(foe1TrID, TR_CLASS);
@@ -1077,6 +1082,7 @@ extern "C"
         //         k::Printf("\nMade it past the Misty check");
         //         #endif
         // Surge
+        random = TrainerData_GetParam(foe1TrID, TR_CLASS);
         if (foe1TrID == 766)
         {
             random = TrainerData_GetParam(foe1TrID, TR_CLASS);
@@ -1112,6 +1118,7 @@ extern "C"
         // #endif
 
         // Benga
+        random = TrainerData_GetParam(foe1TrID, TR_CLASS);
         if (foe1TrID == 773)
         {
             // #if DEBUGGING_BACKGROUNDS
@@ -1124,6 +1131,7 @@ extern "C"
         //         k::Printf("\nMade it past the Benga check");
         // #endif
         // Fisherman Andrew and Hubert
+        random = TrainerData_GetParam(foe1TrID, TR_CLASS);
         if (foe1TrID == 210)
         {
             random = TrainerData_GetParam(foe1TrID, TR_CLASS);
@@ -1133,7 +1141,8 @@ extern "C"
             fieldStatus->BattlePedestalID = 6;
             return;
         }
-
+        
+        random = TrainerData_GetParam(foe1TrID, TR_CLASS);
         if (foe1TrID == 211)
         {
             fieldStatus->BattlePedestalID = 6;
@@ -1167,18 +1176,22 @@ extern "C"
         //         k::Printf("\nMade it past the Erika check");
         // #endif
         // Janine
-        if (foe1TrID == 768 && zoneId == 96)
+        random = TrainerData_GetParam(foe1TrID, TR_CLASS);
+        if (foe1TrID == 768)
         {
+            if (zoneId == 548){
+                fieldStatus->BattleBGID = 75;
+                return;
+            }
             // #if DEBUGGING_BACKGROUNDS
             //             k::Printf("\nJanine Battle Background Triggered");
             // #endif
-            fieldStatus->BattleBGID = 75;
-            return;
         }
         // #if    DEBUGGING_BACKGROUNDS
         //         k::Printf("\nMade it past the Janine check");
         // #endif
         // Rood
+        random = TrainerData_GetParam(foe1TrID, TR_CLASS);
         if (foe1TrID == 346 && zoneId == 96)
         {
             // #if DEBUGGING_BACKGROUNDS
@@ -1191,6 +1204,7 @@ extern "C"
         //         k::Printf("\nMade it past the Rood check");
         // #endif
         // Clay
+        random = TrainerData_GetParam(foe1TrID, TR_CLASS);
         if (foe1TrID == 158)
         {
             // #if DEBUGGING_BACKGROUNDS

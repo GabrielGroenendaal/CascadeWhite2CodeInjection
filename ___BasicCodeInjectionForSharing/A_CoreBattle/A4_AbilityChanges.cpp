@@ -1897,19 +1897,21 @@ extern "C"
             }
 
             if (BattleMon_GetSpecies(currentMon) == 415) {
-                u32 currentHP = BattleMon_GetValue(currentMon, VALUE_CURRENT_HP);
-                if (currentForm == 0){
-                    if (currentHP > DivideMaxHPZeroCheck(currentMon, 4u)) {
-                        newForm = currentForm + 2;
-                        msgID = 264;
+                if (BattleMon_GetValue(currentMon, VALUE_SEX) == 0){
+                    u32 currentHP = BattleMon_GetValue(currentMon, VALUE_CURRENT_HP);
+                    if (currentForm == 0){
+                        if (currentHP > DivideMaxHPZeroCheck(currentMon, 4u)) {
+                            newForm = currentForm + 2;
+                            msgID = 264;
+                        }
                     }
+                    if (currentForm == 2){
+                        if (currentHP <= DivideMaxHPZeroCheck(currentMon, 4u)) {
+                            newForm = currentForm - 2;
+                            msgID = 265;
+                        }
+                    } 
                 }
-                if (currentForm == 2){
-                    if (currentHP <= DivideMaxHPZeroCheck(currentMon, 4u)) {
-                        newForm = currentForm - 2;
-                        msgID = 265;
-                    }
-                } 
             }
 
 

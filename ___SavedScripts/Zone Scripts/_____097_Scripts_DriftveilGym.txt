@@ -94,6 +94,8 @@ public class MainEvents {
 		Trainer.FlagGet(323);
 		Trainer.FlagGet(324);
 		Trainer.FlagGet(325);
+		Trainer.FlagGet(490);
+		Trainer.FlagGet(110);
 
 		EventFlags.Set(2418);
 		ActionSequence_073c(7);
@@ -926,6 +928,7 @@ public class MainEvents {
         // Despawns Janine and her Pokemon
         if (!EventFlags.Get(3049)){
             EventFlags.Set(3049);
+			EventFlags.Set(3058);
             EventWorks.Set(16522, 4);
         }
 

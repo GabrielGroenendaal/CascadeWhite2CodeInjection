@@ -928,6 +928,18 @@ public class MainEvents {
             EventWorks.Set(16521, 4);
         }
 
+		if (!EventFlags.Get(1520 + 125)){
+			EventFlags.Set(1520 + 125);
+		}
+
+		if (!EventFlags.Get(1520 + 393)){
+			EventFlags.Set(1520 + 393);
+		}
+
+		if (!EventFlags.Get(1520 + 270)){
+			EventFlags.Set(1520 + 270);
+		}
+		
 		EventFlags.Set(509);
 		EventWorks.Set(16486, 20);
 

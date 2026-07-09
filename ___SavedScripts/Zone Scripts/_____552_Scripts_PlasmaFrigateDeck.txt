@@ -228,6 +228,7 @@ public class MainEvents {
 		ActionSequence_13b4(7);
 		ActionSequence_13b4(8);
 		Actor.WaitActionFinish();
+		//goto Label_SkipBattleForTesting;
 		if (EventWorks.Get(16432) != 0) {
 			if (EventWorks.Get(16432) != 1) {
 				goto LABEL_07ee;
@@ -243,6 +244,8 @@ public class MainEvents {
 
 		LABEL_07f8:
 		sub_1268();
+		//Label_SkipBattleForTesting:
+		//sub_Testing();
 		WordSet.LoadRivalName(1);
 		WordSet.LoadPlayerName(0);
 		sub_0a60();
@@ -1070,9 +1073,12 @@ public class MainEvents {
 		Message.CloseAll();
 		ActionSequence_13dc(16);
 		Actor.WaitActionFinish();
+		Actor.Show(29);
+		JanineAppears(29);
 		Message.Info(40, 1);
 		Message.CloseAll();
 		Message.ActorEx(1024, 41, 17, 4, 0);
+		Actor.WaitActionFinish();
 		Message.CloseAll();
 		stealPokemon();
 	}
@@ -1466,6 +1472,11 @@ public class MainEvents {
 		Action0014(4);// North 4 Tiles
 	}
 
+	static meta void JanineAppears(int npcId) : VActionSequence {
+		Action00b8(1);
+		Action003f(2);
+		Action0013(4);
+	}
 	static meta void ThirdGruntApproaches(int npcId) : VActionSequence {
 		Action0015(4); // South 4 Tiles
 		Action0017(1);// East 1

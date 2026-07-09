@@ -624,8 +624,12 @@ public class MainEvents {
 	// 1771 
 
 	public static void main_13() {
-		int v34;
-		int v35;
+		int playerX;
+		int playerZ;
+		int managerX; 
+		int managerZ; 
+		int POND_ENTITY; 
+
 		int camera;
 		// Run the introduction shit if it hasn't been done yet
 		if (EventWorks.Get(16730)==0){
@@ -652,20 +656,45 @@ public class MainEvents {
 		ActionSequence_04ac(0);
 		Actor.WaitActionFinish();
         Sound.SEPlay(1351);
-		Message.ActorEx(1024, 55, 0, 0, 0);
-		Input.LastKeyWait();
+		TurnSouth8F(0);
+		Message.ActorEx(1024, 55, 0, 2, 0);
 		Message.CloseAll();
-		Player.GetGPos(v34, v35);
-		Actor.WalkRoute(0, v34, v35-1, 1, 8, 1);
-        TurnSouth32Frames(0);
-		Actor.WaitActionFinish();
+		Player.GetGPos(playerX, playerZ);
+		Actor.GetGPos(0, managerX, managerZ);
 
-		Message.ActorEx(1024, 56, 0, 0, 0);
+
+		if (playerX != managerX){
+			Actor.WalkRoute(255, managerX, playerZ, 1, 8, 1);
+		}
+		Actor.WalkRoute(0, managerX, playerZ-2, 1, 8, 1);
+		Actor.WaitActionFinish();
+		Message.ActorEx(1024, 56, 0, 2, 0);
+		Message.ActorEx(1024, 99, 0, 2, 0);
 		Message.CloseAll();
-        
+		HopDown(0);
+		Message.ActorEx(1024, 100, 0, 2, 1);
+		Actor.WaitActionFinish();
+		Message.CloseAll();
+
+		WalkEast8F(0);
+		Message.ActorEx(1024, 94, 0, 2, 0);
+		Message.CloseAll();
+		WalkSouthThenTurnWest(0);
+		Runtime.Sleep(8);
+		TurnEast8Frames(255);
+		Actor.WaitActionFinish();
+		Message.ActorEx(1024, 95, 0, 2, 1);
+		Message.CloseAll();
+
+		WalkNorth8F(0);
+		Runtime.Sleep(4);
+		WalkNorth8F(255);
+		Message.ActorEx(1024, 96, 0, 2, 0);
+		Actor.WaitActionFinish();
+		Message.CloseAll();
         EVCamera.Init();
         EVCamera.Unbind();
-        EVCamera.MoveTo(1.2714844f, 0.0f, 178.0f, 240.0f, 0.0f, 448.0f, 194);
+        EVCamera.MoveTo(1.2714844f, 0.0f, 178.0f, 240.0f, 0.0f, 400.0f, 194);
 
         Message.Multi(84, 6, 20, 1);
 		Runtime.Sleep(16);
@@ -698,45 +727,77 @@ public class MainEvents {
 		EVCamera.Wait();
         Fade.OutBlackQ();
 		Fade.Wait();
-		Actor.Hide(55);
         EVCamera.MoveToDefault(1);
         EVCamera.Wait();
         EVCamera.Rebind();
         EVCamera.End();
-        Runtime.Sleep(8);
+        Runtime.Sleep(16);
         Fade.InBlackQ();
 		Fade.Wait();
 
-
-          ShowExclamationMark(0);
-          Actor.WaitActionFinish();
-          Actor.WalkRoute(0, 12, 63, 1, 2, 1);
-          TurnWest(0);
-          Actor.WaitActionFinish();
-          // OrganizerCrashOut1(0);
-		// TurnEast32Frames(0);
-		// Actor.WaitActionFinish();
-            Message.ActorEx(1024, 57, 0, 2, 1);
-            Message.CloseAll();
-          // OrganizerCrashOut2(0);
-          ShowExclamationMark(0);
-          Actor.WaitActionFinish();
-          Actor.WalkRoute(0, 18, 62, 1, 2, 1);
-          Actor.WaitActionFinish();
-		//TurnWest32Frames(0);
-		//Actor.WaitActionFinish();
-        Sound.SEPlay(1351);
-        Message.ActorEx(1024, 58, 0, 2, 1);
-            Message.CloseAll();
-		// TurnSouth32Frames(0);
-          Actor.WalkRoute(0, v34, v35-1, 1, 4, 1);
-          TurhSouth(0);
+		TurnWest8F(0);
+		Runtime.Sleep(4);
+		TurnEast8Frames(255);
+		Message.ActorEx(1024, 97, 0, 2, 0);
 		Actor.WaitActionFinish();
-        Sound.SEPlay(1351);
-		Message.ActorEx(1024, 59, 0, 0, 0);
-		Input.LastKeyWait();
-		EventWorks.Set(16730, 1);
 		Message.CloseAll();
+		TurnEast8Frames(0);
+		Actor.WaitActionFinish();
+		Message.ActorEx(1024, 98, 0, 2, 0);
+		Message.CloseAll();
+        ShowExclamationMark(0);
+		TurnNorth8F(0);
+        Actor.WaitActionFinish();
+        Actor.WalkRoute(0, 12, 63, 1, 2, 1);
+		Runtime.Sleep(12);
+		WalkNorth8F(255);
+        TurnWest(0);
+        Actor.WaitActionFinish();
+        Message.ActorEx(1024, 57, 0, 2, 1);
+        Message.CloseAll();
+        ShowExclamationMark(0);
+        Actor.WaitActionFinish();
+        Actor.WalkRoute(0, 18, 62, 1, 2, 1);
+        Actor.WaitActionFinish();
+        Message.ActorEx(1024, 58, 0, 2, 1);
+    	Message.CloseAll();
+		HopLeft(10);
+		Message.ActorEx(1024, 101, 10, 1, 0); // Replace with Pond Guy ID
+		Message.CloseAll();
+		Player.GetGPos(playerX, playerZ);
+
+        Actor.WalkRoute(0, playerX, playerZ-2, 1, 4, 1);
+		Actor.WaitActionFinish();
+		TurnSouth8F(0);
+		Message.ActorEx(1024, 102, 0, 2, 0);
+		Message.CloseAll();
+		WalkSouthFast(0);
+		ShowExclamationMark(255);
+		Message.ActorEx(1024, 103, 0, 2, 1);
+		Actor.WaitActionFinish();
+		Message.CloseAll();
+
+		MoveBesidePlayer(0);
+		Runtime.Sleep(16);
+		TurnEast8Frames(255);
+		Actor.WaitActionFinish();
+		Message.ActorEx(1024, 104, 0, 2, 0);
+		TurnNorth8F(0);
+		Runtime.Sleep(4);
+		TurnNorth8F(255);
+		Message.ActorEx(1024, 105, 0, 2, 0);
+		Actor.WaitActionFinish();
+		Message.CloseAll();
+		
+		TurnWest8F(0);
+		TurnEast8Frames(255);
+		Message.ActorEx(1024, 106, 0, 2, 1);
+		Actor.WaitActionFinish();
+		Message.CloseAll();
+		Message.ActorEx(1024, 107, 0, 2, 0);
+		Message.CloseAll();
+		EventWorks.Set(16730, 1);
+
 
 		LABEL_FINISHED:
 		Runtime.FinishSubEvents();
@@ -874,7 +935,9 @@ public class MainEvents {
 		Input.LastKeyWait();
 		Message.CloseAll();
 
-		Sound.MEPlay(1311);
+		// Sound.MEPlay(1311);
+        Sound.MEPlay(1340);
+
 		Message.System(67, 1);
 		Sound.MEWait();
 		Input.LastKeyWait();
@@ -971,6 +1034,7 @@ public class MainEvents {
 	public static void main_22(){
 		Actor.PauseAll();
 		Sound.SEPlay(1351);
+        Actor.FacePlayer();
 		Message.ActorEx(1024, 73, 13, 0, 0);
 		Input.LastKeyWait();
 		Message.CloseAll();
@@ -1017,7 +1081,213 @@ public class MainEvents {
 	public static void main_26(){
 		Actor.PauseAll();
 		Sound.SEPlay(1351);
+        Actor.FacePlayer();
 		Message.ActorEx(1024, 77, 16, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseAll();
+        TurnEast8Frames(16); // Fill in with the security guard's ID 
+        Actor.WaitActionFinish();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+
+    // Super Fan #1
+	public static void main_27(){
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 108, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseAll();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+    // Super Fan #2
+	public static void main_28(){
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 109, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseAll();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+    // Super Fan #3
+	public static void main_29(){
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 110, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseAll();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+    // Super Fan #4
+	public static void main_30(){
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 111, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseAll();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+    // Super Fan #5
+	public static void main_31(){
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 112, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseAll();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+
+    // Super Fan #6
+	public static void main_32(){
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 113, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseAll();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+    // Super Fan #7
+	public static void main_33(){
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 114, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseAll();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	// Super Fan #8
+	public static void main_34(){
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 115, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseAll();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	// Super Fan #9
+	public static void main_35(){
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 116, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseAll();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	// Super Fan #10
+	public static void main_36(){
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 117, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseAll();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	// Super Fan #11
+	public static void main_37(){
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 118, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseAll();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	// Super Fan #12
+	public static void main_38(){
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 119, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseAll();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	// Super Fan #13
+	public static void main_39(){
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 120, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseAll();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	// Super Fan #14
+	public static void main_40(){
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 121, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseAll();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+	// SUper Fan #15
+	public static void main_41(){
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 122, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseAll();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+	// SUper Fan #16
+	public static void main_42(){
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 123, 0, 1);
+		Input.LastKeyWait();
+		Message.CloseAll();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+	// SUper Fan #17
+	public static void main_43(){
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 124, 0, 0);
 		Input.LastKeyWait();
 		Message.CloseAll();
 		Runtime.FinishSubEvents();
@@ -1153,6 +1423,17 @@ public class MainEvents {
         Action0032(1);
     }
 
+	static meta void WalkSouthFast(int npcId) : VActionSequence {
+        Action0011(1);
+    }
+
+
+	static meta void MoveBesidePlayer(int npcId) : VActionSequence {
+        Action000f(1);
+		Action000d(1);
+		Action0022(1);
+    }
+
     static meta void HopRight(int npcId) : VActionSequence {
         Action0033(1);
     }
@@ -1180,6 +1461,23 @@ public class MainEvents {
 
     static meta void WalkEastThenNorthThenEast(int npcId) : VActionSequence {
 		Action0019(1);
+	}
+
+	static meta void WalkEast8F(int npcId) : VActionSequence {
+		Action000f(1);
+	}
+
+	static meta void WalkNorth1(int npcId) : VActionSequence {
+		Action000c(1);
+	}
+
+	static meta void WalkNorth8F(int npcId) : VActionSequence {
+		Action000c(2);
+	}
+
+	static meta void WalkSouthThenTurnWest(int npcId) : VActionSequence {
+		Action0011(2);
+		Action0026(1);
 	}
 
     static meta void ShowExclamationMark(int npcId) : VActionSequence {
@@ -1224,6 +1522,7 @@ public class MainEvents {
 	static native void Action000d(int amount) : 0xd;
 	static native void Action000e(int amount) : 0xe;
 	static native void Action000f(int amount) : 0xf;
+	static native void Action0011(int amount) : 0x11;
      static native void Action0014(int amount) : 0x14; // Walk North2F
      static native void Action0015(int amount) : 0x15; // Walk South 2F
      static native void Action0016(int amount) : 0x16; // Walk West 2F
@@ -1232,6 +1531,7 @@ public class MainEvents {
 	static native void Action0020(int amount) : 0x20;
 	static native void Action0022(int amount) : 0x22;
 	static native void Action0023(int amount) : 0x23;
+	static native void Action0026(int amount) : 0x26;
 	static native void Action0033(int amount) : 0x33;
 	static native void Action0030(int amount) : 0x30;
 	static native void Action0031(int amount) : 0x31;

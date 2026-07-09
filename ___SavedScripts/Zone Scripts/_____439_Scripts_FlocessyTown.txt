@@ -2,6 +2,7 @@ import messages.script.Msg0651.MSGID;
 
 import Base;
 import event.EVCamera;
+import event.Battle;
 import event.ObjInit;
 import event.StaticProp;
 import event.actors.Actor;
@@ -101,17 +102,18 @@ public class MainEvents {
 		Message.ActorEx(1024, 47, 0, 0, 0);
 		Input.LastKeyWait();
 		Message.CloseAll();
-		Global2805(75, 10);
+		Global2805(216, 1);
 		Message.ActorEx(1024, 48, 0, 0, 0);
 		Input.LastKeyWait();
 		Message.CloseAll();
+        goto skipShardGift; 
 
 		// EV Camera Stuff, will need to playtest this a lot
 		EVCamera.Init();
 		EVCamera.Unbind();
 
 		// 237.0f is the original a3
-		EVCamera.MoveTo(2.3652344f, 0.0f, 237.0f, 1744.0f, 32.0f, 10928.0f, 40);
+		EVCamera.MoveTo(2.3652344f, 0.0f, 237.0f, 1744.0f, 16.0f, 10928.0f, 48);
 		TurnNorth(0);
 		EVCamera.Wait();
 		Actor.WaitActionFinish();
@@ -129,6 +131,8 @@ public class MainEvents {
 		Message.CloseAll();
 		TurnWest(0);
 		Actor.WaitActionFinish();
+
+        skipShardGift: 
 		Message.ActorEx(1024, 52, 0, 0, 0);
 		Input.LastKeyWait();
 		Message.CloseAll();
@@ -621,6 +625,7 @@ public class MainEvents {
 
     public static void main_21(){
         Actor.PauseAll();
+		Sound.SEPlay(1351);
         Actor.FacePlayer();
         Sound.PVPlay(494, 0);
         Message.Info(53, 1);
@@ -630,6 +635,507 @@ public class MainEvents {
 		Actor.UnpauseAll();
     }
 	
+	// Speaking with Shroomish
+    public static void main_22(){
+		int yesNo;
+		int isVictory; 
+		int wildBattleResult;
+
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Message.Info(60, 2);
+		Message.CloseAll();
+        Actor.FacePlayer();
+        Sound.PVPlay(285, 0);
+        Message.Info(61, 2);
+		Sound.PVWait();
+		Message.CloseAll();
+		Sound.PVPlay(285, 0);
+        Message.Info(62, 2);
+		Sound.PVWait();
+		Message.CloseAll();
+
+		Message.Info(63, 2);
+		yesNo = YesNoWin.Show();
+		if (yesNo == 1){
+			Message.CloseAll();
+			Sound.PVPlay(285, 0);
+			Message.Info(64, 2);
+			Sound.PVWait();
+			Message.CloseAll();
+		}
+		else {
+			Sound.PVPlay(285, 0);
+			Message.Info(62, 2);
+			Message.CloseAll();
+			Sound.PVWait();
+			Battle.CallWildBattle(285, 5, 0);
+			isVictory = Battle.IsWildVictory();
+			if (isVictory == 0){
+				EventFlags.Clear(589);
+				Battle.CallWildLose();
+			}
+			EventFlags.Clear(589);
+			Actor.Hide(15);
+			Battle.EndWildBattle();
+			wildBattleResult = Battle.GetWildBattleResult();
+			if (wildBattleResult == 1){
+				Message.System(65, 2);
+				Message.CloseSystem();
+			}
+			else if (wildBattleResult == 2){
+				Message.System(65, 2);
+				Message.CloseSystem();
+			}
+			else {
+				EventFlags.Set(587);
+			}
+		}
+        Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
+
+	// Speaking with Wingull
+    public static void main_23(){
+		int yesNo;
+		int isVictory; 
+		int wildBattleResult;
+
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+        Actor.FacePlayer();
+        Sound.PVPlay(278, 0);
+        Message.Info(54, 2);
+		Sound.PVWait();
+		Message.Info(55, 2);
+		yesNo = YesNoWin.Show();
+		if (yesNo == 1){
+			Message.Info(59, 2);
+			Message.CloseAll();
+		}
+		else {
+			Message.CloseAll();
+			Message.Info(56, 2);
+			Message.CloseAll();
+			Sound.PVPlay(278, 0);
+			Sound.PVWait();
+			Battle.CallWildBattle(278, 5, 0);
+			isVictory = Battle.IsWildVictory();
+			if (isVictory == 0){
+				EventFlags.Clear(589);
+				Battle.CallWildLose();
+			}
+			EventFlags.Clear(589);
+			Actor.Hide(17);
+			Battle.EndWildBattle();
+			wildBattleResult = Battle.GetWildBattleResult();
+			if (wildBattleResult == 1){
+				Message.System(58, 2);
+				Message.CloseSystem();
+			}
+			else if (wildBattleResult == 2){
+				Message.System(58, 2);
+				Message.CloseSystem();
+			}
+			else {
+				EventFlags.Set(586);
+			}
+		}
+        Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
+
+	// Speaking with Numel
+    public static void main_24(){
+		int yesNo;
+		int isVictory; 
+		int wildBattleResult;
+
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+        Actor.FacePlayer();
+        Sound.PVPlay(322, 0);
+        Message.Info(66, 2);
+		Sound.PVWait();
+		yesNo = YesNoWin.Show();
+		if (yesNo == 1){
+			Message.Info(67, 2);
+			Message.CloseAll();
+		}
+		else {
+			Message.CloseAll();
+			Sound.PVPlay(322, 0);
+			Sound.PVWait();
+			Battle.CallWildBattle(322, 5, 0);
+			isVictory = Battle.IsWildVictory();
+			if (isVictory == 0){
+				EventFlags.Clear(589);
+				Battle.CallWildLose();
+			}
+			EventFlags.Clear(589);
+			Actor.Hide(18);
+			Battle.EndWildBattle();
+			wildBattleResult = Battle.GetWildBattleResult();
+			if (wildBattleResult == 1){
+				Message.System(68, 2);
+				Message.CloseSystem();
+			}
+			else if (wildBattleResult == 2){
+				Message.System(68, 2);
+				Message.CloseSystem();
+			}
+			else {
+				EventFlags.Set(588);
+			}
+		}
+        Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
+
+	// Trying to leave Shroomish
+    public static void main_25(){
+		int playerX; 
+		int playerZ; 
+		int isVictory; 
+		int wildBattleResult; 
+
+        Actor.PauseAll();
+		Sound.PVPlay(285, 0);
+		Sound.PVWait();
+		Player.GetGPos(playerX, playerZ);
+		ShowExclamationMark(255);
+		TurnWest(255);
+		Actor.WalkRoute(15, playerX-1, playerZ, 0, 2, 0);
+		Actor.WaitActionFinish();
+		Sound.PVPlay(285, 0);
+		Message.Spiked(62, 2);
+		Message.CloseAll();
+		Sound.PVWait();
+		EventFlags.Set(589);
+		Battle.CallWildBattle(285, 5, 0);
+		isVictory = Battle.IsWildVictory();
+		if (isVictory == 0){
+			EventWorks.Set(16479, 0);
+			EventFlags.Clear(589);
+			Battle.CallWildLose();
+		}
+		EventFlags.Clear(589);
+		Actor.Hide(15);
+		Battle.EndWildBattle();
+		wildBattleResult = Battle.GetWildBattleResult();
+		if (wildBattleResult == 1){
+			Message.System(65, 2);
+			Message.CloseSystem();
+		}
+		else if (wildBattleResult == 2){
+			Message.System(65, 2);
+			Message.CloseSystem();
+		}
+		else {
+			EventWorks.Set(16479, 0);
+			EventFlags.Set(587);
+		}
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
+
+	// Interacting with the PokeBall
+	public static void main_26(){
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Message.System(70, 2);
+		Message.CloseAll();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	// Blueberry Sign #1
+	public static void main_27(){
+        Actor.PauseAll();
+		Funfest.Broadcast(17, 0);
+		Sound.SEPlay(1351);
+		Message.PlaceSign(71, 2);
+		Message.ClosePlaceSign();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
+
+	// Blueberry Sign #2
+	public static void main_28(){
+        Actor.PauseAll();
+		Funfest.Broadcast(17, 0);
+		Sound.SEPlay(1351);
+		Message.PlaceSign(72, 2);
+		Message.ClosePlaceSign();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
+
+	// Blueberry Representative 
+	public static void main_29(){
+        Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		
+		// Need to figure out the flag for beating the League 
+		// Need to figure out hte flag for beating Kyurem 
+		
+		if (TrainerCard.HasBadge(7)){
+			Message.Actor(1024, 101, 0, 0);
+			goto Label_EndBlueberryRep;
+		}
+		if (TrainerCard.HasBadge(6)){
+			Message.Actor(1024, 100, 0, 0);
+			goto Label_EndBlueberryRep;
+		}
+		if (TrainerCard.HasBadge(5)){
+			Message.Actor(1024, 99, 0, 0);
+			goto Label_EndBlueberryRep;
+		}
+		if (TrainerCard.HasBadge(4)){
+			Message.Actor(1024, 98, 0, 0);
+			goto Label_EndBlueberryRep;
+		}
+		if (TrainerCard.HasBadge(3)){
+			Message.Actor(1024, 97, 0, 0);
+			goto Label_EndBlueberryRep;
+		}
+		if (TrainerCard.HasBadge(2)){
+			Message.Actor(1024, 96, 0, 0);
+			goto Label_EndBlueberryRep;
+		}
+		if (TrainerCard.HasBadge(1)){
+			Message.Actor(1024, 95, 0, 0);
+			goto Label_EndBlueberryRep;
+		}
+		if (TrainerCard.HasBadge(0)){
+			Message.Actor(1024, 94, 0, 0);
+			goto Label_EndBlueberryRep;
+		}
+		Message.Actor(1024, 93, 0, 0);
+
+		Label_EndBlueberryRep:
+		Message.CloseAll();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
+
+	// Blueberry Student #1
+	public static void main_30(){
+        Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 104, 0, 0);
+		Message.CloseAll();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
+
+	// Blueberry Student #2
+	public static void main_31(){
+        Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 105, 0, 0);
+		Message.CloseAll();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
+
+	// Blueberry Student #3
+	public static void main_32(){
+        Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 106, 0, 0);
+		Message.CloseAll();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
+
+	// Blueberry Student #4
+	public static void main_33(){
+        Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 107, 0, 0);
+		Message.CloseAll();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
+
+	// Blueberry Student #5
+	public static void main_34(){
+        Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 108, 0, 0);
+		Message.CloseAll();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
+
+	// Blueberry Student #6
+	public static void main_35(){
+        Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 109, 0, 0);
+		Message.CloseAll();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
+
+	// Blueberry Student #7
+	public static void main_36(){
+        Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 110, 0, 0);
+		Message.CloseAll();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
+
+	// Blueberry Student #8
+	public static void main_37(){
+        Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 111, 0, 0);
+		Message.CloseAll();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
+
+	// Approaching the Blueberry Folks!
+	public static void main_38(){
+		int playerX; 
+		int playerZ; 
+		int yesNo; 
+		Sound.SEPlay(1351);
+		Message.ActorGendered(1024, 73, 74, 23, 2, 0);
+		Message.CloseAll();
+		Player.GetGPos(playerX, playerZ);
+		ShowExclamationMark(255);
+		if (playerZ > 684){
+			TurnNorth(255);
+		}
+		else {
+			TurnWest(255);
+		}
+		Actor.WaitActionFinish();
+		// EV Camera Stuff, will need to playtest this a lot
+		EVCamera.Init();
+		EVCamera.Unbind();
+		EVCamera.MoveTo(2.3652344f, 0.0f, 237.0f, 1744.0f, 16.0f, 10928.0f, 24);
+		WalkSouth(23);
+		if (playerZ < 685){
+			Actor.WaitActionFinish();
+			WalkSouthOnce(255);
+			Actor.WaitActionFinish();
+		}
+		Actor.WalkRoute(255, 109, 684, 0, 8, 0);
+		TurnNorth(255);
+		Actor.WaitActionFinish();
+		EVCamera.Wait();
+		
+		Message.ActorEx(1024, 112, 23, 2, 0);
+		yesNo = YesNoWin.Show();
+		if (yesNo == 0){
+			Message.CloseAll();
+			Sound.BGMFadeOut(120);
+			ShowMusicNote(23);
+			Actor.WaitActionFinish();
+			Message.ActorEx(1024, 75, 23, 2, 0);
+		}
+		else {
+			Message.CloseAll();
+			Sound.BGMFadeOut(120);
+			ShowQuestionMark(23);
+			Actor.WaitActionFinish();
+			Message.ActorEx(1024, 76, 23, 2, 0);
+		}
+		Message.CloseAll();
+		TurnWest(23);
+		Actor.WaitActionFinish();
+		Message.ActorEx(1024, 77, 23, 2, 0);
+		Message.CloseAll();
+		Sound.BGMPlay(1153);
+		TurnWest(255);
+		EVCamera.MoveTo(2.3652344f, 0.0f, 237.0f, 1680.0f, 16.0f, 10944.0f, 48);
+		Message.ActorEx(1024, 78, 23, 2, 0);
+		Message.ActorEx(1024, 79, 23, 2, 0);
+		EVCamera.Wait();
+		EVCamera.MoveTo(2.3652344f, 0.0f, 237.0f, 1744.0f, 16.0f, 10928.0f, 48);
+		Message.ActorEx(1024, 80, 23, 2, 0);
+		EVCamera.Wait();
+		Message.CloseAll();
+		TurnSouth(23);
+		Runtime.Sleep(4);
+		TurnNorth(255);
+		Runtime.Sleep(4);
+		Message.ActorEx(1024, 81, 23, 2, 0);
+		Message.CloseAll();
+		EVCamera.MoveToDefault(32);
+		Sound.BGMFadeOut(128);
+		RepChecksCamera(23);
+		Sound.SEPlay(1371);
+		Sound.SEWait();
+		ShowEllipses(23);
+		Actor.WaitActionFinish();
+		Sound.SEPlay(1373);
+		ShowExclamationMark(23);
+		Sound.SEWait();
+		EVCamera.Wait();
+		EVCamera.Rebind();
+		EVCamera.End();
+		Message.ActorEx(1024, 82, 23, 2, 0);
+		Field.PlayMapBGM();
+		TurnSouth(23);
+		Message.ActorEx(1024, 83, 23, 2, 0);
+		Actor.WaitActionFinish();
+		Message.CloseAll();
+
+		WalkSouthOnce(23);
+		Actor.WaitActionFinish();
+		Message.ActorEx(1024, 84, 23, 2, 0);
+		Message.CloseAll();
+		ShowExclamationMark(23);
+		Actor.WaitActionFinish();
+		Message.ActorEx(1024, 85, 23, 2, 0);
+		TurnEast(23);
+		Message.ActorEx(1024, 86, 23, 2, 0);
+		Actor.WaitActionFinish();
+		TurnSouth(23);
+		Actor.WaitActionFinish();
+		Message.ActorEx(1024, 87, 23, 2, 0);
+		Message.CloseAll();
+		Global2805(75, 10);
+
+		Message.ActorEx(1024, 88, 23, 2, 0);
+		EVCamera.Init();
+		EVCamera.Unbind();
+		TurnWest(23);
+		EVCamera.MoveTo(2.3652344f, 0.0f, 237.0f, 1680.0f, 16.0f, 10944.0f, 32);
+		Runtime.Sleep(4);
+		TurnWest(255);
+		Message.ActorEx(1024, 89, 23, 2, 0);
+		EVCamera.Wait();
+		EVCamera.MoveToDefault(32);
+		TurnSouth(23);
+		TurnNorth(255);
+		Message.ActorEx(1024, 90, 23, 2, 0);
+		EVCamera.Wait();
+		EVCamera.Rebind();
+		EVCamera.End();
+		Message.CloseAll();
+		Message.ActorGendered(1024, 91, 92, 23, 2, 0);
+		Message.CloseAll();
+		EventWorks.Set(16468, 1);
+		Runtime.FinishSubEvents();
+    }
+
 	static void sub_0312() { // @ 0x312
 		int v32;
 
@@ -671,8 +1177,18 @@ public class MainEvents {
 
     static meta void WalkSouth(int npcId) : VActionSequence {
 		Action000d(1);
+		Action000f(1);
+		Action0021(1);
 	}
 
+	 static meta void WalkSouthOnce(int npcId) : VActionSequence {
+		Action000d(1);
+	}
+
+	static meta void WalkSouthPlayer(int npcId) : VActionSequence {
+		Action003f(2);
+		Action000d(1);
+	}
 	static meta void ActionSequence_06d4(int npcId) : VActionSequence {
 		Action000c(1);
 	}
@@ -722,6 +1238,22 @@ public class MainEvents {
         Action0020(1);
 	}
 
+	static meta void RepChecksCamera(int npcId) : VActionSequence {
+        Action000c(1);
+		Action0022(1);
+	}
+	
+	static meta void ShowEllipses(int npcId) : VActionSequence {
+	    Action00a1(1);
+    }
+	
+    static meta void ShowMusicNote(int npcId) : VActionSequence {
+	    Action00a0(1);
+	}
+	static meta void ShowQuestionMark(int npcId) : VActionSequence {
+	    Action009f(1);
+	}
+	
 	static meta void Global2805(int a1, int a2) : VGlobalCall[2805];
 
 	static native void Action000c(int amount) : 0xc;
@@ -734,4 +1266,8 @@ public class MainEvents {
 	static native void Action0032(int amount) : 0x32;
 	static native void Action004b(int amount) : 0x4b;
 	static native void Action009f(int amount) : 0x9f;
+	static native void Action00a1(int amount) : 0xa1;
+	static native void Action003f(int amount) : 0x3f;
+	static native void Action00a0(int amount) : 0xa0;
+	
 }

@@ -1,0 +1,264 @@
+
+
+
+
+New Trainers We Need: 
+
+
+    Skyla Split: 
+        Route 7 Spinner A (Youngster)
+
+        Route 7 Spinner B (Lass)
+
+        Harlequin Spinner A
+
+        Harlequin Spinner B 
+
+        Celestial Tower Jude
+            Purugly should be on this team, maybe make it an assist focused team
+
+    Marlon Split: 
+        Lentimas Town Spinner 
+
+        Humilau Town Spinner 
+
+        Route 22 SPinner 
+
+        Route 21 Spinner 
+
+
+
+
+New Trainer Ids 
+    
+
+
+Tons of trainers need new text 
+    2: Breeder Alice (needs completely redone dialogue since she was mapped over a Linebacker)
+    180: Youngster X (needs pre-post gift dialogue)
+    176: Nursery Aide Kimya (needs pre-post gift dialogue)
+    112: Nursery Aide Leah (needs entirely new dialogue)
+    555: Scientist Cleo (needs pre-post gift dialogue)
+    738: Lass Daya (needs pre-post gift dialogue)
+    645: Youngster Keita (needs pre-post gift dialogue)
+    135: Scientist Dudley (needs pre-post gift dialogue)
+    138: Dancer Kirk (needs entirely retooled dialogue)
+    106: Battle Girl Janie (needs entirely changed dialogue)
+    300: Black Belt Jeriel (needs entirely changed dialogue)
+    124: Musician Boris (needs entirely changed dialogue)
+    336: Cyclist Lionel (needs entirely changed dialogue)
+    299: Breeder Micah (needs entirely changed dialogue)
+    225: Pokefan Sachiko (needs pre-post gift dialogue)
+    667: Ranger Anja (needs pre-post gift dialogue)
+    666: Ranger Jaden (needs pre-post gift dialogue)
+    668: Psychic Tommy (needs pre-post gift dialogue)
+    511: Psychic Perry (needs pre-post gift dialogue)
+    662: Backpacker Walt (needs pre-post gift dialogue)
+    125: Harlequin Oz (needs total rework)
+    303: Harlequin Otto (needs total rework)
+    270: Harlequin Luigi (needs total rework)
+    293: Pkm Ranger Lois (needs pre-post gift dialogue)
+     24: Backers Kay & Ali (needs pre-post gift dialogue) 
+    401: Harlequin Flops (needs new post battle dialgoue) 
+    571: Harlequin Yoncy (needs new post battle dialgoue) 
+    622: Harlequin Jangles (needs new post battle dialgoue) 
+    652: Harlequin Pagliacci (needs new post battle dialgoue) 
+    260: Cyclist Hector (needs new post-battle dialogue)
+    261: Cyclist Krissa (needs new post-battle dialogue)
+    298: Ranger Forrest (needs new post-battle dialogue)
+    490: Worker Herman (needs a new suite of dialogue)
+    527: Worker Victor (Needs new dialogue)
+    339: Motorcyclist Duke
+    562: Hiker Keith 
+    561: Hiker Tobias 
+    565: Backpacker Annie 
+    117: Backpacker Alexander 
+    99: Scientist Lucy 
+    212: Policeman Braven 
+    648: Preschooler Jojo 
+    131: Preschooler Mia 
+    525: Worker Patton 
+    627: Harlequin Sanders 
+    269: Lass Flo 
+    646: Youngster Nicholas 
+    549: PokeFan Jude 
+    
+    
+List of Rewards: 
+    1x Gem 
+    1x resist berry 
+    1x Heart Scale 
+    1x IV Enhancer
+    2x Enigma Berry 
+    2x white herb 
+    3x status berry 
+    3x berry juice
+    10x Green Shard 
+    10x Red Shard 
+    5x Jaboca 
+    5x Rowap
+
+
+Relic Passage (West)
+    Hiker Keith TM91 Flash Cannon
+    Hiker Tobias 10x Red Shards
+    Backpacker Annie 5x Sitrus Berries
+
+    Backpacker X (PP Max)  (NEW FIGHT)
+
+    Scientist Y (Yache Berry)  (NEW FIGHT)
+
+    Overworld Items: 
+        - Dusk Ball (x5)
+        - Red Shard (x5)
+        - Blue Shard (x3)
+
+Route 6: 
+    Preschooler (1x IV Enhancer)  (NEW FIGHT)
+
+    Preschooler #2 (1x Heart Scale)  (NEW FIGHT)
+        
+    Overworld Items: 
+        Add 5x Figy Berries 
+
+Chargestone Cave: 
+    Ace Trainer X (Bug Buzz TM)
+
+    Ace Trainer Z (Aurora Beam TM)
+
+    Overworld Items: 
+        Aurora Beam TM -> Full Restore x10
+        Bug Buzz TM -> Cell Battery x1 
+        Remove the Heart Scale 
+
+
+Clay TunneL: 
+    Worker X (1x Charti Berry)  (NEW FIGHT)
+
+    Ace Trainer Geoff 
+    
+    Overworld Items: 
+        - Replace Temper Flare TM with Dusk Balls x5 
+        - Soft Sand (x3)
+
+    
+Route 7: 
+    Lass (PPMax) (NEW FIGHT)
+
+    Youngster (10x Green Shards)  (NEW FIGHT)
+
+    Nursery Aide (1x TM11 Air Slash)
+
+    Items: 
+        Air Slash -> Quick Ball x5
+
+
+Celestial Tower: 
+    Pokefan Jude (1x Heart Scale)  (NEW FIGHT)
+
+
+Lentimas Outskirts
+    Cyclist (2x Enigma Berry) (NEW FIGHT)
+
+
+Humilau Town: 
+    Preschooler (1x IV Enhancer) (New Fight)
+
+Route 21: 
+    Parasol Lady (Heart Scale) (NEW FIGHT)
+
+    Kaoru (1x IV Enhancer) (UPDATE FIGHT WITH ONE MORE POKEMON)
+    
+    Overworld Items: 
+        Remove the Heart Scale
+
+Route 22: 
+    Backpacker X (20x Green Shards)
+
+Undella Bay: 
+    Swimmmer Z (1x Payapa Berry) (NEW FIGHT)
+
+    Swimmer T (1x IV Enhancer) (NEW FIGHT)
+
+
+Plasma Frigate: 
+    Grunt #1 (1x IV Enhancer)
+
+    Grunt #2 (1x IV Enhancer)
+
+Route 13
+    Parasol Lady (1x Heart Scale)
+    Battle Girl (1x IV Enhancer)
+
+Route 12:
+    These two are just here for vibes.  
+    Youngster
+
+    Lass 
+
+Village Bridge: 
+    Hoopster () (NEW FIGHT)
+
+    Smasher () (NEW FIGHT)
+
+
+New Fights
+    FLocessy Ranch 
+        Breeder M 
+        Breeder F 
+    Virbank Preschool 
+        Nursery Aide
+    Complex Interior 
+        Scientist M
+    Pokestar Studios 
+        Black Belt 
+        Man in Suit 
+    Castelia City 
+        Musician X
+    Route 4 
+        Cyclist X 
+    Nimbasa City: 
+        Clown X 
+        Clown Z 
+    Driftveil Gym 
+        Worker X 
+        Cold Worker Z 
+    Relic Passage 
+        Scientist X 
+        Backpacker Y 
+    Route 6: 
+        Preschooler F 
+        Preschooler M
+    Clay Tunnel: 
+        Worker X 
+    Route 7: 
+        Lass X 
+        Youngster Z
+    Celestial Tower: 
+        Pokefan Jude 
+    Lentimas Outskirts 
+        Cyclist 
+    Strange House 
+        Psychic
+    Route 21 
+        Parasol Lady 
+    Route 22 
+        Backpacker 
+    Humilau Town 
+        Preschooler X 
+    Undella Bay 
+        Swimmer Z 
+        Swimmer T 
+    Plasma Frigate 
+        Spinner A 
+        Spinner B 
+    Route 13: 
+        Preschooler
+    Route 12 
+        Youngster M (IV Enhancer)
+        Lass H (IV Enhancer)
+    Village Bridge: 
+        Hoopster 
+        Smasher 
+    Route 9 
+        Motorcyclist 
