@@ -4475,6 +4475,9 @@ void Routine7()
 	Compare(0x8000, 143);
 	if (1) goto label_20xGreenShards;
 	
+	Compare(0x8000, 17);
+	if (1) goto label_2xPPMax;
+
 	Compare(0x8000, 19);
 	if (1) goto label_15xGreenShards;
     
@@ -4546,6 +4549,10 @@ void Routine7()
 	Compare(0x8000, 149);
 	if (1) goto label_reward3;
 
+	// Sitrus Berry 
+	Compare(0x8000, 158);
+	if (1) goto label_reward10;
+
 	// Chesto Berry 
 	Compare(0x8000, 150);
 	if (1) goto label_reward3;
@@ -4582,6 +4589,11 @@ label_1xEnigmaBerry:
 
 label_2enhancers:
 	SetVarEqVal(0x8000, 530);
+	SetVarEqVal(0x8001, 2);
+	goto label_call2805;
+
+label_2xPPMax: 
+	SetVarEqVal(0x8000, 53);
 	SetVarEqVal(0x8001, 2);
 	goto label_call2805;
 

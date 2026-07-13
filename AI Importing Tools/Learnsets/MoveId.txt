@@ -24,7 +24,7 @@
 24	Double Kick
 25	High Horsepower
 26	Jump Kick
-27	Headlong Rush
+27	Rolling Kick
 28	Sand Attack
 29	Headbutt
 30	Devour
@@ -388,7 +388,7 @@
 388	Worry Seed
 389	Sucker Punch
 390	Toxic Spikes
-391	Heart Swap
+391	Headlong Rush
 392	Aqua Ring
 393	Magnet Rise
 394	Flare Blitz

@@ -1245,12 +1245,12 @@ void Sequence103()
 	End();
 }
 
-/* ROUTE 7 - Quick Ball x10 */
+/* ROUTE 7 - TM11 Air Slash */
 void Sequence104()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 15);
-	SetVarEqVal(0x800D, 10);
+	SetVarEqVal(0x800C, 338);
+	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();

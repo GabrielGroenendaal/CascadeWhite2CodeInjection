@@ -1,4 +1,4 @@
-# Cascade White
+# Cascade White Dev
 
 
 
@@ -104,6 +104,7 @@ You are now able to customize your gameplay through the Settings Menu in the Pok
 
 - Exp Modes: Determined how Exp gain is calculated (default: vanilla). "boosted" increases Exp gain relative to the level cap, increasing exp yields by up to 200%. "Anti-grind" boosts Exp gain even further, supporting players who don't want to have to rely on rare candies.
 
+
 #### Battle Scan
 
 The second major quality-of-life improvement is the addition of Battle Scan, which allows you to view detailed information about opponent Pokémon and teams in battle. 
@@ -201,8 +202,8 @@ end
 
 ## Floccesy Town
 !items Items
-exp share, Exp Share (given by Professor Juniper along with the gift Pokémon)
-green shard, Green Shard x10 — Given by Alder upon arrival in town
+exp share, Exp Share (given by Alder)
+green shard, Green Shard x10 — Given by the Blueberry Academy Rep
 end
 
 !items PokéMart (Natural Gift Berries)
@@ -227,14 +228,12 @@ end
 - Natural Gift (10 shards)
 
 
-!gifts Juniper Gift Pokémon
-desc: Speak to professor Juniper to receive a Pokémon depending on your starter.
+!gifts Abandoned Pokémon
+desc: Speak with the abandoned Pokémon to get a wild encounter!
 wingull, If you chose Snivy
 numel, If you chose Oshawott
 shroomish, If you chose Tepig
 end
-
-She will also gift you an Exp. Share!
 
 
 
@@ -257,10 +256,12 @@ end
 !items Items
   green shard, Green Shard x10 — given by Hugh after defeating Lass Molly
   quick claw, Quick Claw — found in the south part of the map by fences
+  figy berry, Figy Berry x1 — found past Breeder Alice
   oran berry, Oran Berry x10 — given by ranchers after defeating Hugh
-  wiseglasses, WiseGlasses (found past Janitor Orville)
-  white herb, White Herb x2 — found past Youngster Kenny
+  wiseglasses, WiseGlasses - Reward for defeating Youngster Kenny
+  white herb, White Herb x2 — reward for defeating Pkm Breeder Alice
   tm normal, TM10 Hidden Power — reward for defeating Benga
+  great ball, Great Ball x2 — found past Youngster Kenny
 end
 
 !enc 45
@@ -290,12 +291,13 @@ blitzle
 budew
 end
 
+!tr 2/10 (Spinner: Rewards 2x White Herbs)
+
 !trm 181/10
 
 !trm 182/10
 
-!trm 180/10 
-
+!tr 180/10 (Spinner: Rewards Wise Glasses)
 
 ### Benga 
 !trm 772 Rewards TM10 Hidden Power
@@ -399,23 +401,23 @@ end
 
 ## Virbank Outskirts
 !items Items
-silk scarf, Silk Scarf (found after defeating Preschooler Lin)
+silk scarf, Silk Scarf (found after defeating Preschooler Albert)
 rawst berry, 3x Rawst/Cheri/Chesto/Pecha/Aspear/Persim Berries (given by Cheren after defeating Jerome)
-miracle seed, Miracle Seed (reward for defeating Kimya)
+net ball, Net Ball x2 (found west of twins)
 mystic water, Mystic Water (reward for defeating Kimya)
 end
 
+!trm 206/16
+
 !notif NEW ENCOUNTER, The doubles grass on the east side of Route 20 produces encounters with a unique met location: "Virbank Outskirts" , #469e62
 !enc 25
-
-!trm 206/16
 
 !trm 173/16
 
 !trm 174/16 Choose One (Left)
 !trm 396/16 Choose One (South)
 
-!tr 176/17 Rewards Mystic Water and Miracle Seed
+!tr 176/17 (SPINNER) Rewards Mystic Water 
 
 !trm 175/18
 
@@ -442,24 +444,21 @@ Hugh will challenge you to a battle as you attempt to cross the gate into Virban
 
 ## Virbank City 
 !items Virbank PokéMart 
-lagging tail, Lagging Tail 
-flame orb, Flame Orb
-toxic orb, Toxic Orb
-oran berry, Oran Berries
+moon ball, Moon Balls
+repeat ball, Repeat Balls 
+nest ball, Nest Balls 
+heal ball, Heal Balls
 end
 
 !items Items 
-tm psychic, TM15 Psycho Cut (reward for defeating Scientist)
 kings rock, King's Rock (speak to Benga in the NorthEast)
 tm water, TM50 Water Pulse (reward for defeating Misty)
 clear amulet, Clear Amulet (reward for defeating Misty)
 stable mulch, Naive Mint (reward for defeating Misty)
+pp up, PP UP x1 (found by Benga)
 end
 
 !enc 4
-
-!tr 555/19 Rewards TM04 Shock Wave
-
 
 ### Misty  
 !notif SPLIT-LOCKED, Misty is an optional mini-boss that can only be fought before defeating Roxie. This content is locked off afterwards. , #af74b3
@@ -480,39 +479,52 @@ end
 ## Virbank Preschool 
 !notif NEW ENCOUNTER, Virbank Preschool is a new met location distinct from the Virbank Complex. Simply interact with the shelves in the back of the room! , #469e62
 
-!enc 29
+!items Items 
+love ball, Love Ball x10
+miracle seed, Miracle Seed (reward for defeating Nursery Aide Leah)
+end
 
+!enc 29 Interact with the toy boxes on the left of the room!
+
+!tr 112 (SPINNER) Rewards Miracle Seed 
 
 
 ## Complex Exterior
 !items Items 
 silverpowder, Silverpowder (found around left edge of the map)
+tm psychic, TM15 Psycho Cut (reward for defeating Scientist)
 end
 
 !notif NEW ENCOUNTER, Complex Exterior is a new met location distinct from the Virbank Complex. , #469e62
 !enc 46
 
+!tr 555/19 (SPINNER) Rewards TM15 Psycho Cut
 
 
 ## Virbank Complex 
 !items Items 
 eviolite, Eviolite (reward for the Worker quest)
 charcoal, Charcoal (given by Foreman when you start the Worker Quest)
-magnet, Magnet (found by the scientist)
+magnet, Magnet (reward for defeating Youngster Keita)
 tm rock, TM39 Rock Tomb (reward for defeating Lass Daya)
-normal gem, Normal Gem x2 (found around the left edge of the map)
-green shard, Green Shards x15 (found on the southeast corner of the map)
+normal gem, Normal Gem x2 (found past Lass Daya)
+green shard, Green Shards x15 (reward for defeating Scientist Dudley)
+poison barb, Poison Barb (found by Scientist Dudley)
+flame orb, Flame Orb x1 (found around west corner of the map)
+ultra ball, Ultra Ball x2 (found on southeast corner of map)
 end
 
 !enc 47
 
-!tr 745/18
-
 !tr 746/18
 
-!tr 738 Rewards TM39 Rock Tomb
+!tr 745/18
 
-!tr 645 Rewards Magnet && Doubles Grass access
+!tr 738 (Spinner) Rewards TM39 Rock Tomb
+
+!tr 645 (Spinner) Rewards Magnet
+
+!tr 135 (Spinner) Rewards 15x green shards 
 
 ### Eviolite Quest 
 !notif SPLIT-LOCKED, This quest can only be completed before defeating Roxie.  , #af74b3
@@ -530,7 +542,10 @@ Speak to the Foreman to receive a Charcoal and a quest to defeat the three worke
 !items Items 
 lum berry, 3x Lum Berries (given by gym guide upon entering)
 tm poison, TM09 Venoshock (reward for beating Roxie)
+kebia berry, Kebia Berry x1 (reward for beating Dirk)
 end
+
+!tr 138/19 (SPINNER) Rewards 1x Kebia Berry
 
 !trm 178/21
 
@@ -549,12 +564,17 @@ end
 
 ## Pokéstar Studios 
 !items Items
-black belt, Black Belt 
-tm ghost, TM65 Shadow Claw 
+black belt, Black Belt (top left quadrant)
+pecha berry, x3 Pecha Berries (reward for defeating Black Belt Jeriel)
+tm ghost, TM65 Shadow Claw (bottom left quadrant)
+cheri berry, Cheri Berry (x3) (reward for defeating Battle Girl Janie)
 end 
 !notif NEW ENCOUNTER, Pokéstar Studios is accessible as soon as you defeat Roxie, and there are encounters here! , #469e62
 !enc 16 
 
+!tr 106 (SPINNER) (Rewards 3x Cheri Berries)
+
+!tr 300 (SPINNER) (Rewards 3x Pecha Berries)
 
 
 ## Plasma Grunts
@@ -569,22 +589,44 @@ end
 !items Castlelia PokéMart
 muscle band, Muscle Band 
 wiseglasses, Wiseglasses
+friend ball, Friend Ball 
+
 end
 
 !items Items
 eviolite, Eviolite (given upon entering the Battle Company)
 blackglasses, BlackGlasses (found in the dark alley where Flash TM usually is)
+berry juice, Berry Juices x5 (speak with the bartender in Cafe Sonata)
+chesto berry, Chesto Berry x3 (battle the musician in Cafe Sonata)
+persim berry, Persim Berry x3 (reward for defeating Harlequin Flops)
+micle berry, Micle Berry x3 (reward for defeating Harlequin Yoncy)
+weakness policy, Blunder Policy x1 (reward for defeating Harlequin Jangles)
+kasib berry, Trickster Herb x1 (reward for beating all three harlequins)
 end
 
+!tr 124 Rewards 3x Chesto Berries
+
+### Harlequin Hunt 
+There are three Harlequins scattered around the city. One in Passerby Analytics, one in the Medal Office, and one in the Battle Company. 
+Defeating each nets a reward. Defeating all three nets another reward if you return to the questgiver. 
+They only provide their battles and rewards prior to defeating Burgh. 
+
+!tr 401 (Found in Battle Company: Rewards 3x Persim Berries)
+
+!tr 571 (Found in Passerby HQ: Rewards 3x Micle Berries)
+
+!tr 622 (Found in Medal Office: Rewards 1x Blunder Policy)
+
+!tr 652 (Fought after beating all 3 clowns: Rewards 1x Trickster Steb)
 
 ## Route 4 
 !items Items
-berry juice, Berry Juice x3 (found past PokéFan Norbert)
+aspear berry, Aspear Berry x3 (defeat Cyclist Lionel)
+fast ball, Fast Ball x10 (found past PokeFan Norbert)
 sharp beak, Sharp Beak (reward for beating one of the Fisherman)
 deepseascale, Deepseascale (reward for beating one of the Fisherman)
 deepseatooth, Deepseatooth (reward for beating one of the Fisherman)
 end
-
 
 ### Norbert (Route 4 Gatekeeper)
 Route 4 is the first introduction to "Gatekeeper" trainers. These powerful trainers have robust teams with Held Items and dangerous moves. 
@@ -592,8 +634,9 @@ Route 4 is the first introduction to "Gatekeeper" trainers. These powerful train
 
 !enc 104
 
+!tr 336 (SPINNER) (Rewards 3x Aspear Berries)
 
-!tr 211/26 (Choose one to fight: Left Side)
+!tr 211/26 (Choose one to fight: Left Side) 
 
 !tr 210/26 (Choose one to fight: Right Side)
 
@@ -604,12 +647,13 @@ Route 4 is the first introduction to "Gatekeeper" trainers. These powerful train
 !items Items
 black sludge, Black Sludge (found west of the Plasma Grunts after beating them)
 enigma berry, Enigma Berry x3 (found after the Janitor Tag)
-twistedspoon, Twistedspoon (found after the Workers)
-mental herb, Mental Herb x5 (found after the healthcare tag)
-green shard, Green Shards x15 (found after the Clerk tag)
+lagging tail, Lagging Tail (found after the Workers)
+mental herb, Mental Herb x3 (found past the healthcare tag)
+green shard, Green Shards x15 (found after the Policeman tag)
 sticky barb, Sticky Barb (found after the Scientist tag)
 stable mulch, 1x Serious Mint (reward for Defeating the Plasma Grunts)
 tm ghost, TM37 Hex (encountered behind the Grimers once you beat the grunts)
+dusk ball, Dusk Ball (x3) (found near entrance)
 end
 
 !enc 37
@@ -710,8 +754,13 @@ end
 
 
 ## Castelia Garden 
+!items Items 
+tm grass, TM86 Grass Knot (reward for defeating Micah)
+end
+
 !enc 1
 
+!tr 299 (DODGEABLE) (Rewards TM86 Grass Knot if defeated)
 
 
 ## Castelia Battle Company 
@@ -719,6 +768,7 @@ end
 eviolite, Eviolite (Received upon entering the building)
 trickster herb, x1 Trickster Herbs (Reward for defeating Clerk Brittany) (grants +1 priority to a status move, consumable)
 zoom lens, Zoom Lens (Reward for defeating Clerk Clemens)
+scope lens, Scope Lens (speak to the scientist, past Clerk Brittany)
 shell bell, Shell Bell (Reward for defeating Clerk Gilligan)
 red shard, 10x Red Shards (Reward for Defeating Clerk Warren)
 end
@@ -760,7 +810,7 @@ end
 
 !tr 501/28 Rewards Zoom Lens 
 
-!tr 691/28 Rewards Trickster Herbs (x1)
+!tr 691/28 Rewards Scope Lens
 
 !tr 692/28 Rewards Shell Bell 
 
@@ -810,6 +860,7 @@ end
 - Battle Company Egg 
 - Enigma Berry Guardian in Castelia Sewers
 - Evolution Stone Gift in Relic Passage
+- Harlequin Hunt Rewards
 
 !trm 154/32 Rewards TM81 X-Scissor
 
@@ -826,8 +877,9 @@ end
 !items Items
 safety goggles, Safety Goggles (reward from Colress)
 lum berry, x3 Lum Berries (found past Twins Tara & Val)
-figy berry, 10x Figy Berry (found Northeast of Pokéfan Sachiko)
+figy berry, 5x Figy Berry (defeat Pokéfan Sachiko)
 brightpowder, Brightpowder (Reward for beating Benga)
+quick ball, Quick Ball x3 (found past PokeFan Sachiko)
 end
 
 ### Colress 
@@ -837,7 +889,7 @@ end
 
 !trm 221/35
 
-!tr 225/35 Guards the 10x Figy Berries
+!tr 225/35 (DODGEABLE) Guards the 5x Figy Berries
 
 !trm 214/34
 
@@ -869,11 +921,17 @@ end
 ## Desert Resort: Interior
 !items Items 
 soft sand, Soft Sand (acquired from the agent in the desert)
-rowap berry, 5x Rowap Berry (acquired by defeating Ranger Anja)
-jaboca berry, 5x Jaboca Berry (acquired by defeating Psychic Perry)
+rowap berry, 3x Rawst Berry (acquired by defeating Ranger Anja)
+jaboca berry, 5x Rowap Berry (acquired by defeating Psychic Perry)
 tm psychic, TM03 Psyshock (acquired by defeating Psychic Tommy)
 tm normal, TM83 Endure (acquired by defeating Backpackers Tami and Sam)
-green shard, 15x Green Shards (acquired past Ranger Jaiden)
+green shard, 10x Green Shards (acquired by defeating Backpacker Walt)
+green shard, 5x Green Shards (found right next to Backpacker Walt)
+ultra ball, Ultra Ball (x10) (found on the Northwesternmost corner of the map)
+red shard, Red Shard (x5) (found by Psychic Perry, on the southern edge of the map)
+red shard, Red Shard (x5) (found by Ranger Anja, in the eastern edge of the map)
+twistedspoon, Twistedspoon (found in the middle of Psychic Tommy's patrol)
+enigma berry, Enigma Berry (x1) (reward for defeating Jaidan)
 end
 
 !enc 11
@@ -881,13 +939,15 @@ end
 !notif FIELD EFFECT, There is a Permanent Sandstorm in Desert Resort Interior, #4e86d4
 
 ### Ranger Jaden (Desert Resort Interior Gatekeeper)
-!tr 666/36
+!tr 666/36 Also rewards an Enigma Berry
 
-!tr 667/35 Guards 5x Rowap Berries 
+!tr 667/35 (DODGEABLE) Rewards 3x Rawst Berries if defeated. 
 
-!tr 668/35 Guards TM03 Psyshock
+!tr 668/35 (DODGEABLE) Rewards TM03 Psyshock if defeated
 
-!tr 511/35 Guards 5x Jaboca Berries
+!tr 511/35 (DODGEABLE) Rewards 5x Rowap Berries if defeated
+
+!tr 662/36 (DODGEABLE) Rewards 10x Green Shards if defeated 
 
 !tr 664/36 Right Side, Guards TM83 Endure 
 !tr 663/36 Left Side, Guards TM83 Endure 
@@ -970,11 +1030,21 @@ end
 !items Items
 nevermeltice, NevermeltIce (found by Ferris Wheel)
 ability capsule, Ability Capsule (reward for the Eevee gauntlet)
+casteliacone, Casteliacone (reward for beating Harlequin Luigi)
+weakness policy, Blunder Policy x1 (reward for defeating Harlequin Otto)
+air balloon, Air Balloon x1 (reward for defeating Harlequin Oz)
 end 
 
 
 ### Fossil Reviver 
 If you acquire a Fossil, they can be revived into an encounter here. 
+
+### Nimbasa City Harlequins 
+!tr 125 (DODGEABLE) Rewards 1x Air Balloon if defeated 
+
+!tr 393 (DODGEABLE) Rewards 1x Blunder Policy if defeated 
+
+!tr 270 (DODGEABLE) Rewards 1x Casteliacone if defeated 
 
 
 ### Ingo and Emmett 
@@ -1042,27 +1112,30 @@ end
 
 ## Route 5 
 !items Items 
-spell tag, Spell Tag (past Baker Jenn)
-rawst berry, rawst berry, 3x Rawst/Cheri/Chesto/Pecha/Aspear/Persim Berries 
-tm poison, TM84 Poison Jab (past Ranger Lois)
+spell tag, Spell Tag (reward for defeating Backers Kay & Ali)
+jaboca berry, Jaboca Berries x5 (reward for beating Lois)
+tm poison, TM84 Poison Jab (past Artist Horton)
+pp max, PP Max x1 (found past Ranger Lois)
 end
-
 
 ### Baker Jenn (Route 5 Gatekeeper) 
 !tr 253/37
 
 !enc 106
 
-!tr 254/36 Guards TM66 Power Gem 
+!tr 254/36 Guards TM84 Poison Jab 
 
-!tr 293/36 Guards TM84 Poison Jab 
+!tr 24/26 (DODGEABLE) Rewards Spell Tag
+
+!tr 293/36 (DODGEABLE) Rewards 5x Jaboca Berries 
+
 
 
 
 ## Route 16 
 !items Items 
 tm fairy, TM08 Dizzy Punch (past Cyclists)
-normal gem, x3 Normal Gem (past Art & Stu)
+normal gem, x2 Normal Gem (past Art & Stu)
 tm normal, TM49 Snore (past Art & Stu)
 eject button, x2 Eject Pack (past Roughneck Silvester)
 end
@@ -1072,10 +1145,11 @@ end
 
 !enc 125
 
-!tr 260/36 Choose One (Top)
-!tr 261/36 Choose One (Bottom)
+!tr 260/36 (DODGEABLE) Rewards Apicot Berry
 
-!tr 257/36 Guards TM49 Snore and 3x Normal Gems
+!tr 261/36 (DODGEABLE) Rewards Ganlon Berry
+
+!tr 257/36 Guards TM49 Snore and 2x Normal Gems
 
 !tr 217/36 Guards 3x Absorb Bulbs
 
@@ -1083,7 +1157,8 @@ end
 
 ## Lostlorn Forest 
 !items Items 
-big root, Big Root (past Ranger Forrest) (HAS BEEN BUFFED TO 75% BOOST)
+big root, Big Root (past Ranger Forrest) (HAS BEEN BUFFED TO 50% BOOST)
+energypowder, Fairy Dust (reward for defeating Ranger Forrest)
 end
 
 ### Ranger Serenity (Lostlorn Forest Gatekeeper)
@@ -1091,7 +1166,7 @@ end
 
 !enc 126
 
-!tr 298/36 Guards Big Root
+!tr 298/36 Guards Fairy Dust
 
 
 ### Erika
@@ -1197,8 +1272,9 @@ end
 ## Driftveil City 
 !items Items 
 expert belt, Expert Belt (found in the market, vanilla location)
-tm grass, TM85 Grass Knot (south of Musician Preston)
+tm grass, TM819 Giga Drain (south of Musician Preston)
 tm fairy, TM90 Draining Kiss (Past Backers Ava and Aya)
+tm fighting, TM31 Brick Break (reward for defeating Duke)
 red shard, x10 Red Shard (past Dancer Brian)
 blue shard, x6 Blue Shard (past Dancer Brian)
 white herb, x2 White Herb (in the Market)
@@ -1222,11 +1298,6 @@ luck incense, Luck Incense
 pure incense, Pure Incense 
 end 
 
-!items Herb Shop
-micle berry, Micle Berry 
-mental herb, Mental Herb 
-figy berry, Figy Berry 
-end
 
 !notif MOVE TUTOR, The Blue Move Tutor is present, past Dancer Brian, and teaches:
 - Explosion (1 shards)
@@ -1251,7 +1322,9 @@ end
 
 !tr 252/42 Guards TM90 Draining Kiss 
 
-!tr 256/42 Guards TM85 Grass Knot 
+!tr 256/42 Guards TM19 Giga Drain
+
+!tr 339/44 Rewards TM31: Brick Break 
 
 
 ### Rood 
@@ -1280,7 +1353,8 @@ end
 
 ## Route 6 
 !items Items
-tm water, TM55 Scald (past Worker Victor)
+tm water, TM55 Scald (defeat Worker Victor)
+enigma berry, Enigma Berry (x1) (found past Worker Victor)
 end
 
 !notif FIELD EFFECT, There is a Permanent Rainstorm on Route 6 , #4e86d4
@@ -1290,7 +1364,7 @@ end
 
 !enc 107
 
-!trm 527/43 Guards TM55 Scald
+!tr 527/43 (DODGEABLE) Rewards TM55 Scald
 
 
 
@@ -1298,6 +1372,8 @@ end
 !items Items
 eject button, x3 Eject Button (given by Gym Guide)
 hm fighting, HM04 Strength (reward for defeating Clay)
+blue shard, x6 Blue Shard (reward for defeating Herman)
+blue shard, x6 Blue Shard (reward for defeating Tyler)
 end
 
 !trm 324/43
@@ -1305,7 +1381,11 @@ end
 !trm 323/43 Left Side 
 !trm 322/43 Right SIde 
 
+!tr 110 (DODGEABLE) (Rewards 6x Blue Shards if defeated. Can only be fought before defeating Clay)
+
 !trm 321/43 
+
+!tr 490 (DODGEABLE) (Rewards 6x Blue Shards if defeated. Can only be fought before defeating Clay)
 
 !trm 320/44 
 
@@ -1342,7 +1422,7 @@ end
 !items Items
 heart scale, 3x Heart Scales can be found by the Move Reminder.
 colress mchn, Proto Booster (reward for defeating Colress) 
-old gateau, IV Enhancer x53 (reward for defeating Colress)
+old gateau, IV Enhancer x3 (reward for defeating Colress)
 end
 
 ### Colress 
@@ -1365,10 +1445,15 @@ end
 ## Relic Passage: Skyla Split
 !notif NOTE, This has the same met location as the part of Relic Passage accessible in Burgh split, except there are now water encounters.
 !items Items 
-normal gem, x2 Normal Gem (past the Backpacker Tag)
-tm steel, TM91 Flash Cannon (past Hiker Keith)
-red shard, x10 Red Shard (past Hiker Tobias)
-sitrus berry, x10 Sitrus Berry (past Backpacker Annie)
+normal gem, x2 Normal Gem (found past first trainers)
+tm steel, TM91 Flash Cannon (defeat Hiker Keith)
+red shard, x10 Red Shard (defeat Hiker Tobias)
+red shard, x5 Red Shard (past Hiker Tobias)
+blue shard, x3 Blue Shard (past Hiker Keith)
+sitrus berry, x10 Sitrus Berry (defeat Backpacker Annie)
+heart scale, x1 Heart Scale (defeat Scientist Lucy)
+ultra ball, x15 Ultra Ball (found past Backpacker Annie)
+figy berry, x5 Figy Berry (defeating Backpacker Alexander)
 end
 
 !notif FIELD EFFECT, There is a Permanent Pre Set Trick Room in Relic Passage , #4e86d4
@@ -1384,6 +1469,9 @@ end
 
 !tr 565/48 Rewards 10x Sitrus Berries 
 
+!tr 117/48 Rewards 5x Figy Berries
+
+!tr 99/48 Rewards Heart Scale
 
 
 ## Relic Sanctum
@@ -1417,7 +1505,7 @@ end
 !notif WARNING, "Proto" Items are dangerous devices designed by Colress that boost a Pokémon's stats on switch in at the cost of their accuracy. Be careful! , #f26253
 ### Back to Back
 !trm 372/46 First Fight of Back to Back 
-!trm 374/46 Second Fight of Back to Back 
+!trm 373/46 Second Fight of Back to Back 
 
 ### Cheren Tag Battle (Pre-Healed)
 !trm 374/47 Left Side 
@@ -1446,13 +1534,20 @@ end
 
 !notif FIELD EFFECT, There is a Permanent Rainstorm in Route 6 , #4e86d4
 
+!trm 212/48 
+
+!trm 574/48
+
 !trm 215/48 
 
-!trm 268/48
+!tr 648/49 (DODGEABLE) (Rewards 1x IV Enhancer)
 
 !trm 263/48 Left Side 
 !trm 264/48 Right Side 
 
+!trm 268/48
+
+!tr 131/49 (DODGEABLE) (Rewards 1x IV Enhancer)
 
 !trm 292/49
 
@@ -1501,6 +1596,8 @@ end
 !enc 85
 
 !tr 682/51 Guards TM59 Temper Flare 
+
+!tr 525/51 Rewards Colbur Berry
 
 ### Roxanne Miniboss
 !notif SPLIT-LOCKED CONTENT, Roxanne can only be fought and her rewards only claimed before Skyla is defeated , #af74b3 
@@ -1623,15 +1720,27 @@ heart scale, Heart Scale (found past Sola & Ana)
 tm fairy, TM32 Dazzling Gleam (found past Sola & Ana)
 tm flying, TM11 Air Slash (past Holly)
 weakness policy, x2 Blunder Policies (past Harlequins)
+green shard, x15 Green Shard (defeatin Youngster Nicholas)
+starf berry, x2 Starf Berry (defeat Harlequin Oswald)
+pp max, x2 PPMax (defeat Lass Flo)
+blue shard, x6 Blue Shard (defeat Harlequin Sanders)
 end
+
+!tr 646/50 (DODGEABLE) (Rewards 15x Green Shards)
+
+!tr 528/50 (DODGEABLE) (Rewards 2x Starf Berries)
 
 !tr 272/50 Left Side 
 !tr 273/50 Right Side 
 
-!tr 271/52 Guards TM11 Air Slash
+!tr 269/50 (DODGEABLE) (Rewards 2x PP Max)
+
+!tr 271/52 Rewards TM11 Air Slash
 
 !tr 275/50 Left Side, Guards Blunder Policies & Doubles Grass
 !tr 276/50 Right Side, Guards Blunder Policies & Doubles Grass
+
+!tr 627/50 (DODGEABLE) (Rewards 6x Blue Shards)
 
 !tr 274/51 Guards TM32 Dazzling Gleam and Heart Scale 
 
@@ -1666,12 +1775,7 @@ end
 !tr 553/52 Left Side , guards Heart Scale
 !tr 554/52 Right Side, guards Heart Scale
 
-
-### Sabrina
-!notif SPLIT-LOCKED, Sabrina is an optional mini-boss that can only be fought before defeating Skyla. This content is locked off afterwards.  , #af74b3
-!tr 769/54 Rewards Celestial Rooftop Encounter, Covert Cloak, x5 IV Enhancers
-
-
+!tr 549/52 (DODGEABLE), rewards Heart Scale
 
 ## Celestial Rooftop (only accessible by beating Sabrina)
 !items Sabrina Rewards 
@@ -1679,7 +1783,11 @@ old gateau, 5x IV Enhancers
 covert cloak, Covert Cloak
 end 
 
-!notif NEW ENCOUNTER, This is a unique met location for encounters. , #469e62
+### Sabrina
+!notif SPLIT-LOCKED, Sabrina is an optional mini-boss that can only be fought before defeating Skyla. This content is locked off afterwards.  , #af74b3
+!tr 769/54 Rewards Celestial Rooftop Encounter, Covert Cloak, x5 IV Enhancers
+
+!notif NEW ENCOUNTER, This is a unique met location for encounters. Simply ring the bell. , #469e62
 
 !enc 113
 
@@ -1957,6 +2065,7 @@ shell bell, Shell Bell (behind Pokémon Center)
 heart scale, x1 Heart Scale (in middle of town shallows)
 yellow shard, x5 Yellow Shards (Northwest dock)
 ability capsule, x1 Ability Capsule (Defeat the B2B Trainers)
+old gateau, x2 IV Enhancer (reward for defeating Evan)
 end
 
 !notif MOVE TUTOR, The yellow shard move tutor is in their original location, and teaches:
@@ -1983,6 +2092,8 @@ end
 !notif SPLIT-LOCKED, The tourists in Humilau City will leave after Marlon is defeated, locking off their rewards. , #af74b3 
 !tr 306 Back to Back (First Fight)
 !tr 307 Back to Back (Second Fight)
+
+!tr 132 (DODGEABLE) (Rewards 2x IV Enhancers)
 
 ### Swimmer Desiree (Route 21 Gatekeeper)
 !tr 311 
@@ -2019,8 +2130,7 @@ end
 
 !enc 130
 
-
-!tr 333 (Gatekeeps Water Encounters and the Gentle Mint)
+!tr 333 (Gatekeeps Water Encounters and the ganlon/spelon berries)
 
 
 

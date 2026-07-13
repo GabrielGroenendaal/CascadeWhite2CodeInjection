@@ -1240,7 +1240,6 @@ address_TargetingAnAlly:
 	JumpIfStoredEQ(type.fire, &address_ConsiderSingleTargetFlashFireActivationMove)
 	JumpIfStoredEQ(type.electric, &address_TargetAlliesElectricMoves)
 	JumpIfStoredEQ(type.water, &address_WaterMoveLogicForSingleTargetMoves)
-	JumpIfStoredEQ(type.dark, &address_DarkTypeMoveLogicForSingleTargetMoves)
 
 	
 	JumpIfMoveEQ(move.fling, &address_TargetAllyWithBestow)

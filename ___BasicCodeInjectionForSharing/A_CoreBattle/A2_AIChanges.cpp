@@ -813,7 +813,7 @@ extern "C"
 
             // Terrakion Fight
             // CHANGE THIS LATER
-            if (trainerId == 508 || trainerId == 2)
+            if (trainerId == 508)
             {
 
                 //ConditionData Permanent = Condition_MakePermanent();
@@ -4693,7 +4693,7 @@ extern "C"
         AIConditionalJump(a1, 0, 1, 2, destination);
         return a2->result;
     }
-#if TESTING_AISCRIPTS
+
     /*
 
         --------------------------------------------------------------------------------------------------
@@ -4705,24 +4705,24 @@ extern "C"
         Originally:
             AI063_Nop
     */
-    int THUMB_BRANCH_AI096_CheckOwnDamageIntoAlly(ScriptVM *a1, TrainerAIEnv *a2)
-    {
-        int destination;
-        destination = VM_Read32(a1);
-#if DEBUGGING_AI && DEBUGGING_ALL
-        k::Printf("\n\n--------AI063_CheckOwnDamageIntoAlly-----------\nIs being called for move %d, used by Pokemon %d attacking Pokemon %d\n", a2->moveID, a2->attacker->Species, a2->defender->Species);
-#endif
-        int damage = Handler_SimulationDamage(a2->serverFlow,
-                                              BattleMon_GetID(a2->defender),
-                                              BattleMon_GetID(a2->attacker),
-                                              a2->moveID, true, false);
-#if DEBUGGING_AI && DEBUGGING_ALL
-        k::Printf("Pokemon %d HP is %d and the damage dealt by the move is %d\n\n", a2->defender->Species, BattleMon_GetValue(a2->defender, VALUE_CURRENT_HP), damage);
-#endif
-        AIConditionalJump(a1, 6, BattleMon_GetValue(a2->defender, VALUE_CURRENT_HP), damage, destination);
-        return a2->result;
-    }
-#endif
+//     int THUMB_BRANCH_AI096_CheckOwnDamageIntoAlly(ScriptVM *a1, TrainerAIEnv *a2)
+//     {
+//         int destination;
+//         destination = VM_Read32(a1);
+// #if DEBUGGING_AI && DEBUGGING_ALL
+//         k::Printf("\n\n--------AI063_CheckOwnDamageIntoAlly-----------\nIs being called for move %d, used by Pokemon %d attacking Pokemon %d\n", a2->moveID, a2->attacker->Species, a2->defender->Species);
+// #endif
+//         int damage = Handler_SimulationDamage(a2->serverFlow,
+//                                               BattleMon_GetID(a2->defender),
+//                                               BattleMon_GetID(a2->attacker),
+//                                               a2->moveID, true, false);
+// #if DEBUGGING_AI && DEBUGGING_ALL
+//         k::Printf("Pokemon %d HP is %d and the damage dealt by the move is %d\n\n", a2->defender->Species, BattleMon_GetValue(a2->defender, VALUE_CURRENT_HP), damage);
+// #endif
+//         AIConditionalJump(a1, 6, BattleMon_GetValue(a2->defender, VALUE_CURRENT_HP), damage, destination);
+//         return a2->result;
+//     }
+
 #pragma endregion
 
 #pragma region AnticipationDodge
