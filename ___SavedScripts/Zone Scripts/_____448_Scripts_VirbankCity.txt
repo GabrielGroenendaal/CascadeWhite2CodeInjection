@@ -1017,7 +1017,7 @@ public class MainEvents {
         Message.ActorEx(1024, 70, MISTY_ENTITY, 2, 1);
         Message.CloseAll();
 
-		Battle.CallTrainerBattle(164, 0, 0);
+		Battle.CallTrainerBattle(765, 0, 0);
 		isVictory = Battle.IsTrainerVictory();
 		if (isVictory != 1){
 			Battle.CallTrainerLose();

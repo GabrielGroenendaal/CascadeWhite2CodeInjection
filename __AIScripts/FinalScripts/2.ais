@@ -212,10 +212,10 @@ data_address_moveEffects:
 	move_ef.target_atk_def-1 => &Label_LowerTargetDefense
 	move_ef.user_def_spd+1 => &Label_RaiseUserSpecialDefense
 	move_ef.sky_uppercut => &endScript_1
-	move_ef.user_atk_def+1 => &Label_RaiseUserDefense
+	move_ef.user_atk_def+1 => &Label_RaiseUserAttack
 	move_ef.dmg_target_psn_highcrit => &Label_IncreaseCrit
 	move_ef.water_sport => &endScript_1
-	move_ef.user_spa_spd+1 => &Label_RaiseUserSpecialDefense
+	move_ef.user_spa_spd+1 => &Label_RaiseUserSpecialAttack
 	move_ef.user_atk_spe+1 => &Label_RaiseUsersAttackAndSpeed
 	move_ef.camouflage => &endScript_1
 	move_ef.roost => &Label_Heal50
@@ -516,8 +516,10 @@ address_0x0904:
 //   RAISE USER DEFENSE   
 
 Label_RaiseUserDefense:
+    GetLastPreviousCategory()
+	JumpIfStoredEQ(special, &Label_RaiseDefense_DeprioritizeBy5)
 	GetAbilityGuess(defender)
-	JumpIfStoredEQ(ability.unaware, &address_0x09B2)
+	JumpIfStoredEQ(ability.unaware, &Label_RaiseDefense_DeprioritizeBy5)
 	JumpIfStatStageLT(attacker, def, +3, &address_0x092E)
 	JumpIfRandLT(100, &address_0x0954)
 	AddToScore(-1)
@@ -536,15 +538,13 @@ address_0x095A:
 	JumpIfRandLT(200, &address_0x09B8)
 
 address_0x0972:
-	JumpIfHealthLT(attacker, 40, &address_0x09B2)
-	GetLastPreviousCategory()
-	JumpIfStoredEQ(special, &address_0x09B2)
+	JumpIfHealthLT(attacker, 40, &Label_RaiseDefense_DeprioritizeBy5)
 	JumpIfRandLT(60, &address_0x09B8)
 
 address_0x09A8:
 	JumpIfRandLT(60, &address_0x09B8)
 
-address_0x09B2:
+Label_RaiseDefense_DeprioritizeBy5:
 	AddToScore(-5)
 
 address_0x09B8:
@@ -644,6 +644,8 @@ address_0x0B22:
 //   RAISE USER SPECIAL DEFENSE   
 
 Label_RaiseUserSpecialDefense:
+    GetLastPreviousCategory()
+	JumpIfStoredEQ(physical, &address_0x0BD0)
 	GetAbilityGuess(defender)
 	JumpIfStoredEQ(ability.unaware, &address_0x0BD0)
 	JumpIfStatStageLT(attacker, spd, +3, &address_0x0B4C)
@@ -665,8 +667,6 @@ address_0x0B78:
 
 address_0x0B90:
 	JumpIfHealthLT(attacker, 40, &address_0x0BD0)
-	GetLastPreviousCategory()
-	JumpIfStoredEQ(physical, &address_0x0BD0)
 	JumpIfRandLT(60, &address_0x0BD6)
 
 address_0x0BC6:
@@ -886,6 +886,8 @@ address_0x0FA2:
 //   LOWER ENEMY ATTACK   
 
 Label_LowerTargetAttack:
+    GetLastPreviousCategory()
+	JumpIfStoredEQ(special, &deprioritizeBy5)
 	GetAbilityGuess(defender)
 	JumpIfStoredEQ(ability.unaware, &deprioritizeBy2)
 	JumpIfStatStageEQ(defender, atk, +0, &address_0x0FF2)
@@ -903,9 +905,6 @@ address_0x0FF2:
 	AddToScore(-2)
 
 address_0x1006:
-	GetLastPreviousCategory()
-	JumpIfStoredNE(special, &address_0x1022)
-	AddToScore(-2)
 
 address_0x1022:
 	EndScript()
@@ -1010,6 +1009,8 @@ address_0x1114:
 //   LOWER ENEMY SPECIAL ATTACK   
 
 Label_LowerTargetSpecialAttack:
+    GetLastPreviousCategory()
+	JumpIfStoredEQ(physical, &deprioritizeBy5)
 	GetAbilityGuess(defender)
 	JumpIfStoredEQ(ability.unaware, &deprioritizeBy2)
 	JumpIfStatStageEQ(defender, spa, +0, &address_0x1164)
@@ -1027,9 +1028,6 @@ address_0x1164:
 	AddToScore(-2)
 
 address_0x1178:
-	GetLastPreviousCategory()
-	JumpIfStoredNE(physical, &address_0x1194)
-	AddToScore(-2)
 
 address_0x1194:
 	EndScript()

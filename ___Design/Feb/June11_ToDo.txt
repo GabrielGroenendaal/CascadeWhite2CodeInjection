@@ -13,6 +13,10 @@
 - Fix AI Scripts for Defense Boosting / Offense Lowering Moves 
 - Design the missing Drayden Split Trainers: 
     - New Optional in Route 13 / Lacunosa Town / Route 12 for an IV Enhancer 
+- Fix Hugh's post battle dialogue 
+- Echoed Voice should not have a target of self. 
+
+
 Final Gambit Distribution: 
     Primeape 
     Farfetch'd 
