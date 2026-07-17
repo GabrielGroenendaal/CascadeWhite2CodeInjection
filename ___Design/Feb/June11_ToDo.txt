@@ -109,6 +109,14 @@
 
 [ POKEDEX ]
 
+    Snubbull: 
+        -10 Speed
+        +10 Defense 
+    
+    Granbull: 
+        +20 Defense 
+        -5 Speed 
+    
     Shuckle 
         -5 SpA 
         +20 Defense 
