@@ -342,20 +342,13 @@
 
 
 [ MOVES ]
-    Aeroblast: 
-        30% chance to raise speed one stage. 
     
-    Dragon Dance, Calm Mind, Bulk Up, 1 PP each. 
-    Mega Punch: 
-        80 > 90  
+    Dragon Dance 1 PP each. 
 
-        Give to: 
-            Hariyama 
-        
     Double Hit: 
         45 BP 
     
-    Increase Binding Damage to 1/8 per turn. 
+    Increase Binding Damage to 1/8 per turn. (Debatable)
     
     Snap Trap: 
         The user snap's its jaws on a target like a snap trap. 

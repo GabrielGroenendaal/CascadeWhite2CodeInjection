@@ -2520,7 +2520,7 @@ extern "C"
         return v8;
     }
 
-    int weatherAnims[5] = {0, 241, 240, 258, 201};
+    int weatherAnims[5] = {0, 619, 616, 617, 618};
 
     int THUMB_BRANCH_ServerControl_TurnCheckWeather(ServerFlow *a1, PokeSet *a2)
     {

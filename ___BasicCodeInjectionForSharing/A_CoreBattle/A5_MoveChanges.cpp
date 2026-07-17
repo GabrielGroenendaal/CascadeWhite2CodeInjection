@@ -2915,5 +2915,130 @@ extern "C"
             return;
         }
     };
+
+    void THUMB_BRANCH_SAFESTACK_Condition_HandlerBind(ServerFlow *a1, BattleMon *a2, unsigned int a3)
+    {
+        int Param_1; // r0
+        int v5; // r5
+        int v6; // r6
+        int v7; // r6
+        HandlerParam_Damage *v8; // r4
+        BattleMon *v9; // r0
+        unsigned int v10; // r1
+        ConditionData v13; // [sp+8h] [bp-20h]
+
+        if ( j_j_BattleMon_IsFainted_7(a2) )
+        {
+            return;
+        }
+        v13.raw = j_j_GetConditionContinuationParam_1(a2, CONDITION_BIND).raw;
+        Param_1 = j_j_Condition_GetParam_1(v13);
+        v5 = Param_1;
+        v7 = -1;
+        //k::Printf("\nBind Move Param = %d\n", Param_1);
+
+        // So we need to subtract 561 from the move ID to get the correct effect ID. This is because the effect IDs for these moves are offset from their move IDs in the game's data.
+
+        if (Param_1 == MOVE463_MAGMA_STORM)
+        {
+            v7 = 633;
+        }
+        else if (Param_1 == MOVE250_WHIRLPOOL)
+        {
+            v7 = 635;
+        }
+        else if (Param_1 == MOVE128_CLAMP)
+        {
+            v7 = 634;
+        }
+        else if (Param_1 == MOVE035_WRAP)
+        {
+            v7 = 631;
+        }
+        else if (Param_1 == MOVE020_BIND)
+        {
+            v7 = 630;
+        }
+        else if (Param_1 == MOVE083_FIRE_SPIN)
+        {
+            v7 = 632;
+        }
+        else if (Param_1 == MOVE328_SAND_TOMB)
+        {
+            v7 = 636;
+        }
+        else if (Param_1 == MOVE171_NIGHTMARE){
+            v7 = 685;
+        }
+        else if (Param_1 == MOVE286_IMPRISON){
+            v7 = 684;
+        }
+        else if (Param_1 == MOVE090_FISSURE){
+            v7 = 682;
+        }
+        else if (Param_1 == MOVE012_GUILLOTINE){
+            v7 = 680;
+        }
+        else if (Param_1 == MOVE032_HORN_DRILL){
+            v7 = 681;
+        }
+        else if (Param_1 == MOVE132_INFESTATION){
+            v7 = 679;
+        }
+        else if (Param_1 == MOVE170_SNAP_TRAP){
+            v7 = 683;
+        }
+        else if (Param_1 == MOVE377_ALLURING_VOICE){
+            v7 = 686;
+        }
+        else if (Param_1 == MOVE066_SUBMISSION){
+            v7 = 630;
+        }
+        else {
+            v7 = 630;
+        }
+    
+        v8 = (HandlerParam_Damage *)j_j_BattleHandler_PushWork_21(a1, EFFECT_DAMAGE, a3);
+        v8->pokeID = a3;
+        if ( j_j_Condition_GetFlag(v13) )
+        {
+            v9 = a2;
+            v10 = 6;
+        }
+        else
+        {
+            v9 = a2;
+            v10 = 8;
+        }
+        v8->damage = j_j_DivideMaxHPZeroCheck_5(v9, v10);
+        //k::Printf("\nBind Damage = %d\n", v8->damage);
+        if ( v7 != -1 )
+        {
+            //k::Printf("\nBind Effect = %d\n", v7);
+            v8->flags |= 2u;
+            v8->effectNo = v7;
+            v8->posFrom = j_j_Handler_PokeIDToPokePos_3(a1, a3);
+            v8->posTo = 6;
+        }
+        j_j_BattleHandler_StrSetup_14(&v8->exStr.ID, 2u, 372);
+        j_j_BattleHandler_AddArg_16(&v8->exStr, a3);
+        j_j_BattleHandler_AddArg_17(&v8->exStr, v5);
+        j_j_BattleHandler_PopWork_21(a1, v8);
+    }
+
 #pragma endregion
 }
+
+
+/* 
+
+30 Bind -> Snap Trap
+31 Wrap -> Guillotine 
+32 Fire Spin -> Infestation 
+33 Magma Storm -> Nightmare
+34 Clamp -> Imprison 
+35 Whirlpool -> Horn Drill 
+36 Sand Tomb -> Fissure
+
+
+*/
