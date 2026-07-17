@@ -8,13 +8,375 @@
 
 */
 
+[ ENCOUNTERS ]
+    
 
-- Fix End of Turn Animation for Sandstorm
-- Fix AI Scripts for Defense Boosting / Offense Lowering Moves 
-- Design the missing Drayden Split Trainers: 
-    - New Optional in Route 13 / Lacunosa Town / Route 12 for an IV Enhancer 
-- Fix Hugh's post battle dialogue 
-- Echoed Voice should not have a target of self. 
+
+[ TRAINERS ]
+
+
+    BURGH SPLIT:
+        Backpacker Kendall 
+            Croconaw -> Hippopotas (Ability: Strong Jaw) (Drill Run, Fire Fang, Yawn, Protect)
+    
+    ELESA SPLIT:
+
+        Benga: 
+            Bouffalant:
+                Ability: Sap Sipper
+                Temper Flare -> Horn Leech
+            
+            Druddigon 
+                Fire Punch -> Thunder Punch 
+                Poison Jab -> Heavy Slam 
+        
+
+        Baker Jenn 
+            Simisear @ Petaya Berry (Seed Binb -> Spit Up)
+            Tropius (fix ability to chlorophyll) (Giga Drain -> Leaf Tornado)
+            Rotom-Heat (Leaf Tornado -> Thunder Wave)
+        
+
+        Backpacker Walt 
+            Dugtrio (Arena Trap) (Dig, Rock Blast, Night Slash, Quick Attack)
+        
+        Roughneck Sylvester: 
+            Garbodor -> Trubbish (Level 1) @ Focus Sash (Ability: Aftermath) (Toxic Spikes, Endeavor, Spikes, Baneful Bunker)
+            Cloyster -> Croconaw @ Eviolite (Ability: Sheer Force) (Liquidation, Dragon Claw, Ice Punch, Dragon Dance) 
+            Scrafty (Rock Climb -> Pursuit, Crunch -> Beat Up)
+            Clefairy (Cosmic Power, Moonlight, Fairy Wind, Shadow Ball)
+
+        Cyclist Krissa 
+            Linoone (Ability: Speed Boost) (Crush Claw, Fury Swipes, Baton Pass, Protect)
+            Umbreon (Ability: Patient) (Block, Baton Pass, Foul Play, Moonlight)
+            Voltorb @ Eviolite (Ability: Reckless) (Volt Tackle, Flash Cannon, Double-Edge, Swagger)
+            Sawsbuck-Summer (Ability: Reckless) (Lunge, Stompin Tantrum, Horn Leech, Double-Edge)
+
+        Cyclist Hector 
+            Mightyena (Ability: Strong Jaw) (Thunder Fang, Fire Fang, Ice Fang, Parting Shot)
+            Espeon (Ability: Magic Bounce) (Force Palm, Psybeam, Magical Leaf, Protect)
+            Combusken @ Eviolite (Ability: Quick Feet) (Facade, Blaze Kick, Acrobatics, Sky Uppercut)        
+            Sawsbuck-Autumn (Ability: Shed Skin) (Leaf Storm, Phantom Strike, Stomping Tantrum, Sleep Powder)
+
+        Backpacker Tami: 
+            Yamask: 
+                Earth Power -> Sand Tomb 
+
+    CLAY SPLIT: 
+        Worker Herman 
+            Krookadile -> Hippowdon @ Leftovers (Ability: Strong Jaw) (Fire Fang, Bulldoze, Thunder Fang, Slack Off)
+    
+    SKYLA SPLIT
+        Psychic Tully
+            Wormadam-Sandy -> Absol @ Iron Ball (Ability: Forewarn) (Dark Pulse, Moonblast, Ice Beam, Future Sight)
+        
+        Backpacker Alexander 
+            Hippowdon -> Wormadam-Sandy @ Scope Lens (Ability: Adaptability) (Earthquake, Leech Life, Weather Crash, Defend Order)
+        
+        Hiker Otto 
+            +Cranidos @ Choice Scarf (Ability: Determined) (Head Smash, Outrage)
+        
+        Hiker Jebediah 
+            +Voltorb @ Life Orb (Ability: Reckless) (Volt Tackle, Head Charge, Flash Cannon, Protect)
+
+
+[ LEARNSET UPDATES ]
+    Woobat / Swoobat 
+
+    Aipom / Ambipom 
+    Cyndaquil / Quilava / Bayleef 
+    Totodile / Croconaw / Feraligatr
+    Chikorita / Bayleef / Meganium 
+    Spinarak / Ariados 
+    Sentret / Furret 
+    Hoothoot / Noctowl 
+    Ledyba / Ledian 
+    Chinchou / Lanturn 
+    Togepi / Togetic / Togekiss 
+    Natu / Xatu 
+    Mareep / Flaffy / Ampharos 
+    Bonsly / Sudowoodo 
+    Azurill / Marill / Azumarill 
+    Hoppip / Skiploom / Jumpluff 
+    Sunkern / Sunflora 
+    Yanma / Yanmega 
+    Murkrow / Honchkrow 
+    Misdreavus / Mismagius 
+    Unown 
+    Wynaut / Wobbuffet 
+    Girafarig
+    Pineco / Forretress 
+
+[ POKEDEX ]
+
+    Shuckle 
+        -5 SpA 
+        +20 Defense 
+        +20 Special Defense
+
+    Togepi: 
+        Ability 3: No Guard
+
+    Togetic 
+        +30 Atk
+        Ability 3: No Guard
+    
+    Togekiss: 
+        +30 Atk 
+        Ability 3: No Guard
+    
+    Furret 
+        +5 Atk 
+    
+    Riolu: 
+        +15 HP 
+        +15 Defense 
+        +15 Special Defense 
+    
+    Skorupi 
+        +30 Atk 
+        +10 HP 
+    
+    Hippopotas 
+        +20 Atk 
+        Rough Skin -> Sand Force 
+    
+    Hippowdon 
+        +20 Atk 
+        Rough Skin -> Sand Force
+    
+    For Consideration: 
+        Making Blastoise substantially slower but substantially stronger 
+
+    Lopunny
+        +5 Atk 
+    
+    Pachirisu 
+        +15 Special Defense 
+    
+    Aipom: 
+        +10 Spe 
+    
+    Charmeleon: 
+        +5 Speed 
+    
+    Wartortle: 
+        +5 Defense
+    
+    Bulbassaur 
+        -5 Defense 
+        +5 Special Defense 
+
+    Ivysaur: 
+        -5 Def
+        +5 Atk
+        +5 Special Attack 
+    
+    Venusaur: 
+        +10 Atk 
+        -5 Special Defense 
+        -5 Defense 
+
+    Chikorita: 
+        -5 Defense 
+        -5 Special Defense 
+    
+    Quilava: 
+        +5 Special Attack 
+        Bulldoze -> Mud Shot
+    
+    Croconaw: 
+        +5 Atk 
+  
+    Grovyle: 
+        +5 Special Defense 
+    
+    Marshtomp 
+        +5 HP 
+    
+    Combusken 
+        +5 Speed 
+    
+    Turtwig: 
+        -10 Special Defense 
+        -5 Defense 
+        -5 Speed 
+    
+    Grotle: 
+        -5 Defense 
+        +10 Special Defense
+    
+    Prinplup: 
+        +5 Speed 
+    
+    Empoleon: 
+        -10 Atk 
+        +10 Speed
+    Ninetales: 
+        +15 Atk 
+        +5 Hp 
+        +5 Defense 
+    
+    Vulpix: 
+        -5 HP 
+        -5 Defense 
+    Volcarona 
+        +30 Defense 
+    
+    Elgyem 
+        +10 Defense 
+    
+    Beheeyem 
+        +10 Defense 
+
+    Frillish: 
+        +20 HP 
+        +10 Defense 
+        +10 Special Attack 
+    
+    Solosis:    
+        -20 HP 
+        +10 Defense 
+        +10 Special Defense 
+    
+    Duosion: 
+        -15 HP 
+        +15 Defense 
+        +15 Special Defense 
+    
+    Reuniclus 
+        -15 HP 
+        +15 Defense 
+        +15 Special Defense 
+    
+    Dwebble
+        Shed Skin -> Regenerator
+    
+    Crustle: 
+        Shed Skin -> Regenerator 
+
+        Sets to Change: 
+            Clerk Gilligan Crustle (Shed Skin -> Shell Armor)
+            Hiker Keith Cruslte (Shed Skin -> Pickup) (Maranga Berry -> Enigma Berry)
+    
+    Milotic 
+        Shed Skin -> Distracting 
+        
+        Sets to Change: 
+            School Kid Mara Gardevoir (Water Pulse -> Night Shade)
+            School Kid Mara Milotic (Shed Skin -> Distracting) (Power Herb) (Rest -> Hypnosis)
+            School Kid Alvin Gorebyss (Hypnosis -> Attract)
+
+    Dunsparce: 
+        Shed Skin -> Unaware
+    
+    Kecleon 
+        Shed Skin -> Savant 
+    
+    Vulpix: 
+        Should also evolve at level 42
+    
+    Audino: 
+        +10 Atk 
+        +10 Special Attack 
+
+    Musharna: 
+        +10 Defense 
+        +10 Special Defense 
+    
+    Munna: 
+        +10 HP 
+        +30 Defense 
+        +10 SpA 
+        +30 Special Defense 
+    
+    Drillbur: 
+        +15 Defense 
+        +15 Special Defense 
+    
+    Excadrill: 
+        +10 Defense 
+        +10 Special Defense
+
+    Sewaddle 
+        Overcoat -> Swarm 
+        Resilient -> Regenerator 
+        Swarm -> Filter 
+    
+    Swadloon: 
+        Overcoat -> Swarm 
+    
+    Leavanny: 
+        Overcoat -> Hyper Cutter
+    
+    Vullaby / Mandibuzz: 
+        Overcoat -> Strong Body 
+    
+    Wormadam Formes: 
+        Overcoat -> Adaptability 
+        
+    Wormadam-Grassy
+        Ability Slot 3: Overcoat -> Adaptability 
+        +4 SpA 
+    
+    Wormadam-Sandy 
+        Ability Slot 1: Overcoat -> Adaptability
+        +4 Atk 
+
+    Wormadam-Trash 
+        Ability Slot 2: Overcoat -> Adaptability 
+        +2 Atk 
+        +2 SpA 
+    
+    Mothim: 
+        +4 Atk 
+    
+    All Wormadam Formes: 
+        Ability 6: Overcoat 
+
+    Hoothoot / Noctowl: 
+        Overcoat -> Magic Guard 
+
+
+[ ITEMS ]
+
+
+[ MOVES ]
+    Aeroblast: 
+        30% chance to raise speed one stage. 
+    
+    Dragon Dance, Calm Mind, Bulk Up, 1 PP each. 
+    Mega Punch: 
+        80 > 90  
+
+        Give to: 
+            Hariyama 
+        
+    Double Hit: 
+        45 BP 
+    
+    Increase Binding Damage to 1/8 per turn. 
+    
+    Snap Trap: 
+        The user snap's its jaws on a target like a snap trap. 
+
+    Clamp / Snap Trap: 
+        100 BP
+        100% accurate 
+    
+    Submission: 
+        Returns to 1/4 Recoil
+    
+    Freeze Dry 
+        80 BP 
+    
+    Sky Uppercut
+        80 BP
+    
+    Fire/Ice/Thunderpunch: 
+        85 BP 
+
+
 
 
 Final Gambit Distribution: 
@@ -31,74 +393,30 @@ Final Gambit Distribution:
     Seviper 
 
 
-B2B2B2B Trainers: 
-    Ooze Trainer: 
-        Muk 
-        Reuniclus 
-        Jellicent-F
-        Ditto 
-    
-    Pig Trainer: 
-        Primeape 
-        Emboar 
-        Grumpig 
-        Swoobat
-        Mamoswine 
-    
-    Monkeys
-        Ambipom 
-        Vigoroth 
-        Simisage 
-        Electivire 
-        Infernape 
-    
-    Rodents: 
-        Pachirisu 
-        Sandslash 
-        Typhlosion
-        Azumarill 
-        Raticate 
 
 
-    Implement the Marine Tube Gate Event 
-    Implement the Undella Town Event 
-    Implement the Celestial Tower Event 
-
-    Fix the text description for Sand Attack 
-    
-    Scripting: 
-        - Implement the Celestial Tower Event 
-        - Implement an Event to Marine Tube: 
-            - Janitor tells you the Tube is closed for cleaning. 
-            - Why isn't he cleanig it now? He's taking a break, leave him alone. 
-            - He then goes back to watching funny dog videos and turns away from the player letting them pass in peace. 
-        - Implement a PC in Marine Tube (see if it works)
-            - Doesn't matter if its' gamey, it's just good QoL. Use a porygon I guess. 
-    
-    Dialogue: 
-        - Workshop the Janine and Blaine Dialogues 
-        - Go over the Hugh Dialogues for Chargestone Cave 
-    
-    Sprites: 
-        Overworld: 
-            - Make a new sprite for pickets holding signs. Ideally we should have two of these.    
-                - can replace caterpie and metapod
-            - Make a new sprite for underwater swimmers M and F. 
-                - Can replace weedle and kakuna 
-            - Make a new sprite for a keeeling over garchomp. 
-                - Can replace rattata 
-            - Make a new sprite for a shivering Plasma Grunt M & F 
-                - Can replace Pidgey & Pidgeotto 
-            - Make a new sprite for a shivering Hugh, Benga, and Rood 
-                - Can replace Spearow, Nidoran-F & Nidoran-M 
-        Trainers: 
-            - Make a Trainer Sprite for an "Agent" 
-            - Make a Trainer Sprite for "Darach" 
 
 
-To Do List: 
-    - See if we can get new Forms to work for Unown. 
-    - Come up with new teams for the Plasma Grunts on the Frigate. 
+
+
+
+Cool Eviolite Pokemon: 
+    Elesa Split: 
+        Tyrogue 
+        Quilava
+        Combusken 
+        Krokorok
+
+    Clay Split: 
+        Pidgeotto (No Guard) (Hurricane, Thunder, Blizzard, Fire Blast)
+        Gligar 
+        Pignite 
+        Dewott 
+
+
+Marine Tube: 
+    - Try and add a PC inside marine tube. Doesn't matter if its' gamey, it's just good QoL. Use a porygon I guess. 
+    - Add a short scripted event for trying to enter the Martine Tube where the Janitor tries to turn you away, then notices you match the description he was given, then lets you pass shiftily. 
 
 
 [ NEW UNOWN AND COMBEE FORMS ]
@@ -252,56 +570,6 @@ To Do List:
 
 
 
-  
-[ MECHANICS TO IMPLEMENT ]
-    
-
-Shauntal: 
-    Spiritomb @ Chesto Berry (Ability: Magic Guard) (Dooom Desire, Parting Shot, Hyper Beam, Rest)
-    Ditto @ Enigma Berry (Ability: Imposter) (Parting Shot)
-    Unown-Sunken @ Sitrus Berry (Ability: Collective) (Nightmare, Ancient Power, Recover, Earth Power)
-    Drifblim @ Red Card (Ability: Aftermath) (Ominous Wind, Hurricane, Explosion, Will-o-Wisp)
-    Banette @ Colbur Berry (Ability: Hustle) (Retaliate, Phantom Strike, Play Rough, Curse)
-    Chandelure @ Choice Scarf (Ability: Shadow Tag) (Shadow Ball, Heat Wave, Self-Destruct, Switcheroo)
-
-
-    Other Shauntel Ideas: 
-        Vileplume 
-        Crobat 
-        Gengar 
-
-Marshall: 
-
-    Doubles: 
-        Staraptor 
-        Scrafty 
-        Tauros 
-        Infernape
-        Conkeldurr 
-    
-    Field Effect: Straight Up Brawl
-    Pokemon cannot take damage from indirect sources. (See: Magic Guard)
-    
-    Singles 
-    Electivire @ Choice Scarf (Ability: Teravolt) (Hi Jump Kick, Supercell Slam)
-    Medicham @ Choice Scarf (Ability: Huge Power) (Hi Jump Kick, Supercell Slam)
-
-
-    Hitmonlee @ Muscle Band (Ability: Quick Feet) (Fake Out, Hi Jump Kick, Facade, Supercell Slam)
-    Luxario @ Life Orb (Ability: Skill Link) (Spike Cannon, Arm Thrust, Bone Rush, Extremespeed)
-    Onix @ Covert Cloak (Ability: Sturdy) (Stone Edge, Headlong Rush, Explosion, Dragon Dance)
-    Blaziken @ Focus Sash (Ability: Speed Boost) (Blaze Kick, Superpower, Brave Bird, Detect)
-    Bouffalant @ Blunder Policy (Ability: Reckless) (Head Charge, Head Smash, Supercell Slam, Headlong Rush)
-    Conkeldurr @ Tera Orb (Ability: Guts) (Mach Punch, Rolling Kick, Accelerock, Rock Wrecker)
-
-
-
-[ SPRITES TO CREATE ]
-    Collapsed Garchomp 
-    Combee-Swarm
-    Unown-Swarm
-
-
 
 
 
@@ -376,6 +644,44 @@ Marshall:
             - Magmortar has Sludge Wave over Gunk Shot. 
 
 
+    Shauntal: 
+        Spiritomb @ Chesto Berry (Ability: Magic Guard) (Dooom Desire, Parting Shot, Hyper Beam, Rest)
+        Ditto @ Enigma Berry (Ability: Imposter) (Parting Shot)
+        Unown-Sunken @ Sitrus Berry (Ability: Collective) (Nightmare, Ancient Power, Recover, Earth Power)
+        Drifblim @ Red Card (Ability: Aftermath) (Ominous Wind, Hurricane, Explosion, Will-o-Wisp)
+        Banette @ Colbur Berry (Ability: Hustle) (Retaliate, Phantom Strike, Play Rough, Curse)
+        Chandelure @ Choice Scarf (Ability: Shadow Tag) (Shadow Ball, Heat Wave, Self-Destruct, Switcheroo)
+
+
+        Other Shauntel Ideas: 
+            Vileplume 
+            Crobat 
+            Gengar 
+
+    Marshall: 
+
+        Doubles: 
+            Staraptor 
+            Scrafty 
+            Tauros 
+            Infernape
+            Conkeldurr 
+        
+        Field Effect: Straight Up Brawl
+        Pokemon cannot take damage from indirect sources. (See: Magic Guard)
+        
+        Singles 
+        Electivire @ Choice Scarf (Ability: Teravolt) (Hi Jump Kick, Supercell Slam)
+        Medicham @ Choice Scarf (Ability: Huge Power) (Hi Jump Kick, Supercell Slam)
+
+
+        Hitmonlee @ Muscle Band (Ability: Quick Feet) (Fake Out, Hi Jump Kick, Facade, Supercell Slam)
+        Luxario @ Life Orb (Ability: Skill Link) (Spike Cannon, Arm Thrust, Bone Rush, Extremespeed)
+        Onix @ Covert Cloak (Ability: Sturdy) (Stone Edge, Headlong Rush, Explosion, Dragon Dance)
+        Blaziken @ Focus Sash (Ability: Speed Boost) (Blaze Kick, Superpower, Brave Bird, Detect)
+        Bouffalant @ Blunder Policy (Ability: Reckless) (Head Charge, Head Smash, Supercell Slam, Headlong Rush)
+        Conkeldurr @ Tera Orb (Ability: Guts) (Mach Punch, Rolling Kick, Accelerock, Rock Wrecker)
+
 
 
 
@@ -397,20 +703,6 @@ Marshall:
                     Clefable @ Tera Sash (Ability: Magic Guard) (Psycho Boost, Moonblast, Ominous Wind, Protect)
                     Drifblim @ Liechi Berry (Ability: Unburden) (Acrobatics, Phantom Strike, Explosion, Stockpile)
                     Mismagius @ Wise Glasses (Ability: Levitate) (Moonblast, Shadow Ball, Inferno, Diamond Storm)
-
-
-
-    
-[ BUGS AND OPTIMIZATION ]
-    Investigate the Damage Calc Discrepancies 
-        I don't have an explanation for these yet. It's possible there's some weird damage value changes on the calc side, or the natures are incorrect. 
-        We are just going to have to play through the game and assess if there are any weird damage calc happenings. 
-
-    Playtest our Game: 
-        We need to do some runs using vanilla switch AI 
-        Then we need to do some runs using Gen 4 Switch AI 
-        If we were to do g4 switch AI we would need to slap a lot more coverage on across the board.
-    
 
 
 

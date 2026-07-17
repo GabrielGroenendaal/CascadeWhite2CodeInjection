@@ -72,7 +72,319 @@
 
 
 
+Sunkern	
+1	Absorb
+1	Confide
+8	Grasswhistle
+11	Mega Drain
+15	Ingrain
+20	Flame Burst
+25	Morning Sun
+28	Petal Blizzard
+32	Nature Power
+35	Weather Ball
+39	Teeter Dance
+42	Petal Dance
+45	Fiery Dance
+48	Solar Beam
+53	Victory Dance
 
+Sunflora	
+1	Earth Power
+1	Growth
+8	Grasswhistle
+11	Mega Drain
+15	Ingrain
+20	Flame Burst
+25	Morning Sun
+28	Petal Blizzard
+32	Nature Power
+35	Weather Ball
+39	Teeter Dance
+42	Petal Dance
+45	Fiery Dance
+48	Solar Beam
+53	Victory Dance
+58	Overheat
+58	Leaf Storm
+
+Yanma	
+1	Gust
+4	Bug Bite
+6	Quick Attack
+11	Dual Wingbeat
+15	Supersonic
+18	Struggle Bug
+20	Eerie Impulse
+25	Leech Life
+28	Uproar
+31	Air Cutter
+34	Ancient Power
+37	Hypnosis
+39	Bug Buzz
+41	U-Turn
+44	Bug Buzz
+47	Air Slash
+51	Detect
+
+Yanmega	
+1	Aeroblast
+1	Silver Wind
+6	Quick Attack
+11	Dual Wingbeat
+15	Supersonic
+18	Struggle Bug
+20	Eerie Impulse
+25	Leech Life
+28	Uproar
+31	Air Cutter
+34	Ancient Power
+37	Hypnosis
+39	Bug Buzz
+41	U-turn
+44	Bug Buzz
+47	Air Slash
+51	Detect
+54	Boomburst
+60	Scorching Swarm
+66	Double Team
+70	Hurricane
+
+Wooper	
+1	Water Gun
+4	Mud Shot
+8	Acid Spray
+11	Eerie Impulse
+14	Mist
+17	Aqua Jet
+20	Mud Bomb
+23	Refresh
+25	Muddy Water
+27	Yawn
+30	Ice Punch
+33	Waterfall
+35	Recover
+37	Amnesia
+40	Earthquake
+
+Quagsire	
+1	Fissure
+4	Mud Shot
+8	Acid Spray
+11	Eerie Impulse
+14	Mist
+17	Aqua Jet
+20	Mud Bomb
+23	Refresh
+25	Muddy Water
+27	Yawn
+30	Ice Punch
+33	Waterfall
+35	Recover
+37	Amnesia
+40	Earthquake
+43	Aqua Tail
+46	Rain Dance
+49	Dive
+52	Toxic
+54	Soak
+
+Murkrow	
+1	Pluck
+1	Confide
+1	Haze
+6	Screech
+11	Beat Up
+15	Razor Winds
+19	Night Shade
+21	Taunt
+25	Torment
+29	Chatter
+33	Seething Cold
+36	Will-o-Wisp
+39	Feather Dance
+41	Dual Wingbeat
+45	Dark Pulse
+48	Drill Peck
+55	Night Daze
+
+Honchkrow	
+1	Spirit Break
+1	Heat Wave
+1	Parting Shot
+1	Sky Attack
+11	Beat Up
+15	Razor Winds
+19	Night Shade
+21	Taunt
+25	Torment
+29	Chatter
+33	Seething Cold
+36	Will-o-Wisp
+39	Feather Dance
+41	Dual Wingbeat
+45	Dark Pulse
+48	Drill Peck
+55	Night Daze
+60	Hurricane
+65	Brave Bord
+
+Misdreavus	
+1	Astonish
+6	Disarming Voice
+11	Confuse Ray
+15	Hex
+19	Psybeam
+21	Uproar
+24	Sing
+28	Psychic Noise
+32	Grudge
+35	Infernal Parade
+38	Dazzling Gleam
+43	Lucky Chant
+46	Aura Sphere
+50	Shadow Ball
+53	Perish Song
+55	Alluring Voice
+58	Inferno
+
+Mismagius	
+1	Dream Eater
+6	Disarming Voice
+11	Confuse Ray
+15	Hex
+19	Psybeam
+21	Uproar
+24	Sing
+28	Psychic Noise
+32	Grudge
+35	Infernal Parade
+38	Dazzling Gleam
+43	Lucky Chant
+46	Aura Sphere
+50	Shadow Ball
+53	Perish Song
+55	Alluring Voice
+58	Inferno
+64	Nightmare
+70	Moonblast
+
+Unown	
+1	Telekinesis
+5	Teleport
+10	Night Shade
+15	Lucky Chant
+20	Magical Leaf
+25	Dream Eater
+30	Grudge
+35	Ancient Power
+40	Psychic Noise
+45	Stored Power
+50	Earth Power
+55	Superpower
+60	Imprison
+65	Nightmare
+70	Calm Mind
+75	Shadow Force
+
+Wynaut	
+1	Charm
+1	Encore
+1	Counter
+1	Mirror Coat
+20	Safeguard
+20	Destiny Bond
+30	Tickle
+30	Teleport
+40	Charm
+40	Encore
+40	Counter
+40	Mirror Coat
+50	Safeguard
+50	Destiny Bond
+60	Tickle
+60	Teleport
+
+Wobbuffet	
+1	Charm
+1	Encore
+1	Counter
+1	Mirror Coat
+20	Safeguard
+20	Destiny Bond
+30	Tickle
+30	Teleport
+40	Charm
+40	Encore
+40	Counter
+40	Charm
+50	Safeguard
+50	Destiny Bond
+60	Tickle
+60	Teleport
+
+Girafarig	
+1	Headlong Rush
+1	Blaze Kick
+1	Snap Trap
+10	Bite
+14	Double Kick
+17	Agility
+20	Beat Up
+24	Skill Swap
+27	Hyper Fang
+30	Psychic
+34	Crunch
+37	Ally Switch
+40	Thunder Fang
+40	Fire Fang
+40	Ice Fang
+43	Slam
+46	Psychic Fangs
+50	Work Up
+54	Psycho Boost
+59	Baton Pass
+65	Facade
+
+Pineco	
+1	Harden
+1	Tackle
+5	Protect
+7	Bug Bite
+11	Bullet Seed
+14	Rapid Spin
+17	Endure
+20	Natural Gift
+23	Signal Beam
+27	Payback
+31	Metal Sound
+34	Thunder Wave
+37	Flash Cannon
+41	Spike Cannon
+41	Pin Missile
+
+Forretress	
+1	Icicle Spear
+1	Rock Blast
+1	Iron Defense
+1	Barrage
+10	Bullet Seed
+14	Rapid Spin
+17	Endure
+20	Natural Gift
+23	Signal Beam
+27	Payback
+31	Metal Sound
+34	Thunder Wave
+37	Flash Cannon
+41	Spike Cannon
+41	Pin Missile
+44	Gravity
+47	Gyro Ball
+50	Steamroller
+54	Zap Cannon
+59	Hyper Beam
+65	Steel Beam
 
 
 Aipom	
@@ -3327,12 +3639,12 @@ Woobat
 1	Fake Tears
 7	Stored Power
 10	Uproar
-14	Psychic Noise
+14	Esper Wing
 17	Supersonic
 20	Chatter
 23	Heart Stamp
 26	Amnesia
-29	Esper Wing
+29	Psychic Noise
 32	Dual Wingbeat
 36	Fairy Wind
 38	Hypnosis
@@ -3344,26 +3656,339 @@ Swoobat
 1	Sky Attack
 7	Stored Power
 10	Uproar
-14	Psychic Noise
+14	Esper Wing
 17	Supersonic
 20	Chatter
 23	Heart Stamp
 26	Amnesia
-29	Esper Wing
+29	Psychic Noise
 32	Dual Wingbeat
 36	Fairy Wind
 38	Hypnosis
 42	Acrobatics
-46	Spirit Break
+46	Alluring Voice
 49	Hurricane
-53	Boomburst
+53	Boomburst   
 57	Tailwind
 60	Calm Mind
 
 
+Togepi	
+1	Disarming Voice
+8	Magical Leaf
+10	Refresh
+14	Wish
+18	Air Cutter
+20	Safeguard
+22	Heart Stamp
+25	Charm
+29	Ancient Power
+32	Heal Pulse
+35	Tri Attack
+38	Extremespeed
+41	Fairy Wind
 
+Togetic	
+1	Disarming Voice
+8	Magical Leaf
+10	Refresh
+14	Wish
+18	Air Cutter
+20	Safeguard
+22	Heart Stamp
+25	Charm
+29	Ancient Power
+32	Heal Pulse
+35	Tri Attack
+38	Extremespeed
+41	Fairy Wind
+44	Air Slash
+47	Follow Me
+51	Lucky Chant
+55	Aura Sphere
 
+Togekiss	
+1	Encore
+1	Focus Blast
+1	Yawn
+14	Wish
+18	Air Cutter
+20	Safeguard
+22	Heart Stamp
+25	Charm
+29	Ancient Power
+32	Heal Pulse
+35	Tri Attack
+38	Extremespeed
+41	Fairy Wind
+44	Air Slash
+47	Follow Me
+51	Lucky Chant
+55	Aura Sphere
+62	Alluring Voice
+67	Aeroblast
 
+Natu	
+1	Stored Power
+1	Bounce
+6	Teleport
+10	Me First
+13	Sucker Punch
+16	Night Shade
+19	Dream Eater
+23	Skill Swap
+26	Magic Coat
+29	Esper Wing
+32	Drill Peck
+35	Wish
+37	Body Press
+40	Psycho Shift
+43	Whirlwind
+46	Future Sight
+49	Detect
+54	Cosmic Power
+59	Aeroblast
+
+Xatu	
+1	Stored Power
+1	Psystrike
+6	Teleport
+10	Me First
+13	Sucker Punch
+16	Night Shade
+19	Dream Eater
+23	Skill Swap
+26	Magic Coat
+29	Esper Wing
+32	Drill Peck
+35	Wish
+37	Body Press
+40	Psycho Shift
+43	Whirlwind
+46	Future Sight
+49	Detect
+54	Cosmic Power
+59	Aeroblast
+62	Psycho Boost
+
+Mareep	
+1	Nuzzle
+1	Thunder Wave
+1	Sparkle
+8	Cotton Spore
+10	Breaking Swipe
+13	Spark 
+17	Charge
+20	Signal Beam
+22	Electro Ball
+25	Dragon Breath
+27	Eerie Impulse
+30	Thunder Punch
+33	Power Gem
+37	Dazzling Gleam
+39	Light Screen
+41	Dragon Tail
+
+Flaaffy	
+1	Nuzzle
+1	Thunder Wave
+1	Sparkle
+8	Cotton Spore
+10	Breaking Swipe
+13	Spark 
+17	Charge
+20	Signal Beam
+22	Electro Ball
+25	Dragon Breath
+27	Eerie Impulse
+30	Thunder Punch
+33	Power Gem
+36	Dazzling Gleam
+39	Light Screen
+41	Dragon Tail
+45	Dynamic Punch
+49	Cotton Guard
+53	Dragon Rush
+
+Ampharos	
+1	Draco Meteor
+1	Zap Cannon
+1	Sparkle
+8	Cotton Spore
+10	Breaking Swipe
+13	Spark 
+17	Charge
+20	Signal Beam
+22	Electro Ball
+25	Dragon Breath
+27	Eerie Impulse
+30	Thunder Punch
+33	Power Gem
+37	Dazzling Gleam
+39	Light Screen
+41	Dragon Tail
+45	Dynamic Punch
+49	Cotton Guard
+53	Dragon Rush
+58	Supercell Slam
+
+Azurill	
+1	Water Gun
+1	Tail Slap
+6	Sing
+8	Charm
+10	Covet
+12	Aqua Jet
+15	Bubble Beam
+18	Tickle
+
+Marill	
+1	Water Gun
+1	Tail Slap
+6	Sing
+8	Charm
+10	Covet
+12	Aqua Jet
+15	Bubble Beam
+18	Tickle
+22	Body Slam
+25	Barrage
+28	Moonblast
+31	Bounce
+34	Defense Curl
+37	Double-Slap
+40	Aqua Tail
+42	Aqua Ring
+45	Present
+48	Play Rough
+50	Waterfall
+
+Azumarill	
+1	Rollout
+1	Encore
+6	Sing
+8	Charm
+10	Covet
+12	Aqua Jet
+15	Bubble Beam
+18	Tickle
+22	Body Slam
+25	Barrage
+28	Moonblast
+31	Bounce
+34	Defense Curl
+37	Double-Slap
+40	Aqua Tail
+42	Aqua Ring
+45	Present
+48	Play Rough
+50	Waterfall
+54	Superpower
+60	Dive
+
+Bonsly	
+1	Bullet Seed
+1	Tickle
+6	Accelerock
+9	Copycat
+13	Rock Tomb
+18	Defense Curl
+20	Nature Power
+22	Rollout
+30	Seed Bomb
+33	Block
+36	Double-Edge
+40	Rock Climb
+43	Hammer Arm
+45	Sucker Punch
+48	Parting Shot
+52	Head Smash
+55	Wood Hammer
+63	Rock Wrecker
+
+Sudowoodo	
+1	Obstruct
+1	Tickle
+6	Accelerock
+9	Copycat
+13	Rock Tomb
+18	Defense Curl
+20	Nature Power
+22	Rollout
+30	Seed Bomb
+33	Block
+36	Double-Edge
+40	Rock Climb
+43	Hammer Arm
+45	Sucker Punch
+48	Parting Shot
+52	Head Smash
+55	Wood Hammer
+63	Rock Wrecker
+
+Hoppip	
+1	Synthesis
+1	Charm
+4	Encore
+7	Air Slash
+9	Cotton Spore
+11	Leech Seed
+13	Stun Spore
+13	Sleep Powder
+17	Bullet Seed
+20	Bounce
+23	Natural Gift
+26	Pollen Puff
+29	Aromatherapy
+31	Seed Bomb
+35	Acrobatics
+38	Sleep Powder
+41	Razor Winds
+46	Needle Arm
+
+Skiploom	
+1	Synthesis
+1	Charm
+4	Encore
+7	Air Slash
+9	Cotton Spore
+11	Leech Seed
+13	Stun Spore
+13	Sleep Powder
+17	Bullet Seed
+20	Bounce
+23	Natural Gift
+26	Pollen Puff
+29	Aromatherapy
+31	Seed Bomb
+35	Acrobatics
+38	Sleep Powder
+41	Razor Winds
+46	Needle Arm
+49	Cotton Guard
+
+Jumpluff	
+1	Sky Attack
+1	Comet Punch
+4	Encore
+7	Air Slash
+9	Cotton Spore
+11	Leech Seed
+13	Stun Spore
+13	Sleep Powder
+17	Bullet Seed
+20	Bounce
+23	Natural Gift
+26	Pollen Puff
+29	Aromatherapy
+31	Seed Bomb
+35	Acrobatics
+38	Sleep Powder
+41	Razor Winds
+46	Needle Arm
+49	Cotton Guard
+54	Rage Powder
+59	Tailwind
 
 Roggenrola	
 1	Sparkle
@@ -3968,3 +4593,398 @@ Stoutland
 55	Superpower
 60	Helping Hand
 64	Giga Impact
+
+
+Chikorita	
+1	Tackle
+1	Growl
+7	Poisonpowder
+10	Stomp
+13	Bullet Seed
+15	Safeguard
+18	Natural Gift
+23	Dazzling Gleam
+26	Horn Leech
+30	Light Screen
+30	Reflect
+36	Petal Dance
+40	Heart Stamp
+44	Synthesis
+
+
+Bayleef	
+1	Tackle
+1	Growl
+7	Poisonpowder
+10	Stomp
+13	Bullet Seed
+15	Safeguard
+18	Natural Gift
+23	Dazzling Gleam
+26	Horn Leech
+30	Light Screen
+36	Reflect
+36	Petal Dance
+40	Heart Stamp
+44	Synthesis
+50	Earthquake
+54	Petal Blizzard
+60	Growth
+62	Headlong Rush
+
+
+Meganium	
+1	Skull Bash
+1	Sleep Powder
+7	Poisonpowder
+10	Stomp
+13	Bullet Seed
+15	Safeguard
+18	Natural Gift
+23	Dazzling Gleam
+26	Horn Leech
+30	Light Screen
+36	Reflect
+36	Petal Dance
+40	Heart Stamp
+44	Synthesis
+50	Earthquake
+54	Petal Blizzard
+60	Growth
+62	Headlong Rush
+68	Giga Impact
+
+
+
+
+Cyndaquil	
+1	Quick Attack
+1	Leer
+4	Smokescreen
+6	Flame Wheel
+10	Dig
+13	Extrasensory
+17	Mud Shot
+20	Infernal Parade
+24	Endure
+27	Gyro Ball
+30	Scorching Sands
+33	Defense Curl
+36	Flare Blitz
+40	Reversal
+44	Lava Plume
+48	Extremespeed
+52	Earth Power
+
+
+Quilava	
+1	Quick Attack
+1	Leer
+4	Smokescreen
+6	Flame Wheel
+10	Dig
+13	Extrasensory
+17	Mud Shot
+20	Infernal Parade
+24	Endure
+27	Gyro Ball
+30	Scorching Sands
+33	Defense Curl
+36	Flare Blitz
+40	Reversal
+44	Lava Plume
+48	Extremespeed
+52	Earth Power
+57	Extremespeed
+
+Typhlosion	
+1	Magma Storm
+1	Sand Tomb
+4	Smokescreen
+6	Flame Wheel
+10	Dig
+13	Extrasensory
+17	Mud Shot
+20	Infernal Parade
+24	Endure
+27	Gyro Ball
+30	Scorching Sands
+33	Defense Curl
+36	Flare Blitz
+40	Reversal
+44	Lava Plume
+48	Extremespeed
+52	Earth Power
+57	Blast Burn
+64	Rollout
+73	Eruption
+
+
+
+Totodile	
+1	Rage
+1	Bite
+6	Aqua Jet
+10	Scary Face
+15	Scald
+18	Devour
+21	Ice Fang
+24	Waterfall
+27	Block
+30	Crunch
+34	Counter
+38	Dragon Tail
+40	Glare
+43	Aqua Tail
+46	Agility
+51	Spiky Shield
+
+Croconaw	
+1	Rage
+1	Bite
+6	Aqua Jet
+10	Scary Face
+15	Scald
+18	Devour
+21	Ice Fang
+24	Waterfall
+27	Block
+30	Crunch
+34	Counter
+38	Dragon Tail
+40	Glare
+43	Aqua Tail
+46	Agility
+51	Spiky Shield
+55	Dragon Rush
+60	Wave Crash
+72	Dragon Dance
+
+Feraligatr	
+1	Scale Shot
+1	Dive
+6	Aqua Jet
+10	Scary Face
+15	Scald
+18	Devour
+21	Ice Fang
+24	Waterfall
+27	Block
+30	Crunch
+34	Counter
+38	Dragon Tail
+40	Glare
+43	Aqua Tail
+46	Agility
+51	Spiky Shield
+55	Dragon Rush
+60	Wave Crash
+72	Dragon Dance
+
+Sentret	
+1	Defense Curl
+1	Quick Attack
+5	Safeguard
+8	Follow Me
+11	Brutal Swing
+13	Tail Slap
+16	Me First
+20	Endure
+23	Dig
+27	Helping Hand
+30	Slam
+33	Rest
+35	Fake Out
+37	Play Rough
+40	Double-Edge
+44	Baton Pass
+
+Furret	
+1	Agility
+1	Flail
+5	Safeguard
+8	Follow Me
+11	Brutal Swing
+13	Tail Slap
+16	Me First
+20	Endure
+23	Dig
+27	Helping Hand
+30	Slam
+33	Rest
+35	Fake Out
+37	Play Rough
+40	Double-Edge
+44	Baton Pass
+48	Reversal
+52	Last Resort
+55	Giga Impact
+60	Coil
+
+Hoothoot	
+1	Confide
+1	Gust
+5	Dream Eater
+8	Night Shade
+10	Defog
+13	Reflect
+15	Uproar
+18	Glare
+21	Hex
+24	Mean Look
+28	Esper Wing
+32	Scary Face
+35	Hypnosis
+39	Ominous Wind
+44	Air Slash
+48	Roost
+51	Psycho Boost
+54	Hurricane
+
+Noctowl	
+1	Blizzard
+1	Psycho Shift
+5	Dream Eater
+8	Night Shade
+10	Defog
+13	Reflect
+15	Uproar
+18	Glare
+21	Hex
+24	Mean Look
+28	Esper Wing
+32	Scary Face
+35	Hypnosis
+39	Ominous Wind
+44	Air Slash
+48	Roost
+51	Psycho Boost
+54	Hurricane
+58	Nightmare
+65	Tailwind
+
+Ledyba	
+1	Comet Punch
+1	Bug Bite
+5	Arm Thrust
+7	Mach Punch
+10	Barrier
+12	Moonlight
+14	Safeguard
+17	Dual Wingbeat
+21	Baton Pass
+24	Sky Uppercut
+27	U-Turn
+32	Reflect
+32	Light Screen
+35	Hammer Arm
+37	Follow Me
+39	Fire Punch
+39	Ice Punch
+39	Thunder Punch
+42	Attack Order
+45	Cosmic Power
+
+Ledian	
+1	Bug Bite
+1	Ice Hammer
+1	Tailwind
+7	Mach Punch
+10	Barrier
+12	Moonlight
+14	Safeguard
+17	Dual Wingbeat
+21	Baton Pass
+24	Sky Uppercut
+27	U-Turn
+32	Reflect
+32	Light Screen
+35	Hammer Arm
+37	Follow Me
+39	Fire Punch
+39	Ice Punch
+39	Thunder Punch
+42	Attack Order
+45	Cosmic Power
+48	Meteor Mash
+58	Superpower
+
+Spinarak	
+1	String Shot
+1	Poison Sting
+6	Skitter Smack
+10	Screech
+13	Faint Attack
+16	Poison Fang
+19	Night Shade
+23	Shadow Sneak
+26	Scary Face
+29	Taunt
+33	Cross Poison
+36	Payback
+39	Leech Life
+43	Toxic
+
+Ariados	
+1	Psychic Fangs
+1	1st Impression
+6	Skitter Smack
+10	Screech
+13	Faint Attack
+16	Poison Fang
+19	Night Shade
+23	Shadow Sneak
+26	Scary Face
+29	Taunt
+33	Cross Poison
+36	Payback
+39	Leech Life
+43	Toxic
+47	Silk Trap
+50	Sucker Punch
+57	Gunk Shot
+60	Megahorn
+66	Sticky Web
+
+Chinchou	
+1	Eerie Impulse
+1	Thundershock
+5	Thunder Wave
+8	Chilling Water
+11	Charge
+15	Confuse Ray
+19	Electro Ball
+23	Bubble Beam
+26	Signal Beam
+29	Parabolic Zap
+33	Stockpile
+33	Swallow
+36	Volt Switch
+40	Whirlpool
+45	Soak
+
+Lanturn	
+1	Eerie Impulse
+1	Thundershock
+5	Thunder Wave
+8	Chilling Water
+11	Charge
+15	Confuse Ray
+19	Electro Ball
+23	Bubble Beam
+26	Signal Beam
+29	Parabolic Zap
+33	Stockpile
+33	Swallow
+36	Volt Switch
+40	Whirlpool
+45	Soak
+49	Thunder
+53	Rest
+56	Hydro Pump
+59	Electro Shot
+70	Tail Glow
+
+
+
+
