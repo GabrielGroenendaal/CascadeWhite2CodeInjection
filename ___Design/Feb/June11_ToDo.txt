@@ -18,7 +18,9 @@
     BURGH SPLIT:
         Backpacker Kendall 
             Croconaw -> Hippopotas (Ability: Strong Jaw) (Drill Run, Fire Fang, Yawn, Protect)
-    
+
+        Surge: 
+            Krookadile (Crunch -> Thrash )
     ELESA SPLIT:
 
         Benga: 
@@ -81,269 +83,290 @@
 
 
 [ LEARNSET UPDATES ]
-    Woobat / Swoobat 
 
-    Aipom / Ambipom 
-    Cyndaquil / Quilava / Bayleef 
-    Totodile / Croconaw / Feraligatr
-    Chikorita / Bayleef / Meganium 
-    Spinarak / Ariados 
-    Sentret / Furret 
-    Hoothoot / Noctowl 
-    Ledyba / Ledian 
-    Chinchou / Lanturn 
-    Togepi / Togetic / Togekiss 
-    Natu / Xatu 
-    Mareep / Flaffy / Ampharos 
-    Bonsly / Sudowoodo 
-    Azurill / Marill / Azumarill 
-    Hoppip / Skiploom / Jumpluff 
-    Sunkern / Sunflora 
-    Yanma / Yanmega 
-    Murkrow / Honchkrow 
-    Misdreavus / Mismagius 
-    Unown 
-    Wynaut / Wobbuffet 
-    Girafarig
-    Pineco / Forretress 
 
 [ POKEDEX ]
 
-    Snubbull: 
-        -10 Speed
-        +10 Defense 
-    
-    Granbull: 
-        +20 Defense 
-        -5 Speed 
-    
-    Shuckle 
-        -5 SpA 
-        +20 Defense 
-        +20 Special Defense
+    Hoenn:
+        Grovyle: 
+            +5 Special Defense 
+        
+        Marshtomp 
+            +5 HP 
+        
+        Combusken 
+            +5 Speed 
 
-    Togepi: 
-        Ability 3: No Guard
+        Ludicolo 
+            +10 Defense 
+        
+        Lotad: 
+            +10 HP 
 
-    Togetic 
-        +30 Atk
-        Ability 3: No Guard
-    
-    Togekiss: 
-        +30 Atk 
-        Ability 3: No Guard
-    
-    Furret 
-        +5 Atk 
-    
-    Riolu: 
-        +15 HP 
-        +15 Defense 
-        +15 Special Defense 
-    
-    Skorupi 
-        +30 Atk 
-        +10 HP 
-    
-    Hippopotas 
-        +20 Atk 
-        Rough Skin -> Sand Force 
-    
-    Hippowdon 
-        +20 Atk 
-        Rough Skin -> Sand Force
-    
-    For Consideration: 
-        Making Blastoise substantially slower but substantially stronger 
+        Seedot: 
+            +10 Special Defense 
+        
+        Shiftry: 
+            +5 Speed 
+            +5 Special Attack 
 
-    Lopunny
-        +5 Atk 
-    
-    Pachirisu 
-        +15 Special Defense 
-    
-    Aipom: 
-        +10 Spe 
-    
-    Charmeleon: 
-        +5 Speed 
-    
-    Wartortle: 
-        +5 Defense
-    
-    Bulbassaur 
-        -5 Defense 
-        +5 Special Defense 
-
-    Ivysaur: 
-        -5 Def
-        +5 Atk
-        +5 Special Attack 
-    
-    Venusaur: 
-        +10 Atk 
-        -5 Special Defense 
-        -5 Defense 
-
-    Chikorita: 
-        -5 Defense 
-        -5 Special Defense 
-    
-    Quilava: 
-        +5 Special Attack 
-        Bulldoze -> Mud Shot
-    
-    Croconaw: 
-        +5 Atk 
-  
-    Grovyle: 
-        +5 Special Defense 
-    
-    Marshtomp 
-        +5 HP 
-    
-    Combusken 
-        +5 Speed 
-    
-    Turtwig: 
-        -10 Special Defense 
-        -5 Defense 
-        -5 Speed 
-    
-    Grotle: 
-        -5 Defense 
-        +10 Special Defense
-    
-    Prinplup: 
-        +5 Speed 
-    
-    Empoleon: 
-        -10 Atk 
-        +10 Speed
-    Ninetales: 
-        +15 Atk 
-        +5 Hp 
-        +5 Defense 
-    
-    Vulpix: 
-        -5 HP 
-        -5 Defense 
-    Volcarona 
-        +30 Defense 
-    
-    Elgyem 
-        +10 Defense 
-    
-    Beheeyem 
-        +10 Defense 
-
-    Frillish: 
-        +20 HP 
-        +10 Defense 
-        +10 Special Attack 
-    
-    Solosis:    
-        -20 HP 
-        +10 Defense 
-        +10 Special Defense 
-    
-    Duosion: 
-        -15 HP 
-        +15 Defense 
-        +15 Special Defense 
-    
-    Reuniclus 
-        -15 HP 
-        +15 Defense 
-        +15 Special Defense 
-    
-    Dwebble
-        Shed Skin -> Regenerator
-    
-    Crustle: 
-        Shed Skin -> Regenerator 
-
-        Sets to Change: 
-            Clerk Gilligan Crustle (Shed Skin -> Shell Armor)
-            Hiker Keith Cruslte (Shed Skin -> Pickup) (Maranga Berry -> Enigma Berry)
-    
-    Milotic 
+        Pelipper 
+            +10 Special Defense
+        
+        Mawile 
+            +5 SpA 
+        
+        Aggron Line: 
+            Ability 4: Light Metal 
+            Ability 5: Heavy Metal 
+            
+        Milotic 
         Shed Skin -> Distracting 
         
-        Sets to Change: 
-            School Kid Mara Gardevoir (Water Pulse -> Night Shade)
-            School Kid Mara Milotic (Shed Skin -> Distracting) (Power Herb) (Rest -> Hypnosis)
-            School Kid Alvin Gorebyss (Hypnosis -> Attract)
+            Sets to Change: 
+                School Kid Mara Gardevoir (Water Pulse -> Night Shade)
+                School Kid Mara Milotic (Shed Skin -> Distracting) (Power Herb) (Rest -> Hypnosis)
+                School Kid Alvin Gorebyss (Hypnosis -> Attract)
+        
+        Kecleon 
+            Shed Skin -> Savant 
 
-    Dunsparce: 
-        Shed Skin -> Unaware
+
+    Johto
+        Chikorita: 
+            -5 Defense 
+            -5 Special Defense 
+        
+        Quilava: 
+            +5 Special Attack 
+            Bulldoze -> Mud Shot
+        
+        Croconaw: 
+            +5 Atk 
+
+        Furret 
+            +5 Atk 
+
+        Hoothoot / Noctowl: 
+            Overcoat -> Magic Guard 
+
+        Delibird: 
+            +10 HP 
+        
+        Aipom: 
+            +10 Spe 
+        
+        Dunsparce: 
+            Shed Skin -> Unaware
+
+        Snubbull: 
+            -10 Speed
+            +10 Defense 
+        
+        Granbull: 
+            +20 Defense 
+            -5 Speed 
+        
+        Shuckle 
+            -5 SpA 
+            +20 Defense 
+            +20 Special Defense
+
+        Togepi: 
+            Ability 3: No Guard
+
+        Togetic 
+            +30 Atk
+            Ability 3: No Guard
+        
+        Togekiss: 
+            +30 Atk 
+            Ability 3: No Guard
     
-    Kecleon 
-        Shed Skin -> Savant 
+
+    Sinnoh:
+        Turtwig: 
+            -10 Special Defense 
+            -5 Defense 
+            -5 Speed 
+        
+        Grotle: 
+            -5 Defense 
+            +10 Special Defense
+        
+        Prinplup: 
+            +5 Speed 
+        
+        Empoleon: 
+            -10 Atk 
+            +10 Speed
+        Riolu: 
+            +15 HP 
+            +15 Defense 
+            +15 Special Defense 
+        
+        Skorupi 
+            +30 Atk 
+            +10 HP 
+        
+        Hippopotas 
+            +20 Atk 
+            Rough Skin -> Sand Force 
+        
+        Hippowdon 
+            +20 Atk 
+            Rough Skin -> Sand Force
+
+        Lopunny
+            +5 Atk 
+        
+        Pachirisu 
+            +15 Special Defense 
+
+        Spiritomb: 
+            +34 Speed 
+            +8 Atk 
+            +8 SpA 
+            
+        Wormadam-Grassy
+            Ability Slot 3: Overcoat -> Adaptability 
+            +4 SpA 
+        
+        Wormadam-Sandy 
+            Ability Slot 1: Overcoat -> Adaptability
+            +4 Atk 
+
+        Wormadam-Trash 
+            Ability Slot 2: Overcoat -> Adaptability 
+            +2 Atk 
+            +2 SpA 
+        
+        Mothim: 
+            +4 Atk 
+        
+        All Wormadam Formes: 
+            Ability 6: Overcoat 
+
+ 
+
+    Kanto
+
+        Charmeleon: 
+            +5 Speed 
+        
+        Wartortle: 
+            +5 Defense
+        
+        Bulbassaur 
+            -5 Defense 
+            +5 Special Defense 
+
+        Ivysaur: 
+            -5 Def
+            +5 Atk
+            +5 Special Attack 
+        
+        Venusaur: 
+            +10 Atk 
+            -5 Special Defense 
+            -5 Defense 
+
+        Ninetales: 
+            +15 Atk 
+            +5 Hp 
+            +5 Defense 
+        
+        Vulpix: 
+            -5 HP 
+            -5 Defense 
+
     
-    Vulpix: 
-        Should also evolve at level 42
-    
-    Audino: 
+    Unova
+        Volcarona 
+            +30 Defense 
+        
+        Elgyem 
+            +10 Defense 
+        
+        Beheeyem 
+            +10 Defense 
+
+        Frillish: 
+            +20 HP 
+            +10 Defense 
+            +10 Special Attack 
+        
+        Solosis:    
+            -20 HP 
+            +10 Defense 
+            +10 Special Defense 
+        
+        Duosion: 
+            -15 HP 
+            +15 Defense 
+            +15 Special Defense 
+        
+        Reuniclus 
+            -15 HP 
+            +15 Defense 
+            +15 Special Defense 
+        
+        Dwebble
+            Shed Skin -> Regenerator
+        
+        Crustle: 
+            Shed Skin -> Regenerator 
+
+            Sets to Change: 
+                Clerk Gilligan Crustle (Shed Skin -> Shell Armor)
+                Hiker Keith Cruslte (Shed Skin -> Pickup) (Maranga Berry -> Enigma Berry)
+        
+        Audino: 
         +10 Atk 
         +10 Special Attack 
 
-    Musharna: 
-        +10 Defense 
-        +10 Special Defense 
-    
-    Munna: 
-        +10 HP 
-        +30 Defense 
-        +10 SpA 
-        +30 Special Defense 
-    
-    Drillbur: 
-        +15 Defense 
-        +15 Special Defense 
-    
-    Excadrill: 
-        +10 Defense 
-        +10 Special Defense
-
-    Sewaddle 
-        Overcoat -> Swarm 
-        Resilient -> Regenerator 
-        Swarm -> Filter 
-    
-    Swadloon: 
-        Overcoat -> Swarm 
-    
-    Leavanny: 
-        Overcoat -> Hyper Cutter
-    
-    Vullaby / Mandibuzz: 
-        Overcoat -> Strong Body 
-    
-    Wormadam Formes: 
-        Overcoat -> Adaptability 
+        Musharna: 
+            +10 Defense 
+            +10 Special Defense 
         
-    Wormadam-Grassy
-        Ability Slot 3: Overcoat -> Adaptability 
-        +4 SpA 
-    
-    Wormadam-Sandy 
-        Ability Slot 1: Overcoat -> Adaptability
-        +4 Atk 
+        Munna: 
+            +10 HP 
+            +30 Defense 
+            +10 SpA 
+            +30 Special Defense 
+        
+        Drillbur: 
+            +15 Defense 
+            +15 Special Defense 
+        
+        Excadrill: 
+            +10 Defense 
+            +10 Special Defense
 
-    Wormadam-Trash 
-        Ability Slot 2: Overcoat -> Adaptability 
-        +2 Atk 
-        +2 SpA 
+        Sewaddle 
+            Overcoat -> Swarm 
+            Resilient -> Regenerator 
+            Swarm -> Filter 
+        
+        Swadloon: 
+            Overcoat -> Swarm 
+        
+        Leavanny: 
+            Overcoat -> Hyper Cutter
+        
+        Vullaby / Mandibuzz: 
+            Overcoat -> Strong Body 
     
-    Mothim: 
-        +4 Atk 
     
-    All Wormadam Formes: 
-        Ability 6: Overcoat 
 
-    Hoothoot / Noctowl: 
-        Overcoat -> Magic Guard 
+    
+    
+    
+    
+    
+   
+
+   
 
 
 [ ITEMS ]
@@ -377,6 +400,8 @@
     Fire/Ice/Thunderpunch: 
         85 BP 
 
+    Roar 
+        120 BP 
 
 
 
