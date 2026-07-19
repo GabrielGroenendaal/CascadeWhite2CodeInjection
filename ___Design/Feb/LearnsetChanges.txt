@@ -65,7 +65,6 @@
 
 
 
-
 Mudkip	
 1	Growl
 1	Barrage
@@ -386,7 +385,6 @@ Swellow
 72	Facade
 
 Wingull	
-1	Water Gun
 1	Growl
 1	Gust
 6	Mist
@@ -410,7 +408,6 @@ Wingull
 Pelipper	
 1	Whirlpool
 1	Soak
-1	Gust
 6	Mist
 8	Knock Off
 11	Chilling Water
@@ -432,6 +429,306 @@ Pelipper
 54	Hurricane
 59	Hydro Pump
 
+Numel	
+1	Growl
+1	Accelerock
+4	Flame Wheel
+8	Gastro Acid
+11	Bulldoze
+13	Take Down
+17	Temper Flare
+20	Poison Gas
+22	Scorching Sands
+25	Yawn
+28	Amnesia
+31	Lava Plume
+34	Ancient Power
+37	Smog
+42	Will-o-Wisp
+45	Sand Tomb
+49	Heat Crash
+54	Earth Power
+57	Eruption
+
+Camerupt	
+1	Fire Spin
+1	Growth
+1	Headlong Rush
+8	Gastro Acid
+11	Bulldoze
+13	Take Down
+17	Temper Flare
+20	Poison Gas
+22	Scorching Sands
+25	Yawn
+28	Amnesia
+31	Lava Plume
+34	Ancient Power
+37	Smog
+42	Will-o-Wisp
+45	Sand Tomb
+49	Heat Crash
+54	Earth Power
+57	Eruption
+62	Harden
+67	Magma Storm
+75	Focus Energy
+
+Grumpig	
+1	High Horsepower
+1	Psycho Shift
+4	Power Trip
+7	Psywave
+10	Fake Out
+13	Brutal Swing
+15	Dizzy Punch
+18	Teeter Dance
+21	Bounce
+24	Mirror Coat
+27	Psycho Cut
+30	Faint Attack
+32	Dizzy Punch
+35	Foul Play
+38	Skill Swap
+42	Focus Punch
+45	Magic Coat
+48	Crunch
+51	Zen Headbutt
+54	Sucker Punch
+58	Flatter
+65	Psyblade
+
+Spinda	
+1	Headlong Rush
+1	Ice Hammer
+1	Power Trip
+13	Stored Power
+18	Dizzy Punch
+20	Detect
+22	Extrasensory
+25	Fake Out
+28	Hyper Voice
+31	Hammer Arm
+34	Wish
+37	Zen Headbutt
+41	Teeter Dance
+45	Brutal Swing
+48	Entrainment
+52	Double-Edge
+55	Spin Out
+60	Close Combat
+65	Flail
+
+Flygon	
+1	Boomburst
+1	Alluring Voice
+10	Dig
+17	Dragonbreath
+21	Uproar
+25	Scorching Sands
+29	Signal Beam
+31	Supersonic
+35	Air Slash
+35	Twister
+38	Lunge
+41	Sand Tomb
+43	Sand-Attack
+46	Dragon Claw
+49	Bug Buzz
+52	Sing
+55	Dragon Rush
+60	Megahorn
+65	Scorching Swarm
+70	Clanging Scales
+74	Dragon Dance
+
+Vibrava	
+1	Bug Bite
+1	Leer
+10	Dig
+17	Dragonbreath
+21	Uproar
+25	Scorching Sands
+29	Signal Beam
+31	Supersonic
+35	Air Slash
+35	Twister
+38	Lunge
+41	Sand Tomb
+43	Sand-Attack
+46	Dragon Claw
+49	Bug Buzz
+52	Sing
+55	Dragon Rush
+60	Megahorn
+
+Trapinch	
+1	Bug Bite
+1	Leer
+10	Dig
+17	Dragonbreath
+21	Uproar
+25	Scorching Sands
+29	Signal Beam
+31	Supersonic
+33	Air Slash
+35	Twister
+38	Lunge
+41	Sand Tomb
+
+Cacnea	
+1	Absorb
+1	Growth
+1	Poison Sting
+4	Leech Seed
+9	Pin MIssile
+13	Barb Barrage
+16	Shadow Sneak
+19	Cotton Spore
+23	Disable
+25	Scorching Sands
+29	Grudge
+32	Sand Attack
+36	Sucker Punch
+40	Needle Arm
+44	Sand Tomb
+48	Phantom Strike
+
+Cacturne	
+1	Sandstorm
+1	Teeter Dance
+1	Spikes
+1	Baneful Bunker
+1	Wicked Blow
+13	Barb Barrage
+16	Shadow Sneak
+19	Cotton Spore
+23	Disable
+25	Scorching Sands
+29	Grudge
+32	Sand Attack
+36	Sucker Punch
+40	Needle Arm
+44	Sand Tomb
+48	Phantom Strike
+52	Spiky Shield
+56	Leaf Storm
+62	Shadow Force
+70	Frenzy Plant
+
+Swablu	
+1	Growl
+1	Astonish
+4	Refresh
+6	Disarming Voice
+9	Pluck
+13	Sing
+15	Cotton Spore
+17	Natural Gift
+20	Dual Wingbeat
+24	Uproar
+29	Feather Dance
+32	Weather Ball
+35	Twister
+39	Cotton Guard
+43	Fairy Wind
+45	Whirlwind
+48	Safeguard
+52	Dragon Rush
+56	Roost
+59	Alluring Voice
+
+Altaria	
+1	Relic Song
+1	Sky Drop
+4	Refresh
+6	Disarming Voice
+9	Pluck
+13	Sing
+15	Cotton Spore
+17	Natural Gift
+20	Dual Wingbeat
+24	Uproar
+29	Feather Dance
+32	Weather Ball
+35	Twister
+39	Cotton Guard
+43	Fairy Wind
+45	Whirlwind
+48	Safeguard
+52	Dragon Rush
+56	Roost
+59	Alluring Voice
+64	Sky Drop
+68	Moonblast
+77	Sky Attack
+
+Zangoose	
+1	Brutal Swing
+1	Detect
+1	Extremespeed
+4	Quick Attack
+9	Power Trip
+14	Chip Away
+18	Glare
+20	Shadow Claw
+23	Revenge
+26	Switcheroo
+30	Taunt
+33	Slash
+36	Lunge
+39	Counter
+43	Final Gambit
+46	Crush Claw
+49	Toxic
+54	Close Combat
+60	Hone Claws
+65	Facade
+
+Seviper	
+1	Brutal Swing
+1	Spit Up
+4	Scary Face
+12	Screech
+19	Breaking Swipe
+23	Poison Fang
+27	Night Slash
+33	Glare
+37	Fire Fang
+37	Ice Fang
+37	Thunder Fang
+40	Swagger
+44	Aqua Tail
+44	Iron Tail
+49	Wrap
+53	Crunch
+58	Poison Tail
+63	Outrage
+69	Coil
+
+Torkoal	
+1	Blaze Kick
+1	Rest
+1	Yawn
+7	Flame Wheel
+10	Clear Smog
+14	Smokescreen
+20	Rapid Spin
+25	Body Slam
+28	Bulldoze
+31	Lava Plume
+35	Smog
+38	Poison Gas
+41	Gyro Ball
+45	Heat Crash
+48	Amnesia
+51	Earthquake
+55	Eruption
+60	Protect
+65	Overheat
+69	Shell Smash
+74	Blast Burn
+
 Ralts	
 1	Confusion
 1	Growl
@@ -448,6 +745,23 @@ Ralts
 34	Grudge
 38	Barrier
 42	Healing Wish
+
+Spoink	
+1	Stomp
+1	Concuss
+4	Power Trip
+7	Psywave
+10	Fake Out
+13	Brutal Swing
+15	Dizzy Punch
+18	Teeter Dance
+21	Bounce
+24	Mirror Coat
+27	Psycho Cut
+30	Faint Attack
+32	Dizzy Punch
+35	Foul Play
+38	Skill Swap
 
 Kirlia	
 1	Confusion
@@ -882,6 +1196,91 @@ Aggron
 69	Hyper Beam
 74	Steel Beam
 79	Draco Meteor
+
+Carvanha	
+1	Tackle
+5	Water Pulse
+9	Scale Shot
+11	Scary Face
+15	Aqua Jet
+18	Bite
+20	Agility
+23	Poison Fang
+26	Slash
+26	Night Slash
+29	Bubble Beam
+33	Screech
+36	Ice Fang
+40	Endure
+44	Clamp
+47	Crunch
+
+Sharpedo	
+1	Flip Turn
+1	Close Combat
+1	Head Smash
+1	Triple Dive
+15	Aqua Jet
+18	Bite
+20	Agility
+23	Poison Fang
+26	Slash
+26	Night Slash
+29	Bubble Beam
+33	Screech
+36	Ice Fang
+40	Endure
+44	Clamp
+47	Crunch
+50	Focus Energy
+54	Dive
+60	Close Combat
+64	Brutal Swing
+
+Wailmer	
+1	Growl
+1	Water Gun
+11	Chilling Water
+15	Astonish
+20	Brine
+23	Amnesia
+26	Bounce
+29	Aqua Ring
+30	Snore
+34	Mist
+36	Defense Curl
+39	Dive
+43	Heavy Slam
+46	Rollout
+49	Mist
+49	Sleep Talk
+52	Giga Impact
+55	Water Spout
+60	Soak
+65	Hyper Beam
+
+Wailord	
+1	Explosion
+1	Whirlpool
+11	Chilling Water
+15	Astonish
+20	Brine
+23	Amnesia
+26	Bounce
+29	Aqua Ring
+31	Snore
+34	Mist
+36	Defense Curl
+39	Dive
+43	Heavy Slam
+46	Rollout
+49	Rest
+49	Sleep Talk
+52	Giga Impact
+55	Water Spout
+60	Soak
+65	Hyper Beam
+70	Hydro Cannon
 
 Meditite	
 1	Vacuum Wave
@@ -1589,7 +1988,7 @@ Tyranitar
 56	Outrage
 63	Superpower
 70	Giga Impact
-74	Head Smash
+74	Brutal Swing
 
 Treecko	
 1	Quick Attack
@@ -2491,7 +2890,7 @@ Ferrothorn
 1	Spiky Shield
 1	Leech Seed
 1	Harden
-10	Spike Cannon
+1	Brutal Swing
 14	Mega Drain
 18	Pin Missile
 21	Thunder Wave
@@ -2647,7 +3046,7 @@ Fraxure
 Haxorus	
 1	1st impression
 1	Blaze Kick
-12	Taunt
+1	Brutal Swing
 15	Scale Shot
 18	Metal Claw
 22	Breaking Swipe
@@ -2757,7 +3156,7 @@ Accelgor
 1	Gunk Shot
 1	1st Impression
 1	Close Combat
-5	Yawn
+1	Brutal Swing
 10	Acid Spray
 20	Sludge 
 24	Double Team
@@ -2820,8 +3219,8 @@ Mienshao
 1	Focus Energy
 1	Vacuum Wave
 1	Power Whip
-13	Fake Out
-17	Force Palm
+1	Fake Out
+1	Brutal Swing
 20	Double Team
 22	Endure
 25	Drain Punch
@@ -2840,8 +3239,8 @@ Mienshao
 71	Calm Mind
 
 Druddigon	
-1	Aqua Tail
-1	Iron Tail
+1	Brutal Swing
+1	Heavy Slam
 1	Rock Polish
 10	Block
 13	Poison Fang
@@ -2959,6 +3358,8 @@ Braviary
 63	Superpower
 68	Brave Bird
 
+
+
 Vullaby	
 1	Pluck
 1	Bone Rush
@@ -2970,12 +3371,12 @@ Vullaby
 19	Whirlwind
 22	Feather Dance
 26	Sky Drop
-29	Torment
-32	Foul Play
+29	Foul Play
+32	Knock Off
 35	Bonemerang
 38	Recycle
 44	Scary Face
-48	Knock Off
+48	Brutal Swing
 52	Body Press
 55	Roost
 
@@ -2990,12 +3391,12 @@ Mandibuzz
 19	Whirlwind
 22	Feather Dance
 26	Sky Drop
-29	Torment
-32	Foul Play
+29	Foul Play
+32	Knock Off
 35	Bonemerang
 38	Recycle
 44	Scary Face
-48	Knock Off
+48	Brutal Swing
 52	Body Press
 55	Roost
 57	Brave Bird
@@ -3012,7 +3413,7 @@ Deino
 28	Devour
 32	Tri Attack
 35	Taunt
-39	Temper Flare
+39	Brutal Swing
 42	Final Gambit
 45	Scary Face
 49	Dragon Rush
@@ -3028,7 +3429,7 @@ Zweilous
 28	Devour
 32	Tri Attack
 35	Taunt
-39	Temper Flare
+39	Brutal Swing
 42	Final Gambit
 45	Scary Face
 49	Dragon Rush
@@ -3045,7 +3446,7 @@ Hydreigon
 28	Devour
 32	Tri Attack
 35	Taunt
-39	Temper Flare
+39	Brutal Swing
 42	Final Gambit
 45	Scary Face
 49	Dragon Rush
@@ -3053,7 +3454,7 @@ Hydreigon
 58	Hyper Beam
 62	Outrage
 66	Wicked Blow
-71	Draco Meteor
+71	Clanging Scales
 76	Dragon Dance
 80	Night Daze
 
@@ -3099,8 +3500,8 @@ Volcarona
 
 
 Heatmor	
-1	Smokescreen
-1	Bug Bite
+1	Brutal Swing
+1	Magma Storm
 7	Lick
 10	Incinerate
 13	Tickle
@@ -3160,7 +3561,7 @@ Golett
 46	Hammer Arm
 49	Sleep Talk
 49	Rest
-53	Hi Horsepower
+53	High Horsepower
 56	Phantom Strike
 
 Golurk	
@@ -3180,7 +3581,7 @@ Golurk
 46	Hammer Arm
 49	Sleep Talk
 49	Rest
-53	Hi Horsepower
+53	High Horsepower
 56	Phantom Strike
 60	Dynamic Punch
 66	Shadow Force
@@ -3404,7 +3805,7 @@ Luxio
 Luxray	
 1	Supercell Slam
 1	Superpower
-4	Bite
+1	Brutal Swing
 7	Charge
 10	Thunder Wave
 13	Snarl
@@ -3734,7 +4135,7 @@ Buneary
 46	Fake Out
 
 Lopunny	
-1	Shadow Punch
+1	Brutal Swing
 1	Sky Uppercut
 1	Mach Punch
 10	Dizzy Punch
@@ -4021,7 +4422,7 @@ Skorupi
 
 Drapion	
 1	Storm Throw
-1	Poison Sting
+1	Brutal Swing
 4	Pin Missile
 10	Scary Face
 15	Barb Barrage
@@ -4649,7 +5050,7 @@ Trubbish
 
 Garbodor	
 1	Rollout
-8	Poison Gas
+1	Brutal Swing
 11	Bullet Punch
 15	Beat Up
 17	Explosion
@@ -4868,6 +5269,46 @@ Tirtouga
 65	Wave Crash
 73	Shell Smash
 
+Sawk	
+1	Dual Chop
+1	Flail
+8	Retaliate
+15	Rolling Kick
+20	Lunge
+24	Scary Face
+28	Strength
+33	Double Hit
+36	Final Gambit
+40	Knock Off
+42	Hammer Arm
+47	Endure
+50	Double-Edge
+54	Close Combat
+58	Helping Hand
+61	Brutal Swing
+65	Facade
+73	Bulk Up
+
+Throh	
+1	Wrap
+1	Bind
+8	Block
+15	Vital Throw
+20	Payback
+24	Scary Face
+28	Storm Throw
+33	Bulldoze
+36	Wide Guard
+40	Knock Off
+42	Circle Throw
+47	Endure
+50	Earthquake
+54	Revenge
+58	Helping Hand
+61	Brutal Swing
+65	Headlong Rush
+73	Bulk Up
+
 Carracosta	
 1	Psychic Fangs
 1	Head Smash
@@ -5026,7 +5467,7 @@ Darumaka
 42	Hammer Arm
 45	Rock Polish
 47	Zen Headbutt
-50	High Horsepower
+50	Earthquake
 55	Flare Blitz
 
 
@@ -5045,7 +5486,7 @@ Darmanitan
 42	Hammer Arm
 45	Rock Polish
 47	Zen Headbutt
-50	High Horsepower
+50	Earthquake
 55	Flare Blitz
 60	Spirit Break
 65	Superpower
@@ -5115,7 +5556,7 @@ Krokorok
 47	Outrage
 51	Swagger
 56	Close Combat
-60	Wicked Blow
+60	Brutal Swing
 
 
 
@@ -5138,7 +5579,7 @@ Krookodile
 47	Outrage
 51	Swagger
 56	Close Combat
-60	Wicked Blow
+60	Brutal Swing
 64	Fissure
 70	Dragon Dance
 
@@ -5432,7 +5873,7 @@ Conkeldurr
 55	Hammer Arm
 58	Head Smash
 62	Fling
-65	Superpower
+65	Brutal Swing
 70	Rock Wrecker
 
 
@@ -5735,7 +6176,7 @@ Marill
 Azumarill	
 1	Rollout
 1	Encore
-6	Sing
+1	Brutal Swing
 8	Charm
 10	Covet
 12	Aqua Jet
@@ -6152,7 +6593,7 @@ Tranquill
 39	Sky Drop
 43	Lucky Chant
 47	Crush Claw
-50	Swagger
+50	Flatter
 
 Unfezant	
 1	Reflect Type
@@ -6169,7 +6610,7 @@ Unfezant
 39	Sky Drop
 43	Lucky Chant
 47	Crush Claw
-50	Swagger
+50	Flatter
 55	Detect
 58	Last Resort
 62	Superpower
@@ -6377,7 +6818,7 @@ Pignite
 36	Heat Crash
 39	Slack Off
 43	Hammer Arm
-47  Hi Horsepower
+47    High Horsepower
 50	Defense Curl
 52	Head Smash
 
@@ -6386,7 +6827,6 @@ Emboar
 1	Parting Shot
 1	Rock Wrecker
 1	Blaze Kick
-10	Beat Up
 13	Temper Flare
 17	Scary Face
 20	Revenge
@@ -6396,15 +6836,15 @@ Emboar
 36	Heat Crash
 39	Slack Off
 43	Hammer Arm
-47  Hi Horsepower
+47	High Horsepower
 50	Defense Curl
 54	Head Smash
 58	Flare Blitz
-63	Night Daze
+63	Brutal Swing
 67	Sucker Punch
 70	Overheat
-75	Wicked Blow
-81  Bulk Up
+75	Night Daze
+81	Bulk Up
 
 
 
@@ -6438,13 +6878,13 @@ Herdier
 32	Safeguard
 36	Play Rough
 40	Facade
-43	Reversal
+43	Icicle Crash
 46	Sand Attack
 
 Stoutland	
 1	Headlong Rush
 1	Howl
-6	Bite
+1	Hail
 9	Sand-Attack
 13	Ice Fang
 13	Fire Fang
@@ -6456,7 +6896,7 @@ Stoutland
 32	Safeguard
 36	Play Rough
 40	Facade
-43	Reversal
+43	Icicle Crash
 46	Sand-Attack
 50	Double-Edge
 55	Superpower
@@ -6545,6 +6985,41 @@ Cyndaquil
 48	Extremespeed
 52	Earth Power
 
+Scolipede	
+1	Baneful Bunker
+1	Rollout
+1	Brutal Swing
+14	Barb Barrage
+21	X-Scissor
+24	Agility
+27	Drill Run
+30	Rock Climb
+34	Toxic
+38	Horn Leech
+43	Spin Out
+47	Megahorn
+50	Protect
+54	Poison Tail
+57	Defense Curl
+60	Outrage
+65	Steamroller
+73	Coil
+
+Whirlipede	
+1	Poison Sting
+1	Bite
+8	Pin Missile
+14	Barb Barrage
+21	X-Scissor
+24	Agility
+27	Drill Run
+30	Rock Climb
+34	Toxic
+38	Horn Leech
+43	Spin Out
+47	Megahorn
+50	Protect
+54	Poison Tail
 
 Quilava	
 1	Quick Attack
@@ -6655,7 +7130,7 @@ Sentret
 1	Quick Attack
 5	Safeguard
 8	Follow Me
-11	Brutal Swing
+11	Fury Swipes
 13	Tail Slap
 16	Me First
 20	Endure
@@ -6673,7 +7148,7 @@ Furret
 1	Flail
 5	Safeguard
 8	Follow Me
-11	Brutal Swing
+11	Fury Swipes
 13	Tail Slap
 16	Me First
 20	Endure
@@ -6686,7 +7161,7 @@ Furret
 40	Double-Edge
 44	Baton Pass
 48	Reversal
-52	Last Resort
+52	Brutal Swing
 55	Giga Impact
 60	Coil
 
@@ -6853,7 +7328,6 @@ Lanturn
 56	Hydro Pump
 59	Electro Shot
 70	Tail Glow
-
 
 
 

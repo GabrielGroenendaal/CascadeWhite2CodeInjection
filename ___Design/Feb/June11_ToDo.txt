@@ -1,5 +1,4 @@
 
-
 /*         
 	
 	-----------------------------------------------------------------------------------------------------------------------------------------
@@ -65,9 +64,23 @@
                 Earth Power -> Sand Tomb 
 
     CLAY SPLIT: 
-        Worker Herman 
-            Krookadile -> Hippowdon @ Leftovers (Ability: Strong Jaw) (Fire Fang, Bulldoze, Thunder Fang, Slack Off)
-    
+        Worker Tyler  
+            Stoutland (Ability: Slush Rush -> Fluffy) (Return, Ice Fang, Submission, Toxic)
+            Glalie -> Hippowdon @ Lum Berry (Ability: Thick Fat) (Bulldoze, Avalanche, Psychic Fangs, Spikes)
+
+        Janine: 
+            Drapion: 
+                Power Whip -> Needle Arm 
+            Samurott -> Lucario 
+
+        Rood:
+            Dusknoir:
+                Fire Punch -> Protect 
+        
+        Motorcyclist Duke:
+            Charmeleon: 
+                Blast Burn -> Flare Blitz
+            
     SKYLA SPLIT
         Psychic Tully
             Wormadam-Sandy -> Absol @ Iron Ball (Ability: Forewarn) (Dark Pulse, Moonblast, Ice Beam, Future Sight)
@@ -81,12 +94,55 @@
         Hiker Jebediah 
             +Voltorb @ Life Orb (Ability: Reckless) (Volt Tackle, Head Charge, Flash Cannon, Protect)
 
+    MARLON SPLIT: 
+        Falkner: 
+            Fearow 
+                Tera Brightpowder -> Tera Plate 
+            
+            Farfetch'd 
+                Work Up -> Tailwind 
+                Hurricane -> Air Slash 
+            
+            Hoothoot -> Delibird @ Micle Berry (Ability: Unburden) (Blizzard, Dynamic Punch, Fairy Wind, Lovely Kiss)
 
+            Farfetch'd 
+                Sacred Sword -> 
+            
+        
+        Leader Blaine: 
+            Rapidash 
+                Flare Blitz -> Blaze Kick 
+            
+            Arcanine:
+                Head Charge -> Double Edge 
+                Blast Burn -> Flare Blitz 
+            
+        Battle Girl Shel: 
+            Sawk: 
+                Giga Impact -> Bind 
+        
+        Virizion: 
+            Whimsictot: 
+                Starburst -> Alluring Voice 
+            
+            Vespiquen:   
+                Assault Vest -> Charti Berry 
+                U-Turn -> Defend Order 
+                Diamond Storm -> Heal Order 
+            
+            Shaymin: 
+                Tera Orb -> Tera Vest 
+                Air Slash -> Zen Headbutt 
+                Calm Mind -> Rollout
+
+            
 [ LEARNSET UPDATES ]
 
 
 [ POKEDEX ]
 
+    
+    
     Hoenn:
         Grovyle: 
             +5 Special Defense 
@@ -110,9 +166,17 @@
             +5 Speed 
             +5 Special Attack 
 
+        Wingull
+            +10 Special Defense 
+        
         Pelipper 
             +10 Special Defense
         
+        Vigoroth: 
+            +5 HP 
+            +5 Atk 
+            +5 Defense 
+
         Mawile 
             +5 SpA 
         
@@ -128,6 +192,9 @@
                 School Kid Mara Milotic (Shed Skin -> Distracting) (Power Herb) (Rest -> Hypnosis)
                 School Kid Alvin Gorebyss (Hypnosis -> Attract)
         
+        Froslass: 
+            Ability 3: Slush Rush 
+        
         Kecleon 
             Shed Skin -> Savant 
 
@@ -141,9 +208,12 @@
             +5 Special Attack 
             Bulldoze -> Mud Shot
         
+        Typhlosion:
+            Flash Fire -> Sand Rush 
+        
         Croconaw: 
             +5 Atk 
-
+        
         Furret 
             +5 Atk 
 
@@ -182,7 +252,8 @@
         Togekiss: 
             +30 Atk 
             Ability 3: No Guard
-    
+
+        
 
     Sinnoh:
         Turtwig: 
@@ -196,6 +267,9 @@
         
         Prinplup: 
             +5 Speed 
+        
+        Infernape: 
+            Ability 3: Berserk 
         
         Empoleon: 
             -10 Atk 
@@ -211,11 +285,13 @@
         
         Hippopotas 
             +20 Atk 
-            Rough Skin -> Sand Force 
+            Rough Skin -> Strong Jaw 
+            Strong Jaw -> Thick Fat
         
         Hippowdon 
             +20 Atk 
-            Rough Skin -> Sand Force
+            Rough Skin -> Strong Jaw 
+            Strong Jaw -> Thick Fat
 
         Lopunny
             +5 Atk 
@@ -251,6 +327,21 @@
 
     Kanto
 
+        Exeggcute: 
+            +15 Atk 
+        
+        Exeggutor 
+            +15 Atk 
+        
+        Infernape:
+        
+        Dewgong Line: 
+            Ability 2: Slush Rush
+            Ability 3: Swift Swim 
+        
+        Primeape line: 
+            Swap Berserk and Tenacity slots. 
+        
         Charmeleon: 
             +5 Speed 
         
@@ -271,6 +362,9 @@
             -5 Special Defense 
             -5 Defense 
 
+        Nidoqueen
+            Thick Fat -> Majestic Ward 
+        
         Ninetales: 
             +15 Atk 
             +5 Hp 
@@ -282,8 +376,23 @@
 
     
     Unova
+
+        Stoutland Line: 
+            Scrappy -> Slush Rush 
+        
+        Stoutland:
+            +10 Defense 
+
+        Whimsicott: 
+            +10 Defense 
+        
+        Lilligant:  
+            +5 Defense 
+            +5 Special Defense 
+        
         Volcarona 
             +30 Defense 
+            Ability 2: Swarm -> Shield Dust
         
         Elgyem 
             +10 Defense 
@@ -373,6 +482,14 @@
 
 
 [ MOVES ]
+    
+    Brutal Swing: 
+        60 BP > 100 BP 
+        No longer lowers Evasion. 
+        No longer clears hazards. 
+    
+    Night Shade: 
+        2 -> 3 PP 
     
     Dragon Dance 1 PP each. 
 
@@ -807,5 +924,3 @@ Marine Tube:
         Chaos Stats: 
             Moody 
             Starf Berry 
-
-

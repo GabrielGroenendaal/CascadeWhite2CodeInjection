@@ -1,0 +1,114 @@
+import messages.script.Msg0176.MSGID;
+
+import event.actors.Actor;
+import event.dialogs.Message;
+import pokescript.vm.StackCtrl;
+import pokescript.vm.VM;
+import system.EventFlags;
+import system.EventWorks;
+import system.Input;
+import system.Runtime;
+import system.Sound;
+import system.text.WordSet;
+import event.Battle;
+
+public class MainEvents {
+	public static void main_1() { // @ 0xa
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		WordSet.LoadPlayerName(0);
+		WordSet.LoadRivalName(1);
+		if (!EventFlags.Get(2401)) {
+			Sound.SEPlay(1351);
+			Actor.FacePlayer();
+			Message.Actor(1024, 0, 0, 0);
+			Input.LastKeyWait();
+			Message.CloseActor();
+			goto LABEL_0059;
+		}
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 1, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+
+		LABEL_0059:
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_2() { // @ 0x5f
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		if (!EventFlags.Get(2401)) {
+			Sound.SEPlay(1351);
+			Actor.FacePlayer();
+			Message.Actor(1024, 2, 0, 0);
+			Input.LastKeyWait();
+			Message.CloseActor();
+			goto LABEL_00a8;
+		}
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 3, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+
+		LABEL_00a8:
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+    // singles
+    public static void main_3() {
+        int isVictory;
+		Actor.PauseAll();
+		Battle.CallTrainerBattle(1, 0, 0);
+		isVictory = Battle.IsTrainerVictory();
+		if (isVictory == 1) {
+			Battle.EndTrainerBattle();
+			goto Label_EndSingles;
+		}
+		Battle.CallTrainerLose();
+        Label_EndSingles:
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
+
+
+    // doubles 
+    public static void main_4() {
+        int isVictory;
+		Actor.PauseAll();
+		Battle.CallTrainerBattle(2, 0, 0);
+		isVictory = Battle.IsTrainerVictory();
+		if (isVictory == 1) {
+			Battle.EndTrainerBattle();
+			goto Label_EndDoubles;
+		}
+		Battle.CallTrainerLose();
+        Label_EndDoubles:
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
+    
+
+    // triples
+    public static void main_5(){
+        int isVictory;
+		Actor.PauseAll();
+		Battle.CallTrainerBattle(3, 0, 0);
+		isVictory = Battle.IsTrainerVictory();
+		if (isVictory == 1) {
+			Battle.EndTrainerBattle();
+			goto Label_EndTriples;
+		}
+		Battle.CallTrainerLose();
+        Label_EndTriples:
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
+
+}

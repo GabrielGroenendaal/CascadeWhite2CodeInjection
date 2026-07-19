@@ -1,0 +1,274 @@
+import messages.script.Msg0602.MSGID;
+
+import Base;
+import event.Battle;
+import event.actors.Actor;
+import event.actors.Player;
+import event.dialogs.Message;
+import event.dialogs.ListMenu;
+import pokemon.PokeParty;
+import pokescript.vm.Math;
+import pokescript.vm.StackCtrl;
+import pokescript.vm.VM;
+import system.EventFlags;
+import system.EventWorks;
+import system.Input;
+import system.Runtime;
+import system.Sound;
+import system.text.WordSet;
+
+public class MainEvents {
+	public static void main_1() { // @ 0x2a
+		Actor.PauseAll();
+		Base.CMD_17A(36);
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_2() { // @ 0x36
+		int v0;
+		int v1;
+		int v33;
+		int v34;
+		int v35;
+
+		Actor.PauseAll();
+		ActionSequence_0224(0);
+		Actor.WaitActionFinish();
+		WordSet.LoadPlayerName(0);
+		Message.ActorEx(1024, 0, 0, 0, 0);
+		Message.CloseAll();
+		Player.GetGPos(v33, v34);
+		if (v33 != 7) {
+			Actor.WalkRoute(255, 7, v34, 1, 8, 0);
+			goto LABEL_0088;
+		}
+		ActionSequence_0204(255);
+
+		LABEL_0088:
+		Actor.WaitActionFinish();
+		WordSet.LoadPlayerName(0);
+		v35 = PokeParty.GetMemberByType(2);
+		WordSet.LoadPartyPokeSpecies(1, v35);
+		Message.ActorEx(1024, 1, 0, 0, 0);
+		Message.CloseAll();
+		Global2805(17, 1);
+		WordSet.LoadPlayerName(0);
+		Message.ActorEx(1024, 2, 0, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseAll();
+		EventWorks.Set(16608, 1);
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_3() { // @ 0xe5
+		int v0;
+		int v1;
+		int v35;
+
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		if (EventWorks.Get(16608) != 0) {
+			WordSet.LoadPlayerName(0);
+			Message.Actor(1024, 3, 0, 0);
+			goto LABEL_016f;
+		}
+		WordSet.LoadPlayerName(0);
+		Message.Actor(1024, 0, 0, 0);
+		WordSet.LoadPlayerName(0);
+		v35 = PokeParty.GetMemberByType(2);
+		WordSet.LoadPartyPokeSpecies(1, v35);
+		Message.Actor(1024, 1, 0, 0);
+		Message.CloseAll();
+		Global2805(17, 1);
+		WordSet.LoadPlayerName(0);
+		Message.ActorEx(1024, 2, 0, 0, 0);
+		EventWorks.Set(16608, 1);
+
+		LABEL_016f:
+		Input.LastKeyWait();
+		Message.CloseAll();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_4() { // @ 0x179
+		Actor.PauseAll();
+		if (!EventFlags.Get(2400)) {
+			if (EventWorks.Get(16384) != 0) {
+				goto LABEL_01e9;
+			}
+			Sound.SEPlay(1351);
+			Actor.FacePlayer();
+			Message.ActorEx(1024, 4, 1, 0, 0);
+			Message.ActorEx(1024, 5, 1, 0, 0);
+			Input.LastKeyWait();
+			Message.CloseAll();
+			EventWorks.Set(16384, 1);
+			goto LABEL_01fd;
+		}
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 6, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		goto LABEL_01fd;
+
+		LABEL_01e9:
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 5, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+
+		LABEL_01fd:
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+
+    // singles
+    public static void main_5() {
+        int isVictory;
+        int testCase;
+		Actor.PauseAll();
+		Battle.CallTrainerBattle(1, 0, 0);
+		isVictory = Battle.IsTrainerVictory();
+		if (isVictory == 1) {
+			Battle.EndTrainerBattle();
+		}
+        else {
+            Battle.CallTrainerLose();
+        }
+
+        Label_EndSingles:
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
+
+
+    // doubles 
+    public static void main_6() {
+        int isVictory;
+        int testCase;
+		Actor.PauseAll();
+		Battle.CallTrainerBattle(2, 0, 0);
+		isVictory = Battle.IsTrainerVictory();
+		if (isVictory == 1) {
+			Battle.EndTrainerBattle();
+            testCase = EventWorks.Get(16436);
+            WordSet.LoadNumber(0, testCase, 3);
+            Message.Actor(1024, 7, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+			goto Label_EndDoubles;
+		}
+		Battle.CallTrainerLose();
+        Label_EndDoubles:
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
+    
+
+    // triples
+    public static void main_7(){
+        int isVictory;
+        int testCase;
+		Actor.PauseAll();
+		Battle.CallTrainerBattle(3, 0, 0);
+		isVictory = Battle.IsTrainerVictory();
+		if (isVictory == 1) {
+			Battle.EndTrainerBattle();
+             testCase = EventWorks.Get(16436);
+            WordSet.LoadNumber(0, testCase, 3);
+            Message.Actor(1024, 7, 0, 0);
+		    Input.LastKeyWait();
+		    Message.CloseActor();
+			goto Label_EndTriples;
+		}
+		Battle.CallTrainerLose();
+        Label_EndTriples:
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
+
+    // Increment the background id
+    public static void main_8(){
+        int testCase;
+
+        testCase = EventWorks.Get(16436);
+        testCase = testCase + 1;
+        EventWorks.Set(16436, testCase);
+        Actor.PauseAll();
+        Actor.FacePlayer();
+        Sound.SEPlay(1351);
+        WordSet.LoadNumber(0, testCase, 3);
+		Message.Actor(1024, 7, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+        Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
+
+    // Set the Background ID
+    public static void main_9(){
+         int testCase;
+
+        testCase = EventWorks.Get(16436);
+        testCase = 1;
+        EventWorks.Set(16436, testCase);
+        Actor.PauseAll();
+        Actor.FacePlayer();
+        Sound.SEPlay(1351);
+        WordSet.LoadNumber(0, testCase, 3);
+		Message.Actor(1024, 14, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+        Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
+
+    // Set the Season
+    public static void main_10(){
+        int currentSeason;
+        int idealSeasonl;
+        Actor.PauseAll();
+        Actor.FacePlayer();
+        Sound.SEPlay(1351);
+		Message.Actor(1024, 8, 0, 0);
+        ListMenu.InitRightAnchor(31, 5, 0, 1, idealSeasonl);
+		ListMenu.AddItem(9, 65535, 0);
+		ListMenu.AddItem(10, 65535, 1);
+		ListMenu.AddItem(11, 65535, 2);
+		ListMenu.AddItem(12, 65535, 3);
+		ListMenu.ShowDialog();
+        if (idealSeasonl < 4){
+            Message.Actor(1024, 13, 0, 0);
+            Input.LastKeyWait();
+		    Message.CloseActor();
+            EventWorks.Set(16437, idealSeasonl);
+        }
+        else {
+            Message.Actor(1024, 13, 0, 0);
+            Input.LastKeyWait();
+		    Message.CloseActor();
+        }
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
+
+	static meta void ActionSequence_0204(int npcId) : VActionSequence {
+		Action0023(1);
+	}
+
+	static meta void ActionSequence_0224(int npcId) : VActionSequence {
+		Action004b(1);
+	}
+
+	static meta void Global2805(int a1, int a2) : VGlobalCall[2805];
+
+	static native void Action0023(int amount) : 0x23;
+	static native void Action004b(int amount) : 0x4b;
+}

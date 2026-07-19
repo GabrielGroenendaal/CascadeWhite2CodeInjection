@@ -62,6 +62,9 @@
 /* Backgrounds B2 */
 "C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\_____GithubCheckoutMarch\arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi\bin\arm-none-eabi-g++.exe"  -r -mthumb -mlong-calls -march=armv5t -Os B_Background/B2_Backgrounds.cpp -Iswan-master -o ______Output/B2_Backgrounds.elf
 
+/* Backgrounds B3 */
+"C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\_____GithubCheckoutMarch\arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi\bin\arm-none-eabi-g++.exe"  -r -mthumb -mlong-calls -march=armv5t -Os B_Background/B3_Backgrounds.cpp -Iswan-master -o ______Output/B3_Backgrounds.elf
+
 
     /*
 
