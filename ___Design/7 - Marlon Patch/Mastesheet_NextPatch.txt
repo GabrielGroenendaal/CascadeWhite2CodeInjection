@@ -746,8 +746,9 @@ end
 
 !enc 82
 
-!tr 567/29 Choose One (Left)
-!tr 568/29 Choose One (Right)
+!tr 567/29 Guards the Evolution Stones 
+
+!tr 568/29 Guards the Metal Coat / Hard Stone
 
 !tr 563/29 Rewards TM80 Rock Slide
 

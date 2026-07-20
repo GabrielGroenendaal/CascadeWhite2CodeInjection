@@ -1377,10 +1377,11 @@ void Sequence114()
 	End();
 }
 
+// Eviolite - Desert Resort 
 void Sequence115()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 357);
+	SetVarEqVal(0x800C, 538);
 	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();

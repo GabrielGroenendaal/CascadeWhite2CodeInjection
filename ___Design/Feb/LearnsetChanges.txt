@@ -1228,7 +1228,7 @@ Carvanha
 33	Screech
 36	Ice Fang
 40	Endure
-44	Clamp
+44	Surf
 47	Crunch
 
 Sharpedo	
@@ -1245,7 +1245,7 @@ Sharpedo
 33	Screech
 36	Ice Fang
 40	Endure
-44	Clamp
+44	Surf
 47	Crunch
 50	Focus Energy
 54	Dive
@@ -1865,12 +1865,12 @@ Houndour
 24	Poison Fang
 24	Thunder Fang
 24	Fire Fang
-28	Roar
+28	Super Fang
 31	Torment
 35	Smog
 38	Crunch
 41	Will-o-Wisp
-44	Fire Lash
+44	Roar
 47	Fire Blast
 
 Houndoom	
@@ -1885,15 +1885,15 @@ Houndoom
 24	Poison Fang
 24	Thunder Fang
 24	Fire Fang
-28	Roar
+28	Super Fang
 31	Torment
 35	Smog
 38	Crunch
 41	Will-o-Wisp
-44	Fire Lash
+44	Roar
 47	Fire Blast
 50	Sucker Punch
-54	Super Fang
+54	Will-o-Wisp
 60	Brutal Swing
 65	Howl
 71	Overheat
@@ -2755,23 +2755,22 @@ Turtwig
 7	Razor Leaf
 10	Stomp
 13	Bite
-16	Leech Seed
-19	Stompin Tantrum
+16	Stompin Tantrum
+19	Giga Drain
 22	Razor Shell
 25	Crunch
 29	Seed Bomb
 32	Wide Guard
 36	Head Charge
 40	Synthesis
-
 Grotle	
 1	Harden
 1	Mega Drain
 7	Razor Leaf
 10	Stomp
 13	Bite
-16	Leech Seed
-19	Stompin Tantrum
+16	Stompin Tantrum
+19	Giga Drain
 22	Razor Shell
 25	Crunch
 29	Seed Bomb
@@ -2788,8 +2787,8 @@ Torterra
 1	Ingrain
 1	Skull Bash
 13	Bite
-16	Leech Seed
-19	Stompin Tantrum
+16	Stompin Tantrum
+19	Giga Drain
 22	Razor Shell
 25	Crunch
 29	Seed Bomb
@@ -2981,6 +2980,27 @@ Klink
 44	High Horsepower
 47	Magnet Rise
 
+Eelektross	
+1	Volt Tackle
+1	Coil
+1	Snap Trap
+1	Acid Spray
+18	Draining Kiss
+20	Super Fang
+24	Devour
+27	Poison Fang
+30	Thunder Fang
+33	Super Fang
+36	Gastro Acid
+40	Parabolic Zap
+44	Wrap
+47	Dive
+50	Soak
+53	Wild Charge
+56	Close Combat
+60	Poison Tail
+65	Sludge Wave
+70	Zap Cannon
 
 Klang	
 1	Thundershock
@@ -2998,14 +3018,14 @@ Klang
 40	Wild Charge
 44	High Horsepower
 47	Magnet Rise
-50	Gear Grind
+50	Spin Out
 53	Volt Tackle
 57	Recover
 
 Klinklang	
 1	Flare Blitz
 1	Power Trip
-5	Spark
+1	Clamp
 10	Flame Wheel
 13	Magnet Bomb
 17	Autotomize
@@ -3018,11 +3038,12 @@ Klinklang
 40	Wild Charge
 44	High Horsepower
 47	Magnet Rise
-50	Gear Grind
+50	Spin Out
 53	Volt Tackle
 57	Recover
-64	Shift Gear
+63	Gear Grind
 69	Giga Impact
+75	Shift Gear
 
 
 Elgyem	
@@ -6716,7 +6737,7 @@ Corphish
 48	Knock Off
 
 Crawdaunt	
-1	Night Shade
+1	Clamp
 1	Ice Hammer
 5	Water Pulse
 11	Metal Claw
@@ -6731,9 +6752,9 @@ Crawdaunt
 39	Lunge
 44	Switcheroo
 48	Knock Off
-52	Clamp
+52	Crabhammer
 57	Brutal Swing
-60	Crabhammer
+60	Night Shade
 66	Guillotine
 71	Dragon Dance
 
@@ -7616,7 +7637,7 @@ Machamp
 
 Victreebel	
 1	Sunny Day 
-1	Power Whip
+1	Snap Trap
 6	Leaf Tornado
 10	Sludge
 13	Sleep Powder
@@ -7631,7 +7652,7 @@ Victreebel
 43	Gastro Acid
 46	Leaf Storm
 48	Sucker Punch
-51	Snap Trap
+51	Spore
 55	Solar Blade
 60	Poison Tail
 65	Power Whip
@@ -7653,7 +7674,7 @@ Weepinbell
 43	Gastro Acid
 46	Leaf Storm
 48	Sucker Punch
-51	Snap Trap
+51	Spore
 55	Solar Blade
 60	Poison Tail
 65	Power Whip
@@ -8028,7 +8049,7 @@ Throh
 73	Bulk Up
 
 Carracosta	
-1	Psychic Fangs
+1	Clamp
 1	Head Smash
 5	Harden
 9	Aqua Jet
@@ -8115,15 +8136,16 @@ Dwebble
 37	Counter
 42	Heavy Slam
 46	Rest
-49	Steamroller
-53	Body Press
-57	Obstruct
+49	Crabhammer
+52	Body Press
+55	Steamroller
+58	Obstruct
 62	Rock Wrecker
 67	Shell Smash
 
 Crustle	
 1	Accelerock
-1	Crabhammer
+1	Clamp
 1	Iron Defense
 7	Recycle
 11	Night Slash
@@ -8137,9 +8159,10 @@ Crustle
 37	Counter
 42	Heavy Slam
 46	Rest
-49	Steamroller
+49	Crabhammer
 53	Body Press
-57	Obstruct
+55	Steamroller
+58	Obstruct
 62	Rock Wrecker
 67	Shell Smash
 
@@ -8601,7 +8624,7 @@ Shellder
 25	Explosion
 28	Frost Breath
 31	Supersonic
-35	Clamp
+35	Surf
 38	Avalanche
 42	Aqua Ring
 46	Hydro Pump
@@ -8620,13 +8643,13 @@ Cloyster
 25	Explosion
 28	Frost Breath
 31	Supersonic
-35	Clamp
+35	Surf
 38	Avalanche
 42	Aqua Ring
 46	Hydro Pump
 48	Ice Beam
 51	Barrage
-54	Snap Trap
+54	Clamp
 60	Harden
 65	Hydro Cannon
 72	Body Press
@@ -10289,27 +10312,6 @@ Pidove
 35	Facade
 39	Sky Drop
 
-Kingler	
-1	Iron Defense
-1	Ice Hammer
-8	Stomp
-11	Barrage
-14	Harden
-17	Aqua Jet
-20	Metal Claw
-22	Block
-25	Wide Guard
-28	Skitter Smack
-33	Razor Shell
-36	Endure
-39	Hammer Arm
-42	Lunge
-47	Clamp
-51	Protect
-57	Guillotine
-62	Steamroller
-66	Crabhammer
-
 Krabby	
 1	Fury Cutter
 1	Leer
@@ -10325,7 +10327,28 @@ Krabby
 36	Endure
 39	Hammer Arm
 42	Lunge
-47	Clamp
+47	Crabhammer
+
+Kingler	
+1	Iron Defense
+1	Ice Hammer
+8	Stomp
+11	Barrage
+14	Harden
+17	Aqua Jet
+20	Metal Claw
+22	Block
+25	Wide Guard
+28	Skitter Smack
+33	Razor Shell
+36	Endure
+39	Hammer Arm
+42	Lunge
+47	Crabhammer
+51	Protect
+57	Guillotine
+62	Steamroller
+66	Clamp
 
 Drowzee	
 1	Confusion
@@ -10577,7 +10600,8 @@ Oshawott
 
 Dewott	
 1	Harden
-1	Barrage
+1	Tackle
+5	Barrage
 7	Revenge
 9	Aqua Jet
 11	Slash
@@ -10593,11 +10617,12 @@ Dewott
 42	Megahorn
 45	Dive
 50	Rest
-54	Psyblade
+54	Horn Drill
+59	Close Combat
 
 
 Samurott	
-1	Triple Axel
+1	Psyblade
 1	Iron Defense
 1	1st Impression
 7	Revenge
@@ -10615,12 +10640,12 @@ Samurott
 42	Megahorn
 45	Dive
 50	Rest
-54	Psyblade
+54	Horn Drill
 59	Close Combat
-62	Triple Axel
-65  Spiky Shield
-68	Crabhammer
-79  Meditate 
+62	Clamp
+65	Spiky Shield
+68	Triple Axel
+79	Meditate
 
 
 Emboar	
@@ -10940,7 +10965,7 @@ Croconaw
 
 Feraligatr	
 1	Scale Shot
-1	Dive
+1	Clamp
 6	Aqua Jet
 10	Scary Face
 15	Scald

@@ -306,6 +306,8 @@ label34a: ;
 	if (1) goto label_cantFlyHere;
     Compare(0x8028, 556);
 	if (1) goto label_cantFlyHere;
+	Compare(0x8028, 503);
+	if (1) goto label_cantFlyHere;
     Compare(0x8028, 558);
 	if (1) goto label_cantFlyHere;
     Compare(0x8028, 563);

@@ -95,6 +95,7 @@ address_MoveDealsNoDamage:
 	JumpIfStoredEQ(type.water, &waterTypeMoveLogic)
 	JumpIfStoredEQ(type.normal, &normalTypeMoveLogic)
 	JumpIfStoredEQ(type.grass, &grassTypeMoveLogic)
+      JumpIfStoredEQ(type.dark, &darkTypeMoveLogic)
 	JumpIfHasMove(attacker_ally, move.helping_hand, &HelpingHandLogic)
 	EndScript()
 
@@ -1012,6 +1013,53 @@ endScript_GrassMoves:
 
 
 
+//  GRASS TYPE MOVES
+
+darkTypeMoveLogic:
+	JumpIfMoveEQ(move.quick_guard, &address_BrutalSwingChecks)
+	Jump(&endScript_GrassMoves)
+
+address_BrutalSwingChecks:
+      GetPokeHasAbility(defender_ally, ability.justified)
+	JumpIfStoredEQ(true, &address_BrutalSwingRNG)
+      GetPokeHasAbility(attacker_ally, ability.justified)
+	JumpIfStoredEQ(true, &address_HighChanceToIncreaseScoreForBrutalSwing)
+      GetPokeHasAbility(attacker_ally, ability.healer)
+	JumpIfStoredEQ(true, &address_HighChanceToIncreaseScoreForBrutalSwing)
+	GetPokeHasAbility(attacker_ally, ability.friend_guard)
+	JumpIfStoredEQ(true, &address_HighChanceToIncreaseScoreForBrutalSwing)
+	GetPokeHasAbility(attacker_ally, ability.forewarn)
+	JumpIfStoredEQ(true, &address_HighChanceToIncreaseScoreForBrutalSwing)
+	GetPokeHasAbility(attacker_ally, ability.plus)
+	JumpIfStoredEQ(true, &address_HighChanceToIncreaseScoreForBrutalSwing)
+	GetPokeHasAbility(attacker_ally, ability.minus)
+	JumpIfStoredEQ(true, &address_HighChanceToIncreaseScoreForBrutalSwing)
+	GetPokeHasType(attacker_ally, type.dark)
+	JumpIfStoredEQ(true, &endScript_DarkMoves)
+      GetPokeHasType(attacker_ally, type.fighting)
+	JumpIfStoredEQ(true, &endScript_DarkMoves)
+	GetPokeHasType(attacker_ally, type.fairy)
+	JumpIfStoredEQ(true, &endScript_DarkMoves)
+	AddToScore(-3)
+	Jump(&endScript_DarkMoves)
+
+address_BrutalSwingRNG:
+      JumpIfRandLT(68, &endScript_DarkMoves)
+	AddToScore(-8)
+      Jump(&endScript_DarkMoves)
+
+address_HighChanceToIncreaseScoreForBrutalSwing:
+	JumpIfRandLT(68, &endScript_DarkMoves)
+	AddToScore(3)
+	Jump(&endScript_DarkMoves)
+
+endScript_DarkMoves:
+	EndScript()
+
+
+
+
+
 
 
 
@@ -1035,6 +1083,7 @@ address_MoveChecksForWideGuard:
     JumpIfHasMove(defender_ally, move.muddy_water, &address_0x0DD0)
     JumpIfHasMove(defender_ally, move.glaciate, &address_0x0DD0)
     JumpIfHasMove(defender_ally, move.snarl, &address_0x0DD0)
+    JumpIfHasMove(defender_ally, move.assurance, &address_0x0DD0)
     JumpIfHasMove(defender_ally, move.surf, &address_0x0DD0)
     JumpIfHasMove(defender_ally, move.earthquake, &address_0x0DD0)
     JumpIfHasMove(defender_ally, move.discharge, &address_0x0DD0)

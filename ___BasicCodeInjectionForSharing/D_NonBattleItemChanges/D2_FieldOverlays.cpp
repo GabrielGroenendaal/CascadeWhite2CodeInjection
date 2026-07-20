@@ -1128,12 +1128,12 @@ extern "C"
 
         FieldFollowerCfg = GetFieldFollowerCfg(gameData);
         EventWork = GameData_GetEventWork(gameData);
-        k::Printf("\nWe are in the function to reset follow state.");
+        //k::Printf("\nWe are in the function to reset follow state.");
         if (GameData_CheckPairFlag(gameData))
         {
-            k::Printf("\nWe have successfully reset the follower state EventWork is %d\n", EventWork_FlagGet(EventWork, 2406));
+            //k::Printf("\nWe have successfully reset the follower state EventWork is %d\n", EventWork_FlagGet(EventWork, 2406));
             EventWork_FlagReset(EventWork, 2406);
-            k::Printf("\nWe have successfully reset the follower state. Eventwork 2406 is %d\n", EventWork_FlagGet(EventWork, 2406));
+            //k::Printf("\nWe have successfully reset the follower state. Eventwork 2406 is %d\n", EventWork_FlagGet(EventWork, 2406));
             *EventWork_GetWkPtr(EventWork, 16451) = 255;
             ClearFollowNpcData(FieldFollowerCfg);
         }
@@ -1285,7 +1285,7 @@ extern "C"
 
         if (EventWork_FlagGet(eventWork, 2406) == 1)
         {
-            k::Printf("\nPheno is disabled");
+            //k::Printf("\nPheno is disabled");
             return true;
         }
         for (int i = 0; i < ARRAY_COUNT(toggleEncounters); i++)

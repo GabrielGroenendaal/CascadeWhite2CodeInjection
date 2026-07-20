@@ -47,7 +47,6 @@ address_0x00C0:
 
 address_MultiBattleLogic: 
 	JumpIfRandLT(90, &address_EndScript)
-	JumpIfMoveEQ(move.brutal_swing, &address_Add1ToScoreForSpreadMoves)
     JumpIfMoveEQ(move.blizzard, &address_Add1ToScoreForSpreadMoves)
     JumpIfMoveEQ(move.rock_slide, &address_Add1ToScoreForSpreadMoves)
     JumpIfMoveEQ(move.heat_wave, &address_Add1ToScoreForSpreadMoves)
@@ -90,6 +89,7 @@ address_MultiBattleLogic:
 	JumpIfMoveEQ(move.brine, &address_Add1ToScoreForSpreadMoves)
 	JumpIfMoveEQ(move.wild_charge, &address_Add1ToScoreForSpreadMoves)
 	JumpIfMoveEQ(move.solar_beam, &address_Add1ToScoreForSpreadMoves)
+      JumpIfMoveEQ(move.assurance, &address_Add1ToScoreForSpreadMoves)
     Jump(&address_EndScript)
 
 address_Add1ToScoreForSpreadMoves: 
