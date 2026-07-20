@@ -1538,11 +1538,10 @@ end
 
 !notif FIELD EFFECT, There is a Permanent Rainstorm in Route 6 , #4e86d4
 
-!trm 212/48 
+!trm 215/48 (Choose One: Left)
+!trm 212/48 (Choose One: Right)
 
 !trm 574/48
-
-!trm 215/48 
 
 !tr 648/49 (DODGEABLE) (Rewards 1x IV Enhancer)
 
