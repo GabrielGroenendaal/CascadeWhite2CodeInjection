@@ -932,6 +932,7 @@ red shard, Red Shard (x5) (found by Psychic Perry, on the southern edge of the m
 red shard, Red Shard (x5) (found by Ranger Anja, in the eastern edge of the map)
 twistedspoon, Twistedspoon (found in the middle of Psychic Tommy's patrol)
 enigma berry, Enigma Berry (x1) (reward for defeating Jaidan)
+eviolite, x1 Eviolite (reward for defeating Backpacker Clara)
 end
 
 !enc 11
@@ -948,6 +949,8 @@ end
 !tr 511/35 (DODGEABLE) Rewards 5x Rowap Berries if defeated
 
 !tr 662/36 (DODGEABLE) Rewards 10x Green Shards if defeated 
+
+!tr 665/38 (DODGEABLE) Rewards 1x Eviolite 
 
 !tr 664/36 Right Side, Guards TM83 Endure 
 !tr 663/36 Left Side, Guards TM83 Endure 

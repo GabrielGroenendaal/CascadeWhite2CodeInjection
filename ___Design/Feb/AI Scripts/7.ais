@@ -1,0 +1,1876 @@
+
+
+	GetBattleStyle()
+	JumpIfStoredEQ(double_battle, &MultiBattleLogic)
+	JumpIfStoredEQ(triple_battle, &MultiBattleLogic)
+	EndScript()
+
+
+MultiBattleLogic:
+	JumpIfMoveEQ(move.howl, &address_HowlLogic)
+	JumpIfTargetIsAlly(&address_TargetingAnAlly)
+	CalcMoveDamage(false)
+	JumpIfStoredEQ(no_damage, &address_MoveDealsNoDamage)
+	JumpIfMoveEffectEQ(move_ef.ohko, &Label_StaticDamageFunctions)
+	JumpIfMoveEffectEQ(move_ef.direct_40, &Label_StaticDamageFunctions)
+	JumpIfMoveEffectEQ(move_ef.direct_level, &Label_StaticDamageFunctions)
+	JumpIfMoveEffectEQ(move_ef.psywave, &Label_StaticDamageFunctions)
+	JumpIfMoveEffectEQ(move_ef.direct_30, &Label_StaticDamageFunctions)
+	JumpIfEffectivenessEQ(1/2x, &Label_HalfEffectivenessMoves)
+	JumpIfEffectivenessEQ(1/4x, &Label_QuarterEffectivenessMoves)
+	Jump(&Label_StaticDamageFunctions)
+
+Label_HalfEffectivenessMoves:
+	JumpIfTargetWillFaint(false, &Label_StaticDamageFunctions)
+	JumpIfHealthEQ(defender_ally, 0, &Label_StaticDamageFunctions)
+	JumpIfRandLT(64, &Label_StaticDamageFunctions)
+	AddToScore(-1)
+	Jump(&Label_StaticDamageFunctions)
+
+Label_QuarterEffectivenessMoves:
+	JumpIfTargetWillFaint(false, &Label_StaticDamageFunctions)
+	JumpIfHealthEQ(defender_ally, 0, &Label_StaticDamageFunctions)
+	JumpIfRandLT(64, &Label_StaticDamageFunctions)
+	AddToScore(-2)
+	Jump(&Label_StaticDamageFunctions)
+
+Label_StaticDamageFunctions:
+	JumpIfMoveEffectEQ(move_ef.explosion, &address_MoveDealsNoDamage)
+	JumpIfMoveEffectEQ(move_ef.increased_priority, &address_IncreaseScoreLikelyBy1)
+	JumpIfRandLT(128, &Label_MoveLogicStage2)
+	AddToScore(1)
+	Jump(&address_MoveDealsNoDamage)
+
+address_IncreaseScoreLikelyBy1:
+	JumpIfRandLT(50, &Label_MoveLogicStage2)
+	AddToScore(1)
+	Jump(&address_MoveDealsNoDamage)
+
+Label_MoveLogicStage2:
+	JumpIfMoveEffectEQ(move_ef.ohko, &address_MoveDealsNoDamage)
+	JumpIfMoveEffectEQ(move_ef.direct_40, &address_MoveDealsNoDamage)
+	JumpIfMoveEffectEQ(move_ef.direct_level, &address_MoveDealsNoDamage)
+	JumpIfMoveEffectEQ(move_ef.psywave, &address_MoveDealsNoDamage)
+	JumpIfMoveEffectEQ(move_ef.direct_30, &address_MoveDealsNoDamage)
+	JumpIfEffectivenessEQ(2x, &address_SuperEffectiveMove)
+	JumpIfEffectivenessEQ(4x, &address_QuadrupleEffectiveMove)
+	Jump(&address_MoveDealsNoDamage)
+
+address_SuperEffectiveMove:
+	JumpIfRandLT(100, &address_MoveDealsNoDamage)
+	AddToScore(1)
+	Jump(&address_MoveDealsNoDamage)
+
+address_QuadrupleEffectiveMove:
+	JumpIfRandLT(64, &address_MoveDealsNoDamage)
+	AddToScore(1)
+	Jump(&address_MoveDealsNoDamage)
+
+address_MoveDealsNoDamage:
+	JumpIfMoveEffectEQ(move_ef.dmg_force_switch, &endScript_1)
+	JumpIfMoveEffectEQ(move_ef.dmg_user_hp_pct, &endScript_1)
+	JumpIfMoveEQ(move.blizzard, &endScript_1)
+	JumpIfMoveEQ(move.blizzard, &endScript_1)
+	JumpIfMoveEQ(move.blizzard, &endScript_1)
+	JumpIfMoveEQ(move.wide_guard, &address_WideGuardLogic)
+	JumpIfMoveEQ(move.ally_switch, &address_AllySwitchLogic)
+	JumpIfMoveEQ(move.skill_swap, &address_SkillSwapLogic)
+	GetType(move_type)
+	JumpIfMoveEQ(move.earthquake, &address_EarthquakeLogic)
+	JumpIfMoveEQ(move.bulldoze, &address_EarthquakeLogic)
+	JumpIfMoveEQ(move.future_sight, &address_FutureSightLogic)
+	JumpIfMoveEQ(move.doom_desire, &address_FutureSightLogic)
+	JumpIfMoveEQ(move.rain_dance, &address_RainDanceLogic)
+	JumpIfMoveEQ(move.sunny_day, &address_SunnyDayLogic)
+	JumpIfMoveEQ(move.hail, &address_HailLogic)
+	JumpIfMoveEQ(move.sandstorm, &address_SandstormLogic)
+	JumpIfMoveEQ(move.gravity, &address_GravityLogic)
+	JumpIfMoveEQ(move.trick_room, &address_TrickRoomLogic)
+	JumpIfMoveEQ(move.follow_me, &address_FollowMeLogic)
+	JumpIfMoveEQ(move.heal_pulse, &deprioritizeBy40)
+	JumpIfMoveEQ(move.helping_hand, &deprioritizeBy40)
+	GetType(move_type)
+	JumpIfStoredEQ(type.electric, &electricTypeMoveLogic)
+	JumpIfStoredEQ(type.fire, &fireTypeMoveLogic)
+	JumpIfStoredEQ(type.water, &waterTypeMoveLogic)
+	JumpIfStoredEQ(type.normal, &normalTypeMoveLogic)
+	JumpIfStoredEQ(type.grass, &grassTypeMoveLogic)
+      JumpIfStoredEQ(type.dark, &darkTypeMoveLogic)
+	JumpIfHasMove(attacker_ally, move.helping_hand, &HelpingHandLogic)
+	EndScript()
+
+
+
+
+
+
+
+address_HowlLogic: 
+	JumpIfRandLT(64, &Label_EndHowlScript)
+	AddToScore(1)
+
+Label_EndHowlScript: 
+	EndScript()
+
+
+
+
+// RAIN DANCE LOGIC 
+
+address_RainDanceLogic:
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.swift_swim, &address_0x02FC)
+	JumpIfStoredEQ(ability.dry_skin, &address_0x02FC)
+	Jump(&address_0x0308)
+
+address_0x02FC:
+	AddToScore(2)
+	Jump(&address_0x0308)
+
+address_0x0308:
+	GetPokeHasAbility(attacker_ally, ability.swift_swim)
+	JumpIfStoredEQ(true, &address_0x0340)
+	GetPokeHasAbility(attacker_ally, ability.dry_skin)
+	JumpIfStoredEQ(true, &address_0x0340)
+	Jump(&address_0x034C)
+
+address_0x0340:
+	AddToScore(2)
+	Jump(&address_0x034C)
+
+address_0x034C:
+	EndScript()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// SUNNY DAY LOGIC
+
+address_SunnyDayLogic:
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.flower_gift, &address_0x039A)
+	JumpIfStoredEQ(ability.dry_skin, &address_0x03A6)
+	JumpIfStoredEQ(ability.solar_power, &address_0x03B2)
+	Jump(&address_0x03D6)
+
+address_0x039A:
+	AddToScore(2)
+	Jump(&address_0x03D6)
+
+address_0x03A6:
+	AddToScore(-2)
+	Jump(&address_0x03D6)
+
+address_0x03B2:
+	JumpIfHealthLT(attacker, 50, &address_0x03C6)
+	AddToScore(1)
+
+address_0x03C6:
+	JumpIfRandLT(128, &address_0x03D6)
+	AddToScore(-2)
+
+address_0x03D6:
+	GetPokeHasAbility(attacker_ally, ability.flower_gift)
+	JumpIfStoredEQ(true, &address_0x0444)
+	GetPokeHasAbility(attacker_ally, ability.dry_skin)
+	JumpIfStoredEQ(true, &address_0x0450)
+	GetPokeHasAbility(attacker_ally, ability.solar_power)
+	JumpIfStoredEQ(true, &address_0x045C)
+	Jump(&address_0x0480)
+
+
+address_0x0444:
+	AddToScore(2)
+	Jump(&address_0x0480)
+
+address_0x0450:
+	AddToScore(-2)
+	Jump(&address_0x0480)
+
+address_0x045C:
+	JumpIfHealthLT(attacker_ally, 50, &address_0x0470)
+	AddToScore(1)
+
+address_0x0470:
+	JumpIfRandLT(128, &address_0x0480)
+	AddToScore(-2)
+
+address_0x0480:
+	EndScript()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// HAIL LOGIC
+
+address_HailLogic:
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.ice_body, &address_0x04B0)
+    JumpIfStoredEQ(ability.slush_rush, &address_0x04B0)
+	JumpIfStoredEQ(ability.snow_cloak, &address_0x04B0)
+	JumpIfHasMove(attacker, move.blizzard, &address_0x04B0)
+	Jump(&address_0x04B6)
+
+address_0x04B0:
+	AddToScore(2)
+
+address_0x04B6:
+	GetPokeHasAbility(attacker_ally, ability.ice_body)
+	JumpIfStoredEQ(true, &address_0x04F2)
+    GetPokeHasAbility(attacker_ally, ability.slush_rush)
+	JumpIfStoredEQ(true, &address_0x04F2)
+	GetPokeHasAbility(attacker_ally, ability.snow_cloak)
+	JumpIfStoredEQ(true, &address_0x04F2)
+	JumpIfHasMove(attacker_ally, move.blizzard, &address_0x04F2)
+	Jump(&address_0x04F8)
+
+address_0x04F2:
+	AddToScore(2)
+
+address_0x04F8:
+	EndScript()
+
+
+
+
+
+
+
+
+
+
+
+// SANDSTORM LOGIC 
+
+address_SandstormLogic:
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.sand_veil, &address_0x0530)
+	JumpIfStoredEQ(ability.sand_rush, &address_0x0530)
+	JumpIfStoredEQ(ability.sand_force, &address_0x0530)
+	GetType(attacker_type1)
+	JumpIfStoredEQ(type.rock, &address_0x0530)
+	GetType(attacker_type2)
+	JumpIfStoredEQ(type.rock, &address_0x0530)
+	Jump(&address_0x053C)
+
+address_0x0530:
+	AddToScore(2)
+	Jump(&address_0x053C)
+
+address_0x053C:
+	GetPokeHasAbility(attacker_ally, ability.sand_veil)
+	JumpIfStoredEQ(true, &address_0x0576)
+	GetPokeHasAbility(attacker_ally, ability.sand_rush)
+	JumpIfStoredEQ(true, &address_0x0576)
+	GetPokeHasAbility(attacker_ally, ability.sand_force)
+	JumpIfStoredEQ(true, &address_0x0576)
+	GetType(attacker_ally_type1)
+	JumpIfStoredEQ(type.rock, &address_0x0576)
+	GetType(attacker_ally_type2)
+	JumpIfStoredEQ(type.rock, &address_0x0576)
+	Jump(&address_0x057C)
+
+address_0x0576:
+	AddToScore(2)
+
+address_0x057C:
+	EndScript()
+
+
+
+
+
+
+
+
+
+
+// GRAVITY LOGIC 
+
+address_GravityLogic:
+	JumpIfFieldEffectEQ(field_ef.gravity, &deprioritizeBy30Again)
+	GetPokeHasAbility(attacker, ability.levitate)
+	JumpIfStoredEQ(true, &address_0x05C4)
+	GetPokeHasType(attacker, type.flying)
+	JumpIfStoredEQ(true, &address_0x05C4)
+	JumpIfHasCondition(attacker, cond.floating, &address_0x05C4)
+	Jump(&address_0x05D0)
+
+address_0x05C4:
+	AddToScore(-5)
+	Jump(&address_0x05D0)
+
+address_0x05D0:
+	GetPokeHasAbility(attacker_ally, ability.levitate)
+	JumpIfStoredEQ(true, &address_0x060C)
+	GetPokeHasType(attacker_ally, type.flying)
+	JumpIfStoredEQ(true, &address_0x060C)
+	JumpIfHasCondition(attacker_ally, cond.floating, &address_0x060C)
+	Jump(&address_0x0618)
+
+address_0x060C:
+	AddToScore(-5)
+	Jump(&address_0x0618)
+
+address_0x0618:
+	GetPokeHasAbility(defender, ability.levitate)
+	JumpIfStoredEQ(true, &address_0x0654)
+	GetPokeHasType(defender, type.flying)
+	JumpIfStoredEQ(true, &address_0x0654)
+	JumpIfHasCondition(defender, cond.floating, &address_0x0654)
+	Jump(&address_0x066A)
+
+address_0x0654:
+	JumpIfRandLT(64, &address_0x066A)
+	AddToScore(3)
+	Jump(&address_0x066A)
+
+address_0x066A:
+	GetPokeHasAbility(defender_ally, ability.levitate)
+	JumpIfStoredEQ(true, &address_0x06A6)
+	GetPokeHasType(defender_ally, type.flying)
+	JumpIfStoredEQ(true, &address_0x06A6)
+	JumpIfHasCondition(defender_ally, cond.floating, &address_0x06A6)
+	Jump(&address_0x06BC)
+
+address_0x06A6:
+	JumpIfRandLT(64, &address_0x06BC)
+	AddToScore(3)
+	Jump(&address_0x06BC)
+
+address_0x06BC:
+	EndScript()
+
+
+
+
+
+
+
+
+
+// TRICK ROOM LOGIC
+
+address_TrickRoomLogic:
+	JumpIfHealthEQ(attacker_ally, 0, &deprioritizeBy30)
+	JumpIfHealthEQ(defender_ally, 0, &deprioritizeBy30)
+	JumpIfHealthEQ(defender, 0, &deprioritizeBy30)
+	GetPosInTurnOrder(attacker)
+	JumpIfStoredEQ(0, &address_0x071C)
+	JumpIfStoredEQ(1, &address_0x073C)
+	JumpIfStoredEQ(2, &address_0x0752)
+	JumpIfStoredEQ(3, &address_0x0778)
+	Jump(&address_0x07A4)
+
+address_0x071C:
+	GetPosInTurnOrder(attacker_ally)
+	JumpIfStoredEQ(1, &deprioritizeBy30)
+	JumpIfStoredEQ(0, &deprioritizeBy30)
+	Jump(&address_0x079E)
+
+address_0x073C:
+	GetPosInTurnOrder(attacker_ally)
+	JumpIfStoredEQ(0, &deprioritizeBy30)
+	Jump(&address_0x079E)
+
+address_0x0752:
+	GetPosInTurnOrder(attacker_ally)
+	JumpIfStoredNE(3, &address_0x079E)
+	JumpIfRandLT(64, &address_0x079E)
+	AddToScore(5)
+	Jump(&address_0x07A4)
+
+address_0x0778:
+	GetPosInTurnOrder(attacker_ally)
+	JumpIfStoredNE(2, &address_0x079E)
+	JumpIfRandLT(64, &address_0x079E)
+	AddToScore(5)
+	Jump(&address_0x07A4)
+
+address_0x079E:
+	AddToScore(-5)
+
+address_0x07A4:
+	EndScript()
+
+
+
+
+
+
+
+
+
+
+
+
+// FOLLOW ME LOGIC 
+// WE CAN ADD A CHECK FOR NEGLIGIBLE DAMAGE
+// MODIFY
+address_FollowMeLogic:
+	JumpIfHealthGT(attacker, 80, &address_0x07E0)
+	JumpIfHealthGT(attacker, 50, &address_0x0810)
+	JumpIfHealthGT(attacker, 30, &address_0x0840)
+	JumpIfRandLT(64, &address_0x08DE)
+	Jump(&deprioritizeBy5)
+
+address_0x07E0:
+	JumpIfUserWillTakeLowDamage_Setup(&address_WillTakeLowDamageComparedToAlly)
+	JumpIfHealthGT(attacker_ally, 90, &address_0x0870)
+	JumpIfHealthGT(attacker_ally, 50, &address_0x089C)
+	JumpIfHealthGT(attacker_ally, 30, &address_0x08B2)
+	Jump(&address_0x08C8)
+
+address_0x0810:
+	JumpIfHealthGT(attacker_ally, 90, &address_0x0886)
+	JumpIfHealthGT(attacker_ally, 50, &address_0x0870)
+	JumpIfHealthGT(attacker_ally, 30, &address_0x089C)
+	Jump(&address_0x08B2)
+
+address_0x0840:
+	JumpIfHealthGT(attacker_ally, 90, &address_0x0886)
+	JumpIfHealthGT(attacker_ally, 50, &address_0x0886)
+	JumpIfHealthGT(attacker_ally, 30, &address_0x089C)
+	Jump(&address_0x08B2)
+
+address_0x0870:
+	JumpIfRandLT(64, &address_0x08DE)
+	AddToScore(-1)
+	Jump(&address_0x08DE)
+
+address_0x0886:
+	JumpIfRandLT(64, &address_0x08DE)
+	AddToScore(-2)
+	Jump(&address_0x08DE)
+
+address_0x089C:
+	JumpIfRandLT(64, &address_0x08DE)
+	AddToScore(1)
+	Jump(&address_0x08DE)
+
+address_0x08B2:
+	JumpIfRandLT(64, &address_0x08DE)
+	AddToScore(2)
+	Jump(&address_0x08DE)
+
+address_0x08C8:
+	JumpIfRandLT(64, &address_0x08DE)
+	AddToScore(3)
+	Jump(&address_0x08DE)
+
+address_WillTakeLowDamageComparedToAlly:
+	JumpIfRandLT(102, &address_0x08DE)
+	AddToScore(3)
+	Jump(&address_0x08DE)
+
+address_0x08DE:
+	EndScript()
+
+
+
+
+
+
+
+
+
+
+// HELPING HAND LOGIC 
+HelpingHandLogic:
+	JumpIfHealthGT(attacker, 50, &address_0x0904)
+	GetPosInTurnOrder(attacker)
+	JumpIfStoredLT(1, &address_0x0904)
+	Jump(&address_0x0956)
+
+address_0x0904:
+	JumpIfMoveEffectEQ(move_ef.ohko, &address_0x0956)
+	JumpIfMoveEffectEQ(move_ef.direct_40, &address_0x0956)
+	JumpIfMoveEffectEQ(move_ef.direct_level, &address_0x0956)
+	JumpIfMoveEffectEQ(move_ef.psywave, &address_0x0956)
+	JumpIfMoveEffectEQ(move_ef.direct_30, &address_0x0956)
+	CalcMoveDamage(false)
+	JumpIfStoredEQ(no_damage, &address_0x0956)
+	JumpIfRandSeedLT(128, &address_0x0956)
+	AddToScore(3)
+
+address_0x0956:
+	EndScript()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// EARTHQUAKE LOGIC
+
+address_EarthquakeLogic:
+	JumpIfHasCondition(attacker_ally, cond.floating, &address_Earthquake_ChanceToAdd2ToScore)
+	GetPokeHasAbility(attacker_ally, ability.levitate)
+	JumpIfStoredEQ(true, &address_Earthquake_ChanceToAdd2ToScore)
+	GetPokeHasAbility(attacker_ally, ability.healer)
+	JumpIfStoredEQ(true, &address_Earthquake_ChanceToAdd2ToScore)
+	GetPokeHasAbility(attacker_ally, ability.friend_guard)
+	JumpIfStoredEQ(true, &address_Earthquake_ChanceToAdd2ToScore)
+	GetPokeHasAbility(attacker_ally, ability.forewarn)
+	JumpIfStoredEQ(true, &address_Earthquake_ChanceToAdd2ToScore)
+	GetPokeHasAbility(attacker_ally, ability.plus)
+	JumpIfStoredEQ(true, &address_Earthquake_ChanceToAdd2ToScore)
+	GetPokeHasAbility(attacker_ally, ability.minus)
+	JumpIfStoredEQ(true, &address_Earthquake_ChanceToAdd2ToScore)
+	GetPokeHasType(attacker_ally, type.flying)
+	JumpIfStoredEQ(true, &address_Earthquake_ChanceToAdd2ToScore)
+	GetPokeHasType(attacker_ally, type.fire)
+	JumpIfStoredEQ(true, &deprioritizeBy10)
+	GetPokeHasType(attacker_ally, type.electric)
+	JumpIfStoredEQ(true, &deprioritizeBy10)
+	GetPokeHasType(attacker_ally, type.poison)
+	JumpIfStoredEQ(true, &deprioritizeBy10)
+	GetPokeHasType(attacker_ally, type.rock)
+	JumpIfStoredEQ(true, &deprioritizeBy10)
+	Jump(&deprioritizeBy3)
+
+address_Earthquake_ChanceToAdd2ToScore:
+	JumpIfRandLT(102, @endScript_5)
+	Jump(&add2ToScore)
+
+endScript_5:
+	EndScript()
+
+
+
+
+// FUTURE SIGHT LOGIC 
+
+address_FutureSightLogic:
+	JumpIfHealthEQ(attacker_ally, 0, &endScript_FutureSight)
+	JumpIfHasMove(attacker_ally, move.future_sight, &address_0x0A42)
+	JumpIfHasMove(attacker_ally, move.doom_desire, &address_0x0A42)
+	Jump(&endScript_FutureSight)
+
+address_0x0A42:
+	GetPosInTurnOrder(attacker)
+	JumpIfStoredEQ(3, &deprioritizeBy3)
+	JumpIfStoredEQ(2, &address_0x0A76)
+	JumpIfStoredEQ(1, &address_0x0AB0)
+	JumpIfStoredEQ(0, &address_0x0AE0)
+	Jump(&endScript_FutureSight)
+
+address_0x0A76:
+	GetPosInTurnOrder(attacker_ally)
+	JumpIfStoredEQ(0, &deprioritizeBy3)
+	JumpIfStoredEQ(1, &deprioritizeBy3)
+	JumpIfRandLT(128, &endScript_FutureSight)
+	GetPosInTurnOrder(attacker_ally)
+	JumpIfStoredEQ(2, &deprioritizeBy3)
+	Jump(&endScript_FutureSight)
+
+address_0x0AB0:
+	GetPosInTurnOrder(attacker_ally)
+	JumpIfStoredEQ(0, &deprioritizeBy3)
+	JumpIfRandLT(128, &endScript_FutureSight)
+	GetPosInTurnOrder(attacker_ally)
+	JumpIfStoredEQ(1, &deprioritizeBy3)
+	Jump(&endScript_FutureSight)
+
+address_0x0AE0:
+	JumpIfRandLT(128, &endScript_FutureSight)
+	GetPosInTurnOrder(attacker_ally)
+	JumpIfStoredEQ(0, &deprioritizeBy3)
+	Jump(&endScript_FutureSight)
+
+endScript_FutureSight:
+	EndScript()
+
+
+
+
+
+
+
+
+// SKILL SWAP LOGIC
+
+address_SkillSwapLogic:
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.truant, &add5ToScore)
+	JumpIfStoredEQ(ability.slow_start, &add5ToScore)
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.intimidate, &add2ToScore)
+	JumpIfStoredEQ(ability.shadow_tag, &add2ToScore)
+	JumpIfStoredEQ(ability.pure_power, &add2ToScore)
+	JumpIfStoredEQ(ability.huge_power, &add2ToScore)
+	JumpIfStoredEQ(ability.mold_breaker, &add2ToScore)
+	JumpIfStoredEQ(ability.solid_rock, &add2ToScore)
+	JumpIfStoredEQ(ability.filter, &add2ToScore)
+	JumpIfStoredEQ(ability.flower_gift, &add2ToScore)
+	EndScript()
+
+
+
+
+// DISCHARGE LOGIC 
+
+electricTypeMoveLogic:
+	JumpIfMoveEQ(move.discharge, &address_Discharge)
+	JumpIfMoveEQ(move.electroweb, &address_SpreadElectricMoves)
+	JumpIfMoveEQ(move.wild_charge, &address_SpreadElectricMoves)
+	GetPokeHasAbility(attacker, ability.galvanize)
+	JumpIfStoredEQ(true, &address_GalvanizeChecks)
+	Jump(&endScript_ElectricMoves)
+
+address_GalvanizeChecks:
+	JumpIfMoveEQ(move.boomburst, &address_Discharge)
+	JumpIfMoveEQ(move.uproar, &address_SpreadElectricMoves)
+	JumpIfMoveEQ(move.take_down, &address_SpreadElectricMoves)
+	JumpIfMoveEQ(move.double-edge, &address_SpreadElectricMoves)
+	JumpIfMoveEQ(move.hyper_voice, &address_SpreadElectricMoves)
+	JumpIfMoveEQ(move.swift, &address_SpreadElectricMoves)
+	Jump(&endScript_ElectricMoves)
+
+address_SpreadElectricMoves:
+	GetPokeHasAbility(defender_ally, ability.lightning_rod)
+	JumpIfStoredEQ(true, &addressSpreadElectricRNG)
+	GetPokeHasAbility(defender_ally, ability.motor_drive)
+	JumpIfStoredEQ(true, &addressSpreadElectricRNG)
+	GetPokeHasAbility(defender_ally, ability.thunder_armor)
+	JumpIfStoredEQ(true, &addressSpreadElectricRNG)
+	GetPokeHasAbility(defender_ally, ability.volt_absorb)
+	JumpIfStoredEQ(true, &addressSpreadElectricRNG)
+	Jump(&endScript_ElectricMoves)
+
+addressSpreadElectricRNG:
+	JumpIfRandLT(96, &endScript_ElectricMoves)
+	AddToScore(-8)
+	Jump(&endScript_ElectricMoves)
+
+address_Discharge:
+	GetPokeHasAbility(defender_ally, ability.lightning_rod)
+	JumpIfStoredEQ(true, &address_DischargeChecks)
+	GetPokeHasAbility(defender_ally, ability.thunder_armor)
+	JumpIfStoredEQ(true, &address_DischargeChecks)
+	GetPokeHasAbility(defender_ally, ability.motor_drive)
+	JumpIfStoredEQ(true, &address_DischargeChecks)
+	GetPokeHasAbility(defender_ally, ability.volt_absorb)
+	JumpIfStoredEQ(true, &address_DischargeChecks)
+	GetPokeHasAbility(attacker_ally, ability.motor_drive)
+	JumpIfStoredEQ(true, &address_HighChanceToIncreaseScoreForDischarge)
+	GetPokeHasAbility(attacker_ally, ability.lightning_rod)
+	JumpIfStoredEQ(true, &address_HighChanceToIncreaseScoreForDischarge)
+	GetPokeHasAbility(attacker_ally, ability.thunder_armor)
+	JumpIfStoredEQ(true, &address_HighChanceToIncreaseScoreForDischarge)
+	GetPokeHasAbility(attacker_ally, ability.volt_absorb)
+	JumpIfStoredEQ(true, &address_HighChanceToIncreaseScoreForDischarge)
+	GetPokeHasAbility(attacker_ally, ability.healer)
+	JumpIfStoredEQ(true, &address_HighChanceToIncreaseScoreForDischarge)
+	GetPokeHasAbility(attacker_ally, ability.friend_guard)
+	JumpIfStoredEQ(true, &address_HighChanceToIncreaseScoreForDischarge)
+	GetPokeHasAbility(attacker_ally, ability.forewarn)
+	JumpIfStoredEQ(true, &address_HighChanceToIncreaseScoreForDischarge)
+	GetPokeHasAbility(attacker_ally, ability.plus)
+	JumpIfStoredEQ(true, &address_HighChanceToIncreaseScoreForDischarge)
+	GetPokeHasAbility(attacker_ally, ability.minus)
+	JumpIfStoredEQ(true, &address_HighChanceToIncreaseScoreForDischarge)
+	GetPokeHasType(attacker_ally, type.water)
+	JumpIfStoredEQ(true, &deprioritizeBy10)
+	GetPokeHasType(attacker_ally, type.flying)
+	JumpIfStoredEQ(true, &deprioritizeBy10)
+	AddToScore(-3)
+	Jump(&endScript_ElectricMoves)
+
+address_HighChanceToIncreaseScoreForDischarge:
+	JumpIfRandLT(68, &endScript_ElectricMoves)
+	AddToScore(3)
+	Jump(&endScript_ElectricMoves)
+
+address_DischargeChecks:
+	JumpIfRandLT(68, &endScript_ElectricMoves)
+	AddToScore(-8)
+
+endScript_ElectricMoves:
+	EndScript()
+
+
+
+
+// SURF LOGIC
+
+waterTypeMoveLogic:
+	JumpIfMoveEQ(move.surf, &address_SurfChecks)
+	JumpIfMoveEQ(move.brine, &address_SpreadWaterChecks)
+	JumpIfMoveEQ(move.aqua_tail, &address_SpreadWaterChecks)
+	JumpIfMoveEQ(move.muddy_water, &address_SpreadWaterChecks)
+	JumpIfMoveEQ(move.water_spout, &address_SpreadWaterChecks)
+	JumpIfMoveEQ(move.hydro_cannon, &address_SpreadWaterChecks)
+	GetPokeHasAbility(attacker, ability.moisturize)
+	JumpIfStoredEQ(true, &address_MoisturizeChecks)
+	Jump(&endScript_WaterMoves)
+
+address_MoisturizeChecks:
+	JumpIfMoveEQ(move.boomburst, &address_SurfChecks)
+	JumpIfMoveEQ(move.uproar, &address_SpreadWaterChecks)
+	JumpIfMoveEQ(move.take_down, &address_SpreadWaterChecks)
+	JumpIfMoveEQ(move.double-edge, &address_SpreadWaterChecks)
+	JumpIfMoveEQ(move.hyper_voice, &address_SpreadWaterChecks)
+	JumpIfMoveEQ(move.swift, &address_SpreadWaterChecks)
+	Jump(&endScript_WaterMoves)
+
+address_SpreadWaterChecks: 
+	GetPokeHasAbility(defender_ally, ability.storm_drain)
+	JumpIfStoredEQ(true, &address_SpreadWaterRNG)
+	GetPokeHasAbility(defender_ally, ability.water_absorb)
+	JumpIfStoredEQ(true, &address_SpreadWaterRNG)
+	GetPokeHasAbility(defender_ally, ability.dry_skin)
+	JumpIfStoredEQ(true, &address_SpreadWaterRNG)
+	Jump(&endScript_WaterMoves)
+
+address_SpreadWaterRNG:
+	JumpIfRandLT(96, &endScript_WaterMoves)
+	AddToScore(-8)
+	Jump(&endScript_WaterMoves)
+
+address_SurfChecks:
+	GetPokeHasAbility(defender_ally, ability.storm_drain)
+	JumpIfStoredEQ(true, &address_SurfCheckRNG)
+	GetPokeHasAbility(defender_ally, ability.dry_skin)
+	JumpIfStoredEQ(true, &address_SurfCheckRNG)
+	GetPokeHasAbility(defender_ally, ability.water_absorb)
+	JumpIfStoredEQ(true, &address_SurfCheckRNG)
+	GetPokeHasAbility(attacker_ally, ability.storm_drain)
+	JumpIfStoredEQ(true, &address_HighChanceToIncreaseScoreForSurf)
+	GetPokeHasAbility(attacker_ally, ability.dry_skin)
+	JumpIfStoredEQ(true, &address_HighChanceToIncreaseScoreForSurf)
+	GetPokeHasAbility(attacker_ally, ability.water_absorb)
+	JumpIfStoredEQ(true, &address_HighChanceToIncreaseScoreForSurf)
+	GetPokeHasAbility(attacker_ally, ability.healer)
+	JumpIfStoredEQ(true, &address_HighChanceToIncreaseScoreForSurf)
+	GetPokeHasAbility(attacker_ally, ability.friend_guard)
+	JumpIfStoredEQ(true, &address_HighChanceToIncreaseScoreForSurf)
+	GetPokeHasAbility(attacker_ally, ability.forewarn)
+	JumpIfStoredEQ(true, &address_HighChanceToIncreaseScoreForSurf)
+	GetPokeHasAbility(attacker_ally, ability.plus)
+	JumpIfStoredEQ(true, &address_HighChanceToIncreaseScoreForSurf)
+	GetPokeHasAbility(attacker_ally, ability.minus)
+	JumpIfStoredEQ(true, &address_HighChanceToIncreaseScoreForSurf)
+	GetPokeHasType(attacker_ally, type.ground)
+	JumpIfStoredEQ(true, &deprioritizeBy10)
+	GetPokeHasType(attacker_ally, type.fire)
+	JumpIfStoredEQ(true, &deprioritizeBy10)
+	AddToScore(-3)
+	Jump(&endScript_WaterMoves)
+
+address_HighChanceToIncreaseScoreForSurf:
+	JumpIfRandLT(68, &endScript_WaterMoves)
+	AddToScore(3)
+	Jump(&endScript_ElectricMoves)
+
+address_SurfCheckRNG:
+	JumpIfRandLT(68, &endScript_WaterMoves)
+	AddToScore(-8)
+
+endScript_WaterMoves:
+	EndScript()
+
+
+
+
+
+
+
+
+
+
+// FIRE LOGIC
+
+fireTypeMoveLogic:
+	JumpIfMoveEQ(move.lava_plume, &address_LavaPlumeChecks)
+	JumpIfMoveEQ(move.heat_wave, &address_SpreadFireChecks)
+	JumpIfMoveEQ(move.incinerate, &address_SpreadFireChecks)
+	JumpIfMoveEQ(move.blast_burn, &address_SpreadFireChecks)
+	JumpIfMoveEQ(move.eruption, &address_SpreadFireChecks)
+	Jump(&endScript_FireMoves)
+
+address_SpreadFireChecks: 
+	GetPokeHasAbility(defender_ally, ability.well_baked_body)
+	JumpIfStoredEQ(true, &address_SpreadFireRNG)
+	GetPokeHasAbility(defender_ally, ability.flash_fire)
+	JumpIfStoredEQ(true, &address_SpreadFireRNG)
+	Jump(&endScript_FireMoves)
+
+address_SpreadFireRNG:
+	JumpIfRandLT(96, &endScript_FireMoves)
+	AddToScore(-8)
+	Jump(&endScript_FireMoves)
+
+address_LavaPlumeChecks:
+	GetPokeHasAbility(defender_ally, ability.well_baked_body)
+	JumpIfStoredEQ(true, &address_LavaPlumeRNG)
+	GetPokeHasAbility(defender_ally, ability.flash_fire)
+	JumpIfStoredEQ(true, &address_LavaPlumeRNG)
+	GetPokeHasAbility(attacker_ally, ability.dry_skin)
+	JumpIfStoredEQ(true, &deprioritizeBy3)
+	GetPokeHasAbility(attacker_ally, ability.flash_fire)
+	JumpIfStoredEQ(true, &address_HighChanceToIncreaseScoreForLavaPlume)
+	GetPokeHasAbility(attacker_ally, ability.well_baked_body)
+	JumpIfStoredEQ(true, &address_HighChanceToIncreaseScoreForLavaPlume)
+	GetPokeHasAbility(attacker_ally, ability.healer)
+	JumpIfStoredEQ(true, &address_HighChanceToIncreaseScoreForLavaPlume)
+	GetPokeHasAbility(attacker_ally, ability.friend_guard)
+	JumpIfStoredEQ(true, &address_HighChanceToIncreaseScoreForLavaPlume)
+	GetPokeHasAbility(attacker_ally, ability.forewarn)
+	JumpIfStoredEQ(true, &address_HighChanceToIncreaseScoreForLavaPlume)
+	GetPokeHasAbility(attacker_ally, ability.plus)
+	JumpIfStoredEQ(true, &address_HighChanceToIncreaseScoreForLavaPlume)
+	GetPokeHasAbility(attacker_ally, ability.minus)
+	JumpIfStoredEQ(true, &address_HighChanceToIncreaseScoreForLavaPlume)
+	GetPokeHasAbility(attacker_ally, ability.heatproof)
+	JumpIfStoredEQ(true, &address_HighChanceToIncreaseScoreForLavaPlume)
+	GetPokeHasType(attacker_ally, type.grass)
+	JumpIfStoredEQ(true, &deprioritizeBy10)
+	GetPokeHasType(attacker_ally, type.steel)
+	JumpIfStoredEQ(true, &deprioritizeBy10)
+	GetPokeHasType(attacker_ally, type.ice)
+	JumpIfStoredEQ(true, &deprioritizeBy10)
+	GetPokeHasType(attacker_ally, type.bug)
+	JumpIfStoredEQ(true, &deprioritizeBy10)
+	AddToScore(-3)
+	Jump(&endScript_FireMoves)
+
+address_HighChanceToIncreaseScoreForLavaPlume:
+	JumpIfRandLT(68, &endScript_FireMoves)
+	AddToScore(3)
+	Jump(&endScript_FireMoves)
+
+address_LavaPlumeRNG:
+	JumpIfRandLT(68, &endScript_FireMoves)
+	AddToScore(-8)
+
+endScript_FireMoves:
+	EndScript()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// NORMAL TYPE MOVES
+
+normalTypeMoveLogic:
+	JumpIfMoveEQ(move.boomburst, &address_BoomburstChecks)
+	Jump(&endScript_NormalMoves)
+
+address_BoomburstChecks:
+	GetPokeHasAbility(attacker_ally, ability.amplifier)
+	JumpIfStoredEQ(true, &address_HighChanceToIncreaseBoomburstScore)
+    GetPokeHasAbility(attacker_ally, ability.healer)
+	JumpIfStoredEQ(true, &address_HighChanceToIncreaseBoomburstScore)
+	GetPokeHasAbility(attacker_ally, ability.friend_guard)
+	JumpIfStoredEQ(true, &address_HighChanceToIncreaseBoomburstScore)
+	GetPokeHasAbility(attacker_ally, ability.forewarn)
+	JumpIfStoredEQ(true, &address_HighChanceToIncreaseBoomburstScore)
+	GetPokeHasAbility(attacker_ally, ability.plus)
+	JumpIfStoredEQ(true, &address_HighChanceToIncreaseBoomburstScore)
+	GetPokeHasAbility(attacker_ally, ability.minus)
+	JumpIfStoredEQ(true, &address_HighChanceToIncreaseBoomburstScore)
+	GetPokeHasType(attacker_ally, type.ghost)
+	JumpIfStoredEQ(true, &address_HighChanceToIncreaseBoomburstScore)
+	GetPokeHasType(attacker_ally, type.steel)
+	JumpIfStoredEQ(true, &address_MedChanceToIncreaseBoomburstScore)
+	GetPokeHasType(attacker_ally, type.rock)
+	JumpIfStoredEQ(true, &address_MedChanceToIncreaseBoomburstScore)
+	AddToScore(-3)
+	Jump(&endScript_NormalMoves)
+
+address_HighChanceToIncreaseBoomburstScore:
+	JumpIfRandLT(68, &endScript_NormalMoves)
+	AddToScore(3)
+	Jump(&endScript_NormalMoves)
+
+address_MedChanceToIncreaseBoomburstScore:
+	JumpIfRandLT(140, &endScript_NormalMoves)
+	AddToScore(3)
+	Jump(&endScript_NormalMoves)
+
+endScript_NormalMoves:
+	EndScript()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//  GRASS TYPE MOVES
+
+grassTypeMoveLogic:
+	JumpIfMoveEQ(move.petal_blizzard, &address_PetalBlizzardChecks)
+	Jump(&endScript_GrassMoves)
+
+address_PetalBlizzardChecks:
+    GetPokeHasAbility(defender_ally, ability.sap_sipper)
+	JumpIfStoredEQ(true, &address_PetalBlizzardRNG)
+	GetPokeHasAbility(attacker_ally, ability.sap_sipper)
+	JumpIfStoredEQ(true, &address_HighChanceToIncreaseScoreForPetalBlizzard)
+    GetPokeHasAbility(attacker_ally, ability.healer)
+	JumpIfStoredEQ(true, &address_HighChanceToIncreaseScoreForPetalBlizzard)
+	GetPokeHasAbility(attacker_ally, ability.friend_guard)
+	JumpIfStoredEQ(true, &address_HighChanceToIncreaseScoreForPetalBlizzard)
+	GetPokeHasAbility(attacker_ally, ability.forewarn)
+	JumpIfStoredEQ(true, &address_HighChanceToIncreaseScoreForPetalBlizzard)
+	GetPokeHasAbility(attacker_ally, ability.plus)
+	JumpIfStoredEQ(true, &address_HighChanceToIncreaseScoreForPetalBlizzard)
+	GetPokeHasAbility(attacker_ally, ability.minus)
+	JumpIfStoredEQ(true, &address_HighChanceToIncreaseScoreForPetalBlizzard)
+	GetPokeHasType(attacker_ally, type.grass)
+	JumpIfStoredEQ(true, &endScript_GrassMoves)
+	GetPokeHasType(attacker_ally, type.steel)
+	JumpIfStoredEQ(true, &endScript_GrassMoves)
+	GetPokeHasType(attacker_ally, type.fire)
+	JumpIfStoredEQ(true, &endScript_GrassMoves)
+	GetPokeHasType(attacker_ally, type.flying)
+	JumpIfStoredEQ(true, &endScript_GrassMoves)
+    GetPokeHasType(attacker_ally, type.bug)
+	JumpIfStoredEQ(true, &endScript_GrassMoves)
+	GetPokeHasType(attacker_ally, type.poison)
+	JumpIfStoredEQ(true, &endScript_GrassMoves)
+	AddToScore(-3)
+	Jump(&endScript_GrassMoves)
+
+address_PetalBlizzardRNG:
+    JumpIfRandLT(68, &endScript_GrassMoves)
+	AddToScore(-8)
+    Jump(&endScript_GrassMoves)
+
+address_HighChanceToIncreaseScoreForPetalBlizzard:
+	JumpIfRandLT(68, &endScript_GrassMoves)
+	AddToScore(3)
+	Jump(&endScript_GrassMoves)
+
+endScript_GrassMoves:
+	EndScript()
+
+
+
+
+
+
+
+//  GRASS TYPE MOVES
+
+grassTypeMoveLogic:
+	JumpIfMoveEQ(move.petal_blizzard, &address_PetalBlizzardChecks)
+	Jump(&endScript_GrassMoves)
+
+address_PetalBlizzardChecks:
+      GetPokeHasAbility(defender_ally, ability.justified)
+	JumpIfStoredEQ(true, &address_BrutalSwingRNG)
+	GetPokeHasAbility(attacker_ally, ability.sap_sipper)
+	JumpIfStoredEQ(true, &address_HighChanceToIncreaseScoreForPetalBlizzard)
+      GetPokeHasAbility(attacker_ally, ability.justified)
+	JumpIfStoredEQ(true, &address_HighChanceToIncreaseScoreForPetalBlizzard)
+      GetPokeHasAbility(attacker_ally, ability.healer)
+	JumpIfStoredEQ(true, &address_HighChanceToIncreaseScoreForPetalBlizzard)
+	GetPokeHasAbility(attacker_ally, ability.friend_guard)
+	JumpIfStoredEQ(true, &address_HighChanceToIncreaseScoreForPetalBlizzard)
+	GetPokeHasAbility(attacker_ally, ability.forewarn)
+	JumpIfStoredEQ(true, &address_HighChanceToIncreaseScoreForPetalBlizzard)
+	GetPokeHasAbility(attacker_ally, ability.plus)
+	JumpIfStoredEQ(true, &address_HighChanceToIncreaseScoreForPetalBlizzard)
+	GetPokeHasAbility(attacker_ally, ability.minus)
+	JumpIfStoredEQ(true, &address_HighChanceToIncreaseScoreForPetalBlizzard)
+	GetPokeHasType(attacker_ally, type.dark)
+	JumpIfStoredEQ(true, &endScript_DarkMoves)
+      GetPokeHasType(attacker_ally, type.fighting)
+	JumpIfStoredEQ(true, &endScript_DarkMoves)
+	GetPokeHasType(attacker_ally, type.fairy)
+	JumpIfStoredEQ(true, &endScript_DarkMoves)
+	AddToScore(-3)
+	Jump(&endScript_DarkMoves)
+
+address_BrutalSwingRNG:
+      JumpIfRandLT(68, &endScript_DarkMoves)
+	AddToScore(-8)
+      Jump(&endScript_DarkMoves)
+
+address_HighChanceToIncreaseScoreForPetalBlizzard:
+	JumpIfRandLT(68, &endScript_DarkMoves)
+	AddToScore(3)
+	Jump(&endScript_DarkMoves)
+
+endScript_DarkMoves:
+	EndScript()
+
+
+
+
+
+
+
+
+
+
+
+
+// WIDE GUARD LOGIC
+
+address_WideGuardLogic:
+	JumpIfRandLT(50, &address_MoveChecksForWideGuard)
+	GetPreviousMove(attacker)
+	JumpIfStoredEQ(move.wide_guard, &address_0x0DC4)
+
+address_MoveChecksForWideGuard:
+	JumpIfHasMove(defender_ally, move.blizzard, &address_0x0DD0)
+    JumpIfHasMove(defender_ally, move.rock_slide, &address_0x0DD0)
+    JumpIfHasMove(defender_ally, move.heat_wave, &address_0x0DD0)
+    JumpIfHasMove(defender_ally, move.eruption, &address_0x0DD0)
+    JumpIfHasMove(defender_ally, move.water_spout, &address_0x0DD0)
+    JumpIfHasMove(defender_ally, move.muddy_water, &address_0x0DD0)
+    JumpIfHasMove(defender_ally, move.glaciate, &address_0x0DD0)
+    JumpIfHasMove(defender_ally, move.snarl, &address_0x0DD0)
+    JumpIfHasMove(defender_ally, move.assurance, &address_0x0DD0)
+    JumpIfHasMove(defender_ally, move.surf, &address_0x0DD0)
+    JumpIfHasMove(defender_ally, move.earthquake, &address_0x0DD0)
+    JumpIfHasMove(defender_ally, move.discharge, &address_0x0DD0)
+    JumpIfHasMove(defender_ally, move.lava_plume, &address_0x0DD0)
+    JumpIfHasMove(defender_ally, move.sludge_wave, &address_0x0DD0)
+    JumpIfHasMove(defender_ally, move.bulldoze, &address_0x0DD0)
+    JumpIfHasMove(defender_ally, move.searing_shot, &address_0x0DD0)
+    JumpIfHasMove(defender_ally, move.double-edge, &address_0x0DD0)
+    JumpIfHasMove(defender_ally, move.iron_tail, &address_0x0DD0)
+    JumpIfHasMove(defender_ally, move.aqua_tail, &address_0x0DD0)
+    JumpIfHasMove(defender_ally, move.cross_chop, &address_0x0DD0)
+    JumpIfHasMove(defender_ally, move.leaf_tornado, &address_0x0DD0)
+    JumpIfHasMove(defender_ally, move.drill_peck, &address_0x0DD0)
+    JumpIfHasMove(defender_ally, move.dragon_rush, &address_0x0DD0)
+    JumpIfHasMove(defender_ally, move.wild_charge, &address_0x0DD0)
+    JumpIfHasMove(defender_ally, move.smog, &address_0x0DD0)
+    JumpIfHasMove(defender_ally, move.power_whip, &address_0x0DD0)
+    JumpIfHasMove(defender_ally, move.petal_blizzard, &address_0x0DD0)
+    JumpIfHasMove(defender_ally, move.psyblade, &address_0x0DD0)
+    JumpIfHasMove(defender_ally, move.stone_edge, &address_0x0DD0)
+    JumpIfHasMove(defender_ally, move.attack_order, &address_0x0DD0)
+    JumpIfHasMove(defender_ally, move.take_down, &address_0x0DD0)
+	JumpIfHasMove(defender_ally, move.hyper_voice, &address_0x0DD0)
+	JumpIfHasMove(defender_ally, move.uproar, &address_0x0DD0)
+	JumpIfHasMove(defender_ally, move.electroweb, &address_0x0DD0)
+	JumpIfHasMove(defender_ally, move.icy_wind, &address_0x0DD0)
+	JumpIfHasMove(defender_ally, move.barb_barrage, &address_0x0DD0)
+	JumpIfHasMove(defender_ally, move.air_cutter, &address_0x0DD0)
+	JumpIfHasMove(defender_ally, move.wild_charge, &address_0x0DD0)
+	JumpIfHasMove(defender_ally, move.boomburst, &address_0x0DD0)
+	JumpIfHasMove(defender_ally, move.psychic_noise, &address_0x0DD0)
+	JumpIfHasMove(defender_ally, move.dazzling_gleam, &address_0x0DD0)
+	JumpIfHasMove(defender_ally, move.twister, &address_0x0DD0)
+	JumpIfHasMove(defender_ally, move.diamond_storm, &address_0x0DD0)
+	JumpIfHasMove(defender_ally, move.razor_leaf, &address_0x0DD0)
+	
+	JumpIfHasMove(defender, move.blizzard, &address_0x0DD0)
+    JumpIfHasMove(defender, move.rock_slide, &address_0x0DD0)
+    JumpIfHasMove(defender, move.heat_wave, &address_0x0DD0)
+    JumpIfHasMove(defender, move.eruption, &address_0x0DD0)
+    JumpIfHasMove(defender, move.water_spout, &address_0x0DD0)
+    JumpIfHasMove(defender, move.muddy_water, &address_0x0DD0)
+    JumpIfHasMove(defender, move.glaciate, &address_0x0DD0)
+    JumpIfHasMove(defender, move.snarl, &address_0x0DD0)
+    JumpIfHasMove(defender, move.surf, &address_0x0DD0)
+    JumpIfHasMove(defender, move.earthquake, &address_0x0DD0)
+    JumpIfHasMove(defender, move.discharge, &address_0x0DD0)
+    JumpIfHasMove(defender, move.lava_plume, &address_0x0DD0)
+    JumpIfHasMove(defender, move.sludge_wave, &address_0x0DD0)
+    JumpIfHasMove(defender, move.bulldoze, &address_0x0DD0)
+    JumpIfHasMove(defender, move.searing_shot, &address_0x0DD0)
+    JumpIfHasMove(defender, move.double-edge, &address_0x0DD0)
+    JumpIfHasMove(defender, move.iron_tail, &address_0x0DD0)
+    JumpIfHasMove(defender, move.aqua_tail, &address_0x0DD0)
+    JumpIfHasMove(defender, move.cross_chop, &address_0x0DD0)
+    JumpIfHasMove(defender, move.leaf_tornado, &address_0x0DD0)
+    JumpIfHasMove(defender, move.drill_peck, &address_0x0DD0)
+    JumpIfHasMove(defender, move.dragon_rush, &address_0x0DD0)
+    JumpIfHasMove(defender, move.wild_charge, &address_0x0DD0)
+    JumpIfHasMove(defender, move.smog, &address_0x0DD0)
+    JumpIfHasMove(defender, move.power_whip, &address_0x0DD0)
+    JumpIfHasMove(defender, move.petal_blizzard, &address_0x0DD0)
+    JumpIfHasMove(defender, move.psyblade, &address_0x0DD0)
+    JumpIfHasMove(defender, move.stone_edge, &address_0x0DD0)
+    JumpIfHasMove(defender, move.attack_order, &address_0x0DD0)
+    JumpIfHasMove(defender, move.take_down, &address_0x0DD0)
+	JumpIfHasMove(defender, move.hyper_voice, &address_0x0DD0)
+	JumpIfHasMove(defender, move.uproar, &address_0x0DD0)
+	JumpIfHasMove(defender, move.electroweb, &address_0x0DD0)
+	JumpIfHasMove(defender, move.icy_wind, &address_0x0DD0)
+	JumpIfHasMove(defender, move.barb_barrage, &address_0x0DD0)
+	JumpIfHasMove(defender, move.air_cutter, &address_0x0DD0)
+	JumpIfHasMove(defender, move.wild_charge, &address_0x0DD0)
+	JumpIfHasMove(defender, move.boomburst, &address_0x0DD0)
+	JumpIfHasMove(defender, move.psychic_noise, &address_0x0DD0)
+	JumpIfHasMove(defender, move.dazzling_gleam, &address_0x0DD0)
+	JumpIfHasMove(defender, move.twister, &address_0x0DD0)
+	JumpIfHasMove(defender, move.diamond_storm, &address_0x0DD0)
+	JumpIfHasMove(defender, move.razor_leaf, &address_0x0DD0)
+	Jump(&endScript_WideGuard)
+
+address_0x0DC4:
+	AddToScore(-4)
+	Jump(&endScript_WideGuard)
+
+address_0x0DD0:
+	JumpIfRandLT(80, &endScript_WideGuard)
+	AddToScore(2)
+
+endScript_WideGuard:
+	EndScript()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ally switch logic 
+address_AllySwitchLogic:
+	GetSpecies(defender)
+	JumpIfStoredIsInList(&data_address_0x0E9C, &address_0x0E64)
+	Jump(&address_0x0E9A)
+
+address_0x0E64:
+	StoreIsFirstTurn(defender)
+	JumpIfStoredNE(false, &address_0x0E9A)
+	JumpIfRandLT(128, &address_0x0E9A)
+	AddToScore(2)
+	Jump(&address_0x0E9A)
+	JumpIfRandLT(128, &address_0x0E9A)
+	AddToScore(-1)
+
+address_0x0E9A:
+	EndScript()
+
+
+data_address_0x0E9C:
+	species.blastoise
+	species.persian
+	species.dewgong
+	species.kangaskhan
+	species.mr_mime
+	species.pikachu
+	species.raichu
+	species.ambipom
+	species.weavile
+	species.hitmonchan
+	species.hitmonlee
+	species.hitmontop
+	species.jynx
+	species.ludicolo
+	species.shiftry
+	species.hariyama
+	species.delcatty
+	species.sableye
+	species.medicham
+	species.spinda
+	species.kecleon
+	species.infernape
+	species.lopunny
+	species.purugly
+	species.croagunk
+	species.delibird
+	species.scrafty
+	species.liepard
+	END
+
+
+
+
+endScript_1:
+	EndScript()
+
+
+deprioritizeBy40:
+	AddToScore(-40)
+	EndScript()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// MOVES THAT TARGET ALLIES 
+address_TargetingAnAlly:
+	JumpIfIsFainted(attacker_ally, &deprioritizeBy30Again)
+
+
+
+    // NON DAMAGING MOVES
+	CalcMoveDamage(false)
+	JumpIfStoredEQ(no_damage, &address_NonDamagingAllyTargetingMoves)
+	GetType(move_type)
+	JumpIfStoredEQ(type.fire, &address_ConsiderSingleTargetFlashFireActivationMove)
+	JumpIfStoredEQ(type.electric, &address_TargetAlliesElectricMoves)
+	JumpIfStoredEQ(type.water, &address_WaterMoveLogicForSingleTargetMoves)
+
+	
+	JumpIfMoveEQ(move.fling, &address_TargetAllyWithBestow)
+	JumpIfHeldItemEQ(attacker_ally, item.weakness_policy, &address_TriggerAllyWeaknessPolicy)
+	JumpIfHeldItemEQ(attacker_ally, item.tera_w-policy, &address_TriggerAllyWeaknessPolicy)
+	Jump(&deprioritizeBy30)
+
+
+
+
+
+
+
+// FLASH FIRE LOGIC
+
+address_ConsiderSingleTargetFlashFireActivationMove:
+	GetPokeHasAbility(attacker_ally, ability.flash_fire)
+	JumpIfStoredEQ(true, &address_CheckFlashFireActive)
+	Jump(&deprioritizeBy30)
+
+address_CheckFlashFireActive:
+	JumpIfFlashFireIsActive(attacker_ally, &deprioritizeBy30)
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.mold_breaker, &deprioritizeBy30)
+	JumpIfStoredEQ(ability.turboblaze, &deprioritizeBy30)
+	JumpIfStoredEQ(ability.teravolt, &deprioritizeBy30)
+	GetHeldItem(attacker)
+	JumpIfStoredNE(item.ability_drill, &deprioritizeBy30)
+	JumpIfStoredNE(item.tera_drill, &deprioritizeBy30)
+	JumpIfRandLT(150, &deprioritizeBy30)
+	Jump(&add1ToScore)
+
+
+
+
+
+
+
+
+
+
+
+
+
+address_TargetAlliesElectricMoves:
+	GetPokeHasAbility(attacker_ally, ability.motor_drive)
+	JumpIfStoredEQ(true, &address_AllyHasMotorDrive)
+	GetPokeHasAbility(attacker_ally, ability.thunder_armor)
+	JumpIfStoredEQ(true, &address_AllyHasThunderArmor)
+	GetPokeHasAbility(attacker_ally, ability.lightning_rod)
+	JumpIfStoredEQ(true, &address_AllyHasLightningRod)
+	Jump(&deprioritizeBy30)
+
+address_AllyHasThunderArmor:
+	JumpIfStatStageGT(attacker_ally, atk, +1, &deprioritizeBy30)
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.mold_breaker, &deprioritizeBy30)
+	JumpIfStoredEQ(ability.turboblaze, &deprioritizeBy30)
+	JumpIfStoredEQ(ability.teravolt, &deprioritizeBy30)
+	GetHeldItem(attacker)
+	JumpIfStoredNE(item.ability_drill, &deprioritizeBy30)
+	JumpIfStoredNE(item.tera_drill, &deprioritizeBy30)
+	Jump(&address_CheckAllyDamageIntakeForSideTargeting)
+
+address_AllyHasLightningRod:
+	JumpIfStatStageGT(attacker_ally, spa, +1, &deprioritizeBy30)
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.mold_breaker, &deprioritizeBy30)
+	JumpIfStoredEQ(ability.turboblaze, &deprioritizeBy30)
+	JumpIfStoredEQ(ability.teravolt, &deprioritizeBy30)
+	GetHeldItem(attacker)
+	JumpIfStoredNE(item.ability_drill, &deprioritizeBy30)
+	JumpIfStoredNE(item.tera_drill, &deprioritizeBy30)
+	Jump(&address_CheckAllyDamageIntakeForSideTargeting)
+
+address_AllyHasMotorDrive:
+	JumpIfStatStageGT(attacker_ally, spe, +1, &deprioritizeBy30)
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.mold_breaker, &deprioritizeBy30)
+	JumpIfStoredEQ(ability.turboblaze, &deprioritizeBy30)
+	JumpIfStoredEQ(ability.teravolt, &deprioritizeBy30)
+	GetHeldItem(attacker)
+	JumpIfStoredNE(item.ability_drill, &deprioritizeBy30)
+	JumpIfStoredNE(item.tera_drill, &deprioritizeBy30)
+	Jump(&address_CheckAllyDamageIntakeForSideTargeting)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// WATER MOVE LOGIC 
+
+address_WaterMoveLogicForSingleTargetMoves:
+	GetPokeHasAbility(attacker_ally, ability.storm_drain)
+	JumpIfStoredEQ(true, &address_AllyHasStormDrain)
+	Jump(&deprioritizeBy30)
+
+address_AllyHasStormDrain:
+	JumpIfStatStageGT(attacker_ally, spa, +1, &deprioritizeBy30)
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.mold_breaker, &deprioritizeBy30)
+	JumpIfStoredEQ(ability.turboblaze, &deprioritizeBy30)
+	JumpIfStoredEQ(ability.teravolt, &deprioritizeBy30)
+	GetHeldItem(attacker)
+	JumpIfStoredNE(item.ability_drill, &deprioritizeBy30)
+	JumpIfStoredNE(item.tera_drill, &deprioritizeBy30)
+	Jump(&address_CheckAllyDamageIntakeForSideTargeting)
+
+
+
+
+
+
+
+address_DarkTypeMoveLogicForSingleTargetMoves:
+	GetPokeHasAbility(attacker_ally, ability.justified)
+	JumpIfStoredEQ(true, &address_AllyHasJustified)
+	Jump(&deprioritizeBy30)
+
+address_AllyHasJustified:
+	JumpIfStatStageGT(attacker_ally, atk, +1, &deprioritizeBy30)
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.mold_breaker, &deprioritizeBy30)
+	JumpIfStoredEQ(ability.turboblaze, &deprioritizeBy30)
+	JumpIfStoredEQ(ability.teravolt, &deprioritizeBy30)
+	GetHeldItem(attacker)
+	JumpIfStoredNE(item.ability_drill, &deprioritizeBy30)
+	JumpIfStoredNE(item.tera_drill, &deprioritizeBy30)
+	// CheckOwnDamageIntoAlly(&address_CheckAllyDamageIntakeForSideTargeting)
+	Jump(&deprioritizeBy30)
+
+
+
+
+
+//  TRIGGER ALLLY WEAKNESS POLICY 
+
+address_TriggerAllyWeaknessPolicy:
+	JumpIfEffectivenessEQ(2x, &address_hasSuperEffectiveMoveForWeaknessPolicy)
+	JumpIfEffectivenessEQ(4x, &address_hasSuperEffectiveMoveForWeaknessPolicy)
+	Jump(&deprioritizeBy30)
+
+address_hasSuperEffectiveMoveForWeaknessPolicy:
+	//CheckOwnDamageIntoAlly(&address_CheckAllyDamageIntakeForSideTargeting)
+	Jump(&deprioritizeBy30)
+
+
+
+
+
+
+
+
+address_CheckAllyDamageIntakeForSideTargeting:
+	JumpIfUserWillFaint_Priority(defender, &deprioritizeBy30)
+	Jump(&address_RNGCheckForSideTargeting)
+
+address_RNGCheckForSideTargeting:
+	JumpIfRandLT(160, &endScript_RNGTargetingChecks)
+	Jump(&add2ToScore)
+
+endScript_RNGTargetingChecks:
+	EndScript()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// NON DAMAGING MOVES
+
+address_NonDamagingAllyTargetingMoves:
+	JumpIfMoveEQ(move.skill_swap, &address_TargetAllyWithSkillSwap)
+	JumpIfMoveEQ(move.entrainment, &address_TargetAllyWithEntrainment)
+	JumpIfMoveEQ(move.will-o-wisp, &address_TargetAllyWithWillOWisp)
+	JumpIfMoveEQ(move.thunder_wave, &address_TargetAllyWithThunderWave)
+	JumpIfMoveEffectEQ(move_ef.target_tox, &address_TargetAllyWithPoisoningMoves)
+	JumpIfMoveEffectEQ(move_ef.target_psn, &address_TargetAllyWithPoisoningMoves)
+	JumpIfMoveEQ(move.helping_hand, &address_TargetAllyWithHelpingHand)
+	JumpIfMoveEQ(move.swagger, &address_TargetAllyWithSwagger)
+	JumpIfMoveEQ(move.switcheroo, &address_TargetAllyWithBestow)
+	JumpIfMoveEQ(move.bestow, &address_TargetAllyWithBestow)
+	JumpIfMoveEQ(move.gastro_acid, &address_TargetAllyWithGastroAcid)
+	JumpIfMoveEQ(move.acupressure, &address_TargetAllyWithAcupressure)
+	JumpIfMoveEQ(move.agility, &address_TargetAllyWithAgility)
+	JumpIfMoveEQ(move.heal_pulse, &address_TargetAllyWithHealPulse)
+	Jump(&deprioritizeBy30Again)
+
+
+
+
+
+
+
+
+
+//  SKILL SWAP 
+address_TargetAllyWithSkillSwap:
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.truant, &add10ToScore)
+	JumpIfStoredEQ(ability.slow_start, &add10ToScore)
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.levitate, &address_SkillSwapLevitateOntoAlly)
+	JumpIfStoredEQ(ability.keen_senses, &address_SkillSwapAccuracyBoostingAbilityOntoAlly)
+	JumpIfStoredEQ(ability.no_guard, &address_SkillSwapAccuracyBoostingAbilityOntoAlly)
+	Jump(&deprioritizeBy30Again)
+
+address_SkillSwapLevitateOntoAlly:
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.levitate, &deprioritizeBy10)
+	GetType(defender_type1)
+	JumpIfStoredEQ(type.flying, &deprioritizeBy8)
+	GetType(defender_type2)
+	JumpIfStoredEQ(type.flying, &deprioritizeBy8)
+	GetType(defender_type1)
+	JumpIfStoredEQ(type.grass, &deprioritizeBy5)
+	JumpIfStoredEQ(type.bug, &deprioritizeBy5)
+	GetType(defender_type2)
+	JumpIfStoredEQ(type.grass, &deprioritizeBy5)
+	JumpIfStoredEQ(type.bug, &deprioritizeBy5)
+	JumpIfHasCondition(defender, cond.floating, &deprioritizeBy2)
+	GetType(defender_type1)
+	JumpIfStoredEQ(type.electric, &add3ToScore)
+	GetType(defender_type2)
+	JumpIfStoredEQ(type.electric, &add3ToScore)
+	GetType(defender_type1)
+	JumpIfStoredEQ(type.steel, &add3ToScore)
+	GetType(defender_type2)
+	JumpIfStoredEQ(type.steel, &add3ToScore)
+	GetType(defender_type1)
+	JumpIfStoredEQ(type.poison, &add3ToScore)
+	GetType(defender_type2)
+	JumpIfStoredEQ(type.poison, &add3ToScore)
+	GetType(defender_type1)
+	JumpIfStoredEQ(type.fire, &add3ToScore)
+	GetType(defender_type2)
+	JumpIfStoredEQ(type.fire, &add3ToScore)
+	GetType(defender_type1)
+	JumpIfStoredEQ(type.rock, &add3ToScore)
+	GetType(defender_type2)
+	JumpIfStoredEQ(type.rock, &add3ToScore)
+	Jump(&deprioritizeBy30Again)
+
+address_SkillSwapAccuracyBoostingAbilityOntoAlly:
+	JumpIfHasMove(attacker_ally, move.fire_blast, &address_Add3ToScoreForSkillSwapAccuracy)
+	JumpIfHasMove(attacker_ally, move.thunder, &address_Add3ToScoreForSkillSwapAccuracy)
+	JumpIfHasMove(attacker_ally, move.scorching_swarm, &address_Add3ToScoreForSkillSwapAccuracy)
+	JumpIfHasMove(attacker_ally, move.hydro_pump, &address_Add3ToScoreForSkillSwapAccuracy)
+	JumpIfHasMove(attacker_ally, move.dynamic_punch, &address_Add3ToScoreForSkillSwapAccuracy)
+	JumpIfHasMove(attacker_ally, move.blizzard, &address_Add3ToScoreForSkillSwapAccuracy)
+	JumpIfHasMove(attacker_ally, move.zap_cannon, &address_Add3ToScoreForSkillSwapAccuracy)
+	JumpIfHasMove(attacker_ally, move.megahorn, &address_Add3ToScoreForSkillSwapAccuracy)
+	JumpIfHasMove(attacker_ally, move.focus_blast, &address_Add3ToScoreForSkillSwapAccuracy)
+	JumpIfHasMove(attacker_ally, move.gunk_shot, &address_Add3ToScoreForSkillSwapAccuracy)
+	JumpIfHasMove(attacker_ally, move.magma_storm, &address_Add3ToScoreForSkillSwapAccuracy)
+	JumpIfHasMove(attacker_ally, move.power_whip, &address_Add3ToScoreForSkillSwapAccuracy)
+	JumpIfHasMove(attacker_ally, move.seed_flare, &address_Add3ToScoreForSkillSwapAccuracy)
+	JumpIfHasMove(attacker_ally, move.hurricane, &address_Add3ToScoreForSkillSwapAccuracy)
+	JumpIfHasMove(attacker_ally, move.inferno, &address_Add3ToScoreForSkillSwapAccuracy)
+	JumpIfHasMove(attacker_ally, move.fissure, &address_Add3ToScoreForSkillSwapAccuracy)
+	JumpIfHasMove(attacker_ally, move.guillotine, &address_Add3ToScoreForSkillSwapAccuracy)
+	JumpIfHasMove(attacker_ally, move.horn_drill, &address_Add3ToScoreForSkillSwapAccuracy)
+	Jump(&deprioritizeBy30Again)
+
+address_Add3ToScoreForSkillSwapAccuracy:
+	Jump(&add3ToScore)
+
+
+
+
+
+
+
+
+
+
+
+
+// TARGET ALLY WITH ENTRAINMENT
+
+address_TargetAllyWithEntrainment:
+	GetAbilityGuess(defender)
+	JumpIfStoredIsInList(&data_address_GreatAbilitiesToTakeWithRolePlay, &deprioritizeBy30Again)
+	GetAbilityGuess(attacker)
+	JumpIfStoredIsInList(&data_address_GreatAbilitiesToTakeWithRolePlay, &address_AddScoreForEntrainment)
+	JumpIfRandLT(128, &deprioritizeBy30Again)
+	GetAbilityGuess(defender)
+	JumpIfStoredIsInList(&data_address_SecondarilyGreatAbilities, &deprioritizeBy30Again)
+	GetAbilityGuess(attacker)
+	JumpIfStoredIsInList(&data_address_SecondarilyGreatAbilities, &address_AddScoreForEntrainment)
+	Jump(&deprioritizeBy30Again)
+
+address_AddScoreForEntrainment:
+	JumpIfUserWillFaint_Priority(defender, &deprioritizeBy30Again)
+	Jump(&address_RNGForEntrainment)
+
+address_RNGForEntrainment:
+	JumpIfRandLT(50, &address_0x152C)
+	AddToScore(1)
+
+address_0x152C:
+	EndScript()
+
+
+data_address_GreatAbilitiesToTakeWithRolePlay:
+	ability.permafrost
+	ability.friend_guard
+	ability.speed_boost
+	ability.intimidate
+	ability.pure_power
+	ability.huge_power
+	ability.fur_coat
+	ability.anticipation
+	ability.cursed_body
+	ability.moody
+	ability.plus
+	ability.minus
+	ability.aftermath
+	END
+
+data_address_SecondarilyGreatAbilities:
+	ability.solar_power
+	ability.dry_skin
+	ability.motor_drive
+	ability.rain_dish
+	ability.huge_power
+	ability.chlorophyll
+	ability.swift_swim
+	ability.ice_body
+	ability.sand_rush
+	ability.sand_veil
+	ability.snow_cloak
+	END
+
+
+
+
+// TARGET ALLY WITH WILL-O-WISP
+
+address_TargetAllyWithWillOWisp:
+	Jump(&deprioritizeBy30Again)
+
+address_TargetAllyWithThunderWave:
+	Jump(&deprioritizeBy30Again)
+
+address_TargetAllyWithPoisoningMoves:
+	Jump(&deprioritizeBy30Again)
+
+address_TargetAllyWithHelpingHand:
+	JumpIfHealthEQ(attacker_ally, 0, &deprioritizeBy30)
+	JumpIfHealthGT(attacker_ally, 50, &address_HighChanceToIncreaseScore)
+	GetPosInTurnOrder(attacker_ally)
+	JumpIfStoredLT(1, &address_HighChanceToIncreaseScore)
+	AddToScore(-1)
+	Jump(&address_0x16D6)
+
+address_HighChanceToIncreaseScore:
+	JumpIfRandSeedLT(128, &address_0x16D6)
+	AddToScore(3)
+
+address_0x16D6:
+	EndScript()
+
+
+
+
+
+// TARGET ALLY WITH SWAGGER
+
+address_TargetAllyWithSwagger:
+	JumpIfAtkLTSpa(defender, &deprioritizeBy30Again)
+	JumpIfHeldItemEQ(defender, item.persim_berry, &address_CheckIncomingDamage)
+	JumpIfHeldItemEQ(defender, item.lum_berry, &address_CheckIncomingDamage)
+	JumpIfHasSideCondition(defender, side_cond.safeguard, &address_CheckIncomingDamage)
+	JumpIfHasSideCondition(defender, side_cond.mist, &address_CheckIncomingDamage)
+	Jump(&deprioritizeBy30Again)
+
+address_CheckIncomingDamage:
+	JumpIfUserWillFaint_Priority(defender, &deprioritizeBy30Again)
+	Jump(&address_SwaggerRNGCheck)
+
+address_SwaggerRNGCheck:
+	JumpIfStatStageGT(defender, atk, +1, &endScript_SwaggerTargetAllyChecks)
+	AddToScore(3)
+
+endScript_SwaggerTargetAllyChecks:
+	EndScript()
+
+
+address_TargetAllyWithBestow:
+	Jump(&deprioritizeBy30Again)
+
+
+
+
+
+
+
+// TARGET ALLY WITH GASTRO ACID 
+
+address_TargetAllyWithGastroAcid:
+	JumpIfHasCondition(attacker_ally, cond.gastro_acid, &deprioritizeBy30Again)
+	GetPokeHasAbility(attacker_ally, ability.truant)
+	JumpIfStoredEQ(true, &address_0x1D32)
+	GetPokeHasAbility(attacker_ally, ability.slow_start)
+	JumpIfStoredEQ(true, &address_0x1D32)
+	Jump(&address_0x1D38)
+
+address_0x1D32:
+	AddToScore(5)
+
+address_0x1D38:
+	EndScript()
+
+
+
+
+
+
+address_TargetAllyWithAgility: 
+	JumpCompareSpeed(GT, &address_AgilityEndScript)
+	JumpIfStatStageEQ(attacker_ally, spe, +2, &deprioritizeBy30Again)
+	JumpIfRandLT(128, &address_AgilityEndScript)
+	AddToScore(2)
+
+address_AgilityEndScript: 
+	EndScript()
+
+
+
+address_TargetAllyWithAcupressure:
+	JumpIfStatStageEQ(attacker_ally, atk, +6, &deprioritizeBy30Again)
+	JumpIfStatStageEQ(attacker_ally, def, +6, &deprioritizeBy30Again)
+	JumpIfStatStageEQ(attacker_ally, spe, +6, &deprioritizeBy30Again)
+	JumpIfStatStageEQ(attacker_ally, spa, +6, &deprioritizeBy30Again)
+	JumpIfStatStageEQ(attacker_ally, spd, +6, &deprioritizeBy30Again)
+	JumpIfStatStageEQ(attacker_ally, eva, +6, &deprioritizeBy30Again)
+	JumpIfStatStageEQ(attacker_ally, acc, +6, &deprioritizeBy30Again)
+	JumpIfUserWillFaint_Priority(defender, &deprioritizeBy30Again)
+	Jump(&address_AcupressureRNGCheck)
+
+address_AcupressureRNGCheck:
+	JumpIfRandLT(128, &endScript_AcuPressureOnAlly)
+	AddToScore(2)
+
+endScript_AcuPressureOnAlly:
+	EndScript()
+
+
+
+
+
+
+address_TargetAllyWithHealPulse:
+	JumpIfHealthEQ(defender, 0, &deprioritizeBy30Again)
+	JumpIfHealthGT(defender, 100, &deprioritizeBy30Again)
+	JumpIfHealthGT(defender, 70, &address_0x1F6C)
+	JumpIfHealthGT(defender, 30, &address_HealPulseAllyDamageCheck)
+	JumpIfStatStageGT(attacker_ally, def, +1, &address_HealPulseAllyDamageCheck)
+	JumpIfStatStageGT(attacker_ally, spd, +1, &address_HealPulseAllyDamageCheck)
+	JumpIfStatStageGT(attacker_ally, eva, +1, &address_HealPulseAllyDamageCheck)
+	GetPosInTurnOrder(attacker)
+	JumpIfStoredEQ(0, &address_HealPulseAllyDamageCheck)
+	GetPosInTurnOrder(attacker_ally)
+	JumpIfStoredNE(0, &deprioritizeBy1)
+	GetPosInTurnOrder(attacker)
+	JumpIfStoredEQ(1, &address_HealPulseAllyDamageCheck)
+	Jump(&deprioritizeBy1)
+
+address_0x1F6C:
+	GetPosInTurnOrder(attacker)
+	JumpIfStoredEQ(3, &address_HealPulseAllyDamageCheck)
+	Jump(&deprioritizeBy1)
+
+address_HealPulseAllyDamageCheck:
+	JumpIfUserWillFaint_Priority(defender, &deprioritizeBy1)
+	Jump(&address_HealPulseAllyRNGCheck)
+
+address_HealPulseAllyRNGCheck:
+	JumpIfRandSeedLT(128, &deprioritizeBy1)
+	AddToScore(3)
+	Jump(&deprioritizeBy1)
+
+deprioritizeBy1:
+	AddToScore(-1)
+	EndScript()
+
+
+deprioritizeBy30Again:
+	AddToScore(-30)
+	EndScript()
+
+	0x0004 [4]
+	0xFFFF [65535]
+	0xFFFF [65535]
+	0x004D [77]
+
+deprioritizeBy2:
+	AddToScore(-2)
+	EndScript()
+
+
+deprioritizeBy3:
+	AddToScore(-3)
+	EndScript()
+
+
+deprioritizeBy5:
+	AddToScore(-5)
+	EndScript()
+
+	0x0004 [4]
+	0xFFFA [65530]
+	0xFFFF [65535]
+	0x004D [77]
+
+deprioritizeBy8:
+	AddToScore(-8)
+	EndScript()
+
+
+deprioritizeBy10:
+	AddToScore(-10)
+	EndScript()
+
+	0x0004 [4]
+	0xFFF4 [65524]
+	0xFFFF [65535]
+	0x004D [77]
+
+deprioritizeBy30:
+	AddToScore(-30)
+	EndScript()
+
+
+add1ToScore:
+	AddToScore(1)
+	EndScript()
+
+
+add2ToScore:
+	AddToScore(2)
+	EndScript()
+
+
+add3ToScore:
+	AddToScore(3)
+	EndScript()
+
+
+add5ToScore:
+	AddToScore(5)
+	EndScript()
+
+
+add10ToScore:
+	AddToScore(10)
+	EndScript()

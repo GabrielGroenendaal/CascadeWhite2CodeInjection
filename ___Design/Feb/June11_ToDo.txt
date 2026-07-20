@@ -13,15 +13,63 @@
 
 [ TRAINERS ]
 
+    CHEREN SPLIT: 
 
+        Janitor Orville: 
+            Scraggy (Assurance -> Beat Up)
+            Grimer (Brutal Swing -> Secret Power )
+        
+        Brock: 
+            Bonsly (+SpD nature) (Rock Tomb, Seed Bomb, Skitter Smack, Accelrock)
+            Happiny (Thunder Wave, Secret Power, Rock Tomb, Rock Smash)
+
+    ROXIE SPLIT: 
+        Twins Lia & Lily 
+            Bonsly: (Rock Slide, Seed Bomb, Light Screen, Thunder Wave)
+        
     BURGH SPLIT:
+
+        Pokefan Norbert: 
+            Furret: Brutal Swing -> Knock Off 
+        
+        Worker Zack: 
+            Haunter: Hex -> Shadow Claw 
+        
+        Plasma Grunt:  
+            Fearow: Brutal Swing -> Assurance 
+        
+        Worker Scott: 
+            Zweilous (Brutal Swing -> Dark Pulse)
+        
         Backpacker Kendall 
             Croconaw -> Hippopotas (Ability: Strong Jaw) (Drill Run, Fire Fang, Yawn, Protect)
 
         Surge: 
             Krookadile (Crunch -> Thrash )
+        
+        Worker Scott: 
+            Zweilous -> Roseli Berry 
+        
+        Clerk Clemens: 
+            Boldore: (Eviolite -> Scope Lens) (Power Gem, Flame Burst, Scorching Sands, Solarbeam)
+
+        Rhydon -> Rhyhorn (Eviolite)
+            Lunge, Rock Slide, Drill Run, 
+    
     ELESA SPLIT:
 
+
+        New Trainer: 
+       665 Backpacker Clara (Rewards Eviolite)
+            Bonsly @ Eviolite (Ability: Prankster) (Stone Edge, Thunder Wave, Seed Bomb, Sand Attack )
+            Anorith @ Eviolite (Ability: Water Absorb) (Twineedle, Rock Slide, Razor Shell, Cross Poison)
+            Archen @ Eviolite (Ability: Quick Feet) (Rock Slide, Dual Wingbeat, Heat Wave, Pursuit)
+            Rhyhorn @ Eviolite (Ability: Solid Rock) (Rock Climb, Drill Run, Lunge, Swords Dance)
+
+        Update Backapcker Walt 
+            Crustle -> Anorith @ Eviolite (Ability: Water Absorb) (Twineedle, Stone Edge, Crabhammer, Spikes)
+            Dugtrio (Arena Trap) (Bulldoze, Rock Blast, Night Slash, Quick Attack)
+        
         Benga: 
             Bouffalant:
                 Ability: Sap Sipper
@@ -31,7 +79,13 @@
                 Fire Punch -> Thunder Punch 
                 Poison Jab -> Heavy Slam 
         
-
+        Ranger Anja: 
+            Sudowoodo -> Sawsbuck-Summer @ Rawst Berry (Ability: Sap Sipper) (Rock Climb, Seed Bomb, Jump Kick, Return)
+        
+        Psychic Future: 
+            Lucario (Dark Pulse -> Extrasensory)
+            Lunatone (Ominous Wind, Ancient Power, Psychic Noise, Recover)
+        
         Baker Jenn 
             Simisear @ Petaya Berry (Seed Binb -> Spit Up)
             Tropius (fix ability to chlorophyll) (Giga Drain -> Leaf Tornado)
@@ -45,13 +99,13 @@
             Garbodor -> Trubbish (Level 1) @ Focus Sash (Ability: Aftermath) (Toxic Spikes, Endeavor, Spikes, Baneful Bunker)
             Cloyster -> Croconaw @ Eviolite (Ability: Sheer Force) (Liquidation, Dragon Claw, Ice Punch, Dragon Dance) 
             Scrafty (Rock Climb -> Pursuit, Crunch -> Beat Up)
-            Clefairy (Cosmic Power, Moonlight, Fairy Wind, Shadow Ball)
+            Clefairy (Cosmic Power, Moonlight, Fairy Wind, Ominous Wind)
 
         Cyclist Krissa 
             Linoone (Ability: Speed Boost) (Crush Claw, Fury Swipes, Baton Pass, Protect)
             Umbreon (Ability: Patient) (Block, Baton Pass, Foul Play, Moonlight)
             Voltorb @ Eviolite (Ability: Reckless) (Volt Tackle, Flash Cannon, Double-Edge, Swagger)
-            Sawsbuck-Summer (Ability: Reckless) (Lunge, Stompin Tantrum, Horn Leech, Double-Edge)
+            Sawsbuck-Winter (Ability: Fur Coat) (Icicle Crash, Drill Run, Leaf Storm, Double-Edge)
 
         Cyclist Hector 
             Mightyena (Ability: Strong Jaw) (Thunder Fang, Fire Fang, Ice Fang, Parting Shot)
@@ -80,6 +134,13 @@
         Motorcyclist Duke:
             Charmeleon: 
                 Blast Burn -> Flare Blitz
+            Scrafty: 
+                Payback -> Assurance 
+            
+        Worker Pasqual: 
+            Lunatone @ Power Herb (Ability: Levitate) (Psychic, Mystical Fire, Meteor Beam, Ice Beam)
+            Sudowoodo @ Babiri Berry (Ability: Determined) (Rock Wrecker, Wood Hammer, Play Rough, Block)
+
             
     SKYLA SPLIT
         Psychic Tully
@@ -94,6 +155,15 @@
         Hiker Jebediah 
             +Voltorb @ Life Orb (Ability: Reckless) (Volt Tackle, Head Charge, Flash Cannon, Protect)
 
+        Socialite Grace: 
+            Chimecho @ Blunder Policy (Ability: Levitate) (Alluring Voice, Inferno, Hypnosis, Thunder)
+
+        Pilot Ewing: 
+            Lunatone @ Weakness Policy (Ancient Power, Moonblast, Stored Power, Earth Power)
+        
+        Sabrina: 
+            Hypno: Sludge Wave -> Assist 
+        
     MARLON SPLIT: 
         Falkner: 
             Fearow 
@@ -141,8 +211,54 @@
 
 [ POKEDEX ]
 
-    
-    
+    HIGHLY EXPERIMENTAL CHANGES: 
+        Sawsbuck-Summer (EXPERIMENTAL)
+            Grass/Ground -> Grass/Rock 
+            Ability 1: Sap Sipper -> Determined 
+            Ability 3: Reckless -> Determined 
+            -15 HP
+            +25 Defense 
+        
+        Sawsbuck-Spring:
+            +10 Speed 
+        
+        Sawsbuck-Winter: 
+            +10 Attack 
+        
+        Sawsbuck-Autumn: 
+            +10 HP 
+        
+        Bonsly: (EXPERIMENTAL)
+            Typing: Rock/Grass -> Rock 
+            Stats:
+                60 HP
+                85 Atk
+                100 Defense 
+                10 Special Attack 
+                65 SpD 
+                50 Speed
+            Ability 3: Sap Sipper -> Solid Rock
+        
+        Sudowoodo: (EXPERIMENTAL)
+            Typing: Rock/Grass -> Rock/Fairy 
+            Stats:
+                80 HP 
+                105 Atk 
+                120 Defense 
+                30 Special Attack 
+                85 Special Defense 
+                70 Speed 
+            Ability 3: Sap Sipper -> Solid Rock 
+
+        Lunatone:
+            Typing: Rock / Fairy -> Rock / Psychic 
+            Stats:
+                +10 Defense 
+            
+        Solrock:    
+            Stats: 
+                +10 Defense 
+        
     Hoenn:
         Grovyle: 
             +5 Special Defense 
@@ -172,6 +288,12 @@
         Pelipper 
             +10 Special Defense
         
+        Spoink: 
+            +20 SpA 
+        
+        Grumpig: 
+            +20 SpA 
+
         Vigoroth: 
             +5 HP 
             +5 Atk 
@@ -183,20 +305,42 @@
         Aggron Line: 
             Ability 4: Light Metal 
             Ability 5: Heavy Metal 
-            
+        
+        Barboach:
+            +5 Atk 
+            +5 SpA 
+        
+        Whicash 
+            +5 Atk 
+            +5 SpA 
+        
         Milotic 
-        Shed Skin -> Distracting 
+            Shed Skin -> Distracting 
         
             Sets to Change: 
                 School Kid Mara Gardevoir (Water Pulse -> Night Shade)
                 School Kid Mara Milotic (Shed Skin -> Distracting) (Power Herb) (Rest -> Hypnosis)
                 School Kid Alvin Gorebyss (Hypnosis -> Attract)
         
+        Castform: 
+            -5 SpA for all formes. 
+        
+        Kecleon: 
+            Shed Skin -> Prankster 
+        
+        Tropius:
+            Thick Fat -> Overgrow 
+
+            AI Only Abilities: Thick Fat 
+        
+       
         Froslass: 
             Ability 3: Slush Rush 
+            HA: Serene Grace 
         
-        Kecleon 
-            Shed Skin -> Savant 
+        Relicanth: 
+            -5 Speed 
+        
 
 
     Johto
@@ -252,6 +396,9 @@
         Togekiss: 
             +30 Atk 
             Ability 3: No Guard
+        
+        
+        
 
         
 
@@ -270,6 +417,9 @@
         
         Infernape: 
             Ability 3: Berserk 
+        
+        Kricketot: 
+            Bug/Normal -> Bug 
         
         Empoleon: 
             -10 Atk 
@@ -327,20 +477,64 @@
 
     Kanto
 
+
+
         Exeggcute: 
             +15 Atk 
+
+        Magnezone: 
+            Only evolves by leveling up in chargestone 
         
-        Exeggutor 
-            +15 Atk 
-        
-        Infernape:
-        
+
         Dewgong Line: 
             Ability 2: Slush Rush
             Ability 3: Swift Swim 
         
-        Primeape line: 
-            Swap Berserk and Tenacity slots. 
+        Haunter: 
+            +45 Atk 
+        
+        Gengar: 
+            +45 Atk 
+        
+        Drowzee; 
+            -2 SpA 
+            +5 Atk 
+        
+        Hypno: 
+            +20 Atk
+
+        Hitmonchan:
+            +20 HP 
+            Ability 3: Savant 
+            Ability 2: Battle Armor 
+
+            Fix Black Belt Jay 
+        
+        Hitmonlee: 
+            +20 HP  
+        
+        Hitmontop: 
+            +20 HP 
+        
+        Lickitung: 
+            +10 SpA 
+        
+        Lickilicky: 
+            +10 SpA 
+        
+        Geodude: 
+            60 HP 
+            40 Special Defense 
+        
+        Graveler: 
+            80 HP 
+            55 Special Defense 
+        
+        Golem: 
+            100 HP 
+            75 Special Defense 
+            Ability 3: Shell Armor 
+            Ability 4: Solid Rock 
         
         Charmeleon: 
             +5 Speed 
@@ -349,8 +543,9 @@
             +5 Defense
         
         Bulbassaur 
+            +2 Atk
             -5 Defense 
-            +5 Special Defense 
+            +3 Special Defense 
 
         Ivysaur: 
             -5 Def
@@ -358,21 +553,38 @@
             +5 Special Attack 
         
         Venusaur: 
-            +10 Atk 
+            +5 Atk 
+            +5 SpA 
             -5 Special Defense 
             -5 Defense 
 
+
+        Nidoran-F 
+            Ability 3: Rough Skin
+        Nidorina 
+            Ability 3: Rough Skin
+        
         Nidoqueen
             Thick Fat -> Majestic Ward 
+   
+
+        Krabby 
+            +5 HP 
         
-        Ninetales: 
-            +15 Atk 
-            +5 Hp 
-            +5 Defense 
+        Kingler 
+            +5 HP 
         
-        Vulpix: 
-            -5 HP 
-            -5 Defense 
+        Voltorb: 
+            +10 Defense 
+            +10 Special Defense 
+            -5 Special Attack 
+        
+        Electrode
+            +5 SpA 
+            +10 Defense
+            +15 Special Defense 
+            +5 Speed 
+    
 
     
     Unova
@@ -386,6 +598,21 @@
         Whimsicott: 
             +10 Defense 
         
+       
+        Foongus: 
+            Typing: Grass/Poison -> Grass/Dark
+
+            Ability 3: Toxic Boot 
+            Ability 6: Prankster
+        
+        Amoongus: 
+            Typing: Grass/Poison -> Grass/Dark
+            75 Defense 
+            85 Special Defense 
+            
+            Ability 3: Toxic Boost 
+            Ability 6: Prankster
+
         Lilligant:  
             +5 Defense 
             +5 Special Defense 
@@ -482,6 +709,26 @@
 
 
 [ MOVES ]
+    
+    Dark Void: 
+        60% accurate 
+
+
+    Wild Charge:
+        Needs to keep recoil 
+    
+    Spirit Break:
+        110 BP 
+        90% accurate 
+        Not spread. 
+    
+    Stone Edge:
+        110 BP 
+        90% accurate
+    
+    Assurance: 
+        70 BP 
+        Hits both targets in a double battle. 
     
     Brutal Swing: 
         60 BP > 100 BP 
