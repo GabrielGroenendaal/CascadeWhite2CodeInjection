@@ -8,17 +8,171 @@
 */
 
 [ ENCOUNTERS ]
-    
+
+
+
+To Do List: 
+    AI Scripts: 
+        Implemented Pursuit AI so we don't need to shackle it to Priority.
+        Fixed Mirror Coat and Counter AI 
+    AI Changes Patch
+        - Test to see if our updates break everything. We have a low grade version in stead. 
+        - To be honest i have high hopes. I would have claude go over it though.
+    Move Changes Patch: 
+        - Did a huge clean up of this patch. Let's check through and make sure everything compiles and then test some rudimentary stuff. 
+        - Some easy tests include: Sky Uppercut, Teeter Dance, Howl, Pollen Puff, Teleport, Parting Shot, Sand Attack
+
+
+    DamageCalc Patch: 
+        - We added the skeleton for custom pokeball / nickname / shiny support for enemy trainers. 
+        - Shiny is the one I'm most confident will work. 
+        - We also added support for grass knot / low kick interruptions. 
+
+
+Move Change Ideation: 
+    - Existing Move Changes: 
+        - GRASS KNOT becomes a trapping move. It still deals damage based on weight but deals max damage on a target switching out.
+        - LOW KICK becomes a trapping move. It still deals damage based on weight but deals max damage on a target switching out.
+        - ROLLING KICK becomes a 90 BP Fighting move with a 30% chance to flinch. This becomes excellent for Hariyama. 
+        - NUZZLE is kinda bad. I give out 65 BP spark so early now. It made more sense back when spark was 85 BP but we want zing zap now. I think it's time to bring it back to being guaranteed paralysis. 
+        - NIGHT DAZE is so strong I hesitate to give it to anyone basically. 
+    - Move Revival: 
+        - SMACK DOWN
+        - SACRED FIRE
+            - A powerful physical fire move with a scary secondary effect is neat. 
+            - It would overlap a bit with our Blaze Kick tho. 
+            - Would suit a bunch of fire types that can't fucking kick or punch well tho: 
+                - Solrock if we made it physical 
+                - Ninetales as a serene grace tech 
+                - Rapidash as a scale move 
+        - ICE BALL
+            - I kinda like what PK did making it a physical single target Blizzard. 
+            - That has a ton of cool use cases; it could be an early low accuracy move for Dewong 
+            - Surprising number of interesting mons get it: Qwilfish, Licklicky, Poliwrath, Steelix, Snorlax, Electrode, Swampert 
+        - SYNCHRONOISE
+            - I think there are a lot of ways to make this move interesting. 
+            - Maybe it always deals super effective damage on pokemon you share a type with.
+            - Super cool for Hypno and would be cool for psychic types to hurt themselves. 
+            - Reflect Type synchronoise would be sick.
+            - Spacial Redn could be a cool psychic physicall move ngl.
+        - ICE BURN / FREEZE SHOCK I don't need both Ice burn and freeze shock but i think i need one of them for my finale. I can make it giga busted 
+        - SPIDER WEB; following the tradition of my other changes, maybe make it spread and drop speed by two stages. 
+        - MIND READER / LOCK ON: I like the idea of these moves maybe providing large accuracy boosts. Not that crazy in isolation but they can support chain kills and also make stored power more useful without being overwhelming. Providing an automatic crit could also be cool.
+        - SMELLING SALTS could have something interesting done with it
+        - TRUMP CARD already has a cool mechanic with no uusers. It'd be insane on the -ate/-ize Eeveelutions. 
+        - WRING OUT could maybe be something? Interesting distribution again. 
+        - CRUSH GRIP as a giga scary trapping move is cool. 
+        - SPITE functioning like eerie spell and becoming an early game special ghost move is cool, especiallly because it would free up astonish and lick. I really like PK making lick 80 BP. It would also mean not everyone needs to learn hex. 
+        - SOMETHING could maybe be done with memento? I'm not sure what that wouldn't break the game tho. 
+    - Moves I don't use that much: 
+        - VICTORY DANCE: I just feel bad putting this on any mon. It doesn't feel earned whatsoever. It feels artificial in its construction. 
+        - BESTOW: I've been using this as a blank space but I can absolutely just zero out handler fields. 
+        - BITTER MALICE: This one is really disappointing. To be honest, I might just move seething cold effect to this. An ice-type hex seems so promising but i never keep it on anything. Maybe instead it should become 75 BP ghost move that lowers spA? What's the animation even right now. 
+        - NUZZLE: This needs to be reverted to vanilla functionality ASAP. With spark around it serves no point. 
+        - DARK VOID: So strong it's scary to give to Pokemon, obviously. 
+
+Items: 
+    Items: 
+        There are a few missing items right now, like Metronome. 
+        There are also a lot of items that I'm not sure I will ever actuallly use much, like the Attack Insurance. 
+        It feels crazy impactful but also like... i think i need to see how pp stalllable the game really is. 
+        If it isn't very pp stallable then just... replace it with something more interesting. 
+    Quick Powder: 
+        One idea i had for this that's kinda stupid is that it raises your speed by 1. 
+        It can break a speed tie but not much else. Obviously super good for ditto. 
+    Fling: 
+        Its a move thats kinda underutilized outside of fling flame orb. 
+        Buyable rare bones might make a difference.
+    Light Clay: 
+        I think I want to go forward with my idea for Light Clay where it increases the duration of the following moves by 10 turns: 
+            - Safeguard / Mist
+            - Light Screen 
+            - Reflect 
+            - Gravity 
+            - Lucky Chant 
+    TMs: 
+        We need to take stock of our TM distribution breakdown and think about any adjustments we want to make.
+
+
+Stray Balance Thoughts: 
+    Zoroark 
+        definitely needs to be juiced. It's one of the most iconic pokemon, and it should be better than Lucario 
+        We are also undercutting its strongest tech.
+        Right now it's almost like a side grade to liepard. 
+
+        Dark/Ghost could be one way of buffing it, although makes it hideously strong. 
+    Seviper:
+        Having 3 strong offensive abilities might be a bit much. 
+        I feel the least attached to strong jaw. I like Infiltrator the most. 
+        Maybe Rivalry could be a useful ability for it. Rivalry wouuld give it bulk to switch in on poison and dark types much more easily.
+        Alternatively we could keep it strong jaw but make it pure poison and lean entirely into atk? 
+        I feel like special attack is super neglected on this mon despite it's cool special movepool. 
+        Hyper Cutter is also cool; it has all the moves it needs to abuse it: Slash, Night Slash, Cross Poison, 
+        Not having an attack boost as strong as strong jaw would mean we could give it 120 atk. 
+        Strong Jaw is also a bit oversatured right now. We have 
+            Mightyena, Carnivine, Sharpedo, Krookadile, Manectric, Girafirig, Seviper, Huntail. 
+
+            Walrein could be cool wtih strong jaw instead of guts tbh. 
+        Cool Ability Ideas: 
+            Hyper Cutter 
+            Rivalry
+        If we get rid of strong jaw, another poison type should have it though. 
+        Oh also there should probably be a strong jaw bug type. Durant could actually work tbh. I like that over Swarm tbh 
+        Bibarel would actually make a great crunch mon
+
+
+ 
+
+
+
+
 
 
 [ TRAINERS ]
 
     CHEREN SPLIT: 
 
-        Janitor Orville: 
-            Scraggy (Assurance -> Beat Up)
-            Grimer (Brutal Swing -> Secret Power )
+        Youngster Terrell: 
+            Pidove (to level 8, give it a bad nature like modest)
         
+        Youngster Pety: 
+            Teddiursa (Stomp -> Mud Shot)
+        
+        Rival Tepig: 
+            Corphish (Double Hit -> Headbutt)
+        
+        Rival Oshawott: 
+            Doduo (Assurance -> Low Kick)
+            Growlithe (Work Up -> Safeguard)
+        
+        Pkm Trainer Alice: 
+            Ponyta (Fix Ability to Run Away 1)
+            Mareep (Make sure second headbutt replaced with Cotton Spore)\
+        
+        Lass Molly: 
+            Cleffa (Draining Kiss -> Magical Leaf, Lovely Kiss -> Flame Burst)
+            Fix Ability for Budew on the Mastersheet 
+            
+        Janitor Orville: 
+            Scraggy (Assurance -> Pursuit)
+            Grimer (Brutal Swing -> Secret Power)
+
+        Youngster kenny 
+            Fix ability for Oddish on the mastershet 
+        
+        Rival Benga: 
+            Larvesta (Electroweb -> Headbutt) 
+            Gible (Secret Power -> Bite)
+        
+        Alder School Kids: 
+            Sync up natures between all these fights
+
+            Alder School Kid Grass: 
+                Lileep (Storm Drain -> Patient)
+        
+        School Kid Keston: 
+            Shuppet (give it a -spa nature)
+
 
         
     BURGH SPLIT:
@@ -203,176 +357,7 @@
                 Air Slash -> Zen Headbutt 
                 Calm Mind -> Rollout
 
-            
-[ LEARNSET UPDATES ]
-
-
-[ POKEDEX ]
-
-    HIGHLY EXPERIMENTAL CHANGES: 
-        Sawsbuck-Summer (EXPERIMENTAL)
-            Grass/Ground -> Grass/Rock 
-            Ability 1: Sap Sipper -> Determined 
-            Ability 3: Reckless -> Determined 
-            -15 HP
-            +25 Defense 
-        
-        Sawsbuck-Spring:
-            +10 Speed 
-        
-        Sawsbuck-Winter: 
-            +10 Attack 
-        
-        Sawsbuck-Autumn: 
-            +10 HP 
-        
-        Bonsly: (EXPERIMENTAL)
-            Typing: Rock/Grass -> Rock 
-            Stats:
-                60 HP
-                85 Atk
-                100 Defense 
-                10 Special Attack 
-                65 SpD 
-                50 Speed
-            Ability 3: Sap Sipper -> Solid Rock
-        
-        Sudowoodo: (EXPERIMENTAL)
-            Typing: Rock/Grass -> Rock/Fairy 
-            Stats:
-                80 HP 
-                105 Atk 
-                120 Defense 
-                30 Special Attack 
-                85 Special Defense 
-                70 Speed 
-            Ability 3: Sap Sipper -> Solid Rock 
-
-        Lunatone:
-            Typing: Rock / Fairy -> Rock / Psychic 
-            Stats:
-                +10 Defense 
-            
-        Solrock:    
-            Stats: 
-                +10 Defense 
-        
-
-
-    Kanto
-
-
-
-        Exeggcute: 
-            +15 Atk 
-
-        Magnezone: 
-            Only evolves by leveling up in chargestone 
-        
-
-        Dewgong Line: 
-            Ability 2: Slush Rush
-            Ability 3: Swift Swim 
-        
-        Haunter: 
-            +45 Atk 
-        
-        Gengar: 
-            +45 Atk 
-        
-        Drowzee; 
-            -2 SpA 
-            +5 Atk 
-        
-        Hypno: 
-            +20 Atk
-
-        Hitmonchan:
-            +20 HP 
-            Ability 3: Savant 
-            Ability 2: Battle Armor 
-
-            Fix Black Belt Jay 
-        
-        Hitmonlee: 
-            +20 HP  
-        
-        Hitmontop: 
-            +20 HP 
-        
-        Lickitung: 
-            +10 SpA 
-        
-        Lickilicky: 
-            +10 SpA 
-        
-        Geodude: 
-            60 HP 
-            40 Special Defense 
-        
-        Graveler: 
-            80 HP 
-            55 Special Defense 
-        
-        Golem: 
-            100 HP 
-            75 Special Defense 
-            Ability 3: Shell Armor 
-            Ability 4: Solid Rock 
-        
-        Charmeleon: 
-            +5 Speed 
-        
-        Wartortle: 
-            +5 Defense
-        
-        Bulbassaur 
-            +2 Atk
-            -5 Defense 
-            +3 Special Defense 
-
-        Ivysaur: 
-            -5 Def
-            +5 Atk
-            +5 Special Attack 
-        
-        Venusaur: 
-            +5 Atk 
-            +5 SpA 
-            -5 Special Defense 
-            -5 Defense 
-
-
-        Nidoran-F 
-            Ability 3: Rough Skin
-        Nidorina 
-            Ability 3: Rough Skin
-        
-        Nidoqueen
-            Thick Fat -> Majestic Ward 
-   
-
-        Krabby 
-            +5 HP 
-        
-        Kingler 
-            +5 HP 
-        
-        Voltorb: 
-            +10 Defense 
-            +10 Special Defense 
-            -5 Special Attack 
-        
-        Electrode
-            +5 SpA 
-            +10 Defense
-            +15 Special Defense 
-            +5 Speed 
-    
-
-    
-
-    
+  
     
     
     
@@ -384,80 +369,103 @@
 
 [ ITEMS ]
 
+    Training Weights: 
+        Lowers all the pokemon's stats by one stage on switch in. 
+
+        Could be cool for fights against Misty (maybe a training weight Starmie?)
+        Perfect for Alder's Fight in Undella Town 
+    
+    TMs: 
+        Right now 
+
 
 [ MOVES ]
     
-    Dark Void: 
-        60% accurate 
+    Relic Song: 
+        Remove the Sacred Sword Handler From it 
+
+    SNORE: 
+        Raise it to 90 BP. 
+        Look intro distribution. 
+    
+    TEST SLEEP TALK 
+        - I don't care if it works while awake. 
+        - That could still be funny for prankster mons 
 
 
-    Wild Charge:
-        Needs to keep recoil 
-    
-    Spirit Break:
-        110 BP 
-        90% accurate 
-        Not spread. 
-    
-    Stone Edge:
-        110 BP 
-        90% accurate
-    
-    Assurance: 
-        70 BP 
-        Hits both targets in a double battle. 
-    
-    Brutal Swing: 
-        60 BP > 100 BP 
-        No longer lowers Evasion. 
-        No longer clears hazards. 
-    
-    Night Shade: 
-        2 -> 3 PP 
-    
-    Dragon Dance 1 PP each. 
+    Prune Availability By Level:
+        There's a lot of moves that are high value and a bit oversaturated on enemy sets. We should prune these. 
 
-    Double Hit: 
-        45 BP 
-    
-    Increase Binding Damage to 1/8 per turn. (Debatable)
-    
-    Snap Trap: 
-        The user snap's its jaws on a target like a snap trap. 
+        Gravity 
+            -Forretress 
+            -Slowking 
+            -Slowbro 
 
-    Clamp / Snap Trap: 
-        100 BP
-        100% accurate 
+        Fake Out 
+            -Zoruark 
+            -Psyduck/Golduck
     
-    Submission: 
-        Returns to 1/4 Recoil
+    Grass Knot: 
+        I had an idea to make Grass Knot a trapping move. Instead of doubling when it traps, it instead deals the maximum grass knot damage (120 BP)
+
+        Relevant TM Users: 
+
+        Empoleon 
+        Pachirisu 
+        Mismagius 
+        Chimecho 
+        Bronzong 
+        Emboar 
+        Samurott
+        Liepard 
+        Simisear 
+        Simipour 
+        Cofagrigus 
+        Zoroark 
+        Gothitelle 
+        Reuniclus 
+        Haxorus 
+        Beartic 
+        Mienshao 
+        Togekiss 
+        Lunatone 
+        Solrock 
+        Plusle 
+        Minun
+        Metagross 
+        Claydol 
+        Infernape 
     
-    Freeze Dry 
-        80 BP 
+    Low Kick: 
+        Mankey / Primeape 
+        Machop / machoke / machamp 
+        Elekid / Electabuzz 
+        Totodile / Croconaw / Feraligatr 
+        Bonsly / Sudowoodo 
+        Torchic 
+        Pansear / Pansage / Panpour 
     
-    Sky Uppercut
-        80 BP
-    
-    Fire/Ice/Thunderpunch: 
-        85 BP 
+    Rolling Kick: 
+        If we made Low Kick the trapping move, we could make Rolling Kick into a sheer force fightinng option 
+        Which would also make it way more comfortable to gatekeep the strength HM for later. 
 
-    Roar 
-        120 BP 
-
+        90 BP 30% flinch fighting move 
+            Hariyama 
+            Electabuzz Line
 
 
-Final Gambit Distribution: 
-    Primeape 
-    Farfetch'd 
-    Zangoose 
-    Staraptor 
-    Lucario 
-    Basculin
-    Accelgor 
-    Raticate 
-    Dugtrio 
-    Ninjask / Shedinja 
-    Seviper 
+    Final Gambit Distribution: 
+        Primeape 
+        Farfetch'd 
+        Zangoose 
+        Staraptor 
+        Lucario 
+        Basculin
+        Accelgor 
+        Raticate 
+        Dugtrio 
+        Ninjask / Shedinja 
+        Seviper 
 
 
 

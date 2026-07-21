@@ -13,6 +13,8 @@
 extern u32 g_GameBeaconSys;
 STRUCT_DECLARE(GameData)
 #define GAME_DATA *(GameData **)(g_GameBeaconSys + 4)
+#define ADDING_GRASSKNOT false
+
 
 bool IsEqual(int a1, int a2)
 {
@@ -3633,9 +3635,9 @@ extern "C"
         { ABIL001_STENCH, ABIL027_EFFECT_SPORE, ABIL027_EFFECT_SPORE},                   //  PK548_PETILIL = 0x224,
         { ABIL001_STENCH, ABIL027_EFFECT_SPORE, ABIL027_EFFECT_SPORE},                   // PK549_LILLIGANT = 0x225,
         { ABIL002_DRIZZLE, ABIL083_ANGER_POINT, ABIL083_ANGER_POINT},                // PK550_BASCULIN = 0x226,
-        { ABIL119_STAKEOUT, ABIL110_TENACITY, ABIL083_ANGER_POINT},       // PK551_SANDILE = 0x227,
-        { ABIL119_STAKEOUT, ABIL110_TENACITY, ABIL083_ANGER_POINT},       // PK552_KROKOROK = 0x228,
-        { ABIL119_STAKEOUT, ABIL110_TENACITY, ABIL083_ANGER_POINT},       // PK553_KROOKODILE = 0x229,
+        { ABIL119_STAKEOUT, ABIL093_STRONG_JAW, ABIL083_ANGER_POINT},       // PK551_SANDILE = 0x227,
+        { ABIL119_STAKEOUT, ABIL093_STRONG_JAW, ABIL083_ANGER_POINT},       // PK552_KROKOROK = 0x228,
+        { ABIL119_STAKEOUT, ABIL093_STRONG_JAW, ABIL083_ANGER_POINT},       // PK553_KROOKODILE = 0x229,
         { ABIL070_DROUGHT, ABIL050_RUN_AWAY, ABIL050_RUN_AWAY},              // PK554_DARUMAKA = 0x22A,
         { ABIL070_DROUGHT, ABIL161_ZEN_MODE, ABIL161_ZEN_MODE},              // PK555_DARMANITAN = 0x22B,
         { ABIL008_SAND_VEIL, ABIL034_CHLOROPHYLL, ABIL045_SAND_STREAM},      // PK556_MARACTUS = 0x22C,
@@ -3938,12 +3940,6 @@ extern "C"
         int attack;            // [sp+18h] [bp-18h]
 
         Category = PML_MoveGetCategory(moveParam->MoveID);
-
-        
-        //         if (!Handler_IsSimulationMode(a1))
-        // {
-        //     k::Printf("\nFinal damage value for move %d being returned is %d\n", moveParam->MoveID, Value);
-        // }
         v29 = 0;
         BattleEventVar_Push();
         BattleEventVar_SetConstValue(VAR_TYPE_EFFECTIVENESS, TypeEffectiveness);
@@ -3969,59 +3965,27 @@ extern "C"
             defense = ServerEvent_GetTargetDefenses(a1, AttackingMon, DefendingMon, moveParam, criticalFlag);
             level = BattleMon_GetValue(AttackingMon, VALUE_LEVEL);
             v16 = CalcBaseDamage(power, attack, level, defense);
-#if DEBUGGING_DAMAGECALC && DEBUGGING_ALL
-
-            if (printing)
-            {
-                k::Printf("\n\nmove is %d\n===ServerEvent_CalcDamage 1 Base Damage===damage is %d", moveParam->MoveID, v16);
-            }
-#endif
-            fxDamage = v16;
-            if (targetDmgRatio != 4096)
-            {
-                fxDamage = fixed_round(v16, targetDmgRatio);
-            }
-#if DEBUGGING_DAMAGECALC && DEBUGGING_ALL
-            if (printing)
-            {
-                k::Printf("\n\n===ServerEvent_CalcDamage 2 Ratio===damage is %d", fxDamage);
-            }
-#endif
-
+            fxDamage = (targetDmgRatio != 4096) ? fixed_round(v16, targetDmgRatio) : v16;
             Weather = ServerEvent_GetWeather(a1);
             weatherDmgRatio = WeatherPowerMod(Weather, moveParam->moveType);
-
             if (weatherDmgRatio != 4096)
             {
                 fxDamage = fixed_round(fxDamage, weatherDmgRatio);
             }
-#if DEBUGGING_DAMAGECALC && DEBUGGING_ALL
-            if (printing)
-            {
-                k::Printf("\n\n===ServerEvent_CalcDamage 3 Weather===damage is %d", fxDamage);
-            }
-#endif
+
             if (criticalFlag)
             {
-
                 if (GetCritSetting() == 1 && !SEARCH_ARRAY(autoCritMoves, moveParam->MoveID))
                 {
-                    // k::Printf("\nThe damage of this move before crit is %d", fxDamage);
                     fxDamage = fxDamage * 3;
                     fxDamage = fxDamage >> 1;
-                    // k::Printf("\nThe damage of this move after crit is %d\n", fxDamage);
                 }
                 else
                 {
                     fxDamage *= 2;
                 }
             }
-#if DEBUGGING_DAMAGECALC && DEBUGGING_ALL
-            if (printing)
-            {
-                k::Printf("\n\n===ServerEvent_CalcDamage 4 Crits===damage is %d", fxDamage);
-            }
-#endif
+
             if (!MainModule_GetDebugFlag() && ServerFlow_IsNotPokestarBattle(a1))
             {
 
@@ -4036,12 +4000,7 @@ extern "C"
 
                 fxDamage = damageRoll * fxDamage / 100;
             }
-#if DEBUGGING_DAMAGECALC && DEBUGGING_ALL
-            if (printing)
-            {
-                k::Printf("\n\n===ServerEvent_CalcDamage 5 Damage Roll===damage is %d", fxDamage);
-            }
-#endif
+
             moveType = (PokeType)moveParam->moveType;
             if (moveType != TYPE_NULL)
             {
@@ -4091,41 +4050,25 @@ extern "C"
                     fxDamage = fixed_round(fxDamage, v22);
                 }
             }
-#if DEBUGGING_DAMAGECALC && DEBUGGING_ALL
-            // if (printing){
-            k::Printf("\n\n===ServerEvent_CalcDamage 6 STAB===damage is %d, moveType is %d, v22 is %d", fxDamage, moveType, v22);
-            //}
-#endif
+
             v23 = TypeEffectivenessPowerMod(fxDamage, TypeEffectiveness);
-#if DEBUGGING_DAMAGECALC && DEBUGGING_ALL
-            if (printing)
-            {
-                k::Printf("\n\n===ServerEvent_CalcDamage 7 TypeEffectiveness===damage is %d, type effectiveness for move %d is %d", v23, moveParam->MoveID, TypeEffectiveness);
-            }
-#endif
-            /* OLD OVERHEAT LOGIC */
+
+            /* BURN LOGIC */
             if (Category == 1 && BattleMon_GetStatus(AttackingMon) == CONDITION_BURN && BattleMon_GetValue(AttackingMon, VALUE_EFFECTIVE_ABILITY) != ABIL062_GUTS)
             {
-
                 v23 = 50 * v23 / 100u;
             }
 
             if (Category == 2 && getOverheatLastTurnByte(AttackingMon))
             {
                 v23 = (BattleMon_GetValue(AttackingMon, VALUE_EFFECTIVE_ABILITY) == ABIL126_CONTRARY) ? v23 + (v23 >> 1) : (v23 >> 1);
-                // k::Printf("\nBecause of Overheat, the new power of this move is %d\n\n", v23);
             }
 
             if ((BattleMon_GetValue(DefendingMon, VALUE_EFFECTIVE_ABILITY) == ABIL136_MAJESTIC_WARD) && BattleMon_IsFullHP(DefendingMon))
             {
                 v23 = 50 * v23 / 100u;
             }
-#if DEBUGGING_DAMAGECALC && DEBUGGING_ALL
-            if (printing)
-            {
-                k::Printf("\n\n===ServerEvent_CalcDamage 8 Overheat/Focus Band===damage is %d", v23);
-            }
-#endif
+
             if (!v23)
             {
                 v23 = 1;
@@ -4206,7 +4149,11 @@ extern "C"
                 if (BattleMon != a2 && !a1->actionOrderWork[v4].fDone)
                 {
                     v6 = (((u32)ActionOrderWork[v4].Action) & 0xF) == 1 ? (((u32)ActionOrderWork[v4].Action) >> 7) : 0;
-                    if (v6 == MOVE228_PURSUIT || v6 == MOVE027_ROLLING_KICK)
+                    if (v6 == MOVE228_PURSUIT || v6 == MOVE027_ROLLING_KICK
+#if ADDING_GRASSKNOT 
+                    || v6 == MOVE447_GRASS_KNOT || v6 == MOVE067_LOW_KICK
+#endif 
+                    )
                     {
                         moveID = v6;
                         Value = BattleMon_GetValue(BattleMon, VALUE_SPEED_STAT);
@@ -4263,7 +4210,11 @@ extern "C"
                         v11 = 0;
                     }
 
-                    if (v11 == MOVE228_PURSUIT || v11 == MOVE027_ROLLING_KICK)
+                    if (v11 == MOVE228_PURSUIT || v11 == MOVE027_ROLLING_KICK
+#if ADDING_GRASSKNOT 
+                    || v11 == MOVE447_GRASS_KNOT || v11 == MOVE067_LOW_KICK
+#endif 
+                    )
                     {
                         MoveEvent_ForceRemoveItemFromBattleMon(a1->actionOrderWork[v8].BattleMon, v11);
                     }
@@ -4297,52 +4248,19 @@ extern "C"
 #pragma region ExpandedTrainerPokemon
     extern u32 __aeabi_idiv(s32 numer, s32 denom);
     extern s32 mod32(s32 numer, s32 denom);
-    u32 GetPPSetting()
-    {
-        EventWorkSave *eventWork = GameData_GetEventWork(GAME_DATA);
-        u16 *lvl_cap_ptr = EventWork_GetWkPtr(eventWork, 16435);
-        return *lvl_cap_ptr;
-    }
 
-    void THUMB_BRANCH_SAFESTACK_TrainerUtil_SetupPkm(u16 trId, PartyPkm *pkm, u16 forme, u8 genderAndAbil)
-    {
-        u32 v5;           // r7
-        int v6;           // r4
-        PersonalField v7; // r6
-        u32 ParamSingle;  // r0
-        int v9;           // r1
-        u32 data;         // [sp+0h] [bp-20h]
-        u16 species;      // [sp+8h] [bp-18h]
-        u32 movePP;
-        data = forme;
-        v5 = 255;
-        v6 = 0;
-        int v = 0x3A;
-        species = PokeParty_GetParam(pkm, PF_Species, 0);
-
-        do
-        {
-            movePP = PokeParty_GetParam(pkm, (PkmField)(v6 + 58), 0);
-            PokeParty_SetParam(pkm, (PkmField)(v6 + 58), movePP + 3u);
-            ++v6;
-        } while (v6 < 4);
-
-        PokeParty_SetParam(pkm, PF_Happiness, v5);
-        PokeParty_SetParam(pkm, PF_Forme, data);
-
+    void setTrPokAbility(PartyPkm *pkm, u8 genderAndAbil, u16 species, u32 form){
         if ((genderAndAbil & 0xF0) == 16)
         {
-            ParamSingle = PML_PersonalGetParamSingle(species, data, Personal_Abil1);
-            PokeParty_SetParam(pkm, PF_Ability, ParamSingle);
+            PokeParty_SetParam(pkm, PF_Ability, PML_PersonalGetParamSingle(species, form, Personal_Abil1));
         }
         else if ((genderAndAbil & 0xF0) == 32)
         {
-            ParamSingle = PML_PersonalGetParamSingle(species, data, Personal_Abil2);
-            PokeParty_SetParam(pkm, PF_Ability, ParamSingle);
+            PokeParty_SetParam(pkm, PF_Ability, PML_PersonalGetParamSingle(species, form, Personal_Abil2));
         }
         else if ((genderAndAbil & 0xF0) == 48)
         {
-            PokeParty_SetHiddenAbil(pkm, species, data);
+            PokeParty_SetHiddenAbil(pkm, species, form);
         }
         else if ((genderAndAbil & 0xF0) == 64)
         {
@@ -4358,25 +4276,12 @@ extern "C"
         }
         else
         {
-            ParamSingle = PML_PersonalGetParamSingle(species, data, Personal_Abil1);
-            PokeParty_SetParam(pkm, PF_Ability, ParamSingle);
+            PokeParty_SetParam(pkm, PF_Ability, PML_PersonalGetParamSingle(species, form, Personal_Abil1));
         }
+    }
 
-        v9 = PokeParty_GetParam(pkm, PF_PID, 0);
-        // // k::Printf("\nNature is %d\n\n", __aeabi_idiv((v9 & 0xFF), 25)); // , (v9 & 0xFF) % 25, v9 % 25);
-        // k::Printf("\n===TrainerUtil_SetupPkm===\nv9 = %d\nv9 >> 8 = %d\n(v9 >> 8) mod 25 = %d\nNature before = %d\npkm->base.pid = %d\n(pkm->base.pid >> 8) = %d\n(pkm->base.pid >> 8) mod 25 = %d\ntest is %d",
-        //     v9,
-        //     (v9 >> 8),
-        //     __aeabi_idiv((v9 >> 8), 25),
-        //     PokeParty_GetParam(pkm, PF_Nature, 0),
-        //     pkm->Base.pid,
-        //     (pkm->Base.pid >> 8),
-        //     __aeabi_idiv((pkm->Base.pid >> 8), 25),
-        //     mod32((v9 >> 8), 25)
-        // );
-        // #if DEBUGGING_ALL
-        //     k::Printf("\n===TrainerUtil_SetupPkm===Nature = %d output of the nature function is %d.  v9 is %d and v9 & 0xFF is %d", PokeParty_GetParam(pkm, PF_Nature, 0), __aeabi_idiv((v9 & 0xFF), 25), v9, (v9 & 0xFF));
-        // #endif
+    void setTrPokIVs(PartyPkm *pkm, u16 trId){
+        int pokPID;
         PokeParty_SetParam(pkm, PF_IvATK, 31);
         PokeParty_SetParam(pkm, PF_IvDEF, 31);
         PokeParty_SetParam(pkm, PF_IvSPE, 31);
@@ -4391,7 +4296,89 @@ extern "C"
         if (trId == 104){
             PokeParty_SetParam(pkm, PF_IvSPE, 0);
         }
-        PokeParty_SetNature(pkm, mod32((v9 >> 8), 25));
+        pokPID = PokeParty_GetParam(pkm, PF_PID, 0);
+        PokeParty_SetNature(pkm, mod32((pokPID >> 8), 25));
+    }
+
+
+    void setTrPokPP(PartyPkm *pkm) {
+        u32 movePP;
+        u8 v6 = 0; // Used for While Loop
+        do
+        {
+            // WE WILL WANT TO CHANGE THIS LATER TO BE MORE ROBUST 
+            // WE WANT THE AMOUNT OF PP ADDED TO VARY, POTENTIALLY EVEN BY MOVE
+            movePP = PokeParty_GetParam(pkm, (PkmField)(v6 + 58), 0);
+            PokeParty_SetParam(pkm, (PkmField)(v6 + 58), movePP + 3u);
+            ++v6;
+        } while (v6 < 4);
+    }
+
+    void setTrPokShiny(PartyPkm *pkm, u16 trId, u16 species){
+
+        // return;  // This code isn't mature yet. 
+
+        // Shinies
+        if (trId == 1 && species == 38){
+            PokeParty_SetParam(pkm, PF_IdSet, PokeParty_GetParam(pkm, PF_PID, 0));
+        }
+    }
+
+    void setTrPokNickname(PartyPkm *pkm, u16 trId, u16 species){
+        return; // code isn't mature 
+
+        // Nicknames 
+        // PF_NicknameStrBuf = 0x73,
+        // PF_NicknameRaw = 0x74,
+        // PF_HasNickname = 0x75,
+        // PF_NicknameStrBufKeepFlags = 0xB0,
+        // PF_NicknameRawKeepFlags = 0xB1,
+    }
+
+    void setTrPokPokeBall(PartyPkm *pkm, u16 trId){
+        return; // code isn't mature 
+
+        // PF_Pokeball = 0x98,
+        //  1: Master Ball 
+        //  2: Ultra Ball
+        //  3: Great Ball 
+        //  4: Pokeball 
+        //  5: Safari Ball 
+        //  6: Net Ball 
+        //  7: Dive Ball 
+        //  8: Nest Ball 
+        //  9: Repeat Ball 
+        // 10: Timer Ball 
+        // 11: Luxury Ball 
+        // 12: Premier Ball 
+        // 13: Dusk Ball 
+        // 14: Heal Ball 
+        // 15: Quick Ball 
+        // 16: Cherish Ball 
+        // 492: Fast Ball 
+        // 493: Level Ball 
+        // 494: Lure Ball 
+        // 495: Heavy Ball 
+        // 496: Love Ball 
+        // 497: Friend Ball 
+        // 498: Moon Ball 
+        // 499: Sport Ball 
+        // 500: Park Ball
+        // 576: Dream Ball 
+    }
+
+    void THUMB_BRANCH_SAFESTACK_TrainerUtil_SetupPkm(u16 trId, PartyPkm *pkm, u16 forme, u8 genderAndAbil)
+    {
+        u16 species;      // [sp+8h] [bp-18h]
+        species = PokeParty_GetParam(pkm, PF_Species, 0);
+        setTrPokPP(pkm);
+        PokeParty_SetParam(pkm, PF_Happiness, 255);
+        PokeParty_SetParam(pkm, PF_Forme, forme);
+        setTrPokAbility(pkm, genderAndAbil, species, forme);
+        setTrPokIVs(pkm, trId);
+        setTrPokShiny(pkm, trId, species);
+        setTrPokNickname(pkm, trId, species);
+        setTrPokPokeBall(pkm, trId);
     }
 
 
@@ -4557,6 +4544,8 @@ extern "C"
     }
     
 #pragma endregion
+
+
 #pragma region PID
     // extern u32 PML_PersonalGetParam(void *personal, PersonalField field);
     // extern void PML_PersonalFree(void *personal);

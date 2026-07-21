@@ -4449,7 +4449,6 @@ extern "C" void findBattleMon(BtlvCore *a1, PokeParty *a2, int clientId)
     {
         for (int j = 0; j < party.memberCount; j++)
         {
-            
             if (party.mons[j]->partySrc->Base.pid == a2->Pokemon[j].Base.pid)
             {
                 a2->Pokemon[j].field_D8 = 2;
@@ -4602,6 +4601,17 @@ extern "C" void THUMB_BRANCH_SAFESTACK_PokeList_LoadPokeData(PokeListMain *a1, P
             // a3->Species = 201; // (a2->field_D8 == 1 && isEnemy && !GetScanSetting()) ? 201 : a3->Species;
             // a3->Forme = (a2->field_D8 == 1) ? 0:
             isEnemy = a1->pokeListSetupData->field_3C;
+            
+            k::Printf("\nChecking the Pokeball and Nickname struccts for Pokemon #%d!\nPokeballl is %d\nPF_NicknameStr is %d\nPF_NicknameRaw is %d\nPF_NicknameStrKeepFlags is %d\nPF_NicknameRawKeepFlags is %d\nPF_HasNickname is %d\n",
+                a3->Species,
+                PokeParty_GetParam(a2, PF_Pokeball, 0),
+                PokeParty_GetParam(a2, PF_NicknameStrBuf, 0),
+                PokeParty_GetParam(a2, PF_NicknameRaw, 0),
+                PokeParty_GetParam(a2, PF_NicknameStrBufKeepFlags, 0),
+                PokeParty_GetParam(a2, PF_NicknameRawKeepFlags, 0),
+                PokeParty_GetParam(a2, PF_HasNickname, 0)
+            );
+
 
             a3->Species = (a2->field_D8 == 1 && isEnemy && GetScanSetting()) ? 0 : a3->Species;
             a3->Species = (a2->field_D4 == 1) ? 0 : a3->Species;
@@ -4706,9 +4716,7 @@ extern "C" void THUMB_BRANCH_SAFESTACK_PokeList_LoadPokeData(PokeListMain *a1, P
         a3->Species = 0;
     }
 }
-#pragma endregion
 
-#pragma region SCan GUI
 
 extern "C" int sub_21FA27C(PokeListMain *a1, unsigned int a2);
 extern "C" int PokeList_IsAlreadyInBattle(PokeListMain *a1, int a2);
@@ -4836,6 +4844,3 @@ extern "C" int THUMB_BRANCH_SAFESTACK_PokeList_LoadSwitchInFailMessage(PokeListM
 
 #pragma endregion
 
-#pragma region testing
-
-#pragma endregion

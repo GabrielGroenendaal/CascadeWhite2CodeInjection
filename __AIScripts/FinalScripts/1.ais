@@ -16,23 +16,34 @@ address_CheckIfSuperEffective:
     JumpIfEffectivenessEQ(4x, &address_IfSuperEffectivePotentiallyRaiseScore)
 	EndScript()
 
-
 address_IfSuperEffectivePotentiallyRaiseScore:
 	JumpIfRandLT(80, &address_EndScript)
 	AddToScore(2)
 	EndScript()
 
 
+
+
+
 address_LogicForKillingBlow:
 	JumpIfMoveEffectEQ(move_ef.explosion, &address_EndScript)
-	JumpIfMoveEffectEQ(move_ef.focus_punch, &address_VolatileLogic)
 	JumpIfMoveEffectEQ(move_ef.sucker_punch, &address_VolatileLogic)
 	JumpIfMoveEffectEQ(move_ef.future_sight, &address_VolatileLogic)
+    JumpIfMoveEQ(move.dive, &address_TwoTurnChargeMoveLogic)
+    JumpIfMoveEQ(move.shadow_force, &address_TwoTurnChargeMoveLogic)
+    JumpIfMoveEQ(move.bounce, &address_TwoTurnChargeMoveLogic)
+    JumpIfMoveEQ(move.dig, &address_TwoTurnChargeMoveLogic)
+    JumpIfMoveEQ(move.fly, &address_TwoTurnChargeMoveLogic)
+    JumpIfMoveEffectEQ(move_ef.pursuit, &address_PursuitCalculation)
 	JumpIfMoveEffectEQ(move_ef.increased_priority, &address_PriorityCalculation)
 	Jump(&address_0x00C0)
 
+address_TwoTurnChargeMoveLogic: 
+    JumpIfHeldItemEQ(attacker, item.power_herb, &address_AddTwoToScore)
+    AddToScore(-2)
+
 address_VolatileLogic:
-	JumpIfRandLT(170, &address_EndScript)
+	JumpIfRandLT(170, &address_AddTwoToScore)
 	Jump(&address_0x00C0)
 
 address_AddTwoToScore:
@@ -89,11 +100,11 @@ address_MultiBattleLogic:
 	JumpIfMoveEQ(move.brine, &address_Add1ToScoreForSpreadMoves)
 	JumpIfMoveEQ(move.wild_charge, &address_Add1ToScoreForSpreadMoves)
 	JumpIfMoveEQ(move.solar_beam, &address_Add1ToScoreForSpreadMoves)
-      JumpIfMoveEQ(move.assurance, &address_Add1ToScoreForSpreadMoves)
+    JumpIfMoveEQ(move.assurance, &address_Add1ToScoreForSpreadMoves)
     Jump(&address_EndScript)
 
 address_Add1ToScoreForSpreadMoves: 
-    AddToScore(2)
+    AddToScore(1)
 
 address_EndScript:
 	EndScript()
@@ -105,16 +116,33 @@ address_EndScript:
 
 address_PriorityCalculation:
     JumpIfUserIsSlowerThanAllEnemies(&address_PriorityEnd)
-    JumpIfRandLT(217, &address_PriorityEnd)
+    JumpIfRandLT(64, &address_PriorityEnd)
     EndScript()
-    
+        
 address_PriorityEnd:
     AddToScore(6)
     EndScript()
 
+address_EndScriptPriority:
+    EndScript()
+
+
+address_PursuitCalculation: 
+    JumpIfRandLT(217, &address_PursuitIncraseScore)
+    EndScript()
+        
+address_PursuitIncraseScore:
+    AddToScore(7)
+    EndScript()
+
+
+
 address_ReduceScoreBy1:
 	AddToScore(-1)
 	EndScript()
+
+
+
 
 	0x0004 [4]
 	0xFFFE [65534]

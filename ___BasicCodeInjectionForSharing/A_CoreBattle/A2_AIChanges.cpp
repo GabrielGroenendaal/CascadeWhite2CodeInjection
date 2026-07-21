@@ -1646,7 +1646,7 @@ extern "C"
             ----------------------------------------------------------------------------------
         */
 
-        if (IsEqual(a4check, MOVE547_RELIC_SONG) || IsEqual(a4check, MOVE357_FREEZE_DRY) || IsEqual(a4check, MOVE533_SACRED_SWORD))
+        if (IsEqual(a4check, MOVE357_FREEZE_DRY) || IsEqual(a4check, MOVE533_SACRED_SWORD))
         {
             TypeEffectiveness = GetTypeEffectivenessVsMonAltered(((MoveParam *)moveParam)->moveType, BattleMon_GetPokeType(DefendingMon));
         }
@@ -2963,7 +2963,7 @@ extern "C"
                                     {
                                         TypeEffectivenessVsMon = GetTypeEffectivenessVsMonAltered(Type, PokeType);
                                     }
-                                    if (ID == MOVE357_FREEZE_DRY || ID == MOVE547_RELIC_SONG || ID == MOVE533_SACRED_SWORD)
+                                    if (ID == MOVE357_FREEZE_DRY || ID == MOVE533_SACRED_SWORD)
                                     {
                                         TypeEffectivenessVsMon = GetTypeEffectivenessVsMonAltered(Type, PokeType);
                                     }
@@ -3251,7 +3251,7 @@ extern "C"
                                     k::Printf("\nCheck 1-%d-D: The Type Effectiveness Initially is %d", i, TypeEffectivenessVsMon);
 #endif
                                     TypeEffectivenessVsMon = (atkAbility == ABIL113_SCRAPPY && (Type == TYPE_NORMAL || Type == TYPE_FIGHTING)) ? GetTypeEffectivenessVsMonAltered(Type, PokeType) : TypeEffectivenessVsMon;
-                                    TypeEffectivenessVsMon = (ID == MOVE357_FREEZE_DRY || ID == MOVE547_RELIC_SONG || ID == MOVE533_SACRED_SWORD) ? GetTypeEffectivenessVsMonAltered(Type, PokeType) : TypeEffectivenessVsMon;
+                                    TypeEffectivenessVsMon = (ID == MOVE357_FREEZE_DRY || ID == MOVE533_SACRED_SWORD) ? GetTypeEffectivenessVsMonAltered(Type, PokeType) : TypeEffectivenessVsMon;
                                     TypeEffectivenessVsMon = ((Type == TYPE_POISON && atkAbility == ABIL007_CORROSION) || (Type == TYPE_PSYCHIC && atkAbility == ABIL039_INNER_FOCUS)) ? GetTypeEffectivenessVsMonAltered(Type, PokeType) : TypeEffectivenessVsMon;
                                     TypeEffectivenessVsMon = (ID == MOVE327_SKY_UPPERCUT) ? TypeEffectivenessVsMon = EvaluateTypeEffectivenesssForFighting(Type, PokeType, (atkAbility == ABIL113_SCRAPPY)) : TypeEffectivenessVsMon;
                                     TypeEffectivenessVsMon = (ID == MOVE498_CHIP_AWAY) ? 3 : TypeEffectivenessVsMon;
@@ -4847,7 +4847,7 @@ extern "C"
             {
                 typeEffectiveness = GetTypeEffectivenessVsMonAltered(type, PokeType);
             }
-            if (moveId == MOVE357_FREEZE_DRY || moveId == MOVE547_RELIC_SONG || moveId == MOVE533_SACRED_SWORD)
+            if (moveId == MOVE357_FREEZE_DRY|| moveId == MOVE533_SACRED_SWORD)
             {
                 typeEffectiveness = GetTypeEffectivenessVsMonAltered(type, PokeType);
             }

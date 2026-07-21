@@ -1794,7 +1794,6 @@ Label_Counter:
 	JumpIfHasCondition(defender, cond.infatuation, &address_DeprioritizeCounter)
 	JumpIfHasCondition(defender, cond.confusion, &address_DeprioritizeCounter)
 	JumpIfHealthGT(attacker, 30, &address_0x1CE8)
-	JumpIfRandLT(10, &address_0x1CE8)
 	AddToScore(-1)
 
 address_0x1CE8:
@@ -1814,44 +1813,11 @@ address_0x1D3C:
 	AddToScore(1)
 	Jump(&address_0x1DB6)
 
-address_0x1D5E:
-	JumpIfNotTaunted(&address_0x1D74)
-	JumpIfRandLT(100, &address_0x1D74)
-	AddToScore(1)
-
-address_0x1D74:
-	GetType(defender_type1)
-	JumpIfStoredIsInList(&data_address_0x1DB8, &address_0x1DB6)
-	GetType(defender_type2)
-	JumpIfStoredIsInList(&data_address_0x1DB8, &address_0x1DB6)
-	JumpIfRandLT(50, &address_0x1DB6)
-
-address_0x1D9E:
-	JumpIfRandLT(100, &address_0x1DAE)
-	AddToScore(4)
-
-address_0x1DAE:
-	EndScript()
-
-
 address_DeprioritizeCounter:
 	AddToScore(-1)
 
 address_0x1DB6:
 	EndScript()
-
-
-data_address_0x1DB8:
-	type.normal
-	type.fighting
-	type.flying
-	type.poison
-	type.ground
-	type.rock
-	type.bug
-	type.ghost
-	type.steel
-	END
 
 
 
@@ -2478,6 +2444,7 @@ Label_BellyDrum:
 	Jump(&address_0x27B2)
 
 address_0x27AC:
+
 	AddToScore(-2)
 
 address_0x27B2:
@@ -2503,11 +2470,10 @@ address_0x27B2:
 
 //   MIRROR COAT   
 Label_MirrorCoat:
-	JumpIfHasCondition(defender, cond.sleep, &address_0x29A4)
-	JumpIfHasCondition(defender, cond.infatuation, &address_0x29A4)
-	JumpIfHasCondition(defender, cond.confusion, &address_0x29A4)
+	JumpIfHasCondition(defender, cond.sleep, &address-MirrorCoatReduceScore)
+	JumpIfHasCondition(defender, cond.infatuation, &address-MirrorCoatReduceScore)
+	JumpIfHasCondition(defender, cond.confusion, &address-MirrorCoatReduceScore)
 	JumpIfHealthGT(attacker, 30, &address_0x28DC)
-	JumpIfRandLT(10, &address_0x28DC)
 	AddToScore(-1)
 
 address_0x28DC:
@@ -2522,11 +2488,21 @@ address_0x28FA:
 
 address_0x2930:
 	GetLastPreviousCategory()
-	JumpIfStoredNE(special, &address_0x29A4)
+	JumpIfStoredNE(special, &address-MirrorCoatReduceScore)
 	JumpIfRandLT(100, &address_0x29AA)
 	AddToScore(1)
 	Jump(&address_0x29AA)
 
+address-MirrorCoatReduceScore:
+	AddToScore(-1)
+
+address_0x29AA:
+	EndScript()
+
+
+
+
+// THIS CODE IS ORPHANED NOW
 address_0x2952:
 	JumpIfNotTaunted(&address_0x2968)
 	JumpIfRandLT(100, &address_0x2968)
@@ -2546,14 +2522,6 @@ address_0x2992:
 address_0x29A2:
 	EndScript()
 
-
-address_0x29A4:
-	AddToScore(-1)
-
-address_0x29AA:
-	EndScript()
-
-
 data_address_0x29AC:
 	type.fire
 	type.water
@@ -2564,7 +2532,7 @@ data_address_0x29AC:
 	type.dragon
 	type.dark
 	END
-
+// NO ONE USES THIS CODE ABOVE 
 
 
 
@@ -2676,7 +2644,7 @@ Label_InvulnerableTurns:
 	JumpIfHeldItemEQ(attacker, item.power_herb, &endScript_DigDive)
 	JumpIfHasNoMovesWithEffect(defender, move_ef.protect, &Label_ShadowForce)
 	AddToScore(-1)
-	Jump(&address_0x2C04)
+	Jump(&endScript_DigDive)
 
 Label_ShadowForce:
 	JumpIfHeldItemEQ(attacker, item.power_herb, &address_0x2B12)
@@ -2684,7 +2652,7 @@ Label_ShadowForce:
 
 address_0x2B12:
 	AddToScore(1)
-	Jump(&address_0x2C04)
+	Jump(&endScript_DigDive)
 
 endScript_DigDive:
 	EndScript()
@@ -3295,23 +3263,35 @@ address_0x33F0:
 //   RECYCLE   
 Label_Recycle:
 	GetUsedItem(attacker)
-	JumpIfStoredIsNotInList(&data_address_0x3420, &address_0x3418)
-	JumpIfRandLT(50, &address_0x341E)
+	JumpIfStoredIsNotInList(&data_address_UsefulItemsToRecycle, &address_ReduceScoreForRecycle)
+	JumpIfHealthLT(attacker, 30, &address_ReduceScoreForRecycle)
+	JumpIfRandLT(50, &address_EndRecycle)
 	AddToScore(1)
-	Jump(&address_0x341E)
+	Jump(&address_EndRecycle)
 
-address_0x3418:
+address_ReduceScoreForRecycle:
 	AddToScore(-2)
 
-address_0x341E:
+address_EndRecycle:
 	EndScript()
 
-
-data_address_0x3420:
+data_address_UsefulItemsToRecycle:
 	item.chesto_berry
 	item.lum_berry
 	item.starf_berry
 	item.liechi_berry
+	item.rowap_berry
+	item.jaboca_berry
+	item.enigma_berry
+	item.casteliacone
+	item.berry_juice 
+	item.sitrus_berry
+	item.petaya_berry
+	item.kee_berry
+	item.maranga_berry
+	item.power_herb
+	item.lustrous Orb
+	item.normal_gem
 	END
 
 
