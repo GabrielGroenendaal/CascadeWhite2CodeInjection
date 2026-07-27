@@ -14,12 +14,18 @@
     - AI Went for explosion at maximum health. It shouldn't be able to do that. 
     - Hugh's Eelektrik went for t-bolt over sludge bomb vs. Fraxure. Wtf? 
     - AI seemed to maybe ignore kill vs Boldore? 
+    - Soak 
+        - Fix Soaks AI 
+    - Entrainment 
+        - Double Check Entrainments AI. It just used it on someone with the same ability as it
 - Make test build for finding out crash in BW2 
 - Trainers 
     - Janitor Brady's Golbat has the wrong ability
+    - Harlequin Flop's Slakoth has Slow Start.
 - Balance 
     - Consider what we want to do with Marowak. Either it takes forever to get good stabs but has thick club, or the inverse imo. 
     - Fix evolution level on Kirlia
+    
 
 
 [ ENCOUNTERS ]
