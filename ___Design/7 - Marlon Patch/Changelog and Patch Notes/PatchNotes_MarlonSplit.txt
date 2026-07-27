@@ -1,0 +1,237 @@
+
+
+
+=============================================================================================================
+/*   PATCH NOTES    */
+
+```Patch Notes:```
+If you're updating from the previous patch, you'll want to speak to an NPC in Lentimas Town who should get all your flags and work values fixed. They can be found on the north end of the airstrip. 
+
+``[ BUG FIXES & SCRIPTING ]``
+> - **Lostlorn Forest** removed the Zoroark encounter. 
+> - **PWT Move Tutors** are now correctly assigned. The Starter Move Tutor has been moved. 
+> - **PWT IV Enhancer** has been fixed to maximize the correct IVs. 
+> - **Route 4** removed the errant Pokemon Breeder. 
+> - **Route Gate Nimbasa**: removed the guy who gives you a Macho Brace, now a Tera Badge. 
+> - **Encounters** now correctly unlock after defeating Cobalion in Guidance Chamber.
+> - **Gift and Trade Encounters** will now have their IVS properly maximized / enhanceed if the player has Perfect/Enhanced IVs toggled. 
+> - **Nimbasa City**: Removed the unintentional Sun Stone 
+> - **Join Avenue**: Fixed a crash that occured when reaching the gauntlet end on the right hand side of the avenue. 
+> - **Move Tutors** fixed the Blue and Yellow Move tutor lists being mixed up. Yellow Shards are now the most rare. 
+> - **The Castelia Alleyway Trades** should have their perfect IVs back. 
+> - **Celestial Tower** psychics are now properly a tag battle.
+> - **Clay Tunnel Worker** no longer crashes the game with his faulty movement. 
+> - **Chargestone Cave** warps now correctly go to the right locations. 
+> - **Pilot Ewing** now is correctly facing upwards. 
+> - **Skitter Smack** is now properly a contact move.
+> - **Mud Bomb** is no longer flagged as having accuracy-dropping, whcih was causing it to be clicked over highest damage.
+> - **Struggle** now correctly deals type-less damage. 
+> - **AI Status Move Scoring** now accounts for Trickster Herb and Prankster, not penalizing those move scores if the user is normally slower. 
+> - **Sheer Force** is accounted for in the AI scoring for Acid Spray, Icy Wind, etc.
+> - **Pinch Abilities** are no longer erroneously providing a damage boost to off-type moves. 
+> - **AI accounts for Flinch Immunities** with Fake Out 
+> - **Improvements to AI for Accuracy Lowering Moves**. They shouldn't be spamed quite as much. 
+> - **Added Logic for the Ally-Targeting of Agility**
+> - **Added AI Score increase for Howl in Doubles** 
+> - **Fixed Stun Spore being Spammed** 
+
+``[ BALANCE ]``
+> - **Crobat Line** is getting Strong Body in Ability Slot 1, as Infiltrator becomes the Hidden Ability. Sniper becomes AI Only. 
+> - **Aipom and Ambipom** lose their Attack buff. 
+> - **Hoppip, Skiploom, and Jumpluff's** Ability 2 is now Infiltrator, not Sap Sipper. 
+> - **Mime Jr. and Mr. Mime** are losing 5 HP. Substitute and Doubleslap have swapped positions in their learnset. 
+> - **Goldeen and Seaking** have Facade swapped positions with Double-Edge in their learnset. 
+> - **Hitmontop** is losing 10 HP and 10 Defense
+> - **Hitmonlee** is losing 20 HP and having it redistributed to Defense. Also losing 10 Special Defense 
+> - **Hitmonchan** is losing 10 Speed 
+> - **Dewgong** hidden ability is now Thick Fat.
+> - **Scyther** is losing 10 HP. It now gets Acrobatics instead of Dual Wingbeat at level 53. Dual Wingbeat is a scale move.
+> - **Scizor** is losing 10 Defense. 
+> - **Whimsicott** is losing 10 Atk and 10 Special Attack. Infiltrator becomes its new Hidden Ability, over Merciless. 
+> - **Cottonee** now evolves at level 42, or with a Sun Stone.
+> - **Lilligant** loses 5 Defense and Special Defense. 
+> - **Petilil** now evolves at level 42 or with a Sun Stone.
+> - **Scolipede Line** swaps ability positions for Speed Boost and Strong Body
+> - **Scolipede** gets Defense Curl as a scale move.
+> - **Darumaka** can evolve into Darmanitan by using a Dawn Stone, as well at reaching level 50. 
+> - **Maractus** swaps Ability Slots for Storm Drain and Sand Rush. 
+> - **Dwebble / Crustle** now have Pickup as their Hidden Ability. 
+> - **Yamask** loses 10 SpA. 
+> - **Swanna Line** Ability 3 is now Friend Guard, over Ice body.
+> - **Jellicent** gains +20 Defense. 
+> - **Druddigon** swaps Ability Slots for Battle Armor and Sheer Force. 
+> - **Golurk** loses 15 Speed. 
+> - **Swellow** loses 5 Atk and gains +5 SpA. Taillow gains +10 Special Attack. 
+> - **Breloom** loses 10 Defense and Speed abd gains +20 SpA. 
+> - **Hariyama** has Lucky Chant and Wide Guard swapped in the learnset.
+> - **Carvanah and Sharpedo** have ability slots 2 and 3 swapped, making Strong Jaw the new hidden ability. 
+> - **Spinda** loses 5 in each stat. 
+> - **Barboach and Whiscash** loses the +10 to Attack. 
+> - **Glalie** loses the -20 to Special Attack. 
+> - **Froslass** gains +20 to Attack. 
+> - **Spinarak / Ariados** lose 5 Atk. 
+> - **Corsola** loses 10 Atk.
+> - **Riolu** now evolves to Lucario via use of a Dawn Stone or at level 50. Riolu consequently learns Spike Cannon at level 46. 
+> - **Venusaur** loses Swords Dance at level 58. Gets Growth Instead. At level 3 they learn Poisonpowder.
+> - **Serperior Line** swaps Positions for Focus Energy and Hyper Beam. They learn Power Whip at level 42 instead of Seething Cold. 
+> - **Serperior Line** learns Leaf Blade at level 27 instead of Giga Drain, which is pushed back to level 46. Flame Burst is replaced with Seething Cold. 
+> - **Mothim** gets Attack Order at level 55. 
+> - **Burmy** can evolve into Wormadam-Trash using a Thunderstone.
+> - **Magcargo's** Hidden Ability is now Shell Armor. 
+> - **Luvdisc** ability one is now Rivalry instead of Water Absorb. 
+> - **Flygon Line** replaces Tenacity with Sand Rush.
+> - **Typhlosion Line** loses Flash Fire, gains Sand Rush in that spot instead. 
+> - **Plusle's** abilities are now Distracting, Friend Guard, Trace
+> - **Minun's** abilities are now Distracting, Healer, Trace
+> - **Huntail's** hidden ability is now Strong Jaw. 
+> - **Voltorb Line** now has Unnerve instead of Volt Absorb. 
+> - **Rapidash Line** now has Run Away as ability 1, swapped position with Flash Fire. They now learn Endure at 23 instead of Heal Pulse. 
+> - **Houndoom Line** swaps ability slots between Unnerve and Flash Fire. 
+> - **Poliwag Line** now swapped position for Ability 1 and 3; Water Absorb is HA. 
+> - **Seismitoad Line** now swapped Position for Ability 1 and 3; Water Absorb is now HA.
+> - **Aerodactyl** ability one is now Intimidate. Tough Claws is AI only. 
+> - **Emboar** now learns Sucker Punch as a scale move. Instead at 52 it learns Night Daze. It learns Bulk Up at 99, and Close Combat at 55. and Giga Impact at 60. 
+> - **Houndoom** now learns Sucker Punch as a scale move. Instead at level 47 it learns Fire Blast. At level 62 it learns Heat Wave.
+> - **Samurott Line** has Flip Turn as a Scale move. It learns Dive at that level instead. Swords dance is learned at 99, Hydro Cannon at 59, Superpower at 64. 
+> - **Liepard Line** swaps positions for Knock Off and Wicked Blow. 
+> - **Zebstrika** replaces Temper Flare with Megahorn as a Scale move. 
+> - **Sceptile** now gets Hyper Cutter as hidden ability. Ability 1 is Overgrow. Exploit is an AI only ability. 
+> - **Dugtrio line** now learns Bulldoze at 26 and Dig at 34. They learn earthquake at 52, sucker punch at 43, and Head Smash as a scale move.
+> - **Banette's Hidden Ability** is now Justified. 
+> - **Krookadile Line's Abilities** are now Intimidate, Sand Rush, Strong Jaw. Tenacity and Anger Point become AI Only. 
+> - **Krokorok** loses 10 Atk. 
+> - **Krookadile Line** learns earthquake at 45, and Cross Chop at 48. 
+> - **Ursaring Line's** ability 3 is now Sap Sipper. 
+> - **Gigalith Line** gets Metal Sound instead of Force Palm. 
+> - **Parasect** gets +10 Atk and a slightly revamped learnset
+> - **Walrein Line** now has the Abilities Ice Body, Guts, and Intimidate.
+> - **Walrein Line** can learn Aqua Jet as a Scale Move. They learn Sheer Cold at level 55 instead of Blizzard. At 75 they learn Giga Impact instead of Sheer Cold. Yawn is now a Scale Move. In Yawn's Place it learns Hyper Beam. 
+> - **Tyranitar Line** Abilities are now Berserk / Battle Armor / Sheer Force
+> - **Eelektross** now gets +15 Defense and +20 Special Defense. 
+> - **Leafeon** ability 2 is now Hyper Cutter.
+> - **Ferrothorn** doesn't learn Gravity by level up anymore. It learns Snap Trap at level 48 instead of leech seed, and leech is a scale move. Instead of Gravity, Ferrothorn learns Rock Climb.
+> - **Abomasnow** has a learnset nerf.
+> - **Relicanth** gains +15 Speed.
+> - **Togetic** has its Special Attack, Speed, and HP reduced. It's not a guaranteed encounter and doesn't need guaranteed value. 
+> - **Unfezant** can scale for Sky Attack or Reflect Type.
+> - **Hail, Sunny Day, Sandstorm, Rain Dance** are all a lot more rare, often requiring scales to access. 
+> - **Fake Out** has been pruned from a lot of learnsets. 
+> - **LOTS of other Small Learnset Tweaks**
+
+```[ ENCOUNTERS ]```
+> - **Castelia Sewers Walking**: Zubat is no longer a 20% encounter in Castelia Sewers. Scraggy takes it's place. Lickitung raplced with 10% Drowzee Zubat is now a 4% encounter, and Koffing is a 5% encounter. 
+> - **Castelia Sewers Fishing Dark Spot**: 40% Murkrow replaced with 40% Lickitung.
+> - **Liberty Garden** no longer has Charmeleon and Combusken. Instead, Plusle and Minun are a 10% chance. 
+> - **Deep Lostlorn Forest** no longer has a 20% chance for Bayleef, instead with 20% Swadloon. 10% Swadloon replaced with 10% Sawsbuck-Autumn
+> - **Route 6 Grass** 10% Ivysaur slot replaced with 10% Weepinbell.
+> - **Route 6 Doubles Grass** 10% Grovyle slot becomes 10% Simisage 
+> - **Route 6 DOubles Grass** 10% Marshtomp slot becomes 10% Whiscash
+> - **Relic Passage Dark Spot Surfing** tables are 60% Swoobat 30% Tirtouga
+> - **Route 7 Shaking Grass** is now 60% Miltank, 30% Stoutland, 10% Swellow 
+> - **Diglett** is now a 2% in Relic Passage.
+> - **Season Research Center** encounter has been removed. 
+> - **Relic Castle** 10% Duskull has been replaced with 10% Chimecho. Duskull is now a 4%. 
+> - **Celestial Tower** 10% Dusclops replaced with 10% Shuppet. Dusclops is now a 4% encounter. 
+
+``[ TRAINERS ]``
+> - **PWT Colress's Rotom-Fan** now has Uproar over Double-Edge and Leaf Tornado over Telekinesis. 
+> - **PWT Colress's Klinklang, Metagross and Rotom-Fan** are now level 47. 
+> - **PWT Colress's Manectric** now has Volt Switch over Psychic Fangs.
+> - **Kanto Leader Janine's Glalie and Drapion** are now level 44, up from 43. 
+> - **Leader Roxie's Rotom** now has Eject Button, over Leftovers 
+> - **Leader Elesa's Glaceon** has Icy Wind over Extrasensory.
+> - **Leader Clay's Dugtrio** is now level 45, up from 44. It now has Spikes over Iron Head and Gunk Shot over Close Combat. 
+> - **Leader Clay's Conkeldurr** is now Guts, Pre Paralyzed, with Hammer Arm, Mach Punch, Stone Edge, Slack Off. 
+> - **Leader Clay's Excadrill** now has Block over Strength and holds a Shuca Berry.
+> - **Leader Clay's Electrode** is now holding a Chople Berry and has Steel Beam over Flash Cannon.
+> - **Route 4 Benga's Aerodactyl** is now holding a Passho Berry
+> - **Route 4 Benga's Bronzong** now has Energy Ball over Reflect. 
+> - **Route 4 Benga's Druddigon** now has Glare over Rock Climb.
+> - **Kanto Leader Surge's Octillery** now has a Shuca Berry over a Wacan Berry. It now has Swift over Natural Gift.
+> - **Kanto Leader Erika's Nidoqueen** is now Sheer Force again. It knows Fire Punch over Flamethrower. 
+> - **Kanto Leader Erika's Victreebell** now has Sucker Punch over Sleep Powder. 
+> - **Kanto Leader Erika's Beautifly** has Scorching Swarm again instead of Bug Buzz and Mystical Fire over Solarbeam.
+> - **Kanto Leader Erika's Cherrim** is holding a Coba Berry and Knows Wild Charge over Return.
+> - **Kanto Leader Erika's Vileplume** is now correctly Chlorophyll. 
+> - **Leader Burgh's Gliscor** has Bounce over Aerial Ace, a Power Herb over Bug Gem, and Rock Slide over Lunge. 
+> - **Leader Burgh's Omastar** now has Icy Wind over Signal Beam.
+> - **Leader Burgh's Escavalier** now knows Razor Shell over Natural Gift. 
+> - **Kanto Leader Sabrina's Sigilyph** is being replaced by a Focus Sash Keen Senses Mienshao. 
+> - **Route 4 Colress's Beheyeem** is now Patient and holding a Shuca Berry. 
+> - **Clerk Britney's Sealeo** is now holding a Wacan Berry. It has Super Fang over Body slam and Ice Fang over Aurora Beam. 
+> - **Clerk Britney's Piloswine** now has Passho Berry over Rock Gem, and Yawn over Rock Smash, Freeze Dry over Ice Fang. 
+> - **Linebacker Dan's Piloswine** now has Avalanche over Ice Beam.
+> - **Strange Statue Team** has had their levels raised by 2. 
+> - **Baker Jenn and Depot Agent Hank** have had their pokemon levels raised by 1 to match Ranger Serenity. 
+> - **And frankly too many other changes to list**...
+
+
+``[ ITEMS ]``
+> - **Sabrina Miniboss** no longer awards the Will-o-Wisp TM 
+> - **Erika Miniboss** no longer awards the Mystical Fire TM 
+> - **Janine Miniboss** no longer awards the Taunt TM
+> - **Volkner Miniboss** now rewards 3x Electric Gems and 3x Wacan Berries. 
+> - **Weather Ball** TM is no longer found in Route 6. In its place are 10x Sitrus Berries.
+> - **Heart Scale** drops have been reduced from 2 to 1 in Celestial Tower, Chargestone Cave and Route 7.
+> - **White Herb (x2)** added to Driftveil Market 
+> - **Dig** is removed from Desert Resort, replaced with TM78 Bulldoze 
+> - **Bulldoze** is replaced with Sharp Beak in Lower Route 4 
+> - **Sharp Beak** is raplced with 5x Berry Juice in SouthEastern Route 4
+> - **Aerial Ace TM** is replaced with Lum Berry x3 in middle Route 4 
+> - **Desert Resort** now offers 20x Green Shards, down from 30x 
+> - **Psyshock TM** is now found in Desert Resort, not Route 7
+> - **Psycho Cut TM** is now found in Virbank Complex, not Brutal Swing. 
+> - **Mystical Fire** TM is now found in Relic Castle, where Light Screen / Reflect used to be. 
+> - **10x Red Shards** are found in Deep Lostlorn Forest where the Mystical Fire used to be . 
+> - **Juniper** no longer offers a Docile mint in Mistralton. 
+> - **Driftveil Market** now is home to 2x Trickster Herbs, not a Relaxed Mint 
+> - **Route 16** has 3x Eject Packs instead of 3x Absorb Bulbs 
+> - **Driftveil City** gives you 20x Red Shards, down from 30. 
+> - **Extra Red Shards** removed from Mistralton City 
+> - **3x Ghost Gems, Shadow Ball TM, 3x Kasib Berries** added to Celestial TOwer gatekept by Morty
+> - **3x Ground Gems, Dig TM, 3x Shuca Berries** added to Clay Tunnel gatekept by Roxanne
+> - **Mistralton City PokeMart** now sells the TMs for Light Screen, Reflect and Safeguard
+> - **Skill Swap** now costs 10 Red Shards. 
+> - **Thunder Punch, Ice Punch, Fire Punch** now cost 6 Red Shards. 
+> - **Uproar and Take Down** now cost 4 Green Shards. 
+> - **Iron Ball** has been moved from Relic Passage to the location of the Bug Buzz TM in Chargestone Cave. In its place is 3x Normal Gems. 
+> - **TM Knock Off** has been removed from Mistralton Cave. In it's place is the TM for Bug Buzz. 
+> - **Red Shards** More Limited. 
+> - **Rocky Helmet** removed from PWT. Will now be acquired later.
+> - **Rowap and Jaboca Berries** in Desert Resort reduced to 5x, down from 10x. 
+> - **Fossil Distribution Altered**: You get Root, Helix, and Claw fossils from Lenora. You get Dome and Skull Fossils from an optional trainer in Clay Split. The Armor, Cover, and Plume Fossils are found behind an optional fight in Abyssal Ruins. The Old Amber is found in N's Castle in the final split of the game. 
+
+
+```[ MOVES ]```
+> - **Grass Types are now properly immune to Powder effects** 
+> - **Assist has been replaced with Supercell Slam**. 
+> - **Me First** now has +1 Priority. It has 3 PP. 
+> - **Yawn** has been reduced to 2 PP. 
+> - **Solarbeam** is now spread and damages all adjacent targets. 
+> - **Fake Out** is no longer a never-miss move. 
+> - **Night Shade** now heals the user for 100% of the damage it deals. It has 2 PP.
+> - **Mirror Coat, Counter, Mirror Move, and Metal Burst** are all never-miss moves now.
+> - **Taunt** now affects all adjacent foes. 
+> - **Seismic Toss** now cannot miss. 
+> - **Psywave** now affects all adjacent foes. It's minimum damage is now 0.75x of the user's level, up from 0.5x. 
+> - **Jump Kick, Hi Jump Kick, and Supercell Slam** have a new downside. On a miss, the user suffers 25% max health recoil then is forcibly swapped out for a random teammate. 
+> - **Slam** has been added back into the game. It is a 105 BP, 85% accurate move that hits all adjacent foes with a 20% chance to paralyze. 
+> - **Hidden Power & Hidden Force** now cannot miss. 
+> - **Seed Bomb** now has a 20% chance to burn the target. 
+> - **Steel Wing, Dragon Claw** have boosted secondary effect chances. 
+> - **Wild Charge** has an added 10% chance to paralyze. 
+> - **Rolling Kick** has been added back into the game. It functions exactly like Pursuit. 
+> - **Curse** now always has it's Ghost-type effect.
+
+``[ NEW CHANGES ]``
+> - **Effect Spore** is now an AI only ability. It triggers in response to any move, contact or otherwise, and has an 50% proc chance. It won't affect Grass types, pokemon with Overcoat, or Pokemon holding Safety Goggles.
+> - **Cursed Body** now has a 60% proc chance. 
+> - **AI Switch Logic** accounts for Tera when applying the STAB bonus for switch in. 
+> - **Enforced Level Caps** are now a toggle-able option in the PokeHelper menu. While in the PokeHelper menu, you can also see the current level cap.
+> - **Switch AI** now takes in defensive matchups into consideration as a BP modifier. It checks the types of the pokemon it's calculating BP against to see if either is super effective or 4x effective against the switch in Pokemon, applying a 0.75x or 0.5x modifier accordingly. If the Pokemon resists or is immune to both types, they can get a 1.25x or 1.5x modifier. 
+> - **Shadow Triad** no longer steal a random Pokemon. Instead they steal the Pokemon in the party with the lowest health that isn't fainted. Hugh will now HEAL you before the battle! You can't get it to specific values, but to 1/5/10/20/50/100/150/200/250 HP. 
+
+
+``[ UPCOMING WORK ]``
+> - **Implementation of Drayden Split**: The next big strech of content is already in developpment. 
+> - **Possible U-Turn TM Removal**: I am considering turning U-Turn into a tutor move using 10 Red Shards to learn further into the resource economy of the game. 

@@ -1,0 +1,394 @@
+import messages.script.Msg0602.MSGID;
+
+import Base;
+import event.Battle;
+import event.actors.Actor;
+import event.actors.Player;
+import event.dialogs.Message;
+import event.dialogs.ListMenu;
+import pokemon.PokeParty;
+import pokescript.vm.Math;
+import pokescript.vm.StackCtrl;
+import pokescript.vm.VM;
+import system.EventFlags;
+import system.EventWorks;
+import system.Input;
+import system.Runtime;
+import system.Sound;
+import system.text.WordSet;
+
+public class MainEvents {
+	public static void main_1() { // @ 0x2a
+		Actor.PauseAll();
+		Base.CMD_17A(36);
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_2() { // @ 0x36
+		int v0;
+		int v1;
+		int v33;
+		int v34;
+		int v35;
+
+		Actor.PauseAll();
+		ActionSequence_0224(0);
+		Actor.WaitActionFinish();
+		WordSet.LoadPlayerName(0);
+		Message.ActorEx(1024, 0, 0, 0, 0);
+		Message.CloseAll();
+		Player.GetGPos(v33, v34);
+		if (v33 != 7) {
+			Actor.WalkRoute(255, 7, v34, 1, 8, 0);
+			goto LABEL_0088;
+		}
+		ActionSequence_0204(255);
+
+		LABEL_0088:
+		Actor.WaitActionFinish();
+		WordSet.LoadPlayerName(0);
+		v35 = PokeParty.GetMemberByType(2);
+		WordSet.LoadPartyPokeSpecies(1, v35);
+		Message.ActorEx(1024, 1, 0, 0, 0);
+		Message.CloseAll();
+		Global2805(17, 1);
+		WordSet.LoadPlayerName(0);
+		Message.ActorEx(1024, 2, 0, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseAll();
+		EventWorks.Set(16608, 1);
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_3() { // @ 0xe5
+		int v0;
+		int v1;
+		int v35;
+
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		if (EventWorks.Get(16608) != 0) {
+			WordSet.LoadPlayerName(0);
+			Message.Actor(1024, 3, 0, 0);
+			goto LABEL_016f;
+		}
+		WordSet.LoadPlayerName(0);
+		Message.Actor(1024, 0, 0, 0);
+		WordSet.LoadPlayerName(0);
+		v35 = PokeParty.GetMemberByType(2);
+		WordSet.LoadPartyPokeSpecies(1, v35);
+		Message.Actor(1024, 1, 0, 0);
+		Message.CloseAll();
+		Global2805(17, 1);
+		WordSet.LoadPlayerName(0);
+		Message.ActorEx(1024, 2, 0, 0, 0);
+		EventWorks.Set(16608, 1);
+
+		LABEL_016f:
+		Input.LastKeyWait();
+		Message.CloseAll();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_4() { // @ 0x179
+		Actor.PauseAll();
+		if (!EventFlags.Get(2400)) {
+			if (EventWorks.Get(16384) != 0) {
+				goto LABEL_01e9;
+			}
+			Sound.SEPlay(1351);
+			Actor.FacePlayer();
+			Message.ActorEx(1024, 4, 1, 0, 0);
+			Message.ActorEx(1024, 5, 1, 0, 0);
+			Input.LastKeyWait();
+			Message.CloseAll();
+			EventWorks.Set(16384, 1);
+			goto LABEL_01fd;
+		}
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 6, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		goto LABEL_01fd;
+
+		LABEL_01e9:
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 5, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+
+		LABEL_01fd:
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+
+    // singles
+    public static void main_5() {
+        int isVictory;
+        int testCase;
+		Actor.PauseAll();
+		Battle.CallTrainerBattle(1, 0, 0);
+		isVictory = Battle.IsTrainerVictory();
+		if (isVictory == 1) {
+			Battle.EndTrainerBattle();
+		}
+        else {
+            Battle.CallTrainerLose();
+        }
+
+        Label_EndSingles:
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
+
+
+    // doubles 
+    public static void main_6() {
+        int isVictory;
+        int testCase;
+		Actor.PauseAll();
+		Battle.CallTrainerBattle(2, 0, 0);
+		isVictory = Battle.IsTrainerVictory();
+		if (isVictory == 1) {
+			Battle.EndTrainerBattle();
+            testCase = EventWorks.Get(16436);
+            WordSet.LoadNumber(0, testCase, 3);
+            Message.Actor(1024, 7, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+			goto Label_EndDoubles;
+		}
+		Battle.CallTrainerLose();
+        Label_EndDoubles:
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
+    
+
+    // triples
+    public static void main_7(){
+        int isVictory;
+        int testCase;
+		Actor.PauseAll();
+		Battle.CallTrainerBattle(3, 0, 0);
+		isVictory = Battle.IsTrainerVictory();
+		if (isVictory == 1) {
+			Battle.EndTrainerBattle();
+             testCase = EventWorks.Get(16436);
+            WordSet.LoadNumber(0, testCase, 3);
+            Message.Actor(1024, 7, 0, 0);
+		    Input.LastKeyWait();
+		    Message.CloseActor();
+			goto Label_EndTriples;
+		}
+		Battle.CallTrainerLose();
+        Label_EndTriples:
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
+
+    // Increment the background id
+    public static void main_8(){
+        int testCase;
+
+        testCase = EventWorks.Get(16436);
+        testCase = testCase + 1;
+        EventWorks.Set(16436, testCase);
+        Actor.PauseAll();
+        Actor.FacePlayer();
+        Sound.SEPlay(1351);
+        WordSet.LoadNumber(0, testCase, 3);
+		Message.Actor(1024, 7, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+        Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
+
+    // Set the Background ID
+    public static void main_9(){
+         int testCase;
+         int v0; 
+         int v6;
+         
+		v0 = PokeParty.GetPkmCount(0);
+		v0 = v0 - 1;
+		v6 = PokeParty.GetParam(v6, 158) - 1;
+        if (v6 == 0) {
+        	testCase = 1;
+        }
+        else {
+        	testCase = 10 * v6;
+        	if (testCase > 63) {
+        		testCase = 1;
+        	}
+        }
+        EventWorks.Set(16436, testCase);
+        Actor.PauseAll();
+        Actor.FacePlayer();
+        Sound.SEPlay(1351);
+        WordSet.LoadNumber(0, testCase, 3);
+		Message.Actor(1024, 14, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+        Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
+
+    // Set the Season
+    public static void main_10(){
+        int currentSeason;
+        int idealSeasonl;
+        Actor.PauseAll();
+        Actor.FacePlayer();
+        Sound.SEPlay(1351);
+		Message.Actor(1024, 8, 0, 0);
+        ListMenu.InitRightAnchor(31, 5, 0, 1, idealSeasonl);
+		ListMenu.AddItem(9, 65535, 0);
+		ListMenu.AddItem(10, 65535, 1);
+		ListMenu.AddItem(11, 65535, 2);
+		ListMenu.AddItem(12, 65535, 3);
+		ListMenu.ShowDialog();
+        if (idealSeasonl < 4){
+            Message.Actor(1024, 13, 0, 0);
+            Input.LastKeyWait();
+		    Message.CloseActor();
+            EventWorks.Set(16437, idealSeasonl);
+        }
+        else {
+            Message.Actor(1024, 13, 0, 0);
+            Input.LastKeyWait();
+		    Message.CloseActor();
+        }
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
+
+
+	// 10 Ally, No AI Flags, 3 Pokemon 
+	// 11 Ally, 1 AI Flag, 3 Pokemon 
+	// 12 Ally, 2 AI Flag, 3 Pokemon 
+	// 13 Ally, 3 AI Flag, 3 Pokemon 
+	// 20 Ally, No AI Flags, 4 Pokemon 
+	// 21 Ally, 1 AI Flag, 4 Pokemon 
+	// 22 Ally, 2 AI Flag, 4 Pokemon 
+	// 23 Ally, 3 AI Flag, 4 Pokemon 
+	// 30 Ally, No AI Flags, 5 Pokemon 
+	// 31 Ally, 1 AI Flag, 5 Pokemon 
+	// 32 Ally, 2 AI Flag, 5 Pokemon 
+	// 33 Ally, 3 AI Flag, 5 Pokemon 
+	// 40 Ally, No AI Flags, 6 Pokemon 
+	// 41 Ally, 1 AI Flag, 6 Pokemon 
+	// 42 Ally, 2 AI Flag, 6 Pokemon 
+	// 43 Ally, 3 AI Flag, 6 Pokemon 
+
+	// 110 Trainer 1, 0 AI Flag, 3 Pokemon
+	// 111 Trainer 1, 1 AI Flag, 3 Pokemon
+	// 112 Trainer 1, 2 AI Flag, 3 Pokemon
+	// 113 Trainer 1, 3 AI Flag, 3 Pokemon
+	// 120 Trainer 1, 0 AI Flag, 4 Pokemon
+	// 121 Trainer 1, 1 AI Flag, 4 Pokemon
+	// 122 Trainer 1, 2 AI Flag, 4 Pokemon
+	// 123 Trainer 1, 3 AI Flag, 4 Pokemon
+	// 130 Trainer 1, 0 AI Flag, 5 Pokemon
+	// 131 Trainer 1, 1 AI Flag, 5 Pokemon
+	// 132 Trainer 1, 2 AI Flag, 5 Pokemon
+	// 133 Trainer 1, 3 AI Flag, 5 Pokemon
+	// 140 Trainer 1, 0 AI Flag, 6 Pokemon
+	// 141 Trainer 1, 1 AI Flag, 6 Pokemon
+	// 142 Trainer 1, 2 AI Flag, 6 Pokemon
+	// 143 Trainer 1, 3 AI Flag, 6 Pokemon
+
+
+	public static void main_11(){
+		int flags; 
+		int numMons;
+		int numMonsEnemy;
+		int allyTrID;
+		int enemyTrIDOne;
+		int enemyTrIDTwo;
+		int isVictory;
+		
+		Actor.PauseAll();
+        Actor.FacePlayer();
+        Sound.SEPlay(1351);
+		Message.Actor(1024, 16, 0, 0);
+		Message.Actor(1024, 7, 0, 0);
+        ListMenu.InitRightAnchor(31, 5, 0, 1, flags);
+		ListMenu.AddItem(8, 65535, 0);
+		ListMenu.AddItem(9, 65535, 1);
+		ListMenu.AddItem(10, 65535, 2);
+		ListMenu.AddItem(11, 65535, 3);
+		ListMenu.ShowDialog();
+        if (flags < 4){
+            Message.Actor(1024, 17, 0, 0);
+        }
+        else {
+			flags = 3;
+            Message.Actor(1024, 17, 0, 0);
+        }
+
+		ListMenu.InitRightAnchor(31, 5, 0, 1, numMons);
+		ListMenu.AddItem(12, 65535, 0);
+		ListMenu.AddItem(13, 65535, 1);
+		ListMenu.AddItem(14, 65535, 2);
+		ListMenu.AddItem(15, 65535, 3);
+		ListMenu.ShowDialog();
+		if (numMons < 4){
+			Message.Actor(1024, 18, 0, 0);
+		}
+		else {
+			numMons = 3;
+			Message.Actor(1024, 18, 0, 0);
+		}
+		ListMenu.InitRightAnchor(31, 5, 0, 1, numMonsEnemy);
+		ListMenu.AddItem(12, 65535, 0);
+		ListMenu.AddItem(13, 65535, 1);
+		ListMenu.AddItem(14, 65535, 2);
+		ListMenu.AddItem(15, 65535, 3);
+		ListMenu.ShowDialog();
+		if (numMonsEnemy < 4){
+			Message.Actor(1024, 19, 0, 0);
+		}
+		else {
+			numMonsEnemy = 3;
+			Message.Actor(1024, 19, 0, 0);
+		}
+		Message.CloseAll();
+
+		int allyTrID = 10 + flags + (10 * numMons);
+		int enemyTrIDOne = 110 + flags + (10 * numMonsEnemy);
+		int enemyTrIDTwo = 210 + flags + (10 * numMonsEnemy);
+
+		Battle.CallTrainerMultiBattle(allyTrID, enemyTrIDOne, enemyTrIDTwo, 0);
+		isVictory = Battle.IsTrainerVictory();
+        if (isVictory != 1) {
+            Battle.CallTrainerLose();
+            goto LABEL_EndDebugScript;
+        }
+		
+		LABEL_EndDebugScript: 
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	static meta void ActionSequence_0204(int npcId) : VActionSequence {
+		Action0023(1);
+	}
+
+	static meta void ActionSequence_0224(int npcId) : VActionSequence {
+		Action004b(1);
+	}
+
+	static meta void Global2805(int a1, int a2) : VGlobalCall[2805];
+
+	static native void Action0023(int amount) : 0x23;
+	static native void Action004b(int amount) : 0x4b;
+}

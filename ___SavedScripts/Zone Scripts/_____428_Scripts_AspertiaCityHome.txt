@@ -48,6 +48,9 @@ public class MainEvents {
 			Actor.PauseAll();
 			Actor.WalkRoute(0, 9, 8, 1, 8, 1);
 			Actor.WaitActionFinish();
+
+			EventWorks.Set(16436, 1);
+			EventWorks.Set(16503, 1);
 			Message.ActorEx(1024, 1, 0, 1, 0);
 			WordSet.LoadPlayerName(0);
 			Message.ActorEx(1024, 2, 0, 1, 0);

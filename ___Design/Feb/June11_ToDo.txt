@@ -7,26 +7,113 @@
 
 */
 
+
+
+- Move Tutor & TM Rework 
+- AI Scripts 
+    - AI Went for explosion at maximum health. It shouldn't be able to do that. 
+    - Hugh's Eelektrik went for t-bolt over sludge bomb vs. Fraxure. Wtf? 
+    - AI seemed to maybe ignore kill vs Boldore? 
+- Make test build for finding out crash in BW2 
+- Trainers 
+    - Janitor Brady's Golbat has the wrong ability
+- Balance 
+    - Consider what we want to do with Marowak. Either it takes forever to get good stabs but has thick club, or the inverse imo. 
+    - Fix evolution level on Kirlia
+
+
 [ ENCOUNTERS ]
+    Castelia Gardens: 
+        Singles Grass:
+            - Snubbull 
+            - Skitty 
+        Doubles Grass: 
+            - Jigglypuff 
+            - Buneary 
+    
+    Castelia Sewers    
+        Walking: 
+            - Zubat 
+            - Wormadam-Trash 
+
+
+Weirdly Absent Pokemon: 
+    - Heracross 
+    - Whimsicott (doesn't show up until Marlon Split)
+    - Sudowoodo (only shows up once in Clay Split)
+    - Amoongus (doesn't show up until Marlon Split)
+
+
+        
+[ TRAINERS ]
+
+    [ ROUTE 4 COLRESS ]
+        Boldore -> Type: Null @ Chople Berry (Ability: Berserk) (Chip Away, Crush Claw, Agility, Recover)
+
+
+        
+    [ GHOSTLY GENT / MAN / CHILD ]
+        All need to be fixed. 
+
+    [ PRESCHOOLER MIA ]
+        Level 48 Tympole 
+        Level 50 Shelmet 
+        Level 50 Tangela 
+        Level 48 Lotad 
+        Level 48 Ducklett 
+    
+    [ PRESCHOOLER JOJO ]
+        Level 48 Wooper 
+        Level 50 Surskit 
+        Level 50 Anorith 
+        Level 47 Cubchoo 
+        Level 50 Azurill 
 
 
 
-To Do List: 
-    AI Scripts: 
-        Implemented Pursuit AI so we don't need to shackle it to Priority.
-        Fixed Mirror Coat and Counter AI 
-    AI Changes Patch
-        - Test to see if our updates break everything. We have a low grade version in stead. 
-        - To be honest i have high hopes. I would have claude go over it though.
-    Move Changes Patch: 
-        - Did a huge clean up of this patch. Let's check through and make sure everything compiles and then test some rudimentary stuff. 
-        - Some easy tests include: Sky Uppercut, Teeter Dance, Howl, Pollen Puff, Teleport, Parting Shot, Sand Attack
+
+    [ ACE TRAINER SABLE ]
+        Add +1 Pokemon to Ace Trainer Sable 
+    
+    [ PILOT CHASE ]
+        Add +1 Pokemon to Pilot Chase
+        Airborne Pokemon: 
+            Levitate: 
+                Gengar 
+                Probopass 
+                Ledian 
+                Mismagius 
+                Solrock 
+                Chimecho 
+                Froslass 
+                Carnivine 
+                Cryogonal 
+            Thematic Pokemon: 
+                Floatzel 
+    
 
 
-    DamageCalc Patch: 
-        - We added the skeleton for custom pokeball / nickname / shiny support for enemy trainers. 
-        - Shiny is the one I'm most confident will work. 
-        - We also added support for grass knot / low kick interruptions. 
+
+
+
+Plan: 
+    I don't think I should do the TM and move tutor revamp until I get some more proper playtesting in. 
+
+    I'm actually very confident regarding the Tutor changes. Maybe I might want to keep the tail moves (aqua and iron) on the tutors but otherwise.
+
+    The TM changes and distribution across the game is something I'm less certain about. The main questions I have are: 
+        - Is there enough value in having the spread low accuracy moves be TMs? Are they things I'd actually teach and unteach regularly? 
+        - Are there too many TMs squashed into the last 5 splits? (they're long, but still)
+    
+    I do think I feel much more confident overall with my proposed layout than my current layout, especially for the move tutors. 
+
+    If I do this rework there'd be a few more trainers to add. 
+
+        Cheren Split: 
+
+        Struggle Bug Gateekeeper: 
+            Metapod / Kakuna / Surskit
+
 
 
 Move Change Ideation: 
@@ -34,10 +121,8 @@ Move Change Ideation:
         - GRASS KNOT becomes a trapping move. It still deals damage based on weight but deals max damage on a target switching out.
         - LOW KICK becomes a trapping move. It still deals damage based on weight but deals max damage on a target switching out.
         - ROLLING KICK becomes a 90 BP Fighting move with a 30% chance to flinch. This becomes excellent for Hariyama. 
-        - NUZZLE is kinda bad. I give out 65 BP spark so early now. It made more sense back when spark was 85 BP but we want zing zap now. I think it's time to bring it back to being guaranteed paralysis. 
         - NIGHT DAZE is so strong I hesitate to give it to anyone basically. 
     - Move Revival: 
-        - SMACK DOWN
         - SACRED FIRE
             - A powerful physical fire move with a scary secondary effect is neat. 
             - It would overlap a bit with our Blaze Kick tho. 
@@ -68,21 +153,10 @@ Move Change Ideation:
         - VICTORY DANCE: I just feel bad putting this on any mon. It doesn't feel earned whatsoever. It feels artificial in its construction. 
         - BESTOW: I've been using this as a blank space but I can absolutely just zero out handler fields. 
         - BITTER MALICE: This one is really disappointing. To be honest, I might just move seething cold effect to this. An ice-type hex seems so promising but i never keep it on anything. Maybe instead it should become 75 BP ghost move that lowers spA? What's the animation even right now. 
-        - NUZZLE: This needs to be reverted to vanilla functionality ASAP. With spark around it serves no point. 
-        - DARK VOID: So strong it's scary to give to Pokemon, obviously. 
 
 Items: 
     Items: 
-        There are a few missing items right now, like Metronome. 
-        There are also a lot of items that I'm not sure I will ever actuallly use much, like the Attack Insurance. 
-        It feels crazy impactful but also like... i think i need to see how pp stalllable the game really is. 
-        If it isn't very pp stallable then just... replace it with something more interesting. 
-    Quick Powder: 
-        One idea i had for this that's kinda stupid is that it raises your speed by 1. 
-        It can break a speed tie but not much else. Obviously super good for ditto. 
-    Fling: 
-        Its a move thats kinda underutilized outside of fling flame orb. 
-        Buyable rare bones might make a difference.
+        The nugget duo instead reward a Rare Bone in Desert Resort.
     Light Clay: 
         I think I want to go forward with my idea for Light Clay where it increases the duration of the following moves by 10 turns: 
             - Safeguard / Mist
@@ -90,308 +164,102 @@ Items:
             - Reflect 
             - Gravity 
             - Lucky Chant 
-    TMs: 
-        We need to take stock of our TM distribution breakdown and think about any adjustments we want to make.
-
-
-Stray Balance Thoughts: 
-    Zoroark 
-        definitely needs to be juiced. It's one of the most iconic pokemon, and it should be better than Lucario 
-        We are also undercutting its strongest tech.
-        Right now it's almost like a side grade to liepard. 
-
-        Dark/Ghost could be one way of buffing it, although makes it hideously strong. 
-    Seviper:
-        Having 3 strong offensive abilities might be a bit much. 
-        I feel the least attached to strong jaw. I like Infiltrator the most. 
-        Maybe Rivalry could be a useful ability for it. Rivalry wouuld give it bulk to switch in on poison and dark types much more easily.
-        Alternatively we could keep it strong jaw but make it pure poison and lean entirely into atk? 
-        I feel like special attack is super neglected on this mon despite it's cool special movepool. 
-        Hyper Cutter is also cool; it has all the moves it needs to abuse it: Slash, Night Slash, Cross Poison, 
-        Not having an attack boost as strong as strong jaw would mean we could give it 120 atk. 
-        Strong Jaw is also a bit oversatured right now. We have 
-            Mightyena, Carnivine, Sharpedo, Krookadile, Manectric, Girafirig, Seviper, Huntail. 
-
-            Walrein could be cool wtih strong jaw instead of guts tbh. 
-        Cool Ability Ideas: 
-            Hyper Cutter 
-            Rivalry
-        If we get rid of strong jaw, another poison type should have it though. 
-        Oh also there should probably be a strong jaw bug type. Durant could actually work tbh. I like that over Swarm tbh 
-        Bibarel would actually make a great crunch mon
-
-
- 
 
 
 
 
 
+[ JOIN AVENUE GAUNTLET TRAINER REWORK ]
+    [ COSPLAYER CASSIE ] (themed on Plush)
+        Buneary @ Brightpowder (Ability: Hustle) (Hi Jump Kick, Retalate, Shadow Punch)
+        Whimsicott 
+        Jumpluff 
+        Banette 
+        Flareon 
 
-[ TRAINERS ]
-
-    CHEREN SPLIT: 
-
-        Youngster Terrell: 
-            Pidove (to level 8, give it a bad nature like modest)
-        
-        Youngster Pety: 
-            Teddiursa (Stomp -> Mud Shot)
-        
-        Rival Tepig: 
-            Corphish (Double Hit -> Headbutt)
-        
-        Rival Oshawott: 
-            Doduo (Assurance -> Low Kick)
-            Growlithe (Work Up -> Safeguard)
-        
-        Pkm Trainer Alice: 
-            Ponyta (Fix Ability to Run Away 1)
-            Mareep (Make sure second headbutt replaced with Cotton Spore)\
-        
-        Lass Molly: 
-            Cleffa (Draining Kiss -> Magical Leaf, Lovely Kiss -> Flame Burst)
-            Fix Ability for Budew on the Mastersheet 
-            
-        Janitor Orville: 
-            Scraggy (Assurance -> Pursuit)
-            Grimer (Brutal Swing -> Secret Power)
-
-        Youngster kenny 
-            Fix ability for Oddish on the mastershet 
-        
-        Rival Benga: 
-            Larvesta (Electroweb -> Headbutt) 
-            Gible (Secret Power -> Bite)
-        
-        Alder School Kids: 
-            Sync up natures between all these fights
-
-            Alder School Kid Grass: 
-                Lileep (Storm Drain -> Patient)
-        
-        School Kid Keston: 
-            Shuppet (give it a -spa nature)
-
-
-        
-    BURGH SPLIT:
-
-        Doubles Plasma Grunt: 
-            Arbok: 
-                Poison Tail -> Sludge Bomb 
-        
-        Pokefan Norbert: 
-            Furret: Brutal Swing -> Knock Off 
-        
-        Worker Zack: 
-            Haunter: Hex -> Shadow Claw 
-        
-        Plasma Grunt:  
-            Fearow: Brutal Swing -> Assurance 
-        
-        Worker Scott: 
-            Zweilous (Brutal Swing -> Dark Pulse)
-        
-        Backpacker Kendall 
-            Croconaw -> Hippopotas (Ability: Strong Jaw) (Drill Run, Fire Fang, Yawn, Protect)
-
-        Surge: 
-            Krookadile (Crunch -> Thrash )
-        
-        Worker Scott: 
-            Zweilous -> Roseli Berry 
-        
-        Clerk Clemens: 
-            Boldore: (Eviolite -> Scope Lens) (Power Gem, Flame Burst, Scorching Sands, Solarbeam)
-
-        Rhydon -> Rhyhorn (Eviolite)
-            Lunge, Rock Slide, Drill Run, 
     
-    ELESA SPLIT:
+    [ COSPLAYER JARED ] (themed on Mechacop)
 
+    (New fight for a Waitress?)
 
-        New Trainer: 
-       665 Backpacker Clara (Rewards Eviolite)
-            Bonsly @ Eviolite (Ability: Prankster) (Stone Edge, Thunder Wave, Seed Bomb, Sand Attack )
-            Anorith @ Eviolite (Ability: Water Absorb) (Twineedle, Rock Slide, Razor Shell, Cross Poison)
-            Archen @ Eviolite (Ability: Quick Feet) (Rock Slide, Dual Wingbeat, Heat Wave, Pursuit)
-            Rhyhorn @ Eviolite (Ability: Solid Rock) (Rock Climb, Drill Run, Lunge, Swords Dance)
+    [ WAITRESS MOIRA ]
+        Psyduck @ Eviolite (Ability: Berserk) (Hydro Pump, Psychic, Agility, Endure) 
+        Frillish @ Petaya Berry (Ability: Gourmand) (Stockpile, Ominous Wind, Scald, Recover)
+        Torkoal 
 
-        Update Backapcker Walt 
-            Crustle -> Anorith @ Eviolite (Ability: Water Absorb) (Twineedle, Stone Edge, Crabhammer, Spikes)
-            Dugtrio (Arena Trap) (Bulldoze, Rock Blast, Night Slash, Quick Attack)
-        
-        Benga: 
-            Bouffalant:
-                Ability: Sap Sipper
-                Temper Flare -> Horn Leech
-            
-            Druddigon 
-                Fire Punch -> Thunder Punch 
-                Poison Jab -> Heavy Slam 
-        
-        Ranger Anja: 
-            Sudowoodo -> Sawsbuck-Summer @ Rawst Berry (Ability: Sap Sipper) (Rock Climb, Seed Bomb, Jump Kick, Return)
-        
-        Psychic Future: 
-            Lucario (Dark Pulse -> Extrasensory)
-            Lunatone (Ominous Wind, Ancient Power, Psychic Noise, Recover)
-        
-        Baker Jenn 
-            Simisear @ Petaya Berry (Seed Binb -> Spit Up)
-            Tropius (fix ability to chlorophyll) (Giga Drain -> Leaf Tornado)
-            Rotom-Heat (Leaf Tornado -> Thunder Wave)
-        
-
-        Backpacker Walt 
-            Dugtrio (Arena Trap) (Dig, Rock Blast, Night Slash, Quick Attack)
-        
-        Roughneck Sylvester: 
-            Garbodor -> Trubbish (Level 1) @ Focus Sash (Ability: Aftermath) (Toxic Spikes, Endeavor, Spikes, Baneful Bunker)
-            Cloyster -> Croconaw @ Eviolite (Ability: Sheer Force) (Liquidation, Dragon Claw, Ice Punch, Dragon Dance) 
-            Scrafty (Rock Climb -> Pursuit, Crunch -> Beat Up)
-            Clefairy (Cosmic Power, Moonlight, Fairy Wind, Ominous Wind)
-
-        Cyclist Krissa 
-            Linoone (Ability: Speed Boost) (Crush Claw, Fury Swipes, Baton Pass, Protect)
-            Umbreon (Ability: Patient) (Block, Baton Pass, Foul Play, Moonlight)
-            Voltorb @ Eviolite (Ability: Reckless) (Volt Tackle, Flash Cannon, Double-Edge, Swagger)
-            Sawsbuck-Winter (Ability: Fur Coat) (Icicle Crash, Drill Run, Leaf Storm, Double-Edge)
-
-        Cyclist Hector 
-            Mightyena (Ability: Strong Jaw) (Thunder Fang, Fire Fang, Ice Fang, Parting Shot)
-            Espeon (Ability: Magic Bounce) (Force Palm, Psybeam, Magical Leaf, Protect)
-            Combusken @ Eviolite (Ability: Quick Feet) (Facade, Blaze Kick, Acrobatics, Sky Uppercut)        
-            Sawsbuck-Autumn (Ability: Shed Skin) (Leaf Storm, Phantom Strike, Stomping Tantrum, Sleep Powder)
-
-        Backpacker Tami: 
-            Yamask: 
-                Earth Power -> Sand Tomb 
-
-    CLAY SPLIT: 
-        Worker Tyler  
-            Stoutland (Ability: Slush Rush -> Fluffy) (Return, Ice Fang, Submission, Toxic)
-            Glalie -> Hippowdon @ Lum Berry (Ability: Thick Fat) (Bulldoze, Avalanche, Psychic Fangs, Spikes)
-
-        Janine: 
-            Drapion: 
-                Power Whip -> Needle Arm 
-            Samurott -> Lucario 
-
-        Rood:
-            Dusknoir:
-                Fire Punch -> Protect 
-        
-        Motorcyclist Duke:
-            Charmeleon: 
-                Blast Burn -> Flare Blitz
-            Scrafty: 
-                Payback -> Assurance 
-            
-        Worker Pasqual: 
-            Lunatone @ Power Herb (Ability: Levitate) (Psychic, Mystical Fire, Meteor Beam, Ice Beam)
-            Sudowoodo @ Babiri Berry (Ability: Determined) (Rock Wrecker, Wood Hammer, Play Rough, Block)
-
-            
-    SKYLA SPLIT
-        Psychic Tully
-            Wormadam-Sandy -> Absol @ Iron Ball (Ability: Forewarn) (Dark Pulse, Moonblast, Ice Beam, Future Sight)
-        
-        Backpacker Alexander 
-            Hippowdon -> Wormadam-Sandy @ Scope Lens (Ability: Adaptability) (Earthquake, Leech Life, Weather Crash, Defend Order)
-        
-        Hiker Otto 
-            +Cranidos @ Choice Scarf (Ability: Determined) (Head Smash, Outrage)
-        
-        Hiker Jebediah 
-            +Voltorb @ Life Orb (Ability: Reckless) (Volt Tackle, Head Charge, Flash Cannon, Protect)
-
-        Socialite Grace: 
-            Chimecho @ Blunder Policy (Ability: Levitate) (Alluring Voice, Inferno, Hypnosis, Thunder)
-
-        Pilot Ewing: 
-            Lunatone @ Weakness Policy (Ancient Power, Moonblast, Stored Power, Earth Power)
-        
-        Sabrina: 
-            Hypno: Sludge Wave -> Assist 
-        
-    MARLON SPLIT: 
-        Falkner: 
-            Fearow 
-                Tera Brightpowder -> Tera Plate 
-            
-            Farfetch'd 
-                Work Up -> Tailwind 
-                Hurricane -> Air Slash 
-            
-            Hoothoot -> Delibird @ Micle Berry (Ability: Unburden) (Blizzard, Dynamic Punch, Fairy Wind, Lovely Kiss)
-
-            Farfetch'd 
-                Sacred Sword -> 
-            
-        
-        Leader Blaine: 
-            Rapidash 
-                Flare Blitz -> Blaze Kick 
-            
-            Arcanine:
-                Head Charge -> Double Edge 
-                Blast Burn -> Flare Blitz 
-            
-        Battle Girl Shel: 
-            Sawk: 
-                Giga Impact -> Bind 
-        
-        Virizion: 
-            Whimsictot: 
-                Starburst -> Alluring Voice 
-            
-            Vespiquen:   
-                Assault Vest -> Charti Berry 
-                U-Turn -> Defend Order 
-                Diamond Storm -> Heal Order 
-            
-            Shaymin: 
-                Tera Orb -> Tera Vest 
-                Air Slash -> Zen Headbutt 
-                Calm Mind -> Rollout
-
-  
+        Bayleef @ Eviolite (Ability: Healer) (Trop Kick, Play Rough, Headlong Rush, Sweet Scent)
+        Sudowoodo
+        Miltank @ Sitrus Berry (Ability: Scrappy) (Milk)
     
-    
-    
+    [ COSPLAYER AMY ] (themed on alien queen)
+        Clefable 
+        Solrock 
+        Starmie 
+
+        Staryu 
+        Beheeyem 
+        Sableye 
+
+
+    [ COSPLAYER ANDERS ] (themed on Brycen-man)
+
+    [ COSPLAYER MIRIAM ] (themed on evil queen) 
+        Gengar @ Spell Tag (Ability: Neutralizing Gas) (Hex, Venoshock, Destiny Bond, Will-o-Wisp)
+        or 
+        Haunter @ Eviolite (Ability: Neutralizing Gas) (Shadow Ball, Smog, Destiny Bond, Force Palm)
+        Masquerain @ Fairy Gem (Ability: Intimidate) (Water Pulse, Signal Beam, Dazzling Gleam, Quiver Dance)
+        Gothorita @ Eviolite (Ability: Shadow Tag) (Psychic, Dark Pulse, Aura Sphere, Thunderbolt)
+        Mismagius @ Sitrus Berry (Ability: Levitate) (Dazzling Gleam, Grudge, Mystical Fire, Power Gem)
+
     
    
-
-   
-
-
-[ ITEMS ]
-
-    Training Weights: 
-        Lowers all the pokemon's stats by one stage on switch in. 
-
-        Could be cool for fights against Misty (maybe a training weight Starmie?)
-        Perfect for Alder's Fight in Undella Town 
-    
-    TMs: 
-        Right now 
 
 
 [ MOVES ]
+
+    Roar Distribution: 
+        Vulpix / Ninetales
+        Snubbul / Granbull 
+        Poochyena / Mightyena
+        Aron / Lairon / Aggron 
+        Electrike / Manectric 
+        Shinx / Luxio / Luxray 
+        Lillipup / herdier / Stoutland 
+
+    Confirm Phantom Strike is single target. 
+
+    Update Phantom Strike Description: 
+    The user attacks by possessing the\ntarget, thrashing their body around\nviolently. It may confuse the target.
+
+    Update Dizzy Punch Description: 
+    The target is hit with rhythmically\nlaunched punches that may also leave it\nconfused. This attack cannot miss.
+
+    Water Pulse Description 
+    The user attacks the target with a pulsing blast of water. It may confuse the target and can't miss.
+
+    Fire Spin 
+        Dragonite 
+        Flygon 
+        Altaria 
+        Salamence 
+        Skuntank 
+
+    Whirlpool  
+        Nidoking / Nidoqueen 
+        Lickilicky 
+        Rhyperior 
+        Kangaskhan 
+        Tauros 
+        Snorlax 
+        Dragonite 
+        Furret
     
     Relic Song: 
-        Remove the Sacred Sword Handler From it 
-
-    SNORE: 
-        Raise it to 90 BP. 
-        Look intro distribution. 
+        Now 105 BP 
     
     TEST SLEEP TALK 
         - I don't care if it works while awake. 
         - That could still be funny for prankster mons 
-
 
     Prune Availability By Level:
         There's a lot of moves that are high value and a bit oversaturated on enemy sets. We should prune these. 
@@ -467,31 +335,6 @@ Stray Balance Thoughts:
         Ninjask / Shedinja 
         Seviper 
 
-
-
-
-
-
-
-
-
-Cool Eviolite Pokemon: 
-    Elesa Split: 
-        Tyrogue 
-        Quilava
-        Combusken 
-        Krokorok
-
-    Clay Split: 
-        Pidgeotto (No Guard) (Hurricane, Thunder, Blizzard, Fire Blast)
-        Gligar 
-        Pignite 
-        Dewott 
-
-
-Marine Tube: 
-    - Try and add a PC inside marine tube. Doesn't matter if its' gamey, it's just good QoL. Use a porygon I guess. 
-    - Add a short scripted event for trying to enter the Martine Tube where the Janitor tries to turn you away, then notices you match the description he was given, then lets you pass shiftily. 
 
 
 [ NEW UNOWN AND COMBEE FORMS ]
@@ -646,13 +489,10 @@ Marine Tube:
 
 
 
+====================================================================================================================================================
+/*   BATTLES   */
 
-
-[ AI ]
-    Double check that we implemented the spread move logic for moves. Idk why it wouldn't be in the repo we definitely copied it over. 
-
-
-[ FIGHTS ]
+    [ FIGHTS ]
     Zinzolin First Fight: 
         Zinzolin
             Cryogonal @ Red Card (Ability: Sturdy) (Sheer Cold, Spikes, Self-Destruct, Charge Beam)
@@ -816,9 +656,7 @@ Marine Tube:
             Double Team 
             Acid Armor 
             Smokescreen 
-            Sand Attack (in doubles) 
             Anticipation
-            Snow Cloak / Sand Veil
         Confusion:  
             Supersonic
             Rock Climb 

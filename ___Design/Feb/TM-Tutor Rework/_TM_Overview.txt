@@ -1,0 +1,429 @@
+
+
+
+
+Implementing this change to the Tutors and TMs will involve: 
+    - Editing the TM Table 
+    - Editing the Tutor Tables 
+    - Editing the comptability of tutor/tm moves for all Pokemon. 
+    - Adding up to 4 new trainers. 
+
+The Main questions I have to answer regarding the TMs is: 
+    - Are there any TMs i value less than a potential Payback or Beat Up TM. 
+    - How should low accuracy TMs be handled (personally i like removing compatibility for the mons that abuse it like no guard mons)
+
+*---------------------------------------------------------------------------------------------------------------------------------*
+|                                           TECHNICAL MACHINE (TM) CHANGES                                                        |
+*-----*------------------*------------------*-------------------------------------------------------------------------------------*
+|  #  |   CURRENT MOVE   |     NEW MOVE     |                                      REASONING                                      |
+*-----*------------------*------------------*-------------------------------------------------------------------------------------*
+|   1 |  Psychic Fangs   |   Zen Headbutt   |   Less of an important functionality; screens breaking is tutor territory           |
+|   5 |  Knock Off       |   Dark Pulse     |   Knock Off should be limited to tutoring or level up                               |
+|  43 |  Heat Wave       |   Dragon Pulse   |   Too good for a TM. Just make it an earlier tutor move                             |
+|  49 |  Snore           |   Struggle Bug   |   I just haven't used this a single time. It's more of a niche early utility IMO    |
+|  70 |  Diamond Storm   |   Iron Tail      |   Just feels unnecessary, and it's a really good move                               |
+|  76 |  Safeguard       |   Selfdestruct   |   Too strong, only for post-game. If we have other ideas, use them                  |
+|  79 |  Hyper Beam      |   Explosion      |   Too strong, only for post-game. If we have other ideas, use them                  |
+|  88 |  Muddy Water     |   Aqua Tail      |   Same logic as Heat Wave.                                                          |
+|  89 |  U-Turn          |   Sparkle        |   It works great as a tutor move. Unneeded                                          |
+|  90 |  Draining Kiss   |   Low Kick       |   Feels a bit superfluous with Dazzling Gleam                                       |
+|  95 |  Giga Impact     |   Torment        |   See Hyper Beam                                                                    |
+*-----*------------------*------------------*-------------------------------------------------------------------------------------*
+
+
+*------------------------------------------------------------------------------------------------------------------------------------*
+|                                              GREEN SHARD TUTOR CHANGES                                                             |
+*--------*------------------*------------------*-------------------------------------------------------------------------------------*
+|  Cost  |   CURRENT MOVE   |     NEW MOVE     |                                      REASONING                                      |
+*--------*------------------*------------------*-------------------------------------------------------------------------------------*
+|      2 |  Screech         |   Screech        |                                                                                     |
+|      2 |  Fake Tears      |   Fake Tears     |                                                                                     |
+|      3 |  Sparkle         |   Seismic Toss   |                                                                                     |
+|      4 |  Chilling Water  |   Chilling Water |                                                                                     |
+|      4 |  Incinerate      |   Incinerate     |                                                                                     |
+|      5 |  Uproar          |   Snore          |                                                                                     |
+|      4 |  Breaking Swipe  |   Breaking Swipe |                                                                                     |
+|      5 |  Take Down       |   Take Down      |                                                                                     |
+|      4 |  Defog           |   Defog          |                                                                                     |
+|      6 |  Electroweb      |   Electroweb     |                                                                                     |
+|      6 |  Icy Wind        |   Icy Wind       |                                                                                     |
+|      6 |  Low Sweep       |   Low Kick       |                                                                                     |
+|      4 |  Snarl           |   Snarl          |                                                                                     |
+|      8 |  Struggle Bug    |   Endeavor       |                                                                                     |
+|     10 |  Natural Gift    |   Natural Gift   |                                                                                     |
+*--------*------------------*------------------*-------------------------------------------------------------------------------------*
+
+*------------------------------------------------------------------------------------------------------------------------------------*
+|                                               RED SHARD TUTOR CHANGES                                                              |
+*--------*------------------*------------------*-------------------------------------------------------------------------------------*
+|  Cost  |   CURRENT MOVE   |     NEW MOVE     |                                      REASONING                                      |
+*--------*------------------*------------------*-------------------------------------------------------------------------------------*
+|      2 |  Seed Bomb       |   Seed Bomb      |                                                                                     |
+|      2 |  Iron Head       |   Counter        |                                                                                     |
+| 2 -> 4 |  Fire Punch      |   Fire Punch     |                                                                                     |
+| 2 -> 4 |  Ice Punch       |   Ice Punch      |                                                                                     |
+| 2 -> 4 |  Thunder Punch   |   Thunder Punch  |                                                                                     |
+|      4 |  Drill Run       |   Drill Run      |                                                                                     |
+|      4 |  Bounce          |   Bounce         |                                                                                     |
+|      4 |  Signal Beam     |   Signal Beam    |                                                                                     |
+|      6 |  Seething Cold   |   Seething Cold  |                                                                                     |
+|      6 |  Psychic Noise   |   Safeguard      |                                                                                     |
+|      6 |  Torment         |   Foul Play      |                                                                                     |
+|      8 |  Low Kick        |   Focus Punch    |                                                                                     |
+|      8 |  Cross Poison    |   Cross Poison   |                                                                                     |
+|      8 |  Skill Swap      |   Skill Swap     |                                                                                     |
+|     10 |  U-Turn          |   U-Turn         |                                                                                     |
+*--------*------------------*------------------*-------------------------------------------------------------------------------------*
+
+*------------------------------------------------------------------------------------------------------------------------------------*
+|                                               BLUE SHARD TUTOR CHANGES                                                             |
+*--------*------------------*------------------*-------------------------------------------------------------------------------------*
+|  Cost  |   CURRENT MOVE   |     NEW MOVE     |                                      REASONING                                      |
+*--------*------------------*------------------*-------------------------------------------------------------------------------------*
+|      2 |  Explosion       |   Bind           |  Explosion should not be a tutor move given the high cost                           |
+|      2 |  Selfdestruct    |   Sweet Scent    |  See above                                                                          |
+|      2 |  Magic Coat      |   Roost          |  A super niche mediocre move tbh                                                    |
+|      4 |  Zen Headbutt    |   Psyblade       |  Way too weak to be this expensive                                                  |
+|      4 |  Iron Tail       |   Heat Wave      |  Doesn't work on too many mons                                                      |
+|      4 |  Aqua Tail       |   Muddy Water    |  Doesn't work on too many mons                                                      |
+|      6 |  Barrier         |   Barrier        |                                                                                     |
+|      6 |  Defense Curl    |   Defense Curl   |                                                                                     |
+|      6 |  Sweet Scent     |   Knock Off      |  Not sure it's competitive with the other moves tbh                                 |
+|      6 |  Gastro Acid     |   Gastro Acid    |                                                                                     |
+|      6 |  Earth Power     |   Earth Power    |  Would probably work better as a TM                                                 |
+|      8 |  Psyblade        |   Helping Hand   |  Not worth the cost as well                                                         |
+|      8 |  Foul Play       |   Double-Edge    |  Should be much cheaper IMO                                                         |
+|      8 |  Focus Punch     |   Body Press     |  Too expensive                                                                      |
+|     10 |  Protect         |   Protect        |                                                                                     |
+|     10 |  Follow Me       |   Follow Me      |                                                                                     |
+|      8 |  Gravity         |   Gravity        |                                                                                     |
+*--------*------------------*------------------*-------------------------------------------------------------------------------------*
+
+*------------------------------------------------------------------------------------------------------------------------------------*
+|                                              YELLOW SHARD TUTOR CHANGES                                                            |
+*--------*------------------*------------------*-------------------------------------------------------------------------------------*
+|  Cost  |   CURRENT MOVE   |     NEW MOVE     |                                      REASONING                                      |
+*--------*------------------*------------------*-------------------------------------------------------------------------------------*
+|      2 |  Double-Edge     |   Last Resort    |  Way too expensive for what it is                                                   |
+|      2 |  Heal Pulse      |   Heavy Slam     |                                                                                     |
+|      4 |  Healing Wish    |   Healing Wish   |                                                                                     |
+|      4 |  Lucky Chant     |   Lucky Chant    |                                                                                     |
+|      6 |  Synthesis       |   Worry Seed     |                                                                                     |
+|      6 |  Roost           |   Brutal Swing   |                                                                                     |
+|      8 |  Head Smash      |   Head Smash     |                                                                                     |
+|      8 |  Helping Hand    |   Trick Room     |                                                                                     |
+|     10 |  Restr           |   Rest           |                                                                                     |
+|     10 |  Toxic           |   Toxic          |                                                                                     |
+|     10 |  Outrage         |   Outrage        |                                                                                     |
+|     10 |  Overheat        |   Overheat       |                                                                                     |
+|     10 |  Superpower      |   Superpower     |                                                                                     |
+*--------*------------------*------------------*-------------------------------------------------------------------------------------*
+
+
+
+*--------------------------------------------------------------------------------------------------------------------------------------*
+|                                                            SHARD ACQUISITION                                                         |
+*--------*-----------*-----------*-----------*-----------*-----------*------------*------------*-------------*------------*------------*
+|  Type  |  Cheren   |   Roxie   |   Burgh   |   Elesa   |    Clay   |    Skyla   |   Marlon   |   Drayden   |   Kyurem   |   League   | 
+*--------*-----------*-----------*-----------*-----------*-----------*------------*------------*-------------*------------*------------*
+|  Green | +20 (20)  |  +15 (35) |  +15 (50) | +15 (65)  | +0 (65)   |  +15 (80)  |  +15 (95)  |             |            |            |
+|    Red |           |           |  +20 (20) | +20 (40)  | +10 (50)  |  +15 (65)  |  +15 (80)  |             |            |            |
+|   Blue |           |           |           |           | +28 (28)  |  +9 (37)   |  +20 (57)  |             |            |            |
+| Yellow |           |           |           |           |           |            |   +5 (5)   |             |            |            |
+*--------*-----------*-----------*-----------*-----------*-----------*------------*------------*-------------*------------*------------*
+We definitely need to cut down on the number of blue shards and probably a bit on the # of Red Shards. 
+
+
+[ TM DISTRIBUTION ]
+    
+    List of TMs with Changes:
+        TM01: Psychic Fangs -> Zen Headbutt
+        TM02: Dragon Claw (update the tm description)
+        TM03: Psyshock 
+        TM04: Shock Wave 
+        TM05: Knock Off -> Dark Pulse 
+        TM06: Magical Leaf 
+        TM07: Drain Punch 
+        TM08: Dizzy Punch (update the move description to include confusion)
+        TM09: Venoshock 
+        TM10: Hidden Power 
+        TM11: Air Slash 
+        TM12: Taunt 
+        TM13: Ice Beam 
+        TM14: Blizzard 
+        TM15: Psycho Cut 
+        TM16: Light Screen 
+        TM17: Hidden Force 
+        TM18: Scorching Sands 
+        TM19: Giga Drain
+        TM20: Hyper Voice 
+        TM21: Aurora Beam 
+        TM22: Solarbeam 
+        TM23: Weather Crash 
+        TM24: Thunderbolt 
+        TM25: Thunder 
+        TM26: Earthquake 
+        TM27: Return 
+        TM28: Dig 
+        TM29: Psychic 
+        TM30: Shadow Ball 
+        TM31: Brick Break 
+        TM32: Dazzling Gleam 
+        TM33: Reflect 
+        TM34: Sludge Wave 
+        TM35: Flamethrower
+        TM36: Sludge Bomb 
+        TM37: Hex 
+        TM38: Fire Blast
+        TM39: Rock Tomb 
+        TM40: Aerial Ace 
+        TM41: Infestation 
+        TM42: Facade 
+        TM43: Heat Wave -> Dragon pUlse
+        TM44: Power Whip 
+        TM45: Lunge 
+        TM46: Aura Sphere 
+        TM47: Cross Chop 
+        TM48: Mystical Fire 
+        TM49: Snore -> Struggle Bug
+        TM50: Water Pulse 
+        TM51: Ally Switch 
+        TM52: Focus Blast 
+        TM53: Energy Ball 
+        TM54: Dragon Rush 
+        TM55: Scald 
+        TM56: Fling 
+        TM57: Weather Ball 
+        TM58: Hurricane 
+        TM59: Temper Flare 
+        TM60: Wave Crash 
+        TM61: Will-o-Wisp 
+        TM62: Acrobatics 
+        TM63: Slam 
+        TM64: Teleport 
+        TM65: Shadow Claw 
+        TM66: Power Gem 
+        TM67: Secret Power 
+        TM68: Avalanche 
+        TM69: Gunk Shot 
+        TM70: Diamond Storm -> Iron Tail
+        TM71: Stone Edge 
+        TM72: Volt Switch 
+        TM73: Thunder Wave 
+        TM74: Gyro Ball 
+        TM75: Storm Throw 
+        TM76: Safeguard -> Selfdestruct
+        TM77: Bug Buzz 
+        TM78: Bulldoze 
+        TM79: Hyper Beam -> Explosion
+        TM80: Rock Slide 
+        TM81: X-Scissor 
+        TM82: Dragon Tail 
+        TM83: Endure 
+        TM84: Poison Jab 
+        TM85: Play Rough 
+        TM86: Grass Knot 
+        TM87: Rock Climb 
+        TM88: Muddy Water -> Aqua Tail
+        TM89: U-Turn -> Sparkle
+        TM90: Draining Kiss -> Low Sweep
+        TM91: Flash Cannon 
+        TM92: Solar Blade 
+        TM93: Wild Charge 
+        TM94: Rock Smash 
+        TM95: Giga Impact -> Torment
+
+    Cheren: 6 (1 missable)
+    Roxie: 6 (1 missable)
+    Burgh: 7 (1 missable)
+    Elesa: 11 (1 missable)
+    Clay: 9 (3 missable)
+    Skyla: 16 (3 missable)
+    Marlon: 13 (4 missable)
+    Drayden: 15 (12 missable)
+    Kyurem: 10 (3 missable)
+    League: 7 (4 missable)
+
+    Cheren Split: 
+        +20 Green Shards 
+        TM10: Hidden Power 
+        TM17: Hidden Force
+        TM94: Rock Smash 
+        TM67: Secret Power
+
+        Added: 
+            TM49 Struggle Bug (put it behind a new optional trainer: a Bug Catcher!)
+            TM89 Sparkle (put it behind a super easy optional trainer)
+    
+    Roxie Split: 
+        +15 Green Shards 
+
+        TM39 Rock Tomb 
+        TM15 Psycho Cut 
+        TM50 Water Pulse 
+        TM03 Venoshock
+
+        Added: 
+            +TM95 Snarl 
+            +TM90 Low Sweep 
+    
+    Burgh Split: 
+        +15 Green Shards 
+        +20 Red Shards 
+
+        TM65 Shadow Claw 
+        TM37 Hex 
+        TM86 Grass Knot 
+        TM80 Rock Slide 
+        TM04 Shock Wave 
+        TM81 X-Scissor 
+        HM01 Cut 
+
+    Elesa Split: 
+        +15 Green Shards 
+        +20 Red Shards 
+
+        TM06 Magical Leaf 
+        TM78 Bulldoze 
+        TM73 Thunder Wave (now found in the Nimbasa Department Store)
+        TM83 Endure 
+        TM84 Poison Jab 
+        TM66 Power Gem 
+        TM18 Scorching Sands 
+        TM02 Psyshock 
+        TM08 Dizzy Punch 
+
+        Added: 
+            TM95 Torment (replaces Snore as reward for beating backers)
+            TM32 Dazzling Gleam (new reward for beating Elesa)
+        
+        Remove: 
+            TM49 Snore 
+            TM27 Return 
+
+    Clay Split: 
+
+        +28 Blue Shards (Way too many. Replace the blue shards in Clay Tunnel with a Timid Mint) (Lower the # of shards given from the optionals to x5 )
+        +10 Red Shard 
+
+        TM19 Giga Drain 
+        TM40 Aerial Ace 
+        TM31 Brick Break 
+        TM55 Scald 
+
+        Added: 
+            TM27 Return (replaces Draining Kiss)
+            TM76 Selfdestruct (new reward for beating Clay)
+            TM79 Explosion (new reward for beating Clay)
+            TM68 Avalanche (reward for defeating Tyler)
+            TM48 Mystical Fire (reward for defeating Herman)
+        
+        Removed: 
+            TM90 Draining Kiss 
+            HM04 Strength 
+    
+    Skyla Split: 
+        +15 green shards 
+        +15 red shards 
+        +9 blue shards 
+
+        TM91 Flash Cannon 
+        TM28 Dig 
+        TM64 Teleport 
+        TM77 Bug Buzz 
+        TM11 Air Slash 
+        TM07 Drain Punch 
+        TM36 Sludge Bomb 
+        TM33 Reflect 
+        TM59 Temper Flare 
+        TM16 Light Screen 
+        TM29 Psychic 
+        TM30 Shadow Ball 
+        TM72 Volt Switch  
+        TM21 Aurora Beam 
+
+        Added: 
+            TM62 Acrobatics (new Skyla reward)
+            TM01 Zen Headbutt (replaces Mystical Fire)
+            TM20 Hyper Voice (new reward for defeating the Twins)
+        
+        Removed: 
+            HM02 Fly 
+            TM32 Dazzling Gleam (removed from Twins)
+
+    Marlon Split:
+        TM02 Dragon Claw 
+        TM61 Will-o-Wisp 
+        TM35 Flamethrower 
+        TM45 Lunge 
+        TM53 Energy Ball 
+        TM24 Thunderbolt 
+        HM04 Dive
+
+        Added: 
+            HM05 Surf (given at the start of route 14)
+            HM03 Strength (new Alder reward)
+            HM02 Fly (new Falkner Reward)
+            TM05 Dark Pulse (added to Strange House)
+            TM43 Dragon Pulse (added somewhere to reversal mountain)
+            TM71 Stone Edge (added somewhere to Reversal Mountain)
+            
+        Removed: 
+            TM62 Acrobatics (no longer the Falkner reward)
+        
+    Drayden Split: 
+        TM63 Slam 
+        TM51 Ally Switch 
+        TM85 Play Rough 
+        TM87 Rock Climb 
+        TM93 Wild Charge 
+        TM22 Solarbeam 
+        TM92 Solar Blade
+        TM23 Weather Crash 
+        TM57 Weather Ball
+        TM82 Dragon Tail 
+        TM74 Gyro Ball 
+        TM26 Earthquake
+
+        SM9 Shop: 
+            Blizzard 
+            Thunder 
+            Fire Blast 
+        
+        Added:
+            TM75 Storm Throw (Plasma Frigate Optional)
+            TM46 Aura Sphere (replaces Cross Chop as Maylene reward)
+            TM13 Ice Beam (new reward for Candice )
+        
+        Removed: 
+            TM47 Cross Chop
+            TM20 Hyper Voice (removed from rewards for Whitney)
+            TM68 Avalanche 
+    
+    Kyurem Split:
+        TM60 Wave Crash
+        TM58 Hurricane
+        TM41 Infestation (Plasma Frigate Optional)
+        TM12 Taunt (Plasma Frigate Optional)
+        TM56 Fling 
+
+    League Split: 
+        TM44 Power Whip 
+        TM42 Facade 
+        TM34 Sludge Wave 
+        TM69 Gunk Shot
+
+    Leftovers: 
+        TM54 Dragon Rush 
+        TM47 Cross Chop 
+        TM70 Iron Tail
+        TM88 Aqua Tail
+
+    TMs that might be cool to add: 
+        TMXX Dream Eater 
+        TMXX Payback 
+        TMXX Beat Up 
+        TMXX Assurance 
+        TMXX Roar 
+
+

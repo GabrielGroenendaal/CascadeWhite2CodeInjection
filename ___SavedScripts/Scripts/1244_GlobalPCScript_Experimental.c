@@ -295,6 +295,12 @@ label33a: ;
 	goto label35a;
 
 label34a: ;
+
+    // Check for Flight Disabling
+	SetVarFlagStatus(590, 0x8028);
+	Compare(0x8028, 1);
+	if (1) goto label_flightTemporarilyDisabled;
+
 	// Check for Follower
 	SetVarFlagStatus(2406, 0x8028);
 	Compare(0x8028, 1);
@@ -400,6 +406,11 @@ label34a: ;
 	goto label12;
 label_cantFlyHere: ;
 	EventGreyMessage(196, 2);
+	goto label12;
+
+label_flightTemporarilyDisabled: ;
+    // Need to pick a new message
+	EventGreyMessage(254, 2);
 	goto label12;
 
 label35a: ;

@@ -580,8 +580,11 @@ end
 ## Plasma Grunts
 !trm 690/25 Found in Virbank City
 
-!trm 763/25 Found in Route 20 
+!tr 184/25 (DODGEABLE) Spawns in Virbank After defeating the first grunt
 
+!tr 185/25 (DODGEABLE) Spawns in Virbank After defeating the first grunt
+
+!trm 763/25 Found in Route 20 
 
 
 
@@ -932,7 +935,7 @@ ultra ball, Ultra Ball (x10) (found on the Northwesternmost corner of the map)
 red shard, Red Shard (x5) (found by Psychic Perry, on the southern edge of the map)
 red shard, Red Shard (x5) (found by Ranger Anja, in the eastern edge of the map)
 twistedspoon, Twistedspoon (found in the middle of Psychic Tommy's patrol)
-enigma berry, Enigma Berry (x1) (reward for defeating Jaidan)
+rare bone, Rare Bone (x1) (reward for defeating Jaidan)
 eviolite, x1 Eviolite (reward for defeating Backpacker Clara)
 end
 
@@ -941,7 +944,7 @@ end
 !notif FIELD EFFECT, There is a Permanent Sandstorm in Desert Resort Interior, #4e86d4
 
 ### Ranger Jaden (Desert Resort Interior Gatekeeper)
-!tr 666/36 Also rewards an Enigma Berry
+!tr 666/36 Also rewards a Rare Bone
 
 !tr 667/35 (DODGEABLE) Rewards 3x Rawst Berries if defeated. 
 
@@ -1035,7 +1038,7 @@ end
 nevermeltice, NevermeltIce (found by Ferris Wheel)
 ability capsule, Ability Capsule (reward for the Eevee gauntlet)
 casteliacone, Casteliacone (reward for beating Harlequin Luigi)
-weakness policy, Blunder Policy x1 (reward for defeating Harlequin Otto)
+power herb, Power Herb x3 (reward for defeating Harlequin Otto)
 air balloon, Air Balloon x1 (reward for defeating Harlequin Oz)
 end 
 
@@ -1046,7 +1049,7 @@ If you acquire a Fossil, they can be revived into an encounter here.
 ### Nimbasa City Harlequins 
 !tr 125 (DODGEABLE) Rewards 1x Air Balloon if defeated 
 
-!tr 393 (DODGEABLE) Rewards 1x Blunder Policy if defeated 
+!tr 393 (DODGEABLE) Rewards 3x Power Herb
 
 !tr 270 (DODGEABLE) Rewards 1x Casteliacone if defeated 
 
@@ -1280,7 +1283,6 @@ tm grass, TM819 Giga Drain (south of Musician Preston)
 tm fairy, TM90 Draining Kiss (Past Backers Ava and Aya)
 tm fighting, TM31 Brick Break (reward for defeating Duke)
 red shard, x10 Red Shard (past Dancer Brian)
-blue shard, x6 Blue Shard (past Dancer Brian)
 white herb, x2 White Herb (in the Market)
 kasib berry, x1 Trickster Herb (in the market)
 end 
@@ -1376,8 +1378,9 @@ end
 !items Items
 eject button, x3 Eject Button (given by Gym Guide)
 hm fighting, HM04 Strength (reward for defeating Clay)
-blue shard, x6 Blue Shard (reward for defeating Herman)
-blue shard, x6 Blue Shard (reward for defeating Tyler)
+blue shard, x5 Blue Shard (reward for defeating Herman)
+blue shard, x5 Blue Shard (reward for defeating Tyler)
+blue shard, x5 Blue Shard (reward for defeating Gus)
 end
 
 !trm 324/43
@@ -1385,11 +1388,13 @@ end
 !trm 323/43 Left Side 
 !trm 322/43 Right SIde 
 
-!tr 110 (DODGEABLE) (Rewards 6x Blue Shards if defeated. Can only be fought before defeating Clay)
+!tr 110 (DODGEABLE) (Rewards 5x Blue Shards if defeated. Can only be fought before defeating Clay)
 
 !trm 321/43 
 
-!tr 490 (DODGEABLE) (Rewards 6x Blue Shards if defeated. Can only be fought before defeating Clay)
+!tr 490 (DODGEABLE) (Rewards 5x Blue Shards if defeated. Can only be fought before defeating Clay)
+
+!tr 526 (DODGEABLE) (Rewards 5x Blue Shards if defeated. Can only be fought before defeating Clay)
 
 !trm 320/44 
 
@@ -1726,7 +1731,7 @@ weakness policy, x2 Blunder Policies (past Harlequins)
 green shard, x15 Green Shard (defeatin Youngster Nicholas)
 starf berry, x2 Starf Berry (defeat Harlequin Oswald)
 pp max, x2 PPMax (defeat Lass Flo)
-blue shard, x6 Blue Shard (defeat Harlequin Sanders)
+blue shard, x5 Blue Shard (defeat Harlequin Sanders)
 end
 
 !tr 646/50 (DODGEABLE) (Rewards 15x Green Shards)
@@ -1743,7 +1748,7 @@ end
 !tr 275/50 Left Side, Guards Blunder Policies & Doubles Grass
 !tr 276/50 Right Side, Guards Blunder Policies & Doubles Grass
 
-!tr 627/50 (DODGEABLE) (Rewards 6x Blue Shards)
+!tr 627/50 (DODGEABLE) (Rewards 5x Blue Shards)
 
 !tr 274/51 Guards TM32 Dazzling Gleam and Heart Scale 
 

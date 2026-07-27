@@ -96,6 +96,7 @@ public class MainEvents {
 		Trainer.FlagGet(325);
 		Trainer.FlagGet(490);
 		Trainer.FlagGet(110);
+		Trainer.FlagGet(526);
 
 		EventFlags.Set(2418);
 		ActionSequence_073c(7);

@@ -422,11 +422,11 @@ void Routine1()
 	StackPushConst(2);
 	StackCompare(1);
 	if (255) goto label32;
-	StartTrainerBattle(164, 0, 0);
+	StartTrainerBattle(157, 0, 0);
 	goto label33;
 
 label32: ;
-	StartTrainerBattle(164, 0, 0);
+	StartTrainerBattle(157, 0, 0);
 
 label33: ;
 	SetVarEqVal(0x8024, 0);

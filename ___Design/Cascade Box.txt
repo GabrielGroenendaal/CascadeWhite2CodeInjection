@@ -1,53 +1,5 @@
-Ozaiquil (Quilava) (M) @ Oran Berry
-Level: 23
-Adamant Nature
-Ability: Flash Fire
-EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-IVs: 18 HP / 18 Atk / 24 Def / 12 SpA / 31 SpD / 17 Spe
-- Quick Attack
-- Dig
-- Bulldoze
-- Spider Web
-Met: undefined
-
-Kaay (Servine) (M) @ Eviolite
-Level: 23
-Gentle Nature
-Ability: Adaptability
-EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-IVs: 30 HP / 21 Atk / 10 Def / 30 SpA / 11 SpD / 31 Spe
-- Leaf Tornado
-- Shock Wave
-- Pain Split
-- Icy Wind
-Met: Aspertia City
-
-Cordyceps (Paras) (M) @ None
-Level: 23
-Bold Nature
-Ability: Mummy
-EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-IVs: 22 HP / 12 Atk / 27 Def / 6 SpA / 9 SpD / 23 Spe
-- Night Shade
-- Ingrain
-- Sleep Powder
-- Shadow Sneak
-Met: Route 5
-
-Pucknee (Cottonee) (F) @ Exp. Share
-Level: 23
-Hasty Nature
-Ability: Prankster
-EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-IVs: 14 HP / 15 Atk / 26 Def / 26 SpA / 24 SpD / 9 Spe
-- Cotton Spore
-- Natural Gift
-- Encore
-- Sweet Kiss
-Met: Route 20
-
-Pennywise (Mime Jr.) (M) @ None
-Level: 23
+Pennywise (Mr. Mime) (M) @ None
+Level: 31
 Calm Nature
 Ability: Trace
 EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
@@ -55,47 +7,119 @@ IVs: 23 HP / 29 Atk / 29 Def / 15 SpA / 21 SpD / 31 Spe
 - Fake Out
 - Dizzy Punch
 - Encore
-- Barrier
+- Psycho Cut
 Met: Route 19
 
-Starro (Staryu) @ None
-Level: 23
+blackdeath (Raticate) (M) @ Destiny Knot
+Level: 31
+Adamant Nature
+Ability: Adaptability
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 14 HP / 28 Atk / 12 Def / 20 SpA / 27 SpD / 25 Spe
+- Hyper Fang
+- Fire Fang
+- Ice Fang
+- Sucker Punch
+Met: Castelia Sewers
+
+iagot (Chatot) (M) @ None
+Level: 30
+Lax Nature
+Ability: Soundproof
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Sing
+- Uproar
+- U-turn
+- Chatter
+Met: undefined
+
+Beryl (Gardevoir) (F) @ Eviolite
+Level: 31
 Mild Nature
-Ability: Regenerator
+Ability: Magma Armor
 EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-IVs: 25 HP / 21 Atk / 16 Def / 30 SpA / 30 SpD / 13 Spe
+IVs: 10 HP / 13 Atk / 25 Def / 19 SpA / 28 SpD / 11 Spe
 - Psybeam
-- Brine
-- Harden
-- Reflect Type
-Met: Virbank Gate
+- Sacred Fire
+- Swift
+- Uproar
+Met: Route 19
 
-Underminer (Sandshrew) (M) @ Chesto Berry
-Level: 21
-Lonely Nature
-Ability: Rough Skin
+Cordyceps (Parasect) (M) @ Oran Berry
+Level: 31
+Bold Nature
+Ability: Mummy
 EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-IVs: 5 HP / 5 Atk / 19 Def / 0 SpA / 27 SpD / 10 Spe
-- Bulldoze
-- Gyro Ball
-- Smack Down
-- Defense Curl
-Met: Floccesy Ranch
+IVs: 22 HP / 12 Atk / 27 Def / 6 SpA / 9 SpD / 23 Spe
+- Night Shade
+- Leech Life
+- Sleep Powder
+- Shadow Claw
+Met: Route 5
 
-Pollution (Koffing) (M) @ None
-Level: 22
-Jolly Nature
-Ability: Levitate
+Lucifer (Skitty) (F) @ Exp. Share
+Level: 30
+Careful Nature
+Ability: Hustle
 EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-IVs: 31 HP / 29 Atk / 14 Def / 3 SpA / 27 SpD / 22 Spe
+IVs: 4 HP / 10 Atk / 23 Def / 8 SpA / 12 SpD / 23 Spe
+- Fake Out
+- Sweet Kiss
+- Secret Power
+- Me First
+Met: Accumula Gate
+
+Ozaiquil (Quilava) (M) @ None
+Level: 30
+Adamant Nature
+Ability: Sand Rush
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 18 HP / 18 Atk / 24 Def / 12 SpA / 31 SpD / 17 Spe
+- Quick Attack
+- Endure
+- Synchronoise
 - Spider Web
-- Grudge
-- Sludge
-- Poison Gas
-Met: Virbank Complex
+Met: undefined
+
+Rockita (Hariyama) (M) @ Oran Berry
+Level: 31
+Mild Nature
+Ability: Guts
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 20 HP / 28 Atk / 14 Def / 19 SpA / 16 SpD / 29 Spe
+- Fake Out
+- Stomp
+- Rock Smash
+- Rock Tomb
+Met: Medal Office
+
+Kaay (Servine) (M) @ None
+Level: 30
+Gentle Nature
+Ability: Adaptability
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 30 HP / 21 Atk / 10 Def / 30 SpA / 11 SpD / 31 Spe
+- Leaf Blade
+- Volt Switch
+- Hidden Power
+- Icy Wind
+Met: Aspertia City
+
+Jetne (Marowak) (M) @ Oran Berry
+Level: 30
+Rash Nature
+Ability: Battle Armor
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 8 HP / 27 Atk / 21 Def / 21 SpA / 8 SpD / 11 Spe
+- Counter
+- Fling
+- Bone Club
+- Submission
+Met: Relic Passage
 
 Lustsc (Luvdisc) (F) @ None
-Level: 23
+Level: 28
 Naughty Nature
 Ability: Rivalry
 EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
@@ -106,63 +130,75 @@ IVs: 30 HP / 12 Atk / 23 Def / 0 SpA / 17 SpD / 8 Spe
 - Agility
 Met: Virbank City
 
-Rockita (Makuhita) (M) @ None
-Level: 21
-Mild Nature
-Ability: Sheer Force
-EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-IVs: 20 HP / 28 Atk / 14 Def / 19 SpA / 16 SpD / 29 Spe
-- Fake Out
-- Stomp
-- Arm Thrust
-- Rock Tomb
-Met: Medal Office
-
-Beryl (Kirlia) (F) @ Figy Berry
-Level: 22
-Mild Nature
-Ability: Magma Armor
-EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-IVs: 10 HP / 13 Atk / 25 Def / 19 SpA / 28 SpD / 11 Spe
-- Psybeam
-- Magical Leaf
-- Swift
-- Uproar
-Met: Route 19
-
-Long Feng (Boldore) (M) @ Oran Berry
-Level: 22
+Long Feng (Boldore) (M) @ None
+Level: 28
 Sassy Nature
 Ability: Sturdy
 EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 IVs: 11 HP / 30 Atk / 31 Def / 26 SpA / 16 SpD / 22 Spe
-- Metal Sound
+- Gravity
 - Harden
 - Power Gem
 - Mud Shot
 Met: Pledge Grove
 
-Lucifer (Skitty) (F) @ Oran Berry
-Level: 22
-Careful Nature
-Ability: Hustle
+Morrible (Wormadam-Sandy) (F) @ None
+Level: 32
+Impish Nature
+Ability: Battle Armor
 EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-IVs: 4 HP / 10 Atk / 23 Def / 8 SpA / 12 SpD / 23 Spe
-- Fake Out
-- Double Slap
-- Secret Power
-- Natural Gift
-Met: Accumula Gate
+IVs: 30 HP / 26 Atk / 10 Def / 26 SpA / 8 SpD / 16 Spe
+- Rock Slide
+- Leech Life
+- Bulldoze
+- Counter
+Met: Route 4
 
-Scaryena (Mightyena) (M) @ Oran Berry
-Level: 19
-Quiet Nature
-Ability: Intimidate
+Pollution (Koffing) (M) @ None
+Level: 28
+Jolly Nature
+Ability: Levitate
 EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-IVs: 18 HP / 24 Atk / 24 Def / 8 SpA / 4 SpD / 17 Spe
-- Poison Fang
-- Thrash
-- Leer
-- Bite
-Met: Rock Peak Chamber
+IVs: 31 HP / 29 Atk / 14 Def / 3 SpA / 27 SpD / 22 Spe
+- Spider Web
+- Grudge
+- Smog
+- Poison Gas
+Met: Virbank Complex
+
+Starro (Staryu) @ None
+Level: 29
+Mild Nature
+Ability: Regenerator
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 25 HP / 21 Atk / 16 Def / 30 SpA / 30 SpD / 13 Spe
+- Psybeam
+- Bubble Beam
+- Power Gem
+- Reflect Type
+Met: Virbank Gate
+
+audrey 2 (Gloom) (F) @ Eviolite
+Level: 31
+Brave Nature
+Ability: Rattled
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 20 HP / 26 Atk / 9 Def / 16 SpA / 15 SpD / 4 Spe
+- Acid Spray
+- Sleep Powder
+- Venoshock
+- Double Slap
+Met: Iceberg Chamber
+
+Death (Riolu) (M) @ None
+Level: 30
+Bashful Nature
+Ability: Prankster
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 25 HP / 9 Atk / 31 Def / 31 SpA / 8 SpD / 1 Spe
+- Copycat
+- Vacuum Wave
+- Force Palm
+- Agility
+Met: Pokestar Studios
 

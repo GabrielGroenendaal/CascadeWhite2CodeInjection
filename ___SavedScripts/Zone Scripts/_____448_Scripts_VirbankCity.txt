@@ -390,12 +390,16 @@ public class MainEvents {
 		Actor.Hide(8);
 		Sound.SEWait();
 		EventWorks.Set(16556, 6);
+        // Temporarily disables fast travel
+        EventFlags.Set(590);
 
 		// Despawns Misty and her Pokemon
 		
 		EventFlags.Set(724);
 		EventFlags.Clear(701);
 		EventFlags.Clear(702);
+		Actor.Show(29);
+		Actor.Show(30);
 		EventFlags.Set(2558);
 		EventWorks.Set(16555, 5);
 

@@ -4539,7 +4539,7 @@ void Routine7()
 	
 	// Blue SHards
 	Compare(0x8000, 73);
-	if (1) goto label_reward6;
+	if (1) goto label_reward5;
 
 	// Berry Juice 
 	Compare(0x8000, 43);

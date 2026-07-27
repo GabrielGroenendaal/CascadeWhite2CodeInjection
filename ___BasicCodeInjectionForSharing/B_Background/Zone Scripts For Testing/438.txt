@@ -215,9 +215,21 @@ public class MainEvents {
     // Set the Background ID
     public static void main_9(){
          int testCase;
-
-        testCase = EventWorks.Get(16436);
-        testCase = 1;
+         int v0; 
+         int v6;
+         
+		v0 = PokeParty.GetPkmCount(0);
+		v0 = v0 - 1;
+		v6 = PokeParty.GetParam(v6, 158) - 1;
+        if (v6 == 0) {
+        	testCase = 1;
+        }
+        else {
+        	testCase = 10 * v6;
+        	if (testCase > 63) {
+        		testCase = 1;
+        	}
+        }
         EventWorks.Set(16436, testCase);
         Actor.PauseAll();
         Actor.FacePlayer();

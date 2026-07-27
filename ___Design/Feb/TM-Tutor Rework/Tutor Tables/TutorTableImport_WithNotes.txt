@@ -1,0 +1,90 @@
+
+
+Uproar -> Snore 
+Sparkle -> Seismic Toss 
+Struggle Bug -> Endeavor 
+
+Torment -> Foul Play 
+Iron Head -> Counter 
+Psychic Noise -> Safeguard
+Low Kick -> Focus Punch
+
+Double-Edge -> Last Resort 
+Heal Pulse -> Heavy Slam 
+Synthesis -> Worry Seed 
+Helping Hand -> Trick Room 
+Roost -> Brutal Swing 
+
+Magic Coat -> Roost 
+Foul Play -> Double-Edge 
+Zen Headbutt -> Helping Hand 
+Selfdestruct -> Knock Off 
+Focus Punch -> Body Press 
+Aqua Tail -> Muddy Water 
+Iron Tail -> Heat Wave 
+
+Overlay36 
+offset 5152C
+83 01 00 00 02 00 00 00 00 00 00 00      #0 Double-Edge -> Last Resort
+E4 01 00 00 02 00 00 00 01 00 00 00      #1 Heal Pulse -> Heavy Slam 
+7D 01 00 00 04 00 00 00 03 00 00 00      #3 Lucky Chant
+84 01 00 00 06 00 00 00 04 00 00 00      #4 Synthesis -> Worry Seed
+3B 01 00 00 0A 00 00 00 08 00 00 00      #8 Overheat
+B1 01 00 00 08 00 00 00 07 00 00 00      #7 Helping Hand -> Trick Room
+69 01 00 00 04 00 00 00 02 00 00 00      #2 Healing Wish
+9C 00 00 00 0A 00 00 00 0C 00 00 00      #12 Rest
+C9 01 00 00 08 00 00 00 06 00 00 00      #6 Head Smash
+5C 00 00 00 0A 00 00 00 0B 00 00 00      #11 Toxic 
+C8 00 00 00 0A 00 00 00 09 00 00 00      #9 Outrage
+14 01 00 00 0A 00 00 00 0A 00 00 00      #10 Superpower
+F5 01 00 00 06 00 00 00 05 00 00 00      #5 Roost -> Brutal Swing
+
+71 01 00 00 0A 00 00 00 0E 00 00 00      #14: U-Turn
+92 01 00 00 02 00 00 00 00 00 00 00      #0: Seed Bomb
+1D 01 00 00 08 00 00 00 0D 00 00 00      #13: Skill Swap
+EC 01 00 00 06 00 00 00 0A 00 00 00      #10: Torment -> Foul Play
+44 01 00 00 04 00 00 00 07 00 00 00      #7: Signal Beam
+44 00 00 00 02 00 00 00 01 00 00 00      #1: Iron Head -> Counter
+DB 00 00 00 06 00 00 00 09 00 00 00      #9: Psychic Noise -> Safeguard
+11 02 00 00 04 00 00 00 05 00 00 00      #5: Drill Run
+54 01 00 00 04 00 00 00 06 00 00 00      #6: Bounce
+08 01 00 00 08 00 00 00 0B 00 00 00      #11 Low Kick -> Focus Punch
+B8 01 00 00 08 00 00 00 0C 00 00 00      #12: Cross Poison
+DC 00 00 00 06 00 00 00 08 00 00 00      #8: Seething Cold
+09 00 00 00 04 00 00 00 02 00 00 00      #2: Thunderpunch
+07 00 00 00 04 00 00 00 03 00 00 00      #3: Fire Punch
+08 00 00 00 04 00 00 00 04 00 00 00      #4: Ice Punch
+
+39 01 00 00 02 00 00 00 01 00 00 00     #1 Fake Tears
+67 00 00 00 02 00 00 00 00 00 00 00     #0 Screech
+FE 01 00 00 04 00 00 00 05 00 00 00     #5 Incinerate
+B0 01 00 00 04 00 00 00 03 00 00 00     #3 Defog
+45 00 00 00 03 00 00 00 02 00 00 00     #2 Sparkle -> Seismic Toss
+0F 02 00 00 06 00 00 00 0C 00 00 00     #12 Electroweb
+91 00 00 00 04 00 00 00 04 00 00 00     #4 Chilling Water
+EA 01 00 00 06 00 00 00 0A 00 00 00     #10 Low Sweep
+1B 01 00 00 08 00 00 00 0D 00 00 00     #13 Struggle Bug -> Endeavor
+6E 00 00 00 04 00 00 00 07 00 00 00     #7 Breaking Swipe
+C4 00 00 00 06 00 00 00 0B 00 00 00     #11 Icy Wind
+6B 01 00 00 0A 00 00 00 0E 00 00 00     #14 Natural Gift
+2B 02 00 00 04 00 00 00 06 00 00 00     #6 Snarl
+24 00 00 00 05 00 00 00 08 00 00 00     #8 Take Down
+AD 00 00 00 05 00 00 00 09 00 00 00     #9 Uproar -> Snore
+
+63 01 00 00 02 00 00 00 03 00 00 00   #3: Magic Coat -> Roost
+4F 01 00 00 06 00 00 00 06 00 00 00   #6: Barrier 
+9E 01 00 00 06 00 00 00 0A 00 00 00   #10: Earth Power
+26 00 00 00 08 00 00 00 0C 00 00 00   #12: Foul Play -> Double-Edge
+64 01 00 00 08 00 00 00 0E 00 00 00   #14: Gravity
+0E 01 00 00 08 00 00 00 0B 00 00 00   #11:  Zen Headbutt -> Helping Hand
+1A 01 00 00 02 00 00 00 08 00 00 00   #1: Self Destruct -> Knock Off 
+14 00 00 00 02 00 00 00 00 00 00 00   #0: Explosion -> Bind 
+CE 00 00 00 08 00 00 00 0D 00 00 00   #13 Focus Punch -> Body Press
+E6 00 00 00 06 00 00 00 01 00 00 00   #8: Sweet Scent
+7C 01 00 00 06 00 00 00 09 00 00 00   #9: Gastro Acid 
+4A 01 00 00 04 00 00 00 05 00 00 00   #5: Aqua Tail -> Muddy Water
+B6 00 00 00 0A 00 00 00 10 00 00 00   #16: Protect
+80 01 00 00 04 00 00 00 02 00 00 00   #2 Psyblade
+0A 01 00 00 0A 00 00 00 0F 00 00 00   #15: Follow Me
+6F 00 00 00 06 00 00 00 07 00 00 00   #7: Defense Curl
+01 01 00 00 04 00 00 00 04 00 00 00   #4: Iron Tail -> Heat Wave

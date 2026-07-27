@@ -408,6 +408,10 @@ public class MainEvents {
 			LeaveScene(21);
 			Actor.WaitActionFinish();
 		}
+		Actor.WalkRoute(21, 156, 662, 1, 8, 1);
+		Actor.WaitActionFinish();
+		Message.ActorEx(1024, 35, 21, 0, 0);
+		Message.CloseAll();
 		Actor.WalkRoute(21, 156, 654, 1, 8, 1);
 		Runtime.Sleep(8);
 		ActionSequence_07b4(255);
@@ -416,6 +420,8 @@ public class MainEvents {
 		Actor.Hide(22);
 		EventFlags.Set(701);
 		EventFlags.Set(702);
+        // Re-enables fast travel
+        EventFlags.Clear(590);
 		EventWorks.Set(16555, 6);
 		EventFlags.Clear(726);
 		EventWorks.Set(16556, 7);

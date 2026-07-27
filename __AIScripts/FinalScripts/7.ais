@@ -572,7 +572,7 @@ address_EarthquakeLogic:
 	Jump(&deprioritizeBy3)
 
 address_Earthquake_ChanceToAdd2ToScore:
-	JumpIfRandLT(102, @endScript_5)
+	JumpIfRandLT(102, &endScript_5)
 	Jump(&add2ToScore)
 
 endScript_5:

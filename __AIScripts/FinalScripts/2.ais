@@ -1078,19 +1078,6 @@ address_0x11FE:
 
 
 
-Label_AcidSpray: 
-	GetHeldItem(defender)
-
-	GetAbilityGuess(attacker)
-
-	GetAbilityGuess(defender)
-
-
-Label_AcidSpray_EndScript:
-
-
-
-
 
 
 
@@ -5721,13 +5708,6 @@ address_0x57A4:
 	EndScript()
 
 
-
-
-
-
-//   ACID SPRAY   
-Label_AcidSpray:
-	EndScript()
 
 
 

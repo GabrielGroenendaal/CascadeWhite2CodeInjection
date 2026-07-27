@@ -4602,15 +4602,15 @@ extern "C" void THUMB_BRANCH_SAFESTACK_PokeList_LoadPokeData(PokeListMain *a1, P
             // a3->Forme = (a2->field_D8 == 1) ? 0:
             isEnemy = a1->pokeListSetupData->field_3C;
             
-            k::Printf("\nChecking the Pokeball and Nickname struccts for Pokemon #%d!\nPokeballl is %d\nPF_NicknameStr is %d\nPF_NicknameRaw is %d\nPF_NicknameStrKeepFlags is %d\nPF_NicknameRawKeepFlags is %d\nPF_HasNickname is %d\n",
-                a3->Species,
-                PokeParty_GetParam(a2, PF_Pokeball, 0),
-                PokeParty_GetParam(a2, PF_NicknameStrBuf, 0),
-                PokeParty_GetParam(a2, PF_NicknameRaw, 0),
-                PokeParty_GetParam(a2, PF_NicknameStrBufKeepFlags, 0),
-                PokeParty_GetParam(a2, PF_NicknameRawKeepFlags, 0),
-                PokeParty_GetParam(a2, PF_HasNickname, 0)
-            );
+            // k::Printf("\nChecking the Pokeball and Nickname struccts for Pokemon #%d!\nPokeballl is %d\nPF_NicknameStr is %d\nPF_NicknameRaw is %d\nPF_NicknameStrKeepFlags is %d\nPF_NicknameRawKeepFlags is %d\nPF_HasNickname is %d\n",
+            //     a3->Species,
+            //     PokeParty_GetParam(a2, PF_Pokeball, 0),
+            //     PokeParty_GetParam(a2, PF_NicknameStrBuf, 0),
+            //     PokeParty_GetParam(a2, PF_NicknameRaw, 0),
+            //     PokeParty_GetParam(a2, PF_NicknameStrBufKeepFlags, 0),
+            //     PokeParty_GetParam(a2, PF_NicknameRawKeepFlags, 0),
+            //     PokeParty_GetParam(a2, PF_HasNickname, 0)
+            // );
 
 
             a3->Species = (a2->field_D8 == 1 && isEnemy && GetScanSetting()) ? 0 : a3->Species;

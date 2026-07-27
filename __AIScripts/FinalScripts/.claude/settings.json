@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 \"C:/Users/gabeg/AppData/Local/Temp/claude/c--Users-gabeg-Documents-ROMhacks-----MyNewRomhack------GithubCheckoutMarch---AIScripts-FinalScripts/fa8265de-9448-48af-8b6e-551c7c57e7dd/scratchpad/find_unreachable.py\" 0.ais 1.ais 2.ais 3.ais 7.ais)"
+    ]
+  }
+}
