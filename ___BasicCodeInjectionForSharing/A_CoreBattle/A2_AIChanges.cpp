@@ -1383,7 +1383,12 @@ extern "C"
         {
             return AttackingMon->Level;
         }
-        else if (IsEqual(a4, MOVE162_SUPER_FANG) && (!BattleMon_HasType(DefendingMon, TYPE_GHOST) || IsEqual(atkAbility, ABIL113_SCRAPPY)))
+        else if (IsEqual(a4, MOVE283_ENDEAVOR))
+        {
+            return (DefendingMon->CurrentHP - AttackingMon->CurrentHP);
+        }
+
+        else if (IsEqual(a4, MOVE162_SUPER_FANG))
         {
             int losthealth = div32(DefendingMon->CurrentHP, 2u);
             if (!losthealth)
@@ -1730,7 +1735,9 @@ extern "C"
                     critFlag = 1;
                 }
             }
-            critFlag = 1;
+            else {
+                critFlag = 1;
+            }
         }
         else
         {
@@ -1864,7 +1871,7 @@ extern "C"
     {
         unsigned int value;
         ServerFlow *server = BattleServer_GetServerFlow(work->mainModule->server);
-        int isMoldBreaker = HasMoldBreaker(AttackingMon);
+        bool isMoldBreaker = HasMoldBreaker(AttackingMon);
         value = a4;
 
         if (IsEqual(MoveID, MOVE474_VENOSHOCK))
@@ -3919,11 +3926,11 @@ extern "C"
     bool AlternateSwitchConditions(BtlClientWk *work, BattleMon *attackingMon, BattleMon *defendingMon)
     {
         __int16 ExistFrontPokePos; // r0
-        unsigned int pokeCount;
+        u8 pokeCount;
         u8 opposingPokePos[5];
         BattleMon *defender;
         ServerFlow *flow;
-        unsigned int k;
+        u8 k;
 
         flow = BattleServer_GetServerFlow(work->mainModule->server);
         ExistFrontPokePos = Handler_GetExistFrontPokePos(flow, attackingMon->ID);
@@ -3948,14 +3955,13 @@ extern "C"
 
         for (k = 0; k < pokeCount; k += 1)
         {
-            int i = 0;
+            u8 i = 0;
             defender = Handler_GetBattleMon(flow, opposingPokePos[k]);
-            int MoveCount = BattleMon_GetMoveCount(attackingMon);
+            u8 MoveCount = BattleMon_GetMoveCount(attackingMon);
             int currentHp = defender->CurrentHP;
             int moveDamage = 0;
             do
             {
-
                 // moveDamage = checkCalcTable(flow, attackingMon, defender, (MoveID)Move_GetID(attackingMon, i));
                 // if (!moveDamage)
                 // {
@@ -3985,12 +3991,12 @@ extern "C"
             if (((damage << 3) + (damage << 1)) < defender->MaxHP)
             {
 
-                if (turnCount >= 1)
+                if (turnCount >= 3)
                 {
 
-                    int random = RandomInRange(1, 100);
+                    u8 random = RandomInRange(1, 100);
 
-                    if (random < (10 + (turnCount << 2)))
+                    if (random < (10 + (turnCount << 1)))
                     {
                         switchout = 1;
                     }
@@ -4001,7 +4007,7 @@ extern "C"
             else if (((damage << 2) + (damage << 1)) < defender->MaxHP)
             {
 
-                if (turnCount >= 3)
+                if (turnCount >= 5)
                 {
                     if (RandomInRange(1, 100) < (5 + turnCount))
                     {
@@ -4014,7 +4020,7 @@ extern "C"
             else if ((damage << 2) < defender->MaxHP)
             {
 
-                if (turnCount >= 4)
+                if (turnCount >= 8)
                 {
                     if (RandomInRange(1, 100) < (1 + turnCount))
                     {
@@ -4031,7 +4037,7 @@ extern "C"
             }
         }
 
-        return (CheckIfMonToSwitchToWithSEMove(work, defendingMon, 2)) ? switchout : 0;
+        return (CheckIfMonToSwitchToWithSEMove(work, defendingMon, 3)) ? switchout : 0;
     }
 
     bool THUMB_BRANCH_SAFESTACK_ShouldSwitchIfChoicedIntoIneffectiveMove(BtlClientWk *work, BattleMon *attackingMon, BattleMon *defendingMon)

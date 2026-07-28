@@ -688,6 +688,7 @@ Label_LowerEnemyAttack:
 	JumpIfStatStageEQ(defender, atk, -6, &deprioritizeBy10)
 	GetAbilityGuess(defender)
 	JumpIfStoredEQ(ability.defiant, &deprioritizeBy12)
+    JumpIfStoredEQ(ability.unaware, &deprioritizeBy12)
 	GetAbilityGuess(attacker)
 	JumpIfStoredEQ(ability.mold_breaker, &Label_CheckForStatBlockingAbilitiesAndItems)
 	JumpIfStoredEQ(ability.turboblaze, &Label_CheckForStatBlockingAbilitiesAndItems)
@@ -740,6 +741,7 @@ Label_CheckForStatBlockingAbilitiesAndItems:
 	GetAbilityGuess(defender)
 	JumpIfStoredEQ(ability.contrary, &deprioritizeBy12)
 	JumpIfStoredEQ(ability.defiant, &deprioritizeBy12)
+    JumpIfStoredEQ(ability.unaware, &deprioritizeBy12)
 	GetAbilityGuess(attacker)
 	JumpIfStoredEQ(ability.mold_breaker, &endScript_3)
 	JumpIfStoredEQ(ability.turboblaze, &endScript_3)
@@ -2878,6 +2880,7 @@ Label_Captivate:
 	GetAbilityGuess(defender)
 	JumpIfStoredEQ(ability.contrary, &deprioritizeBy12)
 	JumpIfStoredEQ(ability.defiant, &deprioritizeBy12)
+    JumpIfStoredEQ(ability.unaware, &deprioritizeBy12)
 	GetAbilityGuess(attacker)
 	JumpIfStoredEQ(ability.mold_breaker, &Label_CaptivateEndScript)
 	JumpIfStoredEQ(ability.turboblaze, &Label_CaptivateEndScript)
@@ -3077,10 +3080,12 @@ Label_ElectroBall:
 
 
 Label_Soak:
-	GetType(defender_type1)
-	JumpIfStoredNE(type.water, &endScript_38)
 	GetType(defender_type2)
+	JumpIfStoredNE(type.water, &endScript_38)
+	GetType(defender_type1)
 	JumpIfStoredEQ(type.water, &deprioritizeBy10)
+    JumpIfRandLT(180, &endScript_38)
+    AddToScore(1)
 
 endScript_38:
 	EndScript()
@@ -3342,6 +3347,9 @@ deprioritizeBy12:
 
 deprioritizeBy15:
 	AddToScore(-15)
+	EndScript()
+
+bufferScriptCallFive:
 	EndScript()
 
 	0x0004 [4]

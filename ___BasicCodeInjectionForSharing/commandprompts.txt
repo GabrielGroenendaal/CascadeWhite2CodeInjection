@@ -14,6 +14,9 @@
 /* AI Changes */
 "C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\_____GithubCheckoutMarch\arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi\bin\arm-none-eabi-g++.exe"  -r -mthumb -mlong-calls -march=armv5t -Os A_CoreBattle/A2_AIChanges.cpp -Iswan-master -o ______Output/A2_AIChanges.elf
 
+/* AI CHANGE SEXPERIMENTAL * / 
+"C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\_____GithubCheckoutMarch\arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi\bin\arm-none-eabi-g++.exe"  -r -mthumb -mlong-calls -march=armv5t -Os A_CoreBattle/A2_AIChanges_TestOutLater.cpp -Iswan-master -o ______Output/A2_AIChanges.elf
+
 /* Item Changes */
 "C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\_____GithubCheckoutMarch\arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi\bin\arm-none-eabi-g++.exe"  -r -mthumb -mlong-calls -march=armv5t -Os A_CoreBattle/A3_ItemChanges.cpp -Iswan-master -o ______Output/A3_ItemChanges.elf
 

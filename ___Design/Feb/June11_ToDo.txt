@@ -10,22 +10,38 @@
 
 
 - Move Tutor & TM Rework 
-- AI Scripts 
-    - AI Went for explosion at maximum health. It shouldn't be able to do that. 
-    - Hugh's Eelektrik went for t-bolt over sludge bomb vs. Fraxure. Wtf? 
-    - AI seemed to maybe ignore kill vs Boldore? 
-    - Soak 
-        - Fix Soaks AI 
-    - Entrainment 
-        - Double Check Entrainments AI. It just used it on someone with the same ability as it
-- Make test build for finding out crash in BW2 
-- Trainers 
-    - Janitor Brady's Golbat has the wrong ability
-    - Harlequin Flop's Slakoth has Slow Start.
-- Balance 
-    - Consider what we want to do with Marowak. Either it takes forever to get good stabs but has thick club, or the inverse imo. 
-    - Fix evolution level on Kirlia
+
+
+[ AI SCRIPTS ]
+
+    DEBUGGING CRASH 
+        - Run all our hooked functions in a row to see if we can find a crash. 
     
+    Tag Battle Logic: 
+        - The AI seemed to go for T-bolt with Eelektrik vs. a Fraxure. I cannot come up with an explanation for this. 
+        - I think we need to rerun the tag battle with the sewer grunts a bunch of times. It also doesn't make sense to me that issues didn't emerge with the other trainres.
+    
+    Entrainment: 
+        - I saw the AI go for entrainment vs a target that already had the same ability as the user. 
+    
+    Soak: 
+        - This should have some kind of expert AI for it. 
+    
+    Explosion / Self Destruct: 
+        - Make sure the AI can't go for it at maximum health. 
+
+    Endure: 
+        Let's look this over and see if it looks correct. 
+
+
+[ ITEMS ]
+    Light Clay: 
+        I think I want to go forward with my idea for Light Clay where it increases the duration of the following moves by 10 turns: 
+            - Safeguard / Mist
+            - Light Screen 
+            - Reflect 
+            - Gravity 
+            - Lucky Chant 
 
 
 [ ENCOUNTERS ]
@@ -43,61 +59,50 @@
             - Wormadam-Trash 
 
 
-Weirdly Absent Pokemon: 
-    - Heracross 
-    - Whimsicott (doesn't show up until Marlon Split)
-    - Sudowoodo (only shows up once in Clay Split)
-    - Amoongus (doesn't show up until Marlon Split)
-
-
-        
 [ TRAINERS ]
 
-    [ ROUTE 4 COLRESS ]
-        Boldore -> Type: Null @ Chople Berry (Ability: Berserk) (Chip Away, Crush Claw, Agility, Recover)
+    Mons that aren't distributed well atm: 
+        Foongus / Amoongus 
+        Cottonee / Whimsicott 
 
+    Later Stuff: 
+         [ ROUTE 4 COLRESS ]
+            Magneton (Technoblast -> Tri Attack)
+            Rotom-Wash (Expert Belt -> Ability Drill)
+            Boldore -> Type: Null @ Chople Berry (Ability: Berserk) (Chip Away, Technoblast, Agility, Recover)
 
+         [ PRESCHOOLER MIA ]
+            Level 48 Tympole 
+            Level 50 Shelmet 
+            Level 50 Tangela 
+            Level 48 Lotad 
+            Level 48 Ducklett 
         
-    [ GHOSTLY GENT / MAN / CHILD ]
-        All need to be fixed. 
+        [ PRESCHOOLER JOJO ]
+            Level 48 Wooper 
+            Level 50 Surskit 
+            Level 50 Anorith 
+            Level 47 Cubchoo 
+            Level 50 Azurill 
+        
+        [ ACE TRAINER SABLE ]
+            Add +1 Pokemon to Ace Trainer Sable 
 
-    [ PRESCHOOLER MIA ]
-        Level 48 Tympole 
-        Level 50 Shelmet 
-        Level 50 Tangela 
-        Level 48 Lotad 
-        Level 48 Ducklett 
-    
-    [ PRESCHOOLER JOJO ]
-        Level 48 Wooper 
-        Level 50 Surskit 
-        Level 50 Anorith 
-        Level 47 Cubchoo 
-        Level 50 Azurill 
-
-
-
-
-    [ ACE TRAINER SABLE ]
-        Add +1 Pokemon to Ace Trainer Sable 
-    
-    [ PILOT CHASE ]
-        Add +1 Pokemon to Pilot Chase
-        Airborne Pokemon: 
-            Levitate: 
-                Gengar 
-                Probopass 
-                Ledian 
-                Mismagius 
-                Solrock 
-                Chimecho 
-                Froslass 
-                Carnivine 
-                Cryogonal 
-            Thematic Pokemon: 
-                Floatzel 
-    
-
+        [ PILOT CHASE ]
+            Add +1 Pokemon to Pilot Chase
+            Airborne Pokemon: 
+                Levitate: 
+                    Gengar 
+                    Probopass 
+                    Ledian 
+                    Mismagius 
+                    Solrock 
+                    Chimecho 
+                    Froslass 
+                    Carnivine 
+                    Cryogonal 
+                Thematic Pokemon: 
+                    Floatzel 
 
 
 
@@ -160,17 +165,6 @@ Move Change Ideation:
         - BESTOW: I've been using this as a blank space but I can absolutely just zero out handler fields. 
         - BITTER MALICE: This one is really disappointing. To be honest, I might just move seething cold effect to this. An ice-type hex seems so promising but i never keep it on anything. Maybe instead it should become 75 BP ghost move that lowers spA? What's the animation even right now. 
 
-Items: 
-    Items: 
-        The nugget duo instead reward a Rare Bone in Desert Resort.
-    Light Clay: 
-        I think I want to go forward with my idea for Light Clay where it increases the duration of the following moves by 10 turns: 
-            - Safeguard / Mist
-            - Light Screen 
-            - Reflect 
-            - Gravity 
-            - Lucky Chant 
-
 
 
 
@@ -219,129 +213,6 @@ Items:
 
     
    
-
-
-[ MOVES ]
-
-    Roar Distribution: 
-        Vulpix / Ninetales
-        Snubbul / Granbull 
-        Poochyena / Mightyena
-        Aron / Lairon / Aggron 
-        Electrike / Manectric 
-        Shinx / Luxio / Luxray 
-        Lillipup / herdier / Stoutland 
-
-    Confirm Phantom Strike is single target. 
-
-    Update Phantom Strike Description: 
-    The user attacks by possessing the\ntarget, thrashing their body around\nviolently. It may confuse the target.
-
-    Update Dizzy Punch Description: 
-    The target is hit with rhythmically\nlaunched punches that may also leave it\nconfused. This attack cannot miss.
-
-    Water Pulse Description 
-    The user attacks the target with a pulsing blast of water. It may confuse the target and can't miss.
-
-    Fire Spin 
-        Dragonite 
-        Flygon 
-        Altaria 
-        Salamence 
-        Skuntank 
-
-    Whirlpool  
-        Nidoking / Nidoqueen 
-        Lickilicky 
-        Rhyperior 
-        Kangaskhan 
-        Tauros 
-        Snorlax 
-        Dragonite 
-        Furret
-    
-    Relic Song: 
-        Now 105 BP 
-    
-    TEST SLEEP TALK 
-        - I don't care if it works while awake. 
-        - That could still be funny for prankster mons 
-
-    Prune Availability By Level:
-        There's a lot of moves that are high value and a bit oversaturated on enemy sets. We should prune these. 
-
-        Gravity 
-            -Forretress 
-            -Slowking 
-            -Slowbro 
-
-        Fake Out 
-            -Zoruark 
-            -Psyduck/Golduck
-    
-    Grass Knot: 
-        I had an idea to make Grass Knot a trapping move. Instead of doubling when it traps, it instead deals the maximum grass knot damage (120 BP)
-
-        Relevant TM Users: 
-
-        Empoleon 
-        Pachirisu 
-        Mismagius 
-        Chimecho 
-        Bronzong 
-        Emboar 
-        Samurott
-        Liepard 
-        Simisear 
-        Simipour 
-        Cofagrigus 
-        Zoroark 
-        Gothitelle 
-        Reuniclus 
-        Haxorus 
-        Beartic 
-        Mienshao 
-        Togekiss 
-        Lunatone 
-        Solrock 
-        Plusle 
-        Minun
-        Metagross 
-        Claydol 
-        Infernape 
-    
-    Low Kick: 
-        Mankey / Primeape 
-        Machop / machoke / machamp 
-        Elekid / Electabuzz 
-        Totodile / Croconaw / Feraligatr 
-        Bonsly / Sudowoodo 
-        Torchic 
-        Pansear / Pansage / Panpour 
-    
-    Rolling Kick: 
-        If we made Low Kick the trapping move, we could make Rolling Kick into a sheer force fightinng option 
-        Which would also make it way more comfortable to gatekeep the strength HM for later. 
-
-        90 BP 30% flinch fighting move 
-            Hariyama 
-            Electabuzz Line
-
-
-    Final Gambit Distribution: 
-        Primeape 
-        Farfetch'd 
-        Zangoose 
-        Staraptor 
-        Lucario 
-        Basculin
-        Accelgor 
-        Raticate 
-        Dugtrio 
-        Ninjask / Shedinja 
-        Seviper 
-
-
 
 [ NEW UNOWN AND COMBEE FORMS ]
 

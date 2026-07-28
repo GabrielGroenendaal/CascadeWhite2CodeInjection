@@ -42,8 +42,6 @@ Label_StaticDamageFunctions:
 	Jump(&address_MoveDealsNoDamage)
 
 address_IncreaseScoreLikelyBy1:
-	JumpIfRandLT(50, &Label_MoveLogicStage2)
-	AddToScore(1)
 	Jump(&address_MoveDealsNoDamage)
 
 Label_MoveLogicStage2:
@@ -70,8 +68,6 @@ address_MoveDealsNoDamage:
 	JumpIfMoveEffectEQ(move_ef.dmg_force_switch, &endScript_1)
 	JumpIfMoveEffectEQ(move_ef.dmg_user_hp_pct, &endScript_1)
 	JumpIfMoveEQ(move.blizzard, &endScript_1)
-	JumpIfMoveEQ(move.blizzard, &endScript_1)
-	JumpIfMoveEQ(move.blizzard, &endScript_1)
 	JumpIfMoveEQ(move.wide_guard, &address_WideGuardLogic)
 	JumpIfMoveEQ(move.ally_switch, &address_AllySwitchLogic)
 	JumpIfMoveEQ(move.skill_swap, &address_SkillSwapLogic)
@@ -95,7 +91,7 @@ address_MoveDealsNoDamage:
 	JumpIfStoredEQ(type.water, &waterTypeMoveLogic)
 	JumpIfStoredEQ(type.normal, &normalTypeMoveLogic)
 	JumpIfStoredEQ(type.grass, &grassTypeMoveLogic)
-      JumpIfStoredEQ(type.dark, &darkTypeMoveLogic)
+    JumpIfStoredEQ(type.dark, &darkTypeMoveLogic)
 	JumpIfHasMove(attacker_ally, move.helping_hand, &HelpingHandLogic)
 	EndScript()
 
@@ -650,6 +646,54 @@ address_SkillSwapLogic:
 
 
 
+
+// NORMAL TYPE MOVES
+
+normalTypeMoveLogic:
+    JumpIfMoveEQ(move.boomburst, &address_BoomburstChecks)
+    GetPokeHasAbility(attacker, ability.galvanize)
+    JumpIfStoredEQ(true, &address_GalvanizeChecks)
+    GetPokeHasAbility(attacker, ability.moisturize)
+    JumpIfStoredEQ(true, &address_MoisturizeChecks)
+	Jump(&endScript_NormalMoves)
+
+address_BoomburstChecks:
+	GetPokeHasAbility(attacker_ally, ability.amplifier)
+	JumpIfStoredEQ(true, &address_HighChanceToIncreaseBoomburstScore)
+    GetPokeHasAbility(attacker_ally, ability.healer)
+	JumpIfStoredEQ(true, &address_HighChanceToIncreaseBoomburstScore)
+	GetPokeHasAbility(attacker_ally, ability.friend_guard)
+	JumpIfStoredEQ(true, &address_HighChanceToIncreaseBoomburstScore)
+	GetPokeHasAbility(attacker_ally, ability.forewarn)
+	JumpIfStoredEQ(true, &address_HighChanceToIncreaseBoomburstScore)
+	GetPokeHasAbility(attacker_ally, ability.plus)
+	JumpIfStoredEQ(true, &address_HighChanceToIncreaseBoomburstScore)
+	GetPokeHasAbility(attacker_ally, ability.minus)
+	JumpIfStoredEQ(true, &address_HighChanceToIncreaseBoomburstScore)
+	GetPokeHasType(attacker_ally, type.ghost)
+	JumpIfStoredEQ(true, &address_HighChanceToIncreaseBoomburstScore)
+	GetPokeHasType(attacker_ally, type.steel)
+	JumpIfStoredEQ(true, &address_MedChanceToIncreaseBoomburstScore)
+	GetPokeHasType(attacker_ally, type.rock)
+	JumpIfStoredEQ(true, &address_MedChanceToIncreaseBoomburstScore)
+	AddToScore(-3)
+	Jump(&endScript_NormalMoves)
+
+address_HighChanceToIncreaseBoomburstScore:
+	JumpIfRandLT(68, &endScript_NormalMoves)
+	AddToScore(3)
+	Jump(&endScript_NormalMoves)
+
+address_MedChanceToIncreaseBoomburstScore:
+	JumpIfRandLT(140, &endScript_NormalMoves)
+	AddToScore(3)
+	Jump(&endScript_NormalMoves)
+
+endScript_NormalMoves:
+	EndScript()
+
+
+
 // DISCHARGE LOGIC 
 
 electricTypeMoveLogic:
@@ -904,48 +948,6 @@ endScript_FireMoves:
 
 
 
-// NORMAL TYPE MOVES
-
-normalTypeMoveLogic:
-	JumpIfMoveEQ(move.boomburst, &address_BoomburstChecks)
-	Jump(&endScript_NormalMoves)
-
-address_BoomburstChecks:
-	GetPokeHasAbility(attacker_ally, ability.amplifier)
-	JumpIfStoredEQ(true, &address_HighChanceToIncreaseBoomburstScore)
-    GetPokeHasAbility(attacker_ally, ability.healer)
-	JumpIfStoredEQ(true, &address_HighChanceToIncreaseBoomburstScore)
-	GetPokeHasAbility(attacker_ally, ability.friend_guard)
-	JumpIfStoredEQ(true, &address_HighChanceToIncreaseBoomburstScore)
-	GetPokeHasAbility(attacker_ally, ability.forewarn)
-	JumpIfStoredEQ(true, &address_HighChanceToIncreaseBoomburstScore)
-	GetPokeHasAbility(attacker_ally, ability.plus)
-	JumpIfStoredEQ(true, &address_HighChanceToIncreaseBoomburstScore)
-	GetPokeHasAbility(attacker_ally, ability.minus)
-	JumpIfStoredEQ(true, &address_HighChanceToIncreaseBoomburstScore)
-	GetPokeHasType(attacker_ally, type.ghost)
-	JumpIfStoredEQ(true, &address_HighChanceToIncreaseBoomburstScore)
-	GetPokeHasType(attacker_ally, type.steel)
-	JumpIfStoredEQ(true, &address_MedChanceToIncreaseBoomburstScore)
-	GetPokeHasType(attacker_ally, type.rock)
-	JumpIfStoredEQ(true, &address_MedChanceToIncreaseBoomburstScore)
-	AddToScore(-3)
-	Jump(&endScript_NormalMoves)
-
-address_HighChanceToIncreaseBoomburstScore:
-	JumpIfRandLT(68, &endScript_NormalMoves)
-	AddToScore(3)
-	Jump(&endScript_NormalMoves)
-
-address_MedChanceToIncreaseBoomburstScore:
-	JumpIfRandLT(140, &endScript_NormalMoves)
-	AddToScore(3)
-	Jump(&endScript_NormalMoves)
-
-endScript_NormalMoves:
-	EndScript()
-
-
 
 
 
@@ -1017,14 +1019,14 @@ endScript_GrassMoves:
 
 darkTypeMoveLogic:
 	JumpIfMoveEQ(move.quick_guard, &address_BrutalSwingChecks)
-	Jump(&endScript_GrassMoves)
+	Jump(&endScript_DarkMoves)
 
 address_BrutalSwingChecks:
-      GetPokeHasAbility(defender_ally, ability.justified)
+    GetPokeHasAbility(defender_ally, ability.justified)
 	JumpIfStoredEQ(true, &address_BrutalSwingRNG)
-      GetPokeHasAbility(attacker_ally, ability.justified)
+    GetPokeHasAbility(attacker_ally, ability.justified)
 	JumpIfStoredEQ(true, &address_HighChanceToIncreaseScoreForBrutalSwing)
-      GetPokeHasAbility(attacker_ally, ability.healer)
+    GetPokeHasAbility(attacker_ally, ability.healer)
 	JumpIfStoredEQ(true, &address_HighChanceToIncreaseScoreForBrutalSwing)
 	GetPokeHasAbility(attacker_ally, ability.friend_guard)
 	JumpIfStoredEQ(true, &address_HighChanceToIncreaseScoreForBrutalSwing)
@@ -1036,7 +1038,7 @@ address_BrutalSwingChecks:
 	JumpIfStoredEQ(true, &address_HighChanceToIncreaseScoreForBrutalSwing)
 	GetPokeHasType(attacker_ally, type.dark)
 	JumpIfStoredEQ(true, &endScript_DarkMoves)
-      GetPokeHasType(attacker_ally, type.fighting)
+    GetPokeHasType(attacker_ally, type.fighting)
 	JumpIfStoredEQ(true, &endScript_DarkMoves)
 	GetPokeHasType(attacker_ally, type.fairy)
 	JumpIfStoredEQ(true, &endScript_DarkMoves)
@@ -1044,9 +1046,9 @@ address_BrutalSwingChecks:
 	Jump(&endScript_DarkMoves)
 
 address_BrutalSwingRNG:
-      JumpIfRandLT(68, &endScript_DarkMoves)
+    JumpIfRandLT(68, &endScript_DarkMoves)
 	AddToScore(-8)
-      Jump(&endScript_DarkMoves)
+    Jump(&endScript_DarkMoves)
 
 address_HighChanceToIncreaseScoreForBrutalSwing:
 	JumpIfRandLT(68, &endScript_DarkMoves)
@@ -1427,7 +1429,7 @@ address_AllyHasJustified:
 	GetHeldItem(attacker)
 	JumpIfStoredNE(item.ability_drill, &deprioritizeBy30)
 	JumpIfStoredNE(item.tera_drill, &deprioritizeBy30)
-	// CheckOwnDamageIntoAlly(&address_CheckAllyDamageIntakeForSideTargeting)
+    CheckOwnDamageIntoAlly(&address_CheckAllyDamageIntakeForSideTargeting)
 	Jump(&deprioritizeBy30)
 
 
@@ -1442,7 +1444,7 @@ address_TriggerAllyWeaknessPolicy:
 	Jump(&deprioritizeBy30)
 
 address_hasSuperEffectiveMoveForWeaknessPolicy:
-	//CheckOwnDamageIntoAlly(&address_CheckAllyDamageIntakeForSideTargeting)
+	CheckOwnDamageIntoAlly(&address_CheckAllyDamageIntakeForSideTargeting)
 	Jump(&deprioritizeBy30)
 
 
@@ -1494,6 +1496,7 @@ address_NonDamagingAllyTargetingMoves:
 	JumpIfMoveEffectEQ(move_ef.target_psn, &address_TargetAllyWithPoisoningMoves)
 	JumpIfMoveEQ(move.helping_hand, &address_TargetAllyWithHelpingHand)
 	JumpIfMoveEQ(move.swagger, &address_TargetAllyWithSwagger)
+    JumpIfMoveEQ(move.flatter, &address_TargetAllyWithFlatter)
 	JumpIfMoveEQ(move.switcheroo, &address_TargetAllyWithBestow)
 	JumpIfMoveEQ(move.bestow, &address_TargetAllyWithBestow)
 	JumpIfMoveEQ(move.gastro_acid, &address_TargetAllyWithGastroAcid)
@@ -1684,23 +1687,61 @@ address_0x16D6:
 // TARGET ALLY WITH SWAGGER
 
 address_TargetAllyWithSwagger:
-	JumpIfAtkLTSpa(defender, &deprioritizeBy30Again)
-	JumpIfHeldItemEQ(defender, item.persim_berry, &address_CheckIncomingDamage)
-	JumpIfHeldItemEQ(defender, item.lum_berry, &address_CheckIncomingDamage)
-	JumpIfHasSideCondition(defender, side_cond.safeguard, &address_CheckIncomingDamage)
-	JumpIfHasSideCondition(defender, side_cond.mist, &address_CheckIncomingDamage)
+	JumpIfAtkLTSpa(attacker_ally, &deprioritizeBy30Again)
+    GetType(attacker_type1)
+    JumpIfStoredEQ(type.psychic, &address_CheckIncomingDamage)
+    GetType(attacker_type2)
+    JumpIfStoredEQ(type.psychic, &address_CheckIncomingDamage)
+	JumpIfHeldItemEQ(attacker_ally, item.persim_berry, &address_CheckIncomingDamage)
+	JumpIfHeldItemEQ(attacker_ally, item.lum_berry, &address_CheckIncomingDamage)
+	JumpIfHasSideCondition(attacker_ally, side_cond.safeguard, &address_CheckIncomingDamage)
+	JumpIfHasSideCondition(attacker_ally, side_cond.mist, &address_CheckIncomingDamage)
+    
 	Jump(&deprioritizeBy30Again)
 
 address_CheckIncomingDamage:
-	JumpIfUserWillFaint_Priority(defender, &deprioritizeBy30Again)
+	JumpIfUserWillFaint_Priority(attacker_ally, &deprioritizeBy30Again)
 	Jump(&address_SwaggerRNGCheck)
 
 address_SwaggerRNGCheck:
-	JumpIfStatStageGT(defender, atk, +1, &endScript_SwaggerTargetAllyChecks)
+	JumpIfStatStageGT(attacker_ally, atk, +1, &endScript_SwaggerTargetAllyChecks)
 	AddToScore(3)
 
 endScript_SwaggerTargetAllyChecks:
 	EndScript()
+
+
+
+
+// TARGET ALLY WITH Flatter
+
+address_TargetAllyWithFlatter:
+	JumpIfAtkGTSpa(attacker_ally, &deprioritizeBy30Again)
+    GetType(attacker_type1)
+    JumpIfStoredEQ(type.psychic, &address_CheckIncomingDamage_Flatter)
+    GetType(attacker_type2)
+    JumpIfStoredEQ(type.psychic, &address_CheckIncomingDamage_Flatter)
+	JumpIfHeldItemEQ(attacker_ally, item.persim_berry, &address_CheckIncomingDamage_Flatter)
+	JumpIfHeldItemEQ(attacker_ally, item.lum_berry, &address_CheckIncomingDamage_Flatter)
+	JumpIfHasSideCondition(attacker_ally, side_cond.safeguard, &address_CheckIncomingDamage_Flatter)
+	JumpIfHasSideCondition(attacker_ally, side_cond.mist, &address_CheckIncomingDamage_Flatter)
+	Jump(&deprioritizeBy30Again)
+
+address_CheckIncomingDamage_Flatter:
+	JumpIfUserWillFaint_Priority(attacker_ally, &deprioritizeBy30Again)
+	Jump(&address_FlatterRNGCheck)
+
+address_FlatterRNGCheck:
+	JumpIfStatStageGT(attacker_ally, spa, +1, &endScript_FlatterTargetAllyChecks)
+	AddToScore(3)
+
+endScript_FlatterTargetAllyChecks:
+	EndScript()
+
+
+
+
+
 
 
 address_TargetAllyWithBestow:
@@ -1870,5 +1911,10 @@ add5ToScore:
 
 
 add10ToScore:
+	AddToScore(10)
+	EndScript()
+
+
+BufferScriptCall:
 	AddToScore(10)
 	EndScript()

@@ -15,7 +15,7 @@ STRUCT_DECLARE(GameData)
 #define DAMAGE_CACHE_ENABLED false
 #define DEFAULT_G4_AI false
 #define DEFAULT_DOUBLES_AI false 
-#define TRYING_NEW_OPT false 
+#define TRYING_NEW_OPT true 
 
 // Uses esdb_newBattle.yml
 
@@ -97,8 +97,8 @@ const u16 teraItems[20] = {
     IT0228_TERA_GEM,
     IT0257_TERA_EVIOLITE};
 
-const int FLAIL_POWER_TABLE[6] = {
-    0xC80001, 0x960004, 0x640009, 0x500010, 0x280020, 0x140030};
+// const int FLAIL_POWER_TABLE[6] = {
+//     0xC80001, 0x960004, 0x640009, 0x500010, 0x280020, 0x140030};
 #pragma endregion
 
 extern "C"
@@ -339,7 +339,7 @@ extern "C"
     int GetTypeEffectivenessAltered(int a1, int a2)
     {
         TypeEffectiveness result;
-        int v3;
+        u8 v3;
         FieldTypeChanges zoneId = checkForFieldEffects();
 
         if (a1 == TYPE_NONE || a2 == TYPE_NONE)
@@ -399,7 +399,7 @@ extern "C"
 
     int GetTypeEffectivenessVsMonAltered(int a1, int a2)
     {
-        int TypeEffectiveness; // r4
+        u8 TypeEffectiveness; // r4
         int v6;                // r0
         int v7;
         int v8;
@@ -419,7 +419,7 @@ extern "C"
     int EvaluateTypeEffectiveness(int a1, int a2, bool isScrappy)
     {
         TypeEffectiveness result;
-        int v3;
+        u8 v3;
         FieldTypeChanges zoneId = checkForFieldEffects();
 
         if (a1 == TYPE_NONE || a2 == TYPE_NONE)
@@ -469,10 +469,10 @@ extern "C"
 
     int EvaluateTypeEffectivenesssForFighting(int type1, int pokeType, bool isScrappy)
     {
-        int TypeEffectiveness; // r4
-        int v6;                // r0
-        int v7;
-        int v8;
+        u8 TypeEffectiveness; // r4
+        u8 v6;                // r0
+        u8 v7;
+        u8 v8;
         v8 = PokeTypePair_GetType1(pokeType);
         v7 = PokeTypePair_GetType2(pokeType);
 
@@ -488,7 +488,7 @@ extern "C"
     TypeEffectiveness THUMB_BRANCH_GetTypeEffectiveness(int a1, int a2)
     {
         TypeEffectiveness result;
-        int v3;
+        u8 v3;
         if (a1 == 18 || a2 == 18)
         {
             result = EFFECTIVENESS_1;
@@ -537,8 +537,8 @@ extern "C"
 
     int THUMB_BRANCH_AI044_GetMoveEffectiveness(ScriptVM *a1, TrainerAIEnv *a2)
     {
-        int ID; // r7
-        int v5; // r0
+        u8 ID; // r7
+        u8 v5; // r0
         int v6; // r0
         u32 a4; // [sp+4h] [bp-1Ch]
         int v7;
@@ -555,11 +555,10 @@ extern "C"
 
     TypeEffectiveness THUMB_BRANCH_SAFESTACK_ServerEvent_CheckDamageEffectiveness(ServerFlow *a1, BattleMon *a2, BattleMon *a3, int a4, unsigned __int8 a5)
     {
-        int ID;    // r0
-        int v9;    // r0
-        int Value; // r5
-        int ActualType;
-        int v11;                  // r4
+        u8 ID;    // r0
+        u8 v9;    // r0
+        u8 Value; // r5
+        u8 v11;                  // r4
         TypeEffectiveness result; // r0
 
         BattleEventVar_Push();
@@ -629,8 +628,8 @@ extern "C"
         BattleFieldStatus *FieldStatus; // r0
         TrainerBattleSetup **trainerSetups;
         TrainerBattleSetup *currentTrainer;
-        int trainerId;
-        int trainerClass;
+        u16 trainerId;
+        u16 trainerClass;
         ConditionData random;
 
         FieldStatus = BtlSetup_GetFieldStatus(a1->mainModule);
@@ -879,13 +878,13 @@ extern "C"
         SVCL_WORK *ClientWork;                  // r0
         SVCL_WORK *v5;                          // r4
         BtlServerWk *server;
-        unsigned int v6;        // r5
+        u8 v6;        // r5
         BattleMon *PartyMember; // r0
-        unsigned int j;         // r5
+        u8 j;         // r5
         BattleMon *v9;          // r0
         int v10;                // r7
-        int v12;                // [sp+0h] [bp-20h]
-        unsigned int i;         // [sp+4h] [bp-1Ch]
+        u8 v12;                // [sp+0h] [bp-20h]
+        u8 i;         // [sp+4h] [bp-1Ch]
 
         serverCommandQueue = a1->serverCommandQueue;
         serverCommandQueue->writePtr = 0;
@@ -1101,7 +1100,7 @@ extern "C"
     {
         FaintRecord *record;
         int turnCount;
-        int faintedId;
+        u8 faintedId;
         int loopCount;
         record = Handler_GetFaintRecord(a2);
         turnCount = j_j_FaintRecord_GetCount(record, turn);
@@ -1378,7 +1377,7 @@ extern "C"
         
         if (IsEqual(MoveID, MOVE076_SOLAR_BEAM) || IsEqual(MoveID, MOVE554_SOLAR_BLADE))
         {
-            if (ServerEvent_GetWeather(a1) != WEATHER_SUN && AttackingMon->HeldItem != IT0271_POWER_HERB && BattleMon_GetValue(AttackingMon, VALUE_EFFECTIVE_ABILITY) != ABIL034_CHLOROPHYLL && BattleMon_GetValue(AttackingMon, VALUE_EFFECTIVE_ABILITY) != ABIL094_SOLAR_POWER && BattleMon_GetValue(AttackingMon, VALUE_EFFECTIVE_ABILITY) != ABIL122_FLOWER_GIFT)
+            if (ServerEvent_GetWeather(server) != WEATHER_SUN && AttackingMon->HeldItem != IT0271_POWER_HERB && BattleMon_GetValue(AttackingMon, VALUE_EFFECTIVE_ABILITY) != ABIL034_CHLOROPHYLL && BattleMon_GetValue(AttackingMon, VALUE_EFFECTIVE_ABILITY) != ABIL094_SOLAR_POWER && BattleMon_GetValue(AttackingMon, VALUE_EFFECTIVE_ABILITY) != ABIL122_FLOWER_GIFT)
             {
                 return (input == 4096) ? 0 : value >> 1;
             }
@@ -1388,7 +1387,7 @@ extern "C"
         // Electro Shot
         if (IsEqual(MoveID, MOVE193_ELECTRO_SHOT))
         {
-            if (ServerEvent_GetWeather(a1) != 2 && AttackingMon->HeldItem != IT0271_POWER_HERB)
+            if (ServerEvent_GetWeather(server) != 2 && AttackingMon->HeldItem != IT0271_POWER_HERB)
             {
                 if (input != 4096) {
                     return value >> 1;
@@ -1477,7 +1476,7 @@ extern "C"
         // Weather Ball / Weather Crash
         if (IsEqual(MoveID, MOVE311_WEATHER_BALL) || IsEqual(MoveID, MOVE271_WEATHER_CRASH))
         {
-            if (ServerEvent_GetWeather(a1) > 0 || BattleMon_GetValue(AttackingMon, VALUE_EFFECTIVE_ABILITY) == ABIL034_CHLOROPHYLL || BattleMon_GetValue(AttackingMon, VALUE_EFFECTIVE_ABILITY) == ABIL094_SOLAR_POWER || BattleMon_GetValue(AttackingMon, VALUE_EFFECTIVE_ABILITY) == ABIL122_FLOWER_GIFT)
+            if (ServerEvent_GetWeather(server) > 0 || BattleMon_GetValue(AttackingMon, VALUE_EFFECTIVE_ABILITY) == ABIL034_CHLOROPHYLL || BattleMon_GetValue(AttackingMon, VALUE_EFFECTIVE_ABILITY) == ABIL094_SOLAR_POWER || BattleMon_GetValue(AttackingMon, VALUE_EFFECTIVE_ABILITY) == ABIL122_FLOWER_GIFT)
             {
                 return value << 1;
             }
@@ -1520,6 +1519,8 @@ extern "C"
                 return 4096 + (2048 * total);
             }
         }
+
+        return value;
 
     }
 
@@ -1926,7 +1927,7 @@ extern "C"
             ----------------------------------------------------------------------------------
         */
 
-        if (IsEqual(a4, MOVE101_NIGHT_SHADE) && !BattleMon_HasType(DefendingMon, TYPE_NORMAL))
+        if (IsEqual(a4, MOVE101_NIGHT_SHADE) && (!BattleMon_HasType(DefendingMon, TYPE_NORMAL) || checkForFieldEffects() == FIELD_CELESTIAL))
         {
             return AttackingMon->Level;
         }
@@ -1934,10 +1935,13 @@ extern "C"
         {
             return AttackingMon->Level;
         }
-
-        else if (IsEqual(a4, MOVE149_PSYWAVE) && (!BattleMon_HasType(DefendingMon, TYPE_DARK) || IsEqual(atkAbility, ABIL039_INNER_FOCUS)))
+        else if (IsEqual(a4, MOVE149_PSYWAVE) && (!BattleMon_HasType(DefendingMon, TYPE_DARK) || checkForFieldEffects() == FIELD_CELESTIAL))
         {
             return AttackingMon->Level;
+        }
+        else if (IsEqual(a4, MOVE283_ENDEAVOR))
+        {
+            return (DefendingMon->CurrentHP - AttackingMon->CurrentHP);
         }
         else if (IsEqual(a4, MOVE162_SUPER_FANG))
         {
@@ -1968,10 +1972,10 @@ extern "C"
 
         if (!PML_MoveIsDamaging(a4check))
         {
-            int actualMove;
+            u16 actualMove;
 
             // Copycat
-            if (IsEqual(a4check, MOVE383_COPYCAT) && (atkAbility || AttackingMon->HeldItem == IT0136_TRICKSTER_HERB || (Handler_CalculateSpeed(a1, AttackingMon, 0) > Handler_CalculateSpeed(a1, DefendingMon, 0))))
+            if (IsEqual(a4check, MOVE383_COPYCAT) && (atkAbility == ABIL158_PRANKSTER || AttackingMon->HeldItem == IT0136_TRICKSTER_HERB || (Handler_CalculateSpeed(a1, AttackingMon, 0) > Handler_CalculateSpeed(a1, DefendingMon, 0))))
             {
                 actualMove = Handler_GetPrevUsedMove(a1);
                 if (actualMove && !j_j_IsNotAllowedCopycatMove(actualMove))
@@ -1986,42 +1990,7 @@ extern "C"
             // Nature Power
             else if (IsEqual(a4check, MOVE267_NATURE_POWER))
             {
-                int BattleTerrain = Handler_GetBattleTerrain(a1);
-
-                // //k::printf("\n\nThe Battle Terrain is %d\n\n", BattleTerrain);
-
-                if (BattleTerrain == 5u)
-                {
-                    a4check = 402;
-                }
-                else if (BattleTerrain == 11u)
-                {
-                    a4check = 89;
-                }
-                else if (BattleTerrain == 0xCu)
-                {
-                    a4check = 56;
-                }
-                else if (BattleTerrain == 7u)
-                {
-                    a4check = 59;
-                }
-                else if (BattleTerrain == 9u)
-                {
-                    a4check = 426;
-                }
-                else if (BattleTerrain == 0xAu)
-                {
-                    a4check = 157;
-                }
-                else if (BattleTerrain == 0xDu)
-                {
-                    a4check = 58;
-                }
-                else
-                {
-                    a4check = 161;
-                }
+                a4check = checkNaturePower(a1);
             }
             else
             {
@@ -2159,7 +2128,9 @@ extern "C"
                     critFlag = 1;
                 }
             }
-            critFlag = 1;
+            else {
+                critFlag = 1;
+            }
         }
         else
         {
@@ -2818,19 +2789,18 @@ extern "C"
     {
         u8 v5;    // r5
         BattleMon *MonData; // r6
-        int ID;             // r4
+        u16 ID;             // r4
         AbilID atkAbility;
         AbilID defAbility;
         u16 BasePower;              // r4
         u8 TypeEffectivenessVsMon; // r0
         unsigned int v10;                    // r0
         unsigned int result;                 // r0
-        unsigned int j;                      // r5
-        unsigned int k;                      // r6
+        u8 j;                      // r5
+        u8 k;                      // r6
         unsigned int v14;                    // r1
         unsigned int v15;                    // r0
         unsigned int v18;
-        int randomvalue;
         u8 v16;                              // r1
         u8 Type;                            // [sp+8h] [bp-38h]
         u8 MoveCount;              // [sp+Ch] [bp-34h]
@@ -2985,7 +2955,7 @@ extern "C"
                                     if (BasePower > 0)
                                     {
                                 #if TRYING_NEW_OPT
-                                        v10 = checkRatio(BattleServer_GetServerFlow(work->mainModule->server), MonData, defendingMonChecked, ID, v10);
+                                        v10 = CheckRatio(BattleServer_GetServerFlow(a1->mainModule->server), MonData, defendingMonChecked, ID, v10);
                                 #else 
                                         v10 = checkForBPChanges(MonData, defendingMonChecked, ID, v10, a1);
                                 #endif
@@ -3080,11 +3050,10 @@ extern "C"
         AbilID defAbility;
         u8 TypeEffectivenessVsMon; // r0
         unsigned int result;                 // r0
-        unsigned int j;                      // r5
-        unsigned int k;                      // r6
+        u8 j;                      // r5
+        u8 k;                      // r6
         unsigned int counterValueC;          // r1
         unsigned int countValueB;            // r0
-        unsigned int weatherValue;
         u16 countValueA;                      // r1
         u8 Type;                            // [sp+8h] [bp-38h]
         u8 MoveCount;              // [sp+Ch] [bp-34h]
@@ -3456,7 +3425,7 @@ extern "C"
         BattleMon *defender;
         ServerFlow *flow;
         u8 k;
-
+        
         flow = BattleServer_GetServerFlow(work->mainModule->server);
         ExistFrontPokePos = Handler_GetExistFrontPokePos(flow, attackingMon->ID);
         pokeCount = Handler_ExpandPokeID(flow, ExistFrontPokePos | 0x100, opposingPokePos);
@@ -3517,9 +3486,9 @@ extern "C"
             if (((damage << 3) + (damage << 1)) < defender->MaxHP)
             {
 
-                if (turnCount >= 1)
+                if (turnCount >= 3)
                 {
-                    if (RandomInRange(1, 100) < (10 + (turnCount << 2)))
+                    if (RandomInRange(1, 100) < (10 + (turnCount << 1)))
                     {
                         switchout = 1;
                     }
@@ -3529,7 +3498,7 @@ extern "C"
             /* Moderately Negliglbe Damage */
             else if (((damage << 2) + (damage << 1)) < defender->MaxHP)
             {
-                if (turnCount >= 3)
+                if (turnCount >= 5)
                 {
                     if (RandomInRange(1, 100) < (5 + turnCount))
                     {
@@ -3541,7 +3510,7 @@ extern "C"
             /* Mildly Negliglbe Damage */
             else if ((damage << 2) < defender->MaxHP)
             {
-                if (turnCount >= 4)
+                if (turnCount >= 8)
                 {
                     if (RandomInRange(1, 100) < (1 + turnCount))
                     {
@@ -3564,24 +3533,23 @@ extern "C"
     {
         ConditionData MoveCondition; // r0
         int Param;                   // r0
-        int TypeEffectiveness;
+        u8 TypeEffectiveness;
         bool IsDamaging; // r6
-        int PokeType;    // r0
+        u8 PokeType;    // r0
         __int64 v10;     // kr00_8
         bool result;     // r0
         __int64 v12;     // r0
         __int64 v13;     // kr08_8
         __int64 v14;     // kr10_8
-        int moveID;      // [sp+0h] [bp-28h]
-        int temp;
-        int Type; // [sp+4h] [bp-24h]
+        u16 moveID;      // [sp+0h] [bp-28h]
+        u8 Type; // [sp+4h] [bp-24h]
         AbilID atkAbility;
         AbilID defAbility;
 
         /* Encore and Choice Item Check */
         if (!BattleMon_CheckIfMoveCondition(attackingMon, CONDITION_CHOICELOCK) && !BattleMon_CheckIfMoveCondition(attackingMon, CONDITION_ENCORE))
         {
-            return AlternateSwitchConditions(work, attackingMon, defendingMon);
+            return (BtlSetup_GetBattleStyle(work->mainModule) != BTL_STYLE_SINGLE) ? AlternateSwitchConditions(work, attackingMon, defendingMon) : 0;
         }
 
         if (BattleMon_CheckIfMoveCondition(attackingMon, CONDITION_CHOICELOCK))

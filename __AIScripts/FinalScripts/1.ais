@@ -141,7 +141,8 @@ address_ReduceScoreBy1:
 	AddToScore(-1)
 	EndScript()
 
-
+bufferScriptCallFour:
+	EndScript()
 
 
 	0x0004 [4]

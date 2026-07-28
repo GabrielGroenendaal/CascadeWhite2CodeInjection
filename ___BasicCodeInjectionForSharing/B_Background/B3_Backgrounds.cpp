@@ -523,7 +523,7 @@ extern "C"
                 a1->Hour,
                 a1->Minute,
                 a1->FieldLightIndex,
-                0,
+                a1->AreaIDSeasonShift,
                 &a6,
                 g_Effects->HeapID);
             light.Color = a6;

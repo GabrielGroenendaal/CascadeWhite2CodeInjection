@@ -426,8 +426,12 @@ endScript_3:
 
 
 //   EXPLOSION   
-
 Label_Explosion:
+    // THIS LOGIC SHOULD ENDURE THAT THE AI NEVER EXPLODES AT MAX HEALTH
+    JumpIfHealthLT(attacker, 100, &Label_ExplosionStart)
+    AddToScore(-3)
+
+Label_ExplosionStart:
 	JumpIfStatStageLT(defender, eva, +1, &ExplosionCheck1)
 	AddToScore(-1)
 	JumpIfStatStageLT(defender, eva, +4, &ExplosionCheck1)
@@ -1233,6 +1237,17 @@ address_0x1534:
 //   PHASE ENEMIES   
 
 Label_DragonTail:
+    JumpIfUserWillTakeLowDamage_Setup(&Label_HazardBoost)
+    JumpIfHasSideCondition(defender, side_cond.spikes, &Label_HazardBoost)
+	JumpIfHasSideCondition(defender, side_cond.stealth_rock, &Label_HazardBoost)
+	JumpIfHasSideCondition(defender, side_cond.toxic_spikes, &Label_HazardBoost)
+    Jump(&Label_EndDragonTail)
+
+Label_HazardBoost:
+	JumpIfRandLT(128, &Label_EndDragonTail)
+	AddToScore(2)
+
+Label_EndDragonTail:
 	EndScript()
 
 
@@ -2257,6 +2272,7 @@ array_StatBerries:
 	item.starf_berry
 	item.kee_berry
 	item.maranga_berry
+    item.weakness_policy
 	END
 
 
@@ -6221,4 +6237,7 @@ prioritizeBy2:
 
 prioritizeBy10:
 	AddToScore(10)
+	EndScript()
+
+bufferScriptCallThree:
 	EndScript()

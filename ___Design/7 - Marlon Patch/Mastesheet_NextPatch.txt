@@ -1591,7 +1591,7 @@ end
 
 
 
-## Clay Tunnel 
+## Clay Tunnel: Skyla Split
 !items Items 
 blue shard, 6x Blue Shards
 tm ground, TM28 Dig (reward for defeating Roxanne) 
