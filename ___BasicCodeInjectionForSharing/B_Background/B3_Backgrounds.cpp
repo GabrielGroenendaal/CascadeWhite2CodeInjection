@@ -459,15 +459,15 @@ extern "C"
         }
         sub_21E7210(btlvMcss, v15);
         AreaIDSeasonShift = 0;
-        goto Label_StaticBackground;
+       //goto Label_StaticBackground;
         if (a1->battleBGID >= 80){
             if (a1->battleBGID >= 160){
-                k::Printf("BattleBGID is %d, which is >= 160, so we will adjust it by subtracting 160 and use the appropriate heap.\n", a1->battleBGID);
+                //k::Printf("BattleBGID is %d, which is >= 160, so we will adjust it by subtracting 160 and use the appropriate heap.\n", a1->battleBGID);
                 adjustedBGID = a1->battleBGID - 160;
                 HeapNew = (_BYTE*)GFL_ArcSysReadHeapNew(151, 4, (HeapID)((g_Effects->HeapID & 0x7FFF | 0x8000)));
             }
             else {
-                k::Printf("BattleBGID is %d, which is >= 80 but < 160, so we will adjust it by subtracting 80 and use the appropriate heap.\n", a1->battleBGID);
+                //k::Printf("BattleBGID is %d, which is >= 80 but < 160, so we will adjust it by subtracting 80 and use the appropriate heap.\n", a1->battleBGID);
                 adjustedBGID = a1->battleBGID - 80;
                 HeapNew = (_BYTE*)GFL_ArcSysReadHeapNew(151, 3, (HeapID)((g_Effects->HeapID & 0x7FFF | 0x8000)));
             }
@@ -476,10 +476,10 @@ extern "C"
             adjustedBGID = a1->battleBGID;
             HeapNew = (_BYTE*)GFL_ArcSysReadHeapNew(151, 0, (HeapID)((g_Effects->HeapID & 0x7FFF | 0x8000)));
         }
-        Label_StaticBackground:
-        adjustedBGID = 24;
-        k::Printf("BattleBGID is %d, which is >= 80 but < 160, so we will adjust it by subtracting 80 and use the appropriate heap.\n", a1->battleBGID);
-        HeapNew = (_BYTE*)GFL_ArcSysReadHeapNew(151, 0, (HeapID)((g_Effects->HeapID & 0x7FFF | 0x8000)));
+        //Label_StaticBackground:
+        //adjustedBGID = 24;
+        //k::Printf("BattleBGID is %d, which is >= 80 but < 160, so we will adjust it by subtracting 80 and use the appropriate heap.\n", a1->battleBGID);
+        //HeapNew = (_BYTE*)GFL_ArcSysReadHeapNew(151, 0, (HeapID)((g_Effects->HeapID & 0x7FFF | 0x8000)));
         v18 = 44 * adjustedBGID;
         if (2 * (unsigned __int8)HeapNew[v18 + 1])
         {
@@ -518,19 +518,19 @@ extern "C"
         g_Effects->btlvFieldHandle = v21;
         if (HeapNew[44 * adjustedBGID])
         {
-            sub_2019830(
-                a1->ZoneID,
-                a1->Hour,
-                a1->Minute,
-                a1->FieldLightIndex,
-                a1->AreaIDSeasonShift,
-                &a6,
-                g_Effects->HeapID);
-            light.Color = a6;
-            light.Direction.x = 0;
-            light.Direction.y = -4096;
-            light.Direction.z = 0;
-            GFL_G3DSysLightSet(0, &light);
+            // sub_2019830(
+            //     a1->ZoneID,
+            //     a1->Hour,
+            //     a1->Minute,
+            //     a1->FieldLightIndex,
+            //     a1->AreaIDSeasonShift,
+            //     &a6,
+            //     g_Effects->HeapID);
+            // light.Color = a6;
+            // light.Direction.x = 0;
+            // light.Direction.y = -4096;
+            // light.Direction.z = 0;
+            // GFL_G3DSysLightSet(0, &light);
         }
         GFL_HeapFree(HeapNew);
         g_Effects->btlvCameraHandle = BtlvCamera_Create((int)g_Effects->TCBManager, heapId);

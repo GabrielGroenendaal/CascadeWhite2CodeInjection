@@ -1978,7 +1978,7 @@ extern "C"
                 return 1;
             }
 
-            if (BattleMon_GetValue(a2, VALUE_EFFECTIVE_ABILITY) == ABIL054_TRUANT && !BattleMon_GetTurnFlag(a2, TURNFLAG_MOVEFAILEDLASTTURN) && PML_MoveIsDamaging(move) && PML_MoveIsDamaging(BattleMon_GetPreviousMove(a2)))
+            if (BattleMon_GetValue(a2, VALUE_EFFECTIVE_ABILITY) == ABIL054_TRUANT && !BattleMon_GetTurnFlag(a2, TURNFLAG_MOVEFAILEDLASTTURN) && PML_MoveIsDamaging(move) && BattleMon_GetPreviousMove(a2)!=MOVE165_STRUGGLE && PML_MoveIsDamaging(BattleMon_GetPreviousMove(a2)))
             {
 
                 if (strparam)

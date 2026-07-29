@@ -1,0 +1,4954 @@
+	JumpIfTargetIsAlly(&address_0x055E)
+	JumpTable(move_effect, 337, &data_address_0x0016)
+	EndScript()
+
+
+data_address_0x0016:
+	move_ef.dmg => &address_0x055E
+	move_ef.target_slp => &Label_0x0560
+	move_ef.dmg_target_psn => &address_0x055E
+	move_ef.dmg_target_absorb => &Label_0x05F4
+	move_ef.dmg_target_brn => &address_0x055E
+	move_ef.dmg_target_frz => &address_0x055E
+	move_ef.dmg_target_par => &address_0x055E
+	move_ef.explosion => &Label_0x063A
+	move_ef.dream_eater => &Label_0x06F0
+	move_ef.mirror_move => &Label_0x076A
+	move_ef.user_atk+1 => &Label_0x0884
+	move_ef.user_def+1 => &Label_0x0906
+	move_ef.user_spe+1 => &Label_0x09D8
+	move_ef.user_spa+1 => &Label_0x0AA2
+	move_ef.user_spd+1 => &Label_0x0B24
+	move_ef.user_acc+1 => &Label_0x0BD8
+	move_ef.user_eva+1 => &Label_0x0C10
+	move_ef.no_miss => &Label_0x0F3E
+	move_ef.target_atk-1 => &Label_0x0FA4
+	move_ef.target_def-1 => &Label_0x1040
+	move_ef.target_spe-1 => &Label_0x10EE
+	move_ef.target_spa-1 => &Label_0x1116
+	move_ef.target_spd-1 => &Label_0x11BA
+	move_ef.target_acc-1 => &Label_0x1200
+	move_ef.target_eva-1 => &Label_0x1334
+	move_ef.haze => &Label_0x137A
+	move_ef.bide => &Label_0x1520
+	move_ef.thrash => &address_0x055E
+	move_ef.force_switch => &Label_0x1536
+	move_ef.multi-strike_2-5 => &address_0x055E
+	move_ef.conversion => &Label_0x15F8
+	move_ef.dmg_flinch => &address_0x055E
+	move_ef.heal_50 => &Label_0x1650
+	move_ef.target_tox => &Label_0x16F4
+	move_ef.dmg_money => &address_0x055E
+	move_ef.light_screen => &Label_0x176A
+	move_ef.tri_attack => &address_0x055E
+	move_ef.rest => &Label_0x17C8
+	move_ef.ohko => &Label_0x187A
+	move_ef.razor_wind => &Label_0x29D0
+	move_ef.direct_half => &Label_0x188C
+	move_ef.direct_40 => &address_0x055E
+	move_ef.dmg_trap => &Label_0x18A2
+	move_ef.increased_crit => &Label_0x18EE
+	move_ef.multi-strike_2 => &address_0x055E
+	move_ef.jump_kick => &address_0x055E
+	move_ef.mist => &address_0x055E
+	move_ef.focus_energy => &address_0x055E
+	move_ef.dmg_recoil_25 => &Label_0x5054
+	move_ef.target_confusion => &Label_0x195A
+	move_ef.user_atk+2 => &Label_0x0884
+	move_ef.user_def+2 => &Label_0x0906
+	move_ef.user_spe+2 => &Label_0x09D8
+	move_ef.user_spa+2 => &Label_0x0AA2
+	move_ef.user_spd+2 => &Label_0x0B24
+	move_ef.user_acc+2 => &Label_0x0BD8
+	move_ef.user_eva+2 => &Label_0x0C10
+	move_ef.transform => &address_0x055E
+	move_ef.target_atk-2 => &Label_0x0FA4
+	move_ef.target_def-2 => &Label_0x1040
+	move_ef.target_spe-2 => &Label_0x10EE
+	move_ef.target_spa-2 => &Label_0x1116
+	move_ef.target_spd-2 => &Label_0x11BA
+	move_ef.target_acc-2 => &Label_0x1200
+	move_ef.target_eva-2 => &Label_0x1334
+	move_ef.reflect => &Label_0x19DA
+	move_ef.target_psn => &Label_0x1A38
+	move_ef.target_par => &Label_0x1A5C
+	move_ef.dmg_target_atk-1 => &address_0x055E
+	move_ef.dmg_target_def-1 => &address_0x055E
+	move_ef.dmg_target_spe-1 => &Label_0x1086
+	move_ef.dmg_target_spa-1 => &address_0x055E
+	move_ef.dmg_target_spd-1 => &address_0x055E
+	move_ef.dmg_target_acc-1 => &address_0x055E
+	move_ef.dmg_target_eva-1 => &address_0x055E
+	move_ef.sky_attack => &Label_0x29D0
+	move_ef.dmg_target_confuse => &address_0x055E
+	move_ef.twineedle => &address_0x055E
+	move_ef.vital_throw => &Label_0x1A92
+	move_ef.substitute => &Label_0x1AD4
+	move_ef.recharge => &Label_0x1BEE
+	move_ef.rage => &address_0x055E
+	move_ef.mimic => &address_0x055E
+	move_ef.metronome => &address_0x055E
+	move_ef.leech_seed => &Label_0x16F4
+	move_ef.splash => &address_0x055E
+	move_ef.disable => &Label_0x1C66
+	move_ef.direct_level => &address_0x055E
+	move_ef.psywave => &address_0x055E
+	move_ef.counter => &Label_0x1CA0
+	move_ef.encore => &Label_0x1DE0
+	move_ef.pain_split => &Label_0x1F74
+	move_ef.snore => &Label_0x1FC8
+	move_ef.conversion_2 => &address_0x055E
+	move_ef.mind_reader => &Label_0x1FD0
+	move_ef.sketch => &address_0x055E
+	move_ef.unknown_0x0060 => &address_0x055E
+	move_ef.sleep_talk => &Label_0x1FE2
+	move_ef.destiny_bond => &Label_0x1FF8
+	move_ef.flail => &Label_0x2064
+	move_ef.spite => &address_0x055E
+	move_ef.false_swipe => &address_0x055E
+	move_ef.team_heal => &Label_0x20E4
+	move_ef.increased_priority => &address_0x055E
+	move_ef.triple_kick => &address_0x055E
+	move_ef.theif => &Label_0x2100
+	move_ef.spider_web => &Label_0x18A2
+	move_ef.nightmare => &address_0x055E
+	move_ef.minimize => &Label_0x0C10
+	move_ef.curse => &Label_0x2196
+	move_ef.unknown_0x006e => &address_0x055E
+	move_ef.protect => &Label_0x226A
+	move_ef.spikes => &Label_0x2408
+	move_ef.foresight => &Label_0x244C
+	move_ef.perish_song => &address_0x055E
+	move_ef.sandstorm => &address_0x055E
+	move_ef.endure => &Label_0x24A6
+	move_ef.rollout => &address_0x055E
+	move_ef.swagger => &Label_0x193C
+	move_ef.fury_cutter => &address_0x055E
+	move_ef.attract => &address_0x055E
+	move_ef.return => &address_0x055E
+	move_ef.present => &address_0x055E
+	move_ef.frustration => &address_0x055E
+	move_ef.safeguard => &address_0x055E
+	move_ef.flame_wheel => &address_0x055E
+	move_ef.magnitude => &address_0x055E
+	move_ef.baton_pass => &Label_0x24E0
+	move_ef.pursuit => &Label_0x2616
+	move_ef.rapid_spin => &address_0x055E
+	move_ef.direct_30 => &address_0x055E
+	move_ef.unknown_0x0083 => &address_0x055E
+	move_ef.morning_sun => &Label_0x1624
+	move_ef.unknown0x0085 => &Label_0x1624
+	move_ef.unknown0x0086 => &Label_0x1624
+	move_ef.hidden_power => &address_0x055E
+	move_ef.rain_dance => &Label_0x269C
+	move_ef.sunny_day => &Label_0x272C
+	move_ef.dmg_user_def+1 => &address_0x055E
+	move_ef.dmg_user_atk+1 => &address_0x055E
+	move_ef.ancient_power => &address_0x055E
+	move_ef.unknown_0x008d => &address_0x055E
+	move_ef.belly_drum => &Label_0x2798
+	move_ef.psych_up => &Label_0x27B4
+	move_ef.mirror_coat => &Label_0x2894
+	move_ef.skull_bash => &Label_0x29D0
+	move_ef.twister => &address_0x055E
+	move_ef.earthquake => &address_0x055E
+	move_ef.future_sight => &address_0x055E
+	move_ef.gust => &address_0x055E
+	move_ef.stomp => &address_0x055E
+	move_ef.solar_beam => &Label_0x29D0
+	move_ef.thunder => &Label_0x2A66
+	move_ef.teleport => &address_0x055E
+	move_ef.beat_up => &address_0x055E
+	move_ef.fly => &Label_0x2AB8
+	move_ef.defense_curl => &address_0x055E
+	move_ef.unknown_0x009d => &Label_0x1650
+	move_ef.fake_out => &Label_0x2C1E
+	move_ef.uproar => &address_0x055E
+	move_ef.stockpile => &Label_0x2C26
+	move_ef.spit_up => &Label_0x2C8A
+	move_ef.swallow => &Label_0x1650
+	move_ef.unknown_0x00a3 => &address_0x055E
+	move_ef.hail => &Label_0x2CAC
+	move_ef.torment => &address_0x055E
+	move_ef.flatter => &Label_0x194A
+	move_ef.will-o-wisp => &address_0x055E
+	move_ef.memento => &Label_0x063A
+	move_ef.facade => &Label_0x2D1E
+	move_ef.focus_punch => &Label_0x2D5A
+	move_ef.smelling_salts => &Label_0x2DFE
+	move_ef.follow_me => &address_0x055E
+	move_ef.nature_power => &address_0x055E
+	move_ef.charge_electric => &address_0x055E
+	move_ef.taunt => &address_0x055E
+	move_ef.helping_hand => &address_0x055E
+	move_ef.trick => &Label_0x2E1A
+	move_ef.roleplay => &Label_0x3256
+	move_ef.wish => &address_0x055E
+	move_ef.assist => &address_0x055E
+	move_ef.ingrain => &Label_0x332C
+	move_ef.dmg_user_atk_def-1 => &Label_0x332E
+	move_ef.magic_coat => &Label_0x3392
+	move_ef.recycle => &Label_0x33F2
+	move_ef.revenge => &Label_0x3430
+	move_ef.brick_break => &Label_0x3478
+	move_ef.yawn => &address_0x055E
+	move_ef.knock_off => &Label_0x34A2
+	move_ef.endeavor => &Label_0x34E2
+	move_ef.dmg_user_hp_pct => &Label_0x3536
+	move_ef.skill_swap => &Label_0x3256
+	move_ef.imprison => &Label_0x35C6
+	move_ef.refresh => &Label_0x35E8
+	move_ef.grudge => &address_0x055E
+	move_ef.snatch => &Label_0x3604
+	move_ef.low_kick => &address_0x055E
+	move_ef.secret_power => &address_0x055E
+	move_ef.dmg_recoil_33 => &Label_0x5054
+	move_ef.teeter_dance => &address_0x055E
+	move_ef.dmg_target_brn_highcrit => &Label_0x18EE
+	move_ef.mud_sport => &Label_0x36D0
+	move_ef.dmg_target_tox => &address_0x055E
+	move_ef.weather_ball => &address_0x055E
+	move_ef.dmg_user_spa-2 => &Label_0x3718
+	move_ef.target_atk_def-1 => &Label_0x1040
+	move_ef.user_def_spd+1 => &Label_0x0B24
+	move_ef.sky_uppercut => &address_0x055E
+	move_ef.user_atk_def+1 => &Label_0x0906
+	move_ef.dmg_target_psn_highcrit => &Label_0x18EE
+	move_ef.water_sport => &Label_0x37B2
+	move_ef.user_spa_spd+1 => &Label_0x0B24
+	move_ef.user_atk_spe+1 => &Label_0x37FA
+	move_ef.camouflage => &address_0x055E
+	move_ef.roost => &Label_0x1650
+	move_ef.gravity => &Label_0x383A
+	move_ef.miracle_eye => &Label_0x38A8
+	move_ef.wake-up_slap => &Label_0x38FE
+	move_ef.dmg_user_spe-1 => &Label_0x3944
+	move_ef.gyro_ball => &Label_0x3982
+	move_ef.healing_wish => &Label_0x509A
+	move_ef.brine => &Label_0x3984
+	move_ef.natural_gift => &address_0x055E
+	move_ef.feint => &Label_0x39D4
+	move_ef.pluck => &Label_0x3B18
+	move_ef.tailwind => &Label_0x3B74
+	move_ef.acupressure => &Label_0x3BC2
+	move_ef.metal_burst => &Label_0x3C06
+	move_ef.dmg_user_switch => &Label_0x3CF2
+	move_ef.dmg_user_def_spd-1 => &Label_0x3DD0
+	move_ef.payback => &Label_0x3E22
+	move_ef.assurance => &Label_0x3E72
+	move_ef.embargo => &Label_0x3EF4
+	move_ef.fling => &Label_0x3F06
+	move_ef.psycho_shift => &Label_0x3FE0
+	move_ef.trump_card => &Label_0x400A
+	move_ef.heal_block => &Label_0x40E6
+	move_ef.dmg_target_hp_pct => &Label_0x41E8
+	move_ef.power_trick => &Label_0x426A
+	move_ef.gastro_acid => &Label_0x4500
+	move_ef.lucky_chant => &Label_0x45CC
+	move_ef.me_first => &Label_0x4628
+	move_ef.copycat => &Label_0x4690
+	move_ef.power_swap => &Label_0x47D4
+	move_ef.guard_swap => &Label_0x4934
+	move_ef.punishment => &Label_0x4A94
+	move_ef.last_resort => &Label_0x4B32
+	move_ef.worry_seed => &Label_0x4B74
+	move_ef.sucker_punch => &Label_0x4BBE
+	move_ef.toxic_spikes => &Label_0x4BFA
+	move_ef.heart_swap => &Label_0x4C3E
+	move_ef.aqua_ring => &Label_0x4D3A
+	move_ef.magnet_rise => &Label_0x4D5A
+	move_ef.flare_blitz => &Label_0x5054
+	move_ef.struggle => &address_0x055E
+	move_ef.dive => &Label_0x2AB8
+	move_ef.dig => &Label_0x2AB8
+	move_ef.surf => &address_0x055E
+	move_ef.defog => &Label_0x4DD8
+	move_ef.trick_room => &Label_0x4EF0
+	move_ef.blizzard => &Label_0x4F42
+	move_ef.whirlpool => &address_0x055E
+	move_ef.volt_tackle => &Label_0x5054
+	move_ef.bounce => &Label_0x2AB8
+	move_ef.unknown_0x0108 => &address_0x055E
+	move_ef.captivate => &Label_0x4F8C
+	move_ef.stealth_rock => &Label_0x500C
+	move_ef.chatter => &address_0x055E
+	move_ef.judgment => &address_0x055E
+	move_ef.dmg_recoil_50 => &Label_0x5054
+	move_ef.lunar_dance => &Label_0x509A
+	move_ef.dmg_target_spd-2 => &address_0x055E
+	move_ef.shadow_force => &Label_0x2AE0
+	move_ef.dmg_target_brn_flinch => &address_0x055E
+	move_ef.dmg_target_frz_flinch => &address_0x055E
+	move_ef.dmg_target_par_flinch => &address_0x055E
+	move_ef.dmg_user_spa+1 => &address_0x055E
+	move_ef.user_atk_acc+1 => &Label_0x514C
+	move_ef.wide_guard => &Label_0x5184
+	move_ef.guard_split => &Label_0x5186
+	move_ef.power_split => &Label_0x5358
+	move_ef.wonder_room => &Label_0x5536
+	move_ef.dmg_physical => &Label_0x5538
+	move_ef.venoshock => &Label_0x553A
+	move_ef.autotomize => &Label_0x09BA
+	move_ef.telekinesis => &Label_0x553C
+	move_ef.magic_room => &Label_0x55A0
+	move_ef.smack_down => &Label_0x55FC
+	move_ef.dmg_alwayscrit => &Label_0x5652
+	move_ef.flame_burst => &Label_0x56B6
+	move_ef.user_spa_spd_spe+2 => &Label_0x56B8
+	move_ef.heavy_slam => &Label_0x56F8
+	move_ef.synchronoise => &Label_0x56FA
+	move_ef.electro_ball => &Label_0x56FC
+	move_ef.soak => &Label_0x5754
+	move_ef.dmg_user_spe+1 => &Label_0x5756
+	move_ef.acid_spray => &Label_0x57A6
+	move_ef.foul_play => &Label_0x57E2
+	move_ef.simple_beam => &Label_0x42DE
+	move_ef.entrainment => &Label_0x57E4
+	move_ef.after_you => &Label_0x57F6
+	move_ef.round => &Label_0x57F8
+	move_ef.echoed_voice => &Label_0x57FA
+	move_ef.chip_away => &Label_0x57FC
+	move_ef.clear_smog => &Label_0x5850
+	move_ef.stored_power => &Label_0x58D2
+	move_ef.quick_guard => &Label_0x5A5C
+	move_ef.ally_switch => &Label_0x5A84
+	move_ef.shell_smash => &Label_0x5A86
+	move_ef.heal_pulse => &Label_0x5AB8
+	move_ef.hex => &Label_0x5ABA
+	move_ef.sky_drop => &Label_0x2B1E
+	move_ef.user_spe+2_atk+1 => &Label_0x5ABC
+	move_ef.dmg_force_switch => &Label_0x1536
+	move_ef.incinerate => &Label_0x5AFC
+	move_ef.quash => &Label_0x5B1A
+	move_ef.growth => &Label_0x5B1C
+	move_ef.acrobatics => &Label_0x5B3C
+	move_ef.reflect_type => &Label_0x5B90
+	move_ef.retaliate => &Label_0x5C26
+	move_ef.final_gambit => &Label_0x5C28
+	move_ef.user_spa+3 => &Label_0x0AA2
+	move_ef.user_atk_def_acc+1 => &Label_0x0906
+	move_ef.bestow => &Label_0x5C66
+	move_ef.water_pledge => &Label_0x5C68
+	move_ef.fire_pledge => &Label_0x5C6A
+	move_ef.grass_pledge => &Label_0x5C6C
+	move_ef.work_up => &Label_0x5C6E
+	move_ef.cotton_guard => &Label_0x0AA2
+	move_ef.relic_song => &Label_0x5D18
+	move_ef.glaciate => &Label_0x5D1A
+	move_ef.freeze_shock => &Label_0x29D0
+	move_ef.ice_burn => &Label_0x29D0
+	move_ef.unknown_0x014d => &Label_0x5D42
+	move_ef.v-create => &address_0x055E
+	move_ef.fusion_flare => &address_0x055E
+	move_ef.fusion_bolt => &address_0x055E
+	move_ef.hurricane => &Label_0x2A66
+
+address_0x055E:
+	EndScript()
+
+
+Label_0x0560:
+	JumpIfHasMoveWithEffect(attacker, move_ef.dream_eater, &address_0x05E2)
+	JumpIfHasMoveWithEffect(attacker, move_ef.nightmare, &address_0x05E2)
+	JumpIfHasMoveWithEffect(defender, move_ef.sleep_talk, &address_0x05C6)
+	JumpIfHasMoveWithEffect(defender, move_ef.magic_coat, &address_0x05CC)
+	JumpIfHasMoveWithEffect(defender, move_ef.snore, &address_0x05CC)
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.no_guard, &address_0x05E2)
+	JumpIfStoredEQ(ability.early_bird, &address_0x05CC)
+	Jump(&address_0x05F2)
+
+address_0x05C6:
+	AddToScore(-1)
+
+address_0x05CC:
+	JumpIfRandLT(128, &address_0x05F2)
+	AddToScore(-1)
+	Jump(&address_0x05F2)
+
+address_0x05E2:
+	JumpIfRandLT(128, &address_0x05F2)
+	AddToScore(1)
+
+address_0x05F2:
+	EndScript()
+
+
+Label_0x05F4:
+	JumpIfEffectivenessEQ(0x, &address_0x0628)
+	JumpIfEffectivenessEQ(1/2x, &address_0x0628)
+	JumpIfEffectivenessEQ(1/4x, &address_0x0628)
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.liquid_ooze, &address_0x0628)
+	Jump(&address_0x0638)
+
+address_0x0628:
+	JumpIfRandLT(50, &address_0x0638)
+	AddToScore(-3)
+
+address_0x0638:
+	EndScript()
+
+
+Label_0x063A:
+	JumpIfStatStageLT(defender, eva, +1, &address_0x0674)
+	AddToScore(-1)
+	JumpIfStatStageLT(defender, eva, +4, &address_0x0674)
+	JumpIfRandLT(128, &address_0x0674)
+	AddToScore(-1)
+
+address_0x0674:
+	JumpIfHealthLT(attacker, 80, &address_0x069C)
+	JumpCompareSpeed(GT, &address_0x069C)
+	JumpIfRandSeedLT(50, &address_0x06EE)
+	Jump(&address_0x5D54)
+
+address_0x069C:
+	JumpIfHealthGT(attacker, 50, &address_0x06DE)
+	JumpIfRandSeedGT(128, &address_0x06BA)
+	AddToScore(1)
+
+address_0x06BA:
+	JumpIfHealthGT(attacker, 30, &address_0x06EE)
+	JumpIfRandSeedGT(128, &address_0x06EE)
+	AddToScore(1)
+	Jump(&address_0x06EE)
+
+address_0x06DE:
+	JumpIfRandSeedLT(50, &address_0x06EE)
+	AddToScore(-1)
+
+address_0x06EE:
+	EndScript()
+
+
+Label_0x06F0:
+	JumpIfEffectivenessEQ(0x, &address_0x0748)
+	JumpIfEffectivenessEQ(1/4x, &address_0x0758)
+	JumpIfEffectivenessEQ(1/2x, &address_0x0758)
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.liquid_ooze, &address_0x0748)
+	JumpIfHasCondition(defender, cond.sleep, &address_0x0732)
+	Jump(&address_0x0768)
+
+address_0x0732:
+	JumpIfRandLT(51, &address_0x0768)
+	AddToScore(3)
+	Jump(&address_0x0768)
+
+address_0x0748:
+	JumpIfRandLT(50, &address_0x0758)
+	AddToScore(-2)
+
+address_0x0758:
+	JumpIfRandLT(50, &address_0x0768)
+	AddToScore(-1)
+
+address_0x0768:
+	EndScript()
+
+
+Label_0x076A:
+	JumpCompareSpeed(GT, &address_0x079A)
+	GetPreviousMove(defender)
+	JumpIfStoredIsNotInList(&data_address_0x07BC, &address_0x079A)
+	JumpIfRandLT(128, &address_0x07BA)
+	AddToScore(2)
+	Jump(&address_0x07BA)
+
+address_0x079A:
+	GetPreviousMove(defender)
+	JumpIfStoredIsInList(&data_address_0x07BC, &address_0x07BA)
+	JumpIfRandLT(80, &address_0x07BA)
+	AddToScore(-1)
+
+address_0x07BA:
+	EndScript()
+
+
+data_address_0x07BC:
+	move.sleep_powder
+	move.lovely_kiss
+	move.spore
+	move.hypnosis
+	move.sing
+	move.grass_whistle
+	move.shadow_punch
+	move.sand_attack
+	move.smokescreen
+	move.toxic
+	move.guillotine
+	move.horn_drill
+	move.fissure
+	move.sheer_cold
+	move.cross_chop
+	move.aeroblast
+	move.confuse_ray
+	move.sweet_kiss
+	move.screech
+	move.cotton_spore
+	move.scary_face
+	move.fake_tears
+	move.metal_sound
+	move.thunder_wave
+	move.glare
+	move.poison_powder
+	move.shadow_ball
+	move.dynamic_punch
+	move.hyper_beam
+	move.extreme_speed
+	move.thief
+	move.covet
+	move.attract
+	move.swagger
+	move.torment
+	move.flatter
+	move.trick
+	move.superpower
+	move.skill_swap
+	move.psycho_shift
+	move.power_swap
+	move.guard_swap
+	move.sucker_punch
+	move.heart_swap
+	move.switcheroo
+	move.captivate
+	move.dark_void
+	move.glaciate
+	move.snarl
+	END
+
+Label_0x0884:
+	JumpIfStatStageLT(attacker, atk, +3, &address_0x08AC)
+	JumpIfRandLT(100, &address_0x08D8)
+	AddToScore(-1)
+	Jump(&address_0x08D8)
+
+address_0x08AC:
+	JumpIfHealthNE(attacker, 100, &address_0x08D8)
+	JumpIfHasMoveWithEffect(attacker, move_ef.baton_pass, &address_0x08D2)
+	JumpIfRandLT(128, &address_0x08D8)
+
+address_0x08D2:
+	AddToScore(2)
+
+address_0x08D8:
+	JumpIfHealthGT(attacker, 70, &address_0x0904)
+	JumpIfHealthLT(attacker, 40, &address_0x08FE)
+	JumpIfRandLT(40, &address_0x0904)
+
+address_0x08FE:
+	AddToScore(-2)
+
+address_0x0904:
+	EndScript()
+
+
+Label_0x0906:
+	JumpIfStatStageLT(attacker, def, +3, &address_0x092E)
+	JumpIfRandLT(100, &address_0x0954)
+	AddToScore(-1)
+	Jump(&address_0x0954)
+
+address_0x092E:
+	JumpIfHealthNE(attacker, 100, &address_0x095A)
+	JumpIfHasMoveWithEffect(attacker, move_ef.baton_pass, &address_0x0954)
+	JumpIfRandLT(128, &address_0x095A)
+
+address_0x0954:
+	AddToScore(2)
+
+address_0x095A:
+	JumpIfHealthLT(attacker, 70, &address_0x0972)
+	JumpIfRandLT(200, &address_0x09B8)
+
+address_0x0972:
+	JumpIfHealthLT(attacker, 40, &address_0x09B2)
+	GetPreviousMove(defender)
+	GetPowerOfStoredMove()
+	JumpIfStoredEQ(0, &address_0x09A8)
+	GetLastPreviousCategory()
+	JumpIfStoredEQ(special, &address_0x09B2)
+	JumpIfRandLT(60, &address_0x09B8)
+
+address_0x09A8:
+	JumpIfRandLT(60, &address_0x09B8)
+
+address_0x09B2:
+	AddToScore(-2)
+
+address_0x09B8:
+	EndScript()
+
+
+Label_0x09BA:
+	JumpIfHasNoMovesWithEffect(defender, move_ef.low_kick, &Label_0x09D8)
+	JumpIfRandLT(60, &Label_0x09D8)
+	AddToScore(1)
+
+Label_0x09D8:
+	JumpCompareSpeed(GT, &address_0x09EE)
+	AddToScore(-3)
+	Jump(&address_0x0AA0)
+
+address_0x09EE:
+	JumpIfHasMoveWithEffect(attacker, move_ef.dmg_flinch, &address_0x0A80)
+	JumpIfHasMoveWithEffect(attacker, move_ef.heal_50, &address_0x0A80)
+	JumpIfHasMoveWithEffect(attacker, move_ef.rest, &address_0x0A80)
+	JumpIfHasMoveWithEffect(attacker, move_ef.morning_sun, &address_0x0A80)
+	JumpIfHasMoveWithEffect(attacker, move_ef.roost, &address_0x0A80)
+	JumpIfHasMoveWithEffect(attacker, move_ef.substitute, &address_0x0A80)
+	JumpIfHasMoveWithEffect(attacker, move_ef.pain_split, &address_0x0A80)
+	JumpIfHasMoveWithEffect(attacker, move_ef.stomp, &address_0x0A80)
+	JumpIfHasMoveWithEffect(attacker, move_ef.destiny_bond, &address_0x0A80)
+	JumpIfHasMoveWithEffect(attacker, move_ef.baton_pass, &address_0x0A80)
+	Jump(&address_0x0A90)
+
+address_0x0A80:
+	JumpIfRandLT(70, &address_0x0A90)
+	AddToScore(2)
+
+address_0x0A90:
+	JumpIfRandLT(70, &address_0x0AA0)
+	AddToScore(2)
+
+address_0x0AA0:
+	EndScript()
+
+
+Label_0x0AA2:
+	JumpIfStatStageLT(attacker, spa, +3, &address_0x0ACA)
+	JumpIfRandLT(100, &address_0x0AF6)
+	AddToScore(-1)
+	Jump(&address_0x0AF6)
+
+address_0x0ACA:
+	JumpIfHealthNE(attacker, 100, &address_0x0AF6)
+	JumpIfHasMoveWithEffect(attacker, move_ef.baton_pass, &address_0x0AF0)
+	JumpIfRandLT(128, &address_0x0AF6)
+
+address_0x0AF0:
+	AddToScore(2)
+
+address_0x0AF6:
+	JumpIfHealthGT(attacker, 70, &address_0x0B22)
+	JumpIfHealthLT(attacker, 40, &address_0x0B1C)
+	JumpIfRandLT(70, &address_0x0B22)
+
+address_0x0B1C:
+	AddToScore(-2)
+
+address_0x0B22:
+	EndScript()
+
+
+Label_0x0B24:
+	JumpIfStatStageLT(attacker, spd, +3, &address_0x0B4C)
+	JumpIfRandLT(100, &address_0x0B78)
+	AddToScore(-1)
+	Jump(&address_0x0B78)
+
+address_0x0B4C:
+	JumpIfHealthNE(attacker, 100, &address_0x0B78)
+	JumpIfHasMoveWithEffect(attacker, move_ef.baton_pass, &address_0x0B72)
+	JumpIfRandLT(128, &address_0x0B78)
+
+address_0x0B72:
+	AddToScore(2)
+
+address_0x0B78:
+	JumpIfHealthLT(attacker, 70, &address_0x0B90)
+	JumpIfRandLT(200, &address_0x0BD6)
+
+address_0x0B90:
+	JumpIfHealthLT(attacker, 40, &address_0x0BD0)
+	GetPreviousMove(defender)
+	GetPowerOfStoredMove()
+	JumpIfStoredEQ(0, &address_0x0BC6)
+	GetLastPreviousCategory()
+	JumpIfStoredEQ(physical, &address_0x0BD0)
+	JumpIfRandLT(60, &address_0x0BD6)
+
+address_0x0BC6:
+	JumpIfRandLT(60, &address_0x0BD6)
+
+address_0x0BD0:
+	AddToScore(-2)
+
+address_0x0BD6:
+	EndScript()
+
+
+Label_0x0BD8:
+	JumpIfStatStageLT(attacker, acc, +3, &address_0x0BFA)
+	JumpIfRandLT(50, &address_0x0BFA)
+	AddToScore(-2)
+
+address_0x0BFA:
+	JumpIfHealthGT(attacker, 70, &address_0x0C0E)
+	AddToScore(-2)
+
+address_0x0C0E:
+	EndScript()
+
+
+Label_0x0C10:
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.no_guard, &address_0x0F36)
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.no_guard, &address_0x0F36)
+	GetPreviousMove(defender)
+	GetEffectOfStoredMove()
+	JumpIfStoredEQ(move_ef.no_miss, &address_0x0F36)
+	JumpIfStoredEQ(move_ef.trump_card, &address_0x0F36)
+	JumpIfStoredEQ(move_ef.shadow_force, &address_0x0F36)
+	JumpIfHasCondition(attacker, cond.curse, &address_0x0F36)
+	JumpIfHasCondition(attacker, cond.foresight, &address_0x0F36)
+	GetWeather()
+	JumpIfStoredNE(weather.rain, &address_0x0C90)
+	GetPreviousMove(defender)
+	GetEffectOfStoredMove()
+	JumpIfStoredEQ(move_ef.thunder, &address_0x0F36)
+
+address_0x0C90:
+	GetWeather()
+	JumpIfStoredNE(weather.hail, &address_0x0CAE)
+	GetPreviousMove(defender)
+	GetEffectOfStoredMove()
+	JumpIfStoredEQ(move_ef.blizzard, &address_0x0F36)
+
+address_0x0CAE:
+	JumpIfHasMoveWithEffect(attacker, move_ef.heal_50, &address_0x0D7A)
+	JumpIfHasMoveWithEffect(attacker, move_ef.morning_sun, &address_0x0D7A)
+	JumpIfHasMoveWithEffect(attacker, move_ef.defense_curl, &address_0x0D7A)
+	JumpIfHasMoveWithEffect(attacker, move_ef.swallow, &address_0x0D7A)
+	JumpIfHasMoveWithEffect(attacker, move_ef.roost, &address_0x0D7A)
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.magic_guard, &address_0x0D7A)
+	JumpIfHasCondition(attacker, cond.leech_seed, &address_0x0D6A)
+	JumpIfBadlyPoisoned(attacker, &address_0x0D3E)
+	JumpIfHasCondition(attacker, cond.poison, &address_0x0D3E)
+	JumpIfHasCondition(attacker, cond.burn, &address_0x0D6A)
+	Jump(&address_0x0D7A)
+
+address_0x0D3E:
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.poison_heal, &address_0x0D54)
+	Jump(&address_0x0D6A)
+
+address_0x0D54:
+	JumpIfRandLT(50, &address_0x0D7A)
+	AddToScore(1)
+	Jump(&address_0x0D7A)
+
+address_0x0D6A:
+	JumpIfRandLT(50, &address_0x0D7A)
+	AddToScore(-1)
+
+address_0x0D7A:
+	JumpIfHasCondition(attacker, cond.ingrain, &address_0x0DCE)
+	JumpIfNotCondition(attacker, ERROR [0x00000023], &address_0x0DCE)
+	JumpIfHeldItemEQ(attacker, item.leftovers, &address_0x0DCE)
+	JumpIfStoredNE(ability.drizzle, &address_0x0DDE)
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.dry_skin, &address_0x0DCE)
+	JumpIfStoredEQ(ability.rain_dish, &address_0x0DCE)
+	Jump(&address_0x0DDE)
+
+address_0x0DCE:
+	JumpIfRandLT(50, &address_0x0DDE)
+	AddToScore(1)
+
+address_0x0DDE:
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.magic_guard, &address_0x0EC2)
+	JumpIfHasCondition(defender, cond.curse, &address_0x0EAC)
+	JumpIfHasMoveWithEffect(defender, move_ef.heal_50, &address_0x0EC2)
+	JumpIfHasMoveWithEffect(defender, move_ef.morning_sun, &address_0x0EC2)
+	JumpIfHasMoveWithEffect(defender, move_ef.defense_curl, &address_0x0EC2)
+	JumpIfHasMoveWithEffect(defender, move_ef.swallow, &address_0x0EC2)
+	JumpIfHasMoveWithEffect(defender, move_ef.roost, &address_0x0EC2)
+	JumpIfHasCondition(defender, cond.leech_seed, &address_0x0EAC)
+	JumpIfHasCondition(defender, cond.burn, &address_0x0EAC)
+	JumpIfBadlyPoisoned(defender, &address_0x0E96)
+	JumpIfHasCondition(defender, cond.poison, &address_0x0E96)
+	JumpIfStoredNE(ability.stench, &address_0x0EC2)
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.dry_skin, &address_0x0EAC)
+	Jump(&address_0x0EC2)
+
+address_0x0E96:
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.poison_heal, &address_0x0EC2)
+	Jump(&address_0x0EAC)
+
+address_0x0EAC:
+	JumpIfRandLT(50, &address_0x0EC2)
+	AddToScore(1)
+	Jump(&address_0x0EC2)
+
+address_0x0EC2:
+	JumpIfStatStageLT(attacker, eva, +3, &address_0x0EF2)
+	JumpIfHealthGT(attacker, 70, &address_0x0EF2)
+	JumpIfRandLT(50, &address_0x0EF2)
+	AddToScore(-1)
+
+address_0x0EF2:
+	JumpIfHasNoMovesWithEffect(attacker, move_ef.baton_pass, &address_0x0F1E)
+	JumpIfHealthLT(attacker, 70, &address_0x0F1E)
+	JumpIfRandLT(50, &address_0x0F1E)
+	AddToScore(1)
+
+address_0x0F1E:
+	JumpIfHealthGT(attacker, 50, &address_0x0F3C)
+	JumpIfRandLT(70, &address_0x0F3C)
+
+address_0x0F36:
+	AddToScore(-2)
+
+address_0x0F3C:
+	EndScript()
+
+
+Label_0x0F3E:
+	JumpIfStatStageGT(defender, eva, +4, &address_0x0F8C)
+	JumpIfStatStageLT(attacker, acc, -4, &address_0x0F8C)
+	JumpIfStatStageGT(defender, eva, +2, &address_0x0F92)
+	JumpIfStatStageLT(attacker, acc, -2, &address_0x0F92)
+	Jump(&address_0x0FA2)
+
+address_0x0F8C:
+	AddToScore(1)
+
+address_0x0F92:
+	JumpIfRandLT(100, &address_0x0FA2)
+	AddToScore(1)
+
+address_0x0FA2:
+	EndScript()
+
+
+Label_0x0FA4:
+	JumpIfStatStageEQ(defender, atk, +0, &address_0x0FF2)
+	AddToScore(-1)
+	JumpIfHealthGT(attacker, 90, &address_0x0FD0)
+	AddToScore(-1)
+
+address_0x0FD0:
+	JumpIfStatStageGT(defender, atk, -3, &address_0x0FF2)
+	JumpIfRandLT(50, &address_0x0FF2)
+	AddToScore(-2)
+
+address_0x0FF2:
+	JumpIfHealthGT(defender, 70, &address_0x1006)
+	AddToScore(-2)
+
+address_0x1006:
+	GetLastPreviousCategory()
+	JumpIfStoredNE(special, &address_0x1022)
+	JumpIfRandLT(128, &address_0x1022)
+	AddToScore(-2)
+
+address_0x1022:
+	EndScript()
+
+	0x0000 [0]
+	0x0000 [0]
+	0x0001 [1]
+	0x0000 [0]
+	0x0004 [4]
+	0x0000 [0]
+	0x0005 [5]
+	0x0000 [0]
+	0x0006 [6]
+	0x0000 [0]
+	0x0008 [8]
+	0x0000 [0]
+	0xFFFF [65535]
+	0xFFFF [65535]
+
+Label_0x1040:
+	JumpIfHealthLT(attacker, 70, &address_0x1060)
+	JumpIfStatStageGT(defender, def, -3, &address_0x1070)
+
+address_0x1060:
+	JumpIfRandLT(50, &address_0x1070)
+	AddToScore(-2)
+
+address_0x1070:
+	JumpIfHealthGT(defender, 70, &address_0x1084)
+	AddToScore(-2)
+
+address_0x1084:
+	EndScript()
+
+
+Label_0x1086:
+	JumpIfEffectivenessEQ(0x, &address_0x10EC)
+	JumpIfMoveEQ(move.icy_wind, &Label_0x10EE)
+	JumpIfMoveEQ(move.rock_tomb, &Label_0x10EE)
+	JumpIfMoveEQ(move.mud_shot, &Label_0x10EE)
+	JumpIfMoveEQ(move.low_sweep, &Label_0x10EE)
+	JumpIfMoveEQ(move.electroweb, &Label_0x10EE)
+	JumpIfMoveEQ(move.bulldoze, &Label_0x10EE)
+	JumpIfMoveEQ(move.glaciate, &Label_0x10EE)
+	JumpIfEffectivenessEQ(1/4x, &address_0x10EC)
+	JumpIfEffectivenessEQ(1/2x, &address_0x10EC)
+	EndScript()
+
+
+address_0x10EC:
+	EndScript()
+
+
+Label_0x10EE:
+	JumpCompareSpeed(GT, &address_0x1104)
+	AddToScore(-3)
+	Jump(&address_0x1114)
+
+address_0x1104:
+	JumpIfRandLT(70, &address_0x1114)
+	AddToScore(2)
+
+address_0x1114:
+	EndScript()
+
+
+Label_0x1116:
+	JumpIfStatStageEQ(defender, spa, +0, &address_0x1164)
+	AddToScore(-1)
+	JumpIfHealthGT(attacker, 90, &address_0x1142)
+	AddToScore(-1)
+
+address_0x1142:
+	JumpIfStatStageGT(defender, spa, -3, &address_0x1164)
+	JumpIfRandLT(50, &address_0x1164)
+	AddToScore(-2)
+
+address_0x1164:
+	JumpIfHealthGT(defender, 70, &address_0x1178)
+	AddToScore(-2)
+
+address_0x1178:
+	GetLastPreviousCategory()
+	JumpIfStoredNE(physical, &address_0x1194)
+	JumpIfRandLT(128, &address_0x1194)
+	AddToScore(-2)
+
+address_0x1194:
+	EndScript()
+
+	0x0009 [9]
+	0x0000 [0]
+	0x000A [10]
+	0x0000 [0]
+	0x000B [11]
+	0x0000 [0]
+	0x000C [12]
+	0x0000 [0]
+	0x000D [13]
+	0x0000 [0]
+	0x000E [14]
+	0x0000 [0]
+	0x000F [15]
+	0x0000 [0]
+	0x0010 [16]
+	0x0000 [0]
+	0xFFFF [65535]
+	0xFFFF [65535]
+
+Label_0x11BA:
+	JumpIfHealthLT(attacker, 70, &address_0x11DA)
+	JumpIfStatStageGT(defender, spd, -3, &address_0x11EA)
+
+address_0x11DA:
+	JumpIfRandLT(50, &address_0x11EA)
+	AddToScore(-2)
+
+address_0x11EA:
+	JumpIfHealthGT(defender, 70, &address_0x11FE)
+	AddToScore(-2)
+
+address_0x11FE:
+	EndScript()
+
+
+Label_0x1200:
+	JumpIfHealthLT(attacker, 70, &address_0x121C)
+	JumpIfHealthGT(defender, 70, &address_0x122C)
+
+address_0x121C:
+	JumpIfRandLT(100, &address_0x122C)
+	AddToScore(-1)
+
+address_0x122C:
+	JumpIfStatStageGT(attacker, acc, -2, &address_0x124E)
+	JumpIfRandLT(80, &address_0x124E)
+	AddToScore(-2)
+
+address_0x124E:
+	JumpIfNotBadlyPoisoned(defender, &address_0x1268)
+	JumpIfRandLT(70, &address_0x1268)
+	AddToScore(2)
+
+address_0x1268:
+	JumpIfNotCondition(defender, ERROR [0x00000012], &address_0x1286)
+	JumpIfRandLT(70, &address_0x1286)
+	AddToScore(2)
+
+address_0x1286:
+	JumpIfNotCondition(attacker, ERROR [0x00000015], &address_0x12AA)
+	JumpIfRandLT(128, &address_0x12C8)
+	AddToScore(1)
+	Jump(&address_0x12C8)
+
+address_0x12AA:
+	JumpIfNotCondition(attacker, ERROR [0x00000023], &address_0x12C8)
+	JumpIfRandLT(128, &address_0x12C8)
+	AddToScore(1)
+
+address_0x12C8:
+	JumpIfNotCondition(defender, cond_flag.power_trick, &address_0x12E6)
+	JumpIfRandLT(70, &address_0x12E6)
+	AddToScore(2)
+
+address_0x12E6:
+	JumpIfHealthGT(attacker, 70, &address_0x1332)
+	JumpIfStatStageEQ(defender, acc, +0, &address_0x1332)
+	JumpIfHealthLT(attacker, 40, &address_0x132C)
+	JumpIfHealthLT(defender, 40, &address_0x132C)
+	JumpIfRandLT(70, &address_0x1332)
+
+address_0x132C:
+	AddToScore(-2)
+
+address_0x1332:
+	EndScript()
+
+
+Label_0x1334:
+	JumpIfHealthLT(attacker, 70, &address_0x1354)
+	JumpIfStatStageGT(defender, eva, -3, &address_0x1364)
+
+address_0x1354:
+	JumpIfRandLT(50, &address_0x1364)
+	AddToScore(-2)
+
+address_0x1364:
+	JumpIfHealthGT(defender, 70, &address_0x1378)
+	AddToScore(-2)
+
+address_0x1378:
+	EndScript()
+
+
+Label_0x137A:
+	JumpIfStatStageGT(attacker, atk, +2, &address_0x1434)
+	JumpIfStatStageGT(attacker, def, +2, &address_0x1434)
+	JumpIfStatStageGT(attacker, spa, +2, &address_0x1434)
+	JumpIfStatStageGT(attacker, spd, +2, &address_0x1434)
+	JumpIfStatStageGT(attacker, eva, +2, &address_0x1434)
+	JumpIfStatStageLT(defender, atk, -2, &address_0x1434)
+	JumpIfStatStageLT(defender, def, -2, &address_0x1434)
+	JumpIfStatStageLT(defender, spa, -2, &address_0x1434)
+	JumpIfStatStageLT(defender, spd, -2, &address_0x1434)
+	JumpIfStatStageLT(defender, acc, -2, &address_0x1434)
+	Jump(&address_0x1444)
+
+address_0x1434:
+	JumpIfRandLT(50, &address_0x1444)
+	AddToScore(-3)
+
+address_0x1444:
+	JumpIfStatStageGT(defender, atk, +2, &address_0x150E)
+	JumpIfStatStageGT(defender, def, +2, &address_0x150E)
+	JumpIfStatStageGT(defender, spa, +2, &address_0x150E)
+	JumpIfStatStageGT(defender, spd, +2, &address_0x150E)
+	JumpIfStatStageGT(defender, eva, +2, &address_0x150E)
+	JumpIfStatStageLT(attacker, atk, -2, &address_0x150E)
+	JumpIfStatStageLT(attacker, def, -2, &address_0x150E)
+	JumpIfStatStageLT(attacker, spa, -2, &address_0x150E)
+	JumpIfStatStageLT(attacker, spd, -2, &address_0x150E)
+	JumpIfStatStageLT(attacker, acc, -2, &address_0x150E)
+	JumpIfRandLT(50, &address_0x151E)
+	AddToScore(-1)
+	Jump(&address_0x151E)
+
+address_0x150E:
+	JumpIfRandLT(50, &address_0x151E)
+	AddToScore(3)
+
+address_0x151E:
+	EndScript()
+
+
+Label_0x1520:
+	JumpIfHealthGT(attacker, 90, &address_0x1534)
+	AddToScore(-2)
+
+address_0x1534:
+	EndScript()
+
+
+Label_0x1536:
+	GetPokeTurnCount(defender)
+	JumpIfStoredGT(ability.speed_boost, &address_0x15D6)
+	JumpIfHasSideCondition(defender, side_cond.spikes, &address_0x15E6)
+	JumpIfHasSideCondition(defender, side_cond.stealth_rock, &address_0x15E6)
+	JumpIfHasSideCondition(defender, side_cond.toxic_spikes, &address_0x15E6)
+	JumpIfStatStageGT(defender, atk, +2, &address_0x15E6)
+	JumpIfStatStageGT(defender, def, +2, &address_0x15E6)
+	JumpIfStatStageGT(defender, spa, +2, &address_0x15E6)
+	JumpIfStatStageGT(defender, spd, +2, &address_0x15E6)
+	JumpIfStatStageGT(defender, eva, +2, &address_0x15E6)
+	AddToScore(-3)
+	Jump(&address_0x15F6)
+
+address_0x15D6:
+	JumpIfRandLT(64, &address_0x15E6)
+	AddToScore(2)
+
+address_0x15E6:
+	JumpIfRandLT(128, &address_0x15F6)
+	AddToScore(2)
+
+address_0x15F6:
+	EndScript()
+
+
+Label_0x15F8:
+	JumpIfHealthGT(attacker, 90, &address_0x160C)
+	AddToScore(-2)
+
+address_0x160C:
+	GetTurnCount()
+	JumpIfStoredEQ(0, &address_0x1622)
+	JumpIfRandLT(200, &address_0x5D4C)
+
+address_0x1622:
+	EndScript()
+
+
+Label_0x1624:
+	GetWeather()
+	JumpIfStoredEQ(weather.hail, &address_0x164A)
+	JumpIfStoredEQ(weather.rain, &address_0x164A)
+	JumpIfStoredEQ(weather.sand, &address_0x164A)
+	Jump(&Label_0x1650)
+
+address_0x164A:
+	AddToScore(-2)
+
+Label_0x1650:
+	JumpIfHealthEQ(attacker, 100, &address_0x169A)
+	JumpCompareSpeed(GT, &address_0x16A6)
+	AddToScore(-8)
+	Jump(&address_0x16F2)
+	JumpIfHealthLT(attacker, 50, &address_0x16CA)
+	JumpIfHealthGT(attacker, 80, &address_0x169A)
+	JumpIfRandLT(70, &address_0x16CA)
+
+address_0x169A:
+	AddToScore(-3)
+	Jump(&address_0x16F2)
+
+address_0x16A6:
+	JumpIfHealthLT(attacker, 70, &address_0x16CA)
+	JumpIfRandLT(30, &address_0x16CA)
+	AddToScore(-3)
+	Jump(&address_0x16F2)
+
+address_0x16CA:
+	JumpIfHasNoMovesWithEffect(defender, move_ef.snatch, &address_0x16E2)
+	JumpIfRandLT(100, &address_0x16F2)
+
+address_0x16E2:
+	JumpIfRandLT(20, &address_0x16F2)
+	AddToScore(2)
+
+address_0x16F2:
+	EndScript()
+
+
+Label_0x16F4:
+	JumpIfNoDamagingMove(&address_0x1736)
+	JumpIfHealthGT(attacker, 50, &address_0x1718)
+	JumpIfRandLT(50, &address_0x1718)
+	AddToScore(-3)
+
+address_0x1718:
+	JumpIfHealthGT(defender, 50, &address_0x1736)
+	JumpIfRandLT(50, &address_0x1736)
+	AddToScore(-3)
+
+address_0x1736:
+	JumpIfHasMoveWithEffect(attacker, move_ef.user_spd+1, &address_0x1758)
+	JumpIfHasMoveWithEffect(attacker, move_ef.protect, &address_0x1758)
+	Jump(&address_0x1768)
+
+address_0x1758:
+	JumpIfRandLT(60, &address_0x1768)
+	AddToScore(2)
+
+address_0x1768:
+	EndScript()
+
+
+Label_0x176A:
+	JumpIfHealthLT(attacker, 50, &address_0x17B6)
+	JumpIfHealthLT(attacker, 90, &address_0x1796)
+	JumpIfRandLT(30, &address_0x1796)
+	AddToScore(1)
+
+address_0x1796:
+	JumpIfAtkGTSpa(defender, &address_0x17B6)
+	JumpIfRandLT(64, &address_0x17C6)
+	AddToScore(1)
+	Jump(&address_0x17C6)
+
+address_0x17B6:
+	JumpIfRandLT(30, &address_0x17C6)
+	AddToScore(-2)
+
+address_0x17C6:
+	EndScript()
+
+
+Label_0x17C8:
+	JumpCompareSpeed(GT, &address_0x181E)
+	JumpIfHealthNE(attacker, 100, &address_0x17EC)
+	AddToScore(-8)
+	Jump(&address_0x1878)
+
+address_0x17EC:
+	JumpIfHealthLT(attacker, 40, &address_0x1850)
+	JumpIfHealthGT(attacker, 50, &address_0x1812)
+	JumpIfRandLT(70, &address_0x1850)
+
+address_0x1812:
+	AddToScore(-3)
+	Jump(&address_0x1878)
+
+address_0x181E:
+	JumpIfHealthLT(attacker, 60, &address_0x1850)
+	JumpIfHealthGT(attacker, 70, &address_0x1844)
+	JumpIfRandLT(50, &address_0x1850)
+
+address_0x1844:
+	AddToScore(-3)
+	Jump(&address_0x1878)
+
+address_0x1850:
+	JumpIfHasNoMovesWithEffect(defender, move_ef.snatch, &address_0x1868)
+	JumpIfRandLT(50, &address_0x1878)
+
+address_0x1868:
+	JumpIfRandLT(10, &address_0x1878)
+	AddToScore(3)
+
+address_0x1878:
+	EndScript()
+
+
+Label_0x187A:
+	JumpIfRandLT(192, &address_0x188A)
+	AddToScore(1)
+
+address_0x188A:
+	EndScript()
+
+
+Label_0x188C:
+	JumpIfHealthGT(defender, 60, &address_0x18A0)
+	AddToScore(-1)
+
+address_0x18A0:
+	EndScript()
+
+
+Label_0x18A2:
+	JumpIfBadlyPoisoned(defender, &address_0x18DC)
+	JumpIfHasCondition(defender, cond.curse, &address_0x18DC)
+	JumpIfHasCondition(defender, cond.perish_song, &address_0x18DC)
+	JumpIfHasCondition(defender, cond.infatuation, &address_0x18DC)
+	Jump(&address_0x18EC)
+
+address_0x18DC:
+	JumpIfRandLT(128, &address_0x18EC)
+	AddToScore(1)
+
+address_0x18EC:
+	EndScript()
+
+
+Label_0x18EE:
+	JumpIfEffectivenessEQ(0x, &address_0x193A)
+	JumpIfEffectivenessEQ(1/4x, &address_0x193A)
+	JumpIfEffectivenessEQ(1/2x, &address_0x193A)
+	JumpIfEffectivenessEQ(2x, &address_0x192A)
+	JumpIfEffectivenessEQ(4x, &address_0x192A)
+	JumpIfRandLT(128, &address_0x193A)
+
+address_0x192A:
+	JumpIfRandLT(128, &address_0x193A)
+	AddToScore(1)
+
+address_0x193A:
+	EndScript()
+
+
+Label_0x193C:
+	JumpIfHasMove(attacker, move.psych_up, &address_0x19A2)
+
+Label_0x194A:
+	JumpIfRandLT(128, &Label_0x195A)
+	AddToScore(1)
+
+Label_0x195A:
+	JumpIfHealthGT(defender, 70, &address_0x19A0)
+	JumpIfRandLT(128, &address_0x1978)
+	AddToScore(-1)
+
+address_0x1978:
+	JumpIfHealthGT(defender, 50, &address_0x19A0)
+	AddToScore(-1)
+	JumpIfHealthGT(defender, 30, &address_0x19A0)
+	AddToScore(-1)
+
+address_0x19A0:
+	EndScript()
+
+
+address_0x19A2:
+	JumpIfStatStageGT(defender, atk, -3, &address_0x19D2)
+	AddToScore(3)
+	GetTurnCount()
+	JumpIfStoredNE(0, &address_0x19D8)
+	AddToScore(2)
+	Jump(&address_0x19D8)
+
+address_0x19D2:
+	AddToScore(-5)
+
+address_0x19D8:
+	EndScript()
+
+
+Label_0x19DA:
+	JumpIfHealthLT(attacker, 50, &address_0x1A26)
+	JumpIfHealthLT(attacker, 90, &address_0x1A06)
+	JumpIfRandLT(30, &address_0x1A06)
+	AddToScore(1)
+
+address_0x1A06:
+	JumpIfAtkLTSpa(defender, &address_0x1A26)
+	JumpIfRandLT(64, &address_0x1A36)
+	AddToScore(1)
+	Jump(&address_0x1A36)
+
+address_0x1A26:
+	JumpIfRandLT(30, &address_0x17C6)
+	AddToScore(-2)
+
+address_0x1A36:
+	EndScript()
+
+
+Label_0x1A38:
+	JumpIfHealthLT(attacker, 50, &address_0x1A54)
+	JumpIfHealthGT(defender, 50, &address_0x1A5A)
+
+address_0x1A54:
+	AddToScore(-1)
+
+address_0x1A5A:
+	EndScript()
+
+
+Label_0x1A5C:
+	JumpCompareSpeed(GT, &address_0x1A80)
+	JumpIfHealthGT(attacker, 70, &address_0x1A90)
+	AddToScore(-1)
+	Jump(&address_0x1A90)
+
+address_0x1A80:
+	JumpIfRandLT(20, &address_0x1A90)
+	AddToScore(3)
+
+address_0x1A90:
+	EndScript()
+
+
+Label_0x1A92:
+	JumpCompareSpeed(GT, &address_0x1AD2)
+	JumpIfHealthGT(attacker, 60, &address_0x1AD2)
+	JumpIfHealthLT(attacker, 40, &address_0x1AC2)
+	JumpIfRandLT(180, &address_0x1AD2)
+
+address_0x1AC2:
+	JumpIfRandLT(50, &address_0x1AD2)
+	AddToScore(-1)
+
+address_0x1AD2:
+	EndScript()
+
+
+Label_0x1AD4:
+	JumpIfDoesNotHaveMove(attacker, move.focus_punch, &address_0x1AF2)
+	JumpIfRandLT(96, &address_0x1AF2)
+	AddToScore(1)
+
+address_0x1AF2:
+	JumpIfHealthGT(attacker, 90, &address_0x1B4C)
+	JumpIfHealthGT(attacker, 70, &address_0x1B3C)
+	JumpIfHealthGT(attacker, 50, &address_0x1B2C)
+	JumpIfRandLT(100, &address_0x1B2C)
+	AddToScore(-1)
+
+address_0x1B2C:
+	JumpIfRandLT(100, &address_0x1B3C)
+	AddToScore(-1)
+
+address_0x1B3C:
+	JumpIfRandLT(100, &address_0x1B4C)
+	AddToScore(-1)
+
+address_0x1B4C:
+	JumpCompareSpeed(GT, &address_0x1BEC)
+	GetPreviousMove(defender)
+	GetEffectOfStoredMove()
+	JumpIfStoredEQ(move_ef.target_slp, &address_0x1BAA)
+	JumpIfStoredEQ(move_ef.target_tox, &address_0x1BAA)
+	JumpIfStoredEQ(move_ef.target_psn, &address_0x1BAA)
+	JumpIfStoredEQ(move_ef.target_par, &address_0x1BAA)
+	JumpIfStoredEQ(move_ef.will-o-wisp, &address_0x1BAA)
+	JumpIfStoredEQ(move_ef.target_confusion, &address_0x1BBA)
+	JumpIfStoredEQ(move_ef.leech_seed, &address_0x1BCE)
+	Jump(&address_0x1BEC)
+
+address_0x1BAA:
+	JumpIfHasNoStatus(defender, &address_0x1BDC)
+	Jump(&address_0x1BEC)
+
+address_0x1BBA:
+	JumpIfNotCondition(defender, cond_flag.shadow_force, &address_0x1BDC)
+	Jump(&address_0x1BEC)
+
+address_0x1BCE:
+	JumpIfHasCondition(defender, cond.leech_seed, &address_0x1BEC)
+
+address_0x1BDC:
+	JumpIfRandLT(100, &address_0x1BEC)
+	AddToScore(1)
+
+address_0x1BEC:
+	EndScript()
+
+
+Label_0x1BEE:
+	JumpIfEffectivenessEQ(0x, &address_0x1C5E)
+	JumpIfEffectivenessEQ(1/4x, &address_0x1C5E)
+	JumpIfEffectivenessEQ(1/2x, &address_0x1C5E)
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.truant, &address_0x1C3A)
+	JumpCompareSpeed(GT, &address_0x1C50)
+	JumpIfHealthGT(attacker, 40, &address_0x1C5E)
+	Jump(&address_0x1C64)
+
+address_0x1C3A:
+	JumpIfRandLT(80, &address_0x1C64)
+	AddToScore(1)
+	Jump(&address_0x1C64)
+
+address_0x1C50:
+	JumpIfHealthLT(attacker, 60, &address_0x1C64)
+
+address_0x1C5E:
+	AddToScore(-1)
+
+address_0x1C64:
+	EndScript()
+
+
+Label_0x1C66:
+	JumpCompareSpeed(GT, &address_0x1C9E)
+	GetPreviousMove(defender)
+	GetPowerOfStoredMove()
+	JumpIfStoredEQ(0, &address_0x1C8E)
+	AddToScore(1)
+	Jump(&address_0x1C9E)
+
+address_0x1C8E:
+	JumpIfRandLT(100, &address_0x1C9E)
+	AddToScore(-1)
+
+address_0x1C9E:
+	EndScript()
+
+
+Label_0x1CA0:
+	JumpIfHasCondition(defender, cond.sleep, &address_0x1DB0)
+	JumpIfHasCondition(defender, cond.infatuation, &address_0x1DB0)
+	JumpIfHasCondition(defender, cond.confusion, &address_0x1DB0)
+	JumpIfHealthGT(attacker, 30, &address_0x1CE8)
+	JumpIfRandLT(10, &address_0x1CE8)
+	AddToScore(-1)
+
+address_0x1CE8:
+	JumpIfHealthGT(attacker, 50, &address_0x1D06)
+	JumpIfRandLT(100, &address_0x1D06)
+	AddToScore(-1)
+
+address_0x1D06:
+	JumpIfHasMove(attacker, move.mirror_coat, &address_0x1D9E)
+	GetPreviousMove(defender)
+	GetPowerOfStoredMove()
+	JumpIfStoredEQ(0, &address_0x1D5E)
+	JumpIfNotTaunted(&address_0x1D3C)
+	JumpIfRandLT(100, &address_0x1D3C)
+	AddToScore(1)
+
+address_0x1D3C:
+	GetLastPreviousCategory()
+	JumpIfStoredNE(physical, &address_0x1DB0)
+	JumpIfRandLT(100, &address_0x1DB6)
+	AddToScore(1)
+	Jump(&address_0x1DB6)
+
+address_0x1D5E:
+	JumpIfNotTaunted(&address_0x1D74)
+	JumpIfRandLT(100, &address_0x1D74)
+	AddToScore(1)
+
+address_0x1D74:
+	GetType(defender_type1)
+	JumpIfStoredIsInList(&data_address_0x1DB8, &address_0x1DB6)
+	GetType(defender_type2)
+	JumpIfStoredIsInList(&data_address_0x1DB8, &address_0x1DB6)
+	JumpIfRandLT(50, &address_0x1DB6)
+
+address_0x1D9E:
+	JumpIfRandLT(100, &address_0x1DAE)
+	AddToScore(4)
+
+address_0x1DAE:
+	EndScript()
+
+
+address_0x1DB0:
+	AddToScore(-1)
+
+address_0x1DB6:
+	EndScript()
+
+
+data_address_0x1DB8:
+	type.normal
+	type.fighting
+	type.flying
+	type.poison
+	type.ground
+	type.rock
+	type.bug
+	type.ghost
+	type.steel
+	END
+
+Label_0x1DE0:
+	JumpIfHasCondition(defender, cond.disable, &address_0x1E0A)
+	JumpCompareSpeed(GT, &address_0x1E20)
+	GetPreviousMove(defender)
+	GetEffectOfStoredMove()
+	JumpIfStoredIsNotInList(&data_address_0x1E28, &address_0x1E20)
+
+address_0x1E0A:
+	JumpIfRandLT(30, &address_0x1E26)
+	AddToScore(3)
+	Jump(&address_0x1E26)
+
+address_0x1E20:
+	AddToScore(-2)
+
+address_0x1E26:
+	EndScript()
+
+
+data_address_0x1E28:
+	move_ef.dream_eater
+	move_ef.user_atk+1
+	move_ef.user_def+1
+	move_ef.user_spe+1
+	move_ef.user_spa+1
+	move_ef.haze
+	move_ef.force_switch
+	move_ef.conversion
+	move_ef.target_tox
+	move_ef.light_screen
+	move_ef.rest
+	move_ef.direct_half
+	move_ef.user_spd+2
+	move_ef.target_confusion
+	move_ef.target_psn
+	move_ef.target_par
+	move_ef.leech_seed
+	move_ef.splash
+	move_ef.user_atk+2
+	move_ef.encore
+	move_ef.conversion_2
+	move_ef.mind_reader
+	move_ef.team_heal
+	move_ef.spider_web
+	move_ef.nightmare
+	move_ef.protect
+	move_ef.skill_swap
+	move_ef.foresight
+	move_ef.perish_song
+	move_ef.sandstorm
+	move_ef.endure
+	move_ef.swagger
+	move_ef.attract
+	move_ef.safeguard
+	move_ef.rain_dance
+	move_ef.sunny_day
+	move_ef.belly_drum
+	move_ef.psych_up
+	move_ef.future_sight
+	move_ef.fake_out
+	move_ef.stockpile
+	move_ef.spit_up
+	move_ef.swallow
+	move_ef.hail
+	move_ef.torment
+	move_ef.will-o-wisp
+	move_ef.follow_me
+	move_ef.charge_electric
+	move_ef.trick
+	move_ef.roleplay
+	move_ef.ingrain
+	move_ef.recycle
+	move_ef.knock_off
+	move_ef.skill_swap
+	move_ef.imprison
+	move_ef.refresh
+	move_ef.grudge
+	move_ef.teeter_dance
+	move_ef.mud_sport
+	move_ef.water_sport
+	move_ef.user_atk_spe+1
+	move_ef.camouflage
+	move_ef.gravity
+	move_ef.miracle_eye
+	move_ef.healing_wish
+	move_ef.natural_gift
+	move_ef.feint
+	move_ef.tailwind
+	move_ef.acupressure
+	move_ef.fling
+	move_ef.psycho_shift
+	move_ef.heal_block
+	move_ef.power_trick
+	move_ef.gastro_acid
+	move_ef.lucky_chant
+	move_ef.power_swap
+	move_ef.guard_swap
+	move_ef.worry_seed
+	move_ef.heart_swap
+	move_ef.aqua_ring
+	move_ef.magnet_rise
+	move_ef.trick_room
+	END
+
+Label_0x1F74:
+	JumpIfHealthLT(defender, 80, &address_0x1FC0)
+	JumpCompareSpeed(GT, &address_0x1FA6)
+	JumpIfHealthGT(attacker, 40, &address_0x1FC0)
+	AddToScore(1)
+	Jump(&address_0x1FC6)
+
+address_0x1FA6:
+	JumpIfHealthGT(attacker, 60, &address_0x1FC0)
+	AddToScore(1)
+	Jump(&address_0x1FC6)
+
+address_0x1FC0:
+	AddToScore(-1)
+
+address_0x1FC6:
+	EndScript()
+
+
+Label_0x1FC8:
+	AddToScore(2)
+	EndScript()
+
+
+Label_0x1FD0:
+	JumpIfRandLT(128, &address_0x1FE0)
+	AddToScore(2)
+
+address_0x1FE0:
+	EndScript()
+
+
+Label_0x1FE2:
+	JumpIfHasCondition(attacker, cond.sleep, &address_0x5DAC)
+	AddToScore(-5)
+	EndScript()
+
+
+Label_0x1FF8:
+	AddToScore(-1)
+	JumpCompareSpeed(GT, &address_0x2062)
+	JumpIfHealthGT(attacker, 70, &address_0x2062)
+	JumpIfRandLT(128, &address_0x2026)
+	AddToScore(1)
+
+address_0x2026:
+	JumpIfHealthGT(attacker, 50, &address_0x2062)
+	JumpIfRandLT(128, &address_0x2044)
+	AddToScore(1)
+
+address_0x2044:
+	JumpIfHealthGT(attacker, 30, &address_0x2062)
+	JumpIfRandLT(100, &address_0x2062)
+	AddToScore(2)
+
+address_0x2062:
+	EndScript()
+
+
+Label_0x2064:
+	JumpCompareSpeed(GT, &address_0x209E)
+	JumpIfHealthGT(attacker, 33, &address_0x20DC)
+	JumpIfHealthGT(attacker, 20, &address_0x20E2)
+	JumpIfHealthLT(attacker, 8, &address_0x20C0)
+	Jump(&address_0x20C6)
+
+address_0x209E:
+	JumpIfHealthGT(attacker, 60, &address_0x20DC)
+	JumpIfHealthGT(attacker, 40, &address_0x20E2)
+	Jump(&address_0x20C6)
+
+address_0x20C0:
+	AddToScore(1)
+
+address_0x20C6:
+	JumpIfRandLT(100, &address_0x20E2)
+	AddToScore(1)
+	Jump(&address_0x20E2)
+
+address_0x20DC:
+	AddToScore(-1)
+
+address_0x20E2:
+	EndScript()
+
+
+Label_0x20E4:
+	JumpIfHasAnyStatus(attacker, &address_0x20FE)
+	JumpIfPartyHasStatus(cond.paralysis, &address_0x20FE)
+	AddToScore(-5)
+
+address_0x20FE:
+	EndScript()
+
+
+Label_0x2100:
+	GetHeldItemEffect(defender)
+	JumpIfStoredIsNotInList(&data_address_0x212E, &address_0x2126)
+	JumpIfRandLT(50, &address_0x212C)
+	AddToScore(1)
+	Jump(&address_0x212C)
+
+address_0x2126:
+	AddToScore(-2)
+
+address_0x212C:
+	EndScript()
+
+
+data_address_0x212E:
+	item_ef.chesto_berry
+	item_ef.lum_berry
+	item_ef.restore_hp
+	item_ef.increase_evasion
+	item_ef.leftovers
+	item_ef.light_ball
+	item_ef.thick_club
+	item_ef.occa_berry
+	item_ef.passho_berry
+	item_ef.wacan_berry
+	item_ef.rindo_berry
+	item_ef.yache_berry
+	item_ef.chople_berry
+	item_ef.kebia_berry
+	item_ef.shuca_berry
+	item_ef.coba_berry
+	item_ef.payapa_berry
+	item_ef.tanga_berry
+	item_ef.charti_berry
+	item_ef.kasib_berry
+	item_ef.haban_berry
+	item_ef.colbur_berry
+	item_ef.babiri_berry
+	item_ef.chilan_berry
+	item_ef.black_sludge
+	END
+
+Label_0x2196:
+	GetType(attacker_type1)
+	JumpIfStoredEQ(type.ghost, &address_0x2254)
+	GetType(attacker_type2)
+	JumpIfStoredEQ(type.ghost, &address_0x2254)
+	JumpIfStatStageGT(attacker, def, +3, &address_0x2268)
+	JumpIfHasMove(attacker, move.gyro_ball, &address_0x21EA)
+	JumpIfHasMove(attacker, move.trick_room, &address_0x21EA)
+	Jump(&address_0x21FA)
+
+address_0x21EA:
+	JumpIfRandLT(32, &address_0x220A)
+	AddToScore(1)
+
+address_0x21FA:
+	JumpIfRandLT(128, &address_0x220A)
+	AddToScore(1)
+
+address_0x220A:
+	JumpIfStatStageGT(attacker, def, +1, &address_0x2268)
+	JumpIfRandLT(128, &address_0x222C)
+	AddToScore(1)
+
+address_0x222C:
+	JumpIfStatStageGT(attacker, def, +0, &address_0x2268)
+	JumpIfRandLT(128, &address_0x2268)
+	AddToScore(1)
+	Jump(&address_0x2268)
+
+address_0x2254:
+	JumpIfHealthGT(attacker, 80, &address_0x2268)
+	AddToScore(-1)
+
+address_0x2268:
+	EndScript()
+
+
+Label_0x226A:
+	JumpIfHasMove(defender, move.feint, &address_0x228C)
+	JumpIfHasMove(defender, move.shadow_force, &address_0x228C)
+	Jump(&address_0x229C)
+
+address_0x228C:
+	JumpIfRandSeedLT(128, &address_0x229C)
+	AddToScore(-2)
+
+address_0x229C:
+	GetProtectCount(attacker)
+	JumpIfStoredGT(1, &address_0x2400)
+	JumpIfBadlyPoisoned(attacker, &address_0x23F2)
+	JumpIfHasCondition(attacker, cond.curse, &address_0x23F2)
+	JumpIfHasCondition(attacker, cond.perish_song, &address_0x23F2)
+	JumpIfHasCondition(attacker, cond.infatuation, &address_0x23F2)
+	JumpIfHasCondition(attacker, cond.leech_seed, &address_0x23F2)
+	JumpIfHasCondition(attacker, cond.yawn, &address_0x23F2)
+	JumpIfHasCondition(defender, cond.curse, &address_0x23B0)
+	JumpIfHasCondition(defender, cond.perish_song, &address_0x23B0)
+	JumpIfHasMoveWithEffect(defender, move_ef.heal_50, &address_0x23F2)
+	JumpIfHasMoveWithEffect(defender, move_ef.defense_curl, &address_0x23F2)
+	JumpIfHasMoveWithEffect(defender, move_ef.morning_sun, &address_0x23F2)
+	JumpIfHasMoveWithEffect(defender, move_ef.swallow, &address_0x23F2)
+	JumpIfHasMoveWithEffect(defender, move_ef.roost, &address_0x23F2)
+	JumpIfBadlyPoisoned(defender, &address_0x23B0)
+	JumpIfHasCondition(defender, cond.infatuation, &address_0x23B0)
+	JumpIfHasCondition(defender, cond.leech_seed, &address_0x23B0)
+	JumpIfHasCondition(defender, cond.yawn, &address_0x23B0)
+	JumpIfHasCondition(attacker, cond.lock-on, &address_0x23B0)
+	JumpIfRandLT(85, &address_0x23B0)
+	Jump(&address_0x23B6)
+
+address_0x23B0:
+	AddToScore(2)
+
+address_0x23B6:
+	JumpIfRandSeedLT(128, &address_0x23C6)
+	AddToScore(-2)
+
+address_0x23C6:
+	GetProtectCount(attacker)
+	JumpIfStoredEQ(0, &address_0x2406)
+	AddToScore(-1)
+	JumpIfRandLT(128, &address_0x2406)
+	AddToScore(-1)
+	Jump(&address_0x2406)
+
+address_0x23F2:
+	JumpIfHasCondition(attacker, cond.lock-on, &address_0x2406)
+
+address_0x2400:
+	AddToScore(-2)
+
+address_0x2406:
+	EndScript()
+
+
+Label_0x2408:
+	JumpIfRandLT(128, &address_0x244A)
+	AddToScore(1)
+	JumpIfHasMove(attacker, move.roar, &address_0x243A)
+	JumpIfHasMove(attacker, move.whirlwind, &address_0x243A)
+	Jump(&address_0x244A)
+
+address_0x243A:
+	JumpIfRandLT(64, &address_0x244A)
+	AddToScore(1)
+
+address_0x244A:
+	EndScript()
+
+
+Label_0x244C:
+	GetType(attacker_type1)
+	JumpIfStoredEQ(type.ghost, &address_0x248A)
+	GetType(attacker_type2)
+	JumpIfStoredEQ(type.ghost, &address_0x248A)
+	JumpIfStatStageGT(defender, eva, +2, &address_0x2494)
+	AddToScore(-2)
+	Jump(&address_0x24A4)
+
+address_0x248A:
+	JumpIfRandLT(80, &address_0x24A4)
+
+address_0x2494:
+	JumpIfRandLT(80, &address_0x24A4)
+	AddToScore(2)
+
+address_0x24A4:
+	EndScript()
+
+
+Label_0x24A6:
+	JumpIfHealthLT(attacker, 4, &address_0x24C2)
+	JumpIfHealthLT(attacker, 35, &address_0x24CE)
+
+address_0x24C2:
+	AddToScore(-1)
+	Jump(&address_0x24DE)
+
+address_0x24CE:
+	JumpIfRandLT(70, &address_0x24DE)
+	AddToScore(1)
+
+address_0x24DE:
+	EndScript()
+
+
+Label_0x24E0:
+	JumpIfStatStageGT(attacker, atk, +2, &address_0x2540)
+	JumpIfStatStageGT(attacker, def, +2, &address_0x2540)
+	JumpIfStatStageGT(attacker, spa, +2, &address_0x2540)
+	JumpIfStatStageGT(attacker, spd, +2, &address_0x2540)
+	JumpIfStatStageGT(attacker, eva, +2, &address_0x2540)
+	Jump(&address_0x2582)
+
+address_0x2540:
+	JumpCompareSpeed(GT, &address_0x255E)
+	JumpIfHealthGT(attacker, 60, &address_0x2614)
+	Jump(&address_0x256C)
+
+address_0x255E:
+	JumpIfHealthGT(attacker, 70, &address_0x2614)
+
+address_0x256C:
+	JumpIfRandLT(80, &address_0x2614)
+	AddToScore(2)
+	Jump(&address_0x2614)
+
+address_0x2582:
+	JumpIfStatStageGT(attacker, atk, +1, &address_0x25E2)
+	JumpIfStatStageGT(attacker, def, +1, &address_0x25E2)
+	JumpIfStatStageGT(attacker, spa, +1, &address_0x25E2)
+	JumpIfStatStageGT(attacker, spd, +1, &address_0x25E2)
+	JumpIfStatStageGT(attacker, eva, +1, &address_0x25E2)
+	Jump(&address_0x260E)
+
+address_0x25E2:
+	JumpCompareSpeed(GT, &address_0x2600)
+	JumpIfHealthGT(attacker, 60, &address_0x260E)
+	Jump(&address_0x2614)
+
+address_0x2600:
+	JumpIfHealthLT(attacker, 70, &address_0x2614)
+
+address_0x260E:
+	AddToScore(-2)
+
+address_0x2614:
+	EndScript()
+
+
+Label_0x2616:
+	StoreIsFirstTurn(attacker)
+	JumpIfStoredNE(false, &address_0x266C)
+	GetType(defender_type1)
+	JumpIfStoredEQ(type.ghost, &address_0x266C)
+	GetType(defender_type1)
+	JumpIfStoredEQ(type.psychic, &address_0x266C)
+	GetType(defender_type2)
+	JumpIfStoredEQ(type.ghost, &address_0x266C)
+	GetType(defender_type2)
+	JumpIfStoredEQ(type.psychic, &address_0x266C)
+	Jump(&address_0x267C)
+
+address_0x266C:
+	JumpIfRandLT(128, &address_0x267C)
+	AddToScore(1)
+
+address_0x267C:
+	JumpIfDoesNotHaveMove(defender, move.u-turn, &address_0x269A)
+	JumpIfRandLT(128, &address_0x269A)
+	AddToScore(1)
+
+address_0x269A:
+	EndScript()
+
+
+Label_0x269C:
+	JumpCompareSpeed(LT, &address_0x26B6)
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.swift_swim, &address_0x2718)
+
+address_0x26B6:
+	JumpIfHealthLT(attacker, 40, &address_0x2724)
+	GetWeather()
+	JumpIfStoredEQ(weather.hail, &address_0x2718)
+	JumpIfStoredEQ(weather.sun, &address_0x2718)
+	JumpIfStoredEQ(weather.sand, &address_0x2718)
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.rain_dish, &address_0x2718)
+	JumpIfStoredEQ(ability.dry_skin, &address_0x2718)
+	JumpIfStoredNE(ability.hydration, &address_0x272A)
+	JumpIfHasAnyStatus(attacker, &address_0x2718)
+	Jump(&address_0x272A)
+
+address_0x2718:
+	AddToScore(1)
+	Jump(&address_0x272A)
+
+address_0x2724:
+	AddToScore(-1)
+
+address_0x272A:
+	EndScript()
+
+
+Label_0x272C:
+	JumpIfHealthLT(attacker, 40, &address_0x2790)
+	GetWeather()
+	JumpIfStoredEQ(weather.hail, &address_0x2784)
+	JumpIfStoredEQ(weather.rain, &address_0x2784)
+	JumpIfStoredEQ(weather.sand, &address_0x2784)
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.flower_gift, &address_0x2784)
+	JumpIfStoredNE(ability.leaf_guard, &address_0x2796)
+	JumpIfHasAnyStatus(attacker, &address_0x2784)
+	Jump(&address_0x2796)
+
+address_0x2784:
+	AddToScore(1)
+	Jump(&address_0x2796)
+
+address_0x2790:
+	AddToScore(-1)
+
+address_0x2796:
+	EndScript()
+
+
+Label_0x2798:
+	JumpIfHealthLT(attacker, 90, &address_0x27AC)
+	Jump(&address_0x27B2)
+
+address_0x27AC:
+	AddToScore(-2)
+
+address_0x27B2:
+	EndScript()
+
+
+Label_0x27B4:
+	JumpIfStatStageGT(defender, atk, +2, &address_0x2814)
+	JumpIfStatStageGT(defender, def, +2, &address_0x2814)
+	JumpIfStatStageGT(defender, spa, +2, &address_0x2814)
+	JumpIfStatStageGT(defender, spd, +2, &address_0x2814)
+	JumpIfStatStageGT(defender, eva, +2, &address_0x2814)
+	Jump(&address_0x288C)
+
+address_0x2814:
+	JumpIfStatStageLT(attacker, atk, +1, &address_0x2884)
+	JumpIfStatStageLT(attacker, def, +1, &address_0x2884)
+	JumpIfStatStageLT(attacker, spa, +1, &address_0x2884)
+	JumpIfStatStageLT(attacker, spd, +1, &address_0x2884)
+	JumpIfStatStageLT(attacker, eva, +1, &address_0x287E)
+	JumpIfRandLT(50, &address_0x2892)
+	Jump(&address_0x288C)
+
+address_0x287E:
+	AddToScore(1)
+
+address_0x2884:
+	AddToScore(1)
+	EndScript()
+
+
+address_0x288C:
+	AddToScore(-2)
+
+address_0x2892:
+	EndScript()
+
+
+Label_0x2894:
+	JumpIfHasCondition(defender, cond.sleep, &address_0x29A4)
+	JumpIfHasCondition(defender, cond.infatuation, &address_0x29A4)
+	JumpIfHasCondition(defender, cond.confusion, &address_0x29A4)
+	JumpIfHealthGT(attacker, 30, &address_0x28DC)
+	JumpIfRandLT(10, &address_0x28DC)
+	AddToScore(-1)
+
+address_0x28DC:
+	JumpIfHealthGT(attacker, 50, &address_0x28FA)
+	JumpIfRandLT(100, &address_0x28FA)
+	AddToScore(-1)
+
+address_0x28FA:
+	JumpIfHasMove(attacker, move.counter, &address_0x2992)
+	GetPreviousMove(defender)
+	GetPowerOfStoredMove()
+	JumpIfStoredEQ(0, &address_0x2952)
+	JumpIfNotTaunted(&address_0x2930)
+	JumpIfRandLT(100, &address_0x2930)
+	AddToScore(1)
+
+address_0x2930:
+	GetLastPreviousCategory()
+	JumpIfStoredNE(special, &address_0x29A4)
+	JumpIfRandLT(100, &address_0x29AA)
+	AddToScore(1)
+	Jump(&address_0x29AA)
+
+address_0x2952:
+	JumpIfNotTaunted(&address_0x2968)
+	JumpIfRandLT(100, &address_0x2968)
+	AddToScore(1)
+
+address_0x2968:
+	GetType(defender_type1)
+	JumpIfStoredIsInList(&data_address_0x29AC, &address_0x29AA)
+	GetType(defender_type2)
+	JumpIfStoredIsInList(&data_address_0x29AC, &address_0x29AA)
+	JumpIfRandLT(50, &address_0x29AA)
+
+address_0x2992:
+	JumpIfRandLT(100, &address_0x29A2)
+	AddToScore(4)
+
+address_0x29A2:
+	EndScript()
+
+
+address_0x29A4:
+	AddToScore(-1)
+
+address_0x29AA:
+	EndScript()
+
+
+data_address_0x29AC:
+	type.fire
+	type.water
+	type.grass
+	type.electric
+	type.psychic
+	type.ice
+	type.dragon
+	type.dark
+	END
+
+Label_0x29D0:
+	JumpIfEffectivenessEQ(0x, &address_0x2A5E)
+	JumpIfEffectivenessEQ(1/4x, &address_0x2A5E)
+	JumpIfEffectivenessEQ(1/2x, &address_0x2A5E)
+	JumpIfMoveEffectEQ(move_ef.solar_beam, &address_0x29FE)
+	Jump(&address_0x2A16)
+
+address_0x29FE:
+	GetWeather()
+	JumpIfStoredNE(weather.sun, &address_0x2A16)
+	AddToScore(2)
+	Jump(&address_0x2A64)
+
+address_0x2A16:
+	JumpIfHeldItemEQ(attacker, item.power_herb, &address_0x2A2A)
+	Jump(&address_0x2A36)
+
+address_0x2A2A:
+	AddToScore(2)
+	Jump(&address_0x2A64)
+
+address_0x2A36:
+	JumpIfHasMoveWithEffect(defender, move_ef.protect, &address_0x2A5E)
+	JumpIfHealthGT(attacker, 38, &address_0x2A64)
+	AddToScore(-1)
+	Jump(&address_0x2A64)
+
+address_0x2A5E:
+	AddToScore(-2)
+
+address_0x2A64:
+	EndScript()
+
+
+Label_0x2A66:
+	JumpIfEffectivenessEQ(0x, &address_0x2AA6)
+	JumpIfEffectivenessEQ(1/2x, &address_0x2AA6)
+	JumpIfEffectivenessEQ(1/4x, &address_0x2AA6)
+	GetWeather()
+	JumpIfStoredEQ(weather.sun, &address_0x2AA6)
+	JumpIfStoredNE(weather.rain, &address_0x2AB6)
+	AddToScore(1)
+	Jump(&address_0x2AB6)
+
+address_0x2AA6:
+	JumpIfRandLT(50, &address_0x2AB6)
+	AddToScore(-3)
+
+address_0x2AB6:
+	EndScript()
+
+
+Label_0x2AB8:
+	JumpIfHeldItemEQ(attacker, item.power_herb, &address_0x2A2A)
+	JumpIfHasNoMovesWithEffect(defender, move_ef.protect, &Label_0x2AE0)
+	AddToScore(-1)
+	Jump(&address_0x2C04)
+
+Label_0x2AE0:
+	JumpIfEffectivenessEQ(0x, &address_0x2C06)
+	JumpIfEffectivenessEQ(1/4x, &address_0x2C06)
+	JumpIfEffectivenessEQ(1/2x, &address_0x2C06)
+	JumpIfHeldItemEQ(attacker, item.power_herb, &address_0x2B12)
+	Jump(&Label_0x2B1E)
+
+address_0x2B12:
+	AddToScore(1)
+	Jump(&address_0x2C04)
+
+Label_0x2B1E:
+	JumpCompareSpeed(LT, &address_0x2B44)
+	JumpIfHealthGT(attacker, 24, &address_0x2B44)
+	JumpIfHeldItemEQ(attacker, item.custap_berry, &address_0x2BF4)
+
+address_0x2B44:
+	JumpIfBadlyPoisoned(defender, &address_0x2BF4)
+	JumpIfHasCondition(defender, cond.curse, &address_0x2BF4)
+	JumpIfHasCondition(defender, cond.leech_seed, &address_0x2BF4)
+	GetWeather()
+	JumpIfStoredEQ(weather.sand, &address_0x2B86)
+	JumpIfStoredEQ(weather.hail, &address_0x2BAC)
+	Jump(&address_0x2BD2)
+
+address_0x2B86:
+	GetType(attacker_type1)
+	JumpIfStoredIsInList(&data_address_0x2C0E, &address_0x2BF4)
+	GetType(attacker_type2)
+	JumpIfStoredIsInList(&data_address_0x2C0E, &address_0x2BF4)
+	Jump(&address_0x2BD2)
+
+address_0x2BAC:
+	GetType(attacker_type1)
+	JumpIfStoredEQ(type.ice, &address_0x2BF4)
+	GetType(attacker_type2)
+	JumpIfStoredEQ(type.ice, &address_0x2BF4)
+	Jump(&address_0x2BD2)
+
+address_0x2BD2:
+	JumpCompareSpeed(GT, &address_0x2C04)
+	GetPreviousMove(defender)
+	GetEffectOfStoredMove()
+	JumpIfStoredNE(move_ef.mind_reader, &address_0x2BF4)
+	Jump(&address_0x2C04)
+
+address_0x2BF4:
+	JumpIfRandLT(80, &address_0x2C04)
+	AddToScore(1)
+
+address_0x2C04:
+	EndScript()
+
+
+address_0x2C06:
+	AddToScore(1)
+	EndScript()
+
+
+data_address_0x2C0E:
+	type.ground
+	type.rock
+	type.steel
+	END
+
+Label_0x2C1E:
+	AddToScore(2)
+	EndScript()
+
+
+Label_0x2C26:
+	JumpIfHealthNE(attacker, 100, &address_0x2C52)
+	JumpIfHasMoveWithEffect(attacker, move_ef.baton_pass, &address_0x2C4C)
+	JumpIfRandLT(128, &address_0x2C52)
+
+address_0x2C4C:
+	AddToScore(2)
+
+address_0x2C52:
+	JumpIfHealthLT(attacker, 70, &address_0x2C6A)
+	JumpIfRandLT(200, &address_0x2C88)
+
+address_0x2C6A:
+	JumpIfHealthLT(attacker, 40, &address_0x2C82)
+	JumpIfRandLT(60, &address_0x2C88)
+
+address_0x2C82:
+	AddToScore(-2)
+
+address_0x2C88:
+	EndScript()
+
+
+Label_0x2C8A:
+	GetStockpileCount(attacker)
+	JumpIfStoredLT(2, &address_0x2CAA)
+	JumpIfRandLT(80, &address_0x2CAA)
+	AddToScore(2)
+
+address_0x2CAA:
+	EndScript()
+
+
+Label_0x2CAC:
+	JumpIfHealthLT(attacker, 40, &address_0x2D16)
+	GetWeather()
+	JumpIfStoredEQ(weather.sun, &address_0x2CE0)
+	JumpIfStoredEQ(weather.rain, &address_0x2CE0)
+	JumpIfStoredEQ(weather.sand, &address_0x2CE0)
+	Jump(&address_0x2D1C)
+
+address_0x2CE0:
+	AddToScore(1)
+	JumpIfDoesNotHaveMove(attacker, move.blizzard, &address_0x2CFA)
+	AddToScore(2)
+
+address_0x2CFA:
+	GetAbilityGuess(attacker)
+	JumpIfStoredNE(ability.ice_body, &address_0x2D1C)
+	AddToScore(2)
+	Jump(&address_0x2D1C)
+
+address_0x2D16:
+	AddToScore(-1)
+
+address_0x2D1C:
+	EndScript()
+
+
+Label_0x2D1E:
+	JumpIfHasCondition(defender, cond.poison, &address_0x2D52)
+	JumpIfHasCondition(defender, cond.burn, &address_0x2D52)
+	JumpIfHasCondition(defender, cond.paralysis, &address_0x2D52)
+	JumpIfNotBadlyPoisoned(defender, &address_0x2D58)
+
+address_0x2D52:
+	AddToScore(1)
+
+address_0x2D58:
+	EndScript()
+
+
+Label_0x2D5A:
+	JumpIfEffectivenessEQ(0x, &address_0x2DE0)
+	JumpIfEffectivenessEQ(1/4x, &address_0x2DE0)
+	JumpIfEffectivenessEQ(1/2x, &address_0x2DE0)
+	JumpIfHasSubstitute(attacker, &address_0x5D94)
+	JumpIfHasCondition(defender, cond.sleep, &address_0x5D94)
+	JumpIfHasCondition(defender, cond.yawn, &address_0x5D94)
+	JumpIfHasCondition(defender, cond.infatuation, &address_0x2DEC)
+	JumpIfHasCondition(defender, cond.confusion, &address_0x2DEC)
+	StoreIsFirstTurn(attacker)
+	JumpIfStoredNE(false, &address_0x2DFC)
+	JumpIfRandLT(200, &address_0x2DFC)
+	AddToScore(1)
+	Jump(&address_0x2DFC)
+
+address_0x2DE0:
+	AddToScore(-1)
+	Jump(&address_0x2DFC)
+
+address_0x2DEC:
+	JumpIfRandLT(100, &address_0x2DFC)
+	AddToScore(1)
+
+address_0x2DFC:
+	EndScript()
+
+
+Label_0x2DFE:
+	JumpIfHasCondition(defender, cond.paralysis, &address_0x2E12)
+	Jump(&address_0x2E18)
+
+address_0x2E12:
+	AddToScore(1)
+
+address_0x2E18:
+	EndScript()
+
+
+Label_0x2E1A:
+	GetHeldItemEffect(attacker)
+	JumpIfStoredIsInList(&data_address_0x316A, &address_0x2E5E)
+	JumpIfStoredIsInList(&data_address_0x31A2, &address_0x2E7A)
+	JumpIfStoredIsInList(&data_address_0x31AA, &address_0x2FA0)
+	JumpIfStoredIsInList(&data_address_0x31B2, &address_0x308A)
+	JumpIfStoredIsInList(&data_address_0x3152, &address_0x3130)
+
+address_0x2E52:
+	AddToScore(-3)
+	Jump(&address_0x3150)
+
+address_0x2E5E:
+	GetHeldItemEffect(defender)
+	JumpIfStoredIsInList(&data_address_0x3212, &address_0x2E52)
+	AddToScore(5)
+	Jump(&address_0x3150)
+
+address_0x2E7A:
+	GetHeldItemEffect(defender)
+	JumpIfStoredIsInList(&data_address_0x3212, &address_0x2E52)
+	JumpIfHasAnyStatus(defender, &address_0x2F10)
+	JumpIfHasSideCondition(defender, side_cond.safeguard, &address_0x2F10)
+	GetType(defender_type1)
+	JumpIfStoredEQ(type.steel, &address_0x2F10)
+	JumpIfStoredEQ(type.poison, &address_0x2F10)
+	GetType(defender_type2)
+	JumpIfStoredEQ(type.steel, &address_0x2F10)
+	JumpIfStoredEQ(type.poison, &address_0x2F10)
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.immunity, &address_0x2F10)
+	JumpIfStoredEQ(ability.magic_guard, &address_0x2F10)
+	JumpIfStoredEQ(ability.poison_heal, &address_0x2F10)
+	JumpIfStoredEQ(ability.toxic_boost, &address_0x2F10)
+	AddToScore(5)
+	Jump(&address_0x3150)
+
+address_0x2F10:
+	JumpIfHasAnyStatus(attacker, &address_0x2E52)
+	JumpIfHasSideCondition(attacker, side_cond.safeguard, &address_0x2E52)
+	GetType(attacker_type1)
+	JumpIfStoredEQ(type.steel, &address_0x2E52)
+	JumpIfStoredEQ(type.poison, &address_0x2E52)
+	GetType(attacker_type2)
+	JumpIfStoredEQ(type.steel, &address_0x2E52)
+	JumpIfStoredEQ(type.poison, &address_0x2E52)
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.immunity, &address_0x2E52)
+	JumpIfStoredEQ(ability.magic_guard, &address_0x2E52)
+	JumpIfStoredEQ(ability.poison_heal, &address_0x2E52)
+	JumpIfStoredEQ(ability.klutz, &address_0x2E52)
+	JumpIfStoredEQ(ability.toxic_boost, &address_0x2E52)
+	AddToScore(5)
+	Jump(&address_0x3150)
+
+address_0x2FA0:
+	GetHeldItemEffect(defender)
+	JumpIfStoredIsInList(&data_address_0x3212, &address_0x2E52)
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.water_veil, &address_0x3018)
+	JumpIfStoredEQ(ability.magic_guard, &address_0x3018)
+	JumpIfStoredEQ(ability.flare_boost, &address_0x3018)
+	JumpIfHasAnyStatus(defender, &address_0x3018)
+	JumpIfHasSideCondition(defender, side_cond.safeguard, &address_0x3018)
+	GetType(defender_type1)
+	JumpIfStoredEQ(type.fire, &address_0x3018)
+	GetType(defender_type2)
+	JumpIfStoredEQ(type.fire, &address_0x3018)
+	AddToScore(5)
+	Jump(&address_0x3150)
+
+address_0x3018:
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.water_veil, &address_0x2E52)
+	JumpIfStoredEQ(ability.magic_guard, &address_0x2E52)
+	JumpIfStoredEQ(ability.klutz, &address_0x5D5C)
+	JumpIfStoredEQ(ability.flare_boost, &address_0x2E52)
+	JumpIfHasAnyStatus(attacker, &address_0x2E52)
+	JumpIfHasSideCondition(attacker, side_cond.safeguard, &address_0x2E52)
+	GetType(attacker_type1)
+	JumpIfStoredEQ(type.fire, &address_0x2E52)
+	GetType(attacker_type2)
+	JumpIfStoredEQ(type.fire, &address_0x2E52)
+	AddToScore(5)
+	Jump(&address_0x3150)
+
+address_0x308A:
+	GetHeldItemEffect(defender)
+	JumpIfStoredIsInList(&data_address_0x3212, &address_0x2E52)
+	GetType(defender_type1)
+	JumpIfStoredEQ(type.poison, &address_0x30E0)
+	GetType(defender_type2)
+	JumpIfStoredEQ(type.poison, &address_0x30E0)
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.magic_guard, &address_0x2F10)
+	JumpIfStoredEQ(ability.toxic_boost, &address_0x2F10)
+	AddToScore(5)
+	Jump(&address_0x3150)
+
+address_0x30E0:
+	GetType(attacker_type1)
+	JumpIfStoredEQ(type.poison, &address_0x2E52)
+	GetType(attacker_type2)
+	JumpIfStoredEQ(type.poison, &address_0x2E52)
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.magic_guard, &address_0x2E52)
+	JumpIfStoredEQ(ability.klutz, &address_0x2E52)
+	JumpIfStoredEQ(ability.toxic_boost, &address_0x2E52)
+	AddToScore(5)
+	Jump(&address_0x3150)
+
+address_0x3130:
+	GetHeldItemEffect(defender)
+	JumpIfStoredIsInList(&data_address_0x31BA, &address_0x2E52)
+	JumpIfRandLT(50, &address_0x3150)
+	AddToScore(2)
+
+address_0x3150:
+	EndScript()
+
+
+data_address_0x3152:
+	item_ef.figy_berry
+	item_ef.wiki_berry
+	item_ef.mago_berry
+	item_ef.aguav_berry
+	item_ef.iapapa_berry
+	END
+
+data_address_0x316A:
+	item_ef.choice_band
+	item_ef.choice_specs
+	item_ef.choice_scarf
+	item_ef.iron_ball
+	item_ef.move_last
+	item_ef.sticky_barb
+	item_ef.power_bracer
+	item_ef.power_belt
+	item_ef.power_lens
+	item_ef.power_belt
+	item_ef.power_band
+	item_ef.power_anklet
+	item_ef.power_weight
+	END
+
+data_address_0x31A2:
+	item_ef.toxic_orb
+	END
+
+data_address_0x31AA:
+	item_ef.flame_orb
+	END
+
+data_address_0x31B2:
+	item_ef.black_sludge
+	END
+
+data_address_0x31BA:
+	item_ef.figy_berry
+	item_ef.wiki_berry
+	item_ef.mago_berry
+	item_ef.aguav_berry
+	item_ef.iapapa_berry
+	item_ef.macho_brace
+	item_ef.choice_band
+	item_ef.choice_specs
+	item_ef.choice_scarf
+	item_ef.iron_ball
+	item_ef.move_last
+	item_ef.sticky_barb
+	item_ef.power_bracer
+	item_ef.power_belt
+	item_ef.power_lens
+	item_ef.power_band
+	item_ef.power_anklet
+	item_ef.power_weight
+	item_ef.toxic_orb
+	item_ef.flame_orb
+	item_ef.black_sludge
+	END
+
+data_address_0x3212:
+	item_ef.macho_brace
+	item_ef.choice_band
+	item_ef.choice_specs
+	item_ef.choice_scarf
+	item_ef.iron_ball
+	item_ef.move_last
+	item_ef.sticky_barb
+	item_ef.power_bracer
+	item_ef.power_belt
+	item_ef.power_lens
+	item_ef.power_band
+	item_ef.power_anklet
+	item_ef.power_weight
+	item_ef.toxic_orb
+	item_ef.flame_orb
+	item_ef.black_sludge
+	END
+
+Label_0x3256:
+	GetAbilityGuess(attacker)
+	JumpIfStoredIsInList(&data_address_0x32B0, &address_0x3292)
+	GetAbilityGuess(defender)
+	JumpIfStoredIsInList(&data_address_0x32B0, &address_0x329E)
+	GetBattleStyle()
+	JumpIfStoredEQ(single_battle, &address_0x3292)
+	GetAbilityGuess(defender)
+	JumpIfStoredIsInList(&data_address_0x3314, &address_0x329E)
+
+address_0x3292:
+	AddToScore(-1)
+	Jump(&address_0x32AE)
+
+address_0x329E:
+	JumpIfRandLT(50, &address_0x32AE)
+	AddToScore(2)
+
+address_0x32AE:
+	EndScript()
+
+
+data_address_0x32B0:
+	ability.speed_boost
+	ability.flash_fire
+	ability.intimidate
+	ability.swift_swim
+	ability.chlorophyll
+	ability.huge_power
+	ability.rain_dish
+	ability.guts
+	ability.pure_power
+	ability.motor_drive
+	ability.dry_skin
+	ability.poison_heal
+	ability.adaptability
+	ability.solar_power
+	ability.technician
+	ability.ice_body
+	ability.contrary
+	ability.cursed_body
+	ability.toxic_boost
+	ability.flare_boost
+	ability.harvest
+	ability.sand_rush
+	ability.magic_bounce
+	ability.prankster
+	END
+
+data_address_0x3314:
+	ability.shadow_tag
+	ability.arena_trap
+	ability.telepathy
+	ability.friend_guard
+	ability.own_tempo
+	END
+
+Label_0x332C:
+	EndScript()
+
+
+Label_0x332E:
+	JumpIfEffectivenessEQ(0x, &address_0x338A)
+	JumpIfEffectivenessEQ(1/4x, &address_0x338A)
+	JumpIfEffectivenessEQ(1/2x, &address_0x338A)
+	JumpIfStatStageLT(attacker, atk, +0, &address_0x338A)
+	JumpCompareSpeed(GT, &address_0x337C)
+	JumpIfHealthGT(attacker, 40, &address_0x338A)
+	Jump(&address_0x3390)
+
+address_0x337C:
+	JumpIfHealthLT(attacker, 60, &address_0x3390)
+
+address_0x338A:
+	AddToScore(-1)
+
+address_0x3390:
+	EndScript()
+
+
+Label_0x3392:
+	JumpIfHealthGT(defender, 30, &address_0x33B0)
+	JumpIfRandLT(100, &address_0x33B0)
+	AddToScore(-1)
+
+address_0x33B0:
+	StoreIsFirstTurn(attacker)
+	JumpIfStoredEQ(false, &address_0x33E0)
+	JumpIfRandLT(150, &address_0x33F0)
+	AddToScore(1)
+	Jump(&address_0x33F0)
+	JumpIfRandLT(50, &address_0x33F0)
+
+address_0x33E0:
+	JumpIfRandLT(30, &address_0x33F0)
+	AddToScore(-1)
+
+address_0x33F0:
+	EndScript()
+
+
+Label_0x33F2:
+	GetUsedItem(attacker)
+	JumpIfStoredIsNotInList(&data_address_0x3420, &address_0x3418)
+	JumpIfRandLT(50, &address_0x341E)
+	AddToScore(1)
+	Jump(&address_0x341E)
+
+address_0x3418:
+	AddToScore(-2)
+
+address_0x341E:
+	EndScript()
+
+
+data_address_0x3420:
+	item.chesto_berry
+	item.lum_berry
+	item.starf_berry
+	END
+
+Label_0x3430:
+	JumpIfHasCondition(defender, cond.sleep, &address_0x3470)
+	JumpIfHasCondition(defender, cond.infatuation, &address_0x3470)
+	JumpIfHasCondition(defender, cond.confusion, &address_0x3470)
+	JumpIfRandLT(180, &address_0x3470)
+	AddToScore(2)
+	Jump(&address_0x3476)
+
+address_0x3470:
+	AddToScore(-2)
+
+address_0x3476:
+	EndScript()
+
+
+Label_0x3478:
+	JumpIfHasSideCondition(defender, side_cond.reflect, &address_0x349A)
+	JumpIfHasSideCondition(defender, side_cond.light_screen, &address_0x349A)
+	Jump(&address_0x34A0)
+
+address_0x349A:
+	AddToScore(1)
+
+address_0x34A0:
+	EndScript()
+
+
+Label_0x34A2:
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.harvest, &address_0x5D5C)
+	JumpIfHealthLT(defender, 30, &address_0x34E0)
+	StoreIsFirstTurn(attacker)
+	JumpIfStoredGT(false, &address_0x34E0)
+	JumpIfRandLT(180, &address_0x34E0)
+	AddToScore(1)
+
+address_0x34E0:
+	EndScript()
+
+
+Label_0x34E2:
+	JumpIfHealthLT(defender, 70, &address_0x352E)
+	JumpCompareSpeed(GT, &address_0x3514)
+	JumpIfHealthGT(attacker, 40, &address_0x352E)
+	AddToScore(1)
+	Jump(&address_0x3534)
+
+address_0x3514:
+	JumpIfHealthGT(attacker, 50, &address_0x352E)
+	AddToScore(1)
+	Jump(&address_0x3534)
+
+address_0x352E:
+	AddToScore(-1)
+
+address_0x3534:
+	EndScript()
+
+
+Label_0x3536:
+	JumpIfEffectivenessEQ(0x, &address_0x35BE)
+	JumpIfEffectivenessEQ(1/4x, &address_0x35BE)
+	JumpIfEffectivenessEQ(1/2x, &address_0x35BE)
+	JumpCompareSpeed(GT, &address_0x35B0)
+	JumpIfHealthGT(attacker, 90, &address_0x3580)
+	JumpIfHealthGT(attacker, 50, &address_0x35C4)
+	Jump(&address_0x35BE)
+
+address_0x3580:
+	JumpIfRandLT(30, &address_0x35C4)
+	AddToScore(1)
+	JumpIfHeldItemEQ(attacker, item.choice_scarf, &address_0x35A4)
+	Jump(&address_0x35C4)
+
+address_0x35A4:
+	AddToScore(1)
+	Jump(&address_0x35C4)
+
+address_0x35B0:
+	JumpIfHealthGT(attacker, 80, &address_0x35C4)
+
+address_0x35BE:
+	AddToScore(-1)
+
+address_0x35C4:
+	EndScript()
+
+
+Label_0x35C6:
+	StoreIsFirstTurn(attacker)
+	JumpIfStoredGT(false, &address_0x35E6)
+	JumpIfRandLT(100, &address_0x35E6)
+	AddToScore(2)
+
+address_0x35E6:
+	EndScript()
+
+
+Label_0x35E8:
+	JumpIfHealthLT(defender, 50, &address_0x35FC)
+	Jump(&address_0x3602)
+
+address_0x35FC:
+	AddToScore(-1)
+
+address_0x3602:
+	EndScript()
+
+
+Label_0x3604:
+	StoreIsFirstTurn(attacker)
+	JumpIfStoredEQ(true, &address_0x3692)
+	JumpIfRandLT(30, &address_0x36CE)
+	JumpCompareSpeed(GT, &address_0x3654)
+	JumpIfHealthNE(attacker, 100, &address_0x36BE)
+	JumpIfHealthLT(defender, 70, &address_0x36BE)
+	JumpIfRandLT(60, &address_0x36CE)
+	Jump(&address_0x36BE)
+
+address_0x3654:
+	JumpIfHealthGT(defender, 25, &address_0x36BE)
+	JumpIfHasMoveWithEffect(defender, move_ef.heal_50, &address_0x3692)
+	JumpIfHasMoveWithEffect(defender, move_ef.defense_curl, &address_0x3692)
+	JumpIfHasMoveWithEffect(defender, move_ef.roost, &address_0x3692)
+	Jump(&address_0x36A8)
+
+address_0x3692:
+	JumpIfRandLT(150, &address_0x36CE)
+	AddToScore(2)
+	Jump(&address_0x36CE)
+
+address_0x36A8:
+	JumpIfRandLT(230, &address_0x36BE)
+	AddToScore(1)
+	Jump(&address_0x36CE)
+
+address_0x36BE:
+	JumpIfRandLT(30, &address_0x36CE)
+	AddToScore(-2)
+
+address_0x36CE:
+	EndScript()
+
+
+Label_0x36D0:
+	JumpIfHealthLT(attacker, 50, &address_0x3710)
+	GetType(defender_type1)
+	JumpIfStoredEQ(type.electric, &address_0x3704)
+	GetType(defender_type2)
+	JumpIfStoredEQ(type.electric, &address_0x3704)
+	Jump(&address_0x3710)
+
+address_0x3704:
+	AddToScore(1)
+	Jump(&address_0x3716)
+
+address_0x3710:
+	AddToScore(-1)
+
+address_0x3716:
+	EndScript()
+
+
+Label_0x3718:
+	JumpIfEffectivenessEQ(0x, &address_0x37AA)
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.contrary, &address_0x3764)
+	JumpIfEffectivenessEQ(1/4x, &address_0x37AA)
+	JumpIfEffectivenessEQ(1/2x, &address_0x37AA)
+	JumpCompareSpeed(GT, &address_0x379C)
+	JumpIfHealthGT(attacker, 60, &address_0x37B0)
+	Jump(&address_0x37AA)
+
+address_0x3764:
+	JumpIfEffectivenessEQ(1/4x, &address_0x37B0)
+	JumpIfEffectivenessEQ(1/2x, &address_0x379C)
+	JumpIfHealthLT(attacker, 50, &address_0x37B0)
+	JumpIfRandLT(50, &address_0x3896)
+	AddToScore(2)
+	Jump(&address_0x37B0)
+
+address_0x379C:
+	JumpIfHealthGT(attacker, 80, &address_0x37B0)
+
+address_0x37AA:
+	AddToScore(-1)
+
+address_0x37B0:
+	EndScript()
+
+
+Label_0x37B2:
+	JumpIfHealthLT(attacker, 50, &address_0x37F2)
+	GetType(defender_type1)
+	JumpIfStoredEQ(type.fire, &address_0x37E6)
+	GetType(defender_type2)
+	JumpIfStoredEQ(type.fire, &address_0x37E6)
+	Jump(&address_0x37F2)
+
+address_0x37E6:
+	AddToScore(1)
+	Jump(&address_0x37F8)
+
+address_0x37F2:
+	AddToScore(-1)
+
+address_0x37F8:
+	EndScript()
+
+
+Label_0x37FA:
+	JumpCompareSpeed(GT, &address_0x3828)
+	JumpIfHealthGT(attacker, 50, &address_0x3838)
+	JumpIfRandLT(50, &address_0x3838)
+	AddToScore(-1)
+	Jump(&address_0x3838)
+
+address_0x3828:
+	JumpIfRandLT(50, &address_0x3838)
+	AddToScore(1)
+
+address_0x3838:
+	EndScript()
+
+
+Label_0x383A:
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.levitate, &address_0x3896)
+	JumpIfHasCondition(defender, cond.floating, &address_0x3896)
+	GetType(defender_type1)
+	JumpIfStoredEQ(type.flying, &address_0x3896)
+	GetType(defender_type2)
+	JumpIfStoredEQ(type.flying, &address_0x3896)
+	JumpIfHealthLT(attacker, 60, &address_0x38A6)
+	JumpIfRandLT(128, &address_0x3896)
+	Jump(&address_0x38A6)
+
+address_0x3896:
+	JumpIfRandLT(64, &address_0x38A6)
+	AddToScore(1)
+
+address_0x38A6:
+	EndScript()
+
+
+Label_0x38A8:
+	GetType(defender_type1)
+	JumpIfStoredEQ(type.dark, &address_0x38E2)
+	GetType(defender_type2)
+	JumpIfStoredEQ(type.dark, &address_0x38E2)
+	JumpIfStatStageGT(defender, eva, +2, &address_0x38EC)
+	AddToScore(-2)
+	EndScript()
+
+
+address_0x38E2:
+	JumpIfRandLT(80, &address_0x38FC)
+
+address_0x38EC:
+	JumpIfRandLT(80, &address_0x38FC)
+	AddToScore(2)
+
+address_0x38FC:
+	EndScript()
+
+
+Label_0x38FE:
+	JumpIfEffectivenessEQ(0x, &address_0x3930)
+	JumpIfEffectivenessEQ(1/2x, &address_0x3930)
+	JumpIfEffectivenessEQ(1/4x, &address_0x3930)
+	JumpIfHasCondition(defender, cond.sleep, &address_0x393C)
+	Jump(&address_0x3942)
+
+address_0x3930:
+	AddToScore(-1)
+	Jump(&address_0x3942)
+
+address_0x393C:
+	AddToScore(1)
+
+address_0x3942:
+	EndScript()
+
+
+Label_0x3944:
+	JumpIfEffectivenessEQ(0x, &address_0x3972)
+	JumpIfEffectivenessEQ(1/2x, &address_0x3972)
+	JumpIfEffectivenessEQ(1/4x, &address_0x3972)
+	JumpCompareSpeed(GT, &address_0x397A)
+	Jump(&address_0x3980)
+
+address_0x3972:
+	AddToScore(-1)
+	EndScript()
+
+
+address_0x397A:
+	AddToScore(1)
+
+address_0x3980:
+	EndScript()
+
+
+Label_0x3982:
+	EndScript()
+
+
+Label_0x3984:
+	JumpIfEffectivenessEQ(0x, &address_0x39CC)
+	JumpIfEffectivenessEQ(1/2x, &address_0x39CC)
+	JumpIfEffectivenessEQ(1/4x, &address_0x39CC)
+	JumpIfHealthGT(defender, 50, &address_0x39D2)
+	AddToScore(1)
+	JumpIfRandLT(128, &address_0x39D2)
+	AddToScore(1)
+	Jump(&address_0x39D2)
+
+address_0x39CC:
+	AddToScore(-1)
+
+address_0x39D2:
+	EndScript()
+
+
+Label_0x39D4:
+	JumpIfHasMoveWithEffect(defender, move_ef.protect, &address_0x39F2)
+	JumpIfRandLT(64, &address_0x39F2)
+	Jump(&address_0x3B0A)
+
+address_0x39F2:
+	GetAbilityGuess(attacker)
+	JumpIfStoredNE(ability.guts, &address_0x3A36)
+	JumpIfHeldItemEQ(attacker, item.flame_orb, &address_0x3A24)
+	JumpIfHeldItemEQ(attacker, item.toxic_orb, &address_0x3A24)
+	Jump(&address_0x3A36)
+
+address_0x3A24:
+	GetTurnCount()
+	JumpIfStoredNE(0, &address_0x3A36)
+	AddToScore(2)
+
+address_0x3A36:
+	JumpIfBadlyPoisoned(attacker, &address_0x3AA4)
+	JumpIfHasCondition(attacker, cond.curse, &address_0x3AA4)
+	JumpIfHasCondition(attacker, cond.perish_song, &address_0x3AA4)
+	JumpIfHasCondition(attacker, cond.infatuation, &address_0x3AA4)
+	JumpIfHasCondition(attacker, cond.leech_seed, &address_0x3AA4)
+	JumpIfHasCondition(attacker, cond.yawn, &address_0x3AA4)
+	JumpIfHealthEQ(defender, 100, &address_0x3AB4)
+	GetHeldItemEffect(defender)
+	JumpIfStoredIsNotInList(&data_address_0x3B0C, &address_0x3AB4)
+
+address_0x3AA4:
+	JumpIfRandLT(128, &address_0x3AB4)
+	AddToScore(1)
+
+address_0x3AB4:
+	GetProtectCount(defender)
+	JumpIfStoredEQ(0, &address_0x3AD8)
+	JumpIfStoredEQ(1, &address_0x3AEE)
+	JumpIfStoredGT(2, &address_0x3B04)
+
+address_0x3AD8:
+	JumpIfRandLT(128, &address_0x3B0A)
+	AddToScore(1)
+	Jump(&address_0x3B0A)
+
+address_0x3AEE:
+	JumpIfRandLT(192, &address_0x3B0A)
+	AddToScore(1)
+	Jump(&address_0x3B0A)
+
+address_0x3B04:
+	AddToScore(-2)
+
+address_0x3B0A:
+	EndScript()
+
+
+data_address_0x3B0C:
+	item_ef.leftovers
+	item_ef.black_sludge
+	END
+
+Label_0x3B18:
+	JumpIfEffectivenessEQ(0x, &address_0x3B6C)
+	JumpIfEffectivenessEQ(1/2x, &address_0x3B6C)
+	JumpIfEffectivenessEQ(1/4x, &address_0x3B6C)
+	StoreIsFirstTurn(attacker)
+	JumpIfStoredEQ(false, &address_0x3B56)
+	JumpIfRandLT(64, &address_0x3B56)
+	AddToScore(1)
+
+address_0x3B56:
+	JumpIfRandLT(128, &address_0x3B72)
+	AddToScore(1)
+	Jump(&address_0x3B72)
+
+address_0x3B6C:
+	AddToScore(-1)
+
+address_0x3B72:
+	EndScript()
+
+
+Label_0x3B74:
+	JumpIfRandLT(64, &address_0x3BC0)
+	JumpCompareSpeed(LT, &address_0x3BBA)
+	JumpIfHealthLT(attacker, 31, &address_0x3BBA)
+	JumpIfHealthGT(attacker, 75, &address_0x3BAE)
+	JumpIfRandLT(64, &address_0x3BC0)
+
+address_0x3BAE:
+	AddToScore(1)
+	Jump(&address_0x3BC0)
+
+address_0x3BBA:
+	AddToScore(-1)
+
+address_0x3BC0:
+	EndScript()
+
+
+Label_0x3BC2:
+	JumpIfHealthLT(attacker, 51, &address_0x3BFE)
+	JumpIfHealthGT(attacker, 90, &address_0x3BE8)
+	JumpIfRandLT(128, &address_0x3C04)
+
+address_0x3BE8:
+	JumpIfRandLT(64, &address_0x3C04)
+	AddToScore(1)
+	Jump(&address_0x3C04)
+
+address_0x3BFE:
+	AddToScore(-1)
+
+address_0x3C04:
+	EndScript()
+
+
+Label_0x3C06:
+	JumpIfHasCondition(defender, cond.sleep, &address_0x3CEA)
+	JumpIfHasCondition(defender, cond.infatuation, &address_0x3CEA)
+	JumpIfHasCondition(defender, cond.confusion, &address_0x3CEA)
+	JumpIfHasMoveWithEffect(defender, move_ef.revenge, &address_0x3CEA)
+	JumpIfHasMoveWithEffect(defender, move_ef.focus_punch, &address_0x3CEA)
+	JumpIfHasMoveWithEffect(defender, move_ef.vital_throw, &address_0x3CEA)
+	JumpIfHealthGT(attacker, 30, &address_0x3C78)
+	JumpIfRandLT(10, &address_0x3C78)
+	AddToScore(-1)
+
+address_0x3C78:
+	JumpIfHealthGT(attacker, 50, &address_0x3C96)
+	JumpIfRandLT(100, &address_0x3C96)
+	AddToScore(-1)
+
+address_0x3C96:
+	JumpIfRandLT(192, &address_0x3CA6)
+	AddToScore(1)
+
+address_0x3CA6:
+	GetPreviousMove(defender)
+	GetPowerOfStoredMove()
+	JumpIfStoredEQ(0, &address_0x3CCE)
+	JumpIfNotTaunted(&address_0x3CCE)
+	JumpIfRandLT(100, &address_0x3CCE)
+	AddToScore(1)
+
+address_0x3CCE:
+	JumpIfNotTaunted(&address_0x3CF0)
+	JumpIfRandLT(100, &address_0x3CF0)
+	AddToScore(1)
+	Jump(&address_0x3CF0)
+
+address_0x3CEA:
+	AddToScore(-1)
+
+address_0x3CF0:
+	EndScript()
+
+
+Label_0x3CF2:
+	JumpIfEffectivenessEQ(0x, &address_0x3D2C)
+	JumpIfEffectivenessEQ(1/4x, &address_0x3D2C)
+	JumpIfEffectivenessEQ(1/2x, &address_0x3D2C)
+	GetPartyReserveCount(attacker)
+	JumpIfStoredEQ(0, &address_0x3DCE)
+	JumpIfHasSuperEffectiveMove(&address_0x3D38)
+	Jump(&address_0x3D48)
+
+address_0x3D2C:
+	AddToScore(-1)
+	Jump(&address_0x3DCE)
+
+address_0x3D38:
+	JumpIfRandLT(64, &address_0x3D48)
+	AddToScore(-2)
+
+address_0x3D48:
+	JumpIfReservedHasStrongerMove(false, &address_0x3D68)
+	JumpIfRandLT(64, &address_0x3D68)
+	AddToScore(-2)
+	Jump(&address_0x3DCE)
+
+address_0x3D68:
+	JumpIfHealthGT(defender, 70, &address_0x3D94)
+	JumpIfHealthGT(defender, 30, &address_0x3DA4)
+	JumpIfRandLT(128, &address_0x3DB4)
+	Jump(&address_0x3DA4)
+
+address_0x3D94:
+	JumpIfRandLT(64, &address_0x3DA4)
+	AddToScore(1)
+
+address_0x3DA4:
+	JumpIfRandLT(128, &address_0x3DB4)
+	AddToScore(1)
+
+address_0x3DB4:
+	JumpCompareSpeed(LT, &address_0x3DC8)
+	JumpIfRandLT(128, &address_0x3DCE)
+
+address_0x3DC8:
+	AddToScore(1)
+
+address_0x3DCE:
+	EndScript()
+
+
+Label_0x3DD0:
+	JumpIfEffectivenessEQ(0x, &address_0x3E1A)
+	JumpIfEffectivenessEQ(1/4x, &address_0x3E1A)
+	JumpIfEffectivenessEQ(1/2x, &address_0x3E1A)
+	JumpCompareSpeed(GT, &address_0x3E0C)
+	JumpIfHealthGT(attacker, 60, &address_0x3E20)
+	Jump(&address_0x3E1A)
+
+address_0x3E0C:
+	JumpIfHealthGT(attacker, 80, &address_0x3E20)
+
+address_0x3E1A:
+	AddToScore(-1)
+
+address_0x3E20:
+	EndScript()
+
+
+Label_0x3E22:
+	JumpIfEffectivenessEQ(0x, &address_0x3E6A)
+	JumpIfEffectivenessEQ(1/2x, &address_0x3E6A)
+	JumpIfEffectivenessEQ(1/4x, &address_0x3E6A)
+	JumpCompareSpeed(LT, &address_0x3E70)
+	JumpIfHealthLT(attacker, 30, &address_0x3E70)
+	JumpIfRandLT(64, &address_0x3E70)
+	AddToScore(1)
+	EndScript()
+
+
+address_0x3E6A:
+	AddToScore(-1)
+
+address_0x3E70:
+	EndScript()
+
+
+Label_0x3E72:
+	JumpIfEffectivenessEQ(0x, &address_0x3ECA)
+	JumpIfEffectivenessEQ(1/2x, &address_0x3ECA)
+	JumpIfEffectivenessEQ(1/4x, &address_0x3ECA)
+	JumpCompareSpeed(LT, &address_0x3EE6)
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.rough_skin, &address_0x3ED6)
+	GetHeldItem(attacker)
+	JumpIfStoredIsInList(&data_address_0x3EE8, &address_0x3ED6)
+	JumpIfRandLT(128, &address_0x3ED6)
+	Jump(&address_0x3EE6)
+
+address_0x3ECA:
+	AddToScore(-1)
+	Jump(&address_0x3EE6)
+
+address_0x3ED6:
+	JumpIfRandLT(128, &address_0x3EE6)
+	AddToScore(1)
+
+address_0x3EE6:
+	EndScript()
+
+
+data_address_0x3EE8:
+	item.jaboca_berry
+	item.rowap_berry
+	END
+
+Label_0x3EF4:
+	JumpIfRandLT(128, &address_0x3F04)
+	AddToScore(1)
+
+address_0x3F04:
+	EndScript()
+
+
+Label_0x3F06:
+	JumpIfEffectivenessEQ(0x, &address_0x3FB0)
+	JumpIfEffectivenessEQ(1/2x, &address_0x3FB0)
+	JumpIfEffectivenessEQ(1/4x, &address_0x3FB0)
+	GetFlingPower(attacker_type1)
+	JumpIfStoredLT(30, &address_0x3F5E)
+	JumpIfStoredGT(90, &address_0x3F6A)
+	JumpIfStoredGT(60, &address_0x3F9A)
+	JumpIfRandLT(128, &address_0x3FC6)
+	AddToScore(-1)
+	Jump(&address_0x3FC6)
+
+address_0x3F5E:
+	AddToScore(-2)
+	Jump(&address_0x3FC6)
+
+address_0x3F6A:
+	JumpIfEffectivenessEQ(2x, &address_0x3F94)
+	JumpIfEffectivenessEQ(4x, &address_0x3F94)
+	JumpIfRandLT(128, &address_0x3F9A)
+	AddToScore(1)
+	Jump(&address_0x3F9A)
+
+address_0x3F94:
+	AddToScore(4)
+
+address_0x3F9A:
+	JumpIfRandLT(64, &address_0x3FC6)
+	AddToScore(1)
+	Jump(&address_0x3FC6)
+
+address_0x3FB0:
+	GetHeldItemEffect(attacker)
+	JumpIfStoredIsInList(&data_address_0x3FC8, &address_0x3FC6)
+	AddToScore(-1)
+
+address_0x3FC6:
+	EndScript()
+
+
+data_address_0x3FC8:
+	item_ef.increase_flinch
+	item_ef.increase_poison
+	item_ef.toxic_orb
+	item_ef.flame_orb
+	item_ef.light_ball
+	END
+
+Label_0x3FE0:
+	JumpIfHasNoStatus(attacker, &address_0x5D74)
+	JumpIfRandLT(128, &address_0x4008)
+	JumpIfHealthLT(defender, 30, &address_0x4008)
+	AddToScore(1)
+
+address_0x4008:
+	EndScript()
+
+
+Label_0x400A:
+	JumpIfEffectivenessEQ(0x, &address_0x40DE)
+	JumpIfEffectivenessEQ(1/2x, &address_0x40DE)
+	JumpIfEffectivenessEQ(1/4x, &address_0x40DE)
+	GetMovePP()
+	JumpIfStoredEQ(1, &address_0x40D2)
+	JumpIfStoredEQ(2, &address_0x40B6)
+	JumpIfStoredEQ(3, &address_0x40BC)
+	GetAbilityGuess(defender)
+	JumpIfStoredNE(ability.pressure, &address_0x4068)
+	JumpIfRandLT(30, &address_0x4068)
+	AddToScore(1)
+
+address_0x4068:
+	JumpIfStatStageGT(defender, eva, +4, &address_0x40B6)
+	JumpIfStatStageLT(attacker, acc, -4, &address_0x40B6)
+	JumpIfStatStageGT(defender, eva, +2, &address_0x40BC)
+	JumpIfStatStageLT(attacker, acc, -2, &address_0x40BC)
+	Jump(&address_0x40E4)
+
+address_0x40B6:
+	AddToScore(1)
+
+address_0x40BC:
+	JumpIfRandLT(100, &address_0x40E4)
+	AddToScore(1)
+	Jump(&address_0x40E4)
+
+address_0x40D2:
+	AddToScore(3)
+	Jump(&address_0x40E4)
+
+address_0x40DE:
+	AddToScore(-1)
+
+address_0x40E4:
+	EndScript()
+
+
+Label_0x40E6:
+	JumpIfHasMoveWithEffect(defender, move_ef.dream_eater, &address_0x41D6)
+	JumpIfHasMoveWithEffect(defender, move_ef.heal_50, &address_0x41D6)
+	JumpIfHasMoveWithEffect(defender, move_ef.roost, &address_0x41D6)
+	JumpIfHasMoveWithEffect(defender, move_ef.unknown_0x009d, &address_0x41D6)
+	JumpIfHasMoveWithEffect(defender, move_ef.morning_sun, &address_0x41D6)
+	JumpIfHasMoveWithEffect(defender, move_ef.rest, &address_0x41D6)
+	JumpIfHasMoveWithEffect(defender, move_ef.swallow, &address_0x41D6)
+	JumpIfHasMoveWithEffect(defender, move_ef.dmg_target_absorb, &address_0x41D6)
+	JumpIfHasMoveWithEffect(defender, move_ef.ingrain, &address_0x41D6)
+	JumpIfHasMoveWithEffect(defender, move_ef.aqua_ring, &address_0x41D6)
+	JumpIfHasMoveWithEffect(defender, move_ef.leech_seed, &address_0x41D6)
+	JumpIfHasMoveWithEffect(defender, move_ef.healing_wish, &address_0x41D6)
+	JumpIfHasMoveWithEffect(defender, move_ef.lunar_dance, &address_0x41D6)
+	JumpIfHasCondition(attacker, cond.leech_seed, &address_0x41D6)
+	JumpIfHasCondition(defender, cond.aqua_ring, &address_0x41D6)
+	JumpIfHasCondition(defender, cond.ingrain, &address_0x41D6)
+	JumpIfRandLT(96, &address_0x41D6)
+	Jump(&address_0x41E6)
+
+address_0x41D6:
+	JumpIfRandLT(25, &address_0x41E6)
+	AddToScore(1)
+
+address_0x41E6:
+	EndScript()
+
+
+Label_0x41E8:
+	JumpIfEffectivenessEQ(0x, &address_0x4262)
+	JumpIfEffectivenessEQ(1/2x, &address_0x4262)
+	JumpIfEffectivenessEQ(1/4x, &address_0x4262)
+	JumpIfHealthLT(defender, 50, &address_0x4262)
+	JumpIfHealthEQ(defender, 100, &address_0x4236)
+	JumpIfHealthGT(defender, 85, &address_0x424C)
+	Jump(&address_0x4268)
+
+address_0x4236:
+	JumpCompareSpeed(GT, &address_0x4246)
+	AddToScore(1)
+
+address_0x4246:
+	AddToScore(1)
+
+address_0x424C:
+	JumpIfRandLT(25, &address_0x4268)
+	AddToScore(1)
+	Jump(&address_0x4268)
+
+address_0x4262:
+	AddToScore(-1)
+
+address_0x4268:
+	EndScript()
+
+
+Label_0x426A:
+	JumpIfHealthGT(attacker, 90, &address_0x429A)
+	JumpIfHealthGT(attacker, 60, &address_0x42B0)
+	JumpIfHealthGT(attacker, 30, &address_0x42C6)
+	Jump(&address_0x5D4C)
+
+address_0x429A:
+	JumpIfRandLT(96, &address_0x42DC)
+	AddToScore(1)
+	Jump(&address_0x42DC)
+
+address_0x42B0:
+	JumpIfRandLT(128, &address_0x42DC)
+	AddToScore(1)
+	Jump(&address_0x42DC)
+
+address_0x42C6:
+	JumpIfRandLT(164, &address_0x42DC)
+	AddToScore(1)
+	Jump(&address_0x42DC)
+
+address_0x42DC:
+	EndScript()
+
+
+Label_0x42DE:
+	JumpIfHasMoveWithEffect(defender, move_ef.user_atk+1, &address_0x456C)
+	JumpIfHasMoveWithEffect(defender, move_ef.user_def+1, &address_0x456C)
+	JumpIfHasMoveWithEffect(defender, move_ef.user_spe+1, &address_0x456C)
+	JumpIfHasMoveWithEffect(defender, move_ef.user_spa+1, &address_0x456C)
+	JumpIfHasMoveWithEffect(defender, move_ef.user_spd+1, &address_0x456C)
+	JumpIfHasMoveWithEffect(defender, move_ef.user_acc+1, &address_0x456C)
+	JumpIfHasMoveWithEffect(defender, move_ef.user_eva+1, &address_0x456C)
+	JumpIfHasMoveWithEffect(defender, move_ef.user_atk+2, &address_0x456C)
+	JumpIfHasMoveWithEffect(defender, move_ef.user_def+2, &address_0x456C)
+	JumpIfHasMoveWithEffect(defender, move_ef.user_spe+2, &address_0x456C)
+	JumpIfHasMoveWithEffect(defender, move_ef.user_spa+2, &address_0x456C)
+	JumpIfHasMoveWithEffect(defender, move_ef.user_spd+2, &address_0x456C)
+	JumpIfHasMoveWithEffect(defender, move_ef.user_acc+2, &address_0x456C)
+	JumpIfHasMoveWithEffect(defender, move_ef.user_eva+2, &address_0x456C)
+	JumpIfHasMoveWithEffect(defender, move_ef.curse, &address_0x456C)
+	JumpIfHasMoveWithEffect(defender, move_ef.user_def_spd+1, &address_0x456C)
+	JumpIfHasMoveWithEffect(defender, move_ef.user_atk_def+1, &address_0x456C)
+	JumpIfHasMoveWithEffect(defender, move_ef.user_spa_spd+1, &address_0x456C)
+	JumpIfHasMoveWithEffect(defender, move_ef.user_atk_spe+1, &address_0x456C)
+	JumpIfHasMoveWithEffect(defender, move_ef.acupressure, &address_0x456C)
+	JumpIfHasMoveWithEffect(defender, move_ef.user_atk_acc+1, &address_0x456C)
+	JumpIfHasMoveWithEffect(defender, move_ef.user_spa_spd_spe+2, &address_0x456C)
+	JumpIfHasMoveWithEffect(defender, move_ef.shell_smash, &address_0x456C)
+	JumpIfHasMoveWithEffect(defender, move_ef.growth, &address_0x456C)
+	JumpIfHasMoveWithEffect(defender, move_ef.user_atk_def_acc+1, &address_0x456C)
+	JumpIfHasMoveWithEffect(attacker, move_ef.target_atk-1, &address_0x4578)
+	JumpIfHasMoveWithEffect(attacker, move_ef.target_def-1, &address_0x4578)
+	JumpIfHasMoveWithEffect(attacker, move_ef.target_spe-1, &address_0x4578)
+	JumpIfHasMoveWithEffect(attacker, move_ef.target_spa-1, &address_0x4578)
+	JumpIfHasMoveWithEffect(attacker, move_ef.target_spd-1, &address_0x4578)
+	JumpIfHasMoveWithEffect(attacker, move_ef.target_acc-1, &address_0x4578)
+	JumpIfHasMoveWithEffect(attacker, move_ef.target_eva-1, &address_0x4578)
+	JumpIfHasMoveWithEffect(attacker, move_ef.target_atk-2, &address_0x4578)
+	JumpIfHasMoveWithEffect(attacker, move_ef.target_def-2, &address_0x4578)
+	JumpIfHasMoveWithEffect(attacker, move_ef.target_spe-2, &address_0x4578)
+	JumpIfHasMoveWithEffect(attacker, move_ef.target_spa-2, &address_0x4578)
+	JumpIfHasMoveWithEffect(attacker, move_ef.target_spd-2, &address_0x4578)
+	JumpIfHasMoveWithEffect(attacker, move_ef.target_acc-2, &address_0x4578)
+	JumpIfHasMoveWithEffect(attacker, move_ef.target_eva-2, &address_0x4578)
+
+Label_0x4500:
+	GetAbilityGuess(attacker)
+	JumpIfStoredIsInList(&data_address_0x458A, &address_0x4578)
+	JumpIfRandLT(64, &address_0x4588)
+	AddToScore(1)
+	JumpIfHealthGT(defender, 70, &address_0x4588)
+	JumpIfRandLT(128, &address_0x453E)
+	AddToScore(-1)
+
+address_0x453E:
+	JumpIfHealthGT(defender, 50, &address_0x4588)
+	AddToScore(-1)
+	JumpIfHealthGT(defender, 30, &address_0x4588)
+	AddToScore(-1)
+	Jump(&address_0x4588)
+
+address_0x456C:
+	AddToScore(-1)
+	Jump(&address_0x4588)
+
+address_0x4578:
+	JumpIfRandLT(40, &address_0x4588)
+	AddToScore(1)
+
+address_0x4588:
+	EndScript()
+
+
+data_address_0x458A:
+	ability.no_guard
+	ability.prankster
+	ability.wonder_skin
+	ability.harvest
+	ability.flare_boost
+	ability.toxic_boost
+	ability.technician
+	ability.magic_guard
+	ability.normalize
+	ability.poison_heal
+	ability.huge_power
+	ability.wonder_guard
+	ability.shadow_tag
+	END
+	0x0015 [21]
+	0x0063 [99]
+	0x0000 [0]
+	0xC016 [49174]
+	0xFFFF [65535]
+
+Label_0x45CC:
+	JumpIfHealthLT(attacker, 70, &address_0x4620)
+	JumpIfHasMoveWithEffect(defender, move_ef.increased_crit, &address_0x4614)
+	JumpIfHasMoveWithEffect(defender, move_ef.dmg_target_brn_highcrit, &address_0x4614)
+	JumpIfHasMoveWithEffect(defender, move_ef.dmg_target_psn_highcrit, &address_0x4614)
+	JumpIfRandLT(64, &address_0x4614)
+	Jump(&address_0x4626)
+
+address_0x4614:
+	AddToScore(1)
+	Jump(&address_0x4626)
+
+address_0x4620:
+	AddToScore(-1)
+
+address_0x4626:
+	EndScript()
+
+
+Label_0x4628:
+	JumpCompareSpeed(GT, &address_0x4688)
+	JumpIfLastMoveGTStrongest(defender, false, &address_0x4646)
+	Jump(&address_0x4656)
+
+address_0x4646:
+	JumpIfRandLT(32, &address_0x4656)
+	AddToScore(1)
+
+address_0x4656:
+	GetLastPreviousCategory()
+	JumpIfStoredEQ(status, &address_0x4672)
+	JumpIfRandLT(128, &address_0x468E)
+	AddToScore(1)
+
+address_0x4672:
+	JumpIfRandLT(64, &address_0x468E)
+	AddToScore(1)
+	Jump(&address_0x468E)
+
+address_0x4688:
+	AddToScore(-2)
+
+address_0x468E:
+	EndScript()
+
+
+Label_0x4690:
+	JumpCompareSpeed(GT, &address_0x46E4)
+	JumpIfLastMoveGTStrongest(defender, false, &address_0x46CE)
+	GetPreviousMove(defender)
+	JumpIfStoredIsNotInList(&data_address_0x4714, &address_0x46E4)
+	JumpIfRandLT(128, &address_0x4712)
+	AddToScore(2)
+	Jump(&address_0x4712)
+
+address_0x46CE:
+	JumpIfRandLT(32, &address_0x4712)
+	AddToScore(2)
+	Jump(&address_0x4712)
+
+address_0x46E4:
+	JumpIfLastMoveGTStrongest(defender, false, &address_0x4712)
+	GetPreviousMove(defender)
+	JumpIfStoredIsInList(&data_address_0x4714, &address_0x4712)
+	JumpIfRandLT(80, &address_0x4712)
+	AddToScore(-1)
+
+address_0x4712:
+	EndScript()
+
+
+data_address_0x4714:
+	move.sleep_powder
+	move.lovely_kiss
+	move.spore
+	move.hypnosis
+	move.sing
+	move.grass_whistle
+	move.shadow_punch
+	move.sand_attack
+	move.smokescreen
+	move.toxic
+	move.guillotine
+	move.horn_drill
+	move.fissure
+	move.sheer_cold
+	move.cross_chop
+	move.aeroblast
+	move.confuse_ray
+	move.sweet_kiss
+	move.screech
+	move.cotton_spore
+	move.scary_face
+	move.fake_tears
+	move.metal_sound
+	move.thunder_wave
+	move.glare
+	move.poison_powder
+	move.shadow_ball
+	move.dynamic_punch
+	move.hyper_beam
+	move.extreme_speed
+	move.thief
+	move.covet
+	move.attract
+	move.swagger
+	move.torment
+	move.flatter
+	move.trick
+	move.superpower
+	move.skill_swap
+	move.psycho_shift
+	move.power_swap
+	move.guard_swap
+	move.sucker_punch
+	move.heart_swap
+	move.switcheroo
+	move.captivate
+	move.dark_void
+	END
+
+Label_0x47D4:
+	GetStatDiff(defender, atk)
+	JumpIfStoredGT(3, &address_0x480C)
+	JumpIfStoredGT(1, &address_0x483A)
+	JumpIfStoredGT(0, &address_0x4868)
+	JumpIfStoredEQ(0, &address_0x4896)
+	Jump(&address_0x4932)
+
+address_0x480C:
+	GetStatDiff(defender, spa)
+	JumpIfStoredGT(3, &address_0x48C4)
+	JumpIfStoredGT(1, &address_0x48DA)
+	JumpIfStoredEQ(0, &address_0x48F0)
+	Jump(&address_0x4932)
+
+address_0x483A:
+	GetStatDiff(defender, spa)
+	JumpIfStoredGT(3, &address_0x48DA)
+	JumpIfStoredGT(1, &address_0x48F0)
+	JumpIfStoredEQ(0, &address_0x4906)
+	Jump(&address_0x4932)
+
+address_0x4868:
+	GetStatDiff(defender, spa)
+	JumpIfStoredGT(3, &address_0x48F0)
+	JumpIfStoredGT(1, &address_0x4906)
+	JumpIfStoredEQ(0, &address_0x491C)
+	Jump(&address_0x4932)
+
+address_0x4896:
+	GetStatDiff(defender, spa)
+	JumpIfStoredGT(3, &address_0x48F0)
+	JumpIfStoredGT(1, &address_0x4906)
+	JumpIfStoredGT(0, &address_0x491C)
+	Jump(&address_0x4932)
+
+address_0x48C4:
+	JumpIfRandLT(128, &address_0x48DA)
+	AddToScore(5)
+	Jump(&address_0x4932)
+
+address_0x48DA:
+	JumpIfRandLT(128, &address_0x48F0)
+	AddToScore(4)
+	Jump(&address_0x4932)
+
+address_0x48F0:
+	JumpIfRandLT(128, &address_0x4906)
+	AddToScore(3)
+	Jump(&address_0x4932)
+
+address_0x4906:
+	JumpIfRandLT(128, &address_0x491C)
+	AddToScore(2)
+	Jump(&address_0x4932)
+
+address_0x491C:
+	JumpIfRandLT(128, &address_0x4932)
+	AddToScore(1)
+	Jump(&address_0x4932)
+
+address_0x4932:
+	EndScript()
+
+
+Label_0x4934:
+	GetStatDiff(defender, def)
+	JumpIfStoredGT(3, &address_0x496C)
+	JumpIfStoredGT(1, &address_0x499A)
+	JumpIfStoredGT(0, &address_0x49C8)
+	JumpIfStoredEQ(0, &address_0x49F6)
+	Jump(&address_0x4A92)
+
+address_0x496C:
+	GetStatDiff(defender, spd)
+	JumpIfStoredGT(3, &address_0x4A24)
+	JumpIfStoredGT(1, &address_0x4A3A)
+	JumpIfStoredEQ(0, &address_0x4A50)
+	Jump(&address_0x4A92)
+
+address_0x499A:
+	GetStatDiff(defender, spd)
+	JumpIfStoredGT(3, &address_0x4A3A)
+	JumpIfStoredGT(1, &address_0x4A50)
+	JumpIfStoredEQ(0, &address_0x4A66)
+	Jump(&address_0x4A92)
+
+address_0x49C8:
+	GetStatDiff(defender, spd)
+	JumpIfStoredGT(3, &address_0x4A50)
+	JumpIfStoredGT(1, &address_0x4A66)
+	JumpIfStoredEQ(0, &address_0x4A7C)
+	Jump(&address_0x4A92)
+
+address_0x49F6:
+	GetStatDiff(defender, spd)
+	JumpIfStoredGT(3, &address_0x4A50)
+	JumpIfStoredGT(1, &address_0x4A66)
+	JumpIfStoredGT(0, &address_0x4A7C)
+	Jump(&address_0x4A92)
+
+address_0x4A24:
+	JumpIfRandLT(128, &address_0x4A3A)
+	AddToScore(5)
+	Jump(&address_0x4A92)
+
+address_0x4A3A:
+	JumpIfRandLT(128, &address_0x4A50)
+	AddToScore(4)
+	Jump(&address_0x4A92)
+
+address_0x4A50:
+	JumpIfRandLT(128, &address_0x4A66)
+	AddToScore(3)
+	Jump(&address_0x4A92)
+
+address_0x4A66:
+	JumpIfRandLT(128, &address_0x4A7C)
+	AddToScore(2)
+	Jump(&address_0x4A92)
+
+address_0x4A7C:
+	JumpIfRandLT(128, &address_0x4A92)
+	AddToScore(1)
+	Jump(&address_0x4A92)
+
+address_0x4A92:
+	EndScript()
+
+
+Label_0x4A94:
+	JumpIfEffectivenessEQ(0x, &address_0x4B30)
+	JumpIfEffectivenessEQ(1/2x, &address_0x4B30)
+	JumpIfEffectivenessEQ(1/4x, &address_0x4B30)
+	GetPositiveStatStageTotal(defender)
+	JumpIfStoredGT(6, &address_0x4AF0)
+	JumpIfStoredGT(5, &address_0x4B00)
+	JumpIfStoredGT(4, &address_0x4B10)
+	JumpIfStoredGT(3, &address_0x4B20)
+	JumpIfStoredGT(2, &address_0x4B20)
+	Jump(&address_0x4B30)
+
+address_0x4AF0:
+	JumpIfRandLT(128, &address_0x4B00)
+	AddToScore(4)
+
+address_0x4B00:
+	JumpIfRandLT(128, &address_0x4B10)
+	AddToScore(3)
+
+address_0x4B10:
+	JumpIfRandLT(128, &address_0x4B20)
+	AddToScore(2)
+
+address_0x4B20:
+	JumpIfRandLT(128, &address_0x4B30)
+	AddToScore(1)
+
+address_0x4B30:
+	EndScript()
+
+
+Label_0x4B32:
+	JumpIfEffectivenessEQ(0x, &address_0x4B60)
+	JumpIfEffectivenessEQ(1/2x, &address_0x4B60)
+	JumpIfEffectivenessEQ(1/4x, &address_0x4B60)
+	JumpIfCanUseLastResort(attacker, &address_0x4B6C)
+	Jump(&address_0x4B72)
+
+address_0x4B60:
+	AddToScore(-1)
+	Jump(&address_0x4B72)
+
+address_0x4B6C:
+	AddToScore(1)
+
+address_0x4B72:
+	EndScript()
+
+
+Label_0x4B74:
+	JumpIfDoesNotHaveMove(defender, move.rest, &address_0x4B88)
+	AddToScore(1)
+
+address_0x4B88:
+	JumpIfHealthLT(attacker, 50, &address_0x4BA6)
+	JumpIfRandLT(128, &address_0x4BA6)
+	AddToScore(1)
+
+address_0x4BA6:
+	JumpIfRandLT(64, &address_0x4BBC)
+	AddToScore(1)
+	Jump(&address_0x4BBC)
+
+address_0x4BBC:
+	EndScript()
+
+
+Label_0x4BBE:
+	JumpIfEffectivenessEQ(0x, &address_0x4BF2)
+	JumpIfEffectivenessEQ(1/2x, &address_0x4BF2)
+	JumpIfEffectivenessEQ(1/4x, &address_0x4BF2)
+	JumpIfRandLT(64, &address_0x4BF8)
+	AddToScore(1)
+	Jump(&address_0x4BF8)
+
+address_0x4BF2:
+	AddToScore(-1)
+
+address_0x4BF8:
+	EndScript()
+
+
+Label_0x4BFA:
+	JumpIfRandLT(128, &address_0x4C3C)
+	AddToScore(1)
+	JumpIfHasMove(attacker, move.roar, &address_0x4C2C)
+	JumpIfHasMove(attacker, move.whirlwind, &address_0x4C2C)
+	Jump(&address_0x4C3C)
+
+address_0x4C2C:
+	JumpIfRandLT(64, &address_0x4C3C)
+	AddToScore(1)
+
+address_0x4C3C:
+	EndScript()
+
+
+Label_0x4C3E:
+	JumpIfStatStageGT(defender, atk, +1, &address_0x4CAC)
+	JumpIfStatStageGT(defender, def, +1, &address_0x4CAC)
+	JumpIfStatStageGT(defender, spa, +1, &address_0x4CAC)
+	JumpIfStatStageGT(defender, spd, +1, &address_0x4CAC)
+	JumpIfStatStageGT(defender, eva, +1, &address_0x4CAC)
+	JumpIfHasConditionFlag(defender, cond_flag.focus_energy, &address_0x4CAC)
+	Jump(&address_0x4D32)
+
+address_0x4CAC:
+	JumpIfStatStageLT(attacker, atk, +1, &address_0x4D2A)
+	JumpIfStatStageLT(attacker, def, +1, &address_0x4D2A)
+	JumpIfStatStageLT(attacker, spa, +1, &address_0x4D2A)
+	JumpIfStatStageLT(attacker, spd, +1, &address_0x4D2A)
+	JumpIfStatStageLT(attacker, eva, +1, &address_0x4D24)
+	JumpIfNotConditionFlag(attacker, cond_flag.focus_energy, &address_0x4D2A)
+	JumpIfRandLT(50, &address_0x4D38)
+	Jump(&address_0x4D32)
+
+address_0x4D24:
+	AddToScore(1)
+
+address_0x4D2A:
+	AddToScore(1)
+	EndScript()
+
+
+address_0x4D32:
+	AddToScore(-2)
+
+address_0x4D38:
+	EndScript()
+
+
+Label_0x4D3A:
+	JumpIfHealthLT(attacker, 50, &address_0x4D58)
+	JumpIfRandLT(128, &address_0x4D58)
+	AddToScore(1)
+
+address_0x4D58:
+	EndScript()
+
+
+Label_0x4D5A:
+	JumpIfHealthLT(attacker, 50, &address_0x4DCE)
+	JumpIfHasMove(defender, move.earthquake, &address_0x4D98)
+	JumpIfHasMove(defender, move.earth_power, &address_0x4D98)
+	JumpIfHasMove(defender, move.fissure, &address_0x4D98)
+	Jump(&address_0x4D9E)
+
+address_0x4D98:
+	AddToScore(1)
+
+address_0x4D9E:
+	GetType(defender_type1)
+	JumpIfStoredEQ(type.ground, &address_0x4DC8)
+	GetType(defender_type2)
+	JumpIfStoredEQ(type.ground, &address_0x4DC8)
+	JumpIfRandLT(128, &address_0x4DCE)
+
+address_0x4DC8:
+	AddToScore(1)
+
+address_0x4DCE:
+	EndScript()
+
+	0x004D [77]
+	0x004D [77]
+	0x004D [77]
+	0x004D [77]
+
+Label_0x4DD8:
+	JumpIfHasSideCondition(defender, side_cond.light_screen, &address_0x4E24)
+	JumpIfHasSideCondition(defender, side_cond.reflect, &address_0x4E24)
+	JumpIfHasSideCondition(defender, side_cond.spikes, &address_0x4E88)
+	JumpIfHasSideCondition(defender, side_cond.stealth_rock, &address_0x4E88)
+	JumpIfHasSideCondition(defender, side_cond.toxic_spikes, &address_0x4E88)
+	Jump(&address_0x4EAA)
+
+address_0x4E24:
+	JumpIfHealthGT(attacker, 30, &address_0x4E42)
+	GetPartyReserveCount(attacker)
+	JumpIfStoredEQ(0, &address_0x4ECA)
+
+address_0x4E42:
+	AddToScore(1)
+	GetPartyReserveCount(defender)
+	JumpIfStoredEQ(0, &address_0x4EEE)
+	JumpIfHasSideCondition(defender, side_cond.spikes, &address_0x4E94)
+	JumpIfHasSideCondition(defender, side_cond.stealth_rock, &address_0x4E94)
+	JumpIfHasSideCondition(defender, side_cond.toxic_spikes, &address_0x4E94)
+	Jump(&address_0x4EAA)
+
+address_0x4E88:
+	AddToScore(-2)
+	Jump(&address_0x4EAA)
+
+address_0x4E94:
+	JumpIfRandLT(128, &address_0x4EAA)
+	AddToScore(-1)
+	Jump(&address_0x4EAA)
+
+address_0x4EAA:
+	JumpIfHealthLT(attacker, 70, &address_0x4ECA)
+	JumpIfStatStageGT(defender, eva, -3, &address_0x4EDA)
+
+address_0x4ECA:
+	JumpIfRandLT(50, &address_0x4EDA)
+	AddToScore(-2)
+
+address_0x4EDA:
+	JumpIfHealthGT(defender, 70, &address_0x4EEE)
+	AddToScore(-2)
+
+address_0x4EEE:
+	EndScript()
+
+
+Label_0x4EF0:
+	GetBattleStyle()
+	JumpIfStoredEQ(double_battle, &address_0x4F40)
+	JumpIfHealthGT(attacker, 30, &address_0x4F1A)
+	GetPartyReserveCount(attacker)
+	JumpIfStoredEQ(0, &address_0x4F40)
+
+address_0x4F1A:
+	JumpCompareSpeed(GT, &address_0x4F30)
+	AddToScore(-1)
+	Jump(&address_0x4F40)
+
+address_0x4F30:
+	JumpIfRandLT(64, &address_0x4F40)
+	AddToScore(3)
+
+address_0x4F40:
+	EndScript()
+
+
+Label_0x4F42:
+	JumpIfEffectivenessEQ(0x, &address_0x4F78)
+	JumpIfEffectivenessEQ(1/2x, &address_0x4F78)
+	JumpIfEffectivenessEQ(1/4x, &address_0x4F78)
+	GetWeather()
+	JumpIfStoredNE(weather.hail, &address_0x4F88)
+	AddToScore(1)
+	Jump(&address_0x4F88)
+
+address_0x4F78:
+	JumpIfRandLT(50, &address_0x4F88)
+	AddToScore(-3)
+
+address_0x4F88:
+	EndScript()
+
+	0x004D [77]
+
+Label_0x4F8C:
+	JumpIfStatStageEQ(defender, spa, +0, &address_0x4FDA)
+	AddToScore(-1)
+	JumpIfHealthGT(attacker, 90, &address_0x4FB8)
+	AddToScore(-1)
+
+address_0x4FB8:
+	JumpIfStatStageGT(defender, spa, -3, &address_0x4FDA)
+	JumpIfRandLT(50, &address_0x4FDA)
+	AddToScore(-2)
+
+address_0x4FDA:
+	JumpIfHealthGT(defender, 70, &address_0x4FEE)
+	AddToScore(-2)
+
+address_0x4FEE:
+	GetLastPreviousCategory()
+	JumpIfStoredNE(physical, &address_0x500A)
+	JumpIfRandLT(64, &address_0x500A)
+	AddToScore(-1)
+
+address_0x500A:
+	EndScript()
+
+
+Label_0x500C:
+	JumpIfRandLT(128, &address_0x504E)
+	AddToScore(1)
+	JumpIfHasMove(attacker, move.roar, &address_0x503E)
+	JumpIfHasMove(attacker, move.whirlwind, &address_0x503E)
+	Jump(&address_0x504E)
+
+address_0x503E:
+	JumpIfRandLT(64, &address_0x504E)
+	AddToScore(1)
+
+address_0x504E:
+	EndScript()
+
+	0x004D [77]
+	0x004D [77]
+
+Label_0x5054:
+	JumpIfEffectivenessEQ(0x, &address_0x5098)
+	JumpIfEffectivenessEQ(1/2x, &address_0x5098)
+	JumpIfEffectivenessEQ(1/4x, &address_0x5098)
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.rock_head, &address_0x5092)
+	JumpIfStoredEQ(ability.magic_guard, &address_0x5092)
+	Jump(&address_0x5098)
+
+address_0x5092:
+	AddToScore(1)
+
+address_0x5098:
+	EndScript()
+
+
+Label_0x509A:
+	JumpIfHealthLT(attacker, 80, &address_0x50C2)
+	JumpCompareSpeed(GT, &address_0x50C2)
+	JumpIfRandLT(192, &address_0x514A)
+	Jump(&address_0x5D5C)
+
+address_0x50C2:
+	JumpIfHealthGT(attacker, 50, &address_0x513A)
+	JumpIfRandLT(192, &address_0x5116)
+	AddToScore(1)
+	JumpIfHasSuperEffectiveMove(&address_0x50F6)
+	JumpIfRandLT(192, &address_0x50F6)
+	AddToScore(1)
+
+address_0x50F6:
+	JumpIfReservedHasStrongerMove(false, &address_0x5106)
+	Jump(&address_0x5116)
+
+address_0x5106:
+	JumpIfRandLT(128, &address_0x5116)
+	AddToScore(1)
+
+address_0x5116:
+	JumpIfHealthGT(attacker, 30, &address_0x514A)
+	JumpIfRandLT(128, &address_0x514A)
+	AddToScore(1)
+	Jump(&address_0x514A)
+
+address_0x513A:
+	JumpIfRandLT(50, &address_0x514A)
+	AddToScore(-1)
+
+address_0x514A:
+	EndScript()
+
+
+Label_0x514C:
+	JumpIfStatStageLT(attacker, acc, +3, &address_0x516E)
+	JumpIfRandLT(50, &address_0x516E)
+	AddToScore(-2)
+
+address_0x516E:
+	JumpIfHealthGT(attacker, 80, &address_0x5182)
+	AddToScore(-2)
+
+address_0x5182:
+	EndScript()
+
+
+Label_0x5184:
+	EndScript()
+
+
+Label_0x5186:
+	StoreIsFirstTurn(attacker)
+	JumpIfStoredNE(false, &address_0x5284)
+	JumpIfStatStageGT(attacker, def, +1, &address_0x5284)
+	JumpIfStatStageGT(attacker, spd, +1, &address_0x5284)
+	JumpIfStatStageLT(defender, def, +2, &address_0x5222)
+	JumpIfStatStageLT(defender, spd, +2, &address_0x5222)
+	JumpIfRandLT(50, &address_0x51EE)
+	AddToScore(1)
+
+address_0x51EE:
+	JumpIfStatStageLT(defender, def, +4, &address_0x5222)
+	JumpIfStatStageLT(defender, spd, +4, &address_0x5222)
+	JumpIfRandLT(50, &address_0x5222)
+	AddToScore(1)
+
+address_0x5222:
+	GetSpecies(attacker)
+	JumpIfStoredIsInList(&data_address_0x528C, &address_0x525C)
+	JumpIfStoredIsInList(&data_address_0x5304, &address_0x525C)
+	GetSpecies(defender)
+	JumpIfStoredIsInList(&data_address_0x528C, &address_0x526E)
+	JumpIfStoredIsInList(&data_address_0x5304, &address_0x526E)
+	Jump(&address_0x528A)
+
+address_0x525C:
+	GetBattleStyle()
+	JumpIfStoredEQ(single_battle, &address_0x5D74)
+	Jump(&address_0x528A)
+
+address_0x526E:
+	JumpIfRandLT(50, &address_0x528A)
+	AddToScore(1)
+	Jump(&address_0x528A)
+
+address_0x5284:
+	AddToScore(-1)
+
+address_0x528A:
+	EndScript()
+
+
+data_address_0x528C:
+	species.shuckle
+	species.regirock
+	species.steelix
+	species.aggron
+	species.cloyster
+	species.bastiodon
+	species.onix
+	species.registeel
+	species.probopass
+	species.groudon
+	species.torkoal
+	species.lairon
+	species.skarmory
+	species.forretress
+	species.dusknoir
+	species.nosepass
+	species.uxie
+	species.leafeon
+	species.rhyperior
+	species.metagross
+	species.relicanth
+	species.dusclops
+	species.lugia
+	species.golem
+	species.cofagrigus
+	species.carracosta
+	species.ferrothorn
+	species.gigalith
+	species.cobalion
+	END
+
+data_address_0x5304:
+	species.shuckle
+	species.regice
+	species.ho-oh
+	species.lugia
+	species.probopass
+	species.registeel
+	species.kyogre
+	species.mantine
+	species.bastiodon
+	species.dusknoir
+	species.blissey
+	species.cresselia
+	species.uxie
+	species.latias
+	species.dusclops
+	species.umbreon
+	species.milotic
+	species.articuno
+	species.cryogonal
+	species.virizion
+	END
+
+Label_0x5358:
+	StoreIsFirstTurn(attacker)
+	JumpIfStoredNE(false, &address_0x5456)
+	JumpIfStatStageGT(attacker, atk, +1, &address_0x5456)
+	JumpIfStatStageGT(attacker, spa, +1, &address_0x5456)
+	JumpIfStatStageLT(defender, atk, +2, &address_0x53F4)
+	JumpIfStatStageLT(defender, spa, +2, &address_0x53F4)
+	JumpIfRandLT(50, &address_0x53C0)
+	AddToScore(1)
+
+address_0x53C0:
+	JumpIfStatStageLT(defender, atk, +4, &address_0x53F4)
+	JumpIfStatStageLT(defender, spa, +4, &address_0x53F4)
+	JumpIfRandLT(50, &address_0x53F4)
+	AddToScore(1)
+
+address_0x53F4:
+	GetSpecies(attacker)
+	JumpIfStoredIsInList(&data_address_0x545E, &address_0x542E)
+	JumpIfStoredIsInList(&data_address_0x54E2, &address_0x542E)
+	GetSpecies(defender)
+	JumpIfStoredIsInList(&data_address_0x545E, &address_0x5440)
+	JumpIfStoredIsInList(&data_address_0x54E2, &address_0x5440)
+	Jump(&address_0x545C)
+
+address_0x542E:
+	GetBattleStyle()
+	JumpIfStoredEQ(single_battle, &address_0x5D74)
+	Jump(&address_0x545C)
+
+address_0x5440:
+	JumpIfRandLT(50, &address_0x545C)
+	AddToScore(1)
+	Jump(&address_0x545C)
+
+address_0x5456:
+	AddToScore(-1)
+
+address_0x545C:
+	EndScript()
+
+
+data_address_0x545E:
+	species.rampardos
+	species.regigigas
+	species.slaking
+	species.deoxys
+	species.rayquaza
+	species.groudon
+	species.rhyperior
+	species.metagross
+	species.salamence
+	species.tyranitar
+	species.dragonite
+	species.mamoswine
+	species.garchomp
+	species.absol
+	species.breloom
+	species.ho-oh
+	species.ursaring
+	species.scizor
+	species.flareon
+	species.rhydon
+	species.kingler
+	species.machamp
+	species.reshiram
+	species.liepard
+	species.conkeldurr
+	species.darmanitan
+	species.archeops
+	species.excadrill
+	species.escavalier
+	species.kyurem
+	species.gigalith
+	species.terrakion
+	END
+
+data_address_0x54E2:
+	species.mewtwo
+	species.palkia
+	species.dialga
+	species.deoxys
+	species.rayquaza
+	species.kyogre
+	species.darkrai
+	species.porygon-z
+	species.alakazam
+	species.heatran
+	species.glaceon
+	species.magnezone
+	species.latios
+	species.espeon
+	species.gengar
+	species.reshiram
+	species.chandelure
+	species.volcarona
+	species.kyurem
+	species.keldeo
+	END
+
+Label_0x5536:
+	EndScript()
+
+
+Label_0x5538:
+	EndScript()
+
+
+Label_0x553A:
+	EndScript()
+
+
+Label_0x553C:
+	JumpIfStatStageLT(attacker, acc, +3, &address_0x555E)
+	JumpIfRandLT(50, &address_0x555E)
+	AddToScore(-2)
+
+address_0x555E:
+	JumpIfHealthGT(attacker, 70, &address_0x557C)
+	JumpIfRandLT(50, &address_0x557C)
+	AddToScore(-2)
+
+address_0x557C:
+	JumpIfStatStageLT(defender, eva, +3, &address_0x559E)
+	JumpIfRandLT(50, &address_0x559E)
+	AddToScore(1)
+
+address_0x559E:
+	EndScript()
+
+
+Label_0x55A0:
+	JumpIfHeldItemEQ(attacker, item.none, &address_0x55EA)
+	JumpIfHeldItemEQ(defender, item.leftovers, &address_0x55EA)
+	JumpIfHeldItemEQ(defender, item.choice_scarf, &address_0x55EA)
+	GetBattleStyle()
+	JumpIfStoredEQ(single_battle, &address_0x55FA)
+	JumpIfHeldItemEQ(defender, item.air_balloon, &address_0x55EA)
+	Jump(&address_0x55FA)
+
+address_0x55EA:
+	JumpIfRandLT(128, &address_0x55FA)
+	AddToScore(1)
+
+address_0x55FA:
+	EndScript()
+
+
+Label_0x55FC:
+	GetAbilityGuess(defender)
+	JumpIfStoredEQ(ability.levitate, &address_0x5640)
+	JumpIfHasCondition(defender, cond.floating, &address_0x5640)
+	GetType(defender_type1)
+	JumpIfStoredEQ(type.flying, &address_0x5640)
+	GetType(defender_type2)
+	JumpIfStoredEQ(type.flying, &address_0x5640)
+	Jump(&address_0x5650)
+
+address_0x5640:
+	JumpIfRandLT(64, &address_0x5650)
+	AddToScore(1)
+
+address_0x5650:
+	EndScript()
+
+
+Label_0x5652:
+	JumpIfEffectivenessEQ(0x, &address_0x56B4)
+	JumpIfEffectivenessEQ(1/4x, &address_0x56B4)
+	JumpIfEffectivenessEQ(1/2x, &address_0x56B4)
+	JumpIfMoveEQ(move.storm_throw, &address_0x5692)
+	JumpIfStatStageLT(attacker, spd, +2, &address_0x56B4)
+	Jump(&address_0x56A4)
+
+address_0x5692:
+	JumpIfStatStageLT(attacker, def, +2, &address_0x56B4)
+
+address_0x56A4:
+	JumpIfRandLT(64, &address_0x56B4)
+	AddToScore(1)
+
+address_0x56B4:
+	EndScript()
+
+
+Label_0x56B6:
+	EndScript()
+
+
+Label_0x56B8:
+	JumpCompareSpeed(GT, &address_0x56E6)
+	JumpIfHealthGT(attacker, 50, &address_0x56F6)
+	JumpIfRandLT(50, &address_0x56F6)
+	AddToScore(-1)
+	Jump(&address_0x56F6)
+
+address_0x56E6:
+	JumpIfRandLT(50, &address_0x56F6)
+	AddToScore(1)
+
+address_0x56F6:
+	EndScript()
+
+
+Label_0x56F8:
+	EndScript()
+
+
+Label_0x56FA:
+	EndScript()
+
+
+Label_0x56FC:
+	JumpIfEffectivenessEQ(0x, &address_0x5752)
+	JumpIfEffectivenessEQ(1/4x, &address_0x5752)
+	JumpIfEffectivenessEQ(1/2x, &address_0x5752)
+	JumpCompareSpeed(GT, &address_0x574C)
+	JumpIfStatStageLT(attacker, spe, +2, &address_0x5752)
+	JumpIfRandLT(70, &address_0x5752)
+	AddToScore(1)
+	Jump(&address_0x56F6)
+
+address_0x574C:
+	AddToScore(-1)
+
+address_0x5752:
+	EndScript()
+
+
+Label_0x5754:
+	EndScript()
+
+
+Label_0x5756:
+	JumpIfEffectivenessEQ(0x, &address_0x57A4)
+	JumpIfEffectivenessEQ(1/4x, &address_0x57A4)
+	JumpIfEffectivenessEQ(1/2x, &address_0x57A4)
+	JumpCompareSpeed(GT, &address_0x5794)
+	JumpIfRandLT(50, &address_0x57A4)
+	AddToScore(-1)
+	Jump(&address_0x57A4)
+
+address_0x5794:
+	JumpIfRandLT(50, &address_0x57A4)
+	AddToScore(1)
+
+address_0x57A4:
+	EndScript()
+
+
+Label_0x57A6:
+	JumpIfStatStageGT(defender, spd, -1, &address_0x57E0)
+	JumpIfStatStageGT(defender, spd, -3, &address_0x57D0)
+	AddToScore(-1)
+
+address_0x57D0:
+	JumpIfRandLT(128, &address_0x57E0)
+	AddToScore(-1)
+
+address_0x57E0:
+	EndScript()
+
+
+Label_0x57E2:
+	EndScript()
+
+
+Label_0x57E4:
+	JumpIfRandLT(128, &address_0x57F4)
+	AddToScore(1)
+
+address_0x57F4:
+	EndScript()
+
+
+Label_0x57F6:
+	EndScript()
+
+
+Label_0x57F8:
+	EndScript()
+
+
+Label_0x57FA:
+	EndScript()
+
+
+Label_0x57FC:
+	JumpIfEffectivenessEQ(0x, &address_0x584E)
+	JumpIfEffectivenessEQ(1/4x, &address_0x584E)
+	JumpIfEffectivenessEQ(1/2x, &address_0x584E)
+	JumpIfStatStageLT(attacker, def, +3, &address_0x584E)
+	JumpIfStatStageLT(attacker, spd, +3, &address_0x584E)
+	JumpIfRandLT(128, &address_0x584E)
+	AddToScore(1)
+
+address_0x584E:
+	EndScript()
+
+
+Label_0x5850:
+	JumpIfStatStageGT(defender, atk, +2, &address_0x58C0)
+	JumpIfStatStageGT(defender, def, +2, &address_0x58C0)
+	JumpIfStatStageGT(defender, spa, +2, &address_0x58C0)
+	JumpIfStatStageGT(defender, spd, +2, &address_0x58C0)
+	JumpIfStatStageGT(defender, eva, +2, &address_0x58C0)
+	JumpIfRandLT(50, &address_0x58D0)
+	AddToScore(-1)
+	Jump(&address_0x58D0)
+
+address_0x58C0:
+	JumpIfRandLT(50, &address_0x58D0)
+	AddToScore(1)
+
+address_0x58D0:
+	EndScript()
+
+
+Label_0x58D2:
+	JumpIfEffectivenessEQ(0x, &address_0x584E)
+	JumpIfEffectivenessEQ(1/4x, &address_0x584E)
+	JumpIfEffectivenessEQ(1/2x, &address_0x584E)
+	JumpIfStatStageGT(attacker, atk, +2, &address_0x5950)
+	JumpIfStatStageGT(attacker, def, +2, &address_0x5950)
+	JumpIfStatStageGT(attacker, spa, +2, &address_0x5950)
+	JumpIfStatStageGT(attacker, spd, +2, &address_0x5950)
+	JumpIfStatStageGT(attacker, eva, +2, &address_0x5950)
+	Jump(&address_0x5A5A)
+
+address_0x5950:
+	JumpIfHasMoveWithEffect(attacker, move_ef.curse, &address_0x5A4A)
+	JumpIfHasMoveWithEffect(attacker, move_ef.user_def_spd+1, &address_0x5A4A)
+	JumpIfHasMoveWithEffect(attacker, move_ef.user_atk_def+1, &address_0x5A4A)
+	JumpIfHasMoveWithEffect(attacker, move_ef.user_spa_spd+1, &address_0x5A4A)
+	JumpIfHasMoveWithEffect(attacker, move_ef.user_atk_spe+1, &address_0x5A4A)
+	JumpIfHasMoveWithEffect(attacker, move_ef.acupressure, &address_0x5A4A)
+	JumpIfHasMoveWithEffect(attacker, move_ef.user_atk_acc+1, &address_0x5A4A)
+	JumpIfHasMoveWithEffect(attacker, move_ef.user_spa_spd_spe+2, &address_0x5A4A)
+	JumpIfHasMoveWithEffect(attacker, move_ef.shell_smash, &address_0x5A4A)
+	JumpIfHasMoveWithEffect(attacker, move_ef.growth, &address_0x5A4A)
+	JumpIfHasMoveWithEffect(attacker, move_ef.user_atk_def_acc+1, &address_0x5A4A)
+	JumpIfStatStageGT(attacker, atk, +4, &address_0x5A4A)
+	JumpIfStatStageGT(attacker, def, +4, &address_0x5A4A)
+	JumpIfStatStageGT(attacker, spa, +4, &address_0x5A4A)
+	JumpIfStatStageGT(attacker, spd, +4, &address_0x5A4A)
+	JumpIfStatStageGT(attacker, eva, +4, &address_0x5A4A)
+	Jump(&address_0x5A5A)
+
+address_0x5A4A:
+	JumpIfRandLT(50, &address_0x5A5A)
+	AddToScore(1)
+
+address_0x5A5A:
+	EndScript()
+
+
+Label_0x5A5C:
+	StoreIsFirstTurn(defender)
+	JumpIfStoredEQ(false, &address_0x5A72)
+	AddToScore(-1)
+
+address_0x5A72:
+	JumpIfRandLT(128, &address_0x5A82)
+	AddToScore(1)
+
+address_0x5A82:
+	EndScript()
+
+
+Label_0x5A84:
+	EndScript()
+
+
+Label_0x5A86:
+	JumpIfStatStageLT(attacker, def, +0, &address_0x5AB0)
+	JumpIfStatStageLT(attacker, spd, +0, &address_0x5AB0)
+	Jump(&address_0x5AB6)
+
+address_0x5AB0:
+	AddToScore(-1)
+
+address_0x5AB6:
+	EndScript()
+
+
+Label_0x5AB8:
+	EndScript()
+
+
+Label_0x5ABA:
+	EndScript()
+
+
+Label_0x5ABC:
+	JumpCompareSpeed(GT, &address_0x5AEA)
+	JumpIfHealthGT(attacker, 50, &address_0x5AFA)
+	JumpIfRandLT(50, &address_0x5AFA)
+	AddToScore(-1)
+	Jump(&address_0x5AFA)
+
+address_0x5AEA:
+	JumpIfRandLT(50, &address_0x5AFA)
+	AddToScore(1)
+
+address_0x5AFA:
+	EndScript()
+
+
+Label_0x5AFC:
+	GetTurnCount()
+	JumpIfStoredNE(0, &address_0x5B18)
+	JumpIfRandLT(50, &address_0x5B18)
+	AddToScore(1)
+
+address_0x5B18:
+	EndScript()
+
+
+Label_0x5B1A:
+	EndScript()
+
+
+Label_0x5B1C:
+	JumpIfHealthGT(attacker, 70, &address_0x5B3A)
+	JumpIfRandLT(50, &address_0x5B3A)
+	AddToScore(-1)
+
+address_0x5B3A:
+	EndScript()
+
+
+Label_0x5B3C:
+	JumpIfEffectivenessEQ(0x, &address_0x5B68)
+	JumpIfEffectivenessEQ(1/4x, &address_0x5B68)
+	JumpIfEffectivenessEQ(1/2x, &address_0x5B68)
+	JumpIfHeldItemEQ(attacker, item.none, &address_0x5B7E)
+
+address_0x5B68:
+	JumpIfRandLT(50, &address_0x5B8E)
+	AddToScore(-1)
+	Jump(&address_0x5B8E)
+
+address_0x5B7E:
+	JumpIfRandLT(50, &address_0x5B8E)
+	AddToScore(1)
+
+address_0x5B8E:
+	EndScript()
+
+
+Label_0x5B90:
+	GetType(attacker_type1)
+	JumpIfStoredIsInList(&data_address_0x5BF2, &address_0x5BE0)
+	JumpIfStoredIsInList(&data_address_0x5C1A, &address_0x5BCA)
+	GetType(attacker_type2)
+	JumpIfStoredIsInList(&data_address_0x5BF2, &address_0x5BE0)
+	JumpIfStoredIsInList(&data_address_0x5C1A, &address_0x5BCA)
+	Jump(&address_0x5BF0)
+
+address_0x5BCA:
+	JumpIfRandLT(50, &address_0x5BF0)
+	AddToScore(-1)
+	Jump(&address_0x5BF0)
+
+address_0x5BE0:
+	JumpIfRandLT(50, &address_0x5BF0)
+	AddToScore(1)
+
+address_0x5BF0:
+	EndScript()
+
+
+data_address_0x5BF2:
+	type.fire
+	type.water
+	type.grass
+	type.electric
+	type.ice
+	type.poison
+	type.psychic
+	type.dark
+	type.steel
+	END
+
+data_address_0x5C1A:
+	type.ghost
+	type.dragon
+	END
+
+Label_0x5C26:
+	EndScript()
+
+
+Label_0x5C28:
+	JumpIfHasSubstitute(defender, &address_0x5C5E)
+	JumpIfHasSuperEffectiveMove(&address_0x5C5E)
+	JumpIfHealthLT(defender, 40, &address_0x5C5E)
+	JumpIfHealthGT(attacker, 40, &address_0x5C64)
+	JumpIfRandLT(50, &address_0x5C64)
+
+address_0x5C5E:
+	AddToScore(-2)
+
+address_0x5C64:
+	EndScript()
+
+
+Label_0x5C66:
+	EndScript()
+
+
+Label_0x5C68:
+	EndScript()
+
+
+Label_0x5C6A:
+	EndScript()
+
+
+Label_0x5C6C:
+	EndScript()
+
+
+Label_0x5C6E:
+	JumpIfStatStageLT(attacker, atk, +3, &address_0x5C96)
+	JumpIfRandLT(100, &address_0x5CE4)
+	AddToScore(-1)
+	Jump(&address_0x5CE4)
+
+address_0x5C96:
+	JumpIfStatStageLT(attacker, spa, +3, &address_0x5CBE)
+	JumpIfRandLT(100, &address_0x5CE4)
+	AddToScore(-1)
+	Jump(&address_0x5CE4)
+
+address_0x5CBE:
+	JumpIfHealthNE(attacker, 100, &address_0x5CEA)
+	JumpIfHasMoveWithEffect(attacker, move_ef.baton_pass, &address_0x5CE4)
+	JumpIfRandLT(128, &address_0x5CEA)
+
+address_0x5CE4:
+	AddToScore(2)
+
+address_0x5CEA:
+	JumpIfHealthGT(attacker, 70, &address_0x5D16)
+	JumpIfHealthLT(attacker, 40, &address_0x5D10)
+	JumpIfRandLT(40, &address_0x5D16)
+
+address_0x5D10:
+	AddToScore(-2)
+
+address_0x5D16:
+	EndScript()
+
+
+Label_0x5D18:
+	EndScript()
+
+
+Label_0x5D1A:
+	JumpCompareSpeed(GT, &address_0x5D30)
+	AddToScore(-1)
+	Jump(&address_0x5D40)
+
+address_0x5D30:
+	JumpIfRandLT(70, &address_0x5D40)
+	AddToScore(2)
+
+address_0x5D40:
+	EndScript()
+
+
+Label_0x5D42:
+	EndScript()
+
+	0x0004 [4]
+	0xFFFF [65535]
+	0xFFFF [65535]
+	0x004D [77]
+
+address_0x5D4C:
+	AddToScore(-2)
+	EndScript()
+
+
+address_0x5D54:
+	AddToScore(-3)
+	EndScript()
+
+
+address_0x5D5C:
+	AddToScore(-5)
+	EndScript()
+
+	0x0004 [4]
+	0xFFFA [65530]
+	0xFFFF [65535]
+	0x004D [77]
+	0x0004 [4]
+	0xFFF8 [65528]
+	0xFFFF [65535]
+	0x004D [77]
+
+address_0x5D74:
+	AddToScore(-10)
+	EndScript()
+
+	0x0004 [4]
+	0xFFF4 [65524]
+	0xFFFF [65535]
+	0x004D [77]
+	0x0004 [4]
+	0xFFE2 [65506]
+	0xFFFF [65535]
+	0x004D [77]
+	0x0004 [4]
+	0x0001 [1]
+	0x0000 [0]
+	0x004D [77]
+
+address_0x5D94:
+	AddToScore(2)
+	EndScript()
+
+	0x0004 [4]
+	0x0003 [3]
+	0x0000 [0]
+	0x004D [77]
+	0x0004 [4]
+	0x0005 [5]
+	0x0000 [0]
+	0x004D [77]
+
+address_0x5DAC:
+	AddToScore(10)
+	EndScript()
+

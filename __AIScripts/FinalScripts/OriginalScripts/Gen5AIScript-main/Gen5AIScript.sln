@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gen5AIScript", "Gen5AIScript\Gen5AIScript.csproj", "{82C9E3E7-BBE5-4412-8910-21D7096A211E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+		Debug_ParagonLite|Any CPU = Debug_ParagonLite|Any CPU
+		Release_ParagonLite|Any CPU = Release_ParagonLite|Any CPU
+		Debug_Cascade|Any CPU = Debug_Cascade|Any CPU
+		Release_Cascade|Any CPU = Release_Cascade|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{82C9E3E7-BBE5-4412-8910-21D7096A211E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82C9E3E7-BBE5-4412-8910-21D7096A211E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82C9E3E7-BBE5-4412-8910-21D7096A211E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82C9E3E7-BBE5-4412-8910-21D7096A211E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82C9E3E7-BBE5-4412-8910-21D7096A211E}.Debug_ParagonLite|Any CPU.ActiveCfg = Debug_ParagonLite|Any CPU
+		{82C9E3E7-BBE5-4412-8910-21D7096A211E}.Debug_ParagonLite|Any CPU.Build.0 = Debug_ParagonLite|Any CPU
+		{82C9E3E7-BBE5-4412-8910-21D7096A211E}.Release_ParagonLite|Any CPU.ActiveCfg = Release_ParagonLite|Any CPU
+		{82C9E3E7-BBE5-4412-8910-21D7096A211E}.Release_ParagonLite|Any CPU.Build.0 = Release_ParagonLite|Any CPU
+		{82C9E3E7-BBE5-4412-8910-21D7096A211E}.Debug_Cascade|Any CPU.ActiveCfg = Debug_Cascade|Any CPU
+		{82C9E3E7-BBE5-4412-8910-21D7096A211E}.Debug_Cascade|Any CPU.Build.0 = Debug_Cascade|Any CPU
+		{82C9E3E7-BBE5-4412-8910-21D7096A211E}.Release_Cascade|Any CPU.ActiveCfg = Release_Cascade|Any CPU
+		{82C9E3E7-BBE5-4412-8910-21D7096A211E}.Release_Cascade|Any CPU.Build.0 = Release_Cascade|Any CPU
+	EndGlobalSection
+EndGlobal

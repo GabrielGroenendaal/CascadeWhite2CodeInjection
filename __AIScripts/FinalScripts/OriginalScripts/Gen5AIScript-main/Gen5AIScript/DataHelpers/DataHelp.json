@@ -1,0 +1,36 @@
+﻿{
+  "2340763514": {
+    "file_index": 0,
+    "name": "No Effect",
+    "description": "Deprioritizes moves that would have no effect on the target due to typing, ability, or item as well as stat boosts already at the max/min value, etc.",
+    "code": [
+      9014,
+      9070
+    ]
+  },
+  "530809101": {
+    "file_index": 1,
+    "name": "KO Moves",
+    "description": "When the Pokémon sees that a move will cause the target to faint, it will prioritize it. Moves like Explosion, Sucker Punch, and priority moves have a chance to have higher priority. Focus Punch is included too, presumably to punish the player for healing when low.",
+    "code": [
+      208
+    ]
+  },
+  "3284274582": {
+    "file_index": 2,
+    "name": "Smart",
+    "description": "Takes both self and target move, ability, and item effects into consideration.",
+    "data": [
+      4132,
+      4502,
+      13344
+    ],
+    "code": [
+      17858,
+      19920,
+      19922,
+      19924,
+      19926
+    ]
+  }
+}

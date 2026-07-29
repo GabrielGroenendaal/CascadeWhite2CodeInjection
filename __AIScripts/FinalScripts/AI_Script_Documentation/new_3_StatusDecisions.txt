@@ -1,0 +1,280 @@
+	JumpIfTargetIsAlly(&endScript_1)
+    // Jump(&NotTesting)
+
+    GetAbilityGuess(attacker)
+    GetLastPreviousCategory()
+TestingFunction1:
+    JumpIfUserWillFaint_Setup(&TestingFunction2)
+TestingFunction2:
+    JumpIfUserWillTakeLowDamage_Setup(&TestingFunction3)
+TestingFunction3:
+    JumpIfUserWillFaint_Priority(attacker, &TestingFunction4)
+TestingFunction4:
+    JumpIfUserWillTakeLowDamage_Debuffs(&TestingFunction5)
+TestingFunction5:
+    JumpIfUserIsSlowerThanAllEnemies(&TestingFunction6)
+TestingFunction6:
+    JumpIfUserAboutToWakeUp(&TestingFunction7)
+TestingFunction7: 
+    CheckOwnDamageIntoAlly(&NotTesting)
+
+NotTesting:
+	GetMove()
+    // Check for Substitute
+	JumpIfStoredIsNotInList(&substituteBlockedMoves, &NewAILogic)
+	JumpIfHasSubstitute(defender, &deprioritize_address)
+
+NewAILogic:
+	JumpIfStoredIsInList(&setup_moves, &setup_moves_script)
+	JumpIfStoredIsInList(&setup_moves_speed, &setup_moves_script)
+	JumpIfStoredIsInList(&debuff_moves, &debuff_moves_script)
+	JumpIfStoredIsInList(&debuff_moves_save, &debuff_moves_save_script)
+	JumpIfStoredIsInList(&debuff_moves_status, &debuff_moves_status_script)
+	JumpIfMoveEffectEQ(move_ef.increased_priority, &address_Priority)
+    JumpIfMoveEffectEQ(move_ef.fake_out, &address_Priority)
+    
+endScript_1:
+	EndScript()
+
+
+
+
+
+
+// SETUP MOVES LOGIC
+// Checks to see if the user will faint from the opposing pokemon. If the 
+// user is slower and gets 2HKOd, also likely to deprioritize. 
+// If the move boosts speed, more likely to go for it if slower.
+setup_moves_script:
+	JumpIfUserWillFaint_Setup(&deprioritize_address)
+	JumpIfUserWillTakeLowDamage_Setup(&high_chance_to_prioritize)
+	Jump(&endOfTheScript)
+
+
+
+
+
+
+// DEBUFF MOVES
+// Checks to see if the user will faint from the opposing pokemon. 
+// Deprioritizes if so 
+// Also deprioritizes if you don't take much damage anyways.
+debuff_moves_script:
+	JumpIfUserWillFaint_Priority(attacker, &high_chance_to_deprioritize)
+	JumpIfUserWillTakeLowDamage_Debuffs(&high_chance_to_deprioritize)
+	Jump(&endOfTheScript)
+
+
+
+
+
+// DEBUFF MOVES THAT ARE WAY WORSE IF SLOWER 
+debuff_moves_save_script:
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.prankster, &debuff_compareSpeed)
+	JumpCompareSpeed(LT, &debuff_compareSpeed)
+	JumpIfRandLT(102, &debuff_compareSpeed)
+	AddToScore(-1)
+
+debuff_compareSpeed:
+	JumpIfUserWillTakeLowDamage_Debuffs(&high_chance_to_deprioritize)
+	Jump(&endOfTheScript)
+
+
+
+
+
+
+
+// DEBUFF MOVES THAT ARE WAY WORSE IF SLOWER 
+debuff_moves_status_script:
+	GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.prankster, &endOfTheScript)
+	JumpCompareSpeed(LT, &endOfTheScript)
+	JumpIfRandLT(102, &endOfTheScript)
+	AddToScore(-2)
+	Jump(&endOfTheScript)
+
+
+
+
+
+
+
+// PRIORITY 
+address_Priority:
+	JumpIfUserWillFaint_Priority(attacker, &priorityCheckSpeed)
+	EndScript()
+
+priorityCheckSpeed:
+	JumpIfUserIsSlowerThanAllEnemies(&priorityPrioritize)
+	EndScript()
+
+priorityPrioritize:
+	CalcMoveDamage(false)
+	JumpIfStoredEQ(no_damage, &deprioritize_address)
+    JumpIfMoveEQ(move.fake_out, &priority_FakeOut)
+    JumpIfMoveEQ(move.first_impression, &priority_FakeOut)
+    Jump(&priorityEnd)
+
+priority_FakeOut:
+    StoreIsFirstTurn(attacker)
+	JumpIfStoredEQ(false, &deprioritize_address)
+	Jump(&priorityFakeOutEnd)
+
+priorityEnd:
+	JumpIfRandLT(100, &endOfTheScript)
+	AddToScore(15)
+	EndScript()
+
+priorityFakeOutEnd: 
+	AddToScore(15)
+	EndScript()
+
+ 
+
+
+// HELPERS
+high_chance_to_deprioritize:
+	JumpIfRandLT(204, &endOfTheScript)
+	AddToScore(-2)
+	EndScript()
+
+high_chance_to_prioritize:
+	JumpIfRandLT(128, &endOfTheScript)
+	AddToScore(2)
+	EndScript()
+
+deprioritize_address:
+	AddToScore(-10)
+	EndScript()
+
+endOfTheScript:
+	EndScript()
+
+
+
+
+
+setup_moves:
+	move.swords_dance
+	move.growth
+	move.nasty_plot
+	move.calm_mind
+	move.work_up
+	move.howl
+	move.acupressure
+	move.hone_claws
+	move.meditate
+	move.focus_energy
+	move.amnesia
+	move.iron_defense
+	move.cosmic_power
+	move.cotton_guard
+	move.stockpile
+	move.bulk_up
+	move.belly_drum
+	move.coil 
+	move.barrier
+	move.acid_armor
+	move.defend_order
+	move.defense_curl
+	move.harden
+	move.minimize
+	move.tail_glow
+	END
+
+setup_moves_speed:
+	move.victory_dance
+	move.quiver_dance
+	move.dragon_dance
+	move.double_team
+	move.flame_charge
+	move.shift_gear
+	move.shell_smash
+	move.agility
+	move.rock_polish
+	move.autotomize
+	move.tailwind
+	END
+
+debuff_moves:
+	move.fake_tears
+	move.screech
+	move.leer
+	move.scary_face
+	move.string_shot
+	move.sweet_scent
+	move.tail_whip
+	move.metal_sound
+	END
+
+debuff_moves_save:
+	move.charm
+	move.captivate
+	move.confide
+	move.growl
+	move.tickle
+	move.smokescreen
+	move.sand_attack
+	move.eerie_impulse
+	move.feather_dance
+	END
+
+debuff_moves_status:
+	move.confuse_ray
+	move.supersonic
+	move.swagger
+	move.flatter
+	move.teeter_dance
+	move.attract
+	END
+
+
+
+// MAY NEED TO UPDATE THIS LIST 
+substituteBlockedMoves:
+	move.charm
+	move.captivate
+	move.confide
+	move.growl
+	move.tickle
+	move.smokescreen
+	move.eerie_impulse
+	move.feather_dance
+	move.fake_tears
+	move.screech
+	move.leer
+	move.scary_face
+	move.string_shot
+	move.sweet_scent
+	move.tail_whip
+	move.metal_sound
+	move.gastro_acid
+	move.icy_wind
+	move.low_sweep
+	move.toxic
+	move.poison_gas
+	move.will-o-wisp
+	move.thunder_wave
+	move.glare
+	move.hypnosis
+	move.dark_void
+	move.sleep_powder
+	move.stun_spore
+	move.poison_powder 
+	move.spore
+	move.curse 
+	move.block 
+	move.mean_look
+	move.fake_out
+	move.soak 
+	move.reflect_type 
+	move.confuse_ray
+	move.attract 
+	END
+
+
+
+bufferScriptCallTwo:
+	EndScript()

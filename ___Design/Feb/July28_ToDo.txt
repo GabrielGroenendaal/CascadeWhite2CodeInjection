@@ -9,6 +9,9 @@
 
 
 
+- Tissue Paper 
+- Dentist Appointment 
+
 - Move Tutor & TM Rework 
 
 
@@ -42,6 +45,10 @@
             - Reflect 
             - Gravity 
             - Lucky Chant 
+        
+        A Pokémon held item that extends the\nduration of side effects like Tailwind,\nReflect or Safeguard used by the holder.
+    
+    The AI won't see Resist Berries anymore. 
 
 
 [ ENCOUNTERS ]
@@ -59,13 +66,71 @@
             - Wormadam-Trash 
 
 
+
+[ BALANCE ]
+    Diglett: 
+        Should have 120 Speed
+    
+    Dugtrio: 
+        Should have 150 Speed 
+    
+
 [ TRAINERS ]
 
+
+    Harlequin Pagliacci 
+        Lower All levels to 27 except Spheal 
+        -Atk nature on Cubone 
+        neutral nature on ZIgzagoon 
+        Replace Leech Life with Facade on Spinarak 
+        Remove Spinarak's item 
+
+    Harlequin Yoncy 
     Mons that aren't distributed well atm: 
         Foongus / Amoongus 
         Cottonee / Whimsicott 
+        Butterfree (only shows up twice)
+        Beedrill (doesn't show up after Elesa Split)
+        Politoed (shows up exactly once)
+        Accelgor (doesn't show up at all)
 
+   
+        
     Later Stuff: 
+        Chargestone Hugh: 
+        (Leave all this alone until we can test it ourselves though)
+        Emboar: 
+            Will-o-Wisp -> Heat Crash 
+            Night Daze -> Brutal Swing
+        Serperior: 
+            Energy Ball -> Power Whip 
+        Samurott: 
+            Razor Shell -> Hydro Cannon 
+        Flygon: 
+            Infestation -> Scorching Swarm 
+            Earth Power -> Fire Blast 
+        Eelektross: 
+            Payapa Berry -> Black Sludge
+            Volt Tackle, Gunk Shot, Power Whip, Coil 
+
+        Ace Trainer Shaye: 
+            Mamoswine:  
+                Rowap Berry -> Salac Berry 
+                Earth Power -> High Horsepower 
+                Thrash -> Supercell Slam 
+                Rock Slide -> Endure 
+            Zebstrika: 
+                Flamethrower -> Light Screen 
+
+        Ace Trainer Vicki 
+            Rotom: 
+                51 > 52 
+                Fourth Move: Destiny Bond 
+            Illumise: 
+                Focus Sash -> Covert Cloak 
+            Kecleon (Assault Vest -> Quick Claw) (Dragon Tail -> Wrap)
+            Gengar -> Zoroark (Ability: Trace) (Dark Pulse, Relic Song, Flamethrower, Sludge Bomb)
+
          [ ROUTE 4 COLRESS ]
             Magneton (Technoblast -> Tri Attack)
             Rotom-Wash (Expert Belt -> Ability Drill)
@@ -104,9 +169,49 @@
                 Thematic Pokemon: 
                     Floatzel 
 
+    New Trainer Ideas: 
+        
+        Brutal Swing Double Battle
+            Fearow @ Choice Scarf (Ability: Hustle) (Brutal Swing, Brave Bird)
+            Swampert @ Rindo Berry (Ability: Forewarn) (Earthquake, Helping Hand, Liquidation, Hammer Arm)
+            Absol @ Kee Berry (Ability: Justified) (Knock Off, Spirit Break, Stone Edge, Detect)
+            Farfetch'd @ Stick (Ability: Rattled) (Brutal Swing, Drill Peck, Leaf Blade, Secret Sword)
+            Scrafty @ Weakness Policy (Ability: Intimidate) (Brutal Swing, Fake Out, Hi Jump Kick, Head Smash)
+            Crawdaunt @ Brightpowder (Ability: Adaptability) (Brutal Swing, Crabhammer, Aqua Jet, Icy Wind)
+        
+        Reversal Mountain Hail Battle: (Guards TM68 Avalanche)
+            Delibird @ Babiri Berry (Ability: Ice Scales) (Icicle Crash, Spikes, Heart Stamp, Healing Wish)
+            Weavile @ Chople Berry (Ability: Technician) (Pursuit, Fury Swipes, Icy Wind, Slash)
+            Dragonite @ Leftovers (Ability: Thick Fat) (Blizzard, Twister, Air Slash, Earthquake)
+            Empoleon @ Chople Berry (Ability: Ice Body) (Scald, Substitute, Toxic, Protect)
+            Mamoswine @ Assault Vest (Ability: Berserk) (High Horsepower, Ice Beam, Ancient Power, )
 
+        Reversal Mountain Sand Battle: (Guards TM71 Stone Edge)
+            Ninjask @ Focus Sash (Ability: Sand Stream) (U-Turn, Dual Wingbeat, 1st Impression, Weather Crash)
+            Krookadile @ Life Orb (Ability: Sand Rush) (Brutal Swing, Pursuit, Earthquake, Stone Edge)
+            Gigalith @ Shuca Berry (Ability: Sand Force) (Ancient Power, Earth Power, Steel Beam, Rock Polish)
+            Cacturne @ Colbur Berry (Ability: Sand Veil) (Leaf Storm, Phantom Strike, Weather Ball, Swagger)
+            Steelix @ Leftovers (Ability: Filter) (Gyro Ball, Earthquake, Rock Wrecker, Ice Fang)
 
+        Strange House Psychic: (Guards Dark Pulse TM)
+            Swoobat @ Light Clay (Ability: Amplifier) (Alluring Voice, Reflect, Light Screen, Tailwind)
+            Kadabra @ Brightpowder (Ability: Magic Guard) (Psycho Boost, Zap Cannon, Focus Blast, Hypnosis)
+            Medicham @ Choice Scarf (Ability: Huge Power) (Hi Jump Kick, Psycho Boost)
+            Haunter @ Brightpowder (Ability: Neutralizing Gas) (Nightmare, Sludge Wave, Destiny Bond, Hypnosis)
+            Venemoth @ Colbur Berry (Ability: Tenacity) (Stored Power, Quiver Dance, Iron Defense, Roost)
 
+        Elesa Gym Hail Fight: 
+            Porygon-2 @ Ice Gem (Ability: Trace) (Double-Edge, Blizzard, Helping Hand, Thunderbolt)
+            Illumise @ Icy Rock (Ability: Magic Guard) (Moonblast, Lunge, Wild Charge, Reflect)
+            Rotom-Frost @ Blunder Policy (Ability: Refrigerate) (Thunderbolt, Uproar, Will-o-Wisp, Shadow Ball)
+            Ampharos @ Shuca Berry (Ability: Fluffy) (Ice Punch, Thunderpunch, Fire Punch, Dual Chop)
+            
+        Elesa Gym Rain Fight: 
+            Servine @ Eviolite (Ability: Adaptability) (Thunder, Leaf Storm, Protect, Hurricane)
+            Stunfisk @ Leftovers (Ability: Dry Skin) (Muddy Water, Mud Bomb, Zing Zap, Thunder Wave)
+            Eelektrik @ Life Orb (Ability: Swift Swim) (Thunder, Gunk Shot, Aqua Tail, Toxic Spikes)
+            Forretress @ Electric Gem (Ability: Bulletproof) 
+        
 Plan: 
     I don't think I should do the TM and move tutor revamp until I get some more proper playtesting in. 
 

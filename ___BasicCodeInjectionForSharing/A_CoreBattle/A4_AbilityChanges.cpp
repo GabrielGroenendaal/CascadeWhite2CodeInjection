@@ -1094,7 +1094,7 @@ extern "C"
             if (BattleMon_GetTurnFlag(mon, TURNFLAG_MOVEFAILEDLASTTURN)){
                 *a4 = 0;
             }
-
+            
             if (*a4)
             {
                 if (PML_MoveGetCategory(BattleEventVar_GetValue(VAR_MOVE_ID)) && BattleEventVar_GetValue(VAR_MOVE_ID) != MOVE165_STRUGGLE)
@@ -1109,6 +1109,9 @@ extern "C"
                 {
                     *a4 = 1;
                 }
+            }
+            if (BattleEventVar_GetValue(VAR_MOVE_ID) != MOVE165_STRUGGLE){
+                *a4 = 0;
             }
         }
     }
@@ -2595,14 +2598,14 @@ extern "C"
 
         if (a3 == BattleEventVar_GetValue(VAR_MON_ID))
         {
-            if (RollEffectChance(20u))
+            if (RollEffectChance(30u))
             {
                 if (BattleEventVar_RewriteValue(VAR_PRIORITY, 2))
                 {
 
                     BattleHandler_PushRun(a2, EFFECT_ABILITYPOPUPIN, a3);
                     v9 = (HandlerParam_Message *)BattleHandler_PushWork(a2, EFFECT_MESSAGE, a3);
-                    BattleHandler_StrSetup(&v9->str, 2u, 1230); // replace with the actual id
+                    BattleHandler_StrSetup(&v9->str, 2u, 1348); // replace with the actual id
                     BattleHandler_AddArg(&v9->str, a3);
                     BattleHandler_PopWork(a2, v9);
                     BattleHandler_PushRun(a2, EFFECT_ABILITYPOPUPOUT, a3);

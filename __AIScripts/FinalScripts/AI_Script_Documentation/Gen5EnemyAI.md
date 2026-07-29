@@ -1,6 +1,8 @@
+# `Enemy AI in Gen V Pokémon`
+
 # `DaSquyd’s Enemy AI in Gen V Pokémon:` `A Complete (WIP) Guide`
 
-## `Last Updated: April 4, 2026 - Dodominoe`
+## `Last Updated: July 26, 2026 - DaSquyd`
 
 `This document aims to be a complete guide to how the trainer AI functions in the Pokémon Black, White, Black 2, and White 2 Versions, which includes but is not limited to switching out, switching in, move selection, and specific differences between battle styles such as Double Battles and Rotation Battles. This is something of a sequel to a Reddit post I published earlier in my research. While this is specifically for the Gen V games, most of this may still apply to other generations. Please contact me on Discord at DaSquyd for any further questions and suggestions!`
 
@@ -1335,16 +1337,16 @@
 1. `cond_fl.no_switch`  
 2. `cond_fl.charge`  
 3. `cond_fl.fly`  
-4. `cond_fl.dive`
-5. `cond_fl.dig`
-6. `cond_fl.shadow_force`
-7. `cond_fl.defense_curl`
-8. `cond_fl.minimze`
-9. `cond_fl.focus_energy`
-10. `cond_fl.power_trick`
-11. `cond_fl.micle_berry`
-12. `cond_fl.no_action`
-13. `cond_fl.flash_fire`
+4. `cond_fl.dive`  
+5. `cond_fl.dig`  
+6. `cond_fl.shadow_force`  
+7. `cond_fl.defense_curl`  
+8. `cond_fl.minimze`  
+9. `cond_fl.focus_energy`  
+10. `cond_fl.power_trick`  
+11. `cond_fl.micle_berry`  
+12. `cond_fl.no_action`  
+13. `cond_fl.flash_fire`  
 14. `Cond_fl.baton_pass`
 
 ### `Side Condition` {#side-condition}
@@ -1786,14 +1788,898 @@
 
 ## `0x2B -`  {#0x2b--}
 
-[image1]: <data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABIklEQVR4Xu2UQQ6CQBAEeY7P4BkeeYLP8egTPPokjxy5YdqkTdkBY9gFY0InE5RdpmtnBppm165du/5BbduOiry/iWR8u/wIwOZdd3wCzFVi7n6xlFTmgmDQUOveUxVCyfr+8GZoAN2nMcEyzyLRXCbDMLwAbE7jqgDstwFonqbVzZ1Mp06T1QGkrECa6JotqGZuKaGHjMPGqhhSa/l8FSn5/XQeh+vlGZyFudMblnmK5FMawiB8Q1gtQ60OospwIF2ZbFlVCCkh2ApWgC3LHEUiQBoqCMTqZJ5Fcq/TPCNh1KoqEHn6Tx8lG/uzXQzgweJr6cG0kUPmHEY949+Z92sxka4Mgzi4xv1FABJPNQXCk+b/YvMpTZnlGvevpk3N1tADyDmZXCqQtYUAAAAASUVORK5CYII=>
+# `Moves (WIP)`
 
-[image2]: <data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABgUlEQVR4Xu1UO3LCMBTkOBzDJUdI6SNQpqSkpEzJESh9BEqOQanSXeIVXrFeTLCCmAkz3pk3Auvp7b6PtFjMmDFjxrujqqpvNd8HHu1nQwOe6qE5iftkC3FnDzhmYwLDbplHDOCAHvSgMXBYXq3zdTHcyyYHVIAT35DfMZ712JOgAtq2HZJ33+v644awCDFBAU3TDATg92azjitE0Ej6NLECwc7rryQAKwWpEIr907D9BgSLxId9InWLrUBLVsey5ABLyuwhBL9ZFVSA5C/Jntn5DdBZeESuc+J7dxF7GvpJ73ubMg0XQZgFGKvkAkg6OD9VBK9YFCIBaCSnX7O/CKYIJ84SAKftZ5vMRWhJSexvwJjvJHKAAnTVMjP7mHlfBZ0XGP977MngYQ3CjPkOMHus6p9V7hwgIIgRnG8AK0DDcCYRoaAIBIrt6G6BitAZIDmFeHWehmcK41PMSqgvhUF0MRGEivF2pP2OmDepuABCW6NE6busfrYYtBr+Xdd/iR9/WkM5Qs1N5gAAAABJRU5ErkJggg==>
+# `Moves (WIP)`
 
-[image3]: <data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAgCAYAAACYTcH3AAADqElEQVR4XtWWTWsTURSGs+giP6MboVItBlQaLMZAoKUEC6MmmJKWBKqmRRADihTxoyiUYqXgQldusilkJd1WsZCNEBf+AJddunCRhYse5z0z7507d1qb1lDxwEtyP+acZ86999xJpf4DE0f/xDT46fNNuVp+bRT2n6hJsbSuAgCB8lfyKoyHMvP30UBMIQhwfW5VcrmCQjSfdaT5PNSLrqTTQeBiaUXn6riv+dubAwFKZAQgi4+7JhBhRjMFmZldjfp94RmADAxmZnZdxYyYTFB+UJMlXwBXgEag6RtvBgKihtSPZiajjDgwNgizoEAhTKp/kL73l9QbLfnSrop8zcvio20/eNcH8RSmstD2xzdV+O9s7D+ZASB8vdE+9DkfIqsCCFRfaolXWhbv5qoJTqEPz7hOLNNxBOZL9JtJzQb1aSunggMETg+lRb4FENiw3DMYx7OuM9+ifWXtrX4yAlOIz1uBApBoKQDSfjVmiiCDHABjTifVb0Zosv0hb1SptVTMxMLSS9VaISOw5khGvEYwbgPhIOBUFssbcflAnNOv6QOA2QmBmInhkWn58VMUBgLMnctls4xMP07koGBofFC86rJkc55sTY2q2pMTqs7coqyMZKU8Hixn5lxFmvc3DBxfwqo/xwKJWXoopTDcO2tnhqVbLysMBBgIIL2exGAOOfYH9cfMfhPj+MnYKZFqXnarnjwcO2sy05m/JVLLym5hWN5OlRQIYBfGPcGLOL5pfS2bdHa6qouXyn4dCS5CyM+RKu0LQMwMQCCATBfXouW621LBpxsklYRJzDMgkF3c3Ilo79UmVITJjOdVpq4cfHGaC5m+vdl3ifoTA4kyknSG4DYM5uOk3Xvw1BQ61hc3CP4TBgII5MwJYAiC4xl+t4QWLBPGWaX36hNB2zK0cU1EFTfY0PAPEaJce686oGgmYVAzwomy/fG7zM03YzCQDcNlxSXqwjBT9E+/vLPCdsxMkaJjABZLUfGiM4CghhCG87kXCFMJrxR+L1lZMjGddtAJ5wyKdvBGqJ4RDINhrgvDJXBhPP/LEFnm56obeD/TNDpfbPoffQzCN2Pa7X78tzOI9NsvZyL1Ye7Zt80Ew3/2QcwGodxlZvs4n6XuZK2iuJ9MsCQw2ypcHRAvTPbv89yRTDcvnZtlOMQp4ZOlwQAf28LjXjC/6HMn2cYPe3t/uXP+xmLL4Iy5Zo4w9xH63EknYXrEvWue9H71zC/63YknZW4WjwzyG1vnzyUwO3XMAAAAAElFTkSuQmCC>
+# **`Overview`** {#overview}
 
-[image4]: <data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABgUlEQVR4Xu1UO3LCMBTkOBzDJUdI6SNQpqSkpEzJESh9BEqOQanSXeIVXrFeTLCCmAkz3pk3Auvp7b6PtFjMmDFjxrujqqpvNd8HHu1nQwOe6qE5iftkC3FnDzhmYwLDbplHDOCAHvSgMXBYXq3zdTHcyyYHVIAT35DfMZ712JOgAtq2HZJ33+v644awCDFBAU3TDATg92azjitE0Ej6NLECwc7rryQAKwWpEIr907D9BgSLxId9InWLrUBLVsey5ABLyuwhBL9ZFVSA5C/Jntn5DdBZeESuc+J7dxF7GvpJ73ubMg0XQZgFGKvkAkg6OD9VBK9YFCIBaCSnX7O/CKYIJ84SAKftZ5vMRWhJSexvwJjvJHKAAnTVMjP7mHlfBZ0XGP977MngYQ3CjPkOMHus6p9V7hwgIIgRnG8AK0DDcCYRoaAIBIrt6G6BitAZIDmFeHWehmcK41PMSqgvhUF0MRGEivF2pP2OmDepuABCW6NE6busfrYYtBr+Xdd/iR9/WkM5Qs1N5gAAAABJRU5ErkJggg==>
+`This is the page for all move-related AI logic.`
 
-[image5]: <data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAC4ElEQVR4Xu2U+04TQRTGeSAlBNrdbVN8CEBCL9D/VVAItFyi4OUJvEZBIAKCxOsrKBjkZpACJZSiiZdHMPQyn+c70Kb0r0Ug0aRfMtnZ2bMzZ37fmamqqqiiiv53+R0HPseG5fGg/NupyrYsOLZ1ZBFvXR3Mi3FsXu9GZuQ+vF7v2SQR8PmAd1PYuxNHwO/XRRzZOV5NAr/S2LvdD/xIAW+ew7bt002CE2afPkA+fw7GnEdm9aMgd9AaieBiUxPwdQv4lsRC9xUkb/QcocQ466RUuPuFnnZJoFoSqNZFzc66LpqVZEKhkCbBGMw+w4bYUSfW+OU/k0poDOukfF5X4u7xekrb7s1eRKNR4OeuYtcnsUs/IjQ0TizgU98Zw3YSaxz5qa21FftP7qK5uVkIGGRW5mC2PiM51Iu5rsvA3iYi4TAyw/eAmXGNmycNGV/r68SHTon5vgPPcU8Jj5Wilh0Qe0tLi2Il0sRAF6hsNiv4k2pHQ0ODWsC4zMq8jjNhr8xDmelR1NbWuktC0RNnCcYiViJ9O61IVRyT2LBQSItNJMZWtOrQAlrjr7/gLgFeLNwFUe8MxTEfa0coGISZGUNmeQ55GTeCmHYQO8ebGhvVCmLneFiK00wOH1gjx9W1BbxM0rf6kE8sY0uOVbStDblcThfiLpfiHboQd5kbe6STczz3ZVG9Tg7Gpf8JKaERlKSzow+xLWOOP+AugSL+w+ovNhlTG3j58HtJDJMsnAiiTwk1PjnO+VyjpyzHJxdKTNEFpaD0FEh/KX5Vd+GxbOTHH2tR/ZbTwaIz6Q3sizVmN4G1gW6877ykhUoLampq3C9eEDNejHWot9whL5lShLTJF6iH13YUP6kQu9IR8QRp5cv/vJRK53YtLsBE2Ngv/15QwbLtwdhBAmyzE5r4X10+xxXJbAh22sTKp23sr/d3wRY7y+PPRKS02nvtYPcvJ7R/rMI7Dbm1rKKKKvrn9Afs2PmS42k7FAAAAABJRU5ErkJggg==>
+`This is a work-in-progress section! I’ll be adding to this over time.`
 
-[image6]: <data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABgUlEQVR4Xu1UO3LCMBTkOBzDJUdI6SNQpqSkpEzJESh9BEqOQanSXeIVXrFeTLCCmAkz3pk3Auvp7b6PtFjMmDFjxrujqqpvNd8HHu1nQwOe6qE5iftkC3FnDzhmYwLDbplHDOCAHvSgMXBYXq3zdTHcyyYHVIAT35DfMZ712JOgAtq2HZJ33+v644awCDFBAU3TDATg92azjitE0Ej6NLECwc7rryQAKwWpEIr907D9BgSLxId9InWLrUBLVsey5ABLyuwhBL9ZFVSA5C/Jntn5DdBZeESuc+J7dxF7GvpJ73ubMg0XQZgFGKvkAkg6OD9VBK9YFCIBaCSnX7O/CKYIJ84SAKftZ5vMRWhJSexvwJjvJHKAAnTVMjP7mHlfBZ0XGP977MngYQ3CjPkOMHus6p9V7hwgIIgRnG8AK0DDcCYRoaAIBIrt6G6BitAZIDmFeHWehmcK41PMSqgvhUF0MRGEivF2pP2OmDepuABCW6NE6busfrYYtBr+Xdd/iR9/WkM5Qs1N5gAAAABJRU5ErkJggg==>
+`— Love, DaSquyd <3`
+
+`Since Squyd is currently busy with working on Blaze Black and Volt White 2 redux v2, text me on discord if you notice any mistakes.`
+
+`— Also love, Dodominoe (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧`
+
+`For real, thanks for all the help Dodominoe!!`
+
+`– Love, DaSquyd again <3 <3`
+
+# **`Contents`** {#contents-1}
+
+`Overview`
+
+[`Contents`](#contents-1)
+
+[`Move Logic`](#move-logic)
+
+[`Script Overhead`](#script-overhead)
+
+[`Standard Moves`](#standard-moves)
+
+[`Induces Sleep`](#induces-sleep)
+
+[`No Effect (Flag 0)`](#no-effect-\(flag-0\))
+
+[`Expert (Flag 2)`](#expert-\(flag-2\))
+
+[`Draining (0x03)`](#draining-\(0x03\))
+
+[`Expert (Flag 2)`](#expert-\(flag-2\)-1)
+
+[`Self-Destructing`](#self-destructing)
+
+[`No Effect (Flag 0)`](#no-effect-\(flag-0\)-1)
+
+[`Evaluate (Flag 1)`](#evaluate-\(flag-1\))
+
+[`Expert (Flag 2)`](#expert-\(flag-2\)-2)
+
+[`Dream Eater`](#dream-eater)
+
+[`No Effect (Flag 0)`](#no-effect-\(flag-0\)-2)
+
+[`Expert (Flag 2)`](#expert-\(flag-2\)-3)
+
+[`Mirror Move`](#mirror-move)
+
+[`Expert (Flag 2)`](#expert-\(flag-2\)-4)
+
+[`Raise User Attack`](#raise-user-attack)
+
+[`No Effect (Flag 0)`](#no-effect-\(flag-0\)-3)
+
+[`Expert (Flag 2)`](#expert-\(flag-2\)-5)
+
+[`Raise User Defense`](#raise-user-defense)
+
+[`No Effect (Flag 0)`](#no-effect-\(flag-0\)-4)
+
+[`Expert (Flag 2)`](#expert-\(flag-2\)-6)
+
+[`Raise User Speed`](#raise-user-speed)
+
+[`No effect (Flag 0)`](#no-effect-\(flag-0\)-5)
+
+[`Expert (Flag 2)`](#expert-\(flag-2\)-7)
+
+[`Raise User Sp. Atk`](#raise-user-sp. atk)
+
+[`Raise User Sp. Def`](#raise-user-sp. def)
+
+[`Raise User Evasion`](#raise-user-evasion)
+
+[`No Miss`](#no-miss)
+
+[`Lower Target Attack`](#lower-target-attack)
+
+[`Lower Target Defense`](#lower-target-defense)
+
+[`Lower Target Speed`](#lower-target-speed)
+
+[`Lower Target Sp. Def`](#lower-target-sp. def)
+
+[`Lower Target Accuracy`](#lower-target-accuracy)
+
+[`Lower Target Evasion`](#lower-target-evasion)
+
+[`Haze`](#haze)
+
+[`Bide`](#bide)
+
+[`Force Switch`](#force-switch)
+
+[`No Effect (Flag 0)`](#no-effect-\(flag-0\)-6)
+
+[`Expert (Flag 2)`](#expert-\(flag-2\)-8)
+
+[`Conversion`](#conversion)
+
+[`Recover HP`](#recover-hp)
+
+[`Badly Poison Target`](#badly-poison-target)
+
+[`Light Screen`](#light-screen)
+
+[`Expert (Flag 2)`](#expert-\(flag-2\)-9)
+
+[`Rest`](#rest)
+
+[`OHKO`](#ohko)
+
+[`No Effect (Flag 0)`](#no-effect-\(flag-0\)-7)
+
+[`Expert (Flag 2)f`](#expert-\(flag-2\)f)
+
+[`Two-turn (Standard)`](#two-turn-\(standard\))
+
+[`Expert (Flag 2)`](#expert-\(flag-2\)-10)
+
+[`Direct Damage (Half)`](#direct-damage-\(half\))
+
+[`Direct Damage (40 HP)`](#direct-damage-\(40-hp\))
+
+[`Trapping`](#trapping)
+
+[`Expert (Flag 2)`](#expert-\(flag-2\)-11)
+
+[`Increased Critical Hit Ratio`](#increased-critical-hit-ratio)
+
+[`Expert (Flag 2)`](#expert-\(flag-2\)-12)
+
+[`Semi-Invulnerable (Except Shadow Force)`](#semi-invulnerable-\(except-shadow-force\))
+
+[`Expert (Flag 2)`](#expert-\(flag-2\)-13)
+
+[`Focus Punch`](#focus-punch)
+
+[`No Effect (Flag 0)`](#no-effect-\(flag-0\)-8)
+
+[`Evaluate (Flag 1)`](#evaluate-\(flag-1\)-1)
+
+# **`Move Logic`** {#move-logic}
+
+### `Script Overhead` {#script-overhead}
+
+`The “common random” is a value assigned as any integer 0–255 chosen at the start of move selection for each Pokémon. It is occasionally used as a means of randomizing decisions, but unlike standard randomness, this is a consistent value for the entirety of the move selection process.`
+
+- `Effectiveness (Flag 0)`  
+  - `Assumes that the target is NOT an ally`  
+    - `Score +0`  
+  - `Assumes that the move is not 0× effective`  
+    - `Score -10`  
+  - `Assumes that the move won’t be failing due to an ability (with the exception of Storm Drain due to its related bug)`  
+    - `Score -12`  
+- `Evaluate (Flag 1)`  
+  - `Assumes that the target is NOT an ally`  
+    - `Score +0`  
+  - `If no logic is specified, assume the following...`  
+    - `Score +4 if the move will KO`  
+    - `Score -1 if the move is not the strongest`  
+    - `Score +2 (68.75%) if the move is the strongest but won’t KO and is 4× effective`
+
+## `Standard Moves` {#standard-moves}
+
+`Let’s get these cleared out of the way first. These are the moves that have no particular AI logic.`
+
+- `#001 Pound`  
+- `#003 Double Slap`  
+- `#004 Comet Punch`  
+- `#005 Mega Punch`  
+- `#006 Pay Day`  
+- `#007 Fire Punch`  
+- `#008 Ice Punch`  
+- `#009 Thunder Punch (ThunderPunch)`  
+- `#010 Scratch`  
+- `#011 Vise Grip (Vice Grip, ViceGrip)`  
+- `#015 Cut`  
+- `#016 Gust`  
+- `#017 Wing Attack`  
+- `#021 Slam`  
+- `#022 Vine Whip`  
+- `#024 Double Kick`  
+- `#025 Mega Kick`  
+- `#026 Jump Kick`  
+- `#027 Rolling Kick`  
+- `#029 Headbutt`  
+- `#030 Horn Attack`  
+- `#031 Fury Attack`  
+- `#033 Tackle`  
+- `#037 Thrash`  
+- `#042 Pin Missile`  
+- `#044 Bite`  
+- `#055 Water Gun`  
+- `#056 Hydro Pump`  
+- `#064 Peck`  
+- `#065 Drill Peck`  
+- `#070 Strength`  
+- `#080 Petal Dance`  
+- `#088 Rock Throw`  
+- `#121 Egg Bomb`  
+- `#125 Bone Club`  
+- `#127 Waterfall`  
+- `#131 Spike Cannon`  
+- `#136 High Jump Kick (Hi Jump Kick)`  
+- `#140 Barrage`  
+- `#154 Fury Swipes`  
+- `#155 Bonemerang`  
+- `#157 Rock Slide`  
+- `#158 Hyper Fang`  
+- `#161 Tri Attack`  
+- `#198 Bone Rush`  
+- `#200 Outrage`  
+- `#224 Megahorn`  
+- `#292 Arm Thrust`  
+- `#304 Hyper Voice`  
+- `#310 Astonish`  
+- `#326 Extrasensory`  
+- `#331 Bullet Seed`  
+- `#333 Icicle Spear`  
+- `#337 Dragon Claw`  
+- `#350 Rock Blast`  
+- `#399 Dark Pulse`  
+- `#401 Aqua Tail`  
+- `#402 Seed Bomb`  
+- `#403 Air Slash`  
+- `#404 X-Scissor`  
+- `#406 Dragon Pulse`  
+- `#407 Dragon Rush`  
+- `#408 Power Gem`  
+- `#428 Zen Headbutt`  
+- `#438 Power Whip`  
+- `#442 Iron Head`  
+- `#458 Double Hit`  
+- `#530 Dual Chop`  
+- `#531 Heart Stamp`  
+- `#541 Tail Slap`  
+- `#544 Gear Grind`  
+- `#556 Icicle Crash`
+
+## `Induces Sleep` {#induces-sleep}
+
+- `#047 Sing`  
+- `#079 Sleep Powder`  
+- `#095 Hypnosis`  
+- `#142 Lovely Kiss`  
+- `#147 Spore`  
+- `#320 Grass Whistle`  
+- `#464 Dark Void`
+
+  ### `No Effect (Flag 0)` {#no-effect-(flag-0)}
+
+  `![][image7]`
+
+  ### `Expert (Flag 2)` {#expert-(flag-2)}
+
+`![][image8]`
+
+## `Draining (0x03)` {#draining-(0x03)}
+
+- `#071 Absorb`  
+- `#072 Mega Drain`  
+- `#141 Leech Life`  
+- `#202 Giga Drain`  
+- `#409 Drain Punch`  
+- `#532 Horn Leech`
+
+### `Expert (Flag 2)` {#expert-(flag-2)-1}
+
+`![][image9]`
+
+## `Self-Destructing` {#self-destructing}
+
+- `#120 Self-Destruct`  
+- `#153 Explosion`  
+- `#262 Memento`
+
+  ### `No Effect (Flag 0)` {#no-effect-(flag-0)-1}
+
+| `Move Effectiveness` | `User has... Mold Breaker` | `Guess target ability` | `Score Change` |
+| :---: | :---: | :---: | :---: |
+| `0×` |  |  | `-10` |
+| `Other` | `TRUE` |  | `See next table...` |
+|  | `FALSE` | `Damp` | `-10` |
+|  |  | `Other` | `See next table...` |
+
+| `User Team Reserve Count` | `Target Team Reserve Count` | `Score Change` |
+| :---: | :---: | :---: |
+| `0` | `0` | `-1` |
+|  | `1–5` | `-10` |
+| `1–5` |  | `+0` |
+
+  ### `Evaluate (Flag 1)` {#evaluate-(flag-1)}
+
+`![][image10]`
+
+`*= 4× type effectiveness is not typically possible with Self-Destruct and Explosion as both are Normal-type moves.`
+
+### `Expert (Flag 2)` {#expert-(flag-2)-2}
+
+`![][image11]`
+
+## `Dream Eater` {#dream-eater}
+
+- `#138 Dream Eater`
+
+### 	`No Effect (Flag 0)` {#no-effect-(flag-0)-2}
+
+	`	![][image12]`
+
+### `Expert (Flag 2)` {#expert-(flag-2)-3}
+
+`![][image13]`
+
+## `Mirror Move` {#mirror-move}
+
+- `#119 Mirror Move`
+
+### `Expert (Flag 2)` {#expert-(flag-2)-4}
+
+`![][image14]`
+
+`The list mentioned in the flowchart contains the following moves:`
+
+- `#012 Guillotine`  
+- `#028 Sand Attack`  
+- `#032 Horn Drill`  
+- `#047 Sing`  
+- `#063 Hyper Beam`  
+- `#077 Poison Powder`  
+- `#079 Sleep Powder`  
+- `#086 Thunder Wave`  
+- `#090 Fissure`  
+- `#092 Toxic`  
+- `#095 Hypnosis`  
+- `#103 Screech`  
+- `#108 Smokescreen`  
+- `#109 Confuse Ray`  
+- `#137 Glare`  
+- `#142 Lovely Kiss`  
+- `#147 Spore`  
+- `#168 Thief`  
+- `#177 Aeroblast`  
+- `#178 Cotton Spore`  
+- `#184 Scary Face`  
+- `#186 Sweet Kiss`  
+- `#207 Swagger`  
+- `#213 Attract`  
+- `#223 Dynamic Punch`  
+- `#238 Cross Chop`  
+- `#245 Extreme Speed`  
+- `#247 Shadow Ball`  
+- `#259 Torment`  
+- `#260 Flatter`  
+- `#271 Trick`  
+- `#276 Superpower`  
+- `#285 Skill Swap`  
+- `#313 Fake Tears`  
+- `#319 Metal Sound`  
+- `#320 Grass Whistle`  
+- `#325 Shadow Punch`  
+- `#329 Sheer Cold`  
+- `#343 Covet`  
+- `#375 Psycho Shift`  
+- `#384 Power Swap`  
+- `#385 Guard Swap`  
+- `#389 Sucker Punch`  
+- `#391 Heart Swap`  
+- `#415 Switcheroo`  
+- `#445 Captivate`  
+- `#464 Dark Void`  
+- `#549 Glaciate`  
+- `#555 Snarl`
+
+## `Raise User Attack` {#raise-user-attack}
+
+- `#014 Swords Dance`  
+- `#096 Meditate`  
+- `#159 Sharpen`  
+- `#336 Howl`
+
+  ### `No Effect (Flag 0)` {#no-effect-(flag-0)-3}
+
+| `User’s Attack Stat Stage` | `Score Change` |
+| :---: | :---: |
+| `-6 to +5` | `+0` |
+| `+6` | `-10` |
+
+  ### `Expert (Flag 2)` {#expert-(flag-2)-5}
+
+| `User’s Attack Stat Stage` | `User’s Current HP` | `User has... Baton Pass` | `Score Change` |
+| :---: | :---: | :---: | :---: |
+| `-6 to +2` | `1–39.999%` |  | `-2` |
+|  | `40–70%` |  | `-2 (84.375%) +0 (15.625%)` |
+|  | `70.001–99%` |  | `+0` |
+|  |  |  |  |
+|  | `100%` | `TRUE` | `+2` |
+|  |  | `FALSE` | `+0 (50%) +2 (50%)` |
+| `+3 to +6` | `1–39.999%` |  | `-3 (60.9375%) -2 (39.0625%)` |
+|  | `40–70%` |  | `-3 (51.4160%) -2 (32.9590%) -1 ( 9.5215%) +0 ( 6.1035%)` |
+|  | `70.001–100%` |  | `-1 (60.9375%) +0 (39.0625%)` |
+
+## `Raise User Defense` {#raise-user-defense}
+
+- `#106 Harden`  
+- `#110 Withdraw`  
+- `#112 Barrier`  
+- `#151 Acid Armor`  
+- `#334 Iron Defense`
+
+### `No Effect (Flag 0)` {#no-effect-(flag-0)-4}
+
+`![][image15]`
+
+### `Expert (Flag 2)` {#expert-(flag-2)-6}
+
+| `User’s Defense Stat Stage` | `User’s Current HP` | `User has  Baton Pass` | `Target used Move with 0 Power Last Turn` | `Target used Special Move Last Turn` | `Score Change` |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| `-6 to +2` | `1–39.99%` |  |  |  | `-2` |
+|  | `40–69.99%` |  | `TRUE` |  | `-2 (76.56%) +0 (23.44%)` |
+|  |  |  | `FALSE` | `TRUE` | `-2` |
+|  |  |  |  | `FALSE` | `-2 (58.62%) +0 (41.38%)` |
+|  | `70–99.99%` |  | `TRUE` |  | `-2 (16.75%) +0 (83.25%)` |
+|  |  |  | `FALSE` | `TRUE` | `-2 (21.88%) +0 (78.13%)` |
+|  |  |  |  | `FALSE` | `-2 (12.82%) +0 (87.18%)` |
+|  | `100%` | `TRUE` | `TRUE` |  | `+0 (16.75%) +2 (83.25%)` |
+|  |  |  | `FALSE` | `TRUE` | `+0 (21.88%) +2 (78.13%)` |
+|  |  |  |  | `FALSE` | `+0 (12.82%) +2 (87.18%)` |
+|  |  | `FALSE` | `TRUE` |  | `-2  (8.37%) +0    (50%) +2 (41.63%)` |
+|  |  |  | `FALSE` | `TRUE` | `-2 (10.94%) +0    (50%) +2 (39.06%)` |
+|  |  |  |  | `FALSE` | `-2  (6.41%) +0    (50%) +2 (43.59%)` |
+| `+3 to +6` | `1–39.99%` |  |  |  | `-1 (60.94%) +0 (39.06%)` |
+|  | `40–69.99%` |  | `TRUE` |  | `-1 (46.66%) +0 (29.91%) +1 (14.28%) +2  (9.16%)` |
+|  |  |  | `FALSE` | `TRUE` | `-1 (60.94%) +0 (39.06%)` |
+|  |  |  |  | `FALSE` | `-1 (35.72%) +0  (22.9%) +1 (25.22%) +2 (16.16%)` |
+|  | `70–100%` |  | `TRUE` |  | `-1 (10.21%) +0  (6.54%) +1 (50.73%) +2 (32.52%)` |
+|  |  |  | `FALSE` | `TRUE` | `-1 (13.33%) +0  (8.54%) +1 (47.61%) +2 (30.52%)` |
+|  |  |  |  | `FALSE` | `-1  (7.81%) +0  (5.01%) +1 (53.12%) +2 (34.05%)` |
+
+## 
+
+## `Raise User Speed` {#raise-user-speed}
+
+- `#097 Agility`  
+- `#397 Rock Polish`
+
+### `No effect (Flag 0)` {#no-effect-(flag-0)-5}
+
+`![][image16]`
+
+### `Expert (Flag 2)` {#expert-(flag-2)-7}
+
+`![][image17]`
+
+`The list mentioned in the flowchart contains the following moves:`
+
+- `#023 Stomp`  
+- `#027 Rolling Kick`  
+- `#029 Headbutt`  
+- `#044 Bite`  
+- `#105 Recover`  
+- `#125 Bone Club`  
+- `#127 Waterfall`  
+- `#135 Soft-Boiled`  
+- `#156 Rest`  
+- `#157 Rock SLide`  
+- `#158 Hyper Fang`  
+- `#164 Substitute`  
+- `#194 Destiny Bond`  
+- `#208 Milk Drink`  
+- `#220 Pain Split`  
+- `#226 Baton Pass`  
+- `#234 Morning Sun`  
+- `#235 Synthesis`  
+- `#236 Moonlight`  
+- `#302 Needle Arm`  
+- `#303 Slack Off`  
+- `#310 Astonish`  
+- `#326 Extrasensory`  
+- `#355 Roost`  
+- `#399 Dark Pulse`  
+- `#403 Air Slash`  
+- `#407 Dragon Rush`  
+- `#428 Zen Headbutt`  
+- `#442 Iron Head`  
+- `#456 Heal Order`  
+- `#531 Heart Stamp`  
+- `#537 Steamroller`  
+- `#556 Icicle Crash`
+
+  `Essentially, this includes every healing move except for Heal Pulse and Swallow, every flinching move except for Sky Attack, Snore, Twister, Fake Out and Thunder/Ice/Fire Fang, as well as Substitute, Destiny Bond, Pain Split and Baton Pass.`
+
+## `Raise User Sp. Atk` {#raise-user-sp. atk}
+
+- `#417 Nasty Plot`
+
+## `Raise User Sp. Def` {#raise-user-sp. def}
+
+- `#133 Amnesia`
+
+## `Raise User Evasion` {#raise-user-evasion}
+
+- `#104 Double Team`  
+- `#107 Minimize`
+
+## `No Miss` {#no-miss}
+
+- `#129 Swift`  
+- `#185 Faint Attack`  
+- `#325 Shadow Punch`  
+- `#332 Aerial Ace`  
+- `#345 Magical Leaf`  
+- `#351 Shock Wave`  
+- `#396 Aura Sphere`  
+- `#443 Magnet Bomb`
+
+## `Lower Target Attack` {#lower-target-attack}
+
+- `#045 Growl`  
+- `#204 Charm`  
+- `#297 Feather Dance`
+
+## `Lower Target Defense` {#lower-target-defense}
+
+- `#039 Tail Whip`  
+- `#043 Leer`  
+- `#103 Screech`
+
+## `Lower Target Speed` {#lower-target-speed}
+
+- `#081 String Shot`  
+- `#178 Cotton Spore`  
+- `#184 Scary Face`  
+- `#490 Low Sweep`  
+- `#527 Electroweb`
+
+## `Lower Target Sp. Def` {#lower-target-sp. def}
+
+- `#313 Fake Tears`  
+- `#319 Metal Sound`
+
+## `Lower Target Accuracy` {#lower-target-accuracy}
+
+- `#028 Sand Attack`  
+- `#108 SmokeScreen`  
+- `#134 Kinesis`  
+- `#148 Flash`
+
+## `Lower Target Evasion` {#lower-target-evasion}
+
+- `#230 Sweet Scent`
+
+## `Haze` {#haze}
+
+- `#114 Haze`
+
+## `Bide` {#bide}
+
+- `#117 Bide`
+
+## `Force Switch` {#force-switch}
+
+- `#018 Whirlwind`  
+- `#046 Roar`
+
+  ### `No Effect (Flag 0)` {#no-effect-(flag-0)-6}
+
+| `Target Team Reserve Count` | `User has... Mold Breaker` | `Guess Target’s Ability` | `Score Change` |
+| :---: | :---: | :---: | :---: |
+| `0` |  |  | `-10` |
+| `1–5` | `TRUE` |  | `+0` |
+|  | `FALSE` | `Suction Cups` | `-10` |
+|  |  | `Magic Bounce` | `-12` |
+|  |  | `Other` | `+0` |
+
+  ### `Expert (Flag 2)` {#expert-(flag-2)-8}
+
+| `Target Turn Count` | `Target side has... Spikes, Stealth Rock, and/or Toxic Spikes` | `Target’s Attack, Defense, Sp. Atk, Sp. Def, and/or evasion stat is... +3 – +6` | `Score Change` |
+| :---: | :---: | :---: | :---: |
+| `0–3` | `TRUE` |  | `+0 (50%) +2 (50%)` |
+|  | `FALSE` | `TRUE` | `+0 (50%) +2 (50%)` |
+|  |  | `FALSE` | `-3` |
+| `4+` |  |  | `+0 (12.5%) +2 (50.0%) +4 (37.5%)` |
+
+## `Conversion` {#conversion}
+
+- `#160 Conversion`
+
+## `Recover HP` {#recover-hp}
+
+- `#105 Recover`  
+- `#135 Softboiled`  
+- `#208 Milk Drink`  
+- `#303 Slack Off`  
+- `#355 Roost`  
+- `#456 Heal Order`
+
+## `Badly Poison Target` {#badly-poison-target}
+
+- `#092 Toxic`
+
+## `Light Screen` {#light-screen}
+
+- `#113 Light Screen`
+
+  ### `Expert (Flag 2)` {#expert-(flag-2)-9}
+
+| `User’s Current HP` | `Target Atk is greater than Target SpAtk` | `Score Change` |
+| :---: | :---: | :---: |
+| `1–49.999%` |  | `-2 (88.2353%) +0 (11.7647%)` |
+| `50–89.999%` | `TRUE` | `-2 (88.2353%) +0 (11.7647%)` |
+|  | `FALSE` | `+0 (25.0980%) +1 (74.9020%)` |
+| `90%-100%` | `TRUE` | `-2 (10.3806%) -1 (77.8547%) +0 ( 1.3841%) +1 (10.3806%)` |
+|  | `FALSE` | `+0 ( 2.9527%) +1 (30.9573%) +2 (66.0900%)` |
+
+## `Rest` {#rest}
+
+- `#156 Rest`
+
+## `OHKO` {#ohko}
+
+- `#012 Guillotine`  
+- `#032 Horn Drill`  
+- `#090 Fissure`  
+- `#329 Sheer Cold`
+
+  ### `No Effect (Flag 0)` {#no-effect-(flag-0)-7}
+
+| `Move effectiveness is... 0×` | `User has... Mold Breaker` | `Guess target’s ability` | `Score Change` |
+| :---: | :---: | :---: | :---: |
+| `TRUE` |  |  | `-10` |
+| `FALSE` | `TRUE` |  | `See next table...` |
+|  | `FALSE` | `Sturdy` | `-10` |
+|  |  | `Other` | `See next table...` |
+
+
+| `User’s level < target’s level` | `Score Change` |
+| :---: | :---: |
+| `TRUE` | `-10` |
+| `FALSE` | `+0` |
+
+  ### `Expert (Flag 2)f` {#expert-(flag-2)f}
+
+| `Score Change` |
+| :---: |
+| `+0 (75%) +1 (25%)` |
+
+## `Two-turn (Standard)` {#two-turn-(standard)}
+
+- `#013 Razor Wind`  
+- `#130 Skull Bash`
+
+  ### `Expert (Flag 2)` {#expert-(flag-2)-10}
+
+| `Move Effectiveness` | `User has... Power Herb` | `Target has... Protect and/or Detect` | `User’s Current HP` | `Score Change` |
+| :---: | :---: | :---: | :---: | :---: |
+| `0×1/4×1/2×` |  |  |  | `-2` |
+| `1×2×4×` | `TRUE` |  |  | `+2` |
+|  | `FALSE` | `TRUE` |  | `-2` |
+|  |  | `FALSE` | `1–38%` | `-1` |
+|  |  |  | `38.001–100%` | `+0` |
+
+## `Direct Damage (Half)` {#direct-damage-(half)}
+
+- `#162 Super Fang`
+
+
+| `Target’s current HP` | `Score Change` |
+| :---: | :---: |
+| `0-59.999%` | `-1` |
+| `60-100%` | `+0` |
+
+  ### 
+
+## `Direct Damage (40 HP)` {#direct-damage-(40-hp)}
+
+- `#082 Dragon Rage`
+
+## `Trapping` {#trapping}
+
+- `#020 Bind`  
+- `#035 Wrap`  
+- `#083 Fire Spin`  
+- `#128 Clamp`  
+- `#250 Whirlpool`  
+- `#328 Sand Tomb`  
+- `#463 Magma Storm`
+
+  ### `Expert (Flag 2)` {#expert-(flag-2)-11}
+
+| `Target has... Bad Poison, Curse, Perish Song, and/or Infatuation` | `Score Change` |
+| :---: | :---: |
+| `TRUE` | `+0 (50%) +1 (50%)` |
+| `FALSE` | `+0` |
+
+## `Increased Critical Hit Ratio` {#increased-critical-hit-ratio}
+
+- `#002 Karate Chop`  
+- `#075 Razor Shell`  
+- `#152 Crabhammer`  
+- `#163 Slash`  
+- `#177 Aeroblast`  
+- `#238 Cross Chop`  
+- `#299 Blaze Kick`  
+- `#314 Air Cutter`  
+- `#342 Poison Tail`  
+- `#348 Leaf Blade`  
+- `#400 Night Slash`  
+- `#421 Shadow Claw`  
+- `#427 Psycho Cut`  
+- `#440 Cross Poison`  
+- `#444 Stone Edge`  
+- `#454 Attack Order`  
+- `#460 Spacial Rend`  
+- `#529 Drill Run`
+
+  ### `Expert (Flag 2)` {#expert-(flag-2)-12}
+
+| `Move Effectiveness` | `Score Change` |
+| :---: | :---: |
+| `0×1/4×1/2×` | `+0` |
+| `1×` | `+0 (75%) +1 (25%)` |
+| `2×4×` | `+0 (50%) +1 (50%)` |
+
+## `Semi-Invulnerable (Except Shadow Force)` {#semi-invulnerable-(except-shadow-force)}
+
+- `#019 Fly`  
+- `#091 Dig`  
+- `#291 Dive`  
+- `#340 Bounce`
+
+  ### `Expert (Flag 2)` {#expert-(flag-2)-13}
+
+| `User has... Power Herb` | `Target has... Protect and/or Detect` | `Move Effectiveness` | `User is faster than Target` | `User’s Current HP` | `User has... Custap Berry` | `Score Change` |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| `TRUE` |  |  |  |  |  | `+2` |
+| `FALSE` | `TRUE` |  |  |  |  | `-1` |
+|  | `FALSE` | `0×1/4×1/2×` |  |  |  | `+1` |
+|  |  | `1× 2× 4×` | `FALSE` | `1–24%` | `TRUE` | `+0 (31.25%) +1 (68.75%)` |
+|  |  |  |  |  | `FALSE` | `See next table...` |
+|  |  |  |  | `24.001–100%` |  |  |
+|  |  |  | `TRUE` |  |  |  |
+
+| `Target has... Bad Poison, Curse, and/or Leech Seed` | `Weather` | `User’s Type` | `Score Change` |
+| :---: | :---: | :---: | :---: |
+| `TRUE` |  |  | `+0 (31.25%) +1 (68.75%)` |
+| `FALSE` | `Sandstorm` | `Ground, Rock, or Steel` | `+0 (31.25%) +1 (68.75%)` |
+|  |  | `Other` | `See next table...` |
+|  | `Hail` | `Ice` | `+0 (31.25%) +1 (68.75%)` |
+|  |  | `Other` | `See next table...` |
+|  | `Sun, Rain, or None` |  | `See next table...` |
+
+| `User is slower than Target` | `Target’s previous move was... Mind Reader or Lock-On` | `Score Change` |
+| :---: | :---: | :---: |
+| `TRUE` |  | `+0` |
+| `FALSE` | `TRUE` | `+0` |
+|  | `FALSE` | `+0 (31.25%) +1 (68.75%)` |
+
+## `Focus Punch` {#focus-punch}
+
+- `#264 Focus Punch`
+
+  ### `No Effect (Flag 0)` {#no-effect-(flag-0)-8}
+
+| `Move effectiveness is... 0×` | `Guess target’s ability` | `User’s ability is... Mold Breaker` | `Move Effectiveness` | `Score Change` |
+| :---: | :---: | :---: | :---: | :---: |
+| `TRUE` |  |  |  | `-10` |
+| `FALSE` | `Wonder Guard` |  |  | `+0` |
+|  | `Other` | `TRUE` |  | `+0` |
+|  |  | `FALSE` | `1/4× 1/2× 1×` | `-10` |
+|  |  |  | `2× 4×` | `+0` |
+
+  ### `Evaluate (Flag 1)` {#evaluate-(flag-1)-1}
+
+| `Move will KO target` | `Is strongest move` | `Move effectiveness is... 4×` |  | `Score Change` |
+| :---: | :---: | :---: | :---: | :---: |
+| `TRUE` |  |  |  | `+0 (66.4063%) +4 (33.5938%)` |
+| `FALSE` | `TRUE` | `TRUE` |  | `-2 (25.0244%) +0 (61.2793%) +2 (13.6963%)` |
+|  |  | `FALSE` |  | `-2 (80.0781%) +0 (19.9219%)` |
+|  | `FALSE` |  |  | `-1` |
+
+  ### 
+
+# `Contributing`
+
+# `Contributing`
+
+`There are a lot of moves with a lot of specialized logic, so any assistance in indexing the flowcharts is greatly appreciated!`
+
+`For access to editing this document, contact DaSquyd on Discord.`
+
+# **`Important Notes`**
+
+`This guide is purely for adding new flowcharts. It does not provide details on the process of analyzing the AI logic for any given move.`
+
+# **`Getting Started`**
+
+`First, ensure that the Mermaid Google Docs Add-on is installed:`
+
+| `![][image18]` |
+| :---: |
+
+`If it’s not, select “Add-ons”, “Get Add-ons”, and search for “Mermaid - Diagramming and charting tool”.`
+
+| `![][image19]` |
+| :---: |
+
+# **`Creating a Flowchart`**
+
+`Head over to Mermaid Chart to get started with flowchart creation. The flowcharts should follow a standard format much like the following example:`
+
+| `--- config:   theme: redux-dark   layout: dagre   look: neo --- flowchart TD     Start(["Start"])     TargetsAccuracyStatStage{"Target's         Accuracy         Stat Stage"}     UsersCurrentHP{"User's         Current         HP"}     UserIsSlowerThanTarget{"User is         slower than         target"}     MidA["-1"]     MidB["-2 (50%)         -2 (50%)"]     EndA["-3 (80.4688%, common)         +0 (19.5313%, common)"]     EndB["-1 (80.4688%, common)         +0 (19.5313%, common)"]     EndC["+0 (50%, common)         +1 (50%, common)"]     EndD["+0 (25%, common)         +1 (50%, common)         +2 (25%, common)"]     Start --> TargetsAccuracyStatStage     TargetsAccuracyStatStage -- -6 to 0 --> UsersCurrentHP     TargetsAccuracyStatStage -- +1 to +3 --> MidA --> UsersCurrentHP     TargetsAccuracyStatStage -- +4 to +6 --> MidB --> UsersCurrentHP     UsersCurrentHP -- ≤30% --> EndD     UsersCurrentHP -- ≥80% --> UserIsSlowerThanTarget     UsersCurrentHP -- \>50% and <80% --> EndB     UsersCurrentHP -- \>30% and ≤50% --> EndC     UserIsSlowerThanTarget -- FALSE --> EndA     UserIsSlowerThanTarget -- TRUE --> EndB` |
+| :---- |
+
+`On the site it should look something like this:`
+
+| `![][image20]` |
+| :---- |
+
+`You can find Mermaid’s full documentation here.`
+
+## `Best Practices`
+
+- `Use the “redux-dark” theme with “dagre” layout and “neo” look.`  
+- `Follow existing naming conventions.`  
+- `Avoid crossing paths whenever possible.`  
+- `Split text across multiple lines to avoid large nodes.`  
+  - `For decisions, aim for the center line to be the largest to fit the diamond shape best.`  
+- `Align numbers vertically for better readability (+0 instead of just 0)`
+
+# **`Importing`**
+
+`To import the flowchart to this document after you’ve designed it to your liking, first press the “Export” button in the top bar, on the right.`
+
+| `![][image21]` |
+| :---: |
+
+`This should bring up a window like the following:`
+
+| `![][image22]` |
+| :---: |
+
+`Next, set the “Background color” to transparent:`
+
+| `![][image23]` |
+| :---: |
+
+`Then, copy the image by clicking the copy button in the top right corner of the preview:`
+
+| `![][image24]` |
+| :---: |
+
+`In this document, pase the copied image at the intended location.`
+
+| `![][image25]` |
+| :---: |
+
+`Head back to Mermaid and copy the code. Next, back in this document, go to “Extensions” and then “Mermaid - ...” and finally “New chart”.`
+
+| `![][image26]` |
+| :---: |
+
+`This will open the graph editor. Paste the copied code into the section labeled “source code of your graph”.`
+
+| `![][image27]` |
+| :---: |
+
+`All we’re actually using this for is to observe the size value in pixels provided by this tool. In the future, we’ll likely have a better way of handling this, but for now, take a look at the bottom of the window:`
+
+| `![][image28]` |
+| :---: |
+
+`We need to remember the first value, 878 in this case. Hit the “Cancel” button in the bottom right or the exit button in the top right to close this window.`
+
+`Select the image that you pasted in earlier by left-clicking. This should reveal an “Image options” button in the toolbar that should be clicked.`
+
+| `![][image29]` |
+| :---: |
+
+`In the image options, open up the dropdown titled “Size & rotation”. Set the width to be 1/100 of the number from earlier. In this case, 878 becomes 8.78 inches.`
+
+| `![][image30]` |
+| :---: |
+
+`We do this to maintain a consistent scale across all images. We also avoid using the Mermaid extension to generate the images because they simply don’t look as good as the ones generated from the webapp. As previously mentioned, we might change this process in the future to streamline it.`

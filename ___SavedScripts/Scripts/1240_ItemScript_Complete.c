@@ -1483,6 +1483,7 @@ void Sequence123()
 	End();
 }
 
+// TOXIC ORB 
 void Sequence124()
 {
 	LockAll();
