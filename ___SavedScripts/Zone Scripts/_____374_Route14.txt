@@ -418,8 +418,7 @@ public class MainEvents {
         Message.CloseAll();
         Global2805(192, 1);
         Global2805(556, 1);
-        Global2805(389, 1);
-        Global2805(530, 1);
+        Global2805(385, 1);
         EventFlags.Set(1575);
         EventFlags.Set(546);
         Message.ActorEx(1024, 22, 5, 0, 0);

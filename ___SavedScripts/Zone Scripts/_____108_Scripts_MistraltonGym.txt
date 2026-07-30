@@ -306,6 +306,7 @@ public class MainEvents {
 		Trainer.FlagGet(151);
 		Trainer.FlagGet(152);
 		Trainer.FlagGet(332);
+		Trainer.FlagGet(109);
 		EventFlags.Set(2419);
 
         // Deactivates all Sabrina related events 

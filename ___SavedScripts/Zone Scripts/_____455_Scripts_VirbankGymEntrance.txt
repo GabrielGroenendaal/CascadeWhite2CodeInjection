@@ -159,7 +159,7 @@ public class MainEvents {
             if (!EventFlags.Get(1520 + 765)){
                 isAnythingLeft += 1;
             }
-            if (Bag.GetItemQuantity(538) == 0){
+            if (!EventFlags.Get(307) || !EventFlags.Get(308) || !EventFlags.Get(309)){
                 isAnythingLeft += 1;
             }
             if (isAnythingLeft > 0){
@@ -167,11 +167,11 @@ public class MainEvents {
                 Message.Actor(1024, 8, 0, 0);
                 Input.LastKeyWait();
                 Message.CloseAll();
-                if (Bag.GetItemQuantity(538) == 0){
-                    Message.System(11, 2);
+                if (!EventFlags.Get(307) || !EventFlags.Get(308) || !EventFlags.Get(309)){
+                    Message.System(10, 2);
                 }
                 if (!EventFlags.Get(1520 + 765)){
-                    Message.System(10, 2);
+                    Message.System(11, 2);
                 }
                 Message.CloseAll();
             } 

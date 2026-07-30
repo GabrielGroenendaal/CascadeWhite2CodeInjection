@@ -1,11 +1,13 @@
 import messages.script.Msg0666.MSGID;
 
 import Base;
+import event.Battle;
 import event.EVCamera;
 import event.ObjInit;
 import event.actors.Actor;
 import event.actors.Player;
 import event.dialogs.Message;
+import event.dialogs.YesNoWin;
 import pokescript.vm.Math;
 import pokescript.vm.StackCtrl;
 import pokescript.vm.VM;
@@ -517,6 +519,66 @@ public class MainEvents {
 		Actor.UnpauseAll();
 	}
 
+	public static void main_9(){
+        int textId;
+        int yesNo;
+        int isVictory;
+        Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+        int Candice_Entity = 20; // CHANGE THIS LATER
+        int trainerId = 186; // CHANGE THIS LATER
+
+		if (EventFlags.Get(1520 + trainerId)) {
+			Message.ActorEx(1024, 67, Candice_Entity, 0, 0);
+			Message.CloseActor();
+			goto Label_EndCandiceScript;
+		}
+		Message.ActorEx(1024, 63, Candice_Entity, 0, 0);
+		yesNo = YesNoWin.Show();
+		if (yesNo != 0) {
+			Message.ActorEx(1024, 64, Candice_Entity, 0, 0);
+			Message.CloseActor();
+			goto Label_EndCandiceScript;
+		}
+		Message.ActorEx(1024, 65, Candice_Entity, 0, 0);
+		Message.CloseActor();
+
+		Battle.CallTrainerBattle(trainerId, 0, 0); // REPLACE WITH ROUGHNECK TRAINER ID 
+		isVictory = Battle.IsTrainerVictory();
+		if (isVictory != 1) {
+			Battle.CallTrainerLose();
+		}
+        Battle.EndTrainerBattle();
+		Message.ActorEx(1024, 66, Candice_Entity,  0, 0);
+		Message.CloseActor();
+		
+		Global2805(397, 1);
+        Global2805(199, 1);
+        Global2805(563, 1);
+		Message.ActorEx(1024, 67, Candice_Entity, 0, 0);
+		Message.CloseActor();
+		EventFlags.Set(1520 + trainerId);
+
+		Label_EndCandiceScript:
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
+	
+	
+	// Steelix
+    public static void main_10() {
+        Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Sound.PVPlay(208, 0);
+		Message.Spiked(62, 1);
+		Sound.PVWait();
+		Message.CloseAll();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+    }
+
 	static void sub_0036() { // @ 0x36
 		if (EventWorks.Get(16646) == 3) {
 			return;
@@ -635,6 +697,7 @@ public class MainEvents {
     static meta void ShowQuestionMark(int npcId) : VActionSequence {
             Action009f(1);
     }
+	static meta void Global2805(int a1, int a2) : VGlobalCall[2805];
 	static native void Action0001(int amount) : 0x1;
 	static native void Action000c(int amount) : 0xc;
 	static native void Action000d(int amount) : 0xd;

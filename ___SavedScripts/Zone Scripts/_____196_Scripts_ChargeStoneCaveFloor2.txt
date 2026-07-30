@@ -178,25 +178,29 @@ public class MainEvents {
 		Message.CloseAll();
 		
 		Battle.CallTrainerBattle(593, 0, 0);
-		Battle.EndTrainerBattle();
 		v0 = Battle.IsTrainerVictory();
 
 		if (v0 != 1) {
 			Battle.CallTrainerLose();
 		}
-		WordSet.LoadPlayerName(0);
-		Message.ActorEx(1024, 8, 0, 0, 0);
-		Input.LastKeyWait();
-		Message.CloseActor();
+		Battle.EndTrainerBattle();
 
 		TurnSouth(0);
 		Actor.WaitActionFinish();
 		Message.ActorEx(1024, 9, 0, 0, 0);
 		Input.LastKeyWait();
 		Message.CloseActor();
+		TurnWest(0);
+		Actor.WaitActionFinish();
+		WordSet.LoadPlayerName(0);
+		Message.ActorEx(1024, 8, 0, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+
+        // CHANGE LATER
+        Global2805(354, 1);
 
 		if (EventWorks.Get(16450) == 6){
-			TurnWest(0);
 			ShowEllipses(255);
 			Actor.WaitActionFinish();
 			Runtime.Sleep(32);

@@ -984,7 +984,7 @@ const u8 WhiteListedPokemon[651]{
     12, // PK222_CORSOLA = 0xDE,
     8, // PK223_REMORAID = 0xDF, // NOT IMPLEMENTED YET
     8, // PK224_OCTILLERY = 0xE0, // NOT IMPLEMENTED YET
-    6, // PK225_DELIBIRD = 0xE1,
+    8, // PK225_DELIBIRD = 0xE1,
     1, // PK226_MANTINE = 0xE2,
     4, // PK227_SKARMORY = 0xE3,
     4, // PK228_HOUNDOUR = 0xE4,

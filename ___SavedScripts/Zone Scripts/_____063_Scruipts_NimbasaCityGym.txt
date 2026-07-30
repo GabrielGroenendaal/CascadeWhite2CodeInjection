@@ -729,7 +729,7 @@ public class MainEvents {
 		Message.ActorEx(1024, 3, 4, 2, 0);
 		Message.CloseActor();
 		Base.CMD_25F(0);
-		Global2805(400, 1);
+		Global2805(359, 1);
 		Base.CMD_25F(2);
 		Message.ActorEx(1024, 4, 4, 2, 0);
 		Message.WaitAdvance();
@@ -923,6 +923,7 @@ public class MainEvents {
 	static void clearGatekeepers(){
         
         // Despawns Erika and her Pokemon
+		EventFlags.Set(1520 + 116); // Lass Patty
         EventFlags.Set(3047);
         if (EventFlags.Get(1520 + 767)){
             EventWorks.Set(16521, 4);

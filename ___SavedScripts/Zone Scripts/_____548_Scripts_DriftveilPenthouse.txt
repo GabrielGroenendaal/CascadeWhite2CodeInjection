@@ -268,7 +268,7 @@ public class MainEvents {
         Actor.WaitActionFinish();
         Message.ActorEx(1024, 28, 5, 0, 0);
         Message.CloseAll();
-        Global2805(367, 1);
+        Global2805(332, 1);
 
         Message.ActorEx(1024, 29, 5, 0, 0);
         Message.CloseAll();

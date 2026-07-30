@@ -112,6 +112,13 @@ public class MainEvents {
         if (!EventFlags.Get(1520 + 770) != 1){
             anythingLeft += 1;
         }
+
+        // JASMINE 
+        // CHANGE LATER 
+		if (!EventFlags.Get(1520 + 186) != 1){
+            anythingLeft += 1;
+        }
+
         if (anythingLeft > 0){
             Message.Actor(1024, 16, 0, 0);
 		    Input.LastKeyWait();
@@ -137,7 +144,10 @@ public class MainEvents {
             if (EventWorks.Get(16472) != 2){
                 Message.System(22, 2);
             }
-
+            // JASMINE 
+            if (!EventFlags.Get(1520 + 186) != 1){
+				Message.System(23, 2);
+			}
             Message.CloseAll();
         } 
         else {
@@ -273,7 +283,7 @@ public class MainEvents {
 		Message.CloseSystem();
 		Message.Actor(1024, 3, 0, 0);
 		Message.CloseActor();
-		Global2805(425, 1);
+		Global2805(422, 1);
 		Message.Actor(1024, 4, 0, 0);
 		Message.Actor(1024, 5, 0, 0);
 		Message.CloseActor();
@@ -352,6 +362,9 @@ public class MainEvents {
         
 		// Level Cap Update
 		EventWorks.Set(16466, 67);
+
+        // JASMINE DESPAWNS 
+        EventFlags.Set(591); // CHANGE LATER 
 
         EventFlags.Set(3053);
         if (EventFlags.Get(1520 + 770)){

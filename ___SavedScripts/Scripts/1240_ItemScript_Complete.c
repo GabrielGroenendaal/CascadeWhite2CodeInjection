@@ -425,6 +425,7 @@ void Sequence34()
 }
 
 /* Normal Gem x2 - Route 16 */
+/* NOT USED */
 void Sequence35()
 {
 	LockAll();
@@ -436,11 +437,11 @@ void Sequence35()
 	End();
 }
 
-/* TM49 Snore - Route 16 */
+/* TM95 Torment - Route 16 */
 void Sequence36()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 376);
+	SetVarEqVal(0x800C, 620);
 	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
@@ -545,12 +546,12 @@ void Sequence44()
 }
 
 
-/* RELIC PASSAGE WEST - Blue Shard x3 */
+/* RELIC PASSAGE WEST - Blue Shard x2 */
 void Sequence45()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 73);
-	SetVarEqVal(0x800D, 3);
+	SetVarEqVal(0x800D, 2);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -677,11 +678,11 @@ void Sequence55()
 	End();
 }
 
-/* Shuca Berry x1 - Lostlorn Forest */
+/* TM90 Incinerate - Flocessy Ranch */
 void Sequence56()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 191);
+	SetVarEqVal(0x800C, 417);
 	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
@@ -737,11 +738,11 @@ void Sequence60()
 	End();
 }
 
-/* Haban Berry x1 - Lostlorn Forest */
+/* TM49 Pluck - Aspertia City */
 void Sequence61()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 197);
+	SetVarEqVal(0x800C, 376);
 	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
@@ -852,11 +853,11 @@ void Sequence69()
 	End();
 }
 
-/* TM90: Draining Kiss - Driftveil City */
+/* TM20 Hyper Voice - Driftveil City */
 void Sequence70()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 417);
+	SetVarEqVal(0x800C, 347);
 	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
@@ -1258,6 +1259,7 @@ void Sequence104()
 }
 
 /* CELESTIAL ROOFTOP - BLUE Shard (x10) */
+/* NOT USED */
 void Sequence105()
 {
 	LockAll();
@@ -1998,12 +2000,12 @@ void Sequence169()
 	End();
 }
 
-/* BLUE SHARD X10 - ROUTE 21 */
+/* BLUE SHARD X5 - ROUTE 21 */
 void Sequence170()
 {
 	LockAll();
 	SetVarEqVal(0x800C, 73);
-	SetVarEqVal(0x800D, 10);
+	SetVarEqVal(0x800D, 5);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();
@@ -2062,10 +2064,11 @@ void Sequence174()
 	End();
 }
 
+/* TM STONE EDGE - ROUTE 22 */
 void Sequence175()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 245);
+	SetVarEqVal(0x800C, 398);
 	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();
@@ -2648,6 +2651,7 @@ void Sequence226()
 }
 
 /* BLUE Shard x10 - Clay Tunnel */
+/* NOT USED *.
 void Sequence227()
 {
 	LockAll();
@@ -4378,12 +4382,12 @@ void Sequence375()
 	End();
 }
 
-/* Trickster Herb (x1) - Driftveil Market */
+/* Micle Berry (x2) - Driftveil Market */
 void Sequence376()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 136);
-	SetVarEqVal(0x800D, 1);
+	SetVarEqVal(0x800C, 209);
+	SetVarEqVal(0x800D, 2);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();

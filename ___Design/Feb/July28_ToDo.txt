@@ -8,12 +8,159 @@
 */
 
 
+New Trainers: 
+    107: Harlequin Chester
+    109: Pilot Leonard (Mistralton Gym)
+    116: Lass Patty
+    186: Jasmine (Route 21)
+    656: Backpacker Corin (Reversal Mountain)
+    213: Backpacker Clifford (Route 22)
+    127: Policeman Jeff
 
-- Tissue Paper 
-- Dentist Appointment 
+TO DO LIST FINAL: 
+    Step 1: Check the trainer text in the current build to make sure we didn't fuck it up 
+    Step 2: 
+        Implement the TM Icon Table Fix 
+        Implement the overlay_36 fixes 
+        Update the Mastersheet 
+        Update the personal table in pokeweb 
+        Implement the D2_FieldOverlays changes 
+    Step 3: 
+        Open the rom up in Pokeweb Local 
+        Change all the TMs we want.
+        Export and then put that arm9 in our CTRMap project folder 
+        Export from CTRMap and confirm it updated in a new project 
+        Update all the TM Item Descriptions to be accurate for the new moves
+    Step 4: 
+        Open up the rom up in Pokeweb Serverless 
+        Find Trainers For 
+            Elesa Hail Trainer 
+            Driftveil Clown 
+            Mistralton Rain Trainer 
+            Undella Policeman 
+            Jasmine
+            Route 22 Stone Edge Trainer 
+            Reversal Mountian Hail Trainer 
+        All of these except for Jasmine are going to need Text Updates 
+        Export from Pokeweb Serverless then import the 
+            a/0/8/9
+            a/0/9/0
+            a/0/9/1
+            a/0/9/2
+            a/0/0/2 file 381 
+        Export from CTRMap and open up in local pokeweb to confirm everything is okay 
+    Step 5: 
+        In CTRMap make all the item placement changes we want to make 
+    Step 6: 
+        In CTRMap, implement all the scripts we've written out. 
+        We will need to make slight text edits or additions for: 
+            Chargestone Cave Bianca 
+            Reversal Mountain Benga 
+            Driftveil Market Dragon Pulse giver 
+            Nimbasa Gym TM Reward 
+            Driftveil Gym TM Reward 
+            Humilau Gym TM Reward 
+            Janine Battle TM Reward 
+        Make sure to add lockouts for: 
+            Mistralton Rain Trainer after beating Skyla 
+            Jasmine after being Marlon
+    Step 7: 
+        Implement all the new teams
 
-- Move Tutor & TM Rework 
+[ ITEM AND TRAINER CHANGES ]
+    Cheren Split: 
+        TM90 Incinerate added to Flocessy Ranch (Item Script 56)
+        TM49 Pluck added to Aspertia Classroom (Item Script 61)
+    Elesa Split: 
+        10x Red Shards removed from Deep Lostlorn Forest (Script 66)
+        2x Normal Gems removed from Route 16 (Script 35)
+    Clay Split: 
+        10x Blue Shards removed from Clay Tunnel (sCRIPT 227)
+    Skyla Split: 
+        TM32 Dazzling Gleam removed from Route 7 (Script 102)
 
+
+[ MOVE TUTOR & TM REWORK ]
+    Protect -> Detect: 
+        This justifies a much smaller distribution. We can also prune detect from a bunch of learnsets. 
+    
+    Helping Hand: 
+        Reduce distribution. Should only be a small offset. 
+    
+    Follow Me: 
+        Reduce Distribution. Hideously powerful move. 
+
+    Brutal Swing: 
+        This becoming a tutor move means we can drop it fromm a bunch of learnsets like Grumpigs. 
+
+    NEW TRAINERS: 
+
+        Elesa Split: 
+            Elesa Gym Hail Fight: (Guards the 10x Red Shards) 
+                Porygon-2 @ Ice Gem (Ability: Trace) (Double-Edge, Blizzard, Helping Hand, Thunderbolt)
+                Illumise @ Icy Rock (Ability: Magic Guard) (Moonblast, Lunge, Wild Charge, Reflect)
+                Rotom-Frost @ Blunder Policy (Ability: Refrigerate) (Thunderbolt, Uproar, Will-o-Wisp, Shadow Ball)
+                Ampharos @ Shuca Berry (Ability: Fluffy) (Ice Punch, Thunderpunch, Fire Punch, Dual Chop)
+
+        Clay Split: 
+            Clown (Guards TM62 Acrobatics in Driftveil City)
+                Delibird @ Normal Gem (Ability: Unburden) (Fake Out, Relic Song, Ice Beam, Dazzling Gleam)
+                Scizor @ Steel Gem (Ability: Unburden) (Bullet Punch, Vise Grip, Acrobatics, Lunge)
+                Slaking @ Iron Ball (Ability: Truant) (Fling, Secret Power, Recycle)
+                Pelipper @ Apicot Berry (Ability: Unburden) (Stockpile, Scald, Air Slash, Roost)
+        
+        Skyla Split: 
+            Mistralton Gym Rain Team (Guards TM88 Aqua Tail)
+                Jumpluff @ Coba Berry (Ability: Skill Link) (Weather Crash, Needle Arm, Sleep Powder, Razor Winds)
+                Simipour @ Air Balloon (Ability: Unburden) (Water Spout, Muddy Water, Acrobatics, Blizzard)
+                Scizor @ Metal Coat (Ability: Technician) (Bullet Punch, Crabhammer, Vise Grip, Helping Hand)
+                Floatzel @ Choice Band (Ability: Reckless) (Double-Edge, Wave Crash, Aqua Tail)
+                Mantine @ Wacan Berry (Ability: Rain Dish) (Scald, Air Slash, Ice Beam, Protect)
+
+        Marlon Split: 
+            Reversal Mountain Hail Battle: (Guards 5x Blue Shards)
+                Delibird @ Babiri Berry (Ability: Ice Scales) (Icicle Crash, Spikes, Heart Stamp, Healing Wish)
+                Weavile @ Chople Berry (Ability: Technician) (Pursuit, Fury Swipes, Icy Wind, Slash)
+                Dragonite @ Leftovers (Ability: Thick Fat) (Blizzard, Twister, Air Slash, Earthquake)
+                Empoleon @ Chople Berry (Ability: Ice Body) (Scald, Substitute, Toxic, Protect)
+                Mamoswine @ Assault Vest (Ability: Berserk) (High Horsepower, Ice Beam, Zen Headbutt, Ice Shard)
+
+            Reversal Mountain Sand Battle: (Guards TM71 Stone Edge)
+                Ninjask @ Focus Sash (Ability: Sand Stream) (U-Turn, Dual Wingbeat, 1st Impression, Weather Crash)
+                Krookadile @ Life Orb (Ability: Sand Rush) (Brutal Swing, Pursuit, Earthquake, Stone Edge)
+                Gigalith @ Shuca Berry (Ability: Sand Force) (Ancient Power, Earth Power, Steel Beam, Rock Polish)
+                Cacturne @ Colbur Berry (Ability: Sand Veil) (Leaf Storm, Phantom Strike, Weather Ball, Swagger)
+                Steelix @ Leftovers (Ability: Filter) (Gyro Ball, Earthquake, Rock Wrecker, Ice Fang)
+
+            Strange House Psychic: (Guards Teleport TM)
+                Swoobat @ Light Clay (Ability: Amplifier) (Alluring Voice, Reflect, Light Screen, Tailwind)
+                Kadabra @ Brightpowder (Ability: Magic Guard) (Psycho Boost, Zap Cannon, Focus Blast, Hypnosis)
+                Medicham @ Choice Scarf (Ability: Huge Power) (Hi Jump Kick, Psycho Boost)
+                Haunter @ Brightpowder (Ability: Neutralizing Gas) (Nightmare, Sludge Wave, Destiny Bond, Hypnosis)
+                Venemoth @ Colbur Berry (Ability: Tenacity) (Stored Power, Quiver Dance, Iron Defense, Roost)
+
+            Undella Town Police Officer (Guards TM70 Iron Tail)
+
+
+[ BALANCE ]
+    Diglett: 
+        Should have 120 Speed
+    
+    Dugtrio: 
+        Should have 150 Speed 
+
+    Look at Distribution for: 
+        Retaliate (it's now 85 BP, works as a good mid tier normal move)
+    
+    Dragon Pulse: 
+        Double check if we gave this a secondary effect 
+    
+    Delibird: 
+        +10 Atk 
+        +10 SpA 
+        -20 Spe 
+        Abil 3: Unburden 
+        Chance of Abil 3: 20%
 
 [ AI SCRIPTS ]
 
@@ -30,8 +177,6 @@
     Soak: 
         - This should have some kind of expert AI for it. 
     
-    Explosion / Self Destruct: 
-        - Make sure the AI can't go for it at maximum health. 
 
     Endure: 
         Let's look this over and see if it looks correct. 
@@ -47,8 +192,6 @@
             - Lucky Chant 
         
         A Pokémon held item that extends the\nduration of side effects like Tailwind,\nReflect or Safeguard used by the holder.
-    
-    The AI won't see Resist Berries anymore. 
 
 
 [ ENCOUNTERS ]
@@ -66,26 +209,28 @@
             - Wormadam-Trash 
 
 
-
-[ BALANCE ]
-    Diglett: 
-        Should have 120 Speed
-    
-    Dugtrio: 
-        Should have 150 Speed 
-    
-
 [ TRAINERS ]
 
+    Backers Ava & Aya 
+        Add Lopunny's Lum Berry 
+        Add Braviary's Rowap Berry 
+    
+
+    Motor Cyclist Duke: 
+        Scolipede -> Tentacruel @ Poison Gem (Ability: Corrosion) (Octazooka, Smog, Baneful Bunker, Giga Drain)
+        Wigglytuff (Flamethrower -> Helping Hand)
+    
+    Janine: 
+        Kecleon: 
+            Shadow Punch -> Shadow Claw 
 
     Harlequin Pagliacci 
         Lower All levels to 27 except Spheal 
         -Atk nature on Cubone 
         neutral nature on ZIgzagoon 
         Replace Leech Life with Facade on Spinarak 
-        Remove Spinarak's item 
+        Replace Spinarak's item with a Eject Button 
 
-    Harlequin Yoncy 
     Mons that aren't distributed well atm: 
         Foongus / Amoongus 
         Cottonee / Whimsicott 
@@ -95,7 +240,6 @@
         Accelgor (doesn't show up at all)
 
    
-        
     Later Stuff: 
         Chargestone Hugh: 
         (Leave all this alone until we can test it ourselves though)
@@ -178,33 +322,6 @@
             Farfetch'd @ Stick (Ability: Rattled) (Brutal Swing, Drill Peck, Leaf Blade, Secret Sword)
             Scrafty @ Weakness Policy (Ability: Intimidate) (Brutal Swing, Fake Out, Hi Jump Kick, Head Smash)
             Crawdaunt @ Brightpowder (Ability: Adaptability) (Brutal Swing, Crabhammer, Aqua Jet, Icy Wind)
-        
-        Reversal Mountain Hail Battle: (Guards TM68 Avalanche)
-            Delibird @ Babiri Berry (Ability: Ice Scales) (Icicle Crash, Spikes, Heart Stamp, Healing Wish)
-            Weavile @ Chople Berry (Ability: Technician) (Pursuit, Fury Swipes, Icy Wind, Slash)
-            Dragonite @ Leftovers (Ability: Thick Fat) (Blizzard, Twister, Air Slash, Earthquake)
-            Empoleon @ Chople Berry (Ability: Ice Body) (Scald, Substitute, Toxic, Protect)
-            Mamoswine @ Assault Vest (Ability: Berserk) (High Horsepower, Ice Beam, Ancient Power, )
-
-        Reversal Mountain Sand Battle: (Guards TM71 Stone Edge)
-            Ninjask @ Focus Sash (Ability: Sand Stream) (U-Turn, Dual Wingbeat, 1st Impression, Weather Crash)
-            Krookadile @ Life Orb (Ability: Sand Rush) (Brutal Swing, Pursuit, Earthquake, Stone Edge)
-            Gigalith @ Shuca Berry (Ability: Sand Force) (Ancient Power, Earth Power, Steel Beam, Rock Polish)
-            Cacturne @ Colbur Berry (Ability: Sand Veil) (Leaf Storm, Phantom Strike, Weather Ball, Swagger)
-            Steelix @ Leftovers (Ability: Filter) (Gyro Ball, Earthquake, Rock Wrecker, Ice Fang)
-
-        Strange House Psychic: (Guards Dark Pulse TM)
-            Swoobat @ Light Clay (Ability: Amplifier) (Alluring Voice, Reflect, Light Screen, Tailwind)
-            Kadabra @ Brightpowder (Ability: Magic Guard) (Psycho Boost, Zap Cannon, Focus Blast, Hypnosis)
-            Medicham @ Choice Scarf (Ability: Huge Power) (Hi Jump Kick, Psycho Boost)
-            Haunter @ Brightpowder (Ability: Neutralizing Gas) (Nightmare, Sludge Wave, Destiny Bond, Hypnosis)
-            Venemoth @ Colbur Berry (Ability: Tenacity) (Stored Power, Quiver Dance, Iron Defense, Roost)
-
-        Elesa Gym Hail Fight: 
-            Porygon-2 @ Ice Gem (Ability: Trace) (Double-Edge, Blizzard, Helping Hand, Thunderbolt)
-            Illumise @ Icy Rock (Ability: Magic Guard) (Moonblast, Lunge, Wild Charge, Reflect)
-            Rotom-Frost @ Blunder Policy (Ability: Refrigerate) (Thunderbolt, Uproar, Will-o-Wisp, Shadow Ball)
-            Ampharos @ Shuca Berry (Ability: Fluffy) (Ice Punch, Thunderpunch, Fire Punch, Dual Chop)
             
         Elesa Gym Rain Fight: 
             Servine @ Eviolite (Ability: Adaptability) (Thunder, Leaf Storm, Protect, Hurricane)
@@ -212,23 +329,6 @@
             Eelektrik @ Life Orb (Ability: Swift Swim) (Thunder, Gunk Shot, Aqua Tail, Toxic Spikes)
             Forretress @ Electric Gem (Ability: Bulletproof) 
         
-Plan: 
-    I don't think I should do the TM and move tutor revamp until I get some more proper playtesting in. 
-
-    I'm actually very confident regarding the Tutor changes. Maybe I might want to keep the tail moves (aqua and iron) on the tutors but otherwise.
-
-    The TM changes and distribution across the game is something I'm less certain about. The main questions I have are: 
-        - Is there enough value in having the spread low accuracy moves be TMs? Are they things I'd actually teach and unteach regularly? 
-        - Are there too many TMs squashed into the last 5 splits? (they're long, but still)
-    
-    I do think I feel much more confident overall with my proposed layout than my current layout, especially for the move tutors. 
-
-    If I do this rework there'd be a few more trainers to add. 
-
-        Cheren Split: 
-
-        Struggle Bug Gateekeeper: 
-            Metapod / Kakuna / Surskit
 
 
 

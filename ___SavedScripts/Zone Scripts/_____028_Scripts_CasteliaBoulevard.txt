@@ -417,7 +417,7 @@ public class MainEvents {
             Battle.EndTrainerBattle();
             Message.Actor(1024, 31, 0, 0);
             Message.CloseAll();
-            Global2805(136, 1);
+            Global2805(136, 2);
             Message.Actor(1024, 32, 0, 0);
             Message.CloseAll();
             Field.PlayMapBGM();
