@@ -4487,28 +4487,34 @@ void Routine7()
 	Compare(0x8000, 157);
 	if (1) goto label_reward3;
 
+	// Ice Heal -> 1x Figy Berry
 	Compare(0x8000, 20);
 	if (1) goto label_1xFigyBerry;
 	
+	// Max Potion -> 1x Enigma Berry
 	Compare(0x8000, 24);
 	if (1) goto label_1xEnigmaBerry;
 
+	// Paralyz Heal -> Green Shards x10
 	Compare(0x8000, 22);
 	if (1) goto label_10xGreenShards;
 
-	// Blue SHards
+	// Antidote -> IV Enhancer x2 
 	Compare(0x8000, 18);
 	if (1) goto label_2enhancers;
 
 	// Green Shards
 	Compare(0x8000, 75);
 	if (1) goto label_reward10;
+
 	// Red Shards
 	Compare(0x8000, 72);
 	if (1) goto label_reward10;
+
 	// Enigma Berry
 	Compare(0x8000, 208);
 	if (1) goto label_reward2;
+	
 	// White Herb
 	Compare(0x8000, 214);
 	if (1) goto label_reward2;

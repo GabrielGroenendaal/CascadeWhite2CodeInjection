@@ -248,23 +248,15 @@ public class MainEvents {
         event = 16446;
 
         Actor.PauseAll();
-		ShowExclamationMark(254);
-		Actor.WaitActionFinish();
-		TurnNorth8F(255);
-		Actor.WaitActionFinish();
-        
-	    checkSetting();
-	    WalkSouth8F(255);
-	    WalkSouth8F(254);
-	    Actor.WaitActionFinish();
-	  	
+	    checkSetting(1);
         if (EventFlags.Get(508)) {
             trainerBackToBackBattles(trainer_A, trainer_B, trainer_A_Entity, trainer_B_Entity, trainer_A_Pos, trainer_B_Pos, event);
             EventWorks.Set(16446, 1);
         } else {
             trainerTagBattles(trainer_A, trainer_B, trainer_A_Entity, trainer_B_Entity, trainer_A_Pos, trainer_B_Pos, event);
             EventWorks.Set(16446, 1);
-        }            
+        }     
+		rewards(1);       
     }
 
     // Speaking with Hiker Markus
@@ -319,23 +311,15 @@ public class MainEvents {
         event = 16446;
 
         Actor.PauseAll();
-		ShowExclamationMark(254);
-		Actor.WaitActionFinish();
-		TurnWest8F(255);
-		Actor.WaitActionFinish();
-        
-	    checkSetting();
-	    WalkEast8F(255);
-	    WalkEast8F(254);
-	    Actor.WaitActionFinish();
-	  	
+	    checkSetting(3);
         if (EventFlags.Get(508)) {
             trainerBackToBackBattles(trainer_A, trainer_B, trainer_A_Entity, trainer_B_Entity, trainer_A_Pos, trainer_B_Pos, event);
             EventWorks.Set(16446, 2);
         } else {
             trainerTagBattles(trainer_A, trainer_B, trainer_A_Entity, trainer_B_Entity, trainer_A_Pos, trainer_B_Pos, event);
             EventWorks.Set(16446, 2);
-        }            
+        }    
+		rewards(3);        
     }
 
     // Speaking with Ranger Lewis
@@ -392,16 +376,7 @@ public class MainEvents {
         event = 16446;
 
         Actor.PauseAll();
-		ShowExclamationMark(254);
-		Actor.WaitActionFinish();
-		TurnWest8F(255);
-		Actor.WaitActionFinish();
-        
-	    checkSetting();
-	    WalkEast8F(255);
-	    WalkEast8F(254);
-	    Actor.WaitActionFinish();
-	  	
+	    checkSetting(3);
         if (EventFlags.Get(508)) {
             trainerBackToBackBattles(trainer_A, trainer_B, trainer_A_Entity, trainer_B_Entity, trainer_A_Pos, trainer_B_Pos, event);
             EventWorks.Set(16446, 3);
@@ -409,6 +384,7 @@ public class MainEvents {
             trainerTagBattles(trainer_A, trainer_B, trainer_A_Entity, trainer_B_Entity, trainer_A_Pos, trainer_B_Pos, event);
             EventWorks.Set(16446, 3);
         }         
+		rewards(3);
     }
 
     // Speaking with Doctor Derek
@@ -463,23 +439,15 @@ public class MainEvents {
         event = 16446;
 
         Actor.PauseAll();
-		ShowExclamationMark(254);
-		Actor.WaitActionFinish();
-		TurnSouth(255);
-		Actor.WaitActionFinish();
-        
-	    checkSetting();
-	    WalkNorth8F(255);
-	    WalkNorth8F(254);
-	    Actor.WaitActionFinish();
-	  	
+	    checkSetting(0);
         if (EventFlags.Get(508)) {
             trainerBackToBackBattles(trainer_A, trainer_B, trainer_A_Entity, trainer_B_Entity, trainer_A_Pos, trainer_B_Pos, event);
             EventWorks.Set(16446, 4);
         } else {
             trainerTagBattles(trainer_A, trainer_B, trainer_A_Entity, trainer_B_Entity, trainer_A_Pos, trainer_B_Pos, event);
             EventWorks.Set(16446, 4);
-        }             
+        }     
+		rewards(0);        
     }
 
     // Speaking with Black Belt Corey
@@ -533,23 +501,15 @@ public class MainEvents {
         event = 16446;
 
         Actor.PauseAll();
-		ShowExclamationMark(254);
-		Actor.WaitActionFinish();
-		TurnSouth(255);
-		Actor.WaitActionFinish();
-        
-	    checkSetting();
-	    WalkNorth8F(255);
-	    WalkNorth8F(254);
-	    Actor.WaitActionFinish();
-	  	
+	    checkSetting(0);
         if (EventFlags.Get(508)) {
             trainerBackToBackBattles(trainer_A, trainer_B, trainer_A_Entity, trainer_B_Entity, trainer_A_Pos, trainer_B_Pos, event);
             EventWorks.Set(16446, 5);
         } else {
             trainerTagBattles(trainer_A, trainer_B, trainer_A_Entity, trainer_B_Entity, trainer_A_Pos, trainer_B_Pos, event);
             EventWorks.Set(16446, 5);
-        }             
+        }            
+		rewards(0); 
     }
 
     // Speaking with Backpacker Kiyo
@@ -603,23 +563,15 @@ public class MainEvents {
         event = 16446;
 
         Actor.PauseAll();
-		ShowExclamationMark(254);
-		Actor.WaitActionFinish();
-		TurnSouth(255);
-		Actor.WaitActionFinish();
-        
-	    checkSetting();
-	    WalkNorth8F(255);
-	    WalkNorth8F(254);
-	    Actor.WaitActionFinish();
-	  	
+	    checkSetting(0);
         if (EventFlags.Get(508)) {
             trainerBackToBackBattles(trainer_A, trainer_B, trainer_A_Entity, trainer_B_Entity, trainer_A_Pos, trainer_B_Pos, event);
             EventWorks.Set(16446, 6);
         } else {
             trainerTagBattles(trainer_A, trainer_B, trainer_A_Entity, trainer_B_Entity, trainer_A_Pos, trainer_B_Pos, event);
             EventWorks.Set(16446, 6);
-        }        
+        }   
+		rewards(0);
     }
 
     // Speaking with Ace Trainer Ray
@@ -836,9 +788,25 @@ public class MainEvents {
 		Actor.WaitActionFinish();
 	}
     
-    static void checkSetting() {
+    static void checkSetting(int playerPos) {
 		int yesNo;
 		WordSet.LoadRivalName(0);
+
+		ShowExclamationMark(254);
+		Actor.WaitActionFinish();
+		if (playerPos == 0) { // Moving North
+			TurnSouth8F(255);
+        }
+        if (playerPos == 1) { // Moving South
+            TurnNorth8F(255);
+        }
+        if (playerPos == 2) { // Moving West
+            TurnEast8F(255);
+        }
+        if (playerPos == 3) { // Moving East
+            TurnWest8F(255);
+        }
+		Actor.WaitActionFinish();
 		Message.ActorEx(1024, 47, 254, 4, 0);
 		yesNo = YesNoWin.Show();
 		if (yesNo == 0) {
@@ -853,6 +821,51 @@ public class MainEvents {
 		Message.ActorEx(1024, 48, 254, 4, 0);
         Input.LastKeyWait();
         Message.CloseActor();
+
+		if (playerPos == 0) { // Moving North
+			WalkNorth8F(255);
+	    	WalkNorth8F(254);
+        }
+        if (playerPos == 1) { // Moving South
+           	WalkSouth8F(255);
+			WalkSouth8F(254);
+        }
+        if (playerPos == 2) { // Moving West
+            WalkWest8F(255);
+			WalkWest8F(254);
+        }
+        if (playerPos == 3) { // Moving East
+            WalkEast8F(255);
+			WalkEast8F(254);
+        }
+		Actor.WaitActionFinish();
+	}
+
+	static void rewards(int playerPos){
+		if (EventFlags.Get(508)){
+			goto Label_EndRewardScript;
+		}
+		if (playerPos == 0) { // Moving North
+			TurnSouth8F(255);
+        }
+        if (playerPos == 1) { // Moving South
+            TurnNorth8F(255);
+        }
+        if (playerPos == 2) { // Moving West
+            TurnEast8F(255);
+        }
+        if (playerPos == 3) { // Moving East
+            TurnWest8F(255);
+        }
+		Actor.WaitActionFinish();
+		Message.ActorEx(1024, 66, 254, 4, 0);
+		Input.LastKeyWait();
+		Message.CloseAll();
+		Global2805(73, 2);
+
+		Label_EndRewardScript: 
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
 	}
 
     static void trainerBackToBackBattles(int trainer_A, int trainer_B, int trainer_A_Entity, int trainer_B_Entity, int trainer_A_Pos, int trainer_B_Pos, int event){
@@ -960,8 +973,7 @@ public class MainEvents {
 	   EventFlags.Clear(535);
 	 
         Label_EndBackToBackBattleScript:
-        Runtime.FinishSubEvents();
-		Actor.UnpauseAll();
+        return;
     }
 
     static void trainerTagBattles(int trainer_A, int trainer_B, int trainer_A_Entity, int trainer_B_Entity, int trainer_A_Pos, int trainer_B_Pos, int event){
@@ -1044,14 +1056,14 @@ public class MainEvents {
         }
         Battle.EndTrainerBattle();
 
+
         LABEL_SkipTrainerB: 
         EventFlags.Set(1520 + trainer_A);
         EventFlags.Set(1520 + trainer_B);
 		EventFlags.Clear(535);
 		
         Label_EndMultiBattleScript:
-        Runtime.FinishSubEvents();
-		Actor.UnpauseAll();
+        return;
     }
 
     static int getTextId(int trainerId){ 

@@ -54,7 +54,7 @@ AD 00 00 00 05 00 00 00 09 00 00 00     #9 Uproar -> Snore
 9E 01 00 00 04 00 00 00 03 00 00 00   #3: Earth Power
 26 00 00 00 06 00 00 00 0C 00 00 00   #12: Foul Play -> Double-Edge
 64 01 00 00 08 00 00 00 0E 00 00 00   #14: Gravity
-0E 01 00 00 06 00 00 00 0B 00 00 00   #11: Zen Headbutt -> Scary Face
+B8 00 00 00 06 00 00 00 0B 00 00 00   #11: Zen Headbutt -> Scary Face
 1A 01 00 00 02 00 00 00 01 00 00 00   #1: Self Destruct -> Knock Off 
 16 01 00 00 02 00 00 00 00 00 00 00   #0: Explosion -> Recycle 
 CE 00 00 00 08 00 00 00 0D 00 00 00   #13 Focus Punch -> Body Press

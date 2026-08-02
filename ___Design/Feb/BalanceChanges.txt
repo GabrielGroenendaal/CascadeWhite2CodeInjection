@@ -1,0 +1,883 @@
+
+
+
+
+
+[ MOVES ]
+    Look at Distribution for: 
+        Retaliate (it's now 85 BP, works as a good mid tier normal move)
+
+Discharge Distribution:
+
+      30: Jolteon
+      31: Pikachu / Raichu
+      33: Joltik / Galvantula
+      37: Voltorb / Electrode
+      38: Plusle
+      38: Minun
+      41: Elgyem / Beheeyem
+      44: Nosepass / Probopass
+      50: Magneton / Magnezone
+      50: Pachirisu
+      
+[ RARELY USED OR UNUSED ABILITIES ] 
+    Well-Baked Body 
+        Only on Golurk & Claydol. Could put it on Rotom-Heat?
+    Permafrost 
+        Only on Glaceon & Kyurem 
+        We could definitely name it back to Ice Scales 
+    Shed Skin
+        Only for AI on some sets like Dusclops, Milotic, etc. 
+    Colossal 
+        NOT USED AT ALL 
+    Ballistics 
+        NOT USED AT ALL 
+    Overcoat 
+        NOT USED AT ALL except for AI 
+    Anger Point: 
+        AI only Ability 
+    Bad Dreams: 
+        Only used on the AI except for Hypno/Drowzee
+        Maybe it should also make your sleep moves 100% accurate? 
+    Rain Dish: 
+        Barely used as a filler ability on a few mons 
+        I probably want something better for Mantine tbh 
+
+    Unaware: 
+        It ignoring the attack and defense drops the user incurs could make it good on a lot of mons: 
+
+        Fire Types: 
+            - Torkoal 
+            - Camerupt 
+            - Magcargo 
+            - Mamoswine line 
+        Dragon Types: 
+            - Slowking 
+        Grass Types: 
+            - Ludicolo 
+        Fighting Types: 
+            - Throh 
+        Ground Types
+            - Whiscash 
+        
+        I like Mamoswine, Throh (better than guts, that's for sure)
+        Camerupt, Ludicolo Slowking
+
+
+[ REGULAR POKEMON ]
+      Chingling:
+            +5 SpA
+     
+      Chimecho:
+            +5 SpA
+     
+      Altaria:
+            Abil 6: Serene Grace
+     
+      Sceptile:
+            Abil 3: Solar Power -> Exploit
+
+      Delibird:
+            Abil 3: Permafrost -> Unburden
+            HA chance raised to 20%
+     
+      Abomasnow:
+            Abil 2: Resilient -> Berserk
+
+      Walrein:    
+            Abil 2: Guts -> Resilient
+            Abil 3: Intimidate -> Guts
+            Abil 4: Snow WArning -> Intimidate
+
+      Deoxys:
+            Abil: Exploit
+
+      Electrode:
+            Abil 3: Volt Absorb
+            HA Enabled
+
+      Primeape:
+            Abil 2: tenacity -> Rock Head
+            Abil 6: Tinted Lens
+
+      Golduck:
+            +5 Atk
+            +5 SpA
+
+      Dragonite:
+            Abil 1: Marvel Scale -> Friend Guard
+            Abil 2: Resilient -> Multiscale
+            Abil 3: Majestic Ward -> No Guard
+
+      Accelgor
+            Abil 4: Tinted Lens
+     
+      Aggron:
+            Abil 3: Filter -> Heavy Metal
+     
+      Scyther:
+            Abil 3: Sturdy -> Weak Armor
+     
+      Scizor:
+            Abil 2: Unburden -> Intimidate
+            Abil 3: Sturdy -> Light Metal  
+            HA Chance: 15
+     
+      Escavalier:
+            Abil 3: Light Metal -> Justified
+            Abil 6: Light Metal
+           
+      Magnezone:
+            Abil 3: Levitate -> Light Metal
+     
+      Swanna:
+            Abil 2: Friend Guard
+            Abil 3: Serene Grace
+     
+      Hitmonchan:
+            Abil 2: Scrappy
+     
+      Potential Whimsicott Rework:
+             HP: 75 (+15)
+            Atk: 82 (+15)
+            Def: 100 (+15)
+            SpA: 77
+            SpD: 85 (+10)
+            Spe: 116
+            BST: 535 (+55)
+
+            Abil 1: Prankster
+            Abil 2: Infiltrator
+            Abil 3: Fluffy
+     
+      Whiscash:
+            Berserk -> Gourmand
+            Replace Stockpile with Spit Up
+     
+      Tropius:
+            Abil 3: Gourmand -> Regenerator maybe?
+     
+      Swalot:
+            Abil 3 Chance: 30%
+
+      Blaziken:
+            Abil 2: Rock Head
+            Abil 3: Quick Feet
+
+      Blastoise:
+            -20 Spe
+            +20 SpA
+            Abil 2: Torrent -> Rock Head
+            Abil 3: Rock Head -> Bulletproof?
+            Might be fine to keep torrent
+     
+      Meganium:
+            Abil 3: Natural Cure -> Resilient
+            Chance of HA: 20%
+     
+      Leavanny:
+            Abil 1: Swarm
+    
+    Drapion: 
+        Level 20: X-Scissor -> Twineedle 
+        Level 46: Needle Arm -> Vise Grip
+        Level 60: Agility -> Power Whip
+        Level 65: Iron Defense -> Toxic 
+    Eeveelutions: 
+        Level 1: Protect -> Charm 
+    Clamperl: 
+        Level 1: Iron Defense -> Harden
+        Level 25: Protect -> Mirror Coat
+        Level 40 (New): Protect
+        Level 65 (New): Iron Defense
+        Level 85->81: Shell Smash
+    Anorith/Armaldo: 
+        Level 1: Iron Tail -> Protect 
+        Level 4->1: Aqua Jet -> Twineedle
+        Level 29: Rock Polish -> Screech
+        Level 32: Razor Shell -> Liquidation
+        Level 40: X-Scissor -> Gyro Ball
+        Level 46: Protect -> Curse
+    Exeggutor: 
+        Level 25: Explosion -> Egg Bomb 
+        Level 34: Egg Bomb -> Explosion 
+    Wormadam-Lines: 
+        Sand: +4 Atk 
+        Trash: +2 Atk, +2 SpA 
+        Level 1: Protect -> Body Press
+        Level 18: Hidden Power -> Protect
+        Level 29 (Sand): Recycle 
+    Totodile Line: 
+        Level 6->1: Aqua Jet 
+        Level 10->1: Scary Face 
+        Level 15->1: Scald -> Agility
+        Level 46: Agiliy -> Spiky Shield 
+        Level 51: Liquidation
+    Yanma / Yanmega
+        Level 51: Detect -> Hypnosis
+    Absol (Replaced with )
+        Level 1: Detect -> Lucky Chant
+        Level 1: Knock Off -> Horn Drill
+        Level 54: Doom Desire -> Perish Song 
+        Level 69->68: Perish Song -> Doom Desire 
+    Sableye: 
+        Level 1: Detect -> Shadow Punch
+        Level 25: Shadow Claw -> Bitter Malice
+        Level 38: Shadow Punch ->  Shadow Claw
+        Level 53: Phantom Strike -> Air Slash
+        Level 57: Knock Off -> Phantom Strike
+    Zangoose: 
+        Level 1: Detect -> Follow Me
+    Scrafty: 
+        Level 1: Detect -> Hammer Arm 
+        Level 4->1: Power Trip 
+        Level 7->1: Scary Face -> Toxic
+        Level 49: Toxic -> Scary Face 
+    Sceptile: 
+        Level 54: Detect -> Fake Out 
+    Accelgor:
+        Level 1: Gunk Shot -> Extremespeed
+        Level 64: Detect -> Gunk Shot
+    Grumpig: 
+        Level 62: Brutal Swing -> Follow Me 
+    
+    Tyranitar: 
+        Abil 5: Berserk
+        Abil 6: Solid Rock 
+        Level 1: Payback -> Nasty Plot
+        Level 1: Avalanche -> Hyper Beam
+        Level 5: Rock Polish -> Accelerock
+        Level 34: Hyper Beam -> Roar 
+        Level 74: Brutal Swing -> Night Daze
+
+    Venmoth: 
+        +5 SpA 
+        +5 SpD 
+    
+    Starmie: 
+        Level 10>1: Reflect Type -> Psyblade 
+
+    Jynx: 
+        Level 7->1: Confide -> Follow Me 
+    
+    Slowbro: 
+        Level 60: Future Sight -> Psyblade 
+    
+    Metagross: 
+        Level 1: Ally Switch -> Agility 
+        Level 1: Heavy Slam -> Heat Crash
+        Level 28: Agility -> Metal Sound  
+        Level 47: Zen Headbutt -> Psycho Boost 
+
+
+    
+    Steelix: 
+        Double check ability 6 is Sturdy
+        Abil 4 should be arena trap 
+    
+    Toxicroak: 
+        +10 Defense 
+        +10 Special Defense 
+        -10 Speed 
+    
+    Magcargo: 
+        +10 SpA 
+        Abil 3: Shell Armor -> Unaware 
+    
+    Ferroseed: 
+        +5 SpA 
+    
+    Ferrothorn: 
+        +5 SpA 
+    
+    Tauros: 
+        Ability 3: Anger Point -> Moxie 
+    
+    Basculin-Blue: 
+        Ability 3: Anger Point -> Rivalry 
+    
+    Cubchoo
+        +15 HP 
+        +15 Defense 
+        +15 Special Defense 
+
+    Beartic: 
+        +15 HP 
+    
+    Dunsparce: 
+        Abil 2: Rattled? 
+    
+    Rotom:
+        +5 Speed 
+        +5 SpA 
+    
+    Skarmory: 
+        +10 Atk 
+    
+    Golurk: 
+        Abil 1: Weak Armor 
+        Abil 2: No Guard 
+        Abil 3: Iron Fist
+
+        +10 Speed  
+    
+    
+    Kabutops: 
+        -5 SpD 
+        +5 Atk 
+    
+    Shieldon: 
+        +20 HP
+        -20 SpA 
+    
+    Bastiodon: 
+        +20 HP
+        -20 SpA
+    
+    Diglett: 
+        Should have 120 Speed
+    
+    Dugtrio: 
+        Should have 150 Speed 
+    
+    Shadow Force: 
+        Should be 101 accuracy 
+    
+    Delibird: 
+        +10 Atk 
+        +10 SpA 
+        -20 Spe 
+        Abil 3: Unburden 
+        Chance of Abil 3: 20%
+
+
+[ NEW UNOWN AND COMBEE FORMS ]
+    Form Insertion: 
+        We can take up some space from Pokestar Studios entities to add the two new unown personal stat files. 
+    
+    Ability Implementation: 
+        I think I already have this solved. 
+    
+    Encounters: 
+        While the puzzle is a cute idea, for now I think just have the Unown have a script in Abyssal Ruins and Whatever
+
+        Remove Combee from the Castelia Gardens table. Replace it with Mothim. 
+
+        Replace Vespiquen with Combee. in Deep Lostlorn Forest 
+
+    Combee Swarming 
+        Combee:  
+             HP: 70 (+40)
+            Atk: 50 (+20)
+            Def: 50 (+8)
+            SpA: 50 (+20)
+            SpD: 50 (+8)
+            Spe: 70
+            BST: 340 (+96)
+        
+        Combee-Swarming: 
+            Typing: Bug/Psychic 
+        
+             HP:  70 (+40)
+            Atk: 120 (+90)
+            Def: 135 (+93)
+            SpA: 120 (+90)
+            SpD: 135 (+93)
+            Spe:  70 
+            BST: 650 (+406)
+    
+    Unown Swarming:
+        Unown: (Looks like a)
+        Unown-Buried: 
+        Unown-Sunken: (Looks like a Question Mark)
+             HP: 108 (+60)
+            Atk:  82 (+10)
+            Def:  48 
+            SpA:  82 (+10)
+            SpD:  48
+            Spe:  48
+            BST: 416 (+80)
+
+        Unown-Collective: 
+            Typing: Psychic
+             HP: 108 
+            Atk: 108
+            Def: 132
+            SpA: 108
+            SpD: 132
+            Spe:  48
+            BST: 630 
+
+        Unown-Collective: 
+            Typing: Ghost 
+             HP: 108 
+            Atk: 132
+            Def: 108
+            SpA: 132
+            SpD: 108
+            Spe:  48
+            BST: 636 
+
+    extern "C" void HandlerCollective(BattleEventItem * item, ServerFlow * serverFlow, u32 pokemonSlot, u32 * work) {
+        if (pokemonSlot == BattleEventVar_GetValue(VAR_MON_ID)) {
+            BattleMon* currentMon = Handler_GetBattleMon(serverFlow, pokemonSlot);
+
+            //  0: Combee-Male 
+            //  1: Combee-Female 
+            //  2: Combee-Collective
+            // 26: Unown-Exclamation 
+            // 27: Unown-Question 
+            // 28: Unown-Exclamation Schooling 
+            // 29: Unown-Question Schooling
+
+            u8 currentForm = BattleMon_GetValue(currentMon, VALUE_FORM);
+            u8 newForm = currentForm;
+            u16 msgID = BATTLE_SCHOOLING_INACTIVE_MSGID;
+
+            // TODO: ADD WISHIWASHI
+            if (BattleMon_GetSpecies(currentMon) == 201) {
+                u32 currentHP = BattleMon_GetValue(currentMon, VALUE_CURRENT_HP);
+                if (currentForm == 26 || currentForm == 27){
+                    if (currentHP > DivideMaxHPZeroCheck(currentMon, 4u)) {
+                        newForm = currentForm - 2;
+                        msgID = BATTLE_SCHOOLING_ACTIVE_MSGID;
+                    }
+                }
+                if (currentForm == 28 || currentForm == 29){
+                    if (currentHP <= DivideMaxHPZeroCheck(currentMon, 4u)) {
+                        newForm = currentForm + 2;
+                        msgID = BATTLE_SCHOOLING_INACTIVE_MSGID;
+                    }
+                } 
+            }
+
+            if (BattleMon_GetSpecies(currentMon) == 415) {
+                u32 currentHP = BattleMon_GetValue(currentMon, VALUE_CURRENT_HP);
+                if (currentForm == 0){
+                    if (currentHP > DivideMaxHPZeroCheck(currentMon, 4u)) {
+                        newForm = currentForm + 2;
+                        msgID = BATTLE_SCHOOLING_ACTIVE_MSGID;
+                    }
+                }
+                if (currentForm == 2){
+                    if (currentHP <= DivideMaxHPZeroCheck(currentMon, 4u)) {
+                        newForm = currentForm - 2;
+                        msgID = BATTLE_SCHOOLING_INACTIVE_MSGID;
+                    }
+                } 
+            }
+
+
+            if (currentForm != newForm) {
+                    HandlerParam_ChangeForm* changeForm;
+                    changeForm = (HandlerParam_ChangeForm*)BattleHandler_PushWork(serverFlow, EFFECT_CHANGE_FORM, pokemonSlot);
+                    changeForm->header.flags |= HANDLER_ABILITY_POPUP_FLAG;
+                    changeForm->pokeID = pokemonSlot;
+                    changeForm->newForm = newForm;
+                    BattleHandler_StrSetup(&changeForm->exStr, 2u, msgID);
+                    BattleHandler_PopWork(serverFlow, changeForm);
+                }
+
+        }
+    }
+    BattleEventHandlerTableEntry CollectiveHandlers[]{
+        {EVENT_SWITCH_IN, HandlerCollective},
+        {EVENT_TURN_CHECK_DONE, HandlerCollective},
+    };
+    extern "C" BattleEventHandlerTableEntry * EventAddZenMode(u32 * handlerAmount) {
+        *handlerAmount = ARRAY_COUNT(SchoolingHandlers);
+        return CollectiveHandlers;
+    }
+
+
+[ LEGENDARIES ]
+This is an interesting question: whether or not I want to use any of the Legendaries on enemy teams or as 
+potential wild encounters. I think most of them are balanced, but not all of them. 
+
+    List of Legendaries: 
+        Moltres 
+        Artiuno 
+        Zapdos 
+        Mew 
+        Mewtwo 
+        Entei 
+        Suicune
+        Raikou
+        Lugia 
+        Ho-Oh
+        Celebi 
+        Regirock 
+        Registeel 
+        Regice 
+        Kyogre 
+        Groudon 
+        Rayquaza 
+        Latios
+        Latias 
+        Jirachi 
+        Deoxys 
+        Uxie 
+        Mesprit 
+        Azelf 
+        Dialga 
+        Palkia
+        Giratina 
+        Heatran 
+        Regigias 
+        Shaymin 
+        Cresselia 
+        Darkrai 
+        Manaphy
+        Arceus
+        Keldeo 
+        Cobalion 
+        Terrakion 
+        Virizion 
+        Meloetta 
+        Genesect 
+        Tornadus 
+        Thundurus 
+        Landorus 
+        Reshiram 
+        Zekrom 
+        Kyurem 
+
+    Later Generation Legendaries: 
+        Xerneas 
+        Yveltal 
+        Zygarde 
+        Diancie 
+        Hoopa 
+        Volcanion
+        Tapu Fini 
+        Tapu Bulu 
+        Tapu Koko 
+        Tapu Lele 
+        Solgaleo 
+        Lunala 
+        Magearna 
+        Marshadow 
+        Zeraora 
+        Melmetal 
+
+        Zacian 
+        Zamazenta 
+        Eternatus 
+        Urshifu 
+        Zarude 
+        Regieleki
+        Regidrago 
+        Glastier 
+        Spectier 
+        Calyrex 
+        Enamorus 
+
+        Koraidon 
+        Miraidon 
+        Ting Lu 
+        Chien Pao 
+        Wo Chein 
+        Chi Yu 
+        Monkidori 
+        Okidoki 
+        Fezdaptl 
+        Ogerpon 
+        Terapagos 
+        Pecharunt 
+    
+        Kinda: 
+            Stakataka 
+            Blacephelon 
+            Kartana 
+            Nihilego 
+            Buzzwole 
+            Pheremossa 
+            Xurkitree 
+            Celesteela
+            Guzzlord 
+            Naganadel 
+            Great Tusk 
+            Scream Tail 
+            Brute Bunnet 
+            Sandy Shocks 
+            Slither Wing 
+            Flutter Mane 
+            Roaring Moon
+            Iron Treads
+            Iron Bundle 
+            Iron Hands 
+            Iron Thorns 
+            Iron Moth 
+            Iron Valiant 
+            Iron Jugulis 
+            Walking Wake 
+            Gouging Fire 
+            Raging Boolt 
+            Iron Crown 
+            Iron Boulder 
+            Iron Leaves 
+
+    Pokemon that you can catch in Vanilla BW2 
+        Tornadus 
+        Thundurus 
+        Landorus 
+        Regice 
+        Regirock 
+        Registeel 
+        Regigas
+        Uxie 
+        Mesprit 
+        Azelf 
+        Heatran 
+        Cresselia  
+        Meloetta 
+        Genesect 
+
+    Legendaries that aren't present in the games but could fit: 
+        Kyogre (in abyssal ruins)
+        Jirachi (it's just a meteor mon)
+        Darkrai (because Cresselia is here)
+        Moltres (not particularly legendary pokemon) 
+        Articuno (not particularly legendary pokemon) 
+        Zapdos (not particularly legendary pokemon)
+        Mewtwo (for Giovanni)
+        Deoxys (for Colress)
+        Darkrai (for Ghetsis)
+        Shaymin (for Virizion)
+        Melmetal (for Colress)
+        Magearna (for Colress)
+        Any of the Iron Mons (for Colress)
+
+    Regice: 
+        +20 SpA 
+    
+    Registeel: 
+        -30 Spe 
+        +25 Atk 
+        +25 SpA 
+    
+    Regirock: 
+        +20 Atk 
+    
+    Moltres: 
+        +20 Defense 
+    
+    Zapdos: 
+        +20 Defense 
+    
+    Articuno 
+        +10 SpD 
+        -10 Atk 
+    
+    Deoxys: 
+        Abil 1: Magic Guard 
+        Abil 2: Savant 
+    
+    Entei: 
+        Go back down to 580 BST 
+        Then +20 Atk
+
+    Suicune: 
+        Go back todown to 580 BST 
+        +20 HP 
+    
+    Azelf: 
+        Go back down to 580 BST 
+        +20 Speed 
+    
+    Mesprit; 
+        Go back to down to 580 BST 
+        +10 HP 
+        +10 Speed 
+    
+    Uxie: 
+        Go back down to 580 BST 
+        +20 HP 
+    
+    Genesect: 
+        +10 Atk 
+        +10 SpA 
+        +20 Def
+        +20 SpD
+        +20 Speed
+    
+    Meloetta: 
+        +40 Atk 
+        +40 Defense 
+    
+    Meloetta-Pirouette 
+        +40 Defense 
+        +40 Special Attack 
+    
+    Kyurem: 
+        +10 Defense 
+        +10 Special Defense 
+    
+    Thundurus: 
+        +10 Defense 
+        +10 Special Defense 
+    
+    Thundurus-Therian 
+        +20 Speed 
+    
+    Tornadus: 
+        +20 Atk 
+    
+    Tornadus-Therian
+        +10 Defense 
+        +10 Special Defense 
+
+    
+    I think the Genies are fair game, they're local legendaries that can actually be found in the Region. 
+    
+    
+Agility Mons to Look At: 
+        Kingdra 
+        Porygon-Z 
+        Braviary 
+        Scizor 
+        Metagross 
+        Blaziken 
+        Archeops 
+
+    Rock Polish Pokemon to Look At 
+        Rampardos 
+        Armaldo 
+
+[ DETECT ]
+We are taking Protect to Detect, so it has much lower distribution. Let's make a list of those mons now. 
+    Tutor Distribution: 
+        Machamp 
+        Farfetch'd
+        Marowak 
+        Hitmonchan 
+        Hitmonlee
+        Pinsir
+        Yanmega 
+        Heracross 
+        Hitmontop
+        Sceptile 
+        Blaziken 
+        Hariyama 
+        Sableye 
+        Medicham 
+        Zangoose 
+        Kecleon 
+        Absol 
+        Lucario 
+        Watchog
+        Unfezant 
+        Sawk
+        Scrafty 
+        Mienshao 
+        Whiscash 
+        Dusknoir 
+        Swampert 
+        Musharna 
+        Alakazam 
+        Gardevoir / Gallade 
+        Hypno 
+        Eevee + Eeveelutions
+        Staraptor 
+        Samurott 
+        Zoroark 
+        Conkeldurr 
+        Pidgeot 
+        Fearow 
+        Raichu 
+        Sandslash 
+        Nidoqueen 
+        Nidoking 
+        Clefable 
+        Wigglytuff 
+        Crobat 
+        Persian 
+        Primeape 
+        Poliwrath 
+        Scyther 
+        Scizor 
+        Electivire
+        Magmortar 
+        Aerodactyl 
+        Meganium 
+        Typhlosion 
+        Feraligatr 
+        Furret 
+        Noctowl 
+        Togekiss 
+        Xatu 
+        Ambipom 
+        Honchkrow 
+        Granbull 
+        Weavile 
+        Mamoswine 
+        Skarmory
+        Houndoom 
+        Stantler 
+        Floatzel 
+        Spinda
+        Shiftry 
+        Sawsbuck 
+        Accelgor
+    
+    Removed from Learnsets: 
+        Yanma / Yanmega
+            Level 51: Detect -> Hypnosis
+        Absol (Replaced with )
+            Level 1: Detect -> Lucky Chant
+            Level 1: Knock Off -> Horn Drill
+            Level 54: Doom Desire -> Perish Song 
+            Level 69->68: Perish Song -> Doom Desire 
+        Sableye: 
+            Level 1: Detect -> Shadow Punch
+            Level 25: Shadow Claw -> Bitter Malice
+            Level 38: Shadow Punch ->  Shadow Claw
+            Level 53: Phantom Strike -> Air Slash
+            Level 57: Knock Off -> Phantom Strike
+        Zangoose: 
+            Level 1: Detect -> Follow Me
+        Scrafty: 
+            Level 1: Detect -> Hammer Arm 
+            Level 4->1: Power Trip 
+            Level 7->1: Scary Face -> Toxic
+            Level 49: Toxic -> Scary Face 
+        Sceptile: 
+            Level 54: Detect -> Fake Out 
+        Accelgor:
+            Level 1: Gunk Shot -> Extremespeed
+            Level 64: Detect -> Gunk Shot
+
+[ PROTECT ]
+    Modified Learnsets: 
+        Eeveelutions: 
+            Level 1: Protect -> Charm 
+        Clamperl: 
+            Level 1: Iron Defense -> Harden
+            Level 25: Protect -> Mirror Coat
+            Level 40 (New): Protect
+            Level 65 (New): Iron Defense
+            Level 85->81: Shell Smash
+        Anorith/Armaldo: 
+            Level 1: Iron Tail -> Protect 
+            Level 4->1: Aqua Jet -> Twineedle
+            Level 29: Rock Polish -> Screech
+            Level 32: Razor Shell -> Liquidation
+            Level 40: X-Scissor -> Gyro Ball
+            Level 46: Protect -> Curse
+        Exeggutor: 
+            Level 25: Explosion -> Egg Bomb 
+            Level 34: Egg Bomb -> Explosion 
+        Wormadam-Lines: 
+            Sand: +4 Atk 
+            Trash: +2 Atk, +2 SpA 
+            Level 1: Protect -> Body Press
+            Level 18: Hidden Power -> Protect
+            Level 29 (Sand): Recycle 
+        Totodile Line: 
+            Level 6->1: Aqua Jet 
+            Level 10->1: Scary Face 
+            Level 15->1: Scald -> Agility
+            Level 46: Agiliy -> Spiky Shield 
+            Level 51: Liquidation
+    
+    Helping Hand: 

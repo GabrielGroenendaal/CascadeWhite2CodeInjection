@@ -655,11 +655,12 @@ sticky barb, Sticky Barb (found after the Scientist tag)
 stable mulch, 1x Serious Mint (reward for Defeating the Plasma Grunts)
 tm ghost, TM37 Hex (encountered behind the Grimers once you beat the grunts)
 dusk ball, Dusk Ball (x3) (found near entrance)
+red shards, 0x-10x Red Shards (2x per tag battle)
 end
 
 !enc 37
 
-!notif WARNING, Each pair of trainers in Castelia Sewers can be fought as either a Back to Back battle or a Tag battle (except for the Sewer Grunts). Hugh will NOT heal you between the back to backs! , #f26253
+!notif WARNING, Each pair of trainers in Castelia Sewers can be fought as either a Back to Back battle or a Tag battle (except for the Sewer Grunts). Hugh will NOT heal you between the back to backs! If fought as a Tag, each battle rewards 2x Red Shards. , #f26253
 
 ### Hugh's Team
 !tr 589/28 Picked Tepig
@@ -1865,8 +1866,7 @@ end
 !notif NEW ENCOUNTER, The exterior of the mountain is now a unique met location for encounters , #469e62
 
 !items Items 
-blue shard, x5 Blue Shard
-tm psychic, TM01 Zen Headbutt (found outside strange house)
+quick ball, x10 Quick Balls
 end
 
 ### Back to Back 
@@ -1903,6 +1903,7 @@ heart scale, x1 Heart Scale
 red shard, x15 Red Shard 
 sitrus berry, x10 Sitrus Berries 
 blue shard, 5x Blue Shards (defeat Backpacker Corin)
+blue shard, 0x-12x Blue Shards (2x rewarded for each battle fought as a tag)
 tm fire, TM35 Flamethrower (Reward for defeating Flannery, can be fought after Benga leaves you)
 fire gem, x1 Fire Gem (Reward for defeating Flannery, can be fought after Benga leaves you)
 occa berry, x1 Occa Berry (Reward for defeating Flannery, can be fought after Benga leaves you)
@@ -1913,7 +1914,7 @@ end
 
 !enc 49 
 
-!notif WARNING, Each pair of trainers in Reversal Mountain can be fought as either a Back to Back battle or a Tag battle. Benga will NOT heal you between the back to backs! , #f26253
+!notif WARNING, Each pair of trainers in Reversal Mountain can be fought as either a Back to Back battle or a Tag battle. Benga will NOT heal you between the back to backs! If fought as a tag, rewards 2x Blue Shards. , #f26253
 
 ### Benga's Team 
 !trm 237 
@@ -2009,7 +2010,7 @@ end
 !items Items 
 repel, x3 Throat Spray (Blocked by Musician Kinsley)
 ability capsule, x1 Ability Patch (Guarded by B2B Fight)
-tm dark, TM90 Dark Pulse (defeat Policeman Jeff) 
+tm dark, TM90 Dark Pulse (defeat Policeman Lester) 
 end
 
 !tr 232 Optional, Guards the Throat Sprays

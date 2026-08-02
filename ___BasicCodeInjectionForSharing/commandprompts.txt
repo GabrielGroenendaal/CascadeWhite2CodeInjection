@@ -111,9 +111,7 @@
 /* Overlay 142 */
 "C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\_____GithubCheckoutMarch\arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi\bin\arm-none-eabi-g++.exe"  -r -mthumb -march=armv5t -Os D_NonBattleItemChanges/D3_overlay142.cpp -Iswan-master -o ______Output/D3_overlay142.elf
 
-
-
-    /*
+/*
 
         --------------------------------------------------------------------------------------------------
         ------------------------------------- BATTLE GRAPHICS --------------------------------------------

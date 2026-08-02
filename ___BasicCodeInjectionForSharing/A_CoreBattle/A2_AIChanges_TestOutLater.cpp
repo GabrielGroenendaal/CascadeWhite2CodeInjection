@@ -1484,6 +1484,16 @@ extern "C"
             return value;
         }
         
+        // Fling
+        if (IsEqual(MoveID, MOVE374_FLING)){
+            if (AttackingMon->HeldItem == IT0278_IRON_BALL){
+                return (value + (value << 2) + (value << 3));
+            }
+            else {
+                return value;
+            }
+        }
+
         // Spit Up
         if (IsEqual(MoveID, MOVE255_SPIT_UP))
         {

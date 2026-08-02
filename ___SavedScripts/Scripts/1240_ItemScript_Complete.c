@@ -1391,12 +1391,12 @@ void Sequence115()
 	End();
 }
 
-/* LENTIMAS OUTSKIRTS - BLUE SHARD X5 */
+/* LENTIMAS OUTSKIRTS - QUICK BALL X10 */
 void Sequence116()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 73);
-	SetVarEqVal(0x800D, 5);
+	SetVarEqVal(0x800C, 15);
+	SetVarEqVal(0x800D, 10);
 	Sequence400();
 	WaitMoment();
 	UnlockAll();

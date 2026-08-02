@@ -10,7 +10,7 @@ STRUCT_DECLARE(GameData)
 #define TESTING_G4_STYLE_SWITCH_OUT_AI true
 #define USING_VANILLA_AI false
 #define DEBUGGING_G4_SWITCH_AI false
-#define DAMAGE_CACHE_ENABLED false
+#define DAMAGE_CACHE_ENABLED true
 #define TESTING_AISCRIPTS false
 // Uses esdb_newBattle.yml
 
@@ -170,8 +170,8 @@ extern "C"
 
     u8 GetMovePos(BattleMon *mon, MoveID move)
     {
-        int movecount = BattleMon_GetMoveCount(mon);
-        int count = 0;
+        u8 movecount = BattleMon_GetMoveCount(mon);
+        u8 count = 0;
         if (movecount)
         {
             do
@@ -188,9 +188,9 @@ extern "C"
 
     u16 checkCalcTable(ServerFlow *flow, BattleMon *attacker, BattleMon *defender, MoveID move)
     {
-        int index1 = Handler_PokeIDToPokePos(flow, attacker->ID);
-        int index2 = Handler_PokeIDToPokePos(flow, defender->ID);
-        int index3 = GetMovePos(attacker, move);
+        u8 index1 = Handler_PokeIDToPokePos(flow, attacker->ID);
+        u8 index2 = Handler_PokeIDToPokePos(flow, defender->ID);
+        u8 index3 = GetMovePos(attacker, move);
         if (index3 > 4)
         {
             return 0;
@@ -207,9 +207,9 @@ extern "C"
 
     void saveToCalcTable(ServerFlow *flow, BattleMon *attacker, BattleMon *defender, MoveID move, u32 damage)
     {
-        int index1 = Handler_PokeIDToPokePos(flow, attacker->ID);
-        int index2 = Handler_PokeIDToPokePos(flow, defender->ID);
-        int index3 = GetMovePos(attacker, move);
+        u8 index1 = Handler_PokeIDToPokePos(flow, attacker->ID);
+        u8 index2 = Handler_PokeIDToPokePos(flow, defender->ID);
+        u8 index3 = GetMovePos(attacker, move);
         calcTable[index1][index2][index3].dirty = 1;
         calcTable[index1][index2][index3].value = damage;
     }
@@ -1009,6 +1009,14 @@ extern "C"
                 return 81920;
             }
         }
+        if (IsEqual(MoveID, MOVE374_FLING)){
+            if (AttackingMon->HeldItem == IT0278_IRON_BALL){
+                return 53248;
+            }
+            else {
+                return 4096;
+            }
+        }
         // Water Spout and Eruption
         if (IsEqual(MoveID, MOVE323_WATER_SPOUT) || IsEqual(MoveID, MOVE284_ERUPTION))
         {
@@ -1332,7 +1340,7 @@ extern "C"
 #pragma endregion
 
 #pragma region SimulationDamage
-    int THUMB_BRANCH_SAFESTACK_Handler_SimulationDamage(ServerFlow *a1, int a2, int a3, int a4, bool isSimulation, bool something)
+    int THUMB_BRANCH_SAFESTACK_Handler_SimulationDamage(ServerFlow *a1, int a2, int a3, int a4, int isSimulation, int something)
     {
         int TypeEffectiveness;   // r6
         BattleMon *DefendingMon; // [sp+14h] [bp-34h]
@@ -1763,9 +1771,7 @@ extern "C"
         --a1->simulationCounter;
 
 // k::Printf("\nSimulated Damage for move %d is %d\n", a4check, v12);
-#if DAMAGE_CACHE_ENABLED
-        saveToCalcTable(a1, AttackingMon, DefendingMon, (MoveID)a4, v12);
-#endif
+
         /*
             ----------------------------------------------------------------------------------
             ------------------------------- PURSUIT LOGIC ------------------------------------
@@ -1780,7 +1786,9 @@ extern "C"
                 v12 <<= 1;
             }
         }
-
+#if DAMAGE_CACHE_ENABLED
+        saveToCalcTable(a1, AttackingMon, DefendingMon, (MoveID)a4, v12);
+#endif
         return v12;
     }
 #pragma endregion
@@ -2080,6 +2088,15 @@ extern "C"
             }
             else
             {
+                return value;
+            }
+        }
+        
+        if (IsEqual(MoveID, MOVE374_FLING)){
+            if (AttackingMon->HeldItem == IT0278_IRON_BALL){
+                return (value + (value << 2) + (value << 3));
+            }
+            else {
                 return value;
             }
         }
@@ -3962,15 +3979,22 @@ extern "C"
             int moveDamage = 0;
             do
             {
-                // moveDamage = checkCalcTable(flow, attackingMon, defender, (MoveID)Move_GetID(attackingMon, i));
-                // if (!moveDamage)
-                // {
-                moveDamage = Handler_SimulationDamage(flow,
+
+#if DAMAGE_CACHE_ENABLED
+                moveDamage = checkCalcTable(flow, attackingMon, defender, (MoveID)Move_GetID(attackingMon, i));
+                if (!moveDamage)
+                {
+                    moveDamage = Handler_SimulationDamage(flow,
                                                       BattleMon_GetID(attackingMon),
                                                       BattleMon_GetID(defender),
                                                       Move_GetID(attackingMon, i), true, false);
-                // }
-
+                 }
+#else 
+                moveDamage = Handler_SimulationDamage(flow,
+                                                    BattleMon_GetID(attackingMon),
+                                                    BattleMon_GetID(defender),
+                                                    Move_GetID(attackingMon, i), true, false);
+#endif 
                 if ((moveDamage << 1) >= currentHp)
                 {
 
@@ -4144,14 +4168,23 @@ extern "C"
                 - If the move deals 0% damage due to no effectiveness, guaranteed switch out if any other pokemon has a move.
 
         */
-        // int moveDamage = checkCalcTable(BattleServer_GetServerFlow(work->mainModule->server), attackingMon, defendingMon, (MoveID)moveID);
-        // if (!moveDamage)
-        // {
+
+#if DAMAGE_CACHE_ENABLED
+        int moveDamage = checkCalcTable(BattleServer_GetServerFlow(work->mainModule->server), attackingMon, defendingMon, (MoveID)moveID);
+        if (!moveDamage)
+        {
+            moveDamage = Handler_SimulationDamage(BattleServer_GetServerFlow(work->mainModule->server),
+                                                  BattleMon_GetID(attackingMon),
+                                                  BattleMon_GetID(defendingMon),
+                                                  moveID, true, false);
+        }
+#else 
         int moveDamage = Handler_SimulationDamage(BattleServer_GetServerFlow(work->mainModule->server),
                                                   BattleMon_GetID(attackingMon),
                                                   BattleMon_GetID(defendingMon),
                                                   moveID, true, false);
-        // }
+#endif 
+ 
 
 #if DEBUGGING_MIDTURN_SWITCH_AI && DEBUGGING_ALL
         k::Printf("\n\n--------ShouldSwitchIfChoicedIntoIneffectiveMove-----------\nIs being called for move %d, used by Pokemon %d against Pokemon %d, and deals %d damage\n", moveID, attackingMon->Species, defendingMon->Species, moveDamage);
@@ -4405,11 +4438,22 @@ extern "C"
             int currentHp = BattleMon_GetValue(a2->attacker, VALUE_CURRENT_HP);
             do
             {
+#if DAMAGE_CACHE_ENABLED
+                int damage = checkCalcTable(a2->serverFlow, defender, a2->attacker, (MoveID)Move_GetID(defender, i));
+                if (!damage)
+                {
+                    damage = Handler_SimulationDamage(a2->serverFlow,
+                                                      BattleMon_GetID(defender),
+                                                      BattleMon_GetID(a2->attacker),
+                                                      Move_GetID(defender, i), true, false);
+                }
+
+#else 
                 int damage = Handler_SimulationDamage(a2->serverFlow,
                                                       BattleMon_GetID(defender),
                                                       BattleMon_GetID(a2->attacker),
                                                       Move_GetID(defender, i), true, false);
-
+#endif 
 #if DEBUGGING_AI && DEBUGGING_ALL
                 k::Printf("Check %d is for move %d from %d, the damage against %d is %d. \n", i, Move_GetID(defender, i), defender->Species, a2->attacker->Species, damage);
 #endif
@@ -4481,10 +4525,22 @@ extern "C"
             int currentHp = BattleMon_GetValue(reference, VALUE_CURRENT_HP);
             do
             {
+#if DAMAGE_CACHE_ENABLED
+                int damage = checkCalcTable(a2->serverFlow, defender, reference, (MoveID)Move_GetID(defender, i));
+                if (!damage)
+                {
+                    damage = Handler_SimulationDamage(a2->serverFlow,
+                                                      BattleMon_GetID(defender),
+                                                      BattleMon_GetID(reference),
+                                                      Move_GetID(defender, i), true, false);
+                }
+
+#else 
                 int damage = Handler_SimulationDamage(a2->serverFlow,
                                                       BattleMon_GetID(defender),
                                                       BattleMon_GetID(reference),
                                                       Move_GetID(defender, i), true, false);
+#endif 
 
 #if DEBUGGING_AI && DEBUGGING_ALL
                 k::Printf("Check %d isf or move %d from %d, the damage against %d is %d. \n", i, Move_GetID(defender, i), defender->Species, a2->attacker->Species, damage);
@@ -4524,10 +4580,10 @@ extern "C"
     int THUMB_BRANCH_AI100_TargetDealsNegligibleDamage_Setup(ScriptVM *a1, TrainerAIEnv *a2)
     {
         __int16 ExistFrontPokePos; // r0
-        unsigned int pokeCount;
+        u8 pokeCount;
         u8 opposingPokePos[5];
         BattleMon *defender;
-        unsigned int k = 0x3C;
+        u8 k;
         ExistFrontPokePos = Handler_GetExistFrontPokePos(a2->serverFlow, (int)a2->attacker->ID);
         pokeCount = Handler_ExpandPokeID(a2->serverFlow, ExistFrontPokePos | 0x100, opposingPokePos);
         int destination;
@@ -4539,16 +4595,29 @@ extern "C"
 
         for (k = 0; k < pokeCount; k++)
         {
-            int i = 0;
+            u8 i = 0;
             defender = Handler_GetBattleMon(a2->serverFlow, opposingPokePos[k]);
-            int MoveCount = BattleMon_GetMoveCount(defender);
+            u8 MoveCount = BattleMon_GetMoveCount(defender);
             int currentHp = DivideMaxHPZeroCheck(a2->attacker, 3u);
             do
             {
+
+
+                #if DAMAGE_CACHE_ENABLED
+                int damage = checkCalcTable(a2->serverFlow, defender, a2->attacker, (MoveID)Move_GetID(defender, i));
+                if (!damage)    
+                {
+                    damage = Handler_SimulationDamage(a2->serverFlow,
+                                                      BattleMon_GetID(defender),
+                                                      BattleMon_GetID(a2->attacker),
+                                                      Move_GetID(defender, i), true, false);
+                }
+                #else 
                 int damage = Handler_SimulationDamage(a2->serverFlow,
                                                       BattleMon_GetID(defender),
                                                       BattleMon_GetID(a2->attacker),
                                                       Move_GetID(defender, i), true, false);
+                #endif 
 #if DEBUGGING_AI && DEBUGGING_ALL
                 k::Printf("Check %d isf or move %d from %d, the damage against %d is %d. \n", i, Move_GetID(defender, i), defender->Species, a2->attacker->Species, damage);
 #endif
@@ -4597,10 +4666,21 @@ extern "C"
         int v7 = VM_Read32(a1);
         do
         {
+            #if DAMAGE_CACHE_ENABLED
+            int damage = checkCalcTable(a2->serverFlow, a2->defender, a2->attacker, (MoveID)Move_GetID(a2->defender, i));
+            if (!damage)
+            {
+                damage = Handler_SimulationDamage(a2->serverFlow,
+                                                  BattleMon_GetID(a2->defender),
+                                                  BattleMon_GetID(a2->attacker),
+                                                  Move_GetID(a2->defender, i), true, false);
+            }
+            #else 
             int damage = Handler_SimulationDamage(a2->serverFlow,
                                                   BattleMon_GetID(a2->defender),
                                                   BattleMon_GetID(a2->attacker),
                                                   Move_GetID(a2->defender, i), true, false);
+            #endif 
 #if DEBUGGING_AI && DEBUGGING_ALL
             k::Printf("Check %d is or move %d the damage against %d is %d. \n", i, Move_GetID(a2->defender, i), a2->attacker->Species, damage);
 #endif

@@ -533,7 +533,7 @@ extern int MainModule_GetPlayerClientID(MainModule *a1);
 // AI STUFF
 extern u32 AIGetMoveParam(TrainerAIEnv *a1, int a2, MoveField a3);
 extern u32 VM_Read32(void *vm);
-extern int Handler_SimulationDamage(ServerFlow *a1, int a2, int a3, int a4, bool a5, bool a6);
+extern int Handler_SimulationDamage(ServerFlow *a1, int a2, int a3, int a4, int a5, int a6);
 extern int AIConditionalJump(void *a1, unsigned int condition, int param1, int param2, int dest);
 
 // SHADOW TAG
