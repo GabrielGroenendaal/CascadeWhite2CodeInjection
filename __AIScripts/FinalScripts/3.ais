@@ -1,5 +1,5 @@
 	JumpIfTargetIsAlly(&endScript_1)
-    // Jump(&NotTesting)
+    Jump(&NotTesting)
 
     GetAbilityGuess(attacker)
     GetLastPreviousCategory()

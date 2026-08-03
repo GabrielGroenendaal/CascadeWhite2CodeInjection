@@ -7,19 +7,13 @@
     Look at Distribution for: 
         Retaliate (it's now 85 BP, works as a good mid tier normal move)
 
-Discharge Distribution:
+    Moves to Rexamine: 
+        Water Gun
+        Concuss 
+        Peck 
+        Absorb 
 
-      30: Jolteon
-      31: Pikachu / Raichu
-      33: Joltik / Galvantula
-      37: Voltorb / Electrode
-      38: Plusle
-      38: Minun
-      41: Elgyem / Beheeyem
-      44: Nosepass / Probopass
-      50: Magneton / Magnezone
-      50: Pachirisu
-      
+
 [ RARELY USED OR UNUSED ABILITIES ] 
     Well-Baked Body 
         Only on Golurk & Claydol. Could put it on Rotom-Heat?
@@ -65,78 +59,8 @@ Discharge Distribution:
 
 
 [ REGULAR POKEMON ]
-      Chingling:
-            +5 SpA
-     
-      Chimecho:
-            +5 SpA
-     
-      Altaria:
-            Abil 6: Serene Grace
-     
-      Sceptile:
-            Abil 3: Solar Power -> Exploit
+ 
 
-      Delibird:
-            Abil 3: Permafrost -> Unburden
-            HA chance raised to 20%
-     
-      Abomasnow:
-            Abil 2: Resilient -> Berserk
-
-      Walrein:    
-            Abil 2: Guts -> Resilient
-            Abil 3: Intimidate -> Guts
-            Abil 4: Snow WArning -> Intimidate
-
-      Deoxys:
-            Abil: Exploit
-
-      Electrode:
-            Abil 3: Volt Absorb
-            HA Enabled
-
-      Primeape:
-            Abil 2: tenacity -> Rock Head
-            Abil 6: Tinted Lens
-
-      Golduck:
-            +5 Atk
-            +5 SpA
-
-      Dragonite:
-            Abil 1: Marvel Scale -> Friend Guard
-            Abil 2: Resilient -> Multiscale
-            Abil 3: Majestic Ward -> No Guard
-
-      Accelgor
-            Abil 4: Tinted Lens
-     
-      Aggron:
-            Abil 3: Filter -> Heavy Metal
-     
-      Scyther:
-            Abil 3: Sturdy -> Weak Armor
-     
-      Scizor:
-            Abil 2: Unburden -> Intimidate
-            Abil 3: Sturdy -> Light Metal  
-            HA Chance: 15
-     
-      Escavalier:
-            Abil 3: Light Metal -> Justified
-            Abil 6: Light Metal
-           
-      Magnezone:
-            Abil 3: Levitate -> Light Metal
-     
-      Swanna:
-            Abil 2: Friend Guard
-            Abil 3: Serene Grace
-     
-      Hitmonchan:
-            Abil 2: Scrappy
-     
       Potential Whimsicott Rework:
              HP: 75 (+15)
             Atk: 82 (+15)
@@ -150,19 +74,10 @@ Discharge Distribution:
             Abil 2: Infiltrator
             Abil 3: Fluffy
      
-      Whiscash:
-            Berserk -> Gourmand
-            Replace Stockpile with Spit Up
+
      
       Tropius:
             Abil 3: Gourmand -> Regenerator maybe?
-     
-      Swalot:
-            Abil 3 Chance: 30%
-
-      Blaziken:
-            Abil 2: Rock Head
-            Abil 3: Quick Feet
 
       Blastoise:
             -20 Spe
@@ -174,181 +89,18 @@ Discharge Distribution:
       Meganium:
             Abil 3: Natural Cure -> Resilient
             Chance of HA: 20%
-     
-      Leavanny:
-            Abil 1: Swarm
-    
-    Drapion: 
-        Level 20: X-Scissor -> Twineedle 
-        Level 46: Needle Arm -> Vise Grip
-        Level 60: Agility -> Power Whip
-        Level 65: Iron Defense -> Toxic 
-    Eeveelutions: 
-        Level 1: Protect -> Charm 
-    Clamperl: 
-        Level 1: Iron Defense -> Harden
-        Level 25: Protect -> Mirror Coat
-        Level 40 (New): Protect
-        Level 65 (New): Iron Defense
-        Level 85->81: Shell Smash
-    Anorith/Armaldo: 
-        Level 1: Iron Tail -> Protect 
-        Level 4->1: Aqua Jet -> Twineedle
-        Level 29: Rock Polish -> Screech
-        Level 32: Razor Shell -> Liquidation
-        Level 40: X-Scissor -> Gyro Ball
-        Level 46: Protect -> Curse
-    Exeggutor: 
-        Level 25: Explosion -> Egg Bomb 
-        Level 34: Egg Bomb -> Explosion 
-    Wormadam-Lines: 
-        Sand: +4 Atk 
-        Trash: +2 Atk, +2 SpA 
-        Level 1: Protect -> Body Press
-        Level 18: Hidden Power -> Protect
-        Level 29 (Sand): Recycle 
-    Totodile Line: 
-        Level 6->1: Aqua Jet 
-        Level 10->1: Scary Face 
-        Level 15->1: Scald -> Agility
-        Level 46: Agiliy -> Spiky Shield 
-        Level 51: Liquidation
-    Yanma / Yanmega
-        Level 51: Detect -> Hypnosis
-    Absol (Replaced with )
-        Level 1: Detect -> Lucky Chant
-        Level 1: Knock Off -> Horn Drill
-        Level 54: Doom Desire -> Perish Song 
-        Level 69->68: Perish Song -> Doom Desire 
-    Sableye: 
-        Level 1: Detect -> Shadow Punch
-        Level 25: Shadow Claw -> Bitter Malice
-        Level 38: Shadow Punch ->  Shadow Claw
-        Level 53: Phantom Strike -> Air Slash
-        Level 57: Knock Off -> Phantom Strike
-    Zangoose: 
-        Level 1: Detect -> Follow Me
-    Scrafty: 
-        Level 1: Detect -> Hammer Arm 
-        Level 4->1: Power Trip 
-        Level 7->1: Scary Face -> Toxic
-        Level 49: Toxic -> Scary Face 
-    Sceptile: 
-        Level 54: Detect -> Fake Out 
-    Accelgor:
-        Level 1: Gunk Shot -> Extremespeed
-        Level 64: Detect -> Gunk Shot
-    Grumpig: 
-        Level 62: Brutal Swing -> Follow Me 
-    
-    Tyranitar: 
-        Abil 5: Berserk
-        Abil 6: Solid Rock 
-        Level 1: Payback -> Nasty Plot
-        Level 1: Avalanche -> Hyper Beam
-        Level 5: Rock Polish -> Accelerock
-        Level 34: Hyper Beam -> Roar 
-        Level 74: Brutal Swing -> Night Daze
-
-    Venmoth: 
-        +5 SpA 
-        +5 SpD 
-    
-    Starmie: 
-        Level 10>1: Reflect Type -> Psyblade 
-
-    Jynx: 
-        Level 7->1: Confide -> Follow Me 
-    
-    Slowbro: 
-        Level 60: Future Sight -> Psyblade 
-    
-    Metagross: 
-        Level 1: Ally Switch -> Agility 
-        Level 1: Heavy Slam -> Heat Crash
-        Level 28: Agility -> Metal Sound  
-        Level 47: Zen Headbutt -> Psycho Boost 
 
 
-    
-    Steelix: 
-        Double check ability 6 is Sturdy
-        Abil 4 should be arena trap 
-    
+
+ 
     Toxicroak: 
         +10 Defense 
         +10 Special Defense 
         -10 Speed 
     
-    Magcargo: 
-        +10 SpA 
-        Abil 3: Shell Armor -> Unaware 
-    
-    Ferroseed: 
-        +5 SpA 
-    
-    Ferrothorn: 
-        +5 SpA 
-    
-    Tauros: 
-        Ability 3: Anger Point -> Moxie 
-    
-    Basculin-Blue: 
-        Ability 3: Anger Point -> Rivalry 
-    
-    Cubchoo
-        +15 HP 
-        +15 Defense 
-        +15 Special Defense 
 
-    Beartic: 
-        +15 HP 
-    
-    Dunsparce: 
-        Abil 2: Rattled? 
-    
-    Rotom:
-        +5 Speed 
-        +5 SpA 
-    
-    Skarmory: 
-        +10 Atk 
-    
-    Golurk: 
-        Abil 1: Weak Armor 
-        Abil 2: No Guard 
-        Abil 3: Iron Fist
+  
 
-        +10 Speed  
-    
-    
-    Kabutops: 
-        -5 SpD 
-        +5 Atk 
-    
-    Shieldon: 
-        +20 HP
-        -20 SpA 
-    
-    Bastiodon: 
-        +20 HP
-        -20 SpA
-    
-    Diglett: 
-        Should have 120 Speed
-    
-    Dugtrio: 
-        Should have 150 Speed 
-    
-    Shadow Force: 
-        Should be 101 accuracy 
-    
-    Delibird: 
-        +10 Atk 
-        +10 SpA 
-        -20 Spe 
-        Abil 3: Unburden 
-        Chance of Abil 3: 20%
 
 
 [ NEW UNOWN AND COMBEE FORMS ]

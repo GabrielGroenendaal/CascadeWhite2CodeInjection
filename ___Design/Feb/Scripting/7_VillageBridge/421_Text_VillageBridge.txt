@@ -1,0 +1,35 @@
+----- TEXT FILE 421-----
+0:                                                                                 
+1: Wait! Waaait!\c\nI've been waiting for this day!\nYou're the 1,000th opponent!\c\nI've got a 999-win streak.\nBe my battle opponent!
+2: Gwa ha ha!\nEven though you're just a fledgling,\r\nyou'll still be my 1,000th win in a row!\c
+3: I understand. I've got a 999-win streak!\nIt's natural to be intimidated.\c\nBut I can't let you go further\nunless you battle me!\c\nAnd there's definitely no way around me.\nNope. You shouldn't use Surf\r\nto cross the river, for example.
+4: I've steadily extended my win streak\nfor two years... And now it's over...\c\nBut I have a strong will.\nI declare that I'll try again\r\nto have a 1,000-win streak!\c\nI won't battle you next time, though.\nYou'll just break my streak.
+5: [SPEED(2)]Oh... Oh...\nSo...thirsty...\c\nI met you on\nthe Tubeline Bridge...\c\nG-g-give me...\nFresh Water...?[SPEED(0)]
+6: Refreshed!!\c\nI'm 100% rehydrated!\nI feel better now! Thank you!\c\nI'll dash to the next bridge!
+7: [SPEED(2)]But... You don't have Fresh Water...\nI appreciate the thought, though...[SPEED(0)]
+8: [SPEED(2)]Thank...\c\nWhat?\nOh...\c\nWithout Fresh Water...\nI can't run on bridges anymore.[SPEED(0)]
+9: My favorite thing nowadays\nis to compete in the PWT!
+10: Practice as if it were a real game! Play\nin a real game as if it were a practice!
+11: I'll cross all the bridges\nin the Unova region!\c\nEven the Marine Tube from Undella Town!\nHmm! I am so looking forward to it!
+12: Derleth: Fweet fweet...\nFweeeeeet fweet fweet...
+13: Derleth: What is piercing my mind is\na sad sound.\c\nWhat is piercing my heart is\na cold night wind.
+14: Derleth: Fwee... Fwee...\nFffweeet fweet...
+15: Derleth: The only things that come out\nof my mouth are my whistle tunes and\r\ncomplaints about my life.\c\nThis bridge is a meeting place for people\nlike me who like to complain.
+16: Aickman: How about this? This sound!\nDoesn't it get to your heart? Your mind?
+17: Aickman: I know my sound doesn't fit\nthis city, this town.\c\nBut I... I cannot change\nmy life, my style.
+18: Aickman: This is my best friend, my pal.\nIt knows all my sorrow, all my tears.
+19: Aickman: Y-you have great sparkles...\nSparkles in your eyes.\c\nPlease make our hopes, our dreams,\ncome true for us.\c\nGo grab the glory--go take on the world!
+20: Russo: La la la la la...
+21: Russo: Ahem, ahem!\nNow, something's not quite right.\c\nThis here microphone's all screwy.\nI can sing real good, promise!
+22: Russo: Testing...\nCheck one, check two, check, check, yup.
+23: Russo: Now, you're the first person in an\nawful long time who's hung around to\r\nlisten and hear what I was singin' about.\c\nMuch obliged!
+24: Koontz: Singing gives life to my spirit.\nWill you listen to the voice of my spirit?
+25: Koontz: Huh? Are you leaving already?\nI am always here.
+26: Koontz: Oh, you want to listen to my song\nafter all! Yes!
+27: Koontz: My song...\nDon't you like it?
+28: I hear a sound from somewhere.\nSometimes it sounds sad.\r\nSometimes it sounds a little goofy...\r\nDo you think it could be a ghost?
+29: I hear a sound from somewhere.\nSometimes it sounds sad.\r\nSometimes it sounds a little goofy...\r\nDo you think it could be a ghost?\c\nWhat?\nA girl practicing music in that house?\c\nI see! I got it! Thank you!\nAccept these as a thank-you gift!\c
+30: Keep somebody's secret.\nOtherwise, your secret will be out.
+31: I tried to ask for directions, but\nit turned out I was talking to a\r\nPokémon Trainer!\c\nYou need to be careful, too.
+32: Village Bridge
+33: Village Bridge Restaurant\nVillage Sandwiches are our specialty!
