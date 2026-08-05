@@ -2137,6 +2137,9 @@ extern "C"
 #pragma endregion
 
 #pragma region TrappingStuff
+
+
+  
     void null()
     {
     }
@@ -2194,6 +2197,65 @@ extern "C"
         }
         return result;
     };
+    void HandlerLowKickPower(int a1, ServerFlow *a2, int a3)
+    {
+        u16 Weight;   // r0
+        u8 v10;               // r1
+
+        if (a3 == BattleEventVar_GetValue(VAR_ATTACKING_MON))
+        {
+            if (Handler_IsMonSwitchOutInterrupted(a2)){
+                BattleEventVar_RewriteValue(VAR_MOVE_POWER, 120);
+            }
+            else {
+                Weight = Handler_GetWeight(a2, BattleMon_GetID(Handler_GetBattleMon(a2, BattleEventVar_GetValue(VAR_DEFENDING_MON))));
+                if (Weight < 0x7D0)
+                {
+                    if (Weight < 0x3E8)
+                    {
+                        if (Weight < 0x1F4)
+                        {
+                            if (Weight < 0xFA)
+                            {
+                                v10 = 40;
+                                if (Weight < 0x64)
+                                {
+                                    v10 = 20;
+                                }
+                            }
+                            else
+                            {
+                                v10 = 60;
+                            }
+                        }
+                        else
+                        {
+                            v10 = 80;
+                        }
+                    }
+                    else
+                    {
+                        v10 = 100;
+                    }
+                }
+                else
+                {
+                    v10 = 120;
+                }
+                BattleEventVar_RewriteValue(VAR_MOVE_POWER, v10);
+            }
+        }
+    }
+    MOVE_TRIGGERTABLE LowKickHandlers[] = {
+        {EVENT_SWITCH_OUT_INTERRUPT, (MOVE_HANDLER_FUNC)HandlerPursuitStart},
+        {EVENT_BYPASS_ACCURACY_CHECK, (MOVE_HANDLER_FUNC)HandlerPursuitHitCheck},
+        {EVENT_MOVE_BASE_POWER, (MOVE_HANDLER_FUNC)HandlerLowKickPower},};
+    MOVE_TRIGGERTABLE *THUMB_BRANCH_EventAddLowKick(_DWORD *a1)
+    {
+        *a1 = 3;
+        return LowKickHandlers;
+    }
+    
     MOVE_TRIGGERTABLE ShadowForceHandlers[] = {
         {EVENT_SWITCH_OUT_INTERRUPT, (MOVE_HANDLER_FUNC)HandlerSwitchOutInterruptStart},
         {EVENT_CHARGE_UP_START, (MOVE_HANDLER_FUNC)HandlerShadowForce},

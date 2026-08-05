@@ -152,12 +152,10 @@ Bug Reports, resources, discussion, and a forum to provide feedback can be found
 
 
 The moves taught have been changed. 
-- Green Shards: Screech, Fake Tears, Sparkle, Defog, Chilling Water, Low Sweep, Incinerate, Icy Wind, Electroweb, Snarl, Breaking Swipe, Struggle Bug, Take Down, Uproar
-- Red Shards: Seed Bomb, U-Turn, Drill Run, Bounce, Signal Beam, Iron Head, Skill Swap, Seething Cold, Psychic Noise, Torment, Low Kick, Cross Poison, Fire Punch, Thunder Punch, Ice Punch
-- Blue Shards: Explosion, Self Destruct, Zen Headbutt, Magic Coat, Barrier, Defense Curl, Sweet Scent, Gastro Acid, Iron Tail, Aqua Tail, Earth Power, Psyblade, Foul Play, Focus Punch, Gravity, Follow Me, Protect 
-- Yellow Shards: Double-Edge, Heal Pulse, Healing Wish, Lucky Chant, Synthesis, Roost, Head Smash, Helping Hand, Overheat, Outrage, Superpower, Toxic, Rest
-
-
+- Green Shards: Screech, Fake Tears, Seismic Toss, Defog, Chilling Water, Swift, Breaking Swipe, Magic Coat, Take Down, Snore, Low Sweep, Icy Wind, Electroweb, Endeavor, Natural Gift
+- Red Shards: Seed Bomb, Signal Beam, Counter, Drill Run, Bounce, Psychic Noise, Ice Punch, Fire Punch, Thunderpunch, Safeguard, Foul Play, Focus Punch, Cross Poison, Skill Swap, U-Turn
+- Blue Shards: Recycle, Knock Off, Roost, Earth Power, Heat Wave, Muddy Water, Barrier, Defense Curl, Sweet Scent, Gastro Acid, Psyblade, Scary Face, Double-Edge, Body Press, Gravity, Helping Hand, Detect
+- Yellow Shards: Last Resort, Heavy Slam, Lucky Chant, Worry Seed, Healing Wish, Brutal Swing, Trick Room, Head Smash, Outrage, Superpower, Overheat, Toxic, Rest 
 
 # Cheren Split (Level Cap 15)
 
@@ -213,18 +211,17 @@ end
 !notif MOVE TUTOR, The green shard move tutor stands by the statue in town, and teaches:
 - Screech (2 shards)
 - Fake Tears (2 shards)
-- Sparkle (2 shards)
+- Seismic Toss (2 shards)
 - Defog (4 shards)
-- Low Sweep (4 shards)
-- Incinerate (4 shards)
-- Take Down (4 shards)
-- Uproar (4 shards)
+- Chilling Water (4 shards)
+- Swift (4 shards)
+- Breaking Swipe (4 shards)
+- Magic Coat (4 shards)
+- Take Down (5 shards)
+- Low Sweep (6 shards)
 - Icy Wind (6 shards)
 - Electroweb (6 shards)
-- Snarl (6 shards)
-- Chilling Water (6 shards)
-- Breaking Swipe (6 shards)
-- Struggle Bug (6 shards)
+- Endeavor (8 Shards)
 - Natural Gift (10 shards)
 
 
@@ -261,6 +258,7 @@ end
   wiseglasses, WiseGlasses - Reward for defeating Youngster Kenny
   white herb, White Herb x2 — reward for defeating Pkm Breeder Alice
   tm normal, TM10 Hidden Power — reward for defeating Benga
+  tm fire, TM90 Incinerate — found in northeastern forest
   great ball, Great Ball x2 — found past Youngster Kenny
 end
 
@@ -291,13 +289,13 @@ blitzle
 budew
 end
 
-!tr 2/10 (Spinner: Rewards 2x White Herbs)
+!tr 2/10 (DODGEABLE) Rewards 2x White Herbs
 
 !trm 181/10
 
 !trm 182/10
 
-!tr 180/10 (Spinner: Rewards Wise Glasses)
+!tr 180/10 (DODGEABLE) Rewards Wise Glasses
 
 ### Benga 
 !trm 772 Rewards TM10 Hidden Power
@@ -350,6 +348,7 @@ chilan berry, 3x Chilan Berries (given by Gym Guide upon entering)
 rowap berry, 3x Rowap Berries (speak to the School Kid inside the and defeat them in battle)
 jaboca berry, 3x Jaboca Berries (speak to the School Kid inside the and defeat them in battle)
 tm normal, TM67 Secret Power (reward for defeating Cheren)
+tm flying, TM49 Pluck (found in the classroom)
 end
 
 !tr 633 Gatekeeps the Rowap / Jaboca Berries
@@ -417,7 +416,7 @@ end
 !trm 174/16 Choose One (Left)
 !trm 396/16 Choose One (South)
 
-!tr 176/17 (SPINNER) Rewards Mystic Water 
+!tr 176/17 (DODGEABLE) Rewards Mystic Water 
 
 !trm 175/18
 
@@ -484,9 +483,9 @@ love ball, Love Ball x10
 miracle seed, Miracle Seed (reward for defeating Nursery Aide Leah)
 end
 
-!enc 29 Interact with the toy boxes on the left of the room!
+!enc 29 
 
-!tr 112 (SPINNER) Rewards Miracle Seed 
+!tr 112 (DODGEABLE) Rewards Miracle Seed 
 
 
 ## Complex Exterior
@@ -498,7 +497,7 @@ end
 !notif NEW ENCOUNTER, Complex Exterior is a new met location distinct from the Virbank Complex. , #469e62
 !enc 46
 
-!tr 555/19 (SPINNER) Rewards TM15 Psycho Cut
+!tr 555/19 (DODGEABLE) Rewards TM15 Psycho Cut
 
 
 ## Virbank Complex 
@@ -520,11 +519,11 @@ end
 
 !tr 745/18
 
-!tr 738 (Spinner) Rewards TM39 Rock Tomb
+!tr 738 (DODGEABLE) Rewards TM39 Rock Tomb
 
-!tr 645 (Spinner) Rewards Magnet
+!tr 645 (DODGEABLE) Rewards Magnet
 
-!tr 135 (Spinner) Rewards 15x green shards 
+!tr 135 (DODGEABLE) Rewards 15x green shards 
 
 ### Eviolite Quest 
 !notif SPLIT-LOCKED, This quest can only be completed before defeating Roxie.  , #af74b3
@@ -545,7 +544,7 @@ tm poison, TM09 Venoshock (reward for beating Roxie)
 kebia berry, Kebia Berry x1 (reward for beating Dirk)
 end
 
-!tr 138/19 (SPINNER) Rewards 1x Kebia Berry
+!tr 138/19 (DODGEABLE) Rewards 1x Kebia Berry
 
 !trm 178/21
 
@@ -572,9 +571,9 @@ end
 !notif NEW ENCOUNTER, Pokéstar Studios is accessible as soon as you defeat Roxie, and there are encounters here! , #469e62
 !enc 16 
 
-!tr 106 (SPINNER) (Rewards 3x Cheri Berries)
+!tr 106 (DODGEABLE) (Rewards 3x Cheri Berries)
 
-!tr 300 (SPINNER) (Rewards 3x Pecha Berries)
+!tr 300 (DODGEABLE) (Rewards 3x Pecha Berries)
 
 
 ## Plasma Grunts
@@ -593,7 +592,6 @@ end
 muscle band, Muscle Band 
 wiseglasses, Wiseglasses
 friend ball, Friend Ball 
-
 end
 
 !items Items
@@ -604,7 +602,7 @@ chesto berry, Chesto Berry x3 (battle the musician in Cafe Sonata)
 persim berry, Persim Berry x3 (reward for defeating Harlequin Flops)
 micle berry, Micle Berry x3 (reward for defeating Harlequin Yoncy)
 weakness policy, Blunder Policy x1 (reward for defeating Harlequin Jangles)
-kasib berry, Trickster Herb x1 (reward for beating all three harlequins)
+kasib berry, Trickster Herb x2 (reward for beating all three harlequins)
 end
 
 !tr 124 Rewards 3x Chesto Berries
@@ -620,7 +618,7 @@ They only provide their battles and rewards prior to defeating Burgh.
 
 !tr 622 (Found in Medal Office: Rewards 1x Blunder Policy)
 
-!tr 652 (Fought after beating all 3 clowns: Rewards 1x Trickster Steb)
+!tr 652 (Fought after beating all 3 clowns: Rewards 2x Trickster Steb)
 
 ## Route 4 
 !items Items
@@ -637,7 +635,7 @@ Route 4 is the first introduction to "Gatekeeper" trainers. These powerful train
 
 !enc 104
 
-!tr 336 (SPINNER) (Rewards 3x Aspear Berries)
+!tr 336 (DODGEABLE) (Rewards 3x Aspear Berries)
 
 !tr 211/26 (Choose one to fight: Left Side) 
 
@@ -652,16 +650,17 @@ black sludge, Black Sludge (found west of the Plasma Grunts after beating them)
 enigma berry, Enigma Berry x3 (found after the Janitor Tag)
 lagging tail, Lagging Tail (found after the Workers)
 mental herb, Mental Herb x3 (found past the healthcare tag)
-green shard, Green Shards x15 (found after the Policeman tag)
+green shard, Green Shards x10 (found after the Policeman tag)
 sticky barb, Sticky Barb (found after the Scientist tag)
 stable mulch, 1x Serious Mint (reward for Defeating the Plasma Grunts)
 tm ghost, TM37 Hex (encountered behind the Grimers once you beat the grunts)
 dusk ball, Dusk Ball (x3) (found near entrance)
+red shards, 0x-10x Red Shards (2x per tag battle)
 end
 
 !enc 37
 
-!notif WARNING, Each pair of trainers in Castelia Sewers can be fought as either a Back to Back battle or a Tag battle (except for the Sewer Grunts). Hugh will NOT heal you between the back to backs! , #f26253
+!notif WARNING, Each pair of trainers in Castelia Sewers can be fought as either a Back to Back battle or a Tag battle (except for the Sewer Grunts). Hugh will NOT heal you between the back to backs! If fought as a Tag, each battle rewards 2x Red Shards. , #f26253
 
 ### Hugh's Team
 !tr 589/28 Picked Tepig
@@ -779,21 +778,20 @@ end
 
 !notif MOVE TUTOR, The Red Shard Move Tutor is found in the Battle Company Lobby. They teach
 - Seed Bomb (2 shards)
-- Iron Head (2 shards)
-- Fire Punch (2 Shards)
-- Thunder Punch (2 Shards)
-- Ice Punch (2 Shards)
+- Signal Beam (2 shards)
+- Counter (2 shards)
 - Drill Run (4 shards)
 - Bounce (4 shards)
-- Signal Beam (4 shards)
-- Iron Head (6 shards)
-- Seething Cold (6 shards)
-- Psychic Noise (6 shards)
-- Torment (6 shards)
-- Low Kick (8 shards)
+- Psychic Noise (4 shards)
+- Ice Punch (5 shards)
+- Fire Punch (5 shards)
+- Thunderpunch (5 shards)
+- Safeguard (6 shards)
+- Foul Play (6 shards)
+- Focus Punch (8 shards)
 - Cross Poison (8 shards)
-- Skill Swap (10 shards)
-- U-Turn (10 Shards)
+- Skill Swap (8 shards)
+- U-Turn (10 shards)
 
 
 !gifts Battle Company Egg 
@@ -1030,8 +1028,11 @@ end
 
 ## Nimbasa City 
 !items TM Vendor 
-desc: 
-tm normal, TM27 Return
+tm electric, TM73 Thunder Wave 
+tm rock, TM39 Rock Tomb 
+tm psychic, TM15 Psycho Cut
+tm flying, TM49 Pluck 
+tm fire, TM90 Incinerate
 end 
 
 !items Items
@@ -1142,8 +1143,7 @@ end
 ## Route 16 
 !items Items 
 tm fairy, TM08 Dizzy Punch (past Cyclists)
-normal gem, x2 Normal Gem (past Art & Stu)
-tm normal, TM49 Snore (past Art & Stu)
+tm dark, TM95 Torment (past Art & Stu)
 eject button, x2 Eject Pack (past Roughneck Silvester)
 end
 
@@ -1156,9 +1156,9 @@ end
 
 !tr 261/36 (DODGEABLE) Rewards Ganlon Berry
 
-!tr 257/36 Guards TM49 Snore and 2x Normal Gems
+!tr 257/36 Guards TM95 Torment
 
-!tr 217/36 Guards 3x Absorb Bulbs
+!tr 217/36 Guards 2x Eject Pack
 
 
 
@@ -1188,14 +1188,19 @@ end
 desc: Speak with Bellossom to receive 2x of each Resist Berry
 wacan berry, 1x each Resist Berry
 tm grass, TM06 Magical Leaf 
-red shard, x10 Red Shards
 end
 
 !enc 26
 
 
 ## Old Nimbasa Gym  
+!items Items 
+red shard, 10x Red Shards (defeat Lass Patty)
+end 
+
 !trm 621/38
+
+!tr 116/38 (DODGEABLE) Rewards 10x Red Shards
 
 !trm 148/38
 
@@ -1203,7 +1208,7 @@ end
 ## Nimbasa Gym 
 !items Items 
 cell battery, x3 Cell Battery (given by Gym Guide upon entering)
-tm electric, TM73 Thunder Wave (reward for defeating Elesa)
+tm fairy, TM32 Dazzling Gleam (reward for defeating Elesa)
 end
 
 !trm 207/38 
@@ -1218,8 +1223,9 @@ end
 - Ingo and Emmet miniboss (Guards Anville Town encounter, Dragon Fang, Evolution Stone)
 - Relic Castle Lenora (rewards a Fossil)
 - Eeveelution Gauntlet (rewards Ability Capsule, random Eeveelution Trade)
+- Nimbasa Board Harlequin Rewards 
 
-!trm 153/41 Rewards TM73 Thunder Wave
+!trm 153/41 Rewards TM32 Dazzling Gleam
 
 
 
@@ -1279,12 +1285,14 @@ end
 ## Driftveil City 
 !items Items 
 expert belt, Expert Belt (found in the market, vanilla location)
-tm grass, TM819 Giga Drain (south of Musician Preston)
-tm fairy, TM90 Draining Kiss (Past Backers Ava and Aya)
+tm grass, TM19 Giga Drain (south of Musician Preston)
+tm normal, TM20 Hyper Voice (Past Backers Ava and Aya)
 tm fighting, TM31 Brick Break (reward for defeating Duke)
+tm flying, TM62 Acrobatics (defeat Harlequin Chester)
+tm dragon, TM43 Dragon Pulse (show a dragon type to the maid in the Hotel)
 red shard, x10 Red Shard (past Dancer Brian)
 white herb, x2 White Herb (in the Market)
-kasib berry, x1 Trickster Herb (in the market)
+micle berry, x2 Micle Berry (in the Market)
 end 
 
 !items PokéMart 
@@ -1306,27 +1314,29 @@ end
 
 
 !notif MOVE TUTOR, The Blue Move Tutor is present, past Dancer Brian, and teaches:
-- Explosion (1 shards)
-- Self Destruct (1 shards)
-- Zen Headbutt (2 shards)
-- Magic Coat (2 shards)
-- Iron Tail (4 shards)
-- Aqua Tail (4 shards)
+- Recycle (2 shards)
+- Knock Off (2 shards)
+- Roost (2 shards)
+- Earth Power (4 shards)
+- Heat Wave (4 shards)
+- Muddy Water (4 shards)
 - Barrier (6 shards)
 - Defense Curl (6 shards)
 - Sweet Scent (6 shards)
 - Gastro Acid (6 shards)
-- Earth Power (8 shards)
-- Psyblade (8 shards)
-- Foul Play (8 shards)
-- Focus Punch (10 shards)
+- Psyblade (6 shards)
+- Scary Face (6 shards)
+- Double-Edge (8 shards)
+- Body Press (10 shards)
 - Gravity (10 shards)
-- Follow Me (10 shards)
-- Protect (10 shards)
+- Helping Hand (10 shards)
+- Detect (10 shards)
 
 !tr 255/43 Guards the Move Tutor and shards
 
-!tr 252/42 Guards TM90 Draining Kiss 
+!tr 252/42 Guards TM20 Hyper Voice 
+
+!tr 107/42 Guards TM62 Acrobatics
 
 !tr 256/42 Guards TM19 Giga Drain
 
@@ -1340,18 +1350,15 @@ end
 
 !enc 112
 
-
-### Janine 
+### Janine
 !notif SPLIT-LOCKED, Janine is an optional mini-boss that can only be fought before defeating Clay. This content is locked off afterwards. , #af74b3
-!tr 768/45 Rewards 2x Each Gem, Aerial Ace TM, Clay Tunnel Encounter, 10x Blue Shards
-
+!tr 768/45 Rewards 1x Each Gem, Payback TM, Clay Tunnel Encounter
 
 
 ## Clay Tunnel (must defeat Janine to access)
 !items Janine Rewards
 poison gem, 1x Each Gem (Speak with Sableye)
-tm flying, TM40 Aerial Ace
-blue shard, 10x Blue Shards
+tm dark, TM05 Payback
 end
 !enc 84
 
@@ -1377,7 +1384,8 @@ end
 ## Driftveil Gym 
 !items Items
 eject button, x3 Eject Button (given by Gym Guide)
-hm fighting, HM04 Strength (reward for defeating Clay)
+tm normal, TM76 Selfdestruct (reward for beating Clay)
+tm normal, TM79 Explosion (reward for defeating Clay)
 blue shard, x5 Blue Shard (reward for defeating Herman)
 blue shard, x5 Blue Shard (reward for defeating Tyler)
 blue shard, x5 Blue Shard (reward for defeating Gus)
@@ -1403,9 +1411,10 @@ end
 
 ## Leader Clay 
 !notif SPLIT END, Defeating Clay will lock you out of:  , #af74b3
-- Janine Opt. Boss (rewards Clay Tunnel encounter, 2x of each gem, 10x Blue shards)
+- Janine Opt. Boss (rewards Clay Tunnel encounter, 1x of each gem, TM05 Payback)
+- Driftveil Gym Optionals (15x Blue Shards)
 
-!trm 158/46 Rewards HM04 Strength
+!trm 158/46 Rewards TM76 Selfdestruct & TM79 Explosion
 
 
 
@@ -1429,7 +1438,7 @@ end
 !notif IV MASTER, The Top Stall has the IV Master, who in exchange for IV Enhancers will maximize an IV of your choice for one of your Pokémon to 31. 
 
 !items Items
-heart scale, 3x Heart Scales can be found by the Move Reminder.
+heart scale, 3x Heart Scales (given by Benga)
 colress mchn, Proto Booster (reward for defeating Colress) 
 old gateau, IV Enhancer x3 (reward for defeating Colress)
 end
@@ -1458,7 +1467,7 @@ normal gem, x2 Normal Gem (found past first trainers)
 tm steel, TM91 Flash Cannon (defeat Hiker Keith)
 red shard, x10 Red Shard (defeat Hiker Tobias)
 red shard, x5 Red Shard (past Hiker Tobias)
-blue shard, x3 Blue Shard (past Hiker Keith)
+blue shard, x2 Blue Shard (past Hiker Keith)
 sitrus berry, x10 Sitrus Berry (defeat Backpacker Annie)
 heart scale, x1 Heart Scale (defeat Scientist Lucy)
 ultra ball, x15 Ultra Ball (found past Backpacker Annie)
@@ -1593,14 +1602,15 @@ end
 
 ## Clay Tunnel: Skyla Split
 !items Items 
-blue shard, 6x Blue Shards
+blue shard, 3x Blue Shards
 tm ground, TM28 Dig (reward for defeating Roxanne) 
 ground gem, x1 Ground Gem (reward for defeating Roxanne) 
 shuca berry, x1 Shuca Berry (reward for defeating Roxanne)
 tm fire, TM59 Temper Flare (reward for beating Geoff) 
+colbur berry, 1x Colbur Berry (defeat Worker Cairn)
 end
 
-!notif WARNING, This shares a met location with Clay Tunnel accessible by beating Janine. If you skipped that fight, you can get an encounter here. #f26253
+!notif WARNING, This shares a met location with Clay Tunnel accessible by beating Janine. If you skipped that fight, you can get an encounter here. , #f26253
 !enc 85
 
 !tr 682/51 Guards TM59 Temper Flare 
@@ -1664,12 +1674,13 @@ end
 Chargestone Cave is now two gauntlets of 4 trainers each that must be defeated without changing your team to progress. You will not be able to access the PokéHelper to heal your party, pre-status, or fast travel out. 
 There are several crossroads where you can choose one of two trainers to fight to progress. Plan your route accordingly
 
-!notif WARNING, Volkner can only be fought within this Gauntlet. You cannot return to him later. #f26253
+!notif WARNING, Volkner can only be fought within this Gauntlet. You cannot return to him later. , #f26253
 !notif FIELD EFFECT, In Chargestone Cave, Ground types only resist Electric moves. , #4e86d4
 
 !items Items
 tm poison, TM36 Sludge Bomb (found before Gauntlet)
 tm electric, TM72 Volt Switch (reward for beating Volkner)
+tm normal, TM27 Return (reward for defeating Bianca)
 electric gem, x1 Electric Gem (reward for beating Volkner)
 wacan berry, x1 Wacan Berry (reward for beating Volkner)
 end
@@ -1713,6 +1724,14 @@ end
 !items TM Shop 
 tm psychic, TM33 Reflect 
 tm psychic, TM16 Light Screen
+tm ground, TM18 Scorching Sands 
+tm rock, TM66 Power Gem 
+tm normal, TM83 Endure 
+tm poison, TM84 Poison Jab 
+tm grass, TM86 Grass Knot 
+tm rock, TM80 Rock Slide 
+tm psychic, TM02 Psyshock
+tm fairy, TM08 Dizzy Punch
 end 
 
 !items Items 
@@ -1725,7 +1744,6 @@ end
 
 !items Items 
 heart scale, Heart Scale (found past Sola & Ana)
-tm fairy, TM32 Dazzling Gleam (found past Sola & Ana)
 tm flying, TM11 Air Slash (past Holly)
 weakness policy, x2 Blunder Policies (past Harlequins)
 green shard, x15 Green Shard (defeatin Youngster Nicholas)
@@ -1750,7 +1768,7 @@ end
 
 !tr 627/50 (DODGEABLE) (Rewards 5x Blue Shards)
 
-!tr 274/51 Guards TM32 Dazzling Gleam and Heart Scale 
+!tr 274/51 Guards Heart Scale 
 
 
 
@@ -1805,6 +1823,7 @@ end
 !items Items
 air balloon, x3 Air Balloon (given by Gym Guide)
 hm flying, HM02 Fly (given by Skyla)
+tm water, TM88 Aqua Tail (defeat Pilot Leonard)
 end
 
 !notif FIELD EFFECT, Airborne Pokémon gain 1.5x speed in Skyla's gym, including from Magnet Rise, Air Balloons, and Levitate. , #4e86d4
@@ -1815,17 +1834,20 @@ end
 
 !trm 332/52
 
+!tr 109/52 (DODGEABLE) Rewards TM88 Aqua Tail
+
 !trm 151/53
 
 !trm 152/53
 
 ## Leader Skyla 
 !notif SPLIT END, Defeating Skyla will lock you out of the following content , #af74b3
-- Relic Sanctum Guardian (rewards a Life Orb)
+- Relic Sanctum Guardian (rewards Rocky Helmet)
 - Cobalion Side Quest (rewards Guidance Chamber encounter, Assault Vest)
-- Sabrina Miniboss (rewards 1x IV Enhancers, Covert Cloak, Rooftop Encounter)
+- Sabrina Miniboss (rewards 5x IV Enhancers, Covert Cloak, Rooftop Encounter)
 - Roxanne Miniboss (rewards Ground Gems, Shuca Berries, TM28 Dig)
 - Morty Miniboss (rewards Ghost Gems, Kasib Berries, TM30 Shadow Ball)
+- Mistralton Optional Trainer (rewards TM88 Aqua Tail)
 
 !trm 155/55 Rewards HM02 Fly 
 
@@ -1844,7 +1866,7 @@ end
 !notif NEW ENCOUNTER, The exterior of the mountain is now a unique met location for encounters , #469e62
 
 !items Items 
-blue shard, x5 Blue Shard
+quick ball, x10 Quick Balls
 end
 
 ### Back to Back 
@@ -1880,16 +1902,19 @@ tm dragon, TM02 Dragon Claw
 heart scale, x1 Heart Scale 
 red shard, x15 Red Shard 
 sitrus berry, x10 Sitrus Berries 
+blue shard, 5x Blue Shards (defeat Backpacker Corin)
+blue shard, 0x-12x Blue Shards (2x rewarded for each battle fought as a tag)
 tm fire, TM35 Flamethrower (Reward for defeating Flannery, can be fought after Benga leaves you)
 fire gem, x1 Fire Gem (Reward for defeating Flannery, can be fought after Benga leaves you)
 occa berry, x1 Occa Berry (Reward for defeating Flannery, can be fought after Benga leaves you)
+hm fighting, HM04 Strength (given by Benga at exit)
 end
 
 !notif NOTE, Reversal Mountain is a distinct location from the exterior grass for met location. 
 
 !enc 49 
 
-!notif WARNING, Each pair of trainers in Reversal Mountain can be fought as either a Back to Back battle or a Tag battle. Benga will NOT heal you between the back to backs! , #f26253
+!notif WARNING, Each pair of trainers in Reversal Mountain can be fought as either a Back to Back battle or a Tag battle. Benga will NOT heal you between the back to backs! If fought as a tag, rewards 2x Blue Shards. , #f26253
 
 ### Benga's Team 
 !trm 237 
@@ -1901,6 +1926,8 @@ end
 ### Back to Back or Tag 
 !trm 516 (First)
 !trm 517 (Second)
+
+!tr 656 (DODGEABLE) Awards 5x Blue Shards  
 
 ### Back to Back or Tag 
 !trm 672 (First)
@@ -1932,7 +1959,7 @@ There are several crossroads where you can choose one of two trainers to fight t
 
 !items Items 
 custap berry, x2 Custap Berry (found at the end of the gauntlet)
-tm flying, TM62 Acrobatics (reward for defeating Falkner)
+tm flying, TM58 Hurricane (reward for defeating Falkner)
 flying gem, x1 Flying Gems (reward for defeating Falkner)
 coba berry, x1 Coba Berry (reward for defeating Falkner)
 end
@@ -1965,7 +1992,6 @@ end
 Falkner can be found on the south path of the route after defeating the Veterans. He can only be encountered before the gauntlet is complete. 
 !tr 55 Optional, can only be fought within the gauntlet 
 
-
 ### End of Gauntlet 
 
 
@@ -1984,9 +2010,12 @@ end
 !items Items 
 repel, x3 Throat Spray (Blocked by Musician Kinsley)
 ability capsule, x1 Ability Patch (Guarded by B2B Fight)
+tm dark, TM90 Dark Pulse (defeat Policeman Lester) 
 end
 
 !tr 232 Optional, Guards the Throat Sprays
+
+!tr 127 (DODGEABLE), Guards TM90 Dark Pulse 
 
 ### Ability Patch Back-To-Back
 !notif SPLIT-LOCKED, The old couple will leave Undella Resort once you defeat Alder, locking off their reward  , #af74b3
@@ -2018,7 +2047,6 @@ Abundant Shrine can be accessed immediately upon arriving in Undella, but the ch
 
 !notif FIELD EFFECT, There is permanent sun on Abundant Shrine , #4e86d4
 
-
 !notif SPLIT-LOCKED, Blaine is an optional mini-boss that can only be fought before defeating Marlon. This content is locked off afterwards.  , #af74b3
 
 ### Blaine 
@@ -2032,7 +2060,6 @@ old gateau, x5 IV Enhancer
 end
 
 !notif ULTIMATE MOVE TUTOR, The ultimate tutor for starters can be found here and will teach Blast Burn, Frenzy Plant, and Hydro Cannon to starters. 
-
 
 
 ## Marine Tube 
@@ -2052,7 +2079,7 @@ These will be a series of grueling battles using every underhanded trick in the 
 ### Shadow Triad Ambush #4: Explosives!
 !trm 236
 
-### Shadow Triad Ambush #4: Binding
+### Shadow Triad Ambush #5: Binding
 !trm 250 
 
 ### Final Shadow Triad Ambush: Triple Onslaught!
@@ -2073,21 +2100,21 @@ shell bell, Shell Bell (behind Pokémon Center)
 heart scale, x1 Heart Scale (in middle of town shallows)
 yellow shard, x5 Yellow Shards (Northwest dock)
 ability capsule, x1 Ability Capsule (Defeat the B2B Trainers)
-old gateau, x2 IV Enhancer (reward for defeating Evan)
+old gateau, x2 IV Enhancer (reward for defeating Preschooler Evan)
 end
 
 !notif MOVE TUTOR, The yellow shard move tutor is in their original location, and teaches:
-- Double-Edge (2 shards)
-- Heal Pulse (2 shards)
-- Healing Wish (4 shards)
+- Last Resort (2 shards)
+- Heavy Slam (2 shards)
 - Lucky Chant (4 shards)
-- Synthesis (6 shards)
-- Roost (6 shards)
-- Head Smash (6 shards)
-- Helping Hand (6 shards)
-- Overheat (8 shards)
+- Worry Seed (4 shards)
+- Healing Wish (6 shards)
+- Brutal Swing (6 shards)
+- Trick Room (8 shards)
+- Head Smash (8 shards)
 - Outrage (8 shards)
 - Superpower (8 shards)
+- Overheat (10 shards)
 - Rest (10 shards)
 - Toxic (10 shards)
 
@@ -2109,8 +2136,11 @@ end
 ## Route 21 
 !items Items 
 tm electric, TM24 Thunderbolt (requires beating either Swimmer Y or Swimmer Z)
-blue shard, x10 Blue Shard (requires beating Fisherman Sid)
+blue shard, x5 Blue Shard (requires beating Fisherman Sid)
 heart scale, x1 Heart Scale (found on the beach by Seaside Cave entrance)
+tm steel, TM70 Iron Tail (defeat Jasmine)
+babiri berry, x1 Babiri Berry (defeat Jasmine)
+steel gem, x1 Steel Gem (defeat Jasmine)
 end
 
 !notif FIELD EFFECT, There is permanent sun on Route 21 , #4e86d4
@@ -2125,18 +2155,25 @@ end
 
 !tr 312 (Guards access to the Blue Shards on the beach)
 
+### Optional Mini-Boss: Jasmine
+!notif SPLIT-LOCKED, Jasmine, and her Rewards, can only be accessed prior to defeating Marlon, #af74b3 
+!tr 186 Awards 1x Babiri Berry, 1x Steel Gem, TM70 Iron Tail
 
 ## Route 22
 !items Items 
 green shard, x15 Green Shard 
 ganlon berry, x2 Ganlon and Spelon Berries (Blocked by Breeder M)
 sitrus berry, x10 Sitrus Berries (navigate the railings)
+tm rock, TM71 Stone Edge (defeat Backpacker Clifford and navigate around to the top right)
 end
+
 
 ### Shel (Route 22 Gatekeeper)
 !tr 44 
 
 !enc 130
+
+!tr 213 Guards TM71 Stone Edge 
 
 !tr 333 (Gatekeeps Water Encounters and the ganlon/spelon berries)
 
@@ -2149,10 +2186,10 @@ end
 !items Items 
 grass gem, x1 Grass Gem (Reward for defeating Gardenia)
 rindo berry, x1 Rindo Berry (Reward for defeating Gardenia)
-tm grass, TM53: Energy Ball (Reward for defeating Gardenia)
+tm grass, TM53 Energy Ball (Reward for defeating Gardenia)
 bug gem, x1 Bug Gem  (Reward for defeating Bugsy)
 tanga berry, x1 Tanga Berry (Reward for defeating Bugsy)
-tm bug, TM45: Lunge (Reward for defeating Bugsy)
+tm bug, TM45 Lunge (Reward for defeating Bugsy)
 choice specs, Choice Specs (Reward for defeating Virizion)
 end
 
@@ -2173,7 +2210,7 @@ end
 ## Humilau Gym 
 !items Items 
 absorb bulb, x3 Absorb Bulb (Given by Gym Guide upon entering)
-hm water, HM06 Dive (reward for defeating Marlon)
+hm water, HM03 Surf (reward for defeating Marlon)
 end
 
 !notif FIELD EFFECT, There is permanent rain in Humilau Gym , #4e86d4
@@ -2194,13 +2231,385 @@ end
 !notif SPLIT END, Defeating Marlon will look you out of the following content, #af74b3
 - Gardenia Miniboss in Pinwheel Forest (rewards Grass Gems, TM53 Energy Ball, Rindo Berries)
 - Bugsy Miniboss in Pinwheel Forest (rewards Bug Gems, TM45 Lunge, Tanga Barries)
+- Jasmine Miniboss in Route 22 (rewards Steel Gem, Babiri Berry, TM70 Iron Tail)
 - Virizion Side Quest in Pinwheel Forest (rewards Pinwheel Forest encounter, Choice Specs)
 - Blaine Miniboss (rewards Ability Drill, Abundant Shrine encounter, IV Enhancers, Starter Move Tutors)
 - Humilau City B2B (rewards 1x Ability Capsules)
 
-!trm 160 Rewards HM06 Dive 
+!trm 160 Rewards HM03 Surf
 
 
+
+# Drayden Split (Level Cap 69, Optional Cap 66 for Benga)
+
+## Seaside Cave 
+!notif SPLIT-LOCKED CONTENT, Seaside Cave only be accessed before defeating Benga in Lacunosa town. , #af74b3
+!items Items 
+tm fighting, TM47 Cross Chop (reward from defeating Maylene)
+fighting gem, Fighting Gem (x3) (reward from defeating Maylene)
+chople berry, Chople Berry (x3) (reward from defeating Maylene)
+heart scale, Heart Scale (x1) (reward for beating the Ranger)
+end
+
+!enc 2 
+
+!tr 4 (rewards a Heart Scale)
+
+### Maylene 
+!notif SPLIT-LOCKED CONTENT, Seaside Cave, and by extension Maylene, only be accessed before defeating Benga in Lacunosa town. , #af74b3
+!tr 4 Rewards 2x Chople Berries, 2x Fighting Gem, TM47 Cross Chop
+
+
+### Black Belt Kai (Undella Bay Gatekeeper)
+!tr 4
+
+
+
+## Undella Bay 
+!notif SPLIT-LOCKED CONTENT, Undella Bay can only be accessed before defeating Benga in Lacunosa town. , #af74b3
+
+!items Items 
+tm grass, TM22 Solarbeam (Past Battle Girl Tia)
+end
+
+!notif FIELD EFFECT, There is permanent sun in Undella Bay , #4e86d4
+
+!enc 2 
+
+!tr 4 (rewards the TM for Solarbeam)
+
+### Swimmer Bart (Abyssal Ruins Gatekeeper)
+!tr 4 
+
+
+
+## Abyssal Ruins
+
+!notif SPLIT-LOCKED CONTENT, Abyssal Ruins can only be accessed before defeating Benga in Lacunosa town. , #af74b3
+!items Items 
+tm psychic, TM01 Psychic Fangs (past Swimmer Mitzi, Northwest Corner)
+plume fossil, Plume, Armor, Cover Fossils (past Swimmer Matt, Northeast Corner)
+tm grass, TM92 Solar Blade (past Swimmer Anissa, southeast corner)
+blue shard, Blue Shards x5 (past Swimmer Tim, middle)
+green shard, Green Shards x20 (past Swimmer Tim, second floor)
+life orb, Life Orb (reward for defeating the Strange Statue)
+end
+
+!notif FIELD EFFECT, There is Pre-Set Perma Trick Room in Abyssal Ruins , #4e86d4
+
+!notif NEW ENCOUNTER, While exploring without a repel active, you can encounter wild Pokémon in the ruins! , #469e62
+
+!enc 2 
+
+!tr 4 (Guards TTM92 Solar Blade)
+
+!tr 4 (Guards Fossils)
+
+!tr 4 (Guards TM01 Psychic Fangs)
+
+!tr 4 (Guards blue shards and access to the Sunken Statue)
+
+### Strange Statue  #af74b3 
+!tr 4 Rewards Life Orb
+
+
+
+
+
+
+## Plasma Frigate 
+!items Items 
+tm psychic, TM51 Ally Switch (reward for defeating Plasma Scientist F) 
+tm electric, TM93 Wild Charge (reward for defeating Plasma Scientist M) 
+heart scale, Heart Scale x1 
+end
+
+### Plasma Rumble 
+!notif FIELD EFFECT, RUMBLE: Your Pokémon will take damage equal to 1/6 of their total health at the end of each turn, #4e86d4
+!tr 4
+!tr 4 
+!tr 4 
+!tr 4
+
+!tr 4 
+
+!tr 4 
+
+!tr 4 
+
+!tr 4 
+
+!tr 4 
+
+### Zinzolin Tag Battle 
+!tr 4 Hugh's Team if you Picked Tepig
+
+!tr 4 Hugh's Team if you Picked Dewott
+
+!tr 4 Hugh's Team if you Picked Snivy
+
+!trm 4 Left Side 
+!trm 4 Right Side 
+
+
+
+
+
+
+## Route 13 
+!items Items 
+tm normal, TM23 Weather Crash (guarded by Scientist Y)
+tm normal, TM57 Weather Ball (guarded by Scientist X)
+red shard, Red Shards (x20) 
+blue shard, Blue Shards (x5)
+tm ice, TM68 Avalanche (Reward from Candice)
+ice gem, Ice Gems (x3) (Reward from Candice)
+yache berry, Yache Berry (x3) (Reward from Candice)
+end
+
+!notif FIELD EFFECT, There is Permanent Hail on Route 13 , #4e86d4
+
+!enc 2 
+
+!trm 4 Right Side 
+!trm 4 Left Side 
+
+!trm 4 (Guards the Heart Scale)
+
+!trm 4 Choose One (Left)
+!trm 4 Choose One (Right)
+
+!tr 4 (Guards TM27 Weather Crash)
+!tr 4 (Guards TM57 Weahter Ball)
+
+!trm 4
+
+!trm 4 Choose One (Left)
+!trm 4 Choose One (Right)
+
+### Candice 
+!notif SPLIT-LOCKED CONTENT, Candice only hangs around Route 13 until you defeat Benga in Lacunosa Town , #af74b3 
+!tr 4 Rewards 2x Yache Berries, 2x Ice Gems, TM68 Avalanche
+
+
+
+
+
+
+
+## Lacunosa Town 
+!items Items 
+colress mchn, Proto Booster (reward for defeating Benga) 
+end
+
+### Benga 
+!notif SPLIT END, Defeating Benga will look you out of the following content, #af74b3
+- Seaside Cave, Undella Bay, Abyssal Ruins locations, and all encounters/items within 
+- Candice Miniboss in Route 13 (rewards Ice Gems, yache Berries, TM68 Avalanche)
+- Maylene Miniboss in Seaside Cave (rewards Fighting Gems, Chople Berries, TM47 Cross Chop)
+
+Rather than an encounter with Team Plasma, Benga will confront you here and demand to battle. This is a challenging single battle. 
+!trm 4 
+
+
+
+
+
+
+
+
+
+## Route 12 
+There are no trainers on Route 12. Nothing blocking you from receiving an encounter for defeating Benga!
+
+!items Items 
+enigma berry, Enigma Berries x5 
+end
+
+!enc 2
+
+
+
+
+
+
+
+## Village Bridge (Gauntlet)
+Village Bridge is now a gauntlet of 6 trainers that must be defeated without changing your team to progress. You will not be able to access the PokéHelper to heal your party, pre-status, or fast travel out. 
+There are several crossroads where you can choose one of two trainers to fight to progress. Plan your route accordingly. 
+
+!notif FIELD EFFECT, There is Pre-Set Perma Trick Room in Village Bridge , #4e86d4
+
+### Fight #1 
+!trm 4 Choose One (Top)
+!trm 4 Choose One (Bottom)
+
+### Fight #2 
+!trm 4 
+
+### Fight #3
+!trm 4 Choose One (Top)
+!trm 4 Choose One (Bottom)
+
+### Fight #4 
+!trm 4 Choose One (Top)
+!trm 4 Choose One (Bottom)
+
+### Optional Miniboss: Fantina (can only be fought within the Gauntlet)
+!tr 4 Rewards 2x Roseli Berries, 2x Fairy Gems, TM85 Play Rough 
+
+### Fight #5
+!trm 4
+
+### End of Gauntlet 
+
+!items Items 
+petaya berry, x1 Petaya, Salac, and Liechi Berry (gauntlet reward)
+leftovers, Leftovers (B2B2B reward)
+roseli berry, x3 Roseli Berries (Fantina Reward)
+fairy gem, x3 Fairy Gems (Fantina Reward)
+tm fairy, TM85 Play Rough (fantina Reward)
+end
+
+### Leftovers B2B2B 
+In the restaurant on Village Bridge, you can choose to battle the three Striaton Brothers to receive a Leftovers!
+You can choose the order fight the Brothers! 
+!tr 4 
+!tr 4 
+!tr 4 
+
+### Artist X (Village Bridge encounter gatekeeper)
+!tr 4
+
+!enc 2
+
+
+
+
+
+
+## Route 11 
+!items Items 
+end
+
+!notif SPLIT-LOCKED CONTENT, Wild Pokémon will cease to appear on Route 11 once Drayden has been defeated , #af74b3 
+
+### ??? Route 11 Doubles Grass Gatekeeper 
+!tr 4 
+
+!enc 2 
+
+
+## Opelucid City 
+!items Items 
+ability capsule, Ability Patch x1 (reward for defeating Tate & Liza)
+blue shard, Blue Shards x10 (linebacker on the second floor of Drayden's House)
+end
+
+### Ability Patch Back-To-Back
+!notif SPLIT-LOCKED, Tate and Liza will leave Opelucid once you defeat Drayden, locking off their reward  , #af74b3
+!notif FIELD EFFECT, Permanent Trick Room is set before the FIRST battle against Liza, but not the second against Tate. , #4e86d4
+
+!tr 278 First of B2B
+!tr 277 Second of B2B 
+
+
+## Route 9 
+!items Items 
+end
+
+!notif SPLIT-LOCKED CONTENT, Wild Pokémon will cease to appear on Route 11 once Drayden has been defeated , #af74b3 
+
+### Route 9 Gatekeeper 
+!tr 4 
+
+!tr 4 Guards X 
+
+### Kanto Gym Leader Blue 
+!notif SPLIT-LOCKED, Blue is an optional mini-boss that can only be fought before defeating Drayden. This content is locked off afterwards.  , #af74b3
+!tr 4 Guards Challenger's Cave Access, Rocky Helmet, and 1x IV Enhancer. 
+
+## Challenger's Cave 
+!items Items 
+end
+
+!enc 2
+
+
+## SM9 
+!items Items 
+normal gem, Normal Gems (for sale, if you can defeat Whitney)
+end
+
+### Whitney 
+!notif SPLIT-LOCKED CONTENT, Whitney can only be fought before defeating Drayden, #af74b3 
+!tr 4 Rewards access to SM9 Upper Store 
+
+
+
+## Twist Mountain 
+!notif SPLIT-LOCKED CONTENT, Twist Mountain, in its entirity, will be locked off once Drayden is defeated , #af74b3 
+
+!items Items 
+rock gem, x3 Rock Gem (Roark reward)
+charti berry, 3x Charti Berry (Roark reward)
+tm rock, TMXX Rock Climb
+steel gem, x3 Steel Gem (Byron reward)
+babiri berry, x3 Babiri Berry (Byron Reward)
+tm steel, TMXX Gyro Ball
+choice band, Choice Band (Terrakion reward)
+end
+
+### Sinnoh Leader Roark 
+!tr 4
+
+### Sinnoh Leader Byron 
+!tr 4
+
+### Guardian of Unova, Terrakion
+!notif FIELD EFFECT, Something , #4e86d4
+!tr 4 
+!notif ENCOUNTER, Wild Pokémon will not appear in Twist Mountain until Terrakion is defeated. , #469e62 
+!enc 2
+
+
+
+## Opelucid Gym 
+
+!notif FIELD EFFECT, Dragon's Fury: Pokémon deal 50% more damage and are 50% faster if their move failed on the previous turn. , #4e86d4
+
+!items Items 
+weakness policy, x2 Weakness Policy (given by gym guide upon entering)
+tm dragon, TM82 Dragon Tail (Drayden reward)
+end
+
+!trm 4 
+
+!trm 4 Choose One (Left)
+!trm 4 Choose One (Right)
+
+!trm 4 
+
+!trm 4 Choose One (Left)
+!trm 4 Choose One (Right)
+
+!trm 4 Choose One (Left)
+!trm 4 Choose One (Right)
+
+!trm 4 Choose One (Left)
+!trm 4 Choose One (Right)
+
+### Leader Drayden 
+!notif SPLIT END, Defeating Drayden will look you out of the following content, #af74b3
+- Tate and Liza B2B (rewards an Ability Patch)
+- Whitney Miniboss (rewards infinite Normal Gems and Chilan Berries)
+- Route 9, 11, Village Bridge encounters. 
+- Blue Opt. Boss (rewards Rocky Helmet, Challenger's Cave Encounter, x1 IV Enhancer)
+- Roark Miniboss (rewards 3x Rock Gems, 3x Charti Berries, TMXX Rock Climb)
+- Byron Miniboss (rewards 3x Steel Gems, 3x Babiri Berries, TMXX Rock Climb)
+- Terrakion Side Queust (rewards Twist Mountain encounter, Choice Band)
+
+!trm 4 Rewards TM82 Dragon Tail
 
 
 # End of Current Content

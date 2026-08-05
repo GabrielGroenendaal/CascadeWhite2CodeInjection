@@ -2343,6 +2343,7 @@ address_0x2614:
 Label_Pursuit:
 	StoreIsFirstTurn(attacker)
 	JumpIfStoredNE(false, &address_0x266C)
+    Jump(&address_0x267C)
 	GetType(defender_type1)
 	JumpIfStoredEQ(type.ghost, &address_0x266C)
 	GetType(defender_type1)

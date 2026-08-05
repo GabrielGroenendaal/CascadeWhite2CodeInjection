@@ -13,7 +13,7 @@
 extern u32 g_GameBeaconSys;
 STRUCT_DECLARE(GameData)
 #define GAME_DATA *(GameData **)(g_GameBeaconSys + 4)
-#define ADDING_GRASSKNOT false
+#define ADDING_GRASSKNOT true
 
 
 bool IsEqual(int a1, int a2)
@@ -3779,10 +3779,6 @@ extern "C"
     extern bool PML_MoveIsAlwaysCrit(int wazaId);
     extern bool BattleMon_GetConditionFlag(BattleMon *a1, ConditionFlag a2);
     extern bool BattleMon_IsFullHP(BattleMon *a1);
-    bool HasMoldBreaker(BattleMon *a1)
-    {
-        return (BattleMon_GetValue(a1, VALUE_EFFECTIVE_ABILITY) == ABIL104_MOLD_BREAKER || BattleMon_GetValue(a1, VALUE_EFFECTIVE_ABILITY) == ABIL163_TURBOBLAZE || BattleMon_GetValue(a1, VALUE_EFFECTIVE_ABILITY) == ABIL164_TERAVOLT);
-    }
     extern bool BattleMon_CheckIfMoveCondition(BattleMon *a1, MoveCondition a2);
     extern int Move_GetID(BattleMon *a1, int a2);
     extern u8 PML_MoveGetType(int a1);
@@ -3797,10 +3793,62 @@ extern "C"
     extern bool Handler_IsSimulationMode(ServerFlow *a1);
     extern bool MainModule_IsAllyMonID(unsigned int a1, unsigned int a2);
     extern void TurnFlag_Set(BattleMon *a1, TurnFlag a2);
+    extern unsigned int Handler_GetWeight(ServerFlow *a1, int a2);
     extern uint8_t getOverheatLastTurnByte(BattleMon *a1)
     {
         return *((uint8_t *)a1 + 0xEB);
     }
+    bool HasMoldBreaker(BattleMon *a1)
+    {
+        return (BattleMon_GetValue(a1, VALUE_EFFECTIVE_ABILITY) == ABIL104_MOLD_BREAKER || BattleMon_GetValue(a1, VALUE_EFFECTIVE_ABILITY) == ABIL163_TURBOBLAZE || BattleMon_GetValue(a1, VALUE_EFFECTIVE_ABILITY) == ABIL164_TERAVOLT);
+    }
+    #if ADDING_GRASSKNOT
+    u8 getGrassKnotPower(ServerFlow *a1, BattleMon* AttackingMon, BattleMon* DefendingMon){
+
+        u8 BP; 
+        u16 Weight = Handler_GetWeight(a1, BattleMon_GetID(DefendingMon));
+        if (Weight < 0x7D0)
+        {
+            if (Weight < 0x3E8)
+            {
+                if (Weight < 0x1F4)
+                {
+                    if (Weight < 0xFA)
+                    {
+                        if (Weight < 0x64)
+                        {
+                            BP = 20;
+                        }
+                        else {
+                            BP = 40;
+                        }
+                    }
+                    else
+                    {
+                        BP = 60;
+                    }
+                }
+                else
+                {
+                    BP = 80;
+                }
+            }
+            else
+            {
+                BP = 100;
+            }
+        }
+        else
+        {
+            BP = 120;
+        }
+     
+        if (BP <= 60 && BattleMon_GetValue(AttackingMon, VALUE_EFFECTIVE_ABILITY) == ABIL101_TECHNICIAN){
+            BP = BP + (BP >> 1);
+        }
+        return BP;
+    }
+    #endif 
 #pragma endregion
 
 #pragma region CriticalHitChanges
@@ -3818,20 +3866,20 @@ extern "C"
         return *lvl_cap_ptr;
     }
 
-    int VANILLA_CRIT_CHANCES[5] = {0x10, 5, 3, 2, 0};
-    int MODERN_CRIT_CHANCES[5] = {0x18, 8, 2, 0, 0};
+    u8 VANILLA_CRIT_CHANCES[5] = {0x10, 8, 3, 2, 0};
+    u8 MODERN_CRIT_CHANCES[5] = {0x18, 8, 2, 0, 0};
 
-    bool THUMB_BRANCH_RollCritical(int a1)
-    {
-        if (GetCritSetting() == 0)
-        {
-            return BattleRandom(VANILLA_CRIT_CHANCES[a1]) == 0;
-        }
-        else
-        {
-            return BattleRandom(MODERN_CRIT_CHANCES[a1]) == 0;
-        }
-    }
+    // bool THUMB_BRANCH_RollCritical(int a1)
+    // {
+    //     if (GetCritSetting() == 0)
+    //     {
+    //         return BattleRandom(VANILLA_CRIT_CHANCES[a1]) == 0;
+    //     }
+    //     else
+    //     {
+    //         return BattleRandom(MODERN_CRIT_CHANCES[a1]) == 0;
+    //     }
+    // }
 
     bool personalRollCritical(int a1)
     {
@@ -3849,10 +3897,10 @@ extern "C"
     {
         __int16 Param; // r4
         int v8;        // r4
-        int ID;        // r0
-        int v10;       // r0
+        u8 ID;        // r0
+        u8 v10;       // r0
         bool v11;      // r4
-        int Value;     // r0
+        u8 Value;     // r0
 
         Param = PML_MoveGetParam(a4, MVDATA_CRIT_STAGE);
         v8 = (Param + BattleMon_GetCritStage(a2));
@@ -3867,7 +3915,7 @@ extern "C"
         BattleEvent_CallHandlers(a1, EVENT_CRITICAL_CHECK);
         if (!BattleEventVar_GetValue(VAR_MOVE_FAIL_FLAG))
         {
-            ;
+            
             if (BattleMon_GetConditionFlag(a3, CONDITIONFLAG_DEFENSE_CURL))
             {
                 v11 = 0;
@@ -3879,11 +3927,7 @@ extern "C"
             else
             {
                 Value = BattleEventVar_GetValue(VAR_CRIT_STAGE);
-                if (Value > 4)
-                {
-                    // LOBYTE(Value) = 4;
-                    Value = 4;
-                }
+                Value = (Value > 4) ? 4 : Value;
                 v11 = personalRollCritical(Value);
             }
             if (MainModule_GetDebugFlag())
@@ -3925,7 +3969,7 @@ extern "C"
         unsigned __int8 level; // r0
         int v16;               // r0
         unsigned int fxDamage; // r7
-        int Weather;           // r0
+        u8 Weather;           // r0
         int weatherDmgRatio;   // r1
         int damageRoll;        // r0
         PokeType moveType;     // r2
@@ -3962,6 +4006,11 @@ extern "C"
         else
         {
             power = ServerEvent_GetMovePower(a1, AttackingMon, DefendingMon, moveParam);
+            #if ADDING_GRASSKNOT 
+            if (BattleDebugMode && (moveParam->MoveID == MOVE447_GRASS_KNOT || moveParam->MoveID == MOVE067_LOW_KICK)){
+                power = getGrassKnotPower(a1, AttackingMon, DefendingMon);
+            }
+            #endif 
             attack = ServerEvent_GetAttackPower(a1, AttackingMon, DefendingMon, moveParam, criticalFlag);
             defense = ServerEvent_GetTargetDefenses(a1, AttackingMon, DefendingMon, moveParam, criticalFlag);
             level = BattleMon_GetValue(AttackingMon, VALUE_LEVEL);
@@ -3989,7 +4038,6 @@ extern "C"
 
             if (!MainModule_GetDebugFlag() && ServerFlow_IsNotPokestarBattle(a1))
             {
-
                 if (BattleDebugMode)
                 {
                     damageRoll = 85;
@@ -4006,12 +4054,12 @@ extern "C"
             if (moveType != TYPE_NULL)
             {
 
-                int ratio;
+                u16 ratio;
                 if (BattleMon_CheckIfMoveCondition(AttackingMon, CONDITION_TERA) || SEARCH_ARRAY(teraItems, AttackingMon->HeldItem))
                 {
-                    int teraType = PML_MoveGetType(Move_GetID(AttackingMon, 0));
-                    int type1 = PML_PersonalGetParamSingle(AttackingMon->Species, AttackingMon->Form, Personal_Type1);
-                    int type2 = PML_PersonalGetParamSingle(AttackingMon->Species, AttackingMon->Form, Personal_Type2);
+                    u8 teraType = PML_MoveGetType(Move_GetID(AttackingMon, 0));
+                    u8 type1 = PML_PersonalGetParamSingle(AttackingMon->Species, AttackingMon->Form, Personal_Type1);
+                    u8 type2 = PML_PersonalGetParamSingle(AttackingMon->Species, AttackingMon->Form, Personal_Type2);
                     if ((moveType == type1 && moveType == teraType) || (moveType == type2 && moveType == teraType))
                     {
                         ratio = (BattleMon_GetValue(AttackingMon, VALUE_EFFECTIVE_ABILITY) == ABIL091_ADAPTABILITY) ? 9216 : 8192;
@@ -4071,49 +4119,17 @@ extern "C"
             {
                 v23 = 50 * v23 / 100u;
             }
-
-            if (!v23)
-            {
-                v23 = 1;
-            }
-
+            v23 = (!v23) ? 1 : v23;
             BattleEventVar_SetMulValue(VAR_RATIO, 4096, 41, 0x20000);
             BattleEventVar_SetValue(VAR_DAMAGE, v23);
             BattleEvent_CallHandlers(a1, EVENT_MOVE_DAMAGE_PROCESSING_2);
             v24 = BattleEventVar_GetValue(VAR_RATIO);
             v25 = BattleEventVar_GetValue(VAR_DAMAGE);
-
             LOWORD(Value) = fixed_round(v25, v24);
-#if DEBUGGING_DAMAGECALC && DEBUGGING_ALL
-            if (printing)
-            {
-                k::Printf("\n\n===ServerEvent_CalcDamage 9 Final FixedRound===damage is %d", Value);
-            }
-#endif
         }
-
         BattleEvent_CallHandlers(a1, EVENT_MOVE_DAMAGE_PROCESSING_END);
         BattleEventVar_Pop();
         *destDamage = Value;
-#if DEBUGGING_DAMAGECALC && DEBUGGING_ALL
-        if (moveParam->MoveID == MOVE363_NATURAL_GIFT)
-        {
-            k::Printf("\n\n===ServerEvent_CalcDamage 10 Final FixedRound===damage is %d", Value);
-        }
-#endif
-        // if (!Handler_IsSimulationMode(a1))
-        // {
-        //     k::Printf("\nFinal damage value for move %d being returned is %d\n", moveParam->MoveID, Value);
-        // }
-        // if (!Value)
-        // {
-        //     // TurnFlag Added Here
-        //     if (!MainModule_IsAllyMonID(DefendingMon->ID, AttackingMon->ID) && !Handler_IsSimulationMode(a1))
-        //     {
-        //         k::Printf("\nNo Damage was dealt, Value = %d, setting move failed flag\n", Value);
-        //         TurnFlag_Set(AttackingMon, TURNFLAG_MOVEFAILED);
-        //     }
-        // }
         return v29;
     }
 
@@ -4132,7 +4148,7 @@ extern "C"
         unsigned int v8;      // r4
         int ID;               // r0
         int moveID;
-        int targetPos;
+        u8 targetPos;
         // ServerFlow *v10;                  // r6
         int v11; // r1
         // ServerFlow *v14;                  // [sp+4h] [bp-44h]
@@ -4152,9 +4168,11 @@ extern "C"
                 if (BattleMon != a2 && !a1->actionOrderWork[v4].fDone)
                 {
                     v6 = (((u32)ActionOrderWork[v4].Action) & 0xF) == 1 ? (((u32)ActionOrderWork[v4].Action) >> 7) : 0;
-                    if (v6 == MOVE228_PURSUIT || v6 == MOVE027_ROLLING_KICK
+                    if (v6 == MOVE228_PURSUIT
 #if ADDING_GRASSKNOT 
                     || v6 == MOVE447_GRASS_KNOT || v6 == MOVE067_LOW_KICK
+#else 
+                        || v6 == MOVE027_ROLLING_KICK
 #endif 
                     )
                     {
@@ -4213,9 +4231,11 @@ extern "C"
                         v11 = 0;
                     }
 
-                    if (v11 == MOVE228_PURSUIT || v11 == MOVE027_ROLLING_KICK
+                    if (v11 == MOVE228_PURSUIT 
 #if ADDING_GRASSKNOT 
                     || v11 == MOVE447_GRASS_KNOT || v11 == MOVE067_LOW_KICK
+#else 
+                    || v11 == MOVE027_ROLLING_KICK
 #endif 
                     )
                     {
@@ -4325,6 +4345,12 @@ extern "C"
         if (trId == 1 && species == 38){
             PokeParty_SetParam(pkm, PF_IdSet, PokeParty_GetParam(pkm, PF_PID, 0));
         }
+
+        if (trId == 491 && species == 475)
+        {
+            PokeParty_SetParam(pkm, PF_IdSet, PokeParty_GetParam(pkm, PF_PID, 0));
+        }
+        
     }
 
     void setTrPokNickname(PartyPkm *pkm, u16 trId, u16 species){
@@ -4446,7 +4472,7 @@ extern "C"
 
     void BattleMon_TransferMoveConditionDependPoke(BattleMon *a1, int a2, int a3)
     {
-        unsigned int i; // r4
+        u8 i; // r4
         BattleMon *v5; // r5
 
         //k::Printf("\nWe're in this function now! a2 is %d and a3 is %d", a2, a3);
@@ -4548,58 +4574,4 @@ extern "C"
     
 #pragma endregion
 
-
-#pragma region PID
-    // extern u32 PML_PersonalGetParam(void *personal, PersonalField field);
-    // extern void PML_PersonalFree(void *personal);
-    // extern void * PML_PersonalLoad(u16 species, u16 form, HeapID heapId);
-
-    // void THUMB_BRANCH_SAFESTACK_TrainerUtil_CalcBasePID(u16 species, u16 form, u8 abilAndSex, u32 *dest, HeapID heapId)
-    // {
-    //     int v6;           // r6
-    //     int v7;           // r4
-    //     void *v8; // r0
-    //     void *v9; // r7
-    //     u32 Param;        // r0
-    //     u32 v11;          // r0
-    //     k::Printf("\n====CALC BASE PID===Check 1");
-    //     v6 = abilAndSex & 0xF;
-    //     v7 = (abilAndSex & 0xF0) >> 4;
-    //     if (abilAndSex)
-    //     {
-    //         k::Printf("\n====CALC BASE PID===Check 2");
-    //         v8 = PML_PersonalLoad(species, form, heapId);
-    //         k::Printf("\n====CALC BASE PID===Check 3");
-    //         v9 = v8;
-    //         if (v6)
-    //         {
-    //             k::Printf("\n====CALC BASE PID===Check 4");
-    //             Param = PML_PersonalGetParam(v8, Personal_GenderProb);
-    //             k::Printf("\n====CALC BASE PID===Check 5");
-    //             *dest = Param;
-    //             if (v6 == 1)
-    //             {
-    //                 v11 = Param + 2;
-    //             }
-    //             else
-    //             {
-    //                 v11 = Param - 2;
-    //             }
-    //             *dest = v11;
-    //         }
-    //         if (v7 == 1)
-    //         {
-    //             *dest &= ~1u;
-    //         }
-    //         else if (v7 > 1)
-    //         {
-    //             *dest |= 1u;
-    //         }
-    //         k::Printf("\n====CALC BASE PID===Check 6");
-    //         PML_PersonalFree(v9);
-    //         k::Printf("\n====CALC BASE PID===Check 7");
-    //     }
-    // }
-
-#pragma endregion
 }

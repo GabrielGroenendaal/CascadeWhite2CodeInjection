@@ -11,17 +11,17 @@ chople berry, Chople Berry (x3) (reward from defeating Maylene)
 heart scale, Heart Scale (x1) (reward for beating the Ranger)
 end
 
-!enc 1 
+!enc 2 
 
-!tr 1 (rewards a Heart Scale)
+!tr 4 (rewards a Heart Scale)
 
 ### Maylene 
 !notif SPLIT-LOCKED CONTENT, Seaside Cave, and by extension Maylene, only be accessed before defeating Benga in Lacunosa town. , #af74b3
-!tr 1 Rewards 2x Chople Berries, 2x Fighting Gem, TM47 Cross Chop
+!tr 4 Rewards 2x Chople Berries, 2x Fighting Gem, TM47 Cross Chop
 
 
 ### Black Belt Kai (Undella Bay Gatekeeper)
-!tr 1
+!tr 4
 
 
 
@@ -34,12 +34,12 @@ end
 
 !notif FIELD EFFECT, There is permanent sun in Undella Bay , #4e86d4
 
-!enc 1 
+!enc 2 
 
-!tr 1 (rewards the TM for Solarbeam)
+!tr 4 (rewards the TM for Solarbeam)
 
 ### Swimmer Bart (Abyssal Ruins Gatekeeper)
-!tr 1 
+!tr 4 
 
 
 
@@ -59,18 +59,18 @@ end
 
 !notif NEW ENCOUNTER, While exploring without a repel active, you can encounter wild Pokémon in the ruins! , #469e62
 
-!enc 1 
+!enc 2 
 
-!tr 1 (Guards TTM92 Solar Blade)
+!tr 4 (Guards TTM92 Solar Blade)
 
-!tr 1 (Guards Fossils)
+!tr 4 (Guards Fossils)
 
-!tr 1 (Guards TM01 Psychic Fangs)
+!tr 4 (Guards TM01 Psychic Fangs)
 
-!tr 1 (Guards blue shards and access to the Sunken Statue)
+!tr 4 (Guards blue shards and access to the Sunken Statue)
 
 ### Strange Statue  #af74b3 
-!tr 1 Rewards Life Orb
+!tr 4 Rewards Life Orb
 
 
 
@@ -86,30 +86,30 @@ end
 
 ### Plasma Rumble 
 !notif FIELD EFFECT, RUMBLE: Your Pokémon will take damage equal to 1/6 of their total health at the end of each turn, #4e86d4
-!tr 1
-!tr 1 
-!tr 1 
-!tr 1
+!tr 4
+!tr 4 
+!tr 4 
+!tr 4
 
-!tr 1 
+!tr 4 
 
-!tr 1 
+!tr 4 
 
-!tr 1 
+!tr 4 
 
-!tr 1 
+!tr 4 
 
-!tr 1 
+!tr 4 
 
 ### Zinzolin Tag Battle 
-!tr 1 Hugh's Team if you Picked Tepig
+!tr 4 Hugh's Team if you Picked Tepig
 
-!tr 1 Hugh's Team if you Picked Dewott
+!tr 4 Hugh's Team if you Picked Dewott
 
-!tr 1 Hugh's Team if you Picked Snivy
+!tr 4 Hugh's Team if you Picked Snivy
 
-!trm 1 Left Side 
-!trm 1 Right Side 
+!trm 4 Left Side 
+!trm 4 Right Side 
 
 
 
@@ -129,27 +129,27 @@ end
 
 !notif FIELD EFFECT, There is Permanent Hail on Route 13 , #4e86d4
 
-!enc 1 
+!enc 2 
 
-!trm 1 Right Side 
-!trm 1 Left Side 
+!trm 4 Right Side 
+!trm 4 Left Side 
 
-!trm 1 (Guards the Heart Scale)
+!trm 4 (Guards the Heart Scale)
 
-!trm 1 Choose One (Left)
-!trm 1 Choose One (Right)
+!trm 4 Choose One (Left)
+!trm 4 Choose One (Right)
 
-!tr 1 (Guards TM27 Weather Crash)
-!tr 1 (Guards TM57 Weahter Ball)
+!tr 4 (Guards TM27 Weather Crash)
+!tr 4 (Guards TM57 Weahter Ball)
 
-!trm 1
+!trm 4
 
-!trm 1 Choose One (Left)
-!trm 1 Choose One (Right)
+!trm 4 Choose One (Left)
+!trm 4 Choose One (Right)
 
 ### Candice 
 !notif SPLIT-LOCKED CONTENT, Candice only hangs around Route 13 until you defeat Benga in Lacunosa Town , #af74b3 
-!tr 1 Rewards 2x Yache Berries, 2x Ice Gems, TM68 Avalanche
+!tr 4 Rewards 2x Yache Berries, 2x Ice Gems, TM68 Avalanche
 
 
 
@@ -169,7 +169,7 @@ end
 - Maylene Miniboss in Seaside Cave (rewards Fighting Gems, Chople Berries, TM47 Cross Chop)
 
 Rather than an encounter with Team Plasma, Benga will confront you here and demand to battle. This is a challenging single battle. 
-!trm 1 
+!trm 4 
 
 
 
@@ -186,7 +186,7 @@ There are no trainers on Route 12. Nothing blocking you from receiving an encoun
 enigma berry, Enigma Berries x5 
 end
 
-!enc 1
+!enc 2
 
 
 
@@ -201,25 +201,25 @@ There are several crossroads where you can choose one of two trainers to fight t
 !notif FIELD EFFECT, There is Pre-Set Perma Trick Room in Village Bridge , #4e86d4
 
 ### Fight #1 
-!trm 1 Choose One (Top)
-!trm 1 Choose One (Bottom)
+!trm 4 Choose One (Top)
+!trm 4 Choose One (Bottom)
 
 ### Fight #2 
-!trm 1 
+!trm 4 
 
 ### Fight #3
-!trm 1 Choose One (Top)
-!trm 1 Choose One (Bottom)
+!trm 4 Choose One (Top)
+!trm 4 Choose One (Bottom)
 
 ### Fight #4 
-!trm 1 Choose One (Top)
-!trm 1 Choose One (Bottom)
+!trm 4 Choose One (Top)
+!trm 4 Choose One (Bottom)
 
 ### Optional Miniboss: Fantina (can only be fought within the Gauntlet)
-!tr 1 Rewards 2x Roseli Berries, 2x Fairy Gems, TM85 Play Rough 
+!tr 4 Rewards 2x Roseli Berries, 2x Fairy Gems, TM85 Play Rough 
 
 ### Fight #5
-!trm 1
+!trm 4
 
 ### End of Gauntlet 
 
@@ -234,14 +234,14 @@ end
 ### Leftovers B2B2B 
 In the restaurant on Village Bridge, you can choose to battle the three Striaton Brothers to receive a Leftovers!
 You can choose the order fight the Brothers! 
-!tr 1 
-!tr 1 
-!tr 1 
+!tr 4 
+!tr 4 
+!tr 4 
 
 ### Artist X (Village Bridge encounter gatekeeper)
-!tr 1
+!tr 4
 
-!enc 1
+!enc 2
 
 
 
@@ -255,9 +255,9 @@ end
 !notif SPLIT-LOCKED CONTENT, Wild Pokémon will cease to appear on Route 11 once Drayden has been defeated , #af74b3 
 
 ### ??? Route 11 Doubles Grass Gatekeeper 
-!tr 1 
+!tr 4 
 
-!enc 1 
+!enc 2 
 
 
 ## Opelucid City 
@@ -281,19 +281,19 @@ end
 !notif SPLIT-LOCKED CONTENT, Wild Pokémon will cease to appear on Route 11 once Drayden has been defeated , #af74b3 
 
 ### Route 9 Gatekeeper 
-!tr 1 
+!tr 4 
 
-!tr 1 Guards X 
+!tr 4 Guards X 
 
 ### Kanto Gym Leader Blue 
 !notif SPLIT-LOCKED, Blue is an optional mini-boss that can only be fought before defeating Drayden. This content is locked off afterwards.  , #af74b3
-!tr 1 Guards Challenger's Cave Access, Rocky Helmet, and 1x IV Enhancer. 
+!tr 4 Guards Challenger's Cave Access, Rocky Helmet, and 1x IV Enhancer. 
 
 ## Challenger's Cave 
 !items Items 
 end
 
-!enc 1
+!enc 2
 
 
 ## SM9 
@@ -303,7 +303,7 @@ end
 
 ### Whitney 
 !notif SPLIT-LOCKED CONTENT, Whitney can only be fought before defeating Drayden, #af74b3 
-!tr 1 Rewards access to SM9 Upper Store 
+!tr 4 Rewards access to SM9 Upper Store 
 
 
 
@@ -321,16 +321,16 @@ choice band, Choice Band (Terrakion reward)
 end
 
 ### Sinnoh Leader Roark 
-!tr 1
+!tr 4
 
 ### Sinnoh Leader Byron 
-!tr 1
+!tr 4
 
 ### Guardian of Unova, Terrakion
 !notif FIELD EFFECT, Something , #4e86d4
-!tr 1 
+!tr 4 
 !notif ENCOUNTER, Wild Pokémon will not appear in Twist Mountain until Terrakion is defeated. , #469e62 
-!enc 1
+!enc 2
 
 
 
@@ -343,21 +343,21 @@ weakness policy, x2 Weakness Policy (given by gym guide upon entering)
 tm dragon, TM82 Dragon Tail (Drayden reward)
 end
 
-!trm 1 
+!trm 4 
 
-!trm 1 Choose One (Left)
-!trm 1 Choose One (Right)
+!trm 4 Choose One (Left)
+!trm 4 Choose One (Right)
 
-!trm 1 
+!trm 4 
 
-!trm 1 Choose One (Left)
-!trm 1 Choose One (Right)
+!trm 4 Choose One (Left)
+!trm 4 Choose One (Right)
 
-!trm 1 Choose One (Left)
-!trm 1 Choose One (Right)
+!trm 4 Choose One (Left)
+!trm 4 Choose One (Right)
 
-!trm 1 Choose One (Left)
-!trm 1 Choose One (Right)
+!trm 4 Choose One (Left)
+!trm 4 Choose One (Right)
 
 ### Leader Drayden 
 !notif SPLIT END, Defeating Drayden will look you out of the following content, #af74b3
@@ -369,5 +369,5 @@ end
 - Byron Miniboss (rewards 3x Steel Gems, 3x Babiri Berries, TMXX Rock Climb)
 - Terrakion Side Queust (rewards Twist Mountain encounter, Choice Band)
 
-!trm Rewards TM82 Dragon Tail
+!trm 4 Rewards TM82 Dragon Tail
 

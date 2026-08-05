@@ -459,7 +459,7 @@ extern "C"
         }
         sub_21E7210(btlvMcss, v15);
         AreaIDSeasonShift = 0;
-       //goto Label_StaticBackground;
+    //    goto Label_StaticBackground;
         if (a1->battleBGID >= 80){
             if (a1->battleBGID >= 160){
                 //k::Printf("BattleBGID is %d, which is >= 160, so we will adjust it by subtracting 160 and use the appropriate heap.\n", a1->battleBGID);
@@ -476,10 +476,10 @@ extern "C"
             adjustedBGID = a1->battleBGID;
             HeapNew = (_BYTE*)GFL_ArcSysReadHeapNew(151, 0, (HeapID)((g_Effects->HeapID & 0x7FFF | 0x8000)));
         }
-        //Label_StaticBackground:
-        //adjustedBGID = 24;
-        //k::Printf("BattleBGID is %d, which is >= 80 but < 160, so we will adjust it by subtracting 80 and use the appropriate heap.\n", a1->battleBGID);
-        //HeapNew = (_BYTE*)GFL_ArcSysReadHeapNew(151, 0, (HeapID)((g_Effects->HeapID & 0x7FFF | 0x8000)));
+        // Label_StaticBackground:
+        // adjustedBGID = 24;
+        // // k::Printf("BattleBGID is %d, which is >= 80 but < 160, so we will adjust it by subtracting 80 and use the appropriate heap.\n", a1->battleBGID);
+        // HeapNew = (_BYTE*)GFL_ArcSysReadHeapNew(151, 0, (HeapID)((g_Effects->HeapID & 0x7FFF | 0x8000)));
         v18 = 44 * adjustedBGID;
         if (2 * (unsigned __int8)HeapNew[v18 + 1])
         {
