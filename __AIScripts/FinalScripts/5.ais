@@ -1,0 +1,201 @@
+
+// A VERSION OF 1.AIS JUST FOR PARTNERS 
+	
+	JumpIfTargetIsAlly(&address_EndScript)
+	JumpIfTargetWillFaint(false, &address_LogicForKillingBlow)
+	CalcMoveDamage(false)
+	JumpIfStoredEQ(not_strongest, &address_ReduceScoreBy1)
+	JumpIfMoveEffectEQ(move_ef.explosion, &address_ReduceScorePotentially)
+	JumpIfMoveEffectEQ(move_ef.focus_punch, &address_ReduceScorePotentially)
+	JumpIfMoveEffectEQ(move_ef.sucker_punch, &address_ReduceScorePotentially)
+	Jump(&address_CheckIfSuperEffective)
+
+address_ReduceScorePotentially:
+	JumpIfRandLT(51, &address_CheckIfSuperEffective)
+	AddToScore(-2)
+
+address_CheckIfSuperEffective:
+	JumpIfEffectivenessEQ(2x, &address_IfSuperEffectivePotentiallyRaiseScore)
+    JumpIfEffectivenessEQ(4x, &address_IfSuperEffectivePotentiallyRaiseScore)
+	EndScript()
+
+address_IfSuperEffectivePotentiallyRaiseScore:
+	JumpIfRandLT(80, &address_EndScript)
+	AddToScore(2)
+	EndScript()
+
+
+
+
+
+address_LogicForKillingBlow:
+	JumpIfMoveEffectEQ(move_ef.explosion, &address_EndScript)
+	JumpIfMoveEffectEQ(move_ef.sucker_punch, &address_VolatileLogic)
+	JumpIfMoveEffectEQ(move_ef.future_sight, &address_VolatileLogic)
+    JumpIfMoveEQ(move.dive, &address_TwoTurnChargeMoveLogic)
+    JumpIfMoveEQ(move.shadow_force, &address_TwoTurnChargeMoveLogic)
+    JumpIfMoveEQ(move.bounce, &address_TwoTurnChargeMoveLogic)
+    JumpIfMoveEQ(move.dig, &address_TwoTurnChargeMoveLogic)
+    JumpIfMoveEQ(move.fly, &address_TwoTurnChargeMoveLogic)
+    JumpIfMoveEffectEQ(move_ef.pursuit, &address_PursuitCalculation)
+	JumpIfMoveEffectEQ(move_ef.increased_priority, &address_PriorityCalculation)
+	Jump(&address_0x00C0)
+
+address_TwoTurnChargeMoveLogic: 
+    JumpIfHeldItemEQ(attacker, item.power_herb, &address_AddTwoToScore)
+    AddToScore(-2)
+
+address_VolatileLogic:
+	JumpIfRandLT(170, &address_AddTwoToScore)
+	Jump(&address_0x00C0)
+
+address_AddTwoToScore:
+	AddToScore(2)
+
+address_0x00C0:
+	AddToScore(4)
+	GetBattleStyle()
+    JumpIfStoredEQ(double_battle, &address_MultiBattleLogic)
+	JumpIfStoredEQ(triple_battle, &address_MultiBattleLogic)
+    Jump(&address_EndScript)
+
+address_MultiBattleLogic: 
+	JumpIfRandLT(90, &address_EndScript)
+    JumpIfMoveEQ(move.blizzard, &address_Add1ToScoreForSpreadMoves)
+    JumpIfMoveEQ(move.rock_slide, &address_Add1ToScoreForSpreadMoves)
+    JumpIfMoveEQ(move.heat_wave, &address_Add1ToScoreForSpreadMoves)
+    JumpIfMoveEQ(move.eruption, &address_Add1ToScoreForSpreadMoves)
+    JumpIfMoveEQ(move.water_spout, &address_Add1ToScoreForSpreadMoves)
+    JumpIfMoveEQ(move.muddy_water, &address_Add1ToScoreForSpreadMoves)
+    JumpIfMoveEQ(move.glaciate, &address_Add1ToScoreForSpreadMoves)
+    JumpIfMoveEQ(move.snarl, &address_Add1ToScoreForSpreadMoves)
+    JumpIfMoveEQ(move.surf, &address_Add1ToScoreForSpreadMoves)
+    JumpIfMoveEQ(move.sludge_wave, &address_Add1ToScoreForSpreadMoves)
+    JumpIfMoveEQ(move.searing_shot, &address_Add1ToScoreForSpreadMoves)
+    JumpIfMoveEQ(move.double-edge, &address_Add1ToScoreForSpreadMoves)
+    JumpIfMoveEQ(move.iron_tail, &address_Add1ToScoreForSpreadMoves)
+    JumpIfMoveEQ(move.aqua_tail, &address_Add1ToScoreForSpreadMoves)
+    JumpIfMoveEQ(move.cross_chop, &address_Add1ToScoreForSpreadMoves)
+    JumpIfMoveEQ(move.leaf_tornado, &address_Add1ToScoreForSpreadMoves)
+    JumpIfMoveEQ(move.drill_peck, &address_Add1ToScoreForSpreadMoves)
+    JumpIfMoveEQ(move.dragon_rush, &address_Add1ToScoreForSpreadMoves)
+    JumpIfMoveEQ(move.wild_charge, &address_Add1ToScoreForSpreadMoves)
+    JumpIfMoveEQ(move.smog, &address_Add1ToScoreForSpreadMoves)
+    JumpIfMoveEQ(move.power_whip, &address_Add1ToScoreForSpreadMoves)
+    JumpIfMoveEQ(move.attack_order, &address_Add1ToScoreForSpreadMoves)
+    JumpIfMoveEQ(move.take_down, &address_Add1ToScoreForSpreadMoves)
+    JumpIfMoveEQ(move.hyper_voice, &address_Add1ToScoreForSpreadMoves)
+    JumpIfMoveEQ(move.uproar, &address_Add1ToScoreForSpreadMoves)
+    JumpIfMoveEQ(move.electroweb, &address_Add1ToScoreForSpreadMoves)
+    JumpIfMoveEQ(move.icy_wind, &address_Add1ToScoreForSpreadMoves)
+    JumpIfMoveEQ(move.barb_barrage, &address_Add1ToScoreForSpreadMoves)
+    JumpIfMoveEQ(move.air_cutter, &address_Add1ToScoreForSpreadMoves)
+    JumpIfMoveEQ(move.wild_charge, &address_Add1ToScoreForSpreadMoves)
+    JumpIfMoveEQ(move.psychic_noise, &address_Add1ToScoreForSpreadMoves)
+    JumpIfMoveEQ(move.dazzling_gleam, &address_Add1ToScoreForSpreadMoves)
+    JumpIfMoveEQ(move.twister, &address_Add1ToScoreForSpreadMoves)
+    JumpIfMoveEQ(move.diamond_storm, &address_Add1ToScoreForSpreadMoves)
+    JumpIfMoveEQ(move.razor_leaf, &address_Add1ToScoreForSpreadMoves)
+    JumpIfMoveEQ(move.low_sweep, &address_Add1ToScoreForSpreadMoves)
+	JumpIfMoveEQ(move.dream_eater, &address_Add1ToScoreForSpreadMoves)
+	JumpIfMoveEQ(move.psywave, &address_Add1ToScoreForSpreadMoves)
+	JumpIfMoveEQ(move.chilling_water, &address_Add1ToScoreForSpreadMoves)
+	JumpIfMoveEQ(move.brine, &address_Add1ToScoreForSpreadMoves)
+	JumpIfMoveEQ(move.wild_charge, &address_Add1ToScoreForSpreadMoves)
+	JumpIfMoveEQ(move.solar_beam, &address_Add1ToScoreForSpreadMoves)
+    JumpIfMoveEQ(move.assurance, &address_Add1ToScoreForSpreadMoves)
+    Jump(&address_EndScript)
+
+address_Add1ToScoreForSpreadMoves: 
+    AddToScore(1)
+
+address_EndScript:
+	EndScript()
+
+
+
+
+// Apple
+
+address_PriorityCalculation:
+    JumpIfRandLT(64, &address_PriorityEnd)
+    EndScript()
+        
+address_PriorityEnd:
+    AddToScore(6)
+    EndScript()
+
+address_EndScriptPriority:
+    EndScript()
+
+
+address_PursuitCalculation: 
+    JumpIfRandLT(217, &address_PursuitIncraseScore)
+    EndScript()
+        
+address_PursuitIncraseScore:
+    AddToScore(7)
+    EndScript()
+
+
+
+address_ReduceScoreBy1:
+	AddToScore(-1)
+	EndScript()
+
+bufferScriptCallFour:
+	EndScript()
+
+
+	0x0004 [4]
+	0xFFFE [65534]
+	0xFFFF [65535]
+	0x004D [77]
+	0x0004 [4]
+	0xFFFD [65533]
+	0xFFFF [65535]
+	0x004D [77]
+	0x0004 [4]
+	0xFFFB [65531]
+	0xFFFF [65535]
+	0x004D [77]
+	0x0004 [4]
+	0xFFFA [65530]
+	0xFFFF [65535]
+	0x004D [77]
+	0x0004 [4]
+	0xFFF8 [65528]
+	0xFFFF [65535]
+	0x004D [77]
+	0x0004 [4]
+	0xFFF6 [65526]
+	0xFFFF [65535]
+	0x004D [77]
+	0x0004 [4]
+	0xFFF4 [65524]
+	0xFFFF [65535]
+	0x004D [77]
+	0x0004 [4]
+	0xFFE2 [65506]
+	0xFFFF [65535]
+	0x004D [77]
+	0x0004 [4]
+	0x0001 [1]
+	0x0000 [0]
+	0x004D [77]
+	0x0004 [4]
+	0x0002 [2]
+	0x0000 [0]
+	0x004D [77]
+	0x0004 [4]
+	0x0003 [3]
+	0x0000 [0]
+	0x004D [77]
+	0x0004 [4]
+	0x0005 [5]
+	0x0000 [0]
+	0x004D [77]
+	0x0004 [4]
+	0x000A [10]
+	0x0000 [0]
+	0x004D [77]

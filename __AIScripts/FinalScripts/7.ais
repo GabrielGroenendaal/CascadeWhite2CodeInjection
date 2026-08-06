@@ -7,7 +7,6 @@
 
 
 MultiBattleLogic:
-	JumpIfMoveEQ(move.howl, &address_HowlLogic)
 	JumpIfTargetIsAlly(&address_TargetingAnAlly)
 	CalcMoveDamage(false)
 	JumpIfStoredEQ(no_damage, &address_MoveDealsNoDamage)
@@ -96,17 +95,6 @@ address_MoveDealsNoDamage:
 	EndScript()
 
 
-
-
-
-
-
-address_HowlLogic: 
-	JumpIfRandLT(64, &Label_EndHowlScript)
-	AddToScore(1)
-
-Label_EndHowlScript: 
-	EndScript()
 
 
 
@@ -1502,7 +1490,7 @@ address_NonDamagingAllyTargetingMoves:
 	JumpIfMoveEQ(move.bestow, &address_TargetAllyWithBestow)
 	JumpIfMoveEQ(move.gastro_acid, &address_TargetAllyWithGastroAcid)
 	JumpIfMoveEQ(move.acupressure, &address_TargetAllyWithAcupressure)
-	JumpIfMoveEQ(move.agility, &address_TargetAllyWithAgility)
+	// JumpIfMoveEQ(move.agility, &address_TargetAllyWithAgility)
 	JumpIfMoveEQ(move.heal_pulse, &address_TargetAllyWithHealPulse)
 	Jump(&deprioritizeBy30Again)
 

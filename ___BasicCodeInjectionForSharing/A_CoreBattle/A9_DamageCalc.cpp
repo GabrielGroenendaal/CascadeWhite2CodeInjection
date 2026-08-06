@@ -4115,7 +4115,7 @@ extern "C"
                 }
             }
 
-            if ((BattleMon_GetValue(DefendingMon, VALUE_EFFECTIVE_ABILITY) == ABIL136_MAJESTIC_WARD) && !HasMoldBreaker(AttackingMon) && BattleMon_IsFullHP(DefendingMon))
+            if ((BattleMon_GetValue(DefendingMon, VALUE_EFFECTIVE_ABILITY) == ABIL136_MAJESTIC_WARD || BattleMon_GetValue(DefendingMon, VALUE_EFFECTIVE_ABILITY) == ABIL129_DEFEATIST) && !HasMoldBreaker(AttackingMon) && BattleMon_IsFullHP(DefendingMon))
             {
                 v23 = 50 * v23 / 100u;
             }

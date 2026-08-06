@@ -1,0 +1,642 @@
+
+/*         
+	
+	-----------------------------------------------------------------------------------------------------------------------------------------
+	-------------------------------------------------- WHAT I WANNA DO TODAY ---------------------------------------------------------------- 
+	-----------------------------------------------------------------------------------------------------------------------------------------       
+
+*/
+
+
+
+
+Normal Things To Do List: 
+    Car Registration 
+
+    Louie License 
+
+    Make Appointment with Podiatrist 
+
+    Make Appointment with Eye Doctor 
+
+    Make appointment with dermatologist 
+
+    Buy Weekend Tickets for Odyssey 
+
+
+
+TO DO LIST FINAL: 
+
+    1. Bug Fixes
+        AI Troubleshooting: 
+            For our AI_Changes patch, we're running into an issue where enabling damage_caching causes the game to black screen when leaving battle. 
+            We want to try a couple things to try and narrow down the root cause of this behavior. 
+                - Commenting out the entire FieldEffects and Switch AI sections to see if it's an issue with how large this specific patch is 
+                - Test a rom without some of the other battle patches to see if it's a heap issue. 
+                - See if we can set up a claude code harness to work with GDB to debug the crash 
+        
+        Set an up to date pokemon changes doc so we can do our move changes sensibly with copy paste and not this malarchy 
+
+        Crit Frequency: 
+            The frequency of crits from the AI seemed frankly absurd, even for Pokemon not holding the scope lens. Let's make sure this logic is running correctly.
+
+        A4_AbilityChanges 
+            WHAT THE FUCK IS GOING ON IN 
+                ServerFlow_CheckNoEffect_TypeEffectiveness
+                ServerFlow_CheckNoEffect_Avoid
+                ServerFlow_CheckNoEffect_Hiding
+        
+    2. Move Changes 
+
+        [ PECK -> AQUA CUTTER ]
+            New Description: 
+                The user expels pressurized water to slice\nforward. Critical hits land more easily\nand it may leave the target paralyzed.
+            
+            Stats: 
+                90 BP 
+                +1 Crit Ratio
+                20% Paralysis Chance 
+        
+            Distribution: 
+                Samurott
+                Gallade 
+                Sharpedo 
+                Corsola 
+                Cloyster
+                Empoleon 
+                Feraligatr 
+            
+            Animation: 
+                See if Questionable can get you the build, if not just use razor shell for now. 
+            
+        [ NIGHT SHADE ] 
+            Give the AI Flag for Mimic 
+        
+        [ RAPID SPIN ]
+            Give the AI Flag for Flame Charge 
+        
+        [ FURY CUTTER ]
+            40 BP 3 hits 
+            95% accuracy 
+
+            The user slashes the foe with up to three\nconsecutive strikes.\nEach hit does more damage than the last.
+
+            Learnsets I didn't get around to updating: 
+                Drapion 
+                Gliscor 
+                Parasect 
+                Sandshrew 
+                Beedrill 
+                Vespiquen
+                Galvantula 
+                Crustle 
+                Bisharp 
+                Durant 
+                Samurott 
+                Gallade 
+                Zangoose 
+                Ursaring 
+                Flygon 
+        
+        [ AERIAL ACE REWORK ]
+            It's not going to be a TM anyore, until maybe late game. 
+
+            New Description: 
+                The user confounds the target with speed,\nthen slashes, ensuring the blow lands.\nIt may also raise the user's speed. 
+            
+            Stats: 
+                70 > 90 BP 
+                20% Chance to raise speed one stage 
+            
+            Side Buff: 
+                Wing Attack: (60 > 65 BP) 
+            
+            Distribution: 
+                ++Swanna
+                Aerodactyl: 
+                    Level 1: Ice Fang -> Aerial Ace 
+                    Level 30: Aerial Ace -> Hurricane 
+                    
+                Heracross: 
+                    Level 10: Natural Gift -> Chip Away 
+                    Level 23: Chip Away -> Aerial Ace 
+                    Level 26: Skitter Smack -> Struggle Bug
+                    Level 62: Heal Order -> Reversal 
+    
+                Crobat: 
+                    Level 10: Wing Attack -> Razor Winds
+                    Level 13: Supersonic -> Confuse Ray 
+                    Level 25: Air Cutter -> Wing Attack 
+                    ++Level 37: Haze
+                    Level 39: Screech -> Vacuum Wave
+                    Level 42: Roost -> Shadow Ball 
+                    ++Level 48: Steel Wing 
+                    Level 52: Acrobatics -> Air Slash
+                    ++Level 55: Roost
+                Pidgey / Pidgeotto / Pidgeot: 
+                    Level 1: Mirror Move -> Growl 
+                    Level 29->30: Aerial Ace 
+                    ++Level 35: Whirlwind
+                    Level 37: Me First -> Mirror Move 
+                    Level 41->42: Air Slash 
+                    Evolves at Level 30
+                Emolga: 
+                    Level 17: Aerial Ace -> Air Cutter 
+                Torchic Line: 
+                    Level 1: Reversal -> Aerial Ace 
+                    Level 19: Aerial Ace -> Wing Attack 
+                    Level 64: Brave Bird -> Reversal 
+                    ++Level 68: Brave Bird
+                Staraptor: 
+                    Level 20: Aerial Ace -> Wing Attack 
+                    Level 46: Drill Peck -> Aerial Ace
+                Fearow (Lower its Atk to 101)
+                    Level 33: Dual Wingbeat -> Aerial Ace 
+                Skarmory: 
+                    Level 21: Aerial Ace -> Wing Attack
+                Doduo / Dodrio: 
+                    Level 23: Aerial Ace -> Trop Kick 
+                Archen / Archeops: 
+                    Level 22: Aerial Ace -> Chatter 
+                Rufflet / Braviary: 
+                    Level 5->1: Quick Attack -> Aerial Ace
+                    Level 24: Aerial Ace -> Wing Attack 
+                    Level 35: Slash -> Retaliate 
+                Mothim: 
+                    Level 25: Aerial Ace -> Air Slash 
+                    Level 50: Acrobatics -> Aerial Ace 
+                Swellow: 
+                    Level 25: Aerial Ace -> Wing Attack 
+                Ninjask: 
+                    Level 34: Aerial Ace -> Wing Attack 
+                    Level 54: Acrobatics -> Aerial Ace 
+        
+        [ ATTACK ORDER ]
+            May Poison the target. 20% chance. 
+
+        [ AGILITY ]
+            Can no longer target allies. (I think this just might be too broken, idk) (unless it CAN'T target the user)
+            1 PP > 2 PP 
+            The user relaxes and lightens its body\nto move faster.\nIt sharply boosts the Speed stat.
+        
+        [ LOVELY KISS ]
+            85% accurate 
+        
+        [ HEAD CHARGE ]
+            140 BP? 
+        
+        [ HOWL ]
+            3 PP > 1 PP 
+        
+        [ ICICLE CRASH ]
+            Has a 20% Freeze chance added.
+            Hits all adjacent foes.  
+        
+        [ OCTAZOOKA ]
+            Still has a 50% chance to lower accuracy 
+            The user attacks by spraying ink in the\ntarget's face. This attack always results\nin a critical hit and may lower accuracy.
+        
+
+    3. Learnset Updates 
+        - Finish implementing the changed Aerial Ace, Fury Cutter, and Aqua Cutter learnsets 
+        - Run our script 
+        - Fix as needed. 
+        - Keep in mind we will need to update the id for aqua cutter. 
+
+    
+    4. AI Changes 
+        Implement the new AI Scripts. 
+        Don't worry about the "partner" ones yet. We haven't determined we need them. 
+
+        Use the AI Flag for Mimic: 
+            Adjust Night Shade AI so it checks effectiveness 
+            But if it's effective, we treat it as a healing move 
+            +80% health (terminate)
+            +50% health and faster ()
+
+        Give Rapid Spin the AI Flag for Speed Boosting 
+
+    
+    5. Pokedex Changes 
+        Squirtle/Wartortle: 
+            Abil 3: Water Absorb 
+
+        Budew: 
+            +10 Defense 
+            Abil 1: Chlorophyll -> Solar Power 
+            Abil 3: Serene Grace
+        
+        Roselia : 
+            +10 Defense 
+            Abil 1: Chlorophyll -> Solar Power 
+            Abil 3: Serene Grace -> Majestic Ward
+        
+        Roserade: 
+            Abil 1: Chlorophyll -> Solar Power 
+        
+        Victrebell: 
+            No Guard -> Distracting 
+        (NOTE: Either Victrebell or Roserade both work for Distracting. They both have synergies with Seed Flare/Focus Blast/Sludge wave/sleep powder/power whip/etc.)
+        (Technician is a coolability but unforunately in my hack it doesn't get you much...)
+        (I could make cotton spore special and give it to roserade actually)
+        
+        Clamperl: 
+            Abil 2 Sturdy 
+        
+        Ludicolo: 
+            Abil 2: Distracting 
+            Abil 3: Quick Feet
+        
+        Skiity / Delcatty: 
+            -5 Atk 
+        
+        Zigzagoon: 
+            58 HP 
+            72 Atk 
+            55 Def 
+            30 SpA 
+            41 SpD 
+            70 Spe 
+        Linoone: 
+            78 HP 
+           112 Atk 
+            75 Defense 
+            50 SpA 
+            61 SpD 
+           100 Spe 
+        
+        Drilbur: 
+            Abil 3: Sand Rush 
+        
+        Dwebble/Crustle: 
+            Abil 1: Pickup 
+            Abil 3: Sturdy 
+        
+        Spinda: 
+            Abil 3: Null 
+        
+        Aipom/Ambipom: 
+            Aipom Evolves at Level 35 (or with a Moon Stone)
+        
+        Gallade: 
+            Abil 4: Inner Focus 
+        
+        Phanpy/Donphan: 
+            -5 Speed 
+        
+        Lilligant: 
+            both our grass/fighitngs can't be quick feet. 
+            we need to change one of them.
+            make Lilligant distracting for seed flare / focus blast / sleep powder 
+            Abil 3: Cloud Nine 
+        
+        Meganium: 
+            abil 3: flower gift -> resilient 
+        
+        Alomomola: 
+            Abili 2: Healer 
+            Abil 3: Null 
+        
+        Claydol: 
+            Make sure it doesn't have compat with Harden or Barrier or Lucky Chatn
+      
+    
+    6. Ability Changes 
+        Implement the new Damp: 
+        Damp: 
+            Take less damage from Fire\nand deal more damage with Water
+            Users: 
+                Croagunk / Toxicroak (Replaces Gooey, HA chance 20%) 
+                Tangela / Tangrowth (Replaces Chlorophyll, HA chance 20%)
+                Tympole / Palpitoad / Seismitoad (replaces Gooey)
+                Paras / Parasect (replaces Tough Claws, HA: 20%)
+                Shelmet / Accelgor (replaces Dry Skin)
+        
+
+
+    Moves that are overdistributed:
+        Toxic (Available to 29 Evolution Lines)
+            Questionable Inclusions: 
+                Kingdra 
+                Quagsire 
+                Gastrodon
+                Mandibuzz 
+                Cradily 
+                Weezing 
+        
+        Agility (Available to 30 Evolution Lines)
+            This should only be going to super frail Pokemon. 
+
+            Alternatively, I could reduce it to a +1 Boost now that it can affect allies? 
+
+            I think this move's distribution is a symptom of me being self conscious about spamming too many attacks on learnsets. I shouldn't be. 
+
+            Questionable Inclusions: 
+                Manectric 
+                Basculin 
+                Scolipede 
+                Scyther 
+                Scizor 
+                Lopunny
+                Metagross (!!!)
+                Feraligatr 
+                Kingdra 
+                Porygon
+                Braviary 
+                Skarmory 
+                Mantine
+        Recover: 
+            Remove from: 
+                Klinklang 
+                Claydol 
+                Glaceon 
+                Spiritomb 
+        
+        Harden: 
+            This is a tutor move and a very powerful move, but before I say this is overdistributed 
+            I need to test first. 
+        
+        Scary Face:
+            Now that it's a tutor move this definitely doesn't need to be so saturated. 
+            It's a tool to uplift weaker pokemon, not just a general filler move for learnsets imo
+
+            Normal Distribution:    
+                Charizard 
+                Raticate 
+                Machamp 
+                Rhydon 
+                Magmortar 
+                Tauros 
+                Gyarados 
+                Flareon 
+                Aerodactyl 
+                Feraligatr 
+                Ariados 
+                Granbull 
+                ursaring 
+                Donphan 
+                Tyranitar 
+                Mightyena 
+                Masquerain 
+                Sharpedo 
+                Huntal 
+                Slaamence 
+                Metagross 
+                Luxray 
+                Rampardos 
+                Drapion 
+                Mamoswine 
+                Conkeldurr 
+                Basculin 
+                Krookadile 
+                Scrafty 
+                Cofagrigus 
+                Archeops 
+                Zoroark 
+                Escavalier 
+                Haxorus 
+                Druddigon 
+                Bisharp 
+                Bouffalant
+                Braviary 
+                Hydreigon 
+            
+            Mons to remove: 
+                Magmortar 
+                Mandibuzz 
+                Glalie / SNorunt 
+                Gliscor 
+                Steelix 
+                Escavalier 
+                Pinsir 
+                Donphan 
+                Sawk
+                Throh
+                Haxorus 
+                Hippowdon 
+
+
+    Moves that are underdistributed: 
+        Sing: 
+            Distribution: 
+                Lapras 
+                Swalot 
+                Plusle 
+                Minun 
+                Gardevoir 
+                Marowak 
+                Persian 
+                Kangaskhan 
+                Snorunt / Froslass / Glalie 
+                Mawile 
+                Raichu 
+                Spinda 
+                Eevee 
+                Empoleon 
+
+        Quick Attack: 
+            It's on a lot of sets but some quick priority would be appreciated on a ton of mons 
+
+            Distrubtion Mons: 
+                Fearow 
+                Ninetales 
+                Crobat 
+                Farfetch'd 
+                Seaking 
+                Dodrio 
+                Gliscor 
+                Pelipper 
+                Manectric 
+                Pinsir 
+                Murkrow 
+                Shiftry 
+                Flygon 
+                Luxray 
+                Delibird 
+                Xatu 
+        
+        Vacuum Wave: 
+
+            Distribution: 
+                Golduck 
+                Dragonite 
+                Sceptile 
+                Gardevoir 
+                Medicham 
+                Infernape 
+                Empoleon 
+                Garchomp 
+                Samurott 
+
+        String Shot: 
+            Needs to be relearned at later levels ono teh bug-types 
+                Butterfree
+                Beedrill
+                Leavanny
+                Beautifly
+                Dustox
+                Ariados
+                Wormadam
+                Mothim
+                Yanmega
+                Galvantula 
+        Haze
+            It's a low value move but that's okay. We can have some low value moves to sprinkle into learnsets 
+            
+            Distribution: 
+                Arbok
+                Honchkrow 
+                Poliwrath 
+                Tentacruel 
+                Muk 
+                Gengar 
+                Weezing 
+                Mr. Mime
+                Vaporeon 
+                Quagsire 
+                Qwilfish 
+                Masquerain 
+                Seviper 
+                Milotic 
+                Froslass 
+                Cofagrigsu 
+                Chandelure 
+                Cryogonal 
+                Blastoise 
+                Dodrio 
+                Tentacruel 
+                Kingler 
+                Seaking 
+                Omastar 
+                Dragonite 
+                Xatu 
+                Mantine 
+                Altaria 
+                Dusknoir 
+                Drifblim 
+                Skuntank 
+                Garbodor 
+
+
+Icicle Crash 
+    Mamoswine 
+    Beartic 
+    Glalie 
+    Froslass 
+    Weavile 
+    Vanilluxe 
+    Abomasnow 
+    Cloyster 
+    Dewgong 
+    Pikachu 
+
+    We could maybe make it 105 BP chance to freeze spread tbh. 
+    Or just make it a spread move would already make it terrifying. 
+    
+    Idea A: 120 BP, 75% accuracy, spread, Flinch Chance 20% 
+    Idea B: 90 BP, 100% accuracy, flinch chance. 
+    Idea B: 90 BP, 100% accuracy, 10% flinch chance, 10% freeze chance 
+
+Fury Cutter: 
+    40 BP 3 hit? 
+    95% accurate 
+
+    Not for our scythers, but could be given to 
+        Kricketune 
+        Samurott 
+        Armaldo (instead of steamroller)
+        Parasect (instead of Attack order)
+        Gliscor 
+        Sceptile 
+        Ninjask 
+        Zangoose 
+        Kabutops 
+        Farfetch'd 
+        Sandslash 
+        Beedrill (instead o megahorn)
+        Gallade 
+        Crustle 
+        Galvantula (kinda early on as a power bump)
+        Ursaring 
+        Flygon
+        Floatzel 
+
+Slow Start: 
+    5 > 3 Turns 
+
+
+
+
+[ ITEMS ]
+    Light Clay: 
+        I think I want to go forward with my idea for Light Clay where it increases the duration of the following moves by 10 turns: 
+            - Safeguard / Mist
+            - Light Screen 
+            - Reflect 
+            - Gravity 
+            - Lucky Chant 
+        
+        A Pokémon held item that extends the\nduration of side effects like Tailwind,\nReflect or Safeguard used by the holder.
+
+
+[ ENCOUNTERS ]
+    Castelia Gardens: 
+        Singles Grass:
+            - Snubbull 
+            - Skitty 
+            - Bonsly 
+        Doubles Grass: 
+            - Jigglypuff 
+            - Buneary 
+        More Flying Types? 
+
+    Castelia Sewers    
+        Walking: 
+            - Zubat 
+            - Wormadam-Trash 
+
+   
+
+[ MASTERSHEET ]
+    
+    6. Dex Expansion 
+        The exported dex often has a lot of wrong information because it can only look at effect ids for moves. 
+        For abilities it's missing a lot of changes too. 
+            Moves: 
+            
+            Abilities: 
+                Hyper Cutter 
+                    Needs a list of the moves
+                    Needs an indicator for 30% boost 
+                Strong Jaw 
+                    needs a list of the moves 
+                Wind Rider 
+                    needs a list of the moves 
+                
+            Items: 
+                Tera Items 
+                CLRS Items 
+      
+
+
+
+
+
+
+
+
+====================================================================================================================================================
+/*   MARLON BUILD   */
+
+
+
+    IMPOSSIBLE: 
+        - Debug Illusion 
+        - Update Terastalization Polish
+            - Some kind of color status for Tera
+            - Fix the Tera Animation in Doubles     
+
+
+ 
+
+

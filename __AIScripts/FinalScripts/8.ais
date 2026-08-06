@@ -1,0 +1,61 @@
+// PRIORITIZE STATUS 
+// EQUIVALENT OF 3.AIS 
+// ONLY FOR PARTNERS 
+
+    JumpIfTargetIsAlly(&endScript_1)
+	GetMove()
+    // Check for Substitute
+	JumpIfStoredIsNotInList(&substituteBlockedMoves, &endScript_1)
+	JumpIfHasSubstitute(defender, &deprioritize_address)
+
+endScript_1:
+	EndScript()
+
+deprioritize_address:
+	AddToScore(-10)
+	EndScript()
+
+
+// MAY NEED TO UPDATE THIS LIST 
+substituteBlockedMoves:
+	move.charm
+	move.captivate
+	move.confide
+	move.growl
+	move.tickle
+	move.smokescreen
+	move.eerie_impulse
+	move.feather_dance
+	move.fake_tears
+	move.screech
+	move.leer
+	move.scary_face
+	move.string_shot
+	move.sweet_scent
+	move.tail_whip
+	move.metal_sound
+	move.gastro_acid
+	move.icy_wind
+	move.low_sweep
+	move.toxic
+	move.poison_gas
+	move.will-o-wisp
+	move.thunder_wave
+	move.glare
+	move.hypnosis
+	move.dark_void
+	move.sleep_powder
+	move.stun_spore
+	move.poison_powder 
+	move.spore
+	move.curse 
+	move.block 
+	move.mean_look
+	move.fake_out
+	move.soak 
+	move.reflect_type 
+	move.confuse_ray
+	move.attract 
+	END
+
+

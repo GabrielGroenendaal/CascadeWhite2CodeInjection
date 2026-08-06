@@ -1,11 +1,7 @@
+
 #include "codeinjection_new.h"
 #include "kPrint.h"
-#include "settings.h"
-#define VAR_PARTING_SHOT_FLAG VAR_DELAY_ATTACK_FLAG
 
-#define TESTING_COMPRESSION false
-#define TESTING_COMPRESSION_TYPEMOVES false
-#define USING_DEVOUR false
 // Uses esdb_NewBattle.yml
 
 extern "C"
@@ -75,17 +71,23 @@ extern "C"
 
 
 #pragma region ORPHANED MOVE EFFECTS 
-    // We are taking up a lot of space that Idt we need for protect clones
-    // Trump Card + Crush Grip + Fusion Flare + Memento: All Protect Clones that point to the same thing. We only need one. 
-    // Pretty sure we can just use the vanilla protect and ignore everything else. 
-
-    // Grudge (currently being used for Devour, just remove it) 
-    // Present (currently being used for Night Shade, just assign it to Seismic Toss)
-    // Final Gambit (currently just pointing to Explosion. Unassign it and null it in 167)
-    // Heart Swap (Wandering in the void)
-    // Quick Guard (who knows)
-    // Return (who knows what its attached to. Fix it)
-
+    /* CURRENTLY ORPHANED */
+    /* 
+        Return 
+        Final Gambit 
+        Heart Swap 
+        Quick Guard 
+        Grudge 
+        (Soon to be) FuryCutter 
+    */
+    /* COULD BE ORPHANED */
+    /* 
+        Trump Card 
+        Crush Grip 
+        Fusion FLare 
+        Memento 
+        Present 
+    */
     // In OVERLAY_167 
     // Find the mappings for: 
     // - 376 (Spiky Shield) -> Assign to Protect (182, or Detect 197)
@@ -268,7 +270,7 @@ extern "C"
 #pragma endregion
 
 #pragma region EXPLOSIONS
-    void THUMB_BRANCH_SAFESTACK_HandlerPosHealingWish(BattleEventItem *a1, ServerFlow *a2, int a3)
+     void THUMB_BRANCH_SAFESTACK_HandlerPosHealingWish(BattleEventItem *a1, ServerFlow *a2, int a3)
     /* HEALING WISH*/
     {
         u8 Value_5;           // r4
@@ -312,6 +314,110 @@ extern "C"
             ChangeStats(a2, Value_5, Value_5, STATSTAGE_SPEED, 1, 1);
             BattleEventItem_Remove(a1);
         }
+    }
+
+    void THUMB_BRANCH_SAFESTACK_Condition_HandlerBind(ServerFlow *a1, BattleMon *a2, unsigned int a3)
+    /* ANIMATIONS FOR BIND END-OF-TURN */
+    {
+        int Param_1; // r0
+        int v5; // r5
+        int v6; // r6
+        int v7; // r6
+        HandlerParam_Damage *v8; // r4
+        BattleMon *v9; // r0
+        unsigned int v10; // r1
+        ConditionData v13; // [sp+8h] [bp-20h]
+
+        if ( j_j_BattleMon_IsFainted_7(a2) )
+        {
+            return;
+        }
+        v13.raw = j_j_GetConditionContinuationParam_1(a2, CONDITION_BIND).raw;
+        Param_1 = j_j_Condition_GetParam_1(v13);
+        v5 = Param_1;
+        v7 = -1;
+        if (Param_1 == MOVE463_MAGMA_STORM)
+        {
+            v7 = 633;
+        }
+        else if (Param_1 == MOVE250_WHIRLPOOL)
+        {
+            v7 = 635;
+        }
+        else if (Param_1 == MOVE128_CLAMP)
+        {
+            v7 = 634;
+        }
+        else if (Param_1 == MOVE035_WRAP)
+        {
+            v7 = 631;
+        }
+        else if (Param_1 == MOVE020_BIND)
+        {
+            v7 = 630;
+        }
+        else if (Param_1 == MOVE083_FIRE_SPIN)
+        {
+            v7 = 632;
+        }
+        else if (Param_1 == MOVE328_SAND_TOMB)
+        {
+            v7 = 636;
+        }
+        else if (Param_1 == MOVE171_NIGHTMARE){
+            v7 = 685;
+        }
+        else if (Param_1 == MOVE286_IMPRISON){
+            v7 = 684;
+        }
+        else if (Param_1 == MOVE090_FISSURE){
+            v7 = 682;
+        }
+        else if (Param_1 == MOVE012_GUILLOTINE){
+            v7 = 680;
+        }
+        else if (Param_1 == MOVE032_HORN_DRILL){
+            v7 = 681;
+        }
+        else if (Param_1 == MOVE132_INFESTATION){
+            v7 = 679;
+        }
+        else if (Param_1 == MOVE170_SNAP_TRAP){
+            v7 = 683;
+        }
+        else if (Param_1 == MOVE377_ALLURING_VOICE){
+            v7 = 686;
+        }
+        else if (Param_1 == MOVE066_SUBMISSION){
+            v7 = 630;
+        }
+        else {
+            v7 = 630;
+        }
+        v8 = (HandlerParam_Damage *)j_j_BattleHandler_PushWork_21(a1, EFFECT_DAMAGE, a3);
+        v8->pokeID = a3;
+        if ( j_j_Condition_GetFlag(v13) )
+        {
+            v9 = a2;
+            v10 = 6;
+        }
+        else
+        {
+            v9 = a2;
+            v10 = 8;
+        }
+        v8->damage = j_j_DivideMaxHPZeroCheck_5(v9, v10);
+        if ( v7 != -1 )
+        {
+            v8->flags |= 2u;
+            v8->effectNo = v7;
+            v8->posFrom = j_j_Handler_PokeIDToPokePos_3(a1, a3);
+            v8->posTo = 6;
+        }
+        j_j_BattleHandler_StrSetup_14(&v8->exStr.ID, 2u, 372);
+        j_j_BattleHandler_AddArg_16(&v8->exStr, a3);
+        j_j_BattleHandler_AddArg_17(&v8->exStr, v5);
+        j_j_BattleHandler_PopWork_21(a1, v8);
     }
     void HandlerExplosionPower(int a1, ServerFlow *a2, int a3)
     {
@@ -489,6 +595,12 @@ extern "C"
 #pragma endregion
 
 #pragma region SimpleOverwrites
+    /* FURY CUTTER NULLIFICATION */
+    MOVE_TRIGGERTABLE *THUMB_BRANCH_EventAddFuryCutter(_DWORD *a1)
+    {
+        *a1 = 0;
+        return PollenPuffHandlers;
+    }
     /* MULTI HIT */
     u8 MULTIHIT_CHANCES[6] = {0, 0, 15, 50, 85, 100};
     unsigned int THUMB_BRANCH_RollMultiHitHits(unsigned int result)
@@ -2427,109 +2539,7 @@ extern "C"
             return;
         }
     };
-    void THUMB_BRANCH_SAFESTACK_Condition_HandlerBind(ServerFlow *a1, BattleMon *a2, unsigned int a3)
-    /* ANIMATIONS FOR BIND END-OF-TURN */
-    {
-        int Param_1; // r0
-        int v5; // r5
-        int v6; // r6
-        int v7; // r6
-        HandlerParam_Damage *v8; // r4
-        BattleMon *v9; // r0
-        unsigned int v10; // r1
-        ConditionData v13; // [sp+8h] [bp-20h]
-
-        if ( j_j_BattleMon_IsFainted_7(a2) )
-        {
-            return;
-        }
-        v13.raw = j_j_GetConditionContinuationParam_1(a2, CONDITION_BIND).raw;
-        Param_1 = j_j_Condition_GetParam_1(v13);
-        v5 = Param_1;
-        v7 = -1;
-        if (Param_1 == MOVE463_MAGMA_STORM)
-        {
-            v7 = 633;
-        }
-        else if (Param_1 == MOVE250_WHIRLPOOL)
-        {
-            v7 = 635;
-        }
-        else if (Param_1 == MOVE128_CLAMP)
-        {
-            v7 = 634;
-        }
-        else if (Param_1 == MOVE035_WRAP)
-        {
-            v7 = 631;
-        }
-        else if (Param_1 == MOVE020_BIND)
-        {
-            v7 = 630;
-        }
-        else if (Param_1 == MOVE083_FIRE_SPIN)
-        {
-            v7 = 632;
-        }
-        else if (Param_1 == MOVE328_SAND_TOMB)
-        {
-            v7 = 636;
-        }
-        else if (Param_1 == MOVE171_NIGHTMARE){
-            v7 = 685;
-        }
-        else if (Param_1 == MOVE286_IMPRISON){
-            v7 = 684;
-        }
-        else if (Param_1 == MOVE090_FISSURE){
-            v7 = 682;
-        }
-        else if (Param_1 == MOVE012_GUILLOTINE){
-            v7 = 680;
-        }
-        else if (Param_1 == MOVE032_HORN_DRILL){
-            v7 = 681;
-        }
-        else if (Param_1 == MOVE132_INFESTATION){
-            v7 = 679;
-        }
-        else if (Param_1 == MOVE170_SNAP_TRAP){
-            v7 = 683;
-        }
-        else if (Param_1 == MOVE377_ALLURING_VOICE){
-            v7 = 686;
-        }
-        else if (Param_1 == MOVE066_SUBMISSION){
-            v7 = 630;
-        }
-        else {
-            v7 = 630;
-        }
-        v8 = (HandlerParam_Damage *)j_j_BattleHandler_PushWork_21(a1, EFFECT_DAMAGE, a3);
-        v8->pokeID = a3;
-        if ( j_j_Condition_GetFlag(v13) )
-        {
-            v9 = a2;
-            v10 = 6;
-        }
-        else
-        {
-            v9 = a2;
-            v10 = 8;
-        }
-        v8->damage = j_j_DivideMaxHPZeroCheck_5(v9, v10);
-        if ( v7 != -1 )
-        {
-            v8->flags |= 2u;
-            v8->effectNo = v7;
-            v8->posFrom = j_j_Handler_PokeIDToPokePos_3(a1, a3);
-            v8->posTo = 6;
-        }
-        j_j_BattleHandler_StrSetup_14(&v8->exStr.ID, 2u, 372);
-        j_j_BattleHandler_AddArg_16(&v8->exStr, a3);
-        j_j_BattleHandler_AddArg_17(&v8->exStr, v5);
-        j_j_BattleHandler_PopWork_21(a1, v8);
-    }
+    
 #pragma endregion
 
 #pragma region COMPLETE WIP 
@@ -2627,4 +2637,3 @@ extern "C"
 
 
 }
-

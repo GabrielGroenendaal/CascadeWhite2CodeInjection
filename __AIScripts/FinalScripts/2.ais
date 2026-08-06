@@ -86,7 +86,7 @@ data_address_moveEffects:
 	move_ef.substitute => &Label_Substitute
 	move_ef.recharge => &Label_Recharge
 	move_ef.rage => &endScript_1
-	move_ef.mimic => &endScript_1
+	move_ef.mimic => &Label_NightShade
 	move_ef.metronome => &endScript_1
 	move_ef.leech_seed => &Label_ApplyPoison
 	move_ef.splash => &endScript_1
@@ -2225,14 +2225,35 @@ address_0x244A:
 
 
 
+// NIGHT SHADE 
+Label_NightShade: 
+	JumpIfEffectivenessEQ(0x, &deprioritizeBy10)
+	JumpIfHealthGT(attacker, 80, &Label_EndNightShadeScript)
+	JumpCompareSpeed(GT, &Label_NightShadeUserIsSlower)
+	JumpIfHealthGT(attacker, 50, &Label_NightShadeIsFasterAbove50Below80)
+	JumpIfRandLT(120, &Label_EndNightShadeScript)
+	AddToScore(1)
+	Jump(&Label_EndNightShadeScript)
 
+Label_NightShadeIsFasterAbove50Below80: 
+	JumpIfRandLT(150, &Label_EndNightShadeScript)
+	AddToScore(1)
+	Jump(&Label_EndNightShadeScript)
+
+Label_NightShadeUserIsSlower:
+	JumpIfRandLT(120, &Label_EndNightShadeScript)
+	AddToScore(1)
+
+Label_EndNightShadeScript: 
+	EndScript()
 
 
 
 //   ENDURE   
 
 Label_Endure:
-	JumpIfUserWillFaint_Priority(attacker, &address_EndureCheck1)
+    JumpIfUserWillTakeLowDamage_Setup(&deprioritizeBy10)
+    JumpIfUserWillFaint_Setup(&address_EndureCheck1)
 	JumpIfRandLT(120, &endScript_Endure)
 	AddToScore(-3)
 	Jump(&endScript_Endure)
@@ -5212,18 +5233,6 @@ address_0x504E:
 
 //   RECOIL 25   
 Label_Recoil25:
-	JumpIfEffectivenessEQ(0x, &address_0x5098)
-	JumpIfEffectivenessEQ(1/2x, &address_0x5098)
-	JumpIfEffectivenessEQ(1/4x, &address_0x5098)
-	GetAbilityGuess(attacker)
-	JumpIfStoredEQ(ability.determined, &address_0x5092)
-	JumpIfStoredEQ(ability.magic_guard, &address_0x5092)
-	Jump(&address_0x5098)
-
-address_0x5092:
-	AddToScore(1)
-
-address_0x5098:
 	EndScript()
 
 
@@ -5711,8 +5720,6 @@ Label_Soak:
 //   FLAME CHARGE   
 Label_FlameCharge:
 	JumpIfEffectivenessEQ(0x, &address_0x57A4)
-	JumpIfEffectivenessEQ(1/4x, &address_0x57A4)
-	JumpIfEffectivenessEQ(1/2x, &address_0x57A4)
 	JumpCompareSpeed(GT, &address_0x5794)
 	JumpIfRandLT(50, &address_0x57A4)
 	Jump(&address_0x57A4)

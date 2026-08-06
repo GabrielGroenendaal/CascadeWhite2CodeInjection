@@ -8,44 +8,38 @@
 
     */
 
-/* Field Effects */
+/* 1: Field Effects */
 "C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\_____GithubCheckoutMarch\arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi\bin\arm-none-eabi-g++.exe"  -r -mthumb -mlong-calls -march=armv5t -Os A_CoreBattle/A1_FieldEffects.cpp -Iswan-master -o ______Output/A1_FieldEffects.elf
 
-/* AI Changes */
+
+/* 2: AI Changes * / 
 "C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\_____GithubCheckoutMarch\arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi\bin\arm-none-eabi-g++.exe"  -r -mthumb -mlong-calls -march=armv5t -Os A_CoreBattle/A2_AIChanges.cpp -Iswan-master -o ______Output/A2_AIChanges.elf
+"C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\_____GithubCheckoutMarch\arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi\bin\arm-none-eabi-g++.exe"  -r -mthumb -mlong-calls -march=armv5t -Os A_CoreBattle/A2A_AIChanges_170.cpp -Iswan-master -o ______Output/A2B_AIChanges_170.elf
 
-/* AI CHANGE SEXPERIMENTAL * / 
-"C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\_____GithubCheckoutMarch\arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi\bin\arm-none-eabi-g++.exe"  -r -mthumb -mlong-calls -march=armv5t -Os A_CoreBattle/A2_AIChanges_TestOutLater.cpp -Iswan-master -o ______Output/A2_AIChanges.elf
 
-/* Item Changes */
+/* 3: Item Changes */
 "C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\_____GithubCheckoutMarch\arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi\bin\arm-none-eabi-g++.exe"  -r -mthumb -mlong-calls -march=armv5t -Os A_CoreBattle/A3_ItemChanges.cpp -Iswan-master -o ______Output/A3_ItemChanges.elf
 
 
-/* Ability Changes */
+/* 4: Ability Changes */
 "C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\_____GithubCheckoutMarch\arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi\bin\arm-none-eabi-g++.exe"  -r -mthumb -mlong-calls -march=armv5t -Os A_CoreBattle/A4_AbilityChanges.cpp -Iswan-master -o ______Output/A4_AbilityChanges.elf
+"C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\_____GithubCheckoutMarch\arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi\bin\arm-none-eabi-g++.exe"  -r -mthumb -mlong-calls -march=armv5t -Os A_CoreBattle/A4A_AbilityChanges_287.cpp -Iswan-master -o ______Output/A4B_AbilityChanges_287.elf
 
-
-/* Move Changes */
+/* 5: Move Changes */
 "C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\_____GithubCheckoutMarch\arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi\bin\arm-none-eabi-g++.exe"  -r -mthumb -mlong-calls -march=armv5t -Os A_CoreBattle/A5_MoveChanges.cpp -Iswan-master -o ______Output/A5_MoveChanges.elf
+"C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\_____GithubCheckoutMarch\arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi\bin\arm-none-eabi-g++.exe"  -r -mthumb -mlong-calls -march=armv5t -Os A_CoreBattle/A5A_MoveChanges_169.cpp -Iswan-master -o ______Output/A5B_MoveChanges_169.elf
 
-/* Side Effect Changes */
+
+/* 6: Side Effect Changes */
 "C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\_____GithubCheckoutMarch\arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi\bin\arm-none-eabi-g++.exe"  -r -mthumb -mlong-calls -march=armv5t -Os A_CoreBattle/A6_SideEffectChanges.cpp -Iswan-master -o ______Output/A6_SideEffectChanges.elf
 
-
-/* Dynamic Speed */
-"C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\_____GithubCheckoutMarch\arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi\bin\arm-none-eabi-g++.exe"  -r -mthumb -march=armv5t -Os A_CoreBattle/A7_DynamicSpeed.cpp -Iswan-master -o ______Output/A7_DynamicSpeed.elf
-
-
-/* Imported Abilities */
+/* 8: Imported Abilities */
 "C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\_____GithubCheckoutMarch\arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi\bin\arm-none-eabi-g++.exe"  -r -mthumb -mlong-calls -march=armv5t -Os A_CoreBattle/A8_ImportedAbilities.cpp -Iswan-master -o ______Output/A8_ImportedAbilities.elf
 
 
-/* Damage Calc */
+/* 9: Damage Calc */
 "C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\_____GithubCheckoutMarch\arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi\bin\arm-none-eabi-g++.exe"  -r -mthumb -mlong-calls -march=armv5t -Os A_CoreBattle/A9_DamageCalc.cpp -Iswan-master -o ______Output/A9_DamageCalc.elf
 
-
-/* Illusion Check */
-"C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\_____GithubCheckoutMarch\arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi\bin\arm-none-eabi-g++.exe"  -r -mthumb -march=armv5t -Os A_CoreBattle/A11_Illusion.cpp -Iswan-master -o ______Output/A11_Illusion.elf
 
 
 
@@ -137,3 +131,23 @@
 
 
 
+
+    /*
+
+        --------------------------------------------------------------------------------------------------
+        ------------------------------------------- STORAGE ----------------------------------------------
+        --------------------------------------------------------------------------------------------------
+
+    */
+
+
+/* SAFE AI Changes */
+"C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\_____GithubCheckoutMarch\arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi\bin\arm-none-eabi-g++.exe"  -r -mthumb -mlong-calls -march=armv5t -Os A_CoreBattle/A2_AIChanges.cpp -Iswan-master -o ______Output/A2_AIChanges.elf
+
+
+/* 8: Dynamic Speed */
+"C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\_____GithubCheckoutMarch\arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi\bin\arm-none-eabi-g++.exe"  -r -mthumb -march=armv5t -Os A_CoreBattle/A7_DynamicSpeed.cpp -Iswan-master -o ______Output/A7_DynamicSpeed.elf
+
+
+/* Illusion Check */
+"C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\_____GithubCheckoutMarch\arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi\bin\arm-none-eabi-g++.exe"  -r -mthumb -march=armv5t -Os A_CoreBattle/A11_Illusion.cpp -Iswan-master -o ______Output/A11_Illusion.elf

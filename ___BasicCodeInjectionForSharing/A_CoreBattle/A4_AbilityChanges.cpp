@@ -1,6 +1,7 @@
+
+#include "settings.h"
 #include "codeinjection_new.h"
 #include "kPrint.h"
-#include "settings.h"
 
 extern u32 g_GameBeaconSys;
 STRUCT_DECLARE(GameData)
@@ -12,7 +13,47 @@ STRUCT_DECLARE(GameData)
 #define USING_OVERRIDE_CONTACT false
 // Uses esdb_newBattle.yml
 
+
+// NOTES 
+/* 
+    See if we can implement the following changes as hex edits to save space. 
+    
+        - Regenerator Nerf 
+        - Stench Buff 
+        - Dry Skin Nerf
+        - Iron Fist Buff 
+        - Weak Armor Buff 
+        
+*/
+/* 
+    ORPHANED ABILITY HANDLERS 
+
+    Steadfast isn't being used 
+    Defeatist isn't being used 
+    Liquid Ooze isn't being used 
+    Zen Mode isn't being used 
+    Color Change isn't being used
+    Ballistics isn't being used 
+    Slow Start is barely being used 
+    Natural Cure is barely being used 
+    Shed Skin is barely being used 
+    Overcoat is barely being used 
+
+    We can consolidate 
+        Magma Armor, Telepathy, Sticky Hold, Oblivious, Super Luck 
+    Into just one handler with a slightly longer function 
+
+    We are planning on: 
+        Zen Mode -> Collective (new ability)
+        Color Change -> RKS System (new ability)
+        Ballistics -> Damp (new ability)
+        Vital Spirit -> Resilient (copy of shield dust)
+        Colossal -> Keen Senses (copy of compoundeyes)
+        Defeatist -> Majestic Ward (copy of multiscale)
+*/
+
 #pragma region definitions
+
 
 extern "C" int SearchArray(const u16 *const arr, const u32 arrSize, const u32 value)
 {
@@ -26,6 +67,7 @@ extern "C" int SearchArray(const u16 *const arr, const u32 arrSize, const u32 va
     return 0;
 }
 #define SEARCH_ARRAY(arr, value) SearchArray(arr, ARRAY_COUNT(arr), value)
+
 
 const u16 StrongJawMoves[12] = {
     MOVE044_BITE,
@@ -523,21 +565,7 @@ extern "C"
     };
 
 #pragma endregion
-    /*
-
-
-
-
-
-
-
-
-
-    */
-
-
-
-    
+   
 #pragma region Multiscale
 
     // Multiscale
@@ -1191,20 +1219,6 @@ extern "C"
     }
 
 #pragma endregion
-
-    /*
-
-
-
-
-
-
-
-
-
-
-
-    */
 
 #pragma region Unnerve
 
@@ -2039,16 +2053,11 @@ extern "C"
 
     void HandlerToxicBoostStatus(int a1, int a2, int a3)
     {
-        int Value;  // r0
-        int v6;     // r0
-
         if (a3 == BattleEventVar_GetValue(VAR_MON_ID))
         {
             if (BattleEventVar_GetValue(VAR_CONDITION_ID) == 5)
             {
-                Value = BattleEventVar_GetValue(VAR_DAMAGE);
-                v6 = checkHigher(Value / 2, 1);
-                BattleEventVar_RewriteValue(VAR_DAMAGE, v6);
+                BattleEventVar_RewriteValue(VAR_DAMAGE, checkHigher(BattleEventVar_GetValue(VAR_DAMAGE) / 2, 1));
             }
         }
     }
@@ -3135,10 +3144,8 @@ extern "C"
         }
     }
 
-    int HandlerBadDreamsTrapping(int a1, ServerFlow *a2, unsigned int a3, int a4)
+    void HandlerBadDreamsTrapping(int a1, ServerFlow *a2, unsigned int a3, int a4)
     {
-        unsigned __int8 Value;     // r0
-        int result;                // r0
         __int16 ExistFrontPokePos; // r0
         unsigned int NumTargets;   // r6
         unsigned int v10;          // r4
@@ -3146,9 +3153,7 @@ extern "C"
         unsigned char v12[24];     // [sp+0h] [bp-18h] BYREF
 
         *v12 = a4;
-        Value = BattleEventVar_GetValue(VAR_MON_ID);
-        result = MainModule_IsAllyMonID(Value, a3);
-        if (!result)
+        if (!MainModule_IsAllyMonID(BattleEventVar_GetValue(VAR_MON_ID), a3))
         {
             ExistFrontPokePos = Handler_GetExistFrontPokePos(a2, a3);
             NumTargets = Handler_ExpandPokeID(a2, ExistFrontPokePos | 0x100, v12);
@@ -3165,16 +3170,15 @@ extern "C"
                     v10 = (v10 + 1);
                     if (v10 >= NumTargets)
                     {
-                        return BattleEventVar_RewriteValue(VAR_MOVE_FAIL_FLAG, 1);
+                         BattleEventVar_RewriteValue(VAR_MOVE_FAIL_FLAG, 1);
                     }
                 }
             }
             else
             {
-                return BattleEventVar_RewriteValue(VAR_MOVE_FAIL_FLAG, 1);
+                 BattleEventVar_RewriteValue(VAR_MOVE_FAIL_FLAG, 1);
             }
         }
-        return result;
     }
 
     ABILITY_TRIGGERTABLE BadDreamsHandlers[] = {
@@ -3243,7 +3247,6 @@ extern "C"
     //     unsigned int v10;          // r4
     //     BattleMon *BattleMon;      // r0
     //     u8 v12[5];                 // [sp+0h] [bp-18h] BYREF
-
     //     *v12 = a4;
     //     Value = BattleEventVar_GetValue(VAR_MON_ID);
     //     result = MainModule_IsAllyMonID(Value, a3);
@@ -3534,6 +3537,7 @@ extern "C"
         }
     };
 
+    // FIGURE OUT WHAT THE FUCK IS GOING ON HERE 
     void THUMB_BRANCH_ServerFlow_CheckNoEffect_Avoid(ServerFlow *a1, unsigned __int16 *a2, BattleMon *a3, PokeSet *a4)
     {
         BattleMon *i; // r4
@@ -3783,272 +3787,263 @@ extern "C"
 
 #pragma endregion
 }
+
 #pragma region TheWholeUI
-struct MsgFileEntry
-{
-    int Offset;
-    u16 CharCount;
-    u16 Padding;
-};
-
-struct SWAN_ALIGNED(4) MsgData
-{
-    void *FileHandle;
-    int RawData;
-    MsgFileEntry CurrentEntry;
-    int MsgOfsInArc;
-    ArcTool *MsgArc;
-    __int16 HeapID;
-    u8 LanguageId;
-    u8 IsAllPreload;
-};
-
-struct PokestarChoiceData
-{
-    void *font;
-    HeapID heapID;
-    u8 end_flag;
-    u8 pad;
-    int msgID;
-    void *buf[4];
-    int *result;
-    int comm_error_flag;
-};
-struct SWAN_PACKED SWAN_ALIGNED(1) BattlePokeListData
-{
-    void *gameData;
-    PokeParty *pokeParty;
-    PokeParty *AllyPokeParty;
-    void *Font;
-    HeapID heapID;
-    __int16 field_12;
-    BattleStyle battleStyle;
-    int IsBagDisabled;
-    char AllyClientID;
-    u8 SelectedPokeIndex[2];
-    char ListMode;
-    u8 SelectedMon;
-    char InfoPokeIndex;
-    char NumPartyMembers;
-    char field_23;
-    __int16 SelectedItem;
-    __int16 IsSelectedMonTrapped;
-    void *tcbmanager;
-    void *palAnm;
-    int IsFinished;
-    int CommErrorFlag;
-    char skill_item_use;
-    char field_39;
-    char field_3A;
-    char field_3B;
-    int field_3C;
-    int SoundEffectFlag;
-    int cursorFlag;
-    u8 field_48[3];
-    char MoveInfoMoveIndex;
-    char EndFlag;
-};
-struct BattleScenarioData
-{
-    void *font;
-    HeapID heapID;
-    u8 end_flag;
-    u8 pad;
-    void *party;
-    int scenario_num;
-    int page_num;
-    int time_out_flag;
-    int comm_error_flag;
-};
-
-struct PokeList_MoveData
-{
-    __int16 MoveID;
-    char CurrentPP;
-    char MaxPP;
-    char Type;
-    char Category;
-    char Accuracy;
-    char Power;
-};
-
-struct PokeList_BmpWinData
-{
-    void *BmpWin;
-    char field_4;
-    char field_5;
-    char field_6;
-    char field_7;
-};
-
-struct PokeListData
-{
-    PartyPkm *partyPkm;
-    __int16 Species;
-    __int16 Attack;
-    __int16 Defense;
-    __int16 Speed;
-    __int16 SpecialAttack;
-    __int16 SpecialDefense;
-    __int16 CurrentHP;
-    __int16 MaxHP;
-    char Type1;
-    char Type2;
-    char Level;
-    char SexStatusIsEgg;
-    __int16 Ability;
-    __int16 Item;
-    int Experience;
-    int ExpForLevel;
-    int ExpToNextLevel;
-    int Forme;
-    PokeList_MoveData MoveData[4];
-};
-
-struct ClAct_0x7C
-{
-    int field_0;
-    int field_4;
-    int field_8;
-    int field_C;
-    _BYTE gap10[84];
-    int field_64;
-    int field_68;
-    int field_6C;
-    int field_70;
-    int field_74;
-    int field_78;
-};
-
-struct SWAN_ALIGNED(4) ClActObj
-{
-    ClActObj *next;
-    ClActObj *prev;
-    void *unit;
-    u16 posX;
-    u16 posY;
-    __int16 field_10;
-    __int16 field_12;
-    int scaleX;
-    int scaleY;
-    int field_1C;
-    int field_20;
-    int field_24;
-    int field_28;
-    _BYTE gap2C[20];
-    int field_40;
-    _BYTE gap44[16];
-    int field_54;
-    __int16 rotation;
-    __int16 animID;
-    __int16 field_5C;
-    __int16 field_5E;
-    int Flags;
-    int field_64;
-    ClAct_0x7C field_68;
-};
-
-struct PokeListMain
-{
-    BattlePokeListData *pokeListSetupData;
-    PokeListData pokeListData[6];
-    u8 field_1CC[6];
-    void *TCBManagerEx;
-    void *PalAnm;
-    _BYTE gap1DC[7324];
-    int field_1E78;
-    _BYTE gap1E7C[28];
-    char field_1E98;
-    char field_1E99;
-    char field_1E9A;
-    char field_1E9B;
-    void *GFLFont;
-    MsgData *msgData;
-    void *WordSetSystem;
-    void *StrBuf;
-    void *PrintSys;
-    int field_1EB0;
-    int field_1EB4;
-    int field_1EB8;
-    ClActObj *field_1EBC[40];
-    int field_1F5C;
-    PokeList_BmpWinData field_1F60[2];
-    PokeList_BmpWinData field_1F70[64];
-    void *field_2170;
-    char field_2174;
-    char field_2175;
-    char field_2176;
-    char field_2177;
-    int field_2178;
-    int field_217C;
-    char field_2180;
-    int field_2184;
-    int field_2188;
-    int field_218C;
-    char field_2190;
-    char field_2191;
-    _BYTE gap2192;
-    char field_2193;
-    int field_2194;
-    _BYTE gap2198[768];
-    char field_2498;
-    char field_2499;
-    char field_249A;
-    char field_249B;
-    __int16 field_249C;
-    __int16 field_249E;
-    _BYTE gap24A0[156];
-    int field_253C;
-    int field_2540;
-};
-enum InputButton
-{
-    KEY_A = 0x1,
-    KEY_B = 0x2,
-    KEY_SELECT = 0x4,
-    KEY_START = 0x8,
-    KEY_RIGHT = 0x10,
-    KEY_LEFT = 0x20,
-    KEY_UP = 0x40,
-    KEY_DOWN = 0x80,
-    KEY_R = 0x100,
-    KEY_L = 0x200,
-    KEY_X = 0x400,
-    KEY_Y = 0x800,
-    KEY_TOUCH = 0x1000,
-    KEY_LID = 0x2000,
-};
-
-extern "C" u32 PML_UtilGetPkmLvExp(u16 species, u16 form, int level);
-extern "C" int sub_21F9E78(PokeListMain *a1, int a2);
-extern "C" void sub_21F4A30(PokeListMain *a1, unsigned int a2, char a3, int a4);
-extern "C" int PokeList_GetSelectedMonID(PokeListMain *a1, int a2);
-extern "C" int sub_21F4F14(PokeListMain *a1);
-extern "C" void sub_21F4F50(int a1);
-extern "C" void PokeList_LoadPokeData(PokeListMain *a1, PartyPkm *a2, PokeListData *a3);
-extern "C" PartyPkm *PokeParty_GetPkm(void *party, int slot);
-extern "C" u32 PokeParty_GetPkmCount(void *pPartyBlk);
-extern "C" u32 PokeParty_GetParam(PartyPkm *pPkm, PkmField field, void *extra);
-extern "C" u32 getExpForPkm_Wrapper(void *pPkm);
-extern "C" u32 PokeParty_GetSex(PartyPkm *pPkm);
-extern "C" int PML_MoveGetMaxPP(int wazaId, unsigned int ppUpStage);
-extern "C" bool PML_MoveIsAlwaysHit(int wazaId);
-extern "C" int sub_202D8EC(PartyPkm *a1);
-extern "C" int BattleClient_GetMyID(void *a1);
-extern "C" PokeParty *MainModule_GetPokeParty(void *a1, int a2);
-extern "C" int MainModule_IsCompetitiveBattleType(void *a1);
-extern "C" PokeParty *MainModule_GetAllyPokeParty(void *a1, char a2);
-extern "C" int sub_219C86C(void *a1, char a2);
-extern "C" int MainModule_CheckNumFrontPos(void *a1, char a2);
-extern "C" char *sub_689B7C8(void *a1);
-extern "C" void *BtlvEffectMain_GetTCBManager();
-extern "C" void *BtlvEffectMain_GetPalAnm();
-extern "C" void *MainModule_GetGameData(void *a1);
-extern "C" int sub_21CF250(BtlvCore *a1);
-extern "C" InputButton GCTX_HIDGetHeldKeys();
-extern "C" int MainModule_IsPartnerBattle(MainModule *a1);
-
-
+  struct MsgFileEntry
+    {
+        int Offset;
+        u16 CharCount;
+        u16 Padding;
+    };
+    struct SWAN_ALIGNED(4) MsgData
+    {
+        void *FileHandle;
+        int RawData;
+        MsgFileEntry CurrentEntry;
+        int MsgOfsInArc;
+        ArcTool *MsgArc;
+        __int16 HeapID;
+        u8 LanguageId;
+        u8 IsAllPreload;
+    };
+    struct PokestarChoiceData
+    {
+        void *font;
+        HeapID heapID;
+        u8 end_flag;
+        u8 pad;
+        int msgID;
+        void *buf[4];
+        int *result;
+        int comm_error_flag;
+    };
+    struct SWAN_PACKED SWAN_ALIGNED(1) BattlePokeListData
+    {
+        void *gameData;
+        PokeParty *pokeParty;
+        PokeParty *AllyPokeParty;
+        void *Font;
+        HeapID heapID;
+        __int16 field_12;
+        BattleStyle battleStyle;
+        int IsBagDisabled;
+        char AllyClientID;
+        u8 SelectedPokeIndex[2];
+        char ListMode;
+        u8 SelectedMon;
+        char InfoPokeIndex;
+        char NumPartyMembers;
+        char field_23;
+        __int16 SelectedItem;
+        __int16 IsSelectedMonTrapped;
+        void *tcbmanager;
+        void *palAnm;
+        int IsFinished;
+        int CommErrorFlag;
+        char skill_item_use;
+        char field_39;
+        char field_3A;
+        char field_3B;
+        int field_3C;
+        int SoundEffectFlag;
+        int cursorFlag;
+        u8 field_48[3];
+        char MoveInfoMoveIndex;
+        char EndFlag;
+    };
+    struct BattleScenarioData
+    {
+        void *font;
+        HeapID heapID;
+        u8 end_flag;
+        u8 pad;
+        void *party;
+        int scenario_num;
+        int page_num;
+        int time_out_flag;
+        int comm_error_flag;
+    };
+    struct PokeList_MoveData
+    {
+        __int16 MoveID;
+        char CurrentPP;
+        char MaxPP;
+        char Type;
+        char Category;
+        char Accuracy;
+        char Power;
+    };
+    struct PokeList_BmpWinData
+    {
+        void *BmpWin;
+        char field_4;
+        char field_5;
+        char field_6;
+        char field_7;
+    };
+    struct PokeListData
+    {
+        PartyPkm *partyPkm;
+        __int16 Species;
+        __int16 Attack;
+        __int16 Defense;
+        __int16 Speed;
+        __int16 SpecialAttack;
+        __int16 SpecialDefense;
+        __int16 CurrentHP;
+        __int16 MaxHP;
+        char Type1;
+        char Type2;
+        char Level;
+        char SexStatusIsEgg;
+        __int16 Ability;
+        __int16 Item;
+        int Experience;
+        int ExpForLevel;
+        int ExpToNextLevel;
+        int Forme;
+        PokeList_MoveData MoveData[4];
+    };
+    struct ClAct_0x7C
+    {
+        int field_0;
+        int field_4;
+        int field_8;
+        int field_C;
+        _BYTE gap10[84];
+        int field_64;
+        int field_68;
+        int field_6C;
+        int field_70;
+        int field_74;
+        int field_78;
+    };
+    struct SWAN_ALIGNED(4) ClActObj
+    {
+        ClActObj *next;
+        ClActObj *prev;
+        void *unit;
+        u16 posX;
+        u16 posY;
+        __int16 field_10;
+        __int16 field_12;
+        int scaleX;
+        int scaleY;
+        int field_1C;
+        int field_20;
+        int field_24;
+        int field_28;
+        _BYTE gap2C[20];
+        int field_40;
+        _BYTE gap44[16];
+        int field_54;
+        __int16 rotation;
+        __int16 animID;
+        __int16 field_5C;
+        __int16 field_5E;
+        int Flags;
+        int field_64;
+        ClAct_0x7C field_68;
+    };
+    struct PokeListMain
+    {
+        BattlePokeListData *pokeListSetupData;
+        PokeListData pokeListData[6];
+        u8 field_1CC[6];
+        void *TCBManagerEx;
+        void *PalAnm;
+        _BYTE gap1DC[7324];
+        int field_1E78;
+        _BYTE gap1E7C[28];
+        char field_1E98;
+        char field_1E99;
+        char field_1E9A;
+        char field_1E9B;
+        void *GFLFont;
+        MsgData *msgData;
+        void *WordSetSystem;
+        void *StrBuf;
+        void *PrintSys;
+        int field_1EB0;
+        int field_1EB4;
+        int field_1EB8;
+        ClActObj *field_1EBC[40];
+        int field_1F5C;
+        PokeList_BmpWinData field_1F60[2];
+        PokeList_BmpWinData field_1F70[64];
+        void *field_2170;
+        char field_2174;
+        char field_2175;
+        char field_2176;
+        char field_2177;
+        int field_2178;
+        int field_217C;
+        char field_2180;
+        int field_2184;
+        int field_2188;
+        int field_218C;
+        char field_2190;
+        char field_2191;
+        _BYTE gap2192;
+        char field_2193;
+        int field_2194;
+        _BYTE gap2198[768];
+        char field_2498;
+        char field_2499;
+        char field_249A;
+        char field_249B;
+        __int16 field_249C;
+        __int16 field_249E;
+        _BYTE gap24A0[156];
+        int field_253C;
+        int field_2540;
+    };
+    enum InputButton
+    {
+        KEY_A = 0x1,
+        KEY_B = 0x2,
+        KEY_SELECT = 0x4,
+        KEY_START = 0x8,
+        KEY_RIGHT = 0x10,
+        KEY_LEFT = 0x20,
+        KEY_UP = 0x40,
+        KEY_DOWN = 0x80,
+        KEY_R = 0x100,
+        KEY_L = 0x200,
+        KEY_X = 0x400,
+        KEY_Y = 0x800,
+        KEY_TOUCH = 0x1000,
+        KEY_LID = 0x2000,
+    };
+    extern "C" u32 PML_UtilGetPkmLvExp(u16 species, u16 form, int level);
+    extern "C" int sub_21F9E78(PokeListMain *a1, int a2);
+    extern "C" void sub_21F4A30(PokeListMain *a1, unsigned int a2, char a3, int a4);
+    extern "C" int PokeList_GetSelectedMonID(PokeListMain *a1, int a2);
+    extern "C" int sub_21F4F14(PokeListMain *a1);
+    extern "C" void sub_21F4F50(int a1);
+    extern "C" void PokeList_LoadPokeData(PokeListMain *a1, PartyPkm *a2, PokeListData *a3);
+    extern "C" PartyPkm *PokeParty_GetPkm(void *party, int slot);
+    extern "C" u32 PokeParty_GetPkmCount(void *pPartyBlk);
+    extern "C" u32 PokeParty_GetParam(PartyPkm *pPkm, PkmField field, void *extra);
+    extern "C" u32 getExpForPkm_Wrapper(void *pPkm);
+    extern "C" u32 PokeParty_GetSex(PartyPkm *pPkm);
+    extern "C" int PML_MoveGetMaxPP(int wazaId, unsigned int ppUpStage);
+    extern "C" bool PML_MoveIsAlwaysHit(int wazaId);
+    extern "C" int sub_202D8EC(PartyPkm *a1);
+    extern "C" int BattleClient_GetMyID(void *a1);
+    extern "C" PokeParty *MainModule_GetPokeParty(void *a1, int a2);
+    extern "C" int MainModule_IsCompetitiveBattleType(void *a1);
+    extern "C" PokeParty *MainModule_GetAllyPokeParty(void *a1, char a2);
+    extern "C" int sub_219C86C(void *a1, char a2);
+    extern "C" int MainModule_CheckNumFrontPos(void *a1, char a2);
+    extern "C" char *sub_689B7C8(void *a1);
+    extern "C" void *BtlvEffectMain_GetTCBManager();
+    extern "C" void *BtlvEffectMain_GetPalAnm();
+    extern "C" void *MainModule_GetGameData(void *a1);
+    extern "C" int sub_21CF250(BtlvCore *a1);
+    extern "C" InputButton GCTX_HIDGetHeldKeys();
+    extern "C" int MainModule_IsPartnerBattle(MainModule *a1);
+    
 extern "C" void findBattleMon(BtlvCore *a1, PokeParty *a2, int clientId)
 {
     BattleParty party = a1->pokeCon->party[clientId];
@@ -4178,6 +4173,7 @@ extern "C" void THUMB_BRANCH_SAFESTACK_StartBottomScreenMenu(BtlvCore *a1, Battl
     a2->CommErrorFlag = 0;
     a2->EndFlag = 0;
 }
+
 extern "C" u32 GetScanSetting()
 {
     EventWorkSave *eventWork = GameData_GetEventWork(GAME_DATA);
@@ -4450,6 +4446,4 @@ extern "C" int THUMB_BRANCH_SAFESTACK_PokeList_LoadSwitchInFailMessage(PokeListM
     GFL_StrBufFree(StrbufNew);
     return 0;
 }
-
 #pragma endregion
-
