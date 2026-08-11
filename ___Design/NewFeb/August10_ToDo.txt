@@ -1,0 +1,615 @@
+
+/*         
+	
+	-----------------------------------------------------------------------------------------------------------------------------------------
+	-------------------------------------------------- WHAT I WANNA DO TODAY ---------------------------------------------------------------- 
+	-----------------------------------------------------------------------------------------------------------------------------------------       
+
+*/
+
+
+NORMAL TO-DO LIST: 
+    - Car Registration (due 8/24)
+    - Louie License 
+    - Doctors Appointments 
+        - Podiatrist 
+        - Eye Doctor 
+        - Dermatologist 
+
+TONIGHT TO-DO LIST: 
+    - Undo the contact ability change for now. We can re-evaluate later. 
+    - Finish our Pokedex updates. 
+        Changed HAs (for trpok)
+            Ampharos: 
+                Abil 4: Static 
+            Voltorb / Electrode: 
+                Abil 5: Static 
+            Electivire: 
+                Abil 4: Static 
+            Electrike / Manectric
+            Pichu / Pikachu / Raichu 
+            Stunfisk: 
+            Klink / Klang / Klinklang 
+            Tynamo / Eelektrik / Eelektross
+            Joltik / Galvantula 
+                Abil 6: Static 
+            Croagunk / Toxicroak 
+            Scraggy / Scrafty
+            Umbreon
+            Gligar / Gliscor 
+            Qwilfish 
+                Abil 6: Poison Touch
+            Rapidash
+                Abil 4: Flame Body 
+            Flareon 
+            Chimchar / Monferno / Infernape 
+                Abil 6: Flame Body 
+            Nidoqueen 
+                Abili6: Multiscale 
+        Luvdisc: 
+            Level 32: Scald -> Surf 
+            Level 39: Lucky Chant -> Moonblast 
+            Level 43: Moonblast -> Lucky Chant
+            --Level 58: Hydro Cannon
+        Kakuna: 
+            Abil 1: Resilient -> Shed Skin 
+        Shedinja: 
+            Ability 2: Unburden -> Weak Armor 
+        Anorith: 
+            Abil 2: Weak armor -> Swift Swim 
+        Shuppet: 
+            Abil 2: Hustle -> Levitate 
+            Abil 3: Levitate -> Cursed Body 
+        Metapod: 
+            Abil 1: Resilient -> Shed Skin 
+        Remoraid / Octillery 
+            Abil 3: Null 
+        Bagon
+            Abil 2: Hustle -> Moxie 
+        Ekans: 
+            Abil 2: Sheer Force -> Shed Skin 
+        Snover: 
+            Abil 2: Berserk -> Rattled
+        Remoraid: 
+            Abil 2: Sheer Force -> Sniper 
+        Larvitar: 
+            Abil 3: Sheer Force -> Sand Veil 
+        Pupitar: 
+            Abil 3: Sheer Force -> Shed Skin 
+        Tyranitar: 
+            Abil 1: Unnerve
+            Abil 3: Solid Rock -> Berserk
+        Nidoqueen: 
+            Abil 3: Majestic Ward -> Marvel Scale 
+        Sandile / Krokorok
+            Abil 2: Moxie 
+        Vaporeon: 
+            Abil 3: Clear Body 
+        Shelgon: 
+            Abil 2: Strong Body -> Overcoat 
+        Shuckle: 
+            Abil 2: Strong Body -> Contrary 
+            Abil 3: Shell Armor -> Solid Rock 
+        Froslass: 
+            Abil 2: Ice Body -> Clear Body 
+        Kecleon: 
+            Abil 2: Prankster -> Clear Body 
+        Magby:
+            Abil 1: Flash Fire -> Blaze 
+        Glaceon: 
+            Abil 2: Majestic Ward -> Marvel Scale / Heatproof?
+        Togepi / Togetic: 
+            Abil 3: No Guard -> Natural Cure 
+        Larvesta: 
+            Abil 2: Swarm -> Shield Dust
+        Yanma
+            +20 Speed 
+            -10 SpA 
+        Budew: 
+            +10 Defense 
+            Abil 1: Chlorophyll -> Solar Power 
+            Abil 3: Serene Grace
+        Roselia : 
+            +10 Defense 
+            Abil 1: Chlorophyll -> Solar Power 
+            Abil 3: Serene Grace
+        Roserade: 
+            Abil 1: Chlorophyll -> Solar Power 
+        Cobalion:   
+            Remove Abil 3
+        Virizion: 
+            Remove Abil 3 
+        Terrakion: 
+            Remove Abil 3 
+        Keldeo:     
+            Remove Abil 3
+        Ponyta / Rapidash: 
+            Abil 3: Flash Fire -> Reckless 
+        Raikou: 
+            Abil: Majestic Ward -> Volt Absorb
+        Entei: 
+            Abil: Majestic Ward -> Flash Fire
+        Suicune: 
+            Abil: Majestic Ward -> Shield Dust 
+        Ho-Oh: 
+            Abil: Majestic Ward -> Regenerator 
+        Clamperl: 
+            Abil 2 Sturdy 
+        Skiity / Delcatty: 
+            -5 Atk 
+        Zigzagoon: 
+            58 HP 
+            72 Atk 
+            55 Def 
+            30 SpA 
+            41 SpD 
+            70 Spe 
+        Linoone: 
+            78 HP 
+           112 Atk 
+            75 Defense 
+            50 SpA 
+            61 SpD 
+           100 Spe 
+        Drilbur: 
+            Abil 3: Sand Rush 
+        Dwebble/Crustle: 
+            Abil 1: Pickup 
+            Abil 3: Sturdy 
+        Spinda: 
+            Abil 3: Null 
+        Aipom/Ambipom: 
+            Aipom Evolves at Level 35 (or with a Moon Stone)
+        Gallade: 
+            Abil 4: Inner Focus 
+        Phanpy/Donphan: 
+            -5 Speed 
+        Lilligant: (EXAMINE THIS LATER)
+            Abil 3: Cloud Nine 
+        Meganium: 
+            abil 3: flower gift -> resilient 
+        Alomomola: 
+            Abili 2: Filter 
+            Abil 3: Null 
+        Claydol: 
+            Make sure it doesn't have compat with Harden or Barrier or Lucky Chatn
+    - Finish our trainer changes.
+        Marlon: 
+            Gyarados (Aqua Jet -> Dragon Dance)
+        Hoenn Leader Roxanne: 
+            Shuckle: Strong Body -> Solid Rock (change to abil 3)
+        Backpacker Tami: 
+            Shuckle: Strong Body -> Contrary (just update docs)
+        Worker Pasqual 
+            Nidoqueen (Abil 3 -> Abili 6)
+        Backpacker Alexander: 
+            Shelgon (Strong Body -> Overcoat (just the docs))
+        Ranger Jaden 
+            Shelgon (Strong Body -> Overcoat (just the docs))
+        Harlequin Clarence: 
+            Beautifly: Fairy Wind -> Draining Kiss 
+        Harlequin Jack: 
+            Mr. Mime (-atk nature) 
+            Vespiquen (Majestic Ward -> Unnerve) (Charti Berry -> )
+        Harlequin Anders 
+            Yanmega -> Yanma @ Life Orb (Ability: Tinted Lens) (Hurricane, Scorching Swarm, U-Turn, Hypnosis)
+        Harlequin Gary 
+            Scyther:  Aerial Ace -> Wing Attack 
+        Fearow Sewer Grunt: 
+            Fearow: Aerial Ace -> Wing Attack 
+        Zangoose Sewer Grunt: 
+            Fraxure: Aerial Ace -> Metal Claw 
+        Policeman Petrel: 
+            Tyrogue: Aerial Ace -> Dizzy Punch 
+        Youngster Keita: 
+            Farfetch'd: Aerial Ace -> Razor Winds 
+            Trapinch: Aerial Ace -> Psychic Fangs 
+        Virbank Gate Rival: 
+            Tranquill: Aerial Ace -> Dual Wingbeat
+            Ponyta: Flash Fire -> Reckless 
+        Beauty Ampre: 
+            Emolga:
+                Flying Gem -> Focus Sash 
+                Acrobatics -> Aerial Ace 
+        Backers Kay & May 
+            Glaceon: 
+                Glaceon: Ability Heatproof?
+        Leader Burgh: 
+            Galvantula: Icy Wind -> Mega Drain 
+        Baker Jenn: 
+            Tropius: 
+                Air Slash -> Air Cutter 
+        Artist Horton
+            Ditto: (Level 41 -> 38 )
+        Erika: 
+            Ninetales: Extrasensory -> Confuse Ray
+            Cherrim: Blaze Kick -> Fire Lash
+            Victreebell: High Horsepower -> Weather Ball
+            Vileplume: Fairy Wind -> Dazzling Gleam
+        Plasma Grunt Sableye: 
+            Sableye: Brick Break -> Confuse Ray 
+            Heatmor: Lava Plume -> Magma Storm
+        Heartbrreaker Charles 
+            Basculin: 
+                Strength -> Scary Face 
+                Ice Beam -> Icy Wind 
+        Janine: 
+            Lucario: (psychic -> detect)
+        Worker Herman: 
+            Krookadile -> Skarmory: 
+            Torkoal: Spin Out -> Gyro Ball
+            Heatmor (Solarbeam -> )
+    - Update the Mastersheets and Docs 
+        - Ability Names 
+        - Move tutor Tables 
+        - Static / Flame Body / Poison Touch 
+    - Run a couple battles as a stability test and to see if we run into a post-battle crash. 
+    - Continue playtesting run tbh. 
+    
+
+
+New Goal. 
+    - Get Marlon Split out and functional. 
+    - We should be able to farm 
+
+
+====================================================================================================================================================
+
+TO DO LIST FINAL: 
+
+    1. Bug Fixes
+        AI Troubleshooting: (THIS IS THE HARDEST THING)
+            For our AI_Changes patch, we're running into an issue where enabling damage_caching causes the game to black screen when leaving battle. 
+            We want to try a couple things to try and narrow down the root cause of this behavior. 
+                - Removing the entire AI_Changes patch does not prevent this crash from occuring. 
+                - We need to test removing all the AI scripts to see if that prevents the crash 
+            We need to set up GDB to properly stack trace the crashes. 
+            We need to create a save state once we encounter that weird "black screen after battle" crash. 
+            
+            https://github.com/Tdavide04/pokemon-bw2-reverse-engineering/blob/master/Docs/ida-debugging.md
+            We'll give this a shot tonight. 
+        
+        A4_AbilityChanges 
+            There are three functions that are not properly hooked and are currently doing nothing. 
+            I'm pretty sure these general functionalities work, so it's a bit odd. I think i probably put the turnflag somewhere else. 
+                ServerFlow_CheckNoEffect_TypeEffectiveness
+                ServerFlow_CheckNoEffect_Avoid
+                ServerFlow_CheckNoEffect_Hiding
+
+        A2_AIchanges 
+            Look into this weird function 
+                AI044_GetMoveEffectiveness 
+            Look into the final bit of logic for FinalSwitchChecks to see if i messed something up. 
+
+    2. Ability Changes 
+        Implement the new Static / Flame Body / Poison Touch 
+            We can spread it around to a lot of AI only abilities: 
+                Electrode (Static)
+                Nidoqueen (Poison Touch)
+                Scolipede (Poison Touch)
+                Ampharos (static)
+                Rapidash (flame body)
+                Umbreon (poison touch)
+                seismitoad (poison touch)
+                etc. 
+
+
+        Rename the following Abilities:     
+             14: Keen Senses -> Compoundeyes 
+             16: Color Change -> RKS System
+                Changes the Pokémon's type\nto match their 1st move.
+             19: Resilient -> Shield Dust 
+             29: Strong Body -> Clear Body 
+             35: Illuminate -> Keen Senses (requires editing the handler table)
+                The Pokémon's accuracy\nis boosted.
+             48: Refrigerate -> Early Bird 
+                The Pokémon wakes up\nearly from sleep.
+             72: Vital Spirit -> Resilient (requires editing the handler table)
+                Blocks the added effects\nof attacks taken.
+             73: White Smoke -> Strong Body 
+                Prevent stat drops and\nshields from weather.
+            129: Defeatist -> Majesty
+                Reduces damage taken\nwhen HP is full.
+            136: Majestic Ward -> Multiscale 
+                Reduces damage taken\nwhen HP is full.
+            140: Permafrost -> Refrigerate
+                Normal-type moves boosted\nand become Ice-type.
+            142: Overcoat 
+                Shielded from weather\nand powders.
+            147: Wonder Skin -> Ice Scales 
+                Halves damage taken\nfrom Special moves.
+            161: Zen Mode -> Collective 
+            162: Illumination -> Illuminate
+        
+        
+
+        In pokeweb/mastersheet we'll need to fix all the pokemon abilities changed by this: 
+            Majesty / Multisclae 
+                Multiscale Mons: 
+                    Dratini / Dragonair / Dragonite 
+                    Gorebyss 
+                    Milotic 
+                    Beautifly
+                Majesty Mons: 
+                    Rapidash 
+                    Roserade 
+                    Gallade 
+                    Smoochum / Jynx 
+                    Vespiquen 
+                    Glameow
+                    Sawsbuck 
+            Strong / Clear Body
+                Clear Body Pkm: 
+                    Tentacool / Tentacruel 
+                    Kecleon 
+                    Froslass 
+                    Beldum / Metang / Metagross 
+                    Vaporeon 
+                Strong Body Pkm: 
+                    Gible / Gabite / Garchomp 
+                    Venipede / Whirlipede / Scolipede 
+                    Vullaby / Mandibuzz 
+                    Machop / Machoke 
+                    Zubat / Golbat / Crobat 
+                    Vigoroth
+            Compoundeyes / Keen Senses 
+                Compoundeyes Mons   
+                    Caterpie / Butterfree 
+                    Venonat / Venomoth
+                    Hoothoot / Noctowl 
+                    Nincada / Vibrava / Flygon 
+                    Yanma / Yanmega 
+                    Joltik / Galvantula 
+                    Krookodile
+                Keen Senses Mons 
+                    Zubat / Golbat / Crobat 
+                    Seel / Dewgong 
+                    Woobat / Swoobat 
+                    Ducklett / Swanna 
+                    Mienfoo / Mienshao
+            Resilient / Shield Dust Pokemon 
+                Shield Dust Pokemon
+                    Caterpie / Metapod 
+                    Weedle / Kakuna 
+                    Wurmple / Silcoon / Cascoon 
+                    Sewaddle / Swadloon 
+                    Larvesta / Volcarona 
+                Resilient Pokemon 
+                    Chikorita / Bayleef / Meganium 
+                    Numel / Camerupt 
+                    Walrein 
+                    Cranidos / Rampardos 
+                    Hippopotas / Hippowdon 
+                    Pidove / Tranquil / Unfezant 
+            Refrigerate 
+                Lapras
+                Delibird 
+                Snorunt / Glalie 
+                Rotom-Frost
+                Vanillite / Vanillish / Vanilluxe
+                Kyurem 
+        
+ 
+
+    6. OTHER MOVE STUFF FOR LATER
+        Simple Move Additions: 
+            ++Scratch 
+            ++Pound 
+            ++Bolt Strike 
+            ++Sweet Kiss
+            ++Bubble 
+            ++Trailblaze 
+            ++Embargo 
+            ++FuryAttack 
+            ++SpacialRend
+            ++SacredFire 
+            ++RoarOfTime
+            ++Sharpen 
+            ++MistBall 
+            ++Pounce 
+
+            [ ++FREEZE SHOCK ]
+                It's totally fine if this doesn't have anything 
+            
+        More Complex Move Additions: 
+            These moves will require altering handlers or adding more cases. 
+
+            The main limitation we need to assess is how much space in the movehandler table there is. 
+            But my guess is there's a LOT of space. 
+
+            [ ++BIDE ]
+                It won't be a new handler if we added it, but will require assigning a handler 
+
+            [ ++TRICK ]
+                We can just use this so that it's not all switcheroo. 
+                Would require assigning the correct handler back 
+            
+            [ ++SPITE ]
+                Can use its original handler
+            
+            [ ++ROLE PLAY ]
+                Can use its original handler 
+            
+            [ ++SMACK DOWN ]
+                Can use it's original handler, it's not being touched
+
+            [ ++ODOR SLEUGH ]
+                Will need to re-assign the Electro Shot handler 
+                and then we can just use the original 
+            
+            [ ++LOCK ON]
+                Will need to re-assign the Parting Shot handler 
+                Probbably fine though. 
+            
+            [ ++MAGIC ROOM ]
+                Can just use the original handler
+            
+            [ ++CAMOUFLAGE ]
+                Can just use the original handler
+        
+        Most Complex Move Additions: 
+
+            [ ++MEMENTO ]
+                This will require unassigning this handler from Obstruct, but that should be easy enough 
+                Just assign to the protect handlers 
+
+                It will also require adjusting the effect 
+                    +1 Priority 
+                    also reduces speed by two stages. 
+             
+            [ ++THIEF ]
+                Can use it's original handler, it's not touched. 
+                We *might* want to replace a move for thief since we might want to give it AI flags? 
+                unsure 
+
+                This will require bew handlers for everything 
+        
+        Will need to edit text banks: 
+            text banks: 
+                16 
+                402 
+                403 
+                488 
+            moveids (from my learnset )
+        
+        New IDs: 
+            561: Pound 
+                The target is physically pounded with a\nlong tail or a foreleg, etc.
+            562: Scratch 
+                Hard, pointed, and sharp claws\nrake the target to inflict damage.
+            563: Sweet Kiss 
+                The user kisses the target with\na sweet, angelic cuteness that leaves\nthem confused.
+            564: Bubble 
+                A spray of countless bubbles is jetted\nat the opposing team.\nIt lowers the targets' Speed stats.
+
+                BP 40 > 50 
+                100% chance to drop speed 
+            565: Aqua Cutter 
+                The user expels pressurized water to slice\nforward. Critical hits land more easily\nand it may leave the target paralyzed.
+            566: Roar of Time 
+                The user blasts the target with power\nthat distorts even time.
+
+                No recharge time
+            567: Spacial Rend 
+                The user tears the target along with\nthe space around it.\nCritical hits land more easily.
+            568: Sacred Fire 
+                The target is razed with a mystical fire\nof great intensity.\nIt may also leave the target with a burn.
+                
+                120 BP 
+            569: Bolt Strike 
+                The user charges its target, surrounding\nitself with a great amount of electricity.\nIt may leave the target with paralysis.
+            570: Horn Attack 
+                The target is jabbed with a sharply\npointed horn to inflict damage.
+            571: Fury Attack 
+                The target is jabbed repeatedly with a\nhorn or beak two to five times in a row.
+
+                30 BP, 2-5 hit 
+                85% accuracy 
+            572: Embargo 
+                It prevents opposing targets from using\ntheir held items until they switch\nout of battle.
+            573: Sharpen 
+                The user reduces its polygon count\nto make itself more jagged, raising the\nAttack and Evasion stats.
+            574: Freeze Shock 
+                The user obliterates the enemy team with\nelectrically charged ice.\nIt may leave targets frozen or paralyzed.
+                
+                Uses the tri attack effect 
+                40% chance to freeze or paralyze targets 
+                No charging turn 
+                140 BP 
+            575: Ice Burn 
+                The user surrounds the enemy team with\nan ultracold, freezing wind.\nThis may leave targets frozen or burned.
+                
+                Uses the tri attack effect. 
+                40% chance to freeze or burn targets 
+                No charging turn 
+                140 BP 
+            576: Mist Ball 
+                A mistlike flurry of down envelops\nand damages the target.\nIt also lowers the target's Sp. Atk.
+                
+                Psychic
+                95 BP 
+                100% chance to lower SPA 
+            577: Pounce 
+                The user attacks by pouncing on the target.\nThis also lowers the target's Speed stat.
+            578: Withdraw 
+                The user withdraws its body into\nits hard shell, raising its Defense and\nSpecial Defense stats.
+
+                Now raises both defenses.
+            579: Magic Room 
+                The user creates a bizarre area in which\nPokémon's held items lose their effects\nfor 8 turns.
+
+                Now lasts 8 turns.
+            580: False Swipe 
+                A restrained attack that prevents\nthe target from fainting.\nThe target is left with at least 1 HP.
+
+                40 BP > 120 BP 
+            581: Smack Down 
+                The user throws a stone or projectile to\nattack an opponent. A flying Pokémon\nwill fall to the ground when hit.
+            582: Odor Sleuth 
+                Enables a Ghost-type target to be hit\nwith Normal- and Fighting-type attacks.\nIt also enables an evasive target to be hit.
+            583: Lock On 
+                The user takes sure aim at the target.\nIt ensures the next attack does\nnot fail to hit the target.
+            584: Trick 
+                The user catches the target off guard\nand swaps its held item with its own.
+            585: Bide 
+                The user bides during the foe’s attack,\nbefore retaliating with greater power.
+            586: Multi Attack 
+                Cloaking itself in high energy, the user\nslams into the target. The user's\n type determines the type of this move.
+
+                120 BP
+            587: Memento
+                The user faints. In return, it harshly\nlowers the target's Attack, Sp. Atk\nand Speed. This move always goes first.
+
+                Also drops Speed two stages. 
+                +1 Priority
+            588: Role Play 
+                The user mimics the target completely,\ncopying the target's natural Ability.
+            589: Spite 
+                The user unleashes its grudge on the move\nlast used by the target.\nThis drains 4 PP from that move.
+            590: Splash 
+                The user just flops and splashes around\nto no effect at all...
+            591: Thief 
+                The user attacks and steals the target's\nheld item simultaneously. If successful,\nthis attack deals double damage.
+
+                55 BP
+                ++If the user successfully steals the item, it deals double damage. 
+            592: Camouflage 
+                The user's type is changed to suit its\nenvironment, such as at water's edge, in\ngrass, or in a cave. Always goes first.
+                
+                +1 Priority
+
+        Stuff we need animations for cause we don't have them: 
+            Trailblaze 
+            Aqua Cutter 
+
+
+
+====================================================================================================================================================
+/*   TRAINER UPDATES (MARLON SPLIT)   */
+
+    Blueberry Academy B2B:  
+
+    Reversal Mountain Tag Battles: 
+
+
+====================================================================================================================================================
+
+
+[ ENCOUNTERS ]
+    Castelia Gardens: 
+        Singles Grass:
+            - Snubbull 
+            - Skitty 
+            - Bonsly 
+        Doubles Grass: 
+            - Jigglypuff 
+            - Buneary 
+        More Flying Types? 
+
+    Castelia Sewers    
+        Walking: 
+            - Zubat 
+            - Wormadam-Trash 
+
+  
+

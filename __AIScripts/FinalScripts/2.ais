@@ -4515,7 +4515,6 @@ address_0x4626:
 //   ME FIRST   
 
 Label_Me_First:
-	JumpCompareSpeed(GT, &address_0x4688)
 	JumpIfLastMoveGTStrongest(defender, false, &address_0x4646)
 	Jump(&address_0x4656)
 
@@ -4524,23 +4523,40 @@ address_0x4646:
 	AddToScore(1)
 
 address_0x4656:
-	GetLastPreviousCategory()
-	JumpIfStoredEQ(status, &address_0x4672)
+    GetType(defender_type1)
+	JumpIfStoredIsInList(&array_selfWeakTypes, &address_HighBoosties)
+	JumpIfStoredIsInList(&array_selfResistedTypes, &address_0x468E)
+	GetType(defender_type2)
+	JumpIfStoredIsInList(&array_selfWeakTypes, &address_HighBoosties)
+	JumpIfStoredIsInList(&array_selfResistedTypes, &address_0x468E)
+	JumpIfRandLT(172, &address_0x468E)
+	AddToScore(1)
+    Jump(&address_0x468E)
+
+address_HighBoosties:
 	JumpIfRandLT(128, &address_0x468E)
 	AddToScore(1)
-
-address_0x4672:
-	JumpIfRandLT(64, &address_0x468E)
-	AddToScore(1)
-	Jump(&address_0x468E)
-
-address_0x4688:
-	AddToScore(-2)
 
 address_0x468E:
 	EndScript()
 
 
+array_selfWeakTypes: 
+    type.ghost 
+    type.dragon 
+    END 
+
+array_selfResistedTypes:
+	type.fire
+	type.water
+	type.grass
+	type.electric
+	type.ice
+	type.poison
+	type.psychic
+	type.dark
+	type.steel
+    END 
 
 
 

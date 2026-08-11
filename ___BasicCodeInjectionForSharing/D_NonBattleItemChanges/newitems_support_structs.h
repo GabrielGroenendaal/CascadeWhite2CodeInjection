@@ -982,8 +982,8 @@ const u8 WhiteListedPokemon[651]{
     4, // PK220_SWINUB = 0xDC,
     4, // PK221_PILOSWINE = 0xDD,
     12, // PK222_CORSOLA = 0xDE,
-    8, // PK223_REMORAID = 0xDF, // NOT IMPLEMENTED YET
-    8, // PK224_OCTILLERY = 0xE0, // NOT IMPLEMENTED YET
+    0, // PK223_REMORAID = 0xDF, // NOT IMPLEMENTED YET
+    0, // PK224_OCTILLERY = 0xE0, // NOT IMPLEMENTED YET
     8, // PK225_DELIBIRD = 0xE1,
     1, // PK226_MANTINE = 0xE2,
     4, // PK227_SKARMORY = 0xE3,
@@ -1086,7 +1086,7 @@ const u8 WhiteListedPokemon[651]{
     0, //  PK324_TORKOAL = 0x144,
     6, // PK325_SPOINK = 0x145,
     6, // PK326_GRUMPIG = 0x146,
-    4, //   PK327_SPINDA = 0x147,
+    0, //   PK327_SPINDA = 0x147,
     8, // PK328_TRAPINCH = 0x148,
     8, // PK329_VIBRAVA = 0x149,
     8, // PK330_FLYGON = 0x14A,

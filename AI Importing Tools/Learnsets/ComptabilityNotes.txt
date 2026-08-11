@@ -11,7 +11,7 @@ Feather Dance -> Featherdance
 Double Slap -> Doubleslap 
 Double-Slap -> Doubleslap
 Wake Up Slap -> Wake-Up Slap
-Dynamic Punch -> DynamicPunch 
+Dynamic Punch -> Dynamicpunch 
 Self Destruct -> Selfdestruct
 Self-Destruct -> Selfdestruct
 Technoblast -> Techno Blast

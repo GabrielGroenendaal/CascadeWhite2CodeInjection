@@ -481,8 +481,8 @@ extern void HandlerPinchReactionSwitchIn(BattleEventItem *a1, ServerFlow *a2, un
 extern void  HandlerPinchReactionCommon(BattleEventItem *a1, ServerFlow *a2, unsigned int *a3);
 extern bool Condition_GetFlag(ConditionData a1);
 extern int  HandlerAssist(int r0_0, int r1_0, unsigned int a3);
-    extern ConditionData MakeCondition(MoveCondition a1, BattleMon *a2, ConditionData *a3);
-    extern bool  CommonDamageReactCheckCore(ServerFlow *a1, int a2, unsigned int a3);
+extern ConditionData MakeCondition(MoveCondition a1, BattleMon *a2, ConditionData *a3);
+extern bool  CommonDamageReactCheckCore(ServerFlow *a1, int a2, unsigned int a3);
 extern void ServerDisplay_AbilityPopupRemove(ServerFlow *a1, BattleMon *a2);
 extern int HandlerScrappy(int a1, int a2, int a3);
 extern int HandlerPursuitHitCheck(int a1, ServerFlow *a2, int a3);
@@ -493,6 +493,7 @@ extern void CommonStatDropGuardMessage(ServerFlow *a1, int a2, int *a3, __int16 
 extern void HandlerInnerFocus(int a1, ServerFlow *a2, int a3);
 extern void sys_memset(const void *ptr, u8 value, size_t size);
 extern void MoveDamageRec_ClearTurn(BattleMon *a1);
+extern int MainModule_IsPartnerBattle(MainModule *a1);
 extern void TurnFlag_Set(BattleMon *a1, TurnFlag a2);
 extern unsigned int HEManager_PushState(int *a1);
 extern void ServerEvent_MoveUseEnd_Common(ServerFlow *a1, int a2, int a3, BattleEventType a4);

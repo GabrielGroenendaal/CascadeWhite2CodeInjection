@@ -1,12 +1,12 @@
 1	Concuss
 2	Karate Chop
-3	DoubleSlap
+3	Doubleslap
 4	Comet Punch
 5	Mega Punch
 6	Pay Day
 7	Fire Punch
 8	Ice Punch
-9	ThunderPunch
+9	Thunderpunch
 10	Supercell Slam
 11	Dual Wingbeat
 12	Guillotine
@@ -58,10 +58,10 @@
 58	Ice Beam
 59	Blizzard
 60	Psybeam
-61	BubbleBeam
+61	Bubblebeam
 62	Aurora Beam
 63	Hyper Beam
-64	Peck
+64	Aqua Cutter
 65	Drill Peck
 66	Submission
 67	Low Kick
@@ -73,8 +73,8 @@
 73	Leech Seed
 74	Growth
 75	Razor Leaf
-76	SolarBeam
-77	PoisonPowder
+76	Solarbeam
+77	Poisonpowder
 78	Stun Spore
 79	Sleep Powder
 80	Petal Dance
@@ -105,7 +105,7 @@
 105	Recover
 106	Harden
 107	Minimize
-108	SmokeScreen
+108	Smokescreen
 109	Confuse Ray
 110	Breaking Swipe
 111	Defense Curl
@@ -165,7 +165,7 @@
 165	Struggle
 166	Sketch
 167	Triple Kick
-168	Thief
+168	Vise Grip
 169	Infernal Parade
 170	Snap Trap
 171	Nightmare
@@ -186,7 +186,7 @@
 186	Draining Kiss
 187	Belly Drum
 188	Sludge Bomb
-189	Mud-Slap
+189	Mud-slap
 190	Octazooka
 191	Spikes
 192	Zap Cannon
@@ -220,9 +220,9 @@
 220	Seething Cold
 221	Mystical Fire
 222	Sticky Web
-223	DynamicPunch
+223	Dynamicpunch
 224	Megahorn
-225	DragonBreath
+225	Dragonbreath
 226	Baton Pass
 227	Encore
 228	Pursuit
@@ -242,8 +242,8 @@
 242	Crunch
 243	Mirror Coat
 244	Bitter Malice
-245	ExtremeSpeed
-246	AncientPower
+245	Extremespeed
+246	Ancientpower
 247	Shadow Ball
 248	Future Sight
 249	Rock Smash
@@ -258,7 +258,7 @@
 258	Hail
 259	Torment
 260	Flatter
-261	Will-O-Wisp
+261	Will-o-wisp
 262	Obstruct
 263	Facade
 264	Focus Punch
@@ -294,7 +294,7 @@
 294	Tail Glow
 295	Dazzling Gleam
 296	Moonblast
-297	FeatherDance
+297	Featherdance
 298	Teeter Dance
 299	Blaze Kick
 300	Esper Wing
@@ -317,7 +317,7 @@
 317	Rock Tomb
 318	Silver Wind
 319	Metal Sound
-320	GrassWhistle
+320	Grasswhistle
 321	Tickle
 322	Cosmic Power
 323	Water Spout
@@ -354,8 +354,8 @@
 354	Psycho Boost
 355	Roost
 356	Gravity
-357	Freeze-Dry
-358	Wake-Up Slap
+357	Freeze-dry
+358	Wake-up Slap
 359	Hammer Arm
 360	Gyro Ball
 361	Healing Wish

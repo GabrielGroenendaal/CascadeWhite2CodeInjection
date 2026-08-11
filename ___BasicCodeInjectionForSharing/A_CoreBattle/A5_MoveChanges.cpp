@@ -4,6 +4,7 @@
 
 // Uses esdb_NewBattle.yml
 
+
 extern "C"
 {
 
@@ -78,8 +79,14 @@ extern "C"
         Heart Swap 
         Quick Guard 
         Grudge 
+        Mimic
+        Water Sport 
+        Mud Sport 
+        Splash
         (Soon to be) FuryCutter 
+        TripleKick
     */
+
     /* COULD BE ORPHANED */
     /* 
         Trump Card 
@@ -88,6 +95,31 @@ extern "C"
         Memento 
         Present 
     */
+
+    /* WILL BE RECLAIMED */
+    /* 
+        Thief 
+        Odor Sleugh
+        Camouflage 
+        Smack Down 
+        False Swipe
+        Magic Room 
+        Splash
+    */
+    
+    /* WILL NEED TO BE REASSIGNED TO BE RECLAIMED */
+    /* 
+        Odor Sleugh (currently used for Electro Shot)
+        Lock On (currently used for Parting Shot)
+        Memento (currently being used for Obstruct)
+    */
+
+    /* NEEDS NEW HANDLERS */
+    /* 
+        MultiAttack
+    */
+
+
     // In OVERLAY_167 
     // Find the mappings for: 
     // - 376 (Spiky Shield) -> Assign to Protect (182, or Detect 197)
@@ -169,6 +201,14 @@ extern "C"
 #endif
 
 #pragma endregion
+
+#pragma region NEW_STUFF 
+    // THIEF / Covet 
+
+    // MULTIATTACK 
+
+    // 
+#pragma endregion 
 
 #pragma region PivotingMoves
     void THUMB_BRANCH_CommonJumpKickEffect(int a1, ServerFlow *a2, int a3)
@@ -270,7 +310,7 @@ extern "C"
 #pragma endregion
 
 #pragma region EXPLOSIONS
-     void THUMB_BRANCH_SAFESTACK_HandlerPosHealingWish(BattleEventItem *a1, ServerFlow *a2, int a3)
+    void THUMB_BRANCH_SAFESTACK_HandlerPosHealingWish(BattleEventItem *a1, ServerFlow *a2, int a3)
     /* HEALING WISH*/
     {
         u8 Value_5;           // r4
@@ -717,17 +757,36 @@ extern "C"
     }
     /* TRI ATTACK */
     MoveCondition TRI_ATTACK_STATUSES[3] = {CONDITION_BURN, CONDITION_FREEZE, CONDITION_PARALYSIS};
+    MoveCondition FREEZE_SHOCK_STATUSES[2] = {CONDITION_FREEZE, CONDITION_PARALYSIS};
     void THUMB_BRANCH_HandlerTriAttack(int a1, int a2, int a3)
     {
         MoveCondition v5; // r5
         int raw;          // r4
+        u8 chance;
         if (a3 == BattleEventVar_GetValue(VAR_ATTACKING_MON))
         {
+            #if MOVE_EXPANSION
+            u16 moveId = BattleEventVar_GetValue(VAR_MOVE_ID);
+            if (moveId == 161){
+               v5 = *(TRI_ATTACK_STATUSES + ((4 * BattleRandom(3u)) & 0x3FF));
+               chance = 20;
+            }
+            else if (moveId == 575){
+                v5 = *(TRI_ATTACK_STATUSES + ((4 * BattleRandom(2u)) & 0x3FF));
+                chance = 40;
+            }
+            else {
+                v5 = *(FREEZE_SHOCK_STATUSES + ((4 * BattleRandom(2u)) & 0x3FF)); 
+                chance = 40;
+            }
+            #else 
             v5 = *(TRI_ATTACK_STATUSES + ((4 * BattleRandom(3u)) & 0x3FF));
+            chance = 20;
+            #endif 
             raw = MakeBasicStatus(v5).raw;
             BattleEventVar_RewriteValue(VAR_CONDITION_ID, v5);
             BattleEventVar_RewriteValue(VAR_CONDITION_ADDRESS, raw);
-            BattleEventVar_RewriteValue(VAR_EFFECT_CHANCE, 20);
+            BattleEventVar_RewriteValue(VAR_EFFECT_CHANCE, chance);
         }
     }
     /* TAUNT */
