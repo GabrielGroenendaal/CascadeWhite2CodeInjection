@@ -1,0 +1,246 @@
+
+
+
+Backpacker Kendall: 
+    Parasect @ Silverpowder 
+    Hariyama @ Oran Berry (Pre paralyzed)
+    Koffing @ Eviolite
+    Marowak @ (teach hex?)
+    Exp Sink 
+
+    Parasect leads, outruns Exeggcute and ohkos with Leech life
+        (Pupitar comes in)
+    At max health we won't bait pursuit. 
+    Switch out into Hariyama 
+    Hariyama kos with rock smash 
+        (Swellow comes out)
+    Hariyama nukes Swellow 
+        (hippopotas comes out)
+    Koffing hard walls Hippopotas 
+        (makuhita comes out)
+    Marowak hard walls fortunately 
+
+
+Scientist Blythe: 
+    Gardevoir @ Wise Glasses 
+    Mr. Mime @ Muscle Band 
+    Servine @ Eviolite (tutor fake tears for 2 green shards) 
+    Marowak 
+    Parasect 
+    Exp Sink 
+
+    Gardevoir leads and can just 2hko shred Dusclops 
+        (Shelgon comes in)
+    Mr. Mime can come in. Stockpile would be annoying but we can probably just dizzy punch spam through this. 
+        (Gastrodon comes out)
+    Servine comes in. 
+    Fake tears three times. 
+    Volt switch for the KO into Marowka 
+        (Ditto comes in)
+    Switch to parasect who hard walls Marowak 
+    Night shade for the kos  
+
+
+
+Clerk Clemens 
+    Skitty @ Silk Scarf (Level 31)
+    Koffing @ Clear Amulet 
+    Mr. Mime @ Muscle Band
+    Riolu @ Eviolute (Level 32)
+    Luvdisc @ Exp Share (level 28)
+    WormadamSandy @ Rawst Berry (level 32)
+
+        (Charmeleon leads)
+    Lead Skitty. Fake Out for 26% health 
+    Switch to Koffing on Fire Fang 
+    Switch back to Skitty on smokescreen / devour 
+    Repeat Fake out for another 26% 
+    Back into Koffing 
+    Koffing leads into Charmeleon, baiting Devour. 
+    Switch to Mr. Mime. 
+    Encore. 
+        (Boldore switches in)
+    Psycho Cut the Boldore on the switch in 
+    We're baiting Solarbeam now 
+    Switch into Eviolite Riolu 
+    copycat soolrbeam for another 70% damage to finish it off. 
+        (Camerupt comes in)
+    Baiting flame wheel, we can go into Luvdisc 
+    Baiting bulldoze, we go into Wormadam-Sandy 
+    Bulldoze twice for the KO 
+        (Charmeleon comes in)
+    Switch to Koffing on the Fire Fang 
+    Switch to Mr. Mime on the Devour. 
+    Encore 
+        (Sunflora comes in)
+    Psycho Cut 2hkos typiically, with solar power chip. 
+
+
+Clerk Britney 
+
+    Servine @ Magnet (Level 30)
+    Staryu @ Mystic Water (teach water pulse) (level 30)
+    Mr. Mime 
+    Exp Sink 
+
+        (Vanillish Leads)
+    Lead Servine to bait a KO from Ice Beam. 
+    Use Volt Switch for Chip and bring in Staryu 
+    finish off vanillish with psybeam 
+        (Piloswine comes in)
+    Clean ohko with Water Pulse baby 
+        (Sealeo comes in)
+    Reflect Type to become ice/water and hard wall Sealeo, then power gem twice. 
+    We should be able to get at least one off. 
+    Once we're ice water we're baiting brine though, free switch to Servine 
+    Servine can KO with magnet volt switch 
+    Bring in Mr. Mime 
+        (Delcatty comes in)
+    Fake out to burn the retaliate turn.
+    use Psycho Cut. 
+    If it went for work up, use encore. 
+
+
+Clerk Gilligan: 
+    Skitty @ Exp Share (pre damaged to 70% health)
+    Koffing @ black sludge 
+    Wormadam-Sandy @ oran berry 
+    Raticate 
+    Hariyama @ Muscle Band (pre paralyzed)
+
+        (Ferroseed leads)
+    Skitty leads with Fake Out (predamaged to 70% health)
+    Bait gyro ball into Koffing 
+    Infernal parade for the KO 
+        (Sandslash comes in)
+    Wormadam switches in on rock tomb 
+    Leech Life KOs eventually 
+        (Cacnea comes in)
+    Baiting shadow ball, goo to Raticate 
+    Sucker punch ohkos 
+        (Crustle comes in)
+    Crustle is extremely bulky and annoying. 
+    Switch into pre-paralyzed Hariyama 
+    rock tomb should do it from here 
+
+Clerk Warren 
+    Servine @ Miracle Seed 
+    Parasect @ Persim Berry
+    Luvdisc 
+    Chatot @ Wise Glasses 
+    Staryu @ Eviolite 
+    Exp Sink 
+
+    Servine leads and uses Leaf Blade t1. The AI is almost certainly going for Gastro Acid. 
+    Keep leaf blading until Parasect comes out 
+        (Parasect comes out)
+    It has to go for Leech Life here since spore and leech seed won't do anything. 
+    Volt switch into Chatot
+    KO with Chatter 
+        (Seadra comes in)
+    Switch to Staryu on Water move 
+    Switch to Luvdisc on Dragon move 
+    KO with Draining Kiss 
+        (Lombre comes in)
+    Parasect should be able to come in and then KO with leech life. 
+
+
+School Kid Neil 
+
+    Chatot @ Silk Scarf 
+    Luvdisc (pre damaged to 65%)
+    Servine @ Magnet (predamaged to 75%)
+    Koffing @ Eviolite
+    Marowak @ Exp Share 
+    Staryu @ Eviolite 
+
+    Turn 1: 
+        Chatot uses Chatter on Simisage 
+        Luvdisc uses Scald on Simisear 
+        Servine uses Volt Switch to ohko Simipour and bring in Koffing 
+
+        Pikachu enters Slot 1 
+        Eevee enters middle slot 
+
+    Turn 2: 
+        We can guarantee a galvanize fake out on Luvdisc + a secret power from Eevee on Luvidsc 
+        Switch luvdisc out for Marowak 
+        Switch Koffing out for Staryu 
+
+        Uproar with Chatot 
+
+    Turn 3: 
+        KO pikachu + eevee with uproar from Chatot 
+        double up on simisear with marowak + staryu 
+
+
+
+Harlequin Clarence: 
+
+    Chatot 
+    Servine 
+    Mr. Mime 
+    Gloom @ Eviolite 
+    Hariyama 
+    Exp Sink
+    
+    T1: 
+        Chatot fires a nuke into Armaldo with Chatter. 
+        We bait double kills with Servine from signal beam and volt switch to kill Armaldo and bring in Persim Raticate
+
+    T2: 
+        Chatot nukes Venomoth off the face of the planet 
+        and Mime uses Fake out on Beautifly. 
+        (lillignat comes in)
+    
+    T3: 
+        Chatot nukes 
+    
+
+
+Lt. Surge 
+    Luvdisc @ Level 32 @ Mystic Water (edged to level 33) 
+    Koffing @ Eviolite (Level 32)
+    Parasect @ Figy Berry (Level 32)
+    Wormadam-Sandy @ Berry Juice (teach Recycle over Rock Slide)
+    Staryu @ Eviolite (Level 32)
+    Marowak @ Flame Orb (level 32)
+
+    Lead Luvdisc (edged to level 33) into Forretress 
+    Hard switch into Koffing on Bullet Seed
+    2hko with infernal parade 
+        (Raichu Comes in)
+    Parsect comes in on Mud Bomb / Surf. If we get crit that's extremely sad, but i think we're still ok with Figy berry. 
+    Bait t-punch into Wormadam-S
+    Swiitch Staryu in on Surf. (2 life orb ticks on Raichu)
+    If we get crit by surf, we could bait mud bomb 
+    Switch back to Wormadam-Sandy on mud bomb / tunpunderch 
+    Repat to chip it down until we can bring in luvdisc on surf. 
+    Luvdisc finishes off Raichu with Scald. 
+        (Electrode comes in)
+    Switch to Wormadam-Sandy on Zing Zap 
+    Bulldoze for the OHKO (if we're extremely lucky they rollout into Octillery) 
+        (Octillery comes in)
+    Use Recycle t1 if you previously ate a mud bomb from Raichu
+    DoubleEdge + Aftermath deals max 74% health to Wormadam. 
+    If I use figy berry, we end up at 60% health
+    Enough to only bait bubble beam from Octillery. 
+    Berry juice will also only bait bubblebeam. 
+    Luvdisc switches in on bubblebeam.
+    Flip Turn into Koffing on seed bomb. 
+    Repeat until we can take KO with Scald 
+        (Electabuzz comes in)
+    Flip Turn into Marowak on T-punch 
+    Use Fling Flame Orb to burn the Electabuzz (and you can't be frozen by ice punch)
+    We can start stalling it down with Staryu + Wormadam. A +2 ice punch still does less than regenerator recovery. 
+    On one of the ice punches we might even be able to go to parasect. 
+    We end this stall on Wormadam-Sandy 
+        (Krookadile comes in)
+    Wormadam 2hkos with Leech Life. 
+
+    We won't be able to fit exp share on anything. 
+    Most of the fights are splitting exp. 
+
+
+
+

@@ -4207,11 +4207,11 @@ void Sequence360()
 	End();
 }
 
-/* Grass Gem x1 - Clay Tunnel */
+/* TM37 Hex - Sewers */
 void Sequence361()
 {
 	LockAll();
-	SetVarEqVal(0x800C, 551);
+	SetVarEqVal(0x800C, 364);
 	SetVarEqVal(0x800D, 1);
 	Sequence400();
 	WaitMoment();

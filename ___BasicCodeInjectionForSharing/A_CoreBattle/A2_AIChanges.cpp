@@ -7,10 +7,11 @@
 #define TESTING_G4_STYLE_SWITCH_OUT_AI true
 #define USING_VANILLA_AI false
 #define DEBUGGING_G4_SWITCH_AI false
+#define DEBUGGING_PICK_BEST_MON_AI false
 #define TESTING_AISCRIPTS false
 
 #define DAMAGE_CACHE_ENABLED 2
-#define DEFAULT_G4_AI false
+#define DEFAULT_G4_AI true
 #define DEFAULT_DOUBLES_AI false 
 #define TRYING_NEW_OPT true 
 #define ADDING_GRASSKNOT true 
@@ -2575,8 +2576,8 @@ extern "C"
         u16 ID;             // r4
         AbilID atkAbility;
         AbilID defAbility;
-        u16 BasePower;              // r4
-        u8 TypeEffectivenessVsMon; // r0
+        unsigned int BasePower;              // r4
+        unsigned int TypeEffectivenessVsMon; // r0
         unsigned int v10;                    // r0
         unsigned int result;                 // r0
         u8 j;                      // r5
@@ -2589,7 +2590,7 @@ extern "C"
         u8 MoveCount;              // [sp+Ch] [bp-34h]
         u8 i;                      // [sp+10h] [bp-30h]
         BattleStyle battleStyle;
-        u8 PokeType;                        // [sp+14h] [bp-2Ch]
+        int PokeType;                        // [sp+14h] [bp-2Ch]
         __int16 v23[6] = {0, 0, 0, 0, 0, 0}; // [sp+1Ch] [bp-24h]
         __int16 v23_temp[6];
 
@@ -2767,20 +2768,20 @@ extern "C"
         u16 ID;                 // r4
         AbilID atkAbility;
         AbilID defAbility;
-        u8 TypeEffectivenessVsMon; // r0
+        int TypeEffectivenessVsMon; // r0
         unsigned int result;                 // r0
         u8 j;                      // r5
         u8 k;                      // r6
-        u16 counterValueC;          // r1
-        u16 countValueB;            // r0
-        u16 countValueA;                      // r1
+        int counterValueC;          // r1
+        int countValueB;            // r0
+        int countValueA;                      // r1
         u8 Type;                            // [sp+8h] [bp-38h]
         u8 MoveCount;              // [sp+Ch] [bp-34h]
         u8 i;                      // [sp+10h] [bp-30h]
-        u8 PokeType;                        // [sp+14h] [bp-2Ch]
+        int PokeType;                        // [sp+14h] [bp-2Ch]
         __int16 v23[6] = {0, 0, 0, 0, 0, 0}; // [sp+1Ch] [bp-24h]
         __int16 v23_temp[6];
-        u8 checkForPhase2 = 0;
+        int checkForPhase2 = 0;
         BattleStyle battleStyle = (BattleStyle)BtlSetup_GetBattleStyle(a1->mainModule);
         __int16 defenderPos;
         u8 numTargets;
@@ -2790,9 +2791,19 @@ extern "C"
         BattleMon *defendingMonChecked;
         numTargets = 1;
 
-        #if DEFAULT_G4_AI == false 
-        if (getEventWorkValue(16503) == 0) return Phase2PickBestMonToSwitchInto(a1, a2, a3, a4);
-        #endif 
+        #if DEBUGGING_PICK_BEST_MON_AI
+        k::Printf("\n[PickBestMonToSwitchInto] ENTER: numCandidates=%d, defenderMon=%d, defenderID=%d, battleStyle=%d", a3, a4->Species, a4->ID, battleStyle);
+        #endif
+
+        #if DEFAULT_G4_AI == false
+        if (getEventWorkValue(16503) == 0)
+        {
+            #if DEBUGGING_PICK_BEST_MON_AI
+            k::Printf("\n[PickBestMonToSwitchInto] eventWork 16503 == 0, falling back to Phase2PickBestMonToSwitchInto");
+            #endif
+            return Phase2PickBestMonToSwitchInto(a1, a2, a3, a4);
+        }
+        #endif
 
         #if DEFAULT_DOUBLES_AI
         if (battleStyle != BTL_STYLE_SINGLE)
@@ -2812,6 +2823,9 @@ extern "C"
             defendingMonChecked = (battleStyle != BTL_STYLE_SINGLE && getEventWorkValue(16436) == 1) ? PokeCon_GetBattleMon(a1->pokeCon, currentTargetPosition) : defendingMonChecked;
             PokeType = BattleMon_GetPokeType(defendingMonChecked);
             defAbility = (AbilID)BattleMon_GetValue(defendingMonChecked, VALUE_EFFECTIVE_ABILITY);
+            #if DEBUGGING_PICK_BEST_MON_AI
+            k::Printf("\n[PickBestMonToSwitchInto] target %d/%d: checking defendingMon=%d, PokeType=%d, defAbility=%d", currentTarget, numTargets, defendingMonChecked->Species, PokeType, defAbility);
+            #endif
             #if DEFAULT_DOUBLES_AI
             if (battleStyle != BTL_STYLE_TRIPLE)
             #else 
@@ -2820,6 +2834,9 @@ extern "C"
             {
                 if (!IsPosInRangeTripleBattle(MainModule_PokeIDToPokePos(a1->mainModule, a1->pokeCon, defendingMonChecked->ID), MainModule_PokeIDToPokePos(a1->mainModule, a1->pokeCon, a4->ID)))
                 {
+                    #if DEBUGGING_PICK_BEST_MON_AI
+                    k::Printf("\n[PickBestMonToSwitchInto] defendingMon=%d out of triple battle range, skipping", defendingMonChecked->Species);
+                    #endif
                     continue;
                 }
             }
@@ -2830,12 +2847,18 @@ extern "C"
                 v23_temp[i] = 0;
                 MonData = BattleParty_GetMonData(BattleClient_GetActParty(a1), a2[i]);
                 atkAbility = (AbilID)BattleMon_GetValue(MonData, VALUE_EFFECTIVE_ABILITY);
+                #if DEBUGGING_PICK_BEST_MON_AI
+                k::Printf("\n[PickBestMonToSwitchInto]   candidate i=%d: mon=%d, partySlot=%d, atkAbility=%d, fainted=%d", i, MonData->Species, a2[i], atkAbility, BattleMon_IsFainted(MonData));
+                #endif
 
                 if (!BattleMon_IsFainted(MonData))
                 {
                     if (MonData->Species == PK132_DITTO){
                         MonData = defendingMonChecked;
                         atkAbility = (AbilID)BattleMon_GetValue(MonData, VALUE_EFFECTIVE_ABILITY);
+                        #if DEBUGGING_PICK_BEST_MON_AI
+                        k::Printf("\n[PickBestMonToSwitchInto]     candidate is Ditto, re-evaluating as defendingMon=%d with atkAbility=%d", MonData->Species, atkAbility);
+                        #endif
                     }
                     MoveCount = BattleMon_GetMoveCount(MonData);
                     if (MoveCount)
@@ -2847,15 +2870,41 @@ extern "C"
                                 ID = Move_GetID(MonData, moveIndex);
                                 // Figuring out the Type
                                 Type = PML_MoveGetType(ID);
+                                #if DEBUGGING_PICK_BEST_MON_AI
+                                k::Printf("\n[PickBestMonToSwitchInto]     move=%d: baseType=%d (atkAbility=%d)", ID, Type, atkAbility);
+                                #endif
                                 Type = (atkAbility == ABIL096_NORMALIZE) ? TYPE_NORMAL : (Type == TYPE_NORMAL) ? checkType(atkAbility) : Type;
+                                #if DEBUGGING_PICK_BEST_MON_AI
+                                k::Printf("\n[PickBestMonToSwitchInto]       after Normalize/checkType: Type=%d", Type);
+                                #endif
                                 Type = (ID == MOVE311_WEATHER_BALL || ID == MOVE271_WEATHER_CRASH) ? checkWeatherBall(atkAbility) : Type;
-                                Type = (ID == MOVE546_TECHNO_BLAST) ? checkTechnoblast(MonData) : Type; 
+                                #if DEBUGGING_PICK_BEST_MON_AI
+                                k::Printf("\n[PickBestMonToSwitchInto]       after checkWeatherBall: Type=%d", Type);
+                                #endif
+                                Type = (ID == MOVE546_TECHNO_BLAST) ? checkTechnoblast(MonData) : Type;
+                                #if DEBUGGING_PICK_BEST_MON_AI
+                                k::Printf("\n[PickBestMonToSwitchInto]       after checkTechnoblast: Type=%d (final move Type)", Type);
+                                #endif
 
                                 // Figuring out the Type Effectiveness
                                 TypeEffectivenessVsMon = GetTypeEffectivenessVsMon(Type, PokeType);
+                                #if DEBUGGING_PICK_BEST_MON_AI
+                                k::Printf("\n[PickBestMonToSwitchInto]       GetTypeEffectivenessVsMon(Type=%d, PokeType=%d) = %d", Type, PokeType, TypeEffectivenessVsMon);
+                                #endif
                                 TypeEffectivenessVsMon = getTypeEffectivenessForMove((MoveID)ID, Type, PokeType, atkAbility, TypeEffectivenessVsMon, 0);
-                                TypeEffectivenessVsMon = (!HasMoldBreaker(MonData) && CheckIfImmuneAbility(Type, ID, defendingMonChecked)) ? 0 : TypeEffectivenessVsMon;
+                                #if DEBUGGING_PICK_BEST_MON_AI
+                                k::Printf("\n[PickBestMonToSwitchInto]       getTypeEffectivenessForMove(move=%d) = %d", ID, TypeEffectivenessVsMon);
+                                #endif
+                                u8 moldBreaker = HasMoldBreaker(MonData);
+                                u8 immuneAbility = CheckIfImmuneAbility(Type, ID, defendingMonChecked);
+                                TypeEffectivenessVsMon = (!moldBreaker && immuneAbility) ? 0 : TypeEffectivenessVsMon;
+                                #if DEBUGGING_PICK_BEST_MON_AI
+                                k::Printf("\n[PickBestMonToSwitchInto]       moldBreaker=%d, immuneAbility=%d -> TypeEffectivenessVsMon=%d", moldBreaker, immuneAbility, TypeEffectivenessVsMon);
+                                #endif
                                 TypeEffectivenessVsMon = (atkAbility == ABIL096_NORMALIZE && ID != MOVE363_NATURAL_GIFT && ID != MOVE546_TECHNO_BLAST && ID != MOVE311_WEATHER_BALL && ID != MOVE271_WEATHER_CRASH) ? 3 : TypeEffectivenessVsMon;
+                                #if DEBUGGING_PICK_BEST_MON_AI
+                                k::Printf("\n[PickBestMonToSwitchInto]     move=%d, moveType=%d, FINAL TypeEffectivenessVsMon=%d", ID, Type, TypeEffectivenessVsMon);
+                                #endif
 
                                 if (TypeEffectivenessVsMon > 3)
                                 {
@@ -2866,7 +2915,7 @@ extern "C"
                                         pokeType_1 = PML_MoveGetType(Move_GetID(MonData, 0));
                                         pokeType_2 = PML_MoveGetType(Move_GetID(MonData, 0));
                                     }
-                                    u8 defenderType = (BattleMon_CheckIfMoveCondition(defendingMonChecked, CONDITION_TERA) || isTeraItem(defendingMonChecked->HeldItem)) ? PML_MoveGetType(Move_GetID(defendingMonChecked, 0)) : BattleMon_GetPokeType(defendingMonChecked);
+                                    int defenderType = (BattleMon_CheckIfMoveCondition(defendingMonChecked, CONDITION_TERA) || isTeraItem(defendingMonChecked->HeldItem)) ? PML_MoveGetType(Move_GetID(defendingMonChecked, 0)) : BattleMon_GetPokeType(defendingMonChecked);
                                     u8 effectiveness_1 = GetTypeEffectivenessVsMon(pokeType_1, defenderType);
                                     u8 effectiveness_2 = GetTypeEffectivenessVsMon(pokeType_2, defenderType);
                                     effectiveness_1 = (atkAbility == ABIL113_SCRAPPY && (pokeType_1 == TYPE_NORMAL || pokeType_1 == TYPE_FIGHTING)) ? GetTypeEffectivenessVsMonAltered(pokeType_1, defenderType) : effectiveness_1;
@@ -2877,19 +2926,34 @@ extern "C"
                                     effectiveness_2 = ConvertToEffectivenessScore(effectiveness_2);
                                     v23_temp[i] = effectiveness_1 * effectiveness_2;
                                     moveIndex = MoveCount;
+                                    #if DEBUGGING_PICK_BEST_MON_AI
+                                    k::Printf("\n[PickBestMonToSwitchInto]       STAB-relevant hit: effectiveness_1=%d, effectiveness_2=%d, score=%d", effectiveness_1, effectiveness_2, v23_temp[i]);
+                                    #endif
                                 }
                             }
                             moveIndex = (moveIndex + 1);
                         } while (moveIndex < MoveCount);
                         checkForPhase2 = checkForPhase2 + v23_temp[i];
                         v23[i] = v23[i] + v23_temp[i];
+                        #if DEBUGGING_PICK_BEST_MON_AI
+                        k::Printf("\n[PickBestMonToSwitchInto]   candidate i=%d running total v23[%d]=%d, checkForPhase2=%d", i, i, v23[i], checkForPhase2);
+                        #endif
                     }
                 }
             }
         }
 
-        if (checkForPhase2 == 0) return Phase2PickBestMonToSwitchInto(a1, a2, a3, a4);
-        
+        if (checkForPhase2 == 0)
+        {
+            #if DEBUGGING_PICK_BEST_MON_AI
+            k::Printf("\n[PickBestMonToSwitchInto] checkForPhase2 == 0 (no candidate scored), falling back to Phase2PickBestMonToSwitchInto");
+            #endif
+            return Phase2PickBestMonToSwitchInto(a1, a2, a3, a4);
+        }
+
+        #if DEBUGGING_PICK_BEST_MON_AI
+        k::Printf("\n[PickBestMonToSwitchInto] scoring complete, sorting %d candidates by score", a3);
+        #endif
         result = a3;
         for (j = 0; j < a3; result = a3)
         {
@@ -2910,11 +2974,12 @@ extern "C"
             j = (unsigned __int8)(j + 1);
         }
 
-        #if DEBUGGING_G4_SWITCH_AI
-                for (int jk = 0; jk < a3; jk = jk + 1)
-                {
-                    k::Printf("\nCheck C-%d: switchin #%d is %d, which is Pokemon %d", jk, BattleParty_GetMonData(BattleClient_GetActParty(a1), a2[jk])->Species);
-                }
+        #if DEBUGGING_PICK_BEST_MON_AI
+        u8 jk = 0;
+        for (jk = 0; jk < a3; jk = jk + 1)
+        {
+            k::Printf("\n[PickBestMonToSwitchInto] RESULT #%d: switchin slot %d is Pokemon %d, score %d", jk, jk, BattleParty_GetMonData(BattleClient_GetActParty(a1), a2[jk])->Species, v23[jk]);
+        }
         #endif
 
         return result;
@@ -2935,7 +3000,7 @@ extern "C"
         BattleStyle battleStyle;    // r0
         unsigned int j;             // r4
         BattleMon *MonData;         // r6
-        u8 PokeType;               // r0
+        int PokeType;               // r0
         u8 TypeEffectivenessVsMon; // r0
         __int64 v17;                // r2
         __int64 v18;                // r2
@@ -3157,7 +3222,7 @@ extern "C"
         int Param;                   // r0
         u8 TypeEffectiveness;
         bool IsDamaging; // r6
-        u8 PokeType;    // r0
+        int PokeType;    // r0
         __int64 v10;     // kr00_8
         bool result;     // r0
         __int64 v12;     // r0
@@ -3683,7 +3748,7 @@ extern "C"
         u8 defenderId;
         int v18;
         u8 typeEffectiveness;
-        u8 PokeType;
+        int PokeType;
 
         defenderId = BattleEventVar_GetValue(VAR_DEFENDING_MON);
         if (a3 == defenderId)

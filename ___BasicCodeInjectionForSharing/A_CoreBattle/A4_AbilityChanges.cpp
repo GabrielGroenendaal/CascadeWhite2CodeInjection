@@ -1839,8 +1839,8 @@ extern "C"
         BattleMon *attackingMon; // r4
         unsigned __int8 Value;   // r0
         BattleMon *defendingMon; // r5
-        u8 v8;                  // r4
-        u8 v9;                  // r0
+        int v8;                  // r4
+        int v9;                  // r0
 
         if (a3 == BattleEventVar_GetValue(VAR_ATTACKING_MON))
         {
@@ -1861,8 +1861,8 @@ extern "C"
         BattleMon *attackingMon; // r4
         unsigned __int8 Value;   // r0
         BattleMon *defendingMon; // r5
-        u8 v8;                  // r4
-        u8 v9;                  // r0
+        int v8;                  // r4
+        int v9;                  // r0
 
         if (a3 == BattleEventVar_GetValue(VAR_DEFENDING_MON))
         {

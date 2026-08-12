@@ -150,7 +150,6 @@ Bug Reports, resources, discussion, and a forum to provide feedback can be found
 
 ### Move Tutors 
 
-
 The moves taught have been changed. 
 - Green Shards: Screech, Fake Tears, Seismic Toss, Defog, Chilling Water, Swift, Breaking Swipe, Magic Coat, Take Down, Snore, Low Sweep, Icy Wind, Electroweb, Endeavor, Natural Gift
 - Red Shards: Seed Bomb, Signal Beam, Counter, Drill Run, Bounce, Psychic Noise, Ice Punch, Fire Punch, Thunderpunch, Safeguard, Foul Play, Focus Punch, Cross Poison, Skill Swap, U-Turn
@@ -204,7 +203,8 @@ exp share, Exp Share (given by Alder)
 green shard, Green Shard x10 — Given by the Blueberry Academy Rep
 end
 
-!items PokéMart (Natural Gift Berries)
+!items PokéMart
+desc: Berries that can be used with Natural Gift
 grepa berry, Tamato / Nomel / Hondew / Grepa / Pomeg / Kelpsy / Pinap / Rabuta / Magost / Cornn / Wepear / Bluk / Nanab / Pamtre / Spelon Berries
 end
 
@@ -218,12 +218,12 @@ end
 - Breaking Swipe (4 shards)
 - Magic Coat (4 shards)
 - Take Down (5 shards)
+- Snore (5 shards)
 - Low Sweep (6 shards)
 - Icy Wind (6 shards)
 - Electroweb (6 shards)
 - Endeavor (8 Shards)
 - Natural Gift (10 shards)
-
 
 !gifts Abandoned Pokémon
 desc: Speak with the abandoned Pokémon to get a wild encounter!
@@ -270,7 +270,7 @@ end
 !trm 167 If chose Tepig
 
 !trm 168 If chose Oshawott
-You can exchange these with a [COLOR(2)]Move Tutor[COLOR(0)]\nfrom the Blueberry Academy to teach\r\nyour partners new moves!\c
+
 !gifts Floccesy Ranch Egg
 desc: Speak to the rancher after defeating Hugh to receive an egg containing one of the following Pokémon. It can be hatched in Aspertia Gate.
 snover

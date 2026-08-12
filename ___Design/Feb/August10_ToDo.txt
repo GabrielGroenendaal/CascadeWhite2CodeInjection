@@ -17,240 +17,83 @@ NORMAL TO-DO LIST:
         - Dermatologist 
 
 TONIGHT TO-DO LIST: 
-    - Undo the contact ability change for now. We can re-evaluate later. 
-    - Finish our Pokedex updates. 
-        Changed HAs (for trpok)
-            Ampharos: 
-                Abil 4: Static 
-            Voltorb / Electrode: 
-                Abil 5: Static 
-            Electivire: 
-                Abil 4: Static 
-            Electrike / Manectric
-            Pichu / Pikachu / Raichu 
-            Stunfisk: 
-            Klink / Klang / Klinklang 
-            Tynamo / Eelektrik / Eelektross
-            Joltik / Galvantula 
-                Abil 6: Static 
-            Croagunk / Toxicroak 
-            Scraggy / Scrafty
-            Umbreon
-            Gligar / Gliscor 
-            Qwilfish 
-                Abil 6: Poison Touch
-            Rapidash
-                Abil 4: Flame Body 
-            Flareon 
-            Chimchar / Monferno / Infernape 
-                Abil 6: Flame Body 
-            Nidoqueen 
-                Abili6: Multiscale 
-        Luvdisc: 
-            Level 32: Scald -> Surf 
-            Level 39: Lucky Chant -> Moonblast 
-            Level 43: Moonblast -> Lucky Chant
-            --Level 58: Hydro Cannon
-        Kakuna: 
-            Abil 1: Resilient -> Shed Skin 
-        Shedinja: 
-            Ability 2: Unburden -> Weak Armor 
-        Anorith: 
-            Abil 2: Weak armor -> Swift Swim 
-        Shuppet: 
-            Abil 2: Hustle -> Levitate 
-            Abil 3: Levitate -> Cursed Body 
-        Metapod: 
-            Abil 1: Resilient -> Shed Skin 
-        Remoraid / Octillery 
-            Abil 3: Null 
-        Bagon
-            Abil 2: Hustle -> Moxie 
-        Ekans: 
-            Abil 2: Sheer Force -> Shed Skin 
-        Snover: 
-            Abil 2: Berserk -> Rattled
-        Remoraid: 
-            Abil 2: Sheer Force -> Sniper 
-        Larvitar: 
-            Abil 3: Sheer Force -> Sand Veil 
-        Pupitar: 
-            Abil 3: Sheer Force -> Shed Skin 
-        Tyranitar: 
-            Abil 1: Unnerve
-            Abil 3: Solid Rock -> Berserk
-        Nidoqueen: 
-            Abil 3: Majestic Ward -> Marvel Scale 
-        Sandile / Krokorok
-            Abil 2: Moxie 
-        Vaporeon: 
-            Abil 3: Clear Body 
-        Shelgon: 
-            Abil 2: Strong Body -> Overcoat 
-        Shuckle: 
-            Abil 2: Strong Body -> Contrary 
-            Abil 3: Shell Armor -> Solid Rock 
-        Froslass: 
-            Abil 2: Ice Body -> Clear Body 
-        Kecleon: 
-            Abil 2: Prankster -> Clear Body 
-        Magby:
-            Abil 1: Flash Fire -> Blaze 
-        Glaceon: 
-            Abil 2: Majestic Ward -> Marvel Scale / Heatproof?
-        Togepi / Togetic: 
-            Abil 3: No Guard -> Natural Cure 
-        Larvesta: 
-            Abil 2: Swarm -> Shield Dust
-        Yanma
-            +20 Speed 
-            -10 SpA 
-        Budew: 
-            +10 Defense 
-            Abil 1: Chlorophyll -> Solar Power 
-            Abil 3: Serene Grace
-        Roselia : 
-            +10 Defense 
-            Abil 1: Chlorophyll -> Solar Power 
-            Abil 3: Serene Grace
-        Roserade: 
-            Abil 1: Chlorophyll -> Solar Power 
-        Cobalion:   
-            Remove Abil 3
-        Virizion: 
-            Remove Abil 3 
-        Terrakion: 
-            Remove Abil 3 
-        Keldeo:     
-            Remove Abil 3
-        Ponyta / Rapidash: 
-            Abil 3: Flash Fire -> Reckless 
-        Raikou: 
-            Abil: Majestic Ward -> Volt Absorb
-        Entei: 
-            Abil: Majestic Ward -> Flash Fire
-        Suicune: 
-            Abil: Majestic Ward -> Shield Dust 
-        Ho-Oh: 
-            Abil: Majestic Ward -> Regenerator 
-        Clamperl: 
-            Abil 2 Sturdy 
-        Skiity / Delcatty: 
-            -5 Atk 
-        Zigzagoon: 
-            58 HP 
-            72 Atk 
-            55 Def 
-            30 SpA 
-            41 SpD 
-            70 Spe 
-        Linoone: 
-            78 HP 
-           112 Atk 
-            75 Defense 
-            50 SpA 
-            61 SpD 
-           100 Spe 
-        Drilbur: 
-            Abil 3: Sand Rush 
-        Dwebble/Crustle: 
-            Abil 1: Pickup 
-            Abil 3: Sturdy 
-        Spinda: 
-            Abil 3: Null 
-        Aipom/Ambipom: 
-            Aipom Evolves at Level 35 (or with a Moon Stone)
-        Gallade: 
-            Abil 4: Inner Focus 
-        Phanpy/Donphan: 
-            -5 Speed 
-        Lilligant: (EXAMINE THIS LATER)
-            Abil 3: Cloud Nine 
-        Meganium: 
-            abil 3: flower gift -> resilient 
-        Alomomola: 
-            Abili 2: Filter 
-            Abil 3: Null 
-        Claydol: 
-            Make sure it doesn't have compat with Harden or Barrier or Lucky Chatn
+    - Scripting: 
+        - Battle Company currently isn't checking if you've defeated all the other trainers. 
+        - I wonder if I can just disable the elevator unless you've beaten all the other trainers. 
+    - Move Changes: 
+        - Look into move expansion, if we can do it easily enough, let's go for it: 
+            - Seems like the main thing we'd need to do is find the function that determines animation index and go from there. 
+            - Simple Move Additions: 
+                - Bubble 
+                - Sweet Kiss 
+                - Bolt Strike 
+                - Sacred Fire 
+                - Scratch 
+                - Pound 
+                - Trailblaze 
+                - Embargo 
+                - Fury Attack 
+                - Spacial Rend 
+                - Roar of Time 
+                - Sharpen 
+                - Mist Ball 
+                - Pounce 
+                - Freeze Shock 
+            - Complex Move Additions 
+                - Thief 
+                - Odor Sleuth 
+                - Foresight 
+                - Bide 
+                - Trick 
+                - Spite 
+                - Role Play 
+                - Smack Down 
+                - Lock On 
+                - Magic Room 
+                - Camouflage          
     - Finish our trainer changes.
-        Marlon: 
-            Gyarados (Aqua Jet -> Dragon Dance)
-        Hoenn Leader Roxanne: 
-            Shuckle: Strong Body -> Solid Rock (change to abil 3)
-        Backpacker Tami: 
-            Shuckle: Strong Body -> Contrary (just update docs)
-        Worker Pasqual 
-            Nidoqueen (Abil 3 -> Abili 6)
-        Backpacker Alexander: 
-            Shelgon (Strong Body -> Overcoat (just the docs))
-        Ranger Jaden 
-            Shelgon (Strong Body -> Overcoat (just the docs))
-        Harlequin Clarence: 
-            Beautifly: Fairy Wind -> Draining Kiss 
-        Harlequin Jack: 
-            Mr. Mime (-atk nature) 
-            Vespiquen (Majestic Ward -> Unnerve) (Charti Berry -> )
-        Harlequin Anders 
-            Yanmega -> Yanma @ Life Orb (Ability: Tinted Lens) (Hurricane, Scorching Swarm, U-Turn, Hypnosis)
-        Harlequin Gary 
-            Scyther:  Aerial Ace -> Wing Attack 
-        Fearow Sewer Grunt: 
-            Fearow: Aerial Ace -> Wing Attack 
-        Zangoose Sewer Grunt: 
-            Fraxure: Aerial Ace -> Metal Claw 
-        Policeman Petrel: 
-            Tyrogue: Aerial Ace -> Dizzy Punch 
-        Youngster Keita: 
-            Farfetch'd: Aerial Ace -> Razor Winds 
-            Trapinch: Aerial Ace -> Psychic Fangs 
-        Virbank Gate Rival: 
-            Tranquill: Aerial Ace -> Dual Wingbeat
-            Ponyta: Flash Fire -> Reckless 
-        Beauty Ampre: 
-            Emolga:
-                Flying Gem -> Focus Sash 
-                Acrobatics -> Aerial Ace 
-        Backers Kay & May 
-            Glaceon: 
-                Glaceon: Ability Heatproof?
-        Leader Burgh: 
-            Galvantula: Icy Wind -> Mega Drain 
-        Baker Jenn: 
-            Tropius: 
-                Air Slash -> Air Cutter 
-        Artist Horton
-            Ditto: (Level 41 -> 38 )
-        Erika: 
-            Ninetales: Extrasensory -> Confuse Ray
-            Cherrim: Blaze Kick -> Fire Lash
-            Victreebell: High Horsepower -> Weather Ball
-            Vileplume: Fairy Wind -> Dazzling Gleam
-        Plasma Grunt Sableye: 
-            Sableye: Brick Break -> Confuse Ray 
-            Heatmor: Lava Plume -> Magma Storm
-        Heartbrreaker Charles 
-            Basculin: 
-                Strength -> Scary Face 
-                Ice Beam -> Icy Wind 
-        Janine: 
-            Lucario: (psychic -> detect)
-        Worker Herman: 
-            Krookadile -> Skarmory: 
-            Torkoal: Spin Out -> Gyro Ball
-            Heatmor (Solarbeam -> )
-    - Update the Mastersheets and Docs 
-        - Ability Names 
-        - Move tutor Tables 
-        - Static / Flame Body / Poison Touch 
-    - Run a couple battles as a stability test and to see if we run into a post-battle crash. 
-    - Continue playtesting run tbh. 
+        Burgh Split: 
+            Surge: 
+                Electabuzz (Iron Fist -> Static) (MAYBE???)
+            Harlequin Anders 
+                Yanmega -> Yanma @ Life Orb (Ability: Tinted Lens) (Hurricane, Scorching Swarm, U-Turn, Hypnosis) 
+        Clay Split: 
+            Janine: 
+                Lucario: (psychic -> detect)
+            Worker Herman: 
+                Krookadile -> Skarmory: 
+                Torkoal: Spin Out -> Gyro Ball
+                Heatmor (Solarbeam -> )
+        Skyla Split: 
+            Socialite Grace: 
+                Swap Starmie and Lilligant positions. 
+                Lilligant
+                    Abil: Chlorophyll -> Overgrow 
+                    Solarbeam -> Petal Dance 
+                    Teeter Dance -> Sleep Powder 
+            Gentleman Daniel:     
+                Absol: 
+                    Mean Look -> U-turn 
+                    Parting Shot -> Foul Play
+                Murkrow
+                    U-Turn -> Baton Pass 
+                    thunder wave -> mean Look 
+                    Brave bird -> Hurricane 
+                    Dark Pulse -> Foul Play
+            Sabrina: 
+                Musharna: 
+                    Moonlight -> Cosmic Power 
+                    Kee Berry -> Leftovers 
+            Pilot Chase: 
+                Togekiss (Air Slash -> Dazzling Gleam, Aura Sphere -> Force Palm)
+                Drifblim (Substitute -> U-Turn)
+                Machamp (Knock Off -> Substitute)
+                Braviary (Wacan Berry -> Power Herb, Roost -> Recycle)
+    - Bug Fixes 
+        - Double check that Refrigerate, Ice Scales, and Majesty all work properly. 
+    
     
 
-
-New Goal. 
-    - Get Marlon Split out and functional. 
-    - We should be able to farm 
 
 
 ====================================================================================================================================================
@@ -582,6 +425,149 @@ TO DO LIST FINAL:
             Trailblaze 
             Aqua Cutter 
 
+    
+    Moves that we barely use and should use more:
+        Meditate
+            Cool set up move, nothing uses it. 
+            Good users: 
+                Machamp 
+                Grumpig 
+                Primeape 
+                Mr. Mime 
+                Hitmonlee 
+                Medicham 
+                Mienshao 
+                Electivire 
+                Toxicroak 
+                Machamp 
+        Agility: 
+            Really scary on the AI, although Idk how it uses it in doubles 
+            I guess i use tailwind usually in situations where i could use agility? 
+            I use it twice on the ai right now 
+        Rage: 
+            This is a really really cool effect. Unfortunately, it just requires a specific combo of being fast and bulky to be scary. 
+            That it is normal type is also part of the issue. 
+
+            Idea: Rage is 80 BP. It changes type like revelation dance. 
+            This would make it way more useful broadly; could be scary af on Tyranitars, Hippowdons, etc. 
+            It's also technically set up for the player though, that could pretty easily be abused if we aren't careful. 
+
+
+    Moves that are overdistributed:
+        Toxic (Available to 29 Evolution Lines)
+            Questionable Inclusions: 
+                Kingdra 
+                Quagsire 
+                Gastrodon
+                Mandibuzz 
+                Cradily 
+                Weezing 
+        Agility (Available to 30 Evolution Lines)
+            This should only be going to super frail Pokemon. 
+
+            Alternatively, I could reduce it to a +1 Boost now that it can affect allies? 
+
+            I think this move's distribution is a symptom of me being self conscious about spamming too many attacks on learnsets. I shouldn't be. 
+
+            Questionable Inclusions: 
+                Manectric 
+                Basculin 
+                Scolipede 
+                Scyther 
+                Scizor 
+                Lopunny
+                Metagross (!!!)
+                Feraligatr 
+                Kingdra 
+                Porygon
+                Braviary 
+                Skarmory 
+                Mantine 
+        Screech: (Learnset for 29 Evolution Lines) 
+            This is a tutor move, it should not be on literally every pokemon. 
+            Questionable Inclusions: 
+                Garchomp line 
+                Volcarona line 
+                Watchog line 
+                Murkrow line (replace with Confide)
+                Luxray line 
+                Armaldo Line 
+                Ferrothorn Line 
+        Recover: 
+            Remove from: 
+                Klinklang 
+                Claydol 
+                Glaceon 
+                Spiritomb 
+        Harden: 
+            This is a tutor move and a very powerful move, but before I say this is overdistributed 
+            I need to test first. 
+        Amnesia: 
+            Remove from Torkoal, Slowbro, Slowking, 
+        Spore: 
+            Remove from Weepinbell/Victrebell
+        Rest: 
+            Remove from Probopass, Crustle, Scrafty, Torkoal 
+        Scary Face:
+            Now that it's a tutor move this definitely doesn't need to be so saturated. 
+            It's a tool to uplift weaker pokemon, not just a general filler move for learnsets imo
+        Swagger: 
+            Probably need to tone this down too.  
+
+    Moves that are underdistributed: 
+        Quick Attack: 
+            It's on a lot of sets but some quick priority would be appreciated on a ton of mons 
+        String Shot: 
+            Needs to be relearned at later levels ono teh bug-types 
+                Butterfree/Beedrill/Leavanny/Beautifly/Dustox/Ariados/Wormadam/Mothim/Yanmega/Galvantula 
+        Haze
+            It's a low value move but that's okay. We can have some low value moves to sprinkle into learnsets 
+            
+            Distribution: 
+                Arbok
+                Honchkrow 
+                Poliwrath 
+                Tentacruel 
+                Muk 
+                Gengar 
+                Weezing 
+                Mr. Mime
+                Vaporeon 
+                Quagsire 
+                Qwilfish 
+                Masquerain 
+                Seviper 
+                Milotic 
+                Froslass 
+                Cofagrigsu 
+                Chandelure 
+                Cryogonal 
+                Blastoise 
+                Dodrio 
+                Tentacruel 
+                Kingler 
+                Seaking 
+                Omastar 
+                Dragonite 
+                Xatu 
+                Mantine 
+                Altaria 
+                Dusknoir 
+                Drifblim 
+                Skuntank 
+                Garbodor 
+
+
+    Moves to Add: 
+        Freeze Shock: 
+            Need it for Kyurem-Black 
+        
+        Overdrive: 
+            Could be a good replacement for Charge beam on learnsets but a bit unnecessary 
+        
+        Mega Kick: 
+            I really like the idea of 140 BP mega kick 
+            Cool for no guard mons 
 
 
 ====================================================================================================================================================

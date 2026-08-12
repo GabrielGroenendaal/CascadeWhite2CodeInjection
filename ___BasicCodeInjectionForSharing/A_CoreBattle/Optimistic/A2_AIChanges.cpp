@@ -2589,7 +2589,7 @@ extern "C"
         u8 MoveCount;              // [sp+Ch] [bp-34h]
         u8 i;                      // [sp+10h] [bp-30h]
         BattleStyle battleStyle;
-        u8 PokeType;                        // [sp+14h] [bp-2Ch]
+        int PokeType;                        // [sp+14h] [bp-2Ch]
         __int16 v23[6] = {0, 0, 0, 0, 0, 0}; // [sp+1Ch] [bp-24h]
         __int16 v23_temp[6];
 
@@ -2777,7 +2777,7 @@ extern "C"
         u8 Type;                            // [sp+8h] [bp-38h]
         u8 MoveCount;              // [sp+Ch] [bp-34h]
         u8 i;                      // [sp+10h] [bp-30h]
-        u8 PokeType;                        // [sp+14h] [bp-2Ch]
+        int PokeType;                        // [sp+14h] [bp-2Ch]
         __int16 v23[6] = {0, 0, 0, 0, 0, 0}; // [sp+1Ch] [bp-24h]
         __int16 v23_temp[6];
         u8 checkForPhase2 = 0;
@@ -2935,7 +2935,7 @@ extern "C"
         BattleStyle battleStyle;    // r0
         unsigned int j;             // r4
         BattleMon *MonData;         // r6
-        u8 PokeType;               // r0
+        int PokeType;               // r0
         u8 TypeEffectivenessVsMon; // r0
         __int64 v17;                // r2
         __int64 v18;                // r2
@@ -3157,7 +3157,7 @@ extern "C"
         int Param;                   // r0
         u8 TypeEffectiveness;
         bool IsDamaging; // r6
-        u8 PokeType;    // r0
+        int PokeType;    // r0
         __int64 v10;     // kr00_8
         bool result;     // r0
         __int64 v12;     // r0
@@ -3683,7 +3683,7 @@ extern "C"
         u8 defenderId;
         int v18;
         u8 typeEffectiveness;
-        u8 PokeType;
+        int PokeType;
 
         defenderId = BattleEventVar_GetValue(VAR_DEFENDING_MON);
         if (a3 == defenderId)

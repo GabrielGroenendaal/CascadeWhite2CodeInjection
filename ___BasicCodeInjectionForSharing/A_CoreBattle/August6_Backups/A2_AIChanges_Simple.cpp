@@ -1803,7 +1803,7 @@ extern "C"
                 value >>= 1;
             }
 
-            if ((atkAbility == ABIL110_TENACITY) && TypeEffectivenessVsMon < 3)
+            if ((atkAbility == ABIL110_TINTED_LENS) && TypeEffectivenessVsMon < 3)
             {
                 value <<= 1;
             }

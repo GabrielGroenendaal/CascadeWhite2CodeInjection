@@ -93,10 +93,10 @@ highlights =
     "patient": 1,
     "contagious": 1,
     "collective": 1,
-    "illumination": 1,
     "chillingwater": 1
   },
   "changed": {
+    "illuminate": 1,
     "figyberry": 1,
     "casteliacone": 1,
     "liechiberry": 1,
@@ -226,6 +226,9 @@ highlights =
     "block": 1,
     "howl": 1,
     "heartstamp": 1,
+    "static": 1,
+    "poisontouch": 1,
+    "flamebody": 1,
     "dragonclaw": 1,
     "frenzyplant": 1,
     "bounce": 1,
@@ -325,6 +328,8 @@ highlights =
     "turboblaze": 1,
     "teravolt": 1,
     "furyswipes": 1,
+    "furycutter": 1,
+    "damp": 1, 
     "covet": 1,
     "stomp": 1, 
     "cut": 1,
@@ -335,6 +340,7 @@ highlights =
     "avalanche": 1, 
     "revenge": 1, 
     "shadowforce": 1,
-
+    "iciclecrash": 1, 
+    "aerialace": 1
   }
 }

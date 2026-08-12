@@ -4241,7 +4241,7 @@ extern "C" void THUMB_BRANCH_SAFESTACK_PokeList_LoadPokeData(PokeListMain *a1, P
     char v10;              // r0
     u8 isEnemy;
     a3->partyPkm = a2;
-    u8 PokeTypes; 
+    int PokeTypes; 
     if (a2)
     {
         a3->Species = PokeParty_GetParam(a2, PF_Species, 0);
