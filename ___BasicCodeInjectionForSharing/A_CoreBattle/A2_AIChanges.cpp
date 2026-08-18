@@ -428,11 +428,10 @@ extern "C"
 
 #pragma region TypeChecksAndEffectiveness
 
-    u8 GetTypeEffectivenessAltered(int a1, int a2)
+    int GetTypeEffectivenessAltered(int a1, int a2)
     {
         TypeEffectiveness result;
         u8 v3;
-        FieldTypeChanges zoneId = checkForFieldEffects();
 
         if (a1 == TYPE_NONE || a2 == TYPE_NONE)
         {
@@ -491,7 +490,7 @@ extern "C"
 
     int GetTypeEffectivenessVsMonAltered(int a1, int a2)
     {
-        u8 TypeEffectiveness; // r4
+        int TypeEffectiveness; // r4
         int v6;               // r0
         int v7;
         int v8;
@@ -512,7 +511,6 @@ extern "C"
     {
         TypeEffectiveness result;
         u8 v3;
-        FieldTypeChanges zoneId = checkForFieldEffects();
 
         if (a1 == TYPE_NONE || a2 == TYPE_NONE)
         {
@@ -561,10 +559,10 @@ extern "C"
 
     int EvaluateTypeEffectivenesssForFighting(int type1, int pokeType, bool isScrappy)
     {
-        u8 TypeEffectiveness; // r4
-        u8 v6;                // r0
-        u8 v7;
-        u8 v8;
+        int TypeEffectiveness; // r4
+        int v6;                // r0
+        int v7;
+        int v8;
         v8 = PokeTypePair_GetType1(pokeType);
         v7 = PokeTypePair_GetType2(pokeType);
 
@@ -1057,7 +1055,7 @@ extern "C"
         }
     };
     
-    u8 getTypeEffectivenessForMove(MoveID move, u8 Type, u8 PokeType, AbilID atkAbility, u8 typeEff, u8 skipabil){
+    unsigned int getTypeEffectivenessForMove(MoveID move, u8 Type, int PokeType, AbilID atkAbility, unsigned int typeEff, u8 skipabil){
         if (skipabil != 1){
             if (atkAbility == ABIL113_SCRAPPY && (Type == TYPE_NORMAL || Type == TYPE_FIGHTING)) return GetTypeEffectivenessVsMonAltered(Type, PokeType);
             if ((Type == TYPE_POISON && atkAbility == ABIL007_CORROSION) || (Type == TYPE_PSYCHIC && atkAbility == ABIL039_INNER_FOCUS))  return GetTypeEffectivenessVsMonAltered(Type, PokeType);
@@ -1841,7 +1839,7 @@ extern "C"
 
     int THUMB_BRANCH_SAFESTACK_Handler_SimulationDamage(ServerFlow *a1, int a2, int a3, int a4, bool isSimulation, bool something)
     {
-        u8 TypeEffectiveness;   // r6
+        unsigned int TypeEffectiveness;   // r6
         BattleMon *DefendingMon; // [sp+14h] [bp-34h]
         BattleMon *AttackingMon; // [sp+18h] [bp-30h]
         __int16 moveParam[20];

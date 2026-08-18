@@ -738,6 +738,8 @@ Label_LowerEnemyEvasion:
 Label_CheckForStatBlockingAbilitiesAndItems:
 	JumpIfHasSideCondition(defender, side_cond.safeguard, &deprioritizeBy10)
 	JumpIfHasSideCondition(defender, side_cond.mist, &deprioritizeBy10)
+	GetHeldItem(defender)
+	JumpIfStoredEQ(item.clear_amulet, &deprioritizeBy10)
 	GetAbilityGuess(defender)
 	JumpIfStoredEQ(ability.contrary, &deprioritizeBy12)
 	JumpIfStoredEQ(ability.defiant, &deprioritizeBy12)
