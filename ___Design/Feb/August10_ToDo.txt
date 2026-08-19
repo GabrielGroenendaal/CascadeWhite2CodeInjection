@@ -190,6 +190,8 @@ TONIGHT TO-DO LIST:
             - Fix the positioning for the final surge trigger event (it's one tile too close to the right)
             - Make sure we're Actor.WaitActionFinish and Message.CloseAll before triggering the battle from the second trigger position.
             - Surge needs to back up one more tile before his last dialogue line. 
+        - Castelia Gym 
+            - Fix the lockout indicator npc 
     - Update the Mastersheet and AI Dooc 
     
 

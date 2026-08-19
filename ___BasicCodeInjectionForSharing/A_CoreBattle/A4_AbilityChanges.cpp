@@ -1826,7 +1826,7 @@ extern "C"
 
     ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddSoundproof(_DWORD *a1)
     {
-        *a1 = 1;
+        *a1 = 2;
         return AmplifierHandlers;
     }
 
@@ -2614,6 +2614,26 @@ extern "C"
             BattleHandler_PopWork(a2, v13);
         }
     }
+    void THUMB_BRANCH_HandlerRattled(int a1, ServerFlow *a2, int a3)
+    {
+    int Value; // r0
+    HandlerParam_ChangeStatStage *v6; // r0
+    if ( a3 == BattleEventVar_GetValue(VAR_DEFENDING_MON) && !BattleEventVar_GetValue(VAR_SUBSTITUTE_FLAG) )
+    {
+        Value = (unsigned __int8)BattleEventVar_GetValue(VAR_MOVE_TYPE);
+        if ( Value == TYPE_DARK || Value == TYPE_BUG || Value == TYPE_GHOST )
+        {
+            v6 = (HandlerParam_ChangeStatStage *)BattleHandler_PushWork(a2, EFFECT_CHANGESTATSTAGE, a3);
+            v6->header.flags |= 0x800000u;
+            v6->poke_cnt = 1;
+            v6->pokeID[0] = a3;
+            v6->rankType = STATSTAGE_SPEED;
+            v6->rankVolume = 3;
+            BattleHandler_PopWork(a2, v6);
+        }
+    }
+    }
+
     ABILITY_TRIGGERTABLE RattledHandlers[] = {
         {EVENT_MOVE_DAMAGE_REACTION_1, (ABILITY_HANDLER_FUNC)HandlerRattled}, // 22
         {EVENT_STAT_STAGE_CHANGE_LAST_CHECK, (ABILITY_HANDLER_FUNC)HandlerRattledIntimidateCheck},
