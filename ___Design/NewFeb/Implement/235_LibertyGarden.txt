@@ -1,0 +1,800 @@
+import messages.script.Msg0300.MSGID;
+
+import event.actors.Actor;
+import event.dialogs.Message;
+import event.dialogs.YesNoWin;
+import event.funfest.Funfest;
+import player.TrainerCard;
+import pokemon.PokeParty;
+import pokemon.Pokedex;
+import pokescript.vm.Math;
+import pokescript.vm.StackCtrl;
+import pokescript.vm.VM;
+import system.EventFlags;
+import system.EventWorks;
+import system.Fade;
+import system.Field;
+import system.Input;
+import system.Runtime;
+import system.Sound;
+import system.text.WordSet;
+import event.Battle;
+import event.EVCamera;
+import system.RTC;
+
+public class MainEvents {
+	public static void main_1() { // @ 0x27b
+		int v16;
+
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 0, 0, 0);
+		v16 = YesNoWin.Show();
+		if (v16 != 0) {
+			Message.Actor(1024, 2, 0, 0);
+			Input.LastKeyWait();
+			Message.CloseActor();
+			goto LABEL_02f4;
+		}
+		Message.Actor(1024, 1, 0, 0);
+		Message.CloseActor();
+		ActionSequence_04bc(0);
+		Runtime.Sleep(8);
+		ActionSequence_04bc(255);
+		Actor.WaitActionFinish();
+		Runtime.ReserveScript(4);
+		Fade.OutBlackQ();
+		Fade.Wait();
+		Sound.SEPlay(2007);
+		Field.ChangeMapRail(36, 0, 2, 11, 3);
+		Sound.SEWait();
+
+		LABEL_02f4:
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_2() { // @ 0x2fa
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 3, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_3() { // @ 0x316
+		int v36;
+
+		Actor.PauseAll();
+		v36 = 0;
+		v36 = TrainerCard.GetSex();
+		if (v36 != 0) {
+			Sound.SEPlay(1351);
+			Actor.FacePlayer();
+			Message.Actor(1024, 5, 0, 0);
+			Input.LastKeyWait();
+			Message.CloseActor();
+			goto LABEL_0363;
+		}
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 4, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+
+		LABEL_0363:
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_4() { // @ 0x369
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 6, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_5() { // @ 0x385
+		int v32;
+		int v33;
+		int v34;
+
+		Actor.PauseAll();
+		v32 = PokeParty.GetPkmCount(0);
+
+		LABEL_038d:
+		if (v32 <= v34) {
+			if (EventWorks.Get(16399) != 1) {
+				goto LABEL_03fc;
+			}
+			Sound.SEPlay(1351);
+			Actor.FacePlayer();
+			Message.Actor(1024, 8, 0, 0);
+			Input.LastKeyWait();
+			Message.CloseActor();
+			goto LABEL_0410;
+		}
+		v33 = PokeParty.GetSpecies(v34);
+		if (v33 != 494) {
+			goto LABEL_03bf;
+		}
+		EventWorks.Set(16399, 1);
+
+		LABEL_03bf:
+		VM.DebugPrint(v33);
+		v34 += 1;
+		goto LABEL_038d;
+
+		LABEL_03fc:
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 7, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+
+		LABEL_0410:
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_6() { // @ 0x416
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 9, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_7() { // @ 0x432
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 10, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_8() { // @ 0x44e
+		Actor.PauseAll();
+		Funfest.Broadcast(17, 0);
+		Sound.SEPlay(1351);
+		Message.PlaceSign(11, 2);
+		Message.ClosePlaceSign();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_9() { // @ 0x468
+		Actor.PauseAll();
+		Funfest.Broadcast(17, 0);
+		Sound.SEPlay(1351);
+		Message.PlaceSign(12, 2);
+		Message.ClosePlaceSign();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_10() { // @ 0x482
+		Actor.PauseAll();
+		Funfest.Broadcast(17, 0);
+		Sound.SEPlay(1351);
+		Message.PlaceSign(13, 2);
+		Message.ClosePlaceSign();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_11() { // @ 0x250
+		Actor.PauseAll();
+		if (EventWorks.Get(16520) == 1){
+			Actor.SetGPos(7, 298, 1, 748, 2);
+			Actor.SetGPos(8, 298, 1, 749, 2);
+			Actor.SetGPos(9, 297, 1, 746, 1);
+			Actor.SetGPos(12, 296, 1, 750, 0);
+		}
+		if (EventWorks.Get(16520) == 2){
+			Actor.SetGPos(7, 298, 1, 748, 2);
+			Actor.SetGPos(8, 298, 1, 749, 2);
+			Actor.SetGPos(9, 297, 1, 746, 1);
+			Actor.SetGPos(12, 296, 1, 750, 0);
+		}
+		Fade.InBlackQ();
+		Fade.Wait();
+		
+		if (EventWorks.Get(16696) == 1) {
+			goto LABEL_026b;
+		}
+		Field.CallPlaceNameDisp();
+
+		LABEL_026b:
+		ActionSequence_04ac(255);
+		Actor.WaitActionFinish();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_12() { // @ 0x4e
+		int v32;
+		int v33;
+		int v34;
+		int v35;
+
+		if (EventWorks.Get(16696) != 0) {
+			return;
+		}
+		if (EventWorks.Get(16578) < 1) {
+			return;
+		}
+		v32 = PokeParty.GetPkmCount(0);
+
+		LABEL_007a:
+		if (v32 <= v34) {
+			if (EventWorks.Get(16394) != 1) {
+				goto LABEL_00db;
+			}
+			EventWorks.Set(16696, 1);
+			return;
+		}
+		v33 = PokeParty.GetSpecies(v34);
+		if (v33 != 494) {
+			goto LABEL_00ac;
+		}
+		EventWorks.Set(16394, 1);
+
+		LABEL_00ac:
+		VM.DebugPrint(v33);
+		v34 += 1;
+		goto LABEL_007a;
+
+		LABEL_00db:
+		v35 = Pokedex.IsSpeciesRegistered(1, 494);
+		if (v35 != 1) {
+			v35 = Pokedex.IsSpeciesRegistered(0, 494);
+			if (v35 != 1) {
+				return;
+			}
+			EventWorks.Set(16696, 1);
+			EventWorks.Set(16394, 3);
+			return;
+		}
+		EventWorks.Set(16696, 1);
+		EventWorks.Set(16394, 2);
+	}
+
+	public static void main_13() { // @ 0x131
+		Actor.PauseAll();
+		Field.CallPlaceNameDisp();
+		Runtime.Sleep(70);
+		Actor.New(308, 747, 2, 251, 105, 0);
+		Actor.WalkRoute(251, 299, 747, 0, 8, 0);
+		Actor.WaitActionFinish();
+		ActionSequence_052c(251);
+		Actor.WaitActionFinish();
+		Sound.BGMPlay(1089);
+		ActionSequence_0244(251);
+		Actor.WaitActionFinish();
+		if (EventWorks.Get(16394) == 1) {
+			Message.ActorEx(1024, 14, 251, 0, 0);
+			goto LABEL_01de;
+		}
+
+		LABEL_0194:
+		if (EventWorks.Get(16394) == 2) {
+			Message.ActorEx(1024, 15, 251, 0, 0);
+			goto LABEL_01de;
+		}
+
+		LABEL_01b9:
+		if (EventWorks.Get(16394) == 3) {
+			Message.ActorEx(1024, 16, 251, 0, 0);
+			goto LABEL_01de;
+		}
+
+		LABEL_01de:
+		Message.CloseAll();
+		ActionSequence_04b4(251);
+		Actor.WaitActionFinish();
+		Runtime.Sleep(30);
+		Message.ActorEx(1024, 17, 251, 0, 0);
+		Message.CloseAll();
+		ActionSequence_04bc(251);
+		Actor.WaitActionFinish();
+		Message.ActorEx(1024, 18, 251, 0, 0);
+		Message.CloseAll();
+		Actor.WalkRoute(251, 298, 762, 0, 8, 1);
+		Runtime.Sleep(20);
+		ActionSequence_04ec(255);
+		Actor.WaitActionFinish();
+		Field.PlayMapBGM();
+		Actor.Hide(251);
+		EventWorks.Set(16696, 2);
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+		public static void main_14() { // @ 0x4d6
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Sound.PVPlay(26, 0);
+		Message.System(19, 0);
+		Sound.PVWait();
+		Message.WaitAdvance();
+		Message.CloseAll();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_15() { // @ 0x500
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Sound.PVPlay(101, 0);
+		Message.System(20, 0);
+		Sound.PVWait();
+		Message.WaitAdvance();
+		Message.CloseAll();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_16() { // @ 0x500
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Sound.PVPlay(125, 0);
+		Message.System(21, 0);
+		Sound.PVWait();
+		Message.WaitAdvance();
+		Message.CloseAll();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	// Speaking with Surge directly after all this hassle. 
+	public static void main_17(){
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 54, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	// Initial Surge Confrontation
+	public static void main_18(){
+		int SURGE_ENTITY = 7;
+		int dayPart;
+		
+		Actor.SetGPos(7, 297, 1, 755, 0);
+		Actor.SetGPos(8, 298, 1, 756, 0);
+		Actor.SetGPos(9, 298, 1, 755, 0);
+		Actor.SetGPos(12, 296, 1, 755, 0);
+		Message.ActorEx(1024, 56, SURGE_ENTITY, 2, 1);
+		Message.CloseAll();
+
+		TurnSouth8F(255);
+		ShowExclamationMark(255);
+		Actor.WaitActionFinish();
+		
+		EVCamera.Init();
+          EVCamera.Unbind();
+          EVCamera.MoveTo(2.3652344f, 0.0f, 237.0f, 4752.0f, 16.0f, 12080.0f, 32); // CHANGE THIS LATER
+          EVCamera.Wait();
+            
+		Message.ActorEx(1024, 22, SURGE_ENTITY, 2, 1);
+		Message.CloseAll();
+		EVCamera.MoveToDefault(64);
+		SurgeApproaches(7);
+		Runtime.Sleep(4);
+		SurgeApproaches(8);
+		ElectabuzzApproaches(12);
+		ElectrodeApproaches(9);
+		Runtime.Sleep(36);
+		TurnEast8F(255);
+		Actor.WaitActionFinish();
+		EVCamera.Wait();
+          EVCamera.Rebind();
+          EVCamera.End();
+            
+		Message.ActorEx(1024, 23, SURGE_ENTITY, 2, 0);
+		Input.LastKeyWait();
+		Message.CloseAll();
+		SurgeWalksNorth(7);
+		ElectrodeResponsesToSurgeWalkingNorth(9);
+		TurnNorth8F(255);
+		Message.ActorEx(1024, 24, SURGE_ENTITY, 2, 0);
+
+		Actor.WaitActionFinish();
+		Input.LastKeyWait();
+		Message.CloseAll();
+		EventWorks.Set(16520, 1);
+		SurgeWalksSouth(7);
+		ElectrodeWalksSouth(9);
+		PlayerFollowSurge(255);
+
+		Message.ActorEx(1024, 25, SURGE_ENTITY, 2, 0);
+		Actor.WaitActionFinish();
+		Input.LastKeyWait();
+		Message.CloseAll();
+		
+		SurgeWalksOneTileNorth(7);
+		TurnEast8F(255);
+		Message.ActorEx(1024, 26, SURGE_ENTITY, 2, 0);
+		Actor.WaitActionFinish();
+		Input.LastKeyWait();
+		Message.CloseAll();
+
+		HopLeft(7);
+		Message.ActorEx(1024, 27, SURGE_ENTITY, 2, 1);
+		Actor.WaitActionFinish();
+		Message.CloseAll();
+		ShowExclamationMark(255);
+		Actor.WaitActionFinish();
+
+		SurgeAdvances(7);
+		PlayerBacksup(255);
+		Message.ActorEx(1024, 28, SURGE_ENTITY, 2, 0);
+		dayPart = RTC.GetDayPart();
+		if (dayPart == 3){
+			Message.ActorEx(1024, 31, SURGE_ENTITY, 2, 0);
+		}
+		else if (dayPart == 4) {
+			Message.ActorEx(1024, 31, SURGE_ENTITY, 2, 0);
+		}
+		else if (dayPart == 2) {
+			Message.ActorEx(1024, 30, SURGE_ENTITY, 2, 0);
+		}
+		else {
+			Message.ActorEx(1024, 29, SURGE_ENTITY, 2, 0);
+		}
+		Message.ActorEx(1024, 32, SURGE_ENTITY, 2, 0);
+		Message.CloseAll();
+		WalkEastTwoTile(7);
+		Message.ActorEx(1024, 33, SURGE_ENTITY, 2, 0);
+		Actor.WaitActionFinish();
+		Message.CloseAll();
+		TurnWest8F(7);
+		Actor.WaitActionFinish();
+		Message.ActorEx(1024, 34, SURGE_ENTITY, 2, 0);
+		Message.CloseAll();
+		Runtime.FinishSubEvents();
+	}
+
+	// Trigger 2
+	public static void main_19(){
+		int SURGE_ENTITY = 7;
+		int yesNo;
+
+		ShowExclamationMark(7);
+		Actor.WaitActionFinish();
+		Message.ActorEx(1024, 35, SURGE_ENTITY, 2, 1);
+		Message.CloseAll();
+		EVCamera.Init();
+          EVCamera.Unbind();
+          EVCamera.MoveTo(2.3652344f, 0.0f, 127.0f, 4752.0f, 16.0f, 11968.0f, 32); // CHANGE THIS LATER
+		WalkWestOneTile(7);
+		EVCamera.Wait();
+		Message.ActorEx(1024, 36, SURGE_ENTITY, 2, 0);
+		Message.ActorEx(1024, 37, SURGE_ENTITY, 2, 0);
+		yesNo = YesNoWin.Show();
+		if (yesNo == 1) {
+			Message.CloseAll();
+	          PlayerBacksup(255);
+	          Message.ActorEx(1024, 38, SURGE_ENTITY, 2, 0);
+	          Actor.WaitActionFinish();
+	          Message.CloseAll();
+	          EVCamera.MoveToDefault(32);
+	          Message.ActorEx(1024, 58, SURGE_ENTITY, 2, 0);
+	          EVCamera.Wait();
+	          EVCamera.Rebind();
+	          EVCamera.End();
+	          Message.CloseAll();
+	          Actor.WaitActionFinish();
+			EventWorks.Set(16520, 2);
+			goto LABEL_EndSurgeEncounter2;
+		}
+		Message.CloseAll();
+		Sound.BGMFadeOut(120);
+		Message.ActorEx(1024, 39, SURGE_ENTITY, 2, 0);
+		Message.CloseAll();
+		EVCamera.MoveToDefault(32);
+		SurgeReturnsToPosition(7);
+		EVCamera.Wait();
+        EVCamera.Rebind();
+        EVCamera.End();
+        Message.ActorEx(1024, 40, SURGE_ENTITY, 2, 1);
+		Message.CloseAll();
+        Actor.WaitActionFinish();
+		sub_SurgeBattle();
+		
+		LABEL_EndSurgeEncounter2:
+		Runtime.FinishSubEvents();
+	}
+
+	public static void main_20(){
+		int surgeX;
+		int surgeZ;
+		int SURGE_ENTITY = 7;
+		ShowExclamationMark(7);
+		Actor.WaitActionFinish();
+		Actor.GetGPos(7, surgeX, surgeZ);
+		if (surgeX == 298){
+			WalkWestOneTile(7);
+			Actor.WaitActionFinish();
+		}
+		Message.ActorEx(1024, 52, SURGE_ENTITY, 2, 0);
+		Message.CloseAll();
+		Sound.BGMFadeOut(120);
+		HopLeft(7);
+		Message.ActorEx(1024, 53, SURGE_ENTITY, 2, 1);
+		Actor.WaitActionFinish();
+		Message.CloseAll();
+		sub_SurgeBattle();
+		Runtime.FinishSubEvents();
+	}
+
+	static void sub_SurgeBattle(){
+		int SURGE_ENTITY = 7;
+		int isVictory;
+	
+		
+		Battle.CallTrainerBattle(766, 0, 0);
+		isVictory = Battle.IsTrainerVictory();
+		if (isVictory == 0) {
+			Battle.CallTrainerLose();
+			return;
+		}
+		Battle.EndTrainerBattle();
+		label_skipbattle: 
+		SurgeBacksUp(7);
+		Actor.WaitActionFinish();
+		Message.ActorEx(1024, 41, SURGE_ENTITY, 2, 0);
+		Message.CloseAll();
+
+		Field.PlayMapBGM();
+		EVCamera.Init();
+          EVCamera.Unbind();
+          EVCamera.MoveTo(2.3652344f, 0.0f, 237.0f, 4688.0f, 16.0f, 11968.0f, 32); // CHANGE THIS LATER
+		WalkEastTwoTiles(0);
+		EVCamera.Wait();
+		Actor.WaitActionFinish();
+		TurnWest8F(255);
+		Message.ActorEx(1024, 42, 0, 3, 0);
+		Message.CloseAll();
+		HopLeft(7);
+		Message.ActorEx(1024, 43, SURGE_ENTITY, 2, 1);
+		Actor.WaitActionFinish();
+		Message.CloseAll();
+		Message.ActorEx(1024, 44, SURGE_ENTITY, 2, 0);
+		Message.CloseAll();
+		
+		Message.ActorEx(1024, 45, 0, 3, 0);
+		Message.CloseAll();
+		
+		TurnEast8F(255);
+		ShowExclamationMark(7);
+		Actor.WaitActionFinish();
+
+		Message.ActorEx(1024, 46, SURGE_ENTITY, 2, 0);
+		Message.CloseAll();
+		
+		EVCamera.MoveToDefault(32);
+
+		Message.ActorEx(1024, 47, SURGE_ENTITY, 2, 0);
+		EVCamera.Wait();
+          EVCamera.Rebind();
+          EVCamera.End();
+		Message.CloseAll();
+		TurnEast8F(7);
+		Actor.WaitActionFinish();
+		Message.ActorEx(1024, 48, SURGE_ENTITY, 2, 0);
+		Message.CloseAll();
+		TurnEast8F(7);
+		Actor.WaitActionFinish();
+		Message.ActorEx(1024, 57, SURGE_ENTITY, 2, 0);
+		Message.CloseAll();
+		WalkWestOneTile(7);
+		Actor.WaitActionFinish();
+		Message.ActorEx(1024, 49, SURGE_ENTITY, 2, 0);
+		Message.CloseAll();
+
+		Global2805(234, 1);
+		Message.ActorEx(1024, 50, SURGE_ENTITY, 2, 0);
+		Message.CloseAll();
+
+		WalkNorth1Tile(7);
+		TurnSouth8F(7);
+		Actor.WaitActionFinish();
+		Message.ActorEx(1024, 51, SURGE_ENTITY, 2, 0);
+		Message.CloseAll();
+		EventWorks.Set(16520, 5);
+		EventFlags.Set(1520 + 766);
+		
+	}
+	static meta void ActionSequence_0244(int npcId) : VActionSequence {
+		Action000d(1);
+		Action000e(2);
+	}
+
+	static meta void ActionSequence_04ac(int npcId) : VActionSequence {
+		Action000f(1);
+	}
+
+	static meta void ActionSequence_04b4(int npcId) : VActionSequence {
+		Action000b(1);
+	}
+
+	static meta void ActionSequence_04bc(int npcId) : VActionSequence {
+		Action000e(1);
+	}
+
+	static meta void ActionSequence_04ec(int npcId) : VActionSequence {
+		Action0021(1);
+	}
+
+	static meta void ActionSequence_052c(int npcId) : VActionSequence {
+		Action004b(1);
+	}
+
+	static meta void SurgeApproaches(int npcId) : VActionSequence {
+        Action000c(7);
+        Action0022(1);
+    }
+    static meta void SurgeWalksNorth(int npcId) : VActionSequence {
+        Action000c(2);
+    }
+
+    static meta void SurgeReturnsToPosition(int npcId) : VActionSequence {
+        Action000f(1);
+        Action0022(1);
+        
+    }
+
+     static meta void SurgeWalksOneTileNorth(int npcId) : VActionSequence {
+        Action000c(1);
+    }
+
+    static meta void SurgeWalksSouth(int npcId) : VActionSequence {
+        Action000d(3);
+    }
+
+	static meta void ElectrodeWalksSouth(int npcId) : VActionSequence {
+		Action003f(1);
+        Action000d(1);
+    }
+    static meta void ElectrodeResponsesToSurgeWalkingNorth(int npcId) : VActionSequence {
+    		Action003f(1);
+        Action000c(1);
+        Action0021(1);
+
+    }
+    
+    static meta void ElectabuzzApproaches(int npcId) : VActionSequence {
+        Action000c(5);
+    }
+    static meta void ElectrodeApproaches(int npcId) : VActionSequence {
+        Action0010(9);
+        Action003f(1);
+        Action0012(2);
+        Action0010(1);
+        Action0013(1);
+        Action0011(1);
+    }
+    
+	static meta void HopLeft(int npcId) : VActionSequence {
+        Action0032(1);
+    }
+
+    static meta void SurgeAdvances(int npcId) : VActionSequence {
+        Action000e(1);
+    }
+
+	 static meta void PlayerBacksup(int npcId) : VActionSequence {
+        Action0047(1);
+        Action000e(1);
+        Action0048(1);
+    }
+     static meta void SurgeBacksUp(int npcId) : VActionSequence {
+        Action0047(1);
+        Action000f(1);
+        Action0048(1);
+    }
+
+
+
+	static meta void HopRight(int npcId) : VActionSequence {
+        Action0033(1);
+    }
+
+	static meta void TurnNorth8F(int npcId) : VActionSequence {
+		Action0020(1);
+	}
+
+	static meta void TurnSouth8F(int npcId) : VActionSequence {
+		Action0021(1);
+	}
+
+	static meta void TurnEast8F(int npcId) : VActionSequence {
+		Action0023(1);
+	}
+
+	static meta void WalkSouthOneTile(int npcId) : VActionSequence {
+		Action000d(2);
+	}
+
+	static meta void WalkSouth1Tile(int npcId) : VActionSequence {
+		Action000d(1);
+	}
+	static meta void WalkWestOneTile(int npcId) : VActionSequence {
+		Action000e(1);
+	}
+
+	static meta void WalkEastTwoTiles(int npcId) : VActionSequence {
+		Action000f(2);
+	}
+
+	static meta void WalkNorth1Tile(int npcId) : VActionSequence {
+		Action000c(1);
+	}
+	
+	static meta void TurnWest8F(int npcId) : VActionSequence {
+		Action0022(1);
+	}
+	static meta void WalkEastTwoTile(int npcId) : VActionSequence {
+		Action000f(2);
+	}
+	
+	static meta void ShowExclamationMark(int npcId) : VActionSequence {
+		Action004b(1);
+	}
+	static meta void PlayerFollowSurge(int npcId) : VActionSequence {
+            Action003f(2);
+            Action0023(1);
+            Action0021(1);
+       
+     }
+	static meta void HopDown(int npcId) : VActionSequence {
+            Action0031(1);
+       
+     }
+	static meta void Global2805(int a1, int a2) : VGlobalCall[2805];
+	static native void Action000d(int amount) : 0xd;
+	static native void Action000f(int amount) : 0xf;
+	static native void Action000c(int amount) : 0xc;
+	static native void Action000e(int amount) : 0xe;
+	static native void Action000b(int amount) : 0xb;
+	static native void Action0010(int amount) : 0x10;
+	static native void Action0011(int amount) : 0x11;
+	static native void Action0012(int amount) : 0x12;
+	static native void Action0013(int amount) : 0x13;
+	static native void Action0020(int amount) : 0x20;
+	static native void Action0021(int amount) : 0x21;
+	static native void Action0022(int amount) : 0x22;
+	static native void Action0023(int amount) : 0x23;
+	static native void Action0031(int amount) : 0x31;
+	static native void Action0032(int amount) : 0x32;
+	static native void Action0033(int amount) : 0x33;
+	static native void Action0036(int amount) : 0x36;
+	static native void Action003f(int amount) : 0x3f;
+	static native void Action004b(int amount) : 0x4b;
+	static native void Action0047(int amount) : 0x47;
+	static native void Action0048(int amount) : 0x48;
+	static native void Action00a1(int amount) : 0xa1;
+	static native void Action000b(int amount) : 0xb;
+}
