@@ -105,7 +105,7 @@ const u16 BulletproofMoves[21] = {
 //     IT0257_TERA_EVIOLITE};
 
 extern "C" u8 isTeraItem(u16 teraItem){
-    return (teraItem == 215 || teraItem == 228 || teraItem == 257 || (teraItem >= 298 && teraItem <= 313));
+    return (teraItem == 228 || teraItem == 257 || (teraItem >= 298 && teraItem <= 313));
 }
 // const int FLAIL_POWER_TABLE[6] = {
 //     0xC80001, 0x960004, 0x640009, 0x500010, 0x280020, 0x140030};
@@ -748,12 +748,6 @@ extern "C"
             ServerControl_FieldEffectCore(a1, 1, Condition_MakePermanent(), 0);
         }
 
-        if (field == FIELD_SMOKEBOMB)
-        {
-            addAnimation(a1, MOVE114_HAZE, 6, 6);
-            addMessage(a1, 203);
-            ServerControl_FieldEffectCore(a1, 10, Condition_MakePermanent(), 0);
-        }
 
         random = Condition_MakePermanent();
         // Chargestone Cave
@@ -834,6 +828,14 @@ extern "C"
                 addMessage(a1, 262);
                 ServerControl_FieldEffectCore(a1, 0xC, Condition_MakePermanent(), 0);
             }
+
+            if (field == FIELD_SMOKEBOMB || trainerId == 192)
+            {
+                addAnimation(a1, MOVE114_HAZE, 6, 6);
+                addMessage(a1, 266); // needs a unique message
+                ServerControl_FieldEffectCore(a1, 10, Condition_MakePermanent(), 0);
+            }
+
         }
 
         // Overworld Weather Setter

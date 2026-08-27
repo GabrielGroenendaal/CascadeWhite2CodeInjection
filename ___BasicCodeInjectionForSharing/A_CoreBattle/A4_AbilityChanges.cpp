@@ -4333,10 +4333,6 @@ extern "C" void THUMB_BRANCH_SAFESTACK_PokeList_LoadPokeData(PokeListMain *a1, P
                 a3->Speed = PML_PersonalGetParamSingle(a3->Species, a3->Forme, Personal_SPE);
                 a3->SpecialAttack = PML_PersonalGetParamSingle(a3->Species, a3->Forme, Personal_SPA);
                 a3->SpecialDefense = PML_PersonalGetParamSingle(a3->Species, a3->Forme, Personal_SPD);
-                a3->CurrentHP = PML_PersonalGetParamSingle(a3->Species, a3->Forme, Personal_HP);
-                a3->MaxHP = PML_PersonalGetParamSingle(a3->Species, a3->Forme, Personal_HP);
-                // a3->CurrentHP = PokeParty_GetParam(a3->partyPkm, PF_NowHP, 0);
-                // a3->MaxHP = PokeParty_GetParam(a3->partyPkm, PF_MaxHP, 0);
             }
             else
             {
@@ -4345,9 +4341,9 @@ extern "C" void THUMB_BRANCH_SAFESTACK_PokeList_LoadPokeData(PokeListMain *a1, P
                 a3->Speed = PokeParty_GetParam(a3->partyPkm, PF_SPE, 0);
                 a3->SpecialAttack = PokeParty_GetParam(a3->partyPkm, PF_SPA, 0);
                 a3->SpecialDefense = PokeParty_GetParam(a3->partyPkm, PF_SPD, 0);
-                a3->CurrentHP = PokeParty_GetParam(a3->partyPkm, PF_NowHP, 0);
-                a3->MaxHP = PokeParty_GetParam(a3->partyPkm, PF_MaxHP, 0);
             }
+            a3->CurrentHP = PokeParty_GetParam(a3->partyPkm, PF_NowHP, 0);
+            a3->MaxHP = PokeParty_GetParam(a3->partyPkm, PF_MaxHP, 0);
             // PokeTypes = BattleMon_GetPokeType(mon);
             // a3->Type1 = PokeTypePair_GetType1(PokeTypes);
             // a3->Type2 = PokeTypePair_GetType2(PokeTypes);

@@ -17,6 +17,8 @@ NORMAL TO-DO LIST:
         - Dermatologist 
 
 
+504 new mandatory 
+
 
 TONIGHT TO-DO LIST: 
     - Bug Fixes: 
@@ -25,161 +27,15 @@ TONIGHT TO-DO LIST:
             - I wonder if I can just disable the elevator unless you've beaten all the other trainers. 
         - Lt. Surge 
             - Test our fixes to the script. 
-        - Castelia Gym 
-            - Fix the lockout indicator npc 
-            - Change Harlequin Anders to an Artist?
         - Calc 
             - Inner Focus is bugged. It's showing neutral effectiveness vs. Psychic types 
         - Text 
             - When a Pokemon changes into the Fairy type, the text is bugged. 
-    - Move Changes: 
-        - Hyper Fang (+10 Atk) 
-        - Bubblebeam (30% speed drop chance)
-        - Dig (+10 Atk)
+    
     - Finish our trainer changes.
-        NEW TRAINER: 
-            A Plasma Grunt found by the Virbank Gate. 
 
-            Level 24 Dragonair @ Damp Rock (Ability: Swift Swim) (Dragonbreath, Brine, Thunder Wave, Bind)
-            Level 24 Whimsicott @ Icy Rock (Ability: Fluffy) (Leech Seed, U-Turn, Comet Punch, Icy Wind)
-            Level 24 Golett @ Heat Rock (Ability: Well Baked Body) (Bulldoze, Shadow Punch, Fire Punch, Spikes)
-            Level 25 Castform @ Ability Drill (Ability: Forecast) (Weather Ball)
-        
-        Burgh Split: 
-            Policeman Rosco: 
-                Now rewards 5x Green Shards 
-                Herdier             |  Intim -> Fluffy 
-                Poochyena           |  Level 26, Sucker Punch -> Hyper Fang
-            Policeman Petrel: 
-                Now rewards 5x Green Shards. 
-                Metang              |  remove Quick Claw
-                Pignite             |  Dark Pulse -> Payback 
-            Harlequin Flops
-                Ditto               |  Leftovers -> Pokedoll 
-            Harlequin Jangles 
-                Mankey              |  Eviolite -> Focus Sash
-            Cyclist Lionel: 
-                Magnemite           |  Doduo @ Focus Sash (Ability: Run Away) (Drill Run, Drill Peck, Flail, Reversal)
-                Blitzle             |  Sap Sipper -> Reckless, Double Kick -> Jump Kick 
-            Musician Boris: 
-                Jigglypuff          |  Magic Bounce -> Aerilate, Relic Song -> Uproar
-            Fisherman Hubert: 
-                Seel                |  Neutral Nature
-            Janitor Caleb:
-                Whiscash            |  Abil 4, Berserk
-            Backpacker Kendall: 
-                Exeggcute           |  Shell Armor -> Aftermath
-                Pupitar             |  Crunch -> Earthquake
-            Clerk Britney: 
-                Piloswine           |  Rock Gem -> Passho Berry, Mud bomb -> Bulldoze, Freeze Dry -> Icicle Spear
-            Clerk Gilligan: 
-                Ferroseed           |  Spikes -> Stealth Rock 
-            Lt. Surge 
-                Octillery           |  Seed Bomb -> Charge Beam
-                Electrode           |  Rollout -> Seed Bomb
-            Harlequin Anders 
-                Smeargle            |  Lunge -> Aqua Cutter
-        
-        Elesa Split: 
-            Backpacker Roland: 
-                Breloom             |  Arm Thrust -> Mach Punch
-            Lady Lina: 
-                Swanna              |  Water Gem -> Charti Berry
-            Ranger Anja: 
-                Sawsbuck-Summer     |  Rock Climb -> Rock Slide 
-            Erika: 
-                Ninetales           |  Fire Gem -> Eject Button,  Mystical Fire -> Fiery Dance
-                Beautifly           |  Scorching Swarm -> Bug Buzz,  Moonblast -> Fairy Wind
-            Rich Boy Rolan 
-                PorygonZ            |  Level 37 Persian @ Silk Scarf (Ability: Exploit) (Slash, Pay Day, Thunderbolt, Hyper Voice)
-            Lass Patty: 
-                Rotom               |  Thunderbolt -> Shock Wave
-            Lady Colette:
-                Electrode           |  Air Balloon -> Focus Sash,  Discharge -> Parabolic Zap, Flash Cannon -> Iron Head, Bug Buzz -> Flail
-                Raichu              |  Swellow @ Power Herb (Ability: Thunder Armor) (Fly, Crush Claw, Tailwind, Acrobatics)
-            Elesa: 
-                Minun               |  Psychic Noise -> Electro Ball
-                Plusle              |  Focus Sash -> Air Balloon
-                Glaceon             |  Ice Beam -> Seething Cold, Icy Wind -> Dazzling Gleam
-                Zebstriaka          |  Reckless -> Rock Head
-        
-        Clay Split: 
-            Janine: 
-                Lucario             |  Psychic -> Detect
-            Worker Tavarius:    
-                Diglett             |  Choice Scarf -> Jaboca Berry, ++Endeavor
-                Gligar              |  Eviolite -> Rowap Berry 
-                Cacturne            |  Sludge Bomb -> Baneful Bunker
-            Worker Tyler 
-                Stoutland           |  Ice Fang -> Icicle Crash
-            Worker Herman: 
-                Torkoal             |  Spin Out -> Gyro Ball
-                Heatmor             |  Fire Lash, Iron Head, Smokescreen, Power Whip
-        
-        Skyla Split: 
-            Ace Trainer Geoff 
-                Cacturne            |  Accelgor @ Expert Belt (Ability: Infiltrator) (Signal Beam, Sludge Bomb, Giga Drain, Water Pulse)
-            Worker Cairn 
-                Sableye             |  Fury Swipes -> Dark Pulse 
-            Hiker Otto 
-                Swap Carracosta and Gigalith position
-                Probopass           |  Sawsbuck-Summer @ Chople Berry (Ability: Rock Head) (Wood Hammer, Head Smash, Wild Charge, Double Team)
-                Gigalith            |  Electric Gem -> Power Herb, Charge Beam -> Electro Shot
-            Hiker Jameson 
-                Flareon             |  Fire Gem -> Passho Berry, Flash Fire -> Guts, Flare Blitz -> Blaze Kick, Double-Edge -> Quick Attack 
-            Ranger Briana 
-                Sceptile            |  Cell Battery -> Yache Berry, Dragon Claw -> Dragon Pulse, Acrobatics -> Worry Seed 
-                Serperior           |  Magnet -> Blinders 
-            Scientist Ronald 
-                Magnezone           |  Snorlax @ Chople Berry (Ability: Thick Fat) (Supercell Slam, Bulk Up, Avalanche, Play Rough)
-            Ace Trainer Shaye: 
-                Mamoswine           |  Rowap Berry -> Salac Berry, Earth Power -> High Horsepower, Rock Slide -> Endure 
-                Zebstrika           |  Flamethrower -> Flare Blitz
-                Krookadile          |  Muscle Band -> Blinders, Intimidate -> Tinted Lens, Wicked Blow -> Brutal Swing, Thunder Fang -> Earthquake, Swagger -> Dragon Dance
-            Ace Trainer Vicki 
-                Rotom               |  51 > 52, ++Destiny Bond 
-                Illumise            |  Focus Sash -> Covert Cloak 
-                Kecleon             |  Assault Vest -> Jaboca Berry, Sucker Punch -> Fake Out, Dragon Tail -> Wrap
-                Gengar              |  Zoroark @ Wise Glasses (Ability: Trace) (Dark Pulse, Relic Song, Flamethrower, Sludge Bomb)
-            Ace Trainer Lydon: 
-                Noctowl             |  Moonblast -> Air Slash
-                Dewgong             |  Wiseglasses -> Icy Rock, Aurora Beam -> Freeze Dry
-                Lapras              |  Icy Rock -> Zoom Lens, Hyper Voice -> Slam, Thunderbolt -> Thunder
-            Ace Trainer Mary: 
-                Rapidash            |  Electric Gem -> Heat Rock,  Flame Body -> Reckless, Play Rough -> Head Charge, Wild Charge -> Volt Tackle
-                Sunflora            |  Sunflora @ Choice Scarf (Ability: Solar Power) (Heat Wave, Solarbeam) 
-            Socialite Grace: 
-                Starmie             |  Moved to Slot 1
-                Lilligant           |  Moved to Slot 4, Chlorophyll -> Overgrow, Solarbeam -> Petal Dance, Teeter Dance -> Sleep Powder 
-            Gentleman Daniel:     
-                Absol               |  Mean Look -> U-turn, Parting Shot -> Foul Play
-                Murkrow             |  Foul Play, Mean Look, Baton Pass, Hurricane 
-            Pokefan Jude 
-                Bonsly              |  Level 54 -> 48,  Eviolite -> Mascot Badge 
-            Sabrina: 
-                Musharna:           |  Moonlight -> Cosmic Power, Kee Berry -> Leftovers, Magic Bounce -> Bad Dreams 
-            Pilot Flynn: 
-                Magnezone           |  Magnet -> Blaze Drive,  Thunder Wave -> Technoblast
-                Gliscor:            |  Dual Wingbeat -> Sky Drop,  Rock Slide -> Facade
-            Pilot Winslow 
-                Vanilluxe           |  Swagger -> Toxic Spikes, Gunk Shot -> Swagger
-                Golduck             |  Siglyph @ Ice Gem (Ability: Magic Guard) (Weather Ball, Imprison, Air Slash, Earth Power)
-                Rotom-Frost         |  Froslass @ Assault Vest (Ability: Levitate) (Seething Cold, Shadow Ball, Hurricane, Draining Kiss)
-            Pilot Leonard: 
-                Jumpluff            |  Comet Punch -> Follow Me
-                Scizor              |  Emolga @ Light Clay (Ability: Motor Drive) (Thunder, Hurricane, Light Screen, Reflect)
-                Simipour            |  Golduck @ Flying Gem (Ability: Swift Swim) (Aqua Tail, Psychic, Acrobatics, Fake Out)
-            Pilot Ewing: 
-                Dodrio              |  Scizor @ Brightpowder (Ability: Technician) (Bullet Punch, Clamp, Bug Bite, Steel Wing)
-                Lunatone            |  Light Screen -> Fairy Wind 
-                Aerodactyl          |  Intimidate -> Rock Head, (Stone Edge -> Head Smash)
-            Pilot Chase: 
-                Togekiss            |  Air Slash -> Dazzling Gleam, Aura Sphere -> Force Palm
-                Drifblim            |  Substitute -> U-Turn
-                Machamp             |  Knock Off -> Substitute
-                Braviary            |  Wacan Berry -> Power Herb, Roost -> Recycle
-              ++Beedrill @ Scope Lens (Ability: Levitate) (Fury Cutter, Poison Tail, Drill Run, Drill Peck)
-            
+   \
+
         Marlon Split:   
             Backpacker Blossom: 
                 ++Sawsbuck-Summer @ Normal Gem (Ability: Sap Sipper) (Petal Blizzard, Rock Climb, Megahorn, Retaliate)
@@ -188,101 +44,8 @@ TONIGHT TO-DO LIST:
                 Kricketune          |  Focus Sash -> Blinders, Hyper Voice -> Boomburst, Chatter, 
                 Luvdisc (Moonblast -> Alluring Voice)
                 ++
+   
     - Dex Changes 
-        - AI Ability 
-            Gastly/Haunter/Gengar: 
-                Abil 6: Cursed Body -> Bad Dreams 
-            Drowzee / Hypno
-                Abil 6: Cursed Body -> Prankster
-            Krookadile Line: 
-                Abil 6: Intimidate -> Tinted Lens 
-            Barboach / Whiscash 
-                Abil 4: Berserk 
-        - Kanto
-            Tauros 
-                Level 36++: Rest 
-                Level 39: Rest -> Body Slam 
-            Espeon: 
-                Abil 1: Air Lock -> Keen Senses 
-            Venonat/Venomoth: 
-                +5 SpA 
-                -5 SpD 
-            Oddish line 
-                Level 28: Petal Dance 
-                Level 34: Sleep Powder 
-                Level 37: Dazzling Gleam -> Draining Kiss
-            Seel 
-                Abil 1: Keen Senses
-                +5 SpA 
-            Dewgong: 
-                +5 SpA
-            Eevee 
-                -5 Atk 
-                -5 SpA 
-                HP: 70  (+15)
-                Atk: 70  (+20)
-                Def: 50  
-                SpA: 65  (+20)
-                SpD: 75  (+10)
-                Spe: 85  (+30)
-                BST: 420 (+95)
-            Pikachu 
-                -10 Atk 
-                +10 Defense
-                +5 HP 
-                -5 SpA
-                HP: 55  (+20)
-                Atk: 70  (+15)
-                Def: 50  (+10)
-                SpA: 70  (+20)
-                SpD: 65  (+15)
-                Spe: 100 (+10)
-                BST: 410 
-            Raichu: 
-                +5 Speed 
-                +5 Atk 
-                +5 SpA 
-                -5 HP
-            Lapras 
-                +10 Defense 
-                +10 Special Defense 
-            Ditto 
-                -2 HP
-            Dratini / Dragonair
-                - Abil 1: Marvel Scale -> Swift Swim 
-            Vaporeon 
-                Abil 3: Swift Swim
-        - Johto 
-            Octillery: 
-                +5 Speed
-            Phanpy 
-                +5 Speed 
-            Donphan 
-                +15 Speed 
-            Cyndaquil line: 
-                Level 27: Gyro Ball -> Reversal 
-                Level 40: Reversal -> Gyro Ball 
-            Snubbull    
-                Abil 2: Quick Feet -> Rattled 
-                Evolves at level 24 
-                Level 1: Circle Throw -> Reversal
-                Level 36->35: Focus Punch 
-                Level 37++: Present
-                Level 47->46: Hammer Arm 
-                Level 51: Super Fang -> Encore
-        - Hoenn 
-            Minun: 
-                +5 Defense 
-                +5 Special Defense 
-            Plusle 
-                +5 Defense 
-                +5 Special Defense 
-            Pelipper: 
-                +10 Speed
-                Level 1: Whirlpool -> Aeroblast 
-                Level 59: Hydro Pump -> Water Spout 
-            Makuhita: 
-                Level 14: Endure -> Bullet Punch
             Spinda: 
                 Level 22: Extrasensory -> Psywave
                 Level 28: Hyper Voice -> Tri Attack
@@ -290,36 +53,35 @@ TONIGHT TO-DO LIST:
                 ++Level 39: Sucker Punch  
                 Level 45: Brutal Swing -> Head Charge
                 Level 52: Double-Edge -> Brutal Swing
-                Level 55: Spin Out -> Psycho Boost
-        - Sinnoh: 
-            Kricketune 
-                +5 SpD 
-                +10 Speed 
-                Level 31: Alluring Voice -> Bug Buzz 
-                Level 38: Bug Buzz -> Alluring Voice 
-                Level 41: Twineedle -> Slash 
-                ++Level 41: Night Slash
-                Level 44->43: Slash -> Twineedle 
-                ++Level 46: Relic Song
-        - Unova 
-            Krookadile: 
-                Abil 1: Rivalry -> Intimidate
-            Throh: 
-                Abil 2: Mold Breaker -> Rivalry
-            Blitzle: 
-                Abil 2: Reckless 
-                Abil 3: Lightning-Rod 
-            Vanillish 
-                Can evolve to Vanilluxe with Water Stone 
-            Simisear / Simisage / Simipour 
-                Level 43: Water / Fire / Grass Pledge
+                Level 55: Spin Out -> Psycho Boost  
+
+            Meloetta: 
+                1: Quick Attack 
+                5: Confusion 
+                11: Sing 
+                16: Teeter Dance 
+                20: Acrobatics 
+                25: Low Kick 
+                30: Psychic Noise 
+                36: Echoed Voice 
+                40: U-Turn 
+                46: Victory Dance
+                50: Alluring Voice 
+                55: Relic Song 
+                61: Perish Song 
+                64: Skill Swap 
+                67: Close Combat 
+                75: Heal Bell 
+                80: Boomburst 
+
     - Encounter Changes 
-        - Pokestar Studios 
-            2% Ditto -> 2% Smeargle 
+        - Castelia Gardens: 
+            Shrink these tables with the knowledge that 
+                Skitty, Snubbull, Bonsly, Jigglypuff, Buneary are all on the Virbank Preschool Table
+            Mons to consider Adding: 
+                Exeggcute, Tangela, Nuzleaf, Pansage, Tranquil, Ducklett, Meowth, Munchlax, Drowzee, Wynaut, Ralts, Gothita, 
+    
     - Item Changes 
-        - New Item: Blinders 
-            An item to be held by a Pokémon.\nPrevents the holder's moves from\nharming their allies. 
-            - Replaces Tera Badge 
         - Light Clay 
             - An item to be held by a Pokémon. Extends\nside and field effects the holder creates\nsuch as Reflect and Tailwind by 10 turns.
             - AI Only 
@@ -377,9 +139,31 @@ TONIGHT TO-DO LIST:
 
 [ TRAINERS ]
 
+    Artist Pollock 
+        Shelmet @ Eviolite (Ability: Shell Armor) (Acid Spray, Giga Drain, Scald, Spikes)
+        Kricketune @ Metronome (Ability: Amplifier) (Echoed Voice, Pursuit)
+        Larvesta @ Choice Scarf (Ability: Flame Body) (Flare Blitz, U-Turn)
+        Tangela @ Eviolite (Ability: Gooey) (Giga Drain, Grass Knot, Acid Spray, Ancient Power)
+        Sudowoodo @ King's Rock (Ability: Prankster) (Rock Tomb, Comet Punch, Thunder Wave, Bullet Seed)
+
+
+
+
+
+
+    Shadow Triad Marine Tube (smoke bomb) (All pokemon have -1 accuracy on switch in)
+        Level 57 Electivire  @ Blunder Policy    (Ability: Anger Point)  (Close Combat, Wild Charge, Temper Flare, Ice Punch)
+        Level 57 Spiritomb   @ Leftovers         (Ability: Clear Body)   (Ominous Wind, Pursuit, Confuse Ray, Toxic)
+        Level 57 Spinda      @ Life Orb          (Ability: Contrary)     (Dynamic Punch, Slam, Hypnosis, Blizzard)
+        Level 57 Scolipede   @ Proto Armor       (Ability: Tinted Lens)  (Coil, Barb Barrage, Twineedle, Pursuit)
+        Level 58 Bisharp     @ Chople Berry      (Ability: Defiant)      (Faint Attack, Aerial Ace, Iron Head, Double Team)
+
     Trainer Changes: 
         We can add pokemon to the Driftveil Drawbridge Gauntlet 
         And the Join Avenue Gauntlet 
+
+        Pilot Ewing: 
+            Dodrio -> Something else 
         
         Nidoking Plasma Grunt: 
             Primeape -> Something else 
@@ -457,42 +241,8 @@ TONIGHT TO-DO LIST:
                 Krookadile (Ability: Anger Point) (Drill Run, Crunch, Temper Flare, Sand Attack)
                 Machoke @ Eviolite (Ability: No Guard) (Dynamicpunch, )
             
-        - Look into move expansion, if we can do it easily enough, let's go for it: 
-            - Seems like the main thing we'd need to do is find the function that determines animation index and go from there. 
-            - Simple Move Additions: 
-                - Bubble 
-                - Sweet Kiss 
-                - Bolt Strike 
-                - Sacred Fire 
-                - Scratch 
-                - Pound 
-                - Trailblaze 
-                - Embargo 
-                - Fury Attack 
-                - Spacial Rend 
-                - Roar of Time 
-                - Sharpen 
-                - Mist Ball 
-                - Pounce 
-                - Freeze Shock 
-            - Complex Move Additions 
-                - Thief 
-                - Odor Sleuth 
-                - Foresight 
-                - Bide 
-                - Trick 
-                - Spite 
-                - Role Play 
-                - Smack Down 
-                - Lock On 
-                - Magic Room 
-                - Camouflage                
-    
-        - Castelia Gardens: 
-            Shrink these tables with the knowledge that 
-                Skitty, Snubbull, Bonsly, Jigglypuff, Buneary are all on the Virbank Preschool Table
-            Mons to consider Adding: 
-                Exeggcute, Tangela, Nuzleaf, Pansage, Tranquil, Ducklett, Meowth, Munchlax, Drowzee, Wynaut, Ralts, Gothita, 
+
+
 ====================================================================================================================================================
 
 TO DO LIST FINAL: 
@@ -1007,3 +757,29 @@ TO DO LIST FINAL:
             - Wormadam-Trash 
 
   
+Tera Type Usage: 
+
+    Overrepresented: 
+        6: Normal 
+        4: Fighting 
+        2: Fairy (both in same split)
+        4: Dark 
+        5: Electric 
+        3: Water (all in the same split is the issue)
+        4: Ice (all in the same split)
+        4: Flying 
+        
+    None: 
+        Grass
+        Bug 
+        Ghost 
+        Poison 
+
+    Only One: 
+        Rock 
+        Dragon (outside of reinforcing STAB)
+        Psychic 
+
+    Not until Drayden Split: 
+        Water 
+        Steel

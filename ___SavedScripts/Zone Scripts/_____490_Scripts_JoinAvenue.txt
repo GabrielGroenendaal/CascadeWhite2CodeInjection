@@ -964,6 +964,7 @@ public class MainEvents {
 		EventFlags.Set(1770);
 		EventFlags.Clear(1771);
 		EventFlags.Set(1771);
+		EventFlags.Set(1520 + 192);
 		Actor.Hide(70);
 		Actor.Hide(71);
 		Actor.Hide(72);

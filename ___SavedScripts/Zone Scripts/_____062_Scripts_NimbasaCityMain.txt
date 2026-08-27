@@ -745,6 +745,7 @@ public class MainEvents {
 		Actor.PauseAll();
 		Sound.SEPlay(1351);
 		Actor.FacePlayer();
+		EventFlags.Set(1520 + 192);
 		Sound.PVPlay(513, 0);
 		Message.Actor(1024, 49, 0, 0);
 		Sound.PVWait();
@@ -877,7 +878,7 @@ public class MainEvents {
 		Actor.UnpauseAll();
 	}
 
-		public static void main_34() { // @ 0x36d
+	public static void main_34() { // @ 0x36d
 		Actor.PauseAll();
 		Sound.SEPlay(1351);
 		Actor.FacePlayer();
@@ -889,6 +890,38 @@ public class MainEvents {
 		Runtime.FinishSubEvents();
 		Actor.UnpauseAll();
 	}
+
+	public static void main_35() { // @ 0x36d
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Message.Actor(1024, 67, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_36() { // @ 0x36d
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Actor.FacePlayer();
+		Message.Actor(1024, 69, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
+	public static void main_37() { // @ 0x36d
+		Actor.PauseAll();
+		Sound.SEPlay(1351);
+		Message.Actor(1024, 68, 0, 0);
+		Input.LastKeyWait();
+		Message.CloseActor();
+		Runtime.FinishSubEvents();
+		Actor.UnpauseAll();
+	}
+
 
 	static void sub_0174() { // @ 0x174
 		if (EventWorks.Get(16576) != 2) {
@@ -937,6 +970,13 @@ public class MainEvents {
 		Actor.Hide(0);
 		Actor.Hide(4);
 		Actor.Hide(2);
+		Actor.Hide(25);
+		Actor.Hide(26);
+		Actor.Hide(27);
+		Actor.Hide(24);
+		EventWorks.Set(16533, 1);
+		EventFlags.Set(594);
+		EventFlags.Clear(1520 + 192);
 		Sound.BGMFadeOutAll(40);
 		Runtime.Sleep(45);
 		EventFlags.Set(762);
@@ -973,6 +1013,7 @@ public class MainEvents {
 		Actor.WaitActionFinish();
 		Actor.Hide(3);
 		EventFlags.Set(761);
+
 		Base.CMD_262(1, 8);
 		Field.PlayMapBGM();
 		Runtime.FinishSubEvents();

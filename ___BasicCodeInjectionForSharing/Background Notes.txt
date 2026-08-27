@@ -1,0 +1,14 @@
+
+
+
+Route 20 - Background: Seems too Large 
+
+Alders House - Seems too large 
+
+Virbank Gate - when the camera pulls back, we go out of bounds 
+
+Castelia Cafe looks way too stretched out 
+
+Sewer Grunts background is pretty boring. 
+
+Chargestone Cave entrance is super boring

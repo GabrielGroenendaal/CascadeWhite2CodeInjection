@@ -447,7 +447,7 @@ label331: ;
 	goto label341;
 
 label231: ;
-	Message2(1024, 15, 0, 0);
+	Message2(1024, 14, 0, 0);
 	WaitForButton();
 	CloseMessageBox();
 

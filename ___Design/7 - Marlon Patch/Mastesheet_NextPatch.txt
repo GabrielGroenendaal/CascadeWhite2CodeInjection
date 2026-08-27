@@ -397,7 +397,6 @@ end
 oran berry, Oran Berries are now sold at the Pokémart 
 end
 
-
 ## Virbank Outskirts
 !items Items
 silk scarf, Silk Scarf (found after defeating Preschooler Albert)
@@ -577,14 +576,21 @@ end
 
 
 ## Plasma Grunts
+!items Items
+tm steel, HM01 Cut (reward for defeating the first grunt)
+green shard, 5x Green Shards (reward for defeating Policeman Petrel)
+green shard, 5x Green Shards (reward for defeating Policeman Rosco)
+end 
+
 !trm 690/25 Found in Virbank City
 
-!tr 184/25 (DODGEABLE) Spawns in Virbank After defeating the first grunt
+!tr 184/25 (DODGEABLE) Rewards 5x Green Shards.
 
-!tr 185/25 (DODGEABLE) Spawns in Virbank After defeating the first grunt
+!tr 185/25 (DODGEABLE) Rewards 5x Green Shards.
+
+!trm 504/25 Found on way out of Virbank City
 
 !trm 763/25 Found in Route 20 
-
 
 
 ## Castelia City 
@@ -655,7 +661,7 @@ sticky barb, Sticky Barb (found after the Scientist tag)
 stable mulch, 1x Serious Mint (reward for Defeating the Plasma Grunts)
 tm ghost, TM37 Hex (encountered behind the Grimers once you beat the grunts)
 dusk ball, Dusk Ball (x3) (found near entrance)
-red shards, 0x-10x Red Shards (2x per tag battle)
+red shard, 0x-10x Red Shards (2x per tag battle)
 end
 
 !enc 37
@@ -847,7 +853,9 @@ tanga berry, 3x Tanga Berry (received from the Gym Guide upon entering)
 tm bug, TM81 X Scissor (reward for beating Burgh)
 end
 
-!trm 734/28
+!trm 338/29 
+
+!trm 734/29
 
 !trm 735/29
 
@@ -1178,7 +1186,7 @@ end
 
 ### Erika
 !notif SPLIT-LOCKED, Erika is an optional mini-boss that can only be fought before defeating Elesa. This content is locked off afterwards. , #af74b3
-!tr 767/40 Rewards 2x Resist Berries, TM06 Magical Leaf, Lostlorn Encounter 
+!tr 767/40 Rewards 1x Resist Berries, TM06 Magical Leaf, Lostlorn Encounter 
 
 
 
@@ -1232,12 +1240,19 @@ end
 
 # Clay Split (Level Cap 46, Optional Level Cap 44 for Rood)
 
-### Nimbasa City Grunts 
+## Nimbasa City Grunts 
 !notif WARNING, The "Mysterious Device" is a dangerous devices designed by colress that boost a Pokémon's Attack and Special Attack on switch in at the cost of their accuracy. Be careful! , #f26253
+
+!trm 191/40 
+
 !notif NOTE, These can be fight in either order, but are always back to backs.
+
 !trm 359/40 (Male Fight of Back-to-Back)
 !trm 751/40 (Female Fight of Back-to-Back) 
 
+### Team Plasma Shadow
+!notif FIELD EFFECT, The Shadow tosses a smoke bomb before battle, reducing the accuracy of Pokémon on switch in by one stage. , #4e86d4
+!trm 192/42 
 
 ### Charles 
 !items Items

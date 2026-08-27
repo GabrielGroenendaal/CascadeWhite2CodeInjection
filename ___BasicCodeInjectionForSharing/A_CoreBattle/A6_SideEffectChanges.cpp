@@ -196,8 +196,8 @@ extern "C"
         HandlerParam_AddAnimation *v6;
         
         int currentSlot = BattleEventVar_GetValue(VAR_MON_ID);
-        if (currentSide == GetSideFromMonID(currentSlot))
-        {
+        // if (currentSide == GetSideFromMonID(currentSlot))
+        // {
             v6 = (HandlerParam_AddAnimation*)BattleHandler_PushWork(serverFlow, EFFECT_ADD_ANIMATION, currentSlot);
             v6->pos_from =  Handler_PokeIDToPokePos(serverFlow, currentSlot);
             v6->pos_to = 6;
@@ -214,7 +214,7 @@ extern "C"
             v3->rankVolume = -1;
             v3->pad = 0x40000000;
             BattleHandler_PopWork(serverFlow, v3);
-        }
+        // }
     }
 
 

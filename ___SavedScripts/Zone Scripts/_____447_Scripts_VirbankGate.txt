@@ -175,6 +175,7 @@ public class MainEvents {
 		Runtime.Sleep(20);
 		Sound.SEPlay(1369);
 		Actor.Hide(251);
+		EventFlags.Set(593);
 
         // Handles the Level Cap Updates 
         EventWorks.Set(16466, 23);

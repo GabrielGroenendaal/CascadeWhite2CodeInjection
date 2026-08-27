@@ -175,7 +175,7 @@ void Sequence3()
 	StackCompare(1);
 	if (255) goto label14;
 	c0x268(0);
-	Routine0();
+	Sequence11();
 	SetFlag(265);
 
 label14: ;
@@ -212,7 +212,7 @@ void Sequence5()
 		Exclaimation, 1,
 	};
 
-	Routine0();
+	Sequence11();
 	WaitMovement();
 	SetFlag(266);
 	PlayTrainerMusic(735);
@@ -268,54 +268,6 @@ void Sequence6()
 	End();
 }
 
-// void Sequence7()
-// {
-// 	LockAll();
-// 	PlaySound(1351);
-// 	FacePlayer();
-// 	StoreBadge(0x8008, 2);
-// 	StackPushVar(0x8008);
-// 	StackPushConst(0);
-// 	StackCompare(1);
-// 	if (255) goto label17;
-// 	StoreFlag(109);
-// 	StackPushConst(0);
-// 	StackCompare(1);
-// 	if (255) goto label18;
-// 	Message2(1024, 5, 0, 0);
-// 	CloseMessageBox();
-// 	StackPushVar(0x8000);
-// 	StackPushVar(0x8001);
-// 	SetVarEqVar2(0x8000, 30);
-// 	SetVarEqVar2(0x8001, 1);
-// 	CallGlobalScript(2805);
-// 	StackPop(0x8001);
-// 	StackPop(0x8000);
-// 	Message2(1024, 6, 0, 0);
-// 	WaitForButton();
-// 	CloseMessageBox();
-// 	SetFlag(109);
-// 	goto label19;
-
-// label18: ;
-// 	Message2(1024, 6, 0, 0);
-// 	WaitForButton();
-// 	CloseMessageBox();
-
-// label19: ;
-// 	goto label20;
-
-// label17: ;
-// 	Message2(1024, 7, 0, 0);
-// 	WaitForButton();
-// 	CloseMessageBox();
-
-// label20: ;
-// 	WaitMoment();
-// 	UnlockAll();
-// 	End();
-// }
-
 void Sequence7()
 {
 	SetVarEqVal(0x8007, 0);
@@ -325,136 +277,136 @@ void Sequence7()
 	StoreBadge(0x8000, 2);
 	SetVarEqVar(0x8006, 0x8000);
 	Compare(0x8006, 0);
-	if (1) goto label101;
+	if (1) goto label17;
 	Message2(1024, 7, 0, 0);
 	WaitForButton();
 	CloseMessageBox();
-	goto label111;
+	goto label18;
 
-label101: ;
+label17: ;
 	SetVarFlagStatus(109, 0x8000);
 	Compare(0x8000, 0);
-	if (1) goto label121;
+	if (1) goto label19;
 	SetVarEqVal(0x8007, 0);
 	SetVarFlagStatus(1620, 0x8000);
 	Compare(0x8000, 0);
-	if (1) goto label131;
+	if (1) goto label20;
 	SetVarEqVal(0x8000, 0);
-	goto label141;
+	goto label21;
 
-label131: ;
+label20: ;
 	SetVarEqVal(0x8000, 1);
 
-label141: ;
+label21: ;
 	Compare(0x8000, 0);
-	if (1) goto label151;
+	if (1) goto label22;
 	AddToVar(0x8007, 1);
 
-label151: ;
+label22: ;
 	SetVarEqVal(0x8008, 0x4065);
 	Compare(0x8008, 0);
-	if (5) goto label161;
+	if (5) goto label23;
 	AddToVar(0x8007, 1);
 
-label161: ;
+label23: ;
 	SetVarFlagStatus(2378, 0x8000);
 	Compare(0x8000, 0);
-	if (1) goto label171;
+	if (1) goto label24;
 	SetVarEqVal(0x8000, 0);
-	goto label181;
+	goto label25;
 
-label171: ;
+label24: ;
 	SetVarEqVal(0x8000, 1);
 
-label181: ;
+label25: ;
 	Compare(0x8000, 0);
-	if (1) goto label191;
+	if (1) goto label26;
 	AddToVar(0x8007, 1);
 
-label191: ;
+label26: ;
 	SetVarFlagStatus(2286, 0x8000);
 	Compare(0x8000, 0);
-	if (1) goto label201;
+	if (1) goto label27;
 	SetVarEqVal(0x8000, 0);
-	goto label211;
+	goto label28;
 
-label201: ;
+label27: ;
 	SetVarEqVal(0x8000, 1);
 
-label211: ;
+label28: ;
 	Compare(0x8000, 0);
-	if (1) goto label221;
+	if (1) goto label29;
 	AddToVar(0x8007, 1);
 
-label221: ;
+label29: ;
 	Compare(0x8007, 0);
-	if (3) goto label231;
+	if (3) goto label30;
 	Message2(1024, 13, 0, 0);
 	WaitForButton();
 	CloseMessageBox();
 	SetVarFlagStatus(1620, 0x8000);
 	Compare(0x8000, 0);
-	if (1) goto label241;
+	if (1) goto label31;
 	SetVarEqVal(0x8000, 0);
-	goto label251;
+	goto label32;
 
-label241: ;
+label31: ;
 	SetVarEqVal(0x8000, 1);
 
-label251: ;
+label32: ;
 	Compare(0x8000, 0);
-	if (1) goto label261;
+	if (1) goto label33;
 	EventGreyMessage(15, 2);
 
-label261: ;
+label33: ;
 	SetVarEqVal(0x8008, 0x4065);
 	Compare(0x8008, 0);
-	if (5) goto label271;
+	if (5) goto label34;
 	EventGreyMessage(16, 2);
 
-label271: ;
+label34: ;
 	SetVarFlagStatus(2378, 0x8000);
 	Compare(0x8000, 0);
-	if (1) goto label281;
+	if (1) goto label35;
 	SetVarEqVal(0x8000, 0);
-	goto label291;
+	goto label36;
 
-label281: ;
+label35: ;
 	SetVarEqVal(0x8000, 1);
 
-label291: ;
+label36: ;
 	Compare(0x8000, 0);
-	if (1) goto label301;
+	if (1) goto label37;
 	EventGreyMessage(17, 2);
 
-label301: ;
+label37: ;
 	SetVarFlagStatus(2286, 0x8000);
 	Compare(0x8000, 0);
-	if (1) goto label311;
+	if (1) goto label38;
 	SetVarEqVal(0x8000, 0);
-	goto label321;
+	goto label39;
 
-label311: ;
+label38: ;
 	SetVarEqVal(0x8000, 1);
 
-label321: ;
+label39: ;
 	Compare(0x8000, 0);
-	if (1) goto label331;
+	if (1) goto label40;
 	EventGreyMessage(18, 2);
 
-label331: ;
+label40: ;
 	CloseAllMessageBoxes();
-	goto label341;
+	goto label41;
 
-label231: ;
-	Message2(1024, 14, 0, 0);
+label30: ;
+	Message2(1024, 15, 0, 0);
 	WaitForButton();
 	CloseMessageBox();
 
-label341: ;
-	goto label111;
+label41: ;
+	goto label18;
 
-label121: ;
+label19: ;
 	Message2(1024, 5, 0, 0);
 	CloseMessageBox();
 	StackPushVar(0x8004);
@@ -478,7 +430,7 @@ label121: ;
 	CloseMessageBox();
 	SetFlag(109);
 
-label111: ;
+label18: ;
 	WaitMoment();
 	UnlockAll();
 	SetVarEqVal(0x8000, 0);
@@ -495,23 +447,23 @@ void Sequence8()
 	StackPushVar(0x8008);
 	StackPushConst(0);
 	StackCompare(1);
-	if (255) goto label21;
+	if (255) goto label42;
 	SetWordPlayerName(0);
 	BubbleMessage(8, 2);
-	goto label22;
+	goto label43;
 
-label21: ;
+label42: ;
 	StoreFlag(2477);
 	StackPushConst(0);
 	StackCompare(1);
-	if (255) goto label23;
+	if (255) goto label44;
 	BubbleMessage(9, 2);
-	goto label22;
+	goto label43;
 
-label23: ;
+label44: ;
 	BubbleMessage(10, 2);
 
-label22: ;
+label43: ;
 	WaitForButton();
 	CloseBubbleMessage();
 	WaitMoment();
@@ -528,11 +480,11 @@ void Sequence9()
 	StackPushConst(0);
 	StackCompare(1);
 	StackCompare(7);
-	if (255) goto label24;
+	if (255) goto label45;
 	SetNPCPosition(0, 25, 20, 17, 2);
-	goto label25;
+	goto label46;
 
-label24: ;
+label45: ;
 	StoreFlag(266);
 	StackPushConst(1);
 	StackCompare(1);
@@ -540,10 +492,10 @@ label24: ;
 	StackPushConst(1);
 	StackCompare(1);
 	StackCompare(7);
-	if (255) goto label25;
+	if (255) goto label46;
 	SetNPCPosition(0, 27, 20, 16, 1);
 
-label25: ;
+label46: ;
 	End();
 }
 
@@ -551,16 +503,16 @@ void Sequence10()
 {
 	SetVarFlagStatus(109, 0x8000);
 	Compare(0x8000, 0);
-	if (1) goto label40;
+	if (1) goto label47;
 	SetVarEqVal(0x8000, 0);
-	goto label41;
+	goto label48;
 
-label40: ;
+label47: ;
 	SetVarEqVal(0x8000, 1);
 
-label41: ;
+label48: ;
 	Compare(0x8000, 0);
-	if (1) goto label42;
+	if (1) goto label49;
 	SetVarEqVal(0x8004, 4);
 	LockAll();
 	PlaySound(1351);
@@ -596,12 +548,12 @@ label41: ;
 	WaitMoment();
 	UnlockAll();
 
-label42: ;
+label49: ;
 	SetVarEqVal(0x8000, 0);
 	Return();
 }
 
-void Routine0()
+void Sequence11()
 {
 	PlaySound(2069);
 	ReturnAfterDelay(5);

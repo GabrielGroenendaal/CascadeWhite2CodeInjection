@@ -184,6 +184,7 @@ public class MainEvents {
 		if (EventFlags.Get(1520 + 176)) {
 			EventFlags.Set(1696);
 		}
+		EventFlags.Set(593);
 		// Youngster Keita 
 		if (EventFlags.Get(1520 + 645)) {
 			EventFlags.Set(1520 + 645);

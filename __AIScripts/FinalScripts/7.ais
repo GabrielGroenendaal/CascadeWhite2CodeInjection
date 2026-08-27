@@ -531,6 +531,10 @@ address_0x0956:
 
 address_EarthquakeLogic:
 	JumpIfHasCondition(attacker_ally, cond.floating, &address_Earthquake_ChanceToAdd2ToScore)
+
+    GetHeldItem(attacker)
+    JumpIfStoredEQ(item.tera_badge, &address_Earthquake_ChanceToAdd2ToScore)
+
 	GetPokeHasAbility(attacker_ally, ability.levitate)
 	JumpIfStoredEQ(true, &address_Earthquake_ChanceToAdd2ToScore)
 	GetPokeHasAbility(attacker_ally, ability.healer)
@@ -646,6 +650,10 @@ normalTypeMoveLogic:
 	Jump(&endScript_NormalMoves)
 
 address_BoomburstChecks:
+
+    GetHeldItem(attacker)
+    JumpIfStoredEQ(item.tera_badge, &address_HighChanceToIncreaseBoomburstScore)
+
 	GetPokeHasAbility(attacker_ally, ability.amplifier)
 	JumpIfStoredEQ(true, &address_HighChanceToIncreaseBoomburstScore)
     GetPokeHasAbility(attacker_ally, ability.healer)
@@ -737,6 +745,10 @@ address_Discharge:
 	JumpIfStoredEQ(true, &address_HighChanceToIncreaseScoreForDischarge)
 	GetPokeHasAbility(attacker_ally, ability.healer)
 	JumpIfStoredEQ(true, &address_HighChanceToIncreaseScoreForDischarge)
+
+    GetHeldItem(attacker)
+    JumpIfStoredEQ(item.tera_badge, &address_HighChanceToIncreaseScoreForDischarge)
+
 	GetPokeHasAbility(attacker_ally, ability.friend_guard)
 	JumpIfStoredEQ(true, &address_HighChanceToIncreaseScoreForDischarge)
 	GetPokeHasAbility(attacker_ally, ability.forewarn)
@@ -816,6 +828,10 @@ address_SurfChecks:
 	JumpIfStoredEQ(true, &address_HighChanceToIncreaseScoreForSurf)
 	GetPokeHasAbility(attacker_ally, ability.water_absorb)
 	JumpIfStoredEQ(true, &address_HighChanceToIncreaseScoreForSurf)
+
+    GetHeldItem(attacker)
+    JumpIfStoredEQ(item.tera_badge, &address_HighChanceToIncreaseScoreForSurf)
+
 	GetPokeHasAbility(attacker_ally, ability.healer)
 	JumpIfStoredEQ(true, &address_HighChanceToIncreaseScoreForSurf)
 	GetPokeHasAbility(attacker_ally, ability.friend_guard)
@@ -887,6 +903,10 @@ address_LavaPlumeChecks:
 	JumpIfStoredEQ(true, &address_HighChanceToIncreaseScoreForLavaPlume)
 	GetPokeHasAbility(attacker_ally, ability.well_baked_body)
 	JumpIfStoredEQ(true, &address_HighChanceToIncreaseScoreForLavaPlume)
+
+    GetHeldItem(attacker)
+    JumpIfStoredEQ(item.tera_badge, &address_HighChanceToIncreaseScoreForLavaPlume)
+
 	GetPokeHasAbility(attacker_ally, ability.healer)
 	JumpIfStoredEQ(true, &address_HighChanceToIncreaseScoreForLavaPlume)
 	GetPokeHasAbility(attacker_ally, ability.friend_guard)
@@ -960,6 +980,10 @@ address_PetalBlizzardChecks:
 	JumpIfStoredEQ(true, &address_PetalBlizzardRNG)
 	GetPokeHasAbility(attacker_ally, ability.sap_sipper)
 	JumpIfStoredEQ(true, &address_HighChanceToIncreaseScoreForPetalBlizzard)
+
+    GetHeldItem(attacker)
+    JumpIfStoredEQ(item.tera_badge, &address_HighChanceToIncreaseScoreForPetalBlizzard)
+
     GetPokeHasAbility(attacker_ally, ability.healer)
 	JumpIfStoredEQ(true, &address_HighChanceToIncreaseScoreForPetalBlizzard)
 	GetPokeHasAbility(attacker_ally, ability.friend_guard)
@@ -1015,6 +1039,10 @@ address_BrutalSwingChecks:
 	JumpIfStoredEQ(true, &address_BrutalSwingRNG)
     GetPokeHasAbility(attacker_ally, ability.justified)
 	JumpIfStoredEQ(true, &address_HighChanceToIncreaseScoreForBrutalSwing)
+
+    GetHeldItem(attacker)
+    JumpIfStoredEQ(item.tera_badge, &address_HighChanceToIncreaseScoreForBrutalSwing)
+
     GetPokeHasAbility(attacker_ally, ability.healer)
 	JumpIfStoredEQ(true, &address_HighChanceToIncreaseScoreForBrutalSwing)
 	GetPokeHasAbility(attacker_ally, ability.friend_guard)

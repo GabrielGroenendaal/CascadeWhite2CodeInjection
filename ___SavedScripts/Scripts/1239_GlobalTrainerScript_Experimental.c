@@ -4471,6 +4471,10 @@ void Routine7()
 	dvar93(0x8020, 0x8000);
 
 
+	// Green Shards x5 
+	Compare(0x8000, 26);
+	if (1) goto label_5xGreenShards;
+
 	// Green Shards
 	Compare(0x8000, 143);
 	if (1) goto label_20xGreenShards;
@@ -4617,6 +4621,11 @@ label_10xGreenShards:
 label_15xGreenShards: 
 	SetVarEqVal(0x8000, 75);
 	SetVarEqVal(0x8001, 15);
+	goto label_call2805;
+
+label_5xGreenShards: 
+	SetVarEqVal(0x8000, 75);
+	SetVarEqVal(0x8001, 5);
 	goto label_call2805;
 
 label_20xGreenShards: 
