@@ -930,8 +930,13 @@ address_0x1060:
 	AddToScore(-2)
 
 address_0x1070:
-	JumpIfHealthGT(defender, 70, &address_0x1084)
+	JumpIfHealthGT(defender, 70, &address_RNGCheckLowerDefense)
 	AddToScore(-2)
+    Jump(&address_0x1084)
+
+address_RNGCheckLowerDefense: 
+    JumpIfRandLT(160, &address_0x1084)
+    AddToScore(1)
 
 address_0x1084:
 	EndScript()
@@ -1072,8 +1077,13 @@ address_0x11DA:
 	AddToScore(-2)
 
 address_0x11EA:
-	JumpIfHealthGT(defender, 70, &address_0x11FE)
+	JumpIfHealthGT(defender, 70, &address_RNGCheckSpecialDefense)
 	AddToScore(-2)
+    Jump(&address_0x11FE)
+
+address_RNGCheckSpecialDefense: 
+    JumpIfRandLT(160, &address_0x11FE)
+    AddToScore(1)
 
 address_0x11FE:
 	EndScript()

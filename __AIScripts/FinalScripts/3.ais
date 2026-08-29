@@ -202,11 +202,10 @@ debuff_moves:
 	move.fake_tears
 	move.screech
 	move.leer
-	move.scary_face
-	move.string_shot
 	move.sweet_scent
 	move.tail_whip
 	move.metal_sound
+    move.acid_spray
 	END
 
 debuff_moves_save:

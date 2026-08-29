@@ -976,7 +976,6 @@ public class MainEvents {
 		Actor.Hide(24);
 		EventWorks.Set(16533, 1);
 		EventFlags.Set(594);
-		EventFlags.Clear(1520 + 192);
 		Sound.BGMFadeOutAll(40);
 		Runtime.Sleep(45);
 		EventFlags.Set(762);

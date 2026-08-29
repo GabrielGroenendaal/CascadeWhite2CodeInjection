@@ -3171,12 +3171,14 @@ extern "C"
             u16 moveDamage = 0;
             do
             {
-                moveDamage = Handler_SimulationDamage(flow,
-                                                    BattleMon_GetID(attackingMon),
-                                                    BattleMon_GetID(defender),
-                                                    Move_GetID(attackingMon, i), true, false);
-                if ((moveDamage << 1) >= currentHp) return 0;
-                if (moveDamage > damage) damage = moveDamage;     
+                if (Move_GetPP(attackingMon, i)) {
+                    moveDamage = Handler_SimulationDamage(flow,
+                                                        BattleMon_GetID(attackingMon),
+                                                        BattleMon_GetID(defender),
+                                                        Move_GetID(attackingMon, i), true, false);
+                    if ((moveDamage << 1) >= currentHp) return 0;
+                    if (moveDamage > damage) damage = moveDamage;
+                }     
                 i++;
             } while (i < MoveCount);
 
@@ -3425,7 +3427,7 @@ extern "C"
 
             if (LoopMoveCategory != LoopMoveCategoryCheck)
             {
-
+                // I THINK THIS SECTION IS WHERE I NEED TO CHANGE THINGS. 
                 if (BattleMon_GetValue(a1, VALUE_ATTACK_STAT) >= BattleMon_GetValue(a1, VALUE_SPECIAL_ATTACK_STAT))
                 {
                     return 1;
@@ -3439,6 +3441,7 @@ extern "C"
         } while (i < MoveCount);
         return LoopMoveCategoryCheck;
     }
+
 
     int THUMB_BRANCH_AI094_GetPreviousMoveCategory(ScriptVM *a1, TrainerAIEnv *a2)
     {

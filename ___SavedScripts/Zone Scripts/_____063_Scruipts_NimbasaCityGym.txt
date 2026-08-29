@@ -925,6 +925,7 @@ public class MainEvents {
         // Despawns Erika and her Pokemon
 		EventFlags.Set(1520 + 116); // Lass Patty
         EventFlags.Set(3047);
+		EventFlags.Set(595);
         if (EventFlags.Get(1520 + 767)){
             EventWorks.Set(16521, 4);
         }

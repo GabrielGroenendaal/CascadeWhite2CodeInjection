@@ -7,7 +7,31 @@
 
 */
 
+General Life Shit: 
 
+    Appointments to make tomorrow: 
+        Podiatrist 
+        Dermatologist 
+        
+    Games to purchase: 
+        Onimusha: Way of the Sword (September 4)
+        Fire Emblem: Fortune's Weave (September 17)
+        Dragons Dogma 2: Dark Arisen (October 2026)
+
+
+
+Bugs & Scripting: 
+        Calc
+            - Fairy Dust not providing the correct boost in the calc. 
+        
+        Research: 
+            Look into adding new weather effects to the overworld 
+                - Deep Fog 
+                - Harsh Winds 
+                - Smoke Bomb 
+                - Frozen Chasm 
+
+    
 NORMAL TO-DO LIST: 
     - Car Registration (due 8/24)
     - Louie License 
@@ -34,7 +58,7 @@ TONIGHT TO-DO LIST:
     
     - Finish our trainer changes.
 
-   \
+
 
         Marlon Split:   
             Backpacker Blossom: 
@@ -46,14 +70,6 @@ TONIGHT TO-DO LIST:
                 ++
    
     - Dex Changes 
-            Spinda: 
-                Level 22: Extrasensory -> Psywave
-                Level 28: Hyper Voice -> Tri Attack
-                Level 31: Hammer Arm -> Spin Out 
-                ++Level 39: Sucker Punch  
-                Level 45: Brutal Swing -> Head Charge
-                Level 52: Double-Edge -> Brutal Swing
-                Level 55: Spin Out -> Psycho Boost  
 
             Meloetta: 
                 1: Quick Attack 
@@ -139,16 +155,122 @@ TONIGHT TO-DO LIST:
 
 [ TRAINERS ]
 
-    Artist Pollock 
-        Shelmet @ Eviolite (Ability: Shell Armor) (Acid Spray, Giga Drain, Scald, Spikes)
-        Kricketune @ Metronome (Ability: Amplifier) (Echoed Voice, Pursuit)
-        Larvesta @ Choice Scarf (Ability: Flame Body) (Flare Blitz, U-Turn)
-        Tangela @ Eviolite (Ability: Gooey) (Giga Drain, Grass Knot, Acid Spray, Ancient Power)
-        Sudowoodo @ King's Rock (Ability: Prankster) (Rock Tomb, Comet Punch, Thunder Wave, Bullet Seed)
+
+
+    
+
+            Driftveil Drawbridge: 
+                Linebacker A 
+                    Samurott 
+                    Sawk 
+                    Hariyama 
+                    Druddigon 
+
+                Linebacker B 
+                    Piloswine 
+                    Nidoking 
+                    Throh 
+                    Emboar
+                
+                Smasher Elena 
+                    Ambipom 
+                    Weavile 
+                    Shiftry 
+
+                Smasher Aspen 
+                    Mienshao 
+                    Farfetch'd 
+                    Galvantula 
 
 
 
+                Nurse X 
+                    Alomola 
+                    Chansey 
+                    Chimecho 
+                    Togetic @ Eviolite (Ability: Serene Grace) (Fairy Wind, Double Team, Hurricane, Roost)
+                    Musharna @ Enigma Berry (Ability: Bad Dreams) (Hypnosis, Dream Eater, Dazzling Gleam, Hex)
 
+                Doctor Y 
+                    Leavanny 
+                    Meganium 
+                    Reuniclus 
+                    Miltank 
+        
+        Skyla Split: 
+            Redo Guitarist Anna 
+                Eelektross @ Throat Spray (Ability: Levitate) (Wrap, Zing Zap, )
+                Scolipede @ Liechi Berry (Ability: Poison Touch) (Steamroller, Poison Tail, Rock Slide, Natural Gift)
+                Exploud @ Choice Specs (Ability: Anger Point) (Uproar)
+                Seismitoad @ Blinders (Ability: Amplifier) (Earthquake, Boomburst, Sludge Wave, Surf)
+
+            Dancer Kidd: 
+                Plusle (Magnet -> Blinders) (Thunderbolt -> Discharge) (Flamethrower -> Searing Shot) (Dazzling Gleam -> Protect, Light Screen -> Teeter Dance) 
+        
+        
+        Marlon Split 
+
+            Battle Girl Shel: 
+                Sawk (Bind -> Slam, Salac Berry -> Red Card, Flail -> )
+                Dodrio (Drill Peck -> Aerial Ace)
+
+
+            Ace Trainer Jeanne 
+                Dewgong (Signal Beam, Whirlpool, Blizzard, )
+            I'm not super happy with the first fight. 
+            We're going to need to redo these fights entirely IMO. 
+            
+            There are a lot of fights here I'm not super happy with. I think I need to narrow down whta kinds of concepts I want to cover in these fights because they're kinda unfocused. 
+
+            Ability Patch B2B 
+
+            Ability Capsule B2B 
+
+            Shadow Triad all 10 fights. 
+
+            Shadow Triad One: 
+                Gengar @ Focus Band (Ability: Bad Dreams) (Hex, Sludge Bomb, Thunder Wave, Destiny Bond)
+                Primeape @ Focus Sash (Ability: Hustle) (Dynamicpunch, Stompin Tantrum, Thrash, Teeter Dance)
+                Dunsparce @ Starf Berry (Ability: Serene Grace) (Dizzy Punch, Bone Club, Glare, Roost)
+                Seviper @ Choice Band (Ability: Corrosion) (Wrap)
+                Weavile @ King's Rock (Ability: Skill Link) (Icicle Spear, Razor Winds, Attract, Quick Attack)
+
+                Gengar should go 
+                Dunsparce should go 
+                Seviper should go 
+
+                
+                Primeape (dyamic punch -> close combat)
+
+                Most of these sets are kinda ehhhhh... 
+                    Electabuzz @ Eviolite (Ability: Static) (Supercell Slam, Hi Jump Kick, Giga Impact)
+
+                    Amoongus @ Tanga Berry (Ability: Prankster) (Spore, Foul Play, Ingrain, Obstruct)
+
+                    Drapion @ Scope Lens (Ability: Sniper) (Poison Tail, Fury Swipes, Pursuit, Earthquake)
+                    Spinda @ Colbur Berry (Ability: Moody) (Fake Out, Acupressure, Dizzy Punch, Stored Power)
+                    Swalot @ Starf Berry (Ability: Gourmand) (Spit Up, Stockpile, Swallow, Infestation)
+            
+            Shadow Triad Two: 
+                Ninjask @ Brightpowder (Ability: Sniper) (Skitter Smack, Dual Wingbeat, U-Turn, Metronome)
+                Sceptile @ Coba Berry (Ability: Anticipation) (Draco Meteor, Ingrain, Slam, Detect)
+                Bisharp @ Trickster Herb (Ability: Speed Boost) (Power Trip, Double Team, Iron Head, Obstruct)
+                Blissey @ Attack insurance (Ability: Healer) (Seismic Toss, Toxic, Softboiled, Minimize)
+                Tentacruel @ Black Sludge (Ability: Corrosion) (Venoshock, Toxic, Scald, Acid Armor)
+
+                I don't love a lot of this either. 
+            
+            Shadow Triad Evasion Fight 
+
+
+            Shadow Triad Illusion Fight 
+
+            Shadow Triad B2B: 
+                I think we want to change the second fight to be more than just Tyranitar. 
+
+
+            I think an Explosion is a good first phase for one of these fights. \
+        
 
 
     Shadow Triad Marine Tube (smoke bomb) (All pokemon have -1 accuracy on switch in)
