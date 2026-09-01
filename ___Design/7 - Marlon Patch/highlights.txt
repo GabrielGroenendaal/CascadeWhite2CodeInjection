@@ -86,6 +86,8 @@ highlights =
   },
   "minor": {
     "highhorsepower": 1,
+    "thickfat": 1,
+    "rattled": 1,
     "barbbarrage": 1,
     "powertrip": 1,
     "brutalswing": 1,
@@ -300,7 +302,7 @@ highlights =
     "trace": 1,
     "innerfocus": 1,
     "raindish": 1,
-    "thickfat": 1,
+    
     "runaway": 1,
     "hypercutter": 1,
     "pickup": 1,
@@ -329,7 +331,6 @@ highlights =
     "sandrush": 1,
     "infiltrator": 1,
     "justified": 1,
-    "rattled": 1,
     "sandforce": 1,
     "furycutter": 1,
     "metalsound": 1,

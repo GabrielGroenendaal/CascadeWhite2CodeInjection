@@ -7,6 +7,16 @@
 
 */
 
+
+
+
+
+
+Trainers 
+    Marlon Split: 
+        We've got two Altaria's here with Amplifier and no Fairy move anymore. We need to fix that.
+        We've got three gardevoirs in Marlon split in quick succession
+
 General Life Shit: 
 
     Appointments to make tomorrow: 
@@ -21,15 +31,15 @@ General Life Shit:
 
 
 Bugs & Scripting: 
-        Calc
-            - Fairy Dust not providing the correct boost in the calc. 
-        
-        Research: 
-            Look into adding new weather effects to the overworld 
-                - Deep Fog 
-                - Harsh Winds 
-                - Smoke Bomb 
-                - Frozen Chasm 
+    Calc
+        - Fairy Dust not providing the correct boost in the calc. 
+    
+    Research: 
+        Look into adding new weather effects to the overworld 
+            - Deep Fog 
+            - Harsh Winds 
+            - Smoke Bomb 
+            - Frozen Chasm 
 
     
 NORMAL TO-DO LIST: 
@@ -41,25 +51,16 @@ NORMAL TO-DO LIST:
         - Dermatologist 
 
 
-504 new mandatory 
-
 
 TONIGHT TO-DO LIST: 
     - Bug Fixes: 
         - Battle Company 
             - Battle Company currently isn't checking if you've defeated all the other trainers. 
             - I wonder if I can just disable the elevator unless you've beaten all the other trainers. 
-        - Lt. Surge 
-            - Test our fixes to the script. 
-        - Calc 
-            - Inner Focus is bugged. It's showing neutral effectiveness vs. Psychic types 
         - Text 
             - When a Pokemon changes into the Fairy type, the text is bugged. 
     
-    - Finish our trainer changes.
-
-
-
+    - Trainer Changes
         Marlon Split:   
             Backpacker Blossom: 
                 ++Sawsbuck-Summer @ Normal Gem (Ability: Sap Sipper) (Petal Blizzard, Rock Climb, Megahorn, Retaliate)

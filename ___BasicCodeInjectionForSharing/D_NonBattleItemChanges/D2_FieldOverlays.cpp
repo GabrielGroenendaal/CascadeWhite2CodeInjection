@@ -2125,8 +2125,37 @@ extern "C"
 
 #pragma region NewScriptCommands
 
+struct SWAN_PACKED SWAN_ALIGNED(2) BoxMainSave	 {_DWORD LastOpenedBox;wchar_t BoxNames[24][20];u8 field_3C4[24];_BYTE byte3DC;u8 AvailableBoxCount;};
+
 extern "C" bool BagSave_AddItem(BagSaveData *bag, u16 itemId, u16 quantity, HeapID heapId);
 extern "C" u32 PML_UtilGetPkmLvExp(u16 species, u16 form, int level);
+extern "C" BoxMainSave * BoxSaveAccessor_GetMainSave(void *boxAccessor);
+extern "C" void *GameData_GetBoxSaveAccessor(GameData *gameData);
+extern "C" BoxPkm * BoxSaveAccessor_GetPkm(void *boxAccessor, u32 trayNum, u32 pos);
+extern "C" u32 PML_PkmGetParam(BoxPkm *pPkm, PkmField field, u32 data);
+extern "C" void PML_PkmSetParam(BoxPkm *pPkm, PkmField field, u32 data);
+
+// extern "C" void GFL_DebugAssertFail(int a1, int a2, char *message);
+// extern "C" BoxPkm * BoxSaveAccessor_GetBox(void *boxAccessor, int boxIndex);
+// extern "C" int dword_2099FE4;
+// extern "C" BoxPkm * THUMB_BRANCH_BoxSaveAccessor_GetPkm(void *boxAccessor, u32 trayNum, u32 pos)
+// {
+//   BoxMainSave *MainSave; // r6 
+//   MainSave = BoxSaveAccessor_GetMainSave(boxAccessor);
+//   if ( trayNum >= 0x18 && trayNum != -1 )
+//   {
+//     GFL_DebugAssertFail((int)&dword_2099FE4, 0, "((trayNum<BOX_MAX_TRAY)||(trayNum == BOXDAT_TRAYNUM_CURRENT))");
+//   }
+//   if ( pos >= 0x1E )
+//   {
+//     GFL_DebugAssertFail((int)&dword_2099FE4, 0, "(pos<BOX_MAX_POS)");
+//   }
+//   if ( trayNum == -1 )
+//   {
+//     trayNum = MainSave->LastOpenedBox;
+//   }
+//   return &BoxSaveAccessor_GetBox(boxAccessor, trayNum)[pos];
+// }
 
 extern "C" int RemoteItems(void *vm, void *env)
 {
@@ -2138,6 +2167,7 @@ extern "C" int RemoteItems(void *vm, void *env)
     gameData = FieldScriptEnv_GetGameData(env);
     party = GameData_GetParty(gameData);
     pokeCount = PokeParty_GetPkmCount(party);
+    
     for (int i = 0; i < pokeCount; i++)
     {
         pkm = PokeParty_GetPkm(party, i);
@@ -2146,6 +2176,22 @@ extern "C" int RemoteItems(void *vm, void *env)
         {
             BagSave_AddItem(GameData_GetBag(gameData), PokeParty_GetParam(pkm, PF_Item, 0), 1, heap);
             PokeParty_SetParam(pkm, PF_Item, 0);
+        }
+    }
+
+    // Removing all items from Box Pkm 
+    void *boxAccessor = GameData_GetBoxSaveAccessor(gameData);
+    BoxMainSave* MainSave = BoxSaveAccessor_GetMainSave(boxAccessor);
+    BoxPkm *boxPkm;
+    u8 AvailableBoxCount = MainSave->AvailableBoxCount;
+    for (int k = 0; k < AvailableBoxCount; k++){
+        for (int j = 0; j < 30; j++){
+            boxPkm = BoxSaveAccessor_GetPkm(boxAccessor, k, j);
+            if (PML_PkmGetParam(boxPkm, PF_Item, 0))
+            {
+                BagSave_AddItem(GameData_GetBag(gameData), PML_PkmGetParam(boxPkm, PF_Item, 0), 1, heap);
+                PML_PkmSetParam(boxPkm, PF_Item, 0);
+            }
         }
     }
     return 0;

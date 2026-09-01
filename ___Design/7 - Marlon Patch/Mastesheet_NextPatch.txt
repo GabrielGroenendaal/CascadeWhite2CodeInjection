@@ -1,4 +1,4 @@
-# Cascade White Dev
+# Cascade White Dev - Build 22
 
 
 
@@ -24,28 +24,28 @@ The AI in Cascade White has been updated to provide a more engaging gameplay exp
 
 A brief overview of the changes is: 
 
+#### Move Selection Scoring
 - The AI is not guaranteed to go for priority when it sees kill if it's already faster than all Pokémon on the field. 
-
 - The AI has a very high chance to use a Priority move when it is not the fastest Pokémon on the field and an enemy Pokémon sees kill on it
-
 - The AI is slightly encouraged to go for setup moves when it sees enemy Pokémon deal negligible (25% or less) damage to it.
-
 - The AI is heavily discouraged from using setup moves when an enemy Pokémon sees a OHKO on it, or a 2HKO if the enemy mon is faster and the setup move does not increase speed. 
-
 - The AI is discouraged from using stat-lowering moves when the target is dealing negligible (25% or less) damage to it.
-
 - The AI is heavily discouraged from using status or stat-lowering moves into targets holding the respective curative items. 
-
 - The AI no longer receives a negative score with damaging moves that lower speed when they are faster than the target.
 
-- When determining BP for Switch AI, the AI is able to account for STAB, move effects that alter BP, moves and abilities that alter type effectiveness (Freeze Dry, Corrosion), abiities that provide resistances and immunities, and abilities that can alter BP such as Technician and Skill Link. 
-
+#### Damage Simulation 
 - When simulating damage for moves, the AI can now see the correct damage for moves with variable BP (Hex, Electro Ball, Flail, etc.)
+- When simulating damage for moves, the AI treats a move that has no PP as 0 damage. 
+- When simulating damage for moves, the AI treats Copycat and Nature Power as the moves they would invoke. 
 
+#### Switch In AI 
+- When determine post-KO switch ins, the AI uses the Gen 4 Logic: it checks to see if any Pokemon has a super effective move. Then it checks which of those Pokemon has the best offensive matchup into the target. Pokemon that only have one type are treated as having that type twice. For example, for a Toxicroak a Claydol would have a score of 8 (2x * 4x) while an Alakazam would have a score of 16 (4x * 4x).
+- If no Pokemon has a super effective move, the logic transitions to phase 2, where the Pokemon with the highest BP move switches in next (the type of logic vanilla gen 5 uses). 
+- When determining BP for Phase 2 Post-KO Switch AI, the AI is able to account for STAB, effectiveness, move effects that alter BP, moves and abilities that alter type effectiveness (Freeze Dry, Corrosion), abiities that provide resistances and immunities, and abilities that can alter BP such as Technician and Skill Link. 
+
+#### Mid-Turn Switch Out AI 
 - The AI has a very low chance to switch out mid-turn if it is dealing negligible damage to all Pokémon on the field. This chance increases each turn the Pokémon is in battle. 
-
 - The AI now has a high chance to switch out mid-turn if it is locked into a move that deals low damage via Encore or Choice Items.
-
 - The AI has the same mid-turn switch AI triggers as Gen 4 (can switch into a Pokémon that resists that last move received and has a super effective move IF they moved before the target last turn)
 
 A full list of the AI Changes is outlined in the [AI Changes Overview](https://drive.google.com/file/d/1Z2hoQeMt998p8sx8VA0MbgYViWAQwedM/view?usp=sharing) document. 
@@ -1251,7 +1251,7 @@ end
 !trm 751/40 (Female Fight of Back-to-Back) 
 
 ### Team Plasma Shadow
-!notif FIELD EFFECT, The Shadow tosses a smoke bomb before battle, reducing the accuracy of Pokémon on switch in by one stage. , #4e86d4
+!notif FIELD EFFECT, The Shadow tosses a smoke bomb before battle, reducing the accuracy of Pokémon by one stage when they switch into battle. , #4e86d4
 !trm 192/42 
 
 ### Charles 

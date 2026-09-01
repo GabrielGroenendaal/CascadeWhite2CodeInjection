@@ -2,7 +2,7 @@
 #include "swantypes.h"
 #include "zoneIdToBackground.h"
 
-#define DEBUGGING_BACKGROUNDS true
+#define DEBUGGING_BACKGROUNDS false
 #define ANIMATED_BACKGROUNDS_ENABLED true
 
 #pragma region defintions
@@ -99,27 +99,28 @@ extern "C"
     }
 
     //  Undella Town Hugh
-    // 60 Aspertia Overlook 
-    // 64 Route 20 Benga 
-    // 65 Flocessy Rnanch 
-    // 67 Alder's House 
-    //  
+    // 60 Aspertia Overlook
+    // 64 Route 20 Benga
+    // 65 Flocessy Rnanch
+    // 67 Alder's House
+    //
     // 165 Colress's Room
     // 166 Ghetsis Room
-    // 168 Deep Giant Chasm 
+    // 168 Deep Giant Chasm
     // 169 Victory Road Entrance
-    // 172 Victory Road Hugh 
-    // 177 SHauntal Room 
-    // 178 Marshal Room 
-    // 179 Caitlyn Room 
-    // 180 Grimsley Room 
-    // 181 Iris Room 
+    // 172 Victory Road Hugh
+    // 177 SHauntal Room
+    // 178 Marshal Room
+    // 179 Caitlyn Room
+    // 180 Grimsley Room
+    // 181 Iris Room
     // 211 Virbank Dock Aphex
     // 212 Liberty Garden Aphex
     // 213 Undella Town Hugh
 
-    const int CompletedBackgroundModels[67] = {
-        9, // 0 nothing
+    #if DEBUGGING_BACKGROUNDS
+    const u16 CompletedBackgroundModels[67] = {
+        9,   // 0 nothing
         24,  // 1 AspertiaOverlook
         27,  // 2 Route20_West_benga
         28,  // 3 FlocessyRanch_South
@@ -142,7 +143,7 @@ extern "C"
         59,  // 20 castelia_gardens
         65,  // 21 CasteliaGymTrainers
         66,  // 22 CasteliaGymLeader
-        9,  // 23 RelicCastle_Interior
+        9,   // 23 RelicCastle_Interior
         73,  // 24 nimbasa_city
         75,  // 25 Nimbasa__big_stadium
         76,  // 26 Route5Streets
@@ -155,38 +156,38 @@ extern "C"
         97,  // 33 driftveil_gym_clay
         98,  // 34 RelicSanctum_volcaronas_room
         99,  // 35 PWTExterior__pwt_battle_bros
-        102,  // 36 PlasmaFrigate_Deck_PWT
-        104,  // 37 chargestone_entrance
-        105,  // 38 chargestone_wattson
-        110,  // 39 celestial_tower_rooftop
-        111,  // 40 TwistMountain_Entrance
-        113,  // 41 mistralton_gym_skyla
-        115,  // 42 ReversalMountain_W2
-        213,  // 43 UndellaTownHugh
-        121,  // 44 abundant_shrine
-        122,  // 45 MarineTube
-        123,  // 46 humilau_city_streets
-        129,  // 47 HumilauGymLeader
-        133,  // 48 route_21_frigate
-        138,  // 49 frigate_zinzollin_first
-        140,  // 50 LacunosaTown_Streets
-        141,  // 51 route_12
-        142,  // 52 village_bridge_bridge
-        153,  // 53 opelucid_gym_W2
-        162,  // 54 Frozen_giant_chasm_ship
-        164,  // 55 frigate_zinzollin_final
-        165,  // 56 frigate_colress
-        166,  // 57 frigate_shadow_triad
-        168,  // 58 giant_chasm_kyurem
-        172,  // 59 victory_road_final
-        177,  // 60 POkemonLeague_Shauntel
-        178,  // 61 pokemonLeague_marshall
-        179,  // 62 PokemonLeague_caitlin
-        180,  // 63 grimsleys_room_pokemonleague
-        212,  // 64 liberty_island_aphex
-        211,  // 65 Virbank_pier_AphexVersion
-        214,  // 66 SM9_Rotom_Room
-};
+        102, // 36 PlasmaFrigate_Deck_PWT
+        104, // 37 chargestone_entrance
+        105, // 38 chargestone_wattson
+        110, // 39 celestial_tower_rooftop
+        111, // 40 TwistMountain_Entrance
+        113, // 41 mistralton_gym_skyla
+        115, // 42 ReversalMountain_W2
+        213, // 43 UndellaTownHugh
+        121, // 44 abundant_shrine
+        122, // 45 MarineTube
+        123, // 46 humilau_city_streets
+        129, // 47 HumilauGymLeader
+        133, // 48 route_21_frigate
+        138, // 49 frigate_zinzollin_first
+        140, // 50 LacunosaTown_Streets
+        141, // 51 route_12
+        142, // 52 village_bridge_bridge
+        153, // 53 opelucid_gym_W2
+        162, // 54 Frozen_giant_chasm_ship
+        164, // 55 frigate_zinzollin_final
+        165, // 56 frigate_colress
+        166, // 57 frigate_shadow_triad
+        168, // 58 giant_chasm_kyurem
+        172, // 59 victory_road_final
+        177, // 60 POkemonLeague_Shauntel
+        178, // 61 pokemonLeague_marshall
+        179, // 62 PokemonLeague_caitlin
+        180, // 63 grimsleys_room_pokemonleague
+        212, // 64 liberty_island_aphex
+        211, // 65 Virbank_pier_AphexVersion
+        214, // 66 SM9_Rotom_Room
+    };
 
     u32 GetBackgroundsSetting_ForDebugging()
     {
@@ -194,14 +195,14 @@ extern "C"
         u16 *lvl_cap_ptr = EventWork_GetWkPtr(eventWork, 16436);
         return CompletedBackgroundModels[*lvl_cap_ptr];
     }
-
+    
     u32 GetBackgroundSeason()
     {
         EventWorkSave *eventWork = GameData_GetEventWork(GAME_DATA);
         u16 *lvl_cap_ptr = EventWork_GetWkPtr(eventWork, 16437);
         return *lvl_cap_ptr;
     }
-
+    #endif
     struct WildEncSlot
     {
         u16 IdAndForme;
@@ -252,8 +253,8 @@ extern "C"
         TR_POST_BATTLE_ITEM = 0xB,
     };
 
-    /* 
-    
+    /*
+
     if (a1->battleBGID >= 80){
         if (a1->battleBGID >= 160){
             HeapNew = (_BYTE*)GFL_ArcSysReadHeapNew(151, 4, (HeapID)((g_Effects->HeapID & 0x7FFF | 0x8000)));
@@ -265,7 +266,7 @@ extern "C"
     else {
         HeapNew = (_BYTE*)GFL_ArcSysReadHeapNew(151, 0, (HeapID)((g_Effects->HeapID & 0x7FFF | 0x8000)));
     }
-    
+
     HeapNew = (_BYTE*)GFL_ArcSysReadHeapNew(151, 0, (HeapID)((g_Effects->HeapID & 0x7FFF | 0x8000)));
 
     */
@@ -433,6 +434,10 @@ extern "C"
     extern void vecfx_normalize(const VecFx32 *vec, VecFx32 *normalized);
     extern void FieldPlayer_GetWPos(void *player, VecFx32 *dest);
     extern DayPart GetRealTimeDayPeriod(Season season);
+    extern u32 PokeParty_GetParam(PartyPkm *pPkm, int field, void *extra);
+    extern PartyPkm *PokeParty_GetPkm(PokeParty *party, int slot);
+    extern u32 PokeParty_GetPkmCount(PokeParty *pPartyBlk);
+    extern u32 GFL_RandomLCAlt(u32 max);
 #pragma endregion
 
     // Season THUMB_BRANCH_GameData_GetSeason(void *gameData)
@@ -629,7 +634,7 @@ extern "C"
             fieldStatus->BattlePedestalID = 6;
             return;
         }
-        
+
         random = TrainerData_GetParam(foe1TrID, TR_CLASS);
         if (foe1TrID == 211)
         {
@@ -667,7 +672,8 @@ extern "C"
         random = TrainerData_GetParam(foe1TrID, TR_CLASS);
         if (foe1TrID == 768)
         {
-            if (zoneId == 548){
+            if (zoneId == 548)
+            {
                 fieldStatus->BattleBGID = 75;
                 return;
             }
@@ -708,6 +714,67 @@ extern "C"
     }
 
 #pragma region settingupTrainers
+
+    // void IllusionCheck(PokeParty *pokeParty)
+    //     {
+    //         u8 count = PokeParty_GetPkmCount(pokeParty);
+    //         if (count < 2)
+    //         {
+    //             return;
+    //         }
+
+    //         bool hasIllusion = false;
+    //         for (u8 i = 0; i < count; i++)
+    //         {
+    //             PartyPkm *pkm = PokeParty_GetPkm(pokeParty, i);
+    //             if (pkm && PokeParty_GetParam(pkm, 0xA, 0) == 0x95)
+    //             {
+    //                 hasIllusion = true;
+    //                 break;
+    //             }
+    //         }
+    //         if (!hasIllusion)
+    //         {
+    //             return;
+    //         }
+
+    //         // Fisher-Yates shuffle of the party order
+    //         for (int i = count - 1; i > 0; i--)
+    //         {
+    //             int j = GFL_RandomLCAlt(i + 1);
+    //             if (i != j)
+    //             {
+    //                 PartyPkm temp = pokeParty->Pokemon[i];
+    //                 pokeParty->Pokemon[i] = pokeParty->Pokemon[j];
+    //                 pokeParty->Pokemon[j] = temp;
+    //             }
+    //         }
+
+    //         // Illusion is never allowed to land in the last party slot
+    //         PartyPkm *lastPkm = PokeParty_GetPkm(pokeParty, count - 1);
+    //         if (lastPkm && PokeParty_GetParam(lastPkm, 0xA, 0) == 0x95)
+    //         {
+    //             u8 nonIllusionSlots[6];
+    //             u8 nonIllusionCount = 0;
+    //             for (u8 i = 0; i < count - 1; i++)
+    //             {
+    //                 PartyPkm *pkm = PokeParty_GetPkm(pokeParty, i);
+    //                 if (pkm && PokeParty_GetParam(pkm, 0xA, 0) != 0x95)
+    //                 {
+    //                     nonIllusionSlots[nonIllusionCount++] = i;
+    //                 }
+    //             }
+    //             // If every party member has Illusion, there's no valid slot to swap to
+    //             if (nonIllusionCount > 0)
+    //             {
+    //                 u8 swapIdx = nonIllusionSlots[GFL_RandomLCAlt(nonIllusionCount)];
+    //                 PartyPkm temp = pokeParty->Pokemon[count - 1];
+    //                 pokeParty->Pokemon[count - 1] = pokeParty->Pokemon[swapIdx];
+    //                 pokeParty->Pokemon[swapIdx] = temp;
+    //             }
+    //         }
+    //     }
+        
     /*
 
         --------------------------------------------------------------------------------------------------
@@ -731,57 +798,30 @@ extern "C"
         int trClass;                   // r0
         BattleFieldStatus fieldStatus; // [sp+18h] [bp-28h] BYREF
         int v16;                       // [sp+28h] [bp-18h]
-                                       // #if DEBUGGING_BACKGROUNDS
-                                       //         k::Printf("\nBtlSetup_SetTrainerLocal called with Foe1 ID: %d, Foe2 ID: %d, Ally ID: %d, Style: %d", foe1TrId, foe2TrId, allyTrId, style);
-                                       // #endif
         v16 = allyTrId;
         m_GameData = encSys->m_GameData;
         BtlSetup_Reset(setup);
-        // #if DEBUGGING_BACKGROUNDS
-        //         k::Printf("\nReset Battle Setup");
-        // #endif
 
         SaveBtlFieldStatus(&fieldStatus, encSys->m_GameData, encSys->m_Field);
-        // #if DEBUGGING_BACKGROUNDS
-        //         k::Printf("\nSaved Battle Field Status with BG ID: %d, Pedestal ID: %d, Zone ID: %d", fieldStatus.BattleBGID, fieldStatus.BattlePedestalID, fieldStatus.ZoneID);
-        // #endif
         Param = TrainerData_GetParam(foe1TrId, TR_CLASS);
-        // #if DEBUGGING_BACKGROUNDS
-        //         k::Printf("\nGot Trainer Class: %d", Param);
-        // #endif
         btlPedestalId = GetTrainerClassBattlePedestal(Param);
         if (btlPedestalId != 20)
         {
             fieldStatus.BattlePedestalID = btlPedestalId;
         }
-        // #if DEBUGGING_BACKGROUNDS
-        //         k::Printf("\nSet Battle Pedestal ID to: %d", fieldStatus.BattlePedestalID);
-        // #endif
         trClass = TrainerData_GetParam(foe1TrId, TR_CLASS);
         fieldStatus.BattleBGID = CheckOverridenTrainerBattleBG(trClass, fieldStatus.BattleBGID);
-        // #if DEBUGGING_BACKGROUNDS
-        //         k::Printf("\nSet Battle BG ID to: %d", fieldStatus.BattleBGID);
-        // #endif
         modifyFieldStatus(&fieldStatus, foe1TrId, style);
-        // #if DEBUGGING_BACKGROUNDS
-        //         k::Printf("\nModified Field Status to BG ID: %d, Pedestal ID: %d", fieldStatus.BattleBGID, fieldStatus.BattlePedestalID);
-        // #endif
         if (style <= BTL_STYLE_ROTATION)
         {
             if (style == BTL_STYLE_SINGLE)
             {
                 if (foe2TrId)
                 {
-                    // #if DEBUGGING_BACKGROUNDS
-                    //                     k::Printf("\nSetting up 1v2 Battle");
-                    // #endif
                     BtlSetup_SetTrainer1v2(setup, m_GameData, &fieldStatus, foe1TrId, foe2TrId, heapId);
                 }
                 else
                 {
-                    // #if DEBUGGING_BACKGROUNDS
-                    //                     k::Printf("\nSetting up 1v1 Single Battle");
-                    // #endif
                     BtlSetup_SetTrainer1v1Single(setup, m_GameData, &fieldStatus, foe1TrId, heapId);
                 }
             }
@@ -789,9 +829,6 @@ extern "C"
             {
                 if (style == BTL_STYLE_DOUBLE && allyTrId)
                 {
-                    // #if DEBUGGING_BACKGROUNDS
-                    //                     k::Printf("\nSetting up 2v2 Battle");
-                    // #endif
                     BtlSetup_SetTrainer2v2(setup, m_GameData, &fieldStatus, allyTrId, foe1TrId, foe2TrId, heapId);
                 }
                 else
@@ -850,50 +887,24 @@ extern "C"
         int TileClass;          // r0
         void *player;           // [sp+0h] [bp-28h]
         RTCTime time;           // [sp+4h] [bp-24h] BYREF
-                                // #if DEBUGGING_BACKGROUNDS
-                                //         k::Printf("\nSaveBtlFieldStatus called");
-                                // #endif
         PlayerStateZoneID = Field_GetPlayerStateZoneID(field);
         player = Field_GetPlayer(field);
         status->BattleBGID = GetZoneBattleBGID(PlayerStateZoneID);
-        // #if DEBUGGING_BACKGROUNDS
-        //         k::Printf("\nSaveBtlFieldStatus: Initial Battle BG ID from Zone ID %d is %d",
-        //                   PlayerStateZoneID,
-        //                   status->BattleBGID);
-        // #endif
         if (!GetBackgroundsSetting())
         {
             status->BattleBGID = ZoneIdToBackgroundID[PlayerStateZoneID];
         }
-        // #if DEBUGGING_BACKGROUNDS
-        //         k::Printf("\nSaveBtlFieldStatus: Modified Battle BG ID is %d", status->BattleBGID);
-        // #endif
         TileTypeUnder = FieldPlayer_GetTileTypeUnder(player);
         TileClass = GetTileClass(TileTypeUnder);
         status->BattlePedestalID = GetTileEncountType(TileClass);
         status->ZoneID = PlayerStateZoneID;
-        // #if DEBUGGING_BACKGROUNDS
-        //         k::Printf("\nSaveBtlFieldStatus: Set Battle Pedestal ID to %d", status->BattlePedestalID);
-        // #endif
         RTC_GetCachedTime(&time);
         status->Hour = time.Hour;
         status->Minute = time.Minute;
         status->BtlWeather = ConvFieldWeatherToBtl(field);
         status->Season = GameData_GetSeason(gameData);
-        // #if DEBUGGING_BACKGROUNDS
-        //         k::Printf("\nSaveBtlFieldStatus: Set Time to %02d:%02d, Weather to %d, Season to %d",
-        //                   status->Hour,
-        //                   status->Minute,
-        //                   status->BtlWeather,
-        //                   status->Season);
-        // #endif
-
-
         if (!GetBackgroundsSetting())
         {
-            // #if DEBUGGING_BACKGROUNDS
-            //             k::Printf("\nSaveBtlFieldStatus: Checking for position based background changes");
-            // #endif
             if (PlayerStateZoneID == 446    // Route 20
                 || PlayerStateZoneID == 445 // Flocessy Ranch
                 //|| PlayerStateZoneID == 385 // Lostlorn Forest
@@ -902,9 +913,6 @@ extern "C"
                 || PlayerStateZoneID == 329 // Route 5
             )
             {
-                // #if DEBUGGING_BACKGROUNDS
-                //                 k::Printf("\nSaveBtlFieldStatus: Position based background change triggered");
-                // #endif
                 PlayerState *playerstate = GameData_GetPlayerState(gameData);
                 VecFx32 *vec = PlayerState_GetWPos(playerstate);
                 VecFx32 *print;
@@ -946,8 +954,9 @@ extern "C"
                 // }
             }
         }
-
+#if DEBUGGING_BACKGROUNDS
         status->BattleBGID = GetBackgroundsSetting_ForDebugging();
+#endif
     }
 
 #pragma endregion
@@ -1105,9 +1114,7 @@ extern "C"
         u16 pClashDist,
         u16 pClashDir);
 
-    extern u32 PokeParty_GetParam(PartyPkm *pPkm, int field, void *extra);
-    extern PartyPkm *PokeParty_GetPkm(PokeParty *party, int slot);
-    extern u32 PokeParty_GetPkmCount(PokeParty *pPartyBlk);
+    
 
     /* Some fuck ass function only called in EventTrainerEye_CheckAll to count the number of Pokemon that can battle */
     int THUMB_BRANCH_sub_2182FD0(void *a1)
@@ -1133,5 +1140,228 @@ extern "C"
         }
         return (i == 1) ? 3 : i;
     }
+#pragma endregion
+
+#pragma region IllusionImplementation
+    // enum BattleSetupType
+    // {
+    //     TYPE_STANDARD = 0x0,
+    //     TYPE_NET_MULTI = 0x1,
+    //     TYPE_NET_MULTI_VS_AI = 0x2,
+    //     TYPE_AI_MULTI = 0x3,
+    //     TYPE_AI_1V2 = 0x4,
+    //     TYPE_AI_MULTI_VS_WILD = 0x5,
+    // };
+    // enum BtlType
+    // {
+    //     BtlType_Wild = 0x0,
+    //     BtlType_Trainer = 0x1,
+    //     BtlType_Facility = 0x2,
+    //     BtlType_Online = 0x3,
+    //     BtlType_Demo = 0x4,
+    //     BtlType_Max = 0x5,
+    // };
+    // enum BattleResult
+    // {
+    //     BTL_RESULT_DEFEAT = 0x0,
+    //     BTL_RESULT_VICTORY = 0x1,
+    //     BTL_RESULT_DRAW = 0x2,
+    //     BTL_RESULT_FLEE = 0x3,
+    //     BTL_RESULT_FLEE_FOE = 0x4,
+    //     BTL_RESULT_CAPTURE = 0x5,
+    //     BTL_RESULT_6 = 0x6,
+    // };
+
+    // struct TrainerBattleSetup
+    // {
+    //     _DWORD TrID;
+    //     _DWORD TrClass;
+    //     _DWORD TrAIBits;
+    //     u16 TrItems[4];
+    //     void *TrainerName;
+    //     __int16 winMessage[4];
+    //     __int16 loseMessage[4];
+    // };
+    // struct SWAN_ALIGNED(4) BtlSetup
+    // {
+    //     BtlType btlType;
+    //     BattleStyle BtlStyle;
+    //     BattleFieldStatus m_FieldStatus;
+    //     u16 BattleBGMID;
+    //     __int16 WinBGMID;
+    //     int field_1C;
+    //     char commMode;
+    //     char commPos;
+    //     BattleSetupType BtlSetupType;
+    //     char IsRecordedBattle;
+    //     PokeParty *Parties[4];
+    //     int m_PlayerInfo[4];
+    //     u8 chatotVolume[4];
+    //     TrainerBattleSetup *TrainerSetups[4];
+    //     int field_58;
+    //     int field_5C;
+    //     int field_60;
+    //     int field_64;
+    //     int field_68;
+    //     int field_6C;
+    //     GameData *GameData;
+    //     void *m_TrainerData;
+    //     void *m_ItemWork;
+    //     int bagCursorData;
+    //     int m_Dex;
+    //     int m_RecordData;
+    //     int field_88;
+    //     int field_8C;
+    //     u8 launcherSetup[6];
+    //     char field_96;
+    //     char field_97;
+    //     char BadgeCount;
+    //     char field_99;
+    //     char field_9A;
+    //     char field_9B;
+    //     int field_9C;
+    //     __int16 field_A0;
+    //     __int16 field_A2;
+    //     int EarnedMoney;
+    //     BattleResult battleResult;
+    //     char CapturedPkmIdx;
+    //     char field_AD;
+    //     __int16 field_AE;
+    //     void *recBuffer;
+    //     int field_B4;
+    //     int field_B8;
+    //     int field_BC;
+    //     int field_C0;
+    //     int field_C4;
+    //     int field_C8;
+    //     int field_CC;
+    //     u16 HPSum;
+    //     u8 CurrentTurn;
+    //     u8 SwitchCount;
+    //     u8 NoEffectHits;
+    //     u8 SuperEffectiveHits;
+    //     u8 NotVeryEffectiveHits;
+    //     u8 OpponentNoEffectHits;
+    //     u8 OpponentNotVeryEffectiveHits;
+    //     u8 BattlesWon;
+    //     u8 OpponentFainted;
+    //     u8 AllyFainted;
+    //     u8 UniqueMovesUsed;
+    //     char field_DD;
+    //     char field_DE;
+    //     u8 PokestarScenario;
+    //     int field_E0;
+    //     u8 PartyState[4][6];
+    //     int field_FC;
+    //     int TeamHPPercentage[4];
+    //     char field_110;
+    //     int field_114;
+    //     int field_118;
+    //     int field_11C;
+    //     int field_120;
+    //     int field_124;
+    //     char field_128;
+    //     u8 field_129;
+    //     int field_12C;
+    //     int field_130;
+    //     int recPlayCancel;
+    //     __int16 LoseBGMID;
+    //     __int16 StrangeEndingBGMID;
+    //     u8 KeySystemLevelAdjust;
+    //     char field_13D;
+    //     char field_13E;
+    //     char field_13F;
+    //     int field_140;
+    //     int field_144;
+    //     int field_148;
+    // };
+
+    // extern void TrainerUtil_LoadTrainer(GameData *gameData, u32 trId, TrainerBattleSetup *setupParam, HeapID heapId);
+    // extern void TrainerUtil_LoadParty(u32 trId, PokeParty *party, HeapID heapId);
+    // extern PokeParty *PokeParty_Create(HeapID heapId);
+    // extern TrainerBattleSetup *TrainerBattleSetup_Create(HeapID heapId);
+    // extern int GetTrainerClassBGMGroupId(int classId);
+    // extern void BtlSetup_LoadTrainerBase(
+    //     void *setup,
+    //     GameData *gameData,
+    //     BattleStyle style,
+    //     BattleFieldStatus *fieldStatus,
+    //     HeapID heapId);
+    // extern void BtlSetup_LoadTrainer(
+    //     void *btlSetup,
+    //     GameData *gameData,
+    //     int trainerBufNo,
+    //     PokeParty **dstParty,
+    //     int trId,
+    //     HeapID heapId);
+
+    // void IllusionCheck(PokeParty *pokeParty)
+    // {
+    //     u8 count = PokeParty_GetPkmCount(pokeParty);
+    //     if (count < 2)
+    //     {
+    //         return;
+    //     }
+    //     bool hasIllusion = false;
+    //     for (u8 i = 0; i < count; i++)
+    //     {
+    //         PartyPkm *pkm = PokeParty_GetPkm(pokeParty, i);
+    //         if (pkm && PokeParty_GetParam(pkm, 0xA, 0) == 0x95)
+    //         {
+    //             hasIllusion = true;
+    //             break;
+    //         }
+    //     }
+    //     if (!hasIllusion)
+    //     {
+    //         return;
+    //     }
+    //     // Fisher-Yates shuffle of the party order
+    //     for (int i = count - 1; i > 0; i--)
+    //     {
+    //         int j = GFL_RandomLCAlt(i + 1);
+    //         if (i != j)
+    //         {
+    //             PartyPkm temp = pokeParty->Pokemon[i];
+    //             pokeParty->Pokemon[i] = pokeParty->Pokemon[j];
+    //             pokeParty->Pokemon[j] = temp;
+    //         }
+    //     }
+    //     // Illusion is never allowed to land in the last party slot
+    //     PartyPkm *lastPkm = PokeParty_GetPkm(pokeParty, count - 1);
+    //     if (lastPkm && PokeParty_GetParam(lastPkm, 0xA, 0) == 0x95)
+    //     {
+    //         u8 nonIllusionSlots[6];
+    //         u8 nonIllusionCount = 0;
+    //         for (u8 i = 0; i < count - 1; i++)
+    //         {
+    //             PartyPkm *pkm = PokeParty_GetPkm(pokeParty, i);
+    //             if (pkm && PokeParty_GetParam(pkm, 0xA, 0) != 0x95)
+    //             {
+    //                 nonIllusionSlots[nonIllusionCount++] = i;
+    //             }
+    //         }
+    //         // If every party member has Illusion, there's no valid slot to swap to
+    //         if (nonIllusionCount > 0)
+    //         {
+    //             u8 swapIdx = nonIllusionSlots[GFL_RandomLCAlt(nonIllusionCount)];
+    //             PartyPkm temp = pokeParty->Pokemon[count - 1];
+    //             pokeParty->Pokemon[count - 1] = pokeParty->Pokemon[swapIdx];
+    //             pokeParty->Pokemon[swapIdx] = temp;
+    //         }
+    //     }
+    // }
+    // void THUMB_BRANCH_SAFESTACK_BtlSetup_SetTrainer1v1Single(
+    //     void *btlSetup,
+    //     GameData *gameData,
+    //     BattleFieldStatus *fieldStatus,
+    //     int trId,
+    //     HeapID heapId)
+    // {
+    //     BtlSetup_LoadTrainerBase(btlSetup, gameData, BTL_STYLE_SINGLE, fieldStatus, heapId);
+    //     BtlSetup_LoadTrainer(btlSetup, gameData, 1, (PokeParty **)((u8 *)btlSetup + 0x28), trId, heapId);
+    //     IllusionCheck(*(PokeParty **)((u8 *)btlSetup + 0x28));
+    // }
+
 #pragma endregion
 }

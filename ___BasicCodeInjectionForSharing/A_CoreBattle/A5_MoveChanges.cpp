@@ -145,6 +145,24 @@ extern "C"
         return NightShadeHandlers;
     }
 
+    void THUMB_BRANCH_HandlerWorrySeed(int a1, ServerFlow *a2, unsigned int *a3)
+    {
+        u8 Value; // r6
+        HandlerParam_ChangeAbility *v6; // r4
+
+        if ( a3 == (unsigned int *)BattleEventVar_GetValue(VAR_ATTACKING_MON) )
+        {
+            Value = BattleEventVar_GetValue(VAR_TARGET_MON_ID);
+            v6 = (HandlerParam_ChangeAbility *)BattleHandler_PushWork(a2, EFFECT_CHANGEABILITY, (int)a3);
+            v6->pokeID = Value;
+            v6->abilityID = 155;
+            BattleHandler_StrSetup(&v6->exStr, 2u, 405);
+            BattleHandler_AddArg(&v6->exStr, v6->pokeID);
+            BattleHandler_AddArg(&v6->exStr, v6->abilityID);
+            BattleHandler_PopWork(a2, v6);
+        }
+    }
+
 #if USING_DEVOUR
     void HandlerDevourHealing(BattleEventItem *item, ServerFlow *serverFlow, u32 pokemonSlot, u32 *work)
     // DEVOUR HANDLER

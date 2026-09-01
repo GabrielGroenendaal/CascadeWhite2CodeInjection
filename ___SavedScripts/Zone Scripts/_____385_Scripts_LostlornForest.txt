@@ -544,7 +544,7 @@ public class MainEvents {
 		Message.CloseAll();
 		Message.ActorEx(1024, 44, ERIKA_ENTITY, 2, 0);
 		Message.CloseAll();
-		goto skipbattle;
+
 		Battle.CallTrainerBattle(767, 0 , 0);
 		isVictory = Battle.IsTrainerVictory();
 		if (isVictory != 1){
