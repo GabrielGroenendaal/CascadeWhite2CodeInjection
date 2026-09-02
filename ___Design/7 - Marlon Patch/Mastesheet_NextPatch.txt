@@ -1,4 +1,4 @@
-# Cascade White Dev - Build 22
+# Cascade White Dev - Build 22c
 
 
 
@@ -2261,22 +2261,27 @@ end
 !notif SPLIT-LOCKED CONTENT, Seaside Cave only be accessed before defeating Benga in Lacunosa town. , #af74b3
 !items Items 
 tm fighting, TM47 Cross Chop (reward from defeating Maylene)
-fighting gem, Fighting Gem (x3) (reward from defeating Maylene)
-chople berry, Chople Berry (x3) (reward from defeating Maylene)
+fighting gem, Fighting Gem (x1) (reward from defeating Maylene)
+chople berry, Chople Berry (x1) (reward from defeating Maylene)
 heart scale, Heart Scale (x1) (reward for beating the Ranger)
+yellow shard, Yellow Shard (x5) (reward for defeating Ranger Johan)
 end
 
-!enc 2 
+!enc 93
 
-!tr 4 (rewards a Heart Scale)
+!trm 472 
+
+!tr 474 (rewards a Heart Scale)
+
+!tr 473 (rewards 5x yellow shards)
 
 ### Maylene 
 !notif SPLIT-LOCKED CONTENT, Seaside Cave, and by extension Maylene, only be accessed before defeating Benga in Lacunosa town. , #af74b3
-!tr 4 Rewards 2x Chople Berries, 2x Fighting Gem, TM47 Cross Chop
+!tr 471 Rewards 2x Chople Berries, 2x Fighting Gem, TM47 Cross Chop
 
 
-### Black Belt Kai (Undella Bay Gatekeeper)
-!tr 4
+### Black Belt Rocky (Undella Bay Gatekeeper)
+!tr 580
 
 
 
@@ -2289,12 +2294,12 @@ end
 
 !notif FIELD EFFECT, There is permanent sun in Undella Bay , #4e86d4
 
-!enc 2 
+!enc 43
 
-!tr 4 (rewards the TM for Solarbeam)
+!tr 470 (rewards the TM for Solarbeam)
 
 ### Swimmer Bart (Abyssal Ruins Gatekeeper)
-!tr 4 
+!tr 315 
 
 
 
@@ -2316,17 +2321,16 @@ end
 
 !enc 2 
 
-!tr 4 (Guards TTM92 Solar Blade)
+!tr 317 (Guards TTM92 Solar Blade)
 
-!tr 4 (Guards Fossils)
+!tr 314 (Guards Fossils)
 
-!tr 4 (Guards TM01 Psychic Fangs)
+!tr 318 (Guards TM01 Psychic Fangs)
 
-!tr 4 (Guards blue shards and access to the Sunken Statue)
+!tr 316 (Guards blue shards and access to the Sunken Statue)
 
-### Strange Statue  #af74b3 
-!tr 4 Rewards Life Orb
-
+### Strange Statue 
+!tr 104 Rewards Life Orb
 
 
 
@@ -2335,36 +2339,56 @@ end
 ## Plasma Frigate 
 !items Items 
 tm psychic, TM51 Ally Switch (reward for defeating Plasma Scientist F) 
-tm electric, TM93 Wild Charge (reward for defeating Plasma Scientist M) 
+tm normal, TM63 Slam (reward for defeating Plasma Scientist M) 
 heart scale, Heart Scale x1 
 end
 
 ### Plasma Rumble 
 !notif FIELD EFFECT, RUMBLE: Your Pokémon will take damage equal to 1/6 of their total health at the end of each turn, #4e86d4
-!tr 4
-!tr 4 
-!tr 4 
-!tr 4
+!trm 500
+!trm 800
+!trm 801
+!trm 802
 
-!tr 4 
+### Mess Hall Tag Battle
+!trm 798
+!trm 799
 
-!tr 4 
+!tr 794 Hugh's Team if you Picked Tepig
+!tr 796 Hugh's Team if you Picked Dewott
+!tr 795 Hugh's Team if you Picked Snivy
 
-!tr 4 
+!tr 343 (DODGEABLE) Rewards 1x Enhancer 
 
-!tr 4 
+!tr 812 (DODGEABLE) Rewards 1x Enhancer
 
-!tr 4 
+!tr 435 (SPLIT LOCKED) Rewards TM51 Ally Switch 
+
+!tr 444 (SPLIT LOCKED) Rewards TM63 Slam 
+
+### Top Left Room, BACK-TO-BACK
+!trm 434 
+!trm 443
+
+### Top Right Room, BACK-TO-BACK
+!trm 438
+!trm 450
+
+### Bottom Left Room, BACK-TO-BACK
+!trm 432 
+!trm 442
+
+### Bottom Right Room, BACK-TO-BACK
+!trm 430
+!trm 441
 
 ### Zinzolin Tag Battle 
-!tr 4 Hugh's Team if you Picked Tepig
+!tr 794 Hugh's Team if you Picked Tepig
+!tr 796 Hugh's Team if you Picked Dewott
+!tr 795 Hugh's Team if you Picked Snivy
 
-!tr 4 Hugh's Team if you Picked Dewott
-
-!tr 4 Hugh's Team if you Picked Snivy
-
-!trm 4 Left Side 
-!trm 4 Right Side 
+!trm 797 Left Side 
+!trm 347 Right Side 
 
 
 
@@ -2384,37 +2408,39 @@ end
 
 !notif FIELD EFFECT, There is Permanent Hail on Route 13 , #4e86d4
 
-!enc 2 
+!enc 121 
 
-!trm 4 Right Side 
-!trm 4 Left Side 
+!trm 294 Right Side 
+!trm 295 Left Side 
 
-!trm 4 (Guards the Heart Scale)
+!trm 289 
 
-!trm 4 Choose One (Left)
-!trm 4 Choose One (Right)
+!tr 290 (Guards the Heart Scale)
 
-!tr 4 (Guards TM27 Weather Crash)
-!tr 4 (Guards TM57 Weahter Ball)
+!tr 731 (Rewards TM23 Weather Crash)
 
-!trm 4
+!trm 286 Choose One (Left)
+!trm 287 Choose One (Right)
 
-!trm 4 Choose One (Left)
-!trm 4 Choose One (Right)
+!trm 730 
+
+!tr 469 (DODGEABLE) (Rewards 1x IV Enhancer)
+
+!tr 288 (Guards TM57 Weahter Ball)
+
+!trm 133 Choose One (Left)
+!trm 134 Choose One (Right)
 
 ### Candice 
 !notif SPLIT-LOCKED CONTENT, Candice only hangs around Route 13 until you defeat Benga in Lacunosa Town , #af74b3 
-!tr 4 Rewards 2x Yache Berries, 2x Ice Gems, TM68 Avalanche
-
-
-
-
+!tr 300 Rewards 1x Yache Berries, 1x Ice Gems, TM68 Avalanche
 
 
 
 ## Lacunosa Town 
 !items Items 
-colress mchn, Proto Booster (reward for defeating Benga) 
+colress mchn, Proto Booster (reward for defeating Benga)
+chilan berry, Chilan Berry x1 
 end
 
 ### Benga 
@@ -2424,7 +2450,7 @@ end
 - Maylene Miniboss in Seaside Cave (rewards Fighting Gems, Chople Berries, TM47 Cross Chop)
 
 Rather than an encounter with Team Plasma, Benga will confront you here and demand to battle. This is a challenging single battle. 
-!trm 4 
+!trm 379
 
 
 

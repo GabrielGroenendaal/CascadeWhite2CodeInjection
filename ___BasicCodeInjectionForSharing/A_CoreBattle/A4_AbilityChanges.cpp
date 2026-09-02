@@ -4621,5 +4621,29 @@ void THUMB_BRANCH_SAFESTACK_BtlSetup_SetTrainer1v1Single(
     BtlSetup_LoadTrainer(btlSetup, gameData, 1, (PokeParty **)((u8 *)btlSetup + 0x28), trId, heapId);
     IllusionCheck(*(PokeParty **)((u8 *)btlSetup + 0x28));
 }
+#if ADDING_BATTLE_BOX_FIGHTS 
 
+extern PokeParty * convertBoxedPokeSetToParty(void *pBox, HeapID heapId);
+extern void * GameData_GetSaveControl(GameData *gameData);
+extern void *  getBattleBox(void *pSaveInfoBase);
+
+void THUMB_BRANCH_SAFESTACK_BtlSetup_SetTrainer2v2(
+        void *setup,
+        GameData *gameData,
+        BattleFieldStatus *fieldStatus,
+        int allyTrId,
+        int foe1TrId,
+        int foe2TrId,
+        HeapID heapId)
+{
+    BtlSetup_LoadTrainerBase(setup, gameData, BTL_STYLE_DOUBLE, fieldStatus, heapId);
+    BtlSetup_LoadTrainer(setup, gameData, 2, (PokeParty **)((u8 *)setup + 0x2C), allyTrId, heapId);
+    BtlSetup_LoadTrainer(setup, gameData, 1, (PokeParty **)((u8 *)setup + 0x28), foe1TrId, heapId);
+    BtlSetup_LoadTrainer(setup, gameData, 3, (PokeParty **)((u8 *)setup + 0x30), foe2TrId, heapId);
+    if (allyTrId == BATTLE_BOX_ID){
+        (PokeParty **)((u8 *)setup + 0x2C) = convertBoxedPokeSetToParty(getBattleBox(GameData_GetSaveControl(gameData)), heapId)
+    }
+  setup->field_22 = 3;
+}
+#endif 
 #pragma endregion
