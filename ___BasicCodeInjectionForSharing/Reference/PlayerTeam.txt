@@ -1,0 +1,77 @@
+Samurott (M) @ Rawst Berry
+Typing: Water/Fighting
+Level: 45
+Hasty Nature
+Ability: Shell Armor
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 25 HP / 24 Atk / 10 Def / 25 SpA / 31 SpD / 13 Spe
+- Detect
+- Peck
+- Low Sweep
+- Sacred Sword
+Met: Aspertia City
+
+Pinsir (F) @ None
+Typing: Bug/Ground
+Level: 44
+Gentle Nature
+Ability: Mold Breaker
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 31 HP / 27 Atk / 17 Def / 16 SpA / 8 SpD / 25 Spe
+- Flail
+- Dig
+- Fusion Flare
+- Sand Attack
+Met: Castelia City
+
+Purugly (M) @ None
+Typing: Normal/Dark
+Level: 45
+Relaxed Nature
+Ability: Thick Fat
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 16 HP / 21 Atk / 27 Def / 2 SpA / 29 SpD / 3 Spe
+- Aerial Ace
+- Bind
+- Night Slash
+- Taunt
+Met: Driftveil City
+
+Krookodile (F) @ Black Glasses
+Typing: Ground/Dark
+Level: 45
+Quirky Nature
+Ability: Intimidate
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 31 HP / 10 Atk / 13 Def / 28 SpA / 26 SpD / 25 Spe
+- Drill Run
+- Crunch
+- Sand Attack
+- Stone Edge
+Met: Pledge Grove
+
+Swoobat (F) @ Bright Powder
+Typing: Fairy/Flying
+Level: 45
+Jolly Nature
+Ability: Soundproof
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 21 HP / 4 Atk / 15 Def / 14 SpA / 14 SpD / 13 Spe
+- Vise Grip
+- Quash
+- Acrobatics
+- Heart Stamp
+Met: Relic Passage
+
+Bronzong @ Lum Berry
+Typing: Steel/Psychic
+Level: 44
+Adamant Nature
+Ability: Heatproof
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 14 HP / 13 Atk / 27 Def / 16 SpA / 16 SpD / 11 Spe
+- Teleport
+- Zen Headbutt
+- Skill Swap
+- Flash Cannon
+Met: Virbank Complex

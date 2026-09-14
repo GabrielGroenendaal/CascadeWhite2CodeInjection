@@ -217,6 +217,16 @@ extern BattleParty *BattleClient_GetActParty(BtlClientWk *a1);
 extern int Move_GetPP(BattleMon *a1, unsigned int a2);
 extern u16 PML_MoveGetBasePower(int id);
 extern int HandlerWaterVeil(int a1, int a2, int a3, int *a4);
+extern void BattleAction_SetSwitchParam(BattleActionParam *a1, int pos, int memberIdx);
+extern int sub_21B6308(BtlClientWk *a1, BattleActionParam *a2);
+extern bool sub_21B62DC(BtlClientWk *a1);
+extern void sub_21BDC2C(BattleActionParam *a1);
+extern void BattleAction_SetNull(BattleActionParam *result);
+extern _BYTE* MainModule_BattlePosToClientIDAndPosIndex(
+        MainModule *a1,
+        int battlePos,
+        _BYTE *clientID,
+        _BYTE *partyIndex);
 extern void HandlerWaterVeilCureStatus(int a1, ServerFlow *a2, unsigned int *a3);
 extern bool PML_MoveIsDamaging(int id);
 extern int HandlerKeenEyeGuard(int a1, ServerFlow *a2, int a3, int *a4);
@@ -236,6 +246,9 @@ extern bool BattleMon_CheckIfMoveCondition(BattleMon *a1, MoveCondition a2);
 extern int Handler_CalculateSpeed(ServerFlow *a1, BattleMon *a2, int a3);
 extern int Handler_SimulationEffectivenessCore(ServerFlow *a1, int a2, int a3, int a4);
 extern int PML_MoveGetParam(int a1, MoveField a2);
+extern int StoreMyChangePokePos(BtlClientWk *a1, u8 *a2);
+extern unsigned int PickBestMonToSwitchInto(BtlClientWk *a1, u8 *a2, unsigned int a3, BattleMon *a4);
+
 extern int ServerEvent_CalcDamage(
     ServerFlow *a1,
     BattleMon *AttackingMon,

@@ -418,6 +418,7 @@ public class MainEvents {
 		Actor.WaitActionFinish();
 		Actor.Hide(21);
 		Actor.Hide(22);
+		Actor.Hide(31);
 		EventFlags.Set(701);
 		EventFlags.Set(702);
         // Re-enables fast travel

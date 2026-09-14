@@ -1,4 +1,4 @@
-# Cascade White Dev - Build 22c
+# Cascade White Dev - Build 22e
 
 
 
@@ -589,6 +589,8 @@ end
 !tr 185/25 (DODGEABLE) Rewards 5x Green Shards.
 
 !trm 504/25 Found on way out of Virbank City
+
+!trm 188/24 Found on Route 20 
 
 !trm 763/25 Found in Route 20 
 

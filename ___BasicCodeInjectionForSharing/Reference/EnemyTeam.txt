@@ -1,0 +1,65 @@
+Drapion @ Air Balloon
+Typing: Poison / Dark
+Ability: Tough Claws
+Level: 44
+Hardy Nature
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- Cross Poison (Poison)
+- Knock Off (Dark)
+- Needle Arm (Grass)
+- Toxic Spikes (Poison)
+
+Glalie @ Focus Sash
+Typing: Ice / Rock
+Ability: Rock Head
+Level: 44
+Lonely Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Head Smash (Rock)
+- Sheer Cold (Ice)
+- Superpower (Fighting)
+- Spikes (Ground)
+
+Kecleon @ Red Card
+Typing: Ghost / Dragon 
+Ability: Adaptability
+Level: 43
+Serious Nature
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- Dragon Tail (Dragon)
+- Shadow Claw (Ghost)
+- Focus Punch (Fighting)
+- Scary Face (Ghost)
+
+Weezing @ Quick Claw
+Typing: Poison / Fire
+Ability: Levitate
+Level: 44
+Serious Nature
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Heat Wave (Fire)
+- Thunder (Electric)
+- Body Press (Fighting)
+- Gunk Shot (Poison)
+
+Lucario @ Scope Lens
+Typing: Steel/Fighting
+Ability: Trace
+Level: 43
+Rash Nature
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+- Storm Throw (Fighting)
+- Flash Cannon (Steel)
+- Psychic (Psychic)
+- Detect (Fighting)
+
+Crobat @ Covert Cloak
+Typing: Poison / Flying
+Ability: Anticipation
+Level: 45
+Docile Nature
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- Poison Fang (Poison)
+- Air Slash (Flying)
+- Hypnosis (Psychic)
+- Ominous Wind (Ghost)

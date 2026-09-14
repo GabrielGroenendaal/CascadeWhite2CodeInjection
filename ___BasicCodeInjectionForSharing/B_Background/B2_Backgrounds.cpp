@@ -143,7 +143,7 @@ extern "C"
         59,  // 20 castelia_gardens
         65,  // 21 CasteliaGymTrainers
         66,  // 22 CasteliaGymLeader
-        9,   // 23 RelicCastle_Interior
+        71,   // 23 RelicCastle_Interior
         73,  // 24 nimbasa_city
         75,  // 25 Nimbasa__big_stadium
         76,  // 26 Route5Streets
@@ -715,65 +715,65 @@ extern "C"
 
 #pragma region settingupTrainers
 
-    // void IllusionCheck(PokeParty *pokeParty)
-    //     {
-    //         u8 count = PokeParty_GetPkmCount(pokeParty);
-    //         if (count < 2)
-    //         {
-    //             return;
-    //         }
+    void IllusionCheck(PokeParty *pokeParty)
+        {
+            u8 count = PokeParty_GetPkmCount(pokeParty);
+            if (count < 2)
+            {
+                return;
+            }
 
-    //         bool hasIllusion = false;
-    //         for (u8 i = 0; i < count; i++)
-    //         {
-    //             PartyPkm *pkm = PokeParty_GetPkm(pokeParty, i);
-    //             if (pkm && PokeParty_GetParam(pkm, 0xA, 0) == 0x95)
-    //             {
-    //                 hasIllusion = true;
-    //                 break;
-    //             }
-    //         }
-    //         if (!hasIllusion)
-    //         {
-    //             return;
-    //         }
+            bool hasIllusion = false;
+            for (u8 i = 0; i < count; i++)
+            {
+                PartyPkm *pkm = PokeParty_GetPkm(pokeParty, i);
+                if (pkm && PokeParty_GetParam(pkm, 0xA, 0) == 0x95)
+                {
+                    hasIllusion = true;
+                    break;
+                }
+            }
+            if (!hasIllusion)
+            {
+                return;
+            }
 
-    //         // Fisher-Yates shuffle of the party order
-    //         for (int i = count - 1; i > 0; i--)
-    //         {
-    //             int j = GFL_RandomLCAlt(i + 1);
-    //             if (i != j)
-    //             {
-    //                 PartyPkm temp = pokeParty->Pokemon[i];
-    //                 pokeParty->Pokemon[i] = pokeParty->Pokemon[j];
-    //                 pokeParty->Pokemon[j] = temp;
-    //             }
-    //         }
+            // Fisher-Yates shuffle of the party order
+            for (int i = count - 1; i > 0; i--)
+            {
+                int j = GFL_RandomLCAlt(i + 1);
+                if (i != j)
+                {
+                    PartyPkm temp = pokeParty->Pokemon[i];
+                    pokeParty->Pokemon[i] = pokeParty->Pokemon[j];
+                    pokeParty->Pokemon[j] = temp;
+                }
+            }
 
-    //         // Illusion is never allowed to land in the last party slot
-    //         PartyPkm *lastPkm = PokeParty_GetPkm(pokeParty, count - 1);
-    //         if (lastPkm && PokeParty_GetParam(lastPkm, 0xA, 0) == 0x95)
-    //         {
-    //             u8 nonIllusionSlots[6];
-    //             u8 nonIllusionCount = 0;
-    //             for (u8 i = 0; i < count - 1; i++)
-    //             {
-    //                 PartyPkm *pkm = PokeParty_GetPkm(pokeParty, i);
-    //                 if (pkm && PokeParty_GetParam(pkm, 0xA, 0) != 0x95)
-    //                 {
-    //                     nonIllusionSlots[nonIllusionCount++] = i;
-    //                 }
-    //             }
-    //             // If every party member has Illusion, there's no valid slot to swap to
-    //             if (nonIllusionCount > 0)
-    //             {
-    //                 u8 swapIdx = nonIllusionSlots[GFL_RandomLCAlt(nonIllusionCount)];
-    //                 PartyPkm temp = pokeParty->Pokemon[count - 1];
-    //                 pokeParty->Pokemon[count - 1] = pokeParty->Pokemon[swapIdx];
-    //                 pokeParty->Pokemon[swapIdx] = temp;
-    //             }
-    //         }
-    //     }
+            // Illusion is never allowed to land in the last party slot
+            PartyPkm *lastPkm = PokeParty_GetPkm(pokeParty, count - 1);
+            if (lastPkm && PokeParty_GetParam(lastPkm, 0xA, 0) == 0x95)
+            {
+                u8 nonIllusionSlots[6];
+                u8 nonIllusionCount = 0;
+                for (u8 i = 0; i < count - 1; i++)
+                {
+                    PartyPkm *pkm = PokeParty_GetPkm(pokeParty, i);
+                    if (pkm && PokeParty_GetParam(pkm, 0xA, 0) != 0x95)
+                    {
+                        nonIllusionSlots[nonIllusionCount++] = i;
+                    }
+                }
+                // If every party member has Illusion, there's no valid slot to swap to
+                if (nonIllusionCount > 0)
+                {
+                    u8 swapIdx = nonIllusionSlots[GFL_RandomLCAlt(nonIllusionCount)];
+                    PartyPkm temp = pokeParty->Pokemon[count - 1];
+                    pokeParty->Pokemon[count - 1] = pokeParty->Pokemon[swapIdx];
+                    pokeParty->Pokemon[swapIdx] = temp;
+                }
+            }
+        }
         
     /*
 
@@ -823,6 +823,7 @@ extern "C"
                 else
                 {
                     BtlSetup_SetTrainer1v1Single(setup, m_GameData, &fieldStatus, foe1TrId, heapId);
+                    IllusionCheck(*(PokeParty **)((u8 *)setup + 0x28));
                 }
             }
             else

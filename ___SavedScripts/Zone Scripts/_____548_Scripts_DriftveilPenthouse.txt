@@ -180,6 +180,8 @@ public class MainEvents {
 
     static void sub_JanineBattle(){
         int isVictory; 
+        int playerX;
+        int playerZ;
 
         Sound.BGMFadeOut(120);
         Message.CloseAll();
@@ -193,8 +195,18 @@ public class MainEvents {
         ShowQuestionMark(255);
         Actor.WaitActionFinish();
         Runtime.Sleep(12);
-        Actor.WalkRoute(255, 3, 6, 0, 16, 0);
-        Actor.WaitActionFinish();
+        Player.GetGPos(playerX, playerZ)
+        if (playerX != 3){
+            Actor.WalkRoute(255, 3, 6, 0, 16, 0);
+            Actor.WaitActionFinish();
+            goto Label_PostMovement;
+        }
+        if (playerZ != 6){
+            Actor.WalkRoute(255, 3, 6, 0, 16, 0);
+            Actor.WaitActionFinish();
+            goto Label_PostMovement;
+        }
+        Label_PostMovement:
         Runtime.Sleep(32);
         Message.Info(20, 2);
         Message.CloseAll();

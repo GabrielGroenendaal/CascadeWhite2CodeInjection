@@ -459,6 +459,7 @@ public class MainEvents {
     public static void main_22() { // @ 0x664
 		Actor.PauseAll();
 		Sound.SEPlay(1351);
+		Actor.FacePlayer();
 		Message.Actor(1024, 35, 0, 0);
 		Input.LastKeyWait();
 		Message.CloseActor();
@@ -470,6 +471,7 @@ public class MainEvents {
     public static void main_23() { // @ 0x664
 		Actor.PauseAll();
 		Sound.SEPlay(1351);
+		Actor.FacePlayer();
 		Message.Actor(1024, 36, 0, 0);
 		Input.LastKeyWait();
 		Message.CloseActor();
@@ -481,6 +483,7 @@ public class MainEvents {
     public static void main_24() { // @ 0x664
 		Actor.PauseAll();
 		Sound.SEPlay(1351);
+		Actor.FacePlayer();
 		Message.Actor(1024, 37, 0, 0);
 		Input.LastKeyWait();
 		Message.CloseActor();

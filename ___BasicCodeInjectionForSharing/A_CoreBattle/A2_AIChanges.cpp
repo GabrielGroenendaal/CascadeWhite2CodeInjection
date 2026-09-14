@@ -2043,6 +2043,7 @@ extern "C"
         #if DAMAGE_CACHE_ENABLED
         saveToCalcTable(a1, AttackingMon, DefendingMon, (MoveID)a4, v12);
         #endif
+
         /*
             ----------------------------------------------------------------------------------
             ------------------------------- PURSUIT LOGIC ------------------------------------
@@ -2073,7 +2074,6 @@ extern "C"
                 }
             }
         #endif 
-          
         return v12;
     }
 
@@ -2449,6 +2449,14 @@ extern "C"
 
 #endif 
 
+    // rand1/rand2/rand3 are declared as _QWORD in BtlClientWk, but _QWORD is #define'd to `unsigned long`,
+    // which is only 4 bytes on this arm-none-eabi target instead of the true 8-byte fields the engine actually
+    // has at these offsets (rand1=0xFC, rand2=0x104, rand3=0x10C). That silently shifts rand2/rand3 onto the
+    // wrong bytes via named struct access, so we read/write them here by explicit offset instead.
+    #define BCW_RAND1(base) (*(u64*)((u8*)(base) + 0xFC))
+    #define BCW_RAND2(base) (*(u64*)((u8*)(base) + 0x104))
+    #define BCW_RAND3(base) (*(u64*)((u8*)(base) + 0x10C))
+
     BattleMon *THUMB_BRANCH_SwitchAI_DetermineOpponent(BtlClientWk *a1, __int16 a2)
     {
         __int64 Count;      // r4
@@ -2504,12 +2512,16 @@ extern "C"
         {
             Count = MainModule_ExpandExistPokeID(a1->mainModule, a1->pokeCon, a2 | 0x100, a4);
             if (!Count) return 0;
-            v4 = a1->rand3 + a1->rand2 * a1->rand1;
-            a1->rand1 = v4;
+            v4 = BCW_RAND3(a1) + BCW_RAND2(a1) * BCW_RAND1(a1);
+            BCW_RAND1(a1) = v4;
             v5 = (HIDWORD(v4) * Count) >> 32;
             return PokeCon_GetBattleMon(a1->pokeCon, a4[v5]);
         }
     }
+
+    #undef BCW_RAND1
+    #undef BCW_RAND2
+    #undef BCW_RAND3
 
     int checkForSTAB(BattleMon *a1, int a2, unsigned int a3)
     {
@@ -2791,10 +2803,6 @@ extern "C"
         BattleMon *defendingMonChecked;
         numTargets = 1;
 
-        #if DEBUGGING_PICK_BEST_MON_AI
-        k::Printf("\n[PickBestMonToSwitchInto] ENTER: numCandidates=%d, defenderMon=%d, defenderID=%d, battleStyle=%d", a3, a4->Species, a4->ID, battleStyle);
-        #endif
-
         #if DEFAULT_G4_AI == false
         if (getEventWorkValue(16503) == 0)
         {
@@ -2823,9 +2831,6 @@ extern "C"
             defendingMonChecked = (battleStyle != BTL_STYLE_SINGLE && getEventWorkValue(16436) == 1) ? PokeCon_GetBattleMon(a1->pokeCon, currentTargetPosition) : defendingMonChecked;
             PokeType = BattleMon_GetPokeType(defendingMonChecked);
             defAbility = (AbilID)BattleMon_GetValue(defendingMonChecked, VALUE_EFFECTIVE_ABILITY);
-            #if DEBUGGING_PICK_BEST_MON_AI
-            k::Printf("\n[PickBestMonToSwitchInto] target %d/%d: checking defendingMon=%d, PokeType=%d, defAbility=%d", currentTarget, numTargets, defendingMonChecked->Species, PokeType, defAbility);
-            #endif
             #if DEFAULT_DOUBLES_AI
             if (battleStyle != BTL_STYLE_TRIPLE)
             #else 
@@ -2834,9 +2839,6 @@ extern "C"
             {
                 if (!IsPosInRangeTripleBattle(MainModule_PokeIDToPokePos(a1->mainModule, a1->pokeCon, defendingMonChecked->ID), MainModule_PokeIDToPokePos(a1->mainModule, a1->pokeCon, a4->ID)))
                 {
-                    #if DEBUGGING_PICK_BEST_MON_AI
-                    k::Printf("\n[PickBestMonToSwitchInto] defendingMon=%d out of triple battle range, skipping", defendingMonChecked->Species);
-                    #endif
                     continue;
                 }
             }
@@ -2847,18 +2849,11 @@ extern "C"
                 v23_temp[i] = 0;
                 MonData = BattleParty_GetMonData(BattleClient_GetActParty(a1), a2[i]);
                 atkAbility = (AbilID)BattleMon_GetValue(MonData, VALUE_EFFECTIVE_ABILITY);
-                #if DEBUGGING_PICK_BEST_MON_AI
-                k::Printf("\n[PickBestMonToSwitchInto]   candidate i=%d: mon=%d, partySlot=%d, atkAbility=%d, fainted=%d", i, MonData->Species, a2[i], atkAbility, BattleMon_IsFainted(MonData));
-                #endif
-
                 if (!BattleMon_IsFainted(MonData))
                 {
                     if (MonData->Species == PK132_DITTO){
                         MonData = defendingMonChecked;
                         atkAbility = (AbilID)BattleMon_GetValue(MonData, VALUE_EFFECTIVE_ABILITY);
-                        #if DEBUGGING_PICK_BEST_MON_AI
-                        k::Printf("\n[PickBestMonToSwitchInto]     candidate is Ditto, re-evaluating as defendingMon=%d with atkAbility=%d", MonData->Species, atkAbility);
-                        #endif
                     }
                     MoveCount = BattleMon_GetMoveCount(MonData);
                     if (MoveCount)
@@ -2870,41 +2865,16 @@ extern "C"
                                 ID = Move_GetID(MonData, moveIndex);
                                 // Figuring out the Type
                                 Type = PML_MoveGetType(ID);
-                                #if DEBUGGING_PICK_BEST_MON_AI
-                                k::Printf("\n[PickBestMonToSwitchInto]     move=%d: baseType=%d (atkAbility=%d)", ID, Type, atkAbility);
-                                #endif
                                 Type = (atkAbility == ABIL096_NORMALIZE) ? TYPE_NORMAL : (Type == TYPE_NORMAL) ? checkType(atkAbility) : Type;
-                                #if DEBUGGING_PICK_BEST_MON_AI
-                                k::Printf("\n[PickBestMonToSwitchInto]       after Normalize/checkType: Type=%d", Type);
-                                #endif
                                 Type = (ID == MOVE311_WEATHER_BALL || ID == MOVE271_WEATHER_CRASH) ? checkWeatherBall(atkAbility) : Type;
-                                #if DEBUGGING_PICK_BEST_MON_AI
-                                k::Printf("\n[PickBestMonToSwitchInto]       after checkWeatherBall: Type=%d", Type);
-                                #endif
                                 Type = (ID == MOVE546_TECHNO_BLAST) ? checkTechnoblast(MonData) : Type;
-                                #if DEBUGGING_PICK_BEST_MON_AI
-                                k::Printf("\n[PickBestMonToSwitchInto]       after checkTechnoblast: Type=%d (final move Type)", Type);
-                                #endif
-
                                 // Figuring out the Type Effectiveness
                                 TypeEffectivenessVsMon = GetTypeEffectivenessVsMon(Type, PokeType);
-                                #if DEBUGGING_PICK_BEST_MON_AI
-                                k::Printf("\n[PickBestMonToSwitchInto]       GetTypeEffectivenessVsMon(Type=%d, PokeType=%d) = %d", Type, PokeType, TypeEffectivenessVsMon);
-                                #endif
                                 TypeEffectivenessVsMon = getTypeEffectivenessForMove((MoveID)ID, Type, PokeType, atkAbility, TypeEffectivenessVsMon, 0);
-                                #if DEBUGGING_PICK_BEST_MON_AI
-                                k::Printf("\n[PickBestMonToSwitchInto]       getTypeEffectivenessForMove(move=%d) = %d", ID, TypeEffectivenessVsMon);
-                                #endif
                                 u8 moldBreaker = HasMoldBreaker(MonData);
                                 u8 immuneAbility = CheckIfImmuneAbility(Type, ID, defendingMonChecked);
                                 TypeEffectivenessVsMon = (!moldBreaker && immuneAbility) ? 0 : TypeEffectivenessVsMon;
-                                #if DEBUGGING_PICK_BEST_MON_AI
-                                k::Printf("\n[PickBestMonToSwitchInto]       moldBreaker=%d, immuneAbility=%d -> TypeEffectivenessVsMon=%d", moldBreaker, immuneAbility, TypeEffectivenessVsMon);
-                                #endif
                                 TypeEffectivenessVsMon = (atkAbility == ABIL096_NORMALIZE && ID != MOVE363_NATURAL_GIFT && ID != MOVE546_TECHNO_BLAST && ID != MOVE311_WEATHER_BALL && ID != MOVE271_WEATHER_CRASH) ? 3 : TypeEffectivenessVsMon;
-                                #if DEBUGGING_PICK_BEST_MON_AI
-                                k::Printf("\n[PickBestMonToSwitchInto]     move=%d, moveType=%d, FINAL TypeEffectivenessVsMon=%d", ID, Type, TypeEffectivenessVsMon);
-                                #endif
 
                                 if (TypeEffectivenessVsMon > 3)
                                 {
@@ -2926,18 +2896,12 @@ extern "C"
                                     effectiveness_2 = ConvertToEffectivenessScore(effectiveness_2);
                                     v23_temp[i] = effectiveness_1 * effectiveness_2;
                                     moveIndex = MoveCount;
-                                    #if DEBUGGING_PICK_BEST_MON_AI
-                                    k::Printf("\n[PickBestMonToSwitchInto]       STAB-relevant hit: effectiveness_1=%d, effectiveness_2=%d, score=%d", effectiveness_1, effectiveness_2, v23_temp[i]);
-                                    #endif
                                 }
                             }
                             moveIndex = (moveIndex + 1);
                         } while (moveIndex < MoveCount);
                         checkForPhase2 = checkForPhase2 + v23_temp[i];
                         v23[i] = v23[i] + v23_temp[i];
-                        #if DEBUGGING_PICK_BEST_MON_AI
-                        k::Printf("\n[PickBestMonToSwitchInto]   candidate i=%d running total v23[%d]=%d, checkForPhase2=%d", i, i, v23[i], checkForPhase2);
-                        #endif
                     }
                 }
             }
@@ -2945,15 +2909,8 @@ extern "C"
 
         if (checkForPhase2 == 0)
         {
-            #if DEBUGGING_PICK_BEST_MON_AI
-            k::Printf("\n[PickBestMonToSwitchInto] checkForPhase2 == 0 (no candidate scored), falling back to Phase2PickBestMonToSwitchInto");
-            #endif
             return Phase2PickBestMonToSwitchInto(a1, a2, a3, a4);
         }
-
-        #if DEBUGGING_PICK_BEST_MON_AI
-        k::Printf("\n[PickBestMonToSwitchInto] scoring complete, sorting %d candidates by score", a3);
-        #endif
         result = a3;
         for (j = 0; j < a3; result = a3)
         {
@@ -2985,6 +2942,102 @@ extern "C"
         return result;
     }
 
+
+    // Direct BtlClientWk offsets (verified against the IDA struct dump, sizeof=0x254) used below instead of
+    // named field access, since this hook cares about exact layout: mainModule=0x00, returnDataActionSelect=0xE0,
+    // returnDataActionSelectCount=0xE4, actionParam=0x12C, myChangePokeCount=0x1BB, myChangePokePos=0x1BE.
+    #define BCW_MAINMODULE(base)         (*(MainModule**)((u8*)(base) + 0x00))
+    #define BCW_RETDATASELECT(base)      (*(int**)((u8*)(base) + 0xE0))
+    #define BCW_RETDATASELECTCNT(base)   (*(int*)((u8*)(base) + 0xE4))
+    #define BCW_ACTIONPARAM(base)        ((BattleActionParam*)((u8*)(base) + 0x12C))
+    #define BCW_MYCHANGEPOKECNT(base)    (*(u8*)((u8*)(base) + 0x1BB))
+    #define BCW_MYCHANGEPOKEPOS(base)    ((u8*)((u8*)(base) + 0x1BE))
+
+    int THUMB_BRANCH_SAFESTACK_SubProc_AI_SelectPokemon(BtlClientWk *a1, int a2, int a3, int a4)
+    {
+        unsigned int NumBattleReadyPartyMons; // r7
+        unsigned int myChangePokeCount; // r6
+        BattleMon *v7; // r3
+        int v8; // r0
+        unsigned int i; // r4
+        int v11; // r0
+        int v12; // r0
+        unsigned char v13; // [sp+4h] [bp-1Ch] BYREF
+        unsigned __int8 v14; // [sp+5h] [bp-1Bh] BYREF
+        u8 v15[26]; // [sp+6h] [bp-1Ah] BYREF
+
+        BCW_MYCHANGEPOKECNT(a1) = StoreMyChangePokePos(a1, BCW_MYCHANGEPOKEPOS(a1));
+        if ( BCW_MYCHANGEPOKECNT(a1) )
+        {
+            NumBattleReadyPartyMons = GetNumBattleReadyPartyMons(a1, v15);
+            if ( NumBattleReadyPartyMons )
+            {
+                myChangePokeCount = (unsigned __int8)BCW_MYCHANGEPOKECNT(a1);
+                if ( myChangePokeCount > NumBattleReadyPartyMons )
+                {
+                    if ( BtlSetup_GetBattleStyle(BCW_MAINMODULE(a1)) == BTL_STYLE_ROTATION )
+                    {
+                        v8 = sub_21B6308(a1, BCW_ACTIONPARAM(a1));
+                        if ( v8 )
+                        {
+                            BCW_RETDATASELECTCNT(a1) = v8;
+                            BCW_RETDATASELECT(a1) = (int*)BCW_ACTIONPARAM(a1);
+                            return 1;
+                        }
+                    }
+                    myChangePokeCount = NumBattleReadyPartyMons;
+                    // Propagate the truncated count back into the shared struct field: only this many
+                    // actionParam entries are actually going to be filled below, and anything downstream
+                    // that reads a1->myChangePokeCount expecting the original (pre-truncation) count would
+                    // otherwise walk into unfilled/uninitialized actionParam slots past what we wrote.
+                    BCW_MYCHANGEPOKECNT(a1) = (u8)myChangePokeCount;
+                }
+                for ( i = 0; i < myChangePokeCount; i = (unsigned __int8)(i + 1) )
+                {
+                    // Re-run opponent detection and the switch-in scorer per empty slot, over only the
+                    // still-unassigned tail of v15, so each position gets its own best-fit pick instead of
+                    // every open slot being filled from one shared ranking computed against a single opponent.
+                    v7 = SwitchAI_DetermineOpponent(a1, BCW_MYCHANGEPOKEPOS(a1)[i]);
+                    if ( v7 )
+                    {
+                        PickBestMonToSwitchInto(a1, v15 + i, NumBattleReadyPartyMons - i, v7);
+                    }
+                    MainModule_BattlePosToClientIDAndPosIndex(BCW_MAINMODULE(a1), BCW_MYCHANGEPOKEPOS(a1)[i], &v13, &v14);
+                    BattleAction_SetSwitchParam(&BCW_ACTIONPARAM(a1)[i], v14, v15[i]);
+                }
+                BCW_RETDATASELECT(a1) = (int*)BCW_ACTIONPARAM(a1);
+                v11 = 4 * myChangePokeCount;
+                goto LABEL_19;
+            }
+            if ( sub_21B62DC(a1) )
+            {
+                v12 = sub_21B6308(a1, BCW_ACTIONPARAM(a1));
+                if ( v12 )
+                {
+                    BCW_RETDATASELECTCNT(a1) = v12;
+                    BCW_RETDATASELECT(a1) = (int*)BCW_ACTIONPARAM(a1);
+                    return 1;
+                }
+            }
+            sub_21BDC2C(BCW_ACTIONPARAM(a1));
+        }
+        else
+        {
+            BattleAction_SetNull(BCW_ACTIONPARAM(a1));
+        }
+        BCW_RETDATASELECT(a1) = (int*)BCW_ACTIONPARAM(a1);
+        v11 = 4;
+        LABEL_19:
+        BCW_RETDATASELECTCNT(a1) = v11;
+        return 1;
+    }
+
+    #undef BCW_MAINMODULE
+    #undef BCW_RETDATASELECT
+    #undef BCW_RETDATASELECTCNT
+    #undef BCW_ACTIONPARAM
+    #undef BCW_MYCHANGEPOKECNT
+    #undef BCW_MYCHANGEPOKEPOS
 
 #pragma endregion
 

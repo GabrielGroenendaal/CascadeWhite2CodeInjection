@@ -334,7 +334,7 @@ data_address_moveEffects:
 	move_ef.work_up => &Label_WorkUp
 	move_ef.cotton_guard => &Label_RaiseUserSpecialAttack
 	move_ef.relic_song => &Label_RelicSong
-	move_ef.glaciate => &Label_Glaciate
+	move_ef.glaciate => &Label_LowersTargetSpeedWithDamage
 	move_ef.freeze_shock => &Label_ChargeMoves
 	move_ef.ice_burn => &Label_ChargeMoves
 	move_ef.unknown_0x014d => &Label_0x5D42

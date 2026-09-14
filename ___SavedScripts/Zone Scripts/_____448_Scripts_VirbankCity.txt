@@ -401,6 +401,7 @@ public class MainEvents {
 		EventFlags.Clear(593);
 		Actor.Show(29);
 		Actor.Show(30);
+		Actor.Show(31);
 		EventFlags.Set(2558);
 		EventWorks.Set(16555, 5);
 

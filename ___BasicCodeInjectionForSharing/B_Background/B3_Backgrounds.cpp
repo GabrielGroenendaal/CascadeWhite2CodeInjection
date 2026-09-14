@@ -367,7 +367,7 @@ extern "C"
     extern void* MainModule_GetPokestarScriptPtr(void *a1);
     extern void BtlvMcss_SetOrthoMode(void *a1);
     extern void TCBTask_VBlank();
-#define g_Effects (*(BtlvEffectMain **)0x21F4280)
+#define g_Effects (*(void **)0x21F4280)
 #pragma endregion
 
     u32 GetBackgroundsSetting()
@@ -377,17 +377,49 @@ extern "C"
         return *lvl_cap_ptr;
     }
 
+    // Direct BtlvEffect offsets (per IDA struct dump, sizeof=0x34) used for every a1 (BtlvEffect*) access
+    // below, instead of going through the local BtlvEffect struct definition.
+    #define BE_BATTLESTYLE(base)            (*(BattleStyle*)((u8*)(base) + 0x00))
+    #define BE_BATTLEBGID(base)             (*(u32*)((u8*)(base) + 0x08))
+    #define BE_PLAYERBATTLEPEDESTALID(base) (*(u32*)((u8*)(base) + 0x0C))
+    #define BE_FIELDLIGHTINDEX(base)        (*(u8*)((u8*)(base) + 0x10))
+    #define BE_AREAIDSEASONSHIFT(base)      (*(u8*)((u8*)(base) + 0x11))
+    #define BE_ZONEID(base)                 (*(u16*)((u8*)(base) + 0x12))
+    #define BE_HOUR(base)                   (*(u8*)((u8*)(base) + 0x14))
+    #define BE_MINUTE(base)                 (*(u8*)((u8*)(base) + 0x15))
+    #define BE_MAINMODULE(base)             (*(void**)((u8*)(base) + 0x28))
+    #define BE_POKESTAR(base)               (*(u16*)((u8*)(base) + 0x2C))
+    #define BE_POKESTARFIELD(base)          (*(u16*)((u8*)(base) + 0x2E))
+    #define BE_PWTFINAL(base)               (*(u32*)((u8*)(base) + 0x30))
+
+    // Direct BtlvEffectMain / BtlvEffectSetupParam offsets (per IDA struct dumps, sizes 0x254 / 0x34)
+    // used instead of the local struct definitions for every g_Effects/v5/v7/v25 access below.
+    #define BEM_TCBMANAGER(base)                     (*(void**)((u8*)(base) + 0x00))
+    #define BEM_FIELD4(base)                         (*(void**)((u8*)(base) + 0x04))
+    #define BEM_EFFVM(base)                          (*(void**)((u8*)(base) + 0x188))
+    #define BEM_PALANM(base)                         (*(void**)((u8*)(base) + 0x18C))
+    #define BEM_BTLVMCSS(base)                       (*(void**)((u8*)(base) + 0x190))
+    #define BEM_BTLVSTAGEHANDLE(base)                (*(void**)((u8*)(base) + 0x194))
+    #define BEM_BTLVFIELDHANDLE(base)                (*(void**)((u8*)(base) + 0x198))
+    #define BEM_BTLVCAMERAHANDLE(base)               (*(void**)((u8*)(base) + 0x19C))
+    #define BEM_CLACT(base)                          (*(void**)((u8*)(base) + 0x1A0))
+    #define BEM_BTLVGAUGE(base)                      (*(void**)((u8*)(base) + 0x1A4))
+    #define BEM_BTLVTIMER(base)                      (*(void**)((u8*)(base) + 0x1B0))
+    #define BEM_BTLVBG(base)                         (*(void**)((u8*)(base) + 0x1B4))
+    #define BEM_VTCB(base)                           (*(void**)((u8*)(base) + 0x1B8))
+    #define BEM_SETUPPARAM(base)                     ((u8*)(base) + 0x1BC)
+    #define BEM_HEAPID(base)                         (*(HeapID*)((u8*)(base) + 0x1F8))
+    #define BEM_TRAINERINDEX0(base)                  (*(int*)((u8*)(base) + 0x200))
+    #define BEM_FRAMESBEFORECAMERAIDLEMOVEMENT(base) (*(int*)((u8*)(base) + 0x24C))
+    #define BSP_MAINMODULE(base)                     (*(void**)((u8*)(base) + 0x28))
+
     void THUMB_BRANCH_SAFESTACK_BtlvEffect_Init(BtlvEffect *a1, void *a2, HeapID a3)
     {
         HeapID heapId;                       // r6
         int adjustedBGID;
-        BtlvEffectMain *v5;                  // r0
-        BtlvEffectSetupParam *p_SetupParam;  // r2
-        BtlvEffectMain *v7;                  // r12
-        BtlvEffect *v8;                      // r3
-        int v9;                              // r5
-        BattleStyle battleStyle;             // r0
-        BtlType battleType;                  // r1
+        void *v5;                            // r0
+        void *p_SetupParam;                  // r2
+        void *v7;                            // r12
         u32 v12;                             // r0
         int PokestarScenarioID;              // r1
         void* btlvMcss; // BtlvMcss *btlvMcss;                  // r0
@@ -401,157 +433,157 @@ extern "C"
         int RecordedBattleType;              // r0
         PokestarScenario *PokestarScriptPtr; // r0
         int i;                               // r3
-        BtlvEffectMain *v25; // BtlvEffectMain *v25;                 // r0
+        void *v25;                           // r0
         void *v26; // MainModule *v26;                     // r0
         int v27;                             // r1
         Light light;                         // [sp+18h] [bp-30h] BYREF
-        u16 a6;                              // [sp+20h] [bp-28h] BYREF
-        
+        // sub_2019830 forwards this pointer into sub_201998C's `dest` param, which (like
+        // Normalize060File's pEntryCount out-param, see B1_Backgrounds.cpp) is hand-decompiled
+        // and unverified; padded past a single u16 so an overrun there smashes scratch space
+        // instead of our saved registers/return address.
+        u16 a6Buf[8];                        // [sp+20h] [bp-28h] BYREF
+        u16 &a6 = a6Buf[0];
+
         *(u32 *)&heapId = a3;
-        v5 = (BtlvEffectMain *)GFL_HeapAllocate(a3, 0x254u, 1, "btlv_effect.c", 0x15Cu);
+        v5 = GFL_HeapAllocate(a3, 0x254u, 1, "btlv_effect.c", 0x15Cu);
         v7 = v5;
-         p_SetupParam = &v5->SetupParam;
+        p_SetupParam = BEM_SETUPPARAM(v5);
         g_Effects = v5;
 
         // v7 = v5;
         // g_Effects = v5;
         // BtlvEffectMain* g_Effects = (BtlvEffectMain*)0x21F4280;
 
-
-        v8 = a1;
-        v9 = 6;
-        do
+        // BtlvEffect and BtlvEffectSetupParam are both exactly 0x34 bytes and share byte-for-byte layout
+        // for this setup data, so copy the whole thing by raw offset rather than walking a1 as an array
+        // of typed BtlvEffect fields.
+        for (u32 copyOffset = 0; copyOffset < 0x34; copyOffset++)
         {
-            battleStyle = v8->battleStyle;
-            battleType = v8->battleType;
-            v8 = (BtlvEffect *)((char *)v8 + 8);
-            p_SetupParam->battleStyle = battleStyle;
-            p_SetupParam->btlType = battleType;
-            p_SetupParam = (BtlvEffectSetupParam *)((char *)p_SetupParam + 8);
-            --v9;
-        } while (v9);
-  
+            ((u8*)p_SetupParam)[copyOffset] = ((u8*)a1)[copyOffset];
+        }
 
-        p_SetupParam->battleStyle = v8->battleStyle;
-        v7->HeapID = heapId;
+        BEM_HEAPID(v7) = heapId;
         v12 = GFL_TCBMgrCalcAllocSize(0x20u);
-        g_Effects->field_4 = (void *)GFL_HeapAllocate(heapId, v12, 1, "btlv_effect.c", 0x162u);
-        g_Effects->TCBManager = GFL_TCBMgrCreate(0x20u, g_Effects->field_4);
-        g_Effects->EffVM = BtlvEffVM_Init(g_Effects->TCBManager, *(int *)&heapId);
-        g_Effects->PalAnm = PalAnm_Create(heapId);
-        PaletteTrans_AutoSet(g_Effects->PalAnm, 1);
-        sub_2026E30(g_Effects->PalAnm, 0, 0x200u, *(int *)&heapId);
-        sub_2026E30(g_Effects->PalAnm, 1, 0x1E0u, *(int *)&heapId);
-        sub_2026E30(g_Effects->PalAnm, 2, 0x200u, *(int *)&heapId);
-        sub_2026E30(g_Effects->PalAnm, 3, 0x1E0u, *(int *)&heapId);
-        g_Effects->btlvMcss = BtlvMcss_Create(a1->battleStyle, g_Effects->TCBManager, *(int *)&heapId);
+        BEM_FIELD4(g_Effects) = (void *)GFL_HeapAllocate(heapId, v12, 1, "btlv_effect.c", 0x162u);
+        BEM_TCBMANAGER(g_Effects) = GFL_TCBMgrCreate(0x20u, BEM_FIELD4(g_Effects));
+        BEM_EFFVM(g_Effects) = BtlvEffVM_Init(BEM_TCBMANAGER(g_Effects), *(int *)&heapId);
+        BEM_PALANM(g_Effects) = PalAnm_Create(heapId);
+        PaletteTrans_AutoSet(BEM_PALANM(g_Effects), 1);
+        sub_2026E30(BEM_PALANM(g_Effects), 0, 0x200u, *(int *)&heapId);
+        sub_2026E30(BEM_PALANM(g_Effects), 1, 0x1E0u, *(int *)&heapId);
+        sub_2026E30(BEM_PALANM(g_Effects), 2, 0x200u, *(int *)&heapId);
+        sub_2026E30(BEM_PALANM(g_Effects), 3, 0x1E0u, *(int *)&heapId);
+        BEM_BTLVMCSS(g_Effects) = BtlvMcss_Create(BE_BATTLESTYLE(a1), BEM_TCBMANAGER(g_Effects), *(int *)&heapId);
 
-        if (BtlvEffect_GetRecordedBattleType(a1->mainModule) == 2)
+        if (BtlvEffect_GetRecordedBattleType(BE_MAINMODULE(a1)) == 2)
         {
-            PokestarScenarioID = MainModule_GetPokestarScenarioID(a1->mainModule);
-            btlvMcss = g_Effects->btlvMcss;
+            PokestarScenarioID = MainModule_GetPokestarScenarioID(BE_MAINMODULE(a1));
+            btlvMcss = BEM_BTLVMCSS(g_Effects);
             v15 = *((unsigned __int8 *)dword_21F3FB0 + PokestarScenarioID);
         }
         else
         {
-            btlvMcss = g_Effects->btlvMcss;
+            btlvMcss = BEM_BTLVMCSS(g_Effects);
             v15 = 1;
         }
         sub_21E7210(btlvMcss, v15);
         AreaIDSeasonShift = 0;
     //    goto Label_StaticBackground;
-        if (a1->battleBGID >= 80){
-            if (a1->battleBGID >= 160){
-                //k::Printf("BattleBGID is %d, which is >= 160, so we will adjust it by subtracting 160 and use the appropriate heap.\n", a1->battleBGID);
-                adjustedBGID = a1->battleBGID - 160;
-                HeapNew = (_BYTE*)GFL_ArcSysReadHeapNew(151, 4, (HeapID)((g_Effects->HeapID & 0x7FFF | 0x8000)));
+        if (BE_BATTLEBGID(a1) >= 80){
+            if (BE_BATTLEBGID(a1) >= 160){
+                //k::Printf("BattleBGID is %d, which is >= 160, so we will adjust it by subtracting 160 and use the appropriate heap.\n", BE_BATTLEBGID(a1));
+                adjustedBGID = BE_BATTLEBGID(a1) - 160;
+                HeapNew = (_BYTE*)GFL_ArcSysReadHeapNew(151, 4, (HeapID)((BEM_HEAPID(g_Effects) & 0x7FFF | 0x8000)));
             }
             else {
-                //k::Printf("BattleBGID is %d, which is >= 80 but < 160, so we will adjust it by subtracting 80 and use the appropriate heap.\n", a1->battleBGID);
-                adjustedBGID = a1->battleBGID - 80;
-                HeapNew = (_BYTE*)GFL_ArcSysReadHeapNew(151, 3, (HeapID)((g_Effects->HeapID & 0x7FFF | 0x8000)));
+                //k::Printf("BattleBGID is %d, which is >= 80 but < 160, so we will adjust it by subtracting 80 and use the appropriate heap.\n", BE_BATTLEBGID(a1));
+                adjustedBGID = BE_BATTLEBGID(a1) - 80;
+                HeapNew = (_BYTE*)GFL_ArcSysReadHeapNew(151, 3, (HeapID)((BEM_HEAPID(g_Effects) & 0x7FFF | 0x8000)));
             }
         }
         else {
-            adjustedBGID = a1->battleBGID;
-            HeapNew = (_BYTE*)GFL_ArcSysReadHeapNew(151, 0, (HeapID)((g_Effects->HeapID & 0x7FFF | 0x8000)));
+            adjustedBGID = BE_BATTLEBGID(a1);
+            HeapNew = (_BYTE*)GFL_ArcSysReadHeapNew(151, 0, (HeapID)((BEM_HEAPID(g_Effects) & 0x7FFF | 0x8000)));
         }
         // Label_StaticBackground:
         // adjustedBGID = 24;
-        // // k::Printf("BattleBGID is %d, which is >= 80 but < 160, so we will adjust it by subtracting 80 and use the appropriate heap.\n", a1->battleBGID);
-        // HeapNew = (_BYTE*)GFL_ArcSysReadHeapNew(151, 0, (HeapID)((g_Effects->HeapID & 0x7FFF | 0x8000)));
+        // // k::Printf("BattleBGID is %d, which is >= 80 but < 160, so we will adjust it by subtracting 80 and use the appropriate heap.\n", BE_BATTLEBGID(a1));
+        // HeapNew = (_BYTE*)GFL_ArcSysReadHeapNew(151, 0, (HeapID)((BEM_HEAPID(g_Effects) & 0x7FFF | 0x8000)));
         v18 = 44 * adjustedBGID;
         if (2 * (unsigned __int8)HeapNew[v18 + 1])
         {
-            AreaIDSeasonShift = a1->AreaIDSeasonShift;
+            AreaIDSeasonShift = BE_AREAIDSEASONSHIFT(a1);
         }
-        g_Effects->btlvStageHandle = BtlvStage_Create(
-            a1->battleStyle,
-            (unsigned __int8)HeapNew[v18 + 22 + a1->PlayerBattlePedestalID],
+        BEM_BTLVSTAGEHANDLE(g_Effects) = BtlvStage_Create(
+            BE_BATTLESTYLE(a1),
+            (unsigned __int8)HeapNew[v18 + 22 + BE_PLAYERBATTLEPEDESTALID(a1)],
             AreaIDSeasonShift,
             heapId,
-            (unsigned __int16)a1->pokestar);
-        mainModule = g_Effects->SetupParam.mainModule;
+            (unsigned __int16)BE_POKESTAR(a1));
+        mainModule = BSP_MAINMODULE(BEM_SETUPPARAM(g_Effects));
         if (mainModule)
         {
             IsBattleType = BtlSetup_IsBattleType(mainModule, (BtlSetupFlag)1024);
             v21 = BtlvField_Create(
                 IsBattleType,
-                (unsigned __int8)HeapNew[44 * adjustedBGID + 2 + a1->PlayerBattlePedestalID],
+                (unsigned __int8)HeapNew[44 * adjustedBGID + 2 + BE_PLAYERBATTLEPEDESTALID(a1)],
                 AreaIDSeasonShift,
                 heapId,
-                (unsigned __int16)a1->pokestar,
-                (unsigned __int16)a1->pokestarField,
-                a1->pwtFinal);
+                (unsigned __int16)BE_POKESTAR(a1),
+                (unsigned __int16)BE_POKESTARFIELD(a1),
+                BE_PWTFINAL(a1));
         }
         else
         {
             v21 = BtlvField_Create(
                 0,
-                (unsigned __int8)HeapNew[44 * adjustedBGID + 2 + a1->PlayerBattlePedestalID],
+                (unsigned __int8)HeapNew[44 * adjustedBGID + 2 + BE_PLAYERBATTLEPEDESTALID(a1)],
                 AreaIDSeasonShift,
                 heapId,
-                (unsigned __int16)a1->pokestar,
-                (unsigned __int16)a1->pokestarField,
-                a1->pwtFinal);
+                (unsigned __int16)BE_POKESTAR(a1),
+                (unsigned __int16)BE_POKESTARFIELD(a1),
+                BE_PWTFINAL(a1));
         }
-        g_Effects->btlvFieldHandle = v21;
+        BEM_BTLVFIELDHANDLE(g_Effects) = v21;
         if (HeapNew[44 * adjustedBGID])
         {
-            // sub_2019830(
-            //     a1->ZoneID,
-            //     a1->Hour,
-            //     a1->Minute,
-            //     a1->FieldLightIndex,
-            //     a1->AreaIDSeasonShift,
-            //     &a6,
-            //     g_Effects->HeapID);
-            // light.Color = a6;
-            // light.Direction.x = 0;
-            // light.Direction.y = -4096;
-            // light.Direction.z = 0;
-            // GFL_G3DSysLightSet(0, &light);
+            k::Printf("HeapNew[44 * adjustedBGID] = %d\n", HeapNew[44 * adjustedBGID]);
+            sub_2019830(
+                BE_ZONEID(a1),
+                BE_HOUR(a1),
+                BE_MINUTE(a1),
+                BE_FIELDLIGHTINDEX(a1),
+                BE_AREAIDSEASONSHIFT(a1),
+                &a6,
+                BEM_HEAPID(g_Effects));
+            k::Printf("AreaIDSeasonShift = %d\n", AreaIDSeasonShift);
+            light.Color = a6;
+            light.Direction.x = 0;
+            light.Direction.y = -4096;
+            light.Direction.z = 0;
+            GFL_G3DSysLightSet(0, &light);
+            k::Printf("Light Color = %d\n", a6);
         }
         GFL_HeapFree(HeapNew);
-        g_Effects->btlvCameraHandle = BtlvCamera_Create((int)g_Effects->TCBManager, heapId);
-        RecordedBattleType = BtlvEffect_GetRecordedBattleType(g_Effects->SetupParam.mainModule);
-        g_Effects->clact = BtlvClAct_Init(g_Effects->TCBManager, heapId, RecordedBattleType);
-        g_Effects->btlvGauge = BtlvGauge_Create(a2, (unsigned __int16)a1->pokestar, heapId);
-        g_Effects->btlvTimer = BtlvTimer_Create(heapId);
-        g_Effects->btlvBG = BtlvBG_12_Create(g_Effects->TCBManager, heapId);
-        if (BtlvEffect_GetRecordedBattleType(g_Effects->SetupParam.mainModule) == 1)
+        BEM_BTLVCAMERAHANDLE(g_Effects) = BtlvCamera_Create((int)BEM_TCBMANAGER(g_Effects), heapId);
+        RecordedBattleType = BtlvEffect_GetRecordedBattleType(BSP_MAINMODULE(BEM_SETUPPARAM(g_Effects)));
+        BEM_CLACT(g_Effects) = BtlvClAct_Init(BEM_TCBMANAGER(g_Effects), heapId, RecordedBattleType);
+        BEM_BTLVGAUGE(g_Effects) = BtlvGauge_Create(a2, (unsigned __int16)BE_POKESTAR(a1), heapId);
+        BEM_BTLVTIMER(g_Effects) = BtlvTimer_Create(heapId);
+        BEM_BTLVBG(g_Effects) = BtlvBG_12_Create(BEM_TCBMANAGER(g_Effects), heapId);
+        if (BtlvEffect_GetRecordedBattleType(BSP_MAINMODULE(BEM_SETUPPARAM(g_Effects))) == 1)
         {
-            PokestarScriptPtr = (PokestarScenario *) MainModule_GetPokestarScriptPtr(g_Effects->SetupParam.mainModule);
-            sub_21E9C64(g_Effects->clact, PokestarScriptPtr->turn_max, 0);
+            PokestarScriptPtr = (PokestarScenario *) MainModule_GetPokestarScriptPtr(BSP_MAINMODULE(BEM_SETUPPARAM(g_Effects)));
+            sub_21E9C64(BEM_CLACT(g_Effects), PokestarScriptPtr->turn_max, 0);
         }
-        BtlvMcss_SetOrthoMode(g_Effects->btlvMcss);
+        BtlvMcss_SetOrthoMode(BEM_BTLVMCSS(g_Effects));
         ParticleSys_Init(heapId);
         for (i = 0; i < 8; ++i)
         {
-            v25 = (BtlvEffectMain *)((char *)g_Effects + 4 * i);
-            v25->trainerIndex[0] = -1;
+            v25 = (void *)((char *)g_Effects + 4 * i);
+            BEM_TRAINERINDEX0(v25) = -1;
         }
-        v26 = g_Effects->SetupParam.mainModule;
+        v26 = BSP_MAINMODULE(BEM_SETUPPARAM(g_Effects));
         if (v26)
         {
             if (BtlSetup_IsBattleType(v26, (BtlSetupFlag)2048))
@@ -562,9 +594,40 @@ extern "C"
             {
                 v27 = 900;
             }
-            g_Effects->FramesBeforeCameraIdleMovement = v27;
+            BEM_FRAMESBEFORECAMERAIDLEMOVEMENT(g_Effects) = v27;
         }
-        g_Effects->VTCB = GFL_VBlankTCBAdd((TCBFunc)TCBTask_VBlank, 0, 1u);
-        PokeVoice_AllocMulti(2, g_Effects->HeapID);
+        BEM_VTCB(g_Effects) = GFL_VBlankTCBAdd((TCBFunc)TCBTask_VBlank, 0, 1u);
+        PokeVoice_AllocMulti(2, BEM_HEAPID(g_Effects));
     }
+
+    #undef BE_BATTLESTYLE
+    #undef BE_BATTLEBGID
+    #undef BE_PLAYERBATTLEPEDESTALID
+    #undef BE_FIELDLIGHTINDEX
+    #undef BE_AREAIDSEASONSHIFT
+    #undef BE_ZONEID
+    #undef BE_HOUR
+    #undef BE_MINUTE
+    #undef BE_MAINMODULE
+    #undef BE_POKESTAR
+    #undef BE_POKESTARFIELD
+    #undef BE_PWTFINAL
+    #undef BEM_TCBMANAGER
+    #undef BEM_FIELD4
+    #undef BEM_EFFVM
+    #undef BEM_PALANM
+    #undef BEM_BTLVMCSS
+    #undef BEM_BTLVSTAGEHANDLE
+    #undef BEM_BTLVFIELDHANDLE
+    #undef BEM_BTLVCAMERAHANDLE
+    #undef BEM_CLACT
+    #undef BEM_BTLVGAUGE
+    #undef BEM_BTLVTIMER
+    #undef BEM_BTLVBG
+    #undef BEM_VTCB
+    #undef BEM_SETUPPARAM
+    #undef BEM_HEAPID
+    #undef BEM_TRAINERINDEX0
+    #undef BEM_FRAMESBEFORECAMERAIDLEMOVEMENT
+    #undef BSP_MAINMODULE
 }

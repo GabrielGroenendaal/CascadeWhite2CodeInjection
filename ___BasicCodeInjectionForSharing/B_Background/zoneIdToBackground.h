@@ -93,7 +93,7 @@
         61, // 88 Nimbasa City
         61, // 89 Nimbasa City
         61, // 90 Nimbasa Gate
-        61, // 91 Nimbasa Gate
+        37, // 91 Nimbasa Gate
         16, // 92 Nimbasa Gate
         61, // 93 Nimbasa City (LOOK AT THIS A BATTLEFIELD)
         61, // 94 Nimbasa Interior

@@ -89,7 +89,7 @@ extern "C"
     extern void ShopUI_SetBuyConfirmMessage(ShopUIWork *shop);
     extern void ShopUI_SetStatusDialogue(ShopUIWork *shop, int msgId, int currencyItemID, int plural);
     extern u32 div32(u32 numerator, u32 denominator);
-    
+
     // u32 THUMB_BRANCH_sub_21AC110(ShopUIWork *shop)
     // {
     //     u32 Balance;            // r6
@@ -459,7 +459,6 @@ extern "C"
             }
         }
 
-
         // Unown Checks
         if (pkmData->Species == 201)
         {
@@ -467,7 +466,8 @@ extern "C"
             PokeParty_ChangeForme(pPkm, random);
         }
 
-        if (EventWork_FlagGet(GameData_GetEventWork(mgr->gameData), 589) == 1){
+        if (EventWork_FlagGet(GameData_GetEventWork(mgr->gameData), 589) == 1)
+        {
             improveIVs(pPkm);
         }
 
@@ -630,25 +630,25 @@ extern "C"
         return 1;
     }
 
-    extern void* Field_GetDayCare(void *field);
-    extern PartyPkm* DayCare_GetPkm(void *dayCare, u8 slot);
+    extern void *Field_GetDayCare(void *field);
+    extern PartyPkm *DayCare_GetPkm(void *dayCare, u8 slot);
     extern void setAbilityForForm(BoxPkm *pPkm, u16 species);
 
     // Checks if the Pokemon has an ability of a specified slot
     int THUMB_BRANCH_s00F4_DayCareCalcNewLevel(void *a1, void *a2)
     {
-        u16 *Var; // r4
-        u8 Any; // r6
+        u16 *Var;         // r4
+        u8 Any;           // r6
         void *GameSystem; // r0
-        void *Field; // r0
-        void *DayCare; // r5
+        void *Field;      // r0
+        void *DayCare;    // r5
         PartyPkm *pkm;
         PersonalData *personal;
-        u16 abil1; 
+        u16 abil1;
         u16 abil2;
         u16 hiddenAbil;
         u16 currentAbil;
-        u16 species; 
+        u16 species;
         u8 forme;
         Var = ScriptReadVar(a1, a2);
         Any = ScriptReadAny(a1, a2);
@@ -664,92 +664,115 @@ extern "C"
         hiddenAbil = PML_PersonalGetParam(personal, (PersonalField)(28));
         currentAbil = PokeParty_GetParam(pkm, PF_Ability, 0);
 
-        if (Any == 0){
-            if (abil1 == currentAbil){
+        if (Any == 0)
+        {
+            if (abil1 == currentAbil)
+            {
                 *Var = 0;
             }
-            else {
+            else
+            {
                 *Var = abil1;
             }
         }
-        else if (Any == 1){
-            if (abil2 == currentAbil){
+        else if (Any == 1)
+        {
+            if (abil2 == currentAbil)
+            {
                 *Var = 0;
             }
-            else if (abil1 == abil2){
+            else if (abil1 == abil2)
+            {
                 *Var = 0;
             }
-            else {
+            else
+            {
                 *Var = abil2;
             }
         }
-        else if (Any == 2){
-            if (hiddenAbil == 0){
+        else if (Any == 2)
+        {
+            if (hiddenAbil == 0)
+            {
                 *Var = 0;
             }
-            else if (abil1 == hiddenAbil){
+            else if (abil1 == hiddenAbil)
+            {
                 *Var = 0;
             }
-            else if (hiddenAbil == abil2){
+            else if (hiddenAbil == abil2)
+            {
                 *Var = 0;
             }
-            else if (currentAbil == hiddenAbil){
+            else if (currentAbil == hiddenAbil)
+            {
                 *Var = 0;
             }
-            else if (WhiteListedPokemon[species] < 2){
+            else if (WhiteListedPokemon[species] < 2)
+            {
                 *Var = 0;
             }
-            else {
+            else
+            {
                 *Var = hiddenAbil;
             }
         }
-        else if (Any == 4){
-            if (PokeParty_GetParam(pkm, PF_IsHiddenAbility, 0)){
+        else if (Any == 4)
+        {
+            if (PokeParty_GetParam(pkm, PF_IsHiddenAbility, 0))
+            {
                 PokeParty_SetParam(pkm, PF_IsHiddenAbility, 0);
                 setAbilityForForm(&pkm->Base, species);
                 PokeParty_RecalcStats(pkm);
                 *Var = PokeParty_GetParam(pkm, PF_Ability, 0);
             }
             currentAbil = PokeParty_GetParam(pkm, PF_Ability, 0);
-            if (currentAbil != abil1){
+            if (currentAbil != abil1)
+            {
                 PokeParty_SetParam(pkm, PF_ContestCool, ((PokeParty_GetParam(pkm, PF_ContestCool, 0) == 0) ? 1 : 0));
                 setAbilityForForm(&pkm->Base, species);
                 PokeParty_RecalcStats(pkm);
                 *Var = PokeParty_GetParam(pkm, PF_Ability, 0);
             }
         }
-        else if (Any == 5){
-            if (PokeParty_GetParam(pkm, PF_IsHiddenAbility, 0)){
+        else if (Any == 5)
+        {
+            if (PokeParty_GetParam(pkm, PF_IsHiddenAbility, 0))
+            {
                 PokeParty_SetParam(pkm, PF_IsHiddenAbility, 0);
                 setAbilityForForm(&pkm->Base, species);
                 PokeParty_RecalcStats(pkm);
                 *Var = PokeParty_GetParam(pkm, PF_Ability, 0);
             }
             currentAbil = PokeParty_GetParam(pkm, PF_Ability, 0);
-            if (currentAbil != abil2){
+            if (currentAbil != abil2)
+            {
                 PokeParty_SetParam(pkm, PF_ContestCool, ((PokeParty_GetParam(pkm, PF_ContestCool, 0) == 0) ? 1 : 0));
                 setAbilityForForm(&pkm->Base, species);
                 PokeParty_RecalcStats(pkm);
                 *Var = PokeParty_GetParam(pkm, PF_Ability, 0);
             }
         }
-        else if (Any == 6){
+        else if (Any == 6)
+        {
             PokeParty_SetHiddenAbil(pkm, species, forme);
             PokeParty_RecalcStats(pkm);
             *Var = PokeParty_GetParam(pkm, PF_Ability, 0);
         }
-        else if (Any == 7) {
+        else if (Any == 7)
+        {
             *Var = currentAbil;
-        }    
-        else if (Any == 8){
-            *Var = PokeParty_GetParam(pkm, PF_Ability, 0); 
         }
-        else {
+        else if (Any == 8)
+        {
+            *Var = PokeParty_GetParam(pkm, PF_Ability, 0);
+        }
+        else
+        {
             *Var = 0;
         }
         return 0;
     }
-
 
 #pragma endregion
 
@@ -1128,12 +1151,12 @@ extern "C"
 
         FieldFollowerCfg = GetFieldFollowerCfg(gameData);
         EventWork = GameData_GetEventWork(gameData);
-        //k::Printf("\nWe are in the function to reset follow state.");
+        // k::Printf("\nWe are in the function to reset follow state.");
         if (GameData_CheckPairFlag(gameData))
         {
-            //k::Printf("\nWe have successfully reset the follower state EventWork is %d\n", EventWork_FlagGet(EventWork, 2406));
+            // k::Printf("\nWe have successfully reset the follower state EventWork is %d\n", EventWork_FlagGet(EventWork, 2406));
             EventWork_FlagReset(EventWork, 2406);
-            //k::Printf("\nWe have successfully reset the follower state. Eventwork 2406 is %d\n", EventWork_FlagGet(EventWork, 2406));
+            // k::Printf("\nWe have successfully reset the follower state. Eventwork 2406 is %d\n", EventWork_FlagGet(EventWork, 2406));
             *EventWork_GetWkPtr(EventWork, 16451) = 255;
             ClearFollowNpcData(FieldFollowerCfg);
         }
@@ -1252,7 +1275,7 @@ extern "C"
     extern void sub_21A272C(void **a1, int a2);
     extern void setShakingSpotOff(EncountState *result);
 
-    extern u8* EventWork_GetFlagBytePtr(EventWorkSave *eventWork, u32 flagId);
+    extern u8 *EventWork_GetFlagBytePtr(EventWorkSave *eventWork, u32 flagId);
     // extern _DWORD __ROR4__(_DWORD d, char c);
     // b32 THUMB_BRANCH_EventWork_FlagGet(EventWorkSave *eventWork, int eventBitNum)
     // {
@@ -1285,7 +1308,7 @@ extern "C"
 
         if (EventWork_FlagGet(eventWork, 2406) == 1)
         {
-            //k::Printf("\nPheno is disabled");
+            // k::Printf("\nPheno is disabled");
             return true;
         }
         for (int i = 0; i < ARRAY_COUNT(toggleEncounters); i++)
@@ -1659,7 +1682,7 @@ extern "C"
     extern void *GameData_GetBoxSaveAccessor(GameData *gameData);
     extern int nullsub_28(void *result);
     extern b32 BoxSaveAccessor_InsertPkm(void *boxAccessor, BoxPkm *pkm);
-    
+
     int THUMB_BRANCH_GameData_AddBoxPkm(GameData *gameData, GenPokeParam *param)
     {
         void *BoxSaveAccessor; // r6
@@ -2121,17 +2144,148 @@ extern "C"
     //     event->IsTrialHouseBattle = 0;
     // };
 #pragma endregion
+
+#pragma region weather
+    extern int Field_GetWeatherSystem(void *a1);
+    extern int sub_2199260(int a1);
+    enum Weather
+    {
+        WEATHER_NULL = 0,
+        WEATHER_SUN = 1,
+        WEATHER_RAIN = 2,
+        WEATHER_HAIL = 3,
+        WEATHER_SAND = 4,
+    };
+    const u8 weatherMappings[] = {
+        0,            // 0
+        WEATHER_HAIL, // 1
+        WEATHER_RAIN, // 2
+        WEATHER_SAND, // 3
+        WEATHER_HAIL, // 4
+        WEATHER_RAIN, // 5
+        WEATHER_RAIN, // 6
+        0,            // 7
+        0,            // 8
+        0,            // 9
+        0,            // 10
+        WEATHER_SAND, // 11
+        0,            // 12
+        0,            // 13
+        0,            // 14
+        WEATHER_RAIN, // 15
+        WEATHER_SAND, // 16
+        WEATHER_RAIN  // 17
+    };
+    int THUMB_BRANCH_ConvFieldWeatherToBtl(void *field)
+    {
+        // int WeatherSystem; // r0
+        // unsigned int v2;   // r0
+        // WeatherSystem = Field_GetWeatherSystem(field);
+        // v2 = sub_2199260(Field_GetWeatherSystem(field));
+        return weatherMappings[sub_2199260(Field_GetWeatherSystem(field))];
+    }
+#pragma endregion
+
+#pragma region LearnsetViewing
+    // struct	LevelUpMove	 {u16 MoveID;u16 LearnLevel;};
+    // struct	LevelUpLearnset	 {LevelUpMove Moves[26];};
+    // extern void* GFL_HeapAllocate(HeapID heapId, u32 size, b32 calloc, const char *sourceFile, u16 lineNo);
+    // extern void PML_LearnsetLvUpLoad(u16 species, int form, void *dest);
+
+    // LevelUpMove * PokeParty_GetRememberableMoves(PartyPkm *pkm, HeapID heapId)
+    // {
+    //     unsigned int v3; // r4
+    //     unsigned int v4; // r6
+    //     LevelUpMove *v5; // r7
+    //     unsigned int v6; // r12
+    //     u16 *v7;         // r2
+    //     unsigned int i;  // r2
+    //     unsigned int j;  // r5
+    //     int Param;       // [sp+8h] [bp-50h]
+    //     int form;        // [sp+Ch] [bp-4Ch]
+    //     u16 species;     // [sp+10h] [bp-48h]
+    //     char *dest;      // [sp+14h] [bp-44h]
+    //     u16 v16;         // [sp+18h] [bp-40h]
+    //     __int16 v17[16]; // [sp+38h] [bp-20h]
+
+    //     v3 = 0;
+    //     species = PokeParty_GetParam(pkm, PF_Species, 0);
+    //     form = (unsigned __int8)PokeParty_GetParam(pkm, PF_Forme, 0);
+    //     Param = (unsigned __int8)PokeParty_GetParam(pkm, PF_Level, 0);
+    //     v4 = 0;
+    //     do
+    //     {
+    //         v17[v3] = PokeParty_GetParam(pkm, (PkmField)(v3 + 54), 0);
+    //         v3 = (unsigned __int8)(v3 + 1);
+    //     } while (v3 < 4);
+    //     dest = (char *)GFL_HeapAllocate(heapId, 0x68u, 0, "waza_oshie.c", 0x55u);
+    //     v5 = (LevelUpMove *)GFL_HeapAllocate(heapId, 0x34u, 0, "waza_oshie.c", 0x56u);
+    //     PML_LearnsetLvUpLoad(species, form, dest);
+    //     v6 = 0;
+    //     while (1)
+    //     {
+    //         v7 = (u16 *)&dest[4 * v6];
+    //         v16 = *v7;
+    //         if (*v7 == 0xFFFF && v7[1] == 0xFFFF)
+    //         {
+    //             break;
+    //         }
+    //         if (v7[1] <= Param)
+    //         {
+    //             for (i = 0; i < 4; i = (unsigned __int8)(i + 1))
+    //             {
+    //                 if ((unsigned __int16)v17[i] == v16)
+    //                 {
+    //                     break;
+    //                 }
+    //             }
+    //             if (i == 4)
+    //             {
+    //                 for (j = 0; j < v4; j = (unsigned __int8)(j + 1))
+    //                 {
+    //                     if (*(&v5->MoveID + j) == v16)
+    //                     {
+    //                         break;
+    //                     }
+    //                 }
+    //                 if (j == v4)
+    //                 {
+    //                     *(&v5->MoveID + v4) = v16;
+    //                     v4 = (unsigned __int8)(v4 + 1);
+    //                 }
+    //             }
+    //         }
+    //         v6 = (unsigned __int8)(v6 + 1);
+    //         if (v6 >= 0x1A)
+    //         {
+    //             goto ret;
+    //         }
+    //     }
+    //     *(&v5->MoveID + v4) = -1;
+    // ret:
+    //     GFL_HeapFree(dest);
+    //     return v5;
+    // }
+
+#pragma endregion
 }
 
 #pragma region NewScriptCommands
 
-struct SWAN_PACKED SWAN_ALIGNED(2) BoxMainSave	 {_DWORD LastOpenedBox;wchar_t BoxNames[24][20];u8 field_3C4[24];_BYTE byte3DC;u8 AvailableBoxCount;};
+struct SWAN_PACKED SWAN_ALIGNED(2) BoxMainSave
+{
+    _DWORD LastOpenedBox;
+    wchar_t BoxNames[24][20];
+    u8 field_3C4[24];
+    _BYTE byte3DC;
+    u8 AvailableBoxCount;
+};
 
 extern "C" bool BagSave_AddItem(BagSaveData *bag, u16 itemId, u16 quantity, HeapID heapId);
 extern "C" u32 PML_UtilGetPkmLvExp(u16 species, u16 form, int level);
-extern "C" BoxMainSave * BoxSaveAccessor_GetMainSave(void *boxAccessor);
+extern "C" BoxMainSave *BoxSaveAccessor_GetMainSave(void *boxAccessor);
 extern "C" void *GameData_GetBoxSaveAccessor(GameData *gameData);
-extern "C" BoxPkm * BoxSaveAccessor_GetPkm(void *boxAccessor, u32 trayNum, u32 pos);
+extern "C" BoxPkm *BoxSaveAccessor_GetPkm(void *boxAccessor, u32 trayNum, u32 pos);
 extern "C" u32 PML_PkmGetParam(BoxPkm *pPkm, PkmField field, u32 data);
 extern "C" void PML_PkmSetParam(BoxPkm *pPkm, PkmField field, u32 data);
 
@@ -2140,7 +2294,7 @@ extern "C" void PML_PkmSetParam(BoxPkm *pPkm, PkmField field, u32 data);
 // extern "C" int dword_2099FE4;
 // extern "C" BoxPkm * THUMB_BRANCH_BoxSaveAccessor_GetPkm(void *boxAccessor, u32 trayNum, u32 pos)
 // {
-//   BoxMainSave *MainSave; // r6 
+//   BoxMainSave *MainSave; // r6
 //   MainSave = BoxSaveAccessor_GetMainSave(boxAccessor);
 //   if ( trayNum >= 0x18 && trayNum != -1 )
 //   {
@@ -2167,7 +2321,7 @@ extern "C" int RemoteItems(void *vm, void *env)
     gameData = FieldScriptEnv_GetGameData(env);
     party = GameData_GetParty(gameData);
     pokeCount = PokeParty_GetPkmCount(party);
-    
+
     for (int i = 0; i < pokeCount; i++)
     {
         pkm = PokeParty_GetPkm(party, i);
@@ -2179,13 +2333,15 @@ extern "C" int RemoteItems(void *vm, void *env)
         }
     }
 
-    // Removing all items from Box Pkm 
+    // Removing all items from Box Pkm
     void *boxAccessor = GameData_GetBoxSaveAccessor(gameData);
-    BoxMainSave* MainSave = BoxSaveAccessor_GetMainSave(boxAccessor);
+    BoxMainSave *MainSave = BoxSaveAccessor_GetMainSave(boxAccessor);
     BoxPkm *boxPkm;
     u8 AvailableBoxCount = MainSave->AvailableBoxCount;
-    for (int k = 0; k < AvailableBoxCount; k++){
-        for (int j = 0; j < 30; j++){
+    for (int k = 0; k < AvailableBoxCount; k++)
+    {
+        for (int j = 0; j < 30; j++)
+        {
             boxPkm = BoxSaveAccessor_GetPkm(boxAccessor, k, j);
             if (PML_PkmGetParam(boxPkm, PF_Item, 0))
             {

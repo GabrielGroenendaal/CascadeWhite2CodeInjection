@@ -9,7 +9,13 @@
 
 
 
-
+Bugs: 
+    - Echoed Voice "failed"?
+    - Temper Flare isn't contact 
+    - Something was up with post ko switch order for Janine.
+    - Janine script crashes if you don't initially accept her battle? 
+    - Golbat is in the Clay Tunnel encounter table still.
+    
 
 
 Trainers 
