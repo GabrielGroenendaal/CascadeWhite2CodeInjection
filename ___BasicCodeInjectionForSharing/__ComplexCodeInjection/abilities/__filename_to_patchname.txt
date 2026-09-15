@@ -1,0 +1,10 @@
+
+We are going to make a list of all the .cpp files in the abilities folder. 
+We are going to write build commands for them that map them to their ability ids. 
+For example 
+
+Aerilate.cpp should get a build command that maps it to 60
+
+"C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\_____GithubCheckoutMarch\arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi\bin\arm-none-eabi-g++.exe"  -r -mthumb -mlong-calls -march=armv5t -Os abilities/Aerilate.cpp -Iswan-master -o ______Output/60.elf
+
+
