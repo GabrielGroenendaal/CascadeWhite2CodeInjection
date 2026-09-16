@@ -84,7 +84,8 @@ ABILITY_TRIGGERTABLE CollectiveHandlers[]{
     {EVENT_TURN_CHECK_DONE, (ABILITY_HANDLER_FUNC)HandlerCollective},
 };
 
-extern "C" ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddZenMode(_DWORD *a1)
+// was: THUMB_BRANCH_EventAddZenMode
+extern "C" ABILITY_TRIGGERTABLE *ea1(_DWORD *a1)
 {
     *a1 = 2;
     return CollectiveHandlers;

@@ -41,7 +41,8 @@ ABILITY_TRIGGERTABLE PickupHandlers[] = {
     {EVENT_SWITCH_OUT_END, (ABILITY_HANDLER_FUNC)HandlerPickupNew}, // 41
 };
 
-extern "C" ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddPickup(_DWORD *a1)
+// was: THUMB_BRANCH_EventAddPickup
+extern "C" ABILITY_TRIGGERTABLE *e35(_DWORD *a1)
 {
     *a1 = 1;
     return PickupHandlers;

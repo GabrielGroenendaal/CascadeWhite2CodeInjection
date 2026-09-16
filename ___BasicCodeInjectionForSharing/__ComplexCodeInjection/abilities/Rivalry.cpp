@@ -50,7 +50,8 @@ ABILITY_TRIGGERTABLE RivalryHandlers[] = {
     {EVENT_MOVE_DAMAGE_PROCESSING_2, (ABILITY_HANDLER_FUNC)RivalryDefense}, // 41
 };
 
-extern "C" ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddRivalry(_DWORD *a1)
+// was: THUMB_BRANCH_EventAddRivalry
+extern "C" ABILITY_TRIGGERTABLE *e4f(_DWORD *a1)
 {
     *a1 = 2;
     return RivalryHandlers;

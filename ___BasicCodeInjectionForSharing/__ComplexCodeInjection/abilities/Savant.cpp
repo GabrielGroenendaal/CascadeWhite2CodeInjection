@@ -32,7 +32,8 @@ ABILITY_TRIGGERTABLE SavantHandlers[] = {
     {EVENT_MOVE_EXECUTE_CHECK2, (ABILITY_HANDLER_FUNC)HandlerSavant}, // 22
 };
 
-extern "C" ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddBigPecks(_DWORD *a1)
+// was: THUMB_BRANCH_EventAddBigPecks
+extern "C" ABILITY_TRIGGERTABLE *e91(_DWORD *a1)
 {
     *a1 = 1;
     return SavantHandlers;

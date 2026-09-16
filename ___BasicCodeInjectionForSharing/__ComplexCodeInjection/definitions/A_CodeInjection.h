@@ -2,17 +2,17 @@
 #include "A_Structs.h"
 // #include "../swan-master/system/game_data.h"
 
-unsigned short int &HIWORD(unsigned int &x)
+static inline unsigned short int &HIWORD(unsigned int &x)
 {
     return *(reinterpret_cast<unsigned short int *>(&x) + 1);
 }
 
-unsigned short int &LOWORD(unsigned int &x)
+static inline unsigned short int &LOWORD(unsigned int &x)
 {
     return *(reinterpret_cast<unsigned short int *>(&x) + 0);
 }
 
-bool IsEqual(int a1, int a2)
+static inline bool IsEqual(int a1, int a2)
 {
     char *c1 = (char *)&a1;
     char *c2 = (char *)&a2;

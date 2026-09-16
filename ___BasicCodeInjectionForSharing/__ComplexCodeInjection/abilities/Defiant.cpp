@@ -1,6 +1,6 @@
 #include "../definitions/A_CodeInjection.h"
 
-extern "C" void THUMB_BRANCH_HandlerDefiant(int a1, ServerFlow *a2, unsigned int a3)
+extern "C" void HandlerDefiant(int a1, ServerFlow *a2, unsigned int a3)
 {
     unsigned __int8 Value;             // r0
     HandlerParam_ChangeStatStage *v13; // r0
@@ -21,4 +21,16 @@ extern "C" void THUMB_BRANCH_HandlerDefiant(int a1, ServerFlow *a2, unsigned int
             BattleHandler_PopWork(a2, v13);
         }
     }
+}
+
+ABILITY_TRIGGERTABLE DefiantHandlers[] = {
+    {EVENT_STAT_STAGE_CHANGE_APPLIED, (ABILITY_HANDLER_FUNC)HandlerDefiant}, // 15
+};
+
+
+// was: EventAddDefiantNew
+extern "C" ABILITY_TRIGGERTABLE * e80(_DWORD *a1)
+{
+  *a1 = 1;
+  return DefiantHandlers;
 }

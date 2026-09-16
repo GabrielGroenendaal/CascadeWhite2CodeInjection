@@ -49,7 +49,8 @@ ABILITY_TRIGGERTABLE InnerFocusHandlers[] = {
     {EVENT_STAT_STAGE_CHANGE_FAIL, (ABILITY_HANDLER_FUNC)HandlerIntimidateGuard},
     {EVENT_CHECK_TYPE_EFFECTIVENESS, (ABILITY_HANDLER_FUNC)HandlerInnerFocusAttack}};
 
-extern "C" ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddInnerFocus(_DWORD *a1)
+// was: THUMB_BRANCH_EventAddInnerFocus
+extern "C" ABILITY_TRIGGERTABLE *e27(_DWORD *a1)
 {
     *a1 = 4;
     return InnerFocusHandlers;

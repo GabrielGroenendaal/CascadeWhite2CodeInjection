@@ -13,7 +13,8 @@ ABILITY_TRIGGERTABLE SandRushHandlers[] = {
     {EVENT_WEATHER_REACTION, (ABILITY_HANDLER_FUNC)HandlerSandVeilWeather}, // 41
     {EVENT_MOVE_POWER, (ABILITY_HANDLER_FUNC)HandlerSandRushResist}};
 
-extern "C" ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddSandRush(_DWORD *a1)
+// was: THUMB_BRANCH_EventAddSandRush
+extern "C" ABILITY_TRIGGERTABLE *e92(_DWORD *a1)
 {
     *a1 = 3;
     return SandRushHandlers;

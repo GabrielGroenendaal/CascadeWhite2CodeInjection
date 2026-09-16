@@ -50,7 +50,8 @@ ABILITY_TRIGGERTABLE HealerHandlers[] = {
     {EVENT_ABILITY_CHECK_NO_EFFECT, (ABILITY_HANDLER_FUNC)HandlerTelepathy}, // 5
 };
 
-extern "C" ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddHealer(_DWORD *a1)
+// was: THUMB_BRANCH_EventAddHealer
+extern "C" ABILITY_TRIGGERTABLE *e83(_DWORD *a1)
 {
     *a1 = 2;
     return HealerHandlers;

@@ -13,7 +13,8 @@ ABILITY_TRIGGERTABLE SwiftSwimHandlers[] = {
     {EVENT_MOVE_POWER, (ABILITY_HANDLER_FUNC)HandlerSwiftSwimResist} // 41
 };
 
-extern "C" ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddSwiftSwim(_DWORD *a1)
+// was: THUMB_BRANCH_EventAddSwiftSwim
+extern "C" ABILITY_TRIGGERTABLE *e21(_DWORD *a1)
 {
     *a1 = 2;
     return SwiftSwimHandlers;

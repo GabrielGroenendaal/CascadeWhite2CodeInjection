@@ -17,7 +17,8 @@ ABILITY_TRIGGERTABLE FurCoatHandlers[] = {
     {EVENT_WEATHER_REACTION, (ABILITY_HANDLER_FUNC)HandlerSnowCloakWeather}, // 23
 };
 
-extern "C" ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddLeafGuard(_DWORD *a1)
+// was: THUMB_BRANCH_EventAddLeafGuard
+extern "C" ABILITY_TRIGGERTABLE *e66(_DWORD *a1)
 {
     *a1 = 2;
     return FurCoatHandlers;

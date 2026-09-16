@@ -11,7 +11,8 @@ ABILITY_TRIGGERTABLE AirLockHandlers[] = {
     {EVENT_MOVE_ACCURACY, (ABILITY_HANDLER_FUNC)HandlerAirLockAccuracy},
 };
 
-extern "C" ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddAirLock(_DWORD *a1)
+// was: THUMB_BRANCH_EventAddAirLock
+extern "C" ABILITY_TRIGGERTABLE *e4c(_DWORD *a1)
 {
     *a1 = 3;
     return AirLockHandlers;

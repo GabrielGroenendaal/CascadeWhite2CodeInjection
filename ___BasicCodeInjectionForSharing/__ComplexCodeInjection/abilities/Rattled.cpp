@@ -32,7 +32,7 @@ extern "C" void HandlerRattledIntimidate(int a1, ServerFlow *a2, int a3, u32 *wo
         BattleHandler_PopWork(a2, v13);
     }
 }
-extern "C" void THUMB_BRANCH_HandlerRattled(int a1, ServerFlow *a2, int a3)
+extern "C" void HandlerRattled(int a1, ServerFlow *a2, int a3)
 {
     int Value;                        // r0
     HandlerParam_ChangeStatStage *v6; // r0
@@ -57,7 +57,8 @@ ABILITY_TRIGGERTABLE RattledHandlers[] = {
     {EVENT_STAT_STAGE_CHANGE_LAST_CHECK, (ABILITY_HANDLER_FUNC)HandlerRattledIntimidateCheck},
     {EVENT_STAT_STAGE_CHANGE_APPLIED, (ABILITY_HANDLER_FUNC)HandlerRattledIntimidate}};
 
-extern "C" ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddRattled(_DWORD *a1)
+// was: THUMB_BRANCH_EventAddRattled
+extern "C" ABILITY_TRIGGERTABLE *e9b(_DWORD *a1)
 {
     *a1 = 3;
     return RattledHandlers;

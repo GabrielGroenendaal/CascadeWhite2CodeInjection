@@ -24,7 +24,8 @@ extern "C" void HandlerAerilateType(int a1, int a2, int a3)
 ABILITY_TRIGGERTABLE AerilateHandlers[] = {
     {EVENT_MOVE_PARAM, (ABILITY_HANDLER_FUNC)HandlerAerilateType}, // 22
     {EVENT_ATTACKER_POWER, (ABILITY_HANDLER_FUNC)HandlerAtePower}};
-extern "C" ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddStickyHold(_DWORD *a1)
+// was: THUMB_BRANCH_EventAddStickyHold
+extern "C" ABILITY_TRIGGERTABLE *e3c(_DWORD *a1)
 {
     *a1 = 2;
     return AerilateHandlers;

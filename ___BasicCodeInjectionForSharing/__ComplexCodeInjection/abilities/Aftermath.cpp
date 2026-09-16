@@ -1,6 +1,6 @@
 #include "../definitions/A_CodeInjection.h"
 
-extern "C" void THUMB_BRANCH_SAFESTACK_HandlerAftermath(int a1, ServerFlow *a2, unsigned int *a3)
+extern "C" void HandlerAftermathNew(int a1, ServerFlow *a2, unsigned int *a3)
 {
     BattleMon *aftermathMon;  // r0
     int v7;                   // r6
@@ -47,4 +47,16 @@ extern "C" void THUMB_BRANCH_SAFESTACK_HandlerAftermath(int a1, ServerFlow *a2, 
             }
         }
     }
+}
+
+ABILITY_TRIGGERTABLE AftermathHandlers[] = {
+    {EVENT_MOVE_FLINCH_CHANCE, (ABILITY_HANDLER_FUNC)HandlerAftermathNew}, // 22
+
+};
+
+// was: EventAddAftermathNew
+extern "C" ABILITY_TRIGGERTABLE * e6a(_DWORD *a1)
+{
+    *a1 = 1;
+    return AftermathHandlers;
 }

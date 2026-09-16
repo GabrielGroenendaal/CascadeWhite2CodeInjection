@@ -151,3 +151,42 @@
 
 /* Illusion Check */
 "C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\_____GithubCheckoutMarch\arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi\bin\arm-none-eabi-g++.exe"  -r -mthumb -march=armv5t -Os A_CoreBattle/A11_Illusion.cpp -Iswan-master -o ______Output/A11_Illusion.elf
+
+
+
+
+-
+
+
+
+/* NEW DAMAGE CALC */ 
+
+/* A4: Ability Changes */
+"C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\_____GithubCheckoutMarch\arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi\bin\arm-none-eabi-g++.exe" -r -mthumb -mlong-calls -march=armv5t -Os A4_AbilityChanges.cpp -o ______Output\A4_AbilityChanges.elf
+java -cp "C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\_____GithubCheckoutMarch\___IDBS\Overlay142_new\CTRMap.jar" rpm.cli.RPMTool -i ______Output\A4_AbilityChanges.elf -o ______Output\patches\A4_AbilityChanges.dll --esdb "..\A_CoreBattle\ESDB_A1.yml"
+
+/* A8: Imported Abilities */
+"C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\_____GithubCheckoutMarch\arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi\bin\arm-none-eabi-g++.exe" -r -mthumb -mlong-calls -march=armv5t -Os A8_ImportedAbilities.cpp -o ______Output\A8_ImportedAbilities.elf
+java -cp "C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\_____GithubCheckoutMarch\___IDBS\Overlay142_new\CTRMap.jar" rpm.cli.RPMTool -i ______Output\A8_ImportedAbilities.elf -o ______Output\patches\A8_ImportedAbilities.dll --esdb "..\A_CoreBattle\ESDB_A8.yml"
+
+/* A9: Damage Calc */
+"C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\_____GithubCheckoutMarch\arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi\bin\arm-none-eabi-g++.exe" -r -mthumb -mlong-calls -march=armv5t -Os A9_DamageCalc.cpp -o ______Output\A9_DamageCalc.elf
+java -cp "C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\_____GithubCheckoutMarch\___IDBS\Overlay142_new\CTRMap.jar" rpm.cli.RPMTool -i ______Output\A9_DamageCalc.elf -o ______Output\patches\A9_DamageCalc.dll --esdb "..\A_CoreBattle\EDSB_A9.yml"
+
+/* B2: Backgrounds */
+"C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\_____GithubCheckoutMarch\arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi\bin\arm-none-eabi-g++.exe" -r -mthumb -mlong-calls -march=armv5t -Os B2_Backgrounds.cpp -o ______Output\B2_Backgrounds.elf
+java -cp "C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\_____GithubCheckoutMarch\___IDBS\Overlay142_new\CTRMap.jar" rpm.cli.RPMTool -i ______Output\B2_Backgrounds.elf -o ______Output\patches\B2_Backgrounds.dll --esdb "..\B_Background\EDSB_B2.yml"
+
+/* C1: Legendary Encounters */
+"C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\_____GithubCheckoutMarch\arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi\bin\arm-none-eabi-g++.exe" -r -mthumb -mlong-calls -march=armv5t -Os C1_LegendaryEncounters.cpp -o ______Output\C1_LegendaryEncounters.elf
+java -cp "C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\_____GithubCheckoutMarch\___IDBS\Overlay142_new\CTRMap.jar" rpm.cli.RPMTool -i ______Output\C1_LegendaryEncounters.elf -o ______Output\patches\C1_LegendaryEncounters.dll --esdb "..\C_LegendaryEncounter\ESDB_C1.yml"
+
+/* D2: Field Overlays */
+"C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\_____GithubCheckoutMarch\arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi\bin\arm-none-eabi-g++.exe" -r -mthumb -mlong-calls -march=armv5t -Os D2_FieldOverlays.cpp -o ______Output\D2_FieldOverlays.elf
+java -cp "C:\Users\gabeg\Documents\ROMhacks\____MyNewRomhack\_____GithubCheckoutMarch\___IDBS\Overlay142_new\CTRMap.jar" rpm.cli.RPMTool -i ______Output\D2_FieldOverlays.elf -o ______Output\patches\D2_FieldOverlays.dll --esdb "..\D_NonBattleItemChanges\ESDB_D2.yml"
+
+
+
+Can you investigate any reason the patches might be larger than expected. For example, the sand rush patch (159.dll) is nearly a full kilobyte but only has one function. 
+
+Likewise, i removed the entire array of ai only abilities (which was 3 u8s * 650) and that didn't reduce the size of my damagecalc DLL at  all?

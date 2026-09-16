@@ -17,7 +17,8 @@ ABILITY_TRIGGERTABLE FlareBoostHandlers[] = {
 };
 
 
-extern "C" ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddFlareBoost(_DWORD *a1)
+// was: THUMB_BRANCH_EventAddFlareBoost
+extern "C" ABILITY_TRIGGERTABLE *e8a(_DWORD *a1)
 {
     *a1 = 3;
     return FlareBoostHandlers;

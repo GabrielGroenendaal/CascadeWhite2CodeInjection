@@ -29,7 +29,8 @@ ABILITY_TRIGGERTABLE MercilessHandlers[] = {
     {EVENT_MOVE_DAMAGE_PROCESSING_2, (ABILITY_HANDLER_FUNC)MercilessDefense}, // 41
 };
 
-extern "C" ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddWaterVeil(_DWORD *a1)
+// was: THUMB_BRANCH_EventAddWaterVeil
+extern "C" ABILITY_TRIGGERTABLE *e29(_DWORD *a1)
 {
     *a1 = 2;
     return MercilessHandlers;

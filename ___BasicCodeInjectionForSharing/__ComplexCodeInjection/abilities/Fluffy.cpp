@@ -35,7 +35,8 @@ ABILITY_TRIGGERTABLE FluffyHandlers[] = {
     {EVENT_WEATHER_REACTION, (ABILITY_HANDLER_FUNC)HandlerSnowCloakWeather}, // 23
 };
 
-extern "C" ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddImmunity(_DWORD *a1)
+// was: THUMB_BRANCH_EventAddImmunity
+extern "C" ABILITY_TRIGGERTABLE *e11(_DWORD *a1)
 {
     *a1 = 3;
     return FluffyHandlers;

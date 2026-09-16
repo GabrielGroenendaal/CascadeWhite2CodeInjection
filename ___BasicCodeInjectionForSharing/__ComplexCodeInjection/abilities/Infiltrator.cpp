@@ -15,7 +15,8 @@ ABILITY_TRIGGERTABLE InfiltratorHandlers[] = {
     {EVENT_MOVE_DAMAGE_PROCESSING_2, (ABILITY_HANDLER_FUNC)HandlerInfiltratorPower}, // 6
 };
 
-extern "C" ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddInfiltrator(_DWORD *a1)
+// was: THUMB_BRANCH_EventAddInfiltrator
+extern "C" ABILITY_TRIGGERTABLE *e97(_DWORD *a1)
 {
     *a1 = 3;
     return InfiltratorHandlers;

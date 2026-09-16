@@ -53,12 +53,12 @@ typedef int32_t b32; //32-bit bool
 
 typedef u16 HeapID;
 
-u32& HIDWORD(u64& x)
+static inline u32& HIDWORD(u64& x)
 {
     return *(reinterpret_cast<u32*>(&x) + 1);
 }
 
-u32& LODWORD(u64& x)
+static inline u32& LODWORD(u64& x)
 {
     return *(reinterpret_cast<u32*>(&x) + 0);
 }

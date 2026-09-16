@@ -12,7 +12,8 @@ ABILITY_TRIGGERTABLE CorrosionHandlers[] = {
     {EVENT_CHECK_TYPE_EFFECTIVENESS, (ABILITY_HANDLER_FUNC)HandlerCorrosion}, // 26
 };
 
-extern "C" ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddLimber(_DWORD *a1)
+// was: THUMB_BRANCH_EventAddLimber
+extern "C" ABILITY_TRIGGERTABLE *e07(_DWORD *a1)
 {
     *a1 = 1;
     return CorrosionHandlers;

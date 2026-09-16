@@ -505,7 +505,7 @@ extern "C"
 
         /* Potential Hidden Ability? */
         u8 hiddenAbilityAllowed = (PML_PersonalGetParam(personal, Personal_SpecialTutor1) >> 16) & 0xFF;
-        k::Printf("\nWe were able to determine the hidden ability chance is %d\n", hiddenAbilityAllowed * 25u);
+        //k::Printf("\nWe were able to determine the hidden ability chance is %d\n", hiddenAbilityAllowed * 25u);
         if (hiddenAbilityAllowed > 1)
         {
             random2 = GFL_RandomLCAlt(1000u);
@@ -1984,17 +1984,24 @@ extern "C" void PML_PkmSetParam(BoxPkm *pPkm, PkmField field, u32 data);
 //   return &BoxSaveAccessor_GetBox(boxAccessor, trayNum)[pos];
 // }
 
-extern "C" int RemoteItems(void *vm, void *env)
+enum 	DaycareSlot {DAYCARE_1 = 0x0,DAYCARE_2 = 0x1,};
+
+//extern "C" int RemoteItems(void *vm, void *env)
+extern "C" int THUMB_BRANCH_s00F8_DayCareGetSex(void *vm, void *env)
 {
     GameData *gameData;
     PokeParty *party;
     PartyPkm *pkm;
     u8 pokeCount;
+    u16* var; 
+    u16 Any; 
+
+    var = ScriptReadVar(vm, env);
+    Any = ScriptReadAny(vm, env);
     HeapID heap = FieldScriptEnv_GetHeapID(env);
     gameData = FieldScriptEnv_GetGameData(env);
     party = GameData_GetParty(gameData);
     pokeCount = PokeParty_GetPkmCount(party);
-
     for (int i = 0; i < pokeCount; i++)
     {
         pkm = PokeParty_GetPkm(party, i);
@@ -2026,7 +2033,9 @@ extern "C" int RemoteItems(void *vm, void *env)
     return 0;
 }
 
-extern "C" int EdgeExp(void *vm, void *env)
+//extern "C" int EdgeExp(void *vm, void *env)
+//{
+extern "C" int THUMB_BRANCH_s00F6_CheckIfHasAbilityTwo(void *vm, void *env)
 {
     GameData *gameData;
     PokeParty *party;
@@ -2036,10 +2045,15 @@ extern "C" int EdgeExp(void *vm, void *env)
     int form;
     int level;
     u32 PkmLvExp;
+    u16* var; 
+    u16 Any; 
+
+    var = ScriptReadVar(vm, env);
+    Any = ScriptReadAny(vm, env);
+
     gameData = FieldScriptEnv_GetGameData(env);
     party = GameData_GetParty(gameData);
     pokeCount = PokeParty_GetPkmCount(party);
-
     for (int i = 0; i < pokeCount; i++)
     {
         pkm = PokeParty_GetPkm(party, i);
@@ -2053,11 +2067,11 @@ extern "C" int EdgeExp(void *vm, void *env)
     return 0;
 }
 // Replaces 133
-extern "C" void *FULL_COPY_12_0x0216BA44 = (void *)RemoteItems;
-// Replaces 135
-extern "C" void *FULL_COPY_12_0x0216BA4C = (void *)EdgeExp;
-// Replaces 00 in the EV_CMD_PERM array
-extern "C" u8 FULL_COPY_EVCMD_PERM_TABLE_0x132 = 7;
-extern "C" u8 FULL_COPY_EVCMD_PERM_TABLE_0x134 = 7;
+// extern "C" void *FULL_COPY_12_0x0216BA44 = (void *)RemoteItems;
+// // Replaces 135
+// extern "C" void *FULL_COPY_12_0x0216BA4C = (void *)EdgeExp;
+// // Replaces 00 in the EV_CMD_PERM array
+// extern "C" u8 FULL_COPY_EVCMD_PERM_TABLE_0x133 = 7;
+// extern "C" u8 FULL_COPY_EVCMD_PERM_TABLE_0x135 = 7;
 
 #pragma endregion

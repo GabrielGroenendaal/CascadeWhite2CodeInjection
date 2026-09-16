@@ -44,7 +44,8 @@ ABILITY_TRIGGERTABLE ToxicBoostHandlers[] = {
     {EVENT_CONDITION_DAMAGE, (ABILITY_HANDLER_FUNC)HandlerToxicBoostStatus}, // 44
     {EVENT_ATTACKER_POWER, (ABILITY_HANDLER_FUNC)HandlerToxicBoostDamage}};
 
-extern "C" ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddToxicBoost(_DWORD *a1)
+// was: THUMB_BRANCH_EventAddToxicBoost
+extern "C" ABILITY_TRIGGERTABLE *e89(_DWORD *a1)
 {
     *a1 = 4;
     return ToxicBoostHandlers;

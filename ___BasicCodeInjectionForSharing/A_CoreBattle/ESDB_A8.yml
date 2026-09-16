@@ -37,6 +37,57 @@ Segments:
     Type: OVERLAY
 
 Symbols:
+  - Name: sprintf
+    Segment: 0x0
+    Address: 0x2085b7c
+  - Name: ServerEvent_BeforeAttacks
+    Segment: 0xA7
+    Address: 0x21a9eed
+  - Name: BattleEventVar_CheckStackCleared
+    Segment: 0xA7
+    Address: 0x21bcd35
+  - Name: BattleServer_ChangeSequence
+    Segment: 0xA7
+    Address: 0x219e631
+  - Name: BattleServer_InitChangePokemonReq
+    Segment: 0xA7
+    Address: 0x219f389
+  - Name: BattleServer_IsWaitingClientReply
+    Segment: 0xA7
+    Address: 0x219f1dd
+  - Name: BattleServer_SetDefaultSequence
+    Segment: 0xA7
+    Address: 0x219e639
+  - Name: BtlServer_FaintSequence
+    Segment: 0xA7
+    Address: 0x219e93d
+  - Name: BtlServer_StartBattleSequence
+    Segment: 0xA7
+    Address: 0x219e649
+  - Name: ServerControl_ActOrderProc_OnlyPokeIn
+    Segment: 0xA7
+    Address: 0x219fcb5
+  - Name: ServerEvent_ActProcEnd
+    Segment: 0xA7
+    Address: 0x21a0a49
+  - Name: sub_219DF90
+    Segment: 0xA7
+    Address: 0x219df91
+  - Name: sub_219F06C
+    Segment: 0xA7
+    Address: 0x219f06d
+  - Name: sub_219F0EC
+    Segment: 0xA7
+    Address: 0x219f0ed
+  - Name: sub_219F168
+    Segment: 0xA7
+    Address: 0x219f169
+  - Name: sub_219F214
+    Segment: 0xA7
+    Address: 0x219f215
+  - Name: sub_219FB7C
+    Segment: 0xA7
+    Address: 0x219fb7d
   - Name: g_GameBeaconSys
     Segment: 0x1
     Address: 0x2141840

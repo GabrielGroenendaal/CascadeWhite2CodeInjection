@@ -8,7 +8,8 @@ ABILITY_TRIGGERTABLE RainDishHandlers[] = {
     {EVENT_SWITCH_IN, (ABILITY_HANDLER_FUNC)HandlerWaterVeilCureStatus},            // 33
     {EVENT_ACTION_PROCESSING_END, (ABILITY_HANDLER_FUNC)HandlerWaterVeilActionEnd}, // 34
 };
-extern "C" ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddRainDish(_DWORD *a1)
+// was: THUMB_BRANCH_EventAddRainDish
+extern "C" ABILITY_TRIGGERTABLE *e2c(_DWORD *a1)
 {
     *a1 = 6;
     return RainDishHandlers;

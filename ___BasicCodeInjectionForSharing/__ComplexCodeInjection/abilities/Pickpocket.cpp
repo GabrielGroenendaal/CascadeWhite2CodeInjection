@@ -50,7 +50,8 @@ extern "C" void HandlerMagician(BattleEventItem *item, ServerFlow *serverFlow, u
 ABILITY_TRIGGERTABLE PickpocketHandlers[]{
     {EVENT_DAMAGE_PROCESSING_END_HIT_REAL, (ABILITY_HANDLER_FUNC)HandlerMagician},
 };
-extern "C" ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddPickpocket(_DWORD *a1)
+// was: THUMB_BRANCH_EventAddPickpocket
+extern "C" ABILITY_TRIGGERTABLE *e7c(_DWORD *a1)
 {
     *a1 = 1;
     return PickpocketHandlers;

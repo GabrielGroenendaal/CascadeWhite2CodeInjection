@@ -16,7 +16,8 @@ extern "C" void HandlerJustifiedDefense(int a1, int a2, int a3)
         {EVENT_ATTACKER_POWER, (ABILITY_HANDLER_FUNC)HandlerJustifiedDefense},  // 22
     };
 
-    extern "C" ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddJustified(_DWORD *a1)
+    // was: THUMB_BRANCH_EventAddJustified
+    extern "C" ABILITY_TRIGGERTABLE *e9a(_DWORD *a1)
     {
         *a1 = 2;
         return JustifiedHandlers;

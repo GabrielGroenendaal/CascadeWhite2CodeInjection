@@ -195,7 +195,7 @@ public class MainEvents {
         ShowQuestionMark(255);
         Actor.WaitActionFinish();
         Runtime.Sleep(12);
-        Player.GetGPos(playerX, playerZ)
+        Player.GetGPos(playerX, playerZ);
         if (playerX != 3){
             Actor.WalkRoute(255, 3, 6, 0, 16, 0);
             Actor.WaitActionFinish();

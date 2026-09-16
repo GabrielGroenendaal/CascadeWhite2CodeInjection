@@ -29,7 +29,8 @@ ABILITY_TRIGGERTABLE NormalizeHandlers[] = {
 
 };
 
-extern "C" ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddNormalize(_DWORD *a1)
+// was: THUMB_BRANCH_EventAddNormalize
+extern "C" ABILITY_TRIGGERTABLE *e60(_DWORD *a1)
 {
     *a1 = 3;
     return NormalizeHandlers;

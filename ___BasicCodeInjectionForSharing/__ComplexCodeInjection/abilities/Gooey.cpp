@@ -1,6 +1,6 @@
 #include "../definitions/A_CodeInjection.h"
 
-void THUMB_BRANCH_HandlerCuteCharm(int a1, ServerFlow *a2, unsigned int *a3)
+void HandlerGooey(int a1, ServerFlow *a2, unsigned int *a3)
 {
     u8 v6;                            // r6
     BattleMon *PokeParam;             // r7
@@ -27,4 +27,17 @@ void THUMB_BRANCH_HandlerCuteCharm(int a1, ServerFlow *a2, unsigned int *a3)
         }
     }
     return;
+}
+
+
+ABILITY_TRIGGERTABLE GooeyHandlers[] = {
+    {EVENT_MOVE_DAMAGE_REACTION_1, (ABILITY_HANDLER_FUNC)HandlerGooey}, // 22
+
+};
+
+// was: EventAddGooey
+extern "C" ABILITY_TRIGGERTABLE *e38(_DWORD *a1)
+{
+    *a1 = 1;
+    return GooeyHandlers;
 }

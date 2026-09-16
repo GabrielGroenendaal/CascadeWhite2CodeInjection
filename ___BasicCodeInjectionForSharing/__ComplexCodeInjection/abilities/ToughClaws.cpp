@@ -15,7 +15,8 @@ ABILITY_TRIGGERTABLE ToughClawsHandlers[] = {
     {EVENT_MOVE_POWER, (ABILITY_HANDLER_FUNC)HandlerToughClaws}, // 6
 };
 
-extern "C" ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddStall(_DWORD *a1)
+// was: THUMB_BRANCH_EventAddStall
+extern "C" ABILITY_TRIGGERTABLE *e64(_DWORD *a1)
 {
     *a1 = 1;
     return ToughClawsHandlers;

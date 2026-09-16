@@ -1,6 +1,6 @@
 #include "../definitions/A_CodeInjection.h"
 
-extern "C" void THUMB_BRANCH_SAFESTACK_HandlerTrace(int a1, ServerFlow *a2, unsigned int tracePokemonID, _DWORD *a4)
+extern "C" void HandlerTraceNew(int a1, ServerFlow *a2, unsigned int tracePokemonID, _DWORD *a4)
 {
     int tracePokemonSlot; // r5
     unsigned int Value;
@@ -131,4 +131,17 @@ extern "C" void THUMB_BRANCH_SAFESTACK_HandlerTrace(int a1, ServerFlow *a2, unsi
             BattleHandler_PopWork(a2, v19);
         }
     }
+}
+
+
+
+ABILITY_TRIGGERTABLE TraceHandlers[] = {
+    {EVENT_SWITCH_IN, (ABILITY_HANDLER_FUNC)HandlerTraceNew}, // 22
+};
+
+// was: EventAddTraceNew
+extern "C" ABILITY_TRIGGERTABLE * e24(_DWORD *a1)
+{
+    *a1 = 1;
+    return TraceHandlers;
 }

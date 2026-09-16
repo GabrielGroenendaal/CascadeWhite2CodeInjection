@@ -16,7 +16,7 @@ STRUCT_DECLARE(GameData)
 #define ADDING_GRASSKNOT true
 #define MOVE_EXPANSION false
 
-unsigned short int &LOWORD(unsigned int &x)
+static inline unsigned short int &LOWORD(unsigned int &x)
 {
     return *(reinterpret_cast<unsigned short int *>(&x) + 0);
 }
@@ -4241,7 +4241,7 @@ extern "C"
     void setTrPokAbility(PartyPkm *pkm, u8 genderAndAbil, u16 species, u32 form){
         int abils = PML_PersonalGetParamSingle(species, form, Personal_TypeTutor);
 
-        k::Printf("\nThe abilities are\nAbil 4: %d\nAbil 5: %d\nAbil 6: %d\n\n", (abils >> 8) & 0xFF, (abils >> 16) & 0xFF, (abils >> 24) & 0xFF);
+        //k::Printf("\nThe abilities are\nAbil 4: %d\nAbil 5: %d\nAbil 6: %d\n\n", (abils >> 8) & 0xFF, (abils >> 16) & 0xFF, (abils >> 24) & 0xFF);
 
         if ((genderAndAbil & 0xF0) == 16)
         {

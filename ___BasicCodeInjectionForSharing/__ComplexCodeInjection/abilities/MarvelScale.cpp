@@ -16,7 +16,8 @@ ABILITY_TRIGGERTABLE MarvelScaleHandlers[] = {
         {EVENT_SWITCH_IN, (ABILITY_HANDLER_FUNC)HandlerPreStatusMarvelScaleOnAI}, // 28
     };
 
-extern "C" ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddMarvelScale(_DWORD *a1)
+// was: THUMB_BRANCH_EventAddMarvelScale
+extern "C" ABILITY_TRIGGERTABLE *e3f(_DWORD *a1)
     {
         *a1 = 2;
         return MarvelScaleHandlers;

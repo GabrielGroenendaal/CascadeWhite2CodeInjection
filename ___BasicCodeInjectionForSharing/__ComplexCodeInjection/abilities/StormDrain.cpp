@@ -12,7 +12,8 @@ ABILITY_TRIGGERTABLE StormDrainHandlers[] = {
     {EVENT_ABILITY_CHECK_NO_EFFECT, (ABILITY_HANDLER_FUNC)HandlerNewStormDrain}, // 22
 };
 
-extern "C" ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddStormDrain(_DWORD *a1)
+// was: THUMB_BRANCH_EventAddStormDrain
+extern "C" ABILITY_TRIGGERTABLE *e72(_DWORD *a1)
 {
     *a1 = 1;
     return StormDrainHandlers;

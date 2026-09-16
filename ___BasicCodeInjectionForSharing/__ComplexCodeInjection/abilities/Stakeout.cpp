@@ -46,7 +46,8 @@ ABILITY_TRIGGERTABLE StakeoutHandlers[]{
     {EVENT_MOVE_POWER, (ABILITY_HANDLER_FUNC)HandlerStakeout},
 };
 
-extern "C" ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddFrisk(_DWORD *a1)
+// was: THUMB_BRANCH_EventAddFrisk
+extern "C" ABILITY_TRIGGERTABLE *e77(_DWORD *a1)
 {
     *a1 = 1;
     return StakeoutHandlers;

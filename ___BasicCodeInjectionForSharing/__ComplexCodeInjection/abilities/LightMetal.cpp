@@ -26,7 +26,8 @@ ABILITY_TRIGGERTABLE LightMetalHandlers[] = {
     {EVENT_WEIGHT_RATIO, (ABILITY_HANDLER_FUNC)HandlerLightMetal},
 };
 
-extern "C" ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddLightMetal(_DWORD *a1)
+// was: THUMB_BRANCH_EventAddLightMetal
+extern "C" ABILITY_TRIGGERTABLE *e87(_DWORD *a1)
 {
     *a1 = 3;
     return LightMetalHandlers;

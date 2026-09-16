@@ -6,7 +6,8 @@ ABILITY_TRIGGERTABLE StrongBodyHandlers[] = {
     {EVENT_WEATHER_REACTION, (ABILITY_HANDLER_FUNC)HandlerOvercoat},                   // 37
 };
 
-extern "C" ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddClearBody(_DWORD *a1)
+// was: THUMB_BRANCH_EventAddClearBody
+extern "C" ABILITY_TRIGGERTABLE *e1d(_DWORD *a1)
 {
     *a1 = 3;
     return StrongBodyHandlers;

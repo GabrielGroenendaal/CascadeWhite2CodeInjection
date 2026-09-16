@@ -34,7 +34,8 @@ ABILITY_TRIGGERTABLE hyperCutterHandlers[] = {
     {EVENT_STAT_STAGE_CHANGE_LAST_CHECK, (ABILITY_HANDLER_FUNC)HandlerHyperCutterCheck},
     {EVENT_STAT_STAGE_CHANGE_FAIL, (ABILITY_HANDLER_FUNC)HandlerHyperCutterGuard}};
 
-extern "C" ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddHyperCutter(_DWORD *a1)
+// was: THUMB_BRANCH_EventAddHyperCutter
+extern "C" ABILITY_TRIGGERTABLE *e34(_DWORD *a1)
 {
     *a1 = 3;
     return hyperCutterHandlers;

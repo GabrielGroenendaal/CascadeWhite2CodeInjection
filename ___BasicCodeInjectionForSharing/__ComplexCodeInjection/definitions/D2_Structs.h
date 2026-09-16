@@ -2048,12 +2048,12 @@ struct SWAN_ALIGNED(4) ShopUIWork
     __int16 field_29E;
 };
 
-unsigned short int &HIWORD(unsigned int &x)
+static inline unsigned short int &HIWORD(unsigned int &x)
 {
     return *(reinterpret_cast<unsigned short int *>(&x) + 1);
 }
 
-unsigned short int &LOWORD(unsigned int &x)
+static inline unsigned short int &LOWORD(unsigned int &x)
 {
     return *(reinterpret_cast<unsigned short int *>(&x) + 0);
 }

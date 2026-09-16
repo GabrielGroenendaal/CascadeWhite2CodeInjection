@@ -23,7 +23,8 @@ ABILITY_TRIGGERTABLE RKSHandlers[]{
     {EVENT_SWITCH_IN, (ABILITY_HANDLER_FUNC)HandlerRKSSystem},
     {EVENT_TURN_CHECK_DONE, (ABILITY_HANDLER_FUNC)HandlerRKSSystem},
 };
-extern "C" ABILITY_TRIGGERTABLE * THUMB_BRANCH_EventAddColorChange(_DWORD * a1) {
+// was: THUMB_BRANCH_EventAddColorChange
+extern "C" ABILITY_TRIGGERTABLE * e10(_DWORD * a1) {
     *a1 = 2;
     return RKSHandlers;
 }

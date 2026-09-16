@@ -12,7 +12,8 @@ ABILITY_TRIGGERTABLE LightningRodHandlers[] = {
     {EVENT_ABILITY_CHECK_NO_EFFECT, (ABILITY_HANDLER_FUNC)HandlerNewLightningRod}, // 22
 };
 
-extern "C" ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddLightningRod(_DWORD *a1)
+// was: THUMB_BRANCH_EventAddLightningRod
+extern "C" ABILITY_TRIGGERTABLE *e1f(_DWORD *a1)
 {
     *a1 = 1;
     return LightningRodHandlers;

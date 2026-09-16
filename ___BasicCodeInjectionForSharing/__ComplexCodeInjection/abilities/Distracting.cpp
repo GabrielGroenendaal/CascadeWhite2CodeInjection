@@ -40,7 +40,8 @@ ABILITY_TRIGGERTABLE DistractingHandlers[] = {
     {EVENT_SWITCH_IN, (ABILITY_HANDLER_FUNC)HandlerDistracting},            // 41
     {EVENT_AFTER_ABILITY_CHANGE, (ABILITY_HANDLER_FUNC)HandlerDistracting}, // 41
 };
-extern "C" ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddKlutz(_DWORD *a1)
+// was: THUMB_BRANCH_EventAddKlutz
+extern "C" ABILITY_TRIGGERTABLE *e67(_DWORD *a1)
 {
     *a1 = 2;
     return DistractingHandlers;

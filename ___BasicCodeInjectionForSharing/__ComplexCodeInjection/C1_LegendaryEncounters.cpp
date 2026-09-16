@@ -18,7 +18,7 @@
     674 - Kyurem
     675 - Kyurem White
 */
-bool IsEqual(int a1, int a2)
+static inline bool IsEqual(int a1, int a2)
 {
     char *c1 = (char *)&a1;
     char *c2 = (char *)&a2;

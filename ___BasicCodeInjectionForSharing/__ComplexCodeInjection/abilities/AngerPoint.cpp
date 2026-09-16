@@ -46,7 +46,8 @@ ABILITY_TRIGGERTABLE AngerPointHandlers[] = {
 
 };
 
-extern "C" ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddAngerPoint(_DWORD *a1)
+// was: THUMB_BRANCH_EventAddAngerPoint
+extern "C" ABILITY_TRIGGERTABLE *e53(_DWORD *a1)
 {
     *a1 = 4;
     return AngerPointHandlers;

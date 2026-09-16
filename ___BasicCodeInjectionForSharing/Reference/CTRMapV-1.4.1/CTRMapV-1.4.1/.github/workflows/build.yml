@@ -1,0 +1,62 @@
+name: Build CTRMapV
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout CTRMapV
+        uses: actions/checkout@v4
+        with:
+          path: CTRMapV
+
+      - name: Checkout CTRMap-CE
+        uses: actions/checkout@v4
+        with:
+          repository: ds-pokemon-hacking/CTRMap-CE
+          ref: master
+          path: CTRMap-CE
+          submodules: recursive
+
+      - name: Set up JDK 11
+        uses: actions/setup-java@v4
+        with:
+          java-version: '11'
+          distribution: 'temurin'
+          cache: maven
+
+      - name: Build CTRMap-CE dependency chain
+        run: bash CTRMap-CE/ci/build/build-all-for-downstream.sh
+
+      - name: Set build metadata
+        id: meta
+        run: |
+          DATE=$(date -u +'%Y%m%d')
+          COMMIT=${GITHUB_SHA::7}
+          if [[ "$GITHUB_REF" == "refs/heads/main" || "$GITHUB_REF" == "refs/heads/master" ]]; then
+            TYPE=stable
+          else
+            TYPE=nightly
+          fi
+          echo "date=$DATE" >> $GITHUB_OUTPUT
+          echo "commit=$COMMIT" >> $GITHUB_OUTPUT
+          echo "type=$TYPE" >> $GITHUB_OUTPUT
+
+      - name: Build CTRMapV
+        run: cd CTRMapV && mvn package -B -Dbuild.date=${{ steps.meta.outputs.date }} -Dbuild.commit=${{ steps.meta.outputs.commit }} -Dbuild.type=${{ steps.meta.outputs.type }}
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: CTRMapV
+          path: CTRMapV/target/ctrmapv-*.jar
+          if-no-files-found: warn

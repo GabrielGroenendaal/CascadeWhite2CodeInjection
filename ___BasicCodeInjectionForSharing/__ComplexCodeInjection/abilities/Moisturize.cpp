@@ -23,7 +23,8 @@ extern "C" void HandlerHydrateType(int a1, int a2, int a3)
 ABILITY_TRIGGERTABLE HydrateHandlers[] = {
     {EVENT_MOVE_PARAM, (ABILITY_HANDLER_FUNC)HandlerHydrateType}, // 22
     {EVENT_ATTACKER_POWER, (ABILITY_HANDLER_FUNC)HandlerAtePower}};
-extern "C" ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddSuperLuck(_DWORD *a1)
+// was: THUMB_BRANCH_EventAddSuperLuck
+extern "C" ABILITY_TRIGGERTABLE *e69(_DWORD *a1)
 {
     *a1 = 2;
     return HydrateHandlers;

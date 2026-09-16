@@ -25,30 +25,7 @@ const u16 StrongJawMoves[12] = {
     MOVE141_LEECH_LIFE,
     MOVE030_DEVOUR};
 
-extern "C" void THUMB_BRANCH_HandlerSuperFang(int a1, ServerFlow *a2, int a3)
-{
-    unsigned __int8 Value; // r0
-    BattleMon *BattleMon;  // r0
-    unsigned int v8;       // r0
-    int v9;                // r1
 
-    if (a3 == BattleEventVar_GetValue(VAR_ATTACKING_MON))
-    {
-        Value = BattleEventVar_GetValue(VAR_DEFENDING_MON);
-        BattleMon = Handler_GetBattleMon(a2, Value);
-        v8 = BattleMon_GetValue(BattleMon, VALUE_CURRENT_HP);
-        v9 = (v8 + (v8 >> 31)) << 15 >> 16;
-        if (!v9)
-        {
-            v9 = 1;
-        }
-        if (BattleMon_GetValue(Handler_GetBattleMon(a2, a3), VALUE_EFFECTIVE_ABILITY) == ABIL093_STRONG_JAW)
-        {
-            v9 = v9 + (v9 >> 1);
-        }
-        BattleEventVar_RewriteValue(VAR_FIXED_DAMAGE, v9);
-    }
-}
 
 extern "C" void HandlerStrongJaw(BattleEventItem *item, ServerFlow *serverFlow, u32 pokemonSlot, u32 *work)
 {
@@ -64,7 +41,8 @@ ABILITY_TRIGGERTABLE StrongJawHandlers[]{
     {EVENT_MOVE_POWER, (ABILITY_HANDLER_FUNC)HandlerStrongJaw},
 };
 
-extern "C" ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddHydration(u32 *handlerAmount)
+// was: THUMB_BRANCH_EventAddHydration
+extern "C" ABILITY_TRIGGERTABLE *e5d(u32 *handlerAmount)
 {
     *handlerAmount = 1;
     return StrongJawHandlers;

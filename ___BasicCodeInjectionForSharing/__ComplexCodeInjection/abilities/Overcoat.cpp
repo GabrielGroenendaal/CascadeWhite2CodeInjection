@@ -31,7 +31,8 @@ ABILITY_TRIGGERTABLE OvercoatHandlers[] = {
     {EVENT_WEATHER_REACTION, (ABILITY_HANDLER_FUNC)HandlerOvercoat},               // 25
 };
 
-extern "C" ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddOvercoat(_DWORD *a1)
+// was: THUMB_BRANCH_EventAddOvercoat
+extern "C" ABILITY_TRIGGERTABLE *e8e(_DWORD *a1)
 {
     *a1 = 2;
     return OvercoatHandlers;

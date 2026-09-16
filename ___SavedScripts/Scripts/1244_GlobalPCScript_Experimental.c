@@ -2705,7 +2705,8 @@ label_EndPreDamageScript: ;
 /* REMOVE ALL ITEMS FROM POKEMON SCRIPT */
 /* REPLACE WITH 133 */
 void Sequence20(){
-    PC_131();
+    // PC_131();
+	DaycareGetGender(0x8038, 1);
 	EventGreyMessage(69, 2);
     SetVarEqVal(0x8036, 0x8035);
 	Return();
@@ -2715,7 +2716,8 @@ void Sequence20(){
 /* REPLACE WITH 135 */
 void Sequence21()
 {
-    PC_131();
+    // PC_131();
+	DaycareGetWithdrawCost(0x8038, 1);
 	EventGreyMessage(69, 2);
 	Return();
 }

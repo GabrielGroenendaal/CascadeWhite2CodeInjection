@@ -15,7 +15,8 @@ ABILITY_TRIGGERTABLE AmplifierHandlers[] = {
     {EVENT_ABILITY_CHECK_NO_EFFECT, (ABILITY_HANDLER_FUNC)HandlerSoundproof}, // 22
     {EVENT_MOVE_POWER, (ABILITY_HANDLER_FUNC)HandlerAmplifier}};
 
-extern "C" ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddSoundproof(_DWORD *a1)
+// was: THUMB_BRANCH_EventAddSoundproof
+extern "C" ABILITY_TRIGGERTABLE *e2b(_DWORD *a1)
 {
     *a1 = 2;
     return AmplifierHandlers;

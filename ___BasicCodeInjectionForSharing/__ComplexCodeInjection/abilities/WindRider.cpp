@@ -62,7 +62,8 @@ ABILITY_TRIGGERTABLE WindRiderHandlers[] = {
     {EVENT_ABILITY_CHECK_NO_EFFECT, (ABILITY_HANDLER_FUNC)HandlerWindRider}, // 22
     {EVENT_MOVE_EXECUTE_END, (ABILITY_HANDLER_FUNC)HandlerWindRiderTailwind}};
 
-extern "C" ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddKeenEye(_DWORD *a1)
+// was: THUMB_BRANCH_EventAddKeenEye
+extern "C" ABILITY_TRIGGERTABLE *e33(_DWORD *a1)
 {
     *a1 = 2;
     return WindRiderHandlers;

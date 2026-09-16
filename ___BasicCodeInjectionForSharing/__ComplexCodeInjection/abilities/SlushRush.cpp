@@ -27,7 +27,8 @@ ABILITY_TRIGGERTABLE SlushRushHandlers[] = {
     {EVENT_ACTION_PROCESSING_END, (ABILITY_HANDLER_FUNC)HandlerMagmaArmorActionEnd},
 };
 
-extern "C" ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddTangledFeet(_DWORD *a1)
+// was: THUMB_BRANCH_EventAddTangledFeet
+extern "C" ABILITY_TRIGGERTABLE *e4d(_DWORD *a1)
 {
     *a1 = 8;
     return SlushRushHandlers;

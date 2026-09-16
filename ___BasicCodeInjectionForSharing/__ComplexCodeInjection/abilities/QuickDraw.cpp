@@ -25,7 +25,8 @@ ABILITY_TRIGGERTABLE QuickDrawHandlers[] = {
     {EVENT_CHECK_SPECIAL_PRIORITY, (ABILITY_HANDLER_FUNC)HandlerQuickDraw}, // 22
 };
 
-extern "C" ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddOwnTempo(_DWORD *a1)
+// was: THUMB_BRANCH_EventAddOwnTempo
+extern "C" ABILITY_TRIGGERTABLE *e14(_DWORD *a1)
 {
     *a1 = 1;
     return QuickDrawHandlers;

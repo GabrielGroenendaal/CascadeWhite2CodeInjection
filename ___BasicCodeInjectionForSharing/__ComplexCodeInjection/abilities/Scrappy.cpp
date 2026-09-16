@@ -39,7 +39,8 @@ ABILITY_TRIGGERTABLE ScrappyHandlers[] = {
 
     {EVENT_STAT_STAGE_CHANGE_FAIL, (ABILITY_HANDLER_FUNC)HandlerHyperCutterGuard}};
 
-extern "C" ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddScrappy(_DWORD *a1)
+// was: THUMB_BRANCH_EventAddScrappy
+extern "C" ABILITY_TRIGGERTABLE *e71(_DWORD *a1)
 {
     *a1 = 5;
     return ScrappyHandlers;

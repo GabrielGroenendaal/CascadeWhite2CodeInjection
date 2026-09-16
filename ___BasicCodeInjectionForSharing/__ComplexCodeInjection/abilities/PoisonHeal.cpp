@@ -15,7 +15,8 @@ ABILITY_TRIGGERTABLE PoisonHealHandlers[] = {
     {EVENT_SWITCH_IN, (ABILITY_HANDLER_FUNC)HandlerPrePoisonOnAI},     // 18
 };
 
-extern "C" ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddPoisonHeal(_DWORD *a1)
+// was: THUMB_BRANCH_EventAddPoisonHeal
+extern "C" ABILITY_TRIGGERTABLE *e5a(_DWORD *a1)
 {
     *a1 = 2;
     return PoisonHealHandlers;

@@ -57,7 +57,8 @@ ABILITY_TRIGGERTABLE BulletproofHandlers[] = {
     {EVENT_ABILITY_CHECK_NO_EFFECT, (ABILITY_HANDLER_FUNC)HandlerBulletproof}, // 22
 };
 
-extern "C" ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddDamp(_DWORD *a1)
+// was: THUMB_BRANCH_EventAddDamp
+extern "C" ABILITY_TRIGGERTABLE *e06(_DWORD *a1)
 {
     *a1 = 1;
     return BulletproofHandlers;

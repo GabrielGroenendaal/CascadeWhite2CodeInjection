@@ -28,7 +28,8 @@ ABILITY_TRIGGERTABLE GutsHandlers[] = {
 
 };
 
-extern "C" ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddGuts(_DWORD *a1)
+// was: THUMB_BRANCH_EventAddGuts
+extern "C" ABILITY_TRIGGERTABLE *e3e(_DWORD *a1)
 {
     *a1 = 2;
     return GutsHandlers;

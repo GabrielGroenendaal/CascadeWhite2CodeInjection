@@ -2,7 +2,7 @@
 
 
 
-extern "C" void THUMB_BRANCH_HandlerSandForce(int a1, int a2, int a3)
+extern "C" void HandlerSandForce(int a1, int a2, int a3)
 {
     u8 Value; // r0
 
@@ -21,4 +21,18 @@ extern "C" void THUMB_BRANCH_HandlerSandForce(int a1, int a2, int a3)
             }
         }
     }
+}
+
+
+ABILITY_TRIGGERTABLE SandForceHandlers[] = {
+    {EVENT_MOVE_POWER, (ABILITY_HANDLER_FUNC)HandlerSandForce}, // 15
+    {EVENT_WEATHER_REACTION, (ABILITY_HANDLER_FUNC)HandlerSandVeilWeather}
+};
+
+
+// was: EventAddSandForceNew
+extern "C" ABILITY_TRIGGERTABLE * e9f(_DWORD *a1)
+{
+  *a1 = 2;
+  return SandForceHandlers;
 }

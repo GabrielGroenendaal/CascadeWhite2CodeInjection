@@ -13,7 +13,8 @@ ABILITY_TRIGGERTABLE QuickFeetHandlers[] = {
     {EVENT_SWITCH_IN, (ABILITY_HANDLER_FUNC)HandlerPreParalysisOnAI}, // 14
 };
 
-extern "C" ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddQuickFeet(_DWORD *a1)
+// was: THUMB_BRANCH_EventAddQuickFeet
+extern "C" ABILITY_TRIGGERTABLE *e5f(_DWORD *a1)
 {
     *a1 = 2;
     return QuickFeetHandlers;

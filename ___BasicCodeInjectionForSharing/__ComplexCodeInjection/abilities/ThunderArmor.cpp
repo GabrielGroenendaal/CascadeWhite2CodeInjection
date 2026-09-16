@@ -12,7 +12,8 @@ ABILITY_TRIGGERTABLE ThunderArmorHandlers[] = {
     {EVENT_ABILITY_CHECK_NO_EFFECT, (ABILITY_HANDLER_FUNC)HandlerThunderArmor}, // 22
 };
 
-extern "C" ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddInsomnia(_DWORD *a1)
+// was: THUMB_BRANCH_EventAddInsomnia
+extern "C" ABILITY_TRIGGERTABLE *e0f(_DWORD *a1)
 {
     *a1 = 1;
     return ThunderArmorHandlers;

@@ -8,7 +8,19 @@
 
 #define TESTING_NO_NEGATIVE_SCALING true
 
-extern "C" u32 SearchArray(const u32 *const arr, const u32 arrSize, const u32 value)
+// Temporary: tracing an in-game "undefined instruction" crash through the DLL
+// loading / ability-event dispatch path. Lights up the DPRINT/DPRINTF calls
+// already scattered through LoadDll/FreeDll below (they were previously dead
+// - LIBRARY_LOAD_DEBUG/DPRINT/DPRINTF were never defined anywhere) plus new
+// tracing added around every function-pointer call, which is the most likely
+// place a bad/unrelocated pointer would produce an undefined instruction.
+#define LIBRARY_LOAD_DEBUG false
+#define DPRINT(msg) k::Printf(msg)
+#define DPRINTF(fmt, ...) k::Printf(fmt, __VA_ARGS__)
+
+// Not extern "C": overloaded below for u16 arrays too (MOLD_BREAKER_AFFECTED_ABILITIES
+// etc.) - extern "C" linkage would collide since it disables C++ overload resolution.
+u32 SearchArray(const u32 *const arr, const u32 arrSize, const u32 value)
 {
     for (u32 i = 0; i < arrSize; ++i)
     {
@@ -22,12 +34,22 @@ extern "C" u32 SearchArray(const u32 *const arr, const u32 arrSize, const u32 va
 #define SEARCH_ARRAY(arr, value) SearchArray(arr, ARRAY_COUNT(arr), value)
 
 
-#pragma region DLL_Loading 
+#pragma region DLL_Loading
 #define MAX_LOADED_DLLS 72
+// name is a fixed-size buffer (not a `const char*`) that we copy into in LoadDll,
+// rather than storing the caller's pointer directly. produceDLLName() returns a
+// pointer to its own `static char result[20]` that gets overwritten on every call,
+// so every slot's name would otherwise alias that same buffer - every strcmp below
+// would then compare the buffer against itself (always "equal"), so a second ability
+// loading here would be treated as "already loaded" and hand back the FIRST loaded
+// ability's handle instead of loading its own module (e.g. Thick Fat silently got
+// Savant's handle and GetProcAddress("e2f") failed because Savant's module doesn't
+// export that symbol).
 struct LoadedDll
 {
-    const char* name;
+    char name[20];
     u32 count;
+    k::dll::LibraryHandle handle;
 };
 
 // List of loaded DLLs in the current battle
@@ -36,7 +58,7 @@ struct LoadedDll
 // Reset in [BattleField_Free]
 LoadedDll loadedDlls[MAX_LOADED_DLLS];
 extern "C" void ClearDll(u32 idx) {
-    loadedDlls[idx].name = nullptr;
+    loadedDlls[idx].name[0] = '\0';
     loadedDlls[idx].count = 0;
 }
 extern "C" void ClearLoadedDlls() {
@@ -50,7 +72,7 @@ extern "C" void ClearLoadedDlls() {
 extern "C" void PrintLoadedDlls() {
     for (u8 dllIdx = 0; dllIdx < 24; ++dllIdx) {
 
-        if (loadedDlls[dllIdx].name == nullptr) {
+        if (loadedDlls[dllIdx].name[0] == '\0') {
             DPRINT("--- \n");
         }
         else {
@@ -61,6 +83,7 @@ extern "C" void PrintLoadedDlls() {
 #endif
 
 extern "C" int strcmp(const char* str1, const char* str2);
+extern "C" char* strcpy(char* dst, const char* src);
 extern "C" b32 LoadDll(const char* dllName)
 {
     if (dllName == nullptr)
@@ -68,90 +91,94 @@ extern "C" b32 LoadDll(const char* dllName)
 
     for (u8 dllIdx = 0; dllIdx < MAX_LOADED_DLLS; ++dllIdx)
     {
-        if (loadedDlls[dllIdx].name == nullptr)
+        if (loadedDlls[dllIdx].name[0] == '\0')
         {
+            // MakeLibraryPath (kDLL.cpp) builds the real NitroFS path this way:
+            // LIBRARY_PATH_PREFIX + dllName + LIBRARY_PATH_SUFFIX. Reconstructing
+            // and printing it here shows exactly what path the game is about to
+            // try to open, to compare against what's actually in the ROM's NitroFS.
             k::dll::LibraryHandle handle = k::dll::LoadLibrary(dllName);
             if (!handle)
             {
-                #if LIBRARY_LOAD_DEBUG
-                                DPRINTF("Failed to load %s! \n", dllName);
-                #endif
                 return 0;
             }
-            #if LIBRARY_LOAD_DEBUG
-                        DPRINTF("Loaded %s! \n", dllName);
-            #endif
-            loadedDlls[dllIdx].name = dllName;
+            strcpy(loadedDlls[dllIdx].name, dllName);
             loadedDlls[dllIdx].count = 1;
+            loadedDlls[dllIdx].handle = handle;
             break;
         }
         if (strcmp(loadedDlls[dllIdx].name, dllName) == 0)
         {
-        #if LIBRARY_LOAD_DEBUG
-                    DPRINTF("Added %s! \n", dllName);
-        #endif
             ++loadedDlls[dllIdx].count;
             break;
         }
     }
     return 1;
 }
+
+// Looks up the handle of an already-loaded DLL by name (set in LoadDll above),
+// so callers can GetProcAddress into it once LoadDll reports success.
+extern "C" k::dll::LibraryHandle GetLoadedDllHandle(const char* dllName)
+{
+    for (u8 dllIdx = 0; dllIdx < MAX_LOADED_DLLS; ++dllIdx)
+    {
+        if (loadedDlls[dllIdx].name[0] == '\0')
+            return nullptr;
+        if (strcmp(loadedDlls[dllIdx].name, dllName) == 0)
+            return loadedDlls[dllIdx].handle;
+    }
+    return nullptr;
+}
 extern "C" void FreeDll(const char* dllName) {
     if (dllName == nullptr)
         return;
 
     for (u8 dllIdx = 0; dllIdx < MAX_LOADED_DLLS; ++dllIdx) {
-        if (loadedDlls[dllIdx].name == nullptr)
+        if (loadedDlls[dllIdx].name[0] == '\0')
             break;
 
         if (strcmp(loadedDlls[dllIdx].name, dllName) == 0) {
-            
+
             --loadedDlls[dllIdx].count;
             if (loadedDlls[dllIdx].count == 0) {
                 k::dll::ReleaseLibrary(loadedDlls[dllIdx].name);
-                #if LIBRARY_LOAD_DEBUG
-                                DPRINTF("Released %s! \n", dllName);
-                #endif
+                //k::Printf("FreeDll: released %s (refcount hit 0)\n", dllName);
                 for (; dllIdx < MAX_LOADED_DLLS; ++dllIdx) {
-                    if (dllIdx == MAX_LOADED_DLLS - 1 || 
-                        loadedDlls[dllIdx + 1].name == nullptr) {
+                    if (dllIdx == MAX_LOADED_DLLS - 1 ||
+                        loadedDlls[dllIdx + 1].name[0] == '\0') {
                         ClearDll(dllIdx);
                         break;
                     }
-                        
+
                     loadedDlls[dllIdx] = loadedDlls[dllIdx + 1];
                 }
             }
-            #if LIBRARY_LOAD_DEBUG
-                        else {
-                            DPRINTF("Substracted %s! \n", dllName);
-                        }
-            #endif
+            else {
+                //k::Printf("FreeDll: decremented %s (refcount now %d, not released)\n", dllName, loadedDlls[dllIdx].count);
+            }
             return;
         }
     }
-    #if LIBRARY_LOAD_DEBUG
-        DPRINTF("Library %s was not loaded! \n", dllName);
-    #endif
+    //k::Printf("FreeDll: %s was not loaded!\n", dllName);
 }
 extern "C" void FreeLoadedDlls() {
     // Free all the loaded code
     for (u8 dllIdx = 0; dllIdx < MAX_LOADED_DLLS; ++dllIdx)
     {
-        if (loadedDlls[dllIdx].name == nullptr)
+        if (loadedDlls[dllIdx].name[0] == '\0')
             break;
 
         k::dll::ReleaseLibrary(loadedDlls[dllIdx].name);
         #if LIBRARY_LOAD_DEBUG
                 DPRINTF("Freed %s!\n", loadedDlls[dllIdx]);
         #endif
-        loadedDlls[dllIdx].name = nullptr;
+        loadedDlls[dllIdx].name[0] = '\0';
         loadedDlls[dllIdx].count = 0;
     }
     ClearLoadedDlls();
 }
 
-#pragma endregion 
+#pragma endregion
 
 
 #pragma region BattleFieldSetup
@@ -1042,18 +1069,18 @@ extern "C" void SwapPokemonOrder(ActionOrderWork *actionOrder, u16 *speedStats, 
     eventPriority[slowIdx] = bufferEventPriority;
 }
 
-extern "C" void THUMB_BRANCH_ServerEvent_BeforeAttacks(ServerFlow *a1, BattleMon *a2, int a3)
-{
-    int ID; // r0
+// extern "C" void THUMB_BRANCH_ServerEvent_BeforeAttacks(ServerFlow *a1, BattleMon *a2, int a3)
+// {
+//     int ID; // r0
 
-    //   k::Printf("Dynamic Speed - Before Attacks Event\n");
-    BattleEventVar_Push();
-    ID = BattleMon_GetID(a2);
-    BattleEventVar_SetValue(VAR_MON_ID, ID);
-    BattleEventVar_SetValue(VAR_MOVE_ID, a3);
-    BattleEvent_CallHandlers(a1, EVENT_BEFORE_ATTACKS);
-    BattleEventVar_Pop();
-}
+//     //   k::Printf("Dynamic Speed - Before Attacks Event\n");
+//     BattleEventVar_Push();
+//     ID = BattleMon_GetID(a2);
+//     BattleEventVar_SetValue(VAR_MON_ID, ID);
+//     BattleEventVar_SetValue(VAR_MOVE_ID, a3);
+//     BattleEvent_CallHandlers(a1, EVENT_BEFORE_ATTACKS);
+//     BattleEventVar_Pop();
+// }
 
 extern "C" void PokeSet_SortBySpeedDynamic(ServerFlow *serverFlow, ActionOrderWork *actionOrder, u8 firstIdx, u8 turnStart)
 {
@@ -1751,7 +1778,219 @@ extern "C" int THUMB_BRANCH_ScaleExpGainedByLevel(BattleMon *monGainingExp, unsi
 #pragma endregion
 
 
+#pragma region StaticAbilitiesChanges
+
+unsigned __int16 MOLD_BREAKER_AFFECTED_ABILITIES[51] = {
+    ABIL025_WONDER_GUARD,
+    ABIL043_AMPLIFIER,
+    ABIL026_LEVITATE,
+    ABIL008_SAND_VEIL,
+    ABIL081_SNOW_CLOAK,
+    ABIL011_WATER_ABSORB,
+    ABIL004_BATTLE_ARMOR,
+    ABIL031_LIGHTNING_ROD,
+    ABIL114_STORM_DRAIN,
+    ABIL075_SHELL_ARMOR,
+    ABIL109_UNAWARE,
+    ABIL021_WELL_BAKED_BODY,
+    ABIL086_SIMPLE,
+    ABIL077_SLUSH_RUSH,
+    ABIL116_SOLID_ROCK,
+    ABIL111_FILTER,
+    ABIL018_FLASH_FIRE,
+    ABIL078_MOTOR_DRIVE,
+    ABIL063_MARVEL_SCALE,
+    ABIL047_THICK_FAT,
+    ABIL085_HEATPROOF,
+    ABIL073_STRONG_BODY,
+    ABIL029_CLEAR_BODY,
+    ABIL051_WIND_RIDER,
+    ABIL052_HYPER_CUTTER,
+    ABIL039_INNER_FOCUS,
+    ABIL019_SHIELD_DUST,
+    ABIL005_STURDY,
+    ABIL006_BULLETPROOF,
+    ABIL102_FUR_COAT,
+    ABIL015_THUNDER_ARMOR,
+    ABIL072_RESILIENT,
+    ABIL017_FLUFFY,
+    ABIL126_CONTRARY,
+    ABIL132_FRIEND_GUARD,
+    ABIL136_MULTISCALE,
+    ABIL140_ICE_SCALES,
+    ABIL147_WONDER_SKIN,
+    ABIL156_MAGIC_BOUNCE,
+    ABIL157_SAP_SIPPER,
+    ABIL010_VOLT_ABSORB,
+    ABIL087_DRY_SKIN,
+    ABIL122_FLOWER_GIFT,
+    ABIL134_HEAVY_METAL,
+    ABIL135_LIGHT_METAL,
+    ABIL143_POISON_TOUCH,
+    ABIL113_SCRAPPY,
+    ABIL056_GOOEY,
+    ABIL009_STATIC,
+    ABIL049_FLAME_BODY,
+    ABIL027_EFFECT_SPORE,
+};
+
+// Overload of SearchArray (line ~21) for u16 arrays - same SEARCH_ARRAY macro picks
+// whichever overload matches the array's element type.
+u8 SearchArray(const u16 *const arr, const u32 arrSize, const u32 value)
+{
+    for (u16 i = 0; i < arrSize; ++i)
+    {
+        if (arr[i] == value)
+            return 1;
+    }
+    return 0;
+}
+
+extern "C" bool THUMB_BRANCH_SAFESTACK_HandlerMoldBreakerSkipCheck(int a1, int a2, BattleEventType a3, int a4, unsigned __int16 a5)
+{
+    // k::Printf("Mold Breaker Skip Check: Event %d, Move %d, EVENT_MOVE_SEQUENCE_END = %d\nis mold breaker effected ability = %d\n", a3, a5, a3 == EVENT_MOVE_SEQUENCE_END, SEARCH_ARRAY(MOLD_BREAKER_AFFECTED_ABILITIES, a5));
+    return (a3 == EVENT_MOVE_SEQUENCE_END && SEARCH_ARRAY(MOLD_BREAKER_AFFECTED_ABILITIES, a5));
+}
+#pragma endregion 
+
 #pragma region AbilityEventModification
+extern "C" bool checkIfConsumableItem(int a1)
+{
+    // There is surely something we could do to simplify this
+    return (PML_ItemIsBerry(a1) ||
+            a1 == IT0290_FAIRY_GEM ||
+            a1 == IT0043_BERRY_JUICE ||
+            (a1 >= IT0545_ABSORB_BULB && a1 <= IT0564_NORMAL_GEM) ||
+            a1 == IT0291_WEAKNESS_POLICY ||
+            a1 == IT0274_MYSTERY_DEVICE ||
+            a1 == IT0542_RED_CARD ||
+            a1 == IT0292_CLRS_BOOSTER ||
+            a1 == IT0294_PROTO_BOOSTER ||
+            a1 == IT0286_CLRS_ARMOR ||
+            a1 == IT0254_PROTO_ARMOR ||
+            a1 == IT0315_PROTO_ACCELERATOR ||
+            a1 == IT0318_CLRS_ACCELERATOR ||
+            a1 == IT0314_CLRS_INVENTION ||
+            a1 == IT0539_EJECT_PACK ||
+            a1 == IT0547_EJECT_BUTTON ||
+            a1 == IT0275_FOCUS_SASH ||
+            a1 == IT0219_MENTAL_HERB ||
+            a1 == IT0214_WHITE_HERB ||
+            a1 == IT0271_POWER_HERB ||
+            a1 == IT0541_AIR_BALLOON ||
+            a1 == IT0136_TRICKSTER_HERB ||
+            a1 == IT0230_FOCUS_BAND ||
+            a1 == IT0299_TERA_C_BAND ||
+            a1 == IT0288_STICKY_BARB ||
+            a1 == IT0273_FLAME_ORB ||
+            a1 == IT0272_TOXIC_ORB ||
+            a1 == IT0306_TERA_B_POLICY ||
+            a1 == IT0256_BLUNDER_POLICY ||
+            a1 == IT0305_TERA_W_POLICY ||
+            a1 == IT0302_TERA_SASH ||
+            a1 == IT0304_TERA_CLAW ||
+            a1 == IT0217_QUICK_CLAW ||
+            a1 == IT0281_BLACK_SLUDGE ||
+            a1 == IT0228_TERA_GEM ||
+            a1 == IT0234_LEFTOVERS ||
+            a1 == IT0311_TERA_LEFTOVERS || a1 == IT0255_ATTACK_INSURANCE || a1 == IT0309_TERA_INSURANCE);
+}
+
+/* Unnerve Buff */
+extern "C" bool THUMB_BRANCH_SAFESTACK_HandlerUnnerveSkipCheck(BattleEventItem *a1, int a2, int a3, int a4, u16 a5, unsigned __int8 a6)
+{
+    int PokeID;  // r0
+    bool result; // r0
+
+    result = 0;
+    if (a3 == 5)
+    {
+        PokeID = BattleEventItem_GetPokeID(a1);
+        if (!MainModule_IsAllyMonID(PokeID, a6))
+        {
+            if (checkIfConsumableItem(a5))
+            {
+                return 1;
+            }
+        }
+    }
+    return result;
+}
+
+extern "C" void THUMB_BRANCH_HandlerSuperFang(int a1, ServerFlow *a2, int a3)
+{
+    unsigned __int8 Value; // r0
+    BattleMon *BattleMon;  // r0
+    unsigned int v8;       // r0
+    int v9;                // r1
+
+    if (a3 == BattleEventVar_GetValue(VAR_ATTACKING_MON))
+    {
+        Value = BattleEventVar_GetValue(VAR_DEFENDING_MON);
+        BattleMon = Handler_GetBattleMon(a2, Value);
+        v8 = BattleMon_GetValue(BattleMon, VALUE_CURRENT_HP);
+        v9 = (v8 + (v8 >> 31)) << 15 >> 16;
+        if (!v9)
+        {
+            v9 = 1;
+        }
+        if (BattleMon_GetValue(Handler_GetBattleMon(a2, a3), VALUE_EFFECTIVE_ABILITY) == ABIL093_STRONG_JAW)
+        {
+            v9 = v9 + (v9 >> 1);
+        }
+        BattleEventVar_RewriteValue(VAR_FIXED_DAMAGE, v9);
+    }
+}
+
+extern "C" void THUMB_BRANCH_HandlerTruant(int a1, int a2, int a3, _DWORD *a4)
+{
+    if (a3 == BattleEventVar_GetValue(VAR_MON_ID))
+    {
+        BattleMon *mon = Handler_GetBattleMon((ServerFlow *)a2, a3);
+        if (BattleMon_GetTurnFlag(mon, TURNFLAG_MOVEFAILEDLASTTURN))
+        {
+            *a4 = 0;
+        }
+
+        if (*a4)
+        {
+            if (PML_MoveGetCategory(BattleEventVar_GetValue(VAR_MOVE_ID)) && BattleEventVar_GetValue(VAR_MOVE_ID) != MOVE165_STRUGGLE)
+            {
+                a4[1] = BattleEventVar_RewriteValue(VAR_FAIL_CAUSE, MOVEFAIL_ABILITY);
+            }
+            *a4 = 0;
+        }
+        else
+        {
+            if (PML_MoveGetCategory(BattleEventVar_GetValue(VAR_MOVE_ID)) && BattleEventVar_GetValue(VAR_MOVE_ID) != MOVE165_STRUGGLE)
+            {
+                *a4 = 1;
+            }
+        }
+        if (BattleEventVar_GetValue(VAR_MOVE_ID) != MOVE165_STRUGGLE)
+        {
+            *a4 = 0;
+        }
+    }
+}
+
+
+void THUMB_BRANCH_HandlerUnawareDefenseRank(int a1, int a2, int a3)
+{
+    if (a3 == BattleEventVar_GetValue(VAR_ATTACKING_MON) || a3 == BattleEventVar_GetValue(VAR_DEFENDING_MON))
+    {
+        BattleEventVar_RewriteValue(VAR_GENERAL_USE_FLAG, 1);
+    }
+}
+
+void THUMB_BRANCH_HandlerUnawareAttackRank(int a1, int a2, int a3)
+{
+    if (a3 == BattleEventVar_GetValue(VAR_ATTACKING_MON) || a3 == BattleEventVar_GetValue(VAR_DEFENDING_MON))
+    {
+        BattleEventVar_RewriteValue(VAR_GENERAL_USE_FLAG, 1);
+    }
+}
+
     typedef void *(*ABILITY_SETUP_FUNC)(int *);
     typedef BattleEventHandlerTableEntry* (*AbilityEventAddFunc)(u32*);
     struct	AbilityEventAddTable {AbilID ability;AbilityEventAddFunc func;};
@@ -1760,23 +1999,95 @@ extern "C" int THUMB_BRANCH_ScaleExpGainedByLevel(BattleMon *monGainingExp, unsi
     // (with a const BattleEventHandlerTableEntry* HandlerTable param); redeclaring it here
     // with a mismatched const void* param type is a hard conflicting-declaration error.
 
-    const u32 overWrites[] = {
-        1, 6, 7, 12, 15, 
-        16, 17, 20, 21, 22, 
-        23, 27, 29, 31, 33, 
-        36, 39, 40, 41, 43, 
-        44, 47, 48, 51, 52, 
-        53, 54, 56, 57, 60, 
-        62, 63, 76, 77, 79, 
-        83, 87, 90, 93, 95, 
-        96, 100, 102, 103, 104, 
-        105, 106, 108, 109, 111, 
-        113, 114, 115, 119, 123, 
-        124, 127, 128, 131, 132, 
-        134, 135, 137, 138, 140, 
-        142, 145, 146, 147, 148, 
-        151, 154, 155, 159, 161
-    }; 
+    // Which abilities get their handler-add function loaded from a DLL, and the exact
+    // export name to GetProcAddress once loaded. Generated from what abilities/*.cpp
+    // actually exports (via nm on the compiled .elf) rather than hand-maintained, so
+    // it can't drift out of sync with the ability files like the old overWrites[]
+    // array (which had 75 entries for 67 actual files - 8 of them, including some for
+    // abilities later moved to static A4/A8 hooks, no longer had a matching .dll at all).
+    struct AbilityEventOverride
+    {
+        u8 abilID;
+        const char* exportName;
+    };
+    const AbilityEventOverride abilityEventOverrides[] = {
+        {60 , "e3c"}, // was: "THUMB_BRANCH_EventAddStickyHold"
+        {106, "e6a"}, // was: "EventAddAftermathNew"
+        {43 , "e2b"}, // was: "THUMB_BRANCH_EventAddSoundproof"
+        {83 , "e53"}, // was: "THUMB_BRANCH_EventAddAngerPoint"
+        {123, "e7b"}, // was: "THUMB_BRANCH_EventAddBadDreams"
+        {6  , "e06"}, // was: "THUMB_BRANCH_EventAddDamp"
+        {29 , "e1d"}, // was: "THUMB_BRANCH_EventAddClearBody"
+        {76 , "e4c"}, // was: "THUMB_BRANCH_EventAddAirLock"
+        {161, "ea1"}, // was: "THUMB_BRANCH_EventAddZenMode"
+        {7  , "e07"}, // was: "THUMB_BRANCH_EventAddLimber"
+        {128, "e80"}, // was: "EventAddDefiantNew"
+        {103, "e67"}, // was: "THUMB_BRANCH_EventAddKlutz"
+        {87 , "e57"}, // was: "THUMB_BRANCH_EventAddDrySkin"
+        {27 , "e1b"}, // was: "EventAddEffectSporeNew"
+        {138, "e8a"}, // was: "THUMB_BRANCH_EventAddFlareBoost"
+        {17 , "e11"}, // was: "THUMB_BRANCH_EventAddImmunity"
+        {108, "e6c"}, // was: "THUMB_BRANCH_EventAddForewarn"
+        {132, "e84"}, // was: "THUMB_BRANCH_EventAddFriendGuard"
+        {102, "e66"}, // was: "THUMB_BRANCH_EventAddLeafGuard"
+        {12 , "e0c"}, // was: "THUMB_BRANCH_EventAddOblivious"
+        {56 , "e38"}, // was: "EventAddGooey"
+        {62 , "e3e"}, // was: "THUMB_BRANCH_EventAddGuts"
+        {131, "e83"}, // was: "THUMB_BRANCH_EventAddHealer"
+        {134, "e86"}, // was: "THUMB_BRANCH_EventAddHeavyMetal"
+        {52 , "e34"}, // was: "THUMB_BRANCH_EventAddHyperCutter"
+        {115, "e73"}, // was: "THUMB_BRANCH_EventAddIceBody"
+        {140, "e8c"}, // was: "THUMB_BRANCH_EventAddWonderSkin"
+        {151, "e97"}, // was: "THUMB_BRANCH_EventAddInfiltrator"
+        {39 , "e27"}, // was: "THUMB_BRANCH_EventAddInnerFocus"
+        {154, "e9a"}, // was: "THUMB_BRANCH_EventAddJustified"
+        {135, "e87"}, // was: "THUMB_BRANCH_EventAddLightMetal"
+        {31 , "e1f"}, // was: "THUMB_BRANCH_EventAddLightningRod"
+        {63 , "e3f"}, // was: "THUMB_BRANCH_EventAddMarvelScale"
+        {41 , "e29"}, // was: "THUMB_BRANCH_EventAddWaterVeil"
+        {105, "e69"}, // was: "THUMB_BRANCH_EventAddSuperLuck"
+        {104, "e68"}, // was: "EventAddMoldBreakerNew"
+        {96 , "e60"}, // was: "THUMB_BRANCH_EventAddNormalize"
+        {142, "e8e"}, // was: "THUMB_BRANCH_EventAddOvercoat"
+        {124, "e7c"}, // was: "THUMB_BRANCH_EventAddPickpocket"
+        {53 , "e35"}, // was: "THUMB_BRANCH_EventAddPickup"
+        {40 , "e28"}, // was: "THUMB_BRANCH_EventAddMagmaArmor"
+        {57 , "e39"}, // was: "THUMB_BRANCH_EventAddPlusMinus"
+        {90 , "e5a"}, // was: "THUMB_BRANCH_EventAddPoisonHeal"
+        {20 , "e14"}, // was: "THUMB_BRANCH_EventAddOwnTempo"
+        {95 , "e5f"}, // was: "THUMB_BRANCH_EventAddQuickFeet"
+        {44 , "e2c"}, // was: "THUMB_BRANCH_EventAddRainDish"
+        {155, "e9b"}, // was: "THUMB_BRANCH_EventAddRattled"
+        {48 , "e30"}, // was: "THUMB_BRANCH_EventAddTelepathy"
+        {79 , "e4f"}, // was: "THUMB_BRANCH_EventAddRivalry"
+        {16 , "e10"}, // was: "THUMB_BRANCH_EventAddColorChange"
+        {159, "e9f"}, // was: "EventAddSandForceNew"
+        {146, "e92"}, // was: "THUMB_BRANCH_EventAddSandRush"
+        {145, "e91"}, // was: "THUMB_BRANCH_EventAddBigPecks"
+        {113, "e71"}, // was: "THUMB_BRANCH_EventAddScrappy"
+        {77 , "e4d"}, // was: "THUMB_BRANCH_EventAddTangledFeet"
+        {119, "e77"}, // was: "THUMB_BRANCH_EventAddFrisk"
+        {1  , "e01"}, // was: "EventAddStenchNew"
+        {114, "e72"}, // was: "THUMB_BRANCH_EventAddStormDrain"
+        {93 , "e5d"}, // was: "THUMB_BRANCH_EventAddHydration"
+        {33 , "e21"}, // was: "THUMB_BRANCH_EventAddSwiftSwim"
+        {47 , "e2f"}, // was: "THUMB_BRANCH_EventAddThickFat"
+        {15 , "e0f"}, // was: "THUMB_BRANCH_EventAddInsomnia"
+        {100, "e64"}, // was: "THUMB_BRANCH_EventAddStall"
+        {137, "e89"}, // was: "THUMB_BRANCH_EventAddToxicBoost"
+        {36 , "e24"}, // was: "EventAddTraceNew"
+        {21 , "e15"}, // was: "THUMB_BRANCH_EventAddSuctionCups"
+        {51 , "e33"}, // was: "THUMB_BRANCH_EventAddKeenEye"
+    };
+    const AbilityEventOverride* FindAbilityEventOverride(u8 abilID)
+    {
+        for (u32 i = 0; i < ARRAY_COUNT(abilityEventOverrides); ++i)
+        {
+            if (abilityEventOverrides[i].abilID == abilID)
+                return &abilityEventOverrides[i];
+        }
+        return nullptr;
+    }
 
     extern "C" u8 checkDupes(u8 ability){
         u8 abilID = ability;
@@ -1789,6 +2100,7 @@ extern "C" int THUMB_BRANCH_ScaleExpGainedByLevel(BattleMon *monGainingExp, unsi
         return abilID;
     }
 
+    
     // extern "C" void strcpy(*char result, *char string);
     // extern "C" void strcat(*char result, *char string);
     extern "C" int sprintf(char* result, const char* input, ...);
@@ -1800,11 +2112,16 @@ extern "C" int THUMB_BRANCH_ScaleExpGainedByLevel(BattleMon *monGainingExp, unsi
         // call returns, so it must not point at a stack frame that no longer exists.
         static char result[20];
         sprintf(result, "abilities/%d", ability);
+        //k::Printf("Produced DLL name: %s\n", result);
         return result;
     }
     extern "C" BattleEventItem * GetAbilityEvent(BattleMon * battleMon, u8 ability, AbilityEventAddFunc func) {
         u32 handlerAmount = 0;
         BattleEventHandlerTableEntry* battleHandlerItems = (BattleEventHandlerTableEntry*)func(&handlerAmount);
+        // handlerAmount gets reused/overwritten by GetHandlerMainPriority below, so print
+        // the real handler count here to confirm we got the right table (e.g. Thick Fat
+        // should report 7, not vanilla's 1).
+        //k::Printf("GetAbilityEvent: ability=%d handlerAmount=%d battleHandlerItems=%p\n", ability, handlerAmount, battleHandlerItems);
 
         BattleEventPriority mainPrio = (BattleEventPriority)GetHandlerMainPriority(&handlerAmount);
         u32 subPrio = AbilityEvent_GetSubPriority(battleMon);
@@ -1817,9 +2134,21 @@ extern "C" int THUMB_BRANCH_ScaleExpGainedByLevel(BattleMon *monGainingExp, unsi
 
         // Check for new or overriden abilities
         u8 abilID = checkDupes(ability);
-        if (SEARCH_ARRAY(overWrites, abilID)){
-            if (!LoadDll(produceDLLName(abilID)))
-                return 0;
+        const AbilityEventOverride* override = FindAbilityEventOverride(abilID);
+        if (override) {
+            const char* dllName = produceDLLName(abilID);
+            b32 loaded = LoadDll(dllName);
+            //k::Printf("THUMB_BRANCH_AbilityEvent_AddItem: ability=%d abilID=%d LoadDll returned %d\n", ability, abilID, loaded);
+            if (loaded) {
+                k::dll::LibraryHandle handle = GetLoadedDllHandle(dllName);
+                void* funcAddr = handle ? k::dll::GetProcAddress(handle, override->exportName) : nullptr;
+                //k::Printf("THUMB_BRANCH_AbilityEvent_AddItem: GetProcAddress(%s) = %p\n", override->exportName, funcAddr);
+                if (funcAddr) {
+                    return GetAbilityEvent(battleMon, ability, (AbilityEventAddFunc)funcAddr);
+                }
+            }
+            // Loading or lookup failed - fall through to the vanilla table below
+            // rather than silently doing nothing for this Pokemon's ability.
         }
         // Check for vanilla abilities
         AbilityEventAddTable* abilityEventAddTable = (AbilityEventAddTable*)0x21D7F38;
@@ -1835,13 +2164,33 @@ extern "C" int THUMB_BRANCH_ScaleExpGainedByLevel(BattleMon *monGainingExp, unsi
 
 
     extern "C" void THUMB_BRANCH_LINK_BattleEventItem_Remove_0x44(BattleEventItem * item) {
-        switch (item->factorType)
+        // BattleEventItem's factorType/subID fields read wrong through the struct: the
+        // vanilla ROM (per IDA disasm) lays out eventItemType as a 4-byte field at 0x10
+        // ("DCD"), but BattleEventItemType has no explicit underlying type, so this
+        // compiler collapses it to a 1-byte enum (confirmed via static_assert against
+        // this exact toolchain: sizeof(BattleEventItemType) == 1 here). That shifts
+        // factorType to offset 0xD instead of 0x10, and every field after it (priority,
+        // flags, work[], subID, dependID, pokeID) 4 bytes earlier than the real vanilla
+        // layout - so item->factorType/item->subID were reading garbage. Bypass the
+        // struct here and read the known-correct vanilla byte offsets directly instead
+        // of risking a project-wide struct layout change other code may depend on.
+        u8* raw = (u8*)item;
+        u32 factorType = *(u32*)(raw + 0x10);
+        u16 subID = *(u16*)(raw + 0x38);
+
+        // Unconditional - fires for every removed item regardless of factorType, so we
+        // can tell "hook never triggers" apart from "triggers, but never with
+        // factorType==EVENTITEM_ABILITY (0x4) because no ability item got removed yet".
+        //k::Printf("THUMB_BRANCH_LINK_BattleEventItem_Remove_0x44: item=%p factorType=%d subID=%d\n", item, factorType, subID);
+        switch (factorType)
         {
             case 0x4:
             {
-                u8 abilID = checkDupes(item->subID);
-                if (SEARCH_ARRAY(overWrites, abilID)){
-                    FreeDll(produceDLLName(abilID));
+                u8 abilID = checkDupes((u8)subID);
+                if (FindAbilityEventOverride(abilID)){
+                    const char* dllName = produceDLLName(abilID);
+                    //k::Printf("THUMB_BRANCH_LINK_BattleEventItem_Remove_0x44: freeing abilID=%d dllName=%s\n", abilID, dllName);
+                    FreeDll(dllName);
                 }
                 break;
             }

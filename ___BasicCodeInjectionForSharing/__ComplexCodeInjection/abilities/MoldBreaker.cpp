@@ -1,75 +1,6 @@
 #include "../definitions/A_CodeInjection.h"
 
-unsigned __int16 MOLD_BREAKER_AFFECTED_ABILITIES[51] = {
-    ABIL025_WONDER_GUARD,
-    ABIL043_AMPLIFIER,
-    ABIL026_LEVITATE,
-    ABIL008_SAND_VEIL,
-    ABIL081_SNOW_CLOAK,
-    ABIL011_WATER_ABSORB,
-    ABIL004_BATTLE_ARMOR,
-    ABIL031_LIGHTNING_ROD,
-    ABIL114_STORM_DRAIN,
-    ABIL075_SHELL_ARMOR,
-    ABIL109_UNAWARE,
-    ABIL021_WELL_BAKED_BODY,
-    ABIL086_SIMPLE,
-    ABIL077_SLUSH_RUSH,
-    ABIL116_SOLID_ROCK,
-    ABIL111_FILTER,
-    ABIL018_FLASH_FIRE,
-    ABIL078_MOTOR_DRIVE,
-    ABIL063_MARVEL_SCALE,
-    ABIL047_THICK_FAT,
-    ABIL085_HEATPROOF,
-    ABIL073_STRONG_BODY,
-    ABIL029_CLEAR_BODY,
-    ABIL051_WIND_RIDER,
-    ABIL052_HYPER_CUTTER,
-    ABIL039_INNER_FOCUS,
-    ABIL019_SHIELD_DUST,
-    ABIL005_STURDY,
-    ABIL006_BULLETPROOF,
-    ABIL102_FUR_COAT,
-    ABIL015_THUNDER_ARMOR,
-    ABIL072_RESILIENT,
-    ABIL017_FLUFFY,
-    ABIL126_CONTRARY,
-    ABIL132_FRIEND_GUARD,
-    ABIL136_MULTISCALE,
-    ABIL140_ICE_SCALES,
-    ABIL147_WONDER_SKIN,
-    ABIL156_MAGIC_BOUNCE,
-    ABIL157_SAP_SIPPER,
-    ABIL010_VOLT_ABSORB,
-    ABIL087_DRY_SKIN,
-    ABIL122_FLOWER_GIFT,
-    ABIL134_HEAVY_METAL,
-    ABIL135_LIGHT_METAL,
-    ABIL143_POISON_TOUCH,
-    ABIL113_SCRAPPY,
-    ABIL056_GOOEY,
-    ABIL009_STATIC,
-    ABIL049_FLAME_BODY,
-    ABIL027_EFFECT_SPORE,
-};
 
-extern "C" u8 SearchArray(const u16 *const arr, const u32 arrSize, const u32 value)
-{
-    for (u16 i = 0; i < arrSize; ++i)
-    {
-        if (arr[i] == value)
-            return 1;
-    }
-    return 0;
-}
-#define SEARCH_ARRAY(arr, value) SearchArray(arr, ARRAY_COUNT(arr), value)
-
-extern "C" bool THUMB_BRANCH_SAFESTACK_HandlerMoldBreakerSkipCheck(int a1, int a2, BattleEventType a3, int a4, unsigned __int16 a5)
-{
-    // k::Printf("Mold Breaker Skip Check: Event %d, Move %d, EVENT_MOVE_SEQUENCE_END = %d\nis mold breaker effected ability = %d\n", a3, a5, a3 == EVENT_MOVE_SEQUENCE_END, SEARCH_ARRAY(MOLD_BREAKER_AFFECTED_ABILITIES, a5));
-    return (a3 == EVENT_MOVE_SEQUENCE_END && SEARCH_ARRAY(MOLD_BREAKER_AFFECTED_ABILITIES, a5));
-}
 extern "C" void HandlerMoldBreakerPower(int a1, int a2, int a3)
 {
     if (a3 == BattleEventVar_GetValue(VAR_ATTACKING_MON))
@@ -87,7 +18,8 @@ ABILITY_TRIGGERTABLE MoldBreakerHandlers[] = {
     {EVENT_MOVE_POWER, (ABILITY_HANDLER_FUNC)HandlerMoldBreakerPower}, // 6
 };
 
-extern "C" ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddMoldBreaker(_DWORD *a1)
+// was: EventAddMoldBreakerNew
+extern "C" ABILITY_TRIGGERTABLE * e68(_DWORD *a1)
 {
     *a1 = 6;
     return MoldBreakerHandlers;

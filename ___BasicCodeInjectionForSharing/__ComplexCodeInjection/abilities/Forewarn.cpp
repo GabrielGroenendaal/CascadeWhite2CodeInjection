@@ -31,7 +31,8 @@ ABILITY_TRIGGERTABLE ForewarnHandlers[] = {
     {EVENT_MOVE_DAMAGE_PROCESSING_2, (ABILITY_HANDLER_FUNC)HandlerForewarnNew},
     {EVENT_ABILITY_CHECK_NO_EFFECT, (ABILITY_HANDLER_FUNC)HandlerTelepathy}};
 
-extern "C" ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddForewarn(_DWORD *a1)
+// was: THUMB_BRANCH_EventAddForewarn
+extern "C" ABILITY_TRIGGERTABLE *e6c(_DWORD *a1)
 {
     *a1 = 4;
     return ForewarnHandlers;

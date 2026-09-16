@@ -21,7 +21,8 @@ ABILITY_TRIGGERTABLE IceBodyHandlers[] = {
     {EVENT_TURN_CHECK_BEGIN, (ABILITY_HANDLER_FUNC)HandlerIceBody},
 };
 
-extern "C" ABILITY_TRIGGERTABLE *THUMB_BRANCH_EventAddIceBody(_DWORD *a1)
+// was: THUMB_BRANCH_EventAddIceBody
+extern "C" ABILITY_TRIGGERTABLE *e73(_DWORD *a1)
 {
     *a1 = 2;
     return IceBodyHandlers;
