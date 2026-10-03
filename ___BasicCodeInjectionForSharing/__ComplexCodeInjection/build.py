@@ -6,8 +6,8 @@ each .elf into a loadable .dll (RPM0 module) via CTRMap's rpm.cli.RPMTool,
 resolving external symbols against the source's relevant ESDB.
 
 - Top-level sources (A4_AbilityChanges.cpp, A8_ImportedAbilities.cpp, ...)
-  compile to ______Output/<stem>.elf, and convert to ______Output/patches/<stem>.dll.
-- abilities/*.cpp compile to ______Output/<ability id>.elf, where the
+  compile to ______Output/elf/<stem>.elf, and convert to ______Output/patches/<stem>.dll.
+- abilities/*.cpp compile to ______Output/elf/<ability id>.elf, where the
   id is looked up from the AbilID enum in definitions/A_Structs.h (matched by
   converting the filename to SCREAMING_SNAKE_CASE and comparing against the
   ABILnnn_<NAME> enum entries), per abilities/__filename_to_patchname.txt, and
@@ -48,9 +48,11 @@ GCC = Path(
     r"\arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi\bin\arm-none-eabi-g++.exe"
 )
 OUTPUT_DIR = ROOT / "______Output"
+ELF_DIR = OUTPUT_DIR / "elf"
 FLAGS = ["-r", "-mthumb", "-mlong-calls", "-march=armv5t", "-Os"]
 
-# .elf intermediates stay flat in OUTPUT_DIR. .dll outputs are split into two
+# .elf intermediates go in ELF_DIR, out of the way of the .dll outputs, which
+# are split into two
 # subfolders of "patches" (mirroring PW2Code's own Assets/patches/ convention
 # for this kind of output):
 # - Ability modules -> patches/abilities/<id>.dll
@@ -67,14 +69,18 @@ CTRMAP_JAR = PARENT.parent / "___IDBS" / "Overlay142_new" / "CTRMap.jar"
 
 # ESDB to resolve each source's external symbols against, keyed by source
 # filename stem. Anything not listed here (A4_AbilityChanges, A8_ImportedAbilities,
-# and every abilities/*.cpp file) uses DEFAULT_ESDB (ESDB_A1.yml).
+# A2_AIChanges, and every abilities/*.cpp file) uses DEFAULT_ESDB.
 ESDB_FOR_SOURCE: dict[str, Path] = {
     "A9_DamageCalc": PARENT / "A_CoreBattle" / "EDSB_A9.yml",
     "B2_Backgrounds": PARENT / "B_Background" / "EDSB_B2.yml",
     "C1_LegendaryEncounters": PARENT / "C_LegendaryEncounter" / "ESDB_C1.yml",
     "D2_FieldOverlays": PARENT / "D_NonBattleItemChanges" / "ESDB_D2.yml",
 }
-DEFAULT_ESDB = PARENT / "A_CoreBattle" / "ESDB_A1.yml"
+# A_CoreBattle/ESDB_A1.yml is stale for the AI symbols (AI043/AI046/AI063/etc.
+# still show placeholder "Nop"/"Get*" names there) - PARENT/______Output/ESDB_A1_CoreBattle.yml
+# (___BasicCodeInjectionForSharing/______Output, not this script's own OUTPUT_DIR)
+# has the current names A2_AIChanges.cpp needs, so that's the one to resolve against.
+DEFAULT_ESDB = PARENT / "______Output" / "ESDB_A1_CoreBattle.yml"
 
 # Ability filenames whose stem doesn't camel-split into the exact enum
 # suffix (acronyms, contractions, etc.) - add to this as new mismatches
@@ -154,7 +160,7 @@ def dll_output_path(src: Path, output_stem: str) -> Path:
 
 
 def compile_one(src: Path, output_stem: str, dry_run: bool) -> bool:
-    out_path = OUTPUT_DIR / f"{output_stem}.elf"
+    out_path = ELF_DIR / f"{output_stem}.elf"
     cmd = [str(GCC), *FLAGS, rel(src), "-o", rel(out_path)]
     print(" ".join(cmd))
     if dry_run:
@@ -175,7 +181,7 @@ def convert_to_dll(src: Path, output_stem: str, dry_run: bool) -> bool:
         print(f"  DLL CONVERSION FAILED ({src.name}): ESDB not found at {esdb_path}")
         return False
 
-    elf_path = OUTPUT_DIR / f"{output_stem}.elf"
+    elf_path = ELF_DIR / f"{output_stem}.elf"
     dll_path = dll_output_path(src, output_stem)
     if not dry_run:
         dll_path.parent.mkdir(parents=True, exist_ok=True)
@@ -262,7 +268,7 @@ def main() -> int:
             print(f"No sources matched: {', '.join(args.only)}", file=sys.stderr)
             return 1
 
-    OUTPUT_DIR.mkdir(exist_ok=True)
+    ELF_DIR.mkdir(parents=True, exist_ok=True)
 
     failures: list[Path] = []
     for src, out_stem in jobs:

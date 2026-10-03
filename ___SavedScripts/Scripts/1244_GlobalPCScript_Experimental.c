@@ -174,6 +174,11 @@ label9: ;
 	StackPushConst(0);
 	StackCompare(2);
 	if (255) goto label_DisablingFlight;
+	// GetPokemonEVTotal(0x8022, 1);
+	// StackPushVar(0x8022);
+	// StackPushConst(1);
+	// StackCompare(1);
+	// if (255) goto label_DisablingFlight;
 	AddDialogueOption(86, 0xFFFF, 86);
 
 label_DisablingFlight: ;
@@ -1550,6 +1555,8 @@ label49_options: ;
 	// Advanced Enemy Switch In Logic
 	AddDialogueOption(109, 103, 4);
 	
+     // Damage Calc
+	AddDialogueOption(255, 103, 14);
 
     // Exp Modes
 	AddDialogueOption(197, 103, 13);
@@ -2393,7 +2400,7 @@ label_AntiYap_6: ;
 //
 label_ExpBoost_1: ;
 	Compare(0x8004, 13);
-	if (5) goto label_CasualPreset_1;
+	if (5) goto label_DamageCalc_1;
 	Compare(0x4053, 0);
 	if (5) goto label_ExpBoost_2;
 	EventGreyMessage(198, 2);
@@ -2413,7 +2420,7 @@ label_ExpBoost_5: ;
 	AddDialogueOption(201, 202, 0);
 	AddDialogueOption(203, 204, 1);
 	AddDialogueOption(205, 206, 2);
-	AddDialogueOption(207, 0xFFFF, 2);
+	AddDialogueOption(207, 0xFFFF, 3);
 	ShowDialogueSelection2();
 	Compare(0x8006, 0);
 	if (5) goto label_ExpBoost_6;
@@ -2458,6 +2465,80 @@ label_ExpBoost_10: ;
 	goto label49_options;
 
 
+//
+
+//  EXP BOOST 
+
+//
+label_DamageCalc_1: ;
+	Compare(0x8004, 14);
+	if (5) goto label_CasualPreset_1;
+	Compare(16580, 0);
+	if (5) goto label_DamageCalc_2;
+	EventGreyMessage(256, 2);
+	goto label_DamageCalc_5;
+
+label_DamageCalc_2: ;
+	Compare(0x4053, 1);
+	if (5) goto label_DamageCalc_3;
+	EventGreyMessage(257, 2);
+	goto label_DamageCalc_5;
+
+label_DamageCalc_3: ;
+	EventGreyMessage(258, 2);
+
+label_DamageCalc_5: ;
+	SetupDialogueSelection(31, 5, 0, 1, 0x8006);
+	AddDialogueOption(259, 260, 0);
+	AddDialogueOption(261, 262, 1);
+	AddDialogueOption(263, 264, 2);
+	AddDialogueOption(207, 0xFFFF, 3);
+	ShowDialogueSelection2();
+	Compare(0x8006, 0);
+	if (5) goto label_DamageCalc_6;
+	EventGreyMessage(265, 2);
+	WaitForButton();
+	SetVarEqVar2(16580, 0);
+	EventGreyMessage(119, 2);
+	WaitForButton();
+	goto label49_options;
+
+label_DamageCalc_6: ;
+	Compare(0x8006, 1);
+	if (5) goto label_DamageCalc_7;
+	EventGreyMessage(266, 2);
+	WaitForButton();
+	SetVarEqVar2(16580, 1);
+	EventGreyMessage(119, 2);
+	WaitForButton();
+	goto label49_options;
+
+label_DamageCalc_7: ;
+	Compare(0x8006, 2);
+	if (5) goto label_DamageCalc_8;
+	EventGreyMessage(267, 2);
+	WaitForButton();
+	SetVarEqVar2(16580, 2);
+	EventGreyMessage(119, 2);
+	WaitForButton();
+	goto label49_options;
+
+label_DamageCalc_8: ;
+label_DamageCalc_9: ;
+	Compare(0x8006, 3);
+	if (5) goto label_DamageCalc_10;
+	EventGreyMessage(116, 2);
+	WaitForButton();
+	goto label49_options;
+
+label_DamageCalc_10: ;
+	EventGreyMessage(119, 2);
+	WaitForButton();
+	goto label49_options;
+
+
+
+
 // 
 
 //	Apply Casual Presets
@@ -2477,6 +2558,8 @@ label_CasualPreset_1: ;
 	goto label49_options;
 
 Label_CriticalHitCasualSetting: ;
+    SetVarEqVar2(16580, 0);
+
 	Compare(0x401F, 0);
 	if (1) goto Label_WildPokemonIVCasualSettings;
 	EventGreyMessage(118, 2);
@@ -2555,6 +2638,7 @@ label_RestoreDefaults_1: ;
 	goto label49_options;
 
 Label_CriticalHitDefaultSetting: ;
+    SetVarEqVar2(16580, 0);
 	Compare(0x401F, 0);
 	if (1) goto Label_WildPokemonIVDefeaultSettings;
 	EventGreyMessage(118, 2);

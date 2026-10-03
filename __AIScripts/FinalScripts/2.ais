@@ -2145,7 +2145,14 @@ address_ProtectChangeToReduceScoreBy2:
 address_0x229C:
 	GetProtectCount(attacker)
 	JumpIfStoredGT(0, &address_0x2400)
-	JumpIfBadlyPoisoned(attacker, &address_0x23F2)
+	JumpIfBadlyPoisoned(attacker, &address_BadlyPoisoned)
+    Jump(&address_NotBadlyPoisoned)
+
+address_BadlyPoisoned: 
+    GetAbilityGuess(attacker)
+	JumpIfStoredEQ(ability.poison_heal, &address_0x23B0)
+    
+address_NotBadlyPoisoned:
 	JumpIfHasCondition(attacker, cond.curse, &address_0x23F2)
 	JumpIfHasCondition(attacker, cond.perish_song, &address_0x23F2)
 	JumpIfHasCondition(attacker, cond.infatuation, &address_0x23F2)
@@ -2159,7 +2166,6 @@ address_0x229C:
 	JumpIfHasMoveWithEffect(defender, move_ef.swallow, &address_0x23F2)
 	JumpIfHasMoveWithEffect(defender, move_ef.roost, &address_0x23F2)
 	JumpIfBadlyPoisoned(defender, &address_0x23B0)
-	JumpIfHasCondition(defender, cond.infatuation, &address_0x23B0)
 	JumpIfHasCondition(defender, cond.leech_seed, &address_0x23B0)
 	JumpIfHasCondition(defender, cond.yawn, &address_0x23B0)
 	JumpIfHasCondition(attacker, cond.lock-on, &address_0x23B0)
@@ -2168,6 +2174,8 @@ address_0x229C:
 
 address_0x23B0:
 	AddToScore(2)
+    Jump(&address_0x23B6)
+
 
 address_0x23B6:
 	JumpIfRandSeedLT(128, &address_0x23C6)
@@ -2582,9 +2590,6 @@ data_address_0x29AC:
 //   CHARGE MOVES   
 
 Label_ChargeMoves:
-	JumpIfEffectivenessEQ(0x, &chargeMoves_ReduceScoreBy2)
-	JumpIfEffectivenessEQ(1/4x, &chargeMoves_ReduceScoreBy2)
-	JumpIfEffectivenessEQ(1/2x, &chargeMoves_ReduceScoreBy2)
 	JumpIfMoveEffectEQ(move_ef.solar_beam, &address_SolarBeamCheck)
 	JumpIfMoveEffectEQ(move_ef.sky_attack, &address_StatBoostingChargeMoves)
 	JumpIfMoveEffectEQ(move_ef.ice_burn, &address_ElectroShotCheck)

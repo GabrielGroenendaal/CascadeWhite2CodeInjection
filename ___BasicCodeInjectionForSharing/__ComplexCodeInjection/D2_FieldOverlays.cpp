@@ -1213,7 +1213,7 @@ extern "C"
 
     extern void PokeParty_RecoverAll(PokeParty *pParty);
     extern b32 GameData_CheckPairFlag(GameData *gameData);
-
+    extern PlayerExState FieldPlayerState_GetExState(PlayerState *playerState);
     int personalPokePartyHeal(PokeParty *pParty, u8 shouldHeal)
     {
         signed __int32 PkmCount; // r6
@@ -1302,8 +1302,17 @@ extern "C"
 
         Var = ScriptReadVar(vm, env);
         Any = ScriptReadAny(vm, env);
-
         GameData = FieldScriptEnv_GetGameData(env);
+        // if (Any == 1){
+        //     PlayerState* state = GameData_GetPlayerState(GameData);
+        //     PlayerExState exState = FieldPlayerState_GetExState(state);
+        //     if (exState == 2){
+        //         k::Printf("Player is in exState 2\n");
+        //         *Var = 1;
+        //         return 0;
+        //     }
+        // }
+
         Party = GameData_GetParty(GameData);
         if (!personalPokePartyHeal(Party, 1))
         {
@@ -1312,6 +1321,8 @@ extern "C"
         *Var = v6;
         return 0;
     }
+
+
 #pragma endregion 
 
 #pragma region EncounterDisables

@@ -3882,6 +3882,14 @@ extern "C"
         return *lvl_cap_ptr;
     }
 
+    u32 GetDamageSetting()
+    {
+        EventWorkSave *eventWork = GameData_GetEventWork(GAME_DATA);
+        u16 *lvl_cap_ptr = EventWork_GetWkPtr(eventWork, 16580);
+        return *lvl_cap_ptr;
+    }
+
+
     u8 VANILLA_CRIT_CHANCES[5] = {0x10, 8, 3, 2, 0};
     u8 MODERN_CRIT_CHANCES[5] = {0x18, 8, 2, 0, 0};
 
@@ -4032,7 +4040,28 @@ extern "C"
                 }
             }
 
-            if (!MainModule_GetDebugFlag() && ServerFlow_IsNotPokestarBattle(a1)) fxDamage = ((BattleDebugMode) ? 85 : 100 - BattleRandom(16u)) * fxDamage / 100;
+            if (!MainModule_GetDebugFlag() && ServerFlow_IsNotPokestarBattle(a1)) {
+                if (BattleDebugMode)
+                {
+                    u8 damageSetting = GetDamageSetting();
+                    if (damageSetting == 1){
+                        damageRoll = 85;
+                    }
+                    else if (damageSetting == 2){
+                        damageRoll = 100;
+                    }
+                    else {
+                        damageRoll = (100 - BattleRandom(16u));
+                    }
+                }
+                else
+                {
+                    damageRoll = (100 - BattleRandom(16u));
+                }
+                fxDamage = damageRoll * fxDamage / 100;
+                
+            }
+            //fxDamage = ((BattleDebugMode) ? 85 : 100 - BattleRandom(16u)) * fxDamage / 100;
             
             moveType = (PokeType)moveParam->moveType;
             u16 ratio;

@@ -115,6 +115,7 @@ public class MainEvents {
 			goto LABEL_01c5;
 		}
 
+		Sound.PVPlay(638, 0);
 		Message.Spiked(28, 2);
 		Message.WaitAdvance();
 		Message.CloseAll();

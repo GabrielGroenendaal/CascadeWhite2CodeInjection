@@ -1,0 +1,129 @@
+Fire Emblem Rommhack : Sacred Trilogy 
+Look into Fire Emblem Enbarr 
+
+
+
+[ TO DO LIST ]
+    
+    Bugs: 
+        - Fix Bug with Post KO Swtich Ai not accounting for Tera Plate 
+        - Breeder Addison is a single battle. 
+        - Fix the eyes meet ranges on the trainres in Humilau gym.  
+        - Disable the "Travel" function of the pokehelper while surfing (need to look into how we check for surfing)
+        - Fix the calc gym trainer order 
+        - Double check that pickup is still working properly. 
+        - Update the battle logs patch again 
+    
+    - Remove swithceroo from Blaine's Typhlosion
+    - Consider replacing the Ability Drill with 100x Sitrus Berries. 
+
+    Fix the Plasma Script theft script so that it references an overwritten function that determiens the lowest HP ratio of the targets.
+
+
+
+
+
+[ ITEM CHANGES ]
+    Remove Hasty Mint from Surge Rewards. Move it to blaine as a replacement for the ability drill. 
+
+
+
+
+[ BALANCE CHANGES ]
+    Stats: 
+        Skarmory +5 Atk
+        Electode +10 SpA 
+        Leafeon -20 Atk +20 Defense 
+        Bisharp (Abil 2 = Defiant) 
+
+    Moves: 
+        Diamond Storm secondary effect is a 20% 
+    
+    Learnset Revamp for: 
+        Leafeon 
+        Ampharos 
+
+
+
+
+
+[ TRAINER CHANGES ]
+    Volkner:
+        Octillery (Air Balloon -> Focus Sash) 
+        Ambipom (Starf Berry -> Life Orb) (Triple Axel, Slam, Baton Pass, Strength)
+    
+    Worker Gus: 
+        Corsola -> Gastrodon-East @ Enigma Berry (Ability: Drizzle) (Ingrain, Whirlpool, Toxic Spikes, Mirror Coat)
+        Magneton -> Ferrothorn @ Chople Berry (Ability: Iron Barbs) (Acid Spray, Grass Knot, Thunder, Flash Cannon)
+        Bibarel: 
+            Muscle Band -> Life Orb 
+    Worker Pasqual: 
+        Lunatone: 
+            Levitate -> Solid Rock 
+    Worker Friedrich: 
+        Archeops:  (Lum Berry -> White Herb) (Dragon Pulse -> Acrobatics)
+    Clay: 
+        Dugtrio: 
+            Spikes -> Stealth Rock 
+        Electrode: 
+            Level 44->45
+            Superpower -> Aurora Beam
+        Rhydon: 
+            Hammer Arm -> Heat Crash
+        Conkeldurr: 
+            Drain Punch -> Strength
+            Slack Off -> Knock Off
+
+    Skyla: 
+        Swanna: 
+            (Friend Guard -> Serene Grace)
+            (Scald -> Muddy Water)
+        Blaziken: 
+            (Detect -> Earthquake)
+        Staraptor: 
+            ()
+
+
+    Virizion: 
+        Serperior +SpA 
+
+
+
+
+[ NEW TRAINERS ]
+    Skyla Sun Trainer?:
+        Exeggutor @ Heat Rock (Ability: Chlorophyll) (Egg Bomb, Extrasensory, Sleep Powder, )
+        Dragonite @ Leftovers (Ability: Thick Fat) (Flamethrower, Twister, Ice Punch, Thunderpunch)
+        Roserade @ Air Balloon (Ability: Solar Power) (Solarbeam, Acid Spray, Weather Ball, Grass Knot)
+        Charizard @ Charti Berry (Ability: Levitate) (Fire Punch, Dragon Claw, Earthquake, Solarbeam)
+        Blaziken @ Flying Gem (Ability: Speed Boost) (Flamethrower, Acrobatics, Sky Uppercut, Detect)
+
+    Clay Split Illusion Fight: 
+        Hypno @ Choice Specs (Ability: Illusion) (Psychic, Sludge Bomb, Aura Sphere, Shadow Ball)
+        Whimsicott @ Leftovers (Ability: Fluffy) (Ingrain, Substitute, Fairy Wind, Hurricane)
+        Pawniard @ Custap Berry (Ability: Sturdy) (Guillotine, Brutal Swing, Swords Dance, Sucker Punch)
+        Jellicent @ Enigma Berry (Water Spout, Grudge, Icy Wind, Confuse Ray)
+        Shelgon @ Eviolite (Ability: Rock Head) (Outrage, Head Smash, Dragon Dance, Superpower)
+    
+    Join Avenue Miltank
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

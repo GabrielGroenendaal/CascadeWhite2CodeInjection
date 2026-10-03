@@ -50,7 +50,7 @@ extern "C" void HandlerAftermathNew(int a1, ServerFlow *a2, unsigned int *a3)
 }
 
 ABILITY_TRIGGERTABLE AftermathHandlers[] = {
-    {EVENT_MOVE_FLINCH_CHANCE, (ABILITY_HANDLER_FUNC)HandlerAftermathNew}, // 22
+    {EVENT_MOVE_DAMAGE_REACTION_1, (ABILITY_HANDLER_FUNC)HandlerAftermathNew}, // 22
 
 };
 
